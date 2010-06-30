@@ -1,15 +1,28 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
---- doc/Makefile.in.orig	Fri Oct 16 20:39:22 2009
-+++ doc/Makefile.in	Wed Oct 21 11:32:04 2009
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
+--- doc/Makefile.in.orig	Mon May 31 16:38:00 2010
++++ doc/Makefile.in	Tue Jun 29 17:16:09 2010
+@@ -229,9 +229,9 @@ dist_data_DATA = 
+ BUILT_SOURCES = zarafa.1
+ allpages = \
+ 	zarafa-dagent.1 zarafa-passwd.1 zarafa-spooler.1 zarafa-admin.1 zarafa-server.1 zarafa-gateway.1 zarafa-monitor.1 zarafa-cfgchecker.1 \
+-	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-licensed.1 zarafa-stats.1 zarafa-fsck.1 zarafa-indexer.1 zarafa-report.1 \
+-	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-ldapms.cfg.5 zarafa-unix.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
+-	zarafa-monitor.cfg.5 zarafa-licensed.cfg.5 zarafa-dagent.cfg.5 zarafa-indexer.cfg.5
++	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-stats.1 zarafa-fsck.1 zarafa-report.1 \
++	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
++	zarafa-monitor.cfg.5 zarafa-dagent.cfg.5
+ 
+ man_MANS = $(BUILT_SOURCES) $(allpages)
+ EXTRA_DIST = $(BUILT_SOURCES) $(allpages) manual.xml
 @@ -374,12 +374,12 @@ uninstall-man5:
  	done
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
++	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
  	@list='$(dist_data_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  f=$(am__strip_dir) \
 -	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
 -	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
 +	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
@@ -17,7 +30,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
  	done
  
  uninstall-dist_dataDATA:
-@@ -524,7 +524,7 @@ $(BUILT_SOURCES): manual.xml
+@@ -535,7 +535,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
  	else \

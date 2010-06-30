@@ -1,0 +1,83 @@
+$OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- provider/libserver/ECStoreObjectTable.cpp.orig	Tue Jun 29 01:35:04 2010
++++ provider/libserver/ECStoreObjectTable.cpp	Tue Jun 29 01:04:14 2010
+@@ -644,7 +644,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 	unsigned int ulLastPos;
+ 	unsigned int ulColId = 0;
+ 	std::string strData;
++#ifndef __OpenBSD__
+ 	locale_t loc = createlocale(LC_NUMERIC, "C");
++#endif
+ 	
+ 	if(lpSession == NULL || lpsMapKey == NULL)
+ 	{
+@@ -696,7 +698,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 			break;
+ 		case PT_R4:
+  			lpPropVal->__union = SOAP_UNION_propValData_flt;
++#ifndef __OpenBSD__
+ 			lpPropVal->Value.flt = (float)strtod_l(lpDBRow[ulColId], NULL, loc);
++#else
++			lpPropVal->Value.flt = (float)strtod(lpDBRow[ulColId], NULL);
++#endif
+ 			break;
+ 		case PT_BOOLEAN:
+  			lpPropVal->__union = SOAP_UNION_propValData_b;
+@@ -704,7 +710,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 			break;
+ 		case PT_DOUBLE:
+  			lpPropVal->__union = SOAP_UNION_propValData_dbl;
++#ifndef __OpenBSD__
+ 			lpPropVal->Value.dbl = strtod_l(lpDBRow[ulColId], NULL, loc);
++#else
++			lpPropVal->Value.dbl = strtod(lpDBRow[ulColId], NULL);
++#endif
+ 			break;
+ 		case PT_CURRENCY:
+ 			lpPropVal->Value.hilo = s_alloc<hiloLong>(soap);
+@@ -714,7 +724,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 			break;
+ 		case PT_APPTIME:
+  			lpPropVal->__union = SOAP_UNION_propValData_dbl;
++#ifndef __OpenBSD__
+ 			lpPropVal->Value.dbl = strtod_l(lpDBRow[ulColId], NULL, loc);
++#else
++			lpPropVal->Value.dbl = strtod(lpDBRow[ulColId], NULL);
++#endif
+ 			break;
+ 		case PT_SYSTIME:
+ 			lpPropVal->Value.hilo = s_alloc<hiloLong>(soap);
+@@ -807,7 +821,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 			{
+ 				ParseMVProp(lpDBRow[ulColId], lpDBLen[ulColId], &ulLastPos, &strData);
+ 
++#ifndef __OpenBSD__
+ 				lpPropVal->Value.mvflt.__ptr[j] = (float)strtod_l(strData.c_str(), NULL, loc);
++#else
++				lpPropVal->Value.mvflt.__ptr[j] = (float)strtod(strData.c_str(), NULL);
++#endif
+ 			}
+ 			break;
+ 		case PT_MV_APPTIME:
+@@ -827,7 +845,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 			{
+ 				ParseMVProp(lpDBRow[ulColId], lpDBLen[ulColId], &ulLastPos, &strData);
+ 
++#ifndef __OpenBSD__
+ 				lpPropVal->Value.mvdbl.__ptr[j] = strtod_l(strData.c_str(), NULL, loc);
++#else
++				lpPropVal->Value.mvdbl.__ptr[j] = strtod(strData.c_str(), NULL);
++#endif
+ 			}
+ 			break;
+ 		case PT_MV_CURRENCY:
+@@ -935,7 +957,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+ 	} 
+ 
+ exit:
++#ifndef __OpenBSD__
+ 	freelocale(loc);
++#endif
+ 	return er;
+ }
+ 

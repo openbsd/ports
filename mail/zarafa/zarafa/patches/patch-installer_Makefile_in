@@ -1,15 +1,24 @@
-$OpenBSD: patch-installer_Makefile_in,v 1.4 2009/10/21 09:59:54 ajacoutot Exp $
---- installer/Makefile.in.orig	Fri Oct 16 20:39:23 2009
-+++ installer/Makefile.in	Wed Oct 21 11:32:04 2009
-@@ -273,12 +273,12 @@ distclean-libtool:
- uninstall-info-am:
+$OpenBSD: patch-installer_Makefile_in,v 1.5 2010/06/30 02:46:48 ajacoutot Exp $
+--- installer/Makefile.in.orig	Mon May 31 16:38:00 2010
++++ installer/Makefile.in	Tue Jun 29 17:14:47 2010
+@@ -232,7 +232,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = linux userscripts quotamail indexerscripts
++SUBDIRS = linux userscripts quotamail
+ dist_data_DATA = ldap/zarafa.schema licenseagreement/eula.txt licenseagreement/AGPL-3
+ all: all-recursive
+ 
+@@ -274,12 +274,12 @@ clean-libtool:
+ 	-rm -rf .libs _libs
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
++	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
  	@list='$(dist_data_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  f=$(am__strip_dir) \
 -	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
 -	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
 +	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \

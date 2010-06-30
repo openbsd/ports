@@ -1,0 +1,5 @@
+You can disable the PHP mapi module by removing the
+${PREFIX-web}/conf/php5/${MODULE_NAME}.ini symbolic link by
+issuing the following command: 
+
+rm -f ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini

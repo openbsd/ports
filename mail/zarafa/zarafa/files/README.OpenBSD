@@ -1,7 +1,8 @@
-$OpenBSD: README.OpenBSD,v 1.11 2010/06/03 14:01:57 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.12 2010/06/30 02:46:48 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
+    http://doc.zarafa.com/6.40/Administrator_Manual/en-US/html-single/index.html#_performing_the_upgrade
 
 Post-install/update instructions for Zarafa
 ===========================================
@@ -69,12 +70,12 @@ if [ "`pgrep zarafa`" ]; then
 	pkill zarafa-server
 	sleep 5
 	i=0
-	while [ $i -lt 15 ]
+	while [ ${i} -lt 15 ]
 		do
 		if [ "`pgrep zarafa\-`" ]; then
 			pkill zarafa\-
 			sleep 5
-			i=`expr $i + 5`
+			i=`expr ${i} + 5`
 		else
 			i=15
 		fi
@@ -129,6 +130,30 @@ The .forward will be automatically generated when a new user is added to
 Zarafa.
 
 
+Zarafa webaccess
+----------------
+
+You need to edit the config.php file installed under:
+${INSTDIR} for regular web client access
+
+With Apache, this directory should be granted these permissions:
+    AllowOverride Indexes Options
+
+If you want to debug the webaccess, copy the following file
+   ${INSTDIR}/debug.php.disabled
+to
+   ${INSTDIR}/debug.php
+The debugging output will then be available under:
+   ${INSTDIR}/debug.txt
+
+You can enable the PHP mapi module by creating a symbolic
+link from ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini to
+${PREFIX-web}/conf/php5/${MODULE_NAME}.ini:
+
+ln -fs ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini \
+    ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini
+
+
 The PHP mapi module and OpenBSD Apache
 --------------------------------------
 
@@ -153,3 +178,4 @@ Each zarafa-* command has its corresponding manpage.
 Some documentation is also available on the Internet:
     http://www.zarafa.com/wiki/index.php/Main_Page
     http://www.zarafa.com/content/documentation
+    http://doc.zarafa.com/6.40/Administrator_Manual/en-US/html-single/index.html

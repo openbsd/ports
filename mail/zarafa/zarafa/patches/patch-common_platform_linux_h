@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.6 2010/06/06 20:10:21 espie Exp $
---- common/platform.linux.h.orig	Tue Apr 27 21:07:02 2010
-+++ common/platform.linux.h	Sun Jun  6 21:25:25 2010
+$OpenBSD: patch-common_platform_linux_h,v 1.7 2010/06/30 02:46:48 ajacoutot Exp $
+--- common/platform.linux.h.orig	Mon May 31 19:28:57 2010
++++ common/platform.linux.h	Tue Jun 15 16:26:32 2010
 @@ -63,8 +63,15 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -16,8 +16,31 @@ $OpenBSD: patch-common_platform_linux_h,v 1.6 2010/06/06 20:10:21 espie Exp $
 +#endif
  #include <errno.h>
  
- #ifdef HAVE_UNISTD_H
-@@ -669,7 +676,7 @@ time_t GetProcessTime();
+ #include <string>
+@@ -659,7 +666,11 @@ time_t GetProcessTime();
+ 
+ #ifndef ntohll
+ 	#if __BYTE_ORDER == __LITTLE_ENDIAN
++#ifndef __OpenBSD__
+ 		#define ntohll(x) __bswap_64(x)
++#else
++		#define ntohll(x) __swap64(x)
++#endif // __OpenBSD__
+ 	#else
+ 		#define ntohll(x) (x)
+ 	#endif
+@@ -667,14 +678,18 @@ time_t GetProcessTime();
+ 
+ #ifndef htonll
+ 	#if __BYTE_ORDER == __LITTLE_ENDIAN
++#ifndef __OpenBSD__
+ 		#define htonll(x) __bswap_64(x)
++#else
++		#define htonll(x) __swap64(x)
++#endif // __OpenBSD__
+ 	#else
+ 		#define htonll(x) (x)
+ 	#endif
  #endif
  
  #define OutputDebugString(dstr) fprintf(stderr,"%s",dstr)

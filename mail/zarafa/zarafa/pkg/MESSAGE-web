@@ -17,3 +17,10 @@ to
    ${INSTDIR}/debug.php
 The debugging output will then be available under:
    ${INSTDIR}/debug.txt
+
+You can enable the PHP mapi module by creating a symbolic
+link from ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini to
+${PREFIX-web}/conf/php5/${MODULE_NAME}.ini:
+
+ln -fs ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini \
+    ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini

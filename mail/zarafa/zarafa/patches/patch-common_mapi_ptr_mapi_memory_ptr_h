@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_mapi_ptr_mapi_memory_ptr_h,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- common/mapi_ptr/mapi_memory_ptr.h.orig	Mon Jun 28 23:34:25 2010
++++ common/mapi_ptr/mapi_memory_ptr.h	Mon Jun 28 23:35:09 2010
+@@ -52,6 +52,11 @@
+ 
+ #include <utility>
+ 
++// _U is defined in ctype.h
++#ifdef __OpenBSD__
++#undef _U
++#endif
++
+ template<typename _T>
+ class mapi_memory_proxy
+ {

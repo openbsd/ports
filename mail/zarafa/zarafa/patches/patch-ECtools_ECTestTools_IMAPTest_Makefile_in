@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_Makefile_in,v 1.4 2009/10/21 09:59:54 ajacoutot Exp $
---- ECtools/ECTestTools/IMAPTest/Makefile.in.orig	Fri Oct 16 20:39:17 2009
-+++ ECtools/ECTestTools/IMAPTest/Makefile.in	Wed Oct 21 11:32:04 2009
-@@ -237,7 +237,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_Makefile_in,v 1.5 2010/06/30 02:46:48 ajacoutot Exp $
+--- ECtools/ECTestTools/IMAPTest/Makefile.in.orig	Mon May 31 16:37:58 2010
++++ ECtools/ECTestTools/IMAPTest/Makefile.in	Mon Jun 14 09:16:43 2010
+@@ -231,7 +231,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX
 -IMAPTest_LDADD = -lssl \
 +IMAPTest_LDADD = -lssl -lcrypto \

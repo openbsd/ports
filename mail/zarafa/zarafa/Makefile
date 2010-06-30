@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.37 2010/06/03 14:01:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/06/30 02:46:48 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
-COMMENT-php=	MAPI extensions for php5
+COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 
-V=		6.30.14
+V=		6.40.0
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-php=	php5-mapi-${V}
+PKGNAME-main=	${DISTNAME}
+PKGNAME-web=	zarafa-webaccess-${V}
 
 CATEGORIES=	mail www productivity
 
 MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/zarafa/
 
-SHARED_LIBS +=  common_util	0.0 # .1.0
-SHARED_LIBS +=  common_mapi	0.0 # .1.0
-SHARED_LIBS +=  common_ssl	0.0 # .1.0
-SHARED_LIBS +=  freebusy	0.0 # .1.0
-SHARED_LIBS +=  mapi		0.0 # .0.0
-SHARED_LIBS +=  zarafaclient	0.0 # .1.0
-SHARED_LIBS +=  icalmapi	0.0 # .1.0
-SHARED_LIBS +=  inetmapi	0.1 # .1.0
+SHARED_LIBS +=  common_util	1.0 # .1.0
+SHARED_LIBS +=  common_mapi	1.0 # .1.0
+SHARED_LIBS +=  common_ssl	1.0 # .1.0
+SHARED_LIBS +=  freebusy	1.0 # .1.0
+SHARED_LIBS +=  mapi		1.0 # .0.0
+SHARED_LIBS +=  zarafaclient	1.0 # .1.0
+SHARED_LIBS +=  icalmapi	1.0 # .1.0
+SHARED_LIBS +=  inetmapi	1.0 # .1.0
+SHARED_LIBS +=  zarafasync	1.0 # .1.0
 
-MULTI_PACKAGES=	-main -php
+MULTI_PACKAGES=	-main -web
 
 MODULES=	devel/gettext
 
@@ -39,41 +40,49 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		uuid.>=13::devel/uuid \
 		execinfo::devel/libexecinfo \
 		vmime-zarafa:zarafa-libvmime->=0.7.1p3:mail/zarafa/libvmime \
-		ical-zarafa.>=2,icalss-zarafa.>=2::mail/zarafa/libical
+		ical.>=1,icalss::textproc/libical
 
-WANTLIB-php=	execinfo ical-zarafa icalss-zarafa \
-		uuid vmime-zarafa
-LIB_DEPENDS-php= ${MODGETTEXT_LIB_DEPENDS} \
+WANTLIB-web=	execinfo ical icalss uuid vmime-zarafa
+LIB_DEPENDS-web= ${MODGETTEXT_LIB_DEPENDS} \
 		common_mapi,common_util,freebusy,icalmapi,inetmapi,mapi::mail/zarafa/zarafa,-main
-RUN_DEPENDS-php= ::www/php5/core
+RUN_DEPENDS-web= ::www/php5/core
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
 
-PREFIX-php=	/var/www
+WEBROOT=	/var/www
+
+PREFIX-web=	${WEBROOT}
+INSTDIR=	${PREFIX-web}/zarafa-webaccess
 MODULE_NAME=	mapi
-SUBST_VARS=	^MODULE_NAME PREFIX-php
+
+SUBST_VARS=	^MODULE_NAME INSTDIR PREFIX-web
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/zarafa" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo \
 			-L${LOCALBASE}/lib/zarafa" \
-		ZAFARA_LDFLAGS="-L${LOCALBASE}/lib/zarafa"
+		ZAFARA_LDFLAGS="-L${LOCALBASE}/lib/zarafa" \
+		PHP_SYSCONF_DIR="${PREFIX-web}/conf/php5"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-dependency-tracking \
 		--disable-static \
+		--disable-perl \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
+		--enable-dependency-tracking \
 		--enable-release \
 		--enable-oss \
-		--disable-perl \
+		--with-distro=openbsd \
 		--with-vmime-prefix=${LOCALBASE}/include/zarafa \
 		--with-ical-prefix=${LOCALBASE}/include/
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/zarafa/report-ca \
+# XXX in-tree heimdal does not provide krb5_free_unparsed_name()
+CONFIGURE_ARGS+= --with-krb5=/usr/bin/true
+
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \
 		QUOTATEMPLATEDIR=${PREFIX}/share/examples/zarafa/quotamail
 
@@ -81,9 +90,9 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
 
-CONF_FILES=	dagent.cfg gateway.cfg ical.cfg ldap.active-directory.cfg \
-		ldap.openldap.cfg monitor.cfg server.cfg spooler.cfg \
-		unix.cfg
+post-patch:
+	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \
+		${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg.dist
 
 pre-configure:
 	cd ${WRKSRC}/installer/linux && \
@@ -102,8 +111,17 @@ pre-configure:
 		${WRKSRC}/doc/manual.xml
 
 post-install:
-	for i in ${CONF_FILES}; do mv ${PREFIX}/share/doc/zarafa/$${i} \
-		${PREFIX}/share/examples/zarafa/; done
+	${SUBST_CMD} ${WRKSRC}/php-webclient-ajax/config.php.dist
+	find ${WRKSRC}/php-webclient-ajax -name \*.orig -or -name \*.bak | xargs rm -f
+	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
+	cd ${WRKSRC}/php-webclient-ajax && tar cf - ./ | \
+		tar -xf - -C ${WRKINST}${INSTDIR}
+	${INSTALL_DATA} ${WRKINST}${INSTDIR}/debug.php \
+		${WRKINST}${INSTDIR}/debug.php.disabled
+	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt 
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${INSTDIR}
+	find ${PREFIX} -name \*.beforesubst -exec rm {} \;
+
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/zarafa/README.OpenBSD
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
 	${SUBST_CMD} -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
@@ -112,12 +130,12 @@ post-install:
 		${PREFIX}/share/examples/zarafa/local_zarafa.m4
 	chmod ${SHAREMODE} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
 		${PREFIX}/share/examples/zarafa/local_zarafa.m4
-	${INSTALL_DATA_DIR} ${DESTDIR}/${PREFIX-php}/conf/php5.sample
-	echo "; Enable Zarafa mapi extension module\nextension=mapi.so" \
-		> ${WRKINST}/${PREFIX-php}/conf/php5.sample/${MODULE_NAME}.ini
+	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/conf/php5.sample
+	${INSTALL_DATA} ${WRKSRC}/php-ext/zarafa.ini \
+		${WRKINST}/${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini.dist
 	mv ${PREFIX}/share/doc/zarafa/zarafa.schema \
 		${PREFIX}/share/examples/zarafa/
-	find ${WRKINST}${PREFIX-php}/include/php/mapi/ -type f \
+	find ${WRKINST}${PREFIX-web}/include/php -type f \
 		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
 
 .include <bsd.port.mk>

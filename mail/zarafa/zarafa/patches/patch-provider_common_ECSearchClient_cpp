@@ -1,0 +1,35 @@
+$OpenBSD: patch-provider_common_ECSearchClient_cpp,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- provider/common/ECSearchClient.cpp.orig	Tue Jun 29 00:34:25 2010
++++ provider/common/ECSearchClient.cpp	Tue Jun 29 00:35:13 2010
+@@ -123,7 +123,9 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
+ 	ECRESULT er = erSuccess;
+ 	ECSearchResultArray *lpResults = NULL;
+ 	std::vector<std::string> lstResponse;
++#ifndef __OpenBSD__
+ 	locale_t loc = createlocale(LC_NUMERIC, "C");
++#endif
+ 
+ 	if (!lppsResults) {
+ 		er = ZARAFA_E_INVALID_PARAMETER;
+@@ -171,7 +173,11 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
+ 
+ 		memcpy(lpResults->__ptr[i].sEntryId.__ptr, strEntryId.c_str(), strEntryId.size());
+ 
++#ifndef __OpenBSD__
+ 		lpResults->__ptr[i].fScore = strtod_l(tmp[1].c_str(), NULL, loc);
++#else
++		lpResults->__ptr[i].fScore = strtod(tmp[1].c_str(), NULL);
++#endif
+ 		lpResults->__size++;
+ 	}
+ 
+@@ -182,7 +188,9 @@ exit:
+ 	if ((er != erSuccess) && lpResults)
+ 		FreeSearchResults(lpResults);
+ 
++#ifndef __OpenBSD__
+ 	freelocale(loc);
++#endif
+ 
+ 	return er;
+ }

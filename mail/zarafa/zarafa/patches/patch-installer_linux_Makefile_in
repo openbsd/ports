@@ -1,33 +1,48 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.9 2010/04/22 10:06:18 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Wed Apr 14 13:13:43 2010
-+++ installer/linux/Makefile.in	Thu Apr 22 11:31:44 2010
-@@ -57,23 +57,11 @@ SOURCES =
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.10 2010/06/30 02:46:48 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Mon May 31 16:38:00 2010
++++ installer/linux/Makefile.in	Tue Jun 29 20:14:03 2010
+@@ -54,15 +54,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/common/config.h
+ CONFIG_CLEAN_FILES =
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconf_initdir)" \
+-	"$(DESTDIR)$(datadir)" "$(DESTDIR)$(data_configdir)" \
++am__installdirs = "$(DESTDIR)$(bindir)" \
++	"$(DESTDIR)$(datadir)" \
+ 	"$(DESTDIR)$(sysconf_certdir)" \
+ 	"$(DESTDIR)$(sysconf_configdir)" \
+ 	"$(DESTDIR)$(sysconf_rotatedir)" \
+ 	"$(DESTDIR)$(sysconf_sysconfigdir)"
+ dist_binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ sysconf_initSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+-SCRIPTS = $(dist_bin_SCRIPTS) $(sysconf_init_SCRIPTS)
++SCRIPTS = $(dist_bin_SCRIPTS)
+ SOURCES =
  DIST_SOURCES =
- am__dist_data_DATA_DIST = server.cfg unix.cfg ldap.openldap.cfg \
- 	ldap.active-directory.cfg spooler.cfg gateway.cfg monitor.cfg \
--	dagent.cfg ical.cfg zarafa.logrotate zarafa-server.init.suse \
--	zarafa-spooler.init.suse zarafa-gateway.init.suse \
--	zarafa-monitor.init.suse zarafa-ical.init.suse \
--	zarafa-server.init.fc zarafa-spooler.init.fc \
--	zarafa-gateway.init.fc zarafa-monitor.init.fc \
--	zarafa-ical.init.fc zarafa-server.init.cbs4 \
--	zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 \
--	zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
-+	dagent.cfg ical.cfg \
- 	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 \
- 	db-convert-4.20-to-innodb.sql db-calc-storesize \
- 	db-convert-attachments-to-files createuser.dotforward \
--	db-convert-4.2x-to-5.00 ssl-certificates.sh \
--	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse \
--	zarafa-dagent.init.fc autorespond licensed.cfg \
--	ldapms.openldap.cfg ldapms.active-directory.cfg \
--	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse \
--	zarafa-licensed.init.fc
-+	db-convert-4.2x-to-5.00 ssl-certificates.sh
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+@@ -72,17 +72,17 @@ am__vpath_adj = case $$p in \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
- am__dist_sysconf_DATA_DIST = addtrust.crt
- dist_sysconfDATA_INSTALL = $(INSTALL_DATA)
-@@ -221,6 +209,7 @@ datadir = ${docdir}
+-am__dist_data_config_DATA_DIST = server.cfg unix.cfg ldap.propmap.cfg \
++am__dist_data_config_DATA_DIST = server.cfg ldap.propmap.cfg \
+ 	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg \
+-	indexer.cfg autorespond licensed.cfg ldap.openldap.cfg \
++	autorespond ldap.openldap.cfg \
+ 	ldap.active-directory.cfg ldapms.openldap.cfg \
+ 	ldapms.active-directory.cfg
+ dist_data_configDATA_INSTALL = $(INSTALL_DATA)
+ am__dist_sysconf_cert_DATA_DIST = addtrust.crt
+ dist_sysconf_certDATA_INSTALL = $(INSTALL_DATA)
+-am__dist_sysconf_config_DATA_DIST = server.cfg unix.cfg \
++am__dist_sysconf_config_DATA_DIST = server.cfg \
+ 	ldap.propmap.cfg spooler.cfg gateway.cfg monitor.cfg \
+-	dagent.cfg ical.cfg indexer.cfg autorespond licensed.cfg \
++	dagent.cfg ical.cfg autorespond \
+ 	ldap.openldap.cfg ldap.active-directory.cfg \
+ 	ldapms.openldap.cfg ldapms.active-directory.cfg
+ dist_sysconf_configDATA_INSTALL = $(INSTALL_DATA)
+@@ -232,6 +232,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -35,19 +50,75 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.9 2010/04/22 10:06:18 ajacoutot 
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -249,13 +238,10 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = /etc/zarafa/report-ca
+@@ -260,8 +261,8 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
--	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg zarafa.logrotate \
--	zarafa-server.init.suse zarafa-spooler.init.suse zarafa-gateway.init.suse zarafa-monitor.init.suse zarafa-ical.init.suse \
--	zarafa-server.init.fc zarafa-spooler.init.fc zarafa-gateway.init.fc zarafa-monitor.init.fc zarafa-ical.init.fc \
--	zarafa-server.init.cbs4 zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
-+	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg \
- 	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
- 	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
--	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc autorespond\
-+	autorespond\
- $(am__append_1)
- dist_bin_SCRIPTS = zarafa-autorespond
- @OSS_ONLY_FALSE@dist_sysconf_DATA = addtrust.crt
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-config_files = server.cfg unix.cfg ldap.propmap.cfg spooler.cfg \
+-	gateway.cfg monitor.cfg dagent.cfg ical.cfg indexer.cfg \
++config_files = server.cfg ldap.propmap.cfg spooler.cfg \
++	gateway.cfg monitor.cfg dagent.cfg ical.cfg \
+ 	autorespond $(am__append_2) $(BUILT_SOURCES)
+ rhel_initscript_files = zarafa-server.init.rhel \
+ 	zarafa-spooler.init.rhel zarafa-gateway.init.rhel \
+@@ -456,15 +457,7 @@ uninstall-dist_sysconf_configDATA:
+ 	  echo " rm -f '$(DESTDIR)$(sysconf_configdir)/$$f'"; \
+ 	  rm -f "$(DESTDIR)$(sysconf_configdir)/$$f"; \
+ 	done
+-install-dist_sysconf_rotateDATA: $(dist_sysconf_rotate_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(sysconf_rotatedir)" || $(MKDIR_P) "$(DESTDIR)$(sysconf_rotatedir)"
+-	@list='$(dist_sysconf_rotate_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(dist_sysconf_rotateDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconf_rotatedir)/$$f'"; \
+-	  $(dist_sysconf_rotateDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconf_rotatedir)/$$f"; \
+-	done
++install-dist_sysconf_rotateDATA:
+ 
+ uninstall-dist_sysconf_rotateDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -528,7 +521,7 @@ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconf_initdir)" "$(DESTDIR)$(datadir)" "$(DESTDIR)$(data_configdir)" "$(DESTDIR)$(sysconf_certdir)" "$(DESTDIR)$(sysconf_configdir)" "$(DESTDIR)$(sysconf_rotatedir)" "$(DESTDIR)$(sysconf_sysconfigdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(datadir)" "$(DESTDIR)$(data_configdir)" "$(DESTDIR)$(sysconf_certdir)" "$(DESTDIR)$(sysconf_configdir)" "$(DESTDIR)$(sysconf_sysconfigdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -575,9 +568,9 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-dist_dataDATA install-dist_data_configDATA \
++install-data-am: install-dist_dataDATA \
+ 	install-dist_sysconf_certDATA install-dist_sysconf_configDATA \
+-	install-dist_sysconf_rotateDATA install-sysconf_initSCRIPTS \
++	install-dist_sysconf_rotateDATA \
+ 	install-sysconf_sysconfigDATA
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+@@ -657,13 +650,7 @@ ldapms.active-directory.cfg: ldap.m4
+ 	m4 -DTYPE=ADS -DMULTISERVER=1 ${top_srcdir}/installer/linux/ldap.m4 > $@
+ 
+ install-data-hook:
+-	install -d -m 755 ${DESTDIR}/${sysconf_configdir}/license
+ 	install -d -m 755 ${DESTDIR}/${sysconf_configdir}/report
+-	mv ${DESTDIR}/${sysconf_rotatedir}/zarafa.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa
+-	mv ${DESTDIR}/${sysconf_rotatedir}/zarafa-indexer.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa-indexer
+-	if test -f ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed.logrotate; then \
+-		mv ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed; \
+-	fi
+ 	if test ${DISTRO} = "sles" -o ${DISTRO} = "suse"; then \
+ 		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa || true; \
+ 		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig-indexer.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa-indexer || true; \
+@@ -685,8 +672,6 @@ install-data-hook:
+ 			mv "$$f" "$$newf"; \
+ 		done \
+ 	fi
+-	install -d -m 755 ${DESTDIR}/${datarootdir}/doc/zarafa-indexer/example-config
+-	mv ${DESTDIR}/${data_configdir}/indexer.cfg ${DESTDIR}/${datarootdir}/doc/zarafa-indexer/example-config
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-zarafa-libsync_Makefile_in,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- zarafa-libsync/Makefile.in.orig	Wed Jun 30 02:22:58 2010
++++ zarafa-libsync/Makefile.in	Wed Jun 30 02:23:17 2010
+@@ -252,7 +252,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX		\
+ 	-I${top_srcdir}/common
+ 
+ libzarafasync_la_includedir = $(includedir)/libzarafasync
+-libzarafasync_la_LDFLAGS = -static
++libzarafasync_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
+ libzarafasync_la_include_HEADERS = ECLibSync.h ECSync.h ECSyncLog.h	\
+ 	ECSyncUtil.h ECSyncContext.h ECOfflineABImporter.h ECSyncSettings.h
+ 

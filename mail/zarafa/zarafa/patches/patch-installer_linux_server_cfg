@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.5 2009/11/12 16:44:59 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Fri Oct 16 15:56:00 2009
-+++ installer/linux/server.cfg	Thu Nov 12 17:41:17 2009
+$OpenBSD: patch-installer_linux_server_cfg,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Mon May 31 15:44:43 2010
++++ installer/linux/server.cfg	Mon Jun 14 09:16:43 2010
 @@ -36,16 +36,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.5 2009/11/12 16:44:59 ajacoutot E
  
  ##############################################################
  # LOG SETTINGS
-@@ -89,10 +89,10 @@ mysql_password		= root
+@@ -89,10 +89,10 @@ mysql_password		= 
  mysql_database		= zarafa
  
  # Where to place attachments. Value can be 'database' or 'files'
@@ -66,9 +66,9 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.5 2009/11/12 16:44:59 ajacoutot E
 -sslkeys_path		= /etc/zarafa/sslkeys
 +sslkeys_path		= ${SYSCONFDIR}/zarafa/sslkeys
  
- 
  ##############################################################
-@@ -196,23 +196,24 @@ companyquota_warn      = 0
+ # THREAD SETTINGS
+@@ -246,23 +246,24 @@ companyquota_warn      = 0
  # Name of the plugin that handles users
  # Required, default = ldap
  # Values: ldap, unix, db
@@ -100,9 +100,9 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.5 2009/11/12 16:44:59 ajacoutot E
 +createcompany_script	=	${SYSCONFDIR}/zarafa/userscripts/createcompany
 +deletecompany_script	=	${SYSCONFDIR}/zarafa/userscripts/deletecompany
  
- ##############################################################
- # MISC SETTINGS
-@@ -259,7 +260,7 @@ client_update_enabled = false
+ # Set this option to 'yes' to skip the creation and deletion of new users
+ # The action will be logged, so you can see if your changes to the plugin
+@@ -319,7 +320,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/04/22 10:06:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2010/06/30 02:46:48 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
 bin/zarafa-autorespond
+@bin bin/zarafa-cfgchecker
 @bin bin/zarafa-dagent
 @bin bin/zarafa-fsck
 @bin bin/zarafa-gateway
@@ -23,6 +24,7 @@ include/icalmapi/nameids.h
 include/icalmapi/valarm.h
 include/icalmapi/vconverter.h
 include/icalmapi/vevent.h
+include/icalmapi/vfreebusy.h
 include/icalmapi/vtimezone.h
 include/icalmapi/vtodo.h
 include/inetmapi/
@@ -38,6 +40,24 @@ include/inetmapi/mapiTextPart.h
 include/inetmapi/options.h
 include/inetmapi/outputStreamMAPIAdapter.h
 include/inetmapi/tnef.h
+include/libfreebusy/
+include/libfreebusy/ECEnumFBBlock.h
+include/libfreebusy/ECFBBlockList.h
+include/libfreebusy/ECFreeBusyData.h
+include/libfreebusy/ECFreeBusySupport.h
+include/libfreebusy/ECFreeBusyUpdate.h
+include/libfreebusy/freebusy.h
+include/libfreebusy/freebusyguid.h
+include/libfreebusy/freebusytags.h
+include/libfreebusy/freebusyutil.h
+include/libzarafasync/
+include/libzarafasync/ECLibSync.h
+include/libzarafasync/ECOfflineABImporter.h
+include/libzarafasync/ECSync.h
+include/libzarafasync/ECSyncContext.h
+include/libzarafasync/ECSyncLog.h
+include/libzarafasync/ECSyncSettings.h
+include/libzarafasync/ECSyncUtil.h
 include/mapi4linux/
 include/mapi4linux/edkmdb.h
 include/mapi4linux/imessage.h
@@ -56,6 +76,7 @@ include/zarafa/ECChannel.h
 include/zarafa/ECConfig.h
 include/zarafa/ECDebug.h
 include/zarafa/ECDefs.h
+include/zarafa/ECFifoBuffer.h
 include/zarafa/ECGuid.h
 include/zarafa/ECIConv.h
 include/zarafa/ECKeyTable.h
@@ -63,17 +84,19 @@ include/zarafa/ECLogger.h
 include/zarafa/ECMemStream.h
 include/zarafa/ECMemTable.h
 include/zarafa/ECScheduler.h
+include/zarafa/ECSerializer.h
 include/zarafa/ECTags.h
 include/zarafa/ECUnknown.h
 include/zarafa/EMSAbTag.h
+include/zarafa/IECChangeAdviseSink.h
+include/zarafa/IECChangeAdvisor.h
 include/zarafa/IECExportAddressbookChanges.h
 include/zarafa/IECExportChanges.h
 include/zarafa/IECImportAddressbookChanges.h
+include/zarafa/IECImportContentsChanges.h
 include/zarafa/IECLicense.h
 include/zarafa/IECMultiStoreTable.h
 include/zarafa/IECSecurity.h
-include/zarafa/IECServerBehavior.h
-include/zarafa/IECServerMimic.h
 include/zarafa/IECServiceAdmin.h
 include/zarafa/IECSingleInstance.h
 include/zarafa/IECSpooler.h
@@ -91,6 +114,11 @@ include/zarafa/base64.h
 include/zarafa/codepage.h
 include/zarafa/edkguid.h
 include/zarafa/favoritesutil.h
+include/zarafa/mapi_array_ptr.h
+include/zarafa/mapi_memory_ptr.h
+include/zarafa/mapi_object_ptr.h
+include/zarafa/mapi_ptr.h
+include/zarafa/mapi_rowset_ptr.h
 include/zarafa/mapicontact.h
 include/zarafa/mapiext.h
 include/zarafa/mapiguidext.h
@@ -120,6 +148,8 @@ lib/libmapi.la
 @lib lib/libmapi.so.${LIBmapi_VERSION}
 lib/libzarafaclient.la
 @lib lib/libzarafaclient.so.${LIBzarafaclient_VERSION}
+@comment lib/libzarafasync.la
+@lib lib/libzarafasync.so.${LIBzarafasync_VERSION}
 lib/pkgconfig/zarafa.pc
 lib/zarafa/
 @comment lib/zarafa/dbplugin.la
@@ -128,11 +158,11 @@ lib/zarafa/dbplugin.so
 lib/zarafa/ldapplugin.so
 @man man/man1/zarafa-admin.1
 @man man/man1/zarafa-backup.1
+@man man/man1/zarafa-cfgchecker.1
 @man man/man1/zarafa-dagent.1
 @man man/man1/zarafa-fsck.1
 @man man/man1/zarafa-gateway.1
 @man man/man1/zarafa-ical.1
-@comment @man man/man1/zarafa-licensed.1
 @man man/man1/zarafa-monitor.1
 @man man/man1/zarafa-passwd.1
 @man man/man1/zarafa-report.1
@@ -145,17 +175,12 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-gateway.cfg.5
 @man man/man5/zarafa-ical.cfg.5
 @man man/man5/zarafa-ldap.cfg.5
-@comment @man man/man5/zarafa-ldapms.cfg.5
-@comment @man man/man5/zarafa-licensed.cfg.5
 @man man/man5/zarafa-monitor.cfg.5
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
-@comment @man man/man5/zarafa-unix.cfg.5
 share/doc/zarafa/
 share/doc/zarafa/AGPL-3
 share/doc/zarafa/README.OpenBSD
-share/doc/zarafa/UPGRADE.txt
-share/doc/zarafa/autorespond
 share/doc/zarafa/createuser.dotforward
 share/doc/zarafa/db-calc-storesize
 share/doc/zarafa/db-convert-4.1-to-4.2
@@ -163,8 +188,9 @@ share/doc/zarafa/db-convert-4.20-to-4.21
 share/doc/zarafa/db-convert-4.20-to-innodb.sql
 share/doc/zarafa/db-convert-4.2x-to-5.00
 share/doc/zarafa/db-convert-attachments-to-files
+share/doc/zarafa/db-upgrade-objectsid-to-objectguid.pl
 share/doc/zarafa/eula.txt
-share/doc/zarafa/performance-tuning.txt
+share/doc/zarafa/ldap-switch-sendas.pl
 share/doc/zarafa/ssl-certificates.sh
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/
@@ -174,6 +200,7 @@ share/examples/zarafa/
 @mode
 @group
 @sample ${SYSCONFDIR}/zarafa/sslkeys/
+share/examples/zarafa/autorespond
 share/examples/zarafa/dagent.cfg
 @sample ${SYSCONFDIR}/zarafa/dagent.cfg
 share/examples/zarafa/gateway.cfg
@@ -192,6 +219,7 @@ share/examples/zarafa/ldap.openldap.cfg
 @sample ${SYSCONFDIR}/zarafa/ldap.cfg
 @mode
 @group
+share/examples/zarafa/ldap.propmap.cfg
 share/examples/zarafa/local_zarafa.m4
 @mode 0444
 @sample /usr/share/sendmail/feature/local_zarafa.m4
@@ -212,8 +240,9 @@ share/examples/zarafa/quotamail/usersoft.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/usersoft.mail
 share/examples/zarafa/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/userwarning.mail
-share/examples/zarafa/report-ca/
 @sample ${SYSCONFDIR}/zarafa/report-ca/
+share/examples/zarafa/report/
+share/examples/zarafa/report-ca/
 share/examples/zarafa/server.cfg
 @mode 640
 @group _zarafa
@@ -222,7 +251,6 @@ share/examples/zarafa/server.cfg
 @group
 share/examples/zarafa/spooler.cfg
 @sample ${SYSCONFDIR}/zarafa/spooler.cfg
-@comment share/examples/zarafa/unix.cfg
 share/examples/zarafa/userscripts/
 @sample ${SYSCONFDIR}/zarafa/userscripts/
 @mode 755
@@ -236,6 +264,9 @@ share/examples/zarafa/userscripts/createcompany.d/00createpublic
 @sample ${SYSCONFDIR}/zarafa/userscripts/createcompany.d/00createpublic
 share/examples/zarafa/userscripts/creategroup
 @sample ${SYSCONFDIR}/zarafa/userscripts/creategroup
+@mode
+share/examples/zarafa/userscripts/creategroup.d/
+@mode 755
 share/examples/zarafa/userscripts/createuser
 @sample ${SYSCONFDIR}/zarafa/userscripts/createuser
 share/examples/zarafa/userscripts/createuser.d/
@@ -244,8 +275,14 @@ share/examples/zarafa/userscripts/createuser.d/00createstore
 @sample ${SYSCONFDIR}/zarafa/userscripts/createuser.d/00createstore
 share/examples/zarafa/userscripts/deletecompany
 @sample ${SYSCONFDIR}/zarafa/userscripts/deletecompany
+@mode
+share/examples/zarafa/userscripts/deletecompany.d/
+@mode 755
 share/examples/zarafa/userscripts/deletegroup
 @sample ${SYSCONFDIR}/zarafa/userscripts/deletegroup
+@mode
+share/examples/zarafa/userscripts/deletegroup.d/
+@mode 755
 share/examples/zarafa/userscripts/deleteuser
 @sample ${SYSCONFDIR}/zarafa/userscripts/deleteuser
 share/examples/zarafa/userscripts/deleteuser.d/
@@ -260,7 +297,6 @@ share/examples/zarafa/zarafa.m4
 @sample /usr/share/sendmail/mailer/zarafa.m4
 @mode
 share/examples/zarafa/zarafa.schema
-share/locale/ca/LC_MESSAGES/zarafa.mo
 share/locale/da/LC_MESSAGES/zarafa.mo
 share/locale/de/LC_MESSAGES/zarafa.mo
 share/locale/es/LC_MESSAGES/zarafa.mo

@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- common/mapi_ptr/mapi_object_ptr.h.orig	Mon Jun 28 23:35:15 2010
++++ common/mapi_ptr/mapi_object_ptr.h	Mon Jun 28 23:35:26 2010
+@@ -56,6 +56,11 @@
+ #include "ECTags.h"
+ #include "mapi_memory_ptr.h"
+ 
++// _P is defined in ctype.h
++#ifdef __OpenBSD__
++#undef _P
++#endif
++
+ // http://tinyurl.com/ydb363n
+ template<typename BaseT, typename DerivedT>
+ class Conversion 

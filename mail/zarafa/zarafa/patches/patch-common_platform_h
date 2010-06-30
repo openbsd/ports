@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_h,v 1.3 2010/03/21 11:15:20 ajacoutot Exp $
---- common/platform.h.orig	Tue Jan 26 17:34:49 2010
-+++ common/platform.h	Wed Feb  3 08:53:18 2010
+$OpenBSD: patch-common_platform_h,v 1.4 2010/06/30 02:46:48 ajacoutot Exp $
+--- common/platform.h.orig	Mon May 31 19:28:57 2010
++++ common/platform.h	Mon Jun 14 09:16:43 2010
 @@ -53,9 +53,15 @@
  
    // We have to include this now in case select.h is included too soon.
@@ -15,5 +15,5 @@ $OpenBSD: patch-common_platform_h,v 1.3 2010/03/21 11:15:20 ajacoutot Exp $
    #define __FD_SETSIZE 8192
 +#endif
  
-   #include "config.h"
-   #include "platform.linux.h"
+   // Log the pthreads locks
+   #define DEBUG_PTHREADS 0

@@ -1,6 +1,6 @@
-$OpenBSD: patch-php-webclient-ajax__htaccess,v 1.1.1.1 2009/02/16 09:43:39 ajacoutot Exp $
---- php-webclient-ajax/.htaccess.orig	Wed Jan  7 12:19:15 2009
-+++ php-webclient-ajax/.htaccess	Wed Jan  7 12:19:31 2009
+$OpenBSD: patch-php-webclient-ajax__htaccess,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+--- php-webclient-ajax/.htaccess.orig	Mon Jun 14 09:43:59 2010
++++ php-webclient-ajax/.htaccess	Mon Jun 14 09:44:11 2010
 @@ -17,5 +17,5 @@ php_flag short_open_tag on
  
  # For debugging only
