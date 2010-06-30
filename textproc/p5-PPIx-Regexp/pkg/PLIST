@@ -1,0 +1,120 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/30 17:02:42 jim Exp $
+${P5SITE}/PPIx/
+${P5SITE}/PPIx/Regexp/
+${P5SITE}/PPIx/Regexp.pm
+${P5SITE}/PPIx/Regexp/Constant.pm
+${P5SITE}/PPIx/Regexp/Dumper.pm
+${P5SITE}/PPIx/Regexp/Element.pm
+${P5SITE}/PPIx/Regexp/Lexer.pm
+${P5SITE}/PPIx/Regexp/Node/
+${P5SITE}/PPIx/Regexp/Node.pm
+${P5SITE}/PPIx/Regexp/Node/Range.pm
+${P5SITE}/PPIx/Regexp/Structure/
+${P5SITE}/PPIx/Regexp/Structure.pm
+${P5SITE}/PPIx/Regexp/Structure/Assertion.pm
+${P5SITE}/PPIx/Regexp/Structure/BranchReset.pm
+${P5SITE}/PPIx/Regexp/Structure/Capture.pm
+${P5SITE}/PPIx/Regexp/Structure/CharClass.pm
+${P5SITE}/PPIx/Regexp/Structure/Code.pm
+${P5SITE}/PPIx/Regexp/Structure/Main.pm
+${P5SITE}/PPIx/Regexp/Structure/Modifier.pm
+${P5SITE}/PPIx/Regexp/Structure/NamedCapture.pm
+${P5SITE}/PPIx/Regexp/Structure/Quantifier.pm
+${P5SITE}/PPIx/Regexp/Structure/Regexp.pm
+${P5SITE}/PPIx/Regexp/Structure/Replacement.pm
+${P5SITE}/PPIx/Regexp/Structure/Subexpression.pm
+${P5SITE}/PPIx/Regexp/Structure/Switch.pm
+${P5SITE}/PPIx/Regexp/Structure/Unknown.pm
+${P5SITE}/PPIx/Regexp/Support.pm
+${P5SITE}/PPIx/Regexp/Token/
+${P5SITE}/PPIx/Regexp/Token.pm
+${P5SITE}/PPIx/Regexp/Token/Assertion.pm
+${P5SITE}/PPIx/Regexp/Token/Backreference.pm
+${P5SITE}/PPIx/Regexp/Token/Backtrack.pm
+${P5SITE}/PPIx/Regexp/Token/CharClass/
+${P5SITE}/PPIx/Regexp/Token/CharClass.pm
+${P5SITE}/PPIx/Regexp/Token/CharClass/POSIX.pm
+${P5SITE}/PPIx/Regexp/Token/CharClass/Simple.pm
+${P5SITE}/PPIx/Regexp/Token/Code.pm
+${P5SITE}/PPIx/Regexp/Token/Comment.pm
+${P5SITE}/PPIx/Regexp/Token/Condition.pm
+${P5SITE}/PPIx/Regexp/Token/Control.pm
+${P5SITE}/PPIx/Regexp/Token/Delimiter.pm
+${P5SITE}/PPIx/Regexp/Token/Greediness.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/
+${P5SITE}/PPIx/Regexp/Token/GroupType.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Assertion.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/BranchReset.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Code.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Modifier.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/NamedCapture.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Subexpression.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Switch.pm
+${P5SITE}/PPIx/Regexp/Token/Interpolation.pm
+${P5SITE}/PPIx/Regexp/Token/Literal.pm
+${P5SITE}/PPIx/Regexp/Token/Modifier.pm
+${P5SITE}/PPIx/Regexp/Token/Operator.pm
+${P5SITE}/PPIx/Regexp/Token/Quantifier.pm
+${P5SITE}/PPIx/Regexp/Token/Recursion.pm
+${P5SITE}/PPIx/Regexp/Token/Reference.pm
+${P5SITE}/PPIx/Regexp/Token/Structure.pm
+${P5SITE}/PPIx/Regexp/Token/Unknown.pm
+${P5SITE}/PPIx/Regexp/Token/Unmatched.pm
+${P5SITE}/PPIx/Regexp/Token/Whitespace.pm
+${P5SITE}/PPIx/Regexp/Tokenizer.pm
+@man man/man3p/PPIx::Regexp.3p
+@man man/man3p/PPIx::Regexp::Constant.3p
+@man man/man3p/PPIx::Regexp::Dumper.3p
+@man man/man3p/PPIx::Regexp::Element.3p
+@man man/man3p/PPIx::Regexp::Lexer.3p
+@man man/man3p/PPIx::Regexp::Node.3p
+@man man/man3p/PPIx::Regexp::Node::Range.3p
+@man man/man3p/PPIx::Regexp::Structure.3p
+@man man/man3p/PPIx::Regexp::Structure::Assertion.3p
+@man man/man3p/PPIx::Regexp::Structure::BranchReset.3p
+@man man/man3p/PPIx::Regexp::Structure::Capture.3p
+@man man/man3p/PPIx::Regexp::Structure::CharClass.3p
+@man man/man3p/PPIx::Regexp::Structure::Code.3p
+@man man/man3p/PPIx::Regexp::Structure::Main.3p
+@man man/man3p/PPIx::Regexp::Structure::Modifier.3p
+@man man/man3p/PPIx::Regexp::Structure::NamedCapture.3p
+@man man/man3p/PPIx::Regexp::Structure::Quantifier.3p
+@man man/man3p/PPIx::Regexp::Structure::Regexp.3p
+@man man/man3p/PPIx::Regexp::Structure::Replacement.3p
+@man man/man3p/PPIx::Regexp::Structure::Subexpression.3p
+@man man/man3p/PPIx::Regexp::Structure::Switch.3p
+@man man/man3p/PPIx::Regexp::Structure::Unknown.3p
+@man man/man3p/PPIx::Regexp::Support.3p
+@man man/man3p/PPIx::Regexp::Token.3p
+@man man/man3p/PPIx::Regexp::Token::Assertion.3p
+@man man/man3p/PPIx::Regexp::Token::Backreference.3p
+@man man/man3p/PPIx::Regexp::Token::Backtrack.3p
+@man man/man3p/PPIx::Regexp::Token::CharClass.3p
+@man man/man3p/PPIx::Regexp::Token::CharClass::POSIX.3p
+@man man/man3p/PPIx::Regexp::Token::CharClass::Simple.3p
+@man man/man3p/PPIx::Regexp::Token::Code.3p
+@man man/man3p/PPIx::Regexp::Token::Comment.3p
+@man man/man3p/PPIx::Regexp::Token::Condition.3p
+@man man/man3p/PPIx::Regexp::Token::Control.3p
+@man man/man3p/PPIx::Regexp::Token::Delimiter.3p
+@man man/man3p/PPIx::Regexp::Token::Greediness.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Assertion.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::BranchReset.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Code.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Modifier.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::NamedCapture.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Subexpression.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Switch.3p
+@man man/man3p/PPIx::Regexp::Token::Interpolation.3p
+@man man/man3p/PPIx::Regexp::Token::Literal.3p
+@man man/man3p/PPIx::Regexp::Token::Modifier.3p
+@man man/man3p/PPIx::Regexp::Token::Operator.3p
+@man man/man3p/PPIx::Regexp::Token::Quantifier.3p
+@man man/man3p/PPIx::Regexp::Token::Recursion.3p
+@man man/man3p/PPIx::Regexp::Token::Reference.3p
+@man man/man3p/PPIx::Regexp::Token::Structure.3p
+@man man/man3p/PPIx::Regexp::Token::Unknown.3p
+@man man/man3p/PPIx::Regexp::Token::Unmatched.3p
+@man man/man3p/PPIx::Regexp::Token::Whitespace.3p
+@man man/man3p/PPIx::Regexp::Tokenizer.3p
