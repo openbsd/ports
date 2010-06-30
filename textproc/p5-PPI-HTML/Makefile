@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/30 16:51:45 jim Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
-DISTNAME=		PPI-HTML-1.07
+DISTNAME=		PPI-HTML-1.08
 CATEGORIES=		textproc www
 CPAN_AUTHOR=		ADAMK
 
