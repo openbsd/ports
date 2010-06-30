@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.809 2010/06/30 07:19:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.810 2010/06/30 16:24:49 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -594,6 +594,7 @@
      SUBDIR += p5-POE-Test-Loops
      SUBDIR += p5-POE-XS-Queue-Array
      SUBDIR += p5-Package-Generator
+     SUBDIR += p5-Package-Stash
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Pango
      SUBDIR += p5-Parallel-ForkManager
