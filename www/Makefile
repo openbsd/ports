@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2010/06/29 20:11:53 landry Exp $
+# $OpenBSD: Makefile,v 1.462 2010/06/30 23:29:56 jim Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -420,6 +420,7 @@
      SUBDIR += turba
      SUBDIR += twiki
      SUBDIR += twill
+     SUBDIR += varnish
      SUBDIR += visitors
      SUBDIR += vteplugin
      SUBDIR += vtigercrm
