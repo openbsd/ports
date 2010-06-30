@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/06/30 02:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/06/30 06:28:25 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,7 @@ V=		6.40.0
 DISTNAME=	zarafa-${V}
 
 PKGNAME-main=	${DISTNAME}
-PKGNAME-web=	zarafa-webaccess-${V}
+PKGNAME-web=	zarafa-webaccess-${V}p0
 
 CATEGORIES=	mail www productivity
 
@@ -112,7 +112,8 @@ pre-configure:
 
 post-install:
 	${SUBST_CMD} ${WRKSRC}/php-webclient-ajax/config.php.dist
-	find ${WRKSRC}/php-webclient-ajax -name \*.orig -or -name \*.bak | xargs rm -f
+	find ${WRKSRC}/php-webclient-ajax -name \*.orig -or -name \*.bak \
+		-or -name \*.beforesubst | xargs rm -f
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
 	cd ${WRKSRC}/php-webclient-ajax && tar cf - ./ | \
 		tar -xf - -C ${WRKINST}${INSTDIR}
@@ -120,7 +121,6 @@ post-install:
 		${WRKINST}${INSTDIR}/debug.php.disabled
 	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${INSTDIR}
-	find ${PREFIX} -name \*.beforesubst -exec rm {} \;
 
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/zarafa/README.OpenBSD
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.2 2010/06/30 06:28:25 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -866,7 +866,6 @@ zarafa-webaccess/client/widgets/tree.js
 zarafa-webaccess/client/widgets/widget.js
 zarafa-webaccess/config.php.dist
 @sample zarafa-webaccess/config.php
-zarafa-webaccess/config.php.dist.beforesubst
 zarafa-webaccess/debug.php
 zarafa-webaccess/debug.php.disabled
 @mode 644
