@@ -1,4 +1,4 @@
-# $OpenBSD: smsd.conf.openbsd,v 1.2 2010/04/22 21:07:58 sthen Exp $
+# $OpenBSD: smsd.conf.openbsd,v 1.3 2010/06/30 16:45:27 sthen Exp $
 # See ${TRUEPREFIX}/share/doc/smstools/configure.html for more details
 
 devices = GSM1
@@ -27,6 +27,8 @@ logfile = /var/log/smsd/smsd.log
 # also break rts/cts. On some 3G cards you might be able to
 # use the control device for SMS simultaneously with using
 # the data device for a PPP connection.
+# For this one I have set incoming=no so it doesn't pull
+# the existing messages off the phone.
 device = /dev/cuaU1
 incoming = no
 rtscts = no
@@ -37,7 +39,5 @@ send_delay = 20
 # pin = 1111		# pin normally used only with data cards, not phones
 
 [GSM2]
-# For this one I have set incoming=no so it doesn't pull the existing
-# messages off the phone.
 device = /dev/cua00
 incoming = yes
