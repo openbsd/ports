@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/16 22:44:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/30 09:44:07 kevlo Exp $
 
 COMMENT=	encrypt and decrypt AES files and streams
 
-DISTNAME=	ccrypt-1.7
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	ccrypt-1.9
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.mathstat.dal.ca/~selinger/ccrypt/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,13 +19,10 @@ WANTLIB=		c
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		${MASTER_SITE_SOURCEFORGE:=ccrypt/}
 
-CONFIGURE_STYLE= gnu
-
-FLAVORS=	emacs21
-FLAVOR?=
-
-.if ${FLAVOR:L:Memacs21}
+MODULES=	devel/gettext \
+		textproc/intltool
 BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
-.endif
+
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
