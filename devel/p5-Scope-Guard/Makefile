@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 21:22:38 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/30 18:18:38 jim Exp $
 
 COMMENT=        lexically scoped resource management
 
 MODULES=	cpan
-DISTNAME=	Scope-Guard-0.03
+DISTNAME=	Scope-Guard-0.20
 CATEGORIES=     devel
 
 CPAN_AUTHOR=	CHOCOLATE
