@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.808 2010/06/27 21:05:06 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.809 2010/06/30 07:19:58 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -386,6 +386,7 @@
      SUBDIR += p5-Data-Dumper-Simple
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
+     SUBDIR += p5-Data-HexDump
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ICal
      SUBDIR += p5-Data-ICal-TimeZone
