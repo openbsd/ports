@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/30 02:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/30 06:42:18 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
 DISTNAME=	libvmime-0.7.1
-PKGNAME=	zarafa-${DISTNAME}p4
+PKGNAME=	zarafa-${DISTNAME}p5
 
 # patches are modified in the upstream tarball without notice nor
 # version bump, so we use this to force a new download instead of
