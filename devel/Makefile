@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.810 2010/06/30 16:24:49 jim Exp $
+# $OpenBSD: Makefile,v 1.811 2010/06/30 16:46:55 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -708,6 +708,7 @@
      SUBDIR += p5-Test-Script
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Strict
+     SUBDIR += p5-Test-SubCalls
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-TempDir
      SUBDIR += p5-Test-Tester
