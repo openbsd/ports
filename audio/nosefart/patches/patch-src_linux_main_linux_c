@@ -1,41 +1,189 @@
-$OpenBSD: patch-src_linux_main_linux_c,v 1.2 2010/05/20 09:55:22 espie Exp $
---- src/linux/main_linux.c.orig	Sun May  2 01:53:54 2004
-+++ src/linux/main_linux.c	Wed May 19 19:22:49 2010
-@@ -17,8 +17,9 @@ UNIX systems */
+$OpenBSD: patch-src_linux_main_linux_c,v 1.3 2010/07/01 02:36:54 jakemsr Exp $
+--- src/linux/main_linux.c.orig	Sat May  1 16:53:54 2004
++++ src/linux/main_linux.c	Sun May  2 10:13:29 2010
+@@ -15,11 +15,11 @@ UNIX systems */
+ #include <termios.h>
+ #include <unistd.h>
  
- #include <sys/ioctl.h>
- #include <sys/types.h>
+-#include <sys/ioctl.h>
+-#include <sys/types.h>
 -#include <sys/soundcard.h>
-+#include <soundcard.h>
  #include <sys/stat.h>
 +#include <signal.h>
  
++#include <sndio.h>
++
  #include "types.h"
  #include "nsf.h"
-@@ -223,7 +224,7 @@ static void open_hardware(const char *device)
-    doesn't show up as a char device. The original author (Matthew Conte) seems
-    to have thought that esddsp should work without this hack.  Is doing this 
-    bad? --Matthew Strait */
--   if( !S_ISCHR(status.st_mode) && strcmp("/dev/dsp", device))
-+   if( !S_ISCHR(status.st_mode) && strcmp("/dev/audio", device))
+ 
+@@ -55,7 +55,7 @@ static int bits = 8;
+ static int dataSize;
+ static int bufferSize;
+ static unsigned char *buffer = 0, *bufferPos = 0;
+-static int audiofd;
++static struct sio_hdl *hdl;
+ 
+ static int * plimit_frames = NULL;
+ static int shm_id;
+@@ -184,51 +184,13 @@ void handle_auto_calc(char * filename, int track, int 
+ /* Open up the DSP, then drop the root permissions */
+ static void open_hardware(const char *device)
+ {
+-   struct stat status;
+-
+    /* Open the file (with root permissions, if we have them) */
+-   if(-1 == (audiofd = open(device, O_WRONLY, 0)))
++   if(NULL == (hdl = sio_open(device, SIO_PLAY, 0)))
     {
-       printf("%s is not a character device.\n", device);
+-      switch(errno)
+-      {
+-      case EBUSY:
+-         printf("%s is busy.\n", device);
++         printf("Unable to open %s.\n", device);
+          exit(1);
+-      default:
+-         printf("Unable to open %s.  Check the permissions.\n", device);
+-         exit(1);
+-      }
+    }
+ 
+-   /* For safety, we should check that device is, in fact, a device.
+-      `nosefart -d /etc/passwd MegaMan2.nsf` wouldn't sound so pretty. */
+-   if(-1 == fstat(audiofd, &status))
+-   {
+-      switch(errno)
+-      {
+-      case EFAULT:
+-      case ENOMEM:
+-         printf("Out of memory.\n");
+-         exit(1);
+-      case EBADF:
+-      case ELOOP:
+-      case EACCES:
+-      default:
+-         printf("Unable to stat %s.\n", device);
+-         exit(1);
+-      }
+-   }
+-   /* if it's not a char device and it's not /dev/dsp */
+-   /* The second check is because when run with esddsp, /dev/dsp
+-   doesn't show up as a char device. The original author (Matthew Conte) seems
+-   to have thought that esddsp should work without this hack.  Is doing this 
+-   bad? --Matthew Strait */
+-   if( !S_ISCHR(status.st_mode) && strcmp("/dev/dsp", device))
+-   {
+-      printf("%s is not a character device.\n", device);
+-      exit(1);
+-   }
+-
+    /* Drop root permissions */
+    if(geteuid() != getuid()) setuid(getuid());
+ }
+@@ -236,52 +198,38 @@ static void open_hardware(const char *device)
+ /* Configure the DSP */
+ static void init_hardware(void)
+ {
+-   int stereo = 0;
+-   int param, retval, logDataSize;
+-   int format = bits; /*AFMT_U8, AFMT_U16LE;*/
++   struct sio_par par;
++
+    /* sound buffer */
+    dataSize = freq / nsf->playback_rate;
+ 
+-   /* Configure the DSP */
+-   logDataSize = -1;
+-   while((1 << ++logDataSize) < dataSize);
+-   param = 0x10000 | logDataSize + 4;
+-   retval = ioctl(audiofd, SNDCTL_DSP_SETFRAGMENT, &param);
+-   if(-1 == retval)
++   sio_initpar(&par);
++   par.pchan = 1;
++   par.bits = bits;
++   par.sig = 0;
++   par.rate = freq;
++
++   if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par))
+    {
+-      printf("Unable to set buffer size\n");
+-   }
+-   param = stereo;
+-   retval = ioctl(audiofd, SNDCTL_DSP_STEREO, &param);
+-   if(retval == -1 || param != stereo)
+-   {
+-      printf("Unable to set audio channels.\n");
++      printf("Error setting audio parameters.\n");
        exit(1);
-@@ -305,7 +306,7 @@ static void show_help(void)
+    }
+-   param = format;
+-   retval = ioctl(audiofd, SNDCTL_DSP_SETFMT, &param);
+-   if(retval == -1 || param != format)
++
++   if ((par.bits != bits) || (par.sig != 0) || (par.pchan != 1) ||
++     (abs (freq - par.rate) > (freq / 10)))
+    {
+-      printf("Unable to set audio format.\n");
+-      printf("Wanted %i, got %i\n", format, param);
++      printf("Unable to set audio parameters as desired.\n");
+       exit(1);
+    }
+-   param = freq;
+-   retval = ioctl(audiofd, SNDCTL_DSP_SPEED, &param);
+-   if(retval == -1 || (abs (param - freq) > (freq / 10)))
++
++   if (!sio_start(hdl))
+    {
+-      printf("Unable to set audio frequency.\n");
+-      printf("Wanted %i, got %i\n", freq, param);
++      printf("Could not start sndio.\n");
+       exit(1);
+    }
+-   retval = ioctl(audiofd, SNDCTL_DSP_GETBLKSIZE, &param);
+-   if(-1 == retval)
+-   {
+-      printf("Unable to get buffer size\n");
+-      exit(1);
+-   }
++
+    /* set up our data buffer */
+-   bufferSize = param;
++   bufferSize = par.round * par.pchan * par.bps;
+    buffer = malloc((bufferSize / dataSize + 1) * dataSize);
+    bufferPos = buffer;
+    memset(buffer, 0, bufferSize);
+@@ -290,7 +238,7 @@ static void init_hardware(void)
+ /* close what we've opened */
+ static void close_hardware(void)
+ {
+-   close(audiofd);
++   sio_close(hdl);
+    free(buffer);
+    buffer = 0;
+    bufferSize = 0;
+@@ -305,7 +253,7 @@ static void show_help(void)
     printf("\t-h  \tHelp\n");
     printf("\t-v  \tVersion information\n");
     printf("\n\t-t x\tStart playing track x (default: 1)\n");
 -   printf("\n\t-d x\tUse device x (default: /dev/dsp)\n");
-+   printf("\n\t-d x\tUse device x (default: /dev/audio)\n");
++   printf("\n\t-d x\tUse device x (default: NULL)\n");
     printf("\t-s x\tPlay at x times the normal speed.\n");
     printf("\t-f x\tUse x sampling rate (default: 44100)\n");
     printf("\t-l x\tLimit total playing time to x seconds (0 = unlimited)\n");
-@@ -565,7 +566,7 @@ static void close_nsf_file(void)
+@@ -538,7 +486,7 @@ static void play(char * filename, int track, int doaut
+       if(bufferPos >= buffer + bufferSize)
+       {
+          if(frames >= starting_frame)
+-           write(audiofd, buffer, bufferPos - buffer);
++           sio_write(hdl, buffer, bufferPos - buffer);
+          bufferPos = buffer;
+       }
+ 
+@@ -565,7 +513,7 @@ static void close_nsf_file(void)
  /* HAS ROOT PERMISSIONS -- BE CAREFUL */
  int main(int argc, char **argv)
  {
 -   char *device = "/dev/dsp";
-+   char *device = "/dev/audio";
++   char *device = NULL;
     char *filename;
     int track = 1;
     int done = 0;

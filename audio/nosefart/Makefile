@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/01 02:36:54 jakemsr Exp $
 
 COMMENT=	nsf (Nintendo sound) file player
 
 DISTNAME=	nosefart-2.3-mls
-PKGNAME=	nosefart-2.3
+PKGNAME=	nosefart-2.3p0
 CATEGORIES=	audio
 HOMEPAGE=	http://nosefart.sourceforge.net/
 
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	.tar.bz2
 NO_REGRESS=	yes
 
 USE_GMAKE=	yes
-WANTLIB=	m c ossaudio
+WANTLIB=	m c sndio
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin/
