@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Mon Jun 28 17:04:12 2010
-+++ src/ck-sysdeps-openbsd.c	Mon Jun 28 17:05:11 2010
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.5 2010/07/01 01:00:09 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Thu Jul  1 02:47:13 2010
++++ src/ck-sysdeps-openbsd.c	Thu Jul  1 02:48:18 2010
 @@ -0,0 +1,414 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
@@ -252,7 +252,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp
 +        struct kinfo_proc2 p;
 +        int               i;
 +
-+        kd = kvm_openfiles (_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, NULL);
++        kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, NULL);
 +        if (kd == NULL) {
 +                return NULL;
 +        }
