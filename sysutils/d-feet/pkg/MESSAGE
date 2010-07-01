@@ -1,0 +1,2 @@
+D-feet uses procfs to get PID information, if you need this you'll have
+to use mount_procfs(8).

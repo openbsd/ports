@@ -1,4 +1,4 @@
-$OpenBSD: patch-d-feet,v 1.1.1.1 2009/01/19 17:03:32 jasper Exp $
+$OpenBSD: patch-d-feet,v 1.2 2010/07/01 20:24:55 ajacoutot Exp $
 --- d-feet.orig	Mon Jan 19 16:12:38 2009
 +++ d-feet	Mon Jan 19 16:13:18 2009
 @@ -1,4 +1,4 @@
@@ -15,10 +15,10 @@ $OpenBSD: patch-d-feet,v 1.1.1.1 2009/01/19 17:03:32 jasper Exp $
 -                 "DFEET_IMAGE_PATH" : "/usr/share/dfeet/pixmaps/",
 -                 "DFEET_LOCALE_PATH" : "/usr/share/locale/",
 -                 "DFEET_HELP_PATH" : "/usr/share/gnome/dfeet/"
-+    ENV_PATHS = {"DFEET_DATA_PATH" : "${LOCALBASE}/share/dfeet/",
-+                 "DFEET_IMAGE_PATH" : "${LOCALBASE}/share/dfeet/pixmaps/",
-+                 "DFEET_LOCALE_PATH" : "${LOCALBASE}/share/locale/",
-+                 "DFEET_HELP_PATH" : "${LOCALBASE}/share/gnome/dfeet/"
++    ENV_PATHS = {"DFEET_DATA_PATH" : "${PREFIX}/share/dfeet/",
++                 "DFEET_IMAGE_PATH" : "${PREFIX}/share/dfeet/pixmaps/",
++                 "DFEET_LOCALE_PATH" : "${PREFIX}/share/locale/",
++                 "DFEET_HELP_PATH" : "${PREFIX}/share/gnome/dfeet/"
                  }
  
  #must set variables before importing Globals because it requires them

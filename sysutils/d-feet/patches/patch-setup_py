@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2009/01/19 17:03:32 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2010/07/01 20:24:55 ajacoutot Exp $
 
 Prevent empty directory from ending up in PLIST.
 
---- setup.py.orig	Mon Jan 19 16:03:29 2009
-+++ setup.py	Mon Jan 19 16:04:14 2009
-@@ -58,7 +58,7 @@ dist = setup(name='d-feet',
+--- setup.py.orig	Wed Jul  8 11:58:11 2009
++++ setup.py	Thu Jul  1 22:13:59 2010
+@@ -63,7 +63,7 @@ dist = setup(name='d-feet',
          ('share/icons/hicolor/16x16/apps', glob.glob("icons/16x16/*.png")),
          ('share/icons/hicolor/48x48/apps', ['ui/dfeet-icon.png']),
          ('share/applications', ['ui/dfeet.desktop']),
