@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/14 11:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/01 13:15:52 sthen Exp $
 
 COMMENT=		web frontend to symon
-DISTNAME=		syweb-0.55
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		syweb-0.60
 CATEGORIES=		www sysutils
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
@@ -35,5 +34,6 @@ do-install:
 	mkdir ${PREFIX}/symon/rrds
 	mkdir ${PREFIX}/symon/cache
 	cd ${PREFIX}/htdocs/syweb && mv setup.inc setup.inc.sample
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/htdocs/syweb ${PREFIX}/symon
 
 .include <bsd.port.mk>

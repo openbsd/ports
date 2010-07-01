@@ -1,7 +1,7 @@
-$OpenBSD: patch-install_rrdtool_sh,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
---- install_rrdtool.sh.orig	Fri Oct  5 10:51:01 2007
-+++ install_rrdtool.sh	Fri Oct  5 10:51:56 2007
-@@ -31,10 +31,11 @@ if [ "${LIBS}x" = x ]; then
+$OpenBSD: patch-install_rrdtool_sh,v 1.2 2010/07/01 13:15:52 sthen Exp $
+--- install_rrdtool.sh.orig	Sat Nov 28 14:03:52 2009
++++ install_rrdtool.sh	Wed Jun 30 17:07:55 2010
+@@ -28,10 +28,11 @@ if [ "${LIBS}x" = x ]; then
  fi
  
  cd ${PREFIX}

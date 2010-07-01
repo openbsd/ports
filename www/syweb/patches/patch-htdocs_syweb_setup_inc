@@ -1,7 +1,7 @@
-$OpenBSD: patch-htdocs_syweb_setup_inc,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
---- htdocs/syweb/setup.inc.orig	Tue Oct  2 15:31:49 2007
-+++ htdocs/syweb/setup.inc	Tue Oct  2 15:32:04 2007
-@@ -18,12 +18,11 @@
+$OpenBSD: patch-htdocs_syweb_setup_inc,v 1.2 2010/07/01 13:15:52 sthen Exp $
+--- htdocs/syweb/setup.inc.orig	Thu Jun  3 14:00:08 2010
++++ htdocs/syweb/setup.inc	Wed Jun 30 17:09:02 2010
+@@ -17,12 +17,11 @@
   *
   */
  
@@ -15,17 +15,17 @@ $OpenBSD: patch-htdocs_syweb_setup_inc,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp
  
  /* running OpenBSD, apache not chrooted:
  $symon['rrdtool_path']='/usr/local/bin/rrdtool';
-@@ -32,11 +31,12 @@ $symon['host_tree']='/var/www/symon/rrds';
- $symon['layout_dir']='/var/www/symon';
+@@ -38,11 +37,12 @@ $symon['host_tree']='/usr/local/www/symon/rrds';
+ $symon['layout_dir']='/usr/local/www/symon';
  */
  
--/* running FreeBSD, apache not chrooted: */
-+/* running FreeBSD, apache not chrooted:
- $symon['rrdtool_path']='/usr/local/bin/rrdtool';
+-/* running Linux, apache not chrooted: */
++/* running Linux, apache not chrooted:
+ $symon['rrdtool_path']='/usr/bin/rrdtool';
  $symon['cache_dir']='/usr/local/www/symon/cache';
  $symon['host_tree']='/usr/local/www/symon/rrds';
  $symon['layout_dir']='/usr/local/www/symon';
 +*/
  
  $symon['cache_duration']=20;
- $symon['isolate_hosts']=1;
+ $symon['host_layouts']=1;

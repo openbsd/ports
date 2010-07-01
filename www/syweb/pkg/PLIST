@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/17 19:57:27 sthen Exp $
-@owner root
-@group www
+@comment $OpenBSD: PLIST,v 1.3 2010/07/01 13:15:52 sthen Exp $
 htdocs/syweb/
 htdocs/syweb/class_cache.inc
 htdocs/syweb/class_graph.inc
@@ -14,6 +12,7 @@ htdocs/syweb/configtest.php
 htdocs/syweb/graph.php
 htdocs/syweb/graph_defaults.inc
 htdocs/syweb/index.php
+htdocs/syweb/index_noui.php
 htdocs/syweb/setup.inc.sample
 @sample htdocs/syweb/setup.inc
 htdocs/syweb/spacer.png
@@ -22,8 +21,10 @@ htdocs/syweb/symon.png
 htdocs/syweb/tools.inc
 symon/
 @mode 775
+@group www
 symon/cache/
 @mode
+@group
 symon/hifn_test.layout
 symon/install_rrdtool.sh
 symon/pf.layout
