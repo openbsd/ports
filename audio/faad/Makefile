@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/06/23 17:02:46 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2010/07/01 21:12:50 jasper Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -37,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 PSEUDO_FLAVORS=	no_xmms
-FLAVOR?=
+FLAVOR?= no_xmms
 MULTI_PACKAGES=-main
 
 .if !${FLAVOR:L:Mno_xmms}
