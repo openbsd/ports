@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.47 2009/06/08 10:00:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2010/07/01 15:49:24 landry Exp $
 
 SHARED_ONLY=	Yes 
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-perl=	perl interface to librrd
-COMMENT-python= python interface to librrd
+COMMENT-python=	python interface to librrd
+COMMENT-ruby=	ruby interface to librrd
 
 VERSION=	1.2.30
 DISTNAME=	rrdtool-${VERSION}
-PKGNAME-main=	rrdtool-${VERSION}
+PKGNAME-main=	rrdtool-${VERSION}p0
 PKGNAME-perl=	p5-RRD-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}p0
+PKGNAME-ruby=	ruby-rrd-${VERSION}
 
 SHARED_LIBS+=	rrd 3.0
 SHARED_LIBS+=	rrd_th 3.0
@@ -32,15 +34,15 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
-MULTI_PACKAGES=	-main -perl -python
+MULTI_PACKAGES=	-main -perl -python -ruby
 
-MODULES=	lang/python
+MODULES=	lang/python lang/ruby
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-perl-site-install \
 		--enable-python \
-		--disable-ruby \
+		--enable-ruby-site-install \
 		--disable-tcl
 CPPFLAGS+=	-I${LOCALBASE}/include/libart-2.0 \
 		-I${LOCALBASE}/include/libpng \
@@ -61,5 +63,9 @@ RUN_DEPENDS-perl=
 LIB_DEPENDS-python=	rrd:rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 MODPY_EGG_VERSION=	0.2.1
+
+LIB_DEPENDS-ruby=	rrd:rrdtool-${VERSION}:net/rrdtool \
+			${MODRUBY_LIB_DEPENDS}
+WANTLIB-ruby=		c m
 
 .include <bsd.port.mk>
