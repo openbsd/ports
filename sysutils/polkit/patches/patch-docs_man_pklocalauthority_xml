@@ -1,0 +1,48 @@
+$OpenBSD: patch-docs_man_pklocalauthority_xml,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- docs/man/pklocalauthority.xml.orig	Sun Jun 27 18:25:36 2010
++++ docs/man/pklocalauthority.xml	Sun Jun 27 18:25:58 2010
+@@ -93,7 +93,7 @@
+       The Local Authority reads files with <filename>.pkla</filename>
+       extension from all directories located inside the
+       <filename>/etc/polkit-1/localauthority</filename>
+-      and <filename>/var/lib/polkit-1/localauthority</filename>
++      and <filename>/var/db/polkit-1/localauthority</filename>
+       directories. By default, the following sub-directories are installed.
+     </para>
+     <programlisting>
+@@ -109,7 +109,7 @@
+       and
+     </para>
+     <programlisting>
+-/var/lib/polkit-1/
++/var/db/polkit-1/
+ `-- localauthority
+     |-- 10-vendor.d
+     |-- 20-org.d
+@@ -120,7 +120,7 @@
+     <para>
+       The <filename>/etc/polkit-1/localauthority</filename> hierarchy
+       is inteded for local configuration and
+-      the <filename>/var/lib/polkit-1/localauthority</filename> is
++      the <filename>/var/db/polkit-1/localauthority</filename> is
+       intended for 3rd party packages.
+     </para>
+     <para>
+@@ -290,7 +290,7 @@
+       the following rules. First all the basename of all
+       sub-directories (e.g. <emphasis>30-site.d</emphasis>) from both
+       the <filename>/etc/polkit-1/localauthority</filename>
+-      and <filename>/var/lib/polkit-1/localauthority</filename>
++      and <filename>/var/db/polkit-1/localauthority</filename>
+       directories are enumerated and sorted (using the C locale). If a
+       name exists in both <filename>/etc</filename>
+       and <filename>/var</filename>, the one
+@@ -304,7 +304,7 @@
+       For example, given the following files
+     </para>
+     <programlisting>
+-/var/lib/polkit-1
++/var/db/polkit-1
+ └── localauthority
+     ├── 10-vendor.d
+     │   └── 10-desktop-policy.pkla

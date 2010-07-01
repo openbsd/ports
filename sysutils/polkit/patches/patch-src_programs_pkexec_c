@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_programs_pkexec_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/programs/pkexec.c.orig	Wed Mar 10 18:46:19 2010
++++ src/programs/pkexec.c	Thu Jul  1 07:31:27 2010
+@@ -34,7 +34,11 @@
+ #include <grp.h>
+ #include <pwd.h>
+ #include <errno.h>
++
++#ifdef POLKIT_AUTHFW_PAM
+ #include <security/pam_appl.h>
++#endif /* POLKIT_AUTHFW_PAM */
++
+ #include <syslog.h>
+ #include <stdarg.h>
+ 
+@@ -115,6 +119,7 @@ log_message (gint     level,
+ 
+ /* ---------------------------------------------------------------------------------------------------- */
+ 
++#ifdef POLKIT_AUTHFW_PAM
+ static int
+ pam_conversation_function (int n,
+                            const struct pam_message **msg,
+@@ -167,6 +172,7 @@ out:
+     pam_end (pam_h, rc);
+   return ret;
+ }
++#endif /* POLKIT_AUTHFW_PAM */
+ 
+ /* ---------------------------------------------------------------------------------------------------- */
+ 
+@@ -437,7 +443,7 @@ main (int argc, char *argv[])
+       goto out;
+     }
+ 
+-  original_cwd = g_strdup (get_current_dir_name ());
++  original_cwd = g_strdup (getcwd (NULL, 0));
+   if (original_cwd == NULL)
+     {
+       g_printerr ("Error getting cwd.\n");
+@@ -741,11 +747,13 @@ main (int argc, char *argv[])
+    * TODO: The question here is whether we should clear the limits before applying them?
+    * As evident above, neither su(1) (and, for that matter, nor sudo(8)) does this.
+    */
++#ifdef POLKIT_AUTHW_PAM
+   if (!open_session (pw->pw_name))
+     {
+       goto out;
+     }
+-
++#endif /* POLKIT_AUTHFW_PAM */
++  
+   /* become the user */
+   if (setgroups (0, NULL) != 0)
+     {

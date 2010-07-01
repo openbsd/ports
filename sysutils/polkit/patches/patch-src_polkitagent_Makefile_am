@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/polkitagent/Makefile.am.orig	Wed Mar 10 18:46:19 2010
++++ src/polkitagent/Makefile.am	Sun Jun 27 17:49:46 2010
+@@ -68,8 +68,18 @@ libpolkit_agent_1_la_LDFLAGS = -export-symbols-regex '
+ libexec_PROGRAMS = polkit-agent-helper-1
+ 
+ polkit_agent_helper_1_SOURCES = 					\
+-	polkitagenthelper.c						\
+-	$(NULL)
++	polkitagenthelperprivate.c polkitagenthelperprivate.h		
++
++if POLKIT_AUTHFW_PAM
++polkit_agent_helper_1_SOURCES += polkitagenthelper-pam.c
++endif
++if POLKIT_AUTHFW_SHADOW
++polkit_agent_helper_1_SOURCES += polkitagenthelper-shadow.c
++endif
++if POLKIT_AUTHFW_BSDAUTH
++polkit_agent_helper_1_SOURCES += polkitagenthelper-bsdauth.c
++endif
++polkit_agent_helper_1_SOURCES += $(NULL)
+ 
+ polkit_agent_helper_1_CFLAGS  = 					\
+         -D_POLKIT_COMPILATION                                  		\

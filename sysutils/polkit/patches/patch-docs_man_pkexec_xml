@@ -1,0 +1,38 @@
+$OpenBSD: patch-docs_man_pkexec_xml,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- docs/man/pkexec.xml.orig	Sun Jun 27 19:09:16 2010
++++ docs/man/pkexec.xml	Sun Jun 27 19:12:38 2010
+@@ -131,14 +131,14 @@
+   <refsect1 id="pkexec-example"><title>EXAMPLE</title>
+     <para>
+       To specify what kind of authorization is needed to execute the
+-      program <filename>/usr/bin/pk-example-frobnicate</filename> as
++      program <filename>${PREFIX}/bin/pk-example-frobnicate</filename> as
+       another user, simply write an action definition file like this
+     </para>
+     <programlisting>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="text" href="../../src/examples/org.freedesktop.policykit.examples.pkexec.policy"><xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback></xi:include></programlisting>
+     <para>
+       and drop it in
+-      the <filename>/usr/share/polkit-1/actions</filename> directory
++      the <filename>${PREFIX}/share/polkit-1/actions</filename> directory
+       under a suitable name (e.g. matching the namespace of the
+       action).  Note that in addition to specifying the program, the
+       authentication message, description, icon and defaults can be
+@@ -165,7 +165,7 @@
+ |          Password: [__________________________________]  |
+ |                                                          |
+ | [V] Details:                                             |
+-|  Command: /usr/bin/pk-example-frobnicate                 |
++|  Command: ${PREFIX}/bin/pk-example-frobnicate                 |
+ |  Run As:  Super User (root)                              |
+ |  Action:  org.fd.pk.example.pkexec.run-frobnicate        |
+ |  Vendor:  Examples for the PolicyKit Project             |
+@@ -199,7 +199,7 @@
+ |                                                          |
+ | [V] Detaljer:                                            |
+ |  Bruger:   Super User (root)                             |
+-|  Program:  /usr/bin/pk-example-frobnicate                |
++|  Program:  ${PREFIX}/bin/pk-example-frobnicate                |
+ |  Handling: org.fd.pk.example.pkexec.run-frobnicate       |
+ |  Vendor:   Examples for the PolicyKit Project            |
+ |                                                          |

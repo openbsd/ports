@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+@lib lib/libpolkit-agent-1.so.${LIBpolkit-agent-1_VERSION}
+@lib lib/libpolkit-backend-1.so.${LIBpolkit-backend-1_VERSION}
+@lib lib/libpolkit-gobject-1.so.${LIBpolkit-gobject-1_VERSION}
+lib/polkit-1/extensions/libnullbackend.so
+lib/polkit-1/extensions/libpkexec-action-lookup.so

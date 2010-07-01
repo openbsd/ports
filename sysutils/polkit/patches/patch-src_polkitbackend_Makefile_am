@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_polkitbackend_Makefile_am,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/polkitbackend/Makefile.am.orig	Sun Jun 27 18:26:49 2010
++++ src/polkitbackend/Makefile.am	Sun Jun 27 18:27:49 2010
+@@ -100,10 +100,4 @@ clean-local :
+ 	rm -f *~ $(ck_built_sources) $(BUILT_SOURCES)
+ 
+ install-exec-hook:
+-	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1
+-	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1/localauthority/{10-vendor.d,20-org.d,30-site.d,50-local.d,90-mandatory.d}
+-	-chmod 700 $(DESTDIR)$(localstatedir)/lib/polkit-1
+-	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1
+-	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/{10-vendor.d,20-org.d,30-site.d,50-local.d,90-mandatory.d}
+-	-chmod 700 $(DESTDIR)$(sysconfdir)/polkit-1/localauthority
+ 	mkdir -p $(DESTDIR)$(libdir)/polkit-1/extensions

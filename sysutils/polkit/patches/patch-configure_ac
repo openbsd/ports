@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- configure.ac.orig	Wed Mar 10 18:46:19 2010
++++ configure.ac	Sun Jun 27 19:31:08 2010
+@@ -145,7 +145,7 @@ AC_SUBST(EXPAT_LIBS)
+ AC_CHECK_FUNCS(clearenv)
+ 
+ if test "x$GCC" = "xyes"; then
+-  LDFLAGS="-Wl,--as-needed $LDFLAGS"
++  LDFLAGS="$LDFLAGS"
+ fi
+ 
+ dnl ---------------------------------------------------------------------------
+@@ -194,6 +194,11 @@ case $POLKIT_AUTHFW in
+     AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
+     ;;
+ 
++  bsdauth)
++    need_pam=no
++    AC_DEFINE(POLKIT_AUTHFW_BSDAUTH, 1, [If using the bsd_auth(3) authentication framework])
++    ;;
++
+   *)
+     AC_MSG_ERROR([Unknown Authentication Framework: $POLKIT_AUTHFW])
+     ;;
+@@ -202,6 +207,7 @@ esac
+ AM_CONDITIONAL(POLKIT_AUTHFW_NONE, [test x$POLKIT_AUTHFW = xnone], [Using no authfw])
+ AM_CONDITIONAL(POLKIT_AUTHFW_PAM, [test x$POLKIT_AUTHFW = xpam], [Using PAM authfw])
+ AM_CONDITIONAL(POLKIT_AUTHFW_SHADOW, [test x$POLKIT_AUTHFW = xshadow], [Using Shadow authfw])
++AM_CONDITIONAL(POLKIT_AUTHFW_BSDAUTH, [test x$POLKIT_AUTHFW = xbsdauth], [Using bsd_auth(3) authfw])
+ 
+ 
+ dnl ---------------------------------------------------------------------------
+@@ -488,7 +494,7 @@ echo "NOTE: The directory ${sysconfdir}/polkit-1/local
+ echo "      by root and have mode 700"
+ echo
+ 
+-echo "NOTE: The directory ${localstatedir}/lib/polkit-1 must be owned"
++echo "NOTE: The directory ${localstatedir}/db/polkit-1 must be owned"
+ echo "      by root and have mode 700"
+ echo
+ 

@@ -1,0 +1,127 @@
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/polkit/polkitunixprocess.c.orig	Wed Mar 10 18:46:19 2010
++++ src/polkit/polkitunixprocess.c	Thu Jul  1 09:19:56 2010
+@@ -24,8 +24,13 @@
+ #endif
+ 
+ #include <sys/types.h>
+-#ifndef HAVE_FREEBSD
++#if !defined(HAVE_FREEBSD) && !defined(__OpenBSD__)
+ #include <sys/stat.h>
++#elif defined(__OpenBSD__)
++#include <kvm.h>
++#include <stdio.h>
++#include <sys/param.h>
++#include <sys/sysctl.h>
+ #else
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+@@ -86,6 +91,10 @@ static guint64 get_start_time_for_pid (gint    pid,
+ static gboolean get_kinfo_proc (gint pid, struct kinfo_proc *p);
+ #endif
+ 
++#ifdef __OpenBSD__
++static gboolean get_kinfo_proc (pid_t pid, struct kinfo_proc2 *p);
++#endif
++
+ G_DEFINE_TYPE_WITH_CODE (PolkitUnixProcess, polkit_unix_process, G_TYPE_OBJECT,
+                          G_IMPLEMENT_INTERFACE (POLKIT_TYPE_SUBJECT, subject_iface_init)
+                          );
+@@ -214,8 +223,10 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
+                                GError            **error)
+ {
+   gint result;
+-#ifdef HAVE_FREEBSD
++#if defined(HAVE_FREEBSD)
+   struct kinfo_proc p;
++#elif defined(__OpenBSD__)
++  struct kinfo_proc2 p;
+ #else
+   struct stat statbuf;
+   char procbuf[32];
+@@ -223,7 +234,7 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
+ 
+   result = 0;
+ 
+-#ifdef HAVE_FREEBSD
++#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
+   if (get_kinfo_proc (process->pid, &p) == 0)
+     {
+       g_set_error (error,
+@@ -235,8 +246,12 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
+       goto out;
+     }
+ 
++#if defined(HAVE_FREEBSD)
+   result = p.ki_uid;
+ #else
++  result = p.p_uid;
++#endif
++#else
+   g_snprintf (procbuf, sizeof procbuf, "/proc/%d", process->pid);
+   if (stat (procbuf, &statbuf) != 0)
+     {
+@@ -476,12 +491,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
+ }
+ #endif
+ 
++#ifdef __OpenBSD__
++get_kinfo_proc (pid_t pid,
++		struct kinfo_proc2 *p)
++{
++	int name[6];
++	u_int namelen;
++	size_t sz;
++
++	sz = sizeof(*p);
++	namelen = 0;
++	name[namelen++] = CTL_KERN;
++	name[namelen++] = KERN_PROC2;
++	name[namelen++] = KERN_PROC_PID;
++	name[namelen++] = pid;
++	name[namelen++] = sz;
++	name[namelen++] = 1;
++
++	if (sysctl (name, namelen, p, &sz, NULL, 0) == -1) {
++		perror("sysctl kern.proc2.pid");
++		return FALSE;
++	}
++
++	return TRUE;
++}
++#endif
++
+ static guint64
+ get_start_time_for_pid (pid_t    pid,
+                         GError **error)
+ {
+   guint64 start_time;
+-#ifndef HAVE_FREEBSD
++#if !defined(HAVE_FREEBSD) && !defined(__OpenBSD__)
+   gchar *filename;
+   gchar *contents;
+   size_t length;
+@@ -554,7 +595,11 @@ get_start_time_for_pid (pid_t    pid,
+   g_free (filename);
+   g_free (contents);
+ #else
++#if defined(HAVE_FREEBSD)
+   struct kinfo_proc p;
++#else
++  struct kinfo_proc2 p;
++#endif
+ 
+   start_time = 0;
+ 
+@@ -569,7 +614,11 @@ get_start_time_for_pid (pid_t    pid,
+       goto out;
+     }
+ 
++#ifdef HAVE_FREEBSD
+   start_time = (guint64) p.ki_start.tv_sec;
++#else
++  start_time = (guint64) p.p_ustart_sec;
++#endif
+ 
+ out:
+ #endif

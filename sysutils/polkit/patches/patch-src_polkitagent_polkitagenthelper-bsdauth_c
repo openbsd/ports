@@ -1,0 +1,212 @@
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Sun Jun 27 17:49:56 2010
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Sun Jun 27 18:03:34 2010
+@@ -0,0 +1,208 @@
++/*
++ * Copyright (C) 2008 Red Hat, Inc.
++ * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
++ * Copyright (C) 2010 Antoine Jacoutot <ajacoutot@openbsd.org>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General
++ * Public License along with this library; if not, write to the
++ * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
++ * Boston, MA 02111-1307, USA.
++ *
++ * Authors: Andrew Psaltis <ampsaltis@gmail.com>, based on
++ *            polkitagenthelper.c which was written by
++ *          David Zeuthen <davidz@redhat.com>
++ */
++
++#include "config.h"
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <syslog.h>
++#include <pwd.h>
++#include <time.h>
++#include <login_cap.h>
++#include <bsd_auth.h>
++
++#include <polkit/polkit.h>
++#include "polkitagenthelperprivate.h"
++
++
++static int bsdauth_authenticate(const char *user_to_auth);
++
++int clearenv(void);
++
++int
++clearenv(void)
++{
++  extern char **environ;
++
++  environ[0] = NULL;
++  return 0;
++}
++
++int
++main (int argc, char *argv[])
++{
++  const char *user_to_auth;
++  const char *cookie;
++//  time_t tm;
++
++  /* clear the entire environment to avoid attacks with
++     libraries honoring environment variables */
++  if (clearenv () != 0)
++    goto error;
++
++  /* set a minimal environment */
++//  setenv ("PATH", "/usr/sbin:/usr/bin:/sbin:/bin", 1);
++  setenv ("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 1);
++
++  /* check that we are setuid root */
++  if (geteuid () != 0)
++    {
++      fprintf (stderr, "polkit-agent-helper-1: needs to be setuid root\n");
++      goto error;
++    }
++
++  openlog ("polkit-agent-helper-1", LOG_CONS | LOG_PID, LOG_AUTHPRIV);
++
++  /* check for correct invocation */
++  if (argc != 3)
++    {
++      syslog (LOG_NOTICE, "inappropriate use of helper, wrong number of arguments [uid=%d]", getuid ());
++      fprintf (stderr, "polkit-agent-helper-1: wrong number of arguments. This incident has been logged.\n");
++      goto error;
++    }
++
++  if (getuid () != 0)
++    {
++    /* check we're running with a non-tty stdin */
++    if (isatty (STDIN_FILENO) != 0)
++      {
++        syslog (LOG_NOTICE, "inappropriate use of helper, stdin is a tty [uid=%d]", getuid ());
++        fprintf (stderr, "polkit-agent-helper-1: inappropriate use of helper, stdin is a tty. This incident has been logged.\n");
++        goto error;
++      }
++    }
++
++  user_to_auth = argv[1];
++  cookie = argv[2];
++
++#ifdef PAH_DEBUG
++  fprintf (stderr, "polkit-agent-helper-1: user to auth is '%s'.\n", user_to_auth);
++#endif /* PAH_DEBUG */
++
++  /* Ask shadow about the user requesting authentication */
++/*
++  if ((shadow = getspnam (user_to_auth)) == NULL)
++    {
++      syslog (LOG_NOTICE, "shadow file data information request for user %s [uid=%d] failed", user_to_auth, getuid());
++      fprintf(stderr, "polkit-agent-helper-1: could not get shadow information for%.100s", user_to_auth);
++      goto error;
++    }
++*/
++  
++  /* Check the user's identity */
++  if(!bsdauth_authenticate (user_to_auth))
++    {
++      syslog (LOG_NOTICE, "authentication failure [uid=%d] trying to authenticate '%s'", getuid (), user_to_auth);
++      fprintf (stderr, "polkit-agent-helper-1: authentication failure. This incident has been logged.\n");
++      goto error;
++    }
++
++  /* Check whether the user's password has expired */
++/*
++  time(&tm);
++  if( shadow->sp_max >= 0 && (shadow->sp_lstchg + shadow->sp_max) * 60 * 60 * 24 <= tm)
++    {
++      syslog (LOG_NOTICE, "password expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
++      goto error;
++    }
++*/
++
++  /* Check whether the user's password has aged (and account expired along
++   * with it)
++   */
++/*
++  if( shadow->sp_inact >= 0 && (shadow->sp_lstchg + shadow->sp_max + shadow->sp_inact) * 60 * 60 * 24           <= tm) 
++    {
++      syslog (LOG_NOTICE, "password aged for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
++      goto error;
++    }
++*/
++
++  /* Check whether the user's account has expired */
++/*
++  if(shadow->sp_expire >= 0 && shadow->sp_expire * 60 * 60 * 24 <= tm) 
++    {
++      syslog (LOG_NOTICE, "account expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
++      goto error;
++    }
++*/
++
++#ifdef PAH_DEBUG
++  fprintf (stderr, "polkit-agent-helper-1: sending D-Bus message to PolicyKit daemon\n");
++#endif /* PAH_DEBUG */
++
++  /* now send a D-Bus message to the PolicyKit daemon that
++   * includes a) the cookie; and b) the user we authenticated
++   */
++  if (!send_dbus_message (cookie, user_to_auth))
++    {
++#ifdef PAH_DEBUG
++      fprintf (stderr, "polkit-agent-helper-1: error sending D-Bus message to PolicyKit daemon\n");
++#endif /* PAH_DEBUG */
++      goto error;
++    }
++
++#ifdef PAH_DEBUG
++  fprintf (stderr, "polkit-agent-helper-1: successfully sent D-Bus message to PolicyKit daemon\n");
++#endif /* PAH_DEBUG */
++
++  fprintf (stdout, "SUCCESS\n");
++  flush_and_wait();
++  return 0;
++
++error:
++  fprintf (stdout, "FAILURE\n");
++  flush_and_wait();
++  return 1;
++}
++
++static int
++bsdauth_authenticate(const char *user_to_auth)
++{
++  /* Speak PAM to the daemon, thanks to David Zeuthen for the idea. */
++  char passwd[512];
++  fprintf(stdout, "PAM_PROMPT_ECHO_OFF password:\n");
++  fflush(stdout);
++  usleep (10 * 1000); /* since fflush(3) seems buggy */
++
++  if (fgets (passwd, sizeof (passwd), stdin) == NULL)
++    goto error;
++
++  if (strlen (passwd) > 0 && passwd[strlen (passwd) - 1] == '\n')
++    passwd[strlen (passwd) - 1] = '\0';
++  
++//  if (strcmp (shadow->sp_pwdp, crypt (passwd, shadow->sp_pwdp)) != 0)
++    if (auth_userokay(user_to_auth, NULL, "polkit", passwd) != 0)
++    goto error;
++  return 1;
++error:
++  return 0;
++}

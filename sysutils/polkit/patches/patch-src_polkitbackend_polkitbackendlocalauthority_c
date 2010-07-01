@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthority_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+--- src/polkitbackend/polkitbackendlocalauthority.c.orig	Sun Jun 27 18:27:56 2010
++++ src/polkitbackend/polkitbackendlocalauthority.c	Sun Jun 27 18:28:13 2010
+@@ -211,7 +211,7 @@ add_all_authorization_stores (PolkitBackendLocalAuthor
+       error = NULL;
+ 
+       if (n == 0)
+-        toplevel_path = PACKAGE_LOCALSTATE_DIR "/lib/polkit-1/localauthority";
++        toplevel_path = PACKAGE_LOCALSTATE_DIR "/db/polkit-1/localauthority";
+       else
+         toplevel_path = PACKAGE_SYSCONF_DIR "/polkit-1/localauthority";
+ 
+@@ -321,7 +321,7 @@ polkit_backend_local_authority_init (PolkitBackendLoca
+       GError *error;
+ 
+       if (n == 0)
+-        toplevel_path = PACKAGE_LOCALSTATE_DIR "/lib/polkit-1/localauthority";
++        toplevel_path = PACKAGE_LOCALSTATE_DIR "/db/polkit-1/localauthority";
+       else
+         toplevel_path = PACKAGE_SYSCONF_DIR "/polkit-1/localauthority";
+ 
+@@ -698,7 +698,7 @@ static gchar *
+ lockdown_get_filename (const gchar *action_id)
+ {
+   return g_strdup_printf (PACKAGE_LOCALSTATE_DIR
+-                          "/lib/polkit-1/localauthority/90-mandatory.d/"
++                          "/db/polkit-1/localauthority/90-mandatory.d/"
+                           "org.freedesktop.policykit.localauthority.lockdown.action-%s.pkla",
+                           action_id);
+ }
