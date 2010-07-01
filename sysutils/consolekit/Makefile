@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/30 22:51:33 ajacoutot Exp $
-
-# XXX rotate /var/log/ConsoleKit/history
-
-BROKEN=		WIP does not work yet
+# $OpenBSD: Makefile,v 1.9 2010/07/01 07:50:59 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 

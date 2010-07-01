@@ -1,0 +1,2 @@
+The /var/log/ConsoleKit/history logfile can grow very large after some
+time. It is advised to use newsyslog(8) to rotate it.

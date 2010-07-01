@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.5 2010/06/30 22:51:33 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Wed Apr 29 21:07:29 2009
 +++ src/ck-sysdeps-unix.c	Thu Jul  1 00:35:56 2010
 @@ -35,6 +35,10 @@
@@ -62,7 +62,7 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.5 2010/06/30 22:51:33 ajacoutot Exp $
  
          errno = 0;
 -#ifdef VT_WAITACTIVE
-+// XXX hangs forever, pthread bug?
++// XXX hangs forever, pthread bug (works with rthreads)
 +#if defined VT_WAITACTIVE && !defined (__OpenBSD__)
          g_debug ("VT_WAITACTIVE for vt %d", num);
          res = ioctl (console_fd, VT_WAITACTIVE, num);

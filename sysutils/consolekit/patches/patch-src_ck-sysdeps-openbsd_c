@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.5 2010/07/01 01:00:09 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp $
 --- src/ck-sysdeps-openbsd.c.orig	Thu Jul  1 02:47:13 2010
 +++ src/ck-sysdeps-openbsd.c	Thu Jul  1 02:48:18 2010
 @@ -0,0 +1,414 @@
@@ -200,7 +200,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.5 2010/07/01 01:00:09 ajacoutot Exp
 +        }
 +
 +        if (p.p_tdev == NODEV) {
-+		/* XXXJDM nasty hack */
++		/* XXX nasty hack */
 +                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
 +        }
 +
@@ -339,9 +339,9 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.5 2010/07/01 01:00:09 ajacoutot Exp
 +gboolean
 +ck_get_max_num_consoles (guint *num)
 +{
-+	/* XXXJDM how can we find out how many are configured? */
++	/* XXX how can we find out how many are configured? */
 +        if (num != NULL) {
-+                *num = 8;
++                *num = 7;
 +        }
 +
 +        return TRUE;
