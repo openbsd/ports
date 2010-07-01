@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2010/03/30 12:52:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/07/01 16:47:22 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.28.1
-PKGNAME=	gconf2-${GNOME_VERSION}
+PKGNAME=	gconf2-${GNOME_VERSION}p0
 
 SHARED_LIBS +=	gconf-2              6.2      # .5.5
 
@@ -25,7 +25,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
+		xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -43,7 +44,7 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--without-openldap
 
-# needs policykit
+# don't enforce polkit dependency for now
 CONFIGURE_ARGS+= --disable-defaults-service
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2
