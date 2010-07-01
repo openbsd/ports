@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
---- configure.in.orig	Tue May 29 23:01:56 2007
-+++ configure.in	Tue May 29 23:02:18 2007
+$OpenBSD: patch-configure_in,v 1.2 2010/07/01 01:57:33 jakemsr Exp $
+--- configure.in.orig	Tue Nov 15 01:40:02 2005
++++ configure.in	Thu May  6 02:55:49 2010
 @@ -11,6 +11,7 @@ AC_CHECK_PROGS(RPMBUILD, rpmbuild, rpm)
  dnl Checks for libraries.
  AC_CHECK_LIB(m, main)
  AC_CHECK_LIB(pthread, main)
-+AC_CHECK_LIB(ossaudio, _oss_ioctl)
++AC_CHECK_LIB(sndio, sio_open)
  AC_DEFINE(USE_PTHREAD, 1)
  
  if test "${ac_cv_c_compiler_gnu}" = "yes"; then

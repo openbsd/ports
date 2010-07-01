@@ -1,12 +1,142 @@
-$OpenBSD: patch-src_psk31-transmitter_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
---- src/psk31-transmitter.C.orig	Tue May 29 22:56:14 2007
-+++ src/psk31-transmitter.C	Tue May 29 22:56:29 2007
-@@ -11,7 +11,7 @@
+$OpenBSD: patch-src_psk31-transmitter_C,v 1.2 2010/07/01 01:57:33 jakemsr Exp $
+--- src/psk31-transmitter.C.orig	Fri Aug  5 09:03:20 2005
++++ src/psk31-transmitter.C	Wed Jun 30 17:33:04 2010
+@@ -11,8 +11,7 @@
  #include <errno.h>
  #include <stdio.h>
  #include <stdlib.h>
 -#include <sys/soundcard.h>
-+#include <soundcard.h>
- #include <sys/ioctl.h>
+-#include <sys/ioctl.h>
++#include <poll.h>
  #include "psk31-coder.h"
  #include "psk31-transmitter.h"
+ #include <assert.h>
+@@ -22,6 +21,8 @@ extern int full_duplex; // from psk31-main.C
+ extern int chans;       // from server-main.C
+ extern int bits;
+ 
++extern long long realpos, playpos;       // from server-main.C
++
+ /* Morse code encoding table */
+ /* 0=space, 1=dot; from msb to lsb; lowest 1 = end of code */
+ unsigned int psk31_transmitter::cwtab[58] = 
+@@ -432,64 +433,22 @@ int psk31_transmitter::processor()
+ {
+    static int wcnt = 0;
+ 
+-   int res, odelay;
++   int res;
++   long long odelay;
+    static int write_pending;
+    static int len, buflen;
+    static int  odd = 0;
+    static short val, obuf[BLOCKSIZE];
+-   count_info cinfo;
+-   audio_buf_info ospace;
++   struct pollfd pfd;
++   int events = 0, revents, n;
+ 
+-   // Get free space in write buffer....
+-   res=ioctl(audiofd, SNDCTL_DSP_GETOSPACE, &ospace);
+-   if(res)
+-   {
+-      if(errno==EBUSY)
+-      {
+-         // simplex card in read mode
+-         // assume that there is enough space!
+-         // (i.e. avoid check...)
+-         // set odelay (this is not the real value, this
+-         // echo will be too fast, but thats better than
+-         // nothing...
+-         odelay = 0;
+-      }
+-      else
+-      {
+-         perror("ERROR: GETOSPACE failed");
+-         return TX_ERROR;
+-      }
+-   }
+-   else
+-   {
+-      // ToDo: adjustable buffer limit --- a small buffer increases the
+-      // possibility of buffer underruns, but reduces the delay between
+-      // typing and actual transmission
+-      if(ospace.fragments<ospace.fragstotal-32)
+-      {
+-         usleep(5000);  // avoid 100% load!
+-         return TX_BUSY;
+-      }
+-#if 1
+-      // Emulation of GETODELAY via GETOSPACE value...
+-      // odelay value obtained this way might be larger than the
+-      // real ODELAY by up to one fragment size....
+-      odelay = (ospace.fragstotal*ospace.fragsize-ospace.bytes);
+-#endif
+-   }
++   n = sio_pollfd(hdl, &pfd, events);
++   res = poll(&pfd, n, 0);
++   revents = sio_revents(hdl, &pfd);
+ 
+-#if 0
+-   // Using GETODELAY..... 
+-   // does not work on all (esp. older) systems... -- requires OSS!
+-   res=ioctl(audiofd, SNDCTL_DSP_GETODELAY, &odelay);
+-   if(res)
+-   {
+-      perror("ERROR: GETODELAY failed");
+-      return TX_ERROR;
+-   }
+-#endif
+-   // odelay is set above
+-   ioctl(audiofd, SNDCTL_DSP_GETOPTR, &cinfo);
++   odelay = 0;
++   if (playpos > realpos)
++      odelay = playpos - realpos;
+ 
+    if(!write_pending)
+    {
+@@ -515,7 +474,7 @@ int psk31_transmitter::processor()
+          }
+          if(echo_char)
+          {
+-            add_echo_char(echo_char, cinfo.bytes+odelay+len*sizeof(short));
++            add_echo_char(echo_char, playpos+len*sizeof(short));
+             echo_char=0;
+          }
+ 
+@@ -568,32 +527,20 @@ int psk31_transmitter::processor()
+       }
+    }
+ 
+-   res=write(audiofd, &obuf, len*sizeof(short));
++   res=sio_write(hdl, &obuf, len*sizeof(short));
++   playpos += res;
+ 
+    if(res>0)
+       wcnt+=res;
+ 
+    if(res!=(int)(len*sizeof(short)))
+    {
+-      if(res<0 && (errno==EINTR||errno==EAGAIN))
+-      {
+-         write_pending=1; return TX_BUSY;
+-      }
+-      if(res==0 || (res<0 && (errno==EBUSY)))
+-      {
+-         write_pending=1; return TX_BUSY;
+-      }
+-      if(res<0)
+-      {
+-         fprintf(stderr,"tx: write error... res=%d\n",res);
+-         return TX_ERROR;
+-      }
+       fprintf(stderr,"tx: partial write (%d/%d)...\n",
+               res,BLOCKSIZE*sizeof(short));
+       return TX_ERROR;
+    }
+    write_pending=0;
+-   res = get_echo_char( cinfo.bytes );
++   res = get_echo_char( realpos );
+ 
+ #if 0
+    if(res!=TX_BUSY)

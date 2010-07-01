@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_psk31-transmitter_h,v 1.1 2010/07/01 01:57:33 jakemsr Exp $
+--- src/psk31-transmitter.h.orig	Tue Aug  2 09:50:58 2005
++++ src/psk31-transmitter.h	Thu May  6 16:19:11 2010
+@@ -5,6 +5,8 @@
+ #ifndef __PSK31_TRANSMITTER_INCLUDED
+ #define __PSK31_TRANSMITTER_INCLUDED
+ 
++#include <sndio.h>
++
+ #include "psk31-coder.h"
+ 
+ #define DMA_BUF_BITS 10
+@@ -18,7 +20,7 @@ class psk31_transmitter { (private)
+ 	int transmit_state;
+ 	//int saved_echo_char;
+ 	//int saved_echo_timestamp;
+-	int audiofd;
++	struct sio_hdl *hdl;
+ 	int cwmode;
+ 	int qpsk;
+ 	int lsb;
+@@ -85,7 +87,7 @@ class psk31_transmitter { (private)
+ 		if(q) *q=qpsk; if(l) *l=lsb; if(f) *f=_txfreq;
+ 		if(cw) *cw=cwmode;
+ 	}
+-	void set_audiofd(int fd) { audiofd=fd; }
++	void set_audiofd(struct sio_hdl *h) { hdl=h; }
+ 	int send_char(int c);
+ 	int send_string(char *str);
+ 	int send_cw_string(int need_postamble, char *str);

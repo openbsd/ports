@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_main_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
---- src/main.C.orig	Tue May 29 22:57:54 2007
-+++ src/main.C	Tue May 29 22:58:00 2007
-@@ -27,7 +27,7 @@
+$OpenBSD: patch-src_main_C,v 1.2 2010/07/01 01:57:33 jakemsr Exp $
+--- src/main.C.orig	Tue Nov 15 02:20:31 2005
++++ src/main.C	Wed Jun 30 17:24:16 2010
+@@ -27,8 +27,6 @@
  #include <sys/types.h>
  #include <unistd.h>
  #include <stdio.h>
 -#include <sys/soundcard.h>
-+#include <soundcard.h>
- #include <sys/ioctl.h>
+-#include <sys/ioctl.h>
  #include <sys/stat.h>
  #include <fcntl.h>
+ #include <string.h>

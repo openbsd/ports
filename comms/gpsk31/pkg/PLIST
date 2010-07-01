@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/21 18:11:02 ajacoutot Exp $
-bin/gpsk31
+@comment $OpenBSD: PLIST,v 1.5 2010/07/01 01:57:33 jakemsr Exp $
+@bin bin/gpsk31
 @man man/man1/gpsk31.1
-share/applications/
 share/applications/gpsk31.desktop
 share/gpsk31/
 share/gpsk31/README

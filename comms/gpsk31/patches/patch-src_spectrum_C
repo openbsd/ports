@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_spectrum_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
---- src/spectrum.C.orig	Tue May 29 22:58:21 2007
-+++ src/spectrum.C	Tue May 29 22:58:28 2007
-@@ -27,7 +27,7 @@
+$OpenBSD: patch-src_spectrum_C,v 1.2 2010/07/01 01:57:33 jakemsr Exp $
+--- src/spectrum.C.orig	Fri Aug  5 09:03:20 2005
++++ src/spectrum.C	Wed Jun 30 17:46:17 2010
+@@ -25,9 +25,6 @@
+ #include <sys/stat.h>
+ #include <ctype.h>
  #include <stdlib.h>
- #include <sys/ioctl.h>
- #include <fcntl.h>
+-#include <sys/ioctl.h>
+-#include <fcntl.h>
 -#include <sys/soundcard.h>
-+#include <soundcard.h>
  
  #include <gtk/gtk.h>
  #include <stdio.h>

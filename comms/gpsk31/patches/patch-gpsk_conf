@@ -1,12 +1,13 @@
-$OpenBSD: patch-gpsk_conf,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
---- gpsk.conf.orig	Tue May 29 23:20:30 2007
-+++ gpsk.conf	Tue May 29 23:20:36 2007
-@@ -39,7 +39,7 @@ freq = 1000
+$OpenBSD: patch-gpsk_conf,v 1.2 2010/07/01 01:57:33 jakemsr Exp $
+--- gpsk.conf.orig	Tue Nov 15 02:19:56 2005
++++ gpsk.conf	Wed Jun 30 17:56:29 2010
+@@ -39,7 +39,8 @@ freq = 1000
  dcd_level = 13
  lsb = 0
  ptt_device = "/dev/ttyS1"
 -audio_device = "/dev/dsp"
-+audio_device = "/dev/audio"
++# audio_device isn't actually used.  use AUDIODEVICE env var.
++audio_device = "default"
  #
  # Use new demodulator/rx filter?
  #

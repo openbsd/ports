@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_callback_C,v 1.1 2010/07/01 01:57:33 jakemsr Exp $
+--- src/callback.C.orig	Wed Jun 30 17:47:33 2010
++++ src/callback.C	Wed Jun 30 17:48:12 2010
+@@ -29,9 +29,6 @@ int shift_key_down = 0;		/* is shift-key pressed? */
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <stdio.h>
+-#include <sys/ioctl.h>
+-#include <sys/stat.h>
+-#include <fcntl.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <stdlib.h>
