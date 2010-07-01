@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2010/06/23 18:05:00 landry Exp $
+# $OpenBSD: Makefile,v 1.204 2010/07/01 20:19:07 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -71,6 +71,7 @@
      SUBDIR += login_ldap
      SUBDIR += logpp
      SUBDIR += lsof
+     SUBDIR += luastatgrab
      SUBDIR += mac-robber
      SUBDIR += malo-firmware
      SUBDIR += memtest86+
