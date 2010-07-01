@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/03 07:58:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/01 21:04:20 ajacoutot Exp $
 bin/GWorkspace
 bin/Recycler
 @bin bin/ddbd
@@ -355,7 +355,6 @@ lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Info-gnustep.plist
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Operation.tiff
-lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/progind.tiff
 lib/GNUstep/Frameworks/Operation.framework/Versions/Current
 lib/GNUstep/Services/thumbnailer.service/
 lib/GNUstep/Services/thumbnailer.service/Resources/
@@ -486,6 +485,7 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gor
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
+libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
@@ -496,6 +496,7 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
+libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
