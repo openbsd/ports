@@ -1,3 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/01 09:18:54 sthen Exp $
 ${P5SITE}/Authen/
 ${P5SITE}/Authen/Radius.pm
+@man man/man3p/Authen::Radius.3p
+share/examples/p5-Authen-Radius/
+share/examples/p5-Authen-Radius/dictionary
+share/examples/p5-Authen-Radius/dictionary.ascend
+share/examples/p5-Authen-Radius/dictionary.cisco
+share/examples/p5-Authen-Radius/dictionary.compat
+share/examples/p5-Authen-Radius/dictionary.livingston
+share/examples/p5-Authen-Radius/dictionary.quintum
+share/examples/p5-Authen-Radius/dictionary.shiva
+share/examples/p5-Authen-Radius/dictionary.tunnel
+share/examples/p5-Authen-Radius/dictionary.usr
+share/examples/p5-Authen-Radius/dictionary.versanet
+share/examples/p5-Authen-Radius/dictionary.xtradius
