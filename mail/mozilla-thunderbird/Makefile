@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2010/06/23 17:10:48 landry Exp $
+# $OpenBSD: Makefile,v 1.95 2010/07/01 20:32:08 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	e-mail, rss and usenet client based on Mozilla codebase
+
+# Don't forget to bump mail/thunderbird-i18n after updates.
 
 VER=		3.0.5
 DISTNAME=	comm-1.9.1
