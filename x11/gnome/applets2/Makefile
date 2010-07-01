@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2010/04/24 17:50:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2010/07/01 17:56:31 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -62,7 +62,12 @@ MODGCONF2_SCHEMAS_DIR=	gnome-applets2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-mixer-applet \
-			--enable-networkmanager=no
+			--disable-networkmanager
+# polkit support is only for cpufreq which we don't support
+CONFIGURE_ARGS+=	--disable-frequency-selector \
+			--disable-suid \
+			--disable-polkit
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
