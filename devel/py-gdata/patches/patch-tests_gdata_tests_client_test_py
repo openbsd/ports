@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_gdata_tests_client_test_py,v 1.1 2010/07/02 00:06:31 djm Exp $
+--- tests/gdata_tests/client_test.py.orig	Sat Apr 17 05:45:13 2010
++++ tests/gdata_tests/client_test.py	Wed Jun 16 21:43:59 2010
+@@ -215,7 +215,8 @@ class RequestTest(unittest.TestCase):
+     self.assertEqual(response.getheader('Echo-Host'), 'example.net:8080')
+     # A Uri with path set to None should default to /.
+     self.assertEqual(response.getheader('Echo-Uri'), '/')
+-    self.assertEqual(response.getheader('Echo-Scheme'), 'http')
++    # See http://code.google.com/p/gdata-python-client/issues/detail?id=371
++    self.assertEqual(response.getheader('Echo-Scheme'), 'https')
+     self.assertEqual(response.getheader('Echo-Method'), 'POST')
+     self.assertEqual(response.getheader('Content-Type'), 'text/plain')
+     self.assertEqual(response.getheader('X'), '1')
+@@ -226,7 +227,7 @@ class RequestTest(unittest.TestCase):
+     response = client.request(uri='/new/path?p=1', http_request=http_request)
+     self.assertEqual(response.getheader('Echo-Host'), 'example.net:8080')
+     self.assertEqual(response.getheader('Echo-Uri'), '/new/path?p=1')
+-    self.assertEqual(response.getheader('Echo-Scheme'), 'http')
++    self.assertEqual(response.getheader('Echo-Scheme'), 'https')
+     self.assertEqual(response.read(), 'test')
+ 
+   def test_gdata_version_header(self):
