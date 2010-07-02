@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/02 04:18:23 jim Exp $
+${P5SITE}/Getopt/
+${P5SITE}/Getopt/Long/
+${P5SITE}/Getopt/Long/Descriptive/
+${P5SITE}/Getopt/Long/Descriptive.pm
+${P5SITE}/Getopt/Long/Descriptive/Opts.pm
+${P5SITE}/Getopt/Long/Descriptive/Usage.pm
+@man man/man3p/Getopt::Long::Descriptive.3p
+@man man/man3p/Getopt::Long::Descriptive::Opts.3p
+@man man/man3p/Getopt::Long::Descriptive::Usage.3p
