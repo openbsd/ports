@@ -1,0 +1,12 @@
+$OpenBSD: patch-scheduler_auth_c,v 1.1 2010/07/02 07:52:08 ajacoutot Exp $
+--- scheduler/auth.c.orig	Fri Jul  2 09:21:55 2010
++++ scheduler/auth.c	Fri Jul  2 09:22:09 2010
+@@ -94,7 +94,7 @@ extern const char *cssmErrorString(int error);
+ typedef struct xucred cupsd_ucred_t;
+ #  define CUPSD_UCRED_UID(c) (c).cr_uid
+ #else
+-typedef struct ucred cupsd_ucred_t;
++typedef struct sockpeercred cupsd_ucred_t;
+ #  define CUPSD_UCRED_UID(c) (c).uid
+ #endif /* HAVE_SYS_UCRED_H */
+ #ifdef HAVE_KRB5_IPC_CLIENT_SET_TARGET_UID
