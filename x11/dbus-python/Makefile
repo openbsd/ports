@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/02 18:01:53 ajacoutot Exp $
 
 COMMENT=	dbus bindings for Python
 
 DISTNAME=	dbus-python-0.83.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}releases/dbus-python/
 
 HOMEPAGE=	http://dbus.freedesktop.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # ISC-like
 PERMIT_DISTFILES_CDROM=	Yes

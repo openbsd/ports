@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/20 14:00:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/02 18:01:53 ajacoutot Exp $
 
 COMMENT=	D-Bus binding for GObject
 
 DISTNAME=	eggdbus-0.6
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  eggdbus-1 0.0                     # .0.0
 
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes

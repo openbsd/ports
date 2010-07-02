@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/20 14:59:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/02 18:01:53 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.86
-PKGNAME=	${DISTNAME}v0
+PKGNAME=	${DISTNAME}p0v0
 
 SHARED_LIBS+=	dbus-glib-1	4.2 # .3.0
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
