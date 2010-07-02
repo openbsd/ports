@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/14 17:45:04 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/02 04:14:16 jim Exp $
 ${P5SITE}/Data/
 ${P5SITE}/Data/Dump/
 ${P5SITE}/Data/Dump.pm
+${P5SITE}/Data/Dump/FilterContext.pm
+${P5SITE}/Data/Dump/Filtered.pm
 ${P5SITE}/Data/Dump/Trace.pm
 @man man/man3p/Data::Dump.3p
+@man man/man3p/Data::Dump::Filtered.3p
 @man man/man3p/Data::Dump::Trace.3p

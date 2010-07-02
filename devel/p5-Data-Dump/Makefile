@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/14 17:45:04 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/02 04:14:16 jim Exp $
 
 COMMENT=        pretty printing of data structures
 
 MODULES=	cpan
-DISTNAME=	Data-Dump-1.14
+DISTNAME=	Data-Dump-1.17
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
