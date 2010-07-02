@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/02 17:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/02 17:14:06 ajacoutot Exp $
 
-COMMENT=	PolicyKit integration for GNOME
+COMMENT=	PolicyKit integration for GNOME/GTK+2
 
 GNOME_PROJECT=	polkit-gnome
 GNOME_VERSION=	0.96
