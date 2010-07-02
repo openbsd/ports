@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/03/23 13:30:39 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/07/02 14:35:48 giovanni Exp $
 @group daemon
 phpMyAdmin/
 @comment phpMyAdmin/.gitignore
@@ -593,6 +593,7 @@ phpMyAdmin/scripts/find_unused_messages.sh
 phpMyAdmin/scripts/lang-cleanup.sh
 phpMyAdmin/scripts/remove_control_m.sh
 phpMyAdmin/scripts/signon.php
+phpMyAdmin/scripts/update-from-po
 phpMyAdmin/scripts/upgrade.pl
 phpMyAdmin/scripts/upgrade_tables_mysql_4_1_2+.sql
 phpMyAdmin/server_binlog.php
