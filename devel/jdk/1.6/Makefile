@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/02/05 13:10:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/02 01:43:12 jakemsr Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p9
-PKGNAME-jre=		jre-${V}p9
+PKGNAME-main=		jdk-${V}p10
+PKGNAME-jre=		jre-${V}p10
 
 CATEGORIES=		devel/jdk java
 
@@ -48,7 +48,7 @@ BUILD_DEPENDS=		::archivers/gtar \
 			::x11/openmotif
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread pthread-stubs \
-			stdc++ xcb z
+			sndio stdc++ xcb z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -156,6 +156,7 @@ post-extract:
 		mkdir deploy/src/plugin/share/plugin && \
 		mv share/plugin/mozilla_headers_18 deploy/src/plugin/share/plugin
 	@cp -f ${FILESDIR}/cacerts ${WRKDIR}/j2se/src/share/lib/security
+	@cp ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c ${WRKDIR}/j2se/src/solaris/native/com/sun/media/sound/engine
 	@rm -rf ${WRKDIR}/tmp ${WRKDIR}/share
 
 pre-patch:
