@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/12/04 19:51:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/07/02 17:50:45 ajacoutot Exp $
 %%SHARED%%
 include/gtkspell-2.0/
 include/gtkspell-2.0/gtkspell/
@@ -7,6 +7,9 @@ lib/libgtkspell.a
 lib/libgtkspell.la
 lib/pkgconfig/
 lib/pkgconfig/gtkspell-2.0.pc
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/gtkspell.mo
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/cs/LC_MESSAGES/gtkspell.mo
 share/locale/da/LC_MESSAGES/gtkspell.mo
@@ -32,12 +35,17 @@ share/locale/ky/LC_MESSAGES/gtkspell.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gtkspell.mo
+share/locale/lv/LC_MESSAGES/gtkspell.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gtkspell.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/gtkspell.mo
 share/locale/nb/LC_MESSAGES/gtkspell.mo
 share/locale/nl/LC_MESSAGES/gtkspell.mo
 share/locale/pl/LC_MESSAGES/gtkspell.mo
+share/locale/pt/LC_MESSAGES/gtkspell.mo
 share/locale/pt_BR/LC_MESSAGES/gtkspell.mo
 share/locale/rm/
 share/locale/rm/LC_MESSAGES/
@@ -49,8 +57,14 @@ share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gtkspell.mo
 share/locale/sk/LC_MESSAGES/gtkspell.mo
 share/locale/sl/LC_MESSAGES/gtkspell.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/gtkspell.mo
 share/locale/sr/LC_MESSAGES/gtkspell.mo
 share/locale/sv/LC_MESSAGES/gtkspell.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/gtkspell.mo
 share/locale/tr/LC_MESSAGES/gtkspell.mo
 share/locale/uk/LC_MESSAGES/gtkspell.mo
 share/locale/vi/LC_MESSAGES/gtkspell.mo
