@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/02 04:32:49 jim Exp $
+%%SHARED%%
+${P5ARCH}/MooseX/
+${P5ARCH}/MooseX/Role/
+${P5ARCH}/MooseX/Role/WithOverloading/
+${P5ARCH}/MooseX/Role/WithOverloading.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/Composite.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToClass.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToInstance.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToRole.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/FixOverloadedRefs.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/ToClass.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/ToInstance.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Application/ToRole.pm
+${P5ARCH}/MooseX/Role/WithOverloading/Meta/Role/Composite.pm
+${P5ARCH}/auto/MooseX/
+${P5ARCH}/auto/MooseX/Role/
+${P5ARCH}/auto/MooseX/Role/WithOverloading/
+${P5ARCH}/auto/MooseX/Role/WithOverloading/WithOverloading.bs
+@man man/man3p/MooseX::Role::WithOverloading.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::Composite.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToClass.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToInstance.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToRole.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::FixOverloadedRefs.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::ToClass.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::ToInstance.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Application::ToRole.3p
+@man man/man3p/MooseX::Role::WithOverloading::Meta::Role::Composite.3p
