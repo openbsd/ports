@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.13 2006/11/11 15:01:19 steven Exp $
+# $OpenBSD: config.site,v 1.14 2010/07/02 17:36:58 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -19,6 +19,8 @@
 #ac_cv_func_tigetflag=${ac_cv_func_tigetflag=yes}	
 #ac_cv_func_tigetnum=${ac_cv_func_tigetnum=yes}	
 #ac_cv_func_tigetstr=${ac_cv_func_tigetstr=yes}	
+# gnulib's stdbool.m4 disagrees for gcc2.95
+#ac_cv_header_stdbool_h=${ac_cv_header_stdbool_h=yes}
 ac_cv_accept_arg=${ac_cv_accept_arg=socklen_t}	
 ac_cv_argtype_accept3=${ac_cv_argtype_accept3=socklen_t *}	
 ac_cv_argtype_poll2=${ac_cv_argtype_poll2=nfds_t}	
@@ -755,7 +757,6 @@ ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
 ac_cv_header_soundcard_h=${ac_cv_header_soundcard_h=yes}
 ac_cv_header_stat_h=${ac_cv_header_stat_h=no}
 ac_cv_header_stdarg_h=${ac_cv_header_stdarg_h=yes}
-ac_cv_header_stdbool_h=${ac_cv_header_stdbool_h=yes}
 ac_cv_header_stdc=${ac_cv_header_stdc=yes}
 ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
 ac_cv_header_stdio_h=${ac_cv_header_stdio_h=yes}
