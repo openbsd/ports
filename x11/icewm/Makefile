@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2010/03/21 11:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/07/02 17:40:18 ajacoutot Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.2.37
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

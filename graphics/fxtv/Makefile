@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2010/07/02 17:40:18 ajacoutot Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
 COMMENT=	capture utility for Brooktree-based cards
 DISTNAME=	fxtv-1.03
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://people.freebsd.org/~rhh/fxtv/
@@ -24,8 +24,6 @@ RUN_DEPENDS=	:sox->=12.12:audio/sox \
 		:mpeg_encode->=1.5:graphics/mpeg_encode \
 		:mplex->=1.1:graphics/mplex \
 		:netpbm-*:graphics/netpbm
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Runtime dependencies have patents

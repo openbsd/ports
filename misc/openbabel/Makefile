@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/03 22:56:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/02 17:40:18 ajacoutot Exp $
 
 COMMENT=	chemistry file translation program
 
 V=		2.2.3
 DISTNAME=	openbabel-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
 SUBST_VARS=	V
@@ -11,8 +12,6 @@ SUBST_VARS=	V
 SHARED_LIBS+=	openbabel	5.0	# .3.0
 
 HOMEPAGE=	http://openbabel.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
