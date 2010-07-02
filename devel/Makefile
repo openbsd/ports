@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.812 2010/06/30 19:02:51 robert Exp $
+# $OpenBSD: Makefile,v 1.813 2010/07/02 04:43:14 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -496,6 +496,7 @@
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
      SUBDIR += p5-Getopt-Euclid
+     SUBDIR += p5-Getopt-Long-Descriptive
      SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
@@ -557,8 +558,10 @@
      SUBDIR += p5-MooseX-Async
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
+     SUBDIR += p5-MooseX-ConfigFromFile
      SUBDIR += p5-MooseX-Declare
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
+     SUBDIR += p5-MooseX-Getopt
      SUBDIR += p5-MooseX-LazyRequire
      SUBDIR += p5-MooseX-LogDispatch
      SUBDIR += p5-MooseX-Log-Log4perl
@@ -569,9 +572,11 @@
      SUBDIR += p5-MooseX-Params-Validate
      SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Role-Parameterized
+     SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Types
+     SUBDIR += p5-MooseX-Types-Common
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
