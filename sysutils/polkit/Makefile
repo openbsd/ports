@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/02 21:47:43 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -29,8 +29,7 @@ MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 MODULES=	textproc/intltool \
 		devel/gettext
 
-BUILD_DEPENDS=	::textproc/libxslt \
-		::textproc/docbook-xsl \
+BUILD_DEPENDS=	::textproc/gtk-doc \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS}
 
