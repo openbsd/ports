@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/02 04:29:32 jim Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Getopt/
+${P5SITE}/MooseX/Getopt.pm
+${P5SITE}/MooseX/Getopt/Basic.pm
+${P5SITE}/MooseX/Getopt/Dashes.pm
+${P5SITE}/MooseX/Getopt/GLD.pm
+${P5SITE}/MooseX/Getopt/Meta/
+${P5SITE}/MooseX/Getopt/Meta/Attribute/
+${P5SITE}/MooseX/Getopt/Meta/Attribute.pm
+${P5SITE}/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
+${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait/
+${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait.pm
+${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
+${P5SITE}/MooseX/Getopt/OptionTypeMap.pm
+${P5SITE}/MooseX/Getopt/Strict.pm
+@man man/man3p/MooseX::Getopt.3p
+@man man/man3p/MooseX::Getopt::Basic.3p
+@man man/man3p/MooseX::Getopt::Dashes.3p
+@man man/man3p/MooseX::Getopt::GLD.3p
+@man man/man3p/MooseX::Getopt::Meta::Attribute.3p
+@man man/man3p/MooseX::Getopt::Meta::Attribute::NoGetopt.3p
+@man man/man3p/MooseX::Getopt::Meta::Attribute::Trait.3p
+@man man/man3p/MooseX::Getopt::Meta::Attribute::Trait::NoGetopt.3p
+@man man/man3p/MooseX::Getopt::OptionTypeMap.3p
+@man man/man3p/MooseX::Getopt::Strict.3p
