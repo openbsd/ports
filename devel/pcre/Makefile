@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2010/05/21 19:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/02 10:32:55 sthen Exp $
 
 COMMENT=	perl-compatible regular expression library
 
 DISTNAME=	pcre-8.02
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	pcre		2.3 \
 		pcrecpp		3.2 \
@@ -23,7 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+
+WANTLIB=		c m stdc++
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
