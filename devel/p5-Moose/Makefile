@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/01/12 09:10:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/02 04:10:24 jim Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-0.93
+DISTNAME=	Moose-1.08
 CATEGORIES=	devel
 
 # perl
