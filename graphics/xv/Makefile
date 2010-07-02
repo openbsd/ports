@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2009/09/24 20:07:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2010/07/02 21:59:39 sthen Exp $
 
 COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
 		tiff.>=38.::graphics/tiff \
 		png.>=5.::graphics/png
 
-WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb z
+WANTLIB=	X11 Xau Xdmcp c m z
 
 USE_X11=	Yes
 MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
