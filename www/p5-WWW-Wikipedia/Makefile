@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/03 13:27:43 stephan Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/02 13:15:32 stephan Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
-DISTNAME=		WWW-Wikipedia-1.96
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		WWW-Wikipedia-1.97
 CATEGORIES=		www
 
 MAINTAINER=		Stephan A. Rickauer <stephan@openbsd.org>
