@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/01 07:55:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/02 17:10:06 ajacoutot Exp $
 
 COMMENT=	PolicyKit integration for GNOME
 
@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS +=  polkit-gtk-1              0.0 # 0.0
 
 HOMEPAGE=	http://hal.freedesktop.org/docs/PolicyKit-gnome/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
