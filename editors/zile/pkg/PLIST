@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/08/20 21:06:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/07/02 05:30:27 naddy Exp $
 @bin bin/zile
-@info info/zile.info
 @comment lib/charset.alias
 @man man/man1/zile.1
 share/zile/
-share/zile/AUTODOC
 share/zile/FAQ
-share/zile/HELP
-share/zile/TUTORIAL
 share/zile/dotzile.sample
