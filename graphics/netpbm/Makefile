@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2009/10/11 19:36:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2010/07/02 02:54:59 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.26.64
-SHARED_LIBS=	netpbm	1.0
+DISTNAME=	netpbm-10.35.75
+SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
@@ -15,12 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
 
-WANTLIB=	c m z
-LIB_DEPENDS=	tiff.>=35::graphics/tiff \
-		jpeg.>=62::graphics/jpeg \
-		png.>=2::graphics/png \
+MODULES=	converters/libiconv
+WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb z
+LIB_DEPENDS=	tiff.>=38::graphics/tiff \
+		jpeg.>=64::graphics/jpeg \
+		png.>=10::graphics/png \
 		jbig.>=2::graphics/jbigkit \
-		jasper.>=1::graphics/jasper
+		jasper.>=2::graphics/jasper \
+		xml2.>=11::textproc/libxml
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
@@ -31,6 +33,9 @@ INSTALL_TARGET=	install.bin install.lib install.data \
 MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
 FAKE_FLAGS=	PKGDIR="${WRKINST}${TRUEPREFIX}"
+
+pre-patch:
+	@rm -f ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
 
 pre-build:
 	@perl -i -pe 's#%%X11BASE%%#${X11BASE}#g;' \

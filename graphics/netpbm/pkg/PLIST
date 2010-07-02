@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/10/11 19:36:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/07/02 02:54:59 naddy Exp $
 %%SHARED%%
 @bin bin/411toppm
 bin/anytopnm
@@ -8,6 +8,7 @@ bin/anytopnm
 @bin bin/bmptopnm
 bin/bmptoppm
 @bin bin/brushtopbm
+@bin bin/cameratopam
 @bin bin/cmuwmtopbm
 @bin bin/ddbugtopbm
 @bin bin/escp2topbm
@@ -40,11 +41,14 @@ bin/manweb
 @bin bin/mtvtoppm
 @bin bin/neotoppm
 @bin bin/palmtopnm
+@bin bin/pamaddnoise
 @bin bin/pamarith
+@bin bin/pambayer
 @bin bin/pamchannel
 @bin bin/pamcomp
 @bin bin/pamcut
 @bin bin/pamdeinterlace
+@bin bin/pamdepth
 @bin bin/pamdice
 @bin bin/pamditherbw
 @bin bin/pamedge
@@ -54,30 +58,42 @@ bin/manweb
 @bin bin/pamflip
 @bin bin/pamfunc
 @bin bin/pamgauss
+@bin bin/pamgradient
 @bin bin/pamlookup
 @bin bin/pammasksharpen
+@bin bin/pammixinterlace
 @bin bin/pamoil
 @bin bin/pamperspective
+@bin bin/pampick
 @bin bin/pampop9
+@bin bin/pamrgbatopng
 @bin bin/pamscale
 @bin bin/pamseq
 @bin bin/pamsharpmap
 @bin bin/pamsharpness
 @bin bin/pamslice
+@bin bin/pamsplit
 @bin bin/pamstack
 @bin bin/pamstereogram
 @bin bin/pamstretch
 bin/pamstretch-gen
 @bin bin/pamsumm
 @bin bin/pamsummcol
+@bin bin/pamthreshold
+@bin bin/pamtilt
 @bin bin/pamtodjvurle
+@bin bin/pamtofits
 @bin bin/pamtohdiff
 @bin bin/pamtohtmltbl
 @bin bin/pamtojpeg2k
 @bin bin/pamtopfm
 @bin bin/pamtopnm
+@bin bin/pamtosvg
 @bin bin/pamtotga
+@bin bin/pamtotiff
 @bin bin/pamtouil
+@bin bin/pamtoxvmini
+@bin bin/pamx
 @bin bin/pbmclean
 @bin bin/pbmlife
 @bin bin/pbmmake
@@ -131,10 +147,13 @@ bin/pcdovtoppm
 @bin bin/pgmabel
 @bin bin/pgmbentley
 @bin bin/pgmcrater
+@bin bin/pgmdeshadow
 bin/pgmedge
 @bin bin/pgmenhance
 @bin bin/pgmhist
 @bin bin/pgmkernel
+@bin bin/pgmmake
+@bin bin/pgmmedian
 @bin bin/pgmminkowski
 @bin bin/pgmmorphconv
 @bin bin/pgmnoise
@@ -162,14 +181,14 @@ bin/pnmarith
 @bin bin/pnmconvol
 @bin bin/pnmcrop
 @bin bin/pnmcut
-@bin bin/pnmdepth
+bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
 @bin bin/pnmgamma
 @bin bin/pnmhisteq
 @bin bin/pnmhistmap
-bin/pnmindex
+@bin bin/pnmindex
 bin/pnminterp
 @bin bin/pnminvert
 bin/pnmmargin
@@ -187,25 +206,25 @@ bin/pnmquant
 @bin bin/pnmscalefixed
 @bin bin/pnmshear
 @bin bin/pnmsmooth
-@bin bin/pnmsplit
+bin/pnmsplit
 @bin bin/pnmstitch
 @bin bin/pnmtile
 @bin bin/pnmtoddif
 @bin bin/pnmtofiasco
-@bin bin/pnmtofits
+bin/pnmtofits
 @bin bin/pnmtojbig
 @bin bin/pnmtojpeg
 @bin bin/pnmtopalm
 @bin bin/pnmtopclxl
 bin/pnmtoplainpnm
 @bin bin/pnmtopng
-@bin bin/pnmtopnm
+bin/pnmtopnm
 @bin bin/pnmtops
 @bin bin/pnmtorast
 @bin bin/pnmtorle
 @bin bin/pnmtosgi
 @bin bin/pnmtosir
-@bin bin/pnmtotiff
+bin/pnmtotiff
 @bin bin/pnmtotiffcmyk
 @bin bin/pnmtoxwd
 @bin bin/ppm3d
@@ -214,9 +233,13 @@ bin/pnmtoplainpnm
 @bin bin/ppmcie
 @bin bin/ppmcolormask
 @bin bin/ppmcolors
+@bin bin/ppmdcfont
+@bin bin/ppmddumpfont
 @bin bin/ppmdim
 @bin bin/ppmdist
 @bin bin/ppmdither
+@bin bin/ppmdmkfont
+@bin bin/ppmdraw
 bin/ppmfade
 @bin bin/ppmflash
 @bin bin/ppmforge
@@ -275,6 +298,7 @@ bin/ppmtouil
 @bin bin/rawtopgm
 @bin bin/rawtoppm
 @bin bin/rgb3toppm
+@bin bin/rlatopam
 @bin bin/rletopnm
 @bin bin/sbigtopgm
 @bin bin/sgitopnm
@@ -283,6 +307,7 @@ bin/ppmtouil
 @bin bin/spctoppm
 @bin bin/spottopgm
 @bin bin/sputoppm
+@bin bin/svgtopam
 @bin bin/tgatoppm
 @bin bin/thinkjettopbm
 @bin bin/tifftopnm

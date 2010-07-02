@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_libsystem_c,v 1.1 2010/07/02 02:54:59 naddy Exp $
+--- lib/libsystem.c.orig	Wed Jun 30 05:59:20 2010
++++ lib/libsystem.c	Wed Jun 30 05:59:43 2010
+@@ -12,7 +12,7 @@
+ 
+    Contributed to the public domain.
+ =============================================================================*/
+-#define _XOPEN_SOURCE
++/*#define _XOPEN_SOURCE*/
+ 
+ #include <unistd.h>
+ #include <stdlib.h>
+@@ -225,8 +225,8 @@ signalName(unsigned int const signalClass) {
+                not defined by POSIX, including: SIGPWR, SIGLOST, SIGINFO
+             */
+         }
+-    } else if ((int)signalClass >= SIGRTMIN && (int)signalClass <= SIGRTMAX)
+-        return "SIGRTxxx";
++    } /* else if ((int)signalClass >= SIGRTMIN && (int)signalClass <= SIGRTMAX)
++        return "SIGRTxxx"; */
+     else
+         return "???";
+ }

@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile.config.OpenBSD,v 1.8 2006/10/19 16:05:19 naddy Exp $
+# $OpenBSD: Makefile.config.OpenBSD,v 1.9 2010/07/02 02:54:59 naddy Exp $
 # Indented variables are unchanged from the defaults in Makefile.config.in.
 # Commented out variables are set in MAKE_FLAGS.
 #
-DEFAULT_TARGET=nonmerge
- BUILD_FIASCO=Y
+ DEFAULT_TARGET = nonmerge
+ BUILD_FIASCO = Y
 #CC
- LD=$(CC)
+ LD = $(CC)
  LINKERISCOMPILER=Y
  LINKER_CAN_DO_EXPLICIT_LIBRARY=N
  INTTYPES_H = <inttypes.h>
+ HAVE_INT64 = Y
  CC_FOR_BUILD = $(CC)
  LD_FOR_BUILD = $(LD)
+ CFLAGS_FOR_BUILD = $(CFLAGS)
 #INSTALL = $(SRCDIR)/buildtools/install.sh
  STRIPFLAG = -s
  SYMLINK = ln -s
@@ -18,10 +20,10 @@ DEFAULT_TARGET=nonmerge
  AR = ar
  RANLIB = ranlib
  LEX = flex
-#CFLAGS=
+#CFLAGS =
  EXE =
- LDFLAGS=
- LDSHLIB= -shared
+ LDFLAGS =
+LDSHLIB = -shared
  LDRELOC = NONE
 CFLAGS_SHLIB = -fpic
  SHLIB_CLIB =
@@ -33,20 +35,24 @@ TIFFHDR_DIR = $(LOCALBASE)/include
  TIFFLIB_NEEDS_Z = Y
 JPEGLIB = -L$(LOCALBASE)/lib -ljpeg
 JPEGHDR_DIR = $(LOCALBASE)/include
-PNGLIB = -L$(LOCALBASE)/lib -lpng
-PNGHDR_DIR = $(LOCALBASE)/include/libpng
+ PNGVER = 
 ZLIB = -lz
+ ZHDR_DIR =
 JBIGLIB = -L$(LOCALBASE)/lib -ljbig
 JBIGHDR_DIR = $(LOCALBASE)/include
 JASPERLIB = -L$(LOCALBASE)/lib -ljasper
 JASPERHDR_DIR = $(LOCALBASE)/include
  URTLIB = $(BUILDDIR)/urt/librle.a
  URTHDR_DIR = $(SRCDIR)/urt
+X11LIB = -L$(X11BASE)/lib -lX11 -lXau -lXdmcp -lxcb -lpthread-stubs
+X11HDR_DIR = $(X11BASE)/include
  LINUXSVGALIB = NONE
  OMIT_NETWORK =
  NETWORKLD =
  VMS =
+ DONT_HAVE_PROCESS_MGMT = N
 #PKGDIR_DEFAULT = /tmp/netpbm
+ PKGMANDIR = man
  INSTALL_PERM_BIN =  755
  INSTALL_PERM_LIBD = 755
  INSTALL_PERM_LIBS = 644

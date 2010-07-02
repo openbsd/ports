@@ -1,35 +1,15 @@
-$OpenBSD: patch-pm_config_in_h,v 1.1 2006/06/11 18:22:06 naddy Exp $
---- pm_config.in.h.orig	Sat May 27 20:39:49 2006
-+++ pm_config.in.h	Sat May 27 20:43:08 2006
-@@ -15,6 +15,10 @@
- 
- **************************************************************************/
- 
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#endif
-+
- #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
- #define SYSV
- #endif
-@@ -24,7 +28,7 @@
- ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
- ** probably better off setting SYSV - all it affects is string handling.
- */
--#define BSD
-+/* #define BSD */
- /* #define SYSV */
- /* #define MSDOS */
- #endif
-@@ -99,9 +103,9 @@ typedef int bool;
+$OpenBSD: patch-pm_config_in_h,v 1.2 2010/07/02 02:54:59 naddy Exp $
+--- pm_config.in.h.orig	Wed Jun 30 02:05:34 2010
++++ pm_config.in.h	Wed Jun 30 02:06:24 2010
+@@ -67,9 +67,9 @@
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else
 -#define RGB_DB1 "/usr/lib/X11/rgb.txt"
--#define RGB_DB2 "/usr/openwin/lib/rgb.txt"
+-#define RGB_DB2 "/usr/share/X11/rgb.txt"
 -#define RGB_DB3 "/usr/X11R6/lib/X11/rgb.txt"
-+#define RGB_DB1 "%%X11BASE%%/lib/X11/rgb.txt"
-+#define RGB_DB2 "%%X11BASE%%/lib/X11/rgb.txt"
++#define RGB_DB1 "%%X11BASE%%/share/X11/rgb.txt"
++#define RGB_DB2 "%%X11BASE%%/share/X11/rgb.txt"
 +#define RGB_DB3 "%%PREFIX%%/share/netpbm/rgb.txt"
  #endif
  
