@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.3 2010/07/02 06:02:29 jim Exp $
 
 COMMENT =		minimal try/catch with proper localization of $\@
 
