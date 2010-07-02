@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/27 00:44:58 jim Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/02 04:37:36 jim Exp $
 
 COMMENT= 	MVC Web Application Framework
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Runtime-5.80013
+DISTNAME=	Catalyst-Runtime-5.80024
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -20,13 +20,19 @@ RUN_DEPENDS=	::devel/p5-namespace-autoclean \
 		::devel/p5-namespace-clean \
 		:p5-B-Hooks-EndOfScope->=0.08:devel/p5-B-Hooks-EndOfScope \
 		:p5-Class-C3-Adopt-NEXT->=0.07:devel/p5-Class-C3-Adopt-NEXT \
-		:p5-Class-MOP->=0.83:devel/p5-Class-MOP \
+		::devel/p5-Class-Data-Inheritable \
+		:p5-Class-MOP->=1.03:devel/p5-Class-MOP \
 		::devel/p5-Data-Dump \
+		::devel/p5-Data-OptList \
 		::devel/p5-List-MoreUtils \
-		:p5-Moose->=0.90:devel/p5-Moose \
-		:p5-MooseX-Emulate-Class-Accessor-Fast->=0.00903:devel/p5-MooseX-Emulate-Class-Accessor-Fast \
-		:p5-MooseX-MethodAttributes->=0.16:devel/p5-MooseX-MethodAttributes \
 		::devel/p5-MRO-Compat \
+		:p5-Moose->=1.08:devel/p5-Moose \
+		:p5-MooseX-Emulate-Class-Accessor-Fast->=0.00903:devel/p5-MooseX-Emulate-Class-Accessor-Fast \
+		::devel/p5-MooseX-Getopt \
+		:p5-MooseX-MethodAttributes->=0.19:devel/p5-MooseX-MethodAttributes \
+		::devel/p5-MooseX-Role-WithOverloading \
+		::devel/p5-MooseX-Types \
+		::devel/p5-MooseX-Types-Common \
 		:p5-Path-Class->=0.09:devel/p5-Path-Class \
 		::devel/p5-Sub-Exporter \
 		::devel/p5-Task-Weaken \
@@ -36,11 +42,11 @@ RUN_DEPENDS=	::devel/p5-namespace-autoclean \
 		::textproc/p5-Text-SimpleTable \
 		::www/p5-CGI-Simple \
 		::www/p5-HTTP-Body \
-		:p5-HTTP-Request-AsCGI->=0.8:www/p5-HTTP-Request-AsCGI \
+		::www/p5-URI \
+		:p5-HTTP-Request-AsCGI->=1.0:www/p5-HTTP-Request-AsCGI \
 		:p5-libwww->=5.805:www/p5-libwww
 
-REGRESS_DEPENDS=::devel/p5-Class-Data-Inheritable \
-		::devel/p5-Pod-Coverage \
+REGRESS_DEPENDS=::devel/p5-Pod-Coverage \
 		::devel/p5-Test-Exception \
 		::devel/p5-Test-Pod \
 		::devel/p5-Test-Pod-Coverage

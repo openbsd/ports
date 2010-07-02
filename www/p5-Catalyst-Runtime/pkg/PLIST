@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/10/27 00:44:58 jim Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/07/02 04:37:36 jim Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -29,8 +29,10 @@ ${P5SITE}/Catalyst/Engine/FastCGI.pm
 ${P5SITE}/Catalyst/Engine/HTTP.pm
 ${P5SITE}/Catalyst/Exception/
 ${P5SITE}/Catalyst/Exception.pm
+${P5SITE}/Catalyst/Exception/Basic.pm
 ${P5SITE}/Catalyst/Exception/Detach.pm
 ${P5SITE}/Catalyst/Exception/Go.pm
+${P5SITE}/Catalyst/Exception/Interface.pm
 ${P5SITE}/Catalyst/Log.pm
 ${P5SITE}/Catalyst/Model.pm
 ${P5SITE}/Catalyst/Request/
@@ -38,6 +40,14 @@ ${P5SITE}/Catalyst/Request.pm
 ${P5SITE}/Catalyst/Request/Upload.pm
 ${P5SITE}/Catalyst/Response.pm
 ${P5SITE}/Catalyst/Runtime.pm
+${P5SITE}/Catalyst/Script/
+${P5SITE}/Catalyst/Script/CGI.pm
+${P5SITE}/Catalyst/Script/Create.pm
+${P5SITE}/Catalyst/Script/FastCGI.pm
+${P5SITE}/Catalyst/Script/Server.pm
+${P5SITE}/Catalyst/Script/Test.pm
+${P5SITE}/Catalyst/ScriptRole.pm
+${P5SITE}/Catalyst/ScriptRunner.pm
 ${P5SITE}/Catalyst/Stats.pm
 ${P5SITE}/Catalyst/Test.pm
 ${P5SITE}/Catalyst/Upgrading.pod
@@ -67,14 +77,23 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Engine::FastCGI.3p
 @man man/man3p/Catalyst::Engine::HTTP.3p
 @man man/man3p/Catalyst::Exception.3p
+@man man/man3p/Catalyst::Exception::Basic.3p
 @man man/man3p/Catalyst::Exception::Detach.3p
 @man man/man3p/Catalyst::Exception::Go.3p
+@man man/man3p/Catalyst::Exception::Interface.3p
 @man man/man3p/Catalyst::Log.3p
 @man man/man3p/Catalyst::Model.3p
 @man man/man3p/Catalyst::Request.3p
 @man man/man3p/Catalyst::Request::Upload.3p
 @man man/man3p/Catalyst::Response.3p
 @man man/man3p/Catalyst::Runtime.3p
+@man man/man3p/Catalyst::Script::CGI.3p
+@man man/man3p/Catalyst::Script::Create.3p
+@man man/man3p/Catalyst::Script::FastCGI.3p
+@man man/man3p/Catalyst::Script::Server.3p
+@man man/man3p/Catalyst::Script::Test.3p
+@man man/man3p/Catalyst::ScriptRole.3p
+@man man/man3p/Catalyst::ScriptRunner.3p
 @man man/man3p/Catalyst::Stats.3p
 @man man/man3p/Catalyst::Test.3p
 @man man/man3p/Catalyst::Upgrading.3p
