@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/26 16:35:24 jim Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/02 04:09:03 jim Exp $
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/MOP/
 ${P5ARCH}/Class/MOP.pm
@@ -16,6 +16,11 @@ ${P5ARCH}/Class/MOP/Method/Constructor.pm
 ${P5ARCH}/Class/MOP/Method/Generated.pm
 ${P5ARCH}/Class/MOP/Method/Inlined.pm
 ${P5ARCH}/Class/MOP/Method/Wrapped.pm
+${P5ARCH}/Class/MOP/Mixin/
+${P5ARCH}/Class/MOP/Mixin.pm
+${P5ARCH}/Class/MOP/Mixin/AttributeCore.pm
+${P5ARCH}/Class/MOP/Mixin/HasAttributes.pm
+${P5ARCH}/Class/MOP/Mixin/HasMethods.pm
 ${P5ARCH}/Class/MOP/Module.pm
 ${P5ARCH}/Class/MOP/Object.pm
 ${P5ARCH}/Class/MOP/Package.pm
@@ -36,6 +41,10 @@ ${P5ARCH}/metaclass.pm
 @man man/man3p/Class::MOP::Method::Generated.3p
 @man man/man3p/Class::MOP::Method::Inlined.3p
 @man man/man3p/Class::MOP::Method::Wrapped.3p
+@man man/man3p/Class::MOP::Mixin.3p
+@man man/man3p/Class::MOP::Mixin::AttributeCore.3p
+@man man/man3p/Class::MOP::Mixin::HasAttributes.3p
+@man man/man3p/Class::MOP::Mixin::HasMethods.3p
 @man man/man3p/Class::MOP::Module.3p
 @man man/man3p/Class::MOP::Object.3p
 @man man/man3p/Class::MOP::Package.3p
