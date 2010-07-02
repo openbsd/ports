@@ -72,3 +72,13 @@ $ sudo smbpasswd -a <username>
 An EXPERIMENTAL implementation of the SMB2 protocol has been added.
 SMB2 can be enabled by setting "max protocol = smb2". SMB2 is a new
 implementation of the SMB protocol used by Windows Vista and higher.
+
+To use Samba as a PDC the values of openfiles-max in ${SYSCONFDIR}/login.conf
+and kern.maxfiles should be increased to 16384.
+
+Rebuild the login.conf.db file if necessary:
+
+        # cap_mkdb ${SYSCONFDIR}/login.conf
+
+Don't forget to add the entry kern.maxfiles=16384 to the ${SYSCONFDIR}/sysctl.conf
+file to keep the change across reboots.
