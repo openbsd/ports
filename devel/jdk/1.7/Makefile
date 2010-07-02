@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/10/16 02:22:26 kurt Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/02 09:40:30 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,8 @@ B=		b72
 DISTFILES=	openjdk-7-ea-src-${B}-17_sep_2009.zip \
 		jibx_1_1_5.zip:0
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p0
-PKGNAME-jre=	jre-${V}${B}p0
+PKGNAME-main=	jdk-${V}${B}p1
+PKGNAME-jre=	jre-${V}${B}p1
 
 CATEGORIES=	devel/jdk java
 
@@ -58,7 +58,7 @@ BUILD_DEPENDS+=	::devel/apache-ant \
 		::archivers/unzip \
 		::print/cups
 MODULES=	converters/libiconv
-WANTLIB=	X11 Xext Xi Xtst c freetype m pthread stdc++ z
+WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 
 USE_GMAKE=	Yes
 
@@ -159,6 +159,8 @@ post-extract:
 		${WRKDIST}/jdk/src/share/lib/security/java.security-openbsd
 	@rm ${WRKDIST}/hotspot/agent/src/os/bsd/proc_service.h
 	@cp -f ${FILESDIR}/cacerts ${WRKDIST}/jdk/src/share/lib/security
+	@cp -f ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c \
+		${WRKDIST}/jdk/src/solaris/native/com/sun/media/sound
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja
