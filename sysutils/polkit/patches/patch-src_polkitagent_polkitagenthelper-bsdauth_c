@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
---- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Sun Jun 27 17:49:56 2010
-+++ src/polkitagent/polkitagenthelper-bsdauth.c	Sun Jun 27 18:03:34 2010
-@@ -0,0 +1,208 @@
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.2 2010/07/02 05:04:47 ajacoutot Exp $
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul  2 06:54:49 2010
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul  2 06:56:35 2010
+@@ -0,0 +1,203 @@
 +/*
 + * Copyright (C) 2008 Red Hat, Inc.
 + * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
-+ * Copyright (C) 2010 Antoine Jacoutot <ajacoutot@openbsd.org>
 + *
 + * This library is free software; you can redistribute it and/or
 + * modify it under the terms of the GNU Lesser General Public
@@ -60,6 +59,7 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01
 +int
 +main (int argc, char *argv[])
 +{
++  struct passwd *shadow;
 +  const char *user_to_auth;
 +  const char *cookie;
 +//  time_t tm;
@@ -70,8 +70,7 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01
 +    goto error;
 +
 +  /* set a minimal environment */
-+//  setenv ("PATH", "/usr/sbin:/usr/bin:/sbin:/bin", 1);
-+  setenv ("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 1);
++  setenv ("PATH", "/usr/sbin:/usr/bin:/sbin:/bin", 1);
 +
 +  /* check that we are setuid root */
 +  if (geteuid () != 0)
@@ -109,14 +108,12 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01
 +#endif /* PAH_DEBUG */
 +
 +  /* Ask shadow about the user requesting authentication */
-+/*
-+  if ((shadow = getspnam (user_to_auth)) == NULL)
++  if ((shadow = getpwnam (user_to_auth)) == NULL)
 +    {
-+      syslog (LOG_NOTICE, "shadow file data information request for user %s [uid=%d] failed", user_to_auth, getuid());
++      syslog (LOG_NOTICE, "password database information request for user %s [uid=%d] failed", user_to_auth, getuid());
 +      fprintf(stderr, "polkit-agent-helper-1: could not get shadow information for%.100s", user_to_auth);
 +      goto error;
 +    }
-+*/
 +  
 +  /* Check the user's identity */
 +  if(!bsdauth_authenticate (user_to_auth))
@@ -194,8 +191,7 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01
 +  /* Speak PAM to the daemon, thanks to David Zeuthen for the idea. */
 +  char passwd[512];
 +  fprintf(stdout, "PAM_PROMPT_ECHO_OFF password:\n");
-+  fflush(stdout);
-+  usleep (10 * 1000); /* since fflush(3) seems buggy */
++  flush_and_wait();
 +
 +  if (fgets (passwd, sizeof (passwd), stdin) == NULL)
 +    goto error;
@@ -203,8 +199,7 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.1.1.1 2010/07/01
 +  if (strlen (passwd) > 0 && passwd[strlen (passwd) - 1] == '\n')
 +    passwd[strlen (passwd) - 1] = '\0';
 +  
-+//  if (strcmp (shadow->sp_pwdp, crypt (passwd, shadow->sp_pwdp)) != 0)
-+    if (auth_userokay(user_to_auth, NULL, "polkit", passwd) != 0)
++  if (auth_userokay(user_to_auth, NULL, "auth-polkit", passwd) == 0)
 +    goto error;
 +  return 1;
 +error:
