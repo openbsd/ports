@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/19 17:43:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/02 05:20:26 naddy Exp $
 
 COMMENT=	unique standard tape archiver
 
-DISTNAME=	star-1.5
+DISTNAME=	star-1.5.1
 CATEGORIES=	archivers sysutils
 HOMEPAGE=	http://cdrecord.berlios.de/old/private/star.html
 
@@ -20,12 +20,13 @@ FLAVOR?=
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CCOM="${CC}" COPTOPT="${CFLAGS}" \
 		CPPOPTX="-DDEFTAPE=\\\"/dev/rst0\\\" \
-			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\""
+			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\"" \
+		GMAKE_NOWARN=1
 
 .if ${FLAVOR:L:Mstatic}
 MAKE_ENV+=	LDOPTX=-static
 .else
-WANTLIB=		c
+WANTLIB=	c
 .endif
 
 post-extract:
@@ -34,7 +35,7 @@ post-extract:
 post-patch:
 	perl -pi -e 's,/etc/default/,${SYSCONFDIR}/default/,g' \
 		${WRKSRC}/star/defaults.c ${WRKSRC}/star/suntar.c \
-		${WRKSRC}/star/star.1 \
+		${WRKSRC}/star/star.1 ${WRKSRC}/mt/smt.1 \
 		${WRKSRC}/rmt/rmt.c ${WRKSRC}/rmt/rmt.1
 
 do-configure:
