@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/10 08:15:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:14 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,8 +8,8 @@ MODULES =	cpan
 DISTNAME =	Class-XSAccessor-1.03
 CATEGORIES =	devel
 
-BUILD_DEPENDS =	::devel/p5-AutoXS-Header
-RUN_DEPENDS =	${BUILD_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	::devel/p5-AutoXS-Header
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

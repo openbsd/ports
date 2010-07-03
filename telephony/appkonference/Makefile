@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/13 12:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/03 02:44:14 naddy Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
 
 V=		1.2
 DISTNAME=	appkonference-$V
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	telephony
 
@@ -21,8 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	:asterisk->=1.6:telephony/asterisk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:asterisk->=1.6:telephony/asterisk
 
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ASTERISK_INCLUDE_DIR=${LOCALBASE}/include

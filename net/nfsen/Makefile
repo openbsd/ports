@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/03 09:49:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/03 02:44:14 naddy Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
@@ -22,11 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nfsen/}
 
 MODULES=		perl
-BUILD_DEPENDS=		:p5-RRD-*:net/rrdtool,-perl \
+COMMON_DEPENDS=		:p5-RRD-*:net/rrdtool,-perl \
 			::mail/p5-Mail-Tools \
 			:nfprofile-*:net/nfdump,-nfprofile \
 			:nfdump->=1.5.8p0:net/nfdump
-RUN_DEPENDS-main=	${BUILD_DEPENDS} \
+BUILD_DEPENDS=		${COMMON_DEPENDS}
+RUN_DEPENDS-main=	${COMMON_DEPENDS} \
 			:nfsen-web-$V:net/nfsen,-web
 RUN_DEPENDS-web=	::www/php5/core
 

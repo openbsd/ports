@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/08 11:51:13 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/03 02:44:14 naddy Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=		::devel/p5-File-Next
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::devel/p5-File-Next
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 post-build:

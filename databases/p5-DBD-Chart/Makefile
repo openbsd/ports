@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/09 18:31:25 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
 
 COMMENT =	DBI driver abstraction for rendering charts and graphs
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-BUILD_DEPENDS =	::graphics/p5-GD \
+BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	::graphics/p5-GD \
 		::graphics/p5-GD-TextUtil \
 		::databases/p5-DBI
-RUN_DEPENDS =	${BUILD_DEPENDS}
 
 .include <bsd.port.mk>

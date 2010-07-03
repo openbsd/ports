@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/09 23:26:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
 COMMENT=	LRU cache in memory
 
 MODULES=	cpan
 DISTNAME=	Tie-Cache-LRU-0.21
 CATEGORIES=	devel
 
-BUILD_DEPENDS=	::devel/p5-enum \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::devel/p5-enum \
 		::devel/p5-Carp-Assert \
 		::devel/p5-Class-Data-Inheritable \
 		::devel/p5-Class-Virtual
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

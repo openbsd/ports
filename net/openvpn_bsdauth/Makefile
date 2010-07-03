@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/03 21:13:05 schwarze Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/03 02:44:14 naddy Exp $
 
 COMMENT =	BSD Auth helper program for OpenVPN
 
@@ -19,8 +19,8 @@ WANTLIB =	c
 
 MASTER_SITES =	${HOMEPAGE}
 
-BUILD_DEPENDS =	::net/openvpn
-RUN_DEPENDS =	${BUILD_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	::net/openvpn
 
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 

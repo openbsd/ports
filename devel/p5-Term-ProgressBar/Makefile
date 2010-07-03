@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/10 17:43:42 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
 
 COMMENT=		text mode progress bar 
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS	= ::devel/p5-Class-MethodMaker \
+BUILD_DEPENDS	= ${RUN_DEPENDS}
+RUN_DEPENDS	= ::devel/p5-Class-MethodMaker \
 		  ::devel/p5-Term-ReadKey
-RUN_DEPENDS	= ${BUILD_DEPENDS}
 
 .include <bsd.port.mk>

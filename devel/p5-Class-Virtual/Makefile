@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/09 23:24:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
 COMMENT=	base class for virtual base classes
 
 MODULES=	cpan
 DISTNAME=	Class-Virtual-0.06
 CATEGORIES=	devel
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-BUILD_DEPENDS=	::devel/p5-Class-Data-Inheritable \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::devel/p5-Class-Data-Inheritable \
 		::devel/p5-Carp-Assert
 
 # perl

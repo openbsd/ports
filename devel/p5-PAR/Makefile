@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/16 00:00:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:14 naddy Exp $
 
 COMMENT =	Perl Archive Toolkit
 
@@ -6,9 +6,9 @@ MODULES =	cpan
 DISTNAME =	PAR-0.980
 CATEGORIES =	devel archivers
 
-RUN_DEPENDS =	${BUILD_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-BUILD_DEPENDS =	::archivers/p5-Archive-Zip \
+RUN_DEPENDS =	::archivers/p5-Archive-Zip \
 		::devel/p5-PAR-Dist
 
 # Perl

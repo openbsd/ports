@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/06 10:46:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/03 02:44:14 naddy Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -23,7 +23,7 @@ WANTLIB +=		X11
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktable/}
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_BUILD_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
