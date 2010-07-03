@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2010/06/30 07:59:53 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.168 2010/07/03 00:28:40 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -61,8 +61,8 @@ LIB_DEPENDS=	png::graphics/png \
 		dca::audio/libdca \
 		bz2::archivers/bzip2 \
 		schroedinger-1.0::multimedia/schroedinger \
-		faac::audio/faad \
-		faad::audio/faac \
+		faad::audio/faad \
+		faac::audio/faac \
 		a52::audio/liba52 \
 		x264.>=3::multimedia/x264
 
