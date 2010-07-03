@@ -1,0 +1,32 @@
+$OpenBSD: patch-ntpdc_ntpdc_c,v 1.1 2010/07/03 02:49:43 naddy Exp $
+--- ntpdc/ntpdc.c.orig	Thu Jul  1 15:16:31 2010
++++ ntpdc/ntpdc.c	Thu Jul  1 15:19:33 2010
+@@ -805,7 +805,7 @@ getresponse(
+ 		if (debug)
+ 		    printf(
+ 			    "Received items %d, size %d (total %d), data in packet is %d\n",
+-			    items, size, datasize, n-RESP_HEADER_SIZE);
++			    items, size, datasize, n-(int)RESP_HEADER_SIZE);
+ 		goto again;
+ 	}
+ 
+@@ -994,8 +994,8 @@ sendrequest(
+ 	} else if (maclen != (info_auth_hashlen + sizeof(keyid_t))) {
+ 		fprintf(stderr,
+ 			"%d octet MAC, %u expected with %u octet digest\n",
+-			maclen, (info_auth_hashlen + sizeof(keyid_t)),
+-			info_auth_hashlen);
++			maclen, (u_int)(info_auth_hashlen + sizeof(keyid_t)),
++			(u_int)info_auth_hashlen);
+ 		return 1;
+ 	}
+ 	return sendpkt(&qpkt, reqsize + maclen);
+@@ -1807,7 +1807,7 @@ keytype(
+ 	if (!pcmd->nargs) {
+ 		fprintf(fp, "keytype is %s with %u octet digests\n",
+ 			keytype_name(info_auth_keytype),
+-			info_auth_hashlen);
++			(u_int)info_auth_hashlen);
+ 		return;
+ 	}
+ 

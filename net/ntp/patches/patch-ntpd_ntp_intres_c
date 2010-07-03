@@ -1,0 +1,23 @@
+$OpenBSD: patch-ntpd_ntp_intres_c,v 1.1 2010/07/03 02:49:43 naddy Exp $
+--- ntpd/ntp_intres.c.orig	Thu Jul  1 14:55:24 2010
++++ ntpd/ntp_intres.c	Thu Jul  1 15:23:51 2010
+@@ -830,8 +830,8 @@ request(
+ 		if (total_len > sizeof(reqpkt)) {
+ 			msyslog(LOG_ERR,
+ 				"intres total_len %u limit is %u (%u octet digest)\n",
+-				total_len, sizeof(reqpkt),
+-				req_hashlen);
++				(u_int)total_len, (u_int)sizeof(reqpkt),
++				(u_int)req_hashlen);
+ 			resolver_exit(1);
+ 		}
+ 	} else {
+@@ -849,7 +849,7 @@ request(
+ 		if ((size_t)n != req_hashlen + sizeof(reqpkt.keyid)) {
+ 			msyslog(LOG_ERR,
+ 				"intres maclen %d expected %u\n",
+-				n, req_hashlen + sizeof(reqpkt.keyid));
++				n, (u_int)(req_hashlen + sizeof(reqpkt.keyid)));
+ 			resolver_exit(1);
+ 		}
+ 		req_len += n;

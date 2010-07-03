@@ -1,0 +1,32 @@
+$OpenBSD: patch-ntpq_ntpq_c,v 1.3 2010/07/03 02:49:43 naddy Exp $
+--- ntpq/ntpq.c.orig	Thu Jul  1 15:19:59 2010
++++ ntpq/ntpq.c	Thu Jul  1 15:22:48 2010
+@@ -795,7 +795,7 @@ sendpkt(
+ 	)
+ {
+ 	if (debug >= 3)
+-		printf("Sending %u octets\n", xdatalen);
++		printf("Sending %u octets\n", (u_int)xdatalen);
+ 
+ 	if (send(sockfd, xdata, (size_t)xdatalen, 0) == -1) {
+ 		warning("write to %s failed", currenthost, "");
+@@ -1313,8 +1313,8 @@ sendrequest(
+ 	} else if ((size_t)maclen != (info_auth_hashlen + sizeof(keyid_t))) {
+ 		fprintf(stderr,
+ 			"%d octet MAC, %u expected with %u octet digest\n",
+-			maclen, (info_auth_hashlen + sizeof(keyid_t)),
+-			info_auth_hashlen);
++			maclen, (u_int)(info_auth_hashlen + sizeof(keyid_t)),
++			(u_int)info_auth_hashlen);
+ 		return 1;
+ 	}
+ 	
+@@ -2395,7 +2395,7 @@ keytype(
+ 	if (!pcmd->nargs) {
+ 		fprintf(fp, "keytype is %s with %u octet digests\n",
+ 			keytype_name(info_auth_keytype),
+-			info_auth_hashlen);
++			(u_int)info_auth_hashlen);
+ 		return;
+ 	}
+ 

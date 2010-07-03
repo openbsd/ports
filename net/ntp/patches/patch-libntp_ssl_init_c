@@ -1,0 +1,17 @@
+$OpenBSD: patch-libntp_ssl_init_c,v 1.1 2010/07/03 02:49:43 naddy Exp $
+--- libntp/ssl_init.c.orig	Thu Jul  1 14:52:27 2010
++++ libntp/ssl_init.c	Thu Jul  1 15:23:08 2010
+@@ -99,11 +99,11 @@ keytype_from_text(
+ 			fprintf(stderr,
+ 				"key type %s %u octet digests are too big, max %u\n",
+ 				keytype_name(key_type), digest_len,
+-				MAX_MAC_LEN - sizeof(keyid_t));
++				(u_int)(MAX_MAC_LEN - sizeof(keyid_t)));
+ 			msyslog(LOG_ERR,
+ 				"key type %s %u octet digests are too big, max %u",
+ 				keytype_name(key_type), digest_len,
+-				MAX_MAC_LEN - sizeof(keyid_t));
++				(u_int)(MAX_MAC_LEN - sizeof(keyid_t)));
+ 			return 0;
+ 		}
+ #else
