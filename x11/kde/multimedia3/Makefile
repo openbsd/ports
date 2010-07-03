@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/07/03 18:00:07 espie Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
@@ -38,8 +38,8 @@ FLAVORS =	debug
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \
-	artsc,artsflow,artsflow_idl,artskde,kmedia2_idl,mcop,qtmcop,soundserver_idl::x11/kde/arts3 \
+LIB_DEPENDS = 	DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint,artskde::x11/kde/libs3 \
+	artsc,artsflow,artsflow_idl,kmedia2_idl,mcop,qtmcop,soundserver_idl::x11/kde/arts3 \
 		ogg::audio/libogg \
 		FLAC.>=8::audio/flac \
 		vorbis,vorbisenc,vorbisfile::audio/libvorbis \
