@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.7 2010/07/03 04:02:53 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Wed Apr 29 21:07:29 2009
-+++ src/ck-sysdeps-unix.c	Thu Jul  1 00:35:56 2010
++++ src/ck-sysdeps-unix.c	Sat Jul  3 05:57:40 2010
 @@ -35,6 +35,10 @@
  #include <linux/kd.h>
  #endif
@@ -43,27 +43,17 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp $
          kb_ok = (ioctl (fd, VT_GETSTATE, &vts) == 0);
  #elif defined(__FreeBSD__)
          kb_ok = (ioctl (fd, CONS_GETVERS, &vers) == 0);
-@@ -184,6 +192,13 @@ ck_get_a_console_fd (void)
+@@ -182,6 +190,13 @@ ck_get_a_console_fd (void)
+         if (fd >= 0) {
+                 goto done;
          }
- #endif
- 
++#endif
++
 +#if defined(__OpenBSD__)
 +	fd = open_a_console ("/dev/ttyC0");
 +	if (fd >= 0) {
 +		goto done;
 +	}
-+#endif
-+
- #ifdef _PATH_TTY
-         fd = open_a_console (_PATH_TTY);
-         if (fd >= 0) {
-@@ -261,7 +276,8 @@ ck_wait_for_active_console_num (int   console_fd,
-         ret = FALSE;
+ #endif
  
-         errno = 0;
--#ifdef VT_WAITACTIVE
-+// XXX hangs forever, pthread bug (works with rthreads)
-+#if defined VT_WAITACTIVE && !defined (__OpenBSD__)
-         g_debug ("VT_WAITACTIVE for vt %d", num);
-         res = ioctl (console_fd, VT_WAITACTIVE, num);
-         g_debug ("VT_WAITACTIVE for vt %d returned %d", num, res);
+ #ifdef _PATH_TTY
