@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2008/10/22 19:27:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2010/07/03 03:23:22 naddy Exp $
 
 COMMENT=	GNU gettext
 
-DISTNAME=	gettext-0.17
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=  intl                 4.0      # .8.2
+DISTNAME=	gettext-0.18.1
+SHARED_LIBS +=  intl                 5.0      # .9.1
 SHARED_LIBS +=  asprintf             1.0      # .0.0
-SHARED_LIBS +=  gettextlib           2.0      # .0.0
-SHARED_LIBS +=  gettextsrc           2.0      # .0.0
-SHARED_LIBS +=  gettextpo            3.0      # .4.0
+SHARED_LIBS +=  gettextlib           3.0      # .0.0
+SHARED_LIBS +=  gettextsrc           3.0      # .0.0
+SHARED_LIBS +=  gettextpo            4.0      # .5.1
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
@@ -24,23 +23,25 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
-WANTLIB=	c expat m ncurses
+WANTLIB=	c expat m ncurses stdc++
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-csharp \
+		--disable-java \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-included-gettext \
 		--with-included-glib \
 		--with-included-libcroco \
+		--with-included-libunistring \
 		--with-included-libxml \
-		--without-emacs
-CONFIGURE_ENV=	gt_cv_locale_ja=none	# skip recode-sr-latin-2 regress test
+		--without-emacs \
+		--without-git
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
-EXTRA_LOCALES=	bg en he hr hu lv no
+EXTRA_LOCALES=	en he hr hu lv no
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp

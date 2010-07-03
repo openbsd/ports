@@ -1,9 +1,9 @@
-$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.4 2008/06/13 04:56:34 naddy Exp $
---- gettext-runtime/intl/Makefile.in.orig	Sun Nov  4 22:21:12 2007
-+++ gettext-runtime/intl/Makefile.in	Mon Jun  2 22:58:10 2008
-@@ -193,7 +193,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
+$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.5 2010/07/03 03:23:22 naddy Exp $
+--- gettext-runtime/intl/Makefile.in.orig	Fri Jun  4 00:53:31 2010
++++ gettext-runtime/intl/Makefile.in	Mon Jun 28 20:20:26 2010
+@@ -220,7 +220,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
  libintl.la libgnuintl.la: $(OBJECTS) $(OBJECTS_RES_@WOE32@)
- 	$(LIBTOOL) --mode=link \
+ 	$(AM_V_GEN)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=link \
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
 -	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ @LTLIBC@ \
 +	  $(OBJECTS) @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ \
