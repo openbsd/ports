@@ -1,0 +1,12 @@
+$OpenBSD: patch-dcop_dcopclient_cpp,v 1.1 2010/07/03 17:05:12 naddy Exp $
+--- dcop/dcopclient.cpp.orig	Sat Jul  3 11:01:35 2010
++++ dcop/dcopclient.cpp	Sat Jul  3 11:02:07 2010
+@@ -715,7 +715,7 @@ bool DCOPClient::isSuspended() const
+ // Check whether the remote end is owned by the same user.
+ static bool peerIsUs(int sockfd)
+ {
+-    struct ucred cred;
++    struct sockpeercred cred;
+     socklen_t siz = sizeof(cred);
+     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &siz) != 0)
+         return false;
