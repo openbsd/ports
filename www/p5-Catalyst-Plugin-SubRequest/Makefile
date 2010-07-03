@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/22 14:49:24 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/03 03:42:48 jim Exp $
 
 COMMENT= 	map subrequests to actions in Catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-SubRequest-0.13
+DISTNAME=	Catalyst-Plugin-SubRequest-0.16
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
