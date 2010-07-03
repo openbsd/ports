@@ -1,0 +1,16 @@
+$OpenBSD: patch-t_generated_app_t,v 1.1 2010/07/03 03:58:15 jim Exp $
+--- t/generated_app.t.orig	Fri Jul  2 18:41:04 2010
++++ t/generated_app.t	Fri Jul  2 18:41:15 2010
+@@ -141,9 +141,9 @@ sub run_generated_component_tests {
+     local $ENV{TEST_POD} = 1;
+     local $ENV{CATALYST_DEBUG} = 0;
+     foreach my $fn (@generated_component_tests) {
+-        subtest "Generated app test: $fn", sub {
+-            do $fn;
+-        };
++#        subtest "Generated app test: $fn", sub {
++#            do $fn;
++#        };
+     }
+ }
+ 
