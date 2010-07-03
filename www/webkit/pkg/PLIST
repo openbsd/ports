@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/04/22 13:37:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/07/03 07:53:04 landry Exp $
 %%SHARED%%
+@bin bin/GtkLauncher
 @bin bin/jsc
 include/webkit-1.0/
 include/webkit-1.0/JavaScriptCore/

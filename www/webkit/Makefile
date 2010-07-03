@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/06/21 15:55:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/03 07:53:04 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.2.0
+V = 1.2.1
 DISTNAME =	webkit-${V}
 # XXX do not remove v0. pX comes before vX.
-PKGNAME =	webkit-${V}p2v0
+PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -53,16 +53,16 @@ RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-ffmpeg \
 		::multimedia/gstreamer-0.10/plugins-good
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c \
+		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
 		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnutls gobject-2.0 gpg-error gthread-2.0 intl jpeg m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread xcb-render-util \
 		tasn1 z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
 
 LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
 		gstvideo-0.10,gstapp-0.10,gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
-		icudata,icui18n,icuuc::textproc/icu4c \
+		icudata,icui18n,icuuc:icu4c->=4.4:textproc/icu4c \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \
 		enchant::textproc/enchant \
