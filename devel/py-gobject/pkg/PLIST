@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/04/25 20:59:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/07/03 04:50:00 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 bin/pygobject-codegen-2.0
 include/pygobject/
@@ -147,13 +147,18 @@ share/pygobject/2.0/codegen/argtypes.py
 share/pygobject/2.0/codegen/argtypes.pyc
 share/pygobject/2.0/codegen/argtypes.pyo
 share/pygobject/2.0/codegen/code-coverage.py
+share/pygobject/2.0/codegen/code-coverage.pyc
 share/pygobject/2.0/codegen/codegen.py
+share/pygobject/2.0/codegen/codegen.pyc
 share/pygobject/2.0/codegen/createdefs.py
+share/pygobject/2.0/codegen/createdefs.pyc
 share/pygobject/2.0/codegen/definitions.py
 share/pygobject/2.0/codegen/definitions.pyc
 share/pygobject/2.0/codegen/definitions.pyo
 share/pygobject/2.0/codegen/defsconvert.py
+share/pygobject/2.0/codegen/defsconvert.pyc
 share/pygobject/2.0/codegen/defsgen.py
+share/pygobject/2.0/codegen/defsgen.pyc
 share/pygobject/2.0/codegen/defsparser.py
 share/pygobject/2.0/codegen/defsparser.pyc
 share/pygobject/2.0/codegen/defsparser.pyo
@@ -161,11 +166,17 @@ share/pygobject/2.0/codegen/docextract.py
 share/pygobject/2.0/codegen/docextract.pyc
 share/pygobject/2.0/codegen/docextract.pyo
 share/pygobject/2.0/codegen/docextract_to_xml.py
+share/pygobject/2.0/codegen/docextract_to_xml.pyc
 share/pygobject/2.0/codegen/docgen.py
+share/pygobject/2.0/codegen/docgen.pyc
 share/pygobject/2.0/codegen/h2def.py
+share/pygobject/2.0/codegen/h2def.pyc
 share/pygobject/2.0/codegen/mergedefs.py
+share/pygobject/2.0/codegen/mergedefs.pyc
 share/pygobject/2.0/codegen/missingdefs.py
+share/pygobject/2.0/codegen/missingdefs.pyc
 share/pygobject/2.0/codegen/mkskel.py
+share/pygobject/2.0/codegen/mkskel.pyc
 share/pygobject/2.0/codegen/override.py
 share/pygobject/2.0/codegen/override.pyc
 share/pygobject/2.0/codegen/override.pyo
@@ -173,7 +184,9 @@ share/pygobject/2.0/codegen/reversewrapper.py
 share/pygobject/2.0/codegen/reversewrapper.pyc
 share/pygobject/2.0/codegen/reversewrapper.pyo
 share/pygobject/2.0/codegen/scanvirtuals.py
+share/pygobject/2.0/codegen/scanvirtuals.pyc
 share/pygobject/2.0/codegen/scmexpr.py
+share/pygobject/2.0/codegen/scmexpr.pyc
 share/pygobject/2.0/defs/
 share/pygobject/2.0/defs/gappinfo.override
 share/pygobject/2.0/defs/gapplaunchcontext.override
