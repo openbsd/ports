@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2010/07/03 10:13:28 espie Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -65,7 +65,7 @@ SHARED_LIBS +=	kontact              2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS +=	kdecore.>=6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
+LIB_DEPENDS +=	kdecore.>=6,artskde,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
 WANTLIB =	Xss audiofile stdc++ sndio X11 jpeg util m \
 		vorbisfile gmodule-2.0 gthread-2.0 \
@@ -75,7 +75,7 @@ WANTLIB =	Xss audiofile stdc++ sndio X11 jpeg util m \
 		glib-2.0 ICE soundserver_idl Xrender \
 		gpg-error vorbis pcre z sasl2 idn \
 		Xau Xdmcp fam rpcsvc Xpm usb ical \
-		pthread-stubs xcb
+		pthread-stubs xcb kmedia2_idl
 
 FLAVORS =	debug
 LIB_DEPENDS +=	pisock::comms/pilot-link
