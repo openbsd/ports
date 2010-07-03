@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 00:31:20 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/03 03:41:42 jim Exp $
 
 COMMENT=	watch for changes to files, cross-platform style
 
 MODULES=	cpan
-DISTNAME=	File-ChangeNotify-0.07
+DISTNAME=	File-ChangeNotify-0.13
 CATEGORIES=	devel
 
 # Perl
