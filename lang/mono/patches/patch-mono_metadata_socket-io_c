@@ -1,0 +1,12 @@
+$OpenBSD: patch-mono_metadata_socket-io_c,v 1.4 2010/07/03 16:58:11 naddy Exp $
+--- mono/metadata/socket-io.c.orig	Sat Jul  3 10:51:06 2010
++++ mono/metadata/socket-io.c	Sat Jul  3 10:51:52 2010
+@@ -1762,7 +1762,7 @@ void ves_icall_System_Net_Sockets_Socket_GetSocketOpti
+ 	int time_ms = 0;
+ 	socklen_t time_ms_size = sizeof (time_ms);
+ #ifdef SO_PEERCRED
+-	struct ucred cred;
++	struct sockpeercred cred;
+ 	socklen_t credsize = sizeof(cred);
+ #endif
+ 	MonoDomain *domain=mono_domain_get();
