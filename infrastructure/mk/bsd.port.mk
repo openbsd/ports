@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1007 2010/06/20 07:48:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1008 2010/07/04 08:45:02 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -720,6 +720,7 @@ ${_v}${_s} ?= ${${_v}}
 _PACKAGE_LINKS =
 NO_ARCH ?= no-arch
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
+_TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
@@ -1526,7 +1527,7 @@ ${_CACHE_REPO}/${_PKGFILE${_S}}:
 # The real package
 
 ${_PACKAGE_COOKIE${_S}}:
-	@mkdir -p ${@D}
+	@mkdir -p ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
@@ -1544,16 +1545,19 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
-      deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
-	  if ${SUDO} ${_PKG_CREATE} $$deps ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
-	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
-		if ${_check_lib_depends} ${_PACKAGE_COOKIE${_S}} && \
-			${_register_plist} ${_PACKAGE_COOKIE${_S}}; then \
-				exit 0; \
-		fi; \
-	  fi && \
-	  ${SUDO} ${MAKE} _internal-clean=package && \
-	  exit 1
+	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
+	if deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
+		${SUDO} ${_PKG_CREATE} $$deps ${PKG_ARGS${_S}} $$tmp && \
+		${_check_lib_depends} $$tmp && \
+		${_register_plist} $$tmp && \
+		mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
+		mode=`id -u`:`id -g` && \
+		${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; then \
+		 	exit 0; \
+	else \
+		${SUDO} rm -f $$tmp; \
+	    exit 1; \
+	fi
 # End of PACKAGE.
 .    endif
 .    if target(post-package)
