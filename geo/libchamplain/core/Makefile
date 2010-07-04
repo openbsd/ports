@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/22 10:41:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/04 20:49:05 espie Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
@@ -14,12 +14,12 @@ WANTLIB += fontconfig freetype gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-keyring gnutls
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png proxy pthread-stubs tasn1 xcb xml2 z
+WANTLIB += png proxy pthread-stubs soup-2.4 tasn1 xcb xml2 z
 
 MODULES=		devel/gettext
 
 LIB_DEPENDS=		sqlite3::databases/sqlite3 \
-			soup-2.4,soup-gnome-2.4::devel/libsoup,-gnome \
+			soup-gnome-2.4::devel/libsoup,-gnome \
 			clutter-gtk-0.10:clutter-gtk->=0.10:graphics/clutter/clutter-gtk
 
 CONFIGURE_ARGS= 	--enable-introspection=no \
