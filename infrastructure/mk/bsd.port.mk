@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1008 2010/07/04 08:45:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1009 2010/07/04 17:26:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1287,31 +1287,11 @@ _noshared =
 .endif
 
 _libresolve_fragment = \
-	case "$$d" in \
-	*/*) shdir="${LOCALBASE}/$${d%/*}";; \
-	*) shdir="${LOCALBASE}/lib";; \
-	esac; \
-	check=`eval $$listlibs 2>/dev/null| \
+	check=`for _lib in $$libs; do echo $$_lib; done | \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 			perl ${PORTSDIR}/infrastructure/build/resolve-lib \
 				${_noshared} $$d` \
 			|| check=Failed
-
-_syslibresolve_fragment = \
-	case "$$d" in \
-	/*) \
-		shdir="$${d%/*}/";; \
-	*/*) \
-		shdir="${DEPBASE}/$${d%/*}";; \
-	*) \
-		shdir="${DEPBASE}/lib"; \
-		listlibs="$$listlibs /usr/lib/lib* ${X11BASE}/lib/lib*";; \
-	esac; \
-	check=`eval $$listlibs 2>/dev/null| \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-		perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
-		|| check=Failed
-
 
 PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
 _set_ld_library_path = :
@@ -1346,6 +1326,7 @@ _BUILDWANTLIB = ${WANTLIB}
 .  for _s in ${MULTI_PACKAGES}
 _BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
 _BUILDWANTLIB += ${WANTLIB${_s}}
+_LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*}
 .  endfor
 .endfor
 
@@ -2848,48 +2829,69 @@ _print-package-args:
 	@echo '${_i}'|{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
-		libspecs='';comma=''; \
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
 			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
 			esac; \
-			if ${_PKG_QUERY} "$$pkg" -q; then \
-				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
-				case "$$dir" in ${PKGPATH}) \
-					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
-				esac; \
-			else \
-				listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}"; \
-			fi; \
+			libs=`eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}`; \
+			needed=false; \
 			IFS=,; for d in $$dep; do \
-				${_libresolve_fragment}; \
-				case "$$check" in \
+ 				${_libresolve_fragment}; \
+ 				case "$$check" in \
 				*.a) continue;; \
 				Failed) \
-					echo 1>&2 "Can't resolve libspec $$d (in ${SUBPACKAGE})"; \
+					echo 1>&2 "Can't resolve libspec $$d (for ${_i} in ${SUBPACKAGE})"; \
 					exit 1;; \
-				*) \
-					echo "-W $$check";; \
+ 				*) \
+					needed=true;; \
 				esac; \
 			done; \
-			echo "-P $$subdir:$$pkg:$$default"; \
+			exec 3>&2; \
+			unset IFS; for d in ${_DEPRUNLIBS:S/>/\>/g}; do \
+				if $$needed; then continue; fi; \
+				exec 2>/dev/null; \
+				${_libresolve_fragment}; \
+				case "$$check" in \
+				*.a|Failed) \
+					continue;; \
+				*) \
+					needed=true;; \
+				esac; \
+			done; \
+			exec 2>&3; \
+			if $$needed; then echo "-P $$subdir:$$pkg:$$default"; fi; \
 		else \
 			echo 1>&2 "Problem with dependency ${_i}"; \
 			exit 1; \
 		fi; \
 	}
 .  endfor
-.  for _i in ${WANTLIB${SUBPACKAGE}}
-	@d='${_i}'; listlibs='echo $$shdir/lib*'; \
-	${_syslibresolve_fragment}; \
-	case "$$check" in \
-	*.a) ;; \
-	Failed) \
-		echo 1>&2 "Can't resolve libspec $$d"; \
-		exit 1;; \
-	*) \
-		echo "-W $$check";; \
-	esac
-.   endfor
+	@libs=`for i in ${_LIB4${SUBPACKAGE}:S/>/\>/g:S/</\</g}; do echo "$$i"| { \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
+		if default=$$(eval $$toset ${MAKE} _print-packagename); then \
+			case "X$$pkg" in X) pkg=$$(echo "$$default" |${_version2default});; \
+			esac; \
+			eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
+		else \
+			echo 1>&2 "Problem with dependency ${_i}"; \
+			exit 1; \
+		fi; }; \
+		done;`; \
+	listlibs="echo $$libs; echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
+	for d in ${_DEPRUNLIBS:S/>/\>/g}; do \
+		case "$$d" in \
+		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
+		*/*) listlibs="$$listlibs ${LOCALBASE}/$${d%/*}/lib*";; \
+		esac; \
+	done; \
+	if found=`eval $$listlibs 2>/dev/null| \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
+		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPRUNLIBS:S/>/\>/g}`; then \
+		for k in $$found; do echo "-W $$k"; done; \
+	else \
+		echo 1>&2 "Can't resolve libspec"; \
+		exit 1; \
+	fi
 .endif
 
 _list-port-libs:
