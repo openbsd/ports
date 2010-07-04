@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/06/29 00:10:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/07/04 19:58:48 espie Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -28,7 +28,7 @@ WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre perl pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb z xcb-render xcb-render-util eggdbus-1 gcrypt
-WANTLIB += gpg-error
+WANTLIB += gpg-error gsf-1.>=114.8
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
@@ -38,7 +38,7 @@ LIB_DEPENDS=		art_lgpl_2.>=5.19::graphics/libart \
 			glade-2.0.>=0.8::devel/libglade2 \
 			gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			goffice-0.8:goffice->=0.8.7,<0.8.8:devel/goffice \
-			gsf-1.>=114.8,gsf-gnome-1.>=114.8::devel/libgsf,-gnome \
+			gsf-gnome-1.>=114.8::devel/libgsf,-gnome \
 			xml2.>=9.5::textproc/libxml
 
 USE_X11=		Yes
