@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/30 16:22:09 eric Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/07/05 13:37:02 eric Exp $
 @conflict cftp-*
 bin/cftp
 bin/ckeygen
 bin/conch
 bin/tkconch
-lib/python${MODPY_VERSION}/site-packages/Conch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Twisted_Conch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.pyc
@@ -29,8 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/knownhosts.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/knownhosts.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/options.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/options.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/unix.py
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/unix.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/error.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/error.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/
@@ -130,10 +128,14 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_checkers.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_checkers.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_ckeygen.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_ckeygen.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_connection.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_connection.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_default.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_default.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_filetransfer.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_filetransfer.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_helper.py
@@ -152,8 +154,12 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_openssh_compat.
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_openssh_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_recvline.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_recvline.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_session.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_session.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_ssh.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_ssh.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_tap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_tap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_telnet.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_telnet.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_text.py

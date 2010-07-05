@@ -1,0 +1,14 @@
+$OpenBSD: patch-twisted_internet_test_test_fdset_py,v 1.1 2010/07/05 13:37:02 eric Exp $
+--- twisted/internet/test/test_fdset.py.orig	Sun Mar 28 17:43:27 2010
++++ twisted/internet/test/test_fdset.py	Sun Mar 28 17:43:18 2010
+@@ -40,8 +40,8 @@ class ReactorFDSetTestsBuilder(ReactorBuilder):
+             client.connect(('127.0.0.1', serverSocket.getsockname()[1]))
+         except socket.error, e:
+             self.assertIn(e.args[0], (EINPROGRESS, EWOULDBLOCK))
+-        else:
+-            self.fail("Connect should have raised EINPROGRESS or EWOULDBLOCK")
++        except Exception:
++            self.fail("Connect should have successed or raised EINPROGRESS or EWOULDBLOCK")
+         server, addr = serverSocket.accept()
+         self.addCleanup(server.close)
+ 

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/30 16:22:09 eric Exp $
-bin/im
+@comment $OpenBSD: PLIST,v 1.5 2010/07/05 13:37:02 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/Twisted_Words-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_words.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_words.pyc
@@ -19,21 +18,11 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/im/basechat.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/basechat.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/basesupport.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/basesupport.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkaccount.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkaccount.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkchat.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkchat.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkcommon.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/gtkcommon.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/instancemessenger.glade
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/ircsupport.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/ircsupport.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/jyaccount.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/jyaccount.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/jychat.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/im/jychat.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/locals.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/locals.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/im/pbsupport.py
@@ -80,11 +69,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/oscar.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/oscar.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/toc.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/toc.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/scripts/
-lib/python${MODPY_VERSION}/site-packages/twisted/words/scripts/__init__.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/scripts/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/words/scripts/im.py
-lib/python${MODPY_VERSION}/site-packages/twisted/words/scripts/im.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/service.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/service.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/tap.py
@@ -98,6 +82,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_domish.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_domish.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc_service.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc_service.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberclient.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberclient.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbercomponent.py
@@ -116,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberxmppstrin
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberxmppstringprep.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_msn.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_msn.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_oscar.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_oscar.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_service.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_service.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_tap.py

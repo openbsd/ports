@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1 2010/07/05 13:37:02 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Pair-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/_version.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/ethernet.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/ethernet.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/ip.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/ip.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/raw.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/raw.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/rawudp.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/rawudp.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_ethernet.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_ethernet.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_ip.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_ip.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_rawudp.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/test/test_rawudp.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/tuntap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/pair/tuntap.pyc

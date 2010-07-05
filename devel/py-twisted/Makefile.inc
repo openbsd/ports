@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2009/01/30 16:22:08 eric Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2010/07/05 13:37:02 eric Exp $
 
 CATEGORIES+=	devel
 
@@ -25,4 +25,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS+=${RUN_DEPENDS}
 
 do-regress:
-	${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD} ${TRIAL_TARGET}
+	ulimit -n 512 -p 512 && \
+	${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD}/trial.wrkdir \
+		${TRIAL_TARGET}

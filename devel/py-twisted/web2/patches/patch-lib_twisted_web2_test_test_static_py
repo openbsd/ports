@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_twisted_web2_test_test_static_py,v 1.1 2010/07/05 13:37:02 eric Exp $
+--- twisted/web2/test/test_static.py.orig	Sat Apr  3 17:15:03 2010
++++ twisted/web2/test/test_static.py	Sat Apr  3 17:15:13 2010
+@@ -47,7 +47,7 @@ class TestData(BaseCase):
+ 
+ 
+ class TestFileSaver(BaseCase):
+-    def setUpClass(self):
++    def setUp(self):
+         self.tempdir = self.mktemp()
+         os.mkdir(self.tempdir)
+         

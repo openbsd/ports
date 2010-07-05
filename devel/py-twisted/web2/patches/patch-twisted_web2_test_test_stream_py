@@ -1,0 +1,21 @@
+$OpenBSD: patch-twisted_web2_test_test_stream_py,v 1.1 2010/07/05 13:37:02 eric Exp $
+--- twisted/web2/test/test_stream.py.orig	Sat Apr  3 17:42:19 2010
++++ twisted/web2/test/test_stream.py	Sat Apr  3 17:42:34 2010
+@@ -61,7 +61,7 @@ class FileStreamTest(SimpleStreamTests, unittest.TestC
+     def makeStream(self, *args, **kw):
+         return stream.FileStream(self.f, *args, **kw)
+     
+-    def setUpClass(self):
++    def setUp(self):
+         f = tempfile.TemporaryFile('w+')
+         f.write(self.text)
+         f.seek(0, 0)
+@@ -100,7 +100,7 @@ class MMapFileStreamTest(SimpleStreamTests, unittest.T
+     def makeStream(self, *args, **kw):
+         return stream.FileStream(self.f, *args, **kw)
+     
+-    def setUpClass(self):
++    def setUp(self):
+         f = tempfile.TemporaryFile('w+')
+         self.text = self.text*(stream.MMAP_THRESHOLD//len(self.text) + 1)
+         f.write(self.text)

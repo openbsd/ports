@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/05 13:37:02 eric Exp $
 
      SUBDIR =
      SUBDIR += core
@@ -7,6 +7,7 @@
      SUBDIR += mail
      SUBDIR += names
      SUBDIR += news
+     SUBDIR += pair
      SUBDIR += runner
      SUBDIR += web
      SUBDIR += web2

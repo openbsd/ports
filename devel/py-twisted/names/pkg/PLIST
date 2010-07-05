@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/07/05 13:37:02 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/Twisted_Names-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/names/
 lib/python${MODPY_VERSION}/site-packages/twisted/names/__init__.py
@@ -38,6 +38,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_cache.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_client.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_client.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_common.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_common.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_dns.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_dns.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_names.py
