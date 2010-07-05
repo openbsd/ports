@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/02 20:53:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/05 18:55:32 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 
 DISTNAME=	pidgin-guifications-2.16
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://plugins.guifications.org/trac/wiki/Guifications
@@ -29,7 +29,7 @@ WANTLIB += pthread util
 MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
 MODULES=	devel/gettext textproc/intltool
-LIB_DEPENDS=	purple::net/pidgin
+LIB_DEPENDS=	purple::net/pidgin,-libpurple
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
