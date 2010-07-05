@@ -1,6 +1,6 @@
-# $OpenBSD: mono.port.mk,v 1.11 2010/05/15 09:37:48 ajacoutot Exp $
+# $OpenBSD: mono.port.mk,v 1.12 2010/07/05 06:16:58 ajacoutot Exp $
 
-ONLY_FOR_ARCHS?=	i386 amd64 powerpc
+ONLY_FOR_ARCHS?=	i386 amd64 powerpc # XXX arm
 
 CATEGORIES+=		lang/mono
 
