@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 09:41:19 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/05 07:50:11 espie Exp $
 
 COMMENT =		meta-object system for Haskell based on Perl 6
 
@@ -14,6 +14,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEOENDS =		:hs-stringtable-atom->=0.0.6:devel/hs-stringtable-atom
+LIB_DEPENDS =		:hs-stringtable-atom->=0.0.6:devel/hs-stringtable-atom
 
 .include <bsd.port.mk>
