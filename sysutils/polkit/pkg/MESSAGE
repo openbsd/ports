@@ -1,0 +1,6 @@
+polkitd(8) runs setuid(2) root. If you'd like to completely disable
+priviledges granting through the PolicyKit framework, create the file:
+    ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/99-nullbackend.conf
+containing the following lines:
+[Configuration]
+Priority=99
