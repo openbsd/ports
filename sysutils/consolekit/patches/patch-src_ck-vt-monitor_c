@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_ck-vt-monitor_c,v 1.1 2010/07/03 04:02:53 ajacoutot Exp $
+$OpenBSD: patch-src_ck-vt-monitor_c,v 1.2 2010/07/05 06:51:40 ajacoutot Exp $
+
+VT_WAITACTIVE started in a g_thread with our userland pthreads(3) makes
+the main console-kit-daemon process waits forever on VT1, so are forced
+to disable monitoring for console activation.
+
 --- src/ck-vt-monitor.c.orig	Sat Jul  3 05:56:14 2010
 +++ src/ck-vt-monitor.c	Sat Jul  3 05:56:58 2010
 @@ -381,7 +381,7 @@ vt_add_watches (CkVtMonitor *vt_monitor)

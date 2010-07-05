@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/01 07:50:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/05 06:51:40 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
@@ -50,7 +50,7 @@ pre-patch:
 		cp -R freebsd openbsd && \
 		perl -pi -e "s,freebsd,openbsd,g" openbsd/Makefile.in
 
-# from FreeBSD ports
+# from FreeBSD ports and Slackware Linux
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-display-device \
 		${PREFIX}/libexec/ck-get-x11-display-device
