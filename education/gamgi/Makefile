@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/27 21:50:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/05 08:30:46 jasper Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gamgi ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${DOC_DIR} ${DATA_DIR}
 	${INSTALL_DATA} ${WRKDIST}/dat/all.xml ${PREFIX}/share/gamgi
-	# Clean an empty directory and swap file.
+	# Clean an empty directory.
 	rm -fr ${WRKDIST}/dat/util/python/
 	cd ${WRKDIST}/doc/ && umask 022 && pax -rw . ${DOC_DIR}
 	cd ${WRKDIST}/dat/ && umask 022 && pax -rw . ${DATA_DIR}
