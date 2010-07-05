@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/06/30 19:08:37 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2010/07/05 09:44:02 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.7.0
 GNOME_PROJECT=		f-spot
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION}p0
 
 CATEGORIES=		graphics
 
@@ -47,7 +48,8 @@ RUN_DEPENDS=		::devel/mono-addins \
 			::x11/gnome/mono-gnome \
 			::sysutils/ndesk-dbus-glib \
 			::devel/mono-addins \
-			::devel/mono-flickrnet
+			::devel/mono-flickrnet \
+			::x11/gnome/mono-keyring
 LIB_DEPENDS+=		exif::graphics/libexif \
 			lcms::graphics/lcms
 
