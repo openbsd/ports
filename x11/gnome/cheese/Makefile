@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/24 16:29:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/05 18:51:17 espie Exp $
 
 COMMENT=	PhotoBooth inspired application
 
@@ -23,7 +23,7 @@ WANTLIB += execinfo expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += soup-2.4 sqlite3 ssl3 startup-notification-1 tasn1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
 WANTLIB += xml2 z
@@ -32,7 +32,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2,smime3::databases/evolution-data-server \
+LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 		rsvg-2.>=20::x11/gnome/librsvg \
 		gstinterfaces-0.10,gstreamer-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
 		gnome-desktop-2.>=7::x11/gnome/desktop
