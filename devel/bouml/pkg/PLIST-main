@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/12/22 15:31:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/07/05 10:42:48 jasper Exp $
 @bin bin/bouml
 @bin bin/browsersort
 @bin bin/cpp_generator
 @bin bin/cpp_reverse
+@bin bin/cpp_roundtrip
 @bin bin/cpp_util
 @bin bin/deplcl
 @bin bin/file_control
@@ -400,6 +401,7 @@ share/bouml/cpp_utilities/java_imports
 share/bouml/cpp_utilities/python_imports
 share/bouml/cpp_utilities/stereotypes
 share/bouml/cpp_utilities/tools
+share/bouml/de.lang
 share/bouml/deploy/
 share/bouml/deploy/1024.bodies
 share/bouml/deploy/1152.bodies
@@ -680,6 +682,8 @@ share/bouml/empty/java_imports
 share/bouml/empty/python_imports
 share/bouml/empty/stereotypes
 share/bouml/empty/tools
+share/bouml/es.lang
+share/bouml/fr.lang
 share/bouml/genpro/
 share/bouml/genpro/1024.bodies
 share/bouml/genpro/1152.bodies
@@ -962,6 +966,7 @@ share/bouml/html/java_imports
 share/bouml/html/python_imports
 share/bouml/html/stereotypes
 share/bouml/html/tools
+share/bouml/pt_br.lang
 share/bouml/rose/
 share/bouml/rose/1024.bodies
 share/bouml/rose/1152.bodies
@@ -1947,11 +1952,13 @@ share/bouml/xmi2import/129794.diagram
 share/bouml/xmi2import/129920.bodies
 share/bouml/xmi2import/130050.bodies
 share/bouml/xmi2import/130176.bodies
+share/bouml/xmi2import/130306.bodies
 share/bouml/xmi2import/130432.bodies
 share/bouml/xmi2import/130434.diagram
 share/bouml/xmi2import/130562.bodies
 share/bouml/xmi2import/130688.bodies
 share/bouml/xmi2import/130944.bodies
+share/bouml/xmi2import/131074.bodies
 share/bouml/xmi2import/131200.bodies
 share/bouml/xmi2import/131456.bodies
 share/bouml/xmi2import/131712.bodies

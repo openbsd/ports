@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.2 2009/09/01 09:35:28 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.3 2010/07/05 10:42:48 jasper Exp $
 
 Use INSTALL_DATA/INSTALL_PROGRAM here to make sure we end up with the correct
 permissions being set (cp -p).
 
---- Makefile.orig	Wed Jun 10 22:25:38 2009
-+++ Makefile	Tue Sep  1 09:57:54 2009
+--- Makefile.orig	Sat Dec 26 11:00:56 2009
++++ Makefile	Mon Jul  5 10:34:21 2010
 @@ -1,19 +1,19 @@
  # The directory where all the bouml files will be installed, you
  # can change it for instance because you don't have root permission
@@ -38,7 +38,7 @@ permissions being set (cp -p).
  
  SRC_DIRS = src \
  	src/CppGenerator \
-@@ -109,9 +109,9 @@ install:
+@@ -111,9 +111,9 @@ install:
  	then \
  		for i in 16 32 48 64; do \
  			mkdir -p "$(DESTDIR)$(BOUML_ICONS_PREFIX_DIR)/$$i"x"$$i/apps"; \
@@ -51,22 +51,26 @@ permissions being set (cp -p).
  		done; \
  	fi
  	if test -n "$(BOUML_UNIX_PIXMAPS_DIR)"; then \
-@@ -120,13 +120,8 @@ install:
+@@ -122,16 +122,9 @@ install:
  		cp -f projectControl.48.png "$(DESTDIR)$(BOUML_UNIX_PIXMAPS_DIR)/projectControl.png"; \
  		cp -f projectSynchro.48.png "$(DESTDIR)$(BOUML_UNIX_PIXMAPS_DIR)/projectSynchro.png"; \
  	fi
+-	cp -p *.lang "$(DESTDIR)$(BOUML_LIB)"
 -	for i in $(PROGS); do cp -p $$i "$(DESTDIR)$(BOUML_LIB)" ; done
++	${BSD_INSTALL_PROGRAM} *.lang "$(DESTDIR)$(BOUML_LIB)"
 +	for i in $(PROGS); do ${BSD_INSTALL_PROGRAM} $$i "$(DESTDIR)$(BOUML_DIR)" ; done
  	cd plugouts ; tar cf - empty genpro html rose singleton cpp_utilities xmi xmi2 xmi2import sm_generator usecase_wizard sort uml_projection FileControl deploy GlobalChange | (cd $(DESTDIR)$(BOUML_LIB); tar xf -)
 -	echo "#!/bin/sh" >$(DESTDIR)$(BOUML_DIR)/bouml
 -	echo "PATH=$(BOUML_LIB):$$"PATH >>$(DESTDIR)$(BOUML_DIR)/bouml
+-	echo "BOUML_LIB_DIR=$(BOUML_LIB)" >>$(DESTDIR)$(BOUML_DIR)/bouml
 -	echo "export PATH" >>$(DESTDIR)$(BOUML_DIR)/bouml
+-	echo "export BOUML_LIB_DIR" >>$(DESTDIR)$(BOUML_DIR)/bouml
 -	echo "exec $(BOUML_LIB)/bouml \"$$"@"\"" >>$(DESTDIR)$(BOUML_DIR)/bouml
 -	chmod +x "$(DESTDIR)$(BOUML_DIR)/bouml"
  	cd $(DESTDIR)$(BOUML_DIR) ; rm -f projectControl ; ln -s $(BOUML_LIB)/projectControl
  	cd $(DESTDIR)$(BOUML_DIR) ; rm -f projectSynchro ; ln -s $(BOUML_LIB)/projectSynchro
  	if test -n "$(BOUML_DESKTOP_DIR)" ; \
-@@ -146,7 +141,7 @@ install:
+@@ -151,7 +144,7 @@ install:
  		echo "Name=Project Control" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Type=Application" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Comment=Bouml project's files control" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
@@ -75,7 +79,7 @@ permissions being set (cp -p).
  		echo "TryExec=projectControl" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Icon=projectControl" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Categories=Development;" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
-@@ -155,7 +150,7 @@ install:
+@@ -160,7 +153,7 @@ install:
  		echo "Name=Project Synchro" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \
  		echo "Type=Application" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \
  		echo "Comment=Bouml project's files synchronization" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \
