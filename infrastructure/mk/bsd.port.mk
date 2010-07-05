@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1010 2010/07/05 08:58:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1011 2010/07/05 09:00:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -850,14 +850,14 @@ _tmpvars += ${_v}=${${_v:S/^^//}:Q}
 .    endif
 .  endfor
 
-SUBST_CMD = perl ${PORTSDIR}/infrastructure/build/pkg_subst
-.for _v in ${SUBST_VARS}
-SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
-.endfor
-
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
+.endfor
+
+SUBST_CMD = perl ${PORTSDIR}/infrastructure/build/pkg_subst
+.for _v in ${SUBST_VARS}
+SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .endfor
 
 # XXX
