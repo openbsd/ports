@@ -1,6 +1,7 @@
-# $OpenBSD: mono.port.mk,v 1.12 2010/07/05 06:16:58 ajacoutot Exp $
+# $OpenBSD: mono.port.mk,v 1.13 2010/07/05 09:13:05 espie Exp $
 
-ONLY_FOR_ARCHS?=	i386 amd64 powerpc # XXX arm
+MODMONO_ONLY_FOR_ARCHS=	i386 amd64 powerpc # XXX arm
+ONLY_FOR_ARCHS?=	${MODMONO_ONLY_FOR_ARCHS}
 
 CATEGORIES+=		lang/mono
 
@@ -29,12 +30,12 @@ BUILD_DEPENDS+= ::devel/nant
 
 .  if !target(do-build)
 do-build:
-	@(cd ${WRKSRC}; ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS})
+	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
 .  endif
 
 .  if !target(do-install)
 do-install:
-	@(cd ${WRKSRC}; ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} -D:prefix="${PREFIX}" install)
+	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} -D:prefix="${PREFIX}" install
 .  endif
 
 .endif
