@@ -1,3 +1,5 @@
+# $OpenBSD: 10-desktop-policy.pkla,v 1.3 2010/07/05 15:40:01 ajacoutot Exp $
+#
 # Authorizations/policy for the wheel and users groups.
 #
 # See the pklocalauthority(8) man page for more information
