@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/05 07:42:43 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -93,21 +93,27 @@ share/examples/polkit/polkit-1/nullbackend.conf.d/
 @sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/
 share/examples/polkit/polkit-1/nullbackend.conf.d/50-nullbackend.conf
 @sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/50-nullbackend.conf
+share/examples/polkit/var/
+share/examples/polkit/var/db/
+share/examples/polkit/var/db/polkit-1/
+share/examples/polkit/var/db/polkit-1/localauthority/
+share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
+share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/10-desktop-policy.pkla
 share/locale/da/LC_MESSAGES/polkit-1.mo
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
 @mode 0700
-@sample /var/db/polkit-1/localauthority
+@sample /var/db/polkit-1/localauthority/
 @mode
-@sample ${SYSCONFDIR}/polkit-1/10-vendor.d/
-@sample /var/db/polkit-1/10-vendor.d/
-@sample ${SYSCONFDIR}/polkit-1/20-org.d/
-@sample /var/db/polkit-1/20-org.d/
-@sample ${SYSCONFDIR}/polkit-1/30-site.d/
-@sample /var/db/polkit-1/30-site.d/
-@sample ${SYSCONFDIR}/polkit-1/50-local.d/
-@sample /var/db/polkit-1/50-local.d/
-@sample ${SYSCONFDIR}/polkit-1/90-mandatory.d/
-@sample /var/db/polkit-1/90-mandatory.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/10-vendor.d/
+@sample /var/db/polkit-1/localauthority/10-vendor.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/20-org.d/
+@sample /var/db/polkit-1/localauthority/20-org.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/30-site.d/
+@sample /var/db/polkit-1/localauthority/30-site.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/50-local.d/
+@sample /var/db/polkit-1/localauthority/50-local.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/90-mandatory.d/
+@sample /var/db/polkit-1/localauthority/90-mandatory.d/

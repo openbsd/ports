@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/02 21:47:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/05 07:42:43 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -69,7 +69,11 @@ do-configure:
 		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
 
 post-install:
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d
 	${INSTALL_DATA} ${FILESDIR}/60-desktop-policy.conf \
 		${PREFIX}/share/examples/polkit/polkit-1/localauthority.conf.d/
+	${INSTALL_DATA} ${FILESDIR}/10-desktop-policy.pkla \
+		${PREFIX}/share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+[Desktop User Permissions]
+Identity=unix-group:users
+Action=org.gnome.clockapplet.mechanism.settimezone
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+
+[Desktop Administrator Permissions]
+Identity=unix-group:wheel
+Action=org.gnome.clockapplet.mechanism.*;org.freedesktop.devicekit.disks.*;org.freedesktop.RealtimeKit1.*
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
