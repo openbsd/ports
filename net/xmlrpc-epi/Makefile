@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/05 22:52:38 espie Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -9,7 +9,7 @@ SHARED_LIBS +=	xmlrpc-epi	0.3
 
 HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/
 
-WANTLIB += c expat
+WANTLIB += c expat iconv
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-epi/}
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=		iconv::devel/gettext
+BUILD_DEPENDS +=	::devel/gettext
+RUN_DEPENDS +=		::devel/gettext
 
 CONFIGURE_STYLE=	gnu autoconf
 USE_LIBTOOL=		Yes
