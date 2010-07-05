@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/11/23 13:50:47 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/07/05 01:59:26 djm Exp $
 @conflict p5-WWW-Wikipedia-*
 bin/opensearch-discover
 bin/opensearch-genquery
@@ -105,112 +105,13 @@ lib/surfraw/woffle
 lib/surfraw/yahoo
 lib/surfraw/youtube
 lib/surfraw/yubnub
-@man man/man1/W.1
-@man man/man1/acronym.1
-@man man/man1/alioth.1
-@man man/man1/altavista.1
-@man man/man1/amazon.1
-@man man/man1/archpkg.1
-@man man/man1/arxiv.1
-@man man/man1/ask.1
-@man man/man1/aur.1
-@man man/man1/austlii.1
-@man man/man1/bbcnews.1
-@man man/man1/cddb.1
-@man man/man1/cia.1
-@man man/man1/cite.1
-@man man/man1/cliki.1
-@man man/man1/cnn.1
-@man man/man1/codesearch.1
-@man man/man1/comlaw.1
-@man man/man1/ctan.1
-@man man/man1/currency.1
-@man man/man1/cve.1
-@man man/man1/debbugs.1
-@man man/man1/debcontents.1
-@man man/man1/deblists.1
-@man man/man1/deblogs.1
-@man man/man1/debpackages.1
-@man man/man1/debpkghome.1
-@man man/man1/debpts.1
-@man man/man1/debsec.1
-@man man/man1/debvcsbrowse.1
-@man man/man1/debwiki.1
-@man man/man1/deja.1
-@man man/man1/discogs.1
-@man man/man1/dmoz.1
-@man man/man1/ebay.1
 @man man/man1/elvi.1
 man/man1/elvi.1sr
-@man man/man1/etym.1
-@man man/man1/excite.1
-@man man/man1/fast.1
-@man man/man1/filesearching.1
-@man man/man1/finkpkg.1
-@man man/man1/foldoc.1
-@man man/man1/freebsd.1
-@man man/man1/freedb.1
-@man man/man1/freshmeat.1
-@man man/man1/fsfdir.1
-@man man/man1/gcache.1
-@man man/man1/genbugs.1
-@man man/man1/genpkg.1
-@man man/man1/genportage.1
-@man man/man1/google.1
-@man man/man1/gutenberg.1
-@man man/man1/happypenguin.1
-@man man/man1/imdb.1
-@man man/man1/ixquick.1
-@man man/man1/javasun.1
-@man man/man1/l1sp.1
-@man man/man1/lastfm.1
-@man man/man1/leodict.1
-@man man/man1/lsm.1
-@man man/man1/macports.1
-@man man/man1/mathworld.1
-@man man/man1/mininova.1
-@man man/man1/musicbrainz.1
-@man man/man1/netbsd.1
-@man man/man1/ntrs.1
-@man man/man1/openbsd.1
 @man man/man1/opensearch-discover.1
 @man man/man1/opensearch-genquery.1
-man/man1/opensearch.1sr.gz
-@man man/man1/pgpkeys.1
-@man man/man1/piratebay.1
-@man man/man1/port.1
-@man man/man1/pubmed.1
-@man man/man1/rae.1
-@man man/man1/rfc.1
-@man man/man1/rhyme.1
-@man man/man1/rpmsearch.1
-@man man/man1/scholar.1
-@man man/man1/scicom.1
-@man man/man1/scpan.1
-@man man/man1/slashdot.1
-@man man/man1/slinuxdoc.1
-@man man/man1/sourceforge.1
-@man man/man1/springer.1
 @man man/man1/sr.1
-@man man/man1/stockquote.1
-@man man/man1/sunonesearch.1
 @man man/man1/surfraw-update-path.1
 @man man/man1/surfraw.1
-@man man/man1/thesaurus.1
-@man man/man1/translate.1
-@man man/man1/urban.1
-@man man/man1/w3css.1
-@man man/man1/w3html.1
-@man man/man1/w3link.1
-@man man/man1/w3rdf.1
-@man man/man1/wayback.1
-@man man/man1/webster.1
-@man man/man1/wetandwild.1
-@man man/man1/wikipedia.1
-@man man/man1/woffle.1
-@man man/man1/yahoo.1
-@man man/man1/youtube.1
-@man man/man1/yubnub.1
 share/doc/surfraw/
 share/doc/surfraw/HACKING
 share/doc/surfraw/README
@@ -221,4 +122,3 @@ share/examples/surfraw/surfraw.bookmarks
 @sample ${SYSCONFDIR}/xdg/surfraw/bookmarks
 share/examples/surfraw/surfraw.conf
 @sample ${SYSCONFDIR}/xdg/surfraw/conf
-

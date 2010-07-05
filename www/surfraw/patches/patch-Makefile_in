@@ -1,15 +1,26 @@
---- Makefile.in.orig	Sun Sep 14 14:37:57 2008
-+++ Makefile.in	Sun Feb 22 09:06:40 2009
-@@ -759,7 +759,7 @@
- 	done < links
- @OPENSEARCH_TRUE@	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
+--- Makefile.in.orig	Fri Nov 20 15:38:11 2009
++++ Makefile.in	Fri Jul  2 10:11:34 2010
+@@ -864,13 +864,13 @@ install-data-hook: links surfraw.conf
+ 	mkdir -p $(DESTDIR)@sysconfdir@/xdg/surfraw
+ 	cp surfraw.conf $(DESTDIR)@sysconfdir@/xdg/surfraw/conf
+ 	cp $(top_srcdir)/surfraw.bookmarks $(DESTDIR)@sysconfdir@/xdg/surfraw/bookmarks
+-	while read target link ;\
+-	do \
+-		ln -sf $$target  $(DESTDIR)/$$link ;\
+-	done < links
+-@OPENSEARCH_TRUE@	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
++	#while read target link ;\
++	#do \
++	#	ln -sf $$target  $(DESTDIR)/$$link ;\
++	#done < links
++#@OPENSEARCH_TRUE@	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
  @INSTALLSR_TRUE@	ln -sf surfraw $(DESTDIR)/@bindir@/sr
 -@INSTALLSR_TRUE@	ln -sf surfraw.1.gz $(DESTDIR)/@mandir@/man1/sr.1.gz
 +# @INSTALLSR_TRUE@	ln -sf surfraw.1.gz $(DESTDIR)/@mandir@/man1/sr.1.gz
  
  uninstall-local: links
- 	while read target link ;\
-@@ -774,7 +774,7 @@
+ 	-rm -f $(DESTDIR)@sysconfdir@/xdg/surfraw/conf
+@@ -889,7 +889,7 @@ submit-lsm: surfraw.lsm
  	mail -s add LSM@qqx.org < $<
  
  test: all
