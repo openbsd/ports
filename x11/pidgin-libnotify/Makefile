@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/05 20:39:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	pidgin plugin to display messages through libnotify
 
 DISTNAME=	pidgin-libnotify-0.13
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gaim-libnotify.sourceforge.net/
@@ -26,7 +26,7 @@ WANTLIB += png z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		textproc/intltool
-LIB_DEPENDS=	purple::net/pidgin \
+LIB_DEPENDS=	purple::net/pidgin,-libpurple \
 		notify.>=2::devel/libnotify
 
 USE_X11=	Yes
