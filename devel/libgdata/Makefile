@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/30 08:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/05 07:48:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,13 +24,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 dbus-1 dbus-glib-1 gconf-2 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 m pcre soup-2.4 sqlite3 tasn1 xml2 z
+WANTLIB += gthread-2.0 m pcre proxy soup-2.4 sqlite3 tasn1 xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		soup-gnome-2.4.>=1::devel/libsoup,-gnome \
-			proxy::net/libproxy,-gnome
+
+RUN_DEPENDS+=		::net/libproxy,-gnome
+BUILD_DEPENDS+=		::net/libproxy,-gnome
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu
