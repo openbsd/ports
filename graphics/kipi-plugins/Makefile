@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/09/10 16:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/05 11:45:53 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -27,7 +27,7 @@ LIB_DEPENDS-main =${LIB_DEPENDS} \
 		kdcraw::graphics/libkdcraw
 
 LIB_DEPENDS-cal =${LIB_DEPENDS} \
-		kcal,kmime,ktnef,kabc::x11/kde/pim3 \
+		kcal,kmime,ktnef::x11/kde/pim3 \
 		kipiplugins::graphics/kipi-plugins,-main
 
 RUN_DEPENDS =	::graphics/ImageMagick
@@ -41,7 +41,7 @@ WANTLIB-main =	${WANTLIB} GL ltdl Xrandr \
 		pcre pcreposix tiff exif expat lcms \
 		exslt xslt xml2 gpg-error gcrypt exiv2
 
-WANTLIB-cal =	${WANTLIB} kresources vcard
+WANTLIB-cal =	${WANTLIB} kabc kresources vcard
 
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
