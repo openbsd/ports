@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_polkit-gnome-authentication-agent-1_desktop_in_in,v 1.1.1.1 2010/07/05 10:51:16 ajacoutot Exp $
+--- src/polkit-gnome-authentication-agent-1.desktop.in.in.orig	Thu Jul  1 19:21:00 2010
++++ src/polkit-gnome-authentication-agent-1.desktop.in.in	Thu Jul  1 19:21:10 2010
+@@ -5,4 +5,4 @@ Exec=@FULL_LIBEXECDIR@/polkit-gnome-authentication-age
+ Terminal=false
+ Type=Application
+ Categories=
+-OnlyShowIn=GNOME;
++NotShowIn=KDE;
