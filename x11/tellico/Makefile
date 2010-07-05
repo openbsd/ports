@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/02 20:53:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/05 12:08:35 espie Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
@@ -22,6 +22,7 @@ WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
 WANTLIB+=	exslt gcrypt gpg-error idn jpeg m pcre pcreposix
 WANTLIB+=	png pthread stdc++ util xml2 xslt z fam
 WANTLIB+=	expat fontconfig freetype pthread-stubs xcb
+WANTLIB+=	poppler
 
 MODULES=	x11/kde \
 		lang/python \
@@ -48,7 +49,7 @@ LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
 		kcddb::x11/kde/multimedia3 \
 		kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		lcms::graphics/lcms \
-		poppler-qt.>=3,poppler::print/poppler,-qt \
+		poppler-qt.>=3::print/poppler,-qt \
 		tag::audio/taglib \
 		yaz::net/yaz
 
