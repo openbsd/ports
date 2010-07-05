@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1009 2010/07/04 17:26:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1010 2010/07/05 08:58:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2887,7 +2887,11 @@ _print-package-args:
 	if found=`eval $$listlibs 2>/dev/null| \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
 		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPRUNLIBS:S/>/\>/g}`; then \
-		for k in $$found; do echo "-W $$k"; done; \
+		for k in $$found; do \
+			case $$k in *.a) ;; \
+			*) echo "-W $$k";; \
+			esac; \
+		done; \
 	else \
 		echo 1>&2 "Can't resolve libspec"; \
 		exit 1; \
