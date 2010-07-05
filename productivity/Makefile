@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/03/23 13:34:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/05 02:08:44 djm Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -8,6 +8,7 @@
      SUBDIR += glabels
      SUBDIR += gnucash
      SUBDIR += gnucash-docs
+     SUBDIR += googlecl
      SUBDIR += grisbi
      SUBDIR += gtg
      SUBDIR += homebank
