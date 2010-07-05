@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/06/02 12:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/07/05 07:33:38 espie Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -83,10 +83,10 @@ LIB_DEPENDS-caca =	${LIB_DEPENDS} \
 WANTLIB-soup =		${WANTLIB} \
 			ORBit-2 dbus-1 dbus-glib-1 gcrypt gio-2.0 \
 			gnome-keyring gnutls gpg-error gsttag-0.10 proxy \
-			sqlite3 tasn1 eggdbus-1
+			sqlite3 tasn1 eggdbus-1 soup-2.4
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
-			soup-2.4,soup-gnome-2.4::devel/libsoup,-gnome
+			soup-gnome-2.4::devel/libsoup,-gnome
 
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-dv1394 \
