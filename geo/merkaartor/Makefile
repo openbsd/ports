@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/13 10:57:35 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/05 08:35:01 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -7,7 +7,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	geo x11
 
-HOMEPAGE =	http://www.merkaartor.org/
+HOMEPAGE =	http://www.merkaartor.be/
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # GPLv2
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://www.merkaartor.org/downloads/source/
+MASTER_SITES =	http://merkaartor.be/attachments/download/1/
 
 NO_REGRESS =	Yes
 MODULES =	devel/gettext x11/qt4
