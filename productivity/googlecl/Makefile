@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/05 02:07:41 djm Exp $
-COMMENT=	Commandline interface to Google services
+# $OpenBSD: Makefile,v 1.2 2010/07/05 14:37:59 ajacoutot Exp $
 
-DISTNAME=	googlecl-0.9.8
+COMMENT=	command-line interface to Google services
+
+MODPY_EGG_VERSION= 0.9.8
+DISTNAME=	googlecl-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=    	productivity devel www
 
 HOMEPAGE=	http://code.google.com/p/googlecl/
