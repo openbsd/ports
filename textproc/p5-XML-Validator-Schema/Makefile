@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/06 17:02:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/05 20:41:06 kili Exp $
 
 COMMENT=	validate XML schema using SAX
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPEND=		::textproc/p5-XML-SAX
+BUILD_DEPENDS=		::textproc/p5-XML-SAX
 RUN_DEPENDS=		::devel/p5-Tree-DAG_Node \
 			::textproc/p5-XML-Filter-BufferText \
 			::textproc/p5-XML-SAX
