@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/15 21:49:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/05 07:41:23 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -26,7 +26,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs xcb z
-WANTLIB-main =	${WANTLIB} dbus-1 dbus-glib-1 mowgli ogg sndio stdc++
+WANTLIB-main =	${WANTLIB} cddb dbus-1 dbus-glib-1 mowgli ogg sndio stdc++
 WANTLIB-jack =	${WANTLIB} jack samplerate
 
 MASTER_SITES =	http://distfiles.atheme.org/
@@ -44,7 +44,7 @@ LIB_DEPENDS-main =	faad.>=2,mp4ff.>=1::audio/faad \
 			FLAC.>=7::audio/flac \
 			mp3lame::audio/lame \
 			mad::audio/libmad \
-			cddb,cdio,cdio_cdda::audio/libcdio \
+			cdio,cdio_cdda::audio/libcdio \
 			mpcdec.>=2::audio/libmpcdec \
 			sndfile.>=2::audio/libsndfile \
 			vorbis.>=5,vorbisfile.>=4,vorbisenc::audio/libvorbis \
