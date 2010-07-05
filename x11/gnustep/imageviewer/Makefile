@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/14 11:07:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/05 07:52:02 ajacoutot Exp $
 
 COMMENT=	GNUstep image viewer
 
 DISTNAME=	ImageViewer-0.6.2
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.nice.ch/~phip/softcorner.html

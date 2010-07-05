@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/05/12 16:44:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/05 07:52:02 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.18.0
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning

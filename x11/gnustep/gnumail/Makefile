@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/23 11:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/05 07:52:02 ajacoutot Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME=	GNUMail-1.2.0pre3
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}p3
 SHARED_LIBS=	GNUMail 1.2	# .1.2
 CATEGORIES=	mail
 

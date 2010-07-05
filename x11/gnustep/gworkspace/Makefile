@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/01 21:04:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/05 07:52:02 ajacoutot Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME=	gworkspace-0.8.8
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	x11
 
 SO_VERSION=	0.0

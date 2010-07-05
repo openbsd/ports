@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.5 2008/05/05 09:32:59 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2010/07/05 07:52:02 ajacoutot Exp $
 
 DIST_SUBDIR=	gnustep
 
-MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER?=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3 - LGPLv3 (GNUStep core apps and libs)
 # GPLv2 - LGPLv2

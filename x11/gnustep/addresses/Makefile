@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/05 07:52:02 ajacoutot Exp $
 
 COMMENT=	GNUstep address book
 
 DISTNAME=	Addresses-0.4.7
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}p3
 SHARED_LIBS+=	Addresses 0.1	# .0.1
 SHARED_LIBS+=	AddressView 0.1	# .0.1
 CATEGORIES=	mail
