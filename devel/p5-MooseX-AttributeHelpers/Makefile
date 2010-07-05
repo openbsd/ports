@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/17 04:45:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/05 09:29:49 sthen Exp $
 
 COMMENT=	extend your attribute interfaces
 
-DISTNAME=	MooseX-AttributeHelpers-0.22
+DISTNAME=	MooseX-AttributeHelpers-0.23
 
 CATEGORIES=	devel
 
