@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/05 06:15:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/05 08:25:08 espie Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -57,11 +57,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		daemon::devel/libdaemon \
 		dbus-1::x11/dbus
 
-# only enable the mono subpackage on supported mono arches
-# see ONLY_FOR_ARCHS in lang/mono/mono.port.mk
-.if ${MACHINE_ARCH} == "amd64" ||${MACHINE_ARCH} == "i386" \
- || ${MACHINE} == "powerpc"
-. if !${FLAVOR:L:Mno_mono}
+.if !${FLAVOR:L:Mno_mono}
 MULTI_PACKAGES+= -mono
 MODULES+=	lang/mono
 BUILD_DEPENDS+=	${MODMONO_BUILD_DEPENDS} \
@@ -71,10 +67,6 @@ RUN_DEPENDS-mono= ${MODMONO_RUN_DEPENDS} \
 		::x11/mono-gtk2
 LIB_DEPENDS-mono= # empty
 WANTLIB-mono=	# empty
-. else
-CONFIGURE_ARGS+= --disable-mono \
-		--disable-monodoc
-. endif
 .else
 CONFIGURE_ARGS+= --disable-mono \
 		--disable-monodoc
