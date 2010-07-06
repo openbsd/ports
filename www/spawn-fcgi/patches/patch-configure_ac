@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/07/06 21:10:50 sthen Exp $
+--- configure.ac.orig	Tue Jul  6 15:22:08 2010
++++ configure.ac	Tue Jul  6 15:22:43 2010
+@@ -69,7 +69,17 @@ fi
+ 
+ # check for extra compiler options (warning options)
+ if test "${GCC}" = "yes"; then
+-    CFLAGS="${CFLAGS} -Wall -W -Wshadow -pedantic -std=gnu99"
++    CFLAGS="${CFLAGS} -Wall -W -Wshadow -pedantic"
++
++    # Use std=gnu99 if we have new enough GCC
++    old_cflags=${CFLAGS}
++    CFLAGS="-std=gnu99"
++    AC_TRY_COMPILE([
++    ],, [
++      CFLAGS="${CFLAGS} $old_cflags"
++    ], [
++      CFLAGS="${old_cflags}"
++    ])
+ fi
+ 
+ AC_ARG_ENABLE(extra-warnings,

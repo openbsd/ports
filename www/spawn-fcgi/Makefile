@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/09/29 07:33:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/06 21:10:50 sthen Exp $
 
 COMMENT=	spawn FastCGI processes
 
 DISTNAME=	spawn-fcgi-1.6.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/
 
@@ -17,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.64
 
 .include <bsd.port.mk>
