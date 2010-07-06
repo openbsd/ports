@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1014 2010/07/06 12:02:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1015 2010/07/06 12:09:55 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1786,7 +1786,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	@libs=`for i in ${_LIB4:S/>/\>/g:S/</\</g}; do echo "$$i"| { \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
-		eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
+		eval $$toset ${MAKE} print-plist-libs; \
 		}; \
 		done;`; \
 	listlibs="echo $$libs; echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
@@ -2433,6 +2433,9 @@ print-plist-all-with-depends:
 print-plist-contents:
 	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
+print-plist-libs:
+	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist};${_plist_footer}
+
 _internal-package-only: ${_PACKAGE_COOKIES}
 
 _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
@@ -2845,7 +2848,7 @@ _print-package-args:
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
 			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
 			esac; \
-			libs=`eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}`; \
+			libs=`eval $$toset ${MAKE} print-plist-libs`; \
 			needed=false; \
 			IFS=,; for d in $$dep; do \
  				${_libresolve_fragment}; \
@@ -2881,7 +2884,7 @@ _print-package-args:
 	@libs=`for i in ${_LIB4${SUBPACKAGE}:S/>/\>/g:S/</\</g}; do echo "$$i"| { \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
-		if ! eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
+		if ! eval $$toset ${MAKE} print-plist-libs; \
 		then \
 			echo 1>&2 "Problem with dependency ${_i}"; \
 			exit 1; \
@@ -2921,15 +2924,14 @@ _list-port-libs:
 		else \
 			mkdir -p $${fulldir%/*}; \
 			${_flavor_fragment}; \
-			eval $$toset ${MAKE} print-plist-contents | \
-				${_grab_libs_from_plist}|tee $$fulldir; \
+			eval $$toset ${MAKE} print-plist-libs | tee $$fulldir; \
 		fi; \
 	done
 .else
 	@${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
-		eval $$toset ${MAKE} print-plist-contents ; \
-	done | ${_grab_libs_from_plist}
+		eval $$toset ${MAKE} print-plist-libs ; \
+	done
 .endif
 	@echo /usr/lib/lib* ${X11BASE}/lib/lib*
 

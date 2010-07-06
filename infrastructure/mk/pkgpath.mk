@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.26 2010/04/20 21:00:35 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.27 2010/07/06 12:09:55 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -110,7 +110,7 @@ _recursive_targets = \
 	port-lib-depends-check prepare print-package-signature regress reinstall \
 	unlink-categories update update-or-install update-or-install-all \
 	describe dump-vars homepage-links print-plist print-plist-all \
-	print-plist-all-with-depends print-plist-contents \
+	print-plist-all-with-depends print-plist-contents print-plist-libs \
 	print-plist-with-depends show verbose-show show-size show-fake-size
 
 _dangerous_recursive_targets = \
