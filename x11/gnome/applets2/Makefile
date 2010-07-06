@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/07/01 17:56:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2010/07/06 13:02:14 espie Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -47,16 +47,10 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gtop-2.0.>=3.0::devel/libgtop2 \
 			gucharmap:gucharmap->=1.8:x11/gnome/gucharmap
 
-PSEUDO_FLAVORS=		no_battstat
-FLAVOR?=
-
-MULTI_PACKAGES=		-main
-.if ${FLAVOR:L:Mno_battstat}
-CONFIGURE_ARGS+=	--disable-battstat
-.else
-MULTI_PACKAGES+=	-battstat
+MULTI_PACKAGES=		-main -battstat
+ONLY_FOR_ARCHS-battstat = ${APM_ARCHS}
 RUN_DEPENDS-battstat=	::${BUILD_PKGPATH},-main
-.endif
+
 
 MODGCONF2_SCHEMAS_DIR=	gnome-applets2
 
@@ -86,10 +80,12 @@ pre-configure:
 
 .include <bsd.port.mk>
 
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
-
 .for m in ${MACHINE_ARCH} ${MACHINE}
-.if ${APM_ARCHS:L:M$m}
-FLAVOR+=	no_battstat
-.endif
+.  if ${APM_ARCHS:L:M$m}
+ENABLE_BATTSTAT=Yes
+.  endif
 .endfor
+.if !defined(ENABLE_BATTSTAT)
+CONFIGURE_ARGS+=	--disable-battstat
+.endif
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

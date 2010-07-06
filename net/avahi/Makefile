@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/05 08:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/06 13:02:14 espie Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -57,8 +57,19 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		daemon::devel/libdaemon \
 		dbus-1::x11/dbus
 
+ONLY_FOR_ARCHS-mono = i386 amd64 powerpc
+
+BUILD_MONO = No
 .if !${FLAVOR:L:Mno_mono}
 MULTI_PACKAGES+= -mono
+.  for _a in ${MACHINE_ARCH} ${ARCH}
+.    if ${ONLY_FOR_ARCHS-mono:M${_a}}
+BUILD_MONO = Yes
+.    endif
+.  endfor
+.endif
+
+.if ${BUILD_MONO:L} == "yes"
 MODULES+=	lang/mono
 BUILD_DEPENDS+=	${MODMONO_BUILD_DEPENDS} \
 		::x11/mono-gtk2
@@ -72,7 +83,7 @@ CONFIGURE_ARGS+= --disable-mono \
 		--disable-monodoc
 .endif
 
-.if !${FLAVOR:L:Mno_gtk} || !${FLAVOR:L:Mno_mono}
+.if !${FLAVOR:L:Mno_gtk} || ${BUILD_MONO:L} == "yes"
 MULTI_PACKAGES+= -gtk
 MODULES+=	lang/python
 BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
