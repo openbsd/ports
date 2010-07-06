@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/28 18:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/06 08:17:13 espie Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE} --python=${MODPY_BIN}
 CONFIGURE_SCRIPT=	${MODPY_BIN} ${WRKSRC}/configure
 
-LIB_DEPENDS=		::databases/py-sqlalchemy \
+DEPENDS=		::databases/py-sqlalchemy \
 			::devel/py-simplejson \
 			::devel/py-tz \
 			::devel/py-babel \
@@ -35,6 +35,9 @@ LIB_DEPENDS=		::databases/py-sqlalchemy \
 			::www/py-flup \
 			::textproc/py-lxml \
 			::textproc/py-pygments
+
+BUILD_DEPENDS+=		${DEPENDS}
+RUN_DEPENDS+=		${DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-zine
