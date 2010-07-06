@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/06 22:39:23 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -25,7 +25,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
 LIB_DEPENDS=		kdecore.>=4,kio,kdeui,kdefx,kdesu,DCOP,kwalletclient.>=1::x11/kde/libs3
 
-MODKDE_VERSION= 	3.3
 MODULES=        	x11/kde devel/gettext
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
