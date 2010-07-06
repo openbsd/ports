@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2010/04/18 08:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2010/07/06 17:17:50 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.26
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -26,7 +26,9 @@ RUN_DEPENDS+=	:spawn-fcgi-*:www/spawn-fcgi
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+# Should be 2.65
+AUTOCONF_VERSION= 2.64
 CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --with-lua \
 		 --with-openssl \
