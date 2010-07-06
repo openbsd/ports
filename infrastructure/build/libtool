@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.128 2010/07/06 14:29:15 espie Exp $
+# $OpenBSD: libtool,v 1.129 2010/07/06 14:50:53 espie Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -720,17 +720,18 @@ sub link
 		($symbolsfile = "$odir/$ltdir/$la") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
-	my $i = 0;
-	foreach my $k (@$finalorderedlibs) {
+	my $tmp = [];
+	while (my $k = shift @$finalorderedlibs) {
 		my $l = $libs->{$k};
 		$l->find($dirs, 1, $what);
 		if ($l->{dropped}) {
 			# remove library if dependency on it has been dropped
 			delete $libs->{$k};
-			splice(@$finalorderedlibs, $i, 1);
+		} else {
+			push(@$tmp, $k);
 		}
-		$i++;
 	}
+	$finalorderedlibs = $tmp;
 
 	my @libobjects = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
