@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/06/14 12:36:34 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/07/06 07:41:46 sthen Exp $
 @pkgpath net/olsrd
 @man man/man5/olsrd.conf.5
 @man man/man8/olsrd.8
@@ -9,6 +9,7 @@ share/doc/olsrd/README
 share/doc/olsrd/README-Link-Quality-Fish-Eye.txt
 share/doc/olsrd/README-Link-Quality.html
 share/examples/olsrd/
+@comment share/examples/olsrd/olsrd.conf
 share/examples/olsrd/olsrd.conf.default.full
 share/examples/olsrd/olsrd.conf.default.lq
 share/examples/olsrd/olsrd.conf.default.lq-fisheye
