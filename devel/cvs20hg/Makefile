@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/14 23:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/06 10:03:42 espie Exp $
 
 COMMENT=		fast, incremental CVS to Mercurial conversion
 
@@ -22,7 +22,8 @@ WRKDIST=		${WRKDIR}/-corecode-hg-cvs20hg-${CHANGESET}
 
 USE_GMAKE=		Yes
 MODULES=		lang/python
-LIB_DEPENDS=		::devel/py-rcsparse
+BUILD_DEPENDS +=	::devel/py-rcsparse
+RUN_DEPENDS +=		::devel/py-rcsparse
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
