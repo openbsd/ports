@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.127 2010/06/28 19:17:27 steven Exp $
+# $OpenBSD: libtool,v 1.128 2010/07/06 14:29:15 espie Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -734,7 +734,7 @@ sub link
 
 	my @libobjects = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } @libobjects), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath}//'UNDEF' } @libobjects), "\n"};
 
 	main::create_symlinks($ltdir, $libs);
 	my $prev_was_archive = 0;
