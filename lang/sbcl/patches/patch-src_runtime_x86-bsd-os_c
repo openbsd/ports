@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_runtime_x86-bsd-os_c,v 1.1 2010/07/06 21:49:24 naddy Exp $
+--- src/runtime/x86-bsd-os.c.orig	Wed May 13 11:13:48 2009
++++ src/runtime/x86-bsd-os.c	Mon Jul  5 23:59:30 2010
+@@ -20,7 +20,6 @@
+ #endif
+ 
+ #if defined(LISP_FEATURE_OPENBSD)
+-#include <machine/frame.h>
+ #include <machine/npx.h>
+ #include <stddef.h>
+ #endif
+@@ -248,11 +247,9 @@ os_restore_fp_control(os_context_t *context)
+ void
+ os_restore_fp_control(os_context_t *context)
+ {
+-    struct sigframe *frame;
+     union savefpu *fpu;
+ 
+-    frame = (struct sigframe *)((char*)context - offsetof(struct sigframe, sf_sc));
+-    fpu = frame->sf_fpstate;
++    fpu = context->sc_fpstate;
+     if (openbsd_use_fxsave)
+         __asm__ __volatile__ ("fldcw %0" : : "m" (fpu->sv_xmm.sv_env.en_cw));
+     else
