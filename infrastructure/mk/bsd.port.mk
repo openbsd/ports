@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1015 2010/07/06 12:09:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1016 2010/07/06 12:38:26 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -103,7 +103,7 @@ _ALL_VARIABLES += DISTFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 .endif
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += HOMEPAGE DISTNAME \
-	ONLY_FOR_ARCHS NOT_FOR_ARCHS BROKEN COMES_WITH \
+	BROKEN COMES_WITH \
 	REGRESS_DEPENDS USE_GMAKE USE_GROFF MODULES FLAVORS \
 	NO_BUILD NO_REGRESS SHARED_ONLY PSEUDO_FLAVORS \
 	REGRESS_IS_INTERACTIVE \
@@ -114,6 +114,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
+	ONLY_FOR_ARCHS NOT_FOR_ARCHS \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR
 .endif
 # special purpose user settings
@@ -400,6 +401,42 @@ SUBPACKAGE ?= -
 SUBPACKAGE ?= -main
 .endif
 
+_MULTI_PACKAGES =
+.for _s in ${MULTI_PACKAGES}
+
+# ONLY_FOR_ARCHS is special, since it can be undefined
+.  if defined(ONLY_FOR_ARCHS)
+ONLY_FOR_ARCHS${_s} ?= ${ONLY_FOR_ARCHS}
+.  endif
+.  if defined(NOT_FOR_ARCHS)
+NOT_FOR_ARCHS${_s} ?= ${NOT_FOR_ARCHS}
+.  endif
+
+# compute _ARCH_OK for ignore
+.  if defined(ONLY_FOR_ARCHS${_s})
+_ARCH_OK${_s} = 0
+.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.      if !empty(ONLY_FOR_ARCHS${_s}:M${__ARCH})
+_ARCH_OK${_s} = 1
+.      endif
+.    endfor
+.  endif
+_ARCH_OK${_s} ?= 1
+.  if defined(NOT_FOR_ARCHS${_s})
+.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.      if !empty(NOT_FOR_ARCHS${_s}:M${__ARCH})
+_ARCH_OK${_s} = 0
+.      endif
+.    endfor
+.  endif
+
+# allow subpackages to vanish on architectures that don't
+# support them
+.  if ${_ARCH_OK${_s}} == 1
+_MULTI_PACKAGES += ${_s}
+.  endif
+.endfor
+
 FLAVOR ?=
 FLAVORS ?=
 PSEUDO_FLAVORS ?=
@@ -538,7 +575,7 @@ _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
 _FUPDATE_COOKIES =
 _INSTALL_COOKIES =
-.for _S in ${MULTI_PACKAGES}
+.for _S in ${_MULTI_PACKAGES}
 .  if !empty(UPDATE_COOKIES_DIR)
 _UPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
 _FUPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/F${FULLPKGNAME${_S}}
@@ -724,7 +761,7 @@ _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
-.for _S in ${MULTI_PACKAGES}
+.for _S in ${_MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}${PKG_SUFX}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
@@ -1215,29 +1252,14 @@ IGNORE += "is not an interactive port"
 .if ${USE_X11:L} == "yes" && !exists(${X11BASE})
 IGNORE += "uses X11, but ${X11BASE} not found"
 .endif
-.if defined(ONLY_FOR_ARCHS)
-_ARCH_OK = 0
-.  for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.    if !empty(ONLY_FOR_ARCHS:M${__ARCH})
-_ARCH_OK = 1
-.    endif
-.  endfor
-.  if ${_ARCH_OK} == 0
+.if ${_ARCH_OK${SUBPACKAGE}} == 0
+.  if defined(ONLY_FOR_ARCHS${SUBPACKAGE})
 .    if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE += "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
+IGNORE += "is only for ${ONLY_FOR_ARCHS${SUBPACKAGE}}, not ${MACHINE_ARCH}"
 .    else
-IGNORE += "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
+IGNORE += "is only for ${ONLY_FOR_ARCHS${SUBPACKAGE}}, not ${MACHINE_ARCH} \(${ARCH}\)"
 .    endif
-.  endif
-.endif
-.if defined(NOT_FOR_ARCHS)
-_ARCH_OK = 1
-.  for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.    if !empty(NOT_FOR_ARCHS:M${__ARCH})
-_ARCH_OK = 0
-.    endif
-.  endfor
-.  if ${_ARCH_OK} == 0
+.  else
 IGNORE += "is not for ${NOT_FOR_ARCHS}"
 .  endif
 .endif
@@ -1323,7 +1345,7 @@ _BUILDLIB_DEPENDS = ${LIB_DEPENDS}
 _BUILDWANTLIB = ${WANTLIB}
 # strip inter-multi-packages dependencies during building
 .for _path in ${PKGPATH:S,^mystuff/,,}
-.  for _s in ${MULTI_PACKAGES}
+.  for _s in ${_MULTI_PACKAGES}
 _BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
 _BUILDWANTLIB += ${WANTLIB${_s}}
 _LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*}
