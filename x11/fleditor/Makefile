@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/06 15:37:46 espie Exp $
 
 COMMENT=		Text Editor for FLTK
 
@@ -22,6 +22,7 @@ MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
 LIB_DEPENDS=		::x11/fltk
+RUN_DEPENDS=		::x11/fltk
 
 USE_X11=		Yes
 REGRESS_TARGET=		test
