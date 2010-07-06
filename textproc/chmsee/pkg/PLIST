@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/06 16:43:29 ajacoutot Exp $
+@bin bin/chmsee
+share/applications/chmsee.desktop
+share/chmsee/
+share/chmsee/about-dialog.ui
+share/chmsee/book-closed.png
+share/chmsee/book-open.png
+share/chmsee/chmsee-icon.png
+share/chmsee/chmsee-splash.png
+share/chmsee/default-prefs.js
+share/chmsee/helpdoc.png
+share/chmsee/hide-pane.png
+share/chmsee/openfile-dialog.ui
+share/chmsee/setup-window.ui
+share/chmsee/show-pane.png
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/chmsee.mo
+share/locale/ca/LC_MESSAGES/chmsee.mo
+share/locale/cs/LC_MESSAGES/chmsee.mo
+share/locale/da/LC_MESSAGES/chmsee.mo
+share/locale/de/LC_MESSAGES/chmsee.mo
+share/locale/el/LC_MESSAGES/chmsee.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/chmsee.mo
+share/locale/es/LC_MESSAGES/chmsee.mo
+share/locale/fr/LC_MESSAGES/chmsee.mo
+share/locale/he/LC_MESSAGES/chmsee.mo
+share/locale/id/LC_MESSAGES/chmsee.mo
+share/locale/it/LC_MESSAGES/chmsee.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/chmsee.mo
+share/locale/nb/LC_MESSAGES/chmsee.mo
+share/locale/pl/LC_MESSAGES/chmsee.mo
+share/locale/pt/LC_MESSAGES/chmsee.mo
+share/locale/pt_BR/LC_MESSAGES/chmsee.mo
+share/locale/ro/LC_MESSAGES/chmsee.mo
+share/locale/ru/LC_MESSAGES/chmsee.mo
+share/locale/sk/LC_MESSAGES/chmsee.mo
+share/locale/sv/LC_MESSAGES/chmsee.mo
+share/locale/sw/
+share/locale/sw/LC_MESSAGES/
+share/locale/sw/LC_MESSAGES/chmsee.mo
+share/locale/uk/LC_MESSAGES/chmsee.mo
+share/locale/vi/LC_MESSAGES/chmsee.mo
+share/locale/zh_CN/LC_MESSAGES/chmsee.mo
+share/locale/zh_TW/LC_MESSAGES/chmsee.mo
+share/mime-info/
+share/mime-info/chmsee.keys
+share/mime-info/chmsee.mime
+share/pixmaps/
+share/pixmaps/chmsee-icon.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

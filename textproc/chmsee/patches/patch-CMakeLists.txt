@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	Fri Jul  2 00:18:31 2010
++++ CMakeLists.txt	Fri Jul  2 00:18:48 2010
+@@ -8,7 +8,7 @@ set(CMAKE_BUILD_TYPE Release)
+ find_package(PkgConfig)
+ 
+ pkg_check_modules (CHMSEE REQUIRED gthread-2.0 glib-2.0 libxml-2.0 gtk+-2.0>=2.16 nspr)
+-pkg_search_module(XULRUNNER REQUIRED mozilla-gtkmozembed-embedding>=1.9 xulrunner-gtkmozembed>=1.9)
++pkg_search_module(XULRUNNER REQUIRED xulrunner-gtkmozembed-embedding>=1.9 xulrunner-gtkmozembed>=1.9)
+ 
+ set(CHMSEE_INCLUDE_DIRS ${CHMSEE_INCLUDE_DIRS} ${XULRUNNER_INCLUDE_DIRS})
+ set(CHMSEE_CFLAGS_OTHER ${CHMSEE_CFLAGS_OTHER} ${XULRUNNER_CFLAGS_OTHER} -Wall)

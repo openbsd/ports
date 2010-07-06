@@ -1,0 +1,2 @@
+Gtk viewer for Microsoft HTML Help (aka "CHM", Compiled HTML) files
+using chmlib and Mozilla's gecko engine.
