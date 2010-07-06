@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/16 10:38:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/06 15:20:36 espie Exp $
 
 COMMENT=		Tcl bindings for Curl
 SHARED_ONLY=		Yes
@@ -20,8 +20,10 @@ MASTER_SITES=		${HOMEPAGE}download/tarball/
 
 MODULES=		lang/tcl
 MODTCL_VERSION=		8.4
-LIB_DEPENDS=    	curl.>=2.2::net/curl \
-			${MODTCL_LIB_DEPENDS:S/tcl/tclstub/}
+LIB_DEPENDS=    	curl.>=2.2::net/curl
+
+BUILD_DEPENDS+=		${MODTCL_BUILD_DEPENDS}
+RUN_DEPENDS+= 		${MODTCL_RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-tcl=${MODTCL_LIBDIR} \
