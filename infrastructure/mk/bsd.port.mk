@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1013 2010/07/06 11:50:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1014 2010/07/06 12:02:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1327,6 +1327,7 @@ _BUILDWANTLIB = ${WANTLIB}
 _BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
 _BUILDWANTLIB += ${WANTLIB${_s}}
 _LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*}
+_LIB4 += ${_LIB4${_s}}
 .  endfor
 .endfor
 
@@ -1782,7 +1783,13 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
-	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
+	@libs=`for i in ${_LIB4:S/>/\>/g:S/</\</g}; do echo "$$i"| { \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
+		eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
+		}; \
+		done;`; \
+	listlibs="echo $$libs; echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEP${_m}LIBS:S/>/\>/g}; do \
 		case "$$d" in \
 		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
