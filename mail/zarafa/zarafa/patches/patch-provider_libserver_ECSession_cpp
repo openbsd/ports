@@ -1,0 +1,24 @@
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.1 2010/07/06 06:38:32 ajacoutot Exp $
+--- provider/libserver/ECSession.cpp.orig	Mon May 31 19:28:59 2010
++++ provider/libserver/ECSession.cpp	Tue Jul  6 08:13:35 2010
+@@ -664,11 +664,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
+ 	uid_t uid;
+ 	char strbuf[1024];	
+ #ifdef SO_PEERCRED
++#ifndef __OpenBSD__
+ 	struct ucred cr;
++#else
++	struct sockpeercred cr;
++#endif
+ 	unsigned int cr_len;
+ 
++#ifndef __OpenBSD__
+ 	cr_len = sizeof(struct ucred);
+ 	if(getsockopt(socket, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) != 0 || cr_len != sizeof(struct ucred)) {
++#else
++	cr_len = sizeof(struct sockpeercred);
++	if(getsockopt(socket, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) != 0 || cr_len != sizeof(struct sockpeercred)) {
++#endif
+ 		er = ZARAFA_E_LOGON_FAILED;
+ 		goto exit;
+ 	}
