@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/03/20 23:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/06 23:16:21 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=0.11.7
+MODPY_EGG_VERSION=0.12
 DISTNAME=	Trac-${MODPY_EGG_VERSION}
 PKGNAME=	trac-${MODPY_EGG_VERSION}
 CATEGORIES=	www devel
@@ -30,7 +30,7 @@ RUN_DEPENDS=	::databases/py-sqlite2 \
 		::textproc/py-docutils \
 		::textproc/py-pygments \
 		:clearsilver-*-python:www/clearsilver,python \
-		::www/py-genshi
+		:py-genshi->=0.6:www/py-genshi
 
 do-regress:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
