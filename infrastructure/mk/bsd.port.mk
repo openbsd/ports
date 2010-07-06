@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1012 2010/07/06 11:27:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1013 2010/07/06 11:50:57 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1398,6 +1398,9 @@ _DEPBUILDLIBS = ${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
 _DEPBUILDLIBS += ${_BUILDWANTLIB}
 _DEPRUNLIBS += ${WANTLIB${SUBPACKAGE}}
 
+# the _DEP*LIBSPECS_COOKIES are only there to force reevaluation of
+# _DEPBUILDWANTLIB_COOKIE and _DEPRUNWANTLIB_COOKIE when the dependencies
+# change (the list will change, and so the cookie will be regenerated)
 .if ${NO_DEPENDS:L} == "no"
 .  for i in ${_DEPBUILDLIBS:C,[|:/<=>*],-,g}
 _DEPBUILDLIBSPECS_COOKIES += ${WRKDIR}/.spec-$i
@@ -1765,11 +1768,14 @@ _internal-regress-depends: ${_DEPREGRESS_COOKIES}
 _internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
 _internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
 
+# very quick rule, create this to force reevaluation of next rule when
+# the dependencies in the Makefile are changed
 .  if !empty(_DEPLIBSPECS_COOKIES)
 ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 .endif
 
+# similar rules for _DEPBUILDWANTLIB_COOKIE and _DEPRUNWANTLIB_COOKIE
 .for _m in BUILD RUN
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
