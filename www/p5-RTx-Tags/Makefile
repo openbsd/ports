@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/24 22:44:02 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/06 15:17:33 espie Exp $
 
 COMMENT=	Tag Cloud for RT with searchable custom fields
 
@@ -10,7 +10,8 @@ CATEGORIES=	www
 EXTRACT_SUFX=	.tgz
 
 CONFIGURE_ENV=	RTHOME=${LOCALBASE}/${P5SITE}
-LIB_DEPENDS=	::www/rt
+BUILD_DEPENDS+=	::www/rt
+RUN_DEPENDS+=	::www/rt
 
 # Perl
 PERMIT_PACKAGE_CDROM=  Yes
