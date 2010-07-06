@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1011 2010/07/05 09:00:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1012 2010/07/06 11:27:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2868,11 +2868,8 @@ _print-package-args:
 	@libs=`for i in ${_LIB4${SUBPACKAGE}:S/>/\>/g:S/</\</g}; do echo "$$i"| { \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
-		if default=$$(eval $$toset ${MAKE} _print-packagename); then \
-			case "X$$pkg" in X) pkg=$$(echo "$$default" |${_version2default});; \
-			esac; \
-			eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
-		else \
+		if ! eval $$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; \
+		then \
 			echo 1>&2 "Problem with dependency ${_i}"; \
 			exit 1; \
 		fi; }; \
