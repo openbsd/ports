@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	multiplatform Jabber client
 
@@ -21,7 +21,6 @@ WANTLIB=		X11 Xext Xss m c pthread pthread-stubs stdc++ xcb z
 MODULES=		x11/qt3
 
 MODQT_OVERRIDE_UIC=	No
-MODQT_MT=		Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

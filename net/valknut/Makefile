@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv x11/qt3
-MODQT_MT=	Yes
 LIB_DEPENDS=	dc::net/dclib \
 		jpeg::graphics/jpeg \
 		bz2::archivers/bzip2

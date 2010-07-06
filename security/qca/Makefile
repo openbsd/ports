@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/04 23:59:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	Qt Cryptographic Architecture
 
@@ -21,8 +21,6 @@ MASTER_SITES=		http://delta.affinix.com/download/qca/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/qt3
-MODQT_MT=		Yes
-MODQT_MT=Yes
 
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes

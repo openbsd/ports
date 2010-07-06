@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/06/07 20:08:09 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xext c m pthread stdc++
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 
 MODULES=	x11/qt3
-MODQT_MT=	Yes
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

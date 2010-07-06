@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	Cross-platform makefile tool from TrollTech
 
@@ -21,7 +21,6 @@ NO_REGRESS=	Yes
 PKG_ARCH=	*
 
 MODULES=	x11/qt3
-MODQT_MT=	Yes
 
 do-install:
 	@perl -pi \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -41,7 +41,6 @@ CONFIGURE_ENV=	TIFF_LIBS="-L${LOCALBASE}/lib -ltiff -lz -ljpeg"
 CONFIGURE_ARGS+=--without-x
 .else
 MODULES+=	x11/qt3
-MODQT_MT=	Yes
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xau Xdmcp pthread-stubs xcb
 CONFIGURE_ARGS+=--with-qt=${MODQT_LIBDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	task-based timeclock for KDE
 
@@ -26,12 +26,11 @@ MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
 MODULES=	x11/qt3 devel/gettext
-MODQT_MT=	Yes
 
 PORTHOME=	${WRKDIR}
 
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
-# Ensure qt2 will always be at the front
+# Ensure qt3 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes

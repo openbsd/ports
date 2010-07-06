@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=	puzzle game for KDE
 
@@ -25,7 +25,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
 MODULES=	x11/qt3 devel/gettext
-MODQT_MT=	Yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 # Ensure qt2 will always be at the front

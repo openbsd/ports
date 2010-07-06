@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/06 22:25:53 espie Exp $
 
 COMMENT=		GUI client for MySQL
 
@@ -20,7 +20,6 @@ WANTLIB=		X11 Xext c m pthread pthread-stubs stdc++ xcb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysqlcc/}
 
-MODQT_MT=		Yes
 MODULES=		x11/qt3
 LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 

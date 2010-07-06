@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/13 11:55:30 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/06 22:25:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,6 @@ MODULES=	x11/qt3 \
 		converters/libiconv \
 		lang/python
 MODPY_VERSION=	2.6
-MODQT_MT=	Yes
 
 RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info \
 		::devel/desktop-file-utils
