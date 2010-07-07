@@ -1,21 +1,14 @@
-# $OpenBSD: Makefile,v 1.73 2010/07/01 18:41:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2010/07/07 16:38:27 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.30.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	panel-applet-2       4.0      # .2.67
 
 CATEGORIES=	x11
-
-# OpenBSD does not have consolekit/policykit, so we fall back to the
-# previous behaviour, bypassing gnome-session. Only if GDM is running,
-# shutdown/restart is allowed.
-#MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
-#PATCHFILES=	gnome-panel-2.28.0-1.logout.patch:0
-#PATCH_DIST_STRIP= -p1
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,7 +44,8 @@ LIB_DEPENDS= 	camel-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2::da
 		gnome-menu::x11/gnome/menus \
 		gweather::x11/gnome/libgweather \
 		rsvg-2::x11/gnome/librsvg \
-		soup-gnome-2.4.>=1::devel/libsoup,-gnome
+		soup-gnome-2.4.>=1::devel/libsoup,-gnome \
+		polkit-gobject-1::sysutils/polkit
 RUN_DEPENDS=	:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
 MODGNOME_HELP_FILES= Yes
@@ -59,9 +53,11 @@ USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
+FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
+
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-gtk-doc=no \
-		--disable-polkit \
+		--enable-polkit \
+		--disable-gtk-doc \
 		--disable-network-manager
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2010/06/22 18:22:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2010/07/07 16:38:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -19,11 +19,19 @@ lib/libpanel-applet-2.la
 lib/pkgconfig/libpanelapplet-2.0.pc
 @bin libexec/clock-applet
 @bin libexec/fish-applet-2
+@bin libexec/gnome-clock-applet-mechanism
 libexec/gnome-panel-add
 @bin libexec/notification-area-applet
 @bin libexec/wnck-applet
 @man man/man1/gnome-panel.1
 share/applications/gnome-panel.desktop
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.gnome.ClockApplet.Mechanism.service
+share/examples/gnome-panel/
+share/examples/gnome-panel/dbus-1/
+share/examples/gnome-panel/dbus-1/system.d/
+share/examples/gnome-panel/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
 share/gnome-2.0/
 share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_ClockApplet.xml
@@ -540,6 +548,9 @@ share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/omf/fish/fish-zh_CN.omf
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/clock.schemas
 ${SCHEMAS_INSTDIR}/fish.schemas
