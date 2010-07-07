@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/06/10 20:13:33 steven Exp $
+# $OpenBSD: Makefile,v 1.64 2010/07/07 15:57:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -77,6 +77,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
+# Should be 2.65
 AUTOCONF_VERSION= 2.64
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
@@ -120,8 +121,7 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if defined(DEBUG)
-CONFIGURE_ARGS+=	--enable-debug \
-			--disable-mcheck
+CONFIGURE_ARGS+=	--enable-debug
 INSTALL_STRIP=
 .endif
 
