@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.7 2010/05/30 06:29:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.8 2010/07/07 16:42:25 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @pkgpath print/hpijs
 @bin bin/hpijs
@@ -598,13 +598,13 @@ share/foomatic/db/source/PPD/HP/hp-mopier_320-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_150_mobile_l511-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4000_k210-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-officejet_4400_k410-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4100_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4105-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4115_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4200_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4255-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4300_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_4400_k410-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4500_g510a-f-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4500_g510g-m-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5100_series-hpijs.ppd.gz

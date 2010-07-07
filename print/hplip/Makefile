@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/05/30 06:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/07 16:42:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,8 +11,8 @@ COMMENT-gui=	HPLIP graphical tools
 V=		3.10.5
 DISTNAME=	hplip-${V}
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-hpijs=	hpijs-${V}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-hpijs=	hpijs-${V}p1
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
@@ -43,6 +43,8 @@ WANTLIB += crypto m pthread
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += avahi-client avahi-common c crypto dbus-1 exif gphoto2
 WANTLIB-main += gphoto2_port jpeg ltdl netsnmp tiff usb z
+
+BUILD_DEPENDS=	::sysutils/polkit
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		sane.>=1::graphics/sane-backends \
@@ -82,7 +84,10 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 		hplip_statedir=${PREFIX}/share/examples/hplip/db \
-		mimedir=${PREFIX}/share/examples/hplip/cups
+		mimedir=${PREFIX}/share/examples/hplip/cups \
+		policykit_dbus_etcdir=${PREFIX}/share/examples/hplip/dbus-1/system.d \
+		policykit_dir=${PREFIX}/share/polkit-1/actions/ \
+		policykit_dbus_sharedir=${PREFIX}/share/dbus-1/system-services
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -96,7 +101,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-docdir=${PREFIX}/share/doc/hplip \
 		--disable-dependency-tracking \
 		--disable-pp-build \
-		--disable-policykit \
 		--disable-qt3 \
 		--enable-qt4 \
 		--enable-doc-build \
@@ -107,6 +111,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-scan-build \
 		--enable-fax-build \
 		--enable-dbus-build \
+		--enable-policykit \
 		--enable-foomatic-rip-hplip-install \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-drv-install
