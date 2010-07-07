@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2010/07/01 20:19:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.205 2010/07/07 16:34:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -27,6 +27,7 @@
      SUBDIR += colortail
      SUBDIR += conky
      SUBDIR += conky,no_x11
+     SUBDIR += consolekit
      SUBDIR += contool
      SUBDIR += d-feet
      SUBDIR += dcfldd
@@ -109,6 +110,7 @@
      SUBDIR += pftop
      SUBDIR += pgt-firmware
      SUBDIR += pkg_mgr
+     SUBDIR += polkit
      SUBDIR += pscpug
      SUBDIR += pstree
      SUBDIR += pv
