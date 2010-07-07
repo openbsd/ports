@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2010/06/12 14:57:50 steven Exp $
+# $OpenBSD: Makefile,v 1.75 2010/07/07 16:37:05 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -17,10 +18,10 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bz2 c
 WANTLIB += cairo croco-0.6 dmx expat fontconfig freetype gailutil
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gsf-1 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs util wrap xcb xml2 z
-WANTLIB += gthread-2.0 xcb-render xcb-render-util
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render
+WANTLIB += xcb-render-util xml2 z
 
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
@@ -39,15 +40,25 @@ MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-xevie=no \
-			--sysconfdir="${SYSCONFDIR}/X11" \
 			--localstatedir=/var \
 			--mandir=${PREFIX}/man \
-			--enable-secureremote=yes \
-			--enable-console-helper=no \
-			--disable-scrollkeeper \
-			--with-console-kit=no \
-			--with-libaudit=no
+			--sysconfdir=${SYSCONFDIR} \
+			--without-xevie \
+			--without-libaudit \
+			--with-sysconfsubdir=X11/gdm \
+			--with-dmconfdir=${LOCALBASE}/share/xsessions \
+			--with-pid-file=/var/run/gdm.pid \
+			--with-tcp-wrappers \
+			--with-xdmcp \
+			--enable-secureremote \
+			--disable-console-helper
+
+# XXX --enable-authentication-scheme=bsdauth
+
+# gdm 2.20.X releases only work with old ConsoleKit versions so instead
+# we patch Xsession to start ck-launch-session with the session.
+RUN_DEPENDS+=		::sysutils/consolekit
+CONFIGURE_ARGS+=	--without-console-kit
 
 # -pthread is needed to resolve some undefined symbols
 # (pthread_mutex_trylock in libgthread for gdmflexiserver, gdmXnest...)
@@ -55,10 +66,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 # XXX IPv6-only FLAVOR?
-CONFIGURE_ARGS+=	--enable-ipv6=no
+CONFIGURE_ARGS+=	--disable-ipv6
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
-			dmconfdir=${PREFIX}/share/examples/dm
+FAKE_FLAGS=		gdmconfdir=${PREFIX}/share/examples/gdm
 
 pre-configure:
 	${SUBST_CMD} \

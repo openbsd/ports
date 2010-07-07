@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Xsession_in,v 1.10 2009/03/19 08:26:42 ajacoutot Exp $
---- config/Xsession.in.orig	Thu Mar 19 05:59:27 2009
-+++ config/Xsession.in	Thu Mar 19 09:01:36 2009
+$OpenBSD: patch-config_Xsession_in,v 1.11 2010/07/07 16:37:05 ajacoutot Exp $
+--- config/Xsession.in.orig	Thu Jun  3 03:06:25 2010
++++ config/Xsession.in	Mon Jul  5 19:53:14 2010
 @@ -23,6 +23,8 @@
  # based on:
  # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
@@ -20,27 +20,38 @@ $OpenBSD: patch-config_Xsession_in,v 1.10 2009/03/19 08:26:42 ajacoutot Exp $
    else
      if [ -n "$zenity" ] ; then
  	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
-@@ -213,12 +218,17 @@ if [ "x$command" = "xdefault" ] ; then
+@@ -213,12 +218,34 @@ if [ "x$command" = "xdefault" ] ; then
    fi
  fi
  
--# add ssh-agent if found
--sshagent="`gdmwhich ssh-agent`"
--if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
--    command="$sshagent -- $command"
--elif [ -z "$sshagent" ] ; then
--    echo "$0: ssh-agent not found!"
-+# add ssh-agent if found and:
++# Only add ssh-agent if: 
 +#  * gnome-session is not used (in which case gnome-keyring handles
 +#    ssh-agent functionality)
 +#  * OpenBSD default Xsession isn't used (as it already starts ssh-agent)
 +if [ "x$command" != "xgnome-session" ] && [ "x$command" != "x/etc/X11/xdm/Xsession" ] ; then
-+	sshagent="`gdmwhich ssh-agent`"
-+	if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
-+	   command="$sshagent -- $command"
-+	elif [ -z "$sshagent" ] ; then
-+	    echo "$0: ssh-agent not found!"
-+	fi
++
+ # add ssh-agent if found
+ sshagent="`gdmwhich ssh-agent`"
+ if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
+     command="$sshagent -- $command"
+ elif [ -z "$sshagent" ] ; then
+     echo "$0: ssh-agent not found!"
++fi
++
++fi
++
++# GDM 2.20.X is too old to support new versions of ConsoleKit natively
++cklaunch="`gdmwhich ck-launch-session`"
++if [ -n "$cklaunch" ] && [ -x "$cklaunch" ] ; then
++    command="$cklaunch $command"
++fi
++
++# add seahorse-agent if found
++seahorseagent="`gdmwhich seahorse-agent`"
++if [ -n "$seahorseagent" ] && [ -x "$seahorseagent" ] && [ -z "$GPG_AGENT_INFO" ] ; then
++    command="dbus-launch --exit-with-session $seahorseagent --execute $command"
++elif [ -z "$seahorseagent" ] ; then
++    echo "$0: seahorse-agent not found!"
  fi
  
  echo "$0: Setup done, will execute: $command"
