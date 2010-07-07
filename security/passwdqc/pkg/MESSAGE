@@ -1,0 +1,5 @@
+To enable passphrase quality checking using pwqcheck(1) globally, add
+the following lines at the end the "default" class in login.conf(5).
+
+	:passwordcheck=${PREFIX}/bin/pwqcheck -1:\
+	:passwordtries=0:

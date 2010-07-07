@@ -1,0 +1,12 @@
+$OpenBSD: patch-passwdqc_random_c,v 1.1 2010/07/07 21:29:58 ajacoutot Exp $
+--- passwdqc_random.c.orig	Wed Jul  7 10:49:33 2010
++++ passwdqc_random.c	Wed Jul  7 10:49:42 2010
+@@ -69,7 +69,7 @@ char *passwdqc_random(const passwdqc_params_qc_t *para
+ 	if (length >= sizeof(output) || (int)length > params->max)
+ 		return NULL;
+ 
+-	if ((fd = open("/dev/urandom", O_RDONLY)) < 0)
++	if ((fd = open("/dev/arandom", O_RDONLY)) < 0)
+ 		return NULL;
+ 
+ 	length = 0;

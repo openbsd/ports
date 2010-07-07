@@ -1,0 +1,13 @@
+$OpenBSD: patch-passwdqc_conf_5,v 1.1 2010/07/07 21:29:58 ajacoutot Exp $
+--- passwdqc.conf.5.orig	Wed Jul  7 11:38:20 2010
++++ passwdqc.conf.5	Wed Jul  7 11:38:45 2010
+@@ -248,8 +248,7 @@ is that the former is incompatible with
+ .Sh FILES
+ .Pa /etc/passwdqc.conf .
+ .Sh SEE ALSO
+-.Xr getpwnam 3 ,
+-.Xr pam_passwdqc 8 .
++.Xr getpwnam 3 .
+ .Pp
+ http://www.openwall.com/passwdqc/
+ .Sh AUTHORS

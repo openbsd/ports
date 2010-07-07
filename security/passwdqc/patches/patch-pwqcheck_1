@@ -1,0 +1,12 @@
+$OpenBSD: patch-pwqcheck_1,v 1.1 2010/07/07 21:29:58 ajacoutot Exp $
+--- pwqcheck.1.orig	Wed Jul  7 10:56:38 2010
++++ pwqcheck.1	Wed Jul  7 10:56:55 2010
+@@ -160,7 +160,7 @@ Read just 1 line (new passphrase).
+ This is needed to use
+ .Nm
+ as the passwordcheck program on OpenBSD - e.g., with
+-":passwordcheck=/usr/bin/pwqcheck -1:\\"
++":passwordcheck=${PREFIX}/bin/pwqcheck -1:\\"
+ in the "default" section in
+ .Cm /etc/login.conf .
+ .It Cm -2

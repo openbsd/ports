@@ -1,3 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/30 20:36:28 djm Exp $
-libexec/passwdqc
-@man man/cat8/passwdqc.0
+@comment $OpenBSD: PLIST,v 1.2 2010/07/07 21:29:58 ajacoutot Exp $
+%%SHARED%%
+@bin bin/pwqcheck
+@bin bin/pwqgen
+include/passwdqc.h
+@comment lib/libpasswdqc.so
+@man man/man1/pwqcheck.1
+@man man/man1/pwqgen.1
+@man man/man5/passwdqc.conf.5
+share/doc/passwdqc/
+share/doc/passwdqc/README
+share/examples/passwdqc/
+share/examples/passwdqc/passwdqc.conf
+@sample ${SYSCONFDIR}/passwdqc.conf
