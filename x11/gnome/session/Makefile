@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2010/06/22 17:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2010/07/07 16:37:57 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.2
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		x11
 
@@ -30,7 +31,12 @@ BUILD_DEPENDS=	::textproc/rarian \
 		::textproc/xmlto \
 		::x11/gnome/settings-daemon
 LIB_DEPENDS=	execinfo::devel/libexecinfo
-RUN_DEPENDS=	::x11/gnome/settings-daemon
+RUN_DEPENDS=	::x11/gnome/settings-daemon \
+		::sysutils/consolekit
+
+# polkit-gnome isn't really *required* but then we will loose the polkit
+# auth. dialog ; this should really be a dep. of a "gnome" metapackage
+RUN_DEPENDS+=	::x11/polkit-gnome
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

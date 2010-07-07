@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.39 2010/05/14 10:23:04 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.40 2010/07/07 16:37:57 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -108,14 +108,15 @@ related ports under the x11/gnome category)
    * gtk2-nodoka-engine - Nodoka GTK+2 theme engine
    * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
 
-* Startup and more documentation
-  ------------------------------
+* Login into GNOME
+  ----------------
 Login can be made using the GNOME Login Manager: GDM. Or you can add the
 following line corresponding to your login preference:
     exec ${TRUEPREFIX}/bin/gnome-session
 in ~/.xinitrc when using startx(1)
 in ~/.xsession when using xdm(1)
 
-For more information on using OpenBSD packages please refer to:
-http://www.OpenBSD.org/faq/faq15.html . For more general information on
-using GNOME, please see: http://live.gnome.org/ .
+If you want to use the ConsoleKit and Polkit frameworks and that you do
+not login using GDM, you will have to prepend the following line to your
+session startup command: ${LOCALBASE}/bin/ck-launch-session.
+    e.g. exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
