@@ -1,0 +1,23 @@
+$OpenBSD: patch-packages_network_Network_Socket_hsc,v 1.1 2010/07/07 19:37:39 kili Exp $
+--- packages/network/Network/Socket.hsc.orig	Thu Sep 21 00:28:56 2006
++++ packages/network/Network/Socket.hsc	Wed Jul  7 20:55:09 2010
+@@ -999,15 +999,15 @@ getSocketOption (MkSocket s _ _ _ _) so = do
+ getPeerCred :: Socket -> IO (CUInt, CUInt, CUInt)
+ getPeerCred sock = do
+   let fd = fdSocket sock
+-  let sz = (fromIntegral (#const sizeof(struct ucred)))
++  let sz = (fromIntegral (#const sizeof(struct sockpeercred)))
+   with sz $ \ ptr_cr -> 
+    alloca       $ \ ptr_sz -> do
+      poke ptr_sz sz
+      throwErrnoIfMinus1 "getPeerCred" $
+        c_getsockopt fd (#const SOL_SOCKET) (#const SO_PEERCRED) ptr_cr ptr_sz
+-     pid <- (#peek struct ucred, pid) ptr_cr
+-     uid <- (#peek struct ucred, uid) ptr_cr
+-     gid <- (#peek struct ucred, gid) ptr_cr
++     pid <- (#peek struct sockpeercred, pid) ptr_cr
++     uid <- (#peek struct sockpeercred, uid) ptr_cr
++     gid <- (#peek struct sockpeercred, gid) ptr_cr
+      return (pid, uid, gid)
+ #endif
+ 
