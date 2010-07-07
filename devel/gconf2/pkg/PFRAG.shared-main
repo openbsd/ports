@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2007/04/24 12:53:38 jasper Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2010/07/07 16:40:22 ajacoutot Exp $
 lib/GConf/2/libgconfbackend-oldxml.so
 lib/GConf/2/libgconfbackend-xml.so
 @lib lib/libgconf-2.so.${LIBgconf-2_VERSION}
