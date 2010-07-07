@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_clplumbing_ipcsocket_c,v 1.1 2010/07/07 13:58:11 sebastia Exp $
+Fix new SO_PEERCRED fallout.
+--- lib/clplumbing/ipcsocket.c.orig	Wed Jul  7 09:19:19 2010
++++ lib/clplumbing/ipcsocket.c	Wed Jul  7 09:20:50 2010
+@@ -2259,7 +2259,11 @@ socket_verify_auth(struct IPC_CHANNEL* ch, struct IPC_
+ {
+ 	struct SOCKET_CH_PRIVATE *	conn_info;
+ 	int				ret = IPC_FAIL;
++#ifndef __OpenBSD__
+ 	struct ucred			cred;
++#else
++	struct sockpeercred		cred;
++#endif
+ 	socklen_t			n = sizeof(cred);
+   
+ 	if (ch == NULL || ch->ch_private == NULL) {
+@@ -2308,12 +2312,21 @@ socket_get_farside_pid(int sockfd)
+ {
+ 
+   socklen_t n;
++#ifndef __OpenBSD__
+   struct ucred *cred;
++#else
++  struct sockpeercred	*cred;
++#endif
+   pid_t f_pid;
+   
+   /* Get the credential information from peer */
++#ifndef __OpenBSD__
+   n = sizeof(struct ucred);
+   cred = g_new(struct ucred, 1); 
++#else
++  n = sizeof(struct sockpeercred);
++  cred = g_new(struct sockpeercred, 1); 
++#endif
+   if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, cred, &n) != 0) {
+     g_free(cred);
+     return -1;
