@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/05 07:42:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/07 07:28:03 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
 @bin bin/pkcheck
 @mode 4755
+@owner root
 @bin bin/pkexec
 @mode
+@owner
 include/polkit-1/
 include/polkit-1/polkit/
 include/polkit-1/polkit/polkit.h
@@ -61,8 +63,10 @@ lib/polkit-1/extensions/
 @comment lib/polkit-1/extensions/libpkexec-action-lookup.a
 @comment lib/polkit-1/extensions/libpkexec-action-lookup.la
 @mode 4755
+@owner root
 @bin libexec/polkit-agent-helper-1
 @mode
+@owner
 @bin libexec/polkitd
 @man man/man1/pkaction.1
 @man man/man1/pkcheck.1
