@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2010/04/22 20:42:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/07 16:40:53 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	2.30.0
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	devel
 

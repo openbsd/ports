@@ -1,0 +1,3 @@
+If you want to be able to set system-wide defaults and/or mandatory
+values, you'll need to run gconf-editor as root or install the
+gconf2-polkit package and let PolicyKit handle priviledges granting.
