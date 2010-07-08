@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.5 2010/05/10 08:30:55 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.6 2010/07/08 06:29:12 dcoppa Exp $
 
-fix from upstream svn:
+fixes from upstream svn:
 fix memory leak when we have an invalid item to play
 change metadata timeout count from 10 to 50 (fix upstream bug #391)
 

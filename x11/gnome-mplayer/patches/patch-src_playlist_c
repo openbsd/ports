@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_playlist_c,v 1.1 2010/07/08 06:29:12 dcoppa Exp $
+
+fix from upstream svn:
+fix video playback problems when loading a folder from playlist
+
+--- src/playlist.c.orig	Tue Jul  6 22:15:05 2010
++++ src/playlist.c	Tue Jul  6 22:17:35 2010
+@@ -549,7 +549,10 @@ void add_folder_to_playlist(GtkWidget * widget, void *
+     GSList *uris;
+     gchar *last_dir;
+     gchar *message;
++    gint count;
+ 
++    count = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(playliststore), NULL);
++
+     dialog = gtk_file_chooser_dialog_new(_("Choose Directory"),
+                                          GTK_WINDOW(window),
+                                          GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+@@ -594,7 +597,7 @@ void add_folder_to_playlist(GtkWidget * widget, void *
+     g_free(message);
+     g_idle_add(set_media_label, idledata);
+ 
+-    if (data != NULL) {
++    if (count == 0 && filecount > 0) {
+         gtk_tree_model_get_iter_first(GTK_TREE_MODEL(playliststore), &iter);
+         play_iter(&iter, 0);
+         dontplaynext = FALSE;

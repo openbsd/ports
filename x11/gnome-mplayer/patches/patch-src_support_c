@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_support_c,v 1.4 2010/07/08 06:29:12 dcoppa Exp $
+
+fix from upstream:
+correct problem with tracks loaded from an iPod as not being marked 
+playable
+
+--- src/support.c.orig	Wed Jul  7 17:07:17 2010
++++ src/support.c	Wed Jul  7 17:09:08 2010
+@@ -2778,7 +2778,7 @@ gboolean gpod_load_tracks(gchar * mount_point)
+                                gtk_tree_model_iter_n_children(GTK_TREE_MODEL(playliststore), NULL),
+                                ADD_ORDER_COLUMN,
+                                gtk_tree_model_iter_n_children(GTK_TREE_MODEL(playliststore), NULL),
+-                               -1);
++                               PLAYABLE_COLUMN, TRUE, -1);
+ 
+             g_free(duration);
+             g_free(full_path);
