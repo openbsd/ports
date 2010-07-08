@@ -1,5 +1,5 @@
---- include/private/gcconfig.h.orig	Fri Jun 29 01:00:09 2007
-+++ include/private/gcconfig.h	Mon Feb 11 15:58:46 2008
+--- include/private/gcconfig.h.orig	Fri Jun 29 02:00:09 2007
++++ include/private/gcconfig.h	Fri Jul  9 00:52:27 2010
 @@ -64,7 +64,7 @@
  /* Determine the machine type: */
  # if defined(__arm__) || defined(__thumb__)
@@ -150,7 +150,7 @@
  #   ifdef OPENBSD
  #	define OS_TYPE "OPENBSD"
 +#    ifdef GC_OPENBSD_THREADS
-+#	define UTHREAD_SP_OFFSET 176
++#	define UTHREAD_SP_OFFSET 192
 +#    else
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
