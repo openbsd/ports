@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.813 2010/07/02 04:43:14 jim Exp $
+# $OpenBSD: Makefile,v 1.814 2010/07/08 12:30:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -247,6 +247,7 @@
      SUBDIR += luafs
      SUBDIR += luapack
      SUBDIR += luaposix
+     SUBDIR += luaprofiler
      SUBDIR += luarexlib
      SUBDIR += luarings
      SUBDIR += luastdlib
