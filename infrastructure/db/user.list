@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.138 2010/06/23 17:57:20 landry Exp $
+$OpenBSD: user.list,v 1.139 2010/07/08 16:11:55 pea Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -161,3 +161,4 @@ id  user		group		port options
 650 _aircontrol		_aircontrol	net/aircontrol
 651 _mirmon		_mirmon		net/mirmon
 652 _collectd		_collectd	sysutils/collectd
+653 _pgbouncer		_pgbouncer	databases/pgbouncer
