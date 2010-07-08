@@ -1,0 +1,30 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2010/07/08 15:20:45 ajacoutot Exp $
+
+Force disabling gtk-doc.
+
+--- autogen.sh.orig	Thu Jul  8 16:47:39 2010
++++ autogen.sh	Thu Jul  8 16:47:54 2010
+@@ -31,14 +31,6 @@ DIE=0
+   }
+ }
+ 
+-(gtkdocize --flavour no-tmpl) < /dev/null > /dev/null 2>&1 || {
+-	echo
+-	echo "You must have gtk-doc installed to compile $PROJECT."
+-	echo "Install the appropriate package for your distribution,"
+-	echo "or get the source tarball at http://ftp.gnome.org/pub/GNOME/sources/gtk-doc/"
+-	DIE=1
+-}
+-
+ (automake --version) < /dev/null > /dev/null 2>&1 || {
+   echo
+   echo "**Error**: You must have automake installed."
+@@ -93,8 +85,6 @@ esac
+       autoconf
+ 
+ intltoolize --copy --force --automake                  || exit 1
+-
+-conf_flags="--enable-maintainer-mode --enable-gtk-doc"
+ 
+ if test x$NOCONFIGURE = x; then
+   echo "Running $srcdir/configure $conf_flags $@ ..."

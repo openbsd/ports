@@ -1,0 +1,18 @@
+$OpenBSD: patch-docs_polkit_Makefile_am,v 1.1 2010/07/08 15:20:45 ajacoutot Exp $
+
+Force disabling gtk-doc.
+
+--- docs/polkit/Makefile.am.orig	Thu Jul  8 17:00:17 2010
++++ docs/polkit/Makefile.am	Thu Jul  8 17:00:26 2010
+@@ -80,11 +80,7 @@ HTML_IMAGES = 						\
+ # Extra options to supply to gtkdoc-fixref
+ FIXXREF_OPTIONS=
+ 
+-if ENABLE_GTK_DOC
+-include $(top_srcdir)/gtk-doc.make
+-else
+ CLEANFILES =
+-endif
+ 
+ CLEANFILES +=   *~				\
+ 		polkit-1-scan.*			\

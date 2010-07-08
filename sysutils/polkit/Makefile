@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/05 07:42:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/08 15:20:45 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.97
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  polkit-gobject-1	0.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	0.0 # .0.0
@@ -29,9 +30,13 @@ MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 MODULES=	textproc/intltool \
 		devel/gettext
 
-BUILD_DEPENDS=	::textproc/gtk-doc \
-		${MODGNU_AUTOMAKE_DEPENDS} \
+BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS}
+
+# We do no want to depends on gtk-doc as it creates a dependency loop:
+# polkit -> gtk-doc -> yelp -> gconf2 -> polkit
+BUILD_DEPENDS+=	::textproc/libxslt \
+		::textproc/docbook-xsl
 
 LIB_DEPENDS=	eggdbus-1::devel/eggdbus
 
