@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2008/02/26 18:37:38 merdely Exp $
---- configure.orig	Wed Nov 21 07:45:23 2007
-+++ configure	Tue Feb 26 09:46:17 2008
+$OpenBSD: patch-configure,v 1.9 2010/07/08 16:21:17 giovanni Exp $
+--- configure.orig	Fri Jul  3 21:36:32 2009
++++ configure	Tue Sep 22 19:57:45 2009
 @@ -69,7 +69,7 @@ DPS=no
  GS=no
  IMP=no
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2008/02/26 18:37:38 merdely Exp $
  LIBTIFF="-L/usr/local/lib -ltiff"
  TIFFINC=/usr/local/include
  TIFFBIN=
-@@ -1521,7 +1521,7 @@ int t() { $f(); return 0; }
+@@ -1533,7 +1533,7 @@ int t() { $f(); return 0; }
  int main(){ t(); return 0; }
  EOF
      capture cat t.c

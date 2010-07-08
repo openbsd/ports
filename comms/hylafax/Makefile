@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.55 2008/05/08 17:09:49 okan Exp $
+# $OpenBSD: Makefile,v 1.56 2010/07/08 16:21:17 giovanni Exp $
 
 COMMENT=		send/receive faxes and share modems
-DISTNAME=		hylafax-4.4.4
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		hylafax-4.4.6
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
 
-MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 MASTER_SITES=		ftp://ftp.hylafax.org/source/
 

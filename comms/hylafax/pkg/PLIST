@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/05/08 17:09:50 okan Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/07/08 16:21:17 giovanni Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
 @group dialer
-bin/faxalter
+@bin bin/faxalter
 @mode
 @owner
 @group
-bin/faxcover
-bin/faxmail
+@bin bin/faxcover
+@bin bin/faxmail
 @mode 4555
 @owner uucp
 @group dialer
-bin/faxrm
+@bin bin/faxrm
 @mode
 @owner
 @group
-bin/faxstat
-bin/sendfax
-bin/sendpage
+@bin bin/faxstat
+@bin bin/sendfax
+@bin bin/sendpage
 lib/fax/
 lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
@@ -426,56 +426,56 @@ libdata/hylafax/tmp/
 @man man/man8/tsitest.8c
 @man man/man8/wedged.8c
 @man man/man8/xferfaxstats.8c
-sbin/choptest
-sbin/cqtest
-sbin/dialtest
+@bin sbin/choptest
+@bin sbin/cqtest
+@bin sbin/dialtest
 sbin/edit-faxcover
-sbin/faxabort
+@bin sbin/faxabort
 sbin/faxaddmodem
-sbin/faxadduser
-sbin/faxanswer
-sbin/faxconfig
+@bin sbin/faxadduser
+@bin sbin/faxanswer
+@bin sbin/faxconfig
 sbin/faxcron
-sbin/faxdeluser
+@bin sbin/faxdeluser
 @mode 4555
 @owner uucp
 @group dialer
-sbin/faxgetty
+@bin sbin/faxgetty
 @mode
 @owner
 @group
-sbin/faxinfo
-sbin/faxlock
-sbin/faxmodem
-sbin/faxmsg
+@bin sbin/faxinfo
+@bin sbin/faxlock
+@bin sbin/faxmodem
+@bin sbin/faxmsg
 @mode 4555
 @owner uucp
 @group dialer
-sbin/faxq
+@bin sbin/faxq
 @mode
 @owner
 @group
-sbin/faxqclean
-sbin/faxquit
-sbin/faxsend
+@bin sbin/faxqclean
+@bin sbin/faxquit
+@bin sbin/faxsend
 sbin/faxsetup
 sbin/faxsetup.bsdi
 sbin/faxsetup.irix
 sbin/faxsetup.linux
-sbin/faxstate
-sbin/faxwatch
-sbin/hfaxd
+@bin sbin/faxstate
+@bin sbin/faxwatch
+@bin sbin/hfaxd
 sbin/hylafax
-sbin/lockname
-sbin/ondelay
-sbin/pagesend
+@bin sbin/lockname
+@bin sbin/ondelay
+@bin sbin/pagesend
 sbin/probemodem
 sbin/recvstats
-sbin/tagtest
-sbin/textfmt
-sbin/tiffcheck
-sbin/tsitest
-sbin/typetest
+@bin sbin/tagtest
+@bin sbin/textfmt
+@bin sbin/tiffcheck
+@bin sbin/tsitest
+@bin sbin/typetest
 sbin/xferfaxstats
 share/doc/hylafax/
 share/doc/hylafax/README.OpenBSD
