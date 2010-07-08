@@ -1,0 +1,26 @@
+$OpenBSD: patch-ncat_ncat_main_c,v 1.1 2010/07/08 14:43:30 sebastia Exp $
+fix build on gcc2 archs
+--- ncat/ncat_main.c.orig	Thu Jul  8 10:46:42 2010
++++ ncat/ncat_main.c	Thu Jul  8 10:47:38 2010
+@@ -221,10 +221,6 @@ int main(int argc, char *argv[])
+     char *source = NULL;
+     char *proxyaddr = NULL;
+ 
+-    gettimeofday(&start_time, NULL);
+-    /* Set default options. */
+-    options_init();
+-
+     struct option long_options[] = {
+         {"4",               no_argument,        NULL,         '4'},
+         {"6",               no_argument,        NULL,         '6'},
+@@ -271,6 +267,10 @@ int main(int argc, char *argv[])
+ #endif
+         {0, 0, 0, 0}
+     };
++
++    gettimeofday(&start_time, NULL);
++    /* Set default options. */
++    options_init();
+ 
+ #ifdef WIN32
+     windows_init();

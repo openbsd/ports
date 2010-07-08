@@ -1,0 +1,15 @@
+$OpenBSD: patch-ncat_ncat_connect_c,v 1.1 2010/07/08 14:43:30 sebastia Exp $
+fix build on gcc2 archs
+--- ncat/ncat_connect.c.orig	Thu Jul  8 10:49:27 2010
++++ ncat/ncat_connect.c	Thu Jul  8 10:50:04 2010
+@@ -420,8 +420,9 @@ int ncat_connect(void) {
+ 
+     if (o.verbose) {
+         struct timeval end_time;
++	double time;
+         gettimeofday(&end_time, NULL);
+-        double time = TIMEVAL_MSEC_SUBTRACT(end_time, start_time) / 1000.0;
++        time = TIMEVAL_MSEC_SUBTRACT(end_time, start_time) / 1000.0;
+         loguser("%lu bytes sent, %lu bytes received in %.2f seconds.\n",
+             nsi_get_write_count(cs.sock_nsi),
+             nsi_get_read_count(cs.sock_nsi), time);

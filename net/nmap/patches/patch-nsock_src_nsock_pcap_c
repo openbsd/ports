@@ -1,7 +1,88 @@
-$OpenBSD: patch-nsock_src_nsock_pcap_c,v 1.2 2009/10/22 10:00:57 giovanni Exp $
+$OpenBSD: patch-nsock_src_nsock_pcap_c,v 1.3 2010/07/08 14:43:30 sebastia Exp $
+fix build on gcc2 archs
 --- nsock/src/nsock_pcap.c.orig	Wed Mar  4 04:08:33 2009
-+++ nsock/src/nsock_pcap.c	Tue Jul 21 19:57:38 2009
-@@ -325,7 +325,7 @@ int do_actual_pcap_read(msevent *nse)
++++ nsock/src/nsock_pcap.c	Thu Jul  8 10:46:21 2010
+@@ -25,13 +25,12 @@ char* nsock_pcap_open(nsock_pool nsp, nsock_iod nsiod,
+ 	mspool *ms = (mspool *) nsp;
+ 	mspcap *mp = (mspcap *) nsi->pcap;
+ 	static char errorbuf[128];
+-	
+-	if(mp) return "nsock-pcap: this nsi already has pcap device opened";
+-	
+-	mp = (mspcap *)safe_malloc(sizeof(mspcap));
+-	nsi->pcap = (void*)mp;
+-	
+ 	char err0r[PCAP_ERRBUF_SIZE];
++	/* packet filter string */
++	char bpf[4096];
++	va_list ap;
++	int failed, datalink;
++	char *e;
+ 	
+ 	#ifdef PCAP_CAN_DO_SELECT
+ 	  #if PCAP_BSD_SELECT_HACK
+@@ -45,10 +44,9 @@ char* nsock_pcap_open(nsock_pool nsp, nsock_iod nsiod,
+ 	#else
+ 	int to_ms = 1;
+ 	#endif
+-
+-	/* packet filter string */
+-	char bpf[4096];
+-	va_list ap;
++	if(mp) return "nsock-pcap: this nsi already has pcap device opened";
++	mp = (mspcap *)safe_malloc(sizeof(mspcap));
++	nsi->pcap = (void*)mp;
+ 	
+ 	va_start(ap, bpf_fmt);
+ 	if(Vsnprintf(bpf, sizeof(bpf), bpf_fmt, ap) >= (int) sizeof(bpf)){
+@@ -61,7 +59,7 @@ char* nsock_pcap_open(nsock_pool nsp, nsock_iod nsiod,
+   		nsock_trace(ms, "PCAP requested on device '%s' with berkeley filter '%s' (promisc=%i snaplen=%i to_ms=%i) (IOD #%li)", 
+   		pcap_device,bpf, promisc, snaplen, to_ms, nsi->id);
+ 
+-	int failed = 0;
++	failed = 0;
+ 	do {
+ 		mp->pt = pcap_open_live((char*)pcap_device, snaplen, promisc, to_ms, err0r);
+ 		if (mp->pt)	/* okay, opened!*/ 
+@@ -84,7 +82,7 @@ char* nsock_pcap_open(nsock_pool nsp, nsock_iod nsiod,
+ 		sleep(4* failed);
+ 	}while(1);
+ 
+-	char *e = nsock_pcap_set_filter(mp->pt, pcap_device, bpf);
++	e = nsock_pcap_set_filter(mp->pt, pcap_device, bpf);
+ 	if(e) return e;
+ 	
+ 	
+@@ -96,7 +94,6 @@ char* nsock_pcap_open(nsock_pool nsp, nsock_iod nsiod,
+ 	PacketSetReadTimeout(mp->pt->adapter, to_ms);
+ 	#endif
+ 	
+-	int datalink;
+ 	mp->l3_offset = nsock_pcap_get_l3_offset(mp->pt, &datalink);
+ 	mp->snaplen = snaplen;
+ 	mp->datalink = datalink;
+@@ -280,6 +277,9 @@ int do_actual_pcap_read(msevent *nse)
+ 	
+ 	nsock_pcap npp;
+ 	nsock_pcap *n;
++	struct pcap_pkthdr *pkt_header;
++        const unsigned char *pkt_data = NULL;
++	int rc;
+ 	memset(&npp, 0, sizeof(nsock_pcap));
+ 	
+ 	if (nse->iod->nsp->tracelevel > 2)
+@@ -288,9 +288,7 @@ int do_actual_pcap_read(msevent *nse)
+ 
+ 	assert( FILESPACE_LENGTH(&(nse->iobuf)) == 0 );
+ 	
+-	struct pcap_pkthdr *pkt_header;
+-        const unsigned char *pkt_data = NULL;
+-	int rc = pcap_next_ex(mp->pt, &pkt_header, &pkt_data);
++	rc = pcap_next_ex(mp->pt, &pkt_header, &pkt_data);
+ 	switch(rc){
+ 	case 1: /* read good packet  */
+ 		#ifdef PCAP_RECV_TIMEVAL_VALID
+@@ -325,11 +323,14 @@ int do_actual_pcap_read(msevent *nse)
  void nse_readpcap(nsock_event nsee,
  	const unsigned char **l2_data, size_t *l2_len,
  	const unsigned char **l3_data, size_t *l3_len,
@@ -10,3 +91,21 @@ $OpenBSD: patch-nsock_src_nsock_pcap_c,v 1.2 2009/10/22 10:00:57 giovanni Exp $
  {
  	msevent *nse = (msevent *)nsee;
  	msiod  *iod = nse->iod;
+ 	mspcap *mp = (mspcap *) iod->pcap;
++
++	size_t l2l;
++	size_t l3l;
+ 	
+ 	nsock_pcap *n = (nsock_pcap *) FILESPACE_STR(&(nse->iobuf));
+ 	if(FILESPACE_LENGTH(&(nse->iobuf)) < sizeof(nsock_pcap)){
+@@ -341,8 +342,8 @@ void nse_readpcap(nsock_event nsee,
+ 		return;
+ 	}
+ 	
+-	size_t l2l = MIN(mp->l3_offset, n->caplen);
+-	size_t l3l = MAX(0, n->caplen-mp->l3_offset);
++	l2l = MIN(mp->l3_offset, n->caplen);
++	l3l = MAX(0, n->caplen-mp->l3_offset);
+ 	
+ 	if(l2_data) *l2_data = n->packet;
+ 	if(l2_len ) *l2_len  = l2l;
