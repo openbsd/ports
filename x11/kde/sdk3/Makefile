@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/05/15 08:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/07/08 21:28:49 espie Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -6,8 +6,8 @@ CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
-PKGNAME-main =		${DISTNAME}p4
-PKGNAME-svn =		kdesvn-${VERSION}p5
+PKGNAME-main =		${DISTNAME}p5
+PKGNAME-svn =		kdesvn-${VERSION}p6
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -22,32 +22,37 @@ MODULES =		x11/kde devel/gettext
 
 RUN_DEPENDS-main +=	:desktop-file-utils-*:devel/desktop-file-utils
 
-LIB_DEPENDS =		kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
+LIB_DEPENDS =		::x11/kde/libs3
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			kcal,kmime::x11/kde/pim3
+			::x11/kde/pim3
 
 LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
-			svn_client-1,svn_diff-1,svn_delta-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_fs_util-1,svn_ra-1,svn_ra_local-1,svn_ra_neon-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1::devel/subversion
+			::devel/subversion
 
 FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 
-WANTLIB	=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m \
-		png pthread stdc++ util z idn \
-		Xau Xdmcp fam rpcsvc pthread-stubs xcb
+WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
+	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu \
+	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread \
+	pthread-stubs rpcsvc stdc++ util xcb z
 
-WANTLIB-main =	${WANTLIB} \
-		kabc kdeprint khtml kutils vcard kresources kparts kspell kjs \
-		ktexteditor ktnef kunittest ktnef \
-		pcre pcreposix qui-mt xml2 xslt
+WANTLIB-main = ${WANTLIB} Xfixes Xt expat fontconfig freetype kabc kdeprint \
+	khtml kjs kparts kresources kspell ktexteditor ktnef ktnef kunittest \
+	kutils lib/kde3/kcal lib/kde3/kmime pcre pcreposix qui-mt vcard xml2 \
+	xslt
 
 
-WANTLIB-svn =	${WANTLIB} \
-		apr-1 aprutil-1 crypto db expat neon sasl2 ssl \
-		asn1 gssapi krb5 sqlite3
+
+WANTLIB-svn = ${WANTLIB} apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
+	neon sasl2 sqlite3 ssl svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
+	svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 \
+	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${post_install_libs}
 
 .include <bsd.port.mk>

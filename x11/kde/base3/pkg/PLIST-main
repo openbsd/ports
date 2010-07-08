@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/07/08 21:28:49 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -16,7 +16,7 @@
 @bin bin/kbookmarkmerger
 @mode u+s
 @owner root
-bin/kcheckpass
+@bin bin/kcheckpass
 @mode
 @owner
 @bin bin/kcheckrunning
@@ -35,9 +35,11 @@ bin/kdeinstallktheme
 @bin bin/kdesktop_lock
 @bin bin/kdesu
 @mode g+s
+@owner root
 @group _kdesud
-bin/kdesud
+@bin bin/kdesud
 @mode
+@owner
 @group
 @bin bin/kdialog
 @bin bin/kdm
@@ -510,20 +512,31 @@ ${KDE}/kxkb.la
 ${KDE}/kxkb.so
 ${KDE}/launcher_panelapplet.la
 ${KDE}/launcher_panelapplet.so
+@lib ${KDE}/libkasbar.so.${LIBkasbar_VERSION}
+@lib ${KDE}/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
+@lib ${KDE}/libkateutils.so.${LIBkateutils_VERSION}
+@lib ${KDE}/libkdecorations.so.${LIBkdecorations_VERSION}
 ${KDE}/libkdeprint_part.la
 ${KDE}/libkdeprint_part.so
 ${KDE}/libkfindpart.la
 ${KDE}/libkfindpart.so
+@lib ${KDE}/libkfontinst.so.${LIBkfontinst_VERSION}
 ${KDE}/libkfontviewpart.la
 ${KDE}/libkfontviewpart.so
+@lib ${KDE}/libkhotkeys_shared.so.${LIBkhotkeys_shared_VERSION}
 ${KDE}/libkhtmlkttsdplugin.la
 ${KDE}/libkhtmlkttsdplugin.so
+@lib ${KDE}/libkickermain.so.${LIBkickermain_VERSION}
 ${KDE}/libkmanpart.la
 ${KDE}/libkmanpart.so
+@lib ${KDE}/libkonq.so.${LIBkonq_VERSION}
+@lib ${KDE}/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 ${KDE}/libkonsolepart.la
 ${KDE}/libkonsolepart.so
+@lib ${KDE}/libksgrd.so.${LIBksgrd_VERSION}
 ${KDE}/libkshorturifilter.la
 ${KDE}/libkshorturifilter.so
+@lib ${KDE}/libksplashthemes.so.${LIBksplashthemes_VERSION}
 ${KDE}/libkuriikwsfilter.la
 ${KDE}/libkuriikwsfilter.so
 ${KDE}/libkurisearchfilter.la
@@ -532,6 +545,8 @@ ${KDE}/liblocaldomainurifilter.la
 ${KDE}/liblocaldomainurifilter.so
 ${KDE}/libnsplugin.la
 ${KDE}/libnsplugin.so
+@lib ${KDE}/libtaskbar.so.${LIBtaskbar_VERSION}
+@lib ${KDE}/libtaskmanager.so.${LIBtaskmanager_VERSION}
 ${KDE}/lockout_panelapplet.la
 ${KDE}/lockout_panelapplet.so
 ${KDE}/media_panelapplet.la

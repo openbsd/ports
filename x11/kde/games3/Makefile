@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/07/08 21:28:49 espie Exp $
 
 COMMENT =		K Desktop Environment, games
 
 CATEGORIES =		x11 x11/kde games
 VERSION =		3.5.10
 DISTNAME =		kdegames-${VERSION}
-PKGNAME =		${DISTNAME}p4
+PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	kdegames             4.0      # .3.0
 SHARED_LIBS +=	atlantic             4.0      # .3.0
@@ -16,14 +16,21 @@ SHARED_LIBS +=	kolf                 4.0      # .3.0
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 	kdecore.>=6,artskde,DCOP,kdefx,kdeprint,kdesu,kdeui,kdnssd,kio,kparts::x11/kde/libs3
+LIB_DEPENDS = 	::x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-WANTLIB =	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
-		audiofile c glib-2.0 gmodule-2.0 gthread-2.0 \
-		jpeg kmedia2_idl kwalletclient m mad mcop ogg png pthread \
-		qtmcop sndio soundserver_idl stdc++ util vorbis vorbisenc \
-		vorbisfile z idn Xau Xdmcp fam rpcsvc pcre \
-		pthread-stubs xcb
+WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
+	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
+	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
+	gthread-2.0 idn jpeg kmedia2_idl kwalletclient lcms lib/kde3/DCOP \
+	lib/kde3/artskde lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint \
+	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/kio \
+	lib/kde3/kparts m mad mcop mng ogg pcre png pthread pthread-stubs \
+	qtmcop sndio soundserver_idl stdc++ util vorbis vorbisenc vorbisfile \
+	xcb z
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 
 .include <bsd.port.mk>

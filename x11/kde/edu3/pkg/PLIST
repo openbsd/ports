@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2010/07/08 21:28:49 espie Exp $
 @bin bin/apmount
 @bin bin/blinken
 @bin bin/celestrongps
@@ -54,12 +54,18 @@ ${KDE}/kfile_drgeo.la
 ${KDE}/kfile_drgeo.so
 ${KDE}/kfile_kig.la
 ${KDE}/kfile_kig.so
+@lib ${KDE}/libextdate.so.${LIBextdate_VERSION}
+@lib ${KDE}/libkdeeducore.so.${LIBkdeeducore_VERSION}
+@lib ${KDE}/libkdeeduplot.so.${LIBkdeeduplot_VERSION}
+@lib ${KDE}/libkdeeduui.so.${LIBkdeeduui_VERSION}
 ${KDE}/libkeducapart.la
 ${KDE}/libkeducapart.so
 ${KDE}/libkigpart.la
 ${KDE}/libkigpart.so
+@lib ${KDE}/libkiten.so.${LIBkiten_VERSION}
 ${KDE}/libkmplotpart.la
 ${KDE}/libkmplotpart.so
+@lib ${KDE}/libkvoctraincore.so.${LIBkvoctraincore_VERSION}
 lib/libextdate.la
 @lib lib/libextdate.so.${LIBextdate_VERSION}
 lib/libkdeeducore.la

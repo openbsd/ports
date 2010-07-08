@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-kpov,v 1.10 2009/12/21 20:46:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-kpov,v 1.11 2010/07/08 21:28:49 espie Exp $
 @conflict kdegraphics-<=3.3.2
 @bin bin/kpovmodeler
 ${KDE}/libkpovmodelerpart.la
 ${KDE}/libkpovmodelerpart.so
+@lib ${KDE}/libkpovmodeler.so.${LIBkpovmodeler_VERSION}
 lib/libkpovmodeler.la
 @lib lib/libkpovmodeler.so.${LIBkpovmodeler_VERSION}
 share/applications/kde/kpovmodeler.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/07/08 21:28:49 espie Exp $
 @bin bin/embedjs
 @bin bin/jsaccess
 @bin bin/kjscmd
@@ -50,17 +50,18 @@ ${KDE}/libjavascript.la
 ${KDE}/libjavascript.so
 ${KDE}/libjsconsoleplugin.la
 ${KDE}/libjsconsoleplugin.so
+@lib ${KDE}/libkjsembed.so.${LIBkjsembed_VERSION}
 ${KDE}/libqprocessplugin.la
 ${KDE}/libqprocessplugin.so
+@lib ${KDE}/libsmokekde.so.${LIBsmokekde_VERSION}
+@lib ${KDE}/libsmokeqt.so.${LIBsmokeqt_VERSION}
 lib/libkjsembed.la
 @lib lib/libkjsembed.so.${LIBkjsembed_VERSION}
 lib/libsmokekde.la
 @lib lib/libsmokekde.so.${LIBsmokekde_VERSION}
 lib/libsmokeqt.la
 @lib lib/libsmokeqt.so.${LIBsmokeqt_VERSION}
-lib/python2.5/
 lib/python2.5/pydcop.py
-lib/python2.5/site-packages/
 lib/python2.5/site-packages/pcop.la
 lib/python2.5/site-packages/pcop.so
 lib/ruby/site_ruby/1.8/KDE/

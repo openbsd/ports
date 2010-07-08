@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2010/07/08 21:28:49 espie Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p12
+PKGNAME=	${DISTNAME}p13
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -79,33 +79,46 @@ AUTOCONF_VERSION=2.61
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
-		python2.5:python->=2.5,<2.6:lang/python/2.5 \
-		art_lgpl_2.>=5::graphics/libart \
-		wv2::converters/wv2 \
-		MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
-		jbig::graphics/jbigkit \
-		mysqlclient::databases/mysql \
-		ruby::lang/ruby \
-		exif.>=12::graphics/libexif \
-		paper::print/libpaper \
-		poppler-qt::print/poppler,-qt \
-		GraphicsMagick.>=1::graphics/GraphicsMagick \
-		wpd::textproc/libwpd
+LIB_DEPENDS=	::x11/kde/libs3 \
+		:python->=2.5,<2.6:lang/python/2.5 \
+		::graphics/libart \
+		::converters/wv2 \
+		::graphics/ImageMagick \
+		::graphics/jbigkit \
+		::databases/mysql \
+		::lang/ruby \
+		::graphics/libexif \
+		::print/libpaper \
+		::print/poppler,-qt \
+		::graphics/GraphicsMagick \
+		::textproc/libwpd \
+		::databases/libpqxx \
+		::databases/postgresql
 
 
-WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-		gsf-1 gthread-2.0 jasper jpeg kmedia2_idl lcms \
-		m mad mcop ogg pcre pcreposix png pthread qtmcop sndio \
-		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
-		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
-		IlmImf Half Imath Iex idn GL GLU poppler pthread-stubs xcb \
-		Xau Xdmcp expat fam rpcsvc IlmThread gio-2.0 wmflite
+WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
+	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
+	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
+	artsflow artsflow_idl audiofile bz2 c crypto drm exif.>=12 expat fam \
+	fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 \
+	gthread-2.0 idn jasper jbig jpeg kmedia2_idl lcms lib/kde3/DCOP \
+	lib/kde3/artskde lib/kde3/kabc lib/kde3/kdecore.>=4 lib/kde3/kdefx \
+	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml \
+	lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi lib/kde3/knewstuff \
+	lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell lib/kde3/kspell2 \
+	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
+	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
+	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
+	python2.5 qtmcop readline ruby sndio soundserver_idl ssl stdc++ \
+	termcap tiff util vorbis vorbisenc vorbisfile wmflite-0.2 wpd \
+	wv2 xcb xml2 xslt z
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
-LIB_DEPENDS+=	pqxx::databases/libpqxx \
-		pq::databases/postgresql
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
+
 
 .include <bsd.port.mk>

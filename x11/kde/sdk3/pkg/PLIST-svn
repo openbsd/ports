@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST-svn,v 1.2 2010/05/15 08:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-svn,v 1.3 2010/07/08 21:28:49 espie Exp $
 @bin bin/kio_svn_helper
 ${KDE}/kded_ksvnd.la
 ${KDE}/kded_ksvnd.so
 ${KDE}/kio_svn.la
 ${KDE}/kio_svn.so
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/subversion.desktop
 share/apps/konqueror/servicemenus/subversion_toplevel.desktop
+share/config.kcfg/
 share/icons/crystalsvg/128x128/actions/svn_add.png
 share/icons/crystalsvg/128x128/actions/svn_branch.png
 share/icons/crystalsvg/128x128/actions/svn_merge.png
@@ -14,3 +17,9 @@ share/icons/crystalsvg/128x128/actions/svn_status.png
 share/icons/crystalsvg/128x128/actions/svn_switch.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
+share/services/kresources/kcal/

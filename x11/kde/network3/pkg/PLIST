@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2010/07/08 21:28:49 espie Exp $
 @conflict sirc-*
 bin/dsirc
 @bin bin/feedbrowser
@@ -9,7 +9,7 @@ bin/dsirc
 bin/kopete_latexconvert.sh
 @mode u+s
 @owner root
-bin/kppp
+@bin bin/kppp
 @mode
 @owner
 @bin bin/kppplogview
@@ -233,8 +233,13 @@ ${KDE}/ksirc.la
 ${KDE}/ksirc.so
 ${KDE}/libkntsrcfilepropsdlg.la
 ${KDE}/libkntsrcfilepropsdlg.so
+@lib ${KDE}/libkopete.so.${LIBkopete_VERSION}
+@lib ${KDE}/libkopete_msn_shared.so.${LIBkopete_msn_shared_VERSION}
+@lib ${KDE}/libkopete_oscar.so.${LIBkopete_oscar_VERSION}
+@lib ${KDE}/libkopete_videodevice.so.${LIBkopete_videodevice_VERSION}
 ${KDE}/libkrichtexteditpart.la
 ${KDE}/libkrichtexteditpart.so
+@lib ${KDE}/librss.so.${LIBrss_VERSION}
 lib/libkdeinit_kdict.la
 lib/libkdeinit_kdict.so
 lib/libkdeinit_ksirc.la

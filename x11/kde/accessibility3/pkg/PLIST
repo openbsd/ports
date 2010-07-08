@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/07/08 21:28:48 espie Exp $
 @bin bin/kmag
 @bin bin/kmousetool
 @bin bin/kmouth
@@ -12,6 +12,8 @@ ${KDE}/kcm_kttsd.la
 ${KDE}/kcm_kttsd.so
 ${KDE}/ktexteditor_kttsd.la
 ${KDE}/ktexteditor_kttsd.so
+@lib ${KDE}/libKTTSD_Lib.so.${LIBKTTSD_Lib_VERSION}
+@lib ${KDE}/libkttsd.so.${LIBkttsd_VERSION}
 ${KDE}/libkttsd_artsplugin.la
 ${KDE}/libkttsd_artsplugin.so
 ${KDE}/libkttsd_commandplugin.la

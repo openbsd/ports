@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2010/07/08 21:28:49 espie Exp $
 @bin bin/atlantik
 @bin bin/kasteroids
 @bin bin/katomic
@@ -107,6 +107,11 @@ ${KDE}/kio_atlantik.la
 ${KDE}/kio_atlantik.so
 ${KDE}/kolf.la
 ${KDE}/kolf.so
+@lib ${KDE}/libatlantic.so.${LIBatlantic_VERSION}
+@lib ${KDE}/libatlantikclient.so.${LIBatlantikclient_VERSION}
+@lib ${KDE}/libatlantikui.so.${LIBatlantikui_VERSION}
+@lib ${KDE}/libkdegames.so.${LIBkdegames_VERSION}
+@lib ${KDE}/libkolf.so.${LIBkolf_VERSION}
 lib/libatlantic.la
 @lib lib/libatlantic.so.${LIBatlantic_VERSION}
 lib/libatlantikclient.la

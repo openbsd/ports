@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/08/26 16:52:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/07/08 21:28:48 espie Exp $
 @conflict kdelibs-<3
 bin/artsc-config
 @bin bin/artscat
@@ -95,6 +95,23 @@ include/arts/weakreference.h
 include/artsc/
 include/artsc/artsc.h
 include/artsc/artsc_export.h
+${KDE}/
+@lib ${KDE}/libartsc.so.${LIBartsc_VERSION}
+@lib ${KDE}/libartscbackend.so.${LIBartscbackend_VERSION}
+@lib ${KDE}/libartsdsp.so.${LIBartsdsp_VERSION}
+@lib ${KDE}/libartsdsp_st.so.${LIBartsdsp_st_VERSION}
+@lib ${KDE}/libartsflow.so.${LIBartsflow_VERSION}
+@lib ${KDE}/libartsflow_idl.so.${LIBartsflow_idl_VERSION}
+@lib ${KDE}/libartsgslplayobject.so.${LIBartsgslplayobject_VERSION}
+@lib ${KDE}/libartswavplayobject.so.${LIBartswavplayobject_VERSION}
+@lib ${KDE}/libgmcop.so.${LIBgmcop_VERSION}
+@lib ${KDE}/libkmedia2.so.${LIBkmedia2_VERSION}
+@lib ${KDE}/libkmedia2_idl.so.${LIBkmedia2_idl_VERSION}
+@lib ${KDE}/libmcop.so.${LIBmcop_VERSION}
+@lib ${KDE}/libmcop_mt.so.${LIBmcop_mt_VERSION}
+@lib ${KDE}/libqtmcop.so.${LIBqtmcop_VERSION}
+@lib ${KDE}/libsoundserver_idl.so.${LIBsoundserver_idl_VERSION}
+@lib ${KDE}/libx11globalcomm.so.${LIBx11globalcomm_VERSION}
 lib/libartsc.la
 @lib lib/libartsc.so.${LIBartsc_VERSION}
 lib/libartscbackend.la

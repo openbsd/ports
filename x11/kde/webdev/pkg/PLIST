@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/05/15 08:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/07/08 21:28:50 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 @bin bin/kfilereplace
@@ -23,6 +23,9 @@ ${KDE}/libklinkstatuspart.la
 ${KDE}/libklinkstatuspart.so
 ${KDE}/libkommander_part.la
 ${KDE}/libkommander_part.so
+@lib ${KDE}/libkommanderplugin.so.${LIBkommanderplugin_VERSION}
+@lib ${KDE}/libkommanderwidget.so.${LIBkommanderwidget_VERSION}
+@lib ${KDE}/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
 ${KDE}/libkxsldbgpart.la
 ${KDE}/libkxsldbgpart.so
 ${KDE}/quantadebuggerdbgp.la

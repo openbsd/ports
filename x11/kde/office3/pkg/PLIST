@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2010/07/08 21:28:49 espie Exp $
 @bin bin/karbon
 @bin bin/kchart
 @bin bin/kexi
@@ -608,6 +608,7 @@ ${KDE}/libhtmlimport.la
 ${KDE}/libhtmlimport.so
 ${KDE}/libkarbonaiimport.la
 ${KDE}/libkarbonaiimport.so
+@lib ${KDE}/libkarboncommon.so.${LIBkarboncommon_VERSION}
 ${KDE}/libkarbonepsexport.la
 ${KDE}/libkarbonepsexport.so
 ${KDE}/libkarbonepsimport.la
@@ -628,6 +629,8 @@ ${KDE}/libkarbonxcfexport.la
 ${KDE}/libkarbonxcfexport.so
 ${KDE}/libkchartbmpexport.la
 ${KDE}/libkchartbmpexport.so
+@lib ${KDE}/libkchartcommon.so.${LIBkchartcommon_VERSION}
+@lib ${KDE}/libkchartimageexport.so.${LIBkchartimageexport_VERSION}
 ${KDE}/libkchartjpegexport.la
 ${KDE}/libkchartjpegexport.so
 ${KDE}/libkchartmngexport.la
@@ -642,6 +645,20 @@ ${KDE}/libkchartxbmexport.la
 ${KDE}/libkchartxbmexport.so
 ${KDE}/libkchartxpmexport.la
 ${KDE}/libkchartxpmexport.so
+@lib ${KDE}/libkdchart.so.${LIBkdchart_VERSION}
+@lib ${KDE}/libkexicore.so.${LIBkexicore_VERSION}
+@lib ${KDE}/libkexidatatable.so.${LIBkexidatatable_VERSION}
+@lib ${KDE}/libkexidb.so.${LIBkexidb_VERSION}
+@lib ${KDE}/libkexidbparser.so.${LIBkexidbparser_VERSION}
+@lib ${KDE}/libkexiextendedwidgets.so.${LIBkexiextendedwidgets_VERSION}
+@lib ${KDE}/libkexiformutils.so.${LIBkexiformutils_VERSION}
+@lib ${KDE}/libkexiguiutils.so.${LIBkexiguiutils_VERSION}
+@lib ${KDE}/libkeximain.so.${LIBkeximain_VERSION}
+@lib ${KDE}/libkeximigrate.so.${LIBkeximigrate_VERSION}
+@lib ${KDE}/libkexirelationsview.so.${LIBkexirelationsview_VERSION}
+@lib ${KDE}/libkexisql2.so.${LIBkexisql2_VERSION}
+@lib ${KDE}/libkexisql3.so.${LIBkexisql3_VERSION}
+@lib ${KDE}/libkexiutils.so.${LIBkexiutils_VERSION}
 ${KDE}/libkfolatexexport.la
 ${KDE}/libkfolatexexport.so
 ${KDE}/libkfomathmlexport.la
@@ -650,10 +667,13 @@ ${KDE}/libkfomathmlimport.la
 ${KDE}/libkfomathmlimport.so
 ${KDE}/libkfopngexport.la
 ${KDE}/libkfopngexport.so
+@lib ${KDE}/libkformdesigner.so.${LIBkformdesigner_VERSION}
+@lib ${KDE}/libkformulalib.so.${LIBkformulalib_VERSION}
 ${KDE}/libkformulapart.la
 ${KDE}/libkformulapart.so
 ${KDE}/libkfosvgexport.la
 ${KDE}/libkfosvgexport.so
+@lib ${KDE}/libkiviocommon.so.${LIBkiviocommon_VERSION}
 ${KDE}/libkivioconnectortool.la
 ${KDE}/libkivioconnectortool.so
 ${KDE}/libkivioimageexport.la
@@ -668,12 +688,21 @@ ${KDE}/libkiviotexttool.la
 ${KDE}/libkiviotexttool.so
 ${KDE}/libkiviozoomtool.la
 ${KDE}/libkiviozoomtool.so
+@lib ${KDE}/libkochart.so.${LIBkochart_VERSION}
+@lib ${KDE}/libkofficecore.so.${LIBkofficecore_VERSION}
+@lib ${KDE}/libkofficeui.so.${LIBkofficeui_VERSION}
+@lib ${KDE}/libkopainter.so.${LIBkopainter_VERSION}
+@lib ${KDE}/libkopalette.so.${LIBkopalette_VERSION}
+@lib ${KDE}/libkoproperty.so.${LIBkoproperty_VERSION}
+@lib ${KDE}/libkotext.so.${LIBkotext_VERSION}
 ${KDE}/libkounavailpart.la
 ${KDE}/libkounavailpart.so
+@lib ${KDE}/libkowmf.so.${LIBkowmf_VERSION}
 ${KDE}/libkplatopart.la
 ${KDE}/libkplatopart.so
 ${KDE}/libkpresenterbmpexport.la
 ${KDE}/libkpresenterbmpexport.so
+@lib ${KDE}/libkpresenterimageexport.so.${LIBkpresenterimageexport_VERSION}
 ${KDE}/libkpresenterjpegexport.la
 ${KDE}/libkpresenterjpegexport.so
 ${KDE}/libkpresentermngexport.la
@@ -682,6 +711,7 @@ ${KDE}/libkpresenterpart.la
 ${KDE}/libkpresenterpart.so
 ${KDE}/libkpresenterpngexport.la
 ${KDE}/libkpresenterpngexport.so
+@lib ${KDE}/libkpresenterprivate.so.${LIBkpresenterprivate_VERSION}
 ${KDE}/libkpresentersvgexport.la
 ${KDE}/libkpresentersvgexport.so
 ${KDE}/libkpresenterxbmexport.la
@@ -690,16 +720,28 @@ ${KDE}/libkpresenterxpmexport.la
 ${KDE}/libkpresenterxpmexport.so
 ${KDE}/libkprkword.la
 ${KDE}/libkprkword.so
+@lib ${KDE}/libkrita_cmyk_u16.so.${LIBkrita_cmyk_u16_VERSION}
+@lib ${KDE}/libkrita_gray_u16.so.${LIBkrita_gray_u16_VERSION}
+@lib ${KDE}/libkrita_lms_f32.so.${LIBkrita_lms_f32_VERSION}
 ${KDE}/libkrita_openexr_export.la
 ${KDE}/libkrita_openexr_export.so
 ${KDE}/libkrita_openexr_import.la
 ${KDE}/libkrita_openexr_import.so
 ${KDE}/libkrita_raw_import.la
 ${KDE}/libkrita_raw_import.so
+@lib ${KDE}/libkrita_rgb_f16half.so.${LIBkrita_rgb_f16half_VERSION}
+@lib ${KDE}/libkrita_rgb_f32.so.${LIBkrita_rgb_f32_VERSION}
+@lib ${KDE}/libkrita_rgb_u16.so.${LIBkrita_rgb_u16_VERSION}
+@lib ${KDE}/libkrita_ycbcr_u16.so.${LIBkrita_ycbcr_u16_VERSION}
+@lib ${KDE}/libkrita_ycbcr_u8.so.${LIBkrita_ycbcr_u8_VERSION}
+@lib ${KDE}/libkritacolor.so.${LIBkritacolor_VERSION}
+@lib ${KDE}/libkritacommon.so.${LIBkritacommon_VERSION}
 ${KDE}/libkritagmagickexport.la
 ${KDE}/libkritagmagickexport.so
 ${KDE}/libkritagmagickimport.la
 ${KDE}/libkritagmagickimport.so
+@lib ${KDE}/libkritagrayscale.so.${LIBkritagrayscale_VERSION}
+@lib ${KDE}/libkritaimage.so.${LIBkritaimage_VERSION}
 ${KDE}/libkritajpegexport.la
 ${KDE}/libkritajpegexport.so
 ${KDE}/libkritajpegimport.la
@@ -712,10 +754,16 @@ ${KDE}/libkritapngexport.la
 ${KDE}/libkritapngexport.so
 ${KDE}/libkritapngimport.la
 ${KDE}/libkritapngimport.so
+@lib ${KDE}/libkritargb.so.${LIBkritargb_VERSION}
+@lib ${KDE}/libkritascripting.so.${LIBkritascripting_VERSION}
 ${KDE}/libkritatiffexport.la
 ${KDE}/libkritatiffexport.so
 ${KDE}/libkritatiffimport.la
 ${KDE}/libkritatiffimport.so
+@lib ${KDE}/libkritaui.so.${LIBkritaui_VERSION}
+@lib ${KDE}/libkrossapi.so.${LIBkrossapi_VERSION}
+@lib ${KDE}/libkrossmain.so.${LIBkrossmain_VERSION}
+@lib ${KDE}/libkspreadcommon.so.${LIBkspreadcommon_VERSION}
 ${KDE}/libkspreadhtmlexport.la
 ${KDE}/libkspreadhtmlexport.so
 ${KDE}/libkspreadinsertcalendar.la
@@ -726,18 +774,24 @@ ${KDE}/libkspreadlatexexport.la
 ${KDE}/libkspreadlatexexport.so
 ${KDE}/libkspreadpart.la
 ${KDE}/libkspreadpart.so
+@lib ${KDE}/libkstore.so.${LIBkstore_VERSION}
 ${KDE}/libkudesignerpart.la
 ${KDE}/libkudesignerpart.so
+@lib ${KDE}/libkugarlib.so.${LIBkugarlib_VERSION}
 ${KDE}/libkugarnopimport.la
 ${KDE}/libkugarnopimport.so
 ${KDE}/libkugarpart.la
 ${KDE}/libkugarpart.so
+@lib ${KDE}/libkwmailmerge_interface.so.${LIBkwmailmerge_interface_VERSION}
+@lib ${KDE}/libkwmf.so.${LIBkwmf_VERSION}
+@lib ${KDE}/libkwordexportfilters.so.${LIBkwordexportfilters_VERSION}
 ${KDE}/libkwordkword1dot3import.la
 ${KDE}/libkwordkword1dot3import.so
 ${KDE}/libkwordlatexexport.la
 ${KDE}/libkwordlatexexport.so
 ${KDE}/libkwordpart.la
 ${KDE}/libkwordpart.so
+@lib ${KDE}/libkwordprivate.so.${LIBkwordprivate_VERSION}
 ${KDE}/libmswordimport.la
 ${KDE}/libmswordimport.so
 ${KDE}/libmswriteexport.la

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/07/08 21:28:49 espie Exp $
 @pkgpath x11/kde/graphics3
 @bin bin/kcolorchooser
 @bin bin/kcoloredit
@@ -280,12 +280,16 @@ ${KDE}/kviewerpart.la
 ${KDE}/kviewerpart.so
 ${KDE}/libdjvu.la
 ${KDE}/libdjvu.so
+@lib ${KDE}/libkghostviewlib.so.${LIBkghostviewlib_VERSION}
 ${KDE}/libkghostviewpart.la
 ${KDE}/libkghostviewpart.so
+@lib ${KDE}/libkimageviewer.so.${LIBkimageviewer_VERSION}
 ${KDE}/libkmrmlpart.la
 ${KDE}/libkmrmlpart.so
+@lib ${KDE}/libkmultipage.so.${LIBkmultipage_VERSION}
 ${KDE}/libkpdfpart.la
 ${KDE}/libkpdfpart.so
+@lib ${KDE}/libksvg.so.${LIBksvg_VERSION}
 ${KDE}/libksvgplugin.la
 ${KDE}/libksvgplugin.so
 ${KDE}/libksvgrendererlibart.la
@@ -296,6 +300,7 @@ ${KDE}/libkviewviewer.la
 ${KDE}/libkviewviewer.so
 ${KDE}/libphotobook.la
 ${KDE}/libphotobook.so
+@lib ${KDE}/libtext2path.so.${LIBtext2path_VERSION}
 ${KDE}/mrmlsearch.la
 ${KDE}/mrmlsearch.so
 ${KDE}/svgthumbnail.la

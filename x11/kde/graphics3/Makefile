@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/06/12 14:33:01 landry Exp $
+# $OpenBSD: Makefile,v 1.92 2010/07/08 21:28:49 espie Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -14,10 +14,10 @@ SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
 PKGNAME =		${DISTNAME}
 
-PKGNAME-main =		${DISTNAME}p7
-PKGNAME-kamera =	kamera-${VERSION}p3
-PKGNAME-kpov =		kpovmodeller-${VERSION}p3
-PKGNAME-sane =		ksane-${VERSION}p5
+PKGNAME-main =		${DISTNAME}p8
+PKGNAME-kamera =	kamera-${VERSION}p4
+PKGNAME-kpov =		kpovmodeller-${VERSION}p4
+PKGNAME-sane =		ksane-${VERSION}p6
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -30,47 +30,53 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 MODULES =		x11/kde devel/gettext
 
 BUILD_DEPENDS =		::print/texlive/base
-WANTLIB =		X11 art_lgpl_2 ICE png util jpeg z SM Xext \
-			m idn Xau Xdmcp fam rpcsvc stdc++ \
-			pthread-stubs qt-mt xcb
-
+WANTLIB = ICE SM X11 Xau Xdmcp Xext art_lgpl_2 fam idn jpeg lib/kde3/DCOP \
+	lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui \
+	lib/kde3/kio m png pthread-stubs qt-mt stdc++ util xcb z
+LIB_DEPENDS =		${MODGETTEXT_LIB_DEPENDS} \
+			::x11/kde/libs3
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			:ghostscript-*:print/ghostscript/gnu \
 			:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-main = 	${MODGETTEXT_LIB_DEPENDS} \
-			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu,kdeprint,khtml,kjs,kparts,kutils::x11/kde/libs3 \
-			Imlib::graphics/imlib \
-			ungif::graphics/libungif \
-			fribidi::devel/fribidi \
-			paper::print/libpaper \
-			poppler::print/poppler \
-			poppler-qt::print/poppler,-qt
-WANTLIB-main =		${WANTLIB} \
-			Half Iex IlmImf IlmThread Imath \
-			tiff fontconfig lcms Xrender ICE c \
-			freetype pcreposix pcre Xxf86vm SM Xext Xft \
-			expat xml2 pthread
+LIB_DEPENDS-main = 	${LIB_DEPENDS} \
+			::graphics/imlib \
+			::graphics/libungif \
+			::devel/fribidi \
+			::print/libpaper \
+			::print/poppler \
+			::print/poppler,-qt
+WANTLIB-main =	 ${WANTLIB} GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
+	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
+	Xxf86vm c drm expat fontconfig freetype fribidi lcms lib/kde3/kdeprint \
+	lib/kde3/khtml lib/kde3/kjs lib/kde3/kparts lib/kde3/kutils \
+	lib/kde3/kwalletclient mng openjpeg paper pcre pcreposix poppler \
+	poppler-qt pthread tiff ungif xml2
 
 
-LIB_DEPENDS-kpov =	${MODGETTEXT_LIB_DEPENDS} \
-			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu,kparts::x11/kde/libs3
+
+LIB_DEPENDS-kpov =	${LIB_DEPENDS}
+
 RUN_DEPENDS-kpov =	::graphics/povray \
-			:desktop-file-utils-*:devel/desktop-file-utils
-WANTLIB-kpov =		${WANTLIB} GL freetype Xrender Xmu GLU c Xi \
-			Xt pthread
+			:desktop-file-utils-*:devel/desktop-file-utils 
 
-LIB_DEPENDS-kamera = 	${MODGETTEXT_LIB_DEPENDS} \
-			gphoto2,gphoto2_port::graphics/libgphoto2 \
-			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
-WANTLIB-kamera =	${WANTLIB} exif Xrender ltdl
+WANTLIB-kpov = ${WANTLIB} GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
+	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread
+
+LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
+			::graphics/libgphoto2
+WANTLIB-kamera = ${WANTLIB} Xrender exif gphoto2 gphoto2_port \
+	lib/kde3/kwalletclient ltdl
 
 RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-sane =	${MODGETTEXT_LIB_DEPENDS} \
-			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu,ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
-			sane::graphics/sane-backends
-WANTLIB-sane =		${WANTLIB-kamera} usb tiff c ltdl pthread avahi-client avahi-common dbus-1 \
-			gphoto2 gphoto2_port 
+LIB_DEPENDS-sane =	${LIB_DEPENDS} \
+			::graphics/sane-backends
+WANTLIB-sane =	 ${WANTLIB-kamera} avahi-client avahi-common c dbus-1 \
+	lib/kde3/kabc lib/kde3/kdeprint lib/kde3/kparts lib/kde3/kresources \
+	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard ltdl pthread sane \
+	tiff usb
+
+			
 
 
 CONFIGURE_ENV +=	\
@@ -81,5 +87,9 @@ post-patch:
 
 CONFIGURE_ENV +=	TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
 			TIFF_CFLAGS='-I${LOCALBASE}/include'
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 
 .include <bsd.port.mk>

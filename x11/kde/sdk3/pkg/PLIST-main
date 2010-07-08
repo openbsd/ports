@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/05/15 08:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/07/08 21:28:49 espie Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -169,12 +169,18 @@ ${KDE}/kfile_ts.la
 ${KDE}/kfile_ts.so
 ${KDE}/libcervisiapart.la
 ${KDE}/libcervisiapart.so
+@lib ${KDE}/libcvsservice.so.${LIBcvsservice_VERSION}
+@lib ${KDE}/libkbabelcommon.so.${LIBkbabelcommon_VERSION}
+@lib ${KDE}/libkbabeldictplugin.so.${LIBkbabeldictplugin_VERSION}
+@lib ${KDE}/libkompareinterface.so.${LIBkompareinterface_VERSION}
 ${KDE}/libkomparenavtreepart.la
 ${KDE}/libkomparenavtreepart.so
 ${KDE}/libkomparepart.la
 ${KDE}/libkomparepart.so
+@lib ${KDE}/libkspy.so.${LIBkspy_VERSION}
 ${KDE}/libkuiviewerpart.la
 ${KDE}/libkuiviewerpart.so
+@lib ${KDE}/libkunittestgui.so.${LIBkunittestgui_VERSION}
 ${KDE}/plugins/styles/scheck.la
 ${KDE}/plugins/styles/scheck.so
 ${KDE}/pothumbnail.la

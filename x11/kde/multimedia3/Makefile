@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2010/07/03 18:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2010/07/08 21:28:49 espie Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}p6
+PKGNAME =		${DISTNAME}p7
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -38,18 +38,18 @@ FLAVORS =	debug
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint,artskde::x11/kde/libs3 \
-	artsc,artsflow,artsflow_idl,kmedia2_idl,mcop,qtmcop,soundserver_idl::x11/kde/arts3 \
-		ogg::audio/libogg \
-		FLAC.>=8::audio/flac \
-		vorbis,vorbisenc,vorbisfile::audio/libvorbis \
-		cdda_paranoia,cdda_interface::audio/cdparanoia \
-		tag::audio/taglib \
-		gstreamer-0.10:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
-		ltdl::devel/libtool,-ltdl \
-		theora::multimedia/libtheora \
-		akode::audio/akode \
-		xine::multimedia/xine-lib
+LIB_DEPENDS = 	::x11/kde/libs3 \
+		::x11/kde/arts3 \
+		::audio/libogg \
+		::audio/flac \
+		::audio/libvorbis \
+		::audio/cdparanoia \
+		::audio/taglib \
+		:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
+		::devel/libtool,-ltdl \
+		::multimedia/libtheora \
+		::audio/akode \
+		::multimedia/xine-lib
 
 EXTRA_CONFIG =	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR =	${PREFIX}/share/apps/kde-conf-sample
@@ -62,13 +62,25 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
-WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm \
-		art_lgpl_2 audiofile c expat fam fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 idn \
-		jpeg m mad ossaudio pcre pcreposix png pthread rpcsvc sndio \
-		stdc++ util xml2 z pthread-stubs xcb
+WANTLIB = FLAC.>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
+	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
+	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \
+	gthread-2.0 idn jpeg lib/kde3/DCOP lib/kde3/artsc lib/kde3/artsflow \
+	lib/kde3/artsflow_idl lib/kde3/artskde lib/kde3/kdecore.>=6 \
+	lib/kde3/kdefakes lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
+	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
+	lib/kde3/kmedia2_idl lib/kde3/kmediaplayer lib/kde3/kmid \
+	lib/kde3/kparts lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/mcop \
+	lib/kde3/qtmcop lib/kde3/soundserver_idl ltdl m mad ogg ossaudio pcre \
+	pcreposix png pthread pthread-stubs sndio stdc++ tag theora \
+	util vorbis vorbisenc vorbisfile xcb xine xml2 z
+
 
 post-extract:
 	cp ${FILESDIR}/audioIO_sndio.cpp ${WRKSRC}/mpeglib/lib/util/audio
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 
 .include <bsd.port.mk>

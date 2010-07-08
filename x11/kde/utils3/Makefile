@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2010/05/15 08:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2010/07/08 21:28:49 espie Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
-PKGNAME =		${DISTNAME}p5
+PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -15,19 +15,25 @@ SHARED_LIBS +=	ksimcore             2.0      # .1.0
 MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
-		netsnmp::net/net-snmp \
-		gmp::devel/gmp \
-		python2.5:python->=2.5,<2.6:lang/python/2.5 \
-		xmms::audio/xmms \
-		gtk,gdk::x11/gtk+
+LIB_DEPENDS =	::x11/kde/libs3 \
+		::net/net-snmp \
+		::devel/gmp \
+		:python->=2.5,<2.6:lang/python/2.5 \
+		::audio/xmms \
+		::x11/gtk+
 
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB =	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c crypto jpeg m \
-		png pthread stdc++ util z gmodule Xi kvm glib \
-		idn Xau Xdmcp fam rpcsvc Xss pthread-stubs xcb
+WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
+	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
+	lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
+	lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts lib/kde3/kresources \
+	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m netsnmp png \
+	pthread pthread-stubs python2.5 stdc++ util xcb xmms z
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 
 .include <bsd.port.mk>

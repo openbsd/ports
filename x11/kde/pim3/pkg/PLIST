@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2010/05/15 08:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2010/07/08 21:28:49 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -398,8 +398,19 @@ ${KDE}/libegroupwarewizard.la
 ${KDE}/libegroupwarewizard.so
 ${KDE}/libexchangewizard.la
 ${KDE}/libexchangewizard.so
+@lib ${KDE}/libgpgme++.so.${LIBgpgme++_VERSION}
 ${KDE}/libgroupwisewizard.la
 ${KDE}/libgroupwisewizard.so
+@lib ${KDE}/libgwsoap.so.${LIBgwsoap_VERSION}
+@lib ${KDE}/libindex.so.${LIBindex_VERSION}
+@lib ${KDE}/libkabc_groupdav.so.${LIBkabc_groupdav_VERSION}
+@lib ${KDE}/libkabc_groupwise.so.${LIBkabc_groupwise_VERSION}
+@lib ${KDE}/libkabc_newexchange.so.${LIBkabc_newexchange_VERSION}
+@lib ${KDE}/libkabc_slox.so.${LIBkabc_slox_VERSION}
+@lib ${KDE}/libkabc_xmlrpc.so.${LIBkabc_xmlrpc_VERSION}
+@lib ${KDE}/libkabckolab.so.${LIBkabckolab_VERSION}
+@lib ${KDE}/libkabcscalix.so.${LIBkabcscalix_VERSION}
+@lib ${KDE}/libkabinterfaces.so.${LIBkabinterfaces_VERSION}
 ${KDE}/libkaddrbk_bookmark_xxport.la
 ${KDE}/libkaddrbk_bookmark_xxport.so
 ${KDE}/libkaddrbk_cardview.la
@@ -430,10 +441,27 @@ ${KDE}/libkaddrbk_tableview.la
 ${KDE}/libkaddrbk_tableview.so
 ${KDE}/libkaddrbk_vcard_xxport.la
 ${KDE}/libkaddrbk_vcard_xxport.so
+@lib ${KDE}/libkaddressbook.so.${LIBkaddressbook_VERSION}
 ${KDE}/libkaddressbookpart.la
 ${KDE}/libkaddressbookpart.so
 ${KDE}/libkarmpart.la
 ${KDE}/libkarmpart.so
+@lib ${KDE}/libkcal.so.${LIBkcal_VERSION}
+@lib ${KDE}/libkcal_groupdav.so.${LIBkcal_groupdav_VERSION}
+@lib ${KDE}/libkcal_groupwise.so.${LIBkcal_groupwise_VERSION}
+@lib ${KDE}/libkcal_newexchange.so.${LIBkcal_newexchange_VERSION}
+@lib ${KDE}/libkcal_resourcefeatureplan.so.${LIBkcal_resourcefeatureplan_VERSION}
+@lib ${KDE}/libkcal_resourceremote.so.${LIBkcal_resourceremote_VERSION}
+@lib ${KDE}/libkcal_slox.so.${LIBkcal_slox_VERSION}
+@lib ${KDE}/libkcal_xmlrpc.so.${LIBkcal_xmlrpc_VERSION}
+@lib ${KDE}/libkcalkolab.so.${LIBkcalkolab_VERSION}
+@lib ${KDE}/libkcalscalix.so.${LIBkcalscalix_VERSION}
+@lib ${KDE}/libkdepim.so.${LIBkdepim_VERSION}
+@lib ${KDE}/libkgantt.so.${LIBkgantt_VERSION}
+@lib ${KDE}/libkgroupwarebase.so.${LIBkgroupwarebase_VERSION}
+@lib ${KDE}/libkgroupwaredav.so.${LIBkgroupwaredav_VERSION}
+@lib ${KDE}/libkholidays.so.${LIBkholidays_VERSION}
+@lib ${KDE}/libkleopatra.so.${LIBkleopatra_VERSION}
 ${KDE}/libkmail_bodypartformatter_application_octetstream.la
 ${KDE}/libkmail_bodypartformatter_application_octetstream.so
 ${KDE}/libkmail_bodypartformatter_text_calendar.la
@@ -444,10 +472,18 @@ ${KDE}/libkmail_bodypartformatter_text_xdiff.la
 ${KDE}/libkmail_bodypartformatter_text_xdiff.so
 ${KDE}/libkmailpart.la
 ${KDE}/libkmailpart.so
+@lib ${KDE}/libkmime.so.${LIBkmime_VERSION}
+@lib ${KDE}/libknodecommon.so.${LIBknodecommon_VERSION}
 ${KDE}/libknodepart.la
 ${KDE}/libknodepart.so
+@lib ${KDE}/libknotes_xmlrpc.so.${LIBknotes_xmlrpc_VERSION}
+@lib ${KDE}/libknoteskolab.so.${LIBknoteskolab_VERSION}
+@lib ${KDE}/libknotesscalix.so.${LIBknotesscalix_VERSION}
+@lib ${KDE}/libkocorehelper.so.${LIBkocorehelper_VERSION}
+@lib ${KDE}/libkode.so.${LIBkode_VERSION}
 ${KDE}/libkolabwizard.la
 ${KDE}/libkolabwizard.so
+@lib ${KDE}/libkontact.so.${LIBkontact_VERSION}
 ${KDE}/libkontact_akregator.la
 ${KDE}/libkontact_akregator.so
 ${KDE}/libkontact_journalplugin.la
@@ -484,10 +520,24 @@ ${KDE}/libkorg_hebrew.la
 ${KDE}/libkorg_hebrew.so
 ${KDE}/libkorg_journalprint.la
 ${KDE}/libkorg_journalprint.so
+@lib ${KDE}/libkorg_stdprinting.so.${LIBkorg_stdprinting_VERSION}
 ${KDE}/libkorg_yearlyprint.la
 ${KDE}/libkorg_yearlyprint.so
+@lib ${KDE}/libkorganizer.so.${LIBkorganizer_VERSION}
+@lib ${KDE}/libkorganizer_calendar.so.${LIBkorganizer_calendar_VERSION}
+@lib ${KDE}/libkorganizer_eventviewer.so.${LIBkorganizer_eventviewer_VERSION}
 ${KDE}/libkorganizerpart.la
 ${KDE}/libkorganizerpart.so
+@lib ${KDE}/libkpgp.so.${LIBkpgp_VERSION}
+@lib ${KDE}/libkpilot.so.${LIBkpilot_VERSION}
+@lib ${KDE}/libkpimexchange.so.${LIBkpimexchange_VERSION}
+@lib ${KDE}/libkpimidentities.so.${LIBkpimidentities_VERSION}
+@lib ${KDE}/libkpinterfaces.so.${LIBkpinterfaces_VERSION}
+@lib ${KDE}/libksieve.so.${LIBksieve_VERSION}
+@lib ${KDE}/libkslox.so.${LIBkslox_VERSION}
+@lib ${KDE}/libktnef.so.${LIBktnef_VERSION}
+@lib ${KDE}/libmimelib.so.${LIBmimelib_VERSION}
+@lib ${KDE}/libqgpgme.so.${LIBqgpgme_VERSION}
 ${KDE}/libscalixwizard.la
 ${KDE}/libscalixwizard.so
 ${KDE}/libsloxwizard.la

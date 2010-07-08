@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/05/15 08:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/07/08 21:28:50 espie Exp $
 @bin bin/ark
 @bin bin/irkick
 @bin bin/kcalc
@@ -81,10 +81,15 @@ ${KDE}/libarkpart.la
 ${KDE}/libarkpart.so
 ${KDE}/libkbyteseditwidget.la
 ${KDE}/libkbyteseditwidget.so
+@lib ${KDE}/libkcmlaptop.so.${LIBkcmlaptop_VERSION}
 ${KDE}/libkhexedit2part.la
 ${KDE}/libkhexedit2part.so
+@lib ${KDE}/libkhexeditcommon.so.${LIBkhexeditcommon_VERSION}
+@lib ${KDE}/libkmilo.so.${LIBkmilo_VERSION}
+@lib ${KDE}/libkregexpeditorcommon.so.${LIBkregexpeditorcommon_VERSION}
 ${KDE}/libkregexpeditorgui.la
 ${KDE}/libkregexpeditorgui.so
+@lib ${KDE}/libksimcore.so.${LIBksimcore_VERSION}
 lib/libkcmlaptop.la
 @lib lib/libkcmlaptop.so.${LIBkcmlaptop_VERSION}
 lib/libkdeinit_ark.la

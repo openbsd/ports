@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2009/08/27 19:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/07/08 21:28:48 espie Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		arts-1.5.10
-MODKDE_VERSION ?=	3.5.8
-PKGNAME =		${DISTNAME}p2
+MODKDE_VERSION =	3.5.8
+PKGNAME =		${DISTNAME}p3
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -26,11 +26,11 @@ SHARED_LIBS +=	x11globalcomm        2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	audiofile::devel/libaudiofile \
-		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2 \
-		vorbis,vorbisfile::audio/libvorbis \
-		ogg::audio/libogg \
-		mad::audio/libmad
+LIB_DEPENDS = 	::devel/libaudiofile \
+		::devel/glib2 \
+		::audio/libvorbis \
+		::audio/libogg \
+		::audio/libmad
 
 SEPARATE_BUILD =	flavored
 
@@ -39,9 +39,9 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
 
-WANTLIB =	ICE SM X11 Xext c jpeg m png pthread \
-		sndio stdc++ vorbisenc z Xau Xdmcp pcre \
-		pthread-stubs xcb
+WANTLIB = ICE SM X11 Xau Xdmcp Xext audiofile c glib-2.0 gmodule-2.0 \
+	gthread-2.0 jpeg m mad ogg pcre png pthread pthread-stubs sndio stdc++ \
+	vorbis vorbisenc vorbisfile xcb z
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow

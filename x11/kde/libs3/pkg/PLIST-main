@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/07/08 21:28:49 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -34,7 +34,6 @@ bin/imagetops
 @bin bin/kdeinit
 @bin bin/kdeinit_shutdown
 @bin bin/kdeinit_wrapper
-bin/kdelibtool
 @bin bin/kdesu_stub
 @bin bin/kdontchangethehostname
 @bin bin/kdostartupconfig
@@ -780,7 +779,6 @@ include/renamedlgplugin.h
 include/scriptclientinterface.h
 include/scriptinterface.h
 include/scriptmanager.h
-${KDE}/
 ${KDE}/dcopserver.la
 ${KDE}/dcopserver.so
 ${KDE}/kabc_dir.la
@@ -901,18 +899,57 @@ ${KDE}/ktexteditor_isearch.la
 ${KDE}/ktexteditor_isearch.so
 ${KDE}/ktexteditor_kdatatool.la
 ${KDE}/ktexteditor_kdatatool.so
+@lib ${KDE}/libDCOP.so.${LIBDCOP_VERSION}
+@lib ${KDE}/libartskde.so.${LIBartskde_VERSION}
+@lib ${KDE}/libkabc.so.${LIBkabc_VERSION}
+@lib ${KDE}/libkabc_dir.so.${LIBkabc_dir_VERSION}
+@lib ${KDE}/libkabc_file.so.${LIBkabc_file_VERSION}
+@lib ${KDE}/libkabc_ldapkio.so.${LIBkabc_ldapkio_VERSION}
 ${KDE}/libkatepart.la
 ${KDE}/libkatepart.so
+@lib ${KDE}/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 ${KDE}/libkcertpart.la
 ${KDE}/libkcertpart.so
+@lib ${KDE}/libkdecore.so.${LIBkdecore_VERSION}
+@lib ${KDE}/libkdefakes.so.${LIBkdefakes_VERSION}
+@lib ${KDE}/libkdefx.so.${LIBkdefx_VERSION}
+@lib ${KDE}/libkdeprint.so.${LIBkdeprint_VERSION}
+@lib ${KDE}/libkdeprint_management.so.${LIBkdeprint_management_VERSION}
 ${KDE}/libkdeprint_management_module.la
 ${KDE}/libkdeprint_management_module.so
+@lib ${KDE}/libkdesasl.so.${LIBkdesasl_VERSION}
+@lib ${KDE}/libkdesu.so.${LIBkdesu_VERSION}
+@lib ${KDE}/libkdeui.so.${LIBkdeui_VERSION}
+@lib ${KDE}/libkdnssd.so.${LIBkdnssd_VERSION}
+@lib ${KDE}/libkhtml.so.${LIBkhtml_VERSION}
 ${KDE}/libkhtmlpart.la
 ${KDE}/libkhtmlpart.so
+@lib ${KDE}/libkimproxy.so.${LIBkimproxy_VERSION}
+@lib ${KDE}/libkio.so.${LIBkio_VERSION}
+@lib ${KDE}/libkjava.so.${LIBkjava_VERSION}
+@lib ${KDE}/libkjs.so.${LIBkjs_VERSION}
+@lib ${KDE}/libkmdi.so.${LIBkmdi_VERSION}
+@lib ${KDE}/libkmdi2.so.${LIBkmdi2_VERSION}
+@lib ${KDE}/libkmediaplayer.so.${LIBkmediaplayer_VERSION}
+@lib ${KDE}/libkmid.so.${LIBkmid_VERSION}
 ${KDE}/libkmultipart.la
 ${KDE}/libkmultipart.so
+@lib ${KDE}/libknewstuff.so.${LIBknewstuff_VERSION}
+@lib ${KDE}/libkntlm.so.${LIBkntlm_VERSION}
+@lib ${KDE}/libkparts.so.${LIBkparts_VERSION}
+@lib ${KDE}/libkresources.so.${LIBkresources_VERSION}
+@lib ${KDE}/libkscreensaver.so.${LIBkscreensaver_VERSION}
+@lib ${KDE}/libkscript.so.${LIBkscript_VERSION}
+@lib ${KDE}/libkspell.so.${LIBkspell_VERSION}
+@lib ${KDE}/libkspell2.so.${LIBkspell2_VERSION}
+@lib ${KDE}/libktexteditor.so.${LIBktexteditor_VERSION}
+@lib ${KDE}/libkunittest.so.${LIBkunittest_VERSION}
+@lib ${KDE}/libkutils.so.${LIBkutils_VERSION}
+@lib ${KDE}/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
+@lib ${KDE}/libkwalletclient.so.${LIBkwalletclient_VERSION}
 ${KDE}/libshellscript.la
 ${KDE}/libshellscript.so
+@lib ${KDE}/libvcard.so.${LIBvcard_VERSION}
 ${KDE}/plugins/
 ${KDE}/plugins/designer/
 ${KDE}/plugins/designer/kdewidgets.la

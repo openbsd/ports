@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.59 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/08 21:28:49 espie Exp $
 
 COMMENT = 		K Desktop Environment, additional artwork
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeartwork-${VERSION}
-PKGNAME =		${DISTNAME}p5
+PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =	3.5.8
 
 MODULES =		x11/kde devel/gettext
 
-LIB_DEPENDS =		kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kparts,kscreensaver::x11/kde/libs3 \
-			kdecorations::x11/kde/base3
+LIB_DEPENDS =		::x11/kde/libs3 \
+			::x11/kde/base3
 SEPARATE_BUILD =	flavored
 
 CONFIGURE_ENV +=	XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
@@ -18,12 +18,14 @@ CONFIGURE_ENV +=	XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
 BUILD_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
 RUN_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
 
-WANTLIB =	GL GLU ICE SM X11 Xext Xrender Xt art_lgpl_2 artsflow \
-		artsflow_idl artskde audiofile c glib-2.0 \
-		gmodule-2.0 gthread-2.0 jpeg kmedia2_idl \
-		kwalletclient m mad mcop ogg png pthread qtmcop sndio \
-		soundserver_idl stdc++ util vorbis vorbisenc vorbisfile z \
-		idn Xau Xdmcp fam rpcsvc pcre pthread-stubs xcb
+WANTLIB = GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xt Xxf86vm \
+	art_lgpl_2 artsflow artsflow_idl artskde audiofile c drm fam glib-2.0 \
+	gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl kwalletclient \
+	lib/kde3/DCOP lib/kde3/kdecorations lib/kde3/kdecore.>=6 \
+	lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio \
+	lib/kde3/kparts lib/kde3/kscreensaver m mad mcop ogg pcre png pthread \
+	pthread-stubs qtmcop rpcsvc sndio soundserver_idl stdc++ util vorbis \
+	vorbisenc vorbisfile xcb z
 
 
 .include <bsd.port.mk>

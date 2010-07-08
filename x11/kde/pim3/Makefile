@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2010/07/03 10:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/07/08 21:28:49 espie Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
-PKGNAME =		${DISTNAME}p4
+PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -22,14 +22,9 @@ SHARED_LIBS +=	kcal                 4.0      # .2.0
 SHARED_LIBS +=	kleopatra            2.0      # .1.0
 SHARED_LIBS +=	kdepim               2.0      # .1.0
 SHARED_LIBS +=	kpilot               1.0      # .0.0
-SHARED_LIBS +=	ksync                2.0      # .1.0
 SHARED_LIBS +=	kpimidentities       2.0      # .1.0
 SHARED_LIBS +=	kpimexchange         2.0      # .1.0
 SHARED_LIBS +=	knodecommon          0.0      # .3.0
-SHARED_LIBS +=	ksync2               1.0      # .0.0
-SHARED_LIBS +=	konnector            1.0      # .0.0
-SHARED_LIBS +=	kitchensyncui        1.0      # .0.0
-SHARED_LIBS +=	multisynk            1.0      # .0.0
 SHARED_LIBS +=	kocorehelper         2.0      # .1.0
 SHARED_LIBS +=	korg_stdprinting     2.0      # .1.0
 SHARED_LIBS +=	korganizer_eventviewer 2.0      # .1.0
@@ -65,26 +60,36 @@ SHARED_LIBS +=	kontact              2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS +=	kdecore.>=6,artskde,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
+LIB_DEPENDS +=	::x11/kde/libs3
 
-WANTLIB =	Xss audiofile stdc++ sndio X11 jpeg util m \
-		vorbisfile gmodule-2.0 gthread-2.0 \
-		pcreposix vorbisenc qui SM pthread \
-		c artsflow ogg mcop png Xext \
-		artsflow_idl art_lgpl_2 mad qtmcop \
-		glib-2.0 ICE soundserver_idl Xrender \
-		gpg-error vorbis pcre z sasl2 idn \
-		Xau Xdmcp fam rpcsvc Xpm usb ical \
-		pthread-stubs xcb kmedia2_idl
+WANTLIB = GL GLU ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
+	Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm art_lgpl_2 artsflow \
+	artsflow_idl audiofile c drm expat fam fontconfig freetype glib-2.0 \
+	gmodule-2.0 gnokii gpg-error gpgme gthread-2.0 ical idn jpeg \
+	kmedia2_idl lcms lib/kde3/DCOP lib/kde3/artskde lib/kde3/kabc \
+	lib/kde3/kabc_file lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
+	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
+	lib/kde3/khtml lib/kde3/kimproxy lib/kde3/kio lib/kde3/kjs \
+	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \
+	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m mad mal.>=1 \
+	mcop mng ogg pcre pcreposix pisock png pthread pthread-stubs qtmcop \
+	qui sasl2 sasl2 sndio soundserver_idl stdc++ usb util vorbis vorbisenc \
+	vorbisfile xcb z
+
+
 
 FLAVORS =	debug
-LIB_DEPENDS +=	pisock::comms/pilot-link
+LIB_DEPENDS +=	::comms/pilot-link
 RUN_DEPENDS +=	::x11/kde/base3 \
 		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS +=	gpgme:gpgme->=0.4.5:security/gpgme \
-		sasl2::security/cyrus-sasl2 \
-		mal.>=1::comms/libmal \
-		gnokii::comms/gnokii
+LIB_DEPENDS +=	:gpgme->=0.4.5:security/gpgme \
+		::security/cyrus-sasl2 \
+		::comms/libmal \
+		::comms/gnokii
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 
 #MULTI_PACKAGES=-kpilot
 FULLPKGNAME-kpilot = kpilot-${VERSION}p0

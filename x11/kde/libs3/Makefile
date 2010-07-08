@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2010/07/08 21:28:49 espie Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -7,8 +7,8 @@ VERSION =		3.5.10
 DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main =		${DISTNAME}p9
-PKGNAME-cups =		kdecups-${VERSION}p5
+PKGNAME-main =		${DISTNAME}p10
+PKGNAME-cups =		kdecups-${VERSION}p6
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
@@ -38,7 +38,6 @@ SHARED_LIBS +=	vcard                1.0      # .0.0
 SHARED_LIBS +=	kabc                 4.0      # .3.0
 SHARED_LIBS +=	kabc_file            2.0      # .1.0
 SHARED_LIBS +=	kabc_dir             2.0      # .1.0
-SHARED_LIBS +=	kabc_net             2.0      # .1.0
 SHARED_LIBS +=	kabc_ldapkio         2.0      # .1.0
 SHARED_LIBS +=	kspell2              2.0      # .1.0
 SHARED_LIBS +=	kmdi2                2.0      # .1.0
@@ -60,30 +59,30 @@ CONFIGURE_ARGS += 	--enable-cups
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS =	art_lgpl_2::graphics/libart \
-		idn::devel/libidn \
-		fam.>=1::sysutils/gamin 
+LIB_DEPENDS =	::graphics/libart \
+		::devel/libidn \
+		::sysutils/gamin 
+
 WANTLIB =	asn1 crypto gssapi util jpeg krb5 m X11 \
 		ICE Xrender c SM pthread stdc++ Xext z png \
-		Xau Xdmcp pthread-stubs xcb
+		Xau Xdmcp pthread-stubs xcb art_lgpl_2 idn \
+		fam.>=1
 
 LIB_DEPENDS-main =	\
 	${LIB_DEPENDS} \
-	artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
-	pcreposix,pcre::devel/pcre \
-	xslt.>=1.10:libxslt->=1.0.10:textproc/libxslt \
-	bz2::archivers/bzip2 \
-	tiff.>=35::graphics/tiff \
-	jasper::graphics/jasper \
-	IlmImf.>=4::graphics/openexr \
-	aspell::textproc/aspell/core
+	::x11/kde/arts3 \
+	::devel/pcre \
+	:libxslt->=1.0.10:textproc/libxslt \
+	::archivers/bzip2 \
+	::graphics/tiff \
+	::graphics/jasper \
+	::graphics/openexr \
+	::textproc/aspell/core
 
-WANTLIB-main =	${WANTLIB} \
-		Half Iex IlmThread Imath \
-		audiofile glib-2.0 \
-		gmodule-2.0 gthread-2.0 mad ogg \
-		sndio vorbisenc vorbis vorbisfile \
-		xml2
+WANTLIB-main = ${WANTLIB} Half Iex IlmImf.>=4 IlmThread Imath artsflow.>=1.0 \
+	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
+	jasper kmedia2_idl mad mcop ogg pcre pcreposix qtmcop sndio \
+	soundserver_idl tiff.>=35 vorbis vorbisenc vorbisfile xml2 xslt.>=1.10
 
 
 RUN_DEPENDS-main = \
@@ -93,11 +92,13 @@ RUN_DEPENDS-main = \
 
 LIB_DEPENDS-cups = \
 	${LIB_DEPENDS} \
-	kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3 \
-	cups::print/cups
+	::x11/kde/libs3 \
+	::print/cups
 
-WANTLIB-cups =	${WANTLIB} \
-		ssl
+WANTLIB-cups = ${WANTLIB} DCOP cups lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
+	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdeprint_management \
+	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts \
+	lib/kde3/kwalletclient ssl
 
 
 SEPARATE_BUILD =	flavored
@@ -114,8 +115,6 @@ pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
-
 .include <bsd.port.mk>
+
 MODGNU_AUTOCONF_FILES +=	dcop/dcop-path.h.in

@@ -1,21 +1,27 @@
-# $OpenBSD: Makefile,v 1.47 2010/05/15 08:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/07/08 21:28:49 espie Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
 VERSION =		3.5.10
 DISTNAME =		kdetoys-${VERSION}
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 MODKDE_VERSION ?=	3.5.8
 
 MODULES =		x11/kde devel/gettext
 
 RUN_DEPENDS +=		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 		kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kscreensaver,kutils,kwalletclient::x11/kde/libs3
+LIB_DEPENDS = 		::x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB =	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m pcre pcreposix png \
-		pthread stdc++ util z idn Xau Xdmcp fam rpcsvc \
-		pthread-stubs xcb
+WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
+	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint \
+	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
+	lib/kde3/kparts lib/kde3/kscreensaver lib/kde3/kutils \
+	lib/kde3/kwalletclient m pcre pcreposix png pthread pthread-stubs \
+	stdc++ util xcb z
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	@${post_install_libs}
 .include <bsd.port.mk>

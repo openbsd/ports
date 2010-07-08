@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2010/05/15 08:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2010/07/08 21:28:49 espie Exp $
 @bin bin/artsbuilder
 @bin bin/artscontrol
 @bin bin/juk
@@ -212,6 +212,25 @@ ${KDE}/kmixctrl.la
 ${KDE}/kmixctrl.so
 ${KDE}/krec.la
 ${KDE}/krec.so
+@lib ${KDE}/libarts_akode.so.${LIBarts_akode_VERSION}
+@lib ${KDE}/libarts_audiofile.so.${LIBarts_audiofile_VERSION}
+@lib ${KDE}/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
+@lib ${KDE}/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
+@lib ${KDE}/libarts_splay.so.${LIBarts_splay_VERSION}
+@lib ${KDE}/libarts_xine.so.${LIBarts_xine_VERSION}
+@lib ${KDE}/libartsbuilder.so.${LIBartsbuilder_VERSION}
+@lib ${KDE}/libartscontrolapplet.so.${LIBartscontrolapplet_VERSION}
+@lib ${KDE}/libartscontrolsupport.so.${LIBartscontrolsupport_VERSION}
+@lib ${KDE}/libartsgui.so.${LIBartsgui_VERSION}
+@lib ${KDE}/libartsgui_idl.so.${LIBartsgui_idl_VERSION}
+@lib ${KDE}/libartsgui_kde.so.${LIBartsgui_kde_VERSION}
+@lib ${KDE}/libartsmidi.so.${LIBartsmidi_VERSION}
+@lib ${KDE}/libartsmidi_idl.so.${LIBartsmidi_idl_VERSION}
+@lib ${KDE}/libartsmodules.so.${LIBartsmodules_VERSION}
+@lib ${KDE}/libartsmodulescommon.so.${LIBartsmodulescommon_VERSION}
+@lib ${KDE}/libartsmoduleseffects.so.${LIBartsmoduleseffects_VERSION}
+@lib ${KDE}/libartsmodulesmixers.so.${LIBartsmodulesmixers_VERSION}
+@lib ${KDE}/libartsmodulessynth.so.${LIBartsmodulessynth_VERSION}
 ${KDE}/libaudiocd_encoder_flac.la
 ${KDE}/libaudiocd_encoder_flac.so
 ${KDE}/libaudiocd_encoder_lame.la
@@ -220,14 +239,22 @@ ${KDE}/libaudiocd_encoder_vorbis.la
 ${KDE}/libaudiocd_encoder_vorbis.so
 ${KDE}/libaudiocd_encoder_wav.la
 ${KDE}/libaudiocd_encoder_wav.so
+@lib ${KDE}/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 ${KDE}/libkaboodlepart.la
 ${KDE}/libkaboodlepart.so
+@lib ${KDE}/libkcddb.so.${LIBkcddb_VERSION}
+@lib ${KDE}/libkmidlib.so.${LIBkmidlib_VERSION}
 ${KDE}/libkmidpart.la
 ${KDE}/libkmidpart.so
 ${KDE}/libkrecexport_ogg.la
 ${KDE}/libkrecexport_ogg.so
 ${KDE}/libkrecexport_wave.la
 ${KDE}/libkrecexport_wave.so
+@lib ${KDE}/libnoatun.so.${LIBnoatun_VERSION}
+@lib ${KDE}/libnoatuncontrols.so.${LIBnoatuncontrols_VERSION}
+@lib ${KDE}/libnoatuntags.so.${LIBnoatuntags_VERSION}
+@lib ${KDE}/libyafcore.so.${LIByafcore_VERSION}
+@lib ${KDE}/libyafxplayer.so.${LIByafxplayer_VERSION}
 ${KDE}/noatun.la
 ${KDE}/noatun.so
 ${KDE}/noatun_dcopiface.la
