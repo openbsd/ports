@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/11 22:24:38 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/08 11:21:26 jasper Exp $
 
      SUBDIR =
      SUBDIR += chipmunk
      SUBDIR += geda-gaf
      SUBDIR += gerbv
      SUBDIR += gnucap
+     SUBDIR += gtkwave
      SUBDIR += kicad
      SUBDIR += klogic
      SUBDIR += necpp
