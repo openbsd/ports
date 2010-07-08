@@ -1,0 +1,27 @@
+$OpenBSD: patch-rfc822_rfc822_c,v 1.1 2010/07/08 16:29:58 giovanni Exp $
+--- rfc822/rfc822.c.orig	Sun Nov 22 22:22:24 2009
++++ rfc822/rfc822.c	Tue Jun 29 13:19:53 2010
+@@ -627,10 +627,12 @@ static int rfc822_print_common_nameaddr(const struct r
+ 	p=(*decode_func)(addrbuf, chset, 1);
+ 	free(addrbuf);
+ 
++	if (!p)
++		return -1;
++
+ 	if (print_braces)
+ 		(*print_func)(' ', ptr);
+ 
+-
+ 	for (q=p; *q; ++q)
+ 		if (*q != '.' && *q != '@' && strchr(RFC822_SPECIALS, *q))
+ 		{
+@@ -640,9 +642,6 @@ static int rfc822_print_common_nameaddr(const struct r
+ 
+ 	if (print_braces)
+ 		(*print_func)('<', ptr);
+-
+-	if (!p)
+-		return -1;
+ 
+ 	for (addrbuf=p; *p; p++)
+ 		(*print_func)(*p, ptr);

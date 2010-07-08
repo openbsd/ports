@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2010/04/21 07:18:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/08 16:29:58 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.7.0
+V=			4.8.0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -33,7 +33,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib
+LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib \
+			idn::devel/libidn
 
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
@@ -90,6 +91,8 @@ MULTI_PACKAGES=		-main -pop3
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gdbm.>=3::databases/gdbm
 WANTLIB-main=		${WANTLIB} ssl crypto
+MODULES=		converters/libiconv \
+			devel/gettext
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/pop3d-ssl.dist etc/courier/pop3d.dist \
