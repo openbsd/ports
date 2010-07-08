@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/08 12:28:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/08 12:38:23 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		time profiler for Lua
 
-V=			2.0.2
-DISTNAME=		luaprofiler-$V
+DISTNAME=		luaprofiler-2.0.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://luaprofiler.luaforge.net/
@@ -22,12 +21,13 @@ MASTER_SITES=		http://luaforge.net/frs/download.php/3400/
 
 NO_REGRESS=		Yes
 
-# XXX: Fix this mess and the mess in patch-Makefile.linux
+# XXX: Fix this mess and the mess in patch-Makefile_linux
+# Makefile.linux is used from the top level, and puts the files there,
+# but references files from elsewhere (ie. src/clock.o).
 MAKE_FILE=		../Makefile.linux
 ALL_TARGET=		# empty
 CFLAGS +=       	-I${LOCALBASE}/include -fPIC
 
-WRKDIST=		${WRKDIR}/luaprofiler-$V/
 WRKSRC= 		${WRKDIST}/src/
 
 do-install:
