@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.ldap,v 1.1.1.1 2010/07/08 16:57:54 pea Exp $
+@bin libexec/gpg2keys_ldap

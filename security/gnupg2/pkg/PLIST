@@ -1,0 +1,116 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 16:57:54 pea Exp $
+@option no-default-conflict
+@bin bin/gpg-agent
+@bin bin/gpg-connect-agent
+@bin bin/gpg2
+@bin bin/gpgconf
+@bin bin/gpgkey2ssh
+@bin bin/gpgparsemail
+@bin bin/gpgsm
+bin/gpgsm-gencert.sh
+@bin bin/gpgv2
+@bin bin/kbxutil
+@bin bin/scdaemon
+@bin bin/watchgnupg
+@info info/gnupg.info
+@bin libexec/gnupg-pcsc-wrapper
+@bin libexec/gpg-check-pattern
+@bin libexec/gpg-preset-passphrase
+@bin libexec/gpg-protect-tool
+@bin libexec/gpg2keys_curl
+@bin libexec/gpg2keys_finger
+@bin libexec/gpg2keys_hkp
+@man man/man1/gpg-agent.1
+@man man/man1/gpg-connect-agent.1
+@man man/man1/gpg-preset-passphrase.1
+@man man/man1/gpg2-zip.1
+@man man/man1/gpg2.1
+@man man/man1/gpgconf.1
+@man man/man1/gpgparsemail.1
+@man man/man1/gpgsm-gencert.sh.1
+@man man/man1/gpgsm.1
+@man man/man1/gpgv2.1
+@man man/man1/scdaemon.1
+@man man/man1/symcryptrun.1
+@man man/man1/watchgnupg.1
+@man man/man8/addgnupghome.8
+@man man/man8/applygnupgdefaults.8
+sbin/addgnupghome
+sbin/applygnupgdefaults
+share/doc/gnupg2/
+share/doc/gnupg2/DETAILS
+share/doc/gnupg2/FAQ
+share/doc/gnupg2/HACKING
+share/doc/gnupg2/KEYSERVER
+share/doc/gnupg2/OpenPGP
+share/doc/gnupg2/README
+share/doc/gnupg2/TRANSLATE
+share/doc/gnupg2/examples/
+share/doc/gnupg2/examples/README
+share/doc/gnupg2/examples/gpgconf.conf
+share/doc/gnupg2/examples/pwpattern.list
+share/doc/gnupg2/examples/scd-event
+share/doc/gnupg2/examples/trustlist.txt
+share/doc/gnupg2/faq.html
+share/gnupg/
+share/gnupg/com-certs.pem
+share/gnupg/gpg-conf.skel
+share/gnupg/help.be.txt
+share/gnupg/help.ca.txt
+share/gnupg/help.cs.txt
+share/gnupg/help.da.txt
+share/gnupg/help.de.txt
+share/gnupg/help.el.txt
+share/gnupg/help.eo.txt
+share/gnupg/help.es.txt
+share/gnupg/help.et.txt
+share/gnupg/help.fi.txt
+share/gnupg/help.fr.txt
+share/gnupg/help.gl.txt
+share/gnupg/help.hu.txt
+share/gnupg/help.id.txt
+share/gnupg/help.it.txt
+share/gnupg/help.ja.txt
+share/gnupg/help.nb.txt
+share/gnupg/help.pl.txt
+share/gnupg/help.pt.txt
+share/gnupg/help.pt_BR.txt
+share/gnupg/help.ro.txt
+share/gnupg/help.ru.txt
+share/gnupg/help.sk.txt
+share/gnupg/help.sv.txt
+share/gnupg/help.tr.txt
+share/gnupg/help.txt
+share/gnupg/help.zh_CN.txt
+share/gnupg/help.zh_TW.txt
+share/gnupg/qualified.txt
+share/locale/be/LC_MESSAGES/gnupg2.mo
+share/locale/ca/LC_MESSAGES/gnupg2.mo
+share/locale/cs/LC_MESSAGES/gnupg2.mo
+share/locale/da/LC_MESSAGES/gnupg2.mo
+share/locale/de/LC_MESSAGES/gnupg2.mo
+share/locale/el/LC_MESSAGES/gnupg2.mo
+share/locale/en@boldquot/LC_MESSAGES/gnupg2.mo
+share/locale/en@quot/LC_MESSAGES/gnupg2.mo
+share/locale/eo/LC_MESSAGES/gnupg2.mo
+share/locale/es/LC_MESSAGES/gnupg2.mo
+share/locale/et/LC_MESSAGES/gnupg2.mo
+share/locale/fi/LC_MESSAGES/gnupg2.mo
+share/locale/fr/LC_MESSAGES/gnupg2.mo
+share/locale/gl/LC_MESSAGES/gnupg2.mo
+share/locale/hu/LC_MESSAGES/gnupg2.mo
+share/locale/id/LC_MESSAGES/gnupg2.mo
+share/locale/it/LC_MESSAGES/gnupg2.mo
+share/locale/ja/LC_MESSAGES/gnupg2.mo
+share/locale/nb/LC_MESSAGES/gnupg2.mo
+share/locale/pl/LC_MESSAGES/gnupg2.mo
+share/locale/pt/LC_MESSAGES/gnupg2.mo
+share/locale/pt_BR/LC_MESSAGES/gnupg2.mo
+share/locale/ro/LC_MESSAGES/gnupg2.mo
+share/locale/ru/LC_MESSAGES/gnupg2.mo
+share/locale/sk/LC_MESSAGES/gnupg2.mo
+share/locale/sv/LC_MESSAGES/gnupg2.mo
+share/locale/tr/LC_MESSAGES/gnupg2.mo
+share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
+share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
+%%ldap%%
