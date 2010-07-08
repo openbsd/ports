@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.58 2010/07/06 17:17:35 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/07/08 16:16:51 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.6.8
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gimp-2.0	268.0	\
-		gimpbase-2.0	268.0	\
-		gimpcolor-2.0	268.0	\
-		gimpconfig-2.0	268.0	\
-		gimpmath-2.0	268.0	\
-		gimpmodule-2.0	268.0	\
-		gimpthumb-2.0	268.0	\
-		gimpui-2.0	268.0	\
-		gimpwidgets-2.0	268.0
+DISTNAME=	gimp-2.6.9
+SHARED_LIBS=	gimp-2.0	269.0	\
+		gimpbase-2.0	269.0	\
+		gimpcolor-2.0	269.0	\
+		gimpconfig-2.0	269.0	\
+		gimpmath-2.0	269.0	\
+		gimpmodule-2.0	269.0	\
+		gimpthumb-2.0	269.0	\
+		gimpui-2.0	269.0	\
+		gimpwidgets-2.0	269.0
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -37,10 +36,11 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		wmf.>=6,wmflite.>=6::graphics/libwmf \
 		poppler.>=3,poppler-glib.>=3::print/poppler \
 		gegl-0.1::graphics/gegl \
+		openjpeg.>=4::graphics/openjpeg \
 		:py-gtk2-*:x11/py-gtk2 \
 		curl::net/curl
 
-RUN_DEPENDS+= 	:py-gtk2-*:x11/py-gtk2
+RUN_DEPENDS+=	:py-gtk2-*:x11/py-gtk2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -67,7 +67,7 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.64
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-gvfs \
