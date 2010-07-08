@@ -1,52 +1,6 @@
-$OpenBSD: patch-rfc2045_reformime_1,v 1.1 2010/04/21 07:23:59 giovanni Exp $
---- rfc2045/reformime.1.orig	Tue Mar 30 12:58:02 2010
-+++ rfc2045/reformime.1	Tue Mar 30 12:59:02 2010
-@@ -1,26 +1,26 @@
--.\"  <!-- $Id: patch-rfc2045_reformime_1,v 1.1 2010/04/21 07:23:59 giovanni Exp $ -->
--.\"  <!-- Copyright 1998 - 2009 Double Precision, Inc.  See COPYING for -->
--.\"  <!-- distribution information. -->
-+ \"  <!-- $Id: patch-rfc2045_reformime_1,v 1.1 2010/04/21 07:23:59 giovanni Exp $ -->
-+ \"  <!-- Copyright 1998 - 2009 Double Precision, Inc.  See COPYING for -->
-+ \"  <!-- distribution information. -->
- '\" t
--.\"     Title: reformime
--.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
--.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
--.\"      Date: 02/19/2010
--.\"    Manual: Double Precision, Inc.
--.\"    Source: Double Precision, Inc.
--.\"  Language: English
--.\"
-+ \"     Title: reformime
-+ \"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
-+ \" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-+ \"      Date: 02/19/2010
-+ \"    Manual: Double Precision, Inc.
-+ \"    Source: Double Precision, Inc.
-+ \"  Language: English
-+ \"
- .TH "REFORMIME" "1" "02/19/2010" "Double Precision, Inc." "Double Precision, Inc."
--.\" -----------------------------------------------------------------
--.\" * set default formatting
--.\" -----------------------------------------------------------------
--.\" disable hyphenation
-+ \" -----------------------------------------------------------------
-+ \" * set default formatting
-+ \" -----------------------------------------------------------------
-+ \" disable hyphenation
- .nh
--.\" disable justification (adjust text to left margin only)
-+ \" disable justification (adjust text to left margin only)
- .ad l
--.\" -----------------------------------------------------------------
--.\" * MAIN CONTENT STARTS HERE *
--.\" -----------------------------------------------------------------
-+ \" -----------------------------------------------------------------
-+ \" * MAIN CONTENT STARTS HERE *
-+ \" -----------------------------------------------------------------
- .SH "NAME"
- reformime \- MIME E\-mail reformatting tool
- .SH "SYNOPSIS"
+$OpenBSD: patch-rfc2045_reformime_1,v 1.2 2010/07/08 16:35:58 giovanni Exp $
+--- rfc2045/reformime.1.orig	Sat May  1 17:34:46 2010
++++ rfc2045/reformime.1	Fri Jun 25 09:15:40 2010
 @@ -35,7 +35,7 @@ is a utility for reformatting MIME messages\&.
  Generally,
  \fBreformime\fR
@@ -74,7 +28,7 @@ $OpenBSD: patch-rfc2045_reformime_1,v 1.1 2010/04/21 07:23:59 giovanni Exp $
  MIME headers\&.
  .RE
  .PP
-@@ -400,11 +400,11 @@ is a structured header with RFC 2822 addresses\&.
+@@ -411,11 +411,11 @@ options\&.
  .SH "SEE ALSO"
  .PP
  

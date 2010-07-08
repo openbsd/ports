@@ -1,14 +1,23 @@
-$OpenBSD: patch-rfc822_rfc822_c,v 1.1 2010/04/21 07:23:59 giovanni Exp $
---- rfc822/rfc822.c.orig	Fri Mar  5 19:39:55 2010
-+++ rfc822/rfc822.c	Fri Mar  5 19:40:25 2010
-@@ -631,8 +631,8 @@ static int rfc822_print_common_nameaddr(const struct r
+$OpenBSD: patch-rfc822_rfc822_c,v 1.2 2010/07/08 16:35:58 giovanni Exp $
+--- rfc822/rfc822.c.orig	Mon Nov 23 04:27:19 2009
++++ rfc822/rfc822.c	Tue Jun 29 15:15:32 2010
+@@ -627,6 +627,9 @@ static int rfc822_print_common_nameaddr(const struct r
+ 	p=(*decode_func)(addrbuf, chset, 1);
+ 	free(addrbuf);
+ 
++	if (!p)
++		return -1;
++
+ 	if (print_braces)
  		(*print_func)(' ', ptr);
  
+@@ -640,9 +643,6 @@ static int rfc822_print_common_nameaddr(const struct r
  
--	for (q=p; *q; ++q)
--		if (*q != '.' && *q != '@' && strchr(RFC822_SPECIALS, *q))
-+	for (q=p; (void *)q; ++q)
-+		if ((void *)q != '.' && (void *)q != '@' && strchr(RFC822_SPECIALS, *q))
- 		{
- 			print_braces=1;
- 			break;
+ 	if (print_braces)
+ 		(*print_func)('<', ptr);
+-
+-	if (!p)
+-		return -1;
+ 
+ 	for (addrbuf=p; *p; p++)
+ 		(*print_func)(*p, ptr);
