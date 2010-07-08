@@ -1,12 +1,28 @@
-$OpenBSD: patch-src_plugin_setup_cpp,v 1.1 2010/03/29 12:17:42 dcoppa Exp $
+$OpenBSD: patch-src_plugin_setup_cpp,v 1.2 2010/07/08 06:35:13 dcoppa Exp $
 
 fixes from upstream svn:
 move "stream" test to streaming function
 change it from int to boolean
+protect against NULL console
 
 --- src/plugin_setup.cpp.orig	Tue Feb 23 17:12:37 2010
 +++ src/plugin_setup.cpp	Tue Mar 23 17:14:09 2010
-@@ -524,38 +524,41 @@ void new_instance(CPlugin * instance, int16_t argc, ch
+@@ -80,9 +80,11 @@ void new_instance(CPlugin * instance, int16_t argc, ch
+ 
+             if (g_ascii_strcasecmp(argn[i], "console") == 0) {
+                 instance->console = g_strdup(argv[i]);
+-                for (j = 0; j < strlen(instance->console); j++) {
+-                    if (!g_ascii_isalnum(instance->console[j])) {
+-                        instance->console[j] = 'a';
++                if (instance->console != NULL) {
++                    for (j = 0; j < strlen(instance->console); j++) {
++                        if (!g_ascii_isalnum(instance->console[j])) {
++                            instance->console[j] = 'a';
++                        }
+                     }
+                 }
+             }
+@@ -524,38 +526,41 @@ void new_instance(CPlugin * instance, int16_t argc, ch
  
  }
  
