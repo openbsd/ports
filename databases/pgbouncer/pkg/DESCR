@@ -26,5 +26,3 @@ on different hosts.
 * Supports online reconfiguration for most of the settings.
 * Supports online restart/upgrade without dropping client connections.  
 * Supports protocol V3 only, so backend version must be >= 7.4.
-
-

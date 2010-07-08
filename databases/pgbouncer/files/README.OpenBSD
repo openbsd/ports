@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/07/08 16:23:54 ajacoutot Exp $
 
 1) Carefully edit ${SYSCONFDIR}/pgbouncer/pgbouncer.ini and 
    ${SYSCONFDIR}/pgbouncer/userlist.txt to fit your needs.
@@ -8,7 +8,7 @@ $OpenBSD: README.OpenBSD,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
    is ok:
 
    # install -d -o _pgbouncer /var/run/pgbouncer
-   # pgbouncer -u _pgbouncer /etc/pgbouncer/pgbouncer.ini
+   # pgbouncer -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
 
 
 3) Add the following to your /etc/rc.local:
@@ -17,7 +17,7 @@ $OpenBSD: README.OpenBSD,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
 	echo -n 'pgbouncer'
 	install -d -o _pgbouncer /var/run/pgbouncer
 	${TRUEPREFIX}/bin/pgbouncer -d -u _pgbouncer \
-		/etc/pgbouncer/pgbouncer.ini
+		${SYSCONFDIR}/pgbouncer/pgbouncer.ini
    fi
 
 
