@@ -1,0 +1,8 @@
+LuaProfiler is a time profiler designed to help finding bottlenecks on
+your Lua program.
+
+If you use LuaProfiler into your program, it will generate a log of all
+your function calls and their respective running times. You can use this
+log to generate a summary of the functions your program uses, along with
+how long it stayed in each of them, or you can import the log into a
+spreadsheet for further analysis.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_linux,v 1.1.1.1 2010/07/08 12:28:57 jasper Exp $
+--- Makefile.linux.orig	Mon Jul  5 02:43:01 2010
++++ Makefile.linux	Mon Jul  5 02:43:50 2010
+@@ -1,6 +1,6 @@
+-include config.linux
++include ../config.linux
+ 
+-OBJS= src/clocks.o src/core_profiler.o src/function_meter.o src/stack.o src/lua50_profiler.o
++OBJS= clocks.o core_profiler.o function_meter.o stack.o lua50_profiler.o
+ 
+ 
+ profiler: $(OBJS)
