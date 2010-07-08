@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/06/30 00:33:54 marco Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/07/08 21:37:36 marco Exp $
 %%SHARED%%
 @bin bin/scrotwm
 @man man/cat1/scrotwm.0
