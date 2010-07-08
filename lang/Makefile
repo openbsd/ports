@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/06/20 09:50:10 kili Exp $
+# $OpenBSD: Makefile,v 1.99 2010/07/08 18:59:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
+     SUBDIR += iverilog
      SUBDIR += jamvm
      SUBDIR += jikes
      SUBDIR += jruby
