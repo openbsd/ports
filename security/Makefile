@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2010/06/30 15:15:20 jim Exp $
+# $OpenBSD: Makefile,v 1.235 2010/07/08 16:59:52 pea Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
      SUBDIR += gnupg
+     SUBDIR += gnupg2
      SUBDIR += gnutls
      SUBDIR += gpa
      SUBDIR += gpgme
