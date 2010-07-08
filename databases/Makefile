@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2010/06/07 08:18:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.177 2010/07/08 16:20:23 pea Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -116,6 +116,7 @@
      SUBDIR += pg-toolbox
      SUBDIR += pg_top
      SUBDIR += pgadmin3
+     SUBDIR += pgbouncer
      SUBDIR += pgfouine
      SUBDIR += pgloader
      SUBDIR += pgtcl
