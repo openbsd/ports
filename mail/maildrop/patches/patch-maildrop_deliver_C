@@ -1,0 +1,36 @@
+$OpenBSD: patch-maildrop_deliver_C,v 1.1 2010/07/08 20:32:01 jasper Exp $
+
+maildrop adds a newline to mbox files before delivering new messages.
+This effectively alters the final message in the mbox, causing a
+running mutt (and maybe other MUAs) with that mbox open to freak out
+and lose unsaved state [1]. The maildrop folks prefer to keep this
+(out of spec) behaviour to keep from breaking users working
+configurations as well as to avoid problems caused by other out of
+spec mail delivery agents (which may aberrantly neglect to leave a
+blank line at the end of the mbox) [2].
+
+This patch disables this behaviour of maildrop allowing an MUA to
+gracefully handle the delivery of new mail to an open folder.
+
+[1] http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=132411
+[2] http://markmail.org/message/w5mwn3jpmn3qeo5x
+
+--- maildrop/deliver.C.orig	Sat Jun 27 13:26:54 2009
++++ maildrop/deliver.C	Wed Jun 23 15:45:28 2010
+@@ -231,15 +231,7 @@ Buffer	b;
+ 		{
+ 			format_mbox.Init(1);
+ 
+-			if ((stat_buf.st_size > 0 &&
+-			     mio.write(
+-#if	CRLF_TERM
+-				       "\r\n", 2
+-#else
+-				       "\n", 1
+-#endif
+-				       ) < 0) ||
+-			    format_mbox.DeliverTo(mio))
++			if (format_mbox.DeliverTo(mio))
+ 			{
+ 				dotlock.truncate();
+ 				log(mailbox, -1, format_mbox);
