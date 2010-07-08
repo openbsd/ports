@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/30 09:46:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/08 15:14:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-0.078
+DISTNAME=	znc-0.092
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=znc/}
 
