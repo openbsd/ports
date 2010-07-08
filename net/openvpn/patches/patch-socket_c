@@ -1,20 +1,20 @@
-$OpenBSD: patch-socket_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
---- socket.c.orig	Thu Oct  1 18:02:18 2009
-+++ socket.c	Thu Oct 29 21:27:46 2009
+$OpenBSD: patch-socket_c,v 1.2 2010/07/08 09:18:25 fkr Exp $
+--- socket.c.orig	Fri Dec 11 05:59:45 2009
++++ socket.c	Tue Jul  6 23:49:11 2010
 @@ -503,6 +503,20 @@ socket_set_tcp_nodelay (int sd, int state)
  #endif
  }
  
 +static void
-+socket_set_rdomain (int sd, int rdomain)
++socket_set_rtable (int sd, int rtable)
 +{
 +#ifdef TARGET_OPENBSD
-+  if (rdomain > 0)
++  if (rtable > 0)
 +  {
-+    if (setsockopt (sd, IPPROTO_IP, SO_RDOMAIN, &rdomain, sizeof(rdomain)) == -1)
-+      msg (M_SOCKERR, "Socket flags: SO_RDOMAIN=%d failed, cannot bind on specified routing domain", rdomain);
++    if (setsockopt (sd, IPPROTO_IP, SO_RTABLE, &rtable, sizeof(rtable)) == -1)
++      msg (M_SOCKERR, "Socket flags: SO_RTABLE=%d failed, cannot bind on specified routing domain", rtable);
 +    else
-+      dmsg (D_SOCKET_DEBUG, "Socket flags: SO_RDOMAIN=%d succeeded", rdomain);
++      dmsg (D_SOCKET_DEBUG, "Socket flags: SO_RTABLE=%d succeeded", rtable);
 +  }
 +#endif
 +}
@@ -26,7 +26,7 @@ $OpenBSD: patch-socket_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
  			 int mtu_discover_type,
  			 int rcvbuf,
  			 int sndbuf,
-+			 int rdomain,
++			 int rtable,
  			 unsigned int sockflags)
  {
    ASSERT (sock);
@@ -36,7 +36,7 @@ $OpenBSD: patch-socket_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
        create_socket (sock);
 +
 +      /* set the routing domain for the socket */
-+      socket_set_rdomain (sock->sd, rdomain);
++      socket_set_rtable (sock->sd, rtable);
 +
        resolve_bind_local (sock);
        resolve_remote (sock, 1, NULL, NULL);

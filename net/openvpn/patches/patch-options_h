@@ -1,12 +1,12 @@
-$OpenBSD: patch-options_h,v 1.1 2009/11/26 22:55:27 fkr Exp $
---- options.h.orig	Thu Oct  1 18:02:18 2009
-+++ options.h	Thu Oct 29 18:44:33 2009
+$OpenBSD: patch-options_h,v 1.2 2010/07/08 09:18:25 fkr Exp $
+--- options.h.orig	Thu Oct  1 20:02:18 2009
++++ options.h	Thu Jul  8 07:32:35 2010
 @@ -285,6 +285,9 @@ struct options
    int rcvbuf;
    int sndbuf;
  
 +  /* routing domain */
-+  int rdomain;
++  int rtable;
 +
    /* socket flags */
    unsigned int sockflags;

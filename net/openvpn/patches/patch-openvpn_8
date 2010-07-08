@@ -1,12 +1,12 @@
-$OpenBSD: patch-openvpn_8,v 1.1 2009/11/26 22:55:27 fkr Exp $
---- openvpn.8.orig	Sat Nov 21 00:02:43 2009
-+++ openvpn.8	Fri Nov 20 23:45:31 2009
+$OpenBSD: patch-openvpn_8,v 1.2 2010/07/08 09:18:25 fkr Exp $
+--- openvpn.8.orig	Fri Dec 11 09:04:24 2009
++++ openvpn.8	Thu Jul  8 07:32:55 2010
 @@ -1313,6 +1313,11 @@ on both client and server for maximum effect.
  Currently defaults to 100.
  .\"*********************************************************
  .TP
-+.B --rdomain n
-+(OpenBSD only) Set the routing domain.
++.B --rtable n
++(OpenBSD only) Set the routing table.
 +Defaults to 0.
 +.\"*********************************************************
 +.TP
