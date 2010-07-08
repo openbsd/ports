@@ -1,0 +1,34 @@
+$OpenBSD: patch-etc_pgbouncer_ini,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
+--- etc/pgbouncer.ini.orig	Wed Apr 21 12:02:50 2010
++++ etc/pgbouncer.ini	Wed Jun 16 15:29:18 2010
+@@ -22,8 +22,8 @@ nondefaultdb = pool_size=50 reserve_pool=10
+ ;;; Administrative settings
+ ;;;
+ 
+-logfile = pgbouncer.log
+-pidfile = pgbouncer.pid
++logfile = /var/log/pgbouncer/pgbouncer.log
++pidfile = /var/run/pgbouncer/pgbouncer.pid
+ 
+ ;;;
+ ;;; Where to wait for clients
+@@ -39,16 +39,16 @@ unix_socket_dir = /tmp
+ ;;;
+ 
+ ; any, trust, plain, crypt, md5
+-auth_type = trust
++auth_type = md5
+ #auth_file = 8.0/main/global/pg_auth
+-auth_file = etc/userlist.txt
++auth_file = /etc/pgbouncer/userlist.txt
+ 
+ ;;;
+ ;;; Users allowed into database 'pgbouncer'
+ ;;;
+ 
+ ; comma-separated list of users, who are allowed to change settings
+-admin_users = user2, someadmin, otheradmin
++admin_users = admin, pgbouncer
+ 
+ ; comma-separated list of users who are just allowed to use SHOW command
+ stats_users = stats, root

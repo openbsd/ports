@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
+--- Makefile.orig	Wed Jan 28 11:59:26 2009
++++ Makefile	Wed Jun 16 11:22:46 2010
+@@ -104,6 +104,7 @@ install: $(exe) doc-install
+ 	mkdir -p $(DESTDIR)$(docdir)
+ 	$(BININSTALL) -m 755 $(exe) $(DESTDIR)$(bindir)
+ 	$(INSTALL) -m 644 $(srcdir)/etc/pgbouncer.ini  $(DESTDIR)$(docdir)
++	$(INSTALL) -m 644 $(srcdir)/etc/userlist.txt  $(DESTDIR)$(docdir)
+ ifeq ($(PORTNAME),win32)
+ 	$(BININSTALL) -m 755 $(dll) $(DESTDIR)$(bindir)
+ endif

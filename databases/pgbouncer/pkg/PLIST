@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
+@newgroup _pgbouncer:653
+@newuser _pgbouncer:653:653:daemon:pgbouncer:/nonexistent:/sbin/nologin
+@bin bin/pgbouncer
+@man man/man1/pgbouncer.1
+@man man/man5/pgbouncer.5
+@owner _pgbouncer
+@sample ${SYSCONFDIR}/pgbouncer/
+@owner
+share/doc/pgbouncer/
+share/doc/pgbouncer/README.OpenBSD
+@mode 640
+@group _pgbouncer
+share/doc/pgbouncer/pgbouncer.ini
+@sample ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
+share/doc/pgbouncer/userlist.txt
+@sample ${SYSCONFDIR}/pgbouncer/userlist.txt
+@mode
+@owner _pgbouncer
+@group
+@sample /var/log/pgbouncer/
+@extraunexec rm -rf /var/log/pgbouncer
