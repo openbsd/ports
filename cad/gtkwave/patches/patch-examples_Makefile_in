@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2010/07/08 11:20:50 jasper Exp $
+--- examples/Makefile.in.orig	Thu Jul  8 13:15:26 2010
++++ examples/Makefile.in	Thu Jul  8 13:15:47 2010
+@@ -174,7 +174,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ dist_examples_DATA = des.sav des.tcl des.v des.vzt transaction.fst transaction.sav transaction.c
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(datadir)/examples/@PACKAGE@
+ all: all-am
+ 
+ .SUFFIXES:

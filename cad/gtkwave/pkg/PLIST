@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 11:20:50 jasper Exp $
+@bin bin/evcd2vcd
+@bin bin/fst2vcd
+@bin bin/ghwdump
+@bin bin/gtkwave
+@bin bin/lxt2miner
+@bin bin/lxt2vcd
+@bin bin/rtlbrowse
+@bin bin/shmidcat
+@bin bin/twinwave
+@bin bin/vcd2fst
+@bin bin/vcd2lxt
+@bin bin/vcd2lxt2
+@bin bin/vcd2vzt
+@bin bin/vermin
+@bin bin/vzt2vcd
+@bin bin/vztminer
+@man man/man1/evcd2vcd.1
+@man man/man1/fst2vcd.1
+@man man/man1/ghwdump.1
+@man man/man1/gtkwave.1
+@man man/man1/lxt2miner.1
+@man man/man1/lxt2vcd.1
+@man man/man1/rtlbrowse.1
+@man man/man1/shmidcat.1
+@man man/man1/twinwave.1
+@man man/man1/vcd2fst.1
+@man man/man1/vcd2lxt.1
+@man man/man1/vcd2lxt2.1
+@man man/man1/vcd2vzt.1
+@man man/man1/vermin.1
+@man man/man1/vzt2vcd.1
+@man man/man1/vztminer.1
+@man man/man5/gtkwaverc.5
+share/doc/gtkwave/
+share/doc/gtkwave/gtkwave.odt
+share/examples/gtkwave/
+share/examples/gtkwave/des.sav
+share/examples/gtkwave/des.tcl
+share/examples/gtkwave/des.v
+share/examples/gtkwave/des.vzt
+share/examples/gtkwave/transaction.c
+share/examples/gtkwave/transaction.fst
+share/examples/gtkwave/transaction.sav
