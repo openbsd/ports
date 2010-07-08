@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/08 18:58:23 jasper Exp $
+@bin bin/iverilog
+bin/iverilog-vpi
+@bin bin/vvp
+include/iverilog/
+include/iverilog/_pli_types.h
+include/iverilog/acc_user.h
+include/iverilog/ivl_target.h
+include/iverilog/veriuser.h
+include/iverilog/vpi_user.h
+lib/ivl/
+@bin lib/ivl/cadpli.vpl
+lib/ivl/include/
+lib/ivl/include/constants.vams
+lib/ivl/include/disciplines.vams
+@bin lib/ivl/ivl
+@bin lib/ivl/ivlpp
+lib/ivl/null-s.conf
+lib/ivl/null.conf
+@bin lib/ivl/null.tgt
+lib/ivl/stub-s.conf
+lib/ivl/stub.conf
+@bin lib/ivl/stub.tgt
+lib/ivl/system.sft
+@bin lib/ivl/system.vpi
+lib/ivl/v2005_math.sft
+@bin lib/ivl/v2005_math.vpi
+lib/ivl/va_math.sft
+@bin lib/ivl/va_math.vpi
+lib/ivl/vhdl-s.conf
+lib/ivl/vhdl.conf
+@bin lib/ivl/vhdl.tgt
+lib/ivl/vvp-s.conf
+lib/ivl/vvp.conf
+@bin lib/ivl/vvp.tgt
+lib/libveriuser.a
+lib/libvpi.a
+@man man/man1/iverilog-vpi.1
+@man man/man1/iverilog.1
+@man man/man1/vvp.1
+share/doc/iverilog/
+@comment share/doc/iverilog/BUGS.txt
+share/doc/iverilog/QUICK_START.txt
+share/doc/iverilog/README.txt
+share/doc/iverilog/attributes.txt
+@comment share/doc/iverilog/cygwin.txt
+share/doc/iverilog/developer-quick-start.txt
+share/doc/iverilog/extensions.txt
+share/doc/iverilog/glossary.txt
+share/doc/iverilog/ieee1364-notes.txt
+share/doc/iverilog/ivl_target.txt
+share/doc/iverilog/ivlpp/
+share/doc/iverilog/ivlpp/ivlpp.txt
+share/doc/iverilog/lpm.txt
+@comment share/doc/iverilog/macosx.txt
+@comment share/doc/iverilog/mingw.txt
+share/doc/iverilog/netlist.txt
+share/doc/iverilog/swift.txt
+share/doc/iverilog/t-dll.txt
+share/doc/iverilog/va_math.txt
+share/doc/iverilog/vpi.txt
+share/doc/iverilog/vvp/
+share/doc/iverilog/vvp/README.txt
+share/doc/iverilog/vvp/opcodes.txt
+share/doc/iverilog/xilinx-hint.txt
