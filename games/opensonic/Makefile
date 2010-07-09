@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/26 03:01:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/09 09:37:37 jakemsr Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
 V =			0.1.2
 DISTNAME =		opensnc-src${V}
-PKGNAME =		opensonic-${V}p0
+PKGNAME =		opensonic-${V}p1
 
 CATEGORIES=		games
 
@@ -20,13 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		::graphics/allegropng
+BUILD_DEPENDS =		::graphics/allegropng \
+			::audio/dumb
 
-LIB_DEPENDS =		alleg::games/allegro \
-			dumb::audio/dumb \
-			vorbis,vorbisfile::audio/libvorbis
+LIB_DEPENDS =		::games/allegro \
+			::audio/libvorbis
 
-WANTLIB =		c ogg m pthread
+WANTLIB =		alleg c ogg m pthread vorbis vorbisfile
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
