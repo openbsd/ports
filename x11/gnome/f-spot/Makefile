@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/05 09:44:02 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/09 06:50:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.7.0
 GNOME_PROJECT=		f-spot
-PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION}p0
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION}p1
 
 CATEGORIES=		graphics
 
@@ -47,9 +47,9 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		::devel/mono-addins \
 			::x11/gnome/mono-gnome \
 			::sysutils/ndesk-dbus-glib \
-			::devel/mono-addins \
 			::devel/mono-flickrnet \
-			::x11/gnome/mono-keyring
+			::x11/gnome/mono-keyring \
+			::devel/libunique
 LIB_DEPENDS+=		exif::graphics/libexif \
 			lcms::graphics/lcms
 
@@ -71,14 +71,7 @@ DLLMAP_FILES=		lib/unique-sharp/unique/unique-sharp.dll.config \
 			src/Widgets/FSpot.Widgets.dll.config \
 			src/Utils/FSpot.Utils.dll.config \
 			src/f-spot.exe.config \
-			src/Cms/FSpot.Cms.dll.config \
-			bin/Hyena.Gui.dll.config \
-			bin/FSpot.Cms.dll.config \
-			bin/FSpot.Utils.dll.config \
-			bin/FSpot.Core.dll.config \
-			bin/FSpot.Widgets.dll.config \
-			bin/f-spot.exe.config
-
+			src/Cms/FSpot.Cms.dll.config
 
 FAKE_FLAGS=		schemadir=${PREFIX}/${SCHEMAS_INSTDIR}
 
