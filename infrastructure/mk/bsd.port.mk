@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1017 2010/07/08 20:48:39 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1018 2010/07/09 13:11:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -734,7 +734,7 @@ XAUTHORITY ?= ${HOME}/.Xauthority
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
-.for _s in ${MULTI_PACKAGES}
+.for _s in ${_MULTI_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
 .endfor
 
@@ -760,14 +760,19 @@ _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
-.for _S in ${_MULTI_PACKAGES}
+.for _S in ${MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}${PKG_SUFX}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
-_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
 .  else
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+.  endif
+.endfor
+
+.for _S in ${_MULTI_PACKAGES}
+.  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
+_PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
+_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
 .  endif
 _PACKAGE_COOKIES${_S} += ${_PACKAGE_COOKIE${_S}}
 .  if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
