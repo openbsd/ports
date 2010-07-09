@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/26 20:09:18 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/09 06:01:07 landry Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.7.4
@@ -28,6 +28,9 @@ CONFIGURE_ARGS+=	--with-db=${LOCALBASE} \
 			--with-etcdir=${SYSCONFDIR}/avenger
 CONFIGURE_ENV+=		WFLAGS="-Wall" \
 			sfs_cv_dev_random="/dev/arandom"
+
+MAKE_FLAGS+=		CFLAGS+=-DHAVE_GETPEEREID \
+			CXXFLAGS+=-DHAVE_GETPEEREID
 
 FLAVORS=                sasl2
 FLAVOR?=
