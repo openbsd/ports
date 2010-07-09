@@ -1,0 +1,11 @@
+$OpenBSD: patch-getpass_c,v 1.1 2010/07/09 07:17:37 sthen Exp $
+--- getpass.c.orig	Thu Jul  8 21:23:30 2010
++++ getpass.c	Thu Jul  8 21:24:51 2010
+@@ -46,6 +46,7 @@
+ 
+ #if defined(STDC_HEADERS)
+ #include <stdio.h>
++#include <stdlib.h>
+ #endif
+ 
+ #include <signal.h>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2000/06/05 00:31:33 espie Exp $
---- Makefile.in.orig	Wed Nov 22 14:08:22 1995
-+++ Makefile.in	Mon Jun  5 02:17:51 2000
+$OpenBSD: patch-Makefile_in,v 1.2 2010/07/09 07:17:37 sthen Exp $
+--- Makefile.in.orig	Wed Nov 22 08:08:22 1995
++++ Makefile.in	Thu Jul  8 21:50:46 2010
 @@ -62,7 +62,7 @@ EXTRASRC = @EXTRASRC@
  EXTRAOBJ = @EXTRAOBJ@
  
@@ -10,12 +10,39 @@ $OpenBSD: patch-Makefile_in,v 1.1 2000/06/05 00:31:33 espie Exp $
  # Common prefix for machine-dependent installed files.
  exec_prefix = $(prefix)
  
-@@ -187,7 +187,7 @@ $(infodir)/popclient.info: popclient.inf
+@@ -169,17 +169,18 @@ install: installdirs \
+ 	 $(mandir)/$(instname).$(manext)
+ 
+ installdirs:
+-	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir) $(mandir)
++	$(SHELL) ${srcdir}/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir) \
++	$(DESTDIR)$(mandir)
+ 
+ $(bindir)/$(instname): popclient
+-	$(INSTALL_PROGRAM) popclient $@
++	$(INSTALL_PROGRAM) popclient $(DESTDIR)$@
+ 
+ $(infodir)/popclient.info: popclient.info
+ 	if [ -r ./popclient.info ]; then dir=.; else dir=$(srcdir); fi; \
+ 	for file in $${dir}/popclient.info*; do \
+ 	  name="`basename $$file`"; \
+ 	  $(INSTALL_DATA) $$file \
+-	    `echo $@ | sed "s,popclient.info\$$,$$name,"`; \
++	    `echo $(DESTDIR)$@ | sed "s,popclient.info\$$,$$name,"`; \
+ 	done
+ # Run install-info only if it exists.
+ # Use `if' instead of just prepending `-' to the
+@@ -187,11 +188,11 @@ $(infodir)/popclient.info: popclient.info
  # We use `$(SHELL) -c' because some shells do not
  # fail gracefully when there is an unknown command.
  	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
 -	  install-info --infodir=$(infodir) $$dir/popclient.info; \
-+	  install-info $(infodir)/popclient.info $(infodir)/dir; \
++	  cd $(DESTDIR)$(infodir) && install-info popclient.info dir; \
  	else true; fi
  
  $(mandir)/$(instname).$(manext): popclient.man
+-	$(INSTALL_DATA) $(srcdir)/popclient.man $@
++	$(INSTALL_DATA) $(srcdir)/popclient.man $(DESTDIR)$@
+ 
+ 
+ .PHONY: clean realclean distclean mostlyclean

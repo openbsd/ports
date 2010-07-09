@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:44 espie Exp $
-bin/popclient
+@comment $OpenBSD: PLIST,v 1.5 2010/07/09 07:17:37 sthen Exp $
+@bin bin/popclient
 @info info/popclient.info
 @man man/man1/popclient.1

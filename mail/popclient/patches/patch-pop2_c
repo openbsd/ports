@@ -1,6 +1,6 @@
-$OpenBSD: patch-pop2_c,v 1.1 2000/06/05 00:31:34 espie Exp $
---- pop2.c.orig	Tue Sep 12 01:10:44 1995
-+++ pop2.c	Mon Jun  5 02:15:41 2000
+$OpenBSD: patch-pop2_c,v 1.2 2010/07/09 07:17:37 sthen Exp $
+--- pop2.c.orig	Mon Sep 11 19:10:44 1995
++++ pop2.c	Thu Jul  8 21:33:35 2010
 @@ -67,6 +67,7 @@
  
  #include  <sys/time.h>
@@ -21,3 +21,23 @@ $OpenBSD: patch-pop2_c,v 1.1 2000/06/05 00:31:34 espie Exp $
      return(PS_SOCKET);
    }
      
+@@ -496,8 +500,8 @@ int mboxfd;
+ int topipe;
+ {
+   int i,buflen,actsize;
+-  char buf [MSGBUFSIZE]; 
+-  char frombuf [MSGBUFSIZE];
++  char buf [POPMSGBUFSIZE]; 
++  char frombuf [POPMSGBUFSIZE];
+   char savec;
+   int msgTop;
+   int needFrom;
+@@ -524,7 +528,7 @@ int topipe;
+   actsize = 0;
+   msgTop = !0;
+   while (msgsize > 0) {
+-    buflen = msgsize <= MSGBUFSIZE ? msgsize : MSGBUFSIZE;
++    buflen = msgsize <= POPMSGBUFSIZE ? msgsize : POPMSGBUFSIZE;
+     /* read a bufferful */ 
+     if (SockRead(socket, buf, buflen) == 0) {
+ 

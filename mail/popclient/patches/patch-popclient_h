@@ -1,0 +1,12 @@
+$OpenBSD: patch-popclient_h,v 1.1 2010/07/09 07:17:37 sthen Exp $
+--- popclient.h.orig	Thu Jul  8 21:32:47 2010
++++ popclient.h	Thu Jul  8 21:33:09 2010
+@@ -62,7 +62,7 @@
+ 
+ /* definitions for buffer sizes -- somewhat arbitrary */
+ #define		POPBUFSIZE	512	/* per RFC 937 */
+-#define		MSGBUFSIZE	1024   	/* size of message read buffer */
++#define		POPMSGBUFSIZE	1024   	/* size of message read buffer */
+ #define		HOSTLEN		128	/* max hostname length */
+ #define		USERIDLEN	32	/* max user-length */
+ #define		PASSWORDLEN	MAX_PASSWORD_LENGTH
