@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.12 2010/06/30 02:46:48 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.13 2010/07/09 17:29:53 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -133,8 +133,15 @@ Zarafa.
 Zarafa webaccess
 ----------------
 
-You need to edit the config.php file installed under:
-${INSTDIR} for regular web client access
+Zarafa webaccess is installed under
+    ${INSTDIR}
+
+You should point the followings to the DocumentRoot of your web-server:
+   # ln -s ../zarafa-webaccess ${PREFIX-web}/htdocs/webaccess
+(make sure you use a relative symlink since Apache is chrooted)
+
+You need to edit the config.php file installed under
+${INSTDIR} for regular web client access.
 
 With Apache, this directory should be granted these permissions:
     AllowOverride Indexes Options
