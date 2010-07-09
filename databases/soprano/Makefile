@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/16 13:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/09 10:58:50 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	rdf framework
@@ -11,7 +11,7 @@ SHARED_LIBS += sopranoserver       0.0 # .1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.4.3
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
@@ -25,16 +25,16 @@ MODULES +=		devel/cmake x11/qt4
 CONFIGURE_STYLE =	cmake
 SEPARATE_BUILD =	simple
 
-LIB_DEPENDS += 	clucene::textproc/clucene \
-	    	iodbc::databases/iodbc,-main \
-		raptor::textproc/raptor \
-		rdf::textproc/redland
+LIB_DEPENDS += 	::textproc/clucene \
+	    	::databases/iodbc,-main \
+		::textproc/raptor \
+		::textproc/redland
 
 post-extract:
 	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
-WANTLIB += QtCore QtDBus QtNetwork QtXml
-WANTLIB += c m pthread stdc++
 
+WANTLIB += c clucene iodbc lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork \
+	lib/qt4/QtXml m pthread raptor rdf stdc++
 
 
 .include <bsd.port.mk>
