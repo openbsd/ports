@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.423 2010/07/07 16:34:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.424 2010/07/09 16:55:44 sebastia Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -242,6 +242,7 @@
      SUBDIR += tk
      SUBDIR += tkcon
      SUBDIR += tktable
+     SUBDIR += tktreectrl
      SUBDIR += transset-df
      SUBDIR += trayer
      SUBDIR += treewm
