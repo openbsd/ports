@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/09 08:17:50 landry Exp $
 
 COMMENT=	tools for building unix domain socket client/servers
 
 DISTNAME=		ucspi-unix-0.34
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	net
 
 HOMEPAGE=		http://em.ca/~bruceg/ucspi-unix/

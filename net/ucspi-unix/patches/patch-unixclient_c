@@ -1,0 +1,10 @@
+$OpenBSD: patch-unixclient_c,v 1.1 2010/07/09 08:17:50 landry Exp $
+--- unixclient.c.orig	Fri Jul  9 10:12:16 2010
++++ unixclient.c	Fri Jul  9 10:12:34 2010
+@@ -1,5 +1,6 @@
+ #include <signal.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <stdlib.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
