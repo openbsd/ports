@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/07/07 15:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2010/07/09 06:10:16 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,10 +8,9 @@ COMMENT-libpurple= multi-protocol instant messaging library
 
 VERSION=	2.7.1
 DISTNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}
-PKGNAME-finch=	finch-${VERSION}
-FULLPKGNAME-libpurple= libpurple-${VERSION}
-FULLPKGPATH-libpurple= ${PKGPATH},-libpurple
+PKGNAME-main=	pidgin-${VERSION}p0
+PKGNAME-finch=	finch-${VERSION}p0
+PKGNAME-libpurple= libpurple-${VERSION}p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -56,12 +55,10 @@ RUN_DEPENDS-main=	::x11/dbus-python \
 			::x11/py-gtk2 \
 			::devel/desktop-file-utils
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			startup-notification-1:startup-notification->=0.10:devel/startup-notification \
-			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
+			startup-notification-1:startup-notification->=0.10:devel/startup-notification
 RUN_DEPENDS-finch=	# empty
 LIB_DEPENDS-finch=	${LIB_DEPENDS} \
-			${MODPY_LIB_DEPENDS} \
-			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
+			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
 			silc.>=7,silcclient.>=5::devel/silc-toolkit \
@@ -107,10 +104,14 @@ FLAVOR?=
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS-main+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core
-LIB_DEPENDS-finch+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core
+LIB_DEPENDS+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
+		gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+LIB_DEPENDS-main+=	purple:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-finch+=	purple:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
+LIB_DEPENDS-main+=	purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-finch+=	purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 .endif
 
 .if ${FLAVOR:L:Mgtkspell}
