@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.1 2010/07/08 21:06:13 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.2 2010/07/09 15:08:39 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -21,15 +21,17 @@ MODMOZ_RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 MODMOZ_BUILD_DEPENDS =	:libIDL-*:devel/libIDL \
 			:zip->=2.3:archivers/zip
 
-MODMOZ_LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-			nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
-			nss3.>=25,smime3.>=25,softokn3.>=25,ssl3.>=25:nss->=3.12.6:security/nss
+MODMOZ_LIB_DEPENDS =	::x11/gtk+2 \
+			:nspr->=4.8:devel/nspr \
+			:nss->=3.12.6:security/nss
 
 MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread pthread-stubs sndio stdc++ xcb \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
+		nspr4.>=21 nss3.>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 plc4.>=21 plds4.>=21 png pthread pthread-stubs \
+		smime3.>=25 sndio softokn3.>=25 ssl3.>=25 stdc++ xcb \
 		xcb-render xcb-render-util z
 
 WANTLIB +=	${MODMOZ_WANTLIB}
