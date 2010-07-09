@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/03/20 16:44:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/09 15:40:35 ajacoutot Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		sysutils
 
