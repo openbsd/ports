@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/06/12 12:15:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/09 08:45:11 naddy Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 LLVM_V =	2.7
 DISTNAME =	llvm-${LLVM_V}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	devel
 
