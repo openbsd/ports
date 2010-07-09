@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/09 23:45:19 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/09 08:12:27 sthen Exp $
 
 COMMENT =		blinkensisters - hunt for the lost pixels
 
 V =			0.5.3
 DISTNAME =		LostPixels-${V}-source-with-addons
-PKGNAME =		lostpixels-${V}p0
+PKGNAME =		lostpixels-${V}p1
 HOMEPAGE =		http://www.blinkensisters.org
 
 CATEGORIES =		games
@@ -18,14 +18,13 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blinkensisters/}
 
 RUN_DEPENDS =		::lang/lua
-LIB_DEPENDS =		SDL_net::devel/sdl-net			\
-			SDL_image::devel/sdl-image		\
-			SDL_mixer::devel/sdl-mixer		\
-			SDL_ttf::devel/sdl-ttf			\
-			::audio/libvorbis
+LIB_DEPENDS =		::devel/sdl-net			\
+			::devel/sdl-image		\
+			::devel/sdl-mixer		\
+			::devel/sdl-ttf
 
-WANTLIB +=		SDL X11 Xau Xdmcp Xext Xrandr Xrender c freetype m
-WANTLIB +=		pthread stdc++
+WANTLIB +=		SDL SDL_image SDL_mixer SDL_net SDL_ttf X11 Xau
+WANTLIB +=		Xdmcp Xext Xrandr Xrender c freetype m pthread stdc++
 
 USE_X11 =		Yes
 USE_GMAKE =		Yes
