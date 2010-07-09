@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/28 21:25:28 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/09 16:38:58 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
 VERSION=		1.9.2.6
-#PATCHLEVEL=		p1
+PATCHLEVEL=		p0
 DIRECTORY=		xulrunner1.9
+# needed for mozilla.port.mk
+MOZILLA_PROJECT=	xulrunner1.9
 DISTNAME=		mozilla-1.9.2
 DISTFILES=		firefox-3.6.6.source.tar.bz2
 
@@ -43,7 +45,7 @@ WANTLIB-main+=		sndio
 
 MOB=			${WRKSRC}/dist/bin
 MOZ=			${PREFIX}/${DIRECTORY}
-SUBST_VARS+=		DIRECTORY
+SUBST_VARS+=		DIRECTORY MOZILLA_PROJECT
 
 DATADIRS=		chrome components defaults dictionaries greprefs \
 			icons modules plugins res
