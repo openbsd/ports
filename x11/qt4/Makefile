@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/06/21 16:40:52 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2010/07/09 18:48:22 naddy Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -12,13 +12,13 @@ COMMENT-sqlite =	sqlite plugin for qt4
 COMMENT-tds =		tds plugin for qt4
 
 PKGNAME =		qt4-${VERSION}
-PKGNAME-mysql =		qt4-mysql-${PKGVERSION}
-PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}
-PKGNAME-examples =	qt4-examples-${PKGVERSION}
-PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
-PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
-PKGNAME-tds =		qt4-tds-${PKGVERSION}
-PKGNAME-main =		qt4-${VERSION}
+PKGNAME-mysql =		qt4-mysql-${PKGVERSION}p0
+PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}p0
+PKGNAME-examples =	qt4-examples-${PKGVERSION}p0
+PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}p0
+PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}p0
+PKGNAME-tds =		qt4-tds-${PKGVERSION}p0
+PKGNAME-main =		qt4-${VERSION}p0
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
