@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/09 16:46:50 sebastia Exp $
+%%SHARED%%
+lib/tkpng0.9/
+lib/tkpng0.9/pkgIndex.tcl
+share/doc/tkpng/
+share/doc/tkpng/README
+share/doc/tkpng/license.terms

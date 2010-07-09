@@ -1,0 +1,8 @@
+TkPNG provides support for PNG image manipulation with Tcl/Tk
+and does not depend on libpng.
+
+TkPNG supports the full range of color types, channels and bit depths
+from 1 bit black & white to 16 bit per channel full color with alpha
+(64 bit RGBA) and interlacing.  Ancillary "chunks" such as gamma,
+color profile and text fields are ignored, although they are checked
+at a minimum for correct CRC.
