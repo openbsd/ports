@@ -1,682 +1,682 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/04/03 09:30:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/07/09 15:39:00 landry Exp $
 @pkgpath www/seamonkey,-main
-bin/seamonkey
-@man man/man1/seamonkey.1
-seamonkey/
-seamonkey/README.OpenBSD
-seamonkey/application.ini
-seamonkey/chrome/
-seamonkey/chrome/classic.jar
-seamonkey/chrome/classic.manifest
-seamonkey/chrome/comm.jar
-seamonkey/chrome/comm.manifest
-seamonkey/chrome/en-US.jar
-seamonkey/chrome/en-US.manifest
-seamonkey/chrome/gloda.jar
-seamonkey/chrome/gloda.manifest
-seamonkey/chrome/icons/
-seamonkey/chrome/icons/default/
-seamonkey/chrome/icons/default/JSConsoleWindow.png
-seamonkey/chrome/icons/default/JSConsoleWindow16.png
-seamonkey/chrome/icons/default/JSConsoleWindow48.png
-seamonkey/chrome/icons/default/abcardWindow.png
-seamonkey/chrome/icons/default/abcardWindow16.png
-seamonkey/chrome/icons/default/abcardWindow48.png
-seamonkey/chrome/icons/default/ablistWindow.png
-seamonkey/chrome/icons/default/ablistWindow16.png
-seamonkey/chrome/icons/default/ablistWindow48.png
-seamonkey/chrome/icons/default/addressbookWindow.png
-seamonkey/chrome/icons/default/addressbookWindow16.png
-seamonkey/chrome/icons/default/addressbookWindow48.png
-seamonkey/chrome/icons/default/bmPropsWindow.png
-seamonkey/chrome/icons/default/bmPropsWindow16.png
-seamonkey/chrome/icons/default/bmPropsWindow48.png
-seamonkey/chrome/icons/default/bookmark-window.png
-seamonkey/chrome/icons/default/bookmark-window16.png
-seamonkey/chrome/icons/default/bookmark-window48.png
-seamonkey/chrome/icons/default/default.png
-seamonkey/chrome/icons/default/default16.png
-seamonkey/chrome/icons/default/default48.png
-seamonkey/chrome/icons/default/downloadManager.png
-seamonkey/chrome/icons/default/downloadManager16.png
-seamonkey/chrome/icons/default/downloadManager48.png
-seamonkey/chrome/icons/default/editorWindow.png
-seamonkey/chrome/icons/default/editorWindow16.png
-seamonkey/chrome/icons/default/editorWindow48.png
-seamonkey/chrome/icons/default/findBookmarkWindow.png
-seamonkey/chrome/icons/default/findBookmarkWindow16.png
-seamonkey/chrome/icons/default/findBookmarkWindow48.png
-seamonkey/chrome/icons/default/findHistoryWindow.png
-seamonkey/chrome/icons/default/findHistoryWindow16.png
-seamonkey/chrome/icons/default/findHistoryWindow48.png
-seamonkey/chrome/icons/default/history-window.png
-seamonkey/chrome/icons/default/history-window16.png
-seamonkey/chrome/icons/default/history-window48.png
-seamonkey/chrome/icons/default/main-window.png
-seamonkey/chrome/icons/default/main-window16.png
-seamonkey/chrome/icons/default/main-window48.png
-seamonkey/chrome/icons/default/messengerWindow.png
-seamonkey/chrome/icons/default/messengerWindow16.png
-seamonkey/chrome/icons/default/messengerWindow48.png
-seamonkey/chrome/icons/default/msgcomposeWindow.png
-seamonkey/chrome/icons/default/msgcomposeWindow16.png
-seamonkey/chrome/icons/default/msgcomposeWindow48.png
-seamonkey/chrome/icons/default/seamonkey.png
-seamonkey/chrome/icons/default/venkman-window.png
-seamonkey/chrome/icons/default/venkman-window16.png
-seamonkey/chrome/icons/default/venkman-window48.png
-seamonkey/chrome/messenger.jar
-seamonkey/chrome/messenger.manifest
-seamonkey/chrome/newsblog.jar
-seamonkey/chrome/newsblog.manifest
-seamonkey/chrome/pippki.jar
-seamonkey/chrome/pippki.manifest
-seamonkey/chrome/reporter.jar
-seamonkey/chrome/reporter.manifest
-seamonkey/chrome/toolkit.jar
-seamonkey/chrome/toolkit.manifest
-seamonkey/components/
-seamonkey/components/FeedConverter.js
-seamonkey/components/FeedProcessor.js
-seamonkey/components/FeedWriter.js
-seamonkey/components/NetworkGeolocationProvider.js
-seamonkey/components/WebContentConverter.js
-seamonkey/components/accessibility.xpt
-seamonkey/components/addrbook.xpt
-seamonkey/components/alerts.xpt
-seamonkey/components/appshell.xpt
-seamonkey/components/appstartup.xpt
-seamonkey/components/autocomplete.xpt
-seamonkey/components/autoconfig.xpt
-seamonkey/components/caps.xpt
-seamonkey/components/chardet.xpt
-seamonkey/components/chrome.xpt
-seamonkey/components/commandhandler.xpt
-seamonkey/components/commandlines.xpt
-seamonkey/components/composer.xpt
-seamonkey/components/content_base.xpt
-seamonkey/components/content_html.xpt
-seamonkey/components/content_htmldoc.xpt
-seamonkey/components/content_xmldoc.xpt
-seamonkey/components/content_xslt.xpt
-seamonkey/components/content_xtf.xpt
-seamonkey/components/contentprefs.xpt
-seamonkey/components/cookie.xpt
-seamonkey/components/directory.xpt
-seamonkey/components/docshell.xpt
-seamonkey/components/dom.xpt
-seamonkey/components/dom_base.xpt
-seamonkey/components/dom_canvas.xpt
-seamonkey/components/dom_core.xpt
-seamonkey/components/dom_css.xpt
-seamonkey/components/dom_events.xpt
-seamonkey/components/dom_geolocation.xpt
-seamonkey/components/dom_html.xpt
-seamonkey/components/dom_json.xpt
-seamonkey/components/dom_loadsave.xpt
-seamonkey/components/dom_offline.xpt
-seamonkey/components/dom_range.xpt
-seamonkey/components/dom_sidebar.xpt
-seamonkey/components/dom_storage.xpt
-seamonkey/components/dom_stylesheets.xpt
-seamonkey/components/dom_svg.xpt
-seamonkey/components/dom_threads.xpt
-seamonkey/components/dom_traversal.xpt
-seamonkey/components/dom_views.xpt
-seamonkey/components/dom_xbl.xpt
-seamonkey/components/dom_xpath.xpt
-seamonkey/components/dom_xul.xpt
-seamonkey/components/downloads.xpt
-seamonkey/components/editor.xpt
-seamonkey/components/embed_base.xpt
-seamonkey/components/extensions.xpt
-seamonkey/components/exthandler.xpt
-seamonkey/components/exthelper.xpt
-seamonkey/components/fastfind.xpt
-seamonkey/components/feeds.xpt
-seamonkey/components/filepicker.xpt
-seamonkey/components/find.xpt
-seamonkey/components/fts3tok.xpt
-seamonkey/components/gfx.xpt
-seamonkey/components/glautocomp.js
-seamonkey/components/htmlparser.xpt
-seamonkey/components/imgicon.xpt
-seamonkey/components/imglib2.xpt
-seamonkey/components/impComm4xMail.xpt
-seamonkey/components/import.xpt
-seamonkey/components/inspector.xpt
-seamonkey/components/intl.xpt
-seamonkey/components/jar.xpt
-seamonkey/components/jsconsole-clhandler.js
-seamonkey/components/jsdservice.xpt
-seamonkey/components/jsmimeemitter.js
-seamonkey/components/layout_base.xpt
-seamonkey/components/layout_printing.xpt
-seamonkey/components/layout_xul.xpt
-seamonkey/components/layout_xul_tree.xpt
-@lib seamonkey/components/libaccessibility.so.${LIBaccessibility_VERSION}
-@lib seamonkey/components/libappcomps.so.${LIBappcomps_VERSION}
-@lib seamonkey/components/libauth.so.${LIBauth_VERSION}
-@lib seamonkey/components/libautoconfig.so.${LIBautoconfig_VERSION}
-@lib seamonkey/components/libcaps.so.${LIBcaps_VERSION}
-@lib seamonkey/components/libchardet.so.${LIBchardet_VERSION}
-@lib seamonkey/components/libchrome.so.${LIBchrome_VERSION}
-@lib seamonkey/components/libcommandlines.so.${LIBcommandlines_VERSION}
-@lib seamonkey/components/libcomposer.so.${LIBcomposer_VERSION}
-@lib seamonkey/components/libcookie.so.${LIBcookie_VERSION}
-@lib seamonkey/components/libdocshell.so.${LIBdocshell_VERSION}
-@lib seamonkey/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
-@lib seamonkey/components/libfileview.so.${LIBfileview_VERSION}
-@lib seamonkey/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
-@lib seamonkey/components/libgklayout.so.${LIBgklayout_VERSION}
-@lib seamonkey/components/libgkplugin.so.${LIBgkplugin_VERSION}
-@lib seamonkey/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
-@lib seamonkey/components/libi18n.so.${LIBi18n_VERSION}
-@lib seamonkey/components/libimgicon.so.${LIBimgicon_VERSION}
-@lib seamonkey/components/libimglib2.so.${LIBimglib2_VERSION}
-@lib seamonkey/components/libimport.so.${LIBimport_VERSION}
-@lib seamonkey/components/libintlapp.so.${LIBintlapp_VERSION}
-@lib seamonkey/components/libjar50.so.${LIBjar50_VERSION}
-@lib seamonkey/components/libjsd.so.${LIBjsd_VERSION}
-@lib seamonkey/components/libmail.so.${LIBmail_VERSION}
-@lib seamonkey/components/libmork.so.${LIBmork_VERSION}
-@lib seamonkey/components/libmozfind.so.${LIBmozfind_VERSION}
-@lib seamonkey/components/libmozldap.so.${LIBmozldap_VERSION}
-@lib seamonkey/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
-@lib seamonkey/components/libnecko.so.${LIBnecko_VERSION}
-@lib seamonkey/components/libnsappshell.so.${LIBnsappshell_VERSION}
-@lib seamonkey/components/liboji.so.${LIBoji_VERSION}
-@lib seamonkey/components/libpermissions.so.${LIBpermissions_VERSION}
-@lib seamonkey/components/libpipboot.so.${LIBpipboot_VERSION}
-@lib seamonkey/components/libpipnss.so.${LIBpipnss_VERSION}
-@lib seamonkey/components/libpippki.so.${LIBpippki_VERSION}
-@lib seamonkey/components/libplaces.so.${LIBplaces_VERSION}
-@lib seamonkey/components/libpref.so.${LIBpref_VERSION}
-@lib seamonkey/components/librdf.so.${LIBrdf_VERSION}
-@lib seamonkey/components/libremoteservice.so.${LIBremoteservice_VERSION}
-@lib seamonkey/components/libsatchel.so.${LIBsatchel_VERSION}
-@lib seamonkey/components/libspellchecker.so.${LIBspellchecker_VERSION}
-@lib seamonkey/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
-@lib seamonkey/components/libsuite.so.${LIBsuite_VERSION}
-@lib seamonkey/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
-@lib seamonkey/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
-@lib seamonkey/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
-@lib seamonkey/components/libtxmgr.so.${LIBtxmgr_VERSION}
-@lib seamonkey/components/libuconv.so.${LIBuconv_VERSION}
-@lib seamonkey/components/libucvmath.so.${LIBucvmath_VERSION}
-@lib seamonkey/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
-@lib seamonkey/components/libunixproxy.so.${LIBunixproxy_VERSION}
-@lib seamonkey/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
-@lib seamonkey/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
-@lib seamonkey/components/libwindowds.so.${LIBwindowds_VERSION}
-@lib seamonkey/components/libxpautocomplete.so.${LIBxpautocomplete_VERSION}
-@lib seamonkey/components/libxpconnect.so.${LIBxpconnect_VERSION}
-@lib seamonkey/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib seamonkey/components/libzipwriter.so.${LIBzipwriter_VERSION}
-seamonkey/components/locale.xpt
-seamonkey/components/loginmgr.xpt
-seamonkey/components/lwbrk.xpt
-seamonkey/components/mailview.xpt
-seamonkey/components/mdn-service.js
-seamonkey/components/mime.xpt
-seamonkey/components/mimetype.xpt
-seamonkey/components/mozbrwsr.xpt
-seamonkey/components/mozfind.xpt
-seamonkey/components/mozldap.xpt
-seamonkey/components/msgAsyncPrompter.js
-seamonkey/components/msgbase.xpt
-seamonkey/components/msgcompose.xpt
-seamonkey/components/msgdb.xpt
-seamonkey/components/msgimap.xpt
-seamonkey/components/msglocal.xpt
-seamonkey/components/msgnews.xpt
-seamonkey/components/msgsearch.xpt
-seamonkey/components/msgsmime.xpt
-seamonkey/components/necko.xpt
-seamonkey/components/necko_about.xpt
-seamonkey/components/necko_cache.xpt
-seamonkey/components/necko_cookie.xpt
-seamonkey/components/necko_dns.xpt
-seamonkey/components/necko_file.xpt
-seamonkey/components/necko_ftp.xpt
-seamonkey/components/necko_http.xpt
-seamonkey/components/necko_res.xpt
-seamonkey/components/necko_socket.xpt
-seamonkey/components/necko_strconv.xpt
-seamonkey/components/necko_viewsource.xpt
-seamonkey/components/newsblog.js
-seamonkey/components/nsAbAutoCompleteMyDomain.js
-seamonkey/components/nsAbAutoCompleteSearch.js
-seamonkey/components/nsAbLDAPAttributeMap.js
-seamonkey/components/nsAboutAbout.js
-seamonkey/components/nsAboutCertError.js
-seamonkey/components/nsAboutFeeds.js
-seamonkey/components/nsAboutRights.js
-seamonkey/components/nsAboutSessionRestore.js
-seamonkey/components/nsAddonRepository.js
-seamonkey/components/nsBadCertHandler.js
-seamonkey/components/nsBlocklistService.js
-seamonkey/components/nsBrowserContentHandler.js
-seamonkey/components/nsComposerCmdLineHandler.js
-seamonkey/components/nsContentDispatchChooser.js
-seamonkey/components/nsContentPrefService.js
-seamonkey/components/nsDefaultCLH.js
-seamonkey/components/nsExtensionManager.js
-seamonkey/components/nsFilePicker.js
-seamonkey/components/nsHandlerService.js
-seamonkey/components/nsHelperAppDlg.js
-seamonkey/components/nsLDAPProtocolHandler.js
-seamonkey/components/nsLivemarkService.js
-seamonkey/components/nsLoginInfo.js
-seamonkey/components/nsLoginManager.js
-seamonkey/components/nsLoginManagerPrompter.js
-seamonkey/components/nsMailNewsCommandLineHandler.js
-seamonkey/components/nsMsgTraitService.js
-seamonkey/components/nsPlacesDBFlush.js
-seamonkey/components/nsProgressDialog.js
-seamonkey/components/nsProxyAutoConfig.js
-seamonkey/components/nsSMTPProtocolHandler.js
-seamonkey/components/nsSessionStartup.js
-seamonkey/components/nsSessionStore.js
-seamonkey/components/nsSidebar.js
-seamonkey/components/nsSuiteDownloadManagerUI.js
-seamonkey/components/nsSuiteGlue.js
-seamonkey/components/nsTaggingService.js
-seamonkey/components/nsTryToClose.js
-seamonkey/components/nsTypeAheadFind.js
-seamonkey/components/nsURLFormatter.js
-seamonkey/components/nsUpdateService.js
-seamonkey/components/nsWebHandlerApp.js
-seamonkey/components/offlineStartup.js
-seamonkey/components/oji.xpt
-seamonkey/components/parentalcontrols.xpt
-seamonkey/components/pipboot.xpt
-seamonkey/components/pipnss.xpt
-seamonkey/components/pippki.xpt
-seamonkey/components/places.xpt
-seamonkey/components/plugin.xpt
-seamonkey/components/pluginGlue.js
-seamonkey/components/pref.xpt
-seamonkey/components/prefetch.xpt
-seamonkey/components/profile.xpt
-seamonkey/components/proxyObjInst.xpt
-seamonkey/components/rdf.xpt
-seamonkey/components/satchel.xpt
-seamonkey/components/saxparser.xpt
-seamonkey/components/shellservice.xpt
-seamonkey/components/shistory.xpt
-seamonkey/components/smile.xpt
-seamonkey/components/smileApplication.js
-seamonkey/components/smime-service.js
-seamonkey/components/spellchecker.xpt
-seamonkey/components/storage-Legacy.js
-seamonkey/components/storage-mozStorage.js
-seamonkey/components/storage.xpt
-seamonkey/components/suitebrowser.xpt
-seamonkey/components/suitecommon.xpt
-seamonkey/components/suitefeeds.xpt
-seamonkey/components/suitemigration.xpt
-seamonkey/components/toolkitprofile.xpt
-seamonkey/components/toolkitremote.xpt
-seamonkey/components/txEXSLTRegExFunctions.js
-seamonkey/components/txmgr.xpt
-seamonkey/components/txtsvc.xpt
-seamonkey/components/uconv.xpt
-seamonkey/components/unicharutil.xpt
-seamonkey/components/update.xpt
-seamonkey/components/uriloader.xpt
-seamonkey/components/urlformatter.xpt
-seamonkey/components/webBrowser_core.xpt
-seamonkey/components/webbrowserpersist.xpt
-seamonkey/components/webshell_idls.xpt
-seamonkey/components/widget.xpt
-seamonkey/components/windowds.xpt
-seamonkey/components/windowwatcher.xpt
-seamonkey/components/xpautocomplete.xpt
-seamonkey/components/xpcom_base.xpt
-seamonkey/components/xpcom_components.xpt
-seamonkey/components/xpcom_ds.xpt
-seamonkey/components/xpcom_io.xpt
-seamonkey/components/xpcom_system.xpt
-seamonkey/components/xpcom_threads.xpt
-seamonkey/components/xpcom_xpti.xpt
-seamonkey/components/xpconnect.xpt
-seamonkey/components/xpinstall.xpt
-seamonkey/components/xulapp.xpt
-seamonkey/components/xuldoc.xpt
-seamonkey/components/xultmpl.xpt
-seamonkey/components/zipwriter.xpt
-seamonkey/defaults/
-seamonkey/defaults/autoconfig/
-seamonkey/defaults/autoconfig/platform.js
-seamonkey/defaults/autoconfig/prefcalls.js
-seamonkey/defaults/messenger/
-seamonkey/defaults/messenger/mailViews.dat
-seamonkey/defaults/pref/
-seamonkey/defaults/pref/browser-prefs.js
-seamonkey/defaults/pref/channel-prefs.js
-seamonkey/defaults/pref/composer.js
-seamonkey/defaults/pref/mailnews.js
-seamonkey/defaults/pref/mdn.js
-seamonkey/defaults/pref/reporter.js
-seamonkey/defaults/pref/smime.js
-seamonkey/defaults/pref/suite-l10n.js
-seamonkey/defaults/profile/
-seamonkey/defaults/profile/bookmarks.html
-seamonkey/defaults/profile/chrome/
-seamonkey/defaults/profile/chrome/userChrome-example.css
-seamonkey/defaults/profile/chrome/userContent-example.css
-seamonkey/defaults/profile/localstore.rdf
-seamonkey/defaults/profile/mimeTypes.rdf
-seamonkey/defaults/profile/panels.rdf
-seamonkey/defaults/profile/search.rdf
-seamonkey/dictionaries/
-seamonkey/dictionaries/en-US.aff
-seamonkey/dictionaries/en-US.dic
-seamonkey/extensions/
-seamonkey/extensions/inspector@mozilla.org/
-seamonkey/extensions/inspector@mozilla.org/chrome/
-seamonkey/extensions/inspector@mozilla.org/chrome.manifest
-seamonkey/extensions/inspector@mozilla.org/chrome/inspector.jar
-seamonkey/extensions/inspector@mozilla.org/components/
-seamonkey/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-seamonkey/extensions/inspector@mozilla.org/defaults/
-seamonkey/extensions/inspector@mozilla.org/defaults/preferences/
-seamonkey/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
-seamonkey/extensions/inspector@mozilla.org/install.rdf
-seamonkey/extensions/inspector@mozilla.org/platform/
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
-seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
-seamonkey/extensions/inspector@mozilla.org/platform/OS2/
-seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/
-seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/
-seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/
-seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/winInspectorMain.ico
-seamonkey/extensions/inspector@mozilla.org/platform/WINNT/
-seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/
-seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/
-seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/
-seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/winInspectorMain.ico
-seamonkey/extensions/langpack-be@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome/be.jar
-seamonkey/extensions/langpack-be@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome/ca.jar
-seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome/cs.jar
-seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-de@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome/de.jar
-seamonkey/extensions/langpack-de@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome/es-AR.jar
-seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome/es-ES.jar
-seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome/fr.jar
-seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome/gl.jar
-seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome/hu.jar
-seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-it@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome/it.jar
-seamonkey/extensions/langpack-it@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome/ka.jar
-seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome/lt.jar
-seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome/nb-NO.jar
-seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome/nl.jar
-seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome/pl.jar
-seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome/pt-PT.jar
-seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome/ru.jar
-seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome/sk.jar
-seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome/sv-SE.jar
-seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/
-seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome/
-seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome.manifest
-seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome/tr.jar
-seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/install.rdf
-seamonkey/extensions/modern@themes.mozilla.org/
-seamonkey/extensions/modern@themes.mozilla.org/chrome/
-seamonkey/extensions/modern@themes.mozilla.org/chrome.manifest
-seamonkey/extensions/modern@themes.mozilla.org/chrome/modern.jar
-seamonkey/extensions/modern@themes.mozilla.org/icon.png
-seamonkey/extensions/modern@themes.mozilla.org/install.rdf
-seamonkey/extensions/modern@themes.mozilla.org/preview.png
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome.manifest
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/chatzilla.jar
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.ico
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.xpm
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window16.xpm
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/chatzilla-service.js
-seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/install.rdf
-seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome.manifest
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/venkman.jar
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
-seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
-seamonkey/greprefs/
-seamonkey/greprefs/all.js
-seamonkey/greprefs/security-prefs.js
-seamonkey/greprefs/xpinstall.js
-seamonkey/isp/
-seamonkey/isp/SpamAssassin.sfd
-seamonkey/isp/SpamPal.sfd
-seamonkey/isp/movemail.rdf
-seamonkey/isp/rss.rdf
-@lib seamonkey/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
-@lib seamonkey/libgkgfx.so.${LIBgkgfx_VERSION}
-@lib seamonkey/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
-@lib seamonkey/libjsj.so.${LIBjsj_VERSION}
-@lib seamonkey/libldap60.so.${LIBldap60_VERSION}
-@lib seamonkey/libldif60.so.${LIBldif60_VERSION}
-@lib seamonkey/libmozjs.so.${LIBmozjs_VERSION}
-@lib seamonkey/libprldap60.so.${LIBprldap60_VERSION}
-@lib seamonkey/libsqlite3.so.${LIBsqlite3_VERSION}
-@lib seamonkey/libssldap60.so.${LIBssldap60_VERSION}
-@lib seamonkey/libthebes.so.${LIBthebes_VERSION}
-@lib seamonkey/libxpcom.so.${LIBxpcom_VERSION}
-@lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
-@lib seamonkey/libxul.so.${LIBxul_VERSION}
-seamonkey/modules/
-seamonkey/modules/DownloadLastDir.jsm
-seamonkey/modules/DownloadUtils.jsm
-seamonkey/modules/ISO8601DateUtils.jsm
-seamonkey/modules/MailUtils.js
-seamonkey/modules/Microformats.js
-seamonkey/modules/PlacesDBUtils.jsm
-seamonkey/modules/PluralForm.jsm
-seamonkey/modules/Sanitizer.jsm
-seamonkey/modules/SpatialNavigation.js
-seamonkey/modules/StringBundle.js
-seamonkey/modules/WindowDraggingUtils.jsm
-seamonkey/modules/XPCOMUtils.jsm
-seamonkey/modules/autoconfigUtils.jsm
-seamonkey/modules/debug.js
-seamonkey/modules/errUtils.js
-seamonkey/modules/folderUtils.jsm
-seamonkey/modules/gloda/
-seamonkey/modules/gloda/collection.js
-seamonkey/modules/gloda/connotent.js
-seamonkey/modules/gloda/databind.js
-seamonkey/modules/gloda/datamodel.js
-seamonkey/modules/gloda/datastore.js
-seamonkey/modules/gloda/dbview.js
-seamonkey/modules/gloda/everybody.js
-seamonkey/modules/gloda/explattr.js
-seamonkey/modules/gloda/facet.js
-seamonkey/modules/gloda/fundattr.js
-seamonkey/modules/gloda/gloda.js
-seamonkey/modules/gloda/index_ab.js
-seamonkey/modules/gloda/index_msg.js
-seamonkey/modules/gloda/indexer.js
-seamonkey/modules/gloda/log4moz.js
-seamonkey/modules/gloda/mimeTypeCategories.js
-seamonkey/modules/gloda/mimemsg.js
-seamonkey/modules/gloda/msg_search.js
-seamonkey/modules/gloda/noun_freetag.js
-seamonkey/modules/gloda/noun_mimetype.js
-seamonkey/modules/gloda/noun_tag.js
-seamonkey/modules/gloda/public.js
-seamonkey/modules/gloda/query.js
-seamonkey/modules/gloda/suffixtree.js
-seamonkey/modules/gloda/utils.js
-seamonkey/modules/iteratorUtils.jsm
-seamonkey/modules/jsTreeSelection.js
-seamonkey/modules/templateUtils.js
-seamonkey/modules/traceHelper.js
-seamonkey/modules/utils.js
-seamonkey/modules/virtualFolderWrapper.js
-@bin seamonkey/mozilla-xremote-client
-seamonkey/platform.ini
-seamonkey/plugins/
-@lib seamonkey/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
-@lib seamonkey/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-@bin seamonkey/regxpcom
-seamonkey/res/
-seamonkey/res/EditorOverride.css
-seamonkey/res/arrow.gif
-seamonkey/res/arrowd.gif
-seamonkey/res/broken-image.gif
-seamonkey/res/charsetData.properties
-seamonkey/res/charsetalias.properties
-seamonkey/res/contenteditable.css
-seamonkey/res/designmode.css
-seamonkey/res/dtd/
-seamonkey/res/dtd/mathml.dtd
-seamonkey/res/dtd/xhtml11.dtd
-seamonkey/res/entityTables/
-seamonkey/res/entityTables/html40Latin1.properties
-seamonkey/res/entityTables/html40Special.properties
-seamonkey/res/entityTables/html40Symbols.properties
-seamonkey/res/entityTables/htmlEntityVersions.properties
-seamonkey/res/entityTables/mathml20.properties
-seamonkey/res/entityTables/transliterate.properties
-seamonkey/res/fonts/
-seamonkey/res/fonts/mathfont.properties
-seamonkey/res/fonts/mathfontSTIXNonUnicode.properties
-seamonkey/res/fonts/mathfontSTIXSize1.properties
-seamonkey/res/fonts/mathfontStandardSymbolsL.properties
-seamonkey/res/fonts/mathfontUnicode.properties
-seamonkey/res/forms.css
-seamonkey/res/grabber.gif
-seamonkey/res/hiddenWindow.html
-seamonkey/res/html/
-seamonkey/res/html.css
-seamonkey/res/html/folder.png
-seamonkey/res/langGroups.properties
-seamonkey/res/language.properties
-seamonkey/res/loading-image.gif
-seamonkey/res/mathml.css
-seamonkey/res/quirk.css
-seamonkey/res/svg.css
-seamonkey/res/table-add-column-after-active.gif
-seamonkey/res/table-add-column-after-hover.gif
-seamonkey/res/table-add-column-after.gif
-seamonkey/res/table-add-column-before-active.gif
-seamonkey/res/table-add-column-before-hover.gif
-seamonkey/res/table-add-column-before.gif
-seamonkey/res/table-add-row-after-active.gif
-seamonkey/res/table-add-row-after-hover.gif
-seamonkey/res/table-add-row-after.gif
-seamonkey/res/table-add-row-before-active.gif
-seamonkey/res/table-add-row-before-hover.gif
-seamonkey/res/table-add-row-before.gif
-seamonkey/res/table-remove-column-active.gif
-seamonkey/res/table-remove-column-hover.gif
-seamonkey/res/table-remove-column.gif
-seamonkey/res/table-remove-row-active.gif
-seamonkey/res/table-remove-row-hover.gif
-seamonkey/res/table-remove-row.gif
-seamonkey/res/ua.css
-seamonkey/res/unixcharset.properties
-seamonkey/res/viewsource.css
-seamonkey/run-mozilla.sh
-@bin seamonkey/seamonkey-bin
-seamonkey/searchplugins/
-seamonkey/searchplugins/dmoz.png
-seamonkey/searchplugins/dmoz.src
-seamonkey/searchplugins/google.png
-seamonkey/searchplugins/google.src
-seamonkey/searchplugins/jeeves.png
-seamonkey/searchplugins/jeeves.src
-share/applications/seamonkey.desktop
+bin/${MOZILLA_PROJECT}
+@man man/man1/${MOZILLA_PROJECT}.1
+${MOZILLA_PROJECT}/
+${MOZILLA_PROJECT}/README.OpenBSD
+${MOZILLA_PROJECT}/application.ini
+${MOZILLA_PROJECT}/chrome/
+${MOZILLA_PROJECT}/chrome/classic.jar
+${MOZILLA_PROJECT}/chrome/classic.manifest
+${MOZILLA_PROJECT}/chrome/comm.jar
+${MOZILLA_PROJECT}/chrome/comm.manifest
+${MOZILLA_PROJECT}/chrome/en-US.jar
+${MOZILLA_PROJECT}/chrome/en-US.manifest
+${MOZILLA_PROJECT}/chrome/gloda.jar
+${MOZILLA_PROJECT}/chrome/gloda.manifest
+${MOZILLA_PROJECT}/chrome/icons/
+${MOZILLA_PROJECT}/chrome/icons/default/
+${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/JSConsoleWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/abcardWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/ablistWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/addressbookWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/bmPropsWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/bmPropsWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/bmPropsWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/bookmark-window.png
+${MOZILLA_PROJECT}/chrome/icons/default/bookmark-window16.png
+${MOZILLA_PROJECT}/chrome/icons/default/bookmark-window48.png
+${MOZILLA_PROJECT}/chrome/icons/default/default.png
+${MOZILLA_PROJECT}/chrome/icons/default/default16.png
+${MOZILLA_PROJECT}/chrome/icons/default/default48.png
+${MOZILLA_PROJECT}/chrome/icons/default/downloadManager.png
+${MOZILLA_PROJECT}/chrome/icons/default/downloadManager16.png
+${MOZILLA_PROJECT}/chrome/icons/default/downloadManager48.png
+${MOZILLA_PROJECT}/chrome/icons/default/editorWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/editorWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/editorWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/findBookmarkWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/findHistoryWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/history-window.png
+${MOZILLA_PROJECT}/chrome/icons/default/history-window16.png
+${MOZILLA_PROJECT}/chrome/icons/default/history-window48.png
+${MOZILLA_PROJECT}/chrome/icons/default/main-window.png
+${MOZILLA_PROJECT}/chrome/icons/default/main-window16.png
+${MOZILLA_PROJECT}/chrome/icons/default/main-window48.png
+${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/messengerWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow.png
+${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow16.png
+${MOZILLA_PROJECT}/chrome/icons/default/msgcomposeWindow48.png
+${MOZILLA_PROJECT}/chrome/icons/default/${MOZILLA_PROJECT}.png
+${MOZILLA_PROJECT}/chrome/icons/default/venkman-window.png
+${MOZILLA_PROJECT}/chrome/icons/default/venkman-window16.png
+${MOZILLA_PROJECT}/chrome/icons/default/venkman-window48.png
+${MOZILLA_PROJECT}/chrome/messenger.jar
+${MOZILLA_PROJECT}/chrome/messenger.manifest
+${MOZILLA_PROJECT}/chrome/newsblog.jar
+${MOZILLA_PROJECT}/chrome/newsblog.manifest
+${MOZILLA_PROJECT}/chrome/pippki.jar
+${MOZILLA_PROJECT}/chrome/pippki.manifest
+${MOZILLA_PROJECT}/chrome/reporter.jar
+${MOZILLA_PROJECT}/chrome/reporter.manifest
+${MOZILLA_PROJECT}/chrome/toolkit.jar
+${MOZILLA_PROJECT}/chrome/toolkit.manifest
+${MOZILLA_PROJECT}/components/
+${MOZILLA_PROJECT}/components/FeedConverter.js
+${MOZILLA_PROJECT}/components/FeedProcessor.js
+${MOZILLA_PROJECT}/components/FeedWriter.js
+${MOZILLA_PROJECT}/components/NetworkGeolocationProvider.js
+${MOZILLA_PROJECT}/components/WebContentConverter.js
+${MOZILLA_PROJECT}/components/accessibility.xpt
+${MOZILLA_PROJECT}/components/addrbook.xpt
+${MOZILLA_PROJECT}/components/alerts.xpt
+${MOZILLA_PROJECT}/components/appshell.xpt
+${MOZILLA_PROJECT}/components/appstartup.xpt
+${MOZILLA_PROJECT}/components/autocomplete.xpt
+${MOZILLA_PROJECT}/components/autoconfig.xpt
+${MOZILLA_PROJECT}/components/caps.xpt
+${MOZILLA_PROJECT}/components/chardet.xpt
+${MOZILLA_PROJECT}/components/chrome.xpt
+${MOZILLA_PROJECT}/components/commandhandler.xpt
+${MOZILLA_PROJECT}/components/commandlines.xpt
+${MOZILLA_PROJECT}/components/composer.xpt
+${MOZILLA_PROJECT}/components/content_base.xpt
+${MOZILLA_PROJECT}/components/content_html.xpt
+${MOZILLA_PROJECT}/components/content_htmldoc.xpt
+${MOZILLA_PROJECT}/components/content_xmldoc.xpt
+${MOZILLA_PROJECT}/components/content_xslt.xpt
+${MOZILLA_PROJECT}/components/content_xtf.xpt
+${MOZILLA_PROJECT}/components/contentprefs.xpt
+${MOZILLA_PROJECT}/components/cookie.xpt
+${MOZILLA_PROJECT}/components/directory.xpt
+${MOZILLA_PROJECT}/components/docshell.xpt
+${MOZILLA_PROJECT}/components/dom.xpt
+${MOZILLA_PROJECT}/components/dom_base.xpt
+${MOZILLA_PROJECT}/components/dom_canvas.xpt
+${MOZILLA_PROJECT}/components/dom_core.xpt
+${MOZILLA_PROJECT}/components/dom_css.xpt
+${MOZILLA_PROJECT}/components/dom_events.xpt
+${MOZILLA_PROJECT}/components/dom_geolocation.xpt
+${MOZILLA_PROJECT}/components/dom_html.xpt
+${MOZILLA_PROJECT}/components/dom_json.xpt
+${MOZILLA_PROJECT}/components/dom_loadsave.xpt
+${MOZILLA_PROJECT}/components/dom_offline.xpt
+${MOZILLA_PROJECT}/components/dom_range.xpt
+${MOZILLA_PROJECT}/components/dom_sidebar.xpt
+${MOZILLA_PROJECT}/components/dom_storage.xpt
+${MOZILLA_PROJECT}/components/dom_stylesheets.xpt
+${MOZILLA_PROJECT}/components/dom_svg.xpt
+${MOZILLA_PROJECT}/components/dom_threads.xpt
+${MOZILLA_PROJECT}/components/dom_traversal.xpt
+${MOZILLA_PROJECT}/components/dom_views.xpt
+${MOZILLA_PROJECT}/components/dom_xbl.xpt
+${MOZILLA_PROJECT}/components/dom_xpath.xpt
+${MOZILLA_PROJECT}/components/dom_xul.xpt
+${MOZILLA_PROJECT}/components/downloads.xpt
+${MOZILLA_PROJECT}/components/editor.xpt
+${MOZILLA_PROJECT}/components/embed_base.xpt
+${MOZILLA_PROJECT}/components/extensions.xpt
+${MOZILLA_PROJECT}/components/exthandler.xpt
+${MOZILLA_PROJECT}/components/exthelper.xpt
+${MOZILLA_PROJECT}/components/fastfind.xpt
+${MOZILLA_PROJECT}/components/feeds.xpt
+${MOZILLA_PROJECT}/components/filepicker.xpt
+${MOZILLA_PROJECT}/components/find.xpt
+${MOZILLA_PROJECT}/components/fts3tok.xpt
+${MOZILLA_PROJECT}/components/gfx.xpt
+${MOZILLA_PROJECT}/components/glautocomp.js
+${MOZILLA_PROJECT}/components/htmlparser.xpt
+${MOZILLA_PROJECT}/components/imgicon.xpt
+${MOZILLA_PROJECT}/components/imglib2.xpt
+${MOZILLA_PROJECT}/components/impComm4xMail.xpt
+${MOZILLA_PROJECT}/components/import.xpt
+${MOZILLA_PROJECT}/components/inspector.xpt
+${MOZILLA_PROJECT}/components/intl.xpt
+${MOZILLA_PROJECT}/components/jar.xpt
+${MOZILLA_PROJECT}/components/jsconsole-clhandler.js
+${MOZILLA_PROJECT}/components/jsdservice.xpt
+${MOZILLA_PROJECT}/components/jsmimeemitter.js
+${MOZILLA_PROJECT}/components/layout_base.xpt
+${MOZILLA_PROJECT}/components/layout_printing.xpt
+${MOZILLA_PROJECT}/components/layout_xul.xpt
+${MOZILLA_PROJECT}/components/layout_xul_tree.xpt
+@lib ${MOZILLA_PROJECT}/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libauth.so.${LIBauth_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcaps.so.${LIBcaps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libchardet.so.${LIBchardet_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libchrome.so.${LIBchrome_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcomposer.so.${LIBcomposer_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcookie.so.${LIBcookie_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libfileview.so.${LIBfileview_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libi18n.so.${LIBi18n_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimgicon.so.${LIBimgicon_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimport.so.${LIBimport_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libintlapp.so.${LIBintlapp_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libjar50.so.${LIBjar50_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libjsd.so.${LIBjsd_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmail.so.${LIBmail_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmork.so.${LIBmork_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmozldap.so.${LIBmozldap_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libnecko.so.${LIBnecko_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib ${MOZILLA_PROJECT}/components/liboji.so.${LIBoji_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpermissions.so.${LIBpermissions_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpippki.so.${LIBpippki_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libplaces.so.${LIBplaces_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpref.so.${LIBpref_VERSION}
+@lib ${MOZILLA_PROJECT}/components/librdf.so.${LIBrdf_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libsatchel.so.${LIBsatchel_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libsuite.so.${LIBsuite_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libuconv.so.${LIBuconv_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libucvmath.so.${LIBucvmath_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libunixproxy.so.${LIBunixproxy_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwindowds.so.${LIBwindowds_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpautocomplete.so.${LIBxpautocomplete_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libzipwriter.so.${LIBzipwriter_VERSION}
+${MOZILLA_PROJECT}/components/locale.xpt
+${MOZILLA_PROJECT}/components/loginmgr.xpt
+${MOZILLA_PROJECT}/components/lwbrk.xpt
+${MOZILLA_PROJECT}/components/mailview.xpt
+${MOZILLA_PROJECT}/components/mdn-service.js
+${MOZILLA_PROJECT}/components/mime.xpt
+${MOZILLA_PROJECT}/components/mimetype.xpt
+${MOZILLA_PROJECT}/components/mozbrwsr.xpt
+${MOZILLA_PROJECT}/components/mozfind.xpt
+${MOZILLA_PROJECT}/components/mozldap.xpt
+${MOZILLA_PROJECT}/components/msgAsyncPrompter.js
+${MOZILLA_PROJECT}/components/msgbase.xpt
+${MOZILLA_PROJECT}/components/msgcompose.xpt
+${MOZILLA_PROJECT}/components/msgdb.xpt
+${MOZILLA_PROJECT}/components/msgimap.xpt
+${MOZILLA_PROJECT}/components/msglocal.xpt
+${MOZILLA_PROJECT}/components/msgnews.xpt
+${MOZILLA_PROJECT}/components/msgsearch.xpt
+${MOZILLA_PROJECT}/components/msgsmime.xpt
+${MOZILLA_PROJECT}/components/necko.xpt
+${MOZILLA_PROJECT}/components/necko_about.xpt
+${MOZILLA_PROJECT}/components/necko_cache.xpt
+${MOZILLA_PROJECT}/components/necko_cookie.xpt
+${MOZILLA_PROJECT}/components/necko_dns.xpt
+${MOZILLA_PROJECT}/components/necko_file.xpt
+${MOZILLA_PROJECT}/components/necko_ftp.xpt
+${MOZILLA_PROJECT}/components/necko_http.xpt
+${MOZILLA_PROJECT}/components/necko_res.xpt
+${MOZILLA_PROJECT}/components/necko_socket.xpt
+${MOZILLA_PROJECT}/components/necko_strconv.xpt
+${MOZILLA_PROJECT}/components/necko_viewsource.xpt
+${MOZILLA_PROJECT}/components/newsblog.js
+${MOZILLA_PROJECT}/components/nsAbAutoCompleteMyDomain.js
+${MOZILLA_PROJECT}/components/nsAbAutoCompleteSearch.js
+${MOZILLA_PROJECT}/components/nsAbLDAPAttributeMap.js
+${MOZILLA_PROJECT}/components/nsAboutAbout.js
+${MOZILLA_PROJECT}/components/nsAboutCertError.js
+${MOZILLA_PROJECT}/components/nsAboutFeeds.js
+${MOZILLA_PROJECT}/components/nsAboutRights.js
+${MOZILLA_PROJECT}/components/nsAboutSessionRestore.js
+${MOZILLA_PROJECT}/components/nsAddonRepository.js
+${MOZILLA_PROJECT}/components/nsBadCertHandler.js
+${MOZILLA_PROJECT}/components/nsBlocklistService.js
+${MOZILLA_PROJECT}/components/nsBrowserContentHandler.js
+${MOZILLA_PROJECT}/components/nsComposerCmdLineHandler.js
+${MOZILLA_PROJECT}/components/nsContentDispatchChooser.js
+${MOZILLA_PROJECT}/components/nsContentPrefService.js
+${MOZILLA_PROJECT}/components/nsDefaultCLH.js
+${MOZILLA_PROJECT}/components/nsExtensionManager.js
+${MOZILLA_PROJECT}/components/nsFilePicker.js
+${MOZILLA_PROJECT}/components/nsHandlerService.js
+${MOZILLA_PROJECT}/components/nsHelperAppDlg.js
+${MOZILLA_PROJECT}/components/nsLDAPProtocolHandler.js
+${MOZILLA_PROJECT}/components/nsLivemarkService.js
+${MOZILLA_PROJECT}/components/nsLoginInfo.js
+${MOZILLA_PROJECT}/components/nsLoginManager.js
+${MOZILLA_PROJECT}/components/nsLoginManagerPrompter.js
+${MOZILLA_PROJECT}/components/nsMailNewsCommandLineHandler.js
+${MOZILLA_PROJECT}/components/nsMsgTraitService.js
+${MOZILLA_PROJECT}/components/nsPlacesDBFlush.js
+${MOZILLA_PROJECT}/components/nsProgressDialog.js
+${MOZILLA_PROJECT}/components/nsProxyAutoConfig.js
+${MOZILLA_PROJECT}/components/nsSMTPProtocolHandler.js
+${MOZILLA_PROJECT}/components/nsSessionStartup.js
+${MOZILLA_PROJECT}/components/nsSessionStore.js
+${MOZILLA_PROJECT}/components/nsSidebar.js
+${MOZILLA_PROJECT}/components/nsSuiteDownloadManagerUI.js
+${MOZILLA_PROJECT}/components/nsSuiteGlue.js
+${MOZILLA_PROJECT}/components/nsTaggingService.js
+${MOZILLA_PROJECT}/components/nsTryToClose.js
+${MOZILLA_PROJECT}/components/nsTypeAheadFind.js
+${MOZILLA_PROJECT}/components/nsURLFormatter.js
+${MOZILLA_PROJECT}/components/nsUpdateService.js
+${MOZILLA_PROJECT}/components/nsWebHandlerApp.js
+${MOZILLA_PROJECT}/components/offlineStartup.js
+${MOZILLA_PROJECT}/components/oji.xpt
+${MOZILLA_PROJECT}/components/parentalcontrols.xpt
+${MOZILLA_PROJECT}/components/pipboot.xpt
+${MOZILLA_PROJECT}/components/pipnss.xpt
+${MOZILLA_PROJECT}/components/pippki.xpt
+${MOZILLA_PROJECT}/components/places.xpt
+${MOZILLA_PROJECT}/components/plugin.xpt
+${MOZILLA_PROJECT}/components/pluginGlue.js
+${MOZILLA_PROJECT}/components/pref.xpt
+${MOZILLA_PROJECT}/components/prefetch.xpt
+${MOZILLA_PROJECT}/components/profile.xpt
+${MOZILLA_PROJECT}/components/proxyObjInst.xpt
+${MOZILLA_PROJECT}/components/rdf.xpt
+${MOZILLA_PROJECT}/components/satchel.xpt
+${MOZILLA_PROJECT}/components/saxparser.xpt
+${MOZILLA_PROJECT}/components/shellservice.xpt
+${MOZILLA_PROJECT}/components/shistory.xpt
+${MOZILLA_PROJECT}/components/smile.xpt
+${MOZILLA_PROJECT}/components/smileApplication.js
+${MOZILLA_PROJECT}/components/smime-service.js
+${MOZILLA_PROJECT}/components/spellchecker.xpt
+${MOZILLA_PROJECT}/components/storage-Legacy.js
+${MOZILLA_PROJECT}/components/storage-mozStorage.js
+${MOZILLA_PROJECT}/components/storage.xpt
+${MOZILLA_PROJECT}/components/suitebrowser.xpt
+${MOZILLA_PROJECT}/components/suitecommon.xpt
+${MOZILLA_PROJECT}/components/suitefeeds.xpt
+${MOZILLA_PROJECT}/components/suitemigration.xpt
+${MOZILLA_PROJECT}/components/toolkitprofile.xpt
+${MOZILLA_PROJECT}/components/toolkitremote.xpt
+${MOZILLA_PROJECT}/components/txEXSLTRegExFunctions.js
+${MOZILLA_PROJECT}/components/txmgr.xpt
+${MOZILLA_PROJECT}/components/txtsvc.xpt
+${MOZILLA_PROJECT}/components/uconv.xpt
+${MOZILLA_PROJECT}/components/unicharutil.xpt
+${MOZILLA_PROJECT}/components/update.xpt
+${MOZILLA_PROJECT}/components/uriloader.xpt
+${MOZILLA_PROJECT}/components/urlformatter.xpt
+${MOZILLA_PROJECT}/components/webBrowser_core.xpt
+${MOZILLA_PROJECT}/components/webbrowserpersist.xpt
+${MOZILLA_PROJECT}/components/webshell_idls.xpt
+${MOZILLA_PROJECT}/components/widget.xpt
+${MOZILLA_PROJECT}/components/windowds.xpt
+${MOZILLA_PROJECT}/components/windowwatcher.xpt
+${MOZILLA_PROJECT}/components/xpautocomplete.xpt
+${MOZILLA_PROJECT}/components/xpcom_base.xpt
+${MOZILLA_PROJECT}/components/xpcom_components.xpt
+${MOZILLA_PROJECT}/components/xpcom_ds.xpt
+${MOZILLA_PROJECT}/components/xpcom_io.xpt
+${MOZILLA_PROJECT}/components/xpcom_system.xpt
+${MOZILLA_PROJECT}/components/xpcom_threads.xpt
+${MOZILLA_PROJECT}/components/xpcom_xpti.xpt
+${MOZILLA_PROJECT}/components/xpconnect.xpt
+${MOZILLA_PROJECT}/components/xpinstall.xpt
+${MOZILLA_PROJECT}/components/xulapp.xpt
+${MOZILLA_PROJECT}/components/xuldoc.xpt
+${MOZILLA_PROJECT}/components/xultmpl.xpt
+${MOZILLA_PROJECT}/components/zipwriter.xpt
+${MOZILLA_PROJECT}/defaults/
+${MOZILLA_PROJECT}/defaults/autoconfig/
+${MOZILLA_PROJECT}/defaults/autoconfig/platform.js
+${MOZILLA_PROJECT}/defaults/autoconfig/prefcalls.js
+${MOZILLA_PROJECT}/defaults/messenger/
+${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
+${MOZILLA_PROJECT}/defaults/pref/
+${MOZILLA_PROJECT}/defaults/pref/browser-prefs.js
+${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
+${MOZILLA_PROJECT}/defaults/pref/composer.js
+${MOZILLA_PROJECT}/defaults/pref/mailnews.js
+${MOZILLA_PROJECT}/defaults/pref/mdn.js
+${MOZILLA_PROJECT}/defaults/pref/reporter.js
+${MOZILLA_PROJECT}/defaults/pref/smime.js
+${MOZILLA_PROJECT}/defaults/pref/suite-l10n.js
+${MOZILLA_PROJECT}/defaults/profile/
+${MOZILLA_PROJECT}/defaults/profile/bookmarks.html
+${MOZILLA_PROJECT}/defaults/profile/chrome/
+${MOZILLA_PROJECT}/defaults/profile/chrome/userChrome-example.css
+${MOZILLA_PROJECT}/defaults/profile/chrome/userContent-example.css
+${MOZILLA_PROJECT}/defaults/profile/localstore.rdf
+${MOZILLA_PROJECT}/defaults/profile/mimeTypes.rdf
+${MOZILLA_PROJECT}/defaults/profile/panels.rdf
+${MOZILLA_PROJECT}/defaults/profile/search.rdf
+${MOZILLA_PROJECT}/dictionaries/
+${MOZILLA_PROJECT}/dictionaries/en-US.aff
+${MOZILLA_PROJECT}/dictionaries/en-US.dic
+${MOZILLA_PROJECT}/extensions/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/chrome/inspector.jar
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/components/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/components/inspector-cmdline.js
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/defaults/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/defaults/preferences/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/chrome/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/OS2/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/OS2/chrome/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/winInspectorMain.ico
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/WINNT/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/WINNT/chrome/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/
+${MOZILLA_PROJECT}/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/winInspectorMain.ico
+${MOZILLA_PROJECT}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org/chrome/be.jar
+${MOZILLA_PROJECT}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org/chrome/ca.jar
+${MOZILLA_PROJECT}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org/chrome/cs.jar
+${MOZILLA_PROJECT}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org/chrome/de.jar
+${MOZILLA_PROJECT}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org/chrome/es-AR.jar
+${MOZILLA_PROJECT}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org/chrome/es-ES.jar
+${MOZILLA_PROJECT}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org/chrome/fr.jar
+${MOZILLA_PROJECT}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org/chrome/gl.jar
+${MOZILLA_PROJECT}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org/chrome/hu.jar
+${MOZILLA_PROJECT}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org/chrome/it.jar
+${MOZILLA_PROJECT}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-ka@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-ka@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-ka@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-ka@${MOZILLA_PROJECT}.mozilla.org/chrome/ka.jar
+${MOZILLA_PROJECT}/extensions/langpack-ka@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org/chrome/lt.jar
+${MOZILLA_PROJECT}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org/chrome/nb-NO.jar
+${MOZILLA_PROJECT}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org/chrome/nl.jar
+${MOZILLA_PROJECT}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org/chrome/pl.jar
+${MOZILLA_PROJECT}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org/chrome/pt-PT.jar
+${MOZILLA_PROJECT}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org/chrome/ru.jar
+${MOZILLA_PROJECT}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org/chrome/sk.jar
+${MOZILLA_PROJECT}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org/chrome/sv-SE.jar
+${MOZILLA_PROJECT}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org/
+${MOZILLA_PROJECT}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org/chrome/tr.jar
+${MOZILLA_PROJECT}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/chrome/
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/chrome.manifest
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/chrome/modern.jar
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/icon.png
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/install.rdf
+${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org/preview.png
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome.manifest
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/chatzilla.jar
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.ico
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.xpm
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window16.xpm
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/chatzilla-service.js
+${MOZILLA_PROJECT}/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/install.rdf
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome.manifest
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/venkman.jar
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
+${MOZILLA_PROJECT}/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
+${MOZILLA_PROJECT}/greprefs/
+${MOZILLA_PROJECT}/greprefs/all.js
+${MOZILLA_PROJECT}/greprefs/security-prefs.js
+${MOZILLA_PROJECT}/greprefs/xpinstall.js
+${MOZILLA_PROJECT}/isp/
+${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
+${MOZILLA_PROJECT}/isp/SpamPal.sfd
+${MOZILLA_PROJECT}/isp/movemail.rdf
+${MOZILLA_PROJECT}/isp/rss.rdf
+@lib ${MOZILLA_PROJECT}/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib ${MOZILLA_PROJECT}/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib ${MOZILLA_PROJECT}/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib ${MOZILLA_PROJECT}/libjsj.so.${LIBjsj_VERSION}
+@lib ${MOZILLA_PROJECT}/libldap60.so.${LIBldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
+@lib ${MOZILLA_PROJECT}/libmozjs.so.${LIBmozjs_VERSION}
+@lib ${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libsqlite3.so.${LIBsqlite3_VERSION}
+@lib ${MOZILLA_PROJECT}/libssldap60.so.${LIBssldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libthebes.so.${LIBthebes_VERSION}
+@lib ${MOZILLA_PROJECT}/libxpcom.so.${LIBxpcom_VERSION}
+@lib ${MOZILLA_PROJECT}/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib ${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
+${MOZILLA_PROJECT}/modules/
+${MOZILLA_PROJECT}/modules/DownloadLastDir.jsm
+${MOZILLA_PROJECT}/modules/DownloadUtils.jsm
+${MOZILLA_PROJECT}/modules/ISO8601DateUtils.jsm
+${MOZILLA_PROJECT}/modules/MailUtils.js
+${MOZILLA_PROJECT}/modules/Microformats.js
+${MOZILLA_PROJECT}/modules/PlacesDBUtils.jsm
+${MOZILLA_PROJECT}/modules/PluralForm.jsm
+${MOZILLA_PROJECT}/modules/Sanitizer.jsm
+${MOZILLA_PROJECT}/modules/SpatialNavigation.js
+${MOZILLA_PROJECT}/modules/StringBundle.js
+${MOZILLA_PROJECT}/modules/WindowDraggingUtils.jsm
+${MOZILLA_PROJECT}/modules/XPCOMUtils.jsm
+${MOZILLA_PROJECT}/modules/autoconfigUtils.jsm
+${MOZILLA_PROJECT}/modules/debug.js
+${MOZILLA_PROJECT}/modules/errUtils.js
+${MOZILLA_PROJECT}/modules/folderUtils.jsm
+${MOZILLA_PROJECT}/modules/gloda/
+${MOZILLA_PROJECT}/modules/gloda/collection.js
+${MOZILLA_PROJECT}/modules/gloda/connotent.js
+${MOZILLA_PROJECT}/modules/gloda/databind.js
+${MOZILLA_PROJECT}/modules/gloda/datamodel.js
+${MOZILLA_PROJECT}/modules/gloda/datastore.js
+${MOZILLA_PROJECT}/modules/gloda/dbview.js
+${MOZILLA_PROJECT}/modules/gloda/everybody.js
+${MOZILLA_PROJECT}/modules/gloda/explattr.js
+${MOZILLA_PROJECT}/modules/gloda/facet.js
+${MOZILLA_PROJECT}/modules/gloda/fundattr.js
+${MOZILLA_PROJECT}/modules/gloda/gloda.js
+${MOZILLA_PROJECT}/modules/gloda/index_ab.js
+${MOZILLA_PROJECT}/modules/gloda/index_msg.js
+${MOZILLA_PROJECT}/modules/gloda/indexer.js
+${MOZILLA_PROJECT}/modules/gloda/log4moz.js
+${MOZILLA_PROJECT}/modules/gloda/mimeTypeCategories.js
+${MOZILLA_PROJECT}/modules/gloda/mimemsg.js
+${MOZILLA_PROJECT}/modules/gloda/msg_search.js
+${MOZILLA_PROJECT}/modules/gloda/noun_freetag.js
+${MOZILLA_PROJECT}/modules/gloda/noun_mimetype.js
+${MOZILLA_PROJECT}/modules/gloda/noun_tag.js
+${MOZILLA_PROJECT}/modules/gloda/public.js
+${MOZILLA_PROJECT}/modules/gloda/query.js
+${MOZILLA_PROJECT}/modules/gloda/suffixtree.js
+${MOZILLA_PROJECT}/modules/gloda/utils.js
+${MOZILLA_PROJECT}/modules/iteratorUtils.jsm
+${MOZILLA_PROJECT}/modules/jsTreeSelection.js
+${MOZILLA_PROJECT}/modules/templateUtils.js
+${MOZILLA_PROJECT}/modules/traceHelper.js
+${MOZILLA_PROJECT}/modules/utils.js
+${MOZILLA_PROJECT}/modules/virtualFolderWrapper.js
+@bin ${MOZILLA_PROJECT}/mozilla-xremote-client
+${MOZILLA_PROJECT}/platform.ini
+${MOZILLA_PROJECT}/plugins/
+@lib ${MOZILLA_PROJECT}/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib ${MOZILLA_PROJECT}/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
+@bin ${MOZILLA_PROJECT}/regxpcom
+${MOZILLA_PROJECT}/res/
+${MOZILLA_PROJECT}/res/EditorOverride.css
+${MOZILLA_PROJECT}/res/arrow.gif
+${MOZILLA_PROJECT}/res/arrowd.gif
+${MOZILLA_PROJECT}/res/broken-image.gif
+${MOZILLA_PROJECT}/res/charsetData.properties
+${MOZILLA_PROJECT}/res/charsetalias.properties
+${MOZILLA_PROJECT}/res/contenteditable.css
+${MOZILLA_PROJECT}/res/designmode.css
+${MOZILLA_PROJECT}/res/dtd/
+${MOZILLA_PROJECT}/res/dtd/mathml.dtd
+${MOZILLA_PROJECT}/res/dtd/xhtml11.dtd
+${MOZILLA_PROJECT}/res/entityTables/
+${MOZILLA_PROJECT}/res/entityTables/html40Latin1.properties
+${MOZILLA_PROJECT}/res/entityTables/html40Special.properties
+${MOZILLA_PROJECT}/res/entityTables/html40Symbols.properties
+${MOZILLA_PROJECT}/res/entityTables/htmlEntityVersions.properties
+${MOZILLA_PROJECT}/res/entityTables/mathml20.properties
+${MOZILLA_PROJECT}/res/entityTables/transliterate.properties
+${MOZILLA_PROJECT}/res/fonts/
+${MOZILLA_PROJECT}/res/fonts/mathfont.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontSTIXNonUnicode.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontSTIXSize1.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontStandardSymbolsL.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontUnicode.properties
+${MOZILLA_PROJECT}/res/forms.css
+${MOZILLA_PROJECT}/res/grabber.gif
+${MOZILLA_PROJECT}/res/hiddenWindow.html
+${MOZILLA_PROJECT}/res/html/
+${MOZILLA_PROJECT}/res/html.css
+${MOZILLA_PROJECT}/res/html/folder.png
+${MOZILLA_PROJECT}/res/langGroups.properties
+${MOZILLA_PROJECT}/res/language.properties
+${MOZILLA_PROJECT}/res/loading-image.gif
+${MOZILLA_PROJECT}/res/mathml.css
+${MOZILLA_PROJECT}/res/quirk.css
+${MOZILLA_PROJECT}/res/svg.css
+${MOZILLA_PROJECT}/res/table-add-column-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-after.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-before.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-after.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-before.gif
+${MOZILLA_PROJECT}/res/table-remove-column-active.gif
+${MOZILLA_PROJECT}/res/table-remove-column-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-column.gif
+${MOZILLA_PROJECT}/res/table-remove-row-active.gif
+${MOZILLA_PROJECT}/res/table-remove-row-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-row.gif
+${MOZILLA_PROJECT}/res/ua.css
+${MOZILLA_PROJECT}/res/unixcharset.properties
+${MOZILLA_PROJECT}/res/viewsource.css
+${MOZILLA_PROJECT}/run-mozilla.sh
+@bin ${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+${MOZILLA_PROJECT}/searchplugins/
+${MOZILLA_PROJECT}/searchplugins/dmoz.png
+${MOZILLA_PROJECT}/searchplugins/dmoz.src
+${MOZILLA_PROJECT}/searchplugins/google.png
+${MOZILLA_PROJECT}/searchplugins/google.src
+${MOZILLA_PROJECT}/searchplugins/jeeves.png
+${MOZILLA_PROJECT}/searchplugins/jeeves.src
+share/applications/${MOZILLA_PROJECT}.desktop
 @exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/seamonkey/chrome/chrome.rdf
 @unexec rm -f %D/seamonkey/chrome/overlays.rdf
