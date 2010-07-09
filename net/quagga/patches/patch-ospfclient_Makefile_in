@@ -1,13 +1,13 @@
-$OpenBSD: patch-ospfclient_Makefile_in,v 1.5 2009/05/12 12:18:04 sthen Exp $
---- ospfclient/Makefile.in.orig	Fri May  8 23:16:06 2009
-+++ ospfclient/Makefile.in	Sun May 10 12:38:00 2009
-@@ -109,7 +109,8 @@ CPP = @CPP@
- CPPFLAGS = @CPPFLAGS@
- CURSES = @CURSES@
+$OpenBSD: patch-ospfclient_Makefile_in,v 1.6 2010/07/09 11:46:02 sthen Exp $
+--- ospfclient/Makefile.in.orig	Tue Mar  9 10:55:53 2010
++++ ospfclient/Makefile.in	Sun Jun 20 13:58:21 2010
+@@ -109,7 +109,8 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
  CYGPATH_W = @CYGPATH_W@
 -DEFS = @DEFS@
 +DEFS = @DEFS@ -DSYSCONFDIR=\"$(sysconfdir)/\"
 +INSTALL_SDATA = @INSTALL@ -m 600
  DEPDIR = @DEPDIR@
+ DOC = @DOC@
  DSYMUTIL = @DSYMUTIL@
- DUMPBIN = @DUMPBIN@

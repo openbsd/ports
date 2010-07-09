@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/05/12 12:18:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/09 11:46:02 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-0.99.12
+DISTNAME=	quagga-0.99.16
 SHARED_LIBS=    ospf	0.0     \
                 zebra	0.0
 CATEGORIES=	net
@@ -15,11 +15,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c curses m readline termcap
+
+WANTLIB=	c curses m readline termcap
 
 STATEDIR?=	/var/quagga
 SUBST_VARS=	CONFDIR STATEDIR
 
+BUILD_DEPENDS=	::lang/gawk
 USE_GMAKE=	Yes
 CONFDIR=	${SYSCONFDIR}/quagga
 SEPARATE_BUILD=	concurrent
