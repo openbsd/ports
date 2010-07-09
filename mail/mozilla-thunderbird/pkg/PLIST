@@ -1,468 +1,468 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/04/03 09:26:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/07/09 16:55:59 landry Exp $
 bin/thunderbird
-mozilla-thunderbird/
-mozilla-thunderbird/README.OpenBSD
-mozilla-thunderbird/application.ini
-mozilla-thunderbird/chrome/
-mozilla-thunderbird/chrome/classic.jar
-mozilla-thunderbird/chrome/classic.manifest
-mozilla-thunderbird/chrome/comm.jar
-mozilla-thunderbird/chrome/comm.manifest
-mozilla-thunderbird/chrome/en-US.jar
-mozilla-thunderbird/chrome/en-US.manifest
-mozilla-thunderbird/chrome/gloda.jar
-mozilla-thunderbird/chrome/gloda.manifest
-mozilla-thunderbird/chrome/icons/
-mozilla-thunderbird/chrome/icons/default/
-mozilla-thunderbird/chrome/icons/default/default16.png
-mozilla-thunderbird/chrome/icons/default/default22.png
-mozilla-thunderbird/chrome/icons/default/default24.png
-mozilla-thunderbird/chrome/icons/default/default256.png
-mozilla-thunderbird/chrome/icons/default/default32.png
-mozilla-thunderbird/chrome/icons/default/default48.png
-mozilla-thunderbird/chrome/messenger.jar
-mozilla-thunderbird/chrome/messenger.manifest
-mozilla-thunderbird/chrome/newsblog.jar
-mozilla-thunderbird/chrome/newsblog.manifest
-mozilla-thunderbird/chrome/pippki.jar
-mozilla-thunderbird/chrome/pippki.manifest
-mozilla-thunderbird/chrome/toolkit.jar
-mozilla-thunderbird/chrome/toolkit.manifest
-mozilla-thunderbird/components/
-mozilla-thunderbird/components/FeedProcessor.js
-mozilla-thunderbird/components/NetworkGeolocationProvider.js
-mozilla-thunderbird/components/aboutRights.js
-mozilla-thunderbird/components/accessibility.xpt
-mozilla-thunderbird/components/activity.xpt
-mozilla-thunderbird/components/addrbook.xpt
-mozilla-thunderbird/components/alerts.xpt
-mozilla-thunderbird/components/appshell.xpt
-mozilla-thunderbird/components/appstartup.xpt
-mozilla-thunderbird/components/autocomplete.xpt
-mozilla-thunderbird/components/autoconfig.xpt
-mozilla-thunderbird/components/caps.xpt
-mozilla-thunderbird/components/chardet.xpt
-mozilla-thunderbird/components/chrome.xpt
-mozilla-thunderbird/components/commandhandler.xpt
-mozilla-thunderbird/components/commandlines.xpt
-mozilla-thunderbird/components/composer.xpt
-mozilla-thunderbird/components/content_base.xpt
-mozilla-thunderbird/components/content_html.xpt
-mozilla-thunderbird/components/content_htmldoc.xpt
-mozilla-thunderbird/components/content_xmldoc.xpt
-mozilla-thunderbird/components/content_xslt.xpt
-mozilla-thunderbird/components/content_xtf.xpt
-mozilla-thunderbird/components/contentprefs.xpt
-mozilla-thunderbird/components/cookie.xpt
-mozilla-thunderbird/components/docshell.xpt
-mozilla-thunderbird/components/dom.xpt
-mozilla-thunderbird/components/dom_base.xpt
-mozilla-thunderbird/components/dom_canvas.xpt
-mozilla-thunderbird/components/dom_core.xpt
-mozilla-thunderbird/components/dom_css.xpt
-mozilla-thunderbird/components/dom_events.xpt
-mozilla-thunderbird/components/dom_geolocation.xpt
-mozilla-thunderbird/components/dom_html.xpt
-mozilla-thunderbird/components/dom_json.xpt
-mozilla-thunderbird/components/dom_loadsave.xpt
-mozilla-thunderbird/components/dom_offline.xpt
-mozilla-thunderbird/components/dom_range.xpt
-mozilla-thunderbird/components/dom_sidebar.xpt
-mozilla-thunderbird/components/dom_storage.xpt
-mozilla-thunderbird/components/dom_stylesheets.xpt
-mozilla-thunderbird/components/dom_svg.xpt
-mozilla-thunderbird/components/dom_threads.xpt
-mozilla-thunderbird/components/dom_traversal.xpt
-mozilla-thunderbird/components/dom_views.xpt
-mozilla-thunderbird/components/dom_xbl.xpt
-mozilla-thunderbird/components/dom_xpath.xpt
-mozilla-thunderbird/components/dom_xul.xpt
-mozilla-thunderbird/components/downloads.xpt
-mozilla-thunderbird/components/editor.xpt
-mozilla-thunderbird/components/embed_base.xpt
-mozilla-thunderbird/components/extensions.xpt
-mozilla-thunderbird/components/exthandler.xpt
-mozilla-thunderbird/components/exthelper.xpt
-mozilla-thunderbird/components/fastfind.xpt
-mozilla-thunderbird/components/feeds.xpt
-mozilla-thunderbird/components/filepicker.xpt
-mozilla-thunderbird/components/find.xpt
-mozilla-thunderbird/components/fts3tok.xpt
-mozilla-thunderbird/components/gfx.xpt
-mozilla-thunderbird/components/glautocomp.js
-mozilla-thunderbird/components/htmlparser.xpt
-mozilla-thunderbird/components/imgicon.xpt
-mozilla-thunderbird/components/imglib2.xpt
-mozilla-thunderbird/components/impComm4xMail.xpt
-mozilla-thunderbird/components/import.xpt
-mozilla-thunderbird/components/inspector.xpt
-mozilla-thunderbird/components/intl.xpt
-mozilla-thunderbird/components/jar.xpt
-mozilla-thunderbird/components/jsconsole-clhandler.js
-mozilla-thunderbird/components/jsdservice.xpt
-mozilla-thunderbird/components/jsmimeemitter.js
-mozilla-thunderbird/components/layout_base.xpt
-mozilla-thunderbird/components/layout_printing.xpt
-mozilla-thunderbird/components/layout_xul.xpt
-mozilla-thunderbird/components/layout_xul_tree.xpt
-@lib mozilla-thunderbird/components/libaccessibility.so.${LIBaccessibility_VERSION}
-@lib mozilla-thunderbird/components/libappcomps.so.${LIBappcomps_VERSION}
-@lib mozilla-thunderbird/components/libauth.so.${LIBauth_VERSION}
-@lib mozilla-thunderbird/components/libautoconfig.so.${LIBautoconfig_VERSION}
-@lib mozilla-thunderbird/components/libcaps.so.${LIBcaps_VERSION}
-@lib mozilla-thunderbird/components/libchardet.so.${LIBchardet_VERSION}
-@lib mozilla-thunderbird/components/libchrome.so.${LIBchrome_VERSION}
-@lib mozilla-thunderbird/components/libcommandlines.so.${LIBcommandlines_VERSION}
-@lib mozilla-thunderbird/components/libcomposer.so.${LIBcomposer_VERSION}
-@lib mozilla-thunderbird/components/libcookie.so.${LIBcookie_VERSION}
-@lib mozilla-thunderbird/components/libdocshell.so.${LIBdocshell_VERSION}
-@lib mozilla-thunderbird/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
-@lib mozilla-thunderbird/components/libfileview.so.${LIBfileview_VERSION}
-@lib mozilla-thunderbird/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
-@lib mozilla-thunderbird/components/libgklayout.so.${LIBgklayout_VERSION}
-@lib mozilla-thunderbird/components/libgkplugin.so.${LIBgkplugin_VERSION}
-@lib mozilla-thunderbird/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
-@lib mozilla-thunderbird/components/libi18n.so.${LIBi18n_VERSION}
-@lib mozilla-thunderbird/components/libimgicon.so.${LIBimgicon_VERSION}
-@lib mozilla-thunderbird/components/libimglib2.so.${LIBimglib2_VERSION}
-@lib mozilla-thunderbird/components/libimport.so.${LIBimport_VERSION}
-@lib mozilla-thunderbird/components/libintlapp.so.${LIBintlapp_VERSION}
-@lib mozilla-thunderbird/components/libjar50.so.${LIBjar50_VERSION}
-@lib mozilla-thunderbird/components/libjsd.so.${LIBjsd_VERSION}
-@lib mozilla-thunderbird/components/libmail.so.${LIBmail_VERSION}
-@lib mozilla-thunderbird/components/libmailcomps.so.${LIBmailcomps_VERSION}
-@lib mozilla-thunderbird/components/libmork.so.${LIBmork_VERSION}
-@lib mozilla-thunderbird/components/libmozfind.so.${LIBmozfind_VERSION}
-@lib mozilla-thunderbird/components/libmozldap.so.${LIBmozldap_VERSION}
-@lib mozilla-thunderbird/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
-@lib mozilla-thunderbird/components/libnecko.so.${LIBnecko_VERSION}
-@lib mozilla-thunderbird/components/libnsappshell.so.${LIBnsappshell_VERSION}
-@lib mozilla-thunderbird/components/libpermissions.so.${LIBpermissions_VERSION}
-@lib mozilla-thunderbird/components/libpipboot.so.${LIBpipboot_VERSION}
-@lib mozilla-thunderbird/components/libpipnss.so.${LIBpipnss_VERSION}
-@lib mozilla-thunderbird/components/libpippki.so.${LIBpippki_VERSION}
-@lib mozilla-thunderbird/components/libpref.so.${LIBpref_VERSION}
-@lib mozilla-thunderbird/components/librdf.so.${LIBrdf_VERSION}
-@lib mozilla-thunderbird/components/libremoteservice.so.${LIBremoteservice_VERSION}
-@lib mozilla-thunderbird/components/libsatchel.so.${LIBsatchel_VERSION}
-@lib mozilla-thunderbird/components/libspellchecker.so.${LIBspellchecker_VERSION}
-@lib mozilla-thunderbird/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
-@lib mozilla-thunderbird/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
-@lib mozilla-thunderbird/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
-@lib mozilla-thunderbird/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
-@lib mozilla-thunderbird/components/libtxmgr.so.${LIBtxmgr_VERSION}
-@lib mozilla-thunderbird/components/libuconv.so.${LIBuconv_VERSION}
-@lib mozilla-thunderbird/components/libucvmath.so.${LIBucvmath_VERSION}
-@lib mozilla-thunderbird/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
-@lib mozilla-thunderbird/components/libunixproxy.so.${LIBunixproxy_VERSION}
-@lib mozilla-thunderbird/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
-@lib mozilla-thunderbird/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
-@lib mozilla-thunderbird/components/libwindowds.so.${LIBwindowds_VERSION}
-@lib mozilla-thunderbird/components/libxpautocomplete.so.${LIBxpautocomplete_VERSION}
-@lib mozilla-thunderbird/components/libxpconnect.so.${LIBxpconnect_VERSION}
-@lib mozilla-thunderbird/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib mozilla-thunderbird/components/libzipwriter.so.${LIBzipwriter_VERSION}
-mozilla-thunderbird/components/locale.xpt
-mozilla-thunderbird/components/loginmgr.xpt
-mozilla-thunderbird/components/lwbrk.xpt
-mozilla-thunderbird/components/mailContentHandler.js
-mozilla-thunderbird/components/mailprofilemigration.xpt
-mozilla-thunderbird/components/mailview.xpt
-mozilla-thunderbird/components/mdn-service.js
-mozilla-thunderbird/components/mime.xpt
-mozilla-thunderbird/components/mimetype.xpt
-mozilla-thunderbird/components/mozbrwsr.xpt
-mozilla-thunderbird/components/mozfind.xpt
-mozilla-thunderbird/components/mozldap.xpt
-mozilla-thunderbird/components/msgAsyncPrompter.js
-mozilla-thunderbird/components/msgbase.xpt
-mozilla-thunderbird/components/msgcompose.xpt
-mozilla-thunderbird/components/msgdb.xpt
-mozilla-thunderbird/components/msgimap.xpt
-mozilla-thunderbird/components/msglocal.xpt
-mozilla-thunderbird/components/msgnews.xpt
-mozilla-thunderbird/components/msgsearch.xpt
-mozilla-thunderbird/components/msgsmime.xpt
-mozilla-thunderbird/components/necko.xpt
-mozilla-thunderbird/components/necko_about.xpt
-mozilla-thunderbird/components/necko_cache.xpt
-mozilla-thunderbird/components/necko_cookie.xpt
-mozilla-thunderbird/components/necko_dns.xpt
-mozilla-thunderbird/components/necko_file.xpt
-mozilla-thunderbird/components/necko_ftp.xpt
-mozilla-thunderbird/components/necko_http.xpt
-mozilla-thunderbird/components/necko_res.xpt
-mozilla-thunderbird/components/necko_socket.xpt
-mozilla-thunderbird/components/necko_strconv.xpt
-mozilla-thunderbird/components/necko_viewsource.xpt
-mozilla-thunderbird/components/newsblog.js
-mozilla-thunderbird/components/nsAbAutoCompleteMyDomain.js
-mozilla-thunderbird/components/nsAbAutoCompleteSearch.js
-mozilla-thunderbird/components/nsAbLDAPAttributeMap.js
-mozilla-thunderbird/components/nsActivity.js
-mozilla-thunderbird/components/nsActivityManager.js
-mozilla-thunderbird/components/nsActivityManagerUI.js
-mozilla-thunderbird/components/nsAddonRepository.js
-mozilla-thunderbird/components/nsBadCertHandler.js
-mozilla-thunderbird/components/nsBlocklistService.js
-mozilla-thunderbird/components/nsContentDispatchChooser.js
-mozilla-thunderbird/components/nsContentPrefService.js
-mozilla-thunderbird/components/nsDefaultCLH.js
-mozilla-thunderbird/components/nsDownloadManagerUI.js
-mozilla-thunderbird/components/nsExtensionManager.js
-mozilla-thunderbird/components/nsFilePicker.js
-mozilla-thunderbird/components/nsHandlerService.js
-mozilla-thunderbird/components/nsHelperAppDlg.js
-mozilla-thunderbird/components/nsLDAPProtocolHandler.js
-mozilla-thunderbird/components/nsLoginInfo.js
-mozilla-thunderbird/components/nsLoginManager.js
-mozilla-thunderbird/components/nsLoginManagerPrompter.js
-mozilla-thunderbird/components/nsMailDefaultHandler.js
-mozilla-thunderbird/components/nsMailNewsCommandLineHandler.js
-mozilla-thunderbird/components/nsMsgTraitService.js
-mozilla-thunderbird/components/nsPhishingProtectionApplication.js
-mozilla-thunderbird/components/nsProgressDialog.js
-mozilla-thunderbird/components/nsProxyAutoConfig.js
-mozilla-thunderbird/components/nsSMTPProtocolHandler.js
-mozilla-thunderbird/components/nsSetDefaultMail.js
-mozilla-thunderbird/components/nsTryToClose.js
-mozilla-thunderbird/components/nsURLFormatter.js
-mozilla-thunderbird/components/nsUpdateService.js
-mozilla-thunderbird/components/nsUrlClassifierLib.js
-mozilla-thunderbird/components/nsUrlClassifierListManager.js
-mozilla-thunderbird/components/nsWebHandlerApp.js
-mozilla-thunderbird/components/offlineStartup.js
-mozilla-thunderbird/components/parentalcontrols.xpt
-mozilla-thunderbird/components/pipboot.xpt
-mozilla-thunderbird/components/pipnss.xpt
-mozilla-thunderbird/components/pippki.xpt
-mozilla-thunderbird/components/places.xpt
-mozilla-thunderbird/components/plugin.xpt
-mozilla-thunderbird/components/pluginGlue.js
-mozilla-thunderbird/components/pref.xpt
-mozilla-thunderbird/components/prefetch.xpt
-mozilla-thunderbird/components/profile.xpt
-mozilla-thunderbird/components/proxyObjInst.xpt
-mozilla-thunderbird/components/rdf.xpt
-mozilla-thunderbird/components/satchel.xpt
-mozilla-thunderbird/components/saxparser.xpt
-mozilla-thunderbird/components/shellservice.xpt
-mozilla-thunderbird/components/shistory.xpt
-mozilla-thunderbird/components/smime-service.js
-mozilla-thunderbird/components/spellchecker.xpt
-mozilla-thunderbird/components/steel.xpt
-mozilla-thunderbird/components/steelApplication.js
-mozilla-thunderbird/components/storage-Legacy.js
-mozilla-thunderbird/components/storage-mozStorage.js
-mozilla-thunderbird/components/storage.xpt
-mozilla-thunderbird/components/toolkitprofile.xpt
-mozilla-thunderbird/components/toolkitremote.xpt
-mozilla-thunderbird/components/txEXSLTRegExFunctions.js
-mozilla-thunderbird/components/txmgr.xpt
-mozilla-thunderbird/components/txtsvc.xpt
-mozilla-thunderbird/components/uconv.xpt
-mozilla-thunderbird/components/unicharutil.xpt
-mozilla-thunderbird/components/update.xpt
-mozilla-thunderbird/components/uriloader.xpt
-mozilla-thunderbird/components/url-classifier.xpt
-mozilla-thunderbird/components/urlformatter.xpt
-mozilla-thunderbird/components/webBrowser_core.xpt
-mozilla-thunderbird/components/webbrowserpersist.xpt
-mozilla-thunderbird/components/webshell_idls.xpt
-mozilla-thunderbird/components/widget.xpt
-mozilla-thunderbird/components/windowds.xpt
-mozilla-thunderbird/components/windowwatcher.xpt
-mozilla-thunderbird/components/xpautocomplete.xpt
-mozilla-thunderbird/components/xpcom_base.xpt
-mozilla-thunderbird/components/xpcom_components.xpt
-mozilla-thunderbird/components/xpcom_ds.xpt
-mozilla-thunderbird/components/xpcom_io.xpt
-mozilla-thunderbird/components/xpcom_system.xpt
-mozilla-thunderbird/components/xpcom_threads.xpt
-mozilla-thunderbird/components/xpcom_xpti.xpt
-mozilla-thunderbird/components/xpconnect.xpt
-mozilla-thunderbird/components/xpinstall.xpt
-mozilla-thunderbird/components/xulapp.xpt
-mozilla-thunderbird/components/xuldoc.xpt
-mozilla-thunderbird/components/xultmpl.xpt
-mozilla-thunderbird/components/zipwriter.xpt
-mozilla-thunderbird/defaults/
-mozilla-thunderbird/defaults/autoconfig/
-mozilla-thunderbird/defaults/autoconfig/platform.js
-mozilla-thunderbird/defaults/autoconfig/prefcalls.js
-mozilla-thunderbird/defaults/messenger/
-mozilla-thunderbird/defaults/messenger/mailViews.dat
-mozilla-thunderbird/defaults/pref/
-mozilla-thunderbird/defaults/pref/all-l10n.js
-mozilla-thunderbird/defaults/pref/all-thunderbird.js
-mozilla-thunderbird/defaults/pref/channel-prefs.js
-mozilla-thunderbird/defaults/pref/composer.js
-mozilla-thunderbird/defaults/pref/mailnews.js
-mozilla-thunderbird/defaults/pref/mdn.js
-mozilla-thunderbird/defaults/pref/smime.js
-mozilla-thunderbird/defaults/pref/thunderbird-branding.js
-mozilla-thunderbird/defaults/profile/
-mozilla-thunderbird/defaults/profile/localstore.rdf
-mozilla-thunderbird/defaults/profile/mimeTypes.rdf
-mozilla-thunderbird/defaults/profile/prefs.js
-mozilla-thunderbird/dictionaries/
-mozilla-thunderbird/dictionaries/en-US.aff
-mozilla-thunderbird/dictionaries/en-US.dic
-mozilla-thunderbird/extensions/
-mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
-mozilla-thunderbird/greprefs/
-mozilla-thunderbird/greprefs/all.js
-mozilla-thunderbird/greprefs/security-prefs.js
-mozilla-thunderbird/greprefs/xpinstall.js
-mozilla-thunderbird/isp/
-mozilla-thunderbird/isp/SpamAssassin.sfd
-mozilla-thunderbird/isp/SpamPal.sfd
-mozilla-thunderbird/isp/movemail.rdf
-mozilla-thunderbird/isp/rss.rdf
-@lib mozilla-thunderbird/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
-@lib mozilla-thunderbird/libgkgfx.so.${LIBgkgfx_VERSION}
-@lib mozilla-thunderbird/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
-@lib mozilla-thunderbird/libldap60.so.${LIBldap60_VERSION}
-@lib mozilla-thunderbird/libldif60.so.${LIBldif60_VERSION}
-@lib mozilla-thunderbird/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-thunderbird/libprldap60.so.${LIBprldap60_VERSION}
-@lib mozilla-thunderbird/libsqlite3.so.${LIBsqlite3_VERSION}
-@lib mozilla-thunderbird/libssldap60.so.${LIBssldap60_VERSION}
-@lib mozilla-thunderbird/libthebes.so.${LIBthebes_VERSION}
-@lib mozilla-thunderbird/libxpcom.so.${LIBxpcom_VERSION}
-@lib mozilla-thunderbird/libxpcom_core.so.${LIBxpcom_core_VERSION}
-@lib mozilla-thunderbird/libxul.so.${LIBxul_VERSION}
-mozilla-thunderbird/modules/
-mozilla-thunderbird/modules/DownloadLastDir.jsm
-mozilla-thunderbird/modules/DownloadUtils.jsm
-mozilla-thunderbird/modules/ISO8601DateUtils.jsm
-mozilla-thunderbird/modules/MailConsts.js
-mozilla-thunderbird/modules/MailUtils.js
-mozilla-thunderbird/modules/Microformats.js
-mozilla-thunderbird/modules/MsgHdrSyntheticView.js
-mozilla-thunderbird/modules/PluralForm.jsm
-mozilla-thunderbird/modules/SearchIntegration.js
-mozilla-thunderbird/modules/SpatialNavigation.js
-mozilla-thunderbird/modules/StringBundle.js
-mozilla-thunderbird/modules/WindowDraggingUtils.jsm
-mozilla-thunderbird/modules/XPCOMUtils.jsm
-mozilla-thunderbird/modules/activity/
-mozilla-thunderbird/modules/activity/activityModules.js
-mozilla-thunderbird/modules/activity/alertHook.js
-mozilla-thunderbird/modules/activity/autosync.js
-mozilla-thunderbird/modules/activity/glodaIndexer.js
-mozilla-thunderbird/modules/activity/moveCopy.js
-mozilla-thunderbird/modules/activity/sendLater.js
-mozilla-thunderbird/modules/appIdleManager.js
-mozilla-thunderbird/modules/attachmentChecker.js
-mozilla-thunderbird/modules/autoconfigUtils.jsm
-mozilla-thunderbird/modules/dbViewWrapper.js
-mozilla-thunderbird/modules/debug.js
-mozilla-thunderbird/modules/errUtils.js
-mozilla-thunderbird/modules/folderUtils.jsm
-mozilla-thunderbird/modules/gloda/
-mozilla-thunderbird/modules/gloda/collection.js
-mozilla-thunderbird/modules/gloda/connotent.js
-mozilla-thunderbird/modules/gloda/databind.js
-mozilla-thunderbird/modules/gloda/datamodel.js
-mozilla-thunderbird/modules/gloda/datastore.js
-mozilla-thunderbird/modules/gloda/dbview.js
-mozilla-thunderbird/modules/gloda/everybody.js
-mozilla-thunderbird/modules/gloda/explattr.js
-mozilla-thunderbird/modules/gloda/facet.js
-mozilla-thunderbird/modules/gloda/fundattr.js
-mozilla-thunderbird/modules/gloda/gloda.js
-mozilla-thunderbird/modules/gloda/index_ab.js
-mozilla-thunderbird/modules/gloda/index_msg.js
-mozilla-thunderbird/modules/gloda/indexer.js
-mozilla-thunderbird/modules/gloda/log4moz.js
-mozilla-thunderbird/modules/gloda/mimeTypeCategories.js
-mozilla-thunderbird/modules/gloda/mimemsg.js
-mozilla-thunderbird/modules/gloda/msg_search.js
-mozilla-thunderbird/modules/gloda/noun_freetag.js
-mozilla-thunderbird/modules/gloda/noun_mimetype.js
-mozilla-thunderbird/modules/gloda/noun_tag.js
-mozilla-thunderbird/modules/gloda/public.js
-mozilla-thunderbird/modules/gloda/query.js
-mozilla-thunderbird/modules/gloda/suffixtree.js
-mozilla-thunderbird/modules/gloda/utils.js
-mozilla-thunderbird/modules/iteratorUtils.jsm
-mozilla-thunderbird/modules/jsTreeSelection.js
-mozilla-thunderbird/modules/mailViewManager.js
-mozilla-thunderbird/modules/quickSearchManager.js
-mozilla-thunderbird/modules/searchSpec.js
-mozilla-thunderbird/modules/templateUtils.js
-mozilla-thunderbird/modules/traceHelper.js
-mozilla-thunderbird/modules/virtualFolderWrapper.js
-@bin mozilla-thunderbird/mozilla-xremote-client
-mozilla-thunderbird/platform.ini
-mozilla-thunderbird/plugins/
-@lib mozilla-thunderbird/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
-@lib mozilla-thunderbird/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-@bin mozilla-thunderbird/regxpcom
-mozilla-thunderbird/res/
-mozilla-thunderbird/res/EditorOverride.css
-mozilla-thunderbird/res/arrow.gif
-mozilla-thunderbird/res/arrowd.gif
-mozilla-thunderbird/res/broken-image.gif
-mozilla-thunderbird/res/charsetData.properties
-mozilla-thunderbird/res/charsetalias.properties
-mozilla-thunderbird/res/contenteditable.css
-mozilla-thunderbird/res/designmode.css
-mozilla-thunderbird/res/dtd/
-mozilla-thunderbird/res/dtd/mathml.dtd
-mozilla-thunderbird/res/dtd/xhtml11.dtd
-mozilla-thunderbird/res/entityTables/
-mozilla-thunderbird/res/entityTables/html40Latin1.properties
-mozilla-thunderbird/res/entityTables/html40Special.properties
-mozilla-thunderbird/res/entityTables/html40Symbols.properties
-mozilla-thunderbird/res/entityTables/htmlEntityVersions.properties
-mozilla-thunderbird/res/entityTables/mathml20.properties
-mozilla-thunderbird/res/entityTables/transliterate.properties
-mozilla-thunderbird/res/fonts/
-mozilla-thunderbird/res/fonts/mathfont.properties
-mozilla-thunderbird/res/fonts/mathfontSTIXNonUnicode.properties
-mozilla-thunderbird/res/fonts/mathfontSTIXSize1.properties
-mozilla-thunderbird/res/fonts/mathfontStandardSymbolsL.properties
-mozilla-thunderbird/res/fonts/mathfontUnicode.properties
-mozilla-thunderbird/res/forms.css
-mozilla-thunderbird/res/grabber.gif
-mozilla-thunderbird/res/hiddenWindow.html
-mozilla-thunderbird/res/html/
-mozilla-thunderbird/res/html.css
-mozilla-thunderbird/res/html/folder.png
-mozilla-thunderbird/res/langGroups.properties
-mozilla-thunderbird/res/language.properties
-mozilla-thunderbird/res/loading-image.gif
-mozilla-thunderbird/res/mathml.css
-mozilla-thunderbird/res/quirk.css
-mozilla-thunderbird/res/svg.css
-mozilla-thunderbird/res/table-add-column-after-active.gif
-mozilla-thunderbird/res/table-add-column-after-hover.gif
-mozilla-thunderbird/res/table-add-column-after.gif
-mozilla-thunderbird/res/table-add-column-before-active.gif
-mozilla-thunderbird/res/table-add-column-before-hover.gif
-mozilla-thunderbird/res/table-add-column-before.gif
-mozilla-thunderbird/res/table-add-row-after-active.gif
-mozilla-thunderbird/res/table-add-row-after-hover.gif
-mozilla-thunderbird/res/table-add-row-after.gif
-mozilla-thunderbird/res/table-add-row-before-active.gif
-mozilla-thunderbird/res/table-add-row-before-hover.gif
-mozilla-thunderbird/res/table-add-row-before.gif
-mozilla-thunderbird/res/table-remove-column-active.gif
-mozilla-thunderbird/res/table-remove-column-hover.gif
-mozilla-thunderbird/res/table-remove-column.gif
-mozilla-thunderbird/res/table-remove-row-active.gif
-mozilla-thunderbird/res/table-remove-row-hover.gif
-mozilla-thunderbird/res/table-remove-row.gif
-mozilla-thunderbird/res/ua.css
-mozilla-thunderbird/res/unixcharset.properties
-mozilla-thunderbird/res/viewsource.css
-mozilla-thunderbird/run-mozilla.sh
-@bin mozilla-thunderbird/thunderbird-bin
+${MOZILLA_PROJECT}/
+${MOZILLA_PROJECT}/README.OpenBSD
+${MOZILLA_PROJECT}/application.ini
+${MOZILLA_PROJECT}/chrome/
+${MOZILLA_PROJECT}/chrome/classic.jar
+${MOZILLA_PROJECT}/chrome/classic.manifest
+${MOZILLA_PROJECT}/chrome/comm.jar
+${MOZILLA_PROJECT}/chrome/comm.manifest
+${MOZILLA_PROJECT}/chrome/en-US.jar
+${MOZILLA_PROJECT}/chrome/en-US.manifest
+${MOZILLA_PROJECT}/chrome/gloda.jar
+${MOZILLA_PROJECT}/chrome/gloda.manifest
+${MOZILLA_PROJECT}/chrome/icons/
+${MOZILLA_PROJECT}/chrome/icons/default/
+${MOZILLA_PROJECT}/chrome/icons/default/default16.png
+${MOZILLA_PROJECT}/chrome/icons/default/default22.png
+${MOZILLA_PROJECT}/chrome/icons/default/default24.png
+${MOZILLA_PROJECT}/chrome/icons/default/default256.png
+${MOZILLA_PROJECT}/chrome/icons/default/default32.png
+${MOZILLA_PROJECT}/chrome/icons/default/default48.png
+${MOZILLA_PROJECT}/chrome/messenger.jar
+${MOZILLA_PROJECT}/chrome/messenger.manifest
+${MOZILLA_PROJECT}/chrome/newsblog.jar
+${MOZILLA_PROJECT}/chrome/newsblog.manifest
+${MOZILLA_PROJECT}/chrome/pippki.jar
+${MOZILLA_PROJECT}/chrome/pippki.manifest
+${MOZILLA_PROJECT}/chrome/toolkit.jar
+${MOZILLA_PROJECT}/chrome/toolkit.manifest
+${MOZILLA_PROJECT}/components/
+${MOZILLA_PROJECT}/components/FeedProcessor.js
+${MOZILLA_PROJECT}/components/NetworkGeolocationProvider.js
+${MOZILLA_PROJECT}/components/aboutRights.js
+${MOZILLA_PROJECT}/components/accessibility.xpt
+${MOZILLA_PROJECT}/components/activity.xpt
+${MOZILLA_PROJECT}/components/addrbook.xpt
+${MOZILLA_PROJECT}/components/alerts.xpt
+${MOZILLA_PROJECT}/components/appshell.xpt
+${MOZILLA_PROJECT}/components/appstartup.xpt
+${MOZILLA_PROJECT}/components/autocomplete.xpt
+${MOZILLA_PROJECT}/components/autoconfig.xpt
+${MOZILLA_PROJECT}/components/caps.xpt
+${MOZILLA_PROJECT}/components/chardet.xpt
+${MOZILLA_PROJECT}/components/chrome.xpt
+${MOZILLA_PROJECT}/components/commandhandler.xpt
+${MOZILLA_PROJECT}/components/commandlines.xpt
+${MOZILLA_PROJECT}/components/composer.xpt
+${MOZILLA_PROJECT}/components/content_base.xpt
+${MOZILLA_PROJECT}/components/content_html.xpt
+${MOZILLA_PROJECT}/components/content_htmldoc.xpt
+${MOZILLA_PROJECT}/components/content_xmldoc.xpt
+${MOZILLA_PROJECT}/components/content_xslt.xpt
+${MOZILLA_PROJECT}/components/content_xtf.xpt
+${MOZILLA_PROJECT}/components/contentprefs.xpt
+${MOZILLA_PROJECT}/components/cookie.xpt
+${MOZILLA_PROJECT}/components/docshell.xpt
+${MOZILLA_PROJECT}/components/dom.xpt
+${MOZILLA_PROJECT}/components/dom_base.xpt
+${MOZILLA_PROJECT}/components/dom_canvas.xpt
+${MOZILLA_PROJECT}/components/dom_core.xpt
+${MOZILLA_PROJECT}/components/dom_css.xpt
+${MOZILLA_PROJECT}/components/dom_events.xpt
+${MOZILLA_PROJECT}/components/dom_geolocation.xpt
+${MOZILLA_PROJECT}/components/dom_html.xpt
+${MOZILLA_PROJECT}/components/dom_json.xpt
+${MOZILLA_PROJECT}/components/dom_loadsave.xpt
+${MOZILLA_PROJECT}/components/dom_offline.xpt
+${MOZILLA_PROJECT}/components/dom_range.xpt
+${MOZILLA_PROJECT}/components/dom_sidebar.xpt
+${MOZILLA_PROJECT}/components/dom_storage.xpt
+${MOZILLA_PROJECT}/components/dom_stylesheets.xpt
+${MOZILLA_PROJECT}/components/dom_svg.xpt
+${MOZILLA_PROJECT}/components/dom_threads.xpt
+${MOZILLA_PROJECT}/components/dom_traversal.xpt
+${MOZILLA_PROJECT}/components/dom_views.xpt
+${MOZILLA_PROJECT}/components/dom_xbl.xpt
+${MOZILLA_PROJECT}/components/dom_xpath.xpt
+${MOZILLA_PROJECT}/components/dom_xul.xpt
+${MOZILLA_PROJECT}/components/downloads.xpt
+${MOZILLA_PROJECT}/components/editor.xpt
+${MOZILLA_PROJECT}/components/embed_base.xpt
+${MOZILLA_PROJECT}/components/extensions.xpt
+${MOZILLA_PROJECT}/components/exthandler.xpt
+${MOZILLA_PROJECT}/components/exthelper.xpt
+${MOZILLA_PROJECT}/components/fastfind.xpt
+${MOZILLA_PROJECT}/components/feeds.xpt
+${MOZILLA_PROJECT}/components/filepicker.xpt
+${MOZILLA_PROJECT}/components/find.xpt
+${MOZILLA_PROJECT}/components/fts3tok.xpt
+${MOZILLA_PROJECT}/components/gfx.xpt
+${MOZILLA_PROJECT}/components/glautocomp.js
+${MOZILLA_PROJECT}/components/htmlparser.xpt
+${MOZILLA_PROJECT}/components/imgicon.xpt
+${MOZILLA_PROJECT}/components/imglib2.xpt
+${MOZILLA_PROJECT}/components/impComm4xMail.xpt
+${MOZILLA_PROJECT}/components/import.xpt
+${MOZILLA_PROJECT}/components/inspector.xpt
+${MOZILLA_PROJECT}/components/intl.xpt
+${MOZILLA_PROJECT}/components/jar.xpt
+${MOZILLA_PROJECT}/components/jsconsole-clhandler.js
+${MOZILLA_PROJECT}/components/jsdservice.xpt
+${MOZILLA_PROJECT}/components/jsmimeemitter.js
+${MOZILLA_PROJECT}/components/layout_base.xpt
+${MOZILLA_PROJECT}/components/layout_printing.xpt
+${MOZILLA_PROJECT}/components/layout_xul.xpt
+${MOZILLA_PROJECT}/components/layout_xul_tree.xpt
+@lib ${MOZILLA_PROJECT}/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libauth.so.${LIBauth_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcaps.so.${LIBcaps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libchardet.so.${LIBchardet_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libchrome.so.${LIBchrome_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcomposer.so.${LIBcomposer_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcookie.so.${LIBcookie_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libfileview.so.${LIBfileview_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libi18n.so.${LIBi18n_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimgicon.so.${LIBimgicon_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libimport.so.${LIBimport_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libintlapp.so.${LIBintlapp_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libjar50.so.${LIBjar50_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libjsd.so.${LIBjsd_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmail.so.${LIBmail_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmailcomps.so.${LIBmailcomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmork.so.${LIBmork_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmozldap.so.${LIBmozldap_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libnecko.so.${LIBnecko_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpermissions.so.${LIBpermissions_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpippki.so.${LIBpippki_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libpref.so.${LIBpref_VERSION}
+@lib ${MOZILLA_PROJECT}/components/librdf.so.${LIBrdf_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libsatchel.so.${LIBsatchel_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libuconv.so.${LIBuconv_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libucvmath.so.${LIBucvmath_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libunixproxy.so.${LIBunixproxy_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libwindowds.so.${LIBwindowds_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpautocomplete.so.${LIBxpautocomplete_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libzipwriter.so.${LIBzipwriter_VERSION}
+${MOZILLA_PROJECT}/components/locale.xpt
+${MOZILLA_PROJECT}/components/loginmgr.xpt
+${MOZILLA_PROJECT}/components/lwbrk.xpt
+${MOZILLA_PROJECT}/components/mailContentHandler.js
+${MOZILLA_PROJECT}/components/mailprofilemigration.xpt
+${MOZILLA_PROJECT}/components/mailview.xpt
+${MOZILLA_PROJECT}/components/mdn-service.js
+${MOZILLA_PROJECT}/components/mime.xpt
+${MOZILLA_PROJECT}/components/mimetype.xpt
+${MOZILLA_PROJECT}/components/mozbrwsr.xpt
+${MOZILLA_PROJECT}/components/mozfind.xpt
+${MOZILLA_PROJECT}/components/mozldap.xpt
+${MOZILLA_PROJECT}/components/msgAsyncPrompter.js
+${MOZILLA_PROJECT}/components/msgbase.xpt
+${MOZILLA_PROJECT}/components/msgcompose.xpt
+${MOZILLA_PROJECT}/components/msgdb.xpt
+${MOZILLA_PROJECT}/components/msgimap.xpt
+${MOZILLA_PROJECT}/components/msglocal.xpt
+${MOZILLA_PROJECT}/components/msgnews.xpt
+${MOZILLA_PROJECT}/components/msgsearch.xpt
+${MOZILLA_PROJECT}/components/msgsmime.xpt
+${MOZILLA_PROJECT}/components/necko.xpt
+${MOZILLA_PROJECT}/components/necko_about.xpt
+${MOZILLA_PROJECT}/components/necko_cache.xpt
+${MOZILLA_PROJECT}/components/necko_cookie.xpt
+${MOZILLA_PROJECT}/components/necko_dns.xpt
+${MOZILLA_PROJECT}/components/necko_file.xpt
+${MOZILLA_PROJECT}/components/necko_ftp.xpt
+${MOZILLA_PROJECT}/components/necko_http.xpt
+${MOZILLA_PROJECT}/components/necko_res.xpt
+${MOZILLA_PROJECT}/components/necko_socket.xpt
+${MOZILLA_PROJECT}/components/necko_strconv.xpt
+${MOZILLA_PROJECT}/components/necko_viewsource.xpt
+${MOZILLA_PROJECT}/components/newsblog.js
+${MOZILLA_PROJECT}/components/nsAbAutoCompleteMyDomain.js
+${MOZILLA_PROJECT}/components/nsAbAutoCompleteSearch.js
+${MOZILLA_PROJECT}/components/nsAbLDAPAttributeMap.js
+${MOZILLA_PROJECT}/components/nsActivity.js
+${MOZILLA_PROJECT}/components/nsActivityManager.js
+${MOZILLA_PROJECT}/components/nsActivityManagerUI.js
+${MOZILLA_PROJECT}/components/nsAddonRepository.js
+${MOZILLA_PROJECT}/components/nsBadCertHandler.js
+${MOZILLA_PROJECT}/components/nsBlocklistService.js
+${MOZILLA_PROJECT}/components/nsContentDispatchChooser.js
+${MOZILLA_PROJECT}/components/nsContentPrefService.js
+${MOZILLA_PROJECT}/components/nsDefaultCLH.js
+${MOZILLA_PROJECT}/components/nsDownloadManagerUI.js
+${MOZILLA_PROJECT}/components/nsExtensionManager.js
+${MOZILLA_PROJECT}/components/nsFilePicker.js
+${MOZILLA_PROJECT}/components/nsHandlerService.js
+${MOZILLA_PROJECT}/components/nsHelperAppDlg.js
+${MOZILLA_PROJECT}/components/nsLDAPProtocolHandler.js
+${MOZILLA_PROJECT}/components/nsLoginInfo.js
+${MOZILLA_PROJECT}/components/nsLoginManager.js
+${MOZILLA_PROJECT}/components/nsLoginManagerPrompter.js
+${MOZILLA_PROJECT}/components/nsMailDefaultHandler.js
+${MOZILLA_PROJECT}/components/nsMailNewsCommandLineHandler.js
+${MOZILLA_PROJECT}/components/nsMsgTraitService.js
+${MOZILLA_PROJECT}/components/nsPhishingProtectionApplication.js
+${MOZILLA_PROJECT}/components/nsProgressDialog.js
+${MOZILLA_PROJECT}/components/nsProxyAutoConfig.js
+${MOZILLA_PROJECT}/components/nsSMTPProtocolHandler.js
+${MOZILLA_PROJECT}/components/nsSetDefaultMail.js
+${MOZILLA_PROJECT}/components/nsTryToClose.js
+${MOZILLA_PROJECT}/components/nsURLFormatter.js
+${MOZILLA_PROJECT}/components/nsUpdateService.js
+${MOZILLA_PROJECT}/components/nsUrlClassifierLib.js
+${MOZILLA_PROJECT}/components/nsUrlClassifierListManager.js
+${MOZILLA_PROJECT}/components/nsWebHandlerApp.js
+${MOZILLA_PROJECT}/components/offlineStartup.js
+${MOZILLA_PROJECT}/components/parentalcontrols.xpt
+${MOZILLA_PROJECT}/components/pipboot.xpt
+${MOZILLA_PROJECT}/components/pipnss.xpt
+${MOZILLA_PROJECT}/components/pippki.xpt
+${MOZILLA_PROJECT}/components/places.xpt
+${MOZILLA_PROJECT}/components/plugin.xpt
+${MOZILLA_PROJECT}/components/pluginGlue.js
+${MOZILLA_PROJECT}/components/pref.xpt
+${MOZILLA_PROJECT}/components/prefetch.xpt
+${MOZILLA_PROJECT}/components/profile.xpt
+${MOZILLA_PROJECT}/components/proxyObjInst.xpt
+${MOZILLA_PROJECT}/components/rdf.xpt
+${MOZILLA_PROJECT}/components/satchel.xpt
+${MOZILLA_PROJECT}/components/saxparser.xpt
+${MOZILLA_PROJECT}/components/shellservice.xpt
+${MOZILLA_PROJECT}/components/shistory.xpt
+${MOZILLA_PROJECT}/components/smime-service.js
+${MOZILLA_PROJECT}/components/spellchecker.xpt
+${MOZILLA_PROJECT}/components/steel.xpt
+${MOZILLA_PROJECT}/components/steelApplication.js
+${MOZILLA_PROJECT}/components/storage-Legacy.js
+${MOZILLA_PROJECT}/components/storage-mozStorage.js
+${MOZILLA_PROJECT}/components/storage.xpt
+${MOZILLA_PROJECT}/components/toolkitprofile.xpt
+${MOZILLA_PROJECT}/components/toolkitremote.xpt
+${MOZILLA_PROJECT}/components/txEXSLTRegExFunctions.js
+${MOZILLA_PROJECT}/components/txmgr.xpt
+${MOZILLA_PROJECT}/components/txtsvc.xpt
+${MOZILLA_PROJECT}/components/uconv.xpt
+${MOZILLA_PROJECT}/components/unicharutil.xpt
+${MOZILLA_PROJECT}/components/update.xpt
+${MOZILLA_PROJECT}/components/uriloader.xpt
+${MOZILLA_PROJECT}/components/url-classifier.xpt
+${MOZILLA_PROJECT}/components/urlformatter.xpt
+${MOZILLA_PROJECT}/components/webBrowser_core.xpt
+${MOZILLA_PROJECT}/components/webbrowserpersist.xpt
+${MOZILLA_PROJECT}/components/webshell_idls.xpt
+${MOZILLA_PROJECT}/components/widget.xpt
+${MOZILLA_PROJECT}/components/windowds.xpt
+${MOZILLA_PROJECT}/components/windowwatcher.xpt
+${MOZILLA_PROJECT}/components/xpautocomplete.xpt
+${MOZILLA_PROJECT}/components/xpcom_base.xpt
+${MOZILLA_PROJECT}/components/xpcom_components.xpt
+${MOZILLA_PROJECT}/components/xpcom_ds.xpt
+${MOZILLA_PROJECT}/components/xpcom_io.xpt
+${MOZILLA_PROJECT}/components/xpcom_system.xpt
+${MOZILLA_PROJECT}/components/xpcom_threads.xpt
+${MOZILLA_PROJECT}/components/xpcom_xpti.xpt
+${MOZILLA_PROJECT}/components/xpconnect.xpt
+${MOZILLA_PROJECT}/components/xpinstall.xpt
+${MOZILLA_PROJECT}/components/xulapp.xpt
+${MOZILLA_PROJECT}/components/xuldoc.xpt
+${MOZILLA_PROJECT}/components/xultmpl.xpt
+${MOZILLA_PROJECT}/components/zipwriter.xpt
+${MOZILLA_PROJECT}/defaults/
+${MOZILLA_PROJECT}/defaults/autoconfig/
+${MOZILLA_PROJECT}/defaults/autoconfig/platform.js
+${MOZILLA_PROJECT}/defaults/autoconfig/prefcalls.js
+${MOZILLA_PROJECT}/defaults/messenger/
+${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
+${MOZILLA_PROJECT}/defaults/pref/
+${MOZILLA_PROJECT}/defaults/pref/all-l10n.js
+${MOZILLA_PROJECT}/defaults/pref/all-thunderbird.js
+${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
+${MOZILLA_PROJECT}/defaults/pref/composer.js
+${MOZILLA_PROJECT}/defaults/pref/mailnews.js
+${MOZILLA_PROJECT}/defaults/pref/mdn.js
+${MOZILLA_PROJECT}/defaults/pref/smime.js
+${MOZILLA_PROJECT}/defaults/pref/thunderbird-branding.js
+${MOZILLA_PROJECT}/defaults/profile/
+${MOZILLA_PROJECT}/defaults/profile/localstore.rdf
+${MOZILLA_PROJECT}/defaults/profile/mimeTypes.rdf
+${MOZILLA_PROJECT}/defaults/profile/prefs.js
+${MOZILLA_PROJECT}/dictionaries/
+${MOZILLA_PROJECT}/dictionaries/en-US.aff
+${MOZILLA_PROJECT}/dictionaries/en-US.dic
+${MOZILLA_PROJECT}/extensions/
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+${MOZILLA_PROJECT}/greprefs/
+${MOZILLA_PROJECT}/greprefs/all.js
+${MOZILLA_PROJECT}/greprefs/security-prefs.js
+${MOZILLA_PROJECT}/greprefs/xpinstall.js
+${MOZILLA_PROJECT}/isp/
+${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
+${MOZILLA_PROJECT}/isp/SpamPal.sfd
+${MOZILLA_PROJECT}/isp/movemail.rdf
+${MOZILLA_PROJECT}/isp/rss.rdf
+@lib ${MOZILLA_PROJECT}/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib ${MOZILLA_PROJECT}/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib ${MOZILLA_PROJECT}/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib ${MOZILLA_PROJECT}/libldap60.so.${LIBldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
+@lib ${MOZILLA_PROJECT}/libmozjs.so.${LIBmozjs_VERSION}
+@lib ${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libsqlite3.so.${LIBsqlite3_VERSION}
+@lib ${MOZILLA_PROJECT}/libssldap60.so.${LIBssldap60_VERSION}
+@lib ${MOZILLA_PROJECT}/libthebes.so.${LIBthebes_VERSION}
+@lib ${MOZILLA_PROJECT}/libxpcom.so.${LIBxpcom_VERSION}
+@lib ${MOZILLA_PROJECT}/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib ${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
+${MOZILLA_PROJECT}/modules/
+${MOZILLA_PROJECT}/modules/DownloadLastDir.jsm
+${MOZILLA_PROJECT}/modules/DownloadUtils.jsm
+${MOZILLA_PROJECT}/modules/ISO8601DateUtils.jsm
+${MOZILLA_PROJECT}/modules/MailConsts.js
+${MOZILLA_PROJECT}/modules/MailUtils.js
+${MOZILLA_PROJECT}/modules/Microformats.js
+${MOZILLA_PROJECT}/modules/MsgHdrSyntheticView.js
+${MOZILLA_PROJECT}/modules/PluralForm.jsm
+${MOZILLA_PROJECT}/modules/SearchIntegration.js
+${MOZILLA_PROJECT}/modules/SpatialNavigation.js
+${MOZILLA_PROJECT}/modules/StringBundle.js
+${MOZILLA_PROJECT}/modules/WindowDraggingUtils.jsm
+${MOZILLA_PROJECT}/modules/XPCOMUtils.jsm
+${MOZILLA_PROJECT}/modules/activity/
+${MOZILLA_PROJECT}/modules/activity/activityModules.js
+${MOZILLA_PROJECT}/modules/activity/alertHook.js
+${MOZILLA_PROJECT}/modules/activity/autosync.js
+${MOZILLA_PROJECT}/modules/activity/glodaIndexer.js
+${MOZILLA_PROJECT}/modules/activity/moveCopy.js
+${MOZILLA_PROJECT}/modules/activity/sendLater.js
+${MOZILLA_PROJECT}/modules/appIdleManager.js
+${MOZILLA_PROJECT}/modules/attachmentChecker.js
+${MOZILLA_PROJECT}/modules/autoconfigUtils.jsm
+${MOZILLA_PROJECT}/modules/dbViewWrapper.js
+${MOZILLA_PROJECT}/modules/debug.js
+${MOZILLA_PROJECT}/modules/errUtils.js
+${MOZILLA_PROJECT}/modules/folderUtils.jsm
+${MOZILLA_PROJECT}/modules/gloda/
+${MOZILLA_PROJECT}/modules/gloda/collection.js
+${MOZILLA_PROJECT}/modules/gloda/connotent.js
+${MOZILLA_PROJECT}/modules/gloda/databind.js
+${MOZILLA_PROJECT}/modules/gloda/datamodel.js
+${MOZILLA_PROJECT}/modules/gloda/datastore.js
+${MOZILLA_PROJECT}/modules/gloda/dbview.js
+${MOZILLA_PROJECT}/modules/gloda/everybody.js
+${MOZILLA_PROJECT}/modules/gloda/explattr.js
+${MOZILLA_PROJECT}/modules/gloda/facet.js
+${MOZILLA_PROJECT}/modules/gloda/fundattr.js
+${MOZILLA_PROJECT}/modules/gloda/gloda.js
+${MOZILLA_PROJECT}/modules/gloda/index_ab.js
+${MOZILLA_PROJECT}/modules/gloda/index_msg.js
+${MOZILLA_PROJECT}/modules/gloda/indexer.js
+${MOZILLA_PROJECT}/modules/gloda/log4moz.js
+${MOZILLA_PROJECT}/modules/gloda/mimeTypeCategories.js
+${MOZILLA_PROJECT}/modules/gloda/mimemsg.js
+${MOZILLA_PROJECT}/modules/gloda/msg_search.js
+${MOZILLA_PROJECT}/modules/gloda/noun_freetag.js
+${MOZILLA_PROJECT}/modules/gloda/noun_mimetype.js
+${MOZILLA_PROJECT}/modules/gloda/noun_tag.js
+${MOZILLA_PROJECT}/modules/gloda/public.js
+${MOZILLA_PROJECT}/modules/gloda/query.js
+${MOZILLA_PROJECT}/modules/gloda/suffixtree.js
+${MOZILLA_PROJECT}/modules/gloda/utils.js
+${MOZILLA_PROJECT}/modules/iteratorUtils.jsm
+${MOZILLA_PROJECT}/modules/jsTreeSelection.js
+${MOZILLA_PROJECT}/modules/mailViewManager.js
+${MOZILLA_PROJECT}/modules/quickSearchManager.js
+${MOZILLA_PROJECT}/modules/searchSpec.js
+${MOZILLA_PROJECT}/modules/templateUtils.js
+${MOZILLA_PROJECT}/modules/traceHelper.js
+${MOZILLA_PROJECT}/modules/virtualFolderWrapper.js
+@bin ${MOZILLA_PROJECT}/mozilla-xremote-client
+${MOZILLA_PROJECT}/platform.ini
+${MOZILLA_PROJECT}/plugins/
+@lib ${MOZILLA_PROJECT}/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib ${MOZILLA_PROJECT}/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
+@bin ${MOZILLA_PROJECT}/regxpcom
+${MOZILLA_PROJECT}/res/
+${MOZILLA_PROJECT}/res/EditorOverride.css
+${MOZILLA_PROJECT}/res/arrow.gif
+${MOZILLA_PROJECT}/res/arrowd.gif
+${MOZILLA_PROJECT}/res/broken-image.gif
+${MOZILLA_PROJECT}/res/charsetData.properties
+${MOZILLA_PROJECT}/res/charsetalias.properties
+${MOZILLA_PROJECT}/res/contenteditable.css
+${MOZILLA_PROJECT}/res/designmode.css
+${MOZILLA_PROJECT}/res/dtd/
+${MOZILLA_PROJECT}/res/dtd/mathml.dtd
+${MOZILLA_PROJECT}/res/dtd/xhtml11.dtd
+${MOZILLA_PROJECT}/res/entityTables/
+${MOZILLA_PROJECT}/res/entityTables/html40Latin1.properties
+${MOZILLA_PROJECT}/res/entityTables/html40Special.properties
+${MOZILLA_PROJECT}/res/entityTables/html40Symbols.properties
+${MOZILLA_PROJECT}/res/entityTables/htmlEntityVersions.properties
+${MOZILLA_PROJECT}/res/entityTables/mathml20.properties
+${MOZILLA_PROJECT}/res/entityTables/transliterate.properties
+${MOZILLA_PROJECT}/res/fonts/
+${MOZILLA_PROJECT}/res/fonts/mathfont.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontSTIXNonUnicode.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontSTIXSize1.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontStandardSymbolsL.properties
+${MOZILLA_PROJECT}/res/fonts/mathfontUnicode.properties
+${MOZILLA_PROJECT}/res/forms.css
+${MOZILLA_PROJECT}/res/grabber.gif
+${MOZILLA_PROJECT}/res/hiddenWindow.html
+${MOZILLA_PROJECT}/res/html/
+${MOZILLA_PROJECT}/res/html.css
+${MOZILLA_PROJECT}/res/html/folder.png
+${MOZILLA_PROJECT}/res/langGroups.properties
+${MOZILLA_PROJECT}/res/language.properties
+${MOZILLA_PROJECT}/res/loading-image.gif
+${MOZILLA_PROJECT}/res/mathml.css
+${MOZILLA_PROJECT}/res/quirk.css
+${MOZILLA_PROJECT}/res/svg.css
+${MOZILLA_PROJECT}/res/table-add-column-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-after.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-before.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-after.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-before.gif
+${MOZILLA_PROJECT}/res/table-remove-column-active.gif
+${MOZILLA_PROJECT}/res/table-remove-column-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-column.gif
+${MOZILLA_PROJECT}/res/table-remove-row-active.gif
+${MOZILLA_PROJECT}/res/table-remove-row-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-row.gif
+${MOZILLA_PROJECT}/res/ua.css
+${MOZILLA_PROJECT}/res/unixcharset.properties
+${MOZILLA_PROJECT}/res/viewsource.css
+${MOZILLA_PROJECT}/run-mozilla.sh
+@bin ${MOZILLA_PROJECT}/thunderbird-bin
 share/applications/thunderbird.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
