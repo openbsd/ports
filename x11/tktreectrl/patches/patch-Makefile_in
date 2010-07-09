@@ -1,0 +1,48 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/09 16:43:11 sebastia Exp $
+Also install some demos and license files.
+--- Makefile.in.orig	Sun Feb 24 23:22:10 2008
++++ Makefile.in	Sat Jun 19 00:30:03 2010
+@@ -75,6 +75,7 @@ datadir		= @datadir@
+ datarootdir     = @datarootdir@
+ mandir		= @mandir@
+ includedir	= @includedir@
++docdir		= @docdir@
+ 
+ DESTDIR		=
+ 
+@@ -189,7 +190,7 @@ doc-x:
+ doc:
+ 	@echo "No docs to build"
+ 
+-install: all install-binaries install-libraries install-doc
++install: all install-binaries install-libraries install-doc install-demos
+ 
+ install-binaries: binaries install-lib-binaries install-bin-binaries
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+@@ -216,15 +217,19 @@ install-libraries: libraries
+ install-doc-x:
+ 	@mkdir -p $(DESTDIR)$(mandir)/mann
+ 	@echo "Installing documentation in $(DESTDIR)$(mandir)"
+-	@for i in $(srcdir)/doc/*.n; do \
+-	    echo "Installing $$i"; \
+-	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
+-	    $(INSTALL_DATA) $$i $(DESTDIR)$(mandir)/mann ; \
+-	done
++	$(INSTALL_DATA) $(srcdir)/doc/*.n $(DESTDIR)$(mandir)/mann
+ 
+ install-doc: install-doc-x
+-	mkdir -p $(DESTDIR)$(pkglibdir)/htmldoc
+-	cp $(srcdir)/doc/*.html $(DESTDIR)$(pkglibdir)/htmldoc
++	@echo "Installing documentation in $(DESTDIR)$(docdir)"
++	mkdir -p $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) $(srcdir)/doc/*.html $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) $(srcdir)/license.terms $(DESTDIR)$(docdir)
++
++install-demos:
++	mkdir -p $(DESTDIR)$(pkgdatadir)
++	$(INSTALL_SCRIPT) $(srcdir)/demos/*.tcl $(DESTDIR)$(pkgdatadir)
++	mkdir -p $(DESTDIR)$(pkgdatadir)/pics
++	$(INSTALL_DATA) $(srcdir)/demos/pics/* $(DESTDIR)$(pkgdatadir)/pics
+ 
+ test: binaries libraries
+ 	$(WISH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS) | cat

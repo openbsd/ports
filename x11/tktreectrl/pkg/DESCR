@@ -1,0 +1,7 @@
+A widget which displays items in a one- or two-dimensional arrangement.
+Items have a parent-child relationship with other items. Items have a
+set of states, which are boolean properties. Items may be spread about
+one or more columns. For each column of an item there is a style
+associated, which determines how to display the item's column taking
+into account the item's current state set. One column can be defined to
+display the data in a hierarchical structure.

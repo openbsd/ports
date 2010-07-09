@@ -1,0 +1,17 @@
+$OpenBSD: patch-demos_demo_tcl,v 1.1.1.1 2010/07/09 16:43:11 sebastia Exp $
+
+XXX hand-rolled; CVS keyword in patch
+
+--- demos/demo.tcl.orig	Sun May 17 20:35:58 2009
++++ demos/demo.tcl	Fri Jul  9 11:01:42 2010
+@@ -1,2 +1,4 @@
+-#!/bin/wish84.exe
++#! /bin/sh
++# the next line restarts with wish \
++exec tclsh8.5 "$0" ${1+"$@"}
+ 
+@@ -6,3 +8,3 @@ set VERSION 2.2.9
+ 
+-package require Tk 8.4
++package require Tk
+ 
