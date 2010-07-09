@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/08 16:23:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/09 11:50:38 pea Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
 DISTNAME = 	pgbouncer-1.3.3	
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES = 	databases
 
@@ -24,6 +24,8 @@ MASTER_SITES = 	http://pgfoundry.org/frs/download.php/2677/
 BUILD_DEPENDS =	::devel/libeventextra
 
 CONFIGURE_STYLE = 	gnu
+#Disable the detection of asciidoc since docs are already included
+CONFIGURE_ENV =         ASCIIDOC=' '
 CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE}
 
 USE_GMAKE = 		Yes
