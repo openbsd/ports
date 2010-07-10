@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/07/10 14:58:20 naddy Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
 V=		2.31
 DISTNAME=	ns-src-$V
-PKGNAME=	ns-$Vp2
+PKGNAME=	ns-$V
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.isi.edu/nsnam/ns/
@@ -21,8 +22,8 @@ WANTLIB=	X11 c m pcap pthread-stubs stdc++ tcl84 tk84 xcb
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nsnam/}
 WRKDIST=	${WRKDIR}/ns-$V
 
-LIB_DEPENDS=	otcl::lang/otcl \
-		tclcl:tclcl->=1.0b13p0:devel/tclcl
+BUILD_DEPENDS=	:tclcl->=1.0b13p0:devel/tclcl
+LIB_DEPENDS=	otcl::lang/otcl
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
