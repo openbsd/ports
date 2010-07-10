@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
---- src/ipaudit.c.orig	Thu Jan 25 21:04:00 2001
-+++ src/ipaudit.c	Tue Jan 27 00:36:02 2009
+$OpenBSD: patch-src_ipaudit_c,v 1.2 2010/07/10 23:18:58 naddy Exp $
+--- src/ipaudit.c.orig	Thu Jan 25 22:04:00 2001
++++ src/ipaudit.c	Thu Jul  8 15:58:01 2010
 @@ -40,6 +40,8 @@ Include Files
  #include <stdio.h>
  #include <stdlib.h>
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
  
  /*
  ------------------------------------------------------------------------
-@@ -434,6 +442,18 @@ if (debug_m) {
+@@ -434,6 +442,16 @@ if (debug_m) {
  				printf ("DataLinkType = %s\n", "DLT_RAW"); break;
  			case DLT_ATM_RFC1483: 
  				printf ("DataLinkType = %s\n", "DLT_ATM_RFC1483"); break;
@@ -34,8 +34,6 @@ $OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
 +				printf ("DataLinkType = %s\n", "DLT_ENC"); break;
 +			case DLT_PPP_ETHER: 
 +				printf ("DataLinkType = %s\n", "DLT_PPP_ETHER"); break;
-+			case DLT_OLD_PFLOG: 
-+				printf ("DataLinkType = %s\n", "DLT_OLD_PFLOG"); break;
 +			case DLT_PFLOG: 
 +				printf ("DataLinkType = %s\n", "DLT_PFLOG"); break;
 +			case DLT_PFSYNC: 
@@ -43,7 +41,7 @@ $OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
  			default:
  				printf ("DataLinkType = %d\n", DataLinkType);
  		}
-@@ -1278,6 +1298,22 @@ int get_packetoffset (int DataLinkType) {
+@@ -1278,6 +1296,19 @@ int get_packetoffset (int DataLinkType) {
  		case DLT_NULL:
  			PacketOffset = POFF_NULL;
  			break;
@@ -53,9 +51,6 @@ $OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
 +			break;
 +		case DLT_PPP_ETHER:
 +			PacketOffset = 8;
-+			break;
-+		case DLT_OLD_PFLOG:
-+			PacketOffset = 28;
 +			break;
 +		case DLT_ENC:
 +			PacketOffset = ENC_HDRLEN;
