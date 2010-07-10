@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.4 2009/05/31 16:24:23 sthen Exp $
---- config.mk.orig	Fri Nov 16 13:59:15 2007
-+++ config.mk	Sun May 31 17:21:19 2009
+$OpenBSD: patch-config_mk,v 1.5 2010/07/10 14:35:59 naddy Exp $
+--- config.mk.orig	Fri Nov 16 06:59:15 2007
++++ config.mk	Sat Jul 10 08:33:20 2010
 @@ -1,10 +1,10 @@
  # Customize below to fit your system
  
@@ -28,15 +28,19 @@ $OpenBSD: patch-config_mk,v 1.4 2009/05/31 16:24:23 sthen Exp $
  STATIC = -static
  MKDEP = cpp -M
  
-@@ -31,9 +33,8 @@ P9PATHS = ${PLAN9}:"'$${HOME}/plan9'":/usr/local/plan9
+@@ -29,11 +31,10 @@ AR = ar crs
+ AWKPATH = $$(which awk)
+ P9PATHS = ${PLAN9}:"'$${HOME}/plan9'":/usr/local/plan9:/usr/local/9:/opt/plan9:/opt/9:/usr/plan9:/usr/9
  
- INCX11 = -I/usr/X11R6/include
- LIBX11 = -L/usr/X11R6/lib -lX11
+-INCX11 = -I/usr/X11R6/include
+-LIBX11 = -L/usr/X11R6/lib -lX11
 -LIBICONV = # Leave blank if your libc includes iconv (glibc does)
 -LIBIXP = ${ROOT}/libixp/libixp.a
 -LIBIXP = ${LIBDIR}/libixp.a
-+LIBICONV = /usr/local/lib/libiconv.a
-+LIBIXP = /usr/local/lib/libixp.a
++INCX11 = -I${X11BASE}/include
++LIBX11 = -L${X11BASE}/lib -lX11
++LIBICONV = -L${LOCALBASE}/lib -liconv
++LIBIXP = ${LOCALBASE}/lib/libixp.a
  
  # Solaris
  #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"

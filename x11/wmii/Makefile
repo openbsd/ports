@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/31 16:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/10 14:35:59 naddy Exp $
 
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-PKGNAME=	${DISTNAME}p4
+REVISION=	5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmii.suckless.org/
@@ -18,8 +18,9 @@ MASTER_SITES=	http://code.suckless.org/dl/wmii/
 
 WANTLIB += X11 Xext c m
 
-LIB_DEPENDS=	ixp.>=0.4::devel/libixp \
-		iconv.>=4.0::converters/libiconv
+MODULES=	converters/libiconv
+
+BUILD_DEPENDS=	::devel/libixp
 
 RUN_DEPENDS=	::x11/dmenu
 
