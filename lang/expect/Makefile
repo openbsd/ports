@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2009/11/19 22:36:56 kili Exp $
+# $OpenBSD: Makefile,v 1.52 2010/07/10 05:32:14 ajacoutot Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -6,7 +6,8 @@ DISTNAME=	expect-5.43.0
 PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	expect543 1.2
 CATEGORIES=	lang
-MASTER_SITES=	http://expect.nist.gov/old/
+#MASTER_SITES=	http://expect.nist.gov/old/
+MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/
 
 HOMEPAGE=	http://expect.nist.gov/
 
