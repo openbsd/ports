@@ -1,6 +1,6 @@
-$OpenBSD: patch-switchuser_cpp,v 1.1 2009/09/04 20:24:25 landry Exp $
---- switchuser.cpp.orig	Fri Sep  4 22:01:46 2009
-+++ switchuser.cpp	Fri Sep  4 22:02:32 2009
+$OpenBSD: patch-switchuser_cpp,v 1.2 2010/07/10 10:46:52 armani Exp $
+--- switchuser.cpp.orig	Fri Sep 26 02:54:15 2008
++++ switchuser.cpp	Fri Jul  9 22:23:47 2010
 @@ -10,7 +10,7 @@
  */
  
@@ -10,7 +10,16 @@ $OpenBSD: patch-switchuser_cpp,v 1.1 2009/09/04 20:24:25 landry Exp $
  using namespace std;
  
  SwitchUser::SwitchUser(struct passwd *pw, Cfg *c, const string& display,
-@@ -53,10 +53,9 @@ void SwitchUser::Execute(const char* cmd) {
+@@ -37,6 +37,8 @@ void SwitchUser::Login(const char* cmd, const char* mc
+ 
+ void SwitchUser::SetUserId() {
+     if( (Pw == 0) ||
++            (setsid() == -1) ||
++            (setlogin(Pw->pw_name) != 0) ||
+             (initgroups(Pw->pw_name, Pw->pw_gid) != 0) ||
+             (setgid(Pw->pw_gid) != 0) ||
+             (setuid(Pw->pw_uid) != 0) ) {
+@@ -53,10 +55,9 @@ void SwitchUser::Execute(const char* cmd) {
  }
  
  void SwitchUser::SetClientAuth(const char* mcookie) {
