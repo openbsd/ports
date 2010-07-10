@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/20 20:29:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/10 16:57:23 espie Exp $
 
 COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
@@ -46,16 +46,19 @@ SHARED_LIBS +=	kslox                2.0      # .1.0
 SHARED_LIBS +=	mimelib              0.0      # .1.1
 
 BUILD_DEPENDS +=	::x11/kde4/automoc
-LIB_DEPENDS+=	kdecore.>=8,kde3support,kdeui,khtml,kimproxy,kio,kjs,knotifyconfig,kparts,ktexteditor,threadweaver,solid,nepomuk,kdnssd,kfile,knewstuff2::x11/kde4/libs \
-		kabc.>=5,kcal,kldap,kmime,kresources,ktnef,kutils,syndication,qgpgme,mailtransport,akonadi-contact,akonadi-kcal,akonadi-kde,akonadi-kmime,gpgme++,gpgme++-pthread,kblog,kholidays,kimap,kontactinterface,kpimidentities,kpimtextedit,kpimutils::x11/kde4/pimlibs
+LIB_DEPENDS+=		::x11/kde4/libs \
+			::x11/kde4/pimlibs
 
-WANTLIB += X11
-WANTLIB += Xss c
-WANTLIB += gpg-error iconv intl m pthread
-WANTLIB += stdc++ z
-WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtNetwork QtSql QtSvg QtXml
-WANTLIB += akonadiprotocolinternals streamanalyzer streams phonon
-WANTLIB += gpgme-pthread
+WANTLIB += X11 Xss akonadi-contact akonadi-kcal akonadi-kde akonadi-kmime \
+	akonadiprotocolinternals c gpg-error gpgme++ gpgme++-pthread \
+	gpgme-pthread iconv intl kabc.>=5 kblog kcal kde3support kdecore.>=8 \
+	kdeui kdnssd kfile kholidays khtml kimap kimproxy kio kjs kldap kmime \
+	knewstuff2 knotifyconfig kontactinterface kparts kpimidentities \
+	kpimtextedit kpimutils kresources ktexteditor ktnef kutils \
+	lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui \
+	lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml m \
+	mailtransport nepomuk phonon pthread qgpgme solid stdc++ \
+	streamanalyzer streams syndication threadweaver z
 
 # these come from libs in real case
 pre-install:

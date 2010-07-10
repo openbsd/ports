@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/20 21:01:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, artwork
 DISTNAME =		kdeartwork-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS += 	kdecore.>=8,kdeui,kio,kparts::x11/kde4/libs \
-		kscreensaver::x11/kde4/base-workspace
+LIB_DEPENDS += 	::x11/kde4/libs \
+		::x11/kde4/base-workspace
 BUILD_DEPENDS+=	::x11/xscreensaver \
-		::x11/kde4/automoc
+		::x11/kde4/automoc \
+		::math/eigen2
 
-WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft
-WANTLIB += Xpm c m
-WANTLIB += pthread stdc++
-WANTLIB += QtDBus QtGui QtSvg QtXml QtOpenGL QtNetwork
-WANTLIB += Xt
+WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm Xt c kdecore.>=8 kdeui \
+	kio kparts kscreensaver lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork \
+	lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml m pthread stdc++
 
 CONFIGURE_ARGS +=	-DXSCREENSAVER_FOUND:BOOL=TRUE
 CONFIGURE_ARGS +=	-DXSCREENSAVER_DIR:STRING=${LOCALBASE}/libexec/xscreensaver

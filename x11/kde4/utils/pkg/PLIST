@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/23 16:23:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/07/10 16:57:23 espie Exp $
 @bin bin/ark
 @bin bin/irkick
 @bin bin/kcalc
@@ -23,6 +23,7 @@ lib/kde4/kerfuffle_libarchive.so
 lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
+lib/kde4/libextracthere.so
 lib/kde4/libkbytearrayedit.so
 lib/kde4/oktetapart.so
 lib/kde4/plasma_package_superkaramba.so
@@ -326,6 +327,7 @@ share/kde4/services/ServiceMenus/ark_servicemenu.desktop
 share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
+share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
 share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/kcm_lirc.desktop

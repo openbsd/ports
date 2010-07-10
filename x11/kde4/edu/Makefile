@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/20 13:04:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, edu
 DISTNAME =		kdeedu-${VERSION}
@@ -13,30 +13,34 @@ SHARED_LIBS +=  marblewidget         0.0      # .4.0
 SHARED_LIBS +=	analitza             0.0      # .4.4
 SHARED_LIBS +=	analitzagui          0.0      # .4.4
 SHARED_LIBS +=	cantorlibs           0.0      # .0.0
+SHARED_LIBS +=  avogadro-kalzium          0.0 # 0.9
+SHARED_LIBS +=  compoundviewer            0.0 # 4.4
 
 
 # ocaml is not a real dependency, as it's only needed in relation to libfacile
-BUILD_DEPENDS +=	::math/eigen \
-			::x11/kde4/automoc
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdeui,khtml,kio,kjs,knotifyconfig,kparts,ktexteditor,kutils,knewstuff2,knewstuff3,krosscore,krossui,kunitconversion,kpty,plasma::x11/kde4/libs \
-		cfitsio::math/cfitsio \
-		openbabel::misc/openbabel \
-		phonon::multimedia/phonon \
-		gps::misc/gpsd \
-		spectre::print/libspectre
+
+BUILD_DEPENDS +=	::math/eigen2 \
+			::x11/kde4/automoc 
+
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::math/cfitsio \
+		::misc/openbabel \
+		::multimedia/phonon \
+		::misc/gpsd \
+		::print/libspectre
 
 # for kstars
 BUILD_DEPENDS +=	::x11/xplanet
 RUN_DEPENDS +=		::x11/xplanet
 
-WANTLIB += GL GLU
-WANTLIB += c
-WANTLIB += m pthread stdc++ z
-WANTLIB += Qt3Support QtGui QtOpenGL QtSvg QtXml QtDBus QtNetwork
-WANTLIB += QtScript QtScriptTools QtWebKit
-WANTLIB += ncurses
-WANTLIB += readline
-WANTLIB += xml2 xslt
+WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm c cfitsio gps kde3support \
+	kdecore.>=8 kdeui khtml kio kjs knewstuff2 knewstuff3 knotifyconfig \
+	kparts kpty krosscore krossui ktexteditor kunitconversion kutils \
+	lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui \
+	lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript \
+	lib/qt4/QtScriptTools lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml m \
+	ncurses openbabel phonon.>=5 plasma pthread readline spectre stdc++ \
+	xml2 xslt z
 
 
 # broken libgps

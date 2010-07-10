@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/20 08:40:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/10 16:57:23 espie Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
@@ -33,28 +33,28 @@ SHARED_LIBS += 	gpgme++-pthread	     0.0      # .2.4
 SHARED_LIBS += 	gpgme++		     0.0      # .2.4
 SHARED_LIBS +=	microblog	     0.0      # .4.4
 
-# XXX bug in cmake ?
+# XXX bug in cmake, remove after cmake 2.8.2
 SHARED_LIBS += 	gpgmepp-pthread	     0.0      # .2.4
 SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
 
 
 BUILD_DEPENDS += ::devel/boost \
 		::x11/kde4/automoc
-LIB_DEPENDS +=	kdecore.>=8,kdeui,kio,kparts,kutils,solid::x11/kde4/libs \
-		sasl2::security/cyrus-sasl2 \
-		ldap,lber::databases/openldap \
-		gpgme,gpgme-pthread:gpgme->=0.4.5:security/gpgme \
-		akonadiprotocolinternals::x11/kde4/akonadi \
-		ical,icalss::textproc/libical
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::security/cyrus-sasl2 \
+		::databases/openldap \
+		:gpgme->=0.4.5:security/gpgme \
+		::x11/kde4/akonadi \
+		::textproc/libical
 
 # these come from libs in real case
 pre-install:
 	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
-WANTLIB += c m pthread
-WANTLIB += QtSql QtDBus QtGui QtSvg QtXml QtNetwork phonon
-WANTLIB += gpg-error iconv intl
-WANTLIB += stdc++
+WANTLIB += akonadiprotocolinternals c gpg-error gpgme gpgme-pthread ical \
+	icalss iconv intl kdecore.>=8 kdeui kio kparts kutils lber ldap \
+	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql \
+	lib/qt4/QtSvg lib/qt4/QtXml m phonon pthread sasl2 solid stdc++
 
 
 .include <bsd.port.mk>

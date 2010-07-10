@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/20 20:29:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/10 16:57:23 espie Exp $
 @bin bin/akonadiconsole
 @bin bin/akregator
 @bin bin/akregatorstorageexporter
@@ -43,21 +43,21 @@ lib/kde4/akregator_config_browser.so
 lib/kde4/akregator_config_general.so
 lib/kde4/akregator_mk4storage_plugin.so
 lib/kde4/akregatorpart.so
-lib/kde4/kabc_groupdav.so
+@bin lib/kde4/kabc_groupdav.so.0.0
 lib/kde4/kabc_groupwise.so
 lib/kde4/kabc_kolab.so
-lib/kde4/kabc_slox.so
+@bin lib/kde4/kabc_slox.so.2.0
 lib/kde4/kaddressbookpart.so
 lib/kde4/kalarm_local.so
 lib/kde4/kalarm_localdir.so
 lib/kde4/kalarm_remote.so
 lib/kde4/kcal_blog.so
-lib/kde4/kcal_groupdav.so
+@bin lib/kde4/kcal_groupdav.so.0.0
 lib/kde4/kcal_groupwise.so
 lib/kde4/kcal_kabc.so
 lib/kde4/kcal_kolab.so
 lib/kde4/kcal_remote.so
-lib/kde4/kcal_slox.so
+@bin lib/kde4/kcal_slox.so.2.0
 lib/kde4/kcm_apptsummary.so
 lib/kde4/kcm_kjots.so
 lib/kde4/kcm_kleopatra.so

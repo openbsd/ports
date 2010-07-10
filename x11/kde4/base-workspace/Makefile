@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/20 11:17:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdefakes,kdesu,kdeui,kfile,kio,knewstuff2,knotifyconfig,kparts,kpty,kutils,solid,threadweaver,khtml,kjs,knewstuff3,ktexteditor,kunitconversion,plasma,nepomuk,nepomukquery::x11/kde4/libs \
-		xklavier::x11/gnome/libxklavier \
-		usb::devel/libusb \
-		phonon.>=5::multimedia/phonon \
-		qimageblitz::x11/kde4/qimageblitz \
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::x11/gnome/libxklavier \
+		::devel/libusb \
+		::multimedia/phonon \
+		::x11/kde4/qimageblitz \
 		::x11/kde4/akonadi \
-		akonadi-kde,akonadi-kmime,kabc,kholidays,kmime,kpimutils,kresources,microblog,syndication::x11/kde4/pimlibs \
-		gps::misc/gpsd \
-		xmms::audio/xmms \
+		::x11/kde4/pimlibs \
+		::misc/gpsd \
+		::audio/xmms \
 
 BUILD_DEPENDS +=	::x11/kde4/automoc
 
+SUBST_VARS +=	VERSION
 
 SHARED_LIBS += kdecorations          3.0                # .4.0
 SHARED_LIBS += kfontinst             2.0                # .4.0
@@ -43,15 +44,18 @@ SHARED_LIBS += plasma_applet-system-monitor 0.0
 SHARED_LIBS += systemsettingsview	0.0
 
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdmcp
-WANTLIB += Xext Xfixes Xft Xinerama Xpm Xrandr Xrender Xss
-WANTLIB += Xtst c fontconfig freetype m png pthread
-WANTLIB += stdc++ util z
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml QtWebKit
-WANTLIB += QtScript QtSql
-WANTLIB += Xxf86misc Xdamage glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 iconv intl streamanalyzer strigiqtdbusclient
-WANTLIB += GL soprano xml2
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft \
+	Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc akonadi-kde \
+	akonadi-kmime c fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+	gps gthread-2.0 iconv intl kabc kde3support kdecore.>=8 kdefakes kdesu \
+	kdeui kfile kholidays khtml kio kjs kmime knewstuff2 knewstuff3 \
+	knotifyconfig kparts kpimutils kpty kresources ktexteditor \
+	kunitconversion kutils lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui \
+	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg \
+	lib/qt4/QtWebKit lib/qt4/QtXml m microblog nepomuk \
+	nepomukquery strigiqtdbusclient phonon.>=5 plasma png pthread \
+	qimageblitz solid soprano stdc++ streamanalyzer syndication \
+	threadweaver usb util xklavier xml2 xmms z
 
 # these come from libs in real case
 pre-install:

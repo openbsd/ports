@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/22 23:31:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, admin tools
 DISTNAME =		kdeadmin-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS += 	kdecore.>=8,kde3support,kdeui,kio,kntlm::x11/kde4/libs \
-		kldap::x11/kde4/pimlibs
+LIB_DEPENDS += 	::x11/kde4/libs \
+		::x11/kde4/pimlibs
 		
 # these come from libs in real case
 pre-install:
 	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 
-WANTLIB += c m pthread
-WANTLIB += stdc++
-WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
+WANTLIB += c kde3support kdecore.>=8 kdeui kio kldap kntlm lib/qt4/Qt3Support \
+	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
+	lib/qt4/QtXml m pthread stdc++
 
 
 .include <bsd.port.mk>

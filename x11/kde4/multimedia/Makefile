@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/23 16:23:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/10 16:57:23 espie Exp $
 
 COMMENT =		K Desktop Environment, multimedia
 DISTNAME =		kdemultimedia-${VERSION}
@@ -8,15 +8,17 @@ SHARED_LIBS += audiocdplugins 4.0	# .4.0
 SHARED_LIBS += kcddb          4.0       # .4.0
 SHARED_LIBS += kcompactdisc   4.0       # .4.0
 
-LIB_DEPENDS +=	kdecore.>=8,kdeui,kde3support,kio,kparts,solid,khtml,kjs,kutils,phonon::x11/kde4/libs \
-		FLAC::audio/flac \
-		cdda_paranoia,cdda_interface::audio/cdparanoia \
-		ogg::audio/libogg \
-		tag::audio/taglib \
-		vorbis,vorbisenc,vorbisfile::audio/libvorbis
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::audio/flac \
+		::audio/cdparanoia \
+		::audio/libogg \
+		::audio/taglib \
+		::audio/libvorbis
 
-WANTLIB += c m pthread stdc++ 
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
+WANTLIB += FLAC c cdda_interface cdda_paranoia kde3support kdecore.>=8 kdeui \
+	khtml kio kjs kparts kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
+	lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml m ogg \
+	phonon.>=5 pthread solid stdc++ tag vorbis vorbisenc vorbisfile
 
 # these come from libs in real case
 pre-install:

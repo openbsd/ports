@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/23 16:23:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/10 16:57:23 espie Exp $
 
 COMMENT =		K Desktop Environment, utils
 DISTNAME =		kdeutils-${VERSION}
@@ -17,18 +17,21 @@ SHARED_LIBS +=	oktetakastencore	0.0
 SHARED_LIBS +=	oktetakastengui 	0.0
 
 
-LIB_DEPENDS += 	kdecore.>=8,kde3support,kdeui,kio,kparts,kfile,knewstuff2,krosscore,kutils,kpty,solid,khtml,kjs::x11/kde4/libs \
-		kabc.>=5,kresources,kpimutils::x11/kde4/pimlibs \
-		gmp::devel/gmp \
-		qimageblitz::x11/kde4/qimageblitz \
-		plasma,solidcontrol::x11/kde4/base-workspace \
-		python2.6:python->=2.6,<2.7:lang/python/2.6 \
-		archive::archivers/libarchive
+LIB_DEPENDS += 	::x11/kde4/libs \
+		::x11/kde4/pimlibs \
+		::devel/gmp \
+		::x11/kde4/qimageblitz \
+		::x11/kde4/base-workspace \
+		::x11/kde4/base \
+		:python->=2.6,<2.7:lang/python/2.6 \
+		::archivers/libarchive
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
-WANTLIB += Xrender c m pthread
-WANTLIB += stdc++ util qca
-WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork QtScript
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender archive c gmp kabc.>=5 \
+	kde3support kdecore.>=8 kdeui kfile khtml kio kjs knewstuff2 konq \
+	kparts kpimutils kpty kresources krosscore kutils lib/qt4/Qt3Support \
+	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \
+	lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread python2.6 qca qimageblitz \
+	solid solidcontrol stdc++ util
 
 # these come from libs in real case
 pre-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/22 23:31:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
@@ -10,17 +10,16 @@ SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
 BUILD_DEPENDS +=	::x11/kde4/automoc
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,solid,knewstuff3,plasma,nepomuk,nepomukquery::x11/kde4/libs \
-	phonon.>=5::multimedia/phonon \
-	qimageblitz::x11/kde4/qimageblitz
+LIB_DEPENDS +=		::x11/kde4/libs \
+			::multimedia/phonon \
+			::x11/kde4/qimageblitz
 
-WANTLIB += ICE SM X11 Xau Xdmcp
-WANTLIB += Xext Xft Xpm Xrender
-WANTLIB += Xt c m pthread
-WANTLIB += stdc++ z soprano
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
-WANTLIB += glib-2.0
-WANTLIB += GL GLU
+WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender Xt c glib-2.0 \
+	kde3support kdecore.>=8 kdesu kdeui kfile khtml kio kjs knewstuff3 \
+	knotifyconfig kparts kpty ktexteditor kutils lib/qt4/Qt3Support \
+	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
+	lib/qt4/QtXml m nepomuk nepomukquery phonon.>=5 plasma pthread \
+	qimageblitz solid soprano stdc++ z
 
 # these come from libs in real case
 pre-install:

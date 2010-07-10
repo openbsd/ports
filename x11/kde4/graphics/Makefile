@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/23 13:11:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, graphics
 DISTNAME =		kdegraphics-${VERSION}
@@ -16,22 +16,20 @@ SHARED_LIBS +=	kexiv2               4.0
 SHARED_LIBS +=	kipi                 2.0
 SHARED_LIBS +=	ksane		     0.2
 
-LIB_DEPENDS+=	kdecore.>=8,kde3support,kdeui,kio,kparts,kutils,kfile,khtml,kjs,kpty,kjsapi,nepomuk,threadweaver::x11/kde4/libs \
-		poppler-qt4::print/poppler,-qt4 \
-		sane::graphics/sane-backends \
-		chm::devel/chmlib \
-		djvulibre::graphics/djvulibre \
-		qimageblitz::x11/kde4/qimageblitz \
-		spectre::print/libspectre
+LIB_DEPENDS+=	::x11/kde4/libs \
+		::print/poppler,-qt4 \
+		::graphics/sane-backends \
+		::devel/chmlib \
+		::graphics/djvulibre \
+		::x11/kde4/qimageblitz \
+		::print/libspectre
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
-WANTLIB += c freetype m
-WANTLIB += pthread stdc++ tiff z
-WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
-WANTLIB += gphoto2 gphoto2_port
-WANTLIB += soprano lcms exiv2 jpeg
-WANTLIB += Xxf86vm phonon
-WANTLIB += streamanalyzer streams qca
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xxf86vm c chm djvulibre exiv2 \
+	freetype gphoto2 gphoto2_port jpeg kde3support kdecore.>=8 kdeui kfile \
+	khtml kio kjs kjsapi kparts kpty kutils lcms lib/qt4/Qt3Support \
+	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
+	lib/qt4/QtXml m nepomuk phonon poppler-qt4 pthread qca qimageblitz \
+	sane soprano spectre stdc++ streamanalyzer streams threadweaver tiff z
 
 # these come from libs in real case
 pre-install:

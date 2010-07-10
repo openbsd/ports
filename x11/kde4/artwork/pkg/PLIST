@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/20 21:01:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/10 16:57:22 espie Exp $
 @bin bin/kbanner.kss
 @bin bin/kblob.kss
 @bin bin/kclock.kss
@@ -10,7 +10,9 @@
 @bin bin/klines.kss
 @bin bin/klorenz.kss
 @bin bin/kpartsaver.kss
+@bin bin/kpendulum.kss
 @bin bin/kpolygon.kss
+@bin bin/krotation.kss
 @bin bin/kscience.kss
 @bin bin/kslideshow.kss
 @bin bin/ksolarwinds.kss
@@ -4614,14 +4616,6 @@ share/wallpapers/Green_Concentration/contents/images/1600x1200.jpg
 share/wallpapers/Green_Concentration/contents/images/1920x1200.jpg
 share/wallpapers/Green_Concentration/contents/screenshot.png
 share/wallpapers/Green_Concentration/metadata.desktop
-share/wallpapers/Hail/
-share/wallpapers/Hail/contents/
-share/wallpapers/Hail/contents/images/
-share/wallpapers/Hail/contents/images/1280x1024.jpg
-share/wallpapers/Hail/contents/images/1600x1200.jpg
-share/wallpapers/Hail/contents/images/1920x1200.jpg
-share/wallpapers/Hail/contents/screenshot.png
-share/wallpapers/Hail/metadata.desktop
 share/wallpapers/HighTide/
 share/wallpapers/HighTide/contents/
 share/wallpapers/HighTide/contents/images/

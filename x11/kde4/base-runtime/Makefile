@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/20 09:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/10 16:57:22 espie Exp $
 
 COMMENT =		K Desktop Environment, base runtime
 DISTNAME =		kdebase-runtime-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kdnssd,kfile,khtml,kio,kjs,kmediaplayer,knewstuff2,knewstuff3,plasma,knotifyconfig,kparts,kpty,kutils,phonon,solid,nepomuk,nepomukquery::x11/kde4/libs \
-		phonon.>=5::multimedia/phonon \
-		smbclient::net/samba \
-		soprano,sopranoclient,sopranoserver::databases/soprano \
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::multimedia/phonon \
+		::net/samba \
+		::databases/soprano \
 
 SHARED_LIBS +=	kwalletbackend 		0.0	# 4.4
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.4
 
-WANTLIB += IlmThread
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp
-WANTLIB += Xext Xft Xpm
-WANTLIB += c jpeg m pthread
-WANTLIB += stdc++ util
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml QtScript
-WANTLIB += Half Iex IlmImf Imath IlmThread
-WANTLIB += attica exiv2
-WANTLIB += xine streamanalyzer streams
+WANTLIB += Half ICE Iex IlmImf IlmThread IlmThread Imath SM X11 Xau Xcursor \
+	Xdmcp Xext Xft Xpm attica c exiv2 jpeg kde3support kdecore.>=8 kdesu \
+	kdeui kdnssd kfile khtml kio kjs kmediaplayer knewstuff2 knewstuff3 \
+	knotifyconfig kparts kpty kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
+	lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg \
+	lib/qt4/QtXml m nepomuk nepomukquery phonon.>=5 plasma pthread \
+	smbclient solid soprano sopranoclient sopranoserver stdc++ \
+	streamanalyzer streams util xine
+
 
 pre-install:
 # these come from libs

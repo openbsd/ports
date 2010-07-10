@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.11 2010/06/20 21:09:52 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2010/07/10 16:57:22 espie Exp $
 
 FLAVOR ?=
 FLAVORS ?=		debug
 SEPARATE_BUILD =	flavored
 CATEGORIES ?=		x11 x11/kde
-VERSION ?=		4.4.4
+VERSION ?=		4.4.5
 DIST_SUBDIR ?=		kde
 PKGNAME?=		${DISTNAME}
 MODULES +=		x11/qt4

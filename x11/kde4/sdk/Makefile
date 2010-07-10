@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/23 14:53:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/10 16:57:23 espie Exp $
 
 COMMENT = 		K Desktop Environment, developer extensions
 DISTNAME =		kdesdk-${VERSION}
@@ -11,18 +11,18 @@ SHARED_LIBS += komparedialogpages	0.0 # .4.4
 SHARED_LIBS +=	komparediff2		0.0 # .4.4
 SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0	# .4.4
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knewstuff2,kparts,threadweaver,ktexteditor,kutils,knewstuff3,krosscore,krossui,plasma::x11/kde4/libs \
-		kabc.>=5,kcal,kresources::x11/kde4/pimlibs \
-		svn_client-1,svn_ra-1,svn_subr-1,svn_delta-1,svn_fs-1::devel/subversion \
-		hunspell-1.2::textproc/hunspell
+LIB_DEPENDS +=	::x11/kde4/libs \
+		::x11/kde4/pimlibs \
+		::devel/subversion \
+		::textproc/hunspell
 
-WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtNetwork QtSvg QtXml
-WANTLIB += QtScript QtSql
-WANTLIB += c
-WANTLIB += m
-WANTLIB += pthread stdc++
-WANTLIB += streamanalyzer streams xml2 xslt
-WANTLIB += apr-1
+WANTLIB += apr-1 c hunspell-1.2 kabc.>=5 kcal kde3support kdecore.>=8 kdesu \
+	kdeui kfile khtml kio kjs knewstuff2 knewstuff3 kparts kresources \
+	krosscore krossui ktexteditor kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
+	lib/qt4/QtDesigner lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \
+	lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread stdc++ \
+	streamanalyzer streams svn_client-1 svn_delta-1 svn_fs-1 svn_ra-1 \
+	svn_subr-1 threadweaver xml2 xslt
 
 # these come from libs in real case
 pre-install:

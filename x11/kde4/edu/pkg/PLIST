@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/19 18:43:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/07/10 16:57:22 espie Exp $
 @bin bin/blinken
 @bin bin/calgebra
 @bin bin/cantor
@@ -23,6 +23,7 @@
 @bin bin/parley
 bin/pykig.py
 @bin bin/rocs
+@bin bin/step
 @bin bin/tilecreator
 include/libkdeedu/
 include/libkdeedu/chemicaldataobject.h
@@ -157,6 +158,39 @@ include/marble/ViewportParams.h
 include/marble/geodata_export.h
 include/marble/global.h
 include/marble/marble_export.h
+lib/avogadro-kalzium/
+lib/avogadro-kalzium/colors/
+lib/avogadro-kalzium/colors/libchargecolor.so
+lib/avogadro-kalzium/colors/libdistancecolor.so
+lib/avogadro-kalzium/colors/libindexcolor.so
+lib/avogadro-kalzium/colors/libresiduecolor.so
+lib/avogadro-kalzium/engines/
+lib/avogadro-kalzium/engines/libaxesengine.so
+lib/avogadro-kalzium/engines/libcartoonengine.so
+lib/avogadro-kalzium/engines/libdipoleengine.so
+lib/avogadro-kalzium/engines/libforceengine.so
+lib/avogadro-kalzium/engines/libhbondengine.so
+lib/avogadro-kalzium/engines/liblabelengine.so
+lib/avogadro-kalzium/engines/liborbitalengine.so
+lib/avogadro-kalzium/engines/liboverlayengine.so
+lib/avogadro-kalzium/engines/libpolygonengine.so
+lib/avogadro-kalzium/engines/libribbonengine.so
+lib/avogadro-kalzium/engines/libringengine.so
+lib/avogadro-kalzium/engines/libsimplewireengine.so
+lib/avogadro-kalzium/engines/libsphereengine.so
+lib/avogadro-kalzium/engines/libstickengine.so
+lib/avogadro-kalzium/engines/libsurfaceengine.so
+lib/avogadro-kalzium/engines/libwireengine.so
+lib/avogadro-kalzium/tools/
+lib/avogadro-kalzium/tools/libaligntool.so
+lib/avogadro-kalzium/tools/libautoopttool.so
+lib/avogadro-kalzium/tools/libautorotatetool.so
+lib/avogadro-kalzium/tools/libbondcentrictool.so
+lib/avogadro-kalzium/tools/libclickmeasuretool.so
+lib/avogadro-kalzium/tools/libdrawtool.so
+lib/avogadro-kalzium/tools/libmanipulatetool.so
+lib/avogadro-kalzium/tools/libnavigatetool.so
+lib/avogadro-kalzium/tools/libselectrotatetool.so
 lib/kde4/cantor_creatematrixassistant.so
 lib/kde4/cantor_differentiateassistant.so
 lib/kde4/cantor_eigenvaluesassistant.so
@@ -184,6 +218,7 @@ lib/kde4/plasma_applet_parley.so
 lib/kde4/plasma_applet_worldclock.so
 lib/kde4/plasma_engine_kalzium.so
 lib/kde4/plasma_engine_parley.so
+lib/kde4/plugins/designer/kalziumuiwidgets.so
 lib/kde4/plugins/marble/
 lib/kde4/plugins/marble/CompassFloatItem.so
 lib/kde4/plugins/marble/CrosshairsPlugin.so
@@ -201,8 +236,10 @@ lib/kde4/plugins/marble/Wikipedia.so
 @lib lib/libSatLib.so.${LIBSatLib_VERSION}
 @lib lib/libanalitza.so.${LIBanalitza_VERSION}
 @lib lib/libanalitzagui.so.${LIBanalitzagui_VERSION}
+@lib lib/libavogadro-kalzium.so.${LIBavogadro-kalzium_VERSION}
 lib/libcantor_config.so
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
+@lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 lib/libhtmesh.a
 @lib lib/libkdeeduui.so.${LIBkdeeduui_VERSION}
 @lib lib/libkeduvocdocument.so.${LIBkeduvocdocument_VERSION}
@@ -230,6 +267,7 @@ share/applications/kde4/kwordquiz.desktop
 share/applications/kde4/marble.desktop
 share/applications/kde4/parley.desktop
 share/applications/kde4/rocs.desktop
+share/applications/kde4/step.desktop
 share/apps/blinken/
 share/apps/blinken/README.packagers
 share/apps/blinken/fonts/
@@ -3455,6 +3493,45 @@ share/apps/parley/xslt/flashcards.xsl
 share/apps/parley/xslt/table.xsl
 share/apps/rocs/
 share/apps/rocs/rocsui.rc
+share/apps/step/
+share/apps/step/examples/
+share/apps/step/examples/brownian.step
+share/apps/step/examples/doublependulum.step
+share/apps/step/examples/eightpendula.step
+share/apps/step/examples/first.step
+share/apps/step/examples/fourpendula.step
+share/apps/step/examples/gas.step
+share/apps/step/examples/graph.step
+share/apps/step/examples/liquid.step
+share/apps/step/examples/lissajous.step
+share/apps/step/examples/motor.step
+share/apps/step/examples/motor1.step
+share/apps/step/examples/note.step
+share/apps/step/examples/resonance.step
+share/apps/step/examples/softbody.step
+share/apps/step/examples/solar.step
+share/apps/step/examples/springs.step
+share/apps/step/examples/wave.step
+share/apps/step/objinfo/
+share/apps/step/objinfo/Box.html
+share/apps/step/objinfo/ChargedParticle.html
+share/apps/step/objinfo/Disk.html
+share/apps/step/objinfo/Gas.html
+share/apps/step/objinfo/GasLJForce.html
+share/apps/step/objinfo/GasParticle.html
+share/apps/step/objinfo/Meter.html
+share/apps/step/objinfo/Note.html
+share/apps/step/objinfo/Particle.html
+share/apps/step/objinfo/Polygon.html
+share/apps/step/objinfo/Spring.html
+share/apps/step/objinfo/World.html
+share/apps/step/stepui.rc
+share/apps/step/tutorials/
+share/apps/step/tutorials/tutorial1.step
+share/apps/step/tutorials/tutorial2.step
+share/apps/step/tutorials/tutorial3.step
+share/apps/step/tutorials/tutorial4.step
+share/apps/step/tutorials/tutorial5.step
 share/config.kcfg/
 share/config.kcfg/blinken.kcfg
 share/config.kcfg/cantor.kcfg
@@ -3477,6 +3554,7 @@ share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/parley.kcfg
 share/config.kcfg/rocs.kcfg
 share/config.kcfg/sagebackend.kcfg
+share/config.kcfg/step.kcfg
 share/config/cantor.knsrc
 share/config/cantor_kalgebra.knsrc
 share/config/cantor_maxima.knsrc
@@ -3488,6 +3566,7 @@ share/config/klettres.knsrc
 share/config/kstars.knsrc
 share/config/kwordquiz.knsrc
 share/config/parley.knsrc
+share/config/step.knsrc
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
 share/dbus-1/interfaces/org.kde.kmplot.Parser.xml
@@ -3905,6 +3984,20 @@ share/doc/HTML/en/rocs/
 share/doc/HTML/en/rocs/common
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
+share/doc/HTML/en/step/
+share/doc/HTML/en/step/circular-motor.png
+share/doc/HTML/en/step/common
+share/doc/HTML/en/step/disk-properties.png
+share/doc/HTML/en/step/examples.docbook
+share/doc/HTML/en/step/index.cache.bz2
+share/doc/HTML/en/step/index.docbook
+share/doc/HTML/en/step/mainwindow.png
+share/doc/HTML/en/step/tutorial1.png
+share/doc/HTML/en/step/tutorial2.png
+share/doc/HTML/en/step/tutorial3.png
+share/doc/HTML/en/step/tutorial4.png
+share/doc/HTML/en/step/tutorial5.png
+share/doc/HTML/en/step/tutorials.docbook
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/blinken.png
@@ -3924,6 +4017,7 @@ share/icons/hicolor/128x128/apps/kturtle.png
 share/icons/hicolor/128x128/apps/kwordquiz.png
 share/icons/hicolor/128x128/apps/marble.png
 share/icons/hicolor/128x128/apps/parley.png
+share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/128x128/mimetypes/
 share/icons/hicolor/128x128/mimetypes/application-x-kig.png
 share/icons/hicolor/16x16/actions/rocsaddedge.png
@@ -3955,6 +4049,7 @@ share/icons/hicolor/16x16/apps/kturtle.png
 share/icons/hicolor/16x16/apps/kwordquiz.png
 share/icons/hicolor/16x16/apps/marble.png
 share/icons/hicolor/16x16/apps/parley.png
+share/icons/hicolor/16x16/apps/step.png
 share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-kig.png
 share/icons/hicolor/22x22/
@@ -3980,6 +4075,7 @@ share/icons/hicolor/22x22/apps/ktouch.png
 share/icons/hicolor/22x22/apps/kturtle.png
 share/icons/hicolor/22x22/apps/kwordquiz.png
 share/icons/hicolor/22x22/apps/marble.png
+share/icons/hicolor/22x22/apps/step.png
 share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-kig.png
 share/icons/hicolor/32x32/actions/rocsaddedge.png
@@ -4011,6 +4107,7 @@ share/icons/hicolor/32x32/apps/kturtle.png
 share/icons/hicolor/32x32/apps/kwordquiz.png
 share/icons/hicolor/32x32/apps/marble.png
 share/icons/hicolor/32x32/apps/parley.png
+share/icons/hicolor/32x32/apps/step.png
 share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-kig.png
 share/icons/hicolor/48x48/actions/rocsaddnode.png
@@ -4042,6 +4139,7 @@ share/icons/hicolor/48x48/apps/maximabackend.png
 share/icons/hicolor/48x48/apps/parley.png
 share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
+share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-kig.png
 share/icons/hicolor/64x64/
@@ -4073,6 +4171,7 @@ share/icons/hicolor/64x64/apps/kturtle.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
 share/icons/hicolor/64x64/apps/marble.png
 share/icons/hicolor/64x64/apps/parley.png
+share/icons/hicolor/64x64/apps/step.png
 share/icons/hicolor/64x64/mimetypes/
 share/icons/hicolor/64x64/mimetypes/application-x-kig.png
 share/icons/hicolor/scalable/apps/blinken.svgz
@@ -4093,6 +4192,30 @@ share/icons/hicolor/scalable/apps/parley-simple.svgz
 share/icons/hicolor/scalable/apps/parley.svgz
 share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
+share/icons/oxygen/22x22/actions/pointer.png
+share/icons/oxygen/22x22/actions/step_object_Anchor.png
+share/icons/oxygen/22x22/actions/step_object_Box.png
+share/icons/oxygen/22x22/actions/step_object_ChargedParticle.png
+share/icons/oxygen/22x22/actions/step_object_CircularMotor.png
+share/icons/oxygen/22x22/actions/step_object_Controller.png
+share/icons/oxygen/22x22/actions/step_object_CoulombForce.png
+share/icons/oxygen/22x22/actions/step_object_Disk.png
+share/icons/oxygen/22x22/actions/step_object_Gas.png
+share/icons/oxygen/22x22/actions/step_object_GasParticle.png
+share/icons/oxygen/22x22/actions/step_object_Graph.png
+share/icons/oxygen/22x22/actions/step_object_GravitationForce.png
+share/icons/oxygen/22x22/actions/step_object_LinearMotor.png
+share/icons/oxygen/22x22/actions/step_object_Meter.png
+share/icons/oxygen/22x22/actions/step_object_Note.png
+share/icons/oxygen/22x22/actions/step_object_Particle.png
+share/icons/oxygen/22x22/actions/step_object_Pin.png
+share/icons/oxygen/22x22/actions/step_object_Polygon.png
+share/icons/oxygen/22x22/actions/step_object_Rope.png
+share/icons/oxygen/22x22/actions/step_object_SoftBody.png
+share/icons/oxygen/22x22/actions/step_object_Spring.png
+share/icons/oxygen/22x22/actions/step_object_Stick.png
+share/icons/oxygen/22x22/actions/step_object_Tracer.png
+share/icons/oxygen/22x22/actions/step_object_WeightForce.png
 share/kde4/services/cantor/
 share/kde4/services/cantor/cantor_part.desktop
 share/kde4/services/cantor/creatematrixassistant.desktop

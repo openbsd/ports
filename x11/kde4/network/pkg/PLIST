@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/23 14:53:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/07/10 16:57:23 espie Exp $
 @conflict pidgin-*
 @conflict libpurple-*
 @bin bin/kget
@@ -231,7 +231,6 @@ share/apps/kget/www/preferences-system.png
 share/apps/kget/www/title-border-bottom-downloads.png
 share/apps/kget/www/title-border-bottom-settings.png
 share/apps/kget/www/view-refresh.png
-share/apps/khtml/kpartplugins/
 share/apps/khtml/kpartplugins/kget_plug_in.rc
 share/apps/kopete/
 share/apps/kopete/CompactContactListLayouts.xml

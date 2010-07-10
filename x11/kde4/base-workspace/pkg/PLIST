@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/22 23:31:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/07/10 16:57:22 espie Exp $
 @group wheel
 @bin bin/genkdmconf
 @bin bin/kaccess
@@ -161,11 +161,11 @@ include/taskmanager/taskgroup.h
 include/taskmanager/taskitem.h
 include/taskmanager/taskmanager.h
 include/taskmanager/taskmanager_export.h
-lib/cmake/KDE4Workspace-4.4.4/
-lib/cmake/KDE4Workspace-4.4.4/KDE4WorkspaceConfig.cmake
-lib/cmake/KDE4Workspace-4.4.4/KDE4WorkspaceConfigVersion.cmake
-lib/cmake/KDE4Workspace-4.4.4/KDE4WorkspaceLibraryTargets-release.cmake
-lib/cmake/KDE4Workspace-4.4.4/KDE4WorkspaceLibraryTargets.cmake
+lib/cmake/KDE4Workspace-${VERSION}/
+lib/cmake/KDE4Workspace-${VERSION}/KDE4WorkspaceConfig.cmake
+lib/cmake/KDE4Workspace-${VERSION}/KDE4WorkspaceConfigVersion.cmake
+lib/cmake/KDE4Workspace-${VERSION}/KDE4WorkspaceLibraryTargets-release.cmake
+lib/cmake/KDE4Workspace-${VERSION}/KDE4WorkspaceLibraryTargets.cmake
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/krdb_clearlibrarypath
 @bin lib/kconf_update_bin/kwin_update_default_rules
@@ -399,6 +399,11 @@ lib/libkickoff.so
 @lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
 @lib lib/libtaskmanager.so.${LIBtaskmanager_VERSION}
 @lib lib/libweather_ion.so.${LIBweather_ion_VERSION}
+lib/python2.6/
+lib/python2.6/site-packages/
+lib/python2.6/site-packages/PyKDE4/
+lib/python2.6/site-packages/PyKDE4/plasmascript.py
+lib/python2.6/site-packages/PyKDE4/plasmascript.pyc
 lib/strigi/strigita_font.so
 share/applications/
 share/applications/kde4/
@@ -824,6 +829,17 @@ share/apps/plasma/services/notifications.operations
 share/apps/plasma/services/nowplaying.operations
 share/apps/plasma/services/searchlaunch.operations
 share/apps/plasma/services/tasks.operations
+share/apps/plasma_scriptengine_python/
+share/apps/plasma_scriptengine_python/plasma_importer.py
+share/apps/plasma_scriptengine_python/plasma_importer.pyc
+share/apps/plasma_scriptengine_python/pyappletscript.py
+share/apps/plasma_scriptengine_python/pyappletscript.pyc
+share/apps/plasma_scriptengine_python/pydataengine.py
+share/apps/plasma_scriptengine_python/pydataengine.pyc
+share/apps/plasma_scriptengine_python/pyrunner.py
+share/apps/plasma_scriptengine_python/pyrunner.pyc
+share/apps/plasma_scriptengine_python/pywallpaper.py
+share/apps/plasma_scriptengine_python/pywallpaper.pyc
 share/apps/plasma_scriptengine_ruby/
 share/apps/plasma_scriptengine_ruby/applet.rb
 share/apps/plasma_scriptengine_ruby/data_engine.rb
@@ -2095,9 +2111,13 @@ share/kde4/services/plasma-sal-office.desktop
 share/kde4/services/plasma-sal-system.desktop
 share/kde4/services/plasma-sal-utility.desktop
 share/kde4/services/plasma-scriptengine-applet-dashboard.desktop
+share/kde4/services/plasma-scriptengine-applet-python.desktop
 share/kde4/services/plasma-scriptengine-applet-web.desktop
+share/kde4/services/plasma-scriptengine-dataengine-python.desktop
 share/kde4/services/plasma-scriptengine-ruby-applet.desktop
 share/kde4/services/plasma-scriptengine-ruby-dataengine.desktop
+share/kde4/services/plasma-scriptengine-runner-python.desktop
+share/kde4/services/plasma-scriptengine-wallpaper-python.desktop
 share/kde4/services/plasma-tasks-default.desktop
 share/kde4/services/plasma-wallpaper-color.desktop
 share/kde4/services/plasma-wallpaper-image.desktop
