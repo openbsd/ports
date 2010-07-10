@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/23 12:42:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/07/10 06:20:59 ajacoutot Exp $
 @bin bin/mc-account-convert
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
@@ -23,10 +23,8 @@ include/libmcclient/mc-interfaces.h
 include/libmcclient/mc-profile.h
 include/libmcclient/mc-signals-marshal.h
 include/libmcclient/mc-svc-client.h
-lib/libmcclient-5.4.0.so
-lib/libmcclient.a
 lib/libmcclient.la
-lib/libmcclient.so
+@lib lib/libmcclient.so.${LIBmcclient_VERSION}
 lib/pkgconfig/libmcclient.pc
 @bin libexec/mission-control-5
 @man man/man1/mc-account-convert.1
