@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/26 20:09:18 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/10 13:54:22 naddy Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -7,6 +7,7 @@ COMMENT=	FreeIPMI provides in-band and out-of-band IPMI software
 
 V=		0.4.6
 DISTNAME=	freeipmi-${V}
+REVISION=	0
 
 SHARED_LIBS +=  freeipmi 4.0                  # .4.0
 SHARED_LIBS +=  ipmidetect 0.0                # .0.0
@@ -31,8 +32,8 @@ WANTLIB += c gpg-error m pthread
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${V}/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt \
-		::devel/argp-standalone
+BUILD_DEPENDS=	::devel/argp-standalone
+LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
