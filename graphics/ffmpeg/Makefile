@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2010/06/15 10:07:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.54 2010/07/10 22:45:19 naddy Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=		20100512
 DISTNAME=	ffmpeg-svn-${V}
 PKGNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 
