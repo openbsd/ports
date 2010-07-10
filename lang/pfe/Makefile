@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/26 20:09:18 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/10 20:50:55 naddy Exp $
 
 COMMENT=	Portable Forth Environment
 
@@ -24,10 +24,6 @@ WANTLIB=	c m ncurses
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man
 
-# i386 build fails due to a compiler bug with gcc 3.3
-MODULES+=       gcc4
-MODGCC4_ARCHES= i386
-MODGCC4_LANGS=	c
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--with-regs
 .endif
