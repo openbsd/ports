@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2010/07/10 13:33:46 naddy Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -10,13 +10,22 @@ BOOTSTRAP_GEN = 3
 # XXX this needs libc.so.53.0 to build on i386
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
-PKGNAME-main =  gcc-${FULL_PKGVERSION}p0v0
-PKGNAME-c++ =   g++-${FULL_PKGVERSION}p2v0
-PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}v0
-PKGNAME-f95 =   g95-${FULL_PKGVERSION}p1v0
-PKGNAME-java =  gcj-${FULL_PKGVERSION}p0v0
-PKGNAME-objc =  gobjc-${FULL_PKGVERSION}p1v0
-PKGNAME-ada =   gnat-${FULL_PKGVERSION}p1v0
+PKGNAME-main =  gcc-${FULL_PKGVERSION}
+PKGNAME-c++ =   g++-${FULL_PKGVERSION}
+PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}
+PKGNAME-f95 =   g95-${FULL_PKGVERSION}
+PKGNAME-java =  gcj-${FULL_PKGVERSION}
+PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
+PKGNAME-ada =   gnat-${FULL_PKGVERSION}
+
+REVISION-main = 0
+REVISION-c++ = 2
+REVISION-f95 = 1
+REVISION-java = 0
+REVISION-objc = 1
+REVISION-ada = 1
+EPOCH = 0
+
 SHARED_LIBS =	estdc++		11.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
