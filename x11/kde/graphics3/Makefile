@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2010/07/10 12:44:30 espie Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -12,12 +12,11 @@ MODKDE_VERSION =	3.5.8
 FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
-PKGNAME =		${DISTNAME}
 
-PKGNAME-main =		${DISTNAME}p8
-PKGNAME-kamera =	kamera-${VERSION}p4
-PKGNAME-kpov =		kpovmodeller-${VERSION}p4
-PKGNAME-sane =		ksane-${VERSION}p6
+PKGNAME-main =		${DISTNAME}
+PKGNAME-kamera =	kamera-${VERSION}
+PKGNAME-kpov =		kpovmodeller-${VERSION}
+PKGNAME-sane =		ksane-${VERSION}
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -46,32 +45,41 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			::print/libpaper \
 			::print/poppler \
 			::print/poppler,-qt
-WANTLIB-main =	 ${WANTLIB} GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
+LIB_DEPENDS-kpov =	${LIB_DEPENDS}
+
+RUN_DEPENDS-kpov =	::graphics/povray \
+			:desktop-file-utils-*:devel/desktop-file-utils 
+
+LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
+			::graphics/libgphoto2
+
+RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS-sane =	${LIB_DEPENDS} \
+			::graphics/sane-backends
+
+WANTLIB-main = 		${WANTLIB}
+WANTLIB-kpov =		${WANTLIB}
+WANTLIB-kamera =	${WANTLIB}
+WANTLIB-sane =		${WANTLIB-kamera}
+
+REVISION-main = 8
+REVISION-kamera = 4
+REVISION-kpov = 4
+REVISION-sane = 6
+
+WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
 	Xxf86vm c drm expat fontconfig freetype fribidi lcms lib/kde3/kdeprint \
 	lib/kde3/khtml lib/kde3/kjs lib/kde3/kparts lib/kde3/kutils \
 	lib/kde3/kwalletclient mng openjpeg paper pcre pcreposix poppler \
 	poppler-qt pthread tiff ungif xml2
 
-
-
-LIB_DEPENDS-kpov =	${LIB_DEPENDS}
-
-RUN_DEPENDS-kpov =	::graphics/povray \
-			:desktop-file-utils-*:devel/desktop-file-utils 
-
-WANTLIB-kpov = ${WANTLIB} GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
+WANTLIB-kpov += GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
 	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread
 
-LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
-			::graphics/libgphoto2
-WANTLIB-kamera = ${WANTLIB} Xrender exif gphoto2 gphoto2_port \
+WANTLIB-kamera +=  Xrender exif gphoto2 gphoto2_port \
 	lib/kde3/kwalletclient ltdl
-
-RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-sane =	${LIB_DEPENDS} \
-			::graphics/sane-backends
-WANTLIB-sane =	 ${WANTLIB-kamera} avahi-client avahi-common c dbus-1 \
+WANTLIB-sane +=	avahi-client avahi-common c dbus-1 \
 	lib/kde3/kabc lib/kde3/kdeprint lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard ltdl pthread sane \
 	tiff usb

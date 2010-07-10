@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
 VERSION =		3.5.10
 DISTNAME =		kdetoys-${VERSION}
-PKGNAME =		${DISTNAME}p4
 MODKDE_VERSION ?=	3.5.8
 
 MODULES =		x11/kde devel/gettext
@@ -14,6 +13,7 @@ LIB_DEPENDS = 		::x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
+REVISION = 4
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \

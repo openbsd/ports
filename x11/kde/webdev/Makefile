@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/08 21:28:50 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdewebdev-${VERSION}
-PKGNAME =		${DISTNAME}p4
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
@@ -19,6 +18,7 @@ LIB_DEPENDS =	::x11/kde/libs3 \
 
 SEPARATE_BUILD = 	flavored
 
+REVISION = 4
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
 	gcrypt gpg-error idn jpeg kmdi knewstuff lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/katepartinterfaces lib/kde3/kdecore.>=6 lib/kde3/kdefx \

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/07/08 21:28:48 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeaccessibility-${VERSION}
-PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0
@@ -18,6 +17,7 @@ FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 
+REVISION =	6
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xtst art_lgpl_2 artsflow \
 	artsflow_idl audiofile c fam glib-2.0 gmodule-2.0 gthread-2.0 idn jpeg \
 	kmedia2_idl lib/kde3/DCOP lib/kde3/artskde lib/kde3/kabc \

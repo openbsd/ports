@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2010/07/08 21:28:48 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2010/07/10 12:44:30 espie Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION =	3.5.8
-PKGNAME =		${DISTNAME}p3
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -39,6 +38,7 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
 
+REVISION =	3
 WANTLIB = ICE SM X11 Xau Xdmcp Xext audiofile c glib-2.0 gmodule-2.0 \
 	gthread-2.0 jpeg m mad ogg pcre png pthread pthread-stubs sndio stdc++ \
 	vorbis vorbisenc vorbisfile xcb z

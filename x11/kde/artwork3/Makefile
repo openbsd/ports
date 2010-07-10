@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		K Desktop Environment, additional artwork
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeartwork-${VERSION}
-PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =	3.5.8
 
 MODULES =		x11/kde devel/gettext
@@ -18,6 +17,7 @@ CONFIGURE_ENV +=	XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
 BUILD_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
 RUN_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
 
+REVISION =	6
 WANTLIB = GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xt Xxf86vm \
 	art_lgpl_2 artsflow artsflow_idl artskde audiofile c drm fam glib-2.0 \
 	gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl kwalletclient \

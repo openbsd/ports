@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
-PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -25,6 +24,7 @@ LIB_DEPENDS =	::x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
+REVISION = 6
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
 	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \

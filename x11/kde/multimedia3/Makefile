@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}p7
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -62,6 +61,7 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
+REVISION =	7
 WANTLIB = FLAC.>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
 	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \

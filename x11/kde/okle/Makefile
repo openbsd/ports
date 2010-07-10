@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/10 12:44:30 espie Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
 VERSION=		3.0
 DISTNAME=		okle-0.3
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}
 HOMEPAGE=		http://okle.sourceforge.net/
 MASTER_SITES=		http://okle.sourceforge.net/src/
 EXTRACT_SUFX=		.tar.gz
@@ -19,6 +19,7 @@ USE_LIBTOOL=	Yes
 
 MODULES=	x11/kde devel/gettext
 
+REVISION = 5
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c dvdcontrol fam idn \
 	jpeg lib/kde3/DCOP lib/kde3/kdecore.>=4 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m msgevents png \

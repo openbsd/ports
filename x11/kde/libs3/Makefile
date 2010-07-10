@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.109 2010/07/10 12:44:30 espie Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -7,8 +7,8 @@ VERSION =		3.5.10
 DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main =		${DISTNAME}p10
-PKGNAME-cups =		kdecups-${VERSION}p6
+PKGNAME-main =		${DISTNAME}
+PKGNAME-cups =		kdecups-${VERSION}
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
@@ -79,11 +79,7 @@ LIB_DEPENDS-main =	\
 	::graphics/openexr \
 	::textproc/aspell/core
 
-WANTLIB-main = ${WANTLIB} Half Iex IlmImf.>=4 IlmThread Imath artsflow.>=1.0 \
-	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
-	jasper kmedia2_idl mad mcop ogg pcre pcreposix qtmcop sndio \
-	soundserver_idl tiff.>=35 vorbis vorbisenc vorbisfile xml2 xslt.>=1.10
-
+WANTLIB-main = ${WANTLIB}
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
@@ -95,7 +91,15 @@ LIB_DEPENDS-cups = \
 	::x11/kde/libs3 \
 	::print/cups
 
-WANTLIB-cups = ${WANTLIB} DCOP cups lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
+WANTLIB-cups = ${WANTLIB}
+
+REVISION-main = 10
+REVISION-cups = 6
+WANTLIB-main += Half Iex IlmImf.>=4 IlmThread Imath artsflow.>=1.0 \
+	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
+	jasper kmedia2_idl mad mcop ogg pcre pcreposix qtmcop sndio \
+	soundserver_idl tiff.>=35 vorbis vorbisenc vorbisfile xml2 xslt.>=1.10
+WANTLIB-cups += DCOP cups lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdeprint_management \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts \
 	lib/kde3/kwalletclient ssl

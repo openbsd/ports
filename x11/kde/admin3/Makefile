@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/08 21:28:48 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeadmin-${VERSION}
-PKGNAME =		${DISTNAME}p4
 MODKDE_VERSION ?=	3.5.8
 
 MODULES =	x11/kde devel/gettext
@@ -15,6 +14,7 @@ FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 
+REVISION =	4
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg kabc \
 	kresources kwalletclient lib/kde3/DCOP lib/kde3/kdecore.>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \

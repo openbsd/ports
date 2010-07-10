@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/07/10 12:44:30 espie Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,6 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p13
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -96,6 +95,7 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::databases/postgresql
 
 
+REVISION =	13
 WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/07/10 12:44:30 espie Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
-PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -62,6 +61,8 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS +=	::x11/kde/libs3
 
+REVISION =	5
+REVISION-kpilot =	0
 WANTLIB = GL GLU ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
 	Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm art_lgpl_2 artsflow \
 	artsflow_idl audiofile c drm expat fam fontconfig freetype glib-2.0 \
@@ -92,7 +93,7 @@ post-install:
 	@${post_install_libs}
 
 #MULTI_PACKAGES=-kpilot
-FULLPKGNAME-kpilot = kpilot-${VERSION}p0
+FULLPKGNAME-kpilot = kpilot-${VERSION}
 
 #.if !defined(PACKAGING) || ${SUBPACKAGE} == "-kpilot"
 #LIB_DEPENDS+=	pisock::comms/pilot-link

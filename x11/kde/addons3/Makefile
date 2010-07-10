@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2010/07/08 21:28:48 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/10 12:44:30 espie Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeaddons-${VERSION}
-PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =	3.5.8
 
 MODULES =	x11/kde devel/gettext
@@ -25,6 +24,7 @@ LIB_DEPENDS = 	::x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
+REVISION = 6
 WANTLIB = ICE SDL.>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	artsflow artsflow_idl audiofile c fam gdk glib glib-2.0 gmodule \
 	gmodule-2.0 gthread-2.0 gtk idn jpeg kimproxy kmedia2_idl \

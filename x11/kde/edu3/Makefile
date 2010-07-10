@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/10 12:44:30 espie Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
-PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION ?=	3.5.8
 FLAVORS =	debug
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
@@ -22,6 +21,7 @@ SEPARATE_BUILD =	flavored
 
 CONFIGURE_ARGS +=	--disable-kig-python-scripting
 
+REVISION =	5
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl artskde \
 	audiofile c drm expat fam fontconfig freetype glib-2.0.>=800.0 \

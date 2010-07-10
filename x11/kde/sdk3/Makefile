@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/10 12:44:30 espie Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -6,8 +6,8 @@ CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
-PKGNAME-main =		${DISTNAME}p5
-PKGNAME-svn =		kdesvn-${VERSION}p6
+PKGNAME-main =		${DISTNAME}
+PKGNAME-svn =		kdesvn-${VERSION}
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -37,15 +37,16 @@ WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread \
 	pthread-stubs rpcsvc stdc++ util xcb z
+WANTLIB-main = ${WANTLIB}
+WANTLIB-svn = ${WANTLIB}
 
-WANTLIB-main = ${WANTLIB} Xfixes Xt expat fontconfig freetype kabc kdeprint \
+REVISION-main = 5
+REVISION-svn = 6
+WANTLIB-main += Xfixes Xt expat fontconfig freetype kabc kdeprint \
 	khtml kjs kparts kresources kspell ktexteditor ktnef ktnef kunittest \
 	kutils lib/kde3/kcal lib/kde3/kmime pcre pcreposix qui-mt vcard xml2 \
 	xslt
-
-
-
-WANTLIB-svn = ${WANTLIB} apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
+WANTLIB-svn += apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
 	neon sasl2 sqlite3 ssl svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 	svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 \
 	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1

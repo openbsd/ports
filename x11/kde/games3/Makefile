@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2010/07/08 21:28:49 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/10 12:44:30 espie Exp $
 
 COMMENT =		K Desktop Environment, games
 
 CATEGORIES =		x11 x11/kde games
 VERSION =		3.5.10
 DISTNAME =		kdegames-${VERSION}
-PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	kdegames             4.0      # .3.0
 SHARED_LIBS +=	atlantic             4.0      # .3.0
@@ -19,6 +18,7 @@ RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS = 	::x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
+REVISION =	5
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
