@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1018 2010/07/09 13:11:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1019 2010/07/10 09:11:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -401,9 +401,15 @@ SUBPACKAGE ?= -main
 .endif
 
 _MULTI_PACKAGES =
-.for _s in ${MULTI_PACKAGES}
 
-# ONLY_FOR_ARCHS is special, since it can be undefined
+REVISION ?=
+EPOCH ?=
+
+.for _s in ${MULTI_PACKAGES}
+REVISION${_s} ?= ${REVISION}
+EPOCH${_s} ?= ${EPOCH}
+
+# ONLY_FOR_ARCHS/NOT_FOR_ARCHS are special
 .  if defined(ONLY_FOR_ARCHS)
 ONLY_FOR_ARCHS${_s} ?= ${ONLY_FOR_ARCHS}
 .  endif
@@ -542,7 +548,25 @@ _MASTER ?=
 _SOLVING_DEP ?= No
 
 _READMES =
+
 .if ${MULTI_PACKAGES} == "-"
+# XXX "parse" FULLPKGNAME: is there a flavor after the version number
+.    if ${FULLPKGNAME:M*-[0-9]*-*}
+.      if !empty(REVISION)
+# XXX simplest way is to alter FULLPKGNAME in place, even though := is evil...
+FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)-/-\1p${REVISION}-/}
+.      endif
+.      if !empty(EPOCH)
+FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)-/-\1v${EPOCH}-/}
+.      endif
+.    else
+.      if !empty(REVISION)
+FULLPKGNAME := ${FULLPKGNAME}p${REVISION}
+.      endif
+.      if !empty(EPOCH)
+FULLPKGNAME := ${FULLPKGNAME}v${EPOCH}
+.      endif
+.    endif
 FULLPKGNAME- = ${FULLPKGNAME}
 _READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME}.html
 .else
@@ -556,6 +580,22 @@ ERRORS += "Warning: FULLPKGNAME${_s} defined but no FULLPKGPATH${_s}"
 FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 .      else
 FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
+.      endif
+.    endif
+# XXX see comments above for !MULTI_PACKAGES case
+.    if ${FULLPKGNAME${_s}:M*-[0-9]*-*}
+.      if !empty(REVISION${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)-/-\1p${REVISION${_s}}-/}
+.      endif
+.      if !empty(EPOCH${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)-/-\1v${EPOCH${_s}}-/}
+.      endif
+.    else
+.      if !empty(REVISION${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}p${REVISION${_s}}
+.      endif
+.      if !empty(EPOCH${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}v${EPOCH${_s}}
 .      endif
 .    endif
 _READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_s}}.html
@@ -894,6 +934,12 @@ _tmpvars += ${_v}=${${_v:S/^^//}:Q}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
+.  if !empty(REVISION${_S})
+PKG_ARGS${_S} += -DREVISION=${REVISION${_S}}
+.  endif
+.  if !empty(EPOCH${_S})
+PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
+.  endif
 .endfor
 
 SUBST_CMD = perl ${PORTSDIR}/infrastructure/build/pkg_subst
