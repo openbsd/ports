@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1019 2010/07/10 09:11:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1020 2010/07/10 13:29:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -434,6 +434,8 @@ _ARCH_OK${_s} = 0
 .      endif
 .    endfor
 .  endif
+# XXX
+_ARCH_OK${SUBPACKAGE} ?= 0
 
 # allow subpackages to vanish on architectures that don't
 # support them
