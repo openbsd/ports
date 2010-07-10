@@ -1,12 +1,12 @@
-$OpenBSD: patch-ntpd_ntp_scanner_c,v 1.1 2010/07/03 02:49:43 naddy Exp $
---- ntpd/ntp_scanner.c.orig	Thu Jul  1 15:15:49 2010
-+++ ntpd/ntp_scanner.c	Thu Jul  1 15:16:09 2010
-@@ -637,7 +637,7 @@ lex_too_long:
- 	yytext[min(sizeof(yytext) - 1, 50)] = 0;
- 	msyslog(LOG_ERR, 
- 		"configuration item on line %d longer than limit of %d, began with '%s'",
--		ip_file->line_no, sizeof(yytext) - 1, yytext);
-+		ip_file->line_no, (int)sizeof(yytext) - 1, yytext);
+$OpenBSD: patch-ntpd_ntp_scanner_c,v 1.2 2010/07/10 19:48:32 naddy Exp $
+--- ntpd/ntp_scanner.c.orig	Sat Jul 10 18:30:24 2010
++++ ntpd/ntp_scanner.c	Sat Jul 10 18:30:39 2010
+@@ -351,7 +351,7 @@ is_special(
+ 	int ch
+ 	)
+ {
+-	return (int)strchr(special_chars, ch);
++	return strchr(special_chars, ch) != NULL;
+ }
  
- 	/*
- 	 * If we hit the length limit reading the startup configuration
+ 

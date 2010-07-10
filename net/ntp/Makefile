@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/07/03 02:49:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/10 19:48:32 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,7 +6,7 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so we
 # convert it to 'pl' for local use.
 
-VERSION=	4.2.6p1
+VERSION=	4.2.6p2
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -22,16 +22,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto edit kvm m termcap
 
-BUILD_DEPENDS=	::devel/bison
+# enabling SEPARATE_BUILD causes the parser to be rebuilt .y -> .c,
+# which requires bison
 
-SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-parse-clocks \
 		--with-binsubdir=sbin
 CONFIGURE_ENV=	CPPFLAGS='-DCONFIG_FILE="\"${SYSCONFDIR}/ntp.conf\"" \
 			  -DKEYFILE="\"${SYSCONFDIR}/ntp.keys\""'
-YACC=		bison -y
 
 post-build:
 	@${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD

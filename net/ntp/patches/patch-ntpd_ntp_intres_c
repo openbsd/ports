@@ -1,23 +1,12 @@
-$OpenBSD: patch-ntpd_ntp_intres_c,v 1.1 2010/07/03 02:49:43 naddy Exp $
---- ntpd/ntp_intres.c.orig	Thu Jul  1 14:55:24 2010
-+++ ntpd/ntp_intres.c	Thu Jul  1 15:23:51 2010
-@@ -830,8 +830,8 @@ request(
- 		if (total_len > sizeof(reqpkt)) {
- 			msyslog(LOG_ERR,
- 				"intres total_len %u limit is %u (%u octet digest)\n",
--				total_len, sizeof(reqpkt),
--				req_hashlen);
-+				(u_int)total_len, (u_int)sizeof(reqpkt),
-+				(u_int)req_hashlen);
- 			resolver_exit(1);
- 		}
- 	} else {
+$OpenBSD: patch-ntpd_ntp_intres_c,v 1.2 2010/07/10 19:48:32 naddy Exp $
+--- ntpd/ntp_intres.c.orig	Sat Jul 10 18:22:29 2010
++++ ntpd/ntp_intres.c	Sat Jul 10 18:22:51 2010
 @@ -849,7 +849,7 @@ request(
+ 		n = authencrypt(req_keyid, (void *)&reqpkt, req_len);
  		if ((size_t)n != req_hashlen + sizeof(reqpkt.keyid)) {
  			msyslog(LOG_ERR,
- 				"intres maclen %d expected %u\n",
--				n, req_hashlen + sizeof(reqpkt.keyid));
-+				n, (u_int)(req_hashlen + sizeof(reqpkt.keyid)));
+-				"intres maclen %d expected %u\n",
++				"intres maclen %d expected %lu\n",
+ 				n, (u_long)(req_hashlen +
+ 				sizeof(reqpkt.keyid)));
  			resolver_exit(1);
- 		}
- 		req_len += n;
