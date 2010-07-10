@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/08 22:15:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/10 20:30:37 naddy Exp $
 
-REVISION=	1.0
-VERSION=	${REVISION}.2a
+REV=		1.0
+VERSION=	${REV}.2a
 PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	net	0.0
 

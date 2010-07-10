@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/08 22:17:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/10 20:30:37 naddy Exp $
 
-REVISION=	1.1
-VERSION=	${REVISION}.2.1
+REV=		1.1
+VERSION=	${REV}.2.1
 PKGNAME=        ${DISTNAME}p0
 SHARED_LIBS=	net	11.0
 
@@ -16,7 +16,7 @@ CONFIGURE_ENV=	LIBNET_CONFIG_LIBS="-L${LOCALBASE}/lib/libnet-1.1" \
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
 		${PREFIX}/bin/libnet-config-1.1
-	@ln -sf libnet-${REVISION}/libnet.so.${LIBnet_VERSION} \
+	@ln -sf libnet-${REV}/libnet.so.${LIBnet_VERSION} \
 		${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/10 20:30:37 naddy Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
 VERSION=		1.0
-REVISION=		2306
+REV=			2306
 DISTNAME=		PyProtocols
-PKGNAME=		py-protocols-${VERSION}r${REVISION}p3
+PKGNAME=		py-protocols-${VERSION}r${REV}p3
 
 CATEGORIES=		devel
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://openbsddistfiles.org/martynas/python/
-DISTFILES=		PyProtocols-${VERSION}a0dev_r${REVISION}${EXTRACT_SUFX}
+DISTFILES=		PyProtocols-${VERSION}a0dev_r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 RUN_DEPENDS=		::devel/py-decoratortools

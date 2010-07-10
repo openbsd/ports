@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/10 20:30:37 naddy Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
 VERSION=		0.5
-REVISION=		2306
+REV=			2306
 DISTNAME=		RuleDispatch
-PKGNAME=		py-ruledispatch-${VERSION}r${REVISION}p3
+PKGNAME=		py-ruledispatch-${VERSION}r${REV}p3
 
 CATEGORIES=		devel
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://openbsddistfiles.org/martynas/python/
-DISTFILES=		RuleDispatch-${VERSION}a0.dev-r${REVISION}${EXTRACT_SUFX}
+DISTFILES=		RuleDispatch-${VERSION}a0.dev-r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 RUN_DEPENDS=		::devel/py-protocols
