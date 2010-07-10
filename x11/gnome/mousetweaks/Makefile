@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/05 19:36:10 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/10 21:24:03 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
 GNOME_VERSION=	2.30.2
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
@@ -19,16 +20,16 @@ WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gailutil gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += popt pthread pthread-stubs xcb xml2 z xcb-render xcb-render-util
-WANTLIB += panel-applet-2.>=2
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 popt
+WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += xml2 z panel-applet-2 spi cspi
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gnome/applets2 \
-		spi,cspi::x11/gnome/at-spi
+LIB_DEPENDS=	::x11/gnome/panel \
+		::x11/gnome/at-spi
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES= 	Yes
