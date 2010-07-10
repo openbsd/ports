@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.25 2009/03/11 21:28:45 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2010/07/10 20:06:54 naddy Exp $
 
-COMMENT-main=	Berkeley DB package, revision ${REVISION}
-COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REVISION}
+COMMENT-main=	Berkeley DB package, revision ${REV}
+COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
 
 DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
