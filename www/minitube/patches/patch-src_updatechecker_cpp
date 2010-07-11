@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_updatechecker_cpp,v 1.1.1.1 2010/07/11 00:45:44 jakemsr Exp $
+--- src/updatechecker.cpp.orig	Wed Jul  7 12:51:47 2010
++++ src/updatechecker.cpp	Wed Jul  7 12:52:45 2010
+@@ -11,7 +11,9 @@ UpdateChecker::UpdateChecker() {
+ }
+ 
+ void UpdateChecker::checkForUpdate() {
+-    QUrl updateUrl(QString(Constants::WEBSITE) + "-ws/release.xml");
++    QString duh = QString(Constants::WEBSITE);
++    duh.append("-ws/release.xml");
++    QUrl updateUrl(duh);
+     // QUrl updateUrl("http://flavio.tordini.org:8012/release.xml");
+ 
+     QObject *reply = The::http()->get(updateUrl);

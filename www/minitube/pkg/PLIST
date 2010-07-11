@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/11 00:45:44 jakemsr Exp $
+@bin bin/minitube
+share/applications/minitube.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/minitube.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/minitube.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/minitube.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/minitube.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/minitube.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/minitube.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/minitube.svg
+share/minitube/
+share/minitube/locale/
+share/minitube/locale/ar.qm
+share/minitube/locale/bg_BG.qm
+share/minitube/locale/cs_CZ.qm
+share/minitube/locale/de_DE.qm
+share/minitube/locale/el_GR.qm
+share/minitube/locale/es.qm
+share/minitube/locale/fi_FI.qm
+share/minitube/locale/fr_FR.qm
+share/minitube/locale/gl.qm
+share/minitube/locale/he_IL.qm
+share/minitube/locale/hr_HR.qm
+share/minitube/locale/hu_HU.qm
+share/minitube/locale/it_IT.qm
+share/minitube/locale/ja_JP.qm
+share/minitube/locale/lat.qm
+share/minitube/locale/nb_NO.qm
+share/minitube/locale/nl_NL.qm
+share/minitube/locale/pl_PL.qm
+share/minitube/locale/pt_BR.qm
+share/minitube/locale/pt_PT.qm
+share/minitube/locale/ro_RO.qm
+share/minitube/locale/ru_RU.qm
+share/minitube/locale/tr_TR.qm
+share/minitube/locale/uk.qm
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

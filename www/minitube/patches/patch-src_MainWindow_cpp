@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_MainWindow_cpp,v 1.1.1.1 2010/07/11 00:45:44 jakemsr Exp $
+--- src/MainWindow.cpp.orig	Wed Jul  7 12:22:45 2010
++++ src/MainWindow.cpp	Wed Jul  7 12:50:00 2010
+@@ -469,7 +469,9 @@ void MainWindow::visitSite() {
+ }
+ 
+ void MainWindow::donate() {
+-    QUrl url(QString(Constants::WEBSITE) + "#donate");
++    QString duh = QString(Constants::WEBSITE);
++    duh.append("#donate");
++    QUrl url(duh);
+     statusBar()->showMessage(QString(tr("Opening %1").arg(url.toString())));
+     QDesktopServices::openUrl(url);
+ }
