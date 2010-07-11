@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/09 16:38:58 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/11 14:55:56 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
 VERSION=		1.9.2.6
-PATCHLEVEL=		p0
+REVISION-main=		0
+REVISION-devel=		1
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
@@ -39,9 +40,9 @@ CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2 \
 			--disable-ipc \
 			--disable-libnotify \
 			--disable-necko-wifi
-LIB_DEPENDS+=		sqlite3.>=13.0:sqlite3->=3.6.10:databases/sqlite3
+LIB_DEPENDS+=		:sqlite3->=3.6.10:databases/sqlite3
 WANTLIB-devel+=		gthread-2.0 gobject-2.0
-WANTLIB-main+=		sndio
+WANTLIB-main+=		sndio sqlite3.>=13.0
 
 MOB=			${WRKSRC}/dist/bin
 MOZ=			${PREFIX}/${DIRECTORY}
@@ -94,6 +95,9 @@ do-install:
 		${MOB}/*.so.${SO_VERSION} \
 		${WRKSRC}/dist/lib/libxpcomglue.a \
 		${WRKSRC}/dist/lib/libxpcomglue_s.a ${MOZ}
+	# needed to please libtool - libs are built with fPIC
+	cd ${MOZ} && ln -s libxpcomglue_s.a libxpcomglue_s_pic.a
+	cd ${MOZ} && ln -s libxpcomglue.a libxpcomglue_pic.a
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/xulrunner ${PREFIX}/bin/xulrunner1.9
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
@@ -104,6 +108,7 @@ do-install:
 	perl -pi -e 's|libxul-embedding-unstable|libxul-embedding|g; ' \
 		-e 's|libxul-unstable|libxul|g; s|unstable|stable|g; ' \
 		-e 's|^(Libs:.*)|\1 -Wl,-rpath,${LOCALBASE}/xulrunner1.9|g; ' \
+		-e 's|-lxpcomglue|-lxpcomglue_pic|g; s|-lxpcomglue_s|-lxpcomglue_s_pic|; ' \
 		-e 's|/lib||g; s|/stable||g; s|/\$${includetype}||g; ' \
 		${PREFIX}/lib/pkgconfig/*.pc
 
