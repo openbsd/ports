@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/06/23 08:00:42 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/11 05:23:20 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,22 +27,25 @@ PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c \
-			expat fontconfig freetype glib-2.0 glitz \
-			gmodule-2.0 gobject-2.0 gthread-2.0 m pcre pixman-1 \
-			pthread pthread-stubs util xcb xcb-render \
-			xcb-render-util xkbfile xkbui z
+REVISION =		0
+
+WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c cairo \
+			expat fontconfig freetype gif glib-2.0 glitz \
+			gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m pcre \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 \
+			pixman-1 png pthread pthread-stubs tiff util xcb \
+			xcb-render xcb-render-util xkbfile xkbui xml2 z
  
 MODULES=		devel/gettext lang/python
 
-LIB_DEPENDS=		${MODPY_LIB_DEPENDS}		\
-			cairo.>=9::graphics/cairo	\
-			jpeg.>=62::graphics/jpeg	\
-			pango-1.0.>=1800,pangocairo-1.0.>=1800,pangoft2-1.0.>=1800,pangoxft-1.0.>=1800::devel/pango	\
-			png.>=5::graphics/png		\
-			tiff.>=38::graphics/tiff	\
-			gif.>=5::graphics/libungif	\
-			xml2.>=9::textproc/libxml
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
+			::graphics/cairo	\
+			::graphics/jpeg		\
+			::devel/pango		\
+			::graphics/png		\
+			::graphics/tiff		\
+			::graphics/libungif	\
+			::textproc/libxml
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 
