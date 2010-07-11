@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2010/05/02 13:35:48 ratchov Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/11 00:15:42 naddy Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
 CATEGORIES=		games
 
-FULLPKGNAME-server=	quakeworld-server-20000101p6p0
+FULLPKGNAME-server=	quakeworld-server-20000101
 FULLPKGPATH-server=	games/quake,-server
-PKGNAME-main=		quake-20000101p9
+REVISION-server=	7
+
+PKGNAME-main=		quake-20000101
+REVISION-main=		9
+
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
