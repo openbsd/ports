@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2009/04/21 09:20:26 sthen Exp $
---- src/Makefile.in.orig	Tue Sep  9 05:07:35 2008
-+++ src/Makefile.in	Tue Apr 21 10:11:46 2009
-@@ -301,7 +301,7 @@ distclean-compile:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/07/11 20:09:00 sthen Exp $
+--- src/Makefile.in.orig	Wed Nov 25 09:16:30 2009
++++ src/Makefile.in	Fri Nov 27 23:55:41 2009
+@@ -375,7 +375,7 @@ distclean-compile:
  @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
  
  enblend-enblend.o: enblend.cc
@@ -10,8 +10,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2009/04/21 09:20:26 sthen Exp $
  @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/enblend-enblend.Tpo $(DEPDIR)/enblend-enblend.Po
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='enblend.cc' object='enblend-enblend.o' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -329,7 +329,7 @@ enblend-gpu.obj: gpu.cc
- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -c -o enblend-gpu.obj `if test -f 'gpu.cc'; then $(CYGPATH_W) 'gpu.cc'; else $(CYGPATH_W) '$(srcdir)/gpu.cc'; fi`
+@@ -473,7 +473,7 @@ enblend-tiff_message.obj: tiff_message.cc
+ @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -c -o enblend-tiff_message.obj `if test -f 'tiff_message.cc'; then $(CYGPATH_W) 'tiff_message.cc'; else $(CYGPATH_W) '$(srcdir)/tiff_message.cc'; fi`
  
  enfuse-enfuse.o: enfuse.cc
 -@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc

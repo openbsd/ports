@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/16 09:26:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/11 20:09:00 sthen Exp $
 
 VMEM_WARNING =	Yes
-# and I'm not joking! - don't waste build time on the following arch
-# where MAXDSIZ is simply too low to compile this software:
-NOT_FOR_ARCHS = m68k m88k sparc vax
-# and restrict to -O0 for the largest files, except on selected arch
-# (needs approx 1.3GB datasize to build with -O2 on 64-bit gcc4 arch)
+ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
+# likely to bump into MAXDSIZ on arch other than the above
 MAKE_ENV +=	CXXNOOPT=-O0
 .endif
 
 COMMENT =	blend seams in panoramic image mosaics
 
-DISTNAME =	enblend-enfuse-3.2
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	enblend-enfuse-4.0
+PKGNAME =	${DISTNAME:L}
+WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -26,24 +24,26 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	GL GLU ICE SM X11 Xi Xmu c jpeg m pthread pthread-stubs xcb \
-		stdc++ z
+WANTLIB =	GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xi Xmu
+WANTLIB +=	boost_filesystem boost_system c glut.>=4 jpeg lcms m png pthread
+WANTLIB +=	stdc++ tiff xmi z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
-BUILD_DEPENDS += ::devel/boost
-
-LIB_DEPENDS =	GLEW::graphics/glew \
-		glut.>=4::graphics/freeglut \
-		Half,Iex,IlmThread,Imath::graphics/ilmbase \
-		lcms::graphics/lcms \
-		xmi::graphics/libxmi \
-		IlmImf::graphics/openexr \
-		png::graphics/png \
-		tiff::graphics/tiff
+BUILD_DEPENDS =	::print/transfig
+LIB_DEPENDS =	::devel/boost \
+		::graphics/glew \
+		::graphics/freeglut \
+		::graphics/ilmbase \
+		::graphics/lcms \
+		::graphics/libxmi \
+		::graphics/openexr \
+		::graphics/png \
+		::graphics/tiff
 
 CONFIGURE_STYLE = gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
+USE_GMAKE = Yes
 
 CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
 		-I${LOCALBASE}/include \
