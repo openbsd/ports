@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/21 20:26:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/11 15:57:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for zip archives
 DISTNAME=	zip-1.10.2
-PKGNAME=	pecl-${DISTNAME}p0
+PKGNAME=	pecl-${DISTNAME}
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	archivers www
@@ -26,6 +26,8 @@ BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	:php5-core-*:www/php5/core
+
+REVISION =	0
 WANTLIB=	z
 
 CONFIGURE_STYLE=gnu

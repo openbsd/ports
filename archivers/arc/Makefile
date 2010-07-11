@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2009/05/31 18:06:26 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/11 15:57:46 espie Exp $
 
 COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21o
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	archivers
 
 MAINTAINER=	Will Maier <wcmaier@openbsd.org>
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=arc/}
 EXTRACT_SUFX=	.tgz
 
+REVISION =	1
 WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" TMCLOCK=""

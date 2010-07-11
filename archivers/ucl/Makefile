@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=	portable lossless data compression library
 
 DISTNAME=	ucl-1.03
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers devel
 SHARED_LIBS +=	ucl                  1.0      # .1.0
 
@@ -17,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+REVISION = 	0
 MASTER_SITES=	${HOMEPAGE}/download/
 
 .if ${MACHINE_ARCH} == "i386"

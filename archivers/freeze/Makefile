@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/06/02 20:46:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/11 15:57:46 espie Exp $
 
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
 DISTNAME=	freeze-2.5
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers
 
 MASTER_SITES=	http://ngsoftwareltd.com/freebsd/distfiles/ \
@@ -15,6 +14,7 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
+REVISION =	0
 WANTLIB=	c
 
 CONFIGURE_STYLE= gnu dest

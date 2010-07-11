@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/05/22 07:44:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
 DISTNAME=	unrarsrc-3.9.7
-PKGNAME=	unrar-3.97p0
+PKGNAME=	unrar-3.97
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	may not modify
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m stdc++
+
+REVISION =	0
+WANTLIB=	c m stdc++
 
 MASTER_SITES=	${HOMEPAGE}rar/
 

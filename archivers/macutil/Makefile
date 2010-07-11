@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/07 09:26:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
-PKGNAME=		macutil-2.0b3p2
+PKGNAME=		macutil-2.0b3
 CATEGORIES=		archivers
 
 # None
@@ -10,6 +10,8 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+
+REVISION =	2
 WANTLIB=		c
 
 MASTER_SITES=	http://spacehopper.org/mirrors/ \

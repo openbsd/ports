@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/11 15:57:46 espie Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.2.1
-PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU:=sharutils/}
@@ -14,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+REVISION =	0
 WANTLIB=		c
 
 CONFIGURE_STYLE= gnu dest

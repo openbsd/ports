@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2007/11/01 11:18:05 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=	extract, view & test ACE archives
 
 DISTNAME=	unace-1.2b
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=utils/compress/}
 
@@ -12,6 +11,8 @@ PERMIT_PACKAGE_CDROM=	no terms
 PERMIT_PACKAGE_FTP=	no terms
 PERMIT_DISTFILES_CDROM=	unclear terms
 PERMIT_DISTFILES_FTP=	unclear terms
+
+REVISION =	0
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"

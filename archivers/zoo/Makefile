@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 10:14:34 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=	handle the old .ZOO archive format
 
 DISTNAME=	zoo-2.10pl1
-PKGNAME=	zoo-2.10.1p1
+PKGNAME=	zoo-2.10.1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
@@ -12,6 +12,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+REVISION =	1
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" OPTIM="${CFLAGS}"

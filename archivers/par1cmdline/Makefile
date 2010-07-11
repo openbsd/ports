@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/21 22:43:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/11 15:57:47 espie Exp $
 
 COMMENT=	command line implementation of the PAR v1.0 specification
 DISTNAME=	par-v1.1
-PKGNAME=	par1cmdline-1.1p0
+PKGNAME=	par1cmdline-1.1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parchive/}
 
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+REVISION =	0
 WANTLIB=		c
 
 NO_REGRESS=	Yes
