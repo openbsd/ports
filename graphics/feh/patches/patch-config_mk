@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_mk,v 1.1 2010/07/11 14:46:13 dcoppa Exp $
+--- config.mk.orig	Fri Jun 25 17:13:11 2010
++++ config.mk	Wed Jul  7 13:27:30 2010
+@@ -14,7 +14,7 @@ font_dir = ${main_dir}/share/feh/fonts
+ 
+ # default CFLAGS
+ CFLAGS ?= -g -O2
+-CFLAGS += -Wall -Wextra -pedantic
++CFLAGS += -Wall -pedantic
+ 
+ # Comment these out if you don't have libxinerama
+ xinerama = -DHAVE_LIBXINERAMA
