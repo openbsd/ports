@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/11 10:32:52 espie Exp $
+%%SHARED%%
+@bin bin/udunits2
+include/converter.h
+include/udunits.h
+include/udunits2.h
+@info info/udunits2.info
+@info info/udunits2lib.info
+@info info/udunits2prog.info
+lib/libudunits2.a
+lib/libudunits2.la
+share/udunits/
+share/udunits/udunits2-accepted.xml
+share/udunits/udunits2-base.xml
+share/udunits/udunits2-common.xml
+share/udunits/udunits2-derived.xml
+share/udunits/udunits2-prefixes.xml
+share/udunits/udunits2.xml
