@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/07/02 21:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/11 07:36:16 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p9
+REVISION=	9
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
@@ -21,12 +21,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Must buy license
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
-		jasper.>=2.::graphics/jasper \
-		tiff.>=38.::graphics/tiff \
-		png.>=5.::graphics/png
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/jasper \
+		::graphics/tiff \
+		::graphics/png
 
-WANTLIB=	X11 Xau Xdmcp c m z
+WANTLIB= X11 Xau Xdmcp c jasper.>=2 jpeg.>=62 m png.>=5 tiff.>=38 z
 
 USE_X11=	Yes
 MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
