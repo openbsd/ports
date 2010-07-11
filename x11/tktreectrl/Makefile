@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/09 16:43:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/11 13:03:21 sebastia Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	tree widget extension for Tk
 
 DISTNAME=	tktreectrl-2.2.9
+PKGNAME=	${DISTNAME}p0
 SHLIB_VERSION=	0.0
 SHARED_LIBS=	treectrl22 ${SHLIB_VERSION}
 CATEGORIES=	x11
@@ -43,5 +44,6 @@ SUBST_VARS=	SHLIB_VERSION
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
 	${MODTCL_TCLSH_ADJ} ${WRKSRC}/demos/demo.tcl
+	mv "${WRKSRC}/doc/What's New in TkTreeCtrl.html" ${WRKSRC}/doc/Whats_New_in_TkTreeCtrl.html
 
 .include <bsd.port.mk>

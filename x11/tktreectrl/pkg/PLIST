@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/09 16:43:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/11 13:03:21 sebastia Exp $
 %%SHARED%%
 lib/treectrl2.2.9/
 lib/treectrl2.2.9/filelist-bindings.tcl
 lib/treectrl2.2.9/pkgIndex.tcl
 lib/treectrl2.2.9/treectrl.tcl
 @man man/mann/treectrl.n
-share/doc/What's New in TkTreeCtrl.html
+share/doc/Whats_New_in_TkTreeCtrl.html
 share/doc/license.terms
 share/doc/treectrl.html
 share/examples/treectrl2.2.9/
