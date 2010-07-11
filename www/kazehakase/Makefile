@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/06/19 10:34:41 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/11 15:01:46 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -11,8 +11,11 @@ SHARED_ONLY=	Yes
 VERSION=	0.5.8
 DISTNAME=	kazehakase-${VERSION}
 PKGNAME-main=	kazehakase-common-${VERSION}
+REVISION-main=	0
 PKGNAME-gecko=	${DISTNAME}
+REVISION-gecko=	0
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}
+REVISION-webkit=0
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/43802/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -44,47 +47,47 @@ CONFIGURE_ARGS =	--with-gecko-engine=libxul \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/xulrunner1.9" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr"
 USE_LIBTOOL =		Yes
-LIBTOOL =		${PORTSDIR}/infrastructure/build/libtool
 
 USE_GMAKE =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 
-BUILD_DEPENDS =		:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
+BUILD_DEPENDS =		:xulrunner-devel->=1.9.2.6p1:devel/xulrunner/1.9,-devel
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::devel/desktop-file-utils
 RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
 			::${BUILD_PKGPATH},-main
 RUN_DEPENDS-gecko =	${RUN_DEPENDS} \
+			::xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
 			::${BUILD_PKGPATH},-main
 
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS =		::x11/gtk+2
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			dbus-glib-1::x11/dbus-glib \
-			gnutls::security/gnutls
+			::x11/dbus-glib \
+			::security/gnutls
 
 LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
-			lib/kazehakase/kazehakase::www/kazehakase,-main \
-			xulrunner1.9/xpcom:xulrunner->=1.9.1:devel/xulrunner/1.9
+			::${BUILD_PKGPATH},-main
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			webkit-1.0::www/webkit
+			::www/webkit
 
 WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \
 			freetype m z png cairo iconv intl atk-1.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1 tasn1 \
-			pthread-stubs xcb xcb-render xcb-render-util dbus-1
+			pthread-stubs xcb xcb-render xcb-render-util \
+			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-WANTLIB-main =		${WANTLIB} c gcrypt gpg-error pthread
-WANTLIB-gecko =		${WANTLIB} nspr4 plc4 plds4 gcrypt gpg-error
+WANTLIB-main =		${WANTLIB} dbus-glib-1 dbus-1 gnutls c gcrypt gpg-error pthread
+WANTLIB-gecko =		${WANTLIB} gnutls stdc++ gcrypt gpg-error lib/kazehakase/kazehakase
 WANTLIB-webkit =	${WANTLIB} Xt enchant gailutil gcrypt gnutls gpg-error \
 			icudata icui18n icuuc jpeg soup-2.4 sqlite3 stdc++ xml2 xslt \
 			gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
-			gstapp-0.10
+			gstapp-0.10 webkit-1.0
 
 
 .include <bsd.port.mk>
