@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.462 2010/06/30 23:29:56 jim Exp $
+# $OpenBSD: Makefile,v 1.463 2010/07/11 02:09:41 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -85,6 +85,7 @@
      SUBDIR += mimetex
      SUBDIR += mindterm
      SUBDIR += minimo
+     SUBDIR += minitube
      SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_kerb
      SUBDIR += mod_auth_ldap
