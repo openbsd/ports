@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:29:51 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/11 16:01:51 espie Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
 
 VERSION=		3.56
 DISTNAME=		sunclock-${VERSION}
-PKGNAME-main=		${DISTNAME}p2
-PKGNAME-maps=		sunclock-maps-${VERSION}p0
+PKGNAME-main=		${DISTNAME}
+PKGNAME-maps=		sunclock-maps-${VERSION}
 CATEGORIES=		astro
 
 HOMEPAGE=		http://www.arvernes.com/wiki/index.php/Sunclock
@@ -43,6 +43,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+REVISION-main =	2
+REVISION-maps = 0
 WANTLIB-main=		X11 Xext Xpm Xau Xdmcp c m pthread-stubs xcb z
 DIST_SUBDIR=		sunclock
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/11 16:01:51 espie Exp $
 
 COMMENT=	set the root window to the moon in its current phase
 DISTNAME=	xphoon
-PKGNAME=	xphoon-91.9.18p3
+PKGNAME=	xphoon-91.9.18
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://xphoon.sourceforge.net/
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Cannot sell
 PERMIT_DISTFILES_FTP=   Yes
 
+REVISION =	3
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE= imake

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/11 16:01:51 espie Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
 DISTNAME=	xworld-2.0
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	astro x11
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
@@ -16,7 +15,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		X11 c m pthread-stubs xcb
+REVISION =	0
+WANTLIB=	X11 c m pthread-stubs xcb
 
 USE_X11=	Yes
 

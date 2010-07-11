@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/10 22:17:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/11 16:01:51 espie Exp $
 
 COMMENT=		wm-dockapp; shows sunrise/sunset times
 
 DISTNAME=		wmSun-1.03
-PKGNAME=		${DISTNAME:L}p2
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		astro x11 x11/windowmaker
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+REVISION =	2
 WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
 
 MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
