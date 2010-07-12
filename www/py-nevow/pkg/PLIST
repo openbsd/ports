@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/31 12:34:45 eric Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/07/12 13:15:28 eric Exp $
 bin/nevow-xmlgettext
 bin/nit
 lib/python${MODPY_VERSION}/site-packages/Nevow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -316,6 +316,7 @@ share/doc/py-nevow/chattutorial/index.xhtml
 share/doc/py-nevow/chattutorial/intro.html
 share/doc/py-nevow/chattutorial/intro.xhtml
 share/doc/py-nevow/chattutorial/part00/
+share/doc/py-nevow/chattutorial/part00/index.html
 share/doc/py-nevow/chattutorial/part00/index.xhtml
 share/doc/py-nevow/chattutorial/part00/listings/
 share/doc/py-nevow/chattutorial/part00/listings/echothing/
@@ -328,6 +329,7 @@ share/doc/py-nevow/chattutorial/part00/listings/nevow/
 share/doc/py-nevow/chattutorial/part00/listings/nevow/plugins/
 share/doc/py-nevow/chattutorial/part00/listings/nevow/plugins/echothing_package.py
 share/doc/py-nevow/chattutorial/part01/
+share/doc/py-nevow/chattutorial/part01/index.html
 share/doc/py-nevow/chattutorial/part01/index.xhtml
 share/doc/py-nevow/chattutorial/part01/listings/
 share/doc/py-nevow/chattutorial/part01/listings/chatthing/

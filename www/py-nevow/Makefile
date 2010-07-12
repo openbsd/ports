@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/31 12:34:45 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/12 13:15:27 eric Exp $
 
 COMMENT=	web application construction kit
 
 VERSION=	0.10.0
 DISTNAME=	Nevow-${VERSION}
-PKGNAME=	py-nevow-${VERSION}
+PKGNAME=	py-nevow-${VERSION}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodNevow
@@ -31,7 +31,8 @@ MODPY_EGG_VERSION=	${VERSION}
 MODPY_DISTUTILS_INSTALLARGS=	--install-data=/usr/local/share/doc
 
 pre-configure:
-	cd ${WRKSRC}/doc/howto && lore -p *.xhtml */*.xhtml
+	perl -pi -e 's/h3>/h2>/g' ${WRKSRC}/doc/howto/glossary.xhtml
+	cd ${WRKSRC}/doc/howto && lore
 	mv ${WRKSRC}/doc/howto ${WRKSRC}/py-nevow
 
 post-install:
