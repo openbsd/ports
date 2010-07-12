@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_Makefile_in,v 1.5 2009/10/21 15:20:23 jasper Exp $
---- plugin/Makefile.in.orig	Tue Oct 20 20:32:54 2009
-+++ plugin/Makefile.in	Wed Oct 21 17:11:43 2009
-@@ -489,7 +489,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-plugin_Makefile_in,v 1.6 2010/07/12 09:31:51 ajacoutot Exp $
+--- plugin/Makefile.in.orig	Sun Jul 11 21:10:47 2010
++++ plugin/Makefile.in	Mon Jul 12 08:28:12 2010
+@@ -544,7 +544,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -10,43 +10,27 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.5 2009/10/21 15:20:23 jasper Exp $
  @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
  @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
  @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
-@@ -503,7 +503,7 @@ top_srcdir = @top_srcdir@
- 
- @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_CFLAGS = \
- @ENABLE_PLUGIN_TRUE@	-I$(top_srcdir)/src @GTK_CFLAGS@ \
--@ENABLE_PLUGIN_TRUE@	@FIREFOX_PLUGIN_CFLAGS@ @WARNING_CFLAGS@ @WERROR_CFLAGS@
-+@ENABLE_PLUGIN_TRUE@	@FIREFOX_PLUGIN_CFLAGS@ @WARNING_CFLAGS@
- 
- @ENABLE_PLUGIN_TRUE@EXTRA_DIST = README
- @ENABLE_PLUGIN_TRUE@CLEANFILES = gtk-vnc-plugin.so
-@@ -542,12 +542,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
- 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+@@ -598,7 +598,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4
+ $(am__aclocal_m4_deps):
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
 -	test -z "$(plugindir)" || $(MKDIR_P) "$(DESTDIR)$(plugindir)"
 +	test -z "$(plugindir)" || $(MKDIR_P) "$(plugindir)"
- 	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
+ 	@list='$(plugin_LTLIBRARIES)'; test -n "$(plugindir)" || list=; \
+ 	list2=; for p in $$list; do \
  	  if test -f $$p; then \
- 	    f=$(am__strip_dir) \
--	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
--	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
-+	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(plugindir)/$$f'"; \
-+	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(plugindir)/$$f"; \
+@@ -606,8 +606,8 @@ install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	  else :; fi; \
- 	done
+ 	done; \
+ 	test -z "$$list2" || { \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(plugindir)'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(plugindir)"; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(plugindir)'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(plugindir)"; \
+ 	}
  
-@@ -555,8 +555,8 @@ uninstall-pluginLTLIBRARIES:
- 	@$(NORMAL_UNINSTALL)
- 	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
- 	  p=$(am__strip_dir) \
--	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(plugindir)/$$p'"; \
--	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(plugindir)/$$p"; \
-+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(plugindir)/$$p'"; \
-+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(plugindir)/$$p"; \
- 	done
- 
- clean-pluginLTLIBRARIES:
-@@ -706,7 +706,7 @@ check: check-am
+ uninstall-pluginLTLIBRARIES:
+@@ -781,7 +781,7 @@ check: check-am
  @ENABLE_PLUGIN_FALSE@all-local:
  all-am: Makefile $(LTLIBRARIES) all-local
  installdirs:

@@ -1,15 +1,35 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/10/21 15:20:23 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/07/12 09:31:51 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
+@bin bin/gvnccapture
 @bin bin/gvncviewer
 include/gtk-vnc-1.0/
 include/gtk-vnc-1.0/vncdisplay.h
+include/gtk-vnc-1.0/vncdisplayenums.h
+include/gtk-vnc-1.0/vncgrabsequence.h
+include/gtk-vnc-1.0/vncimageframebuffer.h
+include/gvnc-1.0/
+include/gvnc-1.0/vncbaseframebuffer.h
+include/gvnc-1.0/vnccolormap.h
+include/gvnc-1.0/vncconnection.h
+include/gvnc-1.0/vncconnectionenums.h
+include/gvnc-1.0/vnccursor.h
+include/gvnc-1.0/vncframebuffer.h
+include/gvnc-1.0/vncpixelformat.h
+include/gvnc-1.0/vncutil.h
 lib/libgtk-vnc-1.0.a
 lib/libgtk-vnc-1.0.la
 @lib lib/libgtk-vnc-1.0.so.${LIBgtk-vnc-1.0_VERSION}
+lib/libgvnc-1.0.a
+lib/libgvnc-1.0.la
+@lib lib/libgvnc-1.0.so.${LIBgvnc-1.0_VERSION}
 lib/pkgconfig/gtk-vnc-1.0.pc
+lib/pkgconfig/gvnc-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.a
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.la
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.so
+@man man/man1/gvnccapture.1
+share/locale/ca/LC_MESSAGES/gtk-vnc.mo
+share/locale/da/LC_MESSAGES/gtk-vnc.mo
 share/locale/de/LC_MESSAGES/gtk-vnc.mo
 share/locale/el/LC_MESSAGES/gtk-vnc.mo
 share/locale/en_GB/LC_MESSAGES/gtk-vnc.mo
@@ -19,7 +39,14 @@ share/locale/fr/LC_MESSAGES/gtk-vnc.mo
 share/locale/gl/LC_MESSAGES/gtk-vnc.mo
 share/locale/hu/LC_MESSAGES/gtk-vnc.mo
 share/locale/it/LC_MESSAGES/gtk-vnc.mo
+share/locale/ja/LC_MESSAGES/gtk-vnc.mo
+share/locale/pa/LC_MESSAGES/gtk-vnc.mo
 share/locale/pl/LC_MESSAGES/gtk-vnc.mo
 share/locale/pt/LC_MESSAGES/gtk-vnc.mo
 share/locale/pt_BR/LC_MESSAGES/gtk-vnc.mo
+share/locale/ru/LC_MESSAGES/gtk-vnc.mo
+share/locale/sl/LC_MESSAGES/gtk-vnc.mo
 share/locale/sv/LC_MESSAGES/gtk-vnc.mo
+share/locale/zh_CN/LC_MESSAGES/gtk-vnc.mo
+share/locale/zh_HK/LC_MESSAGES/gtk-vnc.mo
+share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
