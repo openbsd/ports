@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/12 01:17:11 ian Exp $
 
 COMMENT =		continuous integration server
 
-VERSION =		1.227
+VERSION =		1.365
 DISTNAME =		hudson # nonsensical versioning, alas.
-PKGNAME =		hudson-${VERSION}p1
+PKGNAME =		hudson-${VERSION}
 DIST_SUBDIR =		hudson-${VERSION}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://hudson.dev.java.net/
+HOMEPAGE =		http://hudson-ci.org/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		https://hudson.dev.java.net/files/documents/2402/100759/
+MASTER_SITES =		http://hudson-ci.org/download/war/${VERSION}/
 EXTRACT_ONLY =		
 EXTRACT_SUFX =		.war
 
