@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/10/30 19:42:09 matthieu Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/12 10:34:03 ajacoutot Exp $
 
 COMMENT=	LaTeX2e class for overhead transparencies
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=nonfree/macros/latex/contrib/foiltex/}
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=macros/latex/contrib/foiltex/}
 
 DISTFILES=	foiltex.ins foiltex.dtx
 DIST_SUBDIR=	${DISTNAME}
