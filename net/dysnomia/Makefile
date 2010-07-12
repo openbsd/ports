@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/02 09:44:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:08:15 sthen Exp $
 
 CATEGORIES = 	net audio www
 COMMENT = 	interface to the deezer on-demand music system
@@ -6,7 +6,7 @@ HOMEPAGE = 	http://dysnomia-project.org/
 MASTER_SITES = 	${HOMEPAGE}
 
 DISTNAME = 	dysnomia-en-0.3.4
-PKGNAME =	${DISTNAME}p0
+REVISION=	0
 EXTRACT_SUFX = 	.tgz
 
 # GPLv2 or later
@@ -15,9 +15,12 @@ PERMIT_DISTFILES_FTP = Yes
 PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 
-LIB_DEPENDS = 	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_richtext::x11/wxWidgets \
-		curl::net/curl
-WANTLIB = c m pthread stdc++
+LIB_DEPENDS = 	::x11/wxWidgets \
+		::net/curl
+
+WANTLIB = c curl m pthread stdc++ wx_base wx_base_net wx_base_odbc \
+	wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid \
+	wx_gtk2_html wx_gtk2_qa wx_gtk2_xrc wx_gtk2_richtext
 
 MAKE_FLAGS = \
 	LIBS="$(CXXFLAGS) `wx-config --libs` -L${LOCALBASE}/lib -lcurl" \
