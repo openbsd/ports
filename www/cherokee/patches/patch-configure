@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2010/01/13 08:47:57 ajacoutot Exp $
---- configure.orig	Tue Jan 12 10:27:34 2010
-+++ configure	Tue Jan 12 10:28:23 2010
-@@ -16613,13 +16613,13 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.8 2010/07/12 06:22:45 ajacoutot Exp $
+--- configure.orig	Tue Jul  6 19:30:31 2010
++++ configure	Thu Jul  8 14:27:45 2010
+@@ -16759,13 +16759,13 @@ $as_echo "no" >&6; }
       esac
  
  	if test "$have_pthread" != "yes"; then
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.7 2010/01/13 08:47:57 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16650,7 +16650,7 @@ else
+@@ -16796,7 +16796,7 @@ else
  fi
  
  	   if test "$have_pthread" = "yes"; then
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.7 2010/01/13 08:47:57 ajacoutot Exp $
  	   fi
       fi
  
-@@ -20249,7 +20249,7 @@ if test "${ac_cv_lib_avformat_main+set}" = set; then :
+@@ -20396,7 +20396,7 @@ if test "${ac_cv_lib_avformat_main+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
