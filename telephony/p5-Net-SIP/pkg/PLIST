@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/05/18 23:04:38 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/12 19:10:30 bluhm Exp $
 ${P5SITE}/Net/SIP/
 ${P5SITE}/Net/SIP.pm
 ${P5SITE}/Net/SIP.pod
 ${P5SITE}/Net/SIP/Authorize.pm
 ${P5SITE}/Net/SIP/Authorize.pod
+${P5SITE}/Net/SIP/Blocker.pm
+${P5SITE}/Net/SIP/Blocker.pod
 ${P5SITE}/Net/SIP/Debug.pm
 ${P5SITE}/Net/SIP/Debug.pod
 ${P5SITE}/Net/SIP/Dispatcher/
@@ -54,6 +56,7 @@ ${P5SITE}/Net/SIP/Util.pm
 ${P5SITE}/Net/SIP/Util.pod
 @man man/man3p/Net::SIP.3p
 @man man/man3p/Net::SIP::Authorize.3p
+@man man/man3p/Net::SIP::Blocker.3p
 @man man/man3p/Net::SIP::Debug.3p
 @man man/man3p/Net::SIP::Dispatcher.3p
 @man man/man3p/Net::SIP::Dispatcher::Eventloop.3p
