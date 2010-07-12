@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/12 10:24:52 ajacoutot Exp $
 
 COMMENT=		temporary file auditing tool
 
@@ -17,9 +17,8 @@ DIST_SUBDIR=		tempwatch
 DISTFILES=		l0pht-watch${EXTRACT_SUFX} watch.txt:0
 EXTRACT_ONLY=		l0pht-watch${EXTRACT_SUFX}
 
-MASTER_SITES=		http://www.atstake.com/research/tools/ \
-  	 		${MASTER_SITE_PACKETSTORM:=9901-exploits/}
-MASTER_SITES0=		http://www.atstake.com/research/advisories/1999/
+MASTER_SITES=		ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES0=		${MASTER_SITE_BACKUP}
 
 WRKDIST=		${WRKDIR}/temp-watch
 
