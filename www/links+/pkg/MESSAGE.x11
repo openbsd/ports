@@ -1,0 +1,2 @@
+To calibrate your monitor with links+, run:
+    ${PREFIX}/bin/links -g ${PREFIX}/share/links+/calibration.html
