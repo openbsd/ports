@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindJava.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindJava.cmake	Tue May 11 15:47:54 2010
-@@ -42,6 +42,8 @@
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.2 2010/07/12 19:19:30 dcoppa Exp $
+--- Modules/FindJava.cmake.orig	Mon Jun 28 17:15:57 2010
++++ Modules/FindJava.cmake	Mon Jul  5 11:23:18 2010
+@@ -51,6 +51,8 @@
  # (To distributed this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  # The HINTS option should only be used for values computed from the system.
  SET(_JAVA_HINTS
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
-@@ -54,19 +56,29 @@ SET(_JAVA_HINTS
+@@ -63,19 +65,29 @@ SET(_JAVA_HINTS
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/bin"
    $ENV{JAVA_HOME}/bin
    )
@@ -53,20 +53,7 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  FIND_PROGRAM(Java_JAVA_EXECUTABLE
    NAMES java
    HINTS ${_JAVA_HINTS}
-@@ -82,7 +94,11 @@ IF(Java_JAVA_EXECUTABLE)
-       OUTPUT_STRIP_TRAILING_WHITESPACE
-       ERROR_STRIP_TRAILING_WHITESPACE)
-     IF( res )
--      MESSAGE( FATAL_ERROR "Error executing java -version" )
-+      IF(${Java_FIND_REQUIRED})
-+        MESSAGE( FATAL_ERROR "Error executing java -version" )
-+      ELSE()
-+        MESSAGE( STATUS "Warning, could not run java --version")
-+      ENDIF()
-     ELSE()
-       # extract major/minor version and patch level from "java -version" output
-       # Tested on linux using 
-@@ -90,6 +106,7 @@ IF(Java_JAVA_EXECUTABLE)
+@@ -103,6 +115,7 @@ IF(Java_JAVA_EXECUTABLE)
        # 2. OpenJDK 1.6
        # 3. GCJ 1.5
        # 4. Kaffe 1.4.2
@@ -74,7 +61,7 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
        IF(var MATCHES "java version \"[0-9]+\\.[0-9]+\\.[0-9_]+[oem-]*\".*")
          # This is most likely Sun / OpenJDK, or maybe GCJ-java compat layer
          STRING( REGEX REPLACE ".* version \"([0-9]+\\.[0-9]+\\.[0-9_]+)[oem-]*\".*"
-@@ -97,6 +114,10 @@ IF(Java_JAVA_EXECUTABLE)
+@@ -110,6 +123,10 @@ IF(Java_JAVA_EXECUTABLE)
        ELSEIF(var MATCHES "java full version \"kaffe-[0-9]+\\.[0-9]+\\.[0-9_]+\".*")
          # Kaffe style
          STRING( REGEX REPLACE "java full version \"kaffe-([0-9]+\\.[0-9]+\\.[0-9_]+).*"

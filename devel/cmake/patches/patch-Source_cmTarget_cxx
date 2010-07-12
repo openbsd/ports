@@ -1,15 +1,15 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.4 2010/05/28 20:21:48 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Tue Apr  6 16:45:35 2010
-+++ Source/cmTarget.cxx	Tue May 11 16:37:04 2010
-@@ -3136,6 +3136,34 @@ void cmTarget::GetLibraryNames(std::string& name,
-   // Check for library version properties.
-   const char* version = this->GetProperty("VERSION");
-   const char* soversion = this->GetProperty("SOVERSION");
-+
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.5 2010/07/12 19:19:30 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Mon Jun 28 17:15:59 2010
++++ Source/cmTarget.cxx	Mon Jul  5 15:59:34 2010
+@@ -3164,6 +3164,34 @@ void cmTarget::GetLibraryNames(std::string& name,
+   std::string suffix;
+   this->GetFullNameInternal(config, false, prefix, base, suffix);
+ 
++#if defined(__OpenBSD__)
 +  /* OpenBSD - LIBxxx_VERSION environment override.
 +   * Needed for OpenBSD ports system.
 +   */
-+  std::string env_name = "LIB" + Name + "_VERSION";
++  std::string env_name = "LIB" + base + "_VERSION";
 +  char *env_vers_cstr = getenv(env_name.c_str());
 +
 +  if (env_vers_cstr != NULL) {
@@ -28,15 +28,15 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.4 2010/05/28 20:21:48 dcoppa Exp $
 +                                   msg.c_str());
 +    } else {
 +      /* all OK, use OpenBSD override */
-+      soversion = env_vers_cstr;
-+      version = env_vers_cstr;
++      soversion = version = env_vers_cstr;
 +    }
 +  }
++#endif
 +
-   if((this->GetType() != cmTarget::SHARED_LIBRARY &&
-       this->GetType() != cmTarget::MODULE_LIBRARY) ||
-      !this->Makefile->GetDefinition(sonameFlag.c_str()) ||
-@@ -3186,8 +3214,26 @@ void cmTarget::GetLibraryNames(std::string& name,
+   // The library name.
+   name = prefix+base+suffix;
+ 
+@@ -3191,8 +3219,26 @@ void cmTarget::GetLibraryNames(std::string& name,
    if(version)
      {
      realName += ".";
