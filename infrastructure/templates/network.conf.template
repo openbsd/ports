@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.142 2010/06/08 14:29:39 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.143 2010/07/12 10:35:12 ajacoutot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -170,7 +170,8 @@ MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.chg.ru/pub/TeX/CTAN/ \
 	ftp://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
- 	ftp://ftp.sunet.se/pub/text-processing/TeX/
+ 	ftp://ftp.sunet.se/pub/text-processing/TeX/ \
+	http://www.ctan.org/pub/tex-archive/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.kde.org/pub/kde/ \
