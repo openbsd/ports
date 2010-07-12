@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/07/11 10:34:08 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2010/07/12 04:52:08 espie Exp $
 #
 
      SUBDIR =
@@ -17,6 +17,7 @@
      SUBDIR += coq
      SUBDIR += ecm
      SUBDIR += eigen
+     SUBDIR += eigen2
      SUBDIR += fann
      SUBDIR += fftw
      SUBDIR += fftw3
