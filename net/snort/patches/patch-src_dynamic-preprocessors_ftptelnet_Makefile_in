@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.4 2009/08/16 13:31:27 rui Exp $
---- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Wed Mar 11 14:19:29 2009
-+++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Wed Apr  8 12:43:22 2009
-@@ -528,7 +528,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.5 2010/07/12 19:38:40 sthen Exp $
+--- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Fri Mar 19 20:39:38 2010
++++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Mon Apr 26 20:14:12 2010
+@@ -213,7 +213,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ lib_LTLIBRARIES = libsf_ftptelnet_preproc.la
+-libsf_ftptelnet_preproc_la_LDFLAGS = -module
++libsf_ftptelnet_preproc_la_LDFLAGS = -module -avoid-version
+ BUILT_SOURCES = \
+ sf_dynamic_preproc_lib.c \
+ sf_ip.c \
+@@ -533,7 +533,7 @@ distdir: $(DISTFILES)
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-recursive

@@ -1,22 +1,22 @@
-$OpenBSD: patch-src_util_c,v 1.3 2009/08/16 13:31:27 rui Exp $
---- src/util.c.orig	Wed Mar 11 13:54:59 2009
-+++ src/util.c	Wed Apr  8 12:40:37 2009
-@@ -418,12 +418,13 @@ int DisplayBanner()
+$OpenBSD: patch-src_util_c,v 1.4 2010/07/12 19:38:40 sthen Exp $
+--- src/util.c.orig	Tue Jan 26 19:10:56 2010
++++ src/util.c	Thu Apr 22 07:53:46 2010
+@@ -227,12 +227,13 @@ int DisplayBanner(void)
   * Returns: void function
   *
   ****************************************************************************/
 -void ts_print(register const struct timeval *tvp, char *timebuf)
-+void ts_print(register const struct timeval32 *tvp, char *timebuf)
++void ts_print(register const struct sf_timeval32 *tvp, char *timebuf)
  {
      register int s;
      int    localzone;
      time_t Time;
      struct timeval tv;
-+    struct timeval32 tvnow;
++    struct sf_timeval32 tvnow;
      struct timezone tz;
      struct tm *lt;    /* place to stick the adjusted clock data */
  
-@@ -433,7 +434,9 @@ void ts_print(register const struct timeval *tvp, char
+@@ -242,7 +243,9 @@ void ts_print(register const struct timeval *tvp, char
          /* manual page (for linux) says tz is never used, so.. */
          bzero((char *) &tz, sizeof(tz));
          gettimeofday(&tv, &tz);
@@ -26,4 +26,4 @@ $OpenBSD: patch-src_util_c,v 1.3 2009/08/16 13:31:27 rui Exp $
 +        tvp = &tvnow;
      }
  
-     localzone = thiszone;
+     localzone = snort_conf->thiszone;

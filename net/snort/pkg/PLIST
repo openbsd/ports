@@ -1,41 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/08/16 13:31:27 rui Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/07/12 19:38:40 sthen Exp $
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
 %%prelude%%
-bin/snort
+@bin bin/snort
+lib/pkgconfig/snort.pc
 lib/snort_dynamicengine/
 lib/snort_dynamicengine/libsf_engine.a
 @comment lib/snort_dynamicengine/libsf_engine.la
-@lib lib/snort_dynamicengine/libsf_engine.so.${LIBsf_engine_VERSION}
+lib/snort_dynamicengine/libsf_engine.so
 lib/snort_dynamicpreprocessor/
-lib/snort_dynamicpreprocessor/lib_sfdynamic_preprocessor_example.a
-@comment lib/snort_dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
-@lib lib/snort_dynamicpreprocessor/lib_sfdynamic_preprocessor_example.so.${LIB_sfdynamic_preprocessor_example_VERSION}
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dce2_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so.${LIBsf_dce2_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.so.${LIBsf_dcerpc_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dns_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.${LIBsf_dns_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_dns_preproc.so
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so.${LIBsf_ftptelnet_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_sdf_preproc.la
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so
 lib/snort_dynamicpreprocessor/libsf_smtp_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_smtp_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so.${LIBsf_smtp_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so
 lib/snort_dynamicpreprocessor/libsf_ssh_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ssh_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so.${LIBsf_ssh_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so
 lib/snort_dynamicpreprocessor/libsf_ssl_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ssl_preproc.la
-@lib lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so.${LIBsf_ssl_preproc_VERSION}
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so
 lib/snort_dynamicrules/
-lib/snort_dynamicrules/lib_sfdynamic_example_rule.a
-@comment lib/snort_dynamicrules/lib_sfdynamic_example_rule.la
-@lib lib/snort_dynamicrules/lib_sfdynamic_example_rule.so.${LIB_sfdynamic_example_rule_VERSION}
 @man man/man8/snort.8
 share/doc/snort/
 share/doc/snort/AUTHORS
@@ -64,6 +62,7 @@ share/doc/snort/README.decode
 share/doc/snort/README.decoder_preproc_rules
 share/doc/snort/README.dns
 share/doc/snort/README.event_queue
+share/doc/snort/README.filters
 share/doc/snort/README.flowbits
 share/doc/snort/README.frag3
 share/doc/snort/README.ftptelnet
@@ -71,8 +70,11 @@ share/doc/snort/README.gre
 share/doc/snort/README.http_inspect
 share/doc/snort/README.ipip
 share/doc/snort/README.ipv6
+share/doc/snort/README.multipleconfigs
 share/doc/snort/README.pcap_readmode
 share/doc/snort/README.ppm
+share/doc/snort/README.reload
+share/doc/snort/README.sensitive_data
 share/doc/snort/README.sfportscan
 share/doc/snort/README.ssh
 share/doc/snort/README.ssl

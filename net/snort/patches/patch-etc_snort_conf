@@ -1,26 +1,26 @@
-$OpenBSD: patch-etc_snort_conf,v 1.4 2009/08/16 13:31:27 rui Exp $
---- etc/snort.conf.orig	Wed Mar 11 14:22:03 2009
-+++ etc/snort.conf	Wed Apr  8 12:47:17 2009
-@@ -78,7 +78,10 @@ var SNMP_SERVERS $HOME_NET
- # like this:
- #
- # portvar HTTP_PORTS 8081
--#
-+
+$OpenBSD: patch-etc_snort_conf,v 1.5 2010/07/12 19:38:40 sthen Exp $
+--- etc/snort.conf.orig	Fri Mar 19 20:41:00 2010
++++ etc/snort.conf	Mon Apr 26 20:16:23 2010
+@@ -42,6 +42,9 @@ var SQL_SERVERS $HOME_NET
+ # List of telnet servers on your network
+ var TELNET_SERVERS $HOME_NET
+ 
 +# Ports you run ssh servers on
 +portvar SSH_PORTS 22
 +
- # Ports you run web servers on
- portvar HTTP_PORTS 80
+ # List of ports you run web servers on
+ portvar HTTP_PORTS  [80,2301,3128,7777,7779,8000,8008,8028,8080,8180,8888,9999]
  
-@@ -107,8 +110,8 @@ var AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.161
+@@ -57,9 +60,9 @@ var AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.161
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
  # such as:  c:\snort\rules
 -var RULE_PATH ../rules
+-var SO_RULE_PATH ../so_rules
 -var PREPROC_RULE_PATH ../preproc_rules
 +var RULE_PATH ${SYSCONFDIR}/snort/rules
++var SO_RULE_PATH ${SYSCONFDIR}/snort/so_rules
 +var PREPROC_RULE_PATH ${SYSCONFDIR}/snort/preproc_rules
  
- # Configure the snort decoder
- # ============================
+ ###################################################
+ # Step #2: Configure the decoder.  For more information, see README.decode

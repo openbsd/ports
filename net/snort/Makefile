@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.56 2010/06/11 21:10:28 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2010/07/12 19:38:40 sthen Exp $
 
 SHARED_ONLY = 		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-DISTNAME = 		snort-2.8.4.1
-PKGNAME =		${DISTNAME}p1
+# Original URL http://dl.snort.org/downloads/14 redirects to a
+# time-limited Amazon S3 url. This would mean a bad distfile name.
+# The following hack allows it to work but XXX if updating, the
+# MASTER_SITES URL will need to be adjusted, not just DISTNAME.
+DISTNAME = 		snort-2.8.6
+MASTER_SITES = 		http://dl.snort.org/downloads/14?/
+
 CATEGORIES =		net security
-MASTER_SITES = 		http://dl.snort.org/snort-current/
 
 HOMEPAGE =		http://www.snort.org/
 
@@ -20,23 +24,13 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = 	Yes
 WANTLIB =		c m pcap
 
-SHARED_LIBS = 		sf_engine 3.0 \
-			sf_dce2_preproc 0.0 \
-			sf_dcerpc_preproc 2.0 \
-			sf_dns_preproc 3.0 \
-			sf_ftptelnet_preproc 3.0 \
-			sf_smtp_preproc 3.0 \
-			sf_ssh_preproc 2.0 \
-			sf_ssl_preproc 1.0 \
-			_sfdynamic_example_rule 0.0 \
-			_sfdynamic_preprocessor_example 0.0
-
 USE_LIBTOOL =		Yes
 
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-dynamicplugin
+			--enable-dynamicplugin \
+			--enable-ipv6
 
 MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 

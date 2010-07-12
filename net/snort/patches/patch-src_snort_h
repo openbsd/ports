@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_snort_h,v 1.1 2010/07/12 19:38:40 sthen Exp $
+--- src/snort.h.orig	Thu Mar 18 18:50:54 2010
++++ src/snort.h	Wed May  5 20:26:16 2010
+@@ -60,7 +60,7 @@
+ # include "inline.h"
+ #endif /* GIDS */
+ 
+-#if defined(INLINE_FAILOPEN) || defined(TARGET_BASED) || defined(SNORT_RELOAD)
++#if defined(HAVE_LIBPRELUDE) || defined(INLINE_FAILOPEN) || defined(TARGET_BASED) || defined(SNORT_RELOAD)
+ # include <pthread.h>
+ #endif
+ 

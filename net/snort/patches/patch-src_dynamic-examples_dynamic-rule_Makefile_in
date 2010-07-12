@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dynamic-examples_dynamic-rule_Makefile_in,v 1.1 2010/07/12 19:38:40 sthen Exp $
+--- src/dynamic-examples/dynamic-rule/Makefile.in.orig	Fri Mar 19 20:39:38 2010
++++ src/dynamic-examples/dynamic-rule/Makefile.in	Mon Apr 26 20:14:12 2010
+@@ -200,7 +200,7 @@ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ noinst_libdir = ${exec_prefix}/lib/snort_dynamicrules
+ noinst_lib_LTLIBRARIES = lib_sfdynamic_example_rule.la
+-lib_sfdynamic_example_rule_la_LDFLAGS = -export-dynamic
++lib_sfdynamic_example_rule_la_LDFLAGS = -export-dynamic -avoid-version
+ BUILT_SOURCES = \
+ sfsnort_dynamic_detection_lib.c \
+ sfsnort_dynamic_detection_lib.h 

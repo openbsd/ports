@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.1 2009/08/16 13:31:27 rui Exp $
---- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Wed Mar 11 14:19:28 2009
-+++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Wed Apr  8 15:58:27 2009
-@@ -418,7 +418,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.2 2010/07/12 19:38:40 sthen Exp $
+--- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Fri Mar 19 20:39:38 2010
++++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Mon Apr 26 20:14:12 2010
+@@ -205,7 +205,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ lib_LTLIBRARIES = libsf_dce2_preproc.la
+-libsf_dce2_preproc_la_LDFLAGS = -module
++libsf_dce2_preproc_la_LDFLAGS = -module -avoid-version
+ BUILT_SOURCES = \
+ sf_dynamic_preproc_lib.c \
+ sf_ip.c \
+@@ -428,7 +428,7 @@ distdir: $(DISTFILES)
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-am
@@ -9,4 +18,4 @@ $OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.1 2009/08/16 1
 +all-am: Makefile $(LTLIBRARIES)
  installdirs:
  	for dir in "$(DESTDIR)$(libdir)"; do \
- 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \

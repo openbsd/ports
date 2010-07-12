@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.1 2010/07/12 19:38:40 sthen Exp $
+--- src/dynamic-plugins/sf_engine/Makefile.in.orig	Fri Mar 19 20:39:38 2010
++++ src/dynamic-plugins/sf_engine/Makefile.in	Mon Apr 26 20:14:12 2010
+@@ -211,7 +211,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ lib_LTLIBRARIES = libsf_engine.la
+-libsf_engine_la_LDFLAGS = -module
++libsf_engine_la_LDFLAGS = -module -avoid-version
+ BUILT_SOURCES = \
+ sfhashfcn.c \
+ sfhashfcn.h \

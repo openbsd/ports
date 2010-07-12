@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_log_text_c,v 1.2 2009/08/16 13:31:27 rui Exp $
---- src/log_text.c.orig	Mon Jan 26 22:49:57 2009
-+++ src/log_text.c	Wed Apr  8 12:40:36 2009
-@@ -62,7 +62,7 @@ extern OptTreeNode *otn_tmp;    /* global ptr to curre
+$OpenBSD: patch-src_log_text_c,v 1.3 2010/07/12 19:38:40 sthen Exp $
+--- src/log_text.c.orig	Tue Jan 26 19:10:51 2010
++++ src/log_text.c	Thu Apr 22 07:53:46 2010
+@@ -66,7 +66,7 @@ extern OptTreeNode *otn_tmp;    /* global ptr to curre
  void LogTimeStamp(TextLog* log, Packet* p)
  {
      char timestamp[TIMEBUF_SIZE];
 -    ts_print((struct timeval*)&p->pkth->ts, timestamp);
-+    ts_print((struct timeval32*)&p->pkth->ts, timestamp);
++    ts_print((struct sf_timeval32*)&p->pkth->ts, timestamp);
      TextLog_Puts(log, timestamp);
  }
  

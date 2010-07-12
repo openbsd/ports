@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_ppm_c,v 1.3 2009/08/16 13:31:27 rui Exp $
---- src/ppm.c.orig	Mon Jan 26 22:49:58 2009
-+++ src/ppm.c	Wed Apr  8 12:40:37 2009
-@@ -361,7 +361,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
-         if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
-         {
+$OpenBSD: patch-src_ppm_c,v 1.4 2010/07/12 19:38:40 sthen Exp $
+--- src/ppm.c.orig	Tue Jan 26 19:10:53 2010
++++ src/ppm.c	Thu Apr 22 07:53:46 2010
+@@ -371,7 +371,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
+             int i;
+ 
              if(!*timestamp)
 -                ts_print((struct timeval*)&p->pkth->ts, timestamp);
-+                ts_print((struct timeval32*)&p->pkth->ts, timestamp);
++                ts_print((struct sf_timeval32*)&p->pkth->ts, timestamp);
  
              for (i=0; i< ppm_n_crules; i++)
              {
-@@ -417,7 +417,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
-         if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
-         {
+@@ -427,7 +427,7 @@ void ppm_rule_log(ppm_cfg_t *ppm_cfg, uint64_t pktcnt,
+             int i;
+ 
              if(!*timestamp)
 -                ts_print((struct timeval*)&p->pkth->ts, timestamp);
-+                ts_print((struct timeval32*)&p->pkth->ts, timestamp);
++                ts_print((struct sf_timeval32*)&p->pkth->ts, timestamp);
  
              for (i=0; i< ppm_n_rules; i++)
              {

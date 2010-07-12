@@ -1,20 +1,20 @@
-$OpenBSD: patch-src_util_h,v 1.2 2009/02/12 22:12:08 rui Exp $
---- src/util.h.orig	Tue Feb 26 02:19:23 2008
-+++ src/util.h	Fri Aug  8 16:01:52 2008
-@@ -36,6 +36,7 @@
- 
- #include "sf_types.h"
+$OpenBSD: patch-src_util_h,v 1.3 2010/07/12 19:38:40 sthen Exp $
+--- src/util.h.orig	Tue Jan 26 19:10:56 2010
++++ src/util.h	Tue May  4 20:15:02 2010
+@@ -40,6 +40,7 @@
  #include "sflsq.h"
+ #include "sfutil/sf_ipvar.h"
+ #include "ipv6_port.h"
 +#include "pcap_pkthdr32.h"
  
- /* specifies that a function does not return 
-  * used for quieting Visual Studio warnings
-@@ -147,7 +148,7 @@ typedef struct _IntervalStats
- int DisplayBanner();
+ /* Macros *********************************************************************/
+ #define PCAP_CLOSE  // allow for rollback for now
+@@ -169,7 +170,7 @@ typedef struct _IntervalStats
+ int DisplayBanner(void);
  void GetTime(char *);
  int gmt2local(time_t);
 -void ts_print(register const struct timeval *, char *);
-+void ts_print(register const struct timeval32 *, char *);
++void ts_print(register const struct sf_timeval32 *, char *);
  char *copy_argv(char **);
  void strip(char *);
- double CalcPct(UINT64, UINT64);
+ double CalcPct(uint64_t, uint64_t);

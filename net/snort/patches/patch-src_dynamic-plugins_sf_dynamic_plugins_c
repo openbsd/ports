@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_dynamic-plugins_sf_dynamic_plugins_c,v 1.4 2009/08/16 13:31:27 rui Exp $
---- src/dynamic-plugins/sf_dynamic_plugins.c.orig	Mon Jan 26 22:50:08 2009
-+++ src/dynamic-plugins/sf_dynamic_plugins.c	Wed Apr  8 12:40:35 2009
-@@ -233,8 +233,7 @@ void LoadAllLibs(char *path, LoadLibraryFunc loadFunc)
-         dirEntry = readdir(directory);
-         while (dirEntry)
+$OpenBSD: patch-src_dynamic-plugins_sf_dynamic_plugins_c,v 1.5 2010/07/12 19:38:40 sthen Exp $
+--- src/dynamic-plugins/sf_dynamic_plugins.c.orig	Tue Jan 26 19:11:07 2010
++++ src/dynamic-plugins/sf_dynamic_plugins.c	Thu Apr 22 07:53:46 2010
+@@ -248,8 +248,7 @@ void LoadAllLibs(char *path, LoadLibraryFunc loadFunc)
+         dir_entry = readdir(directory);
+         while (dir_entry != NULL)
          {
--            if (dirEntry->d_reclen &&
--                !fnmatch(EXT, dirEntry->d_name, FNM_PATHNAME | FNM_PERIOD))
-+                if(!fnmatch(EXT, dirEntry->d_name, FNM_PATHNAME | FNM_PERIOD))
+-            if ((dir_entry->d_reclen != 0) &&
+-                (fnmatch(MODULE_EXT, dir_entry->d_name, FNM_PATHNAME | FNM_PERIOD) == 0))
++            if (fnmatch(MODULE_EXT, dir_entry->d_name, FNM_PATHNAME | FNM_PERIOD) == 0)
              {
-                 SnortSnprintf(path_buf, PATH_MAX, "%s%s%s", path, "/", dirEntry->d_name);
-                 loadFunc(path_buf, 1);
+                 /* Get the string up until the first dot.  This will be
+                  * considered the file prefix. */
