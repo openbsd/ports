@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2010/07/12 21:25:31 kili Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
@@ -24,7 +24,7 @@ LIB_DEPENDS = 	::x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 6
+REVISION = 7
 WANTLIB = ICE SDL.>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	artsflow artsflow_idl audiofile c fam gdk glib glib-2.0 gmodule \
 	gmodule-2.0 gthread-2.0 gtk idn jpeg kimproxy kmedia2_idl \
@@ -35,9 +35,9 @@ WANTLIB = ICE SDL.>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	lib/kde3/artsmodulessynth lib/kde3/atlantic lib/kde3/atlantikui \
 	lib/kde3/kabc lib/kde3/kabinterfaces lib/kde3/kateinterfaces \
 	lib/kde3/katepartinterfaces lib/kde3/kateutils lib/kde3/kdecore.>=6 \
-	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
-	lib/kde3/kdnssd lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
-	lib/kde3/kmediaplayer lib/kde3/knewstuff lib/kde3/konq \
+	lib/kde3/kdefx lib/kde3/kdegames lib/kde3/kdeprint lib/kde3/kdesu \
+	lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/khtml lib/kde3/kio \
+	lib/kde3/kjs lib/kde3/kmediaplayer lib/kde3/knewstuff lib/kde3/konq \
 	lib/kde3/konqsidebarplugin lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/noatun lib/kde3/noatuncontrols lib/kde3/noatuntags \
