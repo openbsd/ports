@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/12 22:07:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	multi-purpose sniffer/interceptor/logger
 
 VER=		0.7.3
 DISTNAME=	ettercap-NG-${VER}
-PKGNAME=	ettercap-${VER}p4
+PKGNAME=	ettercap-${VER}
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 

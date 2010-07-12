@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/02 20:38:37 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Patricia Trie perl module for fast IP address lookups
 
 MODULES=	cpan
 DISTNAME=	Net-Patricia-1.014
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 # GPL

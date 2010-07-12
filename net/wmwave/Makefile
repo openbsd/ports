@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:42 sthen Exp $
 
 DISTNAME=	wmwave-0-4
-PKGNAME=	wmwave-0.4p3
+PKGNAME=	wmwave-0.4
+REVISION=	3
 CATEGORIES=	net x11 x11/windowmaker
 
 PERMIT_PACKAGE_CDROM=	Yes

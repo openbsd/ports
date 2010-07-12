@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/10 02:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT =	minimalistic SILC client
 
 DISTNAME =	si-0.3
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	net
 
 # GPLv2/MIT

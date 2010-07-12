@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/24 10:46:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=		lightweight Jabber client library
 
-V=			1.4.3
-DISTNAME=       	loudmouth-$V
-PKGNAME=		${DISTNAME}p2
+DISTNAME=       	loudmouth-1.4.3
+REVISION=		2
 SHARED_LIBS +=	loudmouth-1          3.0      # .1.0
 CATEGORIES=		net devel
 

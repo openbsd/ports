@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005
-PKGNAME=		nssl-005p0
+PKGNAME=		nssl-005
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://nssl.sourceforge.net/
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+
 WANTLIB=		crypto ssl c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nssl/}

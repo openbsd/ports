@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/12/22 00:31:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 V=			0.80
 DISTNAME=		dc_gui2-$V
-PKGNAME=		dc_gui-$Vp4
+PKGNAME=		dc_gui-$V
+REVISION=		4
 CATEGORIES=		net x11
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=	client for the Secure File Transfer Protocol
 
 MODULES=	cpan
 DISTNAME=	Net-SFTP-0.10
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net security
 
 # GPL/Artistic

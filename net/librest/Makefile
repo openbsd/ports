@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/11 10:34:11 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
-VERSION =	0.6
-DISTNAME =	rest-${VERSION}
-PKGNAME =	librest-${VERSION}p0
+DISTNAME =	rest-0.6
+PKGNAME =	lib${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net devel
 

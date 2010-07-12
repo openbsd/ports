@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/23 08:53:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	little X dock.app network monitor
 
 DISTNAME=	wmnet-1.06
-PKGNAME=	${DISTNAME}p5
+REVISION=	5
 CATEGORIES=	net x11 x11/windowmaker
 HOMEPAGE=	http://www.katharineosborne.com/wmnet/
 MASTER_SITES=	http://dockapps.org/files/77/115/

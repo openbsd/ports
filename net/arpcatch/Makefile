@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/12 22:07:37 sthen Exp $
 
 COMMENT=	userland arp-proxy daemon
 
 DISTNAME=	arpcatch
-PKGNAME=	${DISTNAME}-19970824p0
+PKGNAME=	${DISTNAME}-19970824
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}

@@ -1,9 +1,9 @@
-#   $OpenBSD: Makefile,v 1.10 2008/07/27 11:34:18 fgsch Exp $
+#   $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=	merge and extract portions of binary pcap files
 
 DISTNAME=	pcapmerge-1.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net perl5
 
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=sniffers/}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	distributed document delivery client
 
 V=		3.0.11
 DISTNAME=	gopher_${V}
-PKGNAME=	gopher-${V}p0
+PKGNAME=	gopher-${V}
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://quux.org/devel/gopher/Downloads/

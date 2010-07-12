@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/27 12:08:22 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	multiprotocol traceroute tool
 
 DISTNAME=	ctrace-0.9
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 

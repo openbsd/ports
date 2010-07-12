@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/13 11:32:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	local network discovery tool
 
 DISTNAME=	thcrut-0.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}/releases/
 

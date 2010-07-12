@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=		Wake On Lan client
 
 DISTNAME=		wol-0.7.1
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://ahh.sourceforge.net/wol/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/26 00:38:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:38 sthen Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
 
 DISTNAME =		fping-2.4b2_to-ipv6
-PKGNAME =		${DISTNAME:S/_to-ipv6//}p5
+PKGNAME =		${DISTNAME:S/_to-ipv6//}
+REVISION =		5
 
 CATEGORIES =		net
 

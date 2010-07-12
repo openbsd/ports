@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/01 22:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/12 22:07:38 sthen Exp $
 
 BROKEN=			security issues
 
@@ -13,7 +13,8 @@ DISTNAME=	DSS-4_1_3.src
 ONLY_FOR_ARCHS=		i386
 
 PKGNAME=		dss-${VERSION}
-FULLPKGNAME-server=	dss-server-${VERSION}p1
+FULLPKGNAME-server=	dss-server-${VERSION}
+REVISION-server=	1
 PKGNAME-admin=		dss-admin-${VERSION}
 PKGNAME-examples=	dss-examples-${VERSION}
 PKGNAME-proxy=		dss-proxy-${VERSION}

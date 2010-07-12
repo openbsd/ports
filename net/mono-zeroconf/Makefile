@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	Zero Configuration Networking library for Mono
 
 V=		0.9.0
 DISTNAME=	mono-zeroconf-${V}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	net
 

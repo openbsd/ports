@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/12/10 22:33:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	UDP tunnel utility
 
 DISTNAME=	udptunnel-1.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/ 

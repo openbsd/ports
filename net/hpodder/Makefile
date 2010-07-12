@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/30 15:41:02 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT =		podcast aggregator written in Haskell
 
 DISTNAME =		hpodder-1.1.5
-PKGNAME =		${DISTNAME}p2
+REVISION =		2
 CATEGORIES =		net
 HOMEPAGE =		http://software.complete.org/hpodder
 

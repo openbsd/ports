@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/21 16:27:42 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	console based Jabber client
 
 DISTNAME=	freetalk-3.2
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	net
 

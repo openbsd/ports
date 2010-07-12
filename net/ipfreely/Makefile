@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://ipfreely.sourceforge.net/

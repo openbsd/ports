@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/12 11:31:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT =		Python classes providing access to network packets
 
 MODPY_EGG_VERSION =	0.9.6.0
 DISTNAME =		Impacket-${MODPY_EGG_VERSION}
-PKGNAME =		py-impacket-${MODPY_EGG_VERSION}p0
+PKGNAME =		py-impacket-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =   		net
 

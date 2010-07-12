@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -6,8 +6,9 @@ COMMENT-server=	Dictionary Server Protocol server
 V=		1.9.15
 DISTNAME=	dictd-$V
 
-PKGNAME-main=	dictd-client-$Vp1
+PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
+REVISION-main=	1
 
 CATEGORIES=	net education
 

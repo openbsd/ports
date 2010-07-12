@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2009/05/01 02:04:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.10
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.gz

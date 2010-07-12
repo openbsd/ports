@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/05/13 09:47:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	tool for capturing data from TCP connections
 
 DISTNAME=	tcpflow-0.21
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c pcap 
 
 CONFIGURE_STYLE=        gnu

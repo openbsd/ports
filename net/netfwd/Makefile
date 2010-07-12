@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/08 19:39:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	netword traffic redirector
 
 DISTNAME=	netfwd-0.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	Alexey Vatchenko <av@bsdua.org>

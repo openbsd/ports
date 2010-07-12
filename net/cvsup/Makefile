@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/12 22:07:38 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -6,8 +6,10 @@ COMMENT-server=	network file distribution server
 
 VERSION=	16.1h
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME-main=	cvsup-${VERSION}p2
-PKGNAME-server=	cvsupd-${VERSION}p0
+PKGNAME-main=	cvsup-${VERSION}
+PKGNAME-server=	cvsupd-${VERSION}
+REVISION-main=	2
+REVISION-server=0
 CATEGORIES=	net devel
 HOMEPAGE=	http://www.cvsup.org/
 

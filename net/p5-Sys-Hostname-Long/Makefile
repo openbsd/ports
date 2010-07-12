@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/11 20:21:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=	perl module to get FQDN
 
 MODULES=	cpan
 DISTNAME=	Sys-Hostname-Long-1.4
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>

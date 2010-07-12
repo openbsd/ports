@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/13 11:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:37 sthen Exp $
 
 COMMENT=	active packet sniffer
 
 DISTNAME=	angst-0.4b
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://angst.sourceforge.net/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/27 06:12:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=		network pipe meter
 
 DISTNAME=		nepim-0.53
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://www.nongnu.org/nepim/
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB= c
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nepim/}

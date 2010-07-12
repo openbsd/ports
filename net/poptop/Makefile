@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/26 08:36:30 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT=		PPTP Server
 
-V=1.3.4
+V=			1.3.4
 DISTNAME=		pptpd-$V
-PKGNAME=		poptop-$Vp0
+PKGNAME=		poptop-$V
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.poptop.org/
@@ -16,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c util 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=poptop/}

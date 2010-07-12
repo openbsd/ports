@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/12 22:07:39 sthen Exp $
 
 VERSION=	1.3.07.09
 COMMENT=	simple and performant DNS server
 DISTNAME=	maradns-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.maradns.org/
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	c pthread
 
 MASTER_SITES=	http://www.maradns.org/download/1.3/${VERSION}/

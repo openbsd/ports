@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/27 01:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	H.323 video conferencing library
 
 V=		1_21_0
 DISTNAME=	h323plus-v${V}
-PKGNAME=	h323plus-${V:S/_/./g}p1
+PKGNAME=	h323plus-${V:S/_/./g}
+REVISION=	1
 CATEGORIES=	net devel
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plugins-v${V}${EXTRACT_SUFX}

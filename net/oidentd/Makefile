@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.7
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu

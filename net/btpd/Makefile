@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 22:53:35 nicm Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:37 sthen Exp $
 
 COMMENT=		BitTorrent Protocol Daemon
 
 DISTNAME=		btpd-0.15
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 
 MAINTAINER=		Nicholas Marriott <nicm@openbsd.org>

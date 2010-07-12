@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/21 22:18:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT = 	ipv4 and ipv6 subnet calculator
 
 VERSION = 	1.1.4
 DISTNAME = 	sipcalc-${VERSION}
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 CATEGORIES = 	net
 HOMEPAGE = 	http://www.routemeister.net/projects/sipcalc/
 MAINTAINER = 	Stefan Sperling <stsp@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/01 15:49:24 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/12 22:07:41 sthen Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -9,10 +9,12 @@ COMMENT-ruby=	ruby interface to librrd
 
 VERSION=	1.2.30
 DISTNAME=	rrdtool-${VERSION}
-PKGNAME-main=	rrdtool-${VERSION}p0
+PKGNAME-main=	rrdtool-${VERSION}
 PKGNAME-perl=	p5-RRD-${VERSION}
-PKGNAME-python= py-rrd-${VERSION}p0
+PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
+REVISION-main=	0
+REVISION-python=0
 
 SHARED_LIBS+=	rrd 3.0
 SHARED_LIBS+=	rrd_th 3.0

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	Cisco AAA protocol daemon
 
 DISTNAME=	tac_plus.F4.0.4.alpha
-PKGNAME=	tacacs+-4.0.4ap1
+PKGNAME=	tacacs+-4.0.4a
+REVISION=	1
 CATEGORIES=	net security
 
 HOMEPAGE=       http://www.gazi.edu.tr/tacacs/
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=   may not sell
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= may not sell
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		c 
 
 MASTER_SITES=   ftp://ftpeng.cisco.com/pub/tacacs/ \

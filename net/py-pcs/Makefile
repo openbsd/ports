@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:41 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Python Packet Construction Set
 
 DISTNAME=		pcs-0.5
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net
 

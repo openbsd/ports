@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:39 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,10 @@ COMMENT-gnome=	plugin for GNOME
 
 VERSION=	0.2.3
 DISTNAME=	libproxy-${VERSION}
-PKGNAME-main=	libproxy-${VERSION}p1
-PKGNAME-gnome=	libproxy-gnome-${VERSION}p0
+PKGNAME-main=	libproxy-${VERSION}
+PKGNAME-gnome=	libproxy-gnome-${VERSION}
+REVISION-main=	1
+REVISION-gnome=	0
 SHARED_LIBS +=  proxy          0.0               # .0.0
 CATEGORIES=	net
 

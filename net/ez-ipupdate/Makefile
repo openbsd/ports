@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/17 22:38:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	small dynamic DNS updater written in C
 
 DISTNAME=	ez-ipupdate-3.0.11b7
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	net
 

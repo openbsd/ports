@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/25 20:30:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
 DISTNAME=	python-irclib-0.4.6
-PKGNAME=	${DISTNAME:S/python/py/g}p1
+PKGNAME=	${DISTNAME:S/python/py/g}
+REVISION =	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://python-irclib.sourceforge.net/

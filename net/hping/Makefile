@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	TCP/UDP ping/traceroute tool
 
 DISTNAME=	hping2.0.0-rc3
-PKGNAME=	hping-2.0.0rc3p1
+PKGNAME=	hping-2.0.0rc3
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.hping.org/
@@ -13,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c pcap
 
 MASTER_SITES=	${HOMEPAGE}

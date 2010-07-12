@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	non-blocking thread-safe API for resolving DNS names
 
 DISTNAME= 	libdnsres-0.1a
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS=	dnsres	0.1	# .0.1
 CATEGORIES=	net devel
 

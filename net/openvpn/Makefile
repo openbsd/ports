@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/08 09:18:25 fkr Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 VERSION=	2.1.0
 DISTNAME=	openvpn-${VERSION}
-PKGNAME=        ${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto ssl pthread
 
 MASTER_SITES=	${HOMEPAGE}/release/

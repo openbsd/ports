@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/10 08:10:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT =	perl implementation of RIPE whois
 
 DISTNAME =	Net-Whois-RIPE-1.31
-PKGNAME =	p5-${DISTNAME}
 CATEGORIES =	net
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>

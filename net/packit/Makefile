@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/16 11:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		net
 HOMEPAGE=		http://packit.sf.net/
 EXTRACT_SUFX=		.tgz

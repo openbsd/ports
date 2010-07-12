@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/02/29 09:28:45 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
-PKGNAME=	tinyfugue-4.0s1p3
+PKGNAME=	tinyfugue-4.0s1
+REVISION=	3
 DISTNAME=	tf-40s1
 CATEGORIES=	net games
 

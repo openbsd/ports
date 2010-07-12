@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:42 sthen Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
-VERSION=	0.3.7
-DISTNAME=	valknut-${VERSION}
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	valknut-0.3.7
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://dcgui.berlios.de/

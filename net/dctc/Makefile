@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/16 11:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=		Direct Connect clone
 
 DISTNAME=		dctc-0.85.9
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 

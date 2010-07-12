@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2009/04/11 08:49:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/12 22:07:39 sthen Exp $
 # Uses pthreads
 
 COMMENT=		daemon/libs/toolkit for routing BGP4+, RIP, OSPF, etc.
 
 V=			2.2.2a
 DISTNAME=		mrt-${V}-src
-PKGNAME=		mrtd-${V}p1
+PKGNAME=		mrtd-${V}
+REVISION=		1
 HOMEPAGE=		http://sourceforge.net/projects/mrt
 
 CATEGORIES=     	net

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/13 16:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=	POE interface to Net::Pcap
 
 MODULES=	cpan
 DISTNAME=	POE-Component-Pcap-0.04
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 
 # Artitistic License

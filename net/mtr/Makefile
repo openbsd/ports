@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
 DISTNAME=	mtr-0.75
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+
 WANTLIB=		c m termcap
 
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/

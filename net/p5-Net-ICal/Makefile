@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=	Perl interface to RFC2445 (iCalendar) objects
 
 MODULES=	cpan
 DISTNAME=	Net-ICal-0.15
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	Sam Smith <S@msmith.net>

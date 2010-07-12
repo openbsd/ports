@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/15 17:18:51 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT =		library for client-side HTTP
 
 DISTNAME =		HTTP-4000.0.9
-PKGNAME =		hs-${DISTNAME}p4
+PKGNAME =		hs-${DISTNAME}
+REVISION =		4
 CATEGORIES =		net devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

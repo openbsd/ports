@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2009/08/26 00:34:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
 DISTNAME=	firewalk-0.8
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=     net
 
 #MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/

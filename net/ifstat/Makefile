@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:38 sthen Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
 DISTNAME=		ifstat-1.1
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://gael.roualland.free.fr/ifstat/
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}

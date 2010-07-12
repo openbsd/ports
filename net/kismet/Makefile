@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/11/20 13:36:37 okan Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:39 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,8 +10,9 @@ NOT_FOR_ARCHS=m68k m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-PKGNAME-main=	kismet-${V:S,-,,g}p0
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p0
+REVISION=	0
+PKGNAME-main=	kismet-${V:S,-,,g}
+PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/

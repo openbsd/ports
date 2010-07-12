@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/27 08:02:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=		desktop presence framework
 
 DISTNAME=		libgalago-0.5.2
-PKGNAME=		${DISTNAME}p2
+REVISION=		2
 SHARED_LIBS +=	galago               0.0      # .3.0
 CATEGORIES=		net devel
 

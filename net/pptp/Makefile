@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/24 12:09:43 schwarze Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:41 sthen Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	PPTP client package for Microsoft VPN servers
 
 DISTNAME=	pptp-1.7.2
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pptpclient/}
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		c util
 
 NO_REGRESS=	Yes

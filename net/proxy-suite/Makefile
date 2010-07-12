@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/12 22:07:41 sthen Exp $
 
 COMMENT=	set of programs to enhance firewall security
 
 DISTNAME=	proxy-suite-1.9
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 HOMEPAGE=	http://www.suse.com/en/whitepapers/proxy_suite/
 CATEGORIES=    	net security
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 USE_GMAKE=	Yes

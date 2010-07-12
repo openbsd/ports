@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:39 sthen Exp $
 
 COMMENT=	remote identd fingerprinting tool
 
 DISTNAME=	ldistfp-0.1.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net security
 
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   no license
 PERMIT_PACKAGE_FTP=     no license
 PERMIT_DISTFILES_CDROM= no license
 PERMIT_DISTFILES_FTP=   no license
+
 WANTLIB=		c
 
 FINGERPRINTS=	${PREFIX}/share/ldistfp/ldistfp-auth-fingerprints

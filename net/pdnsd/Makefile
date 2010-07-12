@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/23 09:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:40 sthen Exp $
 
 COMMENT=		threaded DNS daemon, optimized for caching
 
 DISTNAME=		pdnsd-1.2.7-par
-PKGNAME=		${DISTNAME:S/-par//}p0
+PKGNAME=		${DISTNAME:S/-par//}
+REVISION=		0
 CATEGORIES=     	net
 MASTER_SITES=		${HOMEPAGE}/releases/
 

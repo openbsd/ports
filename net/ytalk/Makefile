@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:42 sthen Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
