@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_value_cpp,v 1.3 2009/09/10 16:43:28 sthen Exp $
---- src/value.cpp.orig	Mon Feb 16 14:30:51 2009
-+++ src/value.cpp	Sun Jun 28 14:43:11 2009
-@@ -827,7 +827,7 @@ namespace Exiv2 {
+$OpenBSD: patch-src_value_cpp,v 1.4 2010/07/12 08:55:38 landry Exp $
+--- src/value.cpp.orig	Wed Apr 14 18:17:55 2010
++++ src/value.cpp	Thu Jul  1 22:45:05 2010
+@@ -971,7 +971,7 @@ namespace Exiv2 {
          // sprintf wants to add the null terminator, so use oversized buffer
          char temp[9];
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_value_cpp,v 1.3 2009/09/10 16:43:28 sthen Exp $
                              date_.year, date_.month, date_.day);
          assert(wrote == 8);
          std::memcpy(buf, temp, 8);
-@@ -975,7 +975,7 @@ namespace Exiv2 {
+@@ -1143,7 +1143,7 @@ namespace Exiv2 {
          char plusMinus = '+';
          if (time_.tzHour < 0 || time_.tzMinute < 0) plusMinus = '-';
  

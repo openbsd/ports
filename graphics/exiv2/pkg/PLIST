@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/10 16:43:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/12 08:55:38 landry Exp $
 %%SHARED%%
 @bin bin/exiv2
 include/exiv2/
@@ -29,6 +29,7 @@ include/exiv2/olympusmn.hpp
 include/exiv2/orfimage.hpp
 include/exiv2/panasonicmn.hpp
 include/exiv2/pentaxmn.hpp
+include/exiv2/pgfimage.hpp
 include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp

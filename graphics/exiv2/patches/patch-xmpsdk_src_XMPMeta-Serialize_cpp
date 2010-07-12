@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmpsdk_src_XMPMeta-Serialize_cpp,v 1.1 2010/07/12 08:55:38 landry Exp $
+--- xmpsdk/src/XMPMeta-Serialize.cpp.orig	Sat Jul  3 08:40:50 2010
++++ xmpsdk/src/XMPMeta-Serialize.cpp	Sat Jul  3 08:41:19 2010
+@@ -303,7 +303,7 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP
+ 				XMP_Assert ( (ch == kTab) || (ch == kLF) || (ch == kCR) );
+ 
+ 				char hexBuf[16];
+-				memcpy ( hexBuf, "&#xn;", 10 );	// AUDIT: Length of "&#xn;" is 5, hexBuf size is 16.
++				strlcpy ( hexBuf, "&#xn;", 10 );	// AUDIT: Length of "&#xn;" is 5, hexBuf size is 16.
+ 				hexBuf[3] = kHexDigits[ch&0xF];
+ 				outputStr.append ( hexBuf, 5 );
+ 
