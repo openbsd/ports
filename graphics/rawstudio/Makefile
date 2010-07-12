@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/22 16:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/12 08:58:50 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-PKGNAME =	${DISTNAME}p1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -22,24 +22,25 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 exiv2 expat
+WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += jpeg lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread pthread-stubs stdc++ tiff xcb xcb-render
+WANTLIB += xcb-render-util xml2 z
+
 MODULES =	devel/gettext
-
-WANTLIB =       X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-                Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-                fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
-                gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-                pangoft2-1.0 pixman-1 pthread pthread-stubs stdc++ xcb z
-
-LIB_DEPENDS +=	dbus-1::x11/dbus \
-		exiv2::graphics/exiv2 \
-		gconf-2::devel/gconf2 \
-		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-		jpeg::graphics/jpeg \
-		lcms::graphics/lcms \
-		ORBit-2::devel/ORBit2 \
-		png::graphics/png \
-		tiff::graphics/tiff \
-		xml2::textproc/libxml
+LIB_DEPENDS +=	::x11/dbus \
+		::graphics/exiv2 \
+		::devel/gconf2 \
+		::x11/gtk+2 \
+		::graphics/jpeg \
+		::graphics/lcms \
+		::devel/ORBit2 \
+		::graphics/png \
+		::graphics/tiff \
+		::textproc/libxml
 
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
 		::x11/gtk2-clearlooks-engine
