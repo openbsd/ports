@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_showpartial,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- bin/showpartial.orig	Wed Feb  2 16:21:29 1994
-+++ bin/showpartial	Wed Feb 20 14:06:43 2002
-@@ -2,8 +2,44 @@
+$OpenBSD: patch-bin_showpartial,v 1.2 2010/07/12 19:03:13 naddy Exp $
+--- bin/showpartial.orig	Thu Feb  3 00:21:29 1994
++++ bin/showpartial	Mon Jul 12 21:01:43 2010
+@@ -2,23 +2,59 @@
  # (The "-fb" might need to be changed to "-f" on some systems)
  #
  
@@ -24,8 +24,8 @@ $OpenBSD: patch-bin_showpartial,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
 +    else
 +        set METAMAIL_TMPDIR=~/metamail_tmp
 +    endif
-+endif
-+
+ endif
+ 
 +# Set a sensible umask value
 +umask 077
 +
@@ -44,10 +44,10 @@ $OpenBSD: patch-bin_showpartial,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
 +        exit 2
 +    endif
 +
- endif
- 
++endif
++
  set TREEROOT=${METAMAIL_TMPDIR}/m-prts-`whoami`
-@@ -11,14 +47,14 @@ if ($#argv < 3 || $#argv > 4) then
+ if ($#argv < 3 || $#argv > 4) then
      echo "Usage:  showpartial file id partnum totalnum"
      exit -1
  endif

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_showaudio,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- bin/showaudio.orig	Wed Feb  2 16:21:26 1994
-+++ bin/showaudio	Wed Feb 20 14:06:43 2002
-@@ -15,9 +15,35 @@
+$OpenBSD: patch-bin_showaudio,v 1.2 2010/07/12 19:03:13 naddy Exp $
+--- bin/showaudio.orig	Thu Feb  3 00:21:26 1994
++++ bin/showaudio	Mon Jul 12 21:01:43 2010
+@@ -15,11 +15,37 @@
  # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  #
  
@@ -16,8 +16,8 @@ $OpenBSD: patch-bin_showaudio,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
 +    else
 +        set METAMAIL_TMPDIR=~/metamail_tmp
 +    endif
-+endif
-+
+ endif
+ 
 +# Set a sensible umask value
 +umask 077
 +
@@ -36,10 +36,12 @@ $OpenBSD: patch-bin_showaudio,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
 +        exit 2
 +    endif
 +
- endif
- 
++endif
++
  # First, figure out which machine to play it on!
-@@ -33,7 +59,7 @@ set AUDIOLOGMAIL=andrew@thumper.bellcore
+ set thishost=`hostname`
+ 
+@@ -33,7 +59,7 @@ set AUDIOLOGMAIL=andrew@thumper.bellcore.com
  set ORG="Bellcore"
  set STDINPUT=0
  if ("$1" == "-p") then
