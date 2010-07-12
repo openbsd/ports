@@ -1,0 +1,15 @@
+$OpenBSD: patch-metamail_Makefile,v 1.1 2010/07/12 19:28:14 naddy Exp $
+--- metamail/Makefile.orig	Mon Jul 12 21:11:43 2010
++++ metamail/Makefile	Mon Jul 12 21:11:57 2010
+@@ -51,9 +51,9 @@ splitmail: splitmail.o shared.o
+ 	rm -f splitmail
+ 	$(CC) $(LOCALCFLAGS) -o splitmail  splitmail.o shared.o $(LDLIBS)
+ 
+-metamail:  metamail.o codes.o uue.o shared.o putenv.o
++metamail:  metamail.o codes.o uue.o shared.o
+ 	rm -f metamail
+-	$(CC) $(LOCALCFLAGS) -o metamail  metamail.o  putenv.o codes.o uue.o shared.o $(LDLIBS)
++	$(CC) $(LOCALCFLAGS) -o metamail  metamail.o  codes.o uue.o shared.o $(LDLIBS)
+ 
+ clean:
+ 	-rm -f metamail mmencode mailto splitmail *.o *.BAK

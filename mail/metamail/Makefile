@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/12 19:28:14 naddy Exp $
 
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
-PKGNAME=	metamail-2.7p0
+PKGNAME=	metamail-2.7
+REVISION=	1
 CATEGORIES=	mail
 
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/

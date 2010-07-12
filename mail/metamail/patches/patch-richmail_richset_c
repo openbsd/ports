@@ -1,0 +1,11 @@
+$OpenBSD: patch-richmail_richset_c,v 1.1 2010/07/12 19:28:14 naddy Exp $
+--- richmail/richset.c.orig	Mon Jul 12 21:18:46 2010
++++ richmail/richset.c	Mon Jul 12 21:19:06 2010
+@@ -34,6 +34,7 @@
+ -------------------------------------------------------------------------*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "richlex.h"
+ #include "richset.h"
+ 

@@ -1,6 +1,33 @@
-$OpenBSD: patch-metamail_mailto_c,v 1.2 2004/05/06 22:45:08 pvalchev Exp $
---- metamail/mailto.c.orig	1994-02-09 13:30:26.000000000 -0700
-+++ metamail/mailto.c	2004-05-06 16:40:04.000000000 -0600
+$OpenBSD: patch-metamail_mailto_c,v 1.3 2010/07/12 19:28:14 naddy Exp $
+--- metamail/mailto.c.orig	Wed Feb  9 21:30:26 1994
++++ metamail/mailto.c	Mon Jul 12 21:16:31 2010
+@@ -37,6 +37,8 @@ STILL NEED TO DO/SUPPORT:
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <config.h>
+ #include <pwd.h>
+@@ -50,8 +52,6 @@ STILL NEED TO DO/SUPPORT:
+ #include <getfiles.h>
+ #include <time.h>
+ #include <lib_protos.h>
+-#else
+-extern char *getenv();
+ #endif
+ 
+ #ifdef SYSV
+@@ -60,7 +60,7 @@ extern char *getenv();
+ #include <unistd.h>
+ #endif
+ 
+-extern char *malloc(), *realloc(), *index(), *getmyname();
++extern char *getmyname();
+ struct mailpart *CreateNewPart();
+ 
+ /* The main data structure for the multiple parts of the mail */
 @@ -195,7 +195,7 @@ tmpname() {
          sprintf(s, "%s/mm.XXXXXX", tmproot);
      }

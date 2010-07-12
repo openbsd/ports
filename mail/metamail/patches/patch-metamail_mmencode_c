@@ -1,0 +1,11 @@
+$OpenBSD: patch-metamail_mmencode_c,v 1.1 2010/07/12 19:28:14 naddy Exp $
+--- metamail/mmencode.c.orig	Mon Jul 12 21:13:57 2010
++++ metamail/mmencode.c	Mon Jul 12 21:14:12 2010
+@@ -13,6 +13,7 @@ OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS 
+ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+ */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <config.h>
+ #ifdef MSDOS
+ #include <fcntl.h>

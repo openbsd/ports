@@ -1,0 +1,18 @@
+$OpenBSD: patch-metamail_shared_c,v 1.1 2010/07/12 19:28:14 naddy Exp $
+--- metamail/shared.c.orig	Mon Jul 12 21:09:34 2010
++++ metamail/shared.c	Mon Jul 12 21:10:23 2010
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <config.h>
+ #ifdef SYSV
+@@ -6,7 +8,6 @@
+ #include <sys/utsname.h>
+ #endif
+ 
+-extern char *malloc();
+ char **Exceptions;
+ int *NeedsPortableNewlines;
+ int ExceptionsAlloced = 0, ExceptionsUsed = 0;
