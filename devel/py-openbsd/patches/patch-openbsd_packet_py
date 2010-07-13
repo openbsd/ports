@@ -1,0 +1,38 @@
+$OpenBSD: patch-openbsd_packet_py,v 1.1 2010/07/13 15:21:18 naddy Exp $
+--- openbsd/packet.py.orig	Sun Jul 11 22:26:12 2010
++++ openbsd/packet.py	Sun Jul 11 22:26:42 2010
+@@ -1592,34 +1592,6 @@ class _PFBase(Protocol):
+     )
+ 
+ 
+-class PFOld(_PFBase):
+-    TYPE = "PFOld"
+-    _SIZEHINT = _sysvar.IFNAMSIZ + 12
+-    # Fields
+-    safamily    =   IntField(0, 4, options=_PFBase.SAFamilyOptions)
+-    ifname      =   PaddedString(4, _sysvar.IFNAMSIZ)
+-    ruleno      =   IntField(4+_sysvar.IFNAMSIZ, 2)
+-    reason      =   IntField(4+_sysvar.IFNAMSIZ+2, 2, options=_PFBase.ReasonOptions)
+-    action      =   IntField(4+_sysvar.IFNAMSIZ+4, 2, options=_PFBase.ActionOptions)
+-    direction   =   IntField(4+_sysvar.IFNAMSIZ+6, 2, options=_PFBase.DirectionOptions)
+-    length      =   _sysvar.IFNAMSIZ + 12
+-    payload     =   Payload()
+-    def _constructNext(self):
+-        if AF_JUMPER.has_key(self.safamily):
+-            self._addProtocol(AF_JUMPER[self.safamily], self.length)
+-
+-    def _getPayloadOffsets(self):
+-        offset = self.length
+-        dataLength = len(self.packet._data) - offset
+-        return offset, dataLength
+-
+-    def __repr__(self):
+-        reason = self.ReasonOptions.toStr(self.reason)
+-        action = self.ActionOptions.toStr(self.action)
+-        direction = self.DirectionOptions.toStr(self.direction)
+-        return "Old PF rule %s (%s) %s %s on %s"%(self.ruleno, reason, action, direction, self.ifname)
+-
+-
+ class PF(_PFBase):
+     """
+         OpenBSD Specific : PF

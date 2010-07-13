@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/11 20:59:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 15:21:18 naddy Exp $
 
 COMMENT=	specific Python bindings for OpenBSD
 
 V=		0.1.2
 DISTNAME=	pyopenbsd-${V}
-PKGNAME=	py-openbsd-${V}p4
+PKGNAME=	py-openbsd-${V}
+REVISION=	5
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.nullcube.com/software/pyopenbsd.html
+HOMEPAGE=	http://dev.nullcube.com/
 
 MAINTAINER=	Aldo Cortesi <aldo@nullcube.com>
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		kvm pcap
 
-MASTER_SITES=	http://www.nullcube.com/software/pyopenbsd/download/
+MASTER_SITES=	http://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

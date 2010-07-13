@@ -1,0 +1,19 @@
+$OpenBSD: patch-openbsd_pcap_py,v 1.1 2010/07/13 15:21:18 naddy Exp $
+--- openbsd/pcap.py.orig	Sun Jul 11 22:26:54 2010
++++ openbsd/pcap.py	Sun Jul 11 22:27:18 2010
+@@ -44,7 +44,6 @@ DLT_ENC         = _pcap.DLT_ENC
+ DLT_RAW         = _pcap.DLT_RAW
+ DLT_SLIP_BSDOS  = _pcap.DLT_SLIP_BSDOS
+ DLT_PPP_BSDOS   = _pcap.DLT_PPP_BSDOS
+-DLT_OLD_PFLOG   = _pcap.DLT_OLD_PFLOG
+ DLT_PFSYNC      = _pcap.DLT_PFSYNC
+ DLT_IEEE802_11  = _pcap.DLT_IEEE802_11
+ DLT_PFLOG       = _pcap.DLT_PFLOG
+@@ -91,7 +90,6 @@ class Interpreter:
+         DLT_LOOP:       packet.Loopback,
+         DLT_EN10MB:     packet.Ethernet,
+         DLT_PFLOG:      packet.PF,
+-        DLT_OLD_PFLOG:  packet.PFOld,
+         DLT_ENC:        packet.Enc,
+     }
+     def __init__(self, dlt, callback):

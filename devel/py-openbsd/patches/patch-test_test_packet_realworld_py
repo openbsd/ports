@@ -1,0 +1,61 @@
+$OpenBSD: patch-test_test_packet_realworld_py,v 1.1 2010/07/13 15:21:18 naddy Exp $
+--- test/test_packet_realworld.py.orig	Sun Jul 11 22:37:05 2010
++++ test/test_packet_realworld.py	Sun Jul 11 22:37:20 2010
+@@ -603,57 +603,6 @@ class uICMP_AddressMaskReply(pcaptester.pcapTester):
+ 
+ 
+ 
+-class uPfOld(pcaptester.pcapTester):
+-    def setUp(self):
+-        self.p = self.getpacket("pf.old")
+-
+-    def test_safamily(self):
+-        p = self.p["pfold"]
+-        self.failUnlessEqual(self.p["pfold"].safamily, self.p["pfold"].SAFamilyOptions["INET"])
+-        self.p["pfold"].safamily = 5
+-        self.failUnlessEqual(self.p["pfold"].safamily, 5)
+-
+-    def test_ifname(self):
+-        p = self.p["pfold"]
+-        self.failUnlessEqual(self.p["pfold"].ifname, "tun0")
+-        self.p["pfold"].ifname = "bomb"
+-        self.failUnlessEqual(self.p["pfold"].ifname, "bomb")
+-
+-    def test_ruleno(self):
+-        p = self.p["pfold"]
+-        self.failUnlessEqual(self.p["pfold"].ruleno, 0)
+-        self.p["pfold"].ruleno = 5
+-        self.failUnlessEqual(self.p["pfold"].ruleno, 5)
+-
+-    def test_reason(self):
+-        self.failUnlessEqual(self.p["pfold"].reason, openbsd.packet.PFOld.ReasonOptions["MATCH"])
+-        self.p["pfold"].reason = 4
+-        self.failUnlessEqual(self.p["pfold"].reason, 4)
+-
+-    def test_action(self):
+-        self.failUnlessEqual(self.p["pfold"].action, openbsd.packet.PFOld.ActionOptions["DROP"])
+-        self.p["pfold"].action = 5
+-        self.failUnlessEqual(self.p["pfold"].action, 5)
+-
+-    def test_direction(self):
+-        self.failUnlessEqual(self.p["pfold"].direction, openbsd.packet.PFOld.DirectionOptions["IN"])
+-        self.p["pfold"].direction = 5
+-        self.failUnlessEqual(self.p["pfold"].direction, 5)
+-
+-    def test_encap(self):
+-        self.failUnlessEqual(self.p["pfold"]._next.src, "68.18.67.181")
+-
+-    def test_payload(self):
+-        self.failUnless(self.p["pfold"].payload)
+-        self.p["pfold"].safamily = self.p["pfold"].SAFamilyOptions["UNSPEC"]
+-        self.p["pfold"].payload = "asdf"
+-        self.p.finalise()
+-        self.failUnlessEqual(self.p["pfold"].payload, "asdf")
+-
+-    def test_repr(self):
+-        repr(self.p)
+-
+-
+ class uPf(pcaptester.pcapTester):
+     def setUp(self):
+         self.p = self.getpacket("pf")
