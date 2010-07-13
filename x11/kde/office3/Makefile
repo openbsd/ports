@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/07/13 09:28:07 kili Exp $
 
 COMMENT=		office suite for KDE
 
@@ -95,7 +95,7 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::databases/postgresql
 
 
-REVISION =	13
+REVISION =	14
 WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
@@ -110,7 +110,7 @@ WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
 	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
 	python2.5 qtmcop readline ruby sndio soundserver_idl ssl stdc++ \
-	termcap tiff util vorbis vorbisenc vorbisfile wmflite-0.2 wpd \
+	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd \
 	wv2 xcb xml2 xslt z
 
 
