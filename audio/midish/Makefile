@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/07 23:07:28 ratchov Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 20:48:20 kili Exp $
  
 COMMENT=		command line MIDI sequencer and filter
 DISTNAME=		midish-1.0.2
+REVISION=		0
 CATEGORIES=		audio
 HOMEPAGE=		http://caoua.org/midish/	
 MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
@@ -13,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
-WANTLIB=		c termcap readline sndio
+WANTLIB=		c ncurses readline sndio
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 NO_REGRESS=		Yes
