@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.13 2010/07/09 17:29:53 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.14 2010/07/13 07:31:00 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -143,8 +143,14 @@ You should point the followings to the DocumentRoot of your web-server:
 You need to edit the config.php file installed under
 ${INSTDIR} for regular web client access.
 
-With Apache, this directory should be granted these permissions:
-    AllowOverride Indexes Options
+With Apache, this directory (or the webaccess symlink, if used) should
+be granted these permissions:
+    AllowOverride Options
+
+e.g.
+<Directory ${PREFIX-web}/htdocs/webaccess>
+	AllowOverride Options
+</Directory>
 
 If you want to debug the webaccess, copy the following file
    ${INSTDIR}/debug.php.disabled
