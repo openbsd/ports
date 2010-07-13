@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/07/11 15:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/07/13 12:45:49 sebastia Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -34,7 +34,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 FLAVORS=	static
 FLAVOR?=
 
-REVISION =	0
+REVISION =	1
 .if ${FLAVOR:L:Mstatic}
 LDSTATIC=	-static
 MODULES=

@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnu_inttostr_c,v 1.1 2010/07/13 12:45:49 sebastia Exp $
+fix build on gcc-2.95 archs
+--- gnu/inttostr.c.orig	Tue Jul 13 09:58:20 2010
++++ gnu/inttostr.c	Tue Jul 13 09:58:30 2010
+@@ -32,9 +32,9 @@ char *
+ inttostr (inttype i, char *buf)
+ {
+   char *p = buf + INT_STRLEN_BOUND (inttype);
+-  *p = 0;
+ 
+   verify (TYPE_SIGNED (inttype) == inttype_is_signed);
++  *p = 0;
+ #if inttype_is_signed
+   if (i < 0)
+     {
