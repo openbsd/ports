@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/15 13:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/13 19:46:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Manipulate simple date objects
 
 MODULES=	cpan
 DISTNAME=	Date-Simple-3.02
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <S@msmith.net>

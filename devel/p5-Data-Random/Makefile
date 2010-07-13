@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/11 18:13:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	perl module to generate random data
 
 DISTNAME=	Data-Random-0.05
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>

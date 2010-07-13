@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/02 20:35:09 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=		perl5 extra list utilities
 
 MODULES=		cpan
 DISTNAME=		List-MoreUtils-0.22
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		devel
 SHARED_ONLY=		Yes
 

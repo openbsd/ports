@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/02 20:35:09 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	change nature of data within a structure
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Data-Structure-Util-0.15
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

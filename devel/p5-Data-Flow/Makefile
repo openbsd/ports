@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	extension for simple-minded recipe-controlled build of data
 
 MODULES=	cpan
 DISTNAME=	Data-Flow-0.09
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

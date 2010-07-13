@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/29 22:53:57 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=		utilities functions to build inside-out objects
 
 MODULES=		cpan
 DISTNAME=		Class-Std-Utils-0.0.2
-PKGNAME=		p5-${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		devel
 
 # perl

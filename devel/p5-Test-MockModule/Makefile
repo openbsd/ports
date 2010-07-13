@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT= 	override subroutines in a module for unit testing
 
 MODULES=	cpan
 DISTNAME=	Test-MockModule-0.05
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 # Artistic

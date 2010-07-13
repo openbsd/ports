@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/11 20:29:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	perlish implementation of Java like inner classes
 
 DISTNAME=	Class-Inner-0.1
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Sebastian Trahm <basti@schleifi.com>

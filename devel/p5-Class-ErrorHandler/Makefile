@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	base class for error handling
 
 MODULES=	cpan
 DISTNAME=	Class-ErrorHandler-0.01
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

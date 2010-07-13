@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	impromptu dumping of data structures for debugging purposes
 
 MODULES=	cpan
 DISTNAME=	BFD-0.31
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

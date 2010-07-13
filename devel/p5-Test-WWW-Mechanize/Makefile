@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT= 	test suite using WWW::Mechanize
 
 MODULES=	cpan
 
 DISTNAME=	Test-WWW-Mechanize-1.12
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

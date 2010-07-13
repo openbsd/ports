@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	sort perl arrays
 CATEGORIES=	devel
 DISTNAME=	Sort-Key-1.28
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 MODULES=	cpan
 
 # perl

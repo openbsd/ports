@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/25 22:16:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
 MODULES=	cpan
 VERSION=	0.30
 DISTNAME=	MLDBM-Sync-${VERSION}
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 RUN_DEPENDS=	:p5-MLDBM-*:devel/p5-MLDBM \

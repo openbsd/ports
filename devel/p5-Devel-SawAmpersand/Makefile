@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/02 20:35:09 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:12 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		assert performance of perl regexps
 
 MODULES=		cpan
 DISTNAME=		Devel-SawAmpersand-0.31
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		devel
 
 PERMIT_PACKAGE_CDROM=	Yes

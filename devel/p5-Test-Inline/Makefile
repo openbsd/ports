@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT= 	inlining your tests next to the code being tested
 
 MODULES=	cpan
 DISTNAME=	Test-Inline-2.105
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

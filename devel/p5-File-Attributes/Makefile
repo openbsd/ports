@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/07 15:08:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT =	manipulate file metadata
 
 MODULES =	cpan
 DISTNAME =	File-Attributes-0.04
-PKGNAME =	p5-${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

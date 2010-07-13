@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=	simplistic perl interface to pkg-config
 
 MODULES=	cpan
 DISTNAME=	ExtUtils-PkgConfig-1.07
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

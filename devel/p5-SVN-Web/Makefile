@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/03 14:05:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT=	subversion repository web frontend
 
 MODULES=	cpan
 DISTNAME=	SVN-Web-0.48
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel perl5
 
 # Artistic

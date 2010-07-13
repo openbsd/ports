@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl interface to the cairo library
 
 MODULES=	cpan
 DISTNAME=	Cairo-1.061
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	graphics devel
 CPAN_AUTHOR=	TSCH
 

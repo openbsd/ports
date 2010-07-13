@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	lightweight exception class
 
 MODULES=	cpan
 DISTNAME=	Class-Throwable-0.10
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

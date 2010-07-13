@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 19:46:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT= 	check if the documentation of a module is comprehensive
 
 MODULES=	cpan
 DISTNAME=	Pod-Coverage-0.20
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

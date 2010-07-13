@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/13 08:27:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
 DISTNAME=		MooseX-Types-Structured-0.19
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 
 CATEGORIES=		devel
 

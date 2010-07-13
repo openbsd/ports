@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=		perl i18n routines
 
 MODULES=		cpan
 DISTNAME=		Locale-PGetText-0.16
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=     	devel
 
 PERMIT_PACKAGE_CDROM=	Yes

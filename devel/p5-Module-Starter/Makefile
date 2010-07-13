@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/18 19:35:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
 DISTNAME =		Module-Starter-1.54
-PKGNAME =		p5-${DISTNAME}p0
+REVISION =		0
 CATEGORIES =		devel
 CPAN_AUTHOR =		PETDANCE
 

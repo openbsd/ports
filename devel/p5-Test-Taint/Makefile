@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/02 20:35:10 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT= 	tools to test taintedness
 
 MODULES=	cpan
 DISTNAME=	Test-Taint-1.04
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

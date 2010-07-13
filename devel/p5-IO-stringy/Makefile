@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan
 VERSION=		2.110
 DISTNAME=		IO-stringy-${VERSION}
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/03 14:18:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT = 	logging Role with easy interface for Moose
 
 DISTNAME =	MooseX-Log-Log4perl-0.40
-PKGNAME =	p5-${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	devel
 MODULES =	cpan
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	is a particular year a leap year
 
 MODULES=	cpan
 DISTNAME=	Date-Leapyear-1.71
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <S@msmith.net>

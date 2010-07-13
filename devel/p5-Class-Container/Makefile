@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	validate method/function parameters
 
 MODULES=	cpan
 DISTNAME=	Class-Container-0.12
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

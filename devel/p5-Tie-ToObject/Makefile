@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/09 08:55:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT =	tie to an existing object
 
 MODULES =	cpan
 DISTNAME =	Tie-ToObject-0.03
-PKGNAME =	p5-${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

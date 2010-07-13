@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/15 21:48:26 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:13 sthen Exp $
 
 COMMENT=	Perl Object Class for Revision Control System (RCS)
 
 DISTNAME=	Rcs-1.05
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 MODULES=	cpan
 

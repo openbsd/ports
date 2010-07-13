@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/10/02 20:35:08 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/13 19:46:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for easy date and time manipulation
 
 MODULES=	cpan
 DISTNAME=	Class-Date-1.1.9
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

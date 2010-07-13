@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/19 15:03:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=		perl6 like method signature parser
 
 DISTNAME=		Parse-Method-Signatures-1.003013
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 
 CATEGORIES=		devel
 

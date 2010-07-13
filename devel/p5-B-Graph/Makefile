@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/13 19:46:11 sthen Exp $
 
 COMMENT=	backend to diagram op trees
 
 MODULES=	cpan
 DISTNAME=	B-Graph-0.51
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

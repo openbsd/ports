@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/12 19:57:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
 
 COMMENT=	utilities for handling Byte Order Marks
 
 MODULES=	cpan
 DISTNAME=	File-BOM-0.14
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	devel
 
 RUN_DEPENDS=	::devel/p5-Readonly
