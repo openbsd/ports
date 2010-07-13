@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/06/14 05:45:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/13 20:39:03 ajacoutot Exp $
 
 #
 # XXX:
@@ -19,11 +19,17 @@ GNOME_PROJECT=		libgda
 GNOME_VERSION=		4.0.9
 
 PKGNAME-main=		${DISTNAME}v0
-#PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}v0
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}v0
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}v0
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}v0
-#PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}v0
+EPOCH-main=		0
+#PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
+#EPOCH-ldap=		0
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
+EPOCH-mdb=		0
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
+EPOCH-mysql=		0
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
+EPOCH-pgsql=		0
+#PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}
+#EPOCH-odbc=		0
 
 CATEGORIES=		databases
 
