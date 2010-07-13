@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 21:08:01 sthen Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
 DISTNAME=	netdude-0.4.8a
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 

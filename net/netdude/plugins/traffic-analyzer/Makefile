@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 21:08:01 sthen Exp $
 
 COMMENT=	netdude plugin providing traffic analysis
 
 DISTNAME=	netdude-traffic-analyzer-plugin-0.3
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 

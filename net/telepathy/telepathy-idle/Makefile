@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/21 12:37:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/13 21:08:01 sthen Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.1.6
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-idle/}
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/10 20:30:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 21:08:00 sthen Exp $
 
 REV=		1.1
 VERSION=	${REV}.2.1
-PKGNAME=        ${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS=	net	11.0
 
 WRKDIST=	${WRKDIR}/libnet

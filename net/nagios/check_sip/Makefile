@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/13 15:30:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 21:08:00 sthen Exp $
 
 COMMENT=		Nagios plugin to check SIP
 
 DISTNAME=		check_sip-20060929
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		net
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
