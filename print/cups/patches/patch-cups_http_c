@@ -1,6 +1,7 @@
-$OpenBSD: patch-cups_http_c,v 1.4 2010/07/13 12:50:44 sebastia Exp $
+$OpenBSD: patch-cups_http_c,v 1.5 2010/07/13 13:02:47 ajacoutot Exp $
 
 fix build on gcc-2.95 archs
+
 --- cups/http.c.orig	Tue Jul 13 10:38:54 2010
 +++ cups/http.c	Tue Jul 13 10:39:51 2010
 @@ -1191,6 +1191,8 @@ httpInitialize(void)
