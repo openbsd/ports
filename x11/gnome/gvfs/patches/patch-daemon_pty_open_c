@@ -1,0 +1,16 @@
+$OpenBSD: patch-daemon_pty_open_c,v 1.1 2010/07/13 16:14:28 ajacoutot Exp $
+--- daemon/pty_open.c.orig	Tue Jul 13 17:06:55 2010
++++ daemon/pty_open.c	Tue Jul 13 17:07:50 2010
+@@ -66,9 +66,11 @@
+ #ifdef HAVE_UTMP_H
+ #include <utmp.h>
+ #endif
++/* XXX HAVE_UTIL_H is not set by configure
+ #ifdef HAVE_UTIL_H
++*/
+ #include <util.h>
+-#endif
++// #endif
+ #include <glib.h>
+ #include "pty_open.h"
+ 
