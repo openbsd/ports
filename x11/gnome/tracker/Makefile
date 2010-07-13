@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/01 17:25:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/07/13 14:52:26 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -72,8 +72,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-video-extractor=gstreamer \
 		--enable-gdkpixbuf \
 		--enable-gnome-keyring \
-		--enable-evolution-miner \
-		--enable-kmail-miner \
+		--enable-miner-evolution \
+		--enable-miner-kmail \
 		--enable-tracker-status-icon \
 		--enable-tracker-search-bar \
 		--enable-tracker-preferences \
