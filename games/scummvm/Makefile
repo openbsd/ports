@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/06/15 13:11:17 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2010/07/13 21:23:39 jsg Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
-DISTNAME=	scummvm-1.0.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	scummvm-1.1.1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -57,6 +56,8 @@ CXXFLAGS+=	-O0
 .if ${MACHINE_ARCH} == "arm"
 CXXFLAGS+=	-O1
 .endif
+
+CXXFLAGS+=	-fno-stack-protector
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
