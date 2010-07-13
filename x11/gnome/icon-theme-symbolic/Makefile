@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/08 21:34:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
 GNOME_PROJECT=	gnome-icon-theme-symbolic
 GNOME_VERSION=	2.30.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	x11
 

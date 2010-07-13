@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/24 17:00:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.0
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 SHARED_LIBS +=  xklavier             15.0     # .16.0
 

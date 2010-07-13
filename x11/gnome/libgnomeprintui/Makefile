@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/24 17:00:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
 GNOME_PROJECT=		libgnomeprintui
 GNOME_VERSION=		2.18.5
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		devel

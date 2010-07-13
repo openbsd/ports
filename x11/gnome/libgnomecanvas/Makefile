@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/24 17:00:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 

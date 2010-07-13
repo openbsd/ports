@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/01 22:22:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=	extra icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme-extras
 GNOME_VERSION=	2.30.1
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 
 CATEGORIES=	x11
 

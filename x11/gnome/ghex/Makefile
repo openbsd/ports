@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/24 16:50:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p7
+REVISION=		7
 
 SHARED_LIBS +=  gtkhex               1.0      # .0.0
 CATEGORIES=		sysutils editors

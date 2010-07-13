@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/22 16:40:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=		GNOME library for CUPS interaction
 
 GNOME_PROJECT=		libgnomecups
 GNOME_VERSION=		0.2.3
-PKGNAME=		${DISTNAME}p6
+REVISION=		6
 SHARED_LIBS=		gnomecups-1.0	1.0 # .1.0
 
 CATEGORIES=		devel

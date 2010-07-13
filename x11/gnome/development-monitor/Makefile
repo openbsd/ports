@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/04 07:53:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=	follow GNOME development activity
 
 GNOME_PROJECT=	gnome-development-monitor
 GNOME_VERSION=	0.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 CATEGORIES=	devel
 

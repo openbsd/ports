@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/28 15:18:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/13 20:37:03 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.30.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/29 20:17:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/13 20:37:04 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.6.8
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 CATEGORIES=	emulators games
 
