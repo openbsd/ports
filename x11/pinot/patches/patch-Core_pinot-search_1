@@ -1,7 +1,7 @@
-$OpenBSD: patch-Core_pinot-search_1,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
---- Core/pinot-search.1.orig	Tue Aug  4 15:11:15 2009
-+++ Core/pinot-search.1	Tue Aug  4 15:11:41 2009
-@@ -44,9 +44,9 @@ query input is a file containing Xesam UL
+$OpenBSD: patch-Core_pinot-search_1,v 1.2 2010/07/13 16:51:24 ajacoutot Exp $
+--- Core/pinot-search.1.orig	Mon Jun 28 17:12:59 2010
++++ Core/pinot-search.1	Wed Jun 30 02:30:24 2010
+@@ -38,9 +38,9 @@ output version information and exit
  .PP
  Supported search engine types are : 'opensearch' 'sherlock' 'xapian'
  .SH EXAMPLES

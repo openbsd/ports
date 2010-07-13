@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/07 08:40:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 16:51:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
-DISTNAME=	pinot-0.95
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	pinot-0.96
 
 CATEGORIES=	x11 misc
 
@@ -25,6 +24,8 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 ssl
 WANTLIB += stdc++ xcb xml2 z e2fs-uuid xcb-render xcb-render-util
+WANTLIB += gtkmm-2.4.>=7 gdkmm-2.4 atkmm-1.6 xml++-2.6 gmime-2.4
+WANTLIB += curl.>=13 tag.>=7 sqlite3.>=13 dbus-glib-1.>=4 exif.>=12
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
@@ -35,14 +36,14 @@ BUILD_DEPENDS=	::devel/boost \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 # XXX catppt - catdvi
-LIB_DEPENDS=	gtkmm-2.4.>=7,gdkmm-2.4,atkmm-1.6::x11/gtk2mm \
-		xml++-2.6::textproc/libxml++ \
-		gmime-2.4:gmime->=2.4:mail/gmime24 \
-		curl.>=13::net/curl \
-		tag.>=7::audio/taglib \
-		sqlite3.>=13::databases/sqlite3 \
-		dbus-glib-1.>=4::x11/dbus-glib \
-		exif.>=12::graphics/libexif
+LIB_DEPENDS=	::x11/gtk2mm \
+		::textproc/libxml++ \
+		:gmime->=2.4:mail/gmime24 \
+		::net/curl \
+		::audio/taglib \
+		::databases/sqlite3 \
+		::x11/dbus-glib \
+		::graphics/libexif
 
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/pinot/backends/

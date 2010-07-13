@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2009/11/14 11:27:51 ajacoutot Exp $
---- Makefile.in.orig	Sat Nov  7 12:33:02 2009
-+++ Makefile.in	Sat Nov  7 12:33:27 2009
-@@ -932,10 +932,10 @@ install-data-local:
+$OpenBSD: patch-Makefile_in,v 1.3 2010/07/13 16:51:24 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jul  1 12:25:22 2010
++++ Makefile.in	Tue Jul 13 16:17:13 2010
+@@ -933,10 +933,10 @@ install-data-local:
  	@desktop-file-install --vendor="" --dir=$(DESTDIR)$(datadir)/applications $(srcdir)/pinot-prefs.desktop
  	@mkdir -p $(DESTDIR)${sysconfdir}/xdg/autostart
  @HAVE_DBUS_TRUE@	@desktop-file-install --vendor="" --dir=$(DESTDIR)${sysconfdir}/xdg/autostart $(srcdir)/pinot-dbus-daemon.desktop
