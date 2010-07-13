@@ -1,7 +1,15 @@
-$OpenBSD: patch-libgamin_gam_api_c,v 1.3 2010/06/30 20:48:30 ajacoutot Exp $
+$OpenBSD: patch-libgamin_gam_api_c,v 1.4 2010/07/13 14:10:35 ajacoutot Exp $
 --- libgamin/gam_api.c.orig	Mon Aug 27 12:21:03 2007
-+++ libgamin/gam_api.c	Wed Jun 30 22:34:27 2010
-@@ -712,7 +712,11 @@ retry:
++++ libgamin/gam_api.c	Tue Jul 13 15:52:47 2010
+@@ -4,6 +4,7 @@
+ 
+ #include "config.h"
+ #include <pwd.h>
++#include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <unistd.h>
+@@ -712,7 +713,11 @@ retry:
  
      {
  #ifdef SO_PEERCRED
@@ -13,7 +21,7 @@ $OpenBSD: patch-libgamin_gam_api_c,v 1.3 2010/06/30 20:48:30 ajacoutot Exp $
          socklen_t cr_len = sizeof(cr);
  
          if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) ==
-@@ -1288,14 +1292,16 @@ FAMNextEvent(FAMConnection * fc, FAMEvent * fe)
+@@ -1288,14 +1293,16 @@ FAMNextEvent(FAMConnection * fc, FAMEvent * fe)
  
      // FIXME: drop and reacquire lock while blocked?
      gamin_data_lock(conn);

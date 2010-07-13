@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/30 20:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/13 14:10:35 ajacoutot Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -7,9 +7,14 @@ COMMENT-python=	gamin Python bindings
 GNOME_PROJECT=	gamin
 GNOME_VERSION=	0.1.10
 
-PKGNAME-main=	libgamin-${GNOME_VERSION}p1
-PKGNAME-server=	${DISTNAME}p5
+PKGNAME-main=	libgamin-${GNOME_VERSION}
+REVISION-main=	2
+
+PKGNAME-server=	${DISTNAME}
+REVISION-server=6
+
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
+REVISION-python=0
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
 SHARED_LIBS +=  fam                  1.0      # .0.0
@@ -37,15 +42,15 @@ LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 
 LIB_DEPENDS-server= ${LIB_DEPENDS} \
-		glib-2.0.>=1800::devel/glib2
+		::devel/glib2
 
-LIB_DEPENDS-python= gamin-1::sysutils/gamin,-main
+LIB_DEPENDS-python= ::sysutils/gamin,-main
 
 .if !${FLAVOR:L:Mno_server}
 MULTI_PACKAGES+= -server
 MODULES+=	devel/gettext
 CONFIGURE_ARGS+= --enable-server
-WANTLIB-server += c pcre
+WANTLIB-server += c pcre glib-2.0.>=1800
 .else
 CONFIGURE_ARGS+= --disable-server
 .endif
@@ -53,6 +58,7 @@ CONFIGURE_ARGS+= --disable-server
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+= -python
 MODULES+=	lang/python
+WANTLIB-python += gamin-1
 .else
 CONFIGURE_ARGS+= --without-python
 .endif
