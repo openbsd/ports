@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	syntax highlight for Mason
 
 MODULES=	cpan
 DISTNAME=	Syntax-Highlight-Mason-1.21
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc www
 EXTRACT_SUFX=	.tgz
 

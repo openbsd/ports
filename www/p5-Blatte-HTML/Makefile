@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	Blatte functions to generate (X)HTML
 
 MODULES=	cpan
 DISTNAME=	Blatte-HTML-0.9
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 HOMEPAGE=	http://www.blatte.org/
 
 CATEGORIES=	www

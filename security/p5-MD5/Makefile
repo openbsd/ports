@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/02 20:39:34 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/13 20:14:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	interface to md5 message-digest algorithm
 
 MODULES=	cpan
 DISTNAME=	MD5-1.7
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

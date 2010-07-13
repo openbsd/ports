@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=		implementation of 3DES encryption on ECB mode
 
 MODULES=		cpan
 DISTNAME=		Crypt-TripleDES-0.24
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		security
 
 # Perl

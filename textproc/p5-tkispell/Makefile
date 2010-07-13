@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	Perl/Tk graphical user interface to GNU ispell
 
 DISTNAME=	tkispell-0.18
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 CPAN_AUTHOR=	RKIES

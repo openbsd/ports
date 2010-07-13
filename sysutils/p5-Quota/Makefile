@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/10/02 20:41:13 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/13 20:14:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quota manipulation module
 
 MODULES=	cpan
 DISTNAME=	Quota-1.5.1
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	sysutils
 
 # perl

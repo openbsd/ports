@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	Diffie-Hellman key exchange system
 
 DISTNAME=	Crypt-DH-0.06
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}
+REVISION=	0
 CATEGORIES=	security perl5
 
 # GPL/Artistic

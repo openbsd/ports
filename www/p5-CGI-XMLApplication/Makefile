@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	object oriented interface for CGI script applications
 
 MODULES=	cpan
 DISTNAME=	CGI-XMLApplication-1.1.3
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=    	www
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

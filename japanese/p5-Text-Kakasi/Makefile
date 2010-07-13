@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/02 20:38:08 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:14:21 sthen Exp $
 
 COMMENT=	Kanji -> kana converter, perl interface
 
 SHARED_ONLY=	Yes
 DISTNAME=	Text-Kakasi-2.04
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}
+REVISION=	0
 CATEGORIES=	japanese converters textproc devel perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}

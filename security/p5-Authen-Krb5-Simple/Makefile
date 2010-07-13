@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/12 08:30:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	Perl module to authenticate against a Kerberos server
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Authen-Krb5-Simple-0.40
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	Stephen Kirkham <sk@openbsd.org>

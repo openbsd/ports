@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/18 17:49:21 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT =		Gtk2 widget for displaying Plain old Documentation (POD)
 
 MODULES =		cpan
 DISTNAME =		Gtk2-Ex-PodViewer-0.18
-PKGNAME =		p5-${DISTNAME}p1
+REVISION =		1
 CATEGORIES =		x11
 
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>

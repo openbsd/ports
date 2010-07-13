@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 14:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	track sessions and, optionally, users
 
 MODULES=	cpan
 DISTNAME=	Maypole-Authentication-UserSessionCookie-1.1
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <S@msmith.net>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	Perl MVC for web applications
 
 MODULES=	cpan
 DISTNAME=	Maypole-1.4
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <S@msmith.net>

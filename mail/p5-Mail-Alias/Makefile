@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/13 20:14:21 sthen Exp $
 
 COMMENT=	manipulates e-mail alias files of various formats
 
 DISTNAME=	Mail-Alias-1.12
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	mail
 
 PERMIT_PACKAGE_CDROM=	Yes

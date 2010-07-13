@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	modules for parsing and evaluating XPath statements
 
 MODULES=	cpan
 DISTNAME=	XML-XPath-1.13
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 RUN_DEPENDS=	:p5-XML-Parser->=2.23:textproc/p5-XML-Parser

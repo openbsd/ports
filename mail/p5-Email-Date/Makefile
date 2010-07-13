@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/07 15:09:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:21 sthen Exp $
 
 COMMENT= 	find and format date headers
 
 MODULES=	cpan
 
 DISTNAME=	Email-Date-1.103
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	perl module to detect dangerous HTML code
 
 MODULES=	cpan
 DISTNAME=	HTML-CGIChecker-0.90
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www security
 
 # GPL

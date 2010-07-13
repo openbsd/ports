@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	US-ASCII transliterations of Unicode text
 
 MODULES=	cpan
 DISTNAME=	Text-Unidecode-0.04
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

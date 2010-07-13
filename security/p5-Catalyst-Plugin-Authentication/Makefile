@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/08 11:17:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT= 	Catalyst authentication framework
 
 DISTNAME=	Catalyst-Plugin-Authentication-0.10007
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

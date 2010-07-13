@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	translate Wiki formatted text into other formats
 
 DISTNAME=	Text-WikiFormat-0.78
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 MODULES=	cpan
 

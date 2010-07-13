@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/15 20:14:16 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
 MODULES=	cpan
 DISTNAME=	SOAP-Lite-0.69
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 # Artistic License

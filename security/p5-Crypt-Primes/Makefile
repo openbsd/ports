@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	provable prime number generator
 
 MODULES=	cpan
 DISTNAME=	Crypt-Primes-0.50
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	security
 
 # GPL/Artistic

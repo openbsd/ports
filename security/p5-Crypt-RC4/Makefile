@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	implementation of the RC4 encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-RC4-2.02
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

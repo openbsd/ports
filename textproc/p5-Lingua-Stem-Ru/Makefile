@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 14:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	Russian language stemming
 
 MODULES=	cpan
 DISTNAME=	Lingua-Stem-Ru-0.01
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

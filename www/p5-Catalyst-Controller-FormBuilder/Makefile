@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/08 10:15:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT= 	Catalyst FormBuilder Base Controller
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Controller-FormBuilder-0.04
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

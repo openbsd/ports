@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/07 06:32:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	formatter for spellchecking pod
 
 MODULES=	cpan
 
 DISTNAME=	Pod-Spell-1.01
-PKGNAME=	p5-${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

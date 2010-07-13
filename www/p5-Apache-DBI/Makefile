@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	DBI persistent connection, authentication and authorization
 
 MODULES=	cpan
 DISTNAME=	Apache-DBI-0.94
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www databases
 
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl \

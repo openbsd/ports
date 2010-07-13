@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/15 21:48:26 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:23 sthen Exp $
 
 COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan
 DISTNAME=	XML-Smart-1.6.9
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>

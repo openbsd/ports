@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/26 11:52:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	perl module to create/verify PGP signatures
 
 MODULES=	cpan
 DISTNAME=	PGP-Sign-0.20
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	security
 
 # perl

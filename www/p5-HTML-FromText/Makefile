@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	convert text to HTML with controlling options
 
 MODULES=	cpan
 DISTNAME=	HTML-FromText-2.05
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 RUN_DEPENDS=	::textproc/p5-Email-Find ::devel/p5-Exporter-Lite

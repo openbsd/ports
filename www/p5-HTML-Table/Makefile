@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/04 21:25:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	generate HTML tables for cgi scripts
 
 MODULES=	cpan
 DISTNAME=	HTML-Table-2.04a
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/07 15:09:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:21 sthen Exp $
 
 COMMENT= 	determine email folder type
 
 MODULES=	cpan
 
 DISTNAME=	Email-FolderType-0.813
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	mail
 
 # perl

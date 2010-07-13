@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/29 22:53:58 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/13 20:14:22 sthen Exp $
 
 COMMENT=	interface for getting PID info
 
 DISTNAME=	Unix-PID-0.0.15
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>

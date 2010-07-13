@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/06 15:17:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	Tag Cloud for RT with searchable custom fields
 
 MODULES=	cpan
 DISTNAME=	RTx-Tags-0.10
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	www
 
 EXTRACT_SUFX=	.tgz

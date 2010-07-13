@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl interface to the MD2 Algorithm
 
 MODULES=	cpan
 DISTNAME=	Digest-MD2-2.03
-PKGNAME=	p5-${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	security
 
 # GPL/Artistic

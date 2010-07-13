@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:24 sthen Exp $
 
 COMMENT=	determine web browser from an HTTP user agent string
 
 MODULES=	cpan
 DISTNAME=	HTTP-BrowserDetect-0.98
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 # GPL/Artistic

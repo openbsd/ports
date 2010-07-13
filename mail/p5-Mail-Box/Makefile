@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/13 20:14:21 sthen Exp $
 
 COMMENT=		perl module to manage mail folders
 
 DISTNAME=		Mail-Box-2.018
-PKGNAME=		p5-${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		mail
 
 PERMIT_PACKAGE_CDROM=	Yes
