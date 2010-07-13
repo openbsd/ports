@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.19 2010/06/09 12:01:08 espie Exp $
+# $OpenBSD: dpb3,v 1.20 2010/07/13 21:12:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,6 @@ use DPB::PortInfo;
 use DPB::Engine;
 use DPB::PortBuilder;
 use DPB::Reporter;
-use OpenBSD::Getopt;
 use OpenBSD::Error;
 use OpenBSD::State;
 use DPB::Heuristics;
@@ -93,30 +92,27 @@ sub parse_build_file
 my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
 my $ui = OpenBSD::State->new('dpb3');
-$ui->usage_is("[-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
-	"[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
-$ui->do_options(
-    sub {
-	getopts('acersuUh:xA:f:j:m:P:b:L:S:t:T:', {
-		    P => sub {
-			my $file = shift;
-			open my $fh, '<', $file or die "Can't open $file\n";
-			my $_;
-			while (<$fh>) {
-				chomp;
-				next if m/^\#/;
-				unshift @ARGV, $_;
-			}
-		    },
-		    b => sub {
-			push(@build_files, shift);
-		    },
-		    S => sub {
-			parse_size_file(shift, $heuristics);
-		    }
-		}
-		);
-    });
+$ui->{opt} = {
+	P => sub {
+	    my $file = shift;
+	    open my $fh, '<', $file or die "Can't open $file\n";
+	    my $_;
+	    while (<$fh>) {
+		    chomp;
+		    next if m/^\#/;
+		    unshift @ARGV, $_;
+	    }
+	},
+	b => sub {
+	    push(@build_files, shift);
+	},
+	S => sub {
+	    parse_size_file(shift, $heuristics);
+	}
+    };
+$ui->handle_options('acersuUh:xA:f:j:m:P:b:L:S:t:T:', 
+    "[-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
+    "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 
 if ($opt_r) {
 	$heuristics->random;
