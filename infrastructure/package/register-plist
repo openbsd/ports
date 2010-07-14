@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.21 2010/06/30 11:11:19 espie Exp $
+# $OpenBSD: register-plist,v 1.22 2010/07/14 09:58:48 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -123,18 +123,45 @@ sub compare
 }
 
 package OpenBSD::PackingElement::Dependency;
-sub forget_details
+sub compare
 {
-	my $self = shift;
-	$self->{def} = 'def';
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{def} eq 'def' && $self2->{def} eq 'def') {
+		return 0;
+	}
+	if ($self2->{def} eq 'def' && $self->{def} ne 'def') {
+		return 2;
+	}
+	my $c = OpenBSD::PackageName->from_string($self->{def})->compare(
+	    OpenBSD::PackageName->from_string($self2->{def}));
+	if (!defined $c || $c < 0) {
+		return 1;
+	}
+	if ($c == 0) {
+		return 0;
+	}
+	return 2;
 }
 
 package OpenBSD::PackingElement::Wantlib;
 
-sub forget_details
+sub compare
 {
-	my $self = shift;
-	$self->{name} =~ s/\d+\.\d+$/0.0/;
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	my $c = $self->spec->compare($self2->spec);
+	if (!defined $c || $c < 0) {
+		return 1;
+	}
+	if ($c == 0) {
+		return 0;
+	}
+	return 2;
 }
 
 package OpenBSD::PackingElement::Comment;
@@ -258,7 +285,7 @@ package main;
 
 sub my_compare
 {
-	my ($p, $p2) = @_;
+	my ($p, $p2, $state) = @_;
 	my $l = [];
 	my $l2 = [];
 	my $final = 0;
@@ -272,6 +299,7 @@ sub my_compare
 			return $r;
 		}
 		if ($r == 2) {
+			push(@{$state->{updates}}, [$e2, $e]);
 			$final = 2;
 		}
 		# zap extra info-* files and man pages
@@ -322,7 +350,7 @@ for my $pkgfile (@ARGV) {
 		my $result = $dir.'/'.$plist->pkgname;
 		if (-f $result) {
 			my $plist2 = OpenBSD::PackingList->fromfile($result);
-			my $r = my_compare($plist, $plist2);
+			my $r = my_compare($plist, $plist2 ,$state);
 			if ($r == 1) {
 				my $t = "$result-new";
 				$plist->tofile($t);
@@ -333,6 +361,11 @@ for my $pkgfile (@ARGV) {
 			if ($r == 2) {
 				$plist->tofile($result);
 				$state->errsay("#1 was updated", $result);
+				for my $i (@{$state->{updates}}) {
+					$state->errsay("#1 -> #2",
+					    $i->[0]->stringize, 
+					    $i->[1]->stringize);
+				}
 			}
 		}
 	}
