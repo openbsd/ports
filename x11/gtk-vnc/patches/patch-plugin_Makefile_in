@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_Makefile_in,v 1.6 2010/07/12 09:31:51 ajacoutot Exp $
---- plugin/Makefile.in.orig	Sun Jul 11 21:10:47 2010
-+++ plugin/Makefile.in	Mon Jul 12 08:28:12 2010
-@@ -544,7 +544,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-plugin_Makefile_in,v 1.7 2010/07/14 11:11:18 ajacoutot Exp $
+--- plugin/Makefile.in.orig	Wed Jul 14 12:28:32 2010
++++ plugin/Makefile.in	Wed Jul 14 12:52:29 2010
+@@ -545,7 +545,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.6 2010/07/12 09:31:51 ajacoutot Exp $
  @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
  @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
  @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
-@@ -598,7 +598,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4
+@@ -599,7 +599,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4
  $(am__aclocal_m4_deps):
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
@@ -19,7 +19,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.6 2010/07/12 09:31:51 ajacoutot Exp $
  	@list='$(plugin_LTLIBRARIES)'; test -n "$(plugindir)" || list=; \
  	list2=; for p in $$list; do \
  	  if test -f $$p; then \
-@@ -606,8 +606,8 @@ install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
+@@ -607,8 +607,8 @@ install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	  else :; fi; \
  	done; \
  	test -z "$$list2" || { \
@@ -30,7 +30,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.6 2010/07/12 09:31:51 ajacoutot Exp $
  	}
  
  uninstall-pluginLTLIBRARIES:
-@@ -781,7 +781,7 @@ check: check-am
+@@ -782,7 +782,7 @@ check: check-am
  @ENABLE_PLUGIN_FALSE@all-local:
  all-am: Makefile $(LTLIBRARIES) all-local
  installdirs:

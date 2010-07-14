@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnulib_tests_Makefile_in,v 1.4 2010/07/12 09:31:51 ajacoutot Exp $
+$OpenBSD: patch-gnulib_tests_Makefile_in,v 1.5 2010/07/14 11:11:18 ajacoutot Exp $
 
 Don't bother running these two useless (and failing) tests.
 
---- gnulib/tests/Makefile.in.orig	Sun Jul 11 21:10:47 2010
-+++ gnulib/tests/Makefile.in	Mon Jul 12 08:26:38 2010
+--- gnulib/tests/Makefile.in.orig	Wed Jul 14 12:28:32 2010
++++ gnulib/tests/Makefile.in	Wed Jul 14 12:52:29 2010
 @@ -52,7 +52,7 @@ TESTS = test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEX
  	test-stdbool$(EXEEXT) test-stdint$(EXEEXT) test-stdio$(EXEEXT) \
  	test-stdlib$(EXEEXT) test-sys_socket$(EXEEXT) \
@@ -13,7 +13,7 @@ Don't bother running these two useless (and failing) tests.
  noinst_PROGRAMS =
  check_PROGRAMS = test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEXT) \
  	test-errno$(EXEEXT) test-getaddrinfo$(EXEEXT) \
-@@ -674,8 +674,8 @@ EXTRA_DIST = test-alloca-opt.c test-arpa_inet.c test-e
+@@ -675,8 +675,8 @@ EXTRA_DIST = test-alloca-opt.c test-arpa_inet.c test-e
  	test-getaddrinfo.c intprops.h test-netinet_in.c \
  	test-snprintf.c test-stdbool.c test-stdint.c test-stdio.c \
  	test-stdlib.c test-sys_socket.c test-unistd.c \
