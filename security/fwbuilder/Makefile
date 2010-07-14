@@ -1,54 +1,65 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/22 12:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/14 08:46:35 sthen Exp $
 
-COMMENT=	firewall GUI
-DISTNAME=	fwbuilder-3.0.7
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	net security
+# Consumes more than 512MB on at least i386 when building qrc_MainRes.o
+VMEM_WARNING =	Yes
 
-HOMEPAGE=	http://www.fwbuilder.org/
+COMMENT =	firewall GUI
+DISTNAME =	fwbuilder-4.0.1
+CATEGORIES =	net security
 
-MAINTAINER=	Vadim Zhukov <persgray@gmail.com>
+HOMEPAGE =	http://www.fwbuilder.org/
 
-# GPL v2
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
+# GPLv2+
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
 
-SHARE=		share/fwbuilder
-SUBST_VARS=	SHARE
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
-FLAVORS=	debug
-FLAVOR?=
+USE_LIBTOOL =		gnu
+AUTOMAKE_VERSION =	1.9	# XXX should be 1.10
+AUTOCONF_VERSION =	2.63
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
-		--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
-		--with-qtdir=${MODQT_QTDIR} \
-		QMAKE=${MODQT_QTDIR}/bin/qmake
+CONFIGURE_STYLE =	gnu
 
-.if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=--enable-debug
-COPTS=		-g
-.endif
+BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		::devel/cppunit
 
-MODULES=	x11/qt4
-DESTDIRNAME=	INSTALL_ROOT
-LIB_DEPENDS=	fwcompiler.>=11,fwbuilder.>=11::security/libfwbuilder \
-		QtGui,QtNetwork::x11/qt4
+CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
+			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
+			--with-qtdir=${MODQT_QTDIR} \
+			--with-qmake=qmake4
+MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
+			CXXFLAGS="${CXXFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
+
+MODULES =	x11/qt4 converters/libiconv
+DESTDIRNAME =	INSTALL_ROOT
+LIB_DEPENDS =	::security/libfwbuilder \
+		::x11/qt4
 		
-NO_REGRESS=	Yes
+REGRESS_TARGET =tests
 USE_X11=	Yes
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype glib-2.0 gthread-2.0 iconv intl m netsnmp
-WANTLIB += png pthread stdc++ util xml2 xslt z expat gobject-2.0
-WANTLIB += pthread-stubs xcb
+WANTLIB += c m netsnmp
+WANTLIB += pthread stdc++ util xml2 xslt z
+WANTLIB += QtGui QtNetwork
+WANTLIB += fwcompiler.>=14 fwbuilder.>=14
+
+FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_FILE="${INSTALL_DATA}"
+
+post-patch:
+	cd ${WRKSRC}; \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	    sh autogen.sh
 
 post-install:
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
 	${INSTALL_DATA} ${WRKSRC}/src/gui/Icons/firewall_64.png \

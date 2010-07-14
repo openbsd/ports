@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_iptlib_unit_tests_unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+--- src/iptlib/unit_tests/unit_tests.sh.orig	Tue Jul 13 22:54:05 2010
++++ src/iptlib/unit_tests/unit_tests.sh	Tue Jul 13 22:54:22 2010
+@@ -1,11 +1,11 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ commands=$@
+ 
+-for directory in `find . -maxdepth 1 -type d -regex '\./[A-Za-z0-9\-\_]*'`
++for directory in `find . -maxdepth 1 -type d -name '[A-Za-z0-9_-]*'`
+ do
+     cd $directory
+-    [ ! -e Makefile ] && qmake -spec $QMAKESPEC
++    [ ! -e Makefile ] && ${QMAKE} -spec $QMAKESPEC
+     $commands || exit 1;
+     cd -
+ done

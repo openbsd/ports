@@ -1,0 +1,23 @@
+$OpenBSD: patch-unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+
+XXX handrolled; no trailing eol
+
+--- unit_tests.sh.orig	Tue Jul 13 21:55:13 2010
++++ unit_tests.sh	Tue Jul 13 21:56:28 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ action=$@
+ 
+@@ -7,7 +7,7 @@ do
+    home=`pwd`
+    cd $directory
+    echo $directory
+-   qmake -spec $QMAKESPEC || exit 1
++   ${QMAKE} -spec $QMAKESPEC || exit 1
+    $action || exit 1
+    cd $home
+-done
+\ No newline at end of file
++done

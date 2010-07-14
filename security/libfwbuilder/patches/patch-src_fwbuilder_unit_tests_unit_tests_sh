@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_fwbuilder_unit_tests_unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+
+XXX handrolled; no trailing eol
+
+--- src/fwbuilder/unit_tests/unit_tests.sh.orig	Tue Jul 13 21:57:36 2010
++++ src/fwbuilder/unit_tests/unit_tests.sh	Tue Jul 13 22:01:04 2010
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ commands=$@
+ 
+-for directory in `find . -maxdepth 1 -type d -regex '\./[A-Za-z0-9\-\_]*'`
++for directory in `find . -maxdepth 1 -type d -name '[A-Za-z0-9_-]*'`
+ do
+     cd $directory
+-    [ ! -e Makefile ] && qmake -spec $QMAKESPEC
++    [ ! -e Makefile ] && ${QMAKE} -spec $QMAKESPEC
+     $commands || exit 1
+     cd -

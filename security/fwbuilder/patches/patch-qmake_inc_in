@@ -1,12 +1,12 @@
-$OpenBSD: patch-qmake_inc_in,v 1.4 2009/10/12 11:17:59 steven Exp $
---- qmake.inc.in.orig	Fri Sep 18 23:28:40 2009
-+++ qmake.inc.in	Sat Sep 19 17:55:30 2009
-@@ -58,7 +58,7 @@ unix {
+$OpenBSD: patch-qmake_inc_in,v 1.5 2010/07/14 08:46:35 sthen Exp $
+--- qmake.inc.in.orig	Sun May 30 20:22:36 2010
++++ qmake.inc.in	Tue Jul 13 22:10:56 2010
+@@ -65,7 +65,7 @@ unix {
  
-         PKGLOCALEDIR = $$res.path/locale
+         LIBS += $$LIBS_FWBUILDER @LIBS@
  
 -        CONFIG += warn_on debug
 +        CONFIG += warn_on release
          QMAKE_CFLAGS_DEBUG += -Wno-unused-parameter
          QMAKE_CFLAGS_RELEASE += -Wno-unused-parameter
-         QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter @CXXFLAGS@
+         QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter

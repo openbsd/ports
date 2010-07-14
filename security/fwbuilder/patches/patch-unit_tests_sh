@@ -1,0 +1,20 @@
+$OpenBSD: patch-unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+--- unit_tests.sh.orig	Tue Jul 13 22:53:21 2010
++++ unit_tests.sh	Tue Jul 13 22:53:31 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ action=$@
+ 
+@@ -6,7 +6,7 @@ for directory in $(find . -name unit_tests)
+ do
+    home=`pwd`
+    cd $directory
+-   qmake -spec $QMAKESPEC || exit 1
++   ${QMAKE} -spec $QMAKESPEC || exit 1
+    $action || exit 1
+    cd $home
+-done
+\ No newline at end of file
++done

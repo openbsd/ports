@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_gui_unit_tests_unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+--- src/gui/unit_tests/unit_tests.sh.orig	Tue Jul 13 22:53:37 2010
++++ src/gui/unit_tests/unit_tests.sh	Tue Jul 13 22:53:57 2010
+@@ -1,11 +1,11 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ commands=$@
+ 
+-for directory in `find . -maxdepth 1 -name '*[tT]est' -type d -regex '\./[A-Za-z0-9\-\_]*'`
++for directory in `find . -maxdepth 1 -name '*[tT]est' -type d -name '[A-Za-z0-9_-]*'`
+ do
+     cd $directory
+-    [ ! -e Makefile ] && qmake -spec $QMAKESPEC
++    [ ! -e Makefile ] && ${QMAKE} -spec $QMAKESPEC
+     $commands || exit 1
+     cd -
+ done

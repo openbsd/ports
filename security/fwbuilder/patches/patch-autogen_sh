@@ -1,0 +1,16 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+--- autogen.sh.orig	Tue Jul 13 22:51:31 2010
++++ autogen.sh	Tue Jul 13 22:51:41 2010
+@@ -40,12 +40,8 @@ $LIBTOOLIZE --dry-run --install > /dev/null 2>&1 && {
+     LIBTOOLIZE_ARGS="--force --copy"
+ }
+ 
+-echo This script runs configure ...
+-
+ $LIBTOOLIZE $LIBTOOLIZE_ARGS
+ 
+ which acinclude >/dev/null 2>&1 && acinclude
+ which aclocal >/dev/null 2>&1 && aclocal
+ autoconf
+-
+-./configure ${CFGARGS}  $*
