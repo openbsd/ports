@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/11 15:01:46 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/14 13:57:44 espie Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -59,7 +59,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
 			::${BUILD_PKGPATH},-main
 RUN_DEPENDS-gecko =	${RUN_DEPENDS} \
-			::xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
+			:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
 			::${BUILD_PKGPATH},-main
 
 LIB_DEPENDS =		::x11/gtk+2
