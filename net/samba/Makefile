@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2010/07/14 07:20:18 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.5.4
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		0
+REVISION-main=		1
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
 SHARED_LIBS=		smbclient	2.0 \
@@ -87,8 +87,8 @@ CONFIGURE_ARGS=		--disable-fam \
 MAKE_FLAGS +=		CFLAGS_smbd/smb2_create.o=-O0
 .endif
 
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,--export-dynamic -Wl,--no-as-needed
-CONFIGURE_ENV=		CPPFLAGS+="-I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	  	cups ldap ads
 FLAVOR?=
@@ -152,7 +152,7 @@ SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
 SAMBA_MANPAGES= ${WRKSRC}/../docs/manpages
 
 post-patch:
-	cd ${WRKSRC}; \
+	@cd ${WRKSRC}; \
             AUTOCONF_VERSION=${AUTOCONF_VERSION} \
             ./autogen.sh
 
