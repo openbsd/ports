@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.168 2010/07/03 00:28:40 espie Exp $
+# $OpenBSD: Makefile,v 1.169 2010/07/14 18:15:37 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
 
-COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
+COMMENT=		movie player supporting many formats
 
 V=			20100308
 V_DASHED=		2010-03-08
@@ -12,7 +12,8 @@ SUBST_VARS+= 		PREFIX CONFDIR
 
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
-PKGNAME=		${N}-${V}p1
+PKGNAME=		${N}-${V}
+REVISION=		2
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -25,46 +26,45 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ncurses oil-0.3 pthread stdc++ util sndio z 
+WANTLIB=		a52 bz2 c cdda_interface cdda_paranoia crypto dca \
+			dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
+			m mng mp3lame mpcdec ncurses ogg.>=5 oil-0.3 png \
+			pthread schroedinger-1.0 sndio speex stdc++ theora \
+			ungif util vorbisidec x264.>=3 xvidcore z
 
-# snapshot - mplayer don't do releases
+# we use a snapshot
 MASTER_SITES=	http://theunixzoo.co.uk/distfiles/
 
-MAINTAINER=     Edd Barrett <edd@openbsd.org>
+MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MODULES=        gcc4
-MODGCC4_ARCHES= powerpc
-
 MODULES+=	converters/libiconv
 
-.include <bsd.own.mk>
-
-LIB_DEPENDS=	png::graphics/png \
-		jpeg::graphics/jpeg \
-		ungif::graphics/libungif \
-		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia \
-		theora::multimedia/libtheora \
-		speex::audio/speex \
-		mpcdec::audio/libmpcdec \
-		ogg.>=5::audio/libogg \
-		xvidcore::multimedia/xvidcore \
-		mp3lame:lame-*:audio/lame \
-		dv::multimedia/libdv \
-		dvdnavmini:libdvdnav->=4.1.3:multimedia/libdvdnav \
-		dvdread::devel/libdvdread \
-		fribidi::devel/fribidi \
-		lcms::graphics/lcms \
-		mng::graphics/libmng \
-		vorbisidec::audio/tremor \
-		dca::audio/libdca \
-		bz2::archivers/bzip2 \
-		schroedinger-1.0::multimedia/schroedinger \
-		faad::audio/faad \
-		faac::audio/faac \
-		a52::audio/liba52 \
-		x264.>=3::multimedia/x264
+LIB_DEPENDS=	::graphics/png \
+		::graphics/jpeg \
+		::graphics/libungif \
+		:cdparanoia->=3.a9.8:audio/cdparanoia \
+		::multimedia/libtheora \
+		::audio/speex \
+		::audio/libmpcdec \
+		::audio/libogg \
+		::multimedia/xvidcore \
+		::audio/lame \
+		::multimedia/libdv \
+		:libdvdnav->=4.1.3:multimedia/libdvdnav \
+		::devel/libdvdread \
+		::devel/fribidi \
+		::graphics/lcms \
+		::graphics/libmng \
+		::audio/tremor \
+		::audio/libdca \
+		::archivers/bzip2 \
+		::multimedia/schroedinger \
+		::audio/faad \
+		::audio/faac \
+		::audio/liba52 \
+		::multimedia/x264
 
 BUILD_DEPENDS=	::net/livemedia \
 		:rtunes->=0.8:audio/rtunes \
@@ -151,7 +151,8 @@ RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS+=	SDL:sdl->=1.2.5:devel/sdl
+LIB_DEPENDS+=	:sdl->=1.2.5:devel/sdl
+WANTLIB+=	SDL
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
@@ -161,23 +162,27 @@ CONFIGURE_ARGS+=--enable-debug=3
 .endif
 
 .if ${FLAVOR:L:Mmad}
-LIB_DEPENDS+=	mad.>=2::audio/libmad
+LIB_DEPENDS+=	::audio/libmad
+WANTLIB+=	mad.>=2
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if ${FLAVOR:L:Maa}
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=	aa.>=1.3:aalib-*-no_x11:graphics/aalib,no_x11
+LIB_DEPENDS+=	:aalib-*-no_x11:graphics/aalib,no_x11
+WANTLIB+=	aa.>=1.3
 .else
-LIB_DEPENDS+=	aa.>=1.3:aalib-*:graphics/aalib
+LIB_DEPENDS+=	:aalib-*:graphics/aalib
+WANTLIB+=	aa.>=1.3
 .endif
 .else
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if ${FLAVOR:L:Mjack}
-LIB_DEPENDS+=	jack::audio/jack
+LIB_DEPENDS+=	::audio/jack
+WANTLIB+=	jack
 .else
 CONFIGURE_ARGS+=--disable-jack
 .endif
