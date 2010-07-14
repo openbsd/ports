@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/14 10:58:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		personal photo management application for GNOME
 
-GNOME_VERSION=		0.7.0
+GNOME_VERSION=		0.7.1
 GNOME_PROJECT=		f-spot
-REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -29,7 +28,7 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += util xcb xcb-render xcb-render-util xml2 z
+WANTLIB += util xcb xcb-render xcb-render-util xml2 z lcms
 
 MODULES=		devel/gettext \
 			lang/mono \
@@ -50,8 +49,7 @@ RUN_DEPENDS=		::devel/mono-addins \
 			::devel/mono-flickrnet \
 			::x11/gnome/mono-keyring \
 			::devel/libunique
-LIB_DEPENDS+=		exif::graphics/libexif \
-			lcms::graphics/lcms
+LIB_DEPENDS+=		::graphics/lcms
 
 MODGCONF2_SCHEMAS_DIR=	f-spot
 

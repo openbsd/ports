@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/06/30 19:08:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/07/14 10:58:35 ajacoutot Exp $
 bin/f-spot
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
@@ -74,12 +74,13 @@ lib/f-spot/Hyena.dll
 lib/f-spot/Hyena.dll.mdb
 lib/f-spot/Mono.Data.Sqlite.dll
 lib/f-spot/Mono.Data.Sqlite.dll.mdb
-lib/f-spot/SemWeb.dll
-lib/f-spot/SemWeb.dll.mdb
+lib/f-spot/TagLib.dll
+lib/f-spot/TagLib.dll.mdb
 lib/f-spot/f-spot.exe
 lib/f-spot/f-spot.exe.config
 lib/f-spot/f-spot.exe.mdb
 lib/f-spot/f-spot.global.addins
+lib/f-spot/gconf-schema-extractor.exe
 lib/f-spot/gio-sharp.dll
 lib/f-spot/gio-sharp.dll.config
 lib/f-spot/gkeyfile-sharp.dll
@@ -87,8 +88,6 @@ lib/f-spot/gtk-sharp-beans.dll
 lib/f-spot/gtk-sharp-beans.dll.config
 @comment lib/f-spot/libfspot.la
 lib/f-spot/libfspot.so
-@comment lib/f-spot/libfspotjpegtran.la
-lib/f-spot/libfspotjpegtran.so
 lib/f-spot/unique-sharp.dll
 lib/f-spot/unique-sharp.dll.config
 lib/pkgconfig/f-spot.pc
@@ -274,6 +273,47 @@ share/gnome/help/f-spot/C/tags.page
 share/gnome/help/f-spot/C/upload-to-web.page
 share/gnome/help/f-spot/C/versioning.page
 share/gnome/help/f-spot/C/zooomr.page
+share/gnome/help/f-spot/de/
+share/gnome/help/f-spot/de/23hq.page
+share/gnome/help/f-spot/de/adjust-color.page
+share/gnome/help/f-spot/de/cd.page
+share/gnome/help/f-spot/de/colors.page
+share/gnome/help/f-spot/de/date-search.page
+share/gnome/help/f-spot/de/enhancements.page
+share/gnome/help/f-spot/de/extensions.page
+share/gnome/help/f-spot/de/facebook.page
+share/gnome/help/f-spot/de/figures/
+share/gnome/help/f-spot/de/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/de/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/de/figures/f-spot-crop.png
+share/gnome/help/f-spot/de/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/de/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/de/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/de/figures/f-spot-sepia.png
+share/gnome/help/f-spot/de/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/de/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/de/figures/f-spot-straighten.png
+share/gnome/help/f-spot/de/file-management.page
+share/gnome/help/f-spot/de/flickr.page
+share/gnome/help/f-spot/de/folder.page
+share/gnome/help/f-spot/de/general-editing.page
+share/gnome/help/f-spot/de/import-photos.page
+share/gnome/help/f-spot/de/import-roll-search.page
+share/gnome/help/f-spot/de/index.page
+share/gnome/help/f-spot/de/introduction.page
+share/gnome/help/f-spot/de/picasa.page
+share/gnome/help/f-spot/de/rate-search.page
+share/gnome/help/f-spot/de/ratings.page
+share/gnome/help/f-spot/de/smugmug.page
+share/gnome/help/f-spot/de/tag-attach.page
+share/gnome/help/f-spot/de/tag-creation.page
+share/gnome/help/f-spot/de/tag-delete.page
+share/gnome/help/f-spot/de/tag-remove.page
+share/gnome/help/f-spot/de/tag-search.page
+share/gnome/help/f-spot/de/tags.page
+share/gnome/help/f-spot/de/upload-to-web.page
+share/gnome/help/f-spot/de/versioning.page
+share/gnome/help/f-spot/de/zooomr.page
 share/icons/hicolor/128x128/apps/f-spot.png
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/22x22/apps/f-spot.png
@@ -283,6 +323,7 @@ share/icons/hicolor/32x32/apps/f-spot.png
 share/icons/hicolor/48x48/apps/f-spot.png
 share/locale/ar/LC_MESSAGES/f-spot.mo
 share/locale/as/LC_MESSAGES/f-spot.mo
+share/locale/ast/LC_MESSAGES/f-spot.mo
 share/locale/be@latin/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
 share/locale/bn_IN/LC_MESSAGES/f-spot.mo
