@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/08/11 08:38:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/14 11:48:13 landry Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	0.4.2
 XFCE_PLUGIN=	systemload
-PKGNAME=	${DISTNAME:S/-plugin//}p5
+REVISION=	5
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

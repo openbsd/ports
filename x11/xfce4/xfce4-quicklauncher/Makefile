@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/04 10:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/14 11:48:13 landry Exp $
 
 COMMENT =	Xfce4 quicklauncher panel plugin
 
 XFCE_VERSION =	1.9.4
 XFCE_PLUGIN =	quicklauncher
-PKGNAME =	${DISTNAME:S/-plugin//}p0
+REVISION =	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

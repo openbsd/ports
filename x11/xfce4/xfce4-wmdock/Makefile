@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/04 10:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/14 11:48:13 landry Exp $
 
 COMMENT=	Xfce4 WindowMaker dockapps wrapper panel plugin
 
 XFCE_VERSION=	0.2.0
 XFCE_PLUGIN=	wmdock
-PKGNAME=	${DISTNAME:S/-plugin//}p4
+REVISION=	4
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
