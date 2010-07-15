@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.463 2010/07/11 02:09:41 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.464 2010/07/15 14:27:07 merdely Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -438,7 +438,6 @@
      SUBDIR += weblint
      SUBDIR += wml
      SUBDIR += wordpress
-     SUBDIR += wordpress-mu
      SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
