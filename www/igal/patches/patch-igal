@@ -1,6 +1,15 @@
-$OpenBSD: patch-igal,v 1.1 2009/04/26 01:24:37 ckuethe Exp $
---- igal.orig	Wed Feb 27 05:18:03 2008
-+++ igal	Wed Mar 25 16:37:24 2009
+$OpenBSD: patch-igal,v 1.2 2010/07/15 16:08:22 ckuethe Exp $
+--- igal.orig	Wed Feb 27 04:18:03 2008
++++ igal	Fri Jul  9 09:35:28 2010
+@@ -5,7 +5,7 @@ eval 'exec perl -wS $0 ${1+"$@"}'
+ ############################################################################
+ # Please change this accordingly if you change the DESTDIR in the tarball 
+ # distribution Makefile or the --prefix of the RPM installation
+-$LIBDIR = "/usr/local/lib/igal";
++$LIBDIR = "/usr/local/share/igal";
+ # for example if you make DESTDIR=/usr then $LIBDIR="/usr/lib/igal"
+ ############################################################################
+ #
 @@ -32,6 +32,12 @@ $HAVEIM = 0;
  #
  $HAVELJ = 0;
@@ -39,6 +48,15 @@ $OpenBSD: patch-igal,v 1.1 2009/04/26 01:24:37 ckuethe Exp $
             'p=i','r','s','t=i','u','w=i','x','y=i','ad','as',
             'bigy=i', 'con=s','help','im','www','xy=i', 'dest=s', 
  	   'AddSubdir') or die "$usage";
+@@ -192,7 +200,7 @@ $opt_o = "$opt_o/" if ( $opt_o );
+ $opt_d =~ s/\/$//;
+ 
+ # let users store their templates in a $HOME/.igal directory, if it exists,
+-# instead of the site-wide /usr/local/lib/igal (from line 8 up top)
++# instead of the site-wide /usr/local/share/igal (from line 8 up top)
+ $LIBDIR = $userigaldir if ((-r $userigaldir) && (-d $userigaldir));
+ 
+ # load up image files from $opt_d into array @imgfiles
 @@ -313,6 +321,10 @@ print "\nWARNING:  The ImageMagick package (imagemagic
  $HAVELJ = (&exist("cjpeg") and &exist("djpeg") &exist("pnmscale")) unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
  print "\nWARNING:  at least one of the commands \"cjpeg\", \"djpeg\" and \"pnmscale\" is not\ninstalled.  You can find these at rpmfind.net (inside libjpeg and libgr-progs)\nor you can download the source code from:\n    http://www.ijg.org/ and\n    http://netpbm.sourceforge.net/\n\n" unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
@@ -58,7 +76,7 @@ $OpenBSD: patch-igal,v 1.1 2009/04/26 01:24:37 ckuethe Exp $
 +		# exif metadata
 +		if ($opt_j && $HAVEJH) {
 +			local $f = $imgfiles[$i];
-+			local $exif = `jhead $f | egrep -v '^File|Camera make' | grep : | sed 's/\$/<br>/'`;
++			local $exif = `jhead "$f" | egrep -v '^File|Camera make' | grep : | sed 's/\$/<br>/'`;
 +			$workarea =~ s/<!--IMAGE-EXIF-->/$exif/;
 +		}
  		# add in the image counter unless -x is specified

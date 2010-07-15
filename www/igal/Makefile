@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/26 01:24:37 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/15 16:08:22 ckuethe Exp $
 
 COMMENT=	online Image GALlery generator
 
 V=		1.4.7
 DISTNAME=	igal-$V-wt
-PKGNAME=	igal-${V}p0
+PKGNAME=	igal-${V}
+REVISION=	1
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://trexler.at/igal/

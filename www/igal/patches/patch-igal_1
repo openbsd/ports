@@ -1,0 +1,14 @@
+$OpenBSD: patch-igal_1,v 1.1 2010/07/15 16:08:22 ckuethe Exp $
+--- igal.1.orig	Fri Jul  9 09:40:19 2010
++++ igal.1	Fri Jul  9 09:35:28 2010
+@@ -149,6 +149,10 @@ Name of the main thumbnail index file.  The default is
+ .IR index.html ,
+ as desirable for most web servers.
+ .TP
++.BI -j
++Invoke jhead to extract EXIF tags from images and substitute
++the results into the slide caption.
++.TP
+ .BI -k
+ Use the image captions for the HTML slide titles.
+ The default behavior is to use the image names.
