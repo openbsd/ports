@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/11 14:55:56 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/15 06:08:19 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
 VERSION=		1.9.2.6
 REVISION-main=		0
-REVISION-devel=		1
+REVISION-devel=		2
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
@@ -108,7 +108,7 @@ do-install:
 	perl -pi -e 's|libxul-embedding-unstable|libxul-embedding|g; ' \
 		-e 's|libxul-unstable|libxul|g; s|unstable|stable|g; ' \
 		-e 's|^(Libs:.*)|\1 -Wl,-rpath,${LOCALBASE}/xulrunner1.9|g; ' \
-		-e 's|-lxpcomglue|-lxpcomglue_pic|g; s|-lxpcomglue_s|-lxpcomglue_s_pic|; ' \
+		-e 's|-lxpcomglue|-lxpcomglue_pic|g; s|-lxpcomglue_s|-lxpcomglue_pic_s|; ' \
 		-e 's|/lib||g; s|/stable||g; s|/\$${includetype}||g; ' \
 		${PREFIX}/lib/pkgconfig/*.pc
 
