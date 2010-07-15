@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.20 2010/06/29 01:13:33 robert Exp $
+# $OpenBSD: Quirks.pm,v 1.21 2010/07/15 14:26:30 merdely Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -175,6 +175,7 @@ my $stem_extensions = {
 	'php5-tidy' => 'php-tidy',
 	'php5-xmlrpc' => 'php-xmlrpc',
 	'php5-xsl' => 'php-xsl',
+	'wordpress-mu' => 'wordpress',
 };
 
 # ->is_base_system($handle, $state):
