@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/15 16:11:30 ajacoutot Exp $
 
 COMMENT =	diary and journal application
 
-MODPY_EGG_VERSION =	0.8.9
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =	rednotebook-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	productivity
 
@@ -24,6 +23,7 @@ MODULES =	lang/python
 
 RUN_DEPENDS =	::x11/py-gtk2 \
 		::textproc/py-yaml \
+		::www/py-webkitgtk \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 .include <bsd.port.mk>
