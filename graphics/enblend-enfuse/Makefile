@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/11 20:09:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/15 14:27:17 sthen Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -30,7 +30,9 @@ WANTLIB +=	stdc++ tiff xmi z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
-BUILD_DEPENDS =	::print/transfig
+BUILD_DEPENDS =	::math/gnuplot \
+		::print/transfig \
+		::www/tidy
 LIB_DEPENDS =	::devel/boost \
 		::graphics/glew \
 		::graphics/freeglut \
@@ -57,5 +59,10 @@ USE_X11 =	Yes
 
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+
+# need to fix bashisms in doc/Makefile.in first
+#post-build:
+#	@cd ${WRKBUILD}/doc && \
+#	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xhtml
 
 .include <bsd.port.mk>
