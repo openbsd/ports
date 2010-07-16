@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/16 08:28:14 sebastia Exp $
-lib/tktray1.3.8/
-@lib lib/tktray1.3.8/libtktray138.so.${LIBtktray138_VERSION}
-lib/tktray1.3.8/pkgIndex.tcl
+@comment $OpenBSD: PLIST,v 1.2 2010/07/16 11:25:12 sebastia Exp $
+lib/tktray${VERSION}/
+@lib lib/tktray${VERSION}/libtktray138.so.${LIBtktray138_VERSION}
+lib/tktray${VERSION}/pkgIndex.tcl
 @man man/mann/tktray.n

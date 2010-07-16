@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/16 08:28:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/16 11:25:12 sebastia Exp $
 
 SHARED_ONLY=    Yes
 
 COMMENT=	system tray icon support for Tk
 
-DISTNAME=	tktray1.3.8
-PKGNAME=	tktray-1.3.8
-SHARED_LIBS=	${DISTNAME:S/.//g} 0.0
+VERSION=	1.3.8
+REVISION=	0
+DISTNAME=	tktray${VERSION}
+PKGNAME=	tktray-${VERSION}
+SHARED_LIBS=	tktray${VERSION:S/.//g} 0.0
 CATEGORIES=	x11
 
 HOMEPAGE= 	http://code.google.com/p/tktray/
@@ -24,7 +26,7 @@ MASTER_SITES=	http://tktray.googlecode.com/files/
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS=    ${MODTK_RUN_DEPENDS}
-WANTLIB+=	X11 Xext
+WANTLIB+=	X11
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD= simple
@@ -36,5 +38,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	SHLIB_VERSION=${LIBtktray138_VERSION}
 REGRESS_TARGET=	test
 REGRESS_IS_INTERACTIVE=	X11
+SUBST_VARS=	VERSION
 
 .include <bsd.port.mk>
