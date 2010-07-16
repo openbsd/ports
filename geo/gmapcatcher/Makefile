@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/22 10:39:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/16 10:14:00 kevlo Exp $
 
 COMMENT=	offline maps viewer
 
-VERSION=	0.7.0.0
+VERSION=	0.7.1.0
 DISTNAME=	GMapCatcher-${VERSION}
 PKGNAME=	gmapcatcher-${VERSION}
 
@@ -30,17 +30,25 @@ USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
+pre-patch:
+	tr -d '\r' < ${WRKSRC}/download.py > ${WRKSRC}/download.py.new && \
+	    mv ${WRKSRC}/download.py.new ${WRKSRC}/download.py
+	chmod +x ${WRKSRC}/download.py
+	
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 	    xargs perl -i -pe 's,^#!/usr/bin/env python,#!${MODPY_BIN},'
+	@perl -pi -e s,'download.py','gmapcatcher-download', \
+	    ${WRKSRC}/src/mapArgs.py
+	@mkdir -p ${WRKSRC}/lib/gmapcatcher
+	@touch ${WRKSRC}/lib/gmapcatcher/__init__.py
+	@cd ${WRKSRC} && mv images src ./lib/gmapcatcher/.
+	@cd ${WRKSRC} && for i in *.py; do \
+	    mv $$i ./lib/gmapcatcher/.; done
 	@cp ${FILESDIR}/setup.py ${WRKSRC}
-	@mv ${WRKSRC}/src ${WRKSRC}/gmapcatcher
-	cd ${WRKSRC} && find . ! -type d \
-	    -exec perl -pi -e 's,src,gmapcatcher,g' {} \;
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/maps.py ${PREFIX}/bin/gmapcatcher
-	${INSTALL_SCRIPT} ${WRKSRC}/download.py \
-		${PREFIX}/bin/gmapcatcher-download
+	ln -s ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/gmapcatcher/download.py ${PREFIX}/bin/gmapcatcher-download
+	ln -s ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/gmapcatcher/maps.py ${PREFIX}/bin/gmapcatcher
 
 .include <bsd.port.mk>
