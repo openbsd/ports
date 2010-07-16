@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/07/16 08:28:14 sebastia Exp $
+remove parameters that gcc2 doesn't know of
+--- configure.orig	Sat Jul 10 20:13:21 2010
++++ configure	Sat Jul 10 20:13:33 2010
+@@ -6406,7 +6406,7 @@ fi
+ 
+ 	# TEA specific:
+ 	CFLAGS_OPTIMIZE=-O2
+-	CFLAGS_WARNING="-W -Wall -Wno-unused-parameter -Wno-missing-field-initializers -ansi -pedantic"
++	CFLAGS_WARNING="-W -Wall -ansi -pedantic"
+ 
+ else
+   CFLAGS_WARNING=""
