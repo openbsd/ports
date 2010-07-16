@@ -6,7 +6,7 @@ http://docs.djangoproject.com/en/dev/
 
 Release notes about the changes that occurred in
 this release may be found online at:
-http://docs.djangoproject.com/en/dev/releases/1.1/
+http://docs.djangoproject.com/en/dev/releases/1.2/
 
 If you want a database for Django you should install the Python
 database adapter(s) of your choice ('pkg_add py-psycopg2',
