@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2010/07/13 14:52:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/07/16 11:56:15 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.14
+GNOME_VERSION=	0.8.15
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
@@ -36,6 +36,9 @@ WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
 WANTLIB += ssl ssl3 startup-notification-1 stdc++ tasn1 tiff unique-1.0
 WANTLIB += util xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
 WANTLIB += xml2 z openjpeg
+WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
+WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
+WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -49,16 +52,16 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-LIB_DEPENDS=	vorbis,vorbisfile.>=6::audio/libvorbis \
-		lib/evolution/${EVO_VERSION}/eutil.>=5::mail/evolution \
-		exempi.>=1:exempi->=2.1.1:textproc/exempi \
-		gsttag-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		poppler-glib,poppler::print/poppler \
-		panel-applet-2::x11/gnome/panel \
-		nautilus-extension:nautilus->=2.28.4p1:x11/gnome/nautilus \
-		totem-plparser.>=2:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-		e2fs-uuid:e2fsprogs->=1.41.4p3:sysutils/e2fsprogs \
-		gee::devel/libgee
+LIB_DEPENDS=	::audio/libvorbis \
+		::mail/evolution \
+		:exempi->=2.1.1:textproc/exempi \
+		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
+		::print/poppler \
+		::x11/gnome/panel \
+		:nautilus->=2.28.4p1:x11/gnome/nautilus \
+		:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
+		:e2fsprogs->=1.41.4p3:sysutils/e2fsprogs \
+		::devel/libgee
 BUILD_DEPENDS=	::devel/xdg-utils \
 		::lang/vala
 RUN_DEPENDS=	:gamin-*:sysutils/gamin,-server \
