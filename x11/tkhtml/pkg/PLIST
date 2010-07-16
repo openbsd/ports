@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/16 08:32:13 sebastia Exp $
+lib/Tkhtml3.0/
+@lib lib/Tkhtml3.0/libTkhtml30.so.${LIBTkhtml30_VERSION}
+lib/Tkhtml3.0/pkgIndex.tcl
+@man man/mann/tkhtml.n

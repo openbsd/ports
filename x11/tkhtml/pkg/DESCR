@@ -1,0 +1,4 @@
+Tkhtml3 is a Tk widget that displays content formatted according 
+to the HTML and CSS standards. Tkhtml3 is not an end-user application, 
+it is for Tcl programmers who wish to embed a standards-compliant 
+HTML/CSS implementation in their applications.
