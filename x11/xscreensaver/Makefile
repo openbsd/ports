@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/04/15 09:16:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2010/07/16 09:58:09 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -7,14 +7,15 @@ COMMENT-gle=		OpenGL Extrusion library support for screensaver-data
 V=			5.11
 DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
+REVISION-main=		0
 PKGNAME-data=		xscreensaver-data-${V}
+REVISION-data=		0
 PKGNAME-gle=		xscreensaver-gle-${V}
+REVISION-gle=		0
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,16 +26,17 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -data
 
 WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xpm Xt Xxf86vm c glib-2.0 \
-		gmodule-2.0 gobject-2.0 m pthread
+		gmodule-2.0 gobject-2.0 m pthread gthread-2.0
 
 WANTLIB-main=	${WANTLIB} Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xi Xinerama Xrandr Xrender Xxf86misc atk-1.0 cairo \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 gio-2.0 glitz gtk-x11-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs xcb xml2 z xcb-render xcb-render-util
+		pthread-stubs xcb xml2 z xcb-render xcb-render-util \
+		glade-2.0
 
-WANTLIB-data=	${WANTLIB} jpeg util
+WANTLIB-data=	${WANTLIB} jpeg util gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -51,10 +53,10 @@ RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils \
 			::x11/xscreensaver,-data
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			glade-2.0::devel/libglade2
+			::devel/libglade2
 
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
-			gdk_pixbuf-2.0,gdk_pixbuf_xlib-2.0::x11/gtk+2
+			::x11/gtk+2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -74,10 +76,10 @@ FLAVOR?=		no_gle
 .if !${FLAVOR:L:Mno_gle}
 MULTI_PACKAGES+=	-gle
 LIB_DEPENDS-gle=	${MODGETTEXT_LIB_DEPENDS} \
-			gle.>=3::graphics/gle \
-			gdk_pixbuf-2.0,gdk_pixbuf_xlib-2.0::x11/gtk+2
+			::graphics/gle \
+			::x11/gtk+2
 RUN_DEPENDS-gle=	:xscreensaver-data-*:x11/xscreensaver,-data
-WANTLIB-gle=		${WANTLIB}
+WANTLIB-gle=		${WANTLIB} gle gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
 CONFIGURE_ARGS+=	--with-gle
 .else
 CONFIGURE_ARGS+=	--without-gle
