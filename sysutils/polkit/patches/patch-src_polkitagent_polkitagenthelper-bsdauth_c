@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.2 2010/07/02 05:04:47 ajacoutot Exp $
---- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul  2 06:54:49 2010
-+++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul  2 06:56:35 2010
-@@ -0,0 +1,203 @@
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:04:10 ajacoutot Exp $
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul 16 11:22:22 2010
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul 16 11:22:10 2010
+@@ -0,0 +1,204 @@
 +/*
 + * Copyright (C) 2008 Red Hat, Inc.
 + * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
@@ -45,16 +45,17 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.2 2010/07/02 05:
 +
 +static int bsdauth_authenticate(const char *user_to_auth);
 +
-+int clearenv(void);
++#ifndef HAVE_CLEARENV
++extern char **environ;
 +
-+int
-+clearenv(void)
++static int
++clearenv (void)
 +{
-+  extern char **environ;
-+
-+  environ[0] = NULL;
-+  return 0;
++	if (environ != NULL)
++		environ[0] = NULL;
++	return 0;
 +}
++#endif
 +
 +int
 +main (int argc, char *argv[])
@@ -199,7 +200,7 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.2 2010/07/02 05:
 +  if (strlen (passwd) > 0 && passwd[strlen (passwd) - 1] == '\n')
 +    passwd[strlen (passwd) - 1] = '\0';
 +  
-+  if (auth_userokay(user_to_auth, NULL, "auth-polkit", passwd) == 0)
++  if (auth_userokay((char *)user_to_auth, NULL, "auth-polkit", passwd) == 0)
 +    goto error;
 +  return 1;
 +error:
