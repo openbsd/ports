@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/12/27 17:49:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/07/16 12:33:28 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -6,8 +6,10 @@ COMMENT-perl=	perl utils for the Cyrus IMAP server
 V=		2.3.16
 DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
+REVISION-perl=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
@@ -23,12 +25,12 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/
 
-WANTLIB=	crypto ssl z
+WANTLIB +=	crypto ssl z sasl2 lib/db4/db.>=4
 
-LIB_DEPENDS=	sasl2.>=2::security/cyrus-sasl2 \
-		lib/db4/db.>=4:db->=4,<5:databases/db/v4
+LIB_DEPENDS=	::security/cyrus-sasl2 \
+		:db->=4,<5:databases/db/v4
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		pcre.>=2,pcreposix.>=1::devel/pcre
+		::devel/pcre
 RUN_DEPENDS-main=${RUN_DEPENDS}
 
 PATCH_LIST=	patch-*
@@ -80,8 +82,9 @@ PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 		drac-patch-imap_Makefile_in
 .endif
 
-WANTLIB-main=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
-WANTLIB-perl=	${WANTLIB}
+WANTLIB-main +=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
+WANTLIB-main +=	pcre pcreposix
+WANTLIB-perl +=	${WANTLIB}
 
 NO_REGRESS=	Yes
 
