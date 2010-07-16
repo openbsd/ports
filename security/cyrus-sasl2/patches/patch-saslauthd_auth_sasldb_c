@@ -1,0 +1,11 @@
+$OpenBSD: patch-saslauthd_auth_sasldb_c,v 1.1 2010/07/16 12:44:43 ajacoutot Exp $
+--- saslauthd/auth_sasldb.c.orig	Fri Jul 16 14:37:05 2010
++++ saslauthd/auth_sasldb.c	Fri Jul 16 14:37:24 2010
+@@ -40,6 +40,7 @@
+ 
+ #include <string.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <pwd.h>
+ /* END PUBLIC DEPENDENCIES */
+ 

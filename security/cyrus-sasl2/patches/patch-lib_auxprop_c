@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_auxprop_c,v 1.1 2010/07/16 12:44:43 ajacoutot Exp $
+--- lib/auxprop.c.orig	Fri Jul 16 14:36:38 2010
++++ lib/auxprop.c	Fri Jul 16 14:36:52 2010
+@@ -42,6 +42,7 @@
+  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#include <stdio.h>
+ #include <config.h>
+ #include <sasl.h>
+ #include <prop.h>

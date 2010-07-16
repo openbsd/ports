@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2010/04/16 07:49:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/16 12:44:43 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.23
+REVISION=	0
+
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
@@ -59,7 +61,8 @@ PKG_ARGS?=	-Dsql=0
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 		--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS+=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
+LIB_DEPENDS+=	:db->=4,<5:databases/db/v4
+WANTLIB +=	lib/db4/db.>=4
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm \
 		--without-bdb-libdir \
@@ -68,9 +71,10 @@ CONFIGURE_ARGS+=--with-dblib=ndbm \
 
 .if ${FLAVOR:L:Mldap}
 WANTLIB+=	ssl
-LIB_DEPENDS+=	ldap.>=2,lber:openldap-client->=2,<3:databases/openldap
+LIB_DEPENDS+=	:openldap-client->=2,<3:databases/openldap
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} \
 		--enable-ldapdb
+WANTLIB +=	ldap lber
 .else
 CONFIGURE_ARGS+=--without-ldap
 .endif
@@ -80,8 +84,8 @@ CONFIGURE_ARGS+=--without-ldap
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB+=	m ssl z
+LIB_DEPENDS+=	::databases/mysql
+WANTLIB+=	m ssl z lib/mysql/mysqlclient.>=10
 CONFIGURE_ARGS+=--enable-sql \
 		--with-mysql \
 		--without-pgsql \
@@ -93,7 +97,8 @@ CONFIGURE_ARGS+=--enable-sql \
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=	:postgresql-client-*:databases/postgresql
+WANTLIB +=	pq
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
 		--with-pgsql \
@@ -106,7 +111,8 @@ CFLAGS+=	-I${LOCALBASE}/include/postgresql
 ERRORS+=		${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	sqlite.>=8.6::databases/sqlite
+LIB_DEPENDS+=	::databases/sqlite
+WANTLIB +=	sqlite
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
 		--without-pgsql \
