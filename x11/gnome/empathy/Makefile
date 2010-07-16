@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2010/06/21 20:11:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/16 20:19:49 naddy Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.2
+REVISION=		0
 
 CATEGORIES=		net
 
