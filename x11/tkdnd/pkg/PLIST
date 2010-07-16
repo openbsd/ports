@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/16 08:30:27 sebastia Exp $
+lib/tkdnd/
+@comment lib/tkdnd/libtkdnd.dll
+@lib lib/tkdnd/libtkdnd.so.${LIBtkdnd_VERSION}
+lib/tkdnd/pkgIndex.tcl
+lib/tkdnd/tkDND_Utils.tcl

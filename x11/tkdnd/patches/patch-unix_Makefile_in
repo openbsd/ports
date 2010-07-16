@@ -1,0 +1,30 @@
+$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2010/07/16 08:30:27 sebastia Exp $
+--- unix/Makefile.in.orig	Fri Feb 23 10:00:28 2001
++++ unix/Makefile.in	Sun Jul 11 14:21:27 2010
+@@ -78,7 +78,7 @@ CC = @CC@
+ CFLAGS_DEBUG = @CFLAGS_DEBUG@ -DTKDND_ENABLE_MOTIF_DROPS \
+                   -DTKDND_ENABLE_SHAPE_EXTENSION -DDND_DEBUG
+ CFLAGS_DEFAULT = @CFLAGS_DEFAULT@ -DTKDND_ENABLE_MOTIF_DROPS \
+-                  -DTKDND_ENABLE_SHAPE_EXTENSION
++                  -DTKDND_ENABLE_SHAPE_EXTENSION ${INCLUDES}
+ CFLAGS_OPTIMIZE = @CFLAGS_OPTIMIZE@ -DTKDND_ENABLE_MOTIF_DROPS \
+                   -DTKDND_ENABLE_SHAPE_EXTENSION
+ CLEANFILES = @CLEANFILES@
+@@ -123,7 +123,7 @@ AUTOCONF = autoconf
+ 
+ LDFLAGS = $(LDFLAGS_DEFAULT)
+ 
+-INCLUDES = @TCL_INCLUDES@ @TK_XINCLUDES@ -I"../generic" -I"Motif/lib" -I"." \
++INCLUDES = @TCL_INCLUDES@ @TK_XINCLUDES@ -I${MODTK_INCDIR} -I"../generic" -I"Motif/lib" -I"." \
+                                          -I"Shape/include"
+ 
+ EXTRA_CFLAGS = $(TCL_DEFS) $(PROTO_FLAGS) $(SECURITY_FLAGS) $(MEM_DEBUG_FLAGS) $(KEYSYM_FLAGS) $(NO_DEPRECATED_FLAGS)
+@@ -207,7 +207,7 @@ install-doc: doc
+ 	    done
+ 
+ test: all
+-	@cd ../demo && dnddemo.tcl
++	@cd ../demo && ./dnddemo.tcl
+ 
+ test1: test
+ 
