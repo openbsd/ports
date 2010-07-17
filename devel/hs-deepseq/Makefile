@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/15 17:18:51 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/17 13:56:14 kili Exp $
 
 COMMENT =		fully evaluate data structures
 
 DISTNAME =		deepseq-1.1.0.0
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
