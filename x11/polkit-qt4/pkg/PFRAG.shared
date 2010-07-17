@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/17 05:50:24 ajacoutot Exp $
+@lib lib/libpolkit-qt-agent-1.so.${LIBpolkit-qt-agent-1_VERSION}
+@lib lib/libpolkit-qt-core-1.so.${LIBpolkit-qt-core-1_VERSION}
+@lib lib/libpolkit-qt-gui-1.so.${LIBpolkit-qt-gui-1_VERSION}
