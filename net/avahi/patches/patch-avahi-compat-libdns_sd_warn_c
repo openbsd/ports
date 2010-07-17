@@ -1,10 +1,10 @@
-$OpenBSD: patch-avahi-compat-libdns_sd_warn_c,v 1.1 2009/06/03 19:42:55 ajacoutot Exp $
+$OpenBSD: patch-avahi-compat-libdns_sd_warn_c,v 1.2 2010/07/17 14:12:38 ajacoutot Exp $
 
 Reverse logic to stop polluting syslog(3).
 
---- avahi-compat-libdns_sd/warn.c.orig	Wed Jun  3 21:07:44 2009
-+++ avahi-compat-libdns_sd/warn.c	Wed Jun  3 21:08:33 2009
-@@ -112,7 +112,7 @@ void avahi_warn_linkage(void) {
+--- avahi-compat-libdns_sd/warn.c.orig	Fri Jun 25 02:41:26 2010
++++ avahi-compat-libdns_sd/warn.c	Mon Jul  5 12:02:37 2010
+@@ -110,7 +110,7 @@ void avahi_warn_linkage(void) {
      linkage_warning = 1;
      pthread_mutex_unlock(&linkage_mutex);
  

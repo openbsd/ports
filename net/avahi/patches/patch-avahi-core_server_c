@@ -1,10 +1,7 @@
-$OpenBSD: patch-avahi-core_server_c,v 1.2 2009/06/26 22:12:20 ajacoutot Exp $
-
-CVE-2008-5081 + http://avahi.org/ticket/267
-
---- avahi-core/server.c.orig	Tue Apr 14 03:28:56 2009
-+++ avahi-core/server.c	Thu Jun 25 17:36:04 2009
-@@ -904,6 +904,11 @@ static void dispatch_packet(AvahiServer *s, AvahiDnsPa
+$OpenBSD: patch-avahi-core_server_c,v 1.3 2010/07/17 14:12:38 ajacoutot Exp $
+--- avahi-core/server.c.orig	Tue Jun 29 02:12:38 2010
++++ avahi-core/server.c	Mon Jul  5 12:02:37 2010
+@@ -903,6 +903,11 @@ static void dispatch_packet(AvahiServer *s, AvahiDnsPa
          return;
      }
  
@@ -16,35 +13,3 @@ CVE-2008-5081 + http://avahi.org/ticket/267
      if (avahi_address_is_ipv4_in_ipv6(src_address))
          /* This is an IPv4 address encapsulated in IPv6, so let's ignore it. */
          return;
-@@ -1009,13 +1014,6 @@ static void dispatch_legacy_unicast_packet(AvahiServer
-     avahi_dns_packet_set_field(p, AVAHI_DNS_FIELD_ID, slot->id);
- }
- 
--static void cleanup_dead(AvahiServer *s) {
--    assert(s);
--
--    avahi_cleanup_dead_entries(s);
--    avahi_browser_cleanup(s);
--}
--
- static void mcast_socket_event(AvahiWatch *w, int fd, AvahiWatchEvent events, void *userdata) {
-     AvahiServer *s = userdata;
-     AvahiAddress dest, src;
-@@ -1048,7 +1046,7 @@ static void mcast_socket_event(AvahiWatch *w, int fd, 
- 
-         avahi_dns_packet_free(p);
- 
--        cleanup_dead(s);
-+        avahi_cleanup_dead_entries(s);
-     }
- }
- 
-@@ -1071,7 +1069,7 @@ static void legacy_unicast_socket_event(AvahiWatch *w,
-         dispatch_legacy_unicast_packet(s, p);
-         avahi_dns_packet_free(p);
- 
--        cleanup_dead(s);
-+        avahi_cleanup_dead_entries(s);
-     }
- }
- 

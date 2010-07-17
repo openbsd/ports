@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.3 2009/12/22 00:31:22 sthen Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.4 2010/07/17 14:12:38 ajacoutot Exp $
 bin/avahi-bookmarks
 bin/avahi-discover
 @bin bin/avahi-discover-standalone
@@ -19,9 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/avahi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/
-lib/python${MODPY_VERSION}/site-packages/avahi_discover/SimpleGladeApp.py
-lib/python${MODPY_VERSION}/site-packages/avahi_discover/SimpleGladeApp.pyc
-lib/python${MODPY_VERSION}/site-packages/avahi_discover/SimpleGladeApp.pyo
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.py
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyo
@@ -33,6 +30,6 @@ share/applications/avahi-discover.desktop
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
 share/avahi/interfaces/
-share/avahi/interfaces/avahi-discover.glade
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/avahi/interfaces/avahi-discover.ui

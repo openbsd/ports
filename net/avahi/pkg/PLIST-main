@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/06/28 18:52:31 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/07/17 14:12:38 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newgroup _avahi-autoipd:630
@@ -109,17 +109,17 @@ lib/pkgconfig/avahi-gobject.pc
 @bin sbin/avahi-dnsconfd
 share/avahi/
 share/avahi/avahi-service.dtd
-share/avahi/introspection/
-share/avahi/introspection/AddressResolver.introspect
-share/avahi/introspection/DomainBrowser.introspect
-share/avahi/introspection/EntryGroup.introspect
-share/avahi/introspection/HostNameResolver.introspect
-share/avahi/introspection/RecordBrowser.introspect
-share/avahi/introspection/Server.introspect
-share/avahi/introspection/ServiceBrowser.introspect
-share/avahi/introspection/ServiceResolver.introspect
-share/avahi/introspection/ServiceTypeBrowser.introspect
 share/avahi/service-types
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.freedesktop.Avahi.AddressResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.DomainBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.EntryGroup.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.HostNameResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.RecordBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
 share/examples/avahi/
 @sample ${SYSCONFDIR}/avahi/
 share/examples/avahi/avahi-daemon.conf
@@ -138,7 +138,9 @@ share/examples/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/dbus-1/avahi-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/avahi-dbus.conf
+share/locale/bg/LC_MESSAGES/avahi.mo
 share/locale/ca/LC_MESSAGES/avahi.mo
+share/locale/cs/LC_MESSAGES/avahi.mo
 share/locale/de/LC_MESSAGES/avahi.mo
 share/locale/el/LC_MESSAGES/avahi.mo
 share/locale/en_AU/
@@ -152,9 +154,12 @@ share/locale/en_NZ/LC_MESSAGES/avahi.mo
 share/locale/es/LC_MESSAGES/avahi.mo
 share/locale/fi/LC_MESSAGES/avahi.mo
 share/locale/fr/LC_MESSAGES/avahi.mo
+share/locale/gl/LC_MESSAGES/avahi.mo
 share/locale/hu/LC_MESSAGES/avahi.mo
 share/locale/it/LC_MESSAGES/avahi.mo
+share/locale/ja/LC_MESSAGES/avahi.mo
 share/locale/ms/LC_MESSAGES/avahi.mo
+share/locale/nl/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
 share/locale/ro/LC_MESSAGES/avahi.mo
@@ -162,4 +167,6 @@ share/locale/ru/LC_MESSAGES/avahi.mo
 share/locale/sr/LC_MESSAGES/avahi.mo
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
 share/locale/sv/LC_MESSAGES/avahi.mo
+share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
+share/locale/zh_TW/LC_MESSAGES/avahi.mo

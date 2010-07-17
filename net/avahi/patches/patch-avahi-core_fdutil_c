@@ -1,10 +1,10 @@
-$OpenBSD: patch-avahi-core_fdutil_c,v 1.1 2009/06/16 21:50:01 jasper Exp $
+$OpenBSD: patch-avahi-core_fdutil_c,v 1.2 2010/07/17 14:12:38 ajacoutot Exp $
 
 Missing prototype for memset().
 
---- avahi-core/fdutil.c.orig	Tue Jun 16 19:07:15 2009
-+++ avahi-core/fdutil.c	Tue Jun 16 19:07:35 2009
-@@ -27,6 +27,7 @@
+--- avahi-core/fdutil.c.orig	Fri Jun 25 02:41:25 2010
++++ avahi-core/fdutil.c	Mon Jul  5 12:02:37 2010
+@@ -25,6 +25,7 @@
  #include <unistd.h>
  #include <fcntl.h>
  #include <assert.h>

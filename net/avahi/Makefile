@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/17 14:12:38 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -6,12 +6,7 @@ COMMENT-mono=	mono (.NET) bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 
-V=		0.6.25
-REVISION-main=	10
-REVISION-gtk=	6
-REVISION-mono=	5
-REVISION-qt3=	3
-REVISION-qt4=	2
+V=		0.6.26
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
@@ -56,11 +51,13 @@ WANTLIB=	c expat glib-2.0 gobject-2.0 pcre pthread
 
 BUILD_DEPENDS=	::converters/xmltoman
 
+WANTLIB-main=	${WANTLIB} glib-2.0 gobject-2.0 gthread-2.0 gdbm \
+		daemon dbus-1
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		glib-2.0.>=1800,gobject-2.0,gthread-2.0::devel/glib2 \
-		gdbm::databases/gdbm \
-		daemon::devel/libdaemon \
-		dbus-1::x11/dbus
+		::devel/glib2 \
+		::databases/gdbm \
+		::devel/libdaemon \
+		::x11/dbus
 
 ONLY_FOR_ARCHS-mono = i386 amd64 powerpc
 
@@ -95,8 +92,7 @@ BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
 		::x11/py-gtk2 \
 		::x11/dbus-python
 LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
-		avahi-client,avahi-common,avahi-core,avahi-glib::net/avahi \
-		glade-2.0.>=1::devel/libglade2
+		::net/avahi
 RUN_DEPENDS-gtk= ${MODPY_RUN_DEPENDS} \
 		:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
 		::x11/py-gtk2 \
@@ -105,11 +101,12 @@ RUN_DEPENDS-gtk= ${MODPY_RUN_DEPENDS} \
 		::devel/desktop-file-utils
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
-		expat fontconfig freetype gdbm gdk-x11-2.0 \
+		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb xml2 z \
-		xcb-render xcb-render-util
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
+		xcb-render xcb-render-util avahi-client avahi-common avahi-core \
+		avahi-glib
 .else
 CONFIGURE_ARGS+= -disable-gtk \
 		--disable-python \
@@ -122,10 +119,11 @@ MULTI_PACKAGES+= -qt3
 MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
-		avahi-common::net/avahi
+		::net/avahi
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
-		freetype jpeg lcms m mng png pthread-stubs xcb z
+		freetype jpeg lcms m mng png pthread-stubs xcb z \
+		avahi-common stdc++
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif
@@ -134,9 +132,9 @@ CONFIGURE_ARGS+= --disable-qt3
 MULTI_PACKAGES+= -qt4
 MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
-		QtCore.>=7::x11/qt4 \
-		avahi-common::net/avahi
-WANTLIB-qt4=
+		::x11/qt4 \
+		::net/avahi
+WANTLIB-qt4=	QtCore avahi-common m stdc++
 .else
 CONFIGURE_ARGS+= --disable-qt4
 .endif
@@ -148,9 +146,9 @@ USE_LIBTOOL=	Yes
 MODPY_RUNDEP=	No
 MODMONO_DEPS=	No
 
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.65
 
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" \
@@ -170,10 +168,13 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-compat-libdns_sd \
 		--enable-core-docs \
 		--enable-tests \
+		--disable-silent-rules \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \
-		--disable-doxygen-html
+		--disable-doxygen-html \
+		--disable-introspection \
+		--disable-gtk3
 
 # don't link with libssp from gcc4; __guard and __stack_smash_handler
 # are part of libc (see LIBS in CONFIGURE_ENV)
@@ -188,12 +189,17 @@ PC_FILES=	avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 		avahi-compat-libdns_sd.pc avahi-core.pc avahi-glib.pc \
 		avahi-gobject.pc avahi-qt3.pc avahi-qt4.pc
 
+post-extract:
+	find ${WRKSRC} -type d -name PaxHeaders.24570 | \
+		xargs rm -r
+	rm ${WRKSRC}/configure
+
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
 		perl -pi -e 's,LIBINTL,INTLLIBS,g;' \
 			-e 's,LIBICONV,LTLIBICONV,g' {} \;
-	perl -pi -e 's,/etc/avahi,${SYSCONFDIR}/avahi,g' \
-		${WRKSRC}/man/*.*
+	find ${WRKSRC}/man -type f | xargs \
+		perl -pi -e 's,/etc/avahi,${SYSCONFDIR}/avahi,g'
 	perl -pi -e 's,dbus_connection_disconnect,dbus_connection_close,g' \
 		${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
