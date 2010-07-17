@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/17 13:14:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/17 22:52:50 benoit Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
-DISTNAME =	mkvtoolnix-3.2.0
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	mkvtoolnix-4.0.0
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
@@ -16,22 +15,23 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c ebml expat m ogg stdc++ z pthread
+WANTLIB =	boost_system-mt.>=1.1 boost_regex-mt.>=1.1 boost_filesystem-mt.>=1.1 \
+		bz2.>=10 c ebml expat FLAC.>=9 lzo2 m magic.>=2 matroska.>=1.0 \
+		ogg stdc++ vorbis.>=8 z pthread
 
 MASTER_SITES =	${HOMEPAGE}/sources/
 
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES +=	converters/libiconv
-MODULES +=	devel/gettext
+MODULES =	devel/gettext
 
-LIB_DEPENDS =	FLAC.>=7::audio/flac \
-		bz2.>=10::archivers/bzip2 \
-		lzo2::archivers/lzo2 \
-		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
-		vorbis.>=5::audio/libvorbis \
-		magic.>=1::devel/libmagic \
-		boost_system-mt.>=1.1,boost_regex-mt.>=1.1,boost_filesystem-mt.>=1.1::devel/boost
+LIB_DEPENDS =	::audio/flac \
+		::archivers/bzip2 \
+		::archivers/lzo2 \
+		::multimedia/libmatroska \
+		::audio/libvorbis \
+		::devel/libmagic \
+		::devel/boost
 
 MAKE_FLAGS +=	V=1
 
@@ -80,7 +80,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/mkvmerge-gui.* ${PREFIX}/share/mkvtoolnix
 	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/images/*.gif ${PREFIX}/share/mkvtoolnix/images
 .endif
-.for l in de ja zh_CN zh_TW
+.for l in de ja nl ru uk zh_CN zh_TW
 	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$l/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/$l.mo ${PREFIX}/share/locale/$l/LC_MESSAGES/mkvtoolnix.mo
 .endfor

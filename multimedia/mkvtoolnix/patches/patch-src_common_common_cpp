@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_common_common_cpp,v 1.2 2010/04/05 20:27:09 benoit Exp $
---- src/common/common.cpp.orig	Fri Feb 12 16:43:41 2010
-+++ src/common/common.cpp	Sun Apr  4 20:34:51 2010
-@@ -13,6 +13,8 @@
+$OpenBSD: patch-src_common_common_cpp,v 1.3 2010/07/17 22:52:53 benoit Exp $
+--- src/common/common.cpp.orig	Sat Jun  5 08:24:39 2010
++++ src/common/common.cpp	Sat Jun 26 20:42:11 2010
+@@ -14,6 +14,7 @@
+ #include "common/common_pch.h"
  
- #include "common/os.h"
- 
-+#include <unistd.h>
-+
- #include <boost/regex.hpp>
  #include <stdlib.h>
- #include <string>
++#include <unistd.h>
+ #ifdef SYS_WINDOWS
+ # include <windows.h>
+ #endif

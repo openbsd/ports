@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_common_random_cpp,v 1.3 2009/12/23 12:11:32 benoit Exp $
---- src/common/random.cpp.orig	Thu Aug 13 12:32:50 2009
-+++ src/common/random.cpp	Thu Sep 10 12:08:56 2009
-@@ -98,7 +98,7 @@
+$OpenBSD: patch-src_common_random_cpp,v 1.4 2010/07/17 22:52:53 benoit Exp $
+--- src/common/random.cpp.orig	Sat Jun  5 08:24:39 2010
++++ src/common/random.cpp	Sat Jun 26 20:39:53 2010
+@@ -98,7 +98,7 @@ random_c::generate_bytes(void *destination,
    try {
      if (!m_tried_dev_urandom) {
        m_tried_dev_urandom = true;
