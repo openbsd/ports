@@ -1,0 +1,15 @@
+$OpenBSD: README.OpenBSD,v 1.1 2010/07/17 08:13:01 ajacoutot Exp $
+
+OCR with tesseract under OpenBSD
+================================
+
+Here's a quick HOWTO about optical character recognition using:
+    scanimage(1) -- from the sane-backends package
+    unpaper -- from the unpaper package
+    convert(1) -- from the ImageMagick package
+    tesseract
+
+$ scanimage --mode gray --resolution 300 > scan.pnm
+$ unpaper -b 0.5 -w 0.8 -l single scan.pnm scan1.pnm
+$ convert scan1.pnm scan.tif
+$ tesseract scan.tif scan.txt
