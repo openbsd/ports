@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/17 14:55:21 kili Exp $
 
 COMMENT =		minimalistic text based status bar
 
-DISTNAME =		xmobar-0.9.2
-REVISION =		1
+DISTNAME =		xmobar-0.11.1
 CATEGORIES =		x11
 HOMEPAGE =		http://code.haskell.org/~arossato/xmobar/
 
@@ -29,6 +28,13 @@ BUILD_DEPENDS =		:hs-X11->=1.3.0:x11/hs-X11 \
 USE_X11 =		Yes
 
 EXAMPLEDIR =		${PREFIX}/share/examples/xmobar
+
+post-patch:
+	@cp ${FILESDIR}/Batt.hs ${WRKBUILD}/Plugins/Monitors
+	@mkdir ${WRKBUILD}/Plugins/Monitors/Batt
+	@cp ${FILESDIR}/Binding.hsc ${WRKBUILD}/Plugins/Monitors/Batt
+	@cp ${FILESDIR}/apm.c ${WRKBUILD}/Plugins/Monitors/Batt
+	@cp ${FILESDIR}/apm.h ${WRKBUILD}/Plugins/Monitors/Batt
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/10 08:07:06 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/17 14:55:21 kili Exp $
 @bin bin/xmobar
 @comment share/doc/${DISTNAME}/
 @comment share/doc/${DISTNAME}/LICENSE

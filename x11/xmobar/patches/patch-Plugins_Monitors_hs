@@ -1,7 +1,7 @@
-$OpenBSD: patch-Plugins_Monitors_hs,v 1.1.1.1 2010/05/10 08:07:06 dcoppa Exp $
---- Plugins/Monitors.hs.orig	Wed Apr 28 23:59:48 2010
-+++ Plugins/Monitors.hs	Thu Apr 29 00:00:33 2010
-@@ -18,25 +18,25 @@ import Plugins
+$OpenBSD: patch-Plugins_Monitors_hs,v 1.2 2010/07/17 14:55:21 kili Exp $
+--- Plugins/Monitors.hs.orig	Tue Jul  6 13:08:05 2010
++++ Plugins/Monitors.hs	Tue Jul  6 13:09:37 2010
+@@ -20,17 +20,17 @@ import Plugins
  
  import Plugins.Monitors.Common ( runM )
  import Plugins.Monitors.Weather
@@ -9,42 +9,61 @@ $OpenBSD: patch-Plugins_Monitors_hs,v 1.1.1.1 2010/05/10 08:07:06 dcoppa Exp $
 -import Plugins.Monitors.Mem
 -import Plugins.Monitors.Swap
 -import Plugins.Monitors.Cpu
--import Plugins.Monitors.Batt
--import Plugins.Monitors.Thermal
--import Plugins.Monitors.CpuFreq
--import Plugins.Monitors.CoreTemp
+-import Plugins.Monitors.MultiCpu
 +--import Plugins.Monitors.Net
 +--import Plugins.Monitors.Mem
 +--import Plugins.Monitors.Swap
 +--import Plugins.Monitors.Cpu
-+--import Plugins.Monitors.Batt
++--import Plugins.Monitors.MultiCpu
+ import Plugins.Monitors.Batt
+-import Plugins.Monitors.Thermal
+-import Plugins.Monitors.CpuFreq
+-import Plugins.Monitors.CoreTemp
+-import Plugins.Monitors.Disk
+-import Plugins.Monitors.Top
 +--import Plugins.Monitors.Thermal
 +--import Plugins.Monitors.CpuFreq
 +--import Plugins.Monitors.CoreTemp
++--import Plugins.Monitors.Disk
++--import Plugins.Monitors.Top
+ #ifdef IWLIB
+ import Plugins.Monitors.Wireless
+ #endif
+@@ -39,20 +39,20 @@ import Plugins.Monitors.MPD
+ #endif
  
- data Monitors = Weather Station   Args Rate
--              | Network Interface Args Rate
--              | Memory            Args Rate
--              | Swap              Args Rate
--              | Cpu               Args Rate
--              | Battery           Args Rate
--              | BatteryP [String] Args Rate
--              | Thermal   Zone    Args Rate
--              | CpuFreq           Args Rate
--              | CoreTemp          Args Rate
-+--              | Network Interface Args Rate
-+--              | Memory            Args Rate
-+--              | Swap              Args Rate
-+--              | Cpu               Args Rate
-+--              | Battery           Args Rate
-+--              | BatteryP [String] Args Rate
-+--              | Thermal   Zone    Args Rate
-+--              | CpuFreq           Args Rate
-+--              | CoreTemp          Args Rate
-                 deriving (Show,Read,Eq)
- 
- type Args      = [String]
-@@ -49,22 +49,22 @@ type Rate      = Int
+ data Monitors = Weather  Station    Args Rate
+-              | Network  Interface  Args Rate
+-              | Memory   Args       Rate
+-              | Swap     Args       Rate
+-              | Cpu      Args       Rate
+-              | MultiCpu Args       Rate
++--              | Network  Interface  Args Rate
++--              | Memory   Args       Rate
++--              | Swap     Args       Rate
++--              | Cpu      Args       Rate
++--              | MultiCpu Args       Rate
+               | Battery  Args       Rate
+-              | BatteryP [String]   Args Rate
+-              | DiskU    DiskSpec   Args Rate
+-              | DiskIO   DiskSpec   Args Rate
+-              | Thermal  Zone       Args Rate
+-              | CpuFreq  Args       Rate
+-              | CoreTemp Args       Rate
+-              | TopProc  Args       Rate
+-              | TopMem   Args       Rate
++--              | BatteryP [String]   Args Rate
++--              | DiskU    DiskSpec   Args Rate
++--              | DiskIO   DiskSpec   Args Rate
++--              | Thermal  Zone       Args Rate
++--              | CpuFreq  Args       Rate
++--              | CoreTemp Args       Rate
++--              | TopProc  Args       Rate
++--              | TopMem   Args       Rate
+ #ifdef IWLIB
+               | Wireless Interface  Args Rate
+ #endif
+@@ -72,20 +72,20 @@ type DiskSpec  = [(String, String)]
  
  instance Exec Monitors where
      alias (Weather  s _ _) = s
@@ -53,35 +72,62 @@ $OpenBSD: patch-Plugins_Monitors_hs,v 1.1.1.1 2010/05/10 08:07:06 dcoppa Exp $
 -    alias (Memory     _ _) = "memory"
 -    alias (Swap       _ _) = "swap"
 -    alias (Cpu        _ _) = "cpu"
--    alias (Battery    _ _) = "battery"
--    alias (BatteryP  _ _ _)= "battery"
--    alias (CpuFreq    _ _) = "cpufreq"
--    alias (CoreTemp   _ _) = "coretemp"
+-    alias (MultiCpu   _ _) = "multicpu"
 +--    alias (Network  i _ _) = i
 +--    alias (Thermal  z _ _) = z
 +--    alias (Memory     _ _) = "memory"
 +--    alias (Swap       _ _) = "swap"
 +--    alias (Cpu        _ _) = "cpu"
-+--    alias (Battery    _ _) = "battery"
++--    alias (MultiCpu   _ _) = "multicpu"
+     alias (Battery    _ _) = "battery"
+-    alias (BatteryP  _ _ _)= "battery"
+-    alias (CpuFreq    _ _) = "cpufreq"
+-    alias (TopProc    _ _) = "top"
+-    alias (TopMem     _ _) = "topmem"
+-    alias (CoreTemp   _ _) = "coretemp"
+-    alias (DiskU    _ _ _) = "disku"
+-    alias (DiskIO   _ _ _) = "diskio"
 +--    alias (BatteryP  _ _ _)= "battery"
 +--    alias (CpuFreq    _ _) = "cpufreq"
++--    alias (TopProc    _ _) = "top"
++--    alias (TopMem     _ _) = "topmem"
 +--    alias (CoreTemp   _ _) = "coretemp"
-     start (Weather  s a r) = runM (a ++ [s]) weatherConfig  runWeather  r
--    start (Network  i a r) = runM (a ++ [i]) netConfig      runNet      r
--    start (Thermal  z a r) = runM (a ++ [z]) thermalConfig  runThermal  r
--    start (Memory     a r) = runM a          memConfig      runMem      r
--    start (Swap       a r) = runM a          swapConfig     runSwap     r
--    start (Cpu        a r) = runM a          cpuConfig      runCpu      r
--    start (Battery    a r) = runM a          battConfig     runBatt     r
--    start (BatteryP s a r) = runM a          battConfig    (runBatt' s) r
--    start (CpuFreq    a r) = runM a          cpuFreqConfig  runCpuFreq  r
--    start (CoreTemp   a r) = runM a          coreTempConfig runCoreTemp r
-+--    start (Network  i a r) = runM (a ++ [i]) netConfig      runNet      r
-+--    start (Thermal  z a r) = runM (a ++ [z]) thermalConfig  runThermal  r
-+--    start (Memory     a r) = runM a          memConfig      runMem      r
-+--    start (Swap       a r) = runM a          swapConfig     runSwap     r
-+--    start (Cpu        a r) = runM a          cpuConfig      runCpu      r
-+--    start (Battery    a r) = runM a          battConfig     runBatt     r
-+--    start (BatteryP s a r) = runM a          battConfig    (runBatt' s) r
-+--    start (CpuFreq    a r) = runM a          cpuFreqConfig  runCpuFreq  r
-+--    start (CoreTemp   a r) = runM a          coreTempConfig runCoreTemp r
++--    alias (DiskU    _ _ _) = "disku"
++--    alias (DiskIO   _ _ _) = "diskio"
+ #ifdef IWLIB
+     alias (Wireless i _ _) = i ++ "wi"
+ #endif
+@@ -93,20 +93,20 @@ instance Exec Monitors where
+     alias (MPD        _ _) = "mpd"
+ #endif
+     start (Weather  s a r) = runM (a ++ [s]) weatherConfig  runWeather    r
+-    start (Network  i a r) = runM (a ++ [i]) netConfig      runNet        r
+-    start (Thermal  z a r) = runM (a ++ [z]) thermalConfig  runThermal    r
+-    start (Memory     a r) = runM a          memConfig      runMem        r
+-    start (Swap       a r) = runM a          swapConfig     runSwap       r
+-    start (Cpu        a r) = runM a          cpuConfig      runCpu        r
+-    start (MultiCpu   a r) = runM a          multiCpuConfig runMultiCpu   r
++--    start (Network  i a r) = runM (a ++ [i]) netConfig      runNet        r
++--    start (Thermal  z a r) = runM (a ++ [z]) thermalConfig  runThermal    r
++--    start (Memory     a r) = runM a          memConfig      runMem        r
++--    start (Swap       a r) = runM a          swapConfig     runSwap       r
++--    start (Cpu        a r) = runM a          cpuConfig      runCpu        r
++--    start (MultiCpu   a r) = runM a          multiCpuConfig runMultiCpu   r
+     start (Battery    a r) = runM a          battConfig     runBatt       r
+-    start (BatteryP s a r) = runM a          battConfig    (runBatt' s)   r
+-    start (CpuFreq    a r) = runM a          cpuFreqConfig  runCpuFreq    r
+-    start (CoreTemp   a r) = runM a          coreTempConfig runCoreTemp   r
+-    start (DiskU    s a r) = runM a          diskUConfig   (runDiskU s)   r
+-    start (DiskIO   s a r) = runM a          diskIOConfig  (runDiskIO s)  r
+-    start (TopMem     a r) = runM a          topMemConfig   runTopMem     r
+-    start (TopProc    a r) = startTop a r
++--    start (BatteryP s a r) = runM a          battConfig    (runBatt' s)   r
++--    start (CpuFreq    a r) = runM a          cpuFreqConfig  runCpuFreq    r
++--    start (CoreTemp   a r) = runM a          coreTempConfig runCoreTemp   r
++--    start (DiskU    s a r) = runM a          diskUConfig   (runDiskU s)   r
++--    start (DiskIO   s a r) = runM a          diskIOConfig  (runDiskIO s)  r
++--    start (TopMem     a r) = runM a          topMemConfig   runTopMem     r
++--    start (TopProc    a r) = startTop a r
+ #ifdef IWLIB
+     start (Wireless i a r) = runM (a ++ [i]) wirelessConfig runWireless   r
+ #endif

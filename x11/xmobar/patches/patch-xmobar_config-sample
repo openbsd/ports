@@ -1,23 +1,22 @@
-$OpenBSD: patch-xmobar_config-sample,v 1.1.1.1 2010/05/10 08:07:06 dcoppa Exp $
---- xmobar.config-sample.orig	Wed Apr 28 23:53:28 2010
-+++ xmobar.config-sample	Wed Apr 28 23:57:36 2010
-@@ -3,16 +3,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
-        , fgColor = "grey"
+$OpenBSD: patch-xmobar_config-sample,v 1.2 2010/07/17 14:55:21 kili Exp $
+--- xmobar.config-sample.orig	Mon May 17 12:17:50 2010
++++ xmobar.config-sample	Mon Jul 12 16:03:46 2010
+@@ -4,15 +4,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
         , position = Top
         , lowerOnStart = True
--       , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+        , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
 -                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
 -                    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
 -                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
 -                    , Run Memory ["-t","Mem: <usedratio>%"] 10
 -                    , Run Swap [] 10
-+       , commands = [ Run Weather "ELLX" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
                      , Run Com "uname" ["-s","-r"] "" 36000
 -    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
++                    , Run Battery ["-t","Batt: <left> <minleft>"] 10
 +                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                      ]
         , sepChar = "%"
         , alignSep = "}{"
 -       , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
-+       , template = "%ELLX% }{ <fc=#ee9a00>%date%</fc> | %uname%"
++       , template = "%battery% }{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
         }

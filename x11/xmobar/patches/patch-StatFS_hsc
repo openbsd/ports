@@ -1,0 +1,25 @@
+$OpenBSD: patch-StatFS_hsc,v 1.1 2010/07/17 14:55:21 kili Exp $
+--- StatFS.hsc.orig	Mon May 17 12:17:50 2010
++++ StatFS.hsc	Tue Jul  6 12:29:51 2010
+@@ -23,8 +23,11 @@ import Foreign.C.String
+ import Data.ByteString (useAsCString)
+ import Data.ByteString.Char8 (pack)
+ 
+-#if defined (__FreeBSD__)
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
+ # include <sys/param.h>
++#endif
++
++#if defined (BSD4_4)
+ # include <sys/mount.h>
+ #else
+ #include <sys/vfs.h>
+@@ -47,7 +50,7 @@ data FileSystemStats = FileSystemStats {
+ 
+ data CStatfs
+ 
+-#if defined(__FreeBSD__)
++#if defined(BSD4_4)
+ foreign import ccall unsafe "sys/mount.h statfs"
+ #else
+ foreign import ccall unsafe "sys/vfs.h statfs64"

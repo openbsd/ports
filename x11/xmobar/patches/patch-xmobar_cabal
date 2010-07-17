@@ -1,0 +1,23 @@
+$OpenBSD: patch-xmobar_cabal,v 1.1 2010/07/17 14:55:21 kili Exp $
+--- xmobar.cabal.orig	Mon May 17 12:17:50 2010
++++ xmobar.cabal	Tue Jul  6 18:56:36 2010
+@@ -15,8 +15,6 @@ maintainer:         andrea.rossato@unitn.it
+ cabal-version:      >= 1.6
+ build-type:         Simple
+ 
+-data-files:         xmobar.config-sample
+-
+ flag small_base
+   description: Choose the new smaller, split-up base package.
+ 
+@@ -42,8 +40,9 @@ flag with_mpd
+ 
+ executable xmobar
+     main-is:            Main.hs
+-    other-modules:      Xmobar, Config, Parsers, Commands, XUtil, StatFS, Runnable, Plugins
++    other-modules:      Xmobar, Config, Parsers, Commands, XUtil, StatFS, Runnable, Plugins, Plugins.Monitors.Batt.Binding
+     ghc-prof-options:   -prof -auto-all
++    c-sources:          Plugins/Monitors/Batt/apm.c
+ 
+     if true
+        ghc-options: -funbox-strict-fields -Wall
