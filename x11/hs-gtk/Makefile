@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/16 14:04:10 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
 DISTNAME =		gtk-0.11.0
+REVISION =		0
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -26,6 +27,7 @@ LIB_DEPENDS =		:hs-glib->=0.11,<0.12:devel/hs-glib \
 			:hs-pango->=0.11,<0.12:devel/hs-pango \
 			:hs-cairo->=0.11,<0.12:graphics/hs-cairo \
 			::x11/gtk+2
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 # tiny 2 GB are enough on amd64.... we need a BLOAT_WARNING
 VMEM_WARNING =		Yes

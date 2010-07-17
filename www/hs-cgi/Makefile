@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/15 17:18:51 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
 DISTNAME =		cgi-3001.1.7.2
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		4
 CATEGORIES =		www devel
 HOMEPAGE =		http://www.cs.uu.nl/~daan/parsec.html
 
@@ -22,6 +22,7 @@ MODGHC_BUILD =		cabal hackage haddock register
 LIB_DEPENDS =		:hs-network->=2.0:devel/hs-network \
 			:hs-parsec->=2.0:devel/hs-parsec \
 			:hs-xhtml->=3000.0.0:www/hs-xhtml
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 
 .include <bsd.port.mk>

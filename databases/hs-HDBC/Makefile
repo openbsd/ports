@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/15 17:18:50 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/17 13:46:35 kili Exp $
 
 COMMENT =		abstraction layer between Haskell and SQL
 
 DISTNAME =		HDBC-2.2.4
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		4
 CATEGORIES =		databases
 HOMEPAGE =		http://software.complete.org/hdbc
 
@@ -20,5 +20,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 LIB_DEPENDS =		::devel/hs-convertible
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/15 17:18:51 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		hashed file storage support code for Haskell
 
 DISTNAME =		hashed-storage-0.4.13
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -22,6 +22,7 @@ LIB_DEPENDS =		::devel/hs-binary \
 			::devel/hs-dataenc \
 			:hs-mmap->=0.4,<0.5:devel/hs-mmap \
 			::archivers/hs-zlib
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 NO_REGRESS =		Yes
 

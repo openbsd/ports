@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/15 17:18:51 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		posix regex backend for regex-base
 
 DISTNAME =		regex-posix-0.94.1
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		4
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
@@ -21,5 +21,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 LIB_DEPENDS =		:hs-regex-base->=0.93:devel/hs-regex-base
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

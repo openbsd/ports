@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 09:45:28 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
 DISTNAME =		pugs-compat-0.0.6.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
@@ -19,5 +20,6 @@ LIB_DEPENDS =		::devel/hs-regex-base \
 			::devel/hs-network \
 			::devel/hs-stm \
 			:hs-stringtable-atom->=0.0.6.1:devel/hs-stringtable-atom
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

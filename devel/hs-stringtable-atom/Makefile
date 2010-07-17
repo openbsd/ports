@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 09:40:36 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		memoize strings as atoms
 
 DISTNAME =		stringtable-atom-0.0.6.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
@@ -15,5 +16,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 LIB_DEPENDS =		::devel/hs-binary
+RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/15 18:01:57 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:37 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
 DISTNAME =		GLUT-2.1.2.1
-PKGNAME =		hs-${DISTNAME}p3
+REVISION =		4
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/
 
@@ -23,7 +23,8 @@ LIB_DEPENDS =		:hs-OpenGL->=2.2:graphics/hs-OpenGL
 
 # Should be changed to LIB_DEPENDS as soon as we have a GHC with
 # shared libs.
-RUN_DEPENDS =		::graphics/freeglut
+RUN_DEPENDS =		${LIB_DEPENDS} \
+			::graphics/freeglut
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 USE_X11 =		Yes
