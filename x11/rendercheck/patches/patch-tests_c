@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_c,v 1.1 2009/03/23 20:57:31 naddy Exp $
---- tests.c.orig	Mon Mar 23 09:23:55 2009
-+++ tests.c	Mon Mar 23 09:24:12 2009
-@@ -392,8 +392,8 @@ do_tests(Display *dpy, picture_info *win)
+$OpenBSD: patch-tests_c,v 1.2 2010/07/17 20:32:38 matthieu Exp $
+--- tests.c.orig	Fri Mar  7 22:46:33 2008
++++ tests.c	Sat Jul 17 19:22:44 2010
+@@ -393,8 +393,8 @@ do_tests(Display *dpy, picture_info *win)
  
          pictures_solid = malloc(num_colors * sizeof(picture_info));
  	for (i = 0; i < num_colors; i++) {
