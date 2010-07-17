@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_params_h,v 1.6 2009/09/24 10:32:42 benoit Exp $
---- src/params.h.orig	Mon Sep 14 03:13:01 2009
-+++ src/params.h	Mon Sep 21 09:43:22 2009
-@@ -49,15 +49,15 @@
+$OpenBSD: patch-src_params_h,v 1.7 2010/07/17 22:46:03 benoit Exp $
+--- src/params.h.orig	Mon Jun 14 04:38:55 2010
++++ src/params.h	Sat Jul 17 18:29:44 2010
+@@ -51,15 +51,15 @@
   * notes above.
   */
  #ifndef JOHN_SYSTEMWIDE
@@ -12,20 +12,20 @@ $OpenBSD: patch-src_params_h,v 1.6 2009/09/24 10:32:42 benoit Exp $
  #if JOHN_SYSTEMWIDE
  #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
 -#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
-+#define JOHN_SYSTEMWIDE_EXEC		"%%PREFIX%%/bin/john"
++#define JOHN_SYSTEMWIDE_EXEC		"${PREFIX}/bin/john"
  #endif
  #ifndef JOHN_SYSTEMWIDE_HOME
 -#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
-+#define JOHN_SYSTEMWIDE_HOME		"%%PREFIX%%/share/john"
++#define JOHN_SYSTEMWIDE_HOME		"${PREFIX}/share/john"
  #endif
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
-@@ -101,7 +101,7 @@
+@@ -103,7 +103,7 @@
  /*
   * File names.
   */
 -#define CFG_FULL_NAME			"$JOHN/john.conf"
-+#define CFG_FULL_NAME			"%%SYSCONFDIR%%/john.conf"
++#define CFG_FULL_NAME			"${SYSCONFDIR}/john.conf"
  #define CFG_ALT_NAME			"$JOHN/john.ini"
  #if JOHN_SYSTEMWIDE
  #define CFG_PRIVATE_FULL_NAME		JOHN_PRIVATE_HOME "/john.conf"

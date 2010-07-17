@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2009/09/24 10:32:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.40 2010/07/17 22:46:00 benoit Exp $
 
 COMMENT =		extremely fast password cracker
 
-DISTNAME =		john-1.7.3.4
+DISTNAME =		john-1.7.6
 CATEGORIES =		security
 
 HOMEPAGE =		http://www.openwall.com/john/
@@ -49,11 +49,7 @@ ALL_TARGET=		generic
 .endif
 
 do-configure:
-	@perl -pi -e "s,%%PREFIX%%,${PREFIX},;" \
-		-e "s,%%SYSCONFDIR%%,${SYSCONFDIR},;" ${WRKSRC}/params.h
-
-	@perl -pi -e 's,%%JOHN%%,${PREFIX}\/share\/john,g;' \
-		${WRKDIST}/run/john.conf
+	${SUBST_CMD} ${WRKSRC}/params.h
 
 do-install:
 	@grep -h -v '^#!comment:' ${WRKDIST}/run/password.lst \
