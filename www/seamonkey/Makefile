@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/09 15:39:00 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2010/07/17 22:53:13 landry Exp $
 
 COMMENT =	Mozilla application suite
 
@@ -33,7 +33,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/langpack/
+MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/
 
 LANGUAGES=	be \
 		ca \
@@ -58,6 +58,7 @@ LANGUAGES=	be \
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+DISTFILES+=	${EXTRACT_ONLY}
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
