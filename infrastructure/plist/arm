@@ -1,8 +1,9 @@
-# $OpenBSD: arm,v 1.28 2010/06/04 09:07:46 sthen Exp $
+# $OpenBSD: arm,v 1.29 2010/07/17 08:52:26 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 databases/pkglocatedb
+databases/sqlports
 net/rsync
 net/cvsync
 editors/vim,no_x11
