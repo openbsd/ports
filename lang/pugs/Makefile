@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/30 15:41:02 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/17 13:54:30 kili Exp $
 
 COMMENT =		Perl 6 Implementation
 
 DISTNAME =		Pugs-6.2.13.15
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://pugscode.org/
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =		Yes
 
-WANTLIB =		c m ncurses perl pthread util
+WANTLIB =		c gmp m ncurses perl pthread util
 
 MODULES =		lang/ghc converters/libiconv
 
@@ -33,6 +33,6 @@ BUILD_DEPENDS =		::devel/hs-binary \
 			:hs-pugs-DrIFT->=2.2.3.0:devel/hs-pugs-DrIFT \
 			:hs-stringtable-atom->=0.0.4:devel/hs-stringtable-atom
 
-LIB_DEPENDS =		gmp::devel/gmp
+LIB_DEPENDS =		::devel/gmp
 
 .include <bsd.port.mk>

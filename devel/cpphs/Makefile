@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/06/30 15:41:01 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/17 13:54:30 kili Exp $
 
 COMMENT =	liberalised reimplementation of cpp in Haskell
 
 DISTNAME =	cpphs-1.11
-PKGNAME =	${DISTNAME}p2
+REVISION =	2
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =	http://haskell.org/cpphs/
@@ -19,10 +19,10 @@ WANTLIB +=	c m pthread
 
 # Pure Haskell 98. Could also interpret via Hugs
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB +=	util
+WANTLIB +=	gmp util
 MODULES =	lang/ghc converters/libiconv
 MODGHC_BUILD =	nort
-LIB_DEPENDS =	gmp::devel/gmp
+LIB_DEPENDS =	::devel/gmp
 HC =		ghc
 HC_OPTS =	-O -o cpphs --make
 .else

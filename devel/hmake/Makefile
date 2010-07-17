@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/06/30 15:41:01 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/17 13:54:30 kili Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
 DISTNAME =	hmake-3.14
-PKGNAME =	${DISTNAME}p2
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/hmake/
@@ -26,10 +26,10 @@ CONFIGURE_STYLE =	simple
 WANTLIB +=		c m pthread
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB +=		util
+WANTLIB +=		gmp util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
-LIB_DEPENDS =		gmp::devel/gmp
+LIB_DEPENDS =		::devel/gmp
 CONFIGURE_ARGS =	--buildwith=ghc
 WANTLIB +=		ncurses readline
 # No LIB_DEPENDS; hmake should be usable without all the ghc packages
