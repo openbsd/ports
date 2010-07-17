@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/17 05:50:24 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2010/07/17 05:57:27 ajacoutot Exp $
 include/polkit-qt-1/
 include/polkit-qt-1/PolkitQt1/
 include/polkit-qt-1/PolkitQt1/ActionDescription
@@ -28,6 +27,9 @@ include/polkit-qt-1/polkitqt1-identity.h
 include/polkit-qt-1/polkitqt1-subject.h
 include/polkit-qt-1/polkitqt1-temporaryauthorization.h
 include/polkit-qt-1/polkitqt1-version.h
+@lib lib/libpolkit-qt-agent-1.so.${LIBpolkit-qt-agent-1_VERSION}
+@lib lib/libpolkit-qt-core-1.so.${LIBpolkit-qt-core-1_VERSION}
+@lib lib/libpolkit-qt-gui-1.so.${LIBpolkit-qt-gui-1_VERSION}
 lib/pkgconfig/polkit-qt-1.pc
 lib/pkgconfig/polkit-qt-agent-1.pc
 lib/pkgconfig/polkit-qt-core-1.pc
