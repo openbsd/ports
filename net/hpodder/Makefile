@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/17 13:59:44 kili Exp $
 
 COMMENT =		podcast aggregator written in Haskell
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m pthread util
+WANTLIB =		c gmp m pthread sqlite3 util
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
@@ -23,8 +23,8 @@ MODGHC_BUILD =		cabal hackage nort
 BUILD_DEPENDS =		::devel/hs-ConfigFile \
 			:hs-HaXml->=1.13.2<1.19:textproc/hs-HaXml \
 			::databases/hs-HDBC-sqlite3
-LIB_DEPENDS =		sqlite3::databases/sqlite3 \
-			gmp::devel/gmp
+LIB_DEPENDS =		::databases/sqlite3 \
+			::devel/gmp
 RUN_DEPENDS =		:curl->=7.15.5:net/curl \
 			:py-mutagen->=1.9:audio/py-mutagen
 
