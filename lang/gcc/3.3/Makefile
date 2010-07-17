@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.42 2010/02/14 20:13:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2010/07/17 13:31:25 espie Exp $
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 m68k sparc sparc64 powerpc vax
+ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
-V=3.3.6
-FULL_VERSION=3.3.6
-FULL_PKGVERSION=3.3.6
+V = 3.3.6
+FULL_VERSION = 3.3.6
+FULL_PKGVERSION = 3.3.6
 BOOTSTRAP_GEN = 8
 ADASTRAP = adastrap-i386-3.3.6-${BOOTSTRAP_GEN}.tgz
 
-PKGNAME-main=	gcc-${FULL_PKGVERSION}p15
-PKGNAME-c++ =	g++-${FULL_PKGVERSION}p14
-PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p4
-PKGNAME-g77=	g77-${FULL_PKGVERSION}p12
-PKGNAME-java=	gcj-${FULL_PKGVERSION}p11
-PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p13
-PKGNAME-ada=	gnat-${FULL_PKGVERSION}p11
-SHARED_LIBS=	estdc++		6.0 \
+PKGNAME-main =	gcc-${FULL_PKGVERSION}
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}
+PKGNAME-estdc =	libstdc++-${FULL_PKGVERSION}
+PKGNAME-g77 =	g77-${FULL_PKGVERSION}
+PKGNAME-java =	gcj-${FULL_PKGVERSION}
+PKGNAME-objc =	gobjc-${FULL_PKGVERSION}
+PKGNAME-ada =	gnat-${FULL_PKGVERSION}
+SHARED_LIBS =	estdc++		6.0 \
 		g2c		1.0 \
 		-org-w3c-dom	1.0 \
 		-org-xml-sax	1.0 \
@@ -23,87 +23,94 @@ SHARED_LIBS=	estdc++		6.0 \
 		objc		2.0 \
 		objc_gc		2.0
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+REVISION-main =		16
+REVISION-c++ =		15
+REVISION-estdc =	5
+REVISION-g77 =		14
+REVISION-java =		12
+REVISION-objc =		14
+REVISION-ada =		12
 
-PSEUDO_FLAVORS=c++ fortran objc java ada
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-.if ${MACHINE_ARCH} == "i386"
-FLAVOR?=c++ fortran objc ada
-.else
-FLAVOR?=c++ fortran objc
-.endif
+PSEUDO_FLAVORS =	c++ fortran objc java ada
+
+.include <bsd.own.mk>
+
+# currently broken on i386 ? so empty
+ONLY_FOR_ARCHS-ada =
+
+FLAVOR ?= c++ fortran objc ada
 
 .if ${FLAVOR:L:Mjava}
-FLAVOR+=c++
+FLAVOR += c++
 .endif
 
-BUILD_DEPENDS=	:autoconf-2.13:devel/autoconf/2.13
-BUILD_DEPENDS+=	::devel/metaauto
+BUILD_DEPENDS =		:autoconf-2.13:devel/autoconf/2.13
+BUILD_DEPENDS +=	::devel/metaauto
 
 # This can be patched out, apart from java that wants a pure parser.
-BUILD_DEPENDS+= :bison-*:devel/bison
+BUILD_DEPENDS += 	:bison-*:devel/bison
 
 
-MULTI_PACKAGES=-main
-# No sub packages description
-DESCR=${PKGDIR}/DESCR
-DESCR-main = ${DESCR}
-DESCR-c++ = ${DESCR}
-DESCR-estdc = ${DESCR}
-DESCR-g77 = ${DESCR}
-DESCR-java = ${DESCR}
-DESCR-objc = ${DESCR}
-DESCR-ada= ${DESCR}
+MULTI_PACKAGES =	-main
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS =	::devel/dejagnu
 
-DISTNAME=	gcc-${FULL_VERSION}
+DISTNAME =		gcc-${FULL_VERSION}
 
-DISTFILES=  ${DISTNAME}.tar.bz2
-SUPDISTFILES=${ADASTRAP}:0
+DISTFILES =  		${DISTNAME}.tar.bz2
+SUPDISTFILES =		${ADASTRAP}:0
 
-MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+MASTER_SITES0 =	ftp://quatramaran.ens.fr/pub/espie/
 
-CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
+CONFIGURE_STYLE =	gnu
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
-LANGS=c
+LANGS = c
 
 .if ${FLAVOR:L:Mc++}
-LANGS:=${LANGS},c++
-MULTI_PACKAGES+=-c++ -estdc
+LANGS := 		${LANGS},c++
+MULTI_PACKAGES += 	-c++ -estdc
 .endif
 
 .if ${FLAVOR:L:Mfortran}
-LANGS:=${LANGS},f77
-MULTI_PACKAGES+=-g77
+LANGS :=		${LANGS},f77
+MULTI_PACKAGES +=	-g77
 .endif
 
 .if ${FLAVOR:L:Mobjc}
-LANGS:=${LANGS},objc
-MULTI_PACKAGES+=-objc
+LANGS := 		${LANGS},objc
+MULTI_PACKAGES += 	-objc
 .endif
 
 .if ${FLAVOR:L:Mjava}
-LANGS:=${LANGS},java
-MULTI_PACKAGES+=-java
-CONFIGURE_ARGS+=--enable-java-gc=system-boehm
+LANGS :=		${LANGS},java
+MULTI_PACKAGES +=	-java
+CONFIGURE_ARGS +=	--enable-java-gc=system-boehm
 .endif
 
+BUILD_ADA = No
 .if ${FLAVOR:L:Mada}
-LANGS:=${LANGS},ada
-MULTI_PACKAGES+=-ada
-DISTFILES+=${ADASTRAP}:0
-CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
-MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+MULTI_PACKAGES +=	-ada
+# currently broken everywhere
+.  if ${MACHINE_ARCH:L} == "i386"
+#BUILD_ADA = yes
+.  endif
+.endif
+.if ${BUILD_ADA:L} == "yes"
+LANGS :=	${LANGS},ada
+DISTFILES +=	${ADASTRAP}:0
+CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+MAKE_ENV =	ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 
 post-build:
 	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
 .endif
 
 post-extract:
-.if ${FLAVOR:L:Mada}
+.if ${BUILD_ADA:L} == "yes"
 .  for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
@@ -116,14 +123,14 @@ post-extract:
 .endfor
 
 post-install:
-.if ${FLAVOR:L:Mada}
+.if ${BUILD_ADA:L} == "yes"
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/adainclude
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/include
 
-CONFIGURE_ENV+=am_cv_func_iconv=no
+CONFIGURE_ENV +=	am_cv_func_iconv=no
 
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS = \
 	--verbose \
 	--program-transform-name=s,^,e, \
 	--disable-nls  \
@@ -132,59 +139,60 @@ CONFIGURE_ARGS= \
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
-CONFIGURE_ARGS+=--enable-cpp
+CONFIGURE_ARGS += --enable-cpp
 
 .if ${FLAVOR:L:Mjava}
-CONFIGURE_ARGS+=--enable-sjlj-exceptions
+CONFIGURE_ARGS += --enable-sjlj-exceptions
 # No way around it, java wants a pure parser
-BUILD_DEPENDS+=:bison-*:devel/bison
+BUILD_DEPENDS += ::devel/bison
 .endif
 
 
 # if you wish to try your luck
-#CONFIGURE_ARGS+= --enable-threads=posix
+#CONFIGURE_ARGS += --enable-threads=posix
 
 CONFIGURE_ARGS += --with-gnu-as 
 CONFIGURE_ARGS += --with-gnu-ld 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=flavored
+SEPARATE_BUILD = flavored
 
-USE_GMAKE= yes
+USE_GMAKE = 	Yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
-ALL_TARGET=bootstrap
+ALL_TARGET = bootstrap
 
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
-PKG_ARGS+=-DPIC=1
+PKG_ARGS += -DPIC=1
 .else
-PKG_ARGS+=-DPIC=0
+PKG_ARGS += -DPIC=0
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
-PKG_ARGS+=-DPPC=1
+PKG_ARGS += -DPPC=1
 .else
-PKG_ARGS+=-DPPC=0
+PKG_ARGS += -DPPC=0
 .endif
 
-RUN_DEPENDS=	:gcc-${FULL_PKGVERSION}:${PKGPATH}
-WANTLIB=c
+RUN_DEPENDS =	:gcc-${FULL_PKGVERSION}:${PKGPATH}
+WANTLIB =	c
 
-RUN_DEPENDS-main=
+RUN_DEPENDS-main =
 
-RUN_DEPENDS-estdc=
-WANTLIB-estdc=
+RUN_DEPENDS-estdc =
+WANTLIB-estdc =
 
-LIB_DEPENDS-java=gc::devel/boehm-gc
+LIB_DEPENDS-java = ::devel/boehm-gc
+WANTLIB-java =	${WANTLIB} gc
 
-RUN_DEPENDS-c++ =${RUN_DEPENDS} ::${PKGPATH},-estdc
+RUN_DEPENDS-c++ = ${RUN_DEPENDS} ::${PKGPATH},-estdc
 
 
 .include <bsd.port.mk>
 
-ADA_PACKAGE=${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
-GCC_PACKAGE=${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
+ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
+GCC_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
 
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
