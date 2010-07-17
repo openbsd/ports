@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/06 09:32:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/17 23:25:51 benoit Exp $
 
 COMMENT =	Python module to access NOAA's METAR weather reports
 
-MODPY_EGG_VERSION =	0.15
+MODPY_EGG_VERSION =	0.16
 DISTNAME =		pymetar-${MODPY_EGG_VERSION}
 PKGNAME =		py-metar-${MODPY_EGG_VERSION}
 CATEGORIES =		astro
@@ -24,7 +24,6 @@ MODULES =	lang/python
 NO_REGRESS =	Yes
 
 pre-build:
-	cp ${WRKSRC}/bin/weather.py ${WRKSRC}/bin/pymet
-	@perl -pi -e 's,bin/weather.py,bin/pymet,g' ${WRKSRC}/setup.py
+	cp ${WRKSRC}/bin/pymetar ${WRKSRC}/bin/pymet
 
 .include <bsd.port.mk>

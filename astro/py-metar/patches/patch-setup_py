@@ -1,13 +1,13 @@
---- setup.py.orig	Sun Jun 28 18:39:44 2009
-+++ setup.py	Sat Oct  3 23:10:10 2009
+$OpenBSD: patch-setup_py,v 1.5 2010/07/17 23:25:54 benoit Exp $
+--- setup.py.orig	Sun Jan 10 19:22:33 2010
++++ setup.py	Fri Jan 22 11:15:34 2010
 @@ -25,7 +25,7 @@
        url = "http://www.schwarzvogel.de/software-pymetar.shtml",
        packages= [ "" ],
        py_modules=["pymetar"],
--      scripts = [ "bin/weather.py" ], 
+-      scripts = [ "bin/pymetar" ], 
 -      data_files = [("share/doc/pymetar-%s/"%pymetar.__version__,
--       ['README', 'COPYING', 'THANKS', 'TODO', 'bin/example.py', 'librarydoc.txt'])]
 +      scripts = [ "bin/pymet" ], 
 +      data_files = [("share/doc/py-metar",
-+       ['README', 'COPYING', 'THANKS', 'librarydoc.txt'])]
+        ['README', 'COPYING', 'THANKS', 'librarydoc.txt'])]
        )
