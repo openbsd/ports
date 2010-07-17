@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/30 15:41:02 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/17 13:49:21 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
 DISTNAME =		xmonad-0.9.1
-PKGNAME-main =		${DISTNAME}p2
-PKGNAME-lib =		${DISTNAME:S,-,-lib-,}p3
+PKGNAME-main =		${DISTNAME}
+PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
+REVISION-main =		2
+REVISION-lib =		4
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -17,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		X11 Xext Xinerama c m pthread util
+WANTLIB-main =		X11 Xext Xinerama c gmp m pthread util
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage haddock register
@@ -28,8 +30,9 @@ MODGHC_BUILD +=		nort
 
 BUILD_DEPENDS =		:hs-X11->=1.5.0.0:x11/hs-X11
 LIB_DEPENDS-lib =	:hs-X11->=1.5.0.0:x11/hs-X11
+RUN_DEPENDS-lib =	${LIB_DEPENDS-lib}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			gmp::devel/gmp
+			::devel/gmp
 
 USE_X11 =		Yes
 
