@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/13 20:39:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/18 18:27:13 kili Exp $
 
 #
 # XXX:
@@ -18,8 +18,8 @@ COMMENT-odbc=		ODBC backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		4.0.9
 
-PKGNAME-main=		${DISTNAME}v0
-EPOCH-main=		0
+PKGNAME-main=		${DISTNAME}
+EPOCH-main=		1
 #PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 #EPOCH-ldap=		0
 PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
