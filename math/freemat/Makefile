@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/18 14:33:39 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/18 17:19:49 steven Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
 V=		3.6
 DISTNAME=	FreeMat-${V}
 PKGNAME=	freemat-${V}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics math
 
@@ -29,6 +29,7 @@ MODFORTRAN_WANTG77= Yes
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	::devel/ffcall \
+		::math/amd \
 		::math/arpack \
 		::math/blas \
 		::math/fftw3,double \
