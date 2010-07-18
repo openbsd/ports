@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/18 19:12:05 naddy Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.1.1
-PKGNAME=	${DISTNAME:L}p7
+PKGNAME=	${DISTNAME:L}
+REVISION=	8
+
 SHARED_LIBS +=	GUI                  1.0      # .0.1
 
 CATEGORIES=	devel graphics
@@ -18,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	X11 Xau Xrandr Xrender iconv Xdmcp Xext m pthread-stubs sndio \
-		usbhid xcb
+		stdc++ usbhid xcb
 
 LIB_DEPENDS=	SDL.::devel/sdl
 
@@ -30,8 +32,8 @@ CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.own.mk>
-USE_GCC3?=No
-.if ${USE_GCC3:L} == "yes"
+
+.if ${COMPILER_VERSION:L:Mgcc[34]}
 MAKE_FLAGS+=libGUI_la_LIBADD=-lsupc++
 .endif
 

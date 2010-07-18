@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/18 19:12:05 naddy Exp $
 
 COMMENT-main=	C++ wrapper for the Simple DirectMedia Layer
 COMMENT-docs=	SDLmm documentation
@@ -40,10 +40,10 @@ post-install:
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-.include <bsd.own.mk>
-USE_GCC3?= No
 
-.if ${USE_GCC3:L} == "yes"
+.include <bsd.own.mk>
+
+.if ${COMPILER_VERSION:L:Mgcc3}
 CONFIGURE_ENV=	LIBS="${LIBS} -lstdc++ -lm"
 .else
 CONFIGURE_ENV=	LIBS="${LIBS} -lstdc++"
