@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/18 14:33:39 steven Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
@@ -18,7 +18,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB= 	GL GLU amd c curses m ossaudio pthread stdc++ z \
-		${MODFORTRAN_WANTLIB}
+		${MODFORTRAN_WANTLIB} \
+		avcall arpack.>=1 blas.>=1 fftw3.>=4 fftw3f.>=4 lapack.>=1 \
+		pcre portaudio umfpack QtGui QtNetwork QtOpenGL QtSvg QtXml
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
@@ -26,16 +28,16 @@ MODULES=	x11/qt4 devel/gettext fortran
 MODFORTRAN_WANTG77= Yes
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=	avcall::devel/ffcall \
-		arpack.>=1::math/arpack \
-		blas.>=1::math/blas \
-		fftw3.>=4::math/fftw3,double \
-		fftw3f.>=4::math/fftw3,float \
-		lapack.>=1::math/lapack \
-		pcre::devel/pcre \
-		portaudio::audio/portaudio-svn \
-		umfpack::math/umfpack \
-		QtGui,QtNetwork,QtOpenGL,QtSvg,QtXml::x11/qt4 \
+LIB_DEPENDS=	::devel/ffcall \
+		::math/arpack \
+		::math/blas \
+		::math/fftw3,double \
+		::math/fftw3,float \
+		::math/lapack \
+		::devel/pcre \
+		::audio/portaudio-svn \
+		::math/umfpack \
+		::x11/qt4 \
 		${MODFORTRAN_LIB_DEPENDS}
 
 USE_X11=	Yes
