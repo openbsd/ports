@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/06/26 16:34:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/07/18 19:03:08 robert Exp $
 @bin bin/mc
 bin/mcedit
 @bin bin/mcmfmt
@@ -93,6 +93,7 @@ share/examples/mc/mc.menu
 share/examples/mc/mc.menu.sr
 @sample ${SYSCONFDIR}/mc/mc.menu.sr
 share/examples/mc/sfs.ini
+@sample ${SYSCONFDIR}/mc/sfs.ini
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
