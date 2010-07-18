@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.40 2010/07/07 16:37:57 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.41 2010/07/18 06:12:26 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -89,6 +89,7 @@ related ports under the x11/gnome category)
    * gconf-editor - editor for GConf settings
    * gnomebaker - CD/DVD burning application
    * gnome-nettool - interface for various networking tools
+   * gnome-system-monitor - sytem monitor program
    * nautilus-sendto - integrate applications into Nautilus
    * pessulus - lockdown editor for desktop
    * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
