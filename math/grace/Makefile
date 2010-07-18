@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/18 10:30:41 steven Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/26 11:07:32 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/18 10:30:41 steven Exp $
 
 COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/12 18:00:13 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/18 10:30:41 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${VERSION}p3
+PKGNAME=	${DISTNAME}-${VERSION}
+REVISION=	3
 SHARED_LIBS=	blas	1.0
 
 CATEGORIES=	math

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/18 10:30:41 steven Exp $
 
 COMMENT=	multi-radix integer desk calculator
 
 DISTNAME=	hc
-PKGNAME=	hc-1.1p0
+PKGNAME=	hc-1.1
+REVISION=	0
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.geocities.com/connorbd/software/hc.html

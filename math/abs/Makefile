@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/18 10:30:41 steven Exp $
 
 COMMENT=	free spreadsheet with graphical user interface
 
 DISTNAME=	abs-src-0.8
-PKGNAME=	${DISTNAME:S/-src//}p2
+PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

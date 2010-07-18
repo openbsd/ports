@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/18 10:30:41 steven Exp $
 
 COMMENT=	multi-radix calculator for x11
 
 DATE=		19951219
 DISTNAME=	hexcalc
-PKGNAME=	${DISTNAME}-${DATE}p0
+PKGNAME=	${DISTNAME}-${DATE}
+REVISION=	0
 CATEGORIES=	math
 EXTRACT_SUFX=	..tar.Z
 
