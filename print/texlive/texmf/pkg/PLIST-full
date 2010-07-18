@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.7 2009/12/15 18:01:57 espie Exp $
+@comment $OpenBSD: PLIST-full,v 1.8 2010/07/18 09:05:32 espie Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2009
 @conflict texlive_texmf-minimal-<2009
@@ -23041,8 +23041,8 @@ share/texmf/web2c/fmtutil.cnf-full
 @exec fmtutil-sys --all > /dev/null 2>&1
 @exec updmap-sys --syncwithtrees > /dev/null 2>&1
 @exec texlinks
-@unexec %D/bin/tl-link-config
-@unexec mktexlsr > /dev/null 2>&1
-@unexec fmtutil-sys --all > /dev/null 2>&1
-@unexec updmap-sys --syncwithtrees > /dev/null 2>&1
-@unexec texlinks
+@unexec-delete %D/bin/tl-link-config
+@unexec-delete mktexlsr > /dev/null 2>&1
+@unexec-delete fmtutil-sys --all > /dev/null 2>&1
+@unexec-delete updmap-sys --syncwithtrees > /dev/null 2>&1
+@unexec-delete texlinks

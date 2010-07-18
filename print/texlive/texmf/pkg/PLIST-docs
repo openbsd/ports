@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2009/12/15 18:01:57 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2010/07/18 09:05:32 espie Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2009
 @conflict texlive_texmf-minimal-<2009
@@ -15904,4 +15904,4 @@ share/texmf-dist/doc/latex/vwcol/vwcol.pdf
 share/texmf-dist/doc/latex/aeguill/guil-test1.tex
 @comment share/tlpkg/README
 @exec mktexlsr > /dev/null 2>&1
-@unexec mktexlsr > /dev/null 2>&1
+@unexec-delete mktexlsr > /dev/null 2>&1
