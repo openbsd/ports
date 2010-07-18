@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/10/06 09:25:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/18 18:49:01 naddy Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS =	amd64 alpha i386 sparc
@@ -32,11 +32,11 @@ NO_REGRESS =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so.${LIBst_VERSION} \
+		${WRKSRC}/OPENBSD_${OSREV}_OPT/libst.so.${LIBst_VERSION} \
 		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.a \
+	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OSREV}_OPT/libst.a \
 		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/st.h \
+	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OSREV}_OPT/st.h \
 		${PREFIX}/include
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libst
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libst

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/24 20:17:02 kettenis Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/18 18:49:01 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -30,7 +30,7 @@ USE_GMAKE=		Yes
 FLAVORS=		gtk no_x11
 FLAVOR?=
 
-GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
+GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf

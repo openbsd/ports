@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/05/26 21:29:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/18 18:49:02 naddy Exp $
 
 COMMENT=	extensible window manager
 
@@ -32,7 +32,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs rep xcb z
 
 MODULES=	devel/gettext
 
-GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
+GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=	GNU_ARCH VERSION
 
 USE_X11=	Yes

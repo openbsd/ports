@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/02/26 18:17:38 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2010/07/18 18:49:01 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -32,7 +32,7 @@ MULTI_PACKAGES=		-main -el -leim
 FLAVORS=		no_x11
 FLAVOR?=
 
-GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
+GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop

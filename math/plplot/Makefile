@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2010/07/18 18:49:01 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,7 +69,7 @@ CONFIGURE_ARGS=	-D ENABLE_java=OFF \
 		-D ENABLE_octave=OFF \
 		-D PLD_wxwidgets=OFF
 
-GCC_ARCH=       ${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
+GCC_ARCH=       ${MACHINE_ARCH}-unknown-openbsd${OSREV}
 GNU_ARCH=       ${GCC_ARCH:S/amd64/x86_64/}
 SUBST_VARS+=	GNU_ARCH
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2010/07/18 18:49:01 naddy Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=		gdbm.>=2::databases/gdbm \
 			gmp::devel/gmp \
 			ffi::devel/libffi
 
-GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
+GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=		GNU_ARCH VERSION
 
 USE_GMAKE=		Yes

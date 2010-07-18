@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/06/23 17:11:50 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/07/18 18:49:01 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,7 +46,7 @@ WRKDIST=	${WRKDIR}/enigmail
 WRKSRC=		${MOZBASE}/mailnews/extensions/enigmail
 
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
-ENIGMAIL_XPI=	${DISTNAME:S/.1//}-${OPSYS:L}-${GNU_ARCH}.xpi
+ENIGMAIL_XPI=	${DISTNAME:S/.1//}-openbsd-${GNU_ARCH}.xpi
 
 # unzip ${ENIGMAIL_XPI} and inspect install.rdf for GUID
 GUID=		{847b3a00-7ab1-11d4-8f02-006008948af5}

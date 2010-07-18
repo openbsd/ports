@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1022 2010/07/10 15:21:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1023 2010/07/18 18:49:01 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -123,8 +123,6 @@ REFETCH ?= false
 
 # Constants used by the ports tree
 ARCH ?!= uname -m
-OPSYS = OpenBSD
-OPSYS_VER = ${OSREV}
 
 ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
 	loongson luna88k m68k m88k mac68k macppc mips64 mips64el \
@@ -1330,7 +1328,7 @@ IGNORE += "is marked as broken: ${BROKEN:Q}"
 .  endif
 .endif
 .if defined(COMES_WITH)
-IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
+IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
 .endif
 
 IGNORE_IS_FATAL ?= "No"
@@ -2060,7 +2058,7 @@ _internal-regress: ${_BUILD_COOKIE} ${_DEPREGRESS_COOKIES} ${_REGRESS_COOKIE}
 # packing list utilities.  This generates a packing list from a recently
 # installed port.  Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
-# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
+# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=OpenBSD, vers=${OSREV})
 # when port is installed or package created.
 #
 .  if ${SHARED_ONLY:L} == "yes"
@@ -2263,7 +2261,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 				    if [ -e $$i ]; then \
 						case "${PATCH_DEBUG:L}" in \
 							no) ;; \
-							*) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
+							*) ${ECHO_MSG} "===>   Applying OpenBSD patch $$i" ;; \
 						esac; \
 						if [ -s $$i ]; then \
 							${_SYSTRACE_CMD} ${PATCH} ${PATCH_ARGS} < $$i || \

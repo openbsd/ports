@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/18 18:49:02 naddy Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -30,7 +30,7 @@ LIB_DEPENDS= 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=		devel/gettext
 
-GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
+GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=		GNU_ARCH VERSION
 
 USE_X11=		Yes

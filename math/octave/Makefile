@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/18 14:33:39 steven Exp $
+# $OpenBSD: Makefile,v 1.49 2010/07/18 18:49:01 naddy Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -70,7 +70,7 @@ CONFIGURE_ENV+=	FFLAGS="${FFLAGS}"
 .endif
 
 # needed to build on amd64
-GCC_ARCH=	${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
+GCC_ARCH=	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 GNU_ARCH=	${GCC_ARCH:S/amd64/x86_64/}
 SUBST_VARS=	GNU_ARCH VERSION
 

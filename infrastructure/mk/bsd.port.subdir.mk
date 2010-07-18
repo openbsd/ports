@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.96 2010/05/09 21:41:40 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.97 2010/07/18 18:49:01 naddy Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -17,8 +17,6 @@
 #
 # ECHO_MSG	Used to print all the '===>' style prompts - override this
 #		to turn them off [echo].
-#
-# OPSYS		Get the operating system type [`uname -s`]
 #
 # SUBDIR	A list of subdirectories that should be built as well.
 #		Each of the targets will execute the same target in the
@@ -55,9 +53,6 @@
 STRIP ?= -s
 .endif
 
-.if !defined(OPSYS)	# XXX !!
-OPSYS = OpenBSD
-.endif
 ARCH ?!= uname -m
 
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"

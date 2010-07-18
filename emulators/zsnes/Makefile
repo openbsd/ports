@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/14 16:50:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/18 18:49:01 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -34,7 +34,7 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 			--with-png \
 			--with-opengl \
-			--target=${MACHINE}-unknown-openbsd${OPSYS_VER}
+			--target=${MACHINE}-unknown-openbsd${OSREV}
 CONFIGURE_ENV+=		LDFLAGS="-lm" \
 			CFLAGS="${CFLAGS:N-O*} -I${X11BASE}/include -I${LOCALBASE}/include/libpng"
 ALL_TARGET=
