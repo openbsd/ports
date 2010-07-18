@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/16 10:04:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/18 15:41:22 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.97
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 
 SHARED_LIBS +=  polkit-gobject-1	0.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	0.0 # .0.0
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c dbus-1 dbus-glib-1 expat gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z
+WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z eggdbus-1
 
 #MASTER_SITES=	http://hal.freedesktop.org/releases/
 MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 BUILD_DEPENDS+=	::textproc/libxslt \
 		::textproc/docbook-xsl
 
-LIB_DEPENDS=	eggdbus-1::devel/eggdbus
+LIB_DEPENDS=	::devel/eggdbus
 
 AUTOCONF_VERSION= 2.62
 AUTOMAKE_VERSION=1.9

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendlocalauthorizationstore_c,v 1.1 2010/07/18 15:41:22 ajacoutot Exp $
+
+- Configuration reload on every query
+779c0153fc0bd3c2e302dac1979d17638f054229
+Set has_data to true after the data is loaded to prevent excessive
+reloading of config files.
+
+--- src/polkitbackend/polkitbackendlocalauthorizationstore.c.orig	Wed Mar 10 18:46:19 2010
++++ src/polkitbackend/polkitbackendlocalauthorizationstore.c	Sun Jul 18 17:28:52 2010
+@@ -641,6 +641,8 @@ polkit_backend_local_authorization_store_ensure (Polki
+       g_free (filename);
+     }
+ 
++  store->priv->has_data = TRUE;
++
+  out:
+   g_list_foreach (files, (GFunc) g_object_unref, NULL);
+   g_list_free (files);
