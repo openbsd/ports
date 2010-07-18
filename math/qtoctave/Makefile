@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/18 10:50:12 steven Exp $
 
 COMMENT=	graphical front-end for octave
 
 DISTNAME=	qtoctave-0.8.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	math
 
 HOMEPAGE=	http://qtoctave.wordpress.com/

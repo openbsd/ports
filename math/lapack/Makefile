@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/12 18:00:14 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/18 10:50:11 steven Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
 DISTNAME=	lapack-3.1.1
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 
 SHARED_LIBS=	lapack 5.0
 

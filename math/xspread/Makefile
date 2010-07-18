@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/18 10:50:12 steven Exp $
 
 COMMENT=	spreadsheet program under X11
 
 DISTNAME=	xspread3.1.1c
-PKGNAME=	xspread-3.1.1cp0
+PKGNAME=	xspread-3.1.1c
+REVISION=	0
 CATEGORIES=	math
 
 # GPLv2

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/13 18:29:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/18 10:50:12 steven Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
 V=			1.14
 DISTNAME=		MiniSat-p_v$V.2006-Sep-07.src
-PKGNAME=		minisat-$Vp1
+PKGNAME=		minisat-$V
+REVISION=		1
 CATEGORIES=		math
 
 HOMEPAGE=		http://minisat.se/

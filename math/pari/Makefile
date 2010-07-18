@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/18 10:50:12 steven Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
 DISTNAME=	pari-2.1.6
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	math
 

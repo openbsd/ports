@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/18 10:50:12 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	probability and statistics utilities for Python
 
 DISTNAME=	probstat_0.912
-PKGNAME=	py-${DISTNAME:S/_/-/}p2
+PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	2
 CATEGORIES=	math
 
 HOMEPAGE=	http://probstat.sourceforge.net/

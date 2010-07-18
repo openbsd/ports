@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/05 06:58:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/18 10:50:12 steven Exp $
 
 COMMENT=	Python interface to the gnuplot plotting program
 
 MODPY_EGG_VERSION=	1.8
 DISTNAME=		gnuplot-py-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME:S/py-//}p0
+PKGNAME=		py-${DISTNAME:S/py-//}
+REVISION=		0
 CATEGORIES=		math graphics
 
 HOMEPAGE=		http://gnuplot-py.sourceforge.net/
