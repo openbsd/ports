@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2010/07/18 10:37:45 sthen Exp $
+@comment lib/librtmp.so
+@lib lib/librtmp.so.${LIBrtmp_VERSION}

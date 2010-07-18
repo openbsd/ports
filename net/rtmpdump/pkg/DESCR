@@ -1,3 +1,2 @@
-A small dumper for media content streamed over the RTMP protocol.
-Supplying an rtmp url will result in a dumped flv file, which can be
-played/transcoded using ffmpeg/mplayer, etc.
+rtmpdump is a toolkit for various types of RTMP stream. It includes
+a library, simple stream capture tool, and various utilities.

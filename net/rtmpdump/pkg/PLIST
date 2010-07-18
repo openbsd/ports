@@ -1,10 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/21 09:36:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/07/18 10:37:45 sthen Exp $
+%%SHARED%%
 @bin bin/rtmpdump
-@bin bin/rtmpgw
-@bin bin/rtmpsrv
-@bin bin/rtmpsuck
+include/librtmp/
+include/librtmp/amf.h
+include/librtmp/http.h
+include/librtmp/log.h
+include/librtmp/rtmp.h
+lib/librtmp.a
+lib/pkgconfig/
+lib/pkgconfig/librtmp.pc
 @man man/man1/rtmpdump.1
+@man man/man3/librtmp.3
 @man man/man8/rtmpgw.8
+@bin sbin/rtmpgw
+@bin sbin/rtmpsrv
+@bin sbin/rtmpsuck
 share/doc/rtmpdump/
 share/doc/rtmpdump/COPYING
 share/doc/rtmpdump/ChangeLog

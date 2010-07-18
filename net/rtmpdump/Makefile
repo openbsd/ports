@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/29 20:20:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/18 10:37:45 sthen Exp $
+
+SHARED_LIBS =		rtmp 0.0
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.2e
-#EXTRACT_SUFX =		.tgz
+DISTNAME =		rtmpdump-2.3
+EXTRACT_SUFX =		.tgz
 
 CATEGORIES =		net
 
@@ -23,12 +25,13 @@ MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= THREADLIB=-pthread
 
 NO_REGRESS =		Yes
 
-do-install:
+do-configure:
+	perl -pi -e 's,so\.0,so.${LIBrtmp_VERSION},g' \
+	    ${WRKSRC}/librtmp/Makefile
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtmpdump
 	cd ${WRKBUILD}; \
-	  ${INSTALL_PROGRAM} rtmpdump rtmpsrv rtmpsuck rtmpgw ${PREFIX}/bin; \
-	  ${INSTALL_MAN} rtmpdump.1 ${PREFIX}/man/man1; \
-	  ${INSTALL_MAN} rtmpgw.8 ${PREFIX}/man/man8; \
 	  ${INSTALL_DATA} README COPYING ChangeLog ${PREFIX}/share/doc/rtmpdump
 
 .include <bsd.port.mk>
