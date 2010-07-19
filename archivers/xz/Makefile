@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/10 15:27:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/19 12:04:12 sebastia Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
@@ -18,7 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext gcc3
+MODGCC3_ARCHES=	sparc
+
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes
