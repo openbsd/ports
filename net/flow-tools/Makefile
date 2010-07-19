@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.17 2010/05/06 21:40:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/19 16:30:11 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
 COMMENT=	cisco NetFlow utilities
 
 DISTNAME=	flow-tools-0.68.5
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
 
-MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # forked from:  http://www.splintered.net/sw/flow-tools/
-HOME_PAGE=	http://code.google.com/p/flow-tools/
+HOMEPAGE=	http://code.google.com/p/flow-tools/
 
 MASTER_SITES=	http://flow-tools.googlecode.com/files/
 
