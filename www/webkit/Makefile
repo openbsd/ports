@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/03 07:53:04 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2010/07/19 12:29:50 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.2.1
-DISTNAME =	webkit-${V}
-# XXX do not remove v0. pX comes before vX.
-PKGNAME =	webkit-${V}v0
+DISTNAME =	webkit-1.2.3
+EPOCH =		0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -13,7 +11,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	2.1 #.19.2
+SHARED_LIBS =	webkit-1.0	2.2 #.19.5
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -56,17 +54,20 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
 		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnutls gobject-2.0 gpg-error gthread-2.0 intl jpeg m \
+		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 gailutil \
+		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
+		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread xcb-render-util \
 		tasn1 z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
 
-LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
-		gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
-		gstvideo-0.10,gstapp-0.10,gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
-		icudata,icui18n,icuuc:icu4c->=4.4:textproc/icu4c \
-		sqlite3::databases/sqlite3 \
-		xslt::textproc/libxslt \
-		enchant::textproc/enchant \
-		soup-2.4:libsoup->=2.28:devel/libsoup
+LIB_DEPENDS =	::x11/gtk+2,-main \
+		::multimedia/gstreamer-0.10/core \
+		::multimedia/gstreamer-0.10/plugins-base \
+		:icu4c->=4.4:textproc/icu4c \
+		::databases/sqlite3 \
+		::textproc/libxslt \
+		::textproc/enchant \
+		:libsoup->=2.28:devel/libsoup
 
 BUILD_DEPENDS =	::devel/bison \
 		::devel/flex \

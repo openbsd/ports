@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.8 2010/07/03 07:53:04 landry Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.9 2010/07/19 12:29:50 landry Exp $
 install GtkLauncher, remove silent build lines, fix lpthread/pthread
---- GNUmakefile.in.orig	Fri May  7 23:03:21 2010
-+++ GNUmakefile.in	Thu Jun 24 18:04:00 2010
+--- GNUmakefile.in.orig	Thu Jul 15 22:47:03 2010
++++ GNUmakefile.in	Fri Jul 16 15:53:17 2010
 @@ -82,9 +82,9 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
@@ -14,7 +14,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  	$(am__EXEEXT_1)
  
  # For the Gtk port we want to use XP_UNIX both in X11 and Mac
-@@ -5895,7 +5895,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -5901,7 +5901,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_$(V))
  am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -23,7 +23,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  AM_V_at = $(am__v_at_$(V))
  am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
  am__v_at_0 = @
-@@ -5905,22 +5905,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -5911,22 +5911,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
@@ -50,7 +50,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  SOURCES = $(TestNetscapePlugin_libtestnetscapeplugin_la_SOURCES) \
  	$(libJavaScriptCore_la_SOURCES) \
  	$(nodist_libJavaScriptCore_la_SOURCES) \
-@@ -8976,9 +8976,10 @@ libJavaScriptCore_la_SOURCES = \
+@@ -8986,9 +8986,10 @@ libJavaScriptCore_la_SOURCES = \
  
  libJavaScriptCore_la_LIBADD = \
  	$(UNICODE_LIBS) \
@@ -63,7 +63,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -9027,12 +9028,12 @@ libwebkit_1_0_la_CPPFLAGS = \
+@@ -9037,12 +9038,12 @@ libwebkit_1_0_la_CPPFLAGS = \
  	$(HILDON_CPPFLAGS)
  
  libwebkit_1_0_la_LDFLAGS = \
@@ -77,7 +77,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  	libJavaScriptCore.la \
  	libWebCoreJS.la \
  	$(webcore_ldflags) \
-@@ -9094,7 +9095,7 @@ Programs_minidom_CFLAGS = \
+@@ -9104,7 +9105,7 @@ Programs_minidom_CFLAGS = \
  Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 -lm \
