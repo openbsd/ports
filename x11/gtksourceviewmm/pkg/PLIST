@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/07 07:58:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/19 22:06:06 ajacoutot Exp $
 %%SHARED%%
 include/gtksourceviewmm-2.0/
 include/gtksourceviewmm-2.0/gtksourceviewmm/
@@ -159,8 +159,8 @@ share/doc/gtksourceviewmm-2.0/reference/html/inherit__graph__2.png
 share/doc/gtksourceviewmm-2.0/reference/html/inherits.html
 share/doc/gtksourceviewmm-2.0/reference/html/modules.html
 share/doc/gtksourceviewmm-2.0/reference/html/pages.html
-share/doc/gtksourceviewmm-2.0/reference/html/since_2_10.html
-share/doc/gtksourceviewmm-2.0/reference/html/since_2_2.html
+share/doc/gtksourceviewmm-2.0/reference/html/since__2__10.html
+share/doc/gtksourceviewmm-2.0/reference/html/since__2__2.html
 share/doc/gtksourceviewmm-2.0/reference/html/tab_b.gif
 share/doc/gtksourceviewmm-2.0/reference/html/tab_l.gif
 share/doc/gtksourceviewmm-2.0/reference/html/tab_r.gif
