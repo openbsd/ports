@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tint2conf_main_c,v 1.1 2010/06/15 10:10:06 edd Exp $
---- src/tint2conf/main.c.orig	Sun Jun 13 00:17:45 2010
-+++ src/tint2conf/main.c	Mon Jun 14 13:54:38 2010
-@@ -424,7 +424,7 @@ static void menuApply()
+$OpenBSD: patch-src_tint2conf_main_c,v 1.2 2010/07/19 15:13:19 edd Exp $
+--- src/tint2conf/main.c.orig	Wed Jun 16 16:11:43 2010
++++ src/tint2conf/main.c	Mon Jul 19 16:10:31 2010
+@@ -417,7 +417,7 @@ static void menuApply()
  		copy_file(g_default_theme, g_path_config);
  
  		// restart panel
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_tint2conf_main_c,v 1.1 2010/06/15 10:10:06 edd Exp $
  	}
  }
  
-@@ -587,7 +587,7 @@ void read_config()
+@@ -580,7 +580,7 @@ void read_config()
  	}
  	g_width = 500;
  	g_height = 350;
