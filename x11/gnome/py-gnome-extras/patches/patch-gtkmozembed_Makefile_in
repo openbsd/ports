@@ -1,12 +1,57 @@
-$OpenBSD: patch-gtkmozembed_Makefile_in,v 1.2 2009/10/14 17:13:48 jasper Exp $
---- gtkmozembed/Makefile.in.orig	Tue Oct 13 15:52:29 2009
-+++ gtkmozembed/Makefile.in	Tue Oct 13 15:53:07 2009
-@@ -259,7 +259,7 @@ defs_DATA = gtkmozembed.defs
+$OpenBSD: patch-gtkmozembed_Makefile_in,v 1.3 2010/07/19 14:55:03 landry Exp $
+
+Needed generated Makefile goo to link/build gtkmozembedmodule.cpp with c++
+--- gtkmozembed/Makefile.in.orig	Sun Feb 15 23:21:02 2009
++++ gtkmozembed/Makefile.in	Thu Jul 15 22:33:14 2010
+@@ -73,6 +73,15 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
++CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
++	$(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
++LTCXXCOMPILE = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
++	--mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
++	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
++CXXLD = $(CXX)
++CXXLINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
++	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = $(gtkmozembed_la_SOURCES) $(nodist_gtkmozembed_la_SOURCES)
+ DIST_SOURCES = $(gtkmozembed_la_SOURCES)
+ defsDATA_INSTALL = $(INSTALL_DATA)
+@@ -259,17 +268,17 @@ defs_DATA = gtkmozembed.defs
  pkgpyexec_LTLIBRARIES = gtkmozembed.la
  gtkmozembed_la_LDFLAGS = -module -avoid-version	\
  	-export-symbols-regex initgtkmozembed	\
 -	-R$(MOZILLA_HOME) -L$(MOZILLA_HOME)
-+	-Wl,-rpath,'$(MOZILLA_HOME)' -L$(MOZILLA_HOME)
++	-Wl,-rpath,$(MOZILLA_HOME) -Wl,-export-dynamic -L$(MOZILLA_HOME)
  
  gtkmozembed_la_LIBADD = $(GTKMOZEMBED_LIBS)
- gtkmozembed_la_SOURCES = gtkmozembedmodule.c
+-gtkmozembed_la_SOURCES = gtkmozembedmodule.c
++gtkmozembed_la_SOURCES = gtkmozembedmodule.cpp
+ nodist_gtkmozembed_la_SOURCES = gtkmozembed.c
+ CLEANFILES = gtkmozembed.c
+ EXTRA_DIST = gtkmozembed.override gtkmozembed.defs
+ all: all-am
+ 
+ .SUFFIXES:
+-.SUFFIXES: .c .defs .lo .o .obj
++.SUFFIXES: .c .cpp .defs .lo .o .obj
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
+ 	@for dep in $?; do \
+ 	  case '$(am__configure_deps)' in \
+@@ -358,6 +367,14 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
++
++.cpp.o:
++	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++
++.cpp.lo:
++	$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo

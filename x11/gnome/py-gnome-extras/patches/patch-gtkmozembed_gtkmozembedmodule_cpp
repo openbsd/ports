@@ -1,0 +1,85 @@
+$OpenBSD: patch-gtkmozembed_gtkmozembedmodule_cpp,v 1.1 2010/07/19 14:55:03 landry Exp $
+
+Patch from ubuntu/debian/gentoo
+See http://patch-tracker.debian.org/patch/series/view/gnome-python-extras/2.25.3-5/01_xul19.patch
+--- gtkmozembed/gtkmozembedmodule.cpp.orig	Sun Jul 11 09:32:15 2010
++++ gtkmozembed/gtkmozembedmodule.cpp	Sun Jul 11 09:32:15 2010
+@@ -0,0 +1,78 @@
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++/* include this first, before NO_IMPORT_PYGOBJECT is defined */
++#include <pygobject.h>
++#include <pygtk/pygtk.h>
++
++#ifdef XPCOM_GLUE
++#include "gtkmozembed_glue.cpp"
++#endif
++
++G_BEGIN_DECLS
++void initgtkmozembed(void);
++void pygtkmozembed_add_constants(PyObject *module, const gchar *strip_prefix);
++void pygtkmozembed_register_classes (PyObject *d);
++G_END_DECLS
++
++extern PyMethodDef pygtkmozembed_functions[];
++
++void
++initgtkmozembed(void)
++{
++    PyObject *m, *d;
++    int argc = 0;
++
++    init_pygobject ();
++
++#ifdef XPCOM_GLUE
++    static const GREVersionRange greVersion = {
++    "1.9.1", PR_TRUE,
++    "1.9.3", PR_FALSE
++    };
++    char xpcomLocation[4096];
++    nsresult rv = GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, 4096);
++    if (NS_FAILED(rv)) {
++	printf("GRE_GetGREPathWithProperties failed\n");
++	return;
++    }
++
++    // Startup the XPCOM Glue that links us up with XPCOM.
++    XPCOMGlueStartup(xpcomLocation);
++    if (NS_FAILED(rv)) {
++        printf("XPCOMGlueStartup failed\n");
++        return;
++    }
++
++    rv = GTKEmbedGlueStartup();
++    if (NS_FAILED(rv)) {printf("location: %s \n", xpcomLocation);
++        printf("GTKEmbedGlueStartup failed\n");
++        return;
++    }
++
++    rv = GTKEmbedGlueStartupInternal();
++    if (NS_FAILED (rv)) {
++        printf ("GTKEmbedGlueStartupInternal failed\n");
++        return;
++    }
++
++    //gtk_moz_embed_set_comp_path(xpcomLocation);
++
++    char *lastSlash = strrchr(xpcomLocation, '/');
++    if (lastSlash)
++      *lastSlash = '\0';
++
++    gtk_moz_embed_set_path(xpcomLocation);
++#endif
++
++    m = Py_InitModule ("gtkmozembed", pygtkmozembed_functions);
++    d = PyModule_GetDict (m);
++
++    pygtkmozembed_add_constants(m, "GTK_MOZ_EMBED_");
++    pygtkmozembed_register_classes (d);
++
++    if (PyErr_Occurred ()) {
++        Py_FatalError ("can't initialise module gtkmozembed");
++    }
++}

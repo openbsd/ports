@@ -1,11 +1,87 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/10/14 17:13:48 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2010/07/19 14:55:03 landry Exp $
 
 Regenerated gdl.defs and updated dependency to gdl 2.27.92
 From upstream git.
+add necessary autofoo to make it build against our xulrunner 1.9
+inspired from debian patches
 
---- configure.ac.orig	Wed Oct 14 19:06:44 2009
-+++ configure.ac	Wed Oct 14 19:07:20 2009
-@@ -310,14 +310,9 @@ dnl should we build the gdl module?
+--- configure.ac.orig	Sun Feb 15 23:20:23 2009
++++ configure.ac	Mon Jul 19 16:31:35 2010
+@@ -81,6 +81,7 @@ AM_CONDITIONAL(OS_WIN32, test "$os_win32" = "yes")
+ AC_DISABLE_STATIC
+ AC_LIBTOOL_WIN32_DLL
+ AC_PROG_LIBTOOL
++AC_PROG_CXX
+ 
+ dnl check for python
+ AM_PATH_PYTHON(2.3)
+@@ -88,7 +89,7 @@ AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find 
+ 
+ dnl check for pygtk
+ PKG_CHECK_MODULES(PYGTK, pygtk-2.0 >= pygtk_required_version)
+-AC_SUBST(PYGTK_CFLAGS)
++AC_SUBST(PYGTK_FLAGS)
+ AC_PATH_PROG(PYGTK_CODEGEN, pygtk-codegen-2.0, no)
+ if test "x$PYGTK_CODEGEN" = xno; then
+   AC_MSG_ERROR(could not find pygtk-codegen-2.0 script)
+@@ -255,7 +256,8 @@ PKG_CHECK_MODULES(GTKMOZEMBED, [mozilla-gtkmozembed >=
+ else
+ 
+ case $mozpackage in
+-     xulrunner) mozpackage_required_version=xulrunner_required_version ;;
++     xulrunner) mozpackage_required_version=xulrunner_required_version
++         GTKMOZEMBED_CODEGEN_DEFINES="-DHAVE_XUL19" ;;
+      firefox) mozpackage_required_version=firefox_required_version ;;
+      mozilla)
+          mozpackage_required_version=mozilla_required_version
+@@ -269,7 +271,7 @@ case $mozpackage in
+ esac
+ AC_SUBST(GTKMOZEMBED_CODEGEN_DEFINES)
+ 
+-PKG_CHECK_MODULES(GTKMOZEMBED, [$mozpackage-gtkmozembed >= $mozpackage_required_version,
++PKG_CHECK_MODULES(GTKMOZEMBED, [libxul-embedding >= $mozpackage_required_version,
+                                 gtk+-2.0                >= gtk_required_version],
+   build_gtkmozembed=true,
+   build_gtkmozembed=false)
+@@ -280,14 +282,33 @@ AM_CONDITIONAL(BUILD_GTKMOZEMBED, $build_gtkmozembed)
+ if test -n "$export_dynamic"; then
+   GTKMOZEMBED_LIBS=`echo $GTKMOZEMBED_LIBS | sed -e "s/$export_dynamic//"`
+ fi
+-MOZILLA_HOME="`$PKG_CONFIG --variable=libdir $mozpackage-gtkmozembed`"
+-if test -z "$MOZILLA_HOME"; then
+-   MOZILLA_HOME="`$PKG_CONFIG --variable=sdkdir $mozpackage-gtkmozembed`/lib"
+-fi
++MOZILLA_HOME="`$PKG_CONFIG --variable=sdkdir libxul-embedding`"
+ AC_SUBST(MOZILLA_HOME)
+ 
+ fi # if build_gtkmozembed
+ 
++GTKMOZEMBED_CFLAGS="$(pkg-config --cflags libxul-embedding gtk+-2.0 nspr)"
++AC_LANG_PUSH(C++)
++_SAVE_CPPFLAGS=$CPPFLAGS
++_SAVE_CXXFLAGS=$CXXFLAGS
++CXXFLAGS=$GTKMOZEMBED_CFLAGS
++CPPFLAGS=
++AC_COMPILE_IFELSE([AC_LANG_SOURCE(
++[[#ifndef XPCOM_GLUE
++#error "no xpcom glue"
++#endif]])],
++[have_xpcom_glue=yes], [have_xpcom_glue=yes]
++)
++CPPFLAGS=$_SAVE_CPPFLAGS
++CXXFLAGS=$_SAVE_CXXFLAGS
++AC_LANG_POP(C++)
++ 
++AM_CONDITIONAL(HAVE_XPCOM_GLUE, [test $have_xpcom_glue=yes])
++if test "$have_xpcom_glue" = "yes"; then
++  AC_DEFINE(HAVE_XPCOM_GLUE, 1,
++    [Define to 1 if libxpcomglue is being used.])
++fi
++
+ AM_CONDITIONAL(BUILD_GTKMOZEMBED, $build_gtkmozembed)
+ if test -n "$export_dynamic"; then
+   GTKMOZEMBED_LIBS=`echo $GTKMOZEMBED_LIBS | sed -e "s/$export_dynamic//"`
+@@ -310,14 +331,9 @@ dnl should we build the gdl module?
  AC_ARG_BINDING([gdl], [ON])
  if $build_gdl; then
    have_gdl07=false
