@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_miners_fs_tracker-config_c,v 1.1 2010/07/20 09:38:34 ajacoutot Exp $
+
+If the special dir value is the same as HOME, don't add it to the
+default configuration, otherwise we end up with duplicates.
+    https://bugzilla.gnome.org/show_bug.cgi?id=624806
+
+--- src/miners/fs/tracker-config.c.orig	Fri Jul 16 11:52:03 2010
++++ src/miners/fs/tracker-config.c	Tue Jul 20 10:28:49 2010
+@@ -545,7 +545,13 @@ config_create_with_defaults (TrackerConfig *config,
+ {
+ 	gboolean added_home_recursively = FALSE;
+ 	gint i;
++	const gchar *home;
+ 
++	home = g_getenv ("HOME");
++		if (! home) {
++			home = g_get_home_dir ();
++	}
++
+ 	g_message ("Loading defaults into GKeyFile...");
+ 
+ 	for (i = 0; i < G_N_ELEMENTS (conversions); i++) {
+@@ -592,6 +598,9 @@ config_create_with_defaults (TrackerConfig *config,
+ 					const gchar *path;
+ 
+ 					path = g_get_user_special_dir (dir);
++					if (strcmp((char *)path, home) == 0) {
++						continue;
++					}
+ 					if (path == NULL || *path == '\0') {
+ 						continue;
+ 					}
