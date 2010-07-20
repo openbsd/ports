@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.55 2008/08/23 15:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile.template,v 1.56 2010/07/20 16:27:29 sthen Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -26,11 +26,13 @@ DISTNAME =		???
 #PKGNAME =		???
 #PKGNAME-foo =		???	for multi packages
 
-# for any port that create shared libraries.
+# for any port that creates shared libraries.
 # both libtool and cmake handle this automatically.
 # for libtool-based ports, have a look at WRKBUILD/shared_libs.log
 #SHARED_LIBS =		???
 
+# the category used in the directory name, /usr/ports/<category>/portname,
+# must be included.
 CATEGORIES =		???
 
 #HOMEPAGE =		???	URL
@@ -61,18 +63,21 @@ CATEGORIES =		???
 #PERMIT_DISTFILES_CDROM =Yes | Reason if No
 #PERMIT_DISTFILES_FTP =	Yes | Reason if No
 
+# "make port-lib-depends-check" can help
 #WANTLIB =		???
 
 # where the source files and patches can be fetched
 #
 MASTER_SITES =		???
+#MASTER_SITES =		${HOMEPAGE}
+#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 # if more master sites are needed...
 #MASTER_SITES0 =
 # ...
 #DISTFILES =		???
 #EXTRACT_ONLY =		???
-#EXTRACT_SUFX =		.tar.Z
+#EXTRACT_SUFX =		.tar.bz2
 
 #DIST_SUBDIR =		???
 
@@ -95,8 +100,8 @@ MASTER_SITES =		???
 
 # build/configuration variables
 #
-#SEPARATE_BUILD =	concurrent  (build simultaneously on all arches)
-#SEPARATE_BUILD =	simple  (configure/build still recreates files in source)
+#SEPARATE_BUILD =	simple (build in a directory other than WRKSRC)
+#SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
 #USE_X11 =		Yes
 #USE_GMAKE =		Yes
 # Programs that uses libtool should use this option,
@@ -111,7 +116,7 @@ MASTER_SITES =		???
 # 	XXX: cygnus products do NOT use autoconf for making the main
 # 		configure from configure.in
 # 	  imake [noman]: port uses imake for configuration.
-#   	  (noman: no man page installation)
+#	  (noman: no man page installation)
 # 	  simple: port has its own configure script
 #CONFIGURE_STYLE =	
 #CONFIGURE_SCRIPT =	??? (if other than configure)
@@ -121,6 +126,7 @@ MASTER_SITES =		???
 # for gnu stuff
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
 #AUTOMAKE_VERSION =	??? (defaults to 1.4)
+# config.guess and others are copied here
 #MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC}
 
 # Is the build automagic or is it interactive
@@ -165,8 +171,8 @@ MASTER_SITES =		???
 #CFLAGS =		???
 #LDFLAGS =		???
 #MAKE_FILE =		???
-#PKG_ARCH =		???
-#WRKDIST =		??? if other than ${WRKDIR}/$DISTNAME
+#PKG_ARCH =		??? (* for arch-independent packages)
+#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
 #WRKSRC =		??? if other than ${WRKDIST}
 #WRKBUILD =		??? if other than ${WRKSRC}
 #WRKCONF =		??? if other than ${WRKBUILD}
