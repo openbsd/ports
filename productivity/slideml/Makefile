@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/20 15:28:44 laurent Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/20 15:37:39 ajacoutot Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
 DISTNAME =		slideml-1.0
+REVISION =		0
 
 CATEGORIES =		productivity
 

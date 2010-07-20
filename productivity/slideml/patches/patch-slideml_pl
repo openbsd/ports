@@ -1,4 +1,4 @@
-$OpenBSD: patch-slideml_pl,v 1.1.1.1 2010/07/20 15:28:44 laurent Exp $
+$OpenBSD: patch-slideml_pl,v 1.2 2010/07/20 15:37:39 ajacoutot Exp $
 --- slideml.pl.orig	Sun Jun 20 13:48:37 2010
 +++ slideml.pl	Sun Jun 20 13:49:42 2010
 @@ -340,7 +340,7 @@ EOF
@@ -6,7 +6,7 @@ $OpenBSD: patch-slideml_pl,v 1.1.1.1 2010/07/20 15:28:44 laurent Exp $
  sub slidy_css() {
  
 -	open CSS, "$path/slidy.css";
-+	open CSS, "${LOCALBASE}/share/slideml/slidy.css";
++	open CSS, "${TRUEPREFIX}/share/slideml/slidy.css";
  	flock CSS, 1;
  	@css = <CSS>;
  	flock CSS, 8;
@@ -15,7 +15,7 @@ $OpenBSD: patch-slideml_pl,v 1.1.1.1 2010/07/20 15:28:44 laurent Exp $
  sub slidy_js() {
  
 -	open JS, "$path/slidy.js";
-+	open JS, "${LOCALBASE}/share/slideml/slidy.js";
++	open JS, "${TRUEPREFIX}/share/slideml/slidy.js";
  	flock JS, 1;
  	@js = <JS>;
  	flock JS, 8;
