@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/06/20 18:34:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2010/07/20 17:39:41 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-xattr \
 			--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 # XXX gcc3 only -- remove when i386 moves to gcc4
 .if ${MACHINE_ARCH} == "i386"
