@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/20 18:06:08 kili Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
 
 DISTNAME=	libapreq2-2.08
-REVISION=	0
+PKGNAME=	p5-${DISTNAME}
+REVISION=	1
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
@@ -27,7 +28,9 @@ CONFIGURE_ARGS=	--enable-perl-glue \
 		--with-apache2-apxs=${LOCALBASE}/sbin/apxs2
 
 BUILD_DEPENDS=	::devel/p5-ExtUtils-XSBuilder
-LIB_DEPENDS=	::www/ap2-mod_perl
+LIB_DEPENDS=	::devel/apr \
+		::devel/apr-util \
+		::www/ap2-mod_perl
 REGRESS_DEPENDS=::www/p5-Apache-Test
 
 post-regress:
