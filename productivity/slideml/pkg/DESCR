@@ -1,0 +1,8 @@
+Slide Meta-Language (SlideML) is a simple to use meta-language to generate
+presentation slides that can be viewed in a web browser.
+The idea was to use ASCII-chat like tags that are translated into XHTML.
+Joel Sing wrote the perl code that translates the meta-language into XHTML.
+The JS, XSS & XHTML pieces were borrowed from Dave Raggett's HTML Slidy.
+
+Generating a presentation is as simple as:
+$ slideml.pl slides.sml > a.html
