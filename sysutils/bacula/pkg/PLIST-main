@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/01/19 14:50:51 sthen Exp $
-@comment $OpenBSD: PLIST-main,v 1.6 2010/01/19 14:50:51 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/07/20 14:38:39 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/07/20 14:38:39 merdely Exp $
 @conflict bacula-client-*
 @conflict bacula-server-<3.0.2
 @pkgpath sysutils/bacula,-client
@@ -17,11 +17,11 @@ lib/libbacpy.a
 @comment lib/libbacpy.la
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
+libexec/bacula/bacula_config
 libexec/bacula/mtx-changer.conf
 @man man/man8/bacula-fd.8
 sbin/bacula
 @bin sbin/bacula-fd
-share/applications/
 share/doc/bacula/
 @comment share/doc/bacula/ChangeLog
 @comment share/doc/bacula/INSTALL
@@ -45,7 +45,3 @@ share/examples/bacula/bacula-fd.conf
 @owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bacula-fd.conf
-@mode
-@owner
-@group
-share/pixmaps/

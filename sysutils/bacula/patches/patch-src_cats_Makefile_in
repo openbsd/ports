@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cats_Makefile_in,v 1.1 2010/07/20 14:38:39 merdely Exp $
+--- src/cats/Makefile.in.orig	Thu Jun 24 15:33:25 2010
++++ src/cats/Makefile.in	Thu Jun 24 15:39:29 2010
+@@ -69,7 +69,7 @@ libbacsql.a: $(LIBBACSQL_OBJS)
+ 
+ libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
+ 	@echo "Making $@ ..."	  
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACSQL_LT_CURRENT).$(LIBBACSQL_LT_REVISION).$(LIBBACSQL_LT_AGE) $(DB_LIBS)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) $(LIBbacsql_LTVERSION) $(DB_LIBS)
+ 
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+ 	cd $(topdir) \

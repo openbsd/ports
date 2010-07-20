@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2009/10/02 02:34:05 merdely Exp $
+@comment $OpenBSD: PLIST-server,v 1.7 2010/07/20 14:38:39 merdely Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
@@ -27,6 +27,7 @@ libexec/bacula/grant_bacula_privileges
 libexec/bacula/grant_${BACKEND}_privileges
 libexec/bacula/make_bacula_tables
 libexec/bacula/make_catalog_backup
+libexec/bacula/make_catalog_backup.pl
 libexec/bacula/make_${BACKEND}_tables
 libexec/bacula/mtx-changer
 libexec/bacula/query.sql
@@ -47,12 +48,12 @@ libexec/bacula/updatedb/update_mysql_tables_7_to_8
 libexec/bacula/updatedb/update_mysql_tables_8_to_9
 libexec/bacula/updatedb/update_mysql_tables_9_to_10
 @comment libexec/bacula/updatedb/update_mysql_tables_9_to_10.in
-@comment libexec/bacula/updatedb/update_postgresql_tables_10_to_11.in
 libexec/bacula/updatedb/update_postgresql_tables_10_to_11
+@comment libexec/bacula/updatedb/update_postgresql_tables_10_to_11.in
 libexec/bacula/updatedb/update_postgresql_tables_7_to_8
 libexec/bacula/updatedb/update_postgresql_tables_8_to_9
-@comment libexec/bacula/updatedb/update_postgresql_tables_9_to_10.in
 libexec/bacula/updatedb/update_postgresql_tables_9_to_10
+@comment libexec/bacula/updatedb/update_postgresql_tables_9_to_10.in
 libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
 @comment libexec/bacula/updatedb/update_sqlite3_tables_10_to_11.in
 libexec/bacula/updatedb/update_sqlite3_tables_8_to_9

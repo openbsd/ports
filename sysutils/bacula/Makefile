@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.20 2010/03/28 16:05:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/20 14:38:39 merdely Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			3.0.3
+V=			5.0.2
 DISTNAME=		bacula-$V
-FULLPKGNAME-main=	bacula-client-$Vp0
+FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
 PKGNAME-server=		bacula-server-$V
-FULLPKGNAME-bat=	bacula-bat-$Vp1
+FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=		bac		0.0 # .1.0
-SHARED_LIBS +=		baccfg		0.0 # .1.0
-SHARED_LIBS +=		bacpy		0.0 # .1.0
-SHARED_LIBS +=		bacfind		0.0 # .1.0
-SHARED_LIBS +=		bacsql		0.0 # .1.0
+SHARED_LIBS +=		bac		1.0 # .1.0
+SHARED_LIBS +=		baccfg		1.0 # .1.0
+SHARED_LIBS +=		bacpy		1.0 # .1.0
+SHARED_LIBS +=		bacfind		1.0 # .1.0
+SHARED_LIBS +=		bacsql		1.0 # .1.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
@@ -47,7 +47,7 @@ USE_LIBTOOL=		yes
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
-FLAVORS=		pgsql mysql sqlite3 sqlite
+FLAVORS=		pgsql mysql sqlite3
 FLAVOR?=		sqlite3
 
 CONFIGURE_ARGS=		--enable-smartalloc \
@@ -89,7 +89,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I/usr/include/readline \
 			MTX=/bin/chio \
 			TAPEDRIVE=/dev/rst0 \
 			CONFIG_SITE=${PORTSDIR}/infrastructure/db/config.site \
-			QMAKEQT4=${LOCALBASE}/bin/qmake4 \
+			QMAKEBIN4=qmake4 \
+			QMAKE=${LOCALBASE}/bin/${QMAKEBIN4} \
 			PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
 
 .if ${FLAVOR:L:Mno_server}
@@ -98,8 +99,8 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-stored
 .else
 MULTI_PACKAGES+=	-server
-WANTLIB-server=		${WANTLIB} readline termcap
-LIB_DEPENDS-server=	bac,baccfg,bacfind,bacpy::sysutils/bacula,-main
+WANTLIB-server=		${WANTLIB} bac baccfg bacfind bacpy readline termcap
+LIB_DEPENDS-server=	::sysutils/bacula,-main
 CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
 			--with-sd-user=${SD_USER} \
@@ -108,10 +109,11 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 BACKEND=
 .if ${FLAVOR:L:Mpgsql}
 .if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
+ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-postgresql
-LIB_DEPENDS-server+=	pq.>=2:postgresql-client-*:databases/postgresql
+WANTLIB-server+=	pq.>=2
+LIB_DEPENDS-server+=	:postgresql-client-*:databases/postgresql
 BACKEND=		postgresql
 .else
 CONFIGURE_ARGS+=	--without-postgresql
@@ -119,11 +121,12 @@ CONFIGURE_ARGS+=	--without-postgresql
 
 .if ${FLAVOR:L:Mmysql}
 .if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
+ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-mysql \
 			--enable-batch-insert
-LIB_DEPENDS-server+=	mysqlclient_r.>=18::databases/mysql
+WANTLIB-server+=	mysqlclient_r.>=18
+LIB_DEPENDS-server+=	::databases/mysql
 BACKEND=		mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
@@ -131,29 +134,19 @@ CONFIGURE_ARGS+=	--without-mysql
 
 .if ${FLAVOR:L:Msqlite3}
 .if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
+ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-sqlite3
-LIB_DEPENDS-server+=	sqlite3.>=8::databases/sqlite3
+WANTLIB-server+=	sqlite3.>=8
+LIB_DEPENDS-server+=	::databases/sqlite3
 BACKEND=		sqlite3
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
 .endif
 
-.if ${FLAVOR:L:Msqlite}
-.if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
-.endif
-CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS-server+=	sqlite::databases/sqlite
-BACKEND=		sqlite
-.else
-CONFIGURE_ARGS+=	--without-sqlite
-.endif
 SUBST_VARS+=		BACKEND
-
 .if empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
+ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 .endif # if no_server
 
@@ -163,13 +156,11 @@ LIB_DEPENDS-main=
 CONFIGURE_ARGS+=	--disable-bat
 .else
 CONFIGURE_ARGS+=	--enable-bat
-WANTLIB-bat=		${WANTLIB} ICE SM X11 Xau Xdmcp Xext Xi Xinerama \
-			Xrender expat fontconfig freetype gobject-2.0 glib-2.0 \
-			gthread-2.0 iconv intl pcre png pthread-stubs xcb
+WANTLIB-bat +=		QtCore QtGui bac baccfg c crypto m pthread ssl stdc++
 MULTI_PACKAGES+=	-bat
 RUN_DEPENDS-bat=	::devel/desktop-file-utils
-LIB_DEPENDS-bat=	QtCore,QtGui::x11/qt4 \
-			bac,baccfg::sysutils/bacula,-main
+LIB_DEPENDS-bat=	::x11/qt4 \
+			::sysutils/bacula,-main
 .endif
 
 post-extract:
@@ -200,7 +191,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
 .endif
 .if !${FLAVOR:L:Mno_bat}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin/
+	if [ -f ${PREFIX}/lib/libbac.so.${LIBbac_VERSION} ] ; then \
+		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin/; \
+	else \
+		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin/; \
+	fi
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bat.conf \
 		${PREFIX}/share/examples/bacula/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps

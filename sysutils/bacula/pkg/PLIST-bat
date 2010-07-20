@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-bat,v 1.6 2009/12/22 12:51:52 sthen Exp $
+@comment $OpenBSD: PLIST-bat,v 1.7 2010/07/20 14:38:39 merdely Exp $
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
@@ -11,6 +11,7 @@
 @mode
 @owner
 @group
+share/applications/
 share/applications/bat.desktop
 share/doc/bacula/html/
 share/doc/bacula/html/clients.html
@@ -35,6 +36,7 @@ share/examples/bacula/bat.conf
 @mode
 @owner
 @group
+share/pixmaps/
 share/pixmaps/bat_icon.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

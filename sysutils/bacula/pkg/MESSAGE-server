@@ -1,4 +1,8 @@
 See ${PREFIX}/share/doc/bacula/README-server.OpenBSD
 for more setup information.
 
+Note: If upgrading from a version older than 5.0.0, a database upgrade
+is necessary.  Also, Director and Storage Daemons must be upgraded at
+the same time, but older File Daemons can be used with 5.0.x.
+
 See http://bacula.org/en/rel-manual/index.html for Bacula documentation.

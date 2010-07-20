@@ -1,14 +1,16 @@
-$OpenBSD: patch-scripts_mtx-changer_in,v 1.4 2009/10/02 02:34:05 merdely Exp $
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.5 2010/07/20 14:38:39 merdely Exp $
 
 XXX first hunk hand-rolled for CVS keyword, Id
 
---- scripts/mtx-changer.in.orig	Fri Jul 18 09:44:03 2008
-+++ scripts/mtx-changer.in	Mon Sep 21 20:58:36 2009
-@@ -1,4 +1,4 @@
+--- scripts/mtx-changer.in.orig	Tue Apr 27 15:58:29 2010
++++ scripts/mtx-changer.in	Thu Jun 24 10:22:49 2010
+@@ -1,6 +1,6 @@
  #!/bin/sh
  #
 -# Bacula interface to mtx autoloader
 +# Bacula interface to chio autoloader
+ #
+ #  If you set in your Device resource
  #
 @@ -39,10 +39,10 @@
  #    e.g.   mt -f $4 offline
@@ -23,7 +25,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
  #   exit code, Bacula will assume the request failed.
  #
  
-@@ -143,7 +143,7 @@ debug "Parms: $ctl $cmd $slot $device $drive"
+@@ -152,7 +152,7 @@ debug "Parms: $ctl $cmd $slot $device $drive"
  
  case $cmd in 
     unload)
@@ -32,7 +34,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
  
        if test ${offline} -eq 1 ; then
  	mt -f $device offline
-@@ -151,12 +151,12 @@ case $cmd in 
+@@ -160,12 +160,12 @@ case $cmd in 
        if test ${offline_sleep} -ne 0 ; then
  	sleep ${offline_sleep}
        fi
@@ -48,7 +50,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
        rtn=$?
        if test ${load_sleep} -ne 0 ; then
  	sleep ${load_sleep}
-@@ -166,36 +166,33 @@ case $cmd in 
+@@ -175,56 +175,22 @@ case $cmd in 
        ;;
  
     list) 
@@ -70,6 +72,47 @@ XXX first hunk hand-rolled for CVS keyword, Id
 +      cat ${TMPFILE} | grep " *drive [0-9]*: <.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}" | sed "s/^/D/"
        rm -f ${TMPFILE} >/dev/null 2>&1
        exit $rtn
+       ;;
+ 
+    listall)
+-#  Drive content:	  D:Drive num:F:Slot loaded:Volume Name
+-#  D:0:F:2:vol2        or D:Drive num:E
+-#  D:1:F:42:vol42   
+-#  D:3:E
+-# 
+-#  Slot content:
+-#  S:1:F:vol1		  S:Slot num:F:Volume Name
+-#  S:2:E	       or S:Slot num:E
+-#  S:3:F:vol4
+-# 
+-#  Import/Export tray slots:
+-#  I:10:F:vol10 	  I:Slot num:F:Volume Name
+-#  I:11:E	       or I:Slot num:E
+-#  I:12:F:vol40
+- 
+-      debug "Doing mtx -f $ctl -- to list all"
+-      make_temp_file
+-      if test ${inventory} -ne 0 ; then
+-	${MTX} -f $ctl inventory
+-      fi
+-      ${MTX} -f $ctl status >${TMPFILE}
+-      rtn=$?
+-      # can be converted to awk+sed+cut, contributions are welcome
+-      perl -ne '
+-/Data Transfer Element (\d+):Empty/ && print "D:$1:E\n";
+-/Data Transfer Element (\d+):Full \(Storage Element (\d+) Loaded\)(:VolumeTag =\s*(.+))?/ && print "D:$1:F:$2:$4\n";
+-/Storage Element (\d+):Empty/ && print "S:$1:E\n";
+-/Storage Element (\d+):Full( :VolumeTag=(.+))?/ && print "S:$1:F:$3\n";
+-/Storage Element (\d+) IMPORT.EXPORT:Empty/ && print "I:$1:E\n";
+-/Storage Element (\d+) IMPORT.EXPORT:Full( :VolumeTag=(.+))?/ && print "I:$1:F:$3\n";' ${TMPFILE}
+-      rm -f ${TMPFILE} >/dev/null 2>&1
+-      exit $rtn
++      echo "The listall command is not implemented on OpenBSD"
++      exit 1
+       ;;
+ 
+    transfer)
+@@ -236,18 +202,19 @@ case $cmd in 
        ;;
  
     loaded)

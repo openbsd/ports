@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2009/10/02 02:34:05 merdely Exp $
---- configure.orig	Fri Jul 10 15:12:39 2009
-+++ configure	Mon Sep 21 20:59:33 2009
-@@ -4239,7 +4239,7 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.6 2010/07/20 14:38:39 merdely Exp $
+--- configure.orig	Tue Apr 27 15:58:29 2010
++++ configure	Mon Jul 19 15:43:39 2010
+@@ -4267,7 +4267,7 @@ echo "${ECHO_T}no" >&6; }
  fi
  
  
@@ -10,7 +10,25 @@ $OpenBSD: patch-configure,v 1.5 2009/10/02 02:34:05 merdely Exp $
     { { echo "$as_me:$LINENO: error: Unable to find C++ compiler" >&5
  echo "$as_me: error: Unable to find C++ compiler" >&2;}
     { (exit 1); exit 1; }; }
-@@ -42224,13 +42224,13 @@ _ACEOF
+@@ -15929,7 +15929,7 @@ if test x$use_libtool != xno; then
+    LIBTOOL_INSTALL_TARGET="libtool-install"
+    LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
+    LIBTOOL_CLEAN_TARGET="libtool-clean"
+-   QMAKE_LIBTOOL="${BUILD_DIR}/libtool"
++   QMAKE_LIBTOOL="${LIBTOOL}"
+    FD_PLUGIN_DIR="src/plugins/fd"
+    have_plugins=yes
+ else
+@@ -15940,7 +15940,7 @@ else
+    LIBTOOL_INSTALL_TARGET=""
+    LIBTOOL_UNINSTALL_TARGET=""
+    LIBTOOL_CLEAN_TARGET=""
+-   QMAKE_LIBTOOL="# ${BUILD_DIR}/libtool"
++   QMAKE_LIBTOOL="# ${LIBTOOL}"
+    FD_PLUGIN_DIR=""
+    have_plugins=no
+ fi
+@@ -43349,13 +43349,13 @@ _ACEOF
  fi
  
  PTHREAD_LIB=""
@@ -27,7 +45,7 @@ $OpenBSD: patch-configure,v 1.5 2009/10/02 02:34:05 merdely Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -42286,7 +42286,7 @@ fi
+@@ -43411,7 +43411,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -36,20 +54,50 @@ $OpenBSD: patch-configure,v 1.5 2009/10/02 02:34:05 merdely Exp $
  else
  
         { echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
-@@ -42715,6 +42715,7 @@ openbsd)
+@@ -44158,6 +44158,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
 +   largefile_support="yes"
    ;;
  redhat)
-       ping -c 1 $hostname 2>&1 1>/dev/null
-@@ -45729,7 +45730,7 @@ echo "$as_me: error: Could not find qmake or qmake-qt4
-    QMAKEBIN="qmake"
+    if test -f /etc/whitebox-release ; then
+@@ -44299,7 +44300,7 @@ if test "x${subsysdir}" = "x${sbindir}" ; then
+    exit 1
+ fi
  
-    if test "x$QMAKEQT4" != "xnone"; then
--       QMAKEBIN=qmake-qt4
-+       QMAKEBIN=${QMAKEQT4}
+-ac_config_files="$ac_config_files autoconf/Make.common Makefile manpages/Makefile scripts/startmysql scripts/stopmysql scripts/btraceback scripts/startit scripts/stopit scripts/bconsole scripts/gconsole scripts/bacula scripts/bacula-ctl-dir scripts/bacula-ctl-fd scripts/bacula-ctl-sd scripts/devel_bacula scripts/Makefile scripts/logrotate scripts/bacula.desktop.gnome1 scripts/bacula.desktop.gnome2 scripts/bacula.desktop.gnome1.consolehelper scripts/bacula.desktop.gnome2.consolehelper scripts/bacula.desktop.gnome1.xsu scripts/bacula.desktop.gnome2.xsu scripts/bgnome-console.console_apps scripts/mtx-changer scripts/disk-changer scripts/dvd-handler scripts/dvd-simulator scripts/bacula-tray-monitor.desktop scripts/logwatch/Makefile scripts/logwatch/logfile.bacula.conf scripts/wxconsole.console_apps scripts/wxconsole.desktop.consolehelper scripts/wxconsole.desktop.xsu scripts/bat.desktop scripts/bat.desktop.xsu scripts/bat.desktop.consolehelper scripts/bat.console_apps src/Makefile src/host.h src/console/Makefile src/console/bconsole.conf src/qt-console/bat.conf src/qt-console/bat.pro src/qt-console/bat.pro.mingw32 src/qt-console/install_conf_file src/wx-console/Makefile src/wx-console/bwx-console.conf src/tray-monitor/Makefile src/tray-monitor/tray-monitor.conf src/dird/Makefile src/dird/bacula-dir.conf src/lib/Makefile src/stored/Makefile src/stored/bacula-sd.conf src/filed/Makefile src/filed/bacula-fd.conf src/cats/Makefile src/cats/make_catalog_backup.pl src/cats/make_catalog_backup src/cats/delete_catalog_backup src/cats/create_postgresql_database src/cats/update_postgresql_tables src/cats/make_postgresql_tables src/cats/grant_postgresql_privileges src/cats/drop_postgresql_tables src/cats/drop_postgresql_database src/cats/create_mysql_database src/cats/update_mysql_tables src/cats/make_mysql_tables src/cats/grant_mysql_privileges src/cats/drop_mysql_tables src/cats/drop_mysql_database src/cats/create_sqlite3_database src/cats/update_sqlite3_tables src/cats/make_sqlite3_tables src/cats/grant_sqlite3_privileges src/cats/drop_sqlite3_tables src/cats/drop_sqlite3_database src/cats/create_ingres_database src/cats/update_ingres_tables src/cats/make_ingres_tables src/cats/grant_ingres_privileges src/cats/drop_ingres_tables src/cats/drop_ingres_database src/cats/sqlite src/cats/mysql src/cats/create_bdb_database src/cats/update_bdb_tables src/cats/make_bdb_tables src/cats/grant_bdb_privileges src/cats/drop_bdb_tables src/cats/drop_bdb_database src/cats/create_bacula_database src/cats/update_bacula_tables src/cats/grant_bacula_privileges src/cats/make_bacula_tables src/cats/drop_bacula_tables src/cats/drop_bacula_database src/findlib/Makefile src/tools/Makefile src/plugins/fd/Makefile src/plugins/sd/Makefile src/plugins/dir/Makefile src/win32/Makefile.inc po/Makefile.in updatedb/update_mysql_tables_9_to_10 updatedb/update_sqlite3_tables_9_to_10 updatedb/update_postgresql_tables_9_to_10 updatedb/update_mysql_tables_10_to_11 updatedb/update_sqlite3_tables_10_to_11 updatedb/update_postgresql_tables_10_to_11 examples/nagios/check_bacula/Makefile $PFILES"
++ac_config_files="$ac_config_files autoconf/Make.common Makefile manpages/Makefile scripts/startmysql scripts/stopmysql scripts/btraceback scripts/startit scripts/stopit scripts/bconsole scripts/gconsole scripts/bacula scripts/bacula-ctl-dir scripts/bacula-ctl-fd scripts/bacula-ctl-sd scripts/devel_bacula scripts/Makefile scripts/logrotate scripts/bacula.desktop.gnome1 scripts/bacula.desktop.gnome2 scripts/bacula.desktop.gnome1.consolehelper scripts/bacula.desktop.gnome2.consolehelper scripts/bacula.desktop.gnome1.xsu scripts/bacula.desktop.gnome2.xsu scripts/bgnome-console.console_apps scripts/mtx-changer scripts/disk-changer scripts/dvd-handler scripts/dvd-simulator scripts/bacula-tray-monitor.desktop scripts/logwatch/Makefile scripts/logwatch/logfile.bacula.conf scripts/wxconsole.console_apps scripts/wxconsole.desktop.consolehelper scripts/wxconsole.desktop.xsu scripts/bat.desktop scripts/bat.desktop.xsu scripts/bat.desktop.consolehelper scripts/bat.console_apps src/Makefile src/host.h src/console/Makefile src/console/bconsole.conf src/qt-console/bat.conf src/qt-console/bat.pro src/qt-console/bat.pro.mingw32 src/qt-console/install_conf_file src/wx-console/Makefile src/wx-console/bwx-console.conf src/tray-monitor/Makefile src/tray-monitor/tray-monitor.conf src/dird/Makefile src/dird/bacula-dir.conf src/lib/Makefile src/stored/Makefile src/stored/bacula-sd.conf src/filed/Makefile src/filed/bacula-fd.conf src/cats/Makefile src/cats/make_catalog_backup.pl src/cats/make_catalog_backup src/cats/delete_catalog_backup src/cats/create_postgresql_database src/cats/update_postgresql_tables src/cats/make_postgresql_tables src/cats/grant_postgresql_privileges src/cats/drop_postgresql_tables src/cats/drop_postgresql_database src/cats/create_mysql_database src/cats/update_mysql_tables src/cats/make_mysql_tables src/cats/grant_mysql_privileges src/cats/drop_mysql_tables src/cats/drop_mysql_database src/cats/create_sqlite3_database src/cats/update_sqlite3_tables src/cats/make_sqlite3_tables src/cats/grant_sqlite3_privileges src/cats/drop_sqlite3_tables src/cats/drop_sqlite3_database src/cats/create_ingres_database src/cats/update_ingres_tables src/cats/make_ingres_tables src/cats/grant_ingres_privileges src/cats/drop_ingres_tables src/cats/drop_ingres_database src/cats/sqlite src/cats/mysql src/cats/create_bdb_database src/cats/update_bdb_tables src/cats/make_bdb_tables src/cats/grant_bdb_privileges src/cats/drop_bdb_tables src/cats/drop_bdb_database src/cats/create_bacula_database src/cats/update_bacula_tables src/cats/grant_bacula_privileges src/cats/make_bacula_tables src/cats/drop_bacula_tables src/cats/drop_bacula_database src/findlib/Makefile src/tools/Makefile src/plugins/fd/Makefile src/plugins/sd/Makefile src/plugins/dir/Makefile src/win32/Makefile.inc po/Makefile.in updatedb/update_mysql_tables_9_to_10 updatedb/update_sqlite_tables_9_to_10 updatedb/update_sqlite3_tables_9_to_10 updatedb/update_postgresql_tables_9_to_10 updatedb/update_mysql_tables_10_to_11 updatedb/update_sqlite_tables_10_to_11 updatedb/update_sqlite3_tables_10_to_11 updatedb/update_postgresql_tables_10_to_11 examples/nagios/check_bacula/Makefile $PFILES"
+ 
+ ac_config_commands="$ac_config_commands default"
+ 
+@@ -45332,9 +45333,11 @@ do
+     "src/win32/Makefile.inc") CONFIG_FILES="$CONFIG_FILES src/win32/Makefile.inc" ;;
+     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+     "updatedb/update_mysql_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_mysql_tables_9_to_10" ;;
++    "updatedb/update_sqlite_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite_tables_9_to_10" ;;
+     "updatedb/update_sqlite3_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite3_tables_9_to_10" ;;
+     "updatedb/update_postgresql_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_postgresql_tables_9_to_10" ;;
+     "updatedb/update_mysql_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_mysql_tables_10_to_11" ;;
++    "updatedb/update_sqlite_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite_tables_10_to_11" ;;
+     "updatedb/update_sqlite3_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite3_tables_10_to_11" ;;
+     "updatedb/update_postgresql_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_postgresql_tables_10_to_11" ;;
+     "examples/nagios/check_bacula/Makefile") CONFIG_FILES="$CONFIG_FILES examples/nagios/check_bacula/Makefile" ;;
+@@ -47193,7 +47196,7 @@ echo "$as_me: error: Could not find qmake $PATH. Check
+    { (exit 1); exit 1; }; }
     fi
  
+-   QMAKEBIN="qmake"
++   QMAKEBIN=${QMAKEBIN4}
     cd src/qt-console
+    echo "Creating bat Makefile"
+    touch bat
+@@ -47221,7 +47224,7 @@ cd ..
+ 
+ c=updatedb
+ chmod 755 $c/update_mysql_tables_10_to_11   $c/update_sqlite3_tables_10_to_11
+-chmod 755 $c/update_postgresql_tables_10_to_11
++chmod 755 $c/update_sqlite_tables_10_to_11 $c/update_postgresql_tables_10_to_11
+ 
+ c=src/cats
+ 

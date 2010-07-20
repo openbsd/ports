@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Exp $
---- src/dird/bacula-dir.conf.in.orig	Wed Jul 15 18:05:40 2009
-+++ src/dird/bacula-dir.conf.in	Tue Sep  1 22:38:31 2009
+$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.6 2010/07/20 14:38:39 merdely Exp $
+--- src/dird/bacula-dir.conf.in.orig	Tue Apr 27 15:58:29 2010
++++ src/dird/bacula-dir.conf.in	Thu Jun 24 09:37:47 2010
 @@ -14,6 +14,7 @@
  
  Director {                            # define myself
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
    DIRport = @dir_port@                # where we listen for UA connections
    QueryFile = "@scriptdir@/query.sql"
    WorkingDirectory = "@working_dir@"
-@@ -79,8 +80,8 @@ Job {
+@@ -76,8 +77,8 @@ Job {
  Job {
    Name = "RestoreFiles"
    Type = Restore
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
    Storage = File                      
    Pool = Default
    Messages = Standard
-@@ -157,7 +158,7 @@ FileSet {
+@@ -154,7 +155,7 @@ FileSet {
  # Client (File Services) to backup
  Client {
    Name = @basename@-fd
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
    FDPort = @fd_port@
    Catalog = MyCatalog
    Password = "@fd_password@"          # password for FileDaemon
-@@ -171,8 +172,8 @@ Client {
+@@ -168,8 +169,8 @@ Client {
  #  You should change Name, Address, and Password before using
  #
  #Client {
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
  #  FDPort = @fd_port@
  #  Catalog = MyCatalog
  #  Password = "@fd_password@2"         # password for FileDaemon 2
-@@ -199,7 +200,7 @@ Storage {
+@@ -196,7 +197,7 @@ Storage {
  #Storage {
  #  Name = DDS-4    
  #  Do not use "localhost" here
@@ -49,7 +49,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"          # password for Storage daemon
  #  Device = DDS-4                      # must be same as Device in Storage daemon
-@@ -211,7 +212,7 @@ Storage {
+@@ -208,7 +209,7 @@ Storage {
  #Storage {
  #  Name = "8mmDrive"
  #  Do not use "localhost" here
@@ -58,7 +58,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Ex
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"
  #  Device = "Exabyte 8mm"
-@@ -222,7 +223,7 @@ Storage {
+@@ -219,7 +220,7 @@ Storage {
  #Storage {
  #  Name = "DVD"
  #  Do not use "localhost" here
