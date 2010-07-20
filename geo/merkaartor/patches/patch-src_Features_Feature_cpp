@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_Features_Feature_cpp,v 1.1 2010/07/20 20:59:15 landry Exp $
+Make sure that value is negative in the end
+--- src/Features/Feature.cpp.orig	Tue Jul 20 20:57:05 2010
++++ src/Features/Feature.cpp	Tue Jul 20 20:57:40 2010
+@@ -264,7 +264,7 @@ void Feature::setId(const QString& id)
+ 
+ const QString& Feature::resetId()
+ {
+-    p->Id = QString::number((((qint64)this) * -1));
++    p->Id = QString::number((llabs((qint64)this) * -1));
+     if (parent())
+         dynamic_cast<Layer*>(parent())->notifyIdUpdate(p->Id,const_cast<Feature*>(this));
+     return p->Id;
+@@ -274,7 +274,7 @@ const QString& Feature::id() const
+ {
+     if (p->Id.isEmpty())
+     {
+-        p->Id = QString::number((((qint64)this) * -1));
++        p->Id = QString::number((llabs((qint64)this) * -1));
+         Layer* L = dynamic_cast<Layer*>(parent());
+         if (L)
+             L->notifyIdUpdate(p->Id,const_cast<Feature*>(this));
+@@ -293,7 +293,7 @@ qint64 Feature::idToLong() const
+         p->LongId = s.toLongLong(&ok);
+         Q_ASSERT(ok);
+     } else {
+-        p->LongId = (((qint64)this) * -1);
++        p->LongId = (llabs((quint64)this) * -1);
+     }
+ 
+     return p->LongId;

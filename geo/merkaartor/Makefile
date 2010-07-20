@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/05 11:09:50 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/20 20:59:15 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
 DISTNAME =	merkaartor-0.16.0
-PKGNAME =	${DISTNAME}p0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	geo x11
@@ -23,11 +23,11 @@ NO_REGRESS =	Yes
 MODULES =	devel/gettext x11/qt4
 RUN_DEPENDS =	::devel/desktop-file-utils
 
-LIB_DEPENDS =	QtGui,QtNetwork,QtSvg,QtXml::x11/qt4
+LIB_DEPENDS =	::x11/qt4
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread
-WANTLIB += stdc++ z
+WANTLIB += stdc++ z QtGui QtNetwork QtSvg QtXml
 
 do-configure:
 	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 NOUSEWEBKIT=1 GDAL=0 NODEBUG=1 \
