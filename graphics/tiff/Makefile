@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/06/30 17:10:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2010/07/21 06:46:33 ajacoutot Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -7,7 +7,7 @@ SHARED_LIBS=	tiff	38.3	# 39.4
 SHARED_LIBS+=	tiffxx	39.3	# 39.4
 CATEGORIES=	graphics
 
-MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/
+MASTER_SITES=	http://download.osgeo.org/libtiff/
 
 HOMEPAGE=	http://www.remotesensing.org/libtiff/
 
