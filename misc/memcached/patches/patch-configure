@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2009/08/07 10:46:41 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2010/07/21 14:07:43 landry Exp $
 
 use '-pthread' instead of '-lpthread'
 
---- configure.orig	Thu Jul  9 21:13:05 2009
-+++ configure	Fri Aug  7 12:40:00 2009
-@@ -5982,12 +5982,12 @@ return pthread_create ();
+--- configure.orig	Sun Nov  8 02:41:02 2009
++++ configure	Wed Jul 21 16:06:24 2010
+@@ -6733,12 +6733,12 @@ return pthread_create ();
    return 0;
  }
  _ACEOF
@@ -20,3 +20,12 @@ use '-pthread' instead of '-lpthread'
    fi
    rm -f conftest.$ac_objext conftest$ac_exeext
  if { (ac_try="$ac_link"
+@@ -7819,7 +7819,7 @@ _ACEOF
+ elif test "$GCC" = "yes"
+ then
+   GCC_VERSION=`$CC -dumpversion`
+-  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
++  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations"
+   case $GCC_VERSION in
+     4.4.*)
+     CFLAGS="$CFLAGS -fno-strict-aliasing"
