@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/28 07:11:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/21 20:37:26 steven Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0
-PKGNAME=	${DISTNAME}p3
+REVISION=	4
 SHARED_LIBS=	gdkglext-x11-1.0	0.0 \
 		gtkglext-x11-1.0	0.0
 CATEGORIES=	x11 graphics devel
 
-HOMEPAGE=	http://www.k-3d.org/gtkglext/
+HOMEPAGE=	http://projects.gnome.org/gtkglext/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
