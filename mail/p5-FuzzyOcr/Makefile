@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/21 05:53:07 merdely Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
-V=			svn133
-DISTNAME=		fuzzyocr-${V}
-PKGNAME=		p5-FuzzyOcr-3.5.1-${V}
+V=			3.6.0
+DISTNAME=		fuzzyocr-$V
+PKGNAME=		p5-FuzzyOcr-$V
 CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://fuzzyocr.own-hero.net/
-MASTER_SITES=		http://openbsd.rutgers.edu/ \
-			http://meta-planets.net/~openbsd/ \
-			http://www.phxbsd.com/OpenBSD/
+MASTER_SITES=		http://users.own-hero.net/~decoder/fuzzyocr/
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
@@ -21,12 +19,13 @@ RUN_DEPENDS=		::devel/p5-MLDBM-Sync \
 			::graphics/ocrad \
 			::graphics/ImageMagick \
 			::graphics/gifsicle,no_x11 \
+			::graphics/tesseract \
 			::mail/p5-Mail-SpamAssassin \
 			::textproc/p5-String-Approx
 
 REGRESS_DEPENDS=	::mail/p5-FuzzyOcr
 
-# MIT
+# Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -35,7 +34,7 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=		Yes
 MODULES=		perl
 
-WRKDIST=		${WRKDIR}/devel
+WRKDIST=		${WRKDIR}/FuzzyOcr-$V
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 SUBST_VARS=		CONFDIR
 PKG_ARCH=		*

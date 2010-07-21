@@ -1,6 +1,6 @@
-$OpenBSD: patch-FuzzyOcr_cf,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
---- FuzzyOcr.cf.orig	Tue Sep  4 13:31:13 2007
-+++ FuzzyOcr.cf	Tue Oct  2 12:25:00 2007
+$OpenBSD: patch-FuzzyOcr_cf,v 1.2 2010/07/21 05:53:07 merdely Exp $
+--- FuzzyOcr.cf.orig	Wed May 27 18:16:00 2009
++++ FuzzyOcr.cf	Wed Jul 14 13:15:58 2010
 @@ -1,7 +1,7 @@
  # Syntax:
  # loadplugin <Plugin_Name> <Location>
@@ -24,9 +24,8 @@ $OpenBSD: patch-FuzzyOcr_cf,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
  # Include additional scanner/preprocessor commands here:
  #
 -focr_bin_helper pnmnorm, pnminvert, pamthreshold, ppmtopgm, pamtopnm
--focr_bin_helper tesseract
 +focr_bin_helper pnmnorm, pnminvert, pamditherbw, ppmtopgm, pamtopnm
-+#focr_bin_helper tesseract
+ focr_bin_helper tesseract
  
  # These helpers must be defined before enabling PDF scanning
  #focr_bin_helper pdfinfo, pdftops, pstopnm
