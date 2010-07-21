@@ -1,0 +1,14 @@
+$OpenBSD: patch-orc_orcprogram_h,v 1.1 2010/07/21 20:30:21 sthen Exp $
+--- orc/orcprogram.h.orig	Tue Jul 13 15:06:20 2010
++++ orc/orcprogram.h	Tue Jul 20 17:08:22 2010
+@@ -88,6 +88,10 @@ enum {
+   ORC_TARGET_NEON_NEON = (1<<1)
+ };
+ 
++enum {
++  ORC_TARGET_ARM_ARMV6 = (1<<0)
++};
++
+ typedef enum {
+   ORC_VAR_TYPE_TEMP,
+   ORC_VAR_TYPE_SRC,

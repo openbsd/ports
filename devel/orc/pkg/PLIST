@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/09 21:56:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/21 20:30:21 sthen Exp $
 %%SHARED%%
+@bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/
 include/orc-0.4/orc/
-include/orc-0.4/orc-float/
-include/orc-0.4/orc-float/orcfloat.h
 include/orc-0.4/orc-test/
 include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
@@ -17,6 +16,7 @@ include/orc-0.4/orc/orcarm.h
 include/orc-0.4/orc/orcdebug.h
 include/orc-0.4/orc/orcfunctions.h
 include/orc-0.4/orc/orcmmx.h
+include/orc-0.4/orc/orcneon.h
 include/orc-0.4/orc/orconce.h
 include/orc-0.4/orc/orcparse.h
 include/orc-0.4/orc/orcpowerpc.h
@@ -26,8 +26,6 @@ include/orc-0.4/orc/orcutils.h
 include/orc-0.4/orc/orcx86.h
 lib/liborc-0.4.a
 lib/liborc-0.4.la
-lib/liborc-float-0.4.a
-lib/liborc-float-0.4.la
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 lib/orc/
@@ -48,23 +46,23 @@ share/gtk-doc/html/orc/home.png
 share/gtk-doc/html/orc/index.html
 share/gtk-doc/html/orc/index.sgml
 share/gtk-doc/html/orc/left.png
+share/gtk-doc/html/orc/orc-ARM.html
+share/gtk-doc/html/orc/orc-MMX.html
+share/gtk-doc/html/orc/orc-Orc.html
+share/gtk-doc/html/orc/orc-OrcCompiler.html
+share/gtk-doc/html/orc/orc-OrcDebug.html
+share/gtk-doc/html/orc/orc-OrcExecutor.html
+share/gtk-doc/html/orc/orc-OrcOpcode.html
+share/gtk-doc/html/orc/orc-OrcProgram.html
+share/gtk-doc/html/orc/orc-OrcRule.html
+share/gtk-doc/html/orc/orc-PowerPC.html
+share/gtk-doc/html/orc/orc-SSE.html
+share/gtk-doc/html/orc/orc-Utility-functions.html
 share/gtk-doc/html/orc/orc-building.html
 share/gtk-doc/html/orc/orc-concepts.html
 share/gtk-doc/html/orc/orc-misc.html
 share/gtk-doc/html/orc/orc-opcodes.html
-share/gtk-doc/html/orc/orc-orc.html
-share/gtk-doc/html/orc/orc-orcarm.html
-share/gtk-doc/html/orc/orc-orccompiler.html
-share/gtk-doc/html/orc/orc-orcdebug.html
-share/gtk-doc/html/orc/orc-orcexecutor.html
-share/gtk-doc/html/orc/orc-orcmmx.html
-share/gtk-doc/html/orc/orc-orcopcode.html
-share/gtk-doc/html/orc/orc-orcpowerpc.html
-share/gtk-doc/html/orc/orc-orcprogram.html
-share/gtk-doc/html/orc/orc-orcrule.html
-share/gtk-doc/html/orc/orc-orcsse.html
-share/gtk-doc/html/orc/orc-orcutils.html
-share/gtk-doc/html/orc/orc-orcx86.html
+share/gtk-doc/html/orc/orc-x86.html
 share/gtk-doc/html/orc/orc.devhelp
 share/gtk-doc/html/orc/orc.devhelp2
 share/gtk-doc/html/orc/right.png
