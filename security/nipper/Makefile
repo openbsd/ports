@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/21 21:33:03 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/21 21:34:08 steven Exp $
 
 COMMENT =		audit network device configuration
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =		.tgz
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m stdc++ nipper
 
-LIB_DEPENDS=		nipper::security/libnipper
+LIB_DEPENDS=		::security/libnipper
 
 CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
