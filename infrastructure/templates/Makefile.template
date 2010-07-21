@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.57 2010/07/21 00:18:54 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.58 2010/07/21 12:27:41 edd Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -39,7 +39,7 @@ CATEGORIES =		???
 
 # where to send bitches about this port
 # Put a complete email address with a real name, e.g.,
-# MAINTAINER=	John Doe <doe57@machine.somewhere.org>
+# MAINTAINER =	John Doe <doe57@machine.somewhere.org>
 # if you maintain several ports, try to use the same line each time.
 # MAINTAINER implies some amount of responsibility.
 # If you no longer use the port, or are unwilling/unable to handle issues
