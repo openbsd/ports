@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/09 21:40:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/21 23:02:56 sthen Exp $
 
 # XXX WORK IN PROGRESS.
 
-#ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
-
+#ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 ONLY_FOR_ARCHS = i386
 # amd64 has an -fPIC problem
 # others unknown at this time
@@ -13,7 +12,8 @@ COMMENT =	gcc4 front-end for LLVM
 GCC_V =		4.2.1
 LLVM_V =	2.7
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
-PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p0
+PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
+REVISION =	1
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS =	ssp	0.0 \
@@ -30,18 +30,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=	c m pthread
+WANTLIB +=	c m pthread stdc++
 USE_LIBTOOL =	yes
 
-#MASTER_SITES =  http://spacehopper.org/mirrors/
-MASTER_SITES = http://llvm.org/releases/${LLVM_V}/
+MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
-MODULES =	gcc4
-LIB_DEPENDS =	elf::devel/libelf
 BUILD_DEPENDS =	:llvm-${LLVM_V}:devel/llvm \
 		::devel/bison
-MODGCC4_LANGS =	c c++
-MODGCC4_ARCHES =*
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
