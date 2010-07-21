@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/11 14:06:20 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/21 21:14:47 edd Exp $
 
 COMMENT=		Joe's Window Manager
 
 DISTNAME=		jwm-2.0.1
-PKGNAME=		${DISTNAME}p1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -17,15 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xft Xinerama Xpm Xrender pthread-stubs xcb \
-			c fontconfig freetype m z Xau Xdmcp expat jpeg
+WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
+			fontconfig freetype fribidi jpeg m png.>=2 \
+			pthread-stubs xcb z
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		fribidi::devel/fribidi \
-			png.>=2::graphics/png \
-			jpeg::graphics/jpeg
+LIB_DEPENDS=		::devel/fribidi \
+			::graphics/png \
+			::graphics/jpeg
 
 NO_REGRESS=		Yes
 

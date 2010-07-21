@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/21 21:14:47 edd Exp $
 
 COMMENT =		flickr API library and utility
 
@@ -19,16 +19,17 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/gettext
 
-WANTLIB =		c crypto m ssl xslt z
+WANTLIB =		c crypto curl.>=10 idn.>=16 m raptor.>=2 ssl \
+			xml2.>=9 xslt z
 
 MASTER_SITES =		http://download.dajobe.org/flickcurl/
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		curl.>=10::net/curl \
-			idn.>=16::devel/libidn \
-			xml2.>=9::textproc/libxml,-main \
-			raptor.>=2::textproc/raptor
+LIB_DEPENDS =		::net/curl \
+			::devel/libidn \
+			::textproc/libxml,-main \
+			::textproc/raptor
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} --with-raptor

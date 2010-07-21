@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/11 14:06:20 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/21 21:14:47 edd Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
 DISTNAME =	hunspell-1.2.8
-PKGNAME = 	${DISTNAME}p0
+REVISION =	0
 
 SHARED_LIBS =	hunspell-1.2 	0.0 #	.0.0
 

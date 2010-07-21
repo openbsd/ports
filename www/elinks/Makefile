@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/06/13 11:42:31 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/21 21:14:47 edd Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
-PKGNAME=		${DISTNAME}p4
+REVISION=		4
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
@@ -29,13 +29,13 @@ CONFIGURE_ARGS+=	--with-bzlib \
 
 # don't hide compiler command lines
 MAKE_ENV=		V=true
-LIB_DEPENDS+=		bz2::archivers/bzip2 \
-			idn::devel/libidn
+LIB_DEPENDS+=		::archivers/bzip2 \
+			::devel/libidn
 
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		::devel/gettext
-WANTLIB=		crypto c z ssl
+WANTLIB=		bz2 crypto c idn ssl z
 MODULES=		converters/libiconv
 
 FLAVORS=		lua no_x11 js
@@ -44,8 +44,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mlua}
 BROKEN=			has this ever worked?
 CONFIGURE_ARGS+=	--with-lua
-LIB_DEPENDS+=		lua.>=5.1::lang/lua
-WANTLIB+=		m
+LIB_DEPENDS+=		::lang/lua
+WANTLIB+=		m lua.>=5.1
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
@@ -60,8 +60,8 @@ WANTLIB+=		X11
 
 .if ${FLAVOR:L:Mjs}
 CONFIGURE_ARGS+=	--with-spidermonkey
-LIB_DEPENDS+=		js.>=2.0::lang/spidermonkey
-WANTLIB+=		pthread
+LIB_DEPENDS+=		::lang/spidermonkey
+WANTLIB+=		pthread js.>=2.0
 CFLAGS+=		-I${LOCALBASE}/include/js -pthread
 .else
 CONFIGURE_ARGS+=	--without-spidermonkey
