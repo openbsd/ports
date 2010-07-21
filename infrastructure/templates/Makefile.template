@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.56 2010/07/20 16:27:29 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.57 2010/07/21 00:18:54 sthen Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -32,7 +32,7 @@ DISTNAME =		???
 #SHARED_LIBS =		???
 
 # the category used in the directory name, /usr/ports/<category>/portname,
-# must be included.
+# must be included and listed first.
 CATEGORIES =		???
 
 #HOMEPAGE =		???	URL
