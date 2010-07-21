@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/25 02:35:10 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/21 01:03:36 kevlo Exp $
 ${P5SITE}/Net/Identica.pm
 ${P5SITE}/Net/Twitter/
 ${P5SITE}/Net/Twitter.pm
@@ -11,11 +11,16 @@ ${P5SITE}/Net/Twitter/Role/
 ${P5SITE}/Net/Twitter/Role/API/
 ${P5SITE}/Net/Twitter/Role/API/Lists.pm
 ${P5SITE}/Net/Twitter/Role/API/REST.pm
+${P5SITE}/Net/Twitter/Role/API/Search/
 ${P5SITE}/Net/Twitter/Role/API/Search.pm
+${P5SITE}/Net/Twitter/Role/API/Search/Trends.pm
 ${P5SITE}/Net/Twitter/Role/API/TwitterVision.pm
 ${P5SITE}/Net/Twitter/Role/InflateObjects.pm
 ${P5SITE}/Net/Twitter/Role/Legacy.pm
 ${P5SITE}/Net/Twitter/Role/OAuth.pm
+${P5SITE}/Net/Twitter/Role/RateLimit.pm
+${P5SITE}/Net/Twitter/Role/RetryOnError.pm
+${P5SITE}/Net/Twitter/Role/SimulateCursors.pm
 ${P5SITE}/Net/Twitter/Role/WrapError.pm
 ${P5SITE}/Net/Twitter/Search.pm
 @man man/man3p/Net::Identica.3p
@@ -27,9 +32,13 @@ ${P5SITE}/Net/Twitter/Search.pm
 @man man/man3p/Net::Twitter::Role::API::Lists.3p
 @man man/man3p/Net::Twitter::Role::API::REST.3p
 @man man/man3p/Net::Twitter::Role::API::Search.3p
+@man man/man3p/Net::Twitter::Role::API::Search::Trends.3p
 @man man/man3p/Net::Twitter::Role::API::TwitterVision.3p
 @man man/man3p/Net::Twitter::Role::InflateObjects.3p
 @man man/man3p/Net::Twitter::Role::Legacy.3p
 @man man/man3p/Net::Twitter::Role::OAuth.3p
+@man man/man3p/Net::Twitter::Role::RateLimit.3p
+@man man/man3p/Net::Twitter::Role::RetryOnError.3p
+@man man/man3p/Net::Twitter::Role::SimulateCursors.3p
 @man man/man3p/Net::Twitter::Role::WrapError.3p
 @man man/man3p/Net::Twitter::Search.3p
