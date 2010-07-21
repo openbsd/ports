@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/06/10 13:24:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/21 05:51:41 ajacoutot Exp $
 
 COMMENT=	library of optimized inner loops
 
 DISTNAME=	liboil-0.3.17
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}/download/
 
@@ -22,12 +22,5 @@ WANTLIB=	c m
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-glib
-
-# XXX on amd64, gcc4 opts seem to trigger an overflow in
-# oil_cpu_detect_arch() which crashes some applications
-# (e.g. SIGTRAP with gst-inspect)
-.if ${MACHINE_ARCH} == "amd64"
-CFLAGS+=	-O
-.endif
 
 .include <bsd.port.mk>

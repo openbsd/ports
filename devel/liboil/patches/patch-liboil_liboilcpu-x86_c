@@ -1,0 +1,33 @@
+$OpenBSD: patch-liboil_liboilcpu-x86_c,v 1.1 2010/07/21 05:51:41 ajacoutot Exp $
+
+Fix cpuid function on x86-64.
+(705916007fba0a845229a02dc6474cb523eff150)
+https://bugs.freedesktop.org/show_bug.cgi?id=28956
+
+--- liboil/liboilcpu-x86.c.orig	Thu Feb 26 14:42:45 2009
++++ liboil/liboilcpu-x86.c	Tue Jul 20 17:36:45 2010
+@@ -162,13 +162,10 @@ get_cpuid (uint32_t op, uint32_t *a, uint32_t *b, uint
+ static void
+ get_cpuid (uint32_t op, uint32_t *a, uint32_t *b, uint32_t *c, uint32_t *d)
+ {
++  *a = op;
+   __asm__ (
+-      "  pushq %%rbx\n"
+       "  cpuid\n"
+-      "  mov %%ebx, %%esi\n"
+-      "  popq %%rbx\n"
+-      : "=a" (*a), "=S" (*b), "=c" (*c), "=d" (*d)
+-      : "0" (op));
++      : "+a" (*a), "=b" (*b), "=c" (*c), "=d" (*d));
+ }
+ #endif
+ 
+@@ -185,7 +182,7 @@ oil_cpu_detect_cpuid (void)
+ {
+   uint32_t eax, ebx, ecx, edx;
+   uint32_t level;
+-  char vendor[13] = { 0 };
++  char vendor[13+4] = { 0 };
+   int ret;
+ 
+   oil_fault_check_enable ();
