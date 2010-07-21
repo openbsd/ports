@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/06/22 18:03:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/07/21 20:01:10 ajacoutot Exp $
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	2.30.2
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,16 +20,17 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-atom xcb-aux xcb-event xkbfile xklavier xml2 z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util notify gnome-desktop-2
+WANTLIB += gnomekbd gnomekbdui
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
 BUILD_DEPENDS=	::textproc/rarian
-LIB_DEPENDS=	notify::devel/libnotify \
-		gnome-desktop-2.>=6::x11/gnome/desktop \
-		gnomekbd,gnomekbdui.>=4::x11/gnome/libgnomekbd
+LIB_DEPENDS=	::devel/libnotify \
+		::x11/gnome/desktop \
+		::x11/gnome/libgnomekbd
 
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	::x11/gnome/icon-theme
@@ -41,8 +43,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	${CONFIUGRE_SHARED} \
-		--disable-alsa \
-		--disable-esd \
 		--disable-pulse
 
 FAKE_FLAGS+=	desktopdir=${PREFIX}/share/gnome-settings-daemon/autostart
