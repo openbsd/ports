@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/15 20:36:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/21 21:33:03 steven Exp $
 
 COMMENT =		library for nipper
 
 DISTNAME =		libnipper-0.12.6
-PKGNAME =		${DISTNAME}p0
+REVISION =		1
 CATEGORIES =		security net
 
 SHARED_LIBS =		nipper 0.0
 
 HOMEPAGE =		http://nipper.sf.net/
-MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
 # GPLv3, but "cannot be used as part of a commercial product"
 PERMIT_PACKAGE_CDROM =	No
