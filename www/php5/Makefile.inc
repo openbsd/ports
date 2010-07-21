@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2010/05/09 16:19:22 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2010/07/21 17:04:30 steven Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -40,9 +40,7 @@ CHROOT_DIR?=		/var/www
 MODULES_SUBDIR=		lib/php/modules
 MODULES_DIR=		${CHROOT_DIR}/${MODULES_SUBDIR}
 
-USE_GCC3 ?= No
-COMPILER_VERSION ?= gcc2
-.if ${USE_GCC3:L:Myes} || ${COMPILER_VERSION:L:Mgcc[34]*}
+.if ${COMPILER_VERSION:L:Mgcc3}
 PHP_LDFLAGS=		-lstdc++ -lm
 .endif
 

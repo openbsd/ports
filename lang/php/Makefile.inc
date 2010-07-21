@@ -44,9 +44,7 @@ CHROOT_DIR?=		/var/www
 MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
-USE_GCC3 ?= No
-COMPILER_VERSION ?= gcc2
-.if ${USE_GCC3:L:Myes} || ${COMPILER_VERSION:L:Mgcc[34]*}
+.if ${COMPILER_VERSION:L:Mgcc3}
 PHP_LDFLAGS=		-lstdc++ -lm
 .endif
 
