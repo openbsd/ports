@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_network_hpp,v 1.1 2010/07/21 16:21:54 landry Exp $
+Make sure netinet/in.h is included before SDL_net.h to
+avoid redefining INADDR_ANY/NONE/BROADCAST in SDL header
+--- src/network.hpp.orig	Sun Feb 22 02:27:50 2009
++++ src/network.hpp	Wed Jul 21 17:12:27 2010
+@@ -22,6 +22,10 @@
+ 
+ class config;
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++
+ #include "SDL_net.h"
+ 
+ #include <string>
