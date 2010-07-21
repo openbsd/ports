@@ -1,4 +1,4 @@
-To play nice with dhclient, read ${TRUETRUEPREFIX}/share/doc/adsuck/README.dhclient
+To play nice with dhclient, read ${TRUEPREFIX}/share/doc/adsuck/README.dhclient
 To have adsuck start at boot time, put something
 like this in /etc/rc.conf.local:
 

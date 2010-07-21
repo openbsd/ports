@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/21 16:14:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/21 18:36:59 merdely Exp $
 
 COMMENT=		dns relay for ad blocking
 
 DISTNAME=		adsuck-1.8
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.peereboom.us/adsuck/
