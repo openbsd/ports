@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/05/10 17:22:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2010/07/22 10:40:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,7 +39,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -docs -cups
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/python
 
 BUILD_DEPENDS=	::print/cups
 RUN_DEPENDS=	::x11/hicolor-icon-theme \
@@ -53,6 +54,9 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		png.>=3::graphics/png \
 		jpeg.>=62::graphics/jpeg
 WANTLIB-main=	${WANTLIB} c pthread
+
+MODPY_BUILDDEP=	No
+MODPY_RUNDEP=	No
 
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
@@ -87,11 +91,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+2
 
-# XXX we should use MODPY_BIN from the lang/python MODULE but
-# we do not want to build/run_depends on python
-MODPY_VERSION= 2.5
 pre-configure:
-	perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python${MODPY_VERSION},' \
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/gtk/gtk-builder-convert
 
 .include <bsd.port.mk>
