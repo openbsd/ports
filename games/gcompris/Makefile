@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/06/20 16:44:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/07/22 10:12:48 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,8 @@ MODULES=	devel/gettext \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	::x11/py-gtk2 \
+BUILD_DEPENDS=	::textproc/texi2html \
+		::x11/py-gtk2 \
 		::games/gnuchess \
 		::archivers/gtar
 LIB_DEPENDS=	python${MODPY_VERSION}::lang/python/${MODPY_VERSION} \
