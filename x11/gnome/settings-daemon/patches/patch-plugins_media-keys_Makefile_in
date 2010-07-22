@@ -1,0 +1,57 @@
+$OpenBSD: patch-plugins_media-keys_Makefile_in,v 1.1 2010/07/22 11:26:29 ajacoutot Exp $
+
+We want media keys support even if we don't have pulseaudio.
+
+--- plugins/media-keys/Makefile.in.orig	Tue Jun 22 10:59:44 2010
++++ plugins/media-keys/Makefile.in	Thu Jul 22 12:32:43 2010
+@@ -37,7 +37,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ @HAVE_PULSE_TRUE@am__append_1 = cut-n-paste
+-@HAVE_PULSE_TRUE@am__append_2 = libmedia-keys.la
++am__append_2 = libmedia-keys.la
+ noinst_PROGRAMS = test-media-keys$(EXEEXT) test-media-window$(EXEEXT) \
+ 	$(am__EXEEXT_1)
+ @HAVE_PULSE_TRUE@am__append_3 = $(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la
+@@ -79,7 +79,6 @@ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libmedia_keys_la_DEPENDENCIES =  \
+ 	$(top_builddir)/plugins/common/libcommon.la \
+-	$(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am__objects_1 =
+ am__objects_2 = libmedia_keys_la-gsd-marshal.lo $(am__objects_1)
+@@ -92,7 +91,7 @@ libmedia_keys_la_OBJECTS = $(am_libmedia_keys_la_OBJEC
+ libmedia_keys_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libmedia_keys_la_CFLAGS) \
+ 	$(CFLAGS) $(libmedia_keys_la_LDFLAGS) $(LDFLAGS) -o $@
+-@HAVE_PULSE_TRUE@am_libmedia_keys_la_rpath = -rpath $(plugindir)
++am_libmedia_keys_la_rpath = -rpath $(plugindir)
+ am__EXEEXT_1 =
+ PROGRAMS = $(noinst_PROGRAMS)
+ am__objects_3 = test_media_keys-gsd-marshal.$(OBJEXT) $(am__objects_1)
+@@ -395,7 +394,6 @@ libmedia_keys_la_SOURCES = \
+ libmedia_keys_la_CPPFLAGS = \
+ 	-I$(top_srcdir)/gnome-settings-daemon			\
+ 	-I$(top_srcdir)/plugins/common				\
+-	-I$(top_srcdir)/plugins/media-keys/cut-n-paste		\
+ 	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
+ 	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
+ 	-DGNOME_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
+@@ -410,7 +408,6 @@ libmedia_keys_la_LDFLAGS = \
+ 
+ libmedia_keys_la_LIBADD = \
+ 	$(top_builddir)/plugins/common/libcommon.la			\
+-	$(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la	\
+ 	$(SETTINGS_PLUGIN_LIBS)						\
+ 	$(XF86MISC_LIBS)						\
+ 	-lm
+@@ -418,7 +415,7 @@ libmedia_keys_la_LIBADD = \
+ plugin_in_files = \
+ 	media-keys.gnome-settings-plugin.in
+ 
+-@HAVE_PULSE_TRUE@plugin_DATA = $(plugin_in_files:.gnome-settings-plugin.in=.gnome-settings-plugin)
++plugin_DATA = $(plugin_in_files:.gnome-settings-plugin.in=.gnome-settings-plugin)
+ test_media_window_SOURCES = \
+ 	gsd-media-keys-window.c			\
+ 	gsd-media-keys-window.h			\

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/04/26 13:28:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/07/22 11:26:29 ajacoutot Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -13,32 +13,35 @@ lib/gnome-settings-daemon-2.0/font.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/housekeeping.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/keybindings.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/liba11y-keyboard.a
-lib/gnome-settings-daemon-2.0/liba11y-keyboard.la
-lib/gnome-settings-daemon-2.0/libbackground.a
-lib/gnome-settings-daemon-2.0/libbackground.la
-lib/gnome-settings-daemon-2.0/libclipboard.a
-lib/gnome-settings-daemon-2.0/libclipboard.la
-lib/gnome-settings-daemon-2.0/libfont.a
-lib/gnome-settings-daemon-2.0/libfont.la
-lib/gnome-settings-daemon-2.0/libhousekeeping.a
-lib/gnome-settings-daemon-2.0/libhousekeeping.la
-lib/gnome-settings-daemon-2.0/libkeybindings.a
-lib/gnome-settings-daemon-2.0/libkeybindings.la
-lib/gnome-settings-daemon-2.0/libkeyboard.a
-lib/gnome-settings-daemon-2.0/libkeyboard.la
-lib/gnome-settings-daemon-2.0/libmouse.a
-lib/gnome-settings-daemon-2.0/libmouse.la
-lib/gnome-settings-daemon-2.0/libsound.a
-lib/gnome-settings-daemon-2.0/libsound.la
-lib/gnome-settings-daemon-2.0/libtyping-break.a
-lib/gnome-settings-daemon-2.0/libtyping-break.la
-lib/gnome-settings-daemon-2.0/libxrandr.a
-lib/gnome-settings-daemon-2.0/libxrandr.la
-lib/gnome-settings-daemon-2.0/libxrdb.a
-lib/gnome-settings-daemon-2.0/libxrdb.la
-lib/gnome-settings-daemon-2.0/libxsettings.a
-lib/gnome-settings-daemon-2.0/libxsettings.la
+@comment lib/gnome-settings-daemon-2.0/liba11y-keyboard.a
+@comment lib/gnome-settings-daemon-2.0/liba11y-keyboard.la
+@comment lib/gnome-settings-daemon-2.0/libbackground.a
+@comment lib/gnome-settings-daemon-2.0/libbackground.la
+@comment lib/gnome-settings-daemon-2.0/libclipboard.a
+@comment lib/gnome-settings-daemon-2.0/libclipboard.la
+@comment lib/gnome-settings-daemon-2.0/libfont.a
+@comment lib/gnome-settings-daemon-2.0/libfont.la
+@comment lib/gnome-settings-daemon-2.0/libhousekeeping.a
+@comment lib/gnome-settings-daemon-2.0/libhousekeeping.la
+@comment lib/gnome-settings-daemon-2.0/libkeybindings.a
+@comment lib/gnome-settings-daemon-2.0/libkeybindings.la
+@comment lib/gnome-settings-daemon-2.0/libkeyboard.a
+@comment lib/gnome-settings-daemon-2.0/libkeyboard.la
+@comment lib/gnome-settings-daemon-2.0/libmedia-keys.a
+@comment lib/gnome-settings-daemon-2.0/libmedia-keys.la
+@comment lib/gnome-settings-daemon-2.0/libmouse.a
+@comment lib/gnome-settings-daemon-2.0/libmouse.la
+@comment lib/gnome-settings-daemon-2.0/libsound.a
+@comment lib/gnome-settings-daemon-2.0/libsound.la
+@comment lib/gnome-settings-daemon-2.0/libtyping-break.a
+@comment lib/gnome-settings-daemon-2.0/libtyping-break.la
+@comment lib/gnome-settings-daemon-2.0/libxrandr.a
+@comment lib/gnome-settings-daemon-2.0/libxrandr.la
+@comment lib/gnome-settings-daemon-2.0/libxrdb.a
+@comment lib/gnome-settings-daemon-2.0/libxrdb.la
+@comment lib/gnome-settings-daemon-2.0/libxsettings.a
+@comment lib/gnome-settings-daemon-2.0/libxsettings.la
+lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/typing-break.gnome-settings-plugin
