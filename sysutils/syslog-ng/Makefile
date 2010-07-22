@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/05/03 20:51:17 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/22 21:03:03 steven Exp $
 
 COMMENT=	syslogd replacement
 
 V =		3.1.1
 DISTNAME =	syslog-ng-$V
+REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -25,7 +26,7 @@ WANTLIB =	c pcre wrap crypto ssl z
  
 LIB_DEPENDS = 	glib-2.0::devel/glib2 \
  		evtlog::sysutils/eventlog
- 
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-tcp-wrapper \
 			--with-pidfile-dir=/var/run \
@@ -52,6 +53,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOC}
 #	${INSTALL_DATA} ${WRKBUILD}/syslog-ng.html/index.html ${DOC}
 	${INSTALL_DATA_DIR} ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/syslog-ng.conf.sample ${EXAMPLES}
+	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf \
+		${EXAMPLES}/syslog-ng.conf.sample
 
 .include <bsd.port.mk>
+CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/syslog-ng
