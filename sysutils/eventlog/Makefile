@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/04 02:56:47 william Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/22 20:56:23 steven Exp $
 
 COMMENT =	EventLog library
 
-V =		0.2.9
+V =		0.2.12
 DISTNAME =	eventlog-${V}
 CATEGORIES =	sysutils
 
-SHARED_LIBS =	evtlog	0.0
+SHARED_LIBS =	evtlog	1.0
 
 HOMEPAGE =	http://www.balabit.com/products/syslog_ng/
 DISTFILES =	eventlog_${V}.tar.gz
