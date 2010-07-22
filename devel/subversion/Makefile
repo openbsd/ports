@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/06/29 14:26:08 stsp Exp $
+# $OpenBSD: Makefile,v 1.73 2010/07/22 09:09:34 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -178,8 +178,7 @@ CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2 \
 CONFIGURE_ARGS+=--without-apxs
 .endif
 
-REGRESS_DEPENDS=::lang/python/${MODPY_VERSION}
-MODPY_VERSION?=	2.5
+REGRESS_DEPENDS=${MODPY_RUN_DEPENDS}
 SUBST_VARS+=	LOCALBASE SO_VERSION
 
 pre-patch:
