@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/18 18:49:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/22 18:52:35 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,16 +12,14 @@ SHARED_LIBS=	csirocsa	2.0	\
 		plplotcxxd	12.0	\
 		plplotd		13.0	\
 		plplotf77cd	11.0	\
-		plplotf77d	11.0	\
-		plplottcltkd	12.0	\
-		tclmatrixd	12.0
+		plplotf77d	11.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-f77=	plplot-f77-${VERSION}
-REVISION-main=	2
-REVISION-c++ =	2
-REVISION-f77=	5
+REVISION-main=	3
+REVISION-c++ =	3
+REVISION-f77=	6
 
 CATEGORIES=	math graphics
 
@@ -44,9 +42,7 @@ MODFORTRAN_WANTG77 = Yes
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
-		::graphics/gd \
-		::print/ghostscript/gnu-fonts \
+BUILD_DEPENDS=	::print/ghostscript/gnu-fonts \
 		${MODFORTRAN_BUILD_DEPENDS}
 
 myRUN_DEPENDS=	::print/ghostscript/gnu-fonts
@@ -79,23 +75,27 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-main -c++ -f77
 
-myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
-		fontconfig pixman-1 png pthread-stubs xcb
+myWANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender cairo expat \
+		fontconfig freetype gd glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 png pthread-stubs xcb xcb-render \
+		xcb-render-util z
 
-WANTLIB-main=		${myWANTLIB} c
-WANTLIB-c++ =		${myWANTLIB}
-WANTLIB-f77+=		${myWANTLIB} ${MODFORTRAN_WANTLIB}
+WANTLIB-main=	${myWANTLIB} c pthread
+WANTLIB-c++ =	${myWANTLIB} csirocsa plplotd stdc++
+WANTLIB-f77+=	${myWANTLIB} csirocsa plplotd ${MODFORTRAN_WANTLIB}
 
-myLIB_DEPENDS=	glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-		pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
-		cairo::graphics/cairo \
-		glitz::graphics/glitz \
+myLIB_DEPENDS=	::devel/glib2 \
+		::devel/pango \
+		::graphics/cairo \
+		::graphics/gd \
+		::graphics/glitz \
 		${MODGETTEXT_LIB_DEPENDS}
 
 LIB_DEPENDS-main=	${myLIB_DEPENDS}
-LIB_DEPENDS-c++ =	plplotd,csirocsa::math/plplot,-main \
+LIB_DEPENDS-c++ =	::math/plplot,-main \
 			${myLIB_DEPENDS}
-LIB_DEPENDS-f77=	plplotd,csirocsa::math/plplot,-main \
+LIB_DEPENDS-f77=	::math/plplot,-main \
 			${myLIB_DEPENDS} \
 			${MODFORTRAN_LIB_DEPENDS}
 
@@ -104,7 +104,6 @@ RUN_DEPENDS-c++ =
 RUN_DEPENDS-f77=
 
 pre-configure:
-	@perl -pi -e 's,tclsh,${MODTCL_BIN},' ${WRKSRC}/scripts/mktclIndex
 	@perl -pi -e 's/3plplot/3/g' ${DOCSRC}/*.3plplot
 	@cd ${DOCSRC} && for m in *.3plplot; do mv $$m $${m%\.3plplot}.3; done
 
