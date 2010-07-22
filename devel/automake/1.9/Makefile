@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/22 11:37:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/22 12:08:58 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}

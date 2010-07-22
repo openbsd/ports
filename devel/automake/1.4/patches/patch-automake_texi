@@ -1,26 +1,28 @@
-$OpenBSD: patch-automake_texi,v 1.1.1.1 2005/01/11 07:11:00 sturm Exp $
---- automake.texi.orig	Wed Jan  6 08:01:26 1999
-+++ automake.texi	Thu May 10 12:33:10 2001
-@@ -1,6 +1,7 @@
+$OpenBSD: patch-automake_texi,v 1.2 2010/07/22 12:08:58 ajacoutot Exp $
+--- automake.texi.orig	Wed Jan  6 14:01:26 1999
++++ automake.texi	Thu Jul 22 13:53:09 2010
+@@ -1,7 +1,8 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header
  @setfilename automake.info
-+@dircategory Programming & development tools 
- @settitle automake
+-@settitle automake
++@dircategory Programming & development tools
++@settitle automake${SUFFIX}
  @setchapternewpage off
  @c %**end of header
+ 
 @@ -9,12 +10,12 @@
  
  @dircategory GNU admin
  @direntry
 -* automake: (automake).		Making Makefile.in's
-+* Automake: (automake).		Making Makefile.in's
++* automake${SUFFIX}: (automake${SUFFIX}).		Making Makefile.in's
  @end direntry
  
  @dircategory Individual utilities
  @direntry
 -* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
-+* Aclocal: (automake)           Invoking aclocal. Generating aclocal.m4
++* aclocal${SUFFIX}: (automake${SUFFIX})Invoking aclocal.          Generating aclocal.m4
  @end direntry
  
  @ifinfo

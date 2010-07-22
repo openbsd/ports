@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/22 12:08:58 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.8
 DISTNAME=	automake-${VERSION}.5
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
@@ -32,6 +32,8 @@ REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			::devel/libtool
 REGRESS_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/automake.texi
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/14 10:41:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/22 12:08:58 ajacoutot Exp $
 @option no-default-conflict
 @conflict automake->=1.4,<1.5
 @pkgpath devel/automake
@@ -6,7 +6,7 @@
 bin/aclocal${SUFFIX}
 @comment bin/automake
 bin/automake${SUFFIX}
-@comment @info info/automake.info
+@info info/automake${SUFFIX}.info
 share/aclocal${SUFFIX}/
 share/aclocal${SUFFIX}/amversion.m4
 share/aclocal${SUFFIX}/ccstdc.m4
