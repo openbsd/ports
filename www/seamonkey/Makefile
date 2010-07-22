@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2010/07/17 22:53:13 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2010/07/22 21:48:02 landry Exp $
 
 COMMENT =	Mozilla application suite
 
-MOZILLA_VERSION=	2.0.5
+MOZILLA_VERSION=	2.0.6
 MOZILLA_BRANCH =	1.9.1
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
-
-PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}p0
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird
 # for mail/enigmail and productivity/sunbird,-seamonkey to work fine
@@ -74,7 +72,8 @@ NO_REGRESS=	Yes
 MODGNU_CONFIG_GUESS_DIRS+=	${WRKSRC}/directory/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-calendar
+# oops, notyet
+# CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET=	default
 
