@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/04/28 08:03:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/07/22 19:16:16 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-ogg-*
 @conflict gstreamer-theora-*
@@ -226,7 +226,13 @@ share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtc
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtpbuffer.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtppayloads.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspbase64.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspconnection.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspdefs.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspextension.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspmessage.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsprange.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsptransport.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspurl.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstsdpmessage.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gststreamvolume.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttag.html
@@ -311,7 +317,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audiotestsrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-cdparanoia.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-decodebin.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-decodebin2.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-ffmpegcolorspace.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gdp.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gio.html
@@ -386,6 +391,7 @@ share/locale/pl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
