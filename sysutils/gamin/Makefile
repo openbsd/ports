@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/20 14:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/22 09:24:20 ajacoutot Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -11,7 +11,7 @@ PKGNAME-main=	libgamin-${GNOME_VERSION}
 REVISION-main=	3
 
 PKGNAME-server=	${DISTNAME}
-REVISION-server=7
+REVISION-server=8
 
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 REVISION-python=1
@@ -50,7 +50,7 @@ LIB_DEPENDS-python= ::sysutils/gamin,-main
 MULTI_PACKAGES+= -server
 MODULES+=	devel/gettext
 CONFIGURE_ARGS+= --enable-server
-WANTLIB-server += c pcre glib-2.0.>=1800
+WANTLIB-server += c pcre glib-2.0.>=1800 pthread
 .else
 CONFIGURE_ARGS+= --disable-server
 .endif
@@ -66,8 +66,8 @@ CONFIGURE_ARGS+= --without-python
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -pthread" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-docs \
 		--disable-gtk-doc \
