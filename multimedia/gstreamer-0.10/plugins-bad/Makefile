@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/06/24 20:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/22 19:19:26 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
@@ -11,6 +11,10 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
+REVISION-main=		0
+REVISION-neon=		0
+REVISION-mjpeg=		0
+
 MULTI_PACKAGES =	-main -neon -mjpeg
 
 SHARED_LIBS +=  gstphotography-0.10          0.0 # .0.0
@@ -21,54 +25,58 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 MODULES =		devel/gettext
 
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
-			z m pcre
+			z m pcre gstreamer-0.10
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 .endfor
 
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:${P}/core
+LIB_DEPENDS =		:gstreamer->=0.10:${P}/core
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 BUILD_DEPENDS +=        ::audio/ladspa
 
 WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
-			X11 Xau Xdmcp Xext Xrandr Xrender bz2 pthread-stubs \
+			X11 Xau Xdmcp Xrender bz2 pthread-stubs \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
-			cairo croco-0.6 expat fontconfig freetype \
-			gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 \
-			oil-0.3 pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pixman-1 png pthread dvdread
+			cairo croco-0.6 expat fontconfig freetype stdc++ \
+			gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 gstinterfaces-0.10 \
+			oil-0.3 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
+			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
+			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \
+			gsttag-0.10 sndfile mpcdec faac faad dca exif xvidcore \
+			SDL mms gsm rsvg-2 schroedinger-1.0 cdaudio BPM \
+			SoundTouch dvdnav jasper
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10,gstriff-0.10,gstpbutils-0.10,gstrtp-0.10,gstsdp-0.10,gsttag-0.10::${P}/plugins-base \
-			sndfile.>=3::audio/libsndfile \
-			mpcdec.>=3::audio/libmpcdec \
-			faac.>=1::audio/faac \
-			faad.>=2::audio/faad \
-			dca::audio/libdca \
-			exif.>=12::graphics/libexif \
-			xvidcore.>=4::multimedia/xvidcore \
-			SDL.>=8::devel/sdl \
-			mms::multimedia/libmms \
-			gsm::audio/gsm \
-			rsvg-2.>=28::x11/gnome/librsvg \
-			schroedinger-1.0::multimedia/schroedinger \
-			cdaudio.>=1::audio/libcdaudio \
-			BPM,SoundTouch::audio/soundtouch \
-			dvdnav.>=6:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav \
-			jasper.>=2::graphics/jasper
+			::${P}/plugins-base \
+			::audio/libsndfile \
+			::audio/libmpcdec \
+			::audio/faac \
+			::audio/faad \
+			::audio/libdca \
+			::graphics/libexif \
+			::multimedia/xvidcore \
+			::devel/sdl \
+			::multimedia/libmms \
+			::audio/gsm \
+			::x11/gnome/librsvg \
+			::multimedia/schroedinger \
+			::audio/libcdaudio \
+			::audio/soundtouch \
+			:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav \
+			::graphics/jasper
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-neon =		${WANTLIB} \
-			gstbase-0.10 \
+			gstbase-0.10 neon \
 			crypto expat ssl asn1 gssapi krb5
 LIB_DEPENDS-neon =	${LIB_DEPENDS} \
-			neon::net/neon
+			::net/neon
 
 WANTLIB-mjpeg =		${WANTLIB} \
-			gstbase-0.10
+			gstbase-0.10 mjpegutils mplex2 mpeg2encpp stdc++
 LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
-			mjpegutils.>=4,mplex2.>=5,mpeg2encpp.>=5::multimedia/mjpegtools
+			::multimedia/mjpegtools
 
 CONFIGURE_ENV =		ac_cv_path_PYTHON=""
 CONFIGURE_ARGS =	--disable-acm \

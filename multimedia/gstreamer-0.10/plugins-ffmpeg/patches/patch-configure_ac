@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2010/05/26 22:39:02 jakemsr Exp $
---- configure.ac.orig	Sat Mar  6 04:49:35 2010
-+++ configure.ac	Tue May 18 15:19:49 2010
-@@ -298,7 +298,7 @@ else
+$OpenBSD: patch-configure_ac,v 1.2 2010/07/22 19:21:31 ajacoutot Exp $
+--- configure.ac.orig	Thu Jul 15 21:15:23 2010
++++ configure.ac	Wed Jul 21 21:17:57 2010
+@@ -296,7 +296,7 @@ else
                  \$(top_builddir)/gst-libs/ext/ffmpeg/libavutil/libavutil.a"
  
    FFMPEG_SUBDIRS=gst-libs
