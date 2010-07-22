@@ -1,29 +1,30 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/28 08:02:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/22 19:14:49 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
-V =			0.10.29
+V =			0.10.30
 
 PKGNAME =		gstreamer-${V}
 
 DISTNAME =		gstreamer-${V}
 
-SHARED_LIBS +=  gstreamer-0.10       2.0      # .25.0
-SHARED_LIBS +=  gstbase-0.10         2.0      # .25.0
-SHARED_LIBS +=  gstcontroller-0.10   3.0      # .25.0
-SHARED_LIBS +=  gstdataprotocol-0.10 2.0      # .25.0
-SHARED_LIBS +=  gstcheck-0.10        1.0      # .25.0
-SHARED_LIBS +=  gstnet-0.10          2.0      # .25.0
+SHARED_LIBS +=  gstreamer-0.10       2.1      # .26.0
+SHARED_LIBS +=  gstbase-0.10         2.1      # .26.0
+SHARED_LIBS +=  gstcontroller-0.10   3.1      # .26.0
+SHARED_LIBS +=  gstdataprotocol-0.10 2.1      # .26.0
+SHARED_LIBS +=  gstcheck-0.10        1.1      # .26.0
+SHARED_LIBS +=  gstnet-0.10          2.1      # .26.0
 
-WANTLIB += c m pcre pthread z
+WANTLIB += c m pcre pthread z xml2 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
 MODULES =		devel/gettext
 
 BUILD_DEPENDS =		::devel/flex
-LIB_DEPENDS =		xml2.>=6::textproc/libxml \
-			glib-2.0.>=1800,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS =		::textproc/libxml \
+			::devel/glib2
 
 REGRESS_DEPENDS =	::${BASE_PKGPATH}
 
