@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/22 05:32:34 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -33,7 +33,6 @@ REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			::devel/gmake \
 			::archivers/bzip2 \
 			::devel/bison \
-			::devel/libtool \
 			::lang/python/2.3 \
 			::editors/emacs21 \
 			::print/texlive/base \
