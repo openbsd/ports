@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/22 12:08:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/22 12:13:17 ajacoutot Exp $
 
 COMMENT=	GNU Standards-compliant Makefile generator
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.gnu.org/software/automake/
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
