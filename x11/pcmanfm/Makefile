@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/16 13:15:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/22 09:12:42 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
@@ -41,7 +41,7 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=	--disable-hal \
 		--disable-inotify
 
