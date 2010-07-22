@@ -1,0 +1,28 @@
+$OpenBSD: patch-automake_in,v 1.1.1.1 2010/07/22 19:12:22 ajacoutot Exp $
+--- automake.in.orig	Tue Dec  8 20:36:30 2009
++++ automake.in	Thu Jul 22 06:54:11 2010
+@@ -4055,7 +4055,7 @@ sub handle_configure ($$$@)
+       # Use $(install_sh), not $(MKDIR_P) because the latter requires
+       # at least one argument, and $(mkinstalldirs) used to work
+       # even without arguments (e.g. $(mkinstalldirs) $(conditional_dir)).
+-      define_variable ('mkinstalldirs', '$(install_sh) -d', INTERNAL);
++      define_variable ('mkinstalldirs', '$(SHELL) $(install_sh) -d', INTERNAL);
+     }
+ 
+   reject_var ('CONFIG_HEADER',
+@@ -4815,6 +4815,7 @@ sub scan_autoconf_traces ($)
+ 		_LT_AC_TAGCONFIG => 0,
+ 		m4_include => 1,
+ 		m4_sinclude => 1,
++		include => 1,
+ 		sinclude => 1,
+ 	      );
+ 
+@@ -4835,6 +4836,7 @@ sub scan_autoconf_traces ($)
+       my ($here, @args) = split (/::/);
+       my $where = new Automake::Location $here;
+       my $macro = $args[0];
++      next if ($macro eq "include");
+ 
+       prog_error ("unrequested trace `$macro'")
+ 	unless exists $traced{$macro};
