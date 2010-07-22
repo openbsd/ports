@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2006/03/12 02:31:16 steven Exp $
---- src/Makefile.in.orig	Sun Mar  5 21:55:24 2006
-+++ src/Makefile.in	Sun Mar 12 02:40:36 2006
-@@ -473,9 +473,9 @@ clean-pkglibLTLIBRARIES:
+$OpenBSD: patch-src_Makefile_in,v 1.5 2010/07/22 19:44:07 steven Exp $
+--- src/Makefile.in.orig	Thu Aug 13 10:18:34 2009
++++ src/Makefile.in	Wed Jul 21 22:59:54 2010
+@@ -396,7 +396,7 @@ libpstoedit_la_SOURCES = \
+ 	genericints.h 				\
+ 	version.h
+ 
+-libpstoedit_la_LIBADD = ${CXX_STD_LIB} ${CXX_RUNTIME_LIB} -ldl -lm
++libpstoedit_la_LIBADD = ${CXX_STD_LIB} ${CXX_RUNTIME_LIB} -lm
+ libpstoedit_la_LDFLAGS = -no-undefined
+ pstoedit_SOURCES = cmdmain.cpp
+ pstoedit_LDFLAGS = -no-undefined -L. libpstoedit.la ${LIBLD_LDFLAGS}
+@@ -524,9 +524,9 @@ clean-pkglibLTLIBRARIES:
  libp2edrvlplot.la: $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_DEPENDENCIES) 
  	$(CXXLINK) $(am_libp2edrvlplot_la_rpath) $(libp2edrvlplot_la_LDFLAGS) $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_LIBADD) $(LIBS)
  libp2edrvmagick++.la: $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_DEPENDENCIES) 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/03/12 02:31:16 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/22 19:44:07 steven Exp $
 %%SHARED%%
-bin/pstoedit
+@bin bin/pstoedit
 include/pstoedit/
 include/pstoedit/base64writer.h
 include/pstoedit/cppcomp.h
@@ -9,6 +9,7 @@ include/pstoedit/drvfuncs.h
 include/pstoedit/genericints.h
 include/pstoedit/miscutil.h
 include/pstoedit/ordlist.h
+include/pstoedit/papersizes.h
 include/pstoedit/poptions.h
 include/pstoedit/psimage.h
 include/pstoedit/pstoedit.h
