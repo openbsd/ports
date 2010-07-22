@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/13 16:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/22 10:41:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,8 @@ WANTLIB += curl.>=13 tag.>=7 sqlite3.>=13 dbus-glib-1.>=4 exif.>=12
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/python
 
 BUILD_DEPENDS=	::devel/boost \
 		::misc/shared-mime-info \
@@ -60,6 +61,9 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 
 USE_LIBTOOL=	Yes
 
+MODPY_BUILDDEP=	No
+MODPY_RUNDEP=	No
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -82,10 +86,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/pinot
 
 BASH_SCRIPTS=pinot-enum-index.sh pinot-cd.sh pinot-check-file.sh
 
-# XXX we should use the lang/python MODULE but we do not want to
-# build/run_depends on python -- Makefile.in
-MODPY_VERSION=	2.5
-SUBST_VARS=	MODPY_VERSION
 pre-configure:
 	${SUBST_CMD} \
 		${WRKSRC}/{Makefile.in,README,textcat_conf.txt,textcat3_conf.txt,Core/pinot-search.1,Utils/xdgmime/xdgmime.c}
