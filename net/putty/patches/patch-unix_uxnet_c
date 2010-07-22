@@ -1,0 +1,14 @@
+$OpenBSD: patch-unix_uxnet_c,v 1.1 2010/07/22 14:26:53 landry Exp $
+Make sure netinet/in.h is included before arpa/inet.h
+--- unix/uxnet.c.orig	Thu Jul 22 16:20:22 2010
++++ unix/uxnet.c	Thu Jul 22 16:20:34 2010
+@@ -11,8 +11,8 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <netinet/tcp.h>
+ #include <netdb.h>
+ #include <sys/un.h>
