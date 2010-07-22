@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_mkdirp_m4,v 1.1 2007/03/18 21:43:50 matthieu Exp $
---- m4/mkdirp.m4.orig	Sun Mar 18 18:49:45 2007
-+++ m4/mkdirp.m4	Sun Mar 18 19:56:06 2007
-@@ -57,7 +57,7 @@
+$OpenBSD: patch-m4_mkdirp_m4,v 1.2 2010/07/22 11:37:15 ajacoutot Exp $
+--- m4/mkdirp.m4.orig	Sun Jan  9 14:04:08 2005
++++ m4/mkdirp.m4	Thu Jul 22 12:53:22 2010
+@@ -57,7 +57,7 @@ else
    if test -f "$ac_aux_dir/mkinstalldirs"; then
      mkdir_p='$(mkinstalldirs)'
    else

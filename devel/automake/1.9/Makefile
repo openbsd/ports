@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/22 05:32:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/22 11:37:15 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
@@ -15,6 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MODULES=		lang/python
+
+MODPY_BUILDEP=		No
+MODPY_RUNDEP=		No
 
 AUTOCONF_VERSION=	2.59
 
@@ -29,11 +34,11 @@ MAKE_FLAGS+=		pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 SUBST_VARS=		SUFFIX
 
 REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODPY_RUN_DEPENDS} \
 			::devel/libtool \
 			::devel/gmake \
 			::archivers/bzip2 \
 			::devel/bison \
-			::lang/python/2.3 \
 			::editors/emacs21 \
 			::print/texlive/base \
 			::devel/dejagnu
@@ -46,11 +51,15 @@ post-patch:
 	touch ${WRKSRC}/Makefile.in
 
 do-regress:
+	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	    @cd ${WRKBUILD} && \
 	    	exec ${SETENV} ${MAKE_ENV} \
 		TESTS_ENVIRONMENT='${TESTS_ENVIRONMENT}' \
 		    ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} \
 		    ${REGRESS_TARGET}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/automake.texi
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info
