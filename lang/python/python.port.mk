@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.32 2010/07/15 07:55:29 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.33 2010/07/22 10:39:19 ajacoutot Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,7 +7,6 @@ SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python
 
-# XXX devel/subversion, x11/gtk+2 and x11/pinot hardcode this.
 MODPY_VERSION?=		2.5
 .if ${MODPY_VERSION} == 2.3
 MODPY_VSPEC = >=${MODPY_VERSION},<2.4
@@ -24,9 +23,10 @@ MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 
+MODPY_BUILDDEP?=	Yes
 MODPY_RUNDEP?=		Yes
 
-.if ${NO_BUILD:L} == "no"
+.if ${NO_BUILD:L} == "no" && ${MODPY_BUILDDEP:L} == "yes"
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
 .if ${MODPY_RUNDEP:L} == "yes"
