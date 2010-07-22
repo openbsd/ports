@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.7 2010/07/11 14:55:56 landry Exp $
+@comment $OpenBSD: PLIST-devel,v 1.8 2010/07/22 21:43:01 landry Exp $
 @option no-default-conflict
 @conflict xulrunner-devel->=1.9,<1.9.1
 %%jit%%
@@ -847,6 +847,7 @@ ${MOZILLA_PROJECT}/idl/nsIProxiedProtocolHandler.idl
 ${MOZILLA_PROJECT}/idl/nsIProxyAutoConfig.idl
 ${MOZILLA_PROJECT}/idl/nsIProxyInfo.idl
 ${MOZILLA_PROJECT}/idl/nsIProxyObjectManager.idl
+${MOZILLA_PROJECT}/idl/nsIQueryContentEventResult.idl
 ${MOZILLA_PROJECT}/idl/nsIRDFCompositeDataSource.idl
 ${MOZILLA_PROJECT}/idl/nsIRDFContainer.idl
 ${MOZILLA_PROJECT}/idl/nsIRDFContainerUtils.idl
@@ -2406,6 +2407,7 @@ ${MOZILLA_PROJECT}/include/nsIProxiedProtocolHandler.h
 ${MOZILLA_PROJECT}/include/nsIProxyAutoConfig.h
 ${MOZILLA_PROJECT}/include/nsIProxyInfo.h
 ${MOZILLA_PROJECT}/include/nsIProxyObjectManager.h
+${MOZILLA_PROJECT}/include/nsIQueryContentEventResult.h
 ${MOZILLA_PROJECT}/include/nsIRDFCompositeDataSource.h
 ${MOZILLA_PROJECT}/include/nsIRDFContainer.h
 ${MOZILLA_PROJECT}/include/nsIRDFContainerUtils.h
