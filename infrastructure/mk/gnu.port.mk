@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.37 2010/05/28 10:42:09 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.38 2010/07/22 19:14:09 ajacoutot Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -16,6 +16,8 @@ _AUTOMAKE_SPEC = automake->=${AUTOMAKE_VERSION},<1.5
 _AUTOMAKE_SPEC = automake->=${AUTOMAKE_VERSION},<1.9
 .elif ${AUTOMAKE_VERSION} == 1.9
 _AUTOMAKE_SPEC = automake->=${AUTOMAKE_VERSION},<1.10
+.elif ${AUTOMAKE_VERSION} == 1.10
+_AUTOMAKE_SPEC = automake->=${AUTOMAKE_VERSION},<1.11
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mautomake}
