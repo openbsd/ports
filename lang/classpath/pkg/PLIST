@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/16 15:31:02 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/07/22 11:45:12 landry Exp $
 %%SHARED%%
 bin/gappletviewer
 bin/gjar
@@ -22,8 +22,6 @@ include/classpath/jni_md.h
 @info info/cp-tools.info
 @info info/cp-vmintegration.info
 lib/classpath/
-lib/classpath/libgcjwebplugin.a
-lib/classpath/libgcjwebplugin.la
 lib/classpath/libgconfpeer.a
 lib/classpath/libgconfpeer.la
 lib/classpath/libgtkpeer.a

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 17:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/22 11:45:12 landry Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 
 CATEGORIES=	lang java
 
@@ -14,17 +14,14 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		ecj.jar:0
 DIST_SUBDIR=	classpath
 
-.for _lib in gcjwebplugin gconfpeer gtkpeer javaio javalang \
-	javalangmanagement javalangreflect javamath javanet \
-	javanio javautil jawt
+.for _lib in javaio javalang javanio javautil \
+	javalangmanagement javalangreflect javanet
 SHARED_LIBS+=		${_lib} 0.98
 .endfor
 
 HOMEPAGE=	http://www.gnu.org/software/classpath/
 
-MAINTAINER=	Frederick C. Druseikis <fredd@cse.sc.edu>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -34,25 +31,26 @@ MODULES=	converters/libiconv gcc4
 MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	java
 
-BUILD_DEPENDS=	::devel/xulrunner/1.8,-devel \
+BUILD_DEPENDS=	::archivers/zip \
 		::lang/antlr2
 
 RUN_DEPENDS=	::lang/gcc/4.2,-java,java \
 		::lang/antlr2
 
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		dbus-glib-1::x11/dbus-glib \
-		ORBit-2::devel/ORBit2 \
-		gconf-2::devel/gconf2 \
-		magic::devel/libmagic \
-		gmp::devel/gmp
+LIB_DEPENDS=	::x11/gtk+2 \
+		::x11/dbus-glib \
+		::devel/ORBit2 \
+		::devel/gconf2 \
+		::devel/libmagic \
+		::devel/gmp
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo \
 		dbus-1 expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 intl m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
-		stdc++ xcb z
+		xcb xcb-render xcb-render-util ORBit-2 gconf-2 magic gmp z \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 MASTER_SITES0=	http://archive.eclipse.org/eclipse/downloads/drops/R-3.2.2-200702121330/
@@ -69,6 +67,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-glibj=zip \
+		--disable-plugin \
 		--enable-gtk-peer \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
