@@ -1,17 +1,12 @@
-$OpenBSD: patch-plugins_CoreHome_templates_header_message_tpl,v 1.2 2010/05/06 08:19:49 giovanni Exp $
---- plugins/CoreHome/templates/header_message.tpl.orig	Tue Apr 20 16:31:04 2010
-+++ plugins/CoreHome/templates/header_message.tpl	Thu May  6 10:00:57 2010
-@@ -1,13 +1,6 @@
- <span id="header_message">
- {if $piwikUrl == 'http://piwik.org/demo/'}
- 	{'General_YouAreCurrentlyViewingDemoOfPiwik'|translate:"<a target='_blank' href='http://piwik.org'>Piwik</a>":"<a href='http://piwik.org/'>":"</a>":"<a href='http://piwik.org'>piwik.org</a>"}
--{elseif $latest_version_available}
--	<img src='themes/default/images/warning_small.png' alt='' style="vertical-align: middle;" /> 
--	{if $isSuperUser}
--		{'General_PiwikXIsAvailablePleaseUpdateNow'|translate:$latest_version_available:"<br /><a href='index.php?module=CoreUpdater&action=newVersionAvailable'>":"</a>":"<a href='misc/redirectToUrl.php?url=http://piwik.org/changelog/' target='_blank'>":"</a>"}
--	{else}
--		{'General_PiwikXIsAvailablePleaseNotifyPiwikAdmin'|translate:"<a href='misc/redirectToUrl.php?url=http://piwik.org/' target='_blank'>Piwik</a> <a href='misc/redirectToUrl.php?url=http://piwik.org/changelog/' target='_blank'>$latest_version_available</a>"}
--	{/if}
- {else}
- 	{'General_PiwikIsACollaborativeProjectYouCanContribute'|translate:"<a href='misc/redirectToUrl.php?url=http://piwik.org'>":"$piwik_version</a>":"<br />":"<a target='_blank' href='misc/redirectToUrl.php?url=http://piwik.org/contribute/'>":"</a>"}
- {/if}
+$OpenBSD: patch-plugins_CoreHome_templates_header_message_tpl,v 1.3 2010/07/22 12:46:46 giovanni Exp $
+--- plugins/CoreHome/templates/header_message.tpl.orig	Sat Jul 17 14:47:53 2010
++++ plugins/CoreHome/templates/header_message.tpl	Thu Jul 22 09:54:13 2010
+@@ -5,8 +5,6 @@
+ <span class="header_short">
+ 	{if $piwikUrl == 'http://piwik.org/demo/'}
+ 		{'General_YouAreViewingDemoShortMessage'|translate}
+-	{elseif $latest_version_available}
+-		{'General_NewUpdatePiwikX'|translate:$latest_version_available}
+ 	{else}
+ 		{'General_AboutPiwikX'|translate:$piwik_version}
+ 	{/if}
