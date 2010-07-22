@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/07/05 07:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/07/22 19:17:33 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -7,10 +7,11 @@ COMMENT-gdk =		gdk pixbuf element for GStreamer (good)
 COMMENT-caca =		libcaca element for GStreamer (good)
 COMMENT-soup =		libsoup element for GStreamer (good)
 
-V =			0.10.23
+V =			0.10.24
 DISTNAME =		gst-plugins-good-$V
 
-PKGNAME-main =		gstreamer-plugins-good-${V}v0
+PKGNAME-main =		gstreamer-plugins-good-${V}
+EPOCH-main=		0
 PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
@@ -35,58 +36,62 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			pcre xml2 m z
-LIB_DEPENDS =		gstreamer-0.10,gstbase-0.10:gstreamer->=0.10.29:$P/core
+			pcre xml2 m z gstreamer-0.10 gstbase-0.10
+LIB_DEPENDS =		:gstreamer->=0.10.29:$P/core
 
 WANTLIB-main =		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
 			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
-			pthread-stubs xcb Xrender cairo expat \
+			pthread-stubs xcb Xrender cairo expat orc-0.4 \
 			fontconfig freetype glitz ogg pixman-1 png \
-			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1
+			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1 \
+			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
+			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
+			gstfft-0.10 gstrtsp-0.10 gstsdp-0.10 gstpbutils-0.10 \
+			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
-			oil-0.3::devel/liboil \
-			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10,gstpbutils-0.10::${P}/plugins-base \
-			FLAC.>=9::audio/flac \
-			jpeg.>=62::graphics/jpeg \
-			tag.>=7::audio/taglib \
-			wavpack::audio/wavpack \
-			speex::audio/speex \
-			gsttag-0.10::$P/plugins-base \
-			shout::net/libshout \
-			bz2.>=10::archivers/bzip2
+			:orc->=0.4.6:devel/orc \
+			::${P}/plugins-base \
+			::audio/flac \
+			::graphics/jpeg \
+			::audio/taglib \
+			::audio/wavpack \
+			::audio/speex \
+			::$P/plugins-base \
+			::net/libshout \
+			::archivers/bzip2
 RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-aalib=		${WANTLIB} \
-			X11 ncurses Xau Xdmcp pthread-stubs xcb
+			X11 ncurses Xau Xdmcp pthread-stubs xcb aa
 LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
-			aa::graphics/aalib
+			::graphics/aalib
 
-WANTLIB-dv =		${WANTLIB}
+WANTLIB-dv =		${WANTLIB} dv gstaudio-0.10 gstinterfaces-0.10
 LIB_DEPENDS-dv =	${LIB_DEPENDS} \
-			dv::multimedia/libdv \
-			gstaudio-0.10,gstinterfaces-0.10::${P}/plugins-base
+			::multimedia/libdv \
+			::${P}/plugins-base
 
 WANTLIB-gdk =		${WANTLIB} \
-			gio-2.0
+			gio-2.0 gdk_pixbuf-2.0 gstvideo-0.10
 LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
-			gdk_pixbuf-2.0::x11/gtk+2 \
-			gstvideo-0.10::$P/plugins-base
+			::x11/gtk+2 \
+			::$P/plugins-base
 
 WANTLIB-caca =		${WANTLIB} \
-			X11 ncurses Xau Xdmcp pthread-stubs xcb
+			X11 ncurses Xau Xdmcp pthread-stubs xcb caca
 LIB_DEPENDS-caca =	${LIB_DEPENDS} \
-			caca::graphics/libcaca
+			::graphics/libcaca
 
 WANTLIB-soup =		${WANTLIB} \
 			ORBit-2 dbus-1 dbus-glib-1 gcrypt gio-2.0 \
 			gnome-keyring gnutls gpg-error gsttag-0.10 proxy \
-			sqlite3 tasn1 eggdbus-1 soup-2.4
+			sqlite3 tasn1 eggdbus-1 soup-2.4 soup-gnome-2.4
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
-			soup-gnome-2.4::devel/libsoup,-gnome
+			::devel/libsoup,-gnome
 
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-dv1394 \
@@ -100,13 +105,14 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-esdtest \
 			--disable-oss4 \
 			--enable-gst_v4l2 \
-			--enable-goom
+			--enable-goom \
+			--enable-orc
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/libsndio
 
-AUTOMAKE_VERSION =	1.9
+AUTOMAKE_VERSION =	1.10
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS}
 
 # autopoint(1) uses HOME, make sure it exists

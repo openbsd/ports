@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_oss_gstosssrc_c,v 1.5 2010/04/28 08:03:23 ajacoutot Exp $
---- sys/oss/gstosssrc.c.orig	Thu Mar 18 18:55:13 2010
-+++ sys/oss/gstosssrc.c	Wed Apr 28 09:06:23 2010
+$OpenBSD: patch-sys_oss_gstosssrc_c,v 1.6 2010/07/22 19:17:33 ajacoutot Exp $
+--- sys/oss/gstosssrc.c.orig	Thu Jun 17 17:13:47 2010
++++ sys/oss/gstosssrc.c	Wed Jul 21 19:51:19 2010
 @@ -67,7 +67,7 @@
  GST_DEBUG_CATEGORY_EXTERN (oss_debug);
  #define GST_CAT_DEFAULT oss_debug
@@ -10,7 +10,7 @@ $OpenBSD: patch-sys_oss_gstosssrc_c,v 1.5 2010/04/28 08:03:23 ajacoutot Exp $
  #define DEFAULT_DEVICE_NAME     ""
  
  enum
-@@ -169,7 +169,7 @@ gst_oss_src_class_init (GstOssSrcClass * klass)
+@@ -168,7 +168,7 @@ gst_oss_src_class_init (GstOssSrcClass * klass)
  
    g_object_class_install_property (gobject_class, PROP_DEVICE,
        g_param_spec_string ("device", "Device",

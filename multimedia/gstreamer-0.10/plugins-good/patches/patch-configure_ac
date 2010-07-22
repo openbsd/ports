@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.11 2010/06/02 12:06:54 ajacoutot Exp $
---- configure.ac.orig	Sat May 29 22:11:28 2010
-+++ configure.ac	Wed Jun  2 10:53:29 2010
-@@ -482,6 +482,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
+$OpenBSD: patch-configure_ac,v 1.12 2010/07/22 19:17:33 ajacoutot Exp $
+--- configure.ac.orig	Thu Jul 15 02:27:16 2010
++++ configure.ac	Wed Jul 21 19:51:24 2010
+@@ -480,6 +480,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2010/06/02 12:06:54 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -523,6 +525,8 @@ return 0;
+@@ -521,6 +523,8 @@ return 0;
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2010/06/02 12:06:54 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -707,6 +711,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
+@@ -705,6 +709,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
    fi
  ])
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2010/06/02 12:06:54 ajacoutot Exp $
  dnl *** FLAC ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
  AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
-@@ -988,6 +1007,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
+@@ -995,6 +1014,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
  AM_CONDITIONAL(USE_DIRECTSOUND, false)
  AM_CONDITIONAL(USE_DV1394, false)
  AM_CONDITIONAL(USE_ESD, false)
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2010/06/02 12:06:54 ajacoutot Exp $
  AM_CONDITIONAL(USE_FLAC, false)
  AM_CONDITIONAL(USE_GCONF, false)
  AM_CONDITIONAL(USE_GCONFTOOL, false)
-@@ -1124,6 +1144,7 @@ ext/annodex/Makefile
+@@ -1132,6 +1152,7 @@ ext/annodex/Makefile
  ext/cairo/Makefile
  ext/dv/Makefile
  ext/esd/Makefile
