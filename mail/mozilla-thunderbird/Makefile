@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.96 2010/07/09 16:55:59 landry Exp $
+# $OpenBSD: Makefile,v 1.97 2010/07/22 21:45:38 landry Exp $
 
 COMMENT =	Mozilla e-mail, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	3.0.5
+MOZILLA_VERSION =	3.0.6
 MOZILLA_BRANCH =		1.9.1
 MOZILLA_PROJECT =	mozilla-thunderbird
 MOZILLA_CODENAME =	mail
-
-PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}p0
 
 # need to be in synch with SO_VERSION in www/seamonkey
 # for productivity/sunbird,-lighting and mail/enigmail to work ine
