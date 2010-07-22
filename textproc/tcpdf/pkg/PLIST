@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/08 05:52:29 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/22 18:28:39 jolan Exp $
 tcpdf/
 tcpdf/2dbarcodes.php
 tcpdf/CHANGELOG.TXT
@@ -21,6 +21,7 @@ tcpdf/config/tcpdf_config_alt.php
 tcpdf/doc/
 tcpdf/doc/classtrees_com-tecnick-tcpdf.html
 tcpdf/doc/com-tecnick-tcpdf/
+tcpdf/doc/com-tecnick-tcpdf/PDF417.html
 tcpdf/doc/com-tecnick-tcpdf/QRcode.html
 tcpdf/doc/com-tecnick-tcpdf/TCPDF.html
 tcpdf/doc/com-tecnick-tcpdf/TCPDF2DBarcode.html
@@ -29,6 +30,7 @@ tcpdf/doc/com-tecnick-tcpdf/_2dbarcodes.php.html
 tcpdf/doc/com-tecnick-tcpdf/_barcodes.php.html
 tcpdf/doc/com-tecnick-tcpdf/_config---tcpdf_config.php.html
 tcpdf/doc/com-tecnick-tcpdf/_htmlcolors.php.html
+tcpdf/doc/com-tecnick-tcpdf/_pdf417.php.html
 tcpdf/doc/com-tecnick-tcpdf/_qrcode.php.html
 tcpdf/doc/com-tecnick-tcpdf/_tcpdf.php.html
 tcpdf/doc/com-tecnick-tcpdf/_unicode_data.php.html
@@ -99,6 +101,10 @@ tcpdf/examples/example_054.php
 tcpdf/examples/example_055.php
 tcpdf/examples/example_056.php
 tcpdf/examples/example_057.php
+tcpdf/examples/example_058.php
+tcpdf/examples/example_059.php
+tcpdf/examples/example_060.php
+tcpdf/examples/example_061.php
 tcpdf/examples/index.php
 tcpdf/fonts/
 tcpdf/fonts/README.TXT
@@ -289,9 +295,14 @@ tcpdf/images/logo_example.jpg
 tcpdf/images/logo_example.png
 tcpdf/images/pelican.ai
 tcpdf/images/tcpdf_logo.jpg
+tcpdf/images/tcpdf_signature.png
+tcpdf/images/testsvg.svg
 tcpdf/images/tiger.ai
+tcpdf/images/tux.svg
+tcpdf/pdf417.php
 tcpdf/qrcode.php
 tcpdf/tcpdf.crt
 tcpdf/tcpdf.fdf
+tcpdf/tcpdf.p12
 tcpdf/tcpdf.php
 tcpdf/unicode_data.php
