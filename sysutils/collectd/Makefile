@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/29 20:17:18 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/22 14:40:49 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -8,11 +8,16 @@ COMMENT-snmp =		collectd snmp plugin
 
 V =			4.10.0
 DISTNAME =		collectd-$V
-PKGNAME-main =		collectd-$Vp1
-PKGNAME-mysql =		collectd-mysql-$Vp0
-PKGNAME-pgsql =		collectd-pgsql-$Vp0
-PKGNAME-rrdtool =	collectd-rrdtool-$Vp0
-PKGNAME-snmp=		collectd-snmp-$Vp0
+PKGNAME-main =		collectd-$V
+REVISION-main =		2
+PKGNAME-mysql =		collectd-mysql-$V
+REVISION-mysql =	1
+PKGNAME-pgsql =		collectd-pgsql-$V
+REVISION-pgsql =	1
+PKGNAME-rrdtool =	collectd-rrdtool-$V
+REVISION-rrdtool =	1
+PKGNAME-snmp =		collectd-snmp-$V
+REVISION-snmp =		1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.collectd.org/
@@ -31,27 +36,26 @@ MODULES =		converters/libiconv
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
-WANTLIB-mysql =		crypto m ssl z
-LIB_DEPENDS-mysql =	mysqlclient::databases/mysql
+WANTLIB-mysql =		crypto m ssl z mysqlclient
+LIB_DEPENDS-mysql =	::databases/mysql
 
-WANTLIB-pgsql =
-LIB_DEPENDS-pgsql =	pq::databases/postgresql
+WANTLIB-pgsql =		pq
+LIB_DEPENDS-pgsql =	::databases/postgresql
 
-WANTLIB-rrdtool =       art_lgpl_2 freetype m png z
-LIB_DEPENDS-rrdtool =   rrd_th::net/rrdtool
+WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th
+LIB_DEPENDS-rrdtool =	::net/rrdtool
 
+WANTLIB-snmp =		crypto netsnmp
+LIB_DEPENDS-snmp =	::net/net-snmp
 
-WANTLIB-snmp =		crypto
-LIB_DEPENDS-snmp =	netsnmp::net/net-snmp
+LIB_DEPENDS +=	::net/curl \
+		::textproc/libxml \
+		::sysutils/libstatgrab \
+		::security/libgcrypt \
+		::devel/libtool,-ltdl
 
-LIB_DEPENDS +=	curl::net/curl \
-		xml2::textproc/libxml \
-		statgrab::sysutils/libstatgrab \
-		gcrypt::security/libgcrypt \
-		ltdl::devel/libtool,-ltdl
-
-WANTLIB += c crypto gpg-error idn intl kvm
-WANTLIB += m pcap pthread ssl xml2 z
+WANTLIB += c crypto gpg-error idn intl kvm curl xml2 ltdl
+WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes

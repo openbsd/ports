@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_teamspeak2_c,v 1.1 2010/07/22 14:40:49 landry Exp $
+make sure netinet/in.h is included before arpa/inet.h
+--- src/teamspeak2.c.orig	Thu Jul 22 16:24:09 2010
++++ src/teamspeak2.c	Thu Jul 22 16:24:16 2010
+@@ -25,8 +25,8 @@
+ #include "common.h"
+ #include "plugin.h"
+ 
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
