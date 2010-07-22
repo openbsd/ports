@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.143 2010/07/19 13:46:27 landry Exp $
+# $OpenBSD: Makefile,v 1.144 2010/07/22 21:42:13 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
-MOZILLA_VERSION =	3.6.6
+MOZILLA_VERSION =	3.6.7
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	mozilla-firefox
 MOZILLA_CODENAME =	browser
 
-REVISION =	1
 SO_VERSION =	22.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -48,6 +47,10 @@ MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
+
+# remove file that confuses make update-patches
+pre-patch:
+	rm ${WRKSRC}/toolkit/mozapps/extensions/test/unit/*.orig
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/browserconfig.properties ${MOB}/LICENSE ${MOB}/blocklist.xml ${MOZ}

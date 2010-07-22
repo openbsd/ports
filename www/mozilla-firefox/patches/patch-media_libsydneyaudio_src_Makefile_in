@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_libsydneyaudio_src_Makefile_in,v 1.1 2010/04/26 19:55:58 landry Exp $
---- media/libsydneyaudio/src/Makefile.in.orig	Mon Aug 24 18:52:50 2009
-+++ media/libsydneyaudio/src/Makefile.in	Thu Sep 10 23:35:11 2009
-@@ -77,6 +77,12 @@ CSRCS		= \
- 		$(NULL)
+$OpenBSD: patch-media_libsydneyaudio_src_Makefile_in,v 1.2 2010/07/22 21:42:13 landry Exp $
+--- media/libsydneyaudio/src/Makefile.in.orig	Tue Jul 13 21:10:28 2010
++++ media/libsydneyaudio/src/Makefile.in	Wed Jul 21 09:54:46 2010
+@@ -83,6 +83,12 @@ CSRCS         = \
+               $(NULL)
  endif
  
 +ifeq ($(OS_ARCH),OpenBSD)

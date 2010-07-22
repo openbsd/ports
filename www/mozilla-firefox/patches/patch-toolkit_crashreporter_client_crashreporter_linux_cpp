@@ -1,18 +1,9 @@
-$OpenBSD: patch-toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.2 2010/06/28 21:24:22 landry Exp $
---- toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Fri Jun 11 22:41:31 2010
-+++ toolkit/crashreporter/client/crashreporter_linux.cpp	Thu Jun 24 10:08:33 2010
-@@ -215,7 +215,7 @@ static void LoadProxyinfo()
-   if (getenv ("http_proxy"))
-     return; // libcurl can use the value from the environment
+$OpenBSD: patch-toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.3 2010/07/22 21:42:13 landry Exp $
+--- toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Tue Jul 13 21:10:35 2010
++++ toolkit/crashreporter/client/crashreporter_linux.cpp	Wed Jul 21 09:54:47 2010
+@@ -362,11 +362,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i
  
--  static void* gconfLib = dlopen("libgconf-2.so.4", RTLD_LAZY);
-+  static void* gconfLib = dlopen("libgconf-2.so", RTLD_LAZY);
-   if (!gconfLib)
-     return;
- 
-@@ -599,11 +599,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i
- 
- static void TryInitGnome()
+ void TryInitGnome()
  {
 -  gnomeLib = dlopen("libgnome-2.so.0", RTLD_LAZY);
 +  gnomeLib = dlopen("libgnome-2.so", RTLD_LAZY);
