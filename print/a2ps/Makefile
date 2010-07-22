@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/20 14:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/07/22 16:18:05 ajacoutot Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -29,7 +29,7 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	::print/psutils \
 		::devel/gperf
 
 FLAVORS=	a4 a4dj letter letterdj
