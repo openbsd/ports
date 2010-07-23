@@ -1,0 +1,7 @@
+LibRaw is a library for reading RAW files obtained from digital photo
+cameras (CRW/CR2, NEF, RAF, DNG, and others).
+
+LibRaw is based on the source codes of the dcraw utility, where part of
+drawbacks have already been eliminated and part will be fixed in future.
+The users of the library are provided with API to be built into their
+software programs.

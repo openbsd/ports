@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libraw_cxx_cpp,v 1.1.1.1 2010/07/23 16:02:20 phessler Exp $
+--- src/libraw_cxx.cpp.orig	Thu Jul  1 18:09:19 2010
++++ src/libraw_cxx.cpp	Thu Jul  1 18:11:26 2010
+@@ -23,6 +23,8 @@ it under the terms of the one of three licenses as you
+ #include <float.h>
+ #include <math.h>
+ #ifndef WIN32
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #else
+ #include <winsock2.h>
