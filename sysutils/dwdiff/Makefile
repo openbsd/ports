@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/14 09:21:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/23 20:59:09 benoit Exp $
 
 COMMENT =		word-based diff program
 
-DISTNAME =		dwdiff-1.6.1
+DISTNAME =		dwdiff-1.8
 CATEGORIES =		sysutils textproc
 
 HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m pthread
+WANTLIB =		c icudata icui18n icuuc m pthread
 
 MASTER_SITES =		http://os.ghalkes.nl/dist/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		icudata,icui18n,icuuc::textproc/icu4c
+LIB_DEPENDS =		::textproc/icu4c
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
