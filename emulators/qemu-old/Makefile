@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/08 01:10:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/23 19:17:24 sthen Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS=		i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		multi system emulator
 
@@ -20,6 +20,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_OPENBSD}
+
+# Incompatible with GCC 4.x
+MODULES=	gcc3
+MODGCC3_ARCHES=	${GCC4_ARCHS}
 
 BUILD_DEPENDS=		::textproc/texi2html
 USE_GMAKE=		Yes
