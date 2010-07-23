@@ -1,11 +1,39 @@
-$OpenBSD: patch-src_miners_fs_tracker-config_c,v 1.1 2010/07/20 09:38:34 ajacoutot Exp $
+$OpenBSD: patch-src_miners_fs_tracker-config_c,v 1.2 2010/07/23 07:57:12 ajacoutot Exp $
+
+Set some sane defaults (which can be changed in the preferences):
+* disable monitoring (gamin uses kqueue(2) and will run out of fds very
+fast on a default GNOME system so it will fall back to polling which is
+very ressource intensive)
+* stop indexing if available space is =< 5%
+* set default indexing speed to 10 (i.e. medium value 0->20)
+* don't index removable devices
 
 If the special dir value is the same as HOME, don't add it to the
 default configuration, otherwise we end up with duplicates.
     https://bugzilla.gnome.org/show_bug.cgi?id=624806
 
 --- src/miners/fs/tracker-config.c.orig	Fri Jul 16 11:52:03 2010
-+++ src/miners/fs/tracker-config.c	Tue Jul 20 10:28:49 2010
++++ src/miners/fs/tracker-config.c	Fri Jul 23 09:37:35 2010
+@@ -41,15 +41,15 @@
+ /* Default values */
+ #define DEFAULT_VERBOSITY                        0
+ #define DEFAULT_INITIAL_SLEEP                    15       /* 0->1000 */
+-#define DEFAULT_ENABLE_MONITORS                  TRUE
+-#define DEFAULT_THROTTLE                         0        /* 0->20 */
++#define DEFAULT_ENABLE_MONITORS                  FALSE
++#define DEFAULT_THROTTLE                         10        /* 0->20 */
+ #define DEFAULT_SCAN_TIMEOUT                     0        /* 0->1000 */
+ #define DEFAULT_CACHE_TIMEOUT                    60       /* 0->1000 */
+-#define DEFAULT_INDEX_REMOVABLE_DEVICES          TRUE
++#define DEFAULT_INDEX_REMOVABLE_DEVICES          FALSE
+ #define DEFAULT_INDEX_OPTICAL_DISCS              FALSE
+ #define DEFAULT_INDEX_ON_BATTERY                 FALSE
+ #define DEFAULT_INDEX_ON_BATTERY_FIRST_TIME      TRUE
+-#define DEFAULT_LOW_DISK_SPACE_LIMIT             1        /* 0->100 / -1 */
++#define DEFAULT_LOW_DISK_SPACE_LIMIT             5        /* 0->100 / -1 */
+ 
+ typedef struct {
+ 	/* General */
 @@ -545,7 +545,13 @@ config_create_with_defaults (TrackerConfig *config,
  {
  	gboolean added_home_recursively = FALSE;
