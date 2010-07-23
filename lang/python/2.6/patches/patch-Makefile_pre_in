@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
---- Makefile.pre.in.orig	Tue Feb 24 22:07:44 2009
-+++ Makefile.pre.in	Sun Apr 19 23:12:20 2009
+$OpenBSD: patch-Makefile_pre_in,v 1.3 2010/07/23 13:56:26 sthen Exp $
+--- Makefile.pre.in.orig	Thu Dec 24 14:19:38 2009
++++ Makefile.pre.in	Thu Jun 17 13:51:01 2010
 @@ -350,6 +350,8 @@ LIBRARY_OBJS=	\
  #########################################################################
  # Rules
@@ -10,15 +10,16 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  # Default target
  all:		build_all
  build_all:	$(BUILDPYTHON) oldsharedmods sharedmods
-@@ -386,6 +388,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRAR
+@@ -385,7 +387,7 @@ coverage:
+ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRARY)
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/python.o \
- 			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+-			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
 +			-lpython$(VERSION) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
  
  platform: $(BUILDPYTHON)
  	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
-@@ -425,6 +428,11 @@ libpython$(VERSION).dylib: $(LIBRARY_OBJS)
+@@ -425,6 +427,11 @@ libpython$(VERSION).dylib: $(LIBRARY_OBJS)
  libpython$(VERSION).sl: $(LIBRARY_OBJS)
  	$(LDSHARED) $(LDFLAGS) -o $@ $(LIBRARY_OBJS) $(MODLIBS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST)
  
@@ -30,7 +31,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
  # minimal framework (not including the Lib directory and such) in the current
  # directory.
-@@ -760,14 +768,13 @@ bininstall:	altbininstall
+@@ -760,14 +767,13 @@ bininstall:	altbininstall
  	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
  	else true; \
  	fi
@@ -46,7 +47,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -783,7 +790,8 @@ altbininstall:	$(BUILDPYTHON)
+@@ -783,7 +789,8 @@ altbininstall:	$(BUILDPYTHON)
  			$(INSTALL_SHARED) $(LDLIBRARY) $(DESTDIR)$(LIBDIR)/$(INSTSONAME); \
  			if test $(LDLIBRARY) != $(INSTSONAME); then \
  				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) $(LDLIBRARY)) \
@@ -56,7 +57,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  		fi; \
  	else	true; \
  	fi
-@@ -799,7 +807,7 @@ maninstall:
+@@ -799,7 +806,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \
@@ -65,7 +66,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  
  # Install the library
  PLATDIR=	plat-$(MACHDEP)
-@@ -906,8 +914,8 @@ libinstall:	build_all $(srcdir)/Lib/$(PLATDIR)
+@@ -906,8 +913,8 @@ libinstall:	build_all $(srcdir)/Lib/$(PLATDIR)
  		./$(BUILDPYTHON) -Wi -t -c "import lib2to3.pygram, lib2to3.patcomp;lib2to3.patcomp.PatternCompiler()"
  
  # Create the PLATDIR source directory, if one wasn't distributed..

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Lib_test_test_signal_py,v 1.1 2008/10/18 12:03:56 djm Exp $
+$OpenBSD: patch-Lib_test_test_signal_py,v 1.2 2010/07/23 13:56:26 sthen Exp $
 
 workarounds for breakage caused by libpthread
 
---- Lib/test/test_signal.py.orig	Mon Apr  7 09:04:28 2008
-+++ Lib/test/test_signal.py	Sun Sep 28 05:09:28 2008
+--- Lib/test/test_signal.py.orig	Mon Nov  9 19:59:08 2009
++++ Lib/test/test_signal.py	Thu Jun 17 13:04:43 2010
 @@ -291,6 +291,9 @@ class SiginterruptTest(unittest.TestCase):
          self.assertEquals(i, True)
  
@@ -14,7 +14,7 @@ workarounds for breakage caused by libpthread
          i=self.readpipe_interrupted(lambda: signal.siginterrupt(self.signum, 0))
          self.assertEquals(i, False)
  
-@@ -370,6 +373,9 @@ class ItimerTest(unittest.TestCase):
+@@ -377,6 +380,9 @@ class ItimerTest(unittest.TestCase):
          self.assertEquals(self.hndl_called, True)
  
      def test_itimer_prof(self):

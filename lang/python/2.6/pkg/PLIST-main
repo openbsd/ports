@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/01/20 08:15:21 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/07/23 13:56:26 sthen Exp $
 @option no-default-conflict
 @conflict python->=2.6,<2.7
 @conflict python-bz2->=2.6,<2.7
@@ -529,6 +529,12 @@ lib/python2.6/distutils/tests/
 lib/python2.6/distutils/tests/__init__.py
 lib/python2.6/distutils/tests/__init__.pyc
 lib/python2.6/distutils/tests/__init__.pyo
+lib/python2.6/distutils/tests/setuptools_build_ext.py
+lib/python2.6/distutils/tests/setuptools_build_ext.pyc
+lib/python2.6/distutils/tests/setuptools_build_ext.pyo
+lib/python2.6/distutils/tests/setuptools_extension.py
+lib/python2.6/distutils/tests/setuptools_extension.pyc
+lib/python2.6/distutils/tests/setuptools_extension.pyo
 lib/python2.6/distutils/tests/support.py
 lib/python2.6/distutils/tests/support.pyc
 lib/python2.6/distutils/tests/support.pyo
@@ -559,6 +565,9 @@ lib/python2.6/distutils/tests/test_filelist.pyo
 lib/python2.6/distutils/tests/test_install.py
 lib/python2.6/distutils/tests/test_install.pyc
 lib/python2.6/distutils/tests/test_install.pyo
+lib/python2.6/distutils/tests/test_install_lib.py
+lib/python2.6/distutils/tests/test_install_lib.pyc
+lib/python2.6/distutils/tests/test_install_lib.pyo
 lib/python2.6/distutils/tests/test_install_scripts.py
 lib/python2.6/distutils/tests/test_install_scripts.pyc
 lib/python2.6/distutils/tests/test_install_scripts.pyo
@@ -574,9 +583,15 @@ lib/python2.6/distutils/tests/test_sdist.pyo
 lib/python2.6/distutils/tests/test_sysconfig.py
 lib/python2.6/distutils/tests/test_sysconfig.pyc
 lib/python2.6/distutils/tests/test_sysconfig.pyo
+lib/python2.6/distutils/tests/test_unixccompiler.py
+lib/python2.6/distutils/tests/test_unixccompiler.pyc
+lib/python2.6/distutils/tests/test_unixccompiler.pyo
 lib/python2.6/distutils/tests/test_upload.py
 lib/python2.6/distutils/tests/test_upload.pyc
 lib/python2.6/distutils/tests/test_upload.pyo
+lib/python2.6/distutils/tests/test_util.py
+lib/python2.6/distutils/tests/test_util.pyc
+lib/python2.6/distutils/tests/test_util.pyo
 lib/python2.6/distutils/tests/test_versionpredicate.py
 lib/python2.6/distutils/tests/test_versionpredicate.pyc
 lib/python2.6/distutils/tests/test_versionpredicate.pyo
@@ -727,6 +742,8 @@ lib/python2.6/email/test/data/msg_41.txt
 lib/python2.6/email/test/data/msg_42.txt
 lib/python2.6/email/test/data/msg_43.txt
 lib/python2.6/email/test/data/msg_44.txt
+lib/python2.6/email/test/data/msg_45.txt
+lib/python2.6/email/test/data/msg_46.txt
 lib/python2.6/email/test/test_email.py
 lib/python2.6/email/test/test_email.pyc
 lib/python2.6/email/test/test_email.pyo
@@ -1260,7 +1277,7 @@ lib/python2.6/keyword.py
 lib/python2.6/keyword.pyc
 lib/python2.6/keyword.pyo
 lib/python2.6/lib-dynload/
-lib/python2.6/lib-dynload/Python-2.6.3-py2.6.egg-info
+lib/python2.6/lib-dynload/Python-2.6.5-py2.6.egg-info
 lib/python2.6/lib-dynload/_bisect.so
 lib/python2.6/lib-dynload/_bytesio.so
 lib/python2.6/lib-dynload/_codecs_cn.so
@@ -1325,9 +1342,9 @@ lib/python2.6/lib-dynload/zlib.so
 lib/python2.6/lib-old/
 lib/python2.6/lib2to3/
 lib/python2.6/lib2to3/Grammar.txt
-lib/python2.6/lib2to3/Grammar2.6.3.final.0.pickle
+lib/python2.6/lib2to3/Grammar2.6.5.final.0.pickle
 lib/python2.6/lib2to3/PatternGrammar.txt
-lib/python2.6/lib2to3/PatternGrammar2.6.3.final.0.pickle
+lib/python2.6/lib2to3/PatternGrammar2.6.5.final.0.pickle
 lib/python2.6/lib2to3/__init__.py
 lib/python2.6/lib2to3/__init__.pyc
 lib/python2.6/lib2to3/__init__.pyo
@@ -1431,6 +1448,9 @@ lib/python2.6/lib2to3/fixes/fix_nonzero.pyo
 lib/python2.6/lib2to3/fixes/fix_numliterals.py
 lib/python2.6/lib2to3/fixes/fix_numliterals.pyc
 lib/python2.6/lib2to3/fixes/fix_numliterals.pyo
+lib/python2.6/lib2to3/fixes/fix_operator.py
+lib/python2.6/lib2to3/fixes/fix_operator.pyc
+lib/python2.6/lib2to3/fixes/fix_operator.pyo
 lib/python2.6/lib2to3/fixes/fix_paren.py
 lib/python2.6/lib2to3/fixes/fix_paren.pyc
 lib/python2.6/lib2to3/fixes/fix_paren.pyo
@@ -1547,6 +1567,9 @@ lib/python2.6/lib2to3/tests/test_all_fixers.pyo
 lib/python2.6/lib2to3/tests/test_fixers.py
 lib/python2.6/lib2to3/tests/test_fixers.pyc
 lib/python2.6/lib2to3/tests/test_fixers.pyo
+lib/python2.6/lib2to3/tests/test_main.py
+lib/python2.6/lib2to3/tests/test_main.pyc
+lib/python2.6/lib2to3/tests/test_main.pyo
 lib/python2.6/lib2to3/tests/test_parser.py
 lib/python2.6/lib2to3/tests/test_parser.pyc
 lib/python2.6/lib2to3/tests/test_parser.pyo

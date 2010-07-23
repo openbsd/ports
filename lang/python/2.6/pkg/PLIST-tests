@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2009/10/27 23:35:09 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2010/07/23 13:56:26 sthen Exp $
 @option no-default-conflict
 @conflict python-tests->=2.6,<2.7
 lib/python2.6/test/
@@ -208,6 +208,9 @@ lib/python2.6/test/keycert.pem
 lib/python2.6/test/list_tests.py
 lib/python2.6/test/list_tests.pyc
 lib/python2.6/test/list_tests.pyo
+lib/python2.6/test/lock_tests.py
+lib/python2.6/test/lock_tests.pyc
+lib/python2.6/test/lock_tests.pyo
 lib/python2.6/test/mapping_tests.py
 lib/python2.6/test/mapping_tests.pyc
 lib/python2.6/test/mapping_tests.pyo
@@ -1057,6 +1060,9 @@ lib/python2.6/test/test_random.pyo
 lib/python2.6/test/test_re.py
 lib/python2.6/test/test_re.pyc
 lib/python2.6/test/test_re.pyo
+lib/python2.6/test/test_readline.py
+lib/python2.6/test/test_readline.pyc
+lib/python2.6/test/test_readline.pyo
 lib/python2.6/test/test_repr.py
 lib/python2.6/test/test_repr.pyc
 lib/python2.6/test/test_repr.pyo
