@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/11/05 11:01:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/23 21:09:48 benoit Exp $
 
 COMMENT =	bozotic HTTP server
 
-DISTNAME =	bozohttpd-20090522
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	bozohttpd-20100621
 CATEGORIES =	www
 
 HOMEPAGE =	http://splode.eterna.com.au/bozohttpd/
