@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2010/07/14 07:20:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2010/07/23 12:01:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.5.4
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
+REVISION-main=		2
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
 SHARED_LIBS=		smbclient	2.0 \
@@ -199,6 +199,7 @@ post-install:
 	done
 	@sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
 	 -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
+	 -e 's:MYGROUP:WORKGROUP:' \
 	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh \
 	 ${PREFIX}/bin/mksmbpasswd
