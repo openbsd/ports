@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2010/07/08 16:59:52 pea Exp $
+# $OpenBSD: Makefile,v 1.236 2010/07/23 14:06:20 laurent Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += antisniff
      SUBDIR += apg
      SUBDIR += arirang
+     SUBDIR += assl
      SUBDIR += bfbtester
      SUBDIR += bounix
      SUBDIR += bsd-airtools
