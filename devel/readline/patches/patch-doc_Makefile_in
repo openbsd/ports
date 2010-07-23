@@ -1,0 +1,45 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
+--- doc/Makefile.in.orig	Wed Dec 23 16:42:59 2009
++++ doc/Makefile.in	Tue Jul 13 10:56:08 2010
+@@ -201,30 +201,30 @@ installdirs:	$(topdir)/support/mkdirs
+ 
+ install:	installdirs
+ 	if test -f readline.info; then \
+-		${INSTALL_DATA} readline.info $(DESTDIR)$(infodir)/readline.info; \
++		${INSTALL_DATA} readline.info $(DESTDIR)$(infodir)/ereadline.info; \
+ 	else \
+-		${INSTALL_DATA} $(srcdir)/readline.info $(DESTDIR)$(infodir)/readline.info; \
++		${INSTALL_DATA} $(srcdir)/readline.info $(DESTDIR)$(infodir)/ereadline.info; \
+ 	fi
+ 	if test -f rluserman.info; then \
+-		${INSTALL_DATA} rluserman.info $(DESTDIR)$(infodir)/rluserman.info; \
++		${INSTALL_DATA} rluserman.info $(DESTDIR)$(infodir)/erluserman.info; \
+ 	else \
+-		${INSTALL_DATA} $(srcdir)/rluserman.info $(DESTDIR)$(infodir)/rluserman.info; \
++		${INSTALL_DATA} $(srcdir)/rluserman.info $(DESTDIR)$(infodir)/erluserman.info; \
+ 	fi
+ 	if test -f history.info; then \
+-		${INSTALL_DATA} history.info $(DESTDIR)$(infodir)/history.info; \
++		${INSTALL_DATA} history.info $(DESTDIR)$(infodir)/ehistory.info; \
+ 	else \
+-		${INSTALL_DATA} $(srcdir)/history.info $(DESTDIR)$(infodir)/history.info; \
++		${INSTALL_DATA} $(srcdir)/history.info $(DESTDIR)$(infodir)/ehistory.info; \
+ 	fi
+ 	-if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+ 		install-info --dir-file=$(DESTDIR)$(infodir)/dir \
+-			$(DESTDIR)$(infodir)/readline.info ; \
++			$(DESTDIR)$(infodir)/ereadline.info ; \
+ 		install-info --dir-file=$(DESTDIR)$(infodir)/dir \
+-			$(DESTDIR)$(infodir)/history.info ; \
++			$(DESTDIR)$(infodir)/ehistory.info ; \
+ 		install-info --dir-file=$(DESTDIR)$(infodir)/dir \
+-			$(DESTDIR)$(infodir)/rluserman.info ; \
++			$(DESTDIR)$(infodir)/erluserman.info ; \
+ 	else true; fi
+-	-${INSTALL_DATA} $(srcdir)/readline.3 $(DESTDIR)$(man3dir)/readline$(man3ext)
+-	-${INSTALL_DATA} $(srcdir)/history.3 $(DESTDIR)$(man3dir)/history$(man3ext)
++	-${INSTALL_DATA} $(srcdir)/readline.3 $(DESTDIR)$(man3dir)/ereadline$(man3ext)
++	-${INSTALL_DATA} $(srcdir)/history.3 $(DESTDIR)$(man3dir)/ehistory$(man3ext)
+ 	-if test -n "${htmldir}" ; then \
+ 		if test -f readline.html; then \
+ 			${INSTALL_DATA} readline.html $(DESTDIR)$(htmldir)/readline.html; \

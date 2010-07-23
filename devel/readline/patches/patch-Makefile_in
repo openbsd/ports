@@ -1,0 +1,48 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
+--- Makefile.in.orig	Sun Apr 19 18:14:24 2009
++++ Makefile.in	Tue Jul 13 13:34:53 2010
+@@ -97,8 +97,8 @@ GCC_LINT_CFLAGS = $(XCCFLAGS) $(GCC_LINT_FLAGS) @CFLAG
+ 	$(CC) -c $(CCFLAGS) $<
+ 
+ # The name of the main library target.
+-LIBRARY_NAME = libreadline.a
+-STATIC_LIBS = libreadline.a libhistory.a
++LIBRARY_NAME = libereadline.a
++STATIC_LIBS = libereadline.a libehistory.a
+ 
+ # The C code source files for this library.
+ CSOURCES = $(srcdir)/readline.c $(srcdir)/funmap.c $(srcdir)/keymaps.c \
+@@ -151,12 +151,12 @@ everything: all examples
+ 
+ static: $(STATIC_LIBS)
+ 
+-libreadline.a: $(OBJECTS)
++libereadline.a: $(OBJECTS)
+ 	$(RM) $@
+ 	$(AR) $(ARFLAGS) $@ $(OBJECTS)
+ 	-test -n "$(RANLIB)" && $(RANLIB) $@
+ 
+-libhistory.a: $(HISTOBJ) xmalloc.o
++libehistory.a: $(HISTOBJ) xmalloc.o
+ 	$(RM) $@
+ 	$(AR) $(ARFLAGS) $@ $(HISTOBJ) xmalloc.o
+ 	-test -n "$(RANLIB)" && $(RANLIB) $@
+@@ -222,12 +222,12 @@ uninstall-headers:
+ maybe-uninstall-headers: uninstall-headers
+ 
+ install-static: installdirs $(STATIC_LIBS) install-headers install-doc install-examples
+-	-$(MV) $(DESTDIR)$(libdir)/libreadline.a $(DESTDIR)$(libdir)/libreadline.old
+-	$(INSTALL_DATA) libreadline.a $(DESTDIR)$(libdir)/libreadline.a
+-	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libreadline.a
+-	-$(MV) $(DESTDIR)$(libdir)/libhistory.a $(DESTDIR)$(libdir)/libhistory.old
+-	$(INSTALL_DATA) libhistory.a $(DESTDIR)$(libdir)/libhistory.a
+-	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libhistory.a
++	-$(MV) $(DESTDIR)$(libdir)/libereadline.a $(DESTDIR)$(libdir)/libreadline.old
++	$(INSTALL_DATA) libereadline.a $(DESTDIR)$(libdir)/libereadline.a
++	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libereadline.a
++	-$(MV) $(DESTDIR)$(libdir)/libehistory.a $(DESTDIR)$(libdir)/libehistory.old
++	$(INSTALL_DATA) libehistory.a $(DESTDIR)$(libdir)/libehistory.a
++	-test -n "$(RANLIB)" && $(RANLIB) $(DESTDIR)$(libdir)/libehistory.a
+ 
+ installdirs: $(srcdir)/support/mkinstalldirs
+ 	-$(SHELL) $(srcdir)/support/mkinstalldirs $(DESTDIR)$(includedir) \

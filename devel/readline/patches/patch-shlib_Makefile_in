@@ -1,0 +1,14 @@
+$OpenBSD: patch-shlib_Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
+--- shlib/Makefile.in.orig	Tue Jul 13 11:58:49 2010
++++ shlib/Makefile.in	Tue Jul 13 12:00:00 2010
+@@ -118,8 +118,8 @@ CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(CPPFLAGS) $(INCLUDES
+ 
+ # The name of the main library target.
+ 
+-SHARED_READLINE = $(SHLIB_LIBPREF)readline$(SHLIB_DOT)$(SHLIB_LIBVERSION)
+-SHARED_HISTORY = $(SHLIB_LIBPREF)history$(SHLIB_DOT)$(SHLIB_LIBVERSION)
++SHARED_READLINE = $(SHLIB_LIBPREF)ereadline$(SHLIB_DOT)$(SHLIB_LIBVERSION)
++SHARED_HISTORY = $(SHLIB_LIBPREF)ehistory$(SHLIB_DOT)$(SHLIB_LIBVERSION)
+ SHARED_LIBS = $(SHARED_READLINE) $(SHARED_HISTORY)
+ 
+ # The C code source files for this library.

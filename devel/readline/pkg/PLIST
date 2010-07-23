@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
+%%SHARED%%
+include/readline/
+include/readline/chardefs.h
+include/readline/history.h
+include/readline/keymaps.h
+include/readline/readline.h
+include/readline/rlconf.h
+include/readline/rlstdc.h
+include/readline/rltypedefs.h
+include/readline/tilde.h
+@info info/ereadline.info
+@info info/erluserman.info
+@info info/history-6.1.info
+lib/libehistory.a
+lib/libereadline.a
+@man man/man3/ehistory.3
+@man man/man3/ereadline.3
+share/readline/
+share/readline/excallback.c
+share/readline/fileman.c
+share/readline/histexamp.c
+share/readline/manexamp.c
+share/readline/rl-fgets.c
+share/readline/rl.c
+share/readline/rlcat.c
+share/readline/rlevent.c
+share/readline/rlptytest.c
+share/readline/rltest.c
+share/readline/rlversion.c
