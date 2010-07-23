@@ -1,0 +1,7 @@
+Agglomerated SSL was written in order to hide the awful OpenSSL API. It
+strives to reuse the OpenSSL APIs and provide a much simpler and sane
+interface for programmers that are interested in writing applications
+that require the SSL/TLS protocol for secure communications.
+
+All code is written under the ISC license. The code currently is under
+heavy development.
