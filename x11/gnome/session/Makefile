@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.112 2010/07/18 06:12:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2010/07/23 09:28:05 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 

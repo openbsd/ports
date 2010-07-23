@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.3 2010/07/23 09:28:05 ajacoutot Exp $
+--- gnome-session/gsm-consolekit.c.orig	Fri Jul 23 11:13:25 2010
++++ gnome-session/gsm-consolekit.c	Fri Jul 23 11:15:37 2010
+@@ -728,6 +728,12 @@ gsm_consolekit_can_switch_user (GsmConsolekit *manager
+ 
+         error = NULL;
+ 
++/* User switching requires running another new X server which will not
++ * work by default on OpenBSD.
++ */
++#ifdef __OpenBSD__
++	return FALSE;
++#endif
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+                 g_warning ("Could not connect to ConsoleKit: %s",
+                            error->message);
