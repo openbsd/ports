@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2010/07/20 23:49:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.143 2010/07/24 09:51:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,14 +6,14 @@ COMMENT-server= compact IMAP/POP3 server
 COMMENT-sieve=	Sieve mail filtering for Dovecot
 
 V_MAJOR=	1.2
-V_DOVECOT=	1.2.12
+V_DOVECOT=	1.2.13
 V_SIEVE=	0.1.17
 V_MANAGESIEVE=	0.11.11
 
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server= 2
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}v0
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
+EPOCH-sieve=	0
 FULLPKGPATH-sieve= ${PKGPATH},-sieve
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -26,7 +26,7 @@ DISTFILES=	dovecot-${V_DOVECOT}.tar.gz \
 		dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}.tar.gz:0 \
 		${DIST_MANAGESIEVE}:0
 
-DIST_MANAGESIEVE= dovecot-${V_DOVECOT}-managesieve-${V_MANAGESIEVE}.diff.gz
+DIST_MANAGESIEVE= dovecot-1.2.12-managesieve-${V_MANAGESIEVE}.diff.gz
 
 HOMEPAGE=	http://www.dovecot.org/
 
@@ -38,11 +38,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-server=		c crypto gssapi krb5 ssl z
+WANTLIB-server=		bz2 c crypto gssapi krb5 ssl z
 WANTLIB-sieve=		c crypto ssl
 
 MODULES=	converters/libiconv
-LIB_DEPENDS+=	bz2::archivers/bzip2
+LIB_DEPENDS+=	::archivers/bzip2
 
 MULTI_PACKAGES=	-server
 SUBPACKAGE?=	-server
@@ -78,30 +78,33 @@ PATCH_LIST=		patch-* nosieve-patch-*
 
 .if ${FLAVOR:L:Mbdb}
 CONFIGURE_ARGS+=	--with-db
-LIB_DEPENDS+=		db.>=5::databases/db/v4
+LIB_DEPENDS+=		::databases/db/v4
+WANTLIB-server+=	db.>=5
 CFLAGS+=		-I${LOCALBASE}/include/db4
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
-LIB_DEPENDS+=		lber,ldap::databases/openldap
-WANTLIB-server+=	sasl2 asn1 com_err
+LIB_DEPENDS+=		::databases/openldap
+WANTLIB-server+=	lber ldap sasl2 asn1 com_err
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB-server+=	m
+LIB_DEPENDS+=		::databases/mysql
+WANTLIB-server+=	m lib/mysql/mysqlclient.>=10
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq.>=4::databases/postgresql
+LIB_DEPENDS+=		::databases/postgresql
+WANTLIB-server+=	pq.>=4
 .endif
 
 .if ${FLAVOR:L:Msqlite}
 CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS+=		sqlite3::databases/sqlite3
+LIB_DEPENDS+=		::databases/sqlite3
+WANTLIB-server+=	sqlite3
 .endif
 
 .if !${FLAVOR:L:Mno_sieve}
