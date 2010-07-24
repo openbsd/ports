@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/22 19:12:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/24 10:18:55 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
 
-MODPY_BUILDEP=		No
+MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
 AUTOCONF_VERSION=	2.60
