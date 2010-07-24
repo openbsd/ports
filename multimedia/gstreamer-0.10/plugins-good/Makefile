@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/07/24 07:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/07/24 09:25:01 sthen Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -18,11 +18,7 @@ PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 PKGNAME-soup =		gstreamer-libsoup-${V}
 
-REVISION-aalib =	0
-REVISION-dv =		0
-REVISION-gdk =		0
-REVISION-caca =		0
-REVISION-soup =		0
+REVISION =		1
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -gdk -caca -soup
@@ -43,7 +39,7 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z gstreamer-0.10 gstbase-0.10
-LIB_DEPENDS =		:gstreamer->=0.10.29:$P/core
+LIB_DEPENDS =		:gstreamer->=0.10.30:$P/core
 
 WANTLIB-main =		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/24 07:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/24 09:25:01 sthen Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-gnome =		gnome vfs element for GStreamer (plugins-base)
@@ -11,6 +11,7 @@ PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-gnome =		gstreamer-gnome-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
+REVISION-main =		0
 REVISION-gnome =	0
 REVISION-cdda =		0
 
@@ -40,7 +41,7 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10.29:${P}/core
+LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10.30:${P}/core
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
