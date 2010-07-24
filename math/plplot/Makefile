@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/22 18:52:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2010/07/24 18:30:46 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,10 +64,6 @@ CONFIGURE_ARGS=	-D ENABLE_java=OFF \
 		-D ENABLE_gnome2=OFF \
 		-D ENABLE_octave=OFF \
 		-D PLD_wxwidgets=OFF
-
-GCC_ARCH=       ${MACHINE_ARCH}-unknown-openbsd${OSREV}
-GNU_ARCH=       ${GCC_ARCH:S/amd64/x86_64/}
-SUBST_VARS+=	GNU_ARCH
 
 DOCSRC=		${WRKSRC}/doc/docbook/src
 
