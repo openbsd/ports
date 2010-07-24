@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.27 2010/01/28 11:30:39 okan Exp $
---- Configure.orig	Wed Mar 25 15:24:01 2009
-+++ Configure	Wed Jan 27 17:52:50 2010
+$OpenBSD: patch-Configure,v 1.28 2010/07/24 23:01:56 naddy Exp $
+--- Configure.orig	Wed Mar 25 13:24:01 2009
++++ Configure	Sat Jul 24 16:50:36 2010
 @@ -3694,12 +3694,6 @@ return(0); }
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=2090
@@ -14,7 +14,7 @@ $OpenBSD: patch-Configure,v 1.27 2010/01/28 11:30:39 okan Exp $
        3.0*)
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3000
-@@ -3740,16 +3734,48 @@ return(0); }
+@@ -3740,16 +3734,52 @@ return(0); }
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3090
  	;;
@@ -54,6 +54,10 @@ $OpenBSD: patch-Configure,v 1.27 2010/01/28 11:30:39 okan Exp $
 +	LSOF_TSTBIGF=" "
 +	LSOF_VERS=4070
 +	;;
++      4.8*)
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=4070
++	;;
 +      4*)
 +	LSOF_TSTBIGF=" "
 +	LSOF_VERS=4070
@@ -69,7 +73,7 @@ $OpenBSD: patch-Configure,v 1.27 2010/01/28 11:30:39 okan Exp $
  	;;
        esac	# }
      fi	# }
-@@ -3757,7 +3783,7 @@ return(0); }
+@@ -3757,7 +3787,7 @@ return(0); }
      # Test for legal OpenBSD version.
  
      case $LSOF_VERS in	# {
