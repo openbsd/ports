@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/24 07:01:03 ajacoutot Exp $	
+# $OpenBSD: Makefile,v 1.25 2010/07/24 08:01:40 ajacoutot Exp $	
 
 COMMENT=	translate GB/Big5 encoding to tone pinyin
 
 DISTNAME=	zh-c2t-1.0
-PKGNAME=	${DISTNAME}
 REVISION=	0
 CATEGORIES=	chinese
 

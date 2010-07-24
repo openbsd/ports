@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/24 06:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/24 08:01:40 ajacoutot Exp $
 
 COMMENT=	documentation for autoconf, automake, libtool
 
 V=		1.5
 DISTNAME=	autobook-${V}
-PKGNAME=	${DISTNAME}
 REVISION=	p0
 CATEGORIES=	books devel
 
