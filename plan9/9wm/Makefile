@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/24 15:29:47 naddy Exp $
 
 COMMENT=	8 1/2-like Window Manager for X11
 
 DISTNAME=	pre-9wm-1.2
-PKGNAME=	9wm-1.2prep1
+PKGNAME=	9wm-1.2pre
+REVISION=	1
 CATEGORIES=	plan9
 
 MASTER_SITES=	http://www.plig.org/xwinman/archive/9wm/

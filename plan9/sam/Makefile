@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/24 15:29:47 naddy Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
 DISTNAME=	sam
-PKGNAME=	sam-4.3.19980506p0
+PKGNAME=	sam-4.3.19980506
+REVISION=	0
 CATEGORIES=	plan9
 
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
