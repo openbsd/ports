@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/14 08:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/24 09:15:55 steven Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
-USE_LIBTOOL =		gnu
 AUTOMAKE_VERSION =	1.9	# XXX should be 1.10
 AUTOCONF_VERSION =	2.63
 
