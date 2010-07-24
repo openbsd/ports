@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 21:40:00 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/24 07:01:03 ajacoutot Exp $
 
 COMMENT=	convert solar calendar to lunar calendar
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	non-commercial use only
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	non-commercial use only
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 ALL_TARGET=

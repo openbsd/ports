@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/08 14:21:21 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.20 2010/07/24 07:01:03 ajacoutot Exp $ 
 
 COMMENT=	big5/gb enhanced truetype font manager
 
-DISTNAME=       ttfm-0.9.5
-PKGNAME=        zh-${DISTNAME}p0
-CATEGORIES=     chinese 
+DISTNAME=	ttfm-0.9.5
+PKGNAME=	zh-${DISTNAME}
+REVISION=	0
+CATEGORIES=	chinese 
 
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		c freetype z
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	c freetype z
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
