@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/18 22:54:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/24 17:18:33 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		manages IPv4 and IPv6 addresses and subnets
 
-DISTNAME =		NetAddr-IP-4.028
+DISTNAME =		NetAddr-IP-4.030
 
 CATEGORIES =		net
 
