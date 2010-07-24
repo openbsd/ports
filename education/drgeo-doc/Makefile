@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 03:07:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/24 17:47:54 ajacoutot Exp $
 
 COMMENT=	interactive geometry program, documentation
 
 DISTNAME=	drgeo-doc-1.6
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/

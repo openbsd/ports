@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2009/12/22 15:47:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/24 17:43:17 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.132
 DISTNAME=	pan-${V}
-PKGNAME=	${DISTNAME}p6
+REVISION=	7
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
@@ -22,15 +22,16 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 gmime-2.0 gtkspell
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
 MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
-		gtkspell.>=1::textproc/gtkspell
+LIB_DEPENDS=	::x11/gtk+2 \
+		:gmime->=2.2,<2.4:mail/gmime \
+		::textproc/gtkspell
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 VMEM_WARNING=	Yes

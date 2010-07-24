@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/11/18 10:59:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2010/07/24 17:43:17 ajacoutot Exp $
 
 COMMENT=		SLang-based newsreader
 
 DISTNAME=		slrn-0.9.9p1 # p1 is part of upstream version XXX
-PKGNAME=		${DISTNAME:S/p/pl/}p0
+PKGNAME=		${DISTNAME:S/p/pl/}
+REVISION=		0
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
@@ -15,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m ssl termcap 
+WANTLIB=		c crypto m ssl termcap slang
 
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
 NO_REGRESS=		Yes
-LIB_DEPENDS=		slang.>=15::devel/libslang
+LIB_DEPENDS=		::devel/libslang
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu

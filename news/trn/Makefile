@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/24 17:43:18 ajacoutot Exp $
 
 COMMENT=	threaded newsreader
 
@@ -7,8 +7,9 @@ MAINTAINER= 	Marc Espie <espie@openbsd.org>
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=76
-DISTNAME=trn-4.0-test$V
-PKGNAME=trn-4.0.$Vp1
+DISTNAME=	trn-4.0-test$V
+PKGNAME=	trn-4.0.$V
+REVISION=	1
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes

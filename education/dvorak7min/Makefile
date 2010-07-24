@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/17 16:42:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/24 17:47:54 ajacoutot Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
 DISTNAME=	dvorak7min-1.6.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	education
 
 MAINTAINER=    Pieter-Augustijn Van Malleghem <geekassault@planetinternet.be>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/12/22 15:09:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/24 17:47:54 ajacoutot Exp $
 
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0
-PKGNAME=	${DISTNAME}p13
+REVISION=	14
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/	
@@ -19,16 +19,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gmp gobject-2.0 gtk-x11-2.0 ltdl
+WANTLIB += glitz gmodule-2.0 gmp gobject-2.0 gtk-x11-2.0 ltdl guile
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ xcb xml2 z
+WANTLIB += png pthread pthread-stubs stdc++ xcb xml2 z glade-2.0
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	glade-2.0::devel/libglade2 \
-		guile::lang/guile
+LIB_DEPENDS=	::devel/libglade2 \
+		::lang/guile
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
