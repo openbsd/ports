@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/24 17:38:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 COMMENT=		Palm OS Emulator
 
 VERSION=		3.5
 DISTNAME=		Emulator_Src_${VERSION}
-PKGNAME=		pose-${VERSION}p1
+PKGNAME=		pose-${VERSION}
+REVISION=		1
 CATEGORIES=		palm emulators
 HOMEPAGE=		http://www.palmos.com/
 

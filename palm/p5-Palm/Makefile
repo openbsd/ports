@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 19:00:54 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/24 17:38:35 ajacoutot Exp $
 
 COMMENT=	interface to palm pdb databases
 
 MODULES=	cpan
 DISTNAME=	p5-Palm-1.3.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	palm databases
 HOMEPAGE=	http://www.coldsync.org/
 CPAN_AUTHOR=	ARENSB

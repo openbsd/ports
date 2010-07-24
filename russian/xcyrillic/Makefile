@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/01/31 21:48:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/24 17:36:17 ajacoutot Exp $
 
 COMMENT=	setup X11 fonts for russian language (koi8-r)
 
 DISTNAME=	xcyrillic-2.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	russian x11
 
 MASTER_SITES=	ftp://ftp.openbsd.ru/pub/X11/cyrillic/ \
