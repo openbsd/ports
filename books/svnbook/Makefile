@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/07 14:11:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/24 06:29:07 ajacoutot Exp $
 
 COMMENT=		Version Control with Subversion
 
 V=			1.5
 DISTNAME=		svn-book-html-chunk
-PKGNAME=		svnbook-${V}p0
+PKGNAME=		svnbook-${V}
+REVISION=		0
 CATEGORIES=		books devel
 
 HOMEPAGE=		http://svnbook.red-bean.com/

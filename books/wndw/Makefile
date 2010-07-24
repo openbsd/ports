@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/09 01:00:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/24 06:29:07 ajacoutot Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -10,9 +10,11 @@ COMMENT-id =	Wireless Networking in the Developing World, Indonesian ed.
 PKGNAME-main =	wndw-2.0
 PKGNAME-es =	wndw-es-3.0
 PKGNAME-fr =	wndw-fr-2.0
-PKGNAME-ar =	wndw-ar-2.0p0
+PKGNAME-ar =	wndw-ar-2.0
 PKGNAME-pt =	wndw-pt-1.0
 PKGNAME-id =	wndw-id-2.0
+
+REVISION-ar=	0
 
 DISTNAME =	wndw
 

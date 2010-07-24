@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:34:35 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/24 06:29:07 ajacoutot Exp $
 
 COMMENT=	documentation for autoconf, automake, libtool
 
 V=		1.5
 DISTNAME=	autobook-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
+REVISION=	p0
 CATEGORIES=	books devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

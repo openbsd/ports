@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/05 10:06:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/24 06:29:07 ajacoutot Exp $
 
 COMMENT=	book on embedding Perl in HTML with Mason
 CATEGORIES=	books 
@@ -6,7 +6,8 @@ CATEGORIES=	books
 # unversioned, so impose a version on it
 V=		1.0
 DISTNAME=	mason-book
-PKGNAME=	${DISTNAME}-${V}p0
+PKGNAME=	${DISTNAME}-${V}
+REVISION=	0
 DIST_SUBDIR=	mason-book-${V}
 
 HOMEPAGE=	http://www.masonbook.com/
