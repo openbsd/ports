@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/07/22 08:02:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/07/24 07:42:38 benoit Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/Liberation/
 lib/X11/fonts/Liberation/LiberationMono-Bold.ttf
@@ -9,6 +9,10 @@ lib/X11/fonts/Liberation/LiberationSans-Bold.ttf
 lib/X11/fonts/Liberation/LiberationSans-BoldItalic.ttf
 lib/X11/fonts/Liberation/LiberationSans-Italic.ttf
 lib/X11/fonts/Liberation/LiberationSans-Regular.ttf
+lib/X11/fonts/Liberation/LiberationSansNarrow-Bold.ttf
+lib/X11/fonts/Liberation/LiberationSansNarrow-BoldItalic.ttf
+lib/X11/fonts/Liberation/LiberationSansNarrow-Italic.ttf
+lib/X11/fonts/Liberation/LiberationSansNarrow-Regular.ttf
 lib/X11/fonts/Liberation/LiberationSerif-Bold.ttf
 lib/X11/fonts/Liberation/LiberationSerif-BoldItalic.ttf
 lib/X11/fonts/Liberation/LiberationSerif-Italic.ttf

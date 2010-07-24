@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/20 17:32:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/24 07:42:33 benoit Exp $
 
 PKG_ARCH =	*
 
 COMMENT =	substitute for MS TTF core fonts
 
-DISTNAME =	liberation-fonts-1.04
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	liberation-fonts-ttf-1.06.0.20100721
+PKGNAME =	${DISTNAME:S/-ttf//}
 CATEGORIES =	x11
 
 HOMEPAGE =	https://fedorahosted.org/liberation-fonts
