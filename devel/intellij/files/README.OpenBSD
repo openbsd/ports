@@ -4,8 +4,10 @@ IntelliJ on OpenBSD
 1. Windowing Problems
 ---------------------
 
-If you have windowing problems, it has been reported that you may need
-to install x11/wmname to fix the problem.
+If the splash-screen displays but you then only see a grey main screen,
+install the wmname package and run 'wmname LG3D'. This is a problem that
+has been seen with some Java-based applications used with a non-reparenting
+window manager (e.g. cwm).
 
 2. Native Libraries
 -------------------

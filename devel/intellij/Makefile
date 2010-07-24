@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/02 16:56:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/24 22:12:53 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		IntelliJ Java IDE
 
-V=			9.0.2
+V=			9.0.3
 DISTNAME=		ideaIC-${V}
-PKGNAME=		intellij-${V}p0
+PKGNAME=		intellij-${V}
 CATEGORIES=		java devel
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
@@ -31,7 +31,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils
 NO_REGRESS=		Yes
 SUBST_VARS+=		JAVA_HOME
 
-WRKDIST=		${WRKDIR}/idea-IC-95.66
+WRKDIST=		${WRKDIR}/idea-IC-95.429
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -42,21 +42,20 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${IJ}
-	@${SUBST_CMD} -c ${FILESDIR}/idea \
+	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
+		${FILESDIR}/idea \
 		${PREFIX}/bin/idea
 	@chmod ${BINMODE} ${PREFIX}/bin/idea
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/idea
 	@ln -s ${TRUEPREFIX}/bin/idea ${PREFIX}/bin/intellij
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${IJ}
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${IJ}/idea.png
-	@${SUBST_CMD} -c ${FILESDIR}/intellij.desktop \
+	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+		${FILESDIR}/intellij.desktop \
 		${PREFIX}/share/applications/intellij.desktop
 	@chmod ${SHAREMODE} \
-		${PREFIX}/share/applications/intellij.desktop
-	@chown ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/applications/intellij.desktop
 
 .include <bsd.port.mk>
