@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/29 02:24:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/24 11:44:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	scim input method module for fcitx
 V=		3.1.1
 DISTNAME=	scim-fcitx.$V
 PKGNAME=	scim-fcitx-$V
+REVISION=	0
 
 CATEGORIES=	inputmethods chinese
 
@@ -20,14 +21,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m stdc++
+WANTLIB=	c m stdc++ scim-1.0
 
 MODULES=	devel/gettext
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	scim-1.0::inputmethods/scim
+LIB_DEPENDS=	::inputmethods/scim
 
 WRKDIST=	${WRKDIR}/fcitx
 USE_LIBTOOL=	Yes

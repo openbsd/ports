@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/09 07:38:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/24 11:44:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	chewing input method for uim
 
 DISTNAME=	uim-chewing-0.0.4.1
+REVISION=	0
 
 CATEGORIES=	inputmethods chinese
 
@@ -18,12 +19,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB +=	chewing gcroots uim uim-scm
+
 MODULES=		devel/gettext
 
 MASTER_SITES=	http://uim.googlecode.com/files/
 
-LIB_DEPENDS=	chewing::chinese/libchewing \
-		gcroots,uim,uim-scm::inputmethods/uim
+LIB_DEPENDS=	::chinese/libchewing \
+		::inputmethods/uim
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

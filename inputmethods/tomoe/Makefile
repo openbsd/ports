@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/16 15:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/24 11:44:17 ajacoutot Exp $
+
 COMMENT=	japanese handwriting recognition library
 
 DISTNAME=	tomoe-0.2.1
+REVISION=	0
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/16048/}
 
-CATEGORIES=	japanese inputmethods
+CATEGORIES=	inputmethods japanese
 
 SHARED_LIBS=	tomoe 0.0
 
