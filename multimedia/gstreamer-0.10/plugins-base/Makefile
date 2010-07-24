@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/22 19:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/24 07:35:08 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
-COMMENT-gnome =		gnome vfs element for GStreamer (base)
-COMMENT-cdda =		cd paranoia element for GStreamer (base)
+COMMENT-gnome =		gnome vfs element for GStreamer (plugins-base)
+COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
 
 V =			0.10.30
 DISTNAME =		gst-plugins-base-${V}
@@ -10,6 +10,9 @@ DISTNAME =		gst-plugins-base-${V}
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-gnome =		gstreamer-gnome-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
+
+REVISION-gnome =	0
+REVISION-cdda =		0
 
 MULTI_PACKAGES =	-main -gnome -cdda
 
