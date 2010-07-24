@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/07/24 23:05:08 naddy Exp $
 
 BROKEN-powerpc =	gcc spins on x_20.cpp
 
@@ -18,7 +18,7 @@ LIB_DEPENDS =	::x11/kde/libs3 \
 		::x11/qt3 \
 		::lang/ruby
 
-REVISION =	8
+REVISION =	9
 WANTLIB = GL GLU ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam \
 	fontconfig freetype idn jpeg lib/kde3/DCOP lib/kde3/kdecore.>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \

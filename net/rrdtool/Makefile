@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/07/24 23:05:08 naddy Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -15,6 +15,7 @@ PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
 REVISION-main=	0
 REVISION-python=0
+REVISION-ruby=	0
 
 SHARED_LIBS+=	rrd 3.0
 SHARED_LIBS+=	rrd_th 3.0

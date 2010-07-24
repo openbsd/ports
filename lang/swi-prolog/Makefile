@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/06/10 18:18:31 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/24 23:05:08 naddy Exp $
 
 BROKEN-hppa =		build stalls during bootstrap in packages/chr 
 
@@ -8,7 +8,8 @@ XV =			6.6.58
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH
 DISTNAME =		pl-$V
-PKGNAME =		swi-prolog-$Vp4
+PKGNAME =		swi-prolog-$V
+REVISION =		5
 MASTER_SITES =		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 COMMENT =		Prolog for the real world
 HOMEPAGE =		http://www.swi-prolog.org/

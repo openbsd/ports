@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/21 23:02:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/24 23:05:08 naddy Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -13,7 +13,7 @@ GCC_V =		4.2.1
 LLVM_V =	2.7
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
 PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS =	ssp	0.0 \

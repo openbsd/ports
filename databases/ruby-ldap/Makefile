@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/01/27 21:43:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/24 23:05:08 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
 DISTNAME=	ruby-ldap-0.9.7
-PKGNAME=	${DISTNAME}p7
+REVISION=	8
 CATEGORIES=	databases
 
 HOMEPAGE=	http://ruby-ldap.sourceforge.net/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/01/27 21:43:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/24 23:05:08 naddy Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		ruby interface to Berkeley DB
 DISTNAME=		bdb-0.6.2
-PKGNAME=		ruby-${DISTNAME}p6
+PKGNAME=		ruby-${DISTNAME}
+REVISION=		7
 CATEGORIES=		databases
 
 HOMEPAGE=		http://moulon.inra.fr/ruby/bdb.html
