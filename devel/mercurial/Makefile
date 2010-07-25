@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/06/15 17:20:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/25 07:22:24 benoit Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	1.5.4
+MODPY_EGG_VERSION =	1.6
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 HOMEPAGE =		http://www.selenic.com/mercurial/
@@ -23,16 +23,16 @@ MODULES =		lang/python \
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
 			::archivers/unzip
 
-FILES =			hgeditor hgweb.cgi hgwebdir.cgi
+FILES =			hgeditor hgweb.cgi
 
 CONTRIBFILES =		bash_completion mercurial.el sample.hgrc \
-			tcsh_completion zsh_completion hgwebdir.fcgi \
+			tcsh_completion zsh_completion \
 			mergetools.hgrc mq.el
 
-CONTRIBDIRS =		git-viz hgsh vim
-SCRIPTS =		convert-repo hg-ssh hgdiff hgk \
+CONTRIBDIRS =		hgsh vim
+SCRIPTS =		convert-repo hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
-			undumprevlog rewrite-log simplemerge
+			undumprevlog simplemerge
 
 # Zap rst2man gunk that confuses nroff/mandoc.
 post-build:
