@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/22 21:43:01 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/25 21:39:20 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.2.7
-FFX_VERSION=		3.6.7
+VERSION=		1.9.2.8
+FFX_VERSION=		3.6.8
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
