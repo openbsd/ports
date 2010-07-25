@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/07/25 02:11:14 jolan Exp $
+--- configure.in.orig	Sun Apr 20 16:33:43 2008
++++ configure.in	Fri Jul  9 18:55:19 2010
+@@ -222,9 +222,9 @@ AC_ARG_ENABLE(ogg,
+               , enable_ogg=yes)
+ if test x$enable_ogg = xyes; then
+   AC_CHECK_HEADER(vorbis/codec.h, have_vorbis_hdr=yes)
+-  AC_CHECK_LIB(vorbis, vorbis_info_init, have_vorbis_lib=yes)
++  AC_CHECK_LIB(vorbis, vorbis_info_init, have_vorbis_lib=yes,,[-logg])
+   AC_CHECK_HEADER(vorbis/vorbisfile.h, have_vorbisfile_hdr=yes)
+-  AC_CHECK_LIB(vorbisfile, ov_open_callbacks, have_vorbisfile_lib=yes)
++  AC_CHECK_LIB(vorbisfile, ov_open_callbacks, have_vorbisfile_lib=yes,,[-lvorbis -logg])
+   have_vorbis=no
+   if test x$have_ogg = xyes; then
+     if test x$have_vorbis_hdr = xyes -a x$have_vorbis_lib = xyes; then
+@@ -259,7 +259,7 @@ AC_ARG_ENABLE(flac,
+               , enable_flac=yes)
+ if test x$enable_flac = xyes; then
+   AC_CHECK_HEADER(FLAC/stream_decoder.h, have_flac_hdr=yes)
+-  AC_CHECK_LIB(FLAC, $flcsym, have_flac_lib=yes)
++  AC_CHECK_LIB(FLAC, $flcsym, have_flac_lib=yes,,[-logg])
+   if test x$have_ogg = xyes; then
+     if test x$have_flac_hdr = xyes -a x$have_flac_lib = xyes; then
+       LIBS="$LIBS -lFLAC -logg"
