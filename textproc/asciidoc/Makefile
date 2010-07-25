@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/14 14:47:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/25 02:17:30 jolan Exp $
 
 COMMENT=	A text document format for writing documents and man pages 
 
 DISTNAME=	asciidoc-8.2.7
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -30,6 +30,7 @@ NO_REGRESS=	Yes
 post-configure:
 	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env ${MODPY_BIN},g' \
 		${WRKSRC}/asciidoc.py ${WRKSRC}/filters/*.py
+	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc 
