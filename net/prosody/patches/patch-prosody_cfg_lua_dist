@@ -1,0 +1,12 @@
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.1 2010/07/25 23:42:25 jolan Exp $
+--- prosody.cfg.lua.dist.orig	Sat Jun 12 19:23:02 2010
++++ prosody.cfg.lua.dist	Sun Jul 25 18:17:33 2010
+@@ -24,7 +24,7 @@ admins = { }
+ 
+ -- Enable use of libevent for better performance under high load
+ -- For more information see: http://prosody.im/doc/libevent
+---use_libevent = true;
++use_libevent = true;
+ 
+ -- This is the list of modules Prosody will load on startup.
+ -- It looks for mod_modulename.lua in the plugins folder, so make sure that exists too.
