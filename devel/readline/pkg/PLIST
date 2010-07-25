@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/25 12:45:08 ajacoutot Exp $
 %%SHARED%%
 include/readline/
 include/readline/chardefs.h
@@ -9,9 +9,9 @@ include/readline/rlconf.h
 include/readline/rlstdc.h
 include/readline/rltypedefs.h
 include/readline/tilde.h
+@info info/ehistory.info
 @info info/ereadline.info
 @info info/erluserman.info
-@info info/history-6.1.info
 lib/libehistory.a
 lib/libereadline.a
 @man man/man3/ehistory.3

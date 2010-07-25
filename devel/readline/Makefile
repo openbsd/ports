@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/23 18:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/25 12:45:08 ajacoutot Exp $
 COMMENT =		library to edit command lines as they are typed in
 
 V =			6.1
@@ -25,5 +25,13 @@ CONFIGURE_STYLE =	gnu
 
 PATCHFILES =		readline61-001:0 \
 			readline61-002:0
+
+pre-configure:
+	perl -pi \
+		-e 's,^#define RL_VERSION_MAJOR.*,#define RL_VERSION_MAJOR ${LIBereadline_VERSION:R},;' \
+		-e 's,^#define RL_VERSION_MINOR.*,#define RL_VERSION_MINOR ${LIBereadline_VERSION:E},' \
+		${WRKSRC}/readline.h
+	perl -pi -e 's,^LIBVERSION=6.1,LIBVERSION=${LIBereadline_VERSION},' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
