@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2010/06/21 21:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	2.30.2
+REVISION=	0
 
 # GPLv2/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,9 +22,9 @@ WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-render-util z
+WANTLIB += xcb xcb-render xcb-render-util z vte
 
-LIB_DEPENDS=	vte.>=14::devel/vte
+LIB_DEPENDS=	::devel/vte
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes

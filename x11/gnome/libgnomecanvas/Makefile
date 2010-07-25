@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 
@@ -22,13 +22,13 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png xml2 z pthread-stubs xcb xcb-render xcb-render-util \
-		gthread-2.0
+		gthread-2.0 glade-2.0 art_lgpl_2
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	glade-2.0.>=0::devel/libglade2 \
-		art_lgpl_2.>=5::graphics/libart
+LIB_DEPENDS=	::devel/libglade2 \
+		::graphics/libart
 
 USE_X11=	Yes
 

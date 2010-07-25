@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/05/19 09:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/07/25 08:15:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,9 @@ GNOME_VERSION=		2.24.3
 PKGNAME-main=		gnome-vfs2-${VERSION}
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
 
+REVISION-main=		0
+REVISION-smb=		0
+
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
 # GPLv2/LGPLv2
@@ -20,28 +23,31 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	crypto dbus-1 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		m pcre ssl util z
+		m pcre ssl util z avahi-client avahi-common avahi-glib \
+		ORBit-2 xml2 dbus-glib-1
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
 BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
-LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
-			xml2.>=9::textproc/libxml \
-			dbus-glib-1.>=3::x11/dbus-glib
-LIB_DEPENDS+=		avahi-client,avahi-common,avahi-glib::net/avahi
+LIB_DEPENDS=		::devel/ORBit2 \
+			::textproc/libxml \
+			::x11/dbus-glib
+LIB_DEPENDS+=		::net/avahi
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
-WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread
+WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread \
+			cdda_interface cdda_paranoia bz2 fam.>=1
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			cdda_interface,cdda_paranoia::audio/cdparanoia \
-			bz2.>=10::archivers/bzip2 \
-			fam.>=1::sysutils/gamin
+			::audio/cdparanoia \
+			::archivers/bzip2 \
+			::sysutils/gamin
 
+WANTLIB-smb+=		smbclient gnomevfs-2
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \
-			smbclient::net/samba \
-			gnomevfs-2.>=2400::x11/gnome/vfs2
+			::net/samba \
+			::x11/gnome/vfs2
 RUN_DEPENDS-smb=	${RUN_DEPENDS}
 
 USE_X11=		Yes

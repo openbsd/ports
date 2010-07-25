@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/04/27 06:51:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.30.1
+REVISION=		0
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -25,14 +26,16 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 ssl tasn1 xcb xml2 z eggdbus-1 xcb-render xcb-render-util
+WANTLIB += lber,ldap notify soup-2.4 gpgme gnome-keyring.>=6 gcr.>=1
+WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
-LIB_DEPENDS=		lber,ldap::databases/openldap \
-			notify::devel/libnotify \
-			soup-2.4::devel/libsoup \
-			gpgme::security/gpgme \
-			gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-			gcr.>=1,gp11:gnome-keyring->=2.30.0:x11/gnome/keyring \
-			avahi-client,avahi-common,avahi-glib::net/avahi
+LIB_DEPENDS=		::databases/openldap \
+			::devel/libnotify \
+			::devel/libsoup \
+			::security/gpgme \
+			:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+			:gnome-keyring->=2.30.0:x11/gnome/keyring \
+			::net/avahi
 
 MODULES=		devel/gettext \
 			x11/gnome \

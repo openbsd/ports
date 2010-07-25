@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/23 16:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.30.0
+
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -19,19 +21,20 @@ WANTLIB += Xrender atk-1.0 bonobo-2 bonobo-activation c cairo
 WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre wnck-1
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += vorbis vorbisfile xcb xcb-atom xcb-aux xcb-event xml2
-WANTLIB += z xcb-render xcb-render-util
+WANTLIB += z xcb-render xcb-render-util canberra-gtk canberra cspi
+WANTLIB += loginhelper spi gnomespeech
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=		canberra-gtk,canberra::audio/libcanberra \
-			wnck-1::devel/libwnck \
-			cspi,loginhelper,spi::x11/gnome/at-spi \
-			gnomespeech::x11/gnome/speech
+LIB_DEPENDS=		::audio/libcanberra \
+			::devel/libwnck \
+			::x11/gnome/at-spi \
+			::x11/gnome/speech
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes

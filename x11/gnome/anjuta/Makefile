@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/21 20:05:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/25 08:15:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		2.30.2.1
+
+REVISION=		0
 
 SHARED_LIBS=		anjuta		0.0	\
 			anjuta-ctags 	0.0	\
@@ -35,12 +37,15 @@ WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icudata icui18n
-WANTLIB += icuuc jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0
+WANTLIB += icuuc jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0 gdl-1
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++
+WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++ vte
 WANTLIB += tasn1 unique-1.0 util webkit-1.0 wnck-1 xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util xml2 xslt z
-WANTLIB += gstapp-0.10
+WANTLIB += gstapp-0.10 gladeui-1 gtksourceview-2.0
+WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
+WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1
+WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 			::devel/p5-Locale-gettext \
@@ -49,11 +54,11 @@ BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 RUN_DEPENDS=		::lang/vala \
 			::misc/shared-mime-info \
 			::devel/p5-Locale-gettext
-LIB_DEPENDS=		gladeui-1::devel/glade3 \
-			svn_client-1,svn_delta-1,svn_diff-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_ra-1,svn_ra_local-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1,svn_fs_util-1,svn_ra_neon-1::devel/subversion \
-			vte::devel/vte \
-			gdl-1::x11/gnome/gdl \
-			gtksourceview-2.0::x11/gtksourceview
+LIB_DEPENDS=		::devel/glade3 \
+			::devel/subversion \
+			::devel/vte \
+			::x11/gnome/gdl \
+			::x11/gtksourceview
 
 LIBTOOL_FLAGS=		--tag=disable-static
 USE_X11 =		Yes

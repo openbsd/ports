@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		GNOME speech module
 
 GNOME_PROJECT=		gnome-speech
 GNOME_VERSION=		0.4.25
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  gnomespeech          0.1      # .7.1
 
 # LGPLv2
@@ -14,13 +14,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 ORBitCosNaming-2 c glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 pcre pthread
+WANTLIB += gthread-2.0 pcre pthread espeak bonobo-2,bonobo-activation
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		espeak::audio/espeak \
-			bonobo-2,bonobo-activation::x11/gnome/libbonobo
+LIB_DEPENDS=		::audio/espeak \
+			::x11/gnome/libbonobo
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

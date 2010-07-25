@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2010/07/23 09:28:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -21,7 +21,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-atom xcb-aux xcb-event
-WANTLIB += z xcb-render xcb-render-util
+WANTLIB += z xcb-render xcb-render-util execinfo
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	::textproc/rarian \
 		::textproc/xmlto \
 		::x11/gnome/settings-daemon
-LIB_DEPENDS=	execinfo::devel/libexecinfo
+LIB_DEPENDS=	::devel/libexecinfo
 RUN_DEPENDS=	::x11/gnome/settings-daemon \
 		::sysutils/consolekit
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/04/21 23:54:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/07/25 08:15:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.30.0
+REVISION=		0
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -25,13 +26,14 @@ WANTLIB += glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 kvm ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render xcb-render-util
-WANTLIB += xml2 z
+WANTLIB += xml2 z canberra canberra-gtk gnome-2 gnomecanvas-2 gtop-2.0
+WANTLIB += panel-applet-2
 
-LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
-			gnome-2::x11/gnome/libgnome \
-			gnomecanvas-2::x11/gnome/libgnomecanvas \
-			gtop-2.0.>=7::devel/libgtop2 \
-			panel-applet-2::x11/gnome/panel
+LIB_DEPENDS=		::audio/libcanberra \
+			::x11/gnome/libgnome \
+			::x11/gnome/libgnomecanvas \
+			::devel/libgtop2 \
+			::x11/gnome/panel
 # needed for at least baobab and gnome-system-log
 RUN_DEPENDS=		::x11/gnome/gvfs
 

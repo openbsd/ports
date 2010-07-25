@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
-REVISION=		0
+
+REVISION=		1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -20,16 +21,16 @@ WANTLIB += cairo croco-0.6 dmx expat fontconfig freetype gailutil
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render
-WANTLIB += xcb-render-util xml2 z
+WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render rsvg-2
+WANTLIB += xcb-render-util xml2 z gnomecanvas-2
 
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			::x11/gnome/zenity \
 			::sysutils/ktsuss
-LIB_DEPENDS=		rsvg-2::x11/gnome/librsvg \
-			gnomecanvas-2.>=2002::x11/gnome/libgnomecanvas
+LIB_DEPENDS=		::x11/gnome/librsvg \
+			::x11/gnome/libgnomecanvas
 
 MODULES=		devel/gettext \
 			x11/gnome

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/22 04:46:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.1
+
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -15,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp gdata
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 gnutls
 WANTLIB += cairo clutter-glx-1.0 clutter-gtk-0.10 dbus-1 dbus-glib-1
 WANTLIB += drm exif expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
@@ -24,14 +26,15 @@ WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z gnome-keyring proxy
 WANTLIB += soup-gnome-2.4 eggdbus-1 xcb-render xcb-render-util
+WANTLIB += champlain-0.4 champlain-gtk-0.4
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=    	gdata::devel/libgdata \
-			champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.1:geo/libchamplain/core \
-			gnutls::security/gnutls
+LIB_DEPENDS=    	::devel/libgdata \
+			:libchamplain->=0.4.1:geo/libchamplain/core \
+			::security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog
 RUN_DEPENDS=		:eog->=2.30.0:x11/gnome/eog

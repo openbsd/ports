@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/16 10:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.30.0
-REVISION=	1
+REVISION=	2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,17 +20,18 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xkbfile xklavier xml2
-WANTLIB += z xcb-render xcb-render-util
+WANTLIB += z xcb-render xcb-render-util gnome-desktop-2 gnome-menu
+WANTLIB += gnomekbdui gnomekbd notify
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
 BUILD_DEPENDS=	::textproc/xmlto
-LIB_DEPENDS=	gnome-desktop-2.>=6::x11/gnome/desktop \
-		gnome-menu.>=4::x11/gnome/menus \
-		gnomekbdui.>=3,gnomekbd::x11/gnome/libgnomekbd \
-		notify.>=2::devel/libnotify
+LIB_DEPENDS=	::x11/gnome/desktop \
+		::x11/gnome/menus \
+		::x11/gnome/libgnomekbd \
+		::devel/libnotify
 
 # notification-daemon is needed for the "Leave Message" button
 RUN_DEPENDS=	::x11/gnome/librsvg \

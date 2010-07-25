@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2010/06/21 16:08:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
 GNOME_VERSION=	2.30.1
+
+REVISION=	0
 
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 
@@ -23,11 +25,12 @@ WANTLIB += cairo dbus-1 dbus-glib-1 enchant execinfo expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc jpeg
+WANTLIB += gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc jpeg webkit-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++ tasn1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xml2 xslt z gpg-error gstapp-0.10
+WANTLIB += xml2 xslt z gpg-error gstapp-0.10 wnck-1 ORBit-2 unique-1.0
+WANTLIB += startup-notification-1
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -35,12 +38,11 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
-LIB_DEPENDS=	wnck-1::devel/libwnck \
-		startup-notification-1::devel/startup-notification \
-		ORBit-2.>=3::devel/ORBit2 \
-		gconf-2.>=6::devel/gconf2 \
-		unique-1.0.>=1::devel/libunique \
-		webkit-1.0::www/webkit
+LIB_DEPENDS=	::devel/libwnck \
+		::devel/startup-notification \
+		::devel/ORBit2 \
+		::devel/libunique \
+		::www/webkit
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

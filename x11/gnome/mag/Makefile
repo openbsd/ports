@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
 GNOME_PROJECT=		gnome-mag
 GNOME_VERSION=		0.16.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnome-mag            1.0      # .5.9
 CATEGORIES=		sysutils
@@ -24,7 +24,7 @@ WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb z gconf-2 xcb-render xcb-render-util
+WANTLIB += xcb z gconf-2 xcb-render xcb-render-util loginhelper spi
 
 USE_X11=		Yes
 
@@ -32,7 +32,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=		loginhelper,spi::x11/gnome/at-spi
+LIB_DEPENDS=		::x11/gnome/at-spi
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/py-gnome-desktop

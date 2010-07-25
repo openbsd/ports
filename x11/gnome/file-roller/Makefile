@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2010/06/21 21:51:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.30.2
+
+REVISION=		0
 
 CATEGORIES=		archivers
 
@@ -19,7 +21,7 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util nautilus-extension
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -31,7 +33,7 @@ RUN_DEPENDS=		::archivers/gtar \
 			::archivers/zip \
 			::archivers/gcpio \
 			:rpm2cpio-*|rpm-*:converters/rpm2cpio
-LIB_DEPENDS=		nautilus-extension.>=1::x11/gnome/nautilus
+LIB_DEPENDS=		::x11/gnome/nautilus
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/06/21 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/07/25 08:15:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,8 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.30.3
+
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -30,6 +32,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ util xcb  xcb-render xcb-render-util xml2 z
+WANTLIB += gtksourceview-2.0
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
@@ -40,7 +43,7 @@ BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
 			::x11/py-gtksourceview \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 LIB_DEPENDS=		enchant::textproc/enchant \
-			gtksourceview-2.0::x11/gtksourceview \
+			::x11/gtksourceview \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:py-gtk2->=2.12.0:x11/py-gtk2 \
 			::x11/py-gtksourceview \

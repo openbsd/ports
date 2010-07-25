@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	2.28.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	misc net
 
@@ -25,7 +25,8 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
 WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs smime3
-WANTLIB += soup-2.4 sqlite3 ssl3 tasn1 xcb xml2 z
+WANTLIB += soup-2.4 sqlite3 ssl3 tasn1 xcb xml2 z nautilus-extension
+WANTLIB += camel-1.2 ebook-1.2 edataserver-1.2
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -35,8 +36,8 @@ BUILD_DEPENDS=	::net/gajim
 
 RUN_DEPENDS=		::archivers/zip \
 			::archivers/bzip2
-LIB_DEPENDS=		nautilus-extension.>=2::x11/gnome/nautilus \
-			camel-1.2.>=14,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+LIB_DEPENDS=		::x11/gnome/nautilus \
+			::databases/evolution-data-server
 
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-sendto

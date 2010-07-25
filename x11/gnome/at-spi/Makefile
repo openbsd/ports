@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/26 08:12:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.30.1
+
+REVISION=		0
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -23,15 +25,16 @@ WANTLIB += Xrender Xtst atk-1.0 c cairo dbus-1 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb z xcb-render xcb-render-util
+WANTLIB += xcb z xcb-render xcb-render-util bonobo-2
+WANTLIB += bonobo-activation gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
-		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::x11/gnome/libbonobo \
+		::x11/gtk+2
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	at-spi

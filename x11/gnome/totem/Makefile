@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/06/11 09:41:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.30.2
+
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -25,6 +27,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unique-1.0
 WANTLIB += util xcb xml2 z eggdbus-1 xcb-render xcb-render-util
+WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
+WANTLIB += gsttag-0.10 totem-plparser galago nautilus-extension gdata
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -50,11 +54,11 @@ RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::net/galago-daemon \
 		::devel/py-xdg
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
-		gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10,gsttag-0.10:gstreamer-plugins-base->=0.10.29:multimedia/gstreamer-0.10/plugins-base \
-		totem-plparser:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-		galago::net/libgalago \
-		nautilus-extension::x11/gnome/nautilus \
-		gdata::devel/libgdata
+		:gstreamer-plugins-base->=0.10.29:multimedia/gstreamer-0.10/plugins-base \
+		:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
+		::net/libgalago \
+		::x11/gnome/nautilus \
+		::devel/libgdata
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files

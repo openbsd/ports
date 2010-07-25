@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/25 08:15:33 ajacoutot Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -7,7 +7,7 @@ COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
 GNOME_VERSION=	0.18
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -24,13 +24,13 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gnome-desktop-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs startup-notification-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event z xcb-render xcb-render-util
+WANTLIB += xcb-aux xcb-event z xcb-render xcb-render-util nautilus-extension
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	nautilus-extension.>=2::x11/gnome/nautilus
+LIB_DEPENDS=	::x11/gnome/nautilus
 
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-open-terminal

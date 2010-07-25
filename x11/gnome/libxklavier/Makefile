@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xklavier             15.0     # .16.0
 
@@ -17,15 +17,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xi m pcre xkbfile z
-WANTLIB += pthread-stubs xcb
+WANTLIB += pthread-stubs xcb glib-2.0 gthread-2.0 gobject-2.0 xml2
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/iso-codes
-LIB_DEPENDS=		glib-2.0.>=1200.0,gthread-2.0,gobject-2.0.>=1200.0::devel/glib2 \
-			xml2::textproc/libxml
+LIB_DEPENDS=		::devel/glib2 \
+			::textproc/libxml
 
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

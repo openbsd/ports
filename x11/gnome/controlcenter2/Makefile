@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/04/26 16:15:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/07/25 08:15:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.30.1
+
+REVISION=		0
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -24,27 +26,29 @@ WANTLIB += execinfo expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs smime3 soup-2.4 sqlite3 ssl3
-WANTLIB += startup-notification-1 tasn1 vorbis vorbisfile xcb
+WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre pixman-1 plc4 plds4 xklavier
+WANTLIB += png pthread pthread-stubs smime3 soup-2.4 sqlite3 ssl3 rsvg-2
+WANTLIB += startup-notification-1 tasn1 vorbis vorbisfile xcb croco-0.6
 WANTLIB += xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xkbfile xml2 z
+WANTLIB += xkbfile xml2 z canberra canberra-gtk camel-1.2 ebook-1.2
+WANTLIB += edataserver-1.2 gnomekbd gnomekbdui metacity-private
+WANTLIB += unique-1.0 gnome-desktop-2 gnome-menu gtop-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		canberra,canberra-gtk:libcanberra->=0.10p0:audio/libcanberra \
-			camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
-			croco-0.6::www/libcroco \
-			gnomekbd,gnomekbdui::x11/gnome/libgnomekbd \
-			rsvg-2::x11/gnome/librsvg \
-			xklavier::x11/gnome/libxklavier \
-			metacity-private::x11/gnome/metacity \
-			unique-1.0.>=1::devel/libunique \
-			gnome-desktop-2.>=7::x11/gnome/desktop \
-			gnome-menu.>=5::x11/gnome/menus \
-			gtop-2.0.>=8::devel/libgtop2			
+LIB_DEPENDS=		:libcanberra->=0.10p0:audio/libcanberra \
+			::databases/evolution-data-server \
+			::www/libcroco \
+			::x11/gnome/libgnomekbd \
+			::x11/gnome/librsvg \
+			::x11/gnome/libxklavier \
+			::x11/gnome/metacity \
+			::devel/libunique \
+			::x11/gnome/desktop \
+			::x11/gnome/menus \
+			::devel/libgtop2			
 BUILD_DEPENDS=		::x11/gnome/settings-daemon \
 			:shared-mime-info->=0.21:misc/shared-mime-info
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \

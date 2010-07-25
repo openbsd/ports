@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/13 20:37:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.28.1
-REVISION=	2
+
+REVISION=	3
 
 CATEGORIES=	multimedia
 
@@ -22,21 +23,21 @@ WANTLIB += bz2 c cairo com_err croco-0.6 crypto dbus-1 dbus-glib-1
 WANTLIB += execinfo expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstreamer-0.10 gthread-2.0 
-WANTLIB += gtk-x11-2.0
+WANTLIB += gtk-x11-2.0 gnome-desktop-2
 WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs smime3
-WANTLIB += soup-2.4 sqlite3 ssl3 startup-notification-1 tasn1
+WANTLIB += soup-2.4 sqlite3 ssl3 startup-notification-1 tasn1 rsvg-2
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xml2 z
+WANTLIB += xml2 z camel-1.2 ebook-1.2 edataserver-1.2 gstinterfaces-0.10
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
-		rsvg-2.>=20::x11/gnome/librsvg \
-		gstinterfaces-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		gnome-desktop-2.>=7::x11/gnome/desktop
+LIB_DEPENDS=	::databases/evolution-data-server \
+		::x11/gnome/librsvg \
+		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
+		::x11/gnome/desktop
 RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-base \
 		::multimedia/gstreamer-0.10/plugins-good
 

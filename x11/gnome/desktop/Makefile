@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/06/22 17:37:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/07/25 08:15:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.30.2
+
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-2      8.0      # .15.2
 
@@ -24,7 +26,7 @@ WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb xcb-atom xcb-aux xcb-event
-WANTLIB += xcb-render xcb-render-util z
+WANTLIB += xcb-render xcb-render-util z startup-notification-1
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -32,7 +34,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/py-gnome
-LIB_DEPENDS=		startup-notification-1::devel/startup-notification
+LIB_DEPENDS=		::devel/startup-notification
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes

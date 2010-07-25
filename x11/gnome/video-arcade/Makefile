@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.6.8
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	emulators games
 
@@ -24,7 +24,7 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util sqlite3 wnck-1
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -33,8 +33,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::x11/gnome/icon-theme
 RUN_DEPENDS=	:sdlmame->=0.132p2:emulators/sdlmame,-main
-LIB_DEPENDS=	sqlite3.>=13::databases/sqlite3 \
-		wnck-1.>=24::devel/libwnck
+LIB_DEPENDS=	::databases/sqlite3 \
+		::devel/libwnck
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/21 13:31:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
 GNOME_VERSION=	2.30.0
+
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -19,13 +21,13 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-render-util z
+WANTLIB += xcb-render-util z gtop-2.0 gconf-2
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	gtop-2.0.>=9::devel/libgtop2 \
-		gconf-2.>=6::devel/gconf2
+LIB_DEPENDS=	::devel/libgtop2 \
+		::devel/gconf2
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes

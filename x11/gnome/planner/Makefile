@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.4
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11
 
@@ -24,10 +24,10 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat exslt fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
+WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gnomeui-2
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl util
-WANTLIB += xml2 xslt z avahi-client avahi-common avahi-glib
+WANTLIB += xml2 xslt z avahi-client avahi-common avahi-glib bonoboui-2
 WANTLIB += pthread-stubs xcb eggdbus-1 xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
@@ -39,8 +39,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
 			:shared-mime-info->=0.21:misc/shared-mime-info
 
-LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
-			gnomeui-2::x11/gnome/libgnomeui \
+LIB_DEPENDS=		::x11/gnome/libbonoboui \
+			::x11/gnome/libgnomeui \
 			${MODPY_LIB_DEPENDS}
 
 USE_X11=		Yes

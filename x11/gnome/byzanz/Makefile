@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/01 07:39:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -27,9 +27,9 @@ WANTLIB += glitz gmodule-2.0 gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
-WANTLIB += xcb xcb-render xcb-render-util xml2 z
+WANTLIB += xcb xcb-render xcb-render-util xml2 z panel-applet-2
 
-LIB_DEPENDS=		panel-applet-2::x11/gnome/panel
+LIB_DEPENDS=		::x11/gnome/panel
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/24 09:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/25 08:15:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
 GNOME_VERSION=		3.99.17.1
+
+REVISION=		0
 
 SHARED_LIBS +=  gdamm-4.0            0.0      # .11.0
 
@@ -25,15 +27,15 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre sigc-2.0 sqlite3 xml2 z
+WANTLIB += m pcre sigc-2.0 sqlite3 xml2 z glibmm-2.4 gda-${GDA_MAJOR}
 
 TAR=			${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS=		::archivers/gtar \
 			::devel/m4
 
-LIB_DEPENDS=		glibmm-2.4::devel/glib2mm \
-			gda-${GDA_MAJOR}::x11/gnome/libgda
+LIB_DEPENDS=		::devel/glib2mm \
+			::x11/gnome/libgda
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

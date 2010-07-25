@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/20 11:14:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
 GNOME_VERSION=		2.30.0
+
+REVISION=		0
 
 SHARED_LIBS +=	gnomemm-2.6	1.0      # .1.5
 
@@ -24,14 +26,15 @@ WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += sigc-2.0 ssl util xml2 z avahi-client avahi-common avahi-glib
-WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += pthread-stubs xcb xcb-render xcb-render-util gnome-2
+WANTLIB += atkmm-1.6 gdkmm-2.4 gtkmm-2.4 pangomm-1.4
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
-			atkmm-1.6,gdkmm-2.4,gtkmm-2.4::x11/gtk2mm \
-			pangomm-1.4::devel/pangomm
+LIB_DEPENDS=		::x11/gnome/libgnome \
+			::x11/gtk2mm \
+			::devel/pangomm
 
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

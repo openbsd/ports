@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/25 08:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.30.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
@@ -28,14 +28,15 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gpgme
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
-WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z
+WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z cryptui
+WANTLIB += gtksourceview-2.0 nautilus-extension panel-applet-2
 
 BUILD_DEPENDS=	::x11/gnome/gedit
 
-LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
-		gtksourceview-2.0.>=2::x11/gtksourceview \
-		nautilus-extension.>=2::x11/gnome/nautilus\
-		panel-applet-2.>=1::x11/gnome/panel
+LIB_DEPENDS=	::x11/gnome/seahorse \
+		::x11/gtksourceview \
+		::x11/gnome/nautilus\
+		::x11/gnome/panel
 
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/13 20:37:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
-REVISION=		13
+
+REVISION=		14
 
 CATEGORIES=		sysutils multimedia
 
@@ -24,7 +25,8 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread xml2 z \
-		pthread-stubs xcb xcb-render xcb-render-util
+		pthread-stubs xcb xcb-render xcb-render-util gstreamer-0.10 \
+		gnomeui-2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -32,8 +34,8 @@ MODULES=		devel/gettext \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomebaker/}
 EXTRACT_SUFX=		.tar.gz
 
-LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
-			gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=		::multimedia/gstreamer-0.10/core \
+			::x11/gnome/libgnomeui
 
 RUN_DEPENDS=		::misc/cdrdao \
 			::sysutils/cdrtools \

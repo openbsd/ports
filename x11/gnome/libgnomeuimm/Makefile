@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	C++ interface for libgnomeui
 
 GNOME_PROJECT=	libgnomeuimm
 GNOME_VERSION=	2.28.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gnomeuimm-2.6        1.0      # .1.4
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 atkmm-1.6 avahi-client avahi-common
+WANTLIB += Xrender art_lgpl_2 atk-1.0 atkmm-1.6 avahi-client
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
 WANTLIB += cairomm-1.0 crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
@@ -27,17 +27,19 @@ WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png popt pthread-stubs sigc-2.0 ssl util
-WANTLIB += xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
+WANTLIB += xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render avahi-common
+WANTLIB += gconfmm-2.6 glademm-2.4 gnomecanvasmm-2.6 gnomemm-2.6
+WANTLIB += gnomeui-2 gnomevfsmm-2.6  xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	gconfmm-2.6::devel/gconfmm \
-		glademm-2.4::devel/libglademm \
-		gnomecanvasmm-2.6::x11/gnome/libgnomecanvasmm \
-		gnomemm-2.6::x11/gnome/libgnomemm \
-		gnomeui-2::x11/gnome/libgnomeui \
-		gnomevfsmm-2.6::x11/gnome/vfsmm
+LIB_DEPENDS=	::devel/gconfmm \
+		::devel/libglademm \
+		::x11/gnome/libgnomecanvasmm \
+		::x11/gnome/libgnomemm \
+		::x11/gnome/libgnomeui \
+		::x11/gnome/vfsmm
 
 USE_X11=	Yes
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

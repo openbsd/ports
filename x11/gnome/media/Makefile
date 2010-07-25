@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2010/04/22 19:14:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.30.0
+REVISION=	0
 
 SHARED_LIBS +=	gnome-media-profiles 1.0      # .0.0
 
@@ -22,15 +23,16 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ltdl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs vorbis vorbisfile xcb xml2 z xcb-render
-WANTLIB += xcb-render-util
+WANTLIB += xcb-render-util gstaudio-0.10 gstinterfaces-0.10 canberra-gtk
+WANTLIB += canberra
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
 BUILD_DEPENDS=	::multimedia/gstreamer-0.10/plugins-good
-LIB_DEPENDS=	gstaudio-0.10.>=1,gstinterfaces-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		canberra-gtk,canberra.>=1::audio/libcanberra
+LIB_DEPENDS=	:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
+		::audio/libcanberra
 
 MODGNOME_HELP_FILES= Yes
 USE_X11=	Yes

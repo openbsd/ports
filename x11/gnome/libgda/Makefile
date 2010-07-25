@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/18 18:27:13 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/25 08:15:32 ajacoutot Exp $
 
 #
 # XXX:
@@ -31,6 +31,11 @@ EPOCH-pgsql=		0
 #PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}
 #EPOCH-odbc=		0
 
+REVISION-main=		0
+REVISION-mdb=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
+
 CATEGORIES=		databases
 
 GDA_MAJOR=		4.0
@@ -48,10 +53,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m pcre z
+WANTLIB=		m pcre z gio-2.0 glib-2.0 gmodule-2.0 \
+			gobject-2.0 gthread-2.0 xml2
 
 WANTLIB-main=		${WANTLIB} c gcrypt gpg-error ncurses pthread
-WANTLIB-main+=		readline tasn1
+WANTLIB-main+=		readline tasn1 soup-2.4 db sqlite3 gnutls xslt
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -65,14 +71,14 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			soup-2.4::devel/libsoup \
-			db:db->=4,<5:databases/db/v4 \
-			sqlite3::databases/sqlite3 \
-			gnutls::security/gnutls \
-			xslt::textproc/libxslt
+			::devel/libsoup \
+			:db->=4,<5:databases/db/v4 \
+			::databases/sqlite3 \
+			::security/gnutls \
+			::textproc/libxslt
 
-LIB_DEPENDS=		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-			xml2.>=10::textproc/libxml
+LIB_DEPENDS=		::devel/glib2 \
+			::textproc/libxml
 
 REGRESS_DEPENDS=	::devel/check
 
@@ -106,10 +112,10 @@ CONFIGURE_ARGS+=	--without-ldap
 CONFIGURE_ARGS+=	--without-mdb
 .else
 MULTI_PACKAGES+=	-mdb
-WANTLIB-mdb=		${WANTLIB} sqlite3
+WANTLIB-mdb=		${WANTLIB} sqlite3 gda-${GDA_MAJOR} mdb
 LIB_DEPENDS-mdb=	${LIB_DEPENDS} \
-			gda-${GDA_MAJOR}::x11/gnome/libgda \
-			mdb.>=1::databases/mdbtools/snapshot
+			::x11/gnome/libgda \
+			::databases/mdbtools/snapshot
 CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 .endif
 
@@ -117,10 +123,11 @@ CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
-WANTLIB-mysql=		${WANTLIB} crypto sqlite3 ssl
+WANTLIB-mysql=		${WANTLIB} crypto sqlite3 ssl gda-${GDA_MAJOR} \
+			mysqlclient
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
-			gda-${GDA_MAJOR}::x11/gnome/libgda \
-			mysqlclient::databases/mysql
+			::x11/gnome/libgda \
+			::databases/mysql
 CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 .endif
 
@@ -128,10 +135,10 @@ CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-postgresql
 .else
 MULTI_PACKAGES+=	-pgsql
-WANTLIB-pgsql=		${WANTLIB} sqlite3
+WANTLIB-pgsql=		${WANTLIB} sqlite3 gda-${GDA_MAJOR} pq
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
-			gda-${GDA_MAJOR}::x11/gnome/libgda \
-			pq::databases/postgresql
+			::x11/gnome/libgda \
+			::databases/postgresql
 CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 .endif
 

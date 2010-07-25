@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	VNC server for remote acces to your GNOME desktop
 
 GNOME_PROJECT=	vino
 GNOME_VERSION=	2.28.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -21,19 +21,21 @@ WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs tasn1 xcb xml2
-WANTLIB += z eggdbus-1 xcb-render xcb-render-util
+WANTLIB += z eggdbus-1 xcb-render xcb-render-util notify unique-1.0
+WANTLIB += gnutls telepathy-glib soup-2.4 gnome-keyring.>=6 avahi-client
+WANTLIB += avahi-common avahi-glib
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	notify::devel/libnotify \
-		unique-1.0::devel/libunique \
-		gnutls::security/gnutls \
-		telepathy-glib.>=4::net/telepathy/telepathy-glib \
-		soup-2.4.>=2::devel/libsoup \
-		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-		avahi-client,avahi-common,avahi-glib::net/avahi
+LIB_DEPENDS=	::devel/libnotify \
+		::devel/libunique \
+		::security/gnutls \
+		::net/telepathy/telepathy-glib \
+		::devel/libsoup \
+		:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+		::net/avahi
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

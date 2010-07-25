@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/03/30 14:28:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
 GNOME_VERSION=		2.18.7
+
+REVISION=		0
 
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 
@@ -19,16 +21,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp asn1 crypto cups expat fontconfig freetype
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
-WANTLIB += krb5 m pcre pthread-stubs ssl xcb z
+WANTLIB += krb5 m pcre pthread-stubs ssl xcb z pango-1.0 pangoft2-1.0
+WANTLIB += art_lgpl_2 xml2 gnomecups-1.0
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		:bison-*:devel/bison
-LIB_DEPENDS=		pango-1.0.>=1300.0,pangoft2-1.0.>=1300.0::devel/pango \
-			art_lgpl_2.>=5::graphics/libart \
-			xml2.>=9::textproc/libxml \
-			gnomecups-1.0.>=1::x11/gnome/libgnomecups
+BUILD_DEPENDS=		::devel/bison
+LIB_DEPENDS=		::devel/pango \
+			::graphics/libart \
+			::textproc/libxml \
+			::x11/gnome/libgnomecups
 
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

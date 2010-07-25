@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.30.1
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,8 +19,9 @@ WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xml2 z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xml2 z rarian
+WANTLIB += xcb-render xcb-render-util startup-notification-1 exslt xslt
+WANTLIB += xulrunner1.9/xpcom,xulrunner1.9/xul
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -32,10 +33,10 @@ RUN_DEPENDS=		::misc/shared-mime-info \
 			::textproc/docbook-dsssl \
 			::x11/gnome/users-guide \
 			::x11/gnome/doc-utils
-LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
-			xulrunner1.9/xpcom,xulrunner1.9/xul:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
-			exslt,xslt::textproc/libxslt \
-			rarian::textproc/rarian
+LIB_DEPENDS=		::devel/startup-notification \
+			:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
+			::textproc/libxslt \
+			::textproc/rarian
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	yelp

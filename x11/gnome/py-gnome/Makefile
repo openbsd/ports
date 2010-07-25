@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
 GNOME_PROJECT=	gnome-python
 GNOME_VERSION=	2.28.1
 PKGNAME=	py-gnome-${VERSION}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -24,7 +24,8 @@ WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-keyring gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += util xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
+WANTLIB += util xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render
+WANTLIB += gnomeui-2 xcb-render-util gnomecanvas-2 gnome-2
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -32,9 +33,9 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		gnomeui-2.>=1800::x11/gnome/libgnomeui \
-		gnomecanvas-2::x11/gnome/libgnomecanvas \
-		gnome-2::x11/gnome/libgnome
+		::x11/gnome/libgnomeui \
+		::x11/gnome/libgnomecanvas \
+		::x11/gnome/libgnome
 RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
 		::devel/py-orbit
 

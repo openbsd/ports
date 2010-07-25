@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/16 20:19:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2010/07/25 08:15:32 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.2
-REVISION=		0
+
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -25,32 +26,35 @@ WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
 WANTLIB += atk-1.0 c cairo clutter-glx-1.0 com_err crypto dbus-1
 WANTLIB += dbus-glib-1 drm eggdbus-1 expat fontconfig freetype
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 unique-1.0
 WANTLIB += glitz gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gstbase-0.10 gstfarsight-0.10 gstinterfaces-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 krb5 m nspr4
-WANTLIB += nss3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png proxy pthread pthread-stubs
-WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++
-WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-render-util xml2 z
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 krb5 m nspr4 geoclue
+WANTLIB += nss3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre enchant
+WANTLIB += pixman-1 plc4 plds4 png proxy pthread pthread-stubs mcclient
+WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++ notify
+WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render ltdl
+WANTLIB += xcb-render-util xml2 z canberra canberra-gtk camel-1.2
+WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.4
+WANTLIB += champlain-gtk-0.4 clutter-gtk-0.10 telepathy-farsight
+WANTLIB += telepathy-logger
 
 BUILD_DEPENDS=		::devel/iso-codes \
 			::x11/py-gtk2 \
 			::x11/gnome/nautilus-sendto
-LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
-			camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
-			json-glib-1.0::devel/json-glib \
-			notify::devel/libnotify \
-			ltdl::devel/libtool,-ltdl \
-			unique-1.0::devel/libunique \
-			geoclue::geo/geoclue \
-			champlain-0.4,champlain-gtk-0.4::geo/libchamplain/core \
-			clutter-gtk-0.10::graphics/clutter/clutter-gtk \
-			telepathy-farsight::net/telepathy/telepathy-farsight \
-			mcclient::net/telepathy/telepathy-mission-control \
-			enchant::textproc/enchant \
-			telepathy-logger::net/telepathy/telepathy-logger
+LIB_DEPENDS=		::audio/libcanberra \
+			::databases/evolution-data-server \
+			::devel/json-glib \
+			::devel/libnotify \
+			::devel/libtool,-ltdl \
+			::devel/libunique \
+			::geo/geoclue \
+			::geo/libchamplain/core \
+			::graphics/clutter/clutter-gtk \
+			::net/telepathy/telepathy-farsight \
+			::net/telepathy/telepathy-mission-control \
+			::textproc/enchant \
+			::net/telepathy/telepathy-logger
 
 RUN_DEPENDS=		::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-haze \

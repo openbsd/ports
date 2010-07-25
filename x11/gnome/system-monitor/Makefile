@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/25 08:15:33 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	2.28.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 
@@ -22,7 +22,8 @@ WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0 kvm m pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xml2 z
+WANTLIB += xml2 z gtkmm-2.4 atkmm-1.6 gdkmm-2.4 gtop-2.0 pango-1.0
+WANTLIB += pangoft2-1.0 pangocairo-1.0 startup-notification-1 wnck rsvg
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -30,12 +31,12 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	::x11/gnome/icon-theme
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	gtkmm-2.4.>=9,atkmm-1.6,gdkmm-2.4::x11/gtk2mm \
-		gtop-2.0.>=9:libgtop2->=2.28.1p8:devel/libgtop2 \
-		startup-notification-1.>=2::devel/startup-notification \
-		pango-1.0.>=1801,pangoft2-1.0,pangocairo-1.0::devel/pango \
-		wnck-1.>=24::devel/libwnck \
-		rsvg-2.>=28::x11/gnome/librsvg
+LIB_DEPENDS=	::x11/gtk2mm \
+		:libgtop2->=2.28.1p8:devel/libgtop2 \
+		::devel/startup-notification \
+		::devel/pango \
+		::devel/libwnck \
+		::x11/gnome/librsvg
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

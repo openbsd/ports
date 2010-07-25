@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/24 22:42:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/25 08:15:33 ajacoutot Exp $
 
 BROKEN=		sigsegv on startup
 
@@ -13,6 +13,9 @@ CATEGORIES=	graphics
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
+
+REVISION-main=	0
+REVISION-gimp=	0
 
 SHARED_LIBS=	gnome-scan	0.0 # .0.0
 
@@ -41,19 +44,21 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 WANTLIB-main=	${WANTLIB} exif gphoto2 gphoto2_port jpeg ltdl tiff usb \
-		avahi-client avahi-common
+		avahi-client avahi-common sane gegl-0.1 gconf-2
 
 BUILD_DEPENDS=	::lang/vala
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		sane.>=1::graphics/sane-backends \
-		gegl-0.1::graphics/gegl \
-		gconf-2.>=6::devel/gconf2
+		::graphics/sane-backends \
+		::graphics/gegl \
+		::devel/gconf2
 
-WANTLIB-gimp=	${WANTLIB} gconf-2 gegl-0.0
+WANTLIB-gimp=	${WANTLIB} gconf-2 gegl-0.0 gnomescan gimp-2.0 \
+		gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0 gimpmath-2.0 \
+		gimpmodule-2.0 gimpui-2.0 gimpwidgets-2.0
 LIB_DEPENDS-gimp= ${LIB_DEPENDS} \
-		gnomescan::${BUILD_PKGPATH},-main \
-		gimp-2.0.>=245,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpmodule-2.0,gimpui-2.0,gimpwidgets-2.0::graphics/gimp/stable
+		::${BUILD_PKGPATH},-main \
+		::graphics/gimp/stable
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
