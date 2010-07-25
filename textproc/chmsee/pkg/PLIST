@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/06 16:43:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/25 10:24:35 ajacoutot Exp $
 @bin bin/chmsee
 share/applications/chmsee.desktop
 share/chmsee/
@@ -13,6 +13,20 @@ share/chmsee/hide-pane.png
 share/chmsee/openfile-dialog.ui
 share/chmsee/setup-window.ui
 share/chmsee/show-pane.png
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/mimetypes/
+share/icons/hicolor/16x16/mimetypes/chm.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/mimetypes/
+share/icons/hicolor/32x32/mimetypes/chm.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/mimetypes/
+share/icons/hicolor/48x48/mimetypes/chm.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/mimetypes/
+share/icons/hicolor/scalable/mimetypes/chm.svg
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/chmsee.mo
@@ -52,5 +66,7 @@ share/mime-info/chmsee.keys
 share/mime-info/chmsee.mime
 share/pixmaps/
 share/pixmaps/chmsee-icon.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
