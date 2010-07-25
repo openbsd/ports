@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/06 14:29:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/25 23:36:15 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
-DISTNAME=	luasec-0.3.3
+DISTNAME=	luasec-0.4
 CATEGORIES=	security
-MASTER_SITES=	http://luaforge.net/frs/download.php/4160/
+MASTER_SITES=	http://www.inf.puc-rio.br/~brunoos/luasec/download/
 
 HOMEPAGE=	http://www.inf.puc-rio.br/~brunoos/luasec/
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/lua
+NO_REGRESS=	Yes
 RUN_DEPENDS+=	::net/luasocket
 WANTLIB+=	crypto ssl
 
