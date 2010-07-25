@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/19 15:26:35 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/25 15:06:55 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -11,9 +11,11 @@ share/highlight/
 share/highlight/langDefs/
 share/highlight/langDefs/4gl.lang
 share/highlight/langDefs/a4c.lang
+share/highlight/langDefs/abnf.lang
 share/highlight/langDefs/abp.lang
 share/highlight/langDefs/ada.lang
 share/highlight/langDefs/agda.lang
+share/highlight/langDefs/ahk.lang
 share/highlight/langDefs/ampl.lang
 share/highlight/langDefs/amtrix.lang
 share/highlight/langDefs/applescript.lang
@@ -29,8 +31,10 @@ share/highlight/langDefs/avenue.lang
 share/highlight/langDefs/awk.lang
 share/highlight/langDefs/bat.lang
 share/highlight/langDefs/bb.lang
+share/highlight/langDefs/bbcode.lang
 share/highlight/langDefs/bib.lang
 share/highlight/langDefs/bms.lang
+share/highlight/langDefs/bnf.lang
 share/highlight/langDefs/boo.lang
 share/highlight/langDefs/c.lang
 share/highlight/langDefs/cb.lang
@@ -47,6 +51,7 @@ share/highlight/langDefs/diff.lang
 share/highlight/langDefs/dot.lang
 share/highlight/langDefs/dylan.lang
 share/highlight/langDefs/e.lang
+share/highlight/langDefs/ebnf.lang
 share/highlight/langDefs/erl.lang
 share/highlight/langDefs/euphoria.lang
 share/highlight/langDefs/exp.lang
@@ -55,11 +60,13 @@ share/highlight/langDefs/f90.lang
 share/highlight/langDefs/flx.lang
 share/highlight/langDefs/frink.lang
 share/highlight/langDefs/fs.lang
+share/highlight/langDefs/go.lang
 share/highlight/langDefs/haskell.lang
 share/highlight/langDefs/hcl.lang
 share/highlight/langDefs/html.lang
 share/highlight/langDefs/httpd.lang
 share/highlight/langDefs/hx.lang
+share/highlight/langDefs/icl.lang
 share/highlight/langDefs/icn.lang
 share/highlight/langDefs/idl.lang
 share/highlight/langDefs/idlang.lang
@@ -91,16 +98,19 @@ share/highlight/langDefs/mib.lang
 share/highlight/langDefs/miranda.lang
 share/highlight/langDefs/ml.lang
 share/highlight/langDefs/mo.lang
+share/highlight/langDefs/mod2.lang
 share/highlight/langDefs/mod3.lang
 share/highlight/langDefs/mpl.lang
 share/highlight/langDefs/ms.lang
 share/highlight/langDefs/mssql.lang
 share/highlight/langDefs/n.lang
 share/highlight/langDefs/nas.lang
+share/highlight/langDefs/nbc.lang
 share/highlight/langDefs/nice.lang
 share/highlight/langDefs/nrx.lang
 share/highlight/langDefs/nsi.lang
 share/highlight/langDefs/nut.lang
+share/highlight/langDefs/nxc.lang
 share/highlight/langDefs/oberon.lang
 share/highlight/langDefs/objc.lang
 share/highlight/langDefs/octave.lang
@@ -118,6 +128,7 @@ share/highlight/langDefs/progress.lang
 share/highlight/langDefs/ps.lang
 share/highlight/langDefs/ps1.lang
 share/highlight/langDefs/psl.lang
+share/highlight/langDefs/pure.lang
 share/highlight/langDefs/py.lang
 share/highlight/langDefs/pyx.lang
 share/highlight/langDefs/q.lang
@@ -155,6 +166,7 @@ share/highlight/langDefs/vhd.lang
 share/highlight/langDefs/xml.lang
 share/highlight/langDefs/xpp.lang
 share/highlight/langDefs/y.lang
+share/highlight/langDefs/yaiff.lang
 share/highlight/langDefs/znn.lang
 share/highlight/themes/
 share/highlight/themes/acid.style

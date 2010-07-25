@@ -1,11 +1,14 @@
---- src/makefile.orig	Fri Oct  2 18:41:17 2009
-+++ src/makefile	Wed Oct 14 16:02:47 2009
-@@ -15,9 +15,9 @@
+$OpenBSD: patch-src_makefile,v 1.5 2010/07/25 15:06:53 benoit Exp $
+--- src/makefile.orig	Mon Dec 28 21:09:43 2009
++++ src/makefile	Wed Jan 20 11:32:34 2010
+@@ -15,11 +15,11 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
 -CXX=c++
 +#CXX=c++
+ 
+ QMAKE=qmake
  
 -CFLAGS:=-O2 ${CFLAGS}
 +#CFLAGS:=-O2 ${CFLAGS}
