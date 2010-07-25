@@ -1,0 +1,9 @@
+librelp is an implementation of RELP, Reliable Event Logging Protocol.
+RELP assures that no message is lost, not even when connections break
+and a peer becomes unavailable.
+
+The current version of RELP has a minimal window of opportunity for
+message duplication after a session has been broken due to network
+problems. In this case, a few messages may be duplicated (a problem
+that also exists with plain tcp syslog). Future versions of RELP
+will address this shortcoming.

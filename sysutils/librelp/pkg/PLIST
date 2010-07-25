@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/25 17:12:56 todd Exp $
+%%SHARED%%
+include/librelp.h
+lib/librelp.a
+lib/librelp.la
+lib/pkgconfig/
+lib/pkgconfig/relp.pc
