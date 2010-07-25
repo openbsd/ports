@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/25 02:11:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/25 02:18:05 jolan Exp $
 
 COMMENT=	library that handles the decoding of sound file formats
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://offload1.icculus.org/SDL_sound/downloads/
 SHARED_LIBS=	SDL_sound	2.0
 
 HOMEPAGE=	http://icculus.org/SDL_sound/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_DISTFILES_CDROM=	Yes
