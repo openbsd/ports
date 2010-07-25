@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/25 05:58:31 ajacoutot Exp $
 
 COMMENT=	library for Japanese Input Method Wnn4
 
@@ -8,6 +8,7 @@ COMMENT-wnn4-canna=	library for Japanese Input Method canna or wnn4
 FULLPKGNAME=		ja-onew${FLAVOR_EXT}-2.2.10
 
 DISTNAME=	jvim2.0r+onew2.2.10
+REVISION=	0
 CATEGORIES=	japanese
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
@@ -32,7 +33,8 @@ BUILD_DEPENDS=	::japanese/Wnn
 
 .if ${FLAVOR:L:Mcanna}
 PERMIT_PACKAGE_CDROM=	Canna prevents it
-LIB_DEPENDS+=	canna.>=1::japanese/canna
+LIB_DEPENDS+=		::japanese/canna
+WANTLIB += canna
 .endif
 
 WRKDIST=	${WRKDIR}/onew

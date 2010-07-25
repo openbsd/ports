@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2010/07/25 05:58:31 ajacoutot Exp $
 
 COMMENT=	Japanese-capable xterm
 
 VERSION=	6.2.0
 DISTNAME=	kterm-${VERSION}
-PKGNAME=	ja-kterm-${VERSION}p5
+PKGNAME=	ja-kterm-${VERSION}
+REVISION=	6
 CATEGORIES=	japanese x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
@@ -29,7 +30,8 @@ MAKE_FLAGS=	CDEBUGFLAGS=-O2
 FLAVORS=xaw3d tek
 FLAVOR?=
 .if ${FLAVOR:L:Mxaw3d}
-LIB_DEPENDS=	Xaw3d.>=6.1::x11/Xaw3d
+WANTLIB += Xaw3d
+LIB_DEPENDS=	::x11/Xaw3d
 MAKE_ENV=	EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 

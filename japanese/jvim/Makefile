@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/07/25 05:58:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	Japanized Vim
@@ -6,7 +6,8 @@ COMMENT-canna=	Japanized Vim, canna input method
 COMMENT-wnn=	Japanized Vim, wnn input method
 COMMENT-wnn-canna=Japanized Vim, canna or wnn input method
 DISTNAME=	jvim2.0r+onew2.2.10
-PKGNAME=	ja-jvim-2.0rp0
+PKGNAME=	ja-jvim-2.0r
+REVISION=	1
 CATEGORIES=	japanese editors
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
@@ -18,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c termcap
 
 FLAVORS=	wnn canna
@@ -41,7 +43,8 @@ INPUT_METHOD=	canna
 CHOICE=canna
 .endif
 PERMIT_PACKAGE_CDROM=	Canna prevents it
-LIB_DEPENDS+= canna.>=1::japanese/canna
+WANTLIB += canna
+LIB_DEPENDS+=		::japanese/canna
 JPLIB+=			-lcanna
 .endif
 

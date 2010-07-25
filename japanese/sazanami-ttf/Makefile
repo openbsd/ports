@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/22 08:02:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/25 05:58:31 ajacoutot Exp $
 
 COMMENT=	japanese true type fonts
 
 DISTNAME=	sazanami-20040629
-PKGNAME=	${DISTNAME:S/-/-ttf-/}p0
+PKGNAME=	${DISTNAME:S/-/-ttf-/}
+REVISION=	0
 CATEGORIES=	japanese x11
 EXTRACT_SUFX=	.tar.bz2
 

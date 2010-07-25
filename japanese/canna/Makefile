@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/08/29 14:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/07/25 05:58:31 ajacoutot Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -6,9 +6,11 @@ COMMENT-server=	canna (kana-kanji converter) server
 
 DISTNAME=	Canna35b2
 
-PKGNAME-main=	cannalib-3.5b2p3
+PKGNAME-main=	cannalib-3.5b2
+REVISION-main=	3
 PKGNAME-dict=	cannadict-3.5b2
-PKGNAME-server=	cannaserver-3.5b2p2
+PKGNAME-server=	cannaserver-3.5b2
+REVISION-server=3
 
 SHARED_LIBS=	RKC	1.0 \
 		RKC16	1.0 \
@@ -37,8 +39,8 @@ PERMIT_DISTFILES_CDROM=	No Fee
 MULTI_PACKAGES=-main -dict -server
 
 PREFIX-dict=		/var/dict
-LIB_DEPENDS-server=canna::japanese/canna
-WANTLIB-server=	c
+LIB_DEPENDS-server=	::japanese/canna
+WANTLIB-server=	c canna
 
 SUBST_VARS=	DICT_DIR
 CONFIGURE_STYLE=imake
