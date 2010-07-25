@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/07/25 13:07:16 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=		gnome-vfs2-${VERSION}
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
 
 REVISION-main=		0
-REVISION-smb=		0
+REVISION-smb=		1
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -44,7 +44,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			::archivers/bzip2 \
 			::sysutils/gamin
 
-WANTLIB-smb+=		smbclient gnomevfs-2
+WANTLIB-smb+=		${WANTLIB} smbclient gnomevfs-2
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \
 			::net/samba \
 			::x11/gnome/vfs2
