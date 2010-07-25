@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
---- Makefile.orig	Tue May 25 00:52:48 2010
-+++ Makefile	Wed Jun  9 21:31:32 2010
+$OpenBSD: patch-Makefile,v 1.28 2010/07/25 10:08:03 sthen Exp $
+--- Makefile.orig	Thu Jun 10 21:35:06 2010
++++ Makefile	Wed Jun 30 15:25:51 2010
 @@ -121,7 +121,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
  
  
  # Define standard directories for various platforms
-@@ -183,8 +183,10 @@ HTTP_CGIDIR=/var/www/cgi-bin
+@@ -181,8 +181,10 @@ HTTP_CGIDIR=/var/www/cgi-bin
  # The file /etc/asterisk.makeopts will also be included but can be overridden
  # by the file in your home directory.
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
  
  MOD_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
  OTHER_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
-@@ -227,7 +229,9 @@ endif
+@@ -225,7 +227,9 @@ endif
  
  ifeq ($(findstring -save-temps,$(_ASTCFLAGS) $(ASTCFLAGS)),)
    ifeq ($(findstring -pipe,$(_ASTCFLAGS) $(ASTCFLAGS)),)
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
    endif
  endif
  
-@@ -253,7 +257,9 @@ endif
+@@ -251,7 +255,9 @@ endif
  
  ifeq ($(findstring -march,$(_ASTCFLAGS) $(ASTCFLAGS)),)
    ifneq ($(PROC),ultrasparc)
@@ -41,7 +41,7 @@ $OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
    endif
  endif
  
-@@ -731,18 +737,18 @@ samples: adsi
+@@ -728,18 +734,18 @@ samples: adsi
  		echo "                        ; temporary codec translation path for a channel that may not otherwise require one." ; \
  		echo ";transcode_via_sln = yes ; Build transcode paths via SLINEAR, instead of directly" ; \
  		echo ";sendfullybooted = yes  ; Send the FullyBooted AMI event on AMI login and when all modules are finished loading" ; \

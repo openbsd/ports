@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2010/06/18 22:10:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2010/07/25 10:08:03 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -105,6 +105,7 @@ include/asterisk/taskprocessor.h
 include/asterisk/tcptls.h
 include/asterisk/tdd.h
 include/asterisk/term.h
+include/asterisk/test.h
 include/asterisk/threadstorage.h
 include/asterisk/time.h
 include/asterisk/timing.h
@@ -1029,7 +1030,14 @@ share/asterisk/static-http/docs/node281.html
 share/asterisk/static-http/docs/node282.html
 share/asterisk/static-http/docs/node283.html
 share/asterisk/static-http/docs/node284.html
+share/asterisk/static-http/docs/node285.html
+share/asterisk/static-http/docs/node286.html
+share/asterisk/static-http/docs/node287.html
+share/asterisk/static-http/docs/node288.html
+share/asterisk/static-http/docs/node289.html
 share/asterisk/static-http/docs/node29.html
+share/asterisk/static-http/docs/node290.html
+share/asterisk/static-http/docs/node291.html
 share/asterisk/static-http/docs/node3.html
 share/asterisk/static-http/docs/node30.html
 share/asterisk/static-http/docs/node31.html
@@ -1411,7 +1419,14 @@ share/doc/asterisk/node281.html
 share/doc/asterisk/node282.html
 share/doc/asterisk/node283.html
 share/doc/asterisk/node284.html
+share/doc/asterisk/node285.html
+share/doc/asterisk/node286.html
+share/doc/asterisk/node287.html
+share/doc/asterisk/node288.html
+share/doc/asterisk/node289.html
 share/doc/asterisk/node29.html
+share/doc/asterisk/node290.html
+share/doc/asterisk/node291.html
 share/doc/asterisk/node3.html
 share/doc/asterisk/node30.html
 share/doc/asterisk/node31.html
@@ -1491,6 +1506,7 @@ share/doc/asterisk/node98.html
 share/doc/asterisk/node99.html
 share/doc/asterisk/osp.txt
 share/doc/asterisk/phoneprov.tex
+share/doc/asterisk/plc.tex
 share/doc/asterisk/privacy.tex
 share/doc/asterisk/qos.tex
 share/doc/asterisk/queue.txt
