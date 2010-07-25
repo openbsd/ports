@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/07/25 08:59:54 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.30.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ WANTLIB += gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xml2 z rarian
 WANTLIB += xcb-render xcb-render-util startup-notification-1 exslt xslt
-WANTLIB += xulrunner1.9/xpcom,xulrunner1.9/xul
+WANTLIB += xulrunner1.9/xpcom xulrunner1.9/xul
 
 MODULES=		devel/gettext \
 			x11/gnome \
