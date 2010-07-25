@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.816 2010/07/23 15:58:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.817 2010/07/25 03:00:42 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -186,7 +186,6 @@
      SUBDIR += libaudiofile
      SUBDIR += libavl
      SUBDIR += libbio
-     SUBDIR += libbt
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
