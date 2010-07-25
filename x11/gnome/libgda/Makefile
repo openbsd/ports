@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/25 08:18:32 ajacoutot Exp $
 
 #
 # XXX:
@@ -17,6 +17,10 @@ COMMENT-odbc=		ODBC backend for libgda
 
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		4.0.9
+
+# NOTE: when major version changes, increment GDA_MAJOR accordingly and
+# bump "x11/gnome/libgdamm"
+GDA_MAJOR=		4.0
 
 PKGNAME-main=		${DISTNAME}
 EPOCH-main=		1
@@ -37,8 +41,6 @@ REVISION-mysql=		0
 REVISION-pgsql=		0
 
 CATEGORIES=		databases
-
-GDA_MAJOR=		4.0
 
 SHARED_LIBS +=  gda-4.0               0.0        # .4.0
 SHARED_LIBS +=  gda-report-4.0        0.0        # .4.0
