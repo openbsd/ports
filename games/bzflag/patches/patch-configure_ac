@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/09/02 08:52:22 sthen Exp $
---- configure.ac.orig	Wed Jun 25 14:00:55 2008
-+++ configure.ac	Wed Apr 29 03:19:29 2009
-@@ -236,7 +236,7 @@ fi
- AC_MSG_RESULT([$ac_ff_effect_directional]) 
+$OpenBSD: patch-configure_ac,v 1.5 2010/07/25 17:14:35 jolan Exp $
+--- configure.ac.orig	Thu Apr  1 01:31:35 2010
++++ configure.ac	Fri Apr  9 21:23:26 2010
+@@ -230,7 +230,7 @@ fi
+ AC_MSG_RESULT([$ac_ff_effect_directional])
  
  case $host_os in
 -     linux*|kfreebsd*|freebsd*|netbsd*|dragonfly*) linux=true;;
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/09/02 08:52:22 sthen Exp $
       *) linux=false;;
  esac
  AM_CONDITIONAL(LINUX, $linux)
-@@ -690,7 +690,7 @@ esac
+@@ -685,7 +685,7 @@ esac
  if test x$enable_debug = xyes ; then
     FLAGS="$FLAGS -O0"
     case $host_os in
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/09/02 08:52:22 sthen Exp $
  	FLAGS="$FLAGS -Werror -Wshadow"
  	if test x$enable_profiling = xyes ; then
  	  FLAGS="$FLAGS -pg"
-@@ -708,7 +708,7 @@ if test x$enable_debug = xyes ; then
+@@ -703,7 +703,7 @@ if test x$enable_debug = xyes ; then
      AC_DEFINE(DEBUG, 1, [Debugging enabled])
  else
      case $host_os in
