@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/26 18:55:27 ajacoutot Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,8 +8,8 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		5
-REVISION-el=		0
+REVISION-main=		6
+REVISION-el=		1
 
 CATEGORIES=		editors
 
@@ -42,11 +42,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# Disable propolice on powerpc due to gcc3+propolice bug.
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fno-stack-protector"
-.endif
-
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 			LOGNAME="${SHAREOWN}"
 
@@ -63,25 +58,24 @@ CONFIGURE_ARGS+=	--without-x
 .elif ${FLAVOR:L:Mgtk}
 CONFIGURE_ARGS+=	--with-gtk
 USE_X11=		Yes
-LIB_DEPENDS-main+=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-			jpeg::graphics/jpeg \
-			png::graphics/png \
-			tiff::graphics/tiff \
-			ungif::graphics/libungif
+LIB_DEPENDS-main+=	::x11/gtk+2 \
+			::graphics/libungif
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv intl \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
-			pthread-stubs xcb z
+			z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
+			jpeg png ungif tiff gthread-2.0 pthread-stubs xcb \
+			xcb-render xcb-render-util
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 USE_X11=		Yes
-LIB_DEPENDS-main=	jpeg::graphics/jpeg \
-			png::graphics/png \
-			tiff::graphics/tiff \
-			ungif::graphics/libungif 
-WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb z
+LIB_DEPENDS-main+=	::graphics/png \
+			::graphics/tiff \
+			::graphics/libungif 
+WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+WANTLIB-main+=		jpeg png tiff ungif
 .endif
 
 RUN_DEPENDS-el=		:emacs-${VERSION}:${PKGPATH}
