@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2010/07/07 16:34:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.206 2010/07/26 03:47:40 todd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -67,6 +67,7 @@
      SUBDIR += ktsuss
      SUBDIR += lat
      SUBDIR += libretto-config
+     SUBDIR += librelp
      SUBDIR += libstatgrab
      SUBDIR += login_fingerprint
      SUBDIR += login_ldap
