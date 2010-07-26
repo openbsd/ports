@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/22 19:14:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/26 16:06:55 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
 V =			0.10.30
 
 PKGNAME =		gstreamer-${V}
+REVISION =		0
 
 DISTNAME =		gstreamer-${V}
 
@@ -35,11 +36,5 @@ CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex \
 # tests/check/gst (which is not built) but better safe than sorry
 CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
 			ac_cv_lib_gsl_gsl_rng_uniform_int=no
-
-# autoconf check returns wrong value on powerpc leading to undefined
-# references to `__multi3' and `__udivti3'
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	gst_cv_uint128_t=no
-.endif
 
 .include <bsd.port.mk>
