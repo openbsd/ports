@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2010/07/20 17:39:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2010/07/26 05:39:06 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -14,8 +14,6 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# glib-2.0 and gobject-2.0 need to be in sync as glib-2.0 version is
-# used to install *-gdb.py files
 SHARED_LIBS+=	glib-2.0		1803.0 # .2400.1
 SHARED_LIBS+=	gobject-2.0		1803.0 # .2400.1
 SHARED_LIBS+=	gmodule-2.0		1803.0 # .2400.1
