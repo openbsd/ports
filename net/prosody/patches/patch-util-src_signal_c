@@ -1,0 +1,21 @@
+$OpenBSD: patch-util-src_signal_c,v 1.1 2010/07/26 18:11:42 jolan Exp $
+--- util-src/signal.c.orig	Sat Jun 12 19:23:02 2010
++++ util-src/signal.c	Mon Jul 26 12:23:25 2010
+@@ -326,7 +326,7 @@ static int l_raise(lua_State *L)
+   return 1;
+ }
+ 
+-#if defined _POSIX_SOURCE || (defined(sun) || defined(__sun))
++#if defined _POSIX_SOURCE || (defined(sun) || defined(__sun)) || defined(__OpenBSD__)
+ 
+ /* define some posix only functions */
+ 
+@@ -373,7 +373,7 @@ static int l_kill(lua_State *L)
+ static const struct luaL_Reg lsignal_lib[] = {
+   {"signal", l_signal},
+   {"raise", l_raise},
+-#if defined _POSIX_SOURCE || (defined(sun) || defined(__sun))
++#if defined _POSIX_SOURCE || (defined(sun) || defined(__sun)) || defined(__OpenBSD__)
+   {"kill", l_kill},
+ #endif
+   {NULL, NULL}

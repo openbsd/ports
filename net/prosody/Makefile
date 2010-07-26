@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/26 01:25:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/26 18:11:42 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME=	prosody-0.7.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	idn::devel/libidn \
 RUN_DEPENDS+=	::archivers/luazlib \
 		::devel/luaevent \
 		::devel/luafs \
-		::devel/luaposix \
 		::security/luasec \
 		::textproc/luaexpat
 WANTLIB+=	crypto
@@ -47,5 +46,6 @@ post-install:
 		${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${WRKSRC}/README \
 		${PREFIX}/share/doc/prosody
+	touch ${PREFIX}/share/examples/prosody/prosody.log
 
 .include <bsd.port.mk>

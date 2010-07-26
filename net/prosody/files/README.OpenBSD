@@ -10,11 +10,12 @@ Using Prosody in an OpenBSD environment
 
    to your liking.
 
-2) Prosody has been modified to use privilege dropping.  As such, you
-   will need to initially start prosody as root:
+2) Prosody uses privilege dropping.  As such, you will need to initially
+   start prosody as root via prosodyctl:
 
-   # /usr/local/sbin/prosody
+   # /usr/local/sbin/prosodyctl start
 
-   And likewise for using the prosodyctl command:
+   You should now be able to start adding users:
 
-   # /usr/local/sbin/prosodyctl adduser me@my.domain
+   # /usr/local/sbin/prosodyctl adduser username@domain.tld
+

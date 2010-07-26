@@ -1,12 +1,40 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.1 2010/07/25 23:42:25 jolan Exp $
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.2 2010/07/26 18:11:42 jolan Exp $
 --- prosody.cfg.lua.dist.orig	Sat Jun 12 19:23:02 2010
-+++ prosody.cfg.lua.dist	Sun Jul 25 18:17:33 2010
-@@ -24,7 +24,7 @@ admins = { }
++++ prosody.cfg.lua.dist	Mon Jul 26 12:56:05 2010
+@@ -22,8 +22,18 @@
+ -- Example: admins = { "user1@example.com", "user2@example.net" }
+ admins = { }
  
++-- Drop privileges
++prosody_user = "_prosody"
++prosody_group = "_prosody"
++
++-- Enable POSIX-only options
++daemonize = true
++pidfile = "/var/prosody/prosody.pid"
++
  -- Enable use of libevent for better performance under high load
  -- For more information see: http://prosody.im/doc/libevent
----use_libevent = true;
-+use_libevent = true;
++
++--XXX libevent + daemonize don't work together for some reason
+ --use_libevent = true;
  
  -- This is the list of modules Prosody will load on startup.
- -- It looks for mod_modulename.lua in the plugins folder, so make sure that exists too.
+@@ -54,7 +64,7 @@ modules_enabled = {
+ 		"register"; -- Allow users to register on this server using a client and change passwords
+ 
+ 	-- Other specific functionality
+-		--"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
++		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
+ 		--"console"; -- Opens admin telnet interface on localhost port 5582
+ 		--"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
+ 		--"httpserver"; -- Serve static files from a directory over HTTP
+@@ -90,7 +100,7 @@ ssl = {
+ 
+ -- Logging configuration
+ -- For advanced logging see http://prosody.im/doc/logging
+-log = "prosody.log";
++log = "/var/prosody/prosody.log"
+ debug = false; -- Log debug messages?
+ 
+ ----------- Virtual hosts -----------
