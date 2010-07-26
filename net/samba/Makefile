@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2010/07/23 12:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2010/07/26 20:28:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.5.4
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		2
+REVISION-main=		3
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
 SHARED_LIBS=		smbclient	2.0 \
@@ -81,11 +81,6 @@ CONFIGURE_ARGS=		--disable-fam \
 
 # Uncomment to enable debugging symbols.
 #CONFIGURE_ARGS+=	--enable-debug
-
-.if ${MACHINE_ARCH:Mpowerpc}
-# XXX gcc 3.3 ICE
-MAKE_FLAGS +=		CFLAGS_smbd/smb2_create.o=-O0
-.endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
