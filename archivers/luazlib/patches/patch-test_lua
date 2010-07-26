@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_lua,v 1.1.1.1 2010/07/26 01:17:48 jolan Exp $
+--- test.lua.orig	Sun Jul 25 19:41:57 2010
++++ test.lua	Sun Jul 25 20:10:16 2010
+@@ -1,8 +1,8 @@
+ print "1..9"
+ 
+ local src_dir, build_dir = ...
+-package.path  = src_dir .. "?.lua;" .. package.path
+-package.cpath = build_dir .. "?.so;" .. package.cpath
++--package.path  = src_dir .. "?.lua;" .. package.path
++--package.cpath = build_dir .. "?.so;" .. package.cpath
+ 
+ local tap   = require("tap")
+ local lz    = require("zlib")
+@@ -107,4 +107,4 @@ function test_version()
+    ok(type(patch) == "number", "patch version is number (" .. patch .. ")")
+ end
+ 
+-main()
+\ No newline at end of file
++main()
