@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2009/09/19 13:11:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/07/26 20:37:36 ajacoutot Exp $
 
 COMMENT=	themed window manager
 
 DISTNAME=	e16-0.16.8.15
-PKGNAME=	enlightenment-0.16.8.15p1
+PKGNAME=	enlightenment-0.16.8.15
+REVISION=	2
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-0.16.8.0.3
 
@@ -22,6 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xinerama Xrandr Xrender Xxf86vm audiofile c expat
 WANTLIB += fontconfig freetype m sndio z pthread-stubs xcb
+WANTLIB += esd Imlib2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
@@ -30,16 +32,8 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${THEMES}.tar.gz
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	esd.>=2::audio/esound \
-		Imlib2.>=2::graphics/imlib2
-
-# XXX disable optimization on powerpc:
-# src/hints.c: In function `EHintsGetInfo':
-# src/hints.c:471: internal compiler error: in verify_local_live_at_start,
-# at flow.c:601
-.if ${MACHINE_ARCH} == "powerpc"
-CFLAGS+=	-O0
-.endif
+LIB_DEPENDS=	::audio/esound \
+		::graphics/imlib2
 
 SEPARATE_BUILD=	concurrent
 
