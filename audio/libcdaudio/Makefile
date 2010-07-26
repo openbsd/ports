@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/15 21:31:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/26 18:59:18 ajacoutot Exp $
 
 COMMENT=	multi-platform cd player development library
 DISTNAME=	libcdaudio-0.99.12
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS +=	cdaudio              1.1      # .1.0
 CATEGORIES=	audio
 
@@ -21,10 +21,5 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=libcdaudio/}
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-
-# Workaround compiler bug with cddb.c, otherwise we get a sig11
-.if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST+=	sup-no_optimization
-.endif
 
 .include <bsd.port.mk>
