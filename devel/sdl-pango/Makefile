@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/26 16:14:15 ajacoutot Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
-PKGNAME=	sdl-pango-${V}p5
+PKGNAME=	sdl-pango-${V}
+REVISION=	6
 SHARED_LIBS=	SDL_Pango 0.0	# .2.0
 CATEGORIES=	devel x11
 
@@ -21,17 +22,14 @@ MASTER_SITES0=	http://zarb.org/~gc/t/
 
 PATCHFILES=	SDL_Pango-0.1.2-API-adds.patch:0
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender expat fontconfig freetype \
+WANTLIB=	X11 Xau Xdmcp gthread-2.0 expat fontconfig freetype \
 		iconv m usbhid z pcre glib-2.0 gmodule-2.0 gobject-2.0 sndio \
-		pthread-stubs xcb
+		pthread-stubs xcb SDL pango-1.0 pangoft2-1.0
 
-LIB_DEPENDS=	SDL.>=7::devel/sdl \
-		pango-1.0.>=1.3,pangoft2-1.0.>=1.3::devel/pango
+LIB_DEPENDS=	::devel/sdl \
+		::devel/pango
 
-MODULES=	devel/gettext gcc4
-
-MODGCC4_ARCHES= powerpc
-MODGCC4_LANGS=  c
+MODULES=	devel/gettext
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
