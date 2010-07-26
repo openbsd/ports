@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.21 2010/07/15 14:26:30 merdely Exp $
+# $OpenBSD: Quirks.pm,v 1.22 2010/07/26 20:27:05 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -143,6 +143,7 @@ my $stem_extensions = {
 	'xmame' => 'sdlmame',
 	'xmess' => 'sdlmess',
 # 4.8
+	'hs-x11-extras' => 'hs-X11',
 	'php5-core' => 'php',
 	'php5-bz2' => 'php-bz2',
 	'php5-curl' => 'php-curl',
