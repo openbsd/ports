@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/18 17:19:49 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/26 09:31:48 jakemsr Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
 V=		3.6
 DISTNAME=	FreeMat-${V}
 PKGNAME=	freemat-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics math
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= 	GL GLU amd c curses m ossaudio pthread stdc++ z \
+WANTLIB= 	GL GLU amd c curses m pthread stdc++ z \
 		${MODFORTRAN_WANTLIB} \
 		avcall arpack.>=1 blas.>=1 fftw3.>=4 fftw3f.>=4 lapack.>=1 \
 		pcre portaudio umfpack QtGui QtNetwork QtOpenGL QtSvg QtXml
