@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/24 07:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/07/26 16:33:29 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
-COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (plugins-bad)
+COMMENT-mjpeg =		mplex+mpeg2enc elements for GStreamer (plugins-bad)
 
 V =			0.10.19
 DISTNAME =		gst-plugins-bad-${V}
