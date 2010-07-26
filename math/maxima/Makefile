@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/26 16:48:25 ajacoutot Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.16.1
 DISTNAME=		maxima-${VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		math
 
 HOMEPAGE=		http://maxima.sourceforge.net/
@@ -19,17 +19,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 
 USE_GMAKE=		yes
 
-LIB_DEPENDS=		ecl::lang/ecl
-WANTLIB +=		c gc gmp m pthread
+LIB_DEPENDS=		::lang/ecl
+WANTLIB +=		c gc gmp m pthread ecl
 
 SUBST_VARS=		VERSION
 
 CONFIGURE_ARGS+=	--enable-ecl
 CONFIGURE_STYLE=	gnu
-
-MODULES+=	gcc4
-MODGCC4_ARCHES=	powerpc
-MODGCC4_LANGS=	c
 
 FLAVORS=		no_x11
 FLAVOR?=
