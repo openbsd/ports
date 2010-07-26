@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/24 11:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/26 16:35:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for chewing
 
 DISTNAME=	scim-chewing-0.3.3
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	inputmethods chinese
 
