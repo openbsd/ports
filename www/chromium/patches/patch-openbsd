@@ -4966,6 +4966,25 @@ Index: src/tools/gyp/pylib/gyp/generator/make.py
  sed -e "s|^[^:]*: *||" -e "s| *\\\\$$||" -e 's|^ *||' \
      -e "/./s|$$|:|" $(depfile).tmp >> $(depfile).tmp
  cat $(depfile).tmp >> $(depfile)
+@@ -784,12 +784,14 @@
+ # CFLAGS et al overrides must be target-local.
+ # See "Target-specific Variable Values" in the GNU Make manual.""")
+       self.WriteLn("$(OBJS): TOOLSET := $(TOOLSET)")
+-      self.WriteLn("$(OBJS): GYP_CFLAGS := $(CFLAGS_$(BUILDTYPE)) "
++      self.WriteLn("$(OBJS): GYP_CFLAGS := $(INCS_$(BUILDTYPE)) "
++                   "$(CFLAGS_$(BUILDTYPE)) "
+                    "$(CFLAGS_C_$(BUILDTYPE)) "
+-                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
+-      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(CFLAGS_$(BUILDTYPE)) "
++                   "$(DEFS_$(BUILDTYPE))")
++      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(INCS_$(BUILDTYPE)) "
++                   "$(CFLAGS_$(BUILDTYPE)) "
+                    "$(CFLAGS_CC_$(BUILDTYPE)) "
+-                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
++                   "$(DEFS_$(BUILDTYPE))")
+ 
+     self.WriteLn()
+ 
 Index: src/tools/gyp/test/additional-targets/src/dir1/actions.gyp
 ===================================================================
 --- tools/gyp/test/additional-targets/src/dir1/actions.gyp	(revision 794)
