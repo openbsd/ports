@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/26 20:07:31 edd Exp $
 
 COMMENT=	X11 front-end for ghostscript
 
 DISTNAME=	ghostview-1.5
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	print
 
 MASTER_SITES=	${MASTER_SITE_GNU:=ghostview/}

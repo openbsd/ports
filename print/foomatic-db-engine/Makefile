@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/03/21 14:41:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/26 20:07:31 edd Exp $
 
 COMMENT=		Foomatic PPD generator
 
@@ -22,11 +22,11 @@ MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		xml2.>=8::textproc/libxml
+LIB_DEPENDS=		::textproc/libxml
 RUN_DEPENDS=		::print/foomatic-filters \
 			::databases/p5-DBI \
 			:curl-*|wget-*:net/curl
-WANTLIB=		c m z
+WANTLIB=		c m xml2.>=8 z
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes

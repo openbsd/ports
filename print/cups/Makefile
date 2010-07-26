@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/07/13 12:50:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.77 2010/07/26 20:07:31 edd Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -27,8 +27,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto gssapi jpeg krb5 m pthread ssl stdc++
-WANTLIB += z
+WANTLIB += 	asn1 c crypto dbus-1.>=7 gssapi jpeg krb5 m png.>=3 pthread
+WANTLIB +=	ssl stdc++ tiff.>=35 z
 
 MASTER_SITES=	http://ftp.easysw.com/pub/cups/${VERSION}/ \
 		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -48,9 +48,9 @@ BUILD_DEPENDS=	::devel/xdg-utils \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::devel/xdg-utils
 
-LIB_DEPENDS=	png.>=3::graphics/png \
-		tiff.>=35::graphics/tiff \
-		dbus-1.>=7::x11/dbus
+LIB_DEPENDS=	::graphics/png \
+		::graphics/tiff \
+		::x11/dbus
 
 LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
 		LIBcupscgi_VERSION=${LIBcupscgi_VERSION} \

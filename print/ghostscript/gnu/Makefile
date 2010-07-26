@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2010/05/24 14:25:05 kili Exp $
+# $OpenBSD: Makefile,v 1.75 2010/07/26 20:07:31 edd Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p12
+REVISION=	13
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -28,15 +28,15 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	m c pthread z
+WANTLIB=	c ijs m jpeg.>=62 png.>=6 pthread z
 
 MODULES=	converters/libiconv
 
 RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 BUILD_DEPENDS=	:cups->=1.4.3:print/cups
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg	\
-		png.>=6::graphics/png		\
-		ijs::print/ijs
+LIB_DEPENDS=	::graphics/jpeg	\
+		::graphics/png		\
+		::print/ijs
 
 CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES	\
 		-I${LOCALBASE}/include		\
@@ -114,12 +114,14 @@ CFLAGS+=	-DA4
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 MODULES+=	devel/gettext
-WANTLIB+=	Xcomposite Xcursor Xdamage Xau Xdmcp Xfixes Xi Xinerama \
-		Xrandr Xrender atk-1.0 cairo expat fontconfig freetype \
-		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs xcb
+WANTLIB+=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
+WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
+WANTLIB+=	gdk-x11-2.0.>=1000 gdk_pixbuf-2.0.>=1000 gio-2.0 glib-2.0
+WANTLIB+=	glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0.>=1000
+WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
+WANTLIB+=	xcb xcb-render xcb-render-util
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)
 SOC_LIBS+=	$$(pkg-config gtk+-2.0 --libs)
