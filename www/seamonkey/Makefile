@@ -1,11 +1,18 @@
-# $OpenBSD: Makefile,v 1.51 2010/07/22 21:48:02 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2010/07/27 16:55:21 landry Exp $
 
-COMMENT =	Mozilla application suite
+COMMENT-main =		Mozilla application suite
+COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
 MOZILLA_VERSION=	2.0.6
 MOZILLA_BRANCH =	1.9.1
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
+
+MULTI_PACKAGES =	-main -lightning
+PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
+PKGNAME-lightning =	lightning-seamonkey-1.0beta1
+EPOCH-lightning =	0
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird
 # for mail/enigmail and productivity/sunbird,-seamonkey to work fine
@@ -13,7 +20,7 @@ SO_VERSION=	16.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome commandlines \
-	composer cookie docshell embedcomponents fileview gkgfxthebes gklayout \
+	calbasecomps composer cookie docshell embedcomponents fileview gkgfxthebes gklayout \
 	gkplugin htmlpars i18n imgicon imglib2 import intlapp jar50 jsd mail \
 	mork mozfind mozldap msgsmime necko nsappshell oji permissions pipboot \
 	pipnss pippki places pref rdf remoteservice satchel spellchecker \
@@ -71,9 +78,11 @@ NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS+=	${WRKSRC}/directory/c-sdk/config/autoconf
 
+LIB_DEPENDS-lightning = ::${BUILD_PKGPATH},-main
+WANTLIB-lightning =	seamonkey/mozjs seamonkey/xpcom c m stdc++ nspr4 plc4 plds4
+
 CONFIGURE_STYLE =	autoconf no-autoheader
-# oops, notyet
-# CONFIGURE_ARGS +=	--enable-calendar
+CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET=	default
 
@@ -83,11 +92,14 @@ MOZILLA_DATADIRS=	chrome components defaults dictionaries extensions \
 MOZILLA_AUTOCONF_DIRS =	directory/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=	config/autoconf.mk.in
 
+GDATADIR =	${MOZ}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 .for language in ${LANGUAGES}
 	${UNZIP} -oq ${FULLDISTDIR}/seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi \
 		-d ${MOZ}/extensions/langpack-${language}@seamonkey.mozilla.org
 .endfor
+	unzip -q ${MOB}/../xpi-stage/gdata-provider.xpi -d ${GDATADIR}
 
 .include <bsd.port.mk>

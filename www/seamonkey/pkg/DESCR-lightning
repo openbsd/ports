@@ -1,0 +1,4 @@
+Lightning is a calendar/task management extension for Mozilla
+Sunbird, and supports local and remote calendars through CalDav
+, WebDAV or WCAP protocols, and subscription to iCal/.ics invitations.
+The gdata provider enables write support to Google Calendars too.
