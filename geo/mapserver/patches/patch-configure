@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2009/12/24 21:59:19 landry Exp $
---- configure.orig	Fri Nov 27 22:16:01 2009
-+++ configure	Wed Dec 23 17:37:23 2009
-@@ -9784,7 +9784,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2010/07/27 08:57:38 landry Exp $
+--- configure.orig	Thu Jul  8 22:07:15 2010
++++ configure	Tue Jul 27 10:40:55 2010
+@@ -9790,7 +9790,7 @@ fi
  
  RGBA_PNG_ENABLED=$RGBA_PNG_ENABLED
  

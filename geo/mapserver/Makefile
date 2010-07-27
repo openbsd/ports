@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/02 09:45:04 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/27 08:57:38 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		5.6.3
+V =		5.6.5
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -24,30 +24,35 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-BUILD_DEPENDS=	:php5-core-*:www/php5/core
+BUILD_DEPENDS=	:php5-core-*:www/php5/core \
+		::graphics/agg
 
-LIB_DEPENDS=	proj::devel/proj \
-		gdal::geo/gdal \
-		geos_c::geo/geos \
-		geotiff::devel/geotiff \
-		gd::graphics/gd
+LIB_DEPENDS=	::devel/proj \
+		::geo/gdal \
+		::geo/geos \
+		::devel/geotiff \
+		::graphics/gd
 
 RUN_DEPENDS-php=	:php5-core-*:www/php5/core
 
 WANTLIB=	crypto curl expat freetype gif iconv idn jasper jpeg \
-		com_err readline termcap m png pq ssl tiff xml2 z
+		com_err readline termcap m png pq ssl tiff xml2 z \
+		proj gdal geos_c geotiff gd
 
 WANTLIB-main=	${WANTLIB} c stdc++
 WANTLIB-utils=	${WANTLIB} c stdc++
+WANTLIB-php=	${WANTLIB} stdc++
+WANTLIB-perl=	${WANTLIB} stdc++
 
 USE_GMAKE=	yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-png=${LOCALBASE} \
+		--with-agg=${LOCALBASE} \
 		--without-pdf \
 		--with-tiff=${LOCALBASE} \
 		--with-freetype=${X11BASE}/bin \
@@ -70,7 +75,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	CFLAGS+=-fPIC
 
 UTILS=	shp2img shp2pdf legend shptree shptreevis shptreetst scalebar \
-	sortshp tile4ms msencrypt mapserver-config
+	sortshp tile4ms msencrypt
 
 PREFIX-main=	/var/www
 PREFIX-php=	/var/www
@@ -95,6 +100,7 @@ do-install:
 .for i in ${UTILS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/mapserver-config ${PREFIX}/bin/
 	${INSTALL_DATA}	${WRKSRC}/mapscript/php3/examples/* \
 		${PREFIX}/share/examples/mapserver/php
 	${INSTALL_DATA}	${WRKSRC}/mapscript/perl/examples/* \
