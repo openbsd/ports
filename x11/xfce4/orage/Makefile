@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/14 11:48:13 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/27 12:58:42 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
 XFCE_VERSION=	4.6.1
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
-		xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
-		notify.>=2::devel/libnotify \
-		dbus-glib-1::x11/dbus-glib \
-		dbus-1.>=6::x11/dbus
+LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
+		::x11/xfce4/xfce4-panel \
+		::devel/libnotify \
+		::x11/dbus-glib \
+		::x11/dbus
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -29,6 +29,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
 		execinfo xcb-atom xcb-aux xcb-event gthread-2.0 xcb-render \
-		xcb-render-util
+		xcb-render-util xfcegui4 xfce4panel notify dbus-1 dbus-glib-1
 
 .include <bsd.port.mk>

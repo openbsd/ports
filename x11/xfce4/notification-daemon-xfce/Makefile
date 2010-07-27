@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/14 11:48:13 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/27 12:58:42 landry Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-REVISION=	9
+REVISION=	10
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		sexy::x11/libsexy \
-		notify.>=2.2::devel/libnotify
+LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
+		::x11/libsexy \
+		::devel/libnotify
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
@@ -26,6 +26,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png pthread startup-notification-1 xfce4util xml2 z \
-		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event
+		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event \
+		gthread-2.0 xcb-render xcb-render-util xfcegui4 sexy notify
 
 .include <bsd.port.mk>

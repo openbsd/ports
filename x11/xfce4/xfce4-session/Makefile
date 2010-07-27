@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2010/06/07 07:24:47 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/27 12:58:43 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
+REVISION=	0
 
 SHARED_LIBS +=	xfsm-4.6	0.0 # .0.0
 
@@ -17,9 +18,9 @@ DESKTOP_FILES=	Yes
 
 CONFIGURE_ARGS=	--enable-session-screenshots
 
-LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		xfconf-0::x11/xfce4/xfconf \
-		wnck-1::devel/libwnck
+LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
+		::x11/xfce4/xfconf \
+		::devel/libwnck
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo dbus-1 \
@@ -28,7 +29,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png pthread startup-notification-1 xfce4util xml2 z \
 		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event \
-		gthread-2.0 xcb-render xcb-render-util
+		gthread-2.0 xcb-render xcb-render-util wnck-1 xfconf-0 xfcegui4
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session
 

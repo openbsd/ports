@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/14 11:48:13 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/27 12:58:43 landry Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
 XFCE_VERSION=	4.6.1
-REVISION=	4
+REVISION=	5
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_PROJECT}/${XFCE_BRANCH}/
 SHARED_LIBS=	xfprint	0.1
@@ -24,9 +24,9 @@ CONFIGURE_ARGS=	--enable-cups \
 
 RUN_DEPENDS=	::print/a2ps
 
-LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		xfconf-0::x11/xfce4/xfconf \
-		cups.>=3::print/cups
+LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
+		::x11/xfce4/xfconf \
+		::print/cups
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
@@ -35,7 +35,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gssapi gtk-x11-2.0 krb5
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs ssl startup-notification-1
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z gthread-2.0 
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z gthread-2.0
+WANTLIB += xcb-render xcb-render-util cups xfconf-0 xfcegui4
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.8 2010/06/05 15:19:41 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.9 2010/07/27 12:58:42 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -34,7 +34,8 @@ MASTER_SITES?=	http://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-pl
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 
-MODXFCE_LIB_DEPENDS=	xfce4panel.>=2::x11/xfce4/xfce4-panel
+MODXFCE_LIB_DEPENDS=	::x11/xfce4/xfce4-panel
+MODXFCE_WANTLIB=	xfce4panel
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
@@ -59,6 +60,7 @@ DISTNAME=	${XFCE_PROJECT}-${XFCE_VERSION}
 .endif
 
 LIB_DEPENDS+=	${MODXFCE_LIB_DEPENDS}
+WANTLIB+=	${MODXFCE_WANTLIB}
 RUN_DEPENDS+=	${MODXFCE_RUN_DEPENDS}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

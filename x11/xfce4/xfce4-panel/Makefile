@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/06/05 15:26:03 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2010/07/27 12:58:43 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_VERSION=	4.6.4
 XFCE_PROJECT=	xfce4-panel
+REVISION=	0
 
 SHARED_LIBS=	xfce4panel	2.3	#2.2
 
@@ -16,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		exo-0.3::x11/xfce4/exo \
-		wnck-1::devel/libwnck
+LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
+		::x11/xfce4/exo \
+		::devel/libwnck
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo expat \
@@ -27,7 +28,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
 		execinfo xcb-atom xcb-aux xcb-event gthread-2.0 pthread \
-		xcb-render xcb-render-util
+		xcb-render xcb-render-util exo-0.3 wnck-1 xfcegui4
 
 
 FAKE_FLAGS=	confdir=${PREFIX}/share/examples/xfce4-panel

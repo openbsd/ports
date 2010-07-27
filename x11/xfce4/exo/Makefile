@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/06/05 15:20:25 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/27 12:58:42 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
 XFCE_VERSION=	0.3.107
 XFCE_PROJECT=	exo
+REVISION=	0
 
 SHARED_LIBS=	exo-0.3		5.0 \
 		exo-hal-0.3	5.0
@@ -24,8 +25,8 @@ CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 		ac_cv_header_sys_mount_h=yes
 
 BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
-LIB_DEPENDS=	notify.>=2::devel/libnotify \
-		xfce4util::x11/xfce4/libxfce4util
+LIB_DEPENDS=	::devel/libnotify \
+		::x11/xfce4/libxfce4util
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/xfce4
 
@@ -35,7 +36,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread z pthread-stubs xcb dbus-1 dbus-glib-1 \
-		xcb-render xcb-render-util
+		xcb-render xcb-render-util notify xfce4util
 
 
 .include <bsd.port.mk>

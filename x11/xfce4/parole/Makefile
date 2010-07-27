@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/09 15:21:25 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/27 12:58:42 landry Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.2.0
 XFCE_GOODIE =	parole
+REVISION =	0
 CATEGORIES +=	audio
 
 # GPLv2
@@ -27,11 +28,11 @@ CONFIGURE_ARGS =	--disable-silent-rules \
 #post-extract:
 #	rm ${WRKSRC}/browser-plugin/npupp.h
 
-LIB_DEPENDS =	gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
-		gstvideo-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base \
-		xfcegui4::x11/xfce4/libxfcegui4 \
-		tag,tag_c::audio/taglib \
-		notify::devel/libnotify
+LIB_DEPENDS =	::multimedia/gstreamer-0.10/core \
+		::multimedia/gstreamer-0.10/plugins-base \
+		::x11/xfce4/libxfcegui4 \
+		::audio/taglib \
+		::devel/libnotify
 
 # plugins-ffmpeg needed to play mpeg vidz
 # plugins-bad for dvd play
@@ -46,6 +47,8 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 stdc++ xcb xcb-atom xcb-aux
-WANTLIB += xcb-event xfce4util xml2 z
+WANTLIB += xcb-event xfce4util xml2 z notify tag tag_c xfcegui4
+WANTLIB += gstvideo-0.10 gstinterfaces-0.10 gstreamer-0.10 gstbase-0.10
+WANTLIB += xcb-render xcb-render-util
 
 .include <bsd.port.mk>

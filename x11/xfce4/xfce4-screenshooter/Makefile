@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/14 11:48:13 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/27 12:58:43 landry Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.6.0
 XFCE_GOODIE=	xfce4-screenshooter
 EXTRACT_SUFX=	.tar.gz
-REVISION=	4
+REVISION=	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel \
-		xmlrpc,xmlrpc_client,xmlrpc_util,xmlrpc_xmlparse,xmlrpc_xmltok::net/xmlrpc-c
+LIB_DEPENDS=	::x11/xfce4/xfce4-panel \
+		::net/xmlrpc-c
 
 DESKTOP_FILES=	Yes
 
@@ -27,6 +27,8 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		gthread-2.0 pthread startup-notification-1 xfce4util \
 		xfcegui4 z crypto ssl curl idn pthread-stubs xcb \
-		execinfo xcb-atom xcb-aux xcb-event
+		execinfo xcb-atom xcb-aux xcb-event xfce4panel xmlrpc \
+		xmlrpc_client xmlrpc_util xmlrpc_xmlparse xmlrpc_xmltok \
+		xcb-render xcb-render-util
 
 .include <bsd.port.mk>
