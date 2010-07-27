@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/09 00:31:52 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/27 09:27:24 dcoppa Exp $
 
 COMMENT=	collection of perl modules to be used with asterisk
 
 DISTNAME=	asterisk-perl-0.09
-PKGNAME=	p5-asterisk-0.09p0
+PKGNAME=	p5-asterisk-0.09
+REVISION=	0
 CATEGORIES=	telephony perl5
 HOMEPAGE=	http://asterisk.gnuinter.net/
 

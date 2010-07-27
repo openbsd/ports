@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/26 00:20:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/27 09:27:24 dcoppa Exp $
 
 COMMENT=	extra sound files for Asterisk open source PBX
 DISTNAME=	asterisk-sounds-1.2.1
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	telephony
 
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
