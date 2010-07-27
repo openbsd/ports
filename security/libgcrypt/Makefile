@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/20 20:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/27 21:45:47 ajacoutot Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.4.5
+DISTNAME=		libgcrypt-1.4.6
 CATEGORIES=		security
-SHARED_LIBS=		gcrypt	15.0 # .16.2
+SHARED_LIBS=		gcrypt	15.0 # .17.0
 
 HOMEPAGE=		http://www.gnu.org/directory/security/libgcrypt.html
 
-# GPLv2/LGPLv2
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,9 +21,9 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgcrypt/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/libgcrypt/
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		gpg-error::security/libgpg-error
+LIB_DEPENDS=		:libgpg-error->=1.9:security/libgpg-error
 
-WANTLIB=		c
+WANTLIB=		c gpg-error
 
 USE_LIBTOOL=		Yes
 

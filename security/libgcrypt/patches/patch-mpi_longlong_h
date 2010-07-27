@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpi_longlong_h,v 1.2 2006/02/06 06:43:48 sturm Exp $
---- mpi/longlong.h.orig	Wed Mar  3 09:21:49 2004
-+++ mpi/longlong.h	Sun Feb  5 09:41:09 2006
+$OpenBSD: patch-mpi_longlong_h,v 1.3 2010/07/27 21:45:47 ajacoutot Exp $
+--- mpi/longlong.h.orig	Mon Feb 22 11:04:43 2010
++++ mpi/longlong.h	Tue Jul 27 23:29:16 2010
 @@ -170,6 +170,7 @@ MA 02111-1307, USA. */
      (pl) = __m0 * __m1; 						\
    } while (0)
@@ -17,7 +17,7 @@ $OpenBSD: patch-mpi_longlong_h,v 1.2 2006/02/06 06:43:48 sturm Exp $
  #endif /* __alpha */
  
  /***************************************
-@@ -1133,7 +1135,7 @@ extern USItype __udiv_qrnnd ();
+@@ -1150,7 +1152,7 @@ typedef unsigned int UTItype __attribute__ ((mode (TI)
  	     "rJ" ((USItype)(al)),                                      \
  	     "rI" ((USItype)(bl))                                       \
  	   __CLOBBER_CC)
