@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/09 23:03:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/07/27 21:45:06 ajacoutot Exp $
 @bin bin/gpg-error
 bin/gpg-error-config
 include/gpg-error.h
@@ -12,10 +12,14 @@ share/common-lisp/source/gpg-error/gpg-error-codes.lisp
 share/common-lisp/source/gpg-error/gpg-error-package.lisp
 share/common-lisp/source/gpg-error/gpg-error.asd
 share/common-lisp/source/gpg-error/gpg-error.lisp
+share/locale/cs/LC_MESSAGES/libgpg-error.mo
 share/locale/de/LC_MESSAGES/libgpg-error.mo
 share/locale/fr/LC_MESSAGES/libgpg-error.mo
+share/locale/it/LC_MESSAGES/libgpg-error.mo
+share/locale/nl/LC_MESSAGES/libgpg-error.mo
 share/locale/pl/LC_MESSAGES/libgpg-error.mo
 share/locale/ro/LC_MESSAGES/libgpg-error.mo
 share/locale/sv/LC_MESSAGES/libgpg-error.mo
 share/locale/vi/LC_MESSAGES/libgpg-error.mo
 %%SHARED%%
+share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo
