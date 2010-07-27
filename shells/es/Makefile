@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 22:16:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/27 09:24:39 dcoppa Exp $
 
 COMMENT=	extensible shell, derived from plan9's rc
 
 DISTNAME=	es-0.9-beta1
-PKGNAME=	es-0.9b1p0
+PKGNAME=	es-0.9beta1
+EPOCH=		0
 CATEGORIES=	shells
 
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/24 13:24:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/27 09:24:39 dcoppa Exp $
 
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
-PKGNAME=		${DISTNAME:S/p/perl/}p0
+PKGNAME=		${DISTNAME:S/p/perl/}
+REVISION=		0
 CATEGORIES=		shells
 
 HOMEPAGE=		http://www.focusresearch.com/gregor/sw/psh/

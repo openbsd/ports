@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2009/12/16 15:03:28 pea Exp $
+# $OpenBSD: Makefile,v 1.53 2010/07/27 09:24:39 dcoppa Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
 V=		4.3.10
 DISTNAME=	zsh-$V
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
@@ -19,11 +19,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m termcap
+WANTLIB=	c m pcre termcap
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	pcre::devel/pcre
+LIB_DEPENDS=	::devel/pcre
 
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
