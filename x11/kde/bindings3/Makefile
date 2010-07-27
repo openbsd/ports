@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/07/24 23:05:08 naddy Exp $
-
-BROKEN-powerpc =	gcc spins on x_20.cpp
+# $OpenBSD: Makefile,v 1.65 2010/07/27 04:44:37 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
