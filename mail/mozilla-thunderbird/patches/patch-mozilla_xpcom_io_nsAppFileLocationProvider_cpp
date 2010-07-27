@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.1 2010/04/27 20:57:55 landry Exp $
+$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
 Standardize path for nsapi plugins
---- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Sat Apr 24 15:06:19 2010
-+++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Sat Apr 24 15:06:48 2010
-@@ -254,12 +254,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
+--- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Wed Jun 23 19:47:15 2010
++++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Wed Jul  7 08:43:19 2010
+@@ -231,12 +231,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
      }
  #ifdef XP_UNIX
      else if (nsCRT::strcmp(prop, NS_SYSTEM_PLUGINS_DIR) == 0) {

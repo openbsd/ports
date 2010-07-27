@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_jsnum_h,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/js/src/jsnum.h.orig	Sat Dec  5 02:56:02 2009
-+++ mozilla/js/src/jsnum.h	Sat Jan 16 16:28:34 2010
-@@ -57,7 +57,7 @@ JS_BEGIN_EXTERN_C
+$OpenBSD: patch-mozilla_js_src_jsnum_h,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/js/src/jsnum.h.orig	Wed Jun 23 19:46:38 2010
++++ mozilla/js/src/jsnum.h	Wed Jul  7 08:43:19 2010
+@@ -65,7 +65,7 @@ JS_BEGIN_EXTERN_C
   * the high and low words are in big endian order).
   */
  #if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)

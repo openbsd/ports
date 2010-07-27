@@ -1,4 +1,4 @@
-/*	$OpenBSD: nsSound.cpp,v 1.2 2010/04/03 09:26:45 landry Exp $	*/
+/*	$OpenBSD: nsSound.cpp,v 1.3 2010/07/27 17:01:16 landry Exp $	*/
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -348,8 +348,11 @@ NS_METHOD nsSound::Play(nsIURL *aURL)
     return rv;
 }
 
-nsresult nsSound::PlaySystemEventSound(const nsAString &aSoundAlias)
+NS_IMETHODIMP nsSound::PlayEventSound(PRUint32 aEventId)
 {
+    if (!mInited)
+        Init();
+
     if (!canberra_lib)
         return NS_OK;
   
@@ -398,23 +401,47 @@ nsresult nsSound::PlaySystemEventSound(const nsAString &aSoundAlias)
         g_free(sound_theme_name);
     }
 
-    if (aSoundAlias.Equals(NS_SYSSOUND_ALERT_DIALOG))
-        ca_context_play(ctx, 0, "event.id", "dialog-warning", NULL);
-    else if (aSoundAlias.Equals(NS_SYSSOUND_CONFIRM_DIALOG))
-        ca_context_play(ctx, 0, "event.id", "dialog-question", NULL);
-    else if (aSoundAlias.Equals(NS_SYSSOUND_MAIL_BEEP))
-        ca_context_play(ctx, 0, "event.id", "message-new-email", NULL);
+    switch (aEventId) {
+        case EVENT_ALERT_DIALOG_OPEN:
+            ca_context_play(ctx, 0, "event.id", "dialog-warning", NULL);
+            break;
+        case EVENT_CONFIRM_DIALOG_OPEN:
+            ca_context_play(ctx, 0, "event.id", "dialog-question", NULL);
+            break;
+        case EVENT_NEW_MAIL_RECEIVED:
+            ca_context_play(ctx, 0, "event.id", "message-new-email", NULL);
+            break;
+        case EVENT_MENU_EXECUTE:
+            ca_context_play(ctx, 0, "event.id", "menu-click", NULL);
+            break;
+        case EVENT_MENU_POPUP:
+            ca_context_play(ctx, 0, "event.id", "menu-popup", NULL);
+            break;
+    }
 
     return NS_OK;
 }
 
 NS_IMETHODIMP nsSound::PlaySystemSound(const nsAString &aSoundAlias)
 {
-    if (!mInited)
-        Init();
-
-    if (NS_IsMozAliasSound(aSoundAlias))
-        return PlaySystemEventSound(aSoundAlias);
+    if (NS_IsMozAliasSound(aSoundAlias)) {
+        NS_WARNING("nsISound::playSystemSound is called with \"_moz_\" events, "
+            "they are obsolete, use nsISound::playEventSound instead");
+        PRUint32 eventId;
+        if (aSoundAlias.Equals(NS_SYSSOUND_ALERT_DIALOG))
+            eventId = EVENT_ALERT_DIALOG_OPEN;
+        else if (aSoundAlias.Equals(NS_SYSSOUND_CONFIRM_DIALOG))
+            eventId = EVENT_CONFIRM_DIALOG_OPEN;
+        else if (aSoundAlias.Equals(NS_SYSSOUND_MAIL_BEEP))
+            eventId = EVENT_NEW_MAIL_RECEIVED;
+        else if (aSoundAlias.Equals(NS_SYSSOUND_MENU_EXECUTE))
+            eventId = EVENT_MENU_EXECUTE;
+        else if (aSoundAlias.Equals(NS_SYSSOUND_MENU_POPUP))
+            eventId = EVENT_MENU_POPUP;
+        else
+            return NS_OK;
+        return PlayEventSound(eventId);
+    }
 
     nsresult rv;
     nsCOMPtr <nsIURI> fileURI;

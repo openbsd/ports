@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_gfx_src_thebes_Makefile_in,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/gfx/src/thebes/Makefile.in.orig	Sat Dec  5 02:56:01 2009
-+++ mozilla/gfx/src/thebes/Makefile.in	Sat Jan 16 16:28:48 2010
-@@ -147,6 +147,10 @@ DEFINES += -DMOZ_ENABLE_GTK2
+$OpenBSD: patch-mozilla_gfx_src_thebes_Makefile_in,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/gfx/src/thebes/Makefile.in.orig	Wed Jun 23 19:46:36 2010
++++ mozilla/gfx/src/thebes/Makefile.in	Wed Jul  7 08:43:19 2010
+@@ -149,6 +149,10 @@ DEFINES += -DMOZ_ENABLE_GTK2
  CXXFLAGS += $(MOZ_PANGO_CFLAGS)
  endif
  

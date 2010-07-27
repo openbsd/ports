@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_jsgc_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/js/src/jsgc.cpp.orig	Sat Dec  5 02:57:14 2009
-+++ mozilla/js/src/jsgc.cpp	Sat Jan 16 16:28:34 2010
-@@ -118,6 +118,7 @@ extern "C" {
+$OpenBSD: patch-mozilla_js_src_jsgc_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/js/src/jsgc.cpp.orig	Wed Jun 23 19:46:38 2010
++++ mozilla/js/src/jsgc.cpp	Wed Jul  7 08:43:19 2010
+@@ -128,6 +128,7 @@ extern "C" {
  #   ifndef JS_GC_USE_MMAP
  #    define JS_GC_USE_MMAP 1
  #   endif

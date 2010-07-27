@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Sat Dec  5 02:56:51 2009
-+++ mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp	Sat Jan 16 16:28:37 2010
-@@ -341,11 +341,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)
+$OpenBSD: patch-mozilla_toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Wed Jun 23 19:47:12 2010
++++ mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp	Wed Jul  7 08:43:19 2010
+@@ -552,11 +552,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)
  
  #ifdef MOZ_X11
  

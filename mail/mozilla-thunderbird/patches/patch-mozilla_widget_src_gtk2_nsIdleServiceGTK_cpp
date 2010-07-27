@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_widget_src_gtk2_nsIdleServiceGTK_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/widget/src/gtk2/nsIdleServiceGTK.cpp.orig	Sat Dec  5 02:56:52 2009
-+++ mozilla/widget/src/gtk2/nsIdleServiceGTK.cpp	Sat Jan 16 16:28:37 2010
-@@ -79,7 +79,7 @@ static void Initialize()
-     sInitialized = PR_TRUE;
- 
+$OpenBSD: patch-mozilla_widget_src_gtk2_nsIdleServiceGTK_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/widget/src/gtk2/nsIdleServiceGTK.cpp.orig	Wed Jun 23 19:47:13 2010
++++ mozilla/widget/src/gtk2/nsIdleServiceGTK.cpp	Wed Jul  7 08:43:19 2010
+@@ -68,7 +68,7 @@ NS_IMPL_ISUPPORTS1(nsIdleServiceGTK, nsIIdleService)
+ static void Initialize()
+ {
      // This will leak - See comments in ~nsIdleServiceGTK().
 -    PRLibrary* xsslib = PR_LoadLibrary("libXss.so.1");
 +    PRLibrary* xsslib = PR_LoadLibrary("libXss.so");

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_content_media_video_src_nsAudioStream_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/content/media/video/src/nsAudioStream.cpp.orig	Sat Dec  5 02:55:57 2009
-+++ mozilla/content/media/video/src/nsAudioStream.cpp	Sat Jan 16 16:28:33 2010
+$OpenBSD: patch-mozilla_content_media_nsAudioStream_cpp,v 1.1 2010/07/27 17:01:16 landry Exp $
+--- mozilla/content/media/nsAudioStream.cpp.orig	Wed Jul  7 08:51:17 2010
++++ mozilla/content/media/nsAudioStream.cpp	Wed Jul  7 08:52:32 2010
 @@ -246,7 +246,7 @@ float nsAudioStream::GetPosition()
  #if defined(XP_WIN)
    positionType = SA_POSITION_WRITE_HARDWARE;

@@ -1,30 +1,21 @@
-$OpenBSD: patch-mozilla_toolkit_components_downloads_src_nsDownloadManager_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp.orig	Sat Dec  5 02:57:14 2009
-+++ mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp	Sat Jan 16 16:28:37 2010
-@@ -1385,7 +1385,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
-         NS_ENSURE_SUCCESS(rv, rv);
-         (*aResult)->Exists(&bRes);
-         if (!bRes) {
--          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0755);
-+          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0700);
-           NS_ENSURE_SUCCESS(rv, rv);
-         }
-         return NS_OK;
-@@ -1403,7 +1403,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
-             NS_ADDREF(*aResult = customDirectory);
-             return NS_OK;
-           }
--          rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0755);
-+          rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0700);
-           NS_ENSURE_SUCCESS(rv, rv);
-           NS_ADDREF(*aResult = customDirectory);
-           return NS_OK;
-@@ -1412,7 +1412,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
-         NS_ENSURE_SUCCESS(rv, rv);
-         (*aResult)->Exists(&bRes);
-         if (!bRes) {
--          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0755);
-+          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0700);
-           NS_ENSURE_SUCCESS(rv, rv);
-           // Update dir pref
-           prefBranch->SetComplexValue(NS_PREF_DIR,
+$OpenBSD: patch-mozilla_toolkit_components_downloads_src_nsDownloadManager_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp.orig	Tue Jul 13 23:29:15 2010
++++ mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp	Wed Jul 21 10:11:59 2010
+@@ -1160,7 +1160,7 @@ nsDownloadManager::GetDefaultDownloadsDirectory(nsILoc
+     rv = downloadDir->Exists(&exists);
+     NS_ENSURE_SUCCESS(rv, rv);
+     if (!exists) {
+-      rv = downloadDir->Create(nsIFile::DIRECTORY_TYPE, 0755);
++      rv = downloadDir->Create(nsIFile::DIRECTORY_TYPE, 0700);
+       NS_ENSURE_SUCCESS(rv, rv);
+     }
+   }
+@@ -1256,7 +1256,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
+           (void)customDirectory->Exists(&exists);
+ 
+           if (!exists) {
+-            rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0755);
++            rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0700);
+             if (NS_SUCCEEDED(rv)) {
+               customDirectory.forget(aResult);
+               return NS_OK;

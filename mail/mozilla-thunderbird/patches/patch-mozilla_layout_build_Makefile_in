@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_layout_build_Makefile_in,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/layout/build/Makefile.in.orig	Sat Dec  5 02:56:14 2009
-+++ mozilla/layout/build/Makefile.in	Sat Jan 16 16:28:49 2010
-@@ -263,6 +263,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))
+$OpenBSD: patch-mozilla_layout_build_Makefile_in,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/layout/build/Makefile.in.orig	Wed Jun 23 19:46:42 2010
++++ mozilla/layout/build/Makefile.in	Wed Jul  7 08:43:19 2010
+@@ -277,6 +277,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))
  EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS)
  endif
  

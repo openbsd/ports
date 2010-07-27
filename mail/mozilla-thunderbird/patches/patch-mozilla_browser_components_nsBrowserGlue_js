@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_browser_components_nsBrowserGlue_js,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/browser/components/nsBrowserGlue.js.orig	Mon Jan 11 18:42:36 2010
-+++ mozilla/browser/components/nsBrowserGlue.js	Sat Jan 23 12:42:26 2010
-@@ -267,10 +267,6 @@ BrowserGlue.prototype = {
+$OpenBSD: patch-mozilla_browser_components_nsBrowserGlue_js,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/browser/components/nsBrowserGlue.js.orig	Wed Jun 23 19:46:30 2010
++++ mozilla/browser/components/nsBrowserGlue.js	Wed Jul  7 08:45:31 2010
+@@ -307,10 +307,6 @@ BrowserGlue.prototype = {
    // Browser startup complete. All initial windows have opened.
    _onBrowserStartup: function()
    {
@@ -12,7 +12,7 @@ $OpenBSD: patch-mozilla_browser_components_nsBrowserGlue_js,v 1.1 2010/04/03 09:
      // If new add-ons were installed during startup open the add-ons manager.
      if (this._prefs.prefHasUserValue(PREF_EM_NEW_ADDONS_LIST)) {
        var args = Cc["@mozilla.org/supports-array;1"].
-@@ -416,79 +412,6 @@ BrowserGlue.prototype = {
+@@ -462,79 +458,6 @@ BrowserGlue.prototype = {
        }
        break;
      }
@@ -65,7 +65,7 @@ $OpenBSD: patch-mozilla_browser_components_nsBrowserGlue_js,v 1.1 2010/04/03 09:
 -    var notifyBox = browser.getNotificationBox();
 -
 -    var brandBundle  = this._bundleService.createBundle("chrome://branding/locale/brand.properties");
--    var rightsBundle = this._bundleService.createBundle("chrome://browser/locale/aboutRights.properties");
+-    var rightsBundle = this._bundleService.createBundle("chrome://global/locale/aboutRights.properties");
 -
 -    var buttonLabel      = rightsBundle.GetStringFromName("buttonLabel");
 -    var buttonAccessKey  = rightsBundle.GetStringFromName("buttonAccessKey");
@@ -90,5 +90,5 @@ $OpenBSD: patch-mozilla_browser_components_nsBrowserGlue_js,v 1.1 2010/04/03 09:
 -    var box = notifyBox.appendNotification(notifyRightsText, "about-rights", null, notifyBox.PRIORITY_INFO_LOW, buttons);
 -    box.persistence = 3; // arbitrary number, just so bar sticks around for a bit
    },
- 
-   // returns the (cached) Sanitizer constructor
+   
+   _showPluginUpdatePage : function () {

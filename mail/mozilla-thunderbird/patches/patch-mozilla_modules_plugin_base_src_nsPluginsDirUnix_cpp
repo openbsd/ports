@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_modules_plugin_base_src_nsPluginsDirUnix_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp.orig	Sat Dec  5 02:56:20 2009
-+++ mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp	Sat Jan 16 16:28:35 2010
-@@ -152,7 +152,7 @@ static PRBool LoadExtraSharedLib(const char *name, cha
+$OpenBSD: patch-mozilla_modules_plugin_base_src_nsPluginsDirUnix_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp.orig	Wed Jun 23 19:47:04 2010
++++ mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp	Wed Jul  7 08:43:19 2010
+@@ -142,7 +142,7 @@ static PRBool LoadExtraSharedLib(const char *name, cha
  #endif
  /*
   this function looks for

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_build_unix_mozilla_in,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/build/unix/mozilla.in.orig	Sat Dec  5 02:55:56 2009
-+++ mozilla/build/unix/mozilla.in	Sat Jan 16 16:31:41 2010
+$OpenBSD: patch-mozilla_build_unix_mozilla_in,v 1.2 2010/07/27 17:01:16 landry Exp $
+--- mozilla/build/unix/mozilla.in.orig	Wed Jun 23 19:46:30 2010
++++ mozilla/build/unix/mozilla.in	Wed Jul  7 08:43:04 2010
 @@ -50,6 +50,11 @@
  #uncomment for debugging
  #set -x
@@ -13,7 +13,7 @@ $OpenBSD: patch-mozilla_build_unix_mozilla_in,v 1.1 2010/04/03 09:26:46 landry E
  moz_libdir=%MOZAPPDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -129,6 +134,12 @@ do
+@@ -131,6 +136,12 @@ do
        ;;
    esac
  done
