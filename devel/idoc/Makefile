@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/27 18:18:29 kili Exp $
 
 COMMENT =		minimalist documentation tool for Haskell
 
 DISTNAME =		idoc-0.2.6
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =		http://www.cse.unsw.edu.au/~chak/haskell/idoc/
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c gmp m
+WANTLIB =		c m
 
 # pure Haskell 98
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB +=		pthread util
+WANTLIB +=		gmp pthread util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
 LIB_DEPENDS =		::devel/gmp
