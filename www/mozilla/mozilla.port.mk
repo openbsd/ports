@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.2 2010/07/09 15:08:39 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.3 2010/07/27 14:20:15 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -142,8 +142,12 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client \
 		${MOB}/regxpcom ${MOZ}
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
-		${MOZ}/README.OpenBSD
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
-		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop
+	if [ -f ${FILESDIR}/README.OpenBSD ]; then \
+		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
+			${MOZ}/README.OpenBSD ; \
+	fi ;
+	if [ -f ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop ] ; then \
+		${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
+		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
+			${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
+	fi ;
