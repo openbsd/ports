@@ -1,11 +1,33 @@
-$OpenBSD: patch-configure,v 1.2 2008/08/28 19:55:20 kili Exp $
+$OpenBSD: patch-configure,v 1.3 2010/07/27 18:16:19 kili Exp $
 
 Don't be so picky about the compiler used to build nhc.
 Disable -m32 for now, not all archs support it.
 
---- configure.orig	Thu Nov 22 14:05:24 2007
-+++ configure	Sun Nov 25 16:56:18 2007
-@@ -309,8 +309,7 @@ then
+--- configure.orig	Fri Jul  9 14:41:23 2010
++++ configure	Sat Jul 24 16:05:04 2010
+@@ -101,8 +101,8 @@ esac
+ #RTSFLAG=yes
+ HEAP=100000
+ BUILDWITH=
+-BACKCCOPTIONS=-m32
+-BACKLDOPTIONS=-m32
++BACKCCOPTIONS=
++BACKLDOPTIONS=
+ 
+ BUILDLIBDIR=$PWD/lib
+ BUILDINCDIR=$PWD/include
+@@ -203,8 +203,8 @@ do
+   echo "    --hostcc=path      path to the host compiler [mandatory]"
+   echo "    --hoststrip=path   path to the host strip command [mandatory]"
+   echo "    --endian=flag      -DLOW_BYTE_FIRST (little endian) | -DHIGH_BYTE_FIRST (big endian) [mandatory]"
+-  echo "    --ccoption=flags   C options for the back-end compiler called by nhc98 [-m32]"
+-  echo "    --ldoption=flags   LD options for the back-end linker called by nhc98 [-m32]"
++  echo "    --ccoption=flags   C options for the back-end compiler called by nhc98"
++  echo "    --ldoption=flags   LD options for the back-end linker called by nhc98"
+   echo "    --intsize=32       (nhc98 only support 32 bits compatible architectures by now)"
+   echo "    --cabal-parse=path path to a local cabal-parse binary [mandatory]"
+             exit 0 ;;
+@@ -411,8 +411,7 @@ then
    fi
    case $BUILDWITH in
      hbc|xtc)   RTSFLAG=no;;
@@ -13,18 +35,18 @@ Disable -m32 for now, not all archs support it.
 -    gcc)       RTSFLAG=yes;;
 +    *)         RTSFLAG=yes;;
    esac
-   echo "nhc98comp uses RTS delimiters?              $RTSFLAG"
-   if [ "$BUILDOPTS" != "" ]
-@@ -334,7 +333,7 @@ main() {
+   
+   echo "backend compiler option:                    $BACKCCOPTIONS"
+@@ -450,7 +449,7 @@ main() {
    }
  }
  !!!
--    $CCC -m32 $COPTS -o endian endian.c
-+    $CCC $COPTS -o endian endian.c
+-    $HOSTCCC -m32 $COPTS -o endian endian.c
++    $HOSTCCC $COPTS -o endian endian.c
      ENDIAN=`./endian`
      rm -f endian$EXE endian.c
      echo -n "$ENDIAN "
-@@ -365,16 +364,16 @@ main() {
+@@ -482,16 +481,16 @@ main() {
  void test (void) { mvaddstr(1,2,"hello world"); }
  int main (void) { test(); }
  !!!
@@ -45,7 +67,7 @@ Disable -m32 for now, not all archs support it.
              then CURSES="-lcurses -ltermcap"
              else CURSES="-ltermcap -lcurses"	# don't know a good default?
              fi
-@@ -391,10 +390,10 @@ int main (void) { test(); }
+@@ -508,10 +507,10 @@ int main (void) { test(); }
  
      echo -n "Testing for the readline library: "
      echo 'main(){readline();}' >rd.c
@@ -58,7 +80,7 @@ Disable -m32 for now, not all archs support it.
        then echo "          -lreadline $CURSES (detected)"
           READLINE="-DUSE_READLINE=1 -lreadline $CURSES"
        else echo '          no  (detected)'
-@@ -508,7 +507,7 @@ main(int argc, char **argv)
+@@ -625,7 +624,7 @@ main(int argc, char **argv)
    then
      echo "Creating new lib/$MACHINE/nhc98heap ..."
      sed -e "s|DefaultHeap|$HEAP|" script/nhc98heap.c >./nhc98heap.c

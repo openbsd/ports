@@ -1,9 +1,9 @@
-$OpenBSD: patch-script_harch,v 1.4 2008/08/28 19:55:20 kili Exp $
+$OpenBSD: patch-script_harch_inst,v 1.1 2010/07/27 18:16:19 kili Exp $
 
 No harch black magic for OpenBSD, we don't need this.
 
---- script/harch.orig	Thu Nov 22 11:32:51 2007
-+++ script/harch	Fri Nov 23 21:21:36 2007
+--- script/harch.inst.orig	Thu Nov 22 11:32:51 2007
++++ script/harch.inst	Fri Nov 23 21:21:36 2007
 @@ -4,6 +4,9 @@
  #		May 1999: ensure that small differences (e.g. kernel version)
  #			  don't matter.

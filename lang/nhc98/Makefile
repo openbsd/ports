@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/08/28 19:55:20 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/27 18:16:18 kili Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	portable Haskell compiler
@@ -6,13 +6,13 @@ COMMENT=	portable Haskell compiler
 # not for 64 bits, broken on ppc
 NOT_FOR_ARCHS=	${LP64_ARCHS} powerpc
 
-V=		1.20
+V=		1.22
 DISTNAME=	nhc98-$V
 CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/nhc98/
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
-MASTER_SITES=	http://www.cs.york.ac.uk/fp/nhc98/
+MASTER_SITES=	${HOMEPAGE}
 
 DISTFILES=	nhc98src-$V.tar.gz
 
