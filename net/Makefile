@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.642 2010/07/28 12:26:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.643 2010/07/28 14:25:01 sebastia Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -100,6 +100,7 @@
      SUBDIR += gajim
      SUBDIR += galago-daemon
      SUBDIR += gftp
+     SUBDIR += gloox
      SUBDIR += gmudix
      SUBDIR += gnaughty
      SUBDIR += gnet
