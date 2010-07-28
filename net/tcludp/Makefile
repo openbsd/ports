@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/28 17:07:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/28 18:09:10 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
@@ -29,9 +29,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--datadir=${PREFIX}/share/examples
 REGRESS_TARGET =	test
-SUBST_VARS =		LIBudp108_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+CONFIGURE_ENV =		LIBudp108_VERSION=${LIBudp108_VERSION}
 
 .include <bsd.port.mk>
