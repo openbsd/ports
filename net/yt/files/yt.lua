@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.28 2010/06/07 22:43:26 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.29 2010/07/28 22:52:28 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -18,7 +18,7 @@ arguments = ""
 convert = "ffmpeg -y -i <flv> -b 1000k -f mp4 -vcodec mpeg4 -acodec libfaac -ab 128k <mp4> 1>/dev/null 2>&1"
 
 -- Set this to the base location where to fetch YouTube videos from.
-base_url = "http://www.youtube.com/get_video"
+base_url = "http://www.youtube.com/get_video_info"
 
 -- Usage and supported options.
 prog = {
@@ -30,6 +30,15 @@ options = Options {
    Option {{"n"}, "do not convert video"},
    Option {{"o"}, "change output filename", "Req", "filename"},
 }
+
+-- from lua-users.org StringRecipes
+function url_decode(str)
+   str = string.gsub (str, "+", " ")
+   str = string.gsub (str, "%%(%x%x)",
+       function(h) return string.char(tonumber(h,16)) end)
+   str = string.gsub (str, "\r\n", "\n")
+   return str
+end
 
 -- Process arguments.  Show usage.
 urls, opts, errors = getopt.getOpt(arg, options)
@@ -128,18 +137,27 @@ for i = 1, table.getn(urls) do
 ]]--
 
    if video_id then
-      --- Look for the additional video ID.
-      pattern = "&t=([^\&='\"]*)"
-      t = assert(string.match(body, pattern))
       url = string.format("%q", base_url .. "?video_id=" .. video_id
-         .. "&t=" .. t .. "&eurl=&el=detailpage&ps=default&gl=US&hl=en" .. fmt)
+         .. "&eurl=&el=detailpage&ps=default&gl=US&hl=en" .. fmt)
+
+      -- Look for the download URL
+      url = string.match(url, "\"(.*)\"")
+      io.stderr:write(string.format("Getting %s ...\n", url))
+      t = {  }
+      assert(http.request{
+         url = url,
+         sink = ltn12.sink.table(t),
+         proxy = os.getenv("http_proxy")
+      })
+      body = table.concat(t)
+      encurl = string.match(body, "7C(http.-id%%3D.-)%%")
+      url = string.format("\"%s\"", url_decode(encurl))
    else
       -- We assume it's Google Video URL.
       pattern = "/googleplayer.swf%?videoUrl(.-)thumbnailUrl"
       url = assert(string.match(body, pattern))
       url = string.gsub (url, "\\x", "%%")
-      url = string.gsub (url, "%%(%x%x)", function(h)
-         return string.char(tonumber(h,16)) end)
+      url = url_decode(url)
       url = string.gsub (url, "^=", "")
       url = string.format("%q", url)
    end
