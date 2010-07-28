@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2010/05/19 18:53:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/28 20:25:11 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.1
 PKGNAME=	${DISTNAME}.7
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -30,7 +31,6 @@ WANTLIB=	c termcap
 #YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-multibyte	# missing wcscoll(3)
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 
 .include <bsd.port.mk>
