@@ -1,14 +1,0 @@
-$OpenBSD: patch-generic_fifo2_c,v 1.1.1.1 2010/07/28 17:03:00 sebastia Exp $
-
-fix implicit declarations
-
---- generic/fifo2.c.orig	Sun Jul 18 14:19:42 2010
-+++ generic/fifo2.c	Sun Jul 18 14:20:36 2010
-@@ -27,6 +27,7 @@
-  */
- 
- 
-+#include <string.h>
- #include "memchanInt.h"
- #include "buf.h"
- 
