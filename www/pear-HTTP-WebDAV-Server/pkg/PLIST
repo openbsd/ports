@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/28 20:06:15 sthen Exp $
+@group daemon
+lib/
+lib/php/
+pear/doc/
+pear/doc/HTTP_WebDAV_Server/
+pear/doc/HTTP_WebDAV_Server/README
+pear/doc/HTTP_WebDAV_Server/dav.txt
+pear/doc/HTTP_WebDAV_Server/db/
+pear/doc/HTTP_WebDAV_Server/db/Fileserver.sql
+pear/lib/.registry/http_webdav_server.reg
+pear/lib/HTTP/
+pear/lib/HTTP/WebDAV/
+pear/lib/HTTP/WebDAV/Server/
+pear/lib/HTTP/WebDAV/Server.php
+pear/lib/HTTP/WebDAV/Server/Filesystem.php
+pear/lib/HTTP/WebDAV/Tools/
+pear/lib/HTTP/WebDAV/Tools/_parse_lockinfo.php
+pear/lib/HTTP/WebDAV/Tools/_parse_propfind.php
+pear/lib/HTTP/WebDAV/Tools/_parse_proppatch.php
