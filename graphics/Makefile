@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2010/07/23 16:03:06 phessler Exp $
+# $OpenBSD: Makefile,v 1.267 2010/07/28 17:50:46 sebastia Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -211,6 +211,7 @@
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
+     SUBDIR += tkimg
      SUBDIR += tkpng
      SUBDIR += ufraw
      SUBDIR += ufraw,lensfun

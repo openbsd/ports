@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2010/06/19 19:33:11 espie Exp $
+# $OpenBSD: Makefile,v 1.133 2010/07/28 17:50:46 sebastia Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += magicpoint
      SUBDIR += mc
      SUBDIR += memcached
+     SUBDIR += memchan
      SUBDIR += migrationtools
      SUBDIR += mmv
      SUBDIR += most

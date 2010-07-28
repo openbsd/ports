@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2010/07/28 14:25:01 sebastia Exp $
+# $OpenBSD: Makefile,v 1.644 2010/07/28 17:50:46 sebastia Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -478,6 +478,7 @@
      SUBDIR += synergy
      SUBDIR += tacacs+
      SUBDIR += tclcurl
+     SUBDIR += tcludp
      SUBDIR += tcpcat
      SUBDIR += tcpdpriv
      SUBDIR += tcpflow
