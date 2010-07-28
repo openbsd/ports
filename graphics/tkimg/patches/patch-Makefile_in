@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/28 17:04:55 sebastia Exp $
+
+Do not use the two-stages install here, just patch the first step (collate)
+and make use of the INSTALL_TARGET in the ports Makefile
+
+--- Makefile.in.orig	Wed Aug 18 19:10:38 2004
++++ Makefile.in	Tue Jul 20 15:52:14 2010
+@@ -117,14 +117,14 @@ collate: all
+ 		here=`pwd` ; \
+ 		cd $$sub ; \
+ 		$(MAKE) install \
+-			exec_prefix=$$here/Img/exec_prefix		\
+-			prefix=$$here/Img/prefix			\
+-			pkglibdir=$$here/Img/exec_prefix/lib/Img	\
++			exec_prefix=$(prefix)/		\
++			prefix=$(prefix)/		\
++			pkglibdir=$(LIB_RUNTIME_DIR)/	\
+ 			;						\
+ 		cd $$here ; \
+-		cat Img/exec_prefix/lib/Img/pkgIndex.tcl >> pkgIndex.tcl ; \
++		cat $$sub/pkgIndex.tcl >> pkgIndex.tcl ; \
+ 	done
+-	mv pkgIndex.tcl Img/exec_prefix/lib/Img/pkgIndex.tcl
++	mv pkgIndex.tcl $(INSTALL_ROOT)/$(LIB_RUNTIME_DIR)/pkgIndex.tcl
+ 
+ install: collate
+ 	mkdir -p    $(INSTALL_ROOT)$(LIB_RUNTIME_DIR)

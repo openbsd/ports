@@ -1,0 +1,12 @@
+$OpenBSD: patch-ppm_configure,v 1.1.1.1 2010/07/28 17:04:55 sebastia Exp $
+--- ppm/configure.orig	Sun Jul 18 17:12:37 2010
++++ ppm/configure	Sun Jul 18 17:13:15 2010
+@@ -4864,7 +4864,7 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   echo "$ac_t""yes" 1>&6
+-		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${SHLIB_VERSION}'
+ else
+   rm -rf conftest*
+   echo "$ac_t""no" 1>&6

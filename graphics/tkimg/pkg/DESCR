@@ -1,0 +1,3 @@
+This package enhances Tk, adding support for many 
+other Image formats: BMP, XBM, XPM, GIF (with 
+transparency, but without LZW), PNG, JPEG, TIFF. 

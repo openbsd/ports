@@ -1,0 +1,24 @@
+$OpenBSD: patch-base_configure,v 1.1.1.1 2010/07/28 17:04:55 sebastia Exp $
+
+IMGLIBDIR to set correct paths in tkimgConfig.sh
+
+--- base/configure.orig	Wed Aug 18 19:10:38 2004
++++ base/configure	Tue Jul 20 17:08:58 2010
+@@ -4709,7 +4709,7 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   echo "$ac_t""yes" 1>&6
+-		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${SHLIB_VERSION}'
+ else
+   rm -rf conftest*
+   echo "$ac_t""no" 1>&6
+@@ -5913,7 +5913,7 @@ fi
+     #--------------------------------------------------------------------
+ 
+     # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-    eval pkglibdir="${libdir}/tkimg${VERSION}"
++    eval pkglibdir="${libdir}/${IMGLIBDIR}"
+     if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+ 	eval tkimg_LIB_FLAG="-ltkimg${VERSION}${DBGX}"
+     else
