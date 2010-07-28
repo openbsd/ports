@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2010/06/07 06:13:56 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2010/07/28 21:27:28 dcoppa Exp $
 --- CMakeLists.txt.orig	Mon May 10 10:46:04 2010
 +++ CMakeLists.txt	Mon May 10 10:46:23 2010
 @@ -88,7 +88,6 @@ set(AWE_MAN_SRCS
@@ -116,9 +116,9 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2010/06/07 06:13:56 dcoppa Exp $
          RENAME ${AWE_CONF_FILE})
  if(GENERATE_MANPAGES)
 -    if(COMPRESS_MANPAGES)
--        set(regex "\\.(xml|[0-9])$")
+-        set(regex "\\.(xml|txt|[0-9])$")
 -    else()
--        set(regex "\\.(xml|gz)$")
+-        set(regex "\\.(xml|txt|gz)$")
 -    endif()
 -    install(DIRECTORY ${BUILD_DIR}/${relpath}/ DESTINATION ${AWESOME_MAN_PATH}
 -            REGEX ${regex} EXCLUDE )

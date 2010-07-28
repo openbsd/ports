@@ -1,19 +1,23 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
---- awesomeConfig.cmake.orig	Tue Mar  2 16:54:05 2010
-+++ awesomeConfig.cmake	Mon May 10 11:25:40 2010
-@@ -18,9 +18,9 @@ option(GENERATE_LUADOC "generate luadoc" ON)
+$OpenBSD: patch-awesomeConfig_cmake,v 1.2 2010/07/28 21:27:28 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Wed Jul 14 08:30:09 2010
++++ awesomeConfig.cmake	Wed Jul 28 22:57:53 2010
+@@ -18,11 +18,11 @@ option(GENERATE_LUADOC "generate luadoc" ON)
  link_directories(/usr/local/lib)
  
  # {{{ CFLAGS
 -add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
 -    -Wchar-subscripts -Wundef -Wshadow -Wcast-align -Wwrite-strings
 -    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
+-    -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
+-    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
 +add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall
 +    -Wchar-subscripts -Wcast-align -Wwrite-strings
 +    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized
-     -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
-     -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
++    -Wpointer-arith -Wformat-nonliteral -Wno-format-zero-length
++    -Wmissing-format-attribute -Wmissing-prototypes
      -Wstrict-prototypes)
+ # }}}
+ 
 @@ -168,6 +168,9 @@ endmacro()
  # Check for libev
  a_find_library(LIB_EV ev)

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/06/07 06:13:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/28 21:27:28 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-DISTNAME=		awesome-3.4.5
+DISTNAME=		awesome-3.4.6
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -16,25 +16,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xau Xdmcp Xext Xrender c cairo expat \
-			fontconfig freetype glib-2.0 glitz gmodule-2.0 \
-			gobject-2.0 gthread-2.0 iconv intl m pixman-1 \
-			png pthread pthread-stubs xcb xcb-atom xcb-aux \
-			xcb-event xcb-icccm xcb-image xcb-keysyms \
-			xcb-property xcb-randr xcb-render \
-			xcb-render-util xcb-shape xcb-shm \
-			xcb-xinerama xcb-xtest z
+WANTLIB+=		Imlib2 X11 Xau Xdmcp Xext Xrender c cairo
+WANTLIB+=		dbus-1 ev execinfo expat fontconfig freetype
+WANTLIB+=		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB+=		iconv intl lua m pango-1.0 pangocairo-1.0
+WANTLIB+=		pangoft2-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB+=		startup-notification-1 xcb xcb-atom xcb-aux
+WANTLIB+=		xcb-event xcb-icccm xcb-image xcb-keysyms
+WANTLIB+=		xcb-property xcb-randr xcb-render xcb-render-util
+WANTLIB+=		xcb-shape xcb-shm xcb-xinerama xcb-xtest
+WANTLIB+=		xdg-basedir z
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-LIB_DEPENDS=		execinfo::devel/libexecinfo \
-			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
-			ev::devel/libev \
-			startup-notification-1::devel/startup-notification \
-			Imlib2.>=2::graphics/imlib2 \
-			lua::lang/lua \
-			dbus-1::x11/dbus \
-			xdg-basedir::x11/libxdg-basedir
+LIB_DEPENDS=		::devel/libexecinfo \
+			::devel/pango \
+			::devel/libev \
+			::devel/startup-notification \
+			::graphics/imlib2 \
+			::lang/lua \
+			::x11/dbus \
+			::x11/libxdg-basedir
 
 BUILD_DEPENDS=		::devel/gperf \
 			::textproc/asciidoc \
@@ -61,6 +63,7 @@ pre-install:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/awesome/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome/
-	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua ${PREFIX}/share/examples/awesome/
+	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
+		${PREFIX}/share/examples/awesome/
 
 .include <bsd.port.mk>
