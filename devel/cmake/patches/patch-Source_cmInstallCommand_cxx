@@ -1,16 +1,17 @@
-$OpenBSD: patch-Source_cmInstallCommand_cxx,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Source/cmInstallCommand.cxx.orig	Tue Apr  6 16:45:34 2010
-+++ Source/cmInstallCommand.cxx	Mon Apr 19 16:04:04 2010
-@@ -324,6 +324,8 @@ bool cmInstallCommand::HandleTargetsMode(std::vector<s
+$OpenBSD: patch-Source_cmInstallCommand_cxx,v 1.2 2010/07/28 20:34:22 dcoppa Exp $
+--- Source/cmInstallCommand.cxx.orig	Mon Jun 28 17:15:59 2010
++++ Source/cmInstallCommand.cxx	Wed Jul 28 21:12:05 2010
+@@ -324,6 +324,9 @@ bool cmInstallCommand::HandleTargetsMode(std::vector<s
  
    // Select the mode for installing symlinks to versioned shared libraries.
    cmInstallTargetGenerator::NamelinkModeType
-+  // OpenBSD ports system needs NamelinkModeSkip by default.
++  // Do not install symlinks to versioned shared libraries on OpenBSD.
++  // Use NamelinkModeSkip unconditionally.
 +#if !defined(__OpenBSD__)
      namelinkMode = cmInstallTargetGenerator::NamelinkModeNone;
    if(libraryArgs.GetNamelinkOnly())
      {
-@@ -333,7 +335,9 @@ bool cmInstallCommand::HandleTargetsMode(std::vector<s
+@@ -333,7 +336,9 @@ bool cmInstallCommand::HandleTargetsMode(std::vector<s
      {
      namelinkMode = cmInstallTargetGenerator::NamelinkModeSkip;
      }

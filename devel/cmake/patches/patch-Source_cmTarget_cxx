@@ -1,34 +1,36 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.5 2010/07/12 19:19:30 dcoppa Exp $
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.6 2010/07/28 20:34:22 dcoppa Exp $
 --- Source/cmTarget.cxx.orig	Mon Jun 28 17:15:59 2010
-+++ Source/cmTarget.cxx	Mon Jul  5 15:59:34 2010
-@@ -3164,6 +3164,34 @@ void cmTarget::GetLibraryNames(std::string& name,
++++ Source/cmTarget.cxx	Wed Jul 28 21:12:36 2010
+@@ -3164,6 +3164,36 @@ void cmTarget::GetLibraryNames(std::string& name,
    std::string suffix;
    this->GetFullNameInternal(config, false, prefix, base, suffix);
  
 +#if defined(__OpenBSD__)
-+  /* OpenBSD - LIBxxx_VERSION environment override.
-+   * Needed for OpenBSD ports system.
-+   */
-+  std::string env_name = "LIB" + base + "_VERSION";
-+  char *env_vers_cstr = getenv(env_name.c_str());
++  // Override shared library version using LIBxxx_VERSION 
++  // environment variable. Needed for OpenBSD ports system.
++  if(this->GetType() == cmTarget::SHARED_LIBRARY && 
++     this->Makefile->GetDefinition(sonameFlag.c_str()))
++    {
++    std::string env_name = "LIB" + base + "_VERSION";
++    char *env_vers_cstr = getenv(env_name.c_str());
 +
-+  if (env_vers_cstr != NULL) {
-+    // this means an override is present
-+    std::string env_vers = std::string(env_vers_cstr);
++    if (env_vers_cstr != NULL) {
++      // This means an override is present.
++      std::string env_vers = std::string(env_vers_cstr);
 +
-+    size_t first = env_vers.find_first_of(".");
-+    size_t last = env_vers.find_first_of(".");
++      size_t first = env_vers.find_first_of(".");
++      size_t last = env_vers.find_first_of(".");
 +
-+    if ((first != last) || (first == std::string::npos)) {
-+      std::string msg = "Bad ";
-+      msg += env_name;
-+      msg += " specification: ";
-+      msg += env_vers;
-+      this->Makefile->IssueMessage(cmake::FATAL_ERROR, 
-+                                   msg.c_str());
-+    } else {
-+      /* all OK, use OpenBSD override */
-+      soversion = version = env_vers_cstr;
++      if ((first != last) || (first == std::string::npos)) {
++        std::string msg = "Bad ";
++        msg += env_name;
++        msg += " specification: ";
++        msg += env_vers;
++        this->Makefile->IssueMessage(cmake::FATAL_ERROR, 
++                                     msg.c_str());
++      } else {
++        soversion = version = env_vers_cstr;
++      }
 +    }
 +  }
 +#endif
@@ -36,12 +38,13 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.5 2010/07/12 19:19:30 dcoppa Exp $
    // The library name.
    name = prefix+base+suffix;
  
-@@ -3191,8 +3219,26 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -3191,8 +3221,27 @@ void cmTarget::GetLibraryNames(std::string& name,
    if(version)
      {
      realName += ".";
 +#if defined(__OpenBSD__)
-+    // libname.so.X.X.X -> libname.so.X.X conversion
++    // OpenBSD-style versioning scheme for shared libraries.
++    // Convert libname.so.X.X.X to libname.so.X.X
 +    int j = 0;
 +    for (int i = 0; i < (int)strlen(version); i++) 
 +      {
