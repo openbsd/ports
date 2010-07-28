@@ -1,0 +1,23 @@
+$OpenBSD: patch-build_rules_global,v 1.1.1.1 2010/07/28 18:13:01 sebastia Exp $
+
+we do not want to build the debug libraries
+
+--- build/rules/global.orig	Mon Jul 19 19:35:21 2010
++++ build/rules/global	Mon Jul 19 19:37:42 2010
+@@ -189,13 +189,13 @@ LINKMODE = BOTH
+ endif
+ 
+ ifeq ($(LINKMODE),SHARED)
+-DEFAULT_TARGET = all_shared
++DEFAULT_TARGET = shared_release
+ endif
+ ifeq ($(LINKMODE),STATIC)
+-DEFAULT_TARGET = all_static
++DEFAULT_TARGET = static_release
+ endif
+ ifeq ($(LINKMODE),BOTH)
+-DEFAULT_TARGET = all_static all_shared
++DEFAULT_TARGET = all_release
+ endif
+ 
+ #

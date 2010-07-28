@@ -1,0 +1,4 @@
+C++ class libraries for network-centric, portable applications, 
+integrated perfectly with the C++ Standard Library. Includes 
+network protocols (Sockets, HTTP, FTP, SMTP, POP3, etc.) and an 
+XML parser.

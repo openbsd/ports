@@ -1,0 +1,73 @@
+# $OpenBSD: OpenBSD,v 1.1.1.1 2010/07/28 18:13:00 sebastia Exp $
+#
+# OpenBSD
+#
+# Make settings for OpenBSD
+#
+#
+
+#
+# General Settings
+#
+LINKMODE = SHARED
+
+#
+# Define Tools
+#
+CC      ?= gcc
+CXX     ?= g++
+LINK    ?= $(CXX)
+LIB     ?= ar -cr
+RANLIB  ?= ranlib
+SHLIB   ?= $(CXX) -shared -o $@
+SHLIBLN ?= $(POCO_BASE)/build/script/shlibln
+DEP     ?= $(POCO_BASE)/build/script/makedepend.gcc 
+STRIP   ?= strip
+SHELL   ?= sh
+RM      ?= rm -rf
+CP      ?= cp
+MKDIR   ?= mkdir -p
+
+#
+# Extension for Shared Libraries
+#
+SHAREDLIBEXT     = .so.$(target_version)
+SHAREDLIBLINKEXT = .so
+
+#
+# Compiler and Linker Flags
+#
+CFLAGS          += 
+CFLAGS32        += 
+CFLAGS64        += 
+# using POCO_OS_FAMILY_UNIX does not make the SHAREDMEMORY or FPENVIRONMENT work
+# ENOTSUP 91 is the same as in sys/errno.h
+# OpenBSD doesn't have thread priority levels, therefore use 0
+CXXFLAGS        += -DPOCO_NO_SHAREDMEMORY -DPOCO_NO_FPENVIRONMENT -DENOTSUP=91 -DPRI_OTHER_MIN=0 -DPRI_OTHER_MAX=0
+CXXFLAGS32      +=
+CXXFLAGS64      +=
+LINKFLAGS       +=
+LINKFLAGS32     +=
+LINKFLAGS64     +=
+STATICOPT_CC    +=
+STATICOPT_CXX   +=
+STATICOPT_LINK  += -static
+SHAREDOPT_CC    += -fPIC
+SHAREDOPT_CXX   += -fPIC
+SHAREDOPT_LINK  += -Wl,-rpath,$(LIBPATH)
+DEBUGOPT_CC     += -g -D_DEBUG
+DEBUGOPT_CXX    += -g -D_DEBUG
+DEBUGOPT_LINK   += -g
+RELEASEOPT_CC   += -O2 -DNDEBUG
+RELEASEOPT_CXX  += -O2 -DNDEBUG
+RELEASEOPT_LINK += -O2
+
+#
+# System Specific Flags
+#
+SYSFLAGS += -D_REENTRANT -D_THREAD_SAFE 
+
+#
+# System Specific Libraries
+#
+SYSLIBS  += -pthread 

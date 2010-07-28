@@ -1,0 +1,15 @@
+$OpenBSD: patch-Foundation_Makefile,v 1.1.1.1 2010/07/28 18:13:01 sebastia Exp $
+
+we do not want to mix system pcre with bundled pcre
+
+--- Foundation/Makefile.orig	Fri Jan 15 13:13:34 2010
++++ Foundation/Makefile	Tue Jul 27 08:18:50 2010
+@@ -43,7 +43,7 @@ pcre_objects = pcre_chartables pcre_compile pcre_globa
+ pcre_utf8_objects = pcre_ucd pcre_tables
+ 
+ ifdef POCO_UNBUNDLED
+-	objects += $(pcre_utf8_objects) 
++	#objects += $(pcre_utf8_objects) 
+ 	SYSLIBS += -lpcre -lz
+ else
+ 	objects += $(zlib_objects) $(pcre_objects) $(pcre_utf8_objects)

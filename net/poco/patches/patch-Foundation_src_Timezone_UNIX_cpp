@@ -1,0 +1,12 @@
+$OpenBSD: patch-Foundation_src_Timezone_UNIX_cpp,v 1.1.1.1 2010/07/28 18:13:01 sebastia Exp $
+--- Foundation/src/Timezone_UNIX.cpp.orig	Fri Jan 15 13:13:34 2010
++++ Foundation/src/Timezone_UNIX.cpp	Mon Jul 19 12:09:13 2010
+@@ -52,7 +52,7 @@ class TZInfo (public)
+ 	
+ 	int timeZone()
+ 	{
+-	#if defined(__APPLE__)  || defined(__FreeBSD__) // no timezone global var
++	#if defined(__APPLE__)  || defined(__FreeBSD__) || defined(__OpenBSD__) // no timezone global var
+ 		std::time_t now = std::time(NULL);
+ 		struct std::tm t;
+ 		gmtime_r(&now, &t);

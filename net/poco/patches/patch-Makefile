@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/07/28 18:13:01 sebastia Exp $
+
+we do not want to create symlinks to libraries
+
+--- Makefile.orig	Mon Jul 19 16:55:43 2010
++++ Makefile	Mon Jul 19 16:55:51 2010
+@@ -42,7 +42,7 @@ install: libexecs
+ 		fi ; \
+ 	done
+ 	find $(POCO_BUILD)/lib -name "libPoco*" -type f -exec cp -f {} $(INSTALLDIR)/lib \;
+-	find $(POCO_BUILD)/lib -name "libPoco*" -type l -exec cp -Rf {} $(INSTALLDIR)/lib \;
++	# find $(POCO_BUILD)/lib -name "libPoco*" -type l -exec cp -Rf {} $(INSTALLDIR)/lib \;
+ 
+ libexecs =  Foundation-libexec XML-libexec Util-libexec Net-libexec Crypto-libexec NetSSL_OpenSSL-libexec Data-libexec Data/SQLite-libexec Data/ODBC-libexec Data/MySQL-libexec Zip-libexec PageCompiler-libexec
+ tests    =  Foundation-tests XML-tests Util-tests Net-tests Crypto-tests NetSSL_OpenSSL-tests Data-tests Data/SQLite-tests Data/ODBC-tests Data/MySQL-tests Zip-tests
