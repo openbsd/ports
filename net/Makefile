@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.644 2010/07/28 17:50:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.645 2010/07/28 18:18:48 sebastia Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -371,6 +371,7 @@
      SUBDIR += pktstat
      SUBDIR += plushs
      SUBDIR += pmacct
+     SUBDIR += poco
      SUBDIR += poink
      SUBDIR += pop3gwd
      SUBDIR += poptop
