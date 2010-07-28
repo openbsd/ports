@@ -1,0 +1,3 @@
+Memchan is an extension to Tcl implementing memory channels, 
+i.e. channels storing the data placed into them in memory, 
+not on disk.

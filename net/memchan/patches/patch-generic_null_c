@@ -1,0 +1,14 @@
+$OpenBSD: patch-generic_null_c,v 1.1.1.1 2010/07/28 17:03:00 sebastia Exp $
+
+fix implicit declarations
+
+--- generic/null.c.orig	Sun Jul 18 14:21:06 2010
++++ generic/null.c	Sun Jul 18 14:21:28 2010
+@@ -28,6 +28,7 @@
+ 
+ 
+ #include "memchanInt.h"
++#include <string.h>
+ 
+ /*
+  * Forward declarations of internal procedures.
