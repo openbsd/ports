@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2010/07/15 14:27:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.465 2010/07/28 20:06:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -302,6 +302,7 @@
      SUBDIR += pear-HTML-QuickForm
      SUBDIR += pear-HTML-Select
      SUBDIR += pear-HTML-Template-IT
+     SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
      SUBDIR += pecl-APC
      SUBDIR += pecl-chroot
