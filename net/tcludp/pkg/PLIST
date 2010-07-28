@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/28 17:07:25 sebastia Exp $
+lib/udp1.0.8/
+@lib lib/udp1.0.8/libudp108.so.${LIBudp108_VERSION}
+lib/udp1.0.8/pkgIndex.tcl
+@man man/mann/udp.n
+share/examples/udp1.0.8/
+share/examples/udp1.0.8/broadcast.tcl
+share/examples/udp1.0.8/bug1158628.tcl
+share/examples/udp1.0.8/chat.tcl
+share/examples/udp1.0.8/multicast.tcl
+share/examples/udp1.0.8/udpcat.tcl

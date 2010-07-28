@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/28 17:07:25 sebastia Exp $
+--- Makefile.in.orig	Tue Apr 25 13:13:33 2006
++++ Makefile.in	Sun Jul 18 12:25:38 2010
+@@ -200,7 +200,7 @@ udp.html: $(srcdir)/doc/udp.man
+ 	    $(DTPLITE) -o $@ html $(srcdir)/doc/udp.man ; \
+ 	fi
+ 
+-install: all install-binaries install-libraries install-doc
++install: all install-binaries install-libraries install-doc install-demos
+ 
+ install-binaries: binaries install-lib-binaries install-bin-binaries
+ 
+@@ -230,6 +230,10 @@ install-doc: doc
+ 	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(mandir)/mann ; \
+ 	done
++
++install-demos:
++	mkdir -p $(DESTDIR)$(pkgdatadir)
++	$(INSTALL_SCRIPT) $(srcdir)/demos/*.tcl $(DESTDIR)$(pkgdatadir)
+ 
+ test: binaries libraries
+ 	$(TCLSH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS)
