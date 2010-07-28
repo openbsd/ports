@@ -1,29 +1,21 @@
-$OpenBSD: patch-Coccinella_tcl,v 1.1 2005/04/18 21:59:51 alek Exp $
---- Coccinella.tcl.orig	Wed Jan 26 08:58:29 2005
-+++ Coccinella.tcl	Thu Apr  7 22:47:56 2005
-@@ -1,6 +1,6 @@
- #!/bin/sh
- # the next line restarts using wish \
--	exec wish "$0" -visual best "$@"
-+	exec wish8.4 "$0" -visual best "$@"
-       
- #  Coccinella.tcl ---
- #  
-@@ -131,7 +131,7 @@ if {[string equal $this(platform) "unix"
+$OpenBSD: patch-Coccinella_tcl,v 1.2 2010/07/28 18:03:00 sebastia Exp $
+--- Coccinella.tcl.orig	Mon Feb 23 05:47:12 2009
++++ Coccinella.tcl	Sat Aug 29 13:13:35 2009
+@@ -131,7 +131,7 @@ if {[string equal $this(platform) "unix"]} {
  } else {
      set thisScript [file normalize [info script]]
  }
 -set thisPath [file normalize [file dirname $thisScript]]
-+set thisPath "!!COCCINELLALIB!!"
- if {[info exists ::env(HOME)]} {
-     cd $::env(HOME)
- } else {
-@@ -159,6 +159,8 @@ if {![catch {package require Itcl 3.2}]}
- }
- set prefs(appName)    "Coccinella"
- set prefs(theAppName) "The Coccinella"
-+
-+lappend auto_path !!COCCINELLALIB!!
++set thisPath ${COCCINELLALIB}
  
- # Read our theme prefs file, if any, containing the theme name and locale.
- package require Theme
+ # Debug support.
+ source [file join $thisPath lib Debug.tcl]
+@@ -148,6 +148,8 @@ source [file join $thisPath lib Init.tcl]
+ 
+ set prefs(appName)    "Coccinella"
+ set prefs(theAppName) "Coccinella"
++
++lappend auto_path ${COCCINELLALIB}
+ 
+ # Read our prefs file containing the theme name and locale needed before splash.
+ package require PrefUtils

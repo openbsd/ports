@@ -1,43 +1,59 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/28 18:03:00 sebastia Exp $
 
-COMMENT=		Jabber client with whiteboard communication 
+SHARED_ONLY =		Yes
 
-DISTNAME=		Coccinella-0.95.4Src
-PKGNAME=		${DISTNAME:S/Src$//:L}
-CATEGORIES=		net
+COMMENT =		XMPP client with whiteboard
 
-HOMEPAGE=		http://hem.fyristorg.com/matben/
+DISTNAME =		Coccinella-0.96.18Src
+PKGNAME =		${DISTNAME:S/Src$//:L}
+CATEGORIES =		net
 
-MAINTAINER=		Marc Bruenink <marc@bruenink.de>
+HOMEPAGE =		http://www.coccinella.im
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# GPLv3
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=coccinella/}	
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}	
 
-RUN_DEPENDS=		::x11/tk/8.4
+MODULES =		x11/tk
 
-USE_X11=		Yes
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
-PKG_ARCH=		*
+# No dependencies to sound and telephony yet, due to the reason those
+# need to be ported to sndio first
+RUN_DEPENDS =		::devel/itcl \
+			::graphics/tkpng \
+			::graphics/tkimg \
+			::misc/memchan \
+			::net/tcludp \
+			::security/tcltls \
+			::x11/tkdnd \
+			::x11/tkhtml \
+			::x11/tktray \
+			::x11/tktreectrl
+
+NO_BUILD =		Yes
+NO_REGRESS =		Yes
+SEPARATE_BUILD =	simple
+COCCINELLALIB =		${LOCALBASE}/lib/coccinella
+SUBST_VARS =		COCCINELLALIB
 
 pre-configure:
-	@perl -pi -e 's,!!COCCINELLALIB!!,${LOCALBASE}/lib/coccinella,'\
-		 ${WRKSRC}/Coccinella.tcl ${WRKSRC}/lib/Init.tcl
+	${MODTCL_WISH_ADJ} ${WRKSRC}/Coccinella.tcl
+	${SUBST_CMD} ${WRKSRC}/Coccinella.tcl \
+		${WRKSRC}/lib/Init.tcl
 	
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/lib/coccinella
-	@cd ${WRKSRC} ; tar cf - TclXML [c-z]* | \
+	cd ${WRKSRC} ; tar cf - TclXML [c-z]* | \
 		tar xf - -C ${PREFIX}/lib/coccinella/
-	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/lib/coccinella/
+	rm ${PREFIX}/lib/coccinella/lib/Init.tcl.*
+	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/bin/coccinella
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinella
-	@cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-jabber \
-		READMEs/README-smileys msgs/README_encodings \
-		sounds/README-sounds \
+	cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-xmpp \
+		READMEs/README-sounds \
 		${PREFIX}/share/doc/coccinella/ 
 
 .include <bsd.port.mk>
