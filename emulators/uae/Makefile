@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/26 01:30:26 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/29 18:43:32 landry Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-PKGNAME=	${DISTNAME}p5
+REVISION=	6
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -17,13 +17,14 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread z \
-		pthread-stubs xcb
+		gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 SDL \
+		pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util
 
 MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		SDL::devel/sdl
+LIB_DEPENDS+=	::x11/gtk+2 \
+		::devel/sdl
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
@@ -32,11 +33,6 @@ CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
 
 NO_REGRESS=	Yes
-
-# Workaround compiler bug on hppa: cc1plus spinning forever
-.if ${MACHINE_ARCH} == "hppa"
-CFLAGS+=	-O0
-.endif
 
 DOCS=		COMPATIBILITY CREDITS FAQ NEWS README README.PROGRAMMERS
 
