@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2010/07/26 03:47:40 todd Exp $
+# $OpenBSD: Makefile,v 1.207 2010/07/29 21:40:47 steven Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -121,6 +121,7 @@
      SUBDIR += rdiff-backup
      SUBDIR += resmon
      SUBDIR += rpl
+     SUBDIR += rsyslog
      SUBDIR += rtty
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-facter
