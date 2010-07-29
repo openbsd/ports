@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/28 20:06:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/07/29 09:18:26 sthen Exp $
 @group daemon
-lib/
-lib/php/
+@comment lib/
+@comment lib/php/
 pear/doc/
 pear/doc/HTTP_WebDAV_Server/
 pear/doc/HTTP_WebDAV_Server/README
