@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_syslogd_c,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
+--- tools/syslogd.c.orig	Wed Jul  7 11:43:39 2010
++++ tools/syslogd.c	Sun Jul 25 21:39:57 2010
+@@ -173,9 +173,8 @@ static rsRetVal GlobalClassExit(void);
+ #endif
+ #endif
+ 
+-#ifndef _PATH_LOGCONF 
+-#define _PATH_LOGCONF	"/etc/rsyslog.conf"
+-#endif
++#undef _PATH_LOGCONF
++#define _PATH_LOGCONF CONFIGFILE
+ 
+ #ifndef _PATH_MODDIR
+ #       if defined(__FreeBSD__)

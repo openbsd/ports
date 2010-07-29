@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
+@comment lib/rsyslog/ompgsql.la
+lib/rsyslog/ompgsql.so
+share/examples/rsyslog/createDB_pgsql.sql

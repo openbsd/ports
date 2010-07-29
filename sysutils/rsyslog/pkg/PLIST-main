@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
+lib/rsyslog/
+@comment lib/rsyslog/imklog.la
+lib/rsyslog/imklog.so
+@comment lib/rsyslog/immark.la
+lib/rsyslog/immark.so
+@comment lib/rsyslog/imrelp.la
+lib/rsyslog/imrelp.so
+@comment lib/rsyslog/imtcp.la
+lib/rsyslog/imtcp.so
+@comment lib/rsyslog/imudp.la
+lib/rsyslog/imudp.so
+@comment lib/rsyslog/imuxsock.la
+lib/rsyslog/imuxsock.so
+@comment lib/rsyslog/lmnet.la
+lib/rsyslog/lmnet.so
+@comment lib/rsyslog/lmnetstrms.la
+lib/rsyslog/lmnetstrms.so
+@comment lib/rsyslog/lmnsd_gtls.la
+lib/rsyslog/lmnsd_gtls.so
+@comment lib/rsyslog/lmnsd_ptcp.la
+lib/rsyslog/lmnsd_ptcp.so
+@comment lib/rsyslog/lmregexp.la
+lib/rsyslog/lmregexp.so
+@comment lib/rsyslog/lmstrmsrv.la
+lib/rsyslog/lmstrmsrv.so
+@comment lib/rsyslog/lmtcpclt.la
+lib/rsyslog/lmtcpclt.so
+@comment lib/rsyslog/lmtcpsrv.la
+lib/rsyslog/lmtcpsrv.so
+@comment lib/rsyslog/lmzlibw.la
+lib/rsyslog/lmzlibw.so
+@comment lib/rsyslog/ommail.la
+lib/rsyslog/ommail.so
+@comment lib/rsyslog/omrelp.la
+lib/rsyslog/omrelp.so
+@comment lib/rsyslog/omtesting.la
+lib/rsyslog/omtesting.so
+@man man/man5/rsyslog.conf.5
+@man man/man8/rsyslogd.8
+@bin sbin/rsyslogd
+share/examples/rsyslog/
+share/examples/rsyslog/rsyslog.conf
+@sample ${SYSCONFDIR}/rsyslog.conf

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
+@comment lib/rsyslog/ommysql.la
+lib/rsyslog/ommysql.so
+share/examples/rsyslog/createDB_mysql.sql
