@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.34 2010/07/29 02:17:58 djm Exp $
+# $OpenBSD: python.port.mk,v 1.35 2010/07/29 08:39:53 djm Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,8 +7,10 @@ SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python
 
-MODPY_VERSION?=		2.6
-.if ${MODPY_VERSION} == 2.4
+MODPY_VERSION?=		2.5
+.if ${MODPY_VERSION} == 2.3
+MODPY_VSPEC = >=${MODPY_VERSION},<2.4
+.elif ${MODPY_VERSION} == 2.4
 MODPY_VSPEC = >=${MODPY_VERSION},<2.5
 .elif ${MODPY_VERSION} == 2.5
 MODPY_VSPEC = >=${MODPY_VERSION},<2.6
