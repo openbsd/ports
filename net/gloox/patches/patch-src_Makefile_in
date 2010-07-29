@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/07/28 14:20:50 sebastia Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/07/29 06:31:15 sebastia Exp $
 
 Do not use the hardcoded make
 Get rid of GCC parameters that gcc-2.95 does not know of
@@ -17,15 +17,6 @@ Get rid of GCC parameters that gcc-2.95 does not know of
  
  lib_LTLIBRARIES = libgloox.la
  libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcpclient.cpp clientbase.cpp tag.cpp stanza.cpp logsink.cpp \
-@@ -315,7 +315,7 @@ libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcp
-                         tlsopensslserver.cpp compressiondefault.cpp \
-                         connectiontlsserver.cpp
- 
--libgloox_la_LDFLAGS = -version-info 8:0:0 -no-undefined -no-allow-shlib-undefined
-+libgloox_la_LDFLAGS = -version-info 0:0:0 -no-undefined -no-allow-shlib-undefined
- libgloox_la_LIBADD = 
- libgloox_la_CFLAGS = $(CPPFLAGS)
- libglooxincludedir = $(includedir)/gloox
 @@ -914,12 +914,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
  
  
