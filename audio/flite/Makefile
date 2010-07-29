@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/12 16:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/29 18:06:33 landry Exp $
 
-BROKEN-hppa=	GCC hangs compiling cmu_us_kal_diphone.c
 BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
 BROKEN-mips64el= GCC hangs compiling cmu_us_kal_diphone.c
 
@@ -8,7 +7,8 @@ COMMENT=	text to speech utility
 
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
-PKGNAME=	flite-${VERSION}p2
+PKGNAME=	flite-${VERSION}
+REVISION=	3
 SHARED_LIBS=	flite			1.2 \
 		flite_cmu_time_awb	1.2 \
 		flite_cmu_us_kal	1.2 \
