@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/09 16:46:50 sebastia Exp $
-@lib lib/tkpng0.9/libtkpng09.so.${LIBtkpng09_VERSION}

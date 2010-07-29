@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/09 16:46:50 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2010/07/29 11:42:56 sebastia Exp $
 lib/tkpng0.9/
+@lib lib/tkpng0.9/libtkpng09.so.${LIBtkpng09_VERSION}
 lib/tkpng0.9/pkgIndex.tcl
 share/doc/tkpng/
 share/doc/tkpng/README
