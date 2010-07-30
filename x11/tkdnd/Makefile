@@ -1,49 +1,52 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/16 08:30:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/30 16:41:09 sebastia Exp $
 
-SHARED_ONLY=    Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	drag n drop extension for Tk
+COMMENT =	drag n drop extension for Tk
 
-DISTNAME=	tkdnd-1.0a2
-SHARED_LIBS=	tkdnd 0.0
-CATEGORIES=	x11
+REVISION =	0
+DISTNAME =	tkdnd-1.0a2
+SHARED_LIBS =	tkdnd 0.0
+CATEGORIES =	x11
 
-HOMEPAGE= 	http://tkdnd.sourceforge.net/
+HOMEPAGE = 	http://tkdnd.sourceforge.net/
 
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkdnd/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkdnd/}
 
-MODULES=	x11/tk
-BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS=    ${MODTK_RUN_DEPENDS}
+MODULES =		x11/tk
+BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss expat fontconfig
-WANTLIB += freetype m z pthread pthread-stubs xcb
+WANTLIB += freetype m z pthread-stubs xcb
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tclinclude=${MODTCL_INCDIR} \
-		--with-tcl=${MODTCL_LIBDIR} \
-		--with-tk=${MODTK_LIBDIR} \
-		--datadir=${PREFIX}/share/examples \
-		--prefix=${WRKINST}
-CONFIGURE_ENV=	CFLAGS+=-I${X11BASE}/include
-REGRESS_TARGET=	tests
-REGRESS_IS_INTERACTIVE= X11
-
-SUBST_VARS=     LIBtkdnd_VERSION MODTK_INCDIR DESTDIR
+USE_GMAKE =		yes
+WRKSRC =		${WRKDIR}/${DISTNAME}/unix
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			--with-tclinclude=${MODTCL_INCDIR} \
+			--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR} \
+			--datadir=${PREFIX}/share/examples \
+			--prefix=${WRKINST}
+CONFIGURE_ENV =		CFLAGS+=-I${X11BASE}/include \
+			LIBtkdnd_VERSION=${LIBtkdnd_VERSION} \
+			DESTDIR=${DESTDIR}
+MAKE_ENV = 		MODTK_INCDIR=${MODTK_INCDIR}
+REGRESS_TARGET =		tests
+REGRESS_IS_INTERACTIVE = 	X11
+SUBST_VARS =			DESTDIR
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/configure  ${WRKSRC}/mkIndex.tcl.in
+	${SUBST_CMD} ${WRKSRC}/mkIndex.tcl.in
 	${MODTCL_TCLSH_ADJ} ${WRKSRC}/../demo/dnddemo.tcl ${WRKSRC}/../demo/newtest.tcl
 
 post-install:

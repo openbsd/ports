@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/28 17:04:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/30 16:41:09 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
@@ -49,22 +49,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 REGRESS_IS_INTERACTIVE = X11
 REGRESS_TARGET =	test
 IMGLIBDIR =		Img${V}
-SUBST_VARS =		SHLIB_VERSION IMGLIBDIR
 INSTALL_TARGET =	collate
 FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/bmp/configure \
-		${WRKSRC}/base/configure ${WRKSRC}/gif/configure \
-		${WRKSRC}/ico/configure ${WRKSRC}/jpeg/configure \
-		${WRKSRC}/pcx/configure ${WRKSRC}/pixmap/configure \
-		${WRKSRC}/png/configure ${WRKSRC}/ppm/configure \
-		${WRKSRC}/ps/configure ${WRKSRC}/sgi/configure \
-		${WRKSRC}/sun/configure ${WRKSRC}/tga/configure \
-		${WRKSRC}/tiff/configure ${WRKSRC}/window/configure \
-		${WRKSRC}/xbm/configure ${WRKSRC}/xpm/configure \
-		${WRKSRC}/libz/tcl/configure ${WRKSRC}/libjpeg/tcl/configure \
-		${WRKSRC}/libpng/tcl/configure ${WRKSRC}/libtiff/tcl/configure
+CONFIGURE_ENV = 	SHLIB_VERSION=${SHLIB_VERSION} IMGLIBDIR=${IMGLIBDIR}
 
 post-install:
 	# disable img::png when requiring package Img

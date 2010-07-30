@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/09 16:43:11 sebastia Exp $
-@lib lib/treectrl2.2.9/libtreectrl22.so.${LIBtreectrl22_VERSION}
