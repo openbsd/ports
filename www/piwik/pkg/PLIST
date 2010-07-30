@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/07/30 12:50:41 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.23 2010/07/30 13:54:54 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -359,7 +359,7 @@ piwik/libs/PEAR/FixPHP5PEARWarnings.php
 piwik/libs/PEAR/LICENSE
 piwik/libs/PEAR5.php
 piwik/libs/PclZip/
-piwik/libs/PclZip/gnu-lgpl.txt
+piwik/libs/PclZip/lgpl-2.1.txt
 piwik/libs/PclZip/pclzip.lib.php
 piwik/libs/PiwikTracker/
 piwik/libs/PiwikTracker/LICENSE.txt
@@ -1106,6 +1106,8 @@ piwik/misc/iframeWidget_localhost.php
 piwik/misc/phpdoc-config.ini
 piwik/misc/redirectToUrl.php
 piwik/misc/stress.sh
+piwik/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
+piwik/misc/tracker_simpleImageTracker.php
 piwik/misc/widget_example_lastvisits.html
 piwik/piwik.js
 piwik/piwik.php
@@ -1325,10 +1327,13 @@ piwik/plugins/Live/templates/images/play_disabled.gif
 piwik/plugins/Live/templates/images/returningVisitor.gif
 piwik/plugins/Live/templates/index.tpl
 piwik/plugins/Live/templates/lastVisits.tpl
+piwik/plugins/Live/templates/live.css
 piwik/plugins/Live/templates/scripts/
 piwik/plugins/Live/templates/scripts/MIT-LICENSE.txt
+piwik/plugins/Live/templates/scripts/live.js
 piwik/plugins/Live/templates/scripts/spy.js
 piwik/plugins/Live/templates/totalVisits.tpl
+piwik/plugins/Live/templates/visitorLog.tpl
 piwik/plugins/Login/
 piwik/plugins/Login/Auth.php
 piwik/plugins/Login/Controller.php
@@ -1407,6 +1412,7 @@ piwik/plugins/Referers/images/searchEngines/dir.web.de.png
 piwik/plugins/Referers/images/searchEngines/dmoz.org.png
 piwik/plugins/Referers/images/searchEngines/duckduckgo.com.png
 piwik/plugins/Referers/images/searchEngines/ecosia.org.png
+piwik/plugins/Referers/images/searchEngines/encrypted.google.com.png
 piwik/plugins/Referers/images/searchEngines/eo.st.png
 piwik/plugins/Referers/images/searchEngines/fr.dir.com.png
 piwik/plugins/Referers/images/searchEngines/fr.wedoo.com.png
@@ -1509,7 +1515,6 @@ piwik/plugins/Referers/images/searchEngines/wps.openfind.com.tw.png
 piwik/plugins/Referers/images/searchEngines/www.123people.com.png
 piwik/plugins/Referers/images/searchEngines/www.1881.no.png
 piwik/plugins/Referers/images/searchEngines/www.4call.dastelefonbuch.de.png
-piwik/plugins/Referers/images/searchEngines/www.a9.com.png
 piwik/plugins/Referers/images/searchEngines/www.acoon.de.png
 piwik/plugins/Referers/images/searchEngines/www.alexa.com.png
 piwik/plugins/Referers/images/searchEngines/www.allesklar.de.png
