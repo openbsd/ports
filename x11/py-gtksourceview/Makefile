@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 09:23:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		python bindings for the GtkSourceView library
 GNOME_PROJECT=		pygtksourceview
 GNOME_VERSION=		2.10.1
 PKGNAME=		py-gtksourceview-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -30,9 +30,9 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xml2 z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util gtksourceview-2.0
 
-LIB_DEPENDS=		gtksourceview-2.0.>=5::x11/gtksourceview
+LIB_DEPENDS=		::x11/gtksourceview
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::textproc/libxslt \
 			::textproc/docbook-xsl

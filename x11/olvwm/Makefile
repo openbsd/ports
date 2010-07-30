@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT=	OpenLook Virtual Window manager
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
-WANTLIB=		X11 Xext Xpm c m 
+
+WANTLIB=		X11 Xext Xpm c m xview olgx
 
 # The Patch01 and Patch02 patches are included in the patches directory.
 #
@@ -22,7 +23,7 @@ WANTLIB=		X11 Xext Xpm c m
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview.>=3,olgx.>=3::x11/xview/lib
+LIB_DEPENDS=	::x11/xview/lib
 BUILD_DEPENDS=	::x11/xview/config
 
 USE_X11=	Yes

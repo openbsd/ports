@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/05/02 09:10:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.54 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -6,6 +6,9 @@ V =		3.4.11.1
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obparser	9.1 # .21.7
 SHARED_LIBS +=	obrender	9.1 # .21.7
+
+REVISION =	0
+
 CATEGORIES =	x11
 
 HOMEPAGE =	http://openbox.org/
@@ -21,7 +24,8 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		fontconfig freetype m z glib-2.0 gmodule-2.0 \
 		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre \
-		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event
+		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event \
+		pango-1.0 pangoxft-1.0 pangoft2-1.0 xml2 startup-notification-1
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
@@ -30,9 +34,9 @@ MODULES =	devel/gettext \
 
 RUN_DEPENDS =	::devel/py-xdg \
 		::devel/desktop-file-utils
-LIB_DEPENDS +=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
-		xml2.>=6::textproc/libxml \
-		startup-notification-1.>=1::devel/startup-notification
+LIB_DEPENDS +=	::devel/pango \
+		::textproc/libxml \
+		::devel/startup-notification
 
 MAKE_FLAGS =	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"

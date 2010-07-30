@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 09:23:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Qt Widgets for Technical Applications
 DISTNAME=		qwt-5.0.2
-REVISION=		1
+REVISION=		2
 SHARED_LIBS=		qwt 5.0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
@@ -30,8 +30,9 @@ MAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION}
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig
 WANTLIB += freetype glib-2.0 gthread-2.0 m png z expat gobject-2.0
+WANTLIB += QtDesigner QtGui QtScript QtXml
 
-LIB_DEPENDS=		QtDesigner.>=7,QtGui.>=8,QtScript,QtXml.>=7::x11/qt4
+LIB_DEPENDS=		::x11/qt4
 
 # svgmap example not included to prevent the need of svg dependencies
 EXAMPLES=	bode realtime_plot cpuplot dials radio event_filter \

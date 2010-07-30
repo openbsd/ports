@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-LIB_DEPENDS=	xosd.>=4.12::x11/xosd
-WANTLIB=	X11 Xext Xt c pthread
+LIB_DEPENDS=	::x11/xosd
+WANTLIB=	X11 Xext Xt c pthread xosd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/osd_clock ${PREFIX}/bin

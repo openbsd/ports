@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils
 
@@ -14,9 +14,11 @@ USE_LIBTOOL=		Yes
 USE_X11=		Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread pthread-stubs
-WANTLIB += stdc++ xcb
+WANTLIB += stdc++ xcb wx_base wx_base_net wx_base_xml wx_gtk2_adv
+WANTLIB += wx_gtk2_core wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
+WANTLIB += wx_gtk2_xrc
 
-LIB_DEPENDS=		wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
+LIB_DEPENDS=		::x11/wxWidgets
 BUILD_DEPENDS=		::archivers/zip \
 			::devel/bison \
 			::net/samba \

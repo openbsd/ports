@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 09:23:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Perl bindings for the 2.x series of the GNOME Canvas widget
 
 DISTNAME=	Gnome2-Canvas-1.002
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 
 # LGPL
@@ -19,7 +19,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += z pthread-stubs xcb
+WANTLIB += z pthread-stubs xcb art_lgpl_2 gnomecanvas-2
 
 MODULES=	cpan \
 		devel/gettext
@@ -29,8 +29,8 @@ USE_X11=	Yes
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	art_lgpl_2.>=5::graphics/libart \
-		gnomecanvas-2.>=1::x11/gnome/libgnomecanvas
+LIB_DEPENDS=	::graphics/libart \
+		::x11/gnome/libgnomecanvas
 RUN_DEPENDS=	::devel/p5-Glib2 \
 		::x11/p5-Gtk2
 

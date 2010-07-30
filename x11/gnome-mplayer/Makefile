@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.9.2
-REVISION=		1
+REVISION=		2
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -22,16 +22,16 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 	dbus-1 dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
 	gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 	gthread-2.0 gtk-x11-2.0 m neon pango-1.0 pangocairo-1.0 \
-	pangoft2-1.0 pixman-1 png pthread pthread-stubs \
-	xcb xcb-render xcb-render-util z
+	pangoft2-1.0 pixman-1 png pthread pthread-stubs musicbrainz3 \
+	xcb xcb-render xcb-render-util z notify gpod curl
 
 MODULES =		devel/gettext \
 			devel/gconf2
 
-LIB_DEPENDS =		notify::devel/libnotify \
-			gpod.>=600.0::audio/libgpod \
-			musicbrainz3::audio/libmusicbrainz \
-			curl.>=12::net/curl
+LIB_DEPENDS =		::devel/libnotify \
+			::audio/libgpod \
+			::audio/libmusicbrainz \
+			::net/curl
 RUN_DEPENDS =		::devel/desktop-file-utils \
 			:gnome-icon-theme-*:x11/gnome/icon-theme \
 			:mplayer->=20090708:x11/mplayer

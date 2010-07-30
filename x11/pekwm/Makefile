@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/05/05 22:48:20 nicm Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-0.1.12
 CATEGORIES=	x11
+
+REVISION=	0
 
 HOMEPAGE=	http://pekwm.org/
 
@@ -17,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xft Xpm Xrandr Xrender Xau Xdmcp \
 		Xinerama expat z c fontconfig freetype m stdc++ \
-		pthread-stubs xcb
+		pthread-stubs xcb jpeg png
 
 MODULES=	converters/libiconv
 
 MASTER_SITES=	${HOMEPAGE}projects/pekwm/files/
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
-		png.>=5::graphics/png
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/png
 
 USE_X11= 	Yes
 NO_REGRESS=	Yes

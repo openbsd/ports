@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 09:23:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	python bindings to the XOSD library
 
 DISTNAME=	pyosd-0.2.14
 PKGNAME=	${DISTNAME:S/^py/py-/}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://ichi2.net/pyosd/
@@ -17,11 +17,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
+WANTLIB=	xosd
+
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	xosd.>=4::x11/xosd
+LIB_DEPENDS=	::x11/xosd
 
 NO_REGRESS=	Yes
 

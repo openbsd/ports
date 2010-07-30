@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/19 14:14:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/30 09:23:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,8 @@ DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	x11 devel
 
@@ -25,7 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xext Xi Xinerama Xrender c dbus-1
 WANTLIB += expat fontconfig freetype glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += intl m png pthread stdc++ z
+WANTLIB += intl m png pthread stdc++ z QtAssistantClient QtDesigner
+WANTLIB += QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg QtTest QtXml
 
 MULTI_PACKAGES=	-main -docs
 
@@ -37,7 +40,7 @@ PKG_ARCH-docs=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:py-sip->=4.10.0:devel/py-sip \
 		::x11/dbus-python
-LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4 \
+LIB_DEPENDS=	::x11/qt4 \
 		${MODPY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes

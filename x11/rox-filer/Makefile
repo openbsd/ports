@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/07/30 09:23:28 ajacoutot Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.8
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -19,7 +19,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += xml2 z pthread-stubs xcb
+WANTLIB += xml2 z pthread-stubs xcb glade-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2
@@ -27,7 +27,7 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	devel/gettext
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::misc/shared-mime-info
-LIB_DEPENDS=	glade-2.0::devel/libglade2
+LIB_DEPENDS=	::devel/libglade2
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
