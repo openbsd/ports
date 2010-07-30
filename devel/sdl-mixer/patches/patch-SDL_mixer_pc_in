@@ -1,0 +1,11 @@
+$OpenBSD: patch-SDL_mixer_pc_in,v 1.1 2010/07/30 20:00:26 jolan Exp $
+--- SDL_mixer.pc.in.orig	Fri Jul  9 20:54:09 2010
++++ SDL_mixer.pc.in	Fri Jul  9 20:55:07 2010
+@@ -7,6 +7,6 @@ Name: SDL_mixer
+ Description: mixer library for Simple DirectMedia Layer
+ Version: @VERSION@
+ Requires: sdl >= @SDL_VERSION@
+-Libs: -L${libdir} -lSDL_mixer
++Libs: -L${libdir} -lSDL_mixer -lmikmod -lvorbisfile -lvorbis -lFLAC -logg -lsmpeg -lm
+ Cflags: -I${includedir}/SDL
+ 

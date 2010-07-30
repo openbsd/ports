@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2005/07/03 21:36:35 jolan Exp $
---- Makefile.in.orig	Thu Dec 16 00:44:36 2004
-+++ Makefile.in	Sun Jul  3 16:26:03 2005
-@@ -296,8 +296,6 @@ EXTRA_DIST = \
- 	autogen.sh
+$OpenBSD: patch-Makefile_in,v 1.6 2010/07/30 20:00:26 jolan Exp $
+--- Makefile.in.orig	Mon Oct 12 19:06:53 2009
++++ Makefile.in	Fri Jul  9 20:06:52 2010
+@@ -44,7 +44,7 @@ LT_AGE      = @LT_AGE@
+ LT_CURRENT  = @LT_CURRENT@
+ LT_RELEASE  = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++LT_LDFLAGS  = -no-undefined -rpath $(libdir) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- libSDL_mixer_la_LDFLAGS = \
--	-no-undefined		\
--	-release $(LT_RELEASE)	\
- 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
- 	-export-symbols-regex Mix_.*
+ all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/playwave$(EXE) $(objects)/playmus$(EXE)
  

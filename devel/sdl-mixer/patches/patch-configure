@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1 2010/07/30 20:00:26 jolan Exp $
+--- configure.orig	Thu Jul 29 19:35:07 2010
++++ configure	Thu Jul 29 19:36:21 2010
+@@ -13275,7 +13275,7 @@ if test "${ac_cv_lib_vorbisfile_ov_open_callbacks+set}
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lvorbisfile  $LIBS"
++LIBS="-lvorbisfile -lvorbis -logg $LIBM  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -13520,7 +13520,7 @@ fi
+ 
+     if test x$have_flac_export = xyes; then
+         LIBS_SAVED="$LIBS"
+-        LIBS="-lFLAC"
++        LIBS="-lFLAC -logg $LIBM"
+         { $as_echo "$as_me:$LINENO: checking for libflac so-name version >= $libflac_ver" >&5
+ $as_echo_n "checking for libflac so-name version >= $libflac_ver... " >&6; }
+         if test "$cross_compiling" = yes; then
+@@ -13730,7 +13730,7 @@ if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_new+set
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lFLAC  $LIBS"
++LIBS="-lFLAC -logg $LIBM  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -13814,7 +13814,7 @@ fi
+                 echo "-- dynamic libFLAC -> $flac_lib"
+                 EXTRA_CFLAGS="$EXTRA_CFLAGS -DFLAC_DYNAMIC=\\\"$flac_lib\\\""
+             else
+-                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lFLAC"
++                EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lFLAC -logg $LIBM"
+             fi
+         fi
+     else

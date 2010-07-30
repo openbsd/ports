@@ -1,12 +1,14 @@
-$OpenBSD: patch-timidity_config_h,v 1.1 2006/01/30 10:22:11 jsg Exp $
---- timidity/config.h.orig	Wed Dec 15 23:20:14 2004
-+++ timidity/config.h	Thu Jan 26 11:51:01 2006
-@@ -227,7 +227,7 @@ typedef char int8;
- #ifdef __WIN32__
- #define DEFAULT_PATH	"\\TIMIDITY"
+$OpenBSD: patch-timidity_config_h,v 1.2 2010/07/30 20:00:26 jolan Exp $
+--- timidity/config.h.orig	Mon Oct 12 19:06:52 2009
++++ timidity/config.h	Thu Jul 29 19:27:12 2010
+@@ -177,9 +177,7 @@ typedef char int8;
+ #if defined(__WIN32__) || defined(__OS2__)
+ #define DEFAULT_PATH	"C:\\TIMIDITY"
  #else
--#define DEFAULT_PATH	"/usr/local/lib/timidity"
-+#define DEFAULT_PATH	"_SYSCONFDIR_"
+-#define DEFAULT_PATH	"/etc/timidity"
+-#define DEFAULT_PATH1	"/usr/share/timidity"
+-#define DEFAULT_PATH2	"/usr/local/lib/timidity"
++#define DEFAULT_PATH	"${SYSCONFDIR}"
  #endif
  
  /* These affect general volume */
