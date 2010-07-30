@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/30 22:24:08 naddy Exp $
 
 COMMENT=	afterstep clock with some language extensions
 
@@ -31,7 +31,8 @@ USE_X11=	Yes
 
 pre-configure:
 	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
-	     WRKSRC=${WRKSRC} FLAVOR='${FLAVOR}' ${FILESDIR}/configure conf
+	    WRKSRC=${WRKSRC} FLAVOR='${FLAVOR}' \
+	    perl ${FILESDIR}/configure conf
 
 NO_REGRESS=	Yes
 
