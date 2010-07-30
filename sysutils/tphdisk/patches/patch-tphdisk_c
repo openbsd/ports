@@ -1,7 +1,15 @@
-$OpenBSD: patch-tphdisk_c,v 1.1.1.1 2005/03/09 02:56:14 jcs Exp $
---- tphdisk.c.orig	Tue Mar  8 20:39:48 2005
-+++ tphdisk.c	Tue Mar  8 20:43:27 2005
-@@ -86,21 +86,17 @@
+$OpenBSD: patch-tphdisk_c,v 1.2 2010/07/30 14:36:31 naddy Exp $
+--- tphdisk.c.orig	Thu Jul 29 23:14:11 2010
++++ tphdisk.c	Thu Jul 29 23:14:49 2010
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ typedef unsigned short u16;
+@@ -86,21 +87,17 @@ written by Andrew Tridgell <tridge@samba.org>\n\
  This program writes a 'save2dsk.bin' hibernation file to stdout. To\n\
  use it you should do something like this:\n\
  \n\
