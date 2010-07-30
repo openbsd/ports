@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2010/01/16 11:30:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/30 23:13:31 lum Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
 
 VERSION=	5.4
 DISTNAME=	hydra-5.4-src
-PKGNAME-main=	hydra-${VERSION}p0
-PKGNAME-gui=	hydra-gui-${VERSION}p2
+PKGNAME-main=	hydra-${VERSION}p1
+PKGNAME-gui=	hydra-gui-${VERSION}p3
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/
@@ -53,15 +53,17 @@ post-configure:
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 WANTLIB-main=	${WANTLIB} ssl crypto
-LIB_DEPENDS-gui=gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+LIB_DEPENDS-gui=::x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-gui=:hydra-${VERSION}:security/hydra,-main \
 		${MODGETTEXT_RUN_DEPENDS}
 WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xext Xi Xinerama Xrandr Xrender atk-1.0 freetype fontconfig \
-		gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 glitz png \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
+		gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 glitz gthread-2.0 png \
 		pango-1.0 pangocairo-1.0 pixman-1 cairo z expat \
-		pangoft2-1.0 pthread-stubs xcb
+		pangoft2-1.0 pthread pthread-stubs xcb xcb-render \
+		xcb-render-utils
 
 post-extract:
 	${CHMOD} -R u+w ${WRKDIST}

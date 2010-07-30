@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 23:13:31 lum Exp $
 
 COMMENT=	Qt Cryptographic Architecture
 
 DISTNAME=	qca-1.0
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 CATEGORIES=	security
 SHARED_LIBS=	qca	2.0
 
@@ -21,6 +21,7 @@ MASTER_SITES=		http://delta.affinix.com/download/qca/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/qt3
+WANTLIB=		m stdc++
 
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
