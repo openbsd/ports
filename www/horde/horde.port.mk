@@ -1,10 +1,11 @@
-# $OpenBSD: horde.port.mk,v 1.3 2010/07/30 21:24:39 sthen Exp $
+# $OpenBSD: horde.port.mk,v 1.4 2010/07/30 22:10:54 sthen Exp $
 
 CATEGORIES +=	www www/horde
 
 HORDE_MODULE ?=	${DISTNAME:C/-h3-.*//}
 
 HORDE_SITES ?= \
+	http://ftp.se.horde.org/ \
 	http://ftp.horde.org/pub/ \
 	ftp://ftp.horde.org/pub/ \
 	ftp://ftp.de.horde.org/mirrors/ftp.de.horde.org/pub/ \
@@ -12,17 +13,17 @@ HORDE_SITES ?= \
 	ftp://ftp.tw.horde.org/pub/ \
 	ftp://ftp.us.horde.org/pub/software/horde/
 
-MASTER_SITES ?=	${HORDE_SITES:=${HORDE_MODULE}/}
-
 PKG_ARCH ?=	*
 
 PREFIX ?=	/var/www
 INSTDIR ?=	horde/${HORDE_MODULE}
-HOMEPAGE ?=	http://www.horde.org/${HORDE_MODULE}/
+SUBST_VARS +=	INSTDIR
 
-.if !${HORDE_MODULE:Mhorde}
-SUBST_VARS +=	HORDE_MODULE HORDE_NAME INSTDIR
-HORDE_RUNDEP =	:horde->=3.0:www/horde/horde
+.if ${HORDE_MODULE}
+SUBST_VARS +=	HORDE_MODULE HORDE_NAME
+RUN_DEPENDS +=	:horde->=3.0:www/horde/horde
+MASTER_SITES ?=	${HORDE_SITES:=${HORDE_MODULE}/}
+HOMEPAGE ?=	http://www.horde.org/${HORDE_MODULE}/
 .endif
 
 do-install:
