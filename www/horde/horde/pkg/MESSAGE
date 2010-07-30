@@ -1,0 +1,15 @@
+The Horde application framework has been installed into ${PREFIX}/${INSTDIR}.
+Symlink this into the DocumentRoot of your web-server, e.g.
+
+   # ln -s ../horde /var/www/htdocs/horde
+
+Ensure that the required PHP extensions are activated (with symlinks
+in /var/www/conf/php5 pointing to the sample files in php5.sample,
+as directed by the installation messages for the PHP extensions) and
+that the web server has been restarted.
+
+Then follow the steps in the Configuring Horde and Securing Horde
+sections of ${PREFIX}/${INSTDIR}/docs/INSTALL and ensure that you have a
+working installation by accessing http://<localhost>/horde/test.php.
+Now you can configure Horde-based applications (IMP, etc) by following
+their individual guide in ${PREFIX}/${INSTDIR}/<module>/docs/INSTALL.

@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Driver_sql_php,v 1.1.1.1 2010/07/30 11:27:07 sthen Exp $
+--- lib/Driver/sql.php.orig	Wed Nov 11 07:59:18 2009
++++ lib/Driver/sql.php	Thu Jan 28 10:57:47 2010
+@@ -297,18 +297,18 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
+             $endInterval->correct();
+             $etime = sprintf('%04d-%02d-%02d 00:00:00', $endInterval->year, $endInterval->month, $endInterval->mday);
+             $stime = sprintf('%04d-%02d-%02d 00:00:00', $startInterval->year, $startInterval->month, $startInterval->mday);
+-            $q .= ' AND ((event_end >= ? AND event_start <= ?) OR (event_recurenddate >= ? AND event_start <= ? AND event_recurtype <> ?))';
++            $q .= ' AND ((event_end >= CAST(? as timestamp) AND event_start <= CAST(? as timestamp)) OR (event_recurenddate >= CAST(? as timestamp) AND event_start <= CAST(? as timestamp) AND event_recurtype <> CAST(? as timestamp)))';
+             array_push($values, $stime, $etime, $stime, $etime, HORDE_DATE_RECUR_NONE);
+         } elseif (!is_null($startInterval)) {
+             $stime = sprintf('%04d-%02d-%02d 00:00:00', $startInterval->year, $startInterval->month, $startInterval->mday);
+-            $q .= ' AND ((event_end >= ?) OR (event_recurenddate >= ? AND event_recurtype <> ?))';
++            $q .= ' AND ((event_end >= CAST(? as timestamp)) OR (event_recurenddate >= CAST(? as timestamp) AND event_recurtype <> CAST(? as timestamp)))';
+             array_push($values, $stime, $stime, HORDE_DATE_RECUR_NONE);
+         } elseif (!is_null($endInterval)) {
+             $endInterval = new Horde_Date(array('mday' => $endInterval->mday + 1,
+                                                 'month' => $endInterval->month,
+                                                 'year' => $endInterval->year));
+             $endInterval->correct();
+-            $q .= ' AND (event_start <= ?)';
++            $q .= ' AND (event_start <= CAST(? as timestamp))';
+             $values[] = sprintf('%04d-%02d-%02d 00:00:00', $endInterval->year, $endInterval->month, $endInterval->mday);
+         }
+ 

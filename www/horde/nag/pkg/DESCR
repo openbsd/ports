@@ -1,0 +1,5 @@
+Nag is a set of PHP scripts that implement a simple, multiuser task list
+manager.
+
+To complete the installation, be sure that Horde is configured and
+working, then see ${INSTDIR}/docs/INSTALL
