@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2010/07/08 16:20:23 pea Exp $
+# $OpenBSD: Makefile,v 1.178 2010/07/30 11:28:21 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -26,7 +26,6 @@
      SUBDIR += luma
      SUBDIR += maatkit
      SUBDIR += mdbtools/snapshot
-     SUBDIR += mnemo
      SUBDIR += mysql
      SUBDIR += mysql-administrator
      SUBDIR += mysql-query-browser

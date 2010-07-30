@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.465 2010/07/28 20:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.466 2010/07/30 11:28:21 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -48,6 +48,7 @@
      SUBDIR += gtkhtml3
      SUBDIR += havp
      SUBDIR += hiawatha
+     SUBDIR += horde
      SUBDIR += hs-cgi
      SUBDIR += hs-html
      SUBDIR += hs-xhtml
@@ -59,7 +60,6 @@
      SUBDIR += junkbuster
      SUBDIR += kazehakase
      SUBDIR += konqueror-embedded
-     SUBDIR += kronolith
      SUBDIR += ktdms
      SUBDIR += larbin
      SUBDIR += libcroco
@@ -118,7 +118,6 @@
      SUBDIR += mozplugger
      SUBDIR += mycalendar
      SUBDIR += myreview
-     SUBDIR += nag
      SUBDIR += netsurf
      SUBDIR += nginx
      SUBDIR += nginx,passenger
@@ -419,7 +418,6 @@
      SUBDIR += tracnav
      SUBDIR += transproxy
      SUBDIR += tt-rss
-     SUBDIR += turba
      SUBDIR += twiki
      SUBDIR += twill
      SUBDIR += varnish

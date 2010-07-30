@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2010/05/25 12:18:16 stephan Exp $
+# $OpenBSD: Makefile,v 1.252 2010/07/30 11:28:21 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -80,8 +80,6 @@
      SUBDIR += imapfilter
      SUBDIR += imapproxy
      SUBDIR += imapsync
-     SUBDIR += imp
-     SUBDIR += ingo
      SUBDIR += isync
      SUBDIR += kbiff
      SUBDIR += kpoppassd
