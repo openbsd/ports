@@ -1,4 +1,4 @@
-# $OpenBSD: horde.port.mk,v 1.1.1.1 2010/07/30 11:27:06 sthen Exp $
+# $OpenBSD: horde.port.mk,v 1.2 2010/07/30 15:31:17 sthen Exp $
 
 CATEGORIES +=	www www/horde
 
@@ -9,10 +9,11 @@ PKG_ARCH ?=	*
 
 PREFIX ?=	/var/www
 INSTDIR ?=	horde/${HORDE_MODULE}
+HOMEPAGE ?=	http://www.horde.org/${HORDE_MODULE}/
 
 .if !${HORDE_MODULE:Mhorde}
 SUBST_VARS +=	HORDE_MODULE HORDE_NAME INSTDIR
-HORDE_RUNDEP =	:horde->=3.0:devel/horde
+HORDE_RUNDEP =	:horde->=3.0:www/horde/horde
 .endif
 
 do-install:
