@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/27 20:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
 DISTNAME=		wmmenu-1.2
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.fcoutant.freesurf.fr/wmmenu.html

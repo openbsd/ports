@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.16
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	devel textproc x11
 

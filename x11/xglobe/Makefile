@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -8,7 +8,8 @@ HOMEPAGE=	http://www.cs.unc.edu/~scheuerm/xglobe/
 # Temporary release
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 DISTNAME=	xglobe-0.5p2
-PKGNAME=	xglobe-0.5p37
+PKGNAME=	xglobe-0.5
+REVISION=	37
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

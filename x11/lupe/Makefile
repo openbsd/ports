@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	real-time magnifying glass for X11
 
 DISTNAME=	lupe008c
-PKGNAME=	lupe-0.08p0
+PKGNAME=	lupe-0.08
+REVISION=	0
+
 CATEGORIES=	x11
 
 MASTER_SITES=	${HOMEPAGE}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/23 18:39:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=		extra themes for matchbox
 
 DISTNAME=		matchbox-themes-extra-0.3
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=/matchbox-themes-extra/0.3/}
 

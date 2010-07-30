@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT =		keep X clipboard and cutbuffer in sync
 
 DISTNAME =		autocutsel-0.9.0
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 
 CATEGORIES =		x11
 

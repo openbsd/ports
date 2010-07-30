@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/01 20:33:27 matthieu Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 06:59:02 ajacoutot Exp $
 
 COMMENT=	top-like X server resources usage display tool
 DISTNAME=	xrestop-0.4
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 CATEGORIES=	x11
 

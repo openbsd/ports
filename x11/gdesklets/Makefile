@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/12/21 20:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:58:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.1
 DISTNAME=		gdesklets-${V}
-PKGNAME=		${DISTNAME}p5
+REVISION=		5
 
 CATEGORIES=		x11
 

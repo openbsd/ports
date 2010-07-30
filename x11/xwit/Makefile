@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/07 15:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 06:59:02 ajacoutot Exp $
 
 COMMENT=	X11 window interface tool
 
 DISTNAME=	xwit-3.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

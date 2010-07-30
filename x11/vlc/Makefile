@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2010/06/20 13:56:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2010/07/30 06:59:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT-main=	VideoLAN client; multimedia player
 
 V=		1.0.6
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p5
+PKGNAME-main=	${DISTNAME}
+REVISION-main=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -119,7 +120,8 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_web}
 MULTI_PACKAGES+=-web
 COMMENT-web=	Mozilla plugin for embedded media playback
-PKGNAME-web=	vlc-web-${V}p2
+PKGNAME-web=	vlc-web-${V}
+REVISION-web=	2
 BUILD_DEPENDS+=	:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
 CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
 CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
@@ -135,7 +137,8 @@ WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs stdc++.>=46.0 xcb
 .if !${FLAVOR:L:Mno_jack}
 MULTI_PACKAGES+=-jack
 COMMENT-jack=	jackd audio output module for VLC
-FULLPKGNAME-jack=vlc-jack-${V}p0
+FULLPKGNAME-jack=vlc-jack-${V}
+REVISION-jack=	0
 FULLPKGPATH-jack=x11/vlc,-jack
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=${LIB_DEPENDS} \

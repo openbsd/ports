@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	OCaml interface to GTK+
 
 DISTNAME=	lablgtk-1.2.7
-PKGNAME=	${DISTNAME}p7
+REVISION=	7
+
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html

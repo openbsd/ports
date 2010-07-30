@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/28 16:22:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 06:59:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight panel written in Python and C for X11
 
 DISTNAME=	PyPanel-2.4
-PKGNAME=	${DISTNAME:L}p5
+PKGNAME=	${DISTNAME:L}
+REVISION=	5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pypanel.sourceforge.net/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	Motif tool for editing X11 bitmap fonts
 
 VERSION=	4.7
 DISTNAME=	xmbdfed-${VERSION}
-PKGNAME=	${DISTNAME}.1p2
+PKGNAME=	${DISTNAME}.1
+REVISION=	2
 CATEGORIES=	x11
 HOMEPAGE=	http://crl.nmsu.edu/~mleisher/xmbdfed.html
 

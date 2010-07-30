@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/27 10:50:58 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
 DISTNAME=		wmweather-2.4.3
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://people.debian.org/~godisch/wmweather/

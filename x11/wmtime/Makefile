@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
 DISTNAME=	wmtime-1.0b2
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11 x11/windowmaker
 
 MAINTAINER= 	Arthur H. Johnson II <arthur@linuxbox.nu>	

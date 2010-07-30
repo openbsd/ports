@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
 DISTNAME=	x2vnc-1.6.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	x11
 
 # GPL

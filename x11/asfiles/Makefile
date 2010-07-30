@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/07/01 08:27:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT=		X11 file manager. Dockable in Window Maker
 
 DISTNAME=		ASFiles-1.0
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>

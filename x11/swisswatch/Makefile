@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2008/02/01 21:47:16 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=	Swiss railway clock emulation
 
 DISTNAME=	swisswatch-0.06
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:59 ajacoutot Exp $
 # XXX: Provide a Zaurus frontend
 
 COMMENT=		graphical wrapper around Xnest(1) on PDA size
 DISTNAME=		matchbox-nest-0.3
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=matchbox-nest/0.3/}
 

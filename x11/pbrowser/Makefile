@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=		graphical ports system frontend
 
 DISTNAME=	 	pb-browser-0.4	
-PKGNAME=	 	${DISTNAME}p6
+REVISION=		6
 CATEGORIES=		x11 sysutils
 
 MAINTAINER=		Igor Boehm <igor@bytelabs.org>	

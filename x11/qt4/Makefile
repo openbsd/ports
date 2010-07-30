@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/07/09 18:48:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2010/07/30 06:59:00 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -12,16 +12,24 @@ COMMENT-sqlite =	sqlite plugin for qt4
 COMMENT-tds =		tds plugin for qt4
 
 PKGNAME =		qt4-${VERSION}
-PKGNAME-mysql =		qt4-mysql-${PKGVERSION}p0
-PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}p0
-PKGNAME-examples =	qt4-examples-${PKGVERSION}p0
-PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}p0
-PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}p0
-PKGNAME-tds =		qt4-tds-${PKGVERSION}p0
-PKGNAME-main =		qt4-${VERSION}p0
+PKGNAME-mysql =		qt4-mysql-${PKGVERSION}
+PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}
+PKGNAME-examples =	qt4-examples-${PKGVERSION}
+PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
+PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
+PKGNAME-tds =		qt4-tds-${PKGVERSION}
+PKGNAME-main =		qt4-${VERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
+
+REVISION-mysql =	0
+REVISION-postgresql =	0
+REVISION-examples =	0
+REVISION-sqlite2 =	0
+REVISION-sqlite =	0
+REVISION-tds =		0
+REVISION-main = 	0
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 8.0 \

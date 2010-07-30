@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	edit enlightenment's keybindings
 
 DISTNAME=	e16keyedit-0.5
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=    	x11
 
 # X11

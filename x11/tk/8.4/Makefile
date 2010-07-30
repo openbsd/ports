@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/06 10:46:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 V =			8.4.19
 DISTNAME =		tk${V}
-PKGNAME =		tk-${V}p0
+PKGNAME =		tk-${V}
+REVISION=		0
 
 SHARED_LIBS =		tk84 1.1
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2009/08/15 16:40:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/07/30 06:58:57 ajacoutot Exp $
 
 DISTNAME=	aterm-0.4.2
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
+
 CATEGORIES=	x11
 
 # GPLv2+

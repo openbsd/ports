@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-0.9.9.061
-PKGNAME =               ${DISTNAME}p0v0
+
+EPOCH=			0
+REVISION=		0
 
 SO_VERSION =		0.1
 # NOTE: Must bump minor version if any shlib's are removed from the

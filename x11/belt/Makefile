@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming.html\#belt

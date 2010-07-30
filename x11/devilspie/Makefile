@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT=	window manipulation tool
 
 DISTNAME=	devilspie-0.22
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.burtonini.com/blog/computers/devilspie

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/28 22:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.c
-PKGNAME =	i3-3.3p1
+PKGNAME =	i3-3.3
+REVISION =	2
+
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -18,10 +20,10 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
 WANTLIB =	X11 c m xcb xcb-atom xcb-aux xcb-event \
-		xcb-icccm xcb-keysyms xcb-property xcb-xinerama
+		xcb-icccm xcb-keysyms xcb-property xcb-xinerama ev
 
 MODULES =	converters/libiconv
-LIB_DEPENDS =	ev::devel/libev
+LIB_DEPENDS =	::devel/libev
 RUN_DEPENDS =	::x11/dmenu
 
 USE_GMAKE =	Yes

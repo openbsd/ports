@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/07/02 18:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	win95-like window manager based on fvwm 2.x
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
-PKGNAME=	fvwm95-2.0.43ap2
+PKGNAME=	fvwm95-2.0.43a
+REVISION=	2
 CATEGORIES=     x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fvwm95/} \
 		ftp://ftp.plig.org/pub/fvwm95/ \

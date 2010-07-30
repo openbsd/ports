@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/23 22:12:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		Window Maker dock.app clock
 
 DISTNAME=		wmclockmon-0.8.0
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://tnemeth.free.fr/projets/dockapps.html

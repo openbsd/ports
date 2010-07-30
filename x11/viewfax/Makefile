@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2008/02/01 21:47:16 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/30 06:59:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
 
 COMMENT=	display files containing g3 and/or g4 coded fax pages
 
 DISTNAME=	viewfax-2.6
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.ping.de/pub/unix/

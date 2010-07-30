@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-PKGNAME=	${DISTNAME}p6
+REVISION=	6
 
 SHARED_LIBS=	Xbae 4.60
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/20 16:44:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
+
 CATEGORIES=	x11
 MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 

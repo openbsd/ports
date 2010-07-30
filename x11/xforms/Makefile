@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	GUI toolkit for X11
 
 DISTNAME=	xforms-1.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS=	flimage	1.0 \
 		forms	1.0 \
 		formsGL	1.0

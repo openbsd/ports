@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	tool for managing X11 cut-buffers
 
 DISTNAME=	xcb-2.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/

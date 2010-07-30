@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/30 07:04:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 06:59:02 ajacoutot Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
 DISTNAME=		xrootconsole-${V}
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		x11	
 
 MAINTAINER=		Sebastian Trahm <basti@schleifi.com>

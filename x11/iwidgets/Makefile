@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/12 21:34:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,8 @@ COMMENT=	Iwidgets Mega Widget Set
 
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
-PKGNAME=	iwidgets-${VERSION}p2
+PKGNAME=	iwidgets-${VERSION}
+REVISION=	2
 
 CATEGORIES=	x11 devel
 

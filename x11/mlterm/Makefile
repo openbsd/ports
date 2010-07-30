@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
-PKGNAME=	${DISTNAME}p9
+REVISION=	9
 SHARED_LIBS=	kik	10.0 \
 		mkf	13.0
 CATEGORIES=	x11

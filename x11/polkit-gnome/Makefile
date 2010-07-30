@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/05 10:51:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
 DISTNAME=	polkit-gnome-0.96
+REVISION=	0
 
 CATEGORIES=	x11 sysutils
 
@@ -25,15 +26,16 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += eggdbus-1 expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-render-util z
+WANTLIB += pthread-stubs xcb xcb-render xcb-render-util z polkit-agent-1
+WANTLIB += polkit-gobject-1 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	polkit-agent-1,polkit-gobject-1::sysutils/polkit \
-		gdk-x11-2.0.>=1403,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::sysutils/polkit \
+		::x11/gtk+2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

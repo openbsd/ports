@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	window manager suitable for low-resolution screens
 DISTNAME=	matchbox-window-manager-1.2
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-window-manager/1.2/}
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/02 17:40:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.9.9
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	x11 biology
 
 HOMEPAGE=	http://xdrawchem.sourceforge.net/

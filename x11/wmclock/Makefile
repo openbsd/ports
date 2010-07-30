@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/02/01 21:47:16 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		Window Maker dock.app clock
 
 VERSION=		1.0.12.2
 DISTNAME=		wmclock-${VERSION}
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 MASTER_SITES=		${HOMEPAGE}
 

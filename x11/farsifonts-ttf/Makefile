@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/15 10:46:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
 V=		0.4
 DISTNAME=	farsi_fonts_$V
-PKGNAME=	farsifonts-ttf-$Vp0
+PKGNAME=	farsifonts-ttf-$V
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot

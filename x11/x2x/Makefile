@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/15 14:34:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		one keyboard/mouse to multiple X displays
 DISTNAME=		x2x-1.27
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=     	x11
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>

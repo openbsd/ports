@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/07 18:13:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.5.8
-PKGNAME =		tk-8.5.8p0
+PKGNAME =		tk-8.5.8
+REVISION=		0
 SHARED_LIBS =		tk85 0.5
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/

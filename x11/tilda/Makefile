@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=		drop-down terminal emulator
 
 DISTNAME=		tilda-0.9.6
-PKGNAME=		${DISTNAME}p2
+REVISION=		2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tilda.sourceforge.net/

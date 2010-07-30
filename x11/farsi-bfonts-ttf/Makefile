@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/19 10:57:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	farsi bornaray fonts
 
 DISTNAME=	bfonts
-PKGNAME=	farsi-bfonts-ttf-2.0p0
+PKGNAME=	farsi-bfonts-ttf-2.0
+REVISION=	0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		farsi-bfonts-ttf-extra-0.1.tar.gz:0

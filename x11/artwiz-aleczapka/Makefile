@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/13 13:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -7,10 +7,14 @@ COMMENT-se=	improved artwiz fonts (swedish pack)
 V=		1.3
 NAME=		artwiz-aleczapka
 DISTNAME=	${NAME}-en-${V}
-PKGNAME-main=	${NAME}-${V}p4
-PKGNAME-de=	${NAME}-de-${V}p0
-PKGNAME-se=	${NAME}-se-${V}p0
+PKGNAME-main=	${NAME}-${V}
+PKGNAME-de=	${NAME}-de-${V}
+PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	x11
+
+REVISION-main=	4
+REVISION-de=	0
+REVISION-se=	0
 
 HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
 

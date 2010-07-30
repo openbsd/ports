@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/28 23:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=		widgets library
 
 DISTNAME=		Mowitz-0.3.0
-PKGNAME=		${DISTNAME:L}p3
+PKGNAME=		${DISTNAME:L}
+REVISION=		3
 SHARED_LIBS +=	Mowitz               3.0      # .3.0
 CATEGORIES=		x11 devel
 

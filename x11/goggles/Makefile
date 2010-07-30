@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
 
 DISTNAME=	goggles-0.9.1
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
+
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	http://www.fifthplanet.net/files/
 HOMEPAGE=	http://www.fifthplanet.net/goggles.html

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/08 20:43:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
 
 DISTNAME =	gtkhotkey-0.2.1
-PKGNAME =	${DISTNAME}p1
+REVISION=	1
 SHARED_LIBS =	gtkhotkey 0.0 #1.0
 CATEGORIES =	x11
 

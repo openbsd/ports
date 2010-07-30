@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://kdirstat.sourceforge.net/

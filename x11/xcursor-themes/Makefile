@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.7 2010/04/15 14:34:12 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.8 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	X11 Cursors themes
 DISTNAME=	xcursor-themes-1.0.2
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/

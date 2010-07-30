@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/21 20:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-1.14.2
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}

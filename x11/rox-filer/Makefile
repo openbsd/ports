@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.8
-PKGNAME=		${DISTNAME}p3
+REVISION=		3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/

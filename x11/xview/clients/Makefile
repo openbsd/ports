@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 20:04:29 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/30 06:59:02 ajacoutot Exp $
 
 COMMENT=	OpenLook applications and man pages
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
+REVISION=	0
+
 CATEGORIES=	x11
 
 EXTRACT_ONLY=
 BUILD_DEPENDS=	::x11/xview/config ::x11/xview/lib:configure
-LIB_DEPENDS=	xview.>=3,olgx::x11/xview/lib
+LIB_DEPENDS=	::x11/xview/lib
 
 WRKDIST=	${WRKDIR}/x11/xview/lib/${DISTNAME}
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
-WANTLIB=	X11 Xext c m 
+WANTLIB=	X11 Xext c m xview olgx
 
 do-configure:
 	cd ${WRKDIST} && $(MAKE_ENV) SUBDIRS=clients make Makefiles

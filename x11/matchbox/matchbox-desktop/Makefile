@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	pda style application launcher or item browser
 DISTNAME=	matchbox-desktop-2.0
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-desktop/2.0/}
 

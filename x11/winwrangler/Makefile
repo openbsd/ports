@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-PKGNAME =	${DISTNAME}p0
+REVISION=	1
 
 CATEGORIES =	x11
 
@@ -26,10 +26,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-LIB_DEPENDS =	gtkhotkey::x11/gtkhotkey \
-		wnck-1::devel/libwnck \
-		execinfo::devel/libexecinfo \
-		startup-notification-1::devel/startup-notification
+LIB_DEPENDS =	::x11/gtkhotkey \
+		::devel/libwnck \
+		::devel/libexecinfo \
+		::devel/startup-notification
 
 WANTLIB += ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -37,6 +37,6 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 gio-2.0 glib-2.0
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-atom xcb-aux
-WANTLIB += xcb-event z
+WANTLIB += xcb-event z gtkhotkey wnck-1 execinfo startup-notification-1
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/17 15:02:54 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT =		complete front-end for MPlayer
 
 DISTNAME =		smplayer-0.6.9
-PKGNAME =		${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c m pthread stdc++ z
+WANTLIB = 		c m pthread stdc++ z QtGui QtNetwork QtXml
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 
@@ -26,7 +26,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/qt4
 RUN_DEPENDS =		:mplayer->=20090708:x11/mplayer \
 			::devel/desktop-file-utils
-LIB_DEPENDS =		QtGui.>=8,QtNetwork.>=7,QtXml.>=7::x11/qt4
+LIB_DEPENDS =		::x11/qt4
 
 USE_X11 =		Yes
 USE_GMAKE =		Yes

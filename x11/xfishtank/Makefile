@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/07/28 22:29:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	fish swim in the background of your screen
 
 DISTNAME=	xfishtank-2.2
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/

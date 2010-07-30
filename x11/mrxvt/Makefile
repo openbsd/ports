@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/20 17:16:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://materm.sourceforge.net

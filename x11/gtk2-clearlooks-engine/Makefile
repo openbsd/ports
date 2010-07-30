@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2009/12/21 20:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=	GTK+ 2.x engine based on Bluecurve
 
 VERSION=	0.6.2
 DISTNAME=	clearlooks-${VERSION}
-PKGNAME=	gtk2-clearlooks-engine-${VERSION}p9
+PKGNAME=	gtk2-clearlooks-engine-${VERSION}
+REVISION=	9
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://clearlooks.sourceforge.net/

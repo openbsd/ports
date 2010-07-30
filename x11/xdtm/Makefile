@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		Desktop Manager: a graphical shell for X11
 
 DISTNAME=		xdtm-2.5.8
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_XCONTRIB:=applications/}

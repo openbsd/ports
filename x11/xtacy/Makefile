@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2008/02/02 09:18:54 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 06:59:02 ajacoutot Exp $
 
 COMMENT=	X11 trippy color-cycling toy
 
 DISTNAME=	xtacy114
-PKGNAME=	xtacy-1.14p1
+PKGNAME=	xtacy-1.14
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	http://www.gweep.net/~jer/

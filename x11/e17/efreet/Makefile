@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/01/24 11:52:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
 DISTNAME =		efreet-0.5.0.061
-PKGNAME =		${DISTNAME}p0v0
+
+EPOCH=		0
+REVISION=	0
 
 SO_VERSION =            0.1
 # NOTE: Must bump minor version if any shlib's are removed from the

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/25 20:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=     x11
 MASTER_SITES=	${HOMEPAGE}archive/qvwm/
 

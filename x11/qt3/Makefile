@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2010/05/09 16:19:22 robert Exp $
+# $OpenBSD: Makefile,v 1.91 2010/07/30 06:59:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -9,13 +9,19 @@ COMMENT-mysql=		MySQL plugin for qt3
 COMMENT-sqlite2=	sqlite2 plugin for qt3
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}p1
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
+PKGNAME-mysql=		qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-PKGNAME-main=		qt3-mt-${VERSION}p3
-FULLPKGNAME-html=	qt3-html-${VERSION}p0
+PKGNAME-main=		qt3-mt-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
-PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}p1
+PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
+
+REVISION-mysql= 	1
+REVISION-postgresql= 	1
+REVISION-main= 		3
+REVISION-html= 		0
+REVISION-sqlite2= 	1
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk

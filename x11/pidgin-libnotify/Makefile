@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/09 06:35:21 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 06:58:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	pidgin plugin to display messages through libnotify
 
 DISTNAME=	pidgin-libnotify-0.13
-PKGNAME=	${DISTNAME}p5
+REVISION=	5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gaim-libnotify.sourceforge.net/

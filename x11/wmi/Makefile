@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10
-PKGNAME=	${DISTNAME}p4
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmi.suckless.org/

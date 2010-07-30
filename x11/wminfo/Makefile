@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; displays scrolling text
 
 DISTNAME=		wminfo-1.51
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>

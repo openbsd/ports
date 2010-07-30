@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/01/11 15:04:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:58 ajacoutot Exp $
 
 BROKEN =		needs an update
 
 COMMENT=		toolkit based on the EFL
 DISTNAME=		etk-20071211
-PKGNAME =		${DISTNAME}p4
+REVISION=		4
 
 SHARED_LIBS +=  etk                 0.0          # .1.0
 

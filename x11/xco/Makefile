@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	display X11 color names and colors
 
 DISTNAME=	xco
-PKGNAME=	xco-1.3p0
+PKGNAME=	xco-1.3
+REVISION=	0
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/

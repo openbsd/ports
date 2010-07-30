@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	turns your keyboard into an fast pointer mover
 
 DISTNAME=	keynav-20080614.01
-PKGNAME=	${DISTNAME:S/.//}p1
+PKGNAME=	${DISTNAME:S/.//}
+REVISION=	1
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.semicomplete.com/projects/keynav/

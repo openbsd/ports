@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	X11 Cursors themes generator
 DIST_VERS=	1.0.2
 XORG_VERS=	7.3
 DISTNAME=	xcursorgen-${DIST_VERS}
-PKGNAME=	xcursorgen-${XORG_VERS}p0
+PKGNAME=	xcursorgen-${XORG_VERS}
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/

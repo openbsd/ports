@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
 DISTNAME =	bbpager-0.4.7
-PKGNAME =	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bbtools/}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/19 23:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/30 06:59:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Qt Widgets for Technical Applications
 DISTNAME=		qwt-5.0.2
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 SHARED_LIBS=		qwt 5.0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2

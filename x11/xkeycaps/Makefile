@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/02/02 09:18:54 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	keymap editor for the X window system
 
 DISTNAME=	xkeycaps-2.46
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	x11 sysutils
 
 MASTER_SITES=	http://www.jwz.org/xkeycaps/

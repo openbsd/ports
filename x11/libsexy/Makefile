@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	collection of additional GTK widgets
 
 DISTNAME=	libsexy-0.1.11
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
+
 SHARED_LIBS +=  sexy                 0.0      # .2.4
 CATEGORIES=	x11 devel
 

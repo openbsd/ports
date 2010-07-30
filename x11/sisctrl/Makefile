@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=		Display Control Panel for X.org SiS driver
 
 DISTNAME=		sisctrl-0.0.20051202
-PKGNAME=		${DISTNAME}p4
+REVISION=		4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl

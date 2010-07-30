@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/14 08:12:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
 GNOME_PROJECT=	xdg-user-dirs-gtk
 GNOME_VERSION=	0.8
-PKGNAME=	${DISTNAME}p3
+REVISION=	4
 
 CATEGORIES=	x11 devel
 
@@ -20,14 +20,15 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs xcb z
+WANTLIB += pthread pthread-stubs xcb z gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gtk-x11-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/xdg-user-dirs
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::x11/gtk+2
 
 USE_X11=	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 VERSION=		0.9.15.1
 DISTNAME=		fluxbox-${VERSION}
-PKGNAME=		${DISTNAME}p2
+REVISION=		2
+
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}

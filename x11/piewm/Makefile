@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	tvtwm with pie (circular) menus
 
 DISTNAME=	piewm-1.04
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 # BSD-like/badly worded

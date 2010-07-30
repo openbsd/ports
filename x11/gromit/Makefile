@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/15 14:34:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
 DISTNAME=		gromit-20041213
-PKGNAME=		${DISTNAME}p8
+REVISION=		8
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.home.unix-ag.org/simon/gromit/

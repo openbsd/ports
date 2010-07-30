@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT=		switch GTK+2 themes quickly
 
 DISTNAME=		gtk-theme-switch-2.0.0rc2
-PKGNAME=		${DISTNAME:S/gtk/gtk2/}p6
+PKGNAME=		${DISTNAME:S/gtk/gtk2/}
+REVISION=		6
 CATEGORIES=		x11 graphics
 
 HOMEPAGE=		http://www.muhri.net/nav.php3?node=gts

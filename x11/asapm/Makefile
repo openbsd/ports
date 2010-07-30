@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/03/21 11:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/07/30 06:58:57 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	Advanced Power Management monitor utility for X
 
 DISTNAME=	asapm-2.13
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	library for converting characters to X key-presses
 DISTNAME=	libfakekey-0.1
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
+
 SHARED_LIBS=	fakekey 0.1
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=libfakekey/0.1/}

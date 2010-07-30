@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	X11 image grabber
 
 DISTNAME=	xgrabsc.2_41
-PKGNAME=	xgrab-2.41p1
+PKGNAME=	xgrab-2.41
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}

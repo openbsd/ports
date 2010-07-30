@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 21:17:50 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	bind keys or mouse buttons to shell commands under X11
 DISTNAME=	xbindkeys-1.8.3
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://hocwp.free.fr/xbindkeys/xbindkeys.html

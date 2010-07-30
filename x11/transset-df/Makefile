@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=		manage opacity property of windows, extended version
 
 DISTNAME=		transset-df-6
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.forchheimer.se/transset-df/

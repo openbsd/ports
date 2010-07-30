@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/21 20:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:58 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		gui to configure devilspie rules
 
 DISTNAME=		gdevilspie-0.31
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
+
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://code.google.com/p/gdevilspie/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/19 23:41:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=	viewer for IETF RFCs
 
 DISTNAME=	qrfcview-0.62
-PKGNAME=	${DISTNAME}p4
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://qrfcview.berlios.de/

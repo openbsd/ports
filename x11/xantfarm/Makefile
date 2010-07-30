@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	ant hill simulation on X11 root window
 
 DISTNAME=	xantfarm
-PKGNAME=	xantfarm-1.16p1
+PKGNAME=	xantfarm-1.16
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.acme.com/software/xantfarm/

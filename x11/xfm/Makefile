@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	X11 File Manager
 
 DISTNAME=	xfm-1.4.3
-PKGNAME=	${DISTNAME}p4
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/

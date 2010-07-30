@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2010/03/25 06:30:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/07/30 06:59:02 ajacoutot Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	graphical version of traceroute
 
 DISTNAME=	xtraceroute-0.9.2
+REVISION=	0
+
 CATEGORIES=	net x11
 
 HOMEPAGE=	http://www.beebgames.com/sw/gtk-ports.html
@@ -28,9 +30,9 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb z
+WANTLIB += pthread-stubs xcb z gtkgl-2.0
 
-LIB_DEPENDS=	gtkgl-2.0::x11/gtkglarea
+LIB_DEPENDS=	::x11/gtkglarea
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

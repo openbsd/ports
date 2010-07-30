@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/01/11 15:03:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 06:58:58 ajacoutot Exp $
 
 BROKEN =		needs an update
 
 COMMENT =		immensly fast JPEG thumbnailer library
 DISTNAME =		epeg-20071211
-PKGNAME =		${DISTNAME}p0
+REVISION=		0
 
 HOMEPAGE =		http://docs.enlightenment.org/api/epeg/html/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/11 19:56:35 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
 DISTNAME=		chbg-2.0.1
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
+
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.beebgames.com/sw/gtk-ports.html

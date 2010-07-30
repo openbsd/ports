@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/23 22:18:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	matchbox shared icons and configuration data
 DISTNAME=	matchbox-common-0.9.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-common/0.9/}
 

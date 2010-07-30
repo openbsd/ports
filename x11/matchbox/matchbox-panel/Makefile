@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/03/21 11:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/07/30 06:58:59 ajacoutot Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
 DISTNAME=	matchbox-panel-0.9.3
-PKGNAME=	${DISTNAME}p5
+REVISION=	5
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-panel/0.9/}
 

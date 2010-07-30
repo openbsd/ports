@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	display the current time using the X11 root cursor
 
 DISTNAME=	mouseclock-1.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}

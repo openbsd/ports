@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	screen saver that displays a countdown to a selected date
 
 DISTNAME=	kountdown-0.4.1
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.lysator.liu.se/~erre/kountdown.html

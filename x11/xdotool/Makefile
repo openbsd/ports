@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:01 ajacoutot Exp $
 
 COMMENT=	fake keyboard and mouse input
 
 DISTNAME=	xdotool-20090126
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 CATEGORIES=	x11
 

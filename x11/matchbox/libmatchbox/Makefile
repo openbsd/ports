@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=	matchbox base library
 DISTNAME=	libmatchbox-1.9
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 
 SHARED_LIBS +=  mb                   1.7      # .1.7
 MODGNU_SHARED_LIBS=	mb ''

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/11 15:01:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =		database convenience library based on db 2.7.7
 DISTNAME =		edb-20071211
-PKGNAME =		${DISTNAME}p0
-
+REVISION=		0
 SHARED_LIBS +=	edb                  0.0      # .1.5
 
 # BSD

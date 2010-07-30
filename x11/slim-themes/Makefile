@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/01 10:03:49 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:00 ajacoutot Exp $
 
 COMMENT=	slim themes bundle
 
@@ -8,7 +8,9 @@ DISTFILES+=	slim-${j}-20090407${EXTRACT_SUFX}
 .endfor
 
 DIST_SUBDIR=	slim
-PKGNAME=	slim-themes-1.2.3p2
+PKGNAME=	slim-themes-1.2.3
+REVISION=	2
+
 PKG_ARCH=	*
 
 CATEGORIES=	x11

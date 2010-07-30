@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 18:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:57 ajacoutot Exp $
 
 COMMENT =		simple background setter
 
 VERSION =		0.5
 DISTNAME =		bgs-${VERSION}
-PKGNAME =		${DISTNAME}p1
+REVISION=		1
 CATEGORIES =		x11 graphics
 
 HOMEPAGE =		http://s01.de/~tox/index.cgi/proj_bgs

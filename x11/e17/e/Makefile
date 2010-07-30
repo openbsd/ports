@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/24 20:18:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 06:58:58 ajacoutot Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
-PKGNAME =		${DISTNAME}p2v0
+
+EPOCH=		0
+REVISION=	2
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

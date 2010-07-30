@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/02 12:43:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	Aurora GTK+2 engine
 
 V=		1.5.1
 DISTNAME=	56438-aurora-${V}
-PKGNAME=	gtk2-aurora-engine-${V}p0
+PKGNAME=	gtk2-aurora-engine-${V}
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 

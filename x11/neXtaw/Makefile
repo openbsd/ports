@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 06:58:59 ajacoutot Exp $
 
 COMMENT=		libXaw widget set replacement
 
 DISTNAME=		neXtaw-0.15.1
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 SHARED_LIBS +=	neXtaw               15.1     # .15.1
 CATEGORIES=		x11 devel
