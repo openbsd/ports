@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/07/30 12:57:18 landry Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,13 +23,13 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-mysql =	1
-REVISION-postgresql =	1
-REVISION-examples =	1
-REVISION-sqlite2 =	1
-REVISION-sqlite =	1
-REVISION-tds =		1
-REVISION-main = 	1
+REVISION-mysql =	2
+REVISION-postgresql =	2
+REVISION-examples =	2
+REVISION-sqlite2 =	2
+REVISION-sqlite =	2	
+REVISION-tds =		2
+REVISION-main = 	2
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 8.0 \
@@ -129,12 +129,6 @@ CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 			X11BASE=${X11BASE}
 .if defined(MAKE_JOBS)
 CONFIGURE_ENV +=	BOOTSTRAP_MAKE_FLAGS='-j${MAKE_JOBS}'
-.endif
-
-# fix to avoid gcc generating a huge uncompilable intermediate assembly
-.if ${MACHINE_ARCH} == "hppa"
-CXXFLAGS +=		-finline-limit=60
-CONFIGURE_ENV +=	OPENSOURCE_CXXFLAGS="${CXXFLAGS}"
 .endif
 
 BUILD_DEPENDS +=	::print/cups
