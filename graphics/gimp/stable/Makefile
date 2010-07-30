@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.59 2010/07/08 16:16:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.60 2010/07/30 06:27:52 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.6.9
-SHARED_LIBS=	gimp-2.0	269.0	\
-		gimpbase-2.0	269.0	\
-		gimpcolor-2.0	269.0	\
-		gimpconfig-2.0	269.0	\
-		gimpmath-2.0	269.0	\
-		gimpmodule-2.0	269.0	\
-		gimpthumb-2.0	269.0	\
-		gimpui-2.0	269.0	\
-		gimpwidgets-2.0	269.0
+DISTNAME=	gimp-2.6.10
+SHARED_LIBS=	gimp-2.0	270.0	\
+		gimpbase-2.0	270.0	\
+		gimpcolor-2.0	270.0	\
+		gimpconfig-2.0	270.0	\
+		gimpmath-2.0	270.0	\
+		gimpmodule-2.0	270.0	\
+		gimpthumb-2.0	270.0	\
+		gimpui-2.0	270.0	\
+		gimpwidgets-2.0	270.0
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -27,20 +27,20 @@ EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	::textproc/libxslt
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		aa.>=1.3::graphics/aalib \
-		dbus-glib-1::x11/dbus-glib \
-		exif::graphics/libexif \
-		mng::graphics/libmng \
-		tiff.>=35::graphics/tiff \
-		wmf.>=6,wmflite.>=6::graphics/libwmf \
-		poppler.>=3,poppler-glib.>=3::print/poppler \
-		gegl-0.1::graphics/gegl \
-		openjpeg.>=4::graphics/openjpeg \
-		:py-gtk2-*:x11/py-gtk2 \
-		curl::net/curl
+LIB_DEPENDS=	::x11/gtk+2 \
+		::graphics/aalib \
+		::x11/dbus-glib \
+		::graphics/libexif \
+		::graphics/libmng \
+		::graphics/tiff \
+		::graphics/libwmf \
+		::print/poppler \
+		::graphics/gegl \
+		::graphics/openjpeg \
+		::x11/py-gtk2 \
+		::net/curl
 
-RUN_DEPENDS+=	:py-gtk2-*:x11/py-gtk2
+RUN_DEPENDS+=	::x11/py-gtk2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -58,7 +58,10 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		expat Xcomposite Xdamage gthread-2.0 pcre \
 		bz2 croco-0.6 gio-2.0 gsf-1 rsvg-2 babl-0.1 \
 		pthread-stubs xcb execinfo xcb-render \
-		xcb-render-util
+		xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gtk-x11-2.0 tiff.>=35 aa.>=1.3 dbus-glib-1 \
+		exif mng wmf.>=6 wmflite.>=6 poppler.>=3 \
+		poppler-glib.>=3 gegl-0.1 openjpeg.>=4 curl
 
 MODULES=	devel/gettext \
 		textproc/intltool \
