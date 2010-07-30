@@ -1,9 +1,24 @@
-$OpenBSD: patch-build_xml,v 1.1.1.1 2009/08/02 18:38:53 ian Exp $
---- build.xml.orig	Sat Aug  1 22:11:14 2009
-+++ build.xml	Sat Aug  1 22:11:51 2009
-@@ -12,14 +12,7 @@
+$OpenBSD: patch-build_xml,v 1.2 2010/07/30 19:47:36 ian Exp $
+--- build.xml.orig	Wed Jul 28 06:27:21 2010
++++ build.xml	Wed Jul 28 15:01:58 2010
+@@ -42,14 +42,7 @@
+ 	  -->
+ 	<target name="create-revision">
+ 		<property name="revision.dir" value="${build.dir}"/>
+-		<exec append="false" output="REVISION.XML" executable="svn" failifexecutionfails="false">
+-			<env key="LANG" value="C"/>
+-			<arg value="info"/>
+-			<arg value="--xml"/>
+-			<arg value="."/>
+-		</exec>
+ 		<xmlproperty file="REVISION.XML" prefix="version" keepRoot="false" collapseAttributes="true"/>
+-		<delete file="REVISION.XML" />
+ 		<tstamp>
+ 			<format property="build.tstamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+ 		</tstamp>
+@@ -67,14 +60,7 @@ Build-Date: ${build.tstamp}
  
- 	<target name="dist" depends="compile">
+ 	<target name="dist" depends="compile,create-revision">
  
 -		<exec append="false" output="REVISION" executable="svn" failifexecutionfails="false">
 -			<env key="LANG" value="C"/>
@@ -15,4 +30,4 @@ $OpenBSD: patch-build_xml,v 1.1.1.1 2009/08/02 18:38:53 ian Exp $
 -		<delete file="REVISION"/>
  		<property name="version.entry.commit.revision" value="UNKNOWN"/>
  		<property name="version.entry.commit.date" value="UNKNOWN"/>
- 
+ 		<echo>Revision ${version.entry.commit.revision}</echo>
