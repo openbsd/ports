@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri Nov 20 15:38:11 2009
-+++ Makefile.in	Fri Jul  2 10:11:34 2010
-@@ -864,13 +864,13 @@ install-data-hook: links surfraw.conf
+$OpenBSD: patch-Makefile_in,v 1.4 2010/07/30 21:07:15 benoit Exp $
+--- Makefile.in.orig	Thu May  6 21:26:01 2010
++++ Makefile.in	Sat Jul 24 11:48:57 2010
+@@ -766,13 +766,13 @@
  	mkdir -p $(DESTDIR)@sysconfdir@/xdg/surfraw
  	cp surfraw.conf $(DESTDIR)@sysconfdir@/xdg/surfraw/conf
  	cp $(top_srcdir)/surfraw.bookmarks $(DESTDIR)@sysconfdir@/xdg/surfraw/bookmarks
@@ -20,10 +21,10 @@
  
  uninstall-local: links
  	-rm -f $(DESTDIR)@sysconfdir@/xdg/surfraw/conf
-@@ -889,7 +889,7 @@ submit-lsm: surfraw.lsm
+@@ -791,7 +791,7 @@
  	mail -s add LSM@qqx.org < $<
  
- test: all
+ test: all surfraw.conf
 -	make -C test test
 +	${MAKE} -C test test
  
