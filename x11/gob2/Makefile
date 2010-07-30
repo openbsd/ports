@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/03 06:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=		GTK+ Object Builder
 DISTNAME=		gob2-2.0.17
@@ -13,9 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=		c m glib-2.0
 
-LIB_DEPENDS=		glib-2.0::devel/glib2	
+LIB_DEPENDS=		::devel/glib2	
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gob2/2.0/}	
 EXTRACT_SUFX=		.tar.bz2

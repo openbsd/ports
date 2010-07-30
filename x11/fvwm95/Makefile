@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	win95-like window manager based on fvwm 2.x
 
@@ -13,14 +13,14 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://fvwm95.sourceforge.net/
 
-LIB_DEPENDS=	rplay::audio/rplay
+LIB_DEPENDS=	::audio/rplay
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
-WANTLIB=		X11 Xext Xpm c
+WANTLIB=		X11 Xext Xpm c rplay
 
 USE_X11=	Yes
 

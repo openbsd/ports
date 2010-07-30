@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	window manipulation tool
 
 DISTNAME=	devilspie-0.22
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.burtonini.com/blog/computers/devilspie
@@ -21,13 +21,13 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += startup-notification-1 z pthread-stubs xcb
+WANTLIB += startup-notification-1 z pthread-stubs xcb wnck-1
 
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MODULES=	devel/gettext textproc/intltool
 
-LIB_DEPENDS=	wnck-1.>=16::devel/libwnck
+LIB_DEPENDS=	::devel/libwnck
 
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		library to write an arbitary set of chunks of data to a file
 DISTNAME =		eet-1.2.1
@@ -14,10 +14,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c crypto m pthread ssl z
+WANTLIB +=		c crypto m pthread ssl z eina jpeg
 
-LIB_DEPENDS =		eina::x11/e17/eina \
-			jpeg::graphics/jpeg
+LIB_DEPENDS =		::x11/e17/eina \
+			::graphics/jpeg
 
 USE_LIBTOOL =		Yes
 

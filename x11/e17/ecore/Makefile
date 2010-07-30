@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-0.9.9.061
 
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 
 SO_VERSION =		0.1
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xtst c crypto eet eina
 WANTLIB += expat fontconfig freetype jpeg m pthread pthread-stubs
-WANTLIB += ssl xcb z
+WANTLIB += ssl xcb z evas
 
 MODULES=		converters/libiconv
 
@@ -33,7 +33,7 @@ USE_X11 =		Yes
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		evas::x11/e17/evas
+LIB_DEPENDS =		::x11/e17/evas
 
 # Note sure about gnutls, curl is useful , is with-x really really necessary ?
 CONFIGURE_ARGS +=	--with-iconv-link=-liconv \

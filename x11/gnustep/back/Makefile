@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
 V=		0.18.0
 DISTNAME=	gnustep-back-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,14 +14,14 @@ SUBST_VARS=	BACKENDV
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB=	GL X11 Xt Xext Xmu c freetype m objc pthread z \
-		pthread-stubs xcb
+		pthread-stubs xcb gnustep-base gnustep-gui
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 USE_X11=	Yes
 MODULES=	x11/gnustep
-LIB_DEPENDS=	gnustep-base.>=3::x11/gnustep/base \
-		gnustep-gui::x11/gnustep/gui
+LIB_DEPENDS=	::x11/gnustep/base \
+		::x11/gnustep/gui
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm"
@@ -34,13 +34,14 @@ FLAVOR?=	xlib
 .if ${FLAVOR:L} == "cairo"
 CONFIGURE_ARGS+=--enable-graphics=cairo \
 		--with-name=cairo
-LIB_DEPENDS+=	cairo.>=8::graphics/cairo
+LIB_DEPENDS+=	::graphics/cairo
 WANTLIB+=	Xau Xdmcp Xft Xrender expat fontconfig glitz pixman-1 \
-		png
+		png cairo
 .elif ${FLAVOR:L} == "libart"
 CONFIGURE_ARGS+=--enable-graphics=art \
 		--with-name=art
-LIB_DEPENDS+=	art_lgpl_2.>=5::graphics/libart
+LIB_DEPENDS+=	::graphics/libart
+WANTLIB += art_lgpl_2
 .elif ${FLAVOR:L} == "xlib"
 CONFIGURE_ARGS+=--enable-graphics=xlib \
 		--with-name=back

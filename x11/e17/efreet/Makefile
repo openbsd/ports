@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
 DISTNAME =		efreet-0.5.0.061
@@ -20,9 +20,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=	c crypto eina m ssl
+WANTLIB +=	c crypto eina m ssl ecore ecore_con ecore_file
 
-LIB_DEPENDS =	ecore,ecore_con,ecore_file::x11/e17/ecore
+LIB_DEPENDS =	::x11/e17/ecore
 
 USE_LIBTOOL =	Yes
 

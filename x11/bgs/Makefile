@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		simple background setter
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		X11 Xinerama c
+WANTLIB =		X11 Xinerama c Imlib2
 
-LIB_DEPENDS =		Imlib2::graphics/imlib2
+LIB_DEPENDS =		::graphics/imlib2
 
 USE_X11 =		Yes
 NO_REGRESS =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/03/25 06:29:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	3D filesystem visualizer
 
@@ -30,10 +30,10 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
-WANTLIB += xcb xml2 z
+WANTLIB += xcb xml2 z gnomeui-2 gtkgl-2.0
 
-LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
-		gtkgl-2.0::x11/gtkglarea
+LIB_DEPENDS=	::x11/gnome/libgnomeui \
+		::x11/gtkglarea
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu

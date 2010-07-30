@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.86
 
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	dbus-glib-1	4.2 # .3.0
 
@@ -21,13 +21,13 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	expat c pthread pcre
+WANTLIB=	expat c pthread pcre dbus-1 glib-2.0 gobject-2.0
 
 MASTER_SITES=	${HOMEPAGE}releases/dbus-glib/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	dbus-1.>=7::x11/dbus \
-		glib-2.0,gobject-2.0::devel/glib2
+LIB_DEPENDS=	::x11/dbus \
+		::devel/glib2
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes

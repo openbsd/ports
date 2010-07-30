@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/30 11:29:44 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	Advanced Power Management monitor utility for X
 
 DISTNAME=	asapm-2.13
-REVISION=	0
+REVISION=	1
+
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
@@ -18,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xpm c
+WANTLIB=		ICE SM X11 Xext Xpm c jpeg
 
-LIB_DEPENDS=		jpeg.>=62::graphics/jpeg
+LIB_DEPENDS=		::graphics/jpeg
 
 USE_X11=		Yes
 

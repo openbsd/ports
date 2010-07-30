@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME=	GNUMail-1.2.0pre3
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 SHARED_LIBS=	GNUMail 1.2	# .1.2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.collaboration-world.com/gnumail
 
-WANTLIB=	c gnustep-base gnustep-gui m objc pthread
+WANTLIB += c gnustep-base gnustep-gui m objc pthread AddressView
+WANTLIB += Addresses Pantomime
 
 MASTER_SITES=	${HOMEPAGE}.data/releases/Stable/
 
 MODULES=	x11/gnustep
-LIB_DEPENDS=	AddressView::x11/gnustep/addresses \
-		Addresses::x11/gnustep/addresses \
-		Pantomime.>=1::x11/gnustep/pantomime
+LIB_DEPENDS=	::x11/gnustep/addresses \
+		::x11/gnustep/addresses \
+		::x11/gnustep/pantomime
 RUN_DEPENDS=	:gnustep-back-*:x11/gnustep/back
 
 MAKE_ENV+=	GNUMail_INTERFACE_VERSION=${LIBGNUMail_VERSION}

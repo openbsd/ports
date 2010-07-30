@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.18.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -13,21 +13,21 @@ SHARED_LIBS=	gnustep-gui 0.18	# .0.18.0
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += asn1 c crypto gssapi krb5 m objc pthread ssl stdc++
-WANTLIB += tiff z
+WANTLIB += asn1 c crypto gssapi krb5 m objc pthread ssl stdc++ sndfile
+WANTLIB += tiff z ao jpeg ungif png cups aspell gnustep-base
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep
 
-LIB_DEPENDS=	ao::audio/libao \
-		sndfile::audio/libsndfile \
-		jpeg.>=62::graphics/jpeg \
-		ungif.>=5::graphics/libungif \
-		png.>=5::graphics/png \
-		cups.>=3::print/cups \
-		aspell.>=16::textproc/aspell/core \
-		gnustep-base.>=3::x11/gnustep/base
+LIB_DEPENDS=	::audio/libao \
+		::audio/libsndfile \
+		::graphics/jpeg \
+		::graphics/libungif \
+		::graphics/png \
+		::print/cups \
+		::textproc/aspell/core \
+		::x11/gnustep/base
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \

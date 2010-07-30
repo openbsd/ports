@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.20.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	gnustep-base 3.0	# .1.16.4
 CATEGORIES=	devel
@@ -13,7 +13,8 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += c crypto gcrypt m objc pthread ssl xml2 z
+WANTLIB += c crypto gcrypt m objc pthread ssl xml2 z ffi gmp xslt gnutls
+WANTLIB += dns_sd
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 WANTLIB += iberty
@@ -23,11 +24,11 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep \
 		converters/libiconv
-LIB_DEPENDS=	ffi::devel/libffi \
-		gmp.>=7::devel/gmp \
-		xslt.>=3::textproc/libxslt \
-		gnutls.>=13::security/gnutls \
-		dns_sd::net/avahi
+LIB_DEPENDS=	::devel/libffi \
+		::devel/gmp \
+		::textproc/libxslt \
+		::security/gnutls \
+		::net/avahi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/avahi-compat-libdns_sd" \

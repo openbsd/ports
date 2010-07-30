@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME=	gworkspace-0.8.8
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -14,14 +14,14 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 
 HOMEPAGE=	http://www.gnustep.org/experience/GWorkspace.html
 
-WANTLIB=	c gnustep-base m objc pthread
+WANTLIB=	c gnustep-base m objc pthread gnustep-gui
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 
 RUN_DEPENDS=	::x11/gnustep/back
-LIB_DEPENDS=	gnustep-gui::x11/gnustep/gui
+LIB_DEPENDS=	::x11/gnustep/gui
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

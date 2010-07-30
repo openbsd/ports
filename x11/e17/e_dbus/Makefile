@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-0.5.0.061
-REVISION=		0
+REVISION=		1
 
 SO_VERSION =            0.0
 .for _lib in edbus enotify enm ehal
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c crypto eet eina evas expat fontconfig freetype jpeg
-WANTLIB += m pthread ssl z
+WANTLIB += m pthread ssl z dbus-1 ecore
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		dbus-1.>=7::x11/dbus \
-			ecore::x11/e17/ecore \
+LIB_DEPENDS =		::x11/dbus \
+			::x11/e17/ecore \
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

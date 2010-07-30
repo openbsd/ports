@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 11:29:44 ajacoutot Exp $
 
 BROKEN =		needs an update
 
 COMMENT=		toolkit based on the EFL
 DISTNAME=		etk-20071211
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  etk                 0.0          # .1.0
 
@@ -14,11 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += edje
+
 MODULES=		devel/gettext
 
-
-
-LIB_DEPENDS=		edje::x11/e17/edje
+LIB_DEPENDS=		::x11/e17/edje
 
 RUN_DEPENDS=		::devel/desktop-file-utils
 

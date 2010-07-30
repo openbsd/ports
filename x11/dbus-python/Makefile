@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	dbus bindings for Python
 
 DISTNAME=	dbus-python-0.83.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}releases/dbus-python/
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB+=	glib-2.0 gobject-2.0 pcre
+WANTLIB+=	glib-2.0 gobject-2.0 pcre dbus-1 dbus-glib-1
 
 MODULES=	lang/python \
 		devel/gettext
 
-LIB_DEPENDS+=	dbus-1.>=5::x11/dbus \
-		dbus-glib-1::x11/dbus-glib
+LIB_DEPENDS+=	::x11/dbus \
+		::x11/dbus-glib
 
 USE_LIBTOOL=	Yes
 

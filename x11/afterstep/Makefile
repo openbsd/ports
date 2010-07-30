@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/12/06 19:29:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -20,7 +20,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs tiff xcb z
+WANTLIB += png pthread pthread-stubs tiff xcb z dbus-1 rsvg-2
 
 MODULES=	devel/gettext
 
@@ -28,8 +28,8 @@ BUILD_DEPENDS=	::devel/libexecinfo
 RUN_DEPENDS=	::shells/bash \
 		:asclock-*:x11/asclock,classic,english \
 		::x11/aterm
-LIB_DEPENDS=	dbus-1::x11/dbus \
-		rsvg-2::x11/gnome/librsvg
+LIB_DEPENDS=	::x11/dbus \
+		::x11/gnome/librsvg
 
 FAKE=		lib
 USE_X11=	Yes

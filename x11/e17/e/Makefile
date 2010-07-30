@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/07/30 11:29:44 ajacoutot Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
 
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,11 +19,11 @@ WANTLIB += Xinerama Xrandr Xrender Xss Xtst c crypto dbus-1
 WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
 WANTLIB += ecore_input ecore_ipc ecore_job ecore_txt ecore_x eet
 WANTLIB += eina embryo evas expat fontconfig freetype jpeg m pthread
-WANTLIB += pthread-stubs ssl xcb z
+WANTLIB += pthread-stubs ssl xcb z edje efreet efreet_mime edbus ehal
 
-LIB_DEPENDS =		edje::x11/e17/edje \
-			efreet,efreet_mime::x11/e17/efreet \
-			edbus,ehal::x11/e17/e_dbus
+LIB_DEPENDS =		::x11/e17/edje \
+			::x11/e17/efreet \
+			::x11/e17/e_dbus
 
 RUN_DEPENDS =		::devel/desktop-file-utils
 
