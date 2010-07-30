@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/21 13:20:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/30 21:22:51 benoit Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
-DISTNAME =		Pound-2.4.5
+DISTNAME =		Pound-2.5
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		www
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c crypto m pthread ssl
+WANTLIB =		c crypto m pcre pthread ssl
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tgz
 
-LIB_DEPENDS =		pcreposix::devel/pcre
+LIB_DEPENDS =		::devel/pcre
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
