@@ -1,7 +1,7 @@
-$OpenBSD: patch-gir_Makefile_in,v 1.4 2010/04/20 11:20:08 jasper Exp $
---- gir/Makefile.in.orig	Sun Apr 18 17:56:40 2010
-+++ gir/Makefile.in	Tue Apr 20 12:05:02 2010
-@@ -370,7 +370,7 @@ _gir_packages = $(foreach pkg,$($(_gir_name)_PACKAGES)
+$OpenBSD: patch-gir_Makefile_in,v 1.5 2010/07/30 05:49:24 ajacoutot Exp $
+--- gir/Makefile.in.orig	Thu Jun  3 22:09:26 2010
++++ gir/Makefile.in	Fri Jul 30 07:33:39 2010
+@@ -392,7 +392,7 @@ _gir_packages = $(foreach pkg,$($(_gir_name)_PACKAGES)
  _gir_includes = $(foreach include,$($(_gir_name)_INCLUDES),--include=$(include))
  
  # Reuse the LIBTOOL variable from by automake if it's set
