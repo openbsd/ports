@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/07/18 20:28:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 13:12:23 lum Exp $
 
 COMMENT=	portable, encrypted, compressed tunnel
 
 DISTNAME=	zebedee-2.4.1A
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	security net
 
 HOMEPAGE=	http://www.winton.org.uk/zebedee/
@@ -23,8 +23,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zebedee/} \
 
 FLAVORS=	udp_spoof
 FLAVOR?=
-
-LIB_DEPENDS=	bz2.>=10::archivers/bzip2
 
 DEFINES_openbsd= -DHAVE_PTHREADS -DBUGGY_FORK_WITH_THREADS
 OSLIBS_openbsd=	-pthread
