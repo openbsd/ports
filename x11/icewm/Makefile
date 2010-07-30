@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/07/30 12:03:08 ajacoutot Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.2.37
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender \
 		c expat fontconfig freetype jpeg m png stdc++ tiff \
-		ungif z pthread-stubs xcb
+		ungif z pthread-stubs xcb Imlib
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	Imlib.>=19::graphics/imlib
+LIB_DEPENDS=	::graphics/imlib
 
 USE_X11=	Yes
 

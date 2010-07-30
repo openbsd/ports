@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=		tray configuration utility
 DISTNAME=		matchbox-panel-manager-0.1
@@ -10,12 +10,12 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += z pthread-stubs xcb
+WANTLIB += z pthread-stubs xcb gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=		devel/gettext
 
 RUN_DEPENDS=		::devel/desktop-file-utils
-LIB_DEPENDS=		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		::x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 

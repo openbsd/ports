@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11 x11/kde
 
@@ -21,7 +21,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
 		jpeg m pcre pcreposix png pthread rpcsvc stdc++ util z \
-		pthread-stubs xcb
+		pthread-stubs xcb kdecore DCOP kdefx kdesu kdeui kio \
+		kparts kwalletclient kdeprint khtml kjs kutils konq \
+		kjsembed qui-mt
 
 PORTHOME=	${WRKDIR}
 
@@ -33,10 +35,10 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=7,DCOP,kdefx,kdesu,kdeui,kio,kparts,kwalletclient,kdeprint,khtml,kjs,kutils::x11/kde/libs3 \
-		konq.>=7::x11/kde/base3 \
-		kjsembed.>=2::x11/kde/bindings3 \
-		qui-mt.>=2::x11/qt3,-main
+LIB_DEPENDS=	::x11/kde/libs3 \
+		::x11/kde/base3 \
+		::x11/kde/bindings3 \
+		::x11/qt3,-main
 
 AUTOCONF_VERSION=2.61
 

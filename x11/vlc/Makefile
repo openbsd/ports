@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2010/07/30 12:03:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	5
+REVISION-main=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -28,32 +28,32 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext x11/qt4
 LIB_DEPENDS+=	dbus-1::x11/dbus
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		lib/qt4/QtGui::x11/qt4 \
-		SDL_image.>=1.3::devel/sdl-image \
-		png.>=4.1::graphics/png \
-		mad.>=2.1::audio/libmad \
-		mpeg2::graphics/libmpeg2 \
-		avcodec.>=13.1,avformat.>=12,avutil.>=6,postproc.>=12,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
-		faad.>=2::audio/faad \
-		fribidi::devel/fribidi \
-		a52::audio/liba52 \
-		theora.>=1::multimedia/libtheora \
-		xml2.>=9::textproc/libxml \
-		FLAC.>=7.0::audio/flac \
-		mpcdec.>=1::audio/libmpcdec \
-		matroska::multimedia/libmatroska \
-		ebml::textproc/libebml \
-		dvdnav.>=3.0::multimedia/libdvdnav \
-		dvdread.>=3.0::devel/libdvdread \
-		x264::multimedia/x264 \
-		schroedinger-1.0::multimedia/schroedinger \
-		dvbpsi.>=3::graphics/libdvbpsi \
-		speex::audio/speex \
-		tag::audio/taglib \
-		vorbis.>=6,vorbisenc.>=2::audio/libvorbis \
-		dca::audio/libdca \
-		proxy::net/libproxy \
-		notify::devel/libnotify
+		::x11/qt4 \
+		::devel/sdl-image \
+		::graphics/png \
+		::audio/libmad \
+		::graphics/libmpeg2 \
+		:ffmpeg->=20080620p10:graphics/ffmpeg \
+		::audio/faad \
+		::devel/fribidi \
+		::audio/liba52 \
+		::multimedia/libtheora \
+		::textproc/libxml \
+		::audio/flac \
+		::audio/libmpcdec \
+		::multimedia/libmatroska \
+		::textproc/libebml \
+		::multimedia/libdvdnav \
+		::devel/libdvdread \
+		::multimedia/x264 \
+		::multimedia/schroedinger \
+		::graphics/libdvbpsi \
+		::audio/speex \
+		::audio/taglib \
+		::audio/libvorbis \
+		::audio/libdca \
+		::net/libproxy \
+		::devel/libnotify
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB-main=	GL GLU ICE SM SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
@@ -63,7 +63,11 @@ WANTLIB-main=	GL GLU ICE SM SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gsm gthread-2.0 gtk-x11-2.0 jpeg m mp3lame oil-0.3 ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread-stubs pthread \
 		stdc++.>=46.0 sndio tiff usbhid xcb-keysyms xcb-render \
-		xcb-render-util xcb z
+		xcb-render-util xcb z lib/qt4/QtGui SDL_image png mad mpeg2 \
+		avcodec avformat avutil postproc swscale faad fribidi \
+		a52 theora xml2 FLAC mpcdec matroska ebml dvdnav dvdread \
+		x264 schroedinger-1.0 dvbpsi speex tag vorbis vorbisenc \
+		dca proxy notify
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -128,10 +132,11 @@ CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
 CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 LIB_DEPENDS-web=${LIB_DEPENDS} \
-		vlc,vlccore::${BASE_PKGPATH} \
-		nspr4,plc4,plds4::devel/nspr
+		::${BASE_PKGPATH} \
+		::devel/nspr
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
-WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs stdc++.>=46.0 xcb
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs stdc++ xcb \
+		vlc vlccore nspr4 plc4 plds4
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
@@ -142,11 +147,11 @@ REVISION-jack=	0
 FULLPKGPATH-jack=x11/vlc,-jack
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=${LIB_DEPENDS} \
-		 vlccore::${BASE_PKGPATH} \
-		 jack::audio/jack
+		 ::${BASE_PKGPATH} \
+		 ::audio/jack
 # any FLAVOR of VLC will do
 RUN_DEPENDS-jack=::${BASE_PKGPATH}
-WANTLIB-jack=	m
+WANTLIB-jack=	m vlccore jack
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"

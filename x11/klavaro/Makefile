@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/28 15:20:24 pea Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -23,7 +24,8 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		m pixman-1 z gio-2.0 atk-1.0 cairo glib-2.0 glitz curl \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 gmodule-2.0 png \
 		gobject-2.0 pthread-stubs xcb gthread-2.0 pthread \
-		xcb-render xcb-render-util
+		xcb-render xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gtk-x11-2.0 gtkdatabox curl
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=klavaro/}
 
@@ -31,9 +33,9 @@ EXTRACT_SUFX = 	.tar.bz2
 
 MODULES =       devel/gettext
 
-LIB_DEPENDS = 	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gtkdatabox::x11/gtkdatabox \
-		curl.::net/curl
+LIB_DEPENDS = 	::x11/gtk+2 \
+		::x11/gtkdatabox \
+		::net/curl
 
 USE_X11 =	Yes
 

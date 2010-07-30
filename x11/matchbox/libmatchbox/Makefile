@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=	matchbox base library
 DISTNAME=	libmatchbox-1.9
@@ -10,13 +10,14 @@ MODGNU_SHARED_LIBS=	mb ''
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=libmatchbox/1.9/}
 
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender expat fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 m pcre z pthread-stubs xcb
+		glib-2.0 gmodule-2.0 gobject-2.0 m pcre z pthread-stubs \
+		pango-1.0 pangoft2-1.0 pangoxft-1.0 xcb jpeg png
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		pango-1.0,pangoft2-1.0,pangoxft-1.0::devel/pango \
-			jpeg::graphics/jpeg \
-			png::graphics/png
+LIB_DEPENDS=		::devel/pango \
+			::graphics/jpeg \
+			::graphics/png
 
 USE_LIBTOOL=	Yes
 

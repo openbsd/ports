@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/06/10 05:39:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.45 2010/07/30 12:03:08 ajacoutot Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -9,6 +9,9 @@ DISTNAME=	fvwm-${VERSION}
 PKGNAME-main=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
+
+REVISION-main=	0
+
 CATEGORIES=     x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz:0
@@ -19,17 +22,20 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 # GPL/BSD-like (badly worded)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		ICE SM X11 Xext Xi Xinerama Xpm c gdk glib gmodule \
-			iconv intl jpeg m png readline termcap tiff ungif z
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	ICE SM X11 Xext Xi Xinerama Xpm c gdk glib gmodule \
+		gtk gdk_imlib jpeg m png readline termcap tiff ungif z
+
+MODULES=	devel/gettext
 
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 
-LIB_DEPENDS=	gtk.>=1.2:gtk+-*:x11/gtk+ \
-		gdk_imlib.>=19.:imlib-*:graphics/imlib
+LIB_DEPENDS=	::x11/gtk+ \
+		::graphics/imlib
 
 MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
@@ -37,9 +43,10 @@ FLAVORS=	rplay debug i18n
 FLAVOR?=
 
 .if ${FLAVOR:L:Mrplay}
-LIB_DEPENDS+=	rplay::audio/rplay
+LIB_DEPENDS+=	::audio/rplay
 CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
 		 --with-rplay-library="${LOCALBASE}/lib"
+WANTLIB += rplay
 .else
 CONFIGURE_ARGS+= --without-rplay
 .endif

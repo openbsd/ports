@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/05/19 17:28:38 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-2.6.4
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -20,8 +21,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xrender cairo expat fontconfig freetype
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 jpeg m pcre
-WANTLIB += pixman-1 png pthread-stubs xcb z
-WANTLIB += gthread-2.0 xcb-render xcb-render-util
+WANTLIB += pixman-1 png pthread-stubs xcb z exif ungif
+WANTLIB += gthread-2.0 xcb-render xcb-render-util pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 tiff
 
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/libgdiplus/
 EXTRACT_SUFX=	.tar.bz2
@@ -30,10 +32,10 @@ MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
-		tiff.>=38::graphics/tiff \
-		exif.>=12::graphics/libexif \
-		ungif.>=5::graphics/libungif
+LIB_DEPENDS=	::devel/pango \
+		::graphics/tiff \
+		::graphics/libexif \
+		::graphics/libungif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

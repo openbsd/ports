@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=	OCaml interface to GTK+
 
 DISTNAME=	lablgtk-1.2.7
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	x11 devel
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xi glib gmodule m
+WANTLIB += X11 Xext Xi glib gmodule m gtk gdk
 
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 
-LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
+LIB_DEPENDS=	::x11/gtk+
 
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk \

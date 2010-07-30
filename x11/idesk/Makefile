@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 12:03:08 ajacoutot Exp $
 
 COMMENT=		put clickable icons on the desktop
 
 MAINTAINER=		D. Adam Karim <adam@akarsoft.com>
 
 DISTNAME=		idesk-0.7.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=idesk/}
@@ -20,10 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=		ICE stdc++ c X11 Xrender Xau Xdmcp expat z m \
+WANTLIB=		ICE stdc++ c X11 Xrender Xau Xdmcp expat z m Imlib2 \
 			SM Xft freetype fontconfig Xext pthread-stubs xcb
 
-LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2
+LIB_DEPENDS=		::graphics/imlib2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

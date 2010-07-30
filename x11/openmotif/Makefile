@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/04/24 20:17:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -7,6 +7,9 @@ VERSION=		2.3.3
 DISTNAME=		openmotif-${VERSION}
 PKGNAME-main=		openmotif-${VERSION}
 PKGNAME-demos=		openmotif-demos-${VERSION}
+
+REVISION-main=		0
+REVISION-demos= 	0
 
 SHARED_LIBS=		Mrm	4.1	\
 			Uil	5.0	\
@@ -46,14 +49,15 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		jpeg::graphics/jpeg \
-			png::graphics/png
-LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
+LIB_DEPENDS=		::graphics/jpeg \
+			::graphics/png
+LIB_DEPENDS-demos=	::x11/openmotif \
 			${MODLIBICONV_LIB_DEPENDS} \
 			${LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xt c Xau Xdmcp Xft Xmu Xrender \
-			expat fontconfig freetype m z pthread-stubs xcb
-WANTLIB-demos=		${WANTLIB}
+			expat fontconfig freetype m z pthread-stubs xcb \
+			jpeg png
+WANTLIB-demos=		${WANTLIB} Xm Mrm
 
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes

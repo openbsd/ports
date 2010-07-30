@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2010/07/30 12:03:09 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,13 +23,13 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-mysql =	0
-REVISION-postgresql =	0
-REVISION-examples =	0
-REVISION-sqlite2 =	0
-REVISION-sqlite =	0
-REVISION-tds =		0
-REVISION-main = 	0
+REVISION-mysql =	1
+REVISION-postgresql =	1
+REVISION-examples =	1
+REVISION-sqlite2 =	1
+REVISION-sqlite =	1
+REVISION-tds =		1
+REVISION-main = 	1
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 8.0 \
@@ -198,46 +198,52 @@ sqlLIB_DEPENDS = 	QtCore.>=4,QtSql::${BASE_PKGPATH}
 
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			glib-2.0,gthread-2.0::devel/glib2 \
-			jpeg::graphics/jpeg \
-			mng::graphics/libmng \
-			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
-WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			lcms tiff gobject-2.0 \
+			::devel/glib2 \
+			::graphics/jpeg \
+			::graphics/libmng \
+			::multimedia/gstreamer-0.10/plugins-base
+WANTLIB-main =		${WANTLIB} ${commonWANTLIB} jpeg mng \
+			lcms tiff gobject-2.0 gstvideo-0.10 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
-			gobject-2.0 gmodule-2.0 \
-			iconv intl
+			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
+			iconv intl glib-2.0 gthread-2.0 gstaudio-0.10
 
 
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
-			mysqlclient_r::databases/mysql
+			::databases/mysql
 WANTLIB-mysql =		${WANTLIB} ${sqlWANTLIB} \
-			crypto ssl pthread z
+			crypto ssl pthread z mysqlclient_r
 
 
 LIB_DEPENDS-postgresql =${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
-			pq.>=2:postgresql-client-*:databases/postgresql
-WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB} 
+			::databases/postgresql
+WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB}  pq
 			
 
 LIB_DEPENDS-sqlite2 =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
-			sqlite::databases/sqlite
-WANTLIB-sqlite2 =	${WANTLIB} ${sqlWANTLIB}
+			::databases/sqlite
+WANTLIB-sqlite2 =	${WANTLIB} ${sqlWANTLIB} sqlite
 
 
 LIB_DEPENDS-sqlite =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
-			sqlite3::databases/sqlite3
-WANTLIB-sqlite =	${WANTLIB} ${sqlWANTLIB}
+			::databases/sqlite3
+WANTLIB-sqlite =	${WANTLIB} ${sqlWANTLIB} sqlite3
 
 
 LIB_DEPENDS-tds =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
-			sybdb::databases/freetds
-WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB}
+			::databases/freetds
+WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB} sybdb
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			lib/qt4/QtDesigner,lib/qt4/QtCore.>=4,lib/qt4/QtGui,lib/qt4/QtNetwork,lib/qt4/QtOpenGL,lib/qt4/QtSql,lib/qt4/QtXml,lib/qt4/QtSvg,lib/qt4/QtTest,lib/qt4/Qt3Support,lib/qt4/QtAssistantClient,lib/qt4/QtDBus,lib/qt4/QtScript,lib/qt4/QtScriptTools,lib/qt4/QtHelp,lib/qt4/QtCLucene,lib/qt4/phonon,lib/qt4/QtMultimedia::${BASE_PKGPATH}
-WANTLIB-examples =	${WANTLIB} ${commonWANTLIB}
-
+			::${BASE_PKGPATH}
+WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} lib/qt4/QtDesigner \
+			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
+			lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtXml \
+			lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/Qt3Support \
+			lib/qt4/QtAssistantClient lib/qt4/QtDBus \
+			lib/qt4/QtScript lib/qt4/QtScriptTools \
+			lib/qt4/QtHelp lib/qt4/QtCLucene lib/qt4/phonon \
+			lib/qt4/QtMultimedia
 
 LIB_DEPENDS-html =
 WANTLIB-html =
@@ -249,9 +255,10 @@ PKG_ARCH-html =	*
 CONFIGURE_ARGS +=	-platform openbsd-g++4
 PKG_ARGS += -DGCC4=1
 WANTLIB += stdc++
-LIB_DEPENDS-examples +=	QtWebKit,QtXmlPatterns::${BASE_PKGPATH}
-WANTLIB-examples +=	sqlite3
-LIB_DEPENDS-main += sqlite3::databases/sqlite3
+LIB_DEPENDS-examples +=	::${BASE_PKGPATH}
+WANTLIB-examples +=	sqlite3 QtWebKit QtXmlPatterns
+LIB_DEPENDS-main += ::databases/sqlite3
+WANTLIB-main += sqlite3
 .else
 PKG_ARGS += -DGCC4=0
 .endif

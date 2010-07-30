@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/07/30 12:03:09 ajacoutot Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
-REVISION=	6
+REVISION=	7
+
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -19,10 +20,10 @@ PERMIT_PACKAGE_FTP=Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr c expat gio-2.0 pcre pixman-1 pthread
-WANTLIB += z pthread-stubs xcb
+WANTLIB += z pthread-stubs xcb dvdcontrol xml2 msgevents
 
-LIB_DEPENDS=	dvdcontrol.>=9,msgevents.>=6::x11/ogle \
-		xml2::textproc/libxml \
+LIB_DEPENDS=	::x11/ogle \
+		::textproc/libxml \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -31,16 +32,17 @@ FLAVORS=gtk1
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gtk1"
-LIB_DEPENDS+= 	glade.>=5.0::devel/libglade \
-		gtk.>=1.2::x11/gtk+
-WANTLIB+=	Xi gdk glib gmodule xml
+LIB_DEPENDS+= 	::devel/libglade \
+		::x11/gtk+
+WANTLIB+=	Xi gdk glib gmodule xml glade gtk
 .else
-LIB_DEPENDS+=	glade-2.0::devel/libglade2 \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS+=	::devel/libglade2 \
+		::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk2
 WANTLIB+=	Xrender atk-1.0 fontconfig freetype glib-2.0 \
-		gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 cairo glitz png
+		gmodule-2.0 gobject-2.0 m pango-1.0 glade-2.0 \
+		pangocairo-1.0 pangoft2-1.0 cairo glitz png gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gtk-x11-2.0
 .endif
 
 MODULES=	devel/gettext

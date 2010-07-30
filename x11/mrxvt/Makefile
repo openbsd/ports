@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-REVISION=	2
+REVISION=	3
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://materm.sourceforge.net
@@ -20,11 +21,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
  
 USE_X11=	Yes
 BUILD_DEPENDS=	:bzip2-*:archivers/bzip2
-LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
-		png.>=2.::graphics/png
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/png
 
 WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig freetype util m z \
-		Xft Xau Xdmcp expat pthread-stubs xcb
+		Xft Xau Xdmcp expat pthread-stubs xcb jpeg png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-menubar \

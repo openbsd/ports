@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/22 10:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/07/30 12:03:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 ssl
 WANTLIB += stdc++ xcb xml2 z e2fs-uuid xcb-render xcb-render-util
 WANTLIB += gtkmm-2.4.>=7 gdkmm-2.4 atkmm-1.6 xml++-2.6 gmime-2.4
 WANTLIB += curl.>=13 tag.>=7 sqlite3.>=13 dbus-glib-1.>=4 exif.>=12
+WANTLIB += textcat xapian
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
@@ -48,8 +49,8 @@ LIB_DEPENDS=	::x11/gtk2mm \
 
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/pinot/backends/
-LIB_DEPENDS+=	textcat::textproc/libtextcat \
-		xapian::databases/xapian-core
+LIB_DEPENDS+=	::textproc/libtextcat \
+		::databases/xapian-core
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::devel/xdg-utils \

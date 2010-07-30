@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/07/30 12:03:09 ajacoutot Exp $
 
 COMMENT=	simple xrandr config tool
 
 DISTNAME=	lxrandr-0.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11 sysutils
 
@@ -21,11 +21,12 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png z pthread-stubs xcb
+		pixman-1 png z pthread-stubs xcb gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes

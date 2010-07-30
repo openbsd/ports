@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/30 12:03:09 ajacoutot Exp $
 
 
 BROKEN=		Need to resolve various issues
@@ -6,6 +6,9 @@ COMMENT=	front-end/embeddable kpart for mplayer
 CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
+
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
 
@@ -37,9 +40,10 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
 		iconv intl jpeg kmedia2_idl kwalletclient m mad mcop ogg \
 		ossaudio png pthread qtmcop soundserver_idl stdc++ util vorbis \
-		vorbisenc vorbisfile z 
+		vorbisenc vorbisfile z kdecore DCOP kdefx kdesu kdeui kio \
+		kmediaplayer kparts artskde
 
-LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,artskde::x11/kde/libs3
+LIB_DEPENDS=::x11/kde/libs3
 
 RUN_DEPENDS=:mplayer-*:x11/mplayer
 
