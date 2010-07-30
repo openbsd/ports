@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2010/07/30 08:02:59 ajacoutot Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -6,7 +6,7 @@ COMMENT-lang=		language subpackage for Window Maker
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
-REVISION-main=		9
+REVISION-main=		10
 FULLPKGNAME-lang=       windowmaker-lang-${V}
 REVISION-lang=		1
 SHARED_LIBS=		wraster 5.0
@@ -42,12 +42,12 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 MULTI_PACKAGES=         -main -lang
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
-			tiff.>=35::graphics/tiff \
-			png.>=2::graphics/png \
-			ungif.>=5::graphics/libungif
+LIB_DEPENDS=		::graphics/tiff \
+			::graphics/png \
+			::graphics/libungif
 WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
-	 		fontconfig freetype m z pthread-stubs xcb
+	 		fontconfig freetype m z pthread-stubs xcb jpeg \
+			tiff png ungif
 
 RUN_DEPENDS-lang=	:windowmaker->=0.90.0:x11/windowmaker
 LIB_DEPENDS-lang=

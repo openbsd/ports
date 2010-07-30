@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/07/30 08:03:00 ajacoutot Exp $
 
 COMMENT=	graphics file viewer for X11
 
@@ -7,7 +7,7 @@ REV=		16	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REV}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 graphics
 
 FAKE=		lib
@@ -26,8 +26,9 @@ MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
 PATCHFILES=	xloadimage_${VERSION}-${REV}.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
-LIB_DEPENDS=	png.>=2::graphics/png tiff.>=35::graphics/tiff
-WANTLIB=	X11 c jpeg m z 
+LIB_DEPENDS=	::graphics/png \
+		::graphics/tiff
+WANTLIB=	X11 c jpeg m z png tiff
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu

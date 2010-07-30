@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/07/30 08:03:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	c++ cross-platform GUI toolkit
 V=		2.8.10
 DISTNAME=	wxWidgets-${V}
 PKGNAME=	wxWidgets-gtk2-${V}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	wx_base			2.0	\
 		wx_base_net		2.0	\
@@ -48,18 +48,19 @@ USE_X11=	Yes
 VMEM_WARNING=	Yes
 
 BUILD_DEPENDS=	::devel/cppunit
-LIB_DEPENDS=	mspack::archivers/libmspack \
-		SDL::devel/sdl \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		iodbc::databases/iodbc \
-		esd::audio/esound
+LIB_DEPENDS=	::archivers/libmspack \
+		::devel/sdl \
+		::x11/gtk+2 \
+		::databases/iodbc \
+		::audio/esound
 
 WANTLIB += GL GLU SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c expat fontconfig freetype gio-2.0 glib-2.0 glitz
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ossaudio
-WANTLIB += pango-1.0 pangoft2-1.0 pixman-1 png pthread stdc++
-WANTLIB += tiff z pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ossaudio esd
+WANTLIB += pango-1.0 pangoft2-1.0 pixman-1 png pthread stdc++ SDL iodbc
+WANTLIB += tiff z pthread-stubs xcb xcb-render xcb-render-util mspack
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 08:03:00 ajacoutot Exp $
 
-COMMENT=		Window Maker dock.app clock
+COMMENT=		WindowMaker dock.app clock
 
 DISTNAME=		wmclockmon-0.8.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://tnemeth.free.fr/projets/dockapps.html
@@ -24,9 +24,10 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xpm Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread-stubs xcb z
+WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0
+WANTLIB += gtk-x11-2.0
 
-LIB_DEPENDS=		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		::x11/gtk+2
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

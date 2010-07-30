@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/07/30 08:02:59 ajacoutot Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
-LIB_DEPENDS=	jpeg::graphics/jpeg \
-		png::graphics/png
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/png
 
-WANTLIB=	X11 Xft Xmu Xrender fontconfig c m stdc++ z freetype
+WANTLIB=	X11 Xft Xmu Xrender fontconfig c m stdc++ z freetype jpeg png
 
 MAKE_FILE=	Makefile.openbsd
 MAKE_FLAGS+=	CFGDIR=${SYSCONFDIR}

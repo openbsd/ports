@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/07/30 08:02:59 ajacoutot Exp $
 
 COMMENT =	Perl extension to the X On Screen Display library (xosd)
 SHARED_ONLY =	Yes
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-LIB_DEPENDS =	xosd::x11/xosd
+WANTLIB += xosd
+
+LIB_DEPENDS =	::x11/xosd
 
 USE_X11 =	Yes
 

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/07/30 08:03:00 ajacoutot Exp $
 
 COMMENT=	X11 Cursors themes generator
 DIST_VERS=	1.0.2
 XORG_VERS=	7.3
 DISTNAME=	xcursorgen-${DIST_VERS}
 PKGNAME=	xcursorgen-${XORG_VERS}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
-LIB_DEPENDS=	png.>=2::graphics/png
+LIB_DEPENDS=	::graphics/png
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ftp.x.org/pub/X11R${XORG_VERS}/src/app/ \
 		ftp://x.mirrors.skynet.be/pub/ftp.x.org/pub/X11R${XORG_VERS}/src/app/
 
 WANTLIB=		Xrender Xcursor X11 Xfixes Xdmcp Xau c m z \
-			pthread-stubs xcb
+			pthread-stubs xcb png
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes

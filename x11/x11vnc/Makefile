@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/02 00:42:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/07/30 08:03:00 ajacoutot Exp $
 
 COMMENT =		VNC server for real X displays
 
 DISTNAME =		x11vnc-0.9.9
+REVISION =		0
 
 CATEGORIES =		x11
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xdamage Xext Xfixes Xinerama Xrandr Xtst c crypto
-WANTLIB += pthread ssl z
+WANTLIB += pthread ssl z jpeg avahi-client avahi-common
 
 USE_X11 =		Yes
 
@@ -24,8 +25,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libvncserver/}
 MODULES =		x11/tk
 RUN_DEPENDS =		::devel/desktop-file-utils \
 			${MODTK_RUN_DEPENDS}
-LIB_DEPENDS =		jpeg::graphics/jpeg \
-			avahi-client,avahi-common::net/avahi
+LIB_DEPENDS =		::graphics/jpeg \
+			::net/avahi
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

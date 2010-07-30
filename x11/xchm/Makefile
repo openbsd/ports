@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/07/30 08:03:00 ajacoutot Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.16
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel textproc x11
 
@@ -17,12 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
-LIB_DEPENDS=	chm::devel/chmlib \
-		wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+LIB_DEPENDS=	::devel/chmlib \
+		:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-WANTLIB=	m c stdc++ pthread
+WANTLIB += m c stdc++ pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
+WANTLIB += wx_gtk2_html wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core
+WANTLIB += wx_base_net wx_gtk2_dbgrid wx_gtk2_aui wx_gtk2_richtext
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
