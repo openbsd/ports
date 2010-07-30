@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/30 11:27:06 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.2 2010/07/30 22:07:53 sthen Exp $ 
 
 COMMENT=	modular framework for web-based applications
 
-HORDE_MODULE=
+# LGPLv2
 DISTNAME=	horde-3.3.8
 CATEGORIES=	devel
+MASTER_SITES=	${HORDE_SITES:=horde/}
 HOMEPAGE=	http://www.horde.org/
-MASTER_SITES=	${MASTER_SITE_HORDE:=horde/}
 INSTDIR=	horde
-
-# LGPLv2
+HORDE_MODULE=
 
 RUN_DEPENDS+=	:pear-*:www/pear \
 		:pear-DB-*:databases/pear-DB \
