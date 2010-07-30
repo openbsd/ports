@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/03 11:54:19 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 22:49:27 steven Exp $
 
 COMMENT =	data recovery software
 
 VERSION =	6.11.3
 DISTNAME =	testdisk-${VERSION}
-PKGNAME =	${DISTNAME}p0
+REVISION =	1
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.cgsecurity.org/
