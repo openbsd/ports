@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/07/30 15:35:00 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	2.28.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils
 
@@ -23,7 +23,7 @@ WANTLIB += gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0 kvm m pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
 WANTLIB += xml2 z gtkmm-2.4 atkmm-1.6 gdkmm-2.4 gtop-2.0 pango-1.0
-WANTLIB += pangoft2-1.0 pangocairo-1.0 startup-notification-1 wnck rsvg
+WANTLIB += pangoft2-1.0 pangocairo-1.0 startup-notification-1 wnck-1 rsvg-2
 
 MODULES=	devel/gettext \
 		x11/gnome \
