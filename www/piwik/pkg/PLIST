@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/07/22 12:46:46 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/07/30 12:50:41 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -68,6 +68,7 @@ piwik/core/DataTable/Filter/ReplaceColumnNames.php
 piwik/core/DataTable/Filter/ReplaceSummaryRowLabel.php
 piwik/core/DataTable/Filter/SafeDecodeLabel.php
 piwik/core/DataTable/Filter/Sort.php
+piwik/core/DataTable/Filter/Truncate.php
 piwik/core/DataTable/Manager.php
 piwik/core/DataTable/Renderer/
 piwik/core/DataTable/Renderer.php
@@ -128,6 +129,13 @@ piwik/core/PluginsFunctions/Sql.php
 piwik/core/PluginsFunctions/WidgetsList.php
 piwik/core/PluginsManager.php
 piwik/core/QuickForm2.php
+piwik/core/ScheduledTask.php
+piwik/core/ScheduledTime/
+piwik/core/ScheduledTime.php
+piwik/core/ScheduledTime/Daily.php
+piwik/core/ScheduledTime/Hourly.php
+piwik/core/ScheduledTime/Monthly.php
+piwik/core/ScheduledTime/Weekly.php
 piwik/core/Session.php
 piwik/core/Site.php
 piwik/core/Smarty.php
@@ -154,6 +162,7 @@ piwik/core/SmartyPlugins/modifier.urlRewriteWithParameters.php
 piwik/core/SmartyPlugins/outputfilter.ajaxcdn.php
 piwik/core/SmartyPlugins/outputfilter.cachebuster.php
 piwik/core/TablePartitioning.php
+piwik/core/TaskScheduler.php
 piwik/core/Timer.php
 piwik/core/Tracker/
 piwik/core/Tracker.php
@@ -166,7 +175,6 @@ piwik/core/Tracker/Db/Pdo/
 piwik/core/Tracker/Db/Pdo/Mysql.php
 piwik/core/Tracker/Db/Pdo/Pgsql.php
 piwik/core/Tracker/GoalManager.php
-piwik/core/Tracker/PiwikTracker.php
 piwik/core/Tracker/Visit.php
 piwik/core/Tracker/javascriptTag.tpl
 piwik/core/Translate.php
@@ -194,6 +202,7 @@ piwik/core/Updates/0.5.php
 piwik/core/Updates/0.6-rc1.php
 piwik/core/Updates/0.6.2.php
 piwik/core/Updates/0.6.3.php
+piwik/core/Updates/0.7.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -253,6 +262,7 @@ piwik/lang/ko.php
 piwik/lang/lt.php
 piwik/lang/nb.php
 piwik/lang/nl.php
+piwik/lang/nn.php
 piwik/lang/pl.php
 piwik/lang/pt-br.php
 piwik/lang/pt.php
@@ -351,11 +361,15 @@ piwik/libs/PEAR5.php
 piwik/libs/PclZip/
 piwik/libs/PclZip/gnu-lgpl.txt
 piwik/libs/PclZip/pclzip.lib.php
+piwik/libs/PiwikTracker/
+piwik/libs/PiwikTracker/LICENSE.txt
+piwik/libs/PiwikTracker/PiwikTracker.php
 piwik/libs/Smarty/
 piwik/libs/Smarty/Config_File.class.php
 piwik/libs/Smarty/Smarty.class.php
 piwik/libs/Smarty/Smarty_Compiler.class.php
 piwik/libs/Smarty/debug.tpl
+piwik/libs/Smarty/gpl.txt
 piwik/libs/Smarty/internals/
 piwik/libs/Smarty/internals/core.assemble_plugin_filepath.php
 piwik/libs/Smarty/internals/core.assign_smarty_interface.php
@@ -967,6 +981,7 @@ piwik/libs/jsmin/
 piwik/libs/jsmin/jsmin.php
 piwik/libs/open-flash-chart/
 piwik/libs/open-flash-chart/README.txt
+piwik/libs/open-flash-chart/gpl.txt
 piwik/libs/open-flash-chart/lgpl-3.0.txt
 piwik/libs/open-flash-chart/open-flash-chart.swf
 piwik/libs/open-flash-chart/php-ofc-library/
@@ -1031,6 +1046,40 @@ piwik/libs/swfobject/
 piwik/libs/swfobject/MIT-LICENSE.txt
 piwik/libs/swfobject/expressInstall.swf
 piwik/libs/swfobject/swfobject.js
+piwik/libs/tcpdf/
+piwik/libs/tcpdf/2dbarcodes.php
+piwik/libs/tcpdf/README.TXT
+piwik/libs/tcpdf/barcodes.php
+piwik/libs/tcpdf/config/
+piwik/libs/tcpdf/config/lang/
+piwik/libs/tcpdf/config/lang/bra.php
+piwik/libs/tcpdf/config/lang/eng.php
+piwik/libs/tcpdf/config/lang/ger.php
+piwik/libs/tcpdf/config/lang/ita.php
+piwik/libs/tcpdf/config/tcpdf_config.php
+piwik/libs/tcpdf/config/tcpdf_config_alt.php
+piwik/libs/tcpdf/fonts/
+piwik/libs/tcpdf/fonts/almohanad.php
+piwik/libs/tcpdf/fonts/arialunicid0.php
+piwik/libs/tcpdf/fonts/helvetica.php
+piwik/libs/tcpdf/fonts/helveticab.php
+piwik/libs/tcpdf/fonts/helveticabi.php
+piwik/libs/tcpdf/fonts/helveticai.php
+piwik/libs/tcpdf/fonts/symbol.php
+piwik/libs/tcpdf/fonts/times.php
+piwik/libs/tcpdf/fonts/timesb.php
+piwik/libs/tcpdf/fonts/timesbi.php
+piwik/libs/tcpdf/fonts/timesi.php
+piwik/libs/tcpdf/gpl.txt
+piwik/libs/tcpdf/htmlcolors.php
+piwik/libs/tcpdf/lgpl-3.0.txt
+piwik/libs/tcpdf/pdf417.php
+piwik/libs/tcpdf/qrcode.php
+piwik/libs/tcpdf/tcpdf.crt
+piwik/libs/tcpdf/tcpdf.fdf
+piwik/libs/tcpdf/tcpdf.p12
+piwik/libs/tcpdf/tcpdf.php
+piwik/libs/tcpdf/unicode_data.php
 piwik/libs/upgradephp/
 piwik/libs/upgradephp/README
 piwik/libs/upgradephp/upgrade.php
@@ -1074,6 +1123,7 @@ piwik/plugins/Actions/Controller.php
 piwik/plugins/AnonymizeIP/
 piwik/plugins/AnonymizeIP/AnonymizeIP.php
 piwik/plugins/CoreAdminHome/
+piwik/plugins/CoreAdminHome/API.php
 piwik/plugins/CoreAdminHome/Controller.php
 piwik/plugins/CoreAdminHome/CoreAdminHome.php
 piwik/plugins/CoreAdminHome/templates/
@@ -1088,6 +1138,7 @@ piwik/plugins/CoreHome/
 piwik/plugins/CoreHome/Controller.php
 piwik/plugins/CoreHome/CoreHome.php
 piwik/plugins/CoreHome/templates/
+piwik/plugins/CoreHome/templates/autocomplete.js
 piwik/plugins/CoreHome/templates/broadcast.js
 piwik/plugins/CoreHome/templates/calendar.js
 piwik/plugins/CoreHome/templates/cloud.css
@@ -1116,6 +1167,7 @@ piwik/plugins/CoreHome/templates/images/more_period.gif
 piwik/plugins/CoreHome/templates/images/reset_search.png
 piwik/plugins/CoreHome/templates/images/search.png
 piwik/plugins/CoreHome/templates/index.tpl
+piwik/plugins/CoreHome/templates/jquery.ui.autocomplete.css
 piwik/plugins/CoreHome/templates/js_css_includes.tpl
 piwik/plugins/CoreHome/templates/js_disabled_notice.tpl
 piwik/plugins/CoreHome/templates/js_global_variables.tpl
@@ -1309,6 +1361,16 @@ piwik/plugins/MultiSites/templates/common.js
 piwik/plugins/MultiSites/templates/index.tpl
 piwik/plugins/MultiSites/templates/row.tpl
 piwik/plugins/MultiSites/templates/styles.css
+piwik/plugins/PDFReports/
+piwik/plugins/PDFReports/API.php
+piwik/plugins/PDFReports/Controller.php
+piwik/plugins/PDFReports/PDFRenderer.php
+piwik/plugins/PDFReports/PDFReports.php
+piwik/plugins/PDFReports/templates/
+piwik/plugins/PDFReports/templates/add.tpl
+piwik/plugins/PDFReports/templates/index.tpl
+piwik/plugins/PDFReports/templates/list.tpl
+piwik/plugins/PDFReports/templates/pdf.js
 piwik/plugins/Provider/
 piwik/plugins/Provider/API.php
 piwik/plugins/Provider/Controller.php
@@ -1898,6 +1960,12 @@ piwik/plugins/UserCountry/flags/zw.png
 piwik/plugins/UserCountry/functions.php
 piwik/plugins/UserCountry/templates/
 piwik/plugins/UserCountry/templates/index.tpl
+piwik/plugins/UserCountryMap/
+piwik/plugins/UserCountryMap/PiwikMap.swf
+piwik/plugins/UserCountryMap/UserCountryMap.php
+piwik/plugins/UserCountryMap/templates/
+piwik/plugins/UserCountryMap/templates/exportImage.tpl
+piwik/plugins/UserCountryMap/templates/worldmap.tpl
 piwik/plugins/UserSettings/
 piwik/plugins/UserSettings/API.php
 piwik/plugins/UserSettings/Controller.php
@@ -2110,6 +2178,7 @@ piwik/themes/default/images/inp_bg.png
 piwik/themes/default/images/li_dbl_gray.gif
 piwik/themes/default/images/link.gif
 piwik/themes/default/images/loading-blue.gif
+piwik/themes/default/images/logo.png
 piwik/themes/default/images/minus.png
 piwik/themes/default/images/ok.png
 piwik/themes/default/images/page_border_grad.png
