@@ -1,9 +1,18 @@
-# $OpenBSD: horde.port.mk,v 1.2 2010/07/30 15:31:17 sthen Exp $
+# $OpenBSD: horde.port.mk,v 1.3 2010/07/30 21:24:39 sthen Exp $
 
 CATEGORIES +=	www www/horde
 
 HORDE_MODULE ?=	${DISTNAME:C/-h3-.*//}
-MASTER_SITES ?=	${MASTER_SITE_HORDE:=${HORDE_MODULE}/}
+
+HORDE_SITES ?= \
+	http://ftp.horde.org/pub/ \
+	ftp://ftp.horde.org/pub/ \
+	ftp://ftp.de.horde.org/mirrors/ftp.de.horde.org/pub/ \
+	ftp://ftp.se.horde.org/mirror/horde/pub/ \
+	ftp://ftp.tw.horde.org/pub/ \
+	ftp://ftp.us.horde.org/pub/software/horde/
+
+MASTER_SITES ?=	${HORDE_SITES:=${HORDE_MODULE}/}
 
 PKG_ARCH ?=	*
 

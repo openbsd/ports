@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.143 2010/07/12 10:35:12 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.144 2010/07/30 21:24:39 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -235,13 +235,6 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstormsecurity.org/ \
 	http://packetstorm.codar.com.br/ \
 	http://packetstorm.rlz.cl/
-
-MASTER_SITE_HORDE+=		\
-	ftp://ftp.horde.org/pub/ \
-	ftp://ftp.de.horde.org/mirrors/ftp.de.horde.org/pub/ \
-	ftp://ftp.se.horde.org/mirror/horde/pub/ \
-	ftp://ftp.tw.horde.org/pub/ \
-	ftp://ftp.us.horde.org/pub/software/horde/
 
 MASTER_SITE_APACHE+= \
 	http://www.reverse.net/pub/apache/ \
