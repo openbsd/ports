@@ -9,4 +9,4 @@ flexible way, just by changing the config files.  And there are
 Horde API functions to add and search for contacts.
 
 To complete the installation, be sure that Horde is configured and
-working, then see ${INSTDIR}/docs/INSTALL
+working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL

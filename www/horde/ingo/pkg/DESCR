@@ -5,5 +5,5 @@ IMP and supports the following drivers:
     * procmail (using VFS FTP driver)
     * IMAP client-side filtering
 
-To complete the installation, be sure that Horde is configured and
-working, then see ${INSTDIR}/docs/INSTALL
+To complete the installation, be sure that Horde and IMP are configured
+and working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL

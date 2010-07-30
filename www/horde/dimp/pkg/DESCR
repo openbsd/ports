@@ -3,4 +3,4 @@ It provides a 3-pane layout with message preview, drag-and-drop support,
 context-sensitive menus, etc.
 
 To complete the installation, be sure that Horde and IMP are configured
-and working, then see ${INSTDIR}/docs/INSTALL
+and working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL

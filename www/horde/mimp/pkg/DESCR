@@ -4,4 +4,4 @@ is implemented including mailbox viewing and paging, viewing messages,
 deleting, replying, forwarding, and composing new messages.
 
 To complete the installation, be sure that Horde and IMP are configured
-and working, then see ${INSTDIR}/docs/INSTALL
+and working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL

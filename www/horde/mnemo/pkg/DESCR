@@ -1,4 +1,4 @@
 Memo application for Horde
 
 To complete the installation, be sure that Horde is configured and
-working, then see ${INSTDIR}/docs/INSTALL
+working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL

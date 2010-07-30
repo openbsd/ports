@@ -4,4 +4,5 @@ MIME handling, per-user preferences, folder navigation, searching,
 and an uncluttered user interface.
 
 To complete the installation, be sure that Horde is configured and
-working, then see ${INSTDIR}/docs/INSTALL
+working first, then see ${PREFIX}/${INSTDIR}/docs/INSTALL and enter
+Mail server details in ${PREFIX}/${INSTDIR}/config/servers.php
