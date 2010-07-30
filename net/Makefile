@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.645 2010/07/28 18:18:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.646 2010/07/30 20:36:38 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -251,6 +251,7 @@
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-INET6
      SUBDIR += p5-IO-Socket-Multicast
+     SUBDIR += p5-IP-Country
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
