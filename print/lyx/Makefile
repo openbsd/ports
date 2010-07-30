@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2010/06/16 18:47:50 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2010/07/30 05:46:51 landry Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-1.6.6.1
+REVISION=	0
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
@@ -21,16 +22,13 @@ MODULES=	devel/gettext lang/python x11/qt4
 RUN_DEPENDS=	::print/texlive/base \
 		::graphics/ImageMagick
 
-LIB_DEPENDS=	QtGui.>=8:qt4->=4.5.3:x11/qt4 \
-		boost_filesystem-mt.>=1,boost_iostreams-mt.>=1,boost_regex-mt.>=1,boost_signals-mt.>=1:boost->=1.41.0:devel/boost \
-		aspell::textproc/aspell/core
+LIB_DEPENDS=	:qt4->=4.5.3:x11/qt4 \
+		::devel/boost \
+		::textproc/aspell/core
 
-WANTLIB += X11 c m pthread stdc++ z
-
-#eats gazillions of memory
-.if ${MACHINE_ARCH} == "hppa"
-CFLAGS+=	-O0
-.endif
+WANTLIB += QtGui.>=8 X11 aspell c m pthread stdc++ z
+WANTLIB += boost_filesystem-mt.>=1 boost_iostreams-mt.>=1
+WANTLIB += boost_regex-mt.>=1 boost_signals-mt.>=1
 
 SEPARATE_BUILD=	concurrent
 USE_LIBTOOL=	Yes
