@@ -1,4 +1,4 @@
-$OpenBSD: patch-filter_conf,v 1.1 2010/03/21 10:49:26 ajacoutot Exp $
+$OpenBSD: patch-filter_conf,v 1.2 2010/07/30 10:21:14 ajacoutot Exp $
 --- filter.conf.orig	Wed Aug 19 20:08:41 2009
 +++ filter.conf	Tue Feb 16 12:57:52 2010
 @@ -8,7 +8,7 @@
@@ -23,7 +23,7 @@ $OpenBSD: patch-filter_conf,v 1.1 2010/03/21 10:49:26 ajacoutot Exp $
  
  # Set the PATH value to be used by foomatic-rip:
 -# execpath: /usr/local/bin:/usr/bin:/bin
-+exepath: ${LOCALBASE}/bin:/usr/bin:/bin
++execpath: ${LOCALBASE}/bin:/usr/bin:/bin
  
  # Set the directories in which foomatic-rip should search for CUPS filters:
 -# cupsfilterpath: /usr/local/lib/cups/filter:/usr/local/lib/cups/filter:/usr/local/libexec/cups/filter:/opt/cups/filter:/usr/lib/cups/filter
