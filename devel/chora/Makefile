@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:52:58 merdely Exp $ 
+# $OpenBSD: Makefile,v 1.10 2010/07/31 06:59:40 landry Exp $ 
 
 COMMENT=	web-based CVS viewer module for Horde
 
@@ -29,7 +29,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-RUN_DEPENDS=	:horde->=2.2.1:devel/horde
+RUN_DEPENDS=	:horde->=2.2.1:www/horde/horde
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
