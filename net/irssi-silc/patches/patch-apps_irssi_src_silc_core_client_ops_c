@@ -1,7 +1,21 @@
-$OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.2 2010/05/19 15:05:10 sthen Exp $
---- apps/irssi/src/silc/core/client_ops.c.orig	Sat May 23 02:11:25 2009
-+++ apps/irssi/src/silc/core/client_ops.c	Wed Apr 28 10:26:29 2010
-@@ -1069,6 +1069,8 @@ void silc_notify(SilcClient client, SilcClientConnecti
+$OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.3 2010/07/31 12:43:25 sthen Exp $
+--- apps/irssi/src/silc/core/client_ops.c.orig	Fri May 22 20:11:25 2009
++++ apps/irssi/src/silc/core/client_ops.c	Thu Jul 29 22:42:52 2010
+@@ -262,10 +262,11 @@ int verify_message_signature(SilcClientEntry sender,
+ 				      sizeof(sender->fingerprint));
+       if (strcmp(fingerprint, fingerprint2)) {
+         /* since the public key differs from the senders public key, the
+-           verification _failed_ */
++           verification won't be done */
+         silc_pkcs_public_key_free(pk);
+         silc_free(fingerprint);
+-        ret = SILC_MSG_SIGNED_UNKNOWN;
++        silc_free(fingerprint2);
++        return SILC_MSG_SIGNED_UNKNOWN;
+       }
+       silc_free(fingerprint2);
+     }
+@@ -1069,6 +1070,8 @@ void silc_notify(SilcClient client, SilcClientConnecti
  
        nick = silc_nicklist_find(chanrec, client_entry2);
        if (nick != NULL) {
@@ -10,7 +24,7 @@ $OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.2 2010/05/19 15:05:10 
  	nick->op = (mode & SILC_CHANNEL_UMODE_CHANOP) != 0;
  	nick->founder = (mode & SILC_CHANNEL_UMODE_CHANFO) != 0;
  	signal_emit("nick mode changed", 2, chanrec, nick);
-@@ -2790,6 +2792,15 @@ static void silc_get_auth_ask_passphrase(const unsigne
+@@ -2790,6 +2793,15 @@ static void silc_get_auth_ask_passphrase(const unsigne
    silc_free(a);
  }
  
@@ -26,7 +40,7 @@ $OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.2 2010/05/19 15:05:10 
  /* Find authentication data by hostname and port. The hostname may be IP
     address as well.*/
  
-@@ -2811,7 +2822,7 @@ void silc_get_auth_method(SilcClient client, SilcClien
+@@ -2811,7 +2823,7 @@ void silc_get_auth_method(SilcClient client, SilcClien
  
    /* Check whether we find the password for this server in our
       configuration.  If it's set, always send it server. */
