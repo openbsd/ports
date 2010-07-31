@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/31 08:18:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2010/07/31 10:31:58 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
@@ -44,9 +44,11 @@ bin/printer-profile
 @man man/man1/foo2slx.1
 @man man/man1/foo2xqx-wrapper.1
 @man man/man1/foo2xqx.1
+@man man/man1/foo2zjs-icc2ps.1
 @man man/man1/foo2zjs-pstops.1
 @man man/man1/foo2zjs-wrapper.1
 @man man/man1/foo2zjs.1
+@man man/man1/gipddecode.1
 @man man/man1/hipercdecode.1
 @man man/man1/lavadecode.1
 @man man/man1/oakdecode.1
@@ -149,6 +151,7 @@ share/foomatic/db/source/PPD/foo2zjs/Minolta-Color_PageWorks_Pro_L.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2200_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2300_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2430_DL.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3100.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3200.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3300.ppd.gz
@@ -180,6 +183,8 @@ share/foomatic/db/source/driver/foo2oak.xml
 share/foomatic/db/source/driver/foo2qpdl.xml
 share/foomatic/db/source/driver/foo2slx.xml
 share/foomatic/db/source/driver/foo2xqx.xml
+share/foomatic/db/source/driver/foo2zjs-z1.xml
+share/foomatic/db/source/driver/foo2zjs-z2.xml
 share/foomatic/db/source/driver/foo2zjs.xml
 share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/foo2hiperc-ColorMode.xml
@@ -229,6 +234,7 @@ share/foomatic/db/source/opt/foo2slx-InputSlot.xml
 share/foomatic/db/source/opt/foo2slx-MediaType.xml
 share/foomatic/db/source/opt/foo2slx-PageSize.xml
 share/foomatic/db/source/opt/foo2slx-Resolution.xml
+share/foomatic/db/source/opt/foo2xqx-Density.xml
 share/foomatic/db/source/opt/foo2xqx-Duplex.xml
 share/foomatic/db/source/opt/foo2xqx-InputSlot.xml
 share/foomatic/db/source/opt/foo2xqx-MediaType.xml
@@ -246,6 +252,11 @@ share/foomatic/db/source/opt/foo2zjs-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-PrinterType.xml
 share/foomatic/db/source/opt/foo2zjs-Resolution.xml
+share/foomatic/db/source/opt/foo2zjs-z1-MediaType.xml
+share/foomatic/db/source/opt/foo2zjs-z1-PageSize.xml
+share/foomatic/db/source/opt/foo2zjs-z12-Density.xml
+share/foomatic/db/source/opt/foo2zjs-z2-MediaType.xml
+share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
 share/foomatic/db/source/printer/
 share/foomatic/db/source/printer/Generic-OAKT_Printer.xml
 share/foomatic/db/source/printer/Generic-ZjStream_Printer.xml
@@ -289,6 +300,7 @@ share/foomatic/db/source/printer/Minolta-Color_PageWorks_Pro_L.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2200_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2300_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2430_DL.xml
+share/foomatic/db/source/printer/Oki-C110.xml
 share/foomatic/db/source/printer/Oki-C3100.xml
 share/foomatic/db/source/printer/Oki-C3200.xml
 share/foomatic/db/source/printer/Oki-C3300.xml

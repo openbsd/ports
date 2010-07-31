@@ -1,0 +1,6 @@
+foo2zjs is an open source printer driver for printers that use the
+Zenographics ZjStream wire protocol for their print data, such as the
+Minolta/QMS magicolor 2300 DL or Konica Minolta magicolor 2430 DL.
+
+This package contains the Konica-Minolta command filter for the Common
+UNIX Printing System.
