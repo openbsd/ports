@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/31 07:02:20 landry Exp $ 
+# $OpenBSD: Makefile,v 1.12 2010/07/31 09:37:21 sthen Exp $ 
 
 COMMENT=	web-based CVS viewer module for Horde
 
@@ -19,7 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_HORDE:=chora/}
+MASTER_SITES=	http://ftp.se.horde.org/chora/ \
+        http://ftp.horde.org/pub/chora/ \
+        ftp://ftp.horde.org/pub/chora/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
