@@ -1,0 +1,18 @@
+$OpenBSD: patch-wml_backend_p2_mp4h_src_builtin_c,v 1.1 2010/07/31 14:35:15 naddy Exp $
+--- wml_backend/p2_mp4h/src/builtin.c.orig	Sat Jul 31 04:12:44 2010
++++ wml_backend/p2_mp4h/src/builtin.c	Sat Jul 31 04:14:25 2010
+@@ -1069,10 +1069,13 @@ mp4h_bp_mp4h_l10n (MP4H_BUILTIN_ARGS)
+ static void
+ mp4h_bp_mp4h_output_radix (MP4H_BUILTIN_ARGS)
+ {
++  long int temp;
++
+   if (bad_argc (argv[0], argc, 0, 2))
+     return;
+ 
+-  safe_strtol (ARG (0), ARG (1), (long int *) &output_radix);
++  safe_strtol (ARG (0), ARG (1), &temp);
++  output_radix = temp;
+ }
+ 
+ static void
