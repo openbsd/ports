@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.47 2010/07/04 19:58:48 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/07/31 05:55:04 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.10.7
+GNOME_VERSION=		1.10.8
 
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
-API_VERSION=		0.8.7 # from devel/goffice
+API_VERSION=		0.8.8 # from devel/goffice
 
 # GPLv2
 # Some tools: LGPL
@@ -28,18 +28,19 @@ WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre perl pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb z xcb-render xcb-render-util eggdbus-1 gcrypt
-WANTLIB += gpg-error gsf-1.>=114.8
+WANTLIB += gpg-error gsf-1.>=114.8 art_lgpl_2 glade-2.0 gnomeui-2
+WANTLIB += goffice-0.8 gsf-gnome-1 xml2
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		art_lgpl_2.>=5.19::graphics/libart \
-			glade-2.0.>=0.8::devel/libglade2 \
-			gnomeui-2.>=1800::x11/gnome/libgnomeui \
-			goffice-0.8:goffice->=0.8.7,<0.8.8:devel/goffice \
-			gsf-gnome-1.>=114.8::devel/libgsf,-gnome \
-			xml2.>=9.5::textproc/libxml
+LIB_DEPENDS=		::graphics/libart \
+			::devel/libglade2 \
+			::x11/gnome/libgnomeui \
+			:goffice->=0.8.8,<0.8.9:devel/goffice \
+			::devel/libgsf,-gnome \
+			::textproc/libxml
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
