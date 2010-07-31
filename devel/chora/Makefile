@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/31 06:59:40 landry Exp $ 
+# $OpenBSD: Makefile,v 1.11 2010/07/31 07:02:20 landry Exp $ 
 
 COMMENT=	web-based CVS viewer module for Horde
 
@@ -7,6 +7,7 @@ HORDE_MODULE=	chora
 HORDE_NAME=	Chora
 
 DISTNAME=	${HORDE_MODULE}-${V}
+REVISION=	0
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
