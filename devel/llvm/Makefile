@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/21 22:19:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/07/31 11:04:48 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -12,6 +12,7 @@ HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
+BROKEN-sparc64 =not yet working on sparc64
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
