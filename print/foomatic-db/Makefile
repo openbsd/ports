@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/26 20:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.9 2010/07/31 08:17:46 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -7,7 +7,7 @@ COMMENT=		Foomatic PPD data
 V=			20091207
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -37,5 +37,15 @@ NO_REGRESS=		Yes
 pre-configure:
 	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/configure
+
+# From Fedora ; these files are already shipped by the foo2zjs package
+# RH #208851 #438319 #518267
+.for x in zjs oak-z1 oak hp qpdl lava kyo xqx slx hiperc
+	find ${WRKSRC}/db/source/printer -name '*.xml' | xargs grep -l "<driver>foo2${x}" | xargs rm
+	rm -f ${WRKSRC}/db/source/driver/foo2${x}.xml \
+		${WRKSRC}/db/source/opt/foo2${x}-*
+.endfor
+	mv ${WRKSRC}/db/source/printer/Xerox-Phaser_6110.xml \
+		${WRKSRC}/db/source/printer/Xerox-Phaser_6110-splix.xml
 
 .include <bsd.port.mk>
