@@ -1,6 +1,6 @@
-$OpenBSD: patch-avahi-daemon_main_c,v 1.3 2010/07/17 14:12:38 ajacoutot Exp $
---- avahi-daemon/main.c.orig	Tue Jun 29 02:15:59 2010
-+++ avahi-daemon/main.c	Mon Jul  5 12:02:37 2010
+$OpenBSD: patch-avahi-daemon_main_c,v 1.4 2010/07/31 14:33:20 ajacoutot Exp $
+--- avahi-daemon/main.c.orig	Tue Jul 13 02:57:19 2010
++++ avahi-daemon/main.c	Sat Jul 31 16:06:23 2010
 @@ -320,6 +320,11 @@ static void update_browse_domains(void) {
          return;
      }
@@ -13,9 +13,9 @@ $OpenBSD: patch-avahi-daemon_main_c,v 1.3 2010/07/17 14:12:38 ajacoutot Exp $
      l = avahi_string_list_copy(config.server_config.browse_domains);
  
      for (p = resolv_conf_search_domains, n = 0; *p && n < BROWSE_DOMAINS_MAX; p++, n++) {
-@@ -1086,8 +1091,10 @@ static int run_server(DaemonConfig *c) {
+@@ -1103,8 +1108,10 @@ static int run_server(DaemonConfig *c) {
  
-     assert(c);
+     ignore_signal(SIGPIPE);
  
 +#ifndef __OpenBSD__ // no NSS in OpenBSD
      if (!(nss_support = avahi_nss_support()))

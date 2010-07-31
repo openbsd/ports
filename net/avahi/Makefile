@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/17 14:12:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/07/31 14:33:20 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -6,7 +6,7 @@ COMMENT-mono=	mono (.NET) bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 
-V=		0.6.26
+V=		0.6.27
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
@@ -176,8 +176,8 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-introspection \
 		--disable-gtk3
 
-# don't link with libssp from gcc4; __guard and __stack_smash_handler
-# are part of libc (see LIBS in CONFIGURE_ENV)
+# don't link with libssp from the gcc4 port
+# __guard and __stack_smash_handler are part of libc
 CONFIGURE_ARGS+=--disable-stack-protector
 
 # XXX
@@ -190,9 +190,8 @@ PC_FILES=	avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 		avahi-gobject.pc avahi-qt3.pc avahi-qt4.pc
 
 post-extract:
-	find ${WRKSRC} -type d -name PaxHeaders.24570 | \
+	find ${WRKDIR} -type d -name PaxHeaders.\* | \
 		xargs rm -r
-	rm ${WRKSRC}/configure
 
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
