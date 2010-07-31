@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.6 2010/05/08 09:59:23 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.7 2010/07/31 08:18:56 ajacoutot Exp $
 --- Makefile.orig	Wed Apr 21 18:14:18 2010
-+++ Makefile	Sat May  8 11:51:58 2010
++++ Makefile	Sat Jul 31 09:01:57 2010
 @@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -59,7 +59,34 @@ $OpenBSD: patch-Makefile,v 1.6 2010/05/08 09:59:23 ajacoutot Exp $
  
  install-foo:
  	#
-@@ -728,49 +716,21 @@ install-extra:
+@@ -589,24 +577,14 @@ install-foo:
+ 	#
+ 	# Install current database files
+ 	#
+-	@if [ -d $(FOODB) ]; then \
++	echo install -d $(FOODB)
++	$(INSTALL) -d $(FOODB)
+ 	    for dir in driver printer opt; do \
+ 		echo install -d $(FOODB)/$$dir/; \
+ 		$(INSTALL) -d $(FOODB)/$$dir/; \
+ 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+ 		$(INSTALL) -c -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+ 	    done \
+-	else \
+-	    echo "***"; \
+-	    echo "*** WARNING! You don't have directory $(FOODB)/"; \
+-	    echo "*** If you want support for foomatic printer configuration,";\
+-	    echo "*** then you will have to manually install these files..."; \
+-	    echo "***"; \
+-	    ls foomatic-db/*/*.xml | sed 's/^/	/'; \
+-	    echo "***"; \
+-	    echo "*** ... wherever foomatic is stashed on your machine."; \
+-	    echo "***"; \
+-	fi
+ 	#
+ 	# Clear foomatic cache and rebuild database if needed
+ 	#
+@@ -728,49 +706,21 @@ install-extra:
  	done
  
  MODEL=$(DESTDIR)/usr/share/cups/model
@@ -115,7 +142,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/05/08 09:59:23 ajacoutot Exp $
  
  APPL=$(DESTDIR)/usr/share/applications
  OLDAPPL=$(DESTDIR)/usr/share/gnome/apps/System
-@@ -1264,11 +1224,8 @@ install-doc: doc
+@@ -1264,11 +1214,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)
