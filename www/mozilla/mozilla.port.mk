@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.3 2010/07/27 14:20:15 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.4 2010/07/31 09:14:48 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -78,7 +78,8 @@ CONFIGURE_ARGS +=--disable-freetypetest		\
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_PROJECT} == "mozilla-firefox"
+.if ${MOZILLA_PROJECT} == "mozilla-firefox" || \
+	${MOZILLA_PROJECT} == "firefox35"
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
 WRKDIST =	${WRKDIR}/comm-${MOZILLA_BRANCH}
