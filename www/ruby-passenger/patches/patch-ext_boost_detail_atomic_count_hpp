@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_boost_detail_atomic_count_hpp,v 1.1 2010/07/31 10:18:06 kettenis Exp $
+--- ext/boost/detail/atomic_count.hpp.orig	Sat Dec 20 18:19:18 2008
++++ ext/boost/detail/atomic_count.hpp	Fri Jul 30 18:07:15 2010
+@@ -101,7 +101,7 @@ typedef long atomic_count;
+ 
+ #  include <boost/detail/atomic_count_win32.hpp>
+ 
+-#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 )
++#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined( __hppa )
+ 
+ #  include <boost/detail/atomic_count_sync.hpp>
+ 
