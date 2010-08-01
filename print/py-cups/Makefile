@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2010/03/21 09:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/01 11:59:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		CUPS bindings for Python
 
-VERSION=		1.9.48
+VERSION=		1.9.51
 DISTNAME=		pycups-${VERSION}
 PKGNAME=		py-cups-${VERSION}
+
 CATEGORIES=		print
 
 HOMEPAGE=		http://cyberelk.net/tim/software/pycups/
@@ -19,13 +20,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += cups
+
 MASTER_SITES=		http://cyberelk.net/tim/data/pycups/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		converters/libiconv \
 			lang/python
 
-LIB_DEPENDS=		cups::print/cups
+LIB_DEPENDS=		::print/cups
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${VERSION}\"
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -36,6 +39,6 @@ MAKE_ENV=		PYTON="${MODPY_BIN}" \
 NO_REGRESS=		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cupsconnection.c ${WRKSRC}/setup.py
+	${SUBST_CMD} ${WRKSRC}/cupsconnection.c
 
 .include <bsd.port.mk>
