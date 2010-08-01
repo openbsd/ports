@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/01 07:12:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Equinox GTK+2 engine
 
-V=		1.1
+V=		1.20
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
 
@@ -52,17 +52,21 @@ post-extract:
 		tar xzf equinox-themes.tar.gz -C ${WRKSRC}
 	mv ${WRKSRC}/"Equinox Glass" ${WRKSRC}/EquinoxGlass
 	mv ${WRKSRC}/"Equinox Wide" ${WRKSRC}/EquinoxWide
+	mv ${WRKSRC}/"Equinox Classic" ${WRKSRC}/EquinoxClassic
+	mv ${WRKSRC}/"Equinox Light" ${WRKSRC}/EquinoxLight
 	chmod +x ${WRKSRC}/install-sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/Equinox/gtk-2.0/
-	cp -R ${WRKSRC}/Equinox{,Glass,Wide} \
+	cp -R ${WRKSRC}/Equinox{,Glass,Wide,Classic,Light} \
 		${PREFIX}/share/themes/
 	chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/themes/Equinox{,Glass,Wide}
 	find ${PREFIX}/share/themes/ -type f | \
 		xargs perl -pi -e 's,Equinox Glass,EquinoxGlass,g;' \
-			-e 's,Equinox Wide,EquinoxWide,g'
+			-e 's,Equinox Wide,EquinoxWide,g;' \
+			-e 's,Equinox Classic,EquinoxClassic,g;' \
+			-e 's,Equinox Light,EquinoxLight,g'
 	find ${PREFIX} -name \*.orig | xargs rm
 
 .include <bsd.port.mk>

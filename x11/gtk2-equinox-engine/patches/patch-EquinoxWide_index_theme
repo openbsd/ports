@@ -1,6 +1,6 @@
-$OpenBSD: patch-EquinoxWide_index_theme,v 1.1.1.1 2010/05/02 13:33:21 ajacoutot Exp $
---- EquinoxWide/index.theme.orig	Sun May  2 15:09:03 2010
-+++ EquinoxWide/index.theme	Sun May  2 15:09:08 2010
+$OpenBSD: patch-EquinoxWide_index_theme,v 1.2 2010/08/01 07:12:51 ajacoutot Exp $
+--- EquinoxWide/index.theme.orig	Sun May 16 21:17:19 2010
++++ EquinoxWide/index.theme	Sun Aug  1 08:51:01 2010
 @@ -1,9 +1,13 @@
 -
  [Desktop Entry]
@@ -13,7 +13,7 @@ $OpenBSD: patch-EquinoxWide_index_theme,v 1.1.1.1 2010/05/02 13:33:21 ajacoutot 
 -Name[fr_FR]=Equinox Wide
 +Comment=Gtk 2.0 Equinox theme - Wide version
 +Name[fr_FR]=EquinoxWide
- 
+ ButtonLayout=menu:minimize,maximize,close
 +[X-GNOME-Metatheme]
 +GtkTheme=EquinoxWide
 +MetacityTheme=Equinox
