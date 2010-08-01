@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/05 06:51:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/01 15:31:57 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.4.1
 PKGNAME=	${DISTNAME:L}
+
+REVISION=	0
 
 CATEGORIES=	sysutils	
 
@@ -23,13 +25,13 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp c dbus-1 dbus-glib-1 eggdbus-1 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 kvm pcre
-WANTLIB += pthread pthread-stubs xcb z
+WANTLIB += pthread pthread-stubs xcb z polkit-gobject-1
 
 MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	polkit-gobject-1::sysutils/polkit
+LIB_DEPENDS=	::sysutils/polkit
 
 AUTOCONF_VERSION= 2.63
 CONFIGURE_STYLE= autoconf

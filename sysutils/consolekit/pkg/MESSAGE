@@ -1,2 +1,6 @@
+To enable ConsoleKit in a graphical session, prepend ck-launch-session
+to the session script (note: gdm(1) does this automatically). e.g.
+    ${PREFIX}/bin/ck-launch-session ${PREFIX}/bin/bin/xfce4-session
+
 The /var/log/ConsoleKit/history logfile can grow very large after some
 time. It is advised to use newsyslog(8) to rotate it.
