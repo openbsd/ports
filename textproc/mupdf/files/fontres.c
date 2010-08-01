@@ -77,15 +77,15 @@ main(int argc, char **argv)
 		fseek(fi, 0, SEEK_END);
 		len = ftell(fi);
 
-		fprintf(fo, ".globl  %s_buf\n", name);
-		fprintf(fo, ".balign 8\n");
+		fprintf(fo, "\t.globl  %s_buf\n", name);
+		fprintf(fo, "\t.balign 8\n");
 		fprintf(fo, "%s_buf:\n", name);
-		fprintf(fo, ".incbin \"%s\"\n\n", argv[i]);
+		fprintf(fo, "\t.incbin \"%s\"\n\n", argv[i]);
 
-		fprintf(fo, ".globl  %s_len\n", name);
-		fprintf(fo, ".balign 4\n");
+		fprintf(fo, "\t.globl  %s_len\n", name);
+		fprintf(fo, "\t.balign 4\n");
 		fprintf(fo, "%s_len:\n", name);
-		fprintf(fo, ".long   %d\n\n\n", len);
+		fprintf(fo, "\t.long   %d\n\n\n", len);
 
 		fclose(fi);
 	}
