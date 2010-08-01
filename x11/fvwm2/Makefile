@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/08/01 15:44:40 ajacoutot Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -10,7 +10,9 @@ PKGNAME-main=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-fvicons= 0
+REVISION-fvwm2=	0
 
 CATEGORIES=     x11
 
