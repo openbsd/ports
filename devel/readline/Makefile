@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/25 12:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/01 08:08:58 ajacoutot Exp $
 COMMENT =		library to edit command lines as they are typed in
 
 V =			6.1
 DISTNAME =		readline-${V}
+
+REVISION =		0
 
 SHARED_LIBS +=  	ehistory                   0.0 # 6.1
 SHARED_LIBS +=  	ereadline                  0.0 # 6.1
@@ -33,5 +35,10 @@ pre-configure:
 		${WRKSRC}/readline.h
 	perl -pi -e 's,^LIBVERSION=6.1,LIBVERSION=${LIBereadline_VERSION},' \
 		${WRKSRC}/configure
+	perl -pi \
+		-e 's,readline.info,ereadline.info,g;' \
+		-e 's,history.info,ehistory.info,g;' \
+		-e 's,rluserman.info,erluserman.info,g' \
+		${WRKSRC}/doc/{readline,history,rluserman}.info
 
 .include <bsd.port.mk>
