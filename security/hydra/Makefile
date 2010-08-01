@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/07/30 23:13:31 lum Exp $
+# $OpenBSD: Makefile,v 1.38 2010/08/01 05:51:10 ajacoutot Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -63,7 +63,7 @@ WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 glitz gthread-2.0 png \
 		pango-1.0 pangocairo-1.0 pixman-1 cairo z expat \
 		pangoft2-1.0 pthread pthread-stubs xcb xcb-render \
-		xcb-render-utils
+		xcb-render-util
 
 post-extract:
 	${CHMOD} -R u+w ${WRKDIST}
