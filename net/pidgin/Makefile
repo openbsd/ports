@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2010/08/01 20:11:48 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.1
+VERSION=	2.7.2
 DISTNAME=	pidgin-${VERSION}
-REVISION=	0
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
@@ -105,8 +104,8 @@ FLAVOR?=
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
-		gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+LIB_DEPENDS+=		gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
+			gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
 LIB_DEPENDS-main+=	purple:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch+=	purple:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 .else

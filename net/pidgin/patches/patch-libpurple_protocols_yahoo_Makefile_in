@@ -1,19 +1,16 @@
-$OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.4 2010/06/10 20:13:33 steven Exp $
---- libpurple/protocols/yahoo/Makefile.in.orig	Sat May 29 21:24:32 2010
-+++ libpurple/protocols/yahoo/Makefile.in	Fri Jun  4 21:44:51 2010
-@@ -75,7 +75,7 @@ libyahoo_la_OBJECTS = $(am_libyahoo_la_OBJECTS)
- libyahoo_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libyahoo_la_LDFLAGS) $(LDFLAGS) -o $@
+$OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.5 2010/08/01 20:11:48 steven Exp $
+--- libpurple/protocols/yahoo/Makefile.in.orig	Wed Jul 21 00:16:03 2010
++++ libpurple/protocols/yahoo/Makefile.in	Mon Jul 26 19:00:26 2010
+@@ -59,12 +59,12 @@ LTLIBRARIES = $(noinst_LTLIBRARIES) $(pkg_LTLIBRARIES)
+ am__libyahoo_la_SOURCES_DIST = libyahoo.c
+ @STATIC_YAHOO_FALSE@am_libyahoo_la_OBJECTS = libyahoo.lo
+ libyahoo_la_OBJECTS = $(am_libyahoo_la_OBJECTS)
 -@STATIC_YAHOO_FALSE@am_libyahoo_la_rpath = -rpath $(pkgdir)
 +@STATIC_YAHOO_FALSE@am_libyahoo_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
  @STATIC_YAHOO_FALSE@libyahoojp_la_DEPENDENCIES = libymsg.la
  am__libyahoojp_la_SOURCES_DIST = libyahoojp.c
  @STATIC_YAHOO_FALSE@am_libyahoojp_la_OBJECTS = libyahoojp.lo
-@@ -83,7 +83,7 @@ libyahoojp_la_OBJECTS = $(am_libyahoojp_la_OBJECTS)
- libyahoojp_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libyahoojp_la_LDFLAGS) $(LDFLAGS) -o $@
+ libyahoojp_la_OBJECTS = $(am_libyahoojp_la_OBJECTS)
 -@STATIC_YAHOO_FALSE@am_libyahoojp_la_rpath = -rpath $(pkgdir)
 +@STATIC_YAHOO_FALSE@am_libyahoojp_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
  am__DEPENDENCIES_1 =
