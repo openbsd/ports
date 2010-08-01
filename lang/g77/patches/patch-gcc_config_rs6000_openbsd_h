@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1 2010/08/01 08:45:16 eric Exp $
+--- gcc/config/rs6000/openbsd.h.orig	Sat Jul 31 22:30:21 2010
++++ gcc/config/rs6000/openbsd.h	Sat Jul 31 22:30:10 2010
+@@ -75,6 +75,9 @@ Boston, MA 02111-1307, USA.  */
+ #undef	STARTFILE_DEFAULT_SPEC
+ #define STARTFILE_DEFAULT_SPEC "%(startfile_openbsd)"
+ 
++#undef	CRTSAVRES_DEFAULT_SPEC
++#define	CRTSAVRES_DEFAULT_SPEC ""
++
+ #undef	ENDFILE_DEFAULT_SPEC
+ #define ENDFILE_DEFAULT_SPEC "%(endfile_openbsd)"
+ 

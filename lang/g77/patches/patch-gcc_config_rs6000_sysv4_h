@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1 2010/08/01 08:45:16 eric Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Sat Jul 31 22:32:19 2010
++++ gcc/config/rs6000/sysv4.h	Sat Jul 31 22:32:10 2010
+@@ -1054,7 +1054,7 @@ do {						\
+ %{mwindiss: %(endfile_windiss)} \
+ %{mcall-freebsd: crtsavres.o%s %(endfile_freebsd) } \
+ %{mcall-linux: crtsavres.o%s %(endfile_linux) } \
+-%{mcall-openbsd: crtsavres.o%s %(endfile_openbsd) } \
++%{mcall-openbsd: %(endfile_openbsd) } \
+ %{mcall-gnu: crtsavres.o%s %(endfile_gnu) } \
+ %{mcall-netbsd: crtsavres.o%s %(endfile_netbsd) } \
+ %{mvxworks: crtsavres.o%s %(endfile_vxworks) } \
