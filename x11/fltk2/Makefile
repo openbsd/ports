@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/01 05:47:13 ajacoutot Exp $
 
 COMMENT =	fast light toolkit
 
 V =		6950
 DISTNAME =	fltk-2.0.x-r${V}
-PKGNAME =	fltk2-2.0.${V}v0
+PKGNAME =	fltk2-2.0.${V}
 
+EPOCH =		0
 REVISION =	0
 
 CATEGORIES =	x11
