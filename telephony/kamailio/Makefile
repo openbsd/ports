@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/27 09:27:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/01 17:02:28 ajacoutot Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -15,7 +15,15 @@ PKGNAME-xmlrpc =	kamailio-xmlrpc-${VERSION}
 PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
-REVISION-main =		0
+
+REVISION-main =		1
+REVISION-mysql =	0
+REVISION-postgresql =	0
+REVISION-ldap =		0
+REVISION-xmlrpc =	0
+REVISION-carrierroute =	0
+REVISION-snmpstats =	0
+REVISION-perl =	0
 
 CATEGORIES =		telephony
 MAINTAINER =		Don Jackson <port-pkg-maint@clark-communications.com>
