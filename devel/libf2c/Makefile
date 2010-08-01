@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/08/01 10:29:56 espie Exp $
 
 V =		3.3.5
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 	CONFIG V
 PKGNAME =	libf2c-$V
-REVISION =	3
+REVISION =	4
 DISTFILES = 	libf2c-openbsd.tgz
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
