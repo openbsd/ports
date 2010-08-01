@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/08/01 12:52:41 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.20.0
-REVISION=	1
+DISTNAME=	gnustep-base-1.20.1
 
-SHARED_LIBS=	gnustep-base 3.0	# .1.16.4
+SHARED_LIBS=	gnustep-base 3.1	# .1.20
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -44,6 +43,6 @@ pre-configure:
 		${WRKSRC}/Version
 
 post-install:
-	@rm ${PREFIX}/lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}/Resources/NSTimeZones/.README.swp
+	rm ${PREFIX}/${LIBDIR}/Resources/NSTimeZones/.abbreviations.plist.swp
 
 .include <bsd.port.mk>

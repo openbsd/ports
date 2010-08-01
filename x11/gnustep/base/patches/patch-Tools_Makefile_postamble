@@ -1,6 +1,6 @@
-$OpenBSD: patch-Tools_Makefile_postamble,v 1.2 2008/06/23 10:59:37 ajacoutot Exp $
---- Tools/Makefile.postamble.orig	Mon Jun 23 11:25:47 2008
-+++ Tools/Makefile.postamble	Mon Jun 23 11:26:06 2008
+$OpenBSD: patch-Tools_Makefile_postamble,v 1.3 2010/08/01 12:52:42 sebastia Exp $
+--- Tools/Makefile.postamble.orig	Thu Jun 10 12:13:51 2010
++++ Tools/Makefile.postamble	Sun Aug  1 12:39:56 2010
 @@ -50,8 +50,6 @@ after-install::
  	for file in $(MAN1_PAGES) __done; do \
  	  if [ $$file != __done ]; then \
@@ -16,6 +16,6 @@ $OpenBSD: patch-Tools_Makefile_postamble,v 1.2 2008/06/23 10:59:37 ajacoutot Exp
  	  $(INSTALL_DATA) $$file $(GNUSTEP_DOC_MAN)/man8/$$file; \
 -	    which gzip && rm -f $(GNUSTEP_DOC_MAN)/man8/$$file.gz \
 -		&& gzip -9 $(GNUSTEP_DOC_MAN)/man8/$$file; \
- 	done; \
- 	if [ "`$(WHOAMI)`" != "root" ]; then \
- 	  echo ""; \
+ 	done$(END_ECHO)
+ ifeq ($(GNUSTEP_INSTALL_GDOMAP_AS_SETUID),no)
+ 	$(ECHO_NOTHING)echo ""; \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.6 2010/05/23 10:32:48 espie Exp $
---- Source/NSObject.m.orig	Mon Apr 26 23:32:22 2010
-+++ Source/NSObject.m	Fri May 21 19:55:59 2010
+$OpenBSD: patch-Source_NSObject_m,v 1.7 2010/08/01 12:52:42 sebastia Exp $
+--- Source/NSObject.m.orig	Thu Jun 10 12:13:51 2010
++++ Source/NSObject.m	Sun Aug  1 12:38:13 2010
 @@ -57,9 +57,11 @@
  #ifdef	HAVE_SYS_SIGNAL_H
  #include	<sys/signal.h>
@@ -14,19 +14,3 @@ $OpenBSD: patch-Source_NSObject_m,v 1.6 2010/05/23 10:32:48 espie Exp $
  
  #import "GSPrivate.h"
  
-@@ -1016,12 +1018,14 @@ objc_create_block_classes_as_subclasses_of(Class super
-       finalize_imp = get_imp(self, finalize_sel);
- #endif
- 
--#if defined(__FreeBSD__) && defined(__i386__)
-+#if __GNUC__ >= 4
-+#if defined(__FreeBSD__)
-       // Manipulate the FPU to add the exception mask. (Fixes SIGFPE
-       // problems on *BSD)
-       // Note this only works on x86
-       fedisableexcept(FE_INVALID);
- #endif
-+#endif // __GNUC__
- 
- #ifdef HAVE_LOCALE_H
-       GSSetLocaleC(LC_ALL, "");		// Set up locale from environment.
