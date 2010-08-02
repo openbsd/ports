@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/09 17:46:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/08/02 08:23:24 espie Exp $
+@pkgpath net/pymsn
 lib/python${MODPY_VERSION}/site-packages/papyon/
 lib/python${MODPY_VERSION}/site-packages/papyon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/papyon/__init__.py

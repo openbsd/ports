@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.22 2010/07/26 20:27:05 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.23 2010/08/02 08:23:24 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -144,38 +144,7 @@ my $stem_extensions = {
 	'xmess' => 'sdlmess',
 # 4.8
 	'hs-x11-extras' => 'hs-X11',
-	'php5-core' => 'php',
-	'php5-bz2' => 'php-bz2',
-	'php5-curl' => 'php-curl',
-	'php5-dba' => 'php-dba',
-	'php5-dbase' => 'php-dbase',
-	'php5-gd' => 'php-gd',
-	'php5-fastcgi' => 'php-fastcgi',
-	'php5-gmp' => 'php-gmp',
-	'php5-imap' => 'php-imap',
-	'php5-ldap' => 'php-ldap',
-	'php5-mbstring' => 'php-mbstring',
-	'php5-mcrypt' => 'php-mcrypt',
-	'php5-mhash' => 'php-mhash',
-	'php5-mssql' => 'php-mssql',
-	'php5-mysql' => 'php-mysql',
-	'php5-mysqli' => 'php-mysqli',
-	'php5-ncurses' => 'php-ncurses',
-	'php5-odbc' => 'php-odbc',
-	'php5-pdo_dblib' => 'php-pdo_dblib',
-	'php5-pdo_mysql' => 'php-pdo_mysql',
-	'php5-pdo_pgsql' => 'php-pdo_pgsql',
-	'php5-pdo_sqlite' => 'php-pdo_sqlite',
-	'php5-pgsql' => 'php-pgsql',
-	'php5-pspell' => 'php-pspell',
-	'php5-shmop' => 'php-shmop',
-	'php5-snmp' => 'php-snmp',
-	'php5-soap' => 'php-soap',
-	'php5-sqlite' => 'php-sqlite',
-	'php5-sybase_ct' => 'php-sybase_ct',
-	'php5-tidy' => 'php-tidy',
-	'php5-xmlrpc' => 'php-xmlrpc',
-	'php5-xsl' => 'php-xsl',
+	'pymsn' => 'papyon',
 	'wordpress-mu' => 'wordpress',
 };
 
