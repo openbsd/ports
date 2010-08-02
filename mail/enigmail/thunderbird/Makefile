@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/27 20:18:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/02 08:45:32 landry Exp $
 
 COMMENT =	GnuPG extension for Thunderbird
 
 VERSION =	1.1.2
+REVISION =	0
 
 # must be in sync with SO_VERSION in
 # mail/mozilla-thunderbird
