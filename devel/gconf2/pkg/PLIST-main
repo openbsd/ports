@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/07/07 16:40:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/08/02 07:25:50 espie Exp $
+@pkgpath devel/gconf2
 %%SHARED%%
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
