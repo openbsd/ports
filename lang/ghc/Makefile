@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2010/06/28 21:27:36 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2010/08/02 21:15:23 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}p0
-PKGNAME-doc =		ghc-doc-${MODGHC_VER}p0
+PKGNAME-main =		ghc-${MODGHC_VER}
+PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		6.12.2.20100530
+BIN_VER =		6.12.2.20100801
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regress.
@@ -32,10 +32,14 @@ BUILD_DEPENDS =		::textproc/dblatex \
 			::textproc/docbook-xsl \
 			::textproc/libxslt
 LIB_DEPENDS-doc =
-LIB_DEPENDS-main =	${LIB_DEPENDS} gmp::devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS} ::devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
-WANTLIB-main =		c m ncurses pthread util
+
+REVISION-main =		1
+WANTLIB-main =		c gmp m ncurses pthread util
+
+REVISION-doc =		0
 
 MASTER_SITES =		http://darcs.haskell.org/download/dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/${MODGHC_VER}/ \
