@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/08/02 19:47:32 ian Exp $
 
 COMMENT=	OpenLook Virtual Window manager
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

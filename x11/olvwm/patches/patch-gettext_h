@@ -1,0 +1,15 @@
+$OpenBSD: patch-gettext_h,v 1.1 2010/08/02 19:47:32 ian Exp $
+--- gettext.h.orig	Sat Jul 10 13:54:47 2010
++++ gettext.h	Sat Jul 10 13:56:14 2010
+@@ -27,8 +27,11 @@
+ #include <errno.h>
+ #include <locale.h>
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
++#include <sys/mman.h>
+  
+ struct domain_binding {
+     char    *domain_name;

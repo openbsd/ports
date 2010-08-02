@@ -1,0 +1,16 @@
+$OpenBSD: patch-gettext_c,v 1.1 2010/08/02 19:47:32 ian Exp $
+--- gettext.c.orig	Sat Jul 10 13:51:48 2010
++++ gettext.c	Sat Jul 10 13:55:24 2010
+@@ -17,12 +17,9 @@
+ #define bzero(a,b) memset(a,0,b)
+ #endif
+ 
+-char *malloc(), *strdup();
+ char * dgettext();
+ char *_gettext();
+ char *in_path();
+-char *fgets(), *getenv();
+-caddr_t mmap(), calloc();
+ 
+ #ifdef NOT
+ static struct domain_binding *firstbind=0, *lastbind=0;
