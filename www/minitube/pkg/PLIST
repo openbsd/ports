@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/11 00:45:44 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/08/02 07:23:04 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/
@@ -9,15 +9,18 @@ share/icons/hicolor/128x128/apps/minitube.png
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/minitube.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
-share/icons/hicolor/256x256/apps/minitube.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/minitube.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/minitube.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/minitube.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/minitube.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/minitube.png
@@ -50,6 +53,7 @@ share/minitube/locale/ro_RO.qm
 share/minitube/locale/ru_RU.qm
 share/minitube/locale/tr_TR.qm
 share/minitube/locale/uk.qm
+share/minitube/locale/zh_CN.qm
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
