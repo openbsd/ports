@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/29 10:58:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/03 14:19:52 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
@@ -37,7 +37,7 @@ REGRESS_TARGET =	test
 SUBST_VARS =		LIBMemchan221_VERSION
 
 pre-configure:
-	${INSTALL_DATA} ${WRKSRC}/doc/random.man  ${WRKSRC}/doc/mchan-random.man
+	cp  ${WRKSRC}/doc/random.man  ${WRKSRC}/doc/mchan-random.man
 	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
