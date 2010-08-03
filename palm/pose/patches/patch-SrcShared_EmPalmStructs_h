@@ -1,0 +1,29 @@
+$OpenBSD: patch-SrcShared_EmPalmStructs_h,v 1.1 2010/08/03 20:01:40 naddy Exp $
+--- SrcShared/EmPalmStructs.h.orig	Tue Aug  3 13:44:15 2010
++++ SrcShared/EmPalmStructs.h	Tue Aug  3 13:46:21 2010
+@@ -577,9 +577,9 @@ class PAS
+ 	template <class A>																\
+ 	INLINE_ EmAlias##type<A>& EmAlias##type<A>::operator= (rhs_type val)			\
+ 	{																				\
+-		if (sizeof (asType) == 1)		A::PutByte (this->GetPtr (), (unsigned char) (asType) val);		\
+-		else if (sizeof (asType) == 2)	A::PutWord (this->GetPtr (), (unsigned short) (asType) val);	\
+-		else if (sizeof (asType) == 4)	A::PutLong (this->GetPtr (), (unsigned long) (asType) val);		\
++		if (sizeof (asType) == 1)		A::PutByte (this->GetPtr (), (unsigned char) (asType) (long) val);		\
++		else if (sizeof (asType) == 2)	A::PutWord (this->GetPtr (), (unsigned short) (asType) (long) val);	\
++		else if (sizeof (asType) == 4)	A::PutLong (this->GetPtr (), (unsigned long) (asType) (long) val);		\
+ 		else BadSetter ();															\
+ 																					\
+ 		return *this;																\
+@@ -589,9 +589,9 @@ class PAS
+ 																					\
+ 	INLINE_ EmProxy##type& EmProxy##type::operator= (rhs_type val)					\
+ 	{																				\
+-		if (sizeof (asType) == 1)		LAS::PutByte (this->GetPtr (), (unsigned char) (asType) val);	\
+-		else if (sizeof (asType) == 2)	LAS::PutWord (this->GetPtr (), (unsigned short) (asType) val);	\
+-		else if (sizeof (asType) == 4)	LAS::PutLong (this->GetPtr (), (unsigned long) (asType) val);	\
++		if (sizeof (asType) == 1)		LAS::PutByte (this->GetPtr (), (unsigned char) (asType) (long) val);	\
++		else if (sizeof (asType) == 2)	LAS::PutWord (this->GetPtr (), (unsigned short) (asType) (long) val);	\
++		else if (sizeof (asType) == 4)	LAS::PutLong (this->GetPtr (), (unsigned long) (asType) (long) val);	\
+ 		else BadSetter ();															\
+ 																					\
+ 		return *this;																\

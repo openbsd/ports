@@ -1,0 +1,12 @@
+$OpenBSD: patch-SrcShared_Hardware_EmRegsVZPalmM505_cpp,v 1.1 2010/08/03 20:01:40 naddy Exp $
+--- SrcShared/Hardware/EmRegsVZPalmM505.cpp.orig	Tue Aug  3 13:53:17 2010
++++ SrcShared/Hardware/EmRegsVZPalmM505.cpp	Tue Aug  3 13:53:56 2010
+@@ -50,7 +50,7 @@ void EmRegsVZPalmM505::SetSubBankHandlers (void)
+ 
+ 	// Now add standard/specialized handers for the defined registers.
+ 
+-	this->SetHandler ((ReadFunction) &EmRegsVZ::StdRead,
++	this->SetHandler ((ReadFunction) &EmRegsVZPalmM505::StdRead,
+ 		(WriteFunction) &EmRegsVZPalmM505::portFSelectWrite,
+ 		addressof (portFSelect), sizeof (f68VZ328Regs.portFSelect));
+ }

@@ -1,0 +1,21 @@
+$OpenBSD: patch-SrcShared_Hardware_EmRegsVZHandEra330_cpp,v 1.1 2010/08/03 20:01:40 naddy Exp $
+--- SrcShared/Hardware/EmRegsVZHandEra330.cpp.orig	Tue Aug  3 13:51:06 2010
++++ SrcShared/Hardware/EmRegsVZHandEra330.cpp	Tue Aug  3 13:52:22 2010
+@@ -588,14 +588,14 @@ void EmRegsVZHandEra330::SetSubBankHandlers(void)
+ 
+     // SD support
+ 	this->SetHandler((ReadFunction)&EmRegsVZHandEra330::spiRxDRead,
+-                         (WriteFunction)&EmRegsVZ::StdWrite,
++                         (WriteFunction)&EmRegsVZHandEra330::StdWrite,
+ 	                 addressof(spiRxD),
+ 	                 sizeof(UInt16));
+-	this->SetHandler((ReadFunction)&EmRegsVZ::StdRead,
++	this->SetHandler((ReadFunction)&EmRegsVZHandEra330::StdRead,
+                          (WriteFunction)&EmRegsVZHandEra330::spiTxDWrite,
+ 	                 addressof(spiTxD),
+ 	                 sizeof(UInt16));
+-	this->SetHandler((ReadFunction)&EmRegsVZ::StdRead,
++	this->SetHandler((ReadFunction)&EmRegsVZHandEra330::StdRead,
+                          (WriteFunction)&EmRegsVZHandEra330::spiCont1Write,
+ 	                 addressof(spiCont1),
+ 	                 sizeof(UInt16));
