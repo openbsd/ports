@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2010/07/22 10:40:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2010/08/03 21:56:03 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,11 +38,16 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${VERSION:C/^([0-9]+\.[0-9]+).*/
 EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -docs -cups
+# XXX don't pull in print/cups on these arch; build fails with binutils 2.15
+NOT_FOR_ARCHS-cups= mips64 mips64el
 
 MODULES=	devel/gettext \
 		lang/python
 
+.if ! ${MACHINE_ARCH:Mmips64*}
 BUILD_DEPENDS=	::print/cups
+.endif
+
 RUN_DEPENDS=	::x11/hicolor-icon-theme \
 		::misc/shared-mime-info
 
