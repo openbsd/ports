@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/07/26 07:25:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.72 2010/08/03 23:39:58 sthen Exp $
 
 COMMENT=	list information about open files
 
@@ -6,9 +6,12 @@ VERSION=	4.83
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
+MASTER_SITES=	http://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/OLD/ \
+		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
+		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/OLD/ \
+		ftp://ftp.fu-berlin.de/pub/unix/tools/lsof/OLD/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/lsof/ \
-		ftp://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/
+		http://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/
 
 MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
 
