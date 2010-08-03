@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/03 09:05:13 lum Exp $
+# $OpenBSD: Makefile,v 1.26 2010/08/03 11:49:44 stephan Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gpg-error m ncurses readline stdc++ z
+WANTLIB += c gpg-error ncurses readline z
 
 EXTRACT_SUFX=	.tar.bz2
 
