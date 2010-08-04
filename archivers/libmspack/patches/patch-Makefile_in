@@ -1,25 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/10/28 01:23:34 jasper Exp $
---- Makefile.in.orig	Tue Oct 28 01:43:36 2008
-+++ Makefile.in	Tue Oct 28 01:45:43 2008
-@@ -119,11 +119,7 @@ CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+$OpenBSD: patch-Makefile_in,v 1.3 2010/08/04 17:36:26 jasper Exp $
+--- Makefile.in.orig	Wed Aug  4 14:17:41 2010
++++ Makefile.in	Wed Aug  4 14:18:12 2010
+@@ -147,11 +147,7 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOO
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
  SOURCES = $(libmscabd_la_SOURCES) $(libmschmd_la_SOURCES) \
 -	$(libmspack_la_SOURCES) $(test_cabd_md5_SOURCES) \
 -	$(test_cabd_memory_SOURCES) $(test_cabd_test_SOURCES) \
--	$(test_cabextract_md5_SOURCES) $(test_cabrip_SOURCES) \
--	$(test_chmd_md5_SOURCES) $(test_chminfo_SOURCES) \
--	$(test_chmx_SOURCES) $(test_multifh_SOURCES)
+-	$(test_cabrip_SOURCES) $(test_chmd_md5_SOURCES) \
+-	$(test_chminfo_SOURCES) $(test_chmx_SOURCES) \
+-	$(test_expand_SOURCES) $(test_multifh_SOURCES)
 +	$(libmspack_la_SOURCES)
  DIST_SOURCES = $(libmscabd_la_SOURCES) $(libmschmd_la_SOURCES) \
  	$(libmspack_la_SOURCES) $(test_cabd_md5_SOURCES) \
  	$(test_cabd_memory_SOURCES) $(test_cabd_test_SOURCES) \
-@@ -247,7 +243,7 @@ target_alias = @target_alias@
- # add "-DMSPACK_NO_DEFAULT_SYSTEM" to remove default mspack_system
- @DEBUG_TRUE@MSPACK_FLAGS = -DDEBUG
- EXTRA_DIST = debian doc test/test_files
--AM_CFLAGS = -std=c99 -Wall -Wsign-compare -Wconversion -pedantic \
-+AM_CFLAGS = -Wall -Wsign-compare -Wconversion -pedantic \
- 			-I$(srcdir)/mspack $(MSPACK_FLAGS)
- 
- lib_LTLIBRARIES = libmspack.la

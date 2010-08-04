@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/28 01:23:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/04 17:36:26 jasper Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
-DISTNAME=	libmspack-0.0.20060920alpha
+DISTNAME=	libmspack-0.2alpha
+EPOCH=		0
 SHARED_LIBS +=	mspack               2.0      # .1.0
-PKGNAME=	libmspack-20060920a
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.cabextract.org.uk/libmspack/
