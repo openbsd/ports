@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_m_intel386_h,v 1.1 2010/08/04 17:17:57 naddy Exp $
+--- src/m/intel386.h.orig	Wed Aug  4 19:07:10 2010
++++ src/m/intel386.h	Wed Aug  4 19:08:28 2010
+@@ -58,6 +58,7 @@ NOTE-END */
+  * group of arguments and treat it as an array of the arguments.  */
+ 
+ /* #define NO_ARG_ARRAY */
++#define NO_ARG_ARRAY	/* ProPolice may copy arguments */
+ 
+ /* Define WORD_MACHINE if addresses and such have
+  * to be corrected before they can be used as byte counts.  */
