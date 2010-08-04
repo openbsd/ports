@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/04 14:44:15 sthen Exp $
 
 BRANCH=		21.4
 VERSION=	19
@@ -63,7 +63,7 @@ MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 
 . if ${FLAVOR:L:Mcanna}
-LIB_DEPENDS+=	canna.1,RKC.1::japanese/canna
+LIB_DEPENDS+=	canna.>=1,RKC.>=1::japanese/canna
 CONFIGURE_ARGS+=--with-canna
 . else
 CONFIGURE_ARGS+=--with-canna=no
