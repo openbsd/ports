@@ -1,0 +1,12 @@
+$OpenBSD: patch-brl_c,v 1.1 2010/08/04 14:05:46 naddy Exp $
+--- brl.c.orig	Mon Dec 12 20:15:01 1994
++++ brl.c	Wed Aug  4 01:20:46 2010
+@@ -142,6 +142,8 @@
+ 
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include "tsl.h"
+ #include "brl.h"

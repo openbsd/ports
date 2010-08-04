@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/04 14:05:46 naddy Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT=	bible reader
 DISTNAME=	brs.4.00.l1
 
 PKGNAME=	brs-4.00l1
+REVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/religion/}
 
