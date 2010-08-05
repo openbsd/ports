@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cdf_time_c,v 1.1 2010/08/05 12:42:24 jasper Exp $
+
+Fix build with gcc2.
+
+--- src/cdf_time.c.orig	Thu Aug  5 05:33:56 2010
++++ src/cdf_time.c	Thu Aug  5 05:33:57 2010
+@@ -102,6 +102,7 @@ cdf_timestamp_to_timespec(struct timespec *ts, cdf_tim
+ #ifdef HAVE_STRUCT_TM_TM_ZONE
+ 	static char UTC[] = "UTC";
+ #endif
++	int rdays;
+ 
+ 	/* Unit is 100's of nanoseconds */
+ 	ts->tv_nsec = (t % CDF_TIME_PREC) * 100;
+@@ -119,7 +120,7 @@ cdf_timestamp_to_timespec(struct timespec *ts, cdf_tim
+ 	// XXX: Approx
+ 	tm.tm_year = CDF_BASE_YEAR + (t / 365);
+ 
+-	int rdays = cdf_getdays(tm.tm_year);
++	rdays = cdf_getdays(tm.tm_year);
+ 	t -= rdays;
+ 	tm.tm_mday = cdf_getday(tm.tm_year, t);
+ 	tm.tm_mon = cdf_getmonth(tm.tm_year, t);

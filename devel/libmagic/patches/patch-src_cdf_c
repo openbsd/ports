@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_cdf_c,v 1.1 2010/08/05 12:42:24 jasper Exp $
+
+Fix build with gcc2.
+
+--- src/cdf.c.orig	Thu Aug  5 12:56:49 2010
++++ src/cdf.c	Thu Aug  5 12:56:53 2010
+@@ -230,8 +230,9 @@ cdf_unpack_dir(cdf_directory_t *d, char *buf)
+ int
+ cdf_read_header(int fd, cdf_header_t *h)
+ {
+-	(void)memcpy(cdf_bo.s, "\01\02\03\04", 4);
+ 	char buf[512];
++
++	(void)memcpy(cdf_bo.s, "\01\02\03\04", 4);
+ 	if (lseek(fd, (off_t)0, SEEK_SET) == (off_t)-1)
+ 		return -1;
+ 	if (read(fd, buf, sizeof(buf)) != sizeof(buf))
