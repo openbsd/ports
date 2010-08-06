@@ -1,0 +1,11 @@
+$OpenBSD: patch-datelib_c,v 1.1 2010/08/06 06:17:10 dcoppa Exp $
+--- datelib.c.orig	Wed Aug  4 16:12:15 2010
++++ datelib.c	Wed Aug  4 16:12:57 2010
+@@ -78,7 +78,6 @@
+ double	julian_day();
+ 
+ #ifndef NO_HOLIDAYS
+-extern	char	*malloc();
+ double  easter_offset(), passover_offset();
+ 
+ static char	*monthname[] = { 
