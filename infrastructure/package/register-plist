@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.23 2010/07/19 17:40:17 espie Exp $
+# $OpenBSD: register-plist,v 1.24 2010/08/06 10:15:17 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -25,6 +25,7 @@
 # SUCH DAMAGE.
 
 use strict;
+use warnings;
 
 use OpenBSD::State;
 use OpenBSD::PackageInfo;
@@ -40,6 +41,20 @@ sub write_mogrified
 	    $state->fatal("Can't write plist to #1: #2", $file, $!);
 	$self->visit('write_mogrified', $fh, $state);
 
+}
+
+sub forget_details
+{
+	my $self = shift;
+	undef $self->{ OpenBSD::PackageInfo::COMMENT };
+	undef $self->{"digital-signature"};
+
+	my $l = $self->{items};
+	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
+		$l->[@$l-1]->{name} eq '.') {
+	    pop @$l;
+	}
+	$self->visit('forget_details');
 }
 
 package OpenBSD::PackingElement;
@@ -86,6 +101,14 @@ sub remove_auxiliary
 	return 0;
 }
 
+sub record_generic_depends
+{
+}
+
+sub find_mogrified
+{
+}
+
 package OpenBSD::PackingElement::DigitalSignature;
 sub flatten
 {
@@ -130,7 +153,7 @@ sub compare
 	}
 	if (defined $self->{d} && defined $self2->{d}) {
 		if (ref($self->{d}) ne ref($self2->{d})) {
-			return 2;
+			return 1;
 		}
 		if ($self->{d}->equals($self2->{d})) {
 			return 0;
@@ -141,6 +164,23 @@ sub compare
 		return 0;
 	}
 	return 2;
+}
+
+package OpenBSD::PackingElement::Depend;
+
+sub record_generic_depends
+{
+	my ($self, $state) = @_;
+	$state->{stash}->{$self->forgetful_key} = $self;
+}
+
+sub find_mogrified
+{
+	my ($s1, $state) = @_;
+	my $s2 = $state->{stash}->{$s1->forgetful_key};
+	if (defined $s2 && $s1->compare($s2) == 2) {
+		$state->{mogrified}{$s1} = $s2;
+	}
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -167,6 +207,12 @@ sub compare
 	return 2;
 }
 
+sub forgetful_key
+{
+	my $self = shift;
+	return join(':', 'depend', $self->{name}, $self->{pkgpath}, $self->{pattern});
+}
+
 package OpenBSD::PackingElement::Wantlib;
 
 sub compare
@@ -183,6 +229,12 @@ sub compare
 		return 0;
 	}
 	return 2;
+}
+
+sub forgetful_key
+{
+	my $self = shift;
+	return $self->spec->key;
 }
 
 package OpenBSD::PackingElement::Comment;
@@ -335,10 +387,53 @@ sub my_compare
 	return $final;
 }
 
+sub more_mogrified
+{
+	my ($p1, $p2, $state) = @_;
+
+	$p2->record_generic_depends($state);
+	$p1->find_mogrified($state);
+}
+
+sub compare_lists
+{
+	my ($p1, $p2, $result, $state) = @_;
+	my $r = my_compare($p1, $p2, $state);
+	if ($r == 1) {
+		my $t = "$result-new";
+		more_mogrified($p1, $p2, $state);
+		$p1->write_mogrified($t, $state);
+		$state->errsay("Error: change in plist between #1 and #2", $result, $t);
+		system {OpenBSD::Paths->diff} ('diff', '-u', $result, $t);
+		return 1;
+	}
+	if ($r == 2) {
+		$p1->tofile($result);
+		$state->errsay("#1 was updated", $result);
+		for my $i (@{$state->{updates}}) {
+			$state->errsay("#1 -> #2",
+			    $i->[0]->stringize, 
+			    $i->[1]->stringize);
+		}
+	}
+	return 0;
+}
+
 my $state = OpenBSD::State->new('register-plist');
-$state->handle_options('', 'dir pkg ...');
+$state->handle_options('t', '[-t p1 p2] dir pkg ...');
 if (@ARGV < 2) {
 	$state->usage;
+}
+
+if ($state->opt('t')) {
+	if (@ARGV != 2) {
+		$state->usage("-t takes exactly two parameters");
+	}
+	my $plist = OpenBSD::PackingList->fromfile($ARGV[0]);
+	my $result = $ARGV[1];
+	my $plist2 = OpenBSD::PackingList->fromfile($result);
+	$plist->forget_details;
+	exit(compare_lists($plist, $plist2, $result, $state));
 }
 
 my @dirs = split(/:/, shift);
@@ -355,40 +450,18 @@ for my $pkgfile (@ARGV) {
 	}
 
 	my $plist = $pkg->plist;
-	undef $plist->{ OpenBSD::PackageInfo::COMMENT };
-	undef $plist->{"digital-signature"};
-
-	my $l = $plist->{items};
-	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
-		$l->[@$l-1]->{name} eq '.') {
-	    pop @$l;
-	}
-
-	$plist->forget_details;
 	$pkg->close;
 	$pkg->wipe_info;
+
+	$plist->forget_details;
 	for my $dir (@dirs) {
 		next unless -d $dir;
 		my $result = $dir.'/'.$plist->pkgname;
 		if (-f $result) {
 			my $plist2 = OpenBSD::PackingList->fromfile($result);
-			my $r = my_compare($plist, $plist2 ,$state);
-			if ($r == 1) {
-				my $t = "$result-new";
-				$plist->write_mogrified($t, $state);
-				$state->errsay("Error: change in plist between #1 and #2", $result, $t);
-				system {OpenBSD::Paths->diff} ('diff', '-u', $result, $t);
-				$error++;
-			}
-			if ($r == 2) {
-				$plist->tofile($result);
-				$state->errsay("#1 was updated", $result);
-				for my $i (@{$state->{updates}}) {
-					$state->errsay("#1 -> #2",
-					    $i->[0]->stringize, 
-					    $i->[1]->stringize);
-				}
-			}
+			$error += compare_lists($plist, $plist2, $result,
+			    $state);
+			last;
 		}
 	}
 	if (!$error) {
