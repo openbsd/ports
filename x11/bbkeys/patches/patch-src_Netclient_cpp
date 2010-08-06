@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Netclient_cpp,v 1.1 2007/08/05 13:43:39 naddy Exp $
+$OpenBSD: patch-src_Netclient_cpp,v 1.2 2010/08/06 18:01:21 naddy Exp $
 --- src/Netclient.cpp.orig	Fri Aug  3 21:43:44 2007
 +++ src/Netclient.cpp	Fri Aug  3 21:45:07 2007
 @@ -140,6 +140,7 @@ bool Netclient::getValue(Window win, Atom atom, Atom t
    int result;
    unsigned long maxread = nelements;
    bool ret = False;
-+  size_t bsize;
++  int bsize;
  
    // try get the first element
    result = XGetWindowProperty(_display.XDisplay(), win, atom, 0l, 1l, False,
