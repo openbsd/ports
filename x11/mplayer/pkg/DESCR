@@ -1,17 +1,16 @@
-MPlayer is a media player.  It plays most MPEG, VOB, AVI, VIVO, ASF/WMV,
-QT/MOV, FLI, NuppelVideo, yuv4mpeg, FILM, RoQ, and some RealMedia files,
-supported by many native, XAnim, and Win32 DLL codecs.  You can watch
-VideoCD, SVCD, DVD, 3ivx, FLI, and even DivX movies too.
+MPlayer is a media player.  It plays most MPEG/VOB, AVI, ASF/WMA/WMV,
+FLV, RM, QT/MOV/MP4, Ogg/OGM, MKV, VIVO, FLI, NuppelVideo, yuv4mpeg,
+FILM and RoQ files.  You can watch VCD, SVCD, DVD, 3ivx, DivX 3/4/5,
+WMV, and even H.264 movies, too.
 
-MPlayer supports a wide range of video output drivers.  It works with
-X11, Xv, DGA, OpenGL and optionally AAlib or SDL (and this way all
+MPlayer supports a wide range of video output drivers.  It works
+with X11, Xv, OpenGL and optionally AAlib or SDL (and this way all
 drivers of SDL).  Most of them support software or hardware scaling,
 so you can enjoy movies in fullscreen.
 
 Flavors:
   sdl: enables sdl, requires devel/sdl
   debug: enables debugging information
-  mad: enables mad, requires audio/libmad
   no_x11: disables gui and most video output.
   aa: enables ascii art, requires graphics/aalib
   jack: enables jack, requires audio/jack

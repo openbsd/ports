@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2010/07/14 18:15:37 edd Exp $
+# $OpenBSD: Makefile,v 1.170 2010/08/06 20:05:18 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -13,7 +13,7 @@ SUBST_VARS+= 		PREFIX CONFDIR
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
 PKGNAME=		${N}-${V}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -30,7 +30,7 @@ WANTLIB=		a52 bz2 c cdda_interface cdda_paranoia crypto dca \
 			dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
 			m mng mp3lame mpcdec ncurses ogg.>=5 oil-0.3 png \
 			pthread schroedinger-1.0 sndio speex stdc++ theora \
-			ungif util vorbisidec x264.>=3 xvidcore z
+			ungif util x264.>=3 xvidcore z
 
 # we use a snapshot
 MASTER_SITES=	http://theunixzoo.co.uk/distfiles/
@@ -57,7 +57,6 @@ LIB_DEPENDS=	::graphics/png \
 		::devel/fribidi \
 		::graphics/lcms \
 		::graphics/libmng \
-		::audio/tremor \
 		::audio/libdca \
 		::archivers/bzip2 \
 		::multimedia/schroedinger \
@@ -95,12 +94,13 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-langinfo \
 		--disable-openal \
 		--disable-libvorbis \
+		--disable-tremor \
+		--disable-mad \
 		--disable-libcdio \
 		--disable-toolame \
 		--disable-dvdread-internal \
 		--disable-libdvdcss-internal \
 		--disable-faad-internal \
-		--disable-tremor-internal \
 		--disable-gui \
 		--disable-win32dll \
 		--disable-ggi \
@@ -126,14 +126,13 @@ CONFIGURE_ARGS+=--disable-altivec
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
-FLAVORS=	sdl debug mad no_x11 aa jack
+FLAVORS=	sdl debug no_x11 aa jack
 FLAVOR?=
 
 # again old binutils...
 .if ${MACHINE_ARCH:Marm}
 CONFIGURE_ARGS+=--disable-mp3lib
 CONFIGURE_ARGS+=--target=generic-openbsd
-FLAVOR+=	mad
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
@@ -159,13 +158,6 @@ CONFIGURE_ARGS+=--disable-sdl
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=--enable-debug=3
-.endif
-
-.if ${FLAVOR:L:Mmad}
-LIB_DEPENDS+=	::audio/libmad
-WANTLIB+=	mad.>=2
-.else
-CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if ${FLAVOR:L:Maa}
