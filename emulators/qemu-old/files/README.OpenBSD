@@ -12,7 +12,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 
 1. Get a bootable CDROM image
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd45.iso
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd48.iso
 
 2. Create a virtual disk image:
 
@@ -21,7 +21,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 3. Install the os:
 
     $ qemu -m 32 -monitor stdio -no-fd-bootchk -hda virtual.img \
-	-cdrom cd45.iso -boot d
+	-cdrom cd48.iso -boot d
 
    NOTE: start this inside an xterm or equivalent
    NOTE: be sure to choose serial console during install
@@ -79,7 +79,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 
        $ sudo ifconfig tun0 link0
        $ sudo ifconfig bridge0 create
-       $ sudo brconfig bridge0 add tun0 add em0 up
+       $ sudo ifconfig bridge0 add tun0 add em0 up
 
   The tunnel and bridge interfaces can also be configured at system startup by
   editing /etc/hostname.tunN and /etc/bridgename.bridgeN,
@@ -133,15 +133,15 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
    # qemu -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:12:35:00 \
 	-net tap,vlan=0 -vnc :0 -localtime -usb -usbdevice tablet \
 	-m 256 -no-fd-bootchk -hda virtual.img -monitor stdio
-   {tun0 (bridge101 <-> trunk101)brconfig: bridge101: No such process
-   brconfig: bridge101: No such process
+   {tun0 (bridge101 <-> trunk101)ifconfig: bridge101: No such process
+   ifconfig: bridge101: No such process
    }
    (qemu)
 
   The errors are normal and should be ignored.  One can verify the networking
   is properly configured by verifying the bridge interface:
 
-   $ brconfig bridge101
+   $ ifconfig bridge101
    bridge101: flags=41<UP,RUNNING>
         priority 32768 hellotime 2 fwddelay 15 maxage 20 holdcnt 6 proto rstp
         designated: id 00:00:00:00:00:00 priority 0
@@ -175,7 +175,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 	- you may then disconnect vnc and use the terminal from which you
 	  started qemu to do the install
 
-    b. qemu -nographic .. virtual.img -fda floppy45.fs -boot a
+    b. qemu -nographic .. virtual.img -fda floppy48.fs -boot a
 
 	- this maps both the serial port and the (qemu) monitor prompt to
 	  the terminal qemu was started on
@@ -184,7 +184,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 	- preparation of the floppy image to force serial console mode is
 	  straightforward:
 
-		vnconfig svnd0 floppy45.fs
+		vnconfig svnd0 floppy48.fs
 		mount /dev/svnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf
@@ -216,7 +216,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
         (
 	    ifconfig tun0 link0
 	    ifconfig bridge101 create
-	    brconfig bridge101 add trunk101 add tun0 up
+	    ifconfig bridge101 add trunk101 add tun0 up
 
             sh -c "sudo -u $USER \
 		${TRUEPREFIX}/bin/qemu \
