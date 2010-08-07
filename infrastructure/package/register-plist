@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.24 2010/08/06 10:15:17 espie Exp $
+# $OpenBSD: register-plist,v 1.25 2010/08/07 19:49:10 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -404,6 +404,10 @@ sub compare_lists
 		more_mogrified($p1, $p2, $state);
 		$p1->write_mogrified($t, $state);
 		$state->errsay("Error: change in plist between #1 and #2", $result, $t);
+		$state->errsay("| If the old and new builds were done correctly");
+		$state->errsay("| (fully uptodate ports tree including relevant MODULES)");
+		$state->errsay("| then someone probably forgot to bump a REVISION.");
+		$state->errsay("| (see bsd.port.mk(5), PLIST_DB)");
 		system {OpenBSD::Paths->diff} ('diff', '-u', $result, $t);
 		return 1;
 	}
