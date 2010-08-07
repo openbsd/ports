@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1025 2010/07/24 10:35:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1026 2010/08/07 19:41:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -152,7 +152,7 @@ DISTDIR ?= ${PORTSDIR}/distfiles
 BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
-PLIST_DB ?=
+PLIST_DB ?= ${PORTSDIR}/plist/${MACHINE_ARCH}
 
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
