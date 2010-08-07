@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/07/24 14:50:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.56 2010/08/07 22:41:47 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -45,6 +45,11 @@ LIB_DEPENDS=	SDL.>=4::devel/sdl \
 		theora,theoradec,theoraenc::multimedia/libtheora \
 		schroedinger-1.0::multimedia/schroedinger \
 		bz2.>=10::archivers/bzip2
+
+.if ${MACHINE_ARCH:Marm}
+# XXX binutils
+CONFIGURE_ARGS+= --arch=generic
+.endif
 
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lgsm -lm -lmp3lame -logg -loil-0.3 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
