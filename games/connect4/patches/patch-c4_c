@@ -1,15 +1,25 @@
-$OpenBSD: patch-c4_c,v 1.2 2003/04/14 16:03:01 avsm Exp $
---- c4.c.orig	Mon Apr 14 16:53:17 2003
-+++ c4.c	Mon Apr 14 16:54:01 2003
-@@ -11,6 +11,8 @@
-  *     BITNET:                  tcjones@WATER.bitnet
-  *     Canadian domain:         tcjones@dragon.uwaterloo.ca
-  *
-+ * Patched by Joel Sutton, 15th April 1997
-+ *     Changed gets calls to fgets. Changed inital prompt slightly.
+$OpenBSD: patch-c4_c,v 1.3 2010/08/07 20:06:14 naddy Exp $
+--- c4.c.orig	Sat Aug  7 21:36:09 2010
++++ c4.c	Sat Aug  7 21:37:10 2010
+@@ -14,7 +14,10 @@
   */
  
  #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <sys/types.h>
++#include <unistd.h>
+ #include <ctype.h>
+ #include <pwd.h>
+ #include <sys/time.h>
+@@ -55,7 +58,6 @@ char **envp;
+     register int winner = DRAW;
+ 	int temp;
+ 
+-    envmesg(envp, "Connect Four");
+     do_args(argc, argv);
+     open_scorefile("a");
+     ask_help();
 @@ -219,7 +221,7 @@ ask_turn()
      register char *cp;
  
@@ -30,3 +40,51 @@ $OpenBSD: patch-c4_c,v 1.2 2003/04/14 16:03:01 avsm Exp $
          fprintf(stderr, "Could not read input line\n");
          goodbye();
      }
+@@ -687,9 +689,11 @@ date()
+     struct timeval v;
+     struct timezone z;
+     char *nl;
++    time_t sec;
+ 
+     gettimeofday(&v, &z);
+-    sprintf(time,"%s", ctime(&v.tv_sec));
++    sec = v.tv_sec;
++    sprintf(time,"%s", ctime(&sec));
+ 
+     if ((nl = index(time, '\n')) == NULL){
+         fprintf(stderr,"date: ctime returned non-newline terminated string.\n");
+@@ -813,34 +817,5 @@ debug_off()
+     save = d;
+     d = NULL;
+     accept_move(turn);
+-}
+-
+-/* 
+- * Modify the environment to put message in the right place for
+- * the w and ps commands to find.  Code stolen from MFCF lock
+- * program, originally by Ian!
+- *
+- */
+-
+-void
+-envmesg(environ, message)
+-char **environ;
+-char *message;
+-{
+-    /* 
+-	 * Note that this clobbers the environment, so we have to
+-     * do it last, after all the getenv and termcap calls.
+-     */
+-
+-    char *last, *address;
+-    while( environ[1] != 0 ) ++environ;
+-    last = environ[0] + strlen(environ[0]);/* address of '\0' */
+-    last = (char *)((int)last&(~03));/* word boundary */
+-    *(int *)last = 0;       /* clean out last word */
+-    address = last +3 -strlen(message);
+-    address = (char *)((int)address&(~03));/* word boundary */
+-    *(int *)(address-4) = 0;    /* clean out word below */
+-    *(int *)(address-8) = 0;    /* clean out word below */
+-    strcpy( address, message );
+ }
+ 
