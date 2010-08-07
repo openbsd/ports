@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/01 17:02:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/07 08:17:23 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -23,7 +23,7 @@ REVISION-ldap =		0
 REVISION-xmlrpc =	0
 REVISION-carrierroute =	0
 REVISION-snmpstats =	0
-REVISION-perl =	0
+REVISION-perl =	1
 
 CATEGORIES =		telephony
 MAINTAINER =		Don Jackson <port-pkg-maint@clark-communications.com>
@@ -142,6 +142,7 @@ MULTI_PACKAGES +=	-perl
 COMMENT-perl =		kamailio perl modules
 KAMAILIO_MODULES +=	perl perlvdb
 WANTLIB-perl =		c m perl util
+LIB_DEPENDS-perl =
 RUN_DEPENDS-perl =	::databases/p5-ldap
 .endif
 
