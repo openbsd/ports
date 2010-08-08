@@ -1,19 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/08 08:10:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/08 08:19:29 espie Exp $
 
-MASTER_SITES = ftp://quatramaran.ens.fr/pub/espie/
-DISTNAME = video-0
-WRKSRC = ${WRKDIR}/video
-COMMENT = record and display with video(4)
-CATEGORIES = x11 sysutils
-
-# BSD
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_PACKAGE_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
+MASTER_SITES = 	http://www.bsdfrog.org/OpenBSD/distfiles/ \
+		ftp://quatramaran.ens.fr/pub/espie/
+DISTNAME = 	video-0
+WRKSRC = 	${WRKDIR}/video
+COMMENT = 	record and display with video(4)
+CATEGORIES = 	x11 sysutils
 
 NOT_FOR_ARCHS = ${GCC2_ARCHS}
-NO_REGRESS = Yes
+NO_REGRESS = 	Yes
+
+WANTLIB = 	X11 Xv c
+
+# BSD
+PERMIT_PACKAGE_FTP = 		Yes
+PERMIT_PACKAGE_CDROM = 		Yes
+PERMIT_DISTFILES_FTP = 		Yes
+PERMIT_DISTFILES_CDROM = 	Yes
+
 
 do-build: 
 	cd ${WRKBUILD} && ${CC} -I${X11BASE}/include ${CFLAGS} \
@@ -24,6 +28,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/video ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/video.cat1 ${PREFIX}/man/cat1/video.0
 
-WANTLIB = X11 Xv c
 
 .include <bsd.port.mk>
