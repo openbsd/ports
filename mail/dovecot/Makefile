@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2010/07/30 21:55:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2010/08/08 22:21:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,15 +53,6 @@ PSEUDO_FLAVORS=	no_sieve
 FLAVORS=	bdb ldap mysql postgresql sqlite
 FLAVOR?=
 
-# XXX The produced dovecot-sieve package ends up linked to any
-# other library (database/ldap) used in the build thus producing
-# bad packages in bulk build. Temporarily work around this in a
-# nasty way by knocking out the sieve subpackage if another
-# flavor is used.
-.if ! ${FLAVOR} == ""
-FLAVOR+=	no_sieve
-.endif
-
 CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
 USE_LIBTOOL=		Yes
@@ -76,7 +67,15 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !${FLAVOR:L:Mno_sieve}
+# XXX The produced dovecot-sieve package ends up linked to any
+# other library (database/ldap) used in the build thus producing
+# bad packages in bulk build. Temporarily work around this in a
+# nasty way by knocking out the sieve subpackage if another
+# flavor is used. This means you have to build without FLAVORS
+# to get the -sieve subpackage.
+.if ${FLAVOR} == ""
 MULTI_PACKAGES+=	-sieve
+.endif
 SIEVE_DIR=		${WRKDIR}/dovecot-${V_MAJOR}-sieve-${V_SIEVE}
 MANAGESIEVE_DIR=	${WRKDIR}/dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}
 AUTOCONF_DIR+=		${WRKSRC} ${MANAGESIEVE_DIR}
