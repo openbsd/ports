@@ -1,2 +1,7 @@
-Record or display images from video(4).
+The video(1) utility grabs images from video(4) devices and records them
+to file, displays them using Xv(3), records and plays them concurrently,
+and plays back recorded files.  video(1) can read from standard input
+and write to standard output.  video(1) is also capable of setting some
+of the controls on video(4) devices, such as brightness and contrast.
+
 Should be part of xenocara, but does not build on gcc2.

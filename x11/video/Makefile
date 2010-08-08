@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/08 08:19:29 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/08 20:00:16 espie Exp $
 
 MASTER_SITES = 	http://www.bsdfrog.org/OpenBSD/distfiles/ \
 		ftp://quatramaran.ens.fr/pub/espie/
 DISTNAME = 	video-0
+REVISION =	0
 WRKSRC = 	${WRKDIR}/video
 COMMENT = 	record and display with video(4)
 CATEGORIES = 	x11 sysutils
