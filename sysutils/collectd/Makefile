@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/22 14:40:49 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/08 07:41:40 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,13 +11,13 @@ DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 REVISION-main =		2
 PKGNAME-mysql =		collectd-mysql-$V
-REVISION-mysql =	1
+REVISION-mysql =	2
 PKGNAME-pgsql =		collectd-pgsql-$V
-REVISION-pgsql =	1
+REVISION-pgsql =	2
 PKGNAME-rrdtool =	collectd-rrdtool-$V
-REVISION-rrdtool =	1
+REVISION-rrdtool =	2
 PKGNAME-snmp =		collectd-snmp-$V
-REVISION-snmp =		1
+REVISION-snmp =		2
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.collectd.org/
@@ -38,15 +38,19 @@ MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
 WANTLIB-mysql =		crypto m ssl z mysqlclient
 LIB_DEPENDS-mysql =	::databases/mysql
+RUN_DEPENDS-mysql =	:collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-pgsql =		pq
 LIB_DEPENDS-pgsql =	::databases/postgresql
+RUN_DEPENDS-pgsql =	:collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th
 LIB_DEPENDS-rrdtool =	::net/rrdtool
+RUN_DEPENDS-rrdtool =	:collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-snmp =		crypto netsnmp
 LIB_DEPENDS-snmp =	::net/net-snmp
+RUN_DEPENDS-snmp =	:collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS +=	::net/curl \
 		::textproc/libxml \
