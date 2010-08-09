@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_xlib_gvdevice_xlib_c,v 1.1 2007/02/20 11:47:07 espie Exp $
---- plugin/xlib/gvdevice_xlib.c.orig2	Tue Feb 20 12:08:22 2007
-+++ plugin/xlib/gvdevice_xlib.c	Tue Feb 20 12:09:06 2007
-@@ -493,11 +493,13 @@ static void finalize_xlib(GVJ_t *firstjo
+$OpenBSD: patch-plugin_xlib_gvdevice_xlib_c,v 1.2 2010/08/09 08:55:43 espie Exp $
+--- plugin/xlib/gvdevice_xlib.c.orig2	Fri Aug 11 15:50:34 2006
++++ plugin/xlib/gvdevice_xlib.c	Mon Aug  9 10:26:48 2010
+@@ -493,11 +493,13 @@ static void finalize_xlib(GVJ_t *firstjob)
      bool watching_p = FALSE;
      static char *dir;
      char *p, *cwd = NULL;

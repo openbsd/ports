@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmd_dot_Makefile_in,v 1.1 2010/08/09 08:55:43 espie Exp $
+--- cmd/dot/Makefile.in.orig2	Mon Aug  9 10:42:30 2010
++++ cmd/dot/Makefile.in	Mon Aug  9 10:42:46 2010
+@@ -519,10 +519,10 @@ clean-binPROGRAMS:
+ 	done
+ dot$(EXEEXT): $(dot_OBJECTS) $(dot_DEPENDENCIES) 
+ 	@rm -f dot$(EXEEXT)
+-	$(LINK) $(dot_LDFLAGS) $(dot_OBJECTS) $(dot_LDADD) $(LIBS)
++	$(LINK) $(dot_LDFLAGS) $(dot_OBJECTS) $(dot_LDADD) $(LIBS) -pthread
+ dot_static$(EXEEXT): $(dot_static_OBJECTS) $(dot_static_DEPENDENCIES) 
+ 	@rm -f dot_static$(EXEEXT)
+-	$(LINK) $(dot_static_LDFLAGS) $(dot_static_OBJECTS) $(dot_static_LDADD) $(LIBS)
++	$(LINK) $(dot_static_LDFLAGS) $(dot_static_OBJECTS) $(dot_static_LDADD) $(LIBS) -pthread
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
