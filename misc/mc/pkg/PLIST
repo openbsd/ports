@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/07/18 19:03:08 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/08/17 20:28:59 robert Exp $
 @bin bin/mc
 bin/mcedit
 @bin bin/mcmfmt
@@ -97,10 +97,10 @@ share/examples/mc/sfs.ini
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
-share/locale/be-tarask/
-share/locale/be-tarask/LC_MESSAGES/
-share/locale/be-tarask/LC_MESSAGES/mc.mo
 share/locale/be/LC_MESSAGES/mc.mo
+share/locale/be@tarask/
+share/locale/be@tarask/LC_MESSAGES/
+share/locale/be@tarask/LC_MESSAGES/mc.mo
 share/locale/bg/LC_MESSAGES/mc.mo
 share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/06/26 16:34:28 robert Exp $
---- configure.orig	Fri Jun  4 22:03:09 2010
-+++ configure	Sat Jun 26 17:54:27 2010
-@@ -21092,7 +21092,7 @@ done
+$OpenBSD: patch-configure,v 1.5 2010/08/17 20:28:59 robert Exp $
+--- configure.orig	Fri Aug  6 10:05:00 2010
++++ configure	Tue Aug 17 22:17:37 2010
+@@ -21143,7 +21143,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2010/06/26 16:34:28 robert Exp $
    ;;
  esac
  fi
-@@ -21133,7 +21133,7 @@ done
+@@ -21184,7 +21184,7 @@ done
    done
  IFS=$as_save_IFS
  

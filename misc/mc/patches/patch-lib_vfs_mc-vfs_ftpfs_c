@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_vfs_mc-vfs_ftpfs_c,v 1.1 2010/08/17 20:28:59 robert Exp $
+--- lib/vfs/mc-vfs/ftpfs.c.orig	Tue Aug 17 22:24:15 2010
++++ lib/vfs/mc-vfs/ftpfs.c	Tue Aug 17 22:24:38 2010
+@@ -114,7 +114,11 @@ What to do with this?
+ 
+ /* for uclibc < 0.9.29 */
+ #ifndef AI_ADDRCONFIG
++# if defined(__OpenBSD__)
++#define AI_ADDRCONFIG 0
++# else
+ #define AI_ADDRCONFIG 0x0020
++# endif
+ #endif
+ 
+ #define RFC_AUTODETECT 0
