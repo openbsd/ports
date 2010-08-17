@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/15 09:15:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/08/17 19:51:18 sthen Exp $
 @bin bin/pmacct
 @bin sbin/nfacctd
 @bin sbin/pmacctd
@@ -14,6 +14,7 @@ share/doc/pmacct/PLUGINS
 share/doc/pmacct/README.64bit
 share/doc/pmacct/README.IPv6
 share/doc/pmacct/README.agent_id2
+share/doc/pmacct/README.cos
 share/doc/pmacct/README.iface
 share/doc/pmacct/README.is_symmetric
 share/doc/pmacct/README.mask
@@ -23,6 +24,7 @@ share/doc/pmacct/TRIGGER_VARS
 share/examples/pmacct/
 share/examples/pmacct/agent_to_peer.map
 share/examples/pmacct/allow-list.example
+share/examples/pmacct/bgp_md5.lst.example
 share/examples/pmacct/gnuplot-example.sh
 share/examples/pmacct/gnuplot.script.example
 share/examples/pmacct/is_symmetric.map.example
