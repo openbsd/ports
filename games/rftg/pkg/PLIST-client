@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/08 20:45:04 espie Exp $
+@comment $OpenBSD: PLIST-client,v 1.1 2010/08/17 22:22:59 espie Exp $
+@pkgpath games/rftg
 bin/do_train
 @bin bin/rftg
 share/rftg/
@@ -20,6 +21,12 @@ share/rftg/network/rftg.eval.2.3.net
 share/rftg/network/rftg.eval.2.4.net
 share/rftg/network/rftg.eval.2.5.net
 share/rftg/network/rftg.eval.2.6.net
+share/rftg/network/rftg.eval.3.2.net
+share/rftg/network/rftg.eval.3.2a.net
+share/rftg/network/rftg.eval.3.3.net
+share/rftg/network/rftg.eval.3.4.net
+share/rftg/network/rftg.eval.3.5.net
+share/rftg/network/rftg.eval.3.6.net
 share/rftg/network/rftg.role.0.2.net
 share/rftg/network/rftg.role.0.2a.net
 share/rftg/network/rftg.role.0.3.net
@@ -35,3 +42,9 @@ share/rftg/network/rftg.role.2.3.net
 share/rftg/network/rftg.role.2.4.net
 share/rftg/network/rftg.role.2.5.net
 share/rftg/network/rftg.role.2.6.net
+share/rftg/network/rftg.role.3.2.net
+share/rftg/network/rftg.role.3.2a.net
+share/rftg/network/rftg.role.3.3.net
+share/rftg/network/rftg.role.3.4.net
+share/rftg/network/rftg.role.3.5.net
+share/rftg/network/rftg.role.3.6.net
