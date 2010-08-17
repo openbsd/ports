@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/08/17 19:48:36 sthen Exp $
+--- Makefile.in.orig	Tue Aug 17 20:33:38 2010
++++ Makefile.in	Tue Aug 17 20:34:04 2010
+@@ -16,11 +16,11 @@ LIB_H	 = bgpdump.h bgpdump_attr.h bgpdump_formats.h bg
+ LIB_C    = bgpdump_lib.c bgpdump_mstream.c cfile_tools.c
+ LIB_O	 = bgpdump_lib.o bgpdump_mstream.o cfile_tools.o
+ 
+-all: libbgpdump.so libbgpdump.a testbgpdump bgpdump 
++all: libbgpdump.so.${LIBbgpdump_VERSION} libbgpdump.a testbgpdump bgpdump 
+ 
+-libbgpdump.so: $(LIB_H) $(LIB_C) Makefile
++libbgpdump.so.${LIBbgpdump_VERSION}: $(LIB_H) $(LIB_C) Makefile
+ 	$(COMPILE) -fPIC -c $(LIB_C)
+-	$(COMPILE) $(LDFLAGS) -o libbgpdump.so $(LIB_O) $(SYS_LIBS)
++	$(COMPILE) $(LDFLAGS) -o libbgpdump.so.${LIBbgpdump_VERSION} $(LIB_O) $(SYS_LIBS)
+ 
+ libbgpdump.a: $(LIB_H) $(LIB_C) $(LIB_O) Makefile
+ 	$(AR) r libbgpdump.a $(LIB_O)
+@@ -33,7 +33,7 @@ bgpdump: bgpdump.c $(LIB_H) $(LIB_C) Makefile
+ 	$(COMPILE) -o bgpdump bgpdump.c libbgpdump.a $(SYS_LIBS)
+ 
+ clean:
+-	rm -f libbgpdump.so libbgpdump.a testbgpdump bgpdump *.o 
++	rm -f libbgpdump.so.${LIBbgpdump_VERSION} libbgpdump.a testbgpdump bgpdump *.o 
+ 
+ distclean: clean
+ 	rm -rf config.log config.status *.dSYM core *.core autom4te.cache bgpdump-config.h Makefile

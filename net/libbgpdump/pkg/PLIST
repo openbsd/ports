@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/17 19:48:36 sthen Exp $
+%%SHARED%%
+@bin bin/bgpdump
+include/bgpdump-config.h
+include/bgpdump.h
+include/bgpdump_attr.h
+include/bgpdump_formats.h
+include/bgpdump_lib.h
+include/bgpdump_mstream.h
+include/cfile_tools.h
+lib/libbgpdump.a
