@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.646 2010/07/30 20:36:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.647 2010/08/17 19:49:05 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -160,6 +160,7 @@
      SUBDIR += ldistfp
      SUBDIR += ldns
      SUBDIR += lftp
+     SUBDIR += libbgpdump
      SUBDIR += libbind
      SUBDIR += libcares
      SUBDIR += libdnet
