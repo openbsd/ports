@@ -1,14 +1,22 @@
-$OpenBSD: README.OpenBSD,v 1.1 2010/08/18 06:03:45 fgsch Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/08/18 10:31:21 fgsch Exp $
 
-To make SCIM work when X is started add the folling lines to
+To make SCIM work when X is started add the following lines to
 ~/.xinitrc or ~/.xsession:
 
     export GTK_IM_MODULE="scim"
     export QT_IM_MODULE="scim"
-    export XIM_PROGRAM="scim -d"
     export XMODIFIERS="@im=SCIM"
+    scim -d
 
-To activate it press Ctrl+Space.  For general configuration, including
-hotkeys:
+To use SCIM within xterm(1) the character locale needs to be UTF-8.
+For example to set it to US English in UTF-8 mode, also add:
+
+    export LC_CTYPE=en_US.UTF-8
+
+Finally, to display characters correctly make sure to use a Unicode
+(ISO-10646-1) font.
+
+To activate SCIM press Ctrl+Space.  For general configuration,
+including hotkeys:
 
     $ scim-setup
