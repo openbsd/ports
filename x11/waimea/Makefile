@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/18 13:34:20 jasper Exp $
 
-COMMENT=		Virtual desktop manager for X11
+COMMENT=		virtual desktop manager for X11
 
 VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.freedesktop.org/wiki/Software_2fwaimea
+HOMEPAGE=		http://www.freedesktop.org/wiki/Software/waimea
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 
 USE_X11=		Yes
-WANTLIB=		SM ICE X11 Xau Xdmcp Xext Xinerama Xrender Xrandr \
-			Xft expat z stdc++ m c freetype fontconfig pthread-stubs xcb
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender
+WANTLIB += c expat fontconfig freetype m pthread-stubs stdc++
+WANTLIB += xcb z
 
-USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-pixmap
