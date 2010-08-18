@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.818 2010/07/30 11:28:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.819 2010/08/18 14:58:24 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -46,7 +46,6 @@
      SUBDIR += cflow
      SUBDIR += check
      SUBDIR += chmlib
-     SUBDIR += chora
      SUBDIR += cil
      SUBDIR += cln
      SUBDIR += cmake
