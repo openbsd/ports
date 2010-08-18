@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/30 15:56:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/18 15:04:22 sthen Exp $
 
+SUBDIR += chora
 SUBDIR += dimp
 SUBDIR += horde
 SUBDIR += imp
