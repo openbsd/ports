@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/08/01 20:11:48 steven Exp $
+# $OpenBSD: Makefile,v 1.68 2010/08/18 21:35:59 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.2
+VERSION=	2.7.3
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -18,7 +18,7 @@ SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
 		purple		5.1 \
 		purple-client	5.1 \
-		gnt		5.1 \
+		gnt		6.0 \
 		ymsg		0.0
 
 HOMEPAGE=	http://pidgin.im/
@@ -86,6 +86,7 @@ CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-nm \
 		 --disable-nss \
 		 --disable-perl \
+		 --disable-silent-rules \
 		 --disable-tcl \
 		 --disable-tk \
 		 --disable-vv \
