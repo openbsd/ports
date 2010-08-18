@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/10/09 09:31:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/08/18 13:33:22 jasper Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
@@ -41,6 +41,9 @@ rox/ROX-Filer/Messages/fi/LC_MESSAGES/ROX-Filer.mo
 rox/ROX-Filer/Messages/fr/
 rox/ROX-Filer/Messages/fr/LC_MESSAGES/
 rox/ROX-Filer/Messages/fr/LC_MESSAGES/ROX-Filer.mo
+rox/ROX-Filer/Messages/gl/
+rox/ROX-Filer/Messages/gl/LC_MESSAGES/
+rox/ROX-Filer/Messages/gl/LC_MESSAGES/ROX-Filer.mo
 rox/ROX-Filer/Messages/hu/
 rox/ROX-Filer/Messages/hu/LC_MESSAGES/
 rox/ROX-Filer/Messages/hu/LC_MESSAGES/ROX-Filer.mo

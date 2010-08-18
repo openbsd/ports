@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/08/18 13:33:22 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
-DISTNAME=		rox-filer-2.8
-REVISION=		4
+DISTNAME=		rox-filer-2.9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -20,6 +19,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += xml2 z pthread-stubs xcb glade-2.0
+WANTLIB += gthread-2.0 pthread xcb-render xcb-render-util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2
@@ -42,9 +42,9 @@ pre-configure:
 		${WRKSRC}/ROX-Filer/src/choices.c
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} MAKE="${MAKE_PROGRAM}" CC="${CC}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="-I${X11BASE}/include" with_platform="OpenBSD" \
-		ROX-Filer/AppRun --compile
+	@cd ${WRKSRC} && ${SETENV} MAKE="${MAKE_PROGRAM}" CC="${CC}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="-I${X11BASE}/include" \
+		with_platform="OpenBSD" ROX-Filer/AppRun --compile
 
 do-install:
 	@rm -f ${WRKSRC}/ROX-Filer/src/*.orig
