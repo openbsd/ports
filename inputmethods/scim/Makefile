@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/29 09:49:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2010/08/18 06:03:45 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	smart common input method platform
 
 DISTNAME=	scim-1.4.9
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -47,5 +47,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gtk-im-module-dir="${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules"
 CONFIGURE_ENV=	LIBS="-pthread"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scim
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/scim
 
 .include <bsd.port.mk>

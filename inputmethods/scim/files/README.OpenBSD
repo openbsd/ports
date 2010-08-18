@@ -1,0 +1,14 @@
+$OpenBSD: README.OpenBSD,v 1.1 2010/08/18 06:03:45 fgsch Exp $
+
+To make SCIM work when X is started add the folling lines to
+~/.xinitrc or ~/.xsession:
+
+    export GTK_IM_MODULE="scim"
+    export QT_IM_MODULE="scim"
+    export XIM_PROGRAM="scim -d"
+    export XMODIFIERS="@im=SCIM"
+
+To activate it press Ctrl+Space.  For general configuration, including
+hotkeys:
+
+    $ scim-setup
