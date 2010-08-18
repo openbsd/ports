@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_lighttpd_8,v 1.1 2010/08/18 11:16:55 sthen Exp $
+--- doc/lighttpd.8.orig	Sun Aug  8 22:29:24 2010
++++ doc/lighttpd.8	Sun Aug  8 22:29:58 2010
+@@ -47,7 +47,7 @@ Show a brief help message and exit.
+ .
+ .SH FILES
+ .TP 8
+-/etc/lighttpd/lighttpd.conf
++${SYSCONFDIR}/lighttpd.conf
+ The standard location for the configuration file.
+ .TP 8
+ /var/run/lighttpd.pid

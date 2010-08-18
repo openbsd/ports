@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2010/07/06 17:17:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2010/08/18 11:16:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.26
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	lighttpd-1.4.27
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -50,11 +49,11 @@ CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	mysqlclient.>=10::databases/mysql
 .endif
 
+post-extract:
+	@cp -f ${FILESDIR}/lighttpd.conf ${WRKSRC}/doc
+
 pre-build:
-	@perl -pi -e "s,/usr/bin/rrdtool,${LOCALBASE}/bin/rrdtool,g" \
-	    ${WRKSRC}/doc/lighttpd.conf
-	@perl -pi -e "s,/etc/lighttpd,${SYSCONFDIR},g" \
-	    ${WRKSRC}/doc/lighttpd.8
+	@${SUBST_CMD} ${WRKSRC}/doc/lighttpd.conf ${WRKSRC}/doc/lighttpd.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lighttpd
@@ -63,7 +62,7 @@ post-install:
 	    ${PREFIX}/share/doc/lighttpd
 	${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf \
 	    ${PREFIX}/share/examples/lighttpd
-	${INSTALL_DATA} ${WRKSRC}/doc/spawn-php.sh \
+	${INSTALL_DATA} ${WRKSRC}/doc/scripts/spawn-php.sh \
 	    ${PREFIX}/share/examples/lighttpd
 	${INSTALL_DATA} /dev/null \
 	    ${PREFIX}/share/examples/lighttpd/access.log
