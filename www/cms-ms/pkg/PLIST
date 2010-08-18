@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/08/18 15:21:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/08/18 16:07:10 jasper Exp $
 @group daemon
 cms/
 cms/admin/
@@ -2947,3 +2947,4 @@ cms/uploads/ngrey/wbtmleft.gif
 cms/uploads/ngrey/wfootrt.gif
 cms/uploads/ngrey/wtopleft.gif
 cms/version.php
+@extraunexec rm -rf ${INSTDIR}/tmp/

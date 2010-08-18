@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/18 15:21:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/18 16:07:10 jasper Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
 DISTNAME=		cmsmadesimple-1.8.2-full
 PKGNAME=		${DISTNAME:S/-full//}
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.cmsmadesimple.org/
