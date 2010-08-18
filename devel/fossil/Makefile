@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/05/26 14:32:37 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2010/08/18 13:53:05 jasper Exp $
 
 COMMENT =		simple distributed software configuration management 
 
-VERSION =		20100521162104
+VERSION =		20100703153359
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -23,7 +23,9 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
-MAKE_FLAGS =		LDFLAGS="-static"
+MAKE_FLAGS =		LDFLAGS="-static" TCC="${CC} -Wall"
+.else
+MAKE_FLAGS =		TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL"
 .endif
 
 WANTLIB =		c crypto ssl z
@@ -33,7 +35,7 @@ RUN_DEPENDS =		:gnupg-*:security/gnupg
 
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
-MAKE_FLAGS +=		BCC="${CC}" TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL"
+MAKE_FLAGS +=		BCC="${CC}"
 
 do-regress:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil
