@@ -1,6 +1,14 @@
---- configure.orig	Tue Aug 19 20:11:50 2008
-+++ configure	Sun Mar  8 19:13:13 2009
-@@ -7833,6 +7833,7 @@ cat confdefs.h >>conftest.$ac_ext
+--- configure.orig	Thu Aug 19 16:17:49 2010
++++ configure	Thu Aug 19 16:18:59 2010
+@@ -7836,6 +7836,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #ifdef HAVE_SOCKET_H
+ #include <socket.h>
+@@ -7907,6 +7908,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
@@ -8,20 +16,12 @@
  #include <netinet/in.h>
  
  
-@@ -7898,6 +7899,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#include <sys/types.h>
- #include <netinet/in.h>
- 
- 
-@@ -7955,7 +7957,7 @@ fi
- echo $ECHO_N "checking for C flags to get more warnings... $ECHO_C" >&6; }
- ac_save_CFLAGS="$CFLAGS"
- if test "x$ac_cv_c_compiler_gnu" = "xyes" ; then
--    warning_CFLAGS="-Wall -Wno-pointer-sign"
-+    warning_CFLAGS="-Wall"
+@@ -7993,7 +7995,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+ 	 test -z "$ac_c_werror_flag" ||
+ 	 test ! -s conftest.err
+        } && test -s conftest.$ac_objext; then
+-   warning_CFLAGS="${warning_CFLAGS} -Wno-pointer-sign"
++   warning_CFLAGS="${warning_CFLAGS}"
  else
-     case "$host_os" in
-         irix*)
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5

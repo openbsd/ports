@@ -1,10 +1,10 @@
-$OpenBSD: patch-gtk_c,v 1.1 2009/03/08 18:15:45 jasper Exp $
+$OpenBSD: patch-gtk_c,v 1.2 2010/08/19 16:56:45 jasper Exp $
 
 Fix 64-bit issue.
 
---- gtk.c.orig	Sun Mar  8 19:13:24 2009
-+++ gtk.c	Sun Mar  8 19:13:44 2009
-@@ -22,6 +22,7 @@
+--- gtk.c.orig	Tue Jul 13 08:25:58 2010
++++ gtk.c	Thu Aug 19 16:19:10 2010
+@@ -21,6 +21,7 @@
  
  #include <stdio.h>
  #include <stdlib.h>
