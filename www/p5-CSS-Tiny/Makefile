@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/25 19:06:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/19 12:46:04 jasper Exp $
 
 COMMENT=	handle CSS with little overhead
 
 MODULES=	cpan
-DISTNAME=	CSS-Tiny-1.15
+DISTNAME=	CSS-Tiny-1.17
 CATEGORIES=	www
 
 # perl
