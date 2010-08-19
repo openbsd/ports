@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/05 19:05:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/08/19 08:08:24 jasper Exp $
 @bin bin/ncmpc
 @man man/man1/ncmpc.1
 share/doc/ncmpc/
@@ -14,6 +14,7 @@ share/locale/da/LC_MESSAGES/ncmpc.mo
 share/locale/de/LC_MESSAGES/ncmpc.mo
 share/locale/eo/LC_MESSAGES/ncmpc.mo
 share/locale/es/LC_MESSAGES/ncmpc.mo
+share/locale/fi/LC_MESSAGES/ncmpc.mo
 share/locale/fr/LC_MESSAGES/ncmpc.mo
 share/locale/gl/LC_MESSAGES/ncmpc.mo
 share/locale/he/LC_MESSAGES/ncmpc.mo
@@ -21,6 +22,7 @@ share/locale/hu/LC_MESSAGES/ncmpc.mo
 share/locale/ko/LC_MESSAGES/ncmpc.mo
 share/locale/nb/LC_MESSAGES/ncmpc.mo
 share/locale/nl/LC_MESSAGES/ncmpc.mo
+share/locale/pt_BR/LC_MESSAGES/ncmpc.mo
 share/locale/ru/LC_MESSAGES/ncmpc.mo
 share/locale/sk/LC_MESSAGES/ncmpc.mo
 share/locale/sv/LC_MESSAGES/ncmpc.mo

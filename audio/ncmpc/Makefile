@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/20 21:40:45 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2010/08/19 08:08:24 jasper Exp $
 
 COMMENT=		curses based frontend for mpd
 
-DISTNAME=		ncmpc-0.16.1
-PKGNAME=		${DISTNAME}p0v0
+DISTNAME=		ncmpc-0.17
+EPOCH=			0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://mpd.wikia.com/wiki/Client:Ncmpc
