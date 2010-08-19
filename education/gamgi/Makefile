@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/24 17:47:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/19 11:38:32 jasper Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
-V=			0.14.7
+V=			0.14.8
 DISTNAME=		gamgi-all-${V}
 PKGNAME=		${DISTNAME:S/-all//}
-REVISION=		1
 CATEGORIES=		education x11
 
 HOMEPAGE=		http://www.gamgi.org/
