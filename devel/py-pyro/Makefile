@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2010/01/09 00:57:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/19 18:50:46 jasper Exp $
 
 COMMENT =	distributed object middleware for Python
 
 MODPY_EGG_VERSION = 3.10
 DISTNAME =	Pyro-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}
+PKGNAME =	py-${DISTNAME:L}p0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://pyro.sourceforge.net/
+HOMEPAGE =	http://www.xs4all.nl/~irmen/pyro3/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pyro/}
+MASTER_SITES =	${HOMEPAGE}/download/
 
 MODULES =	lang/python
 
