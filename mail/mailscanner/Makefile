@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/26 11:22:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/08/19 08:34:19 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
-V=		4.80
-Vs=		10
+V=		4.81
+Vs=		3
 Vss=		${Vs}-1
-REVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
 DISTNAME=	mailscanner-${V}.${Vss}
