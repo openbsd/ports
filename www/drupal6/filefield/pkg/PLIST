@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/19 20:53:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/08/19 09:40:50 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield/
@@ -34,23 +34,20 @@ ${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.pot
 ${DRUPAL_MODS}filefield/filefield_meta/translations/ja.po
 ${DRUPAL_MODS}filefield/filefield_widget.inc
 ${DRUPAL_MODS}filefield/icons/
-${DRUPAL_MODS}filefield/icons/protocons/
-${DRUPAL_MODS}filefield/icons/protocons/16x16/
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/application-octet-stream.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/application-pdf.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/application-x-executable.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/audio-x-generic.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/image-x-generic.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/package-x-generic.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/text-html.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/text-plain.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/text-x-generic.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/text-x-script.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/video-x-generic.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/x-office-document.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/x-office-presentation.png
-${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/x-office-spreadsheet.png
+${DRUPAL_MODS}filefield/icons/application-octet-stream.png
+${DRUPAL_MODS}filefield/icons/application-pdf.png
+${DRUPAL_MODS}filefield/icons/application-x-executable.png
+${DRUPAL_MODS}filefield/icons/audio-x-generic.png
+${DRUPAL_MODS}filefield/icons/image-x-generic.png
+${DRUPAL_MODS}filefield/icons/package-x-generic.png
+${DRUPAL_MODS}filefield/icons/text-html.png
+${DRUPAL_MODS}filefield/icons/text-plain.png
+${DRUPAL_MODS}filefield/icons/text-x-generic.png
+${DRUPAL_MODS}filefield/icons/text-x-script.png
+${DRUPAL_MODS}filefield/icons/video-x-generic.png
+${DRUPAL_MODS}filefield/icons/x-office-document.png
+${DRUPAL_MODS}filefield/icons/x-office-presentation.png
+${DRUPAL_MODS}filefield/icons/x-office-spreadsheet.png
 ${DRUPAL_MODS}filefield/tests/
 ${DRUPAL_MODS}filefield/tests/filefield.test
 ${DRUPAL_MODS}filefield/translations/
