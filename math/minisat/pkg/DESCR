@@ -13,3 +13,7 @@ Some key features of MiniSat:
   mechanisms for adding non-clausal constraints. By virtue of being easy
   to modify, it is a good choice for integrating as a backend to another
   tool, such as a model checker or a more generic constraint solver.
+
+The OpenBSD package of MiniSAT installs two binaries:
+  minisat  = A core version of the solver.
+  minisats = An extended solver with simplification capabilities.

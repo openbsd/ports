@@ -1,0 +1,19 @@
+$OpenBSD: patch-core_Main_cc,v 1.1 2010/08/19 14:19:22 edd Exp $
+
+OpenBSD has no RLIMIT_AS
+
+--- core/Main.cc.orig	Thu Aug 19 14:33:12 2010
++++ core/Main.cc	Thu Aug 19 14:34:39 2010
+@@ -112,10 +112,10 @@ int main(int argc, char** argv)
+         if (mem_lim != INT32_MAX){
+             rlim_t new_mem_lim = (rlim_t)mem_lim * 1024*1024;
+             rlimit rl;
+-            getrlimit(RLIMIT_AS, &rl);
++            getrlimit(RLIMIT_DATA, &rl);
+             if (rl.rlim_max == RLIM_INFINITY || new_mem_lim < rl.rlim_max){
+                 rl.rlim_cur = new_mem_lim;
+-                if (setrlimit(RLIMIT_AS, &rl) == -1)
++                if (setrlimit(RLIMIT_DATA, &rl) == -1)
+                     printf("WARNING! Could not set resource limit: Virtual memory.\n");
+             } }
+         

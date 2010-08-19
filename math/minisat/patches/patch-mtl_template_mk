@@ -1,0 +1,55 @@
+$OpenBSD: patch-mtl_template_mk,v 1.1 2010/08/19 14:19:22 edd Exp $
+
+Print compiler options and remove OTT optimisation
+
+--- mtl/template.mk.orig	Sat Jul 10 17:07:36 2010
++++ mtl/template.mk	Tue Jul 13 14:14:42 2010
+@@ -22,7 +22,7 @@ CXX       ?= g++
+ CFLAGS    ?= -Wall -Wno-parentheses
+ LFLAGS    ?= -Wall
+ 
+-COPTIMIZE ?= -O3
++#COPTIMIZE ?= -O3
+ 
+ CFLAGS    += -I$(MROOT) -D __STDC_LIMIT_MACROS -D __STDC_FORMAT_MACROS
+ LFLAGS    += -lz
+@@ -41,13 +41,13 @@ libd:	lib$(LIB)_debug.a
+ libr:	lib$(LIB)_release.a
+ 
+ ## Compile options
+-%.o:			CFLAGS +=$(COPTIMIZE) -g -D DEBUG
++%.o:			CFLAGS +=$(COPTIMIZE)
+ %.op:			CFLAGS +=$(COPTIMIZE) -pg -g -D NDEBUG
+ %.od:			CFLAGS +=-O0 -g -D DEBUG
+ %.or:			CFLAGS +=$(COPTIMIZE) -g -D NDEBUG
+ 
+ ## Link options
+-$(EXEC):		LFLAGS += -g
++$(EXEC):		LFLAGS +=
+ $(EXEC)_profile:	LFLAGS += -g -pg
+ $(EXEC)_debug:		LFLAGS += -g
+ #$(EXEC)_release:	LFLAGS += ...
+@@ -69,12 +69,12 @@ lib$(LIB)_release.a:	$(filter-out */Main.or, $(RCOBJS)
+ ## Build rule
+ %.o %.op %.od %.or:	%.cc
+ 	@echo Compiling: $(subst $(MROOT)/,,$@)
+-	@$(CXX) $(CFLAGS) -c -o $@ $<
++	$(CXX) $(CFLAGS) -c -o $@ $<
+ 
+ ## Linking rules (standard/profile/debug/release)
+ $(EXEC) $(EXEC)_profile $(EXEC)_debug $(EXEC)_release $(EXEC)_static:
+ 	@echo Linking: "$@ ( $(foreach f,$^,$(subst $(MROOT)/,,$f)) )"
+-	@$(CXX) $^ $(LFLAGS) -o $@
++	$(CXX) $^ $(LFLAGS) -o $@
+ 
+ ## Library rules (standard/profile/debug/release)
+ lib$(LIB)_standard.a lib$(LIB)_profile.a lib$(LIB)_release.a lib$(LIB)_debug.a:
+@@ -94,7 +94,7 @@ clean:
+ ## Make dependencies
+ depend.mk: $(CSRCS) $(CHDRS)
+ 	@echo Making dependencies
+-	@$(CXX) $(CFLAGS) -I$(MROOT) \
++	$(CXX) $(CFLAGS) -I$(MROOT) \
+ 	   $(CSRCS) -MM | sed 's|\(.*\):|$(PWD)/\1 $(PWD)/\1r $(PWD)/\1d $(PWD)/\1p:|' > depend.mk
+ 	@for dir in $(DEPDIR); do \
+ 	      if [ -r $(MROOT)/$${dir}/depend.mk ]; then \
