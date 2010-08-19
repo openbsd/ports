@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-demo,v 1.7 2005/01/13 03:23:10 kevlo Exp $
+@comment $OpenBSD: PLIST-demo,v 1.8 2010/08/19 21:54:42 sthen Exp $
 bin/widget
 ${P5ARCH}/Tk/WidgetDemo.pod
 ${P5ARCH}/Tk/demos/
@@ -101,6 +101,8 @@ ${P5ARCH}/Tk/demos/widtrib/
 ${P5ARCH}/Tk/demos/widtrib/Gedi.pl
 ${P5ARCH}/Tk/demos/widtrib/TEMPLATE.pl
 ${P5ARCH}/Tk/demos/widtrib/Tiler.pl
+${P5ARCH}/Tk/demos/widtrib/all.pl
+${P5ARCH}/Tk/demos/widtrib/cursor.pl
 ${P5ARCH}/Tk/demos/widtrib/lib/
 ${P5ARCH}/Tk/demos/widtrib/lib/npuz/
 ${P5ARCH}/Tk/demos/widtrib/lib/npuz/Xcamel.npuz
