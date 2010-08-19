@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- src/Makefile.in.orig	Mon Aug 16 15:41:20 2010
++++ src/Makefile.in	Mon Aug 16 15:41:22 2010
+@@ -574,7 +574,7 @@ libibus_la_LIBADD = \
+ 
+ libibus_la_LDFLAGS = \
+ 	-export-symbols-regex "ibus_.*" \
+-	-version-info @LT_VERSION_INFO@ \
++	$(libibus_la_LDFLAGS} \
+ 	$(NULL)
+ 
+ BUILT_SOURCES = \

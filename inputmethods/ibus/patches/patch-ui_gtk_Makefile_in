@@ -1,0 +1,22 @@
+$OpenBSD: patch-ui_gtk_Makefile_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- ui/gtk/Makefile.in.orig	Tue Aug  3 10:00:33 2010
++++ ui/gtk/Makefile.in	Wed Aug 18 15:35:51 2010
+@@ -652,12 +652,12 @@ gtkpanel.xml: gtkpanel.xml.in
+ 	) > $@
+ 
+ test:
+-	$(ENV) DBUS_DEBUG=true \
+-		IBUS_PREFIX=@prefix@ \
+-		IBUS_DATAROOTDIR=@datarootdir@ \
+-		IBUS_LOCALEDIR=@localedir@ \
+-		PYTHONPATH=$(top_srcdir) \
+-		$(PYTHON) $(srcdir)/main.py
++	DBUS_DEBUG=true \
++	IBUS_PREFIX=@prefix@ \
++	IBUS_DATAROOTDIR=@datarootdir@ \
++	IBUS_LOCALEDIR=@localedir@ \
++	PYTHONPATH=$(top_srcdir) \
++	$(PYTHON) $(srcdir)/main.py
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

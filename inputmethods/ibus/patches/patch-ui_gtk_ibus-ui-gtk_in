@@ -1,0 +1,10 @@
+$OpenBSD: patch-ui_gtk_ibus-ui-gtk_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- ui/gtk/ibus-ui-gtk.in.orig	Tue Aug 17 05:45:08 2010
++++ ui/gtk/ibus-ui-gtk.in	Tue Aug 17 05:45:36 2010
+@@ -27,5 +27,5 @@ export IBUS_PREFIX=@prefix@
+ export IBUS_DATAROOTDIR=@datarootdir@
+ export IBUS_LOCALEDIR=@localedir@
+ 
+-exec python @prefix@/share/ibus/ui/gtk/main.py $@
++exec @PYTHON@ @prefix@/share/ibus/ui/gtk/main.py $@
+ 

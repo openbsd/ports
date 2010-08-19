@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_Makefile_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- setup/Makefile.in.orig	Tue Aug  3 10:00:32 2010
++++ setup/Makefile.in	Wed Aug 18 15:35:51 2010
+@@ -664,12 +664,11 @@ uninstall-am: uninstall-binSCRIPTS uninstall-desktopDA
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ test:
+-	$(ENV) \
+-		PYTHONPATH=$(top_srcdir) \
+-		IBUS_PREFIX="@prefix@" \
+-		IBUS_LOCALEDIR="@localedir@" \
+-		$(PYTHON) \
+-		$(srcdir)/main.py
++	PYTHONPATH=$(top_srcdir) \
++	IBUS_PREFIX="@prefix@" \
++	IBUS_LOCALEDIR="@localedir@" \
++	$(PYTHON) \
++	$(srcdir)/main.py
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

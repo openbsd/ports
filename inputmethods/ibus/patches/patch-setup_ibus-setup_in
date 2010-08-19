@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_ibus-setup_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- setup/ibus-setup.in.orig	Mon Aug 16 16:48:08 2010
++++ setup/ibus-setup.in	Mon Aug 16 16:48:29 2010
+@@ -26,5 +26,5 @@ datarootdir=@datarootdir@
+ export IBUS_PREFIX=@prefix@
+ export IBUS_DATAROOTDIR=@datarootdir@
+ export IBUS_LOCALEDIR=@localedir@
+-exec python @prefix@/share/ibus/setup/main.py $@
++exec @PYTHON@ @prefix@/share/ibus/setup/main.py $@
+ 

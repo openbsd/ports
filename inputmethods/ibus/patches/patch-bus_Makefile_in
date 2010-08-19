@@ -1,0 +1,27 @@
+$OpenBSD: patch-bus_Makefile_in,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- bus/Makefile.in.orig	Tue Aug  3 10:00:31 2010
++++ bus/Makefile.in	Wed Aug 18 20:43:09 2010
+@@ -395,11 +395,6 @@ AM_LDADD = \
+ 	$(libibus) \
+ 	$(NULL)
+ 
+-xdgautostart_DATA = \
+-	ibus.desktop \
+-	$(NULL)
+-
+-xdgautostartdir = $(sysconfdir)/xdg/autostart
+ desktopdir = $(datadir)/applications
+ desktop_in_files = ibus.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@@ -1183,9 +1178,8 @@ $(libibus):
+ 	$(MAKE) -C $(top_builddir)/src
+ 
+ test: ibus-daemon
+-	$(ENV) \
+-		G_DEBUG=fatal_warnings \
+-		$(builddir)/ibus-daemon -v
++	G_DEBUG=fatal_warnings \
++	$(builddir)/ibus-daemon -v
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

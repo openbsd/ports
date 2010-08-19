@@ -1,0 +1,22 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/08/19 18:57:50 fgsch Exp $
+
+To make IBus work when X is started add the following lines to
+~/.xinitrc or ~/.xsession:
+
+    export GTK_IM_MODULE="ibus"
+    export QT_IM_MODULE="ibus"
+    export XMODIFIERS="@im=ibus"
+    ibus-daemon -d -x -r
+
+To use IBus within xterm(1) the character locale needs to be UTF-8.
+For example to set it to US English in UTF-8 mode, also add:
+
+    export LC_CTYPE=en_US.UTF-8
+
+Finally, to display characters correctly make sure to use a Unicode
+(ISO-10646-1) font.
+
+To activate IBus press Ctrl+Space.  For general configuration,
+including hotkeys:
+
+    $ ibus-setup

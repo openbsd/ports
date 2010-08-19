@@ -1,0 +1,12 @@
+$OpenBSD: patch-ibus_common_py,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+--- ibus/common.py.orig	Mon Aug 16 17:51:15 2010
++++ ibus/common.py	Mon Aug 16 17:51:18 2010
+@@ -98,7 +98,7 @@ import ctypes
+ #         return None
+ #     return address
+ 
+-libibus = ctypes.CDLL("libibus.so.2")
++libibus = ctypes.CDLL("libibus.so")
+ get_address = libibus.ibus_get_address
+ get_address.restype=ctypes.c_char_p
+ 
