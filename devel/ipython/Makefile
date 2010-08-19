@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/02 17:45:53 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.14 2010/08/19 17:38:48 jasper Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ipython.scipy.org/dist/
+MASTER_SITES=	http://ipython.scipy.org/dist/${MODPY_EGG_VERSION}/
 
 NO_REGRESS=	Yes
 
