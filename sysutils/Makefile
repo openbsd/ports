@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2010/07/29 21:40:47 steven Exp $
+# $OpenBSD: Makefile,v 1.208 2010/08/19 20:58:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -36,6 +36,7 @@
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += dtpstree
      SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
