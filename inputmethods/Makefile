@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/17 20:46:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/19 19:07:08 fgsch Exp $
 
 SUBDIR =
 SUBDIR += anthy
+SUBDIR += ibus
 SUBDIR += libtomoe-gtk
 SUBDIR += scim
 SUBDIR += scim-anthy
