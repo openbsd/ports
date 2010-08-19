@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/22 16:19:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/08/19 21:23:29 steven Exp $
 %%SHARED%%
 lib/libblas.a
 lib/libblas_p.a
 %%no_mips64%%
+@man man/man3f/caxpy.3f
+@man man/man3f/ccopy.3f
+@man man/man3f/cdotc.3f
+@man man/man3f/cdotu.3f
 @man man/man3f/cgbmv.3f
 @man man/man3f/cgemm.3f
 @man man/man3f/cgemv.3f
@@ -18,7 +22,11 @@ lib/libblas_p.a
 @man man/man3f/chpmv.3f
 @man man/man3f/chpr.3f
 @man man/man3f/chpr2.3f
+@man man/man3f/crotg.3f
 @man man/man3f/cscal.3f
+@man man/man3f/csrot.3f
+@man man/man3f/csscal.3f
+@man man/man3f/cswap.3f
 @man man/man3f/csymm.3f
 @man man/man3f/csyr2k.3f
 @man man/man3f/csyrk.3f
@@ -30,15 +38,27 @@ lib/libblas_p.a
 @man man/man3f/ctrmv.3f
 @man man/man3f/ctrsm.3f
 @man man/man3f/ctrsv.3f
+@man man/man3f/dasum.3f
+@man man/man3f/daxpy.3f
 @man man/man3f/dcabs1.3f
+@man man/man3f/dcopy.3f
+@man man/man3f/ddot.3f
 @man man/man3f/dgbmv.3f
 @man man/man3f/dgemm.3f
 @man man/man3f/dgemv.3f
 @man man/man3f/dger.3f
+@man man/man3f/dnrm2.3f
+@man man/man3f/drot.3f
+@man man/man3f/drotg.3f
+@man man/man3f/drotm.3f
+@man man/man3f/drotmg.3f
 @man man/man3f/dsbmv.3f
+@man man/man3f/dscal.3f
+@man man/man3f/dsdot.3f
 @man man/man3f/dspmv.3f
 @man man/man3f/dspr.3f
 @man man/man3f/dspr2.3f
+@man man/man3f/dswap.3f
 @man man/man3f/dsymm.3f
 @man man/man3f/dsymv.3f
 @man man/man3f/dsyr.3f
@@ -53,14 +73,35 @@ lib/libblas_p.a
 @man man/man3f/dtrmv.3f
 @man man/man3f/dtrsm.3f
 @man man/man3f/dtrsv.3f
+@man man/man3f/dzasum.3f
+@man man/man3f/dznrm2.3f
+@man man/man3f/icamax.3f
+@man man/man3f/idamax.3f
+@man man/man3f/isamax.3f
+@man man/man3f/izamax.3f
+@man man/man3f/sasum.3f
+@man man/man3f/saxpy.3f
+@man man/man3f/scabs1.3f
+@man man/man3f/scasum.3f
+@man man/man3f/scnrm2.3f
+@man man/man3f/scopy.3f
+@man man/man3f/sdot.3f
+@man man/man3f/sdsdot.3f
 @man man/man3f/sgbmv.3f
 @man man/man3f/sgemm.3f
 @man man/man3f/sgemv.3f
 @man man/man3f/sger.3f
+@man man/man3f/snrm2.3f
+@man man/man3f/srot.3f
+@man man/man3f/srotg.3f
+@man man/man3f/srotm.3f
+@man man/man3f/srotmg.3f
 @man man/man3f/ssbmv.3f
+@man man/man3f/sscal.3f
 @man man/man3f/sspmv.3f
 @man man/man3f/sspr.3f
 @man man/man3f/sspr2.3f
+@man man/man3f/sswap.3f
 @man man/man3f/ssymm.3f
 @man man/man3f/ssymv.3f
 @man man/man3f/ssyr.3f
@@ -75,6 +116,13 @@ lib/libblas_p.a
 @man man/man3f/strmv.3f
 @man man/man3f/strsm.3f
 @man man/man3f/strsv.3f
+@man man/man3f/xerbla_array.3f
+@man man/man3f/zaxpy.3f
+@man man/man3f/zcopy.3f
+@man man/man3f/zdotc.3f
+@man man/man3f/zdotu.3f
+@man man/man3f/zdrot.3f
+@man man/man3f/zdscal.3f
 @man man/man3f/zgbmv.3f
 @man man/man3f/zgemm.3f
 @man man/man3f/zgemv.3f
@@ -92,6 +140,7 @@ lib/libblas_p.a
 @man man/man3f/zhpr2.3f
 @man man/man3f/zrotg.3f
 @man man/man3f/zscal.3f
+@man man/man3f/zswap.3f
 @man man/man3f/zsymm.3f
 @man man/man3f/zsyr2k.3f
 @man man/man3f/zsyrk.3f

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/19 21:23:29 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	3
-SHARED_LIBS=	blas	1.0
+REVISION=	4
+SHARED_LIBS=	blas	2.0
 
 CATEGORIES=	math
 DISTFILES=	blas.tgz manpages.tgz:0
@@ -25,7 +25,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/blas/ \
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
-WRKDIST=	${WRKDIR}
+WRKDIST=	${WRKDIR}/BLAS
 
 MODULES=	fortran
 MODFORTRAN_WANTG77=	Yes
@@ -37,7 +37,7 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
 		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
-MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
+MANSRC=		${WRKDIR}/lapack-3.2.0/manpages/blas/man/manl
 
 # See bsd.lib.mk:162
 .if ${MACHINE_ARCH:Mmips64*}
