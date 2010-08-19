@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/19 21:07:34 jasper Exp $
+${P5SITE}/Config/
+${P5SITE}/Config/Simple.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Config/
+${P5SITE}/auto/Config/Simple/
+${P5SITE}/auto/Config/Simple/CLEAR.al
+${P5SITE}/auto/Config/Simple/DELETE.al
+${P5SITE}/auto/Config/Simple/EXISTS.al
+${P5SITE}/auto/Config/Simple/FETCH.al
+${P5SITE}/auto/Config/Simple/FIRSTKEY.al
+${P5SITE}/auto/Config/Simple/NEXTKEY.al
+${P5SITE}/auto/Config/Simple/STORE.al
+${P5SITE}/auto/Config/Simple/TIEHASH.al
+${P5SITE}/auto/Config/Simple/autosplit.ix
+${P5SITE}/auto/Config/Simple/block.al
+${P5SITE}/auto/Config/Simple/dump.al
+${P5SITE}/auto/Config/Simple/error.al
+${P5SITE}/auto/Config/Simple/errstr.al
+${P5SITE}/auto/Config/Simple/hashref.al
+${P5SITE}/auto/Config/Simple/import_from.al
+${P5SITE}/auto/Config/Simple/import_names.al
+${P5SITE}/auto/Config/Simple/param_hash.al
+${P5SITE}/auto/Config/Simple/vars.al
+${P5SITE}/auto/Config/Simple/verbose.al
+${P5SITE}/auto/Config/Simple/write_string.al
+@man man/man3p/Config::Simple.3p
