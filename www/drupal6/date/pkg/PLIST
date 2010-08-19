@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/22 10:29:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/08/19 15:10:50 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -25,6 +25,7 @@ ${DRUPAL_MODS}date/date/translations/
 ${DRUPAL_MODS}date/date/translations/date.de.po
 ${DRUPAL_MODS}date/date/translations/date.es.po
 ${DRUPAL_MODS}date/date/translations/date.fr.po
+${DRUPAL_MODS}date/date/translations/date.hu.po
 ${DRUPAL_MODS}date/date/translations/date.pot
 ${DRUPAL_MODS}date/date_api.admin.inc
 ${DRUPAL_MODS}date/date_api.info
@@ -41,8 +42,8 @@ ${DRUPAL_MODS}date/date_locale/date_locale.module
 ${DRUPAL_MODS}date/date_locale/translations/
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.de.po
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.es.po
+${DRUPAL_MODS}date/date_locale/translations/date_locale.hu.po
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.pot
-${DRUPAL_MODS}date/date_locale/translations/date_locale.sv.po
 @comment ${DRUPAL_MODS}date/date_php4/
 @comment ${DRUPAL_MODS}date/date_php4/date_php4.inc
 @comment ${DRUPAL_MODS}date/date_php4/date_php4.info
@@ -59,20 +60,18 @@ ${DRUPAL_MODS}date/date_locale/translations/date_locale.sv.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.de.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.es.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.fr.po
+${DRUPAL_MODS}date/date_php4/translations/date_php4.hu.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.pot
-@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.sv.po
 ${DRUPAL_MODS}date/date_popup/
 ${DRUPAL_MODS}date/date_popup/date_popup.info
 ${DRUPAL_MODS}date/date_popup/date_popup.install
 ${DRUPAL_MODS}date/date_popup/date_popup.js
 ${DRUPAL_MODS}date/date_popup/date_popup.module
 ${DRUPAL_MODS}date/date_popup/lib/
-${DRUPAL_MODS}date/date_popup/lib/README.txt
 ${DRUPAL_MODS}date/date_popup/lib/jquery.timeentry.pack.js
-${DRUPAL_MODS}date/date_popup/lib/ui.calendar.js
-${DRUPAL_MODS}date/date_popup/lib/ui.datepicker.js
 ${DRUPAL_MODS}date/date_popup/themes/
 ${DRUPAL_MODS}date/date_popup/themes/calendar.css
+${DRUPAL_MODS}date/date_popup/themes/datepicker.1.7.css
 ${DRUPAL_MODS}date/date_popup/themes/datepicker.css
 ${DRUPAL_MODS}date/date_popup/themes/images/
 ${DRUPAL_MODS}date/date_popup/themes/images/222222_7x7_arrow_left.gif
@@ -84,13 +83,14 @@ ${DRUPAL_MODS}date/date_popup/themes/images/888888_7x7_arrow_right.gif
 ${DRUPAL_MODS}date/date_popup/themes/images/dadada_40x100_textures_02_glass_75.png
 ${DRUPAL_MODS}date/date_popup/themes/images/e6e6e6_40x100_textures_02_glass_75.png
 ${DRUPAL_MODS}date/date_popup/themes/images/ffffff_40x100_textures_02_glass_65.png
+${DRUPAL_MODS}date/date_popup/themes/jquery.timeentry.css
 ${DRUPAL_MODS}date/date_popup/themes/timeentry.css
 ${DRUPAL_MODS}date/date_popup/translations/
 ${DRUPAL_MODS}date/date_popup/translations/date_popup.de.po
 ${DRUPAL_MODS}date/date_popup/translations/date_popup.es.po
 ${DRUPAL_MODS}date/date_popup/translations/date_popup.fr.po
+${DRUPAL_MODS}date/date_popup/translations/date_popup.hu.po
 ${DRUPAL_MODS}date/date_popup/translations/date_popup.pot
-${DRUPAL_MODS}date/date_popup/translations/date_popup.sv.po
 ${DRUPAL_MODS}date/date_repeat/
 ${DRUPAL_MODS}date/date_repeat/date_repeat.info
 ${DRUPAL_MODS}date/date_repeat/date_repeat.install
@@ -101,8 +101,8 @@ ${DRUPAL_MODS}date/date_repeat/translations/
 ${DRUPAL_MODS}date/date_repeat/translations/date_repeat.de.po
 ${DRUPAL_MODS}date/date_repeat/translations/date_repeat.es.po
 ${DRUPAL_MODS}date/date_repeat/translations/date_repeat.fr.po
+${DRUPAL_MODS}date/date_repeat/translations/date_repeat.hu.po
 ${DRUPAL_MODS}date/date_repeat/translations/date_repeat.pot
-${DRUPAL_MODS}date/date_repeat/translations/date_repeat.sv.po
 ${DRUPAL_MODS}date/date_timezone/
 ${DRUPAL_MODS}date/date_timezone/date_timezone.info
 ${DRUPAL_MODS}date/date_timezone/date_timezone.install
@@ -112,16 +112,20 @@ ${DRUPAL_MODS}date/date_timezone/translations/
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.de.po
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.es.po
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.fr.po
+${DRUPAL_MODS}date/date_timezone/translations/date_timezone.hu.po
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.pot
-${DRUPAL_MODS}date/date_timezone/translations/date_timezone.sv.po
 ${DRUPAL_MODS}date/date_tools/
 ${DRUPAL_MODS}date/date_tools/date_field.php
+${DRUPAL_MODS}date/date_tools/date_tools.change_type.inc
+${DRUPAL_MODS}date/date_tools/date_tools.event.inc
 ${DRUPAL_MODS}date/date_tools/date_tools.info
 ${DRUPAL_MODS}date/date_tools/date_tools.module
+${DRUPAL_MODS}date/date_tools/date_tools.wizard.inc
 ${DRUPAL_MODS}date/date_tools/translations/
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.de.po
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.es.po
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.fr.po
+${DRUPAL_MODS}date/date_tools/translations/date_tools.hu.po
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.pot
 ${DRUPAL_MODS}date/help/
 ${DRUPAL_MODS}date/help/date-api-functions.html
@@ -179,6 +183,8 @@ ${DRUPAL_MODS}date/theme/date-vevent.tpl.php
 ${DRUPAL_MODS}date/theme/date-views-filter-form.tpl.php
 ${DRUPAL_MODS}date/theme/theme.inc
 ${DRUPAL_MODS}date/translations/
+${DRUPAL_MODS}date/translations/date.cs.po
+${DRUPAL_MODS}date/translations/date.sv.po
 ${DRUPAL_MODS}date/translations/date_api.da.po
 ${DRUPAL_MODS}date/translations/date_api.de.po
 ${DRUPAL_MODS}date/translations/date_api.es.po
@@ -188,31 +194,45 @@ ${DRUPAL_MODS}date/translations/date_api.it.po
 ${DRUPAL_MODS}date/translations/date_api.nl.po
 ${DRUPAL_MODS}date/translations/date_api.pot
 ${DRUPAL_MODS}date/translations/date_api.pt-br.po
-${DRUPAL_MODS}date/translations/date_api.sv.po
+${DRUPAL_MODS}date/translations/date_locale.cs.po
+${DRUPAL_MODS}date/translations/date_php4.cs.po
+${DRUPAL_MODS}date/translations/date_popup.cs.po
+${DRUPAL_MODS}date/translations/date_repeat.cs.po
+${DRUPAL_MODS}date/translations/date_timezone.cs.po
+${DRUPAL_MODS}date/translations/date_tools.cs.po
+${DRUPAL_MODS}date/translations/general.cs.po
 ${DRUPAL_MODS}date/translations/general.de.po
 ${DRUPAL_MODS}date/translations/general.es.po
 ${DRUPAL_MODS}date/translations/general.fr.po
 ${DRUPAL_MODS}date/translations/general.he.po
+${DRUPAL_MODS}date/translations/general.hu.po
 ${DRUPAL_MODS}date/translations/general.it.po
 ${DRUPAL_MODS}date/translations/general.nl.po
 ${DRUPAL_MODS}date/translations/general.pot
 ${DRUPAL_MODS}date/translations/general.pt-br.po
-${DRUPAL_MODS}date/translations/general.sv.po
+${DRUPAL_MODS}date/translations/includes.cs.po
 ${DRUPAL_MODS}date/translations/includes.de.po
 ${DRUPAL_MODS}date/translations/includes.es.po
 ${DRUPAL_MODS}date/translations/includes.fr.po
 ${DRUPAL_MODS}date/translations/includes.he.po
+${DRUPAL_MODS}date/translations/includes.hu.po
 ${DRUPAL_MODS}date/translations/includes.it.po
 ${DRUPAL_MODS}date/translations/includes.nl.po
 ${DRUPAL_MODS}date/translations/includes.pot
 ${DRUPAL_MODS}date/translations/includes.pt-br.po
-${DRUPAL_MODS}date/translations/includes.sv.po
+${DRUPAL_MODS}date/translations/installer.hu.po
+${DRUPAL_MODS}date/translations/root.cs.po
+${DRUPAL_MODS}date/translations/root.hu.po
+${DRUPAL_MODS}date/translations/theme.cs.po
 ${DRUPAL_MODS}date/translations/theme.de.po
 ${DRUPAL_MODS}date/translations/theme.es.po
 ${DRUPAL_MODS}date/translations/theme.fr.po
 ${DRUPAL_MODS}date/translations/theme.he.po
+${DRUPAL_MODS}date/translations/theme.hu.po
 ${DRUPAL_MODS}date/translations/theme.it.po
 ${DRUPAL_MODS}date/translations/theme.nl.po
 ${DRUPAL_MODS}date/translations/theme.pot
 ${DRUPAL_MODS}date/translations/theme.pt-br.po
 ${DRUPAL_MODS}date/translations/theme.se.po
+${DRUPAL_MODS}date/translations/uk-ua.po
+${DRUPAL_MODS}date/translations/uk.po
