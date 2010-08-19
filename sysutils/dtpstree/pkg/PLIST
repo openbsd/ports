@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/19 20:56:42 jasper Exp $
+@bin bin/dtpstree
+@man man/man1/dtpstree.1
