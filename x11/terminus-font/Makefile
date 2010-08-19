@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/08/19 15:51:07 ray Exp $
 
 COMMENT=		fixed width fonts especially for long hacking sessions
 
-DISTNAME=		terminus-font-4.28
-REVISION=		1
+DISTNAME=		terminus-font-4.30
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.is-vn.bg/hamster/
-DISTFILES=		${DISTNAME}.tar.gz
+HOMEPAGE=		http://terminus-font.sourceforge.net/
 
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
+MAINTAINER=		Ray Lai <ray@cyth.net>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
 
 CONFIGURE_STYLE=	simple
 NO_REGRESS=		Yes
