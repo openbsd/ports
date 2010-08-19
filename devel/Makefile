@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.819 2010/08/18 14:58:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.820 2010/08/19 21:09:44 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -374,6 +374,7 @@
      SUBDIR += p5-Config-Grammar
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Config-Options
+     SUBDIR += p5-Config-Simple
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Context-Preserve
      SUBDIR += p5-Curses
