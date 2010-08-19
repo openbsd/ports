@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/03 11:10:39 stephan Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/19 08:31:55 stephan Exp $
 
 COMMENT =	plain textarea editor to facilitate code writing
 
-DISTNAME = 	bueditor-6.x-2.0
-PKGNAME =	drupal6-bueditor-2.0
+DISTNAME = 	bueditor-6.x-2.1
+PKGNAME =	drupal6-bueditor-2.1
 
 MAINTAINER=     Stephan A. Rickauer <stephan@openbsd.org>
 
