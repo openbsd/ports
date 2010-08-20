@@ -1,0 +1,93 @@
+.\"	$OpenBSD: pkg_subst.1,v 1.1 2010/08/20 14:38:31 espie Exp $
+.\"
+.\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: August 20 2010 $
+.Dt PKG_SUBST 1
+.Os
+.Sh NAME
+.Nm pkg_subst
+.Nd substitute variables' values in files
+.Sh SYNOPSIS
+.Nm pkg-subst
+.Op Fl c
+.Oo Fl D Ar name
+.Ns Oo Ns = Ns Ar value
+.Oc
+.Oc
+.Op Fl g group
+.Op Fl o owner
+.Op Ar file ...
+.Sh DESCRIPTION
+.Nm
+is used within the ports tree to substitute variable values, using
+the exact same conventions used by
+.Xr pkg_create 1 .
+Constructs like
+.Li ${VAR}
+will be replaced with the variable value, according to
+.Fl D AR name Ns = Ns Ar value
+options.
+.Pp
+The options are as follows
+.Bl -tag -width Dname=valuexxx
+.It Fl c
+copy and substitute.
+Number of
+.Ar file
+arguments must be even.
+They are paired as
+.Ar dest1
+.Ar src1 ,
+.Ar dest2
+.Ar src2 ...
+and each
+.Ar src
+file is substituted and copied into the corresponding
+.Ar dest
+file .
+.It Xo
+.Fl D
+.Ar name Ns = Ns Ar value
+.Xc
+Define
+.Ar name
+to
+.Ar value .
+.It Fl g Ar group
+change group of destination file to
+.Ar group .
+.It Fl u Ar owner
+change owner of destination file to
+.Ar owner .
+.El
+.Pp
+If no
+.Ar file
+arguments is given,
+.Nm
+acts as a filter from stdin to stdout.
+.Pp
+Without
+.Fl c ,
+each
+.Ar file
+is backed up as
+.Ar file.beforesubst
+before the substitution occurs.
+
+.Sh SEE ALSO
+.Xr pkg_create 1 ,
+.Xr install 1 .
