@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1026 2010/08/07 19:41:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1027 2010/08/20 14:53:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -88,6 +88,8 @@ BULK_DO ?=
 CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
 DPB ?= All Fetch
+_SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
+_PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
@@ -941,7 +943,7 @@ PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
 .  endif
 .endfor
 
-SUBST_CMD = perl ${PORTSDIR}/infrastructure/build/pkg_subst
+SUBST_CMD = ${_PERLSCRIPT}/pkg_subst
 .for _v in ${SUBST_VARS}
 SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .endfor
@@ -1360,7 +1362,7 @@ _noshared =
 _libresolve_fragment = \
 	check=`for _lib in $$libs; do echo $$_lib; done | \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			perl ${PORTSDIR}/infrastructure/build/resolve-lib \
+			${_PERLSCRIPT}/resolve-lib \
 				${_noshared} $$d` \
 			|| check=Failed
 
@@ -1512,7 +1514,7 @@ ECHO_REORDER ?= :
 # to remove locks handling, define LOCKDIR to an empty value
 
 LOCKDIR ?= ${TMPDIR}/portslocks
-LOCK_CMD ?= perl ${PORTSDIR}/infrastructure/build/dolock
+LOCK_CMD ?= ${_PERLSCRIPT}/dolock
 UNLOCK_CMD ?= rm -f
 _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
@@ -1868,8 +1870,8 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 		esac; \
 	done; \
 	if found=`eval $$listlibs 2>/dev/null| \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEP${_m}LIBS:QL}`; then \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+		${_PERLSCRIPT}/resolve-lib ${_noshared} ${_DEP${_m}LIBS:QL}`; then \
 		line="===>  found"; \
 		for k in $$found; do line="$$line $$k"; done; \
 		${ECHO_MSG} "$$line"; \
@@ -1916,7 +1918,7 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 .  endif
 .else
 
-_CHECK_LIB_DEPENDS = perl ${PORTSDIR}/infrastructure/package/check-lib-depends
+_CHECK_LIB_DEPENDS = ${_PERLSCRIPT}/check-lib-depends
 _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
 .  if ${ELF_TOOLCHAIN:L} == "no"
 _CHECK_LIB_DEPENDS += -o
@@ -2086,14 +2088,14 @@ _internal-plist _internal-update-plist: _internal-fake
 	SHARED_ONLY="${SHARED_ONLY}" \
 	OWNER=`id -u` \
 	GROUP=`id -g` \
-	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
+	${SUDO} ${_PERLSCRIPT}/make-plist \
 	${_extra_info} ${_tmpvars}
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
 		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
 		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
-		/bin/sh ${PORTSDIR}/infrastructure/build/update-patches`; \
+		${_SHSCRIPT}/update-patches`; \
 	case $$toedit in "");; \
 	*) read i?'edit patches: '; \
 	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
@@ -2452,7 +2454,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .if empty(PLIST_DB)
 _register_plist =:
 .else
-_register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
+_register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
 _check_lib_depends = ${_CHECK_LIB_DEPENDS} 
@@ -2640,7 +2642,7 @@ mirror-maker-fetch:
 	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; ${MAKE} fetch-makefile >$$mk; \
 	echo "Check and remove $$mk"; \
 	cd ${DISTDIR} && \
-		${MAKE} -f $$mk all FETCH=${PORTSDIR}/infrastructure/fetch/fetch-all
+		${MAKE} -f $$mk all FETCH=${_SHSCRIPT}/fetch-all
 
 _fetch-makefile:
 .if !defined(COMES_WITH)
@@ -2969,8 +2971,8 @@ _print-package-args:
 		esac; \
 	done; \
 	if found=`eval $$listlibs 2>/dev/null| \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPRUNLIBS:QL}`; then \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+		${_PERLSCRIPT}/resolve-lib ${_noshared} ${_DEPRUNLIBS:QL}`; then \
 		for k in $$found; do \
 			case $$k in *.a) ;; \
 			*) echo "-W $$k";; \
@@ -2988,7 +2990,7 @@ _list-port-libs:
 	@if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		${MAKE} run-dir-depends >>${_DEPENDS_CACHE}; \
 	fi
-	@perl ${PORTSDIR}/infrastructure/build/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read subdir; do \
+	@${_PERLSCRIPT}/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read subdir; do \
 		fulldir=${_PORT_LIBS_CACHE}/$$subdir; \
 		if test -f $$fulldir; then \
 			cat $$fulldir; \
@@ -3017,7 +3019,7 @@ _print-package-signature-run:
 .endfor
 
 _print-package-signature-lib:
-	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_DEPRUNLIBS:QL}
+	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} ${_PERLSCRIPT}/resolve-lib ${_DEPRUNLIBS:QL}
 .for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
@@ -3211,7 +3213,7 @@ peek-ftp:
 	done
 
 show-required-by:
-	@cd ${PORTSDIR} && make all-dir-depends | perl ${PORTSDIR}/infrastructure/build/extract-dependencies -r ${_ALLPKGPATHS}
+	@cd ${PORTSDIR} && make all-dir-depends | ${_PERLSCRIPT}/extract-dependencies -r ${_ALLPKGPATHS}
 
 
 show:
