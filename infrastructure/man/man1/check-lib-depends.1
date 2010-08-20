@@ -1,0 +1,96 @@
+.\"	$OpenBSD: check-lib-depends.1,v 1.1 2010/08/20 15:50:56 espie Exp $
+.\"
+.\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: August 20 2010 $
+.Dt CHECK-LIB-DEPENDS 1
+.Os
+.Sh NAME
+.Nm check-lib-depends
+.Nd scan port for shared libraries
+.Sh SYNOPSIS
+.Nm check-lib-depends
+.Op Fl B Ar destdir
+.Op Fl d Ar pkgrepo
+.Op Fl f
+.Op Fl o
+.Op Fl O Ar dest
+.Op Fl s Ar source
+.Op Ar package ...
+.Sh DESCRIPTION
+.Nm
+scans a port or package for shared libraries, and verify that all of them
+are properly recorded.
+.Pp
+.Nm
+can either scan files from a built port after the
+.Ar fake stage
+from the
+.Ev WRKINST
+directory, or look directly inside a
+.Ar package .
+.Pp
+Likewise, it can also verify dependencies off installed packages,
+or figure them out directly from the port directory.
+.Pp
+.Nm
+actually consists of two distinct stages:
+.Bl -bullet
+.It
+scan all binaries inside a package to extract libraries and rpaths,
+using
+.Xr objdump 1
+or
+.Xr ldd 1 .
+.It
+compare those libraries against the port's registered dependencies
+and report problems.
+.El
+.Pp
+The options are as follows:
+.Bl -tag -width keyword
+.It Fl B Ar destdir
+scan files under
+.Ar destdir .
+.If Fl d Ar pkgrepo
+look for all needed packages under directory
+.Ar pkgrepo .
+.It Fl f
+give full reports of every file that requires a missing library.
+.It Fl o
+scan binaries using
+.Xr ldd 1 ,
+which also works for old a.out binaries,
+instead of
+.Xr objdump 1 ,
+which only works for ELF.
+.It Fl O Ar dest
+save result of first stage in file
+.Ar dest .
+.It Fl s Ar src
+do not scan, directly read result of first stage from file
+.Ar src .
+.El
+.Pp
+If no
+.Ar package
+is given,
+.Nm
+will retrieve the packing-list from stdin, and scan the package according
+to other options.
+.Sh SEE ALSO
+.Xr ldd 1 ,
+.Xr objdump 1 ,
+.Xr bsd.port.mk 5
