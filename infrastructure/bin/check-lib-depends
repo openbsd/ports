@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.2 2010/08/20 15:22:21 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.3 2010/08/20 15:29:41 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -30,290 +30,9 @@ use OpenBSD::LibSpec;
 use OpenBSD::Temp;
 use OpenBSD::AddCreateDelete;
 use OpenBSD::Getopt;
-
-# FileSource: where we get the files to analyze
-package FileSource;
-
-# file system
-package FsFileSource;
-our @ISA = qw(FileSource);
-sub new
-{
-	my ($class, $location) = @_;
-	bless {location => $location }, $class
-}
-
-sub retrieve
-{
-	my ($self, $state, $item) = @_;
-	return $self->{location}.$item->fullname;
-}
-
-sub skip
-{
-}
-
-sub clean
-{
-}
-
-# package archive
-package PkgFileSource;
-our @ISA = qw(FileSource);
-sub new
-{
-	my ($class, $handle, $location) = @_;
-	bless {handle => $handle, location => $location }, $class;
-}
-
-sub prepare_to_extract
-{
-	my ($self, $item) = @_;
-	require OpenBSD::ArcCheck;
-	my $o = $self->{handle}->next;
-	$o->{cwd} = $item->cwd;
-	if (!$o->check_name($item)) {
-		die "Error checking name for $o->{name} vs. $item->{name}\n";
-	}
-	$o->{name} = $item->fullname;
-	$o->{destdir} = $self->{location};
-	return $o;
-}
-
-sub extracted_name
-{
-	my ($self, $item) = @_;
-	return $self->{location}.$item->fullname;
-}
-
-sub retrieve
-{
-	my ($self, $state, $item) = @_;
-	my $o = $self->prepare_to_extract($item);
-	$o->create;
-	return $self->extracted_name($item);
-}
-
-sub skip
-{
-	my ($self, $item) = @_;
-	my $o = $self->prepare_to_extract($item);
-	$self->{handle}->skip;
-}
-
-sub clean
-{
-	my ($self, $item) = @_;
-	unlink($self->extracted_name($item));
-}
-
-# Recorder: how we keep track of which binary uses which library
-package Recorder;
-sub new
-{
-	my $class = shift;
-	return bless {}, $class;
-}
-
-sub reduce_libname
-{
-	my ($self, $lib) = @_;
-	$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
-	return $lib;
-}
-
-sub libs
-{
-	my $self = shift;
-	return keys %$self;
-}
-
-sub record_rpath
-{
-}
-
-# SimpleRecorder: remember one single binary for each library
-package SimpleRecorder;
-our @ISA = qw(Recorder);
-sub record
-{
-	my ($self, $lib, $filename) = @_;
-	$self->{$self->reduce_libname($lib)} = $filename;
-}
-
-sub binary
-{
-	my ($self, $lib) = @_;
-	return $self->{$lib};
-}
-
-# AllRecorder: remember all binaries for each library
-package AllRecorder;
-our @ISA = qw(Recorder);
-sub record
-{
-	my ($self, $lib, $filename) = @_;
-	push(@{$self->{$self->reduce_libname($lib)}}, $filename);
-}
-
-sub binaries
-{
-	my ($self, $lib) = @_;
-	return @{$self->{$lib}};
-}
-sub binary
-{
-	my ($self, $lib) = @_;
-	return $self->{$lib}->[0];
-}
-
-sub dump
-{
-	my ($self, $fh) = @_;
-	for my $lib (sort $self->libs) {
-		print $fh "$lib:\t\n";
-		for my $binary (sort $self->binaries($lib)) {
-			print $fh "\t$binary\n";
-		}
-	}
-}
-
-package DumpRecorder;
-our @ISA = qw(Recorder);
-sub record
-{
-	my ($self, $lib, $filename) = @_;
-	push(@{$self->{$filename}->{libs}}, $lib);
-}
-
-sub record_rpath
-{
-	my ($self, $path, $filename) = @_;
-	push(@{$self->{$filename}->{rpath}}, $path);
-}
-
-sub dump
-{
-	my ($self, $fh) = @_;
-	while (my ($binary, $v) = each %$self) {
-		print $fh $binary;
-		if (defined $v->{rpath}) {
-			print $fh "(", join(':', @{$v->{rpath}}), ")";
-		}
-		print $fh ": ", join(',', @{$v->{libs}}), "\n";
-	}
-}
-
-sub retrieve
-{
-	my ($self, $state, $filename) = @_;
-	open(my $fh, '<', $filename) or 
-	    $state->fatal("Can't read #1: #2", $filename, $!);
-	my $_;
-	while (<$fh>) {
-		chomp;
-		if (m/^(.*?)\:\s(.*)$/) {
-			my ($binary, $libs) = ($1, $2);
-			if ($binary =~ m/^(.*)\(.*\)$/) {
-				$binary = $1;
-			}
-			my @libs = split(/,/, $libs);
-			$self->{$binary}= \@libs;
-		} else {
-			$state->errsay("Can't parse #1", $_);
-		}
-	}
-	close $fh;
-}
-
-# Issue: intermediate objects that record problems with libraries
-package Issue;
-sub new
-{
-	my ($class, $lib, $binary, @packages) = @_;
-	bless { lib => $lib, binary => $binary, packages => \@packages }, 
-		$class;
-}
-
-sub stringize
-{
-	my $self = shift;
-	my $string = $self->{lib};
-	if (@{$self->{packages}} > 0) {
-		$string.=" from ".join(',', @{$self->{packages}});
-	}
-	return $string." ($self->{binary})";
-}
-
-sub do_record_wantlib
-{
-	my ($self, $h) = @_;
-	my $want = $self->{lib};
-	$want =~ s/\.\d+$//;
-	$h->{$want} = 1;
-}
-
-sub record_wantlib
-{
-}
-
-sub not_reachable
-{
-	return 0;
-}
-
-sub print
-{
-	my $self = shift;
-	print $self->message, "\n";
-}
-package Issue::SystemLib;
-our @ISA = qw(Issue);
-
-sub message
-{
-	my $self = shift;
-	return "WANTLIB:       ". $self->stringize. " (system lib)";
-}
-
-sub record_wantlib
-{
-	&Issue::do_record_wantlib;
-}
-package Issue::DirectDependency;
-our @ISA = qw(Issue);
-sub message
-{
-	my $self = shift;
-	return "LIB_DEPENDS:   ". $self->stringize;
-}
-
-package Issue::IndirectDependency;
-our @ISA = qw(Issue);
-sub message
-{
-	my $self = shift;
-	return "WANTLIB:       ". $self->stringize;
-}
-
-sub record_wantlib
-{
-	&Issue::do_record_wantlib;
-}
-
-package Issue::NotReachable;
-our @ISA = qw(Issue);
-sub message
-{
-	my $self = shift;
-	return "Missing lib:   ". $self->stringize. " (NOT REACHABLE)";
-}
-
-sub not_reachable
-{
-	my $self = shift;
-	return "Bogus WANTLIB: ". $self->stringize. " (NOT REACHABLE)";
-}
+use OpenBSD::FileSource;
+use OpenBSD::Recorder;
+use OpenBSD::Issue;
 
 package MyFile;
 our @ISA = qw(OpenBSD::PackingElement::FileBase);
@@ -601,7 +320,7 @@ sub report_lib_issue
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = lookup_library($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
-			return Issue::SystemLib->new($lib, $binary);
+			return OpenBSD::Issue::SystemLib->new($lib, $binary);
 		}
 	}
 
@@ -614,7 +333,7 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
-				return Issue::DirectDependency->new($lib, $binary, $p);
+				return OpenBSD::Issue::DirectDependency->new($lib, $binary, $p);
 			}
 		}
 	}
@@ -635,10 +354,10 @@ sub report_lib_issue
 	@r = lookup_library(OpenBSD::Paths->localbase, $libspec);
 	for my $p (@r) {
 		if (defined $done->{$p}) {
-			return Issue::IndirectDependency->new($lib, $binary, $p);
+			return OpenBSD::Issue::IndirectDependency->new($lib, $binary, $p);
 		}
 	}
-	return Issue::NotReachable->new($lib,, $binary, @r);
+	return OpenBSD::Issue::NotReachable->new($lib,, $binary, @r);
 }
 
 sub print_list
@@ -668,10 +387,11 @@ sub analyze
 	} else {
 		$state->context($pkgname);
 	}
-	my $needed_libs = $state->{full} ? AllRecorder->new : SimpleRecorder->new;
+	my $needed_libs = $state->{full} ? OpenBSD::AllRecorder->new : 
+	    OpenBSD::SimpleRecorder->new;
 	my $has_libs = {};
 	if ($state->{source}) {
-		my $special = DumpRecorder->new;
+		my $special = OpenBSD::DumpRecorder->new;
 		$special->retrieve($state, $state->{source});
 		$plist->find_libs($needed_libs, $special);
 	} else {
@@ -727,11 +447,11 @@ sub do_pkg
 		$self->analyze($state, $plist);
 	} elsif ($state->{destdir} ne '/') {
 		$self->analyze($state, $plist, 
-		    FsFileSource->new($state->{destdir}));
+		    OpenBSD::FsFileSource->new($state->{destdir}));
 	} else {
 		my $temp = OpenBSD::Temp->dir;
 		$self->analyze($state, $plist,
-		    PkgFileSource->new($true_package, $temp));
+		    OpenBSD::PkgFileSource->new($true_package, $temp));
 		rmtree($temp);
 	}
 	$true_package->close;
@@ -750,7 +470,7 @@ sub do_plist
 		return;
 	} else {
 		$self->analyze($state, $plist, 
-		    FsFileSource->new($state->{destdir}));
+		    OpenBSD::FsFileSource->new($state->{destdir}));
 	}
 }
 
@@ -761,9 +481,9 @@ sub main
 	$state->handle_options;
 	my $fs = $state->{destdir};
 	if ($state->{dest}) {
-		my $recorder = DumpRecorder->new;
+		my $recorder = OpenBSD::DumpRecorder->new;
 		my $cwd = $fs;
-		my $source = FsFileSource->new($fs);
+		my $source = OpenBSD::FsFileSource->new($fs);
 		find({
 			wanted => sub {
 			    return if -l $_;
