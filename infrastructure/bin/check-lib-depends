@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.1 2010/08/20 13:50:11 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.2 2010/08/20 15:22:21 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,6 +17,11 @@
 
 use strict;
 use warnings;
+my $ports1;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+use lib "$ports1/infrastructure/lib";
 
 use File::Spec;
 use OpenBSD::PackingList;

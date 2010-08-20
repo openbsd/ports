@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.1 2010/08/20 13:50:12 espie Exp $
+# $OpenBSD: FS.pm,v 1.1 2010/08/20 15:22:22 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,7 +16,7 @@
 use strict;
 use warnings;
 
-package FS::File;
+package OpenBSD::FS::File;
 
 sub new
 {
@@ -45,7 +45,7 @@ sub group
 	shift->{group};
 }
 
-package FS;
+package OpenBSD::FS;
 
 my $destdir;
 use OpenBSD::Mtree;
@@ -283,7 +283,7 @@ sub scan_destdir
 			my $path = undest($File::Find::name);
 			my ($uid, $gid) = (lstat $_)[4,5];
 			$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
-			$files{$path} = FS::File->new($path, $type, 
+			$files{$path} = OpenBSD::FS::File->new($path, $type, 
 			    $uid_lookup->lookup($uid), 
 			    $gid_lookup->lookup($gid));
 		}, $destdir);

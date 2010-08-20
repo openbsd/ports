@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.1 2010/08/20 13:50:11 espie Exp $
+# $OpenBSD: make-plist,v 1.2 2010/08/20 15:22:21 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -34,7 +34,7 @@ use OpenBSD::Subst;
 use File::Basename;
 use File::Compare;
 use File::Temp;
-use FS;
+use OpenBSD::FS;
 
 package OpenBSD::ReverseSubst;
 our @ISA = (qw(OpenBSD::Subst));
@@ -147,7 +147,7 @@ sub report
 				print STDERR $i->stringize;
 			} elsif ($i->isa("OpenBSD::PackingList")) {
 				print STDERR prettify($i);
-			} elsif ($i->isa("FS::File")) {
+			} elsif ($i->isa("OpenBSD::FS::File")) {
 				print STDERR $i->path;
 			}
 		} else {
@@ -1015,7 +1015,7 @@ sub scan_for_files
 parse_args();
 
 print "Scanning destdir\n";
-my $files = FS::get_files($destdir);
+my $files = OpenBSD::FS::get_files($destdir);
 
 print "Getting old lists\n";
 my @l = grab_all_lists();
