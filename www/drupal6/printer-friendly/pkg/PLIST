@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/03 13:20:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/08/20 14:42:56 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}print/
@@ -19,6 +19,9 @@ ${DRUPAL_MODS}print/icons/pdf_icon.gif
 ${DRUPAL_MODS}print/icons/print_icon.gif
 ${DRUPAL_MODS}print/lib/
 ${DRUPAL_MODS}print/lib/README.txt
+@owner
+${DRUPAL_MODS}print/lib/tcpdf
+@owner ${DRUPAL_OWNER}
 ${DRUPAL_MODS}print/print.admin.inc
 ${DRUPAL_MODS}print/print.info
 ${DRUPAL_MODS}print/print.install

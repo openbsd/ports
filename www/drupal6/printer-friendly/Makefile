@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/15 14:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/20 14:42:56 stephan Exp $
 
 COMMENT =	printer-friendly pages in drupal
 
-DISTNAME = 	print-6.x-1.10
-PKGNAME =	drupal6-printer-friendly-1.10p0
-#DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-#		dompdf-0.5.1${EXTRACT_SUFX}:0
+DISTNAME = 	print-6.x-1.11
+PKGNAME =	drupal6-printer-friendly-1.11
 
-#MASTER_SITES0 =	${MASTER_SITE_SOURCEFORGE:=dompdf/}
-
-#post-extract:
-#	mkdir ${WRKDIST}/dompdf
-#	cp -r ${WRKDIR}/dompdf-0.5.1/{include,lib,dompdf_config.inc.php,load_font.php} ${WRKDIST}/dompdf
+# Anticipatory symlinking to tcpdf.
+post-install:
+	@cd ${PREFIX}/${DRUPAL_MODS}print/lib &&\
+	 ln -fs ../../../../../../../tcpdf
 
 .include <bsd.port.mk>
