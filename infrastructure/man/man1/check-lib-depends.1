@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-lib-depends.1,v 1.1 2010/08/20 15:50:56 espie Exp $
+.\"	$OpenBSD: check-lib-depends.1,v 1.2 2010/08/20 17:03:36 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -22,10 +22,9 @@
 .Nd scan port for shared libraries
 .Sh SYNOPSIS
 .Nm check-lib-depends
+.Op Fl fmox
 .Op Fl B Ar destdir
 .Op Fl d Ar pkgrepo
-.Op Fl f
-.Op Fl o
 .Op Fl O Ar dest
 .Op Fl s Ar source
 .Op Ar package ...
@@ -69,6 +68,8 @@ look for all needed packages under directory
 .Ar pkgrepo .
 .It Fl f
 give full reports of every file that requires a missing library.
+.It Fl m
+always show progress-meter, even if not run from terminal.
 .It Fl o
 scan binaries using
 .Xr ldd 1 ,
@@ -82,6 +83,8 @@ save result of first stage in file
 .It Fl s Ar src
 do not scan, directly read result of first stage from file
 .Ar src .
+.It Fl x
+don't show progress-meter, even if run from terminal.
 .El
 .Pp
 If no

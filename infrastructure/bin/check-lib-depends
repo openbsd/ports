@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.3 2010/08/20 15:29:41 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.4 2010/08/20 17:03:36 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -180,10 +180,10 @@ sub handle_options
 {
 	my $state = shift;
 
-	$state->SUPER::handle_options('od:fB:F:s:O:',
-		'[-o] [-d pkgrepo] [-B destdir] [-s source] [-O dest]');
+	$state->SUPER::handle_options('od:fB:s:O:',
+		'[-fomx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
 
-	$state->{destdir} = $state->opt('B') // $state->opt('F');
+	$state->{destdir} = $state->opt('B');
 	$state->{destdir} //= '/';
 	$state->{destdir}.= '/' unless $state->{destdir} =~ m|/$|;
 	$state->{dest} = $state->opt('O');
