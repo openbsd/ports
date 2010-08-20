@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/20 13:24:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/20 05:53:03 benoit Exp $
 
 COMMENT-main =	yahoo ui library toolkit
 COMMENT-docs =	yahoo ui library examples
 CATEGORIES =	www devel
 
-V =		2.8.0r4
+V =		2.8.1
 EXTRACT_SUFX =	.zip
 DISTNAME =	yui_${V}
 PKGNAME-main =	yui-${V}

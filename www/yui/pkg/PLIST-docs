@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2009/09/20 13:24:15 benoit Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2010/08/20 05:53:05 benoit Exp $
 ${DOC}/
 ${DOC}/Anim.js.html
 ${DOC}/AnimMgr.js.html
@@ -47,7 +47,6 @@ ${DOC}/Element-Delegate.js.html
 ${DOC}/Element.js.html
 ${DOC}/Env.js.html
 ${DOC}/Event.js.html
-${DOC}/EventProvider.html
 ${DOC}/EventProvider.js.html
 ${DOC}/FirstPageLink.js.html
 ${DOC}/FlashAdapter.js.html
@@ -172,6 +171,7 @@ ${DOC}/YAHOO.util.DragDropMgr.html
 ${DOC}/YAHOO.util.Easing.html
 ${DOC}/YAHOO.util.Element.html
 ${DOC}/YAHOO.util.Event.html
+${DOC}/YAHOO.util.EventProvider.html
 ${DOC}/YAHOO.util.FunctionDataSource.html
 ${DOC}/YAHOO.util.Get.html
 ${DOC}/YAHOO.util.History.html
@@ -709,7 +709,7 @@ ${EX}/autocomplete/assets/js/
 ${EX}/autocomplete/assets/js/data.js
 ${EX}/autocomplete/assets/js/states_jsfunction.js
 ${EX}/autocomplete/assets/php/
-${EX}/autocomplete/assets/php/flickr_proxy.php
+${EX}/autocomplete/assets/php/yql_proxy.php
 ${EX}/autocomplete/assets/php/ysearch_flat.php
 ${EX}/autocomplete/assets/php/ysearch_proxy.php
 ${EX}/autocomplete/index.html
@@ -1069,6 +1069,7 @@ ${EX}/datatable/assets/img/tl.gif
 ${EX}/datatable/assets/img/tr.gif
 ${EX}/datatable/assets/js/
 ${EX}/datatable/assets/js/data.js
+${EX}/datatable/assets/js/rowexpansion.js
 ${EX}/datatable/assets/php/
 ${EX}/datatable/assets/php/JSON.php
 ${EX}/datatable/assets/php/dynamicfilter/
@@ -1241,7 +1242,6 @@ ${EX}/editor/assets/calendar_default.gif
 ${EX}/editor/assets/exampleslib.inc
 ${EX}/editor/assets/flickr_active.gif
 ${EX}/editor/assets/flickr_default.gif
-${EX}/editor/assets/flickr_proxy.php
 ${EX}/editor/assets/html_editor.gif
 ${EX}/editor/assets/post.php
 ${EX}/editor/assets/suit1.gif
@@ -1254,6 +1254,7 @@ ${EX}/editor/assets/suit7.gif
 ${EX}/editor/assets/suit8.gif
 ${EX}/editor/assets/suits_active.gif
 ${EX}/editor/assets/suits_default.gif
+${EX}/editor/assets/yql_proxy.php
 ${EX}/editor/autoheight_editor.html
 ${EX}/editor/autoheight_editor_clean.html
 ${EX}/editor/autoheight_editor_log.html

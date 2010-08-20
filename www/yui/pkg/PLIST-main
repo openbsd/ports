@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/09/20 13:24:15 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/08/20 05:53:05 benoit Exp $
 ${YUI}/
 ${YUI}/assets/
 ${YUI}/assets/YUIexamples.js
@@ -6,6 +6,7 @@ ${YUI}/assets/bg_hd.gif
 ${YUI}/assets/dpSyntaxHighlighter.css
 ${YUI}/assets/dpSyntaxHighlighter.js
 ${YUI}/assets/example-hd-bg.gif
+${YUI}/assets/syntax.js
 ${YUI}/assets/yui-candy.jpg
 ${YUI}/assets/yui.css
 ${YUI}/assets/yui.gif
@@ -614,6 +615,7 @@ ${YUI}/tests/colorpicker/tests/colorpicker.html
 ${YUI}/tests/common/
 ${YUI}/tests/common/tests/
 ${YUI}/tests/common/tests/YUI.html
+${YUI}/tests/common/tests/smoketests.xml
 ${YUI}/tests/connection/
 ${YUI}/tests/connection/tests/
 ${YUI}/tests/connection/tests/setForm.html
