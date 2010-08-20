@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.1 2010/08/20 13:50:11 espie Exp $
+# $OpenBSD: check-conflicts,v 1.2 2010/08/20 14:09:59 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -231,7 +231,7 @@ sub handle_portsdir
 	}
 }
 
-my $ui = OpenBSD::AddCreateDelete::State->new('find-all-conflicts');
+my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
 $ui->handle_options('d:p:', '[-v] [-d plist_dir] [-p ports_dir] [pkgname ...]');
 
 $ui->progress->set_header("Scanning");
