@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.27 2010/07/06 12:09:55 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.28 2010/08/20 15:02:24 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -13,7 +13,7 @@ DANGEROUS ?= No
 
 .if !defined(PKGPATH)
 PKGPATH != PORTSDIR_PATH=${PORTSDIR_PATH} \
-	perl ${PORTSDIR}/infrastructure/mk/getpkgpath ${.CURDIR}
+	perl ${PORTSDIR}/infrastructure/bin/getpkgpath ${.CURDIR}
 .  if empty(PKGPATH)
 ERRORS += "Fatal: can't figure out PKGPATH"
 PKGPATH =${.CURDIR}
