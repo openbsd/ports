@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2010/08/07 22:41:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2010/08/20 12:10:52 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=		20100512
 DISTNAME=	ffmpeg-svn-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://gormsby.com/downloads/ \
 		http://comstyle.com/source/
@@ -34,6 +34,9 @@ MODGCC3_ARCHES=	sparc
 WANTLIB=	X11 Xext Xfixes c m ogg oil-0.3 pthread sndio z
 
 BUILD_DEPENDS=	::textproc/texi2html
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	::devel/yasm
+.endif
 LIB_DEPENDS=	SDL.>=4::devel/sdl \
 		faac.>=1::audio/faac \
 		faad.>=2::audio/faad \
