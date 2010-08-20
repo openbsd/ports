@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.28 2010/08/20 15:02:24 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.29 2010/08/20 23:11:07 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -9,6 +9,7 @@ PORTSDIR_PATH ?= ${PORTSDIR}:${PORTSDIR}/mystuff
 TMPDIR ?= /tmp
 READMES_TOP ?= ${PORTSDIR}
 DANGEROUS ?= No
+LOCKDIR ?= ${TMPDIR}/portslocks
 
 
 .if !defined(PKGPATH)

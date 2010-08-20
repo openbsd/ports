@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/08/20 15:02:24 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/08/20 23:11:07 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -103,15 +103,13 @@ search:	${.CURDIR}/INDEX
 .  endif
 .endif
 
-LOCKDIR ?=
-
 mirror-maker:
 	@mkdir -p ${MIRROR_MK:H}
 .if !empty(LOCKDIR)
 	@echo "EXEC = " >${MIRROR_MK}
 	@echo 'LOCKDIR = ${LOCKDIR}' >>${MIRROR_MK}
 	@echo 'PORTSDIR = ${PORTSDIR}' >>${MIRROR_MK}
-	@echo 'LOCK_CMD = perl $${PORTSDIR}/infrastructure/build/dolock' >>${MIRROR_MK}
+	@echo 'LOCK_CMD = perl $${PORTSDIR}/infrastructure/bin/dolock' >>${MIRROR_MK}
 	@echo 'UNLOCK_CMD = rm -f' >>${MIRROR_MK}
 	@echo 'SIMPLE_LOCK = $${LOCK_CMD} $${LOCKDIR}/$$$$lock.lock; trap "$${UNLOCK_CMD} $${LOCKDIR}/$$$$lock.lock" 0 1 2 3 13 15' >>${MIRROR_MK}
 .else
