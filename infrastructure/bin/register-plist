@@ -1,0 +1,478 @@
+#! /usr/bin/perl
+
+# $OpenBSD: register-plist,v 1.1 2010/08/20 13:50:11 espie Exp $
+# Copyright (c) 2005
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+use strict;
+use warnings;
+
+use OpenBSD::State;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::Paths;
+
+package OpenBSD::PackingList;
+
+sub write_mogrified
+{
+	my ($self, $file, $state) = @_;
+	open (my $fh, '>', $file) or 
+	    $state->fatal("Can't write plist to #1: #2", $file, $!);
+	$self->visit('write_mogrified', $fh, $state);
+
+}
+
+sub forget_details
+{
+	my $self = shift;
+	undef $self->{ OpenBSD::PackageInfo::COMMENT };
+	undef $self->{"digital-signature"};
+
+	my $l = $self->{items};
+	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
+		$l->[@$l-1]->{name} eq '.') {
+	    pop @$l;
+	}
+	$self->visit('forget_details');
+}
+
+package OpenBSD::PackingElement;
+
+sub write_mogrified
+{
+	my ($self, $fh, $state) = @_;
+	if ($state->{mogrified}{$self}) {
+		$state->{mogrified}{$self}->write($fh);
+	} else {
+		$self->write($fh);
+	}
+}
+
+sub forget_details
+{
+}
+
+sub flatten
+{
+	my ($self, $l) = @_;
+	push(@$l, $self);
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	my ($data, $data2);
+	open(my $fh, '>',  \$data);
+	open(my $fh2, '>',  \$data2);
+	$self->write($fh);
+	$self2->write($fh2);
+	close($fh);
+	close($fh2);
+	if ($data ne $data2) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub remove_auxiliary
+{
+	return 0;
+}
+
+sub record_generic_depends
+{
+}
+
+sub find_mogrified
+{
+}
+
+package OpenBSD::PackingElement::DigitalSignature;
+sub flatten
+{
+}
+
+package OpenBSD::PackingElement::Old;
+sub flatten
+{
+	my ($self, $l) = @_;
+	if ($self->{keyword} eq 'ignore') {
+		return;
+	}
+	$self->SUPER::flatten($l);
+}
+
+package OpenBSD::PackingElement::FileBase;
+
+sub forget_details
+{
+	my $self = shift;
+	undef $self->{d};
+	undef $self->{md5};
+	undef $self->{size};
+}
+
+package OpenBSD::PackingElement::SpecialFile;
+sub forget_details
+{
+	my $self = shift;
+#	undef $self->{md5};
+	undef $self->{size};
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{name} ne $self2->{name}) {
+		return 1;
+	}
+	if (defined $self->{d} && defined $self2->{d}) {
+		if (ref($self->{d}) ne ref($self2->{d})) {
+			return 1;
+		}
+		if ($self->{d}->equals($self2->{d})) {
+			return 0;
+		} else {
+			return 1;
+		}
+	} elsif (!defined $self->{d} && !defined $self2->{d}) {
+		return 0;
+	}
+	return 2;
+}
+
+package OpenBSD::PackingElement::Depend;
+
+sub record_generic_depends
+{
+	my ($self, $state) = @_;
+	$state->{stash}->{$self->forgetful_key} = $self;
+}
+
+sub find_mogrified
+{
+	my ($s1, $state) = @_;
+	my $s2 = $state->{stash}->{$s1->forgetful_key};
+	if (defined $s2 && $s1->compare($s2) == 2) {
+		$state->{mogrified}{$s1} = $s2;
+	}
+}
+
+package OpenBSD::PackingElement::Dependency;
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{def} eq 'def' && $self2->{def} eq 'def') {
+		return 0;
+	}
+	if ($self2->{def} eq 'def' && $self->{def} ne 'def') {
+		return 2;
+	}
+	my $c = OpenBSD::PackageName->from_string($self->{def})->compare(
+	    OpenBSD::PackageName->from_string($self2->{def}));
+	if (!defined $c || $c < 0) {
+		return 1;
+	}
+	if ($c == 0) {
+		return 0;
+	}
+	return 2;
+}
+
+sub forgetful_key
+{
+	my $self = shift;
+	return join(':', 'depend', $self->{name}, $self->{pkgpath}, $self->{pattern});
+}
+
+package OpenBSD::PackingElement::Wantlib;
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	my $c = $self->spec->compare($self2->spec);
+	if (!defined $c || $c < 0) {
+		return 1;
+	}
+	if ($c == 0) {
+		return 0;
+	}
+	return 2;
+}
+
+sub forgetful_key
+{
+	my $self = shift;
+	return $self->spec->key;
+}
+
+package OpenBSD::PackingElement::Comment;
+
+sub forget_details
+{
+	my $self = shift;
+
+	if ($self->{name} =~ m/^VARS:/) {
+		$self->{name} = 'VARS';
+	}
+}
+
+package OpenBSD::PackingElement::CVSTag;
+
+# XXX needed to avoid CVS expansion
+
+our $openbsd = 'OpenBSD';
+
+sub forget_details
+{
+	my $self = shift;
+	$self->{name} =~ s/^(\$$openbsd: .*,v).*/$1\$/;
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{name} eq $self2->{name}) {
+		return 0;
+	}
+	if ($self->{name} eq "\$$openbsd\$" or 
+	    $self2->{name} eq "\$$openbsd\$") {
+		return 2;
+	}
+	return 1;
+}
+
+package OpenBSD::PackingElement::InfoFile;
+
+sub remove_auxiliary
+{
+	my ($self, $list) = @_;
+
+	my $stem = $self->{name};
+	my $i;
+	for ($i = 1; @$list > 0 && $list->[0]->{name} eq "$stem-$i"; $i++) {
+		shift @$list;
+	}
+	return $i;
+}
+
+package OpenBSD::PackingElement::Manpage;
+
+sub remove_auxiliary
+{
+	my ($self, $list) = @_;
+	if ($self->is_source && @$list > 0 && 
+	    ref($list->[0]) eq ref($self) && 
+	    $list->[0]->{name} eq $self->source_to_dest) {
+		shift @$list;
+		return 1;
+	}
+	return 0;
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+
+	# both elements must be manpages
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+
+	# identical
+	if ($self->{name} eq $self2->{name}) {
+		return 0;
+	}
+
+	# one is the conversion of the other
+	if ($self->is_source && $self->source_to_dest eq $self2->{name}) {
+		return 2;
+	}
+	if ($self2->is_source && $self2->source_to_dest eq $self->{name}) {
+		return 2;
+	}
+
+	# or they're different beasts.
+	return 1;
+}
+
+package OpenBSD::PackingElement::ExtraInfo;
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{ftp} ne $self2->{ftp} or 
+	    $self->{cdrom} ne $self2->{cdrom}) {
+		return 1;
+	}
+	if ($self->{subdir} eq $self2->{subdir}) {
+		return 0;
+	}
+	if ($self->{subdir} =~ m/^mystuff\// && $self2->{subdir} eq $') {
+		return 2;
+	}
+	if ($self2->{subdir} =~ m/^mystuff\// && $self->{subdir} eq $') {
+		return 2;
+	}
+	return 1;
+}
+
+package main;
+
+sub my_compare
+{
+	my ($p, $p2, $state) = @_;
+	my $l = [];
+	my $l2 = [];
+	my $final = 0;
+	$p->flatten($l);
+	$p2->flatten($l2);
+	while (my $e = shift @$l) {
+		my $e2 = shift @$l2;
+		return 1 unless defined $e2;
+		my $r = $e->compare($e2);
+		if ($r == 1) {
+			return $r;
+		}
+		if ($r == 2) {
+			push(@{$state->{updates}}, [$e2, $e]);
+			$state->{mogrified}{$e} = $e2;
+			$final = 2;
+		}
+		# zap extra info-* files and man pages
+		if ($e->remove_auxiliary($l) != $e2->remove_auxiliary($l2)) {
+			$final = 2;
+		}
+	}
+	if (@$l2 > 0) {
+		return 1;
+	}
+	return $final;
+}
+
+sub more_mogrified
+{
+	my ($p1, $p2, $state) = @_;
+
+	$p2->record_generic_depends($state);
+	$p1->find_mogrified($state);
+}
+
+sub compare_lists
+{
+	my ($p1, $p2, $result, $state) = @_;
+	my $r = my_compare($p1, $p2, $state);
+	if ($r == 1) {
+		my $t = "$result-new";
+		more_mogrified($p1, $p2, $state);
+		$p1->write_mogrified($t, $state);
+		$state->errsay("Error: change in plist between #1 and #2", $result, $t);
+		$state->errsay("| If the old and new builds were done correctly");
+		$state->errsay("| (fully uptodate ports tree including relevant MODULES)");
+		$state->errsay("| then someone probably forgot to bump a REVISION.");
+		$state->errsay("| (see bsd.port.mk(5), PLIST_DB)");
+		system {OpenBSD::Paths->diff} ('diff', '-u', $result, $t);
+		return 1;
+	}
+	if ($r == 2) {
+		$p1->tofile($result);
+		$state->errsay("#1 was updated", $result);
+		for my $i (@{$state->{updates}}) {
+			$state->errsay("#1 -> #2",
+			    $i->[0]->stringize, 
+			    $i->[1]->stringize);
+		}
+	}
+	return 0;
+}
+
+my $state = OpenBSD::State->new('register-plist');
+$state->handle_options('t', '[-t p1 p2] dir pkg ...');
+if (@ARGV < 2) {
+	$state->usage;
+}
+
+if ($state->opt('t')) {
+	if (@ARGV != 2) {
+		$state->usage("-t takes exactly two parameters");
+	}
+	my $plist = OpenBSD::PackingList->fromfile($ARGV[0]);
+	my $result = $ARGV[1];
+	my $plist2 = OpenBSD::PackingList->fromfile($result);
+	$plist->forget_details;
+	exit(compare_lists($plist, $plist2, $result, $state));
+}
+
+my @dirs = split(/:/, shift);
+if (!-d $dirs[0]) {
+	$state->usage("not a directory: #1", $dirs[0]);
+}
+
+my $error =0;
+
+for my $pkgfile (@ARGV) {
+	my $pkg = $state->repo->find($pkgfile);
+	if (!$pkg) {
+		$state->fatal("Bad package #1", $pkgfile);
+	}
+
+	my $plist = $pkg->plist;
+	$pkg->close;
+	$pkg->wipe_info;
+
+	$plist->forget_details;
+	for my $dir (@dirs) {
+		next unless -d $dir;
+		my $result = $dir.'/'.$plist->pkgname;
+		if (-f $result) {
+			my $plist2 = OpenBSD::PackingList->fromfile($result);
+			$error += compare_lists($plist, $plist2, $result,
+			    $state);
+			last;
+		}
+	}
+	if (!$error) {
+		my $result = $dirs[0].'/'.$plist->pkgname;
+		if (!-f $result) {
+			$plist->tofile($result);
+		}
+	}
+}
+exit($error != 0);

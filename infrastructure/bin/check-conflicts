@@ -1,0 +1,276 @@
+#!/usr/bin/perl
+
+# $OpenBSD: check-conflicts,v 1.1 2010/08/20 13:50:11 espie Exp $
+# Copyright (c) 2000-2005
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# check all packages in the current directory, and report conflicts which
+# are not apparent in @pkgcfl.
+
+use strict;
+
+use File::Spec;
+use File::Path;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::AddCreateDelete;
+use OpenBSD::PkgCfl;
+
+package OpenBSD::PackingElement;
+sub register
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+
+my $pkg_list = {};
+my $seen = {};
+
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+
+	my $file = File::Spec->canonpath($self->fullname);
+	# build one single list for each pkgnames combination
+	if (exists $all_conflict->{$file}) {
+		$pkg_list->{$all_conflict->{$file}}->{$pkgname} ||=
+		    [@{$all_conflict->{$file}}, $pkgname ];
+		$all_conflict->{$file} = 
+		    $pkg_list->{$all_conflict->{$file}}->{$pkgname};
+	} elsif (exists $seen->{$file}) {
+		$pkg_list->{$seen->{$file}}->{$pkgname} ||=
+		    [ @{$seen->{$file}}, $pkgname ];
+		$all_conflict->{$file} = 
+		    $pkg_list->{$seen->{$file}}->{$pkgname};
+		delete $seen->{$file};
+	} else {
+		$pkg_list->{$pkgname} ||= [$pkgname];
+		$seen->{$file} = $pkg_list->{$pkgname};
+	}
+}
+
+package OpenBSD::PackingElement::Depend;
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+	if (defined $self->{def}) {
+		push @{$all_deps->{$pkgname}}, $self->{def};
+	}
+}
+
+
+package main;
+
+my $cache = {};
+my $cache2 = {};
+my $cache3 = {};
+my $cache4 = {}; 
+
+sub direct_conflict
+{
+	my ($conflicts, $pkg, $pkg2) = @_;
+
+	return $cache3->{$pkg}{$pkg2} //= $conflicts->{$pkg}->conflicts_with($pkg2);
+}
+
+sub has_a_conflict
+{
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	return $cache4->{$pkg}{$pkg2} //= find_a_conflict($conflicts, $deps, $pkg, $pkg2);
+}
+
+sub find_a_conflict
+{
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	return 0 if $pkg eq $pkg2;
+	
+	if (defined $conflicts->{$pkg} && direct_conflict($conflicts, $pkg, $pkg2)) {
+		return 1;
+	}
+	if (defined $deps->{$pkg}) {
+		for my $dep (@{$deps->{$pkg}}) {
+		    if (has_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			    return 1;
+		    }
+		}
+	}
+	if (defined $deps->{$pkg2}) {
+		for my $dep (@{$deps->{$pkg2}}) {
+			if (has_a_conflict($conflicts, $deps, $pkg, $dep)) {
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+sub compute_true_conflicts
+{
+	my ($l, $conflicts, $deps) = @_;
+	# create a list of unconflicting packages.
+	my $l2 = [];
+	for my $pkg (@$l) {
+		my $keepit = 0;
+		for my $pkg2 (@$l) {
+			next if $pkg eq $pkg2;
+			if (!(has_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
+			    has_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
+				$keepit = 1;
+				last;
+			}
+		}
+		if ($keepit) {
+		    push(@$l2, $pkg);
+		}
+	}
+	return $l2;
+}
+
+sub compute_problems
+{
+	my ($ui, $h, $conflicts, $deps) = @_;
+
+	my $c = {};
+	my $c2 = {};
+
+	my $total = scalar(keys %$h);
+	my $i =0;
+	while (my ($key, $l) = each %$h) {
+		$ui->progress->show(++$i, $total);
+		if (!defined $c->{$l}) {
+			my %s = map {($_, 1)} @$l;
+			$c->{$l} = [sort keys %s];
+			$c2->{$l} = join(',', @{$c->{$l}});
+		}
+		my $hv = $c2->{$l};
+		$l = $c->{$l};
+		next if @$l == 1;
+		if (!defined $cache->{$hv}) {
+			$cache->{$hv} = compute_true_conflicts($l, $conflicts, $deps);
+		}
+		my $result = $cache->{$hv};
+		if (@$result != 0) {
+			my $newkey = join(',', @$result);
+			if (@$result == 1) {
+				$newkey.="-> was ".join(',', @$l);
+			}
+			push(@{$cache2->{$newkey}}, $key);
+		}
+	}
+}
+
+my $filehash={};
+my %dirhash=();
+my $conflicts={};
+my $dephash={};
+our ($opt_d, $opt_p, $opt_v);
+
+sub handle_plist
+{
+	my ($ui, $filename, $plist) = @_;
+	if (!defined $plist) {
+		$ui->errsay("Error reading #1", $filename);
+		return;
+	}
+	$ui->say("#1 -> #2", $filename, $plist->pkgname) if $ui->verbose;
+	$plist->forget;
+	$conflicts->{$plist->pkgname} = 
+	    OpenBSD::PkgCfl->make_conflict_list($plist);
+	$plist->register($filehash, $dephash, $plist->pkgname);
+}
+
+sub handle_file
+{
+	my ($ui, $filename) = @_;
+	my $plist = OpenBSD::PackingList->fromfile($filename);
+	handle_plist($ui, $filename, $plist);
+}
+
+sub handle_portsdir
+{
+	my ($ui, $dir) = @_;
+	my $make = $ENV{MAKE} || 'make';
+
+	open(my $input, "cd $dir && $make print-plist-all |");
+	my $done = 0;
+	while (!$done) {
+		my $plist = OpenBSD::PackingList->read($input, sub {
+			my ($fh, $cont) = @_;
+			local $_;
+			while (<$fh>) {
+				return if m/^\=\=\=\> /o;
+				next unless m/^\@(?:cwd|name|info|man|file|lib|shell|bin|conflict|comment\s+subdir\=)\b/o || !m/^\@/o;
+				&$cont($_);
+			}
+			$done = 1;
+		});
+		if (defined $plist && $plist->pkgname()) {
+			handle_plist($ui, $dir, $plist);
+			$ui->progress->working(10);
+		}
+	}
+}
+
+my $ui = OpenBSD::AddCreateDelete::State->new('find-all-conflicts');
+$ui->handle_options('d:p:', '[-v] [-d plist_dir] [-p ports_dir] [pkgname ...]');
+
+$ui->progress->set_header("Scanning");
+$opt_d = $ui->opt('d');
+$opt_p = $ui->opt('p');
+if ($opt_d) {
+	opendir(my $dir, $opt_d);
+	my @l = readdir $dir;
+	closedir($dir);
+
+	$ui->progress->for_list("Scanning", \@l,
+	    sub {
+	    	my $pkgname = shift;
+		return if $pkgname eq '.' or $pkgname eq '..';
+		handle_file($ui, "$opt_d/$pkgname");
+	    });
+} elsif ($opt_p) {
+	handle_portsdir($ui, $opt_p);
+} elsif (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+
+$ui->progress->for_list("Scanning", \@ARGV,
+    sub {
+	my $pkgname = shift;
+	my $true_package = $ui->repo->find($pkgname);
+	return unless $true_package;
+	my $dir = $true_package->info;
+	$true_package->close;
+	handle_file($ui, $dir.CONTENTS);
+	rmtree($dir);
+    });
+
+$ui->progress->next;
+$ui->progress->set_header("File problems");
+compute_problems($ui, $filehash, $conflicts, $dephash);
+for my $cfl (sort keys %$cache2) {
+	$ui->say("#1", $cfl);
+	for my $f (sort @{$cache2->{$cfl}}) {
+		$ui->say("\t#1", $f);
+	}
+}

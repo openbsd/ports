@@ -1,0 +1,68 @@
+#! /usr/bin/perl
+# $OpenBSD: check-manpages,v 1.1 2010/08/20 13:50:11 espie Exp $
+#
+# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# check all manpages in existing packages
+
+use OpenBSD::AddCreateDelete;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::Ustar;
+use File::Temp;
+
+my $state = OpenBSD::AddCreateDelete::State->new('check-manpages');
+$state->handle_options('[-mnx]');
+
+$state->progress->set_header("Scanning packages");
+
+if (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+
+my $extract_dir = File::Temp::tempdir("manpages.XXXXXXXXXXXX", DIR => '.');
+$state->say("Extracting all documentation into #1", $extract_dir);
+
+my %mandirs=();
+$state->progress->for_list("Scanning packages", \@ARGV,
+    sub {
+    	my $pkgname = shift;
+	my $true_package = $state->repo->find($pkgname);
+	return unless $true_package;
+	my $dir = $true_package->info;
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	for my $item (@{$plist->{items}}) {
+		next unless $item->IsFile;
+		my $n = $item->fullname;
+		if ($n =~ m,/man/(?:man.*?|cat.*?)/,) {
+			my $file;
+			do {
+				$file = $true_package->next;
+			} while ($file->{name} ne $item->{name});
+			$file->{name} = $n;
+			$n =~ m,^(.*/man)/(?:man.*?|cat.?)/,;
+			$mandirs{"$extract_dir$1"} = 1;
+			$file->{cwd} = $item->cwd;
+			$file->{destdir} = $extract_dir;
+			eval { $file->create; };
+		}
+	}
+	$true_package->close;
+	$true_package->wipe_info;
+	$plist->forget;
+    });
+
+$state->errsay("Running makewhatis in #1", join(' ', keys(%mandirs)));
+$state->system("/usr/libexec/makewhatis -p ".join(' ', keys(%mandirs)));
