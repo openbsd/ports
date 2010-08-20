@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/03/20 17:06:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/08/20 17:35:48 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.oasis-open.org/docbook/
 
 MASTER_SITES=	${HOMEPAGE} http://www.docbook.org/
+MASTER_SITES0=	http://spacehopper.org/mirrors/
 
 DISTFILES=	sgml/2.4.1/docbk241.zip \
 		sgml/3.0/docbk30.zip \
@@ -23,7 +24,7 @@ DISTFILES=	sgml/2.4.1/docbk241.zip \
 		xml/4.2/docbook-xml-4.2.zip \
 		xml/4.3/docbook-xml-4.3.zip \
 		xml/4.4/docbook-xml-4.4.zip \
-		examples.zip
+		examples.zip:0
 
 # permission granted in dtd copyright notice
 PERMIT_PACKAGE_CDROM=	Yes
