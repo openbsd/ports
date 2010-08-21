@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/08/21 19:06:00 ajacoutot Exp $
 
 # XXX patches/patch-configure_in disables PIE on arm/hppa. This is just a
 # temporary workaround until PIE works.
@@ -6,7 +6,7 @@
 COMMENT=	message bus system
 
 DISTNAME=	dbus-1.2.24
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=	dbus-1	7.1 # .7.0
 CATEGORIES=	x11
