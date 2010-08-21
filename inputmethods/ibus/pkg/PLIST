@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/19 18:57:50 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/08/21 19:57:09 ajacoutot Exp $
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
@@ -318,6 +318,6 @@ share/locale/zh_TW/LC_MESSAGES/ibus.mo
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/ibus.schemas
 @exec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
-@unexec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
+@unexec-delete %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

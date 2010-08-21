@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.4 2008/10/14 02:16:46 kevlo Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.5 2010/08/21 19:57:09 ajacoutot Exp $
 @bin bin/uim-dict-gtk
 @bin bin/uim-im-switcher-gtk
 @bin bin/uim-input-pad-ja
@@ -13,4 +13,4 @@ lib/bonobo/servers/GNOME_UimApplet.server
 lib/gtk-2.0/2.10.0/immodules/im-uim.so
 @bin libexec/uim-candwin-gtk
 @exec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
-@unexec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
+@unexec-delete %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules

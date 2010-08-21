@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/19 18:56:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/21 19:57:09 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.7
+REVISION =	0
 
 SHARED_LIBS =	ibus	0.0	# 2.0
 
