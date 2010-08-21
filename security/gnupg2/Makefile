@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/08 22:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/21 11:03:21 jasper Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
 DISTNAME = 	gnupg-2.0.15
+REVISION =	0
 CATEGORIES = 	security
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/gnupg/ \

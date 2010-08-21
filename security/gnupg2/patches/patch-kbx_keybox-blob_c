@@ -1,0 +1,17 @@
+$OpenBSD: patch-kbx_keybox-blob_c,v 1.1 2010/08/21 11:03:21 jasper Exp $
+
+Security fix for CVE-2010-2547:
+Patch from upstream CVS:
+
+http://lists.gnupg.org/pipermail/gnupg-announce/2010q3/000302.html
+
+--- kbx/keybox-blob.c.orig	Mon Aug 16 13:52:38 2010
++++ kbx/keybox-blob.c	Mon Aug 16 13:52:59 2010
+@@ -898,6 +898,7 @@ _keybox_create_x509_blob (KEYBOXBLOB *r_blob, ksba_cer
+               rc = gpg_error_from_syserror ();
+               goto leave;
+             }
++	  names = tmp;
+         }
+       names[blob->nuids++] = p;
+       if (!i && (p=x509_email_kludge (p)))
