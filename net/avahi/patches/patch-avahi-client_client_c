@@ -1,0 +1,62 @@
+$OpenBSD: patch-avahi-client_client_c,v 1.1 2010/08/21 19:41:10 ajacoutot Exp $
+
+Debian #590760:
+Let the client check if the daemon is already running instead of just
+trying to start it, which doesn't work if there is no service file (the
+service file is just meant for systems using system.d).
+
+--- avahi-client/client.c.orig	Tue Jul 13 05:00:51 2010
++++ avahi-client/client.c	Sat Aug 21 21:33:55 2010
+@@ -478,6 +478,7 @@ static DBusConnection* avahi_dbus_bus_get(DBusError *e
+ AvahiClient *avahi_client_new(const AvahiPoll *poll_api, AvahiClientFlags flags, AvahiClientCallback callback, void *userdata, int *ret_error) {
+     AvahiClient *client = NULL;
+     DBusError error;
++    int daemon_running = 0;
+ 
+     avahi_init_i18n();
+ 
+@@ -560,12 +561,33 @@ AvahiClient *avahi_client_new(const AvahiPoll *poll_ap
+     if (dbus_error_is_set(&error))
+         goto fail;
+ 
+-    if (!dbus_bus_start_service_by_name(client->bus, AVAHI_DBUS_NAME, 0, NULL, &error)) {
+ 
+-        /* We free the error so its not set, that way the fail target
+-         * will return the NO_DAEMON error rather than a DBUS error */
++    /* Check if the process already exists on the bus, otherwise try to start
++     * it. */
++    if (!dbus_bus_name_has_owner (client->bus, AVAHI_DBUS_NAME, &error)) {
++      dbus_error_free(&error);
++      daemon_running = 0;
++    } else {
++      daemon_running = 1;
++    }
++
++    if (!daemon_running &&
++        !dbus_bus_start_service_by_name(client->bus,
++          AVAHI_DBUS_NAME, 0, NULL, &error)) {
+         dbus_error_free(&error);
++    } else {
++      daemon_running = 1;
++    }
+ 
++    /* Re-check something else didn't start the daemon */
++    if (!daemon_running &&
++        !dbus_bus_name_has_owner (client->bus, AVAHI_DBUS_NAME, &error)) {
++      dbus_error_free(&error);
++    } else {
++      daemon_running = 1;
++    }
++
++    if (!daemon_running) {
+         if (!(flags & AVAHI_CLIENT_NO_FAIL)) {
+ 
+             if (ret_error)
+@@ -577,7 +599,6 @@ AvahiClient *avahi_client_new(const AvahiPoll *poll_ap
+         /* The user doesn't want this call to fail if the daemon is not
+          * available, so let's return succesfully */
+         client_set_state(client, AVAHI_CLIENT_CONNECTING);
+-
+     } else {
+ 
+         if (init_server(client, ret_error) < 0)
