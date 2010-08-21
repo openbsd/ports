@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/08/21 20:40:53 kili Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
+REVISION =		0
 WANTLIB =		c gmp m pthread util
 
 MODULES =		lang/ghc converters/libiconv
@@ -31,6 +32,9 @@ BUILD_DEPENDS +=	::textproc/docbook \
 			::textproc/libxslt
 
 LIB_DEPENDS =		::devel/gmp
+
+post-extract:
+	@chmod -R a+r ${WRKSRC}
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
