@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/15 10:59:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/21 19:17:55 ajacoutot Exp $
 
 COMMENT=	simple shell based filters to use GnuPG within (Al)Pine
 
-DISTNAME=	pine-pgp-filters-1.6
+DISTNAME=	pine-pgp-filters-1.8
 CATEGORIES=	mail security
 
-HOMEPAGE=	http://dougbarton.us/PGP/scripts/ppf/
+HOMEPAGE=	http://dougbarton.us/PGP/ppf/index.html
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -15,14 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://dougbarton.us/PGP/ppf/
 
-BUILD_DEPENDS=	::security/gnupg
-RUN_DEPENDS=	::security/gnupg \
+BUILD_DEPENDS=	:gnupg-<2:security/gnupg
+RUN_DEPENDS=	:gnupg-<2:security/gnupg \
 		::mail/alpine
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--gnupg=gpg
 
 PKG_ARCH=	*
 NO_REGRESS=	Yes
