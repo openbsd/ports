@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2010/06/22 06:04:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/08/21 19:11:49 ajacoutot Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		2.30.2
+GNOME_VERSION=		2.30.3
+
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
+
 CATEGORIES=		devel
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,13 +24,14 @@ WANTLIB += execinfo expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util z
-WANTLIB += gthread-2.0 pthread
+WANTLIB += gthread-2.0 pthread gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB += startup-notification-1
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-			startup-notification-1::devel/startup-notification
+LIB_DEPENDS=		::x11/gtk+2 \
+			::devel/startup-notification
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
