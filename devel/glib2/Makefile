@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.87 2010/07/26 05:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2010/08/21 19:10:56 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.24.1
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p2
+PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
+
+REVISION-main=		3
 
 CATEGORIES=		devel
 
@@ -33,21 +35,15 @@ MULTI_PACKAGES=		-main -docs
 
 MODULES=		devel/gettext
 
-WANTLIB-main=		c pthread z
+WANTLIB-main=		c pthread z pcre fam
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			pcre:pcre->=7.2:devel/pcre \
-			fam.>=1::sysutils/gamin,no_server,no_python
+			:pcre->=7.2:devel/pcre \
+			::sysutils/gamin,no_server,no_python
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
-
-# disable optimization on powerpc because it can lead to a
-# segfault under some circumstances
-.if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST=		patch-* PPC-patch-glib_Makefile_in
-.endif
 
 REGRESS_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
