@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2010/07/14 10:58:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/08/21 20:34:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		personal photo management application for GNOME
 
-GNOME_VERSION=		0.7.1
+GNOME_VERSION=		0.7.2
 GNOME_PROJECT=		f-spot
 
 CATEGORIES=		graphics
@@ -64,17 +64,18 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 DLLMAP_FILES=		lib/unique-sharp/unique/unique-sharp.dll.config \
 			lib/gtk-sharp-beans/gtk-sharp-beans.dll.config \
 			lib/gio-sharp/gio/gio-sharp.dll.config \
-			lib/Hyena/src/Hyena.Gui/Hyena.Gui.dll.config \
-			src/Core/FSpot.Core.dll.config \
-			src/Widgets/FSpot.Widgets.dll.config \
-			src/Utils/FSpot.Utils.dll.config \
-			src/f-spot.exe.config \
-			src/Cms/FSpot.Cms.dll.config
+			lib/Hyena/Hyena.Gui/Hyena.Gui.dll.config \
+			lib/Hyena/Hyena/Hyena.dll.config \
+			src/Clients/MainApp/f-spot.exe.config \
+			src/Core/FSpot.Cms/FSpot.Cms.dll.config \
+			src/Core/FSpot.Gui/FSpot.Gui.dll.config \
+			src/Core/FSpot.Core/FSpot.Core.dll.config \
+			src/Core/FSpot.Utils/FSpot.Utils.dll.config
 
 FAKE_FLAGS=		schemadir=${PREFIX}/${SCHEMAS_INSTDIR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/icon-theme-installer \
-		${WRKSRC}/src/f-spot.in
+		${WRKSRC}/src/Clients/MainApp/f-spot.in
 
 .include <bsd.port.mk>

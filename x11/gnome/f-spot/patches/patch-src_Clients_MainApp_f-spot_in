@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_f-spot_in,v 1.6 2010/06/30 19:08:37 robert Exp $
---- src/f-spot.in.orig	Tue Jun 15 20:23:10 2010
-+++ src/f-spot.in	Wed Jun 30 21:07:45 2010
+$OpenBSD: patch-src_Clients_MainApp_f-spot_in,v 1.1 2010/08/21 20:34:34 ajacoutot Exp $
+--- src/Clients/MainApp/f-spot.in.orig	Sun Aug  8 14:39:53 2010
++++ src/Clients/MainApp/f-spot.in	Sat Aug 21 22:21:43 2010
 @@ -1,10 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
- libdir=@libdir@ 
+ libdir=@libdir@
  turtledir=@TURTLEDIR@
  
 +export LD_LIBRARY_PATH=${TRUEPREFIX}/lib/f-spot
