@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/26 20:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/08/21 21:43:02 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
 
-V=			5.2.5
+V=			5.2.6
 DISTNAME=		gutenprint-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
-
-REVISION-main=		0
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
