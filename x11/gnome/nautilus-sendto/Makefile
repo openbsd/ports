@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/08/21 19:16:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
-GNOME_VERSION=	2.28.4
-REVISION=	1
+GNOME_VERSION=	2.28.5
 
 CATEGORIES=	misc net
 
@@ -34,10 +33,10 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::net/gajim
 
-RUN_DEPENDS=		::archivers/zip \
-			::archivers/bzip2
-LIB_DEPENDS=		::x11/gnome/nautilus \
-			::databases/evolution-data-server
+RUN_DEPENDS=	::archivers/zip \
+		::archivers/bzip2
+LIB_DEPENDS=	::x11/gnome/nautilus \
+		::databases/evolution-data-server
 
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-sendto
