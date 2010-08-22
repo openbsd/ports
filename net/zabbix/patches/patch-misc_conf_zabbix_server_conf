@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.4 2010/04/09 10:17:59 ajacoutot Exp $
---- misc/conf/zabbix_server.conf.orig	Mon Mar 29 19:22:44 2010
-+++ misc/conf/zabbix_server.conf	Fri Apr  9 10:23:05 2010
+$OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.5 2010/08/22 14:43:24 ajacoutot Exp $
+--- misc/conf/zabbix_server.conf.orig	Thu Aug 19 16:37:36 2010
++++ misc/conf/zabbix_server.conf	Thu Aug 19 16:40:20 2010
 @@ -36,8 +36,6 @@
  # Default:
  # LogFile=
@@ -35,7 +35,7 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.4 2010/04/09 10:17:59 ajacoutot
  
  ### Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -335,6 +335,7 @@ DBUser=root
+@@ -334,6 +334,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # AlertScriptsPath=/home/zabbix/bin/
@@ -43,7 +43,7 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.4 2010/04/09 10:17:59 ajacoutot
  
  ### Option: ExternalScripts
  #	Location of external scripts
-@@ -342,6 +343,7 @@ DBUser=root
+@@ -341,6 +342,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=/etc/zabbix/externalscripts
@@ -51,7 +51,7 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.4 2010/04/09 10:17:59 ajacoutot
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -350,6 +352,7 @@ DBUser=root
+@@ -349,6 +351,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -59,11 +59,11 @@ $OpenBSD: patch-misc_conf_zabbix_server_conf,v 1.4 2010/04/09 10:17:59 ajacoutot
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -359,6 +362,7 @@ DBUser=root
+@@ -358,6 +361,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
-+FpingLocation=${LOCALBASE}/sbin/fping6
++Fping6Location=${LOCALBASE}/sbin/fping6
  
  ### Option: SSHKeyLocation
  #	Location of public keys for SSH checks

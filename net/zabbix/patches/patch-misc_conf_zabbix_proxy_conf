@@ -1,16 +1,7 @@
-$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot Exp $
---- misc/conf/zabbix_proxy.conf.orig	Mon Mar 29 19:22:44 2010
-+++ misc/conf/zabbix_proxy.conf	Fri Apr  9 10:23:05 2010
-@@ -55,8 +55,6 @@ Server=127.0.0.1
- # Default:
- # LogFile=
- 
--LogFile=/tmp/zabbix_proxy.log
--
- ### Option: LogFileSize
- #	Maximum size of log file in MB.
- #	0 - disable automatic log rotation.
-@@ -85,6 +83,7 @@ LogFile=/tmp/zabbix_proxy.log
+$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.5 2010/08/22 14:43:24 ajacoutot Exp $
+--- misc/conf/zabbix_proxy.conf.orig	Thu Aug 19 16:33:48 2010
++++ misc/conf/zabbix_proxy.conf	Thu Aug 19 16:36:24 2010
+@@ -96,6 +96,7 @@ LogFile=/tmp/zabbix_proxy.log
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_proxy.pid
@@ -18,7 +9,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot 
  
  ### Option: DBHost
  #	Database host name.
-@@ -110,7 +109,7 @@ DBName=zabbix
+@@ -121,7 +122,7 @@ DBName=zabbix
  # Default:
  # DBUser=
  
@@ -27,7 +18,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot 
  
  ### Option: DBPassword
  #	Database password. Ignored for SQLite.
-@@ -126,6 +125,7 @@ DBUser=root
+@@ -137,6 +138,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -35,7 +26,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot 
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -359,6 +359,7 @@ DBUser=root
+@@ -372,6 +374,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=/etc/zabbix/externalscripts
@@ -43,7 +34,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot 
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -367,6 +368,7 @@ DBUser=root
+@@ -380,6 +383,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -51,11 +42,11 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.4 2010/04/09 10:17:59 ajacoutot 
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -376,6 +378,7 @@ DBUser=root
+@@ -389,6 +393,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
-+FpingLocation=${LOCALBASE}/sbin/fping6
++Fping6Location=${LOCALBASE}/sbin/fping6
  
  ### Option: SSHKeyLocation
  #	Location of public keys for SSH checks
