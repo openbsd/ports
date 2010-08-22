@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/22 12:37:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/08/22 14:09:27 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
 DISTNAME =	roundcubemail-0.4
+REVISION =	0
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -22,7 +23,8 @@ PKG_ARCH =	*
 
 PREFIX =	/var/www
 INSTDIR =	${PREFIX}/roundcubemail
-SUBST_VARS =	INSTDIR
+TINSTDIR =	${TRUEPREFIX}/roundcubemail
+SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS =	::www/php5/core \
 		::www/php5/extensions,-mbstring \

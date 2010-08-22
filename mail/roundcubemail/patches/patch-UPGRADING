@@ -1,0 +1,9 @@
+$OpenBSD: patch-UPGRADING,v 1.7 2010/08/22 14:09:27 sthen Exp $
+--- UPGRADING.orig	Sun Aug 22 15:06:14 2010
++++ UPGRADING	Sun Aug 22 15:06:43 2010
+@@ -24,4 +24,4 @@ installation as well as the database before executig t
+ 5. Make sure 'enable_installer' is set to false again.
+ 6. Check .htaccess settings (some php settings could become required)
+ 
+-
++Note that in 0.4, the virtusertable feature has moved to a plugin.
