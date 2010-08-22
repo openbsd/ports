@@ -1,6 +1,6 @@
-$OpenBSD: patch-mono_mini_exceptions-amd64_c,v 1.4 2010/08/18 10:51:55 robert Exp $
---- mono/mini/exceptions-amd64.c.orig	Wed Aug 18 09:40:10 2010
-+++ mono/mini/exceptions-amd64.c	Wed Aug 18 09:40:32 2010
+$OpenBSD: patch-mono_mini_exceptions-amd64_c,v 1.6 2010/08/22 17:00:00 robert Exp $
+--- mono/mini/exceptions-amd64.c.orig	Sun Aug 22 18:56:46 2010
++++ mono/mini/exceptions-amd64.c	Sun Aug 22 18:56:56 2010
 @@ -722,7 +722,7 @@ handle_signal_exception (gpointer obj, gboolean test_o
  gboolean
  mono_arch_handle_exception (void *sigctx, gpointer obj, gboolean test_only)
