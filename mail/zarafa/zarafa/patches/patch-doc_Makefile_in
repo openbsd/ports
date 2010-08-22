@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
---- doc/Makefile.in.orig	Mon May 31 16:38:00 2010
-+++ doc/Makefile.in	Tue Jun 29 17:16:09 2010
-@@ -229,9 +229,9 @@ dist_data_DATA = 
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2010/08/22 10:13:27 ajacoutot Exp $
+--- doc/Makefile.in.orig	Tue Aug  3 11:42:55 2010
++++ doc/Makefile.in	Sun Aug 22 10:22:53 2010
+@@ -228,9 +228,9 @@ dist_data_DATA = 
  BUILT_SOURCES = zarafa.1
  allpages = \
  	zarafa-dagent.1 zarafa-passwd.1 zarafa-spooler.1 zarafa-admin.1 zarafa-server.1 zarafa-gateway.1 zarafa-monitor.1 zarafa-cfgchecker.1 \
@@ -14,7 +14,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
  
  man_MANS = $(BUILT_SOURCES) $(allpages)
  EXTRA_DIST = $(BUILT_SOURCES) $(allpages) manual.xml
-@@ -374,12 +374,12 @@ uninstall-man5:
+@@ -373,12 +373,12 @@ uninstall-man5:
  	done
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
@@ -30,7 +30,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
  	done
  
  uninstall-dist_dataDATA:
-@@ -535,7 +535,7 @@ $(BUILT_SOURCES): manual.xml
+@@ -534,7 +534,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
  	else \

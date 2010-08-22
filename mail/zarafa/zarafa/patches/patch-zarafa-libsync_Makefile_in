@@ -1,7 +1,7 @@
-$OpenBSD: patch-zarafa-libsync_Makefile_in,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- zarafa-libsync/Makefile.in.orig	Wed Jun 30 02:22:58 2010
-+++ zarafa-libsync/Makefile.in	Wed Jun 30 02:23:17 2010
-@@ -252,7 +252,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX		\
+$OpenBSD: patch-zarafa-libsync_Makefile_in,v 1.2 2010/08/22 10:13:27 ajacoutot Exp $
+--- zarafa-libsync/Makefile.in.orig	Tue Aug  3 11:43:00 2010
++++ zarafa-libsync/Makefile.in	Sun Aug 22 10:22:53 2010
+@@ -251,7 +251,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX		\
  	-I${top_srcdir}/common
  
  libzarafasync_la_includedir = $(includedir)/libzarafasync

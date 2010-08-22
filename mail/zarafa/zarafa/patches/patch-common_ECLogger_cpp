@@ -1,34 +1,45 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.6 2010/06/06 20:10:21 espie Exp $
---- common/ECLogger.cpp.orig	Tue Apr 27 21:07:02 2010
-+++ common/ECLogger.cpp	Sun Jun  6 21:23:41 2010
-@@ -135,7 +135,7 @@ ECLogger_File::~ECLogger_File() {
+$OpenBSD: patch-common_ECLogger_cpp,v 1.7 2010/08/22 10:13:27 ajacoutot Exp $
+--- common/ECLogger.cpp.orig	Tue Aug  3 14:51:42 2010
++++ common/ECLogger.cpp	Sun Aug 22 10:32:31 2010
+@@ -54,6 +54,10 @@
+ #include <zlib.h>
+ #include <assert.h>
+ 
++#ifdef __OpenBSD__
++#include <signal.h>
++#endif
++
+ #include "config.h"
+ #if HAVE_SYSLOG_H
+ #include <syslog.h>
+@@ -162,7 +166,7 @@ ECLogger_File::~ECLogger_File() {
  		if (timestamp)
- 			fprintf(log, "%s: ", MakeTimestamp());
+ 			fnPrintf(log, "%s: ", MakeTimestamp());
  		if (prefix == LP_TID)
--			fprintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fprintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
+-			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
++			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
  		else if (prefix == LP_PID)
- 			fprintf(log, "[%5d] ", getpid());
- 		fprintf(log, "Previous message logged %d times\n", prevcount);
-@@ -172,7 +172,7 @@ bool ECLogger_File::DupFilter(const std::string &messa
+ 			fnPrintf(log, "[%5d] ", getpid());
+ 		fnPrintf(log, "Previous message logged %d times\n", prevcount);
+@@ -204,7 +208,7 @@ bool ECLogger_File::DupFilter(const std::string &messa
  		if (timestamp)
- 			fprintf(log, "%s: ", MakeTimestamp());
+ 			fnPrintf(log, "%s: ", MakeTimestamp());
  		if (prefix == LP_TID)
--			fprintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fprintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
+-			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
++			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
  		else if (prefix == LP_PID)
- 			fprintf(log, "[%5d] ", getpid());
- 		fprintf(log, "Previous message logged %d times\n", prevcount);
-@@ -216,7 +216,7 @@ void ECLogger_File::Log(int loglevel, const char *form
+ 			fnPrintf(log, "[%5d] ", getpid());
+ 		fnPrintf(log, "Previous message logged %d times\n", prevcount);
+@@ -251,7 +255,7 @@ void ECLogger_File::Log(int loglevel, const char *form
  		if (timestamp)
- 			fprintf(log, "%s: ", MakeTimestamp());
+ 			fnPrintf(log, "%s: ", MakeTimestamp());
  		if (prefix == LP_TID)
--			fprintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fprintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
+-			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
++			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
  		else if (prefix == LP_PID)
- 			fprintf(log, "[%5d] ", getpid());
- 		fprintf(log, "%s\n", msgbuffer);
-@@ -284,7 +284,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
+ 			fnPrintf(log, "[%5d] ", getpid());
+ 		fnPrintf(log, "%s\n", msgbuffer);
+@@ -330,7 +334,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -37,7 +48,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.6 2010/06/06 20:10:21 espie Exp $
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;
-@@ -311,7 +311,7 @@ void ECLogger_Pipe::Log(int loglevel, const char *form
+@@ -359,7 +363,7 @@ void ECLogger_Pipe::Log(int loglevel, const char *form
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -46,8 +57,8 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.6 2010/06/06 20:10:21 espie Exp $
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;
-@@ -523,8 +523,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
- 			lpLogger = new ECLogger_File(atoi(lpConfig->GetSetting("log_level")), atoi(lpConfig->GetSetting("log_timestamp")), lpConfig->GetSetting("log_file"));
+@@ -572,8 +576,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
+ 			lpLogger = new ECLogger_File(atoi(lpConfig->GetSetting("log_level")), atoi(lpConfig->GetSetting("log_timestamp")), lpConfig->GetSetting("log_file"), false);
  			// chown file
  			if (pw || gr) {
 -				uid_t uid = -1;

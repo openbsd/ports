@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2010/06/30 02:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2010/08/22 10:13:27 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -110,6 +110,7 @@ include/zarafa/Trace.h
 include/zarafa/UnixUtil.h
 include/zarafa/Util.h
 include/zarafa/ZarafaCode.h
+include/zarafa/auto_free.h
 include/zarafa/base64.h
 include/zarafa/codepage.h
 include/zarafa/edkguid.h

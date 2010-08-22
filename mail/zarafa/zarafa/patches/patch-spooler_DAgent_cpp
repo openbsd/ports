@@ -1,6 +1,6 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.8 2010/06/30 02:46:48 ajacoutot Exp $
---- spooler/DAgent.cpp.orig	Mon May 31 19:28:58 2010
-+++ spooler/DAgent.cpp	Mon Jun 14 09:16:44 2010
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.9 2010/08/22 10:13:27 ajacoutot Exp $
+--- spooler/DAgent.cpp.orig	Tue Aug  3 14:51:43 2010
++++ spooler/DAgent.cpp	Sun Aug 22 10:22:53 2010
 @@ -88,6 +88,10 @@
  #include <sys/mman.h>
  #include <pwd.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.8 2010/06/30 02:46:48 ajacoutot Exp $
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -2639,7 +2643,7 @@ int main(int argc, char *argv[]) {
+@@ -2640,7 +2644,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";

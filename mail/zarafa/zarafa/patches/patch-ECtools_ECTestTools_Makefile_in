@@ -1,10 +1,10 @@
-$OpenBSD: patch-ECtools_ECTestTools_Makefile_in,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
+$OpenBSD: patch-ECtools_ECTestTools_Makefile_in,v 1.2 2010/08/22 10:13:27 ajacoutot Exp $
 
 We have disabled clucene support so don't build the test.
 
---- ECtools/ECTestTools/Makefile.in.orig	Tue Jun 29 04:28:30 2010
-+++ ECtools/ECTestTools/Makefile.in	Tue Jun 29 04:28:39 2010
-@@ -221,7 +221,7 @@ sysconfdir = @sysconfdir@
+--- ECtools/ECTestTools/Makefile.in.orig	Tue Aug  3 11:42:51 2010
++++ ECtools/ECTestTools/Makefile.in	Sun Aug 22 10:22:52 2010
+@@ -220,7 +220,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

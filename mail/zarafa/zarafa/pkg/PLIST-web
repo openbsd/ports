@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2010/06/30 06:28:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.3 2010/08/22 10:13:27 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -128,6 +128,8 @@ zarafa-webaccess/client/layout/dialogs/settings/tabs/preferences.js
 zarafa-webaccess/client/layout/dialogs/settings/tabs/preferences.php
 zarafa-webaccess/client/layout/dialogs/settings/tabs/shortcuts.js
 zarafa-webaccess/client/layout/dialogs/settings/tabs/shortcuts.php
+zarafa-webaccess/client/layout/dialogs/settings/tabs/task.js
+zarafa-webaccess/client/layout/dialogs/settings/tabs/task.php
 zarafa-webaccess/client/layout/dialogs/settings/tabs/vacation.js
 zarafa-webaccess/client/layout/dialogs/settings/tabs/vacation.php
 zarafa-webaccess/client/layout/dialogs/standard/
@@ -190,6 +192,7 @@ zarafa-webaccess/client/layout/img/hour_header_3.png
 zarafa-webaccess/client/layout/img/hour_header_4.png
 zarafa-webaccess/client/layout/img/hour_header_6.png
 zarafa-webaccess/client/layout/img/hour_header_8.png
+zarafa-webaccess/client/layout/img/icon_accept_proposal.gif
 zarafa-webaccess/client/layout/img/icon_addsignature.gif
 zarafa-webaccess/client/layout/img/icon_advanced_find.gif
 zarafa-webaccess/client/layout/img/icon_appointment_recurring.gif
@@ -213,6 +216,7 @@ zarafa-webaccess/client/layout/img/icon_delete_user.gif
 zarafa-webaccess/client/layout/img/icon_drafts.gif
 zarafa-webaccess/client/layout/img/icon_drag_multiple.gif
 zarafa-webaccess/client/layout/img/icon_drag_single.gif
+zarafa-webaccess/client/layout/img/icon_editmail.gif
 zarafa-webaccess/client/layout/img/icon_empty_trash.gif
 zarafa-webaccess/client/layout/img/icon_equipment.gif
 zarafa-webaccess/client/layout/img/icon_fieldchooser.gif
@@ -332,6 +336,7 @@ zarafa-webaccess/client/layout/img/icon_task.gif
 zarafa-webaccess/client/layout/img/icon_task_complete.gif
 zarafa-webaccess/client/layout/img/icon_today.gif
 zarafa-webaccess/client/layout/img/icon_user.gif
+zarafa-webaccess/client/layout/img/icon_view_all_proposals.gif
 zarafa-webaccess/client/layout/img/icon_wastebasket.gif
 zarafa-webaccess/client/layout/img/icon_week.gif
 zarafa-webaccess/client/layout/img/icon_workweek.gif
@@ -565,6 +570,7 @@ zarafa-webaccess/client/widgets/combobox.js
 zarafa-webaccess/client/widgets/datepicker.js
 zarafa-webaccess/client/widgets/datetimepicker.js
 zarafa-webaccess/client/widgets/dragdrop.js
+zarafa-webaccess/client/widgets/elastictextarea.js
 zarafa-webaccess/client/widgets/fckeditor/
 zarafa-webaccess/client/widgets/fckeditor/editor/
 zarafa-webaccess/client/widgets/fckeditor/editor/css/
@@ -907,6 +913,7 @@ zarafa-webaccess/server/core/class.tablecolumns.php
 zarafa-webaccess/server/core/class.xmlbuilder.php
 zarafa-webaccess/server/core/class.xmlparser.php
 zarafa-webaccess/server/core/constants.php
+zarafa-webaccess/server/core/htmlfilter.php
 zarafa-webaccess/server/language/
 zarafa-webaccess/server/language/da_DK.UTF-8/
 zarafa-webaccess/server/language/da_DK.UTF-8/LC_MESSAGES/
