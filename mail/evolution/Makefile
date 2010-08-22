@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.106 2010/06/21 05:17:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2010/08/22 10:29:40 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.30.2
+GNOME_VERSION=		2.30.3
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -30,13 +30,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 SO_VERSION=		6.0
 
-.for _lib in eutil econduit evolution-a11y evolution-calendar-a11y \
-evolution-widgets-a11y evolution-addressbook-a11y etable etext emiscwidgets \
-efilterbar etimezonedialog menus eshell filter essmime evolution-smime eabutil \
+.for _lib in eutil econduit evolution-a11y etable etext emiscwidgets \
+etimezonedialog menus eshell filter essmime evolution-smime eabutil \
 evolution-addressbook-importers econtacteditor econtactlisteditor \
-evolution-calendar-importers evolution-mail-importers evolution-cal-shared \
-evolution-mail-shared emformat composer evolution-mail evolution-calendar \
-evolution-mail-settings
+evolution-calendar-importers evolution-mail-importers emformat \
+composer evolution-mail evolution-calendar evolution-mail-settings
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
