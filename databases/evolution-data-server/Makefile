@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2010/06/25 13:54:34 landry Exp $
+# $OpenBSD: Makefile,v 1.68 2010/08/22 07:08:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		2.30.2.1
+GNOME_VERSION=		2.30.3
 
 CATEGORIES=		databases
 
@@ -42,6 +42,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png proxy pthread
 WANTLIB += pthread-stubs sasl2 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl tasn1 xcb xcb-render xcb-render-util xml2 z
+WANTLIB += db ldap lber gpg-error gnutls nss3.>=19 smime3 ssl3 ical
+WANTLIB += icalss icalvcal gnome-keyring.>=6 gweather
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -50,14 +52,14 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:gperf-*:devel/gperf
-LIB_DEPENDS= 		db:db->=4,<5:databases/db/v4 \
-			ldap,lber::databases/openldap \
-			gpg-error::security/libgpg-error \
-			gnutls::security/gnutls \
-			nss3.>=19,smime3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
-			ical,icalss,icalvcal::textproc/libical \
-			gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-			gweather::x11/gnome/libgweather
+LIB_DEPENDS= 		:db->=4,<5:databases/db/v4 \
+			::databases/openldap \
+			::security/libgpg-error \
+			::security/gnutls \
+			:nss->=3.11.4p1:security/nss \
+			::textproc/libical \
+			:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+			::x11/gnome/libgweather
 
 USE_X11=		Yes
 YACC=			bison
