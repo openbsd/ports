@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
---- Makefile.in.orig	Wed Sep 19 21:49:48 2007
-+++ Makefile.in	Tue Sep 25 12:47:05 2007
+$OpenBSD: patch-Makefile_in,v 1.3 2010/08/22 06:57:00 ajacoutot Exp $
+--- Makefile.in.orig	Mon Aug  9 12:07:55 2010
++++ Makefile.in	Sun Aug 22 07:27:13 2010
 @@ -186,13 +186,9 @@ check-config:
  install-bin: check-config lib/Makefile
  #	This is the only way to get the Perl-generated Makefile using
  #	$(DESTDIR) properly
 -	( cd lib && \
 -	  $(MAKE) PREFIX=$(PERLPREFIX) && \
--	  $(MAKE) PREFIX=$(DESTDIR)$(PERLPREFIX) pure_install \
+-	  $(MAKE) PREFIX=$(PERLPREFIX) DESTDIR=$(DESTDIR) pure_install \
 -	)
 +	cd lib &&  $(MAKE) PREFIX=$(PERLPREFIX) pure_install
  	${SRC}/mkinstalldirs $(DESTDIR)$(BINDIR)

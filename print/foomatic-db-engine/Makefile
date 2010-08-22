@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/26 20:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/22 06:57:00 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-DISTNAME=		foomatic-db-engine-4.0.4
+DISTNAME=		foomatic-db-engine-4.0.5
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -78,7 +78,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/foomatic-combo-xml.c \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in ${WRKSRC}/configure
 	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/configure
