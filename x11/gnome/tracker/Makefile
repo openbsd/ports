@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/23 07:57:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/08/22 12:02:53 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.15
-REVISION=	1
+GNOME_VERSION=	0.8.16
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
@@ -36,7 +35,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
 WANTLIB += ssl ssl3 startup-notification-1 stdc++ tasn1 tiff unique-1.0
 WANTLIB += util xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xml2 z openjpeg
+WANTLIB += xml2 z openjpeg proxy soup-gnome-2.4
 WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
 WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
 WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee

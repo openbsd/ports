@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_plugins_evolution_tracker-evolution-plugin_c,v 1.1 2010/08/22 12:02:53 ajacoutot Exp $
+--- src/plugins/evolution/tracker-evolution-plugin.c.orig	Sun Aug 22 13:43:04 2010
++++ src/plugins/evolution/tracker-evolution-plugin.c	Sun Aug 22 13:43:09 2010
+@@ -40,7 +40,6 @@
+ 
+ #include <sqlite3.h>
+ 
+-#include <camel/camel.h>
+ #include <camel/camel-db.h>
+ 
+ #include <mail/mail-config.h>
