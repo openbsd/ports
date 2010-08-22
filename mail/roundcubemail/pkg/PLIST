@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/08/22 12:37:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/08/22 19:39:43 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -34,15 +34,11 @@ roundcubemail/config/main.inc.php.dist
 roundcubemail/config/mimetypes.php.dist
 @sample roundcubemail/config/mimetypes.php
 roundcubemail/index.php
-@mode 700
 roundcubemail/installer/
-@mode 600
 roundcubemail/installer/check.php
 roundcubemail/installer/client.js
 roundcubemail/installer/config.php
-@mode 700
 roundcubemail/installer/images/
-@mode 600
 roundcubemail/installer/images/add.png
 roundcubemail/installer/images/banner_bg.gif
 roundcubemail/installer/images/banner_logo.gif

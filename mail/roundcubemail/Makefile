@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/22 14:36:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/08/22 19:39:43 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
 DISTNAME =	roundcubemail-0.4
-REVISION =	1
+REVISION =	2
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -36,8 +36,8 @@ do-install:
 	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
 .endfor
 	${SUBST_CMD} -c ${FILESDIR}/roundcubemail.conf \
-	    ${INSTDIR}/roundcubemail.conf.dist
-	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	    ${INSTDIR}/roundcubemail.conf.dist; \
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}; \
 	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
 
 .include <bsd.port.mk>

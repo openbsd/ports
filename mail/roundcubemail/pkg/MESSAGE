@@ -1,9 +1,14 @@
-With Apache, AllowOverride settings are required on the
-${INSTDIR} directory. You can configure this as follows:
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
 
 # ln -s ${PREFIX}/conf/modules.sample/roundcubemail.conf \
         ${PREFIX}/conf/modules
 # apachectl stop
 # apachectl start
+
+Create a link into an appropriate part of the web-server's
+document root, e.g.:
+
+# ln -s ${INSTDIR} /var/www/htdocs
 
 Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING
