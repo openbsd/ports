@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.70 2009/07/18 20:26:18 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.71 2010/08/22 09:04:29 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -30,7 +30,6 @@ PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=
-MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
 MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
 MAKE_CCARGS+=	-DUSE_TLS
