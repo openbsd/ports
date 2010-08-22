@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/31 08:17:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/22 06:57:38 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20091207
+V=			20100821
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
-REVISION=		1
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -45,7 +44,9 @@ pre-configure:
 	rm -f ${WRKSRC}/db/source/driver/foo2${x}.xml \
 		${WRKSRC}/db/source/opt/foo2${x}-*
 .endfor
-	mv ${WRKSRC}/db/source/printer/Xerox-Phaser_6110.xml \
-		${WRKSRC}/db/source/printer/Xerox-Phaser_6110-splix.xml
+.for i in Xerox-Phaser_6110 Samsung-CLP-300 Samsung-CLP-310 Samsung-CLP-315
+	mv ${WRKSRC}/db/source/printer/${i}.xml \
+		${WRKSRC}/db/source/printer/${i}-splix.xml
+.endfor
 
 .include <bsd.port.mk>
