@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/05/27 22:04:17 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/08/22 14:14:52 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.2.6
+XFCE_VERSION =	0.2.7
 XFCE_GOODIE =	midori
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -20,11 +20,11 @@ USE_X11 =	Yes
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	webkit-1.0:webkit->=1.1.15v0:www/webkit \
-		notify::devel/libnotify \
-		sqlite3::databases/sqlite3 \
-		unique-1.0::devel/libunique \
-		soup-2.4:libsoup->=2.28.0:devel/libsoup
+LIB_DEPENDS =	:webkit->=1.1.15v0:www/webkit \
+		::devel/libnotify \
+		::databases/sqlite3 \
+		::devel/libunique \
+		:libsoup->=2.28.0:devel/libsoup
 
 # pick sqlite
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
@@ -39,7 +39,8 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sqlite3 z \
 		dbus-1 dbus-glib-1 cairo pixman-1 png pthread-stubs xcb xml2 \
-		Xss xcb-render xcb-render-util
+		Xss xcb-render xcb-render-util webkit-1.0 notify sqlite3 \
+		unique-1.0 soup-2.4
 
 
 .include <bsd.port.mk>

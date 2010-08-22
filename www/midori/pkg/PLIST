@@ -1,23 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/05/27 22:04:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/08/22 14:14:52 landry Exp $
 @bin bin/midori
 include/midori-0.2/
 include/midori-0.2/extensions/
 include/midori-0.2/extensions/external-applications.h
+include/midori-0.2/extensions/history-list.h
 lib/midori/
 lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libcopy-tabs.so
 lib/midori/libexternal-applications.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
+lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
 lib/midori/libtab-panel.so
-lib/midori/libtab-switcher.so
+lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
@@ -45,6 +48,9 @@ share/icons/hicolor/32x32/status/news-feed.png
 share/icons/hicolor/48x48/apps/midori.png
 share/icons/hicolor/48x48/categories/extension.png
 share/icons/hicolor/48x48/status/news-feed.png
+share/icons/hicolor/scalable/apps/midori.svg
+share/icons/hicolor/scalable/categories/extension.svg
+share/icons/hicolor/scalable/status/news-feed.svg
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo
@@ -96,6 +102,8 @@ share/vala/
 share/vala/vapi/
 share/vala/vapi/external-applications.deps
 share/vala/vapi/external-applications.vapi
+share/vala/vapi/history-list.deps
+share/vala/vapi/history-list.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
