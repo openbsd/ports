@@ -1,0 +1,27 @@
+$OpenBSD: patch-cfile_tools_c,v 1.1 2010/08/22 11:49:55 phessler Exp $
+
+Use after free
+
+--- cfile_tools.c.orig	Wed Apr 21 14:32:21 2010
++++ cfile_tools.c	Wed Apr 21 14:32:58 2010
+@@ -218,8 +218,8 @@ int cfr_close(CFRFILE *stream) {
+         return(-1);
+       }
+       retval = fclose((FILE *)(stream->data1));
+-      free(stream);
+       stream->error1 = retval;
++      free(stream);
+       return(retval);
+     }
+     break;
+@@ -229,9 +229,9 @@ int cfr_close(CFRFILE *stream) {
+     { 
+ 	if(stream->data2!=NULL) {
+ 		retval=gzclose(stream->data2);
+-		free(stream);
+ 	}
+       stream->error2 = retval;
++      free(stream);
+       return(retval);
+     }
+     break;

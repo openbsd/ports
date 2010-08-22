@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2010/08/22 11:49:55 phessler Exp $
+
+Don't hardcode -O3
+
+--- configure.orig	Wed Nov 25 13:42:53 2009
++++ configure	Wed Aug 18 12:21:15 2010
+@@ -1788,7 +1788,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ ac_config_headers="$ac_config_headers bgpdump-config.h"
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -Wcast-align -Wsystem-headers -Wno-format-y2k -W -Wno-unused-parameter -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wshadow -Wcast-align -Wunused-parameter -O3"
++CFLAGS="$CFLAGS -Wall -Wcast-align -Wsystem-headers -Wno-format-y2k -W -Wno-unused-parameter -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wshadow -Wcast-align -Wunused-parameter "
+ 
+ # Checks for programs.
+ ac_ext=c
