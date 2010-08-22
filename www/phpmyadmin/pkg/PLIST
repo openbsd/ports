@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/07/02 14:35:48 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/08/22 06:24:50 kevlo Exp $
 @group daemon
 phpMyAdmin/
 @comment phpMyAdmin/.gitignore
@@ -175,6 +175,19 @@ phpMyAdmin/libraries/Message.class.php
 phpMyAdmin/libraries/PHPExcel/
 phpMyAdmin/libraries/PHPExcel/PHPExcel/
 phpMyAdmin/libraries/PHPExcel/PHPExcel.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Autoloader.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/APC.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/CacheBase.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/DiscISAM.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/ICache.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/Memcache.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/Memory.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/MemoryGZip.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/MemorySerialized.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/PHPTemp.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorage/Wincache.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/CachedObjectStorageFactory.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Calculation/
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Calculation.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Calculation/Exception.php
@@ -202,12 +215,15 @@ phpMyAdmin/libraries/PHPExcel/PHPExcel/NamedRange.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/CSV.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/DefaultReadFilter.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Excel2003XML.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Excel2007.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Excel5/
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Excel5.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Excel5/Escher.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/IReadFilter.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/IReader.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/OOCalc.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/SYLK.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Reader/Serialized.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/ReferenceHelper.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/RichText/
@@ -215,7 +231,9 @@ phpMyAdmin/libraries/PHPExcel/PHPExcel/RichText.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/RichText/ITextElement.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/RichText/Run.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/RichText/TextElement.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Settings.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/CodePage.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/Date.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/Drawing.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/Escher/
@@ -249,11 +267,11 @@ phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/JAMA/utils/Maths.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/ChainedBlockStream.php
-phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/OLE_File.php
-phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/OLE_PPS.php
-phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/OLE_Root.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/PPS/
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/PPS.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/PPS/File.php
+phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLE/PPS/Root.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/OLERead.php
-phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/PDF.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/PasswordHasher.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/String.php
 phpMyAdmin/libraries/PHPExcel/PHPExcel/Shared/XMLWriter.php
