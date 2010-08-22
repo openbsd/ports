@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/12 05:55:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/22 17:55:38 ajacoutot Exp $
 
 COMMENT=	rpm2cpio converter in Perl
 
 DISTNAME=	rpm2cpio-1.3
 CATEGORIES=	converters archivers
+
+REVISION=	0
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
