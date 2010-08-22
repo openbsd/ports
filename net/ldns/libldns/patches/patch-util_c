@@ -1,12 +1,18 @@
-$OpenBSD: patch-util_c,v 1.4 2010/06/19 21:18:11 jakob Exp $
+$OpenBSD: patch-util_c,v 1.5 2010/08/22 08:56:51 jakob Exp $
 --- util.c.orig	Tue May 18 03:08:09 2010
-+++ util.c	Tue Jun 15 21:21:35 2010
-@@ -272,7 +272,7 @@ ldns_init_random(FILE *fd, unsigned int size)
++++ util.c	Sun Jul 25 17:26:25 2010
+@@ -272,10 +272,10 @@ ldns_init_random(FILE *fd, unsigned int size)
  	seed = LDNS_XMALLOC(uint8_t, size);
  
  	if (!fd) {
 -		if ((rand_f = fopen("/dev/urandom", "r")) == NULL) {
+-			/* no readable /dev/urandom, try /dev/random */
+-			if ((rand_f = fopen("/dev/random", "r")) == NULL) {
+-				/* no readable /dev/random either, and no entropy
 +		if ((rand_f = fopen("/dev/arandom", "r")) == NULL) {
- 			/* no readable /dev/urandom, try /dev/random */
- 			if ((rand_f = fopen("/dev/random", "r")) == NULL) {
- 				/* no readable /dev/random either, and no entropy
++			/* no readable /dev/arandom, try /dev/urandom */
++			if ((rand_f = fopen("/dev/urandom", "r")) == NULL) {
++				/* no readable /dev/urandom either, and no entropy
+ 				   source given. we'll have to improvise */
+ 				for (read = 0; read < size; read++) {
+ 					gettimeofday(&tv, NULL);
