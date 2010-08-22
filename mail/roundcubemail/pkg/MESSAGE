@@ -1,12 +1,9 @@
-RoundCube webmail has been installed into ${INSTDIR}
+With Apache, AllowOverride settings are required on the
+${INSTDIR} directory. You can configure this as follows:
 
-With Apache, this directory must be granted at least these:
-    AllowOverride Indexes FileInfo Options
+# ln -s ${PREFIX}/conf/modules.sample/roundcubemail.conf \
+        ${PREFIX}/conf/modules
+# apachectl stop
+# apachectl start
 
-Proceed to complete the installation or upgrade by reading:
-${INSTDIR}/INSTALL
-${INSTDIR}/UPGRADING
-
-A database is required to use this package; PostgreSQL, MySQL and
-SQLite are supported. If you have no requirements for either of the
-full-scale RDBMS, you might like to install the php5-sqlite package.
+Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING
