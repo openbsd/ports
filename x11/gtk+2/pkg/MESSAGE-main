@@ -1,0 +1,3 @@
+If you intend to run GNOME applications outside of GNOME, you need to
+setup a default gtk+2 icon theme by adding a line in ~/.gtkrc-2.0.
+    e.g. gtk-icon-theme-name="gnome"
