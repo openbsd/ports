@@ -1,0 +1,11 @@
+$OpenBSD: patch-bgpdump_lib_c,v 1.1 2010/08/22 11:48:50 phessler Exp $
+--- bgpdump_lib.c.orig	Wed Aug 18 12:35:45 2010
++++ bgpdump_lib.c	Wed Aug 18 12:36:13 2010
+@@ -56,6 +56,7 @@ Original Author: Dan Ardelean (dan@ripe.net)
+ #include <assert.h>
+ 
+ void	  bgpdump_free_attr(struct attr *attr);
++void	  bgpdump_free_mp_info(struct mp_info *info);
+ static    int process_mrtd_table_dump(struct mstream *s,BGPDUMP_ENTRY *entry);
+ static    int process_mrtd_table_dump_v2(struct mstream *s,BGPDUMP_ENTRY *entry);
+ static    int process_mrtd_table_dump_v2_peer_index_table(struct mstream *s,BGPDUMP_ENTRY *entry);
