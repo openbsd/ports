@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/07/31 10:31:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/08/22 06:58:14 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
@@ -174,6 +174,7 @@ share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3175.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6121MFP.ppd.gz
 share/foomatic/db/source/driver/
 share/foomatic/db/source/driver/foo2hiperc.xml
 share/foomatic/db/source/driver/foo2hp.xml
@@ -323,6 +324,7 @@ share/foomatic/db/source/printer/Samsung-CLX-3160.xml
 share/foomatic/db/source/printer/Samsung-CLX-3175.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6110.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6115MFP.xml
+share/foomatic/db/source/printer/Xerox-Phaser_6121MFP.xml
 @unexec-delete rm -f %D/share/foo2hiperc/icm/*
 @unexec-delete rm -f %D/share/foo2hp/icm/*
 @unexec-delete rm -f %D/share/foo2lava/icm/*
