@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/07/31 05:55:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/08/22 06:18:56 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -39,6 +39,7 @@ include/libspreadsheet-1.10/spreadsheet/gnm-format.h
 include/libspreadsheet-1.10/spreadsheet/gnm-graph-window.h
 include/libspreadsheet-1.10/spreadsheet/gnm-pane.h
 include/libspreadsheet-1.10/spreadsheet/gnm-plugin.h
+include/libspreadsheet-1.10/spreadsheet/gnm-random.h
 include/libspreadsheet-1.10/spreadsheet/gnm-sheet-slicer.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-filled.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-line.h
@@ -960,6 +961,8 @@ share/locale/hr/LC_MESSAGES/gnumeric-functions.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric-functions.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
+share/locale/id/LC_MESSAGES/gnumeric-functions.mo
+share/locale/id/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric-functions.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric-functions.mo
