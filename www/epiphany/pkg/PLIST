@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/04/22 20:49:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/08/22 07:48:07 ajacoutot Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -248,26 +248,26 @@ share/gnome/help/epiphany/uk/figures/ephy-bookmarkbar-smartbookmark-screenshot.p
 share/gnome/help/epiphany/uk/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
 share/gtk-doc/html/epiphany/
-share/gtk-doc/html/epiphany/EphyCommandManager.html
-share/gtk-doc/html/epiphany/EphyEmbed.html
+share/gtk-doc/html/epiphany/EphyDialog.html
+share/gtk-doc/html/epiphany/EphyLocationAction.html
 share/gtk-doc/html/epiphany/EphyLocationEntry.html
-share/gtk-doc/html/epiphany/EphyNodeDb.html
+share/gtk-doc/html/epiphany/EphyNodeView.html
 share/gtk-doc/html/epiphany/EphySearchEntry.html
 share/gtk-doc/html/epiphany/EphySpinner.html
+share/gtk-doc/html/epiphany/EphyStatusbar.html
+share/gtk-doc/html/epiphany/EphyToolbar.html
+share/gtk-doc/html/epiphany/EphyTreeModelNode.html
+share/gtk-doc/html/epiphany/EphyTreeModelSort.html
+share/gtk-doc/html/epiphany/EphyWebView.html
 share/gtk-doc/html/epiphany/EphyWindow.html
+share/gtk-doc/html/epiphany/EphyZoomAction.html
 share/gtk-doc/html/epiphany/EphyZoomControl.html
+share/gtk-doc/html/epiphany/annotation-glossary.html
 share/gtk-doc/html/epiphany/ch01.html
 share/gtk-doc/html/epiphany/ch02.html
 share/gtk-doc/html/epiphany/ch03.html
-share/gtk-doc/html/epiphany/epiphany-EphyEmbedFactory.html
-share/gtk-doc/html/epiphany/epiphany-EphyEmbedPersist.html
-share/gtk-doc/html/epiphany/epiphany-EphyEmbedSingle.html
-share/gtk-doc/html/epiphany/epiphany-EphyExtensionsManager.html
-share/gtk-doc/html/epiphany/epiphany-EphyGlade.html
-share/gtk-doc/html/epiphany/epiphany-EphyPermissionManager.html
-share/gtk-doc/html/epiphany/epiphany-ephy-password-manager.html
-share/gtk-doc/html/epiphany/epiphany-ephy-session.html
-share/gtk-doc/html/epiphany/epiphany-ephy-shell.html
+share/gtk-doc/html/epiphany/epiphany-Epiphany-Debug-Helpers.html
+share/gtk-doc/html/epiphany/epiphany-Epiphany-File-Helpers.html
 share/gtk-doc/html/epiphany/epiphany.devhelp
 share/gtk-doc/html/epiphany/epiphany.devhelp2
 share/gtk-doc/html/epiphany/home.png
