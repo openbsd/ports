@@ -1,6 +1,6 @@
-$OpenBSD: patch-libdv_Makefile_in,v 1.3 2005/02/22 22:24:36 naddy Exp $
---- libdv/Makefile.in.orig	Mon Nov 29 19:23:43 2004
-+++ libdv/Makefile.in	Sat Feb 12 00:02:49 2005
+$OpenBSD: patch-libdv_Makefile_in,v 1.4 2010/08/23 07:51:22 jasper Exp $
+--- libdv/Makefile.in.orig	Mon Sep 25 22:11:48 2006
++++ libdv/Makefile.in	Sat Aug 21 14:23:04 2010
 @@ -189,7 +189,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
@@ -10,7 +10,7 @@ $OpenBSD: patch-libdv_Makefile_in,v 1.3 2005/02/22 22:24:36 naddy Exp $
  LIBTOOL = $(SHELL) $(top_builddir)/libtool --silent
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -313,7 +313,7 @@ recode_LDADD = libdv.la
+@@ -317,7 +317,7 @@ recode_LDADD = libdv.la
  reppm_SOURCES = reppm.c
  reppm_LDADD = libdv.la
  enctest_SOURCES = enctest.c
@@ -19,7 +19,7 @@ $OpenBSD: patch-libdv_Makefile_in,v 1.3 2005/02/22 22:24:36 naddy Exp $
  all: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) all-am
  
-@@ -376,7 +376,7 @@ clean-libLTLIBRARIES:
+@@ -380,7 +380,7 @@ clean-libLTLIBRARIES:
  	  rm -f "$${dir}/so_locations"; \
  	done
  libdv.la: $(libdv_la_OBJECTS) $(libdv_la_DEPENDENCIES) 

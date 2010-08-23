@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2010/08/21 12:22:41 jasper Exp $
---- configure.orig	Tue Nov 30 04:23:44 2004
-+++ configure	Sat Aug 21 14:20:46 2010
-@@ -20395,6 +20395,8 @@ OS_ARCH=`uname -s | sed -e 's|/|_|g'`
+$OpenBSD: patch-configure,v 1.7 2010/08/23 07:51:22 jasper Exp $
+--- configure.orig	Mon Sep 25 22:11:47 2006
++++ configure	Sat Aug 21 14:23:04 2010
+@@ -20807,6 +20807,8 @@ OS_ARCH=`uname -s | sed -e 's|/|_|g'`
  if test x$OS_ARCH = xFreeBSD -o x$OS_ARCH = xOpenBSD; then
     CFLAGS="$CFLAGS -pthread"
     CXXFLAGS="$CXXFLAGS -pthread"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.6 2010/08/21 12:22:41 jasper Exp $
  fi
  
  
-@@ -20972,7 +20974,7 @@ fi
+@@ -21463,7 +21465,7 @@ fi
  
  
  for ac_header in fcntl.h sys/time.h unistd.h linux/videodev.h sys/soundcard.h \
@@ -18,4 +18,4 @@ $OpenBSD: patch-configure,v 1.6 2010/08/21 12:22:41 jasper Exp $
 +inttypes.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
