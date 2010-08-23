@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/01/13 14:36:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/08/23 11:48:50 jasper Exp $
 @group daemon
 phpldapadmin/
 @comment phpldapadmin/.cvsignore
@@ -640,6 +640,10 @@ phpldapadmin/locale/ru_RU/
 phpldapadmin/locale/ru_RU/LC_MESSAGES/
 phpldapadmin/locale/ru_RU/LC_MESSAGES/messages.mo
 phpldapadmin/locale/ru_RU/LC_MESSAGES/messages.po
+phpldapadmin/locale/sk_SK/
+phpldapadmin/locale/sk_SK/LC_MESSAGES/
+phpldapadmin/locale/sk_SK/LC_MESSAGES/messages.mo
+phpldapadmin/locale/sk_SK/LC_MESSAGES/messages.po
 phpldapadmin/locale/sv_FI/
 phpldapadmin/locale/sv_FI/LC_MESSAGES/
 phpldapadmin/locale/sv_FI/LC_MESSAGES/messages.mo
