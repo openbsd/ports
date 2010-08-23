@@ -1,0 +1,26 @@
+$OpenBSD: patch-tests_socket_tst,v 1.1 2010/08/23 16:31:33 jasper Exp $
+
+This test assumes that a nonblocking connect to a closed port will
+never fail, the failure will always occur when trying to read from the
+socket.
+
+--- tests/socket.tst.orig	Wed Nov 26 01:10:25 2008
++++ tests/socket.tst	Fri Jul 30 11:16:17 2010
+@@ -515,10 +515,13 @@ T
+ ;; no one should be listening on 12345
+ ;; <http://article.gmane.org/gmane.lisp.clisp.general/12286>
+ (socket:socket-connect 12345 "localhost" :timeout 30) ERROR ; ECONNREFUSED
+-(open-stream-p (setq *socket-1* (socket:socket-connect
+-                                 12345 "localhost" :timeout 0))) T
+-(read-line *socket-1*) ERROR ; ECONNREFUSED
+-(close *socket-1*) T
++(and (setq *socket-1* nil
++           *socket-1* (socket:socket-connect
++                       12345 "localhost" :timeout 0))
++     (open-stream-p *socket-1*)
++     (read-line *socket-1*)) ERROR ; ECONNREFUSED
++(or (null *socket-1*)
++    (close *socket-1*)) T
+ 
+ (let ((interfaces '(nil "localhost" "0.0.0.0" "127.0.0.1")))
+   (mapcar (lambda (i)

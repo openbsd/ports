@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/01/07 10:55:28 edd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/08/23 16:31:33 jasper Exp $
 @bin bin/clisp
 lib/clisp/
 lib/clisp/base/
@@ -57,11 +57,6 @@ share/doc/clisp/README
 share/doc/clisp/README.de
 share/doc/clisp/README.es
 share/doc/clisp/SUMMARY
-share/doc/clisp/clhs.el
-share/doc/clisp/clisp-coding.el
-share/doc/clisp/clisp-ffi.el
-share/doc/clisp/clisp-indent.el
-share/doc/clisp/clisp-indent.lisp
 share/doc/clisp/clisp.1
 share/doc/clisp/clisp.dvi
 share/doc/clisp/clisp.html
@@ -70,6 +65,11 @@ share/doc/clisp/clisp.ps
 share/doc/clisp/impnotes.css
 share/doc/clisp/impnotes.html
 share/doc/clisp/lisp.vim
+share/emacs/site-lisp/clhs.el
+share/emacs/site-lisp/clisp-coding.el
+share/emacs/site-lisp/clisp-ffi.el
+share/emacs/site-lisp/clisp-indent.el
+share/emacs/site-lisp/clisp-indent.lisp
 share/locale/da/LC_MESSAGES/clisp.mo
 share/locale/da/LC_MESSAGES/clisplow.mo
 share/locale/de/LC_MESSAGES/clisp.mo
