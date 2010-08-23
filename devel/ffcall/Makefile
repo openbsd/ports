@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/01/10 13:10:36 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/23 14:16:09 jasper Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
@@ -9,6 +9,7 @@ NOT_FOR_ARCHS=	arm m68k
 COMMENT=	foreign function call libraries
 
 DISTNAME=	ffcall-1.10
+REVISION =	0
 SHARED_LIBS=	avcall		1.0 \
 		callback	1.0
 CATEGORIES=	devel

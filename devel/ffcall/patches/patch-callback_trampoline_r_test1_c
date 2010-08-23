@@ -1,0 +1,12 @@
+$OpenBSD: patch-callback_trampoline_r_test1_c,v 1.1 2010/08/23 14:16:09 jasper Exp $
+--- callback/trampoline_r/test1.c.orig	Sun Apr 26 06:46:30 2009
++++ callback/trampoline_r/test1.c	Sun Apr 26 06:46:30 2009
+@@ -70,7 +70,7 @@ register void* env __asm__("%r29");
+ register void* env __asm__("r12");
+ #endif
+ #ifdef __rs6000__
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ register void* env __asm__("r13");
+ #else
+ register void* env __asm__("r11");

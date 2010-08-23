@@ -1,0 +1,17 @@
+$OpenBSD: patch-callback_vacall_r_vacall-rs6000-linux_s,v 1.1 2010/08/23 14:16:09 jasper Exp $
+
+We're using %r13 like on NetBSD instead of %r11.
+
+--- callback/vacall_r/vacall-rs6000-linux.s.orig	Mon Jan 29 13:55:18 2001
++++ callback/vacall_r/vacall-rs6000-linux.s	Sun Apr 26 07:01:24 2009
+@@ -35,8 +35,8 @@ __vacall_r:
+ 	stw 9,20(1)
+ 	addi 0,1,48
+ 	stw 0,40(1)
+-	lwz 9,0(11)
+-	lwz 3,4(11)
++	lwz 9,0(13)
++	lwz 3,4(13)
+ 	addi 4,1,8
+ 	mtlr 9
+ 	blrl

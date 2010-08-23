@@ -1,6 +1,15 @@
-$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.1 2010/02/23 20:11:15 jasper Exp $
---- callback/trampoline_r/trampoline.c.orig	Fri Feb 12 00:00:27 2010
-+++ callback/trampoline_r/trampoline.c	Fri Feb 12 00:00:30 2010
+$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.2 2010/08/23 14:16:09 jasper Exp $
+--- callback/trampoline_r/trampoline.c.orig	Mon Jan 26 07:00:05 2004
++++ callback/trampoline_r/trampoline.c	Sat Jul 31 06:59:02 2010
+@@ -21,7 +21,7 @@
+ #endif
+ #endif
+ #if defined(__rs6000__)
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #define __rs6000netbsd__
+ #else
+ #if !defined(_AIX)
 @@ -196,8 +196,12 @@ extern RETGETPAGESIZETYPE getpagesize ();
  #ifdef linux
  #include <asm/cachectl.h>

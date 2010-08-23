@@ -1,0 +1,12 @@
+$OpenBSD: patch-avcall_Makefile_in,v 1.5 2010/08/23 14:16:09 jasper Exp $
+--- avcall/Makefile.in.orig	Sun Jan 25 09:34:21 2004
++++ avcall/Makefile.in	Sat Apr 25 21:42:02 2009
+@@ -120,7 +120,7 @@ avcall-rs6000.lo : $(srcdir)/avcall-rs6000-aix.old.s $
+ 	case "$(OS)" in \
+ 	  aix3*) syntax=aix.old;; \
+ 	  aix*) syntax=aix.new;; \
+-	  linux* | netbsd*) syntax=linux;; \
++	  linux* | netbsd* | openbsd*) syntax=linux;; \
+ 	  macos* | darwin*) syntax=macos;; \
+ 	  *) syntax=sysv4;; \
+ 	esac; \
