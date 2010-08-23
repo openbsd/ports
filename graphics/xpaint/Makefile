@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2010/08/23 17:25:47 jasper Exp $
 
 COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}
+REVISION=		2
 CATEGORIES=		graphics x11
 
 HOMEPAGE=		http://sf-xpaint.sourceforge.net/
