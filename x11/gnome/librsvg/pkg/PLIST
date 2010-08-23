@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/03/30 08:23:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/08/23 09:18:58 ajacoutot Exp $
 %%SHARED%%
 bin/rsvg
 @bin bin/rsvg-convert
@@ -9,21 +9,14 @@ include/librsvg-2/librsvg/librsvg-enum-types.h
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-cairo.h
 include/librsvg-2/librsvg/rsvg.h
-lib/gtk-2.0/
-lib/gtk-2.0/2.10.0/
-lib/gtk-2.0/2.10.0/engines/
-lib/gtk-2.0/2.10.0/engines/libsvg.a
-lib/gtk-2.0/2.10.0/engines/libsvg.la
-lib/gtk-2.0/2.10.0/loaders/
-lib/gtk-2.0/2.10.0/loaders/svg_loader.a
-lib/gtk-2.0/2.10.0/loaders/svg_loader.la
+@comment lib/gtk-2.0/2.10.0/engines/libsvg.a
+@comment lib/gtk-2.0/2.10.0/engines/libsvg.la
+@comment lib/gtk-2.0/2.10.0/loaders/svg_loader.a
+@comment lib/gtk-2.0/2.10.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
-lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg.1
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/rsvg/
 share/gtk-doc/html/rsvg/home.png
 share/gtk-doc/html/rsvg/index.html
@@ -45,4 +38,4 @@ share/gtk-doc/html/rsvg/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
 @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
-@unexec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
+@unexec-delete %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders

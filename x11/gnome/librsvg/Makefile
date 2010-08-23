@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/08/23 09:18:58 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.26.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	rsvg-2         28.0           # .28.2
 
@@ -25,7 +25,8 @@ WANTLIB += xcb-render xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gtk-x11-2.0
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		lang/python
 
 LIB_DEPENDS=	::x11/gtk+2 \
 		::devel/libgsf \
@@ -39,5 +40,9 @@ CONFIGURE_ARGS+=	--with-svgz \
 			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
+		${WRKSRC}/rsvg.in
 
 .include <bsd.port.mk>
