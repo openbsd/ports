@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/21 19:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/23 07:57:52 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.7
-REVISION =	0
+
+REVISION =	1
 
 SHARED_LIBS =	ibus	0.0	# 2.0
 
@@ -19,27 +20,29 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
-		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
-		pthread-stubs xcb xcb-render xcb-render-util z
+WANTLIB =	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c \
+		cairo dbus-1 dbus-glib-1 expat fontconfig freetype \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread pthread-stubs xcb xcb-render xcb-render-util z
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
 
 MODULES =	devel/gconf2 \
+		devel/gettext \
 		lang/python \
 		textproc/intltool
 
 BUILD_DEPENDS =	::devel/iso-codes \
 		::x11/dbus-python
-RUN_DEPENDS =	${BUILD_DEPENDS} \
+RUN_DEPENDS =	::devel/iso-codes \
 		::devel/desktop-file-utils \
 		::devel/py-notify \
 		::devel/py-xdg \
 		::sysutils/gamin,-server,no_python \
+		::x11/dbus-python \
 		::x11/gnome/librsvg \
 		::x11/py-gtk2
 
@@ -52,6 +55,7 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
+	 	 --disable-silent-rules \
 		 --disable-vala \
 		 --enable-introspection=no \
 		 --enable-gtk-doc-html=no
