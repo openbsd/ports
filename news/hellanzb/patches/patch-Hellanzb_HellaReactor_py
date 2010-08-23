@@ -1,0 +1,12 @@
+$OpenBSD: patch-Hellanzb_HellaReactor_py,v 1.1 2010/08/23 07:02:06 giovanni Exp $
+--- Hellanzb/HellaReactor.py.orig	Fri Aug 13 17:17:25 2010
++++ Hellanzb/HellaReactor.py	Fri Aug 13 17:17:38 2010
+@@ -9,7 +9,7 @@ reactor system so it can catch signals, and shutdown h
+ import Hellanzb, sys, time
+ 
+ import twisted.copyright
+-if twisted.copyright.version >= '2.0.0':
++if twisted.copyright.version >= '2.0.0' or twisted.copyright.version >= '10.0.0':
+     from twisted.internet.selectreactor import SelectReactor
+     from twisted.internet.selectreactor import _NO_FILENO
+     from twisted.internet.selectreactor import _NO_FILEDESC
