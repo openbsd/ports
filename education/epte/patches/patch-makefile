@@ -1,0 +1,47 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
+--- makefile.orig	Wed Apr  7 21:06:02 1999
++++ makefile	Mon Aug 23 07:53:15 2010
+@@ -320,13 +320,13 @@ IS_INTERACTIVE= yes
+ #ifdef VMS
+ CC = cc 
+ #else
+-CC = gcc
++CC ?= gcc
+ #endif
+ 
+ #ifdef DEVELOPER
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #else
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #endif
+ 
+ 
+@@ -340,11 +340,11 @@ DISTNAME = [system]
+ LIBS = -lcursesX -o epte
+ #endif
+ # Use ncurses library for linux & FreeBSD
+-#if defined(linux) || defined(__FreeBSD__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ LIBS = -lncurses -o epte
+ #endif
+ 
+-DISTNAME=/usr/bin
++DISTNAME=${PREFIX}
+ 
+ MAIN = ask_user.o bell.o bold.o blink.o draw_blocks.o draw_table.o endprog.o listcommand.o epte.o make_coordinates.o reverse.o setaudio.o setinput.o table_key.o ttflush.o ttinp.o
+ 
+@@ -364,10 +364,8 @@ clean: 
+ 
+ #ifndef VMS
+ install : epte
+-	chmod 555 epte
+-	cp epte ${DISTNAME}/epte
+-	chmod 555 /usr/man/man1
+-	cp epte.1 /usr/man/man1
++	${BSD_INSTALL_PROGRAM} epte ${DISTNAME}/bin/epte
++	${BSD_INSTALL_MAN} epte.1 ${DISTNAME}/man/man1
+ 
+ install-with-sound : epte
+ 	chmod 555
