@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/08/23 09:31:46 ajacoutot Exp $
 #
 
      SUBDIR =
@@ -7,6 +7,7 @@
      SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
      SUBDIR += edict
+     SUBDIR += epte
      SUBDIR += gamgi
      SUBDIR += gtypist
      SUBDIR += verbiste
