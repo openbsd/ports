@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/08/10 14:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2010/08/23 11:17:17 sthen Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -8,7 +8,7 @@ PKGNAME=	timidity-${V}p2
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
-MASTER_SITES0=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/
+MASTER_SITES0=	http://www.anime.net/~goemon/timidity/
 TIINS=		goemon.tgz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
 
