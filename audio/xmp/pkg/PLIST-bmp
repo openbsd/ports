@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-bmp,v 1.1 2009/12/16 07:49:29 jakemsr Exp $
+@comment $OpenBSD: PLIST-bmp,v 1.2 2010/08/23 18:13:58 jasper Exp $
+lib/bmp/
+lib/bmp/Input/
 lib/bmp/Input/xmp-bmp.so
