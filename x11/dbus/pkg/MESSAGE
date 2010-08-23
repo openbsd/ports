@@ -9,8 +9,8 @@ fi
 To start a session bus instance of dbus-daemon (needed by at least gvfs
 aware applications and ${PREFIX}/share/dbus-1/services/*.service),
 add the following lines in .xinitrc or .xession before starting the
-window manager (see dbus-launch(1) for more info):
-(note that some graphical managers, e.g. gdm(1) already do this for you)
+window manager (see dbus-launch(1) for more info) -- note that some
+session managers, e.g. gnome-session(1) already do this for you.
 
 if [ -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
 	eval `dbus-launch --auto-syntax --exit-with-session`
