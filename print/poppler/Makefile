@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/05/08 17:09:48 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/08/23 10:24:41 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -10,6 +10,10 @@ CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
+
+REVISION-main=	0
+REVISION-qt=	0
+REVISION-qt4=	0
 
 SHARED_LIBS +=	poppler              7.0
 SHARED_LIBS +=	poppler-glib         6.0
@@ -45,7 +49,7 @@ MAKE_FLAGS+=	POPPLER_QT_CXXFLAGS='-pthread -I${MODQT3_INCDIR}' \
 		qt_subdir=qt \
 		qt_pc_file=poppler-qt.pc
 
-MODULES+=	x11/qt3 
+MODULES+=	x11/qt3 converters/libiconv
 .endif
 .if empty(FLAVOR:L:Mno_qt4)
 MULTI_PACKAGES+=-qt4
@@ -59,33 +63,33 @@ MAKE_FLAGS+=	POPPLER_QT4_CFLAGS='-pthread -I${X11BASE}/include -I${MODQT4_INCDIR
 		arthur_includes='$$(POPPLER_QT4_CXXFLAGS)' \
 		arthur_libs='$$(POPPLER_QT4_LIBS)'
 
-MODULES+=	x11/qt4
+MODULES+=	x11/qt4 converters/libiconv
 QT4INC=		-I${MODQT4_INCDIR}
 .endif
 
-WANTLIB=	expat freetype fontconfig jpeg m z
+WANTLIB=	expat freetype fontconfig jpeg m z stdc++
 
-MODULES+=	converters/libiconv devel/gettext
+MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
-		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-		lcms::graphics/lcms \
-		openjpeg::graphics/openjpeg \
-		xml2::textproc/libxml
+		::x11/gtk+2 \
+		::graphics/lcms \
+		::graphics/openjpeg \
+		::textproc/libxml
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
-		poppler::print/poppler
+		::print/poppler
 LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 \
 		${MODLIBICONV_LIB_DEPENDS} \
-		poppler::print/poppler
+		::print/poppler
 
 WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
-		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 \
+		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 gdk_pixbuf-2.0 openjpeg \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo glitz pcre png \
-		pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB-qt=	${WANTLIB} lcms openjpeg xml2
-WANTLIB-qt4=	${WANTLIB} lcms openjpeg xml2
+		pthread-stubs xcb xcb-render xcb-render-util gdk-x11-2.0 lcms
+WANTLIB-qt=	${WANTLIB} lcms openjpeg xml2 poppler
+WANTLIB-qt4=	${WANTLIB} lcms openjpeg xml2 poppler QtCore QtGui QtXml
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \
