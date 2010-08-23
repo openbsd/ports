@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/23 12:06:08 ajacoutot Exp $
 
 COMMENT=		electronic periodic table of the elements
 
 DISTNAME=		epte-2.0.7
 CATEGORIES=		education
+
+REVISION=		0
 
 HOMEPAGE=		http://www.toddmiller.com/epte/
 
@@ -22,5 +24,8 @@ ALL_TARGET=		epte
 MASTER_SITES=		${HOMEPAGE}
 
 NO_REGRESS=		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/epte.1
 
 .include <bsd.port.mk>
