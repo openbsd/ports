@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/24 17:24:20 nicm Exp $
 
 COMMENT=		BitTorrent Protocol Daemon
 
-DISTNAME=		btpd-0.15
-REVISION=		1
+DISTNAME=		btpd-0.16
 CATEGORIES=		net
 
 MAINTAINER=		Nicholas Marriott <nicm@openbsd.org>
 
-HOMEPAGE=		http://www.murmeldjur.se/btpd/
+HOMEPAGE=		http://wiki.github.com/btpd/btpd/
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		http://github.com/downloads/btpd/btpd/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
