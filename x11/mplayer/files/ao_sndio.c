@@ -149,7 +149,8 @@ static int init(int rate, int channels, int format, int flags)
 		par.sig = 1;
 		par.le = 0;
 		break;
-	case AF_FORMAT_AC3:
+	case AF_FORMAT_AC3_BE:
+	case AF_FORMAT_AC3_LE:
 		par.bits = 16;
 		par.sig = 1;
 		par.le = SIO_LE_NATIVE;
@@ -193,7 +194,7 @@ static int init(int rate, int channels, int format, int flags)
 	bpf = par.bps * par.pchan;
 	ao_data.samplerate = par.rate;
 	ao_data.channels = par.pchan;
-	ao_data.format = ac3 ? AF_FORMAT_AC3 : format;
+	ao_data.format = ac3 ? AF_FORMAT_AC3_NE : format;
 	ao_data.bps = bpf * par.rate;
 	ao_data.buffersize = par.appbufsz * bpf;
 	ao_data.outburst = par.round * bpf;
