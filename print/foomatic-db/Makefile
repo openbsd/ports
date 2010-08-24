@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/22 06:57:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/24 16:33:26 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,8 @@ V=			20100821
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 CATEGORIES=		print
+
+REVISION=		0
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -48,5 +50,11 @@ pre-configure:
 	mv ${WRKSRC}/db/source/printer/${i}.xml \
 		${WRKSRC}/db/source/printer/${i}-splix.xml
 .endfor
+# We do not ship gutenprint (cups), but gutenprint-ijs.${MAJOR_V} that
+# is spooler independant, so don't display it as an valid driver --
+# MAJOR_V is set in the gutenprint port.
+	rm ${WRKSRC}/db/source/driver/gutenprint.xml
+	find ${WRKSRC}/db/source/printer -name '*.xml' | xargs grep -l "<driver>gutenprint" | \
+		xargs perl -pi -e 's,<driver>gutenprint</driver>,<driver>gutenprint-ijs.5.2</driver>,g'
 
 .include <bsd.port.mk>
