@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_runtime_x86-64-bsd-os_h,v 1.1 2010/08/24 12:20:30 jasper Exp $
+
+Fix FP exceptions after src/sys/arch/amd64/amd64/machdep.c 1.110
+
+--- src/runtime/x86-64-bsd-os.h.orig	Wed Jul 25 14:37:31 2007
++++ src/runtime/x86-64-bsd-os.h	Fri Jul 30 12:25:17 2010
+@@ -41,4 +41,9 @@ arch_os_context_mxcsr_addr(os_context_t *context)
+ }
+ #endif
+ 
++#if defined LISP_FEATURE_OPENBSD
++#define RESTORE_FP_CONTROL_FROM_CONTEXT
++void os_restore_fp_control(os_context_t *context);
++#endif
++
+ #endif /* _X86_64_BSD_OS_H */

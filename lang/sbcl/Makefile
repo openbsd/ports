@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/17 10:44:59 pirofti Exp $
+
+# $OpenBSD: Makefile,v 1.4 2010/08/24 12:20:30 jasper Exp $
 
 # not yet ported to other arches
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.0.31
+V =			1.0.41
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -39,11 +40,13 @@ BUILD_DEPENDS +=	::lang/clisp
 BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
 .endif
 
-.if ${MACHINE_ARCH} == "i386"
-PKG_ARGS +=		-Di386=1
-.else
-PKG_ARGS +=		-Di386=0
-.endif
+.for arch in amd64 i386 powerpc
+. if ${MACHINE_ARCH} == ${arch}
+PKG_ARGS +=		-D${arch}=1
+. else
+PKG_ARGS +=		-D${arch}=0
+. endif
+.endfor
 
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}

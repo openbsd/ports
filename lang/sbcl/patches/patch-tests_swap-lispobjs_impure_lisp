@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_swap-lispobjs_impure_lisp,v 1.1 2010/08/24 12:20:30 jasper Exp $
+--- tests/swap-lispobjs.impure.lisp.orig	Fri Jul 30 14:06:20 2010
++++ tests/swap-lispobjs.impure.lisp	Fri Jul 30 14:06:20 2010
+@@ -32,7 +32,7 @@
+ (run "cc" "-O3"
+      "-I" "../src/runtime/"
+      "swap-lispobjs.c"
+-     #+(and (or linux freebsd) (or x86-64 ppc mips)) "-fPIC"
++     #+(and (or linux freebsd openbsd) (or x86-64 ppc mips)) "-fPIC"
+      #+(and x86-64 darwin) "-arch" #+(and x86-64 darwin) "x86_64"
+      #+darwin "-bundle" #-darwin "-shared"
+      "-o" "swap-lispobjs.so")
