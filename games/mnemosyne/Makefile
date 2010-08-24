@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/01 12:06:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/24 08:19:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION=1.2
+MODPY_EGG_VERSION=1.2.2
 DISTNAME=	mnemosyne-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games education
 
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://mnemosyne-proj.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+HOMEPAGE=	http://www.mnemosyne-proj.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +23,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 MODULES=	lang/python
 
 MODPY_SETUPTOOLS=yes
-MODPY_BADEGGS=	Mnemosyne
 
 RUN_DEPENDS=	::x11/py-qt3 \
 		::devel/pygame \
