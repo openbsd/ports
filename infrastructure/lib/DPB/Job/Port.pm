@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.1.1.1 2010/08/20 13:40:14 espie Exp $
+# $OpenBSD: Port.pm,v 1.2 2010/08/24 15:07:54 naddy Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -80,7 +80,7 @@ sub run
 	$self->redirect($job->{log});
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
-	    "REPORT_PROBLEM='exit 1'", "BULK=No");
+	    "REPORT_PROBLEM=exit 1", "BULK=No");
 	if ($job->{special}) {
 		push(@args, "WRKOBJDIR=/tmp/ports");
 	}
