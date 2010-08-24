@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/24 11:37:50 landry Exp $
 
 COMMENT=	simple login manager
 
-DISTNAME=	slim-1.3.1
-REVISION=	3
+DISTNAME=	slim-1.3.2
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
+USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 LIB_DEPENDS=	::graphics/jpeg \
 		::graphics/png

@@ -1,2 +1,6 @@
 See ${PREFIX}/share/doc/slim/README.OpenBSD for more information on
 starting slim for your architecture.
+
+If you're upgrading from a version older than 1.3.2 and have modified
+${SYSCONFDIR}/slim.conf, make sure to remove './' from default_path
+configuration directive.
