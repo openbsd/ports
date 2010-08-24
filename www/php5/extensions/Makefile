@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2010/08/08 10:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2010/08/24 09:14:43 robert Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
 COMMENT-main=		informational package about PHP5 extensions
-REVISION=		0
-REVISION-xmlrpc=	1
 
 MULTI_PACKAGES=	-main
 
@@ -16,7 +14,7 @@ PREFIX?=		${CHROOT_DIR}
 FLAVORS=		no_x11
 FLAVOR?=
 
-WANTLIB=		stdc++ m
+#WANTLIB=		stdc++ m
 
 MODULES=		devel/gettext
 
@@ -198,7 +196,7 @@ MULTI_PACKAGES+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
 LIB_DEPENDS-mysqli=	lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB-mysqli=		${WANTLIB} crypto ssl z
+WANTLIB-mysqli=		${WANTLIB} crypto m ssl z
 .endif
 
 # ncurses
@@ -233,7 +231,7 @@ MULTI_PACKAGES+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_mysql=	lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB-pdo_mysql=	${WANTLIB} crypto ssl z
+WANTLIB-pdo_mysql=	${WANTLIB} crypto m ssl z
 .endif
 
 # pdo-pgsql
@@ -300,7 +298,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared
 LIB_DEPENDS-soap=
-WANTLIB-soap=		${WANTLIB} xml2 z iconv
+WANTLIB-soap=		${WANTLIB} m xml2 z iconv
 .endif
 
 # snmp
@@ -378,7 +376,7 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php5
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=
-WANTLIB-xmlrpc=		${WANTLIB} iconv xml2 z
+WANTLIB-xmlrpc=		${WANTLIB} iconv m xml2 z
 .endif
 
 # xsl
@@ -390,7 +388,7 @@ MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	xslt.>=3,exslt::textproc/libxslt
-WANTLIB-xsl=		${WANTLIB} iconv xml2 z
+WANTLIB-xsl=		${WANTLIB} iconv m xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}

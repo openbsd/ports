@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/08/08 10:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/08/24 09:14:43 robert Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -9,7 +9,6 @@ COMMENT-fastcgi=stand-alone FastCGI version of PHP
 PKGNAME=	php5-core-${V}
 PKGNAME-main=	php5-core-${V}
 PKGNAME-fastcgi=php5-fastcgi-${V}
-REVISION=	0
 
 DISTFILES=	php-${V}.tar.gz
 
@@ -51,7 +50,7 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-WANTLIB=	c crypto m ssl stdc++ z pthread
+WANTLIB=	c crypto m ssl z pthread
 LIB_DEPENDS=	xml2.>=8::textproc/libxml
 
 pre-fake:
