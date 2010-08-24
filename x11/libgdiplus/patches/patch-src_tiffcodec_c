@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_tiffcodec_c,v 1.1 2010/08/24 09:49:35 jasper Exp $
+
+Security fix for SA40792/CVE-2010-1526:
+Mono libgdiplus Image Processing Integer Overflow Vulnerabilities
+
+Patch from upstream git:
+http://github.com/mono/libgdiplus/commit/6779fbf994d5270720ccb1687ba8b004e20a1821
+
+--- src/tiffcodec.c.orig	Tue Aug 24 11:41:58 2010
++++ src/tiffcodec.c	Tue Aug 24 11:46:05 2010
+@@ -1104,6 +1104,8 @@ gdip_load_tiff_image (TIFF *tiff, GpImage **image)
+ 	frame = gdip_frame_add(result, &gdip_image_frameDimension_page_guid);
+ 
+ 	for (page = 0; page < num_of_pages; page++) {
++		unsigned long long int size;
++
+ 		bitmap_data = gdip_frame_add_bitmapdata(frame);
+ 		if (bitmap_data == NULL) {
+ 			goto error;
+@@ -1139,14 +1141,25 @@ gdip_load_tiff_image (TIFF *tiff, GpImage **image)
+ 			bitmap_data->image_flags |= ImageFlagsHasRealDPI;
+ 		}
+ 
+-		bitmap_data->stride = tiff_image.width * 4;
++		/* width and height are uint32, but TIFF uses 32 bits offsets (so it's real size limit is 4GB),
++		 * however libtiff uses signed int (int32 not uint32) as offsets so we limit ourselves to 2GB */
++		size = tiff_image.width;
++		/* stride is a (signed) _int_ and once multiplied by 4 it should hold a value that can be allocated by GdipAlloc
++		 * this effectively limits 'width' to 536870911 pixels */
++		size *= sizeof (guint32);
++		if (size > G_MAXINT32)
++			goto error;
++		bitmap_data->stride = size;
+ 		bitmap_data->width = tiff_image.width;
+ 		bitmap_data->height = tiff_image.height;
+ 		bitmap_data->reserved = GBD_OWN_SCAN0;
+ 		bitmap_data->image_flags |= ImageFlagsColorSpaceRGB | ImageFlagsHasRealPixelSize | ImageFlagsReadOnly;
+ 
+-		num_of_pixels = tiff_image.width * tiff_image.height;
+-		pixbuf = GdipAlloc(num_of_pixels * sizeof(guint32));
++		/* ensure total 'size' does not overflow an integer and fits inside our 2GB limit */
++		size *= tiff_image.height;
++		if (size > G_MAXINT32)
++			goto error;
++		pixbuf = GdipAlloc (size);
+ 		if (pixbuf == NULL) {
+ 			goto error;
+ 		}
+@@ -1168,9 +1181,9 @@ gdip_load_tiff_image (TIFF *tiff, GpImage **image)
+ 			memcpy(pixbuf + (bitmap_data->stride * (tiff_image.height - i - 1)), pixbuf_row, bitmap_data->stride);
+ 		}
+ 
+-		/* Now flip from ARGB to ABGR */
++		/* Now flip from ARGB to ABGR processing one pixel (4 bytes) at the time */
+ 		pixbuf_ptr = (guint32 *)pixbuf;
+-		for (i = 0; i < num_of_pixels; i++) {
++		for (i = 0; i < (size >> 2); i++) {
+ 			*pixbuf_ptr =	(*pixbuf_ptr & 0xff000000) | 
+ 					((*pixbuf_ptr & 0x00ff0000) >> 16) |
+ 					(*pixbuf_ptr & 0x0000ff00) | 

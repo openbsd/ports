@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_bmpcodec_c,v 1.1 2010/08/24 09:49:35 jasper Exp $
+
+Security fix for SA40792/CVE-2010-1526:
+Mono libgdiplus Image Processing Integer Overflow Vulnerabilities
+
+Patch from upstream git:
+http://github.com/mono/libgdiplus/commit/6779fbf994d5270720ccb1687ba8b004e20a1821
+
+--- src/bmpcodec.c.orig	Tue Aug 24 11:41:48 2010
++++ src/bmpcodec.c	Tue Aug 24 11:45:04 2010
+@@ -781,7 +781,6 @@ gdip_read_bmp_image (void *pointer, GpImage **image, I
+ 	int		colours;
+ 	BOOL		os2format = FALSE;
+ 	BOOL		upsidedown = TRUE;
+-	int		size;
+ 	int		size_read;
+ 	BYTE		*data_read = NULL;
+ 	int		line;
+@@ -793,6 +792,7 @@ gdip_read_bmp_image (void *pointer, GpImage **image, I
+ 	ARGB green_mask = 0;
+ 	ARGB blue_mask = 0;
+ 	int red_shift = 0;
++	unsigned long long int size;
+ 
+ 	status = gdip_read_BITMAPINFOHEADER (pointer, &bmi, source, &os2format, &upsidedown);
+ 	if (status != Ok)
+@@ -860,23 +860,30 @@ gdip_read_bmp_image (void *pointer, GpImage **image, I
+ 	result->active_bitmap->width = bmi.biWidth;
+ 	result->active_bitmap->height = bmi.biHeight;
+ 
++	/* biWidth and biHeight are LONG (32 bits signed integer) */
++	size = bmi.biWidth;
++
+ 	switch (result->active_bitmap->pixel_format) {
+ 	case PixelFormat1bppIndexed:
+-		result->active_bitmap->stride = (result->active_bitmap->width + 7) / 8;
++		result->active_bitmap->stride = (size + 7) / 8;
+ 		break;
+ 	case PixelFormat4bppIndexed:
+-		result->active_bitmap->stride = (result->active_bitmap->width + 1) / 2;
++		result->active_bitmap->stride = (size + 1) / 2;
+ 		break;
+ 	case PixelFormat8bppIndexed:
+-		result->active_bitmap->stride =  result->active_bitmap->width;
++		result->active_bitmap->stride = size;
+ 		break;
+-	case PixelFormat24bppRGB:
+-		result->active_bitmap->stride = result->active_bitmap->width * 4;
+-		break;
+ 	default:
+ 		/* For other types, we assume 32 bit and translate into 32 bit from source format */
+ 		result->active_bitmap->pixel_format = PixelFormat32bppRGB;
+-		result->active_bitmap->stride = result->active_bitmap->width * 4;
++		/* fall-thru */
++	case PixelFormat24bppRGB:
++		/* stride is a (signed) _int_ and once multiplied by 4 it should hold a value that can be allocated by GdipAlloc
++		 * this effectively limits 'width' to 536870911 pixels */
++		size *= 4;
++		if (size > G_MAXINT32)
++			goto error;
++		result->active_bitmap->stride = size;
+ 		break;
+ 	}
+ 
+@@ -922,7 +929,14 @@ gdip_read_bmp_image (void *pointer, GpImage **image, I
+ 		data_read = NULL;
+ 	}
+ 
+-	pixels = GdipAlloc (result->active_bitmap->stride * result->active_bitmap->height);
++	size = result->active_bitmap->stride;
++	/* ensure total 'size' does not overflow an integer and fits inside our 2GB limit */
++	size *= result->active_bitmap->height;
++	if (size > G_MAXINT32) {
++		status = OutOfMemory;
++		goto error;
++	}
++	pixels = GdipAlloc (size);
+ 	if (pixels == NULL) {
+ 		status = OutOfMemory;
+ 		goto error;
