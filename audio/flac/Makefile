@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2008/04/07 03:54:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.35 2010/08/25 20:27:16 sthen Exp $
 
 COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.2.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
 SHARED_LIBS +=  FLAC                 9.0      # .10.0
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-WANTLIB=	c m
+WANTLIB=	c m ogg.>=5 stdc++
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	ogg.>=5::audio/libogg
+LIB_DEPENDS=	::audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/nasm

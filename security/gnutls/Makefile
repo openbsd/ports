@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/08/03 11:49:44 stephan Exp $
+# $OpenBSD: Makefile,v 1.27 2010/08/25 20:27:16 sthen Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
 DISTNAME=	gnutls-2.8.6
+REVISION=	0
 CATEGORIES=	security
 
 SHARED_LIBS=	gnutls-extra	15.0 \
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gpg-error ncurses readline z
+WANTLIB += c gcrypt gpg-error lzo2 m ncurses readline stdc++ tasn1 z
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -29,9 +30,9 @@ MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gcrypt.>=14::security/libgcrypt \
-		tasn1::security/libtasn1 \
-		lzo2::archivers/lzo2
+LIB_DEPENDS=	::security/libgcrypt \
+		::security/libtasn1 \
+		::archivers/lzo2
 
 USE_LIBTOOL=	Yes
 

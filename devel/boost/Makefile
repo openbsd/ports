@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/05/26 12:25:23 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/08/25 20:27:16 sthen Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}p2
+PKGNAME=	boost-${VERSION}
+REVISION=	3
 
 VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}
@@ -61,7 +62,7 @@ CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
 
 NO_REGRESS=	Yes
 
-WANTLIB=	z c pthread util
+WANTLIB=	c m pthread stdc++ util z
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
