@@ -1,18 +1,23 @@
-$OpenBSD: patch-a,v 1.2 2000/06/02 18:19:06 espie Exp $
+$OpenBSD: patch-Imakefile,v 1.1 2010/08/25 18:00:56 jasper Exp $
 --- Imakefile.orig	Fri Aug  4 05:19:36 1995
-+++ Imakefile	Fri Jun  2 20:15:40 2000
++++ Imakefile	Wed Aug 25 19:55:25 2010
 @@ -17,8 +17,8 @@
  #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
  
          DO_XPMS = -DDO_XPMS
 -        XPM_INC = -I/usr/include/X11
 -        XPM_LIB = -L$(LIBDIR)/xpm -lXpm
-+        XPM_INC = -I/usr/X11R6/include/X11
++        XPM_INC = -I${X11BASE}/include/X11
 +        XPM_LIB = -lXpm
  
  
  # If you need this uncomment (particularly on decstations)
-@@ -48,6 +48,7 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLi
+@@ -44,10 +44,11 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLibs
+     CDEBUGFLAGS = DefaultCDebugFlags -DNDEBUG
+ #   CDEBUGFLAGS = -g
+ #   CDEBUGFLAGS = -g -DPARSE
+-#ifdef HPArchitecture
++#if defined(HPArchitecture) && !defined(OpenBSDArchitecture)
      CCOPTIONS = -Aa -D_HPUX_SOURCE
  #endif
  
@@ -20,7 +25,7 @@ $OpenBSD: patch-a,v 1.2 2000/06/02 18:19:06 espie Exp $
  # Sed substitions rule
  .sed: 
  	@echo 'SED SUBSTITUTIONS "$@.sed" ==> "$@"'
-@@ -57,7 +58,6 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLi
+@@ -57,7 +58,6 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLibs
  	     -e 's|==X_BITMAPS==|$(X_BITMAPS)|'   \
  	     -e '/==COLOR_SETTINGS_DIVIDER==/d'   \
  	     < $@.sed  >$@
