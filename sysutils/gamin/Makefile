@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/22 09:24:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/25 06:55:45 ajacoutot Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -11,10 +11,10 @@ PKGNAME-main=	libgamin-${GNOME_VERSION}
 REVISION-main=	3
 
 PKGNAME-server=	${DISTNAME}
-REVISION-server=8
+REVISION-server=9
 
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
-REVISION-python=1
+REVISION-python=2
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
 SHARED_LIBS +=  fam                  1.0      # .0.0
@@ -37,7 +37,7 @@ PSEUDO_FLAVORS=	no_python no_server
 FLAVOR?=
 
 MODULES=	x11/gnome
- 
+
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 
@@ -59,9 +59,12 @@ CONFIGURE_ARGS+= --disable-server
 MULTI_PACKAGES+= -python
 MODULES+=	lang/python
 WANTLIB-python += gamin-1
+RUN_DEPENDS-python += ${MODPY_RUN_DEPENDS}
 .else
 CONFIGURE_ARGS+= --without-python
 .endif
+
+MODPY_RUNDEP=	No
 
 USE_LIBTOOL=	Yes
 
