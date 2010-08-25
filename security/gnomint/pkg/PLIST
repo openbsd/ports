@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/25 13:43:58 ajacoutot Exp $
+@bin bin/gnomint
+@bin bin/gnomint-cli
+bin/gnomint-upgrade-db
+share/applications/gnomint.desktop
+share/gnomint/
+share/gnomint/addca.png
+share/gnomint/addcsr.png
+share/gnomint/ca-stamp-16.png
+share/gnomint/certificate_popup_menu.ui
+share/gnomint/certificate_properties_dialog.ui
+share/gnomint/change_password_dialog.ui
+share/gnomint/creation_process_window.ui
+share/gnomint/csr_popup_menu.ui
+share/gnomint/csr_properties_dialog.ui
+share/gnomint/dh_parameters_dialog.ui
+share/gnomint/export_certificate_dialog.ui
+share/gnomint/extractpkey.png
+share/gnomint/get_db_password_dialog.ui
+share/gnomint/get_password_dialog.ui
+share/gnomint/get_pkey_dialog.ui
+share/gnomint/gnomint.png
+share/gnomint/import_file_or_directory_dialog.ui
+share/gnomint/import_password_dialog.ui
+share/gnomint/key-16.png
+share/gnomint/main_window.ui
+share/gnomint/new_ca_window.ui
+share/gnomint/new_cert_window.ui
+share/gnomint/new_crl_dialog.ui
+share/gnomint/new_req_window.ui
+share/gnomint/preferences_dialog.ui
+share/gnomint/sign.png
+share/locale/ca/LC_MESSAGES/gnomint.mo
+share/locale/cs/LC_MESSAGES/gnomint.mo
+share/locale/de/LC_MESSAGES/gnomint.mo
+share/locale/es/LC_MESSAGES/gnomint.mo
+share/locale/fi/LC_MESSAGES/gnomint.mo
+share/locale/fr/LC_MESSAGES/gnomint.mo
+share/locale/it/LC_MESSAGES/gnomint.mo
+share/locale/oc/LC_MESSAGES/gnomint.mo
+share/locale/pt_BR/LC_MESSAGES/gnomint.mo
+share/locale/ru/LC_MESSAGES/gnomint.mo
+share/locale/sk/LC_MESSAGES/gnomint.mo
+share/locale/sv/LC_MESSAGES/gnomint.mo
+share/mime/packages/gnomint.xml
+share/pixmaps/
+share/pixmaps/gnomint.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnomint.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

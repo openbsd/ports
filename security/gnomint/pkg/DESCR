@@ -1,0 +1,17 @@
+gnoMint is a tool for an easy creation and management of Certification
+Authorities. It allows a fancy visualization of all the pieces that
+conform a CA: x509 certificates, CSRs, CRLs...
+
+Currently, it allows the creation of CAs, CSRs and Certificates, and
+export both public and private parts of them into PEM formatted files.
+It manages the revocation of the created certificates, as well as the
+creation of CRLs.
+
+gnoMint is now perfectly usable for managing a CA that emits
+certificates able to:
+
+    * Authenticate people or machines in VPNs (IPSec or other protocols);
+    * Secure HTTP communications with SSL/TLS secured web servers;
+    * Authenticate and cipher HTTP communications through web-client 
+      certificates;
+    * Sign and/or crypt e-mails

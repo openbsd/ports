@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/08/25 13:43:58 ajacoutot Exp $
+--- configure.orig	Wed Aug 25 09:59:19 2010
++++ configure	Wed Aug 25 09:59:34 2010
+@@ -14338,7 +14338,7 @@ fi
+ 
+ 
+ if test "x$GCC" = "xyes"; then
+-	CFLAGS="-Wall -Werror"
++	CFLAGS="-Wall"
+ 	if test "x$use_debug" = "xYes"; then
+    	   CFLAGS="$CFLAGS -g -O0"
+ 	fi
