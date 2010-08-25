@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/23 18:17:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/08/25 14:29:56 sthen Exp $
 
 VMEM_WARNING =	Yes
 
@@ -34,7 +34,7 @@ SEPARATE_BUILD =	simple
 REGRESS_TARGET =	test
 
 # XXX eats all memory
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-O0
 .endif
 
