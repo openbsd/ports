@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2009/09/04 11:44:00 eric Exp $
+# $OpenBSD: Makefile,v 1.20 2010/08/25 20:45:52 sthen Exp $
 
 COMMENT=	cairo bindings for Python
 
 VERSION=	1.8.8
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py-cairo-${VERSION}
+REVISION=	0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/pycairo/
@@ -19,11 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://cairographics.org/releases/
 
-WANTLIB=	X11 Xau Xdmcp Xrender expat fontconfig freetype glitz
-WANTLIB+=	m pixman-1 png pthread-stubs xcb z
+WANTLIB=	X11 Xau Xdmcp Xrender cairo expat fontconfig freetype glitz m
+WANTLIB+=	pixman-1 png pthread-stubs xcb xcb-render xcb-render-util z
+
 
 MODULES=	lang/python
-LIB_DEPENDS=	cairo::graphics/cairo
+LIB_DEPENDS=	::graphics/cairo
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 

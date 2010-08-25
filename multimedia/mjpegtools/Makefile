@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/08/25 20:45:52 sthen Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-1.9.0rc3
-PKGNAME=		${DISTNAME}p4
+REVISION=		5
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		4.0 \
 			lavfile-1.9	4.0 \
@@ -33,14 +33,16 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 			gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pthread pthread-stubs pixman-1 \
-			sndio stdc++ usbhid xcb z
+                        sndio stdc++ usbhid xcb z gthread-2.0 xcb-render \
+			xcb-render-util SDL dv jpeg png gdk-x11-2.0 \
+			gdk_pixbuf-2.0 gtk-x11-2.0
 
 MODULES+=		devel/gettext
-LIB_DEPENDS=		SDL.>=2:sdl-*-!no_x11:devel/sdl \
-			dv.>=4::multimedia/libdv \
-			jpeg.>=62::graphics/jpeg \
-			png.>=4::graphics/png \
-			gdk-x11-2.0.>=400.0,gdk_pixbuf-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2 \
+LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
+			::multimedia/libdv \
+			::graphics/jpeg \
+			::graphics/png \
+			::x11/gtk+2 \
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/08/25 20:45:52 sthen Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
 DISTNAME=		libnotify-0.4.5
-PKGNAME=		${DISTNAME}p0
+REVISION=		1
 CATEGORIES=		devel
 SHARED_LIBS +=	notify             2.3      # .2.3
 
@@ -19,16 +19,18 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender Xcomposite Xdamage atk-1.0 c cairo expat pcre \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		fontconfig freetype glib-2.0 pangoft2-1.0 png pixman-1 \
-		pthread z gio-2.0 pthread-stubs xcb
+		pthread z gio-2.0 pthread-stubs xcb gthread-2.0 xcb-render \
+		xcb-render-util dbus-1 dbus-glib-1 gdk_pixbuf-2.0 \
+		gdk-x11-2.0 gtk-x11-2.0
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/libnotify/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		dbus-1.>=3::x11/dbus \
-			dbus-glib-1.>=3::x11/dbus-glib \
-			gdk_pixbuf-2.0.>=1000,gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+LIB_DEPENDS=		::x11/dbus \
+			::x11/dbus-glib \
+			::x11/gtk+2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
