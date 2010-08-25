@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/02 08:45:32 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/25 06:34:50 ajacoutot Exp $
 
 COMMENT =	GnuPG extension for Seamonkey
 
 VERSION =	1.0.1
 PKGNAME =	enigmail-seamonkey-${VERSION}
-REVISION =	2
+REVISION =	3
 
 # must be in sync with SO_VERSION in
 # www/seamonkey

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/05 22:42:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/08/25 06:34:51 ajacoutot Exp $
 
 COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-3.8.8
-PKGNAME=		${DISTNAME}p0
+REVISION=		1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
@@ -78,11 +78,11 @@ CONFIGURE_ARGS=		--with-rt-group=bin \
 			--enable-graphviz \
 			--enable-gd
 
-RUN_DEPENDS+=		::security/gnupg \
+RUN_DEPENDS+=		:gnupg-<2:security/gnupg \
 			::graphics/gd \
 			::math/graphviz,-main
 
-BUILD_DEPENDS+=		::security/gnupg \
+BUILD_DEPENDS+=		:gnupg-<2:security/gnupg \
 			::graphics/gd \
 			::math/graphviz,-main
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2010/05/23 21:33:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2010/08/25 06:34:50 ajacoutot Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.3.1
 DISTNAME=		Mail-SpamAssassin-${VER}
-PKGNAME=		p5-${DISTNAME:S/-rc/rc/}p0
+PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
+REVISION=		1
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r923114
 CATEGORIES=		mail perl5
 
@@ -37,7 +38,7 @@ COMMON_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \
-			:gnupg-*:security/gnupg \
+			:gnupg-<2:security/gnupg \
 			::devel/re2c
 
 MAKE_ENV+=		CC="${CC}"

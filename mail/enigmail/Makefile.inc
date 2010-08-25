@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/07/27 20:18:24 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/08/25 06:34:50 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,7 +17,7 @@ MASTER_SITES =	http://www.mozilla-enigmail.org/download/source/
 
 BUILD_DEPENDS =	::${MOZAPP_PKGPATH}:configure \
 		::archivers/unzip
-RUN_DEPENDS =	::security/gnupg
+RUN_DEPENDS =	:gnupg-<2:security/gnupg
 LIB_DEPENDS =	::${MOZAPP_PKGPATH},-main
 WANTLIB =	c m nspr4 plc4 plds4 stdc++ ${MOZAPP_DIR}/xpcom ${MOZAPP_DIR}/xpcom_core
 

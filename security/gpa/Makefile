@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 23:13:31 lum Exp $
+# $OpenBSD: Makefile,v 1.21 2010/08/25 06:34:51 ajacoutot Exp $
 
 COMMENT=	graphical interface for GnuPG
 
 DISTNAME=	gpa-0.7.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=    	security x11
 
 HOMEPAGE=	http://www.gnupg.org/gpa.html
@@ -27,8 +27,8 @@ WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util z
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
-		::security/gnupg
-BUILD_DEPENDS=	::security/gnupg
+		:gnupg-<2:security/gnupg
+BUILD_DEPENDS=	:gnupg-<2:security/gnupg
 LIB_DEPENDS=	::security/gpgme \
 		::x11/gtk+2
 

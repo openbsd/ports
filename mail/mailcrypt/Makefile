@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/17 19:32:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/08/25 06:34:50 ajacoutot Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
 DISTNAME=	mailcrypt-3.5.7
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=     mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mailcrypt/}
 
@@ -22,7 +22,7 @@ FLAVOR?=	gnupg
 BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
 
 .if ${FLAVOR:L:Mgnupg}
-RUN_DEPENDS=	:gnupg-*:security/gnupg
+RUN_DEPENDS=	:gnupg-<2:security/gnupg
 .endif
 
 .if ${FLAVOR:L:Mpgp}

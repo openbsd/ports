@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/10 12:14:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/25 06:34:51 ajacoutot Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
 DISTNAME=	GnuPG-Interface-0.36
+REVISION=	0
 CATEGORIES=	security
 
 # Perl
@@ -14,6 +15,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Class-MethodMaker \
-		:gnupg-*:security/gnupg
+		:gnupg-<2:security/gnupg
 
 .include <bsd.port.mk>	

@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/08/25 06:34:51 ajacoutot Exp $
 
 COMMENT=	Python module for GnuPG interface
 
 VERSION=	0.3.2
 DISTNAME=	GnuPGInterface-${VERSION}
-PKGNAME=	py-gnupg-${VERSION}p2
+PKGNAME=	py-gnupg-${VERSION}
+
+REVISION=	3
+
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://py-gnupg.sourceforge.net/
@@ -20,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=py-gnupg/}
 MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:gnupg-*:security/gnupg
+RUN_DEPENDS=	:gnupg-<2:security/gnupg
 
 NO_REGRESS=	Yes
 

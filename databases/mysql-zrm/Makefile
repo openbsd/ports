@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/11 10:01:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/25 06:34:50 ajacoutot Exp $
 
 COMMENT =	MySQL backup scripts
 
 V =		2.2
 DISTNAME =	MySQL-zrm-$V.0
-PKGNAME =	${DISTNAME:L}p0
+PKGNAME =	${DISTNAME:L}
+REVISION =	1
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.zmanda.com/
@@ -21,7 +22,7 @@ MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
 
 RUN_DEPENDS =	::archivers/gtar \
 		::databases/p5-DBD-mysql \
-		::security/gnupg \
+		:gnupg-<2:security/gnupg \
 		::textproc/p5-XML-Parser
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
