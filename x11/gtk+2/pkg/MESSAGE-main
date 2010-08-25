@@ -1,3 +1,4 @@
-If you intend to run GNOME applications outside of GNOME, you need to
-setup a default gtk+2 icon theme by adding a line in ~/.gtkrc-2.0.
+Some gtk+2 applications (notably GNOME ones), when run standalone
+outside of a Desktop Environment will not display icons unless an icon
+theme is configured. You can setup one adding a line to ~/.gtkrc-2.0.
     e.g. gtk-icon-theme-name="gnome"
