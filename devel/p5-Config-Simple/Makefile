@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/19 21:07:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/25 11:17:42 jasper Exp $
 
 COMMENT =	simple configuration file class
 
 MODULES =	cpan
 DISTNAME =	Config-Simple-4.59
+REVISION =	0
 CATEGORIES =	devel
+
+MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
