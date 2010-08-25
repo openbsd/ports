@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.144 2010/07/30 21:24:39 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.145 2010/08/25 10:16:48 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -137,25 +137,25 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/ \
 	ftp://ftp.gnome.org/pub/GNOME/
 
+# mirror survey: http://www.cs.uu.nl/stats/mirmon/cpan.html
 MASTER_SITE_PERL_CPAN+=	\
+	http://mirror.sov.uk.goscomb.net/CPAN/modules/by-module/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
-	ftp://ftp.mirror.anlx.net/CPAN/modules/by-module/ \
+	http://cpan.mirror.anlx.net/CPAN/modules/by-module/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	http://ftp.kddilabs.jp/lang/perl/CPAN/modules/by-module/ \
 	ftp://ftp.dnsbalance.ring.gr.jp/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.dnsbalance.ring.gr.jp/archives/lang/perl/CPAN/modules/by-module/ \
-	ftp://ftp.kddilabs.jp/lang/perl/CPAN/modules/by-module/ \
-	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/ \
-	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
-	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
+	http://mir2.ovh.net/ftp.cpan.org/modules/by-module/ \
+	http://mirror.hiwaay.net/CPAN/modules/by-module/ \
+	http://mirrors1.kernel.org/cpan/modules/by-module/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
-	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
-	ftp://mirrors.ucr.ac.cr/CPAN/modules/by-module/ \
-	ftp://mirror.datapipe.net/pub/CPAN/modules/by-module/ \
-	ftp://cpan.mirrors.tds.net/pub/CPAN/modules/by-module/ \
+	http://mirrors.ucr.ac.cr/CPAN/modules/by-module/ \
+	http://mirror.datapipe.net/CPAN/modules/by-module/ \
+	http://cpan.mirrors.tds.net/modules/by-module/ \
 	ftp://ftp.epix.net/pub/languages/perl/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
-	ftp://ftp.demon.co.uk/pub/CPAN/modules/by-module/ \
-	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
+	http://cpan.rinet.ru/modules/by-module/ \
 	http://www.cpan.dk/modules/by-module/ \
 	ftp://mirrors.dotsrc.org/cpan/modules/by-module/
 
