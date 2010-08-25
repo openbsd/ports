@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/10 12:41:46 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/08/25 10:13:33 jasper Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -24,6 +24,7 @@ share/doc/stella/graphics/debugger_tiatab.png
 share/doc/stella/graphics/debugger_tiazoomcmenu.png
 share/doc/stella/graphics/developer_stats.png
 share/doc/stella/graphics/eventmapping.png
+share/doc/stella/graphics/eventmapping_combo.png
 share/doc/stella/graphics/eventmapping_remap.png
 share/doc/stella/graphics/eventmapping_virtualdevs.png
 share/doc/stella/graphics/jr_pacman.png
@@ -48,5 +49,6 @@ share/doc/stella/graphics/rominfo_1x_large.png
 share/doc/stella/graphics/rominfo_1x_small.png
 share/doc/stella/graphics/rominfo_2x_small.png
 share/doc/stella/graphics/secret_quest.png
+share/doc/stella/graphics/select_romdir.png
 share/doc/stella/graphics/space_invaders.png
 share/doc/stella/index.html
