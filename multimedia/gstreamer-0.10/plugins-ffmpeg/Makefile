@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/22 19:21:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/08/25 23:27:21 sthen Exp $
 
 COMMENT =		ffmpeg element for GStreamer
 
 V =			0.10.11
 DISTNAME =		gst-ffmpeg-$V
 PKGNAME =		gstreamer-ffmpeg-$V
+REVISION =		0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-ffmpeg/}
 
@@ -17,7 +18,7 @@ AUTOCONF_VERSION =	2.65
 MODULES +=	devel/gettext
 
 WANTLIB += bz2 faac faad glib-2.0 gmodule-2.0 gobject-2.0 gsm
-WANTLIB += gthread-2.0 m mp3lame ogg oil-0.3 pcre schroedinger-1.0
+WANTLIB += gthread-2.0 m mp3lame ogg pcre schroedinger-1.0
 WANTLIB += speex theora vorbis vorbisenc x264 xml2 z orc-0.4
 WANTLIB += gstreamer-0.10 gstbase-0.10 gstaudio-0.10 gstvideo-0.10
 WANTLIB += gstinterfaces-0.10 avcodec avformat avutil postproc swscale

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/09/28 18:32:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/08/25 23:27:21 sthen Exp $
 
 COMMENT=	flash rendering library
+
 DISTNAME=	swfdec-0.8.4
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
@@ -17,16 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/swfdec/0.8/
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls \
-		gobject-2.0 gpg-error gstreamer-0.10 gthread-2.0 m oil-0.3 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread-stubs sndio tasn1 xcb xml2 z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
+WANTLIB += m oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread-stubs sndio soup-2.4 tasn1 xcb
+WANTLIB += xcb-render xcb-render-util xml2 z
 
-LIB_DEPENDS=	soup-2.4::devel/libsoup \
-		gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
-		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::devel/libsoup \
+		::devel/liboil \
+		::multimedia/gstreamer-0.10/plugins-base \
+		::x11/gtk+2
 
 RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-bad \
 		::multimedia/gstreamer-0.10/plugins-ugly \
@@ -49,8 +53,8 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
 post-patch:
-	cp ${FILESDIR}/swfdec_playback_sndio.c ${WRKSRC}/swfdec-gtk/
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	@cp ${FILESDIR}/swfdec_playback_sndio.c ${WRKSRC}/swfdec-gtk/
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i -f
 
 .include <bsd.port.mk>

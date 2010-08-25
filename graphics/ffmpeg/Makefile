@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.57 2010/08/20 12:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2010/08/25 23:27:21 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=		20100512
 DISTNAME=	ffmpeg-svn-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	http://gormsby.com/downloads/ \
-		http://comstyle.com/source/
+MASTER_SITES=	http://comstyle.com/source/ \
+		http://gormsby.com/downloads/
 
 SHARED_LIBS=	avcodec		14.0 \
 		avdevice	3.0 \
@@ -31,7 +31,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
-WANTLIB=	X11 Xext Xfixes c m ogg oil-0.3 pthread sndio z
+WANTLIB=	X11 Xext Xfixes c m ogg orc-0.4 pthread sndio z
 
 BUILD_DEPENDS=	::textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+= --arch=generic
 .endif
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lgsm -lm -lmp3lame -logg -loil-0.3 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lm -lsndio -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 LIBavfilter_EXTRALIBS=-lm
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib

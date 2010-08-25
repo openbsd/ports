@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/05/26 21:48:19 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.19 2010/08/25 23:27:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,8 @@ DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
 PKGNAME-main=	gegl-${V}
-PKGNAME-plugins=gegl-plugins-${V}p0
+PKGNAME-plugins=gegl-plugins-${V}
+REVISION-plugins=	1
 
 SHARED_LIBS=	gegl-0.1	0.0 # .101.1
 
@@ -53,7 +54,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += Half Iex IlmThread Imath faac faad gsm mp3lame ogg
-WANTLIB-plugins += oil-0.3 schroedinger-1.0 speex stdc++ theora
+WANTLIB-plugins += orc-0.4 schroedinger-1.0 speex stdc++ theora
 WANTLIB-plugins += vorbis vorbisenc x264
 
 RUN_DEPENDS-plugins= ::${BUILD_PKGPATH},-main

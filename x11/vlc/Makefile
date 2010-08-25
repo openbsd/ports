@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2010/08/25 23:27:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	6
+REVISION-main=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -60,7 +60,7 @@ WANTLIB-main=	GL GLU ICE SM SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 bz2 \
 		c cairo dbus-glib-1 expat faac fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gsm gthread-2.0 gtk-x11-2.0 jpeg m mp3lame oil-0.3 ogg pango-1.0 \
+		gsm gthread-2.0 gtk-x11-2.0 jpeg m mp3lame orc-0.4 ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread-stubs pthread \
 		stdc++.>=46.0 sndio tiff usbhid xcb-keysyms xcb-render \
 		xcb-render-util xcb z lib/qt4/QtGui SDL_image png mad mpeg2 \

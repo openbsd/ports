@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/07/26 16:33:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/08/25 23:27:21 sthen Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-neon =		1
 REVISION-mjpeg =	1
 
@@ -40,7 +40,7 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
 			cairo croco-0.6 expat fontconfig freetype stdc++ \
 			gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 gstinterfaces-0.10 \
-			oil-0.3 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
+			oil-0.3 orc-0.4 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
 			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
 			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \
 			gsttag-0.10 sndfile mpcdec faac faad dca exif xvidcore \
@@ -48,22 +48,23 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			SoundTouch dvdnav jasper
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			::${P}/plugins-base \
-			::audio/libsndfile \
-			::audio/libmpcdec \
 			::audio/faac \
 			::audio/faad \
-			::audio/libdca \
-			::graphics/libexif \
-			::multimedia/xvidcore \
-			::devel/sdl \
-			::multimedia/libmms \
 			::audio/gsm \
-			::x11/gnome/librsvg \
-			::multimedia/schroedinger \
 			::audio/libcdaudio \
+			::audio/libdca \
+			::audio/libmpcdec \
+			::devel/liboil \
+			::audio/libsndfile \
 			::audio/soundtouch \
-			:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav \
-			::graphics/jasper
+			::devel/sdl \
+			::graphics/jasper \
+			::graphics/libexif \
+			::multimedia/libmms \
+			::multimedia/schroedinger \
+			::multimedia/xvidcore \
+			::x11/gnome/librsvg \
+			:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 

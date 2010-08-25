@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2010/08/24 14:55:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.172 2010/08/25 23:27:21 sthen Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -13,7 +13,7 @@ SUBST_VARS+= 		PREFIX CONFDIR
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
 PKGNAME=		${N}-${V}
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		a52 bz2 c cdda_interface cdda_paranoia crypto dca \
 			dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
-			m mng mp3lame mpcdec ncurses ogg.>=5 oil-0.3 png \
+			m mng mp3lame mpcdec ncurses ogg.>=5 orc-0.4 png \
 			pthread schroedinger-1.0 sndio speex stdc++ theora \
 			ungif util x264.>=3 xvidcore z
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/02 07:19:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/25 23:27:21 sthen Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
 DISTNAME=		wxsvg-1.0.4
+REVISION=		0
 EPOCH=			0
 SHARED_LIBS +=	wxsvg                0.0      # .0.0
 CATEGORIES=		x11 graphics
@@ -21,7 +22,7 @@ EXTRACT_SUFX=		.tar.bz2
 WANTLIB += X11 Xau Xdmcp bz2 c expat faac faad fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 m mp3lame
 WANTLIB += ogg pango-1.0 pangoft2-1.0 pcre pthread stdc++ theora
-WANTLIB += vorbis vorbisenc x264 z oil-0.3 schroedinger-1.0
+WANTLIB += vorbis vorbisenc x264 z orc-0.4 schroedinger-1.0
 WANTLIB += pthread-stubs xcb
 WANTLIB += gsm gthread-2.0 speex
 

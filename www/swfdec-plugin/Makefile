@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/13 14:17:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/25 23:27:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,8 @@ COMMENT=		Flash plugin for Mozilla browsers
 
 V=			0.8.2
 DISTNAME=		swfdec-mozilla-$V
-PKGNAME=		swfdec-plugin-$Vp2
+PKGNAME=		swfdec-plugin-$V
+REVISION=		3
 CATEGORIES=		graphics www
 
 HOMEPAGE=		http://swfdec.freedesktop.org/
@@ -27,9 +28,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		glitz gmodule-2.0 gnutls gobject-2.0 gpg-error gstpbutils-0.10 \
 		gstreamer-0.10 gthread-2.0 gtk-x11-2.0 m oil-0.3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
-		sndio soup-2.4 tasn1 xcb xml2 z
+		sndio soup-2.4 swfdec-0.8 swfdec-gtk-0.8 tasn1 xcb xcb-render \
+		xcb-render-util xml2 z
 
-LIB_DEPENDS=		swfdec-0.8,swfdec-gtk-0.8::graphics/swfdec
+LIB_DEPENDS=		::graphics/swfdec
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
