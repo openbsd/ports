@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/27 20:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/26 20:21:34 jasper Exp $
 
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.4
 DISTNAME=	xdx-${VERSION}
-PKGNAME=	${DISTNAME}p4
+REVISION=	5
 
 CATEGORIES=    	comms hamradio
-
-HOMEPAGE=	http://www.qsl.net/pg4i/linux/xdx.html
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -20,16 +18,16 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gthread-2.0 pthread xcb-render
-WANTLIB += xcb-render-util
+WANTLIB += xcb-render-util gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0
 
-MASTER_SITES=		http://www.qsl.net/pg4i/download/
+MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+LIB_DEPENDS=	::x11/gtk+2
 
 USE_X11=	Yes
 
