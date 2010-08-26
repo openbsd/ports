@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/08/26 12:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/08/26 21:32:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	flash player with firefox browser plugin
 VER=		0.8.3
 DISTNAME=	gnash-${VER}
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	www
 MASTER_SITES=	http://getgnash.org/packages/releases/
@@ -43,8 +43,7 @@ LIB_DEPENDS+=	::net/curl \
 RUN_DEPENDS+=	:gstreamer-ffmpeg->=0.10.4p0:multimedia/gstreamer-0.10/plugins-ffmpeg \
 		::multimedia/gstreamer-0.10/plugins-ugly \
 		::multimedia/gstreamer-0.10/plugins-bad \
-		::multimedia/gstreamer-0.10/plugins-good \
-		:gstreamer-libsoup->=0.10.19p1:multimedia/gstreamer-0.10/plugins-good,-soup
+		::multimedia/gstreamer-0.10/plugins-good
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

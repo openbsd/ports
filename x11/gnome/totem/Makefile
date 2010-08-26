@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/08/26 21:31:21 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.30.2
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	multimedia
 
@@ -44,7 +44,6 @@ BUILD_DEPENDS+=	::graphics/ffmpeg \
 
 BUILD_DEPENDS+=	::x11/py-gtk2 \
 		::devel/py-gdata \
-		:gstreamer-libsoup->=0.10.22:multimedia/gstreamer-0.10/plugins-good,-soup \
 		::devel/iso-codes
 RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \
@@ -63,7 +62,7 @@ LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
 RUN_DEPENDS+=	::multimedia/gstreamer-0.10/plugins-base \
-		::multimedia/gstreamer-0.10/plugins-good,-soup \
+		::multimedia/gstreamer-0.10/plugins-good \
 		::multimedia/gstreamer-0.10/plugins-ugly \
 		:gstreamer-ffmpeg->=0.10.5:multimedia/gstreamer-0.10/plugins-ffmpeg
 
