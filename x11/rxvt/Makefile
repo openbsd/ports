@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/08/26 10:36:52 sthen Exp $
 
 COMMENT-main=	color, low memory usage, xterm replacement
 COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
@@ -6,9 +6,9 @@ COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
 PKGNAME-main=	rxvt-${VER}
-REVISION-main=	4
+REVISION-main=	5
 PKGNAME-clock=	rclock-${VER}
-REVISION-clock=	0
+REVISION-clock=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rxvt/} \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/ \
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.rxvt.org/
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

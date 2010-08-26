@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_init_c,v 1.1 2010/08/26 10:36:53 sthen Exp $
+
+avoid a race commonly hit by tiling WMs
+
+--- src/init.c.orig	Wed Aug 25 23:52:24 2010
++++ src/init.c	Wed Aug 25 23:53:06 2010
+@@ -1316,6 +1316,9 @@ rxvt_run_command(rxvt_t *r, const char *const *argv)
+ /* need to trap SIGURG for SVR4 (Unixware) rlogin */
+ /* signal (SIGURG, SIG_DFL); */
+ 
++/* set window size */
++    rxvt_tt_winsize(STDIN_FILENO, r->TermWin.ncol, r->TermWin.nrow);
++
+ #ifndef __QNX__
+ /* spin off the command interpreter */
+     switch (r->h->cmd_pid = fork()) {
+@@ -1398,9 +1401,6 @@ rxvt_run_child(rxvt_t *r, const char *const *argv)
+ 	}
+ #endif				/* SRIOCSREDIR */
+     }
+-
+-    /* set window size */
+-    rxvt_tt_winsize(STDIN_FILENO, r->TermWin.ncol, r->TermWin.nrow);
+ 
+ /* reset signals and spin off the command interpreter */
+     signal(SIGINT, SIG_DFL);
