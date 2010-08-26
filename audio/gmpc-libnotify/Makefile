@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/04 23:13:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/26 11:17:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,6 +34,8 @@ RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \
 			:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		notify::devel/libnotify
+
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
