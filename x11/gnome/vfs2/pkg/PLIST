@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/03/30 15:07:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/08/26 09:19:39 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
+@pkgpath x11/gnome/vfs2,-main
+@pkgpath x11/gnome/vfs2,-smb
 @bin bin/gnomevfs-cat
 @bin bin/gnomevfs-copy
 @bin bin/gnomevfs-df
