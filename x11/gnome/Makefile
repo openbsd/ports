@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2010/05/04 20:39:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2010/08/26 10:15:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -61,7 +61,6 @@
      SUBDIR += libgnomecups
      SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
-     SUBDIR += libgnomeuimm
      SUBDIR += libgnomeprint
      SUBDIR += libgnomeprintui
      SUBDIR += librsvg
@@ -107,7 +106,6 @@
      SUBDIR += users-guide
      SUBDIR += utils
      SUBDIR += vfs2
-     SUBDIR += vfsmm
      SUBDIR += video-arcade
      SUBDIR += vinagre
      SUBDIR += vino
