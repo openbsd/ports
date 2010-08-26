@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2010/08/25 13:45:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.238 2010/08/26 13:58:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -212,7 +212,6 @@
      SUBDIR += towitoko
      SUBDIR += vomit
      SUBDIR += vpnc
-     SUBDIR += whisker
      SUBDIR += wpa_supplicant
      SUBDIR += xmlsec
      SUBDIR += zebedee
