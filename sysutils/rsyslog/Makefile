@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/26 21:28:58 steven Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,7 @@ COMMENT-pgsql =		postgresql plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
-V =			4.6.3
+V =			4.6.4
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
@@ -35,7 +35,8 @@ RUN_DEPENDS-mysql =	:${FULLPKGNAME-main}:${BASE_PKGPATH},-main
 LIB_DEPENDS-pgsql =	:postgresql-client-*:databases/postgresql
 RUN_DEPENDS-pgsql =	:${FULLPKGNAME-main}:${BASE_PKGPATH},-main
 
-MASTER_SITES =		http://download.rsyslog.com/rsyslog/
+MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
+			http://download.rsyslog.com/rsyslog/
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.63
