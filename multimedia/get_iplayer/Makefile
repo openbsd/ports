@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2010/06/04 23:04:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/08/26 01:44:26 jakemsr Exp $
 
 COMMENT =		download/stream programmes from BBC iPlayer
 
 DISTNAME =		get_iplayer-2.78
-PKGNAME =		${DISTNAME}p1
+REVISION =		2
 CATEGORIES =		multimedia
 
 # http://git.infradead.org/get_iplayer.git
@@ -38,7 +38,7 @@ pre-configure:
 	${SUBST_CMD} -c ${FILESDIR}/options.sample ${WRKSRC}/options.sample
 
 do-build:
-	-cd ${WRKSRC}; ./get_iplayer --manpage get_iplayer.1
+	-cd ${WRKSRC}; env -i HOME=${WRKSRC} ./get_iplayer --manpage get_iplayer.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
