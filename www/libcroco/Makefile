@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/25 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/26 16:59:37 sthen Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
 GNOME_VERSION=		0.6.2
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=	croco-0.6            4.0      # .3.1
 CATEGORIES=		www devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c glib-2.0 m pcre pthread xmlt z
+WANTLIB=		c glib-2.0 m pcre pthread xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
