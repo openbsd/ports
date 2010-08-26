@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/02 10:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2010/08/26 09:25:20 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	ISO-C API and CLI for generating UUIDs
 COMMENT-perl=	UUID modules for Perl
 
-VERSION=		1.6.0
+VERSION=		1.6.2
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME-main=	uuid-${VERSION}p1
-FULLPKGNAME-perl= 	p5-UUID-${VERSION}p1
+FULLPKGNAME-main=	uuid-${VERSION}
+FULLPKGNAME-perl= 	p5-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
