@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:36:21 jasper Exp $
-${P5SITE}/Bio/
+@comment $OpenBSD: PLIST,v 1.2 2010/08/26 13:35:24 jasper Exp $
 ${P5SITE}/Bio/ASN1/
 ${P5SITE}/Bio/ASN1/EntrezGene/
 ${P5SITE}/Bio/ASN1/EntrezGene.pm
