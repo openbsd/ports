@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/13 14:35:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/08/26 12:09:07 ajacoutot Exp $
 @bin bin/dumpshm
 bin/gnash
 @bin bin/gprocessor
@@ -44,11 +44,28 @@ share/examples/gnash/gnashrc
 share/gnash/
 share/gnash/GnashG.png
 share/gnash/gnash_128_96.ico
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gnash.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gnash.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gnash.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gnash.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gnash.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gnash.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gnash.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gnash.mo
