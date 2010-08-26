@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/08/22 10:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/08/26 12:08:32 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -42,8 +42,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			devel/gconf2
 
-BUILD_DEPENDS=		:gstreamer-gnome->=0.10.25:multimedia/gstreamer-0.10/plugins-base,-gnome \
-			::multimedia/gstreamer-0.10/py-gstreamer
+BUILD_DEPENDS=		::multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			musicbrainz3::audio/libmusicbrainz \
 			notify::devel/libnotify \
@@ -53,8 +52,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			soup-gnome-2.4.>=1::devel/libsoup,-gnome \
 			avahi-client,avahi-common,avahi-glib::net/avahi \
 			ffi::devel/libffi
-RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base,-gnome \
-			::x11/gnome/icon-theme \
+RUN_DEPENDS=		::x11/gnome/icon-theme \
 			::multimedia/gstreamer-0.10/py-gstreamer
 REGRESS_DEPENDS=	::devel/check
 
@@ -76,7 +74,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-hal \
 			--without-mtp \
 			--without-ipod \
-			--without-hal \
 			--without-libbrasero-media \
 			--without-libnautilus-burn \
 			--disable-vala \
