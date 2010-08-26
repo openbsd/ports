@@ -1,27 +1,30 @@
-# $OpenBSD: Makefile,v 1.58 2010/07/24 09:25:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/08/26 21:33:27 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-gdk =		gdk pixbuf element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
-COMMENT-soup =		libsoup element for GStreamer (plugins-good)
 
 V =			0.10.24
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
-EPOCH-main =		0
 PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
-PKGNAME-soup =		gstreamer-libsoup-${V}
 
-REVISION =		1
+EPOCH-main =		0
+
+REVISION-main =		2
+REVISION-aalib =	1
+REVISION-dv =		1
+REVISION-gdk =		1
+REVISION-caca =		1
 
 MULTI_PACKAGES =	-main -aalib \
-			-dv -gdk -caca -soup
+			-dv -gdk -caca
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -50,7 +53,9 @@ WANTLIB-main =		${WANTLIB} \
 			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
 			gstfft-0.10 gstrtsp-0.10 gstsdp-0.10 gstpbutils-0.10 \
-			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2
+			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2 \
+			eggdbus-1 gcrypt gio-2.0 gnome-keyring gnutls \
+			gpg-error proxy soup-2.4 soup-gnome-2.4 sqlite3 tasn1
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
 			:orc->=0.4.6:devel/orc \
@@ -62,7 +67,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			::audio/speex \
 			::$P/plugins-base \
 			::net/libshout \
-			::archivers/bzip2
+			::archivers/bzip2 \
+			::devel/libsoup,-gnome
 RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 
@@ -86,14 +92,6 @@ WANTLIB-caca =		${WANTLIB} \
 			X11 ncurses Xau Xdmcp pthread-stubs xcb caca
 LIB_DEPENDS-caca =	${LIB_DEPENDS} \
 			::graphics/libcaca
-
-WANTLIB-soup =		${WANTLIB} \
-			ORBit-2 dbus-1 dbus-glib-1 gcrypt gio-2.0 \
-			gnome-keyring gnutls gpg-error gsttag-0.10 proxy \
-			sqlite3 tasn1 eggdbus-1 soup-2.4 soup-gnome-2.4
-LIB_DEPENDS-soup =	${LIB_DEPENDS} \
-			${MODGCONF2_LIB_DEPENDS} \
-			::devel/libsoup,-gnome
 
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-dv1394 \

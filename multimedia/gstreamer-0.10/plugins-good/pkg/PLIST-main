@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2010/07/22 19:17:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2010/08/26 21:33:27 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.18
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -6,6 +6,7 @@
 @conflict gstreamer-confelements-*
 @conflict gstreamer-flac-*
 @conflict gstreamer-shout-*
+@conflict gstreamer-libsoup-*
 @conflict gstreamer-speex-*
 @conflict gstreamer-taglib-*
 @conflict gstreamer-wavpack-*
@@ -15,6 +16,7 @@
 @pkgpath ${BASE_PKGPATH},-gconf
 @pkgpath ${BASE_PKGPATH},-flac
 @pkgpath ${BASE_PKGPATH},-shout
+@pkgpath ${BASE_PKGPATH},-soup
 @pkgpath ${BASE_PKGPATH},-speex
 @pkgpath ${BASE_PKGPATH},-taglib
 @pkgpath ${BASE_PKGPATH},-wavpack
@@ -106,6 +108,8 @@ lib/gstreamer-${VERSION}/libgstshapewipe.so
 lib/gstreamer-${VERSION}/libgstshout2.so
 @comment lib/gstreamer-${VERSION}/libgstsmpte.la
 lib/gstreamer-${VERSION}/libgstsmpte.so
+@comment lib/gstreamer-${VERSION}/libgstsouphttpsrc.la
+lib/gstreamer-${VERSION}/libgstsouphttpsrc.so
 @comment lib/gstreamer-${VERSION}/libgstspectrum.la
 lib/gstreamer-${VERSION}/libgstspectrum.so
 @comment lib/gstreamer-${VERSION}/libgstspeex.la
