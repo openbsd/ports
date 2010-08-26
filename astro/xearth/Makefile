@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
@@ -12,9 +12,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Cannot sell
 PERMIT_DISTFILES_FTP=   Yes
 
-REVISION =	2
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m \
-			pthread-stubs xcb
+REVISION =	3
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m
 
 CONFIGURE_STYLE= imake
 

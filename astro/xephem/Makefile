@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -13,8 +13,7 @@ PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
 
 REVISION =	2
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m \
-			pthread-stubs xcb
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m
 
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake

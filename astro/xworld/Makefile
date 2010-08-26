@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-REVISION =	0
-WANTLIB=	X11 c m pthread-stubs xcb
+REVISION =	1
+WANTLIB=	X11 c m
 
 USE_X11=	Yes
 

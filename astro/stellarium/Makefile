@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/06/11 08:53:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=	free open source planetarium
 
 DISTNAME=	stellarium-0.10.5
+REVISION=	0
 
 CATEGORIES=	astro x11
 
@@ -19,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 
 WANTLIB += GL GLU ICE SM X11 Xext c m pthread stdc++ z
+WANTLIB += QtSql QtGui QtNetwork QtOpenGL QtScript
 
 USE_X11=	Yes
 
@@ -26,7 +28,7 @@ MODULES=	devel/gettext \
 		devel/cmake \
 		x11/qt4
 
-LIB_DEPENDS=	QtSql,QtGui,QtNetwork,QtOpenGL,QtScript::x11/qt4
+LIB_DEPENDS=	::x11/qt4
 
 # used to download more stars definitions
 RUN_DEPENDS=	::net/curl \

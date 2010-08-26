@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -43,14 +43,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION-main =	2
+REVISION-main =	3
 REVISION-maps = 0
-WANTLIB-main=		X11 Xext Xpm Xau Xdmcp c m pthread-stubs xcb z
+WANTLIB-main=		X11 Xext Xpm Xau Xdmcp c m z jpeg png
 DIST_SUBDIR=		sunclock
 
 
-LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg \
-			png.>=2::graphics/png
+LIB_DEPENDS-main=	::graphics/jpeg \
+			::graphics/png
 
 .if ${MULTI_PACKAGES:M-maps} # with maps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}

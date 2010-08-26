@@ -1,4 +1,4 @@
-$OpenBSD: patch-run_gettle,v 1.2 2007/12/18 09:08:24 ajacoutot Exp $
+$OpenBSD: patch-run_gettle,v 1.3 2010/08/26 11:12:46 jasper Exp $
 --- run/gettle.orig	Wed Mar 15 05:26:06 1995
 +++ run/gettle	Tue Dec 18 09:53:05 2007
 @@ -24,18 +24,21 @@
@@ -9,7 +9,7 @@ $OpenBSD: patch-run_gettle,v 1.2 2007/12/18 09:08:24 ajacoutot Exp $
 -set satdir=/home/manfred
 -set satuser=manfred
 +set ftphost=archive.afit.af.mil
-+set satdir=__PREFIX__/lib
++set satdir=${PREFIX}/lib
 +set satuser=sattrack
  #
  #

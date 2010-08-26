@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=		wm-dockapp; shows the moon phase
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION =	2
-WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
+REVISION =	3
+WANTLIB=		X11 Xext Xpm c m
 
 MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 

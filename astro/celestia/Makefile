@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/08/26 11:12:46 jasper Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -17,18 +17,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 
-REVISION =	3
+REVISION =	4
 WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0
 WANTLIB += c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
+WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0 lua theora
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext \
-		lua.>=5::lang/lua \
-		theora.>=2::multimedia/libtheora
+LIB_DEPENDS=	::x11/gtkglext \
+		::lang/lua \
+		::multimedia/libtheora
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/11 16:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/08/26 11:12:46 jasper Exp $
 
 V=		3.1.6
 COMMENT=	real-time satellite tracking and orbit propagation program
@@ -11,8 +11,8 @@ PERMIT_PACKAGE_FTP=	May not distribute modified version
 PERMIT_DISTFILES_CDROM=	May not be bundled, according to copyright
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION =	3
-WANTLIB=	ICE SM X11 Xt c m pthread-stubs xcb
+REVISION =	4
+WANTLIB=	ICE SM X11 Xt c m
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
@@ -22,9 +22,8 @@ WRKDIST=	${WRKDIR}/SatTrack-${V}
 WRKSRC=		${WRKDIST}/src
 
 pre-configure:
-	@perl -pi -e 's,__PREFIX__,${PREFIX},g' \
-		${WRKDIST}/run/getsts \
-		${WRKDIST}/run/gettle
+	${SUBST_CMD} ${WRKDIST}/run/getsts \
+			${WRKDIST}/run/gettle
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
