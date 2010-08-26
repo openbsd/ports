@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.41 2010/07/18 06:12:26 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.42 2010/08/26 07:44:11 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -51,7 +51,7 @@ related ports under the x11/gnome category)
    * ekiga - SIP and H.323 conferencing application
    * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
    * epiphany (+epiphany-extensions) - lightweight and simple web browser
-   * evolution - integrated email and PIM software
+   * evolution (+evolution-plugins) - integrated email and PIM software
    * gossip - Jabber client
 
  - Development
