@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/02 21:16:15 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/08/26 22:05:05 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -26,8 +26,6 @@ PERMIT_DISTFILES_FTP =	Yes
 PSEUDO_FLAVORS =	no_deps
 FLAVOR ?=
 
-WANTLIB-main =		c gmp m pthread util
-
 .if ! ${FLAVOR:L:Mno_deps}
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register
@@ -35,6 +33,8 @@ MODGHC_BUILD =		cabal hackage register
 LIB_DEPENDS-lib =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			::devel/gmp
+
+WANTLIB-main =		c gmp m pthread util
 
 BUILD_DEPENDS +=	::devel/alex \
 			::devel/happy \
@@ -53,6 +53,11 @@ AUTOCONF_DIR =		${WRKSRC}/doc
 WRKCONF =		${AUTOCONF_DIR}
 .else
 MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
+
+do-build:
+	@echo "*** The no_deps FLAVOR is not meant to be built at all, it is"
+	@echo "*** only used by lang/ghc to get a copy of the haddock sources."
+	@false
 .endif
 
 post-build:
