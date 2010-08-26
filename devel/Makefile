@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.820 2010/08/19 21:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.821 2010/08/26 01:11:28 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -187,6 +187,7 @@
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
+     SUBDIR += libdisorder
      SUBDIR += libdockapp
      SUBDIR += libdvdread
      SUBDIR += libelf
