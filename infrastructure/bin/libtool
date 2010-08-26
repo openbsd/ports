@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.1 2010/08/20 15:09:54 espie Exp $
+# $OpenBSD: libtool,v 1.2 2010/08/26 17:48:27 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -600,6 +600,8 @@ sub write_shared_libs_log
 		close $fh;
 	}
 	open ($fh, '>>', $logfile);
+	# Remove first leading 'lib', we don't want that in SHARED_LIBS_LOG.
+	$libname =~ s/^lib//;
 	printf $fh "SHARED_LIBS +=\t%-20s %-8s # %s\n", $libname, $v, $origv;
 }
 
