@@ -30,7 +30,7 @@ $SUDO ifconfig $BRIDGE create > /dev/null 2>&1 && {
 # Since we can specify ETHER and BRIDGE above, its possible that
 # this tun interface or this physical interface was setup as part of
 # a different bridge earlier, and that is never cleaned up, so we have
-# to cleanup here first before we set it up; a physcal interface cannot
+# to cleanup here first before we set it up; a physical interface cannot
 # be member to more than one bridge, thankfully, or I never would have
 # caught this
 ifconfig bridge | sed -n '/^bridge[0-9]*/{s/:.*$//;p;}' | while read brif

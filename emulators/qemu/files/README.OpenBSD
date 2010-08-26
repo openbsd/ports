@@ -12,7 +12,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 
 1. Get a bootable CDROM image
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd47.iso
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd48.iso
 
 2. Create a virtual disk image:
 
@@ -21,7 +21,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 3. Install the os:
 
     $ qemu -m 32 -monitor stdio -no-fd-bootchk -hda virtual.img \
-	-cdrom cd47.iso -boot d
+	-cdrom cd48.iso -boot d
 
    NOTE: start this inside an xterm or equivalent
    NOTE: be sure to choose serial console during install
@@ -175,7 +175,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 	- you may then disconnect vnc and use the terminal from which you
 	  started qemu to do the install
 
-    b. qemu -nographic .. virtual.img -fda floppy47.fs -boot a
+    b. qemu -nographic .. virtual.img -fda floppy48.fs -boot a
 
 	- this maps both the serial port and the (qemu) monitor prompt to
 	  the terminal qemu was started on
@@ -184,7 +184,7 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 	- preparation of the floppy image to force serial console mode is
 	  straightforward:
 
-		vnconfig svnd0 floppy47.fs
+		vnconfig svnd0 floppy48.fs
 		mount /dev/svnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf

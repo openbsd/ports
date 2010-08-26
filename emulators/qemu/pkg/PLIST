@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/05/27 17:55:05 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/08/26 13:44:30 sthen Exp $
 @pkgpath emulators/qemu,kqemu
+@pkgpath emulators/qemu-old
 @bin bin/qemu
 @bin bin/qemu-img
 @bin bin/qemu-io

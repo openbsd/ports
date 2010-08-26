@@ -1,12 +1,4 @@
-QEMU is a generic and open source processor emulator 
-which achieves a good emulation speed by using dynamic translation.
-
-QEMU has two operating modes:
-
-* Full system emulation. In this mode, QEMU emulates 
-a full system (for example a PC), including a processor and 
-various peripherals. It can be used to launch different
-Operating Systems without rebooting the PC or to debug system code.
-
-* User mode emulation (Linux host only). In this mode, 
-QEMU can launch Linux processes compiled for one CPU on another CPU. 
+QEMU is an open source machine emulator. It can run OSes and programs
+made for one machine (e.g. an ARM board) on a different machine
+(e.g. your own PC). By using dynamic translation, it achieves very
+good performance.
