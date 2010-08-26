@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/11 15:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/08/26 08:48:21 jasper Exp $
 
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
 DISTNAME=	freeze-2.5
 CATEGORIES=	archivers
 
-MASTER_SITES=	http://ngsoftwareltd.com/freebsd/distfiles/ \
-		http://www.arcane-labs.net/download/OpenBSD/
+MASTER_SITES=	http://www.arcane-labs.net/download/OpenBSD/
 
 # None
 PERMIT_PACKAGE_CDROM=	No
