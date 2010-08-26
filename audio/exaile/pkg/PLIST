@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/21 07:02:42 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/08/26 12:09:32 ajacoutot Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -903,8 +903,6 @@ share/locale/id/LC_MESSAGES/exaile.mo
 share/locale/it/LC_MESSAGES/exaile.mo
 share/locale/ja/LC_MESSAGES/exaile.mo
 share/locale/ka/LC_MESSAGES/exaile.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/exaile.mo
 share/locale/ko/LC_MESSAGES/exaile.mo
 share/locale/lt/LC_MESSAGES/exaile.mo
