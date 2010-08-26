@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-gnome,v 1.4 2009/11/29 09:17:17 ajacoutot Exp $
-@comment lib/gstreamer-${VERSION}/libgstgnomevfs.la
-lib/gstreamer-${VERSION}/libgstgnomevfs.so

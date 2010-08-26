@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/07/22 19:16:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/08/26 21:33:03 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
+@conflict gstreamer-gnome-*
 @conflict gstreamer-ogg-*
+@conflict gstreamer-pango-*
 @conflict gstreamer-theora-*
 @conflict gstreamer-vorbis-*
-@conflict gstreamer-pango-*
+@pkgpath ${BASE_PKGPATH},-gnome
 @pkgpath ${BASE_PKGPATH},-ogg
+@pkgpath ${BASE_PKGPATH},-pango
 @pkgpath ${BASE_PKGPATH},-theora
 @pkgpath ${BASE_PKGPATH},-vorbis
-@pkgpath ${BASE_PKGPATH},-pango
 bin/gst-visualise-${VERSION}
 include/gstreamer-${VERSION}/gst/app/
 include/gstreamer-${VERSION}/gst/app/gstappbuffer.h

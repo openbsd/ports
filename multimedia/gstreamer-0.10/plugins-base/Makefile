@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/24 09:25:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/08/26 21:33:03 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
-COMMENT-gnome =		gnome vfs element for GStreamer (plugins-base)
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
 
 V =			0.10.30
 DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
-PKGNAME-gnome =		gstreamer-gnome-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
-REVISION-main =		0
-REVISION-gnome =	0
+REVISION-main =		1
 REVISION-cdda =		0
 
-MULTI_PACKAGES =	-main -gnome -cdda
+MULTI_PACKAGES =	-main -cdda
 
 SHARED_LIBS +=  gstinterfaces-0.10   2.2      # .21.0
 SHARED_LIBS +=  gsttag-0.10          2.2      # .21.0
@@ -57,15 +54,9 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			::devel/pango \
 			::multimedia/libtheora \
 			::audio/tremor
-RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
-
-WANTLIB-gnome =		${WANTLIB} \
-			ORBit-2 avahi-client avahi-common avahi-glib \
-			crypto gconf-2 ssl gsttag-0.10 gnomevfs-2 \
-			gstbase-0.10 util dbus-1 dbus-glib-1
-LIB_DEPENDS-gnome = 	${LIB_DEPENDS} \
-			gsttag-0.10::${BUILD_PKGPATH} \
-			::x11/gnome/vfs2
+RUN_DEPENDS-main +=	${MODGETTEXT_RUN_DEPENDS}
+# needed for the gio plugin
+RUN_DEPENDS-main +=	::x11/gnome/gvfs
 
 WANTLIB-cdda =		${WANTLIB} \
 			gstbase-0.10 gsttag-0.10 cdda_interface cdda_paranoia
@@ -76,6 +67,7 @@ LIB_DEPENDS-cdda = 	${LIB_DEPENDS} \
 CONFIGURE_ARGS +=	--disable-libvisual \
 			--disable-alsa \
 			--disable-gst_v4l \
+			--disable-gnome_vfs \
 			--enable-orc
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 
