@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/06/27 20:58:10 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/26 05:16:12 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -9,12 +9,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		c
+WANTLIB=		c gmp mpfr
 DIST_SUBDIR=gcc
 
 
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	avr-gcc-${V}
+REVISION=	0
 DISTFILES=	gcc-core-${V}${EXTRACT_SUFX} \
 		gcc-g++-${V}${EXTRACT_SUFX}
 #EXTRACT_ONLY=	${DISTFILES}
@@ -26,8 +27,8 @@ BUILD_DEPENDS+=		:autoconf-2.13:devel/autoconf/2.13 \
 			::devel/metaauto		\
 			::devel/avr/binutils
 
-LIB_DEPENDS=		gmp:gmp->=4.2:devel/gmp \
-			mpfr::devel/mpfr
+LIB_DEPENDS=		:gmp->=4.2:devel/gmp \
+			::devel/mpfr
 
 LANGS=c,c++
 # dear autoconf, why do you suck so hard?

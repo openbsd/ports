@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/26 05:16:12 jasper Exp $
 
 SUBDIR =
 SUBDIR += binutils
-SUBDIR += libc
 SUBDIR += gcc
 SUBDIR += gdb
+SUBDIR += libc
 
 .include <bsd.port.subdir.mk>
