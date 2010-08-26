@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/11 00:16:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/26 13:30:08 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}pdf/
+MASTER_SITES=		http://spacehopper.org/mirrors/ \
+			${HOMEPAGE}pdf/
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
