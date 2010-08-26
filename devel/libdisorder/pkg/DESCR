@@ -1,0 +1,5 @@
+libdisorder is a small, simple C library for use by programmers in
+other programs. The library's primary function reports entropy 
+in bits: essentially, this is the number of bits necessary to encode 
+the actual level of information contained in the data passed to the
+library: it is the theoretical maximum amount of compression possible.

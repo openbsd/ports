@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/26 01:10:16 kevlo Exp $
+%%SHARED%%
+%%no_mips64%%
+@bin bin/ropy
+include/disorder.h
+lib/libdisorder.a
+lib/libdisorder_p.a
