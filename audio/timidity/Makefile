@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2010/08/23 11:17:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/08/27 00:52:01 jakemsr Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.13.2
 DISTNAME=	TiMidity++-${V}
-PKGNAME=	timidity-${V}p2
+PKGNAME=	timidity-${V}
+REVISION=	3
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
@@ -25,7 +26,7 @@ WANTLIB=		c m ncurses sndio
 CONFIGURE_STYLE=autoconf automake gnu
 AUTOCONF_VERSION = 2.59
 AUTOMAKE_VERSION = 1.9
-CONFIGURE_ARGS= --enable-audio=sndio,sun \
+CONFIGURE_ARGS= --enable-audio=sndio \
 		--with-default-output=sndio \
 		--enable-vt100 \
 		--enable-ncurses \
@@ -39,18 +40,20 @@ FLAVOR?=
 CONFIGURE_ARGS+=--enable-gtk
 MODULES=	devel/gettext
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
-		fontconfig freetype glib-2.0 glitz gio-2.0 gmodule-2.0 \
-		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread-stubs xcb z
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glib-2.0 glitz gio-2.0 gmodule-2.0 gobject-2.0 \
+		gtk-x11-2.0 gthread-2.0 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
+		xcb-render xcb-render-util z
 .endif
 
 .if ${FLAVOR:L:Mxaw}
 CONFIGURE_ARGS+=--enable-xaw
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt
 .endif
 
 .if ! ${FLAVOR:L:Mgtk2} && ! ${FLAVOR:L:Mxaw}
