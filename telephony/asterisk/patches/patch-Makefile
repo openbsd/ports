@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.28 2010/07/25 10:08:03 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.29 2010/08/27 00:48:19 sthen Exp $
 --- Makefile.orig	Thu Jun 10 21:35:06 2010
 +++ Makefile	Wed Jun 30 15:25:51 2010
 @@ -121,7 +121,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
@@ -47,8 +47,8 @@ $OpenBSD: patch-Makefile,v 1.28 2010/07/25 10:08:03 sthen Exp $
  		echo ";sendfullybooted = yes  ; Send the FullyBooted AMI event on AMI login and when all modules are finished loading" ; \
 -		echo ";runuser = asterisk ; The user to run as" ; \
 -		echo ";rungroup = asterisk ; The group to run as" ; \
-+		echo "runuser = asterisk ; The user to run as" ; \
-+		echo "rungroup = asterisk ; The group to run as" ; \
++		echo "runuser = _asterisk ; The user to run as" ; \
++		echo "rungroup = _asterisk ; The group to run as" ; \
  		echo ";lightbackground = yes ; If your terminal is set for a light-colored background" ; \
  		echo "documentation_language = en_US ; Set the Language you want Documentation displayed in. Value is in the same format as locale names" ; \
  		echo ";hideconnect = yes ; Hide messages displayed when a remote console connects and disconnects" ; \
