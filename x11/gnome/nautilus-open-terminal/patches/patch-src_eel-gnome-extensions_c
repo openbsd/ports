@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_eel-gnome-extensions_c,v 1.1 2010/08/27 10:05:59 jakemsr Exp $
+--- src/eel-gnome-extensions.c.orig	Fri Aug 27 00:45:54 2010
++++ src/eel-gnome-extensions.c	Fri Aug 27 00:47:03 2010
+@@ -64,7 +64,7 @@ try_terminal_command (const char *program,
+ 	if (args == NULL || args[0] == '\0') {
+ 		return quoted;
+ 	}
+-	result = g_strconcat (quoted, " ", args, NULL);
++	result = g_strconcat (quoted, " ", args, (char *)NULL);
+ 	g_free (quoted);
+ 	return result;
+ }
+@@ -164,7 +164,7 @@ _not_eel_gnome_make_terminal_command (const char *comm
+ 	}
+ 	prefix = get_terminal_command_prefix (TRUE);
+ 	quoted = g_shell_quote (command);
+-	terminal_command = g_strconcat (prefix, " /bin/sh -c ", quoted, NULL);
++	terminal_command = g_strconcat (prefix, " /bin/sh -c ", quoted, (char *)NULL);
+ 	g_free (prefix);
+ 	g_free (quoted);
+ 	return terminal_command;
