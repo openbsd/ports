@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
---- configure.orig	Wed Aug 12 20:28:10 2009
-+++ configure	Thu Sep 10 07:13:52 2009
-@@ -572,7 +572,7 @@ do
+$OpenBSD: patch-configure,v 1.11 2010/08/28 09:20:13 sthen Exp $
+--- configure.orig	Tue Mar  9 18:39:59 2010
++++ configure	Fri May 28 09:53:05 2010
+@@ -1044,7 +1044,7 @@ do
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
    | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
@@ -10,14 +10,22 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target_alias ;;
-@@ -4875,13 +4875,13 @@ if test $ac_cv_lib_cma_pthread_create = yes; then
+@@ -5651,20 +5651,20 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_cma_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_cma_pthread_create" >&6; }
+ if test $ac_cv_lib_cma_pthread_create = yes; then
+-  THREADLIBS="$THREADLIBS -lpthread"
++  THREADLIBS="$THREADLIBS -pthread"
+ fi
+ 
+ if test $ac_cv_lib_cma_pthread_create = yes; then
  	have_pthreads="yes"
  fi
  
--echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -27,9 +35,9 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4940,19 +4940,19 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+@@ -5720,19 +5720,19 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  THREADLIBS="$THREADLIBS -lpthread"
 +  THREADLIBS="$THREADLIBS -pthread"
@@ -38,10 +46,10 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  if test $ac_cv_lib_pthread_pthread_create = yes; then
  	have_pthreads="yes"
  else
--		echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
--echo $ECHO_N "checking for pthread_mutex_init in -lpthread... $ECHO_C" >&6
-+		echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
-+echo $ECHO_N "checking for pthread_mutex_init in -pthread... $ECHO_C" >&6
+-		{ echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_mutex_init in -lpthread... $ECHO_C" >&6; }
++		{ echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
++echo $ECHO_N "checking for pthread_mutex_init in -pthread... $ECHO_C" >&6; }
  if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -51,16 +59,16 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5011,7 +5011,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6
+@@ -5788,7 +5788,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6; }
  if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
 -  THREADLIBS="$THREADLIBS -lpthread"
 +  THREADLIBS="$THREADLIBS -pthread"
  fi
  
  	if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
-@@ -5401,7 +5401,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -6127,7 +6127,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -69,7 +77,7 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  
  
  
-@@ -5775,7 +5775,7 @@ echo $ECHO_N "checking for gdImagePng in -lgd (order 1
+@@ -6506,7 +6506,7 @@ echo $ECHO_N "checking for gdImagePng in -lgd (order 1
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_save_LIBS="$LIBS"
@@ -78,16 +86,16 @@ $OpenBSD: patch-configure,v 1.10 2009/09/12 12:35:20 sturm Exp $
  	cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5834,7 +5834,7 @@ fi
- echo "${ECHO_T}yes" >&6
+@@ -6562,7 +6562,7 @@ fi
+ echo "${ECHO_T}yes" >&6; }
  
  			GDLIBFOUND=yep
 -			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
 +			GDLIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm"
  
  	else
- 	  echo "$as_me:$LINENO: result: no" >&5
-@@ -6841,9 +6841,9 @@ echo $ECHO_N "checking for linker flags for loadable m
+ 	  { echo "$as_me:$LINENO: result: no" >&5
+@@ -7527,9 +7527,9 @@ echo $ECHO_N "checking for linker flags for loadable m
  			MOD_LDFLAGS="-shared"
  			MOD_CFLAGS="-fPIC"
  		;;
