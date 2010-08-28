@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/08/28 09:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/08/28 09:42:45 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
@@ -24,7 +24,7 @@ MULTI_PACKAGES=	-main -web
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 BUILD_DEPENDS=	:gd-*:graphics/gd
-LIB_DEPENDS=	ltdl.>=4::devel/libtool,-ltdl
+LIB_DEPENDS=	::devel/libtool,-ltdl
 RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins \
 		::www/php5/core
 
@@ -70,7 +70,7 @@ LIB_DEPENDS-web=gd::graphics/gd
 RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
 .endif
 
-WANTLIB-main=	${WANTLIB} pthread
+WANTLIB-main=	${WANTLIB} ltdl.>=4 pthread
 
 NO_REGRESS=	Yes
 
