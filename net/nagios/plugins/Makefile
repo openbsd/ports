@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/13 21:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/08/28 09:19:48 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -10,15 +10,7 @@ COMMENT-pgsql=	postgresql plugin
 COMMENT-samba=	samba plugin
 COMMENT-snmp=	plugins using snmp
 
-V=		1.4.14
-REVISION-main=	0
-REVISION-fping=	0
-REVISION-game=	0
-REVISION-ldap=	0
-REVISION-mysql=	0
-REVISION-ntp=	0
-REVISION-pgsql=	0
-REVISION-snmp=	0
+V=		1.4.15
 DISTNAME=	nagios-plugins-${V}
 PKGNAME-main=	nagios-plugins-${V}
 PKGNAME-fping=	nagios-plugins-fping-${V}
@@ -33,7 +25,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
 
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -98,19 +90,20 @@ RUN_DEPENDS-fping=	::net/fping
 
 RUN_DEPENDS-game=	::games/qstat
 
-WANTLIB-ldap=		${WANTLIB} asn1 com_err crypto gssapi krb5 sasl2 ssl
-LIB_DEPENDS-ldap=	lber,ldap:openldap-client-*:databases/openldap \
+WANTLIB-ldap+=		${WANTLIB} asn1 com_err crypto gssapi krb5
+WANTLIB-ldap+=		lber ldap sasl2 ssl
+LIB_DEPENDS-ldap=	:openldap-client-*:databases/openldap \
 			${LIB_DEPENDS}
 
-WANTLIB-mysql=		${WANTLIB} crypto m ssl z
-LIB_DEPENDS-mysql=	mysqlclient:mysql-client-*:databases/mysql \
+WANTLIB-mysql=		${WANTLIB} crypto m mysqlclient ssl z
+LIB_DEPENDS-mysql=	:mysql-client-*:databases/mysql \
 			${LIB_DEPENDS}
 
 WANTLIB-ntp=		${WANTLIB} m
 RUN_DEPENDS-ntp=	::net/ntp
 
-WANTLIB-pgsql=		${WANTLIB} crypto
-LIB_DEPENDS-pgsql=	pq:postgresql-client-*:databases/postgresql \
+WANTLIB-pgsql=		${WANTLIB} crypto pq
+LIB_DEPENDS-pgsql=	:postgresql-client-*:databases/postgresql \
 			${LIB_DEPENDS}
 
 LIB_DEPENDS-samba=

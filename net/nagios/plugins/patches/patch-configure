@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
---- configure.orig	Thu Sep 25 08:33:24 2008
-+++ configure	Wed Oct 22 20:24:41 2008
-@@ -21552,13 +21552,13 @@ if test "${with_pgsql+set}" = set; then
+$OpenBSD: patch-configure,v 1.12 2010/08/28 09:19:48 sthen Exp $
+--- configure.orig	Tue Jul 27 21:48:13 2010
++++ configure	Thu Aug 26 15:17:44 2010
+@@ -14015,13 +14015,13 @@ if test "${with_pgsql+set}" = set; then
  fi
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21612,7 +21612,7 @@ if test $ac_cv_lib_crypt_main = yes; then
+@@ -14075,7 +14075,7 @@ if test $ac_cv_lib_crypt_main = yes; then
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
  
  fi
  
-@@ -21628,7 +21628,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
+@@ -14091,7 +14091,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22114,16 +22114,16 @@ fi
+@@ -14577,16 +14577,16 @@ fi
  done
  
      if [ -n "$PGSQL" -a "$ac_cv_header_libpq_fe_h" = "yes" ]; then
@@ -59,7 +59,7 @@ $OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
        PGINCLUDE="-I$PGSQL/include"
      fi
      if test -z "$PGINCLUDE"; then
-@@ -23258,7 +23258,7 @@ done
+@@ -15721,7 +15721,7 @@ done
  
  if test "$FOUNDINCLUDE" = "no"; then
    _SAVEDCPPFLAGS="$CPPFLAGS"
@@ -68,7 +68,7 @@ $OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
    unset ac_cv_header_krb5_h
  
  for ac_header in krb5.h
-@@ -23395,7 +23395,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -15858,7 +15858,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
