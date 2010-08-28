@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/27 15:21:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/08/28 19:46:00 robert Exp $
 @group daemon
 zendframework/
 zendframework/Zend/
@@ -895,10 +895,20 @@ zendframework/Zend/Gdata/Gapps/Extension/EmailList.php
 zendframework/Zend/Gdata/Gapps/Extension/Login.php
 zendframework/Zend/Gdata/Gapps/Extension/Name.php
 zendframework/Zend/Gdata/Gapps/Extension/Nickname.php
+zendframework/Zend/Gdata/Gapps/Extension/Property.php
 zendframework/Zend/Gdata/Gapps/Extension/Quota.php
+zendframework/Zend/Gdata/Gapps/GroupEntry.php
+zendframework/Zend/Gdata/Gapps/GroupFeed.php
+zendframework/Zend/Gdata/Gapps/GroupQuery.php
+zendframework/Zend/Gdata/Gapps/MemberEntry.php
+zendframework/Zend/Gdata/Gapps/MemberFeed.php
+zendframework/Zend/Gdata/Gapps/MemberQuery.php
 zendframework/Zend/Gdata/Gapps/NicknameEntry.php
 zendframework/Zend/Gdata/Gapps/NicknameFeed.php
 zendframework/Zend/Gdata/Gapps/NicknameQuery.php
+zendframework/Zend/Gdata/Gapps/OwnerEntry.php
+zendframework/Zend/Gdata/Gapps/OwnerFeed.php
+zendframework/Zend/Gdata/Gapps/OwnerQuery.php
 zendframework/Zend/Gdata/Gapps/Query.php
 zendframework/Zend/Gdata/Gapps/ServiceException.php
 zendframework/Zend/Gdata/Gapps/UserEntry.php
@@ -2610,9 +2620,24 @@ zendframework/Zend/Service/Twitter/Search.php
 zendframework/Zend/Service/WindowsAzure/
 zendframework/Zend/Service/WindowsAzure/Credentials/
 zendframework/Zend/Service/WindowsAzure/Credentials/CredentialsAbstract.php
+zendframework/Zend/Service/WindowsAzure/Credentials/Exception.php
 zendframework/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 zendframework/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 zendframework/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDataSources.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDiagnosticInfrastructureLogs.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDirectories.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationLogs.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationObjectBaseAbstract.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationPerformanceCounters.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/ConfigurationWindowsEventLog.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/DirectoryConfigurationSubscription.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/Exception.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/LogLevel.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/Manager.php
+zendframework/Zend/Service/WindowsAzure/Diagnostics/PerformanceCounterSubscription.php
 zendframework/Zend/Service/WindowsAzure/Exception.php
 zendframework/Zend/Service/WindowsAzure/RetryPolicy/
 zendframework/Zend/Service/WindowsAzure/RetryPolicy/Exception.php
@@ -2630,10 +2655,13 @@ zendframework/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 zendframework/Zend/Service/WindowsAzure/Storage/BlobContainer.php
 zendframework/Zend/Service/WindowsAzure/Storage/BlobInstance.php
 zendframework/Zend/Service/WindowsAzure/Storage/DynamicTableEntity.php
+zendframework/Zend/Service/WindowsAzure/Storage/LeaseInstance.php
+zendframework/Zend/Service/WindowsAzure/Storage/PageRegionInstance.php
 zendframework/Zend/Service/WindowsAzure/Storage/Queue.php
 zendframework/Zend/Service/WindowsAzure/Storage/QueueInstance.php
 zendframework/Zend/Service/WindowsAzure/Storage/QueueMessage.php
 zendframework/Zend/Service/WindowsAzure/Storage/SignedIdentifier.php
+zendframework/Zend/Service/WindowsAzure/Storage/StorageEntityAbstract.php
 zendframework/Zend/Service/WindowsAzure/Storage/Table.php
 zendframework/Zend/Service/WindowsAzure/Storage/TableEntity.php
 zendframework/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php
