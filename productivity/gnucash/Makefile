@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/09 11:55:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/08/28 09:19:14 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -19,8 +19,6 @@ SHARED_LIBS +=	gncmod-qif		0.0	# .0.0
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.gnucash.org/
-
-MAINTAINER =	Nikolay Sturm <sturm@genua.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

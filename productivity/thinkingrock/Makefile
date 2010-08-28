@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/05 15:54:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/28 09:19:15 sthen Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.2.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
+REVISION=	0
 CATEGORIES=	productivity java
 
 HOMEPAGE=	http://www.trgtd.com.au/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # CDDL
 PERMIT_PACKAGE_CDROM=	CDDL

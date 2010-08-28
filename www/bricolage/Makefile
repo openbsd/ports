@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/21 21:17:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/28 09:19:15 sthen Exp $
 
 COMMENT=	content management system
 
 DISTNAME=	bricolage-1.10.3
+REVISION=	0
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.bricolage.cc/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

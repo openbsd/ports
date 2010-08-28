@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.70 2010/05/17 16:13:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.71 2010/08/28 09:19:14 sthen Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
 V=		4.17.0
 DISTNAME=	getmail-$V
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

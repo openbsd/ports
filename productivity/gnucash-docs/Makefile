@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/28 09:19:14 sthen Exp $
 
 COMMENT =	gnucash documentation
 
 GNOME_PROJECT =	gnucash-docs
 GNOME_VERSION =	2.2.0
-PKGNAME =	${DISTNAME}p1
+REVISION=	2
 
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.gnucash.org/
-
-MAINTAINER =	Nikolay Sturm <sturm@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
