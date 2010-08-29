@@ -9,6 +9,6 @@ directory. You can configure this as follows:
 Create a link into an appropriate part of the web-server's
 document root, e.g.:
 
-# ln -s ${INSTDIR} /var/www/htdocs
+# ln -s ../roundcubemail /var/www/htdocs
 
 Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING
