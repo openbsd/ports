@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2010/08/28 09:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/08/29 21:00:18 jasper Exp $
 
 SHARED_ONLY =	Yes
 
-COMMENT =	personal and small-business financial-accounting software	
+COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
-REVISION=	3
+DOC_VERSION = 	2.2.0
+
+REVISION=	4
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -41,18 +43,20 @@ WANTLIB += util xcb xcb-render xcb-render-util xml2 z
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
 		${HOMEPAGE}pub/gnucash/sources/stable/
 
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		gnucash-docs-${DOC_VERSION}.tar.gz
+
 MODULES =	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
 DESKTOP_FILES =	Yes
 MODGCONF2_SCHEMAS_DIR = gnucash
+MODGNOME_HELP_FILES =	Yes
 
-BUILD_DEPENDS =	::devel/slib \
-		::devel/slib-guile
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS =	::devel/slib \
-		::devel/slib-guile \
-		::productivity/gnucash-docs
+		::devel/slib-guile
 LIB_DEPENDS =	goffice-0.8::devel/goffice \
 		guile::lang/guile \
 		gtkhtml-3.14::www/gtkhtml3 \
@@ -66,5 +70,17 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-ofx
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Steps to build the docs.
+DOC_DIR=		${WRKDIR}/gnucash-docs-${DOC_VERSION}
+post-configure:
+	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
+
+post-build:
+	cd ${DOC_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+
+post-install:
+	cd ${DOC_DIR} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 
 .include <bsd.port.mk>
