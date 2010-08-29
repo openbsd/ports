@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/28 18:22:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/29 17:41:34 jasper Exp $
 
 COMMENT=	tagging library for the Mono framework
 
@@ -28,5 +28,7 @@ DLLMAP_FILES=	src/policy.2.0.taglib-sharp.config
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-docs
+
+FAKE_FLAGS=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
 
 .include <bsd.port.mk>
