@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2010/08/29 17:59:19 jasper Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -42,6 +42,8 @@ SEPARATE_BUILD=	simple
 CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
 MAKE_FLAGS=	MAINTAINER="'${MAINTAINER}'"
+FAKE_FLAGS=	dddrootdir="${PREFIX}/share/ddd/" \
+		dddappdir="${PREFIX}/share/ddd/ddd/"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ddd
