@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/08/30 21:53:59 sthen Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
 GNOME_VERSION=	2.30.1
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/13 20:37:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/08/30 21:53:59 sthen Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
 GNOME_PROJECT=		alacarte
 GNOME_VERSION=		0.12.4
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 

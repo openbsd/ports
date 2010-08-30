@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/08/30 21:53:59 sthen Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
 GNOME_PROJECT=		gnome-mag
 GNOME_VERSION=		0.16.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnome-mag            1.0      # .5.9
 CATEGORIES=		sysutils

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/08/30 21:53:59 sthen Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.4
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11
 
