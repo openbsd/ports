@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/08/30 16:41:20 jasper Exp $
 
 COMMENT=	log out idle users and those hogging resources
 
 DISTNAME=	idled-1.16
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.netsw.org/system/tools/process/
-HOMEPAGE=	http://www.darkwing.com/idled/
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
 
