@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/15 14:39:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 17:46:56 fgsch Exp $
 
 COMMENT=	skiing simulation game
 
 DISTNAME=	ski-6.5
-PKGNAME=	${DISTNAME}p1
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://catb.org/~esr/ski/

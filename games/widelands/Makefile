@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/08 08:01:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 17:46:56 fgsch Exp $
 
 COMMENT=	economic and military simulation game
 
 DISTNAME= 	widelands-build-11-source
-PKGNAME=	widelands-0.11p2
+PKGNAME=	widelands-0.11
+REVISION =	3
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 

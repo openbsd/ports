@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/23 07:02:06 giovanni Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 17:46:57 fgsch Exp $
 
 COMMENT=		retrieve and process nzb-files
 
 DISTNAME=		hellanzb-0.13
-REVISION=		3
+REVISION =		4
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.hellanzb.com/trac/

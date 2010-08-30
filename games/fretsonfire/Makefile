@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/16 23:24:32 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/30 17:46:56 fgsch Exp $
 
 V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
-PKGNAME =		${DISTNAME:L}p0
+PKGNAME =		${DISTNAME:L}
+REVISION =		1
 
 CATEGORIES =		games x11
 
