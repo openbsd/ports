@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 21:47:46 sthen Exp $
 
 COMMENT=	Openbox menu editor
 
 DISTNAME=	obmenu-1.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://obmenu.sourceforge.net/

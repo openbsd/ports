@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/08/30 21:47:46 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Python bindings for wxWidgets C++ class library
 V=		2.8.6.0
 DISTNAME=	wxPython-src-$V
 PKGNAME=	py-wxPython-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.wxpython.org/

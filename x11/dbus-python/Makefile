@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 21:47:46 sthen Exp $
 
 COMMENT=	dbus bindings for Python
 
 DISTNAME=	dbus-python-0.83.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}releases/dbus-python/

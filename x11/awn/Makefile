@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 21:47:46 sthen Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=	awn                  0.0      # .0.1
 

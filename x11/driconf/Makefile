@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/30 21:47:46 sthen Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
 MODPY_EGG_VERSION =	0.9.1
 DISTNAME =		driconf-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES =		x11
 
 HOMEPAGE =		http://people.freedesktop.org/~fxkuehl/driconf/dri_config_design_rev4.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2010/08/25 07:40:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2010/08/30 21:47:46 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,9 @@ PKGNAME-main=	gtk+2-${VERSION}
 PKGNAME-docs=	gtk+2-docs-${VERSION}
 PKGNAME-cups=	gtk+2-cups-${VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
+REVISION-docs=	0
+REVISION-cups=	0
 
 CATEGORIES=	x11 devel
 
