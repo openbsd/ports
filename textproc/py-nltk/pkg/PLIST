@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/13 12:17:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/08/30 07:16:02 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/nltk/__init__.py
@@ -314,6 +314,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/probability.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/sem/boxer.py
+lib/python${MODPY_VERSION}/site-packages/nltk/sem/boxer.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/chat80.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/chat80.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/cooper_storage.py
@@ -322,8 +324,6 @@ lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt_glue_demo.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt_glue_demo.pyc
-lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt_resolve_anaphora.py
-lib/python${MODPY_VERSION}/site-packages/nltk/sem/drt_resolve_anaphora.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/evaluate.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/evaluate.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/glue.py
@@ -340,6 +340,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/sem/relextract.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/relextract.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/util.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/sourcedstring.py
+lib/python${MODPY_VERSION}/site-packages/nltk/sourcedstring.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/__init__.pyc
@@ -355,6 +357,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/stem/regexp.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/regexp.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/rslp.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/rslp.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/stem/snowball.py
+lib/python${MODPY_VERSION}/site-packages/nltk/stem/snowball.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/wordnet.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/wordnet.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/
@@ -368,6 +372,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tag/crf.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/crf.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/hmm.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/hmm.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/tag/hunpos.py
+lib/python${MODPY_VERSION}/site-packages/nltk/tag/hunpos.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/sequential.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/sequential.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/simplify.py
@@ -390,7 +396,9 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/drt.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/featgram.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/featstruct.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/gluesemantics.doctest
+lib/python${MODPY_VERSION}/site-packages/nltk/test/grammar.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/grammartestsuites.doctest
+lib/python${MODPY_VERSION}/site-packages/nltk/test/inference.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/internals.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/logic.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/metrics.doctest
@@ -403,6 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/relextract.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/resolution.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/semantics.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/simple.doctest
+lib/python${MODPY_VERSION}/site-packages/nltk/test/sourcedstring.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/stem.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/tag.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/tokenize.doctest
@@ -426,8 +435,12 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/sexpr.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/sexpr.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/simple.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/simple.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/texttiling.py
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/texttiling.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/treebank.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/treebank.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/util.py
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/util.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/toolbox/
 lib/python${MODPY_VERSION}/site-packages/nltk/toolbox/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nltk/toolbox/__init__.pyc
