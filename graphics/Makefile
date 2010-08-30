@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2010/07/28 17:50:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.268 2010/08/30 23:46:41 fgsch Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -178,7 +178,7 @@
      SUBDIR += povray,no_x11
      SUBDIR += pstoedit
      SUBDIR += py-Imaging,python2.4
-     SUBDIR += py-Imaging,python2.5
+     SUBDIR += py-Imaging,python2.6
      SUBDIR += py-cairo
      SUBDIR += py-dot
      SUBDIR += py-gd
