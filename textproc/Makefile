@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.299 2010/07/06 16:44:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.300 2010/08/30 13:13:29 sthen Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -223,6 +223,7 @@
      SUBDIR += p5-tkispell
      SUBDIR += par
      SUBDIR += pear-File
+     SUBDIR += pear-File-Find
      SUBDIR += pear-XML-Parser
      SUBDIR += pear-XML-RSS
      SUBDIR += pear-XML-Serializer
