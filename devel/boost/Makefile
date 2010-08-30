@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/25 20:27:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/08/30 22:03:58 jasper Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 PKGNAME=	boost-${VERSION}
-REVISION=	3
+REVISION=	4
 
 VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}

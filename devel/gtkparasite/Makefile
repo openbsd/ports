@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/03 00:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/30 22:03:58 jasper Exp $
 
 COMMENT =	Gtk debugging tool
 
 DISTNAME =	gtkparasite-0.0.1
-PKGNAME =	${DISTNAME}p0
+REVISION=	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://chipx86.github.com/gtkparasite/

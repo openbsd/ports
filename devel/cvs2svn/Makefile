@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/26 09:14:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/30 22:03:58 jasper Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -6,6 +6,7 @@ COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 # otherwise you probably get the old files, not 404.
 MODPY_EGG_VERSION=	2.3.0
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
+REVISION =		0
 MASTER_SITES=		${HOMEPAGE}files/documents/1462/46528/
 
 CATEGORIES=		devel

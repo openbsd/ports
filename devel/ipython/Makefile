@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/19 17:38:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/30 22:03:58 jasper Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION=	0.10
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://ipython.scipy.org/moin/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/03 00:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/30 22:03:58 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	distributed version control system by Canonical
 
 MODPY_EGG_VERSION = 2.0.3
 DISTNAME =	bzr-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME}p0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://bazaar-vcs.org/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/22 15:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 22:03:58 jasper Exp $
 
 COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION=	1.3.8
 DISTNAME =	cola-${MODPY_EGG_VERSION}-src
-PKGNAME =	git-${DISTNAME:S/-src//}p2
+PKGNAME =	git-${DISTNAME:S/-src//}
+REVISION =	3
 CATEGORIES = 	devel x11
 
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
