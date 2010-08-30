@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2010/05/11 06:41:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/30 11:02:48 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis_1.4.0
-PKGNAME =	${DISTNAME:L:S/_/-/}p2
+ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+
+DISTNAME =	qgis_1.5.0
+PKGNAME =	${DISTNAME:L:S/_/-/}
 
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	2.0 \
-		qgis_gui	1.1 \
-		qgis_analysis	1.0 \
-		qgispython	0.1 # .1.3
+SHARED_LIBS =	qgis_core	3.0 \
+		qgis_gui	2.0 \
+		qgis_analysis	1.1 \
+		qgispython	1.0 # .1.3
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -38,16 +40,17 @@ RUN_DEPENDS =	::x11/py-qt4 \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		proj::devel/proj \
-		QtGui,QtNetwork,QtXml,QtSql,QtCore,QtSvg::x11/qt4 \
-		gdal::geo/gdal \
-		geos_c::geo/geos \
-		gsl::devel/gsl \
-		pq:postgresql-client-*:databases/postgresql
+		::devel/proj \
+		::x11/qt4 \
+		::geo/gdal \
+		::geo/geos \
+		::devel/gsl \
+		:postgresql-client-*:databases/postgresql
 
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \
-		stdc++ z
+		stdc++ z proj QtGui QtNetwork QtXml QtSql QtCore QtSvg QtWebKit\
+		gdal geos_c gsl gslcblas pq
 
 CONFIGURE_ENV+=	VERBOSE=1
 pre-configure:
@@ -56,9 +59,8 @@ pre-configure:
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}
 		ln ${PREFIX}/share/{qgis/images/icons,pixmaps}/qgis-icon.png
-		${SUBST_CMD} -c ${WRKSRC}/debian/qgis.desktop \
-			${PREFIX}/share/applications/qgis.desktop
-		chown ${SHAREOWN}:${SHAREGRP} \
+		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+			${WRKSRC}/debian/qgis.desktop \
 			${PREFIX}/share/applications/qgis.desktop
 
 .include <bsd.port.mk>
