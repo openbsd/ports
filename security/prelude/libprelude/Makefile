@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/06/11 21:11:13 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2010/08/30 21:16:56 jasper Exp $
 
 COMMENT=	Prelude framework library
 
 MODPY_EGG_VERSION=0.9.24.1
 DISTNAME=	libprelude-${MODPY_EGG_VERSION}
-PKGNAME=	prelude-${DISTNAME}p0
+PKGNAME=	prelude-${DISTNAME}
+REVISION=	1
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/libprelude/
 
