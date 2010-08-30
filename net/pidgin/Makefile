@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/08/18 21:35:59 steven Exp $
+# $OpenBSD: Makefile,v 1.69 2010/08/30 21:31:33 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,9 @@ DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
+REVISION-main=	0
+REVISION-finch=	0
+REVISION-libpurple= 0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
