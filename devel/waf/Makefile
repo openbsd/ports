@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/27 18:42:05 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 22:09:45 jasper Exp $
 
 COMMENT=	Python-based build system
 
 DISTNAME=	waf-1.5.10
+REVISION =	0
 CATEGORIES=	devel
 EXTRACT_SUFX=	.tar.bz2
 
