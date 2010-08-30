@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/12 10:03:23 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2010/08/30 18:29:28 fgsch Exp $
 
 COMMENT=	Scalable PostScript fonts for MetaFont
 
 CATEGORIES=	print
 DISTNAME=	mftrace-1.2.15
+REVISION =	0
 
 HOMEPAGE=	http://lilypond.org/mftrace/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/11 17:51:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 18:29:28 fgsch Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
 VERSION=	2.1
 DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}p2
+PKGNAME=	py-reportlab-${VERSION}
+REVISION =	3
 CATEGORIES=	print graphics
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
