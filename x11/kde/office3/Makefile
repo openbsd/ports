@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/07/13 09:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.64 2010/08/30 21:49:54 sthen Exp $
 
 COMMENT=		office suite for KDE
 
@@ -95,7 +95,7 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::databases/postgresql
 
 
-REVISION =	14
+REVISION =	15
 WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
