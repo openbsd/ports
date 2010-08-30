@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/05 01:51:32 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/30 22:24:16 jasper Exp $
 
 COMMENT =		template plugin for TurboGears that supports json
 
 MODPY_EGG_VERSION =	1.1.4
 DISTNAME =		TurboJson-${MODPY_EGG_VERSION}
-PKGNAME =		py-turbojson-${MODPY_EGG_VERSION}p1
+PKGNAME =		py-turbojson-${MODPY_EGG_VERSION}
+REVISION =		2
 
 CATEGORIES =		devel
 

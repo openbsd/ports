@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/15 13:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 22:24:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python-alike language for writing Python extension modules
 
 DISTNAME=	Pyrex-0.9.6.4
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}
+REVISION =	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/

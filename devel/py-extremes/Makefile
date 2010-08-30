@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/05 01:09:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 22:24:15 jasper Exp $
 
 COMMENT =		mix and max objects
 
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		Extremes-${MODPY_EGG_VERSION}
 PKGNAME =		py-extremes-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

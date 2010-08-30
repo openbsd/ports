@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 10:17:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/08/30 22:24:15 jasper Exp $
 
 # XXX: Don't forget to update x11/py-qt{3,4} when updating this port.
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
@@ -9,6 +9,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 
 DISTNAME=	sip-4.10.5
 PKGNAME=	py-${DISTNAME}
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/09 01:12:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:15 jasper Exp $
 
 COMMENT =	simplify usage of decorators	
 
 MODPY_EGG_VERSION = 3.1.2
 DISTNAME =	decorator-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

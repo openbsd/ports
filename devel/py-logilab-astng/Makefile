@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/15 12:49:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 22:24:15 jasper Exp $
 
 COMMENT=		Python Abstract Syntax Tree New Generation
 
 DISTNAME=		logilab-astng-0.17.0
-PKGNAME=		py-${DISTNAME}p1
+PKGNAME=		py-${DISTNAME}
+REVISION =		2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.logilab.org/projects/astng/

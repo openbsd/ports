@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/06/15 21:23:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/08/30 22:24:15 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,8 @@ COMMENT =	date and time types for Python
 
 MODPY_EGG_VERSION = 3.1.2
 DISTNAME =	egenix-mx-base-${MODPY_EGG_VERSION}
-PKGNAME =	py-mxDateTime-${MODPY_EGG_VERSION}p2
+PKGNAME =	py-mxDateTime-${MODPY_EGG_VERSION}
+REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.egenix.com/products/python/mxBase/
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://www.lemburg.com/files/python/
 
 FLAVORS =	python2.4 python2.5 python2.6	# Needed for Zope, e.g.
-FLAVOR ?=	python2.5
+FLAVOR ?=	python2.6
 
 WANTLIB += m
 

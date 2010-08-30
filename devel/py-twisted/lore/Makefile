@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/05 13:37:02 eric Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/30 22:24:16 jasper Exp $
 
 COMMENT=	documentation generator
 
 VERSION=	10.0.0
 DISTNAME=	TwistedLore-${VERSION}
 PKGNAME=	py-twisted-lore-${VERSION}
+REVISION =	0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedLore
 

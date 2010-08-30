@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/15 12:49:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:15 jasper Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
 MODPY_EGG_VERSION=	0.11.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}
+REVISION =		1
 CATEGORIES=    		devel www textproc
 EXTRACT_SUFX=		.zip
 
