@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/15 13:31:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/30 17:11:35 fgsch Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
 DISTNAME=		dynagen-0.11.0
-PKGNAME =		${DISTNAME}p0
+REVISION =		1
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://dynagen.org/

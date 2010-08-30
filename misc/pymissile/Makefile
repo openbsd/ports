@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 17:11:35 fgsch Exp $
 
 COMMENT=	usb missile launcher control script
 DISTNAME=	pymissile-20061111
-PKGNAME=	${DISTNAME}p1
+REVISION =	2
 DISTFILES=	${DISTNAME}.py
 CATEGORIES=	misc
 MASTER_SITES=	http://openbsddistfiles.org/jolan/

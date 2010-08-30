@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/26 11:11:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/30 17:11:35 fgsch Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -8,6 +8,7 @@ SHARED_LIBS +=  pst                  1.0      # .4.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
+REVISION-python =	0
 
 CATEGORIES=		converters mail
 

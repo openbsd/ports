@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 11:02:48 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 17:11:35 fgsch Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 DISTNAME =	qgis_1.5.0
 PKGNAME =	${DISTNAME:L:S/_/-/}
+REVISION =	0
 
 CATEGORIES =	geo x11
 

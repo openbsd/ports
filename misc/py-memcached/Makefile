@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/25 22:31:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 17:11:35 fgsch Exp $
 
 COMMENT =	Python interface to memcached
 
 MODPY_EGG_VERSION = 1.43
 DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
+REVISION =	0
 CATEGORIES =	misc
 
 HOMEPAGE =	http://www.tummy.com/Community/software/python-memcached/
