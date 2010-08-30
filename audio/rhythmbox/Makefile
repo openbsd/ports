@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/08/26 12:08:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/08/30 21:36:15 fgsch Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION=		2
+REVISION =		3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 

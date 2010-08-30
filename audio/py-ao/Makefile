@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/08 19:56:36 pea Exp $
+# $OpenBSD: Makefile,v 1.11 2010/08/30 21:36:14 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python wrapper module for the ao library
 
 DISTNAME=	pyao-0.82
-PKGNAME=	${DISTNAME:S/py/py-/}p4
+PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION =	5
 CATEGORIES=	audio
 HOMEPAGE=	http://ekyo.nerim.net/software/pyogg/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 21:36:14 fgsch Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
 DISTNAME=		eyeD3-0.6.14
-PKGNAME=		${DISTNAME}p1
+REVISION =		2
 CATEGORIES=		audio
 
 HOMEPAGE=		http://eyed3.nicfit.net/

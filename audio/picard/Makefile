@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/22 15:43:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 21:36:14 fgsch Exp $
 
 COMMENT =		automatic audio files tagger
 
 MODPY_EGG_VERSION =	0.11
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-PKGNAME = 		${DISTNAME}p2
+REVISION = 		3
 
 CATEGORIES =		audio
 

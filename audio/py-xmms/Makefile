@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2009/12/23 14:52:51 phessler Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 21:36:15 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python interface to XMMS
 
 DISTNAME=	pyxmms-1.06
-PKGNAME=	${DISTNAME:S/py/py-/}p3
+PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION =	4
 CATEGORIES=	audio
 
 HOMEPAGE=	http://people.via.ecp.fr/~flo/2002/PyXMMS/doc/xmms.html
