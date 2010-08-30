@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/08/02 16:05:37 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2010/08/30 23:50:44 fgsch Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -13,6 +13,7 @@ SO_VERSION =	24.0
 MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
 		xpcom xul nullplugin unixprintplugin
 
+REVISION =	0
 CATEGORIES =	www
 
 FLAVORS =	debug
