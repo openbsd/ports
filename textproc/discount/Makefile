@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 21:40:29 jasper Exp $
 
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-1.3.5
+DISTNAME =		discount-1.6.6
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.pell.portland.or.us/~orc/Code/markdown/
@@ -17,11 +17,16 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		c
 
-MASTER_SITES =		http://www.pell.portland.or.us/~orc/Code/markdown/
+# Stupid github.
+MASTER_SITES =		http://www.phil.uu.nl/~lievisse/distfiles/
+WRKDIST = 		${WRKDIR}/Orc-discount-9dabdb8
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+
+BUILD_DEPENDS = 	::archivers/gtar
+TAR =			${LOCALBASE}/bin/gtar
 
 INSTALL_TARGET =	install.everything
 REGRESS_TARGET =	test

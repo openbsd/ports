@@ -1,7 +1,7 @@
-$OpenBSD: patch-cstring_h,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
---- cstring.h.orig	Fri Apr  3 17:57:34 2009
-+++ cstring.h	Mon Apr 13 10:39:25 2009
-@@ -16,7 +16,7 @@
+$OpenBSD: patch-cstring_h,v 1.2 2010/08/30 21:40:29 jasper Exp $
+--- cstring.h.orig	Thu Jun 17 03:14:33 2010
++++ cstring.h	Mon Aug 30 15:01:46 2010
+@@ -18,7 +18,7 @@
   */
  #define STRING(type)	struct { type *text; int size, alloc; }
  
