@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/02 08:23:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/30 21:14:35 sthen Exp $
 
 COMMENT=		fork of pymsn to support telepathy-butterfly
 
 MODPY_EGG_VERSION=	0.4.6
 DISTNAME=		papyon-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://telepathy.freedesktop.org/wiki/Papyon

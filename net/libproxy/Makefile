@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 21:14:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ VERSION=	0.2.3
 DISTNAME=	libproxy-${VERSION}
 PKGNAME-main=	libproxy-${VERSION}
 PKGNAME-gnome=	libproxy-gnome-${VERSION}
-REVISION-main=	1
-REVISION-gnome=	0
+REVISION-main=	2
+REVISION-gnome=	1
 SHARED_LIBS +=  proxy          0.0               # .0.0
 CATEGORIES=	net
 

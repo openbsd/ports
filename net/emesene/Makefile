@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 21:14:35 sthen Exp $
 
 COMMENT =		client for the Windows Live Messenger chat network
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		emesene-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
