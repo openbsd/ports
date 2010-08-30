@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/30 13:11:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 13:24:28 sthen Exp $
 
 COMMENT=	php class to facilitate the search of filesystems
 
 DISTNAME=	File_Find-1.3.0
 PKGNAME=	pear-${DISTNAME:S/_/-/}
-CATEGORIES=	textproc pear
+REVISION=	0
+CATEGORIES=	textproc
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz

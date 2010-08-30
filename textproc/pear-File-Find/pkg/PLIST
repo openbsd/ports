@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/30 13:11:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/08/30 13:24:28 sthen Exp $
 @comment lib/
 @comment lib/php/
+@group daemon
 pear/lib/.registry/file_find.reg
 pear/lib/File/
 pear/lib/File/Find.php

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/30 13:12:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 13:24:22 sthen Exp $
 
 COMMENT=	php class for building console-style tables
 
 DISTNAME=	Console_Table-1.1.3
 PKGNAME=	pear-${DISTNAME:S/_/-/}
-CATEGORIES=	devel pear
+REVISION=	0
+CATEGORIES=	devel
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
