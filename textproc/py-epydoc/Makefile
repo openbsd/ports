@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/24 20:03:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/08/30 21:47:15 jasper Exp $
 
 COMMENT=		python module API documentation generation tool
 
 MODPY_EGG_VERSION=	3.0.1
 DISTNAME=		epydoc-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}
+REVISION=		1
 
 CATEGORIES=		textproc devel
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/08/30 21:47:15 jasper Exp $
 
 COMMENT=	Python tool for generate Python API documents
 
 DISTNAME=	HappyDoc_r2_1
-PKGNAME=	py-HappyDoc-2.1p3
+PKGNAME=	py-HappyDoc-2.1
+REVISION=	4
 CATEGORIES=    	textproc
 
 HOMEPAGE=	http://happydoc.sf.net/

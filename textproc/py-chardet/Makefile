@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/22 22:30:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 21:47:15 jasper Exp $
 
 COMMENT=	character encoding auto-detection in Python
 
 MODPY_EGG_VERSION= 2.0.1
 DISTNAME=	python2-chardet-${MODPY_EGG_VERSION}
 PKGNAME=	py-chardet-${MODPY_EGG_VERSION}
+REVISION=	0
 
 EXTRACT_SUFX=	.tgz
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/26 03:53:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/30 21:47:15 jasper Exp $
 
 COMMENT=	graphical diff and merge tool
 
 DISTNAME=	meld-1.3.2
+REVISION=	0
 CATEGORIES=	textproc x11
 
 HOMEPAGE=	http://meld.sourceforge.net/
