@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
 
 COMMENT=	web framework for python
 
 VERSION=	0.31
 DISTNAME=	web.py-${VERSION}
-PKGNAME=	py-webpy-${VERSION}p0
+PKGNAME=	py-webpy-${VERSION}
+REVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>

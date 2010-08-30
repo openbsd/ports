@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/01/09 01:11:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
 
 COMMENT =	html/xml templating engine
 
 MODPY_EGG_VERSION = 0.6.6
 DISTNAME =	meld3-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www
 

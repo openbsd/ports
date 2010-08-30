@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/03/21 09:27:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/08/30 22:02:34 sthen Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
 V=			1.1.7
 DISTNAME=		pywebkitgtk-$V
 PKGNAME=		py-webkitgtk-$V
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://pywebkitgtk.googlecode.com/

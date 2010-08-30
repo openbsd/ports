@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/02 05:04:37 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/30 22:02:33 sthen Exp $
 
 COMMENT=		handle HTML forms on the client side
 
 MODPY_EGG_VERSION=	0.2.10
 DISTNAME=		ClientForm-${MODPY_EGG_VERSION}
 PKGNAME=		py-clientform-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		www
 
