@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/30 07:17:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/30 10:17:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
+# XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 V=		4.7.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
@@ -41,7 +42,8 @@ LIB_DEPENDS=	::x11/qt4 \
 
 NO_REGRESS=	Yes
 
-MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/
+MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/ \
+		http://spacehopper.org/mirrors/
 
 MODULES=	converters/libiconv \
 		lang/python \

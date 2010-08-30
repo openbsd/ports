@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 07:16:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/30 10:17:14 sthen Exp $
 
 # XXX: Don't forget to update x11/py-qt{3,4} when updating this port.
+# XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	m c stdc++
 
-MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/sip4/
+MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/sip4/ \
+		http://spacehopper.org/mirrors/
 
 MODULES=	lang/python
 
