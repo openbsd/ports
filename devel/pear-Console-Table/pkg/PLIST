@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/30 13:12:20 sthen Exp $
+@comment lib/
+@comment lib/php/
+pear/lib/.registry/console_table.reg
+pear/lib/Console/Table.php
+pear/tests/Console_Table/
+pear/tests/Console_Table/tests/
+pear/tests/Console_Table/tests/assoziative_arrays.phpt
+pear/tests/Console_Table/tests/colors.phpt
+pear/tests/Console_Table/tests/filters.phpt
+pear/tests/Console_Table/tests/multibyte.phpt
+pear/tests/Console_Table/tests/multiline.phpt
+pear/tests/Console_Table/tests/no_header.phpt
+pear/tests/Console_Table/tests/no_rows.phpt
+pear/tests/Console_Table/tests/rules.phpt
