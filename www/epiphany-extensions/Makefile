@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/22 08:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/08/30 22:15:24 sthen Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.30.2
+REVISION=		0
 
 # sync with www/epiphany
 API_V=		2.29
