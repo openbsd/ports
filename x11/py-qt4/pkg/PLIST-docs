@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2010/04/19 09:51:30 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2010/08/30 07:17:01 jasper Exp $
 @comment lib/python${MODPY_VERSION}/
 @comment lib/python${MODPY_VERSION}/site-packages/
 @comment lib/python${MODPY_VERSION}/site-packages/dbus/
@@ -1135,6 +1135,8 @@ share/doc/py-qt4/html/qwebhittestresult.html
 share/doc/py-qt4/html/qwebinspector.html
 share/doc/py-qt4/html/qwebpage-choosemultiplefilesextensionoption.html
 share/doc/py-qt4/html/qwebpage-choosemultiplefilesextensionreturn.html
+share/doc/py-qt4/html/qwebpage-errorpageextensionoption.html
+share/doc/py-qt4/html/qwebpage-errorpageextensionreturn.html
 share/doc/py-qt4/html/qwebpage-extensionoption.html
 share/doc/py-qt4/html/qwebpage-extensionreturn.html
 share/doc/py-qt4/html/qwebpage-findflags.html

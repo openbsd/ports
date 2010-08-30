@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/08/30 07:17:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-V=		4.7.3
+V=		4.7.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 
-REVISION-main=	0
-
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
-
-MAINTAINER=	Lars Hansson <lars@unet.net.ph>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
