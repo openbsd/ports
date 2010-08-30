@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 09:59:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 21:24:15 jasper Exp $
 
 COMMENT=	decoder for JBIG2 monochrome hi-res image compression format
 
 DISTNAME=	jbig2dec-0.10
+REVISION=	0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jb2streams.zip:0
 
