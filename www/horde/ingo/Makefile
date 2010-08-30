@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 22:42:06 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.6 2010/08/30 13:40:49 sthen Exp $ 
 
 COMMENT=	mail filter rules for IMP
 
@@ -10,6 +10,6 @@ DISTNAME=	ingo-h3-1.2.4
 REVISION=	2
 CATEGORIES=	mail
 
-RUN_DEPENDS=	:imp-h3-*:www/horde/imp
+RUN_DEPENDS=	::www/horde/imp
 
 .include <bsd.port.mk>

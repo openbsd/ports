@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 12:01:35 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.7 2010/08/30 13:40:49 sthen Exp $ 
 
 COMMENT=	web based calendar application, for Horde
 
@@ -9,7 +9,7 @@ DISTNAME=	kronolith-h3-2.3.4
 REVISION=	3
 CATEGORIES=	mail
 
-RUN_DEPENDS=	:imp-h3-*:www/horde/imp \
-		:pear-Date-*:devel/pear-Date
+RUN_DEPENDS=	::devel/pear-Date \
+		::www/horde/imp
 
 .include <bsd.port.mk>
