@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/07/27 17:01:16 landry Exp $
+# $OpenBSD: Makefile,v 1.99 2010/08/30 21:56:48 jasper Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -13,7 +13,9 @@ MOZILLA_CODENAME =	mail
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta2
+REVISION-main =		0
 EPOCH-lightning =	0
+REVISION-lightning =	0
 
 # need to be in synch with SO_VERSION in www/seamonkey
 # for productivity/sunbird,-lighting and mail/enigmail to work ine
