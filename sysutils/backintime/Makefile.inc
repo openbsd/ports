@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/08/30 17:57:31 fgsch Exp $
 
 V=		0.9.26
 BASENAME=	backintime-${V}
 DISTNAME=	${BASENAME}_src
+REVISION =	0
 
 CATEGORIES+=	sysutils
 
