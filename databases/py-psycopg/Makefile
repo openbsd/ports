@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/02/26 19:10:38 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/08/30 20:59:41 fgsch Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,10 +9,12 @@ COMMENT-zope=		database adapter for Zope
 VERSION=		1.1.21
 DISTNAME=		psycopg-${VERSION}
 PKGNAME=		py-${DISTNAME}
-PKGNAME-main=		py-${DISTNAME}p8
-FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}p1
+REVISION-main =		9
+FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}
+REVISION-examples =	2
 FULLPKGPATH-examples=	databases/py-psycopg,-examples
-FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p4
+FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}
+REVISION-zope =		4
 FULLPKGPATH-zope=	databases/py-psycopg,-zope,python2.4
 CATEGORIES=		databases
 
@@ -33,12 +35,12 @@ MODULES=	lang/python
 BUILD_DEPENDS=	::databases/postgresql,-server
 RUN_DEPENDS=	::databases/postgresql
 
-FLAVORS=	python2.4 python2.5
-FLAVOR?=	python2.5
+FLAVORS=	python2.4 python2.5 python2.6
+FLAVOR?=	python2.6
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES=	-main -examples -zope
-.elif ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5}
+.elif ${FLAVOR:L:Mpython2.[56]} && !${FLAVOR:L:Npython2.[56]}
 MULTI_PACKAGES=	-main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
