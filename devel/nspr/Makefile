@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/03/30 11:47:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/08/30 20:12:55 landry Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
@@ -6,14 +6,14 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 COMMENT-main=		Netscape Portable Runtime
 COMMENT-docs=		HTML Documentation for NSPR
 
-VER=			4.8
+VER=			4.8.6
 DISTNAME=		nspr-${VER}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-docs=		nspr-docs-${VER}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
 
-SO_VERSION=		21.0
+SO_VERSION=		21.1
 .for _lib in nspr4 plc4 plds4
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/08/04 13:56:09 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/08/30 20:12:55 landry Exp $
 @pkgpath devel/nspr
 bin/nspr-config
 include/nspr/
@@ -47,7 +47,6 @@ include/nspr/plbase64.h
 include/nspr/plerror.h
 include/nspr/plgetopt.h
 include/nspr/plhash.h
-include/nspr/plresolv.h
 include/nspr/plstr.h
 include/nspr/pratom.h
 include/nspr/prbit.h
