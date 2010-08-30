@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/08/30 21:16:17 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	OpenSSL Wrappers for Python
 
 VERSION=	0.6.1
 DISTNAME=	POW-${VERSION}
-PKGNAME=	py-sslwrapper-${VERSION}p2
+PKGNAME=	py-sslwrapper-${VERSION}
+REVISION=	3
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pow/

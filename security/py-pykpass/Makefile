@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/15 21:23:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 21:16:17 jasper Exp $
 
 COMMENT=		kerberos5 password verification python module
 
 MODPY_EGG_VERSION=	0.4
 DISTNAME=		pykpass-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.huque.com/software/pykpass/

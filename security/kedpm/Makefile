@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/24 20:03:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/30 21:16:17 jasper Exp $
 
 COMMENT=	application for managing passwords
 
 MODPY_EGG_VERSION=	0.4.0
 DISTNAME=	kedpm-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}
+REVISION=	4
 CATEGORIES=	security
 
 HOMEPAGE=	http://kedpm.sourceforge.net/

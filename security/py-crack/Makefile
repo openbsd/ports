@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/26 08:13:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/30 21:16:17 jasper Exp $
 
 COMMENT =		Python bindings for cracklib
 
 MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		python-crack-${MODPY_EGG_VERSION}
 PKGNAME =		py-crack-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES =   		security devel
 
 HOMEPAGE =		http://www.nongnu.org/python-crack/

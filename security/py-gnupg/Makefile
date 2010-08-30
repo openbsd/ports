@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/08/25 06:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/08/30 21:16:17 jasper Exp $
 
 COMMENT=	Python module for GnuPG interface
 
@@ -6,7 +6,7 @@ VERSION=	0.3.2
 DISTNAME=	GnuPGInterface-${VERSION}
 PKGNAME=	py-gnupg-${VERSION}
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=    	security devel
 
