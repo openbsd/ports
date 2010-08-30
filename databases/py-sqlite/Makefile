@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/14 14:47:28 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/30 20:53:57 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	SQLite adapter for Python
 
 VERSION=	1.0
 DISTNAME=	pysqlite-${VERSION}
-PKGNAME=	py-sqlite-${VERSION}p3
+PKGNAME=	py-sqlite-${VERSION}
+REVISION =	4
 CATEGORIES=	databases
 WRKDIST=	${WRKDIR}/pysqlite
 

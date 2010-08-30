@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/21 21:16:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/30 20:53:57 fgsch Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
 MODPY_EGG_VERSION = 1.9
 DISTNAME =	pgworksheet-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p1
+REVISION =	2
 
 CATEGORIES =	databases
 
