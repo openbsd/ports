@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.15 2009/05/09 07:36:17 sturm Exp $
+# $OpenBSD: dpb,v 1.16 2010/08/30 19:03:23 steven Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -60,7 +60,7 @@ if (defined $opt_A) {
 
 our $HOSTS_FILE = $opt_F || "$PORTSDIR/infrastructure/db/hosts-$ARCH";
 
-our $LOGGER = "$PORTSDIR/infrastructure/build/portslogger ";
+our $LOGGER = "$PORTSDIR/infrastructure/bin/portslogger ";
 $LOGGER .= $opt_L || "$PORTSDIR/logs/$ARCH";
 
 our $TIMEOUT = $opt_t || 60;
