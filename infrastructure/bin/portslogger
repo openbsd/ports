@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portslogger,v 1.15 2009/11/08 09:24:11 espie Exp $
+# $OpenBSD: portslogger,v 1.1 2010/08/30 19:02:33 steven Exp $
 # Copyright (c) 2001 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
