@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/07 08:36:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2010/08/30 21:21:53 sthen Exp $
 
 COMMENT =	Python interface to Amazon Web Services
 
 MODPY_EGG_VERSION = 1.7a
 DISTNAME =	boto-${MODPY_EGG_VERSION}
 PKGNAME = 	py-${DISTNAME}
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://code.google.com/p/boto/

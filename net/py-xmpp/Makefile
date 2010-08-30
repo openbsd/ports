@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/30 21:21:54 sthen Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		pyxmpp-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://pyxmpp.jajcus.net/
