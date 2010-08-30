@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/13 21:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/08/30 21:26:30 sthen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		flexible communications framework, specifications
 
 DISTNAME=		telepathy-spec-0.19.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		books
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}

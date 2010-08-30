@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/13 21:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/08/30 21:26:30 sthen Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.4.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  mcclient              2.0      # .0.0
 
