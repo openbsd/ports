@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config-files_tls-office_conf,v 1.1 2006/12/15 09:56:14 robert Exp $
---- sample-config-files/tls-office.conf.orig	Tue Nov  1 12:06:10 2005
-+++ sample-config-files/tls-office.conf	Fri Dec 15 09:22:42 2006
+$OpenBSD: patch-sample-config-files_tls-office_conf,v 1.2 2010/08/30 18:32:20 fkr Exp $
+--- sample-config-files/tls-office.conf.orig	Wed Mar 31 08:47:07 2010
++++ sample-config-files/tls-office.conf	Fri Aug 27 09:04:39 2010
 @@ -48,10 +48,10 @@ key office.key
  ; port 1194
  
@@ -10,8 +10,8 @@ $OpenBSD: patch-sample-config-files_tls-office_conf,v 1.1 2006/12/15 09:56:14 ro
  # for extra security.
 -; user nobody
 -; group nobody
-+; user _openvpn
-+; group _openvpn
++user _openvpn
++group _openvpn
  
  # If you built OpenVPN with
  # LZO compression, uncomment
