@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2010/08/30 23:46:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.269 2010/08/31 14:13:21 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += aqsis
+     SUBDIR += asymptote
      SUBDIR += autopano-sift-c
      SUBDIR += babl
      SUBDIR += barcode
