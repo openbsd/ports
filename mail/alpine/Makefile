@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/11/08 08:22:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/31 20:07:10 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -14,9 +14,13 @@ CATEGORIES=	mail news
 CATEGORIES-pico=editors
 CATEGORIES-pilot=sysutils
 
-PKGNAME-main=	alpine-${V}p0
-PKGNAME-pico=	pico-${PICO_V}p1
-PKGNAME-pilot=	pilot-${PILOT_V}p3
+PKGNAME-main=	alpine-${V}
+PKGNAME-pico=	pico-${PICO_V}
+PKGNAME-pilot=	pilot-${PILOT_V}
+
+REVISION-main=	1
+REVISION-pico=	1
+REVISION-pilot=	3
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -60,8 +64,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=--with-ldap-dir=${LOCALBASE}
-LIB_DEPENDS+=	lber.>=9,ldap.>=9::databases/openldap,-main
-WANTLIB+=	sasl2
+LIB_DEPENDS+=	::databases/openldap,-main
+WANTLIB+=	sasl2 lber ldap
 WANTLIB-pico=	${WANTLIB} asn1 com_err crypto gssapi krb5 ssl
 WANTLIB-pilot=	${WANTLIB} asn1 com_err crypto gssapi krb5 ssl
 .else
@@ -80,6 +84,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt \
 		${WRKSRC}/doc/mailcap.unx \
 		${WRKSRC}/doc/mime.types \
+		${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/alpine
 
 .include <bsd.port.mk>
