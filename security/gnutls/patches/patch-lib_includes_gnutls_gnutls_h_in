@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_includes_gnutls_gnutls_h_in,v 1.1 2010/08/31 20:01:41 ajacoutot Exp $
+--- lib/includes/gnutls/gnutls.h.in.orig	Tue Aug 31 21:42:16 2010
++++ lib/includes/gnutls/gnutls.h.in	Tue Aug 31 21:42:32 2010
+@@ -245,7 +245,7 @@ extern "C"
+     GNUTLS_DIG_SHA256 = GNUTLS_MAC_SHA256,
+     GNUTLS_DIG_SHA384 = GNUTLS_MAC_SHA384,
+     GNUTLS_DIG_SHA512 = GNUTLS_MAC_SHA512,
+-    GNUTLS_DIG_SHA224 = GNUTLS_MAC_SHA224,
++    GNUTLS_DIG_SHA224 = GNUTLS_MAC_SHA224
+     /* If you add anything here, make sure you align with
+        gnutls_mac_algorithm_t. */
+   } gnutls_digest_algorithm_t;
+@@ -783,7 +783,7 @@ extern "C"
+     GNUTLS_EXT_APPLICATION = 1,
+     GNUTLS_EXT_TLS = 2,
+     GNUTLS_EXT_MANDATORY = 3,
+-    GNUTLS_EXT_NONE = 4,
++    GNUTLS_EXT_NONE = 4
+   } gnutls_ext_parse_type_t;
+ 
+   int gnutls_ext_register (int type,
