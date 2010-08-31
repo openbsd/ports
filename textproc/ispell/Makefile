@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/05/31 17:12:49 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/08/31 12:35:19 jasper Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -24,7 +24,7 @@ MASTER_SITES2=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
 MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
-MASTER_SITES5=	http://natura.di.uminho.pt/~jj/pln/
+MASTER_SITES5=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/
 MASTER_SITES6=	http://sk-spell.sk.cx/files/
 MASTER_SITES7=	http://www.datsi.fi.upm.es/~coes/
 
@@ -35,7 +35,7 @@ FRENCH_DICT=		francais-IREQ-1.4
 GERMAN_DICT=		hk2-deutsch
 SWEDISH_DICT=		iswedish-1.2.1
 RUSSIAN_DICT=		rus-ispell-0.99e7
-PORTUGUESE_DICT=	UMportugues
+PORTUGUESE_DICT=	ispell.pt-20091013
 SLOVAK_DICT=		ispell-sk-0.3.2
 SPANISH_DICT=		espa~nol-1.7
 
@@ -45,14 +45,14 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${GERMAN_DICT}.tar.gz:2 \
 		${SWEDISH_DICT}.tar.gz:3 \
 		${RUSSIAN_DICT}.tar.gz:4 \
-		${PORTUGUESE_DICT}.tgz:5 \
+		${PORTUGUESE_DICT}.tar.gz:5 \
 		${SLOVAK_DICT}.tar.gz:6  \
 		${SPANISH_DICT}.tar.gz:7
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		${DUTCH_DICT}.tar.gz \
 		${SWEDISH_DICT}.tar.gz \
-		${PORTUGUESE_DICT}.tgz \
+		${PORTUGUESE_DICT}.tar.gz \
 		${SLOVAK_DICT}.tar.gz  \
 		${SPANISH_DICT}.tar.gz
 
@@ -62,7 +62,7 @@ PKGNAME-main=	${DISTNAME}p5
 MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 		-slovak -spanish
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i?=	ispell$i-${VERSION}p4
+PKGNAME$i?=	ispell$i-${VERSION}p5
 .endfor
 
 # ispell: BSD-like
@@ -128,7 +128,7 @@ post-build:
 	sed -e "s/^\#y//;s/^\#koi/wordchars/" < russian.aff.koi > russian.aff; \
 	${WRKDIST}/buildhash all.words russian.aff russian.hash)
 
-	@(cd ${WRKDIR}/portugues; \
+	@(cd ${WRKDIR}/${PORTUGUESE_DICT}; \
 	${WRKDIST}/buildhash portugues.dic portugues.aff portuguese.hash; \
 	cp portugues.aff portuguese.aff)
 
@@ -178,7 +178,7 @@ do-install:
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/russian/russian.{aff,hash} \
 		${PREFIX}/lib/ispell
-	${INSTALL_DATA} ${WRKDIR}/portugues/portuguese.{aff,hash} \
+	${INSTALL_DATA} ${WRKDIR}/${PORTUGUESE_DICT}/portuguese.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/${SLOVAK_DICT}/slovak.{aff,hash} \
 		${PREFIX}/lib/ispell
