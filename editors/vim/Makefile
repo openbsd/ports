@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/07/10 20:30:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.109 2010/08/31 19:38:38 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -10,6 +10,7 @@ VERSION=	7.2.${REV}
 PKGNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
+REVISION-main=	0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -108,7 +109,8 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 	 	atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 png expat\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
 		glitz Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-		Xrandr pixman-1 pthread-stubs xcb
+		Xrandr pixman-1 pthread-stubs xcb gthread-2.0 xcb-render \
+		xcb-render-util
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
