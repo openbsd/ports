@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/08/31 14:12:30 jasper Exp $
+
+Remove $latexdir here, so it's possible to set it with kpsewhich(1), as intended.
+
+--- configure.orig	Tue Aug 31 15:32:11 2010
++++ configure	Tue Aug 31 15:32:18 2010
+@@ -3896,7 +3896,6 @@ as_val=`eval 'as_val=${'$as_ac_File'}
+    if test "x$as_val" = x""yes; then
+   :
+ else
+-  latexdir=/usr/share/texmf/tex/latex
+   as_ac_File=`$as_echo "ac_cv_file_$latexdir/base/latex.ltx" | $as_tr_sh`
+ { $as_echo "$as_me:$LINENO: checking for $latexdir/base/latex.ltx" >&5
+ $as_echo_n "checking for $latexdir/base/latex.ltx... " >&6; }
