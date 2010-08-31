@@ -1,14 +1,18 @@
-$OpenBSD: patch-conf_nginx_conf,v 1.4 2009/05/21 11:44:08 steven Exp $
---- conf/nginx.conf.orig	Thu Feb 28 15:44:16 2008
-+++ conf/nginx.conf	Fri May 15 23:35:38 2009
-@@ -1,5 +1,5 @@
+$OpenBSD: patch-conf_nginx_conf,v 1.5 2010/08/31 20:05:21 edd Exp $
+--- conf/nginx.conf.orig	Mon Apr  6 14:43:46 2009
++++ conf/nginx.conf	Sun Aug  1 18:22:58 2010
+@@ -1,7 +1,9 @@
  
 -#user  nobody;
 +user _nginx;
  worker_processes  1;
  
++# Paths specified here (unless absolute), will be relative to 
++# ${SYSCONFDIR}/nginx. If not specified, defaults to /var/log/nginx/...
  #error_log  logs/error.log;
-@@ -41,7 +41,7 @@ http {
+ #error_log  logs/error.log  notice;
+ #error_log  logs/error.log  info;
+@@ -41,7 +43,7 @@ http {
          #access_log  logs/host.access.log  main;
  
          location / {
@@ -17,7 +21,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.4 2009/05/21 11:44:08 steven Exp $
              index  index.html index.htm;
          }
  
-@@ -51,7 +51,7 @@ http {
+@@ -51,7 +53,7 @@ http {
          #
          error_page   500 502 503 504  /50x.html;
          location = /50x.html {
@@ -26,7 +30,24 @@ $OpenBSD: patch-conf_nginx_conf,v 1.4 2009/05/21 11:44:08 steven Exp $
          }
  
          # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-@@ -87,7 +87,7 @@ http {
+@@ -61,12 +63,14 @@ http {
+         #}
+ 
+         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
++        # Make sure you let php-fastcgi know which port. Running it
++        # with '-b 127.0.0.1:9000' will do.
+         #
+         #location ~ \.php$ {
+-        #    root           html;
++        #    root           ${NGINX_DIR}/html;
+         #    fastcgi_pass   127.0.0.1:9000;
+         #    fastcgi_index  index.php;
+-        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
++        #    fastcgi_param  SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+         #    include        fastcgi_params;
+         #}
+ 
+@@ -87,7 +91,7 @@ http {
      #    server_name  somename  alias  another.alias;
  
      #    location / {
@@ -35,7 +56,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.4 2009/05/21 11:44:08 steven Exp $
      #        index  index.html index.htm;
      #    }
      #}
-@@ -110,7 +110,7 @@ http {
+@@ -110,7 +114,7 @@ http {
      #    ssl_prefer_server_ciphers   on;
  
      #    location / {
