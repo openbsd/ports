@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2010/08/31 19:25:57 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -44,7 +44,8 @@ BUILD_DEPENDS+=	::graphics/ffmpeg \
 
 BUILD_DEPENDS+=	::x11/py-gtk2 \
 		::devel/py-gdata \
-		::devel/iso-codes
+		::devel/iso-codes \
+		::multimedia/gstreamer-0.10/plugins-good
 RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \
 		:iso-codes-*:devel/iso-codes \
