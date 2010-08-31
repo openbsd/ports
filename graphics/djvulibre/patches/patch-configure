@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2007/02/06 07:17:42 steven Exp $
---- configure.orig	Sun Jan 14 19:23:27 2007
-+++ configure	Sun Jan 28 00:17:40 2007
-@@ -20424,14 +20424,11 @@ fi;
+$OpenBSD: patch-configure,v 1.3 2010/08/31 21:06:35 steven Exp $
+--- configure.orig	Sun Aug 15 08:20:58 2010
++++ configure	Wed Aug 25 05:30:23 2010
+@@ -14886,14 +14886,11 @@ fi
     CFLAGS=
     for opt in $saved_CXXFLAGS ; do
       case $opt in
@@ -16,38 +16,52 @@ $OpenBSD: patch-configure,v 1.2 2007/02/06 07:17:42 steven Exp $
         *) CFLAGS="$CFLAGS $opt" ;;
       esac
     done
-@@ -20463,7 +20460,7 @@ echo $ECHO_N "checking if $CXX accepts $
-     echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+@@ -14925,7 +14922,7 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
      rm conftest.*
 -    OPTS="$OPTS -O3"
 +    OPTS="$OPTS"
   else
-     echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
-@@ -20477,7 +20474,7 @@ echo $ECHO_N "checking if $CXX accepts $
-     echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -14939,7 +14936,7 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
      rm conftest.*
 -    OPTS="$OPTS -O2"
 +    OPTS="$OPTS"
   else
-     echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
-@@ -20523,7 +20520,6 @@ echo "${ECHO_T}yes" >&6
-     echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -14985,7 +14982,6 @@ $as_echo "yes" >&6; }
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
      rm conftest.*
 -     opt="-mcpu=${host_cpu}"
  
   opt="$opt"
-  echo "$as_me:$LINENO: checking if $CXX accepts $opt" >&5
-@@ -26852,7 +26848,7 @@ if test x$ac_enable_djview != xno
- then
-  NSDEJAVU_CFLAGS=${X_CFLAGS}
-  case "$host" in
-- *-cygwin* | *-mingw*)
-+ *-cygwin* | *-mingw* | *-openbsd* )
-    NSDEJAVU_LIBS="`echo ${X_LIBS} | sed -e 's/-lXext/-lXt -lXext/'`"
-    NSDEJAVU_LIBS="-no-undefined $NSDEJAVU_LIBS"
-    ;;
+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if $CXX accepts $opt" >&5
+@@ -18454,8 +18450,10 @@ $as_echo "setting QT_LIBS=$QT_LIBS" >&6; }
+ 
+     # Search X11 and Xt headers
+     if test "$no_x" != "yes" ; then
+-        savedCFLAGS="$CFLAGS"
+-        CFLAGS="$CFLAGS ${X_CFLAGS}"
++        savedCXXFLAGS="$CXXFLAGS"
++        CXXFLAGS="$CXXFLAGS ${X_CFLAGS}"
++        savedCPPFLAGS="$CPPFLAGS"
++        CPPFLAGS="$CPPFLAGS ${X_CFLAGS}"
+         for ac_header in X11/extensions/Xext.h
+ do :
+   ac_fn_cxx_check_header_compile "$LINENO" "X11/extensions/Xext.h" "ac_cv_header_X11_extensions_Xext_h" "include <X11/Xlib.h>
+@@ -18485,7 +18483,8 @@ else
+ fi
+ 
+ 
+-        CFLAGS="$savedCFLAGS"
++        CXXFLAGS="$savedCXXFLAGS"
++        CPPFLAGS="$savedCPPFLAGS"
+         if test "$no_xt" == "yes" ; then
+             { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Xt include files not found" >&5
+ $as_echo "$as_me: WARNING: Xt include files not found" >&2;}

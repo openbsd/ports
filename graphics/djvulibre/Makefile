@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/31 21:06:35 steven Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
-DISTNAME=	djvulibre-3.5.21
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	djvulibre 21.0
+DISTNAME=	djvulibre-3.5.23
+SHARED_LIBS=	djvulibre 23.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,28 +21,29 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 FLAVORS=	no_x11
 FLAVOR?=
 
-WANTLIB=	c m pthread stdc++ z
+WANTLIB=	c m jpeg pthread stdc++ tiff z
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/tiff
 
-LIB_DEPENDS=	jpeg::graphics/jpeg \
-		tiff::graphics/tiff 
+RUN_DEPENDS=	::x11/hicolor-icon-theme
 
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE} \
 		--with-extra-libraries=${LOCALBASE}/lib \
 		--disable-i18n
-CONFIGURE_ENV=	TIFF_LIBS="-L${LOCALBASE}/lib -ltiff -lz -ljpeg"
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=--without-x
 .else
-MODULES+=	x11/qt3
+MODULES=	x11/qt3
+RUN_DEPENDS+=	::devel/desktop-file-utils
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xau Xdmcp pthread-stubs xcb
-CONFIGURE_ARGS+=--with-qt=${MODQT_LIBDIR}
+CONFIGURE_ARGS+=--enable-djview
 CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \
 		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt"
 .endif
