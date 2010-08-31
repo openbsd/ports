@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/24 09:15:55 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2010/08/31 12:25:30 jasper Exp $
 
 COMMENT=	libraries for fwbuilder
 DISTNAME=	libfwbuilder-4.0.1
@@ -27,6 +27,8 @@ LIB_DEPENDS+=	::textproc/libxslt \
 
 AUTOMAKE_VERSION =	1.9	# XXX should be 1.10
 AUTOCONF_VERSION =	2.63
+
+USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 
