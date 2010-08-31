@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2010/07/07 16:38:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2010/08/31 21:18:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -8,8 +8,6 @@ include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
-lib/bonobo/
-lib/bonobo/servers/
 lib/bonobo/servers/GNOME_ClockApplet_Factory.server
 lib/bonobo/servers/GNOME_FishApplet_Factory.server
 lib/bonobo/servers/GNOME_NotificationAreaApplet.server
@@ -25,15 +23,12 @@ libexec/gnome-panel-add
 @bin libexec/wnck-applet
 @man man/man1/gnome-panel.1
 share/applications/gnome-panel.desktop
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.gnome.ClockApplet.Mechanism.service
 share/examples/gnome-panel/
 share/examples/gnome-panel/dbus-1/
 share/examples/gnome-panel/dbus-1/system.d/
 share/examples/gnome-panel/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
-share/gnome-2.0/
-share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome-2.0/ui/GNOME_FishApplet.xml
 share/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
@@ -380,7 +375,6 @@ share/icons/hicolor/scalable/apps/gnome-panel-window-list.svg
 share/icons/hicolor/scalable/apps/gnome-panel-window-menu.svg
 share/icons/hicolor/scalable/apps/gnome-panel-workspace-switcher.svg
 share/icons/hicolor/scalable/apps/gnome-panel.svg
-share/idl/
 share/idl/gnome-panel-2.0/
 share/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
@@ -419,19 +413,13 @@ share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/is/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
@@ -447,8 +435,6 @@ share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mai/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mi/
-share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
@@ -476,8 +462,6 @@ share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sr@ije/
-share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
@@ -492,8 +476,6 @@ share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-panel-2.0.mo
@@ -548,8 +530,6 @@ share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/omf/fish/fish-zh_CN.omf
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/clock.schemas

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2010/08/31 21:18:19 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.30.2
-REVISION=	2
+
+REVISION=	3
 
 SHARED_LIBS=	panel-applet-2       4.0      # .2.67
 
@@ -64,6 +65,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-network-manager
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX configure script looks for python but it is not used at all
+MODULES+=	lang/python
+MODPY_BUILDDEP=	No
+MODPY_RUNDEP=	No
 
 pre-configure:
 	perl -pi -e 's,xsltproc -o,xsltproc --nonet -o,g' \
