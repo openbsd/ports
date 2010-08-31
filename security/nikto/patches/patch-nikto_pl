@@ -1,12 +1,12 @@
-$OpenBSD: patch-nikto_pl,v 1.2 2010/04/04 21:05:50 benoit Exp $
---- nikto.pl.orig	Tue Feb  2 20:28:54 2010
-+++ nikto.pl	Thu Feb  4 09:50:22 2010
-@@ -291,7 +291,7 @@
-    }
-    unless (defined $NIKTOCONFIG{'DOCUMENTDIR'})
-    {
--      $NIKTOCONFIG{'DOCUMENTDIR'}="$NIKTOCONFIG{'EXECDIR'}/docs";
-+      $NIKTOCONFIG{'DOCUMENTDIR'}="$NIKTOCONFIG{'DOCDIR'}";
-    }
-    return;
+$OpenBSD: patch-nikto_pl,v 1.3 2010/08/31 08:16:22 jasper Exp $
+--- nikto.pl.orig	Thu Aug 26 14:31:53 2010
++++ nikto.pl	Thu Aug 26 14:32:17 2010
+@@ -285,7 +285,7 @@ sub setup_dirs {
+         $NIKTOCONFIG{'TEMPLATEDIR'} = "$NIKTOCONFIG{'EXECDIR'}/templates";
+     }
+     unless (defined $NIKTOCONFIG{'DOCUMENTDIR'}) {
+-        $NIKTOCONFIG{'DOCUMENTDIR'} = "$NIKTOCONFIG{'EXECDIR'}/docs";
++        $NIKTOCONFIG{'DOCUMENTDIR'} = "$NIKTOCONFIG{'DOCDIR'}/docs";
+     }
+     return;
  }

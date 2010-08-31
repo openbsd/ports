@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/04 16:25:22 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/08/31 08:16:22 jasper Exp $
 bin/nikto
 @man man/man1/nikto.1
 share/doc/nikto/
@@ -14,6 +14,9 @@ share/nikto/plugins/
 share/nikto/plugins/LW2.pm
 @comment no checksum
 share/nikto/plugins/db_404_strings
+@comment no checksum
+share/nikto/plugins/db_content_search
+@comment no checksum
 share/nikto/plugins/db_embedded
 @comment no checksum
 share/nikto/plugins/db_favicon
@@ -40,7 +43,11 @@ share/nikto/plugins/nikto_apache_expect_xss.plugin
 @comment no checksum
 share/nikto/plugins/nikto_apacheusers.plugin
 @comment no checksum
+share/nikto/plugins/nikto_auth.plugin
+@comment no checksum
 share/nikto/plugins/nikto_cgi.plugin
+@comment no checksum
+share/nikto/plugins/nikto_content_search.plugin
 @comment no checksum
 share/nikto/plugins/nikto_core.plugin
 @comment no checksum
@@ -58,17 +65,15 @@ share/nikto/plugins/nikto_msgs.plugin
 @comment no checksum
 share/nikto/plugins/nikto_multiple_index.plugin
 @comment no checksum
-share/nikto/plugins/nikto_mutate.plugin
-@comment no checksum
 share/nikto/plugins/nikto_outdated.plugin
-@comment no checksum
-share/nikto/plugins/nikto_passfiles.plugin
 @comment no checksum
 share/nikto/plugins/nikto_put_del_test.plugin
 @comment no checksum
 share/nikto/plugins/nikto_report_csv.plugin
 @comment no checksum
 share/nikto/plugins/nikto_report_html.plugin
+@comment no checksum
+share/nikto/plugins/nikto_report_nbe.plugin
 @comment no checksum
 share/nikto/plugins/nikto_report_text.plugin
 @comment no checksum
@@ -81,9 +86,8 @@ share/nikto/plugins/nikto_single.plugin
 share/nikto/plugins/nikto_subdomain.plugin
 @comment no checksum
 share/nikto/plugins/nikto_tests.plugin
-@comment no checksum
-share/nikto/plugins/nikto_user_enum_apache.plugin
 share/nikto/templates/
+@comment no checksum
 share/nikto/templates/htm_close.tmpl
 @comment no checksum
 share/nikto/templates/htm_end.tmpl
