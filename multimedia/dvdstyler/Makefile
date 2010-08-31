@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/08/31 12:30:45 jasper Exp $
 
 COMMENT=		DVD authoring application
 
@@ -38,7 +38,8 @@ WANTLIB= ICE ORBit-2 SM X11 Xau Xcomposite Xcursor \
 	x264 xcb xcb-render xcb-render-util xml2 z \
 	avcodec.>=14 avformat.>=13 avutil.>=7 swscale.>=2
 
-BUILD_DEPENDS=		::multimedia/dvdauthor \
+BUILD_DEPENDS=		::archivers/zip \
+			::multimedia/dvdauthor \
 			::multimedia/mjpegtools \
 			::multimedia/mpgtx \
 			::sysutils/dvd+rw-tools \
