@@ -1,0 +1,14 @@
+$OpenBSD: patch-demos_programs_workspace_wsmData_c,v 1.1 2010/08/31 21:04:06 jasper Exp $
+
+Fix implicit declaration.
+
+--- demos/programs/workspace/wsmData.c.orig	Tue Aug 31 22:53:35 2010
++++ demos/programs/workspace/wsmData.c	Tue Aug 31 22:53:52 2010
+@@ -42,6 +42,7 @@ static char rcsid[] = "$XConsortium: wsmData.c /main/6
+ #endif
+ #endif
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <Xm/Xm.h>
+ #include "wsm.h"
+ #include "wsmDebug.h"
