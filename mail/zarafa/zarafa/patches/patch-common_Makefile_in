@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
---- common/Makefile.in.orig	Mon May 31 16:38:00 2010
-+++ common/Makefile.in	Mon Jun 14 09:16:43 2010
+$OpenBSD: patch-common_Makefile_in,v 1.7 2010/08/31 17:57:21 ajacoutot Exp $
+--- common/Makefile.in.orig	Mon Aug 30 09:31:50 2010
++++ common/Makefile.in	Tue Aug 31 15:14:03 2010
 @@ -283,7 +283,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy
@@ -20,8 +20,8 @@ $OpenBSD: patch-common_Makefile_in,v 1.6 2010/06/30 02:46:48 ajacoutot Exp $
  			platform.linux.cpp						\
  			md5.cpp									\
 @@ -318,7 +318,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
- 			RecurrenceState.cpp						\
- 			recurrence.cpp
+ 			TimeUtil.cpp							\
+ 			RecurrenceState.cpp
  
 -libcommon_ssl_la_LDFLAGS = -static
 +libcommon_ssl_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)

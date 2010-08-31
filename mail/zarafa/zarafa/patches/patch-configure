@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2010/08/22 10:13:27 ajacoutot Exp $
---- configure.orig	Tue Aug  3 11:42:48 2010
-+++ configure	Sun Aug 22 10:22:53 2010
+$OpenBSD: patch-configure,v 1.9 2010/08/31 17:57:21 ajacoutot Exp $
+--- configure.orig	Mon Aug 30 09:31:47 2010
++++ configure	Tue Aug 31 15:14:03 2010
 @@ -21780,12 +21780,7 @@ else
    want_release=no
  fi
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure,v 1.8 2010/08/22 10:13:27 ajacoutot Exp $
  CFLAGS=$cflags_keep
  
  # Check for CLucene availability
-@@ -24476,13 +24458,13 @@ LIBS=$libs_keep
+@@ -24475,13 +24457,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -83,7 +83,7 @@ $OpenBSD: patch-configure,v 1.8 2010/08/22 10:13:27 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24542,7 +24524,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -24541,7 +24523,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

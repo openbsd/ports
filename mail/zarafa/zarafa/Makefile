@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2010/08/22 10:13:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/08/31 17:57:21 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 
-V=		6.40.1
+V=		6.40.2
 DISTNAME=	zarafa-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -84,7 +84,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ical-prefix=${LOCALBASE}/include/
 
 # XXX in-tree heimdal does not provide krb5_free_unparsed_name()
-CONFIGURE_ARGS+= --with-krb5=/usr/bin/true
+CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \

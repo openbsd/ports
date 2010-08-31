@@ -1,0 +1,17 @@
+$OpenBSD: patch-ECtools_ECTestTools_RecurrenceTest_rectest_cpp,v 1.1 2010/08/31 17:57:21 ajacoutot Exp $
+
+rectest.cpp: In function 'int main(int, char**)':
+rectest.cpp:82: error: no matching function for call to 'RecurrenceState::ParseBlob(char*, size_t)'
+../../../common/RecurrenceState.h:64: note: candidates are: HRESULT RecurrenceState::ParseBlob(char*, unsigned int, ULONG)
+
+--- ECtools/ECTestTools/RecurrenceTest/rectest.cpp.orig	Tue Aug 31 16:06:54 2010
++++ ECtools/ECTestTools/RecurrenceTest/rectest.cpp	Tue Aug 31 16:07:02 2010
+@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
+     
+     RecurrenceState r;
+     
+-    hr = r.ParseBlob((char *)strBin.c_str(), strBin.size());
++    hr = r.ParseBlob((char *)strBin.c_str(), strBin.size(), 0);
+     
+     if(hr == hrSuccess) {
+         cerr << "Recurrence OK" << std::endl;

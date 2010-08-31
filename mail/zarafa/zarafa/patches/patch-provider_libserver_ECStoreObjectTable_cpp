@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/libserver/ECStoreObjectTable.cpp.orig	Tue Jun 29 01:35:04 2010
-+++ provider/libserver/ECStoreObjectTable.cpp	Tue Jun 29 01:04:14 2010
-@@ -644,7 +644,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+$OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.2 2010/08/31 17:57:21 ajacoutot Exp $
+--- provider/libserver/ECStoreObjectTable.cpp.orig	Mon Aug 30 13:01:48 2010
++++ provider/libserver/ECStoreObjectTable.cpp	Tue Aug 31 15:14:05 2010
+@@ -655,7 +655,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  	unsigned int ulLastPos;
  	unsigned int ulColId = 0;
  	std::string strData;
@@ -11,7 +11,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  	
  	if(lpSession == NULL || lpsMapKey == NULL)
  	{
-@@ -696,7 +698,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -707,7 +709,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  			break;
  		case PT_R4:
   			lpPropVal->__union = SOAP_UNION_propValData_flt;
@@ -23,7 +23,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  			break;
  		case PT_BOOLEAN:
   			lpPropVal->__union = SOAP_UNION_propValData_b;
-@@ -704,7 +710,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -715,7 +721,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  			break;
  		case PT_DOUBLE:
   			lpPropVal->__union = SOAP_UNION_propValData_dbl;
@@ -35,7 +35,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  			break;
  		case PT_CURRENCY:
  			lpPropVal->Value.hilo = s_alloc<hiloLong>(soap);
-@@ -714,7 +724,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -725,7 +735,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  			break;
  		case PT_APPTIME:
   			lpPropVal->__union = SOAP_UNION_propValData_dbl;
@@ -47,7 +47,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  			break;
  		case PT_SYSTIME:
  			lpPropVal->Value.hilo = s_alloc<hiloLong>(soap);
-@@ -807,7 +821,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -818,7 +832,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  			{
  				ParseMVProp(lpDBRow[ulColId], lpDBLen[ulColId], &ulLastPos, &strData);
  
@@ -59,7 +59,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  			}
  			break;
  		case PT_MV_APPTIME:
-@@ -827,7 +845,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -838,7 +856,11 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  			{
  				ParseMVProp(lpDBRow[ulColId], lpDBLen[ulColId], &ulLastPos, &strData);
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-provider_libserver_ECStoreObjectTable_cpp,v 1.1 2010/06/30 02:46
  			}
  			break;
  		case PT_MV_CURRENCY:
-@@ -935,7 +957,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
+@@ -946,7 +968,9 @@ ECRESULT ECStoreObjectTable::CopyDatabaseRowToSOAPProp
  	} 
  
  exit:

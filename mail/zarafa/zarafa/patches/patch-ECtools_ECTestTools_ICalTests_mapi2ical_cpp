@@ -1,0 +1,17 @@
+$OpenBSD: patch-ECtools_ECTestTools_ICalTests_mapi2ical_cpp,v 1.1 2010/08/31 17:57:21 ajacoutot Exp $
+
+mapi2ical.cpp: In function 'int main(int, char**)':
+mapi2ical.cpp:173: error: no matching function for call to 'MapiToICal::AddMessage(IMessage*&, int)'
+../../../libicalmapi/MAPIToICal.h:70: note: candidates are: virtual HRESULT MapiToICal::AddMessage(IMessage*, std::string, ULONG)
+
+--- ECtools/ECTestTools/ICalTests/mapi2ical.cpp.orig	Tue Aug 31 16:36:02 2010
++++ ECtools/ECTestTools/ICalTests/mapi2ical.cpp	Tue Aug 31 16:36:17 2010
+@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
+ 			goto next;
+ 
+ 
+-		hr = lpMapiToICal->AddMessage(lpMessage, 0);
++		hr = lpMapiToICal->AddMessage(lpMessage, 0, 0);
+ 		if (hr != hrSuccess) {
+ 			cerr << "-- broken message!" << stringify(hr, 1) << endl;
+ 			goto next;

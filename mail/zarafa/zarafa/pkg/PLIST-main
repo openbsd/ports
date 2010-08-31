@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2010/08/22 10:13:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2010/08/31 17:57:21 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -46,10 +46,12 @@ include/libfreebusy/ECFBBlockList.h
 include/libfreebusy/ECFreeBusyData.h
 include/libfreebusy/ECFreeBusySupport.h
 include/libfreebusy/ECFreeBusyUpdate.h
+include/libfreebusy/PublishFreeBusy.h
 include/libfreebusy/freebusy.h
 include/libfreebusy/freebusyguid.h
 include/libfreebusy/freebusytags.h
 include/libfreebusy/freebusyutil.h
+include/libfreebusy/recurrence.h
 include/libzarafasync/
 include/libzarafasync/ECLibSync.h
 include/libzarafasync/ECOfflineABImporter.h
@@ -106,6 +108,7 @@ include/zarafa/IMAPIOffline.h
 include/zarafa/RecurrenceState.h
 include/zarafa/SSLUtil.h
 include/zarafa/SymmetricCrypt.h
+include/zarafa/TimeUtil.h
 include/zarafa/Trace.h
 include/zarafa/UnixUtil.h
 include/zarafa/Util.h
@@ -128,7 +131,6 @@ include/zarafa/my_getopt.h
 include/zarafa/namedprops.h
 include/zarafa/platform.h
 include/zarafa/platform.linux.h
-include/zarafa/recurrence.h
 include/zarafa/restrictionutil.h
 include/zarafa/rtfutil.h
 include/zarafa/str1252.h

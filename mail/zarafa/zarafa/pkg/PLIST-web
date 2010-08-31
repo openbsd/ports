@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.3 2010/08/22 10:13:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.4 2010/08/31 17:57:21 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -38,6 +38,7 @@ zarafa-webaccess/client/core/json.js
 zarafa-webaccess/client/core/layoutmanager.js
 zarafa-webaccess/client/core/plugin.js
 zarafa-webaccess/client/core/pluginmanager.js
+zarafa-webaccess/client/core/properties.js
 zarafa-webaccess/client/core/restriction.js
 zarafa-webaccess/client/core/utils.js
 zarafa-webaccess/client/core/viewcontroller.js
@@ -51,6 +52,7 @@ zarafa-webaccess/client/layout/css/
 zarafa-webaccess/client/layout/css/addtofavorite.css
 zarafa-webaccess/client/layout/css/advancedfind.css
 zarafa-webaccess/client/layout/css/appointment.css
+zarafa-webaccess/client/layout/css/attachitem.css
 zarafa-webaccess/client/layout/css/calendar-print.css
 zarafa-webaccess/client/layout/css/calendar.css
 zarafa-webaccess/client/layout/css/contact.css
@@ -86,6 +88,7 @@ zarafa-webaccess/client/layout/dialogs/modal/
 zarafa-webaccess/client/layout/dialogs/modal/addressbook.php
 zarafa-webaccess/client/layout/dialogs/modal/addtofavorite.php
 zarafa-webaccess/client/layout/dialogs/modal/advprompt.php
+zarafa-webaccess/client/layout/dialogs/modal/attachitem.php
 zarafa-webaccess/client/layout/dialogs/modal/attachments.php
 zarafa-webaccess/client/layout/dialogs/modal/categories.php
 zarafa-webaccess/client/layout/dialogs/modal/copyfolder.php
@@ -197,6 +200,7 @@ zarafa-webaccess/client/layout/img/icon_addsignature.gif
 zarafa-webaccess/client/layout/img/icon_advanced_find.gif
 zarafa-webaccess/client/layout/img/icon_appointment_recurring.gif
 zarafa-webaccess/client/layout/img/icon_asign_task.gif
+zarafa-webaccess/client/layout/img/icon_attach_item.gif
 zarafa-webaccess/client/layout/img/icon_attachments.gif
 zarafa-webaccess/client/layout/img/icon_calendar.gif
 zarafa-webaccess/client/layout/img/icon_cancel_asign_task.gif
@@ -403,6 +407,7 @@ zarafa-webaccess/client/layout/js/addressbook.js
 zarafa-webaccess/client/layout/js/advancedfind.js
 zarafa-webaccess/client/layout/js/advprompt.js
 zarafa-webaccess/client/layout/js/appointment.js
+zarafa-webaccess/client/layout/js/attachitem.js
 zarafa-webaccess/client/layout/js/categories.js
 zarafa-webaccess/client/layout/js/contact.js
 zarafa-webaccess/client/layout/js/createmail.js
@@ -501,6 +506,7 @@ zarafa-webaccess/client/modules/addressbooklistmodule.js
 zarafa-webaccess/client/modules/advancedfindlistmodule.js
 zarafa-webaccess/client/modules/appointmentitemmodule.js
 zarafa-webaccess/client/modules/appointmentlistmodule.js
+zarafa-webaccess/client/modules/attachitemlistmodule.js
 zarafa-webaccess/client/modules/buttonsmodule.js
 zarafa-webaccess/client/modules/categoriesitemmodule.js
 zarafa-webaccess/client/modules/contactitemmodule.js
