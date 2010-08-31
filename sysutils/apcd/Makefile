@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/08 20:57:06 mglocker Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/31 08:15:45 ajacoutot Exp $
 
 COMMENT=		APC SmartUPS daemon
 
 DISTNAME=		apcd-0.2
-PKGNAME=		${DISTNAME}
 CATEGORIES=		sysutils
 MASTER_SITES=		http://www.nazgul.ch/dev/
 

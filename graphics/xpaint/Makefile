@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2010/08/23 17:25:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/08/31 08:15:44 ajacoutot Exp $
 
 COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1
-PKGNAME=		${DISTNAME}
 REVISION=		2
 CATEGORIES=		graphics x11
 

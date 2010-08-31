@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/07/22 00:31:57 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/31 08:15:45 ajacoutot Exp $
 
 COMMENT=	free, standards-compilant jvm with a small footprint
 
 DISTNAME=	jamvm-1.5.3
-PKGNAME=	${DISTNAME}
 
 CATEGORIES=	lang java
 

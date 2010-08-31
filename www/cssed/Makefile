@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/16 12:26:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/08/31 08:15:45 ajacoutot Exp $
 
 COMMENT=	CSS editor
 
 DISTNAME=	cssed-0.4.0
-PKGNAME=	${DISTNAME}
 REVISION=	8
 CATEGORIES=	www editors
 

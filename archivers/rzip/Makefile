@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/08/31 08:15:44 ajacoutot Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
 DISTNAME=	rzip-2.1
-PKGNAME=	${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://rzip.samba.org/
 
