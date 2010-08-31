@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2009/11/14 07:05:44 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.54 2010/08/31 06:03:33 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -78,6 +78,7 @@ libexec/postfix/postmulti-script
 @man man/man5/postfix-wrapper.5
 @man man/man5/regexp_table.5
 @man man/man5/relocated.5
+@man man/man5/sqlite_table.5
 @man man/man5/tcp_table.5
 @man man/man5/transport.5
 @man man/man5/virtual.5
@@ -166,6 +167,8 @@ share/doc/postfix/html/SCHEDULER_README.html
 share/doc/postfix/html/SMTPD_ACCESS_README.html
 share/doc/postfix/html/SMTPD_POLICY_README.html
 share/doc/postfix/html/SMTPD_PROXY_README.html
+share/doc/postfix/html/SOHO_README.html
+share/doc/postfix/html/SQLITE_README.html
 share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
 share/doc/postfix/html/STRESS_README.html
 share/doc/postfix/html/TLS_LEGACY_README.html
@@ -237,6 +240,7 @@ share/doc/postfix/html/smtp-source.1.html
 share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
+share/doc/postfix/html/sqlite_table.5.html
 share/doc/postfix/html/tcp_table.5.html
 share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
@@ -283,6 +287,8 @@ share/doc/postfix/readme/SCHEDULER_README
 share/doc/postfix/readme/SMTPD_ACCESS_README
 share/doc/postfix/readme/SMTPD_POLICY_README
 share/doc/postfix/readme/SMTPD_PROXY_README
+share/doc/postfix/readme/SOHO_README
+share/doc/postfix/readme/SQLITE_README
 share/doc/postfix/readme/STANDARD_CONFIGURATION_README
 share/doc/postfix/readme/STRESS_README
 share/doc/postfix/readme/TLS_LEGACY_README

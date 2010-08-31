@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.71 2010/08/22 09:04:29 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.72 2010/08/31 06:03:32 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -79,6 +79,13 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 LIB_DEPENDS+=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
 MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
+.endif
+
+.if ${FLAVOR:L:Msqlite}
+WANTLIB+=	pthread
+LIB_DEPENDS+=	sqlite3::databases/sqlite3
+MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_SQLITE
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3 -pthread
 .endif
 
 pre-configure:
