@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/10 16:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =		K Desktop Environment, graphics
 DISTNAME =		kdegraphics-${VERSION}
-PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=  gwenviewlib          0.0      # .1.0
 SHARED_LIBS +=  okularcore           0.0      # .1.0

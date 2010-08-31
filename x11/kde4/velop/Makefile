@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/20 14:28:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT=		K Desktop Environment, development
 DISTNAME=		kdevelop-${VERSION}
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 SHARED_LIBS +=	kdevcmakecommon      0.0      # .1.0
 SHARED_LIBS +=	kdevplatforminterfaces 0.0    # .4.0

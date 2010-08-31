@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 16:18:17 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =		K Desktop Environment, default theme
 DISTNAME =		oxygen-icons-${VERSION}
-PKGNAME =		${DISTNAME}
 
 .include <bsd.port.mk>

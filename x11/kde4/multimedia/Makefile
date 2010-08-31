@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/10 16:57:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =		K Desktop Environment, multimedia
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}
 
 SHARED_LIBS += audiocdplugins 4.0	# .4.0
 SHARED_LIBS += kcddb          4.0       # .4.0

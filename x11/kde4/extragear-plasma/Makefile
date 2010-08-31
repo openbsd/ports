@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
 DISTNAME =		extragear-plasma-${VERSION}
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/} \
 			http://openbsddistfiles.org/martynas/kde/${VERSION}/extragear/

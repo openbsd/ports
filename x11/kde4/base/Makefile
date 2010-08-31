@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/10 16:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/08/31 08:22:04 jasper Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
-PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	konq                 8.0      # .6.0
 SHARED_LIBS +=	konqsidebarplugin    5.0      # .4.0

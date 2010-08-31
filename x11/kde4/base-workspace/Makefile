@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/10 16:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:04 jasper Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
-PKGNAME =		${DISTNAME}
 
 LIB_DEPENDS +=	::x11/kde4/libs \
 		::x11/gnome/libxklavier \

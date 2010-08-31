@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/10 16:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =		K Desktop Environment, games
 DISTNAME =		kdegames-${VERSION}
-PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
