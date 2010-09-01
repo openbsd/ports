@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/01 11:22:18 jasper Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -14,6 +14,7 @@ MASTER_SITES = 	ftp://ftp.vim.org/pub/vim/runtime/spell/
 DIST_SUBDIR = 	vim72
 EXTRACT_ONLY = 
 DISTNAME = 	vim-spell-${VERSION}
+REVISION =	0
 
 # GPLv2+, LGPL, GFDL
 PERMIT_PACKAGE_CDROM = 	Yes
