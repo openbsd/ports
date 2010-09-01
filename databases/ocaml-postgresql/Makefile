@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/15 18:25:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/01 09:17:43 sthen Exp $
 
 BROKEN-hppa=		ocamldoc hangs build
 
@@ -7,7 +7,8 @@ CATEGORIES=	databases
 
 V=		1.4.6
 DISTNAME=	postgresql-ocaml-${V}
-PKGNAME=	ocaml-postgresql-${V}p4
+PKGNAME=	ocaml-postgresql-${V}
+REVISION=	4
 MASTER_SITES=	http://ocaml.info/ocaml_sources/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

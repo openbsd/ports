@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/01 09:17:43 sthen Exp $
 
 COMMENT=	produce HTML form elements for database columns
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-AsForm-2.42
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/01 09:17:42 sthen Exp $
 
 COMMENT=	standards compliant LDAP browser
 
 V=		3.2
 DISTNAME=	JXv${V}deploy
-PKGNAME=	jxplorer-${V}p4
+PKGNAME=	jxplorer-${V}
+REVISION=	4
 EXTRACT_SUFX=	.zip
 CATEGORIES=	databases net
 

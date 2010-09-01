@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/01 09:17:43 sthen Exp $
 
 COMMENT=	extensions to Class::DBI for MySQL
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-mysql-1.00
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>

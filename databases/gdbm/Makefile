@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.28 2010/09/01 09:17:42 sthen Exp $
 
 COMMENT=		GNU dbm
 
 VERSION=		1.8.3
 DISTNAME=		gdbm-${VERSION}
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		databases
+
 SHARED_LIBS +=	gdbm                 3.0      # .0.0
 
 HOMEPAGE=		http://www.gnu.org/software/gdbm/

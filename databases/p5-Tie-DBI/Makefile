@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/01 09:17:43 sthen Exp $
 
 COMMENT=	Tie hashes to DBI relational databases
 
 MODULES=	cpan
 DISTNAME=	Tie-DBI-0.91
-PKGNAME=	p5-${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	databases
 
 # Perl

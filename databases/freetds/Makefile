@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2010/05/02 11:36:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/09/01 09:17:42 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
 PATCHVER=	20090903
 DISTNAME=	freetds-$V
-PKGNAME=	${DISTNAME}.1pre${PATCHVER}p0
+PKGNAME=	${DISTNAME}.1pre${PATCHVER}
+REVISION=	0
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.fixed.gz:0
 
 SHARED_LIBS += ct                   4.0      # .4.0
@@ -22,19 +23,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES0=	http://spacehopper.org/mirrors/
-
-WANTLIB=	c ncurses readline pthread z
+WANTLIB += c iodbc iodbcinst gcrypt gnutls gpg-error ncurses
+WANTLIB += pthread readline tasn1 z
 
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
+MASTER_SITES0=	http://spacehopper.org/mirrors/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::devel/doxygen
-LIB_DEPENDS=	iodbc,iodbcinst::databases/iodbc,-main \
-		gcrypt::security/libgcrypt \
-		gnutls::security/gnutls \
-		gpg-error::security/libgpg-error \
-		tasn1::security/libtasn1
+LIB_DEPENDS=	::databases/iodbc,-main \
+		::security/libgcrypt \
+		::security/gnutls \
+		::security/libgpg-error \
+		::security/libtasn1
 
 FLAVORS=	msdblib
 FLAVOR?=

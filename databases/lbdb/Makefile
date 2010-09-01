@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/10 10:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/01 09:17:42 sthen Exp $
 
 COMMENT-main =		little brother's database, email address query tools
-COMMENT-ldap =		LDAP support for little brother's database
+COMMENT-ldap =		LDAP support for lbdb
 
 VERSION =		0.36
-DISTNAME =		lbdb_${VERSION}
+REVISION-main =		4
+REVISION-ldap =		5
 
-# bump all subpackages together
-PKGNAME-main =		lbdb-${VERSION}p4
-PKGNAME-ldap =		lbdb-ldap-${VERSION}p4
+DISTNAME =		lbdb_${VERSION}
+PKGNAME-main =		lbdb-${VERSION}
+PKGNAME-ldap =		lbdb-ldap-${VERSION}
 
 CATEGORIES =		databases mail
 
@@ -23,7 +24,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS-ldap =	::databases/p5-ldap \
-			:${FULLPKGNAME-main}:databases/lbdb
+			:${PKGNAME-main}:databases/lbdb
 
 MODULES =		converters/libiconv
 WANTLIB-main =		c
