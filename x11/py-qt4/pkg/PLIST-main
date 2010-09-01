@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/04/19 09:51:30 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/09/01 10:50:08 jasper Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -55,10 +55,10 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/objcreator.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/as_string.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/as_string.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/ascii_upper.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/ascii_upper.pyc
-lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/encode_utf8.py
-lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/encode_utf8.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/invoke.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/invoke.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/load_plugin.py
@@ -82,7 +82,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.pyc
-lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
 lib/qt4/plugins/designer/libpythonplugin.so
 share/sip/
 share/sip/Qt/
