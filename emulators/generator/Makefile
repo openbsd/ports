@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/03 20:50:00 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/01 11:27:51 jasper Exp $
 
 COMMENT=	Sega Genesis emulator
 
 DISTNAME=	generator-0.35-cbiere-r4
-PKGNAME=	generator-0.35r4p0
+PKGNAME=	generator-0.35r4
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	emulators
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}/cbiere/generator/
 
 HOMEPAGE=	http://www.squish.net/generator/
 
@@ -15,11 +16,11 @@ PERMIT_DISTFILES_CDROM=	can't sell
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	can't sell
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	c m pthread z
+WANTLIB=	c m pthread z bz2 SDL jpeg
 
-LIB_DEPENDS+=	bz2.>=10::archivers/bzip2 \
-		SDL.>=6::devel/sdl \
-		jpeg.>=62::graphics/jpeg
+LIB_DEPENDS+=	::archivers/bzip2 \
+		::devel/sdl \
+		::graphics/jpeg
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
