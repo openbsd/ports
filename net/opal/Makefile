@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/05/31 06:31:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/01 14:40:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,12 +28,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m ogg sasl2
-WANTLIB += ssl
+WANTLIB += ssl speex speexdsp x264 theora gsm pt pthread stdc++
 
-LIB_DEPENDS=	speex.>=7,speexdsp::audio/speex \
-		theora::multimedia/libtheora \
-		gsm::audio/gsm \
-		pt.>=3::devel/ptlib
+LIB_DEPENDS=	::audio/speex \
+		::multimedia/libtheora \
+		::audio/gsm \
+		::devel/ptlib \
+		::multimedia/x264
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:ffmpeg->=20100512:graphics/ffmpeg # dlopen(3) libavcodec.so
 
 ALL_TARGET=	opt
 OPAL_FILE=	libopal.so
@@ -49,7 +53,7 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=	--disable-localspeex \
 		--disable-localgsm \
 		--enable-plugins
@@ -59,13 +63,6 @@ CONFIGURE_ARGS=	--disable-localspeex \
 # undefined symbol '_Z18vpb_set_event_maskit'
 # <...>
 CONFIGURE_ARGS+= --disable-vpb
-
-# XXX our FFmpeg is too old
-CONFIGURE_ARGS+= --disable-h264
-#BUILD_DEPENDS=	${RUN_DEPENDS}
-#RUN_DEPENDS=	::graphics/ffmpeg # dlopen(3) libavcodec.so
-#LIB_DEPENDS+=	x264::multimedia/x264
-#LDFLAGS+=	-pthread
 
 .ifndef DEBUG
 CONFIGURE_ENV+=	DEBUG_BUILD="no"

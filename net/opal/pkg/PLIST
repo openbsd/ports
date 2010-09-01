@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/23 21:13:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/01 14:40:23 ajacoutot Exp $
 include/opal/
 include/opal/asn/
 include/opal/asn/gcc.h
@@ -158,6 +158,10 @@ lib/opal-${V}/codecs/audio/lpc10_audio_pwplugin.so
 lib/opal-${V}/codecs/audio/speex_audio_pwplugin.so
 lib/opal-${V}/codecs/video/
 lib/opal-${V}/codecs/video/h261-vic_video_pwplugin.so
+lib/opal-${V}/codecs/video/h263-1998_video_pwplugin.so
+lib/opal-${V}/codecs/video/h264_video_pwplugin.so
+@bin lib/opal-${V}/codecs/video/h264_video_pwplugin_helper
+lib/opal-${V}/codecs/video/mpeg4-ffmpeg_video_pwplugin.so
 lib/opal-${V}/codecs/video/theora_video_pwplugin.so
 lib/pkgconfig/opal.pc
 share/opal/
