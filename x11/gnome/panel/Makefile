@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/08/31 21:18:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/09/01 11:36:47 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
@@ -66,7 +66,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# XXX configure script looks for python but it is not used at all
+# XXX configure script looks for python but it is not used at all.
+# We don't add python to build depends because it is needed by some of
+# the dependencies anyway, so it'll be there already.
 MODULES+=	lang/python
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
