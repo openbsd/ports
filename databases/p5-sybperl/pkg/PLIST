@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/09/05 13:12:47 espie Exp $
-@conflict p5-syberl-*
+@comment $OpenBSD: PLIST,v 1.11 2010/09/01 22:32:46 sthen Exp $
+@conflict sybperl-*
 ${P5ARCH}/
 ${P5ARCH}/Sybase/
 ${P5ARCH}/Sybase/BCP.pm
