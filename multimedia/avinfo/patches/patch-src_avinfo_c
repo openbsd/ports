@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_avinfo_c,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/avinfo.c.orig	Tue Aug 31 17:50:49 2010
++++ src/avinfo.c	Tue Aug 31 17:54:06 2010
+@@ -141,7 +141,7 @@ int main( int argc, char* argv[] ){
+ 		if(*flst_name=='-'&&!flst_name[1]) filelist=stdin;  /*GNU standart for stdin*/
+ 		else {
+ 			filelist=fopen(flst_name,"r");
+-			if(!filelist||(int)filelist==-1) return fprintf(stderr,"Error opening filelist: %s, error:%d \n",flst_name,(int)filelist);
++			if(!filelist) return fprintf(stderr,"Error opening filelist: %s\n",flst_name);
+ 		}
+ 	}
+ 	if(filelist) {
+@@ -175,7 +175,7 @@ int main( int argc, char* argv[] ){
+ 			while( *curr_ext && !processed_flag){
+ 				if((!*force_ext && !STRCMP(curr_ext,ext))||!STRCMP(curr_ext,force_ext)){
+ 					file = fopen( in_name, "rb" );
+-					if( !file || (int)file==-1 ) {
++					if( !file ) {
+ 						if(!filelist) return 1;
+ 					}else{
+ 						fseek( file, 0, SEEK_END );

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ass_y,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/ass.y.orig	Tue Aug 31 17:33:31 2010
++++ src/ass.y	Tue Aug 31 17:34:29 2010
+@@ -224,7 +224,7 @@ var_t Op(var_t var1, var_t var2, int op_type){
+ 				break;
+ 		case '/':res.number=var2.number?var1.number/var2.number:1;
+ 				break;
+-		case NE :if(var1.type==var2.type==t_STRING) res.number=STRCMP(var1.string,var2.string);
++		case NE :if(var1.type==(var2.type==t_STRING)) res.number=STRCMP(var1.string,var2.string);
+ 					else res.number=(var1.number!=var2.number);
+ 				break;
+ 		case '=':if(var1.type==t_STRING && var2.type==t_STRING) res.number=!STRCMP(var1.string,var2.string);

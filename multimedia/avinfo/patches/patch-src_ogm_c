@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ogm_c,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/ogm.c.orig	Tue Aug 31 17:29:24 2010
++++ src/ogm.c	Tue Aug 31 17:29:42 2010
+@@ -40,6 +40,7 @@ typedef struct{
+ 
+ comment_t CommentSplit(unsigned char*CommentVector, int CommentSize){
+     comment_t ret_val;
++    bzero(&ret_val, sizeof(ret_val));
+     int c;
+     ret_val.name=NULL;
+ 	if(CommentSize>1){

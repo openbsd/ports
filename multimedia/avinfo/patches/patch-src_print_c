@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_print_c,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/print.c.orig	Tue Aug 31 17:34:49 2010
++++ src/print.c	Tue Aug 31 17:36:22 2010
+@@ -288,7 +288,7 @@ const char* print_mode(const var_t var, const int mode
+ 
+ 
+ int PrintVarToLineCache(linecache*l, const int mode_prn,const var_t var){
+-	char* tmp_buff;
++	const char* tmp_buff;
+ 	tmp_buff=print_mode(var,mode_prn);
+ 	AddStringToLineCache(l,tmp_buff);
+ 	return 1;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mpeg_c,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/mpeg.c.orig	Tue Aug 31 17:28:15 2010
++++ src/mpeg.c	Tue Aug 31 17:28:25 2010
+@@ -121,7 +121,7 @@ int mpegparse ( FILE* file, int flags ){
+ 	int readed_bytes=0;
+ 	unsigned int sync=MPEG_ISO_11172_END_CODE;
+ 	int c;
+-	int size;
++	int size=0;
+ 	int size2=0;
+ 	int temp=0;
+ 	int common_bitrate=0;

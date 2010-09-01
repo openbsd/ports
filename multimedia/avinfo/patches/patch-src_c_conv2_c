@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_c_conv2_c,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
+--- src/c_conv2.c.orig	Tue Aug 31 17:55:27 2010
++++ src/c_conv2.c	Tue Aug 31 17:55:39 2010
+@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
+ 	int size;
+ 	int c;
+ 	int state=0;
+-	if(!file||(int)file==-1) return 32; /*error*/
++	if(!file) return 32; /*error*/
+ 	fseek(file,0,SEEK_END);
+ 	size=ftell(file);
+ 	fseek(file,0,SEEK_SET);

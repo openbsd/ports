@@ -1,0 +1,4 @@
+Avinfo is an utility for displaying AVI, MPEG, OGG/OGM, MKV, 
+IFO header information. It returns the length of a clip, FPS, 
+resolution, codecs, sound parameters, and the number, type and 
+language of the stream.
