@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/01 11:06:21 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net multimedia
 
@@ -34,17 +34,12 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::devel/boost
 LIB_DEPENDS=	::net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 		::net/opal \
 		::devel/sdl \
 		::databases/evolution-data-server \
 		::devel/libsigc++-2 \
 		::devel/libnotify
-
-# include/boost/detail/shared_count.hpp:117
-# error: exception handling disabled
-CFLAGS+=	-fexceptions
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
