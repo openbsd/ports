@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/01 09:57:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/01 10:00:05 jasper Exp $
 
 # XXX: Don't forget to update x11/py-qt{3,4} when updating this port.
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES = http://www.riverbankcomputing.com/static/Downloads/QScintilla2/
+MASTER_SITES =  http://www.riverbankcomputing.com/static/Downloads/QScintilla2/ \
+		http://spacehopper.org/mirrors/
 
 MODULES = devel/gettext x11/qt4
 
