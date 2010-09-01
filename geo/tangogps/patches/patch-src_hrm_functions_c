@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_hrm_functions_c,v 1.1 2010/09/01 07:12:17 jasper Exp $
+
+Disable Bluez-stack bluetooth.
+
+--- src/hrm_functions.c.orig	Mon Aug 30 15:29:23 2010
++++ src/hrm_functions.c	Mon Aug 30 15:30:13 2010
+@@ -1,5 +1,5 @@
++#if !defined(__OpenBSD__)
+ 
+-
+ #ifdef HAVE_CONFIG_H
+ #  include <config.h>
+ #endif
+@@ -293,3 +293,4 @@ get_hrm_data_thread(void *ptr)
+ 	}
+ 	return NULL;
+ }
++#endif /* ! __OpenBSD__ */

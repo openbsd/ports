@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1 2010/09/01 07:12:17 jasper Exp $
+
+Disable Bluez-stack bluetooth.
+
+--- src/callbacks.c.orig	Mon Aug 30 15:30:44 2010
++++ src/callbacks.c	Mon Aug 30 15:34:03 2010
+@@ -28,7 +28,9 @@
+ #include "poi.h"
+ #include "wp.h"
+ #include "tracks.h"
+-#include "hrm_functions.h"
++#if !defined(__OpenBSD__)
++#  include "hrm_functions.h"
++#endif
+ #include "dataupload.h"
+ 
+ #define WTFCOUNTER 5
+@@ -405,7 +407,9 @@ on_drawingarea1_expose_event           (GtkWidget     
+ 		event->area.width, event->area.height);
+ 	
+ 	osd_speed(TRUE);
++#if !defined(__OpenBSD__)
+ 	osd_hrm(TRUE);
++#endif
+ 	map_scale_indicator();
+ 	
+ 	return FALSE;

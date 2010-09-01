@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/09/01 07:12:17 jasper Exp $
+
+Disable Bluez-stack bluetooth.
+
+--- configure.in.orig	Mon Aug  9 23:42:27 2010
++++ configure.in	Mon Aug  9 23:42:32 2010
+@@ -23,7 +23,7 @@ AM_GLIB_GNU_GETTEXT
+ 
+ AM_PROG_LIBTOOL
+ 
+-PKG_CHECK_MODULES(PACKAGE, [gtk+-2.0 gdk-2.0 gconf-2.0 libxml-2.0 libsoup-2.4 bluez])
++PKG_CHECK_MODULES(PACKAGE, [gtk+-2.0 gdk-2.0 gconf-2.0 libxml-2.0 libsoup-2.4])
+ AC_SUBST(PACKAGE_CFLAGS)
+ AC_SUBST(PACKAGE_LIBS)
+ 
