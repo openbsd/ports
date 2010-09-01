@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:56:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/01 19:22:44 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.7
 
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	ibus	0.0	# 2.0
 
@@ -43,8 +43,7 @@ RUN_DEPENDS =	::devel/iso-codes \
 		::devel/py-xdg \
 		::sysutils/gamin,-server,no_python \
 		::x11/dbus-python \
-		::x11/gnome/librsvg \
-		::x11/py-gtk2
+		::x11/gnome/librsvg
 
 MODGCONF2_SCHEMAS_DIR = ibus
 
