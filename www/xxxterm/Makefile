@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/24 15:13:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/01 13:28:54 laurent Exp $
 
 COMMENT =		vi-like minimalists web browser
 
 DISTNAME =		xxxterm-1.103
+REVISION =		0
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://www.peereboom.us/xxxterm/html/
+HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
 
 MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
@@ -29,7 +30,7 @@ WANTLIB += webkit-1.0
 
 LIB_DEPENDS =		::www/webkit
 
-MASTER_SITES =		http://www.peereboom.us/xxxterm/snapshot/
+MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 
 EXTRACT_SUFX =		.tgz
 
