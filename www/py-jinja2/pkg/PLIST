@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/19 17:30:54 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/01 00:43:41 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,7 +10,18 @@ lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/jinja2/
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_speedups.c
+lib/python${MODPY_VERSION}/site-packages/jinja2/_debugsupport.c
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_bundle.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_bundle.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_constants.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_constants.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_native.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_native.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/tests.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/_stringdefs.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/_stringdefs.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/bccache.py
