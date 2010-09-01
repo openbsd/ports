@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/18 20:39:49 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/09/01 23:24:55 fgsch Exp $
 bin/moin
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
@@ -513,6 +513,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/irclog.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/irclog.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/wikipage.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/wikipage.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/index/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/index/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/index/__init__.pyc
@@ -604,6 +606,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080600.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080600.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080700.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080700.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080800.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080800.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1089999.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1089999.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090000.py
@@ -612,6 +616,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090100.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090100.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090200.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090200.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090300.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090300.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/_conv160.py
@@ -839,6 +845,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexer.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_asybuiltins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_asybuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_clbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_clbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_luabuiltins.py
@@ -900,6 +908,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/fruity
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/fruity.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/manni.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/manni.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/monokai.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/monokai.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/murphy.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/murphy.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/native.py
@@ -1224,6 +1234,7 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKe
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fcklistslib.js
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckplugins.js
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckregexlib.js
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckscayt.js
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection.js
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_gecko.js
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_ie.js
@@ -1305,6 +1316,9 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKe
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_paste.html
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_radiobutton.html
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_replace.html
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt/
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt.html
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt/scayt_dialog.css
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select.html
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select/fck_select.js
@@ -2112,6 +2126,7 @@ share/moin/config/more_samples/auth_wikiconfig_snippet
 share/moin/config/more_samples/dicts_wikiconfig_snippet
 share/moin/config/more_samples/groups_wikiconfig_snippet
 share/moin/config/more_samples/jabber_wikiconfig_snippet
+share/moin/config/more_samples/ldap_2servers_wikiconfig_snippet
 share/moin/config/more_samples/ldap_wikiconfig_snippet
 share/moin/config/more_samples/mail_wikiconfig_snippet
 share/moin/config/more_samples/mailimportconf.py
@@ -2197,10 +2212,14 @@ share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--option
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_template_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--translated_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_template_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_template_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--translated_system_pages.zip
@@ -2220,10 +2239,13 @@ share/moin/underlay/pages/LanguageSetup/attachments/Croatian--essential_system_p
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--translated_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--translated_system_pages.zip
