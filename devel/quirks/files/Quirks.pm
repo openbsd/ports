@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.23 2010/08/02 08:23:24 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.24 2010/09/01 22:33:25 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -146,6 +146,8 @@ my $stem_extensions = {
 	'hs-x11-extras' => 'hs-X11',
 	'pymsn' => 'papyon',
 	'wordpress-mu' => 'wordpress',
+# 4.9
+	'sybperl' => 'p5-sybperl',
 };
 
 # ->is_base_system($handle, $state):
