@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/01 06:27:52 ajacoutot Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -25,6 +25,6 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
 post-install:
-	chmod 444 ${PREFIX}/lib/python2.5/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
+	chmod 444 ${WRKINST}/${MODPY_SITEPKG}/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
 
 .include <bsd.port.mk>
