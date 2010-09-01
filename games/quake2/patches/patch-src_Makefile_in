@@ -1,0 +1,187 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/09/01 00:29:07 jakemsr Exp $
+--- src/Makefile.in.orig	Tue Mar 16 02:38:18 2004
++++ src/Makefile.in	Mon May  3 02:11:04 2010
+@@ -16,7 +16,7 @@
+ 
+ 
+ 
+-SOURCES = $(ref_glx_la_SOURCES) $(EXTRA_ref_glx_la_SOURCES) $(ref_sdlgl_la_SOURCES) $(ref_soft_la_SOURCES) $(EXTRA_ref_soft_la_SOURCES) $(ref_softsdl_la_SOURCES) $(EXTRA_ref_softsdl_la_SOURCES) $(ref_softx_la_SOURCES) $(EXTRA_ref_softx_la_SOURCES) $(ref_tdfx_la_SOURCES) $(EXTRA_ref_tdfx_la_SOURCES) $(snd_alsa_la_SOURCES) $(snd_ao_la_SOURCES) $(snd_oss_la_SOURCES) $(snd_sdl_la_SOURCES) $(snd_solaris_la_SOURCES) $(quake2_SOURCES) $(EXTRA_quake2_SOURCES)
++SOURCES = $(ref_glx_la_SOURCES) $(EXTRA_ref_glx_la_SOURCES) $(ref_sdlgl_la_SOURCES) $(ref_soft_la_SOURCES) $(EXTRA_ref_soft_la_SOURCES) $(ref_softsdl_la_SOURCES) $(EXTRA_ref_softsdl_la_SOURCES) $(ref_softx_la_SOURCES) $(EXTRA_ref_softx_la_SOURCES) $(ref_tdfx_la_SOURCES) $(EXTRA_ref_tdfx_la_SOURCES) $(snd_alsa_la_SOURCES) $(snd_ao_la_SOURCES) $(snd_oss_la_SOURCES) $(snd_sndio_la_SOURCES) $(snd_sdl_la_SOURCES) $(snd_solaris_la_SOURCES) $(quake2_SOURCES) $(EXTRA_quake2_SOURCES)
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -178,6 +178,10 @@ snd_oss_la_DEPENDENCIES =
+ am__snd_oss_la_SOURCES_DIST = snd_oss.c
+ @BUILD_SNDOSS_TRUE@am_snd_oss_la_OBJECTS = snd_oss_la-snd_oss.lo
+ snd_oss_la_OBJECTS = $(am_snd_oss_la_OBJECTS)
++snd_sndio_la_DEPENDENCIES =
++am__snd_sndio_la_SOURCES_DIST = snd_sndio.c
++am_snd_sndio_la_OBJECTS = snd_sndio_la-snd_sndio.lo
++snd_sndio_la_OBJECTS = $(am_snd_sndio_la_OBJECTS)
+ snd_sdl_la_DEPENDENCIES =
+ am__snd_sdl_la_SOURCES_DIST = snd_sdl.c
+ @BUILD_SNDSDL_TRUE@am_snd_sdl_la_OBJECTS = snd_sdl_la-snd_sdl.lo
+@@ -267,6 +271,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-snd_mem.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-snd_mix.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-snd_oss.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/quake2-snd_sndio.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-snd_sdl.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-sv_ccmds.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/quake2-sv_ents.Po \
+@@ -388,6 +393,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/snd_alsa_la-snd_alsa.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/snd_ao_la-snd_ao.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/snd_oss_la-snd_oss.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/snd_sndio_la-snd_sndio.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/snd_sdl_la-snd_sdl.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/snd_solaris_la-snd_solaris.Plo
+ CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+@@ -407,7 +413,7 @@ SOURCES = $(ref_glx_la_SOURCES) $(EXTRA_ref_glx_la_SOU
+ 	$(EXTRA_ref_softsdl_la_SOURCES) $(ref_softx_la_SOURCES) \
+ 	$(EXTRA_ref_softx_la_SOURCES) $(ref_tdfx_la_SOURCES) \
+ 	$(EXTRA_ref_tdfx_la_SOURCES) $(snd_alsa_la_SOURCES) \
+-	$(snd_ao_la_SOURCES) $(snd_oss_la_SOURCES) \
++	$(snd_ao_la_SOURCES) $(snd_oss_la_SOURCES) $(snd_sndio_la_SOURCES) \
+ 	$(snd_sdl_la_SOURCES) $(snd_solaris_la_SOURCES) \
+ 	$(quake2_SOURCES) $(EXTRA_quake2_SOURCES)
+ DIST_SOURCES = $(am__ref_glx_la_SOURCES_DIST) \
+@@ -419,6 +425,7 @@ DIST_SOURCES = $(am__ref_glx_la_SOURCES_DIST) \
+ 	$(am__ref_tdfx_la_SOURCES_DIST) $(EXTRA_ref_tdfx_la_SOURCES) \
+ 	$(am__snd_alsa_la_SOURCES_DIST) $(am__snd_ao_la_SOURCES_DIST) \
+ 	$(am__snd_oss_la_SOURCES_DIST) $(am__snd_sdl_la_SOURCES_DIST) \
++	$(am__snd_sndio_la_SOURCES_DIST) \
+ 	$(am__snd_solaris_la_SOURCES_DIST) $(am__quake2_SOURCES_DIST) \
+ 	$(EXTRA_quake2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+@@ -538,7 +545,7 @@ SDL_CONFIG = @SDL_CONFIG@
+ SDL_LIBS = @SDL_LIBS@
+ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+-SNDDRIVERS = @SNDDRIVERS@
++SNDDRIVERS = @SNDDRIVERS@ snd_sndio.la
+ SOLARIS_CFLAGS = @SOLARIS_CFLAGS@
+ SOLARIS_LIBS = @SOLARIS_LIBS@
+ STRIP = @STRIP@
+@@ -602,10 +609,10 @@ unamepath = @unamepath@
+ SUBDIRS = . baseq2 ctf xatrix rogue
+ std_cflags = -pipe @WARN_CFLAGS@ @OPT_CFLAGS@
+ module_ldflags = -module -avoid-version -rpath $(pkglibdir)
+-pkglib_LTLIBRARIES = @VID_REFS@ @SNDDRIVERS@
++pkglib_LTLIBRARIES = @VID_REFS@ @SNDDRIVERS@ snd_sndio.la
+ EXTRA_LTLIBRARIES = ref_soft.la ref_softx.la ref_softsdl.la \
+ 		ref_glx.la ref_sdlgl.la ref_tdfx.la \
+-		snd_oss.la snd_alsa.la snd_ao.la snd_sdl.la \
++		snd_oss.la snd_sndio.la snd_alsa.la snd_ao.la snd_sdl.la \
+ 		snd_solaris.la
+ 
+ 
+@@ -668,7 +675,7 @@ EXTRA_ref_tdfx_la_SOURCES = rw_in_svgalib.c gl_fxmesa.
+ EXTRA_ref_softx_la_SOURCES = rw_x11.c
+ EXTRA_quake2_SOURCES = snd_mixa.S cd_sdl.c snd_sdl.c snd_dma.c \
+ 			snd_mix.c snd_mem.c cd.c \
+-			snd_oss.c snd_ao.c snd_alsa.c
++			snd_oss.c snd_sndio.c snd_ao.c snd_alsa.c
+ 
+ quake2_CFLAGS = $(std_cflags)
+ quake2_LDADD = @DL_LIBS@ @SYSTEM_LIBS@ -lm
+@@ -679,6 +686,12 @@ quake2_LDADD = @DL_LIBS@ @SYSTEM_LIBS@ -lm
+ @BUILD_SNDOSS_TRUE@snd_oss_la_LIBADD = @OSS_LIBS@
+ @BUILD_SNDOSS_TRUE@snd_oss_la_LDFLAGS = $(module_ldflags)
+ 
++# sndio sound driver
++snd_sndio_la_SOURCES = snd_sndio.c
++snd_sndio_la_CFLAGS = $(std_cflags) -fPIC
++snd_sndio_la_LIBADD = -lsndio
++snd_sndio_la_LDFLAGS = $(module_ldflags)
++
+ # alsa sound driver
+ @BUILD_SNDALSA_TRUE@snd_alsa_la_SOURCES = snd_alsa.c
+ @BUILD_SNDALSA_TRUE@snd_alsa_la_CFLAGS = $(std_cflags) -fPIC @ALSA_CFLAGS@
+@@ -822,6 +835,8 @@ snd_ao.la: $(snd_ao_la_OBJECTS) $(snd_ao_la_DEPENDENCI
+ 	$(LINK)  $(snd_ao_la_LDFLAGS) $(snd_ao_la_OBJECTS) $(snd_ao_la_LIBADD) $(LIBS)
+ snd_oss.la: $(snd_oss_la_OBJECTS) $(snd_oss_la_DEPENDENCIES) 
+ 	$(LINK)  $(snd_oss_la_LDFLAGS) $(snd_oss_la_OBJECTS) $(snd_oss_la_LIBADD) $(LIBS)
++snd_sndio.la: $(snd_sndio_la_OBJECTS) $(snd_sndio_la_DEPENDENCIES) 
++	$(LINK)  $(snd_sndio_la_LDFLAGS) $(snd_sndio_la_OBJECTS) $(snd_sndio_la_LIBADD) $(LIBS)
+ snd_sdl.la: $(snd_sdl_la_OBJECTS) $(snd_sdl_la_DEPENDENCIES) 
+ 	$(LINK)  $(snd_sdl_la_LDFLAGS) $(snd_sdl_la_OBJECTS) $(snd_sdl_la_LIBADD) $(LIBS)
+ snd_solaris.la: $(snd_solaris_la_OBJECTS) $(snd_solaris_la_DEPENDENCIES) 
+@@ -904,6 +919,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-snd_mem.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-snd_mix.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-snd_oss.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-snd_sndio.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-snd_sdl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-sv_ccmds.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quake2-sv_ents.Po@am__quote@
+@@ -1025,6 +1041,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_alsa_la-snd_alsa.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_ao_la-snd_ao.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_oss_la-snd_oss.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_sndio_la-snd_sndio.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_sdl_la-snd_sdl.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snd_solaris_la-snd_solaris.Plo@am__quote@
+ 
+@@ -3701,6 +3718,30 @@ snd_oss_la-snd_oss.lo: snd_oss.c
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_oss_la_CFLAGS) $(CFLAGS) -c -o snd_oss_la-snd_oss.lo `test -f 'snd_oss.c' || echo '$(srcdir)/'`snd_oss.c
+ 
++snd_sndio_la-snd_sndio.o: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -MT snd_sndio_la-snd_sndio.o -MD -MP -MF "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" -c -o snd_sndio_la-snd_sndio.o `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" "$(DEPDIR)/snd_sndio_la-snd_sndio.Po"; else rm -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='snd_sndio_la-snd_sndio.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/snd_sndio_la-snd_sndio.Po' tmpdepfile='$(DEPDIR)/snd_sndio_la-snd_sndio.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -c -o snd_sndio_la-snd_sndio.o `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c
++
++snd_sndio_la-snd_sndio.obj: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -MT snd_sndio_la-snd_sndio.obj -MD -MP -MF "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" -c -o snd_sndio_la-snd_sndio.obj `if test -f 'snd_sndio.c'; then $(CYGPATH_W) 'snd_sndio.c'; else $(CYGPATH_W) '$(srcdir)/snd_sndio.c'; fi`; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" "$(DEPDIR)/snd_sndio_la-snd_sndio.Po"; else rm -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='snd_sndio_la-snd_sndio.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/snd_sndio_la-snd_sndio.Po' tmpdepfile='$(DEPDIR)/snd_sndio_la-snd_sndio.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -c -o snd_sndio_la-snd_sndio.obj `if test -f 'snd_sndio.c'; then $(CYGPATH_W) 'snd_sndio.c'; else $(CYGPATH_W) '$(srcdir)/snd_sndio.c'; fi`
++
++snd_sndio_la-snd_sndio.lo: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -MT snd_sndio_la-snd_sndio.lo -MD -MP -MF "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" -c -o snd_sndio_la-snd_sndio.lo `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo" "$(DEPDIR)/snd_sndio_la-snd_sndio.Plo"; else rm -f "$(DEPDIR)/snd_sndio_la-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='snd_sndio_la-snd_sndio.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/snd_sndio_la-snd_sndio.Plo' tmpdepfile='$(DEPDIR)/snd_sndio_la-snd_sndio.TPlo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sndio_la_CFLAGS) $(CFLAGS) -c -o snd_sndio_la-snd_sndio.lo `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c
++
+ snd_sdl_la-snd_sdl.o: snd_sdl.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(snd_sdl_la_CFLAGS) $(CFLAGS) -MT snd_sdl_la-snd_sdl.o -MD -MP -MF "$(DEPDIR)/snd_sdl_la-snd_sdl.Tpo" -c -o snd_sdl_la-snd_sdl.o `test -f 'snd_sdl.c' || echo '$(srcdir)/'`snd_sdl.c; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/snd_sdl_la-snd_sdl.Tpo" "$(DEPDIR)/snd_sdl_la-snd_sdl.Po"; else rm -f "$(DEPDIR)/snd_sdl_la-snd_sdl.Tpo"; exit 1; fi
+@@ -4924,6 +4965,30 @@ quake2-snd_oss.lo: snd_oss.c
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/quake2-snd_oss.Plo' tmpdepfile='$(DEPDIR)/quake2-snd_oss.TPlo' @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -c -o quake2-snd_oss.lo `test -f 'snd_oss.c' || echo '$(srcdir)/'`snd_oss.c
++
++quake2-snd_sndio.o: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -MT quake2-snd_sndio.o -MD -MP -MF "$(DEPDIR)/quake2-snd_sndio.Tpo" -c -o quake2-snd_sndio.o `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/quake2-snd_sndio.Tpo" "$(DEPDIR)/quake2-snd_sndio.Po"; else rm -f "$(DEPDIR)/quake2-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='quake2-snd_sndio.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/quake2-snd_sndio.Po' tmpdepfile='$(DEPDIR)/quake2-snd_sndio.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -c -o quake2-snd_sndio.o `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c
++
++quake2-snd_sndio.obj: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -MT quake2-snd_sndio.obj -MD -MP -MF "$(DEPDIR)/quake2-snd_sndio.Tpo" -c -o quake2-snd_sndio.obj `if test -f 'snd_sndio.c'; then $(CYGPATH_W) 'snd_sndio.c'; else $(CYGPATH_W) '$(srcdir)/snd_sndio.c'; fi`; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/quake2-snd_sndio.Tpo" "$(DEPDIR)/quake2-snd_sndio.Po"; else rm -f "$(DEPDIR)/quake2-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='quake2-snd_sndio.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/quake2-snd_sndio.Po' tmpdepfile='$(DEPDIR)/quake2-snd_sndio.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -c -o quake2-snd_sndio.obj `if test -f 'snd_sndio.c'; then $(CYGPATH_W) 'snd_sndio.c'; else $(CYGPATH_W) '$(srcdir)/snd_sndio.c'; fi`
++
++quake2-snd_sndio.lo: snd_sndio.c
++@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -MT quake2-snd_sndio.lo -MD -MP -MF "$(DEPDIR)/quake2-snd_sndio.Tpo" -c -o quake2-snd_sndio.lo `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/quake2-snd_sndio.Tpo" "$(DEPDIR)/quake2-snd_sndio.Plo"; else rm -f "$(DEPDIR)/quake2-snd_sndio.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='snd_sndio.c' object='quake2-snd_sndio.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/quake2-snd_sndio.Plo' tmpdepfile='$(DEPDIR)/quake2-snd_sndio.TPlo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -c -o quake2-snd_sndio.lo `test -f 'snd_sndio.c' || echo '$(srcdir)/'`snd_sndio.c
+ 
+ quake2-snd_ao.o: snd_ao.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(quake2_CFLAGS) $(CFLAGS) -MT quake2-snd_ao.o -MD -MP -MF "$(DEPDIR)/quake2-snd_ao.Tpo" -c -o quake2-snd_ao.o `test -f 'snd_ao.c' || echo '$(srcdir)/'`snd_ao.c; \
