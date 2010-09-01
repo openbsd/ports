@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.35 2010/09/01 06:20:56 ajacoutot Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -7,6 +7,7 @@ COMMENT-python=		python bindings for gpsd
 
 VERSION=		2.38
 DISTNAME=		gpsd-${VERSION}
+PKGNAME-main=		gpsd-${VERSION}
 REVISION-main =		1
 PKGNAME-motif=		gpsd-motif-${VERSION}
 REVISION-motif =	4
