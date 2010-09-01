@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/30 21:16:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/09/01 06:50:56 ajacoutot Exp $
 
 COMMENT=	Prelude framework library
 
 MODPY_EGG_VERSION=0.9.24.1
 DISTNAME=	libprelude-${MODPY_EGG_VERSION}
 PKGNAME=	prelude-${DISTNAME}
-REVISION=	1
+
+REVISION=	2
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/libprelude/
 
@@ -16,9 +17,9 @@ MODULES=	devel/gettext \
 
 CONFIGURE_STYLE=gnu
 
-WANTLIB=	c gcrypt tasn1 z
+WANTLIB=	c gcrypt tasn1 z gpg-error gnutls
 
-LIB_DEPENDS=	gpg-error.>=1::security/libgpg-error \
-		gnutls.>=12::security/gnutls
+LIB_DEPENDS=	::security/libgpg-error \
+		::security/gnutls
 
 .include <bsd.port.mk>

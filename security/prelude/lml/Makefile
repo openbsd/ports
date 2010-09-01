@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/01 06:50:56 ajacoutot Exp $
 
 COMMENT=	Prelude log analyzer
 
 DISTNAME=	prelude-lml-0.9.15
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 
-WANTLIB=	c gcrypt gnutls gpg-error m tasn1 z
+WANTLIB=	c gcrypt gnutls gpg-error m tasn1 z pcre prelude
+
 MODULES=	devel/gettext
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-lml/
 
 CONFIGURE_STYLE=gnu
 
-LIB_DEPENDS=	pcre.>=1::devel/pcre \
-		prelude.>=7::security/prelude/libprelude
+LIB_DEPENDS=	::devel/pcre \
+		::security/prelude/libprelude
 
 CONFIGURE_ARGS=	--disable-unsupported-rulesets
 

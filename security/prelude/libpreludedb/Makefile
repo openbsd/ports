@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/01 06:34:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/09/01 06:50:56 ajacoutot Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -13,10 +13,10 @@ PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}
 PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}
 PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}
 
-REVISION-main=	2
-REVISION-pgsql=	1
-REVISION-mysql=	1
-REVISION-sqlite=1
+REVISION-main=	3
+REVISION-pgsql=	2
+REVISION-mysql=	2
+REVISION-sqlite=2
 
 MODPY_EGG_VERSION=0.0.0
 
@@ -27,26 +27,32 @@ MODULES=	lang/python \
 
 SHARED_LIBS=	preludedb	4.9
 
-WANTLIB=	tasn1 z
+WANTLIB=	tasn1 z gcrypt gnutls prelude
 WANTLIB-main=	${WANTLIB} c
-WANTLIB-mysql=	${WANTLIB} crypto m ssl
+WANTLIB-mysql=	${WANTLIB} preludedb lib/mysql/mysqlclient crypto m ssl
+WANTLIB-pgsql=	${WANTLIB} preludedb pq
+WANTLIB-sqlite=	${WANTLIB} preludedb sqlite3
 
-LIB_DEPENDS=		gcrypt.>=12::security/libgcrypt \
-			gnutls.>=12::security/gnutls \
-			gpg-error.>=1::security/libgpg-error \
-			prelude.>=20.1::security/prelude/libprelude
+LIB_DEPENDS=		::security/libgcrypt \
+			::security/gnutls \
+			::security/libgpg-error \
+			::security/prelude/libprelude
 
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
-			preludedb.>=4.9::${BUILD_PKGPATH} \
-			pq.>=4::databases/postgresql
+			::${BUILD_PKGPATH} \
+			::databases/postgresql
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
-			preludedb.>=4.9::${BUILD_PKGPATH} \
-			lib/mysql/mysqlclient.>=16::databases/mysql
+			::${BUILD_PKGPATH} \
+			::databases/mysql
 
 LIB_DEPENDS-sqlite=	${LIB_DEPENDS} \
-			preludedb.>=4.9::${BUILD_PKGPATH} \
-			sqlite3.>=8::databases/sqlite3
+			::${BUILD_PKGPATH} \
+			::databases/sqlite3
+
+RUN_DEPENDS-pgsql=	# empty
+RUN_DEPENDS-mysql=	# empty
+RUN_DEPENDS-sqlite=	# empty
 
 CONFIGURE_STYLE=gnu
 
