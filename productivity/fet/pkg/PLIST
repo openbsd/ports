@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/30 09:16:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/01 12:43:54 jasper Exp $
 @bin bin/fet
 @man man/man1/fet.1
 share/doc/fet/
@@ -15,8 +15,8 @@ share/examples/fet/Belize/Sacred-Heart-College/shc-2007/shc_6_gaps_per_teacher.f
 share/examples/fet/Belize/Sacred-Heart-College/shc-2008/
 share/examples/fet/Belize/Sacred-Heart-College/shc-2008/shc-prelim-08.fet
 share/examples/fet/Brazil/
+share/examples/fet/Brazil/Brazil-more-difficult.fet
 share/examples/fet/Brazil/Brazil.fet
-share/examples/fet/Brazil/Brazil_2_gaps_for_teachers.fet
 share/examples/fet/Bulgaria/
 share/examples/fet/Bulgaria/Lom_high_school_2007-2008.fet
 share/examples/fet/Denmark/
@@ -26,13 +26,20 @@ share/examples/fet/Germany/DGS-Pro/
 share/examples/fet/Germany/DGS-Pro/dgspro200809.fet
 share/examples/fet/Germany/DGS-Pro/older/
 share/examples/fet/Germany/DGS-Pro/older/DGS_Pro_Germany.fet
-share/examples/fet/Germany/secondary-school/
-share/examples/fet/Germany/secondary-school/constraints-min-n-days-100-few-0/
-share/examples/fet/Germany/secondary-school/constraints-min-n-days-100-few-0/german-100_and_0.fet
-share/examples/fet/Germany/secondary-school/older/
-share/examples/fet/Germany/secondary-school/older/secondary_school.fet
-share/examples/fet/Germany/secondary-school/using_subactivities_constraints/
-share/examples/fet/Germany/secondary-school/using_subactivities_constraints/german_subact_constr.fet
+share/examples/fet/Germany/secondary-school-1/
+share/examples/fet/Germany/secondary-school-1/constraints-min-n-days-100-few-0/
+share/examples/fet/Germany/secondary-school-1/constraints-min-n-days-100-few-0/german-100_and_0.fet
+share/examples/fet/Germany/secondary-school-1/older/
+share/examples/fet/Germany/secondary-school-1/older/secondary_school.fet
+share/examples/fet/Germany/secondary-school-1/using_subactivities_constraints/
+share/examples/fet/Germany/secondary-school-1/using_subactivities_constraints/german_subact_constr.fet
+share/examples/fet/Germany/secondary-school-2/
+share/examples/fet/Germany/secondary-school-2/GYR-5-gaps-per-teacher-readme.txt
+share/examples/fet/Germany/secondary-school-2/GYR-5-gaps-per-teacher.fet
+share/examples/fet/Germany/secondary-school-2/GYR-more-difficult-readme.txt
+share/examples/fet/Germany/secondary-school-2/GYR-more-difficult.fet
+share/examples/fet/Germany/secondary-school-2/GYR-readme.txt
+share/examples/fet/Germany/secondary-school-2/GYR.fet
 share/examples/fet/Greece/
 share/examples/fet/Greece/Corfu/
 share/examples/fet/Greece/Corfu/THE-2008-2009-exams-sep.fet
@@ -68,6 +75,12 @@ share/examples/fet/Italy/difficult/2009/liceo-scientifico.fet
 share/examples/fet/Italy/simple/
 share/examples/fet/Italy/simple/2007/
 share/examples/fet/Italy/simple/2007/simpler-italian.fet
+share/examples/fet/Morocco/
+share/examples/fet/Morocco/Hadkourt/
+share/examples/fet/Morocco/Hadkourt/lycee-Farabi-readme-Arabic.txt
+share/examples/fet/Morocco/Hadkourt/lycee-Farabi-readme-English.txt
+share/examples/fet/Morocco/Hadkourt/lycee-Farabi.fet
+share/examples/fet/Morocco/readme-morocco.txt
 share/examples/fet/Namibia/
 share/examples/fet/Namibia/by-Bobby/
 share/examples/fet/Namibia/by-Bobby/set-1/
@@ -96,6 +109,9 @@ share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2008-2009-sem-1/econ
 share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/
 share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/econ-v0.8-readme.txt
 share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/econ-v0.8.fet
+share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-2/
+share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-2/v1_7-readme.txt
+share/examples/fet/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-2/v1_7.fet
 share/examples/fet/Romania/Oradea/
 share/examples/fet/Romania/Oradea/FS-2008-2009-difficult.fet
 share/examples/fet/Romania/Oradea/school-10-oradea-2007-2008.fet
@@ -113,6 +129,9 @@ share/examples/fet/South-Africa/difficult/Collegiate_Junior_School2.fet
 share/examples/fet/South-Africa/difficult/Insight_Learning_Centre2.fet
 share/examples/fet/Spain/
 share/examples/fet/Spain/Spanish_school.fet
+share/examples/fet/Sudan/
+share/examples/fet/Sudan/Khartoum-2010-02-13-readme.txt
+share/examples/fet/Sudan/Khartoum-2010-02-13.fet
 share/examples/fet/United-Kingdom/
 share/examples/fet/United-Kingdom/Hopwood/
 share/examples/fet/United-Kingdom/Hopwood/Hopwood.fet

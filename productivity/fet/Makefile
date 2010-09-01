@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/03/20 16:43:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/01 12:43:54 jasper Exp $
 
 COMMENT=		automatically create timetables
 
-DISTNAME=		fet-5.12.3
+DISTNAME=		fet-5.14.1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread
 WANTLIB += pthread-stubs stdc++ xcb z
+WANTLIB += Qt3Support QtGui QtNetwork QtSql QtXml
 
 MASTER_SITES=		${HOMEPAGE}/download/ \
 			http://timetabling.de/download/
@@ -24,7 +25,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			x11/qt4
 
-LIB_DEPENDS=		Qt3Support,QtGui,QtNetwork,QtSql,QtXml::x11/qt4
+LIB_DEPENDS=		::x11/qt4
 
 USE_X11=		Yes
 
