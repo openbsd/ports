@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/01 09:57:38 jasper Exp $
+
+# XXX: Don't forget to update x11/py-qt{3,4} when updating this port.
+# XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 
 COMMENT =	Qt4 port of the Scintilla source code editor
 
-VERSION =	2.3
+VERSION =	2.4.5
 DISTNAME =	QScintilla-gpl-${VERSION}
-PKGNAME =	qscintilla-${VERSION}p1
+PKGNAME =	qscintilla-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS =	qscintilla2 0.0
+SHARED_LIBS =	qscintilla2 1.0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
@@ -23,16 +26,18 @@ MODULES = devel/gettext x11/qt4
 
 WANTLIB =	ICE SM X11 Xext Xi Xinerama Xrender expat fontconfig \
 		freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread-stubs \
-		xcb z
+		xcb z stdc++ QtCore QtGui
 
-LIB_DEPENDS =	QtCore,QtGui::x11/qt4
+LIB_DEPENDS =	::x11/qt4
 
 CONFIGURE_ENV =	HOME=${WRKDIR}
 MAKE_FLAGS =	QMAKE_CXX=${CXX} QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
 		HOME=${WRKDIR} INSTALL_ROOT=${DESTDIR} \
 		LIBqscintilla2_VERSION=${LIBqscintilla2_VERSION}
 
-WRKSRC = ${WRKDIST}/Qt4
+WRKSRC =	${WRKDIST}/Qt4
+
+NO_REGRESS =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/qscintilla.pro
