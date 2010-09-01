@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/01 11:22:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/01 19:32:39 naddy Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -124,7 +124,7 @@ DISTFILES = 	pl.cp1250.spl pl.iso-8859-2.spl pl.utf-8.spl
 .  elif ${FLAVOR:L:Mpt}
 LANG_NAME = 	Portuguese 
 DISTFILES = 	pt.latin1.spl pt.utf-8.spl
-.  elif ${FLAVOR:L:M}
+.  elif ${FLAVOR:L:Mro}
 LANG_NAME = 	Romanian 
 DISTFILES = 	ro.cp1250.spl ro.iso-8859-2.spl ro.utf-8.spl
 .  elif ${FLAVOR:L:Mru}
