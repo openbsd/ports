@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/30 21:36:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/02 08:03:01 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
 
 VERSION=	0.7.2
 DISTNAME=	libgpod-${VERSION}
+PKGNAME-main=	${DISTNAME}
 REVISION-main =	1
 PKGNAME-python= py-gpod-${VERSION}
 REVISION-python = 2
