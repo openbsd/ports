@@ -1,39 +1,39 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/26 16:14:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/02 07:12:58 ajacoutot Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
 PKGNAME=	sdl-pango-${V}
-REVISION=	6
-SHARED_LIBS=	SDL_Pango 0.0	# .2.0
 CATEGORIES=	devel x11
 
-HOMEPAGE=	http://sdlpango.sourceforge.net/
-
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+REVISION=	7
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
 MASTER_SITES0=	http://zarb.org/~gc/t/
 
 PATCHFILES=	SDL_Pango-0.1.2-API-adds.patch:0
 
-WANTLIB=	X11 Xau Xdmcp gthread-2.0 expat fontconfig freetype \
-		iconv m usbhid z pcre glib-2.0 gmodule-2.0 gobject-2.0 sndio \
-		pthread-stubs xcb SDL pango-1.0 pangoft2-1.0
+SHARED_LIBS=	SDL_Pango	0.0 # .2.0
 
-LIB_DEPENDS=	::devel/sdl \
-		::devel/pango
+HOMEPAGE=	http://sdlpango.sourceforge.net/
+
+# LGPLv2.1+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	SDL X11 Xau Xdmcp expat fontconfig freetype glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
+		pangoft2-1.0 pcre pthread-stubs sndio usbhid xcb z
 
 MODULES=	devel/gettext
+LIB_DEPENDS=	::devel/pango \
+		::devel/sdl
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
