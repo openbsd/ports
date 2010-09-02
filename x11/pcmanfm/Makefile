@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/22 09:12:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/02 14:56:32 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.5.10
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
