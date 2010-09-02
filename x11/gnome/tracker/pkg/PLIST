@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/05/20 17:55:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/09/02 15:33:33 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -203,7 +203,6 @@ share/locale/th/LC_MESSAGES/tracker.mo
 share/locale/zh_CN/LC_MESSAGES/tracker.mo
 share/tracker/
 share/tracker/GNOME_Search_Bar_Applet.xml
-share/tracker/gtk-sparql.ui
 share/tracker/icons/
 share/tracker/icons/thumbnail_frame.png
 share/tracker/icons/tracker-applet-default.png
@@ -265,7 +264,6 @@ share/tracker/ontologies/89-mtp.description
 share/tracker/ontologies/89-mtp.ontology
 share/tracker/ontologies/90-tracker.description
 share/tracker/ontologies/90-tracker.ontology
-share/tracker/rss_viewer.ui
 share/tracker/sqlite-contents.sql
 share/tracker/sqlite-tracker.sql
 share/tracker/tracker-backup.xml
