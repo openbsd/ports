@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/08/19 21:54:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/02 11:53:32 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,10 @@ COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
 
 MODULES=	cpan
-VERSION=	804.028
+VERSION=	804.029
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
-REVISION-main=	4
-REVISION-demo=	0
 CATEGORIES=	x11 devel
 
 # GPL + custom
@@ -27,7 +25,6 @@ LIB_DEPENDS-main= ::graphics/png
 
 RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
 
 RUN_DEPENDS-demo=	::x11/p5-Tk
 PKG_ARCH-demo=		*
