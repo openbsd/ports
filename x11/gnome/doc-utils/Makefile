@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/02 07:50:51 jasper Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.20.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::textproc/rarian
 RUN_DEPENDS=	::devel/gettext \
 		:py-libxml-*:textproc/libxml,-python \
-		:libxslt-*:textproc/libxslt,-python \
+		:py-libxslt-*:textproc/libxslt,-python \
 		::textproc/rarian
 
 USE_LIBTOOL=	No
