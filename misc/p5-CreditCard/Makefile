@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/02 08:26:54 jasper Exp $
 
 COMMENT=	verify credit card pins
 
 MODULES=	cpan
-DISTNAME=	Business-CreditCard-0.30
+DISTNAME=	Business-CreditCard-0.31
 CATEGORIES=	misc
-
-MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
