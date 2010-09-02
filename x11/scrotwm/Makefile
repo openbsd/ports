@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/08 21:37:36 marco Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/02 08:18:11 jasper Exp $
 
 COMMENT=		small tiling window manager
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://www.peereboom.us/scrotwm/snapshot/
+MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 
 NO_REGRESS=     Yes
 WANTLIB=        c X11 Xrandr util
