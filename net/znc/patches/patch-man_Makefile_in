@@ -1,26 +1,20 @@
-$OpenBSD: patch-man_Makefile_in,v 1.2 2009/09/29 21:40:59 sthen Exp $
---- man/Makefile.in.orig	Sun Jul 26 11:04:59 2009
-+++ man/Makefile.in	Mon Sep 28 21:01:30 2009
-@@ -6,9 +6,9 @@ exec_prefix := @exec_prefix@
- datarootdir := @datarootdir@
- mandir      := @mandir@
+$OpenBSD: patch-man_Makefile_in,v 1.3 2010/09/02 08:53:20 sthen Exp $
+--- man/Makefile.in.orig	Mon Aug  9 09:17:08 2010
++++ man/Makefile.in	Thu Sep  2 01:28:06 2010
+@@ -11,7 +11,7 @@ mandir      := @mandir@
+ INSTALL      := @INSTALL@
+ INSTALL_DATA := @INSTALL_DATA@
  
 -MAN1        := znc.1.gz znc-buildmod.1.gz znc-config.1.gz
 +MAN1        := znc.1 znc-buildmod.1 znc-config.1
  
--all: $(MAN1)
-+all:
+ ifeq "$(VERBOSE)" ""
+ Q=@
+@@ -32,7 +32,7 @@ clean:
  
- %.1.gz: %.1 Makefile
- 	gzip -9 <$< >$@
-@@ -16,9 +16,9 @@ all: $(MAN1)
- clean:
- 	-rm -f $(MAN1)
- 
--install: $(MAN1)
-+install:
+ install: $(MAN1)
  	mkdir -p $(DESTDIR)$(mandir)/man1
--	install -m 644 $(MAN1) $(DESTDIR)$(mandir)/man1
+-	$(INSTALL_DATA) $(MAN1) $(DESTDIR)$(mandir)/man1
 +	cd $(VPATH) && install -m 644 $(MAN1) $(DESTDIR)$(mandir)/man1
  
  uninstall:
