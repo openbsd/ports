@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2010/08/23 08:11:00 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/09/02 07:03:11 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -203,6 +203,7 @@ piwik/core/Updates/0.6-rc1.php
 piwik/core/Updates/0.6.2.php
 piwik/core/Updates/0.6.3.php
 piwik/core/Updates/0.7.php
+piwik/core/Updates/0.9.1.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -2126,6 +2127,7 @@ piwik/themes/default/images/data_table_footer_active_item.png
 piwik/themes/default/images/datepicker_arr_l.png
 piwik/themes/default/images/datepicker_arr_r.png
 piwik/themes/default/images/delete.png
+piwik/themes/default/images/email.png
 piwik/themes/default/images/error.png
 piwik/themes/default/images/error_medium.png
 piwik/themes/default/images/expanded_arrows.gif
