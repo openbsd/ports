@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/18 01:12:33 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/02 08:26:09 jasper Exp $
 
 
 COMMENT =		tool to flash dell bios
 
 DISTNAME =		dellflash-0.1
+REVISION =		0
 
 CATEGORIES =		sysutils
 
 ONLY_FOR_ARCHS=		i386 amd64
 
-HOMEPAGE =		http://code.freedaemon.com/p/dellflash/
+HOMEPAGE =		http://opensource.conformal.com/wiki/Dell_Flash
 
 MAINTAINER =		Todd T. Fries <todd@OpenBSD.org>
 
@@ -21,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://code.freedaemon.com/releases/dellflash/
+MASTER_SITES =		http://opensource.conformal.com/snapshots/dellflash/
 
 EXTRACT_SUFX =		.tgz
 

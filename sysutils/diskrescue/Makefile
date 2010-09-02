@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/30 12:53:43 laurent Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/02 08:26:09 jasper Exp $
 
 COMMENT =		fancy dd
 
 DISTNAME =		diskrescue-0.3
+REVISION =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.peereboom.us/diskrescue/
+HOMEPAGE =		http://opensource.conformal.com/wiki/Disk_Rescue
 
 MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}/snapshot/
+MASTER_SITES =		http://opensource.conformal.com/snapshots/diskrescue/
 
 EXTRACT_SUFX =		.tgz
 
