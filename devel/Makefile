@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.823 2010/08/30 23:46:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.824 2010/09/02 21:21:58 millert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -819,6 +819,7 @@
      SUBDIR += py-decoratortools
      SUBDIR += py-distutils-extra
      SUBDIR += py-dtopt
+     SUBDIR += py-dulwich
      SUBDIR += py-editdist
      SUBDIR += py-epsilon
      SUBDIR += py-extremes
