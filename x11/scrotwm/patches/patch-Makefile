@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2010/09/02 16:06:55 edd Exp $
+
+Russian man page is currently broken - see marco about this.
+
+--- Makefile.orig	Thu Sep  2 16:39:51 2010
++++ Makefile	Thu Sep  2 16:40:05 2010
+@@ -7,7 +7,8 @@ BINDIR=${PREFIX}/bin
+ SUBDIR= lib
+ 
+ PROG=scrotwm
+-MAN=scrotwm.1 scrotwm_es.1 scrotwm_it.1 scrotwm_ru.1
++
++MAN=scrotwm.1 scrotwm_es.1 scrotwm_it.1
+ 
+ CFLAGS+=-std=c89 -Wall -Wno-uninitialized -ggdb3
+ # Uncomment define below to disallow user settable clock format string

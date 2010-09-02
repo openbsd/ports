@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/07/08 21:37:36 marco Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/09/02 16:06:55 edd Exp $
 %%SHARED%%
 @bin bin/scrotwm
 @man man/cat1/scrotwm.0
@@ -8,9 +8,6 @@ man/es/cat1/
 man/it/
 man/it/cat1/
 @man man/it/cat1/scrotwm.0
-man/ru/
-man/ru/cat1/
-@man man/ru/cat1/scrotwm.0
 share/examples/scrotwm/
 @sample share/scrotwm/
 share/examples/scrotwm/baraction.sh
