@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/20 15:37:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/02 08:22:24 jasper Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
 DISTNAME =		slideml-1.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://www.peereboom.us/slideml/
+HOMEPAGE =		http://opensource.conformal.com/wiki/Slide_ML
 
 MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/snapshot/
+MASTER_SITES =		http://opensource.conformal.com/snapshots/slideml/
 EXTRACT_SUFX =		.tgz
 
 RUN_DEPENDS =		::graphics/p5-Image-Size 

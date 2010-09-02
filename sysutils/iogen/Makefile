@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/02 08:22:24 jasper Exp $
 
 COMMENT=	i/o generator
 PKGNAME=	iogen-3.1
+REVISION=	0
 CATEGORIES=	sysutils
 DISTFILES=
+
+HOMEPAGE=	http://opensource.conformal.com/wiki/Iogen
 
 # ISC
 PERMIT_DISTFILES_CDROM=	Yes

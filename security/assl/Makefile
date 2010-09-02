@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/23 14:01:05 laurent Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/02 08:22:24 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		hide awfull SSL API in a sane interface
 V =			0.8
 DISTNAME =		assl-${V}
+REVISION =		0
 
 SHARED_LIBS =		assl ${V}
 
 CATEGORIES =		security devel
 
-HOMEPAGE =		http://www.peereboom.us/assl/html/assl.html
+HOMEPAGE =		http://opensource.conformal.com/wiki/Assl
 
 MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.peereboom.us/assl/assl/snapshots/
+MASTER_SITES =		http://opensource.conformal.com/snapshots/assl/
 EXTRACT_SUFX =		.tgz
 
 NO_REGRESS =		Yes
