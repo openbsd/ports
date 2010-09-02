@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.145 2010/08/25 10:16:48 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.146 2010/09/02 09:03:50 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -239,13 +239,13 @@ MASTER_SITE_PACKETSTORM+=	\
 MASTER_SITE_APACHE+= \
 	http://www.reverse.net/pub/apache/ \
 	http://www.mirrorservice.org/sites/ftp.apache.org/ \
+	http://archive.apache.org/dist/ \
 	http://www.meisei-u.ac.jp/mirror/apache/dist/ \
 	http://apache.belnet.be/ \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/apache/ \
-	ftp://ftp.planetmirror.com/pub/apache/dist/ \
+	http://apache.mirror.aussiehq.net.au/ \
 	http://apache.sunsite.ualberta.ca/ \
-	http://www.apache.org/dist/ \
-	http://archive.apache.org/dist/
+	http://www.apache.org/dist/
 
 MASTER_SITE_BERLIOS+=	\
 	http://download.berlios.de/ \
