@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/22 21:37:29 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/02 08:02:31 fgsch Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
@@ -32,6 +32,7 @@ RUN_DEPENDS =	::devel/desktop-file-utils
 LIB_DEPENDS =	::inputmethods/anthy \
 		::x11/gtk+2
 
+USE_X11 =	Yes
 USE_LIBTOOL =	Yes
 CONFIGURE_STYLE =	gnu
 
