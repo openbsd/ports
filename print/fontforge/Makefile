@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/03 17:50:49 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20100501
 PKGNAME=		${DISTNAME:S,_full,,}
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	3.0 \
 			gdraw		5.0 \
@@ -27,8 +27,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
-
-REVISION =		0
 
 WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c cairo \
 			expat fontconfig freetype gif glib-2.0 glitz \
