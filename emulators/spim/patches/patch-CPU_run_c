@@ -1,4 +1,4 @@
-$OpenBSD: patch-CPU_run_c,v 1.1 2010/08/25 16:37:34 jasper Exp $
+$OpenBSD: patch-CPU_run_c,v 1.2 2010/09/03 16:17:19 sthen Exp $
 
 Fix build on OpenBSD's mips architectures.
 
@@ -9,7 +9,7 @@ Fix build on OpenBSD's mips architectures.
  
  
 -#ifdef mips
-+#if definded(mips) && !defined(__OpenBSD__)
++#if defined(mips) && !defined(__OpenBSD__)
  #define _IEEE 1
  #include <nan.h>
  #else
