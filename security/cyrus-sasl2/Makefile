@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/16 12:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/09/03 15:36:26 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.23
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
@@ -19,7 +19,7 @@ SHARED_LIBS=	anonymous	2.22 \
 		sql		2.22
 CATEGORIES=	security
 
-HOMEPAGE=	http://asg.web.cmu.edu/sasl/
+HOMEPAGE=	http://www.cyrusimap.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -29,8 +29,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 WANTLIB=	asn1 c com_err crypto gssapi krb5
 
