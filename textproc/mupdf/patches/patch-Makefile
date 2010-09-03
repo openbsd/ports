@@ -1,23 +1,24 @@
-$OpenBSD: patch-Makefile,v 1.1 2010/06/03 19:38:34 sthen Exp $
---- Makefile.orig	Wed Jun  2 13:21:22 2010
-+++ Makefile	Thu Jun  3 11:46:32 2010
-@@ -35,10 +35,11 @@ endif
- # Build commands
- #
+$OpenBSD: patch-Makefile,v 1.2 2010/09/03 12:38:19 sthen Exp $
+--- Makefile.orig	Wed Aug 25 15:12:08 2010
++++ Makefile	Fri Sep  3 13:21:43 2010
+@@ -44,13 +44,15 @@ CFLAGS += $(THIRD_INCS) $(SYS_FREETYPE_INC)
+ ifneq "$(verbose)" ""
  
--GENFILE_CMD = @ echo GENFILE $@ && $(firstword $^) $@ $(wordlist 2, 999, $^)
--CC_CMD = @ echo CC $@ && $(CC) -o $@ -c $< $(CFLAGS)
--LD_CMD = @ echo LD $@ && $(LD) -o $@ $^ $(LDFLAGS) $(LIBS)
--AR_CMD = @ echo AR $@ && $(AR) cru $@ $^
-+GENFILE_CMD = $(firstword $^) $@ $(wordlist 2, 999, $^)
+ GENFILE_CMD = $(firstword $^) $@ $(wordlist 2, 999, $^)
 +AS_CMD = $(AS) -o $@ $<
-+CC_CMD = $(CC) -o $@ -c $< $(CFLAGS)
-+LD_CMD = $(LD) -o $@ $^ $(LDFLAGS) $(LIBS)
+ CC_CMD = $(CC) -o $@ -c $< $(CFLAGS)
+ LD_CMD = $(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+-AR_CMD = rm -f $@ && $(AR) cru $@ $^
 +AR_CMD = $(AR) cru $@ $^
  
- #
- # Directories
-@@ -57,6 +58,10 @@ FONTDUMP_EXE=$(OBJDIR)/fontdump
+ else
+ 
+ GENFILE_CMD = @ echo GENFILE $@ && $(firstword $^) $@ $(wordlist 2, 999, $^)
++AS_CMD = @ echo AS $@ && $(AS) -o $@ $<
+ CC_CMD = @ echo CC $@ && $(CC) -o $@ -c $< $(CFLAGS)
+ LD_CMD = @ echo LD $@ && $(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+ AR_CMD = @ echo AR $@ && rm -f $@ && $(AR) cru $@ $^
+@@ -65,6 +67,10 @@ FONTDUMP_EXE := $(OBJDIR)/fontdump
  $(FONTDUMP_EXE): $(OBJDIR)/fontdump.o
  	$(LD_CMD)
  
@@ -25,10 +26,10 @@ $OpenBSD: patch-Makefile,v 1.1 2010/06/03 19:38:34 sthen Exp $
 +$(FONTRES_EXE): $(OBJDIR)/fontres.o
 +	$(LD_CMD)
 +
- CMAPDUMP_EXE=$(OBJDIR)/cmapdump
+ CMAPDUMP_EXE := $(OBJDIR)/cmapdump
  $(CMAPDUMP_EXE): $(OBJDIR)/cmapdump.o
  	$(LD_CMD)
-@@ -110,6 +115,8 @@ $(OBJDIR)/%.o: mupdf/%.c
+@@ -179,6 +185,8 @@ $(OBJDIR)/%.o: mupdf/%.c
  	$(CC_CMD)
  $(OBJDIR)/%.o: $(GENDIR)/%.c
  	$(CC_CMD)
@@ -37,7 +38,7 @@ $OpenBSD: patch-Makefile,v 1.1 2010/06/03 19:38:34 sthen Exp $
  
  #
  # Generated font file dumps
-@@ -129,18 +136,18 @@ CJKFONT_FILES=fonts/droid/DroidSansFallback.ttf
+@@ -206,18 +214,18 @@ CJKFONT_FILES := \
  
  ifeq "$(pregen)" ""
  
@@ -50,14 +51,14 @@ $OpenBSD: patch-Makefile,v 1.1 2010/06/03 19:38:34 sthen Exp $
  
  endif
  
- FONT_SRC=\
+ FONT_SRC := \
 -	$(GENDIR)/font_base14.c \
 -	$(GENDIR)/font_cjk.c
 +	$(GENDIR)/font_base14.s \
 +	$(GENDIR)/font_cjk.s
  
--FONT_OBJ=$(FONT_SRC:$(GENDIR)/%.c=$(OBJDIR)/%.o)
-+FONT_OBJ=$(FONT_SRC:$(GENDIR)/%.s=$(OBJDIR)/%.o)
+-FONT_OBJ := $(FONT_SRC:$(GENDIR)/%.c=$(OBJDIR)/%.o)
++FONT_OBJ := $(FONT_SRC:$(GENDIR)/%.s=$(OBJDIR)/%.o)
+ 
  
  #
- # Generated CMap file dumps

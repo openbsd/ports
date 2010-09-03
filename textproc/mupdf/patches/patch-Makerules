@@ -1,22 +1,20 @@
-$OpenBSD: patch-Makerules,v 1.1 2010/06/03 19:38:34 sthen Exp $
---- Makerules.orig	Tue Jun  1 20:11:36 2010
-+++ Makerules	Thu Jun  3 04:45:42 2010
-@@ -4,9 +4,9 @@ OS := $(shell uname)
+$OpenBSD: patch-Makerules,v 1.2 2010/09/03 12:38:19 sthen Exp $
+--- Makerules.orig	Wed Aug 25 15:12:08 2010
++++ Makerules	Sun Aug 29 12:34:26 2010
+@@ -4,8 +4,8 @@ OS ?= $(shell uname)
  OS := $(OS:MINGW%=MINGW)
  
- LIBS := -ljbig2dec -lopenjpeg -ljpeg -lz -lm
--CFLAGS := -Wall --std=gnu99 -Ifitz -Imupdf $(THIRD_INCS)
--LDFLAGS =
--CC = cc
-+CFLAGS += -Wall --std=gnu99 -Ifitz -Imupdf $(THIRD_INCS)
-+LDFLAGS ?=
-+CC ?= cc
- LD = $(CC)
- AR = ar
+ CC ?= cc
+-CFLAGS := -Ifitz -Imupdf -Wall
+-LDFLAGS :=
++CFLAGS += -Ifitz -Imupdf -Wall
++LDFLAGS +=
  
-@@ -29,6 +29,15 @@ ifeq  "$(build)" "release"
- CFLAGS += -mmmx -ftree-vectorize -msse -msse2 -march=k8 -DARCH_X86
- ARCH_SRC = archx86.c
+ ifeq "$(build)" "debug"
+ CFLAGS += -pipe -g
+@@ -46,6 +46,15 @@ else
+ CFLAGS += -m32
+ LDFLAGS += -m32
  endif
 +endif
 +
@@ -29,4 +27,4 @@ $OpenBSD: patch-Makerules,v 1.1 2010/06/03 19:38:34 sthen Exp $
 +PDFVIEW_EXE = $(X11VIEW_EXE)
  endif
  
- ifeq "$(OS)" "Darwin"
+ # MinGW build depends on thirdparty libs

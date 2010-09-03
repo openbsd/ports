@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/08/29 10:08:05 matthieu Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/03 12:38:19 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	mupdf-0.6
-REVISION =	1
-WRKDIST =	${WRKDIR}/mupdf
+DISTNAME =	mupdf-0.7
 
 CATEGORIES =	textproc x11
 
@@ -20,7 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xext c freetype jpeg.>=62 m openjpeg z
 
-MASTER_SITES =	${HOMEPAGE}download/archive/
+MASTER_SITES =	${HOMEPAGE}download/ \
+		${HOMEPAGE}download/archive/
 
 RUN_DEPENDS =	::devel/desktop-file-utils
 BUILD_DEPENDS =	::graphics/jbig2dec
@@ -33,9 +32,9 @@ USE_GMAKE =	Yes
 NO_REGRESS =	Yes
 
 MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} \
-		CXX=${CXX} build=
+		CXX=${CXX} build= verbose=1
 
-CFLAGS +=	-I${LOCALBASE}/include
+CFLAGS +=	-Ifitz -Imupdf -I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
 FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
 

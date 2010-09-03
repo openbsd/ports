@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/03 19:38:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/03 12:38:19 sthen Exp $
 @bin bin/mupdf
 @bin bin/pdfclean
 @bin bin/pdfdraw
@@ -6,9 +6,6 @@
 @bin bin/pdfinfo_mupdf
 @bin bin/pdfshow
 include/fitz.h
-include/fitz_base.h
-include/fitz_draw.h
-include/fitz_stream.h
 include/mupdf.h
 lib/libmupdf.a
 lib/pkgconfig/
