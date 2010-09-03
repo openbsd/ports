@@ -1,0 +1,24 @@
+$OpenBSD: patch-x11vnc_remote_c,v 1.1 2010/09/03 15:58:12 sthen Exp $
+--- x11vnc/remote.c.orig	Fri Jul 23 04:34:45 2010
++++ x11vnc/remote.c	Fri Sep  3 16:45:37 2010
+@@ -4444,9 +4444,9 @@ char *process_remote_cmd(char *cmd, int stringonly) {
+ 		p += strlen("ptr:");
+ 		rfbLog("remote_cmd: insert pointer event: %s\n", p);
+ 		if (sscanf(p, "%d,%d,%d", &x, &y, &m) == 3) {
+-			pointer(m, x, y, NULL);
++			pointer_event(m, x, y, NULL);
+ 		} else if (sscanf(p, "%d,%d", &x, &y) == 2) {
+-			pointer(m, x, y, NULL);
++			pointer_event(m, x, y, NULL);
+ 		} else {
+ 			rfbLog("remote_cmd: bad ptr:x,y,mask\n");
+ 		}
+@@ -4611,7 +4611,7 @@ char *process_remote_cmd(char *cmd, int stringonly) {
+ 		} else if (strstr(res, "GRAB_FAIL") && try < max_tries) {
+ 			rfbLog("bcx_xattach: failed grab check for '%s': %s.  Retrying[%d]...\n", p, res, try);
+ 			free(res);
+-			pointer(0, dpy_x/2 + try, dpy_y/2 + try, NULL);
++			pointer_event(0, dpy_x/2 + try, dpy_y/2 + try, NULL);
+ #if !NO_X11
+ 			X_LOCK;
+ 			XFlush_wr(dpy);

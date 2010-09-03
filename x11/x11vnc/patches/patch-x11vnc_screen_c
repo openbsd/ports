@@ -1,0 +1,20 @@
+$OpenBSD: patch-x11vnc_screen_c,v 1.1 2010/09/03 15:58:12 sthen Exp $
+--- x11vnc/screen.c.orig	Fri Jul 23 04:34:45 2010
++++ x11vnc/screen.c	Fri Sep  3 16:45:37 2010
+@@ -1381,6 +1381,7 @@ static rfbCredential* vnc_reflect_get_credential(rfbCl
+ 	char *clic = getenv("X11VNC_REFLECT_CLIENTCERT");
+ 	char *clik = getenv("X11VNC_REFLECT_CLIENTKEY");
+ 	int db = 0;
++	if (client) {}
+ if (db) fprintf(stderr, "type: %d\n", type);
+ #ifdef rfbCredentialTypeUser
+ 	if (type == rfbCredentialTypeUser) {
+@@ -3616,7 +3617,7 @@ void initialize_screen(int *argc, char **argv, XImage 
+ 	/* event callbacks: */
+ 	screen->newClientHook = new_client;
+ 	screen->kbdAddEvent = keyboard;
+-	screen->ptrAddEvent = pointer;
++	screen->ptrAddEvent = pointer_event;
+ 	screen->setXCutText = xcut_receive;
+ 	screen->setTranslateFunction = set_xlate_wrapper;
+ 
