@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/12/21 18:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/03 13:56:30 sthen Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-PKGNAME=	${DISTNAME}p11
+REVISION=	12
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -40,17 +40,17 @@ CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
-WANTLIB+=		X11 Xau Xdmcp Xpm Xrender fontconfig freetype z \
-			Xcomposite Xdamage pixman-1 gio-2.0 \
-			m pthread pcre atk-1.0.>=800.0 glib-2.0.>=400.8 \
-			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
-			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
-			pangocairo-1.0 cairo glitz png expat \
-			Xcursor Xext Xfixes Xi Xinerama Xrandr \
-			pthread-stubs xcb
-LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2 \
-			ical::textproc/libical
+LIB_DEPENDS=		::x11/gtk+2 \
+			::textproc/libical
 RUN_DEPENDS+=		:desktop-file-utils-*:devel/desktop-file-utils
+
+WANTLIB += X11 Xau Xdmcp Xpm Xrender fontconfig freetype z Xcomposite Xdamage
+WANTLIB += pixman-1 gio-2.0 m pthread pcre atk-1.0.>=800.0 glib-2.0.>=400.8
+WANTLIB += gmodule-2.0.>=400.8 gobject-2.0.>=400.8 pango-1.0.>=600.0
+WANTLIB += pangoft2-1.0.>=600.0 pangocairo-1.0 cairo glitz png expat Xcursor
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr pthread-stubs xcb ical
+WANTLIB += gtk-x11-2.0.>=400.13 gdk-x11-2.0.>=400.13 gdk_pixbuf-2.0.>=400.13
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
 .endif
 
 LIB_DEPENDS+=		usb.>=8::devel/libusb
