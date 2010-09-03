@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.824 2010/09/02 21:21:58 millert Exp $
+# $OpenBSD: Makefile,v 1.825 2010/09/03 18:28:33 millert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -826,6 +826,7 @@
      SUBDIR += py-fpconst
      SUBDIR += py-gdata
      SUBDIR += py-gobject
+     SUBDIR += py-hg-git
      SUBDIR += py-html5lib
      SUBDIR += py-kid
      SUBDIR += py-logilab-astng
