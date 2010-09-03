@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/08/30 21:28:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/09/03 12:34:56 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,12 +9,12 @@ COMMENT-bin=		binaries for the Python Imaging Library
 VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
 PKGNAME-main=		py-${DISTNAME}
-REVISION-main=		1
+REVISION-main=		2
 FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p1
 REVISION-examples=	2
 FULLPKGPATH-examples=	graphics/py-Imaging,-examples
 PKGNAME-bin=		py-Imaging-bin-${VERSION}
-REVISION-bin=		3
+REVISION-bin=		4
 
 CATEGORIES=		graphics
 
@@ -39,13 +39,12 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg \
 			tk84:tk->=8.4,<8.5:x11/tk/8.4
 
-FLAVORS=		python2.4 python2.5 python2.6
+FLAVORS=		python2.4 python2.6
 FLAVOR?=		python2.6
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
-.elif ( ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5} ) || \
-      ( ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6} )
+.elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
 MULTI_PACKAGES= -main -examples -bin
 .else
 ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"

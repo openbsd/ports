@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/02 22:11:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/09/03 12:34:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,6 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
 WANTLIB-main=		crypto util pq
 
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
@@ -36,12 +37,12 @@ MODULES=	lang/python
 BUILD_DEPENDS=	::databases/postgresql,-server
 RUN_DEPENDS=	::databases/postgresql
 
-FLAVORS=	python2.4 python2.5 python2.6
+FLAVORS=	python2.4 python2.6
 FLAVOR?=	python2.6
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES=	-main -examples -zope
-.elif ${FLAVOR:L:Mpython2.[56]} && !${FLAVOR:L:Npython2.[56]}
+.elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
 MULTI_PACKAGES=	-main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"

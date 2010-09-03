@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/30 20:59:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/03 12:34:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-examples=	example programs for the LDAP client API for Python
 V=			2.3.1
 DISTNAME=		python-ldap-${V}
 PKGNAME-main=		py-ldap-${V}
-REVISION-main =		3
+REVISION-main =		4
 FULLPKGNAME-examples=	py-ldap-examples-${V}
 REVISION-examples =	3
 FULLPKGPATH-examples=	databases/py-ldap,-examples
@@ -33,12 +33,12 @@ MODPY_VERSION=		${FLAVOR:S/python//}
 LIB_DEPENDS-main=	ldap_r.>=7,lber.>=7::databases/openldap \
 			sasl2.>=2::security/cyrus-sasl2
 
-FLAVORS=		python2.4 python2.5 python2.6
+FLAVORS=		python2.4 python2.6
 FLAVOR?=		python2.6
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
-.elif ${FLAVOR:L:Mpython2.[56]} && !${FLAVOR:L:Npython2.[56]}
+.elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
 MULTI_PACKAGES= -main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"

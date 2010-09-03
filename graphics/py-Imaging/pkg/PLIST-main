@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/09/01 19:13:05 eric Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/09/03 12:34:56 sthen Exp $
 @option no-default-conflict
 @conflict py-Imaging-*-python${MODPY_VERSION}
 @pkgpath graphics/py-Imaging
+%%python2.6%%
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
