@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/01/23 10:29:45 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	curses DX cluster watcher
 
 DISTNAME=	colrdx-1.02
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/colrdx.html
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.qsl.net/pg4i/download/
+WANTLIB=	c ncurses
 
-WANTLIB=c ncurses
+MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
 .include <bsd.port.mk>

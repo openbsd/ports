@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:30:31 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
 DISTNAME=	x3270-3.3.6
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=    	comms
 
 HOMEPAGE=	http://x3270.bgp.nu/

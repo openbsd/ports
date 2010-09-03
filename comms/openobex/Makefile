@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=		OBEX protocol implementation
 DISTNAME=		openobex-1.0.1
-PKGNAME=		${DISTNAME}p3
+REVISION=		3
+
 SHARED_LIBS +=	openobex             1.0      # .1.0
 
 CATEGORIES=		comms

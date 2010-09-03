@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2008/06/24 16:08:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
 DISTNAME=	conserver-8.1.16
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	comms
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c ssl crypto util
 
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/10 10:05:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	MAL convenience library
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	c pthread
+WANTLIB=	c pisock.>=9 pthread
 
-LIB_DEPENDS=	pisock.>=9::comms/pilot-link
+LIB_DEPENDS=	::comms/pilot-link
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

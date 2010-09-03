@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	radio contest logger
 
 DISTNAME=	tlf-0.9.30
-PKGNAME=	$(DISTNAME)p0
+REVISION=	0
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
@@ -12,7 +12,6 @@ MASTER_SITES=	http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/ \
 		http://www.wwns.com/tlf/
 
 CONFIGURE_STYLE=autoheader gnu
-WANTLIB=	ncurses pthread ossaudio c m
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SOME_LD_FLAGS=-lossaudio
+WANTLIB=	hamlib.>=2 ncurses pthread ossaudio c m
+
+SOME_LD_FLAGS=	-lossaudio
 SOME_CPP_FLAGS=
 
 AUTOCONF_VER=	2.59
@@ -31,7 +32,7 @@ BUILD_DEPENDS=	::devel/automake/${AUTOMAKE_VER} \
 
 
 CONFIGURE_ARGS+=--enable-hamlib
-LIB_DEPENDS=	hamlib.>=2::comms/hamlib
+LIB_DEPENDS=	::comms/hamlib
 SOME_CPP_FLAGS	+= -I${LOCALBASE}/include
 SOME_LD_FLAGS	+= -L${LOCALBASE}/lib
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/03 19:17:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
 DISTNAME =		dfu-util-svn-4900
-PKGNAME =		dfu-util-0.1p0
+PKGNAME =		dfu-util-0.1
+REVISION =		0
 
 CATEGORIES =		comms
 

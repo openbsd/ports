@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/01/23 10:29:45 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	X.10 firecracker interface
 
 DISTNAME=	bottlerocket-0.04c
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mlug.missouri.edu/~tymm/
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 NO_REGRESS=	Yes

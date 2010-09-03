@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	communication package for X11
 
 DISTNAME=	Seyon-2.14b
-PKGNAME=	seyon-2.14bp3
+PKGNAME=	${DISTNAME:L}
+REVISION=	3
 CATEGORIES=	comms x11
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/

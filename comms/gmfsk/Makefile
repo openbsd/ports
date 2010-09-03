@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/26 01:47:15 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/03 14:39:07 sthen Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-PKGNAME=	${DISTNAME}p15
+REVISION=	15
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -26,6 +26,8 @@ WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs sndio
 WANTLIB += stdc++ xcb xcb-render xcb-render-util xml2 z
+WANTLIB += fftw.>=2 gailutil gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
+WANTLIB += hamlib.>=2 gnomeui-2
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -36,10 +38,10 @@ USE_GMAKE=		No
 MODGCONF2_SCHEMAS_DIR=	gmfsk
 
 BUILD_DEPENDS=		::textproc/rarian
-LIB_DEPENDS=		fftw.>=2::math/fftw \
-			gailutil,gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2 \
-			hamlib.>=2::comms/hamlib \
-			gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=		::comms/hamlib \
+			::math/fftw \
+			::x11/gtk+2 \
+			::x11/gnome/libgnomeui
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib

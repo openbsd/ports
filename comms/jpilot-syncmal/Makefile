@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/10 10:05:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/03 14:39:07 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,14 +23,15 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += pthread-stubs xcb z
+WANTLIB += pthread-stubs xcb z pisock.>=9 mal.>=1 png.>=5
+WANTLIB += gtk-x11-2.0.>=400.13 gdk-x11-2.0.>=400.13 gdk_pixbuf-2.0.>=400.13
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	::comms/jpilot
-LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
-		mal.>=1::comms/libmal \
-		png.>=5::graphics/png \
-		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+LIB_DEPENDS=	::comms/pilot-link \
+		::comms/libmal \
+		::graphics/png \
+		::x11/gtk+2
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
