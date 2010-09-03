@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/03 16:23:26 naddy Exp $
+
+BROKEN=		does not work with Qt >= 4.6
 
 COMMENT=	event viewer for qt4
 CATEGORIES=	devel x11

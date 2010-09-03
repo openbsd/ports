@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/28 22:00:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/03 16:23:26 naddy Exp $
+
+NOT_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	free and complete CORBA-compliant implementation
 
