@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.64 2010/02/25 11:02:39 phessler Exp $
+# $OpenBSD: Makefile.inc,v 1.65 2010/09/03 19:20:06 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -34,13 +34,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter
+MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
 
 # Python 2.6 lists BSD db 4.6.x as unstable on most architectures (see
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
-.if ${VERSION} != "2.6" || \
-    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-MULTI_PACKAGES+=-bsddb
+.if ${VERSION} == "2.6"
+ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .endif
 
 # All subpackages depend on the main python package.
