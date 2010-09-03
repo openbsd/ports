@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/03 17:24:07 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		gui to configure devilspie rules
 
-DISTNAME=		gdevilspie-0.31
-REVISION=		2
+MODPY_EGG_VERSION=	0.5
+DISTNAME=		gdevilspie-${MODPY_EGG_VERSION}
 
 CATEGORIES=		x11 sysutils
 
@@ -23,10 +23,9 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		lang/python
 
 RUN_DEPENDS=		::devel/desktop-file-utils \
+			::devel/py-xdg \
 			::x11/devilspie \
 			::x11/gnome/py-gnome-desktop
-
-MODPY_EGG_VERSION=	0.3
 
 NO_REGRESS=		Yes
 
