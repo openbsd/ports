@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.24 2010/09/03 16:39:13 sthen Exp $
 --- configure.orig	Tue May 11 19:21:00 2010
-+++ configure	Sun May 16 13:19:13 2010
++++ configure	Thu Aug 19 21:51:04 2010
 @@ -1064,7 +1064,6 @@ HAVE_LIST="
      lzo1x_999_compress
      machine_ioctl_bt848_h
@@ -17,18 +17,16 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
      poll_h
      setrlimit
      strerror_r
-@@ -1396,6 +1396,10 @@ jack_indev_extralibs="-ljack"
+@@ -1396,6 +1396,8 @@ jack_indev_extralibs="-ljack"
  libdc1394_indev_deps="libdc1394"
  oss_indev_deps_any="soundcard_h sys_soundcard_h"
  oss_outdev_deps_any="soundcard_h sys_soundcard_h"
 +sndio_indev_deps="sndio_h"
-+sndio_indev_extralibs="-lsndio"
 +sndio_outdev_deps="sndio_h"
-+sndio_outdev_extralibs="-lsndio"
  v4l_indev_deps="linux_videodev_h"
  v4l2_indev_deps_any="linux_videodev2_h sys_videoio_h"
  vfwcap_indev_deps="capCreateCaptureWindow"
-@@ -1465,6 +1469,10 @@ cpu="generic"
+@@ -1465,6 +1467,10 @@ cpu="generic"
  target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
@@ -39,25 +37,15 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
  # configurable options
  enable avcodec
  enable avdevice
-@@ -1489,7 +1497,7 @@ enable swscale
- enable swscale_alpha
- 
- # build settings
--SHFLAGS='-shared -Wl,-soname,$$(@F)'
-+SHFLAGS='-shared'
- FFSERVERLDFLAGS=-Wl,-E
- LIBPREF="lib"
- LIBSUF=".a"
-@@ -1499,7 +1507,7 @@ SLIBPREF="lib"
- SLIBSUF=".so"
- SLIBNAME='$(SLIBPREF)$(FULLNAME)$(SLIBSUF)'
- SLIBNAME_WITH_VERSION='$(SLIBNAME).$(LIBVERSION)'
--SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBMAJOR)'
-+SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBVERSION)'
- LIB_INSTALL_EXTRA_CMD='$$(RANLIB) "$(LIBDIR)/$(LIBNAME)"'
- 
- CC_O='-o $@'
-@@ -2605,7 +2613,7 @@ enabled libdirac   && add_cflags $(pkg-config --cflags
+@@ -2167,6 +2173,7 @@ case $target_os in
+         # Thus explicitly enable PIC here.
+         enable pic
+         SHFLAGS='-shared'
++        SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBVERSION)'
+         oss_indev_extralibs="-lossaudio"
+         oss_outdev_extralibs="-lossaudio"
+         ;;
+@@ -2605,7 +2612,7 @@ enabled libdirac   && add_cflags $(pkg-config --cflags
                        require  libdirac libdirac_encoder/dirac_encoder.h dirac_encoder_init $(pkg-config --libs dirac)
  enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
  enabled libfaad    && require2 libfaad faad.h faacDecOpen -lfaad
@@ -66,7 +54,7 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
  enabled libmp3lame && require  libmp3lame lame/lame.h lame_init -lmp3lame -lm
  enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
  enabled libopencore_amrnb  && require libopencore_amrnb opencore-amrnb/interf_dec.h Decoder_Interface_init -lopencore-amrnb -lm
-@@ -2687,11 +2695,14 @@ check_header dev/ic/bt8xx.h
+@@ -2687,11 +2694,14 @@ check_header dev/ic/bt8xx.h
  
  check_header sys/soundcard.h
  check_header soundcard.h
@@ -81,7 +69,7 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
  enabled x11grab                         &&
  check_header X11/Xlib.h                 &&
  check_header X11/extensions/XShm.h      &&
-@@ -2726,9 +2737,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -2726,9 +2736,6 @@ enabled extra_warnings && check_cflags -Winline
  
  # add some linker flags
  check_ldflags -Wl,--warn-common
@@ -91,7 +79,7 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
  
  echo "X{};" > $TMPV
  test_ldflags -Wl,--version-script,$TMPV &&
-@@ -3123,8 +3131,7 @@ Version: $version
+@@ -3123,8 +3130,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -101,7 +89,7 @@ $OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
  Cflags: -I\${includedir}
  EOF
  cat <<EOF > $name/$name-uninstalled.pc
-@@ -3143,12 +3150,12 @@ Cflags: -I\${includedir}
+@@ -3143,12 +3149,12 @@ Cflags: -I\${includedir}
  EOF
  }
  

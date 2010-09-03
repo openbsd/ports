@@ -1,12 +1,19 @@
-$OpenBSD: patch-libavdevice_Makefile,v 1.3 2010/05/26 21:38:52 jakemsr Exp $
---- libavdevice/Makefile.orig	Sun May 16 11:22:10 2010
-+++ libavdevice/Makefile	Sun May 16 11:24:29 2010
+$OpenBSD: patch-libavdevice_Makefile,v 1.4 2010/09/03 16:39:13 sthen Exp $
+--- libavdevice/Makefile.orig	Tue May 11 19:20:57 2010
++++ libavdevice/Makefile	Wed Aug 18 18:30:32 2010
 @@ -17,6 +17,8 @@ OBJS-$(CONFIG_DV1394_INDEV)              += dv1394.o
  OBJS-$(CONFIG_JACK_INDEV)                += jack_audio.o
  OBJS-$(CONFIG_OSS_INDEV)                 += oss_audio.o
  OBJS-$(CONFIG_OSS_OUTDEV)                += oss_audio.o
-+OBJS-$(CONFIG_SNDIO_INDEV)               += sndio.o
-+OBJS-$(CONFIG_SNDIO_OUTDEV)              += sndio.o
++OBJS-$(CONFIG_SNDIO_INDEV)               += sndio_common.o sndio_dec.o
++OBJS-$(CONFIG_SNDIO_OUTDEV)              += sndio_common.o sndio_enc.o
  OBJS-$(CONFIG_V4L2_INDEV)                += v4l2.o
  OBJS-$(CONFIG_V4L_INDEV)                 += v4l.o
  OBJS-$(CONFIG_VFWCAP_INDEV)              += vfwcap.o
+@@ -29,5 +31,6 @@ OBJS-$(CONFIG_AUDIO_BEOS_INDEV)          += beosaudio.
+ OBJS-$(CONFIG_AUDIO_BEOS_OUTDEV)         += beosaudio.o
+ 
+ SKIPHEADERS-$(HAVE_ALSA_ASOUNDLIB_H)     += alsa-audio.h
++SKIPHEADERS-$(HAVE_SNDIO_H)              += sndio_common.h
+ 
+ include $(SUBDIR)../subdir.mak

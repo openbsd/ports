@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/09/03 16:39:13 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=		20100512
 DISTNAME=	ffmpeg-svn-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/ \
 		http://gormsby.com/downloads/
@@ -147,7 +147,7 @@ HTML_DOCS=	developer faq ffmpeg-doc ffplay-doc ffprobe-doc ffserver-doc \
 		general libavfilter
 
 post-extract:
-	@cp -f ${FILESDIR}/sndio.c ${WRKSRC}/libavdevice
+	@cp -f ${FILESDIR}/sndio_* ${WRKSRC}/libavdevice
 
 pre-configure:
 	@mkdir -p ${WRKTMP}

@@ -1,14 +1,21 @@
-$OpenBSD: patch-libavutil_common_h,v 1.1 2010/05/26 21:38:52 jakemsr Exp $
---- libavutil/common.h.orig	Wed May 19 09:31:50 2010
-+++ libavutil/common.h	Wed May 19 09:32:50 2010
-@@ -36,6 +36,10 @@
+$OpenBSD: patch-libavutil_common_h,v 1.2 2010/09/03 16:39:13 sthen Exp $
+--- libavutil/common.h.orig	Tue May 11 19:20:40 2010
++++ libavutil/common.h	Thu Aug 19 21:54:13 2010
+@@ -35,6 +35,17 @@
+ #include <stdlib.h>
  #include <string.h>
  #include "attributes.h"
- 
++#include "avconfig.h"
++
++#if AV_HAVE_BIGENDIAN
++#   define AV_NE(be, le) be
++#else
++#   define AV_NE(be, le) le
++#endif
++
 +#ifndef UINT64_C
 +#define UINT64_C(_c)	__CONCAT(_c, ULL)
 +#endif
-+
+ 
  //rounded division & shift
  #define RSHIFT(a,b) ((a) > 0 ? ((a) + ((1<<(b))>>1))>>(b) : ((a) + ((1<<(b))>>1)-1)>>(b))
- /* assume b>0 */
