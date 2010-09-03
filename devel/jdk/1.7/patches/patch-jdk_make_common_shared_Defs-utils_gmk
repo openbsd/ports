@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/common/shared/Defs-utils.gmk.orig	Thu Sep 17 03:51:40 2009
-+++ jdk/make/common/shared/Defs-utils.gmk	Sat Sep 26 10:00:47 2009
+$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.5 2010/09/03 21:54:39 naddy Exp $
+--- jdk/make/common/shared/Defs-utils.gmk.orig	Thu Sep 17 01:51:40 2009
++++ jdk/make/common/shared/Defs-utils.gmk	Fri Sep  3 14:34:43 2010
 @@ -67,6 +67,13 @@ ifeq ($(PLATFORM),windows)
    UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
  endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.4 2009/10/07 01:53:54 
  # Utilities
  ADB            = $(UTILS_COMMAND_PATH)adb
  AR             = $(UTILS_CCS_BIN_PATH)ar
-@@ -203,3 +210,37 @@ ifeq ($(PLATFORM),solaris)
+@@ -203,3 +210,39 @@ ifeq ($(PLATFORM),solaris)
    ECHO           = /usr/bin/echo
  endif
  
@@ -43,7 +43,9 @@ $OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.4 2009/10/07 01:53:54 
 +  else
 +    UNZIP      = $(UTILS_DEVTOOL_PATH)unzip
 +  endif
-+  ifneq ($(OS_VENDOR), OpenBSD)
++  ifeq ($(OS_VENDOR), OpenBSD)
++    NAWK       = $(UTILS_USR_BIN_PATH)awk
++  else
 +    CPIO       = $(UTILS_USR_BIN_PATH)cpio
 +    TAR        = $(UTILS_USR_BIN_PATH)tar
 +  endif
