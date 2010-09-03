@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/16 12:33:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/03 15:34:15 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -6,13 +6,13 @@ COMMENT-perl=	perl utils for the Cyrus IMAP server
 V=		2.3.16
 DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
-REVISION-perl=	0
+REVISION-perl=	1
 CATEGORIES=	mail
 
-HOMEPAGE=	http://cyrusimap.web.cmu.edu
+HOMEPAGE=	http://www.cyrusimap.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -22,8 +22,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
 WANTLIB +=	crypto ssl z sasl2 lib/db4/db.>=4
 
