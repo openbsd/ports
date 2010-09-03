@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/08/25 10:26:20 stsp Exp $
---- configure.ac.orig	Tue Aug 18 20:07:47 2009
-+++ configure.ac	Thu Aug 20 13:51:18 2009
+$OpenBSD: patch-configure_ac,v 1.5 2010/09/03 19:49:12 sthen Exp $
+--- configure.ac.orig	Tue Oct 13 17:09:30 2009
++++ configure.ac	Fri Sep  3 20:48:24 2010
 @@ -6,7 +6,7 @@ AC_PREREQ(2.58)
  dnl Get the version of Subversion, using m4's esyscmd() command to do this
  dnl at m4-time, since AC_INIT() requires it then.
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/08/25 10:26:20 stsp Exp $
       [http://subversion.tigris.org/])
  
  AC_CONFIG_SRCDIR(subversion/include/svn_types.h)
-@@ -56,7 +56,7 @@ if test "$INSTALL" = "build/install-sh -c"; then
+@@ -60,7 +60,7 @@ if test "$INSTALL" = "build/install-sh -c"; then
    INSTALL="$abs_srcdir/$INSTALL"
  fi
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/08/25 10:26:20 stsp Exp $
  
  # ==== Libraries, for which we may have source to build ======================
  
-@@ -765,7 +765,7 @@ AS_HELP_STRING([--enable-gprof],
+@@ -769,7 +769,7 @@ AS_HELP_STRING([--enable-gprof],
  # Python: Used for testsuite, and bindings
  
  
