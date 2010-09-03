@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/06/02 16:56:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/09/03 15:49:45 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -56,6 +56,8 @@ lib/gstreamer-${VERSION}/libgstcamerabin.so
 lib/gstreamer-${VERSION}/libgstcdaudio.so
 @comment lib/gstreamer-${VERSION}/libgstcdxaparse.la
 lib/gstreamer-${VERSION}/libgstcdxaparse.so
+@comment lib/gstreamer-${VERSION}/libgstcoloreffects.la
+lib/gstreamer-${VERSION}/libgstcoloreffects.so
 @comment lib/gstreamer-${VERSION}/libgstdataurisrc.la
 lib/gstreamer-${VERSION}/libgstdataurisrc.so
 @comment lib/gstreamer-${VERSION}/libgstdccp.la
@@ -76,6 +78,10 @@ lib/gstreamer-${VERSION}/libgstfestival.so
 lib/gstreamer-${VERSION}/libgstfreeze.so
 @comment lib/gstreamer-${VERSION}/libgstfrei0r.la
 lib/gstreamer-${VERSION}/libgstfrei0r.so
+@comment lib/gstreamer-${VERSION}/libgstgaudieffects.la
+lib/gstreamer-${VERSION}/libgstgaudieffects.so
+@comment lib/gstreamer-${VERSION}/libgstgeometrictransform.la
+lib/gstreamer-${VERSION}/libgstgeometrictransform.so
 @comment lib/gstreamer-${VERSION}/libgstgsm.la
 lib/gstreamer-${VERSION}/libgstgsm.so
 @comment lib/gstreamer-${VERSION}/libgsth264parse.la
@@ -86,6 +92,8 @@ lib/gstreamer-${VERSION}/libgsthdvparse.so
 lib/gstreamer-${VERSION}/libgstid3tag.so
 @comment lib/gstreamer-${VERSION}/libgstinvtelecine.la
 lib/gstreamer-${VERSION}/libgstinvtelecine.so
+@comment lib/gstreamer-${VERSION}/libgstivfparse.la
+lib/gstreamer-${VERSION}/libgstivfparse.so
 @comment lib/gstreamer-${VERSION}/libgstjp2k.la
 lib/gstreamer-${VERSION}/libgstjp2k.so
 @comment lib/gstreamer-${VERSION}/libgstjpegformat.la
@@ -162,6 +170,8 @@ lib/gstreamer-${VERSION}/libgstsubenc.so
 lib/gstreamer-${VERSION}/libgsttta.so
 @comment lib/gstreamer-${VERSION}/libgstvalve.la
 lib/gstreamer-${VERSION}/libgstvalve.so
+@comment lib/gstreamer-${VERSION}/libgstvideomaxrate.la
+lib/gstreamer-${VERSION}/libgstvideomaxrate.so
 @comment lib/gstreamer-${VERSION}/libgstvideomeasure.la
 lib/gstreamer-${VERSION}/libgstvideomeasure.so
 @comment lib/gstreamer-${VERSION}/libgstvideosignal.la
@@ -179,9 +189,6 @@ lib/libgstphotography-${VERSION}.la
 lib/libgstsignalprocessor-${VERSION}.la
 @lib lib/libgstsignalprocessor-${VERSION}.so.${LIBgstsignalprocessor-0.10_VERSION}
 lib/pkgconfig/gstreamer-plugins-bad-${VERSION}.pc
-share/gstreamer-${VERSION}/
-share/gstreamer-${VERSION}/camera-apps/
-share/gstreamer-${VERSION}/camera-apps/gst-camera.ui
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
@@ -189,11 +196,13 @@ share/locale/ca/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/da/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/el/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/gl/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/id/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
@@ -211,8 +220,10 @@ share/locale/nl/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/pl/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/ro/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo

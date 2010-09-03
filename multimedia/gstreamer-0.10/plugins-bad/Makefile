@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/09/03 15:49:45 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
 COMMENT-mjpeg =		mplex+mpeg2enc elements for GStreamer (plugins-bad)
 
-V =			0.10.19
+V =			0.10.20
 DISTNAME =		gst-plugins-bad-${V}
 
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
-
-REVISION-main =		1
-REVISION-neon =		1
-REVISION-mjpeg =	1
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -40,7 +36,7 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
 			cairo croco-0.6 expat fontconfig freetype stdc++ \
 			gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 gstinterfaces-0.10 \
-			oil-0.3 orc-0.4 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
+			orc-0.4 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
 			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
 			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \
 			gsttag-0.10 sndfile mpcdec faac faad dca exif xvidcore \
@@ -54,7 +50,6 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			::audio/libcdaudio \
 			::audio/libdca \
 			::audio/libmpcdec \
-			::devel/liboil \
 			::audio/libsndfile \
 			::audio/soundtouch \
 			::devel/sdl \
