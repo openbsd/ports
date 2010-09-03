@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: outdated-perl-ports,v 1.4 2009/10/22 08:44:44 jasper Exp $
+# $OpenBSD: outdated-perl-ports,v 1.5 2010/09/03 12:58:14 giovanni Exp $
 #
 # Copyright (c) 2003 Sam Smith <S@mSmith.net>
 #
@@ -24,7 +24,7 @@ our $opt_d;
 getopts('d');
 
 # packages list. Change to a different mirror if you want.
-my $CPAN_packages_details="ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/02packages.details.txt.gz";
+my $CPAN_packages_details="http://mirror.sov.uk.goscomb.net/CPAN/modules/02packages.details.txt.gz";
 
 my $PORTSDIR= $ENV{PORTSDIR} || "/usr/ports"; # location of ports directory
 my %Modules; # What CPAN thinks is up to date
