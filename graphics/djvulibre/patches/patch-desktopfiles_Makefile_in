@@ -1,0 +1,53 @@
+$OpenBSD: patch-desktopfiles_Makefile_in,v 1.1 2010/09/03 21:20:49 sthen Exp $
+--- desktopfiles/Makefile.in.orig	Sat Mar 20 01:39:50 2010
++++ desktopfiles/Makefile.in	Sun Aug 29 21:21:02 2010
+@@ -40,6 +40,8 @@ RM = @RM@
+ 
+ datadir_djvu = ${datadir}/djvu/osi/desktop
+ datadir_djview = ${datadir}/djvu/djview3/desktop
++datadir_applications = ${datadir}/applications
++datadir_icons = ${datadir}/icons/hicolor
+ 
+ 
+ # -------- all
+@@ -98,22 +100,26 @@ install: install-djvu-files
+ @GUI_YES@install: install-djview-files
+ 
+ install-djvu-files: FORCE
+-	${INSTALL} -d ${DESTDIR}${datadir_djvu}
+-	${INSTALL_PROGRAM} register-djvu-mime ${DESTDIR}${datadir_djvu}
+-	${INSTALL_DATA} *djvu.png ${DESTDIR}${datadir_djvu}
+-	${INSTALL_DATA} *djvu.svgz ${DESTDIR}${datadir_djvu}
+-	${INSTALL_DATA} ${srcdir}/*mime.xml ${DESTDIR}${datadir_djvu}
+-	-@echo "Run ${datadir_djvu}/register-djvu-mime install"
+-	-@echo " to register the djvu mime types and icons."
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/22x22/mimetypes
++	${INSTALL_DATA} hi22-djvu.png ${DESTDIR}${datadir_icons}/22x22/mimetypes/image-vnd.djvu.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/32x32/mimetypes
++	${INSTALL_DATA} hi32-djvu.png ${DESTDIR}${datadir_icons}/32x32/mimetypes/image-vnd.djvu.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/48x48/mimetypes
++	${INSTALL_DATA} hi48-djvu.png ${DESTDIR}${datadir_icons}/48x48/mimetypes/image-vnd.djvu.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/64x64/mimetypes
++	${INSTALL_DATA} hi64-djvu.png ${DESTDIR}${datadir_icons}/64x64/mimetypes/image-vnd.djvu.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/scalable/mimetypes
++	${INSTALL_DATA} djvu.svg ${DESTDIR}${datadir_icons}/scalable/mimetypes/image-vnd.djvu.svg
+ 
+ install-djview-files: FORCE
+-	${INSTALL} -d ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} register-djview-menu ${DESTDIR}${datadir_djview}
+-	${INSTALL_DATA} *djview3.png ${DESTDIR}${datadir_djview}
+-	${INSTALL_DATA} *djview3.svgz ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} ${srcdir}/*djview3.desktop ${DESTDIR}${datadir_djview}
+-	-@echo "Run ${datadir_djview}/register-djview-menu install"
+-	-@echo " to register the djview3 menu entries."
++	${INSTALL} -d ${DESTDIR}${datadir_applications}
++	${INSTALL_DATA} djvulibre-djview3.desktop ${DESTDIR}${datadir_applications}/djvulibre-djview3.desktop
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/32x32/apps
++	${INSTALL_DATA} hi32-djview3.png ${DESTDIR}${datadir_icons}/32x32/apps/djvulibre-djview3.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/64x64/apps
++	${INSTALL_DATA} hi64-djview3.png ${DESTDIR}${datadir_icons}/64x64/apps/djvulibre-djview3.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/scalable/apps
++	${INSTALL_DATA} djview.svg ${DESTDIR}${datadir_icons}/scalable/apps/djvulibre-djview3.svg
+ 
+ 
+ # -------- misc
