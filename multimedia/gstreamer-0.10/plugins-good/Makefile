@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/08/26 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/09/03 15:48:14 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -6,7 +6,7 @@ COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-gdk =		gdk pixbuf element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
-V =			0.10.24
+V =			0.10.25
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
@@ -16,12 +16,6 @@ PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
 EPOCH-main =		0
-
-REVISION-main =		2
-REVISION-aalib =	1
-REVISION-dv =		1
-REVISION-gdk =		1
-REVISION-caca =		1
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -gdk -caca

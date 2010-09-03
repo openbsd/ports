@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_Makefile_am,v 1.4 2010/07/22 19:17:33 ajacoutot Exp $
---- ext/Makefile.am.orig	Thu Jun  3 20:54:01 2010
-+++ ext/Makefile.am	Wed Jul 21 19:51:24 2010
-@@ -80,6 +80,12 @@ else
+$OpenBSD: patch-ext_Makefile_am,v 1.5 2010/09/03 15:48:14 ajacoutot Exp $
+--- ext/Makefile.am.orig	Thu Sep  2 20:22:24 2010
++++ ext/Makefile.am	Fri Sep  3 11:18:36 2010
+@@ -76,6 +76,12 @@ else
  LIBPNG_DIR =
  endif
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-ext_Makefile_am,v 1.4 2010/07/22 19:17:33 ajacoutot Exp $
  # if USE_MIKMOD
  # MIKMOD_DIR = mikmod
  # else
-@@ -144,6 +150,7 @@ SUBDIRS = \
+@@ -140,6 +146,7 @@ SUBDIRS = \
  	$(LIBDV_DIR) \
  	$(LIBMNG_DIR) \
  	$(LIBPNG_DIR) \
@@ -22,7 +22,7 @@ $OpenBSD: patch-ext_Makefile_am,v 1.4 2010/07/22 19:17:33 ajacoutot Exp $
  	$(MIKMOD_DIR) \
  	$(PULSE_DIR) \
  	$(SHOUT2_DIR) \
-@@ -165,6 +172,7 @@ DIST_SUBDIRS = \
+@@ -161,6 +168,7 @@ DIST_SUBDIRS = \
  	jpeg \
  	libcaca \
  	libpng \
