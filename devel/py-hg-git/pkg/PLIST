@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/03 18:26:56 millert Exp $
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/hg_git-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/hggit/
+lib/python${MODPY_VERSION}/site-packages/hggit/__init__.py
+lib/python${MODPY_VERSION}/site-packages/hggit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hggit/git_handler.py
+lib/python${MODPY_VERSION}/site-packages/hggit/git_handler.pyc
+lib/python${MODPY_VERSION}/site-packages/hggit/gitrepo.py
+lib/python${MODPY_VERSION}/site-packages/hggit/gitrepo.pyc
+lib/python${MODPY_VERSION}/site-packages/hggit/hgrepo.py
+lib/python${MODPY_VERSION}/site-packages/hggit/hgrepo.pyc
+lib/python${MODPY_VERSION}/site-packages/hggit/util.py
+lib/python${MODPY_VERSION}/site-packages/hggit/util.pyc

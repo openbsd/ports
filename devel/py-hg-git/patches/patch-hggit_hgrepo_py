@@ -1,0 +1,13 @@
+$OpenBSD: patch-hggit_hgrepo_py,v 1.1.1.1 2010/09/03 18:26:56 millert Exp $
+--- hggit/hgrepo.py.orig	Mon Jul  5 12:56:04 2010
++++ hggit/hgrepo.py	Thu Sep  2 11:28:58 2010
+@@ -19,8 +19,7 @@ def generate_repo_subclass(baseclass):
+                 git = GitHandler(self, self.ui)
+                 git.push(remote.path, revs, force)
+             else: #pragma: no cover
+-                return super(hgrepo, self).push(remote, force, revs,
+-                                                newbranch=newbranch)
++                return super(hgrepo, self).push(remote, force, revs)
+ 
+         def findoutgoing(self, remote, base=None, heads=None, force=False):
+             if isinstance(remote, gitrepo):
