@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/31 21:06:35 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/03 17:19:23 sthen Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -26,6 +26,8 @@ WANTLIB=	c m jpeg pthread stdc++ tiff z
 LIB_DEPENDS=	::graphics/jpeg \
 		::graphics/tiff
 
+BUILD_DEPENDS=	::graphics/ImageMagick \
+		::x11/gnome/librsvg
 RUN_DEPENDS=	::x11/hicolor-icon-theme
 
 USE_GMAKE=	Yes
