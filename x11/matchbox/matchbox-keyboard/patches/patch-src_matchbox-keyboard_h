@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_matchbox-keyboard_h,v 1.1 2010/09/03 16:06:23 sthen Exp $
+--- src/matchbox-keyboard.h.orig	Fri Sep  3 17:01:32 2010
++++ src/matchbox-keyboard.h	Fri Sep  3 17:02:17 2010
+@@ -55,7 +55,7 @@
+ 
+ #define MARK() DBG("mark")
+ 
+-typedef void*         pointer;
++typedef void*         mb_pointer;
+ typedef unsigned char uchar ;
+ typedef Bool          boolean ;
+ 

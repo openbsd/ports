@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_matchbox-keyboard_c,v 1.1 2010/09/03 16:06:23 sthen Exp $
+--- src/matchbox-keyboard.c.orig	Fri Sep  3 17:01:35 2010
++++ src/matchbox-keyboard.c	Fri Sep  3 17:02:14 2010
+@@ -234,7 +234,7 @@ mb_kbd_locate_key(MBKeyboard *kb, int x, int y)
+ void
+ mb_kbd_add_layout(MBKeyboard *kb, MBKeyboardLayout *layout)
+ {
+-  kb->layouts = util_list_append(kb->layouts, (pointer)layout);
++  kb->layouts = util_list_append(kb->layouts, (mb_pointer)layout);
+ }
+ 
+ MBKeyboardLayout*

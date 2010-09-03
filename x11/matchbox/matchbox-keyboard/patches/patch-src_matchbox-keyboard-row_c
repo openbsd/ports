@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_matchbox-keyboard-row_c,v 1.1 2010/09/03 16:06:23 sthen Exp $
+--- src/matchbox-keyboard-row.c.orig	Fri Sep  3 17:01:59 2010
++++ src/matchbox-keyboard-row.c	Fri Sep  3 17:02:12 2010
+@@ -138,7 +138,7 @@ mb_kbd_row_base_width(MBKeyboardRow *row) 
+ void
+ mb_kbd_row_append_key(MBKeyboardRow *row, MBKeyboardKey *key)
+ {
+-  row->keys = util_list_append(row->keys, (pointer)key);
++  row->keys = util_list_append(row->keys, (mb_pointer)key);
+ 
+   mb_kbd_key_set_row(key, row);
+ }

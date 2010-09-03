@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/03 16:06:23 sthen Exp $
 
 COMMENT=	on-screen virtual keyboard
 DISTNAME=	matchbox-keyboard-0.1
-REVISION=	5
+REVISION=	6
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-keyboard/0.1/}
 
