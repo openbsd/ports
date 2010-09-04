@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.4 2010/07/31 09:14:48 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.5 2010/09/04 09:31:19 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -78,7 +78,9 @@ CONFIGURE_ARGS +=--disable-freetypetest		\
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_PROJECT} == "mozilla-firefox" || \
+.if ${MOZILLA_VERSION:C/\..*//} == "4"
+WRKDIST =	${WRKDIR}/mozilla-central
+.elif ${MOZILLA_PROJECT} == "mozilla-firefox" || \
 	${MOZILLA_PROJECT} == "firefox35"
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
@@ -141,8 +143,10 @@ do-install:
 	# install shell wrapper to ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/${_MOZ_PROJECT_SHORT} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client \
-		${MOB}/regxpcom ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client ${MOZ}
+.if ${MOZILLA_VERSION:C/\..*//} != "4"
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOZ}
+.endif
 	if [ -f ${FILESDIR}/README.OpenBSD ]; then \
 		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
 			${MOZ}/README.OpenBSD ; \
