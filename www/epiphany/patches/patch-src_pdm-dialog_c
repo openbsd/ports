@@ -1,0 +1,122 @@
+$OpenBSD: patch-src_pdm-dialog_c,v 1.1 2010/09/05 16:54:36 ajacoutot Exp $
+
+From 479f0a9a7ec095a8457e7d5b70695207e81f40c6 Mon Sep 17 00:00:00 2001
+From: Xan Lopez <xan@gnome.org>
+Date: Sun, 05 Sep 2010 13:31:45 +0000
+Subject: pdm-dialog: do not crash when clearing the passwords from prefs dialog
+
+The code (wrongly) assumed we could only be called from withing the
+PDM dialog. Do some refactoring to make it more generic.
+
+Bug #606933
+
+--- src/pdm-dialog.c.orig	Tue Aug 31 00:30:35 2010
++++ src/pdm-dialog.c	Sun Sep  5 18:37:59 2010
+@@ -224,30 +224,47 @@ clear_all_cookies (SoupCookieJar *jar)
+ }
+ 
+ static void
+-pdm_dialog_password_remove_cb (GnomeKeyringResult result,
+-			       gpointer data)
++get_info_full_cb (GnomeKeyringResult result,
++		  GnomeKeyringItemInfo *info,
++		  gpointer data)
+ {
+-	GtkTreeRowReference *rowref = (GtkTreeRowReference *)data;
++	if (result != GNOME_KEYRING_RESULT_OK)
++		return;
+ 
+-	if (result == GNOME_KEYRING_RESULT_OK) {
+-		GtkTreeIter iter;
+-		GtkTreePath *path;
+-		GtkTreeModel *model;
++	if (gnome_keyring_item_info_get_type (info) == GNOME_KEYRING_ITEM_NETWORK_PASSWORD)
++		gnome_keyring_item_delete (GNOME_KEYRING_DEFAULT,
++					   GPOINTER_TO_UINT (data),
++					   NULL, NULL, NULL);
++}
+ 
+-		if (!gtk_tree_row_reference_valid (rowref))
+-			return;
++static void
++got_network_passwords_list_cb (GnomeKeyringResult result,
++			       GList *list,
++			       gpointer data)
++{
++	GList *l;
+ 
+-		path = gtk_tree_row_reference_get_path (rowref);
+-		model = gtk_tree_row_reference_get_model (rowref);
++	if (result != GNOME_KEYRING_RESULT_OK)
++		return;
+ 
+-		if (path != NULL && gtk_tree_model_get_iter (model, &iter, path)) {
+-			gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+-			gtk_tree_path_free (path);
+-		}
+-	}
++	for (l = list; l != NULL; l = l->next)
++		gnome_keyring_item_get_info_full (GNOME_KEYRING_DEFAULT,
++						  GPOINTER_TO_UINT (l->data),
++						  GNOME_KEYRING_ITEM_INFO_BASICS,
++						  (GnomeKeyringOperationGetItemInfoCallback) get_info_full_cb,
++						  l->data,
++						  NULL);
+ }
+ 
+ static void
++_ephy_pdm_delete_all_passwords ()
++{
++	gnome_keyring_list_item_ids (GNOME_KEYRING_DEFAULT,
++				     got_network_passwords_list_cb,
++				     NULL, NULL);
++}
++
++static void
+ clear_all_dialog_response_cb (GtkDialog *dialog,
+ 			      int response,
+ 			      PdmClearAllDialogButtons *checkbuttons)
+@@ -282,35 +299,15 @@ clear_all_dialog_response_cb (GtkDialog *dialog,
+ 		if (gtk_toggle_button_get_active
+ 			(GTK_TOGGLE_BUTTON (checkbuttons->checkbutton_passwords)))
+ 		{
+-			GtkTreeIter iter;
+-			PdmDialog *pdialog = EPHY_PDM_DIALOG (checkbuttons->dialog);
+-			PdmActionInfo *pinfo = pdialog->priv->passwords;
+-
+-			gboolean valid = gtk_tree_model_get_iter_first (pinfo->model, &iter);
+-
+-			while (valid) {
+-				GtkTreePath *path;
+-				EphyPasswordInfo *info;
+-				GtkTreeRowReference *row;
+-
+-				path = gtk_tree_model_get_path (pinfo->model, &iter);
+-				row = gtk_tree_row_reference_new (pinfo->model, path);
+-
+-				gtk_tree_model_get (pinfo->model, &iter,
+-						    COL_PASSWORDS_DATA, &info,
+-						    -1);
+-
+-				gnome_keyring_item_delete (GNOME_KEYRING_DEFAULT,
+-							   info->keyring_id,
+-							   (GnomeKeyringOperationDoneCallback) pdm_dialog_password_remove_cb,
+-							   row,
+-							   (GDestroyNotify) gtk_tree_row_reference_free);
+-
+-				valid = gtk_tree_model_iter_next (pinfo->model, &iter);
+-
+-				g_slice_free (EphyPasswordInfo, info);
+-				gtk_tree_path_free (path);
++			/* Clear UI if we are the PDM dialog */
++			if (EPHY_IS_PDM_DIALOG (checkbuttons->dialog))
++			{
++				PdmDialog *pdialog = EPHY_PDM_DIALOG (checkbuttons->dialog);
++				PdmActionInfo *pinfo = pdialog->priv->passwords;
++				gtk_list_store_clear (GTK_LIST_STORE (pinfo->model));
+ 			}
++
++			_ephy_pdm_delete_all_passwords ();
+ 		}
+ 		if (gtk_toggle_button_get_active
+ 			(GTK_TOGGLE_BUTTON (checkbuttons->checkbutton_cache)))
