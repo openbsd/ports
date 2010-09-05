@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/05/14 19:24:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/05 10:25:16 sthen Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.40.02-source
-PKGNAME=		${DISTNAME:S/-source//}p1
+PKGNAME=		${DISTNAME:S/-source//}
+REVISION=		1
 SHARED_LIBS=		espeak 0.0
 
 CATEGORIES=		audio devel
@@ -19,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB=		c m pthread stdc++
+WANTLIB=		c m pthread stdc++ portaudio
 
-LIB_DEPENDS=		portaudio::audio/portaudio-svn
+LIB_DEPENDS=		::audio/portaudio-svn
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

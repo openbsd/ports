@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/26 11:17:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/05 10:25:16 sthen Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-PKGNAME =	${DISTNAME}p4
+REVISION =	5
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -18,23 +18,26 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 FLAVORS =	debug
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS +=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
-		kdecore.>=6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff,kdnssd::x11/kde/libs3 \
-		konqsidebarplugin::x11/kde/base3 \
-		tag.>=5.0:taglib->=1.4:audio/taglib \
-		xine::multimedia/xine-lib \
-		sqlite3::databases/sqlite3 \
-		gpod::audio/libgpod \
-		njb::audio/libnjb \
-		ruby::lang/ruby \
-		mtp::devel/libmtp
-
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat
-WANTLIB += fam fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv idn intl jpeg m pcre
-WANTLIB += pcreposix png pthread rpcsvc stdc++ usb util xml2 z
-WANTLIB += pthread-stubs xcb
+WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv idn intl jpeg m pcre
+WANTLIB += pcreposix png pthread stdc++ usb util xml2 z
+WANTLIB += pthread-stubs xcb lib/qt3/qt-mt.>=3.33 konqsidebarplugin
+WANTLIB += kdecore.>=6 DCOP khtml kwalletclient kdefx kdeprint
+WANTLIB += kutils kdeui kparts kio kdesu kjs knewstuff kdnssd tag.>=5.0
+WANTLIB += xine sqlite3 gpod njb ruby mtp
+
+RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS +=	::x11/qt3 \
+		::x11/kde/libs3 \
+		::x11/kde/base3 \
+		:taglib->=1.4:audio/taglib \
+		::multimedia/xine-lib \
+		::databases/sqlite3 \
+		::audio/libgpod \
+		::audio/libnjb \
+		::lang/ruby \
+		::devel/libmtp
 
 SHARED_LIBS +=	amarok               0.0      # .0.0
 SHARED_LIBS +=	http11               0.0      # .0.0

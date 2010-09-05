@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/05 10:25:16 sthen Exp $
 
 COMMENT=	advanced music player
 
@@ -15,31 +15,33 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
-
-MODULES=	devel/gettext
-
-LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-		xml2::textproc/libxml \
-		lua::lang/lua \
-		mac::audio/mac \
-		mad::audio/libmad \
-		mpcdec::audio/libmpcdec \
-		FLAC::audio/flac \
-		avcodec,avformat,avutil::graphics/ffmpeg \
-		jack::audio/jack \
-		wavpack::audio/wavpack
-
-RUN_DEPENDS=	::devel/desktop-file-utils
-		
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m mp3lame ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
 		pthread-stubs samplerate sndfile sndio stdc++ vorbis \
-		vorbisenc vorbisfile xcb xcb-render xcb-render-util z
+		vorbisenc vorbisfile xcb xcb-render xcb-render-util z \
+		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 xml2 lua mac mad \
+		mpcdec FLAC avcodec avformat avutil jack wavpack
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
+
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	::audio/flac \
+		::audio/jack \
+		::audio/libmad \
+		::audio/libmpcdec \
+		::audio/mac \
+		::audio/wavpack \
+		::graphics/ffmpeg \
+		::lang/lua \
+		::textproc/libxml \
+		::x11/gtk+2
+
+RUN_DEPENDS=	::devel/desktop-file-utils
+		
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib" \

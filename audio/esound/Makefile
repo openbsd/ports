@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2008/12/20 08:58:32 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.46 2010/09/05 10:25:16 sthen Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	sound library for Enlightenment
 
 DISTNAME=	esound-0.2.41
-PKGNAME=	${DISTNAME}v0
+EPOCH=		0
 SHARED_LIBS +=	esd                  2.40     # .2.38
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m sndio wrap
 
 FLAVORS=	arts
@@ -37,8 +38,8 @@ CONFIGURE_ARGS+= --disable-ipv6
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts
 MODULES+=	devel/gettext
-LIB_DEPENDS+=	artsc::x11/kde/arts3
-WANTLIB+=	glib-2.0 gthread-2.0 gmodule-2.0 pcre pthread stdc++
+LIB_DEPENDS+=	::x11/kde/arts3
+WANTLIB+=	glib-2.0 gthread-2.0 gmodule-2.0 pcre pthread stdc++ artsc
 .else
 CONFIGURE_ARGS+=--disable-arts
 .endif

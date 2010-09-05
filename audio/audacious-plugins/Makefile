@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/05 07:41:23 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/05 10:25:16 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,9 @@ COMMENT-jack =	jack plugin for audacious
 V =		2.1
 DISTNAME =	audacious-plugins-$V
 PKGNAME-main =	${DISTNAME}
+REVISION-main =	0
 PKGNAME-jack =	audacious-jack-$V
+REVISION-jack =	0
 
 CATEGORIES =	audio multimedia
 
@@ -25,8 +27,11 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs xcb z
-WANTLIB-main =	${WANTLIB} cddb dbus-1 dbus-glib-1 mowgli ogg sndio stdc++
+		png pthread-stubs xcb xcb-render xcb-render-util z
+WANTLIB-main =	${WANTLIB} cddb dbus-1 dbus-glib-1 mowgli ogg sndio stdc++ \
+		faad.>=2 mp4ff.>=1 FLAC.>=7 mp3lame mad cdio cdio_cdda \
+		mpcdec.>=2 sndfile.>=2 vorbis.>=5 vorbisfile.>=4 vorbisenc \
+		tag.>=6 wavpack.>=0 SDL.>=6 curl.>=5 neon.>=26 xml2
 WANTLIB-jack =	${WANTLIB} jack samplerate
 
 MASTER_SITES =	http://distfiles.atheme.org/
@@ -40,21 +45,21 @@ BUILD_DEPENDS =	${RUN_DEPENDS-main}
 RUN_DEPENDS-main =	:audacious->=1.5.1:audio/audacious
 RUN_DEPENDS-jack =	::audio/audacious-plugins,-main
 
-LIB_DEPENDS-main =	faad.>=2,mp4ff.>=1::audio/faad \
-			FLAC.>=7::audio/flac \
-			mp3lame::audio/lame \
-			mad::audio/libmad \
-			cdio,cdio_cdda::audio/libcdio \
-			mpcdec.>=2::audio/libmpcdec \
-			sndfile.>=2::audio/libsndfile \
-			vorbis.>=5,vorbisfile.>=4,vorbisenc::audio/libvorbis \
-			tag.>=6:taglib->=1.4:audio/taglib \
-			wavpack.>=0::audio/wavpack \
-			SDL.>=6::devel/sdl \
-			curl.>=5::net/curl \
-			neon.>=26::net/neon \
-			xml2::textproc/libxml
-LIB_DEPENDS-jack =	jack::audio/jack
+LIB_DEPENDS-main =	::audio/faad \
+			::audio/flac \
+			::audio/lame \
+			::audio/libmad \
+			::audio/libcdio \
+			::audio/libmpcdec \
+			::audio/libsndfile \
+			::audio/libvorbis \
+			:taglib->=1.4:audio/taglib \
+			::audio/wavpack \
+			::devel/sdl \
+			::net/curl \
+			::net/neon \
+			::textproc/libxml
+LIB_DEPENDS-jack =	::audio/jack
 
 PSEUDO_FLAVORS =	no_jack
 FLAVOR ?=

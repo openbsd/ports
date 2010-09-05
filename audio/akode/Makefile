@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/05 10:25:16 sthen Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
@@ -21,16 +21,18 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	FLAC.>=8::audio/flac \
-		mad::audio/libmad \
-		speex::audio/speex \
-		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
-		ltdl::devel/libtool,-ltdl \
-		avcodec.>=14,avformat.>=13,avutil.>=7:ffmpeg->=20100512:graphics/ffmpeg \
-		jack::audio/jack
-
 WANTLIB=	bz2 c faac faad gsm m mp3lame ogg pthread orc-0.4 \
-		samplerate schroedinger-1.0 sndio stdc++ theora x264 z
+		samplerate schroedinger-1.0 sndio stdc++ theora x264 z \
+		FLAC.>=8 mad speex ltdl vorbis vorbisfile vorbisenc \
+		jack avcodec.>=14 avformat.>=13 avutil.>=7
+
+LIB_DEPENDS=	::audio/flac \
+		::audio/libmad \
+		::audio/speex \
+		::audio/libvorbis \
+		::devel/libtool,-ltdl \
+		:ffmpeg->=20100512:graphics/ffmpeg \
+		::audio/jack
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

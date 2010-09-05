@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2010/07/01 21:12:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/09/05 10:25:16 sthen Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
 V=		2.6.1
 DISTNAME=	faad2-${V}
-PKGNAME-main=	faad-${V}p1
-PKGNAME-xmms=	faad-xmms-${V}p1
+PKGNAME-main=	faad-${V}
+REVISION-main=	1
+PKGNAME-xmms=	faad-xmms-${V}
+REVISION-xmms=	1
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 SHARED_LIBS +=	faad                 2.0      # .0.0
@@ -18,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		m
 
 # bootstrap checks for libtoolize
@@ -49,14 +52,14 @@ CONFIGURE_ARGS+= --with-xmms
 CONFIGURE_ARGS+= --without-xmms
 .endif
 
-LIB_DEPENDS-xmms=	xmms.>=3::audio/xmms \
-			faad,mp4ff::audio/faad
+LIB_DEPENDS-xmms=	::audio/xmms \
+			::audio/faad
 RUN_DEPENDS-xmms=	::audio/xmms
 WANTLIB-xmms=		${WANTLIB} \
 			X11 Xau Xdmcp Xext Xi iconv intl glib \
-			gmodule gtk gdk pthread-stubs xcb
+			gmodule gtk gdk pthread-stubs xcb \
+			xmms.>=3 faad mp4ff
 WANTLIB-main=		${WANTLIB} c
-
 
 post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
