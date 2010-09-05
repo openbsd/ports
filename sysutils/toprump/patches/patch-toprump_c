@@ -1,0 +1,35 @@
+$OpenBSD: patch-toprump_c,v 1.1 2010/09/05 20:33:20 jasper Exp $
+
+Fix for gcc2.
+
+--- toprump.c.orig	Sun Sep  5 22:17:31 2010
++++ toprump.c	Sun Sep  5 22:18:32 2010
+@@ -424,7 +424,7 @@ struct statics  statics;
+ int
+ main(int argc, char *argv[])
+ {
+-	char *env_top, *gn;
++	char *env_top, *gn, *s;
+ 	char *(*get_userid)(uid_t) = username, **preset_argv, **av = NULL;
+ 	graph1 **gp;
+ 	int preset_argc = 0, ac = 0, active_procs, i, j;
+@@ -432,6 +432,8 @@ main(int argc, char *argv[])
+ 	sigset_t mask, oldmask;
+ 	time_t curr_time;
+ 	caddr_t processes;
++        pid_t pid;
++        uid_t buid;
+ 
+ 	num_graph_list = 5; /* start at 1 not 0 */
+ 
+@@ -779,10 +781,6 @@ restart:
+ 			topn = Largest;
+ #endif
+ 		}
+-
+-                pid_t pid;
+-                char * s;
+-                uid_t buid;
+ 
+                 /* determine number of processes to actually display */
+                 /*
