@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/21 19:17:24 chl Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/05 09:04:23 sthen Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
 VERSION=	2.52
 DISTNAME=	autoconf-${VERSION}
-PKGNAME=	autoconf-${VERSION}p3
+REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=autoconf/}
 
@@ -32,5 +32,6 @@ SUBST_VARS=SUFFIX
 post-install:
 	cd ${PREFIX}/info && mv autoconf.info autoconf${SUFFIX}.info && rm standards.info
 
+REGRESS_FLAGS= M4=/usr/local/bin/gm4
 
 .include <bsd.port.mk>
