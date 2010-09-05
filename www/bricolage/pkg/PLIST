@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/09/21 21:17:56 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/05 08:31:33 ajacoutot Exp $
 bin/bric_apachectl
 bin/bric_clean_tmp
 bin/bric_dbprof
@@ -10,8 +10,8 @@ bin/bric_queued
 bin/bric_republish
 bin/bric_soap
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/perllocal.pod
 ${P5SITE}/Bric/
 ${P5SITE}/Bric.pm
 ${P5SITE}/Bric/Admin.pod
@@ -614,8 +614,10 @@ share/bricolage/comp/admin/profile/workflow/
 share/bricolage/comp/admin/profile/workflow/dhandler
 share/bricolage/comp/autohandler
 @owner www
+@group www
 share/bricolage/comp/data/
 @owner
+@group
 share/bricolage/comp/dhandler
 share/bricolage/comp/errors/
 share/bricolage/comp/errors/403.mc

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/28 09:19:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/05 08:31:33 ajacoutot Exp $
 
 COMMENT=	content management system
 
 DISTNAME=	bricolage-1.10.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.bricolage.cc/
