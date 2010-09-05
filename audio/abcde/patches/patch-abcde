@@ -1,7 +1,7 @@
-$OpenBSD: patch-abcde,v 1.5 2004/04/13 21:07:48 brad Exp $
---- abcde.orig	Fri Apr  9 20:12:15 2004
-+++ abcde	Sun Apr 11 16:58:13 2004
-@@ -1574,7 +1574,7 @@
+$OpenBSD: patch-abcde,v 1.6 2010/09/05 21:55:42 sthen Exp $
+--- abcde.orig	Sun Aug 14 20:51:53 2005
++++ abcde	Sun Sep  5 22:55:16 2010
+@@ -2058,7 +2058,7 @@ VAPLAYLISTFORMAT='${ARTISTFILE}-${ALBUMFILE}.${OUTPUT}
  VAPLAYLISTDATAPREFIX=''
  DOSPLAYLIST=n
  COMMENT=''
@@ -10,16 +10,16 @@ $OpenBSD: patch-abcde,v 1.5 2004/04/13 21:07:48 brad Exp $
  ENCNICE=10
  READNICE=10
  DISTMP3NICE=10
-@@ -1683,7 +1683,7 @@
- 	# We should have disktool in OSX, but let's be sure...
+@@ -2170,7 +2170,7 @@ elif [ X$(uname) = "XDarwin" ] ; then
  	NEEDDISKTOOL=y
+ 	CDROMREADERSYNTAX=cddafs
  elif [ X$(uname) = "XOpenBSD" ] ; then
 -	HTTPGET=wget
 +	HTTPGET=ftp
  	MD5SUM=md5
  else
  	HTTPGET=wget
-@@ -1719,6 +1719,7 @@
+@@ -2207,6 +2207,7 @@ if [ "$HTTPGETOPTS" = "" ] ; then
  		wget) HTTPGETOPTS="-q -O -";;
  		curl) HTTPGETOPTS="-f -s";;
  		fetch)HTTPGETOPTS="-q -o -";;
