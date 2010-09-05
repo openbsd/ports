@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/25 16:59:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/05 17:18:22 jasper Exp $
 @conflict Pyrex-*
 bin/pyrexc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/
-lib/python${MODPY_VERSION}/site-packages/Pyrex-0.9.6.4-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Pyrex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Builtin.py
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Builtin.pyc
@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Errors.py
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Errors.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/ExprNodes.py
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/ExprNodes.pyc
+lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Filenames.py
+lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Filenames.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Lexicon.pickle
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Lexicon.py
 lib/python${MODPY_VERSION}/site-packages/Pyrex/Compiler/Lexicon.pyc
@@ -116,6 +118,8 @@ share/doc/pyrex/Manual/external.html
 share/doc/pyrex/Manual/sharing.html
 share/doc/pyrex/Manual/source_files.html
 share/doc/pyrex/Manual/special_methods.html
+share/doc/pyrex/Manual/using_with_c++.html
+share/doc/pyrex/Release_Notes_${MODPY_EGG_VERSION}.html
 share/doc/pyrex/index.html
 share/doc/pyrex/primes.c
 share/examples/pyrex/
