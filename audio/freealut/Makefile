@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/19 07:23:45 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=	OpenAL Utility Toolkit
 
 DISTNAME=	freealut-1.1.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS +=  alut                 1.0      # .1.0
 CATEGORIES=	audio
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m pthread sndio
+WANTLIB=	m openal.>=1.0 pthread sndio
 
 MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 
-LIB_DEPENDS=	openal.>=1.0::audio/openal
+LIB_DEPENDS=	::audio/openal
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

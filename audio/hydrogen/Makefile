@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 05:11:32 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		software drum machine
 DISTNAME=		hydrogen-0.9.4
@@ -12,15 +12,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ogg pthread sndio stdc++
+WANTLIB += c m ogg pthread sndio stdc++ QtGui QtNetwork QtXml sndfile.>=1
+WANTLIB += FLAC.>=8 FLAC++.>=7 jack archive
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hydrogen/}
 
-LIB_DEPENDS=		QtGui,QtNetwork,QtXml::x11/qt4 \
-			sndfile.>=1::audio/libsndfile \
-			FLAC.>=8,FLAC++.>=7::audio/flac \
-			jack::audio/jack \
-			archive::archivers/libarchive
+LIB_DEPENDS=		::x11/qt4 \
+			::audio/libsndfile \
+			::audio/flac \
+			::audio/jack \
+			::archivers/libarchive
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/10 20:56:35 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -20,6 +20,7 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++
 WANTLIB += xml2 z gthread-2.0 pthread xcb-render xcb-render-util
 WANTLIB += pthread-stubs xcb crypto ssl curl idn
+WANTLIB += mpd nxml tag tag_c glade-2.0
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gimmix/}
 EXTRACT_SUFX=		.tar.bz2
@@ -33,10 +34,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=		mpd:libmpd->=0.17:audio/libmpd \
-			nxml::textproc/libnxml \
-			tag,tag_c::audio/taglib \
-			glade-2.0::devel/libglade2
+LIB_DEPENDS=		:libmpd->=0.17:audio/libmpd \
+			::textproc/libnxml \
+			::audio/taglib \
+			::devel/libglade2
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 post-extract:

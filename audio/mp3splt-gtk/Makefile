@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/02 22:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-PKGNAME =	${DISTNAME}p5
+REVISION =	6
 
 CATEGORIES =	audio
 
@@ -18,18 +18,23 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
 WANTLIB += glitz m pixman-1 pthread pthread-stubs xcb z
+WANTLIB += xcb-render xcb-render-util mp3splt atk-1.0 cairo png
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gio-2.0 gthread-2.0
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 xml2
+WANTLIB += gstreamer-0.10 gstbase-0.10
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 
-LIB_DEPENDS =	mp3splt::audio/libmp3splt \
-		atk-1.0::devel/atk \
-		glib-2.0,gmodule-2.0,gobject-2.0,gio-2.0,gthread-2.0::devel/glib2 \
-		pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
-		cairo::graphics/cairo \
-		png::graphics/png \
-		gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
-		xml2::textproc/libxml \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS =	::audio/libmp3splt \
+		::devel/atk \
+		::devel/glib2 \
+		::devel/pango \
+		::graphics/cairo \
+		::graphics/png \
+		::multimedia/gstreamer-0.10/core \
+		::textproc/libxml \
+		::x11/gtk+2
 
 BUILD_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base
 

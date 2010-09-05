@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/06 21:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=	curses-based mp3 player
 
 DISTNAME=	ksmp3play-0.5.1
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 CATEGORIES=    	audio
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c curses m pthread
+WANTLIB += SDL c curses iberty m pthread smpeg.>=1.3
 
-LIB_DEPENDS=	SDL::devel/sdl \
-		smpeg.>=1.3:smpeg-*:devel/smpeg
+LIB_DEPENDS=	::devel/sdl \
+		:smpeg-*:devel/smpeg
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ksmp3play/}
 

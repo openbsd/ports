@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/07/30 19:14:33 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		minimalistic console-based audio player
 
 DISTNAME=		herrie-2.2
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
@@ -13,7 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ncurses ogg pthread
+
+WANTLIB += c ncurses ogg pthread mad.>=2 id3tag.>=3 sndfile.>=1
+WANTLIB += vorbis.>=5 vorbisfile.>=4 glib-2.0.>=1000.0 gthread-2.0.>=1000.0
+WANTLIB += curl.>=9 ao
 
 MODULES=		devel/gettext
 
@@ -21,13 +24,13 @@ MASTER_SITES=		${HOMEPAGE}/distfiles/ \
 			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
 
-LIB_DEPENDS=		mad.>=2::audio/libmad \
-			id3tag.>=3::audio/libid3tag \
-			sndfile.>=1::audio/libsndfile \
-			vorbis.>=5,vorbisfile.>=4::audio/libvorbis \
-			glib-2.0.>=1000.0,gthread-2.0.>=1000.0::devel/glib2 \
-			curl.>=9::net/curl \
-			ao:libao->=0.8.8p1:audio/libao
+LIB_DEPENDS=		::audio/libmad \
+			::audio/libid3tag \
+			::audio/libsndfile \
+			::audio/libvorbis \
+			::devel/glib2 \
+			::net/curl \
+			:libao->=0.8.8p1:audio/libao
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CONFDIR=${SYSCONFDIR} \

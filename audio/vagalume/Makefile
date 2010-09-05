@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/15 17:31:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.8.2
 DISTNAME=		vagalume_$V.orig
-PKGNAME=		vagalume-$Vp0
+PKGNAME=		vagalume-$V
+REVISION=		1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/
@@ -25,7 +26,8 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += ssl xcb xml2 z
+WANTLIB += ssl xcb xml2 z idn notify gstinterfaces-0.10 curl
+WANTLIB += xcb-render xcb-render-util
 
 MODULES+=		devel/gettext \
 			textproc/intltool
@@ -33,10 +35,10 @@ MODULES+=		devel/gettext \
 RUN_DEPENDS+=		::devel/desktop-file-utils \
 			::multimedia/gstreamer-0.10/plugins-good
 
-LIB_DEPENDS=		idn::devel/libidn \
-			notify::devel/libnotify \
-			gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base \
-			curl::net/curl
+LIB_DEPENDS=		::devel/libidn \
+			::devel/libnotify \
+			::multimedia/gstreamer-0.10/plugins-base \
+			::net/curl
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

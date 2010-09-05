@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/04/09 13:31:13 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		0.20.0
 DISTNAME=		gmpc-${VERSION}
+REVISION=		0
 
 CATEGORIES=		audio
 
@@ -16,13 +17,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 			expat fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 \
 			gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 \
 			gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
-			tasn1 xml2 z pthread-stubs sqlite3 xcb
+			tasn1 xml2 z pthread-stubs sqlite3 xcb \
+			mpd sexy glade-2.0 soup-2.4 xcb-render xcb-render-util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
@@ -45,9 +48,9 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--enable-system-libsexy
 
-LIB_DEPENDS=		mpd:libmpd->=0.20.0:audio/libmpd \
-			sexy::x11/libsexy \
-			glade-2.0::devel/libglade2 \
-			soup-2.4::devel/libsoup,-main
+LIB_DEPENDS=		:libmpd->=0.20.0:audio/libmpd \
+			::x11/libsexy \
+			::devel/libglade2 \
+			::devel/libsoup,-main
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/12/24 10:34:43 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.0.9
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 
 SHARED_LIBS =		fluidsynth	0.1
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m ncurses pthread readline sndio
+WANTLIB =		c jack m ncurses pthread readline sndio
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=fluid/}
 
-LIB_DEPENDS =		jack::audio/jack
+LIB_DEPENDS =		::audio/jack
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9

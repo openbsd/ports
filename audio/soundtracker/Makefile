@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/08 08:47:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		music tracking tool for X11
 
 V=			0.6.8
 DISTNAME=		soundtracker_$V.gtk2_17092006_1613
-PKGNAME=		soundtracker-$Vp0
+PKGNAME=		soundtracker-$V
+REVISION=		1
 CATEGORIES=		audio
 HOMEPAGE=		http://www.shaltev.org/programming.html
 
@@ -27,10 +28,11 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
-WANTLIB += sndio xcb xml2 z
+WANTLIB += sndio xcb xml2 z xcb-render xcb-render-util
+WANTLIB += sndfile gnomeui-2
 
-LIB_DEPENDS=		sndfile::audio/libsndfile \
-			gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=		::audio/libsndfile \
+			::x11/gnome/libgnomeui
 
 MODULES=		devel/gettext
 

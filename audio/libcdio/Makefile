@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/09 22:06:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		compact disk input and control library
 
 DISTNAME=		libcdio-0.80
-PKGNAME=		${DISTNAME}p2
+REVISION=		3
 CATEGORIES=		audio devel
 
 HOMEPAGE=		http://www.gnu.org/software/libcdio/
@@ -22,13 +22,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c ncurses m
+WANTLIB=	c ncurses m stdc++ cddb
 
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	cddb::audio/libcddb
+LIB_DEPENDS=	::audio/libcddb
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

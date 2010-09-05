@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/09 13:32:57 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/05 22:00:13 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,9 @@ COMMENT-wikipedia =	wikipedia plugin for gmpc
 VERSION =	0.20.0
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
-PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p0
+REVISION-main =		0
+PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
+REVISION-wikipedia =	1
 
 CATEGORIES =	audio
 
@@ -36,17 +38,18 @@ CONFIGURE_ARGS+=	--disable-wikipedia
 MODULES =	devel/gettext
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			tag,tag_c:taglib->=1.5:audio/taglib \
-			dbus-glib-1::x11/dbus-glib \
-			avahi-client,avahi-common,avahi-glib::net/avahi
-WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0
+			:taglib->=1.5:audio/taglib \
+			::x11/dbus-glib \
+			::net/avahi
+WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0 tag tag_c dbus-glib-1
+WANTLIB-main += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
-			webkit-1.0::www/webkit
+			::www/webkit
 WANTLIB-wikipedia =	${WANTLIB} ICE SM Xt enchant gcrypt gnutls gpg-error \
 			icudata icui18n icuuc jpeg soup-2.4 tasn1 xslt \
 			gailutil gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 \
-			gstvideo-0.10
+			gstvideo-0.10 webkit-1.0 gstapp-0.10
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
@@ -55,7 +58,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m mpd pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sqlite3 stdc++ xml2 z
-WANTLIB += pthread-stubs xcb
+WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
 
 RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
 		::audio/vorbis-tools

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/12/22 15:43:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/05 22:00:13 sthen Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.9.0
-PKGNAME=		${DISTNAME}p3
+REVISION=		4
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -22,17 +22,19 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread usb z
-WANTLIB += pthread-stubs xcb
+WANTLIB += pthread-stubs xcb id3tag njb tag_c mtp dbus-glib-1
+WANTLIB += gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		id3tag::audio/libid3tag \
-			njb::audio/libnjb \
-			tag_c::audio/taglib \
-			mtp::devel/libmtp \
-			dbus-glib-1::x11/dbus-glib \
-			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		::audio/libid3tag \
+			::audio/libnjb \
+			::audio/taglib \
+			::devel/libmtp \
+			::x11/dbus-glib \
+			::x11/gtk+2
 
 USE_X11=		Yes
 
