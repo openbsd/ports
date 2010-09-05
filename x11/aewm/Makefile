@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/09/05 21:35:06 jasper Exp $
 
 COMMENT=	minimalistic window manager for X11
 
 DISTNAME=	aewm-1.3.12
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.red-bean.com/decklin/aewm/

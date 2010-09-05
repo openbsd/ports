@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.5 2010/03/21 09:27:25 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.6 2010/09/05 21:35:06 jasper Exp $
 --- Makefile.orig	Thu Dec 27 19:15:32 2007
-+++ Makefile	Mon Jan 25 23:31:39 2010
++++ Makefile	Sun Sep  5 23:32:29 2010
 @@ -3,7 +3,7 @@
  
  # Set this to the location where you want to install
@@ -37,7 +37,7 @@ $OpenBSD: patch-Makefile,v 1.5 2010/03/21 09:27:25 jasper Exp $
  
  $(X11OBJ): %.o: %.c
  	$(CC) $(CFLAGS) $(X11FLAGS) -c $< -o $@
-@@ -81,13 +81,12 @@ AERC = aewmrc clientsrc
+@@ -81,17 +81,16 @@ AERC = aewmrc clientsrc
  
  install: all
  	mkdir -p $(BINDIR) $(MANDIR) $(CFGDIR)
@@ -53,4 +53,10 @@ $OpenBSD: patch-Makefile,v 1.5 2010/03/21 09:27:25 jasper Exp $
 +	    ${BSD_INSTALL_PROGRAM} doc/$$i.ex $(CFGDIR)/$$i; \
  	done
  	for i in $(PLAINBIN) $(X11BIN) $(GTKBIN); do \
- 	    ln -sf aeclients.1x.gz $(MANDIR)/$$i.1x.gz; \
+-	    ln -sf aeclients.1x.gz $(MANDIR)/$$i.1x.gz; \
+-	done
++	    ln -sf aeclients.1x $(MANDIR)/$$i.1x; \
++ 	done
+ 
+ clean:
+ 	rm -f $(ALLBIN) $(ALLOBJ)

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/21 09:27:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/09/05 21:35:06 jasper Exp $
 @bin bin/aedesk
 @bin bin/aemenu
 @bin bin/aepanel
 @bin bin/aesession
 @bin bin/aewm
 @man man/man1/aeclients.1x
-@man man/man1/aedesk.1x.gz
-@man man/man1/aemenu.1x.gz
-@man man/man1/aepanel.1x.gz
-@man man/man1/aesession.1x.gz
+@man man/man1/aedesk.1x
+@man man/man1/aemenu.1x
+@man man/man1/aepanel.1x
+@man man/man1/aesession.1x
 @man man/man1/aewm.1x
 share/examples/aewm/
 share/examples/aewm/aewmrc
