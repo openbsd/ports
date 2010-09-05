@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.2 2005/11/20 13:59:50 alek Exp $
---- setup.py.orig	Wed Mar 23 19:16:40 2005
-+++ setup.py	Sun Nov 20 13:20:20 2005
-@@ -183,6 +183,9 @@ class pil_build_ext(build_ext):
+$OpenBSD: patch-setup_py,v 1.3 2010/09/05 13:04:43 sthen Exp $
+--- setup.py.orig	Sun Dec  3 11:37:29 2006
++++ setup.py	Sun Sep  5 13:59:42 2010
+@@ -199,6 +199,9 @@ class pil_build_ext(build_ext):
          add_directory(library_dirs, "/usr/lib")
          add_directory(include_dirs, "/usr/include")
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-setup_py,v 1.2 2005/11/20 13:59:50 alek Exp $
          #
          # insert new dirs *before* default libs, to avoid conflicts
          # between Python PYD stub libs and real libraries
-@@ -312,7 +315,8 @@ class pil_build_ext(build_ext):
+@@ -328,7 +331,8 @@ class pil_build_ext(build_ext):
          elif feature.tcl and feature.tk:
              exts.append(Extension(
                  "_imagingtk", ["_imagingtk.c", "Tk/tkImaging.c"],
@@ -20,8 +20,8 @@ $OpenBSD: patch-setup_py,v 1.2 2005/11/20 13:59:50 alek Exp $
 +		include_dirs=["/usr/local/include/tk8.4", "/usr/local/include/tcl8.4", "/usr/X11R6/include"]
                  ))
  
-         if os.path.isfile("_pilmath.c"):
-@@ -433,7 +437,6 @@ if __name__ == "__main__":
+         if os.path.isfile("_imagingmath.c"):
+@@ -451,7 +455,6 @@ if __name__ == "__main__":
          package_dir={"": "PIL"},
          packages=[""],
          platforms="Python 1.5.2 and later.",
