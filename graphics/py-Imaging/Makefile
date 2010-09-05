@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/09/03 12:34:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/09/05 12:59:36 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,8 +10,8 @@ VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
 PKGNAME-main=		py-${DISTNAME}
 REVISION-main=		2
-FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p1
-REVISION-examples=	2
+FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
+EPOCH-examples=		0
 FULLPKGPATH-examples=	graphics/py-Imaging,-examples
 PKGNAME-bin=		py-Imaging-bin-${VERSION}
 REVISION-bin=		4
