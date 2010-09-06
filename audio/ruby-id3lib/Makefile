@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 15:21:59 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/06 00:04:28 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
 VERSION=	0.5.0
-PKGNAME=	ruby-id3lib-${VERSION}p2
 DISTNAME=	id3lib-ruby-${VERSION}
+PKGNAME=	ruby-id3lib-${VERSION}
+REVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -20,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=id3lib-ruby/}
 
 MODULES=	lang/ruby
-WANTLIB=	c m stdc++ z
+WANTLIB=	c id3.>=4 m stdc++ z
 LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
-		id3.>=4::audio/id3lib
+		::audio/id3lib
 
 CONFIGURE_STYLE=	ruby gem
 

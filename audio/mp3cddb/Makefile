@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	embedding CDDB information in MP3s
 
 DISTNAME=	mp3cddb-0.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://drewie.host.sk/mp3cddb/

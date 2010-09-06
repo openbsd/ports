@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/04 15:09:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=		Streams audio to Apple AirPort Express device
 
 DISTNAME=		rtunes-0.8
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		audio net
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto
 
 NO_REGRESS=		Yes

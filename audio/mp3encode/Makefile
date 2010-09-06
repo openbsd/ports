@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	MPEG layer I, II and III audio file encoder
 DISTNAME=	dist10
-PKGNAME=	mp3encode-1.10p1
+PKGNAME=	mp3encode-1.10
+REVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
@@ -10,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m
 
 USE_GMAKE=	Yes

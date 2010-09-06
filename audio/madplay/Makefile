@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/01 22:12:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	audio
 HOMEPAGE=	http://mad.sourceforge.net/
 
@@ -19,8 +19,9 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	id3tag.>=3::audio/libid3tag mad.>=2::audio/libmad
-WANTLIB=	c m sndio z
+LIB_DEPENDS=	::audio/libid3tag \
+		::audio/libmad
+WANTLIB=	c id3tag.>=3 m mad.>=2 sndio z
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple

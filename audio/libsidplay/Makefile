@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/05 16:58:33 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	C64 music player and SID chip emulator library
 
 DISTNAME=	libsidplay-1.36.57
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	audio
 SHARED_LIBS +=	sidplay              2.0      # .1.3
 

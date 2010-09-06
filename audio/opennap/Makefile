@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/02/14 09:46:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	opensource Napster(tm) server
 
 DISTNAME=	opennap-0.44
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c z
 
 SEPARATE_BUILD=	concurrent

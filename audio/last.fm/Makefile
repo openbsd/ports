@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/01 05:21:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT =		official Last.fm client
 
 DISTNAME =		last.fm-1.4.2.58240.src
 EXTRACT_SUFX =		.tar.bz2
-PKGNAME =		${DISTNAME:S/.src//}p0
+PKGNAME =		${DISTNAME:S/.src//}
+REVISION =		0
 
 SHARED_ONLY =		Yes
 
@@ -26,16 +27,18 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		X11 c m pthread sndio stdc++ z
+WANTLIB += X11 c m pthread sndio stdc++ z
+WANTLIB += QtGui.>=8 QtNetwork.>=7 QtSql.>=7 QtXml.>=7
+WANTLIB += fftw3f.>=4 gpod.>=600.0 mad samplerate.>=1 portaudio
 
 MODULES =		x11/qt4
 
-LIB_DEPENDS =		QtGui.>=8,QtNetwork.>=7,QtSql.>=7,QtXml.>=7::x11/qt4 \
-			fftw3f.>=4::math/fftw3,float \
-			gpod.>=600.0::audio/libgpod \
-			mad::audio/libmad \
-			samplerate.>=1::audio/libsamplerate \
-			portaudio::audio/portaudio-svn
+LIB_DEPENDS =		::x11/qt4 \
+			::math/fftw3,float \
+			::audio/libgpod \
+			::audio/libmad \
+			::audio/libsamplerate \
+			::audio/portaudio-svn
 RUN_DEPENDS =		::devel/desktop-file-utils
 
 USE_X11 =		Yes

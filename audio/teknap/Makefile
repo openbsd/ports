@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	console napster client
 
 VERSION=	1.3g
 DISTNAME=	TekNap-${VERSION}
-PKGNAME=	teknap-${VERSION}p0
+PKGNAME=	teknap-${VERSION}
+REVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://bwap.clawz.com/downloads/
 
@@ -16,6 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		c m ncurses panel pthread
 
 CONFIGURE_STYLE=	gnu dest

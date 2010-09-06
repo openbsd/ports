@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/01 02:36:54 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	nsf (Nintendo sound) file player
 
 DISTNAME=	nosefart-2.3-mls
-PKGNAME=	nosefart-2.3p0
+PKGNAME=	nosefart-2.3
+REVISION=	0
 CATEGORIES=	audio
 HOMEPAGE=	http://nosefart.sourceforge.net/
 

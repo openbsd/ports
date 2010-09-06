@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/01/11 04:25:26 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	mikmod sound library
 
 VERSION=	3.1.10
 DISTNAME=	libmikmod-${VERSION}
-PKGNAME=	${DISTNAME}p8
+REVISION=	8
 SHARED_LIBS +=	mikmod               2.4      # .2.4
 CATEGORIES=    	audio devel
 

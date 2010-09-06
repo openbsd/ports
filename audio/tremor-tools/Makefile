@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/03 16:11:10 pea Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
-PKGNAME=	${DISTNAME:S/vorbis/tremor/}p4
+PKGNAME=	${DISTNAME:S/vorbis/tremor/}
+REVISION=	4
 CATEGORIES=    	audio
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/
 
@@ -23,14 +24,14 @@ AUTOMAKE_VERSION=1.4
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 		:automake->=${AUTOMAKE_VERSION},<1.5:devel/automake/${AUTOMAKE_VERSION} \
 		::devel/metaauto
-LIB_DEPENDS=	ao.>=3::audio/libao \
-		ogg.>=5::audio/libogg \
-		vorbisidec.>=1::audio/tremor \
-		curl.>=2::net/curl
+LIB_DEPENDS=	::audio/libao \
+		::audio/libogg \
+		::audio/tremor \
+		::net/curl
 
 MODULES=	devel/gettext
 
-WANTLIB=	c crypto idn pthread ssl z
+WANTLIB=	ao.>=3 c curl.>=2 crypto idn ogg.>=5 pthread ssl vorbisidec.>=1 z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-vorbistest

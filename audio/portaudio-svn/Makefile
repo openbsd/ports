@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/13 15:46:13 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=		portable cross-platform audio API
 DISTNAME=		portaudio-svn-1406
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 
 SHARED_LIBS=		portaudio	1.0
 

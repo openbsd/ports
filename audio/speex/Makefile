@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/01/02 20:44:19 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	patent-free speech codec
 
 DISTNAME=	speex-1.2rc1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.speex.org/
 SHARED_LIBS +=	speex                8.0      # .6.0
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/speex/
 
-LIB_DEPENDS=	ogg.>=5::audio/libogg
-WANTLIB=	c m sndio
+LIB_DEPENDS=	::audio/libogg
+WANTLIB=	c m ogg.>=5 sndio
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

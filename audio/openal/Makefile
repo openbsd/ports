@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/02 16:02:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	cross-platform 3D audio API
 
 DISTNAME=	openal-0.0.8
-PKGNAME=	${DISTNAME}p6
+REVISION=	6
 CATEGORIES=	audio
 SHARED_LIBS +=  openal               1.0      # .0.0
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		m sndio
 
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/

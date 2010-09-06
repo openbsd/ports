@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/06/11 20:05:57 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2010/09/06 00:04:29 sthen Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -9,10 +9,14 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p7
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}p1
-PKGNAME-mikmod=		xmms-mikmod-${VERSION}p2
-PKGNAME-mp3=		xmms-mp3-${VERSION}p3
+PKGNAME-main=		xmms-${VERSION}
+REVISION-main=		7
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}
+REVISION-vorbis=	1
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}
+REVISION-mikmod=	2
+PKGNAME-mp3=		xmms-mp3-${VERSION}
+REVISION-mp3=		3
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -24,7 +28,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xext Xi glib gmodule m pthread-stubs xcb
+
+WANTLIB += X11 Xau Xdmcp Xext Xi glib gmodule m pthread-stubs xcb
+WANTLIB += gtk.>=1.2 gdk.>=1.2 gthread.>=1.2
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
@@ -39,8 +45,8 @@ WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread sndio
 MODULES=		devel/gettext
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=		:unzip-*:archivers/unzip
-LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
-			gthread.>=1.2::devel/glib
+LIB_DEPENDS=		::x11/gtk+ \
+			::devel/glib
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -66,18 +72,18 @@ CFLAGS +=		-O0
 
 DOCS=			README NEWS FAQ
 
-LIB_DEPENDS-vorbis=	${LIB_DEPENDS} vorbis,vorbisfile.>=1::audio/libvorbis
+LIB_DEPENDS-vorbis=	${LIB_DEPENDS} ::audio/libvorbis
 RUN_DEPENDS-vorbis=	::audio/xmms
-WANTLIB-vorbis=		${WANTLIB} ogg
+WANTLIB-vorbis=		${WANTLIB} ogg vorbis vorbisfile.>=1
 
-LIB_DEPENDS-mikmod=	${LIB_DEPENDS} mikmod::audio/libmikmod
+LIB_DEPENDS-mikmod=	${LIB_DEPENDS} ::audio/libmikmod
 RUN_DEPENDS-mikmod=	::audio/xmms
-WANTLIB-mikmod=		${WANTLIB} sndio
+WANTLIB-mikmod=		${WANTLIB} sndio mikmod
 
 PERMIT_PACKAGE_CDROM-mp3=	patent issues
 PERMIT_DISTFILES_CDROM-mp3= 	patent issues
-LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}:${BUILD_PKGPATH}
-WANTLIB-mp3=		${WANTLIB} z
+LIB_DEPENDS-mp3=	${LIB_DEPENDS} :xmms-${VERSION}:${BUILD_PKGPATH}
+WANTLIB-mp3=		${WANTLIB} xmms.>=4 z
 
 post-patch:
 	@mkdir -p ${WRKSRC}/Output/sndio

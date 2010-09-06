@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/07 19:25:29 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	multi-threaded DAAP server
 
 DISTNAME=	mt-daapd-0.2.4.2
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 CATEGORIES=	audio net
 
 HOMEPAGE=	http://www.mt-daapd.org/
@@ -14,12 +14,12 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+WANTLIB += avahi-client avahi-common c gdbm id3tag.>=3 pthread z
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mt-daapd/}
 
-LIB_DEPENDS=	avahi-client,avahi-common::net/avahi \
-		id3tag.>=3::audio/libid3tag
-
-WANTLIB += c gdbm pthread z
+LIB_DEPENDS=	::net/avahi \
+		::audio/libid3tag
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gdbm-includes=${LOCALBASE}/include \

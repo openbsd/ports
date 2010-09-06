@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/29 17:41:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/06 00:04:28 sthen Exp $
 
 COMMENT=	tagging library for the Mono framework
 
 V=		2.0.3.7
 DISTNAME=	taglib-sharp-${V}
-PKGNAME=	mono-taglib-${V}p0
+PKGNAME=	mono-taglib-${V}
+REVISION=	0
 
 CATEGORIES=	audio
 
