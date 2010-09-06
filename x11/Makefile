@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.428 2010/08/08 08:10:50 espie Exp $
+# $OpenBSD: Makefile,v 1.429 2010/09/06 06:24:30 matthieu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -9,6 +9,7 @@
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
+     SUBDIR += anonymous-pro
      SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
      SUBDIR += asapm
