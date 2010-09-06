@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/12/30 10:33:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/06 18:38:07 nicm Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
-PKGNAME=		${DISTNAME}p1
+REVISION=		2
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
 
