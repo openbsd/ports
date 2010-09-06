@@ -1,8 +1,10 @@
-Powerful webserver security scanner
+powerful webserver security scanner for network
 
 + netcraft fingerprints
 + many options for host/script scanning
 + cgi rulebase for easy additions
 + vhost settings
 + wide ip range rule scan
++ cidr scan
 + fast scan
++ SSL scan
