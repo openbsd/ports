@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/09/02 08:06:13 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2010/09/06 00:16:22 sthen Exp $
 
 VMEM_WARNING =	Yes
 
@@ -6,7 +6,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.2
-REVISION =	0
+REVISION =	1
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -34,7 +34,7 @@ SEPARATE_BUILD =	simple
 REGRESS_TARGET =	test
 
 # XXX eats all memory
-.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "arm"
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "mips64"
 CFLAGS +=		-O0
 .endif
 
