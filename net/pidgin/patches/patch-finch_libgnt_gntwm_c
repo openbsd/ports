@@ -1,0 +1,17 @@
+$OpenBSD: patch-finch_libgnt_gntwm_c,v 1.7 2010/09/06 18:33:37 nicm Exp $
+--- finch/libgnt/gntwm.c.orig	Tue Aug 10 08:35:44 2010
++++ finch/libgnt/gntwm.c	Mon Aug 30 09:42:25 2010
+@@ -24,11 +24,10 @@
+ 
+ #ifdef USE_PYTHON
+ #include <Python.h>
+-#else
++#endif
+ #define _GNU_SOURCE
+-#if (defined(__APPLE__) || defined(__unix__)) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
++#if (defined(__APPLE__) || defined(__unix__)) && !defined(__FreeBSD__)
+ #define _XOPEN_SOURCE_EXTENDED
+-#endif
+ #endif
+ 
+ #include <glib.h>
