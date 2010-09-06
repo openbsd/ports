@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/06 06:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/06 06:22:08 ajacoutot Exp $
 
 COMMENT=	automatic color temperature adjustment
 
@@ -22,7 +22,7 @@ WANTLIB += dbus-1 gconf-2
 MASTER_SITES=	http://launchpad.net/redshift/trunk/1.5/+download/
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
-		::py-xdg
+		::devel/py-xdg
 LIB_DEPENDS=	::devel/gconf2
 
 MODULES=	devel/gettext \
