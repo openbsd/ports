@@ -1,0 +1,35 @@
+#! /bin/sh
+# $OpenBSD
+# Written by Marc Espie, 2000
+# Public domain
+
+# Sets up hard links under a distfiles mirror, so that 
+# files will be preserved against checksum changes as a last
+# ditch attempt.
+
+# Also see REFETCH in bsd.port.mk, and mirroring-ports (7)
+
+DISTDIR=${DISTDIR:-/usr/ports/distfiles}
+cd ${DISTDIR}
+CIPHERS=${CIPHERS:-sha1 md5 rmd160 sha256}
+
+bdir=by_cipher
+# Build the find so that existing cipher dirs are avoided
+exclude="-type d -name $bdir -prune"
+for ci in ${CIPHERS}
+do
+	exclude="${exclude} -o -type d -name $ci -prune"
+done
+echo "find . \( $exclude \) -o -type f -print"
+find . \( $exclude \) -o -type f -print | while read i
+do
+	file=`basename $i`
+	for ci in ${CIPHERS}
+	do
+		result=`cksum -a $ci -b <$i`
+		res=`echo $result|sed -e 's,\(..\).*,\1,'`
+		dir=$bdir/$ci/$res/$result
+		mkdir -p $dir
+		ln -f $i $dir/$file
+	done
+done
