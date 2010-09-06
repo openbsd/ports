@@ -1,4 +1,4 @@
-/* $OpenBSD: sydney_audio_sndio.c,v 1.1 2010/04/26 19:55:58 landry Exp $ */
+/* $OpenBSD: sydney_audio_sndio.c,v 1.2 2010/09/06 12:59:50 eric Exp $ */
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -52,7 +52,7 @@
 
 #include <sys/types.h>
 
-#include <pthread.h>
+#include <poll.h>
 #include <sndio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,23 +60,15 @@
 
 #include "sydney_audio.h"
 
-struct sa_buffer {
-	struct sa_buffer *next;
-	unsigned int size;
-	unsigned char data[];
-};
-
 struct sa_stream {
 	struct sio_hdl *handle;
-	pthread_mutex_t mutex;
-	pthread_t thread;
-	int64_t position;
-	unsigned int buffer, channels, format, rate;
-	struct sa_buffer *head, *tail;
+	struct pollfd	pfd;
+	size_t		bpf;
+	int64_t		position, written;
+	unsigned int	buffer, channels, format, rate;
 };
 
-static struct sa_buffer *allocate_buffer(size_t size);
-static void audio_callback(void *data);
+static void onmove_callback(void *data, int);
 
 /*
  * STARTUP AND SHUTDOWN FUNCTIONS
@@ -102,17 +94,13 @@ sa_stream_create_pcm(sa_stream_t **_s, const char *client_name,
 	if (s == NULL)
 		return SA_ERROR_OOM;
 
-	if (pthread_mutex_init(&s->mutex, NULL) != 0) {
-		free(s);
-		return SA_ERROR_SYSTEM;
-	}
-
 	s->handle = NULL;
 	s->channels = channels;
 	s->format = 16;
 	s->rate = rate;
-	s->position = s->buffer = 0;
-	s->tail = s->head = NULL;
+	s->written = 0;
+	s->position = 0;
+	s->buffer = 0;
 
 	*_s = s;
 
@@ -153,19 +141,16 @@ sa_stream_open(sa_stream_t *s)
 		return SA_ERROR_NOT_SUPPORTED;
 	}
 
+	sio_onmove(handle, onmove_callback, s);
+
 	if (!sio_start(handle)) {
 		sio_close(handle);
 		return SA_ERROR_NOT_SUPPORTED;
 	}
 
-	s->buffer = par.bufsz;
+	s->bpf = par.pchan * par.bps;
+	s->buffer = par.bufsz * s->bpf;
 	s->handle = handle;
-
-	if (pthread_create(&s->thread, NULL, (void *)audio_callback, s) != 0) {
-		s->handle = NULL;
-		sio_close(handle);
-		return SA_ERROR_SYSTEM;
-	}
 
 	return SA_SUCCESS;
 }
@@ -176,17 +161,8 @@ sa_stream_destroy(sa_stream_t *s)
 	if (s == NULL)
 		return SA_SUCCESS;
 
-	pthread_mutex_lock(&s->mutex);
-	s->thread = 0;
-	while (s->head != NULL) {
-		struct sa_buffer *next = s->head->next;
-		free(s->head);
-		s->head = next;
-	}
-	pthread_mutex_unlock(&s->mutex);
-
-	if (pthread_mutex_destroy(&s->mutex) != 0)
-		return SA_ERROR_SYSTEM;
+	sio_close(s->handle);
+	free(s);
 
 	return SA_SUCCESS;
 }
@@ -198,7 +174,7 @@ sa_stream_destroy(sa_stream_t *s)
 int
 sa_stream_write(sa_stream_t *s, const void *data, size_t nbytes)
 {
-	struct sa_buffer *buffer;
+	size_t	n;
 
 	if (s == NULL || s->handle == NULL)
 		return SA_ERROR_NO_INIT;
@@ -206,19 +182,10 @@ sa_stream_write(sa_stream_t *s, const void *data, size_t nbytes)
 	if (nbytes == 0)
 		return SA_SUCCESS;
 
-	buffer = allocate_buffer(nbytes);
-	if (buffer == NULL)
-		return SA_ERROR_OOM;
-
-	memcpy(buffer->data, data, nbytes);
-
-	pthread_mutex_lock(&s->mutex);
-	if (!s->head)
-		s->head = buffer;
-	else
-		s->tail->next = buffer;
-	s->tail = buffer;
-	pthread_mutex_unlock(&s->mutex);
+	n = sio_write(s->handle, data, nbytes);
+	if (n == 0)
+		return SA_ERROR_SYSTEM;
+	s->written += n;
 
 	return SA_SUCCESS;
 }
@@ -233,7 +200,7 @@ sa_stream_get_write_size(sa_stream_t *s, size_t *size)
 	if (s == NULL || s->handle == NULL)
 		return SA_ERROR_NO_INIT;
 
-	*size = s->buffer;
+	*size = (s->buffer - (s->written - s->position));
 
 	return SA_SUCCESS;
 }
@@ -244,12 +211,10 @@ sa_stream_get_position(sa_stream_t *s, sa_position_t position, int64_t *pos)
 	if (s == NULL)
 		return SA_ERROR_NO_INIT;
 
-	if (position != SA_POSITION_WRITE_SOFTWARE)
-		return SA_ERROR_NOT_SUPPORTED;
-
-	pthread_mutex_lock(&s->mutex);
+	sio_pollfd(s->handle, &s->pfd, 0);
+	poll(&s->pfd, 1, 0);
+	sio_revents(s->handle, &s->pfd);
 	*pos = s->position;
-	pthread_mutex_unlock(&s->mutex);
 
 	return SA_SUCCESS;
 }
@@ -258,51 +223,12 @@ sa_stream_get_position(sa_stream_t *s, sa_position_t position, int64_t *pos)
  * PRIVATE SNDIO API SPECIFIC FUNCTIONS
  */
 
-static struct sa_buffer *
-allocate_buffer(size_t size)
-{
-	struct sa_buffer *buffer;
-
-	buffer = malloc(sizeof(struct sa_buffer) + size);
-	if (buffer != NULL) {
-		buffer->next  = NULL;
-		buffer->size  = size;
-	}
-
-	return buffer;
-}
-
 static void
-audio_callback(void *data)
+onmove_callback(void *arg, int delta)
 {
-	sa_stream_t *s = (sa_stream_t *)data;
-	struct sa_buffer *buffer;
+	sa_stream_t	*s = (sa_stream_t*)arg;
 
-	while (1) {
-		if (s->thread == 0) {
-			sio_close(s->handle);
-			free(s);
-
-			break;
-		}
-
-		pthread_mutex_lock(&s->mutex);
-		if (!s->head) {
-			pthread_mutex_unlock(&s->mutex);
-			continue;
-		}
-		buffer = s->head;
-		s->head = s->head->next;
-		pthread_mutex_unlock(&s->mutex);
-
-		sio_write(s->handle, buffer->data, buffer->size);
-
-		pthread_mutex_lock(&s->mutex);
-		s->position += buffer->size;
-		pthread_mutex_unlock(&s->mutex);
-
-		free(buffer);
-	}
+	s->position += delta * s->bpf;
 }
 
 /*
