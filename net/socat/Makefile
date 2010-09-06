@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/16 10:25:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/06 09:38:39 jasper Exp $
 
 COMMENT=	socat is a relay for bidirectional data transfer 
 
-DISTNAME=	socat-1.7.1.2
+DISTNAME=	socat-1.7.1.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/
+MASTER_SITES=	${HOMEPAGE}/download/
 
 WANTLIB=	curses c readline crypto util ssl wrap
 
