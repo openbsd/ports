@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/09/02 09:09:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/09/06 18:29:22 nicm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
 
 REVISION-main=	1
-REVISION-finch=	1
+REVISION-finch=	2
 REVISION-libpurple= 1
 
 CATEGORIES=	net
