@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/06 14:47:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/06 14:56:28 ajacoutot Exp $
 communityid/
 communityid/Acl.php
 communityid/Application.php
@@ -4816,3 +4816,5 @@ communityid/webdir/javascript/yui/yuitest/yuitest_core.js
 communityid/webdir/styles/
 communityid/webdir/styles/style.css
 @unexec-delete rm -f %D/communityid/webdir/captchas/*
+@unexec-delete rm -f %D/conf/modules/communityid.conf
+@unexec-delete rm -f /var/www/htdocs/openid
