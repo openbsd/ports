@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/06 06:21:19 ajacoutot Exp $
+bin/gtk-redshift
+@bin bin/redshift
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.py
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.py
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.py
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyo
+share/applications/gtk-redshift.desktop
+share/icons/hicolor/scalable/apps/redshift-idle.svg
+share/icons/hicolor/scalable/apps/redshift.svg
+share/icons/ubuntu-mono-dark/
+share/icons/ubuntu-mono-dark/scalable/
+share/icons/ubuntu-mono-dark/scalable/apps/
+share/icons/ubuntu-mono-dark/scalable/apps/redshift-idle.svg
+share/icons/ubuntu-mono-dark/scalable/apps/redshift.svg
+share/icons/ubuntu-mono-light/
+share/icons/ubuntu-mono-light/scalable/
+share/icons/ubuntu-mono-light/scalable/apps/
+share/icons/ubuntu-mono-light/scalable/apps/redshift-idle.svg
+share/icons/ubuntu-mono-light/scalable/apps/redshift.svg
+share/locale/cs/LC_MESSAGES/redshift.mo
+share/locale/da/LC_MESSAGES/redshift.mo
+share/locale/de/LC_MESSAGES/redshift.mo
+share/locale/es/LC_MESSAGES/redshift.mo
+share/locale/eu/LC_MESSAGES/redshift.mo
+share/locale/fi/LC_MESSAGES/redshift.mo
+share/locale/fr/LC_MESSAGES/redshift.mo
+share/locale/he/LC_MESSAGES/redshift.mo
+share/locale/it/LC_MESSAGES/redshift.mo
+share/locale/pt_BR/LC_MESSAGES/redshift.mo
+share/locale/ru/LC_MESSAGES/redshift.mo
+share/locale/zh_CN/LC_MESSAGES/redshift.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/ubuntu-mono-dark 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/ubuntu-mono-dark 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/ubuntu-mono-light 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/ubuntu-mono-light 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
