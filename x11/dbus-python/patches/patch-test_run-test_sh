@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_run-test_sh,v 1.1 2010/09/06 16:20:26 fgsch Exp $
+--- test/run-test.sh.orig	Mon Sep  6 12:03:32 2010
++++ test/run-test.sh	Mon Sep  6 12:03:42 2010
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ 
+ # Copyright (C) 2006 Red Hat Inc. <http://www.redhat.com/>
+ # Copyright (C) 2006-2007 Collabora Ltd. <http://www.collabora.co.uk/>
+@@ -26,7 +26,7 @@
+ export DBUS_FATAL_WARNINGS=1
+ ulimit -c unlimited
+ 
+-function die() 
++function die
+ {
+     if ! test -z "$DBUS_SESSION_BUS_PID" ; then
+         echo "killing message bus $DBUS_SESSION_BUS_PID" >&2

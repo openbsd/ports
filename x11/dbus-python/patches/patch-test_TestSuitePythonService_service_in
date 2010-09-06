@@ -1,0 +1,8 @@
+$OpenBSD: patch-test_TestSuitePythonService_service_in,v 1.1 2010/09/06 16:20:26 fgsch Exp $
+--- test/TestSuitePythonService.service.in.orig	Mon Sep  6 12:04:31 2010
++++ test/TestSuitePythonService.service.in	Mon Sep  6 12:04:36 2010
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=org.freedesktop.DBus.TestSuitePythonService
+-Exec=/bin/bash -c "@PYTHON@ @abs_top_srcdir@/test/test-service.py"
++Exec=/bin/sh -c "@PYTHON@ @abs_top_srcdir@/test/test-service.py"

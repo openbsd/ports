@@ -1,0 +1,27 @@
+$OpenBSD: patch-test_run-with-tmp-session-bus_sh,v 1.1 2010/09/06 16:20:26 fgsch Exp $
+--- test/run-with-tmp-session-bus.sh.orig	Mon Sep  6 12:03:50 2010
++++ test/run-with-tmp-session-bus.sh	Mon Sep  6 12:04:02 2010
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ 
+ # Copyright (C) 2003-2005 Red Hat Inc. <http://www.redhat.com/>
+ # Copyright (C) 2005 Colin Walters
+@@ -28,7 +28,7 @@ SCRIPTNAME=$0
+ WRAPPED_SCRIPT=$1
+ shift
+ 
+-function die()
++function die
+ {
+     if ! test -z "$DBUS_SESSION_BUS_PID" ; then
+         echo "killing message bus $DBUS_SESSION_BUS_PID" >&2
+@@ -43,7 +43,7 @@ if test -z "$DBUS_TOP_BUILDDIR" ; then
+ fi
+ 
+ ## convenient to be able to ctrl+C without leaking the message bus process
+-trap 'die "Received SIGINT"' SIGINT
++trap 'die "Received SIGINT"' 2
+ 
+ CONFIG_FILE="$DBUS_TOP_BUILDDIR"/test/tmp-session-bus.conf
+ 
