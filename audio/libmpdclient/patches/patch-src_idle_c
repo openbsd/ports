@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_idle_c,v 1.1 2010/09/06 11:40:39 jasper Exp $
+
+Fix build on gcc2.
+
+--- src/idle.c.orig	Sun Sep  5 22:39:01 2010
++++ src/idle.c	Sun Sep  5 22:40:02 2010
+@@ -57,7 +57,8 @@ static const char *const idle_names[] = {
+ const char *
+ mpd_idle_name(enum mpd_idle idle)
+ {
+-	for (unsigned i = 0; idle_names[i] != NULL; ++i)
++	unsigned i;
++	for (i = 0; idle_names[i] != NULL; ++i)
+ 		if (idle == (enum mpd_idle)(1 << i))
+ 			return idle_names[i];
+ 
+@@ -67,9 +68,10 @@ mpd_idle_name(enum mpd_idle idle)
+ enum mpd_idle
+ mpd_idle_name_parse(const char *name)
+ {
++	unsigned i;
+ 	assert(name != NULL);
+ 
+-	for (unsigned i = 0; idle_names[i] != NULL; ++i)
++	for (i = 0; idle_names[i] != NULL; ++i)
+ 		if (strcmp(name, idle_names[i]) == 0)
+ 			return 1 << i;
+ 
+@@ -141,6 +143,7 @@ mpd_send_idle(struct mpd_connection *connection)
+ bool
+ mpd_send_idle_mask(struct mpd_connection *connection, enum mpd_idle mask)
+ {
++	unsigned i;
+ 	/* this buffer is large enough even for the full mask */
+ 	char buffer[128] = "idle";
+ 
+@@ -149,7 +152,7 @@ mpd_send_idle_mask(struct mpd_connection *connection, 
+ 	if (mpd_error_is_defined(&connection->error))
+ 		return false;
+ 
+-	for (unsigned i = 0; idle_names[i] != NULL; ++i) {
++	for (i = 0; idle_names[i] != NULL; ++i) {
+ 		if (mask & (1 << i)) {
+ 			mask &= ~(1 << i);
+ 			strcat(buffer, " ");

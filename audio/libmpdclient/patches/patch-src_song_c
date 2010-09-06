@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_song_c,v 1.1 2010/09/06 11:40:39 jasper Exp $
+
+Fix build on gcc2.
+
+--- src/song.c.orig	Mon Sep  6 02:24:51 2010
++++ src/song.c	Mon Sep  6 03:26:07 2010
+@@ -86,6 +86,7 @@ static struct mpd_song *
+ mpd_song_new(const char *uri)
+ {
+ 	struct mpd_song *song;
++	unsigned i;
+ 
+ 	assert(uri != NULL);
+ 
+@@ -100,7 +101,7 @@ mpd_song_new(const char *uri)
+ 		return NULL;
+ 	}
+ 
+-	for (unsigned i = 0; i < MPD_TAG_COUNT; ++i)
++	for (i = 0; i < MPD_TAG_COUNT; ++i)
+ 		song->tags[i].value = NULL;
+ 
+ 	song->duration = 0;
+@@ -116,12 +117,15 @@ mpd_song_new(const char *uri)
+ }
+ 
+ void mpd_song_free(struct mpd_song *song) {
++	struct mpd_tag_value *tag, *next = NULL;
++	unsigned i;
++
+ 	assert(song != NULL);
+ 
+ 	free(song->uri);
+ 
+-	for (unsigned i = 0; i < MPD_TAG_COUNT; ++i) {
+-		struct mpd_tag_value *tag = &song->tags[i], *next;
++	for (i = 0; i < MPD_TAG_COUNT; ++i) {
++		tag = &song->tags[i];
+ 
+ 		if (tag->value == NULL)
+ 			continue;
+@@ -151,6 +155,7 @@ struct mpd_song *
+ mpd_song_dup(const struct mpd_song *song)
+ {
+ 	struct mpd_song *ret;
++	unsigned i;
+ 	bool success;
+ 
+ 	assert(song != NULL);
+@@ -160,7 +165,7 @@ mpd_song_dup(const struct mpd_song *song)
+ 		/* out of memory */
+ 		return NULL;
+ 
+-	for (unsigned i = 0; i < MPD_TAG_COUNT; ++i) {
++	for (i = 0; i < MPD_TAG_COUNT; ++i) {
+ 		const struct mpd_tag_value *src_tag = &song->tags[i];
+ 
+ 		if (src_tag->value == NULL)
