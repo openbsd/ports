@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2010/08/18 19:41:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2010/09/06 17:37:23 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
 DISTNAME=	nano-2.2.5
+REVISION=	0
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -24,7 +25,6 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
-CONFIGURE_ARGS=--disable-utf8	# no wide character curses
 
 post-install:
 	perl -i -pe 's:SYSCONFDIR:${SYSCONFDIR}:g;' \
