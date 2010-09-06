@@ -1,13 +1,13 @@
-$OpenBSD: patch-GTG_gtg_py,v 1.3 2010/03/23 13:49:59 jasper Exp $
---- GTG/gtg.py.orig	Thu Feb 25 01:51:56 2010
-+++ GTG/gtg.py	Tue Mar 23 14:47:42 2010
+$OpenBSD: patch-GTG_gtg_py,v 1.4 2010/09/06 10:42:30 jasper Exp $
+--- GTG/gtg.py.orig	Sat Apr 10 13:38:37 2010
++++ GTG/gtg.py	Mon Sep  6 12:41:05 2010
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
  # -*- coding: utf-8 -*-
  # -----------------------------------------------------------------------------
  # Gettings Things Gnome! - a personal organizer for the GNOME desktop
-@@ -75,7 +75,7 @@ def check_instance(directory):
+@@ -77,7 +77,7 @@ def check_instance(directory):
      pid = open(pidfile, "r").readline()
      if pid:
          p = os.system("/bin/ps %s >/dev/null" % pid)

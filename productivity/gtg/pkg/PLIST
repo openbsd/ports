@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/24 12:08:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/06 10:42:31 jasper Exp $
 bin/gtg
 bin/gtg_new_task
 lib/python${MODPY_VERSION}/site-packages/GTG/
@@ -77,6 +77,12 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.ui
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/template_simple.html
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/template_textual.txt
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_simple.html
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_statusrpt.txt
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_textual.txt
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized-tasks.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized_tasks/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized_tasks/__init__.py
@@ -106,6 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/hello_world.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/helloworld.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/helloworld/helloworld.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/import-json.gtg-plugin
@@ -143,6 +150,8 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/icons/hicolor/24x2
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/icons/hicolor/svg/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/icons/hicolor/svg/rtm_image.svg
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/pyrtm/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/pyrtm/__init__.py
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/pyrtm/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/pyrtm/rtm.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/pyrtm/rtm.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/rtm_sync/rtm.ui
@@ -292,6 +301,7 @@ share/locale/de/LC_MESSAGES/gtg.mo
 share/locale/en_CA/LC_MESSAGES/gtg.mo
 share/locale/en_GB/LC_MESSAGES/gtg.mo
 share/locale/es/LC_MESSAGES/gtg.mo
+share/locale/eu/LC_MESSAGES/gtg.mo
 share/locale/fi/LC_MESSAGES/gtg.mo
 share/locale/fr/LC_MESSAGES/gtg.mo
 share/locale/gl/LC_MESSAGES/gtg.mo
@@ -318,6 +328,7 @@ share/locale/ru/LC_MESSAGES/gtg.mo
 share/locale/si/LC_MESSAGES/gtg.mo
 share/locale/sl/LC_MESSAGES/gtg.mo
 share/locale/sq/LC_MESSAGES/gtg.mo
+share/locale/sr/LC_MESSAGES/gtg.mo
 share/locale/sv/LC_MESSAGES/gtg.mo
 share/locale/te/LC_MESSAGES/gtg.mo
 share/locale/tr/LC_MESSAGES/gtg.mo
