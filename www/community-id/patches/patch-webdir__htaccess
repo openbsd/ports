@@ -1,0 +1,11 @@
+$OpenBSD: patch-webdir__htaccess,v 1.1 2010/09/06 14:47:20 ajacoutot Exp $
+--- webdir/.htaccess.orig	Mon Sep  6 16:20:05 2010
++++ webdir/.htaccess	Mon Sep  6 16:20:13 2010
+@@ -4,3 +4,7 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
+ RewriteCond %{REQUEST_FILENAME} -d
+ RewriteRule ^.*$ - [NC,L]
+ RewriteRule ^.*$ index.php [NC,L]
++
++<IfModule mod_php5.c>
++	php_value short_open_tag On
++</IfModule>

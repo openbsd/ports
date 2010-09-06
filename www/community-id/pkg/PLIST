@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/21 10:32:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/06 14:47:20 ajacoutot Exp $
 communityid/
 communityid/Acl.php
 communityid/Application.php
@@ -9,6 +9,8 @@ communityid/INSTALL
 communityid/README
 communityid/README.OpenBSD
 communityid/bootstrap.php
+communityid/communityid.conf.dist
+@sample /var/www/conf/modules.sample/communityid.conf
 communityid/config.default.php
 @mode 0660
 @group www

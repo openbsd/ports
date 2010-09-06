@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/01/04 08:58:14 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/09/06 14:47:19 ajacoutot Exp $
 
 Post-install/update memo for Community-ID
 =========================================
@@ -26,20 +26,11 @@ Installation
         -> TO 'cid'@'localhost' IDENTIFIED BY 'cidpasswd';
     mysql> QUIT
 
-* Configuring the Apache web server (editing /var/www/conf/httpd.conf).
-  The rewrite module is needed for proper operation. To load it,
-  uncomment the corresponding line:
-    LoadModule rewrite_module	/usr/lib/apache/modules/mod_rewrite.so
-
-  The rewriting rules are read from an .htaccess file located under
-  ${INSTDIR}/webdir (i.e. ${PREFIX}/htdocs/openid). For Apache to be
-  able to process such file, the AllowOverride rule must be set to All.
-    <Directory /var/www/htdocs/openid>
-    	AllowOverride All
-    </Directory>
-
-* Configuring your ${PREFIX}/conf/php.ini for Community-ID.
-  - short_open_tag = On
+* Configuring the Apache web server.
+  Some rewriting rules are needed for proper operation as well as some
+  AllowOverride settings. You can configure these as follows:
+    $ sudo ln -s ${PREFIX}/conf/modules.sample/communityid.conf \
+    	${PREFIX}/conf/modules
 
 * Setting up entropy.
   Community-ID needs a high-quality pseudo-random number generator. The
