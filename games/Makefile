@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2010/05/07 15:14:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.211 2010/09/06 18:56:21 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
+     SUBDIR += grhino
      SUBDIR += gtetrinet
      SUBDIR += gtkballs
      SUBDIR += hackdata
