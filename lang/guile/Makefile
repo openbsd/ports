@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/09/06 12:15:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/06 22:44:46 sthen Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
@@ -25,7 +25,7 @@ WANTLIB=		c gmp.>=6 ltdl m ncurses pthread readline
 
 LIB_DEPENDS=	:gmp->=4.1:devel/gmp \
 		::devel/libtool,-ltdl
-RUN_DEPENDS=	devel/slib
+RUN_DEPENDS=	::devel/slib
 
 MODULES=	devel/gettext
 
