@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1029 2010/08/31 19:30:43 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1030 2010/09/06 12:06:29 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -246,9 +246,12 @@ _clean += fake
 .if ${_clean:L:Mforce}
 _clean += -f
 .endif
+.if ${_clean:L:Mall}
+_clean += work flavors packages plist
+.endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
-	readmes bulk force plist build
+	readmes bulk force plist build all
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
