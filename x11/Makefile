@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2010/09/06 06:24:30 matthieu Exp $
+# $OpenBSD: Makefile,v 1.430 2010/09/06 08:22:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -182,6 +182,7 @@
      SUBDIR += p5-Wx
      SUBDIR += p5-X-Osd
      SUBDIR += p5-X11-Protocol
+     SUBDIR += partiwm
      SUBDIR += pbrowser
      SUBDIR += pcmanfm
      SUBDIR += peksystray
