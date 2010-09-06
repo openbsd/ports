@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/07/03 01:40:47 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/09/06 12:15:32 jasper Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.7
 DISTNAME=	guile-${VERSION}
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \
@@ -21,10 +21,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses pthread readline
+WANTLIB=		c gmp.>=6 ltdl m ncurses pthread readline
 
-LIB_DEPENDS=	gmp.>=6:gmp->=4.1:devel/gmp \
-		ltdl::devel/libtool,-ltdl
+LIB_DEPENDS=	:gmp->=4.1:devel/gmp \
+		::devel/libtool,-ltdl
+RUN_DEPENDS=	devel/slib
 
 MODULES=	devel/gettext
 
@@ -44,6 +45,8 @@ SUBST_VARS=	V
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/guile-config/guile.m4 ${PREFIX}/share/aclocal
+	# Create symlink from share/guile/slib to share/slib.
+	# This allows other ports to find guile.init.
 	@cd ${PREFIX}/share/guile && ln -s ../slib
 
 .include <bsd.port.mk>
