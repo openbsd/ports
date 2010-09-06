@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/09/06 08:42:48 fgsch Exp $
 
 COMMENT =	small, fast & usable window manager
 
-V =		3.4.11.1
+V =		3.4.11.2
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obparser	9.1 # .21.7
 SHARED_LIBS +=	obrender	9.1 # .21.7
-
-REVISION =	1
 
 CATEGORIES =	x11
 
@@ -21,11 +19,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
-		fontconfig freetype m z glib-2.0 gmodule-2.0 \
-		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre \
-		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event \
-		pango-1.0 pangoxft-1.0 pangoft2-1.0 xml2 startup-notification-1
+WANTLIB =	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama \
+		Xrandr Xrender c execinfo expat fontconfig freetype \
+		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m \
+		pango-1.0 pangoft2-1.0 pangoxft-1.0 pcre pthread \
+		pthread-stubs startup-notification-1 xcb xcb-atom \
+		xcb-aux xcb-event xml2 z
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
