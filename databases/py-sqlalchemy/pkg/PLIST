@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/05/24 16:42:44 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/09/06 21:55:57 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -308,6 +308,7 @@ share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/connections.txt
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/expressions.txt
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/index.txt
+share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/inspector.txt
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/interfaces.txt
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/pooling.txt
 share/doc/py-sqlalchemy/_sources/reference/sqlalchemy/schema.txt
@@ -327,6 +328,8 @@ share/doc/py-sqlalchemy/_static/minus.png
 share/doc/py-sqlalchemy/_static/plus.png
 share/doc/py-sqlalchemy/_static/pygments.css
 share/doc/py-sqlalchemy/_static/searchtools.js
+share/doc/py-sqlalchemy/_static/sidebar.js
+share/doc/py-sqlalchemy/_static/underscore.js
 share/doc/py-sqlalchemy/build/
 share/doc/py-sqlalchemy/build/Makefile
 share/doc/py-sqlalchemy/build/builder/
@@ -377,6 +380,7 @@ share/doc/py-sqlalchemy/build/reference/sqlalchemy/
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/connections.rst
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/expressions.rst
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/index.rst
+share/doc/py-sqlalchemy/build/reference/sqlalchemy/inspector.rst
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/interfaces.rst
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/pooling.rst
 share/doc/py-sqlalchemy/build/reference/sqlalchemy/schema.rst
@@ -441,6 +445,7 @@ share/doc/py-sqlalchemy/reference/sqlalchemy/
 share/doc/py-sqlalchemy/reference/sqlalchemy/connections.html
 share/doc/py-sqlalchemy/reference/sqlalchemy/expressions.html
 share/doc/py-sqlalchemy/reference/sqlalchemy/index.html
+share/doc/py-sqlalchemy/reference/sqlalchemy/inspector.html
 share/doc/py-sqlalchemy/reference/sqlalchemy/interfaces.html
 share/doc/py-sqlalchemy/reference/sqlalchemy/pooling.html
 share/doc/py-sqlalchemy/reference/sqlalchemy/schema.html
