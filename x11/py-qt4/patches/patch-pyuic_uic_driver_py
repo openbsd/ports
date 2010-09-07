@@ -1,0 +1,12 @@
+$OpenBSD: patch-pyuic_uic_driver_py,v 1.1 2010/09/07 10:22:06 sthen Exp $
+--- pyuic/uic/driver.py.orig	Tue Sep  7 10:27:17 2010
++++ pyuic/uic/driver.py	Tue Sep  7 10:27:24 2010
+@@ -57,7 +57,7 @@ class Driver(object):
+         if self._opts.output == "-":
+             pyfile = sys.stdout
+         else:
+-            pyfile = open(self._opts.output, 'wt', encoding='utf8')
++            pyfile = open(self._opts.output, 'wt')
+ 
+         compileUi(self._ui_file, pyfile, self._opts.execute, self._opts.indent,
+                 self._opts.pyqt3_wrapper, self._opts.from_imports)

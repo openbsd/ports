@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/07 08:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/07 10:22:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ V=		4.7.6
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
+REVISION-main=	0
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
