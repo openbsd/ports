@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/06 08:21:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/07 13:54:40 jasper Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://partiwm.googlecode.com/
@@ -28,7 +29,8 @@ WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:pyrex->=0.9.9:devel/pyrex \
+RUN_DEPENDS=	::devel/ipython \
+		:pyrex->=0.9.9:devel/pyrex \
 		::x11/dbus-python \
 		::x11/py-gtk2
 
