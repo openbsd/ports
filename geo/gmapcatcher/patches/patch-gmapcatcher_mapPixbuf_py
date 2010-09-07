@@ -1,0 +1,12 @@
+$OpenBSD: patch-gmapcatcher_mapPixbuf_py,v 1.1 2010/09/07 10:23:02 kevlo Exp $
+--- gmapcatcher/mapPixbuf.py.orig	Mon Aug 23 02:36:19 2010
++++ gmapcatcher/mapPixbuf.py	Tue Sep  7 17:57:31 2010
+@@ -14,7 +14,7 @@ else:
+     _prefix = abspath(join(dirname(__file__), "../images"))
+ 
+ if not isfile(join(_prefix, 'missing.png')):
+-    _prefix = '/usr/share/pixmaps/gmapcatcher'
++    _prefix = '${PREFIX}/share/pixmaps/gmapcatcher'
+ 
+ def ico():
+     try:
