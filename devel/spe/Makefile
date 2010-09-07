@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/01 10:20:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/07 16:52:50 sebastia Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
 V=		0.8.4
 DISTNAME=	spe-$V.h-wx2.6.1.0
 PKGNAME=	spe-$Vh
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pythonide.stani.be/
 
-MAINTAINER=	Joerg Zinke <umaxx@oleco.net>
+MAINTAINER=	Joerg Zinke <mail@umaxx.net>
 
 # GPLv3
 PERMIT_PACKAGE_FTP=	Yes

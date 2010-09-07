@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/07 13:43:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/07 16:52:50 sebastia Exp $
 
 COMMENT=		Dynamic DNS service update client
 
+REVISION=		0
 DISTNAME=		ddclient-3.8.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://ddclient.sourceforge.net/
 
-MAINTAINER=		Joerg Zinke <umaxx@oleco.net>
+MAINTAINER=		Joerg Zinke <mail@umaxx.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
