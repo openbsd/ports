@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_sysdep_h,v 1.1 2010/09/07 20:54:48 jasper Exp $
+
+Fix build with GCC2 where the configure test fails
+to pickup stdbool.h. So it creates the lib/stdbool.h
+which these definitions would override.
+
+--- src/sysdep.h.orig	Tue Sep  7 14:28:56 2010
++++ src/sysdep.h	Tue Sep  7 14:32:01 2010
+@@ -136,6 +136,7 @@ void *alloca (size_t);
+ #if HAVE_STDBOOL_H
+ # include <stdbool.h>
+ #else
++# if !(defined(__GNUC__) && __GNUC__ < 3)
+ # if ! HAVE__BOOL
+ #  ifdef __cplusplus
+ typedef bool _Bool;
+@@ -147,6 +148,7 @@ typedef unsigned char _Bool;
+ # define false 0
+ # define true 1
+ # define __bool_true_false_are_defined 1
++#endif
+ #endif
+ 
+ /* Needed for compilation under OS/2 and MSDOS */

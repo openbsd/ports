@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_openssl_c,v 1.3 2010/09/07 20:54:48 jasper Exp $
+
+Fix build with GCC2.
+
+--- src/openssl.c.orig	Tue Sep  7 14:41:11 2010
++++ src/openssl.c	Tue Sep  7 14:42:44 2010
+@@ -490,6 +490,8 @@ ssl_check_certificate (int fd, const char *host)
+   long vresult;
+   bool success = true;
+ 
++  X509_NAME *xname;
++
+   /* If the user has specified --no-check-cert, we still want to warn
+      him about problems with the server's certificate.  */
+   const char *severity = opt.check_cert ? _("ERROR") : _("WARNING");
+@@ -569,7 +571,7 @@ ssl_check_certificate (int fd, const char *host)
+      - Ensure that ASN1 strings from the certificate are encoded as
+        UTF-8 which can be meaningfully compared to HOST.  */
+ 
+-  X509_NAME *xname = X509_get_subject_name(cert);
++  xname = X509_get_subject_name(cert);
+   common_name[0] = '\0';
+   X509_NAME_get_text_by_NID (xname, NID_commonName, common_name,
+                              sizeof (common_name));
