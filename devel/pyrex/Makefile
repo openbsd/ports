@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/05 17:18:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/07 13:48:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/ \
+		${HOMEPAGE}
 
 #USE_GMAKE=	Yes
 MODULES=	lang/python
