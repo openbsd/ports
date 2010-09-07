@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/07 19:21:42 jasper Exp $
 
 COMMENT=		set of internet protocol service daemons for Unix
 
 DISTNAME=		ipsvd-0.12.1
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.smarden.org/ipsvd/
-
-MAINTAINER=		Lars Hansson <lars@unet.net.ph>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

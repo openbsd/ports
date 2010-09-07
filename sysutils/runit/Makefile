@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/07 19:21:42 jasper Exp $
 
 COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-1.7.2
+REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/runit/
-
-MAINTAINER=		Lars Hansson <lars@unet.net.ph>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

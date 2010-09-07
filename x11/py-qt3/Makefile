@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/07 19:21:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,13 +9,11 @@ V=		3.18.1
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt3-${V}
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
-
-MAINTAINER=	Lars Hansson <lars@unet.net.ph>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
