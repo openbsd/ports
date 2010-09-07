@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 21:52:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/07 18:26:29 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,11 +9,12 @@ COMMENT-snmp=	snmp agent for heartbeat
 DISTNAME=	obs-2.1.2-15
 VERSION=	2.1.2.15
 PKGNAME=	heartbeat-${VERSION}
-REVISION-main =	3
+PKGNAME-main=	heartbeat-${VERSION}
+REVISION-main =	4
 PKGNAME-gui=	heartbeat-gui-${VERSION}
 REVISION-gui =	2
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
-REVISION-snmp =	2
+REVISION-snmp =	3
 
 EXTRACT_SUFX=   .tar.bz2
 CATEGORIES=     sysutils
@@ -35,7 +36,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	c m pcre util z
+WANTLIB=	c m pcre pthread util z
 
 MULTI_PACKAGES=	-main -gui -snmp
 
