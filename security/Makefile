@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2010/08/26 13:58:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.239 2010/09/07 12:24:26 millert Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -201,6 +201,7 @@
      SUBDIR += smtpscan
      SUBDIR += smurflog
      SUBDIR += ssh-askpass-fullscreen
+     SUBDIR += sshguard
      SUBDIR += stegdetect
      SUBDIR += steghide
      SUBDIR += strobe
