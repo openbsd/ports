@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/09/07 11:12:05 landry Exp $
 Install config file in examples/
---- src/Makefile.in.orig	Sat May  1 11:16:00 2010
-+++ src/Makefile.in	Sat Jun 19 17:43:52 2010
+--- src/Makefile.in.orig	Fri Jul  9 12:02:16 2010
++++ src/Makefile.in	Thu Aug  5 15:09:27 2010
 @@ -37,7 +37,7 @@ build_triplet = @build@
  host_triplet = @host@
  @BUILD_WITH_OWN_LIBIPTC_TRUE@am__append_1 = owniptc
@@ -29,16 +29,16 @@ Install config file in examples/
  @BUILD_WITH_OWN_LIBOCONFIG_FALSE@am__append_17 = -loconfig
  @BUILD_WITH_LIBSOCKET_TRUE@am__append_18 = -lsocket
  @BUILD_AIX_TRUE@am__append_19 = -lm
-@@ -333,7 +333,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
- @BUILD_PLUGIN_SNMP_TRUE@am__append_287 = snmp.la
- @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_288 = $(BUILD_WITH_LIBSNMP_CFLAGS)
- @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_289 = $(BUILD_WITH_LIBSNMP_LIBS)
--@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_290 = -lpthread
-+@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_290 = -pthread
- @BUILD_PLUGIN_SNMP_TRUE@am__append_291 = "-dlopen" snmp.la
- @BUILD_PLUGIN_SNMP_TRUE@am__append_292 = snmp.la
- @BUILD_PLUGIN_SWAP_TRUE@am__append_293 = swap.la
-@@ -1836,7 +1836,7 @@ SUBDIRS = libcollectdclient $(am__append_1) $(am__appe
+@@ -335,7 +335,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_289 = snmp.la
+ @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_290 = $(BUILD_WITH_LIBSNMP_CFLAGS)
+ @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_291 = $(BUILD_WITH_LIBSNMP_LIBS)
+-@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_292 = -lpthread
++@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_292 = -pthread
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_293 = "-dlopen" snmp.la
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_294 = snmp.la
+ @BUILD_PLUGIN_SWAP_TRUE@am__append_295 = swap.la
+@@ -1840,7 +1840,7 @@ SUBDIRS = libcollectdclient $(am__append_1) $(am__appe
  AM_CPPFLAGS = -DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
@@ -47,7 +47,7 @@ Install config file in examples/
  	$(am__append_3) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  collectd_SOURCES = collectd.c collectd.h \
-@@ -2047,10 +2047,10 @@ BUILT_SOURCES = $(am__append_249)
+@@ -2052,10 +2052,10 @@ CLEANFILES = $(am__append_250)
  @BUILD_PLUGIN_DISK_TRUE@	$(am__append_86) $(am__append_87)
  @BUILD_PLUGIN_DNS_TRUE@dns_la_SOURCES = dns.c utils_dns.c utils_dns.h
  @BUILD_PLUGIN_DNS_TRUE@dns_la_LDFLAGS = -module -avoid-version
@@ -60,7 +60,7 @@ Install config file in examples/
  @BUILD_PLUGIN_ENTROPY_TRUE@entropy_la_SOURCES = entropy.c
  @BUILD_PLUGIN_ENTROPY_TRUE@entropy_la_LDFLAGS = -module -avoid-version
  @BUILD_PLUGIN_EXEC_TRUE@exec_la_SOURCES = exec.c \
-@@ -2058,7 +2058,7 @@ BUILT_SOURCES = $(am__append_249)
+@@ -2063,7 +2063,7 @@ CLEANFILES = $(am__append_250)
  @BUILD_PLUGIN_EXEC_TRUE@		  utils_cmd_putval.c utils_cmd_putval.h
  
  @BUILD_PLUGIN_EXEC_TRUE@exec_la_LDFLAGS = -module -avoid-version
@@ -69,7 +69,7 @@ Install config file in examples/
  @BUILD_PLUGIN_FILECOUNT_TRUE@filecount_la_SOURCES = filecount.c
  @BUILD_PLUGIN_FILECOUNT_TRUE@filecount_la_LDFLAGS = -module -avoid-version
  @BUILD_PLUGIN_GMOND_TRUE@gmond_la_SOURCES = gmond.c
-@@ -2165,7 +2165,7 @@ BUILT_SOURCES = $(am__append_249)
+@@ -2170,7 +2170,7 @@ CLEANFILES = $(am__append_250)
  @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_203)
  @BUILD_PLUGIN_NETWORK_TRUE@network_la_LDFLAGS = -module -avoid-version \
  @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_204)
@@ -78,7 +78,7 @@ Install config file in examples/
  @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_202) $(am__append_205)
  @BUILD_PLUGIN_NFS_TRUE@nfs_la_SOURCES = nfs.c
  @BUILD_PLUGIN_NFS_TRUE@nfs_la_LDFLAGS = -module -avoid-version
-@@ -2182,14 +2182,14 @@ BUILT_SOURCES = $(am__append_249)
+@@ -2187,14 +2187,14 @@ CLEANFILES = $(am__append_250)
  @BUILD_PLUGIN_NOTIFY_DESKTOP_TRUE@notify_desktop_la_LIBADD = $(LIBNOTIFY_LIBS)
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_SOURCES = notify_email.c
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LDFLAGS = -module -avoid-version
@@ -95,7 +95,7 @@ Install config file in examples/
  @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_SOURCES = olsrd.c
  @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_LDFLAGS = -module -avoid-version
  @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_LIBADD = $(am__append_233)
-@@ -2316,7 +2316,7 @@ BUILT_SOURCES = $(am__append_249)
+@@ -2323,7 +2323,7 @@ CLEANFILES = $(am__append_250)
  @BUILD_PLUGIN_UNIXSOCK_TRUE@		      utils_cmd_putnotif.h utils_cmd_putnotif.c
  
  @BUILD_PLUGIN_UNIXSOCK_TRUE@unixsock_la_LDFLAGS = -module -avoid-version
@@ -104,8 +104,8 @@ Install config file in examples/
  @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_SOURCES = uptime.c
  @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_CFLAGS = $(AM_CFLAGS)
  @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_LDFLAGS = -module -avoid-version
-@@ -4032,13 +4032,8 @@ uninstall-man: uninstall-man1 uninstall-man5
- @HAVE_PROTOC_C_TRUE@	protoc-c --c_out $(builddir) pinba.proto
+@@ -4039,13 +4039,8 @@ pinba.pb-c.c pinba.pb-c.h: pinba.proto
+ 	protoc-c --c_out $(builddir) pinba.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)

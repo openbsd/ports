@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
---- configure.orig	Sat May  1 11:16:01 2010
-+++ configure	Sat Jun 19 11:22:07 2010
-@@ -11701,7 +11701,7 @@ LTDLOPEN=`eval "\\$ECHO \"$libname_spec\""`
+$OpenBSD: patch-configure,v 1.2 2010/09/07 11:12:05 landry Exp $
+--- configure.orig	Fri Jul  9 12:02:17 2010
++++ configure	Thu Aug  5 13:07:16 2010
+@@ -11709,7 +11709,7 @@ LTDLOPEN=`eval "\\$ECHO \"$libname_spec\""`
  
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
  
  
  
-@@ -15440,7 +15440,7 @@ SAVE_CFLAGS="$CFLAGS"
+@@ -15451,7 +15451,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
  then
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
  fi
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for strtok_r" >&5
-@@ -20747,7 +20747,7 @@ then
+@@ -20750,7 +20750,7 @@ then
  	SAVE_LDFLAGS="$LDFLAGS"
  	# trigger an error if Perl_load_module*() uses __attribute__nonnull__(3)
  	# (see issues #41 and #42)

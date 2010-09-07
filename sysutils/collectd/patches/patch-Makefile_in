@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2010/09/07 11:12:05 landry Exp $
 dont create var/{run,lib,log}
---- Makefile.in.orig	Sat Jun 19 16:51:23 2010
-+++ Makefile.in	Sat Jun 19 16:51:33 2010
-@@ -813,9 +813,6 @@ uninstall-am:
+--- Makefile.in.orig	Fri Jul  9 12:02:16 2010
++++ Makefile.in	Thu Aug  5 13:07:16 2010
+@@ -815,9 +815,6 @@ uninstall-am:
  
  
  install-exec-hook:
