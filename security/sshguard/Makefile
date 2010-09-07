@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/07 12:23:43 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/07 14:13:33 ajacoutot Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-1.5rc4
 CATEGORIES=	security
+
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
