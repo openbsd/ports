@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.300 2010/08/30 13:13:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.301 2010/09/07 14:07:19 edd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -304,6 +304,7 @@
      SUBDIR += xpdf
      SUBDIR += xxdiff
      SUBDIR += yould
+     SUBDIR += zathura
      SUBDIR += zoem
 
 .include <bsd.port.subdir.mk>
