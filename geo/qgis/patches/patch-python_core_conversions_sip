@@ -1,0 +1,66 @@
+$OpenBSD: patch-python_core_conversions_sip,v 1.1 2010/09/07 10:23:31 sthen Exp $
+
+workaround build problem with sip >= 4.11
+
+--- python/core/conversions.sip.orig	Tue Sep  7 00:14:55 2010
++++ python/core/conversions.sip	Tue Sep  7 00:17:23 2010
+@@ -265,59 +265,6 @@ template <TYPE>
+ 
+ 
+ 
+-%MappedType QSet<int>
+-{
+-%TypeHeaderCode
+-#include <QSet>
+-#if (SIP_VERSION >= 0x040900)
+-#define sipClass_QString ((sipWrapperType *) sipTypeAsPyTypeObject (sipType_QString))
+-#define sipClass_QVariant ((sipWrapperType *) sipTypeAsPyTypeObject (sipType_QVariant))
+-#endif
+-%End
+-
+-%ConvertFromTypeCode
+-  // Create the list.
+-  PyObject *l;
+-
+-  if ((l = PyList_New(sipCpp->size())) == NULL)
+-    return NULL;
+-      
+-  // Set the list elements.
+-  QSet<int>::iterator it = sipCpp->begin();
+-  for (int i = 0; it != sipCpp->end(); ++it, ++i)
+-  {
+-    PyObject *tobj;
+-
+-    if ((tobj = PyInt_FromLong(*it)) == NULL)
+-    {
+-      Py_DECREF(l);
+-      return NULL;
+-    }
+-    PyList_SET_ITEM(l, i, tobj);
+-  }
+-
+-  return l;
+-%End
+-
+-%ConvertToTypeCode
+-  // Check the type if that is all that is required.
+-  if (sipIsErr == NULL)
+-    return PyList_Check(sipPy);
+-
+-  QSet<int> *qset = new QSet<int>;
+-
+-  for (int i = 0; i < PyList_GET_SIZE(sipPy); ++i)
+-  {
+-    qset->insert(PyInt_AsLong(PyList_GET_ITEM(sipPy, i)));
+-  }
+-
+-  *sipCppPtr = qset;
+-  return sipGetState(sipTransferObj);
+-%End
+-
+-};
+-
+-
+ template <TYPE>
+ %MappedType QSet<TYPE>
+ {
