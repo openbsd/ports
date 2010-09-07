@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/09/01 10:50:08 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/09/07 08:58:16 sthen Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -82,6 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
 lib/qt4/plugins/designer/libpythonplugin.so
 share/sip/
 share/sip/Qt/
