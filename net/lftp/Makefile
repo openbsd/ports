@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.84 2010/06/23 02:13:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.85 2010/09/07 04:36:16 kevlo Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.0.9
+DISTNAME=	lftp-4.0.10
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
