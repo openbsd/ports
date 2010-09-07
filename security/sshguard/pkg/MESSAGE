@@ -1,0 +1,9 @@
+To use sshguard you must add the following to /etc/pf.conf:
+
+table <sshguard> persist
+
+block in quick on egress proto tcp from <sshguard> \
+	to any port ssh label "ssh bruteforce"
+
+When running sshguard, pass it the path to authlog, e.g.
+    /usr/local/sbin/sshguard -l /var/log/authlog

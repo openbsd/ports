@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sshguard_logsuck_c,v 1.1.1.1 2010/09/07 12:23:43 millert Exp $
+--- src/sshguard_logsuck.c.orig	Mon Aug  9 02:44:15 2010
++++ src/sshguard_logsuck.c	Mon Aug 30 13:06:02 2010
+@@ -242,7 +242,7 @@ int logsuck_getline(char *restrict buf, size_t buflen,
+         if (ret > 0) {
+             if (kevs[0].filter == EVFILT_READ) {
+                 /* got data on this one. Read from it */
+-                sshguard_log(LOG_DEBUG, "Searching for fd %lu in list.", kevs[0].ident);
++                sshguard_log(LOG_DEBUG, "Searching for fd %u in list.", kevs[0].ident);
+                 readentry = list_seek(& sources_list, & kevs[0].ident);
+                 assert(readentry != NULL);
+                 assert(readentry->active);

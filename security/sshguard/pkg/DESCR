@@ -1,0 +1,4 @@
+sshguard protects hosts from brute force attacks. It supports IPv6,
+whitelists and log authentication, interfaces with all the major
+firewalling systems, has a remarkably clever log analyzer, and is
+independent, fast and lightweight as it's written in C.

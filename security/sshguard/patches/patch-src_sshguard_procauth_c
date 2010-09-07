@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sshguard_procauth_c,v 1.1.1.1 2010/09/07 12:23:43 millert Exp $
+--- src/sshguard_procauth.c.orig	Mon Aug  9 02:44:15 2010
++++ src/sshguard_procauth.c	Mon Aug 30 13:05:40 2010
+@@ -192,7 +192,7 @@ static int procauth_ischildof(pid_t child, pid_t paren
+         dup2(ps2me[1], 1);
+ 
+         sshguard_log(LOG_DEBUG, "Running 'ps axo pid,ppid'.");
+-        execlp("ps", "ps", "axo", "pid,ppid", NULL);
++        execlp("ps", "ps", "axo", "pid,ppid", (char *)0);
+ 
+         sshguard_log(LOG_ERR, "Unable to run 'ps axo pid,ppid': %s.", strerror(errno));
+         exit(-1);
