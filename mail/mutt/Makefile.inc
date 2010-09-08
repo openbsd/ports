@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2009/06/20 10:20:09 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2010/09/08 09:57:28 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -77,7 +77,8 @@ RUN_DEPENDS+=		::mail/mixmaster
 
 .if ${FLAVOR:L:Midn}
 CONFIGURE_ARGS+=	--with-idn
-LIB_DEPENDS+=		idn.>=16::devel/libidn
+LIB_DEPENDS+=		::devel/libidn
+WANTLIB+=		idn.>=16
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif
