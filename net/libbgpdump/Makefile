@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/22 11:49:55 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/08 14:08:10 sthen Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
 DISTNAME=	libbgpdump-1.4.99.11
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	bgpdump 0.0
 
@@ -30,6 +30,7 @@ NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bgpdump ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/testbgpdump ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBUILD}/libbgpdump.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 

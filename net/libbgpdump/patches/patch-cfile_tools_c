@@ -1,9 +1,19 @@
-$OpenBSD: patch-cfile_tools_c,v 1.1 2010/08/22 11:49:55 phessler Exp $
+$OpenBSD: patch-cfile_tools_c,v 1.2 2010/09/08 14:08:10 sthen Exp $
 
 Use after free
 
---- cfile_tools.c.orig	Wed Apr 21 14:32:21 2010
-+++ cfile_tools.c	Wed Apr 21 14:32:58 2010
+--- cfile_tools.c.orig	Wed Nov 25 12:42:53 2009
++++ cfile_tools.c	Wed Sep  8 15:05:25 2010
+@@ -196,8 +196,8 @@ int cfr_close(CFRFILE *stream) {
+   case 1:  // uncompressed
+     { 
+       retval = fclose((FILE *)(stream->data1));
+-      free(stream);
+       stream->error1 = retval;
++      free(stream);
+       return(retval);
+     }
+     break;
 @@ -218,8 +218,8 @@ int cfr_close(CFRFILE *stream) {
          return(-1);
        }
