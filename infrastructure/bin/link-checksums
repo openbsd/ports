@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD
+# $OpenBSD: link-checksums,v 1.2 2010/09/08 11:06:12 espie Exp $
 # Written by Marc Espie, 2000
 # Public domain
 
