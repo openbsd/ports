@@ -1,8 +1,8 @@
-$OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
---- check.py.orig	Thu Feb 25 00:07:55 2010
-+++ check.py	Fri Mar 12 13:40:17 2010
-@@ -344,7 +344,7 @@ try:
-             num_errors += 1
+$OpenBSD: patch-check_py,v 1.5 2010/09/08 07:13:16 ajacoutot Exp $
+--- check.py.orig	Mon Jul 19 04:17:45 2010
++++ check.py	Wed Sep  8 08:34:10 2010
+@@ -342,7 +342,7 @@ try:
+             log.warn("Version: (cups-config) Not available. Unable to determine installed version of CUPS.)")
  
      if cups_ok:
 -        cups_conf = '/etc/cups/cupsd.conf'
@@ -10,7 +10,7 @@ $OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
  
          try:
              f = file(cups_conf, 'r')
-@@ -375,11 +375,6 @@ try:
+@@ -373,11 +373,6 @@ try:
  
      log.info(log.bold("Checking for dbus/python-dbus..."))
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
      try:
          import dbus
          try:
-@@ -490,18 +485,18 @@ try:
+@@ -495,18 +490,18 @@ try:
              log.info("HPLIP %s currently installed in '%s'." % (v, home))
  
              log.info()
@@ -45,7 +45,7 @@ $OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
              except (IOError, OSError), e:
                  log.error("Could not access file: %s" % e.strerror)
              else:
-@@ -615,7 +610,7 @@ try:
+@@ -620,7 +615,7 @@ try:
                  #log.info("Installed in HPLIP?: %s" % x)
                  log.info("Device URI: %s" % device_uri)
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
  
                  if os.path.exists(ppd):
                      log.info("PPD: %s" % ppd)
-@@ -717,11 +712,11 @@ try:
+@@ -722,11 +717,11 @@ try:
  
          if scanning_enabled:
              tui.header("SANE CONFIGURATION")
@@ -69,7 +69,7 @@ $OpenBSD: patch-check_py,v 1.4 2010/03/21 11:07:43 ajacoutot Exp $
                  num_errors += 1
              else:
                  found = False
-@@ -733,7 +728,7 @@ try:
+@@ -738,7 +733,7 @@ try:
                      log.info("OK, found. SANE backend 'hpaio' is properly set up.")
                  else:
                      num_errors += 1

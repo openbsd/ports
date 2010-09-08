@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.6 2010/03/21 11:07:43 ajacoutot Exp $
---- installer/core_install.py.orig	Thu Feb 25 00:07:12 2010
-+++ installer/core_install.py	Fri Mar 12 13:46:51 2010
+$OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Exp $
+--- installer/core_install.py.orig	Mon Jul 19 04:17:37 2010
++++ installer/core_install.py	Wed Sep  8 08:34:10 2010
 @@ -190,7 +190,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
@@ -105,7 +105,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.6 2010/03/21 11:07:43 ajacoutot Ex
  
          self.run(cmd)
  
-@@ -1649,7 +1648,7 @@ class CoreInstall(object):
+@@ -1654,7 +1653,7 @@ class CoreInstall(object):
      def pre_build(self):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False):
@@ -114,7 +114,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.6 2010/03/21 11:07:43 ajacoutot Ex
  
          return cmds
  
-@@ -1819,8 +1818,8 @@ class CoreInstall(object):
+@@ -1824,8 +1823,8 @@ class CoreInstall(object):
          url = "http://hplip.sf.net/plugin.conf"
          home = sys_conf.get('dirs', 'home')
  
