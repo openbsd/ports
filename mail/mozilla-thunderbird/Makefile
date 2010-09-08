@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2010/08/30 21:56:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2010/09/08 14:24:36 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	3.1.1
+MOZILLA_VERSION =	3.1.3
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	mozilla-thunderbird
 MOZILLA_CODENAME =	mail
@@ -13,12 +13,10 @@ MOZILLA_CODENAME =	mail
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta2
-REVISION-main =		0
 EPOCH-lightning =	0
-REVISION-lightning =	0
+REVISION-lightning =	1
 
-# need to be in synch with SO_VERSION in www/seamonkey
-# for productivity/sunbird,-lighting and mail/enigmail to work ine
+# need to be in synch with SO_VERSION in mail/enigmail/thunderbird
 SO_VERSION =	17.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -76,9 +74,6 @@ MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
 # guid for gdata-provider comes from em:id in install.rdf
 GDATADIR =	${MOZ}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}
-
-pre-patch:
-	rm ${WRKSRC}/mozilla/toolkit/mozapps/extensions/test/unit/*.orig
 
 post-install:
 	unzip -q ${MOB}/../xpi-stage/gdata-provider.xpi -d ${GDATADIR}
