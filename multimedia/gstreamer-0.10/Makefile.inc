@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2010/06/02 13:08:32 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2010/09/08 21:44:36 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -40,8 +40,11 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-valgrind \
 			--disable-static
 
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng \
-				-I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib \
-				-L${X11BASE}/lib"
+CPPFLAGS +=		-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng \
+			-I${X11BASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib \
+			-L${X11BASE}/lib
+
+CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
