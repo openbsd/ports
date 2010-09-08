@@ -1,0 +1,9 @@
+This module contains integration libraries and plug-ins for using OpenGL
+within GStreamer pipelines.
+This module contains elements for, among others:
+
+    output: glimagesink
+    adapters: glupload, gldownload
+    video processing: gldeinterlace, glcolorscale
+    GL effects: glfiltersobel, glfilterblur, gleffects, others
+    sources: gltestsrc
