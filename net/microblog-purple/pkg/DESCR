@@ -1,0 +1,3 @@
+This project implement a plug-in for any LibPurple base client like
+Pidgin or Finch. Currently it support Twitter, Identica, and
+Status.net server through the conversation windows. 

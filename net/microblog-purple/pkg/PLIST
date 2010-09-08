@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/08 08:23:30 sebastia Exp $
+lib/purple-2/libidentica.so
+lib/purple-2/liboldtwitter.so
+lib/purple-2/libstatusnet.so
+lib/purple-2/libtwitter.so
+lib/purple-2/twitgin.so
+share/pixmaps/
+share/pixmaps/pidgin/
+share/pixmaps/pidgin/protocols/
+share/pixmaps/pidgin/protocols/16/
+share/pixmaps/pidgin/protocols/16/identica.png
+share/pixmaps/pidgin/protocols/16/statusnet.png
+share/pixmaps/pidgin/protocols/16/twitter.png
+share/pixmaps/pidgin/protocols/22/
+share/pixmaps/pidgin/protocols/22/identica.png
+share/pixmaps/pidgin/protocols/22/statusnet.png
+share/pixmaps/pidgin/protocols/22/twitter.png
+share/pixmaps/pidgin/protocols/48/
+share/pixmaps/pidgin/protocols/48/identica.png
+share/pixmaps/pidgin/protocols/48/statusnet.png
+share/pixmaps/pidgin/protocols/48/twitter.png
+share/purple/ca-certs/EquifaxSecureGlobaleBusinessCA.pem

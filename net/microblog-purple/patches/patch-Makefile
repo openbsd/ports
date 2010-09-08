@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/09/08 08:23:30 sebastia Exp $
+
+Do not use hardcoded make
+
+--- Makefile.orig	Tue Sep  7 15:39:35 2010
++++ Makefile	Tue Sep  7 15:40:58 2010
+@@ -14,14 +14,14 @@ default: subversion build
+ 
+ build install uninstall clean : 
+ 	for dir in $(SUBDIRS); do \
+-		make -C "$$dir" $@ || exit 1; \
++		${MAKE_PROGRAM} -C "$$dir" $@ || exit 1; \
+ 	done
+ 
+ distdir: 
+ 	rm -rf $(PACKAGE)-$(VERSION)$(SUBVERSION)
+ 	mkdir $(PACKAGE)-$(VERSION)$(SUBVERSION)
+ 	for dir in $(SUBDIRS); do \
+-		make -C "$$dir" dist; \
++		${MAKE_PROGRAM} -C "$$dir" dist; \
+ 	done
+ 	cp -f $(DISTFILES) $(PACKAGE)-$(VERSION)$(SUBVERSION)/
+ 
+@@ -46,7 +46,7 @@ pidgin-microblog.zip: build
+ 		PURPLE_INSTALL_DIR=$(PWD)/$(PACKAGE)-$(VERSION)$(SUBVERSION) && \
+ 		mkdir -p $$PURPLE_PLUGIN_DIR && \
+ 		for dir in $(SUBDIRS); do \
+-			make -C "$$dir" install PURPLE_INSTALL_DIR=$$PURPLE_INSTALL_DIR PURPLE_PLUGIN_DIR=$$PURPLE_PLUGIN_DIR; \
++			${MAKE_PROGRAM} -C "$$dir" install PURPLE_INSTALL_DIR=$$PURPLE_INSTALL_DIR PURPLE_PLUGIN_DIR=$$PURPLE_PLUGIN_DIR; \
+ 		done
+ 	zip -r $@ $(PACKAGE)-$(VERSION)$(SUBVERSION)
+ 	rm -rf $(PACKAGE)-$(VERSION)$(SUBVERSION)
+@@ -54,4 +54,4 @@ pidgin-microblog.zip: build
+ pidgin-microblog-$(VERSION)$(SUBVERSION).zip: pidgin-microblog.zip
+ 	mv -f $< $@
+ 
+-include subversion.mak
+\ No newline at end of file
++include subversion.mak
