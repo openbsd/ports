@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/07 03:41:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/08 02:08:53 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	convert Big5 encoded files to PDF
 
 DISTNAME=	bg5pdf-1.0.0
 PKGNAME=	zh-${DISTNAME}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	chinese print
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -17,24 +17,20 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += pdf z
+WANTLIB +=	pdf z
 
-BUILD_DEPENDS=	:python->=${PYTHON_VER},<2.7:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	:python->=${PYTHON_VER},<2.7:lang/python/${PYTHON_VER} \
-		::chinese/taipeifonts
+MODULES=	lang/python
+RUN_DEPENDS=	::chinese/taipeifonts
 LIB_DEPENDS=	::print/pdflib
 
-WRKDIST=	${WRKDIR}/bg5pdf
+CONFIGURE_STYLE=none
 
-PYTHON_VER=	2.6
-SUBST_VARS=	PYTHON_VER
-MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
+WRKDIST=	${WRKDIR}/bg5pdf
 
 NO_REGRESS=	Yes
 
 pre-configure:
-	perl -pi -e \
-		"s|/usr/bin/python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
-		${WRKSRC}/bg5pdf
+	${SUBST_CMD} ${WRKSRC}/Makefile
+	perl -pi -e "s|/usr/bin/python|${MODPY_BIN}|" ${WRKSRC}/bg5pdf
 
 .include <bsd.port.mk>

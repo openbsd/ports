@@ -1,7 +1,7 @@
---- Makefile.orig	Fri Dec 14 18:55:38 2001
-+++ Makefile	Fri Dec 14 18:59:07 2001
+--- Makefile.orig	Wed Sep  8 09:40:21 2010
++++ Makefile	Wed Sep  8 09:51:02 2010
 @@ -0,0 +1,18 @@
-+PYTHON_INCLUDES=-I$(LOCALBASE)/include/python$(PYTHON_VER)
++PYTHON_INCLUDES=-I$(LOCALBASE)/include/python${MODPY_VERSION}
 +
 +all: bg5pdflib.so
 +
@@ -12,10 +12,10 @@
 +	$(CC) $(CFLAGS) -fPIC $(PYTHON_INCLUDES) -I$(LOCALBASE)/include -c $<
 +
 +install:
-+	mkdir -p $(DESTDIR)/$(LOCALBASE)/lib/python$(PYTHON_VER)/site-packages
++	mkdir -p $(DESTDIR)/$(LOCALBASE)/lib/python${MODPY_VERSION}/site-packages
 +	install -m 755 -o root -g bin bg5pdf $(DESTDIR)/$(LOCALBASE)/bin
 +	install -m 644 -o root -g bin bg5pdflib.so \
-+	    $(DESTDIR)/$(LOCALBASE)/lib/python$(PYTHON_VER)/site-packages
++	    $(DESTDIR)/$(LOCALBASE)/lib/python${MODPY_VERSION}/site-packages
 +
 +clean:
 +	rm -f *.o bg5pdflib.so
