@@ -1,4 +1,4 @@
-.\"	$OpenBSD: resolve-lib.1,v 1.1 2010/09/08 14:52:27 espie Exp $
+.\"	$OpenBSD: resolve-lib.1,v 1.2 2010/09/08 19:23:56 schwarze Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -29,7 +29,7 @@
 resolve library specs against a list of installed libraries.
 .Nm
 takes a list of file names with full path on stdin,
-and matches each library 
+and matches each library
 .Ar spec
 against those libraries,
 using
@@ -53,7 +53,7 @@ see
 Each
 .Ar spec
 not found will result in an error message and exit.
-.Nm
-If option
+.Pp
+If the option
 .Fl noshared
 is used, shared libraries will be ignored.
