@@ -8,7 +8,7 @@ For ps:
  * kdegraphics (kpdf), evince, gv
 
 For dvi:
- * kdegraphics (kdvi), teTeX_base (xdvi)
+ * kdegraphics (kdvi), texlive_base (xdvi)
 
 For wmv, asf, mp4, mov, mpeg, avi (blobs..):
- * mplayer + win32-codecs, xanim
+ * mplayer, vlc
