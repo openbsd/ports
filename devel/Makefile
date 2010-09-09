@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.826 2010/09/09 10:40:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.827 2010/09/09 21:06:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -737,6 +737,7 @@
      SUBDIR += p5-Tie-Cache-LRU
      SUBDIR += p5-Tie-Cache-LRU-Expires
      SUBDIR += p5-Tie-Hash-Indexed
+     SUBDIR += p5-Tie-Hash-MultiValue
      SUBDIR += p5-Tie-IxHash
      SUBDIR += p5-Tie-LLHash
      SUBDIR += p5-Tie-RegexpHash
