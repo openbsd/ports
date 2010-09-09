@@ -1,0 +1,8 @@
+$OpenBSD: patch-data_lxrandr_desktop_in,v 1.1 2010/09/09 13:39:01 ajacoutot Exp $
+--- data/lxrandr.desktop.in.orig	Thu Sep  9 15:35:19 2010
++++ data/lxrandr.desktop.in	Thu Sep  9 15:35:27 2010
+@@ -13,3 +13,4 @@ Exec=lxrandr
+ Encoding=UTF-8
+ Type=Application
+ Categories=Settings;
++Icon=display
