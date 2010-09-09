@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/09 10:38:10 jasper Exp $
+bin/luadoc.lua
+share/doc/luadoc/
+share/doc/luadoc/architecture.html
+share/doc/luadoc/architecture.vsd
+share/doc/luadoc/architecture_h.png
+share/doc/luadoc/architecture_v.png
+share/doc/luadoc/email.png
+share/doc/luadoc/examples.html
+share/doc/luadoc/index.html
+share/doc/luadoc/license.html
+share/doc/luadoc/lua.png
+share/doc/luadoc/manual.html
+share/lua/5.1/luadoc/
+share/lua/5.1/luadoc/lfs.luadoc
