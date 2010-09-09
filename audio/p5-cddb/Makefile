@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/30 16:53:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/09 20:41:19 jasper Exp $
 
-COMMENT=	Perl5 module for CDDB
+COMMENT=	interface to CDDB and freedb servers
 
-DISTNAME=	CDDB-1.21
+DISTNAME=	CDDB-1.220
 CATEGORIES=	audio
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
