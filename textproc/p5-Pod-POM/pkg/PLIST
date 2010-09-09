@@ -1,11 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/09 19:32:25 jasper Exp $
 bin/podlint
 bin/pom2
+bin/pomdump
 ${P5SITE}/Pod/
 ${P5SITE}/Pod/POM/
 ${P5SITE}/Pod/POM.pm
 ${P5SITE}/Pod/POM/Constants.pm
+${P5SITE}/Pod/POM/Node/
 ${P5SITE}/Pod/POM/Node.pm
+${P5SITE}/Pod/POM/Node/Begin.pm
+${P5SITE}/Pod/POM/Node/Code.pm
+${P5SITE}/Pod/POM/Node/Content.pm
+${P5SITE}/Pod/POM/Node/For.pm
+${P5SITE}/Pod/POM/Node/Head1.pm
+${P5SITE}/Pod/POM/Node/Head2.pm
+${P5SITE}/Pod/POM/Node/Head3.pm
+${P5SITE}/Pod/POM/Node/Head4.pm
+${P5SITE}/Pod/POM/Node/Item.pm
+${P5SITE}/Pod/POM/Node/Over.pm
+${P5SITE}/Pod/POM/Node/Pod.pm
+${P5SITE}/Pod/POM/Node/Sequence.pm
+${P5SITE}/Pod/POM/Node/Text.pm
+${P5SITE}/Pod/POM/Node/Verbatim.pm
 ${P5SITE}/Pod/POM/Nodes.pm
 ${P5SITE}/Pod/POM/Test.pm
 ${P5SITE}/Pod/POM/View/
@@ -15,5 +31,26 @@ ${P5SITE}/Pod/POM/View/Pod.pm
 ${P5SITE}/Pod/POM/View/Text.pm
 @man man/man1/podlint.1
 @man man/man1/pom2.1
+@man man/man1/pomdump.1
 @man man/man3p/Pod::POM.3p
+@man man/man3p/Pod::POM::Constants.3p
 @man man/man3p/Pod::POM::Node.3p
+@man man/man3p/Pod::POM::Node::Begin.3p
+@man man/man3p/Pod::POM::Node::Code.3p
+@man man/man3p/Pod::POM::Node::Content.3p
+@man man/man3p/Pod::POM::Node::For.3p
+@man man/man3p/Pod::POM::Node::Head1.3p
+@man man/man3p/Pod::POM::Node::Head2.3p
+@man man/man3p/Pod::POM::Node::Head3.3p
+@man man/man3p/Pod::POM::Node::Head4.3p
+@man man/man3p/Pod::POM::Node::Item.3p
+@man man/man3p/Pod::POM::Node::Over.3p
+@man man/man3p/Pod::POM::Node::Pod.3p
+@man man/man3p/Pod::POM::Node::Sequence.3p
+@man man/man3p/Pod::POM::Node::Text.3p
+@man man/man3p/Pod::POM::Node::Verbatim.3p
+@man man/man3p/Pod::POM::Nodes.3p
+@man man/man3p/Pod::POM::View.3p
+@man man/man3p/Pod::POM::View::HTML.3p
+@man man/man3p/Pod::POM::View::Pod.3p
+@man man/man3p/Pod::POM::View::Text.3p
