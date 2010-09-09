@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/09 19:29:02 jasper Exp $
 
 COMMENT=		Quote strings for passing through the shell
 
 MODULES=		cpan
-DISTNAME=		String-ShellQuote-1.03
-REVISION=		1
+DISTNAME=		String-ShellQuote-1.04
 CATEGORIES=		textproc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# GPL/Artistic License
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
