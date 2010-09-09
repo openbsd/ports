@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.4 2010/06/15 22:05:24 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.5 2010/09/09 17:32:36 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -15,4 +15,8 @@ RUN_DEPENDS+=	::lang/lua
 
 .if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=	::lang/lua
+.endif
+
+.if !defined(SHARED_ONLY) || ${SHARED_ONLY:L} == "no"
+PKG_ARCH=*
 .endif
