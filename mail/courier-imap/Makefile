@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/07/08 16:29:58 giovanni Exp $
+# $OpenBSD: Makefile,v 1.61 2010/09/09 10:26:19 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -6,7 +6,9 @@ COMMENT-pop3=		pop3 server for maildir format mailboxes
 V=			4.8.0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
+REVISION-main=		0
 FULLPKGNAME-pop3=	courier-pop3-${V}
+REVISION-pop3=		0
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
 CATEGORIES=		mail
@@ -23,7 +25,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c courierauth courierauthsasl gdbm idn
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -33,8 +35,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib \
-			idn::devel/libidn
+LIB_DEPENDS=		::mail/courier-authlib \
+			::devel/libidn
 
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
@@ -89,7 +91,9 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			gdbm.>=3::databases/gdbm
+			::databases/gdbm
+RUN_DEPENDS-pop3=	::mail/courier-imap,-main
+
 WANTLIB-main=		${WANTLIB} ssl crypto
 MODULES=		converters/libiconv \
 			devel/gettext
