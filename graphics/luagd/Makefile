@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/18 18:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/09 17:34:14 jasper Exp $
 
 COMMENT=	gd binding for the lua language
 
 V=		2.0.33r2
-PKGNAME=	luagd-$(V)p3
+PKGNAME=	luagd-$(V)
 DISTNAME=	lua-gd-$(V)
+REVISION=	4
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://lua-gd.luaforge.net/
