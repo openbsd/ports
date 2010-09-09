@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/15 22:05:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/09 10:39:57 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/lua
-REGRESS_DEPENDS=::devel/luaposix
+REGRESS_DEPENDS=::${BUILD_PKGPATH}
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared \
