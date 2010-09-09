@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_pcb_1,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
+$OpenBSD: patch-doc_pcb_1,v 1.2 2010/09/09 07:51:22 jasper Exp $
 --- doc/pcb.1.orig	Tue Aug 24 23:44:24 2004
 +++ doc/pcb.1	Fri Jan  5 09:11:57 2007
 @@ -30,17 +30,14 @@ The
@@ -20,6 +20,6 @@ $OpenBSD: patch-doc_pcb_1,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
 -
 +.B tkinfo.
 +The HTML documentation is installed as
-+!!DOCDIR!!/pcb.html.
++${PREFIX}/share/doc/pcb/pcb.html.
  
  

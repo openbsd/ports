@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/10 23:06:55 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/09 07:51:22 jasper Exp $
 
 COMMENT=	printed circuit board layout tool
-DISTNAME=	pcb-20070912
-PKGNAME=	${DISTNAME}p5
+DISTNAME=	pcb-20091103
 CATEGORIES=	cad
 
-HOMEPAGE=	http://pcb.sourceforge.net/
+HOMEPAGE=	http://pcb.gpleda.org/
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
@@ -19,25 +18,35 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread-stubs xcb z
+WANTLIB += png pthread-stubs xcb z gd.>=20 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gtk-x11-2.0 gthread-2.0 pthread xcb-render xcb-render-util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 
 RUN_DEPENDS=	::devel/m4 \
+		::devel/desktop-file-utils \
+		::graphics/ImageMagick \
+		::misc/shared-mime-info \
 		${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	gd.>=20::graphics/gd \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::graphics/gd \
+		::x11/gtk+2
 
-MODULES=	devel/gettext x11/tk
+MODULES=	devel/gettext \
+		textproc/intltool \
+		x11/tk
 
+USE_GMAKE=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-doc --with-gui=gtk
+CONFIGURE_ARGS=	--disable-doc \
+		--with-gui=gtk \
+		--disable-update-desktop-database \
+		--disable-update-mime-database
+
 
 pre-configure:
-	@perl -pi -e 's,!!DOCDIR!!,${PREFIX}/share/doc/pcb,' \
-		${WRKSRC}/doc/pcb.1
+	${SUBST_CMD} ${WRKSRC}/doc/pcb.1
 
 post-install:
 	rm -rf ${PREFIX}/share/${DISTNAME}

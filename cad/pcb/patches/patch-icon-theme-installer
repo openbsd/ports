@@ -1,0 +1,15 @@
+$OpenBSD: patch-icon-theme-installer,v 1.1 2010/09/09 07:51:22 jasper Exp $
+--- icon-theme-installer.orig	Wed Aug 25 18:54:22 2010
++++ icon-theme-installer	Wed Aug 25 18:55:12 2010
+@@ -108,9 +108,11 @@ if test ! -x `echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d'
+ 	exit 1
+ fi
+ 
++if false; then #stupid crap
+ if test ! -x `echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '`; then
+ 	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
+ 	exit 1
++fi
+ fi
+ 
+ if test -z "$SRC_DIR"; then
