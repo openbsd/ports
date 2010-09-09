@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/09 21:04:56 jasper Exp $
+${P5SITE}/Tie/
+${P5SITE}/Tie/Hash/
+${P5SITE}/Tie/Hash/MultiValue.pm
+@man man/man3p/Tie::Hash::MultiValue.3p
