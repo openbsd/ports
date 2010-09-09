@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
---- runtime/filetype.vim.orig	Sun Aug  3 12:38:46 2008
-+++ runtime/filetype.vim	Thu Oct 16 12:10:25 2008
+$OpenBSD: patch-runtime_filetype_vim,v 1.3 2010/09/09 22:29:29 ckuethe Exp $
+--- runtime/filetype.vim.orig	Tue Aug  3 13:44:00 2010
++++ runtime/filetype.vim	Tue Sep  7 15:55:08 2010
 @@ -71,6 +71,14 @@ func! s:Check_inp()
    endif
  endfunc
@@ -16,7 +16,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
  " A-A-P recipe
  au BufNewFile,BufRead *.aap			setf aap
  
-@@ -572,7 +580,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+@@ -583,7 +591,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
@@ -25,7 +25,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
  
  " Dircolors
  au BufNewFile,BufRead .dir_colors,/etc/DIR_COLORS	setf dircolors
-@@ -1016,7 +1024,7 @@ au BufNewFile,BufRead /etc/mail/aliases,/etc/aliases	s
+@@ -1037,7 +1045,7 @@ au BufNewFile,BufRead /etc/mail/aliases,/etc/aliases	s
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
@@ -34,14 +34,18 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
  
  " MakeIndex
  au BufNewFile,BufRead *.ist,*.mst		setf ist
-@@ -2080,7 +2088,10 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
+@@ -2139,12 +2147,14 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
  au BufNewFile,BufRead .viminfo,_viminfo		setf viminfo
  
- " Virata Config Script File
--au BufRead,BufNewFile *.hw,*.module,*.pkg	setf virata
-+au BufRead,BufNewFile *.hw,*.pkg		setf virata
+ " Virata Config Script File or Drupal module
+-au BufRead,BufNewFile *.hw,*.module,*.pkg
++au BufRead,BufNewFile *.hw,*.pkg
+ 	\ if getline(1) =~ '<?php' |
+ 	\   setf php |
+ 	\ else |
+ 	\   setf virata |
+ 	\ endif
 +
-+" Virata and drupal
 +au BufRead,BufNewFile *.module			call s:Check_module()
  
  " Visual Basic (also uses *.bas) or FORM

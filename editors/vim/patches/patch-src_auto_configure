@@ -1,28 +1,20 @@
-$OpenBSD: patch-src_auto_configure,v 1.6 2010/03/21 10:53:37 jasper Exp $
---- src/auto/configure.orig	Fri Feb  5 14:16:55 2010
-+++ src/auto/configure	Fri Feb  5 14:16:56 2010
-@@ -10073,6 +10073,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <sys/param.h>
- #include <$ac_header>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -15156,6 +15157,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-src_auto_configure,v 1.7 2010/09/09 22:29:29 ckuethe Exp $
+--- src/auto/configure.orig	Fri Aug 13 07:17:15 2010
++++ src/auto/configure	Tue Sep  7 16:02:23 2010
+@@ -11396,6 +11396,7 @@ $as_echo_n "checking for sysctl... " >&6; }
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <sys/types.h>
 +#include <sys/param.h>
  #include <sys/sysctl.h>
  int
  main ()
-@@ -15992,7 +15994,7 @@ else
- sed 's/^/| /' conftest.$ac_ext >&5
- 
- 	olibs=$LIBS
+@@ -12017,7 +12018,7 @@ if ac_fn_c_try_link "$LINENO"; then :
+ $as_echo "gettext() works" >&6; }; have_gettext="yes"
+ else
+   olibs=$LIBS
 -	  LIBS="$LIBS -lintl"
 +	  LIBS="$LIBS -lintl -liconv"
- 	  cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
+ 	  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <libintl.h>

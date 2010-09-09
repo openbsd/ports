@@ -24,12 +24,13 @@ setlocal foldmethod=syntax
 syn sync fromstart
 
 syn cluster	pfNotLS		contains=pfComment,pfTodo,pfVarAssign
-syn keyword	pfCmd		altq antispoof binat block nat pass queue rdr scrub table set
+syn keyword	pfCmd		altq antispoof binat binat-to block match nat
+syn keyword	pfCmd		nat-to pass queue rdr rdr-to scrub table set
 syn keyword	pfService	auth bgp domain finger ftp ftp-data http https
 syn keyword	pfService	ident imap irc isakmp kerberos mail nameserver
-syn keyword	pfService	nfs nntp ntp pop3 portmap pptp rpcbind rsync
-syn keyword	pfService	smtp snmp snmp-trap snmptrap socks ssh sunrpc
-syn keyword	pfService	syslog telnet tftp www
+syn keyword	pfService	nfs nntp ntp ospf pop3 portmap pptp rpcbind
+syn keyword	pfService	rsync smtp snmp snmp-trap snmptrap socks
+syn keyword	pfService	ssh sunrpc syslog telnet tftp www
 syn keyword	pfTodo		TODO XXX contained
 syn keyword	pfWildAddr	all any
 syn match	pfComment	/#.*$/ contains=pfTodo

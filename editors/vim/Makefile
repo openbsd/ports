@@ -1,35 +1,33 @@
-# $OpenBSD: Makefile,v 1.109 2010/08/31 19:38:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2010/09/09 22:29:28 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-DISTNAME=	vim-7.2
-REV=		444
-VERSION=	7.2.${REV}
+DISTNAME=	vim-7.3
+REV=		3
+VERSION=	7.3.${REV}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-main=	0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/ \
 		ftp://ftp.berlin.de.vim.org/unix/
-MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.2/}
-MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
-DISTFILES=	${DISTNAME}.tar.bz2 \
-		${DISTNAME}-lang.tar.gz:1
-DIST_SUBDIR=	vim72
+MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.3/}
+DISTFILES=	${DISTNAME}.tar.bz2
+DIST_SUBDIR=	vim73
 
 HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	# 
-_patches!=	jot -w%03d - 1 ${REV} 1 | \
-	egrep -v '001|007|022|036|041|049|071|072|074|088|089|093|101|138|150|172|173|191|194|204|205|206|212|216|219|233|236|247|248|250|260|302|320|323|326|336|350|352|362|364|365|372|374|377|384|388|393|399|400|403|415'
+_patches!=	jot -w%03d - 1 ${REV} 1
+#_patches!=	jot -w%03d - 1 ${REV} 1 | \
+#	egrep -v 'xxx|yyy|xxx|...'
 .for p in ${_patches}
-PATCHFILES+=	7.2.${p}:0
+PATCHFILES+=	7.3.${p}:0
 .endfor
 
 # allow vim to build on m68k and vax
