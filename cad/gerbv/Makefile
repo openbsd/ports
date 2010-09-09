@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/21 18:06:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/09 07:50:32 jasper Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
-DISTNAME=		gerbv-1.0.2
-PKGNAME=		${DISTNAME}p4
+DISTNAME=		gerbv-2.4.0
 CATEGORIES=		cad graphics
 
-HOMEPAGE=		http://gerbv.sourceforge.net/
+HOMEPAGE=		http://gerbv.gpleda.org/
 
 MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
+
+SHARED_LIBS +=  gerbv                     0.0 # 1.5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,22 +21,18 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z
+WANTLIB += gthread-2.0 pcre pthread xcb-render xcb-render-util
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gerbv/}
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		gdk-x11-2.0.>=0.14,gdk_pixbuf-2.0.>=0.14,gtk-x11-2.0.>=0.14::x11/gtk+2
+LIB_DEPENDS=		::x11/gtk+2
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 USE_X11=		Yes
+USE_LIBTOOL =		Yes
 CONFIGURE_STYLE=	gnu
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv.png ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

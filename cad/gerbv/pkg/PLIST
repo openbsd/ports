@@ -1,12 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/21 18:06:39 ajacoutot Exp $
-bin/gerbv
+@comment $OpenBSD: PLIST,v 1.3 2010/09/09 07:50:32 jasper Exp $
+%%SHARED%%
+@bin bin/gerbv
+include/gerbv-2.4.0/
+include/gerbv-2.4.0/gerbv.h
+lib/libgerbv.a
+lib/libgerbv.la
+lib/pkgconfig/
+lib/pkgconfig/libgerbv.pc
 @man man/man1/gerbv.1
-share/applications/
 share/applications/gerbv.desktop
+@comment share/applications/mimeinfo.cache
 share/gerbv/
+share/gerbv/gerbv_icon.ico
 share/gerbv/scheme/
+share/gerbv/scheme/gerb-debug.scm
+share/gerbv/scheme/gerb-ps.scm
 share/gerbv/scheme/init.scm
-share/pixmaps/
-share/pixmaps/gerbv.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/gerbv-16.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/gerbv-22.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/gerbv-24.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/gerbv-32.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/gerbv-48.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/gerbv.svg
