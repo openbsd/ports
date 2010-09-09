@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/09 22:51:49 ckuethe Exp $
+include/ansidecl.h
+include/bfd.h
+include/bfdlink.h
+include/symcat.h
+@comment @info info/configure.info
+@comment @info info/standards.info
+@comment @info info/bfd.info
+lib/libbfd.a
+lib/libbfd.la
