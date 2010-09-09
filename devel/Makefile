@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.825 2010/09/03 18:28:33 millert Exp $
+# $OpenBSD: Makefile,v 1.826 2010/09/09 10:40:18 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -242,6 +242,7 @@
      SUBDIR += luaalarm
      SUBDIR += luabitop
      SUBDIR += luacopas
+     SUBDIR += luadoc
      SUBDIR += luaevent
      SUBDIR += luafs
      SUBDIR += luapack
