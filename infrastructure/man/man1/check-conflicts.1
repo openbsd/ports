@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-conflicts.1,v 1.2 2010/09/03 18:51:19 schwarze Exp $
+.\"	$OpenBSD: check-conflicts.1,v 1.3 2010/09/09 19:17:06 jasper Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 3 2010 $
+.Dd $Mdocdate: September 9 2010 $
 .Dt CHECK-CONFLICTS 1
 .Os
 .Sh NAME
@@ -47,8 +47,8 @@ see
 .Xr package-create 1
 .Pc .
 .Pp
-Conflicts between packages means a user can't install both packages at
-once.
+Conflicts between packages mean that a user can't have both packages installed
+at the same time.
 In some cases (same software, different version), this is expected, but
 the packages should be marked as conflicting, so that
 .Xr pkg_add 1
