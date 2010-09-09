@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/09 10:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/09 17:58:06 jasper Exp $
 
 COMMENT=	documentation generation tool for Lua
 
@@ -16,8 +16,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES=	lang/lua
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
-
-PKG_ARCH=	*
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

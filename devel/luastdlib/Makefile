@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/18 18:06:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/09 17:58:06 jasper Exp $
 
-PKG_ARCH=	*
 COMMENT=	lua library of common programming tasks
 DISTNAME=	stdlib-12
 PKGNAME=	luastdlib-12
