@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/10 22:39:12 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-mysql =	MySQL module for Cherokee web server
 COMMENT-streaming = Streaming module for Cherokee web server
 
 DIR =		1.0
-VERSION =	${DIR}.5
+VERSION =	${DIR}.8
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -17,12 +17,6 @@ PKGNAME-ldap =	cherokee-ldap-${VERSION}
 PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
-
-REVISION-main =	0
-REVISION-ldap =	0
-REVISION-mysql = 0
-REVISION-geoip = 0
-REVISION-streaming = 0
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -92,7 +86,6 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
 			--sysconfdir=${SYSCONFDIR} \
 			--localstatedir=/var \
-			--enable-tls=openssl \
 			--with-wwwroot=/var/cherokee \
 			--with-wwwuser=_cherokee \
 			--with-wwwgroup=_cherokee \

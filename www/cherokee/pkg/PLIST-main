@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/07/12 06:22:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/09/10 22:39:13 robert Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -180,6 +180,8 @@ share/cherokee/admin/Balancer.py
 share/cherokee/admin/Balancer.pyc
 share/cherokee/admin/CTK/
 share/cherokee/admin/CTK/CTK/
+share/cherokee/admin/CTK/CTK/AjaxUpload.py
+share/cherokee/admin/CTK/CTK/AjaxUpload.pyc
 share/cherokee/admin/CTK/CTK/Box.py
 share/cherokee/admin/CTK/CTK/Box.pyc
 share/cherokee/admin/CTK/CTK/Button.py
@@ -266,6 +268,8 @@ share/cherokee/admin/CTK/CTK/__init__.py
 share/cherokee/admin/CTK/CTK/__init__.pyc
 share/cherokee/admin/CTK/CTK/consts.py
 share/cherokee/admin/CTK/CTK/consts.pyc
+share/cherokee/admin/CTK/CTK/i18n.py
+share/cherokee/admin/CTK/CTK/i18n.pyc
 share/cherokee/admin/CTK/CTK/iPhoneToggle.py
 share/cherokee/admin/CTK/CTK/iPhoneToggle.pyc
 share/cherokee/admin/CTK/CTK/json_embedded.py
@@ -283,16 +287,6 @@ share/cherokee/admin/CTK/static/css/jquery.ibutton.css
 share/cherokee/admin/CTK/static/images/
 share/cherokee/admin/CTK/static/images/arrow_ns.png
 share/cherokee/admin/CTK/static/images/bg-body.png
-share/cherokee/admin/CTK/static/images/bg-button-a-big.png
-share/cherokee/admin/CTK/static/images/bg-button-a-light.png
-share/cherokee/admin/CTK/static/images/bg-button-a.png
-share/cherokee/admin/CTK/static/images/bg-button-clone.png
-share/cherokee/admin/CTK/static/images/bg-button-new.png
-share/cherokee/admin/CTK/static/images/bg-button-span-big.png
-share/cherokee/admin/CTK/static/images/bg-button-span-light.png
-share/cherokee/admin/CTK/static/images/bg-button-span-start-light.png
-share/cherokee/admin/CTK/static/images/bg-button-span-stop-light.png
-share/cherokee/admin/CTK/static/images/bg-button-span.png
 share/cherokee/admin/CTK/static/images/bg-dialog-buttonpane.png
 share/cherokee/admin/CTK/static/images/bg-dialog-titlebar-close.gif
 share/cherokee/admin/CTK/static/images/bg-dialog-titlebar.png
@@ -319,6 +313,8 @@ share/cherokee/admin/CTK/static/images/on.png
 share/cherokee/admin/CTK/static/images/online.png
 share/cherokee/admin/CTK/static/images/tabbg.png
 share/cherokee/admin/CTK/static/images/tick.png
+share/cherokee/admin/CTK/static/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+share/cherokee/admin/CTK/static/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
 share/cherokee/admin/CTK/static/images/ui-icons_222222_256x240.png
 share/cherokee/admin/CTK/static/images/ui-icons_2e83ff_256x240.png
 share/cherokee/admin/CTK/static/images/ui-icons_454545_256x240.png
@@ -328,6 +324,7 @@ share/cherokee/admin/CTK/static/images/uploadify.cancel.png
 share/cherokee/admin/CTK/static/js/
 share/cherokee/admin/CTK/static/js/Help.js
 share/cherokee/admin/CTK/static/js/Submitter.js
+share/cherokee/admin/CTK/static/js/ajaxupload.3.6.js
 share/cherokee/admin/CTK/static/js/common.js
 share/cherokee/admin/CTK/static/js/jquery-1.3.2.min.js
 share/cherokee/admin/CTK/static/js/jquery-ui-1.7.2.custom.min.js

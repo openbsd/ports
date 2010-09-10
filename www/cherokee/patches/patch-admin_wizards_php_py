@@ -1,0 +1,22 @@
+$OpenBSD: patch-admin_wizards_php_py,v 1.1 2010/09/10 22:39:13 robert Exp $
+--- admin/wizards/php.py.orig	Mon Aug  9 12:06:15 2010
++++ admin/wizards/php.py	Sat Sep 11 00:33:59 2010
+@@ -47,7 +47,7 @@ PHP_DEFAULT_TIMEOUT        = '30'
+ SAFE_PHP_FCGI_MAX_REQUESTS = '490'
+ 
+ FPM_BINS = ['php-fpm', 'php5-fpm']
+-STD_BINS = ['php-cgi', 'php']
++STD_BINS = ['php-cgi', 'php', 'php-fastcgi']
+ 
+ DEFAULT_BINS  = FPM_BINS + STD_BINS
+ 
+@@ -75,7 +75,8 @@ STD_ETC_PATHS = ['/etc/php*/cgi/php.ini',
+                  '/usr/local/etc/php.ini',
+                  '/opt/php*/etc/php.ini',
+                  '/opt/local/etc/php*/php.ini',
+-                 '/etc/php*/*/php.ini']
++                 '/etc/php*/*/php.ini',
++		 '/var/www/conf/php.ini']
+ 
+ CFG_PREFIX    = 'tmp!wizard!php'
+ 
