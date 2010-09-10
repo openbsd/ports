@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/09 10:38:10 jasper Exp $
-bin/luadoc.lua
+@comment $OpenBSD: PLIST,v 1.2 2010/09/10 13:51:10 dcoppa Exp $
+bin/luadoc
 share/doc/luadoc/
 share/doc/luadoc/architecture.html
 share/doc/luadoc/architecture.vsd
@@ -12,4 +12,25 @@ share/doc/luadoc/license.html
 share/doc/luadoc/lua.png
 share/doc/luadoc/manual.html
 share/lua/5.1/luadoc/
+share/lua/5.1/luadoc/config.lua
+share/lua/5.1/luadoc/doclet/
+share/lua/5.1/luadoc/doclet/debug.lua
+share/lua/5.1/luadoc/doclet/formatter.lua
+share/lua/5.1/luadoc/doclet/html/
+share/lua/5.1/luadoc/doclet/html.lua
+share/lua/5.1/luadoc/doclet/html/file.lp
+share/lua/5.1/luadoc/doclet/html/function.lp
+share/lua/5.1/luadoc/doclet/html/index.lp
+share/lua/5.1/luadoc/doclet/html/luadoc.css
+share/lua/5.1/luadoc/doclet/html/menu.lp
+share/lua/5.1/luadoc/doclet/html/module.lp
+share/lua/5.1/luadoc/doclet/html/table.lp
+share/lua/5.1/luadoc/doclet/raw.lua
+share/lua/5.1/luadoc/init.lua
 share/lua/5.1/luadoc/lfs.luadoc
+share/lua/5.1/luadoc/lp.lua
+share/lua/5.1/luadoc/taglet/
+share/lua/5.1/luadoc/taglet/standard/
+share/lua/5.1/luadoc/taglet/standard.lua
+share/lua/5.1/luadoc/taglet/standard/tags.lua
+share/lua/5.1/luadoc/util.lua
