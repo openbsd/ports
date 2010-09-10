@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/10 13:47:08 jasper Exp $
+${P5SITE}/Hash/AutoHash/
+${P5SITE}/Hash/AutoHash/Args/
+${P5SITE}/Hash/AutoHash/Args.pm
+${P5SITE}/Hash/AutoHash/Args/V0.pm
+@man man/man3p/Hash::AutoHash::Args.3p
+@man man/man3p/Hash::AutoHash::Args::V0.3p
