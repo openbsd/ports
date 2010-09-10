@@ -1,12 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/10 10:42:17 robert Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
 
 PV=		5.2
-V=		5.2.13
+V=		5.2.14
 SUHOSIN_V=	0.9.29
 SUHOSIN_P_V=	0.9.7
+
+DISTNAME=	php5-${V}
+PKGNAME-main=	php5-${V}
+PKGNAME-fastcgi=php5-fastcgi-${V}
+
+WRKDIST=	${WRKDIR}/php-${V}
 
 INI_TEMPLATES=	dist recommended
 

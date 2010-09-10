@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/06/29 01:10:44 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/09/10 10:42:17 robert Exp $
 @option no-default-conflict
 @conflict php->=5.2,<5.3
 @conflict php-fastcgi->=5.2,<5.3
@@ -164,6 +164,7 @@ share/php-${PV}/include/ext/iconv/php_have_ibm_iconv.h
 share/php-${PV}/include/ext/iconv/php_have_iconv.h
 share/php-${PV}/include/ext/iconv/php_have_libiconv.h
 share/php-${PV}/include/ext/iconv/php_iconv.h
+share/php-${PV}/include/ext/iconv/php_iconv_aliased_libiconv.h
 share/php-${PV}/include/ext/iconv/php_iconv_supports_errno.h
 share/php-${PV}/include/ext/iconv/php_php_iconv_h_path.h
 share/php-${PV}/include/ext/iconv/php_php_iconv_impl.h

@@ -7,8 +7,8 @@ NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 
-PKGNAME-main=		php-${V}
-PKGNAME-fastcgi=	php-fastcgi-${V}
+PKGNAME-main?=		php-${V}
+PKGNAME-fastcgi?=	php-fastcgi-${V}
 
 DISTFILES=		php-${V}.tar.gz
 
