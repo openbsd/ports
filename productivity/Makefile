@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/29 20:59:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/10 11:14:17 jasper Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -25,6 +25,7 @@
      SUBDIR += tdl
      SUBDIR += thinkingrock
      SUBDIR += vym
+     SUBDIR += when
      SUBDIR += workrave
      SUBDIR += wyrd
      SUBDIR += xinvest
