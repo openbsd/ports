@@ -1,0 +1,19 @@
+$OpenBSD: patch-Time_NTP_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Time/NTP.pm.orig	Tue Mar  9 19:02:45 2010
++++ Time/NTP.pm	Wed Sep  8 19:15:55 2010
+@@ -41,6 +41,7 @@ sub get_config_file ()
+     "pld-1.0"         => "pld-1.0",
+     "vine-3.0"        => "redhat-6.2",
+     "freebsd-5"       => "redhat-6.2",
++    "openbsd-4"       => "openbsd-4",
+     "archlinux"       => "redhat-6.2",
+     "solaris-2.11"    => "solaris-2.11",
+   );
+@@ -50,6 +51,7 @@ sub get_config_file ()
+     "redhat-6.2"   => "/etc/ntp.conf",
+     "pld-1.0"      => "/etc/ntp/ntp.conf",
+     "solaris-2.11" => "/etc/inet/ntp.conf",
++    "openbsd-4" => "/etc/ntpd.conf",
+   );
+ 
+   my $dist = $dist_map{$Utils::Backend::tool{"platform"}};

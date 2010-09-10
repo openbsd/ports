@@ -1,0 +1,58 @@
+$OpenBSD: patch-Time_TimeDate_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Time/TimeDate.pm.orig	Tue Mar  9 19:02:45 2010
++++ Time/TimeDate.pm	Thu Sep  9 10:45:57 2010
+@@ -48,13 +48,24 @@ sub change_timedate
+   my $system_table = {
+     "Linux"   => "date -u %02d%02d%02d%02d%04d.%02d",
+     "FreeBSD" => "date -u -f %%m%%d%%H%%M%%Y.%%S  %02d%02d%02d%02d%04d.%02d",
++    "OpenBSD" => "date -u %04d%02d%02d%02d%02d.%02d",
+     "SunOS"   => "date -u %02d%02d%02d%02d%04d.%02d",
+   };
+ 
+-  @command = split (/ /, sprintf ($$system_table {$Utils::Backend::tool{"system"}},
+-                                  $$time{"month"} + 1, $$time{"monthday"},
+-                                  $$time{"hour"}, $$time{"minute"},
+-                                  $$time{"year"}, $$time{"second"}));
++  if ($Utils::Backend::tool{"system"} eq "OpenBSD")
++  {
++    @command = split (/ /, sprintf ($$system_table {$Utils::Backend::tool{"system"}},
++                                    $$time{"year"}, $$time{"month"} + 1,
++                                    $$time{"monthday"}, $$time{"hour"},
++                                    $$time{"minute"}, $$time{"second"}));
++  }
++  else
++  {
++    @command = split (/ /, sprintf ($$system_table {$Utils::Backend::tool{"system"}},
++                                    $$time{"month"} + 1, $$time{"monthday"},
++                                    $$time{"hour"}, $$time{"minute"},
++                                    $$time{"year"}, $$time{"second"}));
++  }
+ 
+   &Utils::Report::do_report ("time_localtime_set", @command);
+   return &Utils::File::run (@command);
+@@ -144,7 +155,16 @@ sub set_timezone
+     unlink $localtime;  # Important, since it might be a symlink.
+     
+     &Utils::Report::enter ();
+-    $res = copy ($tz, $localtime);
++
++    if ($Utils::Backend::tool{"system"} eq "OpenBSD")
++    {
++      $res = symlink ("$tz","$localtime");
++    }
++    else
++    {
++      $res = copy ($tz, $localtime);
++    }
++
+     &Utils::Report::leave ();
+     return -1 unless $res;
+     return 0;
+@@ -173,6 +193,7 @@ sub get_dist
+    "pld-1.0"         => "redhat-6.2",
+    "vine-3.0"        => "redhat-6.2",
+    "freebsd-5"       => "redhat-6.2",
++   "openbsd-4"       => "redhat-6.2",
+    "solaris-2.11"    => "solaris-2.11",
+    );
+ 

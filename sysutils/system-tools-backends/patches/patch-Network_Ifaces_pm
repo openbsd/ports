@@ -1,0 +1,46 @@
+$OpenBSD: patch-Network_Ifaces_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Network/Ifaces.pm.orig	Wed Sep  8 18:19:10 2010
++++ Network/Ifaces.pm	Wed Sep  8 18:26:31 2010
+@@ -171,6 +171,34 @@ sub get_freebsd_wireless_ifaces
+   return \@ifaces;
+ }
+ 
++sub get_openbsd_wireless_ifaces
++{
++  my ($fd, $line, $iface);
++  my (@ifaces, $command);
++
++  $command = &Utils::File::get_cmd_path ("ifconfig");
++  open $fd, "$command |";
++  return @ifaces if $fd eq undef;
++
++  while (<$fd>)
++  {
++    if (/^([a-zA-Z]+[0-9]+):/)
++    {
++      $iface = $1;
++    }
++
++    if (/group:.*wlan.*/i)
++    {
++      push @ifaces, $iface;
++    }
++  }
++
++  &Utils::File::close_file ($fd);
++  &Utils::Report::leave ();
++
++  return \@ifaces;
++}
++
+ # Returns an array with the wireless devices found
+ sub get_wireless_ifaces
+ {
+@@ -178,6 +206,7 @@ sub get_wireless_ifaces
+     
+   return &get_linux_wireless_ifaces   if ($plat eq "Linux");
+   return &get_freebsd_wireless_ifaces if ($plat eq "FreeBSD");
++  return &get_openbsd_wireless_ifaces if ($plat eq "OpenBSD");
+ }
+ 
+ # returns interface type depending on it's interface name

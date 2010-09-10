@@ -1,0 +1,135 @@
+$OpenBSD: patch-Users_Users_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Users/Users.pm.orig	Sat Aug 21 15:18:12 2010
++++ Users/Users.pm	Fri Sep 10 15:28:48 2010
+@@ -58,7 +58,7 @@ use Utils::Replace;
+ # They are tried in array order. First found = used.
+ @passwd_names =     ( "/etc/passwd" );
+ @shadow_names =     ( "/etc/shadow", "/etc/master.passwd" );
+-@login_defs_names = ( "/etc/login.defs", "/etc/adduser.conf" );
++@login_defs_names = ( "/etc/login.defs", ,"/etc/usermgmt.conf", "/etc/adduser.conf" );
+ @shell_names =      ( "/etc/shells" );
+ @skel_dir =         ( "/usr/share/skel", "/etc/skel" );
+ 
+@@ -236,6 +236,12 @@ my $freebsd_logindefs_defaults = {
+   'skel_dir' => '/etc/skel/',
+ };
+ 
++my $openbsd_logindefs_defaults = {
++  'shell'    => '/bin/ksh',
++  'group'    => 10,
++  'skel_dir' => '/etc/skel/',
++};
++
+ my $logindefs_dist_map = {
+   'redhat-6.2'      => $rh_logindefs_defaults,
+   'redhat-7.0'      => $rh_logindefs_defaults,
+@@ -252,6 +258,7 @@ my $logindefs_dist_map = {
+   'archlinux'       => $gentoo_logindefs_defaults,
+   'slackware-9.1.0' => $gentoo_logindefs_defaults,
+   'freebsd-5'       => $freebsd_logindefs_defaults,
++  'openbsd-4'       => $openbsd_logindefs_defaults,
+   'suse-9.0'        => $gentoo_logindefs_defaults,
+   'solaris-2.11'    => $gentoo_logindefs_defaults,
+ };
+@@ -384,9 +391,17 @@ sub get
+     # Detect lock status of password
+     # We run 'passwd' instead of reading /etc/shadow directly
+     # to avoid leaving sensitive data in memory (hard to clear in perl)
+-    $fd = &Utils::File::run_pipe_read ("passwd -S $login");
+-    @passwd_status = split ' ', <$fd>;
+-    &Utils::File::close_file ($fd);
++    # On OpenBSD, the '-S' switch for passwd(1) does not exist
++    if ($Utils::Backend::tool{"system"} eq "OpenBSD")
++    {
++      @passwd_status = "P";
++    }
++    else
++    {
++      $fd = &Utils::File::run_pipe_read ("passwd -S $login");
++      @passwd_status = split ' ', <$fd>;
++      &Utils::File::close_file ($fd);
++    }
+ 
+     if ($passwd_status[1] eq "P")
+     {
+@@ -441,6 +456,17 @@ sub del_user
+         @command = ($cmd_pw, "userdel", "-n", $$user[$LOGIN]);
+       }
+   }
++  elsif ($Utils::Backend::tool{"system"} eq "OpenBSD")
++  {
++    if ($remove_home)
++      {
++        @command = ($cmd_userdel, "-r", $$user[$LOGIN]);
++      }
++    else
++      {
++        @command = ($cmd_userdel, $$user[$LOGIN]);
++      }
++  }
+   elsif ($cmd_deluser) # use deluser (preferred method)
+     {
+       if ($remove_home)
+@@ -497,11 +523,15 @@ sub set_passwd
+   my ($login, $password, $passwd_status) = @_;
+   my ($pwdpipe);
+ 
+-  # handle empty password via passwd, as all tools don't support it
+-  if ($passwd_status & 1)
++  # OpenBSD passwd(1) has no '-d' switch
++  if ($Utils::Backend::tool{"system"} ne "OpenBSD")
+   {
+-    &Utils::File::run ("passwd", "-d", $login);
+-    return;
++    # handle empty password via passwd, as all tools don't support it
++    if ($passwd_status & 1)
++    {
++      &Utils::File::run ("passwd", "-d", $login);
++      return;
++    }
+   }
+ 
+   if ($Utils::Backend::tool{"system"} eq "FreeBSD")
+@@ -520,7 +550,7 @@ sub set_passwd
+     print $pwdpipe $password;
+     &Utils::File::close_file ($pwdpipe);
+   }
+-  else
++  elsif ($Utils::Backend::tool{"system"} neq "OpenBSD")
+   {
+     $pwdpipe = &Utils::File::run_pipe_write ($cmd_chpasswd);
+     print $pwdpipe "$login:$password";
+@@ -534,14 +564,17 @@ sub set_lock
+   my ($login, $passwd_status) = @_;
+   my ($pwdpipe);
+ 
+-  if ($passwd_status & (1 << 1))
++  if ($Utils::Backend::tool{"system"} ne "OpenBSD")
+   {
+-    &Utils::File::run ("passwd", "-l", $login);
++    if ($passwd_status & (1 << 1))
++    {
++      &Utils::File::run ("passwd", "-l", $login);
++    }
++    else
++    {
++      &Utils::File::run ("passwd", "-u", $login);
++    }
+   }
+-  else
+-  {
+-    &Utils::File::run ("passwd", "-u", $login);
+-  }
+ }
+ 
+ # This function allows empty values to be passed, in which cas
+@@ -620,7 +653,8 @@ sub add_user
+         $Utils::Backend::tool{"platform"} !~ /^slackware/ &&
+         $Utils::Backend::tool{"platform"} !~ /^archlinux/ &&
+         $Utils::Backend::tool{"platform"} !~ /^redhat/ &&
+-        $Utils::Backend::tool{"platform"} !~ /^gentoo/)
++        $Utils::Backend::tool{"platform"} !~ /^gentoo/ &&
++        $Utils::Backend::tool{"platform"} !~ /^openbsd/)
+     {
+       # use adduser if available and valid (slackware one is b0rk)
+       # set empty gecos fields and password, they will be filled out later

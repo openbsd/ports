@@ -1,0 +1,11 @@
+$OpenBSD: patch-Network_Hosts_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Network/Hosts.pm.orig	Wed Sep  8 18:28:51 2010
++++ Network/Hosts.pm	Wed Sep  8 18:29:59 2010
+@@ -52,6 +52,7 @@ sub get_fqdn_dist
+     "slackware-9.1.0" => "suse-9.0",
+     "gentoo"          => "gentoo",
+     "freebsd-5"       => "freebsd-5",
++    "openbsd-4"       => "freebsd-5",
+     "solaris-2.11"    => "solaris-2.11",
+ 	  );
+ 

@@ -1,0 +1,52 @@
+$OpenBSD: patch-Utils_Platform_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Utils/Platform.pm.orig	Wed Sep  8 17:56:15 2010
++++ Utils/Platform.pm	Wed Sep  8 18:09:26 2010
+@@ -73,6 +73,8 @@ my $PLATFORM_INFO = {
+   "freebsd-6"       => [ "FreeBSD", "6", "" ],
+   "freebsd-7"       => [ "FreeBSD", "7", "" ],
+   "freebsd-8"       => [ "FreeBSD", "8", "" ],
++  "openbsd-4"       => [ "OpenBSD", "4", "" ],
++  "openbsd-5"       => [ "OpenBSD", "5", "" ],
+   "gentoo"          => [ "Gentoo Linux", "", "" ],
+   "vlos-1.2"        => [ "Vida Linux OS", "1.2" ],
+   "archlinux"       => [ "Arch Linux", "", "" ],
+@@ -126,6 +128,7 @@ sub ensure_distro_map
+      "freebsd-6"        => "freebsd-5",
+      "freebsd-7"        => "freebsd-5",
+      "freebsd-8"        => "freebsd-5",
++     "openbsd-5"        => "openbsd-4",
+      "openna-1.0"       => "redhat-6.2",
+      "pld-1.1"          => "pld-1.0",
+      "pld-1.99"         => "pld-1.0",
+@@ -254,6 +257,23 @@ sub check_freebsd
+   return -1;
+ }
+ 
++sub check_openbsd
++{
++  my ($sysctl_cmd, @output);
++
++  $sysctl_cmd = &Utils::File::locate_tool ("sysctl");
++  @output = (readpipe("$sysctl_cmd -n kern.version"));
++  foreach (@output)
++  {
++    chomp;
++    if (/^OpenBSD\s([0-9]+)\.\S+.*/)
++    {
++      return "openbsd-$1";
++    }
++  }
++  return -1;
++}
++
+ sub check_solaris
+ {
+   my ($fd, $dist);
+@@ -377,6 +397,7 @@ sub guess
+                   [ \&check_distro_file, "/etc/yellowdog-release", "yellowdog", "^Yellow Dog Linux release (\\S+)" ],
+                  ],
+     "FreeBSD" => [[ \&check_freebsd ]],
++    "OpenBSD" => [[ \&check_openbsd ]],
+     "SunOS"   => [[ \&check_solaris ]]
+   );
+ 

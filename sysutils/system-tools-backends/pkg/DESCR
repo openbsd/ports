@@ -1,0 +1,9 @@
+The System Tools Backends (s-t-b for short) are a set of cross-platform
+modules for Unix systems. The backends provide a common DBus interface
+to all platforms to modify or read the system configuration in a system
+independent fashion. Historically, access to system configuration has
+varied deeply across Unix flavours, and concreting a bit more, across
+Unix systems, making it near impossible to write desktop tools that
+could work flawlessly in a cross-platform way. System Tools Backends try
+to fill this gap, offering a generic and easy way for desktop
+applications to read and modify configuration details.

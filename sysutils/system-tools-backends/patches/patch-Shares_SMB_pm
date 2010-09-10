@@ -1,0 +1,19 @@
+$OpenBSD: patch-Shares_SMB_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+--- Shares/SMB.pm.orig	Wed Sep  8 18:30:46 2010
++++ Shares/SMB.pm	Wed Sep  8 18:31:34 2010
+@@ -144,6 +144,7 @@ sub get_distro_smb_file
+    "pld-1.0"         => "pld-1.0",
+    "vine-3.0"        => "debian",
+    "freebsd-5"       => "freebsd-5",
++   "openbsd-4"       => "openbsd-4",
+   );
+ 
+   my %dist_tables =
+@@ -152,6 +153,7 @@ sub get_distro_smb_file
+    "debian" => "/etc/samba/smb.conf",
+    "pld-1.0"    => "/etc/smb/smb.conf",
+    "freebsd-5"  => "/usr/local/etc/smb.conf",
++   "openbsd-4"  => "${SYSCONFDIR}/samba/smb.conf",
+   );
+ 
+   my $dist = $dist_map {$Utils::Backend::tool{"platform"}};
