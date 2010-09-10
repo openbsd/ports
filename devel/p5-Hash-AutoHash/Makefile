@@ -1,8 +1,9 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2010/09/10 07:38:29 jasper Exp $
+#	$OpenBSD: Makefile,v 1.2 2010/09/10 13:32:47 jasper Exp $
 
-COMMENT=	create get and set methods and simplify object initialization  
+COMMENT=	get and set methods and simplify object initialization  
 
 DISTNAME=	Hash-AutoHash-1.12
+REVISION=	0
 CATEGORIES=	devel
 
 # perl
