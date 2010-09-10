@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_users_user-settings_c,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
+--- src/users/user-settings.c.orig	Wed Sep  8 17:25:23 2010
++++ src/users/user-settings.c	Wed Sep  8 17:25:45 2010
+@@ -267,7 +267,7 @@ static void
+ set_login_length (GtkWidget *entry)
+ {
+ 	gint max_len;
+-#ifdef __FreeBSD__
++#if defined __FreeBSD__ || defined __OpenBSD__
+ 	max_len = UT_NAMESIZE;
+ #else
+ 	struct utmp ut;

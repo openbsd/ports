@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_shares_share-settings_c,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
+
+XXX Without "services" support (i.e. rcNG, rc.d...) nfs_available() and
+smb_available() will always return false. We never display NFS even if
+it's part of OpenBSD base system because the system-tools-backends use
+the Linux|SunOS exports format. We always display Samba but with a
+warning, see patch-src_shares_shares-tool_c.
+
+--- src/shares/share-settings.c.orig	Mon Sep 21 14:59:55 2009
++++ src/shares/share-settings.c	Thu Sep  9 15:09:31 2010
+@@ -146,12 +146,15 @@ share_settings_prepare_dialog (const gchar *path, gboo
+ 				    -1);
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	if (GST_SHARES_TOOL (tool)->smb_available) {
++#endif
+ 		gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+ 		gtk_list_store_set (GTK_LIST_STORE (model), &iter,
+ 				    0, _("Windows networks (SMB)"),
+ 				    1, SHARE_THROUGH_SMB,
+ 				    -1);
++#ifndef __OpenBSD__
+ 	}
+ 
+ 	if (GST_SHARES_TOOL (tool)->nfs_available) {
+@@ -161,6 +164,7 @@ share_settings_prepare_dialog (const gchar *path, gboo
+ 				    1, SHARE_THROUGH_NFS,
+ 				    -1);
+ 	}
++#endif
+ 
+ 	gtk_combo_box_set_active (GTK_COMBO_BOX (combo), 0);
+ 

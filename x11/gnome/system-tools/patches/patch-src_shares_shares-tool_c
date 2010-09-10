@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_shares_shares-tool_c,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
+--- src/shares/shares-tool.c.orig	Sat Feb 13 23:35:40 2010
++++ src/shares/shares-tool.c	Thu Sep  9 16:59:21 2010
+@@ -149,6 +149,7 @@ check_servers (GstSharesTool *tool)
+ 					 GTK_DIALOG_MODAL,
+ 					 GTK_MESSAGE_WARNING,
+ 					 GTK_BUTTONS_CLOSE,
++#ifndef __OpenBSD__
+ 					 _("Sharing services are not installed"));
+ 	gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
+ 						    _("You need to install at least either Samba or NFS "
+@@ -157,6 +158,20 @@ check_servers (GstSharesTool *tool)
+ 	gtk_widget_destroy (dialog);
+ 
+ 	return FALSE;
++#else
++					 _("Manual handling of service(s) required"));
++	gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
++						   _("OpenBSD does not support rcNG or rc.d init systems.\nYou can "
++						     "configure shares but the (re)start of the NFS/SMB service(s) "
++						     "will need to be done manually (from a priviledged user).\n\n"
++						     "Make sure you have the samba package installed before "
++						     "setting up a Windows share."));
++
++	gtk_dialog_run (GTK_DIALOG (dialog));
++	gtk_widget_destroy (dialog);
++
++	return TRUE;
++#endif
+ }
+ 
+ static void

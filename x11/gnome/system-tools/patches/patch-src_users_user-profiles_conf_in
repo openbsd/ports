@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_users_user-profiles_conf_in,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
+--- src/users/user-profiles.conf.in.orig	Fri Sep 10 08:12:48 2010
++++ src/users/user-profiles.conf.in	Fri Sep 10 08:13:34 2010
+@@ -2,9 +2,9 @@
+ _Name=Desktop user
+ _Description=Can perform common tasks. Can't install software or change settings affecting all users.
+ Default=1
+-Groups=cdrom,floppy,dialout,tape,dip,adm,plugdev,fax,audio,scanner,fuse,video
++Groups=users
+ 
+ [Administrator]
+ _Name=Administrator
+ _Description=Can change anything on the system, including installing and upgrading software.
+-Groups=cdrom,floppy,dialout,tape,dip,adm,plugdev,fax,audio,scanner,fuse,admin,sambashare,lpadmin,video
++Groups=users,wheel,wsrc
