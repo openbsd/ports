@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_gnome-genius_desktop,v 1.1 2009/03/18 11:28:37 ajacoutot Exp $
---- src/gnome-genius.desktop.orig	Wed Mar 18 10:44:51 2009
-+++ src/gnome-genius.desktop	Wed Mar 18 10:45:01 2009
+$OpenBSD: patch-src_gnome-genius_desktop,v 1.2 2010/09/10 07:16:05 ajacoutot Exp $
+--- src/gnome-genius.desktop.orig	Fri Sep 10 07:47:51 2010
++++ src/gnome-genius.desktop	Fri Sep 10 09:08:19 2010
 @@ -4,7 +4,7 @@ Type=Application
- Exec=gnome-genius
+ Exec=gnome-genius %U
  Icon=gnome-genius
  Terminal=false
 -Categories=GNOME;Science;Math;Education;Calculator;Utility;
