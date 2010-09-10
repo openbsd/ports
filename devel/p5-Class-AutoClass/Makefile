@@ -1,9 +1,8 @@
-#	$OpenBSD: Makefile,v 1.6 2008/09/24 11:29:13 jasper Exp $
+#	$OpenBSD: Makefile,v 1.7 2010/09/10 13:48:31 jasper Exp $
 
-COMMENT=	auto getters/setters for perl
+COMMENT=	get and set methods and simplify object initialization  
 
-DISTNAME=	autoclass_v1_01
-PKGNAME=	p5-Class-AutoClass-1.01
+DISTNAME=	Class-AutoClass-1.54
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,13 +14,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-CPAN_AUTHOR=		CCAVNOR
 
-EXTRACT_SUFX=		.tgz
+CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		::devel/p5-IO-stringy
+RUN_DEPENDS=		::devel/p5-Hash-AutoHash-Args \
+			::devel/p5-IO-stringy
 REGRESS_DEPENDS=	::devel/p5-Test-Deep
-
-WRKDIST=		${WRKDIR}/AutoClass
 
 .include <bsd.port.mk>
