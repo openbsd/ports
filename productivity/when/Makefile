@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/10 15:14:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/10 17:03:31 jasper Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -18,7 +18,6 @@ MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
-WRKDIST= 		${WRKDIR}/when_dist
  # Requires interactive terminal and other hoops not worth going through.
 NO_REGRESS=		Yes
 
