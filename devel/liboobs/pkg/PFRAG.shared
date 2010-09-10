@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/09/10 13:50:41 ajacoutot Exp $
+@lib lib/liboobs-1.so.${LIBoobs-1_VERSION}

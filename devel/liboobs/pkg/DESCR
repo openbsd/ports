@@ -1,0 +1,4 @@
+Liboobs is a wrapping library to the System Tools Backends, it will
+provide easy to access GObjects to system configuration details, like
+users, groups and network interfaces, it will handle sessions with the
+backend and data consistency too.
