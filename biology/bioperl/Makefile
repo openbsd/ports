@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/24 15:35:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/10 13:46:21 jasper Exp $
 
 CATEGORIES=	biology perl5
 
@@ -49,4 +49,7 @@ REGRESS_DEPENDS=${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT=Yes
+
+pre-configure:
+	@rm -f ${WRKSRC}/Bio/Graphics/FeatureFile.pm.orig
 .include <bsd.port.mk>
