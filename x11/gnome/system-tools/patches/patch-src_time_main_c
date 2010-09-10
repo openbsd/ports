@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_time_main_c,v 1.1 2010/09/10 14:48:55 ajacoutot Exp $
+
+XXX Do not display NTP configuration/synchronisation, it requires
+"services" support.
+
+--- src/time/main.c.orig	Fri Sep 10 16:31:05 2010
++++ src/time/main.c	Fri Sep 10 16:31:12 2010
+@@ -49,7 +49,6 @@ static const gchar *policy_widgets [] = {
+ 	"minutes",
+ 	"seconds",
+ 	"calendar",
+-	"update_time",
+ 	NULL
+ };
+ 
