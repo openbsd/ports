@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.828 2010/09/09 22:52:53 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.829 2010/09/10 07:39:17 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -503,6 +503,7 @@
      SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
+     SUBDIR += p5-Hash-AutoHash
      SUBDIR += p5-Hash-Merge
      SUBDIR += p5-Hash-NoRef
      SUBDIR += p5-Hash-Util-FieldHash-Compat
