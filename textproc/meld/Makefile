@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 21:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/11 07:00:52 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
-DISTNAME=	meld-1.3.2
-REVISION=	0
+GNOME_VERSION=	1.3.3
+GNOME_PROJECT=	meld
+
 CATEGORIES=	textproc x11
 
 HOMEPAGE=	http://meld.sourceforge.net/
@@ -14,19 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/meld/1.3/}
-
-USE_GMAKE=	Yes
-
 MODULES=	lang/python \
-		textproc/intltool
-
-BUILD_DEPENDS+=	::textproc/rarian
+		textproc/intltool \
+		x11/gnome
 
 RUN_DEPENDS=	::x11/gnome/py-gnome \
-		::x11/gnome/yelp \
-		::devel/desktop-file-utils \
 		::x11/py-gtksourceview
+
+MODGNOME_HELP_FILES= Yes
+DESKTOP_FILES=	Yes
 
 SUBST_VARS+=	MODPY_SITEPKG
 CONFIGURE_STYLE=none
