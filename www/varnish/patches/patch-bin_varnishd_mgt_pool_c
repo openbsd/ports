@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_varnishd_mgt_pool_c,v 1.1 2010/06/30 21:49:37 jim Exp $
+$OpenBSD: patch-bin_varnishd_mgt_pool_c,v 1.2 2010/09/11 13:03:46 jim Exp $
 --- bin/varnishd/mgt_pool.c.orig	Wed May  5 03:32:03 2010
 +++ bin/varnishd/mgt_pool.c	Sun Jun 27 14:10:25 2010
 @@ -80,7 +80,11 @@ tweak_stack_size(struct cli *cli, const struct parspec

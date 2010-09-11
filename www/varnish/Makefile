@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/30 21:49:37 jim Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/11 13:03:46 jim Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-2.1.2
+DISTNAME =		varnish-2.1.3
 CATEGORIES =		www
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -20,8 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c curses m pthread
-LIB_DEPENDS = 		pcre::devel/pcre
+WANTLIB = 		c curses m pcre pthread
+LIB_DEPENDS = 		::devel/pcre
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=varnish/}
 
