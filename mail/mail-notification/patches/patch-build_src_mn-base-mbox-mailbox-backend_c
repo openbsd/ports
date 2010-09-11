@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_src_mn-base-mbox-mailbox-backend_c,v 1.1 2010/09/11 08:07:09 ajacoutot Exp $
+
+- fix build with GMime 2.4.
+
+--- build/src/mn-base-mbox-mailbox-backend.c.orig	Sat Sep 11 09:53:41 2010
++++ build/src/mn-base-mbox-mailbox-backend.c	Sat Sep 11 09:53:41 2010
+@@ -301,7 +301,7 @@ mn_base_mbox_mailbox_backend_get_mailbox_type (GnomeVF
+ 	    mime_message = g_mime_parser_construct_message(parser);
+ 	    if (mime_message)
+ 	      {
+-		if (g_mime_message_get_header(mime_message, "X-Mozilla-Status"))
++		if (g_mime_object_get_header(mime_message, "X-Mozilla-Status"))
+ 		  {
+ #if WITH_MOZILLA
+ 		    type = MN_TYPE_MOZILLA_MAILBOX_BACKEND;

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_mn-message-mime_c,v 1.1 2010/09/11 08:07:09 ajacoutot Exp $
+
+- fix build with GMime 2.4.
+
+--- src/mn-message-mime.c.orig	Sat Sep 11 09:53:41 2010
++++ src/mn-message-mime.c	Sat Sep 11 09:53:41 2010
+@@ -33,12 +33,12 @@ is_spam (GMimeMessage *mime_message)
+   g_return_val_if_fail(GMIME_IS_MESSAGE(mime_message), FALSE);
+ 
+   /* SpamAssassin */
+-  spam = g_mime_message_get_header(mime_message, "X-Spam-Status");
++  spam = g_mime_object_get_header(mime_message, "X-Spam-Status");
+   if (spam && mn_ascii_str_case_has_prefix(spam, "yes"))
+     return TRUE;
+ 
+   /* bogofilter */
+-  spam = g_mime_message_get_header(mime_message, "X-Bogosity");
++  spam = g_mime_object_get_header(mime_message, "X-Bogosity");
+   if (spam && mn_ascii_str_case_has_prefix(spam, "yes"))
+     return TRUE;
+ 
+@@ -89,7 +89,7 @@ mn_message_new_from_mime_message_full (GType type,
+     {
+       const char *status;
+ 
+-      status = g_mime_message_get_header(mime_message, "Status");
++      status = g_mime_object_get_header(mime_message, "Status");
+       if (status && strchr(status, 'R'))
+ 	return NULL;		/* the message was read */
+       else if (status && strchr(status, 'O'))

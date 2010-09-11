@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_src_mn-mozilla-mailbox-backend_c,v 1.1 2010/09/11 08:07:09 ajacoutot Exp $
+
+- fix build with GMime 2.4.
+
+--- build/src/mn-mozilla-mailbox-backend.c.orig	Sat Sep 11 09:53:38 2010
++++ build/src/mn-mozilla-mailbox-backend.c	Sat Sep 11 09:53:38 2010
+@@ -194,7 +194,7 @@ mn_mozilla_mailbox_backend_get_status_flags (GMimeMess
+ 	
+     const char *header;
+ 
+-    header = g_mime_message_get_header(mime_message, header_name);
++    header = g_mime_object_get_header(mime_message, header_name);
+     if (header && mn_str_ishex(header))
+       return strtol(header, NULL, 16);
+     else
