@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/11 08:07:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/09/11 09:09:13 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 
 DISTNAME=		mail-notification-5.4
-REVISION=		14
+REVISION=		15
 
 CATEGORIES=		mail
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 LIB_DEPENDS=	::x11/gnome/libgnomeui \
 		::devel/libnotify \
 		::security/cyrus-sasl2 \
-		:gmime->=2.4:mail/gmime24
+		:gmime->=2.4,<2.6:mail/gmime24
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

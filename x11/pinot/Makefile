@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/11 09:09:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.96
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 misc
 
@@ -41,7 +41,7 @@ BUILD_DEPENDS=	::devel/boost \
 # XXX catppt - catdvi
 LIB_DEPENDS=	::x11/gtk2mm \
 		::textproc/libxml++ \
-		:gmime->=2.4:mail/gmime24 \
+		:gmime->=2.4,<2.6:mail/gmime24 \
 		::net/curl \
 		::audio/taglib \
 		::databases/sqlite3 \
