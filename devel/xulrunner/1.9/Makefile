@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/25 21:39:20 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/12 17:58:51 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.2.8
-FFX_VERSION=		3.6.8
+VERSION=		1.9.2.9
+FFX_VERSION=		3.6.9
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
@@ -12,10 +12,10 @@ DISTFILES=		firefox-${FFX_VERSION}.source.tar.bz2
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
-SO_VERSION=		3.0
+SO_VERSION=		3.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in imgicon mozjs xpcom xul nullplugin unixprintplugin
+.for _lib in imgicon mozjs xpcom xul sqlite3 nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -35,13 +35,13 @@ MODULES+=		lang/python
 MODPY_RUNDEP=		No
 
 CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2 \
+			--disable-system-sqlite \
 			--disable-crashreporter \
 			--disable-ipc \
 			--disable-libnotify \
 			--disable-necko-wifi
-LIB_DEPENDS+=		:sqlite3->=3.6.10:databases/sqlite3
 WANTLIB-devel+=		gthread-2.0 gobject-2.0
-WANTLIB-main+=		sndio sqlite3.>=13.0
+WANTLIB-main+=		sndio
 
 MOB=			${WRKSRC}/dist/bin
 MOZ=			${PREFIX}/${DIRECTORY}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.8 2010/07/22 21:43:01 landry Exp $
+@comment $OpenBSD: PLIST-devel,v 1.9 2010/09/12 17:58:51 landry Exp $
 @option no-default-conflict
 @conflict xulrunner-devel->=1.9,<1.9.1
 %%jit%%
@@ -1657,6 +1657,7 @@ ${MOZILLA_PROJECT}/include/nsIContentSerializer.h
 ${MOZILLA_PROJECT}/include/nsIContentSink.h
 ${MOZILLA_PROJECT}/include/nsIContentSniffer.h
 ${MOZILLA_PROJECT}/include/nsIContentURIGrouper.h
+${MOZILLA_PROJECT}/include/nsIContentUtils.h
 ${MOZILLA_PROJECT}/include/nsIContentViewer.h
 ${MOZILLA_PROJECT}/include/nsIContentViewerContainer.h
 ${MOZILLA_PROJECT}/include/nsIContentViewerEdit.h
@@ -3005,6 +3006,7 @@ ${MOZILLA_PROJECT}/include/rdf.h
 ${MOZILLA_PROJECT}/include/rdfIDataSource.h
 ${MOZILLA_PROJECT}/include/rdfISerializer.h
 ${MOZILLA_PROJECT}/include/rdfITripleVisitor.h
+${MOZILLA_PROJECT}/include/sqlite3.h
 ${MOZILLA_PROJECT}/include/std_semaphore.h
 ${MOZILLA_PROJECT}/include/stopwatch.h
 ${MOZILLA_PROJECT}/include/string-template-def-char.h

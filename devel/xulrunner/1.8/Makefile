@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/11 14:55:56 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/12 17:58:51 landry Exp $
 
 VERSION=		1.8.1.19
 REVISION-main=		5
@@ -15,6 +15,7 @@ SHARED_LIBS+=		${_lib}	${SO_VERSION}
 .endfor
 
 CONFIGURE_ARGS+=	--with-system-png=${LOCALBASE} \
+			--enable-system-sqlite		\
 			--enable-default-toolkit=gtk2
 
 MOB=			${WRKSRC}/dist/bin

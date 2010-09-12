@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2010/07/11 14:55:56 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2010/09/12 17:58:51 landry Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -87,7 +87,6 @@ CONFIGURE_ARGS+=	--with-system-jpeg=${LOCALBASE}	\
 			--enable-svg			\
 			--enable-svg-renderer=cairo	\
 			--enable-system-cairo		\
-			--enable-system-sqlite		\
 			--enable-canvas			\
 			--enable-application=xulrunner	\
 			--enable-extensions=default,cookie,permissions
