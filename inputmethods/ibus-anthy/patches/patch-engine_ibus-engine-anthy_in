@@ -1,0 +1,10 @@
+$OpenBSD: patch-engine_ibus-engine-anthy_in,v 1.1.1.1 2010/09/12 11:50:13 fgsch Exp $
+--- engine/ibus-engine-anthy.in.orig	Tue Aug 17 05:52:38 2010
++++ engine/ibus-engine-anthy.in	Tue Aug 17 05:52:43 2010
+@@ -30,5 +30,5 @@ export PYTHONPATH=@pyexecdir@:$PYTHONPATH
+ export IBUS_PREFIX=@prefix@
+ export IBUS_ANTHY_PKGDATADIR=@datarootdir@/@PACKAGE@
+ export LIBEXECDIR=$libexecdir
+-exec python @datarootdir@/@PACKAGE@/engine/main.py $@
++exec @PYTHON@ @datarootdir@/@PACKAGE@/engine/main.py $@
+ 

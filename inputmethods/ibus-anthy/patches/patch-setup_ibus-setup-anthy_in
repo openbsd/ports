@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_ibus-setup-anthy_in,v 1.1.1.1 2010/09/12 11:50:13 fgsch Exp $
+--- setup/ibus-setup-anthy.in.orig	Tue Aug 17 05:52:16 2010
++++ setup/ibus-setup-anthy.in	Tue Aug 17 05:52:26 2010
+@@ -23,5 +23,5 @@
+ prefix=@prefix@
+ datarootdir=@datarootdir@
+ export IBUS_LOCALEDIR=@localedir@
+-exec python @prefix@/share/ibus-anthy/setup/main.py $@
++exec @PYTHON@ @prefix@/share/ibus-anthy/setup/main.py $@
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-engine_Makefile_in,v 1.1.1.1 2010/09/12 11:50:13 fgsch Exp $
+--- engine/Makefile.in.orig	Mon Aug 16 23:44:41 2010
++++ engine/Makefile.in	Mon Aug 16 23:44:55 2010
+@@ -790,7 +790,7 @@ uninstall-am: uninstall-anthyDATA uninstall-anthyLTLIB
+ 
+ 
+ anthy.py anthy_wrap.c: anthy.i
+-	$(SWIG) -python -I/usr/include -o anthy_wrap.c $(srcdir)/anthy.i
++	$(SWIG) -python ${ANTHY_CFLAGS} -o anthy_wrap.c $(srcdir)/anthy.i
+ 
+ anthy.xml: anthy.xml.in
+ 	( \
