@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_access_v4l2_c,v 1.2 2010/06/03 01:05:03 sthen Exp $
---- modules/access/v4l2.c.orig	Wed May  5 18:50:08 2010
-+++ modules/access/v4l2.c	Wed May  5 19:09:36 2010
+$OpenBSD: patch-modules_access_v4l2_c,v 1.3 2010/09/12 22:35:01 jakemsr Exp $
+--- modules/access/v4l2.c.orig	Sun Mar  7 10:38:01 2010
++++ modules/access/v4l2.c	Mon Aug 30 17:38:54 2010
 @@ -49,7 +49,13 @@
  #include <sys/ioctl.h>
  #include <sys/mman.h>
@@ -15,4 +15,215 @@ $OpenBSD: patch-modules_access_v4l2_c,v 1.2 2010/06/03 01:05:03 sthen Exp $
 +#endif
  
  #include <poll.h>
+ 
+@@ -1655,8 +1661,8 @@ static float GetMaxFrameRate( demux_t *p_demux, int i_
+                 float f_fps_max = -1;
+                 do
+                 {
+-                    float f_fps = (float)frmival.discrete.denominator
+-                                / (float)frmival.discrete.numerator;
++                    float f_fps = (float)frmival.un.discrete.denominator
++                                / (float)frmival.un.discrete.numerator;
+                     if( f_fps > f_fps_max ) f_fps_max = f_fps;
+                     frmival.index++;
+                 } while( v4l2_ioctl( i_fd, VIDIOC_ENUM_FRAMEINTERVALS,
+@@ -1665,10 +1671,10 @@ static float GetMaxFrameRate( demux_t *p_demux, int i_
+             }
+             case V4L2_FRMSIZE_TYPE_STEPWISE:
+             case V4L2_FRMIVAL_TYPE_CONTINUOUS:
+-                return __MAX( (float)frmival.stepwise.max.denominator
+-                            / (float)frmival.stepwise.max.numerator,
+-                              (float)frmival.stepwise.min.denominator
+-                            / (float)frmival.stepwise.min.numerator );
++                return __MAX( (float)frmival.un.stepwise.max.denominator
++                            / (float)frmival.un.stepwise.max.numerator,
++                              (float)frmival.un.stepwise.min.denominator
++                            / (float)frmival.un.stepwise.min.numerator );
+         }
+     }
+ #endif
+@@ -1697,21 +1703,21 @@ static float GetAbsoluteMaxFrameRate( demux_t *p_demux
+                     frmsize.index++;
+                     float f_fps = GetMaxFrameRate( p_demux, i_fd,
+                                                    i_pixel_format,
+-                                                   frmsize.discrete.width,
+-                                                   frmsize.discrete.height );
++                                                   frmsize.un.discrete.width,
++                                                   frmsize.un.discrete.height );
+                     if( f_fps > f_fps_max ) f_fps_max = f_fps;
+                 } while( v4l2_ioctl( i_fd, VIDIOC_ENUM_FRAMESIZES,
+                          &frmsize ) >= 0 );
+                 break;
+             case V4L2_FRMSIZE_TYPE_STEPWISE:
+             {
+-                uint32_t i_width = frmsize.stepwise.min_width;
+-                uint32_t i_height = frmsize.stepwise.min_height;
++                uint32_t i_width = frmsize.un.stepwise.min_width;
++                uint32_t i_height = frmsize.un.stepwise.min_height;
+                 for( ;
+-                     i_width <= frmsize.stepwise.max_width &&
+-                     i_height <= frmsize.stepwise.max_width;
+-                     i_width += frmsize.stepwise.step_width,
+-                     i_height += frmsize.stepwise.step_height )
++                     i_width <= frmsize.un.stepwise.max_width &&
++                     i_height <= frmsize.un.stepwise.max_width;
++                     i_width += frmsize.un.stepwise.step_width,
++                     i_height += frmsize.un.stepwise.step_height )
+                 {
+                     float f_fps = GetMaxFrameRate( p_demux, i_fd,
+                                                    i_pixel_format,
+@@ -1725,8 +1731,8 @@ static float GetAbsoluteMaxFrameRate( demux_t *p_demux
+                 msg_Err( p_demux, "GetAbsoluteMaxFrameRate implementation for V4L2_FRMSIZE_TYPE_CONTINUOUS isn't correct" );
+                  f_fps_max = GetMaxFrameRate( p_demux, i_fd,
+                                               i_pixel_format,
+-                                              frmsize.stepwise.max_width,
+-                                              frmsize.stepwise.max_height );
++                                              frmsize.un.stepwise.max_width,
++                                              frmsize.un.stepwise.max_height );
+                 break;
+         }
+     }
+@@ -1758,26 +1764,26 @@ static void GetMaxDimensions( demux_t *p_demux, int i_
+                     frmsize.index++;
+                     float f_fps = GetMaxFrameRate( p_demux, i_fd,
+                                                    i_pixel_format,
+-                                                   frmsize.discrete.width,
+-                                                   frmsize.discrete.height );
++                                                   frmsize.un.discrete.width,
++                                                   frmsize.un.discrete.height );
+                     if( f_fps >= f_fps_min &&
+-                        frmsize.discrete.width > *pi_width )
++                        frmsize.un.discrete.width > *pi_width )
+                     {
+-                        *pi_width = frmsize.discrete.width;
+-                        *pi_height = frmsize.discrete.height;
++                        *pi_width = frmsize.un.discrete.width;
++                        *pi_height = frmsize.un.discrete.height;
+                     }
+                 } while( v4l2_ioctl( i_fd, VIDIOC_ENUM_FRAMESIZES,
+                          &frmsize ) >= 0 );
+                 break;
+             case V4L2_FRMSIZE_TYPE_STEPWISE:
+             {
+-                uint32_t i_width = frmsize.stepwise.min_width;
+-                uint32_t i_height = frmsize.stepwise.min_height;
++                uint32_t i_width = frmsize.un.stepwise.min_width;
++                uint32_t i_height = frmsize.un.stepwise.min_height;
+                 for( ;
+-                     i_width <= frmsize.stepwise.max_width &&
+-                     i_height <= frmsize.stepwise.max_width;
+-                     i_width += frmsize.stepwise.step_width,
+-                     i_height += frmsize.stepwise.step_height )
++                     i_width <= frmsize.un.stepwise.max_width &&
++                     i_height <= frmsize.un.stepwise.max_width;
++                     i_width += frmsize.un.stepwise.step_width,
++                     i_height += frmsize.un.stepwise.step_height )
+                 {
+                     float f_fps = GetMaxFrameRate( p_demux, i_fd,
+                                                    i_pixel_format,
+@@ -1795,13 +1801,13 @@ static void GetMaxDimensions( demux_t *p_demux, int i_
+                 msg_Err( p_demux, "GetMaxDimension implementation for V4L2_FRMSIZE_TYPE_CONTINUOUS isn't correct" );
+                 float f_fps = GetMaxFrameRate( p_demux, i_fd,
+                                                i_pixel_format,
+-                                               frmsize.stepwise.max_width,
+-                                               frmsize.stepwise.max_height );
++                                               frmsize.un.stepwise.max_width,
++                                               frmsize.un.stepwise.max_height );
+                 if( f_fps >= f_fps_min &&
+-                    frmsize.stepwise.max_width > *pi_width )
++                    frmsize.un.stepwise.max_width > *pi_width )
+                 {
+-                    *pi_width = frmsize.stepwise.max_width;
+-                    *pi_height = frmsize.stepwise.max_height;
++                    *pi_width = frmsize.un.stepwise.max_width;
++                    *pi_height = frmsize.un.stepwise.max_height;
+                 }
+                 break;
+         }
+@@ -2212,27 +2218,27 @@ static int OpenVideoDev( vlc_object_t *p_obj, demux_sy
+                 do
+                 {
+                     msg_Dbg( p_obj, "    supported frame interval: %d/%d",
+-                             frmival.discrete.numerator,
+-                             frmival.discrete.denominator );
++                             frmival.un.discrete.numerator,
++                             frmival.un.discrete.denominator );
+                     frmival.index++;
+                 } while( v4l2_ioctl( i_fd, VIDIOC_ENUM_FRAMEINTERVALS, &frmival ) >= 0 );
+                 break;
+             case V4L2_FRMIVAL_TYPE_STEPWISE:
+                 msg_Dbg( p_obj, "    supported frame intervals: %d/%d to "
+                          "%d/%d using %d/%d increments",
+-                         frmival.stepwise.min.numerator,
+-                         frmival.stepwise.min.denominator,
+-                         frmival.stepwise.max.numerator,
+-                         frmival.stepwise.max.denominator,
+-                         frmival.stepwise.step.numerator,
+-                         frmival.stepwise.step.denominator );
++                         frmival.un.stepwise.min.numerator,
++                         frmival.un.stepwise.min.denominator,
++                         frmival.un.stepwise.max.numerator,
++                         frmival.un.stepwise.max.denominator,
++                         frmival.un.stepwise.step.numerator,
++                         frmival.un.stepwise.step.denominator );
+                 break;
+             case V4L2_FRMIVAL_TYPE_CONTINUOUS:
+                 msg_Dbg( p_obj, "    supported frame intervals: %d/%d to %d/%d",
+-                         frmival.stepwise.min.numerator,
+-                         frmival.stepwise.min.denominator,
+-                         frmival.stepwise.max.numerator,
+-                         frmival.stepwise.max.denominator );
++                         frmival.un.stepwise.min.numerator,
++                         frmival.un.stepwise.min.denominator,
++                         frmival.un.stepwise.max.numerator,
++                         frmival.un.stepwise.max.denominator );
+                 break;
+         }
+     }
+@@ -2681,22 +2687,22 @@ static bool ProbeVideoDev( vlc_object_t *p_obj, demux_
+                                 {
+                                     msg_Dbg( p_obj,
+                 "    device supports size %dx%d",
+-                frmsize.discrete.width, frmsize.discrete.height );
++                frmsize.un.discrete.width, frmsize.un.discrete.height );
+                                     frmsize.index++;
+                                 } while( v4l2_ioctl( i_fd, VIDIOC_ENUM_FRAMESIZES, &frmsize ) >= 0 );
+                                 break;
+                             case V4L2_FRMSIZE_TYPE_STEPWISE:
+                                 msg_Dbg( p_obj,
+                 "    device supports sizes %dx%d to %dx%d using %dx%d increments",
+-                frmsize.stepwise.min_width, frmsize.stepwise.min_height,
+-                frmsize.stepwise.max_width, frmsize.stepwise.max_height,
+-                frmsize.stepwise.step_width, frmsize.stepwise.step_height );
++                frmsize.un.stepwise.min_width, frmsize.un.stepwise.min_height,
++                frmsize.un.stepwise.max_width, frmsize.un.stepwise.max_height,
++                frmsize.un.stepwise.step_width, frmsize.un.stepwise.step_height );
+                                 break;
+                             case V4L2_FRMSIZE_TYPE_CONTINUOUS:
+                                 msg_Dbg( p_obj,
+                 "    device supports all sizes %dx%d to %dx%d",
+-                frmsize.stepwise.min_width, frmsize.stepwise.min_height,
+-                frmsize.stepwise.max_width, frmsize.stepwise.max_height );
++                frmsize.un.stepwise.min_width, frmsize.un.stepwise.min_height,
++                frmsize.un.stepwise.max_width, frmsize.un.stepwise.max_height );
+                                 break;
+                         }
+                     }
+@@ -3231,7 +3237,7 @@ static int Control( vlc_object_t *p_obj, demux_sys_t *
+ 
+     if( i_value >= queryctrl.minimum && i_value <= queryctrl.maximum )
+     {
+-        ext_control.value = i_value;
++        ext_control.un.value = i_value;
+         if( v4l2_ioctl( i_fd, VIDIOC_S_EXT_CTRLS, &ext_controls ) < 0 )
+         {
+             control.value = i_value;
+@@ -3246,7 +3252,7 @@ static int Control( vlc_object_t *p_obj, demux_sys_t *
+         else
+         {
+             i_ret = v4l2_ioctl( i_fd, VIDIOC_G_EXT_CTRLS, &ext_controls );
+-            control.value = ext_control.value;
++            control.value = ext_control.un.value;
+         }
+     }
  
