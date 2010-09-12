@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/12 20:29:24 ajacoutot Exp $
 
 COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
-GNOME_VERSION=	0.16
-
-REVISION=	0
+GNOME_VERSION=	0.17
 
 CATEGORIES=	security
 
@@ -47,6 +45,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libnotify \
 		--enable-pkinit \
 		--disable-network-manager
+
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/krb5-auth-dialog

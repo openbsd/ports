@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2010/06/30 00:15:03 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/09/12 20:29:24 ajacoutot Exp $
+lib/krb5-auth-dialog/plugins/libka-plugin-afs.so
 lib/krb5-auth-dialog/plugins/libka-plugin-dummy.so
