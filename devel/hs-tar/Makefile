@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/11 18:44:10 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/12 17:09:01 kili Exp $
 
 COMMENT =		tar bindings for Haskell
 
 DISTNAME =		tar-0.3.1.0
-CATEGORIES =		archivers devel
+CATEGORIES =		devel archivers
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
