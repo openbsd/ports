@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.830 2010/09/10 13:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.831 2010/09/12 17:09:21 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -162,6 +162,8 @@
      SUBDIR += hs-regex-posix
      SUBDIR += hs-stm
      SUBDIR += hs-stringtable-atom
+     SUBDIR += hs-tar
+     SUBDIR += hs-text
      SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += id-utils
