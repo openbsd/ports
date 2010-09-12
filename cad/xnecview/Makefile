@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/15 18:55:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/12 19:54:48 jasper Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
@@ -31,7 +31,6 @@ WANTLIB += pthread-stubs xcb z
 MODULES=		devel/gettext
 
 LIB_DEPENDS=    gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
-USE_GMAKE=yes
 
 CONFIGURE_STYLE=	imake
 
