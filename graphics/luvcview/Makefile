@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/17 16:52:05 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/12 22:31:05 jakemsr Exp $
 
 COMMENT=		V4L compatible video application
 
 DISTNAME=		luvcview-20070512
-PKGNAME=		${DISTNAME}p4
+REVISION=		5
 CATEGORIES=		graphics x11
 
 # GPLv2+
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE=	http://mxhaard.free.fr/
 MASTER_SITES=	${HOMEPAGE}/spca50x/Investigation/uvc/
 
-LIB_DEPENDS=	SDL:sdl-1.2.4p1|sdl->=1.2.5:devel/sdl
-WANTLIB=	c pthread
+LIB_DEPENDS=	:sdl->=1.2.5:devel/sdl
+WANTLIB=	SDL c pthread
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS+="-I${X11BASE}/include -I${LOCALBASE}/include"
