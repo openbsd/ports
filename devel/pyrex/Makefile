@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/12 18:47:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://distfiles.nl/ \
 		${HOMEPAGE}
 
-#USE_GMAKE=	Yes
 MODULES=	lang/python
 
 REGRESS_DEPENDS=:py-Numeric-*:math/py-Numeric
