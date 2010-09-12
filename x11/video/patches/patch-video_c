@@ -1,0 +1,64 @@
+$OpenBSD: patch-video_c,v 1.1 2010/09/12 22:41:45 jakemsr Exp $
+--- video.c.orig	Tue Aug 31 06:32:00 2010
++++ video.c	Tue Aug 31 06:31:39 2010
+@@ -710,19 +710,19 @@ dev_get_sizes(struct video *vid)
+ 	while (ioctl(d->fd, VIDIOC_ENUM_FRAMESIZES, &fsize) == 0) {
+ 		switch (fsize.type) {
+ 		case V4L2_FRMSIZE_TYPE_DISCRETE:
+-			sizes[nsizes].w = fsize.discrete.width;
+-			sizes[nsizes].h = fsize.discrete.height;
++			sizes[nsizes].w = fsize.un.discrete.width;
++			sizes[nsizes].h = fsize.un.discrete.height;
+ 			nsizes++;
+ 			break;
+ 		case V4L2_FRMSIZE_TYPE_CONTINUOUS:
+-			step_w = (((fsize.stepwise.max_width -
+-			    fsize.stepwise.min_width) / MAX_DSZS) + 15) & ~15;
+-			step_h = (((fsize.stepwise.max_height -
+-			    fsize.stepwise.min_height) / MAX_DSZS) + 15) & ~15;
+-			for (tmp_w = fsize.stepwise.min_width,
+-			    tmp_h = fsize.stepwise.min_height;
+-			    tmp_w <= fsize.stepwise.max_width &&
+-			    tmp_h <= fsize.stepwise.max_height;
++			step_w = (((fsize.un.stepwise.max_width -
++			    fsize.un.stepwise.min_width) / MAX_DSZS) + 15) & ~15;
++			step_h = (((fsize.un.stepwise.max_height -
++			    fsize.un.stepwise.min_height) / MAX_DSZS) + 15) & ~15;
++			for (tmp_w = fsize.un.stepwise.min_width,
++			    tmp_h = fsize.un.stepwise.min_height;
++			    tmp_w <= fsize.un.stepwise.max_width &&
++			    tmp_h <= fsize.un.stepwise.max_height;
+ 			    tmp_w += step_w, tmp_h += step_h) {
+ 				sizes[nsizes].w = tmp_w;
+ 				sizes[nsizes].h = tmp_h;
+@@ -731,18 +731,18 @@ dev_get_sizes(struct video *vid)
+ 			}
+ 			break;
+ 		case V4L2_FRMSIZE_TYPE_STEPWISE:
+-			step_w = (((fsize.stepwise.max_width -
+-			    fsize.stepwise.min_width) / MAX_DSZS) +
+-			    fsize.stepwise.step_width - 1) &
+-			    ~(fsize.stepwise.step_width - 1);
+-			step_h = (((fsize.stepwise.max_height -
+-			    fsize.stepwise.min_height) / MAX_DSZS) +
+-			    fsize.stepwise.step_height - 1) &
+-			    ~(fsize.stepwise.step_height - 1);
+-			for (tmp_w = fsize.stepwise.min_width,
+-			    tmp_h = fsize.stepwise.min_height;
+-			    tmp_w <= fsize.stepwise.max_width &&
+-			    tmp_h <= fsize.stepwise.max_height;
++			step_w = (((fsize.un.stepwise.max_width -
++			    fsize.un.stepwise.min_width) / MAX_DSZS) +
++			    fsize.un.stepwise.step_width - 1) &
++			    ~(fsize.un.stepwise.step_width - 1);
++			step_h = (((fsize.un.stepwise.max_height -
++			    fsize.un.stepwise.min_height) / MAX_DSZS) +
++			    fsize.un.stepwise.step_height - 1) &
++			    ~(fsize.un.stepwise.step_height - 1);
++			for (tmp_w = fsize.un.stepwise.min_width,
++			    tmp_h = fsize.un.stepwise.min_height;
++			    tmp_w <= fsize.un.stepwise.max_width &&
++			    tmp_h <= fsize.un.stepwise.max_height;
+ 			    tmp_w += step_w, tmp_h += step_h) {
+ 				sizes[nsizes].w = tmp_w;
+ 				sizes[nsizes].h = tmp_h;
