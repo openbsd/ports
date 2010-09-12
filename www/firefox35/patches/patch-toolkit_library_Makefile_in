@@ -1,7 +1,7 @@
-$OpenBSD: patch-toolkit_library_Makefile_in,v 1.1 2010/08/02 16:05:37 landry Exp $
---- toolkit/library/Makefile.in.orig	Tue Mar 16 10:57:18 2010
-+++ toolkit/library/Makefile.in	Sat Mar 27 01:54:28 2010
-@@ -282,6 +282,9 @@ ifdef MOZ_ENABLE_QT
+$OpenBSD: patch-toolkit_library_Makefile_in,v 1.2 2010/09/12 17:56:29 landry Exp $
+--- toolkit/library/Makefile.in.orig	Tue Aug 24 19:15:21 2010
++++ toolkit/library/Makefile.in	Wed Sep  8 22:51:00 2010
+@@ -283,6 +283,9 @@ ifdef MOZ_ENABLE_QT
  EXTRA_DSO_LDOPTS += $(MOZ_QT_LDFLAGS)
  endif
  

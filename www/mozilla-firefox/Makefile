@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.147 2010/09/06 12:59:50 eric Exp $
+# $OpenBSD: Makefile,v 1.148 2010/09/12 17:55:30 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
-MOZILLA_VERSION =	3.6.8
+MOZILLA_VERSION =	3.6.9
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	mozilla-firefox
 MOZILLA_CODENAME =	browser
 
-SO_VERSION =	22.0
+SO_VERSION =	22.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
-		xpcom xul nullplugin unixprintplugin
+		sqlite3 xpcom xul nullplugin unixprintplugin
 
-REVISION =	1
 CATEGORIES =	www
 
 # mozilla public license
@@ -37,21 +36,16 @@ NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
-CONFIGURE_ARGS +=	--enable-system-sqlite
-LIB_DEPENDS +=		:sqlite3->=3.6.16:databases/sqlite3
-WANTLIB +=		sqlite3.>=13.3
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
+# --enable-system-sqlite
+# no system sqlite : requires SECURE_DELETE
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 			greprefs icons modules plugins res searchplugins
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
-
-# remove file that confuses make update-patches
-pre-patch:
-	rm ${WRKSRC}/toolkit/mozapps/extensions/test/unit/*.orig
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/browserconfig.properties ${MOB}/LICENSE ${MOB}/blocklist.xml ${MOZ}

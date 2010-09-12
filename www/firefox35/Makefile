@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2010/08/30 23:50:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.42 2010/09/12 17:56:29 landry Exp $
 
 COMMENT =	Mozilla web browser
 
-MOZILLA_VERSION =	3.5.11
+MOZILLA_VERSION =	3.5.12
 MOZILLA_BRANCH =	1.9.1
 MOZILLA_PROJECT =	firefox35
 MOZILLA_CODENAME =	browser
@@ -13,7 +13,6 @@ SO_VERSION =	24.0
 MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
 		xpcom xul nullplugin unixprintplugin
 
-REVISION =	0
 CATEGORIES =	www
 
 FLAVORS =	debug
