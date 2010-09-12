@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_ibus-setup-skk_in,v 1.1.1.1 2010/09/12 11:47:22 fgsch Exp $
+--- setup/ibus-setup-skk.in.orig	Sun Aug 29 06:19:20 2010
++++ setup/ibus-setup-skk.in	Mon Sep  6 13:27:40 2010
+@@ -22,5 +22,6 @@
+ prefix=@prefix@
+ datarootdir=@datarootdir@
+ export IBUS_LOCALEDIR=@localedir@
++export IBUS_SKK_PKGDATADIR=@datarootdir@/@PACKAGE@
+ cd @prefix@/share/ibus-skk/setup/
+-exec python @prefix@/share/ibus-skk/setup/main.py $@
++exec @PYTHON@ @prefix@/share/ibus-skk/setup/main.py $@

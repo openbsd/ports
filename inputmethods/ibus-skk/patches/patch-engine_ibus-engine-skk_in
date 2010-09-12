@@ -1,0 +1,10 @@
+$OpenBSD: patch-engine_ibus-engine-skk_in,v 1.1.1.1 2010/09/12 11:47:22 fgsch Exp $
+--- engine/ibus-engine-skk.in.orig	Mon Sep  6 13:08:59 2010
++++ engine/ibus-engine-skk.in	Mon Sep  6 13:09:04 2010
+@@ -27,5 +27,5 @@ export PYTHONPATH=@pyexecdir@:$PYTHONPATH
+ export IBUS_PREFIX=@prefix@
+ export IBUS_SKK_PKGDATADIR=@datarootdir@/@PACKAGE@
+ export LIBEXECDIR=$libexecdir
+-exec python @datarootdir@/@PACKAGE@/engine/main.py $@
++exec @PYTHON@ @datarootdir@/@PACKAGE@/engine/main.py $@
+ 
