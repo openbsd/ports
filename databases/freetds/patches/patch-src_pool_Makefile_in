@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pool_Makefile_in,v 1.4 2009/10/11 16:33:36 ajacoutot Exp $
---- src/pool/Makefile.in.orig	Sun Oct 11 18:21:53 2009
-+++ src/pool/Makefile.in	Sun Oct 11 18:21:53 2009
-@@ -530,10 +530,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
+$OpenBSD: patch-src_pool_Makefile_in,v 1.5 2010/09/12 09:32:58 sthen Exp $
+--- src/pool/Makefile.in.orig	Wed May  7 23:59:21 2008
++++ src/pool/Makefile.in	Wed Sep  8 09:44:27 2010
+@@ -529,10 +529,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
  
  
  install-data-local:

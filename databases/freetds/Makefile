@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/01 09:17:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/12 09:32:58 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
-PATCHVER=	20090903
+PATCHVER=	20100728
 DISTNAME=	freetds-$V
 PKGNAME=	${DISTNAME}.1pre${PATCHVER}
-REVISION=	0
-PATCHFILES=	freetds-post82-${PATCHVER}.diff.fixed.gz:0
+PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
 
 SHARED_LIBS += ct                   4.0      # .4.0
 SHARED_LIBS += sybdb                6.0      # .5.0
@@ -16,6 +15,8 @@ SHARED_LIBS += tdsodbc              0.0      # .0.0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.freetds.org/
+# or, if they lunch out the dns registration again:
+# http://freetds.schemamania.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,6 +40,9 @@ LIB_DEPENDS=	::databases/iodbc,-main \
 
 FLAVORS=	msdblib
 FLAVOR?=
+
+# requires database server
+REGRESS_IS_INTERACTIVE=Yes
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
@@ -71,7 +75,6 @@ post-install:
 		${PREFIX}/share/examples/freetds/pool.conf-sample
 	@cd ${PREFIX}/lib && ln -s libtdsodbc.so.${LIBtdsodbc_VERSION} \
 		libtdsodbc.so
-	@mv ${PREFIX}/share/doc/freetds-$V.1.dev.20090930 \
-		${PREFIX}/share/doc/freetds
+	@mv ${PREFIX}/share/doc/freetds-* ${PREFIX}/share/doc/freetds
 
 .include <bsd.port.mk>
