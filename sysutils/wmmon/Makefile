@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/09/10 22:17:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=	WindowMaker dock app similar to xload
 
@@ -6,7 +6,7 @@ DISTNAME=	wmmon-1.0b2
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils x11 x11/windowmaker
 
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/27 21:53:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb
 
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 LIB_DEPENDS=	Xbae::x11/xbae
 

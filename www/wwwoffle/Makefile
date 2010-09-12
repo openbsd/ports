@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/20 16:55:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.tgz
 
 FLAVORS=		de fr es ru pl it

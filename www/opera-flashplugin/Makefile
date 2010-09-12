@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/23 10:55:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/12 16:49:09 jasper Exp $
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	flash support for opera
 DISTNAME=	install_flash_player_7_linux_r73
 PKGNAME=	opera-flashplugin-7.0r73
 CATEGORIES=	www
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/ \
+MASTER_SITES=	http://distfiles.nl/ \
 		http://openbsddistfiles.org/jolan/
 
 HOMEPAGE=	http://www.macromedia.com/

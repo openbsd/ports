@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2009/12/23 20:52:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=	word differences between text files
 
 DISTNAME=	wdiff-0.5g
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

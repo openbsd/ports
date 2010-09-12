@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/12 16:49:10 jasper Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
 REVISION=	2
 
 CATEGORIES=	x11
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

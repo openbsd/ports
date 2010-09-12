@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -22,7 +22,7 @@ WANTLIB=	Half Iex IlmThread Imath X11 Xau Xcomposite Xcursor \
 		pthread-stubs xcb
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
-			http://www.phil.uu.nl/~lievisse/distfiles/
+			http://distfiles.nl/
 
 MODULES=		devel/gettext
 

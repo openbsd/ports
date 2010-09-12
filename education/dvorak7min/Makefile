@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/24 17:47:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 WANTLIB=		c ncurses
 
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 MAKE_FLAGS=	CC="${CC}" PROF="${CFLAGS}"
 

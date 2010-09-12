@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/06/28 07:24:30 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT=		color ascii art library
 
@@ -17,7 +17,7 @@ WANTLIB=		c ncurses m z
 
 HOMEPAGE=		http://caca.zoy.org/
 MASTER_SITES=		${HOMEPAGE}/files/libcaca/ \
-			http://www.phil.uu.nl/~lievisse/distfiles/
+			http://distfiles.nl/
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::misc/zzuf

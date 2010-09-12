@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/27 19:45:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT= 		personal finance tracking and performance tool
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xpm Xt c m
 
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 
 USE_X11=	Yes
 USE_MOTIF=	Yes

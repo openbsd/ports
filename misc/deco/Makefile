@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/10 22:17:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/12 16:49:09 jasper Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
@@ -6,7 +6,7 @@ COMMENT=	Demos Commander, a free Norton Commander clone
 DISTNAME=	deco383
 PKGNAME=	deco-3.8.3p1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://distfiles.nl/
 EXTRACT_SUFX=	.tgz
 
 # GPL

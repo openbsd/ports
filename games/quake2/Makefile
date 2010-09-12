@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/01 00:29:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/12 16:49:09 jasper Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE GL SM X11 Xau Xdmcp Xext Xrandr Xrender Xxf86dga \
 			Xxf86vm c m pthread pthread-stubs sndio usbhid xcb
 
-MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		converters/libiconv
 LIB_DEPENDS=		SDL::devel/sdl

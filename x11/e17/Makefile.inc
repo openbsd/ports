@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.6 2010/01/11 14:58:35 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2010/09/12 16:49:10 jasper Exp $
 
 CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
 MASTER_SITES ?=		http://download.enlightenment.org/snapshots/2009-06-14/ \
-			http://www.phil.uu.nl/~lievisse/distfiles/e17/ \
+			http://distfiles.nl/ \
 			http://download.enlightenment.org/releases/ \
 			ftp://ftp.vantronix.com/pub/mirrors/dlg/ \
 			http://www.itee.uq.edu.au/~dlg/openbsd/

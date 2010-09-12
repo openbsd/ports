@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/10 22:29:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/12 16:49:10 jasper Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 # Untill upstream starts to version the font
-MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=		Yes

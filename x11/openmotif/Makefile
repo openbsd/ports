@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/08/31 21:04:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -17,7 +17,7 @@ SHARED_LIBS=		Mrm	4.1	\
 
 CATEGORIES=		x11
 #MASTER_SITES=		ftp://ftp.ics.com/openmotif/2.3/${VERSION}/
-MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/ \
+MASTER_SITES=		http://distfiles.nl/ \
 			ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/openmotif/
 DIST_SUBDIR=		openmotif
 

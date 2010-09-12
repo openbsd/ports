@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:40:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT =		fast C implementation of Markdown
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=		c
 
 # Stupid github.
-MASTER_SITES =		http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES =		http://distfiles.nl/
 WRKDIST = 		${WRKDIR}/Orc-discount-9dabdb8
 
 CONFIGURE_STYLE =	simple

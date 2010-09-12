@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/20 09:47:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/12 16:49:09 jasper Exp $
 
 COMMENT =	console client for pandora
 
@@ -10,7 +10,7 @@ CATEGORIES =	audio
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/html/00/17.html
-MASTER_SITES =	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES =	http://distfiles.nl/
 
 SHARED_ONLY =	Yes
 
