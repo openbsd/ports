@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/12/19 20:10:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/13 11:41:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/idn
 include/idn-free.h
@@ -15,6 +15,7 @@ lib/libidn.la
 lib/pkgconfig/
 lib/pkgconfig/libidn.pc
 @man man/man1/idn.1
+@man man/man3/idn_free.3
 @man man/man3/idna_strerror.3
 @man man/man3/idna_to_ascii_4i.3
 @man man/man3/idna_to_ascii_4z.3

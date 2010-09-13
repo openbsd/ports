@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/19 20:10:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/13 11:41:19 ajacoutot Exp $
 
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.11
-SHARED_LIBS=		idn 16.30	# .16.40
+DISTNAME=		libidn-1.19
+SHARED_LIBS=		idn 17.0	# .17.2
 
 CATEGORIES=		devel
 HOMEPAGE=		http://www.gnu.org/software/libidn/

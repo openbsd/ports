@@ -1,9 +1,9 @@
-$OpenBSD: patch-libidn_pc_in,v 1.2 2008/12/19 20:10:59 naddy Exp $
---- libidn.pc.in.orig	Thu Dec 18 18:04:43 2008
-+++ libidn.pc.in	Thu Dec 18 18:04:57 2008
-@@ -17,5 +17,5 @@ includedir=@includedir@
- Name: Libidn
+$OpenBSD: patch-libidn_pc_in,v 1.3 2010/09/13 11:41:19 ajacoutot Exp $
+--- libidn.pc.in.orig	Mon Apr 12 20:50:09 2010
++++ libidn.pc.in	Sat Sep 11 09:02:46 2010
+@@ -18,5 +18,5 @@ Name: Libidn
  Description: IETF stringprep, nameprep, punycode, IDNA text processing.
+ URL: http://www.gnu.org/software/libidn/
  Version: @VERSION@
 -Libs: -L${libdir} -lidn
 +Libs: -L${libdir} -lidn -lintl -liconv
