@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/01 07:12:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/13 13:26:49 jasper Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -40,6 +40,8 @@ RUN_DEPENDS = 		::devel/desktop-file-utils
 
 CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+
+FAKE_FLAGS+=		localedir="${PREFIX}/share/locale"
 
 USE_X11 =		Yes
 
