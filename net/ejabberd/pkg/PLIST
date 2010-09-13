@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/11 10:07:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/13 17:17:06 sebastia Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -31,7 +31,6 @@ lib/ejabberd/ebin/ejabberd_check.beam
 lib/ejabberd/ebin/ejabberd_commands.beam
 lib/ejabberd/ebin/ejabberd_config.beam
 lib/ejabberd/ebin/ejabberd_ctl.beam
-lib/ejabberd/ebin/ejabberd_debug.beam
 lib/ejabberd/ebin/ejabberd_frontend_socket.beam
 lib/ejabberd/ebin/ejabberd_hooks.beam
 lib/ejabberd/ebin/ejabberd_http.beam
@@ -65,6 +64,7 @@ lib/ejabberd/ebin/ejabberd_zlib.beam
 lib/ejabberd/ebin/ejd2odbc.beam
 lib/ejabberd/ebin/eldap.beam
 lib/ejabberd/ebin/eldap_filter.beam
+lib/ejabberd/ebin/eldap_filter_yecc.beam
 lib/ejabberd/ebin/eldap_pool.beam
 lib/ejabberd/ebin/eldap_utils.beam
 lib/ejabberd/ebin/extauth.beam
@@ -118,6 +118,7 @@ lib/ejabberd/ebin/mod_time.beam
 lib/ejabberd/ebin/mod_vcard.beam
 lib/ejabberd/ebin/mod_vcard_ldap.beam
 lib/ejabberd/ebin/mod_vcard_odbc.beam
+lib/ejabberd/ebin/mod_vcard_xupdate.beam
 lib/ejabberd/ebin/mod_version.beam
 lib/ejabberd/ebin/node_buddy.beam
 lib/ejabberd/ebin/node_club.beam
@@ -182,6 +183,7 @@ lib/ejabberd/priv/
 lib/ejabberd/priv/bin/
 lib/ejabberd/priv/bin/captcha.sh
 lib/ejabberd/priv/lib/
+lib/ejabberd/priv/lib/sha_drv.so
 lib/ejabberd/priv/msgs/
 lib/ejabberd/priv/msgs/ca.msg
 lib/ejabberd/priv/msgs/cs.msg
@@ -208,14 +210,15 @@ lib/ejabberd/priv/msgs/vi.msg
 lib/ejabberd/priv/msgs/wa.msg
 lib/ejabberd/priv/msgs/zh.msg
 sbin/ejabberdctl
-@comment sbin/ejabberdctl.bak
 share/doc/ejabberd/
+share/doc/ejabberd/COPYING
 share/doc/ejabberd/README.OpenBSD
 @comment share/doc/ejabberd/api/
 share/doc/ejabberd/dev.html
 share/doc/ejabberd/discorus.png
 share/doc/ejabberd/features.html
 share/doc/ejabberd/guide.html
+share/doc/ejabberd/guide.pdf
 share/doc/ejabberd/logo.png
 share/doc/ejabberd/webadmmain.png
 share/doc/ejabberd/webadmmainru.png
@@ -224,7 +227,6 @@ share/examples/ejabberd/
 @sample ${SYSCONFDIR}/ejabberd/
 share/examples/ejabberd/ejabberd.cfg
 @sample ${SYSCONFDIR}/ejabberd/ejabberd.cfg
-@comment share/examples/ejabberd/ejabberd.cfg.bak
 share/examples/ejabberd/ejabberdctl.cfg
 @sample ${SYSCONFDIR}/ejabberd/ejabberdctl.cfg
 share/examples/ejabberd/extauth/
