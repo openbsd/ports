@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/11 14:46:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/13 07:24:23 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-1.8
+DISTNAME=	feh-1.9
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -21,6 +21,9 @@ WANTLIB=	Imlib2 X11 Xinerama c m png
 MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	giblib.>=1::devel/giblib
+
+# needed for jpegtran on NO_SHARED_LIBS archs
+RUN_DEPENDS=	::graphics/jpeg
 
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng \

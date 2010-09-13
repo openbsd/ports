@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_imlib_c,v 1.1 2010/07/11 14:46:13 dcoppa Exp $
---- src/imlib.c.orig	Fri Jun 25 17:13:11 2010
-+++ src/imlib.c	Wed Jul  7 12:12:42 2010
+$OpenBSD: patch-src_imlib_c,v 1.2 2010/09/13 07:24:24 dcoppa Exp $
+--- src/imlib.c.orig	Fri Sep 10 16:00:01 2010
++++ src/imlib.c	Fri Sep 10 16:03:36 2010
 @@ -435,6 +435,7 @@ char *feh_http_load_image(char *url)
  		close(sockno);
  		fclose(fp);
@@ -19,16 +19,16 @@ $OpenBSD: patch-src_imlib_c,v 1.1 2010/07/11 14:46:13 dcoppa Exp $
 -				quiet = estrdup("-q");
 -
 -			execlp("wget", "wget", "--cache=off", "-O", tmpname, url, quiet, NULL);
--			eprintf("url: exec failed: wget:");
-+			if (!opt.verbose) {
-+				if ((fd = open("/dev/null", O_WRONLY)) != -1) {
+-			eprintf("url: Is 'wget' installed? Failed to exec wget:");
++				if (!opt.verbose) {
++					if ((fd = open("/dev/null", O_WRONLY)) != -1) {
 +					dup2(fd, fileno(stdout));
 +					dup2(fd, fileno(stderr));
 +				}
 +				if (fd > 2) close(fd);
 +			}
 +			execlp("ftp", "ftp", "-o", tmpname, url, (char *)NULL);
-+			eprintf("url: exec failed: ftp:");
++			eprintf("url: Is 'ftp' installed? Failed to exec ftp:");
  		} else {
  			waitpid(pid, &status, 0);
  
@@ -45,5 +45,5 @@ $OpenBSD: patch-src_imlib_c,v 1.1 2010/07/11 14:46:13 dcoppa Exp $
 -				rotate_str, "-outfile", file_str, file_str, NULL);
 +				rotate_str, "-outfile", file_str, file_str, (char *)NULL);
  
- 		eprintf("lossless rotate: exec failed: jpegtran:");
+ 		eprintf("lossless rotate: Is 'jpegtran' installed? Failed to exec:");
  	} else {
