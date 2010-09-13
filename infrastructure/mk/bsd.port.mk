@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1031 2010/09/09 15:06:42 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1032 2010/09/13 11:04:31 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -499,6 +499,7 @@ BASE_PKGPATH := ${PKGPATH}
 _FLAVOR_EXT2 :=
 BUILD_PKGPATH := ${PKGPATH}
 _PKG_ARGS =
+_README_DIR = ${PREFIX}/share/doc/pkg-readmes/
 
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
@@ -2451,6 +2452,19 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
 .endfor
+.if ${MULTI_PACKAGES} == "-"
+	@if test -e ${PKGDIR}/README; then \
+		${INSTALL_DATA_DIR} ${WRKINST}${_README_DIR}; \
+		${SUDO} ${SUBST_CMD} -c ${PKGDIR}/README ${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
+	fi
+.else
+.  for _s in ${MULTI_PACKAGES}
+	@if test -e ${PKGDIR}/README-${_s}; then \
+		${INSTALL_DATA_DIR} ${WRKINST}${_README_DIR}; \
+		${SUDO} ${SUBST_CMD} -c ${PKGDIR}/README-${_s} ${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
+	fi
+.  endfor
+.endif
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 .if empty(PLIST_DB)
