@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/09 07:54:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/13 07:10:47 jasper Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.4.0
@@ -29,11 +29,15 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gerbv/}
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=		::shells/bash
 LIB_DEPENDS=		::x11/gtk+2
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 USE_X11=		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE=	gnu
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/icon-theme-installer
 
 .include <bsd.port.mk>

@@ -1,15 +1,24 @@
-$OpenBSD: patch-icon-theme-installer,v 1.1 2010/09/09 07:50:32 jasper Exp $
---- icon-theme-installer.orig	Thu Sep  9 09:39:28 2010
-+++ icon-theme-installer	Thu Sep  9 09:39:50 2010
-@@ -108,9 +108,11 @@ if test ! -x `echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d'
+$OpenBSD: patch-icon-theme-installer,v 1.2 2010/09/13 07:10:47 jasper Exp $
+--- icon-theme-installer.orig	Mon Sep 13 09:04:42 2010
++++ icon-theme-installer	Mon Sep 13 09:05:25 2010
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!${LOCALBASE}/bin/bash
+ 
+ # icon-theme-installer
+ # Copyright (C) 2006 Novell, Inc.
+@@ -103,12 +103,12 @@ if test -z "$INSTALL_BASE_DIR"; then
  	exit 1
  fi
  
-+if false; then #stupid crap
- if test ! -x `echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '`; then
+-if test ! -x `echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '`; then
++if ! which $(echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '); then
+ 	echo "Cannot find '$MKINSTALLDIRS_EXEC'; You probably want to pass -m \$(mkinstalldirs)"
+ 	exit 1
+ fi
+ 
+-if test ! -x `echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '`; then
++if ! which $(echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '); then
  	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
  	exit 1
-+fi
  fi
- 
- if test -z "$SRC_DIR"; then
