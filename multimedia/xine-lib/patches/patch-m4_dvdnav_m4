@@ -1,13 +1,38 @@
-$OpenBSD: patch-m4_dvdnav_m4,v 1.1 2009/07/30 19:12:44 jakemsr Exp $
---- m4/dvdnav.m4.orig	Thu Apr 17 09:54:27 2008
-+++ m4/dvdnav.m4	Mon Jul 13 17:16:35 2009
-@@ -84,7 +84,8 @@ dnl checks the results of dvdnav-config to some extent
+$OpenBSD: patch-m4_dvdnav_m4,v 1.2 2010/09/13 20:12:16 sthen Exp $
+--- m4/dvdnav.m4.orig	Wed Mar 10 15:46:05 2010
++++ m4/dvdnav.m4	Sun Jul 25 15:33:46 2010
+@@ -84,6 +84,7 @@ dnl checks the results of dvdnav-config to some extent
  dnl
        rm -f conf.dvdnavtest
        AC_RUN_IFELSE([AC_LANG_SOURCE([[
--#include <dvdnav.h>
 +#include <stdint.h>
-+#include <dvdnav/dvdnav.h>
+ #include <dvdnav/dvdnav.h>
  #include <stdio.h>
  #include <stdlib.h>
- #include <string.h>
+@@ -129,6 +130,7 @@ main ()
+ ]])],[],[no_dvdnav=yes],[no_dvdnav=cc])
+        if test "x$no_dvdnav" = xcc; then
+          AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <stdint.h>
+ #include <dvdnav/dvdnav.h>
+ #include <stdio.h>
+ ]], [[ return 0; ]])],[no_dvdnav=''],[no_dvdnav=yes])
+@@ -141,7 +143,9 @@ main ()
+        AC_MSG_RESULT(yes)
+        ifelse([$2], , :, [$2])
+        dnl nav_*.h seem to have been moved from dvdnav at some point?
+-       AC_CHECK_HEADERS([dvdread/nav_types.h])
++       AC_CHECK_HEADERS([dvdread/nav_types.h],,,
++[#include <stdint.h>
++])
+     else
+       AC_MSG_RESULT(no)
+       if test "$DVDNAV_CONFIG" = "no" ; then
+@@ -157,6 +161,7 @@ main ()
+           CFLAGS="$CFLAGS $DVDNAV_CFLAGS"
+           LIBS="$LIBS $DVDNAV_LIBS"
+           AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <stdint.h>
+ #include <dvdnav/dvdnav.h>
+ #include <stdio.h>
+ ]], [[ return 0; ]])],

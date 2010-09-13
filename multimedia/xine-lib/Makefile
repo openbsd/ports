@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.64 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2010/09/13 20:12:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-V=		1.1.18.1
-DISTNAME=	xine-lib-${V}
-REVISION=	2
+DISTNAME=	xine-lib-1.1.19
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	xine	27.0
+SHARED_LIBS=	xine	28.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -22,31 +20,35 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	GL GLU X11 Xau Xdmcp Xext Xinerama Xv \
-		XvMCW c dvdread expat faac fontconfig freetype gsm jpeg \
-		lcms m mp3lame orc-0.4 pthread-stubs pthread \
-		schroedinger-1.0 sndio usbhid x264 xcb-shape xcb-shm \
-		xcb-xv xcb z
+WANTLIB=	FLAC.>=5 GL GLU SDL.>=3 X11 Xau Xdmcp Xext Xinerama Xv \
+		XvMCW a52 avcodec.>=7 avutil.>=6 c cdio dca dvdnav.>=6 \
+		dvdread expat faac faad.>=2 fontconfig freetype gsm iso9660 \
+		jpeg lcms m mad.>=2 mpcdec mng.>=3 mp3lame ogg.>=5 orc-0.4 \
+		postproc.>=7 pthread-stubs pthread schroedinger-1.0 sndio \
+		speex.>=3 theora.>=1 usbhid vcdinfo vorbis.>=4 vorbisenc.>=3 \
+		wavpack x264 xcb-shape xcb-shm xcb-xv xcb z
 
-XINEAPI_REV=	1.28
+XINEAPI_REV=	1.29
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	FLAC.>=5::audio/flac \
-		SDL.>=3::devel/sdl \
-		a52::audio/liba52 \
-		avcodec.>=7,avutil.>=6,postproc.>=7::graphics/ffmpeg \
-		dvdnav.>=6::multimedia/libdvdnav \
-		faad.>=2::audio/faad \
-		mad.>=2::audio/libmad \
-		mng.>=3::graphics/libmng \
-		ogg.>=5::audio/libogg \
-		vorbis.>=4,vorbisenc.>=3::audio/libvorbis \
-		speex.>=3::audio/speex \
-		theora.>=1::multimedia/libtheora \
-		wavpack::audio/wavpack \
-		dca::audio/libdca \
-		mpcdec::audio/libmpcdec
+LIB_DEPENDS=	::audio/faad \
+		::audio/flac \
+		::audio/liba52 \
+		::audio/libcdio \
+		::audio/libdca \
+		::audio/libmad \
+		::audio/libmpcdec \
+		::audio/libogg \
+		::audio/libvorbis \
+		::audio/speex \
+		::audio/wavpack \
+		::devel/sdl \
+		::multimedia/libdvdnav \
+		::multimedia/libtheora \
+		::graphics/ffmpeg \
+		::graphics/libmng \
+		::graphics/vcdimager
 
 .if ${MACHINE_ARCH} == "i386"
 MAKE_FLAGS+=	TOMSMOCOMP_LINKS=
@@ -74,7 +76,6 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--disable-real-codecs \
 		--disable-samba \
 		--disable-sunaudio \
-		--disable-vcd \
 		--disable-vidix \
 		--disable-w32dll \
 		--with-external-a52dec \

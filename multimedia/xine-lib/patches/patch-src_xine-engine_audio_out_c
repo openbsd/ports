@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.11 2010/03/21 01:41:15 sthen Exp $
---- src/xine-engine/audio_out.c.orig	Tue Feb 23 16:59:05 2010
-+++ src/xine-engine/audio_out.c	Tue Feb 23 19:29:39 2010
+$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.12 2010/09/13 20:12:16 sthen Exp $
+--- src/xine-engine/audio_out.c.orig	Wed Jul 21 13:43:52 2010
++++ src/xine-engine/audio_out.c	Sun Jul 25 14:37:08 2010
 @@ -1089,7 +1089,7 @@ static void *ao_loop (void *this_gen) {
                                  in_buf->format.rate,
                                  in_buf->format.mode) == 0 ) {
@@ -46,13 +46,3 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.11 2010/03/21 01:41:15 sthen Exp
          return 0;
        }
      } else {
-@@ -2284,7 +2284,9 @@ xine_audio_port_t *_x_ao_new_port (xine_t *xine, ao_dr
-     this->audio_loop_running = 1;
- 
-     pthread_attr_init(&pth_attrs);
-+#if !defined(__OpenBSD__)
-     pthread_attr_setscope(&pth_attrs, PTHREAD_SCOPE_SYSTEM);
-+#endif
- 
-     this->audio_thread_created = 1;
-     if ((err = pthread_create (&this->audio_thread,

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.6 2010/03/21 01:41:15 sthen Exp $
---- configure.ac.orig	Sat Mar  6 14:31:25 2010
-+++ configure.ac	Fri Mar 12 19:26:43 2010
-@@ -564,9 +564,9 @@ t q
+$OpenBSD: patch-configure_ac,v 1.7 2010/09/13 20:12:16 sthen Exp $
+--- configure.ac.orig	Sun Jul 25 10:37:30 2010
++++ configure.ac	Wed Aug 25 11:21:06 2010
+@@ -565,9 +565,9 @@ t q
  b
  :q
  q"
@@ -13,16 +13,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2010/03/21 01:41:15 sthen Exp $
  AC_DEFINE_UNQUOTED([LIBXV_SO],  "${x_lib_location:-libXv.so}",  [The soname of libXv, needed for dlopen()])
  
  
-@@ -698,7 +698,7 @@ dnl ----------------------------------------------
- AC_ARG_ENABLE([libv4l],
- 	AS_HELP_STRING([--disable-libv4l], [do not build with libv4l support]))
- 
--if test "x$have_v4l2" = xyes; then
-+if test "x$have_v4l2" = xyes && test "x$enable_libv4l" != xno; then
-   have_libv4l=no
-   PKG_CHECK_MODULES([V4L2], [libv4l2],
- 	[have_libv4l=yes
-@@ -1308,7 +1308,7 @@ if test "x$enable_a52dec" = "xno"; then
+@@ -1309,7 +1309,7 @@ if test "x$enable_a52dec" = "xno"; then
    AC_MSG_RESULT([a52dec support disabled])
  elif test "x$external_a52dec" = "xyes"; then
    have_a52="yes"
@@ -31,7 +22,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2010/03/21 01:41:15 sthen Exp $
  [
    #ifdef HAVE_SYS_TYPES_H
    # include <sys/types.h>
-@@ -1401,9 +1401,10 @@ if test "x$with_mng" = "xyes"; then
+@@ -1402,9 +1402,10 @@ if test "x$with_mng" = "xyes"; then
    AC_CHECK_LIB(mng, mng_initialize,
  	[ AC_CHECK_HEADER(libmng.h,
  		[ have_libmng=yes
@@ -44,13 +35,12 @@ $OpenBSD: patch-configure_ac,v 1.6 2010/03/21 01:41:15 sthen Exp $
    AC_SUBST(MNG_LIBS)
  else
    have_libmng=no
-@@ -2909,6 +2910,9 @@ if test "x$no_gnome_vfs" = "xno"; then
- fi
- if test "x$have_v4l" = "xyes"; then
-   echo "   - v4l"
-+fi
-+if test "x$have_v4l2" = "xyes"; then
-+  echo "   - v4l2"
- fi
- if test "x$have_libsmbclient" = "xyes"; then
-   echo "   - smbclient"
+@@ -2708,6 +2709,8 @@ CC_CHECK_CFLAGS_APPEND([-Wformat=2 -Wformat],
+   [CC_CHECK_CFLAGS_APPEND([-Wno-format-zero-length])
+    break;
+   ])
++
++CC_CHECK_CFLAGS_APPEND([-Wformat-security])
+ 
+ dnl check for strict aliasing problem, get the highest between =2 and
+ dnl normal.

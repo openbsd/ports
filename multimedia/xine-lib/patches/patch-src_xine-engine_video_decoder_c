@@ -1,26 +1,13 @@
-$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.7 2010/04/20 11:32:14 sthen Exp $
---- src/xine-engine/video_decoder.c.orig	Tue Feb 23 17:27:15 2010
-+++ src/xine-engine/video_decoder.c	Sun Apr 18 13:01:34 2010
-@@ -486,7 +486,9 @@ int _x_video_decoder_init (xine_stream_t *stream) {
-   } else {
- 
-     pthread_attr_t       pth_attrs;
-+#if !defined(__OpenBSD__)
-     struct sched_param   pth_params;
-+#endif
-     int		       err, num_buffers;
-     /* The fifo size is based on dvd playback where buffers are filled
-      * with 2k of data. With 500 buffers and a typical video data rate
-@@ -515,10 +517,12 @@ int _x_video_decoder_init (xine_stream_t *stream) {
-     stream->spu_track_map_entries = 0;
- 
+$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.8 2010/09/13 20:12:16 sthen Exp $
+--- src/xine-engine/video_decoder.c.orig	Wed Jul 21 13:43:52 2010
++++ src/xine-engine/video_decoder.c	Tue Jul 27 16:54:58 2010
+@@ -523,7 +523,9 @@ int _x_video_decoder_init (xine_stream_t *stream) {
      pthread_attr_init(&pth_attrs);
-+#if !defined(__OpenBSD__)
+ #ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
      pthread_attr_getschedparam(&pth_attrs, &pth_params);
++#ifndef __OpenBSD__
      pth_params.sched_priority = sched_get_priority_min(SCHED_OTHER);
++#endif
      pthread_attr_setschedparam(&pth_attrs, &pth_params);
      pthread_attr_setscope(&pth_attrs, PTHREAD_SCOPE_SYSTEM);
-+#endif
- 
-     stream->video_thread_created = 1;
-     if ((err = pthread_create (&stream->video_thread,
+ #endif
