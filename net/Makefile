@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.649 2010/09/13 16:51:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.650 2010/09/13 19:47:03 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -187,6 +187,7 @@
      SUBDIR += mcabber
      SUBDIR += meanwhile
      SUBDIR += microblog-purple
+     SUBDIR += minbif
      SUBDIR += mirmon
      SUBDIR += mirror
      SUBDIR += mldonkey
