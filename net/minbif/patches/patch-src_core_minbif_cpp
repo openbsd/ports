@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_core_minbif_cpp,v 1.1.1.1 2010/09/13 19:44:40 landry Exp $
+--- src/core/minbif.cpp.orig	Fri Jun 11 22:10:23 2010
++++ src/core/minbif.cpp	Fri Jun 11 22:10:54 2010
+@@ -22,6 +22,9 @@
+ #include <fstream>
+ #include <cstring>
+ #include <sys/resource.h>
++#include <sys/types.h>
++#include <unistd.h>
++
+ #include <purple.h>
+ #include <getopt.h>
+ 
