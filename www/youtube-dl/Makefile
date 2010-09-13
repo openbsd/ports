@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/13 19:02:49 sthen Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =	http://bitbucket.org/rg3/youtube-dl/get/
+MASTER_SITES =	http://spacehopper.org/mirrors/
+#MASTER_SITES =	http://bitbucket.org/rg3/youtube-dl/get/
 
 MODULES =	lang/python
 
