@@ -1,4 +1,4 @@
-# $OpenBSD: Recorder.pm,v 1.1 2010/08/20 15:29:41 espie Exp $
+# $OpenBSD: Recorder.pm,v 1.2 2010/09/13 14:38:05 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -118,7 +118,7 @@ sub dump
 sub retrieve
 {
 	my ($self, $state, $filename) = @_;
-	open(my $fh, '<', $filename) or 
+	open(my $fh, '<', $filename) or
 	    $state->fatal("Can't read #1: #2", $filename, $!);
 	my $_;
 	while (<$fh>) {
@@ -127,9 +127,11 @@ sub retrieve
 			my ($binary, $libs) = ($1, $2);
 			if ($binary =~ m/^(.*)\(.*\)$/) {
 				$binary = $1;
+				my @path = split(':', $2);
+				$self->{$binary}{rpath} = \@path;
 			}
 			my @libs = split(/,/, $libs);
-			$self->{$binary}= \@libs;
+			$self->{$binary}{libs}= \@libs;
 		} else {
 			$state->errsay("Can't parse #1", $_);
 		}
