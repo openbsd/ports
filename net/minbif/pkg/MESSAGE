@@ -5,7 +5,7 @@ Then, either start it in daemon fork mode (will fork for every client):
 
 Or start it through inetd, adding a line like:
 
-127.0.0.1:6667    stream  tcp     nowait _minbif ${TRUEPREFIX}/bin/minbif minbif /etc/minbif/minbif.conf
+127.0.0.1:6667    stream  tcp     nowait _minbif ${TRUEPREFIX}/bin/minbif minbif ${SYSCONFDIR}/minbif/minbif.conf
 
 to your /etc/inetd.conf and restart inetd with
 
