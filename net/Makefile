@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.648 2010/09/08 08:26:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.649 2010/09/13 16:51:09 sebastia Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -474,6 +474,7 @@
      SUBDIR += snort,prelude
      SUBDIR += socat
      SUBDIR += softflowd
+     SUBDIR += spectrum
      SUBDIR += spectrum-tools
      SUBDIR += ssldump
      SUBDIR += sslsniffer

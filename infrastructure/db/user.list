@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.139 2010/07/08 16:11:55 pea Exp $
+$OpenBSD: user.list,v 1.140 2010/09/13 16:51:09 sebastia Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -162,3 +162,4 @@ id  user		group		port options
 651 _mirmon		_mirmon		net/mirmon
 652 _collectd		_collectd	sysutils/collectd
 653 _pgbouncer		_pgbouncer	databases/pgbouncer
+654 _spectrum		_spectrum	net/spectrum
