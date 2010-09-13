@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/13 07:24:31 jasper Exp $
 
 COMMENT=		avant window navigator
 
@@ -59,6 +59,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-vala
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil"
+
+FAKE_FLAGS+=		itlocaledir=${PREFIX}/share/locale/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/awn-applet-activation/main.c \
