@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/06 18:45:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/13 17:31:02 sebastia Exp $
 
 COMMENT =	distributed, document-oriented database
 
-COUCH_VER =	0.10.1
+COUCH_VER =	0.11.0
 DISTNAME =	apache-couchdb-${COUCH_VER}
 CATEGORIES =	databases
 
@@ -16,16 +16,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c crypto iconv intl pthread ssl z
+WANTLIB +=	c crypto iconv intl pthread ssl z
+WANTLIB +=	icudata icui18n icuuc js curl idn
 
 MASTER_SITES =	${MASTER_SITE_APACHE:=couchdb/${COUCH_VER}/}
 
 BUILD_DEPENDS =	::lang/erlang
 RUN_DEPENDS =	::lang/erlang
-LIB_DEPENDS =	icudata,icui18n,icuuc::textproc/icu4c \
-		js::lang/spidermonkey \
-		curl::net/curl \
-		idn::devel/libidn
+LIB_DEPENDS =	::textproc/icu4c \
+		::lang/spidermonkey \
+		::net/curl \
+		::devel/libidn
 
 MAKE_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		CFLAGS="-I${LOCALBASE}/include/nspr" \

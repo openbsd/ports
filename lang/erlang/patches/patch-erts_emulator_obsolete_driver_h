@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_emulator_obsolete_driver_h,v 1.1 2006/04/02 16:52:04 steven Exp $
---- erts/emulator/obsolete/driver.h.orig	Sun Apr  2 08:39:28 2006
-+++ erts/emulator/obsolete/driver.h	Sun Apr  2 08:39:59 2006
-@@ -67,10 +67,10 @@
+$OpenBSD: patch-erts_emulator_obsolete_driver_h,v 1.2 2010/09/13 17:31:03 sebastia Exp $
+--- erts/emulator/obsolete/driver.h.orig	Thu Mar 12 13:16:23 2009
++++ erts/emulator/obsolete/driver.h	Wed Dec 23 17:02:06 2009
+@@ -68,10 +68,10 @@
  #  define DRIVER_INIT(DRIVER_NAME)  driver_init
  #endif
  

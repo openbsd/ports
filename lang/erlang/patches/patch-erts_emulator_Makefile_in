@@ -1,37 +1,26 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.7 2008/02/14 22:44:36 sthen Exp $
---- erts/emulator/Makefile.in.orig	Tue Feb  5 14:37:00 2008
-+++ erts/emulator/Makefile.in	Thu Feb  7 16:21:40 2008
-@@ -147,7 +147,7 @@ darwinCFLAGS=-DDARWIN
- noopsysCFLAGS=
- OPSYSCFLAGS=$($(OPSYS)CFLAGS)
- ARCH=@ARCH@
--ultrasparcCFLAGS=-Wa,-xarch=v8plusa
-+ultrasparcCFLAGS=
- ARCHCFLAGS=$($(ARCH)CFLAGS)
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.8 2010/09/13 17:31:03 sebastia Exp $
+--- erts/emulator/Makefile.in.orig	Tue Mar 16 11:51:29 2010
++++ erts/emulator/Makefile.in	Tue Mar 16 11:54:42 2010
+@@ -209,13 +209,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
+ NO_INLINE_FUNCTIONS=true
+ endif
  
- ifdef HIPE_ENABLED
-@@ -196,12 +196,12 @@ endif
+-ifneq ($(filter tile-%,$(TARGET)), )
+-# -O2 generally produces faster for tile-cc, because the code is smaller.
+-# Since tile-cc looks like gcc, we need to override the normal gcc -O3 setting.
+ OPT_LEVEL = -O2
+-else
+-OPT_LEVEL = -O3
+-endif
  
- ifeq ($(CC), gcc)
+ ifeq ($(GCC),yes)
  ifeq ($(NO_INLINE_FUNCTIONS),true)
--GEN_OPT_FLGS = -O3 -fno-inline-functions
-+GEN_OPT_FLGS = -O2 -fno-inline-functions
- else
- ifeq ($(OMIT_OMIT_FP),yes)
--GEN_OPT_FLGS = -O3
-+GEN_OPT_FLGS = -O2
- else
--GEN_OPT_FLGS = -O3 -fomit-frame-pointer
-+GEN_OPT_FLGS = -O2 -fomit-frame-pointer
- endif
- endif
- UNROLL_FLG = -funroll-loops
-@@ -827,7 +827,7 @@ $(OBJDIR)/%.o: hipe/%.S
- 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+@@ -616,7 +610,7 @@ endif
  
- $(OBJDIR)/%.o: hipe/%.c
--	$(CC) $(subst O2,O3, $(CFLAGS)) $(INCLUDES) -c $< -o $@
-+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
  
- $(BINDIR)/hipe_mkliterals$(TF_MARKER):	$(OBJDIR)/hipe_mkliterals.o
- 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $<
+ $(OBJDIR)/%.o: beam/%.c
+-	$(CC) $(subst -O2, $(GEN_OPT_FLGS), $(CFLAGS)) $(INCLUDES) -c $< -o $@
++	$(CC) $(INCLUDES) $(subst -O2, $(GEN_OPT_FLGS), $(CFLAGS)) -c $< -o $@
+ 
+ else
+ 

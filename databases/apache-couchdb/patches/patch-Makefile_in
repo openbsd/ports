@@ -1,12 +1,34 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2010/01/06 18:45:46 jasper Exp $
---- Makefile.in.orig	Wed Nov 25 00:54:08 2009
-+++ Makefile.in	Wed Jan  6 10:13:31 2010
-@@ -280,7 +280,7 @@ version_release = @version_release@
- version_revision = @version_revision@
+$OpenBSD: patch-Makefile_in,v 1.6 2010/09/13 17:31:02 sebastia Exp $
+--- Makefile.in.orig	Tue Jun  8 13:28:29 2010
++++ Makefile.in	Tue Jun  8 13:30:25 2010
+@@ -288,18 +288,18 @@ version_revision = @version_revision@
  version_stage = @version_stage@
  SUBDIRS = bin etc src share test var utils
--localdoc_DATA = AUTHORS.gz BUGS.gz CHANGES.gz NEWS.gz README.gz THANKS.gz
-+localdoc_DATA = AUTHORS BUGS CHANGES NEWS README THANKS
+ localdoc_DATA = \
+-    AUTHORS.gz \
+-    BUGS.gz \
+-    CHANGES.gz \
+-    DEVELOPERS.gz \
+-    INSTALL.gz \
+-    INSTALL.Unix.gz \
+-    INSTALL.Windows.gz \
+-    LICENSE.gz \
+-    NEWS.gz \
+-    NOTICE.gz \
+-    README.gz \
+-    THANKS.gz
++    AUTHORS \
++    BUGS \
++    CHANGES \
++    DEVELOPERS \
++    INSTALL \
++    INSTALL.Unix \
++    INSTALL.Windows \
++    LICENSE \
++    NEWS \
++    NOTICE \
++    README \
++    THANKS
+ 
  DISTCLEANFILES = $(localdoc_DATA)
- EXTRA_DIST = AUTHORS BUGS CHANGES LICENSE NEWS NOTICE README THANKS license.skip
- all: config.h
+ EXTRA_DIST = \
