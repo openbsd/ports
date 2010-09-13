@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_options_h,v 1.1 2010/09/13 16:48:11 jasper Exp $
+
+By default, on server redirects, use the original URL to get the
+local file name. Fixes CVE-2010-2252.
+Diff from upstream.
+
+--- src/options.h.orig	Tue Sep 22 05:03:47 2009
++++ src/options.h	Mon Sep 13 10:13:32 2010
+@@ -242,6 +242,7 @@ struct options
+   char *encoding_remote;
+   char *locale;
+ 
++  bool trustservernames;
+ #ifdef __VMS
+   int ftp_stmlf;                /* Force Stream_LF format for binary FTP. */
+ #endif /* def __VMS */

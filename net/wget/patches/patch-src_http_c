@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_http_c,v 1.1 2010/09/13 16:48:11 jasper Exp $
+
+By default, on server redirects, use the original URL to get the
+local file name. Fixes CVE-2010-2252.
+Diff from upstream.
+
+--- src/http.c.orig	Tue Sep 22 05:02:18 2009
++++ src/http.c	Mon Sep 13 10:13:32 2010
+@@ -2410,8 +2410,9 @@ File %s already there; not retrieving.\n\n"), quote (h
+ /* The genuine HTTP loop!  This is the part where the retrieval is
+    retried, and retried, and retried, and...  */
+ uerr_t
+-http_loop (struct url *u, char **newloc, char **local_file, const char *referer,
+-           int *dt, struct url *proxy, struct iri *iri)
++http_loop (struct url *u, struct url *original_url, char **newloc,
++           char **local_file, const char *referer, int *dt, struct url *proxy,
++           struct iri *iri)
+ {
+   int count;
+   bool got_head = false;         /* used for time-stamping and filename detection */
+@@ -2457,7 +2458,8 @@ http_loop (struct url *u, char **newloc, char **local_
+     }
+   else if (!opt.content_disposition)
+     {
+-      hstat.local_file = url_file_name (u);
++      hstat.local_file =
++        url_file_name (opt.trustservernames ? u : original_url);
+       got_name = true;
+     }
+ 
+ 

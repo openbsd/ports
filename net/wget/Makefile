@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2010/09/13 16:48:11 jasper Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME =	wget-1.12
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.gnu.org/software/wget/

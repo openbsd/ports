@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_c,v 1.1 2010/09/13 16:48:11 jasper Exp $
+
+By default, on server redirects, use the original URL to get the
+local file name. Fixes CVE-2010-2252.
+Diff from upstream.
+
+--- src/main.c.orig	Tue Sep 22 05:03:11 2009
++++ src/main.c	Mon Sep 13 10:13:32 2010
+@@ -675,6 +675,8 @@ Recursive accept/reject:\n"),
+     N_("\
+   -I,  --include-directories=LIST  list of allowed directories.\n"),
+     N_("\
++  --trust-server-names  use the name specified by the redirection url last component.\n"),
++    N_("\
+   -X,  --exclude-directories=LIST  list of excluded directories.\n"),
+     N_("\
+   -np, --no-parent                 don't ascend to the parent directory.\n"),
