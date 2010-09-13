@@ -1,0 +1,67 @@
+.\"	$OpenBSD: update-patches.1,v 1.1 2010/09/13 11:59:37 espie Exp $
+.\"
+.\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: September 13 2010 $
+.Dt UPDATE-PATCHES 1
+.Os
+.Sh NAME
+.Nm update-patches
+.Nd create or update patches for a given port.
+.Sh SYNOPSIS
+.Nm update-patches
+.Sh DESCRIPTION
+.Nm
+is a helper script for the target
+.Ar update-patches
+in
+.Xr bsd.port.mk 5 .
+It takes no argument, but uses quite a few environment variables as
+implicit parameters.
+.Pp
+.Nm
+looks under
+.Ev WRKDIST
+for patched files.
+Those are files with extension
+.Ev PATCHORIG ,
+except for those matching also
+.Ev DISTORIG .
+.Pp
+Once those files are found, they are matched against the contents of
+directory
+.Ev PATCHDIR ,
+most specifically files matching wildcard
+.Ev PATCH_LIST .
+Matching files are regenerated using
+.Bd -literal -indent offset
+diff -u -p -a ${DIFF_ARGS} $file$PATCHORIG $file
+.Ed
+.Pp
+and compared.
+Modified patches are updated and reported, new patches are generated,
+and old patches that no longer seem to exist are also reported.
+.Pp
+.Nm
+patches with problematic
+.Xr cvs 1
+keywords are also reported.
+.Pp
+.Nm
+prints the list of changed patches for further study.
+.Sh SEE ALSO
+.Xr cvs 1 ,
+.Xr diff 1 ,
+.Xr patch 1 .
