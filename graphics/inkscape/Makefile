@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/22 16:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/13 17:52:53 jasper Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p11
+REVISION=	12
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -24,24 +24,29 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 		sigc-2.0 stdc++ xml2 z gio-2.0 giomm-2.4 \
-		pthread-stubs xcb
+		pthread-stubs xcb gc.>=3 popt MagickCore Magick++ MagickWand \
+		lcms png xslt poppler poppler-glib atkmm-1.6 gdkmm-2.4 \
+		gtkmm-2.4 pangomm-1.4 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
+		gtkspell xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
 BUILD_DEPENDS=	::devel/boost
 
-LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
-		popt::devel/popt \
-		MagickCore,Magick++,MagickWand::graphics/ImageMagick \
-		lcms::graphics/lcms \
-		png::graphics/png \
-		xslt::textproc/libxslt \
-		poppler.>=7.0,poppler-glib::print/poppler \
-		atkmm-1.6,gdkmm-2.4,gtkmm-2.4::x11/gtk2mm \
-		pangomm-1.4::devel/pangomm \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gtkspell::textproc/gtkspell
+LIB_DEPENDS=	::devel/boehm-gc \
+		::devel/popt \
+		::graphics/ImageMagick \
+		::graphics/lcms \
+		::graphics/png \
+		::textproc/libxslt \
+		::print/poppler \
+		::x11/gtk2mm \
+		::devel/pangomm \
+		::x11/gtk+2 \
+		::textproc/gtkspell
+
+FAKE_FLAGS=	itlocaledir="${PREFIX}/share/locale/"
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::textproc/py-lxml
