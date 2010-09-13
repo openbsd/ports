@@ -1,0 +1,60 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+
+* do not install the man below share
+* do not install configuration file in /etc directly
+* install binaries to sbin
+
+--- CMakeLists.txt.orig	Wed Jul 21 16:49:17 2010
++++ CMakeLists.txt	Sat Jul 31 13:23:43 2010
+@@ -9,8 +9,7 @@ file(WRITE src/transport_config.h "\n")
+  
+ set(CMAKE_MODULE_PATH "cmake_modules")
+ include_directories(src)
+- 
+- 
++
+ set(gloox_DIR "${CMAKE_SOURCE_DIR}/cmake_modules")
+ find_package(gloox REQUIRED)
+ set(purple_DIR "${CMAKE_SOURCE_DIR}/cmake_modules")
+@@ -371,7 +370,7 @@ ADD_CUSTOM_TARGET (man ALL ${PYTHON_EXECUTABLE} ${CMAK
+ 
+ 
+ INSTALL(TARGETS spectrum
+-    RUNTIME DESTINATION bin
++    RUNTIME DESTINATION sbin
+     )
+ 
+ 
+@@ -379,7 +378,8 @@ INSTALL(TARGETS spectrum
+ INSTALL(FILES
+ 	${CMAKE_CURRENT_SOURCE_DIR}/spectrum.cfg
+ 	RENAME spectrum.cfg.example
+-	DESTINATION /etc/spectrum
++	DESTINATION share/examples/spectrum
++	PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ
+ 	)
+ 
+ if (NOT WITHOUT_SPECTRUMCTL)
+@@ -391,7 +391,7 @@ INSTALL(DIRECTORY
+ 
+ INSTALL(FILES
+ 	${CMAKE_CURRENT_SOURCE_DIR}/spectrumctl/spectrumctl.py
+-    DESTINATION bin
++    DESTINATION sbin
+     PERMISSIONS OWNER_EXECUTE GROUP_EXECUTE WORLD_EXECUTE
+     RENAME spectrumctl
+     PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_EXECUTE GROUP_READ
+@@ -400,11 +400,11 @@ INSTALL(FILES
+ 
+ INSTALL(FILES
+     ${CMAKE_CURRENT_SOURCE_DIR}/man/spectrumctl.8
+-	DESTINATION share/man/man8
++	DESTINATION man/man8
+     )
+ INSTALL(FILES
+     ${CMAKE_CURRENT_SOURCE_DIR}/man/spectrum.cfg.5
+-	DESTINATION share/man/man5
++	DESTINATION man/man5
+     )
+ 
+ endif (NOT WITHOUT_SPECTRUMCTL)

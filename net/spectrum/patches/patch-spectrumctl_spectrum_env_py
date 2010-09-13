@@ -1,0 +1,15 @@
+$OpenBSD: patch-spectrumctl_spectrum_env_py,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+
+Use the default OpenBSD _spectrum user
+
+--- spectrumctl/spectrum/env.py.orig	Mon Jul 26 14:08:30 2010
++++ spectrumctl/spectrum/env.py	Mon Jul 26 14:09:08 2010
+@@ -25,7 +25,7 @@ def get_uid():
+ 		username = os.environ['SPECTRUM_USER']
+ 	except KeyError:
+ 		# otherwise we default to spectrum:
+-		username = 'spectrum'
++		username = '_spectrum'
+ 	try:
+ 		return pwd.getpwnam( username ).pw_uid
+ 	except KeyError:

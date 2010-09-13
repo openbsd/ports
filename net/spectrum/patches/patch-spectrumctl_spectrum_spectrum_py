@@ -1,0 +1,15 @@
+$OpenBSD: patch-spectrumctl_spectrum_spectrum_py,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+
+Import errno, to prevent error
+
+--- spectrumctl/spectrum/spectrum.py.orig	Mon Jul 26 15:15:45 2010
++++ spectrumctl/spectrum/spectrum.py	Mon Jul 26 15:15:54 2010
+@@ -19,7 +19,7 @@
+ Represents a single spectrum instance, see L{spectrum.spectrum}.
+ """
+ 
+-import os, sys, pwd, stat, time, signal, subprocess, resource
++import os, sys, pwd, stat, time, signal, subprocess, resource, errno
+ import spectrumconfigparser, config_interface, env
+ from ExistsError import ExistsError
+ 

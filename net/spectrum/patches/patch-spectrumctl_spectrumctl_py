@@ -1,0 +1,9 @@
+$OpenBSD: patch-spectrumctl_spectrumctl_py,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+--- spectrumctl/spectrumctl.py.orig	Mon Jul 26 13:40:35 2010
++++ spectrumctl/spectrumctl.py	Mon Jul 26 13:40:52 2010
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python -Wignore::DeprecationWarning
++#!${MODPY_BIN} -Wignore::DeprecationWarning
+ # -*- coding: utf-8 -*-
+ #
+ # spectrumctl can be used to control your spectrum-instances. Valid actions are

@@ -1,0 +1,47 @@
+$OpenBSD: patch-spectrum_cfg,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+
+Fix paths in var for OpenBSD usage
+
+--- spectrum.cfg.orig	Sat Jul 31 13:41:41 2010
++++ spectrum.cfg	Sat Jul 31 13:44:25 2010
+@@ -30,7 +30,7 @@ password=secret
+ # component port
+ port=5347
+ 
+-config_interface = /var/run/spectrum/$jid.sock
++config_interface = ${SPVARDIR}/$jid.sock
+ 
+ # IP:port where filetransfer proxy binds to. This has to be public IP.
+ #filetransfer_bind_address=192.0.2.1:12345
+@@ -43,7 +43,7 @@ config_interface = /var/run/spectrum/$jid.sock
+ #admins=admin@example.com;foo@bar.cz
+ 
+ # directory where downloaded files will be saved
+-filetransfer_cache=/var/lib/spectrum/filetransfer_cache
++filetransfer_cache=${SPVARDIR}/filetransfer_cache
+ 
+ # URL used to acces filestransfer_cache directory from the web.
+ filetransfer_web=http://example.com/files/
+@@ -79,7 +79,7 @@ only_for_vip=0
+ #vip_features = avatars;chatstate;filetransfer
+ 
+ # pid file
+-pid_file=/var/run/spectrum/$jid.pid
++pid_file=${SPVARDIR}/$jid.pid
+ 
+ # require_tls to connect legacy network
+ #require_tls=false
+@@ -136,11 +136,11 @@ type=sqlite
+ #password=password
+ # sqlite: set path to database file here
+ # mysql: set to name of database
+-database=/var/lib/spectrum/$jid/database.sqlite
++database=${SPVARDIR}/$jid/database.sqlite
+ # table prefix for multiple transport instances sharing the same database
+ #prefix=icq_
+ 
+ [purple]
+ # avatar, vcard, roster storage
+ # needs to be unique for each spectrum instance
+-userdir=/var/lib/spectrum/$jid/userdir
++userdir=${SPVARDIR}/$jid/userdir
