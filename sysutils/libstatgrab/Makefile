@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/18 22:03:46 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/13 08:54:21 landry Exp $
 
 COMMENT=	system statistics gathering library
 
 DISTNAME=	libstatgrab-0.15
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.i-scream.org/libstatgrab/
