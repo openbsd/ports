@@ -1,0 +1,16 @@
+$OpenBSD: patch-pan_gui_pan_cc,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/gui/pan.cc.orig	Fri Jul  4 20:30:29 2008
++++ pan/gui/pan.cc	Sat Sep 11 10:42:52 2010
+@@ -211,7 +211,7 @@ main (int argc, char *argv[])
+   textdomain (GETTEXT_PACKAGE);
+ 
+   g_thread_init (0);
+-  g_mime_init (GMIME_INIT_FLAG_UTF8);
++  g_mime_init (GMIME_ENABLE_RFC2047_WORKAROUNDS);
+ 
+   bool gui(true), nzb(false);
+   std::string url;

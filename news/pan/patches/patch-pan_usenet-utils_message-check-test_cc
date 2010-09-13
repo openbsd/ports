@@ -1,0 +1,206 @@
+$OpenBSD: patch-pan_usenet-utils_message-check-test_cc,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/usenet-utils/message-check-test.cc.orig	Wed Aug  1 18:59:59 2007
++++ pan/usenet-utils/message-check-test.cc	Sat Sep 11 10:42:52 2010
+@@ -22,6 +22,20 @@ using namespace pan;
+       std::cerr << LINE_ID << " [" << i << "][" << *it << ']' << std::endl; \
+   }
+ 
++static void
++mime_part_set_content (GMimePart *part, const char *str)
++{
++	GMimeDataWrapper *content;
++	GMimeStream *stream;
++	
++	stream = g_mime_stream_mem_new_with_buffer (str, strlen (str));
++	content = g_mime_data_wrapper_new_with_stream (stream, GMIME_CONTENT_ENCODING_DEFAULT);
++	g_object_unref (stream);
++	
++	g_mime_part_set_content_object (part, content);
++	g_object_unref (content);
++}
++
+ int main (void)
+ {
+   g_mime_init (0);
+@@ -41,11 +55,11 @@ int main (void)
+   std::string message_id = GNKSA :: generate_message_id ("rebelbase.com");
+   g_mime_message_set_message_id (msg, message_id.c_str());
+   g_mime_message_set_subject (msg, "MAKE MONEY FAST");
+-  g_mime_message_set_header (msg, "Organization", "Lazars Android Works");
+-  g_mime_message_set_header (msg, "Newsgroups", "alt.test");
++  g_mime_object_set_header ((GMimeObject *) msg, "Organization", "Lazars Android Works");
++  g_mime_object_set_header ((GMimeObject *) msg, "Newsgroups", "alt.test");
+   GMimePart * part = g_mime_part_new_with_type ("text", "plain");
+   const char * cpch = "Hello World!";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   g_mime_message_set_mime_part (msg, GMIME_OBJECT(part));
+   // this should pass the tests
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+@@ -54,7 +68,7 @@ int main (void)
+ 
+   // all quoted
+   cpch = "> Hello World!\n> All quoted text.";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   std::vector<std::string> e (errors.begin(), errors.end());
+   check (errors.size() == 2)
+@@ -64,7 +78,7 @@ int main (void)
+ 
+   // mostly quoted
+   cpch = "> Hello World!\n> quoted\n> text\n> foo\n> bar\nnew text";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -73,14 +87,14 @@ int main (void)
+ 
+   // mostly quoted border condition: 20% of message is new content (should pass)
+   cpch = "> Hello World!\n> quoted\n> text\n> foo\nnew text";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   check (errors.empty())
+   check (goodness.is_ok())
+ 
+   // sig check: too long
+   cpch = "Hello!\n\n-- \nThis\nSig\nIs\nToo\nLong\n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -95,7 +109,7 @@ int main (void)
+          "This sig line is greater than 80 characters wide.  In fact, it's 84 characters wide.\n"
+          "This sig line is greater than 80 characters wide.  In fact, it measures 95 characters in width!\n"
+          "This sig line is less than 80 characters wide.";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -104,7 +118,7 @@ int main (void)
+ 
+   // sig check: sig marker, no sig
+   cpch = "Hello!\n\n-- \n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -113,7 +127,7 @@ int main (void)
+ 
+   // sig check: okay sig
+   cpch = "Hello!\n\n-- \nThis is a short, narrow sig.\nIt should pass.\n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   check (errors.empty())
+   check (goodness.is_ok())
+@@ -146,7 +160,7 @@ int main (void)
+          "This sig line is greater than 80 characters wide.  In fact, it's 84 characters wide.\n"
+          "This sig line is greater than 80 characters wide.  In fact, it measures 95 characters in width!\n"
+          "This sig line is less than 80 characters wide.";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -155,7 +169,7 @@ int main (void)
+ 
+   // body empty
+   cpch = "\n\t\n   \n-- \nThis is the sig.";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 2)
+@@ -163,7 +177,7 @@ int main (void)
+   check (e[0] == "Error: Message appears to have no new content.");
+   check (e[1] == "Error: Message is empty.");
+   cpch = "Some valid message.";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+ 
+   // empty subject
+   g_mime_message_set_subject (msg, "");
+@@ -175,17 +189,17 @@ int main (void)
+   g_mime_message_set_subject (msg, "Happy Lucky Feeling");
+ 
+   // newsgroups
+-  g_mime_message_set_header (msg, "Newsgroups", "alt.test,unknown.group");
++  g_mime_object_set_header ((GMimeObject *) msg, "Newsgroups", "alt.test,unknown.group");
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+   check (goodness.is_warn())
+   check (e[0] == "Warning: The posting profile's server doesn't carry newsgroup\n\t\"unknown.group\".\n\tIf the group name is correct, switch profiles in the \"From:\"\n\tline or edit the profile with \"Edit|Manage Posting Profiles\".")
+-  g_mime_message_set_header (msg, "Newsgroups", "alt.test");
++	  g_mime_object_set_header ((GMimeObject *) msg, "Newsgroups", "alt.test");
+ 
+   // newsgroups w/o followup
+-  g_mime_message_set_header (msg, "Newsgroups", "alt.test,alt.religion.kibology,alt.binaries.sounds.mp3.indie");
+-  g_mime_header_remove (GMIME_OBJECT(msg)->headers, "Followup-To");
++  g_mime_object_set_header ((GMimeObject *) msg, "Newsgroups", "alt.test,alt.religion.kibology,alt.binaries.sounds.mp3.indie");
++  g_mime_header_list_remove (GMIME_OBJECT(msg)->headers, "Followup-To");
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -193,8 +207,8 @@ int main (void)
+   check (e[0] == "Warning: Crossposting without setting Followup-To header.")
+ 
+   // unknown follow-up
+-  g_mime_message_set_header (msg, "Newsgroups", "alt.test");
+-  g_mime_message_set_header (msg, "Followup-To", "alt.test,unknown.group");
++	  g_mime_object_set_header ((GMimeObject *) msg, "Newsgroups", "alt.test");
++  g_mime_object_set_header ((GMimeObject *) msg, "Followup-To", "alt.test,unknown.group");
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -203,11 +217,11 @@ int main (void)
+   g_mime_object_remove_header (GMIME_OBJECT(msg), "Followup-To");
+ 
+   // top posting
+-  g_mime_message_set_header (msg, "References", "<asdf@foo.com>");
++  g_mime_object_set_header ((GMimeObject *) msg, "References", "<asdf@foo.com>");
+   cpch = "How Fascinating!\n"
+          "\n"
+          "> Blah blah blah.\n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -216,7 +230,7 @@ int main (void)
+   g_mime_object_remove_header (GMIME_OBJECT(msg), "References");
+ 
+   // top posting
+-  g_mime_message_set_header (msg, "References", "<asdf@foo.com>");
++  g_mime_object_set_header ((GMimeObject *) msg, "References", "<asdf@foo.com>");
+   cpch = "How Fascinating!\n"
+          "\n"
+          "> Blah blah blah.\n"
+@@ -224,7 +238,7 @@ int main (void)
+          "-- \n"
+          "Pan shouldn't mistake this signature for\n"
+          "original content in the top-posting check.\n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)
+@@ -238,7 +252,7 @@ int main (void)
+          "\n"
+          "--\n"
+          "This is my signature.\n";
+-  g_mime_part_set_content (part, cpch, strlen(cpch));
++  mime_part_set_content (part, cpch);
+   MessageCheck :: message_check (msg, attribution, groups_our_server_has, errors, goodness);
+   e.assign (errors.begin(), errors.end());
+   check (errors.size() == 1)

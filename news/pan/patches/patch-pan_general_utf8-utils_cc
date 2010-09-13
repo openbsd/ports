@@ -1,0 +1,48 @@
+$OpenBSD: patch-pan_general_utf8-utils_cc,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/general/utf8-utils.cc.orig	Sat Jul  5 08:13:14 2008
++++ pan/general/utf8-utils.cc	Sat Sep 11 10:42:52 2010
+@@ -136,7 +136,7 @@ pan :: header_to_utf8 (const StringView  & header,
+ {
+   std::string s = content_to_utf8 (header, fallback_charset1, fallback_charset2);
+   if (header.strstr ("=?")) {
+-    char * decoded (g_mime_utils_8bit_header_decode ((const guchar*) s.c_str()));
++    char * decoded (g_mime_utils_header_decode_text (s.c_str()));
+     s = clean_utf8 (decoded);
+     g_free (decoded);
+   }
+@@ -147,15 +147,26 @@ std::string
+ pan :: mime_part_to_utf8 (GMimePart     * part,
+                           const char    * fallback_charset)
+ {
++  GMimeDataWrapper *content;
++  GMimeStream *stream;
++  const char *charset;
++  GByteArray *buffer;
+   std::string ret;
+ 
+   g_return_val_if_fail (GMIME_IS_PART(part), ret);
+ 
+-  size_t content_len (0);
+-  const char * specified_charset (g_mime_object_get_content_type_parameter (GMIME_OBJECT (part), "charset"));
+-  const char * content = g_mime_part_get_content (part, &content_len);
+-  if (content && content_len)
+-    ret = content_to_utf8 (StringView (content, content_len), specified_charset, fallback_charset);
++  charset = g_mime_object_get_content_type_parameter (GMIME_OBJECT (part), "charset");
++  content = g_mime_part_get_content_object (part);
++
++  stream = g_mime_stream_mem_new ();
++  g_mime_data_wrapper_write_to_stream (content, stream);
++//g_object_unref(content);  //SKG gmime 2.4 don't unref returned data wrapper
++  
++  buffer = ((GMimeStreamMem *) stream)->buffer;
++  
++  ret = content_to_utf8 (StringView ((const char *) buffer->data, buffer->len), charset, fallback_charset);
++  
++  g_object_unref (stream);
+ 
+   return ret;
+ }

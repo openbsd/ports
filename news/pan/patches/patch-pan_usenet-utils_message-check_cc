@@ -1,0 +1,89 @@
+$OpenBSD: patch-pan_usenet-utils_message-check_cc,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/usenet-utils/message-check.cc.orig	Sat Jul  5 08:15:22 2008
++++ pan/usenet-utils/message-check.cc	Sat Sep 11 10:42:52 2010
+@@ -30,6 +30,7 @@ extern "C" {
+ #include "gnksa.h"
+ #include "message-check.h"
+ #include "text-massager.h"
++#include "mime-utils.h"
+ 
+ using namespace pan;
+ 
+@@ -62,7 +63,7 @@ namespace
+       std::string body (body_in.to_string());
+ 
+       // strip attribution
+-      const char * attribution = g_mime_message_get_header (message, PAN_ATTRIBUTION);
++      const char * attribution = g_mime_object_get_header ((GMimeObject *) message, PAN_ATTRIBUTION);
+       if (attribution && *attribution)
+       {
+          std::string::size_type attrib_start_pos = body.find (attribution);
+@@ -99,7 +100,7 @@ namespace
+                     GMimeMessage           * message)
+   {
+     // if it's not a reply, then top-posting check is moot
+-    if (g_mime_message_get_header (message, "References") == NULL)
++    if (g_mime_object_get_header ((GMimeObject *) message, "References") == NULL)
+       return;
+ 
+     bool quoted_found (false);
+@@ -414,7 +415,6 @@ namespace
+   }
+ }
+ 
+-
+ void
+ MessageCheck :: message_check (const GMimeMessage * message_const,
+                                const StringView   & attribution,
+@@ -432,7 +432,7 @@ MessageCheck :: message_check (const GMimeMessage * me
+   check_subject (errors, goodness, g_mime_message_get_subject (message));
+ 
+   // check the author...
+-  if (GNKSA::check_from (g_mime_message_get_header (message, "From"), true)) {
++  if (GNKSA::check_from (g_mime_object_get_header ((GMimeObject *) message, "From"), true)) {
+     errors.insert (_("Error: Bad email address."));
+     goodness.raise_to_warn ();
+   }
+@@ -440,17 +440,17 @@ MessageCheck :: message_check (const GMimeMessage * me
+   // check the body...
+   TextMassager tm;
+   gboolean is_html;
+-  char * body = g_mime_message_get_body (message, true, &is_html);
++  char * body = g_mime_message_get_body (message, &is_html);
+   if (is_html) {
+     errors.insert (_("Warning: Most newsgroups frown upon HTML posts."));
+     goodness.raise_to_warn ();
+   }
+   check_body (errors, goodness, tm, message, body, attribution);
+   g_free (body);
+-
++  
+   // check the optional followup-to...
+   bool followup_to_set (false);
+-  const char * cpch = g_mime_message_get_header (message, "Followup-To");
++  const char * cpch = g_mime_object_get_header ((GMimeObject *) message, "Followup-To");
+   if (cpch && *cpch) {
+     quarks_t groups;
+     get_nntp_rcpts (cpch, groups);
+@@ -460,7 +460,7 @@ MessageCheck :: message_check (const GMimeMessage * me
+ 
+   // check the groups...
+   size_t group_qty (0);
+-  cpch = g_mime_message_get_header (message, "Newsgroups");
++  cpch = g_mime_object_get_header ((GMimeObject *) message, "Newsgroups");
+   if (cpch && *cpch) {
+     quarks_t groups;
+     get_nntp_rcpts (cpch, groups);
+@@ -469,7 +469,7 @@ MessageCheck :: message_check (const GMimeMessage * me
+   }
+ 
+   // one last error check
+-  const InternetAddressList * list (g_mime_message_get_recipients (message, GMIME_RECIPIENT_TYPE_TO));
++  InternetAddressList * list (g_mime_message_get_recipients (message, GMIME_RECIPIENT_TYPE_TO));
+   const int n_to (internet_address_list_length (list));
+   if (!group_qty && !n_to) {
+     errors.insert (_("Error: No Recipients."));

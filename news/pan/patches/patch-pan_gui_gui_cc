@@ -1,12 +1,111 @@
-$OpenBSD: patch-pan_gui_gui_cc,v 1.1 2008/02/14 13:40:55 ajacoutot Exp $
---- pan/gui/gui.cc.orig	Wed Aug  1 19:00:00 2007
-+++ pan/gui/gui.cc	Thu Feb 14 14:29:49 2008
-@@ -1755,7 +1755,7 @@ GUI :: set_queue_size_label (unsigned int running,
+$OpenBSD: patch-pan_gui_gui_cc,v 1.2 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/gui/gui.cc.orig	Sat Jul  5 09:14:56 2008
++++ pan/gui/gui.cc	Sat Sep 11 10:42:52 2010
+@@ -31,6 +31,7 @@ extern "C" {
+ #include <pan/general/file-util.h>
+ #include <pan/general/macros.h>
+ #include <pan/usenet-utils/scorefile.h>
++#include <pan/usenet-utils/mime-utils.h>
+ #include <pan/tasks/task-article.h>
+ #include <pan/tasks/task-groups.h>
+ #include <pan/tasks/task-xover.h>
+@@ -567,7 +568,7 @@ namespace
+                          ArticleCache& c, const Article& a, const std::string& path):
+       _data(d), _queue(q), _root(r), _prefs(p), _cache(c), _article(a), _path(path) {}
+ 
+-    static void foreach_part_cb (GMimeObject *o, gpointer self)
++    static void foreach_part_cb (GMimeObject * /*parent*/, GMimeObject *o, gpointer self)
+     {
+       static_cast<SaveArticlesFromNZB*>(self)->foreach_part (o);
+     }
+@@ -591,7 +592,7 @@ namespace
+         if (!tasks.empty())
+           _queue.add_tasks (tasks, Queue::BOTTOM);
+         g_object_unref (mem_stream);
+-        g_object_unref (wrapper);
++//        g_object_unref (wrapper); //SKG gmime 2.4 don't unref returned data wrapper
+       }
+     }
+ 
+@@ -601,7 +602,7 @@ namespace
+     {
+       if (status == OK) {
+         GMimeMessage * message = _cache.get_message (_article.get_part_mids());
+-        g_mime_message_foreach_part (message, foreach_part_cb, this);
++        g_mime_message_foreach (message, foreach_part_cb, this);
+         g_object_unref (message);
+       }
+       delete this;
+@@ -1041,19 +1042,19 @@ void GUI :: do_supersede_article ()
+   const char * cpch;
+   char * old_mid (g_strdup_printf ("<%s>", g_mime_message_get_message_id(message)));
+   GMimeMessage * new_message (g_mime_message_new (false));
+-  g_mime_message_set_header (new_message, "Supersedes", old_mid);
++  g_mime_object_set_header ((GMimeObject *) new_message, "Supersedes", old_mid);
+   g_mime_message_set_sender (new_message, g_mime_message_get_sender (message));
+   g_mime_message_set_subject (new_message, g_mime_message_get_subject (message));
+-  g_mime_message_set_header (new_message, "Newsgroups", g_mime_message_get_header (message, "Newsgroups"));
+-  g_mime_message_set_header (new_message, "References", g_mime_message_get_header (message, "References"));
++  g_mime_object_set_header ((GMimeObject *) new_message, "Newsgroups", g_mime_object_get_header ((GMimeObject *) message, "Newsgroups"));
++  g_mime_object_set_header ((GMimeObject *) new_message, "References", g_mime_object_get_header ((GMimeObject *) message, "References"));
+   if ((cpch = g_mime_message_get_reply_to (message)))
+               g_mime_message_set_reply_to (new_message, cpch);
+-  if ((cpch = g_mime_message_get_header (message,     "Followup-To")))
+-              g_mime_message_set_header (new_message, "Followup-To", cpch);
++  if ((cpch = g_mime_object_get_header ((GMimeObject *) message,     "Followup-To")))
++    g_mime_object_set_header ((GMimeObject *) new_message, "Followup-To", cpch);
+   gboolean  unused (false);
+-  char * body (g_mime_message_get_body (message, true, &unused));
++  char * body (g_mime_message_get_body (message, &unused));
+   GMimeStream * stream = g_mime_stream_mem_new_with_buffer (body, strlen(body));
+-  GMimeDataWrapper * content_object = g_mime_data_wrapper_new_with_stream (stream, GMIME_PART_ENCODING_DEFAULT);
++  GMimeDataWrapper * content_object = g_mime_data_wrapper_new_with_stream (stream, GMIME_CONTENT_ENCODING_DEFAULT);
+   GMimePart * part = g_mime_part_new ();
+   g_mime_part_set_content_object (part, content_object);
+   g_mime_message_set_mime_part (new_message, GMIME_OBJECT(part));
+@@ -1111,11 +1112,11 @@ void GUI :: do_cancel_article ()
+   char * cancel_message = g_strdup_printf ("cancel <%s>", g_mime_message_get_message_id(message));
+   g_mime_message_set_sender (cancel, g_mime_message_get_sender (message));
+   g_mime_message_set_subject (cancel, "Cancel");
+-  g_mime_message_set_header (cancel, "Newsgroups", g_mime_message_get_header (message, "Newsgroups"));
+-  g_mime_message_set_header (cancel, "Control", cancel_message);
++  g_mime_object_set_header ((GMimeObject *) cancel, "Newsgroups", g_mime_object_get_header ((GMimeObject *) message, "Newsgroups"));
++  g_mime_object_set_header ((GMimeObject *) cancel, "Control", cancel_message);
+   const char * body ("Ignore\r\nArticle canceled by author using " PACKAGE_STRING "\r\n");
+   GMimeStream * stream = g_mime_stream_mem_new_with_buffer (body, strlen(body));
+-  GMimeDataWrapper * content_object = g_mime_data_wrapper_new_with_stream (stream, GMIME_PART_ENCODING_DEFAULT);
++  GMimeDataWrapper * content_object = g_mime_data_wrapper_new_with_stream (stream, GMIME_CONTENT_ENCODING_DEFAULT);
+   GMimePart * part = g_mime_part_new ();
+   g_mime_part_set_content_object (part, content_object);
+   g_mime_message_set_mime_part (cancel, GMIME_OBJECT(part));
+@@ -1194,12 +1195,12 @@ GUI :: do_post ()
+       newsgroups = group;
+   }
+   if (!newsgroups.empty())
+-    g_mime_message_add_header (message, "Newsgroups", newsgroups.c_str());
++    g_mime_object_append_header ((GMimeObject *) message, "Newsgroups", newsgroups.c_str());
+ 
+   // content type
+   GMimePart * part = g_mime_part_new ();
+-  g_mime_part_set_content_type (part, g_mime_content_type_new_from_string ("text/plain; charset=UTF-8"));
+-  g_mime_part_set_encoding (part, GMIME_PART_ENCODING_8BIT);
++  g_mime_object_set_content_type ((GMimeObject *) part, g_mime_content_type_new_from_string ("text/plain; charset=UTF-8"));
++  g_mime_part_set_content_encoding (part, GMIME_CONTENT_ENCODING_8BIT);
+   g_mime_message_set_mime_part (message, GMIME_OBJECT(part));
+   g_object_unref (part);
+ 
+@@ -1754,8 +1755,8 @@ GUI :: set_queue_size_label (unsigned int running,
+     g_snprintf (str, sizeof(str), "%s: %u/%u", _("Tasks"), running, size);
  
    // build the tooltip
-   gulong queued, unused, stopped;
+-  gulong queued, unused, stopped;
 -  guint64 KiB_remain;
-+  uint64_t KiB_remain;
++  long unsigned int queued, unused, stopped;  //SKG MacPorts can't find function
++  uint64_t KiB_remain;                        //SKG using gulong and guint64 types.
    double KiBps;
    int hr, min, sec;
    _queue.get_stats (queued, unused, stopped,

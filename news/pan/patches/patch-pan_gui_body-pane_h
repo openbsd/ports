@@ -1,0 +1,16 @@
+$OpenBSD: patch-pan_gui_body-pane_h,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/gui/body-pane.h.orig	Fri Jul  4 19:57:39 2008
++++ pan/gui/body-pane.h	Sat Sep 11 10:42:52 2010
+@@ -86,7 +86,7 @@ namespace pan
+       void append_part (GMimeObject*, GtkAllocation*);
+       static gboolean expander_activated_idle (gpointer self);
+       static void expander_activated_cb (GtkExpander*, gpointer self);
+-      static void foreach_part_cb (GMimeObject*, gpointer self);
++      static void foreach_part_cb (GMimeObject*, GMimeObject*, gpointer self);
+       static void text_size_allocated (GtkWidget*, GtkAllocation*, gpointer);
+       static gboolean text_size_allocated_idle_cb (gpointer p);
+       void text_size_allocated_idle ();

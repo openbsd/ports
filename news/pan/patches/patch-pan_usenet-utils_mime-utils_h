@@ -1,0 +1,16 @@
+$OpenBSD: patch-pan_usenet-utils_mime-utils_h,v 1.1 2010/09/13 16:23:47 ajacoutot Exp $
+
+Fix build with GMime 2.4:
+    https://bugzilla.gnome.org/show_bug.cgi?id=541676
+
+--- pan/usenet-utils/mime-utils.h.orig	Wed Aug  1 18:59:59 2007
++++ pan/usenet-utils/mime-utils.h	Sat Sep 11 10:42:52 2010
+@@ -64,4 +64,8 @@ namespace pan
+   };
+ }
+ 
++char *g_mime_message_get_body (GMimeMessage *message, gboolean *is_html);
++void g_mime_message_add_recipients_from_string (GMimeMessage *message, GMimeRecipientType type, const char *string);
++
++
+ #endif

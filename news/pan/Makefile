@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2010/07/24 17:43:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/13 16:23:47 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
-V=		0.132
+V=		0.133
 DISTNAME=	pan-${V}
-REVISION=	7
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,7 +21,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 gmime-2.0 gtkspell
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 gmime-2.4 gtkspell
+WANTLIB += xcb-render xcb-render-util
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
 LIB_DEPENDS=	::x11/gtk+2 \
-		:gmime->=2.2,<2.4:mail/gmime \
+		:gmime->=2.4,<2.6:mail/gmime24 \
 		::textproc/gtkspell
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -40,6 +40,9 @@ USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	perl -pi -e 's,gmime-2.0,gmime-2.4,g' ${WRKSRC}/configure
 
 post-configure:
 	cd ${WRKSRC}/po && for i in $$(ls *.po) ; do ${LOCALBASE}/bin/msgfmt -c -o $${i%%po}gmo $$i ; done
