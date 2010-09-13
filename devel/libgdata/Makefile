@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/05 07:48:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/13 17:15:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,6 +30,8 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		soup-gnome-2.4.>=1::devel/libsoup,-gnome \
+
+FAKE_FLAGS+=		DATADIRNAME="share"
 
 RUN_DEPENDS+=		::net/libproxy,-gnome
 BUILD_DEPENDS+=		::net/libproxy,-gnome
