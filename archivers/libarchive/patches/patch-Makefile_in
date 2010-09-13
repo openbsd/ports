@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2010/04/05 11:36:55 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2010/09/13 17:10:31 naddy Exp $
 
 Our groff is too old.  We need to pre-format the man pages with mandoc.
 
---- Makefile.in.orig	Mon Mar 15 03:46:54 2010
-+++ Makefile.in	Mon Apr  5 01:13:55 2010
-@@ -6978,3 +6978,19 @@ cpio/test/list.h: Makefile
+--- Makefile.in.orig	Wed Jun 30 11:54:48 2010
++++ Makefile.in	Mon Sep 13 18:04:52 2010
+@@ -7074,3 +7074,19 @@ cpio/test/list.h: Makefile
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
