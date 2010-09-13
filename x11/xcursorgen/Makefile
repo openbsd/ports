@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/13 10:10:09 matthieu Exp $
 
 COMMENT=	X11 Cursors themes generator
-DIST_VERS=	1.0.2
-XORG_VERS=	7.3
+DIST_VERS=	1.0.3
+XORG_VERS=	7.5
 DISTNAME=	xcursorgen-${DIST_VERS}
 PKGNAME=	xcursorgen-${XORG_VERS}
-REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/
@@ -28,7 +27,7 @@ WANTLIB=		Xrender Xcursor X11 Xfixes Xdmcp Xau c m z \
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ENV= 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			ACLOCAL="aclocal -I ${X11BASE}/share/aclocal" \

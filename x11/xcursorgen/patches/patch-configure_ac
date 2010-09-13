@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.1 2007/09/15 08:07:15 matthieu Exp $
---- configure.ac.orig	Fri Sep 14 00:17:46 2007
-+++ configure.ac	Fri Sep 14 00:17:46 2007
-@@ -11,7 +11,7 @@
- AC_PROG_INSTALL
+$OpenBSD: patch-configure_ac,v 1.2 2010/09/13 10:10:09 matthieu Exp $
+--- configure.ac.orig	Sun Sep 12 14:31:57 2010
++++ configure.ac	Sun Sep 12 14:32:03 2010
+@@ -18,7 +18,7 @@ AC_PROG_INSTALL
+ XORG_DEFAULT_OPTIONS
  
  # Checks for pkg-config packages
 -PKG_CHECK_MODULES(XCURSORGEN, x11 xcursor libpng12)
 +PKG_CHECK_MODULES(XCURSORGEN, x11 xcursor libpng)
- AC_SUBST(XCURSOR_CFLAGS)
- AC_SUBST(XCURSOR_LIBS)
+ AC_SUBST(XCURSORGEN_CFLAGS)
+ AC_SUBST(XCURSORGEN_LIBS)
  
