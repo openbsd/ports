@@ -1,24 +1,15 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2009/10/13 21:46:46 sthen Exp $
---- src/Makefile.in.orig	Thu Feb 16 04:09:50 2006
-+++ src/Makefile.in	Sat Oct 10 18:16:26 2009
-@@ -60,7 +60,7 @@ OBJDIR = @OBJDIR@
-  
- # 2. XFree86 XRENDERFONT (Anti-aliased font) support for XJED
- #    Also modify "XJED_HAS_XRENDERFONT" in jed-feat.h
--#XRENDERFONTLIBS = -lXft -lXrender -lfreetype -lXext
-+XRENDERFONTLIBS = -lXft -lXrender -lfreetype -lXext
- 
- #---------------------------------------------------------------------------
- # S-Lang library location
-@@ -187,11 +187,10 @@ install_directories:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/09/13 07:36:01 sthen Exp $
+--- src/Makefile.in.orig	Mon Dec 14 03:12:55 2009
++++ src/Makefile.in	Sun Sep 12 11:46:15 2010
+@@ -227,10 +227,11 @@ distclean: clean
+ install_data_directories:
  	$(MKINSDIR) $(DEST_MAN_DIR)
  	$(MKINSDIR) $(DEST_JED_ROOT)
- 	$(MKINSDIR) $(DEST_JED_ROOT)/bin
--	$(MKINSDIR) $(DEST_JED_ROOT)/info
 -	$(MKINSDIR) $(DEST_JED_ROOT)/doc
 -	$(MKINSDIR) $(DEST_JED_ROOT)/doc/txt
 -	$(MKINSDIR) $(DEST_JED_ROOT)/doc/hlp
 -	$(MKINSDIR) $(DEST_JED_ROOT)/doc/manual
++	$(MKINSDIR) $(DEST_JED_ROOT)/bin
 +	$(MKINSDIR) $(DESTDIR)${prefix}/share/doc/jed
 +	$(MKINSDIR) $(DESTDIR)${prefix}/share/doc/jed/txt
 +	$(MKINSDIR) $(DESTDIR)${prefix}/share/doc/jed/hlp
@@ -26,7 +17,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2009/10/13 21:46:46 sthen Exp $
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors/Xjed
-@@ -232,28 +231,28 @@ install: all install_directories
+@@ -279,23 +280,23 @@ install_data: install_data_directories
  	done
  	@for i in $(JED_DOC_FILES); \
  	do \
@@ -56,12 +47,5 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2009/10/13 21:46:46 sthen Exp $
 +		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/manual; \
 +		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/manual; \
  	done
- 	@for i in $(JED_INFO_FILES); \
- 	do \
--		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/info/; \
--		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/info/; \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/info/; \
-+		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/info/; \
- 	done
- #
- runtests: $(OBJDIR)/jed
+ #	@for i in $(JED_INFO_FILES); \
+ #	do \

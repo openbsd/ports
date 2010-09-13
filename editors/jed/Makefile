@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2009/10/27 21:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/13 07:36:01 sthen Exp $
 
 COMMENT=	text editor
 
-DISTNAME=	jed-0.99-18
-PKGNAME=	jed-0.99.18p0
+DISTNAME=	jed-0.99-19
+PKGNAME=	jed-0.99.19
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
@@ -11,14 +11,15 @@ MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 
 HOMEPAGE=	http://www.jedsoft.org/jed/
 
-LIB_DEPENDS=	slang.>=15::devel/libslang
-
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m termcap util
+
+WANTLIB += c m slang.>=15 termcap util
+
+LIB_DEPENDS=	::devel/libslang
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
@@ -33,7 +34,7 @@ ALL_TARGET=	all getmail
 .else
 USE_X11=	Yes
 ALL_TARGET=	all getmail xjed
-WANTLIB+=	X11 Xext Xft Xrender freetype
+WANTLIB+=	X11
 .endif
 
 NO_REGRESS=	Yes
