@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/09 07:54:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/13 07:10:24 jasper Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20091103
@@ -29,7 +29,8 @@ RUN_DEPENDS=	::devel/m4 \
 		::graphics/ImageMagick \
 		::misc/shared-mime-info \
 		${MODTK_RUN_DEPENDS}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::shells/bash
 LIB_DEPENDS=	::graphics/gd \
 		::x11/gtk+2
 
@@ -47,7 +48,8 @@ CONFIGURE_ARGS=	--disable-doc \
 
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/pcb.1
+	${SUBST_CMD} ${WRKSRC}/doc/pcb.1 \
+		${WRKSRC}/icon-theme-installer
 
 post-install:
 	rm -rf ${PREFIX}/share/${DISTNAME}
