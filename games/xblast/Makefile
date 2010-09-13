@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2009/12/20 00:14:40 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.25 2010/09/13 18:03:23 jasper Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
@@ -36,6 +36,9 @@ CONFIGURE_ENV=	LDFLAGS="-lsndio \
 CONFIGURE_ARGS=	--enable-sound \
 		--with-otherdatadir=${PREFIX}/share/xblast \
 		--disable-sdl
+
+FAKE_FLAGS+=	localedir="${PREFIX}/share/locale"
+
 post-extract:
 	@cp -r ${WRKDIR}/images-2005-01-06 ${WRKSRC}/image
 	@cp -r ${WRKDIR}/levels-2005-01-06 ${WRKSRC}/level
