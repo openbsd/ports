@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2010/07/30 11:28:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.253 2010/09/13 16:26:59 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -69,7 +69,6 @@
      SUBDIR += femail
      SUBDIR += fetchmail
      SUBDIR += getmail
-     SUBDIR += gmime
      SUBDIR += gmime24
      SUBDIR += grepmail
      SUBDIR += greyscanner
