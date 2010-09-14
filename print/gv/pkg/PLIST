@@ -1,31 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
-bin/gv
-@comment no checksum
+@comment $OpenBSD: PLIST,v 1.5 2010/09/14 08:50:07 jasper Exp $
+@bin bin/gv
+bin/gv-update-userconfig
+@info info/gv.info
 lib/X11/app-defaults/GV
-lib/X11/gv/
-lib/X11/gv/gv_class.ad
+@man man/man1/gv-update-userconfig.1
+@man man/man1/gv.1
+share/gv/
+share/gv/gv_class.ad
+share/gv/gv_copyright.dat
+share/gv/gv_spartan.dat
 @comment no checksum
-lib/X11/gv/gv_system.ad
-lib/X11/gv/gv_user.ad
-@man man/cat1/gv.0
-share/doc/gv/
-share/doc/gv/comments.doc.gz
-share/doc/gv/gs.interface.gz
-share/doc/gv/gv-1.html
-share/doc/gv/gv-10.html
-share/doc/gv/gv-11.html
-share/doc/gv/gv-12.html
-share/doc/gv/gv-13.html
-share/doc/gv/gv-2.html
-share/doc/gv/gv-3.html
-share/doc/gv/gv-4.html
-share/doc/gv/gv-5.html
-share/doc/gv/gv-6.html
-share/doc/gv/gv-7.html
-share/doc/gv/gv-8.html
-share/doc/gv/gv-9.html
-share/doc/gv/gv-faq.html
-share/doc/gv/gv-faq.txt.gz
-share/doc/gv/gv.html
-share/doc/gv/gv.ps.gz
-share/doc/gv/key-bindings.txt.gz
+share/gv/gv_system.ad
+share/gv/gv_user.ad
+share/gv/gv_user_res.dat
+share/gv/gv_widgetless.dat
+share/gv/safe-gs-workdir/

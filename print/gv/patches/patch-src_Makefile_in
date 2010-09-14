@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/09/14 08:50:07 jasper Exp $
+
+- Fix linking (needs libiconv)
+
+--- src/Makefile.in.orig	Tue Jun  8 19:59:16 2010
++++ src/Makefile.in	Tue Sep 14 10:41:13 2010
+@@ -423,7 +423,7 @@ LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
+ LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -liconv
+ LTLIBINTL = @LTLIBINTL@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@

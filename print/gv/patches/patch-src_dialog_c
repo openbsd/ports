@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_dialog_c,v 1.1 2010/09/14 08:50:07 jasper Exp $
+
+Fix a segmentation fault which may occur when printing.
+From FreeBSD ports/149066.
+
+--- src/dialog.c.orig	Tue Sep 14 10:41:40 2010
++++ src/dialog.c	Tue Sep 14 10:42:02 2010
+@@ -292,9 +292,9 @@ void DialogPopupSetText(s)
+     if (!s) {INFMESSAGE(no text) ENDMESSAGE(DialogPopupSetText) return;}
+     if (!dialogPopupCreated) makeDialogPopup();
+     response = XtNameToWidget(DIALOG_POPUP, "*dialog_text");
++    						n=0;
+ #ifdef HAVE_XAW3D_INTERNATIONAL
+     vw = (VlistWidget)response;
+-    						n=0;
+     if( vw->simple.international == True ) {
+       XtSetArg(args[n], XtNfontSet, &fontset);	n++;
+     } else {
