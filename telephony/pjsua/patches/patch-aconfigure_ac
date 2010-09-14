@@ -1,12 +1,25 @@
-$OpenBSD: patch-aconfigure_ac,v 1.2 2010/05/03 14:30:19 dcoppa Exp $
+$OpenBSD: patch-aconfigure_ac,v 1.3 2010/09/14 07:37:19 dcoppa Exp $
 
+zap CROSS_COMPILE variable
 use -pthread instead of -lpthread
-fix memory alignment detection on sparc64
-fix header detection when using external libgsm on OpenBSD
 
---- aconfigure.ac.orig	Sat May  1 18:15:27 2010
-+++ aconfigure.ac	Sat May  1 18:23:28 2010
-@@ -48,7 +48,23 @@ case $target in 
+--- aconfigure.ac.orig	Thu Aug  5 08:27:20 2010
++++ aconfigure.ac	Mon Sep 13 13:22:45 2010
+@@ -41,13 +41,6 @@ AC_PROG_CC
+ AC_PROG_CXX
+ AC_LANG_C
+ 
+-dnl #
+-dnl # Setup CROSS_COMPILE variable
+-dnl #
+-if test -z "$CROSS_COMPILE"; then 
+-    CROSS_COMPILE=`echo ${CC} | sed 's/gcc//'`
+-fi
+-
+ if test "$AR" = ""; then AR="${CROSS_COMPILE}ar rv"; fi
+ AC_SUBST(AR)
+ if test "$LD" = ""; then LD="$CC"; fi
+@@ -92,7 +85,23 @@ case $host in 
  	;;
  esac
  
@@ -31,21 +44,3 @@ fix header detection when using external libgsm on OpenBSD
  AC_CHECK_LIB(wsock32,puts)
  AC_CHECK_LIB(ws2_32,puts)
  AC_CHECK_LIB(ole32,puts)
-@@ -67,7 +83,7 @@ dnl Memory alignment detection
- dnl
- AC_MSG_CHECKING([memory alignment])
- case $target in
--    ia64-* | x86_64-* )
-+    ia64-* | x86_64-* | sparc64-* )
- 	AC_DEFINE(PJ_POOL_ALIGNMENT, 8)
- 	AC_MSG_RESULT([8 bytes])
- 	;;
-@@ -410,7 +426,7 @@ AC_ARG_WITH(external-gsm,
- 	if test "x$with_external_gsm" != "xno"; then
- 		# Test GSM library installation
- 		AC_MSG_CHECKING([if external GSM devkit is installed])
--		AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <gsm/gsm.h>
-+		AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <gsm.h>
- 						                   ]],
- 						                   [gsm_create(); ])
- 						  ],
