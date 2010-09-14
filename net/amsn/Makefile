@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.11 2010/09/14 12:35:12 jasper Exp $
+#$OpenBSD: Makefile,v 1.12 2010/09/14 12:35:58 jasper Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
 		::security/tcltls
 
 MODTK_THREADED= Yes
-MODULES=	devel/gettxt \
+MODULES=	devel/gettext \
 		x11/tk
 
 USE_GMAKE=	Yes
