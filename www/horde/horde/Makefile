@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 13:33:40 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.5 2010/09/14 12:32:42 sthen Exp $ 
 
 COMMENT=	modular framework for web-based applications
 
 # LGPLv2
 DISTNAME=	horde-3.3.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${HORDE_SITES:=horde/}
 HOMEPAGE=	http://www.horde.org/
@@ -27,7 +27,7 @@ RUN_DEPENDS+=	::databases/pear-DB \
 		::www/pear-HTTP-WebDAV-Server \
 		::www/pear-SOAP \
 		::www/pecl-geoip \
-		::www/php5/core \
+		:php5-core->=5.2.0:www/php5/core \
 		::www/php5/extensions,-gd \
 		::www/php5/extensions,-mbstring \
 		::www/php5/extensions,-mcrypt \

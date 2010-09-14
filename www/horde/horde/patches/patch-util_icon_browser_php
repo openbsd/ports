@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_icon_browser_php,v 1.1 2010/09/14 12:32:42 sthen Exp $
+
+http://secunia.com/advisories/41283, adapted from code in git repo.
+
+--- util/icon_browser.php.orig	Tue Sep 14 10:19:07 2010
++++ util/icon_browser.php	Tue Sep 14 10:25:34 2010
+@@ -33,7 +33,7 @@ if (($app = basename(Util::getFormData('app'))) && iss
+         exit(sprintf(_("Base graphics directory \"%s\" not found."), $dir));
+     }
+ 
+-    if (($subdir = basename(Util::getFormData('subdir')))) {
++    if (($subdir = basename(filter_var(Util::getFormData('subdir'), FILTER_SANITIZE_STRING)))) {
+         $dir .= DIRECTORY_SEPARATOR . $subdir;
+         if (!is_dir($dir)) {
+             exit(sprintf(_("Subdirectory \"%s\" not found."), $dir));
