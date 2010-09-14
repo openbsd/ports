@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/12 10:03:43 stephan Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/14 10:00:43 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -22,6 +22,7 @@ SUBDIR += devel
 SUBDIR += dhtml_menu
 SUBDIR += draft
 SUBDIR += filefield
+SUBDIR += filefield_sources
 SUBDIR += globalredirect
 SUBDIR += imageapi
 SUBDIR += imagecache
