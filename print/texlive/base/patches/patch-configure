@@ -1,12 +1,24 @@
-$OpenBSD: patch-configure,v 1.2 2009/12/12 17:48:34 edd Exp $
---- configure.orig	Sat Jul  4 17:27:52 2009
-+++ configure	Sat Jul  4 17:42:02 2009
-@@ -20683,7 +20683,7 @@ else
+$OpenBSD: patch-configure,v 1.3 2010/09/14 20:29:56 edd Exp $
+--- configure.orig	Sat Oct 10 13:05:04 2009
++++ configure	Fri Sep 10 13:42:00 2010
+@@ -20460,7 +20460,7 @@ fi
+ if test "x$with_libpng_includes" != x && test "x$with_libpng_includes" != xyes; then
+   LIBPNG_INCLUDES="-I$with_libpng_includes"
+ fi
+-LIBPNG_LIBS="-lpng"
++LIBPNG_LIBS="-lpng -lm"
+ if test "x$with_libpng_libdir" != x && test "x$with_libpng_libdir" != xyes; then
+   LIBPNG_LIBS="-L$with_libpng_libdir $LIBPNG_LIBS"
+ fi
+@@ -20683,9 +20683,9 @@ else
  fi
  
  if $PKG_CONFIG poppler --atleast-version=0.10; then
 -  POPPLER_VERSION='-DPOPPLER_VERSION=\"'`$PKG_CONFIG poppler --modversion`'\"'
 +  POPPLER_VERSION='-DPOPPLER_VERSION="'`$PKG_CONFIG poppler --modversion`'"'
    XPDF_INCLUDES="$POPPLER_VERSION `$PKG_CONFIG poppler --cflags`"
-   XPDF_LIBS=`$PKG_CONFIG poppler --libs`
+-  XPDF_LIBS=`$PKG_CONFIG poppler --libs`
++  XPDF_LIBS=`$PKG_CONFIG poppler --libs` -pthread
  elif test "x$need_xpdf:$with_system_xpdf" = 'xyes:yes'; then
+   { { $as_echo "$as_me:$LINENO: error: did not find poppler-0.10 or better" >&5
+ $as_echo "$as_me: error: did not find poppler-0.10 or better" >&2;}
