@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/14 13:16:04 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	ODBC bindings for Python
 
-MODPY_EGG_VERSION=2.1.6
+MODPY_EGG_VERSION=2.1.8
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION =	0
 
 CATEGORIES =	databases
 
@@ -19,14 +18,20 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += m stdc++
+
 MASTER_SITES =	${HOMEPAGE}files/
 EXTRACT_SUFX =	.zip
 
+MODPY_SETUPTOOLS = Yes
 MODULES =	lang/python
 LIB_DEPENDS =	iodbc::databases/iodbc
 
 CFLAGS +=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 NO_REGRESS =	Yes
+
+post-extract:
+	chmod -R og-w ${WRKSRC}
 
 .include <bsd.port.mk>
