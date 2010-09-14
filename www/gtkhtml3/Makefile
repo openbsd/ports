@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/08/21 21:08:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/14 07:01:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,9 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		3.30.3
 API_VERSION=		3.14
+
 PKGNAME=		gtkhtml3-${VERSION}
+REVISION=		0
 
 SHARED_LIBS +=	gtkhtml-3.14         3.1      # .20.1
 SHARED_LIBS +=	gtkhtml-editor       0.0      # .0.0
@@ -34,11 +36,12 @@ WANTLIB += stdc++ xcb xcb-render xcb-render-util z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::devel/iso-codes \
-			:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			enchant::textproc/enchant
-RUN_DEPENDS=		::devel/iso-codes
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::devel/iso-codes \
+			:gnome-icon-theme-*:x11/gnome/icon-theme
 
 USE_X11=		Yes
 
