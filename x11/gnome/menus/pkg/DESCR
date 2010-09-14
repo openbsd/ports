@@ -1,8 +1,5 @@
-This package is free software and is part of the
-GNOME project.
-
 The package contains an implementation of the draft "Desktop
-Menu Specification" from freedesktop.org:
+Menu Specification" from freedesktop.org for GNOME:
 
   http://www.freedesktop.org/Standards/menu-spec
 
