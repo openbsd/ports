@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.29 2010/09/02 16:18:15 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.30 2010/09/14 07:09:57 giovanni Exp $
 @group daemon
 phpMyAdmin/
-@comment phpMyAdmin/.gitignore
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
 phpMyAdmin/Documentation.html
@@ -672,7 +671,6 @@ phpMyAdmin/tbl_structure.php
 phpMyAdmin/tbl_tracking.php
 phpMyAdmin/themes/
 phpMyAdmin/themes.php
-phpMyAdmin/themes/.gitignore
 phpMyAdmin/themes/darkblue_orange/
 phpMyAdmin/themes/darkblue_orange/css/
 phpMyAdmin/themes/darkblue_orange/css/theme_right.css.php
