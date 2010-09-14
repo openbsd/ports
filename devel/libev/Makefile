@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/14 15:53:09 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/14 08:49:04 dcoppa Exp $
 
 COMMENT =	high-performance event loop library
 
-DISTNAME =	libev-3.8
+DISTNAME =	libev-3.9
 CATEGORIES =	devel
-PKGNAME =	${DISTNAME}p0
 
-MAINTAINER =	Bapt <baptiste.daroussin@gmail.com>
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-SHARED_LIBS=	ev 0.0 #.3
+SHARED_LIBS=	ev 1.0 #.3
 
-HOMEPAGE =	http://dist.schmorp.de/libev/
-MASTER_SITES =	${HOMEPAGE}
+HOMEPAGE =	http://software.schmorp.de/pkg/libev.html
+MASTER_SITES =	http://dist.schmorp.de/libev/
 
 # BSD / GPL
 PERMIT_PACKAGE_CDROM =	Yes
