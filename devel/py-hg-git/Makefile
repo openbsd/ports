@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/14 14:47:59 millert Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/14 15:11:22 jasper Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
 MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		schacon-hg-git-${MODPY_EGG_VERSION}
 PKGNAME =		py-hg-git-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
