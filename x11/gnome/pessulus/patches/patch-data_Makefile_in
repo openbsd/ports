@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.4 2010/06/22 17:46:18 ajacoutot Exp $
---- data/Makefile.in.orig	Tue Jun 22 04:20:10 2010
-+++ data/Makefile.in	Tue Jun 22 19:38:44 2010
-@@ -450,7 +450,7 @@ uninstall-am: uninstall-desktopDATA uninstall-local un
+$OpenBSD: patch-data_Makefile_in,v 1.5 2010/09/14 13:02:29 ajacoutot Exp $
+--- data/Makefile.in.orig	Tue Sep 14 14:47:02 2010
++++ data/Makefile.in	Tue Sep 14 14:58:42 2010
+@@ -452,7 +452,7 @@ uninstall-am: uninstall-desktopDATA uninstall-local un
  @INTLTOOL_DESKTOP_RULE@
  
  install-icons:			
