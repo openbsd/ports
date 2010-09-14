@@ -1,9 +1,10 @@
-#$OpenBSD: Makefile,v 1.9 2010/07/12 22:07:37 sthen Exp $
+#$OpenBSD: Makefile,v 1.10 2010/09/14 12:34:42 jasper Exp $
 
 COMMENT=	open source MSN Messenger clone
 
-DISTNAME=	amsn-0.97.2
-REVISION=	3
+V=		0.98.3
+DISTNAME=	amsn-$V-src
+PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -14,13 +15,17 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amsn/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amsn/${V}/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	ICE SM X11 m pthread-stubs stdc++ xcb z
+
+WANTLIB=	ICE SM X11 m stdc++ z glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 iconv intl gstbase-0.10 gstinterfaces-0.10 \
+		gstreamer-0.10 xml2
 
 LIB_DEPENDS=	jpeg::graphics/jpeg \
-		png::graphics/png
+		png::graphics/png \
+		gstfarsight-0.10::net/farsight2
 RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 		::security/tcltls \
 		::x11/bwidget \
@@ -28,21 +33,30 @@ RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
 		::security/tcltls
 
+MODTK_THREADED= Yes
 MODULES=	x11/tk
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	verbose=yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
-		--with-tk=${MODTK_LIBDIR}
+		--with-tk=${MODTK_LIBDIR} \
+		--enable-debug \
+		--disable-libv4l \
+		--disable-upnp
 
-CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-lm -L${LOCALBASE}/lib -fPIC" \
+CONFIGURE_ENV= 	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-lm -L${LOCALBASE}/lib" \
 		TK_INC_SPEC="${MODTK_INCDIR}/generic" \
 		TCLSH="${MODTCL_BIN}"
 
+WRKDIST=	${WRKDIR}/amsn-$V/
+
+NO_REGRESS=	Yes # Generic tcl/tk tests.
+
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/amsn*
+	@${MODTCL_WISH_ADJ} ${WRKSRC}/amsn
 
 post-install:
 .for a in amsn amsn-remote amsn-remote-CLI

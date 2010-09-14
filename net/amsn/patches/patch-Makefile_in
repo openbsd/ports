@@ -1,20 +1,20 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2008/08/31 17:16:22 steven Exp $
---- Makefile.in.orig	Thu May 29 00:46:00 2008
-+++ Makefile.in	Sun Aug 31 11:41:07 2008
+$OpenBSD: patch-Makefile_in,v 1.4 2010/09/14 12:34:42 jasper Exp $
+--- Makefile.in.orig	Mon Oct 19 20:52:33 2009
++++ Makefile.in	Sun Dec 27 22:50:18 2009
 @@ -11,10 +11,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
  FILES_TO_INSTALL := *.tcl hotmlog.htm amsn amsn-remote amsn-remote-CLI amsn.desktop langlist
 -FILES_TO_INSTALL += $(doc_files)
 +FILES_TO_INSTALL += remote.help
- FILES_TO_INSTALL += desktop-icons lang skins utils/base64 utils/drawboard utils/framec utils/http2.4
+ FILES_TO_INSTALL += desktop-icons lang skins utils/des utils/base64 utils/drawboard utils/framec utils/http
  FILES_TO_INSTALL += utils/pixmapscroll utils/pixmapmenu utils/contentmanager
--FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/bwidget1.8.0 utils/dpbrowser
+-FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/BWidget-1.9.0 utils/dpbrowser
 +FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/dpbrowser
  FILES_TO_INSTALL += plugins utils/sexytile
- FILES_TO_INSTALL += utils/log utils/uri utils/combobox
+ FILES_TO_INSTALL += utils/log utils/uri utils/combobox utils/voipcontrols
  
-@@ -80,7 +80,7 @@ USE_MMX		:= @USE_MMX@
+@@ -81,7 +81,7 @@ USE_MMX		:= @USE_MMX@
  # build final cflags
  CFLAGS   := @CFLAGS@
  ifeq (@DEBUG@,no)
@@ -23,86 +23,28 @@ $OpenBSD: patch-Makefile_in,v 1.3 2008/08/31 17:16:22 steven Exp $
  else
  CFLAGS   += -g3 -DDEBUG
  endif
-@@ -133,18 +133,18 @@ ifeq ($(FOUND_OS),linux)
- FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/capture/capture.so utils/linux/capture/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/linux/capture/libng/plugins/drv0-v4l2.so utils/linux/capture/libng/plugins/drv1-v4l.so utils/linux/capture/libng/plugins/conv-mjpeg.so utils/linux/capture/libng/plugins/sn9c10x.so utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
+@@ -103,9 +103,9 @@ CFLAGS   += -DPACKAGE='"$(PACKAGE)"'
+ CFLAGS   += -DVERSION='"$(VERSION)"'
+ CFLAGS   += -DLIBDIR='"$(LIBDIR)"'
  
- FILES_TO_EXCLUDE += AppMain.tcl
--else 
--	ifeq ($(FOUND_OS),bsd)
-+endif
-+
-+ifeq ($(FOUND_OS),bsd)
- FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
- 
- FILES_TO_EXCLUDE += AppMain.tcl
--	else 
--		ifeq ($(FOUND_OS),solaris)
-+endif
-+
-+ifeq ($(FOUND_OS),solaris)
- FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/capture/capture.so utils/linux/capture/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/linux/capture/libng/plugins/drv0-v4l2.so utils/linux/capture/libng/plugins/conv-mjpeg.so utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
- 
- FILES_TO_EXCLUDE += AppMain.tcl
--		endif
--	endif
+-CXXFLAGS := @CXXFLAGS@
++CXXFLAGS := $(CFLAGS) @CXXFLAGS@
+ ifeq (@DEBUG@,no)
+-CXXFLAGS   += -O2
++#CXXFLAGS   += -O2
+ else
+ CXXFLAGS   += -g3 -DDEBUG
  endif
- 
- CONFIGURE_ARGS := @CONFIGURE_ARGS@
-@@ -189,9 +189,9 @@ install:: $(FILES_TO_INSTALL)
+@@ -233,9 +233,9 @@ install:: $(FILES_TO_INSTALL)
  		rm -Rf $(DESTDIR)$(dstdir)/$(PACKAGE)/$$p; \
  	done
  
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(DESTDIR)$(slnkdir)/amsn-remote-CLI
-+	#ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
-+	#ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
-+	#ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(DESTDIR)$(slnkdir)/amsn-remote-CLI
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(DESTDIR)$(slnkdir)/amsn-remote-CLI
  
  	cp $(srcdir)/amsn.desktop $(DESTDIR)$(dstdir)/applications/
  
-@@ -271,22 +271,29 @@ ifeq ($(FOUND_OS),linux)
-       include $(tray_dir)/Rules.mk
-       include $(linflash_dir)/Rules.mk
-   endif
--else
--  ifeq ($(FOUND_OS),mac)
-+endif
-+
-+ifeq ($(FOUND_OS),bsd)
-+   ifeq ($(FOUND_X11),yes)
-+      ADDLIBS    += ${X_LIBS}
-+      include $(tray_dir)/Rules.mk
-+  endif
-+endif
-+ifeq ($(FOUND_OS),mac)
- 	include $(macosx_dir)/sndplay-src/Rules.mk
- 	include $(macosx_dir)/growl1.0/Rules.mk
- 	include $(macosx_dir)/growl1.0/src/Rules.mk
- 	include $(macosx_dir)/tclCarbon/Rules.mk
- 	include $(macosx_dir)/tclCarbon/src/Rules.mk
--  endif
--  ifeq ($(FOUND_OS),bsd)
-+endif
-+ifeq ($(FOUND_OS),bsd)
-     ifeq ($(FOUND_X11),yes)
-        ADDLIBS    += ${X_LIBS} 
-       include $(tray_dir)/Rules.mk
-       include $(linflash_dir)/Rules.mk
-     endif
--  else
--    ifeq ($(FOUND_OS),solaris)
-+endif
-+ifeq ($(FOUND_OS),solaris)
-       include $(capture_dir)/Rules.mk
-       include $(capture_dir)/libng/Rules.mk
-       include $(capture_dir)/libng/plugins/Rules.mk
-@@ -296,8 +303,6 @@ else
-         include $(tray_dir)/Rules.mk
-         include $(linflash_dir)/Rules.mk
-       endif
--    endif
--  endif
- endif
- 
- #########################################################
