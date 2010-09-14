@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.42 2010/08/26 07:44:11 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.43 2010/09/14 08:59:40 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -12,6 +12,7 @@ install at least the following packages:
 	file-roller \
 	gdm \
 	gedit \
+	gnome-applets2 \
 	gnome-audio \
 	gnome-backgrounds \
 	gnome-control-center \
@@ -87,6 +88,7 @@ related ports under the x11/gnome category)
    * conduit - all-in-one synchronization application
    * gcalctool - desktop calculator
    * gconf-editor - editor for GConf settings
+   * gnome-applets2-battstat - applet for monitoring battery level
    * gnomebaker - CD/DVD burning application
    * gnome-nettool - interface for various networking tools
    * gnome-system-monitor - sytem monitor program
