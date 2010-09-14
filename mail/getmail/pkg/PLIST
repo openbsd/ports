@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/04/27 07:17:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/09/14 12:45:24 jasper Exp $
 bin/getmail
 bin/getmail_fetch
 bin/getmail_maildir
 bin/getmail_mbox
-lib/python${MODPY_VERSION}/site-packages/getmail-${V}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/getmail-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/getmailcore/
 lib/python${MODPY_VERSION}/site-packages/getmailcore/__init__.py
 lib/python${MODPY_VERSION}/site-packages/getmailcore/__init__.pyc

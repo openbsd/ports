@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.72 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.73 2010/09/14 12:45:24 jasper Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-V=		4.17.0
-DISTNAME=	getmail-$V
-REVISION =	1
+MODPY_EGG_VERSION=	4.20.0
+DISTNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
 
-# GPL
+MAINTAINER=	Tim van der Molen <tbvdm@xs4all.nl>
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}old-versions/
+MASTER_SITES=	${HOMEPAGE}/old-versions/
 
 MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-SUBST_VARS=	V
 EXDIR=		${PREFIX}/share/examples/getmail
 
 post-install:
