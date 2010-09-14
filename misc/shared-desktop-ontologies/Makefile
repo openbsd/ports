@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/19 19:32:27 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/14 07:53:05 jasper Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
 
 DISTNAME = 		shared-desktop-ontologies-0.5
+REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
+
+HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
 
 # I'd like to put it as "alien-shit", but hey, close enough
 CATEGORIES = 		misc
