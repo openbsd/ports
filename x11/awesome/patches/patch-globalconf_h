@@ -1,7 +1,7 @@
-$OpenBSD: patch-globalconf_h,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
---- globalconf.h.orig	Tue Mar  2 16:54:05 2010
-+++ globalconf.h	Mon May 10 10:46:57 2010
-@@ -139,5 +139,27 @@ typedef struct
+$OpenBSD: patch-globalconf_h,v 1.2 2010/09/14 08:51:24 dcoppa Exp $
+--- globalconf.h.orig	Wed Aug 25 10:50:48 2010
++++ globalconf.h	Fri Sep 10 13:47:48 2010
+@@ -137,5 +137,27 @@ typedef struct
  
  extern awesome_t globalconf;
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/29 06:40:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/14 08:51:24 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-DISTNAME=		awesome-3.4.6
+DISTNAME=		awesome-3.4.7
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -39,6 +39,7 @@ LIB_DEPENDS=		::devel/libexecinfo \
 			::x11/libxdg-basedir
 
 BUILD_DEPENDS=		::devel/gperf \
+			::devel/luadoc \
 			::textproc/asciidoc \
 			::textproc/xmlto \
 			::graphics/ImageMagick \
