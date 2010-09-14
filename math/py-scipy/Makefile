@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/14 12:07:53 sthen Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 CATEGORIES=		math devel
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		amd blas lapack m ${MODFORTRAN_WANTLIB}
+WANTLIB += amd arpack blas stdc++ lapack m umfpack ${MODFORTRAN_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
 HOMEPAGE=		http://numeric.scipy.org/
@@ -29,8 +29,9 @@ MODPY_BADEGGS=		scipy
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		umfpack::math/umfpack \
-			arpack::math/arpack \
+LIB_DEPENDS=		::math/umfpack \
+			::math/arpack \
+			::math/amd \
 			${MODFORTRAN_LIB_DEPENDS}
 RUN_DEPENDS=		::math/py-numpy \
 			::devel/swig
