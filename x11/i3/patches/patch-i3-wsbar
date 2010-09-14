@@ -1,0 +1,25 @@
+$OpenBSD: patch-i3-wsbar,v 1.1 2010/09/14 08:54:18 dcoppa Exp $
+--- i3-wsbar.orig	Wed Jun  9 09:58:15 2010
++++ i3-wsbar	Thu Jul 15 14:43:03 2010
+@@ -7,6 +7,7 @@ use warnings;
+ use Getopt::Long;
+ use Pod::Usage;
+ use IPC::Run qw(start pump);
++use Try::Tiny;
+ use AnyEvent::I3;
+ use AnyEvent;
+ use v5.10;
+@@ -182,7 +183,12 @@ sub update_output {
+         $out .= "\n";
+ 
+         $outputs->{$name}->{cmd_input} = $out;
+-        pump $outputs->{$name}->{cmd} while length $outputs->{$name}->{cmd_input};
++        try {
++            pump $outputs->{$name}->{cmd} while length $outputs->{$name}->{cmd_input};
++        } catch {
++            warn "Could not write to dzen2";
++            exit 1;
++        }
+     }
+ }
+ 

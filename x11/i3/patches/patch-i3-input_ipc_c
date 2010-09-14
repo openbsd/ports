@@ -1,0 +1,12 @@
+$OpenBSD: patch-i3-input_ipc_c,v 1.1 2010/09/14 08:54:18 dcoppa Exp $
+--- i3-input/ipc.c.orig	Wed Jun  9 09:58:21 2010
++++ i3-input/ipc.c	Thu Jul 15 14:43:03 2010
+@@ -60,7 +60,7 @@ int connect_ipc(char *socket_path) {
+         struct sockaddr_un addr;
+         memset(&addr, 0, sizeof(struct sockaddr_un));
+         addr.sun_family = AF_LOCAL;
+-        strcpy(addr.sun_path, socket_path);
++        strncpy(addr.sun_path, socket_path, sizeof(addr.sun_path) - 1);
+         if (connect(sockfd, (const struct sockaddr*)&addr, sizeof(struct sockaddr_un)) < 0)
+                 err(EXIT_FAILURE, "Could not connect to i3");
+ 

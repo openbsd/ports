@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_manage_c,v 1.1 2010/09/14 08:54:18 dcoppa Exp $
+--- src/manage.c.orig	Wed Jun  9 09:58:15 2010
++++ src/manage.c	Thu Jul 15 14:43:03 2010
+@@ -273,6 +273,8 @@ void reparent_window(xcb_connection_t *conn, xcb_windo
+                         if (atom[i] == atoms[_NET_WM_WINDOW_TYPE_DOCK]) {
+                                 DLOG("Window is a dock.\n");
+                                 Output *t_out = get_output_containing(x, y);
++                                if (t_out == NULL)
++                                        t_out = c_ws->output;
+                                 if (t_out != c_ws->output) {
+                                         DLOG("Dock client requested to be on output %s by geometry (%d, %d)\n",
+                                                         t_out->name, x, y);

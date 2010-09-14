@@ -1,7 +1,7 @@
-$OpenBSD: patch-i3-msg_Makefile,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
---- i3-msg/Makefile.orig	Wed Aug 19 14:39:09 2009
-+++ i3-msg/Makefile	Mon Aug 31 20:33:37 2009
-@@ -9,17 +9,14 @@ HEADERS=$(wildcard *.h)
+$OpenBSD: patch-i3-msg_Makefile,v 1.2 2010/09/14 08:54:18 dcoppa Exp $
+--- i3-msg/Makefile.orig	Wed Jun  9 09:58:15 2010
++++ i3-msg/Makefile	Mon Jul 19 17:08:57 2010
+@@ -11,17 +11,14 @@ HEADERS=$(wildcard *.h)
  
  # Depend on the specific file (.c for each .o) and on all headers
  %.o: %.c ${HEADERS}
@@ -14,10 +14,9 @@ $OpenBSD: patch-i3-msg_Makefile,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
  
  install: all
 -	echo "INSTALL"
--	$(INSTALL) -d -m 0755 $(DESTDIR)/usr/bin
--	$(INSTALL) -m 0755 i3-msg $(DESTDIR)/usr/bin/
-+	$(INSTALL) -d -m 0755 $(PREFIX)/bin
-+	$(INSTALL) -m 0755 i3-msg $(PREFIX)/bin/
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 0755 i3-msg $(DESTDIR)$(PREFIX)/bin/
++	${INSTALL_PROGRAM} i3-msg $(DESTDIR)$(PREFIX)/bin/
  
  clean:
  	rm -f *.o
