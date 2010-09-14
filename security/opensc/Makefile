@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/01/13 08:42:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/14 10:32:06 jasper Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-DISTNAME=	opensc-0.11.8
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	opensc-0.11.13
 CATEGORIES=	security
 SHARED_LIBS +=  scconf               2.0      # .1.0
 SHARED_LIBS +=  opensc               2.0      # .1.0
@@ -28,9 +27,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/opensc/
 
-WANTLIB=	c crypto ltdl ncurses readline z
+WANTLIB=	c crypto ltdl ncurses readline z openct.>=1
 
-LIB_DEPENDS=	openct.>=1::security/openct
+LIB_DEPENDS=	::security/openct
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -44,6 +43,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread \
 		LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" 
+
+FAKE_FLAGS=	mandir="${PREFIX}/man/"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opensc

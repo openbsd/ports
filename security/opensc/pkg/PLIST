@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/13 21:33:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/14 10:32:06 jasper Exp $
 %%SHARED%%
 bin/cardos-info
 @bin bin/cardos-tool
@@ -14,6 +14,7 @@ bin/opensc-config
 @bin bin/pkcs15-init
 @bin bin/pkcs15-tool
 @bin bin/rutoken-tool
+@bin bin/westcos-tool
 include/opensc/
 include/opensc/asn1.h
 include/opensc/cardctl.h
@@ -58,6 +59,7 @@ lib/pkgconfig/libscconf.pc
 @man man/man1/pkcs15-crypt.1
 @man man/man1/pkcs15-init.1
 @man man/man1/pkcs15-tool.1
+@man man/man1/westcos-tool.1
 @man man/man3/sc_app_info_t.3
 @man man/man3/sc_append_record.3
 @man man/man3/sc_asn1_decode.3
@@ -136,8 +138,11 @@ share/opensc/incrypto34.profile
 share/opensc/jcop.profile
 share/opensc/miocos.profile
 share/opensc/muscle.profile
+share/opensc/myeid.profile
 share/opensc/oberthur.profile
 share/opensc/pkcs15.profile
 share/opensc/rutoken.profile
+share/opensc/rutoken_ecp.profile
 share/opensc/setcos.profile
 share/opensc/starcos.profile
+share/opensc/westcos.profile
