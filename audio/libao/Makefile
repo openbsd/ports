@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2010/06/03 15:49:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2010/09/14 14:28:21 dcoppa Exp $
 
 COMMENT=	portable audio output library
 
 DISTNAME=	libao-1.0.0
+REVISION=	0
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
 SHARED_LIBS=	ao                   4.0      # .4.0
@@ -33,7 +34,7 @@ CONFIGURE_ENV=	ac_cv_header_sys_audioio_h=no
 
 pre-build:
 	@perl -i -pe 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
-	    ${WRKDIST}/src/include/ao/ao_private.h \
+	    ${WRKDIST}/include/ao/ao_private.h \
 	    ${WRKDIST}/libao.conf.5 \
 	    ${WRKDIST}/doc/config.html
 
