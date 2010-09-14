@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 14:28:20 lum Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/14 10:31:50 jasper Exp $
 
 COMMENT=	drivers for several smart card readers
 
-DISTNAME=	openct-0.6.15
-REVISION=	3
+DISTNAME=	openct-0.6.20
 CATEGORIES=	security
 SHARED_LIBS=	openct	1.1
 
@@ -30,10 +29,11 @@ CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
-		--with-common-dir=${LOCALBASE} \
 		--enable-usb \
 		--with-daemon-user=_openct \
 		--with-daemon-groups=_openct
+
+FAKE_FLAGS=	mandir="${PREFIX}/man/"
 	
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread \
 		LTLIB_CFLAGS="-I${LOCALBASE}/include" \
