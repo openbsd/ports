@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/14 15:10:12 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-VERSION =	0.20100619
-DISTNAME =	PromyLOPh-pianobar-3631791
-PKGNAME =	pianobar-${VERSION}
+DISTNAME =	pianobar-2010.08.21
+EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/html/00/17.html
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	http://6xq.net/media/00/16/
 
 SHARED_ONLY =	Yes
 
