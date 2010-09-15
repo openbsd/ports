@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.1 2010/08/20 13:50:11 espie Exp $
+# $OpenBSD: resolve-lib,v 1.2 2010/09/15 09:36:02 espie Exp $
 #
 # Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,7 @@ use OpenBSD::LibSpec;
 use OpenBSD::LibSpec::Build;
 use OpenBSD::Paths;
 
-my $LOCALBASE = $ENV{LOCALBASE};
+my $LOCALBASE = $ENV{LOCALBASE} // '/usr/local';
 my $error = 0;
 
 sub solve_spec
