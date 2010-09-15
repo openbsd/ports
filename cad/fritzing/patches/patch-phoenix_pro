@@ -1,0 +1,15 @@
+$OpenBSD: patch-phoenix_pro,v 1.1.1.1 2010/09/15 07:14:18 jasper Exp $
+
+Don't build everything twice, just once takes long enough already.
+
+--- phoenix.pro.orig	Tue Sep 14 19:17:28 2010
++++ phoenix.pro	Tue Sep 14 19:18:23 2010
+@@ -24,7 +24,7 @@
+ #
+ #********************************************************************/
+ 
+-CONFIG += debug_and_release
++CONFIG += release
+ win32 {
+ 	CONFIG -= embed_manifest_exe
+ 	INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib

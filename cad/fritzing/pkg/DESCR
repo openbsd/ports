@@ -1,0 +1,6 @@
+Fritzing is essentially Electronic Design Automation software suited to the 
+needs of designers and artists. It uses the metaphor of the breadboard, 
+so that it is easy to transfer a hardware sketch to the software by using a 
+drag-and-drop-based GUI to copy your sketch. From there it is possible 
+to create PCB layouts for turning your prototype into a robust PCB, 
+either on your own, or with the help of a manufacturer.
