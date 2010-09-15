@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/08/22 07:48:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/15 19:16:57 ajacoutot Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -290,6 +290,9 @@ share/icons/hicolor/32x32/apps/gnome-web-browser.png
 share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
 share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 share/locale/am/LC_MESSAGES/epiphany.mo
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/as/LC_MESSAGES/epiphany.mo
 share/locale/ast/LC_MESSAGES/epiphany.mo
