@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/15 09:59:39 sthen Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-2.67
+DISTNAME =		siege-2.70
 
 CATEGORIES =		benchmarks www
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c crypto pthread ssl
 
-# main distribution site is broken for EPSV/EPRT as of 20090409
+# main distribution site is broken for EPSV/EPRT as of 20100915
 MASTER_SITES =		http://spacehopper.org/mirrors/ \
 			ftp://ftp.joedog.org/pub/siege/
 

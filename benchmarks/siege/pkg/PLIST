@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/15 09:59:39 sthen Exp $
 bin/bombardment
 @bin bin/siege
 bin/siege.config
@@ -10,9 +10,10 @@ bin/siege2csv.pl
 @man man/man5/urls_txt.5
 @man man/man7/layingsiege.7
 share/examples/siege/
-share/examples/siege/siegerc
-share/examples/siege/urls.txt
 @sample ${SYSCONFDIR}/siege/
+share/examples/siege/siegerc
+@sample ${SYSCONFDIR}/siege/siegerc
+share/examples/siege/urls.txt
 @sample ${SYSCONFDIR}/siege/urls.txt
 @mode 775
 @sample /var/log/siege/

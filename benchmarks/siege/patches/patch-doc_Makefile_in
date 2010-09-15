@@ -1,7 +1,18 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
---- doc/Makefile.in.orig	Wed Feb 18 11:05:55 2009
-+++ doc/Makefile.in	Wed Feb 18 11:06:07 2009
-@@ -335,7 +335,7 @@ install-exec: install-exec-am
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2010/09/15 09:59:39 sthen Exp $
+--- doc/Makefile.in.orig	Fri Jul 16 15:52:41 2010
++++ doc/Makefile.in	Wed Sep 15 10:42:30 2010
+@@ -190,8 +190,8 @@ urls.txt               \
+ siegerc.in
+ 
+ DISTCLEANFILES = siegerc $(man_MANS)
+-SIEGERC = $(sysconfdir)/siegerc
+-URLSTXT = $(sysconfdir)/urls.txt
++SIEGERC = $(sysconfdir)/siege/siegerc
++URLSTXT = $(sysconfdir)/siege/urls.txt
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -415,7 +415,7 @@ install-exec: install-exec-am
  install-data: install-data-am
  
  install-am: all-am

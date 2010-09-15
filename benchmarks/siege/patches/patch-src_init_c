@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_init_c,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
---- src/init.c.orig	Wed Feb 18 11:22:30 2009
-+++ src/init.c	Wed Feb 18 11:23:45 2009
-@@ -90,8 +90,7 @@ init_config( void )
+$OpenBSD: patch-src_init_c,v 1.2 2010/09/15 09:59:39 sthen Exp $
+--- src/init.c.orig	Sat May  8 15:52:47 2010
++++ src/init.c	Wed Sep 15 10:40:02 2010
+@@ -99,8 +99,7 @@ init_config( void )
    }
    
    if(strlen(my.file) < 1){ 
