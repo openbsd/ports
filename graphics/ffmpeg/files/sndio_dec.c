@@ -58,8 +58,8 @@ static av_cold int audio_read_header(AVFormatContext *s1,
 static int audio_read_packet(AVFormatContext *s1, AVPacket *pkt)
 {
     AudioData *s = s1->priv_data;
-    int ret, bdelay;
-    int64_t cur_time;
+    int ret;
+    int64_t cur_time, bdelay;
 
     if ((ret = av_new_packet(pkt, s->buffer_size)) < 0)
         return ret;
@@ -80,7 +80,8 @@ static int audio_read_packet(AVFormatContext *s1, AVPacket *pkt)
     bdelay = ret + s->hwpos - s->softpos;
 
     /* convert to wanted units */
-    pkt->pts = cur_time;
+    pkt->pts = cur_time - ((bdelay * 1000000) /
+        (s->bps * s->channels * s->sample_rate));
 
     return 0;
 }
