@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/08/21 20:34:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/15 15:41:38 ajacoutot Exp $
 bin/f-spot
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
@@ -37,8 +37,6 @@ lib/f-spot/Extensions/FSpot.Tools.ChangePhotoPath.dll
 lib/f-spot/Extensions/FSpot.Tools.ChangePhotoPath.dll.mdb
 lib/f-spot/Extensions/FSpot.Tools.DevelopInUFRaw.dll
 lib/f-spot/Extensions/FSpot.Tools.DevelopInUFRaw.dll.mdb
-lib/f-spot/Extensions/FSpot.Tools.HashJob.dll
-lib/f-spot/Extensions/FSpot.Tools.HashJob.dll.mdb
 lib/f-spot/Extensions/FSpot.Tools.LiveWebGallery.dll
 lib/f-spot/Extensions/FSpot.Tools.LiveWebGallery.dll.mdb
 lib/f-spot/Extensions/FSpot.Tools.MergeDb.dll
