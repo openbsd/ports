@@ -1,7 +1,7 @@
-$OpenBSD: patch-x11vnc_help_c,v 1.3 2010/08/22 16:56:34 sthen Exp $
---- x11vnc/help.c.orig	Fri Jul 23 04:34:45 2010
-+++ x11vnc/help.c	Tue Aug 10 14:27:23 2010
-@@ -5784,7 +5784,7 @@ void xopen_display_fail_message(char *disp) {
+$OpenBSD: patch-x11vnc_help_c,v 1.4 2010/09/15 08:21:10 sthen Exp $
+--- x11vnc/help.c.orig	Fri Sep 10 04:46:48 2010
++++ x11vnc/help.c	Sun Sep 12 18:57:40 2010
+@@ -5799,7 +5799,7 @@ void xopen_display_fail_message(char *disp) {
  	fprintf(stderr, "              -auth /var/lib/gdm/:0.Xauth\n");
  	fprintf(stderr, "     kdm:     -auth /var/lib/kdm/A:0-crWk72\n");
  	fprintf(stderr, "              -auth /var/run/xauth/A:0-crWk72\n");

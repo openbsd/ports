@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/21 20:46:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/09/15 08:21:10 sthen Exp $
 @bin bin/x11vnc
+include/rfb/
+include/rfb/keysym.h
+include/rfb/rfb.h
+include/rfb/rfbclient.h
+include/rfb/rfbconfig.h
+include/rfb/rfbint.h
+include/rfb/rfbproto.h
+include/rfb/rfbregion.h
 @man man/man1/x11vnc.1
 share/applications/x11vnc.desktop
 share/doc/x11vnc/
