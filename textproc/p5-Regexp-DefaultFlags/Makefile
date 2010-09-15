@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT=	set default flags on regular expressions
 
 MODULES=	cpan
 
 DISTNAME=	Regexp-DefaultFlags-0.01
+REVISION=	0
 CATEGORIES=	textproc
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

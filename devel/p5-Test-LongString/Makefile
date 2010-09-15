@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	tests strings for equality
 
 MODULES=	cpan
 
 DISTNAME=	Test-LongString-0.11
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

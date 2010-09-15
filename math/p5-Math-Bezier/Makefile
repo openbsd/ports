@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/20 05:01:05 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT=	perl module for solving bezier curves
 
 MODULES=	cpan
 DISTNAME=	Math-Bezier-0.01
+REVISION=	0
 CATEGORIES=	math
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

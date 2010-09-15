@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT= 	Perl modules for parsing Snort configuration files
 
 MODULES=	cpan
 DISTNAME=	Net-Snort-Parser-1.21
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
-
-MAINTAINER= 	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/03 10:44:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	test functions for exception based code
 
 MODULES=	cpan
 DISTNAME=	Test-Exception-0.27
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/22 19:36:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/15 13:52:11 sthen Exp $
 
 BROKEN=		glib2 is threaded but our perl is not so we end up with undefined symbols
 
@@ -9,9 +9,8 @@ COMMENT=	perl interface to the Glib libraries
 V=		1.222
 DISTNAME=	Glib-$V
 PKGNAME=	p5-Glib2-$V
+REVISION=	0
 CATEGORIES=	x11 devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT=		simple word wrapping routine
 
 MODULES=		cpan
 DISTNAME=		Text-Wrapper-1.000
+REVISION=		0
 CATEGORIES=		textproc
-
-MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

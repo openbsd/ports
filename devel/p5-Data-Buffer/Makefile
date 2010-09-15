@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	Perl module for creating read/write buffers
 
 MODULES=	cpan
 DISTNAME=	Data-Buffer-0.04
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	Test differences in data structures
 
 MODULES=	cpan
 DISTNAME=	Test-Differences-0.47
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

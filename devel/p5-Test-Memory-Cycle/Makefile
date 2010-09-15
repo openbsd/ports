@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan
 
 DISTNAME=	Test-Memory-Cycle-1.04
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

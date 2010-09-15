@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT= 	check for pod coverage in your distribution
 
 MODULES=	cpan
 DISTNAME=	Test-Pod-Coverage-1.08
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

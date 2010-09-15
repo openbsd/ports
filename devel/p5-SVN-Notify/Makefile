@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/30 21:54:54 stsp Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT=	subversion activity notification
 
 MODULES=	cpan
 
 DISTNAME=	SVN-Notify-2.78
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT=		use other catalog formats in Locale::Maketext
 
 MODULES=		cpan
 DISTNAME=		Locale-Maketext-Lexicon-0.47
+REVISION=		0
 CATEGORIES=		devel
-
-MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

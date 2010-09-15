@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/29 18:50:54 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT=	simple tree object
 
 MODULES=	cpan
 DISTNAME=	Tree-Simple-1.18
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

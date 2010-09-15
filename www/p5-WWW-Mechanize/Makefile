@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/14 15:27:14 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT= 	handy web browsing in a Perl object
 
 MODULES=	cpan
 
 DISTNAME=	WWW-Mechanize-1.60
+REVISION=	0
 CATEGORIES=	www perl5
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes

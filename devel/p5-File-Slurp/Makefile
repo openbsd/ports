@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/15 13:52:11 sthen Exp $
 
 COMMENT=	efficient reading/writing of complete files
 
 MODULES=	cpan
 DISTNAME=	File-Slurp-9999.12
+REVISION=	0
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic 
 PERMIT_PACKAGE_CDROM=	Yes

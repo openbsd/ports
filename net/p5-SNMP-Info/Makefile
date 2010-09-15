@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:12 sthen Exp $
 COMMENT=	perl5 interface to network devices and MIBs through SNMP
 
 MODULES=	cpan
 
 DISTNAME=	SNMP-Info-1.04
+REVISION=	0
 CATEGORIES=	net
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes 

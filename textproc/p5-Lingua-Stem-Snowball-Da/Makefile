@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/15 13:52:12 sthen Exp $
 
 COMMENT=	Porters stemming algorithm for Denmark
 
 MODULES=	cpan
 DISTNAME=	Lingua-Stem-Snowball-Da-1.01
+REVISION=	0
 CATEGORIES=	textproc
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
