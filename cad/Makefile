@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/08 11:21:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/15 07:14:54 jasper Exp $
 
      SUBDIR =
      SUBDIR += chipmunk
+     SUBDIR += fritzing
      SUBDIR += geda-gaf
      SUBDIR += gerbv
      SUBDIR += gnucap
