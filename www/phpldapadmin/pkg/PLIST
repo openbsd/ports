@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/08/23 11:48:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/09/15 10:57:19 ajacoutot Exp $
 @group daemon
 phpldapadmin/
 @comment phpldapadmin/.cvsignore
@@ -9,7 +9,11 @@ phpldapadmin/VERSION
 phpldapadmin/config/
 @comment phpldapadmin/config/.cvsignore
 phpldapadmin/config/config.php.example
+@mode 0640
+@group www
 @sample phpldapadmin/config/config.php
+@mode
+@group daemon
 phpldapadmin/doc/
 phpldapadmin/doc/README-translation.txt
 phpldapadmin/doc/certs/
