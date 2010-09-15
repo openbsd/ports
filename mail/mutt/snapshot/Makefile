@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2010/09/08 09:57:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2010/09/15 18:42:38 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
-VERSION=	1.5.20
-DISTNAME=	mutt-5302767aa6aa
-DISTFILES=	${DISTNAME}.tar.bz2
-PKGNAME=	mutt-${VERSION}.20100824
-# ${MASTER_SITE_SOURCEFORGE:=mutt/} ${MASTER_SITES_MUTT:=devel/}
-MASTER_SITES=	http://spacehopper.org/mirrors/
+DISTNAME=	mutt-1.5.21
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/}
 
 WANTLIB=	qdbm.>=14 z
 
