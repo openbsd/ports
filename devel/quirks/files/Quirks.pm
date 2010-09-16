@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.25 2010/09/05 22:12:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.26 2010/09/16 07:28:28 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -149,6 +149,7 @@ my $stem_extensions = {
 # 4.9
 	'sybperl' => 'p5-sybperl',
 	'Audio-MPD' => 'p5-Audio-MPD',
+	'p5-IDNA-Punycode' => 'p5-Net-IDN-Encode',
 };
 
 # ->is_base_system($handle, $state):
