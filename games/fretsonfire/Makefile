@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/16 19:34:48 sthen Exp $
 
 V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games x11
 
@@ -20,6 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fretsonfire/}
 USE_GMAKE =		Yes
 
 MODULES =		lang/python
+MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		::devel/pygame			\
