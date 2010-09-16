@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/23 16:53:20 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/16 07:52:54 sthen Exp $
 
 COMMENT =		library for processing panoramic images
-DISTNAME =		libpano13-2.9.14
+DISTNAME =		libpano13-2.9.17
+# the following are useful for rc/betas and don't hurt otherwise:
+PKGNAME =		${DISTNAME:S/_//}
+WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS +=		pano13               1.0
+SHARED_LIBS +=		pano13               2.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://panotools.sourceforge.net/
@@ -16,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c m z
+WANTLIB +=		c jpeg m png tiff z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=panotools/}
 
@@ -30,9 +33,9 @@ AUTOMAKE_VERSION =	1.9
 # bootstrap needs libtoolize
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			::devel/libtool
-LIB_DEPENDS =		jpeg::graphics/jpeg \
-			png::graphics/png \
-			tiff::graphics/tiff
+LIB_DEPENDS =		::graphics/jpeg \
+			::graphics/png \
+			::graphics/tiff
 
 CPPFLAGS +=		-I${LOCALBASE}/include/ \
 			-I${LOCALBASE}/include/libpng \

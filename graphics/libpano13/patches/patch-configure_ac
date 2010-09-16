@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
---- configure.ac.orig	Thu Feb  5 00:35:32 2009
-+++ configure.ac	Fri Apr 17 21:23:37 2009
+$OpenBSD: patch-configure_ac,v 1.2 2010/09/16 07:52:54 sthen Exp $
+--- configure.ac.orig	Sat Jul 24 22:16:56 2010
++++ configure.ac	Sat Sep  4 21:28:47 2010
 @@ -45,6 +45,11 @@ case "${host_os}" in
  		;;
  	esac
@@ -13,15 +13,15 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
    *darwin*)
      PANO_WIN32_RESOURCE=
      HSYS=darwin
-@@ -73,6 +78,7 @@ esac
- 
+@@ -79,6 +84,7 @@ esac
  AM_CONDITIONAL(HAVE_DARWIN, test "${HSYS}" = "darwin")
+ AM_CONDITIONAL(HAVE_SOLARIS, test "${HSYS}" = "solaris")
  AM_CONDITIONAL(HAVE_LINUX, test "${HSYS}" = "linux")
 +AM_CONDITIONAL(HAVE_OPENBSD, test "${HSYS}" = "openbsd")
  AM_CONDITIONAL(HAVE_MAC, test "${HSYS}" = "classic")
  AM_CONDITIONAL(HAVE_MINGW, test "${HSYS}" = "mingw32")
  AM_CONDITIONAL(HAVE_CYGWIN, test "${HSYS}" = "cygwin")
-@@ -96,7 +102,7 @@ if test "x$have_zlib" != xyes; then
+@@ -102,7 +108,7 @@ if test "x$have_zlib" != xyes; then
      ])
  fi
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
  if test "x$have_png" != xyes; then
      AC_MSG_ERROR([
          the png library must be installed on your system
-@@ -177,8 +183,8 @@ echo "  CXX            = $CXX"
+@@ -183,8 +189,8 @@ echo "  CXX            = $CXX"
  echo "  CXXFLAGS       = $CXXFLAGS"
  echo "  JPEG_FLAGS     = $JPEG_FLAGS"
  echo "  LIB_JPEG       = $LIB_JPEG"

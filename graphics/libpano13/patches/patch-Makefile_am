@@ -1,6 +1,12 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
---- Makefile.am.orig	Thu Feb  5 00:18:23 2009
-+++ Makefile.am	Fri Apr 17 21:23:43 2009
+$OpenBSD: patch-Makefile_am,v 1.2 2010/09/16 07:52:54 sthen Exp $
+--- Makefile.am.orig	Sat Jul 24 22:16:56 2010
++++ Makefile.am	Sat Sep 11 14:34:53 2010
+@@ -1,4 +1,4 @@
+-ACLOCAL_AMFLAGS = -I m4
++beta2ACLOCAL_AMFLAGS = -I m4
+ 
+ STD_SRC = filter.c parser.c queryfeature.c correct.c perspect.c \
+ 	  adjust.c  remap.c lmdif.c  file.c \
 @@ -71,6 +71,16 @@ install-exec-hook:
  
  endif
@@ -18,21 +24,21 @@ $OpenBSD: patch-Makefile_am,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
  if HAVE_DARWIN
  DAR_SRC =  sys_ansi.c ppm.c
  DAR_DEFS = -D__Ansi__=1
-@@ -81,13 +91,13 @@ install-exec-hook:
+@@ -91,13 +101,13 @@ install-exec-hook:
  
  endif
  
--AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG)
-+AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_CFLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG) $(OBSD_DEFS)
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(SOL_DEFS) $(ENDIAN_FLAG)
++AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(SOL_DEFS) $(OBSD_DEFS) $(ENDIAN_FLAG)
  
  lib_LTLIBRARIES = libpano13.la
  
--libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC)
+-libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(SOL_SRC)
 -libpano13_la_LIBADD = $(LIB_JPEG) $(LIB_PNG) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
--libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS)
-+libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(OBSD_SRC)
+-libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS) $(SOL_LDFS)
++libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(SOL_SRC) $(OBSD_SRC)
 +libpano13_la_LIBADD = $(LIB_JPEG) $(PNG_LIBS) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
-+libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS) $(OBSD_LDFS)
++libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS) $(SOL_LDFS) $(OBSD_LDFS)
  libpano13_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
  
  pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)
