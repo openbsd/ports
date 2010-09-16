@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.6 2010/07/23 13:56:26 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.7 2010/09/16 22:36:08 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=2.6,<2.7
 lib/python2.6/test/
@@ -261,6 +261,7 @@ lib/python2.6/test/seq_tests.py
 lib/python2.6/test/seq_tests.pyc
 lib/python2.6/test/seq_tests.pyo
 lib/python2.6/test/sgml_input.html
+lib/python2.6/test/sha256.pem
 lib/python2.6/test/sortperf.py
 lib/python2.6/test/sortperf.pyc
 lib/python2.6/test/sortperf.pyo

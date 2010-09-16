@@ -1,12 +1,12 @@
-$OpenBSD: patch-Modules_mathmodule_c,v 1.2 2009/05/03 22:26:27 djm Exp $
---- Modules/mathmodule.c.orig	Mon Dec 22 04:01:26 2008
-+++ Modules/mathmodule.c	Sun Apr 19 10:28:53 2009
+$OpenBSD: patch-Modules_mathmodule_c,v 1.3 2010/09/16 22:36:08 fgsch Exp $
+--- Modules/mathmodule.c.orig	Fri Jun 25 21:21:43 2010
++++ Modules/mathmodule.c	Mon Aug 30 13:52:05 2010
 @@ -235,7 +235,7 @@ math_1(PyObject *arg, double (*func) (double), int can
- 		else
- 			errno = 0;
- 	}
--	else if (Py_IS_INFINITY(r)) {
-+	else if (errno != EDOM && Py_IS_INFINITY(r)) {
- 		if (Py_IS_FINITE(x))
- 			errno = can_overflow ? ERANGE : EDOM;
- 		else
+         else
+             errno = 0;
+     }
+-    else if (Py_IS_INFINITY(r)) {
++    else if (errno != EDOM && Py_IS_INFINITY(r)) {
+         if (Py_IS_FINITE(x))
+             errno = can_overflow ? ERANGE : EDOM;
+         else

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/07/23 13:56:26 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/09/16 22:36:08 fgsch Exp $
 @option no-default-conflict
 @conflict python->=2.6,<2.7
 @conflict python-bz2->=2.6,<2.7
@@ -1277,7 +1277,7 @@ lib/python2.6/keyword.py
 lib/python2.6/keyword.pyc
 lib/python2.6/keyword.pyo
 lib/python2.6/lib-dynload/
-lib/python2.6/lib-dynload/Python-2.6.5-py2.6.egg-info
+lib/python2.6/lib-dynload/Python-2.6.6-py2.6.egg-info
 lib/python2.6/lib-dynload/_bisect.so
 lib/python2.6/lib-dynload/_bytesio.so
 lib/python2.6/lib-dynload/_codecs_cn.so
@@ -1342,9 +1342,9 @@ lib/python2.6/lib-dynload/zlib.so
 lib/python2.6/lib-old/
 lib/python2.6/lib2to3/
 lib/python2.6/lib2to3/Grammar.txt
-lib/python2.6/lib2to3/Grammar2.6.5.final.0.pickle
+lib/python2.6/lib2to3/Grammar2.6.6.final.0.pickle
 lib/python2.6/lib2to3/PatternGrammar.txt
-lib/python2.6/lib2to3/PatternGrammar2.6.5.final.0.pickle
+lib/python2.6/lib2to3/PatternGrammar2.6.6.final.0.pickle
 lib/python2.6/lib2to3/__init__.py
 lib/python2.6/lib2to3/__init__.pyc
 lib/python2.6/lib2to3/__init__.pyo
@@ -1382,6 +1382,9 @@ lib/python2.6/lib2to3/fixes/fix_exec.pyo
 lib/python2.6/lib2to3/fixes/fix_execfile.py
 lib/python2.6/lib2to3/fixes/fix_execfile.pyc
 lib/python2.6/lib2to3/fixes/fix_execfile.pyo
+lib/python2.6/lib2to3/fixes/fix_exitfunc.py
+lib/python2.6/lib2to3/fixes/fix_exitfunc.pyc
+lib/python2.6/lib2to3/fixes/fix_exitfunc.pyo
 lib/python2.6/lib2to3/fixes/fix_filter.py
 lib/python2.6/lib2to3/fixes/fix_filter.pyc
 lib/python2.6/lib2to3/fixes/fix_filter.pyo
