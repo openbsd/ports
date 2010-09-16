@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/16 07:33:32 fgsch Exp $
 
 COMMENT =	declarative mapper for SQLAlchemy
 
@@ -26,11 +26,12 @@ RUN_DEPENDS =		::databases/py-sqlalchemy \
 			::security/py-crypto
 REGRESS_DEPENDS =	::databases/py-sqlite2 \
 			${RUN_DEPENDS}
+MAKE_ENV +=	PYTHONPATH='${WRKSRC}'
 
-do-regress: fake
-	@cd ${WRKSRC}/tests; for i in `echo test_*.py`; do \
-	    echo $$i; ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-	    ${MODPY_BIN} $$i; \
+do-regress:
+	@${_MODPY_CMD} develop -d.; \
+	cd ${WRKSRC}/tests; for i in `echo test_*.py`; do \
+	    echo $$i; ${MAKE_ENV} ${MODPY_BIN} $$i; \
 	done
 
 .include <bsd.port.mk>
