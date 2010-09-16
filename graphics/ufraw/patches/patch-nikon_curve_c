@@ -1,7 +1,7 @@
-$OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
---- nikon_curve.c.orig	Thu Jul  9 02:23:49 2009
-+++ nikon_curve.c	Wed Oct 21 23:31:01 2009
-@@ -77,8 +77,8 @@ static const unsigned char *FileTypeHeaders[NUM_FILE_T
+$OpenBSD: patch-nikon_curve_c,v 1.7 2010/09/16 10:18:38 sthen Exp $
+--- nikon_curve.c.orig	Tue Feb 23 17:53:25 2010
++++ nikon_curve.c	Wed Apr  7 03:42:17 2010
+@@ -353,8 +353,8 @@ static const unsigned char *FileTypeHeaders[NUM_FILE_T
  #ifdef _STAND_ALONE_
  
  //filenames
@@ -12,7 +12,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
  
  unsigned int standalone_samplingRes = 65536;
  unsigned int standalone_outputRes = 256;
-@@ -119,8 +119,7 @@ int ProcessArgs(int num_args, char *args[])
+@@ -395,8 +395,7 @@ static int ProcessArgs(int num_args, char *args[])
  	else if (strcmp(args[i],"-o") == 0 || strcmp(args[i],"-O") == 0)
  	{
  	    i++;
@@ -22,7 +22,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
  	}
  	else if (strcmp(args[i],"-sr") == 0)
  	{
-@@ -148,24 +147,21 @@ int ProcessArgs(int num_args, char *args[])
+@@ -424,24 +423,21 @@ static int ProcessArgs(int num_args, char *args[])
  	{
  	    i++;
  	    program_mode = NEF_MODE;
@@ -51,7 +51,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
      }
  
      return NC_SUCCESS;
-@@ -1742,7 +1738,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1998,7 +1994,7 @@ static int ConvertNikonCurveData(char *inFileName, cha
  {
      //Load the curve data from the ncv/ntc file
      NikonData data;
@@ -60,7 +60,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
  
      if ( samplingRes <= 1 || outputRes <= 1 || samplingRes > MAX_RESOLUTION
  	    || outputRes > MAX_RESOLUTION )
-@@ -1772,8 +1768,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -2028,8 +2024,7 @@ static int ConvertNikonCurveData(char *inFileName, cha
  	}
  
  	//rename output files
@@ -70,7 +70,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.6 2009/10/21 22:44:52 sthen Exp $
  	//if the name has an extension, attempt to remove it
  	if (tmpstr[strlen(tmpstr)-4] == '.')
  	{
-@@ -1783,19 +1778,19 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -2039,19 +2034,19 @@ static int ConvertNikonCurveData(char *inFileName, cha
  	switch(i)
  	{
  	    case TONE_CURVE:

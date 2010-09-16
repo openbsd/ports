@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/10/21 22:44:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/16 10:18:38 sthen Exp $
+@pkgpath graphics/ufraw,lensfun
 @comment bin/dcraw
 @bin bin/nikon-curve
 @bin bin/ufraw
