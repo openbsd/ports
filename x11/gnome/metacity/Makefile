@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/09/16 06:19:05 ajacoutot Exp $
 
 COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
-GNOME_VERSION=	2.30.1
-REVISION=	1
+GNOME_VERSION=	2.30.2
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -33,7 +32,8 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	::devel/startup-notification \
 		::audio/libcanberra \
 		::devel/libgtop2
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::x11/gnome/doc-utils
 RUN_DEPENDS=	::x11/gnome/zenity
 
 SEPARATE_BUILD=	concurrent
@@ -41,6 +41,8 @@ USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= metacity
 
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-gtk=2.0
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
