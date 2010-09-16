@@ -1,28 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/09/06 09:49:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/16 08:42:56 landry Exp $
 @bin bin/arirang
 share/arirang/
 share/arirang/account.uxe
 share/arirang/against-snort.uxe
 share/arirang/all.uxe
+share/arirang/allow.rb
 share/arirang/apache.uxe
+share/arirang/arirang.rb
 share/arirang/bof_dos.uxe
 share/arirang/cfusion.uxe
 share/arirang/codered.uxe
+share/arirang/csv.rb
+share/arirang/file.rb
 share/arirang/frontpage2k.uxe
 share/arirang/idstest.uxe
 share/arirang/iis.uxe
 share/arirang/iiscgi.uxe
+share/arirang/iisver.rb
 share/arirang/inject.uxe
 share/arirang/ncbook.uxe
 share/arirang/nes.uxe
 share/arirang/network.uxe
+share/arirang/nginx.rb
 share/arirang/nimda.uxe
 share/arirang/nottest.uxe
 share/arirang/nt.uxe
 share/arirang/nt_head.uxe
 share/arirang/request.uxe
+share/arirang/robots.rb
 share/arirang/rule.uxe
+share/arirang/server.rb
 share/arirang/server.uxe
+share/arirang/size.rb
+share/arirang/ssh.rb
 share/arirang/ssltest.uxe
 share/arirang/unix.uxe
 share/arirang/unix_bin.uxe
