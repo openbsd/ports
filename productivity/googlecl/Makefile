@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/16 08:15:52 sthen Exp $
 
 COMMENT=	command-line interface to Google services
 
 MODPY_EGG_VERSION= 0.9.8
 DISTNAME=	googlecl-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=    	productivity devel www
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://googlecl.googlecode.com/files/
 
-USE_SETUPTOOLS=	Yes
+MODPY_SETUPTOOLS= Yes
 LIB_DEPENDS=	::devel/py-gdata
 NO_REGRESS=	Yes
 
