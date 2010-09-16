@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/02 16:06:55 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/16 01:38:53 marco Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 0.0
 
-DISTNAME=		scrotwm-0.9.25
+DISTNAME=		scrotwm-0.9.26
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
-REVISION=		0
 
 HOMEPAGE=		http://www.scrotwm.org/
 MAINTAINER=		Marco Peereboom <marco@peereboom.us>
@@ -40,9 +39,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${PREFIX}/share/examples/scrotwm
 	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/share/examples/scrotwm
 
-# Russian man page is currently broken - see marco
-#.for i in es it ru
-.for i in es it
+.for i in es it ru
 	${INSTALL_DATA_DIR} ${PREFIX}/man/$i/cat1
 	mv ${PREFIX}/man/cat1/scrotwm_$i.0 ${PREFIX}/man/$i/cat1/scrotwm.0
 .endfor
