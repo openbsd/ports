@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.141 2010/09/13 19:39:34 landry Exp $
+$OpenBSD: user.list,v 1.142 2010/09/16 15:45:51 edd Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -164,3 +164,4 @@ id  user		group		port options
 653 _pgbouncer		_pgbouncer	databases/pgbouncer
 654 _spectrum		_spectrum	net/spectrum
 655 _minbif		_minbif		net/minbif
+656 _mediatomb		_mediatomb	multimedia/mediatomb
