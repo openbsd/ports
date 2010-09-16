@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/09/16 07:28:07 jasper Exp $
 #
 
     SUBDIR =
@@ -29,7 +29,6 @@
     SUBDIR += p5-DateManip
     SUBDIR += p5-Encode-IMAPUTF7
     SUBDIR += p5-Finance-Currency-Convert-XE
-    SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-JSON
     SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
@@ -37,12 +36,14 @@
     SUBDIR += p5-JSON-XS-VersionOneAndTwo
     SUBDIR += p5-Jcode
     SUBDIR += p5-MARC-Record
+    SUBDIR += p5-Net-IDN-Encode
     SUBDIR += p5-Net-IDN-Nameprep
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Unicode-Map
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
+    SUBDIR += p5-Unicode-Stringprep
     SUBDIR += pflogx
     SUBDIR += ppmtoTbmp
     SUBDIR += py-cjkcodecs
