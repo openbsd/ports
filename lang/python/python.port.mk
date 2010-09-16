@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.36 2010/08/30 16:35:02 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.37 2010/09/16 22:58:19 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -17,6 +17,12 @@ MODPY_VSPEC = >=${MODPY_VERSION},<2.7
 .endif
 MODPYSPEC = python-${MODPY_VSPEC}
 
+.if ${MODPY_VERSION} < 2.6
+MODPY_JSON =		::devel/py-simplejson
+.else
+MODPY_JSON =
+.endif
+
 MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
@@ -31,6 +37,7 @@ BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 .endif
 
+MODPY_PRE_BUILD_STEPS = @:
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
@@ -39,6 +46,20 @@ MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
 # The setuptools uses test target
 REGRESS_TARGET?=	test
+_MODPY_USERBASE =
+.else
+# Try to detect the case where a port will build regardless of setuptools
+# but the final plist will be different if it's present.
+_MODPY_SETUPTOOLS_FAKE_DIR =	\
+	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
+MODPY_PRE_BUILD_STEPS +=	\
+	;mkdir -p ${_MODPY_SETUPTOOLS_FAKE_DIR} \
+	;exec >${_MODPY_SETUPTOOLS_FAKE_DIR}/__init__.py \
+	;echo 'def setup(*args, **kwargs):' \
+	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes is required"' \
+	;echo '    raise Exception(msg)' \
+	;echo 'Extension = Feature = find_packages = setup'
+_MODPY_USERBASE =	${WRKDIR}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
@@ -50,12 +71,9 @@ MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}
 MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
 
-MODPY_POST_BUILD_BAD_EGGS = @:
-MODPY_PRE_INSTALL_BAD_EGGS = @:
 .if defined(MODPY_BADEGGS)
 .  for egg in ${MODPY_BADEGGS}
-MODPY_POST_BUILD_BAD_EGGS += ;ln -sf ${WRKINST}/${egg}.egg-info ${WRKBUILD}/${egg}.egg-info
-MODPY_PRE_INSTALL_BAD_EGGS += ;mkdir -p ${WRKINST}/${egg}.egg-info
+MODPY_PRE_BUILD_STEPS += ;mkdir -p ${WRKBUILD}/${egg}.egg-info
 .  endfor
 .endif
 
@@ -75,7 +93,7 @@ MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR}
 .endif
 
-MAKE_ENV+=	CC=${CC}
+MAKE_ENV+=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
 CONFIGURE_ENV+=	PYTHON="${MODPY_BIN}"
 
 _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -87,14 +105,13 @@ SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION ${SUBST_VARS}
 .if empty(CONFIGURE_STYLE)
 .  if !target(do-build)
 do-build:
+	${MODPY_PRE_BUILD_STEPS}
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
-	${MODPY_POST_BUILD_BAD_EGGS}
 .  endif
 
 # extra documentation or scripts should be installed via post-install
 .  if !target(do-install)
 do-install:
-	${MODPY_PRE_INSTALL_BAD_EGGS}
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 .  endif
