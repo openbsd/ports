@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/16 07:25:00 jasper Exp $
+${P5SITE}/Unicode/
+${P5SITE}/Unicode/Stringprep/
+${P5SITE}/Unicode/Stringprep.pm
+${P5SITE}/Unicode/Stringprep/BiDi.pm
+${P5SITE}/Unicode/Stringprep/Mapping.pm
+${P5SITE}/Unicode/Stringprep/Prohibited.pm
+${P5SITE}/Unicode/Stringprep/Unassigned.pm
+${P5SITE}/Unicode/Stringprep/_Common.pm
+@man man/man3p/Unicode::Stringprep.3p
+@man man/man3p/Unicode::Stringprep::BiDi.3p
+@man man/man3p/Unicode::Stringprep::Mapping.3p
+@man man/man3p/Unicode::Stringprep::Prohibited.3p
+@man man/man3p/Unicode::Stringprep::Unassigned.3p
+@man man/man3p/Unicode::Stringprep::_Common.3p
