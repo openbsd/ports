@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/16 19:26:30 sthen Exp $
 
 COMMENT=	copy files and directories with perl
 
 MODULES=	cpan
 
 DISTNAME=	File-NCopy0.32
+PKGNAME=	p5-File-NCopy-0.32
 REVISION=	0
 CATEGORIES=	devel
 
