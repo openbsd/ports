@@ -1,6 +1,6 @@
-# $OpenBSD: mono.port.mk,v 1.13 2010/07/05 09:13:05 espie Exp $
+# $OpenBSD: mono.port.mk,v 1.14 2010/09/16 18:53:29 ajacoutot Exp $
 
-MODMONO_ONLY_FOR_ARCHS=	i386 amd64 powerpc # XXX arm
+MODMONO_ONLY_FOR_ARCHS=	i386 amd64 # XXX arm powerpc (no support for sigcontext)
 ONLY_FOR_ARCHS?=	${MODMONO_ONLY_FOR_ARCHS}
 
 CATEGORIES+=		lang/mono

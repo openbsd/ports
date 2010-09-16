@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/16 18:53:29 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -64,7 +64,8 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		::devel/libdaemon \
 		::x11/dbus
 
-ONLY_FOR_ARCHS-mono = i386 amd64 powerpc
+# keep in sync with lang/mono/mono.port.mk
+ONLY_FOR_ARCHS-mono = i386 amd64
 
 BUILD_MONO = No
 .if !${FLAVOR:L:Mno_mono}
