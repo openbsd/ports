@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2010/08/31 14:13:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.270 2010/09/16 10:18:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -215,7 +215,6 @@
      SUBDIR += tkimg
      SUBDIR += tkpng
      SUBDIR += ufraw
-     SUBDIR += ufraw,lensfun
      SUBDIR += vcdimager
      SUBDIR += vid
      SUBDIR += videod
