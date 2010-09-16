@@ -1,2 +1,0 @@
-IDNA::Punycode is a module to encode/decode Unicode strings into
-Punycode, an efficient encoding of Unicode for use with IDNA.
