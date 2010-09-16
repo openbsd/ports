@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/21 19:11:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/16 12:36:52 ajacoutot Exp $
 
 COMMENT=	GObject based collection library 
 
 GNOME_PROJECT=	libgee
-GNOME_VERSION=	0.5.2
+GNOME_VERSION=	0.5.3
 
 SHARED_LIBS +=  gee 0.0 # .2.0
 
