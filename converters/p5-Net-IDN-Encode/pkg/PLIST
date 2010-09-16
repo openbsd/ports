@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/16 07:26:16 jasper Exp $
+@pkgpath converters/p5-IDNA-Punycode
+@conflict converters/p5-IDNA-Punycode-*
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/IDN/
+${P5ARCH}/Net/IDN/Encode.pm
+${P5ARCH}/Net/IDN/Punycode/
+${P5ARCH}/Net/IDN/Punycode.pm
+${P5ARCH}/Net/IDN/Punycode/PP.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/IDN/
+${P5ARCH}/auto/Net/IDN/Punycode/
+${P5ARCH}/auto/Net/IDN/Punycode/Punycode.bs
+${P5ARCH}/auto/Net/IDN/Punycode/Punycode.so
+@man man/man3p/Net::IDN::Encode.3p
+@man man/man3p/Net::IDN::Punycode.3p
+@man man/man3p/Net::IDN::Punycode::PP.3p
