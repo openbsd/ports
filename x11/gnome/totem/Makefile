@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2010/09/03 11:50:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/09/16 11:02:08 jasper Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.30.2
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	multimedia
 
@@ -45,7 +45,7 @@ BUILD_DEPENDS+=	::graphics/ffmpeg \
 BUILD_DEPENDS+=	::x11/py-gtk2 \
 		::devel/py-gdata \
 		::devel/iso-codes \
-		::multimedia/gstreamer-0.10/plugins-good
+		:gstreamer-plugins-good->=0.10.24p2:multimedia/gstreamer-0.10/plugins-good
 RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \
 		:iso-codes-*:devel/iso-codes \
