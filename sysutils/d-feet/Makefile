@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/16 08:19:50 sthen Exp $
 
 COMMENT=		dbus debugger
 
 MODPY_EGG_VERSION=	0.1.12
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		sysutils x11
 
 EXTRACT_SUFX=		.tar.bz2
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/d-feet/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
 MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		::x11/py-gtk2
 RUN_DEPENDS=		::devel/desktop-file-utils \

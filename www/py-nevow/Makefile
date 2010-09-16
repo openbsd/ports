@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/16 08:18:31 sthen Exp $
 
 COMMENT=	web application construction kit
 
 VERSION=	0.10.0
 DISTNAME=	Nevow-${VERSION}
 PKGNAME=	py-nevow-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodNevow
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ekyo.nerim.net/distfiles/
 
 MODULES=	lang/python
+MODPY_SETUPTOOLS= Yes
 
 RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web	\
 		:py-epsilon-*:devel/py-epsilon
