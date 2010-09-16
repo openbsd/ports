@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/16 10:04:54 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
-DISTNAME=	lensfun-0.2.3
-REVISION=	0
-SHARED_LIBS=	lensfun 0.0
+DISTNAME=	lensfun-0.2.5
+SHARED_LIBS=	lensfun 1.0
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.berlios.de/
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m stdc++ z
+WANTLIB += c glib-2.0 m png stdc++ z
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=lensfun/}
 EXTRACT_SUFX=		.tar.bz2
@@ -23,8 +22,8 @@ MODULES=		lang/python devel/gettext
 MODPY_RUNDEP=		No
 BUILD_DEPENDS=		::devel/doxygen
 
-LIB_DEPENDS=		glib-2.0::devel/glib2 \
-			png::graphics/png
+LIB_DEPENDS=		::devel/glib2 \
+			::graphics/png
 
 MAKE_FLAGS=		V=1 INSTDIR_manual=${PREFIX}/share/doc/lensfun \
 			LIBlensfun_VERSION=${LIBlensfun_VERSION}
@@ -33,21 +32,25 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	${MODPY_BIN} ./configure
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/lensfun \
-			--libdir=${PREFIX}/lib
+			--libdir=${PREFIX}/lib \
+			--vectorization=SSE
 
 NO_REGRESS =		Yes
 
 CFLAGS+=		-I/usr/include -I${LOCALBASE}/include/libpng
 MAKE_FILE=		GNUmakefile
 
-ALL_TARGET =		all tests
+ALL_TARGET =		all
 
 SUBST_VARS =		MAKE_PROGRAM
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/ac.py
+	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/tibs.py
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/out/posix/release/tmod ${PREFIX}/bin
+	mv ${PREFIX}/lib/liblensfun.so \
+	    ${PREFIX}/lib/liblensfun.so.${LIBlensfun_VERSION}
+	cd ${WRKSRC}/out/posix*/release; \
+	    ${INSTALL_PROGRAM} tmod ${PREFIX}/bin
 
 .include <bsd.port.mk>

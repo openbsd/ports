@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/16 11:54:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/16 10:04:54 sthen Exp $
 @bin bin/tmod
 include/lensfun.h
-@comment lib/liblensfun.so
-@comment lib/liblensfun.so.0
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
 lib/pkgconfig/lensfun.pc
 share/doc/lensfun/
@@ -12,6 +10,7 @@ share/doc/lensfun/gpl-3.0.txt
 share/doc/lensfun/lgpl-3.0.txt
 share/doc/lensfun/manual/
 share/doc/lensfun/manual/addcamera.html
+share/doc/lensfun/manual/addlens.html
 share/doc/lensfun/manual/annotated.html
 share/doc/lensfun/manual/basearch.html
 share/doc/lensfun/manual/cc-by-ca.html
@@ -83,6 +82,7 @@ share/lensfun/6x6.xml
 share/lensfun/compact-canon.xml
 share/lensfun/compact-casio.xml
 share/lensfun/compact-fujifilm.xml
+share/lensfun/compact-kodak.xml
 share/lensfun/compact-konica-minolta.xml
 share/lensfun/compact-leica.xml
 share/lensfun/compact-nikon.xml
@@ -90,14 +90,17 @@ share/lensfun/compact-olympus.xml
 share/lensfun/compact-panasonic.xml
 share/lensfun/compact-pentax.xml
 share/lensfun/compact-ricoh.xml
+share/lensfun/compact-sigma.xml
 share/lensfun/compact-sony.xml
 share/lensfun/generic.xml
 share/lensfun/rf-leica.xml
 share/lensfun/slr-canon.xml
 share/lensfun/slr-contax.xml
+share/lensfun/slr-hasselblad.xml
 share/lensfun/slr-konica-minolta.xml
 share/lensfun/slr-nikon.xml
 share/lensfun/slr-olympus.xml
+share/lensfun/slr-panasonic.xml
 share/lensfun/slr-pentax.xml
 share/lensfun/slr-samsung.xml
 share/lensfun/slr-schneider.xml
