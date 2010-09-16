@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/15 18:35:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/09/16 22:34:08 fgsch Exp $
 
 VERSION=		2.4
 PATCHLEVEL=		.6
-PKG_PATCHLEVEL=		p3
+PKG_PATCHLEVEL=		p4
 SHARED_LIBS=		python2.4 1.0
 
 BROKEN-mips64 = Floating point exception while generating pyc objects
