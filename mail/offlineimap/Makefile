@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/16 11:04:37 jasper Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-V=		6.2.0
-DISTNAME=	offlineimap_${V}
+MODPY_EGG_VERSION= 6.2.0.2
+DISTNAME=	offlineimap_${MODPY_EGG_VERSION}.orig
 CATEGORIES=	mail
-PKGNAME=	${DISTNAME:S/_/-/}
-REVISION =	0
+PKGNAME=	offlineimap-${MODPY_EGG_VERSION}
 
 HOMEPAGE=	http://software.complete.org/offlineimap/
 
@@ -27,10 +26,9 @@ MODULES=	lang/python
 
 BUILD_DEPENDS=	::textproc/docbook-to-man
 
-WRKDIST=	${WRKDIR}/offlineimap
+WRKDIST=	${WRKDIR}/offlineimap-${MODPY_EGG_VERSION}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
-SUBST_VARS=	V
 
 post-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/docbook-to-man offlineimap.sgml \
