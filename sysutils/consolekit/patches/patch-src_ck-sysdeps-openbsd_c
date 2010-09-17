@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Thu Jul  1 02:47:13 2010
-+++ src/ck-sysdeps-openbsd.c	Thu Jul  1 02:48:18 2010
-@@ -0,0 +1,414 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Fri Sep 17 15:18:27 2010
++++ src/ck-sysdeps-openbsd.c	Fri Sep 17 15:20:56 2010
+@@ -0,0 +1,430 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -201,7 +201,11 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp
 +
 +        if (p.p_tdev == NODEV) {
 +		/* XXX nasty hack */
++#if defined(__i386__) || defined(__amd64__)
 +                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
++#else
++                memcpy (P->tty_text, "/dev/ttyC0", sizeof P->tty_text);
++#endif
 +        }
 +
 +        if (P->pid != pid) {
@@ -352,8 +356,11 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp
 +{
 +        char *device;
 +
++// VT are only available on i386 and amd64
++#if defined(__i386__) || defined(__amd64__)
 +        /* The device number is always one less than the VT number. */
 +        num--;
++#endif
 +
 +        device = g_strdup_printf ("/dev/ttyC%u", num);
 +
@@ -375,8 +382,11 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp
 +        }
 +
 +        if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
++// VT are only available on i386 and amd64
++#if defined(__i386__) || defined(__amd64__)
 +                /* The VT number is always one more than the device number. */
 +                n++;
++#endif
 +                ret = TRUE;
 +        }
 +
@@ -400,6 +410,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp
 +        active = 0;
 +        ret = FALSE;
 +
++// VT are only available on i386 and amd64
++#if defined(__i386__) || defined(__amd64__)
 +        res = ioctl (console_fd, VT_GETACTIVE, &active);
 +        if (res == ERROR) {
 +                perror ("ioctl VT_GETACTIVE");
@@ -407,6 +419,10 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.6 2010/07/01 07:50:59 ajacoutot Exp
 +        }
 +
 +        g_debug ("Active VT is: %d (ttyC%d)", active, active - 1);
++#else
++       res = 0;
++       g_debug ("Active console is: ttyC%d", active);
++#endif
 +        ret = TRUE;
 +
 + out:
