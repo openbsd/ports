@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_imap_cmd-select_c,v 1.3 2010/09/17 13:11:14 sthen Exp $
+--- src/imap/cmd-select.c.orig	Mon Aug 23 10:37:53 2010
++++ src/imap/cmd-select.c	Mon Sep  6 17:06:13 2010
+@@ -327,10 +327,28 @@ select_open(struct imap_select_context *ctx, const cha
+ 	return 0;
+ }
+ 
++static void close_selected_mailbox(struct client *client)
++{
++	struct mail_storage *old_storage;
++	struct mailbox *box;
++
++	if (client->mailbox == NULL)
++		return;
++
++	old_storage = mailbox_get_storage(client->mailbox);
++	client_search_updates_free(client);
++	box = client->mailbox;
++	client->mailbox = NULL;
++
++	if (mailbox_close(&box) < 0)
++		client_send_untagged_storage_error(client, old_storage);
++	/* CLOSED response is required by QRESYNC */
++	client_send_line(client, "* OK [CLOSED] Previous mailbox closed.");
++}
++
+ bool cmd_select_full(struct client_command_context *cmd, bool readonly)
+ {
+ 	struct client *client = cmd->client;
+-	struct mailbox *box;
+ 	struct imap_select_context *ctx;
+ 	const struct imap_arg *args;
+ 	const char *mailbox;
+@@ -342,6 +360,7 @@ bool cmd_select_full(struct client_command_context *cm
+ 
+ 	if (!IMAP_ARG_TYPE_IS_STRING(args[0].type)) {
+ 		client_send_command_error(cmd, "Invalid arguments.");
++		close_selected_mailbox(client);
+ 		return FALSE;
+ 	}
+ 	mailbox = IMAP_ARG_STR(&args[0]);
+@@ -349,12 +368,15 @@ bool cmd_select_full(struct client_command_context *cm
+ 	ctx = p_new(cmd->pool, struct imap_select_context, 1);
+ 	ctx->cmd = cmd;
+ 	ctx->storage = client_find_storage(cmd, &mailbox);
+-	if (ctx->storage == NULL)
++	if (ctx->storage == NULL) {
++		close_selected_mailbox(client);
+ 		return TRUE;
++	}
+ 
+ 	if (args[1].type == IMAP_ARG_LIST) {
+ 		if (!select_parse_options(ctx, IMAP_ARG_LIST_ARGS(&args[1]))) {
+ 			select_context_free(ctx);
++			close_selected_mailbox(client);
+ 			return TRUE;
+ 		}
+ 	}
+@@ -362,20 +384,7 @@ bool cmd_select_full(struct client_command_context *cm
+ 	i_assert(client->mailbox_change_lock == NULL);
+ 	client->mailbox_change_lock = cmd;
+ 
+-	if (client->mailbox != NULL) {
+-		struct mail_storage *old_storage =
+-			mailbox_get_storage(client->mailbox);
+-
+-		client_search_updates_free(client);
+-		box = client->mailbox;
+-		client->mailbox = NULL;
+-
+-		if (mailbox_close(&box) < 0)
+-			client_send_untagged_storage_error(client, old_storage);
+-		/* CLOSED response is required by QRESYNC */
+-		client_send_line(client,
+-				 "* OK [CLOSED] Previous mailbox closed.");
+-	}
++	close_selected_mailbox(client);
+ 
+ 	if (ctx->condstore) {
+ 		/* Enable while no mailbox is opened to avoid sending
