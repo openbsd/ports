@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2010/09/16 10:18:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.271 2010/09/17 21:37:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += compface
      SUBDIR += cqcam
      SUBDIR += ctl
+     SUBDIR += darktable
      SUBDIR += dcmtk
      SUBDIR += dcraw
      SUBDIR += dia
