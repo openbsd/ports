@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/05/16 08:37:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/09/17 12:15:20 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -114,6 +114,9 @@ lib/vlc/access/libaccess_tcp_plugin.so
 @comment lib/vlc/access/libaccess_udp_plugin.a
 lib/vlc/access/libaccess_udp_plugin.la
 lib/vlc/access/libaccess_udp_plugin.so
+@comment lib/vlc/access/libcdda_plugin.a
+lib/vlc/access/libcdda_plugin.la
+lib/vlc/access/libcdda_plugin.so
 @comment lib/vlc/access/libdvdnav_plugin.a
 lib/vlc/access/libdvdnav_plugin.la
 lib/vlc/access/libdvdnav_plugin.so
@@ -123,6 +126,9 @@ lib/vlc/access/libdvdread_plugin.so
 @comment lib/vlc/access/libv4l2_plugin.a
 lib/vlc/access/libv4l2_plugin.la
 lib/vlc/access/libv4l2_plugin.so
+@comment lib/vlc/access/libvcd_plugin.a
+lib/vlc/access/libvcd_plugin.la
+lib/vlc/access/libvcd_plugin.so
 @comment lib/vlc/access/libx11_screen_plugin.a
 @comment lib/vlc/access/libx11_screen_plugin.la
 @comment lib/vlc/access/libx11_screen_plugin.so
@@ -870,8 +876,6 @@ share/locale/id/LC_MESSAGES/vlc.mo
 share/locale/it/LC_MESSAGES/vlc.mo
 share/locale/ja/LC_MESSAGES/vlc.mo
 share/locale/ka/LC_MESSAGES/vlc.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/vlc.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/

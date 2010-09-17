@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/09/12 22:35:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.99 2010/09/17 12:15:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,8 @@ V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 REVISION-main=	8
+REVISION-jack=	1
+REVISION-web=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -26,65 +28,69 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext x11/qt4
-LIB_DEPENDS+=	dbus-1::x11/dbus
+LIB_DEPENDS+=	::x11/dbus
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::x11/qt4 \
-		::devel/sdl-image \
-		::graphics/png \
-		::audio/libmad \
-		::graphics/libmpeg2 \
-		:ffmpeg->=20080620p10:graphics/ffmpeg \
 		::audio/faad \
-		::devel/fribidi \
-		::audio/liba52 \
-		::multimedia/libtheora \
-		::textproc/libxml \
 		::audio/flac \
+		::audio/liba52 \
+		::audio/libcddb \
+		::audio/libdca \
+		::audio/libmad \
 		::audio/libmpcdec \
-		::multimedia/libmatroska \
-		::textproc/libebml \
-		::multimedia/libdvdnav \
-		::devel/libdvdread \
-		::multimedia/x264 \
-		::multimedia/schroedinger \
-		::graphics/libdvbpsi \
+		::audio/libvorbis \
 		::audio/speex \
 		::audio/taglib \
-		::audio/libvorbis \
-		::audio/libdca \
+		::devel/fribidi \
+		::devel/libdvdread \
+		::devel/libnotify \
+		::devel/sdl-image \
+		:ffmpeg->=20080620p10:graphics/ffmpeg \
+		::graphics/libdvbpsi \
+		::graphics/libmpeg2 \
+		::graphics/png \
+		::multimedia/libdvdnav \
+		::multimedia/libmatroska \
+		::multimedia/libtheora \
+		::multimedia/schroedinger \
+		::multimedia/x264 \
 		::net/libproxy \
-		::devel/libnotify
+		::textproc/libebml \
+		::textproc/libxml \
+		::x11/qt4
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-WANTLIB-main=	GL GLU ICE SM SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 bz2 \
-		c cairo dbus-glib-1 expat faac fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gsm gthread-2.0 gtk-x11-2.0 jpeg m mp3lame orc-0.4 ogg pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread-stubs pthread \
-		stdc++.>=46.0 sndio tiff usbhid xcb-keysyms xcb-render \
-		xcb-render-util xcb z lib/qt4/QtGui SDL_image png mad mpeg2 \
-		avcodec avformat avutil postproc swscale faad fribidi \
-		a52 theora xml2 FLAC mpcdec matroska ebml dvdnav dvdread \
-		x264 schroedinger-1.0 dvbpsi speex tag vorbis vorbisenc \
-		dca proxy notify
+WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
+		Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama \
+		Xrandr Xrender Xv Xxf86vm a52 atk-1.0 avcodec avformat \
+		avutil bz2 c cairo cddb dbus-1 dbus-glib-1 dca dvbpsi \
+		dvdnav dvdread ebml expat faac faad fontconfig freetype \
+		fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gsm gthread-2.0 gtk-x11-2.0 \
+		jpeg m mad matroska mp3lame mpcdec mpeg2 notify orc-0.4 \
+		ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png postproc proxy pthread-stubs pthread stdc++.>=46.0 \
+		schroedinger-1.0 sndio speex swscale tag tiff theora \
+		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
+		xcb-render-util xcb xml2 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.64
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools
-CONFIGURE_ARGS+=--disable-altivec \
+CONFIGURE_ARGS+=--disable-alsa \
+		--disable-altivec \
 		--disable-bonjour \
 		--disable-cmml \
+		--disable-fluidsynth \
+		--disable-dvb \
 		--disable-fluidsynth \
 		--disable-gme \
 		--disable-gnutls \
 		--disable-hal \
 		--disable-kate \
-		--disable-libcdio \
 		--disable-libgcrypt \
 		--disable-libtar \
 		--disable-libv4l2 \
@@ -99,7 +105,7 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-smb \
 		--disable-tiger \
 		--disable-udev \
-		--disable-vcd \
+		--disable-upnp \
 		--disable-zvbi \
 		--enable-dvdread \
 		--enable-faad \
@@ -125,7 +131,6 @@ FLAVOR?=
 MULTI_PACKAGES+=-web
 COMMENT-web=	Mozilla plugin for embedded media playback
 PKGNAME-web=	vlc-web-${V}
-REVISION-web=	2
 BUILD_DEPENDS+=	:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
 CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
 CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
@@ -135,15 +140,14 @@ LIB_DEPENDS-web=${LIB_DEPENDS} \
 		::${BASE_PKGPATH} \
 		::devel/nspr
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
-WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs stdc++ xcb \
-		vlc vlccore nspr4 plc4 plds4
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m nspr4 plc4 plds4 \
+		pthread-stubs stdc++ vlc vlccore xcb
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
 MULTI_PACKAGES+=-jack
 COMMENT-jack=	jackd audio output module for VLC
 FULLPKGNAME-jack=vlc-jack-${V}
-REVISION-jack=	0
 FULLPKGPATH-jack=x11/vlc,-jack
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=${LIB_DEPENDS} \
@@ -151,7 +155,7 @@ LIB_DEPENDS-jack=${LIB_DEPENDS} \
 		 ::audio/jack
 # any FLAVOR of VLC will do
 RUN_DEPENDS-jack=::${BASE_PKGPATH}
-WANTLIB-jack=	m vlccore jack
+WANTLIB-jack=	m jack vlccore
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
