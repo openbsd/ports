@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/10/29 08:28:10 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/09/17 15:58:30 dcoppa Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -70,6 +70,7 @@ share/mldonkey/distrib/i18n/mlnet_strings.fr.noaccents
 share/mldonkey/distrib/i18n/mlnet_strings.ga
 share/mldonkey/distrib/i18n/mlnet_strings.it_IT.UTF-8
 share/mldonkey/distrib/i18n/mlnet_strings.pt_BR
+share/mldonkey/distrib/i18n/mlnet_strings.ru_RU.UTF-8
 share/mldonkey/distrib/i18n/mlnet_strings.sp
 share/mldonkey/distrib/i18n/mlnet_strings.sv
 share/mldonkey/distrib/kill_mldonkey

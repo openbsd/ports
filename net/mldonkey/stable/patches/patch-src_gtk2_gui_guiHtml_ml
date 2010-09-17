@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_gtk2_gui_guiHtml_ml,v 1.1 2010/09/17 15:58:30 dcoppa Exp $
+
+From upstream cvs, fixes error: 
+
+File "src/gtk2/gui/guiHtml.ml", line 61, characters 25-30:
+Error: This expression has type (string * int) option
+       but an expression was expected of type
+         (string * int * (string * string) option) option
+
+--- src/gtk2/gui/guiHtml.ml.orig	Sat May 20 01:43:54 2006
++++ src/gtk2/gui/guiHtml.ml	Fri Sep 17 13:00:17 2010
+@@ -50,9 +50,13 @@ let user_agent =
+ 
+ let make_request url =
+   let module H = Http_client in
++  let auth = match !!O.gtk_connection_http_proxy_login with
++  | "" -> None
++  | _ -> Some (!!O.gtk_connection_http_proxy_login, !!O.gtk_connection_http_proxy_password)
++  in
+   let proxy =
+     if !!O.gtk_connection_http_use_proxy
+-      then Some (!!O.gtk_connection_http_proxy_server, !!O.gtk_connection_http_proxy_port)
++      then Some (!!O.gtk_connection_http_proxy_server, !!O.gtk_connection_http_proxy_port, auth)
+       else None
+   in
+   let r = {

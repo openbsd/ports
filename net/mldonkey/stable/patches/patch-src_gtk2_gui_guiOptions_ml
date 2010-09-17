@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_gtk2_gui_guiOptions_ml,v 1.1 2010/09/17 15:58:30 dcoppa Exp $
+
+From upstream cvs, fixes error:
+
+File "src/gtk2/gui/guiHtml.ml", line 61, characters 25-30:
+Error: This expression has type (string * int) option
+       but an expression was expected of type
+         (string * int * (string * string) option) option
+
+--- src/gtk2/gui/guiOptions.ml.orig	Sun Jul  1 15:00:11 2007
++++ src/gtk2/gui/guiOptions.ml	Fri Sep 17 13:00:17 2010
+@@ -166,6 +166,16 @@ let gtk_connection_http_use_proxy = define_option curr
+     "Direct TCP connections to HTTP proxy (the proxy should support CONNECT)"
+     bool_option false
+ 
++let gtk_connection_http_proxy_login = define_option current_section
++    ["gtk_connection_http_proxy_login"]
++    "HTTP proxy login (leave empty if proxy doesn't require authentication)"
++    string_option ""
++
++let gtk_connection_http_proxy_password = define_option current_section
++    ["gtk_connection_http_proxy_password"]
++    "HTTP proxy password"
++    string_option ""
++
+ (* {Client} *)
+ 
+ let gtk_client_login = define_option current_section
