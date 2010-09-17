@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/14 15:11:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/17 01:42:59 fgsch Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
@@ -22,15 +22,23 @@ MASTER_SITES =	http://github.com/schacon/hg-git/tarball/${MODPY_EGG_VERSION}/
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		::devel/py-dulwich ::devel/mercurial
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-${MODPY_EGG_VERSION}/-4097609/}
 
-REGRESS_DEPENDS = 	${RUN_DEPENDS} ::archivers/bzip2 ::archivers/unzip
+RUN_DEPENDS =		::devel/py-dulwich \
+			::devel/mercurial
+REGRESS_DEPENDS = 	${RUN_DEPENDS} \
+			::archivers/bzip2 \
+			::archivers/unzip \
+			::devel/git,-main
+
+MODPY_BADEGGS =		hg-git
 
 pre-regress:
-	perl -pi -e 's|python -c|python${MODPY_VERSION} -c|g' ${WRKSRC}/tests/*
+	perl -pi -e 's|python |python${MODPY_VERSION} |g' \
+	    ${WRKSRC}/tests/test-*
 
 do-regress:
-	cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py --with-hg=${LOCALBASE}/hg
+	cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py \
+	    --with-hg=${LOCALBASE}/hg
 
 .include <bsd.port.mk>
