@@ -1,36 +1,39 @@
-# $OpenBSD: Makefile,v 1.18 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/17 13:25:00 millert Exp $
 
-COMMENT=	Python package to retrieve data of the IMDb movie database
+COMMENT =	python package to retrieve data of the IMDb movie database
 
-MODPY_EGG_VERSION=3.6
-DISTNAME=	IMDbPY-${MODPY_EGG_VERSION}
-PKGNAME=	py-imdb-${MODPY_EGG_VERSION}
-REVISION =	3
-CATEGORIES=	misc
+MODPY_EGG_VERSION = 4.6
+DISTNAME =	IMDbPY-${MODPY_EGG_VERSION}
+PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
+CATEGORIES =	misc devel
 
-HOMEPAGE=	http://imdbpy.sourceforge.net/
+HOMEPAGE =	http://imdbpy.sourceforge.net/
 
-MAINTAINER=	Todd C. Miller <millert@openbsd.org>
+MAINTAINER =	Todd C. Miller <millert@openbsd.org>
 
 # GPL 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imdbpy/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=imdbpy/}
 
-MODULES=	lang/python
+MODULES =	lang/python
+MODPY_SETUPTOOLS = Yes
 
-NO_REGRESS=	Yes
+RUN_DEPENDS =	::textproc/py-lxml
 
-DOCSDIR=	${PREFIX}/share/doc/py-imdb
-EXAMPLESDIR=	${PREFIX}/share/examples/py-imdb
+NO_REGRESS =	Yes
+
+DOCSDIR =	${PREFIX}/share/doc/py-imdb
+EXAMPLESDIR =	${PREFIX}/share/examples/py-imdb
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/README* ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/* ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${EXAMPLESDIR}
+	perl -pi -e 's,#!/usr/bin/env python,#!${MODPY_BIN},' ${EXAMPLESDIR}/*
 
 .include <bsd.port.mk>
