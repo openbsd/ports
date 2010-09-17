@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.142 2010/09/16 15:45:51 edd Exp $
+$OpenBSD: user.list,v 1.143 2010/09/17 08:08:42 fgsch Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -165,3 +165,4 @@ id  user		group		port options
 654 _spectrum		_spectrum	net/spectrum
 655 _minbif		_minbif		net/minbif
 656 _mediatomb		_mediatomb	multimedia/mediatomb
+657 _ircd-seven		_ircd-seven	net/ircd-seven
