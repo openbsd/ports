@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/04 20:09:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/17 14:35:29 jasper Exp $
 
 COMMENT=	interface to Ogg Vorbis information, fully written in Perl
 
-DISTNAME=	Ogg-Vorbis-Header-PurePerl-0.07
+DISTNAME=	Ogg-Vorbis-Header-PurePerl-1.0
 CATEGORIES=	audio
 
 MODULES=	cpan
