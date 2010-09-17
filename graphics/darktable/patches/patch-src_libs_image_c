@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_libs_image_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/libs/image.c.orig	Thu Sep 16 23:01:06 2010
++++ src/libs/image.c	Thu Sep 16 23:01:21 2010
+@@ -75,12 +75,12 @@ gui_init (dt_lib_module_t *self)
+   hbox = GTK_BOX(gtk_hbox_new(TRUE, 5));
+ 
+   button = gtk_button_new_with_label(_("remove"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("remove from the collection"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("remove from the collection"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)0);
+ 
+   button = gtk_button_new_with_label(_("delete"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("physically delete from disk"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("physically delete from disk"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)1);
+ 
+@@ -88,12 +88,12 @@ gui_init (dt_lib_module_t *self)
+   hbox = GTK_BOX(gtk_hbox_new(TRUE, 5));
+ 
+   button = gtk_button_new_with_label(_("write dt files"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("write history stack and tags to sidecar files"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("write history stack and tags to sidecar files"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)2);
+ 
+   button = gtk_button_new_with_label(_("duplicate"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("add a duplicate to the collection"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("add a duplicate to the collection"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)3);
+ 

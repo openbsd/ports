@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_LibRaw_src_libraw_cxx_cpp,v 1.1.1.1 2010/09/17 21:37:18 sthen Exp $
+--- src/LibRaw/src/libraw_cxx.cpp.orig	Thu Sep 16 22:19:32 2010
++++ src/LibRaw/src/libraw_cxx.cpp	Thu Sep 16 22:22:04 2010
+@@ -23,6 +23,7 @@ it under the terms of the one of three licenses as you
+ #include <float.h>
+ #include <math.h>
+ #ifndef WIN32
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #else
+ #include <winsock2.h>

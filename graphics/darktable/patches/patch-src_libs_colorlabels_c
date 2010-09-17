@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_libs_colorlabels_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/libs/colorlabels.c.orig	Fri Aug 27 17:46:31 2010
++++ src/libs/colorlabels.c	Thu Sep 16 23:17:00 2010
+@@ -66,12 +66,12 @@ gui_init (dt_lib_module_t *self)
+   hbox = GTK_BOX(gtk_hbox_new(TRUE, 5));
+ 
+   button = gtk_button_new_with_label(C_("color label", "red"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle red label\nof selected images (ctrl-1)"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle red label\nof selected images (ctrl-1)"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)0);
+ 
+   button = gtk_button_new_with_label(C_("color label", "yellow"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle yellow label\nof selected images (ctrl-2)"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle yellow label\nof selected images (ctrl-2)"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)1);
+ 
+@@ -79,12 +79,12 @@ gui_init (dt_lib_module_t *self)
+   hbox = GTK_BOX(gtk_hbox_new(TRUE, 5));
+ 
+   button = gtk_button_new_with_label(C_("color label", "green"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle green label\nof selected images (ctrl-3)"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("toggle green label\nof selected images (ctrl-3)"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)2);
+ 
+   button = gtk_button_new_with_label(_("clear"));
+-  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("clear all labels of selected images"), NULL);
++  gtk_object_set(GTK_OBJECT(button), "tooltip-text", _("clear all labels of selected images"), (char *)NULL);
+   gtk_box_pack_start(hbox, button, TRUE, TRUE, 0);
+   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(button_clicked), (gpointer)3);
+ 

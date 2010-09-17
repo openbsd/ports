@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_iop_velvia_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/iop/velvia.c.orig	Thu Sep 16 22:37:56 2010
++++ src/iop/velvia.c	Thu Sep 16 22:38:04 2010
+@@ -230,9 +230,9 @@ void gui_init(struct dt_iop_module_t *self)
+   gtk_box_pack_start(GTK_BOX(g->vbox2), GTK_WIDGET(g->scale1), TRUE, TRUE, 0);
+   gtk_box_pack_start(GTK_BOX(g->vbox2), GTK_WIDGET(g->scale2), TRUE, TRUE, 0);
+   gtk_box_pack_start(GTK_BOX(g->vbox2), GTK_WIDGET(g->scale3), TRUE, TRUE, 0);
+-  gtk_object_set(GTK_OBJECT(g->scale1), "tooltip-text", _("the amount of saturation to apply"), NULL);
+-  gtk_object_set(GTK_OBJECT(g->scale2), "tooltip-text", _("the vibrance amount"), NULL);
+-  gtk_object_set(GTK_OBJECT(g->scale3), "tooltip-text", _("how much to spare highlights and shadows"), NULL);
++  gtk_object_set(GTK_OBJECT(g->scale1), "tooltip-text", _("the amount of saturation to apply"), (char *)NULL);
++  gtk_object_set(GTK_OBJECT(g->scale2), "tooltip-text", _("the vibrance amount"), (char *)NULL);
++  gtk_object_set(GTK_OBJECT(g->scale3), "tooltip-text", _("how much to spare highlights and shadows"), (char *)NULL);
+   
+   g_signal_connect (G_OBJECT (g->scale1), "value-changed",
+                     G_CALLBACK (saturation_callback), self);

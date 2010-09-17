@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_common_camera_control_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/common/camera_control.c.orig	Fri Aug 27 17:46:31 2010
++++ src/common/camera_control.c	Thu Sep 16 23:24:44 2010
+@@ -173,7 +173,7 @@ void _camera_process_jobb(const dt_camctl_t *c,const d
+         const char *fname = _dispatch_request_image_filename(c,fp.name,cam);
+         if( !fname ) fname=fp.name;
+   
+-        char *output = g_build_filename(output_path,fname,NULL);
++        char *output = g_build_filename(output_path,fname,(char *)NULL);
+   
+         int handle = open( output, O_CREAT | O_WRONLY,0666);
+         gp_file_new_from_fd( &destination , handle );
+@@ -474,7 +474,7 @@ void dt_camctl_import(const dt_camctl_t *c,const dt_ca
+       const char *fname = _dispatch_request_image_filename(c,filename,cam);
+       if(!fname) fname=filename;
+       
+-      char *output = g_build_filename(output_path,fname,NULL);
++      char *output = g_build_filename(output_path,fname,(char *)NULL);
+       
+       // Now we have filenames lets download file and notify listener of image download
+       CameraFile *destination;
+@@ -792,7 +792,7 @@ void _camera_poll_events(const dt_camctl_t *c,const dt
+             const char *fname = _dispatch_request_image_filename(c,fp->name,cam);
+             if( !fname ) fname=fp->name;
+             
+-            char *output = g_build_filename(output_path,fname,NULL);
++            char *output = g_build_filename(output_path,fname,(char *)NULL);
+            
+             int handle = open( output, O_CREAT | O_WRONLY,0666);
+             gp_file_new_from_fd( &destination , handle );

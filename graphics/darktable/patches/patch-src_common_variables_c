@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_common_variables_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/common/variables.c.orig	Thu Sep 16 23:50:46 2010
++++ src/common/variables.c	Thu Sep 16 23:50:52 2010
+@@ -150,7 +150,7 @@ gboolean _variable_get_value(dt_variables_params_t *pa
+   gchar *pictures_folder=NULL;
+   
+   if(g_get_user_special_dir(G_USER_DIRECTORY_PICTURES) == NULL)
+-    pictures_folder=g_build_path(G_DIR_SEPARATOR_S,homedir,"Pictures",NULL);
++    pictures_folder=g_build_path(G_DIR_SEPARATOR_S,homedir,"Pictures",(char *)NULL);
+   else 
+     pictures_folder=g_strdup( g_get_user_special_dir(G_USER_DIRECTORY_PICTURES) );
+   

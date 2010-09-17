@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_common_image_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+hunk 1: missing sentinel in function call; pushed upstream
+
+--- src/common/image.c.orig	Thu Sep 16 23:45:50 2010
++++ src/common/image.c	Thu Sep 16 23:50:00 2010
+@@ -495,7 +495,7 @@ int dt_image_import(const int32_t film_id, const char 
+   // select from images; if found => return
+   gchar *imgfname;
+   if(film_id > 1) imgfname = g_path_get_basename((const gchar*)filename);
+-  else            imgfname = g_build_filename((const gchar*)filename, NULL);
++  else            imgfname = g_build_filename((const gchar*)filename, (char *)NULL);
+   sqlite3_stmt *stmt;
+   rc = sqlite3_prepare_v2(darktable.db, "select id from images where film_id = ?1 and filename = ?2", -1, &stmt, NULL);
+   rc = sqlite3_bind_int (stmt, 1, film_id);
+@@ -884,7 +884,7 @@ int dt_image_alloc(dt_image_t *img, dt_image_buffer_t 
+   dt_mipmap_cache_t *cache = darktable.mipmap_cache;
+   // max memory: user supplied number of bytes, evenly distributed among mip levels.
+   // clamped between 50MB -- 4GB
+-#if defined(__APPLE__) || defined(__MACH__)
++#if defined(__APPLE__) || defined(__MACH__) || defined(__OpenBSD__)
+   // apple's size_t sucks
+   size_t max_mem = (size_t)(MAX(52428800, dt_conf_get_int("cache_memory"))/(float)DT_IMAGE_FULL);
+ #else

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_gui_gtk_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/gui/gtk.c.orig	Sat Aug 28 17:46:45 2010
++++ src/gui/gtk.c	Fri Sep 17 00:04:38 2010
+@@ -537,7 +537,7 @@ import_button_clicked (GtkWidget *widget, gpointer use
+               GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, //GTK_FILE_CHOOSER_ACTION_OPEN,
+               GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+               GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+-              NULL);
++              (char *)NULL);
+ 
+   gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(filechooser), TRUE);
+ 
+@@ -575,7 +575,7 @@ import_single_button_clicked (GtkWidget *widget, gpoin
+               GTK_FILE_CHOOSER_ACTION_OPEN,
+               GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+               GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+-              NULL);
++              (char *)NULL);
+ 
+   char *cp, **extensions, ext[1024];
+   GtkFileFilter *filter;

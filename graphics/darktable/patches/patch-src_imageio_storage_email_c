@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_imageio_storage_email_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/imageio/storage/email.c.orig	Thu Sep 16 23:23:12 2010
++++ src/imageio/storage/email.c	Thu Sep 16 23:23:20 2010
+@@ -94,7 +94,7 @@ store (dt_imageio_module_data_t *sdata, const int imgi
+   const gchar * filename = g_basename( dirname );
+   strcpy( g_strrstr( filename,".")+1, format->extension(fdata));
+   
+-  attachment->file = g_build_filename( g_get_tmp_dir(), filename,NULL );
++  attachment->file = g_build_filename( g_get_tmp_dir(), filename,(char *)NULL );
+   
+   dt_imageio_export(img, attachment->file, format, fdata);
+   dt_image_cache_release(img, 'r');

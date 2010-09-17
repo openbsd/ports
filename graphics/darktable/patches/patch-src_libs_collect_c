@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_libs_collect_c,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+
+missing sentinel in function call; pushed upstream
+
+--- src/libs/collect.c.orig	Fri Aug 27 17:46:31 2010
++++ src/libs/collect.c	Thu Sep 16 23:16:38 2010
+@@ -275,7 +275,7 @@ gui_init (dt_lib_module_t *self)
+   gtk_box_pack_start(box, w, FALSE, FALSE, 0);
+   w = gtk_combo_box_entry_new_text();
+   d->text = GTK_COMBO_BOX_ENTRY(w);
+-  gtk_object_set(GTK_OBJECT(d->text), "tooltip-text", _("type your query, use `%' as wildcard"), NULL);
++  gtk_object_set(GTK_OBJECT(d->text), "tooltip-text", _("type your query, use `%' as wildcard"), (char *)NULL);
+   gchar *text = dt_conf_get_string("plugins/lighttable/collect/string");
+   if(text)
+   {
+@@ -302,7 +302,7 @@ gui_init (dt_lib_module_t *self)
+   gtk_tree_view_column_add_attribute(col, renderer, "text", DT_LIB_COLLECT_COL_TEXT);
+   gtk_tree_selection_set_mode(gtk_tree_view_get_selection(view), GTK_SELECTION_SINGLE);
+   gtk_tree_view_set_model(view, GTK_TREE_MODEL(liststore));
+-  gtk_object_set(GTK_OBJECT(view), "tooltip-text", _("doubleclick to select"), NULL);
++  gtk_object_set(GTK_OBJECT(view), "tooltip-text", _("doubleclick to select"), (char *)NULL);
+   g_signal_connect(G_OBJECT (view), "row-activated", G_CALLBACK (row_activated), d);
+   entry_key_press (NULL, NULL, d);
+ }

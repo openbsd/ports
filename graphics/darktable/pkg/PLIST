@@ -1,0 +1,216 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+@bin bin/darktable
+lib/darktable/
+@comment lib/darktable/libdarktable.a
+@comment lib/darktable/libdarktable.la
+lib/darktable/libdarktable.so
+lib/darktable/plugins/
+lib/darktable/plugins/imageio/
+lib/darktable/plugins/imageio/format/
+@comment lib/darktable/plugins/imageio/format/libexr.a
+@comment lib/darktable/plugins/imageio/format/libexr.la
+lib/darktable/plugins/imageio/format/libexr.so
+@comment lib/darktable/plugins/imageio/format/libjpeg.a
+@comment lib/darktable/plugins/imageio/format/libjpeg.la
+lib/darktable/plugins/imageio/format/libjpeg.so
+@comment lib/darktable/plugins/imageio/format/libpfm.a
+@comment lib/darktable/plugins/imageio/format/libpfm.la
+lib/darktable/plugins/imageio/format/libpfm.so
+@comment lib/darktable/plugins/imageio/format/libpng.a
+@comment lib/darktable/plugins/imageio/format/libpng.la
+lib/darktable/plugins/imageio/format/libpng.so
+@comment lib/darktable/plugins/imageio/format/libppm.a
+@comment lib/darktable/plugins/imageio/format/libppm.la
+lib/darktable/plugins/imageio/format/libppm.so
+@comment lib/darktable/plugins/imageio/format/libtiff.a
+@comment lib/darktable/plugins/imageio/format/libtiff.la
+lib/darktable/plugins/imageio/format/libtiff.so
+lib/darktable/plugins/imageio/storage/
+@comment lib/darktable/plugins/imageio/storage/libdisk.a
+@comment lib/darktable/plugins/imageio/storage/libdisk.la
+lib/darktable/plugins/imageio/storage/libdisk.so
+@comment lib/darktable/plugins/imageio/storage/libemail.a
+@comment lib/darktable/plugins/imageio/storage/libemail.la
+lib/darktable/plugins/imageio/storage/libemail.so
+@comment lib/darktable/plugins/imageio/storage/libpicasa.a
+@comment lib/darktable/plugins/imageio/storage/libpicasa.la
+lib/darktable/plugins/imageio/storage/libpicasa.so
+@comment lib/darktable/plugins/libbasecurve.a
+@comment lib/darktable/plugins/libbasecurve.la
+lib/darktable/plugins/libbasecurve.so
+@comment lib/darktable/plugins/libbilateral.a
+@comment lib/darktable/plugins/libbilateral.la
+lib/darktable/plugins/libbilateral.so
+@comment lib/darktable/plugins/libchannelmixer.a
+@comment lib/darktable/plugins/libchannelmixer.la
+lib/darktable/plugins/libchannelmixer.so
+@comment lib/darktable/plugins/libclahe.a
+@comment lib/darktable/plugins/libclahe.la
+lib/darktable/plugins/libclahe.so
+@comment lib/darktable/plugins/libclipping.a
+@comment lib/darktable/plugins/libclipping.la
+lib/darktable/plugins/libclipping.so
+@comment lib/darktable/plugins/libcolorcorrection.a
+@comment lib/darktable/plugins/libcolorcorrection.la
+lib/darktable/plugins/libcolorcorrection.so
+@comment lib/darktable/plugins/libcolorin.a
+@comment lib/darktable/plugins/libcolorin.la
+lib/darktable/plugins/libcolorin.so
+@comment lib/darktable/plugins/libcolorout.a
+@comment lib/darktable/plugins/libcolorout.la
+lib/darktable/plugins/libcolorout.so
+@comment lib/darktable/plugins/libcolortransfer.a
+@comment lib/darktable/plugins/libcolortransfer.la
+lib/darktable/plugins/libcolortransfer.so
+@comment lib/darktable/plugins/libcolorzones.a
+@comment lib/darktable/plugins/libcolorzones.la
+lib/darktable/plugins/libcolorzones.so
+@comment lib/darktable/plugins/libequalizer.a
+@comment lib/darktable/plugins/libequalizer.la
+lib/darktable/plugins/libequalizer.so
+@comment lib/darktable/plugins/libexposure.a
+@comment lib/darktable/plugins/libexposure.la
+lib/darktable/plugins/libexposure.so
+@comment lib/darktable/plugins/libgamma.a
+@comment lib/darktable/plugins/libgamma.la
+lib/darktable/plugins/libgamma.so
+@comment lib/darktable/plugins/libgrain.a
+@comment lib/darktable/plugins/libgrain.la
+lib/darktable/plugins/libgrain.so
+@comment lib/darktable/plugins/libhighlights.a
+@comment lib/darktable/plugins/libhighlights.la
+lib/darktable/plugins/libhighlights.so
+@comment lib/darktable/plugins/liblens.a
+@comment lib/darktable/plugins/liblens.la
+lib/darktable/plugins/liblens.so
+@comment lib/darktable/plugins/libmonochrome.a
+@comment lib/darktable/plugins/libmonochrome.la
+lib/darktable/plugins/libmonochrome.so
+@comment lib/darktable/plugins/libprofile_gamma.a
+@comment lib/darktable/plugins/libprofile_gamma.la
+lib/darktable/plugins/libprofile_gamma.so
+@comment lib/darktable/plugins/librawimport.a
+@comment lib/darktable/plugins/librawimport.la
+lib/darktable/plugins/librawimport.so
+@comment lib/darktable/plugins/libsharpen.a
+@comment lib/darktable/plugins/libsharpen.la
+lib/darktable/plugins/libsharpen.so
+@comment lib/darktable/plugins/libsplittoning.a
+@comment lib/darktable/plugins/libsplittoning.la
+lib/darktable/plugins/libsplittoning.so
+@comment lib/darktable/plugins/libtemperature.a
+@comment lib/darktable/plugins/libtemperature.la
+lib/darktable/plugins/libtemperature.so
+@comment lib/darktable/plugins/libtonecurve.a
+@comment lib/darktable/plugins/libtonecurve.la
+lib/darktable/plugins/libtonecurve.so
+@comment lib/darktable/plugins/libvelvia.a
+@comment lib/darktable/plugins/libvelvia.la
+lib/darktable/plugins/libvelvia.so
+@comment lib/darktable/plugins/libvignette.a
+@comment lib/darktable/plugins/libvignette.la
+lib/darktable/plugins/libvignette.so
+lib/darktable/plugins/lighttable/
+@comment lib/darktable/plugins/lighttable/libcamera.a
+@comment lib/darktable/plugins/lighttable/libcamera.la
+lib/darktable/plugins/lighttable/libcamera.so
+@comment lib/darktable/plugins/lighttable/libcapture.a
+@comment lib/darktable/plugins/lighttable/libcapture.la
+lib/darktable/plugins/lighttable/libcapture.so
+@comment lib/darktable/plugins/lighttable/libcollect.a
+@comment lib/darktable/plugins/lighttable/libcollect.la
+lib/darktable/plugins/lighttable/libcollect.so
+@comment lib/darktable/plugins/lighttable/libcolorlabels.a
+@comment lib/darktable/plugins/lighttable/libcolorlabels.la
+lib/darktable/plugins/lighttable/libcolorlabels.so
+@comment lib/darktable/plugins/lighttable/libcopy_history.a
+@comment lib/darktable/plugins/lighttable/libcopy_history.la
+lib/darktable/plugins/lighttable/libcopy_history.so
+@comment lib/darktable/plugins/lighttable/libexport.a
+@comment lib/darktable/plugins/lighttable/libexport.la
+lib/darktable/plugins/lighttable/libexport.so
+@comment lib/darktable/plugins/lighttable/libimage.a
+@comment lib/darktable/plugins/lighttable/libimage.la
+lib/darktable/plugins/lighttable/libimage.so
+@comment lib/darktable/plugins/lighttable/libselect.a
+@comment lib/darktable/plugins/lighttable/libselect.la
+lib/darktable/plugins/lighttable/libselect.so
+@comment lib/darktable/plugins/lighttable/libtagging.a
+@comment lib/darktable/plugins/lighttable/libtagging.la
+lib/darktable/plugins/lighttable/libtagging.so
+lib/darktable/views/
+@comment lib/darktable/views/libcapture.a
+@comment lib/darktable/views/libcapture.la
+lib/darktable/views/libcapture.so
+@comment lib/darktable/views/libdarkroom.a
+@comment lib/darktable/views/libdarkroom.la
+lib/darktable/views/libdarkroom.so
+@comment lib/darktable/views/libfilmstrip.a
+@comment lib/darktable/views/libfilmstrip.la
+lib/darktable/views/libfilmstrip.so
+@comment lib/darktable/views/liblighttable.a
+@comment lib/darktable/views/liblighttable.la
+lib/darktable/views/liblighttable.so
+@man man/man1/darktable.1
+share/applications/darktable.desktop
+share/darktable/
+share/darktable/color/
+share/darktable/color/in/
+share/darktable/color/out/
+share/darktable/darktable.glade
+share/darktable/darktable.gtkrc
+share/darktable/pixmaps/
+share/darktable/pixmaps/plugins/
+share/darktable/pixmaps/plugins/darkroom/
+share/darktable/pixmaps/plugins/darkroom/basecurve.png
+share/darktable/pixmaps/plugins/darkroom/bilateral.png
+share/darktable/pixmaps/plugins/darkroom/channelmixer.png
+share/darktable/pixmaps/plugins/darkroom/clahe.png
+share/darktable/pixmaps/plugins/darkroom/clipping.png
+share/darktable/pixmaps/plugins/darkroom/colorcorrection.png
+share/darktable/pixmaps/plugins/darkroom/colorin.png
+share/darktable/pixmaps/plugins/darkroom/colorout.png
+share/darktable/pixmaps/plugins/darkroom/colortransfer.png
+share/darktable/pixmaps/plugins/darkroom/colorzones.png
+share/darktable/pixmaps/plugins/darkroom/equalizer.png
+share/darktable/pixmaps/plugins/darkroom/exposure.png
+share/darktable/pixmaps/plugins/darkroom/grain.png
+share/darktable/pixmaps/plugins/darkroom/highlights.png
+share/darktable/pixmaps/plugins/darkroom/lens.png
+share/darktable/pixmaps/plugins/darkroom/monochrome.png
+share/darktable/pixmaps/plugins/darkroom/profile_gamma.png
+share/darktable/pixmaps/plugins/darkroom/rawimport.png
+share/darktable/pixmaps/plugins/darkroom/sharpen.png
+share/darktable/pixmaps/plugins/darkroom/splittoning.png
+share/darktable/pixmaps/plugins/darkroom/temperature.png
+share/darktable/pixmaps/plugins/darkroom/template.png
+share/darktable/pixmaps/plugins/darkroom/tonecurve.png
+share/darktable/pixmaps/plugins/darkroom/velvia.png
+share/darktable/pixmaps/plugins/darkroom/vignette.png
+share/doc/darktable/
+share/doc/darktable/AUTHORS
+share/doc/darktable/LICENSE
+share/doc/darktable/README
+share/doc/darktable/TRANSLATORS
+share/icons/hicolor/16x16/apps/darktable.png
+share/icons/hicolor/22x22/apps/darktable.png
+share/icons/hicolor/32x32/apps/darktable.png
+share/icons/hicolor/48x48/apps/darktable.png
+share/icons/hicolor/64x64/apps/darktable.png
+share/icons/hicolor/scalable/apps/darktable.svg
+share/locale/de/LC_MESSAGES/darktable.mo
+share/locale/es/LC_MESSAGES/darktable.mo
+share/locale/fi/LC_MESSAGES/darktable.mo
+share/locale/fr/LC_MESSAGES/darktable.mo
+share/locale/gl/LC_MESSAGES/darktable.mo
+share/locale/nl/LC_MESSAGES/darktable.mo
+share/locale/ru/LC_MESSAGES/darktable.mo
+share/locale/sv/LC_MESSAGES/darktable.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/darktable.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
