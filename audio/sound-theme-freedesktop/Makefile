@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/11/07 19:36:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/18 08:08:27 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
@@ -39,6 +39,6 @@ do-configure:
 	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		./autogen.sh \
+		./autogen.sh
 
 .include <bsd.port.mk>
