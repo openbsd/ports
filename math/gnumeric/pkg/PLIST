@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/08/22 06:18:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/09/18 07:26:43 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -1053,5 +1053,7 @@ ${SCHEMAS_INSTDIR}/gnumeric-dialogs.schemas
 ${SCHEMAS_INSTDIR}/gnumeric-general.schemas
 ${SCHEMAS_INSTDIR}/gnumeric-plugins.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
