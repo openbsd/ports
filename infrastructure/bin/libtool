@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.2 2010/08/26 17:48:27 jasper Exp $
+# $OpenBSD: libtool,v 1.3 2010/09/18 16:22:26 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -255,6 +255,15 @@ sub parse_linkargs1
 	my $result   = $self->{result};
 	my $lashared = $self->{seen_la_shared};
 
+	# first read all directories where we can search libraries
+	foreach my $a (@$args) {
+		if ($a =~ m/^-L(.*)/) {
+			if (!exists $dirs->{$1}) {
+				$dirs->{$1} = 1;
+				push @$deplibs, $a;
+			}
+		}
+	}
 	foreach my $a (@$args) {
 		Trace::debug {"  processing $a\n"};
 		if (!$a || $a eq '' || $a =~ m/^\s+$/) {
@@ -265,10 +274,7 @@ sub parse_linkargs1
 			$seen_pthread = 1;
 			push(@$result, $a);
 		} elsif ($a =~ m/^-L(.*)/) {
-			if (!exists $dirs->{$1}) {
-				$dirs->{$1} = 1;
-				push @$deplibs, $a;
-			}
+			# already read earlier, do nothing
 		} elsif ($a =~ m/^-R(.*)/) {
 			# -R options originating from .la resolution
 			# those from @ARGV are in @Ropts
