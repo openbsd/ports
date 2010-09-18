@@ -1,0 +1,34 @@
+$OpenBSD: patch-desktopfiles_Makefile_in,v 1.1 2010/09/18 11:19:24 steven Exp $
+--- desktopfiles/Makefile.in.orig	Sat Mar 20 21:38:33 2010
++++ desktopfiles/Makefile.in	Sun Aug 29 21:11:01 2010
+@@ -39,6 +39,8 @@ XDG_DESKTOP_MENU = @XDG_DESKTOP_MENU@
+ RM = @RM@
+ 
+ datadir_djview = ${datadir}/djvu/djview4/desktop
++datadir_applications = ${datadir}/applications
++datadir_icons = ${datadir}/icons/hicolor
+ 
+ 
+ # -------- all
+@@ -70,13 +72,14 @@ register-djview-menu: register-djview-menu.in
+ install: install-djview-files 
+ 
+ install-djview-files: FORCE
+-	${INSTALL} -d ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} register-djview-menu ${DESTDIR}${datadir_djview}
+-	${INSTALL_DATA} *djview4.png ${DESTDIR}${datadir_djview}
+-	${INSTALL_DATA} *djview4.svgz ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} ${srcdir}/*djview4.desktop ${DESTDIR}${datadir_djview}
+-	-@echo "Run ${datadir_djview}/register-djview-menu install"
+-	-@echo " to register the djview3 menu entries."
++	${INSTALL} -d ${DESTDIR}${datadir_applications}
++	${INSTALL_DATA} djvulibre-djview4.desktop ${DESTDIR}${datadir_applications}/djvulibre-djview4.desktop
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/32x32/apps
++	${INSTALL_DATA} hi32-djview4.png ${DESTDIR}${datadir_icons}/32x32/apps/djvulibre-djview4.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/64x64/apps
++	${INSTALL_DATA} hi64-djview4.png ${DESTDIR}${datadir_icons}/64x64/apps/djvulibre-djview4.png
++	${INSTALL} -d ${DESTDIR}${datadir_icons}/scalable/apps
++	${INSTALL_DATA} djview.svg ${DESTDIR}${datadir_icons}/scalable/apps/djvulibre-djview4.svg
+ 
+ # -------- misc
+ 
