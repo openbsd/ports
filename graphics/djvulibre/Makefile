@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/03 21:22:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/18 11:22:33 steven Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.23
+REVISION=	0
 SHARED_LIBS=	djvulibre 23.0
 CATEGORIES=	graphics print
 
@@ -28,7 +29,8 @@ LIB_DEPENDS=	::graphics/jpeg \
 
 BUILD_DEPENDS=	::graphics/ImageMagick \
 		::x11/gnome/librsvg
-RUN_DEPENDS=	::x11/hicolor-icon-theme
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/hicolor-icon-theme
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
