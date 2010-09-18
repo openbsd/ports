@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/08/31 21:06:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/18 13:46:59 ajacoutot Exp $
 %%SHARED%%
 @comment bin/any2djvu
 @bin bin/bzz
@@ -74,9 +74,4 @@ share/djvu/pubtext/
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-share/icons/hicolor/22x22/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/32x32/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/48x48/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/64x64/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/scalable/mimetypes/image-vnd.djvu.svg
 !%%no_x11%%
