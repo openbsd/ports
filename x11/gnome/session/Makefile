@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.116 2010/09/14 08:59:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2010/09/18 06:04:00 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.2
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -35,8 +35,11 @@ RUN_DEPENDS=	::x11/gnome/settings-daemon \
 		::sysutils/consolekit
 
 # polkit-gnome isn't really *required* but then we will loose the polkit
-# auth. dialog ; this should really be a dep. of a "gnome" metapackage
+# auth. dialog ; same for gconf2-polkit, gconf2 and polkit are already
+# dependencies and we want to be able to handle system-wide gconf entries.
+# This should really be a dep. of a "gnome" metapackage.
 RUN_DEPENDS+=	::x11/polkit-gnome
+RUN_DEPENDS+=	::devel/gconf2,-polkit
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
