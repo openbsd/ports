@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/09/17 21:37:19 sthen Exp $
+$OpenBSD: patch-configure,v 1.2 2010/09/18 09:32:25 sthen Exp $
 --- configure.orig	Thu Sep 16 21:49:49 2010
 +++ configure	Thu Sep 16 22:16:15 2010
-@@ -16971,7 +16971,7 @@ fi
- 
- fi
- if test -n "$PKG_CONFIG"; then
--	_pkg_min_version=0.22
-+	_pkg_min_version=0.21
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking pkg-config is at least version $_pkg_min_version" >&5
- $as_echo_n "checking pkg-config is at least version $_pkg_min_version... " >&6; }
- 	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
 @@ -18856,7 +18856,7 @@ if test "${ac_cv_lib_lcms_cmsOpenProfileFromFile+set}"
    $as_echo_n "(cached) " >&6
  else
