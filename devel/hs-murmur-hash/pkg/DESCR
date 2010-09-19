@@ -1,0 +1,2 @@
+implements MurmurHash2, a good, fast, general purpose, non-cryptographic
+hashing function.
