@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/09/19 13:03:33 kili Exp $
 
 COMMENT=	3D creation software
 
@@ -19,9 +19,9 @@ MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
-PYTHON_VER=	2.5
+MODPY_VERSION=	2.5
 
-MODULES=	devel/scons
+MODULES=	devel/scons lang/python
 
 RUN_DEPENDS=	::graphics/tiff
 BUILD_DEPENDS=	::graphics/tiff
@@ -29,7 +29,7 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		GLEW::graphics/glew \
 		SDL::devel/sdl \
-		python${PYTHON_VER}:python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}
+		${MODPY_LIB_DEPENDS}
 
 WANTLIB=	GL GLU X11 Xi c m pthread stdc++ util z
 
@@ -50,7 +50,7 @@ MODSCONS_ENV=	CC=${CC} CXX=${CXX} C_WARN="-Wall" \
 		BF_BUILDDIR=${WRKBUILD} \
 		BF_FANCY=0 \
 		BF_QUIET=0 \
-		BF_PYTHON=${LOCALBASE} BF_PYTHON_VERSION=${PYTHON_VER} \
+		BF_PYTHON=${LOCALBASE} BF_PYTHON_VERSION=${MODPY_VERSION} \
 		BF_GLEW=${LOCALBASE} \
 		BF_GLEW_LIB=GLEW BF_GLEW_LIBPATH=${LOCALBASE}/lib \
 		BF_JPEG=${LOCALBASE} \
