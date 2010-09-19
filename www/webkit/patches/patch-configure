@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2010/08/30 13:15:49 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2010/09/19 20:43:32 landry Exp $
 Don't force the use of -O2, the ports infrastructure
 takes care of that
---- configure.orig	Sun Aug 29 21:50:39 2010
-+++ configure	Sun Aug 29 21:52:36 2010
-@@ -19530,8 +19530,8 @@ fi
+--- configure.orig	Fri Sep  3 21:30:50 2010
++++ configure	Tue Sep 14 09:09:55 2010
+@@ -19534,8 +19534,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds
  if test "$enable_optimizations" = "yes"; then
