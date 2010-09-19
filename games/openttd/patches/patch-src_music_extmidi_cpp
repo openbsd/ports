@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_music_extmidi_cpp,v 1.1 2010/09/19 18:52:08 jasper Exp $
+--- src/music/extmidi.cpp.orig	Sat Feb 20 16:10:58 2010
++++ src/music/extmidi.cpp	Tue Apr  6 06:00:41 2010
+@@ -26,7 +26,7 @@
+ #include <errno.h>
+ 
+ #ifndef EXTERNAL_PLAYER
+-#define EXTERNAL_PLAYER "timidity"
++#define EXTERNAL_PLAYER "midiplay"
+ #endif
+ 
+ static FMusicDriver_ExtMidi iFMusicDriver_ExtMidi;

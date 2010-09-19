@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_table_settings_h,v 1.1 2010/09/19 18:52:08 jasper Exp $
+--- src/table/settings.h.orig	Thu Jan 28 21:47:25 2010
++++ src/table/settings.h	Thu Jan 28 21:48:00 2010
+@@ -224,7 +224,7 @@ static const SettingDesc _music_settings[] = {
+ 	 SDT_VAR(MusicFileSettings, effect_vol, SLE_UINT8, S, 0, 127, 0, 127, 1,  STR_NULL, NULL),
+ 	SDT_LIST(MusicFileSettings, custom_1,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),
+ 	SDT_LIST(MusicFileSettings, custom_2,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),
+-	SDT_BOOL(MusicFileSettings, playing,               S, 0, true,            STR_NULL, NULL),
++	SDT_BOOL(MusicFileSettings, playing,               S, 0, false,            STR_NULL, NULL),
+ 	SDT_BOOL(MusicFileSettings, shuffle,               S, 0, false,           STR_NULL, NULL),
+ 	 SDT_END()
+ };

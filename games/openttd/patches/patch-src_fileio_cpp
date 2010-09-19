@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_fileio_cpp,v 1.1 2010/09/19 18:52:08 jasper Exp $
+--- src/fileio.cpp.orig	Mon Mar 15 18:52:39 2010
++++ src/fileio.cpp	Tue Apr  6 06:00:41 2010
+@@ -29,6 +29,7 @@
+ #endif
+ #include <sys/stat.h>
+ #include <algorithm>
++#include <unistd.h>
+ 
+ /*************************************************/
+ /* FILE IO ROUTINES ******************************/

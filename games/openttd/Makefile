@@ -1,45 +1,59 @@
-# $OpenBSD: Makefile,v 1.10 2010/03/01 14:13:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/19 18:52:08 jasper Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
-DISTNAME=	openttd-0.6.1-source
+
+V=		1.0.3
+DISTNAME=	openttd-${V}-source
 PKGNAME=	${DISTNAME:S/-source//}
 EXTRACT_SUFX=	.tar.bz2
+DIST_GFX=	opengfx-0.2.4
+DIST_SFX=	opensfx-0.2.3
+DIST_MSX=	openmsx-0.3.1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DIST_GFX}.tar.bz2:0 ${DIST_SFX}.zip:1 ${DIST_MSX}.zip:2
+
 CATEGORIES=	games
 
-HOMEPAGE=	http://www.openttd.com/
+HOMEPAGE=	http://www.openttd.org/
 
-MAINTAINER=	Michael Knudsen <mk@molioner.dk>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c expat fontconfig freetype m pthread stdc++ z
 
+WANTLIB=		SDL c expat fontconfig freetype lzo2 m png pthread stdc++ z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openttd/}
+MASTER_SITES=		http://cz.binaries.openttd.org/openttd/binaries/releases/${V}/
+MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/
+MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/
+MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/0.3.1/
 
-LIB_DEPENDS=		SDL::devel/sdl \
-			png.>=2::graphics/png
+LIB_DEPENDS=		::archivers/lzo2 \
+			::devel/sdl \
+			::graphics/png
+
+RUN_DEPENDS=            ::devel/desktop-file-utils
 
 CONFIGURE_STYLE=	simple
 
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
-			--install-dir=${WRKINST}
+			--binary-dir=bin \
+			--data-dir=share/openttd \
+			--icon-dir=share/pixmaps \
+			--man-dir=man/man6 \
+			--personal-dir=.openttd \
+			--install-dir=${WRKINST} \
+			--with-png \
+			--with-zlib
 
-MAKE_ENV+=		VERBOSE=1 WITH_PNG=1 \
-			WITH_ZLIB=1 \
-			DATA_DIR=share/openttd \
-			ICON_DIR=share/pixmaps \
-			BINARY_DIR=bin \
-			PERSONAL_DIR=.openttd
+MAKE_ENV+=		VERBOSE=1
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
-WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
+WRKDIST= 		${WRKDIR}/${DISTNAME:S/-source//}
 
 DOCSDIR=		${PREFIX}/share/doc/openttd
 EXAMPLESDIR=		${PREFIX}/share/examples/openttd
@@ -54,5 +68,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DIST_GFX}/*.{grf,obg} ${GAMEDIR}/data
+	${INSTALL_DATA} ${WRKDIR}/${DIST_SFX}/*.{cat,obs} ${GAMEDIR}/data
+	${INSTALL_DATA} ${WRKDIR}/${DIST_MSX}/*.{mid,obm} ${GAMEDIR}/gm
 
 .include <bsd.port.mk>
