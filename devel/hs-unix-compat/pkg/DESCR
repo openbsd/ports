@@ -1,0 +1,3 @@
+Provide portable implementations for parts of the unix package.  This
+package re-exports the unix package when available.  When it isn't
+available, portable implementations are used.
