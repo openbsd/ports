@@ -1,0 +1,3 @@
+simple data structure mirroring a directory tree on the filesystem, as
+well as useful functions for reading and writing file and directory
+structures in the IO monad.
