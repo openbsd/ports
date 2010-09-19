@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/12 17:58:51 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/19 19:23:16 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.2.9
-FFX_VERSION=		3.6.9
+VERSION=		1.9.2.10
+FFX_VERSION=		3.6.10
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
@@ -26,6 +26,8 @@ PKG_ARGS+=	-Djit=1 -Damd64=1
 .else
 PKG_ARGS+=	-Djit=0 -Damd64=0
 .endif
+
+LIB_DEPENDS+=	:nspr->=4.8.6:devel/nspr
 
 # use files and patches from www/mozilla-firefox
 PATCHDIR=		${PORTSDIR}/www/mozilla-firefox/patches
