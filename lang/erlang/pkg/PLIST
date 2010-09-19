@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/09/13 17:31:03 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/19 12:52:49 kili Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
@@ -6949,7 +6949,7 @@ lib/erlang/lib/${XMERL}/src/xmerl_xpath_scan.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xs.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xsd.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xsd_type.erl
-lib/erlang/man/
+@mandir lib/erlang/man/
 lib/erlang/man/man1/
 @man lib/erlang/man/man1/epmd.1
 @man lib/erlang/man/man1/erl.1

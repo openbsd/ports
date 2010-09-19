@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/13 17:31:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/19 12:52:49 kili Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
 V=		R13B04
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-13b.04
+REVISION=	0
 CATEGORIES=	lang
 
 # Erlang Public License
