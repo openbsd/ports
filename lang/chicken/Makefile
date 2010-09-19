@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/11 21:09:49 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/19 20:19:39 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-2.6
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 
 SHARED_LIBS +=	chicken              1.0      # .0.0
 SHARED_LIBS +=	uchicken             1.0      # .0.0
@@ -31,8 +31,8 @@ LIB_DEPENDS+=		ffi::devel/libffi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -pthread" \
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 REGRESS_TARGET=		bench
 REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
