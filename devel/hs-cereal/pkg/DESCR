@@ -1,0 +1,3 @@
+binary serialization library, similar to binary, that introduces an
+isolate primitive for parser isolation, and replaces the asychronous
+errors with a user-handleable Either type.
