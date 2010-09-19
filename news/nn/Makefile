@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/19 17:40:09 jasper Exp $
 
-NOT_FOR_ARCHS =		arm hppa hp300 sh
+NOT_FOR_ARCHS =		arm hppa hp300
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
