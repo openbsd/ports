@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2010/09/19 17:24:45 ajacoutot Exp $
+--- man/Makefile.in.orig	Tue May 11 19:17:40 2010
++++ man/Makefile.in	Sun Sep 19 08:06:16 2010
+@@ -258,7 +258,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ gtranslator_man_dir = $(mandir)/man1
+ gtranslator_man__DATA = \
+-	gtranslator.1.gz 
++	gtranslator.1
+ 
+ CLEANFILES = $(gtranslator_man__DATA)
+ EXTRA_DIST = \

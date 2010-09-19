@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gtr-utils_c,v 1.1.1.1 2010/09/19 17:24:45 ajacoutot Exp $
+--- src/gtr-utils.c.orig	Sun Sep 19 09:29:48 2010
++++ src/gtr-utils.c	Sun Sep 19 09:31:06 2010
+@@ -789,7 +789,8 @@ gtr_utils_help_display (GtkWindow * parent,
+         continue;
+ 
+       path = gtr_dirs_get_gtr_data_dir ();
+-      uri = g_build_filename (path, "gnome", "help", doc_id,
++      // XXX gtr_dirs_get_gtr_data_dir returns DATADIR/gtranslator
++      uri = g_build_filename (DATADIR, "gnome", "help", doc_id,
+                               lang, file_name, NULL);
+       g_free (path);
+ 
