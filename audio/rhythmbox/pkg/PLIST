@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/03/28 10:48:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/09/19 14:48:18 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -30,13 +30,6 @@ lib/rhythmbox/plugins/artdisplay/__init__.pyo
 lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
 lib/rhythmbox/plugins/artdisplay/lastfm_red_small.png
 lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
-lib/rhythmbox/plugins/audiocd/
-lib/rhythmbox/plugins/audiocd/album-info.ui
-lib/rhythmbox/plugins/audiocd/audiocd-ui.xml
-lib/rhythmbox/plugins/audiocd/audiocd.rb-plugin
-lib/rhythmbox/plugins/audiocd/libaudiocd.la
-lib/rhythmbox/plugins/audiocd/libaudiocd.so
-lib/rhythmbox/plugins/audiocd/multiple-album.ui
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/as-icon.png
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-prefs.ui
@@ -91,6 +84,13 @@ lib/rhythmbox/plugins/im-status/__init__.py
 lib/rhythmbox/plugins/im-status/__init__.pyc
 lib/rhythmbox/plugins/im-status/__init__.pyo
 lib/rhythmbox/plugins/im-status/im-status.rb-plugin
+lib/rhythmbox/plugins/ipod/
+lib/rhythmbox/plugins/ipod/ipod-info.ui
+lib/rhythmbox/plugins/ipod/ipod-init.ui
+lib/rhythmbox/plugins/ipod/ipod-ui.xml
+lib/rhythmbox/plugins/ipod/ipod.rb-plugin
+lib/rhythmbox/plugins/ipod/libipod.la
+lib/rhythmbox/plugins/ipod/libipod.so
 lib/rhythmbox/plugins/iradio/
 lib/rhythmbox/plugins/iradio/iradio-initial.pls
 lib/rhythmbox/plugins/iradio/iradio-ui.xml

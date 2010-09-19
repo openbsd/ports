@@ -1,0 +1,25 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1 2010/09/19 14:48:18 ajacoutot Exp $
+
+audiocd plugin requires cdda support in gvfs which we do not provide as
+this would require HAL or gudev.
+
+--- plugins/Makefile.in.orig	Sun Sep 19 12:12:32 2010
++++ plugins/Makefile.in	Sun Sep 19 12:12:42 2010
+@@ -96,7 +96,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=
+ 	distdir
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = audiocd audioscrobbler generic-player iradio mmkeys \
++DIST_SUBDIRS = audioscrobbler generic-player iradio mmkeys \
+ 	power-manager sample status-icon visualizer lirc pythonconsole \
+ 	sample-python artdisplay lyrics magnatune jamendo coherence \
+ 	im-status context sendto replaygain rb sample-vala ipod \
+@@ -354,7 +354,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = audiocd audioscrobbler generic-player iradio mmkeys \
++SUBDIRS = audioscrobbler generic-player iradio mmkeys \
+ 	power-manager sample status-icon visualizer $(am__append_1) \
+ 	$(am__append_2) $(am__append_3) $(am__append_4) \
+ 	$(am__append_5) $(am__append_6) $(am__append_7) \

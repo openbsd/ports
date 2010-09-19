@@ -1,0 +1,106 @@
+$OpenBSD: patch-configure,v 1.10 2010/09/19 14:48:18 ajacoutot Exp $
+
+audiocd plugin requires cdda support in gvfs which we do not provide as
+this would require HAL or gudev.
+
+--- configure.orig	Sun Sep 19 12:13:26 2010
++++ configure	Sun Sep 19 12:14:01 2010
+@@ -15456,98 +15456,6 @@ fi
+ 
+ 
+ 
+-pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GSTCDDA" >&5
+-$as_echo_n "checking for GSTCDDA... " >&6; }
+-
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$GSTCDDA_CFLAGS"; then
+-        pkg_cv_GSTCDDA_CFLAGS="$GSTCDDA_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gstreamer-cdda-0.10\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gstreamer-cdda-0.10") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_GSTCDDA_CFLAGS=`$PKG_CONFIG --cflags "gstreamer-cdda-0.10" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$GSTCDDA_LIBS"; then
+-        pkg_cv_GSTCDDA_LIBS="$GSTCDDA_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gstreamer-cdda-0.10\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gstreamer-cdda-0.10") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_GSTCDDA_LIBS=`$PKG_CONFIG --libs "gstreamer-cdda-0.10" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        GSTCDDA_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "gstreamer-cdda-0.10"`
+-        else
+-	        GSTCDDA_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gstreamer-cdda-0.10"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$GSTCDDA_PKG_ERRORS" >&5
+-
+-	as_fn_error "Package requirements (gstreamer-cdda-0.10) were not met:
+-
+-$GSTCDDA_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables GSTCDDA_CFLAGS
+-and GSTCDDA_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-" "$LINENO" 5
+-elif test $pkg_failed = untried; then
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables GSTCDDA_CFLAGS
+-and GSTCDDA_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details." "$LINENO" 5; }
+-else
+-	GSTCDDA_CFLAGS=$pkg_cv_GSTCDDA_CFLAGS
+-	GSTCDDA_LIBS=$pkg_cv_GSTCDDA_LIBS
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	:
+-fi
+-
+-
+-
+ have_sj_metadata_getter=no
+ # Check whether --enable-musicbrainz was given.
+ if test "${enable_musicbrainz+set}" = set; then :
