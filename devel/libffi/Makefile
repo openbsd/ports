@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/02/23 19:08:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/19 20:19:15 jasper Exp $
 
-# m88k - not tested yet
+# m88k - not tested yet, will it ever?
 # vax - libffi hasn't been ported to vax, and most likely never will.
 NOT_FOR_ARCHS= 		m88k vax
 
 COMMENT=		Foreign Function Interface
 
-DISTNAME=		libffi-3.0.8
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		libffi-3.0.9
 SHARED_LIBS +=  ffi                  0.0      # .5.9
 CATEGORIES=		devel
 
@@ -29,5 +28,7 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+FAKE_FLAGS+=		includesdir="${PREFIX}/include"
 
 .include <bsd.port.mk>
