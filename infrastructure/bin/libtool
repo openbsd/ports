@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.3 2010/09/18 16:22:26 steven Exp $
+# $OpenBSD: libtool,v 1.4 2010/09/19 17:30:52 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1690,10 +1690,20 @@ sub create_symlinks
 		my $f = $l->{fullpath};
 		next if (!defined $f);
 		next if ($f =~ m/\.a$/);
-		my $libfile = basename $f;
-		Trace::debug {"ln -s $f $dir/$libfile\n"};
-		if (! -f "$dir/$libfile") {
-			symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
+		my $libnames = [];
+		if (defined $l->{lafile}) {
+			my $lainfo = LaFile->parse($l->{lafile});
+			my $librarynames = $lainfo->stringize('library_names');
+			@$libnames = split /\s/, $librarynames;
+			$libnames = reverse_zap_duplicates_ref($libnames);
+		} else {
+			push @$libnames, basename $f;
+		}	
+		foreach my $libfile (@$libnames) {
+			Trace::debug {"ln -s $f $dir/$libfile\n"};
+			if (! -f "$dir/$libfile") {
+				symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
+			}
 		}
 	}
 }
