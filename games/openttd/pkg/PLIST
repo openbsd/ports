@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/19 18:52:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/09/19 20:55:01 sthen Exp $
 @bin bin/openttd
 @man man/man6/openttd.6.gz
 share/applications/openttd.desktop
 share/doc/openttd/
 share/doc/openttd/32bpp.txt
+share/doc/openttd/COPYING
 share/doc/openttd/HOWTO_compile_lang_files.txt
 share/doc/openttd/Readme_OS2.txt
 share/doc/openttd/Readme_Windows_MSVC.txt
+share/doc/openttd/changelog.txt
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
+share/doc/openttd/known-bugs.txt
 share/doc/openttd/landscape.html
 share/doc/openttd/landscape_externals.html
 share/doc/openttd/landscape_grid.html
@@ -20,6 +23,7 @@ share/doc/openttd/obs_format.txt
 share/doc/openttd/openttd.6
 share/doc/openttd/ottd-colour-palette.gif
 share/doc/openttd/ottd-colourtext-palette.png
+share/doc/openttd/readme.txt
 share/doc/openttd/tileh.png
 share/examples/openttd/
 share/examples/openttd/autoexec.scr.example
@@ -187,3 +191,5 @@ share/pixmaps/
 share/pixmaps/openttd.32.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
