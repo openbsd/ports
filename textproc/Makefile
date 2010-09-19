@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2010/09/07 14:07:19 edd Exp $
+# $OpenBSD: Makefile,v 1.302 2010/09/19 15:51:25 jim Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -39,6 +39,8 @@
      SUBDIR += hevea
      SUBDIR += hgrep
      SUBDIR += highlight
+     SUBDIR += hs-attoparsec
+     SUBDIR += hs-bytestring-nums
      SUBDIR += hs-HaXml
      SUBDIR += html
      SUBDIR += hunspell
