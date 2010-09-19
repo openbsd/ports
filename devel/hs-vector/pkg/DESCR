@@ -1,0 +1,2 @@
+Efficient implementation of Int-indexed arrays (both mutable and
+immutable), with a powerful loop fusion optimization framework.
