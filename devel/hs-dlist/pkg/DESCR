@@ -1,0 +1,3 @@
+differences lists: a list-like type supporting O(1) append. Useful for
+efficient logging and pretty printing, (e.g. with the Writer monad),
+where list append quickly becomes too expensive.
