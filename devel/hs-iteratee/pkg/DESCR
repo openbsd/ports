@@ -1,0 +1,3 @@
+Iteratee monad provides strict, safe, and functional I/O. In addition
+to pure Interatee processors, file IO and combinator functions are
+provided.
