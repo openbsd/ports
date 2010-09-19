@@ -1,0 +1,3 @@
+Library which exposes zero-copy sendfile functionality in a portable
+way.  If a platform does not support sendfile, a fallback implementation
+in haskell is provided.
