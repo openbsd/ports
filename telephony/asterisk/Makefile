@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.92 2010/08/27 00:48:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2010/09/19 21:14:05 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.6.2.11
-REVISION-main=		0
+VER=			1.6.2.13
 CORESOUNDS=		1.4.19
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -60,7 +59,7 @@ MAKE_ENV+=		ASTCFLAGS="${CFLAGS}" \
 
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--sharedstatedir=${PREFIX}/share/asterisk \
-			--with-sounds-cache=${DISTDIR}
+			--with-sounds-cache=no
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-avcodec=no \
@@ -99,8 +98,9 @@ CONFIGURE_ARGS+=	--with-jack=no \
 # to WRKSRC, 'gmake menuselect', then cd back to the port directory
 # and 'make'.
 
+# XXX h323 is broken; requires older lib
 FLAVOR?=
-FLAVORS=		h323
+#FLAVORS=		h323
 
 # If using IMAP_STORAGE for voicemail, use this to pick up c-client.
 # Needs to be a flavour, {FILE,ODBC,IMAP}_STORAGE are mutually exclusive.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2010/07/25 10:08:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2010/09/19 21:14:05 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -1038,6 +1038,13 @@ share/asterisk/static-http/docs/node289.html
 share/asterisk/static-http/docs/node29.html
 share/asterisk/static-http/docs/node290.html
 share/asterisk/static-http/docs/node291.html
+share/asterisk/static-http/docs/node292.html
+share/asterisk/static-http/docs/node293.html
+share/asterisk/static-http/docs/node294.html
+share/asterisk/static-http/docs/node295.html
+share/asterisk/static-http/docs/node296.html
+share/asterisk/static-http/docs/node297.html
+share/asterisk/static-http/docs/node298.html
 share/asterisk/static-http/docs/node3.html
 share/asterisk/static-http/docs/node30.html
 share/asterisk/static-http/docs/node31.html
@@ -1427,6 +1434,13 @@ share/doc/asterisk/node289.html
 share/doc/asterisk/node29.html
 share/doc/asterisk/node290.html
 share/doc/asterisk/node291.html
+share/doc/asterisk/node292.html
+share/doc/asterisk/node293.html
+share/doc/asterisk/node294.html
+share/doc/asterisk/node295.html
+share/doc/asterisk/node296.html
+share/doc/asterisk/node297.html
+share/doc/asterisk/node298.html
 share/doc/asterisk/node3.html
 share/doc/asterisk/node30.html
 share/doc/asterisk/node31.html
@@ -1522,6 +1536,7 @@ share/doc/asterisk/siptls.txt
 share/doc/asterisk/sla.tex
 share/doc/asterisk/smdi.txt
 share/doc/asterisk/sms.txt
+share/doc/asterisk/sounds.tex
 share/doc/asterisk/speechrec.txt
 share/doc/asterisk/ss7.txt
 share/doc/asterisk/timing.txt
@@ -1607,7 +1622,7 @@ share/examples/asterisk/default/unistim.conf
 share/examples/asterisk/default/usbradio.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
-%%h323%%
+@comment %%h323%%
 @comment share/examples/asterisk/default/vpb.conf
 share/examples/asterisk/openbsd/
 share/examples/asterisk/openbsd/extensions.ael.sample
