@@ -1,0 +1,2 @@
+fast parser combinator library, aimed particularly at dealing
+efficiently with network protocols and complicated text/binary formats.
