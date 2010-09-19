@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/19 15:27:11 jim Exp $
+@comment bin/spoj-eugene
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/Careless/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/Careless.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/Careless/Float.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/Careless/Hex.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ByteString/Nums/Careless/Int.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Data-ByteString-Nums-Careless-Float.html
+share/doc/${DISTNAME}/html/Data-ByteString-Nums-Careless-Hex.html
+share/doc/${DISTNAME}/html/Data-ByteString-Nums-Careless-Int.html
+share/doc/${DISTNAME}/html/Data-ByteString-Nums-Careless.html
+share/doc/${DISTNAME}/html/bytestring-nums.haddock
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Data-ByteString-Nums-Careless-Float.html
+share/doc/${DISTNAME}/html/mini_Data-ByteString-Nums-Careless-Hex.html
+share/doc/${DISTNAME}/html/mini_Data-ByteString-Nums-Careless-Int.html
+share/doc/${DISTNAME}/html/mini_Data-ByteString-Nums-Careless.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
