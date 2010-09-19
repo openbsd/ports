@@ -1,0 +1,3 @@
+general purpose Haskell XML library using Expat to do its parsing.  It
+is extensible to any string type, with String, ByteString and Text
+provided out of the box.
