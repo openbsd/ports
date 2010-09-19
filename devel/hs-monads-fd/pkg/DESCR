@@ -1,0 +1,2 @@
+Monad classes using functional dependencies, with instances for various
+monad transformers.
