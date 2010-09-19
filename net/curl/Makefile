@@ -1,18 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2010/03/21 18:43:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2010/09/19 16:30:26 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.20.0
-SHARED_LIBS=	curl                 15.0     # .6.0
+DISTNAME=	curl-7.21.1
+SHARED_LIBS=	curl                 16.0     # .6.0
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
-		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
-		ftp://cool.haxx.se/curl/ \
-		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
-		http://curl.linuxworx.com.au/ \
-		http://www.cubic.ch/mirror/curl/ \
-		http://curl.webmeta.com/ \
-		ftp://gd.tuwien.ac.ut/utils/archivers/curl/
+		ftp://ftp.sunet.se/pub/www/utilities/curl/
 
 HOMEPAGE=	http://curl.haxx.se/
 
@@ -25,8 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	idn.>=16::devel/libidn
-WANTLIB=	c crypto ssl z
+LIB_DEPENDS=	::devel/libidn
+WANTLIB=	c crypto idn ssl z
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
@@ -40,5 +34,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	cd ${WRKSRC}; ${INSTALL_DATA} curl-style.el \
 		${PREFIX}/share/emacs/site-lisp
+
+# Note:
+# use ulimit -p 256 for regress
 
 .include <bsd.port.mk>

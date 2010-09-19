@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_libtest_Makefile_in,v 1.7 2010/03/21 18:43:37 naddy Exp $
---- tests/libtest/Makefile.in.orig	Thu Feb  4 22:42:21 2010
-+++ tests/libtest/Makefile.in	Wed Feb 10 18:42:59 2010
-@@ -349,7 +349,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+$OpenBSD: patch-tests_libtest_Makefile_in,v 1.8 2010/09/19 16:30:26 naddy Exp $
+--- tests/libtest/Makefile.in.orig	Wed Aug 11 19:03:32 2010
++++ tests/libtest/Makefile.in	Fri Sep 17 17:45:30 2010
+@@ -384,7 +384,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
  	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) -L../../lib/.libs $(LDFLAGS) -o $@
- SOURCES = $(lib500_SOURCES) $(lib501_SOURCES) $(lib502_SOURCES) \
+ SOURCES = $(libhostname_la_SOURCES) $(chkhostname_SOURCES) \
+ 	$(lib500_SOURCES) $(lib501_SOURCES) $(lib502_SOURCES) \
  	$(lib503_SOURCES) $(lib504_SOURCES) $(lib505_SOURCES) \
- 	$(lib506_SOURCES) $(lib507_SOURCES) $(lib508_SOURCES) \
