@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/18 11:19:24 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/19 16:03:34 steven Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview4-4.6
+REVISION=	0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
+
+MAINTAINER=	Alexandr Shadchin <alexandr.shadchin@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

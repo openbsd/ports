@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/18 13:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/19 16:03:34 steven Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.23
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	djvulibre 23.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/
 
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
+MAINTAINER=	Alexandr Shadchin <alexandr.shadchin@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
