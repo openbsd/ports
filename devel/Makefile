@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.831 2010/09/12 17:09:21 kili Exp $
+# $OpenBSD: Makefile,v 1.832 2010/09/19 15:59:17 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -132,14 +132,19 @@
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
      SUBDIR += hs-HsSyck
+     SUBDIR += hs-ListLike
      SUBDIR += hs-MetaObject
      SUBDIR += hs-MissingH
+     SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-binary
+     SUBDIR += hs-cereal
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
      SUBDIR += hs-dataenc
      SUBDIR += hs-deepseq
+     SUBDIR += hs-directory-tree
+     SUBDIR += hs-dlist
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-gio
@@ -147,8 +152,10 @@
      SUBDIR += hs-glib
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hslogger
+     SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-mmap
+     SUBDIR += hs-monads-fd
      SUBDIR += hs-network
      SUBDIR += hs-pango
      SUBDIR += hs-parallel
@@ -164,6 +171,8 @@
      SUBDIR += hs-stringtable-atom
      SUBDIR += hs-tar
      SUBDIR += hs-text
+     SUBDIR += hs-transformers
+     SUBDIR += hs-unix-compat
      SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += id-utils
