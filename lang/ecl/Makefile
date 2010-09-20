@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/13 18:14:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/20 18:02:47 landry Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
+
+BROKEN-hppa =	infinite loop during build
 
 V =		8.12.0
 DISTNAME = 	ecl-$V
