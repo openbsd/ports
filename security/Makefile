@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2010/09/07 12:24:26 millert Exp $
+# $OpenBSD: Makefile,v 1.240 2010/09/20 07:26:50 sebastia Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += ipguard
      SUBDIR += isic
      SUBDIR += its4
+     SUBDIR += jailkit
      SUBDIR += john
      SUBDIR += kedpm
      SUBDIR += keychain
