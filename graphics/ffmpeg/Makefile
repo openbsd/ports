@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/09/15 15:40:00 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.61 2010/09/20 07:59:59 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -31,23 +31,25 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
-WANTLIB=	X11 Xext Xfixes c m ogg orc-0.4 pthread sndio z
+WANTLIB += SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg
+WANTLIB += orc-0.4 pthread schroedinger-1.0 sndio speex theora
+WANTLIB += theoradec theoraenc vorbis vorbisenc x264 z
 
 BUILD_DEPENDS=	::textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/yasm
 .endif
-LIB_DEPENDS=	SDL.>=4::devel/sdl \
-		faac.>=1::audio/faac \
-		faad.>=2::audio/faad \
-		mp3lame.>=0.1::audio/lame \
-		vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis \
-		speex::audio/speex \
-		gsm::audio/gsm \
-		x264.>=4::multimedia/x264 \
-		theora,theoradec,theoraenc::multimedia/libtheora \
-		schroedinger-1.0::multimedia/schroedinger \
-		bz2.>=10::archivers/bzip2
+LIB_DEPENDS=	::archivers/bzip2 \
+		::audio/faac \
+		::audio/faad \
+		::audio/lame \
+		::audio/libvorbis \
+		::audio/speex \
+		::audio/gsm \
+		::devel/sdl \
+		::multimedia/libtheora \
+		:schroedinger->=1.0.9:multimedia/schroedinger \
+		::multimedia/x264
 
 .if ${MACHINE_ARCH:Marm}
 # XXX binutils
