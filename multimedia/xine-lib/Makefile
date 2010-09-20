@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2010/09/13 20:12:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2010/09/20 07:58:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.19
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -51,10 +52,8 @@ LIB_DEPENDS=	::audio/faad \
 		::graphics/vcdimager
 
 .if ${MACHINE_ARCH} == "i386"
-MAKE_FLAGS+=	TOMSMOCOMP_LINKS=
 PKG_ARGS+=	-Di386=1
 .else
-MAKE_FLAGS+=	TOMSMOCOMP_LINKS=\#
 PKG_ARGS+=	-Di386=0
 .endif
 
