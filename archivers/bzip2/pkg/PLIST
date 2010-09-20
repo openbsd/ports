@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/05/16 23:00:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/09/20 18:21:10 naddy Exp $
 %%SHARED%%
 bin/bunzip2
 bin/bzcat
@@ -7,13 +7,12 @@ bin/bzdiff
 bin/bzegrep
 bin/bzfgrep
 bin/bzgrep
-bin/bzip2
-bin/bzip2recover
+@bin bin/bzip2
+@bin bin/bzip2recover
 bin/bzless
 bin/bzmore
 include/bzlib.h
 lib/libbz2.a
-@endfake
 @man man/man1/bunzip2.1
 @man man/man1/bzcat.1
 @man man/man1/bzcmp.1
