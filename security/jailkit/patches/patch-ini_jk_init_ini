@@ -1,0 +1,58 @@
+$OpenBSD: patch-ini_jk_init_ini,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+
+fix some default paths in the jail creation configuration file
+
+--- ini/jk_init.ini.orig	Sat Sep 11 15:58:41 2010
++++ ini/jk_init.ini	Sat Sep 18 11:40:01 2010
+@@ -21,7 +21,7 @@ need_logsocket = 1
+ 
+ [jk_lsh]
+ comment = Jailkit limited shell
+-paths = /usr/sbin/jk_lsh, /etc/jailkit/jk_lsh.ini
++paths = ${TRUEPREFIX}/sbin/jk_lsh, ${SYSCONFDIR}/jailkit/jk_lsh.ini
+ users = root
+ groups = root
+ includesections = uidbasics, logbasics
+@@ -37,7 +37,7 @@ devices = /dev/null
+ 
+ [git]
+ comment = Fast Version Control System
+-paths = /usr/bin/git*, /usr/share/git-core
++paths = ${LOCALBASE}/bin/git*, ${LOCALBASE}/share/git-core
+ includesections = editors
+ 
+ [scp]
+@@ -78,7 +78,7 @@ includesections = uidbasics
+ 
+ [midnightcommander]
+ comment = Midnight Commander
+-paths = mc, mcedit, mcview, /usr/share/mc
++paths = mc, mcedit, mcview, ${LOCALBASE}/share/mc
+ includesections = basicshell, terminfo
+ 
+ [extendedshell]
+@@ -110,7 +110,7 @@ includesections = extendedshell, netutils, apacheutils
+ 
+ [openvpn]
+ comment = jail for the openvpn daemon
+-paths = /usr/sbin/openvpn
++paths = ${LOCALBASE}/sbin/openvpn
+ users = root,nobody
+ groups = root,nogroup
+ includesections = netbasics
+@@ -131,7 +131,7 @@ paths = perl, /usr/lib/perl, /usr/lib/perl5, /usr/shar
+ 
+ [xauth]
+ comment = getting X authentication to work
+-paths = /usr/bin/X11/xauth, /usr/X11R6/lib/X11/rgb.txt, /etc/ld.so.conf
++paths = ${X11BASE}/bin/xauth, ${X11BASE}/lib/X11/rgb.txt
+ 
+ [xclients]
+ comment = minimal files for X clients
+@@ -145,5 +145,5 @@ includesections = xclients
+ 
+ #[xterm]
+ #comment = xterm
+-#paths = /usr/bin/X11/xterm, /usr/share/terminfo, /etc/terminfo
++#paths = ${X11BASE}/bin/xterm, /usr/share/terminfo, /etc/terminfo
+ #devices = /dev/pts/0, /dev/pts/1, /dev/pts/2, /dev/pts/3, /dev/pts/4, /dev/ptyb4, /dev/ptya4, /dev/tty, /dev/tty0, /dev/tty4

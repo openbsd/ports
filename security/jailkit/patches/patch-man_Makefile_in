@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+--- man/Makefile.in.orig	Mon Oct 20 00:03:54 2008
++++ man/Makefile.in	Mon Oct 20 00:05:31 2008
+@@ -21,7 +21,7 @@ SRCS = \
+ 
+ @HAVEPROCMAIL_TRUE@SRCS += jk_procmailwrapper.8
+ 
+-MANS = $(SRCS:.8=.8.gz)
++MANS = $(SRCS)
+ 
+ #%.8.gz : %.8
+ #	gzip -9 > $@ < $<

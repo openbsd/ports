@@ -1,0 +1,18 @@
+$OpenBSD: patch-py_jk_lib_py,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+
+Fix running jk_init trying to create a jail the first time
+
+--- py/jk_lib.py.orig	Wed Aug 11 10:45:24 2010
++++ py/jk_lib.py	Wed Aug 11 10:47:07 2010
+@@ -442,7 +442,10 @@ def create_parent_path(chroot,path,be_verbose=0, copy_
+ 		if (stat.S_ISDIR(sb.st_mode)):
+ 			if (be_verbose):
+ 				print 'Create directory '+jailpath
+-			os.mkdir(jailpath, 0755)
++			try:
++				os.mkdir(jailpath, 0755)
++			except OSError, (errno,strerror):
++				sys.stderr.write('NOTE: Jail directory already existed:\n')
+ 			if (copy_permissions):
+ 				try:
+ 					copy_time_and_permissions(origpath, jailpath, be_verbose, allow_suid, copy_ownership)

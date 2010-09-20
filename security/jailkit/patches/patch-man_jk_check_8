@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_jk_check_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+--- man/jk_check.8.orig	Tue Oct 28 12:13:02 2008
++++ man/jk_check.8	Tue Oct 28 12:13:32 2008
+@@ -22,7 +22,7 @@ jk_check will run several tests on all files and direc
+ -test for matching user information in the jail and on the real system
+ 
+ It will test directories based on the config file
+-.I /etc/jailkit/jk_check.ini
++.I ${SYSCONFDIR}/jailkit/jk_check.ini
+ but also based on jail patterns (dir/./dir) found in the home directories in 
+ .I /etc/passwd
+ 
+@@ -96,7 +96,7 @@ Use alternative configfile
+ The help screen
+ 
+ .SH FILES
+-.I /etc/jailkit/jk_check.ini
++.I ${SYSCONFDIR}/jailkit/jk_check.ini
+ 
+ .SH "SEE ALSO"
+ .BR jailkit(8)

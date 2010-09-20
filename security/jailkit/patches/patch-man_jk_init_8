@@ -1,0 +1,39 @@
+$OpenBSD: patch-man_jk_init_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
+--- man/jk_init.8.orig	Sun Feb  7 17:13:06 2010
++++ man/jk_init.8	Tue Sep 14 19:12:38 2010
+@@ -14,7 +14,7 @@ jk_init \- a utility to quicky create functional jail 
+ It is not an easy task to setup a jail (a changed root) in a functional way. If you want the user to be able to run cvs for example, it will not work to simply copy the cvs binary into the users jail. You will find that cvs needs libraries as well. cvs also needs the /dev/null device. Finally you need something to start cvs: you need a shell too. And the shell might need files like /etc/passwd and /etc/nsswitch.conf.
+ 
+ With jk_init you can automate these tasks. You can create a section in the configfile 
+-.I /etc/jailkit/jk_init.ini
++.I ${SYSCONFDIR}/jailkit/jk_init.ini
+ that has all the files, directories and devices, and you can use jk_init to setup such a jail with a single command. The default configfile has examples for cvs, sftp, scp, rsync and more for Debian and Ubuntu Linux. For other operating systems the defaults might need some (minor) updates. 
+ 
+ .SH EXAMPLE
+@@ -24,7 +24,7 @@ An example configfile section might look like this:
+ .sp
+ [jk_lsh]
+ comment = Jailkit limited shell
+-paths = /usr/sbin/jk_lsh, /etc/jailkit/jk_lsh.ini
++paths = ${PREFIX}/sbin/jk_lsh, ${SYSCONFDIR}/jailkit/jk_lsh.ini
+ users = root
+ groups = root
+ need_logsocket = 1
+@@ -32,7 +32,7 @@ includesections = uidbasics
+ 
+ [sftp]
+ comment = ssh secure ftp with Jailkit limited shell
+-paths = /usr/lib/sftp-server
++paths = /usr/libexec/sftp-server
+ includesections = netbasics, uidbasics
+ devices = /dev/urandom, /dev/null
+ emptydirs = /svr
+@@ -104,7 +104,7 @@ Specify the jail directory to operate on. 
+ The help screen
+ 
+ .SH FILES
+-.I /etc/jailkit/jk_init.ini
++.I ${SYSCONFDIR}/jailkit/jk_init.ini
+ 
+ .SH "SEE ALSO"
+ .BR jailkit(8)

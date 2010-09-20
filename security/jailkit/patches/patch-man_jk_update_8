@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_jk_update_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
+--- man/jk_update.8.orig	Sun Feb  7 17:13:06 2010
++++ man/jk_update.8	Tue Sep 14 19:08:21 2010
+@@ -44,7 +44,7 @@ hardlinks = 1
+ directories = /usr, /bin, /lib
+ 
+ [/home/otherjail]
+-skips = /usr/share/firefox, /usr/bin/firefox, /usr/lib/firefox
++skips = ${LOCALBASE}/mozilla-firefox, ${LOCALBASE}/bin/firefox
+ .fi
+ 
+ where the options have the following meaning:

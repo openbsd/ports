@@ -1,0 +1,37 @@
+$OpenBSD: patch-man_jk_chrootsh_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
+--- man/jk_chrootsh.8.orig	Sun Feb  7 17:13:06 2010
++++ man/jk_chrootsh.8	Tue Sep 14 19:08:21 2010
+@@ -11,13 +11,13 @@ jk_chrootsh \- a shell that will put the user inside a
+ 
+ jk_chrootsh can be used as a shell for a user (e.g. in /etc/passwd or your ldap store). That user will be put into a changed root. The directory where to put the user in is read from the users home directory, the last occurring /./ sequence is used to mark the location of the changed root. An example line in /etc/passwd would look like
+ 
+-test:x:10000:10000::/home/testchroot/./home/test:/usr/sbin/jk_chrootsh
++test:x:10000:10000::/home/testchroot/./home/test:${PREFIX}/sbin/jk_chrootsh
+ 
+ In this example the user will be chroot-ed into /home/testchroot
+ 
+ Inside the chroot-ed directory, it will look for /etc/passwd and it will execute the shell for the user from that file. For the above example the /etc/passwd file inside the jail should have an entry like
+ 
+-test:x:10000:10000::/home/test:/usr/sbin/jk_lsh
++test:x:10000:10000::/home/test:${PREFIX}/sbin/jk_lsh
+ 
+ Notice that the home directory and the shell are local inside the chroot
+ 
+@@ -26,7 +26,7 @@ jk_chrootsh needs certain elevated privileges to make 
+ system call. Therefore it is setuid root. It will drop its root priveleges immediately after making the chroot() system call. Since Jailkit 2.8 jk_chrootsh may also use the CAP_SYS_CHROOT capability on systems that support capabilities, and then the setuid bit can be removed.
+ 
+ By default jk_chrootsh does not copy any environment variables. For some functionality, however, environment variables need to be copied (e.g. the TERM variable for a functional terminal emulation, or the DISPLAY variable for X forwarding). In 
+-.I /etc/jailkit/jk_chrootsh.ini
++.I ${SYSCONFDIR}/jailkit/jk_chrootsh.ini
+ the required environment variables can be listed. An example config file is shown below. In the example, user bill will get the DISPLAY variable, and all users in group jail will get the TERM and PATH variables.
+ 
+ By default jk_chrootsh requires a home directory that has the same group as the primary group from the user, and requires the home directory to be non-writable for group and others. You can relax these requirements in the configfile as shown below. 
+@@ -60,7 +60,7 @@ injail_shell=/bin/bash
+ .SH FILES
+ 
+ .I /etc/passwd
+-.I /etc/jailkit/jk_chrootsh.ini
++.I ${SYSCONFDIR}/jailkit/jk_chrootsh.ini
+ 
+ .SH DIAGNOSTICS
+ 

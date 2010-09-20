@@ -1,0 +1,15 @@
+$OpenBSD: patch-man_jk_cp_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
+--- man/jk_cp.8.orig	Tue Oct 28 12:14:36 2008
++++ man/jk_cp.8	Tue Oct 28 12:38:41 2008
+@@ -19,9 +19,9 @@ jk_cp -j /home/testchroot /usr/bin/cvs
+ 
+ will copy /usr/bin/cvs to /home/testchroot/usr/bin/cvs, and it will copy the libraries used by cvs also to the jail.
+ 
+-jk_cp -k -j /svr/testjail /usr/bin/firefox /usr/share/firefox
++jk_cp -k -j /svr/testjail ${LOCALBASE}/bin/firefox ${LOCALBASE}/mozilla-firefox
+ 
+-will hardlink /usr/bin/firefox and all files in /usr/share/firefox into jail /svr/testjail 
++will hardlink ${LOCALBASE}/bin/firefox and all files in ${LOCALBASE}/mozilla-firefox into jail /svr/testjail 
+ 
+ .SH OPTIONS
+ 

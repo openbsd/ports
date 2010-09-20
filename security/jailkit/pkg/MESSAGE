@@ -1,0 +1,4 @@
+NOTE: that the following binaries are installed SUID root:
+${TRUEPREFIX}/bin/jk_uchroot
+${TRUEPREFIX}/sbin/jk_chrootsh
+${TRUEPREFIX}/sbin/jk_procmailwrapper

@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+
+We do not want the packge to manipulate our /etc/shells, use @shell in PLIST
+
+--- Makefile.in.orig	Sat Sep 11 15:45:26 2010
++++ Makefile.in	Mon Sep 13 08:01:37 2010
+@@ -69,12 +69,12 @@ install:
+ 	@cd man/ && $(MAKE) install
+ 	# test if the jk_chrootsh is already in /etc/shells
+ 	# this previously had @echo but that fails on FreeBSD
+-	if test -w /etc/shells; then \
+-		if ! grep ${prefix}/sbin/jk_chrootsh /etc/shells ; then \
+-			echo "appending ${prefix}/sbin/jk_chroots to /etc/shells";\
+-			echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
+-		fi \
+-	fi
++	#if test -w /etc/shells; then \
++	#	if ! grep ${prefix}/sbin/jk_chrootsh /etc/shells ; then \
++	#		echo "appending ${prefix}/sbin/jk_chroots to /etc/shells";\
++	#		echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
++	#	fi \
++	#fi
+ 
+ 
+ uninstall:

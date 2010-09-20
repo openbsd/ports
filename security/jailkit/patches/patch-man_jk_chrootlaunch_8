@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_jk_chrootlaunch_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+--- man/jk_chrootlaunch.8.orig	Tue Oct 28 12:13:39 2008
++++ man/jk_chrootlaunch.8	Tue Oct 28 12:35:22 2008
+@@ -59,7 +59,7 @@ Suppose you want to start Apache inside a jail. Apache
+ 
+ First we create the jail using 
+ .BR jk_init(8).
+-The apachectl program is a shell script, it also needs /bin/sh and /usr/bin/kill. We also have to copy these into the jail using 
++The apachectl program is a shell script, it also needs /bin/sh and /bin/kill. We also have to copy these into the jail using 
+ .BR jk_cp(8).
+ Apache also needs its modules from /usr/lib/apache, copy those as well. Then we can start Apache:
+ 
