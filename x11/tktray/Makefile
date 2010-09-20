@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/16 11:25:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/20 06:30:00 sebastia Exp $
 
 SHARED_ONLY=    Yes
 
 COMMENT=	system tray icon support for Tk
 
-VERSION=	1.3.8
-REVISION=	0
+VERSION=	1.3.9
 DISTNAME=	tktray${VERSION}
 PKGNAME=	tktray-${VERSION}
 SHARED_LIBS=	tktray${VERSION:S/.//g} 0.0
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--datadir=${PREFIX}/share/examples
-CONFIGURE_ENV=	SHLIB_VERSION=${LIBtktray138_VERSION}
+CONFIGURE_ENV=	SHLIB_VERSION=${LIBtktray139_VERSION}
 REGRESS_TARGET=	test
 REGRESS_IS_INTERACTIVE=	X11
 SUBST_VARS=	VERSION
