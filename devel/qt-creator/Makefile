@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/28 12:49:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/20 07:00:13 ajacoutot Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
@@ -41,6 +41,8 @@ MODULES =	x11/qt4
 LIB_DEPENDS =	QtDBus,QtWebKit,QtXmlPatterns,QtDesigner.>=7,QtDesignerComponents.>=7,QtGui.>=8,QtHelp,QtNetwork.>=7,QtScript,QtSql.>=7,QtSvg.>=7,QtXml.>=7,phonon::x11/qt4
 BUILD_DEPENDS = ::x11/qt4,-sqlite
 RUN_DEPENDS = ::x11/qt4,-sqlite ::devel/gmake
+
+PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	simple
 
