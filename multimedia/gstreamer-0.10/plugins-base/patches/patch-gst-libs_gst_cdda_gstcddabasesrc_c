@@ -1,0 +1,12 @@
+$OpenBSD: patch-gst-libs_gst_cdda_gstcddabasesrc_c,v 1.1 2010/09/20 16:11:12 ajacoutot Exp $
+--- gst-libs/gst/cdda/gstcddabasesrc.c.orig	Mon Sep 20 17:24:31 2010
++++ gst-libs/gst/cdda/gstcddabasesrc.c	Mon Sep 20 17:25:25 2010
+@@ -94,7 +94,7 @@
+ GST_DEBUG_CATEGORY_STATIC (gst_cdda_base_src_debug);
+ #define GST_CAT_DEFAULT gst_cdda_base_src_debug
+ 
+-#define DEFAULT_DEVICE                       "/dev/cdrom"
++#define DEFAULT_DEVICE                       "/dev/rcd0c"
+ 
+ #define CD_FRAMESIZE_RAW                     (2352)
+ 

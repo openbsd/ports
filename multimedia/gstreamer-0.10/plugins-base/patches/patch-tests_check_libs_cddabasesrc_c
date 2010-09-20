@@ -1,0 +1,60 @@
+$OpenBSD: patch-tests_check_libs_cddabasesrc_c,v 1.1 2010/09/20 16:11:12 ajacoutot Exp $
+--- tests/check/libs/cddabasesrc.c.orig	Mon Sep 20 17:25:58 2010
++++ tests/check/libs/cddabasesrc.c	Mon Sep 20 17:27:22 2010
+@@ -433,9 +433,9 @@ GST_START_TEST (test_uri_parsing)
+           "cddaq://") == FALSE);
+ 
+   /* cdda://track */
+-  test_uri_parse ("cdda://", "/dev/cdrom", 1);
+-  test_uri_parse ("cdda://2", "/dev/cdrom", 2);
+-  test_uri_parse ("cdda://47", "/dev/cdrom", 47);
++  test_uri_parse ("cdda://", "/dev/rcd0c", 1);
++  test_uri_parse ("cdda://2", "/dev/rcd0c", 2);
++  test_uri_parse ("cdda://47", "/dev/rcd0c", 47);
+   fail_unless (gst_uri_handler_set_uri (GST_URI_HANDLER (foosrc),
+           "cdda://-1") == FALSE);
+   fail_unless (gst_uri_handler_set_uri (GST_URI_HANDLER (foosrc),
+@@ -450,7 +450,7 @@ GST_START_TEST (test_uri_parsing)
+           "cdda:///dev/hdb#-2") == FALSE);
+ 
+   /* cdda://track#device (device should be ignored - FIXME 0.11) */
+-  test_uri_parse ("cdda://8#/dev/hdb", "/dev/cdrom", 8);
++  test_uri_parse ("cdda://8#/dev/hdb", "/dev/rcd0c", 8);
+ 
+   gst_object_unref (foosrc);
+ }
+@@ -468,27 +468,27 @@ GST_START_TEST (test_properties)
+ 
+   foosrc = gst_element_factory_make ("cdfoosrc", "cdfoosrc");
+ 
+-  g_object_set (foosrc, "device", "/dev/cdrom", NULL);
++  g_object_set (foosrc, "device", "/dev/rcd0c", NULL);
+   g_object_get (foosrc, "device", &device, "track", &track, NULL);
+-  fail_unless (g_str_equal (device, "/dev/cdrom"));
++  fail_unless (g_str_equal (device, "/dev/rcd0c"));
+   fail_unless_equals_int (track, 1);
+   g_free (device);
+ 
+-  g_object_set (foosrc, "device", "/dev/cdrom1", "track", 17, NULL);
++  g_object_set (foosrc, "device", "/dev/rcd1c", "track", 17, NULL);
+   g_object_get (foosrc, "device", &device, "track", &track, NULL);
+-  fail_unless (g_str_equal (device, "/dev/cdrom1"));
++  fail_unless (g_str_equal (device, "/dev/rcd1c"));
+   fail_unless_equals_int (track, 17);
+   g_free (device);
+ 
+-  g_object_set (foosrc, "track", 17, "device", "/dev/cdrom1", NULL);
++  g_object_set (foosrc, "track", 17, "device", "/dev/rcd1c", NULL);
+   g_object_get (foosrc, "device", &device, "track", &track, NULL);
+-  fail_unless (g_str_equal (device, "/dev/cdrom1"));
++  fail_unless (g_str_equal (device, "/dev/rcd1c"));
+   fail_unless_equals_int (track, 17);
+   g_free (device);
+ 
+   g_object_set (foosrc, "track", 12, NULL);
+   g_object_get (foosrc, "device", &device, "track", &track, NULL);
+-  fail_unless (g_str_equal (device, "/dev/cdrom1"));
++  fail_unless (g_str_equal (device, "/dev/rcd1c"));
+   fail_unless_equals_int (track, 12);
+   g_free (device);
+ 

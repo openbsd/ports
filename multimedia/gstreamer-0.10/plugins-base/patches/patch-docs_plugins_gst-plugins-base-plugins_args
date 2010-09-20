@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_plugins_gst-plugins-base-plugins_args,v 1.1 2010/09/20 16:11:12 ajacoutot Exp $
+--- docs/plugins/gst-plugins-base-plugins.args.orig	Mon Sep 20 17:24:58 2010
++++ docs/plugins/gst-plugins-base-plugins.args	Mon Sep 20 17:25:13 2010
+@@ -1875,7 +1875,7 @@
+ <FLAGS>rw</FLAGS>
+ <NICK>Device</NICK>
+ <BLURB>CD device location.</BLURB>
+-<DEFAULT>"/dev/cdrom"</DEFAULT>
++<DEFAULT>"/dev/rcd0c"</DEFAULT>
+ </ARG>
+ 
+ <ARG>
