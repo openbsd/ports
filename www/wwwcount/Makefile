@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2010/09/20 13:55:09 jasper Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
-DISTNAME=	wwwcount2.5
-PKGNAME=	wwwcount-2.5p0
+V=		2.5
+DISTNAME=	wwwcount$V
+PKGNAME=	wwwcount-$V
+REVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://wwwcount.yeehaw.net/$S/ \
-		http://www.asamnet.de/mirror/Count/$S/ \
-		http://wwwcount.webcc.net/$S/ \
-		http://www.infolaunch.com/count/$S/ \
-		http://elmar.ucsm.ac.uk/Count/$S/ \
-		http://muquit.com/muquit/software/Count/$S/
-
-S=	src/wwwcount2.5
+MASTER_SITES=	http://muquit.com/muquit/software/Count/src/wwwcount$V/ \
+		http://wwwcount.yeehaw.net/src/wwwcount$V/ \
+		http://www.asamnet.de/mirror/Count/src/wwwcount$V/ \
+		http://wwwcount.webcc.net/src/wwwcount$V/
 
 # For digit images look at:
 # http://www.digitmania.holowww.com/
