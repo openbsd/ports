@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2010/09/21 17:11:38 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -58,6 +58,7 @@ LIB_DEPENDS=		::audio/libcanberra \
 RUN_DEPENDS=		::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-haze \
 			::net/telepathy/telepathy-idle \
+			::net/telepathy/telepathy-salut \
 			:gnome-icon-theme->=2.30.3:x11/gnome/icon-theme
 
 USE_X11=		Yes
