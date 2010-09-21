@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
---- configure.orig	Mon Feb 23 16:23:35 2009
-+++ configure	Mon Jan  4 12:01:38 2010
-@@ -3178,61 +3178,8 @@ fi
+$OpenBSD: patch-configure,v 1.10 2010/09/21 07:21:00 jasper Exp $
+--- configure.orig	Mon Sep 20 23:33:13 2010
++++ configure	Mon Sep 20 23:34:51 2010
+@@ -3372,61 +3372,8 @@ fi
  USERNAME=$with_username
- { echo "$as_me:$LINENO: result: $USERNAME" >&5
- echo "${ECHO_T}$USERNAME" >&6; }
+ { $as_echo "$as_me:$LINENO: result: $USERNAME" >&5
+ $as_echo "$USERNAME" >&6; }
 +MAILMAN_USER=$with_username
  
 -# User `mailman' must exist
 -
--{ echo "$as_me:$LINENO: checking for user name \"$USERNAME\"" >&5
--echo $ECHO_N "checking for user name \"$USERNAME\"... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for user name \"$USERNAME\"" >&5
+-$as_echo_n "checking for user name \"$USERNAME\"... " >&6; }
 -
 -# MAILMAN_USER == variable name
 -# $USERNAME == user id to check for
@@ -44,12 +44,12 @@ $OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
 -then
 -  if test "$with_permcheck" = "yes"
 -  then
--    { { echo "$as_me:$LINENO: error:
+-    { { $as_echo "$as_me:$LINENO: error:
 -***** No \"$USERNAME\" user found!
 -***** Your system must have a \"$USERNAME\" user defined
 -***** (usually in your /etc/passwd file).  Please see the INSTALL
 -***** file for details." >&5
--echo "$as_me: error:
+-$as_echo "$as_me: error:
 -***** No \"$USERNAME\" user found!
 -***** Your system must have a \"$USERNAME\" user defined
 -***** (usually in your /etc/passwd file).  Please see the INSTALL
@@ -57,23 +57,21 @@ $OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
 -   { (exit 1); exit 1; }; }
 -  fi
 -fi
--{ echo "$as_me:$LINENO: result: okay" >&5
--echo "${ECHO_T}okay" >&6; }
+-{ $as_echo "$as_me:$LINENO: result: okay" >&5
+-$as_echo "okay" >&6; }
 -
 -
  # Check for some other gid to use than `mailman'
- { echo "$as_me:$LINENO: checking for --with-groupname" >&5
- echo $ECHO_N "checking for --with-groupname... $ECHO_C" >&6; }
-@@ -3250,61 +3197,7 @@ fi
- GROUPNAME=$with_groupname
- { echo "$as_me:$LINENO: result: $GROUPNAME" >&5
- echo "${ECHO_T}$GROUPNAME" >&6; }
--
--
+ { $as_echo "$as_me:$LINENO: checking for --with-groupname" >&5
+ $as_echo_n "checking for --with-groupname... " >&6; }
+@@ -3446,58 +3393,7 @@ GROUPNAME=$with_groupname
+ $as_echo "$GROUPNAME" >&6; }
+ 
+ 
 -# Target group must exist
 -
--{ echo "$as_me:$LINENO: checking for group name \"$GROUPNAME\"" >&5
--echo $ECHO_N "checking for group name \"$GROUPNAME\"... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for group name \"$GROUPNAME\"" >&5
+-$as_echo_n "checking for group name \"$GROUPNAME\"... " >&6; }
 -
 -# MAILMAN_GROUP == variable name
 -# $GROUPNAME == user id to check for
@@ -107,12 +105,12 @@ $OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
 -then
 -  if test "$with_permcheck" = "yes"
 -  then
--    { { echo "$as_me:$LINENO: error:
+-    { { $as_echo "$as_me:$LINENO: error:
 -***** No \"$GROUPNAME\" group found!
 -***** Your system must have a \"$GROUPNAME\" group defined
 -***** (usually in your /etc/group file).  Please see the INSTALL
 -***** file for details." >&5
--echo "$as_me: error:
+-$as_echo "$as_me: error:
 -***** No \"$GROUPNAME\" group found!
 -***** Your system must have a \"$GROUPNAME\" group defined
 -***** (usually in your /etc/group file).  Please see the INSTALL
@@ -120,10 +118,9 @@ $OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
 -   { (exit 1); exit 1; }; }
 -  fi
 -fi
--{ echo "$as_me:$LINENO: result: okay" >&5
--echo "${ECHO_T}okay" >&6; }
--
+-{ $as_echo "$as_me:$LINENO: result: okay" >&5
+-$as_echo "okay" >&6; }
 +MAILMAN_GROUP=$with_groupname
  
- { echo "$as_me:$LINENO: checking permissions on $prefixcheck" >&5
- echo $ECHO_N "checking permissions on $prefixcheck... $ECHO_C" >&6; }
+ 
+ { $as_echo "$as_me:$LINENO: checking permissions on $prefixcheck" >&5

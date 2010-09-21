@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/05/02 09:56:44 djm Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/21 07:21:00 jasper Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -25,6 +25,8 @@ lib/mailman/Mailman/Bouncer.pyc
 @mode 775
 lib/mailman/Mailman/Bouncers/
 @mode
+lib/mailman/Mailman/Bouncers/AOL.py
+lib/mailman/Mailman/Bouncers/AOL.pyc
 lib/mailman/Mailman/Bouncers/BouncerAPI.py
 lib/mailman/Mailman/Bouncers/BouncerAPI.pyc
 lib/mailman/Mailman/Bouncers/Caiwireless.py
@@ -415,6 +417,10 @@ lib/mailman/messages/ar/LC_MESSAGES/
 @mode
 lib/mailman/messages/ar/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ar/LC_MESSAGES/mailman.po
+lib/mailman/messages/ast/
+lib/mailman/messages/ast/LC_MESSAGES/
+lib/mailman/messages/ast/LC_MESSAGES/mailman.mo
+lib/mailman/messages/ast/LC_MESSAGES/mailman.po
 @mode 775
 lib/mailman/messages/ca/
 lib/mailman/messages/ca/LC_MESSAGES/
@@ -628,163 +634,6 @@ lib/mailman/messages/zh_TW/LC_MESSAGES/mailman.mo
 lib/mailman/messages/zh_TW/LC_MESSAGES/mailman.po
 @mode 775
 lib/mailman/pythonlib/
-@mode
-lib/mailman/pythonlib/JapaneseCodecs-1.4.11-py${MODPY_VERSION}.egg-info
-lib/mailman/pythonlib/KoreanCodecs-2.0.5-py${MODPY_VERSION}.egg-info
-@mode 775
-lib/mailman/pythonlib/japanese/
-@mode
-lib/mailman/pythonlib/japanese/__init__.py
-lib/mailman/pythonlib/japanese/__init__.pyc
-@mode 775
-lib/mailman/pythonlib/japanese/aliases/
-@mode
-lib/mailman/pythonlib/japanese/aliases/__init__.py
-lib/mailman/pythonlib/japanese/aliases/__init__.pyc
-@mode 775
-lib/mailman/pythonlib/japanese/c/
-@mode
-lib/mailman/pythonlib/japanese/c/__init__.py
-lib/mailman/pythonlib/japanese/c/__init__.pyc
-lib/mailman/pythonlib/japanese/c/_japanese_codecs.so
-lib/mailman/pythonlib/japanese/c/euc_jp.py
-lib/mailman/pythonlib/japanese/c/euc_jp.pyc
-lib/mailman/pythonlib/japanese/c/iso_2022_jp.py
-lib/mailman/pythonlib/japanese/c/iso_2022_jp.pyc
-lib/mailman/pythonlib/japanese/c/iso_2022_jp_1.py
-lib/mailman/pythonlib/japanese/c/iso_2022_jp_1.pyc
-lib/mailman/pythonlib/japanese/c/iso_2022_jp_ext.py
-lib/mailman/pythonlib/japanese/c/iso_2022_jp_ext.pyc
-lib/mailman/pythonlib/japanese/c/ms932.py
-lib/mailman/pythonlib/japanese/c/ms932.pyc
-lib/mailman/pythonlib/japanese/c/shift_jis.py
-lib/mailman/pythonlib/japanese/c/shift_jis.pyc
-lib/mailman/pythonlib/japanese/euc_jp.py
-lib/mailman/pythonlib/japanese/euc_jp.pyc
-lib/mailman/pythonlib/japanese/iso_2022_jp.py
-lib/mailman/pythonlib/japanese/iso_2022_jp.pyc
-lib/mailman/pythonlib/japanese/iso_2022_jp_1.py
-lib/mailman/pythonlib/japanese/iso_2022_jp_1.pyc
-lib/mailman/pythonlib/japanese/iso_2022_jp_ext.py
-lib/mailman/pythonlib/japanese/iso_2022_jp_ext.pyc
-lib/mailman/pythonlib/japanese/jis_7.py
-lib/mailman/pythonlib/japanese/jis_7.pyc
-lib/mailman/pythonlib/japanese/jis_x_0201_katakana.py
-lib/mailman/pythonlib/japanese/jis_x_0201_katakana.pyc
-lib/mailman/pythonlib/japanese/jis_x_0201_roman.py
-lib/mailman/pythonlib/japanese/jis_x_0201_roman.pyc
-@mode 775
-lib/mailman/pythonlib/japanese/mappings/
-@mode
-lib/mailman/pythonlib/japanese/mappings/__init__.py
-lib/mailman/pythonlib/japanese/mappings/__init__.pyc
-lib/mailman/pythonlib/japanese/mappings/euc_jp.py
-lib/mailman/pythonlib/japanese/mappings/euc_jp.pyc
-lib/mailman/pythonlib/japanese/mappings/jis_x_0208.py
-lib/mailman/pythonlib/japanese/mappings/jis_x_0208.pyc
-lib/mailman/pythonlib/japanese/mappings/jis_x_0212.py
-lib/mailman/pythonlib/japanese/mappings/jis_x_0212.pyc
-lib/mailman/pythonlib/japanese/mappings/shift_jis.py
-lib/mailman/pythonlib/japanese/mappings/shift_jis.pyc
-lib/mailman/pythonlib/japanese/ms932.py
-lib/mailman/pythonlib/japanese/ms932.pyc
-@mode 775
-lib/mailman/pythonlib/japanese/python/
-@mode
-lib/mailman/pythonlib/japanese/python/__init__.py
-lib/mailman/pythonlib/japanese/python/__init__.pyc
-lib/mailman/pythonlib/japanese/python/euc_jp.py
-lib/mailman/pythonlib/japanese/python/euc_jp.pyc
-lib/mailman/pythonlib/japanese/python/iso_2022_jp.py
-lib/mailman/pythonlib/japanese/python/iso_2022_jp.pyc
-lib/mailman/pythonlib/japanese/python/iso_2022_jp_1.py
-lib/mailman/pythonlib/japanese/python/iso_2022_jp_1.pyc
-lib/mailman/pythonlib/japanese/python/iso_2022_jp_ext.py
-lib/mailman/pythonlib/japanese/python/iso_2022_jp_ext.pyc
-lib/mailman/pythonlib/japanese/python/shift_jis.py
-lib/mailman/pythonlib/japanese/python/shift_jis.pyc
-lib/mailman/pythonlib/japanese/shift_jis.py
-lib/mailman/pythonlib/japanese/shift_jis.pyc
-lib/mailman/pythonlib/japanese/sjis.py
-lib/mailman/pythonlib/japanese/sjis.pyc
-lib/mailman/pythonlib/japanese/ujis.py
-lib/mailman/pythonlib/japanese/ujis.pyc
-lib/mailman/pythonlib/japanese/windows_31j.py
-lib/mailman/pythonlib/japanese/windows_31j.pyc
-@mode 775
-lib/mailman/pythonlib/korean/
-@mode
-lib/mailman/pythonlib/korean.pth
-lib/mailman/pythonlib/korean/__init__.py
-lib/mailman/pythonlib/korean/__init__.pyc
-lib/mailman/pythonlib/korean/aliases.py
-lib/mailman/pythonlib/korean/aliases.pyc
-@mode 775
-lib/mailman/pythonlib/korean/c/
-@mode
-lib/mailman/pythonlib/korean/c/__init__.py
-lib/mailman/pythonlib/korean/c/__init__.pyc
-lib/mailman/pythonlib/korean/c/_koco.so
-lib/mailman/pythonlib/korean/c/cp949.py
-lib/mailman/pythonlib/korean/c/cp949.pyc
-lib/mailman/pythonlib/korean/c/euc_kr.py
-lib/mailman/pythonlib/korean/c/euc_kr.pyc
-lib/mailman/pythonlib/korean/c/hangul.so
-lib/mailman/pythonlib/korean/cp949.py
-lib/mailman/pythonlib/korean/cp949.pyc
-lib/mailman/pythonlib/korean/euc_kr.py
-lib/mailman/pythonlib/korean/euc_kr.pyc
-lib/mailman/pythonlib/korean/hangul.py
-lib/mailman/pythonlib/korean/hangul.pyc
-lib/mailman/pythonlib/korean/iso_2022_kr.py
-lib/mailman/pythonlib/korean/iso_2022_kr.pyc
-lib/mailman/pythonlib/korean/johab.py
-lib/mailman/pythonlib/korean/johab.pyc
-@mode 775
-lib/mailman/pythonlib/korean/mappings/
-@mode
-lib/mailman/pythonlib/korean/mappings/__init__.py
-lib/mailman/pythonlib/korean/mappings/__init__.pyc
-lib/mailman/pythonlib/korean/mappings/johab_ideograph.py
-lib/mailman/pythonlib/korean/mappings/johab_ideograph.pyc
-lib/mailman/pythonlib/korean/mappings/ksc5601_hangul.py
-lib/mailman/pythonlib/korean/mappings/ksc5601_hangul.pyc
-lib/mailman/pythonlib/korean/mappings/ksc5601_ideograph.py
-lib/mailman/pythonlib/korean/mappings/ksc5601_ideograph.pyc
-lib/mailman/pythonlib/korean/mappings/ksc5601_misc.py
-lib/mailman/pythonlib/korean/mappings/ksc5601_misc.pyc
-lib/mailman/pythonlib/korean/mappings/uhc.py
-lib/mailman/pythonlib/korean/mappings/uhc.pyc
-@mode 775
-lib/mailman/pythonlib/korean/python/
-@mode
-lib/mailman/pythonlib/korean/python/__init__.py
-lib/mailman/pythonlib/korean/python/__init__.pyc
-lib/mailman/pythonlib/korean/python/cp949.py
-lib/mailman/pythonlib/korean/python/cp949.pyc
-lib/mailman/pythonlib/korean/python/euc_kr.py
-lib/mailman/pythonlib/korean/python/euc_kr.pyc
-lib/mailman/pythonlib/korean/python/hangul.py
-lib/mailman/pythonlib/korean/python/hangul.pyc
-lib/mailman/pythonlib/korean/python/iso_2022_kr.py
-lib/mailman/pythonlib/korean/python/iso_2022_kr.pyc
-lib/mailman/pythonlib/korean/python/johab.py
-lib/mailman/pythonlib/korean/python/johab.pyc
-lib/mailman/pythonlib/korean/python/qwerty2bul.py
-lib/mailman/pythonlib/korean/python/qwerty2bul.pyc
-lib/mailman/pythonlib/korean/python/unijohab.py
-lib/mailman/pythonlib/korean/python/unijohab.pyc
-lib/mailman/pythonlib/korean/qwerty2bul.py
-lib/mailman/pythonlib/korean/qwerty2bul.pyc
-lib/mailman/pythonlib/korean/unijohab.py
-lib/mailman/pythonlib/korean/unijohab.pyc
-@mode 775
-lib/mailman/pythonlib/lib/
-lib/mailman/pythonlib/lib/python${MODPY_VERSION}/
-lib/mailman/pythonlib/lib/python${MODPY_VERSION}/site-packages/
-@mode
-lib/mailman/pythonlib/lib/python${MODPY_VERSION}/site-packages/japanese.pth
-@mode 775
 lib/mailman/scripts/
 @mode
 lib/mailman/scripts/admin
@@ -848,6 +697,53 @@ lib/mailman/templates/ar/unsub.txt
 lib/mailman/templates/ar/unsubauth.txt
 lib/mailman/templates/ar/userpass.txt
 lib/mailman/templates/ar/verify.txt
+@mode 775
+lib/mailman/templates/ast/
+@mode
+lib/mailman/templates/ast/admindbdetails.html
+lib/mailman/templates/ast/admindbpreamble.html
+lib/mailman/templates/ast/admindbsummary.html
+lib/mailman/templates/ast/adminsubscribeack.txt
+lib/mailman/templates/ast/adminunsubscribeack.txt
+lib/mailman/templates/ast/admlogin.html
+lib/mailman/templates/ast/approve.txt
+lib/mailman/templates/ast/archidxentry.html
+lib/mailman/templates/ast/archidxfoot.html
+lib/mailman/templates/ast/archidxhead.html
+lib/mailman/templates/ast/archlistend.html
+lib/mailman/templates/ast/archliststart.html
+lib/mailman/templates/ast/archtoc.html
+lib/mailman/templates/ast/archtocentry.html
+lib/mailman/templates/ast/archtocnombox.html
+lib/mailman/templates/ast/article.html
+lib/mailman/templates/ast/bounce.txt
+lib/mailman/templates/ast/checkdbs.txt
+lib/mailman/templates/ast/convert.txt
+lib/mailman/templates/ast/cronpass.txt
+lib/mailman/templates/ast/disabled.txt
+lib/mailman/templates/ast/emptyarchive.html
+lib/mailman/templates/ast/headfoot.html
+lib/mailman/templates/ast/help.txt
+lib/mailman/templates/ast/invite.txt
+lib/mailman/templates/ast/listinfo.html
+lib/mailman/templates/ast/masthead.txt
+lib/mailman/templates/ast/newlist.txt
+lib/mailman/templates/ast/nomoretoday.txt
+lib/mailman/templates/ast/options.html
+lib/mailman/templates/ast/postack.txt
+lib/mailman/templates/ast/postauth.txt
+lib/mailman/templates/ast/postheld.txt
+lib/mailman/templates/ast/private.html
+lib/mailman/templates/ast/probe.txt
+lib/mailman/templates/ast/refuse.txt
+lib/mailman/templates/ast/roster.html
+lib/mailman/templates/ast/subauth.txt
+lib/mailman/templates/ast/subscribe.html
+lib/mailman/templates/ast/subscribeack.txt
+lib/mailman/templates/ast/unsub.txt
+lib/mailman/templates/ast/unsubauth.txt
+lib/mailman/templates/ast/userpass.txt
+lib/mailman/templates/ast/verify.txt
 @mode 775
 lib/mailman/templates/ca/
 @mode
@@ -942,7 +838,9 @@ lib/mailman/templates/cs/unsub.txt
 lib/mailman/templates/cs/unsubauth.txt
 lib/mailman/templates/cs/userpass.txt
 lib/mailman/templates/cs/verify.txt
+@mode 775
 lib/mailman/templates/da/
+@mode
 lib/mailman/templates/da/admindbdetails.html
 lib/mailman/templates/da/admindbpreamble.html
 lib/mailman/templates/da/admindbsummary.html
@@ -1223,7 +1121,6 @@ lib/mailman/templates/fi/postack.txt
 lib/mailman/templates/fi/postauth.txt
 lib/mailman/templates/fi/postheld.txt
 lib/mailman/templates/fi/private.html
-lib/mailman/templates/fi/reenable.txt
 lib/mailman/templates/fi/refuse.txt
 lib/mailman/templates/fi/roster.html
 lib/mailman/templates/fi/subauth.txt
@@ -1281,7 +1178,9 @@ lib/mailman/templates/fr/unsub.txt
 lib/mailman/templates/fr/unsubauth.txt
 lib/mailman/templates/fr/userpass.txt
 lib/mailman/templates/fr/verify.txt
+@mode 775
 lib/mailman/templates/gl/
+@mode
 lib/mailman/templates/gl/admindbdetails.html
 lib/mailman/templates/gl/admindbpreamble.html
 lib/mailman/templates/gl/admindbsummary.html
@@ -1325,7 +1224,9 @@ lib/mailman/templates/gl/unsub.txt
 lib/mailman/templates/gl/unsubauth.txt
 lib/mailman/templates/gl/userpass.txt
 lib/mailman/templates/gl/verify.txt
+@mode 775
 lib/mailman/templates/he/
+@mode
 lib/mailman/templates/he/admindbdetails.html
 lib/mailman/templates/he/admindbpreamble.html
 lib/mailman/templates/he/admindbsummary.html
@@ -2004,7 +1905,9 @@ lib/mailman/templates/ru/unsub.txt
 lib/mailman/templates/ru/unsubauth.txt
 lib/mailman/templates/ru/userpass.txt
 lib/mailman/templates/ru/verify.txt
+@mode 775
 lib/mailman/templates/sk/
+@mode
 lib/mailman/templates/sk/admindbdetails.html
 lib/mailman/templates/sk/admindbpreamble.html
 lib/mailman/templates/sk/admindbsummary.html
@@ -2402,6 +2305,7 @@ lib/mailman/tests/TestBase.py
 @mode 775
 lib/mailman/tests/bounces/
 @mode
+lib/mailman/tests/bounces/aol_01.txt
 lib/mailman/tests/bounces/bounce_01.txt
 lib/mailman/tests/bounces/bounce_02.txt
 lib/mailman/tests/bounces/bounce_03.txt
@@ -2481,6 +2385,7 @@ lib/mailman/tests/bounces/simple_33.txt
 lib/mailman/tests/bounces/simple_34.txt
 lib/mailman/tests/bounces/simple_35.txt
 lib/mailman/tests/bounces/simple_36.txt
+lib/mailman/tests/bounces/simple_37.txt
 lib/mailman/tests/bounces/sina_01.txt
 lib/mailman/tests/bounces/smtp32_01.txt
 lib/mailman/tests/bounces/smtp32_02.txt
