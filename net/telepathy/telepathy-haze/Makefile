@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/07 07:06:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/21 21:37:41 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
 DISTNAME=		telepathy-haze-0.3.4
-REVISION=		1
+REVISION=		2
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-haze/}
 
