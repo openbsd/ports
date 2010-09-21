@@ -1,0 +1,12 @@
+$OpenBSD: patch-tree_c,v 1.1 2010/09/21 19:17:31 stsp Exp $
+--- tree.c.orig	Wed Jun 21 20:47:54 2006
++++ tree.c	Mon Sep 20 19:59:40 2010
+@@ -139,7 +139,7 @@ format_entry(FTSENT *entry)
+ 
+ 	if (entry->fts_info == FTS_SL) {
+ 		bzero(buf, MAXPATHLEN + 1);
+-		if (readlink(entry->fts_path, buf, MAXPATHLEN) == -1)
++		if (readlink(entry->fts_accpath, buf, MAXPATHLEN) == -1)
+ 			err(1, "readlink: %s", entry->fts_path);
+ 		sz += strlen(buf) + 5;
+ 		if ((str = realloc(str, sz)) == NULL)
