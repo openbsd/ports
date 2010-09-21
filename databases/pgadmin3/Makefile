@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/07 12:59:06 pea Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/21 13:41:56 pea Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
-V=		1.10.5
+V=		1.12.0
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
 
@@ -31,9 +31,9 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_richtext,wx_gtk2_stc,
 		xslt.>=3::textproc/libxslt
 
 CONFIGURE_STYLE=gnu
-
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
-
 CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} 
+
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
