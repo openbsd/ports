@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/07/12 19:58:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/21 10:12:07 sthen Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
+# note, newer versions want p5-EV which in turn wants threaded perl
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
