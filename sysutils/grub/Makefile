@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/05 04:54:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/21 23:17:33 joshe Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	GRand Unified Bootloader
 
 DISTNAME=	grub-0.97
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gnu.org/software/grub/
