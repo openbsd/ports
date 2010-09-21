@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+--- configure.ac.orig	Thu Mar 25 15:47:02 2010
++++ configure.ac	Mon Apr  5 17:00:31 2010
+@@ -692,6 +692,8 @@ if test $DARWIN_OS -eq 1 ; then
+         AC_MSG_NOTICE([You are running OSX, assuming threadsafe gethostbyname version])
+ elif test $CYGWIN_OS -eq 1; then
+         AC_MSG_NOTICE([Your are building under Cygwin, assuming threadsafe gethostbyname implementation])
++elif test $OPENBSD_OS -eq 1; then
++        AC_MSG_NOTICE([Your are building under OpenBSD, assuming threadsafe gethostbyname implementation])
+ fi
+ 
+ AC_CHECK_FUNCS([gethostbyname_r],[],
+@@ -758,7 +760,7 @@ if test "x$PTHREAD_LIB_OPTION_ENABLED" = xyes; then
+ else
+     ACX_PTHREAD(,AC_MSG_ERROR(POSIX threads missing))
+ 
+-    if test $FREEBSD_OS -eq 1; then
++    if ((test $FREEBSD_OS -eq 1) || (test $OPENBSD_OS -eq 1)); then
+         ADD_PTHREAD_CFLAGS="$PTHREAD_CFLAGS $PTHREAD_LIBS"
+     fi
+ 

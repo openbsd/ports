@@ -1,0 +1,15 @@
+$OpenBSD: patch-tombupnp_upnp_src_genlib_net_http_httpreadwrite_c,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+--- tombupnp/upnp/src/genlib/net/http/httpreadwrite.c.orig	Thu Mar 25 15:58:12 2010
++++ tombupnp/upnp/src/genlib/net/http/httpreadwrite.c	Tue Aug 24 15:17:21 2010
+@@ -67,9 +67,9 @@
+ #include <stdio.h>
+ 
+ #ifndef WIN32
+- #include <arpa/inet.h>
+- #include <netinet/in.h>
+  #include <sys/types.h>
++ #include <netinet/in.h>
++ #include <arpa/inet.h>
+  #include <sys/socket.h>
+  #include <sys/time.h>
+  #include <sys/wait.h>

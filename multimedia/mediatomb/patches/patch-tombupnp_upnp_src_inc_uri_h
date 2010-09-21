@@ -1,0 +1,14 @@
+$OpenBSD: patch-tombupnp_upnp_src_inc_uri_h,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+--- tombupnp/upnp/src/inc/uri.h.orig	Mon Mar 22 11:39:48 2010
++++ tombupnp/upnp/src/inc/uri.h	Tue Aug 24 15:00:01 2010
+@@ -44,9 +44,9 @@ extern "C" {
+ #include <ctype.h>
+ #include <stdlib.h>
+ #ifndef WIN32
++ #include <netinet/in.h>
+  #include <arpa/inet.h>
+  #include <sys/socket.h>
+- #include <netinet/in.h>
+  #include <unistd.h>
+  #include <netdb.h>
+  #include <sys/time.h>

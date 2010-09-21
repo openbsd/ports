@@ -1,0 +1,111 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+@newgroup _mediatomb:656
+@newuser _mediatomb:656:_mediatomb:daemon:Mediatomb Account:/var/empty:/bin/sh
+@bin bin/mediatomb
+@man man/man1/mediatomb.1
+share/examples/mediatomb/
+@mode 770
+@owner _mediatomb
+@group _mediatomb
+@sample ${SYSCONFDIR}/mediatomb/
+share/examples/mediatomb/config.xml
+@sample ${SYSCONFDIR}/mediatomb/config.xml
+@extraunexec rm -rf /var/db/mediatomb/*
+@sample /var/db/mediatomb/
+@mode
+@owner
+@group
+share/mediatomb/
+share/mediatomb/js/
+share/mediatomb/js/common.js
+share/mediatomb/js/import.js
+share/mediatomb/js/playlists.js
+share/mediatomb/mappings.xml
+share/mediatomb/mysql.sql
+share/mediatomb/sqlite3.sql
+share/mediatomb/web/
+share/mediatomb/web/cds.xml
+share/mediatomb/web/cm.xml
+share/mediatomb/web/disabled.html
+share/mediatomb/web/favicon.ico
+share/mediatomb/web/icons/
+share/mediatomb/web/icons/add_as_autoscan.png
+share/mediatomb/web/icons/autoscan_inotify_config_folder_open.png
+share/mediatomb/web/icons/autoscan_inotify_folder_open.png
+share/mediatomb/web/icons/autoscan_timed_config_folder_open.png
+share/mediatomb/web/icons/autoscan_timed_folder_open.png
+share/mediatomb/web/icons/blank.gif
+share/mediatomb/web/icons/blank.png
+share/mediatomb/web/icons/document-new.png
+share/mediatomb/web/icons/film.png
+share/mediatomb/web/icons/folder_new.png
+share/mediatomb/web/icons/folder_open.png
+share/mediatomb/web/icons/go-first.png
+share/mediatomb/web/icons/go-last.png
+share/mediatomb/web/icons/go-next.png
+share/mediatomb/web/icons/go-previous.png
+share/mediatomb/web/icons/mediatomb.png
+share/mediatomb/web/icons/mt-icon120.bmp
+share/mediatomb/web/icons/mt-icon120.jpg
+share/mediatomb/web/icons/mt-icon120.png
+share/mediatomb/web/icons/mt-icon32.bmp
+share/mediatomb/web/icons/mt-icon32.jpg
+share/mediatomb/web/icons/mt-icon32.png
+share/mediatomb/web/icons/mt-icon48.bmp
+share/mediatomb/web/icons/mt-icon48.jpg
+share/mediatomb/web/icons/mt-icon48.png
+share/mediatomb/web/icons/nanotree/
+share/mediatomb/web/icons/nanotree/images/
+share/mediatomb/web/icons/nanotree/images/autoscan_inotify_config_folder_closed.png
+share/mediatomb/web/icons/nanotree/images/autoscan_inotify_config_folder_open.png
+share/mediatomb/web/icons/nanotree/images/autoscan_inotify_folder_closed.png
+share/mediatomb/web/icons/nanotree/images/autoscan_inotify_folder_open.png
+share/mediatomb/web/icons/nanotree/images/autoscan_timed_config_folder_closed.png
+share/mediatomb/web/icons/nanotree/images/autoscan_timed_config_folder_open.png
+share/mediatomb/web/icons/nanotree/images/autoscan_timed_folder_closed.png
+share/mediatomb/web/icons/nanotree/images/autoscan_timed_folder_open.png
+share/mediatomb/web/icons/nanotree/images/folder_closed.png
+share/mediatomb/web/icons/nanotree/images/folder_open.png
+share/mediatomb/web/icons/nanotree/images/lastnode.png
+share/mediatomb/web/icons/nanotree/images/line.png
+share/mediatomb/web/icons/nanotree/images/minus.png
+share/mediatomb/web/icons/nanotree/images/minus_last.png
+share/mediatomb/web/icons/nanotree/images/minus_last_no_root.png
+share/mediatomb/web/icons/nanotree/images/minus_no_root.png
+share/mediatomb/web/icons/nanotree/images/plus.png
+share/mediatomb/web/icons/nanotree/images/plus_last.png
+share/mediatomb/web/icons/nanotree/images/plus_last_no_root.png
+share/mediatomb/web/icons/nanotree/images/plus_no_root.png
+share/mediatomb/web/icons/nanotree/images/t.png
+share/mediatomb/web/icons/nanotree/images/t_no_root.png
+share/mediatomb/web/icons/nanotree/images/white.png
+share/mediatomb/web/icons/remove_all.png
+share/mediatomb/web/icons/remove_autoscan.png
+share/mediatomb/web/icons/remove_this.png
+share/mediatomb/web/icons/status.png
+share/mediatomb/web/icons/status_loading.png
+share/mediatomb/web/icons/status_updates_pending.png
+share/mediatomb/web/icons/stock-add.png
+share/mediatomb/web/icons/stock_edit.png
+share/mediatomb/web/icons/stock_exit.png
+share/mediatomb/web/index.html
+share/mediatomb/web/js/
+share/mediatomb/web/js/auth.js
+share/mediatomb/web/js/autoscan.js
+share/mediatomb/web/js/icons.js
+share/mediatomb/web/js/iepngfix.htc
+share/mediatomb/web/js/items.js
+share/mediatomb/web/js/md5.js
+share/mediatomb/web/js/nanotree.js
+share/mediatomb/web/js/prototype.js
+share/mediatomb/web/js/tasks.js
+share/mediatomb/web/js/tools.js
+share/mediatomb/web/js/tree.js
+share/mediatomb/web/left.html
+share/mediatomb/web/main.css
+share/mediatomb/web/mr_reg.xml
+share/mediatomb/web/right.html
+share/mediatomb/web/std_treelook.css
+share/mediatomb/web/top.html
+share/mediatomb/web/topleft.html
+share/mediatomb/web/topright.html

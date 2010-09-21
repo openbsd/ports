@@ -1,0 +1,38 @@
+$OpenBSD: patch-tombupnp_threadutil_src_ThreadPool_c,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+--- tombupnp/threadutil/src/ThreadPool.c.orig	Thu Mar 25 15:58:13 2010
++++ tombupnp/threadutil/src/ThreadPool.c	Tue Aug 24 15:35:28 2010
+@@ -141,7 +141,7 @@ SetPolicyType( PolicyType in )
+ static int
+ SetPriority( ThreadPriority priority )
+ {
+-#if defined(HAVE_SCHED_GET_PRIORITY_MIN) && defined(HAVE_SCHED_GET_PRIORITY_MAX)
++#if (defined(HAVE_SCHED_GET_PRIORITY_MIN) && defined(HAVE_SCHED_GET_PRIORITY_MAX)) || defined(__OpenBSD__)
+     int currentPolicy;
+     int minPriority = 0;
+     int maxPriority = 0;
+@@ -152,8 +152,13 @@ SetPriority( ThreadPriority priority )
+     pthread_getschedparam( ithread_self(  ), &currentPolicy,
+                            &newPriority );
+ 
++#if !defined(__OpenBSD__)
+     minPriority = sched_get_priority_min( currentPolicy );
+     maxPriority = sched_get_priority_max( currentPolicy );
++#else
++    minPriority = 0;
++    maxPriority = 31;
++#endif
+     midPriority = ( maxPriority - minPriority ) / 2;
+     switch ( priority ) {
+ 
+@@ -372,8 +377,10 @@ tp->stats.totalJobsLQ++; tp->stats.totalTimeLQ += diff
+     gettimeofday( &t, NULL );
+ #if defined(WIN32)
+     srand( ( unsigned int )(t.tv_usec/1000) + (unsigned int)ithread_get_current_thread_id(  ).p );
+-#elif defined(__FreeBSD__) || defined (__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined (__APPLE__) || defined(__NetBSD__)
+     srand( ( unsigned int )(t.tv_usec/1000) + (unsigned int)ithread_get_current_thread_id(  ) );
++#elif defined(__OpenBSD__)
++    srand( arc4random() );
+ #else
+     srand( ( unsigned int )(t.tv_usec/1000) + ithread_get_current_thread_id(  ) );
+ #endif

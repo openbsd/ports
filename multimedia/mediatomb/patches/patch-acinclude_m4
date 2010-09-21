@@ -1,0 +1,11 @@
+$OpenBSD: patch-acinclude_m4,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+--- acinclude.m4.orig	Mon Mar 22 10:39:51 2010
++++ acinclude.m4	Mon Apr  5 19:53:46 2010
+@@ -311,6 +311,7 @@ AC_DEFUN([MT_CHECK_LIBRARY_INTERNAL],
+         )
+     else
+         unset ac_cv_lib_$2_$3
++        LDFLAGS="$LDFLAGS $ADD_PTHREAD_CFLAGS"
+         AC_CHECK_LIB($2, $3,
+             [
+                 mt_$1_libs="-l$2"
