@@ -1,50 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/30 16:41:09 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/21 08:27:32 sebastia Exp $
 include/jpegtcl.h
 include/jpegtclDecls.h
-include/jpegtclDeclsMask.h
-include/jpegtclDeclsUnmask.h
 include/pngtcl.h
 include/pngtclDecls.h
-include/pngtclDeclsMask.h
-include/pngtclDeclsUnmask.h
 include/tifftcl.h
 include/tifftclDecls.h
-include/tifftclDeclsMask.h
-include/tifftclDeclsUnmask.h
 include/tkimg.h
 include/tkimgDecls.h
 include/zlibtcl.h
 include/zlibtclDecls.h
-include/zlibtclDeclsMask.h
-include/zlibtclDeclsUnmask.h
-lib/Img1.3/
-@lib lib/Img1.3/libjpegtcl10.so.${LIBjpegtcl10_VERSION}
-lib/Img1.3/libjpegtclstub10.a
-@lib lib/Img1.3/libpngtcl126.so.${LIBpngtcl126_VERSION}
-lib/Img1.3/libpngtclstub126.a
-@lib lib/Img1.3/libtifftcl361.so.${LIBtifftcl361_VERSION}
-lib/Img1.3/libtifftclstub361.a
-@lib lib/Img1.3/libtkimg13.so.${LIBtkimg13_VERSION}
-@lib lib/Img1.3/libtkimgbmp13.so.${LIBtkimgbmp13_VERSION}
-@lib lib/Img1.3/libtkimggif13.so.${LIBtkimggif13_VERSION}
-@lib lib/Img1.3/libtkimgico13.so.${LIBtkimgico13_VERSION}
-@lib lib/Img1.3/libtkimgjpeg13.so.${LIBtkimgjpeg13_VERSION}
-@lib lib/Img1.3/libtkimgpcx13.so.${LIBtkimgpcx13_VERSION}
-@lib lib/Img1.3/libtkimgpixmap13.so.${LIBtkimgpixmap13_VERSION}
-@lib lib/Img1.3/libtkimgpng13.so.${LIBtkimgpng13_VERSION}
-@lib lib/Img1.3/libtkimgppm13.so.${LIBtkimgppm13_VERSION}
-@lib lib/Img1.3/libtkimgps13.so.${LIBtkimgps13_VERSION}
-@lib lib/Img1.3/libtkimgsgi13.so.${LIBtkimgsgi13_VERSION}
-lib/Img1.3/libtkimgstub13.a
-@lib lib/Img1.3/libtkimgsun13.so.${LIBtkimgsun13_VERSION}
-@lib lib/Img1.3/libtkimgtga13.so.${LIBtkimgtga13_VERSION}
-@lib lib/Img1.3/libtkimgtiff13.so.${LIBtkimgtiff13_VERSION}
-@lib lib/Img1.3/libtkimgwindow13.so.${LIBtkimgwindow13_VERSION}
-@lib lib/Img1.3/libtkimgxbm13.so.${LIBtkimgxbm13_VERSION}
-@lib lib/Img1.3/libtkimgxpm13.so.${LIBtkimgxpm13_VERSION}
-@lib lib/Img1.3/libzlibtcl121.so.${LIBzlibtcl121_VERSION}
-lib/Img1.3/libzlibtclstub121.a
-lib/Img1.3/pkgIndex.tcl
+lib/Img1.4/
+@lib lib/Img1.4/libjpegtcl82.so.${LIBjpegtcl82_VERSION}
+lib/Img1.4/libjpegtclstub82.a
+@lib lib/Img1.4/libpngtcl143.so.${LIBpngtcl143_VERSION}
+lib/Img1.4/libpngtclstub143.a
+@lib lib/Img1.4/libtifftcl394.so.${LIBtifftcl394_VERSION}
+lib/Img1.4/libtifftclstub394.a
+@lib lib/Img1.4/libtkimg14.so.${LIBtkimg14_VERSION}
+@lib lib/Img1.4/libtkimgbmp14.so.${LIBtkimgbmp14_VERSION}
+@lib lib/Img1.4/libtkimgdted14.so.${LIBtkimgdted14_VERSION}
+@lib lib/Img1.4/libtkimggif14.so.${LIBtkimggif14_VERSION}
+@lib lib/Img1.4/libtkimgico14.so.${LIBtkimgico14_VERSION}
+@lib lib/Img1.4/libtkimgjpeg14.so.${LIBtkimgjpeg14_VERSION}
+@lib lib/Img1.4/libtkimgpcx14.so.${LIBtkimgpcx14_VERSION}
+@lib lib/Img1.4/libtkimgpixmap14.so.${LIBtkimgpixmap14_VERSION}
+@lib lib/Img1.4/libtkimgpng14.so.${LIBtkimgpng14_VERSION}
+@lib lib/Img1.4/libtkimgppm14.so.${LIBtkimgppm14_VERSION}
+@lib lib/Img1.4/libtkimgps14.so.${LIBtkimgps14_VERSION}
+@lib lib/Img1.4/libtkimgraw14.so.${LIBtkimgraw14_VERSION}
+@lib lib/Img1.4/libtkimgsgi14.so.${LIBtkimgsgi14_VERSION}
+lib/Img1.4/libtkimgstub14.a
+@lib lib/Img1.4/libtkimgsun14.so.${LIBtkimgsun14_VERSION}
+@lib lib/Img1.4/libtkimgtga14.so.${LIBtkimgtga14_VERSION}
+@lib lib/Img1.4/libtkimgtiff14.so.${LIBtkimgtiff14_VERSION}
+@lib lib/Img1.4/libtkimgwindow14.so.${LIBtkimgwindow14_VERSION}
+@lib lib/Img1.4/libtkimgxbm14.so.${LIBtkimgxbm14_VERSION}
+@lib lib/Img1.4/libtkimgxpm14.so.${LIBtkimgxpm14_VERSION}
+@lib lib/Img1.4/libzlibtcl125.so.${LIBzlibtcl125_VERSION}
+lib/Img1.4/libzlibtclstub125.a
+lib/Img1.4/pkgIndex.tcl
 lib/jpegtclConfig.sh
 lib/pngtclConfig.sh
 lib/tifftclConfig.sh
