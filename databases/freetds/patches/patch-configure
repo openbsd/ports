@@ -1,6 +1,20 @@
-$OpenBSD: patch-configure,v 1.6 2010/09/12 09:32:58 sthen Exp $
+$OpenBSD: patch-configure,v 1.7 2010/09/21 16:10:02 sthen Exp $
 --- configure.orig	Wed May  7 23:59:26 2008
-+++ configure	Wed Sep  8 09:44:27 2010
++++ configure	Tue Sep 21 16:54:42 2010
+@@ -11449,12 +11449,12 @@ fi;
+     done
+   fi
+ 
+-
++LIBICONV="$LTLIBICONV"
+ 
+ 
+ 
+ 
+ 
+           am_save_CPPFLAGS="$CPPFLAGS"
+ 
+   for element in $INCICONV; do
 @@ -22578,8 +22578,8 @@ cat >>confdefs.h <<\_ACEOF
  #define HAVE_GNUTLS 1
  _ACEOF
