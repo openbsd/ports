@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/08/17 14:58:45 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/09/21 10:43:04 sthen Exp $
 @pkgpath net/net-snmp
 %%SHARED%%
 @bin bin/encode_keychange
@@ -231,7 +231,6 @@ lib/libnetsnmptrapd.la
 @man man/man3/init_mib.3
 @man man/man3/init_mib_internals.3
 @man man/man3/mib_api.3
-@man man/man3/netsnmp_Container_iterator.3
 @man man/man3/netsnmp_agent.3
 @man man/man3/netsnmp_baby_steps.3
 @man man/man3/netsnmp_bulk_to_next.3
@@ -473,6 +472,7 @@ share/snmp/mibs/NET-SNMP-AGENT-MIB.txt
 share/snmp/mibs/NET-SNMP-EXAMPLES-MIB.txt
 share/snmp/mibs/NET-SNMP-EXTEND-MIB.txt
 share/snmp/mibs/NET-SNMP-MIB.txt
+share/snmp/mibs/NET-SNMP-PASS-MIB.txt
 share/snmp/mibs/NET-SNMP-TC.txt
 share/snmp/mibs/NET-SNMP-VACM-MIB.txt
 share/snmp/mibs/NETWORK-SERVICES-MIB.txt

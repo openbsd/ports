@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2008/09/20 22:15:52 rui Exp $
---- configure.orig	Fri Sep  5 10:29:01 2008
-+++ configure	Fri Sep 19 18:04:38 2008
+$OpenBSD: patch-configure,v 1.10 2010/09/21 10:43:04 sthen Exp $
+--- configure.orig	Sun May 23 22:10:00 2010
++++ configure	Mon Sep 20 09:48:18 2010
 @@ -21655,34 +21655,6 @@ fi
  echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
  echo "${ECHO_T}$EXTRACPPFLAGS" >&6
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.9 2008/09/20 22:15:52 rui Exp $
  #include <tcpd.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-@@ -33939,7 +33913,7 @@ done
+@@ -34009,7 +33983,7 @@ done
  
  
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.9 2008/09/20 22:15:52 rui Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -37415,7 +37389,6 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -37485,7 +37459,6 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
