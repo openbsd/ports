@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/21 12:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/21 20:38:31 sthen Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
@@ -37,7 +37,7 @@ RUN_DEPENDS =		::devel/desktop-file-utils
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lcrypto -pthread -liconv -lintl"
 
-USE_LIBTOOL =		gnu # XXX links with static library archives
+USE_LIBTOOL =		yes
 
 # Stupid crap in /src/modules/illume/dicts chokes in regular make.
 # Some issue with the "(US)" bit
