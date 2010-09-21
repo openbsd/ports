@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2010/09/17 12:15:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2010/09/21 12:12:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -75,7 +75,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-USE_LIBTOOL=	gnu
+USE_LIBTOOL=	gnu # XXX links with static library archives
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
 AUTOCONF_VERSION= 2.64

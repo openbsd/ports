@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/06 08:43:43 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/21 12:12:12 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -35,7 +35,7 @@ LIB_DEPENDS =	::inputmethods/anthy \
 		::inputmethods/scim
 
 USE_X11 =	Yes
-USE_LIBTOOL =	Yes
+USE_LIBTOOL =	gnu # XXX links with static library archives
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
