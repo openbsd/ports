@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2010/09/19 17:25:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.305 2010/09/21 20:35:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -257,6 +257,7 @@
      SUBDIR += py-sphinx
      SUBDIR += py-vobject
      SUBDIR += py-xml
+     SUBDIR += py-xmldiff
      SUBDIR += py-yaml
      SUBDIR += raptor
      SUBDIR += rarian
