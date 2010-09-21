@@ -1,5 +1,5 @@
 
-# $OpenBSD: Makefile,v 1.4 2010/08/24 12:20:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/21 22:25:08 joshe Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -9,12 +9,13 @@ COMMENT=		compiler and runtime system for ANSI Common Lisp
 V =			1.0.41
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
+REVISION =		0
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		lang
 HOMEPAGE=		http://www.sbcl.org/
-MAINTAINER =		Joshua Elsasser <joshua@elsasser.org>
+MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
 
 # Public domain and BSD
 PERMIT_PACKAGE_CDROM=	Yes
