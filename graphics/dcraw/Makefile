@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/06 13:20:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/21 10:29:09 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
-DISTNAME =	dcraw-8.86
+DISTNAME =	dcraw-9.04
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
 
 MASTER_SITES =	http://cybercom.net/~dcoffin/dcraw/archive/
-	
-LIB_DEPENDS =	jpeg.>=6::graphics/jpeg \
-		lcms::graphics/lcms
 
 # Some code is completely free, some is under the GPL
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +15,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c m
+WANTLIB =	c jpeg lcms m
+
+LIB_DEPENDS =	::graphics/jpeg \
+		::graphics/lcms
 
 NO_REGRESS =	Yes
 SEPARATE_BUILD = simple
