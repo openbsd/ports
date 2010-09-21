@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/10/31 01:42:00 kevlo Exp $
---- configure.orig	Wed Oct 29 18:32:42 2008
-+++ configure	Wed Oct 29 18:33:22 2008
+$OpenBSD: patch-configure,v 1.2 2010/09/21 19:39:25 fgsch Exp $
+--- configure.orig	Tue Sep 21 20:31:49 2010
++++ configure	Tue Sep 21 20:31:43 2010
 @@ -6642,7 +6642,7 @@ fi
  
        if test "$gl_have_pthread_h" = yes; then
@@ -64,3 +64,24 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/10/31 01:42:00 kevlo Exp $
  fi
  
            if test -z "$gl_have_pthread"; then
+@@ -8042,10 +8042,10 @@ fi
+     done
+   fi
+ 
++LIBICONV="$LTLIBICONV"
+ 
+ 
+ 
+-
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -12033,7 +12033,7 @@ fi
+       LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-R$found_dir"
+     done
+   fi
+-
++LIBINTL="$LTLIBINTL"
+           { echo "$as_me:$LINENO: checking for GNU gettext in libintl" >&5
+ echo $ECHO_N "checking for GNU gettext in libintl... $ECHO_C" >&6; }
+ if test "${gt_cv_func_gnugettext1_libintl+set}" = set; then
