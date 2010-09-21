@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/07 10:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/21 22:10:33 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,10 @@ COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
-V=		4.7.6
+V=		4.7.7
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
-REVISION-main=	0
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
