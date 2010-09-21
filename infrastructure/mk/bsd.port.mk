@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1032 2010/09/13 11:04:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1033 2010/09/21 15:18:03 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -95,7 +95,8 @@ _PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 _ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
 	SUBPACKAGE MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
-_ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS PKG_ARCH
+_ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
+	PKG_ARCH EPOCH REVISION
 _ALL_VARIABLES_PER_ARCH =
 
 .if ${DPB:L:Mfetch}

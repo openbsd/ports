@@ -22,6 +22,7 @@ stored in specialized tables, e.g.,:
     DISTFILES 
     DISTNAME 
     DIST_SUBDIR 
+    EPOCH
     FLAVORS 
     HOMEPAGE 
     IS_INTERACTIVE 
@@ -33,6 +34,7 @@ stored in specialized tables, e.g.,:
     PKG_ARCH 
     PSEUDO_FLAVORS 
     REGRESS_IS_INTERACTIVE 
+    REVISION
     SEPARATE_BUILD 
     SHARED_ONLY 
     SUBPACKAGE 

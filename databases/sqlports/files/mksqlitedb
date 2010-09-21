@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.24 2010/04/26 10:20:50 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.25 2010/09/21 15:18:03 sthen Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -63,6 +63,7 @@ my $vars = {
     DISTFILES => 'AnyVar',
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
+    EPOCH => 'AnyVar',
     FLAVORS => 'FlavorsVar',
     FULLPKGNAME => 'AnyVar',
     HOMEPAGE => 'AnyVar',
@@ -96,6 +97,7 @@ my $vars = {
     PSEUDO_FLAVORS => 'PseudoFlavorsVar',
     REGRESS_DEPENDS => 'RegressDependsVar',
     REGRESS_IS_INTERACTIVE => 'AnyVar',
+    REVISION => 'AnyVar',
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',
