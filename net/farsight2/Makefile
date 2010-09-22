@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/22 14:29:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/22 16:57:25 jasper Exp $
 
 COMMENT=		audio/video communications framework
 
@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-silent-rules
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/python/Makefile.in
+	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
+		${WRKDIR}/bin/python-config
 
 .include <bsd.port.mk>
