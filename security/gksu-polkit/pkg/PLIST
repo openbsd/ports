@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+%%SHARED%%
+@bin bin/gksu-polkit
+include/gksu-polkit/
+include/gksu-polkit/gksu-polkit.h
+include/gksu-polkit/gksu-process.h
+lib/libgksu-polkit.a
+lib/libgksu-polkit.la
+lib/pkgconfig/libgksu-polkit-1.pc
+@bin sbin/gksu-server
+share/dbus-1/
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.gnome.Gksu.service
+share/examples/gksu-polkit/
+share/examples/gksu-polkit/dbus-1/
+share/examples/gksu-polkit/dbus-1/system.d/
+share/examples/gksu-polkit/dbus-1/system.d/gksu-polkit.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/gksu-polkit.conf
+share/gksu-polkit-1/
+share/gksu-polkit-1/environment/
+share/gksu-polkit-1/environment/common.variables
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libgksu-polkit/
+share/gtk-doc/html/libgksu-polkit/ch01.html
+share/gtk-doc/html/libgksu-polkit/home.png
+share/gtk-doc/html/libgksu-polkit/index.html
+share/gtk-doc/html/libgksu-polkit/left.png
+share/gtk-doc/html/libgksu-polkit/libgksu-polkit.devhelp
+share/gtk-doc/html/libgksu-polkit/libgksu-polkit.devhelp2
+share/gtk-doc/html/libgksu-polkit/right.png
+share/gtk-doc/html/libgksu-polkit/style.css
+share/gtk-doc/html/libgksu-polkit/up.png
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.gnome.gksu.policy

@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_org_gnome_gksu_policy,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+--- data/org.gnome.gksu.policy.orig	Sat Jan 30 17:38:25 2010
++++ data/org.gnome.gksu.policy	Mon Sep 20 08:59:05 2010
+@@ -10,9 +10,9 @@
+     <description>spawn</description>
+     <message>System policy prevents executing a program with administration privileges</message>
+     <defaults>
+-      <allow_any>auth_self</allow_any>
+-      <allow_inactive>auth_self</allow_inactive>
+-      <allow_active>auth_self</allow_active>
++      <allow_any>auth_admin</allow_any>
++      <allow_inactive>auth_admin</allow_inactive>
++      <allow_active>auth_admin</allow_active>
+     </defaults>
+   </action>
+ 

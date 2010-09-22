@@ -1,0 +1,5 @@
+This is the new generation of gksu, a simple utility to run programs as
+root, even in X-based environments.
+This version uses the new libgksu-polkit library, which uses PolicyKit
+for authorization purposes and a D-Bus service to actually perform the
+work.

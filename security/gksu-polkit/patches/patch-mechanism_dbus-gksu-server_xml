@@ -1,0 +1,25 @@
+$OpenBSD: patch-mechanism_dbus-gksu-server_xml,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+
+Use uint64 instead of uint for sizes, and use casts where needed
+(upstream 0cf804a8666404444968c995b03fe8af9893a58f)
+
+--- mechanism/dbus-gksu-server.xml.orig	Wed Feb 18 13:33:18 2009
++++ mechanism/dbus-gksu-server.xml	Mon Sep 20 08:59:19 2010
+@@ -17,7 +17,7 @@
+ 
+         <method name="ReadOutput">
+             <arg type="s" name="data" direction="out" />
+-            <arg type="u" name="length" direction="out" />
++            <arg type="t" name="length" direction="out" />
+             <arg type="u" name="cookie" direction="in" />
+             <arg type="i" name="fd" direction="in" />
+         </method>
+@@ -25,7 +25,7 @@
+         <method name="WriteInput">
+             <arg type="u" name="cookie" direction="in" />
+             <arg type="s" name="data" direction="in" />
+-            <arg type="u" name="length" direction="in" />
++            <arg type="t" name="length" direction="in" />
+         </method>
+ 
+         <method name="CloseFD">

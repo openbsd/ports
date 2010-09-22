@@ -1,0 +1,18 @@
+$OpenBSD: patch-mechanism_gksu-polkit_conf,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+--- mechanism/gksu-polkit.conf.orig	Mon Sep 20 12:23:05 2010
++++ mechanism/gksu-polkit.conf	Mon Sep 20 12:27:40 2010
+@@ -0,0 +1,14 @@
++<!DOCTYPE busconfig PUBLIC
++ "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
++ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
++<busconfig>
++
++  <policy user="root">
++    <allow own="org.gnome.Gksu"/>
++  </policy>
++
++  <policy context="default">
++    <allow send_destination="org.gnome.Gksu" send_interface="org.gnome.Gksu"/>
++  </policy>
++
++</busconfig>

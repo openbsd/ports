@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+@lib lib/libgksu-polkit.so.${LIBgksu-polkit_VERSION}

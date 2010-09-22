@@ -1,0 +1,26 @@
+$OpenBSD: patch-common_gksu-environment_vala,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+
+From openSUSE:
+Fix issues reading environment .variables files. We can't guarantee
+there's a trailing slash in directories from XDG_DATA_DIRS.
+
+--- common/gksu-environment.vala.orig	Mon Sep 20 12:23:04 2010
++++ common/gksu-environment.vala	Mon Sep 20 12:23:32 2010
+@@ -34,7 +34,7 @@ namespace Gksu {
+ 			variables = new HashMap<string,Variable>(GLib.str_hash, GLib.str_equal);
+ 
+ 			foreach(string path in search_path) {
+-				string full_path = path.concat("gksu-polkit-1/environment/");
++				string full_path = Path.build_filename (path, "gksu-polkit-1", "environment");
+ 				read_variables_from_path(full_path);
+ 			}
+ 		}
+@@ -99,7 +99,7 @@ namespace Gksu {
+ 			weak string entry;
+ 			while((entry = directory.read_name()) != null) {
+ 				if(entry.has_suffix(".variables")) {
+-					string full_path = path.concat(entry);
++					string full_path = Path.build_filename (path, entry);
+ 					read_variables_from_file(full_path);
+ 				}
+ 			}

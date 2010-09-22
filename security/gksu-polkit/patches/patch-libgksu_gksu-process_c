@@ -1,0 +1,107 @@
+$OpenBSD: patch-libgksu_gksu-process_c,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+
+Prevent stdin, stdout and stderr definitions clash.
+
+Use uint64 instead of uint for sizes, and use casts where needed
+(upstream 0cf804a8666404444968c995b03fe8af9893a58f)
+
+From openSUSE:
+Make xauth do not cause DNS lookups. This can slow down things, so we
+use nlist instead of list.
+Also pass -q, just to be sure we don't unsolicited output.
+
+--- libgksu/gksu-process.c.orig	Sat Jan 30 17:38:25 2010
++++ libgksu/gksu-process.c	Mon Sep 20 12:24:41 2010
+@@ -62,7 +62,7 @@ struct _GksuProcessPrivate {
+    * application decides to close an FD we also keep a 'mirror'
+    * GIOChannel for its side of the pipe, so that we can monitor the
+    * application closing an FD, for instance */
+-  gint stdin[2];
++  gint gksu_stdin[2];
+   GIOChannel *stdin_channel;
+   guint stdin_source_id;
+   GIOChannel *stdin_mirror;
+@@ -73,13 +73,13 @@ struct _GksuProcessPrivate {
+    * because the buffer is filled, and application needs to read some
+    * of it; we need to give it a chance to read the buffer, thus, but
+    * still need to remember to write what is left */
+-  gint stdout[2];
++  gint gksu_stdout[2];
+   GIOChannel *stdout_channel;
+   GIOChannel *stdout_mirror;
+   guint stdout_mirror_id;
+   GksuWriteQueue *stdout_write_queue;
+ 
+-  gint stderr[2];
++  gint gksu_stderr[2];
+   GIOChannel *stderr_channel;
+   GIOChannel *stderr_mirror;
+   guint stderr_mirror_id;
+@@ -126,6 +126,7 @@ static void output_available_cb(DBusGProxy *server, gi
+   GksuProcessPrivate *priv = GKSU_PROCESS_GET_PRIVATE(self);
+   GError *error = NULL;
+   gchar *data = NULL;
++  guint64 uint_length;
+   gsize length;
+ 
+   if(pid != priv->pid)
+@@ -136,9 +137,11 @@ static void output_available_cb(DBusGProxy *server, gi
+                     G_TYPE_INT, fd,
+                     G_TYPE_INVALID,
+                     G_TYPE_STRING, &data,
+-                    G_TYPE_UINT, &length,
++ 		     G_TYPE_UINT64, &uint_length,
+                     G_TYPE_INVALID);
+ 
++  length = (gsize)uint_length;
++
+   if(error)
+     {
+       g_warning("%s", error->message);
+@@ -334,8 +337,8 @@ get_xauth_token(const gchar *explicit_display)
+     }
+ 
+   /* get the authorization token */
+-  tmp = g_strdup_printf ("%s -i list %s | "
+-			 "head -1 | awk '{ print $3 }'",
++  tmp = g_strdup_printf ("%s -q -i nlist %s | "
++			 "head -1 | awk '{ print $9 }'",
+ 			 xauth_bin,
+ 			 display);
+   if ((xauth_output = popen (tmp, "r")) == NULL)
+@@ -522,7 +525,7 @@ gksu_process_stdin_ready_to_send_cb(GIOChannel *channe
+   dbus_g_proxy_call(priv->server, "WriteInput", &error,
+                     G_TYPE_UINT, priv->cookie,
+                     G_TYPE_STRING, data,
+-                    G_TYPE_UINT, length,
++                    G_TYPE_UINT64, (guint64)length,
+                     G_TYPE_INVALID,
+                     G_TYPE_INVALID);
+   g_free(data);
+@@ -648,7 +651,7 @@ gksu_process_spawn_async_with_pipes(GksuProcess *self,
+     {
+       gksu_process_prepare_pipe(&(priv->stdin_channel),
+                                 &(priv->stdin_mirror),
+-                                priv->stdin,
++                                priv->gksu_stdin,
+                                 standard_input,
+                                 TRUE);
+ 
+@@ -668,7 +671,7 @@ gksu_process_spawn_async_with_pipes(GksuProcess *self,
+     {
+       gksu_process_prepare_pipe(&(priv->stdout_channel),
+                                 &(priv->stdout_mirror),
+-                                priv->stdout,
++                                priv->gksu_stdout,
+                                 standard_output,
+                                 FALSE);
+ 
+@@ -685,7 +688,7 @@ gksu_process_spawn_async_with_pipes(GksuProcess *self,
+     {
+       gksu_process_prepare_pipe(&(priv->stderr_channel),
+                                 &(priv->stderr_mirror),
+-                                priv->stderr,
++                                priv->gksu_stderr,
+                                 standard_error,
+                                 FALSE);
+ 
