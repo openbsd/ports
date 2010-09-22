@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/22 09:02:42 jasper Exp $
 # Original from: Stephane Peter <megastep@megastep.org>
 
 COMMENT=	script generating a self-extractible .tgz from a directory
 
 DISTNAME=		makeself
 PKGNAME=		makeself-1.5.5
+REVISION=		0
 CATEGORIES=		archivers misc
 
 HOMEPAGE=		http://www.megastep.org/makeself/
-
-MAINTAINER=		Reinhard J. Sammer <reinhard@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

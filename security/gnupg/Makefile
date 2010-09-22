@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2010/07/08 17:01:57 pea Exp $
+# $OpenBSD: Makefile,v 1.73 2010/09/22 09:02:42 jasper Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
 DISTNAME=	gnupg-1.4.10
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -18,8 +18,6 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
 MASTER_SITES0=	ftp://ftp.gnupg.dk/pub/contrib-dk/
 
 HOMEPAGE=	http://www.gnupg.org/
-
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

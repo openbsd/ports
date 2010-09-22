@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/17 14:14:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/22 09:02:42 jasper Exp $
 
 COMMENT=	sniffer for LanManager environment (ms/samba workstations)
 DISTNAME=	smbsniff-0.0.1b
-PKGNAME=	${DISTNAME}p0
+REVISION=	1
 CATEGORIES=	security net
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://www.hsc.fr/ressources/outils/smbsniff
-
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 

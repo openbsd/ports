@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/22 09:02:42 jasper Exp $
 
 COMMENT=	filemanager for X Window
 
 DISTNAME=	xnc-4.4.7
-PKGNAME=	$(DISTNAME)p1
+REVISION=	2
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 SHARED_LIBS=	xncaqua	1.0 \
 		xncfive	1.0
 
 CATEGORIES=	misc x11
-
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 HOMEPAGE=	http://xnc.dubna.su
 
