@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/12 08:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/09/22 06:54:22 landry Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-USE_LIBTOOL=		Yes
+# XXX missing -lkrb5 in pgsql flavor ?
+USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
