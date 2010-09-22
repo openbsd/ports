@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.10 2010/06/18 21:37:16 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.11 2010/09/22 22:02:38 jasper Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -14,7 +14,7 @@ MODGHC_BIN =		${LOCALBASE}/bin/ghc
 # depending ports using CABAL tend to install into locations as
 # lib/Foo-${FooVersion}/ghc-${MODGHC_VER}, so they need the exact
 # version of ghc. Depending ports thus need full depends specs,
-# i.e. RUN_DEPENDS = :ghc-${MODGHC_VERSION}:lang/ghc, and not
+# i.e. RUN_DEPENDS = :ghc-${MODGHC_VER}:lang/ghc, and not
 # just ::lang/ghc.
 .if ${PKGPATH} != "lang/ghc"
 BUILD_DEPENDS +=	::lang/ghc
