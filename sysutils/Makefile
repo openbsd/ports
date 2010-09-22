@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2010/08/19 20:58:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.209 2010/09/22 16:08:26 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -152,6 +152,7 @@
      SUBDIR += symon
      SUBDIR += sysgen
      SUBDIR += syslog-ng
+     SUBDIR += system-tools-backends
      SUBDIR += tabled
      SUBDIR += tcplist
      SUBDIR += tentakel
