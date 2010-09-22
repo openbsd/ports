@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/08/31 08:15:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/09/22 06:52:14 landry Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -33,7 +33,7 @@ GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=		GNU_ARCH VERSION
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+USE_LIBTOOL=		gnu
 
 MAKE_FLAGS=		rep_LIBTOOL=${LIBTOOL}
 
