@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_util_plugins_cpp,v 1.1 2010/09/22 12:52:36 ajacoutot Exp $
+--- libs/util/plugins.cpp.orig	Tue Oct 20 21:45:45 2009
++++ libs/util/plugins.cpp	Tue Oct 20 21:45:58 2009
+@@ -170,7 +170,7 @@ CqPluginBase::DLError( void )
+ 	LocalFree( lpMsgBuf );
+ #else //not defined AQSIS_SYSTEM_MACOSX
+ 
+-	char* error = dlerror();
++	const char* error = dlerror();
+ 	if( error )
+ 		errorlog = error;
+ #endif
