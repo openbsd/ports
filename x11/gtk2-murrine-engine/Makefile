@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/22 14:00:28 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
-VERSION =	0.90.3
+VERSION =	0.98.0
 DISTNAME =	murrine-${VERSION}
 PKGNAME =	gtk2-murrine-engine-${VERSION}
-REVISION=	4
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_GNOME:=sources/murrine/0.90/}
+MASTER_SITES =	${MASTER_SITE_GNOME:=sources/murrine/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 MASTER_SITES0 =	${HOMEPAGE}files/
 DIST_SUBDIR =	murrine
 DISTFILES =	${DISTNAME}.tar.bz2 \
@@ -45,6 +44,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png z pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
 
 MODULES =	devel/gettext \
 		textproc/intltool
@@ -57,7 +57,10 @@ USE_GMAKE =	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE =gnu 
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
+		--disable-silent-rules \
 		--disable-static \
 		--enable-animation \
 		--disable-rgba
