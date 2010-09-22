@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/22 14:29:21 jasper Exp $
 
 COMMENT=		audio/video communications framework
 
-DISTNAME=		farsight2-0.0.17
-REVISION=		0
-SHARED_LIBS +=  gstfarsight-0.10        1.0      # .4.0
+DISTNAME=		farsight2-0.0.21
+SHARED_LIBS +=  gstfarsight-0.10        2.0      # .5.1
 CATEGORIES=		net multimedia
 
 HOMEPAGE=		http://farsight.freedesktop.org/
@@ -19,10 +18,11 @@ MASTER_SITES=		${HOMEPAGE}/releases/farsight2/
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 gstnetbuffer-0.10
 WANTLIB += gstreamer-0.10 gstrtp-0.10 gthread-2.0 m pcre xml2
-WANTLIB += z
+WANTLIB += z nice util
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		nice::net/libnice
+LIB_DEPENDS=		::net/libnice \
+			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:gstreamer-plugins-farsight->=0.12.11p0:multimedia/gstreamer-0.10/plugins-farsight \
 			::multimedia/gstreamer-0.10/py-gstreamer
 
@@ -37,6 +37,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-gupnp \
 			--disable-static \
-			--disable-shave
+			--disable-silent-rules
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/python/Makefile.in
 
 .include <bsd.port.mk>

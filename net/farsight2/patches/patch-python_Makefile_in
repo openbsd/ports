@@ -1,0 +1,12 @@
+$OpenBSD: patch-python_Makefile_in,v 1.1 2010/09/22 14:29:21 jasper Exp $
+--- python/Makefile.in.orig	Wed Sep 22 16:17:21 2010
++++ python/Makefile.in	Wed Sep 22 16:18:24 2010
+@@ -353,7 +353,7 @@ farsight_la_LIBADD = \
+ 	$(top_builddir)/gst-libs/gst/farsight/libgstfarsight-@GST_MAJORMINOR@.la
+ 
+ farsight_la_LDFLAGS = \
+-	`python-config --libs`				\
++	`python${MODPY_VERSION}-config --libs`				\
+ 	-module -avoid-version
+ 
+ EXTRA_DIST = \
