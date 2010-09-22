@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/22 12:04:07 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.9.2
-REVISION=		2
+REVISION=		3
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -34,7 +34,7 @@ LIB_DEPENDS =		::devel/libnotify \
 			::net/curl
 RUN_DEPENDS =		::devel/desktop-file-utils \
 			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			:mplayer->=20090708:x11/mplayer
+			:mplayer->=20090828:x11/mplayer
 
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
@@ -52,6 +52,7 @@ CONFIGURE_ARGS =	--with-gio \
 			--with-libnotify \
 			--with-libgpod \
 			--with-libmusicbrainz3 \
+			--enable-panscan \
 			--without-alsa \
 			--without-flat-volume \
 			--without-gpm-new-method \
