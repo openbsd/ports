@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/03 15:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/22 06:55:44 landry Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -10,6 +10,9 @@ DISTNAME =		gst-plugins-bad-${V}
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
+
+#XXX nm: cannot read a.out: No such file or directory
+USE_LIBTOOL =		gnu
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
