@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_devel,v 1.1 2010/09/22 21:02:02 jasper Exp $
+
+Don't blindly override these variables.
+
+--- Makefile.devel.orig	Wed Sep 22 13:31:11 2010
++++ Makefile.devel	Wed Sep 22 13:31:23 2010
+@@ -3,14 +3,14 @@
+ # Don't use it unless you know exactly what you do!
+ 
+ SHELL = /bin/sh
+-MAKE = make
++MAKE ?= make
+ AUTOCONF = autoconf-2.63
+ AUTOHEADER = autoheader-2.63
+ AUTOMAKE = automake-1.10
+ ACLOCAL = aclocal-1.10
+ GPERF = gperf
+-CC = gcc
+-CFLAGS = -O
++CC ?= gcc
++CFLAGS ?= -O
+ MAN2HTML = groff -mandoc -Thtml
+ CP = cp
+ RM = rm -f
