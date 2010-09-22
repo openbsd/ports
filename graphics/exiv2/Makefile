@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 08:55:38 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/22 06:48:59 landry Exp $
 
 HOMEPAGE=	http://www.exiv2.org/
 COMMENT=	manipulate image meta-data such as exif and ipct
@@ -9,7 +9,8 @@ DISTNAME=	exiv2-0.20
 SHARED_LIBS +=	exiv2                4.0      # .9.0
 WANTLIB += 	c m stdc++ z expat pthread
 
-USE_LIBTOOL=	Yes
+#XXX ports libtool generates bogus libexiv2.la
+USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
