@@ -1,16 +1,19 @@
-$OpenBSD: patch-configure,v 1.3 2010/03/29 12:17:42 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.4 2010/09/22 15:25:26 dcoppa Exp $
 
 use -pthread instead of -lpthread for pthreads linkage
 remove -ldl
+fix GECKO_CFLAGS and GECKO_LIBS
 
---- configure.orig	Tue Mar 23 16:44:27 2010
-+++ configure	Tue Mar 23 16:45:20 2010
-@@ -8711,7 +8711,7 @@ if test "${with_xulrunner_sdk+set}" = set; then
+--- configure.orig	Wed Sep 22 16:12:14 2010
++++ configure	Wed Sep 22 16:14:37 2010
+@@ -8710,8 +8710,8 @@ fi
+ if test "${with_xulrunner_sdk+set}" = set; then
    withval=$with_xulrunner_sdk;
  	XULRUNNER_SDK_PREFIX=$with_xulrunner_sdk
- 	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -I$XULRUNNER_SDK_PREFIX/include/plugin -I$XULRUNNER_SDK_PREFIX/include/nspr -I$XULRUNNER_SDK_PREFIX/include/xpcom -I$XULRUNNER_SDK_PREFIX/include/string -I$XULRUNNER_SDK_PREFIX/include/java"
+-	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -I$XULRUNNER_SDK_PREFIX/include/plugin -I$XULRUNNER_SDK_PREFIX/include/nspr -I$XULRUNNER_SDK_PREFIX/include/xpcom -I$XULRUNNER_SDK_PREFIX/include/string -I$XULRUNNER_SDK_PREFIX/include/java"
 -	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX/lib -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -lpthread -ldl"
-+	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX/lib -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -pthread"
++	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -DOPENBSD"
++	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -pthread"
  	# Check whether --enable-new-libxul was given.
  if test "${enable_new_libxul+set}" = set; then
    enableval=$enable_new_libxul; usenewlibxul=$enableval
