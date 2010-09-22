@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/22 15:20:33 dcoppa Exp $
 
 COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.4
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.adaptive-enterprises.com.au/~d/software/pktstat/
