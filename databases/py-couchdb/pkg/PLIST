@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/07 01:25:13 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/22 18:53:47 fgsch Exp $
+@conflict py-CouchDB-*
 bin/couchdb-dump
 bin/couchdb-load
 bin/couchdb-replicate
@@ -8,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/CouchDB-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/couchdb/
@@ -18,12 +18,14 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/client.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/client.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/design.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/design.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/http.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/http.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/json.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/json.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/mapping.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/mapping.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.pyc
-lib/python${MODPY_VERSION}/site-packages/couchdb/schema.py
-lib/python${MODPY_VERSION}/site-packages/couchdb/schema.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.pyc
@@ -33,10 +35,16 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/http.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/http.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/mapping.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/mapping.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/multipart.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/multipart.pyc
-lib/python${MODPY_VERSION}/site-packages/couchdb/tests/schema.py
-lib/python${MODPY_VERSION}/site-packages/couchdb/tests/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/package.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/package.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/testutil.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/testutil.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/
@@ -46,10 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/tools/dump.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/dump.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/load.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/load.pyc
-lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replication_helper.py
-lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replication_helper.pyc
-lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replication_helper_test.py
-lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replication_helper_test.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tools/replicate.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/view.pyc
 share/examples/py-couchdb/
