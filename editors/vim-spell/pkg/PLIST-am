@@ -1,4 +1,2 @@
-@comment $OpenBSD: PLIST-am,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
-@comment share/vim/72/
-@comment share/vim/72/spell/
-share/vim/vim72/spell/am.utf-8.spl
+@comment $OpenBSD: PLIST-am,v 1.2 2010/09/22 18:24:10 stsp Exp $
+share/vim/vim${P}/spell/am.utf-8.spl

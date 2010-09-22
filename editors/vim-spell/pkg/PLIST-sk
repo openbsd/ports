@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-sk,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
-@comment share/vim/72/
-@comment share/vim/72/spell/
-share/vim/vim72/spell/sk.cp1250.spl
-share/vim/vim72/spell/sk.iso-8859-2.spl
-share/vim/vim72/spell/sk.utf-8.spl
+@comment $OpenBSD: PLIST-sk,v 1.2 2010/09/22 18:24:10 stsp Exp $
+share/vim/vim${P}/spell/sk.cp1250.spl
+share/vim/vim${P}/spell/sk.iso-8859-2.spl
+share/vim/vim${P}/spell/sk.utf-8.spl

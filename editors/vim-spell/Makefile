@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/01 19:32:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/22 18:24:10 stsp Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -7,14 +7,13 @@ LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 FLAVOR ?= 	af
 
 HOMEPAGE = 	http://www.vim.org/
-VERSION = 	7.2
-P = 		vim${VERSION:C/[\.]//g}
+VERSION = 	7.3
+P = 		${VERSION:C/[\.]//g}
 CATEGORIES = 	editors
 MASTER_SITES = 	ftp://ftp.vim.org/pub/vim/runtime/spell/
-DIST_SUBDIR = 	vim72
+DIST_SUBDIR = 	vim-spell
 EXTRACT_ONLY = 
 DISTNAME = 	vim-spell-${VERSION}
-REVISION =	0
 
 # GPLv2+, LGPL, GFDL
 PERMIT_PACKAGE_CDROM = 	Yes
@@ -206,12 +205,12 @@ PLIST = 	${PKGDIR}/PLIST-$l
 NO_BUILD = 	Yes
 RUN_DEPENDS = 	::editors/vim
 
-SUBST_VARS = 	LANG_NAME
+SUBST_VARS = 	LANG_NAME P
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/${P}/spell
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vim${P}/spell
 .for f in ${DISTFILES}
-	${INSTALL_DATA} ${FULLDISTDIR}/${f} ${PREFIX}/share/vim/${P}/spell
+	${INSTALL_DATA} ${FULLDISTDIR}/${f} ${PREFIX}/share/vim/vim${P}/spell
 .endfor
 
 .include <bsd.port.mk>
