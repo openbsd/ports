@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/09/16 22:34:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/22 13:44:12 jasper Exp $
 
 VERSION=		2.4
 PATCHLEVEL=		.6
 PKG_PATCHLEVEL=		p4
 SHARED_LIBS=		python2.4 1.0
-
-BROKEN-mips64 = Floating point exception while generating pyc objects
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
