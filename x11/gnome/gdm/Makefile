@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2010/08/21 19:08:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2010/09/22 05:21:36 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
 
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			::x11/gnome/zenity \
-			::sysutils/ktsuss
+			::security/gksu-polkit
 LIB_DEPENDS=		::x11/gnome/librsvg \
 			::x11/gnome/libgnomecanvas
 
