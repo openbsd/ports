@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1033 2010/09/21 15:18:03 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1034 2010/09/22 18:43:30 landry Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -371,7 +371,7 @@ _lt_libs =
 LIBTOOL ?= ${DEPBASE}/bin/libtool
 BUILD_DEPENDS += ::devel/libtool
 .  else
-LIBTOOL ?= ${DEPBASE}/bin/libtool
+LIBTOOL ?= ${PORTSDIR}/infrastructure/bin/libtool
 BUILD_DEPENDS += ::devel/libtool
 .  endif
 CONFIGURE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
