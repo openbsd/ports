@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2010/02/09 12:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/22 07:24:42 landry Exp $
 
 # XXX crashes & hangs, to be dealt with
-NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc mips64 mips64el
+NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc mips64 mips64el amd64 sparc64
 
 COMMENT=	programming language with generators, X11 graphics and more
 
