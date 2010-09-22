@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/22 16:10:19 ajacoutot Exp $
 %%SHARED%%
-@bin bin/network-admin
+@comment @bin bin/network-admin
 @bin bin/shares-admin
 @bin bin/time-admin
-@bin bin/users-admin
+@comment @bin bin/users-admin
 lib/nautilus/
 lib/nautilus/extensions-2.0/
 @comment lib/nautilus/extensions-2.0/libnautilus-gst-shares.a
 @comment lib/nautilus/extensions-2.0/libnautilus-gst-shares.la
 lib/pkgconfig/gnome-system-tools.pc
-share/applications/network.desktop
+@comment share/applications/network.desktop
 share/applications/shares.desktop
 share/applications/time.desktop
-share/applications/users.desktop
+@comment share/applications/users.desktop
 share/examples/gnome-system-tools/
 share/examples/gnome-system-tools/gnome-system-tools/
 @sample ${SYSCONFDIR}/gnome-system-tools/
