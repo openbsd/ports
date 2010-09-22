@@ -1,0 +1,15 @@
+$OpenBSD: patch-libip_h,v 1.1 2010/09/22 15:03:45 ajacoutot Exp $
+--- libip.h.orig	Wed Sep 22 16:50:32 2010
++++ libip.h	Wed Sep 22 16:50:39 2010
+@@ -13,10 +13,10 @@
+ #define _LIBIP_H
+ 
+ #include <stdbool.h>
+-#include <arpa/inet.h>
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+ #endif
++#include <arpa/inet.h>
+ 
+ #define IPv4_LEN sizeof(struct in_addr)
+ #ifdef HAVE_IPV6

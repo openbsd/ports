@@ -1,7 +1,7 @@
-$OpenBSD: patch-serverconfig_c,v 1.13 2009/09/22 09:29:25 ajacoutot Exp $
---- serverconfig.c.orig	Wed Aug 19 11:45:11 2009
-+++ serverconfig.c	Tue Sep 22 11:08:50 2009
-@@ -16,7 +16,7 @@
+$OpenBSD: patch-serverconfig_c,v 1.14 2010/09/22 15:03:45 ajacoutot Exp $
+--- serverconfig.c.orig	Tue Jun  1 09:46:11 2010
++++ serverconfig.c	Wed Sep 22 16:44:46 2010
+@@ -28,7 +28,7 @@
  #include "libstr.h"
  #include "libfs.h"
  
@@ -10,14 +10,14 @@ $OpenBSD: patch-serverconfig_c,v 1.13 2009/09/22 09:29:25 ajacoutot Exp $
  #define MAX_LENGTH_CONFIGLINE   512
  #define MAX_CACHE_SIZE           50
  #define MAX_UPLOAD_SIZE         100
-@@ -228,8 +228,8 @@ t_config *default_config(void) {
+@@ -243,8 +243,8 @@ t_config *default_config(void) {
+ #ifdef HAVE_CHROOT
+ 	config->server_root        = NULL;
  #endif
- 
- 		config->server_root        = NULL;
--		config->server_uid         = (uid_t)ID_NOBODY;
--		config->server_gid         = (gid_t)ID_NOBODY;
-+		config->server_uid         = (uid_t)ID_HIAWATHA;
-+		config->server_gid         = (gid_t)ID_HIAWATHA;
- 		config->server_string      = "Hiawatha v"VERSION;
- 		init_groups(&(config->groups));
+-	config->server_uid         = (uid_t)ID_NOBODY;
+-	config->server_gid         = (gid_t)ID_NOBODY;
++	config->server_uid         = (uid_t)ID_HIAWATHA;
++	config->server_gid         = (gid_t)ID_HIAWATHA;
+ 	config->server_string      = "Hiawatha v"VERSION;
+ 	init_groups(&(config->groups));
  #ifdef HAVE_SSL

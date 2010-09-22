@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2009/09/22 09:29:25 ajacoutot Exp $
---- Makefile.in.orig	Fri Sep  4 14:39:25 2009
-+++ Makefile.in	Tue Sep 22 11:08:50 2009
-@@ -1219,9 +1219,8 @@ info: info-am
+$OpenBSD: patch-Makefile_in,v 1.13 2010/09/22 15:03:45 ajacoutot Exp $
+--- Makefile.in.orig	Wed Jun  2 14:45:03 2010
++++ Makefile.in	Wed Sep 22 16:44:08 2010
+@@ -1240,9 +1240,8 @@ info: info-am
  
  info-am:
  

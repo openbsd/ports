@@ -1,0 +1,16 @@
+$OpenBSD: patch-libip_c,v 1.1 2010/09/22 15:03:45 ajacoutot Exp $
+--- libip.c.orig	Wed Sep 22 16:50:47 2010
++++ libip.c	Wed Sep 22 16:50:56 2010
+@@ -15,11 +15,11 @@
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
++#include "libip.h"
+ #ifdef HAVE_ARPA_INET_H
+ #include <arpa/inet.h>
+ #endif
+ #include "libstr.h"
+-#include "libip.h"
+ 
+ int default_ipv4(t_ip_addr *ip_addr) {
+ 	/* set to 0.0.0.0

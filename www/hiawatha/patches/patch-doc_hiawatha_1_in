@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
---- doc/hiawatha.1.in.orig	Tue Sep 22 11:02:23 2009
-+++ doc/hiawatha.1.in	Tue Sep 22 11:04:59 2009
+$OpenBSD: patch-doc_hiawatha_1_in,v 1.8 2010/09/22 15:03:45 ajacoutot Exp $
+--- doc/hiawatha.1.in.orig	Tue Jun  1 10:02:50 2010
++++ doc/hiawatha.1.in	Wed Sep 22 16:44:08 2010
 @@ -150,12 +150,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
@@ -16,7 +16,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
  .TP
  .B CommandChannel = <portnumber>, <MD5 hash of password>
  The port and the password for the CommandChannel. You can use telnet to connect to the CommandChannel (localhost:<portnumber>). Type 'help' in the CommandChannel for more information.
-@@ -188,7 +188,7 @@ Example: GarbageLogfile = @logdir@/garbage.log
+@@ -198,7 +198,7 @@ Example: HideProxy = 192.168.10.20
  .B Include <filename>|<directory>
  Include another configurationfile or configurationfiles in a directory.
  .br
@@ -25,7 +25,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -245,7 +245,7 @@ Default = 0, example: ReconnectDelay = 3
+@@ -270,7 +270,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br
@@ -33,8 +33,8 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
 +Default = 579:579, example: ServerId = _hiawatha
  .TP
  .B ServerRoot = <directory>
- Rootdirectory for the webserver. Hiawatha will chroot() to this directory after reading the configurationfile and writing the PID file. Cannot be used in combination with UserWebsites.
-@@ -821,7 +821,7 @@ and
+ Rootdirectory for the webserver. Hiawatha will chroot() to this directory after reading the configurationfile and writing the PID file. Cannot be used in combination with UserWebsites. Only use this option when you know what you are doing!
+@@ -882,7 +882,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -43,7 +43,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -848,15 +848,15 @@ Unban all IP addresses.
+@@ -909,15 +909,15 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with --disable-cache).
  
  .SH FILES

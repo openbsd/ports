@@ -1,0 +1,12 @@
+$OpenBSD: patch-monitor_c,v 1.1 2010/09/22 15:03:45 ajacoutot Exp $
+--- monitor.c.orig	Wed Sep 22 16:58:29 2010
++++ monitor.c	Wed Sep 22 16:58:37 2010
+@@ -89,7 +89,7 @@ static int sync_monitor_buffer(void) {
+ 		return 0;
+ 	}
+ 
+-	snprintf(filename + filename_offset, MAX_FILENAME_SIZE, "%ld.txt.gz", time(NULL));
++	snprintf(filename + filename_offset, MAX_FILENAME_SIZE, "%d.txt.gz", time(NULL));
+ 	if ((handle = open(filename, O_CREAT | O_APPEND | O_WRONLY, 0640)) == -1) {
+ 		return -1;
+ 	}

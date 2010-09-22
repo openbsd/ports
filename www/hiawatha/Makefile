@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2009/09/22 09:29:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/22 15:03:45 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-6.17.1
+DISTNAME=	hiawatha-7.3
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
-WANTLIB=	c crypto pthread ssl xml2
+WANTLIB += c crypto pthread ssl xml2 z xslt
 
-LIB_DEPENDS=	xslt.>=3::textproc/libxslt
+LIB_DEPENDS=	::textproc/libxslt
 
 WEBROOTDIR=	/var/hiawatha
 
