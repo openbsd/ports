@@ -1,0 +1,23 @@
+$OpenBSD: patch-ui_c,v 1.1 2010/09/22 08:59:07 jasper Exp $
+
+Fix a possible seg. fault in the editor.
+From upstream's patch: 0.5.6-01_editor
+
+--- ui.c.orig	Sun Apr  9 20:57:34 2006
++++ ui.c	Tue Sep 21 13:58:27 2010
+@@ -569,9 +569,13 @@ ui_find(int next)
+ 	} else {
+ 		char *s;
+ 		s = ui_readline("/", findstr, MAX_FIELD_LEN - 1, 0);
+-		strncpy(findstr, s, MAX_FIELD_LEN);
+-		free(s);
+ 		refresh_screen();
++		if(s == NULL) {
++			return; /* user cancelled (ctrl-G) */
++		} else {
++			strncpy(findstr, s, MAX_FIELD_LEN);
++			free(s);
++		}
+ 	}
+ 
+ 	if( (item = find_item(findstr, curitem + !!next, search_fields)) < 0 &&

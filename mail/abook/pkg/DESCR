@@ -1,8 +1,10 @@
-addressbook program with mutt mail client support
+Addressbook program with mutt mail client support.
 
 abook uses curses libs and is able to import addressbooks from
 pine and netscape (ldif).
 Exports to mutt alias, html, pine, gcrd (GnomeCard), csv, elm 
 alias, and plain text.
 
-It is nice for querying from within mutt.
+It is nice for querying from within mutt; to use it as such, add
+the following to your muttrc:
+set query_command="${PREFIX}/bin/abook --mutt-query '%s'"
