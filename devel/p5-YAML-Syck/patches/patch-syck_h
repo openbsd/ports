@@ -1,0 +1,15 @@
+$OpenBSD: patch-syck_h,v 1.1 2010/09/22 10:50:51 sthen Exp $
+
+zeroing allocated space avoids a perl segfault with malloc_flags J.
+
+--- syck.h.orig	Wed Sep 22 10:22:37 2010
++++ syck.h	Wed Sep 22 10:23:24 2010
+@@ -75,7 +75,7 @@ extern "C" {
+ 
+ #define ALLOC_CT 8
+ #define SYCK_BUFFERSIZE 4096
+-#define S_ALLOC_N(type,n) (type*)malloc(sizeof(type)*(n))
++#define S_ALLOC_N(type,n) (type*)calloc((n),sizeof(type))
+ #define S_ALLOC(type) (type*)malloc(sizeof(type))
+ #define S_REALLOC_N(var,type,n) (var)=(type*)realloc((char*)(var),sizeof(type)*(n))
+ #define S_FREE(n) free(n); n = NULL;
