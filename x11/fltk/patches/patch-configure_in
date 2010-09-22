@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.11 2007/04/01 17:48:42 martynas Exp $
---- configure.in.orig	Sun Jan 15 20:36:16 2006
-+++ configure.in	Sun Apr  1 18:28:51 2007
+$OpenBSD: patch-configure_in,v 1.12 2010/09/22 12:47:45 ajacoutot Exp $
+--- configure.in.orig	Sun Jan 15 19:36:16 2006
++++ configure.in	Tue Sep 21 07:55:56 2010
 @@ -34,9 +34,9 @@ dnl Required file in package...
  AC_INIT(src/Fl.cxx)
  
@@ -14,7 +14,29 @@ $OpenBSD: patch-configure_in,v 1.11 2007/04/01 17:48:42 martynas Exp $
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
  
  AC_SUBST(FL_MAJOR_VERSION)
-@@ -647,7 +647,7 @@ case $uname in
+@@ -530,13 +530,6 @@ dnl Check for pthreads for multi-threaded apps...
+ have_pthread=no
+ 
+ if test "x$enable_threads" = xyes; then
+-    AC_CHECK_HEADER(pthread.h, AC_DEFINE(HAVE_PTHREAD_H))
+-    AC_CHECK_LIB(pthread, pthread_create)
+-
+-    if test "x$ac_cv_lib_pthread_pthread_create" = xyes -a x$ac_cv_header_pthread_h = xyes; then
+-        have_pthread=yes
+-    else
+-        dnl *BSD uses -pthread option...
+         AC_MSG_CHECKING([for pthread_create using -pthread])
+ 	SAVELIBS="$LIBS"
+ 	LIBS="-pthread $LIBS"
+@@ -546,7 +539,6 @@ if test "x$enable_threads" = xyes; then
+             have_pthread=yes,
+ 	    LIBS="$SAVELIBS")
+         AC_MSG_RESULT([$have_pthread])
+-    fi
+ fi
+ 
+ dnl Define OS-specific stuff...
+@@ -647,7 +639,7 @@ case $uname in
  	    AC_MSG_WARN(Ignoring libraries \"$X_PRE_LIBS\" requested by configure.)
  	fi
  
@@ -23,7 +45,7 @@ $OpenBSD: patch-configure_in,v 1.11 2007/04/01 17:48:42 martynas Exp $
  	CFLAGS="$CFLAGS $X_CFLAGS"
  	CXXFLAGS="$CXXFLAGS $X_CFLAGS"
  	LDFLAGS="$X_LIBS $LDFLAGS"
-@@ -844,7 +844,7 @@ if test -n "$GCC"; then
+@@ -844,7 +836,7 @@ if test -n "$GCC"; then
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else

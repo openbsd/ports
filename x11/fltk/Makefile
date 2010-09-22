@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/22 12:47:45 ajacoutot Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
 VER=		1.1.7
 DISTNAME=	fltk-${VER}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 SHARED_LIBS=	fltk		6.0 \
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xau Xdmcp Xext c m stdc++ z jpeg png
+WANTLIB += X11 Xau Xdmcp Xext c m stdc++ z jpeg png pthread
 
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 
@@ -41,9 +41,10 @@ LIB_DEPENDS=	::graphics/jpeg \
 NO_REGRESS=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
-AUTOCONF_VERSION=2.54
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+AUTOCONF_VERSION=2.59
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-threads
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
