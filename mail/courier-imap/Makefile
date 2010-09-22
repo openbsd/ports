@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/09/09 10:26:19 giovanni Exp $
+# $OpenBSD: Makefile,v 1.62 2010/09/22 06:53:03 landry Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -28,7 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c courierauth courierauthsasl gdbm idn
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+#XXX db not found ?
+USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
