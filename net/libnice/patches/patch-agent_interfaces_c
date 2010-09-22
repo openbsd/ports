@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_interfaces_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
---- agent/interfaces.c.orig	Wed Aug 19 12:20:47 2009
-+++ agent/interfaces.c	Wed Aug 19 12:21:26 2009
-@@ -47,6 +47,7 @@
+$OpenBSD: patch-agent_interfaces_c,v 1.2 2010/09/22 14:29:00 jasper Exp $
+--- agent/interfaces.c.orig	Tue Jul 20 22:54:40 2010
++++ agent/interfaces.c	Mon Sep 13 11:24:57 2010
+@@ -49,6 +49,7 @@
  #include <net/if.h>
  #include <net/if_arp.h>
  #include <arpa/inet.h>
@@ -9,3 +9,12 @@ $OpenBSD: patch-agent_interfaces_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
  
  #ifdef HAVE_GETIFADDRS
  
+@@ -198,7 +199,7 @@ nice_interfaces_get_local_ips (gboolean include_loopba
+       struct sockaddr_in6 *sa6 = (struct sockaddr_in6 *)ifa->ifa_addr;
+ 
+       /* Skip link-local addresses, they require a scope */
+-      if (IN6_IS_ADDR_LINKLOCAL (sa6->sin6_addr.s6_addr))
++      if (IN6_IS_ADDR_LINKLOCAL ((struct in6_addr *)sa6->sin6_addr.s6_addr))
+         continue;
+ 
+       if (inet_ntop (AF_INET6, &sa6->sin6_addr, addr_as_string,

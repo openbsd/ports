@@ -1,7 +1,7 @@
-$OpenBSD: patch-stun_stun5389_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
---- stun/stun5389.c.orig	Wed Aug 19 11:45:57 2009
-+++ stun/stun5389.c	Wed Aug 19 11:48:15 2009
-@@ -41,9 +41,6 @@
+$OpenBSD: patch-stun_stun5389_c,v 1.2 2010/09/22 14:29:00 jasper Exp $
+--- stun/stun5389.c.orig	Mon Sep 13 11:07:22 2010
++++ stun/stun5389.c	Mon Sep 13 11:08:09 2010
+@@ -40,9 +40,6 @@
  
  #ifdef _WIN32
  #include <winsock2.h>

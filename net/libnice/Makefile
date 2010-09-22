@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/22 14:28:59 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
-DISTNAME =	libnice-0.0.9
-REVISION =	2
-SHARED_LIBS +=  nice                 0.0      # .5.0
+DISTNAME =	libnice-0.0.13
+SHARED_LIBS +=  nice                 1.0
 CATEGORIES =	net
 
 HOMEPAGE =	http://nice.freedesktop.org/
@@ -25,8 +24,6 @@ WANTLIB += c glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pcre
 WANTLIB += xml2 z
 
 MODULES =		devel/gettext
-
-BUILD_DEPENDS =		::textproc/gsed
 
 LIB_DEPENDS =		gstbase-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/core
 

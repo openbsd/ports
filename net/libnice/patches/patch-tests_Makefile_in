@@ -1,15 +1,15 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1 2009/09/09 22:13:08 jasper Exp $
---- tests/Makefile.in.orig	Wed Sep  9 16:27:19 2009
-+++ tests/Makefile.in	Wed Sep  9 16:27:40 2009
-@@ -240,7 +240,6 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
+$OpenBSD: patch-tests_Makefile_in,v 1.2 2010/09/22 14:29:00 jasper Exp $
+--- tests/Makefile.in.orig	Mon Sep 13 11:04:05 2010
++++ tests/Makefile.in	Mon Sep 13 11:04:15 2010
+@@ -256,7 +256,6 @@ top_srcdir = @top_srcdir@
  ERROR_CFLAGS = \
  	$(LIBNICE_CFLAGS) \
+ 	-fno-strict-aliasing \
 -	-Wextra \
  	-Wundef \
  	-Wnested-externs \
  	-Wwrite-strings \
-@@ -250,8 +249,7 @@ ERROR_CFLAGS = \
+@@ -266,8 +265,7 @@ ERROR_CFLAGS = \
  	-Wmissing-prototypes \
  	-Wstrict-prototypes \
  	-Wredundant-decls \
