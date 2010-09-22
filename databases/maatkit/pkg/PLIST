@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/05/05 10:36:33 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/22 10:14:25 giovanni Exp $
 bin/mk-archiver
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
@@ -7,6 +7,7 @@ bin/mk-error-log
 bin/mk-fifo-split
 bin/mk-find
 bin/mk-heartbeat
+bin/mk-index-usage
 bin/mk-kill
 bin/mk-loadavg
 bin/mk-log-player
@@ -14,6 +15,8 @@ bin/mk-merge-mqd-results
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
+bin/mk-purge-logs
+bin/mk-query-advisor
 bin/mk-query-digest
 bin/mk-query-profiler
 bin/mk-show-grants
@@ -25,6 +28,7 @@ bin/mk-slave-restart
 bin/mk-table-checksum
 bin/mk-table-sync
 bin/mk-upgrade
+bin/mk-variable-advisor
 bin/mk-visual-explain
 ${P5SITE}/maatkit.pod
 @man man/man1/maatkit.1
@@ -36,6 +40,7 @@ ${P5SITE}/maatkit.pod
 @man man/man1/mk-fifo-split.1
 @man man/man1/mk-find.1
 @man man/man1/mk-heartbeat.1
+@man man/man1/mk-index-usage.1
 @man man/man1/mk-kill.1
 @man man/man1/mk-loadavg.1
 @man man/man1/mk-log-player.1
@@ -43,6 +48,8 @@ ${P5SITE}/maatkit.pod
 @man man/man1/mk-parallel-dump.1
 @man man/man1/mk-parallel-restore.1
 @man man/man1/mk-profile-compact.1
+@man man/man1/mk-purge-logs.1
+@man man/man1/mk-query-advisor.1
 @man man/man1/mk-query-digest.1
 @man man/man1/mk-query-profiler.1
 @man man/man1/mk-show-grants.1
@@ -54,4 +61,5 @@ ${P5SITE}/maatkit.pod
 @man man/man1/mk-table-checksum.1
 @man man/man1/mk-table-sync.1
 @man man/man1/mk-upgrade.1
+@man man/man1/mk-variable-advisor.1
 @man man/man1/mk-visual-explain.1
