@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/08/30 21:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2010/09/22 07:01:56 landry Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -17,6 +17,8 @@ LIB_DEPENDS =	::x11/kde/libs3 \
 		::lang/ruby
 
 REVISION =	10
+#XXX missing -rpath to /usr/local ?
+USE_LIBTOOL =	gnu
 WANTLIB = GL GLU ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam \
 	fontconfig freetype idn jpeg lib/kde3/DCOP lib/kde3/kdecore.>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
