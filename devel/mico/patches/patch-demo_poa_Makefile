@@ -1,7 +1,7 @@
---- demo/poa/Makefile.orig	Thu Jun 28 02:52:04 2001
-+++ demo/poa/Makefile	Thu Jun 28 02:52:24 2001
-@@ -13,7 +13,7 @@ clean:
- 	rm -f *.o core *~ .depend
+--- demo/poa/Makefile.orig	Fri Jul 25 15:41:40 2008
++++ demo/poa/Makefile	Mon Sep 13 21:10:56 2010
+@@ -16,7 +16,7 @@ run:
+ 	for i in $(DIRS); do $(MAKE) -C $$i run || exit 1; done
  
  install:
 -	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/poa

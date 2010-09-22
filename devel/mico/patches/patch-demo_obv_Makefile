@@ -1,6 +1,6 @@
---- demo/obv/Makefile.orig	Thu Jun 28 02:51:10 2001
-+++ demo/obv/Makefile	Thu Jun 28 02:51:37 2001
-@@ -13,7 +13,7 @@ clean:
+--- demo/obv/Makefile.orig	Fri Jul 25 15:41:41 2008
++++ demo/obv/Makefile	Mon Sep 13 21:10:56 2010
+@@ -16,7 +16,7 @@ clean:
  	rm -f *.o core *~ .depend
  
  install:

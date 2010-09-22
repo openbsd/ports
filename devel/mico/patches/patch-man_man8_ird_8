@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_man8_ird_8,v 1.1 2003/03/31 00:53:58 margarida Exp $
---- man/man8/ird.8.orig	Wed Mar 12 03:40:07 2003
-+++ man/man8/ird.8	Wed Mar 12 03:41:19 2003
+$OpenBSD: patch-man_man8_ird_8,v 1.2 2010/09/22 08:42:53 landry Exp $
+--- man/man8/ird.8.orig	Fri Jul 25 15:41:42 2008
++++ man/man8/ird.8	Mon Sep 13 21:10:58 2010
 @@ -19,7 +19,7 @@
  .\" Send comments and/or bug reports to:
  .\"                mico@informatik.uni-frankfurt.de
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_man8_ird_8,v 1.1 2003/03/31 00:53:58 margarida Exp $
  .SH NAME
  ird \- MICO interface repository server
  .SH SYNOPSIS
-@@ -62,7 +62,7 @@ is used as ior-file, the IOR is written 
+@@ -62,7 +62,7 @@ is used as ior-file, the IOR is written to standard ou
  .SH FILES
  ~/.micorc
  .SH "SEE ALSO"

@@ -1,16 +1,25 @@
-$OpenBSD: patch-configure,v 1.2 2008/02/28 21:47:52 merdely Exp $
---- configure.orig	Fri Sep 21 08:08:22 2001
-+++ configure	Thu Feb 28 11:12:28 2008
-@@ -1774,7 +1774,7 @@ rm -f conftest*
-     # must not use .so.1.0 here
+$OpenBSD: patch-configure,v 1.3 2010/09/22 08:42:53 landry Exp $
+--- configure.orig	Fri Jul 25 15:42:43 2008
++++ configure	Mon Sep 13 22:31:04 2010
+@@ -1325,7 +1325,7 @@ myexec=$exec_prefix
+ test "x$myprefix" = xNONE && myprefix=$ac_default_prefix
+ test "x$myexec" = xNONE && myexec=${myprefix}
+ ABSEXECDIR=$myexec
+-ABSSHRDDIR=$myprefix
++ABSSHRDDIR=$myprefix/share
+ cat >> confdefs.h <<EOF
+ #define ABSEXECDIR "$myexec"
+ EOF
+@@ -3377,7 +3377,7 @@ if test X"$GXX" = Xyes; then
+     fi
      ;;
    *bsd*)
 -    CONF_SOEXT=so.1.0
 +    CONF_SOEXT=so.${LIB_VERSION}
-     ;;
-   *cygwin32*)
-     have_cdk=yes;
-@@ -1854,8 +1854,6 @@ fi
+     if test X"$use_threads" = Xyes; then
+       CXXFLAGS="$CXXFLAGS -D_THREAD_SAFE"
+     fi
+@@ -3667,8 +3667,6 @@ fi
  #
  
  

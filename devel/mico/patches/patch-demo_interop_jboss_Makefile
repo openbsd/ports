@@ -1,0 +1,14 @@
+$OpenBSD: patch-demo_interop_jboss_Makefile,v 1.1 2010/09/22 08:42:53 landry Exp $
+--- demo/interop/jboss/Makefile.orig	Tue Sep 14 21:20:15 2010
++++ demo/interop/jboss/Makefile	Tue Sep 14 21:20:30 2010
+@@ -32,7 +32,7 @@ clean:
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/interop/jboss
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/interop/jboss
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done

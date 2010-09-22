@@ -1,9 +1,9 @@
-$OpenBSD: patch-ir_Makefile,v 1.1 2002/01/08 12:33:23 naddy Exp $
---- ir/Makefile.orig	Mon Jan  7 17:08:38 2002
-+++ ir/Makefile	Tue Jan  8 02:29:39 2002
-@@ -45,6 +45,10 @@ endif
- 
- SHARED_OBJS=$(STATIC_OBJS:.o=.pic.o)
+$OpenBSD: patch-ir_Makefile,v 1.2 2010/09/22 08:42:53 landry Exp $
+--- ir/Makefile.orig	Fri Jul 25 15:41:51 2008
++++ ir/Makefile	Mon Sep 13 21:10:57 2010
+@@ -63,6 +63,10 @@ HAVE_STATIC := yes
+ endif
+ endif
  
 +ifeq ($(build_cpu), sparc)
 +ir_impl.o: CXXFLAGS=$(patsubst -O%,,$(CXXFLAGS))

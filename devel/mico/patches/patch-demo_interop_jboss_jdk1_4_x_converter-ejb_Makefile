@@ -1,0 +1,36 @@
+$OpenBSD: patch-demo_interop_jboss_jdk1_4_x_converter-ejb_Makefile,v 1.1 2010/09/22 08:42:53 landry Exp $
+--- demo/interop/jboss/jdk1.4.x/converter-ejb/Makefile.orig	Tue Sep 14 21:22:40 2010
++++ demo/interop/jboss/jdk1.4.x/converter-ejb/Makefile	Tue Sep 14 21:22:43 2010
+@@ -104,18 +104,18 @@ clean:
+ 	rm -rf java javax org
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
+-	$(ISRCCMD) client.cc $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
+-	$(ISCRIPTCMD) run-client $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
+-	$(ISRCCMD) META-INF/ejb-jar.xml $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
+-	$(ISRCCMD) META-INF/jboss.xml $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
+-	$(ISRCCMD) examples/Converter.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
+-	$(ISRCCMD) examples/ConverterBean.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
+-	$(ISRCCMD) examples/ConverterHome.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
+-	$(ISRCCMD) jdk1.4-Throwable/StackTraceElement.idl $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
+-	$(ISRCCMD) jdk1.4-Throwable/Throwable.idl $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
+-	$(ISRCCMD) jdk1.4-Throwable/seq1_StackTraceElement.idl $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
++	$(ISRCCMD) client.cc $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
++	$(ISCRIPTCMD) run-client $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb
++	$(ISRCCMD) META-INF/ejb-jar.xml $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
++	$(ISRCCMD) META-INF/jboss.xml $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/META-INF
++	$(ISRCCMD) examples/Converter.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
++	$(ISRCCMD) examples/ConverterBean.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
++	$(ISRCCMD) examples/ConverterHome.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/examples
++	$(ISRCCMD) jdk1.4-Throwable/StackTraceElement.idl $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
++	$(ISRCCMD) jdk1.4-Throwable/Throwable.idl $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
++	$(ISRCCMD) jdk1.4-Throwable/seq1_StackTraceElement.idl $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.4.x/converter-ejb/jdk1.4-Throwable
+ 

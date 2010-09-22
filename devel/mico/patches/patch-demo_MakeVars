@@ -1,7 +1,7 @@
-$OpenBSD: patch-demo_MakeVars,v 1.2 2001/11/10 16:56:33 shell Exp $
---- demo/MakeVars.orig	Thu Jun 28 02:22:00 2001
-+++ demo/MakeVars	Thu Jun 28 02:43:34 2001
-@@ -78,14 +78,14 @@ COS_DEPS     = $(DIR_PREFIX)../../coss/l
+$OpenBSD: patch-demo_MakeVars,v 1.3 2010/09/22 08:42:53 landry Exp $
+--- demo/MakeVars.orig	Fri Jul 25 15:41:41 2008
++++ demo/MakeVars	Mon Sep 13 21:10:56 2010
+@@ -73,14 +73,14 @@ COS_DEPS     = $(DIR_PREFIX)../../coss/libmicocoss$(VE
  endif
  
  install:

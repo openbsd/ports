@@ -1,0 +1,32 @@
+$OpenBSD: patch-demo_interop_jboss_jdk1_3_x_cart-ejb_Makefile,v 1.1 2010/09/22 08:42:53 landry Exp $
+--- demo/interop/jboss/jdk1.3.x/cart-ejb/Makefile.orig	Tue Sep 14 21:22:18 2010
++++ demo/interop/jboss/jdk1.3.x/cart-ejb/Makefile	Tue Sep 14 21:22:28 2010
+@@ -91,16 +91,16 @@ clean:
+ 	rm -rf java javax org
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
+-	$(ISRCCMD) client.cc $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
+-	$(ISCRIPTCMD) run-client $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
+-	$(ISRCCMD) META-INF/ejb-jar.xml $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
+-	$(ISRCCMD) META-INF/jboss.xml $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
+-	$(ISRCCMD) examples/BookException.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+-	$(ISRCCMD) examples/Cart.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+-	$(ISRCCMD) examples/CartBean.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+-	$(ISRCCMD) examples/CartHome.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+-	$(ISRCCMD) examples/IdVerifier.java $(INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
++	$(ISRCCMD) client.cc $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
++	$(ISCRIPTCMD) run-client $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb
++	$(ISRCCMD) META-INF/ejb-jar.xml $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
++	$(ISRCCMD) META-INF/jboss.xml $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/META-INF
++	$(ISRCCMD) examples/BookException.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(ISRCCMD) examples/Cart.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(ISRCCMD) examples/CartBean.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(ISRCCMD) examples/CartHome.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
++	$(ISRCCMD) examples/IdVerifier.java $(SHARED_INSTDIR)/doc/mico/examples/interop/jboss/jdk1.3.x/cart-ejb/examples
+ 

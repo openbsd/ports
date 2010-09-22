@@ -1,0 +1,14 @@
+$OpenBSD: patch-demo_csiv2_interop_Makefile,v 1.1 2010/09/22 08:42:53 landry Exp $
+--- demo/csiv2/interop/Makefile.orig	Tue Sep 14 21:25:53 2010
++++ demo/csiv2/interop/Makefile	Tue Sep 14 21:26:04 2010
+@@ -16,7 +16,7 @@ clean:
+ 
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/csiv2/interop
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/csiv2/interop
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/csiv2/interop
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/csiv2/interop
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/csiv2/interop
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/csiv2/interop
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done

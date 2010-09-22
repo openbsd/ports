@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_man5_micorc_5,v 1.1 2003/03/31 00:53:58 margarida Exp $
---- man/man5/micorc.5.orig	Wed Mar 12 03:38:59 2003
-+++ man/man5/micorc.5	Wed Mar 12 03:39:39 2003
-@@ -162,7 +162,7 @@ This option tells an object implementati
+$OpenBSD: patch-man_man5_micorc_5,v 1.2 2010/09/22 08:42:53 landry Exp $
+--- man/man5/micorc.5.orig	Fri Jul 25 15:41:42 2008
++++ man/man5/micorc.5	Mon Sep 13 21:10:58 2010
+@@ -162,7 +162,7 @@ This option tells an object implementation the address
  You should use this option only when starting persistent servers that
  should register with the BOA daemon.
  .SH "SEE ALSO"

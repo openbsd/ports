@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_man1_imr_1,v 1.1 2003/03/31 00:53:58 margarida Exp $
---- man/man1/imr.1.orig	Wed Mar 12 03:36:47 2003
-+++ man/man1/imr.1	Wed Mar 12 03:37:18 2003
-@@ -85,8 +85,8 @@ will force activation of the implementat
+$OpenBSD: patch-man_man1_imr_1,v 1.2 2010/09/22 08:42:53 landry Exp $
+--- man/man1/imr.1.orig	Fri Jul 25 15:41:42 2008
++++ man/man1/imr.1	Mon Sep 13 21:10:58 2010
+@@ -85,8 +85,8 @@ will force activation of the implementation
  .SH FILES
  ~/.micorc
  .SH "SEE ALSO"
