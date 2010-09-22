@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/21 09:31:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/22 21:11:10 jasper Exp $
 
 COMMENT =	Context Free Design Grammar
 
-VERSION =	2.2.1
+VERSION =	2.2.2
 DISTNAME =	ContextFreeSource${VERSION}
 PKGNAME =	cfdg-${VERSION}
 
@@ -25,6 +25,9 @@ MASTER_SITES =	http://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz
 
 USE_GMAKE =	Yes
+
+# ????
+WRKDIST =	${WRKDIR}/${DISTNAME}.tgz/
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
 
