@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/22 12:48:58 ajacoutot Exp $
 
-COMMENT=		FLTK Virtual Styles, List, Table, and Complex Table Widgets
+COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
 DISTNAME=		flvw-20000224
 PKGNAME=		flvw-1.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11 devel
 
@@ -22,8 +22,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		::x11/fltk
-RUN_DEPENDS+=		::x11/fltk
+BUILD_DEPENDS=		::x11/fltk
+RUN_DEPENDS=		::x11/fltk
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

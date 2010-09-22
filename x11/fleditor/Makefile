@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/22 12:48:23 ajacoutot Exp $
 
-COMMENT=		Text Editor for FLTK
+COMMENT=		text editor widget for FLTK
 
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
 PKGNAME=		fleditor-${V}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		fleditor 3.0
 CATEGORIES=		x11
@@ -20,10 +20,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += m stdc++
+
 MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		::x11/fltk
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/fltk
 
 USE_X11=		Yes
