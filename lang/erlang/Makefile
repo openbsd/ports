@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/19 12:52:49 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2010/09/22 13:50:20 jasper Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
 V=		R13B04
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-13b.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 
 # Erlang Public License
@@ -17,7 +17,7 @@ WANTLIB=	c crypto m ncurses pthread ssl util
 
 MAINTAINER=	Alex Popov <alex@seidlitz.ca>
 
-MASTER_SITES=	http://www.erlang.org/download/
+MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://www.erlang.org/
 

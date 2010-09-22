@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/09/19 12:52:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/09/22 13:50:20 jasper Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
@@ -5842,6 +5842,7 @@ lib/erlang/lib/${TOOLS}/ebin/xref_utils.beam
 lib/erlang/lib/${TOOLS}/emacs/
 lib/erlang/lib/${TOOLS}/emacs/README
 lib/erlang/lib/${TOOLS}/emacs/erlang-eunit.el
+lib/erlang/lib/${TOOLS}/emacs/erlang-skels.el
 lib/erlang/lib/${TOOLS}/emacs/erlang-start.el
 lib/erlang/lib/${TOOLS}/emacs/erlang.el
 lib/erlang/lib/${TOOLS}/emacs/test.erl.indented
