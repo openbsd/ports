@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.11 2010/09/22 22:02:38 jasper Exp $
+# $OpenBSD: ghc.port.mk,v 1.12 2010/09/22 22:09:53 jasper Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -33,6 +33,7 @@ MODGHC_BUILD ?=
 . if !${MODGHC_BUILD:L:Mnort}
 PKGNAME ?=		hs-${DISTNAME}
 RUN_DEPENDS +=		:ghc-${MODGHC_VER}:lang/ghc
+CATEGORIES +=		lang/ghc
 . endif
 
 . if ${MODGHC_BUILD:L:Mhackage}
