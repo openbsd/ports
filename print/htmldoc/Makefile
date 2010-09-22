@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2009/12/20 17:28:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2010/09/22 12:50:03 ajacoutot Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
 V=			1.8.27
 DISTNAME=		htmldoc-${V}
-PKGNAME=		${DISTNAME}p4
 CATEGORIES=     	print www
+
+REVISION=		5
 
 HOMEPAGE=		http://www.htmldoc.org/
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m ssl z
+WANTLIB += c crypto m ssl z jpeg png
 
 DISTFILES=		${DISTNAME}-source${EXTRACT_SUFX}
 MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
@@ -30,11 +31,11 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-gui
-LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
-			png.>=8::graphics/png
+LIB_DEPENDS=		::graphics/jpeg \
+			::graphics/png
 .else
-LIB_DEPENDS=		fltk.>=1,fltk_images.>=1::x11/fltk
-WANTLIB+=		X11 Xau Xdmcp Xext Xpm jpeg png
+LIB_DEPENDS=		::x11/fltk
+WANTLIB+=		X11 Xau Xdmcp Xext Xpm fltk fltk_images pthread
 USE_X11=		Yes
 .endif
 
