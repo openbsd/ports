@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 23:25:53 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,12 +6,10 @@ COMMENT =	Nginx module for deploying Ruby applications
 
 DISTNAME =	passenger-2.2.5
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/
-
-MAINTAINER =	Bernd Ahlers <bernd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
