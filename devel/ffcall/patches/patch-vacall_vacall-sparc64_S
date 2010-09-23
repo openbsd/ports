@@ -1,6 +1,10 @@
-$OpenBSD: patch-vacall_vacall-sparc64_S,v 1.2 2007/01/26 22:32:23 steven Exp $
---- vacall/vacall-sparc64.S.orig	Wed Jun  2 21:00:42 2004
-+++ vacall/vacall-sparc64.S	Fri Jan 26 23:11:52 2007
+$OpenBSD: patch-vacall_vacall-sparc64_S,v 1.3 2010/09/23 13:38:33 joshe Exp $
+
+Add missing .register declarations.
+Initalize __va_alist->anum to 0.
+
+--- vacall/vacall-sparc64.S.orig	Wed Jun  2 12:00:42 2004
++++ vacall/vacall-sparc64.S	Thu Apr  9 19:15:56 2009
 @@ -4,6 +4,8 @@
  .section	".text"
  	.align 4
@@ -10,3 +14,11 @@ $OpenBSD: patch-vacall_vacall-sparc64_S,v 1.2 2007/01/26 22:32:23 steven Exp $
  	DECLARE_FUNCTION(__vacall)
  	.type	 __vacall,$function
  	.proc	020
+@@ -57,6 +59,7 @@ __vacall:
+ 	st	%f31, [%fp+1895]
+ 	st	%g0, [%fp+1775]
+ 	stx	%g0, [%fp+1791]
++	st	%g0, [%fp+1831]
+ 	call	%o2, 0
+ 	st	%g0, [%fp+1799]
+ 	ld	[%fp+1799], %o0

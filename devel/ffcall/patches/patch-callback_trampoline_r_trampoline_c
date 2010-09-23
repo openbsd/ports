@@ -1,6 +1,14 @@
-$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.2 2010/08/23 14:16:09 jasper Exp $
+$OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.3 2010/09/23 13:38:33 joshe Exp $
+
+Fix the horrible trampoline code to work on sparc and
+sparc64. OpenBSD's runtime linker trashes registers which are supposed
+to be preserved across function calls, so steal some space on the
+stack instead.
+
+Also fix powerpc and mips64.
+
 --- callback/trampoline_r/trampoline.c.orig	Mon Jan 26 07:00:05 2004
-+++ callback/trampoline_r/trampoline.c	Sat Jul 31 06:59:02 2010
++++ callback/trampoline_r/trampoline.c	Fri Jul 30 14:34:10 2010
 @@ -21,7 +21,7 @@
  #endif
  #endif
@@ -23,3 +31,99 @@ $OpenBSD: patch-callback_trampoline_r_trampoline_c,v 1.2 2010/08/23 14:16:09 jas
  #endif
  #endif
  #endif
+@@ -259,11 +259,11 @@ extern void __TR_clear_cache();
+ #define TRAMP_ALIGN 8
+ #endif
+ #if defined(__sparc__) && !defined(__sparc64__)
+-#define TRAMP_LENGTH 16
++#define TRAMP_LENGTH 24
+ #define TRAMP_ALIGN 16
+ #endif
+ #ifdef __sparc64__
+-#define TRAMP_LENGTH 32
++#define TRAMP_LENGTH 40
+ #define TRAMP_ALIGN 16
+ #endif
+ #ifdef __alpha__
+@@ -614,52 +614,64 @@ __TR_function alloc_trampoline_r (address, data0, data
+   /* function:
+    *    sethi %hi(<data>),%g2		05000000 | (<data> >> 10)
+    *    sethi %hi(<address>),%g1	03000000 | (<address> >> 10)
+-   *    jmp %g1+%lo(<address>)		81C06000 | (<address> & 0x3ff)
++   *    add %sp,-8,%sp			9C03BFF8
+    *    or %g2,%lo(<data>),%g2		8410A000 | (<data> & 0x3ff)
++   *    jmp %g1+%lo(<address>)		81C06000 | (<address> & 0x3ff)
++   *    st %g2,[%sp+96]			C423A060
+    */
+ #define hi(word)  ((unsigned long) (word) >> 10)
+ #define lo(word)  ((unsigned long) (word) & 0x3ff)
+   *(long *) (function + 0) = 0x05000000 | hi(data);
+   *(long *) (function + 4) = 0x03000000 | hi(address);
+-  *(long *) (function + 8) = 0x81C06000 | lo(address);
++  *(long *) (function + 8) = 0x9C03BFF8;
+   *(long *) (function +12) = 0x8410A000 | lo(data);
++  *(long *) (function +16) = 0x81C06000 | lo(address);
++  *(long *) (function +20) = 0xC423A060;
+ #define is_tramp(function)  \
+   (*(long *) (function + 0) & 0xffc00000) == 0x05000000 && \
+   (*(long *) (function + 4) & 0xffc00000) == 0x03000000 && \
+-  (*(long *) (function + 8) & 0xfffffc00) == 0x81C06000 && \
+-  (*(long *) (function +12) & 0xfffffc00) == 0x8410A000
++  (*(long *) (function + 8))              == 0x9C03BFF8 && \
++  (*(long *) (function +12) & 0xfffffc00) == 0x8410A000 && \
++  (*(long *) (function +16) & 0xfffffc00) == 0x81C06000 && \
++  (*(long *) (function +20))              == 0xC423A060
+ #define hilo(hiword,loword)  (((hiword) << 10) | ((loword) & 0x3ff))
+ #define tramp_address(function)  \
+-  hilo(*(long *) (function + 4), *(long *) (function + 8))
++  hilo(*(long *) (function + 4), *(long *) (function +16))
+ #define tramp_data(function)  \
+   hilo(*(long *) (function + 0), *(long *) (function +12))
+ #endif
+ #ifdef __sparc64__
+   /* function:
+    *    rd %pc,%g1			83414000
+-   *    ldx [%g1+24],%g2		C4586018
++   *    ldx [%g1+32],%g2		C4586020
++   *    ldx [%g1+24],%g5		CA586018
++   *    add %sp,-32,%sp			9C03BFE0
+    *    jmp %g2				81C08000
+-   *    ldx [%g1+16],%g5		CA586010
++   *    stx %g5,[%sp+2239]		CA73A8BF
+    *    .long high32(<data>)		<data> >> 32
+    *    .long low32(<data>)		<data> & 0xffffffff
+    *    .long high32(<address>)		<address> >> 32
+    *    .long low32(<address>)		<address> & 0xffffffff
+    */
+   *(int *)  (function + 0) = 0x83414000;
+-  *(int *)  (function + 4) = 0xC4586018;
+-  *(int *)  (function + 8) = 0x81C08000;
+-  *(int *)  (function +12) = 0xCA586010;
+-  *(long *) (function +16) = (long) data;
+-  *(long *) (function +24) = (long) address;
++  *(int *)  (function + 4) = 0xC4586020;
++  *(int *)  (function + 8) = 0xCA586018;
++  *(int *)  (function +12) = 0x9C03BFE0;
++  *(int *)  (function +16) = 0x81C08000;
++  *(int *)  (function +20) = 0xCA73A8BF;
++  *(long *) (function +24) = (long) data;
++  *(long *) (function +32) = (long) address;
+ #define is_tramp(function)  \
+   *(int *)  (function + 0) == 0x83414000 && \
+-  *(int *)  (function + 4) == 0xC4586018 && \
+-  *(int *)  (function + 8) == 0x81C08000 && \
+-  *(int *)  (function +12) == 0xCA586010
++  *(int *)  (function + 4) == 0xC4586020 && \
++  *(int *)  (function + 8) == 0xCA586018 && \
++  *(int *)  (function +12) == 0x9C03BFE0 && \
++  *(int *)  (function +16) == 0x81C08000 && \
++  *(int *)  (function +20) == 0xCA73A8BF
+ #define tramp_address(function)  \
+-  *(long *) (function +24)
++  *(long *) (function +32)
+ #define tramp_data(function)  \
+-  *(long *) (function +16)
++  *(long *) (function +24)
+ #endif
+ #ifdef __alpha__
+   /* function:

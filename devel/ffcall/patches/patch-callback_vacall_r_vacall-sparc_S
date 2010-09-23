@@ -1,0 +1,16 @@
+$OpenBSD: patch-callback_vacall_r_vacall-sparc_S,v 1.1 2010/09/23 13:38:33 joshe Exp $
+
+Load the saved callback data from the stack into %g2, see the
+  trampoline.c patch for more info.
+
+--- callback/vacall_r/vacall-sparc.S.orig	Fri Nov 26 12:13:06 1999
++++ callback/vacall_r/vacall-sparc.S	Sat May  2 20:13:30 2009
+@@ -5,6 +5,8 @@
+ 	DECLARE_FUNCTION(__vacall_r)
+ 	.proc	020
+ C(__vacall_r:)
++	ld	[%sp+96], %g2
++	add	%sp, 8, %sp
+ 	!$PROLOGUE$ 0
+ 	save	%sp, -144, %sp
+ 	!$PROLOGUE$ 1

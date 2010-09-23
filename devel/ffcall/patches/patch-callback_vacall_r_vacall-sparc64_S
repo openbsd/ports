@@ -1,7 +1,13 @@
-$OpenBSD: patch-callback_vacall_r_vacall-sparc64_S,v 1.1 2004/01/16 22:01:45 naddy Exp $
---- callback/vacall_r/vacall-sparc64.S.orig	2004-01-16 22:47:29.000000000 +0100
-+++ callback/vacall_r/vacall-sparc64.S	2004-01-16 22:47:53.000000000 +0100
-@@ -4,6 +4,8 @@
+$OpenBSD: patch-callback_vacall_r_vacall-sparc64_S,v 1.2 2010/09/23 13:38:33 joshe Exp $
+
+Add missing .register declarations.
+Load the saved callback data from the stack into %g5, see the
+  trampoline.c patch for more info.
+Initalize __va_alist->anum to 0.
+
+--- callback/vacall_r/vacall-sparc64.S.orig	Fri Nov 26 12:35:23 1999
++++ callback/vacall_r/vacall-sparc64.S	Sat Apr 25 13:58:31 2009
+@@ -4,10 +4,14 @@
  .section	".text"
  	.align 4
  	.global __vacall_r
@@ -10,3 +16,17 @@ $OpenBSD: patch-callback_vacall_r_vacall-sparc64_S,v 1.1 2004/01/16 22:01:45 nad
  	DECLARE_FUNCTION(__vacall_r)
  	.type	 __vacall_r,$function
  	.proc	020
+ __vacall_r:
++	ldx	[%sp+2239], %g5
++	add	%sp, 32, %sp
+ 	!$PROLOGUE$ 0
+ 	save	%sp, -448, %sp
+ 	!$PROLOGUE$ 1
+@@ -55,6 +59,7 @@ __vacall_r:
+ 	st	%f31, [%fp+1895]
+ 	st	%g0, [%fp+1775]
+ 	stx	%g0, [%fp+1791]
++	st	%g0, [%fp+1831]
+ 	st	%g0, [%fp+1799]
+ 	ldx	[%g5], %o2
+ 	call	%o2, 0

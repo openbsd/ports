@@ -1,0 +1,15 @@
+$OpenBSD: patch-avcall_avcall_h_in,v 1.1 2010/09/23 13:38:33 joshe Exp $
+--- avcall/avcall.h.in.orig	Mon Jan 26 06:58:41 2004
++++ avcall/avcall.h.in	Sat Apr 25 16:17:43 2009
+@@ -1307,8 +1307,9 @@ typedef struct
+       ? -1 : (ASSIGN(TYPE,TYPE_SIZE,TYPE_ALIGN,(void*)((__avword)(LIST).aptr-(TYPE_SIZE)),VAL),\
+ 	      (LIST).aptr = (__avword*)(((__avword)(LIST).aptr+sizeof(__avword)-1) & -(long)sizeof(__avword)),\
+ 	      ((LIST).anum < 16						\
+-		&& ((LIST).farg_mask |= (-1 << (LIST).anum),		\
+-		    (LIST).darg_mask |= (-1 << (LIST).anum))),		\
++		&& ((TYPE_SIZE) > 4					\
++		    ? ((LIST).darg_mask |= (-1 << (LIST).anum))		\
++		    : ((LIST).farg_mask |= (-1 << (LIST).anum)))),	\
+ 	      (LIST).anum += (((((TYPE_SIZE)+(TYPE_ALIGN)-1) & -(long)(TYPE_ALIGN)) + sizeof(__avword)-1) & -(long)sizeof(__avword))/sizeof(__avword),\
+ 	      (LIST).farg_mask &= (1 << ((LIST).anum < 16 ? (LIST).anum : 16)) - 1, \
+ 	      (LIST).darg_mask &= (1 << ((LIST).anum < 16 ? (LIST).anum : 16)) - 1, \
