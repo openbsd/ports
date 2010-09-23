@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/23 20:32:00 fgsch Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
 DISTNAME=		Zine-0.1.2
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--prefix=${LOCALBASE} --python=${MODPY_BIN}
 CONFIGURE_SCRIPT=	${MODPY_BIN} ${WRKSRC}/configure
 
 DEPENDS=		::databases/py-sqlalchemy \
-			::devel/py-simplejson \
 			::devel/py-tz \
 			::devel/py-babel \
 			::devel/py-html5lib \
@@ -35,7 +34,8 @@ DEPENDS=		::databases/py-sqlalchemy \
 			::www/py-jinja2 \
 			::www/py-flup \
 			::textproc/py-lxml \
-			::textproc/py-pygments
+			::textproc/py-pygments \
+			${MODPY_JSON}
 
 BUILD_DEPENDS+=		${DEPENDS}
 RUN_DEPENDS+=		${DEPENDS}
