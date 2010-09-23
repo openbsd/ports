@@ -1,9 +1,0 @@
-$OpenBSD: patch-tools_gengobject_py,v 1.2 2009/01/22 16:06:05 jasper Exp $
---- tools/gengobject.py.orig	Fri Oct 12 16:44:51 2007
-+++ tools/gengobject.py	Fri Oct 12 16:45:45 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!${MODPY_BIN}
- 
- import sys
- import os.path
