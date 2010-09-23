@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 21:26:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/23 13:47:35 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
-DISTNAME=		telepathy-salut-0.3.11
-REVISION=		1
+DISTNAME=		telepathy-salut-0.3.13
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-salut/}
 
 WANTLIB += c crypto dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
-WANTLIB += m pcre pthread ssl tasn1 xml2 z
+WANTLIB += m pcre pthread ssl tasn1 xml2 z soup-2.4.>=1 telepathy-glib
+WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
 
 MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		avahi-client,avahi-common,avahi-glib,avahi-gobject::net/avahi \
-			soup-2.4.>=1::devel/libsoup \
-			telepathy-glib.>=5::net/telepathy/telepathy-glib
+LIB_DEPENDS=		::net/avahi \
+			::devel/libsoup \
+			::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -31,6 +31,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ssl
 
-REGRESS_DEPENDS=	::devel/check
+REGRESS_DEPENDS=	::devel/check \
+			::textproc/py-xmldiff
 
 .include <bsd.port.mk>
