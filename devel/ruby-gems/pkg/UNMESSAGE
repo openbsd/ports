@@ -1,0 +1,4 @@
+If you set up the symlinks to make rubygems 1.8 the system
+rubygems, don't forget to remove the following files:
+
+ rm ${PREFIX}/bin/gem

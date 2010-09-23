@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/10/12 17:18:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/23 22:06:47 jeremy Exp $
 
 COMMENT=	package management framework for the Ruby language
 
-V=		1.3.5
+V=		1.3.7
 DISTNAME=	rubygems-$V
 PKGNAME= 	ruby-gems-$V
+#REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/
@@ -29,8 +30,6 @@ PORTHOME = 	${WRKDIR}
 
 SUBST_VARS=	DISTNAME
 
-REGRESS_DEPENDS=::devel/ruby-rake
-
 do-configure:
 do-build:
 
@@ -38,9 +37,11 @@ pre-install:
 	@${SUBST_CMD} ${WRKSRC}/lib/rubygems/config_file.rb
 
 do-install:
-	 @cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
 		--prefix=${PREFIX}
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+	@mkdir -p ${WRKINST}${LOCALBASE}/lib/ruby/gems/${MODRUBY_REV}/{,cache,doc,gems,specifications}
+
+REGRESS_DEPENDS=	::devel/ruby-hoe
+MODRUBY_REGRESS=	rake
 
 .include <bsd.port.mk>
