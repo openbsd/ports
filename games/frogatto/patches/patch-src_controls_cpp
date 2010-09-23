@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_controls_cpp,v 1.1.1.1 2010/09/23 11:30:56 ajacoutot Exp $
+--- src/controls.cpp.orig	Thu Sep 23 08:16:24 2010
++++ src/controls.cpp	Thu Sep 23 08:16:48 2010
+@@ -1,6 +1,7 @@
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #else
++#include <arpa/inet.h>
+ #include <netinet/in.h>
+ #endif
+ 

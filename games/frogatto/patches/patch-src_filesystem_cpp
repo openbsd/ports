@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_filesystem_cpp,v 1.1.1.1 2010/09/23 11:30:56 ajacoutot Exp $
+--- src/filesystem.cpp.orig	Sun Jun 27 01:22:06 2010
++++ src/filesystem.cpp	Thu Sep 23 08:39:45 2010
+@@ -285,6 +285,9 @@ namespace {
+ #ifdef HAVE_CONFIG_H
+   const std::string data_dir=DATADIR ;
+   const bool have_datadir = true;
++#elif defined __OpenBSD__
++  const std::string data_dir="${TRUEPREFIX}/share/frogatto" ;
++  const bool have_datadir = true;
+ #else
+   const std::string data_dir="";
+   const bool have_datadir = false;
+@@ -299,9 +302,15 @@ void get_files_in_dir(const std::string& directory,
+ 					  FILE_NAME_MODE mode)
+ {
+ 	struct stat st;
++	std::string dirname;
+ 
+-	DIR* dir = opendir(directory.c_str());
++	if(have_datadir)
++		dirname = data_dir + "/" + directory;
++	else
++		dirname = directory;
+ 
++	DIR* dir = opendir(dirname.c_str());
++
+ 	if(dir == NULL) {
+ 		return;
+ 	}
+@@ -331,14 +340,14 @@ void get_files_in_dir(const std::string& directory,
+ #endif /* !APPLE */
+ 
+ 		std::string fullname;
+-		if (directory.empty() || directory[directory.size()-1] == '/'
++		if (dirname.empty() || dirname[dirname.size()-1] == '/'
+ #ifdef __AMIGAOS4__
+-			|| (directory[directory.size()-1]==':')
++			|| (dirname[dirname.size()-1]==':')
+ #endif /* __AMIGAOS4__ */
+ 		)
+-			fullname = directory + basename;
++			fullname = dirname + basename;
+ 		else
+-			fullname = (directory + "/") + basename;
++			fullname = (dirname + "/") + basename;
+ 
+ 		if (::stat(fullname.c_str(), &st) != -1) {
+ 			if (S_ISREG(st.st_mode)) {
