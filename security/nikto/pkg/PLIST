@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/08/31 08:16:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/09/23 08:59:34 jasper Exp $
 bin/nikto
 @man man/man1/nikto.1
 share/doc/nikto/
@@ -72,6 +72,8 @@ share/nikto/plugins/nikto_put_del_test.plugin
 share/nikto/plugins/nikto_report_csv.plugin
 @comment no checksum
 share/nikto/plugins/nikto_report_html.plugin
+@comment no checksum
+share/nikto/plugins/nikto_report_msf.plugin
 @comment no checksum
 share/nikto/plugins/nikto_report_nbe.plugin
 @comment no checksum
