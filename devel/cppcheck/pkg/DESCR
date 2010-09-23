@@ -1,0 +1,4 @@
+Cppcheck is an analysis tool for C/C++ code. Unlike C/C++ compilers and
+many other analysis tools, we don't detect syntax errors. Cppcheck only
+detects the types of bugs that the compilers normally fail to detect.
+The goal is no false positives.
