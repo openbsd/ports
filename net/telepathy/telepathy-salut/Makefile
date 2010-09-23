@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/23 13:47:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=		::net/avahi \
 			::devel/libsoup \
 			::net/telepathy/telepathy-glib
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

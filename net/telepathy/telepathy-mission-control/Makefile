@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/23 13:44:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -19,7 +19,6 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		::net/telepathy/telepathy-glib
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 LIBTOOL_FLAGS=		--tag=disable-static

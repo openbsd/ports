@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/23 13:38:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
@@ -18,7 +18,6 @@ BUILD_DEPENDS=		::devel/py-twisted/words \
 LIB_DEPENDS=		::net/pidgin,-libpurple \
 			::net/telepathy/telepathy-glib
 
-USE_GMAKE=		Yes
 MODPY_RUNDEP=		No
 USE_LIBTOOL=		Yes
 

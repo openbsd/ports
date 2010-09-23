@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/23 13:34:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		flexible communications framework, MSN component
 
@@ -8,7 +8,6 @@ MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-butterfly/}
 
 MODULES=		lang/python
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 

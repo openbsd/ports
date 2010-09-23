@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/23 13:37:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=		::devel/libsoup \
 			::security/libgpg-error \
 			::sysutils/e2fsprogs
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		UUID_LIBS="`pkg-config --libs e2fs-uuid`" \

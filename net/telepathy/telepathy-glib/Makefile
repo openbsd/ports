@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/23 13:37:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/23 14:19:10 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -19,7 +19,6 @@ MODPY_RUNDEP=           No
 BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		::x11/dbus-glib
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
