@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2009/12/22 00:31:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/09/23 09:27:21 dcoppa Exp $
 %%SHARED%%
 @bin bin/xchat
 lib/xchat/
@@ -6,8 +6,6 @@ lib/xchat/plugins/
 @comment lib/xchat/plugins/perl.a
 @comment lib/xchat/plugins/perl.la
 share/applications/xchat.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.xchat.service.service
 share/locale/be/LC_MESSAGES/xchat.mo
 share/locale/ca/LC_MESSAGES/xchat.mo
@@ -21,11 +19,13 @@ share/locale/gl/LC_MESSAGES/xchat.mo
 share/locale/hu/LC_MESSAGES/xchat.mo
 share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
+share/locale/kn/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
 share/locale/lt/LC_MESSAGES/xchat.mo
 share/locale/mk/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/pa/LC_MESSAGES/xchat.mo
+share/locale/pl/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
 share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sq/LC_MESSAGES/xchat.mo
