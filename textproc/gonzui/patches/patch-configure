@@ -1,0 +1,98 @@
+$OpenBSD: patch-configure,v 1.1 2010/09/23 22:14:53 jeremy Exp $
+--- configure.orig	Mon Sep 13 11:36:05 2010
++++ configure	Mon Sep 13 11:38:11 2010
+@@ -2956,7 +2956,7 @@ fi;
+ echo $ECHO_N "checking where .rb files should go... $ECHO_C" >&6
+   if test "x$rubydir" = x; then
+ 
+-    rubydir=`ruby -rrbconfig -e 'puts Config::CONFIG["sitelibdir"]'`
++    rubydir=`ruby18 -rrbconfig -e 'puts Config::CONFIG["sitelibdir"]'`
+ 
+   fi
+   echo "$as_me:$LINENO: result: $rubydir" >&5
+@@ -2981,7 +2981,7 @@ fi;
+ echo $ECHO_N "checking where .rb files should go... $ECHO_C" >&6
+   if test "x$rubyarchdir" = x; then
+ 
+-    rubyarchdir=`ruby -rrbconfig -e 'puts Config::CONFIG["sitearchdir"]'`
++    rubyarchdir=`ruby18 -rrbconfig -e 'puts Config::CONFIG["sitearchdir"]'`
+ 
+   fi
+   echo "$as_me:$LINENO: result: $rubyarchdir" >&5
+@@ -2989,13 +2989,13 @@ echo "${ECHO_T}$rubyarchdir" >&6
+ 
+ 
+ 
+-  RUBY_CC="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["CC"]'`"
+-  RUBY_LDSHARED="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["LDSHARED"]'`"
+-  RUBY_CFLAGS="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["CFLAGS"]'`"
+-  RUBY_DLEXT="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["DLEXT"]'`"
+-  RUBY_DLDFLAGS="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["DLDFLAGS"]'`"
+-  RUBY_LIBS="`ruby -rmkmf -e 'puts Config::MAKEFILE_CONFIG["LIBS"]'`"
+-  RUBY_HDRHDIR="`ruby -rmkmf -e 'puts Config::CONFIG["archdir"]'`"
++  RUBY_CC="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["CC"]'`"
++  RUBY_LDSHARED="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["LDSHARED"]'`"
++  RUBY_CFLAGS="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["CFLAGS"]'`"
++  RUBY_DLEXT="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["DLEXT"]'`"
++  RUBY_DLDFLAGS="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["DLDFLAGS"]'`"
++  RUBY_LIBS="`ruby18 -rmkmf -e 'puts Config::MAKEFILE_CONFIG["LIBS"]'`"
++  RUBY_HDRHDIR="`ruby18 -rmkmf -e 'puts Config::CONFIG["archdir"]'`"
+   RUBY_CPPFLAGS='-I. -I$(RUBY_HDRHDIR)'
+ 
+ 
+@@ -3055,8 +3055,8 @@ fi;
+       REQUIRED_VERSION="1.8.2"
+   echo "$as_me:$LINENO: checking ruby version..." >&5
+ echo $ECHO_N "checking ruby version...... $ECHO_C" >&6
+-  RUBY_VERSION="`ruby -e "puts RUBY_VERSION"`"
+-  if ruby -e "exit(RUBY_VERSION >= '$REQUIRED_VERSION')" >/dev/null; then
++  RUBY_VERSION="`ruby18 -e "puts RUBY_VERSION"`"
++  if ruby18 -e "exit(RUBY_VERSION >= '$REQUIRED_VERSION')" >/dev/null; then
+     echo "$as_me:$LINENO: result: $RUBY_VERSION found" >&5
+ echo "${ECHO_T}$RUBY_VERSION found" >&6
+   else
+@@ -3070,7 +3070,7 @@ echo "$as_me: error: $REQUIRED_VERSION or later is nee
+   URL="http://raa.ruby-lang.org/project/bdb"
+   echo "$as_me:$LINENO: checking $LIB for ruby..." >&5
+ echo $ECHO_N "checking $LIB for ruby...... $ECHO_C" >&6
+-  if ruby -r$LIB -e '' 2>/dev/null; then
++  if ruby18 -r$LIB -e '' 2>/dev/null; then
+     echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6
+   else
+@@ -3088,7 +3088,7 @@ echo "$as_me: error: $LIB for ruby not found" >&2;}
+   URL="http://raa.ruby-lang.org/project/webrick"
+   echo "$as_me:$LINENO: checking $LIB for ruby..." >&5
+ echo $ECHO_N "checking $LIB for ruby...... $ECHO_C" >&6
+-  if ruby -r$LIB -e '' 2>/dev/null; then
++  if ruby18 -r$LIB -e '' 2>/dev/null; then
+     echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6
+   else
+@@ -3106,7 +3106,7 @@ echo "$as_me: error: $LIB for ruby not found" >&2;}
+   URL=""
+   echo "$as_me:$LINENO: checking $LIB for ruby..." >&5
+ echo $ECHO_N "checking $LIB for ruby...... $ECHO_C" >&6
+-  if ruby -r$LIB -e '' 2>/dev/null; then
++  if ruby18 -r$LIB -e '' 2>/dev/null; then
+     echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6
+   else
+@@ -3124,7 +3124,7 @@ echo "$as_me: error: $LIB for ruby not found" >&2;}
+   URL="http://raa.ruby-lang.org/project/ruby-zlib"
+   echo "$as_me:$LINENO: checking $LIB for ruby..." >&5
+ echo $ECHO_N "checking $LIB for ruby...... $ECHO_C" >&6
+-  if ruby -r$LIB -e '' 2>/dev/null; then
++  if ruby18 -r$LIB -e '' 2>/dev/null; then
+     echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6
+   else
+@@ -3142,7 +3142,7 @@ echo "$as_me: error: $LIB for ruby not found" >&2;}
+   URL="http://raa.ruby-lang.org/project/strscan"
+   echo "$as_me:$LINENO: checking $LIB for ruby..." >&5
+ echo $ECHO_N "checking $LIB for ruby...... $ECHO_C" >&6
+-  if ruby -r$LIB -e '' 2>/dev/null; then
++  if ruby18 -r$LIB -e '' 2>/dev/null; then
+     echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6
+   else

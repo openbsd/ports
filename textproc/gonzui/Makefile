@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/23 22:14:53 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		mips64 mips64el
 
 COMMENT=		source code search engine
 DISTNAME=		gonzui-1.2
-REVISION=		10
+REVISION=		11
 CATEGORIES=		textproc www
 
 HOMEPAGE=		http://gonzui.sourceforge.net/
@@ -27,7 +27,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gonzui/}
 
 BUILD_DEPENDS=		::databases/db/v4 \
 			::databases/ruby-bdb \
-			:ruby-iconv->=1.8.4:lang/ruby,-iconv
+			${MODRUBY_ICONV_DEPENDS}
 RUN_DEPENDS=		::archivers/bzip2 \
 			::archivers/unzip \
 			::textproc/p5-PPI

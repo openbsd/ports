@@ -1,0 +1,16 @@
+$OpenBSD: patch-langscan_php_Makefile_in,v 1.1 2010/09/23 22:14:53 jeremy Exp $
+--- langscan/php/Makefile.in.orig	Mon Jul  4 08:08:39 2005
++++ langscan/php/Makefile.in	Mon Sep 13 13:17:51 2010
+@@ -497,10 +497,10 @@ uninstall-info: uninstall-info-recursive
+ 
+ 
+ php.h: ../_template.h tokenlist.txt
+-	ruby ../_make_h.rb ../_template.h tokenlist.txt php PHP
++	ruby18 ../_make_h.rb ../_template.h tokenlist.txt php PHP
+ 
+ php.c: ../_template.c
+-	ruby ../_make_c.rb ../_template.c php PHP
++	ruby18 ../_make_c.rb ../_template.c php PHP
+ 
+ # We do this to workaround flex 2.5.4 issue because our .l
+ # file could not be processed with flex 2.5.4.

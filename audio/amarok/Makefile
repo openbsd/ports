@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/23 22:10:28 jeremy Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-REVISION =	6
+REVISION =	7
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -25,7 +25,7 @@ WANTLIB += pcreposix png pthread stdc++ usb util xml2 z
 WANTLIB += pthread-stubs xcb lib/qt3/qt-mt.>=3.33 konqsidebarplugin
 WANTLIB += kdecore.>=6 DCOP khtml kwalletclient kdefx kdeprint
 WANTLIB += kutils kdeui kparts kio kdesu kjs knewstuff kdnssd tag.>=5.0
-WANTLIB += xine sqlite3 gpod njb ruby mtp
+WANTLIB += xine sqlite3 gpod njb ruby18 mtp
 
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS +=	::x11/qt3 \
@@ -37,7 +37,7 @@ LIB_DEPENDS +=	::x11/qt3 \
 		::databases/sqlite3 \
 		::audio/libgpod \
 		::audio/libnjb \
-		::lang/ruby \
+		:ruby->=1.8,<=1.9:lang/ruby/1.8 \
 		::devel/libmtp
 
 SHARED_LIBS +=	amarok               0.0      # .0.0

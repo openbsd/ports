@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2008/04/28 00:39:10 sthen Exp $
---- configure.in.orig	Thu Apr 10 16:16:39 2008
-+++ configure.in	Tue Apr 22 04:40:16 2008
+$OpenBSD: patch-configure_in,v 1.7 2010/09/23 22:10:28 jeremy Exp $
+--- configure.in.orig	Wed Aug 13 14:21:52 2008
++++ configure.in	Mon Sep 13 13:02:05 2010
 @@ -794,7 +794,7 @@ AC_MSG_RESULT($amarok_glibcsched_works)
  ###############################################################################
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure_in,v 1.6 2008/04/28 00:39:10 sthen Exp $
  
  AM_CONDITIONAL(with_konqsidebar, [test x$have_konqsidebar = xyes])
  
+@@ -1160,7 +1160,7 @@ AC_CHECK_TYPES([uint8_t, u_int8_t, uint16_t, u_int16_t
+ # BEGIN DAAP MONGREL RUBY VARIABLE
+ ###############################################################################
+ 
+-AC_PATH_PROG(RUBY, ruby, no)
++AC_PATH_PROG(RUBY, ruby18, no)
+ 
+ ruby_includes=[`$RUBY -rrbconfig -e 'puts Config.expand( Config::MAKEFILE_CONFIG["archdir"] )'`]
+ ruby_ldflags=[`$RUBY -rrbconfig -e 'puts Config.expand( Config::MAKEFILE_CONFIG["LIBRUBYARG_SHARED"] )'`]

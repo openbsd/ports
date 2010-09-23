@@ -1,0 +1,16 @@
+$OpenBSD: patch-langscan_sh_Makefile_in,v 1.1 2010/09/23 22:14:53 jeremy Exp $
+--- langscan/sh/Makefile.in.orig	Mon Jul  4 08:08:40 2005
++++ langscan/sh/Makefile.in	Mon Sep 13 13:17:52 2010
+@@ -497,10 +497,10 @@ uninstall-info: uninstall-info-recursive
+ 
+ 
+ sh.h: ../_template.h tokenlist.txt
+-	ruby ../_make_h.rb ../_template.h tokenlist.txt sh Shell
++	ruby18 ../_make_h.rb ../_template.h tokenlist.txt sh Shell
+ 
+ sh.c: ../_template.c
+-	ruby ../_make_c.rb ../_template.c sh Shell
++	ruby18 ../_make_c.rb ../_template.c sh Shell
+ 
+ # We do this to workaround flex 2.5.4 issue because our .l
+ # file could not be processed with flex 2.5.4.

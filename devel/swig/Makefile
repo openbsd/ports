@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/08/30 22:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/09/23 22:12:50 jeremy Exp $
 
 COMMENT-main=	simplified wrapper and interface generator
 
@@ -7,7 +7,7 @@ VERSION=	1.3.36
 
 DISTNAME=	swig-${VERSION}
 PKGNAME-main=	${DISTNAME}
-REVISION-main = 2
+REVISION-main = 3
 MULTI_PACKAGES=	-main
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
@@ -25,7 +25,7 @@ WANTLIB=		c m stdc++
 MODULES=	lang/python lang/tcl
 RUN_DEPENDS-main=
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
-		::lang/ruby \
+		:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
 		::lang/guile
 
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.5 2010/09/03 19:49:12 sthen Exp $
---- configure.ac.orig	Tue Oct 13 17:09:30 2009
-+++ configure.ac	Fri Sep  3 20:48:24 2010
+$OpenBSD: patch-configure_ac,v 1.6 2010/09/23 22:12:10 jeremy Exp $
+--- configure.ac.orig	Tue Oct 13 09:09:30 2009
++++ configure.ac	Thu Sep 16 14:06:25 2010
 @@ -6,7 +6,7 @@ AC_PREREQ(2.58)
  dnl Get the version of Subversion, using m4's esyscmd() command to do this
  dnl at m4-time, since AC_INIT() requires it then.
@@ -28,3 +28,16 @@ $OpenBSD: patch-configure_ac,v 1.5 2010/09/03 19:49:12 sthen Exp $
  if test -z "$PYTHON"; then
    AC_MSG_WARN([Python 2.4 or later is required to run the testsuite])
    AC_MSG_WARN([or to use the Subversion Python bindings])
+@@ -787,10 +787,10 @@ SVN_CHECK_JDK($JAVA_OLDEST_WORKING_VER)
+ 
+ AC_PATH_PROG(PERL, perl, none)
+ 
+-AC_PATH_PROG(RUBY, ruby, none)
++AC_PATH_PROG(RUBY, ruby18, none)
+ if test "$RUBY" != "none"; then
+   if "$RUBY" -r mkmf -e 'exit(have_func("rb_hash_foreach") ? 0 : 1)'; then
+-    AC_PATH_PROG(RDOC, rdoc, none)
++    AC_PATH_PROG(RDOC, rdoc18, none)
+     AC_CACHE_CHECK([for Ruby major version], [svn_cv_ruby_major],[
+     svn_cv_ruby_major="`$RUBY -rrbconfig -e 'print Config::CONFIG.fetch(%q(MAJOR))'`"
+     ])

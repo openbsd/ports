@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2009/04/28 23:43:56 stsp Exp $
---- Makefile.in.orig	Mon Feb 16 16:10:48 2009
-+++ Makefile.in	Thu Feb 19 19:36:18 2009
+$OpenBSD: patch-Makefile_in,v 1.11 2010/09/23 22:12:10 jeremy Exp $
+--- Makefile.in.orig	Mon Feb 16 08:10:48 2009
++++ Makefile.in	Thu Sep 16 14:04:24 2010
 @@ -76,12 +76,12 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile_in,v 1.10 2009/04/28 23:43:56 stsp Exp $
  
  javahl_javadir = @libdir@/svn-javahl
  javahl_javahdir = @libdir@/svn-javahl/include
-@@ -122,8 +122,8 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
+@@ -122,13 +122,13 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
  SWIG = @SWIG@
  SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
  SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
@@ -28,3 +28,9 @@ $OpenBSD: patch-Makefile_in,v 1.10 2009/04/28 23:43:56 stsp Exp $
  SWIG_PL_INCLUDES = @SWIG_PL_INCLUDES@
  SWIG_RB_INCLUDES = @SWIG_RB_INCLUDES@ -I$(SWIG_SRC_DIR)/ruby/libsvn_swig_ruby
  SWIG_RB_COMPILE = @SWIG_RB_COMPILE@
+ SWIG_RB_LINK = @SWIG_RB_LINK@
+-SWIG_RB_LIBS = @SWIG_RB_LIBS@
++SWIG_RB_LIBS = -lruby18
+ SWIG_RB_SITE_LIB_DIR = @SWIG_RB_SITE_LIB_DIR@
+ SWIG_RB_SITE_ARCH_DIR = @SWIG_RB_SITE_ARCH_DIR@
+ SWIG_RB_TEST_VERBOSE = @SWIG_RB_TEST_VERBOSE@

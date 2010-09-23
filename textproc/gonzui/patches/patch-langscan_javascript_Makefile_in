@@ -1,0 +1,16 @@
+$OpenBSD: patch-langscan_javascript_Makefile_in,v 1.1 2010/09/23 22:14:53 jeremy Exp $
+--- langscan/javascript/Makefile.in.orig	Mon Jul  4 08:08:39 2005
++++ langscan/javascript/Makefile.in	Mon Sep 13 13:17:51 2010
+@@ -497,10 +497,10 @@ uninstall-info: uninstall-info-recursive
+ 
+ 
+ javascript.h: ../_template.h tokenlist.txt
+-	ruby ../_make_h.rb ../_template.h tokenlist.txt javascript JavaScript
++	ruby18 ../_make_h.rb ../_template.h tokenlist.txt javascript JavaScript
+ 
+ javascript.c: ../_template.c
+-	ruby ../_make_c.rb ../_template.c javascript JavaScript
++	ruby18 ../_make_c.rb ../_template.c javascript JavaScript
+ 
+ # We do this to workaround flex 2.5.4 issue because our .l
+ # file could not be processed with flex 2.5.4.
