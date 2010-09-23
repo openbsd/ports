@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2010/09/21 17:11:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/09/23 14:06:22 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -55,7 +55,8 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::textproc/enchant \
 			::net/telepathy/telepathy-logger
 
-RUN_DEPENDS=		::net/telepathy/telepathy-gabble \
+RUN_DEPENDS=		::devel/iso-codes \
+			::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-haze \
 			::net/telepathy/telepathy-idle \
 			::net/telepathy/telepathy-salut \
