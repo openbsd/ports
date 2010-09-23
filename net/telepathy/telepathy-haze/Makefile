@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/21 21:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/23 13:38:15 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
-DISTNAME=		telepathy-haze-0.3.4
-REVISION=		2
+DISTNAME=		telepathy-haze-0.4.0
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-haze/}
 
@@ -11,19 +10,23 @@ MODULES=		devel/gettext \
 			lang/python
 
 WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre pthread util xml2 z
+WANTLIB += gthread-2.0 m pcre pthread util xml2 z purple telepathy-glib
 
 BUILD_DEPENDS=		::devel/py-twisted/words \
 			::net/py-xmpp \
 			::textproc/libxslt
-LIB_DEPENDS=		purple::net/pidgin,-libpurple \
-			telepathy-glib::net/telepathy/telepathy-glib
+LIB_DEPENDS=		::net/pidgin,-libpurple \
+			::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes
 MODPY_RUNDEP=		No
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
