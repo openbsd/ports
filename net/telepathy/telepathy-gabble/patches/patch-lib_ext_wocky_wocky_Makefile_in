@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_ext_wocky_tests_Makefile_in,v 1.2 2010/09/23 13:55:53 jasper Exp $
+$OpenBSD: patch-lib_ext_wocky_wocky_Makefile_in,v 1.1 2010/09/23 13:55:53 jasper Exp $
 
 Don't enable all the warnings, prevents dozens of patches for NULL -> (void *)0.
 
---- lib/ext/wocky/tests/Makefile.in.orig	Wed Sep 22 16:50:28 2010
-+++ lib/ext/wocky/tests/Makefile.in	Wed Sep 22 16:50:48 2010
-@@ -295,7 +295,7 @@ ECHO_N = @ECHO_N@
+--- lib/ext/wocky/wocky/Makefile.in.orig	Thu Sep 23 15:50:44 2010
++++ lib/ext/wocky/wocky/Makefile.in	Thu Sep 23 15:50:53 2010
+@@ -238,7 +238,7 @@ ECHO_N = @ECHO_N@
  ECHO_T = @ECHO_T@
  EGREP = @EGREP@
  ENABLE_CODING_STYLE_CHECKS = @ENABLE_CODING_STYLE_CHECKS@
