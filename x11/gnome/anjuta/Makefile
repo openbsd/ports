@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/23 14:15:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,11 +9,7 @@ GNOME_VERSION=		2.30.2.1
 
 REVISION=		0
 
-SHARED_LIBS=		anjuta		0.0	\
-			anjuta-ctags 	0.0	\
-			anjuta-egg	0.0	\
-			file-manager	0.0	\
-			language-manager 0.0
+SHARED_LIBS=		anjuta		0.0
 
 CATEGORIES=		devel
 
