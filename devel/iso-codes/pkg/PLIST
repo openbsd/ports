@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/06/02 08:53:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/09/23 11:21:53 jasper Exp $
 lib/pkgconfig/
 lib/pkgconfig/iso-codes.pc
 share/locale/
@@ -464,6 +464,14 @@ share/locale/sr/LC_MESSAGES/iso_3166_2.mo
 share/locale/sr/LC_MESSAGES/iso_4217.mo
 share/locale/sr/LC_MESSAGES/iso_639.mo
 share/locale/sr/LC_MESSAGES/iso_639_3.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/iso_15924.mo
+share/locale/sr@latin/LC_MESSAGES/iso_3166.mo
+share/locale/sr@latin/LC_MESSAGES/iso_3166_2.mo
+share/locale/sr@latin/LC_MESSAGES/iso_4217.mo
+share/locale/sr@latin/LC_MESSAGES/iso_639.mo
+share/locale/sr@latin/LC_MESSAGES/iso_639_3.mo
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/iso_15924.mo
