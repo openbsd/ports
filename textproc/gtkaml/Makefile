@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2010/05/16 08:09:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/23 13:47:41 ajacoutot Exp $
+
+BROKEN=			does not compile with vala >= 0.10
 
 COMMENT=		XML parser that extends the Vala.Parser
 
