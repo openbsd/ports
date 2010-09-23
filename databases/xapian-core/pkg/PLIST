@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/07 08:39:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/23 12:49:57 ajacoutot Exp $
 %%SHARED%%
 @bin bin/copydatabase
 @bin bin/delve
@@ -17,36 +17,39 @@ bin/xapian-config
 @bin bin/xapian-replicate-server
 @bin bin/xapian-tcpsrv
 include/xapian/
-include/xapian/xapian/
-include/xapian/xapian.h
-include/xapian/xapian/base.h
-include/xapian/xapian/database.h
-include/xapian/xapian/dbfactory.h
-include/xapian/xapian/deprecated.h
-include/xapian/xapian/derefwrapper.h
-include/xapian/xapian/document.h
-include/xapian/xapian/enquire.h
-include/xapian/xapian/error.h
-include/xapian/xapian/errorhandler.h
-include/xapian/xapian/expanddecider.h
-include/xapian/xapian/keymaker.h
-include/xapian/xapian/matchspy.h
-include/xapian/xapian/positioniterator.h
-include/xapian/xapian/postingiterator.h
-include/xapian/xapian/postingsource.h
-include/xapian/xapian/query.h
-include/xapian/xapian/queryparser.h
-include/xapian/xapian/registry.h
-include/xapian/xapian/stem.h
-include/xapian/xapian/termgenerator.h
-include/xapian/xapian/termiterator.h
-include/xapian/xapian/types.h
-include/xapian/xapian/unicode.h
-include/xapian/xapian/valueiterator.h
-include/xapian/xapian/valuesetmatchdecider.h
-include/xapian/xapian/version.h
-include/xapian/xapian/visibility.h
-include/xapian/xapian/weight.h
+include/xapian.h
+include/xapian/base.h
+include/xapian/database.h
+include/xapian/dbfactory.h
+include/xapian/deprecated.h
+include/xapian/derefwrapper.h
+include/xapian/document.h
+include/xapian/enquire.h
+include/xapian/error.h
+include/xapian/errorhandler.h
+include/xapian/expanddecider.h
+include/xapian/keymaker.h
+include/xapian/matchspy.h
+include/xapian/positioniterator.h
+include/xapian/postingiterator.h
+include/xapian/postingsource.h
+include/xapian/query.h
+include/xapian/queryparser.h
+include/xapian/registry.h
+include/xapian/stem.h
+include/xapian/termgenerator.h
+include/xapian/termiterator.h
+include/xapian/types.h
+include/xapian/unicode.h
+include/xapian/valueiterator.h
+include/xapian/valuesetmatchdecider.h
+include/xapian/version.h
+include/xapian/visibility.h
+include/xapian/weight.h
+lib/cmake/
+lib/cmake/xapian/
+lib/cmake/xapian/xapian-config-version.cmake
+lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.a
 lib/libxapian.la
 @man man/man1/copydatabase.1
@@ -347,6 +350,7 @@ share/doc/xapian-core/apidoc/html/inherit__graph__24.png
 share/doc/xapian-core/apidoc/html/inherit__graph__25.png
 share/doc/xapian-core/apidoc/html/inherit__graph__26.png
 share/doc/xapian-core/apidoc/html/inherit__graph__27.png
+share/doc/xapian-core/apidoc/html/inherit__graph__28.png
 share/doc/xapian-core/apidoc/html/inherit__graph__3.png
 share/doc/xapian-core/apidoc/html/inherit__graph__4.png
 share/doc/xapian-core/apidoc/html/inherit__graph__5.png
@@ -380,6 +384,8 @@ share/doc/xapian-core/apidoc/html/query_8h.html
 share/doc/xapian-core/apidoc/html/queryparser_8h.html
 share/doc/xapian-core/apidoc/html/registry_8h.html
 share/doc/xapian-core/apidoc/html/stem_8h.html
+share/doc/xapian-core/apidoc/html/structXapian_1_1StemImplementation-members.html
+share/doc/xapian-core/apidoc/html/structXapian_1_1StemImplementation.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1ValueRangeProcessor-members.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1ValueRangeProcessor.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1ValueRangeProcessor__inherit__graph.png
