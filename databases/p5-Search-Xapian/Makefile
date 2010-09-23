@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/10 14:51:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/23 12:52:33 ajacoutot Exp $
 
 COMMENT=		perl bindings for the xapian search library
 
-V=			1.2.0
+V=			1.2.3
 DISTNAME=		Search-Xapian-${V}.0
 CATEGORIES=		databases
 MODULES=		cpan
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += e2fs-uuid m stdc++ z
+WANTLIB += e2fs-uuid m stdc++ z xapian
 
 MASTER_SITES=		http://oligarchy.co.uk/xapian/${V}/
 
-LIB_DEPENDS=		xapian::databases/xapian-core
+LIB_DEPENDS=		:xapian-core->=1.2.3:databases/xapian-core
 
 .include <bsd.port.mk>
