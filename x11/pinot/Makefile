@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/11 09:09:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/23 12:49:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.96
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11 misc
 
@@ -46,7 +46,8 @@ LIB_DEPENDS=	::x11/gtk2mm \
 		::audio/taglib \
 		::databases/sqlite3 \
 		::x11/dbus-glib \
-		::graphics/libexif
+		::graphics/libexif \
+		::devel/libidn
 
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/pinot/backends/
