@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/22 12:04:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/23 17:06:18 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.9.2
-REVISION=		3
+REVISION=		4
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -55,8 +55,6 @@ CONFIGURE_ARGS =	--with-gio \
 			--enable-panscan \
 			--without-alsa \
 			--without-flat-volume \
-			--without-gpm-new-method \
-			--without-gpm-old-method \
 			--disable-nautilus
 
 post-install:
