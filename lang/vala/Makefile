@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/24 10:09:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/09/23 14:15:37 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.8.1
+GNOME_VERSION=		0.10.0
 
-SHARED_LIBS +=	vala                 3.0      # .0.0
+SHARED_LIBS +=  vala-0.10                 0.0 # 0.0
 
 CATEGORIES=		lang
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pcre pthread
+WANTLIB += c pcre pthread glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -28,7 +28,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::textproc/libxslt \
 			::textproc/p5-XML-LibXML
-LIB_DEPENDS=		glib-2.0.>=1800,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS=		::devel/glib2
 REGRESS_DEPENDS=	::shells/bash	
 
 CONFIGURE_STYLE=	gnu
