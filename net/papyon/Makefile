@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 13:33:30 jasper Exp $
 
 COMMENT=		fork of pymsn to support telepathy-butterfly
 
-MODPY_EGG_VERSION=	0.4.6
+MODPY_EGG_VERSION=	0.5.1
 DISTNAME=		papyon-${MODPY_EGG_VERSION}
-REVISION=		1
 CATEGORIES=		net
 
-HOMEPAGE=		http://telepathy.freedesktop.org/wiki/Papyon
+HOMEPAGE=		http://www.freedesktop.org/wiki/Software/papyon
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://telepathy.freedesktop.org/releases/papyon/
+MASTER_SITES=		http://www.freedesktop.org/software/papyon/releases/
 
 MODULES=		lang/python
 
