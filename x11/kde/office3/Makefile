@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/08/30 21:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2010/09/23 22:25:37 jeremy Exp $
 
 COMMENT=		office suite for KDE
 
@@ -85,7 +85,7 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::graphics/ImageMagick \
 		::graphics/jbigkit \
 		::databases/mysql \
-		::lang/ruby \
+		:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
 		::graphics/libexif \
 		::print/libpaper \
 		::print/poppler,-qt \
@@ -95,7 +95,7 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::databases/postgresql
 
 
-REVISION =	15
+REVISION =	16
 WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
@@ -109,7 +109,7 @@ WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
 	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
-	python2.5 qtmcop readline ruby sndio soundserver_idl ssl stdc++ \
+	python2.5 qtmcop readline ruby18 sndio soundserver_idl ssl stdc++ \
 	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd \
 	wv2 xcb xml2 xslt z
 

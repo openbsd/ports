@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/08 17:10:04 landry Exp $
+$OpenBSD: patch-Makefile,v 1.2 2010/09/23 22:21:54 jeremy Exp $
 --- Makefile.orig	Wed Mar 16 02:25:03 2005
 +++ Makefile	Tue Jun  3 00:50:13 2008
 @@ -1,6 +1,6 @@
@@ -10,3 +10,12 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/08 17:10:04 landry Exp $
  DOCDIR=${PREFIX}/share/doc/raggle
  DATADIR=${PREFIX}/share/raggle
  DATA=themes extras
+@@ -22,7 +22,7 @@ install :
+ 	if [ ! -d "${MANDIR}" ]; then \
+ 		${mkdir} ${MANDIR}; \
+ 	fi && \
+-	ruby -pe 'gsub(/^(.)DATADIR = ".*"/, "\\1DATADIR = \"${DATADIR}\"")' < ./raggle > ${BINDIR}/raggle && chmod 755 ${BINDIR}/raggle && \
++	ruby18 -pe 'gsub(/^(.)DATADIR = ".*"/, "\\1DATADIR = \"${DATADIR}\"")' < ./raggle > ${BINDIR}/raggle && chmod 755 ${BINDIR}/raggle && \
+ 	cp raggle.1 ${MANDIR} && \
+ 	cp -r ${DOCS} ${DOCDIR} && \
+ 	cp -r ${DATA} ${DATADIR}

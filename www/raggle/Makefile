@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/23 22:21:54 jeremy Exp $
 
 COMMENT=	console RSS aggregator
 
 DISTNAME=	raggle-0.4.4
+REVISION=	0
 
 CATEGORIES=	www news
 
@@ -17,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
-BUILD_DEPENDS=	::lang/ruby
-RUN_DEPENDS=	::lang/ruby \
+BUILD_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/1.8,-main
+RUN_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
 		::devel/ruby-ncurses
 
 NO_REGRESS=	Yes
