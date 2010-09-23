@@ -1,0 +1,3 @@
+If you want to use this package as your default system rake, as root
+create symbolic link like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/rake18 ${PREFIX}/bin/rake

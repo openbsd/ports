@@ -1,0 +1,4 @@
+If you set up the symlinks to make rake 1.8 the system
+rake, don't forget to remove the following files:
+
+ rm ${PREFIX}/bin/rake
