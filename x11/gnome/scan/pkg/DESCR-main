@@ -1,5 +1,0 @@
-The GNOME Scan project aims to provide scanning features integrated
-throughout the GNOME desktop, similar to printing.  The GNOME Scan
-project consists of a C/GObject library upon which are built standalone
-applications and plugins for various programs.
-The application and plugins are called flegita.
