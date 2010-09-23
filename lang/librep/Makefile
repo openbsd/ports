@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/22 06:52:14 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2010/09/23 11:56:25 jasper Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 VERSION=	0.90.5
 DISTNAME=	librep-${VERSION}
-REVISION=	1
+REVISION=	2
 SHARED_LIBS +=  rep                  13.0     # .13.0
 
 CATEGORIES=	lang
@@ -33,7 +33,7 @@ GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=		GNU_ARCH VERSION
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 
 MAKE_FLAGS=		rep_LIBTOOL=${LIBTOOL}
 
@@ -44,13 +44,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
-REP_LT= 		${PREFIX}/lib/rep/${GNU_ARCH}/libtool
+REP_LT= 		${PREFIX}/lib/rep/${GNU_ARCH}/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/rep-xgettext.jl
 
-# The bundled libtool get's installed by default, override it.
+# The bundled libtool get's installed by default, override it by installing
+# the ports version directly.
 post-install:
-	ln -s ${LIBTOOL} ${REP_LT}
+	${INSTALL_SCRIPT} ${LIBTOOL} ${REP_LT}
 
 .include <bsd.port.mk>
