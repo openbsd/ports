@@ -1,0 +1,56 @@
+$OpenBSD: patch-src_arisparc64_d,v 1.1 2010/09/23 13:42:22 joshe Exp $
+
+Disable the assembler loops, at least one of them is broken.
+
+Remove a couple of potentially-broken math functions to make sure they
+aren't used in case the maze of #ifdefs in arilev0.d ever changes.
+
+--- src/arisparc64.d.orig	Wed Dec  5 08:06:32 2007
++++ src/arisparc64.d	Sun Sep 19 16:25:17 2010
+@@ -14,6 +14,7 @@
+ 
+ #ifdef INCLUDED_FROM_C
+ 
++#if 0
+   #define COPY_LOOPS
+   #define FILL_LOOPS
+   #define CLEAR_LOOPS
+@@ -23,6 +24,7 @@
+   #define SHIFT_LOOPS
+   #define MUL_LOOPS
+   #define DIV_LOOPS
++#endif
+ 
+ #else
+ 
+@@ -73,30 +75,12 @@ C(mulu16_:) # Input in %o0,%o1, Output in %o0
+         retl
+        _ srl %o2,0,%o0
+ 
+-# extern struct { uint32 lo; uint32 hi; } mulu32_ (uint32 arg1, uint32 arg2);
+-# 2^32*hi+lo := arg1*arg2.
+-C(mulu32_:) # Input in %o0,%o1, Output in %o0,%g1
+-        umul %o0,%o1,%o2
+-        rd %y,%g1
+-        retl
+-       _ srl %o2,0,%o0
+-
+ # extern uint32 mulu32_unchecked (uint32 x, uint32 y);
+ # result := arg1*arg2 < 2^32.
+ C(mulu32_unchecked:) # Input in %o0,%o1, Output in %o0
+         umul %o0,%o1,%o2
+         retl
+        _ srl %o2,0,%o0
+-
+-# extern struct { uint32 q; uint32 r; } divu_6432_3232_ (uint32 xhi, uint32 xlo, uint32 y);
+-# x = 2^32*xhi+xlo = q*y+r schreiben. Sei bekannt, dass 0 <= x < 2^32*y .
+-C(divu_6432_3232_:) # Input in %o0,%o1,%o2, Output in %o0,%g1
+-        wr %o0,%g0,%y
+-        udiv %o1,%o2,%o0        # x durch y dividieren, %o0 := q
+-        umul %o0,%o2,%g1        # %g1 := (q*y) mod 2^32
+-        sub %o1,%g1,%g1         # %g1 := (xlo-q*y) mod 2^32 = r
+-        retl
+-       _ srl %o0,0,%o0
+ 
+ # extern struct { uint16 q; uint16 r; } divu_3216_1616_ (uint32 x, uint16 y);
+ # x = q*y+r schreiben. Sei bekannt, dass 0 <= x < 2^16*y .

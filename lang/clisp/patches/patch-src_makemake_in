@@ -1,7 +1,20 @@
-$OpenBSD: patch-src_makemake_in,v 1.10 2010/01/07 10:55:28 edd Exp $
---- src/makemake.in.orig	Tue Jul 28 19:58:03 2009
-+++ src/makemake.in	Wed Dec 30 22:12:19 2009
-@@ -1916,7 +1916,7 @@ echol "# This can also be used for pre-test and post-r
+$OpenBSD: patch-src_makemake_in,v 1.11 2010/09/23 13:42:22 joshe Exp $
+
+Override broken compiler test, attempting to build 32-bit clisp on a
+64-bit patform will not work out very well.
+
+--- src/makemake.in.orig	Tue Jul 28 06:58:03 2009
++++ src/makemake.in	Mon Sep 20 16:32:15 2010
+@@ -1108,6 +1108,8 @@ esac
+ #   cpu=hppa ;;
+ # esac
+ 
++test "$cpu" = "${host_cpu%*64}" && cpu=${host_cpu}
++
+ if [ "${verbose}" = true -o "${verbose}" = yes ]; then
+   cat <<EOF >&2
+ # host system:
+@@ -1916,7 +1918,7 @@ echol "# This can also be used for pre-test and post-r
  echol "#   make distrib VERSION_SUFFIX=pre"
  echol "VERSION_SUFFIX="
  echol "# The distribution's top directory"
@@ -10,7 +23,7 @@ $OpenBSD: patch-src_makemake_in,v 1.10 2010/01/07 10:55:28 edd Exp $
  echol
  echol '# Directories used by "make install":'
  echol "prefix = ${PREFIX}"
-@@ -3002,7 +3002,7 @@ fi
+@@ -3002,7 +3004,7 @@ fi
  CLISP_="${HERE_}lisp${LEXE} -M ${HERE_}lispinit.mem ${localeflags}${someflags}"
  
  if [ $CROSS = false ] ; then

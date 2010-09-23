@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_spsparc64_d,v 1.1 2010/09/23 13:42:22 joshe Exp $
+
+Using %g1 to pass values across function calls is a bit iffy so make
+sure that trying to call _get_g1() results in a linker error.
+
+--- src/spsparc64.d.orig	Mon Mar 24 11:23:28 2008
++++ src/spsparc64.d	Sun Sep 19 15:03:08 2010
+@@ -11,16 +11,8 @@
+ 
+         .global getSP
+         .global _getSP
+-        .global _get_g1
+-        .global __get_g1
+ 
+ #    extern void* getSP (void);
+ getSP:
+ _getSP: retl
+        _ mov %sp,%o0
+-
+-#    extern uint32 _get_g1 (void);
+-_get_g1:
+-__get_g1: retl
+-       _ srl %g1,0,%o0
+-
