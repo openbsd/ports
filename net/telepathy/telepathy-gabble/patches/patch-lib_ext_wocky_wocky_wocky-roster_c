@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_ext_wocky_wocky_wocky-roster_c,v 1.1 2010/05/28 09:19:53 espie Exp $
---- lib/ext/wocky/wocky/wocky-roster.c.orig	Mon May 24 11:18:19 2010
-+++ lib/ext/wocky/wocky/wocky-roster.c	Mon May 24 11:18:24 2010
-@@ -498,7 +498,7 @@ roster_update (WockyRoster *self,
-               "name", wocky_xmpp_node_get_attribute (n, "name"),
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-roster_c,v 1.2 2010/09/23 13:37:12 jasper Exp $
+--- lib/ext/wocky/wocky/wocky-roster.c.orig	Tue Jun 15 16:05:18 2010
++++ lib/ext/wocky/wocky/wocky-roster.c	Wed Sep 22 16:55:04 2010
+@@ -497,7 +497,7 @@ roster_update (WockyRoster *self,
+               "name", wocky_node_get_attribute (n, "name"),
                "subscription", subscription_type,
                "groups", groups,
 -              NULL);
@@ -10,3 +10,54 @@ $OpenBSD: patch-lib_ext_wocky_wocky_wocky-roster_c,v 1.1 2010/05/28 09:19:53 esp
  
            g_hash_table_insert (priv->items, g_strdup (jid), contact);
  
+@@ -539,12 +539,12 @@ roster_iq_handler_set_cb (WockyPorter *porter,
+       DEBUG ("Failed to update roster: %s",
+           error ? error->message : "no message");
+       g_error_free (error);
+-      reply = wocky_stanza_build_iq_error (stanza, NULL);
++      reply = wocky_stanza_build_iq_error (stanza, (void *)0);
+     }
+   else
+     {
+       /* ack */
+-      reply = wocky_stanza_build_iq_result (stanza, NULL);
++      reply = wocky_stanza_build_iq_result (stanza, (void *)0);
+     }
+ 
+   wocky_porter_send (porter, reply);
+@@ -576,7 +576,7 @@ wocky_roster_constructed (GObject *object)
+       WOCKY_PORTER_HANDLER_PRIORITY_NORMAL, roster_iq_handler_set_cb, self,
+       '(', "query",
+         ':', WOCKY_XMPP_NS_ROSTER,
+-      ')', NULL);
++      ')', (void *)0);
+ 
+   priv->contact_factory = wocky_session_get_contact_factory (priv->session);
+   g_assert (priv->contact_factory != NULL);
+@@ -723,7 +723,7 @@ wocky_roster_fetch_roster_async (WockyRoster *self,
+         '(', "query",
+           ':', WOCKY_XMPP_NS_ROSTER,
+         ')',
+-      NULL);
++      (void *)0);
+ 
+   priv->fetch_result = g_simple_async_result_new (G_OBJECT (self),
+       callback, user_data, wocky_roster_fetch_roster_finish);
+@@ -799,7 +799,7 @@ build_iq_for_contact (WockyBareContact *contact,
+             '@', "jid", jid,
+           ')',
+         ')',
+-      NULL);
++      (void *)0);
+ 
+   g_assert (item != NULL);
+ 
+@@ -843,7 +843,7 @@ build_remove_contact_iq (WockyBareContact *contact)
+             '@', "subscription", "remove",
+           ')',
+         ')',
+-      NULL);
++      (void *)0);
+ }
+ 
+ static WockyStanza *

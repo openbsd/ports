@@ -1,32 +1,25 @@
-$OpenBSD: patch-configure,v 1.7 2010/04/23 12:41:16 jasper Exp $
+$OpenBSD: patch-configure,v 1.8 2010/09/23 13:37:12 jasper Exp $
 
 Don't try to pickup e2fs' uuid, it doesn't properly work yet.
 
---- configure.orig	Fri Apr 23 00:27:14 2010
-+++ configure	Fri Apr 23 00:28:26 2010
-@@ -2552,14 +2552,6 @@ echo timestamp > conftest.file
+--- configure.orig	Tue Sep 21 20:01:15 2010
++++ configure	Tue Sep 21 20:02:11 2010
+@@ -2590,14 +2590,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5 ;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5 ;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -12731,13 +12723,13 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
- 
--	for am_cv_pathless_PYTHON in python python2 python3 python3.0 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION}; do
- 	  test "$am_cv_pathless_PYTHON" = none && break
- 	  prog="import sys
+@@ -12850,7 +12842,7 @@ $as_echo_n "checking whether $PYTHON version >= 2.5...
  # split strings by '.' and convert to numeric.  Append some zeros
  # because we need at least 4 digits for the hex conversion.
  # map returns an iterator in Python 3.0 and a list in 2.x
@@ -35,21 +28,3 @@ Don't try to pickup e2fs' uuid, it doesn't properly work yet.
  minverhex = 0
  # xrange is not present in Python 3.0 and range returns an iterator
  for i in list(range(0, 4)): minverhex = (minverhex << 8) + minver[i]
-@@ -13263,7 +13255,7 @@ fi
- 
- 
- 
--
-+if false; then
- pkg_failed=no
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for UUID" >&5
- $as_echo_n "checking for UUID... " >&6; }
-@@ -13344,7 +13336,7 @@ else
-   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libuuid not found, falling back to generating random IDs" >&5
- $as_echo "$as_me: WARNING: libuuid not found, falling back to generating random IDs" >&2;}
- fi
--
-+fi
- for ac_func in getifaddrs memset select strndup setresuid setreuid strerror
- do :
-   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`

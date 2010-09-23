@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-ping_c,v 1.1 2010/09/23 13:37:12 jasper Exp $
+--- lib/ext/wocky/wocky/wocky-ping.c.orig	Wed Sep 22 16:41:31 2010
++++ lib/ext/wocky/wocky/wocky-ping.c	Wed Sep 22 16:41:59 2010
+@@ -133,7 +133,7 @@ wocky_ping_constructed (GObject *object)
+       WOCKY_PORTER_HANDLER_PRIORITY_NORMAL, ping_iq_cb, self,
+       '(', "ping",
+           ':', WOCKY_XMPP_NS_PING,
+-      ')', NULL);
++      ')', (void *)0);
+ }
+ 
+ static void
+@@ -216,7 +216,7 @@ send_xmpp_ping (WockyPing *self)
+       WOCKY_STANZA_SUB_TYPE_GET, NULL, NULL,
+       '(', "ping",
+           ':', WOCKY_XMPP_NS_PING,
+-      ')', NULL);
++      ')', (void *)0);
+ 
+   wocky_porter_send_iq_async (priv->porter, iq, NULL, NULL, NULL);
+   g_object_unref (iq);
+@@ -272,7 +272,7 @@ ping_iq_cb (WockyPorter *porter, WockyStanza *stanza, 
+ 
+   /* As a side-effect of sending pong, our keepalive timer will be
+    * reset, so we don't have to do it manually. */
+-  reply = wocky_stanza_build_iq_result (stanza, NULL);
++  reply = wocky_stanza_build_iq_result (stanza, (void *)0);
+   wocky_porter_send (porter, reply);
+   g_object_unref (reply);
+ 

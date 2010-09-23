@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_ext_wocky_wocky_wocky-xmpp-connection_c,v 1.1 2010/05/28 09:19:53 espie Exp $
---- lib/ext/wocky/wocky/wocky-xmpp-connection.c.orig	Mon May 24 11:17:17 2010
-+++ lib/ext/wocky/wocky/wocky-xmpp-connection.c	Mon May 24 11:17:45 2010
-@@ -639,19 +639,19 @@ wocky_xmpp_connection_recv_open_finish (WockyXmppConne
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-xmpp-connection_c,v 1.2 2010/09/23 13:37:12 jasper Exp $
+--- lib/ext/wocky/wocky/wocky-xmpp-connection.c.orig	Tue Jun 15 16:05:18 2010
++++ lib/ext/wocky/wocky/wocky-xmpp-connection.c	Wed Sep 22 16:34:48 2010
+@@ -637,19 +637,19 @@ wocky_xmpp_connection_recv_open_finish (WockyXmppConne
    priv->input_open = TRUE;
  
    if (to != NULL)

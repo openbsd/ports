@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-jabber-auth_c,v 1.1 2010/09/23 13:37:12 jasper Exp $
+--- lib/ext/wocky/wocky/wocky-jabber-auth.c.orig	Wed Sep 22 16:38:10 2010
++++ lib/ext/wocky/wocky/wocky-jabber-auth.c	Wed Sep 22 16:38:29 2010
+@@ -504,7 +504,7 @@ wocky_jabber_auth_start_cb (GObject *source,
+       '(', auth_field, '$', start_data->initial_response->str, ')',
+       '(', "resource", '$', priv->resource, ')',
+       ')',
+-      NULL);
++      (void *)0);
+ 
+   wocky_xmpp_connection_send_stanza_async (conn, iq, priv->cancel,
+       jabber_auth_query, self);
+@@ -655,7 +655,7 @@ wocky_jabber_auth_authenticate_async (WockyJabberAuth 
+       '$', priv->username,
+       ')',
+       ')',
+-      NULL);
++      (void *)0);
+ 
+   wocky_xmpp_connection_send_stanza_async (conn, iq, priv->cancel,
+       jabber_auth_init_sent, self);

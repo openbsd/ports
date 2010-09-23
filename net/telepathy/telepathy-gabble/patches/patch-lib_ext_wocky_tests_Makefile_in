@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext_wocky_tests_Makefile_in,v 1.1 2010/09/23 13:37:12 jasper Exp $
+--- lib/ext/wocky/tests/Makefile.in.orig	Wed Sep 22 16:50:28 2010
++++ lib/ext/wocky/tests/Makefile.in	Wed Sep 22 16:50:48 2010
+@@ -295,7 +295,7 @@ ECHO_N = @ECHO_N@
+ ECHO_T = @ECHO_T@
+ EGREP = @EGREP@
+ ENABLE_CODING_STYLE_CHECKS = @ENABLE_CODING_STYLE_CHECKS@
+-ERROR_CFLAGS = @ERROR_CFLAGS@
++ERROR_CFLAGS =
+ EXEEXT = @EXEEXT@
+ FFLAGS = @FFLAGS@
+ FGREP = @FGREP@
