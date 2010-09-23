@@ -1,75 +1,48 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/10 06:20:59 ajacoutot Exp $
-@bin bin/mc-account-convert
+@comment $OpenBSD: PLIST,v 1.8 2010/09/23 13:44:17 jasper Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
-include/libmcclient/
-include/libmcclient/_gen/
-include/libmcclient/_gen/cli-account-manager.h
-include/libmcclient/_gen/cli-account.h
-include/libmcclient/_gen/cli-dispatch-operation.h
-include/libmcclient/_gen/enums.h
-include/libmcclient/_gen/gtypes.h
-include/libmcclient/_gen/interfaces.h
-include/libmcclient/_gen/mc-quark.h
-include/libmcclient/_gen/svc-client.h
-include/libmcclient/dbus-api.h
-include/libmcclient/mc-account-manager.h
-include/libmcclient/mc-account.h
-include/libmcclient/mc-dispatch-operation.h
-include/libmcclient/mc-enums.h
-include/libmcclient/mc-errors.h
-include/libmcclient/mc-gtypes.h
-include/libmcclient/mc-interfaces.h
-include/libmcclient/mc-profile.h
-include/libmcclient/mc-signals-marshal.h
-include/libmcclient/mc-svc-client.h
-lib/libmcclient.la
-@lib lib/libmcclient.so.${LIBmcclient_VERSION}
-lib/pkgconfig/libmcclient.pc
+include/mission-control-5.5/
+include/mission-control-5.5/mission-control-plugins/
+include/mission-control-5.5/mission-control-plugins/account-storage.h
+include/mission-control-5.5/mission-control-plugins/account.h
+include/mission-control-5.5/mission-control-plugins/dbus-acl.h
+include/mission-control-5.5/mission-control-plugins/dispatch-operation-policy.h
+include/mission-control-5.5/mission-control-plugins/dispatch-operation.h
+include/mission-control-5.5/mission-control-plugins/loader.h
+include/mission-control-5.5/mission-control-plugins/mcp-signals-marshal.h
+include/mission-control-5.5/mission-control-plugins/mission-control-plugins.h
+include/mission-control-5.5/mission-control-plugins/request-policy.h
+include/mission-control-5.5/mission-control-plugins/request.h
+lib/libmission-control-plugins.la
+@lib lib/libmission-control-plugins.so.${LIBmission-control-plugins_VERSION}
+lib/mission-control-plugins.0/
+lib/pkgconfig/mission-control-plugins.pc
 @bin libexec/mission-control-5
-@man man/man1/mc-account-convert.1
 @man man/man1/mc-tool.1
 @man man/man1/mc-wait-for-name.1
 @man man/man8/mission-control-5.8
 share/dbus-1/services/org.freedesktop.Telepathy.AccountManager.service
 share/dbus-1/services/org.freedesktop.Telepathy.MissionControl5.service
-share/gtk-doc/html/libmcclient/
-share/gtk-doc/html/libmcclient/McAccount.html
-share/gtk-doc/html/libmcclient/McAccountManager.html
-share/gtk-doc/html/libmcclient/ch-account-manager.html
-share/gtk-doc/html/libmcclient/ch-account.html
-share/gtk-doc/html/libmcclient/ch-profile.html
-share/gtk-doc/html/libmcclient/home.png
-share/gtk-doc/html/libmcclient/index.html
-share/gtk-doc/html/libmcclient/index.sgml
-share/gtk-doc/html/libmcclient/left.png
-share/gtk-doc/html/libmcclient/libmcclient-mc-profile.html
-share/gtk-doc/html/libmcclient/libmcclient.devhelp
-share/gtk-doc/html/libmcclient/libmcclient.devhelp2
-share/gtk-doc/html/libmcclient/right.png
-share/gtk-doc/html/libmcclient/style.css
-share/gtk-doc/html/libmcclient/up.png
-share/gtk-doc/html/libmissioncontrol-server/
-share/gtk-doc/html/libmissioncontrol-server/McdChannel.html
-share/gtk-doc/html/libmissioncontrol-server/McdConnection.html
-share/gtk-doc/html/libmissioncontrol-server/McdController.html
-share/gtk-doc/html/libmissioncontrol-server/McdDispatcher.html
-share/gtk-doc/html/libmissioncontrol-server/McdManager.html
-share/gtk-doc/html/libmissioncontrol-server/McdMaster.html
-share/gtk-doc/html/libmissioncontrol-server/McdMission.html
-share/gtk-doc/html/libmissioncontrol-server/McdOperation.html
-share/gtk-doc/html/libmissioncontrol-server/McdProxy.html
-share/gtk-doc/html/libmissioncontrol-server/McdService.html
-share/gtk-doc/html/libmissioncontrol-server/ch01.html
-share/gtk-doc/html/libmissioncontrol-server/home.png
-share/gtk-doc/html/libmissioncontrol-server/index.html
-share/gtk-doc/html/libmissioncontrol-server/index.sgml
-share/gtk-doc/html/libmissioncontrol-server/left.png
-share/gtk-doc/html/libmissioncontrol-server/libmissioncontrol-server-Debugging.html
-share/gtk-doc/html/libmissioncontrol-server/libmissioncontrol-server-mcd-dispatcher-context.html
-share/gtk-doc/html/libmissioncontrol-server/libmissioncontrol-server-mcd-enum-types.html
-share/gtk-doc/html/libmissioncontrol-server/libmissioncontrol-server.devhelp
-share/gtk-doc/html/libmissioncontrol-server/libmissioncontrol-server.devhelp2
-share/gtk-doc/html/libmissioncontrol-server/right.png
-share/gtk-doc/html/libmissioncontrol-server/style.css
-share/gtk-doc/html/libmissioncontrol-server/up.png
+share/gtk-doc/html/mission-control-plugins/
+share/gtk-doc/html/mission-control-plugins/McpAccountStorage.html
+share/gtk-doc/html/mission-control-plugins/McpDispatchOperation.html
+share/gtk-doc/html/mission-control-plugins/McpDispatchOperationPolicy.html
+share/gtk-doc/html/mission-control-plugins/McpRequest.html
+share/gtk-doc/html/mission-control-plugins/McpRequestPolicy.html
+share/gtk-doc/html/mission-control-plugins/api-index-full.html
+share/gtk-doc/html/mission-control-plugins/ch01.html
+share/gtk-doc/html/mission-control-plugins/ch02.html
+share/gtk-doc/html/mission-control-plugins/ch03.html
+share/gtk-doc/html/mission-control-plugins/ch04.html
+share/gtk-doc/html/mission-control-plugins/home.png
+share/gtk-doc/html/mission-control-plugins/index.html
+share/gtk-doc/html/mission-control-plugins/index.sgml
+share/gtk-doc/html/mission-control-plugins/left.png
+share/gtk-doc/html/mission-control-plugins/mission-control-plugins-Plugin-loader-and-global-functions.html
+share/gtk-doc/html/mission-control-plugins/mission-control-plugins-account.html
+share/gtk-doc/html/mission-control-plugins/mission-control-plugins.devhelp
+share/gtk-doc/html/mission-control-plugins/mission-control-plugins.devhelp2
+share/gtk-doc/html/mission-control-plugins/object-tree.html
+share/gtk-doc/html/mission-control-plugins/right.png
+share/gtk-doc/html/mission-control-plugins/style.css
+share/gtk-doc/html/mission-control-plugins/up.png
