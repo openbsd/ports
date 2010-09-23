@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/09/23 11:56:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/09/23 12:23:54 sthen Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -49,7 +49,7 @@ REP_LT= 		${PREFIX}/lib/rep/${GNU_ARCH}/
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/rep-xgettext.jl
 
-# The bundled libtool get's installed by default, override it by installing
+# The bundled libtool gets installed by default, override it by installing
 # the ports version directly.
 post-install:
 	${INSTALL_SCRIPT} ${LIBTOOL} ${REP_LT}
