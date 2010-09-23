@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 21:26:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/23 13:45:42 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
-V=			0.15.17
+V=			0.15.18
 DISTNAME=		telepathy-python-$V
-REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-python/}
 
@@ -15,7 +14,7 @@ RUN_DEPENDS=		::devel/py-gobject \
 			::textproc/libxslt \
 			::x11/dbus-python \
 			::x11/py-gtk2
-USE_GMAKE=Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 USE_X11=		Yes
