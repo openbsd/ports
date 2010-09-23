@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/08 00:07:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 19:38:17 jasper Exp $
 
 COMMENT=		parse, analyze and manipulate LaTeX documents
 
-DISTNAME=		LaTeX-TOM-0.9
+DISTNAME=		LaTeX-TOM-1.00
 CATEGORIES=		textproc
 
 MODULES=		cpan
 
-# MIT
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
