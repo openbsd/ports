@@ -1,22 +1,22 @@
-$OpenBSD: patch-configure,v 1.4 2010/04/23 12:41:46 jasper Exp $
---- configure.orig	Tue Apr 20 17:11:43 2010
-+++ configure	Thu Apr 22 16:13:18 2010
-@@ -2542,14 +2542,6 @@ echo timestamp > conftest.file
+$OpenBSD: patch-configure,v 1.5 2010/09/23 13:37:34 jasper Exp $
+--- configure.orig	Mon Sep 20 19:33:47 2010
++++ configure	Tue Sep 21 19:25:05 2010
+@@ -2776,14 +2776,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5 ;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5 ;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -11999,7 +11991,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
+@@ -12553,7 +12545,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
  

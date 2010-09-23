@@ -1,14 +1,14 @@
-$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.1 2010/06/09 08:51:59 jasper Exp $
+$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.2 2010/09/23 13:37:34 jasper Exp $
 
-For some reason on mips64(el), nm does create the _gen/abi.nm file,
+For some reason on mips64(el), nm doesn't create the _gen/abi.nm file,
 but returns 1. This patch lets the build continue.
 
---- telepathy-glib/Makefile.in.orig	Tue Jun  8 21:33:01 2010
-+++ telepathy-glib/Makefile.in	Tue Jun  8 21:33:09 2010
-@@ -1221,7 +1221,7 @@ check-syntax:
+--- telepathy-glib/Makefile.in.orig	Tue Sep 21 19:23:05 2010
++++ telepathy-glib/Makefile.in	Tue Sep 21 19:23:29 2010
+@@ -1470,7 +1470,7 @@ check-local: check-coding-style
  @HAVE_LD_VERSION_SCRIPT_TRUE@	diff -c _gen/versioned-abi.txt _gen/abi.txt
  
- @HAVE_LD_VERSION_SCRIPT_TRUE@_gen/abi.txt: libtelepathy-glib-internal.la Makefile.am
+ @HAVE_LD_VERSION_SCRIPT_TRUE@_gen/abi.txt: libtelepathy-glib-internal.la abi.am
 -@HAVE_LD_VERSION_SCRIPT_TRUE@	$(NM) .libs/libtelepathy-glib-internal.a > _gen/abi.nm
 +@HAVE_LD_VERSION_SCRIPT_TRUE@	$(NM) .libs/libtelepathy-glib-internal.a > _gen/abi.nm || true
  @HAVE_LD_VERSION_SCRIPT_TRUE@	grep " [DT] " < _gen/abi.nm > _gen/abi.funcs
