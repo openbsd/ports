@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/23 14:18:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/23 14:24:22 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -25,7 +25,6 @@ MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	telepathy-logger
 MODPY_RUNDEP=		No
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-silent-rules \

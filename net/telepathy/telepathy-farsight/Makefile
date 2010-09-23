@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/23 14:24:22 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			::net/farsight2 \
 			::net/telepathy/telepathy-glib
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no \

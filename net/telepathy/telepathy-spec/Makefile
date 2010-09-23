@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/23 14:24:22 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -18,6 +18,7 @@ MODPY_RUNDEP=		No
 
 NO_REGRESS=		Yes
 
+USE_LIBTOOL=		No
 CONFIGURE_STYLE=	none
 
 pre-configure:

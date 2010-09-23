@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/23 14:24:22 jasper Exp $
 
 COMMENT=		connection manager meant for testing Telepathy
 
@@ -9,6 +9,7 @@ MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-pinocchio/}
 
 MODULES=		lang/python
 
+USE_LIBTOOL=		No
 USE_GMAKE=		No
 NO_REGRESS=		Yes
 

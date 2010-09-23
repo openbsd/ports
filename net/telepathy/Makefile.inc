@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2010/09/23 14:24:22 jasper Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -17,3 +17,5 @@ PERMIT_DISTFILES_FTP?=	Yes
 MAINTAINER?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 USE_GMAKE?=	Yes
+
+USE_LIBTOOL?=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/23 14:24:22 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -18,8 +18,6 @@ BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		::net/avahi \
 			::devel/libsoup \
 			::net/telepathy/telepathy-glib
-
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

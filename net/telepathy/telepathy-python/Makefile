@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/23 14:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/23 14:24:22 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=		::devel/py-gobject \
 
 CONFIGURE_STYLE=	gnu
 
+USE_LIBTOOL=		No
 USE_X11=		Yes
 
 SUBST_VARS+=		V
