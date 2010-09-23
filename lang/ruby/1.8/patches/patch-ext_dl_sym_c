@@ -1,0 +1,141 @@
+$OpenBSD: patch-ext_dl_sym_c,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+fix loading of compiled modules on amd64.
+
+http://rubyforge.org/tracker/index.php?func=detail&aid=5944&group_id=1103&atid=4331
+http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/227097
+
+--- ext/dl/sym.c.orig	Sun Aug 10 17:36:08 2008
++++ ext/dl/sym.c	Thu Feb 25 19:23:05 2010
+@@ -361,9 +361,22 @@ rb_dl_win32_set_last_error(VALUE self, VALUE val)
+ __declspec(noinline)
+ # endif
+ static int
+-rb_dlsym_guardcall(char type, ANY_TYPE *ret, long *stack, void *func)
++rb_dlsym_guardcall(char type, ANY_TYPE *ret,  long *stack, double *sse,
++		void *func)
+ {
+   char *volatile guard = ALLOCA_N(char, 1); /* guard stack pointer */
++#undef DLSTACK_PROTO
++#define DLSTACK_PROTO   long, long, long, long, long, \
++  			long, long, long, long, long, \
++  			long, long, long, long, long, \
++  			double, double, double, double, \
++  			double, double, double, double
++#undef DLSTACK_ARGS
++#define DLSTACK_ARGS    stack[0], stack[1], stack[2], stack[3], stack[4], \
++  			stack[5], stack[6], stack[7], stack[8], stack[9], \
++  			stack[10], stack[11], stack[12], stack[13], stack[14], \
++  			sse[0], sse[1], sse[2], sse[3], \
++  			sse[4], sse[5], sse[6], sse[7]
+   switch(type){
+   case '0':
+     {
+@@ -450,6 +463,9 @@ rb_dlsym_call(int argc, VALUE argv[], VALUE self)
+   int i;
+   long ftype;
+   void *func;
++  
++  int sses=0;
++  double sse[8];
+ 
+   rb_secure_update(self);
+   Data_Get_Struct(self, struct sym_data, sym);
+@@ -678,58 +694,58 @@ rb_dlsym_call(int argc, VALUE argv[], VALUE self)
+     switch( sym->type[i+1] ){
+     case 'p':
+     case 'P':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'a':
+     case 'A':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
++    case 'c':
++    case 'h':
++    case 'i':
++    case 'l':
++    case 'f':
++    case 'd':
++	      //printf("arg %i: %x (stack)\n",i,ANY2P(args[i]));
++	      memcpy(sp,&ANY2P(args[i]),sizeof(void*));
++	      sp++;
+       break;
++
+     case 'C':
+-      DLSTACK_PUSH_C(ANY2C(args[i]));
++	      //printf("arg %i: '%c' (stack)\n",i,ANY2P(args[i]));
++	      memcpy(sp,&ANY2C(args[i]),sizeof(void*));
++	      sp++;
+       break;
+-    case 'c':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'H':
+-      DLSTACK_PUSH_H(ANY2H(args[i]));
++	      //printf("arg %i: H (stack)\n",i);
++	      memcpy(sp,&ANY2H(args[i]),sizeof(void*));
++	      sp++;
+       break;
+-    case 'h':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'I':
+-      DLSTACK_PUSH_I(ANY2I(args[i]));
++	      //printf("arg %i: %d (stack)\n",i,ANY2I(args[i]));
++	      memcpy(sp,&ANY2I(args[i]),sizeof(void*));
++	      sp++;
+       break;
+-    case 'i':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'L':
+-      DLSTACK_PUSH_L(ANY2L(args[i]));
+-      break;
+-    case 'l':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
++	      //printf("arg %i: %liL (stack)\n",i,ANY2L(args[i]));
++	      memcpy(sp,&ANY2L(args[i]),sizeof(void*));
++	      sp++;
+     case 'F':
+-      DLSTACK_PUSH_F(ANY2F(args[i]));
++      //printf("arg %i: %fF (sse)\n",i,ANY2F(args[i]));
++      sse[sses++]=*(double*)&ANY2F(args[i]);
+       break;
+-    case 'f':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'D':
+-      DLSTACK_PUSH_D(ANY2D(args[i]));
++      //printf("arg %i: %fLF (sse)\n",i,ANY2D(args[i]));
++      sse[sses++]=ANY2D(args[i]);
+       break;
+-    case 'd':
+-      DLSTACK_PUSH_P(ANY2P(args[i]));
+-      break;
+     case 'S':
+     case 's':
+-      DLSTACK_PUSH_P(ANY2S(args[i]));
++      //printf("arg %i: \"%s\" (stack)\n",i,ANY2S(args[i]));
++      memcpy(sp,&ANY2S(args[i]),sizeof(void*));
++      sp++;
+       break;
+     }
+   }
+   DLSTACK_END(sym->type);
+ 
+ #ifdef DLSTACK_GUARD
+-  if(!rb_dlsym_guardcall(sym->type[0], &ret, stack, func)) {
++  if(!rb_dlsym_guardcall(sym->type[0], &ret, stack, sse, func)) {
+     FREE_ARGS;
+     rb_raise(rb_eDLTypeError, "unknown type `%c'", sym->type[0]);
+   }
+@@ -876,7 +892,7 @@ rb_dlsym_call(int argc, VALUE argv[], VALUE self)
+     if( ANY2S(ret) ){
+       val = rb_tainted_str_new2((char*)(ANY2S(ret)));
+       DEBUG_CODE({
+-	printf("dlfree(%s)\n",(char*)(ANY2S(ret)));
++	//printf("dlfree(%s)\n",(char*)(ANY2S(ret)));
+       });
+       dlfree((void*)(ANY2S(ret)));
+     }

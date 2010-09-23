@@ -1,0 +1,27 @@
+$OpenBSD: patch-ext_socket_option_c,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+Make inspect_peercred work on OpenBSD.  Backported from r29206.
+
+--- ext/socket/option.c.orig	Wed Sep  8 18:24:28 2010
++++ ext/socket/option.c	Wed Sep  8 18:25:25 2010
+@@ -397,12 +397,17 @@ inspect_timeval_as_interval(int level, int optname, VA
+ }
+ 
+ #if defined(SOL_SOCKET) && defined(SO_PEERCRED) /* GNU/Linux */
++#if defined(__OpenBSD__)
++#define RUBY_SOCK_PEERCRED struct sockpeercred
++#else
++#define RUBY_SOCK_PEERCRED struct ucred
++#endif
+ static int
+ inspect_peercred(int level, int optname, VALUE data, VALUE ret)
+ {
+-    if (RSTRING_LEN(data) == sizeof(struct ucred)) {
+-        struct ucred cred;
+-        memcpy(&cred, RSTRING_PTR(data), sizeof(struct ucred));
++    if (RSTRING_LEN(data) == sizeof(RUBY_SOCK_PEERCRED)) {
++        RUBY_SOCK_PEERCRED cred;
++        memcpy(&cred, RSTRING_PTR(data), sizeof(RUBY_SOCK_PEERCRED));
+         rb_str_catf(ret, " pid=%u euid=%u egid=%u",
+ 		    (unsigned)cred.pid, (unsigned)cred.uid, (unsigned)cred.gid);
+         rb_str_cat2(ret, " (ucred)");

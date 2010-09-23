@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_mk,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+--- common.mk.orig	Tue Sep  7 14:45:17 2010
++++ common.mk	Tue Sep  7 14:48:00 2010
+@@ -126,7 +126,7 @@ BOOTSTRAPRUBY = $(BASERUBY)
+ 
+ COMPILE_PRELUDE = $(MINIRUBY) -I$(srcdir) $(srcdir)/tool/compile_prelude.rb
+ 
+-all: main docs
++all: main docs rdoc
+ 
+ main: encs exts
+ 	@$(RUNCMD) $(MKMAIN_CMD) $(MAKE)

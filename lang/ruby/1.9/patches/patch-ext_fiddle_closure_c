@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_fiddle_closure_c,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+Make fiddle and dl work on OpenBSD.  Backported from r29249.
+
+--- ext/fiddle/closure.c.orig	Tue Sep 14 09:45:18 2010
++++ ext/fiddle/closure.c	Tue Sep 14 09:46:37 2010
+@@ -10,7 +10,7 @@ typedef struct {
+     ffi_type **argv;
+ } fiddle_closure;
+ 
+-#if defined(MACOSX) || defined(__linux)
++#if defined(MACOSX) || defined(__linux) || defined(__OpenBSD__)
+ #define DONT_USE_FFI_CLOSURE_ALLOC
+ #endif
+ 

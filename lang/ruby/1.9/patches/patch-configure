@@ -1,0 +1,85 @@
+$OpenBSD: patch-configure,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+Fix so name, checking for DOT and DOXYGEN, and use -pthread.
+
+--- configure.orig	Tue Aug 17 22:56:27 2010
++++ configure	Wed Sep  8 13:30:45 2010
+@@ -5798,7 +5798,7 @@ IFS=$as_save_IFS
+ 
+ fi
+ fi
+-DOT=$ac_cv_prog_DOT
++DOT=""
+ if test -n "$DOT"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOT" >&5
+ $as_echo "$DOT" >&6; }
+@@ -5856,10 +5856,10 @@ yes:)
+ $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+ ac_tool_warned=yes ;;
+ esac
+-    DOT=$ac_ct_DOT
++    DOT=""
+   fi
+ else
+-  DOT="$ac_cv_prog_DOT"
++  DOT=""
+ fi
+ 
+ if test -n "$ac_tool_prefix"; then
+@@ -5890,7 +5890,7 @@ IFS=$as_save_IFS
+ 
+ fi
+ fi
+-DOXYGEN=$ac_cv_prog_DOXYGEN
++DOXYGEN=""
+ if test -n "$DOXYGEN"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOXYGEN" >&5
+ $as_echo "$DOXYGEN" >&6; }
+@@ -5948,10 +5948,10 @@ yes:)
+ $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+ ac_tool_warned=yes ;;
+ esac
+-    DOXYGEN=$ac_ct_DOXYGEN
++    DOXYGEN=""
+   fi
+ else
+-  DOXYGEN="$ac_cv_prog_DOXYGEN"
++  DOXYGEN=""
+ fi
+ 
+ if test x"$DOXYGEN" = x; then
+@@ -14446,13 +14446,13 @@ fi
+ if test x"$enable_pthread" = xyes; then
+     for pthread_lib in thr pthread pthreads c c_r root; do
+ 	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -l$pthread_lib" >&5
+-$as_echo_n "checking for pthread_kill in -l$pthread_lib... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -$pthread_lib" >&5
++$as_echo_n "checking for pthread_kill in -$pthread_lib... " >&6; }
+ if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\" = set"; }; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$pthread_lib  $LIBS"
++LIBS="-$pthread_lib  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14519,7 +14519,7 @@ done
+   c_r) :
+     MAINLIBS="-pthread $MAINLIBS" ;; #(
+   *) :
+-    LIBS="-l$pthread_lib $LIBS" ;;
++    LIBS="-pthread $LIBS" ;;
+ esac
+     else
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Don't know how to find pthread library on your system -- thread support disabled\"" >&5
+@@ -15369,7 +15369,7 @@ if test "$enable_shared" = 'yes'; then
+   openbsd*) :
+ 
+ 	SOLIBS='$(LIBS)'
+-	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.'${LIBruby19_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 

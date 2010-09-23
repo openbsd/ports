@@ -1,20 +1,24 @@
-# $OpenBSD: ruby.port.mk,v 1.25 2009/08/11 15:28:41 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.26 2010/09/23 21:58:50 jeremy Exp $
 
 # ruby module
 
 CATEGORIES+=		lang/ruby
 
 MODRUBY_REV=		1.8
+MODRUBY_LIBREV=		1.8
+MODRUBY_BINREV=		18
 
-RUBY=			${LOCALBASE}/bin/ruby
-RAKE=			${LOCALBASE}/bin/rake
+RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
+RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
 RSPEC=			${LOCALBASE}/bin/spec
 
 MODRUBY_REGRESS?=
 
-MODRUBY_LIB_DEPENDS=	ruby.>=2::lang/ruby
-MODRUBY_RUN_DEPENDS=	::lang/ruby
+MODRUBY_LIB_DEPENDS=	ruby${MODRUBY_BINREV}:ruby->=1.8,<=1.9:lang/ruby/${MODRUBY_REV}
+MODRUBY_RUN_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/${MODRUBY_REV}
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
+
+MODRUBY_ICONV_DEPENDS=	:ruby-iconv->=1.8,<=1.9:lang/ruby/${MODRUBY_REV},-iconv
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
@@ -36,26 +40,30 @@ REGRESS_DEPENDS+=	::devel/ruby-rake
 REGRESS_DEPENDS+=	::devel/ruby-rspec
 .endif
 
-SUBST_VARS+=		MODRUBY_REV MODRUBY_ARCH
+SUBST_VARS+=		MODRUBY_BIN_REV MODRUBY_REV MODRUBY_ARCH
 
 .if ${CONFIGURE_STYLE:L:Mextconf}
 CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
+CONFIGURE_SCRIPT=	${RUBY} extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=		:ruby-gems->=1.3.0:devel/ruby-gems
-RUN_DEPENDS+=		::devel/ruby-gems
+BUILD_DEPENDS+=	:ruby-gems->=1.3.0:devel/ruby-gems
+RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
 SUBST_VARS+=	DISTNAME
 
-GEM=		${LOCALBASE}/bin/gem
-GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
+GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
+GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_FLAGS=	--local --rdoc --no-force --verbose --default-source-index
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
+
+.if ${CONFIGURE_STYLE:L:Mformat-executable}
+GEM_FLAGS+=	--format-executable
+.endif
 
 # Ignore specified gem dependencies.
 GEM_SKIPDEPENDS?=
@@ -105,19 +113,19 @@ do-install:
 .endif
 
 # regression stuff
-RAKE_REGRESS_TARGET?=	test
-RSPEC_REGRESS_TARGET?=	spec
 
 .if !target(do-regress)
 .  if ${MODRUBY_REGRESS:L:Mrspec}
 .    if ${MODRUBY_REGRESS:L:Mrake}
-RAKE_REGRESS_TARGET=	${RSPEC_REGRESS_TARGET}
+RAKE_REGRESS_TARGET?=	${RSPEC_REGRESS_TARGET}
 .    else
+RSPEC_REGRESS_TARGET?=	spec
 do-regress:
 	@cd ${WRKSRC} && ${RSPEC} ${RSPEC_REGRESS_TARGET}
 .    endif
 .  endif
 .  if ${MODRUBY_REGRESS:L:Mrake}
+RAKE_REGRESS_TARGET?=	test
 do-regress:
 	@cd ${WRKSRC} && ${RAKE} ${RAKE_REGRESS_TARGET}
 .  endif
@@ -125,3 +133,4 @@ do-regress:
 NO_REGRESS=YES
 .  endif
 .endif
+

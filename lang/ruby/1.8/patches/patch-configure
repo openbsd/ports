@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+--- configure.orig	Wed Jun 23 17:35:59 2010
++++ configure	Fri Jun 25 15:14:57 2010
+@@ -10690,7 +10690,7 @@ if test "$enable_shared" = 'yes'; then
+  	;;
+     openbsd*)
+ 	SOLIBS='$(LIBS)'
+-	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.'${LIBruby18_VERSION}
+ 	;;
+     solaris*)
+ 	SOLIBS='$(LIBS)'

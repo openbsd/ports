@@ -1,0 +1,34 @@
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+don't try to declare conflicting prototypes for functions already declared
+by OpenSSL 0.9.8j
+
+--- ext/openssl/openssl_missing.h.orig	Tue May 25 01:58:49 2010
++++ ext/openssl/openssl_missing.h	Fri Jun 25 15:14:58 2010
+@@ -154,26 +154,6 @@ int X509_CRL_sort(X509_CRL *c);
+ int X509_CRL_add0_revoked(X509_CRL *crl, X509_REVOKED *rev);
+ #endif
+ 
+-#if !defined(HAVE_BN_MOD_SQR)
+-int BN_mod_sqr(BIGNUM *r, const BIGNUM *a, const BIGNUM *m, BN_CTX *ctx);
+-#endif
+-
+-#if !defined(HAVE_BN_MOD_ADD)
+-int BN_mod_add(BIGNUM *r, const BIGNUM *a, const BIGNUM *b, const BIGNUM *m, BN_CTX *ctx);
+-#endif
+-
+-#if !defined(HAVE_BN_MOD_SUB)
+-int BN_mod_sub(BIGNUM *r, const BIGNUM *a, const BIGNUM *b, const BIGNUM *m, BN_CTX *ctx);
+-#endif
+-
+-#if !defined(HAVE_BN_RAND_RANGE)
+-int BN_rand_range(BIGNUM *r, BIGNUM *range);
+-#endif
+-
+-#if !defined(HAVE_BN_PSEUDO_RAND_RANGE)
+-int BN_pseudo_rand_range(BIGNUM *r, BIGNUM *range);
+-#endif
+-
+ #if !defined(HAVE_CONF_GET1_DEFAULT_CONFIG_FILE)
+ char *CONF_get1_default_config_file(void);
+ #endif

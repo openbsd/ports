@@ -1,0 +1,51 @@
+$OpenBSD: patch-ext_socket_socket_c,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+Fix UnixSocket#recv_io on 64-bit archs, backported from ruby SVN
+revisions 22141 and 22633.
+
+--- ext/socket/socket.c.orig	Mon Sep  6 17:18:07 2010
++++ ext/socket/socket.c	Mon Sep  6 17:18:24 2010
+@@ -2097,16 +2097,11 @@ unix_recv_io(argc, argv, sock)
+ 	rb_sys_fail("recvmsg(2)");
+ 
+ #if FD_PASSING_BY_MSG_CONTROL
+-    if (msg.msg_controllen != CMSG_SPACE(sizeof(int))) {
+-      rb_raise(rb_eSocket,
+-          "file descriptor was not passed (msg_controllen=%d, %d expected)",
+-          msg.msg_controllen, CMSG_SPACE(sizeof(int)));
++    if (msg.msg_controllen < sizeof(struct cmsghdr)) {
++        rb_raise(rb_eSocket,
++                 "file descriptor was not passed (msg_controllen=%d smaller than sizeof(struct cmsghdr)=%d)",
++                 (int)msg.msg_controllen, (int)sizeof(struct cmsghdr));
+     }
+-    if (cmsg.hdr.cmsg_len != CMSG_LEN(sizeof(int))) {
+-      rb_raise(rb_eSocket,
+-          "file descriptor was not passed (cmsg_len=%d, %d expected)",
+-          cmsg.hdr.cmsg_len, CMSG_LEN(sizeof(int)));
+-    }
+     if (cmsg.hdr.cmsg_level != SOL_SOCKET) {
+       rb_raise(rb_eSocket,
+           "file descriptor was not passed (cmsg_level=%d, %d expected)",
+@@ -2116,6 +2111,22 @@ unix_recv_io(argc, argv, sock)
+       rb_raise(rb_eSocket,
+           "file descriptor was not passed (cmsg_type=%d, %d expected)",
+           cmsg.hdr.cmsg_type, SCM_RIGHTS);
++    }
++    if (msg.msg_controllen < CMSG_LEN(sizeof(int))) {
++        rb_raise(rb_eSocket,
++		 "file descriptor was not passed (msg_controllen=%d smaller than CMSG_LEN(sizeof(int))=%d)",
++		 (int)msg.msg_controllen, (int)CMSG_LEN(sizeof(int)));
++    }
++    if (CMSG_SPACE(sizeof(int)) < msg.msg_controllen) {
++	rb_raise(rb_eSocket,
++		 "file descriptor was not passed (msg_controllen=%d bigger than CMSG_SPACE(sizeof(int))=%d)",
++                 (int)msg.msg_controllen, (int)CMSG_SPACE(sizeof(int)));
++    }
++    if (cmsg.hdr.cmsg_len != CMSG_LEN(sizeof(int))) {
++        rsock_discard_cmsg_resource(&msg);
++        rb_raise(rb_eSocket,
++                 "file descriptor was not passed (cmsg_len=%d, %d expected)",
++                 (int)cmsg.hdr.cmsg_len, (int)CMSG_LEN(sizeof(int)));
+     }
+ #else
+     if (msg.msg_accrightslen != sizeof(fd)) {

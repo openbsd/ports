@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_ruby_test_env_rb,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+
+Fix test_aset in regression test to work on OpenBSD, backported
+from r29201.
+
+--- test/ruby/test_env.rb.orig	Wed Sep  8 15:17:16 2010
++++ test/ruby/test_env.rb	Wed Sep  8 14:41:40 2010
+@@ -123,7 +123,7 @@ class TestEnv < Test::Unit::TestCase
+     assert_equal(nil, ENV["test"])
+     assert_raise(ArgumentError) { ENV["foo\0bar"] = "test" }
+     assert_raise(ArgumentError) { ENV["test"] = "foo\0bar" }
+-    if /netbsd/ =~ RUBY_PLATFORM
++    if /netbsd|openbsd/ =~ RUBY_PLATFORM
+       ENV["foo=bar"] = "test"
+       assert_equal("test", ENV["foo=bar"])
+       assert_equal("test", ENV["foo"])
