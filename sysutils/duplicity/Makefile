@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/23 12:59:21 stsp Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.06
+MODPY_EGG_VERSION = 0.6.10
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
