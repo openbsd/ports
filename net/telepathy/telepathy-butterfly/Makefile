@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/30 21:26:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/23 13:34:33 jasper Exp $
 
 COMMENT=		flexible communications framework, MSN component
 
-DISTNAME=		telepathy-butterfly-0.5.8
-REVISION=		1
+DISTNAME=		telepathy-butterfly-0.5.14
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-butterfly/}
 
@@ -12,10 +11,9 @@ MODULES=		lang/python
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::net/papyon \
+RUN_DEPENDS=		:papyon->=0.5.1:net/papyon \
 			:telepathy-python->=0.15.17:net/telepathy/telepathy-python
 
 NO_REGRESS=		Yes
