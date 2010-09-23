@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/25 16:35:56 pirofti Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT=	robust library for verifying and serving OpenID identities
 
 DISTNAME=	ruby-openid-2.1.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
+REVISION =      1
 CATEGORIES=	security
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>

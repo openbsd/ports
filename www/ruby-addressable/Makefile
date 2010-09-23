@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/12 22:43:55 pirofti Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
@@ -6,6 +6,7 @@ COMMENT =	replacement for Ruby's URI implementation
 # test before you update!
 DISTNAME = 	addressable-2.1.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://addressable.rubyforge.org/

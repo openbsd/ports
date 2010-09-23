@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 11:18:10 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =	extracts the parse tree for an entire class or a method
 
 DISTNAME =	ParseTree-3.0.4
 PKGNAME =	ruby-${DISTNAME:L}
+REVISION =      0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.zenspider.com/ZSS/Products/ParseTree/
@@ -26,13 +27,10 @@ RUN_DEPENDS =		:ruby-rubyinline->=3.7.0:devel/ruby-rubyinline \
 
 GEM_SKIPDEPENDS =	hoe
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-ruby2ruby \
+REGRESS_DEPENDS =	::devel/ruby-ruby2ruby \
 			::devel/ruby-minitest
+MODRUBY_REGRESS =	rake
 
 PKG_ARCH =		*
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>

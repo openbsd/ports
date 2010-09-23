@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2009/10/12 14:30:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
 DISTNAME=	actionmailer-2.3.4
 PKGNAME=	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES=	mail
 
 # MIT License

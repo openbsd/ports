@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/31 10:16:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT =	system for generating files
 
 DISTNAME =	templater-0.5.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://templater.rubyforge.org/
@@ -27,10 +28,6 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
+MODRUBY_REGRESS =	rake rspec
 
 .include <bsd.port.mk>

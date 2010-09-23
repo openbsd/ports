@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/08 21:15:16 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/23 22:30:30 jeremy Exp $
 bin/restclient
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -18,9 +18,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Exception.s
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Exception.src/M000052.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/M000012.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/M000013.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/M000014.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/M000015.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ExceptionWithResponse.src/M000016.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Mixin/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Mixin.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Mixin/Response/
@@ -36,11 +36,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Mixin/Respo
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/NotModified.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.src/M000015.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.src/M000016.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.src/M000012.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RawResponse.src/M000013.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Redirect.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Redirect.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Redirect.src/M000020.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Redirect.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Request.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Request.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Request.src/M000033.html
@@ -64,11 +64,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Request.src
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Request.src/M000051.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestFailed.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestFailed.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestFailed.src/M000017.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestFailed.src/M000018.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestFailed.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/RequestTimeout.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000020.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000021.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000022.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000023.html
@@ -80,11 +81,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.sr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000029.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000030.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000031.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Resource.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ResourceNotFound.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Response.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Response.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Response.src/M000017.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Response.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/ServerBrokeConnection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RestClient/Unauthorized.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid

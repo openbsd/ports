@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2009/10/13 15:12:50 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT =	Fast, Nimble PDF Generation For Ruby - prawn-core
 
 DISTNAME =	prawn-core-${VERSION}
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 
 MODRUBY_REGRESS =	rake
 REGRESS_DEPENDS =	::devel/ruby-mocha \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/31 08:15:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 V=		1.0.0
 DISTNAME=	puppet-dashboard-$V
+REVISION=	0
 CATEGORIES=	www sysutils
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +22,7 @@ MASTER_SITES=	http://puppetlabs.com/downloads/dashboard/
 
 RUN_DEPENDS=	::databases/ruby-mysql \
 		::devel/ruby-rake \
-		::lang/ruby,-iconv
+		${MODRUBY_ICONV_DEPENDS}
 
 PKG_ARCH=	*
 EXTRACT_ONLY=

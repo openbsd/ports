@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT=	installer for Rails applications
 
 DISTNAME=	rails-app-installer-0.2.0
-PKGNAME=	ruby-${DISTNAME}p2
+PKGNAME=	ruby-${DISTNAME}
+REVISION =      3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://code.google.com/p/rails-app-installer/

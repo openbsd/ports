@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/12/08 11:08:43 pirofti Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 22:30:26 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	faster implementation of the standard debug.rb - base
 
 DISTNAME =	ruby-debug-base-0.10.3
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -26,9 +27,6 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
 
-REGRESS_DEPENDS = ::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS = rake
 
 .include <bsd.port.mk>

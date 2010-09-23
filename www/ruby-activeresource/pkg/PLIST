@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/10/12 15:15:51 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/09/23 22:30:29 jeremy Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -111,19 +111,19 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Forbidd
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats.src/M000011.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats.src/M000014.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/M000015.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/M000016.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/M000017.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/M000018.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/JsonFormat.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000012.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000013.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000014.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000015.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000019.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000020.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000021.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Formats/XmlFormat.src/M000022.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/HttpMock.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/HttpMock.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/HttpMock.src/M000039.html
@@ -162,9 +162,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Timeout
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/UnauthorizedAccess.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000020.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000021.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000022.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000011.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000012.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/M000013.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README.html

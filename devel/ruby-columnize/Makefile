@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/20 22:18:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =	sorts an array in column order
 
 VERSION =	0.3.1
 DISTNAME =	columnize-${VERSION}
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>

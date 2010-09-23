@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/19 21:49:11 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	small, simple testing API for Rack apps
 
 DISTNAME =	rack-test-0.3.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel www
 
 HOMEPAGE =	http://github.com/brynary/rack-test

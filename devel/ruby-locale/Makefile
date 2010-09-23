@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/13 20:58:50 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =		basic APIs for localization
 
 DISTNAME =		locale-2.0.4
 PKGNAME =		ruby-${DISTNAME}
+REVISION =      	0
 CATEGORIES =		devel
 
 HOMEPAGE =

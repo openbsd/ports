@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/28 16:48:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =		light-weight application support
 
 DISTNAME =		assistance-0.1.5
 PKGNAME =		ruby-${DISTNAME}
+REVISION =		0
 CATEGORIES =		devel lang/ruby
 
 MAINTAINER =		Clint Pachl <pachl@ecentryx.com>
@@ -22,11 +23,8 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec \
-			::devel/ruby-diff-lcs
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec_no_cov
+REGRESS_DEPENDS =	::devel/ruby-diff-lcs
+MODRUBY_REGRESS =	rake rspec
+RAKE_REGRESS_TARGET =	spec_no_cov
 
 .include <bsd.port.mk>

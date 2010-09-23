@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/24 18:01:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT=		generic generator framework for Ruby
 
 DISTNAME=		rubigen-1.5.2
 PKGNAME=		ruby-${DISTNAME}
+REVISION =      	0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://rubigen.rubyforge.org/

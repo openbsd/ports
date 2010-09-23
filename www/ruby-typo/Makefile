@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/20 09:39:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 22:30:30 jeremy Exp $
 
 BROKEN = Ruby hangs during rdoc generation and it doesn't work with newer rails.
 
@@ -6,6 +6,7 @@ COMMENT=	weblog system written in Ruby using Ruby on Rails
 
 DISTNAME=	typo-5.2
 PKGNAME=	ruby-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

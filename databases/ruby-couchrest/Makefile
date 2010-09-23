@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/08 21:20:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/23 22:30:25 jeremy Exp $
 
 COMMENT =	lean and RESTful interface to CouchDB
 
 DISTNAME =	couchrest-0.33
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://github.com/jchris/couchrest/
@@ -27,15 +28,11 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec \
-			::devel/ruby-extlib \
+REGRESS_DEPENDS =	::devel/ruby-extlib \
 			::databases/apache-couchdb
+MODRUBY_REGRESS =	rake rspec
 
 # needs a running couchdb server
 REGRESS_IS_INTERACTIVE = Yes
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
 
 .include <bsd.port.mk>

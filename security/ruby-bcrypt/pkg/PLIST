@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/13 18:38:47 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/23 22:30:28 jeremy Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -61,7 +61,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/BCrypt.class
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/BCrypt.java
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/Makefile

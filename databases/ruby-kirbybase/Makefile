@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/06 13:27:50 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:25 jeremy Exp $
 
 COMMENT =	small, plain-text, DBMS written in Ruby
 
 DISTNAME =	KirbyBase-2.6
 PKGNAME =	ruby-${DISTNAME:L}
+REVISION =      0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://www.netpromi.com/kirbybase_ruby.html

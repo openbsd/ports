@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/22 00:19:03 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	simple AMQP driver for Ruby
 
 DISTNAME =	amqp-0.6.4
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	net
 
 # Ruby license

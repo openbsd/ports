@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/25 17:10:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		automate interaction with websites
 VERSION=		0.9.3
 DISTNAME=		mechanize-${VERSION}
 PKGNAME=		ruby-${DISTNAME}
+REVISION =      	0
 CATEGORIES=		www
 
 HOMEPAGE=		http://mechanize.rubyforge.org/mechanize

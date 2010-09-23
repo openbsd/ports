@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/11/22 07:35:32 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:25 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,8 @@ COMMENT =	DataObjects driver for SQLite3
 
 VERSION =	0.10.0
 DISTNAME =	do_sqlite3-${VERSION}
-PKGNAME =	ruby-${DISTNAME}p0
+PKGNAME =	ruby-${DISTNAME}
+REVISION =	1
 CATEGORIES =	databases
 
 # MIT
@@ -30,7 +31,6 @@ LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
 
 MODRUBY_REGRESS =	rspec
 REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec \
 			::devel/ruby-rcov \
 			:${PKGNAME}:${BASE_PKGPATH}
 

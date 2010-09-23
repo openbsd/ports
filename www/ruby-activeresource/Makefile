@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/12 15:15:51 pirofti Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT =	wraps web resources in model classes
 
 DISTNAME =	activeresource-2.3.4
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	www
 
 # MIT License

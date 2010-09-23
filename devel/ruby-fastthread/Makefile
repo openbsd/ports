@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 15:27:13 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:26 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	optimized replacement for Ruby thread.rb primitives
 
 DISTNAME=	fastthread-1.0.7
 PKGNAME=	ruby-${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel
 
 # Ruby's license

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 01:47:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
 
 COMMENT =	generate random strings from most regular expressions
 
 DISTNAME =	randexp-0.1.4
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	textproc
 
 # MIT
@@ -20,11 +21,8 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec \
-			::devel/ruby-rcov
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake specs
+REGRESS_DEPENDS =	::devel/ruby-rcov
+MODRUBY_REGRESS =	rake rspec
+RAKE_REGRESS_TARGET =	specs
 
 .include <bsd.port.mk>

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/23 22:30:25 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
 DISTNAME=	ruby-ldap-0.9.7
-REVISION=	8
+REVISION=	9
 CATEGORIES=	databases
 
 HOMEPAGE=	http://ruby-ldap.sourceforge.net/
 
-MAINTAINER=	Jeremy Evans <jeremyevans0@gmail.com>
+MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

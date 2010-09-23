@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/13 14:41:59 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT =	encode/decode Adobe's binary-to-text
 
 DISTNAME =	Ascii85-0.9.0
 PKGNAME =	ruby-${DISTNAME:L}
+REVISION =	0
 CATEGORIES =	textproc
 
 # mit

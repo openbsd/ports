@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:30 jeremy Exp $
 
 COMMENT=	Ruby implementation of the D-Bus protocol
 
 DISTNAME=	ruby-dbus-0.2.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 

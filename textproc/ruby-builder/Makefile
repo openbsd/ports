@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/14 23:57:18 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT=	Ruby library to create XML markup and data structures
 
 DISTNAME=	builder-2.1.2
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}
+REVISION =      1
 CATEGORIES=	textproc
 
 # mit
@@ -20,9 +21,7 @@ CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
 
-REGRESS_DEPENDS = ::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test_all
+MODRUBY_REGRESS=	rake
+RAKE_REGRESS_TARGET=	test_all
 
 .include <bsd.port.mk>

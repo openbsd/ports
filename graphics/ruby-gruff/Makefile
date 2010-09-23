@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/24 17:01:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT=		library for making beautiful graphs
 
 DISTNAME=		gruff-0.3.4
 PKGNAME=		ruby-${DISTNAME}
+REVISION =      	0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://nubyonrails.com/pages/gruff/
@@ -28,9 +29,9 @@ GEM_SKIPDEPENDS=	hoe
 PKG_ARCH=		*
 
 REGRESS_DEPENDS=	::devel/ruby-hoe
+MODRUBY_REGRESS=	rake
 
-do-regress:
+pre-regress:
 	@mkdir -p ${WRKSRC}/test/output
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/04 05:56:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT=	Ruby XMPP/Jabber library
 
 DISTNAME=	xmpp4r-0.4
 PKGNAME=	ruby-${DISTNAME}
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
@@ -24,9 +25,6 @@ CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
 
-REGRESS_DEPENDS = ::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS = rake
 
 .include <bsd.port.mk>

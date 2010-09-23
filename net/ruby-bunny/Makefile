@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/22 00:20:58 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT =	another synchronous Ruby amqp client
 
 DISTNAME =	bunny-0.6.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	net
 
 # MIT

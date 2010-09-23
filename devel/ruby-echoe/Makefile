@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/13 20:21:29 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
 DISTNAME =	echoe-3.2
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/fauna

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/26 15:34:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:29 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,8 @@ COMMENT=		HTML, XML, SAX and Reader parser
 
 VERSION=		1.3.2
 DISTNAME=		nokogiri-${VERSION}
-PKGNAME=		ruby-${DISTNAME}p1
+PKGNAME=		ruby-${DISTNAME}
+REVISION =      	2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.rubyforge.org/nokogiri

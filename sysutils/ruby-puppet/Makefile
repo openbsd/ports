@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/05/18 18:44:37 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	0.25.5
 DISTNAME=	puppet-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
+REVISION=	0
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
@@ -22,7 +23,7 @@ MODULES=	lang/ruby
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::converters/ruby-json \
 		::sysutils/ruby-facter \
-		${MODRUBY_RUN_DEPENDS},-iconv
+		${MODRUBY_ICONV_DEPENDS}
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes

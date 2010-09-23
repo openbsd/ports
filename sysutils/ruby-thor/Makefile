@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 03:00:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT =	map options to a class
 
 DISTNAME =	thor-0.9.9
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	sysutils
 
 # MIT

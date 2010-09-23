@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/03 12:33:25 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	color value conversion and modification
 
 DISTNAME =	color-1.4.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://color.rubyforge.org/

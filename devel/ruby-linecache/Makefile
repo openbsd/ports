@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/23 22:30:26 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	caches (Ruby source) files
 
 DISTNAME =	linecache-0.43
-PKGNAME =	ruby-${DISTNAME}p0
+PKGNAME =	ruby-${DISTNAME}
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -25,9 +26,6 @@ CONFIGURE_STYLE = ruby gem
 WANTLIB =	c m
 LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
 
-REGRESS_DEPENDS = ::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS = rake
 
 .include <bsd.port.mk>

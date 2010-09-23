@@ -4,6 +4,7 @@ COMMENT =	super simple job queue over AMQP
 
 DISTNAME =	minion-0.1.10
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	net
 
 MAINTAINER =	Mathieu Sauve-Frankel <msf@openbsd.org>

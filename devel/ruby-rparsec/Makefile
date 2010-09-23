@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/27 19:38:12 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	recursive descent parser combinator framework
 
 DISTNAME =	rparsec-1.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	devel
 
 # BSD

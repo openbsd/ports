@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT=	simple library for generating UUIDs
 
 DISTNAME=	uuidtools-1.0.3
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}
+REVISION=	1
 CATEGORIES=	devel
 
 # MIT
@@ -20,9 +21,7 @@ CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
 
-REGRESS_DEPENDS=::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test_all
+MODRUBY_REGRESS=rake
+RAKE_REGRESS_TARGET=test_all
 
 .include <bsd.port.mk>

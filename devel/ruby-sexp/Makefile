@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/27 19:43:27 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	parse strings of Lisp style s-expressions
 
 DISTNAME =	sexp-0.2.1
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel
 
 # MIT

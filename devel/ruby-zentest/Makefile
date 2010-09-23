@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/21 08:46:23 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	ensures test coverage and accelerates TDD
 
 DISTNAME =	ZenTest-4.1.4
 PKGNAME =	ruby-${DISTNAME:L}
+REVISION =      0
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -20,8 +21,7 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
 
-REGRESS_DEPENDS = ::devel/ruby-rake \
-		::devel/ruby-hoe \
+REGRESS_DEPENDS = ::devel/ruby-hoe \
 		::devel/ruby-minitest
 
 GEM_SKIPDEPENDS =	hoe

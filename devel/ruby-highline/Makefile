@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/19 22:31:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:26 jeremy Exp $
 
 COMMENT =		high-level IO library for Ruby
 
 DISTNAME =		highline-1.5.1
 PKGNAME =		ruby-${DISTNAME}
+REVISION =      	0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://highline.rubyforge.org/
@@ -22,9 +23,6 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS=	rake
 
 .include <bsd.port.mk>

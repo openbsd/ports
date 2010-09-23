@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/22 06:55:07 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/23 22:30:28 jeremy Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/
@@ -116,7 +117,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR.src/M000015
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR.src/M000016.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/A.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/A.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/A.src/M000017.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/A.src/M000026.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/AAAA.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/AAAA.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/AAAA.src/M000029.html
@@ -148,6 +149,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/SRV.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/TXT.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000017.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000018.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000020.html
@@ -156,7 +158,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000023.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000024.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000025.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/RR/Types.src/M000026.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/Resolver/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/Resolver.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/DNS/Resolver.src/
@@ -537,6 +538,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RawSocket/cdesc-RawSocket.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UdpRawSocket/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UdpRawSocket/cdesc-UdpRawSocket.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
+lib/ruby/gems/${MODRUBY_REV}/gems/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/.gitignore
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/AUTHORS.rdoc
@@ -594,4 +596,5 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/rr/ns_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/rr/types_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/rr_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_helper.rb
+lib/ruby/gems/${MODRUBY_REV}/specifications/
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

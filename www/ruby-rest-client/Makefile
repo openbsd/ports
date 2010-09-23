@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/08 21:15:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/23 22:30:30 jeremy Exp $
 
 COMMENT =	simple REST client for Ruby
 
 DISTNAME =	rest-client-1.0.3
 PKGNAME =	ruby-${DISTNAME}
+REVISION =      0
 CATEGORIES =	www
 
 HOMEPAGE =	http://rest-client.heroku.com/
@@ -22,10 +23,6 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
+MODRUBY_REGRESS =	rake rspec
 
 .include <bsd.port.mk>

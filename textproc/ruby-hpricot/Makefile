@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 16:48:28 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:29 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		flexible HTML parser
 VERSION=		0.8.1
 DISTNAME=		hpricot-${VERSION}
 PKGNAME=		ruby-${DISTNAME}
+REVISION=		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/

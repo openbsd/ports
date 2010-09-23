@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/22 07:09:48 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:28 jeremy Exp $
 
 COMMENT = 	streaming text orientated messaging protocol ruby client
 
 DISTNAME = 	stomp-1.1
 PKGNAME = 	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES = 	net
 
 HOMEPAGE =	http://stomp.codehaus.org/Ruby

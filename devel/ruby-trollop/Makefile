@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/22 04:21:33 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
 
 COMMENT =	Ruby commandline parsing library
 
 DISTNAME =	trollop-1.15
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

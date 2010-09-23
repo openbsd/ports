@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/02 00:28:56 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/23 22:30:30 jeremy Exp $
 
 COMMENT =	the full Merb stack
 
 DISTNAME =	merb-more-${VERSION}
+REVISION =	0
 
 RUN_DEPENDS =	:ruby-merb-core->=${VERSION}:www/ruby-merb/core \
 		:ruby-merb-action-args->=${VERSION}:www/ruby-merb/action-args \

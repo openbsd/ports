@@ -3,6 +3,7 @@
 COMMENT =	library for verifying and serving OpenID identities
 
 DISTNAME = ruby-yadis-0.3.4
+REVISION = 0
 CATEGORIES = security
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
