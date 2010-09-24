@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/29 17:07:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 15:27:46 jeremy Exp $
 
 COMMENT=	subtitle ripper, used with transcode
 
 DISTNAME=	subtitleripper-0.3-4
 PKGNAME=	subtitleripper-0.3.4
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://subtitleripper.sourceforge.net/
-
-MAINTAINER=	Jeremy Evans <openbsd@jeremyevans.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
