@@ -1,11 +1,12 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.16 2009/08/12 22:36:48 simon Exp $
+# $OpenBSD: perl.port.mk,v 1.17 2010/09/24 15:15:38 sthen Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 REGRESS_TARGET ?=	test
 MODPERL_BUILD ?= Build
+SHARED_ONLY ?=
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 MODPERL_configure = \
@@ -65,6 +66,10 @@ do-install:
 pre-configure:
 	@rm -rf ${WRKSRC}/inc/Module/*Install*
 .  endif
+.endif
+
+.if ${SHARED_ONLY:L:Myes}
+WANTLIB += perl
 .endif
 
 P5SITE=libdata/perl5/site_perl
