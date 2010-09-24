@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1034 2010/09/22 18:43:30 landry Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1035 2010/09/24 09:20:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -238,6 +238,9 @@ _clean = ${clean}
 .if empty(_clean) || ${_clean:L} == "depends"
 _clean += work
 .endif
+.if ${_clean:L:Mall}
+_clean += work build flavors packages plist
+.endif
 .if ${CLEANDEPENDS_${PKGPATH}:L} == "yes"
 _clean += depends
 .endif
@@ -246,9 +249,6 @@ _clean += fake
 .endif
 .if ${_clean:L:Mforce}
 _clean += -f
-.endif
-.if ${_clean:L:Mall}
-_clean += work build flavors packages plist
 .endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
