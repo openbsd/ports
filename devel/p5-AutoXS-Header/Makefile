@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/10 08:14:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 15:23:06 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	simple container for the AutoXS header file
 
 MODULES =	cpan
 DISTNAME =	AutoXS-Header-1.02
+REVISION=	0
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	SMUELLER

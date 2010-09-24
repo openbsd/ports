@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/02 20:34:39 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/24 15:23:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	access to PostgreSQL databases perl
 
 VERSION=	1.9.0
 DISTNAME=	pgsql_perl5-${VERSION}
-PKGNAME=	p5-pgsql-${VERSION}p0
+PKGNAME=	p5-pgsql-${VERSION}
+REVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
 

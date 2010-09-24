@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/02 07:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/24 15:23:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	interface to handy and fast permutation
 
 MODULES=	cpan
 DISTNAME=	Algorithm-Permute-0.12
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

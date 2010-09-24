@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2009/10/03 09:20:36 pea Exp $
+# $OpenBSD: Makefile,v 1.51 2010/09/24 15:23:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	unified perl interface for database access
 
 MODULES=	cpan
 DISTNAME=	DBI-1.609
+REVISION=	0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://dbi.perl.org/

@@ -5,6 +5,7 @@ COMMENT =		meatier versions of caller
 SHARED_ONLY =		Yes
 MODULES =		cpan
 DISTNAME =		Devel-Caller-2.03
+REVISION=		0
 CATEGORIES =		devel
 CPAN_AUTHOR =		RCLAMP
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/11/11 07:44:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/24 15:23:06 sthen Exp $
 
 COMMENT=		perl objected oriented Date Time
 
@@ -6,6 +6,7 @@ SHARED_ONLY=		Yes
 
 MODULES=		cpan
 DISTNAME=		DateTime-0.51
+REVISION=		0
 # there was a version with four digits behind the dot and we need to pad
 # to that or updates would fail
 PKGNAME=		p5-${DISTNAME}00
