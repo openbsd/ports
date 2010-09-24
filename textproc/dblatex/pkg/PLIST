@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/06 18:08:02 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/24 18:50:34 jasper Exp $
 bin/dblatex
 lib/python${MODPY_VERSION}/site-packages/dblatex-0.3-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/dbtexmf/
@@ -98,7 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/dbtexmf/xslt/xslt.py
 lib/python${MODPY_VERSION}/site-packages/dbtexmf/xslt/xslt.pyc
 lib/python${MODPY_VERSION}/site-packages/dbtexmf/xslt/xsltproc.py
 lib/python${MODPY_VERSION}/site-packages/dbtexmf/xslt/xsltproc.pyc
-@man man/man1/dblatex.1.gz
+@man man/man1/dblatex.1
 share/dblatex/
 share/dblatex/latex/
 share/dblatex/latex/contrib/

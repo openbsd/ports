@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/24 18:50:34 jasper Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
-REVISION=		1
+REVISION=		2
 CATEGORIES =		textproc
 
 # GPLv2+
@@ -32,7 +32,7 @@ NO_REGRESS =		Yes
 SUBST_VARS +=		LOCALBASE MODPY_BIN
 
 post-extract:
-	@perl -pi -e 's,share/man/man1,man/man1,' ${WRKSRC}/setup.py
+	@cd ${WRKSRC}/docs/manpage/ && gunzip dblatex.1.gz
 
 post-install:
 	@rm -r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/contrib

@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1 2010/09/24 18:50:34 jasper Exp $
+
+Install the unzipped manpage in the right place.
+
+--- setup.py.orig	Fri Sep 24 10:51:29 2010
++++ setup.py	Fri Sep 24 10:52:44 2010
+@@ -405,7 +405,7 @@ if __name__ == "__main__":
+         data_files=[('share/dblatex', ['xsl', 'latex']),
+                     ('share/doc/dblatex', pdfdocs),
+                     ('share/doc/dblatex', htmldoc),
+-                    ('share/man/man1', ['docs/manpage/dblatex.1.gz'])],
++                    ('man/man1', ['docs/manpage/dblatex.1'])],
+         scripts=['scripts/dblatex'],
+         cmdclass={'build_scripts': BuildScripts,
+                   'install': Install,
