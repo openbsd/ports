@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/04 07:36:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/24 15:27:00 jeremy Exp $
 
 COMMENT=		high performance full-text search system
 
 DISTNAME=		hyperestraier-1.4.13
-PKGNAME=		${DISTNAME}p1
+REVISION=		2
 CATEGORIES=		textproc
 SHARED_LIBS=		estraier	8.38
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
 
-MAINTAINER=		Jeremy Evans <openbsd@jeremyevans.net>
+MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

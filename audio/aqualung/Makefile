@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/24 15:27:00 jeremy Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
+REVISION=	0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
 
-MAINTAINER=	Jeremy Evans <openbsd@jeremyevans.net>
+MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
