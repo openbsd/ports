@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/24 15:44:41 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 20:23:27 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
+
 SHARED_LIBS =		kpathsea	3.0
+SHARED_LIBS +=		ptexenc		0.0		# 2.1
 
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
 			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms pthread \
@@ -44,21 +46,20 @@ USE_LIBTOOL =	Yes
 CFLAGS +=	-fPIC
 .endif
 
-# For now xindy in 2010 is broken
-# ---
 # clisp limits which arches we can use xindy on
-#.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-#BUILD_DEPENDS += 	:clisp-*:lang/clisp
-#LIB_DEPENDS +=		::devel/libsigsegv \
-#			::devel/ffcall
-#WANTLIB +=		sigsegv avcall callback
-#CONFIGURE_ARGS +=	--enable-xindy
-#PKG_ARGS +=		-Dxindy=1
-#WANTLIB +=		readline
-#MODULES +=		devel/gettext
-#.else
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS += 	:clisp-*:lang/clisp
+LIB_DEPENDS +=		::devel/libsigsegv \
+			::devel/ffcall
+WANTLIB +=		sigsegv avcall callback
+CONFIGURE_ARGS +=	--enable-xindy \
+			--disable-xindy-rules
+PKG_ARGS +=		-Dxindy=1
+WANTLIB +=		readline
+MODULES +=		devel/gettext
+.else
 PKG_ARGS +=		-Dxindy=0
-#.endif
+.endif
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
