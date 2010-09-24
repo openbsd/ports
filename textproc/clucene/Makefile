@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/22 06:58:02 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/24 18:40:15 steven Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-0.9.21b
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=clucene/}
 
 HOMEPAGE = 	http://clucene.sourceforge.net/
+SHARED_LIBS +=	clucene-0.9.21b       1.0     # .0.0
 SHARED_LIBS +=	clucene               1.0     # .0.0
 
 CONFIGURE_STYLE =	gnu
-#XXX +@symlink libclucene-0.9.21b.so.1.0 with ports libtool ?
 USE_LIBTOOL =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/config
 
