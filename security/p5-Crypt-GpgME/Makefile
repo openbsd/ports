@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/08 17:44:40 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/24 15:32:34 sthen Exp $
 
 COMMENT=	Perl interface to gpgme
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Crypt-GpgME-0.08
+REVISION=	0
 CATEGORIES=	devel security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

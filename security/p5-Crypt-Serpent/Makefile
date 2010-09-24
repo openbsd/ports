@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/24 15:32:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT= 	interface to the Serpent encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-Serpent-1.01
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>

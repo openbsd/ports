@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/09/24 15:29:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	generate and manipulate images
 
 DISTNAME=	Imager-0.61
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics
 MODULES=	cpan
 

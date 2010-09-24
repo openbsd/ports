@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/24 15:29:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		copy perl Regexp objects
 
 DISTNAME=		Regexp-Copy-0.06
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>

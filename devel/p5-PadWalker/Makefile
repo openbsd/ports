@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/05 21:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/24 15:29:21 sthen Exp $
 
 COMMENT=	peek at lexical variables
 
 SHARED_ONLY=	Yes
 MODULES=	cpan
 DISTNAME=	PadWalker-1.7
+REVISION=	0
 CATEGORIES=	devel
 CPAN_AUTHOR=	ROBIN
 

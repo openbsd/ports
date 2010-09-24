@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Perl extensions for event-based programming
 
 MODULES=	cpan
 DISTNAME=	Event-Lib-1.03
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/01 22:51:13 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 15:29:21 sthen Exp $
 
 COMMENT =	Write-protect variables, manipulate refcounts
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	Internals-1.1
+REVISION =	0
 CATEGORIES =	devel
 
 # Perl

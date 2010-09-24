@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/20 21:54:50 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the lchown(2) system call
 
 DISTNAME=	Lchown-1.01
+REVISION=	0
 
 CATEGORIES=	devel
 

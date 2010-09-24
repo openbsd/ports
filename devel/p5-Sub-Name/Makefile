@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/24 15:29:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	(re)name a sub
 
 MODULES=	cpan
 DISTNAME=	Sub-Name-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # perl

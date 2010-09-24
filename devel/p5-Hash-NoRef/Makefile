@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/24 15:29:20 sthen Exp $
 
 COMMENT=	HASH that stores values without a reference count increase
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	Hash-NoRef-0.03
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MODULES=	cpan
 

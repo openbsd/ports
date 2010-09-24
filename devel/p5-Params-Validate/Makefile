@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/06/30 18:20:52 jim Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/24 15:29:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	perl module to validate function/method parameters
 
 MODULES=	cpan
 DISTNAME=	Params-Validate-0.95
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:21 sthen Exp $
 
 COMMENT=		utility to make parameter checking easier
 
@@ -6,7 +6,7 @@ SHARED_ONLY=		Yes
 
 MODULES=		cpan
 DISTNAME=		Params-Util-1.00
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # perl

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/24 15:29:21 sthen Exp $
 
 COMMENT=	set of objects and strings
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Set-Object-1.26
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

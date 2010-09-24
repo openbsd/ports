@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/10/02 20:35:10 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2010/09/24 15:29:22 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,8 @@ COMMENT=		change terminal modes, and perform non-blocking reads
 MODULES=		cpan
 V=			2.30
 DISTNAME=		TermReadKey-${V}
-PKGNAME=		p5-Term-ReadKey-${V}p1
+PKGNAME=		p5-Term-ReadKey-${V}
+REVISION=		2
 CATEGORIES=		devel
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>

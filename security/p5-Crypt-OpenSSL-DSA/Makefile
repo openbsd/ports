@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/24 15:32:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 COMMENT=	implements DSA using OpenSSL
 DISTNAME=	Crypt-OpenSSL-DSA-0.13
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

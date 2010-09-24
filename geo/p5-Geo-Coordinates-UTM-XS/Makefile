@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 19:36:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/24 15:29:22 sthen Exp $
 
 COMMENT=	C/XS reimplementation of Geo::Coordinates::UTM
 MODULES=	cpan
 SHARED_ONLY=	Yes
 DISTNAME=	Geo-Coordinates-UTM-XS-0.04
+REVISION=	0
 CATEGORIES=	geo
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

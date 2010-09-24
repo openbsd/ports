@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2009/11/18 13:07:22 stephan Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/24 15:29:22 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	module to interface with the GD graphics library
 
 DISTNAME =	GD-2.44
+REVISION=	0
 CATEGORIES =	graphics
 
 # Artistic License

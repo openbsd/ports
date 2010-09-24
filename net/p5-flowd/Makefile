@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/05 05:32:11 djm Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/24 15:32:34 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Perl API to flowd binary logfiles
 
 DISTNAME=		flowd-0.9.1
 PKGNAME=		p5-${DISTNAME}
+REVISION=		0
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://www.mindrot.org/flowd.html
