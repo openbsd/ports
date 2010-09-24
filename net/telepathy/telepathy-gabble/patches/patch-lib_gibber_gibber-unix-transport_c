@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:41:16 jasper Exp $
+$OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.2 2010/09/24 10:06:19 ajacoutot Exp $
 
 - OpenBSD lacks two defines (should they move to sys/socket.h ?)
 - OpenBSD's struct ucred doesn't have a pid member.
 
---- lib/gibber/gibber-unix-transport.c.orig	Fri Apr 23 00:23:11 2010
-+++ lib/gibber/gibber-unix-transport.c	Fri Apr 23 00:25:15 2010
+--- lib/gibber/gibber-unix-transport.c.orig	Wed Jun  9 18:09:58 2010
++++ lib/gibber/gibber-unix-transport.c	Fri Sep 24 11:43:56 2010
 @@ -35,7 +35,10 @@
  #include <string.h>
  #include <errno.h>
@@ -16,19 +16,18 @@ $OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:41:16 jas
  #include <sys/un.h>
  
  #include "gibber-unix-transport.h"
-@@ -44,6 +47,11 @@
+@@ -44,6 +47,10 @@
  #define DEBUG_FLAG DEBUG_NET
  #include "gibber-debug.h"
  
 +#if defined(__OpenBSD__)
-+#define SCM_CREDENTIALS	0x9001
-+#define SO_PASSCRED	0x9002
++#define SCM_CREDENTIALS	SM_CREDS
 +#endif
 +
  G_DEFINE_TYPE(GibberUnixTransport, gibber_unix_transport, \
      GIBBER_TYPE_FD_TRANSPORT)
  
-@@ -245,9 +253,8 @@ gibber_unix_transport_send_credentials (GibberUnixTran
+@@ -245,9 +252,8 @@ gibber_unix_transport_send_credentials (GibberUnixTran
    ch->cmsg_type = SCM_CREDENTIALS;
  
    cred = (struct ucred *) CMSG_DATA (ch);
@@ -40,7 +39,29 @@ $OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:41:16 jas
  
    ret = sendmsg (fd, &msg, 0);
    if (ret == -1)
-@@ -344,9 +351,9 @@ gibber_unix_transport_read (GibberFdTransport *transpo
+@@ -286,8 +292,10 @@ gibber_unix_transport_read (GibberFdTransport *transpo
+   fd = transport->fd;
+ 
+   /* set SO_PASSCRED flag */
++#ifndef __OpenBSD__
+   opt = 1;
+   setsockopt (fd, SOL_SOCKET, SO_PASSCRED, &opt, sizeof (opt));
++#endif
+ 
+   memset (buffer, 0, sizeof (buffer));
+   memset (&iov, 0, sizeof (iov));
+@@ -318,8 +326,10 @@ gibber_unix_transport_read (GibberFdTransport *transpo
+     }
+ 
+   /* unset SO_PASSCRED flag */
++#ifndef __OpenBSD__
+   opt = 0;
+   setsockopt (fd, SOL_SOCKET, SO_PASSCRED, &opt, sizeof (opt));
++#endif
+ 
+   buf.data = buffer;
+   buf.length = bytes_read;
+@@ -344,9 +354,9 @@ gibber_unix_transport_read (GibberFdTransport *transpo
        GibberCredentials credentials;
  
        cred = (struct ucred *) CMSG_DATA (ch);
