@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/19 20:55:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/24 10:33:34 jasper Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V=		1.0.3
 DISTNAME=	openttd-${V}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	-source.tar.bz2
 DIST_GFX=	opengfx-0.2.4
 DIST_SFX=	opensfx-0.2.3

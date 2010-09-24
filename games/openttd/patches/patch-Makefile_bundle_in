@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_bundle_in,v 1.1 2010/09/24 10:33:34 jasper Exp $
+
+Don't gzip(1) the manual page.
+
+--- Makefile.bundle.in.orig	Fri Jun  4 23:14:22 2010
++++ Makefile.bundle.in	Fri Sep 24 11:27:12 2010
+@@ -81,7 +81,6 @@ endif
+ ifdef MAN_DIR
+ 	$(Q)mkdir -p "$(BUNDLE_DIR)/man/"
+ 	$(Q)cp "$(ROOT_DIR)/docs/openttd.6"       "$(BUNDLE_DIR)/man/"
+-	$(Q)gzip -9 "$(BUNDLE_DIR)/man/openttd.6"
+ endif
+ 	$(Q)cp "$(ROOT_DIR)/media/openttd.32.xpm" "$(BUNDLE_DIR)/media/"
+ 	$(Q)cp "$(ROOT_DIR)/media/openttd."*.png  "$(BUNDLE_DIR)/media/"
+@@ -208,7 +207,7 @@ else
+ endif
+ ifdef MAN_DIR
+ 	$(Q)install -d "$(INSTALL_MAN_DIR)"
+-	$(Q)install -m 644 "$(BUNDLE_DIR)/man/openttd.6.gz" "$(INSTALL_MAN_DIR)/${BINARY_NAME}.6.gz"
++	$(Q)install -m 644 "$(BUNDLE_DIR)/man/openttd.6" "$(INSTALL_MAN_DIR)/${BINARY_NAME}.6"
+ endif
+ ifdef MENU_DIR
+ 	$(Q)install -d "$(INSTALL_MENU_DIR)"

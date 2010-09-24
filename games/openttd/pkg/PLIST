@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/19 20:55:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/24 10:33:34 jasper Exp $
 @bin bin/openttd
-@man man/man6/openttd.6.gz
+@man man/man6/openttd.6
 share/applications/openttd.desktop
 share/doc/openttd/
 share/doc/openttd/32bpp.txt
