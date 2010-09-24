@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/23 21:23:34 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/24 15:40:17 ckuethe Exp $
 fluxbb/
-fluxbb/.gitignore
+@comment fluxbb/.gitignore
 fluxbb/COPYING
 fluxbb/admin_bans.php
 fluxbb/admin_categories.php

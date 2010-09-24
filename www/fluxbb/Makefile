@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/23 21:23:34 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 15:40:17 ckuethe Exp $
 
 COMMENT =	fast, light, user-friendly web forum
 
 V=1.4.2
 DISTNAME =	fluxbb-${V}
 CATEGORIES =	www
+REVISION=0
 
 HOMEPAGE =	http://fluxbb.org/
 
@@ -31,11 +32,10 @@ RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
 
 do-extract:
 	@mkdir -p ${WRKDIST}
-	unzip -d ${WRKDIST} ${FULLDISTDIR}/${EXTRACT_ONLY}
+	unzip -d ${WRKDIST} ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 	@mv ${WRKDIST} ${INSTDIR}
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	@chgrp www ${INSTDIR}/cache
 	@chmod g+w ${INSTDIR}/cache
