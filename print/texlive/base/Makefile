@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/14 20:29:56 edd Exp $
+# $OpenBSD: Makefile,v 1.35 2010/09/24 19:35:27 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -30,7 +30,7 @@ CONFIGURE_STYLE =	gnu
 
 # Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
-			CPPFLAGS=-I/usr/local/include/poppler
+			CPPFLAGS=-I${LOCALBASE}/include/poppler
 			
 WRKBUILD =              ${WRKSRC}/Work # Can't build in same dir
 CONFIGURE_SCRIPT =      ../configure
