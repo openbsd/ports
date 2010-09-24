@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/19 15:48:18 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/24 16:12:06 jim Exp $
 @bin bin/snap
 lib/${DISTNAME}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/
@@ -36,6 +36,7 @@ share/doc/${DISTNAME}/html/Snap-Types.html
 share/doc/${DISTNAME}/html/Snap-Util-FileServe.html
 share/doc/${DISTNAME}/html/Snap-Util-GZip.html
 share/doc/${DISTNAME}/html/doc-index-62.html
+share/doc/${DISTNAME}/html/doc-index-95.html
 share/doc/${DISTNAME}/html/doc-index-A.html
 share/doc/${DISTNAME}/html/doc-index-B.html
 share/doc/${DISTNAME}/html/doc-index-C.html
