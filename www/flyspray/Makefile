@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/23 21:24:16 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/24 01:08:10 ckuethe Exp $
 
 COMMENT =	web-based bug tracking system
 
@@ -35,7 +35,7 @@ do-extract:
 do-install:
 	@mv ${WRKDIST} ${INSTDIR}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
-	@mkdir ${INSTDIR}/cache ${INSTDIR}/attachments
+	@mkdir -p ${INSTDIR}/cache ${INSTDIR}/attachments
 	@chgrp www ${INSTDIR}/cache ${INSTDIR}/attachments
 	@chmod g+w ${INSTDIR}/cache ${INSTDIR}/attachments
 
