@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:36 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/24 10:09:42 dcoppa Exp $
 
-COMMENT =		parser for config files in Haskell
+COMMENT =		parser and writer for config files
 
 DISTNAME =		ConfigFile-1.0.6
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel sysutils
 HOMEPAGE =		http://software.complete.org/configfile
 
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		::devel/hs-MissingH
-RUN_DEPENDS =		${LIB_DEPENDS}
+RUN_DEPENDS +=		::devel/hs-MissingH
+BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

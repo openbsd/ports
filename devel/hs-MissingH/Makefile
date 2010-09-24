@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:36 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/24 10:09:42 dcoppa Exp $
 
-COMMENT =		utility functions for Haskell programmers
+COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.1.0.3
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 HOMEPAGE =		http://software.complete.org/missingh
 
@@ -19,9 +19,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		::devel/hs-hslogger \
+RUN_DEPENDS +=		::devel/hs-hslogger \
 			::devel/hs-HUnit \
 			::devel/hs-regex-compat
-RUN_DEPENDS =		${LIB_DEPENDS}
+BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
