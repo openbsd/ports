@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.5 2010/09/24 20:57:54 steven Exp $
+# $OpenBSD: libtool,v 1.6 2010/09/24 21:07:30 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -192,8 +192,10 @@ sub internal_resolve_la
 			    $lainfo->deplib_list);
 		    push(@{$lainfo->{'cached_deplibs'}},
 			@{$lainfo->deplib_list});
-		    push(@{$lainfo->{'cached_libdirs'}},
-			$lainfo->{'libdir'});
+		    if ($lainfo->{'libdir'} ne '') {
+			push(@{$lainfo->{'cached_libdirs'}},
+			    $lainfo->{'libdir'});
+		    }
 		    if (@{$lainfo->{'cached_deplibs'}} > 50) {
 		    	$lainfo->{'cached_deplibs'} = main::reverse_zap_duplicates_ref($lainfo->{'cached_deplibs'});
 		    }
