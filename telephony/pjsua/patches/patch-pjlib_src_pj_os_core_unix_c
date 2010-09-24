@@ -1,11 +1,22 @@
-$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.5 2010/09/24 07:52:37 dcoppa Exp $
+$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.6 2010/09/24 10:46:47 dcoppa Exp $
 --- pjlib/src/pj/os_core_unix.c.orig	Wed May 19 07:50:08 2010
-+++ pjlib/src/pj/os_core_unix.c	Fri Sep 24 09:27:00 2010
-@@ -337,7 +337,7 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
++++ pjlib/src/pj/os_core_unix.c	Fri Sep 24 12:44:10 2010
+@@ -311,7 +311,7 @@ PJ_DEF(int) pj_thread_get_prio_min(pj_thread_t *thread
+ #if defined _POSIX_PRIORITY_SCHEDULING
+     return sched_get_priority_min(policy);
+ #elif defined __OpenBSD__
+-    /* OpenBSD doesn't have sched_get_priority_min/_max */
++    /* Thread prio min/max are declared in OpenBSD private hdr */
+     return 0;
+ #else
+     pj_assert("pj_thread_get_prio_min() not supported!");
+@@ -336,8 +336,8 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
+ #if defined _POSIX_PRIORITY_SCHEDULING
      return sched_get_priority_max(policy);
  #elif defined __OpenBSD__
-     /* OpenBSD doesn't have sched_get_priority_min/_max */
+-    /* OpenBSD doesn't have sched_get_priority_min/_max */
 -    return 0;
++    /* Thread prio min/max are declared in OpenBSD private hdr */
 +    return 31;
  #else
      pj_assert("pj_thread_get_prio_max() not supported!");
