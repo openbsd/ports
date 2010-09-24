@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 18:40:15 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/24 18:40:44 steven Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
@@ -12,7 +12,7 @@ SHARED_LIBS +=	clucene-0.9.21b       1.0     # .0.0
 SHARED_LIBS +=	clucene               1.0     # .0.0
 
 CONFIGURE_STYLE =	gnu
-USE_LIBTOOL =		gnu
+USE_LIBTOOL =		Yes
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/config
 
 # LGPL/Apache
