@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/24 15:44:42 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/24 21:58:13 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
 @pkgpath print/teTeX/base,-fmt
+@comment @unexec texlinks -u
 bin/a2ping
 bin/afm2afm
 @bin bin/afm2pl
@@ -146,7 +147,6 @@ bin/mktextfm
 @bin bin/mmpfb
 @bin bin/mpost
 bin/mptopdf
-@unexec texlinks -u
 %%SHARED%%
 %%xindy%%
 bin/mtxrun
@@ -252,7 +252,7 @@ bin/texmfstart
 bin/thumbpdf
 @bin bin/tie
 bin/tl-link-config
-bin/tl-link-config.beforesubst
+@comment bin/tl-link-config.beforesubst
 @comment bin/tlmgr
 bin/tpic2pdftex
 @bin bin/ttf2afm
@@ -456,11 +456,13 @@ lib/libptexenc.la
 @man man/man1/tangle.1
 @man man/man1/tcdialog.1
 @man man/man1/tex.1
+@man man/man1/tex2xindy.1
 @man man/man1/texconfig-sys.1
 @man man/man1/texconfig.1
 @man man/man1/texdoctk.1
 @man man/man1/texexec.1
 @man man/man1/texhash.1
+@man man/man1/texindy.1
 @man man/man1/texlinks.1
 @man man/man1/texmfstart.1
 @man man/man1/tftopl.1
@@ -479,6 +481,7 @@ lib/libptexenc.la
 @man man/man1/vptovf.1
 @man man/man1/weave.1
 @man man/man1/xdvi.1
+@man man/man1/xindy.1
 @man man/man5/fmtutil.cnf.5
 @man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
@@ -488,7 +491,7 @@ share/lcdf-typetools-for-tex-live/
 share/texmf/
 share/texmf/web2c/
 share/texmf/web2c/fmtutil.cnf-minimal
-texmf/
+@comment texmf/
 @comment texmf-dist/
 @comment texmf-dist/bibtex/
 @comment texmf-dist/bibtex/csf/
@@ -636,34 +639,62 @@ texmf-dist/scripts/ulqda/
 texmf-dist/scripts/ulqda/ulqda.pl
 texmf-dist/scripts/vpe/
 texmf-dist/scripts/vpe/vpe.pl
-@comment texmf/doc/man/
-@comment texmf/doc/man/man1/
-@comment @man texmf/doc/man/man1/tex2xindy.1
-@comment @man texmf/doc/man/man1/texindy.1
-@comment @man texmf/doc/man/man1/xindy.1
-@comment texmf/doc/tetex/TETEXDOC.dvi
-@comment texmf/doc/tetex/TETEXDOC.ps
-@comment texmf/doc/xindy/
-@comment texmf/doc/xindy/NEWS
-@comment texmf/doc/xindy/README.distrib-source
-texmf/chktex/
-texmf/chktex/chktexrc
+@comment texmf/chktex/
+@comment texmf/chktex/chktexrc
 @comment texmf/doc/
 @comment texmf/doc/bibtex8/
 @comment texmf/doc/bibtex8/00readme.txt
 @comment texmf/doc/bibtex8/HISTORY
 @comment texmf/doc/bibtex8/csfile.txt
 @comment texmf/doc/bibtex8/file_id.diz
-texmf/doc/bibtexu/
-texmf/doc/bibtexu/00readme.txt
-texmf/doc/bibtexu/HISTORY
-texmf/doc/bibtexu/csfile.txt
-texmf/doc/bibtexu/file_id.diz
-texmf/doc/chktex/
-texmf/doc/chktex/ChkTeX.pdf
+@comment texmf/doc/bibtexu/
+@comment texmf/doc/bibtexu/00readme.txt
+@comment texmf/doc/bibtexu/HISTORY
+@comment texmf/doc/bibtexu/csfile.txt
+@comment texmf/doc/bibtexu/file_id.diz
+@comment texmf/doc/chktex/
+@comment texmf/doc/chktex/ChkTeX.pdf
 @comment texmf/doc/tetex/
 @comment texmf/doc/tetex/TETEXDOC.pdf
 @comment texmf/doc/tetex/teTeX-FAQ
+@comment texmf/doc/xindy/
+@comment texmf/doc/xindy/README
+@comment texmf/doc/xindy/dataflow.gif
+@comment texmf/doc/xindy/faq-1.html
+@comment texmf/doc/xindy/faq-2.html
+@comment texmf/doc/xindy/faq-3.html
+@comment texmf/doc/xindy/faq-4.html
+@comment texmf/doc/xindy/faq.html
+@comment texmf/doc/xindy/index.gif
+@comment texmf/doc/xindy/makeindex4.pdf
+@comment texmf/doc/xindy/manual-1.html
+@comment texmf/doc/xindy/manual-2.html
+@comment texmf/doc/xindy/manual-3.html
+@comment texmf/doc/xindy/manual-4.html
+@comment texmf/doc/xindy/manual-5.html
+@comment texmf/doc/xindy/manual-6.html
+@comment texmf/doc/xindy/manual-7.html
+@comment texmf/doc/xindy/manual.html
+@comment texmf/doc/xindy/mappings.gif
+@comment texmf/doc/xindy/next.gif
+@comment texmf/doc/xindy/prev.gif
+@comment texmf/doc/xindy/style-tutorial/
+@comment texmf/doc/xindy/style-tutorial-1.html
+@comment texmf/doc/xindy/style-tutorial-2.html
+@comment texmf/doc/xindy/style-tutorial-3.html
+@comment texmf/doc/xindy/style-tutorial-4.html
+@comment texmf/doc/xindy/style-tutorial.html
+@comment texmf/doc/xindy/style-tutorial/ex1.raw
+@comment texmf/doc/xindy/style-tutorial/ex1.tex
+@comment texmf/doc/xindy/style-tutorial/ex2.raw
+@comment texmf/doc/xindy/style-tutorial/ex2.tex
+@comment texmf/doc/xindy/style-tutorial/index.tex
+@comment texmf/doc/xindy/style-tutorial/style1.xdy
+@comment texmf/doc/xindy/style-tutorial/style2.xdy
+@comment texmf/doc/xindy/tex2xindy.pdf
+@comment texmf/doc/xindy/texindy.pdf
+@comment texmf/doc/xindy/toc.gif
+@comment texmf/doc/xindy/xindy.pdf
 @comment texmf/dvipdfmx/
 @comment texmf/dvipdfmx/dvipdfmx.cfg
 @comment texmf/dvips/
@@ -698,53 +729,8 @@ texmf/scripts/texdoc/
 texmf/scripts/texdoc/texdoc.tlu
 texmf/scripts/texlive/
 texmf/scripts/texlive/rungs.tlu
-@comment texmf/xindy/
-@comment texmf/xindy/base/
-@comment texmf/xindy/base/book-order.xdy
-@comment texmf/xindy/base/ff-ranges-only.xdy
-@comment texmf/xindy/base/ff-ranges.xdy
-@comment texmf/xindy/base/german-sty.xdy
-@comment texmf/xindy/base/ignore-hyphen.xdy
-@comment texmf/xindy/base/ignore-punctuation.xdy
-@comment texmf/xindy/base/keep-blanks.xdy
-@comment texmf/xindy/base/latex-loc-fmts.xdy
-@comment texmf/xindy/base/latex.xdy
-@comment texmf/xindy/base/latin-lettergroups.xdy
-@comment texmf/xindy/base/letter-order.xdy
-@comment texmf/xindy/base/makeindex.xdy
-@comment texmf/xindy/base/numeric-sort.xdy
-@comment texmf/xindy/base/page-ranges.xdy
-@comment texmf/xindy/base/tex.xdy
-@comment texmf/xindy/base/texindy.xdy
-@comment texmf/xindy/base/word-order.xdy
-@comment texmf/xindy/class/
-@comment texmf/xindy/class/pagenums.xdy
-@comment texmf/xindy/lang/
-@comment texmf/xindy/lang/german/
-@comment texmf/xindy/lang/german/din5007.xdy
-@comment texmf/xindy/lang/german/duden.xdy
-@comment texmf/xindy/lang/german/tex.xdy
-@comment texmf/xindy/lang/latin/
-@comment texmf/xindy/lang/latin/caseisrt.xdy
-@comment texmf/xindy/lang/latin/letgroup.xdy
-@comment texmf/xindy/ord/
-@comment texmf/xindy/ord/letorder.xdy
-@comment texmf/xindy/rules/
-@comment texmf/xindy/rules/isolatin1-exchange.xdy
-@comment texmf/xindy/rules/isolatin1-tolower.xdy
-@comment texmf/xindy/rules/latin-exchange.xdy
-@comment texmf/xindy/rules/latin-tolower.xdy
-@comment texmf/xindy/styles/
-@comment texmf/xindy/styles/basic.xdy
-@comment texmf/xindy/styles/makeidx.xdy
-@exec %D/bin/tl-link-config
-@exec mktexlsr > /dev/null 2>&1
-@exec texlinks
-@exec fmtutil-sys --all > /dev/null 2>&1
-@exec updmap-sys --syncwithtrees > /dev/null 2>&1
-@extraunexec rm -Rf %D/share/texmf-var/
-@extraunexec rm -Rf %D/share/texmf-config/
 @comment texmf/scripts/texlive/tlmgr.pl
+@comment texmf/scripts/xindy/
 @comment texmf/texconfig/
 @comment texmf/texconfig/README
 @comment texmf/texconfig/g/
@@ -771,8 +757,57 @@ texmf/scripts/texlive/rungs.tlu
 @comment texmf/xdvi/pixmap/toolbar.xpm
 @comment texmf/xdvi/pixmap/toolbar2.xpm
 @comment texmf/xdvi/xdvi.cfg
-@extra share/texmf/ls-R
-@extra share/texmf-dist/ls-R
-@extra share/texmf-var/ls-R
-@extra share/texmf-config/ls-R
-@extra share/texmf/web2c/fmtutil.cnf
+@comment texmf/xindy/
+@comment texmf/xindy/VERSION
+@comment texmf/xindy/modules/
+@comment texmf/xindy/modules/base/
+@comment texmf/xindy/modules/base/book-order.xdy
+@comment texmf/xindy/modules/base/ff-ranges-only.xdy
+@comment texmf/xindy/modules/base/ff-ranges.xdy
+@comment texmf/xindy/modules/base/german-sty.xdy
+@comment texmf/xindy/modules/base/ignore-hyphen.xdy
+@comment texmf/xindy/modules/base/ignore-punctuation.xdy
+@comment texmf/xindy/modules/base/keep-blanks.xdy
+@comment texmf/xindy/modules/base/latex-loc-fmts.xdy
+@comment texmf/xindy/modules/base/latex.xdy
+@comment texmf/xindy/modules/base/latin-lettergroups.xdy
+@comment texmf/xindy/modules/base/letter-order.xdy
+@comment texmf/xindy/modules/base/makeindex.xdy
+@comment texmf/xindy/modules/base/numeric-sort.xdy
+@comment texmf/xindy/modules/base/page-ranges.xdy
+@comment texmf/xindy/modules/base/tex.xdy
+@comment texmf/xindy/modules/base/texindy.xdy
+@comment texmf/xindy/modules/base/word-order.xdy
+@comment texmf/xindy/modules/class/
+@comment texmf/xindy/modules/class/pagenums.xdy
+@comment texmf/xindy/modules/lang/
+@comment texmf/xindy/modules/lang/german/
+@comment texmf/xindy/modules/lang/german/din5007.xdy
+@comment texmf/xindy/modules/lang/german/duden.xdy
+@comment texmf/xindy/modules/lang/german/tex.xdy
+@comment texmf/xindy/modules/lang/latin/
+@comment texmf/xindy/modules/lang/latin/caseisrt.xdy
+@comment texmf/xindy/modules/lang/latin/letgroup.xdy
+@comment texmf/xindy/modules/ord/
+@comment texmf/xindy/modules/ord/letorder.xdy
+@comment texmf/xindy/modules/rules/
+@comment texmf/xindy/modules/rules/isolatin1-exchange.xdy
+@comment texmf/xindy/modules/rules/isolatin1-tolower.xdy
+@comment texmf/xindy/modules/rules/latin-exchange.xdy
+@comment texmf/xindy/modules/rules/latin-tolower.xdy
+@comment texmf/xindy/modules/styles/
+@comment texmf/xindy/modules/styles/basic.xdy
+@comment texmf/xindy/modules/styles/makeidx.xdy
+@comment ---- RE-ENABLE THESE LATER XXX ----
+@comment @exec %D/bin/tl-link-config
+@comment @exec mktexlsr > /dev/null 2>&1
+@comment @exec texlinks
+@comment @exec fmtutil-sys --all > /dev/null 2>&1
+@comment @exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@comment @extraunexec rm -Rf %D/share/texmf-var/
+@comment @extraunexec rm -Rf %D/share/texmf-config/
+@comment @extra share/texmf/ls-R
+@comment @extra share/texmf-dist/ls-R
+@comment @extra share/texmf-var/ls-R
+@comment @extra share/texmf-config/ls-R
+@comment @extra share/texmf/web2c/fmtutil.cnf

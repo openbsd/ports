@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 20:23:27 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/24 21:58:13 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,25 +6,29 @@ DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 
 SHARED_LIBS =		kpathsea	3.0
+# XXX is ptexenc for xindy builds only? Will be obvious when sparc64 tested.
 SHARED_LIBS +=		ptexenc		0.0		# 2.1
 
+# XXX sort
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
-			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms pthread \
-			pthread-stubs stdc++ xcb xml2
+			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms openjpeg \
+			pthread pthread-stubs stdc++ xcb xml2 t1.>=4 png.>=3 \
+			gd ttf poppler
 
 RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
 			:dvi2tty-*:print/dvi2tty \
 			:ps2eps-*:print/ps2eps \
 			:psutils-*:print/psutils \
-			:t1utils-*:print/t1utils \
-			:texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+			:t1utils-*:print/t1utils
+# XXX - RE-ADD THIS DEP LATER
+#			:texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 			
-LIB_DEPENDS =		t1.>=4::devel/t1lib \
-			png.>=3::graphics/png \
-			gd::graphics/gd \
-			ttf::print/freetype \
-			poppler::print/poppler
+LIB_DEPENDS =		::devel/t1lib \
+			::graphics/png \
+			::graphics/gd \
+			::print/freetype \
+			::print/poppler
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -49,14 +53,10 @@ CFLAGS +=	-fPIC
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS += 	:clisp-*:lang/clisp
-LIB_DEPENDS +=		::devel/libsigsegv \
-			::devel/ffcall
-WANTLIB +=		sigsegv avcall callback
+LIB_DEPENDS +=		::devel/ffcall	# XXX still needed? try build on fresh sys
 CONFIGURE_ARGS +=	--enable-xindy \
 			--disable-xindy-rules
 PKG_ARGS +=		-Dxindy=1
-WANTLIB +=		readline
-MODULES +=		devel/gettext
 .else
 PKG_ARGS +=		-Dxindy=0
 .endif
@@ -67,7 +67,6 @@ CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
 			--with-system-freetype2 \
 			--with-system-freetype \
 			--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype \
-			--with-freetype2-includes=${LOCALBASE}/include/freetype1/freetype \
 			--with-freetype-libdir=${LOCALBASE}/lib \
 			--with-system-gd \
 			--with-gd-libdir=${LOCALBASE}/lib \
@@ -94,16 +93,12 @@ CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
 			--enable-t1utils=no \
 			--disable-threads \
 			--with-old-mac-fonts \
-			--with-tex-banner=PuffTeX-2009 \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
 			--with-system-xpdf # link poppler, yay :)
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 PATCHORIG = 		.origy
-
-#post-patch:
-#	${SUBST_CMD} ${WRKSRC}/utils/xindy/rte/ordrules/Makefile.in
 
 # just to silence error - never used
 pre-install:
