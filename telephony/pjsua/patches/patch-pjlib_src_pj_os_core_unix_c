@@ -1,0 +1,12 @@
+$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.5 2010/09/24 07:52:37 dcoppa Exp $
+--- pjlib/src/pj/os_core_unix.c.orig	Wed May 19 07:50:08 2010
++++ pjlib/src/pj/os_core_unix.c	Fri Sep 24 09:27:00 2010
+@@ -337,7 +337,7 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
+     return sched_get_priority_max(policy);
+ #elif defined __OpenBSD__
+     /* OpenBSD doesn't have sched_get_priority_min/_max */
+-    return 0;
++    return 31;
+ #else
+     pj_assert("pj_thread_get_prio_max() not supported!");
+     return 0;
