@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/24 08:03:10 jasper Exp $
 
 COMMENT= 	perform diffs on files and record sets
 
 MODULES=	cpan
-DISTNAME=	Text-Diff-0.35
-REVISION=	0
+DISTNAME=	Text-Diff-1.37
 CATEGORIES=	textproc
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
