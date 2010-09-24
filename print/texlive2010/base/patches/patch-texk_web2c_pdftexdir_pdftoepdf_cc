@@ -1,0 +1,14 @@
+$OpenBSD: patch-texk_web2c_pdftexdir_pdftoepdf_cc,v 1.1.1.1 2010/09/24 15:44:42 edd Exp $
+--- texk/web2c/pdftexdir/pdftoepdf.cc.origy	Fri Sep 24 11:10:16 2010
++++ texk/web2c/pdftexdir/pdftoepdf.cc	Fri Sep 24 11:14:51 2010
+@@ -61,6 +61,10 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 US
+ 
+ #undef boolean
+ 
++#ifdef __OpenBSD__
++#define HAVE_GETPDFMAJORVERSION
++#endif
++
+ // This file is mostly C and not very much C++; it's just used to interface
+ // the functions of xpdf, which happens to be written in C++.
+ 

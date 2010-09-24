@@ -1,0 +1,778 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/24 15:44:42 edd Exp $
+@conflict teTeX_base-*
+@conflict ht-<2
+@pkgpath print/teTeX/base
+@pkgpath print/teTeX/base,-fmt
+bin/a2ping
+bin/afm2afm
+@bin bin/afm2pl
+@bin bin/afm2tfm
+@bin bin/aleph
+bin/allcm
+bin/allec
+bin/allneeded
+bin/arlatex
+bin/authorindex
+bin/autoinst
+bin/bg5+latex
+bin/bg5+pdflatex
+@bin bin/bg5conv
+bin/bg5latex
+bin/bg5pdflatex
+bin/bibexport
+@bin bin/bibtex
+@bin bin/bibtex8
+@bin bin/bibtexu
+bin/bundledoc
+bin/cachepic
+@bin bin/cef5conv
+bin/cef5latex
+bin/cef5pdflatex
+@bin bin/cefconv
+bin/ceflatex
+bin/cefpdflatex
+@bin bin/cefsconv
+bin/cefslatex
+bin/cefspdflatex
+@bin bin/cfftot1
+@bin bin/chktex
+bin/chkweb
+bin/cmap2enc
+bin/context
+@bin bin/ctangle
+@bin bin/ctie
+bin/ctxtools
+@bin bin/cweave
+bin/de-macro
+@bin bin/devnag
+bin/deweb
+@bin bin/dt2dv
+@bin bin/dv2dt
+bin/dvi2fax
+bin/dviasm
+@bin bin/dvibook
+@bin bin/dviconcat
+@bin bin/dvicopy
+@bin bin/dvidvi
+bin/dvigif
+bin/dvihp
+@bin bin/dvilj
+@bin bin/dvilj2p
+@bin bin/dvilj4
+@bin bin/dvilj4l
+bin/dvilj6
+bin/dvipdfm
+@bin bin/dvipdfmx
+bin/dvipdft
+@bin bin/dvipng
+@bin bin/dvipos
+@bin bin/dvips
+bin/dvired
+@bin bin/dviselect
+@bin bin/dvisvgm
+@bin bin/dvitodvi
+bin/dvitomp
+@bin bin/dvitype
+bin/e2pall
+bin/ebb
+bin/ebong
+bin/epspdf
+bin/epspdftk
+bin/epstopdf
+@bin bin/extconv
+bin/extractbb
+bin/fig4latex
+bin/findhyph
+bin/fmtutil
+bin/fmtutil-sys
+bin/font2afm
+bin/fontinst
+bin/fragmaster
+bin/gbklatex
+bin/gbkpdflatex
+@bin bin/gftodvi
+@bin bin/gftopk
+@bin bin/gftype
+@bin bin/gsftopk
+@bin bin/hbf2gf
+bin/ht
+bin/htcontext
+bin/htlatex
+bin/htmex
+bin/httex
+bin/httexi
+bin/htxelatex
+bin/htxetex
+@bin bin/kpseaccess
+bin/kpsepath
+@bin bin/kpsereadlink
+@bin bin/kpsestat
+bin/kpsetool
+bin/kpsewhere
+@bin bin/kpsewhich
+bin/kpsexpand
+@bin bin/lacheck
+bin/latex2man
+bin/latexdiff
+bin/latexdiff-vc
+bin/latexmk
+bin/latexrevise
+bin/listings-ext.sh
+@bin bin/luatex
+bin/luatools
+@bin bin/mag
+bin/makeglossaries
+@bin bin/makeindex
+@bin bin/makejvf
+bin/mathspic
+@bin bin/mendex
+@bin bin/mf
+@bin bin/mf-nowin
+@bin bin/mft
+bin/mk4ht
+bin/mkgrkindex
+bin/mkindex
+bin/mkjobtexmf
+bin/mkluatexfontdb
+bin/mkocp
+bin/mkofm
+bin/mkt1font
+bin/mktexfmt
+bin/mktexlsr
+bin/mktexmf
+bin/mktexpk
+bin/mktextfm
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/mpost
+bin/mptopdf
+@unexec texlinks -u
+%%SHARED%%
+%%xindy%%
+bin/mtxrun
+@bin bin/musixflx
+@bin bin/odvicopy
+@bin bin/odvitype
+bin/ofm2opl
+@bin bin/omfonts
+bin/opl2ofm
+bin/ot2kpx
+@bin bin/otangle
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/otp2ocp
+@bin bin/outocp
+bin/ovf2ovp
+bin/ovp2ovf
+@bin bin/patgen
+@bin bin/pbibtex
+bin/pdf180
+bin/pdf270
+bin/pdf90
+bin/pdfannotextractor
+bin/pdfatfi
+bin/pdfbook
+@bin bin/pdfclose
+bin/pdfcrop
+bin/pdfflip
+bin/pdfjam
+bin/pdfjam-pocketmod
+bin/pdfjam-slides3up
+bin/pdfjam-slides6up
+bin/pdfjoin
+bin/pdfnup
+@bin bin/pdfopen
+bin/pdfpun
+@bin bin/pdftex
+bin/pdfthumb
+@bin bin/pdftosrc
+@bin bin/pdvitype
+bin/perltex
+@bin bin/pfb2pfa
+bin/pfm2kpx
+@bin bin/pk2bm
+bin/pkfix
+bin/pkfix-helper
+@bin bin/pktogf
+@bin bin/pktype
+@bin bin/pltotf
+@bin bin/pooltype
+@bin bin/ppltotf
+bin/ppower4
+bin/ps2frag
+@bin bin/ps2pk
+bin/ps4pdf
+bin/pslatex
+bin/pst2pdf
+bin/pstopdf
+@bin bin/ptex
+@bin bin/ptftopl
+bin/purifyeps
+bin/repstopdf
+bin/rlxtools
+bin/rpdfcrop
+bin/rubibtex
+bin/rumakeindex
+bin/rungs
+bin/showglyphs
+bin/simpdftex
+@bin bin/sjisconv
+bin/sjislatex
+bin/sjispdflatex
+bin/splitindex
+bin/svn-multi
+@bin bin/synctex
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1rawafm
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/t4ht
+@bin bin/tangle
+@bin bin/tcdialog
+@bin bin/teckit_compile
+@bin bin/tex
+@bin bin/tex4ht
+bin/texconfig
+bin/texconfig-dialog
+bin/texconfig-sys
+bin/texcount
+bin/texdiff
+bin/texdirflatten
+bin/texdoc
+bin/texdoctk
+bin/texexec
+bin/texhash
+bin/texlinks
+bin/texloganalyser
+bin/texlua
+bin/texluac
+bin/texmfstart
+@bin bin/tftopl
+bin/thumbpdf
+@bin bin/tie
+bin/tl-link-config
+bin/tl-link-config.beforesubst
+@comment bin/tlmgr
+bin/tpic2pdftex
+@bin bin/ttf2afm
+@bin bin/ttf2pk
+@bin bin/ttf2tfm
+@bin bin/ttfdump
+@bin bin/ttftotype42
+bin/ulqda
+bin/updmap
+bin/updmap-sys
+@bin bin/vftovp
+@bin bin/vlna
+bin/vpe
+bin/vpl2ovp
+bin/vpl2vpl
+@bin bin/vptovf
+@bin bin/weave
+bin/xdvi
+@bin bin/xdvi-xaw
+@bin bin/xdvipdfmx
+@bin bin/xetex
+include/kpathsea/
+include/kpathsea/absolute.h
+include/kpathsea/c-auto.h
+include/kpathsea/c-ctype.h
+include/kpathsea/c-dir.h
+include/kpathsea/c-errno.h
+include/kpathsea/c-fopen.h
+include/kpathsea/c-limits.h
+include/kpathsea/c-memstr.h
+include/kpathsea/c-minmax.h
+include/kpathsea/c-namemx.h
+include/kpathsea/c-pathch.h
+include/kpathsea/c-pathmx.h
+include/kpathsea/c-proto.h
+include/kpathsea/c-stat.h
+include/kpathsea/c-std.h
+include/kpathsea/c-unistd.h
+include/kpathsea/cnf.h
+include/kpathsea/concatn.h
+include/kpathsea/config.h
+include/kpathsea/db.h
+include/kpathsea/debug.h
+include/kpathsea/default.h
+include/kpathsea/expand.h
+include/kpathsea/fn.h
+include/kpathsea/fontmap.h
+include/kpathsea/getopt.h
+include/kpathsea/hash.h
+include/kpathsea/kpathsea.h
+include/kpathsea/lib.h
+include/kpathsea/line.h
+include/kpathsea/magstep.h
+include/kpathsea/mingw32.h
+include/kpathsea/paths.h
+include/kpathsea/pathsearch.h
+include/kpathsea/proginit.h
+include/kpathsea/progname.h
+include/kpathsea/readable.h
+include/kpathsea/recorder.h
+include/kpathsea/str-list.h
+include/kpathsea/str-llist.h
+include/kpathsea/systypes.h
+include/kpathsea/tex-file.h
+include/kpathsea/tex-glyph.h
+include/kpathsea/tex-hush.h
+include/kpathsea/tex-make.h
+include/kpathsea/tilde.h
+include/kpathsea/truncate.h
+include/kpathsea/types.h
+include/kpathsea/variable.h
+include/kpathsea/version.h
+include/kpathsea/win32lib.h
+include/kpathsea/xopendir.h
+include/kpathsea/xstat.h
+include/ptexenc/
+include/ptexenc/ptexenc.h
+@info info/dvipng.info
+@info info/dvips.info
+@info info/kpathsea.info
+@info info/web2c.info
+lib/libkpathsea.a
+lib/libkpathsea.la
+lib/libptexenc.a
+lib/libptexenc.la
+@man man/man1/afm2pl.1
+@man man/man1/afm2tfm.1
+@man man/man1/aleph.1
+@man man/man1/allcm.1
+@man man/man1/allec.1
+@man man/man1/allneeded.1
+@man man/man1/amstex.1
+@man man/man1/bibtex.1
+@man man/man1/cfftot1.1
+@man man/man1/chktex.1
+@man man/man1/chkweb.1
+@man man/man1/ctangle.1
+@man man/man1/ctie.1
+@man man/man1/ctxtools.1
+@man man/man1/cweave.1
+@man man/man1/cweb.1
+@man man/man1/deweb.1
+@man man/man1/dt2dv.1
+@man man/man1/dv2dt.1
+@man man/man1/dvi2fax.1
+@man man/man1/dvibook.1
+@man man/man1/dviconcat.1
+@man man/man1/dvicopy.1
+@man man/man1/dvidvi.1
+@man man/man1/dvigif.1
+@man man/man1/dvihp.1
+@man man/man1/dvilj.1
+@man man/man1/dvilj2p.1
+@man man/man1/dvilj4.1
+@man man/man1/dvilj4l.1
+@man man/man1/dvilj6.1
+@man man/man1/dvipng.1
+@man man/man1/dvipos.1
+@man man/man1/dvips.1
+@man man/man1/dvired.1
+@man man/man1/dviselect.1
+@man man/man1/dvisvgm.1
+@man man/man1/dvitodvi.1
+@man man/man1/dvitomp.1
+@man man/man1/dvitype.1
+@man man/man1/e2pall.1
+@man man/man1/eplain.1
+@man man/man1/fmtutil-sys.1
+@man man/man1/fmtutil.1
+@man man/man1/fontinst.1
+@man man/man1/gftodvi.1
+@man man/man1/gftopk.1
+@man man/man1/gftype.1
+@man man/man1/gsftopk.1
+@man man/man1/hbf2gf.1
+@man man/man1/kpseaccess.1
+@man man/man1/kpsepath.1
+@man man/man1/kpsereadlink.1
+@man man/man1/kpsestat.1
+@man man/man1/kpsetool.1
+@man man/man1/kpsewhere.1
+@man man/man1/kpsewhich.1
+@man man/man1/kpsexpand.1
+@man man/man1/lacheck.1
+@man man/man1/lamed.1
+@man man/man1/latex.1
+@man man/man1/luatex.1
+@man man/man1/mag.1
+@man man/man1/makeindex.1
+@man man/man1/mendex.1
+@man man/man1/mf-nowin.1
+@man man/man1/mf.1
+@man man/man1/mft.1
+@man man/man1/mkindex.1
+@man man/man1/mkjobtexmf.1
+@man man/man1/mkocp.1
+@man man/man1/mkofm.1
+@man man/man1/mktexfmt.1
+@man man/man1/mktexlsr.1
+@man man/man1/mktexmf.1
+@man man/man1/mktexpk.1
+@man man/man1/mktextfm.1
+@man man/man1/mmafm.1
+@man man/man1/mmpfb.1
+@man man/man1/mpost.1
+@man man/man1/mptopdf.1
+@man man/man1/odvicopy.1
+@man man/man1/odvitype.1
+@man man/man1/ofm2opl.1
+@man man/man1/opl2ofm.1
+@man man/man1/otangle.1
+@man man/man1/otfinfo.1
+@man man/man1/otftotfm.1
+@man man/man1/otp2ocp.1
+@man man/man1/outocp.1
+@man man/man1/ovf2ovp.1
+@man man/man1/ovp2ovf.1
+@man man/man1/patgen.1
+@man man/man1/pdfetex.1
+@man man/man1/pdflatex.1
+@man man/man1/pdftex.1
+@man man/man1/pdftosrc.1
+@man man/man1/pfb2pfa.1
+@man man/man1/pk2bm.1
+@man man/man1/pktogf.1
+@man man/man1/pktype.1
+@man man/man1/pltotf.1
+@man man/man1/pooltype.1
+@man man/man1/ps2frag.1
+@man man/man1/ps2pk.1
+@man man/man1/pslatex.1
+@man man/man1/pstopdf.1
+@man man/man1/rubibtex.1
+@man man/man1/rumakeindex.1
+@man man/man1/synctex.1
+@man man/man1/t1dotlessj.1
+@man man/man1/t1lint.1
+@man man/man1/t1rawafm.1
+@man man/man1/t1reencode.1
+@man man/man1/t1testpage.1
+@man man/man1/tangle.1
+@man man/man1/tcdialog.1
+@man man/man1/tex.1
+@man man/man1/texconfig-sys.1
+@man man/man1/texconfig.1
+@man man/man1/texdoctk.1
+@man man/man1/texexec.1
+@man man/man1/texhash.1
+@man man/man1/texlinks.1
+@man man/man1/texmfstart.1
+@man man/man1/tftopl.1
+@man man/man1/thumbpdf.1
+@man man/man1/tie.1
+@man man/man1/tpic2pdftex.1
+@man man/man1/ttf2afm.1
+@man man/man1/ttf2pk.1
+@man man/man1/ttf2tfm.1
+@man man/man1/ttfdump.1
+@man man/man1/ttftotype42.1
+@man man/man1/updmap-sys.1
+@man man/man1/updmap.1
+@man man/man1/vftovp.1
+@man man/man1/vlna.1
+@man man/man1/vptovf.1
+@man man/man1/weave.1
+@man man/man1/xdvi.1
+@man man/man5/fmtutil.cnf.5
+@man man/man5/synctex.5
+@man man/man5/updmap.cfg.5
+share/doc/texlive/
+share/doc/texlive/README.OpenBSD
+share/lcdf-typetools-for-tex-live/
+share/texmf/
+share/texmf/web2c/
+share/texmf/web2c/fmtutil.cnf-minimal
+texmf/
+@comment texmf-dist/
+@comment texmf-dist/bibtex/
+@comment texmf-dist/bibtex/csf/
+@comment texmf-dist/bibtex/csf/base/
+@comment texmf-dist/bibtex/csf/base/88591lat.csf
+@comment texmf-dist/bibtex/csf/base/88591sca.csf
+@comment texmf-dist/bibtex/csf/base/ascii.csf
+@comment texmf-dist/bibtex/csf/base/cp437lat.csf
+@comment texmf-dist/bibtex/csf/base/cp850lat.csf
+@comment texmf-dist/bibtex/csf/base/cp850sca.csf
+@comment texmf-dist/bibtex/csf/base/cp866rus.csf
+@comment texmf-dist/bibtex/csf/base/csfile.txt
+@comment texmf-dist/fonts/
+@comment texmf-dist/fonts/enc/
+@comment texmf-dist/fonts/enc/dvips/
+@comment texmf-dist/fonts/enc/dvips/base/
+@comment texmf-dist/fonts/enc/dvips/base/7t.enc
+@comment texmf-dist/fonts/map/
+@comment texmf-dist/fonts/map/glyphlist/
+@comment texmf-dist/fonts/map/glyphlist/glyphlist.txt
+@comment texmf-dist/fonts/map/glyphlist/pdfglyphlist.txt
+@comment texmf-dist/fonts/map/glyphlist/texglyphlist.txt
+texmf-dist/scripts/
+texmf-dist/scripts/accfonts/
+texmf-dist/scripts/accfonts/mkt1font
+texmf-dist/scripts/accfonts/vpl2ovp
+texmf-dist/scripts/accfonts/vpl2vpl
+texmf-dist/scripts/authorindex/
+texmf-dist/scripts/authorindex/authorindex
+texmf-dist/scripts/bengali/
+texmf-dist/scripts/bengali/ebong.py
+texmf-dist/scripts/bibexport/
+texmf-dist/scripts/bibexport/bibexport.sh
+texmf-dist/scripts/bundledoc/
+texmf-dist/scripts/bundledoc/arlatex
+texmf-dist/scripts/bundledoc/bundledoc
+texmf-dist/scripts/cachepic/
+texmf-dist/scripts/cachepic/cachepic.tlu
+texmf-dist/scripts/context/
+texmf-dist/scripts/context/perl/
+texmf-dist/scripts/context/perl/mptopdf.pl
+texmf-dist/scripts/de-macro/
+texmf-dist/scripts/de-macro/de-macro
+texmf-dist/scripts/dviasm/
+texmf-dist/scripts/dviasm/dviasm.py
+texmf-dist/scripts/epspdf/
+texmf-dist/scripts/epspdf/epspdf
+texmf-dist/scripts/epspdf/epspdftk
+texmf-dist/scripts/epstopdf/
+texmf-dist/scripts/epstopdf/epstopdf.pl
+texmf-dist/scripts/fig4latex/
+texmf-dist/scripts/fig4latex/fig4latex
+texmf-dist/scripts/findhyph/
+texmf-dist/scripts/findhyph/findhyph
+texmf-dist/scripts/fontools/
+texmf-dist/scripts/fontools/afm2afm
+texmf-dist/scripts/fontools/autoinst
+texmf-dist/scripts/fontools/cmap2enc
+texmf-dist/scripts/fontools/font2afm
+texmf-dist/scripts/fontools/ot2kpx
+texmf-dist/scripts/fontools/pfm2kpx
+texmf-dist/scripts/fontools/showglyphs
+texmf-dist/scripts/fragmaster/
+texmf-dist/scripts/fragmaster/fragmaster.pl
+texmf-dist/scripts/glossaries/
+texmf-dist/scripts/glossaries/makeglossaries
+texmf-dist/scripts/latex2man/
+texmf-dist/scripts/latex2man/latex2man
+texmf-dist/scripts/latexdiff/
+texmf-dist/scripts/latexdiff/latexdiff-vc.pl
+texmf-dist/scripts/latexdiff/latexdiff.pl
+texmf-dist/scripts/latexdiff/latexrevise.pl
+texmf-dist/scripts/latexmk/
+texmf-dist/scripts/latexmk/latexmk.pl
+texmf-dist/scripts/listings-ext/
+texmf-dist/scripts/listings-ext/listings-ext.sh
+texmf-dist/scripts/luaotfload/
+texmf-dist/scripts/luaotfload/mkluatexfontdb.lua
+texmf-dist/scripts/mathspic/
+texmf-dist/scripts/mathspic/mathspic.pl
+texmf-dist/scripts/mkgrkindex/
+texmf-dist/scripts/mkgrkindex/mkgrkindex
+texmf-dist/scripts/mkjobtexmf/
+texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
+texmf-dist/scripts/oberdiek/
+texmf-dist/scripts/oberdiek/pdfatfi.pl
+texmf-dist/scripts/pax/
+texmf-dist/scripts/pax/pdfannotextractor.pl
+texmf-dist/scripts/pdfcrop/
+texmf-dist/scripts/pdfcrop/pdfcrop.pl
+texmf-dist/scripts/pdfjam/
+texmf-dist/scripts/pdfjam/pdf180
+texmf-dist/scripts/pdfjam/pdf270
+texmf-dist/scripts/pdfjam/pdf90
+texmf-dist/scripts/pdfjam/pdfbook
+texmf-dist/scripts/pdfjam/pdfflip
+texmf-dist/scripts/pdfjam/pdfjam
+texmf-dist/scripts/pdfjam/pdfjam-pocketmod
+texmf-dist/scripts/pdfjam/pdfjam-slides3up
+texmf-dist/scripts/pdfjam/pdfjam-slides6up
+texmf-dist/scripts/pdfjam/pdfjoin
+texmf-dist/scripts/pdfjam/pdfnup
+texmf-dist/scripts/pdfjam/pdfpun
+texmf-dist/scripts/perltex/
+texmf-dist/scripts/perltex/perltex.pl
+texmf-dist/scripts/pkfix/
+texmf-dist/scripts/pkfix-helper/
+texmf-dist/scripts/pkfix-helper/pkfix-helper
+texmf-dist/scripts/pkfix/pkfix.pl
+texmf-dist/scripts/ppower4/
+texmf-dist/scripts/ppower4/pdfthumb.tlu
+texmf-dist/scripts/ppower4/ppower4.tlu
+texmf-dist/scripts/pst-pdf/
+texmf-dist/scripts/pst-pdf/ps4pdf
+texmf-dist/scripts/pst2pdf/
+texmf-dist/scripts/pst2pdf/pst2pdf
+texmf-dist/scripts/purifyeps/
+texmf-dist/scripts/purifyeps/purifyeps
+texmf-dist/scripts/splitindex/
+texmf-dist/scripts/splitindex/perl/
+texmf-dist/scripts/splitindex/perl/splitindex.pl
+texmf-dist/scripts/svn-multi/
+texmf-dist/scripts/svn-multi/svn-multi.pl
+texmf-dist/scripts/tex4ht/
+texmf-dist/scripts/tex4ht/ht.sh
+texmf-dist/scripts/tex4ht/htcontext.sh
+texmf-dist/scripts/tex4ht/htlatex.sh
+texmf-dist/scripts/tex4ht/htmex.sh
+texmf-dist/scripts/tex4ht/httex.sh
+texmf-dist/scripts/tex4ht/httexi.sh
+texmf-dist/scripts/tex4ht/htxelatex.sh
+texmf-dist/scripts/tex4ht/htxetex.sh
+texmf-dist/scripts/tex4ht/mk4ht.pl
+texmf-dist/scripts/texcount/
+texmf-dist/scripts/texcount/texcount.pl
+texmf-dist/scripts/texdiff/
+texmf-dist/scripts/texdiff/texdiff
+texmf-dist/scripts/texdirflatten/
+texmf-dist/scripts/texdirflatten/texdirflatten
+texmf-dist/scripts/texloganalyser/
+texmf-dist/scripts/texloganalyser/texloganalyser
+texmf-dist/scripts/thumbpdf/
+texmf-dist/scripts/thumbpdf/thumbpdf.pl
+texmf-dist/scripts/ulqda/
+texmf-dist/scripts/ulqda/ulqda.pl
+texmf-dist/scripts/vpe/
+texmf-dist/scripts/vpe/vpe.pl
+@comment texmf/doc/man/
+@comment texmf/doc/man/man1/
+@comment @man texmf/doc/man/man1/tex2xindy.1
+@comment @man texmf/doc/man/man1/texindy.1
+@comment @man texmf/doc/man/man1/xindy.1
+@comment texmf/doc/tetex/TETEXDOC.dvi
+@comment texmf/doc/tetex/TETEXDOC.ps
+@comment texmf/doc/xindy/
+@comment texmf/doc/xindy/NEWS
+@comment texmf/doc/xindy/README.distrib-source
+texmf/chktex/
+texmf/chktex/chktexrc
+@comment texmf/doc/
+@comment texmf/doc/bibtex8/
+@comment texmf/doc/bibtex8/00readme.txt
+@comment texmf/doc/bibtex8/HISTORY
+@comment texmf/doc/bibtex8/csfile.txt
+@comment texmf/doc/bibtex8/file_id.diz
+texmf/doc/bibtexu/
+texmf/doc/bibtexu/00readme.txt
+texmf/doc/bibtexu/HISTORY
+texmf/doc/bibtexu/csfile.txt
+texmf/doc/bibtexu/file_id.diz
+texmf/doc/chktex/
+texmf/doc/chktex/ChkTeX.pdf
+@comment texmf/doc/tetex/
+@comment texmf/doc/tetex/TETEXDOC.pdf
+@comment texmf/doc/tetex/teTeX-FAQ
+@comment texmf/dvipdfmx/
+@comment texmf/dvipdfmx/dvipdfmx.cfg
+@comment texmf/dvips/
+@comment texmf/dvips/base/
+@comment texmf/dvips/base/color.pro
+@comment texmf/dvips/base/crop.pro
+@comment texmf/dvips/base/finclude.pro
+@comment texmf/dvips/base/hps.pro
+@comment texmf/dvips/base/special.pro
+@comment texmf/dvips/base/tex.pro
+@comment texmf/dvips/base/texc.pro
+@comment texmf/dvips/base/texps.pro
+@comment texmf/dvips/gsftopk/
+@comment texmf/dvips/gsftopk/render.ps
+@comment texmf/fonts/
+@comment texmf/fonts/cmap/
+@comment texmf/fonts/cmap/dvipdfmx/
+@comment texmf/fonts/cmap/dvipdfmx/EUC-UCS2
+@comment texmf/fonts/map/
+@comment texmf/fonts/map/dvipdfm/
+@comment texmf/fonts/map/dvipdfm/dvipdfmx/
+@comment texmf/fonts/map/dvipdfm/dvipdfmx/cid-x.map
+texmf/scripts/
+texmf/scripts/a2ping/
+texmf/scripts/a2ping/a2ping.pl
+texmf/scripts/simpdftex/
+texmf/scripts/simpdftex/simpdftex
+texmf/scripts/tetex/
+texmf/scripts/tetex/e2pall.pl
+texmf/scripts/tetex/texdoctk.pl
+texmf/scripts/texdoc/
+texmf/scripts/texdoc/texdoc.tlu
+texmf/scripts/texlive/
+texmf/scripts/texlive/rungs.tlu
+@comment texmf/xindy/
+@comment texmf/xindy/base/
+@comment texmf/xindy/base/book-order.xdy
+@comment texmf/xindy/base/ff-ranges-only.xdy
+@comment texmf/xindy/base/ff-ranges.xdy
+@comment texmf/xindy/base/german-sty.xdy
+@comment texmf/xindy/base/ignore-hyphen.xdy
+@comment texmf/xindy/base/ignore-punctuation.xdy
+@comment texmf/xindy/base/keep-blanks.xdy
+@comment texmf/xindy/base/latex-loc-fmts.xdy
+@comment texmf/xindy/base/latex.xdy
+@comment texmf/xindy/base/latin-lettergroups.xdy
+@comment texmf/xindy/base/letter-order.xdy
+@comment texmf/xindy/base/makeindex.xdy
+@comment texmf/xindy/base/numeric-sort.xdy
+@comment texmf/xindy/base/page-ranges.xdy
+@comment texmf/xindy/base/tex.xdy
+@comment texmf/xindy/base/texindy.xdy
+@comment texmf/xindy/base/word-order.xdy
+@comment texmf/xindy/class/
+@comment texmf/xindy/class/pagenums.xdy
+@comment texmf/xindy/lang/
+@comment texmf/xindy/lang/german/
+@comment texmf/xindy/lang/german/din5007.xdy
+@comment texmf/xindy/lang/german/duden.xdy
+@comment texmf/xindy/lang/german/tex.xdy
+@comment texmf/xindy/lang/latin/
+@comment texmf/xindy/lang/latin/caseisrt.xdy
+@comment texmf/xindy/lang/latin/letgroup.xdy
+@comment texmf/xindy/ord/
+@comment texmf/xindy/ord/letorder.xdy
+@comment texmf/xindy/rules/
+@comment texmf/xindy/rules/isolatin1-exchange.xdy
+@comment texmf/xindy/rules/isolatin1-tolower.xdy
+@comment texmf/xindy/rules/latin-exchange.xdy
+@comment texmf/xindy/rules/latin-tolower.xdy
+@comment texmf/xindy/styles/
+@comment texmf/xindy/styles/basic.xdy
+@comment texmf/xindy/styles/makeidx.xdy
+@exec %D/bin/tl-link-config
+@exec mktexlsr > /dev/null 2>&1
+@exec texlinks
+@exec fmtutil-sys --all > /dev/null 2>&1
+@exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@extraunexec rm -Rf %D/share/texmf-var/
+@extraunexec rm -Rf %D/share/texmf-config/
+@comment texmf/scripts/texlive/tlmgr.pl
+@comment texmf/texconfig/
+@comment texmf/texconfig/README
+@comment texmf/texconfig/g/
+@comment texmf/texconfig/g/generic
+@comment texmf/texconfig/generic
+@comment texmf/texconfig/tcfmgr
+@comment texmf/texconfig/tcfmgr.map
+@comment texmf/texconfig/v/
+@comment texmf/texconfig/v/vt100
+@comment texmf/texconfig/x/
+@comment texmf/texconfig/x/xterm
+@comment texmf/web2c/
+@comment texmf/web2c/fmtutil.cnf
+@comment texmf/web2c/mktex.opt
+@comment texmf/web2c/mktexdir
+@comment texmf/web2c/mktexdir.opt
+@comment texmf/web2c/mktexnam
+@comment texmf/web2c/mktexnam.opt
+@comment texmf/web2c/mktexupd
+@comment texmf/web2c/texmf.cnf
+@comment texmf/xdvi/
+@comment texmf/xdvi/XDvi
+@comment texmf/xdvi/pixmap/
+@comment texmf/xdvi/pixmap/toolbar.xpm
+@comment texmf/xdvi/pixmap/toolbar2.xpm
+@comment texmf/xdvi/xdvi.cfg
+@extra share/texmf/ls-R
+@extra share/texmf-dist/ls-R
+@extra share/texmf-var/ls-R
+@extra share/texmf-config/ls-R
+@extra share/texmf/web2c/fmtutil.cnf

@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/09/24 15:44:42 edd Exp $
+--- configure.origy	Tue Jul 20 15:04:38 2010
++++ configure	Thu Sep 23 15:04:33 2010
+@@ -18918,7 +18918,7 @@ fi
+ if test "x$with_libpng_includes" != x && test "x$with_libpng_includes" != xyes; then
+   LIBPNG_INCLUDES="-I$with_libpng_includes"
+ fi
+-LIBPNG_LIBS="-lpng"
++LIBPNG_LIBS="-lpng -lm"
+ if test "x$with_libpng_libdir" != x && test "x$with_libpng_libdir" != xyes; then
+   LIBPNG_LIBS="-L$with_libpng_libdir $LIBPNG_LIBS"
+ fi
+@@ -19139,9 +19139,10 @@ else
+ fi
+ 
+ if $PKG_CONFIG poppler --atleast-version=0.10; then
+-  POPPLER_VERSION='-DPOPPLER_VERSION=\"'`$PKG_CONFIG poppler --modversion`'\"'
++  POPPLER_VERSION='-DPOPPLER_VERSION="'`$PKG_CONFIG poppler --modversion`'"'
+   XPDF_INCLUDES="$POPPLER_VERSION `$PKG_CONFIG poppler --cflags`"
+   XPDF_LIBS=`$PKG_CONFIG poppler --libs`
++  XPDF_LIBS="$XPDF_LIBS -pthread"
+ elif test "x$need_xpdf:$with_system_xpdf" = xyes:yes; then
+   as_fn_error "did not find poppler-0.10 or better" "$LINENO" 5
+ fi

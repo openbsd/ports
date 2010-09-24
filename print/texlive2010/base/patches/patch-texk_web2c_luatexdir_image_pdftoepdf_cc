@@ -1,0 +1,14 @@
+$OpenBSD: patch-texk_web2c_luatexdir_image_pdftoepdf_cc,v 1.1.1.1 2010/09/24 15:44:42 edd Exp $
+--- texk/web2c/luatexdir/image/pdftoepdf.cc.origy	Fri Sep 24 11:15:56 2010
++++ texk/web2c/luatexdir/image/pdftoepdf.cc	Fri Sep 24 11:17:01 2010
+@@ -34,6 +34,10 @@ static const char _svn_version[] =
+ 
+ #define pdfkeyprefix "PTEX"
+ 
++#ifdef __OpenBSD__
++#define HAVE_GETPDFMAJORVERSION
++#endif
++
+ static GBool isInit = gFalse;
+ 
+ //**********************************************************************
