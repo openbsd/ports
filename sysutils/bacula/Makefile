@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/22 06:56:57 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/24 21:10:16 steven Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -46,8 +46,7 @@ SUBST_VARS=		SD_USER BACULACONF BACULASTATE TRUEPREFIX
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
-# XXX .libs/bat vs bat issue on nfs ?
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		yes
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
