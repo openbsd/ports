@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/24 15:16:20 millert Exp $
 
 COMMENT=	SLIP/CSLIP emulator for users with shell accounts
 
 V=		1.0c
 DISTNAME=	slirp-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 

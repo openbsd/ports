@@ -1,0 +1,13 @@
+$OpenBSD: patch-mkpro,v 1.1 2010/09/24 15:16:20 millert Exp $
+--- mkpro.orig	Wed Sep 13 04:55:36 1995
++++ mkpro	Fri Sep 17 10:27:16 2010
+@@ -87,7 +87,8 @@ STATE0:
+ 		$1 =~ /([^\*]+)/;	# Remove "*"
+ 		$type = $1;
+ 		
+-		$n = split(/,/);
++		@_ = split(/,/, $_);
++		$n = int(@_);
+ 		$nargs += $n;
+ 		goto STATE0 if ($nargs > $nargs_guess);
+ 		
