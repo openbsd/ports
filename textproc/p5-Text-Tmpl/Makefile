@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/24 15:37:42 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	very fast Perl templating library
 
 MODULES=	cpan
 DISTNAME=	Text-Tmpl-0.29
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	Alex Feinberg <alex@strlen.net>

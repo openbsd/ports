@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/02 11:53:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/09/24 15:37:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,9 @@ MODULES=	cpan
 VERSION=	804.029
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
+REVISION-main=	0
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
+REVISION-demo=	0
 CATEGORIES=	x11 devel
 
 # GPL + custom

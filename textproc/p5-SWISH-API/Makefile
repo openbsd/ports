@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/01 21:49:48 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/24 15:37:42 sthen Exp $
 
 COMMENT=	Perl interface to the swish-e C library
 SHARED_ONLY=	Yes
 
 DISTNAME=	swish-e-2.4.5
-PKGNAME=	p5-SWISH-API-0.04p0
+PKGNAME=	p5-SWISH-API-0.04
+REVISION=	1
 CATEGORIES=	textproc
 MODULES=	cpan
 

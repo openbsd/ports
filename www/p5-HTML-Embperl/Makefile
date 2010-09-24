@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/11/08 11:41:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/09/24 15:37:42 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	embperl allows you to embed perl in your HTML documents
 MODULES=	cpan converters/libiconv
 DISTNAME=	Embperl-2.3.0
 PKGNAME=	p5-HTML-${DISTNAME}
+REVISION=	0
 CATEGORIES=	www
 
 # GPL

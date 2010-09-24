@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/07 10:35:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/24 15:37:42 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ MODULES=		cpan
 VERSION=		2.22
 DISTNAME=		Template-Toolkit-${VERSION}
 PKGNAME=		p5-Template-${VERSION}
+REVISION=		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.template-toolkit.org/
