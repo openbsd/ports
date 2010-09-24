@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/25 21:36:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/24 08:03:51 jasper Exp $
 
 COMMENT=		XHTML format for Text::Diff::Unified
 
 MODULES=		cpan
-DISTNAME=		Text-Diff-HTML-0.05
+DISTNAME=		Text-Diff-HTML-0.06
 CATEGORIES=		textproc www
 
 # perl
