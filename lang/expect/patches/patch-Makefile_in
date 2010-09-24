@@ -1,54 +1,41 @@
---- Makefile.in.orig	Fri May  7 20:10:30 2004
-+++ Makefile.in	Sun Jun 12 10:07:51 2005
-@@ -24,7 +24,7 @@ TCLHDIRDASHI = @TCLHDIRDASHI@
- TCL_LIBRARY = @TCL_LIBRARY@
+$OpenBSD: patch-Makefile_in,v 1.3 2010/09/24 14:16:50 sebastia Exp $
+
+allow to build with --with-tk=no to please the no_tk flavor
+propagate the -lutil via @LIBS@, otherwise it will break 
+at least on vax
+
+--- Makefile.in.orig	Thu Mar 11 20:06:30 2010
++++ Makefile.in	Fri Sep 24 09:52:53 2010
+@@ -103,7 +103,11 @@ PKG_LIB_FILE	= @PKG_LIB_FILE@
+ PKG_STUB_LIB_FILE = @PKG_STUB_LIB_FILE@
  
- # Tcl library uninstalled.  Should be something like -ltcl or ../tcl/libtcl.a
--TCLLIB = @TCL_BUILD_LIB_SPEC@
-+TCLLIB = @TCL_LIB_SPEC@
- # Tcl library installed.  Should be something like -ltcl or ../tcl/libtcl.a
- TCLLIB_INSTALLED = @TCL_LIB_SPEC@
+ lib_BINARIES	= $(PKG_LIB_FILE)
+-bin_BINARIES	= expect expectk
++bin_BINARIES	= expect
++.ifdef TK
++  bin_BINARIES	+= expectk
++.endif
++
+ BINARIES	= $(lib_BINARIES) $(bin_BINARIES)
  
-@@ -32,7 +32,7 @@ TCLLIB_INSTALLED = @TCL_LIB_SPEC@
- # Tk include files
- TKHDIRDASHI = @TKHDIRDASHI@
- # Tk library
--TKLIB = @TK_BUILD_LIB_SPEC@
-+TKLIB = @TK_LIB_SPEC@
- TKLIB_INSTALLED = @TK_LIB_SPEC@
- # X11 include files and other flags to compiler
- X11_CFLAGS = @TK_XINCLUDES@
-@@ -192,6 +192,7 @@ SHELL = @EXP_CONFIG_SHELL@
+ SHELL		= @SHELL@
+@@ -413,7 +417,8 @@ expect:	exp_main_exp.o $(PKG_LIB_FILE)
+ 		@TCL_LIB_SPEC@ \
+ 		@DL_LIBS@ @PKG_LIBS@ @MATH_LIBS@ \
+ 		@TCL_CC_SEARCH_FLAGS@ \
+-		@EXP_CC_SEARCH_FLAGS@
++		@EXP_CC_SEARCH_FLAGS@ \
++		@LIBS@
+ 	$(SETUID) expect
  
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
- INSTALL_DATA = @INSTALL_DATA@
+ expectk: exp_main_tk.o $(PKG_LIB_FILE)
+@@ -428,7 +433,8 @@ expectk: exp_main_tk.o $(PKG_LIB_FILE)
+ 		@TCL_LIB_SPEC@ \
+ 		@TK_LIBS@ \
+ 		@TCL_CC_SEARCH_FLAGS@ \
+-		@EXP_CC_SEARCH_FLAGS@
++		@EXP_CC_SEARCH_FLAGS@ \
++		@LIBS@
+ 	$(SETUID) expectk
  
- AR = ar
-@@ -208,6 +209,7 @@ FLAGS_TO_PASS = \
- 	"HDEFS=$(HDEFS)" \
- 	"INSTALL=$(INSTALL)" \
- 	"INSTALL_DATA=$(INSTALL_DATA)" \
-+	"INSTALL_SCRIPT=$(INSTALL_SCRIPT)" \
- 	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
- 	"LDFLAGS=$(LDFLAGS)" \
- 	"RUNTEST=$(RUNTEST)" \
-@@ -368,7 +370,7 @@ install_shared_lib: $(EXP_LIB_FILES)
- 	else true; fi
- 	if [ -s $(EXP_SHARED_LIB_FILE) ] ; then \
- 	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
--	  $(INSTALL_PROGRAM) pkgIndex $(libdir)/pkgIndex.tcl ; \
-+	  $(INSTALL_SCRIPT) pkgIndex $(libdir)/pkgIndex.tcl ; \
- 	else true; fi
- 
- expect_installed:	exp_main_exp.o $(EXP_LIB_FILE) install_shared_lib
-@@ -451,7 +453,7 @@ install-libraries:
- 	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
- 	-for i in $(SCRIPT_LIST) ; do \
- 	  if [ -f $$i ] ; then \
--	    $(INSTALL_PROGRAM) $$i $(bindir_arch_indep)/$$i ; \
-+	    $(INSTALL_SCRIPT) $$i $(bindir_arch_indep)/$$i ; \
- 	    rm -f $$i ; \
- 	  else true; fi ; \
- 	done
+ #========================================================================

@@ -1,0 +1,15 @@
+$OpenBSD: patch-exp_win_c,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+
+Get rid of implicit declaration of function warning
+
+--- exp_win.c.orig	Thu Sep  9 18:41:48 2010
++++ exp_win.c	Thu Sep  9 18:42:53 2010
+@@ -39,7 +39,7 @@ conflicts with sys/ioctl.h
+ /* Sigh.  On AIX 2.3, termios.h exists but does not define TIOCGWINSZ */
+ /* Instead, it has to come from ioctl.h.  However, As I said above, this */
+ /* can't be cavalierly included on all machines, even when it exists. */
+-#if defined(HAVE_TERMIOS) && !defined(HAVE_TIOCGWINSZ_IN_TERMIOS_H)
++#if (defined(HAVE_TERMIOS) && !defined(HAVE_TIOCGWINSZ_IN_TERMIOS_H)) || defined(__OpenBSD__)
+ #  include <sys/ioctl.h>
+ #endif
+ 

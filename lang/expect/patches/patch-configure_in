@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+--- configure.in.orig	Wed Sep 15 13:23:31 2010
++++ configure.in	Wed Sep 15 13:24:45 2010
+@@ -1112,7 +1112,7 @@ EXP_UNSHARED_LIB_FILE=libexpect${EXP_LIB_VERSION}.a
+ AC_MSG_CHECKING([for type of library to build])
+ if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
+   EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
+-  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
++  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}.${LIBexpect544115_VERSION}"
+   EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
+   EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_UNSHARED_LIB_FILE"
+   AC_MSG_RESULT(both shared and unshared)

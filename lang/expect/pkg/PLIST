@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/11/19 22:36:56 kili Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/09/24 14:16:50 sebastia Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
 bin/decryptdir
 bin/dislocate
 @bin bin/expect
+!%%no_tk%%
+%%SHARED%%
 bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
@@ -20,9 +22,6 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect5.43/
-lib/expect5.43/libexpect543.a
-lib/libexpect543.a
 @man man/man1/autoexpect.1
 @man man/man1/cryptdir.1
 @man man/man1/decryptdir.1
@@ -33,5 +32,3 @@ lib/libexpect543.a
 @man man/man1/passmass.1
 @man man/man1/unbuffer.1
 @man man/man3/libexpect.3
-!%%no_tk%%
-%%SHARED%%

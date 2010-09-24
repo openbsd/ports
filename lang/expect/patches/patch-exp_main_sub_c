@@ -1,0 +1,16 @@
+$OpenBSD: patch-exp_main_sub_c,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+
+Get rid of implicit declaration of function warning
+
+--- exp_main_sub.c.orig	Thu Sep  9 19:37:20 2010
++++ exp_main_sub.c	Thu Sep  9 19:38:01 2010
+@@ -28,6 +28,9 @@
+ #include "tcldbg.h"
+ #endif
+ 
++
++extern int exp_tty_cooked_echo(Tcl_Interp *interp, exp_tty *tty_old, int *was_raw, int *was_echo);
++
+ #ifndef EXP_VERSION
+ #define EXP_VERSION PACKAGE_VERSION
+ #endif

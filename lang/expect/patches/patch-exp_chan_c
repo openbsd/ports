@@ -1,0 +1,14 @@
+$OpenBSD: patch-exp_chan_c,v 1.1 2010/09/24 14:16:50 sebastia Exp $
+
+Get rid of implicit declaration of function warning
+
+--- exp_chan.c.orig	Thu Sep  9 19:29:43 2010
++++ exp_chan.c	Thu Sep  9 19:30:27 2010
+@@ -37,6 +37,7 @@
+ #include "exp_log.h"
+ #include "tcldbg.h" /* Dbg_StdinMode */
+ 
++extern void exp_background_channelhandler(ClientData,int);
+ extern int		expSetBlockModeProc _ANSI_ARGS_((int fd, int mode));
+ static int		ExpBlockModeProc _ANSI_ARGS_((ClientData instanceData,
+ 			    int mode));
