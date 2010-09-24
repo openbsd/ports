@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.23 2010/09/24 16:20:40 ajacoutot Exp $
+
+OpenBSD does not have sched_get_priority_{max,min}.
+
+--- configure.orig	Fri Sep 24 16:23:49 2010
++++ configure	Fri Sep 24 16:24:38 2010
+@@ -25883,6 +25883,15 @@ $as_echo "$glib_result" >&6; }
+ 	       posix_priority_min="sched_get_priority_min(SCHED_OTHER)"
+ 	       posix_priority_max="sched_get_priority_max(SCHED_OTHER)"
+ 	       break
++            else
++               case $build_os in
++                 openbsd*)
++                   G_THREAD_LIBS="$G_THREAD_LIBS $add_thread_lib"
++                   posix_priority_min=0
++                   posix_priority_max=31
++                   break
++                   ;;
++               esac
+             fi
+ 	  done
+ 	  LIBS="$glib_save_LIBS"

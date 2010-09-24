@@ -1,0 +1,22 @@
+$OpenBSD: patch-gthread_gthread-posix_c,v 1.1 2010/09/24 16:20:40 ajacoutot Exp $
+--- gthread/gthread-posix.c.orig	Fri Sep 24 17:51:34 2010
++++ gthread/gthread-posix.c	Fri Sep 24 17:54:33 2010
+@@ -148,10 +148,18 @@ g_thread_impl_init(void)
+ #endif /* HAVE_PRIORITIES */
+ 
+ #ifdef USE_CLOCK_GETTIME
++# if defined(__OpenBSD__)
++   /*
++      OpenBSD has support for monotonic clock but does not has the
++      sysconf(3) _SC_MONOTONIC_CLOCK define
++   */
++   posix_clock = CLOCK_MONOTONIC;
++# else
+  if (sysconf (_SC_MONOTONIC_CLOCK) >= 0)
+    posix_clock = CLOCK_MONOTONIC;
+  else
+    posix_clock = CLOCK_REALTIME;
++# endif
+ #endif
+ }
+ #endif /* _SC_THREAD_STACK_MIN || HAVE_PRIORITIES */

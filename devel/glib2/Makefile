@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/08/31 07:04:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2010/09/24 16:20:40 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -8,7 +8,7 @@ DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 CATEGORIES=		devel
 
@@ -57,10 +57,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-selinux \
 			--disable-xattr \
 			--disable-silent-rules
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
+				-D_POSIX_MONOTONIC_CLOCK=200112L" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-# don't hardcode (+fix) paths
 pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
 		-e "s,/usr/share,${LOCALBASE}/share,g;" \
