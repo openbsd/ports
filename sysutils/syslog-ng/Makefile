@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/22 21:03:03 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/24 17:54:16 steven Exp $
 
 COMMENT=	syslogd replacement
 
-V =		3.1.1
+V =		3.1.2
 DISTNAME =	syslog-ng-$V
-REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -50,7 +49,7 @@ pre-install:
 	cd ${WRKSRC}/doc/man && perl -pi -e 's@/opt/syslog\\-ng/etc/syslog\\-ng/@${SYSCONFDIR:S/-/\\-/g}/@g' *.[158]
  
 post-install:
-	${INSTALL_DATA_DIR} ${DOC}
+#	${INSTALL_DATA_DIR} ${DOC}
 #	${INSTALL_DATA} ${WRKBUILD}/syslog-ng.html/index.html ${DOC}
 	${INSTALL_DATA_DIR} ${EXAMPLES}
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf \
