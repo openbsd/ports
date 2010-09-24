@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_decode_proto_c,v 1.1 2010/09/24 10:04:00 jasper Exp $
+
+OpenBSD lacks DLT_PPI.
+
+--- src/decode_proto.c.orig	Thu Sep 23 22:59:42 2010
++++ src/decode_proto.c	Thu Sep 23 23:01:05 2010
+@@ -165,7 +165,9 @@ static linktype_data_t linktypes[] = {
+  {"WLAN",   DLT_IEEE802_11,    LINK6,   get_wlan }, 
+  /* Wireless with radiotap header */
+  {"WLAN+RTAP",  DLT_IEEE802_11_RADIO, LINK6, get_radiotap }, 
++#ifndef __OpenBSD__
+  {"PPI",  DLT_PPI, LINK6, get_ppi }, /* PPI encapsulation */
++#endif
+  {NULL,   0, 0 } /* terminating entry, must be last */
+ };
+ 

@@ -1,24 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 00:31:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/24 10:04:00 jasper Exp $
 @bin bin/etherape
 @man man/man1/etherape.1
 share/applications/etherape.desktop
 share/etherape/
-share/etherape/doc/
-share/etherape/doc/etherape/
-share/etherape/doc/etherape/C/
-share/etherape/doc/etherape/C/etherape.xml
-share/etherape/doc/etherape/C/figures/
-share/etherape/doc/etherape/C/figures/appmain.png
-share/etherape/doc/etherape/C/figures/capture_file_dlg.png
-share/etherape/doc/etherape/C/figures/color_select_dlg.png
-share/etherape/doc/etherape/C/figures/eth_toolbar.png
-share/etherape/doc/etherape/C/figures/link_info.png
-share/etherape/doc/etherape/C/figures/node_info.png
-share/etherape/doc/etherape/C/figures/pref_colors_dlg.png
-share/etherape/doc/etherape/C/figures/pref_diagram_dlg.png
-share/etherape/doc/etherape/C/figures/pref_timings_dlg.png
-share/etherape/doc/etherape/C/figures/proto_info.png
-share/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
 share/etherape/glade/
 share/etherape/glade/etherape.glade
 share/etherape/glade/etherape.png
@@ -29,9 +13,6 @@ share/locale/es/LC_MESSAGES/etherape.mo
 share/locale/fr/LC_MESSAGES/etherape.mo
 share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
-share/omf/
-share/omf/etherape/
-share/omf/etherape/etherape-C.omf
 share/pixmaps/
 share/pixmaps/etherape.png
 @exec %D/bin/update-desktop-database
