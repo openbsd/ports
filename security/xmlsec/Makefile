@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/26 20:09:18 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/25 18:45:37 steven Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -39,6 +39,7 @@ LIB_DEPENDS=		ltdl::devel/libtool,-ltdl \
 			xslt.>=3::textproc/libxslt \
 			gnutls.>=13::security/gnutls
 
+# depends on libltdl
 USE_LIBTOOL=		gnu
 
 CONFIGURE_STYLE=	gnu
