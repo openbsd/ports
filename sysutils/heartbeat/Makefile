@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/07 18:26:29 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/25 20:45:24 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -76,6 +76,7 @@ LIB_DEPENDS-snmp=${LIB_DEPENDS} \
 		netsnmp.>=7,netsnmpagent,netsnmphelpers,netsnmpmibs::net/net-snmp
 
 USE_GMAKE=	Yes
+# depends on libltdl
 USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 
