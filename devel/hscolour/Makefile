@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/17 13:56:14 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/25 20:53:56 jasper Exp $
 
 COMMENT =	Haskell code colourizer
 
-DISTNAME =	hscolour-1.16
+DISTNAME =	hscolour-1.17
 # Rip off the hs- prefix, even if it contains a Haskell library.
 PKGNAME =	${DISTNAME}
-REVISION =	4
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.cs.york.ac.uk/fp/darcs/hscolour/
