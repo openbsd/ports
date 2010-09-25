@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.8 2010/09/25 15:20:04 steven Exp $
+# $OpenBSD: libtool,v 1.9 2010/09/25 16:58:52 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1722,8 +1722,16 @@ sub process_deplibs
 		if ($lf =~ m/-L\S+\Q$ltdir\E$/) {
 		} elsif ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
-			$lf = LaFile->parse($lf)->{'libdir'}.'/'.$lafile;
-			push @$result, $lf;
+			my $libdir = LaFile->parse($lf)->{'libdir'};
+			if ($libdir eq '') {
+				# this drops libraries which will not be
+				# installed
+				# XXX improve checks when adding to deplibs
+				say "warning: $lf dropped from deplibs";
+			} else {
+				$lf = $libdir.'/'.$lafile;
+				push @$result, $lf;
+			}
 		} else {
 			push @$result, $lf;
 		}
