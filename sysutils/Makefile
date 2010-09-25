@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2010/09/22 16:08:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2010/09/25 05:33:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -159,6 +159,7 @@
      SUBDIR += testdisk
      SUBDIR += tkdvd
      SUBDIR += toprump
+     SUBDIR += torture
      SUBDIR += tpb
      SUBDIR += tphdisk
      SUBDIR += tree
