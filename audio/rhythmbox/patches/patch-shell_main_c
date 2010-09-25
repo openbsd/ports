@@ -1,13 +1,47 @@
-$OpenBSD: patch-shell_main_c,v 1.5 2009/05/31 14:11:36 ajacoutot Exp $
---- shell/main.c.orig	Sat May 23 14:33:25 2009
-+++ shell/main.c	Sun May 31 14:44:37 2009
-@@ -329,7 +329,9 @@ main (int argc, char **argv)
+$OpenBSD: patch-shell_main_c,v 1.6 2010/09/25 18:13:13 ajacoutot Exp $
+
+From 4394826f36fad0ad36ea773b6d4525dfcfcd389b Mon Sep 17 00:00:00 2001
+From: Jonathan Matthew <jonathan@d14n.org>
+Date: Wed, 05 May 2010 12:58:26 +0000
+Subject: python: fix a number of python initialization problems (bug #617587)
+
+- pygtk.require("2.8") doesn't work - it's only after a major version,
+  so we should pass in "2.0" instead
+- init_pygobject() is deprecated, use pygobject_init (and pass in the
+  version we require) instead
+- init_pygtk() is a macro that returns from the current function on
+  error, so we need to call it from a separate function for our error
+  handling to work
+- if some aspect of python initialization failed, we were still using
+  the pygobject GIL macros, which were crashing
+
+--- shell/main.c.orig	Thu Mar 25 01:10:15 2010
++++ shell/main.c	Sat Sep 25 19:55:32 2010
+@@ -35,6 +35,7 @@
+ #define NO_IMPORT_PYGOBJECT
+ #define NO_IMPORT_PYGTK
+ #include <pygobject.h>
++#include "rb-python-module.h"
+ 
+ /* make sure it's defined somehow */
+ #ifndef _XOPEN_SOURCE
+@@ -327,11 +328,15 @@ main (int argc, char **argv)
+ 
+ 		rb_profile_start ("mainloop");
  #ifdef ENABLE_PYTHON
- 		pyg_begin_allow_threads;
- #endif
-+		GDK_THREADS_ENTER ();
+-		pyg_begin_allow_threads;
+-#endif
++		if (rb_python_init_successful ()) {
++			pyg_begin_allow_threads;
++			gtk_main ();
++			pyg_end_allow_threads;
++		} else {
++			gtk_main ();
++		}
++#else
  		gtk_main ();
-+		GDK_THREADS_LEAVE ();
- #ifdef ENABLE_PYTHON
- 		pyg_end_allow_threads;
+-#ifdef ENABLE_PYTHON
+-		pyg_end_allow_threads;
  #endif
+ 		rb_profile_end ("mainloop");
+ 

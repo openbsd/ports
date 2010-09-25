@@ -1,0 +1,28 @@
+$OpenBSD: patch-shell_rb-python-module_h,v 1.1 2010/09/25 18:13:13 ajacoutot Exp $
+
+From 4394826f36fad0ad36ea773b6d4525dfcfcd389b Mon Sep 17 00:00:00 2001
+From: Jonathan Matthew <jonathan@d14n.org>
+Date: Wed, 05 May 2010 12:58:26 +0000
+Subject: python: fix a number of python initialization problems (bug #617587)
+
+- pygtk.require("2.8") doesn't work - it's only after a major version,
+  so we should pass in "2.0" instead
+- init_pygobject() is deprecated, use pygobject_init (and pass in the
+  version we require) instead
+- init_pygtk() is a macro that returns from the current function on
+  error, so we need to call it from a separate function for our error
+  handling to work
+- if some aspect of python initialization failed, we were still using
+  the pygobject GIL macros, which were crashing
+
+--- shell/rb-python-module.h.orig	Thu Mar 25 01:10:15 2010
++++ shell/rb-python-module.h	Sat Sep 25 19:55:32 2010
+@@ -60,6 +60,8 @@ GObject			*rb_python_module_new_object		(RBPythonModul
+ 
+ void			rb_python_module_init_python		(void);
+ 
++gboolean		rb_python_init_successful		(void);
++
+ void			rb_python_garbage_collect		(void);
+ 
+ void			rb_python_shutdown			(void);
