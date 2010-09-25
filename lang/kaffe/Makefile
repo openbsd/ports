@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/04/26 20:09:18 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2010/09/25 18:25:35 steven Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
+# libtool needs to support -dlopen option
 USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
 USE_X11=	Yes
