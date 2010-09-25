@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/09/18 07:26:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/09/25 18:13:09 steven Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -49,7 +49,7 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnumeric
 
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gnome \
 			--without-gda \
