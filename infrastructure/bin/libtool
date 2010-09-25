@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.6 2010/09/24 21:07:30 steven Exp $
+# $OpenBSD: libtool,v 1.7 2010/09/25 13:32:06 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1756,6 +1756,8 @@ sub generate_objlist
 			} else {
 				$allpic = 0;
 			}
+		} elsif ($a =~ m/\S+\.o$/) {
+			push @$objs, $a;
 		} else {
 			push @$result, $a;
 		}
@@ -1813,6 +1815,10 @@ sub get_symbollist
 	my $filepath = shift;
 	my $regex = shift;
 	my $objlist = shift;
+
+	if (@$objlist == 0) {
+		die "get_symbollist: object list is empty\n";
+	}
 
 	Trace::debug {"generating symbol list in file: $filepath\n"};
 	my $symbols = [];
