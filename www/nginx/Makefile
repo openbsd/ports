@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/08/31 20:05:21 edd Exp $
+# $OpenBSD: Makefile,v 1.27 2010/09/25 03:34:40 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 DISTNAME=	nginx-0.7.67
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.net/
@@ -38,6 +38,7 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--error-log-path=/var/log/nginx/error.log \
 			--user=_nginx \
 			--group=_nginx \
+			--with-http_gzip_static_module \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
 			--with-mail \
