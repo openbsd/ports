@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.835 2010/09/23 09:35:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.836 2010/09/25 20:57:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -178,6 +178,7 @@
      SUBDIR += hs-tar
      SUBDIR += hs-text
      SUBDIR += hs-transformers
+     SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-vector
      SUBDIR += hscolour
