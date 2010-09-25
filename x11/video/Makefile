@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/12 22:41:45 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/25 03:14:56 jakemsr Exp $
+
+COMES_WITH =	4.9
 
 MASTER_SITES = 	http://www.bsdfrog.org/OpenBSD/distfiles/ \
 		ftp://quatramaran.ens.fr/pub/espie/
