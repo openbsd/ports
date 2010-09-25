@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.27 2010/09/22 19:12:42 fgsch Exp $
+# $OpenBSD: Quirks.pm,v 1.28 2010/09/25 03:22:42 jakemsr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -89,6 +89,8 @@ my $base_exceptions = {
 	'p5-Parse-CPAN-Meta' => "$p5/Parse/CPAN/Meta.pm",
 	'p5-parent' => "$p5/parent.pm",
 	'dejavu-fonts' => "/usr/X11R6/lib/X11/fonts/TTF/DejaVuSans.ttf",
+# 4.9
+	'video' => "/usr/X11R6/bin/video",
 };
 
 my $stem_extensions = {
