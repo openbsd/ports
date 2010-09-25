@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/10 20:50:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/25 20:05:45 steven Exp $
 
 COMMENT=	Portable Forth Environment
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man
 CONFIGURE_ARGS+=--with-regs
 .endif
 
+# this renames floating.so to libfloating.so before linking with it
 USE_LIBTOOL=	gnu
 
 post-install:
