@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/01 11:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/09/26 11:21:55 steven Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
@@ -45,7 +45,7 @@ USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= ekiga
-USE_LIBTOOL=	gnu
+USE_LIBTOOL=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
