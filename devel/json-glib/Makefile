@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/24 08:57:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/26 07:11:06 ajacoutot Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		0.10.2
+GNOME_VERSION=		0.12.0
 
-SHARED_LIBS +=  json-glib-1.0        2.0      # .1000.2
+SHARED_LIBS +=  json-glib-1.0        3.0      # .1200.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://live.gnome.org/JsonGlib
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		pcre
+WANTLIB += pcre z glib-2.0 gobject-2.0 gthread-2.0 gio-2.0 gmodule-2.0
 
 MODULES=		devel/gettext x11/gnome
 
-LIB_DEPENDS=		glib-2.0,gobject-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS=		::devel/glib2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -28,6 +28,6 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-introspection=no
+			--disable-introspection
 
 .include <bsd.port.mk>
