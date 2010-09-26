@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/02/26 14:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/26 17:45:13 sebastia Exp $
 
 COMMENT=	Apache module for implementing a framework for doing design
 
+REVISION=	2
 DISTNAME=	mod_layout-3.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	http://tangent.org/

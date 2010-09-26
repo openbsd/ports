@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/08/24 09:14:43 robert Exp $
+# $OpenBSD: Makefile,v 1.60 2010/09/26 17:45:14 sebastia Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -8,6 +8,7 @@ COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
 PKGNAME=	php5-core-${V}
 PKGNAME-main=	php5-core-${V}
+REVISION-main=	0
 PKGNAME-fastcgi=php5-fastcgi-${V}
 
 DISTFILES=	php-${V}.tar.gz

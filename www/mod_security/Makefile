@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/02/26 14:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/26 17:45:14 sebastia Exp $
 
 COMMENT=	Web intrusion detection and prevention engine
 
 VER=		1.9.3
+REVISION=	4
 DISTNAME=	modsecurity-apache_${VER}
-PKGNAME=	modsecurity-apache-${VER}p3
+PKGNAME=	modsecurity-apache-${VER}
 
 CATEGORIES=	www
 

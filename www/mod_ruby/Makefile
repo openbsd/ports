@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/23 22:21:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/26 17:45:14 sebastia Exp $
 
 COMMENT=		module that embeds Ruby into Apache
 
 DISTNAME=		mod_ruby-1.2.6
-REVISION=		3
+REVISION=		4
 CATEGORIES=		www
 
 HOMEPAGE=		http://modruby.net/

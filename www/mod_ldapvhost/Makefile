@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/02/26 14:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/26 17:45:14 sebastia Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
+REVISION=		7
 DISTNAME=		mod_ldapvhost-1.0.2
-PKGNAME=		${DISTNAME}p6
 CATEGORIES=		www
 
 HOMEPAGE=		https://www.msys.ch/products/unix/mod_ldapvhost/
