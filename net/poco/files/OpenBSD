@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.1.1.1 2010/07/28 18:13:00 sebastia Exp $
+# $OpenBSD: OpenBSD,v 1.2 2010/09/26 15:10:53 ajacoutot Exp $
 #
 # OpenBSD
 #
@@ -43,7 +43,7 @@ CFLAGS64        +=
 # using POCO_OS_FAMILY_UNIX does not make the SHAREDMEMORY or FPENVIRONMENT work
 # ENOTSUP 91 is the same as in sys/errno.h
 # OpenBSD doesn't have thread priority levels, therefore use 0
-CXXFLAGS        += -DPOCO_NO_SHAREDMEMORY -DPOCO_NO_FPENVIRONMENT -DENOTSUP=91 -DPRI_OTHER_MIN=0 -DPRI_OTHER_MAX=0
+CXXFLAGS        += -DPOCO_NO_SHAREDMEMORY -DPOCO_NO_FPENVIRONMENT -DENOTSUP=91 -DPRI_OTHER_MIN=0 -DPRI_OTHER_MAX=31
 CXXFLAGS32      +=
 CXXFLAGS64      +=
 LINKFLAGS       +=
