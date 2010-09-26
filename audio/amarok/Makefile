@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/23 22:10:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.39 2010/09/26 08:06:16 steven Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-REVISION =	7
+REVISION =	8
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -62,5 +62,11 @@ CONFIGURE_ARGS +=	--with-xine \
 			--without-musicbrainz \
 			--without-opengl \
 			--without-xmms
+
+RUBY =        ${LOCALBASE}/bin/ruby18
+
+pre-configure:
+	cd ${WRKSRC} && find . -name '*.rb' -exec \
+		perl -pi -e 's,#!/usr/bin/env ruby,#!${RUBY},' {} \;
 
 .include <bsd.port.mk>
