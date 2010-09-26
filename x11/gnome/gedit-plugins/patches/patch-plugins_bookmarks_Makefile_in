@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_bookmarks_Makefile_in,v 1.1 2010/09/26 11:37:30 steven Exp $
+--- plugins/bookmarks/Makefile.in.orig	Sun Sep 26 13:30:34 2010
++++ plugins/bookmarks/Makefile.in	Sun Sep 26 13:30:49 2010
+@@ -306,7 +306,7 @@ libbookmarks_la_SOURCES = \
+ 	gedit-bookmarks-plugin.h			\
+ 	gedit-bookmarks-plugin.c	
+ 
+-libbookmarks_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)				\
++libbookmarks_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
+ libbookmarks_la_LDADD =	$(GEDIT_LIBS)
+ 
+ support_DATA = bookmark.png
