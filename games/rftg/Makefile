@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/31 19:31:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/26 08:09:44 espie Exp $
 
-V = 0.7.4
+V = 0.7.5
 COMMENT-client = race for the galaxy card game
 COMMENT-server = race for the galaxy card game, game server
 PKGNAME-client = rftg-$V
