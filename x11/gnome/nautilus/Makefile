@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/09/10 13:55:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2010/09/26 13:40:12 naddy Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -66,10 +66,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=	--enable-xmp=no
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${WRKBUILD}/libnautilus/.libs \
-				-L${WRKBUILD}/libnautilus-adapter/.libs \
-				-L${WRKBUILD}/libnautilus-private/.libs \
-				-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE=x11
 

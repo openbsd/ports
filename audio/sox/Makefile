@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/11/08 14:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2010/09/26 13:40:11 naddy Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--without-sndfile \
 
 CONFIGURE_ENV= \
 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-	LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
+	LDFLAGS="-L${LOCALBASE}/lib"
 
 do-regress:
 	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh

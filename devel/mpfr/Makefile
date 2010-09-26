@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/27 20:45:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/26 13:40:11 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -27,10 +27,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gmp=${LOCALBASE}
 REORDER_DEPENDENCIES=${PORTSDIR}/infrastructure/mk/automake.dep
-
-# make sure we do not pick up an installed version of libmpfr
-REGRESS_FLAGS=	LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs} \
-		LDFLAGS="-L${WRKBUILD}/.libs -L${LOCALBASE}/lib"
 
 # needed on sparc64 at least: the mpfr tests are insufficient without 
 # gmp's internals

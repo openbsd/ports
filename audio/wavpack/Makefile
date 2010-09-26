@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/26 20:42:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/26 13:40:11 naddy Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -28,6 +28,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-libiconv-prefix="${LOCALBASE}"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

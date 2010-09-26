@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/09/21 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2010/09/26 13:40:11 naddy Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.96.3
@@ -55,7 +55,7 @@ MODULES=	lang/python converters/libiconv
 MODPY_RUNDEP=	no
 
 CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS+=	-pthread -L/usr/lib -L${WRKSRC}/libclamav/.libs \
+LDFLAGS+=	-pthread -L/usr/lib \
 		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/03/30 11:59:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/09/26 13:40:11 naddy Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -31,8 +31,6 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.63
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${WRKBUILD}/src/services/name/.libs \
-			-L${WRKBUILD}/src/services/imodule/.libs \
-			-L${WRKBUILD}/src/orb/.libs -L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
