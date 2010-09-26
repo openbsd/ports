@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/06/26 15:48:12 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2010/09/26 15:26:54 fgsch Exp $
 @pkgpath editors/openoffice
 @pkgpath editors/openoffice,-main
 %%SHARED%%
@@ -1975,8 +1975,6 @@ openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/calc.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/dbase.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/flat.xcu
-openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/hsqldb.xcu
-openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/jdbc.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/kab.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/mysql.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/odbc.xcu
@@ -2077,7 +2075,6 @@ openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAcces
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/calc.xcu
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/dbase.xcu
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/flat.xcu
-openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/hsqldb.xcu
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/jdbc.xcu
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/kab.xcu
 openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/mysql.xcu
@@ -2673,8 +2670,6 @@ openoffice.org3/share/extension/install/dict-en.oxt
 openoffice.org3/share/extension/install/pdfimport.oxt
 openoffice.org3/share/extension/install/presentation-minimizer.oxt
 openoffice.org3/share/extension/install/presenter-screen.oxt
-openoffice.org3/share/extension/install/report-builder.oxt
-openoffice.org3/share/extension/install/wiki-publisher.oxt
 openoffice.org3/share/readme/
 openoffice.org3/share/readme/LICENSE_en-US
 openoffice.org3/share/readme/LICENSE_en-US.html

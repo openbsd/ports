@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.7 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.8 2010/09/26 15:26:54 fgsch Exp $
 @pkgpath editors/openoffice,-java
 %%SHARED%%
 openoffice.org/basis3.2/help/en/sbasic.idxl/
@@ -85,6 +85,9 @@ openoffice.org/basis3.2/share/registry/modules/org/openoffice/TypeDetection/Filt
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_palm_types.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketexcel_types.xcu
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketword_types.xcu
+openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/hsqldb.xcu
+openoffice.org/basis3.2/share/registry/modules/org/openoffice/Office/DataAccess/Drivers/jdbc.xcu
+openoffice.org/basis3.2/share/registry/res/en-US/org/openoffice/Office/DataAccess/hsqldb.xcu
 @bin openoffice.org/ure/bin/javaldx
 openoffice.org/ure/lib/JREProperties.class
 openoffice.org/ure/lib/jvmfwk3rc
@@ -95,3 +98,5 @@ openoffice.org/ure/share/java/jurt.jar
 openoffice.org/ure/share/java/ridl.jar
 openoffice.org/ure/share/java/unoloader.jar
 openoffice.org/ure/share/misc/javavendors.xml
+openoffice.org3/share/extension/install/report-builder.oxt
+openoffice.org3/share/extension/install/wiki-publisher.oxt

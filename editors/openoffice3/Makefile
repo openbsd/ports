@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/08/30 22:23:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2010/09/26 15:26:54 fgsch Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -13,9 +13,9 @@ PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 REVISION-kde=	1
-REVISION-java=	1
+REVISION-java=	2
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -190,7 +190,11 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 CONFIGURE_ARGS+=--with-java \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant/lib \
-		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
+		--with-db-jar=${LOCALBASE}/lib/db4/db.jar \
+		--enable-report-builder \
+		--enable-wiki-publisher
+EXTENSIONS =	swext/wiki-publisher.oxt \
+		report-builder.oxt
 .else
 CONFIGURE_ARGS+=--without-java
 .endif
@@ -198,15 +202,10 @@ CONFIGURE_ARGS+=--without-java
 # Some cool OpenOffice.Org extensions
 CONFIGURE_ARGS+=	--enable-minimizer \
 			--enable-presenter-console \
-			--enable-pdfimport \
-			--enable-report-builder \
-			--enable-wiki-publisher
-EXTENSIONS=		minimizer/presentation-minimizer.oxt \
+			--enable-pdfimport
+EXTENSIONS +=		minimizer/presentation-minimizer.oxt \
 			presenter/presenter-screen.oxt \
-			pdfimport/pdfimport.oxt \
-			swext/wiki-publisher.oxt \
-			report-builder.oxt
-
+			pdfimport/pdfimport.oxt
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-symbols \
@@ -217,7 +216,7 @@ MAKE_ENV+=	envcflags="${CFLAGS}" LOCALBASE="${LOCALBASE}"
 .if !${FLAVOR:L:Mno_java}
 MAKE_ENV+=	LD_LIBRARY_PATH=${JAVA_HOME}/jre/lib/${ARCH}:${JAVA_HOME}/jre/lib/${ARCH}/client:${JAVA_HOME}/jre/lib/${ARCH}/server
 .endif
-MAKE_ENV+=	TMP=${WRKSRC}
+MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
 
 # kludge
 TCSH=		${LOCALBASE}/bin/tcsh
