@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/22 21:51:54 kili Exp $
-@bin bin/cpphs
-@man man/man1/cpphs.1

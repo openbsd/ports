@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST-lib,v 1.1 2010/09/26 13:32:44 kili Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/CppIfdef.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/HashDefine.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/MacroPass.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/Options.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/Position.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/ReadFirst.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/RunCpphs.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/SymTab.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Cpphs/Tokenise.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Language/Preprocessor/Unlit.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/ParserCombinators/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/ParserCombinators/HuttonMeijer.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENCE-LGPL
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Language-Preprocessor-Cpphs.html
+share/doc/${DISTNAME}/html/Language-Preprocessor-Unlit.html
+share/doc/${DISTNAME}/html/cpphs.haddock
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Language-Preprocessor-Cpphs.html
+share/doc/${DISTNAME}/html/mini_Language-Preprocessor-Unlit.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
