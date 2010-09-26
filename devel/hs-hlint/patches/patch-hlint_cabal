@@ -1,0 +1,14 @@
+$OpenBSD: patch-hlint_cabal,v 1.1.1.1 2010/09/26 18:36:09 jasper Exp $
+
+Don't let Cabal deal with the manpage, install it ourselves.
+
+--- hlint.cabal.orig	Sun Sep 26 11:41:57 2010
++++ hlint.cabal	Sun Sep 26 11:42:04 2010
+@@ -23,7 +23,6 @@ data-files:
+     Test.hs
+     report.html
+     hs-lint.el
+-    hlint.1
+     hlint.ghci
+ extra-source-files:
+     hlint.htm
