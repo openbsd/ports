@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/04/08 06:43:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/09/26 05:50:59 ajacoutot Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -69,7 +69,6 @@ lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyo
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
 share/gtk-doc/html/gsf/
-share/gtk-doc/html/gsf/GsfClipData.html
 share/gtk-doc/html/gsf/api.html
 share/gtk-doc/html/gsf/dependencies.html
 share/gtk-doc/html/gsf/gsf-Bononbo.html
@@ -88,6 +87,7 @@ share/gtk-doc/html/gsf/gsf-Text.html
 share/gtk-doc/html/gsf/gsf-XML-and-libxml.html
 share/gtk-doc/html/gsf/gsf-Zip.html
 share/gtk-doc/html/gsf/gsf-blobs.html
+share/gtk-doc/html/gsf/gsf-clip-data.html
 share/gtk-doc/html/gsf/gsf-index.html
 share/gtk-doc/html/gsf/gsf-memory.html
 share/gtk-doc/html/gsf/gsf-metadata.html
@@ -109,6 +109,7 @@ share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
 share/gtk-doc/html/gsf/up.png
 share/locale/cs/LC_MESSAGES/libgsf.mo
+share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
 share/locale/en_GB/LC_MESSAGES/libgsf.mo
 share/locale/es/LC_MESSAGES/libgsf.mo
