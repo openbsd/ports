@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/26 20:08:12 martynas Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://openbsddistfiles.org/martynas/python/
+MASTER_SITES=		http://openbsddistfiles.com/martynas/python/
 DISTFILES=		RuleDispatch-${VERSION}a0.dev-r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/26 20:08:12 martynas Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
 DISTNAME =		extragear-plasma-${VERSION}
 REVISION =		1
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/} \
-			http://openbsddistfiles.org/martynas/kde/${VERSION}/extragear/
+			http://openbsddistfiles.com/martynas/kde/${VERSION}/extragear/
 
 LIB_DEPENDS +=	kdecore.>=8,kdeui,kio,solid,kfile::x11/kde4/libs \
 		syndication::x11/kde4/pimlibs \

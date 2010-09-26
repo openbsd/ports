@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/26 20:08:12 martynas Exp $
 
 COMMENT=	berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	lang
 
-MASTER_SITES=	http://openbsddistfiles.org/jolan/
+MASTER_SITES=	http://openbsddistfiles.com/jolan/
 HOMEPAGE=	http://www.cs.berkeley.edu/~bh/logo.html
 
 # BSD

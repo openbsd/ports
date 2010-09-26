@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/09/26 20:08:11 martynas Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -8,7 +8,7 @@ REVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cstr.ed.ac.uk/downloads/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/
-MASTER_SITES0=  http://openbsddistfiles.org/jolan/
+MASTER_SITES0=  http://openbsddistfiles.com/jolan/
 DIST_SUBDIR=	festival
 DISTFILES=	${DISTNAME}.tar.gz speech_tools-1.2.95-beta.tar.gz
 SUPDISTFILES=	OGIresLPC-2.0.9.tar.gz:0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/26 20:08:12 martynas Exp $
 
 COMMENT=		front-end to ssh-agent
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://openbsddistfiles.org/martynas/python/
+MASTER_SITES=		http://openbsddistfiles.com/martynas/python/
 EXTRACT_SUFX=		.tar.bz2
 
 NO_BUILD=		Yes

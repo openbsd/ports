@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/10 13:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/09/26 20:08:12 martynas Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://openbsddistfiles.org/martynas/mozilla/dicts/${V}/
+MASTER_SITES=	http://openbsddistfiles.com/martynas/mozilla/dicts/${V}/
 
 LANGUAGES=	af ar be bg ca cs cy-GB da de-AT de-CH de-DE el-EN \
 		el en-AU en-CA en-GB en-ZA eo es-AR es-ES et eu fr \
