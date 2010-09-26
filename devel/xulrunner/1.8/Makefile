@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/12 17:58:51 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/26 07:42:03 espie Exp $
 
 VERSION=		1.8.1.19
-REVISION-main=		5
-REVISION-devel=		5
+REVISION-main=		6
+REVISION-devel=		6
 DIRECTORY=		xulrunner
 
 SO_VERSION=		2.0

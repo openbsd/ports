@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-devel,v 1.9 2010/09/12 17:58:51 landry Exp $
+@comment $OpenBSD: PLIST-devel,v 1.10 2010/09/26 07:42:03 espie Exp $
 @option no-default-conflict
-@conflict xulrunner-devel->=1.9,<1.9.1
+@conflict xulrunner-devel->=1.9
 %%jit%%
 %%amd64%%
 lib/pkgconfig/libxul-embedding.pc
