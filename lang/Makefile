@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2010/07/22 18:33:41 kili Exp $
+# $OpenBSD: Makefile,v 1.101 2010/09/26 18:35:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += gprolog
      SUBDIR += guile
      SUBDIR += hs-haskell-src
+     SUBDIR += hs-haskell-src-exts
      SUBDIR += hs-HsParrot
      SUBDIR += hugs
      SUBDIR += icon
