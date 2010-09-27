@@ -1,4 +1,4 @@
-/* $OpenBSD: sydney_audio_sndio.c,v 1.2 2010/09/06 12:59:50 eric Exp $ */
+/* $OpenBSD: sydney_audio_sndio.c,v 1.3 2010/09/27 11:47:22 fgsch Exp $ */
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -158,12 +158,11 @@ sa_stream_open(sa_stream_t *s)
 int
 sa_stream_destroy(sa_stream_t *s)
 {
-	if (s == NULL)
-		return SA_SUCCESS;
-
-	sio_close(s->handle);
-	free(s);
-
+	if (s != NULL) {
+		if (s->handle != NULL)
+			sio_close(s->handle);
+		free(s);
+	}
 	return SA_SUCCESS;
 }
 
