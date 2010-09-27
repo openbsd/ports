@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/30 06:18:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/27 05:28:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		2.30.3
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=	gucharmap            2.0      # .7.0
 
@@ -36,7 +36,8 @@ MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
-			--disable-python-bindings
+			--disable-python-bindings \
+			--disable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

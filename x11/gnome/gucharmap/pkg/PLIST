@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/04/21 11:26:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/09/27 05:28:09 ajacoutot Exp $
 bin/charmap
 bin/gnome-character-map
 @bin bin/gucharmap
-include/gucharmap-2/
-include/gucharmap-2/gucharmap/
-include/gucharmap-2/gucharmap/gucharmap-block-chapters-model.h
-include/gucharmap-2/gucharmap/gucharmap-block-codepoint-list.h
-include/gucharmap-2/gucharmap/gucharmap-chapters-model.h
-include/gucharmap-2/gucharmap/gucharmap-chapters-view.h
-include/gucharmap-2/gucharmap/gucharmap-charmap.h
-include/gucharmap-2/gucharmap/gucharmap-chartable.h
-include/gucharmap-2/gucharmap/gucharmap-codepoint-list.h
-include/gucharmap-2/gucharmap/gucharmap-script-chapters-model.h
-include/gucharmap-2/gucharmap/gucharmap-script-codepoint-list.h
-include/gucharmap-2/gucharmap/gucharmap-type-builtins.h
-include/gucharmap-2/gucharmap/gucharmap-unicode-info.h
-include/gucharmap-2/gucharmap/gucharmap.h
+include/gucharmap-2.0/
+include/gucharmap-2.0/gucharmap/
+include/gucharmap-2.0/gucharmap/gucharmap-block-chapters-model.h
+include/gucharmap-2.0/gucharmap/gucharmap-block-codepoint-list.h
+include/gucharmap-2.0/gucharmap/gucharmap-chapters-model.h
+include/gucharmap-2.0/gucharmap/gucharmap-chapters-view.h
+include/gucharmap-2.0/gucharmap/gucharmap-charmap.h
+include/gucharmap-2.0/gucharmap/gucharmap-chartable.h
+include/gucharmap-2.0/gucharmap/gucharmap-codepoint-list.h
+include/gucharmap-2.0/gucharmap/gucharmap-script-chapters-model.h
+include/gucharmap-2.0/gucharmap/gucharmap-script-codepoint-list.h
+include/gucharmap-2.0/gucharmap/gucharmap-type-builtins.h
+include/gucharmap-2.0/gucharmap/gucharmap-unicode-info.h
+include/gucharmap-2.0/gucharmap/gucharmap.h
 lib/libgucharmap.a
 lib/libgucharmap.la
 @lib lib/libgucharmap.so.${LIBgucharmap_VERSION}
@@ -115,9 +115,14 @@ share/gnome/help/gucharmap/vi/figures/gucharmap_window.png
 share/gnome/help/gucharmap/vi/gucharmap.xml
 share/gnome/help/gucharmap/zh_CN/
 share/gnome/help/gucharmap/zh_CN/figures/
+share/gnome/help/gucharmap/zh_CN/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/zh_CN/figures/gucharmap_window.png
 share/gnome/help/gucharmap/zh_CN/gucharmap.xml
-share/gnome/help/gucharmap/zh_CN/legal.xml
+share/gnome/help/gucharmap/zh_HK/
+share/gnome/help/gucharmap/zh_HK/figures/
+share/gnome/help/gucharmap/zh_HK/figures/gucharmap_window.png
+share/gnome/help/gucharmap/zh_HK/gucharmap.xml
+share/gnome/help/gucharmap/zh_HK/legal.xml
 share/gnome/help/gucharmap/zh_TW/
 share/gnome/help/gucharmap/zh_TW/figures/
 share/gnome/help/gucharmap/zh_TW/figures/gucharmap_window.png
@@ -228,6 +233,7 @@ share/omf/gucharmap/gucharmap-ru.omf
 share/omf/gucharmap/gucharmap-sv.omf
 share/omf/gucharmap/gucharmap-vi.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
+share/omf/gucharmap/gucharmap-zh_HK.omf
 share/omf/gucharmap/gucharmap-zh_TW.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
