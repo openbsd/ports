@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/14 13:57:44 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/27 19:55:02 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -11,11 +11,11 @@ SHARED_ONLY=	Yes
 VERSION=	0.5.8
 DISTNAME=	kazehakase-${VERSION}
 PKGNAME-main=	kazehakase-common-${VERSION}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-gecko=	${DISTNAME}
-REVISION-gecko=	0
+REVISION-gecko=	1
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}
-REVISION-webkit=0
+REVISION-webkit=1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/43802/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -26,13 +26,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -gecko
+MULTI_PACKAGES=	-main -gecko -webkit
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "amd64"
-# XXX give -gecko a chance to build on systems where webkit is not built
-MULTI_PACKAGES += -webkit
-.endif
+# -webkit only available on archs where webkit builds
+ONLY_FOR_ARCHS-webkit = alpha powerpc i386 amd64 hppa sparc64
 
 MODULES=	devel/gettext \
 		textproc/intltool
