@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:29 espie Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/uploadpath/
-${DRUPAL_MODS}/uploadpath/LICENSE.txt
-${DRUPAL_MODS}/uploadpath/README.txt
-${DRUPAL_MODS}/uploadpath/uploadpath.info
-${DRUPAL_MODS}/uploadpath/uploadpath.install
-${DRUPAL_MODS}/uploadpath/uploadpath.module

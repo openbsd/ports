@@ -1,7 +1,0 @@
-allows easy backup of the drupal database to a file of sql statements,
-by selecting which tables you don't need.
-
-This module does NOT WORK if you're using postgresql.
-
-You will have to configure and use pg_dump(1) to achieve
-equivalent functionality.

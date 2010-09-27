@@ -1,3 +1,0 @@
-Filter views based on node times, 'Node: Created Time Between' and
-'Node: Changed Time Between', as well as on CCK date (but not datestamp) 
-fields.
