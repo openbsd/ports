@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/14 12:58:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/09/27 12:18:13 ajacoutot Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		2.30.4
+GNOME_VERSION=		2.30.5
 
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
 
@@ -37,7 +37,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-introspection=no
+			--disable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

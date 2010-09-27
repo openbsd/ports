@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/06/22 06:04:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/09/27 12:18:13 ajacoutot Exp $
 @bin bin/wnck-urgency-monitor
 @bin bin/wnckprop
 include/libwnck-1.0/
@@ -146,6 +146,9 @@ share/locale/ja/LC_MESSAGES/libwnck.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libwnck.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/libwnck.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/libwnck.mo
