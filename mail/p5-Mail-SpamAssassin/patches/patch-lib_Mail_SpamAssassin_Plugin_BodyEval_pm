@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Plugin_BodyEval_pm,v 1.1 2010/09/27 19:59:39 sthen Exp $
+
+silence perl 5.12.2 warnings, from SA 3.3 svn
+
+--- lib/Mail/SpamAssassin/Plugin/BodyEval.pm.orig	Tue Mar 16 14:49:21 2010
++++ lib/Mail/SpamAssassin/Plugin/BodyEval.pm	Mon Sep 27 20:39:14 2010
+@@ -119,7 +119,7 @@ sub _multipart_alternative_difference {
+         }
+ 
+ 	# If there are no words, mark if there's at least 1 image ...
+-	if (keys %html == 0 && exists $pms->{html}{inside}{img}) {
++	if (!%html && exists $pms->{html}{inside}{img}) {
+ 	  # Use "\n" as the mark since it can't ever occur normally
+ 	  $html{"\n"}=1;
+ 	}

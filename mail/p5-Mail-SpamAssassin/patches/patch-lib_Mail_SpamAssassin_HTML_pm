@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_HTML_pm,v 1.1 2010/09/27 19:59:39 sthen Exp $
+
+silence perl 5.12.2 warnings, from SA 3.3 svn
+
+--- lib/Mail/SpamAssassin/HTML.pm.orig	Tue Mar 16 14:49:21 2010
++++ lib/Mail/SpamAssassin/HTML.pm	Mon Sep 27 20:39:14 2010
+@@ -191,7 +191,7 @@ sub get_rendered_text {
+   my $self = shift;
+   my %options = @_;
+ 
+-  return join('', @{ $self->{text} }) unless keys %options;
++  return join('', @{ $self->{text} }) unless %options;
+ 
+   my $mask;
+   while (my ($k, $v) = each %options) {
