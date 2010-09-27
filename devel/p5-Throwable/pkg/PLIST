@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/07 06:15:49 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/27 13:22:31 stephan Exp $
+${P5SITE}/StackTrace/
+${P5SITE}/StackTrace/Auto.pm
 ${P5SITE}/Throwable/
 ${P5SITE}/Throwable.pm
 ${P5SITE}/Throwable/Error.pm
+@man man/man3p/StackTrace::Auto.3p
 @man man/man3p/Throwable.3p
 @man man/man3p/Throwable::Error.3p

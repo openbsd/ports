@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/07 06:15:49 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/27 13:22:31 stephan Exp $
 
 COMMENT =	a role for classes that can be thrown
 
 MODULES =	cpan
-DISTNAME =	Throwable-0.100090
+DISTNAME =	Throwable-0.102080
 CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
 
