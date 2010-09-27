@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.39 2010/06/04 23:04:32 sthen Exp $
---- get_iplayer.orig	Sat Jun  5 00:01:57 2010
-+++ get_iplayer	Sat Jun  5 00:01:54 2010
+$OpenBSD: patch-get_iplayer,v 1.40 2010/09/27 20:20:36 sthen Exp $
+--- get_iplayer.orig	Fri May 28 15:24:50 2010
++++ get_iplayer	Mon Sep 27 21:15:02 2010
 @@ -294,6 +294,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -45,6 +45,46 @@ $OpenBSD: patch-get_iplayer,v 1.39 2010/06/04 23:04:32 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
+@@ -5557,7 +5558,7 @@ sub parse_rdf_episode {
+ 	# We don't really need the ver pids from here
+ 	if ( ref$rdf->{'po:Episode'}->{'po:version'} eq 'ARRAY' ) {
+ 		for my $verpid_element ( @{ $rdf->{'po:Episode'}->{'po:version'} } ) {
+-			main::logger "INFO:        With Version PID '".extract_pid( %{ $verpid_element }->{'rdf:resource'} )."'\n" if $opt->{debug};
++			main::logger "INFO:        With Version PID '".extract_pid( $verpid_element->{'rdf:resource'} )."'\n" if $opt->{debug};
+ 		}
+ 	} else {
+ 		main::logger "INFO:        With Version PID '".extract_pid( $rdf->{'po:Episode'}->{'po:version'}->{'rdf:resource'} )."'\n" if $opt->{debug};
+@@ -5581,8 +5582,8 @@ sub parse_rdf_series {
+ 	main::logger "INFO:    Series: '".$rdf->{'po:Series'}->{'dc:title'}."' ($spid)\n";
+ 	main::logger "INFO:      From Brand PID '".$rdf->{'po:Brand'}->{'rdf:about'}."'\n" if $opt->{debug};
+ 	for my $episode_element ( @{ $rdf->{'po:Series'}->{'po:episode'} } ) {
+-		my $pid = extract_pid( %{ $episode_element }->{'po:Episode'}->{'rdf:about'} );
+-		main::logger "INFO:      Episode '".%{ $episode_element }->{'po:Episode'}->{'dc:title'}."' ($pid)\n";
++		my $pid = extract_pid( $episode_element->{'po:Episode'}->{'rdf:about'} );
++		main::logger "INFO:      Episode '".$episode_element->{'po:Episode'}->{'dc:title'}."' ($pid)\n";
+ 		push @pids, $pid;
+ 		#parse_rdf_episode( $ua, $pid );
+ 	}
+@@ -5603,14 +5604,14 @@ sub parse_rdf_brand {
+ 	my $bpid = extract_pid( $uri );
+ 	main::logger "INFO:  Brand: '".$rdf->{'po:Brand'}->{'dc:title'}."' ($bpid)\n";
+ 	for my $series_element ( @{ $rdf->{'po:Brand'}->{'po:series'} } ) {
+-		main::logger "INFO: With Series pid '".%{ $series_element }->{'rdf:resource'}."'\n" if $opt->{debug};
+-		push @pids, parse_rdf_series( $ua, %{ $series_element }->{'rdf:resource'} );
++		main::logger "INFO: With Series pid '".$series_element->{'rdf:resource'}."'\n" if $opt->{debug};
++		push @pids, parse_rdf_series( $ua, $series_element->{'rdf:resource'} );
+ 	}
+ 	main::logger "INFO:    Series: <None>\n" if $#{ $rdf->{'po:Brand'}->{'po:episode'} };
+ 	for my $episode_element ( @{ $rdf->{'po:Brand'}->{'po:episode'} } ) {
+-		main::logger "INFO:      Episode pid: ".%{ $episode_element }->{'rdf:resource'}."\n" if $opt->{debug};
+-		push @pids, extract_pid( %{ $episode_element }->{'rdf:resource'} );
+-		parse_rdf_episode( $ua, %{ $episode_element }->{'rdf:resource'} );
++		main::logger "INFO:      Episode pid: ".$episode_element->{'rdf:resource'}."\n" if $opt->{debug};
++		push @pids, extract_pid( $episode_element->{'rdf:resource'} );
++		parse_rdf_episode( $ua, $episode_element->{'rdf:resource'} );
+ 	}
+ 	return @pids;
+ }
 @@ -5798,6 +5799,7 @@ sub get_stream_data_cdn {
  	#	$data->{$mode}->{bitrate} = 480; # ??
  
@@ -103,7 +143,19 @@ $OpenBSD: patch-get_iplayer,v 1.39 2010/06/04 23:04:32 sthen Exp $
  	}
  
  	# Add to data structure hased by priority
-@@ -6192,48 +6228,6 @@ sub get_stream_data {
+@@ -6026,6 +6062,11 @@ sub get_stream_data {
+ 	} elsif ( $verpid =~ /http:/ ) {
+ 		$xml = main::request_url_retry( $ua, $verpid, 3, undef, undef, 1 );
+ 		main::logger "\n$xml\n" if $opt->{debug};
++		if  ( $xml =~ m{<mediator identifier=\"(.+?)\"} ) {
++		    $verpid = $media_stream_data_prefix.$1;
++		    main::logger "new verpid $verpid" if $opt->{debug};
++		    $xml = main::request_url_retry( $ua, $verpid, 3, undef, undef, 1 );
++		}
+ 		@medias = parse_metadata( $xml );
+ 
+ 	# Could also use Javascript based one: 'http://www.bbc.co.uk/iplayer/mediaselector/4/js/stream/$verpid?cb=NNNNN
+@@ -6192,48 +6233,6 @@ sub get_stream_data {
  		} else {
  			new_stream_report($mattribs, undef) if $opt->{verbose};
  		}	
