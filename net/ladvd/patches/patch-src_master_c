@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_master_c,v 1.1 2010/09/27 19:26:06 weerd Exp $
+Merge BPF direction fix from upstream
+
+http://code.google.com/p/ladvd/source/detail?r=d0ee6ffcfd
+
+--- src/master.c.orig	Thu Sep 23 11:27:37 2010
++++ src/master.c	Thu Sep 23 11:28:02 2010
+@@ -610,7 +610,7 @@ int master_socket(struct rawfd *rfd) {
+     if (ioctl(fd, BIOCSDIRECTION, (caddr_t)&enable) < 0)
+ 	my_fatal("unable to configure BPF direction for %s", rfd->name);
+ #elif defined BIOCSDIRFILT
+-    enable = BPF_DIRECTION_IN;
++    enable = BPF_DIRECTION_OUT;
+     if (ioctl(fd, BIOCSDIRFILT, (caddr_t)&enable) < 0)
+ 	my_fatal("unable to configure BPF direction for %s", rfd->name);
+ #endif
