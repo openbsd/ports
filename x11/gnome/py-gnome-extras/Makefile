@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/09/27 12:13:26 ajacoutot Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.25.3
 PKGNAME=	py-gnome-extras-${VERSION}
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -23,25 +23,24 @@ WANTLIB += crypto dbus-1 dbus-glib-1 expat ffi fontconfig freetype
 WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png popt pthread-stubs ssl stdc++
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png popt pthread-stubs ssl stdc++
 WANTLIB += eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
-WANTLIB += util xcb xml2 z sqlite3 xulrunner1.9/xul xulrunner1.9/xpcom
-WANTLIB += gtkspell gdl-1 enchant gda-4.0
+WANTLIB += util xcb xml2 z gtkspell gdl-1 enchant gda-4.0
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:xulrunner-devel->=1.9.2.6p3:devel/xulrunner/1.9,-devel
-LIB_DEPENDS=		:xulrunner->=1.9.2.6p1:devel/xulrunner/1.9 \
-			::textproc/gtkspell \
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		::textproc/gtkspell \
 			::textproc/enchant \
 			::x11/gnome/gdl \
 			::x11/gnome/libgda \
 			${MODPY_LIB_DEPENDS}
-RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
+# xulrunner-devel needed by gtkmozembed.la
+RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
+			:xulrunner-devel->=1.9.2.6p3:devel/xulrunner/1.9,-devel
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 USE_X11=		Yes
