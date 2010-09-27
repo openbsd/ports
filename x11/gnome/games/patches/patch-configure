@@ -1,22 +1,22 @@
-$OpenBSD: patch-configure,v 1.6 2010/04/23 17:39:02 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.7 2010/09/27 07:01:50 ajacoutot Exp $
 
 XXX: checking whether build environment is sane... 
 ./configure[3161]: syntax error: `&' unexpected
 
 
---- configure.orig	Mon Mar 29 20:02:27 2010
-+++ configure	Fri Apr 23 18:47:51 2010
-@@ -3010,14 +3010,6 @@ echo timestamp > conftest.file
+--- configure.orig	Mon Sep 27 03:53:01 2010
++++ configure	Mon Sep 27 07:58:15 2010
+@@ -2886,14 +2886,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5 ;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5 ;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's

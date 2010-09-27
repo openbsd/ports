@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnomine_Makefile_in,v 1.7 2010/04/23 18:02:11 jasper Exp $
+$OpenBSD: patch-gnomine_Makefile_in,v 1.8 2010/09/27 07:01:50 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnomine/Makefile.in.orig	Mon Mar 29 20:02:32 2010
-+++ gnomine/Makefile.in	Fri Apr 23 18:46:38 2010
-@@ -1016,14 +1016,9 @@ install-data-local:
+--- gnomine/Makefile.in.orig	Mon Sep 27 03:53:07 2010
++++ gnomine/Makefile.in	Mon Sep 27 07:57:38 2010
+@@ -1019,14 +1019,9 @@ install-data-local:
  	-if [ -f $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores -a ! -f $(DESTDIR)$(scoredir)/gnomine.Large.scores ]; then mv -f $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores $(DESTDIR)$(scoredir)/gnomine.Large.scores  ; fi
  	-for i in ${SCOREFILES} ; do \
  	   touch $(DESTDIR)$(scoredir)/gnomine.$$i.scores; \

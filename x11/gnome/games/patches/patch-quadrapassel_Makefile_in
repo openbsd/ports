@@ -1,7 +1,7 @@
-$OpenBSD: patch-quadrapassel_Makefile_in,v 1.2 2010/04/23 18:02:11 jasper Exp $
---- quadrapassel/Makefile.in.orig	Fri Apr 23 19:18:58 2010
-+++ quadrapassel/Makefile.in	Fri Apr 23 19:20:01 2010
-@@ -1168,13 +1168,8 @@ install-data-local:
+$OpenBSD: patch-quadrapassel_Makefile_in,v 1.3 2010/09/27 07:01:50 ajacoutot Exp $
+--- quadrapassel/Makefile.in.orig	Mon Sep 27 03:53:09 2010
++++ quadrapassel/Makefile.in	Mon Sep 27 07:57:38 2010
+@@ -1171,13 +1171,8 @@ install-data-local:
  @GCONF_SCHEMAS_INSTALL_TRUE@	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/quadrapassel/$(schema_DATA)
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-touch $(DESTDIR)$(scoredir)/quadrapassel.scores

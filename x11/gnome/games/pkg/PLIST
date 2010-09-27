@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/06/26 04:42:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/09/27 07:01:50 ajacoutot Exp $
 bin/glchess
 @mode g+s
 @group games
@@ -146,9 +146,6 @@ lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/pieces.py
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/pieces.pyc
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/cairo/pieces.pyo
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/human.py
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/human.pyc
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/human.pyo
@@ -162,9 +159,6 @@ lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/models.pyo
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/opengl.py
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/opengl.pyc
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/opengl.pyo
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/png.py
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/png.pyc
-lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/png.pyo
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/texture.py
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/texture.pyc
 lib/python${MODPY_VERSION}/site-packages/glchess/scene/opengl/texture.pyo
@@ -207,13 +201,39 @@ share/applications/quadrapassel.desktop
 share/applications/sol.desktop
 share/glchess/
 share/glchess/ai.xml
-share/glchess/chess_view.ui
 share/glchess/glchess.ui
 share/glchess/load_game.ui
 share/glchess/log.ui
 share/glchess/network_game.ui
 share/glchess/network_new_server.ui
 share/glchess/new_game.ui
+share/glchess/pieces/
+share/glchess/pieces/fancy/
+share/glchess/pieces/fancy/blackBishop.svg
+share/glchess/pieces/fancy/blackKing.svg
+share/glchess/pieces/fancy/blackKnight.svg
+share/glchess/pieces/fancy/blackPawn.svg
+share/glchess/pieces/fancy/blackQueen.svg
+share/glchess/pieces/fancy/blackRook.svg
+share/glchess/pieces/fancy/whiteBishop.svg
+share/glchess/pieces/fancy/whiteKing.svg
+share/glchess/pieces/fancy/whiteKnight.svg
+share/glchess/pieces/fancy/whitePawn.svg
+share/glchess/pieces/fancy/whiteQueen.svg
+share/glchess/pieces/fancy/whiteRook.svg
+share/glchess/pieces/simple/
+share/glchess/pieces/simple/blackBishop.svg
+share/glchess/pieces/simple/blackKing.svg
+share/glchess/pieces/simple/blackKnight.svg
+share/glchess/pieces/simple/blackPawn.svg
+share/glchess/pieces/simple/blackQueen.svg
+share/glchess/pieces/simple/blackRook.svg
+share/glchess/pieces/simple/whiteBishop.svg
+share/glchess/pieces/simple/whiteKing.svg
+share/glchess/pieces/simple/whiteKnight.svg
+share/glchess/pieces/simple/whitePawn.svg
+share/glchess/pieces/simple/whiteQueen.svg
+share/glchess/pieces/simple/whiteRook.svg
 share/glchess/preferences.ui
 share/glchess/save_game.ui
 share/glchess/textures/
@@ -223,6 +243,7 @@ share/gnome-games/
 share/gnome-games-common/
 share/gnome-games-common/cards/
 share/gnome-games-common/cards/gnomangelo_bitmap.svg
+share/gnome-games-common/theme-install.ini
 share/gnome-games/aisleriot/
 share/gnome-games/aisleriot/games/
 share/gnome-games/aisleriot/games/accordion.scm
@@ -899,6 +920,13 @@ share/gnome/help/glchess/fr/figures/new_game.png
 share/gnome/help/glchess/fr/figures/preferences_game.png
 share/gnome/help/glchess/fr/figures/preferences_view.png
 share/gnome/help/glchess/fr/glchess.xml
+share/gnome/help/glchess/ja/
+share/gnome/help/glchess/ja/figures/
+share/gnome/help/glchess/ja/figures/game.png
+share/gnome/help/glchess/ja/figures/new_game.png
+share/gnome/help/glchess/ja/figures/preferences_game.png
+share/gnome/help/glchess/ja/figures/preferences_view.png
+share/gnome/help/glchess/ja/glchess.xml
 share/gnome/help/glchess/oc/
 share/gnome/help/glchess/oc/figures/
 share/gnome/help/glchess/oc/figures/game.png
@@ -1283,6 +1311,15 @@ share/gnome/help/gnibbles/sv/figures/playing.png
 share/gnome/help/gnibbles/sv/figures/tables.png
 share/gnome/help/gnibbles/sv/figures/worm_op.png
 share/gnome/help/gnibbles/sv/gnibbles.xml
+share/gnome/help/gnibbles/zh_CN/
+share/gnome/help/gnibbles/zh_CN/figures/
+share/gnome/help/gnibbles/zh_CN/figures/connect.png
+share/gnome/help/gnibbles/zh_CN/figures/game.png
+share/gnome/help/gnibbles/zh_CN/figures/intro.png
+share/gnome/help/gnibbles/zh_CN/figures/playing.png
+share/gnome/help/gnibbles/zh_CN/figures/tables.png
+share/gnome/help/gnibbles/zh_CN/figures/worm_op.png
+share/gnome/help/gnibbles/zh_CN/gnibbles.xml
 share/gnome/help/gnobots2/
 share/gnome/help/gnobots2/C/
 share/gnome/help/gnobots2/C/figures/
@@ -1859,6 +1896,21 @@ share/gnome/help/gnotravex/sv/shortcut.page
 share/gnome/help/gnotravex/sv/size.page
 share/gnome/help/gnotravex/sv/usage.page
 share/gnome/help/gnotravex/sv/winning.page
+share/gnome/help/gnotravex/zh_CN/
+share/gnome/help/gnotravex/zh_CN/figures/
+share/gnome/help/gnotravex/zh_CN/figures/gnotravex-logo.png
+share/gnome/help/gnotravex/zh_CN/figures/gnotravex-main-window.png
+share/gnome/help/gnotravex/zh_CN/figures/gnotravex-video.ogv
+share/gnome/help/gnotravex/zh_CN/gameplay.page
+share/gnome/help/gnotravex/zh_CN/hint.page
+share/gnome/help/gnotravex/zh_CN/index.page
+share/gnome/help/gnotravex/zh_CN/license.page
+share/gnome/help/gnotravex/zh_CN/move.page
+share/gnome/help/gnotravex/zh_CN/multiplayer.page
+share/gnome/help/gnotravex/zh_CN/shortcut.page
+share/gnome/help/gnotravex/zh_CN/size.page
+share/gnome/help/gnotravex/zh_CN/usage.page
+share/gnome/help/gnotravex/zh_CN/winning.page
 share/gnome/help/gnotski/
 share/gnome/help/gnotski/C/
 share/gnome/help/gnotski/C/figures/
@@ -2302,6 +2354,8 @@ share/gnome/help/quadrapassel/fr/
 share/gnome/help/quadrapassel/fr/quadrapassel.xml
 share/gnome/help/quadrapassel/it/
 share/gnome/help/quadrapassel/it/quadrapassel.xml
+share/gnome/help/quadrapassel/ja/
+share/gnome/help/quadrapassel/ja/quadrapassel.xml
 share/gnome/help/quadrapassel/oc/
 share/gnome/help/quadrapassel/oc/quadrapassel.xml
 share/gnome/help/quadrapassel/sr/
@@ -2418,6 +2472,7 @@ share/locale/el/LC_MESSAGES/gnome-games.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-games.mo
 share/locale/en_CA/LC_MESSAGES/gnome-games.mo
 share/locale/en_GB/LC_MESSAGES/gnome-games.mo
+share/locale/eo/LC_MESSAGES/gnome-games.mo
 share/locale/es/LC_MESSAGES/gnome-games.mo
 share/locale/et/LC_MESSAGES/gnome-games.mo
 share/locale/eu/LC_MESSAGES/gnome-games.mo
@@ -2436,6 +2491,7 @@ share/locale/is/LC_MESSAGES/gnome-games.mo
 share/locale/it/LC_MESSAGES/gnome-games.mo
 share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ka/LC_MESSAGES/gnome-games.mo
+share/locale/kk/LC_MESSAGES/gnome-games.mo
 share/locale/kn/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
 share/locale/ku/LC_MESSAGES/gnome-games.mo
@@ -2503,6 +2559,7 @@ share/omf/glchess/glchess-en_GB.omf
 share/omf/glchess/glchess-es.omf
 share/omf/glchess/glchess-eu.omf
 share/omf/glchess/glchess-fr.omf
+share/omf/glchess/glchess-ja.omf
 share/omf/glchess/glchess-oc.omf
 share/omf/glchess/glchess-pt_BR.omf
 share/omf/glchess/glchess-ru.omf
@@ -2558,6 +2615,7 @@ share/omf/gnibbles/gnibbles-oc.omf
 share/omf/gnibbles/gnibbles-sr.omf
 share/omf/gnibbles/gnibbles-sr@latin.omf
 share/omf/gnibbles/gnibbles-sv.omf
+share/omf/gnibbles/gnibbles-zh_CN.omf
 share/omf/gnobots2/
 share/omf/gnobots2/gnobots2-C.omf
 share/omf/gnobots2/gnobots2-ca.omf
@@ -2668,6 +2726,7 @@ share/omf/quadrapassel/quadrapassel-eu.omf
 share/omf/quadrapassel/quadrapassel-fi.omf
 share/omf/quadrapassel/quadrapassel-fr.omf
 share/omf/quadrapassel/quadrapassel-it.omf
+share/omf/quadrapassel/quadrapassel-ja.omf
 share/omf/quadrapassel/quadrapassel-oc.omf
 share/omf/quadrapassel/quadrapassel-sr.omf
 share/omf/quadrapassel/quadrapassel-sr@latin.omf

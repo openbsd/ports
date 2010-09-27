@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/27 07:01:50 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
-GNOME_VERSION=		2.30.2
-
-REVISION=		1
+GNOME_VERSION=		2.32.0
 
 CATEGORIES=		games
 
@@ -19,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage rsvg-2
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm guile
-WANTLIB += atk-1.0 bz2 c cairo canberra canberra-gtk clutter-glx-1.0
+WANTLIB += atk-1.0 c cairo canberra canberra-gtk clutter-glx-1.0
 WANTLIB += croco-0.6 dbus-1 dbus-glib-1 drm expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gmp gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0 json-glib-1.0
+WANTLIB += gmp gobject-2.0 gthread-2.0 gtk-x11-2.0 json-glib-1.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs stdc++ vorbis vorbisfile
 WANTLIB += xcb xcb-render xcb-render-util xml2 z clutter-gtk-0.10
@@ -48,7 +46,7 @@ MODGCONF2_SCHEMAS_DIR=	gnome-games
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
 			--with-scores-group="games" \
-			--enable-introspection="no"
+			--disable-introspection
 
 # XXX
 # gnome-sudoku needs python-2.6
@@ -64,7 +62,6 @@ FAKE_FLAGS=		scoredir=${PREFIX}/share/gnome-games/scores/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \
-		${WRKSRC}/glchess/src/lib/scene/opengl/png.py \
 		${WRKSRC}/gnome-sudoku/src/gnome-sudoku.in.in
 
 .include <bsd.port.mk>

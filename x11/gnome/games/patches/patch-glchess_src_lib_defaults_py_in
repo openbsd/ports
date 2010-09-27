@@ -1,7 +1,7 @@
-$OpenBSD: patch-glchess_src_lib_defaults_py_in,v 1.1 2010/04/27 12:32:01 ajacoutot Exp $
---- glchess/src/lib/defaults.py.in.orig	Tue Apr 27 08:47:26 2010
-+++ glchess/src/lib/defaults.py.in	Tue Apr 27 08:48:18 2010
-@@ -43,7 +43,6 @@ else:
+$OpenBSD: patch-glchess_src_lib_defaults_py_in,v 1.2 2010/09/27 07:01:50 ajacoutot Exp $
+--- glchess/src/lib/defaults.py.in.orig	Sun Aug 22 20:58:38 2010
++++ glchess/src/lib/defaults.py.in	Mon Sep 27 07:57:35 2010
+@@ -47,7 +47,6 @@ else:
      GGZ_CONFIG_FILE  = os.path.join(GGZ_DIR, 'ggz-gtk.rc')
  
  DOMAIN = 'gnome-games'

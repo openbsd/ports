@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnibbles_Makefile_in,v 1.7 2010/04/23 18:02:11 jasper Exp $
+$OpenBSD: patch-gnibbles_Makefile_in,v 1.8 2010/09/27 07:01:50 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnibbles/Makefile.in.orig	Mon Mar 29 20:02:31 2010
-+++ gnibbles/Makefile.in	Fri Apr 23 18:45:19 2010
-@@ -1249,14 +1249,9 @@ install-data-local:
+--- gnibbles/Makefile.in.orig	Mon Sep 27 03:53:06 2010
++++ gnibbles/Makefile.in	Mon Sep 27 07:57:38 2010
+@@ -1252,14 +1252,9 @@ install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in ${SCOREFILES} ; do \
  	   touch $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \
