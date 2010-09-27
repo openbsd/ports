@@ -1,41 +1,63 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/08/23 09:18:58 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.21 2010/09/27 05:54:32 ajacoutot Exp $
 bin/rsvg
 @bin bin/rsvg-convert
 @bin bin/rsvg-view
-include/librsvg-2/
-include/librsvg-2/librsvg/
-include/librsvg-2/librsvg/librsvg-enum-types.h
-include/librsvg-2/librsvg/librsvg-features.h
-include/librsvg-2/librsvg/rsvg-cairo.h
-include/librsvg-2/librsvg/rsvg.h
+include/librsvg-2.0/
+include/librsvg-2.0/librsvg/
+include/librsvg-2.0/librsvg/librsvg-enum-types.h
+include/librsvg-2.0/librsvg/librsvg-features.h
+include/librsvg-2.0/librsvg/rsvg-cairo.h
+include/librsvg-2.0/librsvg/rsvg.h
 @comment lib/gtk-2.0/2.10.0/engines/libsvg.a
 @comment lib/gtk-2.0/2.10.0/engines/libsvg.la
-@comment lib/gtk-2.0/2.10.0/loaders/svg_loader.a
-@comment lib/gtk-2.0/2.10.0/loaders/svg_loader.la
+lib/gtk-2.0/2.10.0/engines/libsvg.so
+@comment lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.a
+@comment lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.la
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.so
+@comment lib/gtk-3.0/
+@comment lib/gtk-3.0/engines/
 lib/librsvg-2.a
 lib/librsvg-2.la
+@lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
 lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg.1
-share/gtk-doc/html/rsvg/
-share/gtk-doc/html/rsvg/home.png
-share/gtk-doc/html/rsvg/index.html
-share/gtk-doc/html/rsvg/index.sgml
-share/gtk-doc/html/rsvg/ix01.html
-share/gtk-doc/html/rsvg/left.png
-share/gtk-doc/html/rsvg/pt02.html
-share/gtk-doc/html/rsvg/pt03.html
-share/gtk-doc/html/rsvg/pt04.html
-share/gtk-doc/html/rsvg/right.png
-share/gtk-doc/html/rsvg/rsvg-Cairo.html
-share/gtk-doc/html/rsvg/rsvg-Core-API.html
-share/gtk-doc/html/rsvg/rsvg-GdkPixbuf.html
-share/gtk-doc/html/rsvg/rsvg.devhelp
-share/gtk-doc/html/rsvg/rsvg.devhelp2
-share/gtk-doc/html/rsvg/rsvg.html
-share/gtk-doc/html/rsvg/style.css
-share/gtk-doc/html/rsvg/up.png
+share/gtk-doc/html/rsvg-2.0/
+share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
+share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-14.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-22.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-32.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-4.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-8.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-9.html
+share/gtk-doc/html/rsvg-2.0/api-index-deprecated.html
+share/gtk-doc/html/rsvg-2.0/api-index-full.html
+share/gtk-doc/html/rsvg-2.0/home.png
+share/gtk-doc/html/rsvg-2.0/index.html
+share/gtk-doc/html/rsvg-2.0/index.sgml
+share/gtk-doc/html/rsvg-2.0/left.png
+share/gtk-doc/html/rsvg-2.0/licence.html
+share/gtk-doc/html/rsvg-2.0/object-tree.html
+share/gtk-doc/html/rsvg-2.0/right.png
+share/gtk-doc/html/rsvg-2.0/rsvg-2.0.devhelp
+share/gtk-doc/html/rsvg-2.0/rsvg-2.0.devhelp2
+share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GIO.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-cairo.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Version-check-and-feature-tests.html
+share/gtk-doc/html/rsvg-2.0/rsvg.html
+share/gtk-doc/html/rsvg-2.0/style.css
+share/gtk-doc/html/rsvg-2.0/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
+share/themes/bubble/
+share/themes/bubble/gtk-2.0/
+share/themes/bubble/gtk-2.0/blue.svg
+share/themes/bubble/gtk-2.0/green.svg
+share/themes/bubble/gtk-2.0/gtkrc
+share/themes/bubble/gtk-2.0/orange.svg
+share/themes/bubble/gtk-2.0/purple.svg
+share/themes/bubble/gtk-2.0/red.svg
 @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
 @unexec-delete %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
+@comment share/themes/bubble/gtk-3.0/
