@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/05/09 09:32:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/27 11:55:06 ajacoutot Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
 GNOME_PROJECT=	atk
-GNOME_VERSION=	1.30.0
-PKGNAME=	${DISTNAME}p0
+GNOME_VERSION=	1.32.0
 
-SHARED_LIBS +=	atk-1.0             2800.0   # .3009.1
+SHARED_LIBS +=	atk-1.0             2800.0   # 3209.1
 
 CATEGORIES=	devel
 
@@ -21,17 +20,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += pcre
+WANTLIB += pcre glib-2.0 gobject-2.0 gthread-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	glib-2.0.>=1600.0,gobject-2.0.>=1600.0,gthread-2.0.>=1600.0::devel/glib2
+LIB_DEPENDS=	::devel/glib2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
+		--disable-introspection
 
 .include <bsd.port.mk>
