@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/22 13:57:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/27 12:00:55 ajacoutot Exp $
 include/libgdamm-${GDA_MAJOR}/
 include/libgdamm-${GDA_MAJOR}/libgdamm/
 include/libgdamm-${GDA_MAJOR}/libgdamm.h
@@ -59,7 +59,10 @@ include/libgdamm-${GDA_MAJOR}/libgdamm/private/row_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/serveroperation_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/serverprovider_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/set_p.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/private/sqlbuilder_p.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/private/sqlexpr_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/sqlparser_p.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/private/sqlstatement_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/statement_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/transactionstatus_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/xatransaction_p.h
@@ -68,7 +71,10 @@ include/libgdamm-${GDA_MAJOR}/libgdamm/row.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/serveroperation.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/serverprovider.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/set.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/sqlbuilder.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/sqlexpr.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/sqlparser.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/sqlstatement.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/statement.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/throw_exception.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/transactionstatus.h
@@ -128,6 +134,9 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModel.ht
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelArray-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelArray.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelArray__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelError-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelError.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelError__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelImport-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelImport.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1DataModelImport__coll__graph.png
@@ -176,6 +185,9 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStoreErr
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStore__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStruct-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStruct.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStructError-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStructError.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStructError__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStruct__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1QuarkList-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1QuarkList.html
@@ -195,12 +207,27 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1ServerProvid
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Set-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Set.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Set__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilder-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilder.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilderError-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilderError.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilderError__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlBuilder__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlError-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlError.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlError__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlExpr-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlExpr.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlExpr__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParser-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParser.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParserError-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParserError.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParserError__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlParser__coll__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlStatement-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlStatement.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1SqlStatement__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Statement-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Statement.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1StatementError-members.html
@@ -217,7 +244,6 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1XaTransactio
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1XaTransaction.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1XaTransaction__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classes.html
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/classnil.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/doxygen.css
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/doxygen.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions.html
@@ -229,6 +255,7 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x66.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x67.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x68.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x69.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x6a.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x6c.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x6d.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_0x6e.html
@@ -254,6 +281,7 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x66.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x67.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x68.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x69.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x6a.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x6c.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x6d.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/functions_func_0x6e.html
@@ -284,6 +312,7 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__2.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__3.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__4.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__5.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__6.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherits.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/modules.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaceGnome.html
@@ -304,7 +333,6 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_func.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_type.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_vars.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaces.html
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacesigc.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/pages.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/since_3_2.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/tab_b.gif
