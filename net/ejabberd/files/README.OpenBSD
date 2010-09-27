@@ -13,6 +13,7 @@
       _xmpp-server._tcp.example.org.	SRV 5 0 5269 host.example.org.
       _xmpp-client._tcp.example.org.	SRV 5 0 5222 host.example.org.
 
+
   * Configuration file
         Set up the hostnames served by the server:
                 {hosts, ["example.net", "example.com", "example.org"]}.
@@ -37,7 +38,6 @@
     fi
 
 
-
 * Administration
   ejabberdctl has some commands for administration of the server. After
   starting ejabberd run ejabberdctl again for the list of options.
@@ -58,3 +58,12 @@
 
   To disable SSL comment out (prepend with %%) lines containing
   'certfile' and the whole block pertaining to port 5223
+
+
+* Hostname resolving
+  As Erlang is rather picky when it comes to resolving the hostname of
+  the Jabber server. It requires the machine's shortname to be
+  resolveable to the local address. A line such as the following for
+  /etc/hosts suffices (make sure my_hostname matches the output of
+  `hostname -s`):
+  	127.0.0.1       my_hostname
