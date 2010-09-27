@@ -1,0 +1,10 @@
+Libgda UI extension builds on top of Libgda and GTK+ to provide some
+graphical widgets, a control center (to manage DSN and list installed
+providers) and a browser program to analyze the contents of a database.
+   
+Libgda UI's components are:
+    * the runtime files (shared library)
+    * the GObject introspection files (to be used by the GObject
+      introspection framework)
+    * the tools, which require the runtime component
+    * the development files (the includes to compile C programs)

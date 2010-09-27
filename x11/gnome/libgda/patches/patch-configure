@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2010/06/14 05:45:32 ajacoutot Exp $
---- configure.orig	Fri Jun 11 22:41:05 2010
-+++ configure	Mon Jun 14 07:25:19 2010
-@@ -18887,7 +18887,6 @@ fi
+$OpenBSD: patch-configure,v 1.11 2010/09/27 12:12:41 ajacoutot Exp $
+--- configure.orig	Sun Sep 26 20:52:21 2010
++++ configure	Mon Sep 27 08:38:09 2010
+@@ -19953,7 +19953,6 @@ fi
  
  
  case $host_cpu in
@@ -9,15 +9,15 @@ $OpenBSD: patch-configure,v 1.10 2010/06/14 05:45:32 ajacoutot Exp $
  *) lib="lib";;
  esac
  
-@@ -18944,7 +18943,6 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
- 				BDB_LIBS="-L${bdbdir}/bin -ldb47"
+@@ -20010,7 +20009,6 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
+ 				BDB_LIBS="-L${bdbdir}/bin -ldb51"
  				break
  			fi
 -
  			if test $platform_win32 = no -a -f $d/include/db.h -a -f $d/$lib/libdb$linklibext
  			then
  				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found Berkeley DB in $d" >&5
-@@ -18958,8 +18956,7 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
+@@ -20024,8 +20022,7 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
  				BDB_LIBS="-L${bdbdir}/${lib} -ldb"
  				break
  			fi
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.10 2010/06/14 05:45:32 ajacoutot Exp $
  				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found Berkeley DB in $d" >&5
  $as_echo "found Berkeley DB in $d" >&6; }
  
-@@ -19019,7 +19016,7 @@ then
+@@ -20156,7 +20153,7 @@ then
  $as_echo_n "checking for ODBC files... " >&6; }
  	for d in $dir /usr /usr/local
  	do
