@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/27 13:29:33 stephan Exp $
 
 COMMENT=	Perl module implementing assertions
 
 MODULES=	cpan
-DISTNAME=	Carp-Assert-0.18
-REVISION=	0
+DISTNAME=	Carp-Assert-0.20
 CATEGORIES=	devel
 
-# Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
