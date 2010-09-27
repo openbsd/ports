@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2010/09/23 21:25:37 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.470 2010/09/27 12:02:28 stephan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -31,7 +31,6 @@
      SUBDIR += dansguardian
      SUBDIR += decss
      SUBDIR += dillo
-     SUBDIR += drupal5
      SUBDIR += drupal6
      SUBDIR += drush
      SUBDIR += elinks
