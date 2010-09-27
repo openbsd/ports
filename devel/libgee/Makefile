@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/16 12:36:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/27 05:02:23 ajacoutot Exp $
 
 COMMENT=	GObject based collection library 
 
 GNOME_PROJECT=	libgee
-GNOME_VERSION=	0.5.3
+GNOME_VERSION=	0.6.0
 
-SHARED_LIBS +=  gee 0.0 # .2.0
+SHARED_LIBS +=  gee 1.0 # .2.0
 
 CATEGORIES=	devel
 
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection=no \
-		--enable-doc=no
+		--disable-introspection \
+		--disable-doc
 
 .include <bsd.port.mk>
