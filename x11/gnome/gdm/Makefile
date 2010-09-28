@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2010/09/22 05:21:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2010/09/28 12:24:29 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
 
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bz2 c
+WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 c
 WANTLIB += cairo croco-0.6 dmx expat fontconfig freetype gailutil
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render rsvg-2
 WANTLIB += xcb-render-util xml2 z gnomecanvas-2
