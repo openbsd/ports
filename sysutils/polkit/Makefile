@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/18 15:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/28 17:57:23 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -59,7 +59,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-authfw=bsdauth
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+# XXX needs libtoolize
+USE_LIBTOOL=	gnu
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
 
