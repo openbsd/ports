@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2010/09/27 15:11:08 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/09/28 07:52:04 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -6,7 +6,7 @@ CATEGORIES+=		graphics/clutter x11
 
 HOMEPAGE?=		http://www.clutter-project.org/
 
-# LGPLv2.1/perl
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM?=  Yes
 PERMIT_PACKAGE_FTP?=    Yes
 PERMIT_DISTFILES_CDROM?=Yes
