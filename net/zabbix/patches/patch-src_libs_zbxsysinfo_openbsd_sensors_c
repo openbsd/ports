@@ -1,0 +1,168 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/sensors.c.orig	Sun Sep 26 23:48:07 2010
++++ src/libs/zbxsysinfo/openbsd/sensors.c	Mon Sep 27 22:01:44 2010
+@@ -1,5 +1,6 @@
+ /*
+ ** ZABBIX
++** Copyright (C) 2010 Robert Nagy <robert@openbsd.org>
+ ** Copyright (C) 2000-2005 SIA Zabbix
+ **
+ ** This program is free software; you can redistribute it and/or modify
+@@ -23,94 +24,89 @@
+ 
+ #include "md5.h"
+ 
+-static int	get_sensor(const char *name, unsigned flags, AGENT_RESULT *result)
++#include <sys/sensors.h>
++
++#define CELSIUS(x) ((x - 273150000) / 1000000.0)
++
++int	sensor_value(int[], struct sensor *);
++
++int	sensor_value(int mib[], struct sensor *sensor)
+ {
+-	DIR	*dir;
+-	struct	dirent *entries;
+-	struct	stat buf;
+-	char	filename[MAX_STRING_LEN];
+-	char	line[MAX_STRING_LEN];
+-	double	d1,d2,d3;
++	size_t		slen;
+ 
+-	FILE	*f;
++	mib[3] = SENSOR_TEMP;
++	mib[4] = 0;
+ 
+-        assert(result);
++	slen = sizeof(*sensor);
++	if (sysctl(mib, 5, sensor, &slen, NULL, 0) == -1)
++		return SYSINFO_RET_FAIL;
+ 
+-        init_result(result);
++	return SYSINFO_RET_OK;
++}
+ 
+-	dir=opendir("/proc/sys/dev/sensors");
+-	if(NULL == dir)
++int     GET_SENSOR(const char *cmd, const char *param, unsigned flags, AGENT_RESULT *result)
++{
++	enum sensor_type	 type;
++	struct sensordev 	 sensordev;
++	struct sensor		 sensor;
++        size_t			 sdlen = sizeof(sensordev);
++        int			 mib[3], dev, numt, cnt = 0, ret = SYSINFO_RET_FAIL;
++        uint64_t	 	 aggr = 0;
++	char			 key[MAX_STRING_LEN];
++
++	assert(result);
++
++	init_result(result);
++
++	if(num_param(param) > 1)
+ 	{
+ 		return SYSINFO_RET_FAIL;
+ 	}
+ 
+-	while((entries=readdir(dir))!=NULL)
++	if(get_param(param, 1, key, MAX_STRING_LEN) != 0)
+ 	{
+-		strscpy(filename,"/proc/sys/dev/sensors/");
+-		zbx_strlcat(filename,entries->d_name,MAX_STRING_LEN);
+-		zbx_strlcat(filename,name,MAX_STRING_LEN);
++		return SYSINFO_RET_FAIL;
++	}
+ 
+-		if(stat(filename,&buf)==0)
++	mib[0] = CTL_HW;
++	mib[1] = HW_SENSORS;
++
++	for (dev = 0; ; dev++)
++	{
++		mib[2] = dev;
++
++		if (sysctl(mib, 3, &sensordev, &sdlen, NULL, 0) == -1)
+ 		{
+-			if(NULL == (f = fopen(filename,"r")))
+-			{
++			if (errno == ENXIO)
+ 				continue;
+-			}
+-			fgets(line,MAX_STRING_LEN,f);
+-			zbx_fclose(f);
++			if (errno == ENOENT)
++				break;
+ 
+-			if(sscanf(line,"%lf\t%lf\t%lf\n",&d1, &d2, &d3) == 3)
++			return SYSINFO_RET_FAIL;
++		}
++
++		if (!strcmp(key, "") || !strcmp(key, "cpu"))
++		{
++			if (!strncmp(sensordev.xname, "cpu", 3))
+ 			{
+-				closedir(dir);
+-				SET_DBL_RESULT(result, d3);
+-				return  SYSINFO_RET_OK;
++				ret = sensor_value(mib, &sensor);
++				aggr += sensor.value;
++				cnt++;
+ 			}
+-			else
++		}
++		else
++		{
++			if (!strcmp(sensordev.xname, key))
+ 			{
+-				closedir(dir);
+-				return  SYSINFO_RET_FAIL;
++				ret = sensor_value(mib, &sensor);
++				if (sensor.type == SENSOR_TEMP)
++					SET_DBL_RESULT(result, CELSIUS(sensor.value));
+ 			}
+ 		}
+ 	}
+-	closedir(dir);
+-	return	SYSINFO_RET_FAIL;
+-}
+ 
+-int     OLD_SENSOR(const char *cmd, const char *param, unsigned flags, AGENT_RESULT *result)
+-{
+-        char    key[MAX_STRING_LEN];
+-        int     ret;
++	if (!strcmp(key, "") || !strcmp(key, "cpu"))
++		SET_DBL_RESULT(result, CELSIUS(aggr / cnt));
+ 
+-        assert(result);
+-
+-        init_result(result);
+-
+-        if(num_param(param) > 1)
+-        {
+-                return SYSINFO_RET_FAIL;
+-        }
+-
+-        if(get_param(param, 1, key, MAX_STRING_LEN) != 0)
+-        {
+-                return SYSINFO_RET_FAIL;
+-        }
+-
+-        if(strcmp(key,"temp1") == 0)
+-        {
+-                ret = get_sensor("temp1", flags, result);
+-        }
+-        else if(strcmp(key,"temp2") == 0)
+-        {
+-                ret = get_sensor("temp2", flags, result);
+-        }
+-        else if(strcmp(key,"temp3") == 0)
+-        {
+-                ret = get_sensor("temp3", flags, result);
+-        }
+-        else
+-        {
+-                ret = SYSINFO_RET_FAIL;
+-        }
+-
+-        return ret;
++	return ret;
+ }
