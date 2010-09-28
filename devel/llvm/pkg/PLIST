@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/29 16:37:09 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/09/28 07:38:24 sthen Exp $
 @bin bin/bugpoint
 bin/c++-analyzer
 bin/ccc-analyzer
 @bin bin/clang
 bin/clang++
-bin/clang-cc
 @bin bin/llc
 @bin bin/lli
 @bin bin/llvm-ar

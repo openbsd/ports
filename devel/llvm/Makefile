@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/30 22:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/09/28 07:38:24 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 LLVM_V =	2.7
 DISTNAME =	llvm-${LLVM_V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
+# packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
@@ -52,6 +53,7 @@ REGRESS_FLAGS =	RUNTESTFLAGS=
 SEPARATE_BUILD =	simple
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
+MAKE_ENV =		REQUIRES_RTTI=1
 
 # also supports cmake
 CONFIGURE_STYLE =	gnu
@@ -61,15 +63,12 @@ CONFIGURE_ARGS =	--enable-bindings=no \
 
 MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
 
-.include <bsd.own.mk>
-
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-install:
-	@ln -s ${TRUEPREFIX}/libexec/clang-cc ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/llvm
 	@${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
