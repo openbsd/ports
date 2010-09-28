@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/13 17:15:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/28 20:40:50 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,6 +40,7 @@ LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-gnome
+			--enable-gnome \
+			--enable-introspection=no
 
 .include <bsd.port.mk>
