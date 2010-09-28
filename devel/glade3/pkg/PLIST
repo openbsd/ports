@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/12/22 15:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/09/28 17:09:11 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -59,10 +59,10 @@ include/libgladeui-1.0/gladeui/glade-xml-utils.h
 include/libgladeui-1.0/gladeui/glade.h
 lib/glade3/
 lib/glade3/modules/
-lib/glade3/modules/libgladegnome.a
-lib/glade3/modules/libgladegnome.la
-lib/glade3/modules/libgladegtk.a
-lib/glade3/modules/libgladegtk.la
+@comment lib/glade3/modules/libgladegnome.a
+@comment lib/glade3/modules/libgladegnome.la
+@comment lib/glade3/modules/libgladegtk.a
+@comment lib/glade3/modules/libgladegtk.la
 lib/libgladeui-1.a
 lib/libgladeui-1.la
 lib/pkgconfig/gladeui-1.0.pc
