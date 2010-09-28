@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/19 20:43:32 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2010/09/28 21:20:56 jasper Exp $
 
 COMMENT =	open source web browser engine
 
@@ -43,6 +43,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
+CONFIGURE_ARGS+=--enable-introspection=no
 
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
