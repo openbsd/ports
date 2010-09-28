@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/09 18:48:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/28 09:09:15 jasper Exp $
 
 SHARED_ONLY=   	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.33.0
 DISTNAME=	subtitleeditor-${V}
-PKGNAME=	${DISTNAME}p3
+REVISION=	4
 
 CATEGORIES=	graphics editors
 
