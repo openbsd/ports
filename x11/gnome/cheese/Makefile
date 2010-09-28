@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/09/28 08:51:49 landry Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.28.1
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	multimedia
 
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
-WANTLIB += bz2 c cairo com_err croco-0.6 crypto dbus-1 dbus-glib-1
+WANTLIB += c cairo com_err croco-0.6 crypto dbus-1 dbus-glib-1
 WANTLIB += execinfo expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
-WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstreamer-0.10 gthread-2.0 
+WANTLIB += gobject-2.0 gpg-error gssapi gstreamer-0.10 gthread-2.0 
 WANTLIB += gtk-x11-2.0 gnome-desktop-2
 WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs smime3
