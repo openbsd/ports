@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/28 20:12:16 jeremy Exp $
 
 COMMENT =	sorts an array in column order
 
@@ -15,8 +15,6 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
-
-MASTER_SITES =	${MASTER_SITE_RUBYFORGE:=rocky-hacks/}
 
 MODULES =	lang/ruby
 

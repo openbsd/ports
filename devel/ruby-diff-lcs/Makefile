@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:16 jeremy Exp $
 
 COMMENT =		port of Algorithm::Diff that uses the LCS algorithm
 
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
-
-MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=ruwiki/}
 
 MODULES =		lang/ruby
 

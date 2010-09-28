@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:19 jeremy Exp $
 
 COMMENT =	lightweight and user friendly HTTP client library for Ruby
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
 HOMEPAGE =		http://thinhttp.rubyforge.org/
-MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=thinhttp/}
 
 MODULES =		lang/ruby
 

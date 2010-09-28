@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2009/10/13 15:09:16 pirofti Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/09/28 20:12:18 jeremy Exp $
 
 VERSION ?=	0.5.0.1
 PKGNAME ?=	ruby-${DISTNAME}
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM ?= Yes
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_CDROM ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
-
-MASTER_SITES ?=	${MASTER_SITE_RUBYFORGE:=prawn/}
 
 MODULES ?=	lang/ruby
 

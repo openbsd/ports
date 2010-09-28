@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/28 20:12:18 jeremy Exp $
 
 COMMENT=	installer for Rails applications
 
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
-
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rails-installer/}
 
 MODULES=	lang/ruby
 

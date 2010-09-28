@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/23 22:30:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/28 20:12:18 jeremy Exp $
 
 COMMENT=	Ruby XMPP/Jabber library
 
@@ -10,8 +10,6 @@ CATEGORIES=	net
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 HOMEPAGE=	http://home.gna.org/xmpp4r/
-
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=xmpp4r/}
 
 # gpl
 PERMIT_PACKAGE_CDROM=	yes

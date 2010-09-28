@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/23 22:08:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/09/28 20:12:17 jeremy Exp $
 
 COMMENT=	ruby make
 
@@ -14,8 +14,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 HOMEPAGE=       http://rake.rubyforge.org/
-
-MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=rake/}
 
 MODULES=	lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/23 22:30:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/28 20:12:18 jeremy Exp $
 
 COMMENT=	robust library for verifying and serving OpenID identities
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=ruby-openid/}
 
 MODULES=	lang/ruby
 

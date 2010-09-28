@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:17 jeremy Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=systemtimer/}
 
 MODULES=	lang/ruby
 

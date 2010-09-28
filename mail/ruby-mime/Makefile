@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:17 jeremy Exp $
 
 COMMENT =	MIME library for Ruby
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
 HOMEPAGE =	http://mime.rubyforge.org/
-MASTER_SITES =	${MASTER_SITE_RUBYFORGE:=mime/}
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

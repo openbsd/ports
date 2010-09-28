@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.26 2010/09/23 21:58:50 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.27 2010/09/28 20:12:16 jeremy Exp $
 
 # ruby module
 
@@ -46,6 +46,7 @@ SUBST_VARS+=		MODRUBY_BIN_REV MODRUBY_REV MODRUBY_ARCH
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	${RUBY} extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
+MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
 BUILD_DEPENDS+=	:ruby-gems->=1.3.0:devel/ruby-gems

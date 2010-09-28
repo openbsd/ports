@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:18 jeremy Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
-
-MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=treetop/}
 
 MODULES =		lang/ruby
 

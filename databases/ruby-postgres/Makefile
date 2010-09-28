@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/23 23:30:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/09/28 20:12:16 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
-
-MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=ruby-pg/}
 
 MODULES=	lang/ruby
 

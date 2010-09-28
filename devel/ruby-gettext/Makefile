@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/23 22:30:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/28 20:12:17 jeremy Exp $
 
 COMMENT=		Ruby interface to gettext
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=gettext/}
 
 MODULES=		lang/ruby
 
