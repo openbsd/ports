@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.44 2010/09/22 16:11:18 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.45 2010/09/28 07:19:42 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -16,6 +16,7 @@ install at least the following packages:
 	gnome-audio \
 	gnome-backgrounds \
 	gnome-control-center \
+	gnome-keyring \
 	gnome-media \
 	gnome-panel \
 	gnome-screensaver \
