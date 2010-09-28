@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/28 21:09:00 jeremy Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
 DISTNAME =	echoe-3.2
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/fauna
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
-
-MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=fauna/}
 
 MODULES =		lang/ruby
 
