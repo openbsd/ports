@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/10 08:43:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 19:32:50 landry Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
 DISTNAME=	soundtouch-1.3.1
+REVISION=	0
 SHARED_LIBS +=	BPM		0.0      # .0.0
 SHARED_LIBS +=	SoundTouch	0.0      # .0.0
 CATEGORIES=	audio devel
@@ -20,7 +21,8 @@ MASTER_SITES=	${HOMEPAGE}
 WANTLIB=	c m stdc++
 
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake->=1.9,<1.10:devel/automake/${AUTOMAKE_VERSION}
+		:automake->=1.9,<1.10:devel/automake/${AUTOMAKE_VERSION} \
+		::devel/libtool
 
 USE_LIBTOOL=	Yes
 
