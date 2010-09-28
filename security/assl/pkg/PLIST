@@ -1,13 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/23 14:01:05 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/28 21:14:56 ckuethe Exp $
 include/assl.h
-@lib lib/libassl.so.${LIBassl_VERSION}
-@man man/man3/assl.3
-share/doc/assl/
-share/doc/assl/assl.html
-share/doc/assl/license.html
-share/doc/assl/man.html
-share/doc/assl/no_openssl.jpg
-share/doc/assl/openssl.html
+lib/libassl.a
+%%SHARED%%
+lib/libassl_p.a
+lib/libassl_pic.a
+@man man/cat3/assl.0
+@man man/cat3/assl_accept.0
+@man man/cat3/assl_alloc_context.0
+@man man/cat3/assl_close.0
+@man man/cat3/assl_connect.0
+@man man/cat3/assl_fatalx.0
+@man man/cat3/assl_gets.0
+@man man/cat3/assl_initialize.0
+@man man/cat3/assl_load_file_certs.0
+@man man/cat3/assl_poll.0
+@man man/cat3/assl_puts.0
+@man man/cat3/assl_read.0
+@man man/cat3/assl_serve.0
+@man man/cat3/assl_set_cert_flags.0
+@man man/cat3/assl_write.0
 share/examples/assl/
 share/examples/assl/GNUmakefile
 share/examples/assl/Makefile

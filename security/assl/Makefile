@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/02 08:22:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/28 21:14:56 ckuethe Exp $
 
-SHARED_ONLY =		Yes
-
-COMMENT =		hide awfull SSL API in a sane interface
-V =			0.8
+COMMENT =		hide awful SSL API in a sane interface
+V =			0.9
 DISTNAME =		assl-${V}
-REVISION =		0
 
 SHARED_LIBS =		assl ${V}
 
@@ -13,7 +10,7 @@ CATEGORIES =		security devel
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/Assl
 
-MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
+MAINTAINER =		Chris Kuethe <ckuethe@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,15 +22,11 @@ MASTER_SITES =		http://opensource.conformal.com/snapshots/assl/
 EXTRACT_SUFX =		.tgz
 
 NO_REGRESS =		Yes
-DOC_DIR =		${PREFIX}/share/doc/assl/
 EG_DIR =		${PREFIX}/share/examples/assl
+MAKE_FLAGS=		PREFIX=${LOCALBASE}
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/libassl.so.${LIBassl_VERSION} ${PREFIX}/lib/
-	${INSTALL_MAN} ${WRKSRC}/assl.3 ${PREFIX}/man/man3
-	${INSTALL_DATA} ${WRKSRC}/assl.h ${PREFIX}/include/
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/html/{assl.html,license.html,man.html,no_openssl.jpg,openssl.html} ${DOC_DIR}
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/assl.h ${PREFIX}/include
 	${INSTALL_DATA_DIR} ${EG_DIR}
 	cd ${WRKSRC}/examples && \
 		find . -type d \

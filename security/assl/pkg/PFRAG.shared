@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2010/09/28 21:14:56 ckuethe Exp $
+@lib lib/libassl.so.${LIBassl_VERSION}
