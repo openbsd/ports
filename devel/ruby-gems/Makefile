@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/23 22:06:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/28 21:07:14 jeremy Exp $
 
 COMMENT=	package management framework for the Ruby language
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rubygems/}
+MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 EXTRACT_SUFX=	.tgz
 
 MODULES= 	lang/ruby
