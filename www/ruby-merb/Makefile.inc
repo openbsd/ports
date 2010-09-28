@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2010/01/02 00:28:55 msf Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2010/09/28 21:40:13 jeremy Exp $
 
 VERSION ?=	1.0.15
 PKGNAME ?=	ruby-${DISTNAME}
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM ?= Yes
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_CDROM ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
-
-MASTER_SITES ?=	${MASTER_SITE_GEMCUTTER}
 
 MODULES ?=	lang/ruby
 
