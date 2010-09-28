@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.11 2010/09/28 18:42:17 steven Exp $
+# $OpenBSD: libtool,v 1.12 2010/09/28 18:52:36 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1618,7 +1618,9 @@ if ($mode eq 'compile') {
 			if (defined $pdeplibs) {
 				$lainfo->set('dependency_libs', "@$pdeplibs");
 			}
-			$lainfo->write_shared_libs_log($origver);
+			if (! $opts{'module'}) {
+				$lainfo->write_shared_libs_log($origver);
+			}
 		}
 		$lainfo->{'installed'} = 'yes';
 		# write .lai file (.la file that will be installed)
