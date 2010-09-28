@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2005/10/05 08:50:21 espie Exp $
---- Makefile.in.orig	Tue Sep 20 23:50:12 2005
-+++ Makefile.in	Tue Sep 20 23:50:55 2005
-@@ -56,7 +56,7 @@ CXXCPP = @CXXCPP@
- CXXDEPMODE = @CXXDEPMODE@
- CXXFLAGS = @CXXFLAGS@
+$OpenBSD: patch-Makefile_in,v 1.5 2010/09/28 11:41:22 jasper Exp $
+--- Makefile.in.orig	Fri May 28 17:55:55 2010
++++ Makefile.in	Tue Sep 28 13:23:56 2010
+@@ -172,7 +172,7 @@ CFLAGS = @CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
 -DEFS = @DEFS@
 +DEFS = @DEFS@ -DLOCALBASE="\"${LOCALBASE}\"" -DX11BASE="\"${X11BASE}\""
  DEPDIR = @DEPDIR@
- ECHO = @ECHO@
- ECHO_C = @ECHO_C@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@

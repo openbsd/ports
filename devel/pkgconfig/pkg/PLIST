@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/25 16:44:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/09/28 11:41:22 jasper Exp $
 @bin bin/pkg-config
 @man man/man1/pkg-config.1
-@comment share/aclocal/
 @comment share/aclocal/pkg.m4
+share/doc/pkg-config/
+share/doc/pkg-config/pkg-config-guide.html
