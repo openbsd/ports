@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/09/02 15:33:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/09/28 11:52:36 landry Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -8,6 +8,7 @@ GNOME_VERSION=	0.8.17
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 PKGNAME=	tracker-search-${VERSION}
+REVISION=	0
 
 EVO_VERSION=	2.30
 SUBST_VARS=	EVO_VERSION
@@ -53,6 +54,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	::audio/libvorbis \
+		::devel/libgsf \
 		::mail/evolution \
 		:exempi->=2.1.1:textproc/exempi \
 		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
