@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/28 07:50:50 jasper Exp $
 
     SUBDIR =
     SUBDIR += core
     SUBDIR += clutter-box2d
-#    SUBDIR += clutter-cairo	No release works with clutter 1.0.x
     SUBDIR += clutter-gst
     SUBDIR += clutter-gtk
 #    SUBDIR += clutter-perl
