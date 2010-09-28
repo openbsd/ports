@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/05 10:35:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/09/28 09:49:06 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -113,6 +113,7 @@ ${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MPF.pm
 ${P5SITE}/Image/ExifTool/MWG.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
+${P5SITE}/Image/ExifTool/Matroska.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
 ${P5SITE}/Image/ExifTool/MinoltaRaw.pm
 ${P5SITE}/Image/ExifTool/Nikon.pm
@@ -136,6 +137,7 @@ ${P5SITE}/Image/ExifTool/QuickTime.pm
 ${P5SITE}/Image/ExifTool/README
 ${P5SITE}/Image/ExifTool/RIFF.pm
 ${P5SITE}/Image/ExifTool/RSRC.pm
+${P5SITE}/Image/ExifTool/RTF.pm
 ${P5SITE}/Image/ExifTool/Rawzor.pm
 ${P5SITE}/Image/ExifTool/Real.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
@@ -244,6 +246,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MPF.3p
 @man man/man3p/Image::ExifTool::MWG.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
+@man man/man3p/Image::ExifTool::Matroska.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
 @man man/man3p/Image::ExifTool::MinoltaRaw.3p
 @man man/man3p/Image::ExifTool::Nikon.3p
@@ -266,6 +269,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::QuickTime.3p
 @man man/man3p/Image::ExifTool::RIFF.3p
 @man man/man3p/Image::ExifTool::RSRC.3p
+@man man/man3p/Image::ExifTool::RTF.3p
 @man man/man3p/Image::ExifTool::Rawzor.3p
 @man man/man3p/Image::ExifTool::Real.3p
 @man man/man3p/Image::ExifTool::Ricoh.3p
@@ -296,3 +300,4 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::XMP2.3p
 @man man/man3p/Image::ExifTool::ZIP.3p
 @man man/man3p/Image::ExifTool::iWork.3p
+share/doc/pkg-readmes/
