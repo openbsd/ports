@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2010/09/01 11:36:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2010/09/28 08:20:01 landry Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.30.2
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	panel-applet-2       4.0      # .2.67
 
@@ -20,12 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr ltdl
 WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2 wnck-1
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 wnck-1
 WANTLIB += c cairo com_err croco-0.6 crypto dbus-1 dbus-glib-1
 WANTLIB += eggdbus-1 execinfo expat fontconfig freetype gailutil
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 rsvg-2
-WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gsf-1 gssapi
+WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi
 WANTLIB += gthread-2.0 gtk-x11-2.0 ical icalss icalvcal krb5 m
 WANTLIB += nspr4 nss3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 gweather
 WANTLIB += pcre pixman-1 plc4 plds4 png popt proxy pthread pthread-stubs
