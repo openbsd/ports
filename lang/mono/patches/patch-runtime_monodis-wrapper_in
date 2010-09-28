@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_monodis-wrapper_in,v 1.2 2010/03/20 17:16:44 robert Exp $
+$OpenBSD: patch-runtime_monodis-wrapper_in,v 1.3 2010/09/28 18:33:06 jasper Exp $
 --- runtime/monodis-wrapper.in.orig	Fri Sep 25 16:58:09 2009
 +++ runtime/monodis-wrapper.in	Sat Mar 20 11:03:12 2010
 @@ -3,4 +3,4 @@ r='@mono_build_root@'
@@ -6,4 +6,4 @@ $OpenBSD: patch-runtime_monodis-wrapper_in,v 1.2 2010/03/20 17:16:44 robert Exp 
  MONO_SHARED_DIR=$r/runtime
  export MONO_CFG_DIR MONO_SHARED_DIR
 -exec "$r/libtool" --mode=execute -dlopen "$r/mono/mini/libmono.la" "$r/mono/dis/monodis" "$@"
-+exec "/usr/local/bin/libtool" --mode=execute -dlopen "$r/mono/mini/libmono.la" "$r/mono/dis/monodis" "$@"
++exec "${LIBTOOL}" --mode=execute -dlopen "$r/mono/mini/libmono.la" "$r/mono/dis/monodis" "$@"

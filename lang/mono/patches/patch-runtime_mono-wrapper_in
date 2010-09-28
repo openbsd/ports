@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_mono-wrapper_in,v 1.2 2010/03/20 17:16:44 robert Exp $
+$OpenBSD: patch-runtime_mono-wrapper_in,v 1.3 2010/09/28 18:33:06 jasper Exp $
 --- runtime/mono-wrapper.in.orig	Fri Sep 25 16:58:09 2009
 +++ runtime/mono-wrapper.in	Sat Mar 20 11:03:12 2010
 @@ -4,4 +4,4 @@ MONO_CFG_DIR='@mono_cfg_dir@'
@@ -6,4 +6,4 @@ $OpenBSD: patch-runtime_mono-wrapper_in,v 1.2 2010/03/20 17:16:44 robert Exp $
  MONO_SHARED_DIR=$r/runtime
  export MONO_CFG_DIR MONO_SHARED_DIR PATH
 -exec "$r/libtool" --mode=execute "$r/@mono_runtime@" --config "@mono_cfg_dir@/mono/config" "$@"
-+exec "/usr/local/bin/libtool" --mode=execute "$r/@mono_runtime@" --config "@mono_cfg_dir@/mono/config" "$@"
++exec "${LIBTOOL}" --mode=execute "$r/@mono_runtime@" --config "@mono_cfg_dir@/mono/config" "$@"
