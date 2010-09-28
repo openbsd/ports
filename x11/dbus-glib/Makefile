@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/20 16:02:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/09/28 18:06:47 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
@@ -32,8 +32,6 @@ LIB_DEPENDS=	::x11/dbus \
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-# XXX
-LIBTOOL=	${PORTSDIR}/infrastructure/bin/libtool
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
