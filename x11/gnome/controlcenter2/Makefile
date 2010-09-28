@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2010/09/28 11:56:57 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME control center
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.30.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xss asn1
-WANTLIB += atk-1.0 bz2 c cairo com_err crypto dbus-1 dbus-glib-1
+WANTLIB += atk-1.0 c cairo com_err crypto dbus-1 dbus-glib-1
 WANTLIB += execinfo expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
-WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre pixman-1 plc4 plds4 xklavier
 WANTLIB += png pthread pthread-stubs smime3 soup-2.4 sqlite3 ssl3 rsvg-2
