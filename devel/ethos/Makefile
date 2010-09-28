@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/28 20:13:38 jasper Exp $
 
 COMMENT =	plugin framework library
 
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-shave \
-			--disable-glibtest
+			--disable-glibtest \
+			--enable-introspection=no
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
