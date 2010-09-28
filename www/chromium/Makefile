@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/01 19:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/28 07:02:28 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-5.0.359.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES =		www
 
@@ -25,10 +25,10 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
-WANTLIB += z
+WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
-		http://sightly.net/peter/openbsd/chromium/
+		${HOMEPAGE}
 
 MODULES =	devel/gettext
 PYTHON_VER=	2.6
@@ -37,10 +37,10 @@ BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
 		::devel/gperf \
 		::devel/bison \
 		::shells/bash
-LIB_DEPENDS =	execinfo::devel/libexecinfo \
-		bz2::archivers/bzip2 \
-		nss3,nssutil3,ssl3,smime3,softokn3::security/nss \
-		gconf-2::devel/gconf2
+LIB_DEPENDS =	::devel/libexecinfo \
+		::archivers/bzip2 \
+		::security/nss \
+		::devel/gconf2
 
 .include <bsd.own.mk>
 
