@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.146 2010/09/02 09:03:50 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.147 2010/09/28 14:45:10 jeremy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -279,3 +279,6 @@ MASTER_SITE_GITHUB+= \
 
 MASTER_SITE_GEMCUTTER+= \
 	http://gemcutter.org/gems/
+
+MASTER_SITE_RUBYGEMS+= \
+	http://rubygems.org/downloads/
