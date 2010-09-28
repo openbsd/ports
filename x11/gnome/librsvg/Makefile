@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2010/09/27 05:54:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/09/28 07:41:07 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.32.0
+
+REVISION=	0
 
 SHARED_LIBS +=	rsvg-2         28.0           # .34.0
 
@@ -28,7 +30,6 @@ MODULES=	devel/gettext \
 		lang/python
 
 LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/libgsf \
 		::www/libcroco
 RUN_DEPENDS=	::x11/gtk-engines2
 
