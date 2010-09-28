@@ -1,0 +1,13 @@
+$OpenBSD: README.OpenBSD,v 1.1 2010/09/28 08:57:34 jasper Exp $
+
+Empathy is able to use several Telepathy connection managers.
+By default the following managers are installed:
+
+  * MSN 		(Butterfly)
+  * Jabber 		(Gabble)
+  * Zeroconf/Bonjour	(Salut)
+  * IRC			(Idle)
+
+It is also possible to use the protocols supported by Pidgin's Purple
+(SILC, Facebook, etc) by installing the Haze connection manager
+(telepathy-haze).

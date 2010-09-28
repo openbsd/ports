@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/08/24 14:57:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/09/28 08:57:34 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -11,6 +11,8 @@ lib/nautilus-sendto/plugins/libnstempathy.so
 share/applications/empathy-accounts.desktop
 share/applications/empathy.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.service
+share/doc/empathy/
+share/doc/empathy/README.OpenBSD
 share/empathy/
 share/empathy/Template.html
 share/empathy/codec-preferences

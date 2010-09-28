@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2010/09/23 14:06:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2010/09/28 08:57:34 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.3
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 
@@ -56,8 +56,8 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::net/telepathy/telepathy-logger
 
 RUN_DEPENDS=		::devel/iso-codes \
+			::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
-			::net/telepathy/telepathy-haze \
 			::net/telepathy/telepathy-idle \
 			::net/telepathy/telepathy-salut \
 			:gnome-icon-theme->=2.30.3:x11/gnome/icon-theme
@@ -84,5 +84,12 @@ FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 pre-configure:
 	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
 		${WRKDIR}/bin/python-config
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/empathy
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/empathy/README.OpenBSD
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/doc/empathy/README.OpenBSD
 
 .include <bsd.port.mk>
