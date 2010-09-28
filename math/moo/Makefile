@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.5 2007/09/15 18:44:36 steven Exp $
+#	$OpenBSD: Makefile,v 1.6 2010/09/28 09:29:14 sthen Exp $
 
 COMMENT=		Marco's Object Oriented calculator
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
+MAKE_FLAGS=		CC=${CC}
 
 .include <bsd.port.mk>
