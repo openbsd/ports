@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/02 16:55:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/09/28 19:27:30 landry Exp $
 
 COMMENT=	DVD read/navigation library
 DISTNAME=	libdvdnav-4.1.3
-PKGNAME=	${DISTNAME}p0v0
+REVISION=	1
+EPOCH=		0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	dvdnav	6.0 \
@@ -20,7 +21,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 AUTOMAKE_VERSION=1.9
 AUTOCONF_VERSION=2.59
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 
