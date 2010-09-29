@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/22 21:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/09/29 07:13:15 kili Exp $
 
 COMMENT=	pastebin command line application
 
 DISTNAME=	pb-0.1.0
+REVISION=	0
 CATEGORIES=	net sysutils
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -22,5 +23,7 @@ MODGHC_BUILD =          cabal hackage nort
 
 BUILD_DEPENDS +=        ::devel/hs-network \
 			::net/hs-HTTP
+
+LIB_DEPENDS=		::devel/gmp
 
 .include <bsd.port.mk>
