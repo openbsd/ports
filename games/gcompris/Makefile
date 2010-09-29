@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/09/16 05:52:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/29 07:10:46 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-9.3
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	games education
 
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender bz2 c expat fontconfig freetype
+WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pixman-1 pthread pthread-stubs util xcb xcb-render
 WANTLIB += xcb-render-util xml2 z atk-1.0 cairo croco-0.6 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 glitz gsf-1 gtk-x11-2.0 pango-1.0
+WANTLIB += gdk_pixbuf-2.0 glitz gtk-x11-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png rsvg-2 gnet-2.0 sqlite3
 WANTLIB += gstreamer-0.10
 
