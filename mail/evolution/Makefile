@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2010/08/22 10:29:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2010/09/29 17:15:55 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -130,6 +130,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
 # ltasneededhack in bsd.gnome.mk from FreeBSD ports
+USE_LIBTOOL=	gnu
 LIBTOOL=	${WRKDIR}/bin/libtool
 post-patch:
 	sed '/^archive_cmds=/s/-shared/-shared -Wl,--as-needed/ ; \
