@@ -1,0 +1,31 @@
+$OpenBSD: patch-modules_meta_engine_taglib_cpp,v 1.1 2010/09/29 11:30:03 landry Exp $
+Fix for http://www.videolan.org/security/sa1004.html
+--- modules/meta_engine/taglib.cpp.orig	Tue Sep 28 19:24:18 2010
++++ modules/meta_engine/taglib.cpp	Tue Sep 28 19:25:44 2010
+@@ -120,6 +120,8 @@ static void ReadMetaFromId3v2( ID3v2::Tag* tag, demux_
+     {
+         ID3v2::UniqueFileIdentifierFrame* p_ufid =
+                 dynamic_cast<ID3v2::UniqueFileIdentifierFrame*>(*iter);
++        if( !p_ufid )
++            continue;
+         const char *owner = p_ufid->owner().toCString();
+         if (!strcmp( owner, "http://musicbrainz.org" ))
+         {
+@@ -140,6 +142,8 @@ static void ReadMetaFromId3v2( ID3v2::Tag* tag, demux_
+     {
+         ID3v2::UserTextIdentificationFrame* p_txxx =
+                 dynamic_cast<ID3v2::UserTextIdentificationFrame*>(*iter);
++        if( !p_txxx )
++            continue;
+         vlc_meta_AddExtra( p_meta, p_txxx->description().toCString( true ),
+                            p_txxx->fieldList().toString().toCString( true ) );
+     }
+@@ -196,6 +200,8 @@ static void ReadMetaFromId3v2( ID3v2::Tag* tag, demux_
+     {
+         ID3v2::AttachedPictureFrame* p_apic =
+             dynamic_cast<ID3v2::AttachedPictureFrame*>(*iter);
++        if( !p_apic )
++            continue;
+         input_attachment_t *p_attachment;
+ 
+         const char *psz_mime;
