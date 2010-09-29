@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/27 21:50:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/29 18:45:49 jasper Exp $
 @bin bin/gamgi
 share/doc/gamgi/
 share/doc/gamgi/LICENSE
@@ -14,6 +14,7 @@ share/doc/gamgi/changelogs/changelogs10.html
 share/doc/gamgi/changelogs/changelogs11.html
 share/doc/gamgi/changelogs/changelogs12.html
 share/doc/gamgi/changelogs/changelogs13.html
+share/doc/gamgi/changelogs/changelogs14.html
 share/doc/gamgi/code/
 share/doc/gamgi/code/architecture.html
 share/doc/gamgi/code/libraries.html
@@ -155,7 +156,6 @@ share/doc/gamgi/installation/options.html
 share/doc/gamgi/installation/requirements.html
 share/doc/gamgi/installation/tips.html
 share/doc/gamgi/interfaces/
-share/doc/gamgi/interfaces.tar.gz
 share/doc/gamgi/interfaces/arrow/
 share/doc/gamgi/interfaces/arrow/select.html
 share/doc/gamgi/interfaces/assembly/
@@ -443,7 +443,6 @@ share/doc/gamgi/questions/questions.html
 share/doc/gamgi/questions/troubleshooting_formats.html
 share/doc/gamgi/questions/troubleshooting_interfaces.html
 share/doc/gamgi/tutorials/
-share/doc/gamgi/tutorials.tar.gz
 share/doc/gamgi/tutorials/calcite_page1.html
 share/doc/gamgi/tutorials/cscl_page1.html
 share/doc/gamgi/tutorials/interstices_bcc_page1.html

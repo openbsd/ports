@@ -1,11 +1,18 @@
-$OpenBSD: patch-src-make_rules,v 1.6 2010/08/19 11:38:32 jasper Exp $
---- src/make_rules.orig	Thu Aug 19 13:33:07 2010
-+++ src/make_rules	Thu Aug 19 13:33:29 2010
-@@ -19,6 +19,7 @@ CC ?= gcc
+$OpenBSD: patch-src-make_rules,v 1.7 2010/09/29 18:45:49 jasper Exp $
+
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED) and separate
+gdk-pixbuf:
+./gtk/file/gamgi_gtk_file_chooser.c:429: error: expected declaration specifiers or '...' before 'GtkNotebookPage
+
+--- src/make_rules.orig	Sun Jul  4 20:56:55 2010
++++ src/make_rules	Wed Sep 29 20:20:48 2010
+@@ -18,7 +18,8 @@ CC ?= gcc
+ 
  CFLAGS ?= -O3 -Wall -ansi
  override CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
- 	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
-+	-pthread
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
++	-DGDK_PIXBUF_DISABLE_DEPRECATED \
++	`pkg-config --cflags gdk-pixbuf-2.0` -pthread
  #	-DGSEAL_ENABLE \
  #	-DG_DISABLE_SINGLE_INCLUDES -DATK_DISABLE_SINGLE_INCLUDES \
  #	-DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES
