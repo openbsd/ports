@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/04/26 11:57:12 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/09/29 10:54:24 jasper Exp $
 @pkgpath devel/vte
-%%SHARED%%
 @bin bin/vte
 include/vte/
 include/vte/pty.h
@@ -11,6 +10,7 @@ include/vte/vtetypebuiltins.h
 include/vte/vteversion.h
 lib/libvte.a
 lib/libvte.la
+@lib lib/libvte.so.${LIBvte_VERSION}
 lib/pkgconfig/vte.pc
 lib/vte/
 lib/vte/decset
