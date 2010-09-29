@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/24 21:58:13 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/29 13:14:40 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,14 +6,12 @@ DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 
 SHARED_LIBS =		kpathsea	3.0
-# XXX is ptexenc for xindy builds only? Will be obvious when sparc64 tested.
 SHARED_LIBS +=		ptexenc		0.0		# 2.1
 
-# XXX sort
-WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
-			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms openjpeg \
-			pthread pthread-stubs stdc++ xcb xml2 t1.>=4 png.>=3 \
-			gd ttf poppler
+WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
+WANTLIB +=		fontconfig freetype gd iconv jpeg lcms m ncurses
+WANTLIB +=		openjpeg png.>=3 poppler pthread pthread-stubs stdc++
+WANTLIB +=		t1.>=4 ttf xcb xml2 z
 
 RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \

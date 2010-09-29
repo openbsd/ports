@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/24 21:58:13 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/29 13:14:41 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -456,13 +456,13 @@ lib/libptexenc.la
 @man man/man1/tangle.1
 @man man/man1/tcdialog.1
 @man man/man1/tex.1
-@man man/man1/tex2xindy.1
+@comment @man man/man1/tex2xindy.1
 @man man/man1/texconfig-sys.1
 @man man/man1/texconfig.1
 @man man/man1/texdoctk.1
 @man man/man1/texexec.1
 @man man/man1/texhash.1
-@man man/man1/texindy.1
+@comment @man man/man1/texindy.1
 @man man/man1/texlinks.1
 @man man/man1/texmfstart.1
 @man man/man1/tftopl.1
@@ -481,7 +481,7 @@ lib/libptexenc.la
 @man man/man1/vptovf.1
 @man man/man1/weave.1
 @man man/man1/xdvi.1
-@man man/man1/xindy.1
+@comment @man man/man1/xindy.1
 @man man/man5/fmtutil.cnf.5
 @man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
