@@ -1,11 +1,11 @@
-$OpenBSD: patch-SQL_mysql_update_sql,v 1.1 2010/08/22 14:09:27 sthen Exp $
+$OpenBSD: patch-SQL_mysql_update_sql,v 1.2 2010/09/29 20:55:39 sthen Exp $
 
 current mysql version is affected by this bug; uncomment workaround
 
---- SQL/mysql.update.sql.orig	Sun Aug 22 14:51:42 2010
-+++ SQL/mysql.update.sql	Sun Aug 22 14:51:43 2010
-@@ -70,7 +70,7 @@ ALTER TABLE `contacts`
- -- Updates from version 0.3.1
+--- SQL/mysql.update.sql.orig	Sat Sep 25 14:03:53 2010
++++ SQL/mysql.update.sql	Wed Sep 29 14:29:03 2010
+@@ -71,7 +71,7 @@ ALTER TABLE `contacts`
+ --          If not, use: ALTER TABLE xxx ENGINE=InnoDB;
  
  /* MySQL bug workaround: http://bugs.mysql.com/bug.php?id=46293 */
 -/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
@@ -13,7 +13,7 @@ current mysql version is affected by this bug; uncomment workaround
  
  ALTER TABLE `messages` DROP FOREIGN KEY `user_id_fk_messages`;
  ALTER TABLE `cache` DROP FOREIGN KEY `user_id_fk_cache`;
-@@ -116,7 +116,7 @@ CREATE TABLE `contactgroupmembers` (
+@@ -117,7 +117,7 @@ CREATE TABLE `contactgroupmembers` (
      REFERENCES `contacts`(`contact_id`) ON DELETE CASCADE ON UPDATE CASCADE
  ) /*!40000 ENGINE=INNODB */;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_main_inc_php_dist,v 1.9 2010/08/22 12:37:14 sthen Exp $
---- config/main.inc.php.dist.orig	Wed Jun 23 10:55:08 2010
-+++ config/main.inc.php.dist	Sat Aug  7 14:17:23 2010
-@@ -263,7 +263,7 @@ $rcmail_config['dont_override'] = array();
+$OpenBSD: patch-config_main_inc_php_dist,v 1.10 2010/09/29 20:55:39 sthen Exp $
+--- config/main.inc.php.dist.orig	Sat Sep 25 14:03:53 2010
++++ config/main.inc.php.dist	Wed Sep 29 14:29:03 2010
+@@ -266,7 +266,7 @@ $rcmail_config['dont_override'] = array();
  $rcmail_config['identities_level'] = 0;
  
  // mime magic database

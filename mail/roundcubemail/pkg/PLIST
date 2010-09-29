@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/08/22 19:39:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/09/29 20:55:39 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -8,6 +8,7 @@ roundcubemail/LICENSE
 roundcubemail/README
 roundcubemail/SQL/
 roundcubemail/SQL/mssql.initial.sql
+roundcubemail/SQL/mssql.upgrade.sql
 roundcubemail/SQL/mysql.initial.sql
 roundcubemail/SQL/mysql.update.sql
 roundcubemail/SQL/postgres.initial.sql
@@ -74,6 +75,7 @@ roundcubemail/plugins/archive/localization/es_ES.inc
 roundcubemail/plugins/archive/localization/et_EE.inc
 roundcubemail/plugins/archive/localization/fr_FR.inc
 roundcubemail/plugins/archive/localization/ja_JP.inc
+roundcubemail/plugins/archive/localization/nl_NL.inc
 roundcubemail/plugins/archive/localization/pl_PL.inc
 roundcubemail/plugins/archive/localization/ru_RU.inc
 roundcubemail/plugins/archive/localization/sv_SE.inc
@@ -108,6 +110,7 @@ roundcubemail/plugins/help/content/license.html
 roundcubemail/plugins/help/help.php
 roundcubemail/plugins/help/localization/
 roundcubemail/plugins/help/localization/cs_CZ.inc
+roundcubemail/plugins/help/localization/de_DE.inc
 roundcubemail/plugins/help/localization/en_GB.inc
 roundcubemail/plugins/help/localization/en_US.inc
 roundcubemail/plugins/help/localization/es_ES.inc
@@ -149,10 +152,12 @@ roundcubemail/plugins/managesieve/localization/fi_FI.inc
 roundcubemail/plugins/managesieve/localization/fr_FR.inc
 roundcubemail/plugins/managesieve/localization/hu_HU.inc
 roundcubemail/plugins/managesieve/localization/it_IT.inc
+roundcubemail/plugins/managesieve/localization/ja_JP.inc
 roundcubemail/plugins/managesieve/localization/nb_NO.inc
 roundcubemail/plugins/managesieve/localization/nl_NL.inc
 roundcubemail/plugins/managesieve/localization/pl_PL.inc
 roundcubemail/plugins/managesieve/localization/pt_BR.inc
+roundcubemail/plugins/managesieve/localization/pt_PT.inc
 roundcubemail/plugins/managesieve/localization/ru_RU.inc
 roundcubemail/plugins/managesieve/localization/sk_SK.inc
 roundcubemail/plugins/managesieve/localization/sl_SI.inc
@@ -173,10 +178,12 @@ roundcubemail/plugins/managesieve/skins/default/templates/setedit.html
 roundcubemail/plugins/markasjunk/
 roundcubemail/plugins/markasjunk/localization/
 roundcubemail/plugins/markasjunk/localization/cs_CZ.inc
+roundcubemail/plugins/markasjunk/localization/de_DE.inc
 roundcubemail/plugins/markasjunk/localization/en_US.inc
 roundcubemail/plugins/markasjunk/localization/es_AR.inc
 roundcubemail/plugins/markasjunk/localization/es_ES.inc
 roundcubemail/plugins/markasjunk/localization/et_EE.inc
+roundcubemail/plugins/markasjunk/localization/ja_JP.inc
 roundcubemail/plugins/markasjunk/localization/pl_PL.inc
 roundcubemail/plugins/markasjunk/localization/ru_RU.inc
 roundcubemail/plugins/markasjunk/localization/sv_SE.inc
@@ -197,8 +204,11 @@ roundcubemail/plugins/new_user_dialog/localization/en_US.inc
 roundcubemail/plugins/new_user_dialog/localization/es_ES.inc
 roundcubemail/plugins/new_user_dialog/localization/et_EE.inc
 roundcubemail/plugins/new_user_dialog/localization/it_IT.inc
+roundcubemail/plugins/new_user_dialog/localization/ja_JP.inc
+roundcubemail/plugins/new_user_dialog/localization/nl_NL.inc
 roundcubemail/plugins/new_user_dialog/localization/pl_PL.inc
 roundcubemail/plugins/new_user_dialog/localization/ru_RU.inc
+roundcubemail/plugins/new_user_dialog/localization/sl_SI.inc
 roundcubemail/plugins/new_user_dialog/localization/sv_SE.inc
 roundcubemail/plugins/new_user_dialog/localization/zh_TW.inc
 roundcubemail/plugins/new_user_dialog/new_user_dialog.php
@@ -213,6 +223,7 @@ roundcubemail/plugins/password/config.inc.php.dist
 roundcubemail/plugins/password/drivers/
 roundcubemail/plugins/password/drivers/chgsaslpasswd.c
 roundcubemail/plugins/password/drivers/chgvirtualminpasswd.c
+roundcubemail/plugins/password/drivers/chpass-wrapper.py
 roundcubemail/plugins/password/drivers/chpasswd.php
 roundcubemail/plugins/password/drivers/cpanel.php
 roundcubemail/plugins/password/drivers/directadmin.php
@@ -226,6 +237,7 @@ roundcubemail/plugins/password/drivers/sql.php
 roundcubemail/plugins/password/drivers/virtualmin.php
 roundcubemail/plugins/password/drivers/vpopmaild.php
 roundcubemail/plugins/password/drivers/ximss.php
+roundcubemail/plugins/password/drivers/xmail.php
 roundcubemail/plugins/password/localization/
 roundcubemail/plugins/password/localization/bg_BG.inc
 roundcubemail/plugins/password/localization/ca_ES.inc
@@ -270,6 +282,7 @@ roundcubemail/plugins/subscriptions_option/localization/de_DE.inc
 roundcubemail/plugins/subscriptions_option/localization/en_US.inc
 roundcubemail/plugins/subscriptions_option/localization/es_ES.inc
 roundcubemail/plugins/subscriptions_option/localization/et_EE.inc
+roundcubemail/plugins/subscriptions_option/localization/ja_JP.inc
 roundcubemail/plugins/subscriptions_option/localization/pl_PL.inc
 roundcubemail/plugins/subscriptions_option/localization/ru_RU.inc
 roundcubemail/plugins/subscriptions_option/localization/sv_SE.inc
@@ -315,6 +328,7 @@ roundcubemail/program/
 roundcubemail/program/blank.gif
 roundcubemail/program/blocked.gif
 roundcubemail/program/include/
+roundcubemail/program/include/clisetup.php
 roundcubemail/program/include/html.php
 roundcubemail/program/include/iniset.php
 roundcubemail/program/include/main.inc
@@ -730,6 +744,9 @@ roundcubemail/program/js/tiny_mce/plugins/spellchecker/editor_plugin.js
 roundcubemail/program/js/tiny_mce/plugins/spellchecker/editor_plugin_src.js
 roundcubemail/program/js/tiny_mce/plugins/spellchecker/img/
 roundcubemail/program/js/tiny_mce/plugins/spellchecker/img/wline.gif
+roundcubemail/program/js/tiny_mce/plugins/tabfocus/
+roundcubemail/program/js/tiny_mce/plugins/tabfocus/editor_plugin.js
+roundcubemail/program/js/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 roundcubemail/program/js/tiny_mce/plugins/table/
 roundcubemail/program/js/tiny_mce/plugins/table/cell.htm
 roundcubemail/program/js/tiny_mce/plugins/table/css/
@@ -1219,6 +1236,9 @@ roundcubemail/program/localization/ja_JP/messages.inc
 roundcubemail/program/localization/ka_GE/
 roundcubemail/program/localization/ka_GE/labels.inc
 roundcubemail/program/localization/ka_GE/messages.inc
+roundcubemail/program/localization/kh_KH/
+roundcubemail/program/localization/kh_KH/labels.inc
+roundcubemail/program/localization/kh_KH/messages.inc
 roundcubemail/program/localization/ko_KR/
 roundcubemail/program/localization/ko_KR/labels.inc
 roundcubemail/program/localization/ko_KR/messages.inc
@@ -1360,6 +1380,7 @@ roundcubemail/program/steps/utils/error.inc
 roundcubemail/program/steps/utils/html2text.inc
 roundcubemail/program/steps/utils/killcache.inc
 roundcubemail/program/steps/utils/modcss.inc
+roundcubemail/program/steps/utils/save_pref.inc
 roundcubemail/program/steps/utils/spell.inc
 roundcubemail/program/steps/utils/spell_googie.inc
 roundcubemail/program/steps/utils/spell_html_googie.inc
