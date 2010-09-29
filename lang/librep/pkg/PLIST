@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/01/09 19:38:18 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.11 2010/09/29 17:14:14 jasper Exp $
 @bin bin/rep
 @bin bin/rep-remote
 bin/rep-xgettext
@@ -14,6 +13,7 @@ include/rep/rep_subrs.h
 @info info/librep.info
 lib/librep.a
 lib/librep.la
+@lib lib/librep.so.${LIBrep_VERSION}
 lib/pkgconfig/librep.pc
 lib/rep/
 lib/rep/${VERSION}/
@@ -22,48 +22,66 @@ lib/rep/${VERSION}/${GNU_ARCH}/doc-strings
 lib/rep/${VERSION}/${GNU_ARCH}/emulate-gnu-tar
 lib/rep/${VERSION}/${GNU_ARCH}/gdbm.a
 lib/rep/${VERSION}/${GNU_ARCH}/gdbm.la
+lib/rep/${VERSION}/${GNU_ARCH}/gdbm.so
 lib/rep/${VERSION}/${GNU_ARCH}/gettext.a
 lib/rep/${VERSION}/${GNU_ARCH}/gettext.la
+lib/rep/${VERSION}/${GNU_ARCH}/gettext.so
 lib/rep/${VERSION}/${GNU_ARCH}/readline.a
 lib/rep/${VERSION}/${GNU_ARCH}/readline.la
+lib/rep/${VERSION}/${GNU_ARCH}/readline.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/data/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/ffi.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/ffi.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/ffi.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/i18n/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/lang/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/util/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.so
 lib/rep/${VERSION}/${GNU_ARCH}/rep/vm/
 lib/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.a
 lib/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.la
+lib/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.so
 lib/rep/${VERSION}/${GNU_ARCH}/sdbm.a
 lib/rep/${VERSION}/${GNU_ARCH}/sdbm.la
+lib/rep/${VERSION}/${GNU_ARCH}/sdbm.so
 lib/rep/${VERSION}/${GNU_ARCH}/tables.a
 lib/rep/${VERSION}/${GNU_ARCH}/tables.la
+lib/rep/${VERSION}/${GNU_ARCH}/tables.so
 lib/rep/${VERSION}/${GNU_ARCH}/timers.a
 lib/rep/${VERSION}/${GNU_ARCH}/timers.la
+lib/rep/${VERSION}/${GNU_ARCH}/timers.so
 lib/rep/${GNU_ARCH}/
 lib/rep/${GNU_ARCH}/install-aliases
 lib/rep/${GNU_ARCH}/libtool
