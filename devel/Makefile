@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.837 2010/09/26 18:36:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.838 2010/09/29 17:18:46 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -588,6 +588,7 @@
      SUBDIR += p5-MooseX-Declare
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
      SUBDIR += p5-MooseX-Getopt
+     SUBDIR += p5-MooseX-Has-Sugar
      SUBDIR += p5-MooseX-LazyRequire
      SUBDIR += p5-MooseX-LogDispatch
      SUBDIR += p5-MooseX-Log-Log4perl
@@ -709,6 +710,7 @@
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
+     SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Cmd
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
