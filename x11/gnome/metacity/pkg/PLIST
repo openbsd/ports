@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/09/16 06:19:05 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.23 2010/09/29 20:25:14 jasper Exp $
 @bin bin/metacity
 @bin bin/metacity-message
 @bin bin/metacity-theme-viewer
@@ -15,6 +14,7 @@ include/metacity-1/metacity-private/theme.h
 include/metacity-1/metacity-private/util.h
 lib/libmetacity-private.a
 lib/libmetacity-private.la
+@lib lib/libmetacity-private.so.${LIBmetacity-private_VERSION}
 lib/pkgconfig/libmetacity-private.pc
 @man man/man1/metacity-message.1
 @man man/man1/metacity-theme-viewer.1
@@ -75,8 +75,6 @@ share/locale/he/LC_MESSAGES/metacity.mo
 share/locale/hi/LC_MESSAGES/metacity.mo
 share/locale/hr/LC_MESSAGES/metacity.mo
 share/locale/hu/LC_MESSAGES/metacity.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/metacity.mo
 share/locale/id/LC_MESSAGES/metacity.mo
 share/locale/ig/
@@ -123,8 +121,6 @@ share/locale/sv/LC_MESSAGES/metacity.mo
 share/locale/ta/LC_MESSAGES/metacity.mo
 share/locale/te/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
@@ -144,7 +140,6 @@ share/metacity/icons/metacity-window-demo.png
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/metacity.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-share/themes/
 share/themes/AgingGorilla/
 share/themes/AgingGorilla/metacity-1/
 share/themes/AgingGorilla/metacity-1/active-button.png
