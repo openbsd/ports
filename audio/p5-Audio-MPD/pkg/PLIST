@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/06/05 21:11:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/29 17:19:30 jasper Exp $
 bin/mpd-dynamic
+bin/mpd-rate
 ${P5SITE}/Audio/MPD.pm
 ${P5SITE}/Audio/MPD/Collection.pm
 ${P5SITE}/Audio/MPD/Playlist.pm
-${P5SITE}/Audio/MPD/Test.pm
+${P5SITE}/Audio/MPD/Types.pm
 @man man/man1/mpd-dynamic.1
+@man man/man1/mpd-rate.1
 @man man/man3p/Audio::MPD.3p
 @man man/man3p/Audio::MPD::Collection.3p
 @man man/man3p/Audio::MPD::Playlist.3p
-@man man/man3p/Audio::MPD::Test.3p
+@man man/man3p/Audio::MPD::Types.3p
 share/examples/p5-Audio-MPD/
 share/examples/p5-Audio-MPD/example.pl
 share/examples/p5-Audio-MPD/mpc.pl
