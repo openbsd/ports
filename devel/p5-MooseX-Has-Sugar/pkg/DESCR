@@ -1,0 +1,4 @@
+Moose has syntax is generally fine, but sometimes one gets bothered with
+the constant typing of string quotes for things. The MooseX::Types
+module exists and in many ways reduces the need for constant string
+creation.

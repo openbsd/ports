@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/29 17:15:44 jasper Exp $
+${P5SITE}/MooseX/Has/
+${P5SITE}/MooseX/Has/Sugar/
+${P5SITE}/MooseX/Has/Sugar.pm
+${P5SITE}/MooseX/Has/Sugar/Minimal.pm
+${P5SITE}/MooseX/Has/Sugar/Saccharin.pm
+@man man/man3p/MooseX::Has::Sugar.3p
+@man man/man3p/MooseX::Has::Sugar::Minimal.3p
+@man man/man3p/MooseX::Has::Sugar::Saccharin.3p
