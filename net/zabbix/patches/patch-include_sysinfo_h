@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_sysinfo_h,v 1.1 2010/09/29 07:10:45 robert Exp $
+--- include/sysinfo.h.orig	Wed Sep 29 09:09:12 2010
++++ include/sysinfo.h	Wed Sep 29 09:09:32 2010
+@@ -255,4 +255,7 @@ int	NET_IF_LIST(const char *cmd, const char *param, un
+ int	SYSTEM_STAT(const char *cmd, const char *param, unsigned flags, AGENT_RESULT *result);
+ #endif	/* _AIX */
+ 
++#if defined(__OpenBSD__)
++int	GET_SENSOR(const char *cmd, const char *param, unsigned flags, AGENT_RESULT *result);
++#endif /* __OpenBSD__ */
+ #endif
