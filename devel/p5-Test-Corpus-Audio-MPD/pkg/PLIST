@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/29 17:17:26 jasper Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Corpus/
+${P5SITE}/Test/Corpus/Audio/
+${P5SITE}/Test/Corpus/Audio/MPD.pm
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/mpd.conf.template
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist-album.ogg
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist.ogg
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/album.ogg
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/title.ogg
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/playlists/
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/playlists/test.m3u
+@man man/man3p/Test::Corpus::Audio::MPD.3p

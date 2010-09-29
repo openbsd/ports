@@ -1,0 +1,3 @@
+This module will try to launch a new mpd server for testing purposes.
+This mpd server will then be used during POE::Component::Client::MPD or
+Audio::MPD tests.
