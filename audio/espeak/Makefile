@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/29 20:35:39 jasper Exp $
 
 COMMENT=		compact speech synthesizer
 
@@ -39,10 +39,8 @@ MAKE_FLAGS +=		EXTRA_FLAGS="-fPIC"
 
 SUBST_VARS=		PREFIX LIBespeak_VERSION
 
-post-extract:
-	@cp ${LOCALBASE}/include/portaudio.h ${WRKSRC}/portaudio.h
-
 pre-configure:
+	@cp ${LOCALBASE}/include/portaudio.h ${WRKSRC}/portaudio.h
 	${SUBST_CMD} ${WRKSRC}/speech.h ${WRKSRC}/Makefile
 
 do-install:
