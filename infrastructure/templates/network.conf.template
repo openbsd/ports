@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.149 2010/09/29 12:30:08 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.150 2010/09/29 15:29:21 jeremy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -275,9 +275,6 @@ MASTER_SITE_MYSQL+= \
 
 MASTER_SITE_PYPI +=	\
 	http://pypi.python.org/packages/source/
-
-MASTER_SITE_GITHUB+= \
-	http://gems.github.com/gems/
 
 MASTER_SITE_RUBYGEMS+= \
 	http://rubygems.org/downloads/
