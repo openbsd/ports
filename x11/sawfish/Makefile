@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.46 2010/09/27 14:44:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/09/29 17:07:31 jasper Exp $
 
 COMMENT=	extensible window manager
 
+SHARED_ONLY=	Yes
+
 VERSION=	1.6.3
 DISTNAME=	sawfish-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/sawfish/

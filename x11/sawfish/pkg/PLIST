@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/20 16:58:11 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.13 2010/09/29 17:07:31 jasper Exp $
 @bin bin/sawfish
 bin/sawfish-client
 bin/sawfish-config
@@ -16,12 +15,14 @@ lib/pkgconfig/sawfish.pc
 lib/rep/${GNU_ARCH}/sawfish/
 lib/rep/${GNU_ARCH}/sawfish/client.a
 lib/rep/${GNU_ARCH}/sawfish/client.la
+lib/rep/${GNU_ARCH}/sawfish/client.so
 lib/sawfish/
 lib/sawfish/${VERSION}/
 lib/sawfish/${VERSION}/${GNU_ARCH}/
 lib/sawfish/${VERSION}/${GNU_ARCH}/DOC
 lib/sawfish/${VERSION}/${GNU_ARCH}/gradient.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/gradient.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/gradient.so
 @bin lib/sawfish/${VERSION}/${GNU_ARCH}/gtk-style
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish-about
@@ -30,16 +31,22 @@ lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.so
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.so
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/selection.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/selection.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/selection.so
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/x.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/x.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/x.so
 lib/sawfish/${VERSION}/${GNU_ARCH}/selection.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/selection.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/selection.so
 lib/sawfish/${VERSION}/${GNU_ARCH}/x.a
 lib/sawfish/${VERSION}/${GNU_ARCH}/x.la
+lib/sawfish/${VERSION}/${GNU_ARCH}/x.so
 @man man/man1/sawfish-client.1
 @man man/man1/sawfish-config.1
 @man man/man1/sawfish.1

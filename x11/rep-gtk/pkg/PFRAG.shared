@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2009/12/22 11:06:20 ajacoutot Exp $
-lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.so
-lib/rep/${GNU_ARCH}/gui/gtk-2/types.so

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/01/09 19:38:54 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2010/09/29 17:08:08 jasper Exp $
 include/rep-gtk/
 include/rep-gtk/rep-gtk.h
-lib/pkgconfig/
 lib/pkgconfig/rep-gtk.pc
 lib/rep/${GNU_ARCH}/gui/
 lib/rep/${GNU_ARCH}/gui/gtk-2/
 lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.a
 lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.la
+lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.so
 lib/rep/${GNU_ARCH}/gui/gtk-2/types.a
 lib/rep/${GNU_ARCH}/gui/gtk-2/types.la
+lib/rep/${GNU_ARCH}/gui/gtk-2/types.so
