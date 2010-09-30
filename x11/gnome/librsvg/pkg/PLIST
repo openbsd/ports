@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/09/27 05:54:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/09/30 07:23:47 ajacoutot Exp $
 bin/rsvg
 @bin bin/rsvg-convert
 @bin bin/rsvg-view
@@ -8,12 +8,12 @@ include/librsvg-2.0/librsvg/librsvg-enum-types.h
 include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h
+@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.a
+@comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.la
+lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
 @comment lib/gtk-2.0/2.10.0/engines/libsvg.a
 @comment lib/gtk-2.0/2.10.0/engines/libsvg.la
 lib/gtk-2.0/2.10.0/engines/libsvg.so
-@comment lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.a
-@comment lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.la
-lib/gtk-2.0/2.10.0/loaders/libpixbufloader-svg.so
 @comment lib/gtk-3.0/
 @comment lib/gtk-3.0/engines/
 lib/librsvg-2.a
@@ -58,6 +58,6 @@ share/themes/bubble/gtk-2.0/gtkrc
 share/themes/bubble/gtk-2.0/orange.svg
 share/themes/bubble/gtk-2.0/purple.svg
 share/themes/bubble/gtk-2.0/red.svg
-@exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
-@unexec-delete %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
 @comment share/themes/bubble/gtk-3.0/
+@exec %D/bin/gdk-pixbuf-query-loaders --update-cache
+@unexec-delete %D/bin/gdk-pixbuf-query-loaders --update-cache

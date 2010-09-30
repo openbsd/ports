@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/30 07:23:47 ajacoutot Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
@@ -29,8 +29,7 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		::x11/gtk+2
 
-MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DG_DISABLE_DEPRECATED \
-			-DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DG_DISABLE_DEPRECATED"
 
 NO_REGRESS=		Yes
 

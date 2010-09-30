@@ -1,7 +1,13 @@
-$OpenBSD: patch-configure,v 1.6 2010/06/19 10:34:41 landry Exp $
+$OpenBSD: patch-configure,v 1.7 2010/09/30 07:26:05 ajacoutot Exp $
+
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
+kz-tabtree.c:88: error: expected declaration specifiers or '...' before 'GtkNotebookPage'
+kz-tabtree.c:699: error: expected declaration specifiers or '...' before 'GtkNotebookPage'
+
 XXX we know our xl has webprogresslistener2 but nspr headers not in -I during configure
+
 --- configure.orig	Tue Sep 29 05:44:00 2009
-+++ configure	Fri Jun 18 22:02:55 2010
++++ configure	Wed Sep 29 20:09:55 2010
 @@ -16296,13 +16296,13 @@ fi
  
    if test x"$enable_gtkmozembed" = "xyes"; then
@@ -33,11 +39,10 @@ XXX we know our xl has webprogresslistener2 but nspr headers not in -I during co
  rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $result" >&5
-@@ -20795,77 +20790,6 @@ fi
- 
+@@ -20796,77 +20791,6 @@ fi
  
  anthy_exists=no
--
+ 
 -pkg_failed=no
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANTHY" >&5
 -$as_echo_n "checking for ANTHY... " >&6; }
@@ -108,6 +113,16 @@ XXX we know our xl has webprogresslistener2 but nspr headers not in -I during co
 -$as_echo "yes" >&6; }
 -	anthy_exists=yes
 -fi
- 
+-
  # Extract the first word of "mecab-config", so it can be a program name with args.
  set dummy mecab-config; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+@@ -21422,7 +21346,7 @@ fi
+ GENHTML_OPTIONS="--title 'Kazehakase Code Coverage'"
+ 
+ KAZEHAKASE_CFLAGS="$GTK_CFLAGS $LIBGNUTLS_CFLAGS $GIO_CFLAGS $DBUS_GLIB_CFLAGS"
+-KAZEHAKASE_CFLAGS="$KAZEHAKASE_CFLAGS -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
++KAZEHAKASE_CFLAGS="$KAZEHAKASE_CFLAGS -DGDK_DISABLE_DEPRECATED"
+ KAZEHAKASE_CFLAGS="$KAZEHAKASE_CFLAGS -DG_DISABLE_DEPRECATED"
+ KAZEHAKASE_CFLAGS="$KAZEHAKASE_CFLAGS -DSYSDATADIR=\\\"\"\$(datadir)\"\\\""
+ KAZEHAKASE_CFLAGS="$KAZEHAKASE_CFLAGS -DLOCALEDIR=\\\"\"\$(localedir)\"\\\""

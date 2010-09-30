@@ -1,10 +1,21 @@
-$OpenBSD: patch-src_odmultibutton_c,v 1.1 2010/04/27 20:20:45 jasper Exp $
+$OpenBSD: patch-src_odmultibutton_c,v 1.2 2010/09/30 07:23:47 ajacoutot Exp $
 
-Fix build with gtk+ 2.20.
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
+odmultibutton.c:324: error: implicit declaration of function 'GTK_OBJECT_FLAGS'
 
---- src/odmultibutton.c.orig	Tue Apr 27 22:09:35 2010
-+++ src/odmultibutton.c	Tue Apr 27 22:19:49 2010
-@@ -73,8 +73,8 @@ static void od_multibutton_set_page(GtkWidget *widget,
+--- src/odmultibutton.c.orig	Tue Jun 23 22:57:22 2009
++++ src/odmultibutton.c	Thu Sep 30 07:33:44 2010
+@@ -5,9 +5,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-/* ODMultiButton is 2.x pure, like freshly fallen snow. */
+-#define GTK_DISABLE_DEPRECATED
+-
+ #include <gtk/gtk.h>
+ 
+ #include "odmultibutton.h"
+@@ -73,8 +70,8 @@ static void od_multibutton_set_page(GtkWidget *widget,
  		}
  		if(p != NULL)
  		{
@@ -15,7 +26,7 @@ Fix build with gtk+ 2.20.
  			gtk_widget_show(p);
  			if(gtk_widget_get_parent(p) != NULL)
  				gtk_widget_reparent(p, widget);
-@@ -86,7 +86,7 @@ static void od_multibutton_set_page(GtkWidget *widget,
+@@ -86,7 +83,7 @@ static void od_multibutton_set_page(GtkWidget *widget,
  		}
  		mb->last_index = index;
  	}
@@ -24,7 +35,7 @@ Fix build with gtk+ 2.20.
  		gtk_widget_queue_draw(widget);
  }
  
-@@ -144,9 +144,9 @@ static void od_multibutton_paint_dog_ear(GtkWidget *wi
+@@ -144,9 +141,9 @@ static void od_multibutton_paint_dog_ear(GtkWidget *wi
  {
  	GtkStateType	state;
  
@@ -36,7 +47,7 @@ Fix build with gtk+ 2.20.
  	{
  		GtkStyle	*style = gtk_widget_get_style(widget);
  		const guint	EARSIZE = 5;
-@@ -209,7 +209,7 @@ static void od_multibutton_paint_foreground(GtkWidget 
+@@ -209,7 +206,7 @@ static void od_multibutton_paint_foreground(GtkWidget 
  	g_return_if_fail(area != NULL);
  	g_return_if_fail(OD_IS_MULTIBUTTON(widget));
  
@@ -45,7 +56,7 @@ Fix build with gtk+ 2.20.
  	{
  		ODMultiButton	*mb = OD_MULTIBUTTON(widget);
  
-@@ -449,7 +449,7 @@ void od_multibutton_set_text(ODMultiButton *mb, guint 
+@@ -449,7 +446,7 @@ void od_multibutton_set_text(ODMultiButton *mb, guint 
  			od_multibutton_reset_label(mb, index, GTK_LABEL(w), text, bg, fg);
  			if(GTK_WIDGET(mb)->parent)
  				gtk_widget_queue_resize(GTK_WIDGET(mb));

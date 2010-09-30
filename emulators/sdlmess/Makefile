@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/05/09 17:45:12 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/30 07:26:05 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			0.132
 DISTNAME =		sdlmess${V:S/.//}
-PKGNAME =		sdlmess-${V}p2
+PKGNAME =		sdlmess-${V}p3
 
 CATEGORIES =		emulators games
 
@@ -26,7 +26,7 @@ WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB +=	gobject-2.0 gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
-WANTLIB +=	xcb-render xcb-render-util
+WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0
 
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip
@@ -36,7 +36,7 @@ MODGCC4_ARCHES =	*
 MODGCC4_LANGS =		c
 
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
-			gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+			gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 RUN_DEPENDS =		:sdlmame-tools-${V}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
