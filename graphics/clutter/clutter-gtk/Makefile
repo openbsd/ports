@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/27 15:11:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/30 07:25:57 jasper Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
 DISTNAME=		clutter-gtk-${API_VERSION}.2
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  clutter-gtk-0.10      0.0      # .0.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${MAJOR}/}
@@ -18,7 +18,8 @@ WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xcb-render xcb-render-util
 WANTLIB += clutter-glx-1.0
 
-LIB_DEPENDS=		:clutter->=1.0.6:graphics/clutter/core
+LIB_DEPENDS=		:clutter->=1.0.6:graphics/clutter/core \
+			::x11/gtk+2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection=no
