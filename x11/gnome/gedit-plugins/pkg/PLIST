@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/22 21:52:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:50:14 jasper Exp $
 lib/gedit-2/plugins/bookmarks.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.py
@@ -52,6 +52,9 @@ lib/gedit-2/plugins/commander/history.pyo
 lib/gedit-2/plugins/commander/info.py
 lib/gedit-2/plugins/commander/info.pyc
 lib/gedit-2/plugins/commander/info.pyo
+lib/gedit-2/plugins/commander/modules.py
+lib/gedit-2/plugins/commander/modules.pyc
+lib/gedit-2/plugins/commander/modules.pyo
 lib/gedit-2/plugins/commander/transparentwindow.py
 lib/gedit-2/plugins/commander/transparentwindow.pyc
 lib/gedit-2/plugins/commander/transparentwindow.pyo
@@ -117,10 +120,38 @@ lib/gedit-2/plugins/smartspaces.gedit-plugin
 lib/gedit-2/plugins/smartspaces.py
 lib/gedit-2/plugins/smartspaces.pyc
 lib/gedit-2/plugins/smartspaces.pyo
+lib/gedit-2/plugins/synctex/
+lib/gedit-2/plugins/synctex.gedit-plugin
+lib/gedit-2/plugins/synctex/__init__.py
+lib/gedit-2/plugins/synctex/__init__.pyc
+lib/gedit-2/plugins/synctex/__init__.pyo
+lib/gedit-2/plugins/synctex/evince_dbus.py
+lib/gedit-2/plugins/synctex/evince_dbus.pyc
+lib/gedit-2/plugins/synctex/evince_dbus.pyo
+lib/gedit-2/plugins/synctex/synctex.py
+lib/gedit-2/plugins/synctex/synctex.pyc
+lib/gedit-2/plugins/synctex/synctex.pyo
 lib/gedit-2/plugins/terminal.gedit-plugin
 lib/gedit-2/plugins/terminal.py
 lib/gedit-2/plugins/terminal.pyc
 lib/gedit-2/plugins/terminal.pyo
+lib/gedit-2/plugins/textsize/
+lib/gedit-2/plugins/textsize.gedit-plugin
+lib/gedit-2/plugins/textsize/__init__.py
+lib/gedit-2/plugins/textsize/__init__.pyc
+lib/gedit-2/plugins/textsize/__init__.pyo
+lib/gedit-2/plugins/textsize/constants.py
+lib/gedit-2/plugins/textsize/constants.pyc
+lib/gedit-2/plugins/textsize/constants.pyo
+lib/gedit-2/plugins/textsize/documenthelper.py
+lib/gedit-2/plugins/textsize/documenthelper.pyc
+lib/gedit-2/plugins/textsize/documenthelper.pyo
+lib/gedit-2/plugins/textsize/signals.py
+lib/gedit-2/plugins/textsize/signals.pyc
+lib/gedit-2/plugins/textsize/signals.pyo
+lib/gedit-2/plugins/textsize/windowhelper.py
+lib/gedit-2/plugins/textsize/windowhelper.pyc
+lib/gedit-2/plugins/textsize/windowhelper.pyo
 lib/gedit-2/plugins/wordcompletion.gedit-plugin
 share/gedit-2/plugins/bookmarks/
 share/gedit-2/plugins/bookmarks/bookmark.png
@@ -157,6 +188,9 @@ share/gedit-2/plugins/commander/modules/format.pyo
 share/gedit-2/plugins/commander/modules/goto.py
 share/gedit-2/plugins/commander/modules/goto.pyc
 share/gedit-2/plugins/commander/modules/goto.pyo
+share/gedit-2/plugins/commander/modules/grep.py
+share/gedit-2/plugins/commander/modules/grep.pyc
+share/gedit-2/plugins/commander/modules/grep.pyo
 share/gedit-2/plugins/commander/modules/help.py
 share/gedit-2/plugins/commander/modules/help.pyc
 share/gedit-2/plugins/commander/modules/help.pyo
@@ -203,6 +237,7 @@ share/locale/he/LC_MESSAGES/gedit-plugins.mo
 share/locale/hi/LC_MESSAGES/gedit-plugins.mo
 share/locale/hr/LC_MESSAGES/gedit-plugins.mo
 share/locale/hu/LC_MESSAGES/gedit-plugins.mo
+share/locale/id/LC_MESSAGES/gedit-plugins.mo
 share/locale/it/LC_MESSAGES/gedit-plugins.mo
 share/locale/ja/LC_MESSAGES/gedit-plugins.mo
 share/locale/kn/LC_MESSAGES/gedit-plugins.mo
