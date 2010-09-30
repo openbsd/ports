@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/22 08:42:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:42:39 jasper Exp $
 share/gnome-background-properties/
 share/gnome-background-properties/gnome-abstract.xml
 share/gnome-background-properties/gnome-nature.xml
@@ -6,6 +6,9 @@ share/locale/
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
@@ -63,6 +66,9 @@ share/locale/en_CA/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
+share/locale/eo/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gnome-backgrounds.mo
@@ -84,6 +90,9 @@ share/locale/fr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fur/
 share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ga/
 share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gnome-backgrounds.mo
@@ -156,6 +165,9 @@ share/locale/mn/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nb/
 share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
