@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/28 20:40:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/09/30 13:27:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.6.4
+GNOME_VERSION=		0.6.5
 
 SHARED_LIBS +=  gdata                2.0      # .9.0
 
@@ -25,11 +25,13 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ORBit-2 dbus-1 dbus-glib-1 gconf-2 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 m pcre proxy soup-2.4 sqlite3 tasn1 xml2 z
+WANTLIB += eggdbus-1
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		soup-gnome-2.4.>=1::devel/libsoup,-gnome \
+			::devel/eggdbus
 
 FAKE_FLAGS+=		DATADIRNAME="share"
 
@@ -40,7 +42,7 @@ LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-gnome \
-			--enable-introspection=no
+			--disable-introspection \
+			--enable-gnome
 
 .include <bsd.port.mk>

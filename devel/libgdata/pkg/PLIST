@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/30 08:02:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/30 13:27:13 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/atom/
@@ -129,6 +129,8 @@ share/gtk-doc/html/gdata/GDataYouTubeQuery.html
 share/gtk-doc/html/gdata/GDataYouTubeService.html
 share/gtk-doc/html/gdata/GDataYouTubeState.html
 share/gtk-doc/html/gdata/GDataYouTubeVideo.html
+share/gtk-doc/html/gdata/annotation-glossary.html
+share/gtk-doc/html/gdata/api-index-deprecated.html
 share/gtk-doc/html/gdata/api-index-full.html
 share/gtk-doc/html/gdata/ch01.html
 share/gtk-doc/html/gdata/ch02.html
@@ -150,7 +152,6 @@ share/gtk-doc/html/gdata/gdata.devhelp2
 share/gtk-doc/html/gdata/home.png
 share/gtk-doc/html/gdata/index.html
 share/gtk-doc/html/gdata/index.sgml
-share/gtk-doc/html/gdata/ix02.html
 share/gtk-doc/html/gdata/ix03.html
 share/gtk-doc/html/gdata/ix04.html
 share/gtk-doc/html/gdata/ix05.html
@@ -158,6 +159,7 @@ share/gtk-doc/html/gdata/ix06.html
 share/gtk-doc/html/gdata/ix07.html
 share/gtk-doc/html/gdata/ix08.html
 share/gtk-doc/html/gdata/ix09.html
+share/gtk-doc/html/gdata/ix10.html
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
