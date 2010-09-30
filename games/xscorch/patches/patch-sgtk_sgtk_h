@@ -1,0 +1,17 @@
+$OpenBSD: patch-sgtk_sgtk_h,v 1.1 2010/09/30 07:27:36 ajacoutot Exp $
+
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
+sactiveconsole.c:1285: error: lvalue required as left operand of assignment
+
+--- sgtk/sgtk.h.orig	Thu Sep 30 08:31:15 2010
++++ sgtk/sgtk.h	Thu Sep 30 08:31:06 2010
+@@ -47,9 +47,6 @@
+ 
+ 
+ /* Disable deprecated GTK 2.0 interfaces, if applicable */
+-#if !defined(__ALLOW_DEPRECATED_GTK__)
+-   #define  GTK_DISABLE_DEPRECATED
+-#endif
+ #if !defined(__ALLOW_DEPRECATED_GDK__)
+    #define  GDK_DISABLE_DEPRECATED
+ #endif
