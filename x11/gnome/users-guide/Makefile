@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/04/26 15:30:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/30 07:39:15 ajacoutot Exp $
 
 # This port does not run_depends on yelp on purpose, as it would
 # create a cyclic dependency.
@@ -8,7 +8,7 @@ PKG_ARCH=		*
 COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		2.30.1
+GNOME_VERSION=		2.32.0
 
 # GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
