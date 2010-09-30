@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2010/09/28 11:56:57 landry Exp $
+# $OpenBSD: Makefile,v 1.80 2010/09/30 07:33:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		2.30.1
-
-REVISION=		1
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -33,6 +31,7 @@ WANTLIB += xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
 WANTLIB += xkbfile xml2 z canberra canberra-gtk camel-1.2 ebook-1.2
 WANTLIB += edataserver-1.2 gnomekbd gnomekbdui metacity-private
 WANTLIB += unique-1.0 gnome-desktop-2 gnome-menu gtop-2.0
+WANTLIB += eggdbus-1 gdata gnome-keyring nssutil3 proxy soup-gnome-2.4
 
 MODULES=		devel/gettext \
 			x11/gnome \

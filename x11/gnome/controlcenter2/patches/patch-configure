@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.12 2010/04/22 22:32:19 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.13 2010/09/30 07:33:38 ajacoutot Exp $
 
 XCURSOR_ICONDIR is set in CONFIGURE_ENV.
 We do not use the default ${X11BASE}/share/icons because ports (e.g.
 xcursor-themes) install cursor themes under ${LOCALBASE}/lib/X11/icons
 
---- configure.orig	Mon Mar 29 16:36:39 2010
-+++ configure	Fri Apr 23 00:13:01 2010
-@@ -14276,7 +14276,7 @@ if test "x$ac_cv_header_X11_extensions_xf86misc_h" = x
+--- configure.orig	Mon Sep 27 15:30:08 2010
++++ configure	Wed Sep 29 13:43:56 2010
+@@ -14446,7 +14446,7 @@ if test "x$ac_cv_header_X11_extensions_xf86misc_h" = x
    cat >>confdefs.h <<_ACEOF
  #define HAVE_X11_EXTENSIONS_XF86MISC_H 1
  _ACEOF
@@ -15,7 +15,7 @@ xcursor-themes) install cursor themes under ${LOCALBASE}/lib/X11/icons
  fi
  
  done
-@@ -15924,23 +15924,6 @@ fi
+@@ -16164,23 +16164,6 @@ fi
  
  
  
