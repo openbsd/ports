@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/04/21 23:57:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2010/09/30 07:39:36 ajacoutot Exp $
 @bin bin/baobab
 @bin bin/gnome-dictionary
 bin/gnome-panel-screenshot
@@ -648,6 +648,7 @@ share/locale/el/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/eo/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-utils-2.0.mo
@@ -703,6 +704,7 @@ share/locale/ta/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
