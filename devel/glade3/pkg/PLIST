@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/09/30 15:18:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/09/30 15:25:38 jasper Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -11,8 +11,8 @@ include/libgladeui-1.0/gladeui/glade-base-editor.h
 include/libgladeui-1.0/gladeui/glade-builtins.h
 include/libgladeui-1.0/gladeui/glade-button-editor.h
 include/libgladeui-1.0/gladeui/glade-catalog.h
+include/libgladeui-1.0/gladeui/glade-cell-renderer-button.h
 include/libgladeui-1.0/gladeui/glade-cell-renderer-editor.h
-include/libgladeui-1.0/gladeui/glade-cell-renderer-icon.h
 include/libgladeui-1.0/gladeui/glade-clipboard-view.h
 include/libgladeui-1.0/gladeui/glade-clipboard.h
 include/libgladeui-1.0/gladeui/glade-column-types.h
@@ -38,6 +38,7 @@ include/libgladeui-1.0/gladeui/glade-inspector.h
 include/libgladeui-1.0/gladeui/glade-label-editor.h
 include/libgladeui-1.0/gladeui/glade-model-data.h
 include/libgladeui-1.0/gladeui/glade-name-context.h
+include/libgladeui-1.0/gladeui/glade-palette-item.h
 include/libgladeui-1.0/gladeui/glade-palette.h
 include/libgladeui-1.0/gladeui/glade-parameter.h
 include/libgladeui-1.0/gladeui/glade-placeholder.h
@@ -366,11 +367,6 @@ share/gnome/help/glade/bg/figures/
 share/gnome/help/glade/bg/figures/main-window.png
 share/gnome/help/glade/bg/glade.xml
 share/gnome/help/glade/bg/legal.xml
-share/gnome/help/glade/cs/
-share/gnome/help/glade/cs/figures/
-share/gnome/help/glade/cs/figures/main-window.png
-share/gnome/help/glade/cs/glade.xml
-share/gnome/help/glade/cs/legal.xml
 share/gnome/help/glade/de/
 share/gnome/help/glade/de/figures/
 share/gnome/help/glade/de/figures/main-window.png
@@ -431,43 +427,33 @@ share/gnome/help/glade/sv/figures/
 share/gnome/help/glade/sv/figures/main-window.png
 share/gnome/help/glade/sv/glade.xml
 share/gnome/help/glade/sv/legal.xml
-share/gnome/help/glade/uk/
-share/gnome/help/glade/uk/figures/
-share/gnome/help/glade/uk/figures/main-window.png
-share/gnome/help/glade/uk/glade.xml
-share/gnome/help/glade/uk/legal.xml
-share/gnome/help/glade/zh_CN/
-share/gnome/help/glade/zh_CN/figures/
-share/gnome/help/glade/zh_CN/figures/main-window.png
-share/gnome/help/glade/zh_CN/glade.xml
-share/gnome/help/glade/zh_CN/legal.xml
 share/gtk-doc/html/gladeui/
 share/gtk-doc/html/gladeui/GladeApp.html
 share/gtk-doc/html/gladeui/GladeBaseEditor.html
 share/gtk-doc/html/gladeui/GladeClipboard.html
 share/gtk-doc/html/gladeui/GladeClipboardView.html
+share/gtk-doc/html/gladeui/GladeCommand.html
 share/gtk-doc/html/gladeui/GladeDesignView.html
+share/gtk-doc/html/gladeui/GladeEditor.html
 share/gtk-doc/html/gladeui/GladeEditorProperty.html
 share/gtk-doc/html/gladeui/GladeFixed.html
 share/gtk-doc/html/gladeui/GladeInspector.html
 share/gtk-doc/html/gladeui/GladePalette.html
 share/gtk-doc/html/gladeui/GladePlaceholder.html
 share/gtk-doc/html/gladeui/GladeProject.html
-share/gtk-doc/html/gladeui/GladeProperty.html
 share/gtk-doc/html/gladeui/GladeWidget.html
 share/gtk-doc/html/gladeui/GladeWidgetAction.html
 share/gtk-doc/html/gladeui/catalog.html
 share/gtk-doc/html/gladeui/catalogintro.html
 share/gtk-doc/html/gladeui/core.html
 share/gtk-doc/html/gladeui/dockables.html
-share/gtk-doc/html/gladeui/gladeui-Glade-Parameter.html
-share/gtk-doc/html/gladeui/gladeui-Glade-Utils.html
 share/gtk-doc/html/gladeui/gladeui-GladePropertyClass.html
-share/gtk-doc/html/gladeui/gladeui-GladeSignalEditor.html
-share/gtk-doc/html/gladeui/gladeui-Xml-Utils.html
-share/gtk-doc/html/gladeui/gladeui-glade-command.html
-share/gtk-doc/html/gladeui/gladeui-glade-editor.html
-share/gtk-doc/html/gladeui/gladeui-glade-widget-adaptor.html
+share/gtk-doc/html/gladeui/gladeui-GladeWidgetAdaptor.html
+share/gtk-doc/html/gladeui/gladeui-glade-parameter.html
+share/gtk-doc/html/gladeui/gladeui-glade-property.html
+share/gtk-doc/html/gladeui/gladeui-glade-signal-editor.html
+share/gtk-doc/html/gladeui/gladeui-glade-utils.html
+share/gtk-doc/html/gladeui/gladeui-glade-xml-utils.html
 share/gtk-doc/html/gladeui/gladeui.devhelp
 share/gtk-doc/html/gladeui/gladeui.devhelp2
 share/gtk-doc/html/gladeui/home.png
@@ -506,12 +492,10 @@ share/locale/bg/LC_MESSAGES/glade3.mo
 share/locale/bn/LC_MESSAGES/glade3.mo
 share/locale/bn_IN/LC_MESSAGES/glade3.mo
 share/locale/ca/LC_MESSAGES/glade3.mo
-share/locale/ca@valencia/LC_MESSAGES/glade3.mo
 share/locale/cs/LC_MESSAGES/glade3.mo
 share/locale/da/LC_MESSAGES/glade3.mo
 share/locale/de/LC_MESSAGES/glade3.mo
 share/locale/el/LC_MESSAGES/glade3.mo
-share/locale/en@shaw/LC_MESSAGES/glade3.mo
 share/locale/en_CA/LC_MESSAGES/glade3.mo
 share/locale/en_GB/LC_MESSAGES/glade3.mo
 share/locale/es/LC_MESSAGES/glade3.mo
@@ -563,7 +547,6 @@ share/locale/zh_TW/LC_MESSAGES/glade3.mo
 share/omf/glade/
 share/omf/glade/glade-C.omf
 share/omf/glade/glade-bg.omf
-share/omf/glade/glade-cs.omf
 share/omf/glade/glade-de.omf
 share/omf/glade/glade-el.omf
 share/omf/glade/glade-en_GB.omf
@@ -576,8 +559,6 @@ share/omf/glade/glade-oc.omf
 share/omf/glade/glade-pt_BR.omf
 share/omf/glade/glade-ru.omf
 share/omf/glade/glade-sv.omf
-share/omf/glade/glade-uk.omf
-share/omf/glade/glade-zh_CN.omf
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
