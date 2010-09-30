@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_time_time-tool_c,v 1.1 2010/09/10 14:48:55 ajacoutot Exp $
+$OpenBSD: patch-src_time_time-tool_c,v 1.2 2010/09/30 07:38:53 ajacoutot Exp $
 
 XXX Do not display NTP configuration/synchronisation, it requires
 "services" support.
 
---- src/time/time-tool.c.orig	Fri Sep 10 16:35:45 2010
-+++ src/time/time-tool.c	Fri Sep 10 16:35:52 2010
-@@ -562,10 +562,6 @@ gst_time_tool_constructor (GType                  type
+--- src/time/time-tool.c.orig	Mon May 24 19:09:57 2010
++++ src/time/time-tool.c	Tue Sep 28 17:17:46 2010
+@@ -557,10 +557,6 @@ gst_time_tool_constructor (GType                  type
  	init_timezone (time_tool);
  	add_options_combo (time_tool);
  

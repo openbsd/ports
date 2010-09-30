@@ -1,11 +1,11 @@
-$OpenBSD: patch-interfaces_time_ui,v 1.2 2010/09/10 14:48:55 ajacoutot Exp $
+$OpenBSD: patch-interfaces_time_ui,v 1.3 2010/09/30 07:38:53 ajacoutot Exp $
 
 XXX Do not display NTP configuration/synchronisation, it requires
 "services" support.
 
---- interfaces/time.ui.orig	Thu Feb 11 12:05:29 2010
-+++ interfaces/time.ui	Fri Sep 10 16:20:56 2010
-@@ -360,7 +360,7 @@
+--- interfaces/time.ui.orig	Thu Jul  1 12:29:55 2010
++++ interfaces/time.ui	Tue Sep 28 17:17:46 2010
+@@ -364,7 +364,7 @@
          </child>
          <child>
            <object class="GtkLabel" id="label120">
@@ -14,7 +14,7 @@ XXX Do not display NTP configuration/synchronisation, it requires
              <property name="xalign">0</property>
              <property name="label" translatable="yes">_Configuration:</property>
              <property name="use_underline">True</property>
-@@ -374,7 +374,7 @@
+@@ -378,7 +378,7 @@
          </child>
          <child>
            <object class="GtkComboBox" id="configuration_options">
@@ -23,7 +23,7 @@ XXX Do not display NTP configuration/synchronisation, it requires
            </object>
            <packing>
              <property name="left_attach">1</property>
-@@ -585,44 +585,6 @@
+@@ -589,44 +589,6 @@
                </object>
                <packing>
                  <property name="position">4</property>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/22 16:10:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/30 07:38:53 ajacoutot Exp $
 %%SHARED%%
 @comment @bin bin/network-admin
 @bin bin/shares-admin
@@ -18,6 +18,9 @@ share/examples/gnome-system-tools/gnome-system-tools/
 @sample ${SYSCONFDIR}/gnome-system-tools/
 share/examples/gnome-system-tools/gnome-system-tools/user-profiles.conf
 @sample ${SYSCONFDIR}/gnome-system-tools/user-profiles.conf
+share/glib-2.0/
+share/glib-2.0/schemas/
+share/glib-2.0/schemas/org.gnome.system-tools.gschema.xml
 share/gnome-system-tools/
 share/gnome-system-tools/pixmaps/
 share/gnome-system-tools/pixmaps/world_map-960.png
@@ -112,6 +115,10 @@ share/gnome/help/services-admin/fr/
 share/gnome/help/services-admin/fr/figures/
 share/gnome/help/services-admin/fr/figures/services-tool.png
 share/gnome/help/services-admin/fr/services-admin.xml
+share/gnome/help/services-admin/gl/
+share/gnome/help/services-admin/gl/figures/
+share/gnome/help/services-admin/gl/figures/services-tool.png
+share/gnome/help/services-admin/gl/services-admin.xml
 share/gnome/help/services-admin/it/
 share/gnome/help/services-admin/it/figures/
 share/gnome/help/services-admin/it/figures/services-tool.png
@@ -175,6 +182,10 @@ share/gnome/help/shares-admin/fr/
 share/gnome/help/shares-admin/fr/figures/
 share/gnome/help/shares-admin/fr/figures/shares-tool.png
 share/gnome/help/shares-admin/fr/shares-admin.xml
+share/gnome/help/shares-admin/gl/
+share/gnome/help/shares-admin/gl/figures/
+share/gnome/help/shares-admin/gl/figures/shares-tool.png
+share/gnome/help/shares-admin/gl/shares-admin.xml
 share/gnome/help/shares-admin/it/
 share/gnome/help/shares-admin/it/figures/
 share/gnome/help/shares-admin/it/figures/shares-tool.png
@@ -253,6 +264,13 @@ share/gnome/help/time-admin/fr/figures/time-servers.png
 share/gnome/help/time-admin/fr/figures/time-tool-automatic.png
 share/gnome/help/time-admin/fr/figures/time-tool-manual.png
 share/gnome/help/time-admin/fr/time-admin.xml
+share/gnome/help/time-admin/gl/
+share/gnome/help/time-admin/gl/figures/
+share/gnome/help/time-admin/gl/figures/time-map.png
+share/gnome/help/time-admin/gl/figures/time-servers.png
+share/gnome/help/time-admin/gl/figures/time-tool-automatic.png
+share/gnome/help/time-admin/gl/figures/time-tool-manual.png
+share/gnome/help/time-admin/gl/time-admin.xml
 share/gnome/help/time-admin/it/
 share/gnome/help/time-admin/it/figures/
 share/gnome/help/time-admin/it/figures/time-map.png
@@ -344,6 +362,11 @@ share/gnome/help/users-admin/fr/figures/
 share/gnome/help/users-admin/fr/figures/groups.png
 share/gnome/help/users-admin/fr/figures/users-tool.png
 share/gnome/help/users-admin/fr/users-admin.xml
+share/gnome/help/users-admin/gl/
+share/gnome/help/users-admin/gl/figures/
+share/gnome/help/users-admin/gl/figures/groups.png
+share/gnome/help/users-admin/gl/figures/users-tool.png
+share/gnome/help/users-admin/gl/users-admin.xml
 share/gnome/help/users-admin/it/
 share/gnome/help/users-admin/it/figures/
 share/gnome/help/users-admin/it/figures/groups.png
@@ -418,6 +441,7 @@ share/locale/el/LC_MESSAGES/gnome-system-tools.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-system-tools.mo
 share/locale/en_CA/LC_MESSAGES/gnome-system-tools.mo
 share/locale/en_GB/LC_MESSAGES/gnome-system-tools.mo
+share/locale/eo/LC_MESSAGES/gnome-system-tools.mo
 share/locale/es/LC_MESSAGES/gnome-system-tools.mo
 share/locale/et/LC_MESSAGES/gnome-system-tools.mo
 share/locale/eu/LC_MESSAGES/gnome-system-tools.mo
@@ -474,6 +498,7 @@ share/locale/ta/LC_MESSAGES/gnome-system-tools.mo
 share/locale/te/LC_MESSAGES/gnome-system-tools.mo
 share/locale/th/LC_MESSAGES/gnome-system-tools.mo
 share/locale/tr/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ug/LC_MESSAGES/gnome-system-tools.mo
 share/locale/uk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/vi/LC_MESSAGES/gnome-system-tools.mo
 share/locale/wa/LC_MESSAGES/gnome-system-tools.mo
@@ -506,6 +531,7 @@ share/omf/services-admin/services-admin-el.omf
 share/omf/services-admin/services-admin-en_GB.omf
 share/omf/services-admin/services-admin-es.omf
 share/omf/services-admin/services-admin-fr.omf
+share/omf/services-admin/services-admin-gl.omf
 share/omf/services-admin/services-admin-it.omf
 share/omf/services-admin/services-admin-oc.omf
 share/omf/services-admin/services-admin-pl.omf
@@ -521,6 +547,7 @@ share/omf/shares-admin/shares-admin-el.omf
 share/omf/shares-admin/shares-admin-en_GB.omf
 share/omf/shares-admin/shares-admin-es.omf
 share/omf/shares-admin/shares-admin-fr.omf
+share/omf/shares-admin/shares-admin-gl.omf
 share/omf/shares-admin/shares-admin-it.omf
 share/omf/shares-admin/shares-admin-oc.omf
 share/omf/shares-admin/shares-admin-pt_BR.omf
@@ -535,6 +562,7 @@ share/omf/time-admin/time-admin-el.omf
 share/omf/time-admin/time-admin-en_GB.omf
 share/omf/time-admin/time-admin-es.omf
 share/omf/time-admin/time-admin-fr.omf
+share/omf/time-admin/time-admin-gl.omf
 share/omf/time-admin/time-admin-it.omf
 share/omf/time-admin/time-admin-oc.omf
 share/omf/time-admin/time-admin-pt_BR.omf
@@ -550,17 +578,16 @@ share/omf/users-admin/users-admin-el.omf
 share/omf/users-admin/users-admin-en_GB.omf
 share/omf/users-admin/users-admin-es.omf
 share/omf/users-admin/users-admin-fr.omf
+share/omf/users-admin/users-admin-gl.omf
 share/omf/users-admin/users-admin-it.omf
 share/omf/users-admin/users-admin-oc.omf
 share/omf/users-admin/users-admin-pt_BR.omf
 share/omf/users-admin/users-admin-ru.omf
 share/omf/users-admin/users-admin-sv.omf
 share/omf/users-admin/users-admin-zh_CN.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gnome-system-tools.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
