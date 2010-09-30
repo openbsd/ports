@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/20 15:05:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/30 07:45:00 ajacoutot Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather/
 include/libgweather/gweather-enum-types.h
@@ -33,7 +33,6 @@ share/gtk-doc/html/libgweather/libgweather.devhelp2
 share/gtk-doc/html/libgweather/right.png
 share/gtk-doc/html/libgweather/style.css
 share/gtk-doc/html/libgweather/up.png
-share/icons/
 share/icons/gnome/
 share/icons/gnome/16x16/
 share/icons/gnome/16x16/status/
@@ -410,6 +409,7 @@ share/libgweather/Locations.br.xml
 share/libgweather/Locations.bs.xml
 share/libgweather/Locations.ca.xml
 share/libgweather/Locations.ca@valencia.xml
+share/libgweather/Locations.crh.xml
 share/libgweather/Locations.cs.xml
 share/libgweather/Locations.cy.xml
 share/libgweather/Locations.da.xml
@@ -419,6 +419,7 @@ share/libgweather/Locations.el.xml
 share/libgweather/Locations.en@shaw.xml
 share/libgweather/Locations.en_CA.xml
 share/libgweather/Locations.en_GB.xml
+share/libgweather/Locations.eo.xml
 share/libgweather/Locations.es.xml
 share/libgweather/Locations.et.xml
 share/libgweather/Locations.eu.xml
@@ -474,6 +475,7 @@ share/libgweather/Locations.ta.xml
 share/libgweather/Locations.te.xml
 share/libgweather/Locations.th.xml
 share/libgweather/Locations.tr.xml
+share/libgweather/Locations.ug.xml
 share/libgweather/Locations.uk.xml
 share/libgweather/Locations.vi.xml
 share/libgweather/Locations.xml
@@ -481,24 +483,22 @@ share/libgweather/Locations.zh_CN.xml
 share/libgweather/Locations.zh_HK.xml
 share/libgweather/Locations.zh_TW.xml
 share/libgweather/locations.dtd
+share/locale/af/LC_MESSAGES/libgweather.mo
 share/locale/am/LC_MESSAGES/libgweather.mo
 share/locale/ar/LC_MESSAGES/libgweather.mo
 share/locale/as/LC_MESSAGES/libgweather.mo
 share/locale/ast/LC_MESSAGES/libgweather.mo
 share/locale/az/LC_MESSAGES/libgweather.mo
 share/locale/be/LC_MESSAGES/libgweather.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/libgweather.mo
 share/locale/bg/LC_MESSAGES/libgweather.mo
 share/locale/bn/LC_MESSAGES/libgweather.mo
 share/locale/bn_IN/LC_MESSAGES/libgweather.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/libgweather.mo
 share/locale/bs/LC_MESSAGES/libgweather.mo
 share/locale/ca/LC_MESSAGES/libgweather.mo
 share/locale/ca@valencia/LC_MESSAGES/libgweather.mo
+share/locale/crh/LC_MESSAGES/libgweather.mo
 share/locale/cs/LC_MESSAGES/libgweather.mo
 share/locale/cy/LC_MESSAGES/libgweather.mo
 share/locale/da/LC_MESSAGES/libgweather.mo
@@ -508,6 +508,7 @@ share/locale/el/LC_MESSAGES/libgweather.mo
 share/locale/en@shaw/LC_MESSAGES/libgweather.mo
 share/locale/en_CA/LC_MESSAGES/libgweather.mo
 share/locale/en_GB/LC_MESSAGES/libgweather.mo
+share/locale/eo/LC_MESSAGES/libgweather.mo
 share/locale/es/LC_MESSAGES/libgweather.mo
 share/locale/es_AR/
 share/locale/es_AR/LC_MESSAGES/
@@ -572,8 +573,6 @@ share/locale/he/LC_MESSAGES/libgweather.mo
 share/locale/hi/LC_MESSAGES/libgweather.mo
 share/locale/hr/LC_MESSAGES/libgweather.mo
 share/locale/hu/LC_MESSAGES/libgweather.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/libgweather.mo
 share/locale/id/LC_MESSAGES/libgweather.mo
 share/locale/is/LC_MESSAGES/libgweather.mo
@@ -596,8 +595,6 @@ share/locale/mn/LC_MESSAGES/libgweather.mo
 share/locale/mr/LC_MESSAGES/libgweather.mo
 share/locale/ms/LC_MESSAGES/libgweather.mo
 share/locale/nb/LC_MESSAGES/libgweather.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/libgweather.mo
 share/locale/ne/LC_MESSAGES/libgweather.mo
 share/locale/nl/LC_MESSAGES/libgweather.mo
@@ -624,8 +621,6 @@ share/locale/th/LC_MESSAGES/libgweather.mo
 share/locale/tr/LC_MESSAGES/libgweather.mo
 share/locale/uk/LC_MESSAGES/libgweather.mo
 share/locale/vi/LC_MESSAGES/libgweather.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/libgweather.mo
 share/locale/xh/LC_MESSAGES/libgweather.mo
 share/locale/zh_CN/LC_MESSAGES/libgweather.mo
@@ -635,3 +630,5 @@ share/locale/zh_TW/LC_MESSAGES/libgweather.mo
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gweather.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true

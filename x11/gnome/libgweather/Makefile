@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/09/30 07:45:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		2.30.0
+GNOME_VERSION=		2.30.3
 
-REVISION=		1
-
-SHARED_LIBS +=		gweather             3.0      # .3.0
+SHARED_LIBS +=		gweather             3.0      # 7.10
 
 CATEGORIES=		net
 
@@ -39,7 +37,8 @@ WANTLIB +=		xml2 z eggdbus-1 soup-gnome-2.4 dbus-glib-1
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	libgweather
 
-CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo"
+CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo" \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
