@@ -1,6 +1,6 @@
-$OpenBSD: patch-invest-applet_invest_invest-applet_py,v 1.2 2010/04/24 17:50:50 ajacoutot Exp $
---- invest-applet/invest/invest-applet.py.orig	Sun Mar 28 07:29:51 2010
-+++ invest-applet/invest/invest-applet.py	Sat Apr 24 19:34:31 2010
+$OpenBSD: patch-invest-applet_invest_invest-applet_py,v 1.3 2010/09/30 07:33:16 ajacoutot Exp $
+--- invest-applet/invest/invest-applet.py.orig	Sun Sep 26 22:21:46 2010
++++ invest-applet/invest/invest-applet.py	Wed Sep 29 14:18:02 2010
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
@@ -9,7 +9,7 @@ $OpenBSD: patch-invest-applet_invest_invest-applet_py,v 1.2 2010/04/24 17:50:50 
  import gobject
 @@ -21,15 +21,6 @@ else:
  # Now the path is set, import our applet
- import invest, invest.applet, invest.defs
+ import invest, invest.applet, invest.defs, invest.help
  
 -# Prepare i18n
 -import gettext, locale

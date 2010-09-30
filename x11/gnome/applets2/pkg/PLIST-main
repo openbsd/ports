@@ -1,23 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2010/09/30 07:33:16 ajacoutot Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
 bin/invest-chart
-lib/bonobo/servers/GNOME_AccessxStatusApplet.server
 lib/bonobo/servers/GNOME_CDPlayerApplet.server
-lib/bonobo/servers/GNOME_CharpickerApplet.server
-lib/bonobo/servers/GNOME_GWeatherApplet_Factory.server
-lib/bonobo/servers/GNOME_GeyesApplet.server
 lib/bonobo/servers/GNOME_GtikApplet.server
 lib/bonobo/servers/GNOME_KeyboardApplet.server
 lib/bonobo/servers/GNOME_MailcheckApplet_Factory.server
 lib/bonobo/servers/GNOME_MiniCommanderApplet.server
-lib/bonobo/servers/GNOME_MixerApplet.server
-lib/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
 lib/bonobo/servers/GNOME_NullApplet_Factory.server
-lib/bonobo/servers/GNOME_Panel_TrashApplet.server
 lib/bonobo/servers/GNOME_Panel_WirelessApplet.server
-lib/bonobo/servers/GNOME_StickyNotesApplet.server
 lib/bonobo/servers/Invest_Applet.server
 lib/python${MODPY_VERSION}/site-packages/invest/
 lib/python${MODPY_VERSION}/site-packages/invest/__init__.py
@@ -32,9 +24,15 @@ lib/python${MODPY_VERSION}/site-packages/invest/applet.pyo
 lib/python${MODPY_VERSION}/site-packages/invest/chart.py
 lib/python${MODPY_VERSION}/site-packages/invest/chart.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/chart.pyo
+lib/python${MODPY_VERSION}/site-packages/invest/currencies.py
+lib/python${MODPY_VERSION}/site-packages/invest/currencies.pyc
+lib/python${MODPY_VERSION}/site-packages/invest/currencies.pyo
 lib/python${MODPY_VERSION}/site-packages/invest/defs.py
 lib/python${MODPY_VERSION}/site-packages/invest/defs.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/defs.pyo
+lib/python${MODPY_VERSION}/site-packages/invest/help.py
+lib/python${MODPY_VERSION}/site-packages/invest/help.pyc
+lib/python${MODPY_VERSION}/site-packages/invest/help.pyo
 lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.py
 lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.pyo
@@ -57,15 +55,23 @@ libexec/invest-applet
 @bin libexec/null_applet
 @bin libexec/stickynotes_applet
 @bin libexec/trashapplet
-share/gnome-2.0/ui/GNOME_AccessxApplet.xml
-share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
-share/gnome-2.0/ui/GNOME_GeyesApplet.xml
-share/gnome-2.0/ui/GNOME_MixerApplet.xml
-share/gnome-2.0/ui/GNOME_MultiloadApplet.xml
-share/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
-share/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
+share/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.CharpickerAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.GWeatherAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.GeyesAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.MixerAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.MultiLoadAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.StickyNotesAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.TrashAppletFactory.service
 share/gnome-2.0/ui/Invest_Applet.xml
+share/gnome-2.0/ui/accessx-status-applet-menu.xml
+share/gnome-2.0/ui/charpick-applet-menu.xml
+share/gnome-2.0/ui/geyes-applet-menu.xml
+share/gnome-2.0/ui/gweather-applet-menu.xml
+share/gnome-2.0/ui/mixer-applet-menu.xml
+share/gnome-2.0/ui/multiload-applet-menu.xml
+share/gnome-2.0/ui/stickynotes-applet-menu.xml
+share/gnome-2.0/ui/trashapplet-menu.xml
 share/gnome-applets/
 share/gnome-applets/builder/
 share/gnome-applets/builder/financialchart.ui
@@ -105,6 +111,14 @@ share/gnome-applets/invest-applet/invest-22_up.png
 share/gnome-applets/invest-applet/invest_down.svg
 share/gnome-applets/invest-applet/invest_neutral.svg
 share/gnome-applets/invest-applet/invest_up.svg
+share/gnome-panel/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.CharpickerApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.GWeatherApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.GeyesApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.MixerApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.MultiLoadApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.StickyNotesApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.TrashApplet.panel-applet
 share/gnome/help/accessx-status/
 share/gnome/help/accessx-status/C/
 share/gnome/help/accessx-status/C/accessx-status.xml
@@ -261,6 +275,20 @@ share/gnome/help/accessx-status/fr/figures/accessx_sticky-keys.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-meta-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-shift-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-windows-key.png
+share/gnome/help/accessx-status/gl/
+share/gnome/help/accessx-status/gl/accessx-status.xml
+share/gnome/help/accessx-status/gl/figures/
+share/gnome/help/accessx-status/gl/figures/accessx-status-applet.png
+share/gnome/help/accessx-status/gl/figures/accessx-status-disabled.png
+share/gnome/help/accessx-status/gl/figures/accessx_bounce-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_mouse-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_slow-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-altGr-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-ctrl-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-meta-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-shift-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-windows-key.png
 share/gnome/help/accessx-status/it/
 share/gnome/help/accessx-status/it/accessx-status.xml
 share/gnome/help/accessx-status/it/figures/
@@ -935,25 +963,45 @@ share/gnome/help/gweather/zh_CN/figures/stock_weather-sunny.png
 share/gnome/help/gweather/zh_CN/gweather.xml
 share/gnome/help/invest-applet/
 share/gnome/help/invest-applet/C/
+share/gnome/help/invest-applet/C/figures/
+share/gnome/help/invest-applet/C/figures/symbol-search.png
 share/gnome/help/invest-applet/C/invest-applet.xml
 share/gnome/help/invest-applet/C/legal.xml
 share/gnome/help/invest-applet/ca/
+share/gnome/help/invest-applet/ca/figures/
+share/gnome/help/invest-applet/ca/figures/symbol-search.png
 share/gnome/help/invest-applet/ca/invest-applet.xml
 share/gnome/help/invest-applet/de/
+share/gnome/help/invest-applet/de/figures/
+share/gnome/help/invest-applet/de/figures/symbol-search.png
 share/gnome/help/invest-applet/de/invest-applet.xml
 share/gnome/help/invest-applet/el/
+share/gnome/help/invest-applet/el/figures/
+share/gnome/help/invest-applet/el/figures/symbol-search.png
 share/gnome/help/invest-applet/el/invest-applet.xml
 share/gnome/help/invest-applet/en_GB/
+share/gnome/help/invest-applet/en_GB/figures/
+share/gnome/help/invest-applet/en_GB/figures/symbol-search.png
 share/gnome/help/invest-applet/en_GB/invest-applet.xml
 share/gnome/help/invest-applet/es/
+share/gnome/help/invest-applet/es/figures/
+share/gnome/help/invest-applet/es/figures/symbol-search.png
 share/gnome/help/invest-applet/es/invest-applet.xml
 share/gnome/help/invest-applet/fi/
+share/gnome/help/invest-applet/fi/figures/
+share/gnome/help/invest-applet/fi/figures/symbol-search.png
 share/gnome/help/invest-applet/fi/invest-applet.xml
 share/gnome/help/invest-applet/ru/
+share/gnome/help/invest-applet/ru/figures/
+share/gnome/help/invest-applet/ru/figures/symbol-search.png
 share/gnome/help/invest-applet/ru/invest-applet.xml
 share/gnome/help/invest-applet/sv/
+share/gnome/help/invest-applet/sv/figures/
+share/gnome/help/invest-applet/sv/figures/symbol-search.png
 share/gnome/help/invest-applet/sv/invest-applet.xml
 share/gnome/help/invest-applet/zh_CN/
+share/gnome/help/invest-applet/zh_CN/figures/
+share/gnome/help/invest-applet/zh_CN/figures/symbol-search.png
 share/gnome/help/invest-applet/zh_CN/invest-applet.xml
 share/gnome/help/mixer_applet2/
 share/gnome/help/mixer_applet2/C/
@@ -1447,6 +1495,7 @@ share/locale/el/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/eo/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_AR/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_CL/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1483,6 +1532,7 @@ share/locale/is/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/kk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1521,6 +1571,7 @@ share/locale/ta/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1540,6 +1591,7 @@ share/omf/accessx-status/accessx-status-es.omf
 share/omf/accessx-status/accessx-status-eu.omf
 share/omf/accessx-status/accessx-status-fi.omf
 share/omf/accessx-status/accessx-status-fr.omf
+share/omf/accessx-status/accessx-status-gl.omf
 share/omf/accessx-status/accessx-status-it.omf
 share/omf/accessx-status/accessx-status-ko.omf
 share/omf/accessx-status/accessx-status-nl.omf

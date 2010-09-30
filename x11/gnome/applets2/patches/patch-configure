@@ -1,22 +1,22 @@
-$OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
---- configure.orig	Sun Mar 28 08:27:56 2010
-+++ configure	Fri Apr 23 11:38:26 2010
-@@ -2859,14 +2859,6 @@ echo timestamp > conftest.file
+$OpenBSD: patch-configure,v 1.18 2010/09/30 07:33:16 ajacoutot Exp $
+--- configure.orig	Mon Sep 27 10:59:15 2010
++++ configure	Wed Sep 29 14:18:35 2010
+@@ -2893,14 +2893,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5 ;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5 ;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -12986,7 +12978,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
+@@ -13128,7 +13120,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -15523,7 +15515,7 @@ _ACEOF
+@@ -15737,7 +15729,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -34,7 +34,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOMELOCALEDIR="$ac_define_dir"
  
-@@ -17006,7 +16998,7 @@ builderdir="${pkgdatadir}/builder"
+@@ -17218,7 +17210,7 @@ builderdir="${pkgdatadir}/builder"
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_ICONDIR="$ac_define_dir"
  
-@@ -17019,7 +17011,7 @@ _ACEOF
+@@ -17231,7 +17223,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
-@@ -17032,7 +17024,7 @@ _ACEOF
+@@ -17244,7 +17236,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GTK_BUILDERDIR="$ac_define_dir"
  
-@@ -17045,7 +17037,7 @@ _ACEOF
+@@ -17257,7 +17249,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -17058,7 +17050,7 @@ _ACEOF
+@@ -17270,7 +17262,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -79,7 +79,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -17071,7 +17063,7 @@ _ACEOF
+@@ -17283,7 +17275,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -88,7 +88,7 @@ $OpenBSD: patch-configure,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -17084,7 +17076,7 @@ _ACEOF
+@@ -17296,7 +17288,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
