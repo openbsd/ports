@@ -1,0 +1,16 @@
+$OpenBSD: patch-glib_glibmodule_c,v 1.1 2010/09/30 07:30:44 jasper Exp $
+
+From upstream git (80b8ccd450fe4e3ea77b27e58bb63cabc2a2bb2b):
+fix commit 7fe83108 which didn't use the compat functions for string handling
+
+--- glib/glibmodule.c.orig	Wed Sep 29 19:33:19 2010
++++ glib/glibmodule.c	Wed Sep 29 19:33:49 2010
+@@ -627,7 +627,7 @@ pyglib_uri_list_extract_uris(PyObject *self, PyObject 
+ 
+     ret = PyTuple_New(i);
+     for (j = 0; j < i; j++)
+-        PyTuple_SetItem(ret, j, PyString_FromString(uris[j]));
++        PyTuple_SetItem(ret, j, PYGLIB_PyUnicode_FromString(uris[j]));
+ 
+     g_strfreev(uris);
+ 
