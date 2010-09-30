@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgnome-desktop_gnome-desktop-thumbnail_c,v 1.1 2009/10/29 08:35:34 jasper Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-desktop-thumbnail_c,v 1.2 2010/09/30 07:33:59 ajacoutot Exp $
 
 gnome-desktop-thumbnail.c: In function `gnome_desktop_thumbnail_factory_save_thumbnail':
 gnome-desktop-thumbnail.c:1052: warning: long int format, different type arg (arg 4)
@@ -7,9 +7,9 @@ gnome-desktop-thumbnail.c:1154: warning: long int format, different type arg (ar
 
 change atol -> atoll in line with the other changes.
 
---- libgnome-desktop/gnome-desktop-thumbnail.c.orig	Wed Oct 28 23:20:50 2009
-+++ libgnome-desktop/gnome-desktop-thumbnail.c	Wed Oct 28 23:22:50 2009
-@@ -1049,7 +1049,7 @@ gnome_desktop_thumbnail_factory_save_thumbnail (GnomeD
+--- libgnome-desktop/gnome-desktop-thumbnail.c.orig	Fri Sep 24 11:24:03 2010
++++ libgnome-desktop/gnome-desktop-thumbnail.c	Mon Sep 27 17:53:10 2010
+@@ -1055,7 +1055,7 @@ gnome_desktop_thumbnail_factory_save_thumbnail (GnomeD
      }
    close (tmp_fd);
    
@@ -18,7 +18,7 @@ change atol -> atoll in line with the other changes.
    width = gdk_pixbuf_get_option (thumbnail, "tEXt::Thumb::Image::Width");
    height = gdk_pixbuf_get_option (thumbnail, "tEXt::Thumb::Image::Height");
  
-@@ -1151,7 +1151,7 @@ gnome_desktop_thumbnail_factory_create_failed_thumbnai
+@@ -1157,7 +1157,7 @@ gnome_desktop_thumbnail_factory_create_failed_thumbnai
      }
    close (tmp_fd);
    
@@ -27,7 +27,7 @@ change atol -> atoll in line with the other changes.
    pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 1, 1);
    saved_ok  = gdk_pixbuf_save (pixbuf,
  			       tmp_path,
-@@ -1281,7 +1281,7 @@ gnome_desktop_thumbnail_is_valid (GdkPixbuf          *
+@@ -1287,7 +1287,7 @@ gnome_desktop_thumbnail_is_valid (GdkPixbuf          *
    thumb_mtime_str = gdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::MTime");
    if (!thumb_mtime_str)
      return FALSE;

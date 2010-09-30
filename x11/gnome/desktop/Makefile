@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/09/30 07:33:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		2.30.2
-
-REVISION=		1
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=  gnome-desktop-2      8.0      # .15.2
 
@@ -41,7 +39,8 @@ USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
-			--disable-scrollkeeper
+			--disable-scrollkeeper \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
