@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/09/30 07:36:10 ajacoutot Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
-GNOME_VERSION=	2.30.0
-
-REVISION=	0
+GNOME_VERSION=	2.32.0
 
 CATEGORIES=	net
 
@@ -16,8 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
