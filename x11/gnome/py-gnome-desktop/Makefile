@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/28 11:37:17 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/30 07:46:05 jasper Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
-GNOME_VERSION=		2.30.2
+GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-
-REVISION=		2
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -32,9 +30,10 @@ WANTLIB += icalvcal krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread-stubs
 WANTLIB += smime3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
 WANTLIB += tasn1 util vorbis vorbisfile wnck-1 xcb xcb-atom xcb-aux
-WANTLIB += xcb-event xcb-render xcb-render-util xml2 z gtop-2.0 evview
+WANTLIB += xcb-event xcb-render xcb-render-util xml2 z gtop-2.0
 WANTLIB += gnome-media-profiles metacity-private panel-applet-2
-WANTLIB += totem-plparser evdocument
+WANTLIB += totem-plparser gdata nssutil3 proxy pthread soup-gnome-2.4
+WANTLIB += pthread gsf-1
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -43,14 +42,16 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-gnome->=2.28.0:x11/gnome/py-gnome \
 			::x11/gnome/bug-buddy
-LIB_DEPENDS=		::devel/libgtop2 \
+LIB_DEPENDS=		::devel/libgsf \
+			::devel/libgtop2 \
 			::x11/gnome/libgnomeprintui \
 			::x11/gnome/librsvg \
 			::x11/gnome/media \
 			::x11/gnome/metacity \
 			::x11/gnome/panel \
-			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-			::graphics/evince,-main
+			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser
+# XXX: Enable again when evince has been update to 2.32.x
+#			::graphics/evince,-main
 
 USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
