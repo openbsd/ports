@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2010/06/21 18:42:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/09/30 07:44:31 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
-GNOME_VERSION=		2.30.2
+GNOME_VERSION=		2.32.0
 
 CATEGORIES=		x11
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		:gettext-*:devel/gettext
 
 # we get the Clearlooks index.theme file from gtk2-clearlooks-engine;
-# this way, both packages can be installed along
+# this way, both packages can be installed alongside.
 RUN_DEPENDS+=		 :gtk2-clearlooks-engine->=0.6.2p8:x11/gtk2-clearlooks-engine
 
 USE_X11=		Yes
