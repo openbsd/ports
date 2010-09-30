@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/30 07:43:36 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
-GNOME_VERSION=		2.18.7
-
-REVISION=		0
+GNOME_VERSION=		2.18.8
 
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 
@@ -35,6 +33,7 @@ LIB_DEPENDS=		::devel/pango \
 
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
 			--with-cups
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

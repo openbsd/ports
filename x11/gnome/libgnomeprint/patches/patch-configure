@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.13 2010/03/30 14:28:14 ajacoutot Exp $
---- configure.orig	Tue Mar 30 15:26:07 2010
-+++ configure	Tue Mar 30 16:06:26 2010
-@@ -21247,7 +21247,7 @@ $as_echo "$as_me: error: Could not find flex" >&2;}
-    { (exit 1); exit 1; }; }
+$OpenBSD: patch-configure,v 1.14 2010/09/30 07:43:36 ajacoutot Exp $
+--- configure.orig	Tue Sep 28 11:27:21 2010
++++ configure	Tue Sep 28 17:48:40 2010
+@@ -18154,7 +18154,7 @@ if test x$FLEX_PATH = xno; then
+ 	as_fn_error $? "Could not find flex" "$LINENO" 5
  fi
  
 -LIBGNOMEPRINT_CFLAGS="$GP_CFLAGS $FREETYPE_CFLAGS"
