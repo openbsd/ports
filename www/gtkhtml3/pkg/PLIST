@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/20 12:24:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:41:02 ajacoutot Exp $
 @bin bin/gtkhtml-editor-test
 include/libgtkhtml-${API_VERSION}/
 include/libgtkhtml-${API_VERSION}/editor/
@@ -22,10 +22,10 @@ include/libgtkhtml-${API_VERSION}/gtkhtml/htmltypes.h
 lib/libgtkhtml-${API_VERSION}.a
 lib/libgtkhtml-${API_VERSION}.la
 @lib lib/libgtkhtml-${API_VERSION}.so.${LIBgtkhtml-3.14_VERSION}
-lib/libgtkhtml-editor.a
-lib/libgtkhtml-editor.la
-@lib lib/libgtkhtml-editor.so.${LIBgtkhtml-editor_VERSION}
-lib/pkgconfig/gtkhtml-editor.pc
+lib/libgtkhtml-editor-${API_VERSION}.a
+lib/libgtkhtml-editor-${API_VERSION}.la
+@lib lib/libgtkhtml-editor-${API_VERSION}.so.${LIBgtkhtml-editor-3.14_VERSION}
+lib/pkgconfig/gtkhtml-editor-${API_VERSION}.pc
 lib/pkgconfig/libgtkhtml-${API_VERSION}.pc
 share/gtkhtml-${API_VERSION}/
 share/gtkhtml-${API_VERSION}/gtkhtml-editor-builder.ui

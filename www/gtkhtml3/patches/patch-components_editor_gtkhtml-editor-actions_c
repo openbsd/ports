@@ -1,0 +1,27 @@
+$OpenBSD: patch-components_editor_gtkhtml-editor-actions_c,v 1.1 2010/09/30 07:41:02 ajacoutot Exp $
+
+From 027debf5ffb836841a68ab4d20e17d41bedc0be2 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Wed, 29 Sep 2010 09:06:41 +0000
+Subject: Bug #630360 - Crash when inserting html file in composer
+
+--- components/editor/gtkhtml-editor-actions.c.orig	Mon Sep 13 14:16:10 2010
++++ components/editor/gtkhtml-editor-actions.c	Wed Sep 29 14:43:46 2010
+@@ -173,15 +173,14 @@ insert_html_file_ready_cb (GFile *file,
+ 
+ 	stream = gtk_html_begin (new_html);
+ 	gtk_html_write (html, stream, contents, length);
++	/* 'stream' is destroyed inside gtk_html_end */
+ 	gtk_html_end (html, stream, GTK_HTML_STREAM_OK);
+-	gtk_html_stream_destroy (stream);
+ 
+ 	g_free (contents);
+ 
+ 	html = gtkhtml_editor_get_html (editor);
++	/* 'new_html' destroys gtk_html_insert_gtk_html itself */
+ 	gtk_html_insert_gtk_html (html, new_html);
+-
+-	g_object_unref (new_html);
+ 
+ 	goto exit;
+ 

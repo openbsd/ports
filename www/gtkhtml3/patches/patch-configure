@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2010/09/30 07:41:02 ajacoutot Exp $
+
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
+error: implicit declaration of function 'gtk_dialog_set_has_separator'
+error: implicit declaration of function 'gdk_gc_new'
+
+--- configure.orig	Wed Sep 29 14:54:00 2010
++++ configure	Wed Sep 29 14:54:14 2010
+@@ -5892,9 +5892,7 @@ if test "x${enable_deprecated_flags}" = "xyes"; then
+ 
+   list="-DG_DISABLE_DEPRECATED
+ 		-DPANGO_DISABLE_DEPRECATED
+-		-DGDK_DISABLE_DEPRECATED
+ 		-DGDK_PIXBUF_DISABLE_DEPRECATED
+-		-DGTK_DISABLE_DEPRECATED
+ 		-DGNOME_DISABLE_DEPRECATED"
+   flags_supported=""
+   flags_unsupported=""
