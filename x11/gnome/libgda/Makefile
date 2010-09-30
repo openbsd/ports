@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/27 12:12:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/30 13:10:09 jasper Exp $
 
 #
 # XXX:
@@ -22,6 +22,14 @@ GNOME_VERSION=		4.2.0
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
 GDA_MAJOR=		4.0
+
+REVISION-main=		0
+REVISION-ui=		0
+REVISION-ldap=		0
+REVISION-mdb=		0
+REVISION-mysql= 	0
+REVISION-pgsql= 	0
+REVISION-odbc=		0
 
 PKGNAME-main=		${DISTNAME}
 EPOCH-main=		1
@@ -54,7 +62,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 xml2 dbus-1 dbus-glib-1 eggdbus-1 gcrypt
+WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt
 WANTLIB += gnome-keyring gpg-error
 
 MODULES=		devel/gettext \
@@ -115,7 +123,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1
 WANTLIB-ui += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-ui += glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-ui += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB-ui += eggdbus-1 gnome-keyring goocanvas graph gtksourceview-2.0
+WANTLIB-ui += gnome-keyring goocanvas graph gtksourceview-2.0
 WANTLIB-ui += gvc ltdl pathplan unique-1.0 cdt gpg-error unique-1.0
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			::x11/gnome/libgda \
