@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.61 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2010/09/30 07:36:19 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.24.3
+GNOME_VERSION=		0.26.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
-REVISION-main =		2
-REVISION-python =	2
 
 CATEGORIES=		devel
 
-SHARED_LIBS+=	vte	14.0    # .22.1
+SHARED_LIBS+=	vte	14.1    # 2609.0
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -39,23 +37,25 @@ WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z gthread-2.0 gdk_pixbuf-2.0
 
-WANTLIB-main=		${WANTLIB} util c pthread
+WANTLIB-main=		${WANTLIB} util c pthread gdk-x11-2.0 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+			::x11/gtk+2
 
-WANTLIB-python= 	${WANTLIB}
+WANTLIB-python= 	${WANTLIB} ffi vte.>=11
 
 BUILD_DEPENDS=		${RUN_DEPENDS-python}
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
-			vte.>=11::${BASE_PKGPATH} \
-			ffi::devel/libffi
+			::${BASE_PKGPATH} \
+			::devel/libffi
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 			::x11/py-gtk2
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-python
+			--enable-python \
+			--disable-Bsymbolic \
+			--enable-introspection=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
