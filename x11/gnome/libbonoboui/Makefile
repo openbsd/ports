@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/09/30 07:42:04 ajacoutot Exp $
 
 COMMENT=	user interface components for bonobo
 
 GNOME_PROJECT=	libbonoboui
-GNOME_VERSION=	2.24.3
-REVISION=	1
+GNOME_VERSION=	2.24.4
 
 SHARED_LIBS +=	bonoboui-2	3.0        # .0.0
 
@@ -24,6 +23,7 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl util xcb
 WANTLIB += xml2 z xcb-render xcb-render-util gnome-2 gnomecanvas-2
+WANTLIB += canberra ltdl ogg vorbis vorbisfile
 
 MODULES=	devel/gettext \
 		x11/gnome
