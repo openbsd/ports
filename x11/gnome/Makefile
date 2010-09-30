@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2010/09/23 13:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2010/09/30 09:34:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -103,7 +103,7 @@
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tracker
-     SUBDIR += users-guide
+     SUBDIR += user-docs
      SUBDIR += utils
      SUBDIR += vfs2
      SUBDIR += video-arcade
