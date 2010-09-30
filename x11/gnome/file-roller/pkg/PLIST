@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/04/22 11:45:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/09/30 07:39:00 jasper Exp $
 %%SHARED%%
 @bin bin/file-roller
 lib/nautilus/
@@ -123,6 +123,14 @@ share/gnome/help/file-roller/it/figures/file-roller_main_window.png
 share/gnome/help/file-roller/it/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/it/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/it/file-roller.xml
+share/gnome/help/file-roller/ja/
+share/gnome/help/file-roller/ja/figures/
+share/gnome/help/file-roller/ja/figures/file-roller_home.png
+share/gnome/help/file-roller/ja/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/ja/figures/file-roller_main_window.png
+share/gnome/help/file-roller/ja/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/ja/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/ja/file-roller.xml
 share/gnome/help/file-roller/nl/
 share/gnome/help/file-roller/nl/figures/
 share/gnome/help/file-roller/nl/figures/file-roller_home.png
@@ -218,6 +226,7 @@ share/locale/el/LC_MESSAGES/file-roller.mo
 share/locale/en@shaw/LC_MESSAGES/file-roller.mo
 share/locale/en_CA/LC_MESSAGES/file-roller.mo
 share/locale/en_GB/LC_MESSAGES/file-roller.mo
+share/locale/eo/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
 share/locale/et/LC_MESSAGES/file-roller.mo
 share/locale/eu/LC_MESSAGES/file-roller.mo
@@ -225,6 +234,9 @@ share/locale/fa/LC_MESSAGES/file-roller.mo
 share/locale/fi/LC_MESSAGES/file-roller.mo
 share/locale/fr/LC_MESSAGES/file-roller.mo
 share/locale/fur/LC_MESSAGES/file-roller.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/file-roller.mo
 share/locale/ga/LC_MESSAGES/file-roller.mo
 share/locale/gl/LC_MESSAGES/file-roller.mo
 share/locale/gu/LC_MESSAGES/file-roller.mo
@@ -232,8 +244,6 @@ share/locale/he/LC_MESSAGES/file-roller.mo
 share/locale/hi/LC_MESSAGES/file-roller.mo
 share/locale/hr/LC_MESSAGES/file-roller.mo
 share/locale/hu/LC_MESSAGES/file-roller.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/file-roller.mo
 share/locale/id/LC_MESSAGES/file-roller.mo
 share/locale/is/LC_MESSAGES/file-roller.mo
@@ -287,6 +297,7 @@ share/locale/tk/
 share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/file-roller.mo
 share/locale/tr/LC_MESSAGES/file-roller.mo
+share/locale/ug/LC_MESSAGES/file-roller.mo
 share/locale/uk/LC_MESSAGES/file-roller.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
@@ -311,6 +322,7 @@ share/omf/file-roller/file-roller-es.omf
 share/omf/file-roller/file-roller-fi.omf
 share/omf/file-roller/file-roller-fr.omf
 share/omf/file-roller/file-roller-it.omf
+share/omf/file-roller/file-roller-ja.omf
 share/omf/file-roller/file-roller-nl.omf
 share/omf/file-roller/file-roller-oc.omf
 share/omf/file-roller/file-roller-ru.omf
