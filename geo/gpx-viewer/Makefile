@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/30 07:32:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/30 17:53:20 jasper Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.2.0
 DISTNAME =	gpx-viewer-${VERSION}
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -42,7 +43,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z Xxf86vm drm
 WANTLIB += ORBit-2 dbus-1 dbus-glib-1 gconf-2 gnome-keyring proxy
 WANTLIB += soup-gnome-2.4 champlain-0.8 champlain-gtk-0.8
-WANTLIB += gdl-1 eggdbus-1 xcb-render xcb-render-util unique-1.0
+WANTLIB += gdl-1 xcb-render xcb-render-util unique-1.0
 
 # Upstream doesn't build their own releases.
 post-configure:
