@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/30 19:42:14 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -51,6 +51,8 @@ RUN_DEPENDS=	::graphics/ffmpeg \
 		::audio/vorbis-tools \
 		::audio/toolame \
 		::x11/mplayer
+
+BUILD_DEPENDS+=	::devel/libtool
 
 SEPARATE_BUILD=	concurrent
 
