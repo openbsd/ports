@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_hamster-service,v 1.1 2010/09/30 12:16:35 jasper Exp $
+--- src/hamster-service.orig	Thu Sep 30 11:03:37 2010
++++ src/hamster-service	Thu Sep 30 11:03:47 2010
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ # nicked off gwibber
+ 
+ import gobject, dbus
