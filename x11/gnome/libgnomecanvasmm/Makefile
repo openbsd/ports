@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/30 13:00:09 ajacoutot Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.26.0
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS=		gnomecanvasmm-2.6	1.0	# .1.6
 
@@ -22,7 +22,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png z pthread-stubs xcb gthread-2.0 xcb-render \
 		xcb-render-util giomm-2.4 glibmm-2.4 sigc-2.0 gtkmm-2.4 \
-		gdkmm-2.4 atkmm-1.6 pangomm-1.4 gnomecanvas-2
+		gdkmm-2.4 atkmm-1.6 pangomm-1.4 gnomecanvas-2 stdc++
 
 MODULES=		devel/gettext \
 			x11/gnome
