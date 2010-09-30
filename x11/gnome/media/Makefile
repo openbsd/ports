@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/30 07:35:18 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
-GNOME_VERSION=	2.30.0
-REVISION=	0
+GNOME_VERSION=	2.32.0
 
 SHARED_LIBS +=	gnome-media-profiles 1.0      # .0.0
 
@@ -17,14 +16,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ltdl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs vorbis vorbisfile xcb xml2 z xcb-render
 WANTLIB += xcb-render-util gstaudio-0.10 gstinterfaces-0.10 canberra-gtk
-WANTLIB += canberra
+WANTLIB += canberra gladeui-1
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -32,7 +31,8 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::multimedia/gstreamer-0.10/plugins-good
 LIB_DEPENDS=	:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		::audio/libcanberra
+		::audio/libcanberra \
+		::devel/glade3
 
 MODGNOME_HELP_FILES= Yes
 USE_X11=	Yes

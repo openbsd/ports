@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/04/22 19:14:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/09/30 07:35:18 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -11,12 +11,19 @@ include/gnome-media/profiles/audio-profile-edit.h
 include/gnome-media/profiles/audio-profile.h
 include/gnome-media/profiles/audio-profiles-edit.h
 include/gnome-media/profiles/gnome-media-profiles.h
+lib/glade3/
+lib/glade3/modules/
+@comment lib/glade3/modules/libgnome-media-profiles.a
+@comment lib/glade3/modules/libgnome-media-profiles.la
 lib/libgnome-media-profiles.a
 lib/libgnome-media-profiles.la
 lib/pkgconfig/gnome-media-profiles.pc
 share/applications/gnome-sound-recorder.desktop
 share/applications/gnome-volume-control.desktop
 share/applications/gstreamer-properties.desktop
+share/glade3/
+share/glade3/catalogs/
+share/glade3/catalogs/gnome-media-profiles.xml
 share/gnome-media/
 share/gnome-media/gnome-audio-profile-edit.ui
 share/gnome-media/gnome-audio-profile-new.ui
@@ -35,6 +42,12 @@ share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profile-win
 share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profiles-window.png
 share/gnome/help/gnome-audio-profiles/C/gnome-audio-profiles.xml
 share/gnome/help/gnome-audio-profiles/C/legal.xml
+share/gnome/help/gnome-audio-profiles/da/
+share/gnome/help/gnome-audio-profiles/da/figures/
+share/gnome/help/gnome-audio-profiles/da/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/da/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/da/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/da/legal.xml
 share/gnome/help/gnome-audio-profiles/de/
 share/gnome/help/gnome-audio-profiles/de/figures/
 share/gnome/help/gnome-audio-profiles/de/figures/gnome-audio-profiles-profile-window.png
@@ -141,6 +154,10 @@ share/gnome/help/gnome-volume-control/cs/
 share/gnome/help/gnome-volume-control/cs/figures/
 share/gnome/help/gnome-volume-control/cs/figures/gnome-volume-control_window.png
 share/gnome/help/gnome-volume-control/cs/gnome-volume-control.xml
+share/gnome/help/gnome-volume-control/da/
+share/gnome/help/gnome-volume-control/da/figures/
+share/gnome/help/gnome-volume-control/da/figures/gnome-volume-control_window.png
+share/gnome/help/gnome-volume-control/da/gnome-volume-control.xml
 share/gnome/help/gnome-volume-control/de/
 share/gnome/help/gnome-volume-control/de/figures/
 share/gnome/help/gnome-volume-control/de/figures/gnome-volume-control_window.png
@@ -195,6 +212,10 @@ share/gnome/help/gstreamer-properties/cs/
 share/gnome/help/gstreamer-properties/cs/figures/
 share/gnome/help/gstreamer-properties/cs/figures/gstreamer_properties_window.png
 share/gnome/help/gstreamer-properties/cs/gstreamer-properties.xml
+share/gnome/help/gstreamer-properties/da/
+share/gnome/help/gstreamer-properties/da/figures/
+share/gnome/help/gstreamer-properties/da/figures/gstreamer_properties_window.png
+share/gnome/help/gstreamer-properties/da/gstreamer-properties.xml
 share/gnome/help/gstreamer-properties/de/
 share/gnome/help/gstreamer-properties/de/figures/
 share/gnome/help/gstreamer-properties/de/figures/gstreamer_properties_window.png
@@ -358,6 +379,7 @@ share/locale/tk/
 share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
@@ -367,6 +389,7 @@ share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 share/omf/gnome-audio-profiles/
 share/omf/gnome-audio-profiles/gnome-audio-profiles-C.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-da.omf
 share/omf/gnome-audio-profiles/gnome-audio-profiles-de.omf
 share/omf/gnome-audio-profiles/gnome-audio-profiles-el.omf
 share/omf/gnome-audio-profiles/gnome-audio-profiles-es.omf
@@ -392,6 +415,7 @@ share/omf/gnome-volume-control/
 share/omf/gnome-volume-control/gnome-volume-control-C.omf
 share/omf/gnome-volume-control/gnome-volume-control-ca.omf
 share/omf/gnome-volume-control/gnome-volume-control-cs.omf
+share/omf/gnome-volume-control/gnome-volume-control-da.omf
 share/omf/gnome-volume-control/gnome-volume-control-de.omf
 share/omf/gnome-volume-control/gnome-volume-control-el.omf
 share/omf/gnome-volume-control/gnome-volume-control-en_GB.omf
@@ -406,6 +430,7 @@ share/omf/gstreamer-properties/
 share/omf/gstreamer-properties/gstreamer-properties-C.omf
 share/omf/gstreamer-properties/gstreamer-properties-ca.omf
 share/omf/gstreamer-properties/gstreamer-properties-cs.omf
+share/omf/gstreamer-properties/gstreamer-properties-da.omf
 share/omf/gstreamer-properties/gstreamer-properties-de.omf
 share/omf/gstreamer-properties/gstreamer-properties-el.omf
 share/omf/gstreamer-properties/gstreamer-properties-en_GB.omf
