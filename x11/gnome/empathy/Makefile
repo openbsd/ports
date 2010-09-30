@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2010/09/28 08:57:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/09/30 12:22:42 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.3
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		net
 
@@ -34,8 +34,8 @@ WANTLIB += pixman-1 plc4 plds4 png proxy pthread pthread-stubs
 WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++ notify
 WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render ltdl
 WANTLIB += xcb-render-util xml2 z canberra canberra-gtk camel-1.2
-WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.4
-WANTLIB += champlain-gtk-0.4 clutter-gtk-0.10 telepathy-farsight
+WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.8
+WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
 WANTLIB += telepathy-logger
 
 BUILD_DEPENDS=		::devel/iso-codes \
@@ -67,6 +67,8 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	empathy
 
+AUTOCONF_VERSION=	2.62
+CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--enable-spell=Yes \
