@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2010/09/27 07:01:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/09/30 15:20:50 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.0
+
+REVISION=		0
 
 CATEGORIES=		games
 
