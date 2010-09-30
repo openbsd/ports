@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2010/09/03 15:48:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2010/09/30 13:46:06 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.18
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
 @conflict gstreamer-cairo-*
 @conflict gstreamer-confelements-*
 @conflict gstreamer-flac-*
+@conflict gstreamer-gdk-pixbuf-*
 @conflict gstreamer-shout-*
 @conflict gstreamer-libsoup-*
 @conflict gstreamer-speex-*
@@ -14,6 +15,7 @@
 @pkgpath ${BASE_PKGPATH},-png
 @pkgpath ${BASE_PKGPATH},-cairo
 @pkgpath ${BASE_PKGPATH},-gconf
+@pkgpath ${BASE_PKGPATH},-gdk
 @pkgpath ${BASE_PKGPATH},-flac
 @pkgpath ${BASE_PKGPATH},-shout
 @pkgpath ${BASE_PKGPATH},-soup
@@ -60,6 +62,8 @@ lib/gstreamer-${VERSION}/libgstflv.so
 lib/gstreamer-${VERSION}/libgstflxdec.so
 @comment lib/gstreamer-${VERSION}/libgstgconfelements.la
 lib/gstreamer-${VERSION}/libgstgconfelements.so
+@comment lib/gstreamer-${VERSION}/libgstgdkpixbuf.la
+lib/gstreamer-${VERSION}/libgstgdkpixbuf.so
 @comment lib/gstreamer-${VERSION}/libgstgoom.la
 lib/gstreamer-${VERSION}/libgstgoom.so
 @comment lib/gstreamer-${VERSION}/libgstgoom2k1.la

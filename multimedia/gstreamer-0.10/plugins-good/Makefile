@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2010/09/30 13:46:06 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
-COMMENT-gdk =		gdk pixbuf element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
 V =			0.10.25
@@ -12,15 +11,14 @@ DISTNAME =		gst-plugins-good-$V
 PKGNAME-main =		gstreamer-plugins-good-${V}
 PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 EPOCH-main =		0
-REVISION-gdk =		0
+REVISION-caca =		0
 
 MULTI_PACKAGES =	-main -aalib \
-			-dv -gdk -caca
+			-dv -caca
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -40,7 +38,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z gstreamer-0.10 gstbase-0.10
 LIB_DEPENDS =		:gstreamer->=0.10.30:$P/core
 
-WANTLIB-main =		${WANTLIB} \
+WANTLIB-main =		${WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
 			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
@@ -64,7 +62,9 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			::$P/plugins-base \
 			::net/libshout \
 			::archivers/bzip2 \
-			::devel/libsoup,-gnome
+			::devel/libsoup,-gnome \
+			::graphics/gdk-pixbuf2 \
+			::devel/eggdbus
 RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 
@@ -78,14 +78,8 @@ LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 			::multimedia/libdv \
 			::${P}/plugins-base
 
-WANTLIB-gdk =		${WANTLIB} \
-			gio-2.0 gdk_pixbuf-2.0 gstvideo-0.10
-LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
-			::graphics/gdk-pixbuf2 \
-			::$P/plugins-base
-
 WANTLIB-caca =		${WANTLIB} \
-			X11 ncurses Xau Xdmcp pthread-stubs xcb caca
+			X11 ncursesw Xau Xdmcp pthread-stubs xcb caca
 LIB_DEPENDS-caca =	${LIB_DEPENDS} \
 			::graphics/libcaca
 
