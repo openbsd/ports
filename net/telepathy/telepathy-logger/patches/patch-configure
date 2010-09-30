@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2010/09/30 07:37:25 jasper Exp $
+
+Bug 627126 - gsettings schema files don't get installed on FreeBSD
+
+--- configure.orig	Tue Sep 28 20:54:02 2010
++++ configure	Tue Sep 28 20:54:37 2010
+@@ -13281,8 +13281,8 @@ install-data-am: install-gsettings-schemas
+ .SECONDARY: $(gsettings_SCHEMAS)
+ 
+ gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
++  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
++  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
+ 
+ install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)
