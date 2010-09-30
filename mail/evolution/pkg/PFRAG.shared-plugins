@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared-plugins,v 1.3 2010/04/22 16:30:02 jasper Exp $
+@comment $OpenBSD: PFRAG.shared-plugins,v 1.4 2010/09/30 08:01:26 ajacoutot Exp $
 lib/evolution/${R}/plugins/liborg-gnome-audio-inline.so
 lib/evolution/${R}/plugins/liborg-gnome-backup-restore.so
-lib/evolution/${R}/plugins/liborg-gnome-default-mailer.so
+lib/evolution/${R}/plugins/liborg-gnome-dbx-import.so
 lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.so

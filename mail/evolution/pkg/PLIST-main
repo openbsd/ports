@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2010/06/21 05:17:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2010/09/30 08:01:26 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -84,7 +84,6 @@ include/evolution-${R}/calendar/gui/tag-calendar.h
 include/evolution-${R}/calendar/gui/weekday-picker.h
 include/evolution-${R}/composer/
 include/evolution-${R}/composer/e-composer-actions.h
-include/evolution-${R}/composer/e-composer-autosave.h
 include/evolution-${R}/composer/e-composer-common.h
 include/evolution-${R}/composer/e-composer-from-header.h
 include/evolution-${R}/composer/e-composer-header-table.h
@@ -94,16 +93,12 @@ include/evolution-${R}/composer/e-composer-post-header.h
 include/evolution-${R}/composer/e-composer-private.h
 include/evolution-${R}/composer/e-composer-text-header.h
 include/evolution-${R}/composer/e-msg-composer.h
-include/evolution-${R}/e-conduit/
-include/evolution-${R}/e-conduit/e-pilot-map.h
-include/evolution-${R}/e-conduit/e-pilot-util.h
 include/evolution-${R}/e-util/
 include/evolution-${R}/e-util/e-account-utils.h
 include/evolution-${R}/e-util/e-activity.h
 include/evolution-${R}/e-util/e-alert-activity.h
 include/evolution-${R}/e-util/e-alert-dialog.h
 include/evolution-${R}/e-util/e-alert.h
-include/evolution-${R}/e-util/e-bconf-map.h
 include/evolution-${R}/e-util/e-binding.h
 include/evolution-${R}/e-util/e-bit-array.h
 include/evolution-${R}/e-util/e-categories-config.h
@@ -116,7 +111,6 @@ include/evolution-${R}/e-util/e-event.h
 include/evolution-${R}/e-util/e-extensible.h
 include/evolution-${R}/e-util/e-extension.h
 include/evolution-${R}/e-util/e-file-utils.h
-include/evolution-${R}/e-util/e-folder-map.h
 include/evolution-${R}/e-util/e-html-utils.h
 include/evolution-${R}/e-util/e-icon-factory.h
 include/evolution-${R}/e-util/e-import.h
@@ -129,6 +123,7 @@ include/evolution-${R}/e-util/e-non-intrusive-error-dialog.h
 include/evolution-${R}/e-util/e-plugin-ui.h
 include/evolution-${R}/e-util/e-plugin-util.h
 include/evolution-${R}/e-util/e-plugin.h
+include/evolution-${R}/e-util/e-poolv.h
 include/evolution-${R}/e-util/e-print.h
 include/evolution-${R}/e-util/e-profile-event.h
 include/evolution-${R}/e-util/e-selection.h
@@ -163,23 +158,88 @@ include/evolution-${R}/filter/e-filter-part.h
 include/evolution-${R}/filter/e-filter-rule.h
 include/evolution-${R}/filter/e-rule-context.h
 include/evolution-${R}/filter/e-rule-editor.h
+include/evolution-${R}/libart_lgpl/
+include/evolution-${R}/libart_lgpl/art_affine.h
+include/evolution-${R}/libart_lgpl/art_alphagamma.h
+include/evolution-${R}/libart_lgpl/art_bpath.h
+include/evolution-${R}/libart_lgpl/art_filterlevel.h
+include/evolution-${R}/libart_lgpl/art_gray_svp.h
+include/evolution-${R}/libart_lgpl/art_misc.h
+include/evolution-${R}/libart_lgpl/art_pathcode.h
+include/evolution-${R}/libart_lgpl/art_point.h
+include/evolution-${R}/libart_lgpl/art_rect.h
+include/evolution-${R}/libart_lgpl/art_rect_svp.h
+include/evolution-${R}/libart_lgpl/art_rect_uta.h
+include/evolution-${R}/libart_lgpl/art_render.h
+include/evolution-${R}/libart_lgpl/art_rgb.h
+include/evolution-${R}/libart_lgpl/art_rgb_affine.h
+include/evolution-${R}/libart_lgpl/art_rgb_affine_private.h
+include/evolution-${R}/libart_lgpl/art_rgb_rgba_affine.h
+include/evolution-${R}/libart_lgpl/art_rgb_svp.h
+include/evolution-${R}/libart_lgpl/art_svp.h
+include/evolution-${R}/libart_lgpl/art_svp_intersect.h
+include/evolution-${R}/libart_lgpl/art_svp_ops.h
+include/evolution-${R}/libart_lgpl/art_svp_point.h
+include/evolution-${R}/libart_lgpl/art_svp_render_aa.h
+include/evolution-${R}/libart_lgpl/art_svp_vpath.h
+include/evolution-${R}/libart_lgpl/art_svp_vpath_stroke.h
+include/evolution-${R}/libart_lgpl/art_svp_wind.h
+include/evolution-${R}/libart_lgpl/art_uta.h
+include/evolution-${R}/libart_lgpl/art_uta_rect.h
+include/evolution-${R}/libart_lgpl/art_uta_svp.h
+include/evolution-${R}/libart_lgpl/art_uta_vpath.h
+include/evolution-${R}/libart_lgpl/art_vpath.h
+include/evolution-${R}/libart_lgpl/art_vpath_bpath.h
+include/evolution-${R}/libart_lgpl/art_vpath_dash.h
+include/evolution-${R}/libart_lgpl/art_vpath_svp.h
+include/evolution-${R}/libart_lgpl/libart.h
+include/evolution-${R}/libgnomecanvas/
+include/evolution-${R}/libgnomecanvas/gailcanvas.h
+include/evolution-${R}/libgnomecanvas/gailcanvasgroup.h
+include/evolution-${R}/libgnomecanvas/gailcanvasgroupfactory.h
+include/evolution-${R}/libgnomecanvas/gailcanvasitem.h
+include/evolution-${R}/libgnomecanvas/gailcanvasitemfactory.h
+include/evolution-${R}/libgnomecanvas/gailcanvastext.h
+include/evolution-${R}/libgnomecanvas/gailcanvastextfactory.h
+include/evolution-${R}/libgnomecanvas/gailcanvaswidget.h
+include/evolution-${R}/libgnomecanvas/gailcanvaswidgetfactory.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-bpath.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-clipgroup.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-i18n.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-line.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-path-def.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-pixbuf.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-polygon.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-rect-ellipse.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-rich-text.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-shape.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-text.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-util.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-widget.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas.h
+include/evolution-${R}/libgnomecanvas/libgnomecanvas.h
 include/evolution-${R}/mail/
 include/evolution-${R}/mail/e-mail-attachment-bar.h
 include/evolution-${R}/mail/e-mail-backend.h
 include/evolution-${R}/mail/e-mail-browser.h
 include/evolution-${R}/mail/e-mail-display.h
+include/evolution-${R}/mail/e-mail-folder-pane.h
 include/evolution-${R}/mail/e-mail-label-action.h
 include/evolution-${R}/mail/e-mail-label-dialog.h
 include/evolution-${R}/mail/e-mail-label-list-store.h
 include/evolution-${R}/mail/e-mail-label-manager.h
 include/evolution-${R}/mail/e-mail-label-tree-view.h
 include/evolution-${R}/mail/e-mail-local.h
+include/evolution-${R}/mail/e-mail-message-pane.h
 include/evolution-${R}/mail/e-mail-migrate.h
+include/evolution-${R}/mail/e-mail-notebook-view.h
+include/evolution-${R}/mail/e-mail-paned-view.h
 include/evolution-${R}/mail/e-mail-reader-utils.h
 include/evolution-${R}/mail/e-mail-reader.h
 include/evolution-${R}/mail/e-mail-sidebar.h
 include/evolution-${R}/mail/e-mail-store.h
 include/evolution-${R}/mail/e-mail-tag-editor.h
+include/evolution-${R}/mail/e-mail-view.h
 include/evolution-${R}/mail/em-account-editor.h
 include/evolution-${R}/mail/em-composer-utils.h
 include/evolution-${R}/mail/em-config.h
@@ -286,9 +346,8 @@ include/evolution-${R}/misc/e-signature-manager.h
 include/evolution-${R}/misc/e-signature-preview.h
 include/evolution-${R}/misc/e-signature-script-dialog.h
 include/evolution-${R}/misc/e-signature-tree-view.h
-include/evolution-${R}/misc/e-spinner.c
-include/evolution-${R}/misc/e-spinner.h
 include/evolution-${R}/misc/e-url-entry.h
+include/evolution-${R}/misc/e-web-view-preview.h
 include/evolution-${R}/misc/e-web-view.h
 include/evolution-${R}/misc/ea-calendar-cell.h
 include/evolution-${R}/misc/ea-calendar-item.h
@@ -298,6 +357,7 @@ include/evolution-${R}/shell/
 include/evolution-${R}/shell/e-shell-backend.h
 include/evolution-${R}/shell/e-shell-common.h
 include/evolution-${R}/shell/e-shell-content.h
+include/evolution-${R}/shell/e-shell-enumtypes.h
 include/evolution-${R}/shell/e-shell-searchbar.h
 include/evolution-${R}/shell/e-shell-settings.h
 include/evolution-${R}/shell/e-shell-sidebar.h
@@ -394,62 +454,72 @@ include/evolution-${R}/text/gal-a11y-e-text-factory.h
 include/evolution-${R}/text/gal-a11y-e-text.h
 lib/evolution/
 lib/evolution/${R}/
-lib/evolution/${R}/libcomposer.a
-lib/evolution/${R}/libcomposer.la
-lib/evolution/${R}/libeabutil.a
-lib/evolution/${R}/libeabutil.la
-lib/evolution/${R}/libeconduit.a
-lib/evolution/${R}/libeconduit.la
-lib/evolution/${R}/libecontacteditor.a
-lib/evolution/${R}/libecontacteditor.la
-lib/evolution/${R}/libecontactlisteditor.a
-lib/evolution/${R}/libecontactlisteditor.la
-lib/evolution/${R}/libemformat.a
-lib/evolution/${R}/libemformat.la
-lib/evolution/${R}/libemiscwidgets.a
-lib/evolution/${R}/libemiscwidgets.la
-lib/evolution/${R}/libeshell.a
-lib/evolution/${R}/libeshell.la
-lib/evolution/${R}/libessmime.a
-lib/evolution/${R}/libessmime.la
-lib/evolution/${R}/libetable.a
-lib/evolution/${R}/libetable.la
-lib/evolution/${R}/libetext.a
-lib/evolution/${R}/libetext.la
-lib/evolution/${R}/libetimezonedialog.a
-lib/evolution/${R}/libetimezonedialog.la
-lib/evolution/${R}/libeutil.a
-lib/evolution/${R}/libeutil.la
-lib/evolution/${R}/libevolution-a11y.a
-lib/evolution/${R}/libevolution-a11y.la
-lib/evolution/${R}/libevolution-addressbook-importers.a
-lib/evolution/${R}/libevolution-addressbook-importers.la
-lib/evolution/${R}/libevolution-calendar-importers.a
-lib/evolution/${R}/libevolution-calendar-importers.la
-lib/evolution/${R}/libevolution-calendar.a
-lib/evolution/${R}/libevolution-calendar.la
-lib/evolution/${R}/libevolution-mail-importers.a
-lib/evolution/${R}/libevolution-mail-importers.la
-lib/evolution/${R}/libevolution-mail-settings.a
-lib/evolution/${R}/libevolution-mail-settings.la
-lib/evolution/${R}/libevolution-mail.a
-lib/evolution/${R}/libevolution-mail.la
-lib/evolution/${R}/libevolution-smime.a
-lib/evolution/${R}/libevolution-smime.la
-lib/evolution/${R}/libfilter.a
-lib/evolution/${R}/libfilter.la
-lib/evolution/${R}/libmenus.a
-lib/evolution/${R}/libmenus.la
-lib/evolution/${R}/modules/
+@comment lib/evolution/${R}/libart_lgpl.a
+@comment lib/evolution/${R}/libart_lgpl.la
+@comment lib/evolution/${R}/libcomposer.a
+@comment lib/evolution/${R}/libcomposer.la
+@comment lib/evolution/${R}/libeabutil.a
+@comment lib/evolution/${R}/libeabutil.la
+@comment lib/evolution/${R}/libecontacteditor.a
+@comment lib/evolution/${R}/libecontacteditor.la
+@comment lib/evolution/${R}/libecontactlisteditor.a
+@comment lib/evolution/${R}/libecontactlisteditor.la
+@comment lib/evolution/${R}/libemformat.a
+@comment lib/evolution/${R}/libemformat.la
+@comment lib/evolution/${R}/libemiscwidgets.a
+@comment lib/evolution/${R}/libemiscwidgets.la
+@comment lib/evolution/${R}/libeshell.a
+@comment lib/evolution/${R}/libeshell.la
+@comment lib/evolution/${R}/libessmime.a
+@comment lib/evolution/${R}/libessmime.la
+@comment lib/evolution/${R}/libetable.a
+@comment lib/evolution/${R}/libetable.la
+@comment lib/evolution/${R}/libetext.a
+@comment lib/evolution/${R}/libetext.la
+@comment lib/evolution/${R}/libetimezonedialog.a
+@comment lib/evolution/${R}/libetimezonedialog.la
+@comment lib/evolution/${R}/libeutil.a
+@comment lib/evolution/${R}/libeutil.la
+@comment lib/evolution/${R}/libevolution-a11y.a
+@comment lib/evolution/${R}/libevolution-a11y.la
+@comment lib/evolution/${R}/libevolution-addressbook-importers.a
+@comment lib/evolution/${R}/libevolution-addressbook-importers.la
+@comment lib/evolution/${R}/libevolution-calendar-importers.a
+@comment lib/evolution/${R}/libevolution-calendar-importers.la
+@comment lib/evolution/${R}/libevolution-calendar.a
+@comment lib/evolution/${R}/libevolution-calendar.la
+@comment lib/evolution/${R}/libevolution-mail-importers.a
+@comment lib/evolution/${R}/libevolution-mail-importers.la
+@comment lib/evolution/${R}/libevolution-mail-settings.a
+@comment lib/evolution/${R}/libevolution-mail-settings.la
+@comment lib/evolution/${R}/libevolution-mail.a
+@comment lib/evolution/${R}/libevolution-mail.la
+@comment lib/evolution/${R}/libevolution-smime.a
+@comment lib/evolution/${R}/libevolution-smime.la
+@comment lib/evolution/${R}/libfilter.a
+@comment lib/evolution/${R}/libfilter.la
+@comment lib/evolution/${R}/libgnomecanvas.a
+@comment lib/evolution/${R}/libgnomecanvas.la
+@comment lib/evolution/${R}/libmenus.a
+@comment lib/evolution/${R}/libmenus.la
+@comment lib/evolution/${R}/modules/
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.a
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.la
 @comment lib/evolution/${R}/modules/libevolution-module-calendar.a
 @comment lib/evolution/${R}/modules/libevolution-module-calendar.la
+@comment lib/evolution/${R}/modules/libevolution-module-composer-autosave.a
+@comment lib/evolution/${R}/modules/libevolution-module-composer-autosave.la
 @comment lib/evolution/${R}/modules/libevolution-module-mail.a
 @comment lib/evolution/${R}/modules/libevolution-module-mail.la
+@comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.a
+@comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
+@comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
+@comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
 lib/evolution/${R}/plugins/
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a
@@ -466,8 +536,6 @@ lib/evolution/${R}/plugins/
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
@@ -499,7 +567,6 @@ lib/evolution/${R}/plugins/org-gnome-compose-send-options.xml
 lib/evolution/${R}/plugins/org-gnome-default-source.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-google.eplug
-lib/evolution/${R}/plugins/org-gnome-evolution-startup-wizard.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-webdav.eplug
 lib/evolution/${R}/plugins/org-gnome-groupwise-features.eplug
 lib/evolution/${R}/plugins/org-gnome-image-inline.eplug
@@ -561,6 +628,10 @@ share/evolution/${R}/default/hu/
 share/evolution/${R}/default/hu/mail/
 share/evolution/${R}/default/hu/mail/local/
 share/evolution/${R}/default/hu/mail/local/Inbox
+share/evolution/${R}/default/id/
+share/evolution/${R}/default/id/mail/
+share/evolution/${R}/default/id/mail/local/
+share/evolution/${R}/default/id/mail/local/Inbox
 share/evolution/${R}/default/it/
 share/evolution/${R}/default/it/mail/
 share/evolution/${R}/default/it/mail/local/
@@ -688,6 +759,8 @@ share/evolution/${R}/icons/hicolor/16x16/actions/stock_new-24h-appointment.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_new-meeting.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_notes.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_people.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_select-column.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_select-row.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_shared-by-me.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_shared-to-me.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_show-all.png
@@ -707,6 +780,12 @@ share/evolution/${R}/icons/hicolor/16x16/actions/view-calendar-week.png
 share/evolution/${R}/icons/hicolor/16x16/actions/view-calendar-workweek.png
 share/evolution/${R}/icons/hicolor/16x16/apps/
 share/evolution/${R}/icons/hicolor/16x16/apps/contact-editor.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-aim.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-icq.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-jabber.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-msn.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-nov.png
+share/evolution/${R}/icons/hicolor/16x16/apps/im-yahoo.png
 share/evolution/${R}/icons/hicolor/16x16/places/
 share/evolution/${R}/icons/hicolor/16x16/places/mail-inbox.png
 share/evolution/${R}/icons/hicolor/16x16/places/mail-outbox.png
@@ -734,6 +813,12 @@ share/evolution/${R}/icons/hicolor/22x22/actions/view-calendar-week.png
 share/evolution/${R}/icons/hicolor/22x22/actions/view-calendar-workweek.png
 share/evolution/${R}/icons/hicolor/22x22/apps/
 share/evolution/${R}/icons/hicolor/22x22/apps/contact-editor.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-aim.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-icq.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-jabber.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-msn.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-nov.png
+share/evolution/${R}/icons/hicolor/22x22/apps/im-yahoo.png
 share/evolution/${R}/icons/hicolor/22x22/places/
 share/evolution/${R}/icons/hicolor/22x22/places/mail-inbox.png
 share/evolution/${R}/icons/hicolor/22x22/places/mail-outbox.png
@@ -753,6 +838,8 @@ share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-24h-appointment.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-meeting.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_notes.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_people.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_select-column.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_select-row.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_shared-by-me.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_shared-to-me.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_show-all.png
@@ -771,6 +858,12 @@ share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-week.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-workweek.png
 share/evolution/${R}/icons/hicolor/24x24/apps/
 share/evolution/${R}/icons/hicolor/24x24/apps/contact-editor.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-aim.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-icq.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-jabber.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-msn.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-nov.png
+share/evolution/${R}/icons/hicolor/24x24/apps/im-yahoo.png
 share/evolution/${R}/icons/hicolor/24x24/places/
 share/evolution/${R}/icons/hicolor/24x24/places/mail-inbox.png
 share/evolution/${R}/icons/hicolor/24x24/places/mail-outbox.png
@@ -823,15 +916,225 @@ share/evolution/${R}/icons/hicolor/scalable/actions/view-calendar-list.svg
 share/evolution/${R}/icons/hicolor/scalable/actions/view-calendar-month.svg
 share/evolution/${R}/icons/hicolor/scalable/actions/view-calendar-week.svg
 share/evolution/${R}/icons/hicolor/scalable/actions/view-calendar-workweek.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/
+share/evolution/${R}/icons/hicolor/scalable/apps/im-aim.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/im-icq.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/im-jabber.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/im-msn.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/im-nov.svg
+share/evolution/${R}/icons/hicolor/scalable/apps/im-yahoo.svg
 share/evolution/${R}/images/
 share/evolution/${R}/images/minus.png
 share/evolution/${R}/images/plus.png
 share/evolution/${R}/images/world_map-960.png
+share/evolution/${R}/mail-autoconfig/
+share/evolution/${R}/mail-autoconfig/a.memail.jp
+share/evolution/${R}/mail-autoconfig/abc.plala.or.jp
+share/evolution/${R}/mail-autoconfig/agate.plala.or.jp
+share/evolution/${R}/mail-autoconfig/amail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/amber.plala.or.jp
+share/evolution/${R}/mail-autoconfig/amethyst.broba.cc
+share/evolution/${R}/mail-autoconfig/aol.com
+share/evolution/${R}/mail-autoconfig/apost.plala.or.jp
+share/evolution/${R}/mail-autoconfig/aqua.plala.or.jp
+share/evolution/${R}/mail-autoconfig/arcor.de
+share/evolution/${R}/mail-autoconfig/ballade.plala.or.jp
+share/evolution/${R}/mail-autoconfig/bay.gunmanet.ne.jp
+share/evolution/${R}/mail-autoconfig/bb-niigata.jp
+share/evolution/${R}/mail-autoconfig/bc.iij4u.or.jp
+share/evolution/${R}/mail-autoconfig/beige.plala.or.jp
+share/evolution/${R}/mail-autoconfig/blue.plala.or.jp
+share/evolution/${R}/mail-autoconfig/bmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/bolero.plala.or.jp
+share/evolution/${R}/mail-autoconfig/bpost.plala.or.jp
+share/evolution/${R}/mail-autoconfig/brown.plala.or.jp
+share/evolution/${R}/mail-autoconfig/camel.plala.or.jp
+share/evolution/${R}/mail-autoconfig/cameo.plala.or.jp
+share/evolution/${R}/mail-autoconfig/cc9.ne.jp
+share/evolution/${R}/mail-autoconfig/cek.ne.jp
+share/evolution/${R}/mail-autoconfig/clio.ne.jp
+share/evolution/${R}/mail-autoconfig/cmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/co1.wind.jp
+share/evolution/${R}/mail-autoconfig/co2.wind.jp
+share/evolution/${R}/mail-autoconfig/co3.wind.jp
+share/evolution/${R}/mail-autoconfig/cocoa.plala.or.jp
+share/evolution/${R}/mail-autoconfig/coda.plala.or.jp
+share/evolution/${R}/mail-autoconfig/comcast.net
+share/evolution/${R}/mail-autoconfig/concerto.plala.or.jp
+share/evolution/${R}/mail-autoconfig/coral.plala.or.jp
+share/evolution/${R}/mail-autoconfig/courante.plala.or.jp
+share/evolution/${R}/mail-autoconfig/cpost.plala.or.jp
+share/evolution/${R}/mail-autoconfig/cream.plala.or.jp
+share/evolution/${R}/mail-autoconfig/dan.gunmanet.ne.jp
+share/evolution/${R}/mail-autoconfig/dance.plala.or.jp
+share/evolution/${R}/mail-autoconfig/dmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/e23.jp
+share/evolution/${R}/mail-autoconfig/earthlink.net
+share/evolution/${R}/mail-autoconfig/ebony.plala.or.jp
+share/evolution/${R}/mail-autoconfig/email.plala.or.jp
+share/evolution/${R}/mail-autoconfig/fantasy.plala.or.jp
+share/evolution/${R}/mail-autoconfig/flamenco.plala.or.jp
+share/evolution/${R}/mail-autoconfig/fmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/free.fr
+share/evolution/${R}/mail-autoconfig/freenet.de
+share/evolution/${R}/mail-autoconfig/fuga.plala.or.jp
+share/evolution/${R}/mail-autoconfig/gmail.com
+share/evolution/${R}/mail-autoconfig/gmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/gmx.com
+share/evolution/${R}/mail-autoconfig/gmx.net
+share/evolution/${R}/mail-autoconfig/go.tvm.ne.jp
+share/evolution/${R}/mail-autoconfig/goo.jp
+share/evolution/${R}/mail-autoconfig/googlemail.com
+share/evolution/${R}/mail-autoconfig/grape.plala.or.jp
+share/evolution/${R}/mail-autoconfig/gray.plala.or.jp
+share/evolution/${R}/mail-autoconfig/hal.ne.jp
+share/evolution/${R}/mail-autoconfig/hana.or.jp
+share/evolution/${R}/mail-autoconfig/hotmail.co.jp
+share/evolution/${R}/mail-autoconfig/hotmail.co.uk
+share/evolution/${R}/mail-autoconfig/hotmail.com
+share/evolution/${R}/mail-autoconfig/hotmail.de
+share/evolution/${R}/mail-autoconfig/hotmail.fr
+share/evolution/${R}/mail-autoconfig/hotmail.it
+share/evolution/${R}/mail-autoconfig/ic-net.or.jp
+share/evolution/${R}/mail-autoconfig/iiyama-catv.ne.jp
+share/evolution/${R}/mail-autoconfig/imail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/inbox.lt
+share/evolution/${R}/mail-autoconfig/inbox.lv
+share/evolution/${R}/mail-autoconfig/indigo.plala.or.jp
+share/evolution/${R}/mail-autoconfig/inet-shibata.or.jp
+share/evolution/${R}/mail-autoconfig/ivory.plala.or.jp
+share/evolution/${R}/mail-autoconfig/iwafune.ne.jp
+share/evolution/${R}/mail-autoconfig/jade.plala.or.jp
+share/evolution/${R}/mail-autoconfig/janis.or.jp
+share/evolution/${R}/mail-autoconfig/jet.ne.jp
+share/evolution/${R}/mail-autoconfig/ji.jet.ne.jp
+share/evolution/${R}/mail-autoconfig/jmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/k1.wind.jp
+share/evolution/${R}/mail-autoconfig/khaki.plala.or.jp
+share/evolution/${R}/mail-autoconfig/kmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/kokuyou.ne.jp
+share/evolution/${R}/mail-autoconfig/lapis.plala.or.jp
+share/evolution/${R}/mail-autoconfig/laposte.net
+share/evolution/${R}/mail-autoconfig/lemon.plala.or.jp
+share/evolution/${R}/mail-autoconfig/lilac.plala.or.jp
+share/evolution/${R}/mail-autoconfig/lime.plala.or.jp
+share/evolution/${R}/mail-autoconfig/live.co.jp
+share/evolution/${R}/mail-autoconfig/live.co.uk
+share/evolution/${R}/mail-autoconfig/live.com
+share/evolution/${R}/mail-autoconfig/live.de
+share/evolution/${R}/mail-autoconfig/live.fr
+share/evolution/${R}/mail-autoconfig/live.it
+share/evolution/${R}/mail-autoconfig/ma100.tiki.ne.jp
+share/evolution/${R}/mail-autoconfig/mac.com
+share/evolution/${R}/mail-autoconfig/mahoroba.ne.jp
+share/evolution/${R}/mail-autoconfig/mail.gunmanet.jp
+share/evolution/${R}/mail-autoconfig/mail.iwafune.ne.jp
+share/evolution/${R}/mail-autoconfig/maroon.plala.or.jp
+share/evolution/${R}/mail-autoconfig/me.com
+share/evolution/${R}/mail-autoconfig/minuet.plala.or.jp
+share/evolution/${R}/mail-autoconfig/ml.murakami.ne.jp
+share/evolution/${R}/mail-autoconfig/ml.shibata.ne.jp
+share/evolution/${R}/mail-autoconfig/mnet.ne.jp
+share/evolution/${R}/mail-autoconfig/mopera.net
+share/evolution/${R}/mail-autoconfig/msn.com
+share/evolution/${R}/mail-autoconfig/navy.plala.or.jp
+share/evolution/${R}/mail-autoconfig/nifty.com
+share/evolution/${R}/mail-autoconfig/nsat.jp
+share/evolution/${R}/mail-autoconfig/olive.plala.or.jp
+share/evolution/${R}/mail-autoconfig/online.de
+share/evolution/${R}/mail-autoconfig/opal.plala.or.jp
+share/evolution/${R}/mail-autoconfig/orange.fr
+share/evolution/${R}/mail-autoconfig/orange.plala.or.jp
+share/evolution/${R}/mail-autoconfig/orchid.plala.or.jp
+share/evolution/${R}/mail-autoconfig/pal.kijimadaira.jp
+share/evolution/${R}/mail-autoconfig/palette.plala.or.jp
+share/evolution/${R}/mail-autoconfig/parabox.or.jp
+share/evolution/${R}/mail-autoconfig/peach.plala.or.jp
+share/evolution/${R}/mail-autoconfig/peoplepc.com
+share/evolution/${R}/mail-autoconfig/plum.plala.or.jp
+share/evolution/${R}/mail-autoconfig/po.dcn.ne.jp
+share/evolution/${R}/mail-autoconfig/po.wind.jp
+share/evolution/${R}/mail-autoconfig/polka.plala.or.jp
+share/evolution/${R}/mail-autoconfig/pop.shibata.ne.jp
+share/evolution/${R}/mail-autoconfig/purple.plala.or.jp
+share/evolution/${R}/mail-autoconfig/rainbow.plala.or.jp
+share/evolution/${R}/mail-autoconfig/red.plala.or.jp
+share/evolution/${R}/mail-autoconfig/rmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/rondo.plala.or.jp
+share/evolution/${R}/mail-autoconfig/rose.plala.or.jp
+share/evolution/${R}/mail-autoconfig/rouge.plala.or.jp
+share/evolution/${R}/mail-autoconfig/ruby.plala.or.jp
+share/evolution/${R}/mail-autoconfig/sakunet.ne.jp
+share/evolution/${R}/mail-autoconfig/sea.plala.or.jp
+share/evolution/${R}/mail-autoconfig/sepia.plala.or.jp
+share/evolution/${R}/mail-autoconfig/serenade.plala.or.jp
+share/evolution/${R}/mail-autoconfig/silk.plala.or.jp
+share/evolution/${R}/mail-autoconfig/silver.plala.or.jp
+share/evolution/${R}/mail-autoconfig/sky.plala.or.jp
+share/evolution/${R}/mail-autoconfig/smail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/snow.plala.or.jp
+share/evolution/${R}/mail-autoconfig/so.wind.ne.jp
+share/evolution/${R}/mail-autoconfig/sonata.plala.or.jp
+share/evolution/${R}/mail-autoconfig/suite.plala.or.jp
+share/evolution/${R}/mail-autoconfig/symphony.plala.or.jp
+share/evolution/${R}/mail-autoconfig/t-online.de
+share/evolution/${R}/mail-autoconfig/taupe.plala.or.jp
+share/evolution/${R}/mail-autoconfig/tiki.ne.jp
+share/evolution/${R}/mail-autoconfig/tmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/toccata.plala.or.jp
+share/evolution/${R}/mail-autoconfig/topaz.plala.or.jp
+share/evolution/${R}/mail-autoconfig/trio.plala.or.jp
+share/evolution/${R}/mail-autoconfig/umail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/verizon.net
+share/evolution/${R}/mail-autoconfig/violet.plala.or.jp
+share/evolution/${R}/mail-autoconfig/vm.aikis.or.jp
+share/evolution/${R}/mail-autoconfig/vmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/vp.tiki.ne.jp
+share/evolution/${R}/mail-autoconfig/waltz.plala.or.jp
+share/evolution/${R}/mail-autoconfig/wanadoo.fr
+share/evolution/${R}/mail-autoconfig/wave.plala.or.jp
+share/evolution/${R}/mail-autoconfig/web.de
+share/evolution/${R}/mail-autoconfig/white.plala.or.jp
+share/evolution/${R}/mail-autoconfig/wine.plala.or.jp
+share/evolution/${R}/mail-autoconfig/wmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/xmail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/xp.wind.jp
+share/evolution/${R}/mail-autoconfig/xpost.plala.or.jp
+share/evolution/${R}/mail-autoconfig/xs4all.nl
+share/evolution/${R}/mail-autoconfig/yahoo.com
+share/evolution/${R}/mail-autoconfig/ybb.ne.jp
+share/evolution/${R}/mail-autoconfig/yellow.plala.or.jp
+share/evolution/${R}/mail-autoconfig/ymail.plala.or.jp
+share/evolution/${R}/mail-autoconfig/ypost.plala.or.jp
+share/evolution/${R}/mail-autoconfig/zmail.plala.or.jp
 share/evolution/${R}/memotypes.xml
 share/evolution/${R}/searchtypes.xml
 share/evolution/${R}/sounds/
 share/evolution/${R}/sounds/default_alarm.wav
 share/evolution/${R}/tasktypes.xml
+share/evolution/${R}/theme/
+share/evolution/${R}/theme/close-on-tab-hover.png
+share/evolution/${R}/theme/close-on-tab.png
+share/evolution/${R}/theme/default.css
+share/evolution/${R}/theme/preview-tab-active-private.png
+share/evolution/${R}/theme/preview-tab-active.png
+share/evolution/${R}/theme/preview-tab-hover-private.png
+share/evolution/${R}/theme/preview-tab-hover.png
+share/evolution/${R}/theme/preview-tab-inactive-private.png
+share/evolution/${R}/theme/preview-tab-inactive.png
+share/evolution/${R}/theme/tab-active-private.png
+share/evolution/${R}/theme/tab-active.png
+share/evolution/${R}/theme/tab-add-hover.png
+share/evolution/${R}/theme/tab-add.png
+share/evolution/${R}/theme/tab-bar-background.png
+share/evolution/${R}/theme/tab-inactive-hover-private.png
+share/evolution/${R}/theme/tab-inactive-hover.png
+share/evolution/${R}/theme/tab-inactive-private.png
+share/evolution/${R}/theme/tab-inactive.png
+share/evolution/${R}/theme/tab-switcher-close-hover.png
+share/evolution/${R}/theme/tab-switcher-close.png
+share/evolution/${R}/theme/tab-switcher-hover.png
+share/evolution/${R}/theme/tab-switcher.png
 share/evolution/${R}/ui/
 share/evolution/${R}/ui/alarm-dialog.ui
 share/evolution/${R}/ui/alarm-list-dialog.ui
@@ -1458,6 +1761,74 @@ share/gnome/help/evolution/fr/figures/quick_add_a.png
 share/gnome/help/evolution/fr/figures/quick_reference.png
 share/gnome/help/evolution/fr/figures/stock_search.png
 share/gnome/help/evolution/fr/figures/ver_view_a.png
+share/gnome/help/evolution/gl/
+share/gnome/help/evolution/gl/evolution.xml
+share/gnome/help/evolution/gl/figures/
+share/gnome/help/evolution/gl/figures/attach_reminder_a.png
+share/gnome/help/evolution/gl/figures/calendar_preference_display.png
+share/gnome/help/evolution/gl/figures/categories_a.png
+share/gnome/help/evolution/gl/figures/contacts_mainwindow_a.png
+share/gnome/help/evolution/gl/figures/delgt-add.png
+share/gnome/help/evolution/gl/figures/evo_Wcal_prop_a.png
+share/gnome/help/evolution/gl/figures/evo_adv_search_a.png
+share/gnome/help/evolution/gl/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/gl/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/gl/figures/evo_backup_warning.png
+share/gnome/help/evolution/gl/figures/evo_blink.png
+share/gnome/help/evolution/gl/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/gl/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/gl/figures/evo_calstatus_a.png
+share/gnome/help/evolution/gl/figures/evo_caltasks_a.png
+share/gnome/help/evolution/gl/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/gl/figures/evo_delegate_permission_a.png
+share/gnome/help/evolution/gl/figures/evo_dialog-info.png
+share/gnome/help/evolution/gl/figures/evo_dialog-warning.png
+share/gnome/help/evolution/gl/figures/evo_edit_search.png
+share/gnome/help/evolution/gl/figures/evo_exchng_mapi.png
+share/gnome/help/evolution/gl/figures/evo_flag_follow_up_a.png
+share/gnome/help/evolution/gl/figures/evo_gwreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_gwstatustrack.png
+share/gnome/help/evolution/gl/figures/evo_imapreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_junk_a.png
+share/gnome/help/evolution/gl/figures/evo_label_a.png
+share/gnome/help/evolution/gl/figures/evo_labels_a.png
+share/gnome/help/evolution/gl/figures/evo_mail_a.png
+share/gnome/help/evolution/gl/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/gl/figures/evo_maildirreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_mboxreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_memo_a.png
+share/gnome/help/evolution/gl/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_newmail.png
+share/gnome/help/evolution/gl/figures/evo_newmess_a.png
+share/gnome/help/evolution/gl/figures/evo_offline.png
+share/gnome/help/evolution/gl/figures/evo_popreceive_a.png
+share/gnome/help/evolution/gl/figures/evo_proxyadd_a.png
+share/gnome/help/evolution/gl/figures/evo_rule_a.png
+share/gnome/help/evolution/gl/figures/evo_send_option_a.png
+share/gnome/help/evolution/gl/figures/evo_send_setup_a.png
+share/gnome/help/evolution/gl/figures/evo_sendstatus_a.png
+share/gnome/help/evolution/gl/figures/evo_shd_memo_a.png
+share/gnome/help/evolution/gl/figures/evo_usereceive_a.png
+share/gnome/help/evolution/gl/figures/evolution_contact_preference.png
+share/gnome/help/evolution/gl/figures/evolution_mail_preference.png
+share/gnome/help/evolution/gl/figures/exchng-rec-mails.png
+share/gnome/help/evolution/gl/figures/exchng-rec-options.png
+share/gnome/help/evolution/gl/figures/filter-new-fig.png
+share/gnome/help/evolution/gl/figures/folder_plus.png
+share/gnome/help/evolution/gl/figures/folder_size_mapi.png
+share/gnome/help/evolution/gl/figures/folder_size_preference.png
+share/gnome/help/evolution/gl/figures/google_cal_view.png
+share/gnome/help/evolution/gl/figures/groupwise_resend.png
+share/gnome/help/evolution/gl/figures/groupwise_resend_retract.png
+share/gnome/help/evolution/gl/figures/local_ics_calendar.png
+share/gnome/help/evolution/gl/figures/mailer_preferences.png
+share/gnome/help/evolution/gl/figures/meeting.png
+share/gnome/help/evolution/gl/figures/minus.png
+share/gnome/help/evolution/gl/figures/plus.png
+share/gnome/help/evolution/gl/figures/quick_add_a.png
+share/gnome/help/evolution/gl/figures/quick_reference.png
+share/gnome/help/evolution/gl/figures/stock_search.png
+share/gnome/help/evolution/gl/figures/ver_view_a.png
 share/gnome/help/evolution/mk/
 share/gnome/help/evolution/mk/evolution.xml
 share/gnome/help/evolution/mk/figures/
@@ -1730,7 +2101,78 @@ share/gnome/help/evolution/sv/figures/quick_add_a.png
 share/gnome/help/evolution/sv/figures/quick_reference.png
 share/gnome/help/evolution/sv/figures/stock_search.png
 share/gnome/help/evolution/sv/figures/ver_view_a.png
+share/gnome/help/evolution/zh_CN/
+share/gnome/help/evolution/zh_CN/evolution.xml
+share/gnome/help/evolution/zh_CN/figures/
+share/gnome/help/evolution/zh_CN/figures/attach_reminder_a.png
+share/gnome/help/evolution/zh_CN/figures/calendar_preference_display.png
+share/gnome/help/evolution/zh_CN/figures/categories_a.png
+share/gnome/help/evolution/zh_CN/figures/contacts_mainwindow_a.png
+share/gnome/help/evolution/zh_CN/figures/delgt-add.png
+share/gnome/help/evolution/zh_CN/figures/evo_Wcal_prop_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_adv_search_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/zh_CN/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/zh_CN/figures/evo_backup_warning.png
+share/gnome/help/evolution/zh_CN/figures/evo_blink.png
+share/gnome/help/evolution/zh_CN/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/zh_CN/figures/evo_calstatus_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_caltasks_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_delegate_permission_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_dialog-info.png
+share/gnome/help/evolution/zh_CN/figures/evo_dialog-warning.png
+share/gnome/help/evolution/zh_CN/figures/evo_edit_search.png
+share/gnome/help/evolution/zh_CN/figures/evo_exchng_mapi.png
+share/gnome/help/evolution/zh_CN/figures/evo_flag_follow_up_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_gwreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_gwstatustrack.png
+share/gnome/help/evolution/zh_CN/figures/evo_imapreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_junk_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_label_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_labels_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_mail_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_maildirreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_mboxreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_memo_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_newmail.png
+share/gnome/help/evolution/zh_CN/figures/evo_newmess_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_offline.png
+share/gnome/help/evolution/zh_CN/figures/evo_popreceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_proxyadd_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_rule_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_send_option_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_send_setup_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_sendstatus_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_shd_memo_a.png
+share/gnome/help/evolution/zh_CN/figures/evo_usereceive_a.png
+share/gnome/help/evolution/zh_CN/figures/evolution_contact_preference.png
+share/gnome/help/evolution/zh_CN/figures/evolution_mail_preference.png
+share/gnome/help/evolution/zh_CN/figures/exchng-rec-mails.png
+share/gnome/help/evolution/zh_CN/figures/exchng-rec-options.png
+share/gnome/help/evolution/zh_CN/figures/filter-new-fig.png
+share/gnome/help/evolution/zh_CN/figures/folder_plus.png
+share/gnome/help/evolution/zh_CN/figures/folder_size_mapi.png
+share/gnome/help/evolution/zh_CN/figures/folder_size_preference.png
+share/gnome/help/evolution/zh_CN/figures/google_cal_view.png
+share/gnome/help/evolution/zh_CN/figures/groupwise_resend.png
+share/gnome/help/evolution/zh_CN/figures/groupwise_resend_retract.png
+share/gnome/help/evolution/zh_CN/figures/local_ics_calendar.png
+share/gnome/help/evolution/zh_CN/figures/mailer_preferences.png
+share/gnome/help/evolution/zh_CN/figures/meeting.png
+share/gnome/help/evolution/zh_CN/figures/minus.png
+share/gnome/help/evolution/zh_CN/figures/plus.png
+share/gnome/help/evolution/zh_CN/figures/quick_add_a.png
+share/gnome/help/evolution/zh_CN/figures/quick_reference.png
+share/gnome/help/evolution/zh_CN/figures/stock_search.png
+share/gnome/help/evolution/zh_CN/figures/ver_view_a.png
 share/gtk-doc/html/eshell/
+share/gtk-doc/html/eshell/EExtensible.html
+share/gtk-doc/html/eshell/EExtension.html
+share/gtk-doc/html/eshell/EModule.html
 share/gtk-doc/html/eshell/EShell.html
 share/gtk-doc/html/eshell/EShellBackend.html
 share/gtk-doc/html/eshell/EShellContent.html
@@ -1745,20 +2187,20 @@ share/gtk-doc/html/eshell/ch01.html
 share/gtk-doc/html/eshell/ch02.html
 share/gtk-doc/html/eshell/ch03.html
 share/gtk-doc/html/eshell/ch04.html
+share/gtk-doc/html/eshell/ch05.html
 share/gtk-doc/html/eshell/eshell-Action-Groups.html
 share/gtk-doc/html/eshell/eshell-Bit-Arrays-(Legacy).html
 share/gtk-doc/html/eshell/eshell-Categories.html
 share/gtk-doc/html/eshell/eshell-Container-for-Signatures.html
 share/gtk-doc/html/eshell/eshell-Date-and-Time-Formatting.html
 share/gtk-doc/html/eshell/eshell-Dialog-Utilities-(Legacy).html
+share/gtk-doc/html/eshell/eshell-EPoolv.html
 share/gtk-doc/html/eshell/eshell-Error-Logging.html
 share/gtk-doc/html/eshell/eshell-GConf-Bridge.html
 share/gtk-doc/html/eshell/eshell-GObject-Property-Bindings.html
-share/gtk-doc/html/eshell/eshell-Generic-Module-Loader.html
 share/gtk-doc/html/eshell/eshell-Icon-Utilities-(Legacy).html
 share/gtk-doc/html/eshell/eshell-Mail-Accounts.html
 share/gtk-doc/html/eshell/eshell-Miscellaneous-Utilities.html
-share/gtk-doc/html/eshell/eshell-More-Signature-Utilities.html
 share/gtk-doc/html/eshell/eshell-Personalized-Signatures.html
 share/gtk-doc/html/eshell/eshell-Printing.html
 share/gtk-doc/html/eshell/eshell-Reading-and-Writing-XML.html
@@ -1767,6 +2209,7 @@ share/gtk-doc/html/eshell/eshell-Shell-Actions.html
 share/gtk-doc/html/eshell/eshell-Shell-Utilities.html
 share/gtk-doc/html/eshell/eshell-Text-to-HTML-Conversion.html
 share/gtk-doc/html/eshell/eshell-User-Alert-Handling.html
+share/gtk-doc/html/eshell/eshell-e-signature-utils.html
 share/gtk-doc/html/eshell/eshell.devhelp
 share/gtk-doc/html/eshell/eshell.devhelp2
 share/gtk-doc/html/eshell/home.png
@@ -1804,6 +2247,7 @@ share/locale/ar/LC_MESSAGES/evolution-${R}.mo
 share/locale/as/LC_MESSAGES/evolution-${R}.mo
 share/locale/ast/LC_MESSAGES/evolution-${R}.mo
 share/locale/az/LC_MESSAGES/evolution-${R}.mo
+share/locale/be/LC_MESSAGES/evolution-${R}.mo
 share/locale/be@latin/LC_MESSAGES/evolution-${R}.mo
 share/locale/bg/LC_MESSAGES/evolution-${R}.mo
 share/locale/bn/LC_MESSAGES/evolution-${R}.mo
@@ -1897,10 +2341,12 @@ share/omf/evolution/evolution-en_GB.omf
 share/omf/evolution/evolution-es.omf
 share/omf/evolution/evolution-eu.omf
 share/omf/evolution/evolution-fr.omf
+share/omf/evolution/evolution-gl.omf
 share/omf/evolution/evolution-mk.omf
 share/omf/evolution/evolution-oc.omf
 share/omf/evolution/evolution-ru.omf
 share/omf/evolution/evolution-sv.omf
+share/omf/evolution/evolution-zh_CN.omf
 @unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/evolution/eplugin/disabled
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/

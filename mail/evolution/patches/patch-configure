@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2010/06/21 05:17:04 ajacoutot Exp $
---- configure.orig	Tue May 18 14:44:32 2010
-+++ configure	Sun Jun 20 20:51:40 2010
-@@ -4457,8 +4457,6 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+$OpenBSD: patch-configure,v 1.17 2010/09/30 08:01:26 ajacoutot Exp $
+--- configure.orig	Mon Sep 27 15:09:56 2010
++++ configure	Wed Sep 29 19:20:37 2010
+@@ -4533,8 +4533,6 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.16 2010/06/21 05:17:04 ajacoutot Exp $
  # Make sure we can run config.sub.
  $SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
    as_fn_error "cannot run $SHELL $ac_aux_dir/config.sub" "$LINENO" 5
-@@ -16034,9 +16032,6 @@ LIBS=$ac_check_lib_save_LIBS
+@@ -16224,9 +16222,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_resolv_res_query" >&5
  $as_echo "$ac_cv_lib_resolv_res_query" >&6; }
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure,v 1.16 2010/06/21 05:17:04 ajacoutot Exp $
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for bind in -lsocket" >&5
  $as_echo_n "checking for bind in -lsocket... " >&6; }
-@@ -16816,7 +16811,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+@@ -16642,7 +16637,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		LIBS_save="$LIBS"
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"

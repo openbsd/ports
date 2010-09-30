@@ -1,6 +1,6 @@
-$OpenBSD: patch-mail_em-utils_h,v 1.3 2010/04/22 16:30:02 jasper Exp $
---- mail/em-utils.h.orig	Thu Apr 22 12:38:49 2010
-+++ mail/em-utils.h	Thu Apr 22 12:39:00 2010
+$OpenBSD: patch-mail_em-utils_h,v 1.4 2010/09/30 08:01:26 ajacoutot Exp $
+--- mail/em-utils.h.orig	Mon Sep 13 14:18:10 2010
++++ mail/em-utils.h	Wed Sep 29 19:21:20 2010
 @@ -23,8 +23,8 @@
  #ifndef __EM_UTILS_H__
  #define __EM_UTILS_H__
@@ -8,6 +8,6 @@ $OpenBSD: patch-mail_em-utils_h,v 1.3 2010/04/22 16:30:02 jasper Exp $
 -#include <gtk/gtk.h>
  #include <sys/types.h>
 +#include <gtk/gtk.h>
- #include <camel/camel-exception.h>
- #include <camel/camel-folder.h>
- #include <camel/camel-internet-address.h>
+ #include <camel/camel.h>
+ 
+ #include <mail/e-mail-reader.h>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.3 2010/04/22 16:30:02 jasper Exp $
---- plugins/sa-junk-plugin/em-junk-filter.c.orig	Mon Nov 30 06:19:29 2009
-+++ plugins/sa-junk-plugin/em-junk-filter.c	Thu Apr 22 12:53:49 2010
-@@ -87,8 +87,8 @@ static volatile gboolean em_junk_sa_local_only;
+$OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.4 2010/09/30 08:01:26 ajacoutot Exp $
+--- plugins/sa-junk-plugin/em-junk-filter.c.orig	Mon Sep 13 14:18:11 2010
++++ plugins/sa-junk-plugin/em-junk-filter.c	Wed Sep 29 19:20:37 2010
+@@ -82,8 +82,8 @@ static volatile gboolean em_junk_sa_local_only;
  static volatile gboolean em_junk_sa_use_daemon;
  static gchar * em_junk_sa_preferred_socket_path;
  
@@ -11,4 +11,4 @@ $OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.3 2010/04/22 16:30:0
 +static const gchar *em_junk_sa_spamd_binaries [4] = {"spamd", "${LOCALBASE}/bin/spamd", "/usr/sbin/spamd", NULL};
  
  #define SPAMD_RESTARTS_SIZE 8
- static time_t em_junk_sa_spamd_restarts [SPAMD_RESTARTS_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0};
+ static time_t em_junk_sa_spamd_restarts[SPAMD_RESTARTS_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0};

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-plugins,v 1.7 2010/04/25 08:33:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.8 2010/09/30 08:01:26 ajacoutot Exp $
 %%SHARED%%
 @comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-default-mailer.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-default-mailer.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-dbx-import.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-dbx-import.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
@@ -28,7 +28,7 @@
 @comment lib/evolution/${R}/plugins/liborg-gnome-templates.la
 lib/evolution/${R}/plugins/org-gnome-audio-inline.eplug
 lib/evolution/${R}/plugins/org-gnome-backup-restore.eplug
-lib/evolution/${R}/plugins/org-gnome-default-mailer.eplug
+lib/evolution/${R}/plugins/org-gnome-dbx-import.eplug
 lib/evolution/${R}/plugins/org-gnome-email-custom-header.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-attachment-reminder.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-bbdb.eplug
@@ -42,7 +42,6 @@ lib/evolution/${R}/plugins/org-gnome-templates.eplug
 @bin libexec/evolution/${R}/evolution-backup
 share/evolution/${R}/errors/org-gnome-attachment-reminder.error
 share/evolution/${R}/errors/org-gnome-backup-restore.error
-share/evolution/${R}/errors/org-gnome-default-mailer.error
 share/evolution/${R}/errors/org-gnome-mailing-list-actions.error
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/apps-evolution-attachment-reminder.schemas
