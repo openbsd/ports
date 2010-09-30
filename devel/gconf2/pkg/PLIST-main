@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/08/02 07:25:50 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/09/30 07:32:49 ajacoutot Exp $
 @pkgpath devel/gconf2
 %%SHARED%%
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
@@ -6,6 +6,8 @@
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.system/*
 @bin bin/gconf-merge-tree
 @bin bin/gconftool-2
+@bin bin/gsettings-data-convert
+bin/gsettings-schema-convert
 include/gconf/
 include/gconf/2/
 include/gconf/2/gconf/
@@ -20,10 +22,14 @@ include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
 lib/GConf/
 lib/GConf/2/
-lib/GConf/2/libgconfbackend-oldxml.a
-lib/GConf/2/libgconfbackend-oldxml.la
-lib/GConf/2/libgconfbackend-xml.a
-lib/GConf/2/libgconfbackend-xml.la
+@comment lib/GConf/2/libgconfbackend-oldxml.a
+@comment lib/GConf/2/libgconfbackend-oldxml.la
+@comment lib/GConf/2/libgconfbackend-xml.a
+@comment lib/GConf/2/libgconfbackend-xml.la
+lib/gio/
+lib/gio/modules/
+@comment lib/gio/modules/libgsettingsgconfbackend.a
+@comment lib/gio/modules/libgsettingsgconfbackend.la
 lib/libgconf-2.a
 lib/libgconf-2.la
 lib/pkgconfig/
@@ -31,6 +37,8 @@ lib/pkgconfig/gconf-2.0.pc
 @bin libexec/gconf-sanity-check-2
 @bin libexec/gconfd-2
 @man man/man1/gconftool-2.1
+@man man/man1/gsettings-data-convert.1
+@man man/man1/gsettings-schema-convert.1
 share/aclocal/gconf-2.m4
 share/dbus-1/
 share/dbus-1/services/
@@ -47,13 +55,19 @@ share/examples/gconf2/gconf.xml.defaults/
 @sample /var/db/gconf/gconf.xml.defaults/
 share/examples/gconf2/gconf.xml.mandatory/
 @sample /var/db/gconf/gconf.xml.mandatory/
+share/examples/gconf2/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/gconf2/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/gconf2/xdg/autostart/gsettings-data-convert.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gsettings-data-convert.desktop
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gconf/
 share/gtk-doc/html/gconf/ch01.html
-share/gtk-doc/html/gconf/gconf-GConfClient.html
 share/gtk-doc/html/gconf/gconf-gconf-backend.html
 share/gtk-doc/html/gconf/gconf-gconf-changeset.html
+share/gtk-doc/html/gconf/gconf-gconf-client.html
 share/gtk-doc/html/gconf/gconf-gconf-engine.html
 share/gtk-doc/html/gconf/gconf-gconf-error.html
 share/gtk-doc/html/gconf/gconf-gconf-internals.html
@@ -140,6 +154,9 @@ share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/GConf2.mo
 share/locale/hr/LC_MESSAGES/GConf2.mo
 share/locale/hu/LC_MESSAGES/GConf2.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/GConf2.mo
 share/locale/id/LC_MESSAGES/GConf2.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
