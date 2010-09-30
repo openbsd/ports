@@ -1,7 +1,27 @@
-$OpenBSD: patch-configure,v 1.5 2010/04/23 10:56:54 jasper Exp $
---- configure.orig	Fri Apr 23 12:45:42 2010
-+++ configure	Fri Apr 23 12:46:13 2010
-@@ -16445,11 +16445,8 @@ if test -n "$EVOLUTION_VERSION"; then
+$OpenBSD: patch-configure,v 1.6 2010/09/30 16:13:32 ajacoutot Exp $
+
+XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
+XXX make it compile with newer e-d-s (-Werror-implicit-function-declaration)
+
+--- configure.orig	Wed Jul 21 06:57:38 2010
++++ configure	Thu Sep 30 17:40:56 2010
+@@ -4250,7 +4250,6 @@ fi
+ 	-DPANGO_DISABLE_DEPRECATED
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+ 	-DGDK_DISABLE_DEPRECATED
+-	-DGTK_DISABLE_DEPRECATED
+ 	-DG_DISABLE_SINGLE_INCLUDES
+ 	-DGTK_DISABLE_SINGLE_INCLUDES
+ 	-Wall -Wextra
+@@ -4258,7 +4257,6 @@ fi
+ 	-Wno-sign-compare
+ 	-Wno-unused-parameter
+ 	-Wdeclaration-after-statement
+-	-Werror-implicit-function-declaration
+ 	-Wformat-security -Winit-self
+ 	-Wmissing-declarations -Wmissing-include-dirs
+ 	-Wmissing-noreturn -Wnested-externs -Wpointer-arith
+@@ -16428,11 +16426,8 @@ if test -n "$EVOLUTION_VERSION"; then
          EVOLUTION_BASE_VERSION=$EVOLUTION_VERSION
          EVOLUTION_BASE_VERSION_S=""
          EVOLUTION_EXEC_VERSION=`$PKG_CONFIG --variable=execversion evolution-shell 2>/dev/null`

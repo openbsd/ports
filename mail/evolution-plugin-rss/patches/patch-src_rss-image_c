@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_rss-image_c,v 1.1 2010/09/30 16:13:32 ajacoutot Exp $
+
+From 37ebcebeae4e85024ef6689266a611841b58da2e Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 09 Jul 2010 14:38:06 +0000
+Subject: adapt to GError camel modifications
+
+--- src/rss-image.c.orig	Tue Jul 20 22:32:03 2010
++++ src/rss-image.c	Thu Sep 30 17:20:07 2010
+@@ -84,7 +84,7 @@ update_feed_image(RDF *r)
+ 	if (!g_file_test(feed_file, G_FILE_TEST_EXISTS)) {
+ 	if (image) {		//we need to validate image here with load_pixbuf
+ 		CamelStream *feed_fs = camel_stream_fs_new_with_name(feed_file,
+-			O_RDWR|O_CREAT, 0666);
++			O_RDWR|O_CREAT, 0666, NULL);
+ 		dup_auth_data(r->uri, image);
+ 		fi->feed_fs = feed_fs;
+ 		fi->key = g_strdup(key);
+@@ -313,9 +313,10 @@ finish_image (SoupSession *soup_sess, SoupMessage *msg
+ 		if (msg->response_body->data) {
+ 			camel_stream_write(user_data,
+ 				msg->response_body->data,
+-				msg->response_body->length);
++				msg->response_body->length,
++				NULL);
+ #endif
+-			camel_stream_close(user_data);
++			camel_stream_close(user_data, NULL);
+ #if (DATASERVER_VERSION >= 2031001)
+ 			g_object_unref(user_data);
+ #else
+@@ -323,8 +324,8 @@ finish_image (SoupSession *soup_sess, SoupMessage *msg
+ #endif
+ 		}
+ 	} else {
+-		camel_stream_write(user_data, pixfilebuf, pixfilelen);
+-		camel_stream_close(user_data);
++		camel_stream_write(user_data, pixfilebuf, pixfilelen, NULL);
++		camel_stream_close(user_data, NULL);
+ #if (DATASERVER_VERSION >= 2031001)
+ 		g_object_unref(user_data);
+ #else
+@@ -340,10 +341,12 @@ finish_create_icon (SoupMessage *msg, FEED_IMAGE *user
+ finish_create_icon (SoupSession *soup_sess, SoupMessage *msg, FEED_IMAGE *user_data)
+ #endif
+ {
+-	d("finish_image(): status:%d, user_data:%s\n", msg->status_code, user_data->img_file);
++	d("finish_image(): status:%d, user_data:%s\n",
++		msg->status_code, user_data->img_file);
+ 	if (404 != msg->status_code) {
+-		CamelStream *feed_fs = camel_stream_fs_new_with_name(user_data->img_file,
+-			O_RDWR|O_CREAT, 0666);
++		CamelStream *feed_fs = camel_stream_fs_new_with_name(
++					user_data->img_file,
++					O_RDWR|O_CREAT, 0666, NULL);
+ 		finish_image(soup_sess, msg, feed_fs);
+ #if (EVOLUTION_VERSION >= 22703)
+ 		display_folder_icon(evolution_store, user_data->key);
+@@ -468,6 +471,9 @@ decode_image_cache_filename(gchar *name)
+ }
+ 
+ gboolean image_is_valid(gchar *image);
++
++gboolean
++file_is_image(gchar *image);
+ 
+ gboolean
+ file_is_image(gchar *image)

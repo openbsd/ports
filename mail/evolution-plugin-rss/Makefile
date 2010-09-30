@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/27 08:11:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/30 16:13:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.1.4.99 # Debian evolution-rss_0.1.9~20100320
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p0
+GNOME_VERSION=		0.2.0
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
 
 CATEGORIES=		mail
 
-EVO_VERSION=		2.30
+EVO_VERSION=		2.32
 SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
@@ -24,18 +24,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 enchant expat fontconfig freetype gailutil
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnome-keyring gnutls gobject-2.0
-WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += soup-2.4 sqlite3 stdc++ tasn1 xcb xml2 z
-WANTLIB += eggdbus-1 xcb-render xcb-render-util
+WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gpg-error
+WANTLIB += gthread-2.0 m pcre proxy pthread soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 stdc++ tasn1 xml2 z
 
-#MASTER_SITES=		http://gnome.eu.org/
-MASTER_SITES=		http://crappydiffs.org/
+MASTER_SITES=		http://gnome.eu.org/
 EXTRACT_SUFX=		.tar.gz
 
 MODULES=		devel/gettext \
@@ -43,9 +37,8 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:evolution->=2.24.1.1:mail/evolution
-LIB_DEPENDS=		gtkhtml-3.14.>=3,gtkhtml-editor::www/gtkhtml3 \
-			soup-gnome-2.4.>=1::devel/libsoup,-gnome
+RUN_DEPENDS=		:evolution->=2.32.0:mail/evolution
+LIB_DEPENDS=		::devel/libsoup,-gnome
 
 USE_X11=		Yes
 

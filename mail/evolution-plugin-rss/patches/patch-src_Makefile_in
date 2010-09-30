@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile_in,v 1.6 2010/09/30 16:13:32 ajacoutot Exp $
+--- src/Makefile.in.orig	Thu Sep 30 17:43:10 2010
++++ src/Makefile.in	Thu Sep 30 17:43:42 2010
+@@ -1017,11 +1017,11 @@ uninstall-am: uninstall-binPROGRAMS uninstall-errorDAT
+ 	$< > $@
+ %.schemas.in: %.schemas.in.in
+ 	sed -e "s#\@bindir\@#@bindir@#g" $< > $@
+-@HAVE_BONOBO_TRUE@	sed -i -e 's!^src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.skip
+-@HAVE_BONOBO_TRUE@	sed -i -e 's!^#src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
++@HAVE_BONOBO_TRUE@	perl -p -i -e 's!^src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.skip
++@HAVE_BONOBO_TRUE@	perl -p -i -e 's!^#src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
+ @HAVE_BONOBO_TRUE@	echo 'src/GNOME_Evolution_RSS.server.in.in' >> $(top_srcdir)/po/POTFILES.in
+-@HAVE_BONOBO_FALSE@	sed -i -e 's!^#src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
+-@HAVE_BONOBO_FALSE@	sed -i -e 's!^src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
++@HAVE_BONOBO_FALSE@	perl -p -i -e 's!^#src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
++@HAVE_BONOBO_FALSE@	perl -p -i -e 's!^src\/GNOME_Evolution_RSS.server.in.in!!g' $(top_srcdir)/po/POTFILES.in
+ @HAVE_BONOBO_FALSE@	echo 'src/GNOME_Evolution_RSS.server.in.in' >> $(top_srcdir)/po/POTFILES.skip
+ 
+ @EVO_SERVER_RULE@
