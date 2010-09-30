@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/09/26 13:40:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2010/09/30 07:46:04 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -15,8 +15,7 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		2.30.1
-REVISION=		2
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -60,6 +59,8 @@ AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE=	autoconf gnu
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
+			--disable-introspection \
 			--disable-update-mimedb \
 			--disable-packagekit
 # XXX build error when textproc/exempi is installed
