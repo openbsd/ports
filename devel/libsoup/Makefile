@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2010/09/01 11:02:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/09/30 07:45:36 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.30.2
+GNOME_VERSION =		2.32.0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
-
-REVISION-main =		0
 
 SHARED_LIBS +=  soup-2.4             2.2      # .4.0
 SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
@@ -31,7 +29,7 @@ LIB_DEPENDS =		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0:glib2->=2.22
 			gnutls.>=12::security/gnutls \
 			xml2.>=7::textproc/libxml
 
-WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 dbus-glib-1 sqlite3 eggdbus-1
+WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 sqlite3
 
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			soup-2.4::${BUILD_PKGPATH},-main \
@@ -44,9 +42,10 @@ MODULES =		devel/gettext \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
+			--disable-introspection \
 			--enable-ssl \
-			--disable-more-warnings \
-			--disable-gtk-doc
+			--disable-more-warnings
 # checking Apache version... 1.3.29 (Unix) (ignoring)
 # But this prevents needing apache2 for certain regress tests.
 CONFIGURE_ARGS+=	--with-apache-httpd="/usr/sbin/httpd"

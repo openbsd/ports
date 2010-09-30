@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/04/26 21:28:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/09/30 07:45:36 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
@@ -66,6 +66,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionAsync.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionFeature.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionSync.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSocket.html
+share/gtk-doc/html/libsoup-${API_VERSION}/annotation-glossary.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch01.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch02.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch03.html
