@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/09/30 07:47:28 ajacoutot Exp $
 
 COMMENT=	VNC server for remote acces to your GNOME desktop
 
 GNOME_PROJECT=	vino
-GNOME_VERSION=	2.28.2
-REVISION=	2
+GNOME_VERSION=	2.32.0
 
 CATEGORIES=	net
 
@@ -21,7 +20,7 @@ WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs tasn1 xcb xml2
-WANTLIB += z eggdbus-1 xcb-render xcb-render-util notify unique-1.0
+WANTLIB += z xcb-render xcb-render-util notify unique-1.0
 WANTLIB += gnutls telepathy-glib soup-2.4 gnome-keyring.>=6 avahi-client
 WANTLIB += avahi-common avahi-glib
 
