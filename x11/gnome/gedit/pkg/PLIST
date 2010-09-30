@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/04/22 21:52:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/30 07:49:50 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-2.20/
@@ -198,6 +198,7 @@ share/gedit-2/plugins/snippets/javascript.xml
 share/gedit-2/plugins/snippets/lang/
 share/gedit-2/plugins/snippets/lang/snippets.lang
 share/gedit-2/plugins/snippets/latex.xml
+share/gedit-2/plugins/snippets/mallard.xml
 share/gedit-2/plugins/snippets/perl.xml
 share/gedit-2/plugins/snippets/php.xml
 share/gedit-2/plugins/snippets/python.xml
@@ -550,6 +551,7 @@ share/locale/is/LC_MESSAGES/gedit.mo
 share/locale/it/LC_MESSAGES/gedit.mo
 share/locale/ja/LC_MESSAGES/gedit.mo
 share/locale/ka/LC_MESSAGES/gedit.mo
+share/locale/kk/LC_MESSAGES/gedit.mo
 share/locale/kn/LC_MESSAGES/gedit.mo
 share/locale/ko/LC_MESSAGES/gedit.mo
 share/locale/ku/LC_MESSAGES/gedit.mo
