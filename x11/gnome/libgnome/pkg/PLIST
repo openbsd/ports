@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/04/20 11:07:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/09/30 07:42:46 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -129,6 +129,9 @@ share/locale/is/LC_MESSAGES/libgnome-2.0.mo
 share/locale/it/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ka/LC_MESSAGES/libgnome-2.0.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/kn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ku/LC_MESSAGES/libgnome-2.0.mo
