@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2010/09/30 07:36:27 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.42 2010/09/30 17:04:17 jasper Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -21,6 +20,7 @@ lib/gnome-panel/modules/libpanel-applets-bonobo.la
 lib/gnome-panel/modules/libpanel-applets-bonobo.so
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.la
+@lib lib/libpanel-applet-2.so.${LIBpanel-applet-2_VERSION}
 lib/libpanel-applet-3.a
 lib/libpanel-applet-3.la
 @lib lib/libpanel-applet-3.so.${LIBpanel-applet-3_VERSION}

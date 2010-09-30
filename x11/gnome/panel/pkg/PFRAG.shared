@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2006/01/09 06:53:41 alek Exp $
-@lib lib/libpanel-applet-2.so.${LIBpanel-applet-2_VERSION}
