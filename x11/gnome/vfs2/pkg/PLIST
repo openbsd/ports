@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/08/26 09:19:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/30 07:40:37 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
 @pkgpath x11/gnome/vfs2,-main
 @pkgpath x11/gnome/vfs2,-smb
@@ -69,44 +69,41 @@ lib/gnome-vfs-2.0/
 lib/gnome-vfs-2.0/include/
 lib/gnome-vfs-2.0/include/gnome-vfs-file-size.h
 lib/gnome-vfs-2.0/modules/
-lib/gnome-vfs-2.0/modules/libbzip2.a
-lib/gnome-vfs-2.0/modules/libbzip2.la
+@comment lib/gnome-vfs-2.0/modules/libbzip2.a
+@comment lib/gnome-vfs-2.0/modules/libbzip2.la
 lib/gnome-vfs-2.0/modules/libbzip2.so
-lib/gnome-vfs-2.0/modules/libcdda.a
-lib/gnome-vfs-2.0/modules/libcdda.la
-lib/gnome-vfs-2.0/modules/libcdda.so
-lib/gnome-vfs-2.0/modules/libcomputer.a
-lib/gnome-vfs-2.0/modules/libcomputer.la
+@comment lib/gnome-vfs-2.0/modules/libcomputer.a
+@comment lib/gnome-vfs-2.0/modules/libcomputer.la
 lib/gnome-vfs-2.0/modules/libcomputer.so
-lib/gnome-vfs-2.0/modules/libdns-sd.a
-lib/gnome-vfs-2.0/modules/libdns-sd.la
+@comment lib/gnome-vfs-2.0/modules/libdns-sd.a
+@comment lib/gnome-vfs-2.0/modules/libdns-sd.la
 lib/gnome-vfs-2.0/modules/libdns-sd.so
-lib/gnome-vfs-2.0/modules/libfile.a
-lib/gnome-vfs-2.0/modules/libfile.la
+@comment lib/gnome-vfs-2.0/modules/libfile.a
+@comment lib/gnome-vfs-2.0/modules/libfile.la
 lib/gnome-vfs-2.0/modules/libfile.so
-lib/gnome-vfs-2.0/modules/libftp.a
-lib/gnome-vfs-2.0/modules/libftp.la
+@comment lib/gnome-vfs-2.0/modules/libftp.a
+@comment lib/gnome-vfs-2.0/modules/libftp.la
 lib/gnome-vfs-2.0/modules/libftp.so
-lib/gnome-vfs-2.0/modules/libgzip.a
-lib/gnome-vfs-2.0/modules/libgzip.la
+@comment lib/gnome-vfs-2.0/modules/libgzip.a
+@comment lib/gnome-vfs-2.0/modules/libgzip.la
 lib/gnome-vfs-2.0/modules/libgzip.so
-lib/gnome-vfs-2.0/modules/libhttp.a
-lib/gnome-vfs-2.0/modules/libhttp.la
+@comment lib/gnome-vfs-2.0/modules/libhttp.a
+@comment lib/gnome-vfs-2.0/modules/libhttp.la
 lib/gnome-vfs-2.0/modules/libhttp.so
-lib/gnome-vfs-2.0/modules/libnetwork.a
-lib/gnome-vfs-2.0/modules/libnetwork.la
+@comment lib/gnome-vfs-2.0/modules/libnetwork.a
+@comment lib/gnome-vfs-2.0/modules/libnetwork.la
 lib/gnome-vfs-2.0/modules/libnetwork.so
-lib/gnome-vfs-2.0/modules/libnntp.a
-lib/gnome-vfs-2.0/modules/libnntp.la
+@comment lib/gnome-vfs-2.0/modules/libnntp.a
+@comment lib/gnome-vfs-2.0/modules/libnntp.la
 lib/gnome-vfs-2.0/modules/libnntp.so
-lib/gnome-vfs-2.0/modules/libsftp.a
-lib/gnome-vfs-2.0/modules/libsftp.la
+@comment lib/gnome-vfs-2.0/modules/libsftp.a
+@comment lib/gnome-vfs-2.0/modules/libsftp.la
 lib/gnome-vfs-2.0/modules/libsftp.so
-lib/gnome-vfs-2.0/modules/libtar.a
-lib/gnome-vfs-2.0/modules/libtar.la
+@comment lib/gnome-vfs-2.0/modules/libtar.a
+@comment lib/gnome-vfs-2.0/modules/libtar.la
 lib/gnome-vfs-2.0/modules/libtar.so
-lib/gnome-vfs-2.0/modules/libvfs-test.a
-lib/gnome-vfs-2.0/modules/libvfs-test.la
+@comment lib/gnome-vfs-2.0/modules/libvfs-test.a
+@comment lib/gnome-vfs-2.0/modules/libvfs-test.la
 lib/gnome-vfs-2.0/modules/libvfs-test.so
 lib/libgnomevfs-2.a
 lib/libgnomevfs-2.la
@@ -121,8 +118,6 @@ share/examples/gnome-vfs2/gnome-vfs-2.0/
 @sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/
 @sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/
-share/examples/gnome-vfs2/gnome-vfs-2.0/modules/cdda-module.conf
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/cdda-module.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/default-modules.conf
 @sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/default-modules.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/ssl-modules.conf
