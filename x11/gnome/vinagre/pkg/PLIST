@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/09/30 09:46:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/09/30 09:55:00 jasper Exp $
 @bin bin/vinagre
 include/vinagre-1.0/
 include/vinagre-1.0/vinagre/
@@ -42,6 +42,7 @@ lib/vinagre-1/plugins/vnc.vinagre-plugin
 @man man/man1/vinagre.1
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Vinagre.service
 share/gnome/help/vinagre/
 share/gnome/help/vinagre/C/
 share/gnome/help/vinagre/C/figures/
@@ -309,6 +310,9 @@ share/omf/vinagre/vinagre-zh_CN.omf
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/vinagre.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/telepathy/
+share/telepathy/clients/
+share/telepathy/clients/Vinagre.client
 share/vinagre/
 share/vinagre-1/
 share/vinagre-1/plugins/

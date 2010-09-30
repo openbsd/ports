@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/09/30 09:46:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/30 09:54:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	VNC Client for the GNOME Desktop
 
 GNOME_VERSION=	2.30.3
 GNOME_PROJECT=	vinagre
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -29,7 +30,7 @@ WANTLIB += art_lgpl_2 avahi-client avahi-common avahi-glib avahi-gobject
 WANTLIB += avahi-ui bonobo-2 bonobo-activation bonoboui-2
 WANTLIB += gdbm gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls
 WANTLIB += gtk-vnc-1.0 gvnc-1.0 panel-applet-2 popt sasl2 tasn1
-WANTLIB += canberra ltdl ogg vorbis vorbisfile #telepathy-glib
+WANTLIB += canberra ltdl ogg vorbis vorbisfile telepathy-glib
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -48,7 +49,7 @@ MODGCONF2_SCHEMAS_DIR=	vinagre
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-avahi \
-		--enable-telepathy=no
+		--enable-telepathy=yes
 
 # XXX console does not spawn (pthreads(3) or vte bug?)
 CONFIGURE_ARGS+= --enable-ssh=no
