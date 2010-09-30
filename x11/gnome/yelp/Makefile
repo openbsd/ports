@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/09/30 07:47:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/09/30 09:17:42 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.30.2
+
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,7 +33,7 @@ BUILD_DEPENDS=		:xulrunner-devel->=1.9.2:devel/xulrunner/1.9,-devel \
 			::x11/gnome/doc-utils
 RUN_DEPENDS=		::misc/shared-mime-info \
 			::textproc/docbook-dsssl \
-			::x11/gnome/users-guide \
+			::x11/gnome/user-docs \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		::devel/startup-notification \
 			:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
