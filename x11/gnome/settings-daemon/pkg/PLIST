@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/07/22 11:26:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/09/30 07:37:26 ajacoutot Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -31,6 +31,8 @@ lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
 @comment lib/gnome-settings-daemon-2.0/libmedia-keys.la
 @comment lib/gnome-settings-daemon-2.0/libmouse.a
 @comment lib/gnome-settings-daemon-2.0/libmouse.la
+@comment lib/gnome-settings-daemon-2.0/libsmartcard.a
+@comment lib/gnome-settings-daemon-2.0/libsmartcard.la
 @comment lib/gnome-settings-daemon-2.0/libsound.a
 @comment lib/gnome-settings-daemon-2.0/libsound.la
 @comment lib/gnome-settings-daemon-2.0/libtyping-break.a
@@ -43,6 +45,7 @@ lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
 @comment lib/gnome-settings-daemon-2.0/libxsettings.la
 lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
+lib/gnome-settings-daemon-2.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/typing-break.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/xrandr.gnome-settings-plugin
@@ -50,21 +53,43 @@ lib/gnome-settings-daemon-2.0/xrdb.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/xsettings.gnome-settings-plugin
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gnome-settings-daemon
+@bin libexec/gsd-datetime-mechanism
 @bin libexec/gsd-locate-pointer
 share/dbus-1/services/org.gnome.SettingsDaemon.service
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.gnome.SettingsDaemon.DateTimeMechanism.service
+share/examples/gnome-settings-daemon/
+share/examples/gnome-settings-daemon/dbus-1/
+share/examples/gnome-settings-daemon/dbus-1/system.d/
+share/examples/gnome-settings-daemon/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf
+share/examples/gnome-settings-daemon/gnome-settings-daemon/
+@sample ${SYSCONFDIR}/gnome-settings-daemon/
+share/examples/gnome-settings-daemon/gnome-settings-daemon/xrandr/
+@sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
+share/examples/gnome-settings-daemon/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/gnome-settings-daemon/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/gnome-settings-daemon/xdg/autostart/gnome-settings-daemon.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-setting-daemon.desktop
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-accessibility.xml
 share/gnome-settings-daemon/
-@sample ${SYSCONFDIR}/xdg/
 share/gnome-settings-daemon/acme.ui
-share/gnome-settings-daemon/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/gnome-settings-daemon/autostart/gnome-settings-daemon.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-setting-daemon.desktop
 share/gnome-settings-daemon/gsd-a11y-preferences-dialog.ui
+share/gnome-settings-daemon/icons/
+share/gnome-settings-daemon/icons/hicolor/
+share/gnome-settings-daemon/icons/hicolor/64x64/
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-off.png
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-on.png
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-off.png
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-on.png
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
+share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
 share/gnome-settings-daemon/modmap-dialog.ui
-share/gnome-settings-daemon/show-layout.ui
 share/gnome-settings-daemon/xrdb/
 share/gnome-settings-daemon/xrdb/Editres.ad
 share/gnome-settings-daemon/xrdb/Emacs.ad
@@ -209,12 +234,16 @@ share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.gnome.settingsdaemon.datetimemechanism.policy
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_housekeeping.schemas
 ${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_keybindings.schemas
 ${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_xrandr.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_font_rendering.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_keybindings.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_peripherals_smartcard.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_peripherals_touchpad.schemas
 ${SCHEMAS_INSTDIR}/gnome-settings-daemon.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

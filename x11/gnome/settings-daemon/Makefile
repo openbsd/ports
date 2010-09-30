@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/22 11:26:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/09/30 07:37:26 ajacoutot Exp $
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	2.30.2
-REVISION=	1
+GNOME_VERSION=	2.32.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +20,8 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-atom xcb-aux xcb-event xkbfile xklavier xml2 z
 WANTLIB += xcb-render xcb-render-util notify gnome-desktop-2
-WANTLIB += gnomekbd gnomekbdui
+WANTLIB += gnomekbd gnomekbdui ssl3 polkit-gobject-1 sqlite3
+WANTLIB += eggdbus-1 nspr4 nss3 nssutil3 plc4 plds4 smime3 softokn3
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -30,7 +30,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	::devel/libnotify \
 		::x11/gnome/desktop \
-		::x11/gnome/libgnomekbd
+		::x11/gnome/libgnomekbd \
+		::sysutils/polkit
 
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	::x11/gnome/icon-theme
@@ -45,7 +46,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	${CONFIUGRE_SHARED} \
 		--disable-pulse
 
-FAKE_FLAGS+=	desktopdir=${PREFIX}/share/gnome-settings-daemon/autostart
+FAKE_FLAGS+=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
+		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
+		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gnome-settings-daemon/gnome-settings-module.c

@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_media-keys_Makefile_in,v 1.1 2010/07/22 11:26:29 ajacoutot Exp $
+$OpenBSD: patch-plugins_media-keys_Makefile_in,v 1.2 2010/09/30 07:37:26 ajacoutot Exp $
 
 We want media keys support even if we don't have pulseaudio.
 
---- plugins/media-keys/Makefile.in.orig	Tue Jun 22 10:59:44 2010
-+++ plugins/media-keys/Makefile.in	Thu Jul 22 12:32:43 2010
+--- plugins/media-keys/Makefile.in.orig	Mon Sep 27 15:20:47 2010
++++ plugins/media-keys/Makefile.in	Tue Sep 28 12:38:19 2010
 @@ -37,7 +37,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -30,7 +30,7 @@ We want media keys support even if we don't have pulseaudio.
  am__EXEEXT_1 =
  PROGRAMS = $(noinst_PROGRAMS)
  am__objects_3 = test_media_keys-gsd-marshal.$(OBJEXT) $(am__objects_1)
-@@ -395,7 +394,6 @@ libmedia_keys_la_SOURCES = \
+@@ -400,7 +399,6 @@ libmedia_keys_la_SOURCES = \
  libmedia_keys_la_CPPFLAGS = \
  	-I$(top_srcdir)/gnome-settings-daemon			\
  	-I$(top_srcdir)/plugins/common				\
@@ -38,7 +38,7 @@ We want media keys support even if we don't have pulseaudio.
  	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
  	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
  	-DGNOME_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
-@@ -410,7 +408,6 @@ libmedia_keys_la_LDFLAGS = \
+@@ -415,7 +413,6 @@ libmedia_keys_la_LDFLAGS = \
  
  libmedia_keys_la_LIBADD = \
  	$(top_builddir)/plugins/common/libcommon.la			\
@@ -46,7 +46,7 @@ We want media keys support even if we don't have pulseaudio.
  	$(SETTINGS_PLUGIN_LIBS)						\
  	$(XF86MISC_LIBS)						\
  	-lm
-@@ -418,7 +415,7 @@ libmedia_keys_la_LIBADD = \
+@@ -423,7 +420,7 @@ libmedia_keys_la_LIBADD = \
  plugin_in_files = \
  	media-keys.gnome-settings-plugin.in
  
