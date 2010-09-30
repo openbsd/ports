@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/09/30 07:43:02 ajacoutot Exp $
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
-GNOME_VERSION=	2.30.1
-REVISION=	1
+GNOME_VERSION=	2.30.2
 
 SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 
@@ -33,6 +32,7 @@ LIB_DEPENDS=	::devel/libglade2 \
 USE_X11=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
 		--enable-glade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
