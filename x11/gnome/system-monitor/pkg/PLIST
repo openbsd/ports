@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/18 12:54:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/09/30 07:38:34 ajacoutot Exp $
 @bin bin/gnome-system-monitor
 share/applications/gnome-system-monitor.desktop
 share/gnome/help/gnome-system-monitor/
@@ -249,6 +249,7 @@ share/locale/el/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/en_CA/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/en_GB/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/eo/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/es/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/et/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/eu/LC_MESSAGES/gnome-system-monitor.mo
@@ -326,6 +327,7 @@ share/omf/gnome-system-monitor/gnome-system-monitor-oc.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-pa.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-sv.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-zh_CN.omf
+share/pixmaps/
 share/pixmaps/gnome-system-monitor/
 share/pixmaps/gnome-system-monitor/download.svg
 share/pixmaps/gnome-system-monitor/side.png
