@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/21 21:21:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/30 07:32:54 jasper Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/
 share/gpx-viewer/gpx-viewer-file-chooser.ui
+share/gpx-viewer/gpx-viewer-preferences.ui
+share/gpx-viewer/gpx-viewer-tracklist.ui
 share/gpx-viewer/gpx-viewer.ui
 share/gpx-viewer/icons/
 share/gpx-viewer/icons/hicolor/
@@ -26,9 +28,15 @@ share/icons/hicolor/22x22/apps/gpx-viewer.png
 share/icons/hicolor/24x24/
 share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gpx-viewer.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/gpx-viewer.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gpx-viewer.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/gpx-viewer.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gpx-viewer.svg
@@ -38,8 +46,10 @@ share/locale/ar/LC_MESSAGES/gpx-viewer.mo
 share/locale/cs/LC_MESSAGES/gpx-viewer.mo
 share/locale/de/LC_MESSAGES/gpx-viewer.mo
 share/locale/es/LC_MESSAGES/gpx-viewer.mo
+share/locale/hu/LC_MESSAGES/gpx-viewer.mo
 share/locale/it/LC_MESSAGES/gpx-viewer.mo
 share/locale/ru/LC_MESSAGES/gpx-viewer.mo
+share/locale/uk/LC_MESSAGES/gpx-viewer.mo
 share/locale/zh_CN/LC_MESSAGES/gpx-viewer.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

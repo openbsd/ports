@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/09/30 07:32:54 jasper Exp $
+--- configure.ac.orig	Tue Sep 28 13:34:35 2010
++++ configure.ac	Tue Sep 28 13:34:58 2010
+@@ -34,8 +34,8 @@ PKG_PROG_PKG_CONFIG
+ 
+ PKG_CHECK_MODULES([modules],[
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.4 >= 0.4.3
+-        champlain-0.4 >= 0.4.3
++        champlain-gtk-0.8 >= 0.8.0
++        champlain-0.8 >= 0.8.0
+         gmodule-2.0 
+         libxml-2.0
+         gdl-1.0

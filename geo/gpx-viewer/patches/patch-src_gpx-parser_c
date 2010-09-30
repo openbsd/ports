@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_gpx-parser_c,v 1.1.1.1 2009/08/23 17:37:07 landry Exp $
-remove leading second digits, and adjust strptime() call
+$OpenBSD: patch-src_gpx-parser_c,v 1.2 2010/09/30 07:32:54 jasper Exp $
+
+Remove leading second digits, and adjust strptime() call
 ours doesn't support %z nor %F, GNU extensions
---- src/gpx-parser.c.orig	Thu Jul 16 23:05:19 2009
-+++ src/gpx-parser.c	Fri Aug 21 14:59:46 2009
-@@ -21,6 +21,7 @@
+
+--- src/gpx-parser.c.orig	Tue Sep 28 13:30:21 2010
++++ src/gpx-parser.c	Tue Sep 28 13:33:06 2010
+@@ -24,6 +24,7 @@
  #include <glib-object.h>
  #include <float.h>
  #include <math.h>
@@ -11,18 +13,18 @@ ours doesn't support %z nor %F, GNU extensions
  #include <stdlib.h>
  #include <string.h>
  #include <time.h>
-@@ -218,6 +219,7 @@ void gpx_point_set_position (GpxPoint* self, double la
- /* Get the unix time. (calculated on first request, then cached ) */
+@@ -234,6 +235,7 @@ void gpx_point_set_position (GpxPoint* self, double la
+ 
  time_t gpx_point_get_time (GpxPoint* self) {
  	time_t result;
 +	char *c;
- 	struct tm _tmp0_ = {0};
- 	struct tm ta;
+ 	struct tm ta = {0};
  	if (self->time == NULL) {
-@@ -229,7 +231,13 @@ time_t gpx_point_get_time (GpxPoint* self) {
+ 		result = (time_t) 0;
+@@ -244,7 +246,13 @@ time_t gpx_point_get_time (GpxPoint* self) {
  		return result;
  	}
- 	ta = (memset (&_tmp0_, 0, sizeof (struct tm)), _tmp0_);
+ 	memset (&ta, 0, sizeof (struct tm));
 -	strptime (self->time, "%FT%T%z", &ta);
 +	/* remove trailing non-digits, strptime doesn't support %z */
 +	for (c = self->time + strlen(self->time); !isdigit(*c); *c='\0', c--);

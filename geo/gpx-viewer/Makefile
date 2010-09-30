@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/03 23:24:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/09/30 07:32:54 jasper Exp $
 
 COMMENT =	gpx file viewer
 
-VERSION =	0.1.2
+VERSION =	0.2.0
 DISTNAME =	gpx-viewer-${VERSION}
-PKGNAME=	${DISTNAME}p1
 
 CATEGORIES =	geo x11
 
@@ -19,7 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =       autoconf
+AUTOCONF_VERSION =      2.62
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_VALAC=""
@@ -27,7 +27,9 @@ USE_GMAKE =		yes
 
 MODULES =	devel/gettext \
 		textproc/intltool
-LIB_DEPENDS =	champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.0:geo/libchamplain/core
+LIB_DEPENDS =	::devel/libunique \
+		:libchamplain->=0.8.0:geo/libchamplain/core \
+		::x11/gnome/gdl
 RUN_DEPENDS =	::devel/desktop-file-utils
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
@@ -39,6 +41,11 @@ WANTLIB += gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z Xxf86vm drm
 WANTLIB += ORBit-2 dbus-1 dbus-glib-1 gconf-2 gnome-keyring proxy
-WANTLIB += soup-gnome-2.4
+WANTLIB += soup-gnome-2.4 champlain-0.8 champlain-gtk-0.8
+WANTLIB += gdl-1 eggdbus-1 xcb-render xcb-render-util unique-1.0
+
+# Upstream doesn't build their own releases.
+post-configure:
+	echo "#define PACKAGE_URL \"${HOMEPAGE}\"" >> ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
