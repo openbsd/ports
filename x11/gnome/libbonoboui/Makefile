@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2010/09/30 07:42:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/09/30 11:33:22 jasper Exp $
 
 COMMENT=	user interface components for bonobo
 
 GNOME_PROJECT=	libbonoboui
 GNOME_VERSION=	2.24.4
+REVISION=	0
 
 SHARED_LIBS +=	bonoboui-2	3.0        # .0.0
 
@@ -15,8 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation c cairo crypto
+WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation c cairo crypto
 WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gailutil
 WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 popt
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
