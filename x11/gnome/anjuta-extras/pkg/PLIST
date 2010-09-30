@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/23 18:38:38 ajacoutot Exp $
-lib/anjuta/anjuta-class-inheritance.plugin
+@comment $OpenBSD: PLIST,v 1.2 2010/09/30 13:40:23 jasper Exp $
 lib/anjuta/anjuta-editor.plugin
 lib/anjuta/anjuta-sample.plugin
 lib/anjuta/anjuta-scratchbox.plugin
-lib/anjuta/libanjuta-class-inheritance.la
-lib/anjuta/libanjuta-class-inheritance.so
 lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
 lib/anjuta/libanjuta-profiler.la
@@ -211,8 +208,6 @@ share/anjuta/properties/styles.properties
 share/anjuta/properties/user.properties
 share/anjuta/ui/anjuta-sample.ui
 share/anjuta/ui/profiler.xml
-share/pixmaps/anjuta/anjuta-class-inheritance-plugin-48.png
-share/pixmaps/anjuta/anjuta-class-inheritance-plugin.svg
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin-48.png
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin.svg
 share/pixmaps/anjuta/anjuta-profiler-plugin-48.png
