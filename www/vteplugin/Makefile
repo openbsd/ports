@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/30 08:30:17 jasper Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
@@ -16,6 +16,8 @@ EXTRACT_SUFX=.tar.bz2
 
 MASTER_SITES =	http://blog.renevier.net/public/
 MODULES =	devel/waf
+
+USE_X11 =	Yes
 
 LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		vte::devel/vte
