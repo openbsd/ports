@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/22 13:52:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/09/30 07:31:06 ajacoutot Exp $
 %%SHARED%%
 @bin bin/bug-buddy
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
-lib/gtk-2.0/modules/libgnomebreakpad.a
-lib/gtk-2.0/modules/libgnomebreakpad.la
+@comment lib/gtk-2.0/modules/libgnomesegvhandler.a
+@comment lib/gtk-2.0/modules/libgnomesegvhandler.la
 @man man/man1/bug-buddy.1
 share/applications/bug-buddy.desktop
 share/bug-buddy/

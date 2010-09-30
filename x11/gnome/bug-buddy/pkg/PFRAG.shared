@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/13 16:58:34 ajacoutot Exp $
-lib/gtk-2.0/modules/libgnomebreakpad.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/09/30 07:31:06 ajacoutot Exp $
+lib/gtk-2.0/modules/libgnomesegvhandler.so

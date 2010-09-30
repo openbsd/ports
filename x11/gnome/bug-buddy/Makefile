@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/09/30 07:31:06 ajacoutot Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
 GNOME_PROJECT=	bug-buddy
-GNOME_VERSION=	2.30.0
-
-REVISION=	1
+GNOME_VERSION=	2.32.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +21,8 @@ WANTLIB += nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += soup-2.4 sqlite3 ssl3 tasn1 xcb xcb-render xcb-render-util
 WANTLIB += xml2 z camel-1.2 ebook-1.2 edataserver-1.2 bonobo-2
-WANTLIB += bonobo-activation
+WANTLIB += gdata gnome-keyring nssutil3 proxy soup-gnome-2.4
+WANTLIB += bonobo-activation eggdbus-1
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -34,7 +33,8 @@ BUILD_DEPENDS=	::textproc/rarian \
 LIB_DEPENDS=	::databases/evolution-data-server \
 		::devel/libelf \
 		::x11/gnome/libbonobo \
-		::devel/libgtop2
+		::devel/libgtop2 \
+		::devel/eggdbus
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf" \
 		LDFLAGS="-L${LOCALBASE}/lib"
