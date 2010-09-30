@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/09/30 10:33:32 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
-GNOME_VERSION=		2.30.0
-
-REVISION=		0
+GNOME_VERSION=		2.30.1
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -42,7 +40,7 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gok
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-gtk-doc=no
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
