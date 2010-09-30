@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/04/22 20:37:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/09/30 07:39:48 jasper Exp $
 @bin bin/gcalccmd
 @bin bin/gcalctool
 bin/gnome-calculator
 @man man/man1/gcalctool.1
 share/applications/gcalctool.desktop
 share/gcalctool/
-share/gcalctool/financial.ui
-share/gcalctool/gcalctool.ui
+share/gcalctool/buttons-advanced.ui
+share/gcalctool/buttons-basic.ui
+share/gcalctool/buttons-financial.ui
+share/gcalctool/buttons-programming.ui
+share/gcalctool/preferences.ui
+share/glib-2.0/
+share/glib-2.0/schemas/
+share/glib-2.0/schemas/org.gnome.gcalctool.gschema.xml
 share/gnome/help/gcalctool/
 share/gnome/help/gcalctool/C/
 share/gnome/help/gcalctool/C/absolute.page
@@ -240,6 +246,35 @@ share/gnome/help/gcalctool/eu/scientific.page
 share/gnome/help/gcalctool/eu/superscript.page
 share/gnome/help/gcalctool/eu/trigonometry.page
 share/gnome/help/gcalctool/eu/variables.page
+share/gnome/help/gcalctool/fi/
+share/gnome/help/gcalctool/fi/absolute.page
+share/gnome/help/gcalctool/fi/base.page
+share/gnome/help/gcalctool/fi/boolean.page
+share/gnome/help/gcalctool/fi/complex.page
+share/gnome/help/gcalctool/fi/conv-base.page
+share/gnome/help/gcalctool/fi/conv-character.page
+share/gnome/help/gcalctool/fi/conv-currency.page
+share/gnome/help/gcalctool/fi/conv-length.page
+share/gnome/help/gcalctool/fi/conv-time.page
+share/gnome/help/gcalctool/fi/conv-weight.page
+share/gnome/help/gcalctool/fi/equation.page
+share/gnome/help/gcalctool/fi/factorial.page
+share/gnome/help/gcalctool/fi/factorize.page
+share/gnome/help/gcalctool/fi/financial.page
+share/gnome/help/gcalctool/fi/functions.page
+share/gnome/help/gcalctool/fi/index.page
+share/gnome/help/gcalctool/fi/keyboard.page
+share/gnome/help/gcalctool/fi/legal.xml
+share/gnome/help/gcalctool/fi/logarithm.page
+share/gnome/help/gcalctool/fi/modulus.page
+share/gnome/help/gcalctool/fi/mouse.page
+share/gnome/help/gcalctool/fi/number-display.page
+share/gnome/help/gcalctool/fi/percentage.page
+share/gnome/help/gcalctool/fi/power.page
+share/gnome/help/gcalctool/fi/scientific.page
+share/gnome/help/gcalctool/fi/superscript.page
+share/gnome/help/gcalctool/fi/trigonometry.page
+share/gnome/help/gcalctool/fi/variables.page
 share/gnome/help/gcalctool/fr/
 share/gnome/help/gcalctool/fr/absolute.page
 share/gnome/help/gcalctool/fr/base.page
@@ -269,6 +304,64 @@ share/gnome/help/gcalctool/fr/scientific.page
 share/gnome/help/gcalctool/fr/superscript.page
 share/gnome/help/gcalctool/fr/trigonometry.page
 share/gnome/help/gcalctool/fr/variables.page
+share/gnome/help/gcalctool/gl/
+share/gnome/help/gcalctool/gl/absolute.page
+share/gnome/help/gcalctool/gl/base.page
+share/gnome/help/gcalctool/gl/boolean.page
+share/gnome/help/gcalctool/gl/complex.page
+share/gnome/help/gcalctool/gl/conv-base.page
+share/gnome/help/gcalctool/gl/conv-character.page
+share/gnome/help/gcalctool/gl/conv-currency.page
+share/gnome/help/gcalctool/gl/conv-length.page
+share/gnome/help/gcalctool/gl/conv-time.page
+share/gnome/help/gcalctool/gl/conv-weight.page
+share/gnome/help/gcalctool/gl/equation.page
+share/gnome/help/gcalctool/gl/factorial.page
+share/gnome/help/gcalctool/gl/factorize.page
+share/gnome/help/gcalctool/gl/financial.page
+share/gnome/help/gcalctool/gl/functions.page
+share/gnome/help/gcalctool/gl/index.page
+share/gnome/help/gcalctool/gl/keyboard.page
+share/gnome/help/gcalctool/gl/legal.xml
+share/gnome/help/gcalctool/gl/logarithm.page
+share/gnome/help/gcalctool/gl/modulus.page
+share/gnome/help/gcalctool/gl/mouse.page
+share/gnome/help/gcalctool/gl/number-display.page
+share/gnome/help/gcalctool/gl/percentage.page
+share/gnome/help/gcalctool/gl/power.page
+share/gnome/help/gcalctool/gl/scientific.page
+share/gnome/help/gcalctool/gl/superscript.page
+share/gnome/help/gcalctool/gl/trigonometry.page
+share/gnome/help/gcalctool/gl/variables.page
+share/gnome/help/gcalctool/hu/
+share/gnome/help/gcalctool/hu/absolute.page
+share/gnome/help/gcalctool/hu/base.page
+share/gnome/help/gcalctool/hu/boolean.page
+share/gnome/help/gcalctool/hu/complex.page
+share/gnome/help/gcalctool/hu/conv-base.page
+share/gnome/help/gcalctool/hu/conv-character.page
+share/gnome/help/gcalctool/hu/conv-currency.page
+share/gnome/help/gcalctool/hu/conv-length.page
+share/gnome/help/gcalctool/hu/conv-time.page
+share/gnome/help/gcalctool/hu/conv-weight.page
+share/gnome/help/gcalctool/hu/equation.page
+share/gnome/help/gcalctool/hu/factorial.page
+share/gnome/help/gcalctool/hu/factorize.page
+share/gnome/help/gcalctool/hu/financial.page
+share/gnome/help/gcalctool/hu/functions.page
+share/gnome/help/gcalctool/hu/index.page
+share/gnome/help/gcalctool/hu/keyboard.page
+share/gnome/help/gcalctool/hu/legal.xml
+share/gnome/help/gcalctool/hu/logarithm.page
+share/gnome/help/gcalctool/hu/modulus.page
+share/gnome/help/gcalctool/hu/mouse.page
+share/gnome/help/gcalctool/hu/number-display.page
+share/gnome/help/gcalctool/hu/percentage.page
+share/gnome/help/gcalctool/hu/power.page
+share/gnome/help/gcalctool/hu/scientific.page
+share/gnome/help/gcalctool/hu/superscript.page
+share/gnome/help/gcalctool/hu/trigonometry.page
+share/gnome/help/gcalctool/hu/variables.page
 share/gnome/help/gcalctool/it/
 share/gnome/help/gcalctool/it/absolute.page
 share/gnome/help/gcalctool/it/base.page
@@ -559,6 +652,8 @@ share/gnome/help/gcalctool/zh_TW/scientific.page
 share/gnome/help/gcalctool/zh_TW/superscript.page
 share/gnome/help/gcalctool/zh_TW/trigonometry.page
 share/gnome/help/gcalctool/zh_TW/variables.page
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 share/locale/af/LC_MESSAGES/gcalctool.mo
 share/locale/am/LC_MESSAGES/gcalctool.mo
 share/locale/ar/LC_MESSAGES/gcalctool.mo
@@ -585,6 +680,7 @@ share/locale/en_GB/LC_MESSAGES/gcalctool.mo
 share/locale/en_US/
 share/locale/en_US/LC_MESSAGES/
 share/locale/en_US/LC_MESSAGES/gcalctool.mo
+share/locale/eo/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/et/LC_MESSAGES/gcalctool.mo
 share/locale/eu/LC_MESSAGES/gcalctool.mo
@@ -598,10 +694,14 @@ share/locale/he/LC_MESSAGES/gcalctool.mo
 share/locale/hi/LC_MESSAGES/gcalctool.mo
 share/locale/hr/LC_MESSAGES/gcalctool.mo
 share/locale/hu/LC_MESSAGES/gcalctool.mo
+share/locale/hy/LC_MESSAGES/gcalctool.mo
 share/locale/id/LC_MESSAGES/gcalctool.mo
 share/locale/it/LC_MESSAGES/gcalctool.mo
 share/locale/ja/LC_MESSAGES/gcalctool.mo
 share/locale/ka/LC_MESSAGES/gcalctool.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/gcalctool.mo
 share/locale/kn/LC_MESSAGES/gcalctool.mo
 share/locale/ko/LC_MESSAGES/gcalctool.mo
 share/locale/ku/LC_MESSAGES/gcalctool.mo
@@ -647,9 +747,5 @@ share/locale/xh/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_HK/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gcalctool.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
