@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/09/14 13:13:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/30 07:35:38 ajacoutot Exp $
 bin/gmenu-simple-editor
 include/gnome-menus/
 include/gnome-menus/gmenu-tree.h
@@ -132,8 +132,6 @@ share/locale/is/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
 share/locale/ka/LC_MESSAGES/gnome-menus.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gnome-menus.mo
 share/locale/kn/LC_MESSAGES/gnome-menus.mo
 share/locale/ko/LC_MESSAGES/gnome-menus.mo
