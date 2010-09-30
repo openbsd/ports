@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/13 14:24:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/09/30 07:46:35 jasper Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -26,6 +26,7 @@ share/gtk-doc/html/totem-pl-parser/api-reference.html
 share/gtk-doc/html/totem-pl-parser/home.png
 share/gtk-doc/html/totem-pl-parser/index.html
 share/gtk-doc/html/totem-pl-parser/index.sgml
+share/gtk-doc/html/totem-pl-parser/ix02.html
 share/gtk-doc/html/totem-pl-parser/left.png
 share/gtk-doc/html/totem-pl-parser/right.png
 share/gtk-doc/html/totem-pl-parser/style.css
