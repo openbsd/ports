@@ -1,7 +1,7 @@
-$OpenBSD: patch-deskbar_handlers_Makefile_in,v 1.4 2010/04/23 23:45:30 jasper Exp $
---- deskbar/handlers/Makefile.in.orig	Mon Mar 29 13:17:39 2010
-+++ deskbar/handlers/Makefile.in	Fri Apr 23 20:24:06 2010
-@@ -300,7 +300,7 @@ SUBDIRS = actions $(am__append_1)
+$OpenBSD: patch-deskbar_handlers_Makefile_in,v 1.5 2010/09/30 09:26:09 ajacoutot Exp $
+--- deskbar/handlers/Makefile.in.orig	Mon Sep 27 15:27:26 2010
++++ deskbar/handlers/Makefile.in	Thu Sep 30 11:06:16 2010
+@@ -302,7 +302,7 @@ SUBDIRS = actions $(am__append_1)
  deskbar_handlers_modulesdir = $(pythondir)/deskbar/handlers
  deskbar_handlers_modules_PYTHON = __init__.py
  deskbar_handlersdir = $(libexecdir)/deskbar-applet/modules-2.20-compatible

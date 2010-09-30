@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/13 09:44:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/09/30 09:26:09 ajacoutot Exp $
 
 COMMENT=	universal search and navigation for GNOME
 
 GNOME_PROJECT=	deskbar-applet
-GNOME_VERSION=	2.30.1
-
-REVISION=	2
+GNOME_VERSION=	2.32.0
 
 CATEGORIES=	sysutils
 
@@ -27,7 +25,8 @@ WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread-stubs smime3 soup-2.4 sqlite3
 WANTLIB += ssl3 startup-notification-1 tasn1 xcb xcb-atom xcb-aux
 WANTLIB += xcb-event xcb-render xcb-render-util xml2 z camel-1.2 ffi
-WANTLIB += ebook-1.2 edataserver-1.2 gnome-desktop-2
+WANTLIB += ebook-1.2 edataserver-1.2 gnome-desktop-2 proxy
+WANTLIB += eggdbus-1 gdata gnome-keyring nssutil3 soup-gnome-2.4
 
 MODULES=	devel/gettext \
 		lang/python \
