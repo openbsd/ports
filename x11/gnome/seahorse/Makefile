@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/07/25 09:07:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/09/30 07:46:44 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		2.30.1
-REVISION=		1
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -25,8 +24,8 @@ WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 ssl tasn1 xcb xml2 z eggdbus-1 xcb-render xcb-render-util
-WANTLIB += lber ldap notify soup-2.4 gpgme gnome-keyring.>=6 gcr.>=1
+WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
+WANTLIB += lber-2.3 ldap-2.3 notify soup-2.4 gpgme gnome-keyring.>=6 gcr.>=1
 WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		::databases/openldap \
@@ -47,7 +46,8 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection=no \
+			--disable-gtk-doc \
+			--disable-introspection \
 			--enable-hkp \
 			--enable-ldap \
 			--enable-pgp \
