@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2010/09/30 08:25:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -6,6 +6,7 @@ COMMENT=		X11/Motif GUI text editor
 DISTNAME=		nedit-5.5
 PKGNAME=		${DISTNAME}p12
 P_V=			0.3
+REVISION=		0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:1
 PATCHFILES=		wrapmark.diff:0
@@ -15,6 +16,7 @@ MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 			${MASTER_SITE_SOURCEFORGE:=nedit/}
 
 MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
+
 MASTER_SITES1=		http://distfiles.nl/
 
 DIST_SUBDIR=		nedit
