@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/09/30 07:43:58 ajacoutot Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
 GNOME_PROJECT=		libgnomeprintui
-GNOME_VERSION=		2.18.5
-REVISION=		1
+GNOME_VERSION=		2.18.6
 
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		devel
@@ -33,7 +32,8 @@ LIB_DEPENDS=		::x11/gnome/libgnomecanvas \
 			::x11/gnome/libgnomeprint
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

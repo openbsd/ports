@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/03/30 14:36:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/09/30 07:43:58 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeprintui-2.2/
 include/libgnomeprintui-2.2/libgnomeprintui/
@@ -14,6 +14,8 @@ include/libgnomeprintui-2.2/libgnomeprintui/libgnomeprintui-enum-types.h
 lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.la
 lib/pkgconfig/libgnomeprintui-2.2.pc
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libgnomeprintui/
 share/gtk-doc/html/libgnomeprintui/ch02.html
 share/gtk-doc/html/libgnomeprintui/home.png
@@ -102,6 +104,8 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fr/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ga/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/gl/LC_MESSAGES/libgnomeprintui-2.2.mo
