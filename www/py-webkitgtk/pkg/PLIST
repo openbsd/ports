@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/21 09:27:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/09/30 12:21:22 jasper Exp $
+lib/pkgconfig/pywebkitgtk-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/webkit/
 lib/python${MODPY_VERSION}/site-packages/webkit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/webkit/webkit.a
