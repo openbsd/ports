@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/30 15:51:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/30 08:15:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		webcal(endar) handler for GNOME
 
 GNOME_PROJECT=		evolution-webcal
-GNOME_VERSION=		2.28.1
-PKGNAME=		evolution-plugin-webcal-${GNOME_VERSION}p1
+GNOME_VERSION=		2.32.0
+PKGNAME=		evolution-plugin-webcal-${GNOME_VERSION}
 
 CATEGORIES=    		mail
 
@@ -23,12 +23,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += c cairo dbus-1 expat fontconfig freetype
+WANTLIB += c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 ical icalss
 WANTLIB += icalvcal m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs xcb xml2 z
-WANTLIB += dbus-glib-1 xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome \
