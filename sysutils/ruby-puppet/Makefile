@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/28 07:02:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/09/30 15:39:11 jasper Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	0.25.5
 DISTNAME=	puppet-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
 MASTER_SITES=	http://reductivelabs.com/downloads/puppet/
 
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
