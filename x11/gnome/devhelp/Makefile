@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/09/30 07:38:19 jasper Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	2.30.1
+GNOME_VERSION=	2.32.0
 
-REVISION=	1
-
-SHARED_LIBS +=	devhelp-1             1.0        # .0.0
+SHARED_LIBS +=	devhelp-2             0.0        # 1.0
 
 CATEGORIES=	textproc
 
@@ -25,7 +23,7 @@ WANTLIB += cairo dbus-1 dbus-glib-1 enchant execinfo expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc jpeg webkit-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 icui18n jpeg webkit-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++ tasn1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util

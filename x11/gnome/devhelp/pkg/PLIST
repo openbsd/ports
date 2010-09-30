@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/06/21 16:08:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/09/30 07:38:20 jasper Exp $
 @bin bin/devhelp
-include/devhelp-1.0/
-include/devhelp-1.0/devhelp/
-include/devhelp-1.0/devhelp/dh-assistant-view.h
-include/devhelp-1.0/devhelp/dh-assistant.h
-include/devhelp-1.0/devhelp/dh-base.h
-include/devhelp-1.0/devhelp/dh-book-tree.h
-include/devhelp-1.0/devhelp/dh-error.h
-include/devhelp-1.0/devhelp/dh-keyword-model.h
-include/devhelp-1.0/devhelp/dh-link.h
-include/devhelp-1.0/devhelp/dh-search.h
-include/devhelp-1.0/devhelp/dh-window.h
+include/devhelp-2.0/
+include/devhelp-2.0/devhelp/
+include/devhelp-2.0/devhelp/dh-assistant-view.h
+include/devhelp-2.0/devhelp/dh-assistant.h
+include/devhelp-2.0/devhelp/dh-base.h
+include/devhelp-2.0/devhelp/dh-book-manager.h
+include/devhelp-2.0/devhelp/dh-book-tree.h
+include/devhelp-2.0/devhelp/dh-book.h
+include/devhelp-2.0/devhelp/dh-error.h
+include/devhelp-2.0/devhelp/dh-keyword-model.h
+include/devhelp-2.0/devhelp/dh-link.h
+include/devhelp-2.0/devhelp/dh-search.h
+include/devhelp-2.0/devhelp/dh-window.h
 lib/gedit-2/
 lib/gedit-2/plugins/
 lib/gedit-2/plugins/devhelp/
@@ -21,10 +23,10 @@ lib/gedit-2/plugins/devhelp/__init__.pyo
 lib/gedit-2/plugins/devhelp/devhelp.py
 lib/gedit-2/plugins/devhelp/devhelp.pyc
 lib/gedit-2/plugins/devhelp/devhelp.pyo
-lib/libdevhelp-1.a
-lib/libdevhelp-1.la
-@lib lib/libdevhelp-1.so.${LIBdevhelp-1_VERSION}
-lib/pkgconfig/libdevhelp-1.0.pc
+lib/libdevhelp-2.a
+lib/libdevhelp-2.la
+@lib lib/libdevhelp-2.so.${LIBdevhelp-2_VERSION}
+lib/pkgconfig/libdevhelp-2.0.pc
 share/applications/devhelp.desktop
 share/devhelp/
 share/devhelp/assistant/
@@ -109,8 +111,6 @@ share/locale/ta/LC_MESSAGES/devhelp.mo
 share/locale/te/LC_MESSAGES/devhelp.mo
 share/locale/th/LC_MESSAGES/devhelp.mo
 share/locale/tr/LC_MESSAGES/devhelp.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/devhelp.mo
 share/locale/uk/LC_MESSAGES/devhelp.mo
 share/locale/vi/LC_MESSAGES/devhelp.mo
