@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.838 2010/09/29 17:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.839 2010/09/30 12:56:19 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -21,6 +21,7 @@
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
      SUBDIR += atk
+     SUBDIR += atk2mm
      SUBDIR += atlas
      SUBDIR += autoconf
      SUBDIR += autogen
