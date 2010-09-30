@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2010/06/21 21:52:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2010/09/30 07:38:38 jasper Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -335,6 +335,7 @@ share/locale/is/LC_MESSAGES/eog.mo
 share/locale/it/LC_MESSAGES/eog.mo
 share/locale/ja/LC_MESSAGES/eog.mo
 share/locale/ka/LC_MESSAGES/eog.mo
+share/locale/kk/LC_MESSAGES/eog.mo
 share/locale/kn/LC_MESSAGES/eog.mo
 share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/ks/LC_MESSAGES/eog.mo
