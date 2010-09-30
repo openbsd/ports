@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2010/09/30 07:33:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2010/09/30 09:01:51 jasper Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -63,7 +63,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 # XXX hangs forever on configure during gnomeapplet check
-#CONFIGURE_ENV+=		py_cv_mod_gnomeapplet_=yes
+CONFIGURE_ENV+=		py_cv_mod_gnomeapplet_=yes
 
 WANTLIB-main += ${WANTLIB} gstbase-0.10 gstreamer-0.10 gucharmap XRes
 WANTLIB-main += kvm gcrypt gnome-desktop-2 gnutls gpg-error gweather
