@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/09/28 11:52:36 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2010/09/30 08:39:50 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -8,9 +8,9 @@ GNOME_VERSION=	0.8.17
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 PKGNAME=	tracker-search-${VERSION}
-REVISION=	0
+REVISION=	1
 
-EVO_VERSION=	2.30
+EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
 
 SHARED_LIBS +=  tracker-common       1.0      # .800.0
@@ -31,7 +31,7 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2
 WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
 WANTLIB += gnutls gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14
-WANTLIB += gtkhtml-editor jpeg krb5 lcms m nspr4 nss3 ogg pango-1.0
+WANTLIB += jpeg krb5 lcms m nspr4 nss3 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
 WANTLIB += ssl ssl3 startup-notification-1 stdc++ tasn1 tiff unique-1.0
@@ -40,6 +40,7 @@ WANTLIB += xml2 z openjpeg proxy soup-gnome-2.4
 WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
 WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
 WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee
+WANTLIB += canberra gdata gtkhtml-editor-3.14 ltdl nssutil3
 
 HOMEPAGE=	http://tracker-project.org/
 
