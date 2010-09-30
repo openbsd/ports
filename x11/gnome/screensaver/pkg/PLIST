@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/28 15:18:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:36:45 ajacoutot Exp $
 @bin bin/gnome-screensaver
 @bin bin/gnome-screensaver-command
 @bin bin/gnome-screensaver-preferences
@@ -31,6 +31,7 @@ share/backgrounds/cosmos/helix-nebula.jpg
 share/backgrounds/cosmos/jupiter.jpg
 share/backgrounds/cosmos/sombrero.jpg
 share/backgrounds/cosmos/whirlpool.jpg
+share/dbus-1/services/org.gnome.ScreenSaver.service
 share/desktop-directories/
 share/desktop-directories/gnome-screensaver.directory
 share/doc/gnome-screensaver/
