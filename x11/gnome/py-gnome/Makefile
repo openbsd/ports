@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/09/30 10:13:15 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
 GNOME_PROJECT=	gnome-python
 GNOME_VERSION=	2.28.1
 PKGNAME=	py-gnome-${VERSION}
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -24,8 +24,9 @@ WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-keyring gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += util xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render
+WANTLIB += util xcb xml2 z gcrypt gpg-error xcb-render
 WANTLIB += gnomeui-2 xcb-render-util gnomecanvas-2 gnome-2
+WANTLIB += canberra ltdl ogg pthread vorbis vorbisfile
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -35,7 +36,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		::x11/gnome/libgnomeui \
 		::x11/gnome/libgnomecanvas \
-		::x11/gnome/libgnome
+		::x11/gnome/libgnome \
+		::net/avahi
 RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
 		::devel/py-orbit
 
