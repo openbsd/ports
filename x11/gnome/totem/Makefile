@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/09/16 11:02:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/09/30 07:47:06 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
-GNOME_VERSION=	2.30.2
-
-REVISION=	4
+GNOME_VERSION=	2.32.0
 
 CATEGORIES=	multimedia
 
@@ -84,6 +82,7 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
 		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
 		--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \
 		--enable-nautilus \
@@ -94,7 +93,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
 		--disable-cone-plugin \
-		--disable-scrollkeeper \
 		--disable-vala
 
 # stop systrace spam by avoiding xsltproc to access net

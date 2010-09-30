@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/04/22 11:20:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/09/30 07:47:06 ajacoutot Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
@@ -366,12 +366,15 @@ share/gtk-doc/html/totem/TotemCellRendererVideo.html
 share/gtk-doc/html/totem/TotemObject.html
 share/gtk-doc/html/totem/TotemPlugin.html
 share/gtk-doc/html/totem/TotemVideoList.html
+share/gtk-doc/html/totem/annotation-glossary.html
 share/gtk-doc/html/totem/api-index-deprecated.html
 share/gtk-doc/html/totem/api-index-full.html
 share/gtk-doc/html/totem/core-api.html
 share/gtk-doc/html/totem/home.png
 share/gtk-doc/html/totem/index.html
 share/gtk-doc/html/totem/index.sgml
+share/gtk-doc/html/totem/ix02.html
+share/gtk-doc/html/totem/ix03.html
 share/gtk-doc/html/totem/left.png
 share/gtk-doc/html/totem/right.png
 share/gtk-doc/html/totem/style.css
@@ -435,6 +438,7 @@ share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
+share/locale/kk/LC_MESSAGES/totem.mo
 share/locale/kn/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
