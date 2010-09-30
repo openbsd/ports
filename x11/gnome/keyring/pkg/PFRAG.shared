@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2010/04/20 20:11:26 ajacoutot Exp $
-lib/gnome-keyring/devel/gck-ssh-store-standalone.so
-lib/gnome-keyring/devel/gck-user-store-standalone.so
+@comment $OpenBSD: PFRAG.shared,v 1.9 2010/09/30 07:34:39 ajacoutot Exp $
+lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
+lib/gnome-keyring/devel/gkm-user-store-standalone.so
 lib/gnome-keyring/gnome-keyring-pkcs11.so
-lib/gnome-keyring/standalone/gck-roots-store-standalone.so
-lib/gnome-keyring/standalone/gck-secret-store-standalone.so
+lib/gnome-keyring/standalone/gkm-roots-store-standalone.so
+lib/gnome-keyring/standalone/gkm-secret-store-standalone.so
 @lib lib/libgcr.so.${LIBgcr_VERSION}
 @lib lib/libgp11.so.${LIBgp11_VERSION}

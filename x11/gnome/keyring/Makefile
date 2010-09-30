@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/09/30 07:34:39 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		2.30.3
-
-REVISION=		0
+GNOME_VERSION=		2.32.0
 
 SHARED_LIBS +=  gp11                 1.0      # .0.0
 SHARED_LIBS +=  gcr                  1.0      # .0.0
@@ -16,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes tasn1
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 dbus-1
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
@@ -25,16 +23,14 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-render-util z
 
 MODULES=	devel/gettext \
-		x11/gnome \
-		devel/gconf2
+		x11/gnome
 
 LIB_DEPENDS=	::security/libgcrypt \
 		::security/libtasn1 \
-		::x11/dbus
+		::x11/dbus \
+		::x11/gtk+2
 
 USE_X11=	Yes
-MODGCONF2_SCHEMAS_DIR= gnome-keyring
-MODGCONF2_LIBDEP= No
 
 CONFIGURE_ARGS=	--with-root-certs=/etc/ssl \
 		--disable-pam \
