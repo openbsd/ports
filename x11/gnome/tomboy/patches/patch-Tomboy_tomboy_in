@@ -1,31 +1,31 @@
-$OpenBSD: patch-Tomboy_tomboy_in,v 1.5 2010/03/30 09:08:02 ajacoutot Exp $
+$OpenBSD: patch-Tomboy_tomboy_in,v 1.6 2010/09/30 11:08:30 ajacoutot Exp $
 
 Remove bashism.
 
---- Tomboy/tomboy.in.orig	Sat Feb  6 21:59:53 2010
-+++ Tomboy/tomboy.in	Tue Mar 30 10:27:03 2010
+--- Tomboy/tomboy.in.orig	Tue Sep 14 00:12:43 2010
++++ Tomboy/tomboy.in	Thu Sep 30 12:49:50 2010
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
- if [ "x$PWD" = "x@srcdir@" ] ; then
-     echo "*** Running uninstalled @target@ ***"
-@@ -20,15 +20,15 @@ else
-     [ -n "$TOMBOY_PROFILE" ] && TOMBOY_PROFILE="--profile=$TOMBOY_PROFILE"
+ export LD_LIBRARY_PATH="@pkglibdir@${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}"
+ export MONO_PATH=$MONO_PATH:@pkglibdir@:@pkglibdir@/addins
+@@ -11,15 +11,15 @@ THIS_EXE="@pkglibdir@/@target@"
+ [ -n "$TOMBOY_PROFILE" ] && TOMBOY_PROFILE="--profile=$TOMBOY_PROFILE"
  
-     for arg in $*; do
--        case "x--debug" in ("x$arg")
-+        case "x--debug" in ("x`echo $arg`")
-             TOMBOY_DEBUG=$arg
-         esac
+ for arg in $*; do
+-    case "x--debug" in ("x$arg")
++    case "x--debug" in ("x`echo $arg`")
+         TOMBOY_DEBUG=$arg
+     esac
  
--        case "x--trace=" in ("x${arg:0:8}")
-+        case "x--trace=" in ("x`echo $arg | cut -c1-8`")
-             TOMBOY_TRACE=$arg
-         esac
+-    case "x--trace=" in ("x${arg:0:8}")
++    case "x--trace=" in ("x`echo $arg | cut -c1-8`")
+         TOMBOY_TRACE=$arg
+     esac
  
--        case "x--profile=" in ("x${arg:0:10}")
-+        case "x--profile=" in ("x`echo $arg | cut -c1-10`")
-             TOMBOY_PROFILE=$arg
-         esac
-     done
+-    case "x--profile=" in ("x${arg:0:10}")
++    case "x--profile=" in ("x`echo $arg | cut -c1-10`")
+         TOMBOY_PROFILE=$arg
+     esac
+ done

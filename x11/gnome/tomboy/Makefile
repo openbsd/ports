@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/30 11:08:30 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
-GNOME_VERSION=	1.2.1
-REVISION=	0
+GNOME_VERSION=	1.4.0
 
 CATEGORIES=	x11
 
