@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/30 07:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/30 19:45:04 landry Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	2.5
-PKGNAME =		${DISTNAME:S/-src//}
-
-REVISION =		1
+NETSURF_VERSION =	2.6
 
 CATEGORIES=		www
 
