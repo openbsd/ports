@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2010/09/30 07:18:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,26 +6,22 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
 
-VERSION=	2.20.1
-DISTNAME=	gtk+-${VERSION}
+V=		2.22.0
+DISTNAME=	gtk+-${V}
 
-PKGNAME-main=	gtk+2-${VERSION}
-PKGNAME-docs=	gtk+2-docs-${VERSION}
-PKGNAME-cups=	gtk+2-cups-${VERSION}
-
-REVISION-main=	2
-REVISION-docs=	0
-REVISION-cups=	0
+PKGNAME-main=	gtk+2-${V}
+PKGNAME-docs=	gtk+2-docs-${V}
+PKGNAME-cups=	gtk+2-cups-${V}
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS+=	gdk_pixbuf-2.0		1403.0 # .1800.1
-SHARED_LIBS+=	gdk-x11-2.0		1403.0 # .1800.1
-SHARED_LIBS+=	gtk-x11-2.0		1403.0 # .1800.1
-SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1403.0 # .1800.1
-SHARED_LIBS+=	gailutil		25.0   # .18.1
+SHARED_LIBS +=  gdk-x11-2.0          2200.0   # 2200.0
+SHARED_LIBS +=  gtk-x11-2.0          2200.0   # 2200.0
+SHARED_LIBS +=  gailutil             26.0     # 18.1
 
 HOMEPAGE=	http://www.gtk.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,9 +32,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype
 WANTLIB += glitz gthread-2.0 m pcre pixman-1 pthread-stubs xcb
-WANTLIB += xcb-render xcb-render-util z
+WANTLIB += xcb-render xcb-render-util z gdk_pixbuf-2.0
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -docs -cups
@@ -56,13 +52,14 @@ RUN_DEPENDS=	::x11/hicolor-icon-theme \
 		::misc/shared-mime-info
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0:glib2->=2.24.0:devel/glib2 \
-		pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
-		atk-1.0.>=1809.0::devel/atk \
-		tiff.>=35::graphics/tiff \
-		png.>=3::graphics/png \
-		jpeg.>=62::graphics/jpeg
-WANTLIB-main=	${WANTLIB} c pthread
+		:glib2->=2.26.0:devel/glib2 \
+		::devel/pango \
+		::devel/atk \
+		::graphics/gdk-pixbuf2
+
+WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
+WANTLIB-main += png
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
@@ -73,12 +70,12 @@ WANTLIB-docs +=
 PKG_ARCH-docs=	*
 
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
-		cups.>=3::print/cups \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::${BASE_PKGPATH},-main
+		::print/cups \
+		::${BASE_PKGPATH},-main
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png
-WANTLIB-cups += ssl
+WANTLIB-cups += ssl cups gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -92,7 +89,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--enable-introspection=no \
+		--disable-introspection \
 		--enable-man=no \
 		--with-xinput=yes \
 		--disable-papi \

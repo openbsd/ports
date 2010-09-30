@@ -1,10 +1,10 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.23 2010/05/03 15:04:27 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.24 2010/09/30 07:18:15 ajacoutot Exp $
 
 Fix use of grep(1) as we don't support the -o switch.
  
---- gtk/Makefile.in.orig	Mon May  3 01:55:01 2010
-+++ gtk/Makefile.in	Mon May  3 13:51:15 2010
-@@ -968,7 +968,7 @@ SUBDIRS = theme-bits . tests
+--- gtk/Makefile.in.orig	Thu Sep 23 16:27:23 2010
++++ gtk/Makefile.in	Wed Sep 29 08:32:22 2010
+@@ -947,7 +947,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
@@ -13,7 +13,7 @@ Fix use of grep(1) as we don't support the -o switch.
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
-@@ -2775,7 +2775,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
+@@ -2751,7 +2751,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
  gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_srcdir)/gdk/*.h Makefile
  	echo '#include <gtk/gtk.h>' > xgen-gtfsrc.c && \
  	  ${CPP} $(DEFS) $(INCLUDES) -DGTK_ENABLE_BROKEN $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
