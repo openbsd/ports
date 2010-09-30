@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-gdk,v 1.2 2009/11/29 09:17:38 ajacoutot Exp $
-@comment lib/gstreamer-${VERSION}/libgstgdkpixbuf.la
-lib/gstreamer-${VERSION}/libgstgdkpixbuf.so
