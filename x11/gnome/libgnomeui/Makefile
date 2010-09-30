@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/09/30 07:44:17 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
-GNOME_VERSION=		2.24.3
-REVISION=		2
+GNOME_VERSION=		2.24.4
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -23,8 +22,9 @@ WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread-stubs ssl util xcb xml2
-WANTLIB += eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util z
+WANTLIB += gcrypt gpg-error xcb-render xcb-render-util z
 WANTLIB += gnome-keyring.>=6 gnome-2 gnomecanvas-2 bonoboui-2
+WANTLIB += canberra ltdl ogg pthread vorbis vorbisfile
 
 MODULES=	devel/gettext \
 		x11/gnome

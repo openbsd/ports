@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/03/30 14:48:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/09/30 07:44:17 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
@@ -65,29 +65,16 @@ share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libgnomeui/
 share/gtk-doc/html/libgnomeui/GnomeAbout.html
-share/gtk-doc/html/libgnomeui/GnomeApp.html
-share/gtk-doc/html/libgnomeui/GnomeAppBar.html
-share/gtk-doc/html/libgnomeui/GnomeClient.html
 share/gtk-doc/html/libgnomeui/GnomeColorPicker.html
-share/gtk-doc/html/libgnomeui/GnomeDateEdit.html
 share/gtk-doc/html/libgnomeui/GnomeDialog.html
 share/gtk-doc/html/libgnomeui/GnomeDruid.html
 share/gtk-doc/html/libgnomeui/GnomeDruidPage.html
-share/gtk-doc/html/libgnomeui/GnomeDruidPageEdge.html
 share/gtk-doc/html/libgnomeui/GnomeDruidPageStandard.html
-share/gtk-doc/html/libgnomeui/GnomeEntry.html
 share/gtk-doc/html/libgnomeui/GnomeFileEntry.html
-share/gtk-doc/html/libgnomeui/GnomeFontPicker.html
 share/gtk-doc/html/libgnomeui/GnomeHRef.html
-share/gtk-doc/html/libgnomeui/GnomeIconEntry.html
-share/gtk-doc/html/libgnomeui/GnomeIconList.html
 share/gtk-doc/html/libgnomeui/GnomeIconSelection.html
 share/gtk-doc/html/libgnomeui/GnomeIconTextItem.html
-share/gtk-doc/html/libgnomeui/GnomeMDI.html
-share/gtk-doc/html/libgnomeui/GnomeMDIChild.html
 share/gtk-doc/html/libgnomeui/GnomeMDIGenericChild.html
-share/gtk-doc/html/libgnomeui/GnomeMessageBox.html
-share/gtk-doc/html/libgnomeui/GnomePixmap.html
 share/gtk-doc/html/libgnomeui/GnomePixmapEntry.html
 share/gtk-doc/html/libgnomeui/GnomePropertyBox.html
 share/gtk-doc/html/libgnomeui/GnomeScores.html
@@ -120,8 +107,21 @@ share/gtk-doc/html/libgnomeui/libgnomeui-GnomeThemeFile.html
 share/gtk-doc/html/libgnomeui/libgnomeui-GnomeThumbnail.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-helper.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-util.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-appbar.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-client.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-dateedit.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-dialog-util.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-druid-page-edge.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-entry.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-font-picker.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-icon-entry.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-icon-list.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-mdi-child.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-mdi-session.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-mdi.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-messagebox.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-pixmap.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-popup-menu.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-stock-icons.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-types.html
@@ -266,6 +266,9 @@ share/locale/ja/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/libgnomeui-2.0.mo
@@ -371,6 +374,9 @@ share/locale/tr/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tt/
 share/locale/tt/LC_MESSAGES/
 share/locale/tt/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
