@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2010/04/26 16:05:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/09/30 07:47:47 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 share/applications/yelp.desktop
@@ -58,6 +58,9 @@ share/locale/is/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
 share/locale/ka/LC_MESSAGES/yelp.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/yelp.mo
 share/locale/kn/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/ks/
