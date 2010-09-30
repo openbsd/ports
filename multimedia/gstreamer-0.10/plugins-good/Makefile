@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/09/12 22:33:57 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.62 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -17,6 +17,7 @@ PKGNAME-caca =		gstreamer-libcaca-${V}
 
 REVISION-main =		0
 EPOCH-main =		0
+REVISION-gdk =		0
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -gdk -caca
@@ -80,7 +81,7 @@ LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 WANTLIB-gdk =		${WANTLIB} \
 			gio-2.0 gdk_pixbuf-2.0 gstvideo-0.10
 LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
-			::x11/gtk+2 \
+			::graphics/gdk-pixbuf2 \
 			::$P/plugins-base
 
 WANTLIB-caca =		${WANTLIB} \

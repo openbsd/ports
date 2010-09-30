@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/03/21 10:44:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 DISTNAME=		osm-gps-map-0.5.0
+REVISON=		0
 SHARED_LIBS +=  osmgpsmap 0.0 # .0.0
 CATEGORIES=		geo x11
 
@@ -23,12 +24,12 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs tasn1
-WANTLIB += xcb xml2 z gcrypt
+WANTLIB += xcb xml2 z gcrypt gdk_pixbuf-2.0
 
 USE_LIBTOOL=		Yes
 
 LIB_DEPENDS=		soup-2.4::devel/libsoup \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 AUTOMAKE_VERSION=	1.8

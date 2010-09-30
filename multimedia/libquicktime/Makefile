@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/09/30 07:21:20 ajacoutot Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-1.1.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	4.0
 
@@ -26,7 +26,7 @@ WANTLIB= GL ICE SM X11 Xau Xaw Xcomposite Xcursor \
 	pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 	pthread pthread-stubs schroedinger-1.0 \
 	sndio speex theora xcb xcb-render \
-	xcb-render-util z
+	xcb-render-util z gdk_pixbuf-2.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -35,7 +35,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:doxygen-*:devel/doxygen
 LIB_DEPENDS=		avcodec.>=14,avutil.>=7,swscale.>=2:ffmpeg->=20100512:graphics/ffmpeg \
 			dv.>=4::multimedia/libdv \
-			gtk-x11-2.0.>=800.8,gdk-x11-2.0.>=800.8,gdk_pixbuf-2.0.>=800.8::x11/gtk+2 \
+			gtk-x11-2.0.>=800.8,gdk-x11-2.0.>=800.8::x11/gtk+2 \
 			jpeg.>=9::graphics/jpeg \
 			mp3lame::audio/lame \
 			png.>=4::graphics/png \

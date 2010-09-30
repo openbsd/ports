@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/06/11 17:08:32 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2010/09/30 07:21:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,11 +10,11 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.6
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 FULLPKGNAME-docs=	claws-mail-docs-${V}
 FULLPKGPATH-docs=	mail/claws-mail,-docs
-PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
-PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
+PKGNAME-bogofilter=	claws-mail-bogofilter-${V}p0
+PKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -49,14 +49,14 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
-			gcrypt gpg-error xcb z
+			gcrypt gpg-error xcb z gdk_pixbuf-2.0
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 \
 			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event
 
 WANTLIB-docs=
 
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+LIB_DEPENDS=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 			execinfo::devel/libexecinfo \
 			etpan.>=13::mail/libetpan \
 			sasl2::security/cyrus-sasl2

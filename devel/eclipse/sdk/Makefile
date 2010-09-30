@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2009/12/22 15:31:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/09/30 07:21:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p12
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p13
 PKGNAME-swt=		swt-${ECLIPSE_VER}p1
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p2
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p3
@@ -70,10 +70,10 @@ RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
 			:swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
 			::devel/desktop-file-utils
-LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS-main=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
-			Xcomposite Xdamage \
+			Xcomposite Xdamage gdk_pixbuf-2.0 \
 			Xrandr Xrender c expat m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 glitz png iconv intl \

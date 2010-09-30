@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/28 20:13:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/30 07:21:18 ajacoutot Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.2
 DISTNAME =	ethos-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS=	ethos-1.0 1.0 \
 		ethos-ui-1.0 0.0
@@ -40,12 +40,12 @@ BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=	::x11/py-gtk2
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
+		gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z ffi
 
 .include <bsd.port.mk>

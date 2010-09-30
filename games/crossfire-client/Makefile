@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/26 01:43:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.24 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.11.0
 DISTNAME=	crossfire-client-${VERSION}
-PKGNAME=	${DISTNAME}p4
+REVISION=	5
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -23,13 +23,13 @@ WANTLIB=	GL GLU SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		cairo crypto expat fontconfig freetype gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 idn m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
-		pthread-stubs sndio ssl xcb z
+		pthread-stubs sndio ssl xcb z gdk_pixbuf-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		SDL_image.>=2::devel/sdl-image \
 		glut.>=4::graphics/freeglut \
 		curl.>=8::net/curl

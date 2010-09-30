@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/11 17:10:40 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	remove attachments from emails
 VERSION =	1.0.12
 DISTNAME =	att_remover-${VERSION}
 PKGNAME =	claws-mail-attremover-${VERSION}
+REVISION =	0
 MASTER_SITES =	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES =	mail
 DIST_SUBDIR =	claws
@@ -26,7 +27,7 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	gdk-x11-2.0.>=1403,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS =	gdk-x11-2.0.>=1403,gtk-x11-2.0::x11/gtk+2
 
 RUN_DEPENDS =	:claws-mail->=3.7.6:mail/claws-mail
 BUILD_DEPENDS =	${RUN_DEPENDS}
@@ -36,7 +37,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs xcb xcb-render \
-		xcb-render-util z
+		xcb-render-util z gdk_pixbuf-2.0
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

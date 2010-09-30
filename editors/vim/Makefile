@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2010/09/09 22:29:28 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.111 2010/09/30 07:21:18 ajacoutot Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,8 +8,8 @@ REV=		3
 VERSION=	7.3.${REV}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}
-PKGNAME-lang=	vim-lang-${VERSION}
+PKGNAME-main=	vim-${VERSION}p0
+PKGNAME-lang=	vim-lang-${VERSION}p0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -100,7 +100,7 @@ WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
 MAKE_FLAGS+=	'LDFLAGS=-pthread'
 MAKE_FLAGS+=	'CFLAGS=-pthread'
-LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
@@ -108,7 +108,7 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
 		glitz Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 		Xrandr pixman-1 pthread-stubs xcb gthread-2.0 xcb-render \
-		xcb-render-util
+		xcb-render-util gdk_pixbuf-2.0
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif

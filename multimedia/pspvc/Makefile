@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT=	Video converter for the Playstation Portable
 
 V=		0.3
 DISTNAME=	pspvc-${V}
-PKGNAME=	${DISTNAME}p3
+REVISION=	4
 DISTFILES=	pspvc-install-${V}.tar.gz
 CATEGORIES=	multimedia
 
@@ -21,12 +21,12 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs xcb z
+WANTLIB += pcre pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pspvc/}
 
 RUN_DEPENDS=	::graphics/ffmpeg
-LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 

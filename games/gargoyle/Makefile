@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/28 01:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/30 07:21:19 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	cross-platform interactive fiction player
 
 DISTNAME =	gargoyle-2009-08-25-sources
 PKGNAME =	gargoyle-20090825
+REVISION =	0
 
 CATEGORIES =	games x11
 
@@ -24,7 +25,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
 		freetype iconv m pixman-1 pthread pthread-stubs xcb stdc++ \
-		vorbisfile z
+		vorbisfile z gdk_pixbuf-2.0
 
 MASTER_SITES =	http://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip
@@ -37,7 +38,7 @@ LIB_DEPENDS =	SDL.>=2.0::devel/sdl \
 		atk-1.0::devel/atk \
 		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		glitz::graphics/glitz \
-		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+		gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
 		jpeg.>=62::graphics/jpeg \
 		pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
 		png.>=3::graphics/png \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/05/04 12:36:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
@@ -8,6 +8,8 @@ GNOME_VERSION=		2.20.3
 
 PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		devel x11
 
@@ -27,7 +29,7 @@ MULTI_PACKAGES=		-main -docs
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			Xcomposite Xdamage Xrender atk-1.0 cairo expat \
-			fontconfig freetype pcre pixman-1 gio-2.0 \
+			fontconfig freetype pcre pixman-1 gio-2.0 gdk_pixbuf-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z \
 			pthread-stubs xcb xcb-render xcb-render-util gthread-2.0
@@ -37,7 +39,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		giomm-2.4,glibmm-2.4:glib2mm->=2.18.1:devel/glib2mm \
 			pangomm-1.4::devel/pangomm \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.14:x11/gtk+2 \
+			gdk-x11-2.0,gtk-x11-2.0:gtk+2->=2.14:x11/gtk+2 \
 			cairomm-1.0::graphics/cairomm
 
 PKG_ARCH-docs=		*

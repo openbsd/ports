@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/24 08:41:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-0.1.16.1
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 
 CATEGORIES=	graphics
 
@@ -22,12 +22,12 @@ WANTLIB=	gmodule-2.0 X11 Xext Xrender gobject-2.0 glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 Xau Xcursor \
 		Xdmcp Xfixes Xi Xinerama Xrandr exif expat ltdl usb \
 		Xcomposite Xdamage pixman-1 pthread gio-2.0 \
-		pthread-stubs xcb
+		pthread-stubs xcb gdk_pixbuf-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
-		gdk_pixbuf-2.0.>=0.11,gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2 \
+		gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2 \
 		exif-gtk::graphics/libexif-gtk
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 

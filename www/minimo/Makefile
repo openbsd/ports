@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.58 2010/09/30 07:21:20 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-1.8.1.19
-PKGNAME=	${DISTNAME}p3v0
+PKGNAME=	${DISTNAME}p4v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://openbsddistfiles.com/martynas/mozilla/minimo/
@@ -27,12 +27,12 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:libIDL-*:devel/libIDL
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
-		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
+		gdk-x11-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,nssutil3.>=22,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 		Xrandr Xrender Xt Xau Xdmcp expat c fontconfig freetype m \
-		pthread pthread-stubs xcb z \
+		pthread pthread-stubs xcb z gdk_pixbuf-2.0 \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 cairo glitz stdc++ gio-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/26 15:10:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -8,9 +8,9 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 REVISION-main=	1
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	0
+REVISION-tcl=	1
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 1
+REVISION-iaxcomm= 2
 
 CATEGORIES=	telephony
 USE_LIBTOOL=	Yes
@@ -41,7 +41,7 @@ WANTLIB-tcl 	+= gobject-2.0 gthread-2.0 m mp3lame ogg orc-0.4 ossaudio
 WANTLIB-tcl 	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-tcl 	+= png pthread pthread-stubs schroedinger-1.0 sndio theora
 WANTLIB-tcl 	+= vorbis vorbisenc x264 xcb xcb-render xcb-render-util
-WANTLIB-tcl 	+= z
+WANTLIB-tcl 	+= z gdk_pixbuf-2.0
 
 WANTLIB-iaxcomm += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-iaxcomm += Xi Xinerama Xrandr Xrender atk-1.0 avcodec avutil c
@@ -61,7 +61,7 @@ LIB_DEPENDS=	gsm.>=1::audio/gsm \
 
 LIB_DEPENDS-tcl=${LIB_DEPENDS} \
 		iaxclient::${BASE_PKGPATH} \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
 

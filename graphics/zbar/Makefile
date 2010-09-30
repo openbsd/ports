@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.3 2010/08/30 21:24:15 jasper Exp $
+#	$OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
@@ -30,11 +30,11 @@ WANTLIB += cairo expat fontconfig freetype gio-2.0 glib-2.0 glitz
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jasper jbig jpeg
 WANTLIB += lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs tiff wmflite
-WANTLIB += xcb xml2 z
+WANTLIB += xcb xml2 z gdk_pixbuf-2.0
 
 LIB_DEPENDS=	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 		ffi::devel/libffi \
-		gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+		gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/py-gtk2

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.86 2010/01/10 10:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT=	mail/news client in gtk+
 
 MAJOR=		2.7
 VERSION=	${MAJOR}.1
 DISTNAME=	sylpheed-${VERSION}
+
+REVISION=	0
 
 SHARED_LIBS +=  sylph-0              0.0      # .0.1
 SHARED_LIBS +=  sylpheed-plugin-0    0.0      # .0.1
@@ -19,13 +21,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
 		gtkspell.>=1::textproc/gtkspell
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto enchant
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl stdc++ xcb z
 
 RUN_DEPENDS=	::devel/desktop-file-utils

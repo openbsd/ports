@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -6,7 +6,7 @@ COMMENT-python= python bindings for libgpod
 VERSION=	0.7.2
 DISTNAME=	libgpod-${VERSION}
 PKGNAME-main=	${DISTNAME}
-REVISION-main =	2
+REVISION-main =	3
 PKGNAME-python= py-gpod-${VERSION}
 REVISION-python = 3
 SHARED_LIBS=	gpod	720.0
@@ -39,7 +39,7 @@ LIB_DEPENDS-python=	${LIB_DEPENDS} \
 			::devel/libffi \
 			::${BUILD_PKGPATH},-main
 LIB_DEPENDS=		::devel/glib2 \
-			::x11/gtk+2 \
+			::graphics/gdk-pixbuf2 \
 			::textproc/libxml
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m z pcre

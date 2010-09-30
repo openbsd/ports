@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-PKGNAME =	${DISTNAME}p1
+REVISION=	2
 
 CATEGORIES =	games
 
@@ -22,7 +22,7 @@ MODULES =	devel/gettext \
 		x11/gnome
 
 DESKTOP_FILES =	Yes
-LIB_DEPENDS =	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \
+LIB_DEPENDS =	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \
 		gconf-2.>=6::devel/gconf2
 RUN_DEPENDS +=	::x11/gnome/librsvg
 
@@ -37,6 +37,6 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb z
+WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 
 .include <bsd.port.mk>

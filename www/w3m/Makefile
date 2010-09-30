@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.71 2010/09/30 07:21:20 ajacoutot Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.2
-PKGNAME=	${DISTNAME}p2
+REVISION=	3
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -36,14 +36,14 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 
 .if ${FLAVOR:L:Mimage}
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gdk_pixbuf_xlib-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 CONFIGURE_ARGS+=--with-imagelib=gtk2
 DOCS+=		README.img
 WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png Xcomposite Xdamage gio-2.0 pixman-1 \
-		pthread-stubs xcb
+		pthread-stubs xcb gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif
