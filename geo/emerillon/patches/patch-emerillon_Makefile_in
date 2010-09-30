@@ -1,0 +1,15 @@
+$OpenBSD: patch-emerillon_Makefile_in,v 1.1 2010/09/30 07:33:38 jasper Exp $
+
+Fix for champlain 0.8.
+
+--- emerillon/Makefile.in.orig	Tue Sep 28 13:56:16 2010
++++ emerillon/Makefile.in	Tue Sep 28 13:56:36 2010
+@@ -381,7 +381,7 @@ API_H_FILES = \
+ 
+ @HAVE_INTROSPECTION_TRUE@INTROSPECTION_GIRS = Emerillon-0.1.gir
+ @HAVE_INTROSPECTION_TRUE@introspection_sources = $(libemerillon_la_SOURCES)
+-@HAVE_INTROSPECTION_TRUE@Emerillon_0_1_gir_INCLUDES = GObject-2.0 Gtk-2.0 Clutter-1.0 Champlain-0.6 GtkChamplain-0.6
++@HAVE_INTROSPECTION_TRUE@Emerillon_0_1_gir_INCLUDES = GObject-2.0 Gtk-2.0 Clutter-1.0 Champlain-0.8 GtkChamplain-0.8
+ @HAVE_INTROSPECTION_TRUE@Emerillon_0_1_gir_CFLAGS = -I$(top_srcdir) $(EMERILLON_CFLAGS) -DEMERILLON_COMPILATION
+ @HAVE_INTROSPECTION_TRUE@Emerillon_0_1_gir_PROGRAM = ./$(bin_PROGRAMS)
+ @HAVE_INTROSPECTION_TRUE@Emerillon_0_1_gir_FILES = $(top_srcdir)/emerillon/emerillon.h $(top_srcdir)/emerillon/window.h $(top_srcdir)/emerillon/sidebar.h

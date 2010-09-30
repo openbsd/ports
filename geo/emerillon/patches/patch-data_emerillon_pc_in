@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_emerillon_pc_in,v 1.1 2010/09/30 07:33:38 jasper Exp $
+
+Fix dependency for champlain 0.8.
+
+--- data/emerillon.pc.in.orig	Tue Sep 28 13:55:45 2010
++++ data/emerillon.pc.in	Tue Sep 28 13:55:50 2010
+@@ -6,6 +6,6 @@ pluginsdir=@libdir@/emerillon/plugins
+ 
+ Name: Emerillon
+ Description: A map viewer for the GNOME desktop
+-Requires: gtk+-2.0, gconf-2.0, clutter-1.0, champlain-0.6
++Requires: gtk+-2.0, gconf-2.0, clutter-1.0, champlain-0.8
+ Version: @VERSION@
+ Cflags: -I${includedir}

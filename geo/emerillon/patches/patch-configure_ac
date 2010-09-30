@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/09/30 07:33:38 jasper Exp $
+
+Adjust for champlain 0.8 and rest.
+
+--- configure.ac.orig	Tue Sep 28 14:09:27 2010
++++ configure.ac	Tue Sep 28 14:09:45 2010
+@@ -85,8 +85,8 @@ GLIB_REQUIRED=2.12.0
+ GTHREAD_REQUIRED=2.12.0
+ GTK_REQUIRED=2.20.0
+ GCONF_REQUIRED=2.5.90
+-CHAMPLAIN_REQUIRED=0.6.0
+-CHAMPLAIN_GTK_REQUIRED=0.6.0
++CHAMPLAIN_REQUIRED=0.8.0
++CHAMPLAIN_GTK_REQUIRED=0.8.0
+ GEOCLUE_REQUIRED=0.11.1
+ ETHOS_REQUIRED=0.2
+ ETHOS_UI_REQUIRED=0.2
+@@ -96,8 +96,8 @@ PKG_CHECK_MODULES(EMERILLON, [
+     gthread-2.0 >= $GTHREAD_REQUIRED
+     gtk+-2.0 >= $GTK_REQUIRED
+     gconf-2.0 >= $GCONF_REQUIRED
+-    champlain-0.6 >= $CHAMPLAIN_REQUIRED
+-    champlain-gtk-0.6 >= $CHAMPLAIN_GTK_REQUIRED
++    champlain-0.8 >= $CHAMPLAIN_REQUIRED
++    champlain-gtk-0.8 >= $CHAMPLAIN_GTK_REQUIRED
+     geoclue >= $GEOCLUE_REQUIRED
+     ethos-1.0 >= $ETHOS_REQUIRED
+     ethos-ui-1.0 >= $ETHOS_UI_REQUIRED
+@@ -116,7 +116,7 @@ if test x$enable_search = xyes; then
+   AC_SUBST(SEARCH_DEPS_LIBS)
+   PKG_CHECK_MODULES(SEARCH_DEPS,
+     [
+-      rest-0.6 >= 0.6
++      rest >= 0.6
+     ]
+   )
+ 

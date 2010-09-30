@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/27 20:06:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/09/30 07:33:38 jasper Exp $
 @bin bin/emerillon
 include/emerillon-0.1/
 include/emerillon-0.1/emerillon/
@@ -8,9 +8,6 @@ include/emerillon-0.1/emerillon/window.h
 lib/emerillon/
 lib/emerillon/plugins/
 lib/emerillon/plugins/copy-link.emerillon-plugin
-lib/emerillon/plugins/map-position.emerillon-plugin
-lib/emerillon/plugins/placemarks.emerillon-plugin
-lib/emerillon/plugins/search.emerillon-plugin
 @comment lib/emerillon/plugins/libcopy-link.a
 @comment lib/emerillon/plugins/libcopy-link.la
 lib/emerillon/plugins/libcopy-link.so
@@ -23,25 +20,82 @@ lib/emerillon/plugins/libplacemarks.so
 @comment lib/emerillon/plugins/libsearch.a
 @comment lib/emerillon/plugins/libsearch.la
 lib/emerillon/plugins/libsearch.so
+lib/emerillon/plugins/map-position.emerillon-plugin
+lib/emerillon/plugins/placemarks.emerillon-plugin
+lib/emerillon/plugins/search.emerillon-plugin
 lib/pkgconfig/emerillon.pc
+share/applications/emerillon.desktop
+share/emerillon/
+share/emerillon/emerillon-ui.xml
+share/gnome/help/
+share/gnome/help/emerillon/
+share/gnome/help/emerillon/C/
+share/gnome/help/emerillon/C/about.page
+share/gnome/help/emerillon/C/index.page
+share/gnome/help/emerillon/C/intro.page
+share/gnome/help/emerillon/C/legal.xml
+share/gnome/help/emerillon/C/license.page
+share/gnome/help/emerillon/C/plugins-copylink.page
+share/gnome/help/emerillon/C/plugins-mapposition.page
+share/gnome/help/emerillon/C/plugins-placemarks.page
+share/gnome/help/emerillon/C/plugins.page
+share/gnome/help/emerillon/C/usage.page
+share/gnome/help/emerillon/de/
+share/gnome/help/emerillon/de/about.page
+share/gnome/help/emerillon/de/index.page
+share/gnome/help/emerillon/de/intro.page
+share/gnome/help/emerillon/de/legal.xml
+share/gnome/help/emerillon/de/license.page
+share/gnome/help/emerillon/de/plugins-copylink.page
+share/gnome/help/emerillon/de/plugins-mapposition.page
+share/gnome/help/emerillon/de/plugins-placemarks.page
+share/gnome/help/emerillon/de/plugins.page
+share/gnome/help/emerillon/de/usage.page
+share/gtk-doc/html/emerillon/
+share/gtk-doc/html/emerillon/EmerillonManager.html
+share/gtk-doc/html/emerillon/EmerillonPreferences.html
+share/gtk-doc/html/emerillon/EmerillonSidebar.html
+share/gtk-doc/html/emerillon/EmerillonWindow.html
+share/gtk-doc/html/emerillon/annotation-glossary.html
+share/gtk-doc/html/emerillon/api-index-full.html
+share/gtk-doc/html/emerillon/ch01.html
+share/gtk-doc/html/emerillon/emerillon-config-keys.html
+share/gtk-doc/html/emerillon/emerillon.devhelp
+share/gtk-doc/html/emerillon/emerillon.devhelp2
+share/gtk-doc/html/emerillon/home.png
+share/gtk-doc/html/emerillon/index.html
+share/gtk-doc/html/emerillon/index.sgml
+share/gtk-doc/html/emerillon/left.png
+share/gtk-doc/html/emerillon/object-tree.html
+share/gtk-doc/html/emerillon/right.png
+share/gtk-doc/html/emerillon/style.css
+share/gtk-doc/html/emerillon/up.png
 share/locale/ar/LC_MESSAGES/emerillon.mo
+share/locale/cs/LC_MESSAGES/emerillon.mo
 share/locale/da/LC_MESSAGES/emerillon.mo
 share/locale/de/LC_MESSAGES/emerillon.mo
 share/locale/es/LC_MESSAGES/emerillon.mo
 share/locale/fr/LC_MESSAGES/emerillon.mo
+share/locale/gl/LC_MESSAGES/emerillon.mo
 share/locale/id/LC_MESSAGES/emerillon.mo
 share/locale/is/LC_MESSAGES/emerillon.mo
+share/locale/it/LC_MESSAGES/emerillon.mo
 share/locale/ja/LC_MESSAGES/emerillon.mo
 share/locale/lv/LC_MESSAGES/emerillon.mo
+share/locale/nb/LC_MESSAGES/emerillon.mo
+share/locale/pl/LC_MESSAGES/emerillon.mo
+share/locale/pt/LC_MESSAGES/emerillon.mo
 share/locale/pt_BR/LC_MESSAGES/emerillon.mo
 share/locale/sl/LC_MESSAGES/emerillon.mo
 share/locale/sv/LC_MESSAGES/emerillon.mo
-share/applications/emerillon.desktop
-share/emerillon/
-share/emerillon/emerillon-ui.xml
+share/locale/zh_CN/LC_MESSAGES/emerillon.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/emerillon.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/vala/
+share/vala/vapi/
+share/vala/vapi/emerillon.deps
+share/vala/vapi/emerillon.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
