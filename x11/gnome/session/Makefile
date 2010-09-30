@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.119 2010/09/28 07:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2010/09/30 07:37:04 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		2.30.2
-REVISION=		8
+GNOME_VERSION=		2.32.0
 
 CATEGORIES=		x11
 
@@ -20,8 +19,7 @@ WANTLIB += c cairo dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += startup-notification-1 xcb xcb-atom xcb-aux xcb-event
-WANTLIB += z xcb-render xcb-render-util execinfo
+WANTLIB += z xcb-render xcb-render-util execinfo xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -46,7 +44,6 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-session
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-splash \
 		--disable-rebuilds
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
@@ -55,8 +52,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # find the right path for gconftool-2
 CONFIGURE_ENV+=		GCONFTOOL=${LOCALBASE}/bin/gconftool-2
 
-MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet" \
-			sysconfdir=${PREFIX}/share/examples/gnome-session
+MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-session

@@ -1,70 +1,70 @@
-$OpenBSD: patch-configure,v 1.3 2010/06/22 17:46:52 ajacoutot Exp $
---- configure.orig	Tue Jun 22 04:06:47 2010
-+++ configure	Tue Jun 22 19:36:30 2010
-@@ -12269,13 +12269,11 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+$OpenBSD: patch-configure,v 1.4 2010/09/30 07:37:05 ajacoutot Exp $
+--- configure.orig	Tue Sep 28 13:39:47 2010
++++ configure	Tue Sep 28 13:40:02 2010
+@@ -12292,13 +12292,11 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
          gio-2.0 >= \$GLIB_REQUIRED
-         gtk+-2.0 >= \$GTK_REQUIRED
+         gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED
          dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= \$DEVKIT_POWER_REQUIRED
+-        upower-glib >= \$UPOWER_REQUIRED
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -12284,7 +12282,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+@@ -12307,7 +12305,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -12300,13 +12297,11 @@ if test -n "$GNOME_SESSION_LIBS"; then
+@@ -12323,13 +12320,11 @@ if test -n "$GNOME_SESSION_LIBS"; then
          gio-2.0 >= \$GLIB_REQUIRED
-         gtk+-2.0 >= \$GTK_REQUIRED
+         gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED
          dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= \$DEVKIT_POWER_REQUIRED
+-        upower-glib >= \$UPOWER_REQUIRED
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -12315,7 +12310,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
+@@ -12338,7 +12333,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -12338,14 +12332,12 @@ fi
+@@ -12363,14 +12357,12 @@ fi
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  " 2>&1`
          else
  	        GNOME_SESSION_PKG_ERRORS=`$PKG_CONFIG --print-errors "glib-2.0 >= $GLIB_REQUIRED
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -12355,7 +12347,6 @@ fi
+@@ -12380,7 +12372,6 @@ fi
          gio-2.0 >= $GLIB_REQUIRED
-         gtk+-2.0 >= $GTK_REQUIRED
+         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
--        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
  ) were not met:
  
  $GNOME_SESSION_PKG_ERRORS

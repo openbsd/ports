@@ -1,26 +1,25 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.5 2010/07/01 18:26:53 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.6 2010/09/30 07:37:05 ajacoutot Exp $
 
-OpenBSD does not have DeviceKit/uPower.
+OpenBSD does not support uPower.
 
---- gnome-session/gsm-manager.c.orig	Thu Mar  4 17:50:11 2010
-+++ gnome-session/gsm-manager.c	Fri Apr 30 12:12:11 2010
+--- gnome-session/gsm-manager.c.orig	Thu Jul 15 14:53:08 2010
++++ gnome-session/gsm-manager.c	Tue Sep 28 13:53:51 2010
 @@ -38,7 +38,9 @@
  #include <dbus/dbus-glib.h>
  #include <dbus/dbus-glib-lowlevel.h>
  
 +#ifndef __OpenBSD__
- #include <devkit-power-gobject/devicekit-power.h>
+ #include <upower.h>
 +#endif
  
  #include <gtk/gtk.h> /* for logout dialog */
  #include <gconf/gconf-client.h>
-@@ -134,8 +136,10 @@ struct GsmManagerPrivate
-         DBusGProxy             *bus_proxy;
+@@ -135,7 +137,9 @@ struct GsmManagerPrivate
          DBusGConnection        *connection;
  
-+#ifndef __OpenBSD__
          /* Interface with other parts of the system */
-         DkpClient              *dkp_client;
++#ifndef __OpenBSD__
+         UpClient               *up_client;
 +#endif
  };
  
@@ -33,7 +32,7 @@ OpenBSD does not have DeviceKit/uPower.
          gboolean  can_hibernate;
          GError   *error;
          gboolean  ret;
-@@ -1004,11 +1009,13 @@ manager_attempt_hibernate (GsmManager *manager)
+@@ -1001,11 +1006,13 @@ manager_attempt_hibernate (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -47,7 +46,7 @@ OpenBSD does not have DeviceKit/uPower.
          gboolean  can_suspend;
          GError   *error;
          gboolean  ret;
-@@ -1030,6 +1037,7 @@ manager_attempt_suspend (GsmManager *manager)
+@@ -1024,6 +1031,7 @@ manager_attempt_suspend (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -55,35 +54,35 @@ OpenBSD does not have DeviceKit/uPower.
  }
  
  static void
-@@ -2202,10 +2210,12 @@ gsm_manager_dispose (GObject *object)
+@@ -2196,10 +2204,12 @@ gsm_manager_dispose (GObject *object)
                  manager->priv->gconf_client = NULL;
          }
  
 +#ifndef __OpenBSD__
-         if (manager->priv->dkp_client != NULL) {
-                 g_object_unref (manager->priv->dkp_client);
-                 manager->priv->dkp_client = NULL;
+         if (manager->priv->up_client != NULL) {
+                 g_object_unref (manager->priv->up_client);
+                 manager->priv->up_client = NULL;
          }
 +#endif
  
          G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
  }
-@@ -2435,7 +2445,9 @@ gsm_manager_init (GsmManager *manager)
+@@ -2429,7 +2439,9 @@ gsm_manager_init (GsmManager *manager)
                            G_CALLBACK (on_presence_status_changed),
                            manager);
  
 +#ifndef __OpenBSD__
-         manager->priv->dkp_client = dkp_client_new ();
+         manager->priv->up_client = up_client_new ();
 +#endif
  
          /* GConf setup */
          gconf_client_add_dir (manager->priv->gconf_client,
-@@ -2959,10 +2971,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+@@ -2953,10 +2965,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
          gboolean can_suspend;
          gboolean can_hibernate;
  
 +#ifndef __OpenBSD__
-         g_object_get (manager->priv->dkp_client,
+         g_object_get (manager->priv->up_client,
                        "can-suspend", &can_suspend,
                        "can-hibernate", &can_hibernate,
                        NULL);

@@ -1,15 +1,15 @@
-$OpenBSD: patch-gnome-session_gsm-logout-dialog_c,v 1.3 2010/07/23 09:28:05 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-logout-dialog_c,v 1.4 2010/09/30 07:37:05 ajacoutot Exp $
 
-OpenBSD does not have DeviceKit/uPower.
+OpenBSD does not support uPower.
 
---- gnome-session/gsm-logout-dialog.c.orig	Tue Feb  9 14:22:01 2010
-+++ gnome-session/gsm-logout-dialog.c	Fri Jul 23 11:13:20 2010
+--- gnome-session/gsm-logout-dialog.c.orig	Thu Jul 15 14:53:08 2010
++++ gnome-session/gsm-logout-dialog.c	Tue Sep 28 13:50:55 2010
 @@ -27,7 +27,9 @@
  #include <glib/gi18n.h>
  #include <gtk/gtk.h>
  
 +#ifndef __OpenBSD__
- #include <devkit-power-gobject/devicekit-power.h>
+ #include <upower.h>
 +#endif
  
  #include "gsm-logout-dialog.h"
@@ -19,7 +19,7 @@ OpenBSD does not have DeviceKit/uPower.
          GsmDialogLogoutType  type;
  
 +#ifndef __OpenBSD__
-         DkpClient           *dkp_client;
+         UpClient            *up_client;
 +#endif
          GsmConsolekit       *consolekit;
  
@@ -29,7 +29,7 @@ OpenBSD does not have DeviceKit/uPower.
          gtk_window_stick (GTK_WINDOW (logout_dialog));
  
 +#ifndef __OpenBSD__
-         logout_dialog->priv->dkp_client = dkp_client_new ();
+         logout_dialog->priv->up_client = up_client_new ();
 +#endif
  
          logout_dialog->priv->consolekit = gsm_get_consolekit ();
@@ -39,39 +39,33 @@ OpenBSD does not have DeviceKit/uPower.
          }
  
 +#ifndef __OpenBSD__
-         if (logout_dialog->priv->dkp_client) {
-                 g_object_unref (logout_dialog->priv->dkp_client);
-                 logout_dialog->priv->dkp_client = NULL;
+         if (logout_dialog->priv->up_client) {
+                 g_object_unref (logout_dialog->priv->up_client);
+                 logout_dialog->priv->up_client = NULL;
          }
 +#endif
  
          if (logout_dialog->priv->consolekit) {
                  g_object_unref (logout_dialog->priv->consolekit);
-@@ -183,9 +191,13 @@ static gboolean
+@@ -182,13 +190,21 @@ gsm_logout_dialog_destroy (GsmLogoutDialog *logout_dia
+ static gboolean
  gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
  {
-         gboolean ret;
 +#ifndef __OpenBSD__
-         g_object_get (logout_dialog->priv->dkp_client,
-                       "can-suspend", &ret,
-                       NULL);
+         return up_client_get_can_suspend (logout_dialog->priv->up_client);
 +#else
-+	ret = 0;
++	return FALSE;
 +#endif
-         return ret;
  }
  
-@@ -193,9 +205,13 @@ static gboolean
+ static gboolean
  gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
  {
-         gboolean ret;
 +#ifndef __OpenBSD__
-         g_object_get (logout_dialog->priv->dkp_client,
-                       "can-hibernate", &ret,
-                       NULL);
+         return up_client_get_can_hibernate (logout_dialog->priv->up_client);
 +#else
-+	ret = 0;
++	return FALSE;
 +#endif
-         return ret;
  }
  
+ static gboolean

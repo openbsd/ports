@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/04/30 11:24:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/09/30 07:37:05 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
 bin/gnome-wm
-libexec/gnome-session/
-libexec/gnome-session/helpers/
-@bin libexec/gnome-session/helpers/gnome-session-splash
-@bin libexec/gnome-session/helpers/gnome-settings-daemon-helper
 @man man/man1/gnome-session-properties.1
 @man man/man1/gnome-session-save.1
 @man man/man1/gnome-session.1
@@ -16,15 +12,6 @@ share/doc/gnome-session/
 share/doc/gnome-session/README.OpenBSD
 share/doc/gnome-session/dbus/
 share/doc/gnome-session/dbus/gnome-session.html
-share/examples/gnome-session/
-share/examples/gnome-session/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/gnome-session/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/gnome-session/xdg/autostart/gnome-session-splash.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-session-splash.desktop
-share/examples/gnome-session/xdg/autostart/gnome-settings-daemon-helper.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-settings-daemon-helper.desktop
 share/gnome-session/
 share/gnome-session/gsm-inhibit-dialog.ui
 share/gnome-session/session-properties.ui
@@ -71,6 +58,9 @@ share/locale/fr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/fur/
 share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/gu/LC_MESSAGES/gnome-session-2.0.mo
@@ -81,8 +71,6 @@ share/locale/he/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-session-2.0.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ig/
@@ -139,6 +127,9 @@ share/locale/tk/
 share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/uz/
 share/locale/uz/LC_MESSAGES/
@@ -156,9 +147,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
-share/pixmaps/
-share/pixmaps/splash/
-share/pixmaps/splash/gnome-splash.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gnome-session.schemas
