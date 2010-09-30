@@ -1,0 +1,4 @@
+The Gdk Pixbuf library provides:
+    * Image loading and saving facilities
+    * Fast scaling and compositing of pixbufs
+    * Simple animation loading (ie. animated GIFs)
