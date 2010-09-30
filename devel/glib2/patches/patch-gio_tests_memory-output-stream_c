@@ -1,10 +1,10 @@
-$OpenBSD: patch-gio_tests_memory-output-stream_c,v 1.1 2010/06/07 12:47:28 jasper Exp $
+$OpenBSD: patch-gio_tests_memory-output-stream_c,v 1.2 2010/09/30 07:17:19 ajacoutot Exp $
 
 Fix build with GCC2.
 
---- gio/tests/memory-output-stream.c.orig	Mon Jun  7 10:04:19 2010
-+++ gio/tests/memory-output-stream.c	Mon Jun  7 10:06:51 2010
-@@ -92,6 +92,10 @@ test_properties (void)
+--- gio/tests/memory-output-stream.c.orig	Mon Aug  9 15:34:46 2010
++++ gio/tests/memory-output-stream.c	Mon Sep 27 14:42:36 2010
+@@ -118,6 +118,10 @@ test_properties (void)
    GDataOutputStream *o;
    int i;
    GError *error = NULL;
@@ -15,7 +15,7 @@ Fix build with GCC2.
  
    g_test_bug ("605733");
  
-@@ -107,13 +111,11 @@ test_properties (void)
+@@ -133,13 +137,11 @@ test_properties (void)
        g_assert_no_error (error);
      }
  
@@ -29,5 +29,5 @@ Fix build with GCC2.
 -  gpointer data_prop;
 +  data_fun = g_memory_output_stream_get_data (G_MEMORY_OUTPUT_STREAM (mo));
    g_object_get (mo, "data", &data_prop, NULL);
-   g_assert_cmphex (data_fun, ==, data_prop);
+   g_assert_cmphex (GPOINTER_TO_SIZE (data_fun), ==, GPOINTER_TO_SIZE (data_prop));
  

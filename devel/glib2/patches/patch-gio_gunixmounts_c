@@ -1,12 +1,12 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.1 2009/10/14 01:29:39 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.2 2010/09/30 07:17:19 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
---- gio/gunixmounts.c.orig	Wed Apr  1 01:04:20 2009
-+++ gio/gunixmounts.c	Wed Oct 14 03:13:38 2009
-@@ -136,6 +136,9 @@ struct _GUnixMountMonitor {
+--- gio/gunixmounts.c.orig	Mon Aug  9 15:34:46 2010
++++ gio/gunixmounts.c	Mon Sep 27 14:42:36 2010
+@@ -135,6 +135,9 @@ struct _GUnixMountMonitor {
  
    GFileMonitor *fstab_monitor;
    GFileMonitor *mtab_monitor;
@@ -16,7 +16,7 @@ on checking for mtab updates like other systems.
  };
  
  struct _GUnixMountMonitorClass {
-@@ -147,6 +150,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
+@@ -146,6 +149,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
  static GList *_g_get_unix_mounts (void);
  static GList *_g_get_unix_mount_points (void);
  
@@ -25,7 +25,7 @@ on checking for mtab updates like other systems.
  G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor, G_TYPE_OBJECT);
  
  #define MOUNT_POLL_INTERVAL 4000
-@@ -173,6 +178,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
+@@ -172,6 +177,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
  #endif
  
  #if defined(HAVE_GETMNTINFO) && defined(HAVE_FSTAB_H) && defined(HAVE_SYS_MOUNT_H)
@@ -33,7 +33,7 @@ on checking for mtab updates like other systems.
  #include <sys/ucred.h>
  #include <sys/mount.h>
  #include <fstab.h>
-@@ -223,20 +229,28 @@ g_unix_is_mount_path_system_internal (const char *moun
+@@ -222,20 +228,28 @@ g_unix_is_mount_path_system_internal (const char *moun
      "/",              /* we already have "Filesystem root" in Nautilus */ 
      "/bin",
      "/boot",

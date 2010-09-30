@@ -1,6 +1,6 @@
-$OpenBSD: patch-glib_gmacros_h,v 1.12 2009/11/26 08:00:43 ajacoutot Exp $
---- glib/gmacros.h.orig	Wed Apr  1 01:04:20 2009
-+++ glib/gmacros.h	Sat Nov 21 14:38:24 2009
+$OpenBSD: patch-glib_gmacros_h,v 1.13 2010/09/30 07:17:19 ajacoutot Exp $
+--- glib/gmacros.h.orig	Mon Aug  9 15:34:46 2010
++++ glib/gmacros.h	Mon Sep 27 14:42:36 2010
 @@ -38,6 +38,7 @@
  /* We include stddef.h to get the system's definition of NULL
   */
@@ -23,7 +23,7 @@ $OpenBSD: patch-glib_gmacros_h,v 1.12 2009/11/26 08:00:43 ajacoutot Exp $
  #define G_GNUC_NO_INSTRUMENT			\
    __attribute__((__no_instrument_function__))
  #else   /* !__GNUC__ */
-@@ -187,11 +193,13 @@
+@@ -194,11 +200,13 @@
  #define	TRUE	(!FALSE)
  #endif
  

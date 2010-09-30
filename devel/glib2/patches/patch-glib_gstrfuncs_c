@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gstrfuncs_c,v 1.9 2009/07/12 20:38:09 ajacoutot Exp $
---- glib/gstrfuncs.c.orig	Wed Apr  1 01:04:20 2009
-+++ glib/gstrfuncs.c	Thu Jun 11 14:15:29 2009
-@@ -1381,7 +1381,7 @@ g_strerror (gint errnum)
+$OpenBSD: patch-glib_gstrfuncs_c,v 1.10 2010/09/30 07:17:19 ajacoutot Exp $
+--- glib/gstrfuncs.c.orig	Mon Sep 13 17:57:51 2010
++++ glib/gstrfuncs.c	Mon Sep 27 14:44:40 2010
+@@ -1394,7 +1394,7 @@ g_strerror (gint errnum)
        g_static_private_set (&msg_private, msg, g_free);
      }
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-glib_gstrfuncs_c,v 1.9 2009/07/12 20:38:09 ajacoutot Exp $
  
    errno = saved_errno;
    return msg;
-@@ -1545,7 +1545,7 @@ extern const char *strsignal(int);
+@@ -1558,7 +1558,7 @@ extern const char *strsignal(int);
        g_static_private_set (&msg_private, msg, g_free);
      }
  
 -  _g_sprintf (msg, "unknown signal (%d)", signum);
 +  _g_snprintf (msg, 64, "unknown signal (%d)", signum);
-   
+ 
    return msg;
  }

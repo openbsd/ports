@@ -1,0 +1,28 @@
+$OpenBSD: patch-gio_gnetworkingprivate_h,v 1.1 2010/09/30 07:17:19 ajacoutot Exp $
+--- gio/gnetworkingprivate.h.orig	Tue Sep 28 15:25:02 2010
++++ gio/gnetworkingprivate.h	Tue Sep 28 15:26:25 2010
+@@ -49,11 +49,6 @@
+ #endif
+ 
+ #include <sys/types.h>
+-#include <arpa/inet.h>
+-#include <arpa/nameser.h>
+-#if defined(HAVE_ARPA_NAMESER_COMPAT_H) && !defined(GETSHORT)
+-#include <arpa/nameser_compat.h>
+-#endif
+ 
+ #ifndef T_SRV
+ #define T_SRV 33
+@@ -71,6 +66,12 @@
+ #include <resolv.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++
++#include <arpa/inet.h>
++#include <arpa/nameser.h>
++#if defined(HAVE_ARPA_NAMESER_COMPAT_H) && !defined(GETSHORT)
++#include <arpa/nameser_compat.h>
++#endif
+ 
+ #ifndef _PATH_RESCONF
+ #define _PATH_RESCONF "/etc/resolv.conf"

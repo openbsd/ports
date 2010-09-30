@@ -1,16 +1,16 @@
-$OpenBSD: patch-gobject_Makefile_in,v 1.8 2010/05/03 11:41:56 ajacoutot Exp $
---- gobject/Makefile.in.orig	Mon May  3 12:46:43 2010
-+++ gobject/Makefile.in	Mon May  3 12:47:04 2010
-@@ -1198,7 +1198,7 @@ info: info-recursive
+$OpenBSD: patch-gobject_Makefile_in,v 1.9 2010/09/30 07:17:19 ajacoutot Exp $
+--- gobject/Makefile.in.orig	Sat Sep 18 21:28:25 2010
++++ gobject/Makefile.in	Mon Sep 27 14:43:10 2010
+@@ -1243,7 +1243,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-data-local install-dist_gdbSCRIPTS \
 +install-data-am: install-data-local \
- 	install-libgobjectincludeHEADERS
+ 	install-libgobjectincludeHEADERS install-tapsetDATA
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -1414,9 +1414,7 @@ libgobject-gdb.py: libgobject-gdb.py.in
+@@ -1488,9 +1488,7 @@ libgobject-gdb.py: libgobject-gdb.py.in
  uninstall-gdb:
  	-rm -r $(DESTDIR)$(datadir)/gdb
  

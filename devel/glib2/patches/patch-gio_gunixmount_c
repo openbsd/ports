@@ -1,9 +1,9 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.1 2010/04/29 16:38:41 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.2 2010/09/30 07:17:19 ajacoutot Exp $
 
 Removable device needs to be unmounted before it is ejected.
 
---- gio/gunixmount.c.orig	Sat Aug 29 04:52:23 2009
-+++ gio/gunixmount.c	Thu Apr 29 14:13:50 2010
+--- gio/gunixmount.c.orig	Mon Aug  9 15:34:46 2010
++++ gio/gunixmount.c	Mon Sep 27 14:42:36 2010
 @@ -29,6 +29,11 @@
  #include <sys/wait.h>
  #include <unistd.h>
@@ -16,7 +16,7 @@ Removable device needs to be unmounted before it is ejected.
  #include <glib.h>
  #include "gunixvolumemonitor.h"
  #include "gunixmount.h"
-@@ -453,10 +458,15 @@ g_unix_mount_eject (GMount             *mount,
+@@ -452,10 +457,15 @@ g_unix_mount_eject (GMount             *mount,
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
    char *argv[] = {"eject", NULL, NULL};
  

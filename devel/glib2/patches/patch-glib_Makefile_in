@@ -1,10 +1,10 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.18 2010/05/03 11:41:56 ajacoutot Exp $
+$OpenBSD: patch-glib_Makefile_in,v 1.19 2010/09/30 07:17:19 ajacoutot Exp $
 
 Don't install gtester-report, it'll only pull in python.
 
---- glib/Makefile.in.orig	Mon May  3 02:59:23 2010
-+++ glib/Makefile.in	Mon May  3 12:46:28 2010
-@@ -726,7 +726,7 @@ INSTALL_PROGS = $(am__append_1) $(am__append_2) $(am__
+--- glib/Makefile.in.orig	Mon Sep 27 18:10:13 2010
++++ glib/Makefile.in	Mon Sep 27 18:44:45 2010
+@@ -777,7 +777,7 @@ INSTALL_PROGS = $(am__append_5) $(am__append_6) $(am__
  @OS_WIN32_TRUE@@OS_WIN32_X64_FALSE@gspawn_win32_helper_console_LDADD = libglib-2.0.la
  @OS_UNIX_TRUE@gtester_SOURCES = gtester.c
  @OS_UNIX_TRUE@gtester_LDADD = libglib-2.0.la 
@@ -12,19 +12,19 @@ Don't install gtester-report, it'll only pull in python.
 +@OS_UNIX_TRUE@auto_config_binscripts =
  @OS_UNIX_TRUE@bin_SCRIPTS = ${auto_config_binscripts}
  @OS_UNIX_TRUE@CONFIGVARS = \
- @OS_UNIX_TRUE@        "bindir"    	: "${bindir}",		\
-@@ -1440,7 +1440,7 @@ info: info-recursive
+ @OS_UNIX_TRUE@	"bindir"    	: "${bindir}",		\
+@@ -1539,7 +1539,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-data-local install-dist_gdbSCRIPTS \
 +install-data-am: install-data-local \
- 	install-glibincludeHEADERS install-glibsubincludeHEADERS
+ 	install-glibincludeHEADERS install-glibsubincludeHEADERS \
+ 	install-tapsetDATA
  	@$(NORMAL_INSTALL)
- 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -1658,9 +1658,7 @@ distclean-local:
+@@ -1793,9 +1793,7 @@ distclean-local:
  libglib-gdb.py: libglib-gdb.py.in
- 	sed -e "s|\@datadir\@|$(datadir)|" $(srcdir)/libglib-gdb.py.in > libglib-gdb.py
+ 	$(AM_V_GEN) $(SED) -e "s|\@datadir\@|$(datadir)|" $(srcdir)/libglib-gdb.py.in > libglib-gdb.py
  
 -install-data-hook: libglib-gdb.py
 -	mkdir -p $(DESTDIR)$(datadir)/gdb/auto-load$(ABS_GLIB_RUNTIME_LIBDIR)

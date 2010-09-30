@@ -1,11 +1,13 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.15 2010/04/22 19:34:06 ajacoutot Exp $
---- tests/Makefile.in.orig	Fri Mar 26 16:01:29 2010
-+++ tests/Makefile.in	Sun Mar 28 07:51:44 2010
-@@ -738,7 +738,6 @@ test_programs = \
- 	tree-test				\
+$OpenBSD: patch-tests_Makefile_in,v 1.16 2010/09/30 07:17:19 ajacoutot Exp $
+--- tests/Makefile.in.orig	Sat Sep 18 21:28:25 2010
++++ tests/Makefile.in	Mon Sep 27 14:43:37 2010
+@@ -639,8 +639,7 @@ test_programs = \
+ 	thread-test				\
+ 	threadpool-test				\
  	type-test				\
- 	unicode-caseconv			\
--	unicode-encoding			\
- 	utf8-validate				\
- 	utf8-pointer				\
- 	uri-test				\
+-	unicode-caseconv			\
+-	unicode-encoding
++	unicode-caseconv
+ 
+ test_scripts = run-collate-tests.sh run-assert-msg-test.sh
+ test_script_support_programs = unicode-collate

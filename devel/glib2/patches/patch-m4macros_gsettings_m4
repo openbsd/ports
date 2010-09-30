@@ -1,0 +1,17 @@
+$OpenBSD: patch-m4macros_gsettings_m4,v 1.1 2010/09/30 07:17:19 ajacoutot Exp $
+
+Bug 627126 - gsettings schema files don't get installed on FreeBSD  
+
+--- m4macros/gsettings.m4.orig	Mon Aug  9 15:34:46 2010
++++ m4macros/gsettings.m4	Tue Sep 28 10:33:03 2010
+@@ -46,8 +46,8 @@ install-data-am: install-gsettings-schemas
+ .SECONDARY: $(gsettings_SCHEMAS)
+ 
+ gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
++  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
++  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
+ 
+ install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)
