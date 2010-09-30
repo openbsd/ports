@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2010/09/30 11:06:18 jasper Exp $
 
 COMMENT =	diary and journal application
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.1.1
 DISTNAME =	rednotebook-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity
 
-HOMEPAGE =	http://rednotebook.sourceforge.net 
+HOMEPAGE =	http://rednotebook.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
