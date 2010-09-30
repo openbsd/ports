@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.45 2010/09/28 07:19:42 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.46 2010/09/30 10:24:25 jasper Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -67,7 +67,6 @@ related ports under the x11/gnome category)
 
  - Graphics & Multimedia
    * byzanz - makes a desktop recording optimized for webpages
-   * cheese - take photos and videos with your webcam
    * eog-plugins - plugins for EOG
    * evince - document viewer for multiple document formats
    * f-spot - photo management application
