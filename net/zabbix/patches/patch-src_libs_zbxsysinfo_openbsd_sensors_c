@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 robert Exp $
---- src/libs/zbxsysinfo/openbsd/sensors.c.orig	Sun Sep 26 23:48:07 2010
-+++ src/libs/zbxsysinfo/openbsd/sensors.c	Mon Sep 27 22:01:44 2010
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.2 2010/09/30 15:51:51 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/sensors.c.orig	Mon Aug 16 10:19:32 2010
++++ src/libs/zbxsysinfo/openbsd/sensors.c	Thu Sep 30 17:36:12 2010
 @@ -1,5 +1,6 @@
  /*
  ** ZABBIX
@@ -8,7 +8,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
  ** Copyright (C) 2000-2005 SIA Zabbix
  **
  ** This program is free software; you can redistribute it and/or modify
-@@ -23,94 +24,89 @@
+@@ -23,94 +24,94 @@
  
  #include "md5.h"
  
@@ -17,9 +17,9 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
 +
 +#define CELSIUS(x) ((x - 273150000) / 1000000.0)
 +
-+int	sensor_value(int[], struct sensor *);
++int	sensor_value(int[], struct sensor *, char *);
 +
-+int	sensor_value(int mib[], struct sensor *sensor)
++int	sensor_value(int mib[], struct sensor *sensor, char *key2)
  {
 -	DIR	*dir;
 -	struct	dirent *entries;
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
  
 -	FILE	*f;
 +	mib[3] = SENSOR_TEMP;
-+	mib[4] = 0;
++	mib[4] = key2 ? atoi(key2) : 0;
  
 -        assert(result);
 +	slen = sizeof(*sensor);
@@ -52,13 +52,13 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
 +        size_t			 sdlen = sizeof(sensordev);
 +        int			 mib[3], dev, numt, cnt = 0, ret = SYSINFO_RET_FAIL;
 +        uint64_t	 	 aggr = 0;
-+	char			 key[MAX_STRING_LEN];
++	char			 key[MAX_STRING_LEN], key2[MAX_STRING_LEN];
 +
 +	assert(result);
 +
 +	init_result(result);
 +
-+	if(num_param(param) > 1)
++	if(num_param(param) > 2)
  	{
  		return SYSINFO_RET_FAIL;
  	}
@@ -73,6 +73,11 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
 +	}
  
 -		if(stat(filename,&buf)==0)
++	if(num_param(param) == 2 && get_param(param, 2, key2, MAX_STRING_LEN) != 0)
++	{
++		return SYSINFO_RET_FAIL;
++	}
++
 +	mib[0] = CTL_HW;
 +	mib[1] = HW_SENSORS;
 +
@@ -103,7 +108,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
 -				closedir(dir);
 -				SET_DBL_RESULT(result, d3);
 -				return  SYSINFO_RET_OK;
-+				ret = sensor_value(mib, &sensor);
++				ret = sensor_value(mib, &sensor, NULL);
 +				aggr += sensor.value;
 +				cnt++;
  			}
@@ -115,7 +120,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
  			{
 -				closedir(dir);
 -				return  SYSINFO_RET_FAIL;
-+				ret = sensor_value(mib, &sensor);
++				ret = sensor_value(mib, &sensor, key2);
 +				if (sensor.type == SENSOR_TEMP)
 +					SET_DBL_RESULT(result, CELSIUS(sensor.value));
  			}
@@ -129,7 +134,7 @@ $OpenBSD: patch-src_libs_zbxsysinfo_openbsd_sensors_c,v 1.1 2010/09/28 11:04:14 
 -{
 -        char    key[MAX_STRING_LEN];
 -        int     ret;
-+	if (!strcmp(key, "") || !strcmp(key, "cpu"))
++	if ((!strcmp(key, "") || !strcmp(key, "cpu")) && cnt)
 +		SET_DBL_RESULT(result, CELSIUS(aggr / cnt));
  
 -        assert(result);
