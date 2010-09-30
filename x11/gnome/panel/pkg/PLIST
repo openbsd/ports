@@ -1,43 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.40 2010/08/31 21:18:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2010/09/30 07:36:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
+@bin bin/panel-test-applets-bonobo
+include/gnome-panel-3.0/
+include/gnome-panel-3.0/libpanel-applet/
+include/gnome-panel-3.0/libpanel-applet/panel-applet-enums.h
+include/gnome-panel-3.0/libpanel-applet/panel-applet-gconf.h
+include/gnome-panel-3.0/libpanel-applet/panel-applet.h
 include/panel-2.0/
 include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
-lib/bonobo/servers/GNOME_ClockApplet_Factory.server
-lib/bonobo/servers/GNOME_FishApplet_Factory.server
-lib/bonobo/servers/GNOME_NotificationAreaApplet.server
-lib/bonobo/servers/GNOME_Wncklet_Factory.server
+lib/gnome-panel/
+lib/gnome-panel/modules/
+lib/gnome-panel/modules/libpanel-applets-bonobo.a
+lib/gnome-panel/modules/libpanel-applets-bonobo.la
+lib/gnome-panel/modules/libpanel-applets-bonobo.so
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.la
+lib/libpanel-applet-3.a
+lib/libpanel-applet-3.la
+@lib lib/libpanel-applet-3.so.${LIBpanel-applet-3_VERSION}
 lib/pkgconfig/libpanelapplet-2.0.pc
+lib/pkgconfig/libpanelapplet-3.0.pc
 @bin libexec/clock-applet
-@bin libexec/fish-applet-2
-@bin libexec/gnome-clock-applet-mechanism
+@bin libexec/fish-applet
 libexec/gnome-panel-add
 @bin libexec/notification-area-applet
 @bin libexec/wnck-applet
 @man man/man1/gnome-panel.1
 share/applications/gnome-panel.desktop
-share/dbus-1/system-services/org.gnome.ClockApplet.Mechanism.service
-share/examples/gnome-panel/
-share/examples/gnome-panel/dbus-1/
-share/examples/gnome-panel/dbus-1/system.d/
-share/examples/gnome-panel/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
-share/gnome-2.0/ui/GNOME_ClockApplet.xml
-share/gnome-2.0/ui/GNOME_FishApplet.xml
-share/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
+share/dbus-1/services/org.gnome.panel.applet.ClockAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.FishAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.NotificationAreaAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.WnckletFactory.service
 share/gnome-2.0/ui/GNOME_Panel_Popup.xml
-share/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
-share/gnome-2.0/ui/GNOME_WindowListApplet.xml
-share/gnome-2.0/ui/GNOME_WindowMenuApplet.xml
-share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
 share/gnome-panel/
+share/gnome-panel/applets/
+share/gnome-panel/applets/org.gnome.panel.ClockApplet.panel-applet
+share/gnome-panel/applets/org.gnome.panel.FishApplet.panel-applet
+share/gnome-panel/applets/org.gnome.panel.NotificationAreaApplet.panel-applet
+share/gnome-panel/applets/org.gnome.panel.Wncklet.panel-applet
 share/gnome-panel/pixmaps/
 share/gnome-panel/pixmaps/clock-calendar-icon.png
 share/gnome-panel/pixmaps/clock-face-large.svg
@@ -57,14 +63,21 @@ share/gnome-panel/pixmaps/gnome-gegl2.png
 share/gnome-panel/pixmaps/monkey.png
 share/gnome-panel/pixmaps/oldwanda.png
 share/gnome-panel/pixmaps/wanda.png
-share/gnome-panel/pixmaps/world_map-960.png
 share/gnome-panel/ui/
+share/gnome-panel/ui/clock-menu.xml
 share/gnome-panel/ui/clock.ui
+share/gnome-panel/ui/fish-menu.xml
 share/gnome-panel/ui/fish.ui
+share/gnome-panel/ui/notification-area-menu.xml
 share/gnome-panel/ui/panel-properties-dialog.ui
 share/gnome-panel/ui/panel-run-dialog.ui
+share/gnome-panel/ui/panel-test-applets-bonobo.ui
 share/gnome-panel/ui/panel-test-applets.ui
+share/gnome-panel/ui/showdesktop-menu.xml
+share/gnome-panel/ui/window-list-menu.xml
 share/gnome-panel/ui/window-list.ui
+share/gnome-panel/ui/window-menu-menu.xml
+share/gnome-panel/ui/workspace-switcher-menu.xml
 share/gnome-panel/ui/workspace-switcher.ui
 share/gnome-panelrc
 share/gnome/help/clock/
@@ -264,6 +277,11 @@ share/gnome/help/fish/it/figures/
 share/gnome/help/fish/it/figures/fish_applet.png
 share/gnome/help/fish/it/fish.xml
 share/gnome/help/fish/it/legal.xml
+share/gnome/help/fish/ja/
+share/gnome/help/fish/ja/figures/
+share/gnome/help/fish/ja/figures/fish_applet.png
+share/gnome/help/fish/ja/fish.xml
+share/gnome/help/fish/ja/legal.xml
 share/gnome/help/fish/ko/
 share/gnome/help/fish/ko/figures/
 share/gnome/help/fish/ko/figures/fish_applet.png
@@ -410,9 +428,11 @@ share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/gv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ha/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
@@ -425,6 +445,7 @@ share/locale/is/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/kk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-panel-2.0.mo
@@ -469,6 +490,7 @@ share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uz/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-panel-2.0.mo
@@ -522,6 +544,7 @@ share/omf/fish/fish-eu.omf
 share/omf/fish/fish-fi.omf
 share/omf/fish/fish-fr.omf
 share/omf/fish/fish-it.omf
+share/omf/fish/fish-ja.omf
 share/omf/fish/fish-ko.omf
 share/omf/fish/fish-oc.omf
 share/omf/fish/fish-ru.omf
@@ -530,7 +553,6 @@ share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/omf/fish/fish-zh_CN.omf
-share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/clock.schemas
 ${SCHEMAS_INSTDIR}/fish.schemas

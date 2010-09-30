@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.79 2010/09/28 08:20:01 landry Exp $
+# $OpenBSD: Makefile,v 1.80 2010/09/30 07:36:27 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
-GNOME_VERSION=	2.30.2
+GNOME_VERSION=	2.32.0.2
 
-REVISION=	4
-
-SHARED_LIBS=	panel-applet-2       4.0      # .2.67
+SHARED_LIBS=	panel-applet-2            4.0 # .2.67
+SHARED_LIBS +=  panel-applet-3            0.0 # 0.5
 
 CATEGORIES=	x11
 
@@ -34,7 +33,7 @@ WANTLIB += tasn1 util vorbis vorbisfile xcb xcb-atom xcb-aux xcb-event
 WANTLIB += xcb-render xcb-render-util xml2 z camel-1.2 ebook-1.2
 WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 canberra-gtk
 WANTLIB += canberra gnome-desktop-2 gnome-menu soup-gnome-2.4
-WANTLIB += polkit-gobject-1
+WANTLIB += gdata nssutil3
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -49,7 +48,7 @@ LIB_DEPENDS= 	::databases/evolution-data-server \
 		::x11/gnome/libgweather \
 		::x11/gnome/librsvg \
 		::devel/libsoup,-gnome \
-		::sysutils/polkit
+		::devel/eggdbus
 RUN_DEPENDS=	:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
 MODGNOME_HELP_FILES= Yes
@@ -60,8 +59,8 @@ MODGCONF2_SCHEMAS_DIR=	gnome-panel
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-polkit \
 		--disable-gtk-doc \
+		--disable-introspection \
 		--disable-network-manager
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
