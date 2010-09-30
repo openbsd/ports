@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/17 05:57:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/09/30 07:26:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PolicyKit integration for Qt4
 
-V=		0.95.1
+V=		0.96.1
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt4-${V}
-REVISION=	0
 
 SHARED_LIBS +=  polkit-qt-agent-1         0.0 # 0.95
 SHARED_LIBS +=  polkit-qt-core-1          0.0 # 0.95
@@ -28,10 +27,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m stdc++ QtCore QtDBus QtGui QtXml gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 polkit-agent-1
-WANTLIB += polkit-gobject-1
+WANTLIB += gobject-2.0 gthread-2.0 polkit-agent-1 polkit-gobject-1
 
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/polkit-qt-1/}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/apps/KDE4.x/admin/}
 
 MODULES=	devel/gettext \
 		devel/cmake \
