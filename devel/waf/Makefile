@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 22:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/09/30 12:13:07 jasper Exp $
 
 COMMENT=	Python-based build system
 
-DISTNAME=	waf-1.5.10
-REVISION =	0
+DISTNAME=	waf-1.5.18
 CATEGORIES=	devel
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://code.google.com/p/waf/
-MASTER_SITES=	http://waf.googlecode.com/files/
+HOMEPAGE=	http://waf.googlecode.com/
+MASTER_SITES=	${HOMEPAGE}/files/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
