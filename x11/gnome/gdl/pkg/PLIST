@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/20 15:54:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/09/30 07:40:14 jasper Exp $
 %%SHARED%%
 include/libgdl-1.0/
 include/libgdl-1.0/gdl/
@@ -23,13 +23,13 @@ share/gdl/ui/layout.ui
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gdl/
-share/gtk-doc/html/gdl/GdlDock.html
-share/gtk-doc/html/gdl/GdlDockBar.html
-share/gtk-doc/html/gdl/GdlDockItem.html
-share/gtk-doc/html/gdl/GdlDockLayout.html
-share/gtk-doc/html/gdl/GdlDockMaster.html
-share/gtk-doc/html/gdl/GdlDockObject.html
-share/gtk-doc/html/gdl/GdlDockPlaceholder.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-bar.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-item.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-layout.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-master.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-object.html
+share/gtk-doc/html/gdl/gdl-gdl-dock-placeholder.html
+share/gtk-doc/html/gdl/gdl-gdl-dock.html
 share/gtk-doc/html/gdl/gdl-gdl-tools.html
 share/gtk-doc/html/gdl/gdl-main.html
 share/gtk-doc/html/gdl/gdl.devhelp
@@ -94,6 +94,10 @@ share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gdl-1.mo
 share/locale/hr/LC_MESSAGES/gdl-1.mo
 share/locale/hu/LC_MESSAGES/gdl-1.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/gdl-1.mo
+share/locale/id/LC_MESSAGES/gdl-1.mo
 share/locale/it/LC_MESSAGES/gdl-1.mo
 share/locale/ja/LC_MESSAGES/gdl-1.mo
 share/locale/ko/LC_MESSAGES/gdl-1.mo
@@ -158,6 +162,9 @@ share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdl-1.mo
 share/locale/tr/LC_MESSAGES/gdl-1.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gdl-1.mo
 share/locale/uk/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
