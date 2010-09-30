@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/03/30 12:08:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2010/09/30 07:41:43 ajacoutot Exp $
 %%SHARED%%
 @bin bin/activation-client
 @bin bin/bonobo-activation-run-query
@@ -280,6 +280,9 @@ share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/hr/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/hu/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/id/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/is/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/it/LC_MESSAGES/libbonobo-2.0.mo

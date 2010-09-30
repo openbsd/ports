@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/09/30 07:41:43 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
 GNOME_PROJECT=	libbonobo
-GNOME_VERSION=	2.24.3
-
-REVISION=	0
+GNOME_VERSION=	2.32.0
 
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
@@ -18,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m dbus-1 pcre pthread z ORBit-2 ORBitCosNaming-2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 xml2 dbus-glib-1
+WANTLIB += c m pcre pthread z ORBit-2 ORBitCosNaming-2 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 xml2 gio-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -27,14 +25,14 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	::devel/popt
 LIB_DEPENDS=	::devel/ORBit2 \
 		::devel/glib2 \
-		::textproc/libxml \
-		::x11/dbus-glib
+		::textproc/libxml
 
 # popt usage is deprecated in gnome, but the header file is still included
 # from some libbonobo header and might still be used inside libbonobo
 RUN_DEPENDS=   ::devel/popt
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
