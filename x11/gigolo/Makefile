@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/09/30 12:13:35 jasper Exp $
 
 COMMENT =	GVfs mountpoint manager
 
-XFCE_VERSION =	0.4.0
+XFCE_VERSION =	0.4.1
 XFCE_GOODIE =	gigolo
-
-REVISION =	1
 
 CATEGORIES =	x11
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
+
+HOMEPAGE =	http://www.uvena.de/gigolo/
 
 # GPLv2
 PERMIT_DISTFILES_CDROM =	Yes
@@ -22,6 +22,7 @@ CONFIGURE_STYLE =	gnu
 NO_REGRESS =	Yes
 DESKTOP_FILES =	Yes
 
+BUILD_DEPENDS +=:waf->=1.5.18:devel/waf
 RUN_DEPENDS +=	::x11/gnome/gvfs
 LIB_DEPENDS =	::x11/gtk+2
 
