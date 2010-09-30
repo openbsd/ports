@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2010/09/07 19:34:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/09/30 07:41:25 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.6.3
+GNOME_VERSION=	1.6.4
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
-
-REVISION-main=	1
-REVISION-smb=	0
 
 SHARED_LIBS +=  gvfscommon           3.0      # .0.0
 SHARED_LIBS +=  gvfscommon-dnssd     1.0      # .0.0
@@ -24,13 +21,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext \
 		x11/gnome
 
-WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gio-2.0 glib-2.0
+WANTLIB += ORBit-2 c dbus-1 gconf-2 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
-WANTLIB += eggdbus-1 expat gpg-error z gcrypt gnome-keyring.>=6
+WANTLIB += expat gpg-error z gcrypt gnome-keyring.>=6
 
 LIB_DEPENDS=	:libgnome-keyring-*:x11/gnome/libgnome-keyring
 
-WANTLIB-main +=	${WANTLIB}
+WANTLIB-main +=	${WANTLIB} eggdbus-1 dbus-glib-1
 WANTLIB-main += bz2 gnutls lzma m proxy soup-2.4 sqlite3
 WANTLIB-main += tasn1 xml2 archive soup-gnome-2.4.>=1
 WANTLIB-main += avahi-client avahi-common avahi-glib
@@ -40,11 +37,12 @@ DESKTOP_FILES=	Yes
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		::archivers/libarchive \
 		::devel/libsoup,-gnome \
-		::net/avahi
+		::net/avahi \
+		::devel/eggdbus
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		:gamin-*:sysutils/gamin,-server
 
-WANTLIB-smb += ${WANTLIB} gvfscommon.>=2 smbclient
+WANTLIB-smb += ${WANTLIB} gvfscommon smbclient execinfo m talloc tdb wbclient
 RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 		::${BASE_PKGPATH},-main \

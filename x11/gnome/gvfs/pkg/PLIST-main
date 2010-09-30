@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/07/13 16:14:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/09/30 07:41:25 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -47,7 +47,6 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-network
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
-share/applications/
 share/applications/mount-archive.desktop
 share/dbus-1/
 share/dbus-1/services/
@@ -71,6 +70,9 @@ share/gvfs/mounts/network.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
 share/gvfs/remote-volume-monitors/
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gvfs.mo
@@ -185,6 +187,9 @@ share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gvfs.mo
 share/locale/tr/LC_MESSAGES/gvfs.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gvfs.mo
 share/locale/uk/LC_MESSAGES/gvfs.mo
 share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
