@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/30 07:37:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/09/30 13:15:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,8 @@ MODGCONF2_SCHEMAS_DIR=	anjuta
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-plugin-subversion \
 			--enable-gtk-doc=no \
-			--enable-debug
+			--enable-debug \
+			--enable-introspection=no
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
