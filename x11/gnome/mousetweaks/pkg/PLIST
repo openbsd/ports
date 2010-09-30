@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/23 16:30:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/09/30 09:29:26 jasper Exp $
 @bin bin/dwell-click-applet
 @bin bin/mousetweaks
 @bin bin/pointer-capture-applet
@@ -239,6 +239,7 @@ share/locale/gu/LC_MESSAGES/mousetweaks.mo
 share/locale/he/LC_MESSAGES/mousetweaks.mo
 share/locale/hi/LC_MESSAGES/mousetweaks.mo
 share/locale/hu/LC_MESSAGES/mousetweaks.mo
+share/locale/id/LC_MESSAGES/mousetweaks.mo
 share/locale/it/LC_MESSAGES/mousetweaks.mo
 share/locale/ja/LC_MESSAGES/mousetweaks.mo
 share/locale/kn/LC_MESSAGES/mousetweaks.mo
@@ -259,6 +260,7 @@ share/locale/pt/LC_MESSAGES/mousetweaks.mo
 share/locale/pt_BR/LC_MESSAGES/mousetweaks.mo
 share/locale/ro/LC_MESSAGES/mousetweaks.mo
 share/locale/ru/LC_MESSAGES/mousetweaks.mo
+share/locale/sk/LC_MESSAGES/mousetweaks.mo
 share/locale/sl/LC_MESSAGES/mousetweaks.mo
 share/locale/sq/LC_MESSAGES/mousetweaks.mo
 share/locale/sr/LC_MESSAGES/mousetweaks.mo
