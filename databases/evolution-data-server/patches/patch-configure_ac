@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.2 2010/04/22 09:17:50 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2010/09/30 07:32:09 ajacoutot Exp $
 
 Stupid configure is stupid. Using a variable that's set
 hundreds of lines later...
 
---- configure.ac.orig	Wed Mar 17 12:17:31 2010
-+++ configure.ac	Thu Apr 22 09:54:50 2010
-@@ -181,8 +181,6 @@ dnl XXX This really belongs in AM_CFLAGS.
+--- configure.ac.orig	Mon Sep 27 12:25:46 2010
++++ configure.ac	Mon Sep 27 19:11:45 2010
+@@ -199,8 +199,6 @@ dnl	-Wstrict-aliasing=2
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  AC_SUBST(AM_CPPFLAGS)
  
@@ -14,7 +14,7 @@ hundreds of lines later...
  dnl ******************************
  dnl Initialize maintainer mode
  dnl ******************************
-@@ -256,6 +254,13 @@ case "$host" in
+@@ -285,6 +283,13 @@ case "$host" in
  	AC_CACHE_VAL(ac_cv_have_addrinfo, [ac_cv_have_addrinfo=yes])
  	AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
  	;;
@@ -28,10 +28,11 @@ hundreds of lines later...
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -483,6 +488,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+@@ -512,6 +517,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+ 	]]
  	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
  AC_MSG_RESULT([$ac_cv_lkstrftime])
- 
++
 +dnl ******************************
 +dnl Posix thread support
 +dnl ******************************
@@ -54,37 +55,6 @@ hundreds of lines later...
 +AC_SUBST(THREADS_LIBS)
 +AC_SUBST(THREADS_CFLAGS)
 +AC_DEFINE(ENABLE_THREADS,1,[Required])
-+
+ 
  dnl ********************************************************************************
  dnl security extension support (SSL and S/MIME)
- dnl
-@@ -1144,29 +1172,6 @@ AM_PATH_GLIB_2_0
- dnl We use AC_SUBST_FILE because AC_SUBST won't deal with newlines
- EVO_MARSHAL_RULE=$srcdir/marshal.mk
- AC_SUBST_FILE(EVO_MARSHAL_RULE)
--
--dnl ******************************
--dnl Posix thread support
--dnl ******************************
--
--dnl GLIB_CONFIG=${GLIB_CONFIG-glib-config}
--dnl GNOME_PTHREAD_CHECK
--
--dnl if test "x$PTHREAD_LIB" = "x" ; then
--dnl 	AC_MSG_ERROR([POSIX threads are currently required for Evolution])
--dnl fi
--
--dnl Notice that this is a hack, and we wont be able to use this forever, but
--dnl at least for some time
--
--EVO_PTHREAD_CHECK
--
--THREADS_LIBS="$PTHREAD_LIB"
--THREADS_CFLAGS="$PTHREAD_CFLAGS"
--
--AC_SUBST(THREADS_LIBS)
--AC_SUBST(THREADS_CFLAGS)
--AC_DEFINE(ENABLE_THREADS,1,[Required])
- 
- dnl ******************************
- dnl DBus stuff

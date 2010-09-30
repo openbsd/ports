@@ -1,0 +1,12 @@
+$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+--- camel/providers/local/camel-maildir-summary.c.orig	Tue Sep 28 07:47:03 2010
++++ camel/providers/local/camel-maildir-summary.c	Tue Sep 28 07:47:23 2010
+@@ -375,7 +375,7 @@ static gchar *maildir_summary_next_uid_string(CamelFol
+ 				g_free(uid);
+ 				sleep(2);
+ 			}
+-			uid = g_strdup_printf("%ld.%d_%u.%s", time(NULL), getpid(), nextuid, mds->priv->hostname);
++			uid = g_strdup_printf("%d.%d_%u.%s", time(NULL), getpid(), nextuid, mds->priv->hostname);
+ 			name = g_strdup_printf("%s/tmp/%s", cls->folder_path, uid);
+ 			retry++;
+ 		} while (g_stat(name, &st) == 0 && retry<3);

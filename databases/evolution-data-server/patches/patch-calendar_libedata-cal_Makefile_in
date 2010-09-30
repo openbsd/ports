@@ -1,0 +1,13 @@
+$OpenBSD: patch-calendar_libedata-cal_Makefile_in,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+--- calendar/libedata-cal/Makefile.in.orig	Mon Sep 27 21:29:52 2010
++++ calendar/libedata-cal/Makefile.in	Mon Sep 27 21:29:57 2010
+@@ -598,8 +598,7 @@ test_intervaltree_coverage_LDADD = \
+ 	$(top_builddir)/calendar/libecal/libecal-1.2.la				\
+ 	libedata-cal-1.2.la		\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la			\
+-	$(EVOLUTION_CALENDAR_LIBS)						\
+-	-lgcov
++	$(EVOLUTION_CALENDAR_LIBS)
+ 
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

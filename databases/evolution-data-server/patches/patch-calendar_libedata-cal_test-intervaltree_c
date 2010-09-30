@@ -1,0 +1,12 @@
+$OpenBSD: patch-calendar_libedata-cal_test-intervaltree_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+--- calendar/libedata-cal/test-intervaltree.c.orig	Tue Sep 28 07:53:30 2010
++++ calendar/libedata-cal/test-intervaltree.c	Tue Sep 28 07:53:38 2010
+@@ -164,7 +164,7 @@ create_test_component (time_t start, time_t end)
+ 
+ 	summary = g_new (ECalComponentText, 1);
+ 
+-	summary->value = g_strdup_printf ("%ld - %ld", start, end);
++	summary->value = g_strdup_printf ("%d - %d", start, end);
+ 	summary->altrep = NULL;
+ 
+ 	e_cal_component_set_summary (comp, summary);

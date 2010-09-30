@@ -1,0 +1,12 @@
+$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+--- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Tue Sep 28 07:49:59 2010
++++ addressbook/backends/ldap/e-book-backend-ldap.c	Tue Sep 28 07:51:32 2010
+@@ -1194,7 +1194,7 @@ create_dn_from_contact (EContact *contact, gchar *root
+ 		}
+ 	}
+ 
+-	dn = g_strdup_printf ("%s=%s%s%lu",
++	dn = g_strdup_printf ("%s=%s%s%d",
+ 			      get_dn_attribute_name (rootdn),
+ 			      (cn_part && *cn_part) ? cn_part : "",
+ 			      (cn_part && *cn_part) ? "." : "",
