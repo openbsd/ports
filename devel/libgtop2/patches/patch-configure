@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2010/04/08 15:57:46 ajacoutot Exp $
---- configure.orig	Tue Mar 30 17:10:07 2010
-+++ configure	Mon Apr  5 14:10:33 2010
-@@ -6934,10 +6934,12 @@ newos6*)
+$OpenBSD: patch-configure,v 1.9 2010/09/30 07:44:35 ajacoutot Exp $
+--- configure.orig	Tue Sep 28 11:37:06 2010
++++ configure	Tue Sep 28 15:14:22 2010
+@@ -6727,10 +6727,12 @@ newos6*)
    ;;
  
  openbsd*)
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.8 2010/04/08 15:57:46 ajacoutot Exp $
    fi
    ;;
  
-@@ -12826,6 +12828,11 @@ $as_echo_n "checking for libgtop sysdeps directory... 
+@@ -12021,6 +12023,11 @@ $as_echo_n "checking for libgtop sysdeps directory... 
  	  libgtop_need_server=yes
  	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
  	  ;;
@@ -29,52 +29,61 @@ $OpenBSD: patch-configure,v 1.8 2010/04/08 15:57:46 ajacoutot Exp $
  	freebsd*|kfreebsd*)
  	  libgtop_sysdeps_dir=freebsd
  	  libgtop_use_machine_h=yes
-@@ -18246,7 +18253,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+@@ -13985,7 +13992,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -18310,7 +18317,7 @@ if test "x$ac_cv_lib_intl_strftime" = x""yes; then
- #define HAVE_STRFTIME 1
- _ACEOF
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14018,7 +14025,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
+ if test "x$ac_cv_lib_intl_strftime" = x""yes; then :
+   $as_echo "#define HAVE_STRFTIME 1" >>confdefs.h
  
 -LIBS="-lintl $LIBS"
 +LIBS="-lintl -liconv $LIBS"
  fi
  
  fi
-@@ -19721,7 +19728,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+@@ -14756,7 +14763,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -19787,7 +19794,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14793,7 +14800,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -19853,7 +19860,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14830,7 +14837,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -20721,11 +20728,6 @@ glib_save_datarootdir="$datarootdir"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14999,7 +15006,7 @@ done
+       fi
+ 
+       if test "$gt_cv_func_dgettext_libintl" = "yes"; then
+-        INTLLIBS="-lintl $libintl_extra_libs"
++        INTLLIBS="-lintl -liconv $libintl_extra_libs"
+       fi
+ 
+       if test "$gt_cv_have_gettext" = "yes"; then
+@@ -15314,11 +15321,6 @@ glib_save_datarootdir="$datarootdir"
  test "x$prefix" = xNONE && prefix=$ac_default_prefix
  test "x$exec_prefix" = xNONE && exec_prefix=$prefix
  datarootdir=`eval echo "${datarootdir}"`
@@ -86,16 +95,8 @@ $OpenBSD: patch-configure,v 1.8 2010/04/08 15:57:46 ajacoutot Exp $
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"
  datarootdir="$glib_save_datarootdir"
-@@ -22880,6 +22882,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <sys/param.h>
- #include <$ac_header>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -23391,9 +23394,9 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+@@ -16476,9 +16478,9 @@ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
 +#include <sys/param.h>

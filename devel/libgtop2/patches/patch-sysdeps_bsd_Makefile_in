@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp $
---- sysdeps/bsd/Makefile.in.orig	Tue Mar 30 17:10:14 2010
-+++ sysdeps/bsd/Makefile.in	Sun Apr 18 13:54:34 2010
+$OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.5 2010/09/30 07:44:35 ajacoutot Exp $
+--- sysdeps/bsd/Makefile.in.orig	Tue Sep 28 11:37:08 2010
++++ sysdeps/bsd/Makefile.in	Tue Sep 28 14:52:41 2010
 @@ -49,7 +49,8 @@ CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
@@ -11,7 +11,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp 
  libgtop_sysdeps_2_0_la_OBJECTS = $(am_libgtop_sysdeps_2_0_la_OBJECTS)
  libgtop_sysdeps_2_0_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-@@ -288,7 +289,7 @@ top_build_prefix = @top_build_prefix@
+@@ -291,7 +292,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  noinst_LTLIBRARIES = libgtop_sysdeps-2.0.la libgtop_sysdeps_suid-2.0.la
@@ -20,7 +20,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp 
  libgtop_sysdeps_2_0_la_LDFLAGS = $(LT_VERSION_INFO)
  libgtop_sysdeps_suid_2_0_la_LIBADD = $(KVM_LIBS)
  libgtop_sysdeps_suid_2_0_la_SOURCES = open.c close.c cpu.c mem.c swap.c \
-@@ -300,7 +301,7 @@ libgtop_sysdeps_suid_2_0_la_SOURCES = open.c close.c c
+@@ -303,7 +304,7 @@ libgtop_sysdeps_suid_2_0_la_SOURCES = open.c close.c c
  
  libgtop_sysdeps_suid_2_0_la_LDFLAGS = $(LT_VERSION_INFO)
  libgtopinclude_HEADERS = glibtop_server.h glibtop_machine.h \
@@ -29,7 +29,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp 
  
  libgtopincludedir = $(includedir)/libgtop-2.0
  all: all-am
-@@ -360,6 +361,7 @@ distclean-compile:
+@@ -363,6 +364,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/close.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpu.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fsusage.Plo@am__quote@
@@ -37,7 +37,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp 
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/loadavg.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mem.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msg_limits.Plo@am__quote@
-@@ -368,6 +370,7 @@ distclean-compile:
+@@ -371,6 +373,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nosuid.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ppp.Plo@am__quote@
@@ -45,7 +45,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.4 2010/04/18 12:32:09 ajacoutot Exp 
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procargs.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prockernel.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proclist.Plo@am__quote@
-@@ -379,6 +382,7 @@ distclean-compile:
+@@ -382,6 +385,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procstate.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proctime.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procuid.Plo@am__quote@

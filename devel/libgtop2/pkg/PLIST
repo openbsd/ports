@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/03/30 16:24:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/09/30 07:44:35 ajacoutot Exp $
 %%SHARED%%
 @bin bin/libgtop_daemon2
 @mode 2555
@@ -47,6 +47,7 @@ include/libgtop-2.0/glibtop/union.h
 include/libgtop-2.0/glibtop/uptime.h
 include/libgtop-2.0/glibtop/version.h
 include/libgtop-2.0/glibtop_machine.h
+include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h

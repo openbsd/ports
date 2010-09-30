@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2010/09/18 09:14:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/09/30 07:44:35 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
-GNOME_VERSION=		2.28.1
+GNOME_VERSION=		2.28.2
 GNOME_PROJECT=		libgtop
-PKGNAME=		libgtop2-${VERSION}p9
+PKGNAME=		libgtop2-${VERSION}
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		Xau c kvm pcre
+WANTLIB += Xau c kvm pcre pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -27,10 +27,12 @@ RUN_DEPENDS=		::sysutils/lsof
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
 			--without-libgtop-smp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			GMSGFMT="${LOCALBASE}/bin/msgfmt"
+			GMSGFMT="${LOCALBASE}/bin/msgfmt" \
+			ac_cv_header_sys_mount_h=yes
 
 .ifdef DEBUG
 CONFIGURE_ARGS+=	--enable-debug
