@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/09/23 22:12:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.77 2010/10/01 10:49:34 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -9,7 +9,7 @@ COMMENT-ap2=		apache2 subversion modules
 VERSION=		1.6.12
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
+REVISION-main=		2
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 REVISION-perl=		0
 FULLPKGPATH-perl=	devel/subversion,-perl
@@ -145,11 +145,11 @@ SHARED_ONLY=	Yes
 MODULES+=	converters/libiconv
 LIB_DEPENDS-main+= ${LIB_DEPENDS} \
 		dbus-1.>=7::x11/dbus \
-		glib-2.0,gio-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
+		glib-2.0::devel/glib2 \
 		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		pcre.>=2::devel/pcre \
 		${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-main+=	apr-1 aprutil-1 dbus-glib-1 eggdbus-1 gcrypt gpg-error
+WANTLIB-main+=	apr-1 aprutil-1 gcrypt gpg-error
 SHARED_LIBS+=	svn_auth_gnome_keyring-1 ${SO_VERSION}
 # gnome-keyring depends on dbus depends on pthread, so svn won't be able
 # to load libsvn_auth_gnome_keyring without the main executable being compiled
