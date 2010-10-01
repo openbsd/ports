@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/28 18:03:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/01 13:09:54 sebastia Exp $
 bin/coccinella
 lib/coccinella/
 lib/coccinella/TclXML/
@@ -12,6 +12,8 @@ lib/coccinella/TclXML/xml-8.1.tcl
 lib/coccinella/TclXML/xml__tcl.tcl
 lib/coccinella/TclXML/xmldep.tcl
 lib/coccinella/TclXML/xpath.tcl
+lib/coccinella/certificates/
+lib/coccinella/certificates/cacerts.pem
 lib/coccinella/components/
 lib/coccinella/components/AppleEvents.tcl
 lib/coccinella/components/AutoUpdate.tcl
