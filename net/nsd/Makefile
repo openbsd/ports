@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/01 07:23:11 sthen Exp $
 
+COMES_WITH=	4.9
 COMMENT=	authoritative-only name server daemon
 
 VERSION=	3.2.6
