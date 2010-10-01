@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/01 22:20:54 jasper Exp $
 
-COMMENT =		A simple interface to Gtk2 complex MVC list widget
+COMMENT =		simple interface to Gtk2 complex MVC list widget
 
 MODULES =		cpan
 DISTNAME =		Gtk2-Ex-Simple-List-0.50
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11
 
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
