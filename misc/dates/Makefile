@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/29 08:26:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/01 10:07:46 jasper Exp $
+
+BROKEN=			needs to stop using deprecated functions from e-d-s
 
 COMMENT=		lightweight calendar
 
