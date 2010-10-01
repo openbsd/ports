@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2010/08/31 06:03:33 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.55 2010/10/01 20:19:54 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -160,6 +160,7 @@ share/doc/postfix/html/OVERVIEW.html
 share/doc/postfix/html/PACKAGE_README.html
 share/doc/postfix/html/PCRE_README.html
 share/doc/postfix/html/PGSQL_README.html
+share/doc/postfix/html/POSTSCREEN_README.html
 share/doc/postfix/html/QSHAPE_README.html
 share/doc/postfix/html/RESTRICTION_CLASS_README.html
 share/doc/postfix/html/SASL_README.html
@@ -279,6 +280,7 @@ share/doc/postfix/readme/OVERVIEW
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
 share/doc/postfix/readme/PGSQL_README
+share/doc/postfix/readme/POSTSCREEN_README
 share/doc/postfix/readme/QSHAPE_README
 share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
