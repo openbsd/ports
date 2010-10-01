@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/09/30 07:46:43 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2010/10/01 07:15:43 landry Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -9,7 +9,7 @@ DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
 REVISION-main=		0
 PKGNAME-data=		xscreensaver-data-${V}
-REVISION-data=		2
+REVISION-data=		3
 PKGNAME-gle=		xscreensaver-gle-${V}
 REVISION-gle=		1
 
@@ -56,7 +56,7 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			::devel/libglade2
 
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
-			::x11/gtk+2
+			::graphics/gdk-pixbuf2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
