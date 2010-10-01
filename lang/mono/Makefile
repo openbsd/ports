@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2010/08/23 13:18:50 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/01 05:23:52 ajacoutot Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.6.7
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 \
-		m pcre pthread z
+		m pcre pthread z stdc++
 
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
