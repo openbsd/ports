@@ -1,0 +1,174 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/01 09:32:36 sebastia Exp $
+%%SHARED%%
+%%atomic%%
+@bin bin/memcapable
+@bin bin/memcat
+@bin bin/memcp
+@bin bin/memdump
+@bin bin/memerror
+@bin bin/memflush
+@bin bin/memrm
+@bin bin/memstat
+include/libhashkit/
+include/libhashkit/algorithm.h
+include/libhashkit/behavior.h
+include/libhashkit/configure.h
+include/libhashkit/digest.h
+include/libhashkit/function.h
+include/libhashkit/hashkit.h
+include/libhashkit/strerror.h
+include/libhashkit/types.h
+include/libhashkit/visibility.h
+include/libmemcached/
+include/libmemcached/allocators.h
+include/libmemcached/analyze.h
+include/libmemcached/auto.h
+include/libmemcached/behavior.h
+include/libmemcached/callback.h
+include/libmemcached/configure.h
+include/libmemcached/constants.h
+include/libmemcached/delete.h
+include/libmemcached/dump.h
+include/libmemcached/exception.hpp
+include/libmemcached/fetch.h
+include/libmemcached/flush.h
+include/libmemcached/flush_buffers.h
+include/libmemcached/get.h
+include/libmemcached/hash.h
+include/libmemcached/memcached/
+include/libmemcached/memcached.h
+include/libmemcached/memcached.hpp
+include/libmemcached/memcached/protocol_binary.h
+include/libmemcached/memcached_util.h
+include/libmemcached/parse.h
+include/libmemcached/platform.h
+include/libmemcached/protocol/
+include/libmemcached/protocol/cache.h
+include/libmemcached/protocol/callback.h
+include/libmemcached/protocol_handler.h
+include/libmemcached/quit.h
+include/libmemcached/result.h
+include/libmemcached/sasl.h
+include/libmemcached/server.h
+include/libmemcached/server_list.h
+include/libmemcached/stats.h
+include/libmemcached/storage.h
+include/libmemcached/strerror.h
+include/libmemcached/string.h
+include/libmemcached/types.h
+include/libmemcached/util/
+include/libmemcached/util.h
+include/libmemcached/util/ping.h
+include/libmemcached/util/pool.h
+include/libmemcached/util/version.h
+include/libmemcached/verbosity.h
+include/libmemcached/version.h
+include/libmemcached/visibility.h
+include/libmemcached/watchpoint.h
+lib/libhashkit.a
+lib/libhashkit.la
+lib/libmemcached.a
+lib/libmemcached.la
+lib/libmemcachedprotocol.a
+lib/libmemcachedprotocol.la
+lib/libmemcachedutil.a
+lib/libmemcachedutil.la
+lib/pkgconfig/
+lib/pkgconfig/libmemcached.pc
+@man man/man1/memcapable.1
+@man man/man1/memcat.1
+@man man/man1/memcp.1
+@man man/man1/memdump.1
+@man man/man1/memerror.1
+@man man/man1/memflush.1
+@man man/man1/memrm.1
+@man man/man1/memstat.1
+@man man/man3/hashkit_clone.3
+@man man/man3/hashkit_crc32.3
+@man man/man3/hashkit_create.3
+@man man/man3/hashkit_fnv1_32.3
+@man man/man3/hashkit_fnv1_64.3
+@man man/man3/hashkit_fnv1a_32.3
+@man man/man3/hashkit_fnv1a_64.3
+@man man/man3/hashkit_free.3
+@man man/man3/hashkit_functions.3
+@man man/man3/hashkit_hsieh.3
+@man man/man3/hashkit_is_allocated.3
+@man man/man3/hashkit_jenkins.3
+@man man/man3/hashkit_md5.3
+@man man/man3/hashkit_murmur.3
+@man man/man3/hashkit_value.3
+@man man/man3/libmemcached.3
+@man man/man3/libmemcached_examples.3
+@man man/man3/libmemcachedutil.3
+@man man/man3/memcached_add.3
+@man man/man3/memcached_add_by_key.3
+@man man/man3/memcached_analyze.3
+@man man/man3/memcached_append.3
+@man man/man3/memcached_append_by_key.3
+@man man/man3/memcached_behavior_get.3
+@man man/man3/memcached_behavior_set.3
+@man man/man3/memcached_callback_get.3
+@man man/man3/memcached_callback_set.3
+@man man/man3/memcached_cas.3
+@man man/man3/memcached_cas_by_key.3
+@man man/man3/memcached_clone.3
+@man man/man3/memcached_create.3
+@man man/man3/memcached_decrement.3
+@man man/man3/memcached_decrement_with_initial.3
+@man man/man3/memcached_delete.3
+@man man/man3/memcached_delete_by_key.3
+@man man/man3/memcached_destroy_sasl_auth_data.3
+@man man/man3/memcached_dump.3
+@man man/man3/memcached_fetch.3
+@man man/man3/memcached_fetch_execute.3
+@man man/man3/memcached_fetch_result.3
+@man man/man3/memcached_flush_buffers.3
+@man man/man3/memcached_free.3
+@man man/man3/memcached_generate_hash_value.3
+@man man/man3/memcached_get.3
+@man man/man3/memcached_get_by_key.3
+@man man/man3/memcached_get_memory_allocators.3
+@man man/man3/memcached_get_sasl_callbacks.3
+@man man/man3/memcached_get_user_data.3
+@man man/man3/memcached_increment.3
+@man man/man3/memcached_increment_with_initial.3
+@man man/man3/memcached_lib_version.3
+@man man/man3/memcached_mget.3
+@man man/man3/memcached_mget_by_key.3
+@man man/man3/memcached_mget_execute.3
+@man man/man3/memcached_mget_execute_by_key.3
+@man man/man3/memcached_pool_behavior_get.3
+@man man/man3/memcached_pool_behavior_set.3
+@man man/man3/memcached_pool_create.3
+@man man/man3/memcached_pool_destroy.3
+@man man/man3/memcached_pool_pop.3
+@man man/man3/memcached_pool_push.3
+@man man/man3/memcached_prepend.3
+@man man/man3/memcached_prepend_by_key.3
+@man man/man3/memcached_quit.3
+@man man/man3/memcached_replace.3
+@man man/man3/memcached_replace_by_key.3
+@man man/man3/memcached_sasl_set_auth_data.3
+@man man/man3/memcached_server_add.3
+@man man/man3/memcached_server_count.3
+@man man/man3/memcached_server_cursor.3
+@man man/man3/memcached_server_list.3
+@man man/man3/memcached_server_list_append.3
+@man man/man3/memcached_server_list_count.3
+@man man/man3/memcached_server_list_free.3
+@man man/man3/memcached_server_push.3
+@man man/man3/memcached_servers_parse.3
+@man man/man3/memcached_set.3
+@man man/man3/memcached_set_by_key.3
+@man man/man3/memcached_set_memory_allocators.3
+@man man/man3/memcached_set_sasl_callbacks.3
+@man man/man3/memcached_set_user_data.3
+@man man/man3/memcached_stat.3
+@man man/man3/memcached_stat_execute.3
+@man man/man3/memcached_stat_get_keys.3
+@man man/man3/memcached_stat_get_value.3
+@man man/man3/memcached_stat_servername.3
+@man man/man3/memcached_strerror.3
+@man man/man3/memcached_verbosity.3
+@man man/man3/memcached_version.3
