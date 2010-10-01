@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2010/09/30 12:22:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/01 14:53:31 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.3
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		net
 
@@ -36,7 +36,7 @@ WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render ltdl
 WANTLIB += xcb-render-util xml2 z canberra canberra-gtk camel-1.2
 WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.8
 WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
-WANTLIB += telepathy-logger
+#WANTLIB += telepathy-logger
 
 BUILD_DEPENDS=		::devel/iso-codes \
 			::x11/py-gtk2 \
@@ -52,8 +52,8 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::graphics/clutter/clutter-gtk \
 			::net/telepathy/telepathy-farsight \
 			::net/telepathy/telepathy-mission-control \
-			::textproc/enchant \
-			::net/telepathy/telepathy-logger
+			::textproc/enchant
+#			::net/telepathy/telepathy-logger
 
 RUN_DEPENDS=		::devel/iso-codes \
 			::net/telepathy/telepathy-butterfly \
@@ -76,8 +76,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-map=Yes\
 			--enable-webkit=no \
 			--enable-nautilus-sendto \
-			--enable-control-center-embedding=no \
-			--enable-tpl
+			--enable-control-center-embedding=no
+#			--enable-tpl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
