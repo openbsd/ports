@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 07:50:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/01 07:26:12 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		2.32.0
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -32,6 +33,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		:gucharmap->=2.24.1.1:x11/gnome/gucharmap
 RUN_DEPENDS=		::devel/vte,-python \
+			::x11/dbus-python \
 			:gedit->=2.30.0:x11/gnome/gedit \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 
