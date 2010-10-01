@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/06/26 03:43:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/01 09:13:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  evdocument 1.0                   # .2.0
 SHARED_LIBS +=  evview     1.0                   # .2.0
@@ -45,7 +47,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += xcb xcb-render xcb-render-util z gthread-2.0
 
 WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
-		gnome-keyring gs eggdbus-1 gcrypt gpg-error \
+		gnome-keyring gs gcrypt gpg-error \
 		jpeg pthread tiff xml2 lcms openjpeg
 LIB_DEPENDS-main= poppler.>=3,poppler-glib.>=3::print/poppler \
 		spectre::print/libspectre \
