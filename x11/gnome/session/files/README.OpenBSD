@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.46 2010/09/30 10:24:25 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.47 2010/10/01 09:42:11 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -78,15 +78,17 @@ related ports under the x11/gnome category)
 
  - Office & Productivity
    * abiword - WYSIWYG word processor
+   * gcalctool - desktop calculator
+   * deskbar-applet - universal search and navigation applet
    * gnumeric - spreadsheet application
    * hamster-applet - time tracker applet
    * planner - project management
    * tomboy - desktop note-taking
+   * tracker-search - powerful desktop search tool and indexer
 
  - Utilities
    * alacarte - simple menu editing tool
    * conduit - all-in-one synchronization application
-   * gcalctool - desktop calculator
    * gconf-editor - editor for GConf settings
    * gnome-applets2-battstat - applet for monitoring battery level
    * gnomebaker - CD/DVD burning application
@@ -97,7 +99,6 @@ related ports under the x11/gnome category)
    * pessulus - lockdown editor for desktop
    * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
    * system-config-printer - printer (CUPS) administration tool
-   * tracker-search - powerful desktop search tool and indexer
    * vinagre - VNC Client (remote Desktop client)
    * vino - VNC server (allows remote access to your Desktop)
    * xdg-user-dirs-gtk - manage well know user directories
