@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.839 2010/09/30 12:56:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.840 2010/10/01 09:48:27 sebastia Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -231,6 +231,7 @@
      SUBDIR += libio
      SUBDIR += libixp
      SUBDIR += libmagic
+     SUBDIR += libmemcached
      SUBDIR += libmpc
      SUBDIR += libmtp
      SUBDIR += libnotify
