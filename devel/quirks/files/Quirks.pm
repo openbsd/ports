@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.28 2010/09/25 03:22:42 jakemsr Exp $
+# $OpenBSD: Quirks.pm,v 1.29 2010/10/01 07:25:07 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -91,6 +91,7 @@ my $base_exceptions = {
 	'dejavu-fonts' => "/usr/X11R6/lib/X11/fonts/TTF/DejaVuSans.ttf",
 # 4.9
 	'video' => "/usr/X11R6/bin/video",
+	'nsd' => "/usr/sbin/nsd",
 };
 
 my $stem_extensions = {
