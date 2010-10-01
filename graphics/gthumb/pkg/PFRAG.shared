@@ -1,8 +1,34 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/10 21:26:12 ajacoutot Exp $
-lib/gthumb/modules/libduplicates.so
-lib/gthumb/modules/libjpegtran.so
-lib/gthumb/modules/libphotoimporter.so
-lib/gthumb/modules/libpngexporter.so
-lib/gthumb/modules/libsearch.so
-lib/gthumb/modules/libwebexporter.so
-@lib lib/libgthumb.so.${LIBgthumb_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/10/01 08:14:15 jasper Exp $
+lib/gthumb/extensions/libbookmarks.so
+lib/gthumb/extensions/libcatalogs.so
+lib/gthumb/extensions/libchange_date.so
+lib/gthumb/extensions/libcomments.so
+lib/gthumb/extensions/libconvert_format.so
+lib/gthumb/extensions/libdesktop_background.so
+lib/gthumb/extensions/libedit_metadata.so
+lib/gthumb/extensions/libexport_tools.so
+lib/gthumb/extensions/libfacebook.so
+lib/gthumb/extensions/libfile_manager.so
+lib/gthumb/extensions/libfile_tools.so
+lib/gthumb/extensions/libfile_viewer.so
+lib/gthumb/extensions/libflicker.so
+lib/gthumb/extensions/libgstreamer_tools.so
+lib/gthumb/extensions/libgstreamer_utils.so
+lib/gthumb/extensions/libimage_print.so
+lib/gthumb/extensions/libimage_rotation.so
+lib/gthumb/extensions/libimage_viewer.so
+lib/gthumb/extensions/libimporter.so
+lib/gthumb/extensions/libjpeg_utils.so
+lib/gthumb/extensions/liblist_tools.so
+lib/gthumb/extensions/liboauth.so
+lib/gthumb/extensions/libphoto_importer.so
+lib/gthumb/extensions/libphotobucket.so
+lib/gthumb/extensions/libpicasaweb.so
+lib/gthumb/extensions/libpixbuf_savers.so
+lib/gthumb/extensions/libraw_files.so
+lib/gthumb/extensions/libred_eye_removal.so
+lib/gthumb/extensions/librename_series.so
+lib/gthumb/extensions/libresize_images.so
+lib/gthumb/extensions/libsearch.so
+lib/gthumb/extensions/libslideshow.so
+lib/gthumb/extensions/libwebalbums.so
