@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 11:01:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/01 21:58:22 jasper Exp $
 
 COMMENT =		regular expression-based parser for NCBI Entrez Gene
 
@@ -15,14 +15,10 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+MODCPAN_EXAMPLES=	Yes
 
 WRKDIST =		${WRKDIR}/Bio-ASN1-EntrezGene-${M:S/-withoutworldwriteables//}
 
 RUN_DEPENDS =		::biology/bioperl
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Bio-ASN1-EntrezGene/
-	${INSTALL_DATA} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-Bio-ASN1-EntrezGene/
 
 .include <bsd.port.mk>
