@@ -1,0 +1,19 @@
+$OpenBSD: patch-libnautilus-private_nautilus-column-utilities_c,v 1.1 2010/10/01 13:21:09 ajacoutot Exp $
+--- libnautilus-private/nautilus-column-utilities.c.orig	Fri Oct  1 14:55:26 2010
++++ libnautilus-private/nautilus-column-utilities.c	Fri Oct  1 14:56:24 2010
+@@ -113,6 +113,7 @@ get_builtin_columns (void)
+ 					       "label", _("MIME Type"),
+ 					       "description", _("The mime type of the file."),
+ 					       NULL));
++#ifdef HAVE_SELINUX
+ 	columns = g_list_append (columns,
+ 				 g_object_new (NAUTILUS_TYPE_COLUMN,
+ 					       "name", "selinux_context",
+@@ -120,6 +121,7 @@ get_builtin_columns (void)
+ 					       "label", _("SELinux Context"),
+ 					       "description", _("The SELinux security context of the file."),
+ 					       NULL));
++#endif
+ 	columns = g_list_append (columns,
+ 				 g_object_new (NAUTILUS_TYPE_COLUMN,
+ 					       "name", "where",
