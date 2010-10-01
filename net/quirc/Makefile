@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/01 15:23:07 sthen Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
-REVISION =	5
+REVISION =	6
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.sourceforge.net/
@@ -16,19 +16,21 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		ICE SM X11 c m pthread-stubs stdc++ tcl84 xcb
+WANTLIB=		ICE SM X11 c m stdc++ ${MODTCL_LIB}
 
 MODULES=	x11/tk
-MODTCL_VERSION=	8.4
-MODTK_VERSION=	8.4
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 LIB_DEPENDS=	${MODTK_LIB_DEPENDS}
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-tcl-include-dir=${MODTCL_INCDIR} \
-		--with-tk-include-dir=${MODTK_INCDIR}
+		--with-tk-include-dir=${MODTK_INCDIR} \
+		--with-tcl-version=${MODTCL_VERSION} \
+		--with-tcl-lib=${MODTCL_LIB} \
+		--with-tk-lib=${MODTK_LIB} \
+		--with-wish=${MODTK_BIN}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/quirc/common
