@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.9 2009/06/18 13:41:28 simon Exp $
+# $OpenBSD: cpan.port.mk,v 1.10 2010/10/01 21:55:20 jasper Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -20,6 +20,19 @@ PKG_ARCH ?=	*
 .if defined(MAKE_ENV) && !empty(MAKE_ENV:MTEST_POD=*)
 REGRESS_DEPENDS +=	::devel/p5-Test-Pod \
 		 	::devel/p5-Test-Pod-Coverage
+.endif
+
+MODCPAN_POST_INSTALL = ${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}; \
+	${INSTALL_DATA} ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/* ${MODCPAN_EXAMPLES_DIR}
+
+.if defined(MODCPAN_EXAMPLES) && ${MODCPAN_EXAMPLES:L} == "yes"
+MODCPAN_EXAMPLES_DIR ?= ${PREFIX}/share/examples/p5-${DISTNAME:C/-([0-9]+\.[0-9]+).*$//g}
+MODCPAN_EXAMPLES_DIST ?= examples
+.  if !target(post-install)
+post-install:
+	${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/* ${MODCPAN_EXAMPLES_DIR}
+.  endif
 .endif
 
 CPAN_REPORT ?=	No
