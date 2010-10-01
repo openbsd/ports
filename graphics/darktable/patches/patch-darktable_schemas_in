@@ -1,0 +1,795 @@
+$OpenBSD: patch-darktable_schemas_in,v 1.1 2010/10/01 11:45:08 ajacoutot Exp $
+--- darktable.schemas.in.orig	Fri Oct  1 13:35:48 2010
++++ darktable.schemas.in	Fri Oct  1 13:37:28 2010
+@@ -6,7 +6,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>.darktabledb</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>database file</short>
+         <long>filename relative to your home directory, or starting with a slash.</long>
+@@ -19,7 +18,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>.darktablecache</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>image cache file</short>
+         <long>filename relative to your home directory, or starting with a slash.</long>
+@@ -32,7 +30,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>darktable.gtkrc</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>filename of your custom theme in share/darktable/</short>
+         <long></long>
+@@ -45,7 +42,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>536870912</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>memory in bytes to use for mipmap cache</short>
+         <long></long>
+@@ -58,7 +54,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>89</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>jpeg quality of on-disk thumbnails</short>
+         <long></long>
+@@ -71,7 +66,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1000</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>small thumbnails to keep in main memory cache</short>
+         <long>how many smallest-size thumbnails to keep in main memory at maximum. this also affects larger mipmap counts,
+@@ -85,7 +79,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>2</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>full resolution image buffers to keep in main memory cache</short>
+         <long>how many full-resolution floating point buffers of loaded raw images to keep in main memory at maximum. only read at startup.</long>
+@@ -98,7 +91,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>false</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>don't use embedded preview jpeg, always use half-size raw</short>
+         <long></long>
+@@ -111,7 +103,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>true</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>write a redundant file for each image</short>
+         <long>these files can later be re-imported into a different database, preserving your changes to the image.</long>
+@@ -124,7 +115,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>true</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>ask before removing images</short>
+         <long>always ask the user before any image is removed from db.</long>
+@@ -137,7 +127,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>true</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>ask before deleting images</short>
+         <long>always ask the user before any image file is deleted.</long>
+@@ -150,7 +139,6 @@
+       <owner>darktable</owner>
+       <type>float</type>
+       <default>0.2</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>downsample the preview pixels</short>
+         <long>this value smaller than 1.0 downsamples the preview pixels for faster feedback.</long>
+@@ -163,7 +151,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>version of these dt-gconf entries</short>
+         <long>if this number is smaller than the darktable internal version number, the values here will be synched with the new defaults.</long>
+@@ -176,7 +163,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>capture job</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>name of capture job</short>
+         <long></long>
+@@ -189,7 +175,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>$(PICTURES_FOLDER)/darktable</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>path of storage for captured images</short>
+         <long></long>
+@@ -202,7 +187,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>$(YEAR)$(MONTH)$(DAY)_$(JOBCODE)</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>subpath pattern in storage for captured images</short>
+         <long></long>
+@@ -215,7 +199,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>$(YEAR)$(MONTH)$(DAY)_$(SEQUENCE).$(FILE_EXTENSION)</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>rename pattern for captured images</short>
+         <long></long>
+@@ -228,7 +211,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>false</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>flag if originals on camera should be deleted</short>
+         <long></long>
+@@ -241,7 +223,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>noname</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>jobcode of import job</short>
+         <long></long>
+@@ -254,7 +235,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>false</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>flag if backup of imported images should be performed</short>
+         <long></long>
+@@ -267,7 +247,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>false</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>flag if user should be interactivly warned about non present backup destinations</short>
+         <long></long>
+@@ -280,7 +259,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>photos</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>the name of backup directory to search for on mounted medias</short>
+         <long></long>
+@@ -293,7 +271,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -306,7 +283,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>0: mean, 1: min, 2: max</short>
+         <long></long>
+@@ -319,7 +295,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -332,7 +307,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -345,7 +319,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -358,7 +331,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -371,7 +343,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>640</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -384,7 +355,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>480</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -397,7 +367,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -410,7 +379,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -423,7 +391,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -436,7 +403,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -449,7 +415,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>2</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -462,7 +427,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>Capture view mode</short>
+         <long></long>
+@@ -475,7 +439,6 @@
+       <owner>darktable</owner>
+       <type>float</type>
+       <default>0.15</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -488,7 +451,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -501,7 +463,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default></default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>sql query to select images for current view</short>
+         <long>order by and limit clauses go last</long>
+@@ -514,7 +475,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>which layout should lighttable mode show</short>
+         <long>select a layout for the lighttable: 0 - zoomable or 1 - file manager.</long>
+@@ -527,7 +487,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>7</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>how many images are in one row</short>
+         <long></long>
+@@ -540,7 +499,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -553,7 +511,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -566,7 +523,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>append or replace history stack if pasted</short>
+         <long>0 -- append on top of stack, 1 -- replace it.</long>
+@@ -579,7 +535,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -592,7 +547,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -605,7 +559,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -618,7 +571,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default></default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -631,7 +583,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -644,7 +595,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -657,7 +607,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -670,7 +619,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -683,7 +631,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -696,7 +643,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -709,7 +655,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -722,7 +667,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -735,7 +679,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>2</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -748,7 +691,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>width of the exported image</short>
+         <long>width of the exported image, or 0 if no scaling should be done.</long>
+@@ -761,7 +703,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>height of the exported image</short>
+         <long>height of the exported image, or 0 if no scaling should be done.</long>
+@@ -774,7 +715,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -787,7 +727,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>$(FILE_DIRECTORY)/darktable_exported/img_$(SEQUENCE)</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -800,7 +739,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default></default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>Default client to use, this overrides detection of default client.</short>
+         <long></long>
+@@ -813,7 +751,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>97</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -826,7 +763,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>16</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -839,7 +775,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>0</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>storage backend to use</short>
+         <long>the storage backend for pwstorage: 0 - none, 1 - gconf (do not use), 2 - kwallet, 3 - gnome keyring</long>
+@@ -852,7 +787,6 @@
+       <owner>darktable</owner>
+       <type>string</type>
+       <default>image</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>icc profile to use for export</short>
+         <long>this overrides the per-image settings, if not set to `image'.</long>
+@@ -865,7 +799,6 @@
+       <owner>darktable</owner>
+       <type>int</type>
+       <default>-1</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short>icc rendering intent</short>
+         <long>if non-negative, this overrides the per-image output color profile rendering intent on export.</long>
+@@ -878,7 +811,6 @@
+       <owner>darktable</owner>
+       <type>float</type>
+       <default>.4045f</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -891,7 +823,6 @@
+       <owner>darktable</owner>
+       <type>float</type>
+       <default>.41f</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -904,7 +835,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -917,7 +847,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -930,7 +859,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -943,7 +871,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -956,7 +883,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -969,7 +895,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -982,7 +907,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -995,7 +919,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1008,7 +931,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1021,7 +943,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1034,7 +955,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1047,7 +967,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1060,7 +979,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1073,7 +991,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1086,7 +1003,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1099,7 +1015,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>TRUE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1112,7 +1027,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1125,7 +1039,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1138,7 +1051,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1151,7 +1063,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1164,7 +1075,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1177,7 +1087,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1190,7 +1099,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1203,7 +1111,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1216,7 +1123,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1229,7 +1135,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1242,7 +1147,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1255,7 +1159,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1268,7 +1171,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
+@@ -1281,7 +1183,6 @@
+       <owner>darktable</owner>
+       <type>bool</type>
+       <default>FALSE</default>
+-      <gettext_domain>darktable</gettext_domain>
+       <locale name="C">
+         <short></short>
+         <long></long>
