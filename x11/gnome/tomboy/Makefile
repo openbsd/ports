@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/30 11:08:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/01 16:04:37 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	1.4.0
+
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -43,7 +45,8 @@ RUN_DEPENDS=	::devel/mono-addins \
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-update-mimedb \
-		--enable-sketching=no
+		--disable-sketching \
+		--enable-panel-applet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

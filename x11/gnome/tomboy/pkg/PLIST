@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/09/30 11:08:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/10/01 16:04:37 ajacoutot Exp $
 bin/tomboy
+bin/tomboy-panel
+lib/bonobo/
+lib/bonobo/servers/
+lib/bonobo/servers/GNOME_TomboyApplet.server
 lib/pkgconfig/tomboy-addins.pc
 lib/tomboy/
 lib/tomboy/Tomboy.exe
