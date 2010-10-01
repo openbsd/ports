@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/27 17:22:17 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/01 22:08:56 jasper Exp $
 
 COMMENT=	security image (captcha) generator
 
@@ -18,9 +18,7 @@ RUN_DEPENDS=	::graphics/p5-GD
 
 CONFIGURE_STYLE=modbuild
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-GD-SecurityImage
-	${INSTALL_DATA} ${WRKSRC}/eg/demo.pl \
-		${PREFIX}/share/examples/p5-GD-SecurityImage
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>
