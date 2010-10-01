@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/02 18:35:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/01 21:57:53 jasper Exp $
 
 COMMENT=		module to submit songs to last.fm from MPD
 DISTNAME=		Music-Audioscrobbler-MPD-0.13
+REVISION=		0
 CATEGORIES=		audio
 
 # perl
@@ -12,15 +13,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		EALLENIII
+MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=		::audio/p5-Music-Audioscrobbler-Submit \
 			::devel/p5-Proc-Daemon
 
-EG_DIR= 		${PREFIX}/share/examples/p5-Music-Audioscrobbler-MPD
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/musicmpdscrobble_example.conf \
-		${EG_DIR}/musicmpdscrobble.conf
+post-configure:
+	@rm -f ${WRKSRC}/examples/*.orig
 
 .include <bsd.port.mk>

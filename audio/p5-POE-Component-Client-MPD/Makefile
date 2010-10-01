@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/22 20:31:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/01 21:57:53 jasper Exp $
 
 COMMENT=		complete MPD client library
 
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	bin
 
 RUN_DEPENDS=		:p5-Audio-MPD-Common->=0.1.4:audio/p5-Audio-MPD-Common \
 			::devel/p5-Class-Accessor \
@@ -24,10 +26,5 @@ RUN_DEPENDS=		:p5-Audio-MPD-Common->=0.1.4:audio/p5-Audio-MPD-Common \
 PORTHOME=		${WRKDIR}
 
 CONFIGURE_STYLE=	modbuild
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-POE-Component-Client-MPD
-	${INSTALL_DATA} ${WRKSRC}/bin/client.pl \
-		${PREFIX}/share/examples/p5-POE-Component-Client-MPD
 
 .include <bsd.port.mk>

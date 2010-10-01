@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/29 17:19:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/01 21:57:53 jasper Exp $
 
 COMMENT=		module for communicating with MPD servers
 DISTNAME=		Audio-MPD-1.102260 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		JQUELIN
+MODCPAN_EXAMPLES=	Yes
 
 CONFIGURE_STYLE=	modbuild
 
@@ -25,10 +26,5 @@ REGRESS_DEPENDS=	::devel/p5-Getopt-Euclid \
 			::devel/p5-MooseX-Has-Sugar \
 			::devel/p5-MooseX-SemiAffordanceAccessor \
 			::devel/p5-Test-Corpus-Audio-MPD
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Audio-MPD
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-Audio-MPD
 
 .include <bsd.port.mk>
