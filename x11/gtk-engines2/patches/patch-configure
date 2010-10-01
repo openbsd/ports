@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.7 2010/01/01 16:26:04 ajacoutot Exp $
---- configure.orig	Fri Jan  1 16:25:46 2010
-+++ configure	Fri Jan  1 16:54:19 2010
-@@ -13398,7 +13398,7 @@ fi
+$OpenBSD: patch-configure,v 1.8 2010/10/01 19:39:58 ajacoutot Exp $
+--- configure.orig	Fri Oct  1 15:02:42 2010
++++ configure	Fri Oct  1 21:33:56 2010
+@@ -11951,7 +11951,7 @@ fi
          #
          if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
            glib_save_LIBS="$LIBS"
 -          LIBS="$LIBS -lintl $libintl_extra_libs"
 +          LIBS="$LIBS -liconv -lintl $libintl_extra_libs"
            unset ac_cv_func_bind_textdomain_codeset
- 
- for ac_func in bind_textdomain_codeset
-@@ -13520,7 +13520,7 @@ done
+           for ac_func in bind_textdomain_codeset
+ do :
+@@ -11983,7 +11983,7 @@ done
        fi
  
        if test "$gt_cv_func_dgettext_libintl" = "yes"; then
