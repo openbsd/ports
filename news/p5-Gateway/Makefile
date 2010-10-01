@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/01 22:22:23 jasper Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
@@ -18,10 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# install example files
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Gateway
-	${INSTALL_DATA} ${WRKSRC}/examples/*  \
-		${PREFIX}/share/examples/p5-Gateway
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

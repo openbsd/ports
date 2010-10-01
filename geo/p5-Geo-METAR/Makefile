@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/05 04:13:44 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/01 22:22:23 jasper Exp $
 
 COMMENT=	process aviation weather reports in the METAR format
 MODULES=	cpan
@@ -11,9 +11,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Geo-METAR
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl \
-		${PREFIX}/share/examples/p5-Geo-METAR
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
