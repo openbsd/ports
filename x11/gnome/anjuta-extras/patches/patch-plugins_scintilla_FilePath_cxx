@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_scintilla_FilePath_cxx,v 1.1.1.1 2010/04/23 18:38:38 ajacoutot Exp $
---- plugins/scintilla/FilePath.cxx.orig	Fri Apr 23 20:18:57 2010
-+++ plugins/scintilla/FilePath.cxx	Fri Apr 23 20:19:15 2010
-@@ -19,6 +19,10 @@
+$OpenBSD: patch-plugins_scintilla_FilePath_cxx,v 1.2 2010/10/02 08:30:55 ajacoutot Exp $
+--- plugins/scintilla/FilePath.cxx.orig	Mon Apr 19 19:19:17 2010
++++ plugins/scintilla/FilePath.cxx	Sat Oct  2 10:07:55 2010
+@@ -19,11 +19,15 @@
  #include <dirent.h>
  #include <errno.h>
  
@@ -12,3 +12,18 @@ $OpenBSD: patch-plugins_scintilla_FilePath_cxx,v 1.1.1.1 2010/04/23 18:38:38 aja
  #include "SString.h"
  #include "PropSet.h"
  #include "FilePath.h"
+ 
+-#ifdef unix
++#ifdef __unix__
+ const char pathSepString[] = "/";
+ const char pathSepChar = '/';
+ const char listSepString[] = ":";
+@@ -110,7 +114,7 @@ bool FilePath::IsUntitled() const {
+ bool FilePath::IsAbsolute() const {
+ 	if (fileName.length() == 0)
+ 		return false;
+-#ifdef unix
++#ifdef __unix__
+ 	if (fileName[0] == '/')
+ 		return true;
+ #endif

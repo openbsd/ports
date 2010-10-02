@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_scintilla_scintilla_Document_cxx,v 1.1 2010/10/02 08:30:55 ajacoutot Exp $
+--- plugins/scintilla/scintilla/Document.cxx.orig	Sat Oct  2 10:08:11 2010
++++ plugins/scintilla/scintilla/Document.cxx	Sat Oct  2 10:08:22 2010
+@@ -50,7 +50,7 @@ static inline bool IsUpperCase(char ch) {
+ 
+ Document::Document() {
+ 	refCount = 0;
+-#ifdef unix
++#ifdef __unix__
+ 	eolMode = SC_EOL_LF;
+ #else
+ 	eolMode = SC_EOL_CRLF;

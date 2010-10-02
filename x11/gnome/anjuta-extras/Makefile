@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/30 13:40:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/02 08:30:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	extra plugins for anjuta
 
 GNOME_PROJECT=	anjuta-extras
 GNOME_VERSION=	2.32.0.0
+
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -42,5 +44,7 @@ MODGCONF2_SCHEMAS_DIR= anjuta
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-plugin-valgrind
+
+FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>
