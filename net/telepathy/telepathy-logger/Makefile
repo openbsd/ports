@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/30 12:45:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/02 07:23:34 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -11,7 +11,8 @@ MASTER_SITES=	${MASTER_SITES_TELEPATHY:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		textproc/intltool
 
 WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pcre pthread z telepathy-glib
