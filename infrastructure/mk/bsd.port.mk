@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1039 2010/09/25 13:39:02 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1040 2010/10/02 10:25:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -112,7 +112,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	REGRESS_IS_INTERACTIVE \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-	SHARED_LIBS USE_MOTIF \
+	SHARED_LIBS USE_MOTIF TARGETS \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
@@ -302,6 +302,16 @@ _MODULES_DONE =
 ###
 ### Variable setup that can happen after modules
 ###
+
+# some introspection
+TARGETS =
+.for _t in extract patch distpatch configure build fake install
+.  for _s in pre do post
+.    if target(${_s}-${_t})
+TARGETS += ${_s}-${_t}
+.    endif
+.  endfor
+.endfor
 
 .if ${MACHINE_ARCH} != ${ARCH}
 PKG_ARCH ?= ${MACHINE_ARCH},${ARCH}
