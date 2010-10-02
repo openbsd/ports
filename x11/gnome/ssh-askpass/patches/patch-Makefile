@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/05/02 14:07:46 bernd Exp $
---- Makefile.orig	Fri Feb 29 09:08:21 2008
-+++ Makefile	Fri Feb 29 09:08:27 2008
+$OpenBSD: patch-Makefile,v 1.2 2010/10/02 17:00:29 ajacoutot Exp $
+--- Makefile.orig	Fri Mar 26 01:16:39 2010
++++ Makefile	Sat Oct  2 18:42:23 2010
 @@ -7,7 +7,7 @@ gnome-ssh-askpass1: gnome-ssh-askpass1.c
  		`gnome-config --libs gnome gnomeui`
  
@@ -8,5 +8,5 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/05/02 14:07:46 bernd Exp $
 -	$(CC) `pkg-config --cflags gtk+-2.0` \
 +	$(CC) $(CFLAGS) `pkg-config --cflags gtk+-2.0` \
  		gnome-ssh-askpass2.c -o gnome-ssh-askpass2 \
- 		`pkg-config --libs gtk+-2.0`
+ 		`pkg-config --libs gtk+-2.0 x11`
  

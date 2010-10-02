@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/02 17:00:29 ajacoutot Exp $
 
 COMMENT=	simple GNOME SSH passphrase grabber
 
-V=		5.1
+V=		5.6
 DISTNAME=	openssh-$Vp1
 PKGNAME=	gnome-ssh-askpass-${V}
-REVISION=	2
 CATEGORIES=	x11
 
 # BSD

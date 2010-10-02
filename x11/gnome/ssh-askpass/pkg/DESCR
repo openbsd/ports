@@ -1,1 +1,4 @@
 A simple GNOME SSH passphrase grabber.
+
+It can be used for e.g. from ~/.xsession or ~./xinitrc by adding:
+    export SSH_ASKPASS=/usr/local/bin/gnome-ssh-askpass2 ; ssh-add
