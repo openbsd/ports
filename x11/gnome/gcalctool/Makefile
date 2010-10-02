@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/09/30 07:39:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/02 07:24:22 jasper Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.32.0
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -23,6 +24,8 @@ WANTLIB += xcb-render-util xml2
 
 MODULES=		devel/gettext \
 			x11/gnome
+
+LIB_DEPENDS=		::x11/gtk+2
 
 BUILD_DEPENDS=		::devel/bison
 
