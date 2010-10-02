@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2010/05/04 05:51:22 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.8 2010/10/02 16:16:10 ajacoutot Exp $
 
 Using ZABBIX on OpenBSD
 =======================
@@ -34,7 +34,7 @@ Next, you have to adapt the configuration files under
 addresses in the configuration files).
 
 To have the ZABBIX server start at boot time, insert the following into
-/etc/rc.local:
+/etc/rc.local(8):
 
 if [ -x ${TRUEPREFIX}/sbin/zabbix_server ]; then
 	install -d -o _zabbix /var/run/zabbix
@@ -47,6 +47,19 @@ zabbix_server with zabbix_proxy or zabbix_clientd.
 The Zabbix Server or Proxy might fail due to lack of shared memory
 ("Can't allocate shared memory..." errors), in which case you should set
 kern.shminfo.shmall to 32768 -- see sysctl(8) and sysctl.conf(5).
+
+On a busy server, it may be advisable to put the _zabbix user and
+processes in their own login(1) class with tuned resources, such as more
+open file descriptors etc.
+e.g. add this to the login.conf(5) file:
+
+zabbix:\
+	:openfiles-cur=1024:\
+	:openfiles-max=2048:\
+	:tc=daemon:
+
+Then change the rc.local(8) zabbix_server start line with the following:
+	echo -n ' zabbix_server'; su -c zabbix root -c '/usr/local/sbin/zabbix_server'
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
 httpd (the "Status of ZABBIX" page uses /bin/ps and /dev/kmem to
