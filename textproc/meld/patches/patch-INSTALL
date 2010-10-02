@@ -1,7 +1,7 @@
-$OpenBSD: patch-INSTALL,v 1.1.1.1 2009/06/03 18:23:27 landry Exp $
---- INSTALL.orig	Wed Jun  3 10:29:40 2009
-+++ INSTALL	Wed Jun  3 10:32:45 2009
-@@ -20,7 +20,7 @@
+$OpenBSD: patch-INSTALL,v 1.2 2010/10/02 06:18:00 ajacoutot Exp $
+--- INSTALL.orig	Mon Sep 27 00:25:02 2010
++++ INSTALL	Sat Oct  2 07:52:52 2010
+@@ -20,12 +20,12 @@
  PYTHON ?= python
  prefix := /usr/local
  bindir := $(prefix)/bin
@@ -10,3 +10,9 @@ $OpenBSD: patch-INSTALL,v 1.1.1.1 2009/06/03 18:23:27 landry Exp $
  docdir := $(prefix)/share/doc
  sharedir := $(prefix)/share
  helpdir := $(sharedir)/gnome/help
+ localedir := $(prefix)/share/locale
+-localstatedir := $(prefix)/var
++localstatedir := /var
+ libdir_ := $(libdir)/meld
+ docdir_ := $(docdir)/meld
+ sharedir_ := $(sharedir)/meld
