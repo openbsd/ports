@@ -1,0 +1,16 @@
+$OpenBSD: patch-gi_pygi_h,v 1.1 2010/10/02 08:33:03 jasper Exp $
+
+Don't return -1, but NULL. Just like pygi_get_property_value() does when
+introspection support is enabled.
+
+--- gi/pygi.h.orig	Sat Oct  2 10:22:36 2010
++++ gi/pygi.h	Sat Oct  2 10:22:38 2010
+@@ -152,7 +152,7 @@ static inline PyObject *
+ pygi_get_property_value (PyGObject *instance,
+                          const gchar *attr_name)
+ {
+-    return -1;
++    return NULL;
+ }
+ 
+ static inline gint

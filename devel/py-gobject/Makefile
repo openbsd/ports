@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/09/30 07:30:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/02 08:33:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ GNOME_VERSION=	2.26.0
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
 EPOCH=		0
+REVISION=	0
 
 SHARED_LIBS +=  pyglib-2.0-python${MODPY_VERSION} 1.0      # .0.0
 
