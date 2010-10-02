@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2010/09/15 18:42:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2010/10/02 01:22:12 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.21
+REVISION=	0
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/}
 
 WANTLIB=	qdbm.>=14 z
@@ -38,7 +39,6 @@ PATCH_DIST_STRIP=	-p1
 SUPDISTFILES+=		${DIST_SIDEBAR}
 .endif
 
-## following needed for hg snapshots
 AUTOMAKE_VERSION= 1.9
 CONFIGURE_STYLE= gnu
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
