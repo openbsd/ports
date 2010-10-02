@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/07/31 05:15:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/10/02 05:29:41 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -296,6 +296,7 @@ share/gtk-doc/html/goffice/GOFileOpener.html
 share/gtk-doc/html/goffice/GOFileSaver.html
 share/gtk-doc/html/goffice/GOFontSel.html
 share/gtk-doc/html/goffice/GOFormatSel.html
+share/gtk-doc/html/goffice/GOGraphWidget.html
 share/gtk-doc/html/goffice/GOIOContext.html
 share/gtk-doc/html/goffice/GOLocaleSel.html
 share/gtk-doc/html/goffice/GOMarker.html
@@ -366,6 +367,7 @@ share/gtk-doc/html/goffice/ch13.html
 share/gtk-doc/html/goffice/ch14.html
 share/gtk-doc/html/goffice/ch15.html
 share/gtk-doc/html/goffice/ch16.html
+share/gtk-doc/html/goffice/ch17.html
 share/gtk-doc/html/goffice/goffice-0.8-GOArrow.html
 share/gtk-doc/html/goffice/goffice-0.8-GOBezierSpline.html
 share/gtk-doc/html/goffice/goffice-0.8-GOCSpline.html
@@ -407,6 +409,7 @@ share/gtk-doc/html/goffice/goffice-0.8-go-distribution.html
 share/gtk-doc/html/goffice/goffice-0.8-go-image.html
 share/gtk-doc/html/goffice/goffice-0.8-go-plugin.html
 share/gtk-doc/html/goffice/goffice-0.8-go-string.html
+share/gtk-doc/html/goffice/goffice-0.8-goffice.html
 share/gtk-doc/html/goffice/goffice-0.8.devhelp
 share/gtk-doc/html/goffice/goffice-0.8.devhelp2
 share/gtk-doc/html/goffice/home.png
