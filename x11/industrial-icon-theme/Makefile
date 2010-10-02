@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/02 08:57:38 ajacoutot Exp $
 
 COMMENT=		Industrial icon theme from OpenSUSE
 
 DISTNAME=		industrial-icon-theme-11.0.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
