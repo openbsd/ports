@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.25 2010/09/21 15:18:03 sthen Exp $
+# $OpenBSD: mksqlitedb,v 1.26 2010/10/02 10:26:17 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -104,9 +104,10 @@ my $vars = {
     SHARED_ONLY => 'YesNoVar',
     SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',
+    TARGETS => 'TargetsVar',
     USE_GMAKE => 'YesNoVar',
     USE_GROFF => 'YesNoVar',
-    USE_LIBTOOL => 'YesNoVar',
+    USE_LIBTOOL => 'YesNoGnuVar',
     USE_MOTIF => 'YesNoVar',
     USE_X11 => 'YesNoVar',
     WANTLIB => 'WantlibVar',

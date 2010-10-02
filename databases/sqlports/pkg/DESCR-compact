@@ -44,6 +44,8 @@ stored in specialized tables, e.g.,:
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
 
+Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
+
 MULTI_PACKAGES ports hold several entries with corresponding FULLPKGPATH
 
 - Flavors(FULLPKGPATH, VALUE)
@@ -84,6 +86,8 @@ keywords since it may be arch-dependent
 
 - Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
 
+- TARGETS(FULLPKGPATH, VALUE)
+
 Some information, both in the main table and in secondary tables 
 is stored as keyword references to other tables:
 AUTOCONF_VERSION, AUTOMAKE_VERSION -> AUTOVERSION
@@ -95,3 +99,4 @@ WANTLIB.VALUE, SHARED_LIBS.LIBNAME -> LIBRARY
 PERMIT_*, SEPARATE_BUILD -> KEYWORDS2
 FLAVORS, PSEUDO_FLAVORS -> KEYWORDS
 NOT_FOR_ARCHS, ONLY_FOR_ARCHS, PKG_ARCH -> ARCH
+TARGETS -> TARGETKEYS

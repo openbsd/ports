@@ -40,10 +40,13 @@ holds all the information retrieved through various variables, e.g.,:
     SHARED_ONLY 
     SUBPACKAGE 
     SUPDISTFILES 
+    TARGETS
     USE_*
     WANTLIB 
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
+
+Note that USE_LIBTOOL can be 2 (gnu), 1 (yes), or undef.
 
 The FULLPKGPATH is complete, including flavors markers. For each port with
 MULTI_PACKAGES setting, another entry is written with the correct SUBPACKAGE.  
@@ -60,6 +63,7 @@ or subpackage markers.
 - ConfigureArgs(FULLPKGPATH, VALUE)
 - NotForArch(FULLPKGPATH, VALUE)
 - OnlyForArch(FULLPKGPATH, VALUE)
+- Targets(FULLPKGPATH, VALUE)
 All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)

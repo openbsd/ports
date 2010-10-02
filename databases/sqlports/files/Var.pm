@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.5 2010/04/26 10:20:50 espie Exp $
+# $OpenBSD: Var.pm,v 1.6 2010/10/02 10:26:17 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -186,6 +186,18 @@ sub add
 	my ($self, $ins) = @_;
 	$self->add_value($ins, $self->value =~ m/^Yes/i ? 1 : undef);
 }
+
+package YesNoGnuVar;
+our @ISA = qw(YesNoVar);
+
+sub add
+{
+	my ($self, $ins) = @_;
+	$self->add_value($ins, 
+	    $self->value =~ m/^Gnu/i ? 2 : 
+		($self->value =~ m/^Yes/i ? 1 : undef));
+}
+
 
 # variable is always defined, but we don't need to store empty values.
 package DefinedVar;
@@ -401,6 +413,11 @@ package CategoriesVar;
 our @ISA = qw(ListKeyVar);
 sub table() { 'Categories' }
 sub keyword_table() { 'CategoryKeys' }
+
+package TargetsVar;
+our @ISA = qw(ListKeyVar);
+sub table() { 'Targets' }
+sub keyword_table() { 'TargetKeys' }
 
 package MultiVar;
 our @ISA = qw(ListVar);
