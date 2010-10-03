@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.38 2010/06/26 11:11:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/03 22:21:49 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.4.3
-PKGNAME-main=		${DISTNAME}p0
+REVISION-main=		1
+REVISION-cgi=		1
+REVISION-snmp=		1
+
+PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
-PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
+PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
+
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
 
-SHARED_LIBS+=		upsclient 1.0
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES=		${HOMEPAGE}source/2.4/
+SHARED_LIBS+=		upsclient 1.0
 
 # GPLv2+, some scripts (not packaged) are GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +28,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += expat m ssl z asn1 gssapi krb5
+WANTLIB-main += expat m ssl z asn1 gssapi krb5 neon usb
+
+MASTER_SITES=		${HOMEPAGE}source/2.4/
 
 MODULES=		devel/gettext
 
@@ -50,16 +57,21 @@ MULTI_PACKAGES+=	-snmp
 .endif
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			usb::devel/libusb \
-			neon::net/neon
+			::devel/libusb \
+			::net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
-WANTLIB-cgi=
+WANTLIB-cgi=		X11 Xau Xdmcp c crypto expat fontconfig freetype gd
+WANTLIB-cgi+=		jpeg m png pthread-stubs ssl upsclient xcb z
 
-LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
+WANTLIB-snmp=		${WANTLIB} netsnmp
+LIB_DEPENDS-snmp=	::net/net-snmp
 RUN_DEPENDS-snmp=	# empty
 
-LIB_DEPENDS-cgi=	# empty
+LIB_DEPENDS-cgi=	${LIB_DEPENDS} \
+			::graphics/jpeg \
+			::graphics/gd \
+			::sysutils/nut,-main
 RUN_DEPENDS-cgi=	# empty
 
 .if ${MULTI_PACKAGES:M-cgi}

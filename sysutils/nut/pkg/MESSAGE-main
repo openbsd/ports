@@ -9,6 +9,8 @@ if [ -x ${PREFIX}/bin/upsdrvctl ]; then
     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
 fi
 
-For USB-connected devices, the userid running NUT (normally _nut unless
-set otherwise with the -u option) must have write access to the relevant
-devices: /dev/usbX to detect the UPS, and /dev/ugenX.XX to control it.
+The userid running NUT (normally _nut) must have access to the relevant
+device nodes. For a UPS connected by RS232, either add _nut to group
+"dialer" or change group of the relevant /dev/cua* device to _nut.
+For a USB-connected UPS, change the group of /dev/ugen* and /dev/usb*
+to _nut and allow the group to have write access.
