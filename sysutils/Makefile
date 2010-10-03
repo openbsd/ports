@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2010/09/25 05:33:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.211 2010/10/03 21:14:22 armani Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -31,6 +31,7 @@
      SUBDIR += contool
      SUBDIR += d-feet
      SUBDIR += dcfldd
+     SUBDIR += dcled
      SUBDIR += ddrescue
      SUBDIR += dellflash
      SUBDIR += diskrescue
