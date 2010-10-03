@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/03 20:45:52 armani Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.18
-REVISION=	1
+DISTNAME=	geany-0.19.1
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.geany.org
+HOMEPAGE=	http://www.geany.org/
 
-MAINTAINER=	Jonathan Armani <dbd@asystant.net>
+MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 
 # GPL + Scintilla License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,15 +28,15 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-WANTLIB=	X11 Xext Xrender Xau Xcursor Xdmcp Xfixes Xi \
-		Xcomposite Xdamage pcre gdk_pixbuf-2.0 \
-		Xinerama Xrandr expat stdc++ c m z glitz png \
-		glib-2.0 gmodule-2.0 gobject-2.0 gio-2.0 \
-		fontconfig freetype atk-1.0 cairo \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 pixman-1 \
-		pthread-stubs xcb
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += stdc++ xcb xcb-render xcb-render-util z
 
-LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+
+LIB_DEPENDS=	::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
