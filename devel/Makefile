@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.840 2010/10/01 09:48:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.841 2010/10/03 21:11:27 armani Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -227,6 +227,7 @@
      SUBDIR += libglademm
      SUBDIR += libgsf
      SUBDIR += libgtop2
+     SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libio
      SUBDIR += libixp
