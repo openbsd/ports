@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/03 16:59:55 jasper Exp $
 
 COMMENT=	syntax highlight for Mason
 
@@ -19,8 +19,7 @@ RUN_DEPENDS=	::www/p5-HTML-Mason \
 		::textproc/p5-Syntax-Highlight-Perl \
 		::textproc/p5-Syntax-Highlight-HTML
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Syntax-Highlight-Mason
-	${INSTALL_DATA} ${WRKDIST}/eg/view_source.html ${PREFIX}/share/examples/p5-Syntax-Highlight-Mason
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>

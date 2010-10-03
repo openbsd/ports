@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/03 16:59:55 jasper Exp $
 
 COMMENT=	syntax highlight for HTML
 
@@ -17,8 +17,8 @@ RUN_DEPENDS= ::www/p5-HTML-Parser
 
 MAKE_ENV+=	TEST_POD=Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Syntax-Highlight-HTML
-	${INSTALL_DATA} ${WRKDIST}/eg/* ${PREFIX}/share/examples/p5-Syntax-Highlight-HTML
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
+
 
 .include <bsd.port.mk>

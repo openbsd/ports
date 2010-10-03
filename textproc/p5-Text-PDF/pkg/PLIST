@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/10/03 16:59:55 jasper Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
@@ -39,6 +39,7 @@ ${P5SITE}/Text/PDF/changes
 @man man/man3p/Text::PDF::Utils.3p
 share/examples/p5-Text-PDF/
 share/examples/p5-Text-PDF/CD.CFG
+share/examples/p5-Text-PDF/call_conf.txt
 share/examples/p5-Text-PDF/graph.pl
 share/examples/p5-Text-PDF/hello.pl
 share/examples/p5-Text-PDF/pdfaddobj.pl

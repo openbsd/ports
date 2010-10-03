@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/09 19:24:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/03 16:59:55 jasper Exp $
 
 COMMENT=	perl extension for writing XML documents
 
@@ -14,10 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-XML-Writer
-	${INSTALL_DATA} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-XML-Writer
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/03 16:59:55 jasper Exp $
 
 COMMENT=	modules for parsing and evaluating XPath statements
 
@@ -9,18 +9,12 @@ CATEGORIES=	textproc
 
 RUN_DEPENDS=	:p5-XML-Parser->=2.23:textproc/p5-XML-Parser
 
-# GPL/Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-DOCDIR=	${PREFIX}/share/examples/p5-XML-XPath
-SRCDOCDIR= ${WRKSRC}/examples
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_SCRIPT} ${SRCDOCDIR}/xpath ${DOCDIR}/
-	${INSTALL_DATA} ${SRCDOCDIR}/*.xml ${DOCDIR}/
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
