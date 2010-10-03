@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_gen_makefiles_dynpmc_in,v 1.1 2010/10/03 22:13:18 kili Exp $
+--- config/gen/makefiles/dynpmc.in.orig	Fri Apr 17 17:06:01 2009
++++ config/gen/makefiles/dynpmc.in	Sun Oct  3 23:27:58 2010
+@@ -42,7 +42,6 @@ PMC_TARGETS := \
+   subproxy$(LOAD_EXT)
+ 
+ PMCS_DIGEST := \
+-  md2.pmc \
+   md4.pmc \
+   md5.pmc \
+   ripemd160.pmc \
+@@ -52,7 +51,6 @@ PMCS_DIGEST := \
+   sha512.pmc
+ 
+ OBJS_DIGEST := \
+-  md2$(O) \
+   md4$(O) \
+   md5$(O) \
+   ripemd160$(O) \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/18 23:00:43 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/03 22:13:18 kili Exp $
 
 # sparc64 failed to build with 0.9.0.1 and needs testing
 # macppc fails too and is therefore disabled
@@ -9,6 +9,7 @@ COMMENT=	virtual machine designed for interpreted languages
 
 V=		1.2.0
 DISTNAME=	parrot-$V
+REVISION=	0
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	0.0
 

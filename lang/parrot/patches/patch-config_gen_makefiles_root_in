@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_gen_makefiles_root_in,v 1.1 2009/06/17 09:34:35 simon Exp $
---- config/gen/makefiles/root.in.orig	Mon Jun  1 02:30:47 2009
-+++ config/gen/makefiles/root.in	Mon Jun  1 02:31:51 2009
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.2 2010/10/03 22:13:18 kili Exp $
+--- config/gen/makefiles/root.in.orig	Wed May 20 02:29:16 2009
++++ config/gen/makefiles/root.in	Sun Oct  3 23:51:31 2010
 @@ -18,7 +18,7 @@
  
  DEVEL           := @DEVEL@
@@ -18,3 +18,11 @@ $OpenBSD: patch-config_gen_makefiles_root_in,v 1.1 2009/06/17 09:34:35 simon Exp
  
  
  $(INSTALLABLECONFIG) : $(SRC_DIR)/install_config$(O) $(PARROT_CONFIG) $(PBC_TO_EXE)
+@@ -1791,7 +1790,6 @@ test-clean :
+     "t/stress/*.pbc" \
+     "t/tools/*.pbc"
+ 	$(RM_F) \
+-	"t/dynpmc/md2.t" \
+ 	"t/dynpmc/md4.t" \
+ 	"t/dynpmc/md5.t" \
+ 	"t/dynpmc/ripemd160.t" \
