@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/21 11:43:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/03 15:16:24 jasper Exp $
 bin/chartex
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/WriteExcel/
@@ -101,6 +101,7 @@ share/examples/p5-Spreadsheet-WriteExcel/properties.pl
 share/examples/p5-Spreadsheet-WriteExcel/protection.pl
 share/examples/p5-Spreadsheet-WriteExcel/regions.pl
 share/examples/p5-Spreadsheet-WriteExcel/repeat.pl
+share/examples/p5-Spreadsheet-WriteExcel/republic.png
 share/examples/p5-Spreadsheet-WriteExcel/right_to_left.pl
 share/examples/p5-Spreadsheet-WriteExcel/row_wrap.pl
 share/examples/p5-Spreadsheet-WriteExcel/sales.pl
@@ -112,16 +113,25 @@ share/examples/p5-Spreadsheet-WriteExcel/tab2xls.pl
 share/examples/p5-Spreadsheet-WriteExcel/tab_colors.pl
 share/examples/p5-Spreadsheet-WriteExcel/textwrap.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_2022_jp.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_2022_jp.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_11.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_11.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_7.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_7.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_big5.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_big5.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1251.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1251.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1256.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1256.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cyrillic.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_koi8r.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_koi8r.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_list.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_polish_utf8.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_polish_utf8.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_shift_jis.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_shift_jis.txt
 share/examples/p5-Spreadsheet-WriteExcel/unicode_utf16.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_utf16_japan.pl
 share/examples/p5-Spreadsheet-WriteExcel/win32ole.pl
