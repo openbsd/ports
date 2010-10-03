@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/27 13:00:13 stephan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/03 15:10:07 jasper Exp $
 
 COMMENT=		capture STDOUT and STDERR
 
@@ -14,9 +14,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Capture-Tiny
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pl \
-		${PREFIX}/share/examples/p5-Capture-Tiny
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

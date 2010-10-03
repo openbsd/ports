@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/06 17:01:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/03 15:11:57 jasper Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Crypt-CBC
-	${INSTALL_DATA} ${WRKSRC}/eg/*.pl ${PREFIX}/share/examples/p5-Crypt-CBC
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>	

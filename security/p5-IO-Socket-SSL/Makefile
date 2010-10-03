@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/05/18 20:19:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/03 15:11:57 jasper Exp $
 
 COMMENT=	perl interface to SSL sockets
 
@@ -19,10 +19,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:p5-Net-SSLeay->=1.21:security/p5-Net_SSLeay
 REGRESS_DEPENDS=	::net/p5-IO-Socket-INET6
 
-EXDIR=		${PREFIX}/share/examples/p5-IO-Socket-SSL/
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/example/*.pl ${EXDIR}
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	example
 
 .include <bsd.port.mk>

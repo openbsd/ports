@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/03 15:11:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,12 +28,11 @@ REGRESS_DEPENDS=	::devel/p5-Test-Exception \
 			::devel/p5-Test-Pod \
 			::devel/p5-Test-Pod-Coverage
 
-SRCDIR=	${WRKSRC}/examples
-DSTDIR=	${PREFIX}/share/examples/p5-Net-SSLeay
+MODCPAN_EXAMPLES=	Yes
+SRCDIR= 		${WRKSRC}/${MODCPAN_EXAMPLES_DIST}
 
 post-install:
-	${INSTALL_DATA_DIR} ${DSTDIR}
-	${INSTALL_SCRIPT} ${SRCDIR}/*.pl ${DSTDIR}/
-	${INSTALL_DATA} ${SRCDIR}/*.conf ${SRCDIR}/*.pem ${DSTDIR}/
+	${MODCPAN_POST_INSTALL}
+	${INSTALL_DATA} ${SRCDIR}/*.conf ${SRCDIR}/*.pem ${MODCPAN_EXAMPLES_DIR}
 
 .include <bsd.port.mk>
