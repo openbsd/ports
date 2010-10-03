@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2010/03/23 21:32:07 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2010/10/03 23:25:52 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -155,15 +155,35 @@ share/doc/dovecot/wiki/Debugging.Authentication.txt
 share/doc/dovecot/wiki/Debugging.ProcessTracing.txt
 share/doc/dovecot/wiki/Debugging.Rawlog.txt
 share/doc/dovecot/wiki/Debugging.Thunderbird.txt
+share/doc/dovecot/wiki/Design.Arrays.txt
 share/doc/dovecot/wiki/Design.AuthProcess.txt
+share/doc/dovecot/wiki/Design.Buffers.txt
 share/doc/dovecot/wiki/Design.Indexes.Cache.txt
 share/doc/dovecot/wiki/Design.Indexes.MailIndexApi.txt
 share/doc/dovecot/wiki/Design.Indexes.MainIndex.txt
 share/doc/dovecot/wiki/Design.Indexes.TransactionLog.txt
 share/doc/dovecot/wiki/Design.Indexes.txt
+share/doc/dovecot/wiki/Design.InputStreams.txt
 share/doc/dovecot/wiki/Design.MailProcess.txt
+share/doc/dovecot/wiki/Design.Memory.txt
+share/doc/dovecot/wiki/Design.OutputStreams.txt
+share/doc/dovecot/wiki/Design.Plugins.txt
 share/doc/dovecot/wiki/Design.Processes.txt
+share/doc/dovecot/wiki/Design.Storage.ErrorHandling.txt
+share/doc/dovecot/wiki/Design.Storage.Mail.txt
+share/doc/dovecot/wiki/Design.Storage.MailNamespace.txt
+share/doc/dovecot/wiki/Design.Storage.MailStorage.txt
+share/doc/dovecot/wiki/Design.Storage.MailUser.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Save.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Search.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Sync.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Transaction.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.txt
+share/doc/dovecot/wiki/Design.Storage.MailboxList.txt
+share/doc/dovecot/wiki/Design.Storage.Plugins.txt
+share/doc/dovecot/wiki/Design.Strings.txt
 share/doc/dovecot/wiki/Design.txt
+share/doc/dovecot/wiki/DomainLost.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
@@ -181,6 +201,8 @@ share/doc/dovecot/wiki/LDA.Indexing.txt
 share/doc/dovecot/wiki/LDA.Postfix.txt
 share/doc/dovecot/wiki/LDA.Qmail.txt
 share/doc/dovecot/wiki/LDA.Sendmail.txt
+share/doc/dovecot/wiki/LDA.Sieve.CMU.txt
+share/doc/dovecot/wiki/LDA.Sieve.Dovecot.txt
 share/doc/dovecot/wiki/LDA.Sieve.txt
 share/doc/dovecot/wiki/LDA.txt
 share/doc/dovecot/wiki/Logging.txt
@@ -200,6 +222,11 @@ share/doc/dovecot/wiki/MailboxFormat.mailstore.txt
 share/doc/dovecot/wiki/MailboxFormat.mbox.txt
 share/doc/dovecot/wiki/MailboxFormat.mbx.txt
 share/doc/dovecot/wiki/MailboxFormat.txt
+share/doc/dovecot/wiki/ManageSieve.Clients.txt
+share/doc/dovecot/wiki/ManageSieve.Configuration.txt
+share/doc/dovecot/wiki/ManageSieve.Install.1.0.txt
+share/doc/dovecot/wiki/ManageSieve.Install.txt
+share/doc/dovecot/wiki/ManageSieve.Troubleshooting.txt
 share/doc/dovecot/wiki/ManageSieve.txt
 share/doc/dovecot/wiki/MboxLocking.txt
 share/doc/dovecot/wiki/MboxProblems.txt
@@ -245,6 +272,7 @@ share/doc/dovecot/wiki/Plugins.Virtual.txt
 share/doc/dovecot/wiki/Plugins.Zlib.txt
 share/doc/dovecot/wiki/Plugins.txt
 share/doc/dovecot/wiki/PostLoginScripting.txt
+share/doc/dovecot/wiki/PreAuth.txt
 share/doc/dovecot/wiki/QuickConfiguration.txt
 share/doc/dovecot/wiki/Quota.1.1.txt
 share/doc/dovecot/wiki/Quota.Dict.txt
@@ -278,7 +306,9 @@ share/doc/dovecot/wiki/UserDatabase.Prefetch.txt
 share/doc/dovecot/wiki/UserDatabase.Static.txt
 share/doc/dovecot/wiki/UserDatabase.txt
 share/doc/dovecot/wiki/UserIds.txt
+share/doc/dovecot/wiki/VarMailDotLock.txt
 share/doc/dovecot/wiki/Variables.txt
+share/doc/dovecot/wiki/VirtualUsers.Home.txt
 share/doc/dovecot/wiki/VirtualUsers.txt
 share/doc/dovecot/wiki/WhyDoesItNotWork.txt
 share/doc/dovecot/wiki/maildrop.txt
