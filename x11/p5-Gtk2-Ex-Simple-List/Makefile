@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/01 22:20:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/03 15:27:39 jasper Exp $
 
 COMMENT =		simple interface to Gtk2 complex MVC list widget
 
@@ -21,10 +21,6 @@ BUILD_DEPENDS = ${RUN_DEPENDS}
 
 REGRESS_IS_INTERACTIVE =		X11
 
-EG_DIR =		${PREFIX}/share/examples/p5-Gtk2-Ex-Simple-List/
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EG_DIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
