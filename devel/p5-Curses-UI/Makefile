@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/02 16:49:48 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/03 17:23:41 jasper Exp $
 
 COMMENT=	curses based user interface framework for Perl
 
@@ -20,10 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 
-EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Curses-UI
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLE_DIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/30 18:35:52 jim Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/03 17:23:41 jasper Exp $
 
 COMMENT=	critique perl source code for best practices
 
@@ -35,9 +35,6 @@ MAKE_ENV+=	TEST_POD=Yes
 
 CONFIGURE_STYLE=modbuild
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Perl-Critic
-	${INSTALL_DATA} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-Perl-Critic
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

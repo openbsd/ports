@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/09 23:24:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/03 17:23:41 jasper Exp $
 
 COMMENT=	provide framework for multiple event loops
 
@@ -13,10 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EG_DIR= 	${PREFIX}/share/examples/p5-AnyEvent/
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_DATA} ${WRKSRC}/eg/* ${EG_DIR}
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>

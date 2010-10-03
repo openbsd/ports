@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/25 22:24:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/03 17:23:41 jasper Exp $
 
 COMMENT=		base class for creating plugin enabled POE Components
 
@@ -16,10 +16,6 @@ MODULES=		cpan
 RUN_DEPENDS=		:p5-POE->=1.0002:devel/p5-POE \
 			::devel/p5-Task-Weaken
 
-EG_DIR= 		${PREFIX}/share/examples/p5-POE-Component-Pluggable
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EG_DIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

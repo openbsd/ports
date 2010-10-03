@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/08 12:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/03 17:23:41 jasper Exp $
 
 COMMENT= 	create DateTime parser classes and objects
 
@@ -23,9 +23,6 @@ REGRESS_DEPENDS=::devel/p5-DateTime-Format-HTTP \
 
 CONFIGURE_STYLE=modbuild
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-DateTime-Format-Builder
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pm \
-		${PREFIX}/share/examples/p5-DateTime-Format-Builder
+MODCPAN_EXAMPLES=Yes
 
 .include <bsd.port.mk>
