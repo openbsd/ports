@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2008/03/22 11:44:42 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/03 18:09:01 jeremy Exp $
 
 COMMENT=	source code editing component for GTK+
 
-VERSION=	1.76
+VERSION=	2.21
 DISTNAME=	scintilla${VERSION:S/.//}
 PKGNAME=	scintilla-${VERSION}
 CATEGORIES=	editors x11
 
-SHARED_LIBS=	scintilla		6.0 \
-		scintilla_lexers	6.0
+SHARED_LIBS=	scintilla		7.0 \
+		scintilla_lexers	7.0
 
 HOMEPAGE=	http://www.scintilla.org/
 
-MAINTAINER=	Jeremy Evans <openbsd@jeremyevans.net>
+MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # old Python license
 PERMIT_PACKAGE_CDROM=	may not sell
@@ -30,7 +30,8 @@ MAKE_FILE=	makefile
 MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
 		NO_SHARED_LIBS='${NO_SHARED_LIBS:L}'
 
-LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+WANTLIB=	m stdc++ gtk-x11-2.0 gdk-x11-2.0
+LIB_DEPENDS=	::x11/gtk+2
 
 .for n v in ${SHARED_LIBS}
 MAKE_ENV+=	LIB$n_VERSION=${LIB$n_VERSION}

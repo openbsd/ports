@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Embedded_properties,v 1.3 2008/03/22 11:44:42 steven Exp $
---- src/Embedded.properties.orig	Fri Jun  8 17:42:52 2007
-+++ src/Embedded.properties	Fri Mar 21 15:42:32 2008
-@@ -79,7 +79,7 @@ if PLAT_WIN
+$OpenBSD: patch-src_Embedded_properties,v 1.4 2010/10/03 18:09:01 jeremy Exp $
+--- src/Embedded.properties.orig	Fri Jul 23 03:46:19 2010
++++ src/Embedded.properties	Sat Oct  2 19:38:57 2010
+@@ -85,7 +85,7 @@ if PLAT_WIN
  	command.scite.help.subsystem=2
  if PLAT_GTK
  	command.print.*=a2ps "$(FileNameExt)"
@@ -9,13 +9,4 @@ $OpenBSD: patch-src_Embedded_properties,v 1.3 2008/03/22 11:44:42 steven Exp $
 +	command.scite.help=firefox "file://__DOCDIR__/SciTEDoc.html"
  
  code.page=0
- 
-@@ -3209,7 +3209,7 @@ if PLAT_WIN
- 	command.go.$(file.patterns.web)="file://$(FilePath)"
- 	command.go.subsystem.$(file.patterns.web)=2
  if PLAT_GTK
--	command.go.$(file.patterns.web)=netscape "file://$(FilePath)"
-+	command.go.$(file.patterns.web)=firefox "file://$(FilePath)"
- 
- command.go.$(file.patterns.php)=php -f "$(FileNameExt)"
- command.compile.$(file.patterns.php)=php -l "$(FileNameExt)"

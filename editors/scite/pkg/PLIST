@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/03/22 11:44:42 steven Exp $
-bin/SciTE
+@comment $OpenBSD: PLIST,v 1.6 2010/10/03 18:09:01 jeremy Exp $
+@bin bin/SciTE
 share/doc/scite/
 share/doc/scite/CommandValues.html
 share/doc/scite/PrintHi.png
@@ -16,6 +16,7 @@ share/doc/scite/SciTEImage.html
 share/doc/scite/SciTELexer.html
 share/doc/scite/SciTELua.html
 share/doc/scite/SciTERegEx.html
+share/doc/scite/ScriptLexer.html
 share/scite/
 share/scite/Embedded.properties
 share/scite/SciTE.properties
@@ -32,6 +33,7 @@ share/scite/blitzbasic.properties
 share/scite/bullant.properties
 share/scite/caml.properties
 share/scite/cmake.properties
+share/scite/cobol.properties
 share/scite/conf.properties
 share/scite/cpp.properties
 share/scite/csound.properties
@@ -56,6 +58,7 @@ share/scite/lua.properties
 share/scite/matlab.properties
 share/scite/metapost.properties
 share/scite/mmixal.properties
+share/scite/nimrod.properties
 share/scite/nncrontab.properties
 share/scite/nsis.properties
 share/scite/opal.properties
@@ -63,6 +66,7 @@ share/scite/others.properties
 share/scite/pascal.properties
 share/scite/perl.properties
 share/scite/pov.properties
+share/scite/powerpro.properties
 share/scite/powershell.properties
 share/scite/ps.properties
 share/scite/purebasic.properties
@@ -72,11 +76,15 @@ share/scite/rebol.properties
 share/scite/ruby.properties
 share/scite/scriptol.properties
 share/scite/smalltalk.properties
+share/scite/sorcins.properties
 share/scite/specman.properties
 share/scite/spice.properties
 share/scite/sql.properties
+share/scite/tacl.properties
+share/scite/tal.properties
 share/scite/tcl.properties
 share/scite/tex.properties
+share/scite/txt2tags.properties
 share/scite/vb.properties
 share/scite/verilog.properties
 share/scite/vhdl.properties
