@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2010/09/28 12:03:16 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2010/10/03 16:00:11 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.10
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	gimp-2.0	270.0	\
 		gimpbase-2.0	270.0	\
 		gimpcolor-2.0	270.0	\
@@ -61,7 +61,7 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		pthread-stubs xcb execinfo xcb-render \
 		xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gtk-x11-2.0 tiff.>=35 aa.>=1.3 dbus-glib-1 \
-		exif mng wmf.>=6 wmflite.>=6 poppler.>=3 \
+		exif mng poppler.>=3 wmf-0.2 wmflite-0.2 \
 		poppler-glib.>=3 gegl-0.1 openjpeg.>=4 curl
 
 MODULES=	devel/gettext \
