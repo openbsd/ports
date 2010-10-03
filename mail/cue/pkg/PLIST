@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:41 espie Exp $
-bin/cue
+@comment $OpenBSD: PLIST,v 1.3 2010/10/03 21:40:42 jasper Exp $
+@bin bin/cue
 share/doc/cue/
 share/doc/cue/cue.hlp
 share/examples/cue/
