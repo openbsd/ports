@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mp3_parse_cpp,v 1.1 2010/10/03 06:55:17 landry Exp $
+fix for vbr stack overflow
+http://sourceforge.net/tracker/?func=detail&aid=1863981&group_id=979&atid=100979
+--- pobj/id3lib-3.8.3/id3lib-3.8.3/src/mp3_parse.cpp.orig	Sun Oct  3 01:05:28 2010
++++ pobj/id3lib-3.8.3/id3lib-3.8.3/src/mp3_parse.cpp	Sun Oct  3 01:05:44 2010
+@@ -465,7 +465,7 @@
+   // from http://www.xingtech.com/developer/mp3/
+ 
+   const size_t VBR_HEADER_MIN_SIZE = 8;     // "xing" + flags are fixed
+-  const size_t VBR_HEADER_MAX_SIZE = 116;   // frames, bytes, toc and scale are optional
++  const size_t VBR_HEADER_MAX_SIZE = 120;   // frames, bytes, toc and scale are optional
+ 
+   if (mp3size >= vbr_header_offest + VBR_HEADER_MIN_SIZE) 
+   {
