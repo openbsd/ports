@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/03 17:50:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/03 18:58:53 phessler Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20100501
 PKGNAME=		${DISTNAME:S,_full,,}
-REVISION =		1
+REVISION =		2
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	3.0 \
 			gdraw		5.0 \
@@ -47,11 +47,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
 			::textproc/libxml
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
-
-.if ${MACHINE_ARCH:Mmips64el}
-# XXX gcc 3.3 ICE
-MAKE_FLAGS +=		CFLAGS_fontinfo.c=-O1
-.endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include		\
