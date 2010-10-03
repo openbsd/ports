@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mp3_parse_cpp,v 1.1 2010/10/03 06:55:17 landry Exp $
+$OpenBSD: patch-src_mp3_parse_cpp,v 1.2 2010/10/03 15:06:56 kili Exp $
 fix for vbr stack overflow
 http://sourceforge.net/tracker/?func=detail&aid=1863981&group_id=979&atid=100979
---- pobj/id3lib-3.8.3/id3lib-3.8.3/src/mp3_parse.cpp.orig	Sun Oct  3 01:05:28 2010
-+++ pobj/id3lib-3.8.3/id3lib-3.8.3/src/mp3_parse.cpp	Sun Oct  3 01:05:44 2010
-@@ -465,7 +465,7 @@
+--- src/mp3_parse.cpp.orig	Sun Mar  2 01:23:00 2003
++++ src/mp3_parse.cpp	Sun Oct  3 17:06:05 2010
+@@ -465,7 +465,7 @@ bool Mp3Info::Parse(ID3_Reader& reader, size_t mp3size
    // from http://www.xingtech.com/developer/mp3/
  
    const size_t VBR_HEADER_MIN_SIZE = 8;     // "xing" + flags are fixed
