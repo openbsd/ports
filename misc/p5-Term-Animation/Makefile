@@ -14,12 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=		::devel/p5-Curses
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Term-Animation
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pl \
-		${PREFIX}/share/examples/p5-Term-Animation
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/12 16:58:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/03 15:21:13 jasper Exp $
 
 COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.05
@@ -12,15 +12,10 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-CPAN_AUTHOR =	LETO
-
 MODULES =	cpan
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	example
 
 CONFIGURE_STYLE =	modbuild
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Math-MatrixReal
-	${INSTALL_DATA} ${WRKSRC}/example/*.pl \
-		${PREFIX}/share/examples/p5-Math-MatrixReal
 
 .include <bsd.port.mk>
