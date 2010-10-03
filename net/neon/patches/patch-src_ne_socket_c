@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ne_socket_c,v 1.1 2010/10/03 13:02:19 dcoppa Exp $
+--- src/ne_socket.c.orig	Tue Aug 18 15:16:07 2009
++++ src/ne_socket.c	Fri Oct  1 12:32:40 2010
+@@ -1524,6 +1524,10 @@ int ne_sock_accept_ssl(ne_socket *sock, ne_ssl_context
+     if (ret != 1) {
+         return error_ossl(sock, ret);
+     }
++
++    if (SSL_session_reused(ssl)) {
++        NE_DEBUG(NE_DBG_SSL, "ssl: Server reused session.\n");
++    }
+ #elif defined(HAVE_GNUTLS)
+     gnutls_init(&ssl, GNUTLS_SERVER);
+     gnutls_credentials_set(ssl, GNUTLS_CRD_CERTIFICATE, ctx->cred);

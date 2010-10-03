@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/30 18:37:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/03 13:02:19 dcoppa Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
 DISTNAME=		neon-0.28.6
+REVISION=		0
 SHARED_LIBS=		neon	27.0 # .28.3
 CATEGORIES=     	net www devel
 
