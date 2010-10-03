@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_devhelp_schemas_in,v 1.1 2010/10/03 07:40:07 ajacoutot Exp $
+
+WARNING: Failed to parse default value `' for schema (/schemas/apps/devhelp/state/main/contents/books_disabled)
+
+--- data/devhelp.schemas.in.orig	Sun Oct  3 09:33:14 2010
++++ data/devhelp.schemas.in	Sun Oct  3 09:35:30 2010
+@@ -132,7 +132,6 @@
+       <owner>devhelp</owner>
+       <type>list</type>
+       <list_type>string</list_type>
+-      <default></default>
+       <locale name="C">
+          <short>Books disabled</short>
+          <long>List of books disabled by the user.</long>
