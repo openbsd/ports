@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/09/21 13:29:46 edd Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/04 23:56:50 ckuethe Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -26,6 +26,7 @@
      SUBDIR += libmp4v2
      SUBDIR += libquicktime
      SUBDIR += libtheora
+     SUBDIR += libvpx
      SUBDIR += lsdvd
      SUBDIR += mediatomb
      SUBDIR += mjpegtools
