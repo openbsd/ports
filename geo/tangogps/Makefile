@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/13 13:26:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/04 18:33:22 ajacoutot Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		tangogps-0.99.4
+REVISION =		0
 
 CATEGORIES =		geo
 
@@ -19,13 +20,13 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c cairo crypto dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gcrypt gdk-x11-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c cairo crypto
+WANTLIB += expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 idn m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs ssl tasn1 xcb xcb-render
-WANTLIB += xcb-render-util xml2 z
+WANTLIB += xcb-render-util xml2 z GL X11-xcb Xxf86vm drm xcb-shm
 WANTLIB += atk-1.0 curl exif gconf-2 sqlite3 soup-2.4
 
 MODULES = 		devel/gettext
