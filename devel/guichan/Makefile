@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/04 10:00:05 armani Exp $
 
 COMMENT=	C++ GUI library designed for games
 
 DISTNAME=	guichan-0.8.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=	devel games
 
 HOMEPAGE=	http://guichan.sourceforge.net/
 
-MAINTAINER=	Jonathan Armani <dbd@asystant.net>
+MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 
 SHARED_LIBS +=	guichan_opengl	0.0	# .1.0
 SHARED_LIBS +=	guichan_sdl	0.0	# .1.0
@@ -22,13 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://guichan.googlecode.com/files/
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m pthread-stubs sndio \
-		usbhid xcb
+WANTLIB += SDL m sndio stdc++ usbhid 
 
 MODULES=	converters/libiconv
 
 BUILD_DEPENDS=	::devel/sdl-image
-LIB_DEPENDS=	SDL.>=8::devel/sdl
+LIB_DEPENDS=	::devel/sdl
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
