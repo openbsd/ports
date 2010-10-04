@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.9 2010/07/27 12:58:42 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.10 2010/10/04 17:11:43 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -22,7 +22,7 @@ XFCE_VERSION=	${XFCE_DESKTOP_VERSION}
 
 XFCE_BRANCH=	${XFCE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
-# Set to 'yes' if there are .desktop files in the package list.
+# Set to 'yes' if there are .desktop files in share/applications/.
 .if defined(DESKTOP_FILES) && ${DESKTOP_FILES:L} == "yes"
 MODXFCE_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 .endif
