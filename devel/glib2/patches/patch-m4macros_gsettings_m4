@@ -1,17 +1,43 @@
-$OpenBSD: patch-m4macros_gsettings_m4,v 1.1 2010/09/30 07:17:19 ajacoutot Exp $
+$OpenBSD: patch-m4macros_gsettings_m4,v 1.2 2010/10/04 06:28:10 ajacoutot Exp $
 
-Bug 627126 - gsettings schema files don't get installed on FreeBSD  
+From 136e705e8383ff8848e425ac01278102d7badc52 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Mon, 04 Oct 2010 05:51:11 +0000
+Subject: Bug 627126 - gsettings schemas on FreeBSD
 
---- m4macros/gsettings.m4.orig	Mon Aug  9 15:34:46 2010
-+++ m4macros/gsettings.m4	Tue Sep 28 10:33:03 2010
-@@ -46,8 +46,8 @@ install-data-am: install-gsettings-schemas
+Rewrite the install rule for GSettings schemas to not depend on an
+obscure chunk of non-portable sed that nobody understands the purpose
+of.
+
+Instead, use make's VPATH feature to resolve the paths of the files that
+need to be installed.  No need to depend on the .valid targets here
+since automake already ensures that 'make all' is complete before 'make
+install' is permitted to run.
+
+--- m4macros/gsettings.m4.orig	Mon Oct  4 08:16:50 2010
++++ m4macros/gsettings.m4	Mon Oct  4 08:17:51 2010
+@@ -45,22 +45,10 @@ install-data-am: install-gsettings-schemas
+ 
  .SECONDARY: $(gsettings_SCHEMAS)
  
- gsettings__base_list = \
+-gsettings__base_list = \
 -  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
 -  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
-+  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
-+  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
- 
- install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+-
+-install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
++install-gsettings-schemas: $(gsettings_SCHEMAS) $(gsettings__enum_file)
  	@$(NORMAL_INSTALL)
+ 	test -z "$(gsettingsschemadir)" || $(MKDIR_P) "$(DESTDIR)$(gsettingsschemadir)"
+-	@list='\''$(gsettings__enum_file) $(gsettings_SCHEMAS)'\''; test -n "$(gsettingsschemadir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(gsettings__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '\''$(DESTDIR)$(gsettingsschemadir)'\''"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gsettingsschemadir)" || exit $$?; \
+-	done
++	$(INSTALL_DATA) $^ "$(DESTDIR)$(gsettingsschemadir)"
+ 	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
+ 
+ uninstall-gsettings-schemas:
