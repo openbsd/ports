@@ -1,0 +1,27 @@
+$OpenBSD: patch-build_make_configure_sh,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+--- build/make/configure.sh.orig	Thu Sep  2 14:56:47 2010
++++ build/make/configure.sh	Sat Sep 25 17:14:07 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${BASH}
+ ##
+ ##  configure.sh
+ ##
+@@ -812,8 +812,6 @@ process_common_toolchain() {
+                 esac
+                 ;;
+             gcc*)
+-                add_cflags  -m${bits}
+-                add_ldflags -m${bits}
+                 link_with_cc=gcc
+                 tune_cflags="-march="
+             setup_gnu_toolchain
+@@ -896,7 +894,7 @@ EOF
+     if enabled multithread; then
+         case ${toolchain} in
+             *-win*);;
+-            *) check_header pthread.h && add_extralibs -lpthread
++            *) check_header pthread.h && add_extralibs -pthread
+         esac
+     fi
+ 

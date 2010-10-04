@@ -1,0 +1,18 @@
+$OpenBSD: patch-examples_gen_example_code_sh,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+--- examples/gen_example_code.sh.orig	Thu Sep  2 11:56:47 2010
++++ examples/gen_example_code.sh	Wed Sep 22 15:04:39 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${BASH}
+ ##
+ ##  Copyright (c) 2010 The VP8 project authors. All Rights Reserved.
+ ##
+@@ -49,7 +49,7 @@ include_block() {
+             *)
+                 if [ "x$on_block" == "xyes" ]; then
+                     local rem
+-                    (( rem = 78 - indent ))
++                    rem=$(expr 78 - $indent )
+                     case "$block_name" in
+                       \**) printf "%${indent}s * %s\n" "" "$t_line" ;;
+                         *)

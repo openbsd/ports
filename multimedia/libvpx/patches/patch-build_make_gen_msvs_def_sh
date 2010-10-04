@@ -1,0 +1,9 @@
+$OpenBSD: patch-build_make_gen_msvs_def_sh,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+--- build/make/gen_msvs_def.sh.orig	Thu Sep  2 11:56:47 2010
++++ build/make/gen_msvs_def.sh	Wed Sep 22 15:04:39 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${BASH}
+ ##
+ ##  Copyright (c) 2010 The VP8 project authors. All Rights Reserved.
+ ##
