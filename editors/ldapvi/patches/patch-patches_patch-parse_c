@@ -1,0 +1,34 @@
+$OpenBSD: patch-patches_patch-parse_c,v 1.1 2010/10/04 19:38:13 ajacoutot Exp $
+
+Fix creation of MD5 passwords.
+
+--- patches/patch-parse_c.orig	Mon Oct  4 21:36:12 2010
++++ patches/patch-parse_c	Mon Oct  4 21:36:12 2010
+@@ -0,0 +1,27 @@
++$OpenBSD: patch-patches_patch-parse_c,v 1.1 2010/10/04 19:38:13 ajacoutot Exp $
++--- parse.c.orig	Tue Oct  5 00:31:20 2010
+++++ parse.c	Tue Oct  5 01:10:55 2010
++@@ -144,9 +144,9 @@ static char *
++ cryptdes(char *key)
++ {
++ 	unsigned char salt[2];
++-	int fd = open("/dev/random", 2);
+++	int fd = open("/dev/arandom", O_RDONLY);
++ 	if (fd == -1) {
++-		puts("Sorry, crypt not available: Cannot open /dev/random.");
+++		puts("Sorry, crypt not available: Cannot open /dev/arandom.");
++ 		return 0;
++ 	}
++ 	if (read(fd, salt, 2) != 2) syserr();
++@@ -162,9 +162,9 @@ cryptmd5(char *key)
++ 	char *result;
++ 	unsigned char salt[11];
++ 	int i;
++-	int fd = open("/dev/random", 2);
+++	int fd = open("/dev/arandom", O_RDONLY);
++ 	if (fd == -1) {
++-		puts("Sorry, MD5 not available: Cannot open /dev/random.");
+++		puts("Sorry, MD5 not available: Cannot open /dev/arandom.");
++ 		return 0;
++ 	}
++ 	salt[0] = '$';
