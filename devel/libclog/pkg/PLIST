@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/04 23:50:21 ckuethe Exp $
+%%SHARED%%
+lib/libclog.a
+lib/libclog_p.a
+lib/libclog_pic.a
+@man man/cat3/CDBG.0
+@man man/cat3/CFATAL.0
+@man man/cat3/CFATALX.0
+@man man/cat3/CINFO.0
+@man man/cat3/CNDBG.0
+@man man/cat3/CNFATAL.0
+@man man/cat3/CNFATALX.0
+@man man/cat3/CNINFO.0
+@man man/cat3/CNWARN.0
+@man man/cat3/CNWARNX.0
+@man man/cat3/CWARN.0
+@man man/cat3/CWARNX.0
+@man man/cat3/clog.0
+@man man/cat3/clog_init.0
+@man man/cat3/clog_set_flags.0
+@man man/cat3/clog_set_mask.0
