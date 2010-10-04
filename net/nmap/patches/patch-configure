@@ -1,7 +1,166 @@
-$OpenBSD: patch-configure,v 1.11 2010/04/21 07:08:23 giovanni Exp $
---- configure.orig	Thu Nov  5 20:50:33 2009
-+++ configure	Wed Jan 20 19:54:57 2010
-@@ -7161,6 +7161,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.12 2010/10/04 20:42:37 benoit Exp $
+--- configure.orig0	Mon Oct  4 16:05:33 2010
++++ configure	Mon Oct  4 16:06:34 2010
+@@ -675,6 +675,7 @@
+ PCAP_CLEAN
+ PCAP_BUILD
+ PCAP_DEPENDS
++OPENSSL_NO_MD2
+ OPENSSL_LIBS
+ ZENMAP_DIST_CLEAN
+ ZENMAP_CLEAN
+@@ -6683,6 +6684,150 @@
+  fi
+ fi
+ 
++OPENSSL_NO_MD2=
++if test "$use_openssl" = "yes"; then
++  if test "${ac_cv_header_openssl_md2_h+set}" = set; then
++  { $as_echo "$as_me:$LINENO: checking for openssl/md2.h" >&5
++$as_echo_n "checking for openssl/md2.h... " >&6; }
++if test "${ac_cv_header_openssl_md2_h+set}" = set; then
++  $as_echo_n "(cached) " >&6
++fi
++{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_openssl_md2_h" >&5
++$as_echo "$ac_cv_header_openssl_md2_h" >&6; }
++else
++  # Is the header compilable?
++{ $as_echo "$as_me:$LINENO: checking openssl/md2.h usability" >&5
++$as_echo_n "checking openssl/md2.h usability... " >&6; }
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++$ac_includes_default
++#include <openssl/md2.h>
++_ACEOF
++rm -f conftest.$ac_objext
++if { (ac_try="$ac_compile"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval ac_try_echo="\"\$as_me:$LINENO: $ac_try_echo\""
++$as_echo "$ac_try_echo") >&5
++  (eval "$ac_compile") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest.$ac_objext; then
++  ac_header_compiler=yes
++else
++  $as_echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_header_compiler=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++{ $as_echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
++$as_echo "$ac_header_compiler" >&6; }
++
++# Is the header present?
++{ $as_echo "$as_me:$LINENO: checking openssl/md2.h presence" >&5
++$as_echo_n "checking openssl/md2.h presence... " >&6; }
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <openssl/md2.h>
++_ACEOF
++if { (ac_try="$ac_cpp conftest.$ac_ext"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval ac_try_echo="\"\$as_me:$LINENO: $ac_try_echo\""
++$as_echo "$ac_try_echo") >&5
++  (eval "$ac_cpp conftest.$ac_ext") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } >/dev/null && {
++	 test -z "$ac_c_preproc_warn_flag$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       }; then
++  ac_header_preproc=yes
++else
++  $as_echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++  ac_header_preproc=no
++fi
++
++rm -f conftest.err conftest.$ac_ext
++{ $as_echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
++$as_echo "$ac_header_preproc" >&6; }
++
++# So?  What about this header?
++case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
++  yes:no: )
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: accepted by the compiler, rejected by the preprocessor!" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: proceeding with the compiler's result" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: proceeding with the compiler's result" >&2;}
++    ac_header_preproc=yes
++    ;;
++  no:yes:* )
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: present but cannot be compiled" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: present but cannot be compiled" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h:     check for missing prerequisite headers?" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h:     check for missing prerequisite headers?" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: see the Autoconf documentation" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: see the Autoconf documentation" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h:     section \"Present But Cannot Be Compiled\"" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h:     section \"Present But Cannot Be Compiled\"" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: proceeding with the preprocessor's result" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: proceeding with the preprocessor's result" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: openssl/md2.h: in the future, the compiler will take precedence" >&5
++$as_echo "$as_me: WARNING: openssl/md2.h: in the future, the compiler will take precedence" >&2;}
++
++    ;;
++esac
++{ $as_echo "$as_me:$LINENO: checking for openssl/md2.h" >&5
++$as_echo_n "checking for openssl/md2.h... " >&6; }
++if test "${ac_cv_header_openssl_md2_h+set}" = set; then
++  $as_echo_n "(cached) " >&6
++else
++  ac_cv_header_openssl_md2_h=$ac_header_preproc
++fi
++{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_openssl_md2_h" >&5
++$as_echo "$ac_cv_header_openssl_md2_h" >&6; }
++
++fi
++if test $ac_cv_header_openssl_md2_h = yes; then
++  :
++else
++  cat >>confdefs.h <<\_ACEOF
++#define OPENSSL_NO_MD2 1
++_ACEOF
++
++    CPPFLAGS="$CPPFLAGS -DOPENSSL_NO_MD2"
++
++fi
++
++
++
++fi
++
+ OPENSSL_LIBS=
+ if test "$use_openssl" = "yes"; then
+   cat >>confdefs.h <<\_ACEOF
+@@ -7161,6 +7306,7 @@
  extern char pcap_version[];
  int main() {
    int major, minor1, minor2;
@@ -9,7 +168,7 @@ $OpenBSD: patch-configure,v 1.11 2010/04/21 07:08:23 giovanni Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
-@@ -7492,7 +7493,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -7492,7 +7638,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -18,7 +177,7 @@ $OpenBSD: patch-configure,v 1.11 2010/04/21 07:08:23 giovanni Exp $
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -7693,7 +7694,7 @@ if test $have_pcre != yes ; then
+@@ -7693,7 +7839,7 @@
  else
  # We only need to check for and use this if we are NOT using included pcre
  

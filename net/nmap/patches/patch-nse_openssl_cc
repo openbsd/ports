@@ -1,0 +1,39 @@
+$OpenBSD: patch-nse_openssl_cc,v 1.1 2010/10/04 20:42:37 benoit Exp $
+--- nse_openssl.cc.orig	Mon Oct  4 15:50:40 2010
++++ nse_openssl.cc	Mon Oct  4 15:54:05 2010
+@@ -8,7 +8,9 @@
+ #include <openssl/crypto.h>
+ #include <openssl/bn.h>
+ #include <openssl/rand.h>
++#ifndef OPENSSL_NO_MD2
+ #include <openssl/md2.h>
++#endif
+ #include <openssl/md4.h>
+ #include <openssl/md5.h>
+ #include <openssl/sha.h>
+@@ -206,6 +208,7 @@
+   return 1;
+ }
+ 
++#ifndef OPENSSL_NO_MD2
+ static int l_md2(lua_State *L)     /** md2(string s) */
+ {
+   size_t len;
+@@ -215,6 +218,7 @@
+   lua_pushlstring( L, (char *) MD2( s, len, digest ), 16 );
+   return 1;
+ }
++#endif
+ 
+ static int l_md4(lua_State *L)     /** md4(string s) */
+ {
+@@ -469,7 +473,9 @@
+   { "bignum_mod_exp", l_bignum_mod_exp },
+   { "rand_bytes", l_rand_bytes },
+   { "rand_pseudo_bytes", l_rand_pseudo_bytes },
++#ifndef OPENSSL_NO_MD2
+   { "md2", l_md2 },
++#endif
+   { "md4", l_md4 },
+   { "md5", l_md5 },
+   { "sha1", l_sha1 },
