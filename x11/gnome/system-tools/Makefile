@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/30 07:38:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/04 06:49:33 ajacoutot Exp $
 
 COMMENT=	sytem configuration GUI for desktops
 
 GNOME_PROJECT=	gnome-system-tools
 GNOME_VERSION=	2.32.0
+
+REVISION=	0
 
 CATEGORIES=	sysutils
 
