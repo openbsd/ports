@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2010/08/30 21:00:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.180 2010/10/05 19:46:17 jeremy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -159,6 +159,7 @@
      SUBDIR += ruby-pg
      SUBDIR += ruby-postgres
      SUBDIR += ruby-sequel
+     SUBDIR += ruby-sequel_pg
      SUBDIR += ruby-sqlite3
      SUBDIR += ruby-validatable
      SUBDIR += sharedance
