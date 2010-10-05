@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/02/04 18:01:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/05 17:08:02 steven Exp $
 
 COMMENT=	simple network library
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threadsafe-getaddrinfo \
 		--enable-threadsafe-gethostbyname
 
-REGRESS_FLAGS=	CFLAGS="${CFLAGS} -L${WRKBUILD}/src/.libs \
-		-D_internal_test" LIBTOOL=${LOCALBASE}/bin/libtool
+REGRESS_FLAGS=	CFLAGS="${CFLAGS} -D_internal_test" LIBTOOL=${LIBTOOL}
+REGRESS_DEPENDS=::devel/check
 
 .include <bsd.port.mk>
