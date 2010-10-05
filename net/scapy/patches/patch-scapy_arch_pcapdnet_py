@@ -1,0 +1,12 @@
+$OpenBSD: patch-scapy_arch_pcapdnet_py,v 1.1 2010/10/05 09:18:05 armani Exp $
+--- scapy/arch/pcapdnet.py.orig	Tue Oct  5 10:14:39 2010
++++ scapy/arch/pcapdnet.py	Tue Oct  5 10:16:27 2010
+@@ -63,6 +63,8 @@ if conf.use_pcap:    
+                     return ts,pkt
+                 def __getattr__(self, attr):
+                     return getattr(self.pcap, attr)
++                def __del__(self):
++                    os.close(self.pcap.fileno())
+             open_pcap = lambda *args,**kargs: _PcapWrapper_libpcap(*args,**kargs)
+         elif hasattr(pcap,"open_live"): # python-pcapy
+             class _PcapWrapper_pcapy:

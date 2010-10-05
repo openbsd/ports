@@ -1,0 +1,12 @@
+$OpenBSD: patch-scapy_sendrecv_py,v 1.1 2010/10/05 09:18:05 armani Exp $
+--- scapy/sendrecv.py.orig	Mon Oct  4 07:33:19 2010
++++ scapy/sendrecv.py	Mon Oct  4 07:35:09 2010
+@@ -117,7 +117,7 @@ def sndrcv(pks, pkt, timeout = None, inter = 0, verbos
+                                 if remaintime <= 0:
+                                     break
+                             r = None
+-                            if arch.FREEBSD or arch.DARWIN:
++                            if arch.FREEBSD or arch.DARWIN or arch.OPENBSD:
+                                 inp, out, err = select(inmask,[],[], 0.05)
+                                 if len(inp) == 0 or pks in inp:
+                                     r = pks.nonblock_recv()

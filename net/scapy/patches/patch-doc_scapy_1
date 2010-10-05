@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_scapy_1,v 1.1 2009/10/01 16:28:49 sthen Exp $
---- doc/scapy.1.orig	Tue May  8 10:55:07 2007
-+++ doc/scapy.1	Tue May  8 10:58:07 2007
-@@ -66,7 +66,7 @@ Just run \fBscapy\fP and try the following commands in
+$OpenBSD: patch-doc_scapy_1,v 1.2 2010/10/05 09:18:05 armani Exp $
+--- doc/scapy.1.orig	Sun Mar  8 13:35:08 2009
++++ doc/scapy.1	Mon Oct  4 07:38:02 2010
+@@ -100,7 +100,7 @@ Just run \fBscapy\fP and try the following commands in
  .LP
  Test the robustness of a network stack with invalid packets:
  .nf

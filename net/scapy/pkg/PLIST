@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/01 16:28:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/10/05 09:18:05 armani Exp $
 @conflict scapy6-*
 @pkgpath net/scapy6
 bin/UTscapy
@@ -24,6 +24,9 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/solaris.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/solaris.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/unix.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/unix.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/__init__.py
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/as_resolvers.py
 lib/python${MODPY_VERSION}/site-packages/scapy/as_resolvers.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/
@@ -47,6 +50,11 @@ lib/python${MODPY_VERSION}/site-packages/scapy/base_classes.py
 lib/python${MODPY_VERSION}/site-packages/scapy/base_classes.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/config.py
 lib/python${MODPY_VERSION}/site-packages/scapy/config.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/crypto/
+lib/python${MODPY_VERSION}/site-packages/scapy/crypto/__init__.py
+lib/python${MODPY_VERSION}/site-packages/scapy/crypto/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/crypto/cert.py
+lib/python${MODPY_VERSION}/site-packages/scapy/crypto/cert.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/dadict.py
 lib/python${MODPY_VERSION}/site-packages/scapy/dadict.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/data.py
@@ -139,6 +147,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/packet.py
 lib/python${MODPY_VERSION}/site-packages/scapy/packet.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/plist.py
 lib/python${MODPY_VERSION}/site-packages/scapy/plist.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/pton_ntop.py
+lib/python${MODPY_VERSION}/site-packages/scapy/pton_ntop.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/route.py
 lib/python${MODPY_VERSION}/site-packages/scapy/route.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/route6.py

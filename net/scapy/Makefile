@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/05 09:18:05 armani Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION=	2.0.1
+MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION=		0
+
 CATEGORIES=		net
 
 HOMEPAGE=	http://secdev.org/projects/scapy/
 
-MAINTAINER=	Jonathan Armani <dbd@asystant.net>
+MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,8 +41,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
 	${INSTALL_DATA} ${DISTDIR}/ethertypes ${PREFIX}/share/examples/scapy
 
-# some tests require root. you may also need to increase
-# the number of bpf device nodes (/dev/bpf*) to ~40.
+# some tests require root.
 do-regress:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC}/test; PATH=${WRKDIR}/bin:${PATH} ${WRKSRC}/test/run_tests

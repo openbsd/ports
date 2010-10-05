@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1 2009/10/01 16:28:49 sthen Exp $
---- setup.py.orig	Sun Sep 27 21:47:56 2009
-+++ setup.py	Sun Sep 27 21:52:29 2009
-@@ -40,7 +40,7 @@ setup(
-     version = '2.0.1', 
-     packages=['scapy','scapy/arch', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules'],
-     scripts = ['bin/scapy','bin/UTscapy'],
+$OpenBSD: patch-setup_py,v 1.2 2010/10/05 09:18:05 armani Exp $
+--- setup.py.orig	Mon Dec 14 16:31:55 2009
++++ setup.py	Mon Oct  4 07:43:18 2010
+@@ -44,7 +44,7 @@ setup(
+     version = '2.1.0', 
+     packages=['scapy','scapy/arch', 'scapy/arch/windows', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules', 'scapy/crypto'],
+     scripts = SCRIPTS,
 -    data_files = [('share/man/man1', ["doc/scapy.1.gz"])],
 +    data_files = [('man/man1', ["doc/scapy.1"])],
  
