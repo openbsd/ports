@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/25 20:27:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/05 05:11:56 ajacoutot Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
-DISTNAME=	desktop-file-utils-0.16
-REVISION=	1
+DISTNAME=	desktop-file-utils-0.17
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	devel

@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/20 21:38:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/05 05:11:56 ajacoutot Exp $
 @bin bin/desktop-file-install
 @bin bin/desktop-file-validate
 @bin bin/update-desktop-database
 @sample ${PREFIX}/share/applications/
+@man man/man1/desktop-file-install.1
+@man man/man1/desktop-file-validate.1
+@man man/man1/update-desktop-database.1
 @exec %D/bin/update-desktop-database
 @unexec-delete rm -f ${PREFIX}/share/applications/mimeinfo.cache
