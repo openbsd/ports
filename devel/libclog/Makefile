@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/04 23:50:21 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/05 04:50:49 ajacoutot Exp $
 
 COMMENT =		configurable logging library
 DISTNAME =		clog-0.1
 PKGNAME =		lib${DISTNAME}
+
+REVISION =		0
 
 SHARED_LIBS =		clog 1.1
 
@@ -22,7 +24,7 @@ MASTER_SITES =		http://opensource.conformal.com/snapshots/clog/
 EXTRACT_SUFX =		.tgz
 
 NO_REGRESS =		Yes
-MAKE_FLAGS=		PREFIX=${LOCALBASE}
+MAKE_FLAGS=		PREFIX=${TRUEPREFIX}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clog.h ${PREFIX}/include
