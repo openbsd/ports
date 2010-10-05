@@ -1,0 +1,4 @@
+sequel_pg overwrites the inner loop of the databases/ruby-sequel
+postgres adapter row fetching code with a C version. The C version is
+significantly faster (2-6x) than the pure ruby version that Sequel uses
+by default.
