@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/05 04:53:50 ajacoutot Exp $
 
 COMMENT=	Google VP8 video codec
 
@@ -8,6 +8,8 @@ PKGNAME=	libvpx-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 SHARED_LIBS=	vpx	0.0
 
