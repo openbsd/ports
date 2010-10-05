@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.842 2010/10/04 23:51:37 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.843 2010/10/05 19:24:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -961,6 +961,7 @@
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-term-ansicolor
+     SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
      SUBDIR += ruby-tzinfo
