@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/02/13 14:59:01 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/05 18:34:34 jasper Exp $
 @bin bin/msmtp
 @info info/msmtp.info
 @man man/man1/msmtp.1
@@ -14,6 +14,7 @@ share/examples/msmtp/msmtprc-system.example
 share/examples/msmtp/msmtprc-user.example
 share/examples/msmtp/set_sendmail.sh
 share/locale/de/LC_MESSAGES/msmtp.mo
+share/locale/pt_BR/LC_MESSAGES/msmtp.mo
 share/msmtp/
 share/msmtp/msmtpqueue/
 share/msmtp/msmtpqueue/ChangeLog
