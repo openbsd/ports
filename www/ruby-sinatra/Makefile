@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/28 20:12:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/05 19:25:08 jasper Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-0.9.4
+DISTNAME =	sinatra-1.0
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
 CATEGORIES =	www
 
-HOMEPAGE =	http://sinatra.github.com/
+HOMEPAGE =	http://www.sinatrarb.com/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +19,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:ruby-rack->=0.9.1:www/ruby-rack
+RUN_DEPENDS =		::devel/ruby-tilt \
+			:ruby-rack->=0.9.1:www/ruby-rack
 
 PKG_ARCH =		*
 
