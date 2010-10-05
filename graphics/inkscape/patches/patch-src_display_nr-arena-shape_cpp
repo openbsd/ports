@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_display_nr-arena-shape_cpp,v 1.1 2010/10/05 08:57:47 armani Exp $
+--- src/display/nr-arena-shape.cpp.orig	Wed Sep 15 13:14:17 2010
++++ src/display/nr-arena-shape.cpp	Wed Sep 15 13:14:31 2010
+@@ -39,7 +39,6 @@
+ 
+ #include <glib.h>
+ #include "svg/svg.h"
+-#include <fenv.h>
+ 
+ //int  showRuns=0;
+ void nr_pixblock_render_shape_mask_or(NRPixBlock &m,Shape* theS);

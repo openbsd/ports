@@ -1,13 +1,11 @@
-$OpenBSD: patch-src_ui_dialog_print_cpp,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
---- src/ui/dialog/print.cpp.orig	Fri Mar 28 17:50:41 2008
-+++ src/ui/dialog/print.cpp	Fri Mar 28 17:51:21 2008
-@@ -16,6 +16,9 @@
- #include <io.h>
+$OpenBSD: patch-src_ui_dialog_print_cpp,v 1.2 2010/10/05 08:57:47 armani Exp $
+--- src/ui/dialog/print.cpp.orig	Wed Sep 15 20:24:17 2010
++++ src/ui/dialog/print.cpp	Wed Sep 15 20:24:39 2010
+@@ -17,6 +17,7 @@
  #endif
  
-+#if defined(__OpenBSD__)
-+#include <unistd.h>
-+#endif
  #include <gtkmm/stock.h>
++#include <unistd.h>
  #include "print.h"
  
+ #include "extension/internal/cairo-render-context.h"
