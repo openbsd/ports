@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/01 09:32:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/05 08:40:44 sebastia Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -32,14 +32,11 @@ LIB_DEPENDS= 		::security/cyrus-sasl2
 REGRESS_DEPENDS=	::misc/memcached
 
 # XXX Build memslap (benchmark tool) only on systems with GCC atomic built-ins. 
-# which are the GCC4_ARCHS
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH:Mmips64*} || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
+    ${MACHINE_ARCH} == "sparc64"
 PKG_ARGS+=		-Datomic=1
 .else
 PKG_ARGS+=		-Datomic=0
-PATCH_LIST=		patch-* no-atomic-*
 pre-configure:
 	@perl -pi -e 's|am__append_14 |#am__append_14 |g' ${WRKSRC}/Makefile.in
 	@perl -pi -e 's|am__EXEEXT_1 |#am__EXEEXT_1 |g' ${WRKSRC}/Makefile.in

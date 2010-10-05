@@ -1,4 +1,4 @@
-$OpenBSD: no-atomic-patch-Makefile_in,v 1.1.1.1 2010/10/01 09:32:36 sebastia Exp $
+$OpenBSD: patch-Makefile_in,v 1.1 2010/10/05 08:40:44 sebastia Exp $
 
 link against libsasl2
 this patch prevents building memslap on gcc4 archs
@@ -22,12 +22,3 @@ this patch prevents building memslap on gcc4 archs
  @BUILD_WIN32_WRAPPERS_FALSE@@HAVE_LIBEVENT_TRUE@am__append_15 = clients/memslap
  @BUILD_BYTEORDER_TRUE@am__append_16 = libmemcached/libbyteorder.la
  @INCLUDE_HSIEH_SRC_TRUE@am__append_17 = libhashkit/hsieh.c
-@@ -389,7 +389,7 @@ tests_libserver_la_OBJECTS = $(am_tests_libserver_la_O
- tests_libtest_la_LIBADD =
- am_tests_libtest_la_OBJECTS = tests/test.lo
- tests_libtest_la_OBJECTS = $(am_tests_libtest_la_OBJECTS)
--@BUILD_WIN32_WRAPPERS_FALSE@@HAVE_LIBEVENT_TRUE@am__EXEEXT_1 = clients/memslap$(EXEEXT)
-+@BUILD_WIN32_WRAPPERS_FALSE@@HAVE_LIBEVENT_TRUE@#am__EXEEXT_1 = clients/memslap$(EXEEXT)
- @HAVE_LIBGTEST_TRUE@am__EXEEXT_2 = unittests/unittests$(EXEEXT)
- @HAVE_LIBEVENT_TRUE@am__EXEEXT_3 = example/memcached_light$(EXEEXT)
- PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
