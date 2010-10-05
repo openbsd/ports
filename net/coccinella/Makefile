@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/01 13:09:54 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/05 15:17:13 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		XMPP client with whiteboard
 
+REVISION =		0
 DISTNAME =		Coccinella-0.96.20Src
 PKGNAME =		${DISTNAME:S/Src$//:L}
 CATEGORIES =		net
@@ -47,8 +48,11 @@ pre-configure:
 	
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/lib/coccinella
-	cd ${WRKSRC} ; tar cf - TclXML [c-z]* | \
-		tar xf - -C ${PREFIX}/lib/coccinella/
+	cd ${WRKSRC} && find TclXML [c-z]* -type d -exec ${INSTALL_DATA_DIR} \
+				${PREFIX}/lib/coccinella/{} \; && \
+		find TclXML [c-z]* ! -type d -exec ${INSTALL_DATA} {} \
+				${PREFIX}/lib/coccinella/{} \; && \
+		${INSTALL_DATA} pkgIndex.tcl ${PREFIX}/lib/coccinella
 	rm ${PREFIX}/lib/coccinella/lib/Init.tcl.* \
 		${PREFIX}/lib/coccinella/show_own_jid.patch
 	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/bin/coccinella
