@@ -1,0 +1,16 @@
+$OpenBSD: patch-bdbobj_Makefile_in,v 1.1 2010/10/05 13:41:10 dcoppa Exp $
+
+Removing "-static" from libtool linking flags makes our libtool happy 
+and doesn't break the testbdb binary
+
+--- bdbobj/Makefile.in.orig	Thu Sep 23 15:30:22 2010
++++ bdbobj/Makefile.in	Thu Sep 23 15:30:44 2010
+@@ -73,7 +73,7 @@ am__objects_2 = testbdb.$(OBJEXT)
+ testbdb_OBJECTS = $(am_testbdb_OBJECTS)
+ testbdb_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+-	$(testbdb_LDFLAGS) $(LDFLAGS) -o $@
++	$(LDFLAGS) -o $@
+ SCRIPTS = $(noinst_SCRIPTS)
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/../depcomp
