@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2009/05/16 21:48:20 rui Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/06 08:06:31 stephan Exp $
 
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
-VERSION=	2.0.4
-DISTNAME=	iperf-${VERSION}
+DISTNAME=	iperf-2.0.5
 CATEGORIES=    	net
 
-HOMEPAGE=	http://dast.nlanr.net/Projects/Iperf/
+HOMEPAGE=	http://sourceforge.net/projects/iperf/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	no fee license
+# MIT'ish
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee license
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m stdc++
@@ -28,7 +28,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/iperf
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/iperf
 	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${PREFIX}/share/doc/iperf
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
