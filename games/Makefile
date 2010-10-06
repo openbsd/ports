@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2010/09/23 11:31:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.213 2010/10/06 17:06:34 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -150,6 +150,7 @@
      SUBDIR += sudognu
      SUBDIR += sudoku
      SUBDIR += sudoku-solver
+     SUBDIR += supertuxkart
      SUBDIR += taxipilot
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
