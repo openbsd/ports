@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_rubygems_installer_rb,v 1.8 2009/10/12 17:18:00 bernd Exp $
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.9 2010/10/06 18:12:19 jeremy Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/installer.rb.orig	Mon Jun 22 15:54:36 2009
-+++ lib/rubygems/installer.rb	Tue Sep  8 18:23:08 2009
-@@ -114,6 +114,7 @@ class Gem::Installer
+--- lib/rubygems/installer.rb.orig	Mon Apr 19 23:47:36 2010
++++ lib/rubygems/installer.rb	Wed Oct  6 10:26:54 2010
+@@ -113,6 +113,7 @@ class Gem::Installer
      @bin_dir             = options[:bin_dir]
      @development         = options[:development]
      @source_index        = options[:source_index]
@@ -12,7 +12,7 @@ This is for GEM_SKIPDEPENDS in ruby.port.mk.
  
      begin
        @format = Gem::Format.from_file_by_path @gem, @security_policy
-@@ -199,7 +200,12 @@ class Gem::Installer
+@@ -178,7 +179,12 @@ class Gem::Installer
          deps |= @spec.development_dependencies if @development
  
          deps.each do |dep_gem|

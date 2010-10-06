@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.4 2009/10/12 17:18:00 bernd Exp $
+$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.5 2010/10/06 18:12:19 jeremy Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/dependency_installer.rb.orig	Mon Jun 22 15:54:36 2009
-+++ lib/rubygems/dependency_installer.rb	Tue Sep  8 18:26:36 2009
+--- lib/rubygems/dependency_installer.rb.orig	Wed Apr 21 21:43:02 2010
++++ lib/rubygems/dependency_installer.rb	Wed Oct  6 10:26:54 2010
 @@ -23,6 +23,7 @@ class Gem::DependencyInstaller
      :prerelease => false,
      :security_policy => nil, # HACK NoSecurity requires OpenSSL.  AlmostNo? Low?
@@ -29,7 +29,7 @@ This is for GEM_SKIPDEPENDS in ruby.port.mk.
  
      @installed_gems = []
  
-@@ -247,7 +249,8 @@ class Gem::DependencyInstaller
+@@ -272,7 +274,8 @@ class Gem::DependencyInstaller
                                  :security_policy     => @security_policy,
                                  :source_index        => @source_index,
                                  :user_install        => @user_install,
