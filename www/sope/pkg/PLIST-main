@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/10/06 11:05:42 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/10/06 13:53:07 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -382,36 +382,6 @@ include/NGXmlRpc/WODirectAction+XmlRpc.h
 include/NGXmlRpc/WODirectAction+XmlRpcIntrospection.h
 include/NGXmlRpc/XmlRpcMethodCall+WO.h
 include/NGXmlRpc/XmlRpcMethodResponse+WO.h
-include/NGiCal/
-include/NGiCal/NGVCard.h
-include/NGiCal/NGVCardAddress.h
-include/NGiCal/NGVCardName.h
-include/NGiCal/NGVCardOrg.h
-include/NGiCal/NGVCardPhone.h
-include/NGiCal/NGVCardSaxHandler.h
-include/NGiCal/NGVCardSimpleValue.h
-include/NGiCal/NGVCardStrArrayValue.h
-include/NGiCal/NGVCardValue.h
-include/NGiCal/NGiCal.h
-include/NGiCal/NSCalendarDate+ICal.h
-include/NGiCal/iCalAlarm.h
-include/NGiCal/iCalAttachment.h
-include/NGiCal/iCalCalendar.h
-include/NGiCal/iCalDataSource.h
-include/NGiCal/iCalDuration.h
-include/NGiCal/iCalEntityObject.h
-include/NGiCal/iCalEvent.h
-include/NGiCal/iCalEventChanges.h
-include/NGiCal/iCalFreeBusy.h
-include/NGiCal/iCalJournal.h
-include/NGiCal/iCalObject.h
-include/NGiCal/iCalPerson.h
-include/NGiCal/iCalRecurrenceCalculator.h
-include/NGiCal/iCalRecurrenceRule.h
-include/NGiCal/iCalRenderer.h
-include/NGiCal/iCalRepeatableEntityObject.h
-include/NGiCal/iCalToDo.h
-include/NGiCal/iCalTrigger.h
 include/SaxObjC/
 include/SaxObjC/SaxAttributeList.h
 include/SaxObjC/SaxAttributes.h
@@ -478,7 +448,6 @@ include/XmlRpc/XmlRpcMethodResponse.h
 @lib lib/libNGObjWeb.so.${LIBNGObjWeb_VERSION}
 @lib lib/libNGStreams.so.${LIBNGStreams_VERSION}
 @lib lib/libNGXmlRpc.so.${LIBNGXmlRpc_VERSION}
-@lib lib/libNGiCal.so.${LIBNGiCal_VERSION}
 @lib lib/libSaxObjC.so.${LIBSaxObjC_VERSION}
 @lib lib/libSoOFS.so.${LIBSoOFS_VERSION}
 @lib lib/libWEExtensions.so.${LIBWEExtensions_VERSION}
@@ -520,13 +489,6 @@ lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/Resources/bundle-info.plist
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/bundle-info.plist
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/libxmlSAXDriver.so
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/stamp.make
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/Resources/
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/Resources/Info-gnustep.plist
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/Resources/bundle-info.plist
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/bundle-info.plist
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/stamp.make
-lib/sope-4.9/saxdrivers/versitSaxDriver.sax/versitSaxDriver.so
 lib/sope-4.9/wox-builders/
 lib/sope-4.9/wox-builders/WEExtensions.wox/
 lib/sope-4.9/wox-builders/WEExtensions.wox/Resources/
@@ -556,5 +518,3 @@ share/sope-4.9/ngobjweb/
 share/sope-4.9/ngobjweb/DAVPropMap.plist
 share/sope-4.9/ngobjweb/Defaults.plist
 share/sope-4.9/ngobjweb/Languages.plist
-share/sope-4.9/saxmappings/
-share/sope-4.9/saxmappings/NGiCal.xmap

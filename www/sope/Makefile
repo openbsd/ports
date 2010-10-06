@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/06 13:53:07 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION=		1.3.2
+REVISION=		0
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
@@ -14,13 +15,13 @@ SO_MAJOR=	0
 SO_MINOR=	0
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams NGXmlRpc SaxObjC SoOFS WEExtensions \
-		WEPrototype WOExtensions WOXML XmlRpc NGiCal
+		WEPrototype WOExtensions WOXML XmlRpc
 SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 .endfor
 
 CATEGORIES=	www
 HOMEPAGE=	http://www.sogo.nu
-MASTER_SITES=	http://www.sogo.nu/files/downloads/SOGo/Sources/
+MASTER_SITES=	${HOMEPAGE}/files/downloads/SOGo/Sources/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later
@@ -31,15 +32,16 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MULTI_PACKAGES=	-main -mysql -postgres
 
-MODULES=	x11/gnustep apache-module
+MODULES=	converters/libiconv x11/gnustep apache-module
 WANTLIB += m objc gnustep-base
-WANTLIB-main += ${WANTLIB} c crypto iconv m ssl z pthread lber ldap xml2
+WANTLIB-main += ${WANTLIB} c crypto m ssl z pthread lber ldap xml2
 
 WANTLIB-mysql += ${WANTLIB} GDLAccess EOControl mysqlclient crypto ssl z
 WANTLIB-postgres += ${WANTLIB} GDLAccess EOControl pq
 
 LIB_DEPENDS-main=	::x11/gnustep/base \
-			::databases/openldap
+			::databases/openldap \
+			${MODLIBICONV_LIB_DEPENDS}
 LIB_DEPENDS-mysql=	::${BASE_PKGPATH} \
 			::databases/mysql
 LIB_DEPENDS-postgres=	::${BASE_PKGPATH} \
