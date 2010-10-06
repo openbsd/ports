@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_rubygems_ext_builder_rb,v 1.1 2010/10/06 18:43:11 jeremy Exp $
+
+Ugly hack to make --user-install option work.  Without this, when
+a user uses gem install --user-install, it calls
+/usr/bin/install -o root -g bin, which fails due to permission issues.
+This removes the -o root -g bin, so it can succeed as a regular user.
+
+Gem::Installer.path_warning is only set if --user-install is used,
+according to a grep of the sources.
+
+--- lib/rubygems/ext/builder.rb.orig	Wed Oct  6 10:27:31 2010
++++ lib/rubygems/ext/builder.rb	Wed Oct  6 10:28:16 2010
+@@ -19,6 +19,7 @@ class Gem::Ext::Builder
+     mf = File.read('Makefile')
+     mf = mf.gsub(/^RUBYARCHDIR\s*=\s*\$[^$]*/, "RUBYARCHDIR = #{dest_path}")
+     mf = mf.gsub(/^RUBYLIBDIR\s*=\s*\$[^$]*/, "RUBYLIBDIR = #{dest_path}")
++    mf = mf.gsub(/-o root -g bin/, "") if Gem::Installer.path_warning
+ 
+     File.open('Makefile', 'wb') {|f| f.print mf}
+ 
