@@ -1,0 +1,29 @@
+$OpenBSD: patch-kio_kssl_ksslcertificate_cc,v 1.3 2010/10/06 08:13:32 landry Exp $
+--- kio/kssl/ksslcertificate.cc.orig	Thu Jan 19 18:06:12 2006
++++ kio/kssl/ksslcertificate.cc	Sun Oct  3 19:54:38 2010
+@@ -1003,17 +1003,16 @@ return qba;
+ QByteArray KSSLCertificate::toNetscape() {
+ QByteArray qba;
+ #ifdef KSSL_HAVE_SSL
+-ASN1_HEADER ah;
+-ASN1_OCTET_STRING os;
+-KTempFile ktf;
++	NETSCAPE_X509 nx;
++	ASN1_OCTET_STRING hdr;
++	KTempFile ktf;
+ 
+-	os.data = (unsigned char *)NETSCAPE_CERT_HDR;
+-	os.length = strlen(NETSCAPE_CERT_HDR);
+-	ah.header = &os;
+-	ah.data = (char *)getCert();
+-	ah.meth = d->kossl->X509_asn1_meth();
++	hdr.data = (unsigned char *)NETSCAPE_CERT_HDR;
++	hdr.length = strlen(NETSCAPE_CERT_HDR);
++	nx.header = &hdr;
++	nx.cert = getCert();
+ 
+-	d->kossl->ASN1_i2d_fp(ktf.fstream(),(unsigned char *)&ah);
++	d->kossl->ASN1_i2d_fp(ktf.fstream(),(unsigned char *)&nx);
+ 
+ 	ktf.close();
+ 

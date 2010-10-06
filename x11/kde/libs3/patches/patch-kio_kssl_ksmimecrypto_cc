@@ -1,0 +1,12 @@
+$OpenBSD: patch-kio_kssl_ksmimecrypto_cc,v 1.1 2010/10/06 08:13:32 landry Exp $
+--- kio/kssl/ksmimecrypto.cc.orig	Mon Oct 10 17:05:44 2005
++++ kio/kssl/ksmimecrypto.cc	Sun Oct  3 19:44:11 2010
+@@ -87,7 +87,7 @@ KSMIMECryptoPrivate::KSMIMECryptoPrivate(KOpenSSLProxy
+ 
+ 
+ STACK_OF(X509) *KSMIMECryptoPrivate::certsToX509(QPtrList<KSSLCertificate> &certs) {
+-    STACK_OF(X509) *x509 = sk_new(NULL);
++    STACK_OF(X509) *x509 = reinterpret_cast<STACK_OF(X509)*>(sk_new(NULL));
+     KSSLCertificate *cert = certs.first();
+     while(cert) {
+ 	sk_X509_push(x509, cert->getCert());
