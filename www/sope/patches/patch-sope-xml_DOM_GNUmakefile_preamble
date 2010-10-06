@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-xml_DOM_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+
+decouple sope version from library interface version.
+
+--- sope-xml/DOM/GNUmakefile.preamble.orig	Sun Sep 26 13:54:17 2010
++++ sope-xml/DOM/GNUmakefile.preamble	Sun Sep 26 13:54:37 2010
+@@ -26,8 +26,8 @@ NSObject+QPEval.m_FILE_FILTER_OUT_FLAGS        = -O%
+ ADDITIONAL_CPPFLAGS += \
+ 	-O2 \
+         -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
+-        -DSOPE_MAJOR_VERSION=$(MAJOR_VERSION)   \
+-        -DSOPE_MINOR_VERSION=$(MINOR_VERSION)   \
++        -DSOPE_MAJOR_VERSION=$(SOPE_MAJOR_VERSION)   \
++        -DSOPE_MINOR_VERSION=$(SOPE_MINOR_VERSION)   \
+         -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
+ 
+ ADDITIONAL_INCLUDE_DIRS += -I.. -I../..

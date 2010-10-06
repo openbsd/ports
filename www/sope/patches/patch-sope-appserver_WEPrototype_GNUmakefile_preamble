@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-appserver_WEPrototype_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+
+decouple sope version from library interface version.
+
+--- sope-appserver/WEPrototype/GNUmakefile.preamble.orig	Sun Sep 26 13:50:44 2010
++++ sope-appserver/WEPrototype/GNUmakefile.preamble	Sun Sep 26 13:51:05 2010
+@@ -8,8 +8,8 @@ ADDITIONAL_CPPFLAGS += \
+ 
+ ADDITIONAL_CPPFLAGS += \
+         -Wall \
+-        -DSOPE_MAJOR_VERSION=$(MAJOR_VERSION)   \
+-        -DSOPE_MINOR_VERSION=$(MINOR_VERSION)   \
++        -DSOPE_MAJOR_VERSION=$(SOPE_MAJOR_VERSION)   \
++        -DSOPE_MINOR_VERSION=$(SOPE_MINOR_VERSION)   \
+         -DWEP_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
+ 
+ ADDITIONAL_CPPFLAGS += -Wall

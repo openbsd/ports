@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-appserver_NGObjWeb_subdirs_make,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+
+decouple sope version from library interface version.
+
+--- sope-appserver/NGObjWeb/subdirs.make.orig	Sun Sep 26 13:47:31 2010
++++ sope-appserver/NGObjWeb/subdirs.make	Sun Sep 26 13:47:47 2010
+@@ -6,8 +6,8 @@ include ../Version
+ 
+ ADDITIONAL_CPPFLAGS += \
+         -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
+-        -DSOPE_MAJOR_VERSION=$(MAJOR_VERSION)   \
+-        -DSOPE_MINOR_VERSION=$(MINOR_VERSION)   \
++        -DSOPE_MAJOR_VERSION=$(SOPE_MAJOR_VERSION)   \
++        -DSOPE_MINOR_VERSION=$(SOPE_MINOR_VERSION)   \
+         -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
+ 
+ ADDITIONAL_INCLUDE_DIRS += \

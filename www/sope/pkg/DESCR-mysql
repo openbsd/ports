@@ -1,0 +1,4 @@
+The SOPE package is an extensive set of frameworks (16 frameworks, ~1500
+classes) which form a complete Web application server environment.
+
+The SOPE MySQL database adaptor.

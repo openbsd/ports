@@ -1,0 +1,14 @@
+$OpenBSD: patch-sope-appserver_GNUmakefile,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+
+we want to build the apache module
+
+--- sope-appserver/GNUmakefile.orig	Sun Aug 29 17:08:01 2010
++++ sope-appserver/GNUmakefile	Sun Aug 29 17:08:13 2010
+@@ -13,6 +13,7 @@ SUBPROJECTS += \
+ 	WOXML		\
+ 	SoOFS		\
+ 	NGXmlRpc	\
++	mod_ngobjweb	\
+ 	WEPrototype
+ 
+ 

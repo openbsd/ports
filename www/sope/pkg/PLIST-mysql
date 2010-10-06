@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/MySQL.so
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/Resources/
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/Resources/Info-gnustep.plist
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/Resources/Version
+lib/sope-4.9/dbadaptors/MySQL.gdladaptor/stamp.make

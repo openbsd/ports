@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+
+do not link against gnustep-gui in case its installed
+decouple version of sope from the shared library interface versions
+
+--- configure.orig	Thu Aug 19 17:13:13 2010
++++ configure	Thu Sep 23 15:54:32 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ #
+ # Note: When adding make options to this script, ensure that the source still
+@@ -318,6 +318,7 @@ genConfigMake() {
+   cfgwrite "# Note: you can override any option as a 'make' parameter, eg:"
+   cfgwrite "#         make debug=yes"
+   cfgwrite ""
++  cfgwrite "NEEDS_GUI=no"
+   
+   #cfgwrite "# print on the cmdline that this file is being used"
+   #cfgwrite "all :: "
+@@ -357,9 +358,9 @@ genConfigMake() {
+     cfgwrite "FHS_INSTALL_ROOT:=$ARG_PREFIX"
+     cfgwrite ""
+     cfgwrite "SOPE_SYSLIBDIR=\${DESTDIR}\${FHS_INSTALL_ROOT}/\$(CGS_LIBDIR_NAME)"
+-    cfgwrite "SOPE_LIBDIR=\${SOPE_SYSLIBDIR}/sope-\${MAJOR_VERSION}.\${MINOR_VERSION}"
++    cfgwrite "SOPE_LIBDIR=\${SOPE_SYSLIBDIR}/sope-\${SOPE_MAJOR_VERSION}.\${SOPE_MINOR_VERSION}"
+     cfgwrite "SOPE_SYSSHAREDIR=\${DESTDIR}\${FHS_INSTALL_ROOT}/share"
+-    cfgwrite "SOPE_SHAREDIR=\${SOPE_SYSSHAREDIR}/sope-\${MAJOR_VERSION}.\${MINOR_VERSION}"
++    cfgwrite "SOPE_SHAREDIR=\${SOPE_SYSSHAREDIR}/sope-\${SOPE_MAJOR_VERSION}.\${SOPE_MINOR_VERSION}"
+     cfgwrite "SOPE_DBADAPTORS=\${SOPE_LIBDIR}/dbadaptors"
+     cfgwrite "SOPE_PRODUCTS=\${SOPE_LIBDIR}/products"
+     cfgwrite "SOPE_SAXDRIVERS=\${SOPE_LIBDIR}/saxdrivers"
