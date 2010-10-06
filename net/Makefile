@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.653 2010/09/22 21:03:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.654 2010/10/06 07:31:09 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -434,6 +434,7 @@
      SUBDIR += ruby-amqp
      SUBDIR += ruby-amqp-utils
      SUBDIR += ruby-bunny
+     SUBDIR += ruby-errand
      SUBDIR += ruby-eventmachine
      SUBDIR += ruby-minion
      SUBDIR += ruby-net-dns
