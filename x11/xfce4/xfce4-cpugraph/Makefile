@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/04 17:52:29 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/06 15:06:07 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
@@ -19,6 +19,6 @@ WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype m z c \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		pixman-1 xfce4util xfcegui4 pthread-stubs xcb \
-		thread-2.0 pthread xcb-render xcb-render-util
+		gthread-2.0 pthread xcb-render xcb-render-util
 
 .include <bsd.port.mk>
