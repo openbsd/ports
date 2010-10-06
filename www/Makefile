@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.470 2010/09/27 12:02:28 stephan Exp $
+# $OpenBSD: Makefile,v 1.471 2010/10/06 11:41:43 sebastia Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -398,6 +398,7 @@
      SUBDIR += sarg
      SUBDIR += seamonkey
      SUBDIR += snownews
+     SUBDIR += sope
      SUBDIR += spawn-fcgi
      SUBDIR += squid
      SUBDIR += squid,ldap
