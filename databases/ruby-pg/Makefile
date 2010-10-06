@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/06 16:26:57 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	PostgreSQL database interface for ruby
 
-DISTNAME =	pg-0.8.0
+DISTNAME =	pg-0.9.0
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -18,8 +17,6 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m
-
-MASTER_SITES =	${MASTER_SITE_RUBYFORGE:=ruby-pg/}
 
 MODULES =	lang/ruby
 
