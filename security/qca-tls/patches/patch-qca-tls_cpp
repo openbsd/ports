@@ -1,6 +1,6 @@
-$OpenBSD: patch-qca-tls_cpp,v 1.1 2008/09/12 13:56:32 naddy Exp $
---- qca-tls.cpp.orig	Thu Sep 11 22:42:05 2008
-+++ qca-tls.cpp	Thu Sep 11 22:43:46 2008
+$OpenBSD: patch-qca-tls_cpp,v 1.2 2010/10/06 18:44:58 kili Exp $
+--- qca-tls.cpp.orig	Wed Dec 10 17:53:57 2003
++++ qca-tls.cpp	Mon Oct  4 18:56:39 2010
 @@ -454,7 +454,11 @@ class RSAKeyContext : public QCA_RSAKeyContext (public
  			if(!r) {
  				// try this other public function, for whatever reason
@@ -25,3 +25,12 @@ $OpenBSD: patch-qca-tls_cpp,v 1.1 2008/09/12 13:56:32 naddy Exp $
  		if(!t)
  			return false;
  		fromX509(t);
+@@ -945,7 +953,7 @@ class TLSContext : public QCA_TLSContext (public)
+ 	RSAKeyContext *key;
+ 
+ 	SSL *ssl;
+-	SSL_METHOD *method;
++	const SSL_METHOD *method;
+ 	SSL_CTX *context;
+ 	BIO *rbio, *wbio;
+ 	CertContext cc;
