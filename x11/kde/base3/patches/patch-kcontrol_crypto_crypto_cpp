@@ -1,0 +1,30 @@
+$OpenBSD: patch-kcontrol_crypto_crypto_cpp,v 1.2 2010/10/06 08:11:25 landry Exp $
+--- kcontrol/crypto/crypto.cpp.orig	Sun Oct  1 19:31:49 2006
++++ kcontrol/crypto/crypto.cpp	Sun Oct  3 21:07:32 2010
+@@ -2321,7 +2321,7 @@ bool KCryptoConfig::loadCiphers() {
+ unsigned int i;
+ SSL_CTX *ctx;
+ SSL *ssl;
+-SSL_METHOD *meth;
++const SSL_METHOD *meth;
+ 
+   SSLv2Box->clear();
+   SSLv3Box->clear();
+@@ -2337,7 +2337,7 @@ SSL_METHOD *meth;
+   CipherItem *item;
+   for (i=0; ; i++) {
+     int j, k;
+-    SSL_CIPHER *sc;
++    const SSL_CIPHER *sc;
+     sc = (meth->get_cipher)(i);
+     if (!sc)
+       break;
+@@ -2365,7 +2365,7 @@ SSL_METHOD *meth;
+ 
+   for (i=0; ; i++) {
+     int j, k;
+-    SSL_CIPHER *sc;
++    const SSL_CIPHER *sc;
+     sc = (meth->get_cipher)(i);
+     if (!sc)
+       break;
