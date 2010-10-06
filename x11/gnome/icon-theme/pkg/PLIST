@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/05/26 14:52:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/10/06 13:51:58 dcoppa Exp $
 lib/pkgconfig/
 lib/pkgconfig/gnome-icon-theme.pc
+share/examples/gnome-icon-theme/
+share/examples/gnome-icon-theme/gtk-2.0/
+@sample ${SYSCONFDIR}/gtk-2.0/
+share/examples/gnome-icon-theme/gtk-2.0/gtkrc
+@sample ${SYSCONFDIR}/gtk-2.0/gtkrc
 share/icons/
 share/icons/gnome/
 share/icons/gnome/16x16/

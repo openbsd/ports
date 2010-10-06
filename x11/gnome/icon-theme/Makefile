@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2010/05/26 14:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/06 13:51:58 dcoppa Exp $
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	2.30.3
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -27,5 +28,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_GIT=false \
 		ac_cv_path_INKSCAPE=false \
 		ac_cv_path_ICONTOOL_RENDER=false
+
+EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
+
+post-install:
+# Unbreak gtk+2 applications that use gnome-icon-theme, when 
+# executed outside of a Desktop Environment
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/gtk-2.0
+	@echo 'gtk-icon-theme-name = "gnome"' > \
+		${EXAMPLEDIR}/gtk-2.0/gtkrc
 
 .include <bsd.port.mk>
