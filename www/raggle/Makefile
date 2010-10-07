@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/23 22:21:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/07 18:10:47 jeremy Exp $
 
 COMMENT=	console RSS aggregator
 
 DISTNAME=	raggle-0.4.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www news
 
@@ -18,12 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
-BUILD_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/1.8,-main
-RUN_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
-		::devel/ruby-ncurses
+MODULES=	lang/ruby
+RUN_DEPENDS=	::devel/ruby-ncurses
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
 PKG_ARCH=	*
+MAKE_ENV=	RUBY=${RUBY}
+MODRUBY_ADJ_FILES=	raggle *.rb
 
 .include <bsd.port.mk>
