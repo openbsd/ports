@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/21 01:03:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/07 20:38:09 jasper Exp $
 
 COMMENT=	perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-3.13007
+DISTNAME=	Net-Twitter-3.13008
 
 CATEGORIES=	net
 
@@ -28,5 +28,7 @@ REGRESS_DEPENDS=	::devel/p5-Test-Deep \
 			::devel/p5-Test-Spelling
 
 MAKE_ENV=	TEST_POD=Yes
+
+MODCPAN_EXAMPLES=	yes
 
 .include <bsd.port.mk>
