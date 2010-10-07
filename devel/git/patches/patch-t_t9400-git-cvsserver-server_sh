@@ -1,7 +1,7 @@
-$OpenBSD: patch-t_t9400-git-cvsserver-server_sh,v 1.2 2009/05/18 19:23:58 bernd Exp $
---- t/t9400-git-cvsserver-server.sh.orig	Thu May  7 06:29:04 2009
-+++ t/t9400-git-cvsserver-server.sh	Fri May  8 09:52:09 2009
-@@ -486,8 +486,8 @@ test_expect_success 'cvs status (no subdirs in header)
+$OpenBSD: patch-t_t9400-git-cvsserver-server_sh,v 1.3 2010/10/07 09:42:23 bernd Exp $
+--- t/t9400-git-cvsserver-server.sh.orig	Fri Aug 20 01:44:47 2010
++++ t/t9400-git-cvsserver-server.sh	Thu Sep  2 11:12:51 2010
+@@ -500,8 +500,8 @@ test_expect_success 'cvs status (no subdirs in header)
  cd "$WORKDIR"
  test_expect_success 'cvs co -c (shows module database)' '
      GIT_CONFIG="$git_config" cvs co -c > out &&

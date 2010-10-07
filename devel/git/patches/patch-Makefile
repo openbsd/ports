@@ -1,15 +1,15 @@
---- Makefile.orig	Sat Apr 24 04:38:35 2010
-+++ Makefile	Mon Apr 26 10:22:14 2010
-@@ -244,7 +244,7 @@ endif
+--- Makefile.orig	Sun Sep 19 01:43:54 2010
++++ Makefile	Tue Sep 21 14:44:36 2010
+@@ -257,7 +257,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
 -CFLAGS = -g -O2 -Wall
 +CFLAGS ?= -g -O2 -Wall
  LDFLAGS =
- ALL_CFLAGS = $(CFLAGS)
+ ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -262,38 +262,32 @@ STRIP ?= strip
+@@ -275,30 +275,24 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -23,6 +23,7 @@
 -gitexecdir = libexec/git-core
 +gitexecdir = libexec/git
  sharedir = $(prefix)/share
+ gitwebdir = $(sharedir)/gitweb
  template_dir = share/git-core/templates
  htmldir = share/doc/git-doc
 -ifeq ($(prefix),/usr)
@@ -37,13 +38,14 @@
  # DESTDIR=
  pathsep = :
  
- export prefix bindir sharedir sysconfdir
+ export prefix bindir sharedir sysconfdir gitwebdir
  
 -CC = gcc
 +CC ?= gcc
  AR = ar
  RM = rm -f
- TAR = tar
+ DIFF = diff
+@@ -306,9 +300,9 @@ TAR = tar
  FIND = find
  INSTALL = install
  RPMBUILD = rpmbuild
@@ -53,11 +55,11 @@
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
 +PTHREAD_LIBS = -pthread
+ PTHREAD_CFLAGS =
+ GCOV = gcov
  
- export TCL_PATH TCLTK_PATH
- 
-@@ -869,12 +863,13 @@ ifeq ($(uname_S),FreeBSD)
- 	PYTHON_PATH = /usr/local/bin/python
+@@ -922,13 +916,14 @@ ifeq ($(uname_S),FreeBSD)
+ 	HAVE_PATHS_H = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
 -	NO_STRCASESTR = YesPlease
@@ -68,12 +70,13 @@
 -	BASIC_LDFLAGS += -L/usr/local/lib
 +	BASIC_CFLAGS += -I${X11BASE}/include -I${LOCALBASE}/include
 +	BASIC_LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
+ 	HAVE_PATHS_H = YesPlease
 +	NO_PTHREADS = YesPlease
 +	NO_PYTHON = YesPlease
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1153,7 +1148,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+@@ -1244,7 +1239,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
  	PROGRAM_OBJS += daemon.o
  endif
  ifndef NO_OPENSSL
@@ -82,7 +85,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1909,7 +1904,7 @@ export NO_SVN_TESTS
+@@ -2034,7 +2029,7 @@ export NO_SVN_TESTS
  
  ### Testing rules
  

@@ -1,10 +1,10 @@
-$OpenBSD: patch-gitweb_gitweb_perl,v 1.16 2010/06/20 11:49:41 bernd Exp $
+$OpenBSD: patch-gitweb_gitweb_perl,v 1.17 2010/10/07 09:42:23 bernd Exp $
 
 This prevents the following error: '-T and -B not implemented on filehandles'
 
---- gitweb/gitweb.perl.orig	Sat Apr 24 04:38:35 2010
-+++ gitweb/gitweb.perl	Mon Apr 26 10:22:14 2010
-@@ -5290,7 +5290,7 @@ sub git_blob_plain {
+--- gitweb/gitweb.perl.orig	Sun Sep 19 01:43:54 2010
++++ gitweb/gitweb.perl	Tue Sep 21 14:44:36 2010
+@@ -5510,7 +5510,7 @@ sub git_blob_plain {
  		$expires = "+1d";
  	}
  
@@ -13,7 +13,7 @@ This prevents the following error: '-T and -B not implemented on filehandles'
  		or die_error(500, "Open git-cat-file blob '$hash' failed");
  
  	# content-type (can include charset)
-@@ -5343,7 +5343,7 @@ sub git_blob {
+@@ -5563,7 +5563,7 @@ sub git_blob {
  	}
  
  	my $have_blame = gitweb_check_feature('blame');
@@ -21,4 +21,4 @@ This prevents the following error: '-T and -B not implemented on filehandles'
 +	open my $fd, "-|:raw:perlio", git_cmd(), "cat-file", "blob", $hash
  		or die_error(500, "Couldn't cat $file_name, $hash");
  	my $mimetype = blob_mimetype($fd, $file_name);
- 	if ($mimetype !~ m!^(?:text/|image/(?:gif|png|jpeg)$)! && -B $fd) {
+ 	# use 'blob_plain' (aka 'raw') view for files that cannot be displayed

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.68 2010/06/20 15:04:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.69 2010/10/07 09:42:23 bernd Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.7.1
+V =		1.7.3.1
 DISTNAME =	git-${V}
-PKGNAME-main =	${DISTNAME}p0
-PKGNAME-svn =	git-svn-${V}p0
-PKGNAME-x11 =	git-x11-${V}p0
+PKGNAME-main =	${DISTNAME}
+PKGNAME-svn =	git-svn-${V}
+PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -41,12 +41,12 @@ BUILD_DEPENDS =		::archivers/gtar \
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c expat crypto ssl z
+WANTLIB-main =		c expat crypto curl ssl z
 RUN_DEPENDS-main =	::net/rsync \
 			::devel/p5-Error \
 			:cvsps-*:devel/cvsps \
 			${MODLIBICONV_RUN_DEPENDS}
-LIB_DEPENDS-main =	curl.>=3::net/curl \
+LIB_DEPENDS-main =	::net/curl \
 			${MODLIBICONV_LIB_DEPENDS}
 
 RUN_DEPENDS-svn =	::${BASE_PKGPATH} \
@@ -109,9 +109,11 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
-	${INSTALL_DATA_DIR} ${PREFIX}/share/gitweb
-	cd ${WRKSRC}/gitweb && \
-		${INSTALL_DATA} ${GITWEB} ${PREFIX}/share/gitweb
+	cd ${WRKBUILD}/gitweb && \
+		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install
+	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/git
 
 do-regress:
 	cd ${WRKSRC}/t && rm -f ${SKIP_TESTS}

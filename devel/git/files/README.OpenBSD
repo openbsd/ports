@@ -1,0 +1,11 @@
+$OpenBSD: README.OpenBSD,v 1.1 2010/10/07 09:42:23 bernd Exp $
+
+Some notes on using git in an OpenBSD environment.
+
+* git send-email
+
+To make it work with SSL/TLS and SMTP auth you have to install
+the following additional packages.
+
+	p5-Net-SMTP-SSL
+	p5-Authen-SASL
