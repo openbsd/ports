@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/05 05:11:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/07 14:48:38 ajacoutot Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
@@ -19,7 +19,7 @@ WANTLIB=	c glib-2.0 pcre pthread
 
 MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
-MODULES=	devel/gettext	
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	::devel/glib2
 
