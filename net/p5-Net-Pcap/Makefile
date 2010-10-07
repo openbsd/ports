@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.16 2010/10/04 08:44:59 sthen Exp $
+#   $OpenBSD: Makefile,v 1.17 2010/10/07 10:20:27 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		pcap 
+RUN_DEPENDS=		::net/p5-IO-Interface
 
 .include <bsd.port.mk>

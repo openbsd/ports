@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/10/07 10:20:27 sthen Exp $
+bin/pcapinfo
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/Pcap.pm
@@ -7,4 +8,5 @@ ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/Pcap/
 ${P5ARCH}/auto/Net/Pcap/Pcap.bs
 ${P5ARCH}/auto/Net/Pcap/Pcap.so
+@man man/man1/pcapinfo.1
 @man man/man3p/Net::Pcap.3p
