@@ -1,0 +1,12 @@
+$OpenBSD: patch-dcmtls_libsrc_tlslayer_cc,v 1.1 2010/10/07 04:19:47 benoit Exp $
+--- dcmtls/libsrc/tlslayer.cc.orig	Wed Oct  6 22:10:42 2010
++++ dcmtls/libsrc/tlslayer.cc	Wed Oct  6 22:10:53 2010
+@@ -188,7 +188,7 @@
+    SSLeay_add_all_algorithms();
+    seedPRNG(randFile);
+ 
+-   SSL_METHOD *method = NULL;
++   const SSL_METHOD *method = NULL;
+    switch (networkRole)
+    {
+      case DICOM_APPLICATION_ACCEPTOR: 

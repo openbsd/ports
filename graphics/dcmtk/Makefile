@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/11 11:27:24 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/07 04:19:44 benoit Exp $
 
 COMMENT=		DICOM toolkit
 
 DISTNAME=		dcmtk-3.5.4
+REVISION=		0
 
 CATEGORIES=		graphics
 
