@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: sensors_,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+# $OpenBSD: sensors_,v 1.2 2010/10/07 11:01:06 jasper Exp $
 #
 # Script to monitor OpenBSD sensors
 # (c) 2007 Michael Knudsen <mk@openbsd.org>
 #
-# Invoke as "volt", "temp" or "fan" based on what is being monitored.
+# Invoke as "volt", "temp", "fan" or "humidity" based on what is being monitored.
 
 # Parameters understood:
 #
@@ -35,6 +35,7 @@ if [ "$1" = "suggest" ]; then
 /.temp/ { temp=1; }
 /.fan/  { fan=1; }
 /.volt/    { volt=1; }
+/.humidity/ { humidity=1; }
 END {
     if (temp) {
         print "temp";
@@ -45,12 +46,15 @@ END {
     if (volt) {
         print "volt";
     }
+    if (humidity) {
+	print "humidity";
+    }
 }'
     exit 0
 fi
 
-if [ "$mode" != "volt" -a "$mode" != "temp" -a "$mode" != "fan" ]; then
-	# error:  invoke as "temp" "volt" or "fan"
+if [ "$mode" != "volt" -a "$mode" != "temp" -a "$mode" != "fan" -a "$mode" != "humidity" ]; then
+	# error:  invoke as "temp" "volt" "fan" or "humidity"
 	exit 1
 fi
 
@@ -67,6 +71,11 @@ if [ "$1" = "config" ]; then
 	elif [ "$mode" = "fan" ]; then
 		echo 'graph_title Fan speed sensor values'
 		echo 'graph_vlabel RPM'
+	elif [ "$mode" = "humidity" ]; then
+		echo 'graph_title Relative Humidity sensor values (in %)'
+		echo 'graph_args --upper-limit 100 -l 0'
+		echo 'graph_vlabel %'
+		echo 'graph_scale no'
 	fi
 	echo 'graph_category system'
 
@@ -79,7 +88,7 @@ fi
 
 sysctl hw.sensors | cut -b 12- | fgrep $mode | while read s; do
 	name=$(echo $s | cut -d= -f1 | sed 's/\./_/g')
-	value=$(echo $s | cut -d= -f2 | cut -d' ' -f1)
+	value=$(echo $s | cut -d= -f2 | cut -d' ' -f1 | sed -e 's,\%$,,g')
 	echo "$name.value  $value"
 done
 
