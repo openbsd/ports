@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/09/30 08:39:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/07 14:31:36 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -8,7 +8,7 @@ GNOME_VERSION=	0.8.17
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 PKGNAME=	tracker-search-${VERSION}
-REVISION=	1
+REVISION=	2
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -21,11 +21,11 @@ SHARED_LIBS +=  tracker-miner-0.8    0.0      # .800.0
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
+WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 bz2
 WANTLIB += c cairo camel-1.2 camel-provider-1.2 com_err crypto
 WANTLIB += dbus-1 dbus-glib-1 ebook-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += eggdbus-1 enchant execinfo exif expat fontconfig freetype
+WANTLIB += enchant execinfo exif expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2
 WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
@@ -41,6 +41,7 @@ WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
 WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
 WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee
 WANTLIB += canberra gdata gtkhtml-editor-3.14 ltdl nssutil3
+WANTLIB += GL X11-xcb Xxf86vm drm xcb-shm
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -115,7 +116,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+= --disable-id3lib
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib \
+			-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}" \
 		EXEMPI_LIBS="`pkg-config --libs exempi-2.0` -lstdc++"
 
 FAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/tracker-search/
