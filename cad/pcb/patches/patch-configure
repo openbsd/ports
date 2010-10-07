@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/09/09 07:51:22 jasper Exp $
---- configure.orig	Wed Nov  4 00:07:00 2009
-+++ configure	Wed Aug 25 18:41:34 2010
-@@ -14077,7 +14077,7 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.5 2010/10/07 20:40:40 jasper Exp $
+--- configure.orig	Wed Sep 29 22:48:20 2010
++++ configure	Fri Oct  1 19:28:17 2010
+@@ -17863,7 +17863,7 @@ $as_echo "no" >&6; }
  fi
  
  

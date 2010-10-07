@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/09 07:54:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/07 20:40:40 jasper Exp $
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 @bin bin/pcb
 @info info/pcb.info
+lib/charset.alias
 @man man/man1/pcb.1
 share/applications/pcb.desktop
 share/doc/pcb/
@@ -11,14 +12,19 @@ share/doc/pcb/pcb.html
 share/doc/pcb/puller.png
 share/doc/pcb/refcard.pdf
 share/doc/pcb/thermal.png
+share/doc/pcb/tutorial/
+share/doc/pcb/tutorial/tut1.pcb
 share/examples/pcb/
-share/examples/pcb/LED
-share/examples/pcb/LED.NET
-share/examples/pcb/LED2
+share/examples/pcb/LED.net
+share/examples/pcb/LED.pcb
+share/examples/pcb/LED2.pcb
 share/examples/pcb/libraries/
 share/examples/pcb/libraries/example.inc
 share/examples/pcb/libraries/example.list
 share/examples/pcb/libraries/example.m4
+share/gEDA/
+share/gEDA/scheme/
+share/gEDA/scheme/gnet-pcbfwd.scm
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
@@ -68,8 +74,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcb-footprint.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-layout.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-netlist.svg
 share/locale/fr/LC_MESSAGES/pcb.mo
-share/mime/
-share/mime/packages/
+share/locale/ru/LC_MESSAGES/pcb.mo
 share/mime/packages/pcb.xml
 share/mimelnk/
 share/mimelnk/application/
@@ -1103,8 +1108,6 @@ share/pcb/tools/apctools.zip
 share/pcb/tools/gerbertotk.c
 share/pcb/tools/pcb2ncap.tgz
 share/pcb/tools/tgo2pcb.tcl
-share/pcb/tutorial/
-share/pcb/tutorial/tut1.pcb
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database

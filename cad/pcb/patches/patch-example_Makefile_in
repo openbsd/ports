@@ -1,12 +1,12 @@
-$OpenBSD: patch-example_Makefile_in,v 1.4 2010/09/09 07:51:22 jasper Exp $
---- example/Makefile.in.orig	Wed Nov  4 00:05:40 2009
-+++ example/Makefile.in	Wed Aug 25 18:41:34 2010
-@@ -276,7 +276,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-example_Makefile_in,v 1.5 2010/10/07 20:40:40 jasper Exp $
+--- example/Makefile.in.orig	Wed Sep 29 22:52:39 2010
++++ example/Makefile.in	Fri Oct  1 19:34:03 2010
+@@ -321,7 +321,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--examplesdir = $(pkgdatadir)/examples
-+examplesdir = $(datadir)/examples/pcb
+-examplesdir = @docdir@/examples
++examplesdir = ${datadir}/examples/pcb/
  examples_DATA = ${EXAMPLES}
  SUBDIRS = libraries
  EXTRA_DIST = ${EXAMPLES}

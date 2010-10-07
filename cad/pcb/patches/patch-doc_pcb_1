@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_pcb_1,v 1.2 2010/09/09 07:51:22 jasper Exp $
---- doc/pcb.1.orig	Tue Aug 24 23:44:24 2004
-+++ doc/pcb.1	Fri Jan  5 09:11:57 2007
-@@ -30,17 +30,14 @@ The
+$OpenBSD: patch-doc_pcb_1,v 1.3 2010/10/07 20:40:40 jasper Exp $
+--- doc/pcb.1.orig	Fri Oct  1 19:25:29 2010
++++ doc/pcb.1	Fri Oct  1 19:26:04 2010
+@@ -29,16 +29,15 @@ The
  program is a tool for the layout of printed circuit boards.
  The complete manual for
  .B pcb
@@ -12,14 +12,12 @@ $OpenBSD: patch-doc_pcb_1,v 1.2 2010/09/09 07:51:22 jasper Exp $
  program or alternatively with 
  .B emacs
  or a graphical info viewer such as
--.B tkinfo
--.  The PDF and HTML documentation is typically installed as
+ .B tkinfo.
+-The PDF and HTML documentation is typically installed as
 -/usr/local/share/pcb/pcb.html and /usr/local/share/pcb/pcb.pdf.
 -The prefix "/usr/local" may vary at your site.
--
--
-+.B tkinfo.
 +The HTML documentation is installed as
 +${PREFIX}/share/doc/pcb/pcb.html.
+ 
  
  
