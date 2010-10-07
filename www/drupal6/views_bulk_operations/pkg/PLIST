@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/07 14:05:35 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/07 08:05:49 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}views_bulk_operations/
@@ -6,6 +6,7 @@ ${DRUPAL_MODS}views_bulk_operations/LICENSE.txt
 ${DRUPAL_MODS}views_bulk_operations/README.txt
 ${DRUPAL_MODS}views_bulk_operations/actions_permissions.info
 ${DRUPAL_MODS}views_bulk_operations/actions_permissions.module
+${DRUPAL_MODS}views_bulk_operations/archive.action.inc
 ${DRUPAL_MODS}views_bulk_operations/argument_selector.action.inc
 ${DRUPAL_MODS}views_bulk_operations/delete.action.inc
 ${DRUPAL_MODS}views_bulk_operations/fields.action.inc
@@ -18,6 +19,7 @@ ${DRUPAL_MODS}views_bulk_operations/taxonomy.action.inc
 ${DRUPAL_MODS}views_bulk_operations/translations/
 ${DRUPAL_MODS}views_bulk_operations/translations/fr.po
 ${DRUPAL_MODS}views_bulk_operations/translations/ja.po
+${DRUPAL_MODS}views_bulk_operations/translations/views_bulk_operations.sv.po
 ${DRUPAL_MODS}views_bulk_operations/user_roles.action.inc
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.action.js
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.css

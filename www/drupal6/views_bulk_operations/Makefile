@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/07 14:05:35 stephan Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/07 08:05:49 stephan Exp $
 
 COMMENT =	node based bulk operations displayed by a view
 
-DISTNAME = 	views_bulk_operations-6.x-1.9
-PKGNAME =	drupal6-views_bulk_operations-1.9
+DISTNAME = 	views_bulk_operations-6.x-1.10
+PKGNAME =	drupal6-views_bulk_operations-1.10
 
 MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
