@@ -48,7 +48,8 @@ alcBackendSetAttributesNative_ (ALC_OpenMode mode, void *handle,
 		par.pchan = chan;
 	par.rate = *speed;
 
-	par.appbufsz = *bufsiz / SIO_BPS(par.bits) / chan;
+	par.round = *bufsiz / SIO_BPS(par.bits) / chan;
+	par.appbufsz = *bufsiz > par.rate / 20 ? *bufsiz * 2 : par.rate / 10;
 
 	if (!sio_setpar(handle, &par) || !sio_getpar(handle, &par) ||
 	    !sio_start(handle)) {
@@ -77,7 +78,7 @@ alcBackendSetAttributesNative_ (ALC_OpenMode mode, void *handle,
 		return AL_FALSE;
 	}
 
-	*bufsiz = par.appbufsz * par.bps * chan;
+	*bufsiz = par.round * par.bps * chan;
 	*speed = par.rate;
 
 	return AL_TRUE;

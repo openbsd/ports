@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_al_source_c,v 1.1 2010/10/07 04:34:59 jakemsr Exp $
+--- src/al_source.c.orig	Sat Feb 11 01:36:55 2006
++++ src/al_source.c	Tue Oct  5 12:30:56 2010
+@@ -3137,7 +3137,7 @@ void *_alGetSourceParam(AL_source *source, ALenum para
+ 	{
+ 		case AL_BUFFER:
+ 			if( source->bid_queue.read_index >=
+-			    source->bid_queue.size )
++			    source->bid_queue.size && source->bid_queue.size )
+ 			{
+ 				int size = source->bid_queue.size;
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/07 04:34:59 jakemsr Exp $
 
 COMMENT=	cross-platform 3D audio API
 
 DISTNAME=	openal-0.0.8
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
 SHARED_LIBS +=  openal               1.0      # .0.0
 
@@ -29,7 +29,8 @@ CONFIGURE_ARGS=	--disable-vorbis \
 		--disable-arts \
 		--disable-mp3 \
 		--disable-esd \
-		--disable-sdl
+		--disable-sdl \
+		--disable-solaris
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin/autotools
 
