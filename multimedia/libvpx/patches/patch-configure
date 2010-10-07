@@ -1,13 +1,33 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+$OpenBSD: patch-configure,v 1.2 2010/10/07 18:59:47 kili Exp $
 --- configure.orig	Thu Sep  2 14:56:47 2010
-+++ configure	Sat Sep 25 14:53:47 2010
++++ configure	Mon Oct  4 22:26:58 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure
  ##
-@@ -408,12 +408,6 @@ EOF
+@@ -128,19 +128,6 @@ for t in ${all_targets}; do
+     [ -f ${source_path}/${t}.mk ] && enable ${t}
+ done
+ 
+-# check installed doxygen version
+-doxy_version=$(doxygen --version 2>/dev/null)
+-doxy_major=${doxy_version%%.*}
+-if [ ${doxy_major:-0} -ge 1 ]; then
+-    doxy_version=${doxy_version#*.}
+-    doxy_minor=${doxy_version%%.*}
+-    doxy_patch=${doxy_version##*.}
+-
+-    [ $doxy_major -gt 1 ] && enable doxygen
+-    [ $doxy_minor -gt 5 ] && enable doxygen
+-    [ $doxy_minor -eq 5 ] && [ $doxy_patch -ge 3 ] && enable doxygen
+-fi
+-
+ # install everything except the sources, by default. sources will have
+ # to be enabled when doing dist builds, since that's no longer a common
+ # case.
+@@ -408,12 +395,6 @@ EOF
  }
  
  process_detect() {
