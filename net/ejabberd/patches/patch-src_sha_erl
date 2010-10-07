@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_sha_erl,v 1.1 2010/10/07 17:00:18 jasper Exp $
+
+Disable MD2 as this is disabled in OpenSSL now.
+Patch via from Gentoo via https://support.process-one.net/browse/EJAB-1285
+
+--- src/sha.erl.orig	Wed Oct  6 13:17:33 2010
++++ src/sha.erl	Wed Oct  6 13:17:52 2010
+@@ -28,7 +28,7 @@
+ -author('alexey@process-one.net').
+ 
+ -export([start/0, sha/1, sha1/1, sha224/1, sha256/1, sha384/1,
+-	 sha512/1, md2/1]).
++	 sha512/1]).
+ 
+ -include("ejabberd.hrl").
+ 
+@@ -79,9 +79,6 @@ sha384(Text) ->
+ 
+ sha512(Text) ->
+     erlang:port_control(?DRIVER, 512, Text).
+-
+-md2(Text) ->
+-    erlang:port_control(?DRIVER, 2, Text).
+ 
+ driver_path() ->
+     Suffix = case os:type() of

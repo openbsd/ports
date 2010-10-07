@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/27 14:04:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/07 17:00:18 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.1.5
 DISTNAME=		ejabberd-$V
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 

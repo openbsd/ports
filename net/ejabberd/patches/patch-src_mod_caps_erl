@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_mod_caps_erl,v 1.1 2010/10/07 17:00:18 jasper Exp $
+
+Disable MD2 as this is disabled in OpenSSL now.
+Patch via from Gentoo via https://support.process-one.net/browse/EJAB-1285
+
+--- src/mod_caps.erl.orig	Wed Oct  6 13:17:02 2010
++++ src/mod_caps.erl	Wed Oct  6 13:17:25 2010
+@@ -277,8 +277,6 @@ feature_response(#iq{type = result,
+ 		 Host, From, Caps, [SubNode | SubNodes]) ->
+     BinaryNode = node_to_binary(Caps#caps.node, SubNode),
+     IsValid = case Caps#caps.hash of
+-		  "md2" ->
+-		      Caps#caps.version == make_disco_hash(Els, md2);
+ 		  "md5" ->
+ 		      Caps#caps.version == make_disco_hash(Els, md5);
+ 		  "sha-1" ->
+@@ -354,9 +352,7 @@ make_disco_hash(DiscoEls, Algo) ->
+ 	      concat_features(DiscoEls),
+ 	      concat_info(DiscoEls)],
+     base64:encode_to_string(
+-      if Algo == md2 ->
+-	      sha:md2(Concat);
+-	 Algo == md5 ->
++      if Algo == md5 ->
+ 	      crypto:md5(Concat);
+ 	 Algo == sha1 ->
+ 	      crypto:sha(Concat);
