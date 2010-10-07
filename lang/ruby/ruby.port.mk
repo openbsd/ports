@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.27 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.28 2010/10/07 17:48:53 jeremy Exp $
 
 # ruby module
 
@@ -41,6 +41,19 @@ REGRESS_DEPENDS+=	::devel/ruby-rspec
 .endif
 
 SUBST_VARS+=		MODRUBY_BIN_REV MODRUBY_REV MODRUBY_ARCH
+
+MODRUBY_RUBY_ADJ=	perl -pi -e 's,/usr/bin/env ruby,${RUBY},'
+MODRUBY_ADJ_FILES?=
+.if !empty(MODRUBY_ADJ_FILES)
+MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
+			 find ${WRKSRC} -name $$pat -print0 | \
+			  xargs -0r ${MODRUBY_RUBY_ADJ} ; \
+			done
+.  if !target(pre-configure)
+pre-configure:
+	${MODRUBY_ADJ_REPLACE}
+.  endif
+.endif
 
 .if ${CONFIGURE_STYLE:L:Mextconf}
 CONFIGURE_STYLE=	simple
