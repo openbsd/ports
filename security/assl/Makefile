@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 21:14:56 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/07 23:55:33 sthen Exp $
 
 COMMENT =		hide awful SSL API in a sane interface
-V =			0.9
+V =			1.1
 DISTNAME =		assl-${V}
 
-SHARED_LIBS =		assl ${V}
+SHARED_LIBS =		assl 0.9
 
 CATEGORIES =		security devel
 
@@ -24,6 +24,10 @@ EXTRACT_SUFX =		.tgz
 NO_REGRESS =		Yes
 EG_DIR =		${PREFIX}/share/examples/assl
 MAKE_FLAGS=		PREFIX=${LOCALBASE}
+
+do-configure:
+	printf "major=${LIBassl_VERSION:R}\nminor=${LIBassl_VERSION:E}\n" \
+	    > ${WRKSRC}/shlib_version
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/assl.h ${PREFIX}/include
