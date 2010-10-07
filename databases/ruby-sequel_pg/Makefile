@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/05 22:21:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/07 15:06:08 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,6 +25,7 @@ LIB_DEPENDS =	::databases/postgresql \
 		${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS =	::databases/ruby-sequel \
 		::databases/ruby-pg
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE = ruby gem
 
