@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.843 2010/10/05 19:24:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.844 2010/10/08 09:41:49 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -120,6 +120,7 @@
      SUBDIR += gperf
      SUBDIR += gputils
      SUBDIR += grcs
+     SUBDIR += gsettings-desktop-schemas
      SUBDIR += gsl
      SUBDIR += gtest
      SUBDIR += gtk2hs-buildtools
