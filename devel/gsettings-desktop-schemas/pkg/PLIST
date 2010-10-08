@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/08 09:41:07 ajacoutot Exp $
+include/gsettings-desktop-schemas/
+include/gsettings-desktop-schemas/gdesktop-enums.h
+lib/pkgconfig/gsettings-desktop-schemas.pc
+share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.enums.xml
+share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.url-handlers.gschema.xml
+share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
