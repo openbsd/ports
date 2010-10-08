@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/02 11:41:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/08 16:34:08 dcoppa Exp $
 #
 
 COMMENT =		execute jobs in parallel
 
-DISTNAME =		xjobs-20100311
+DISTNAME =		xjobs-20100915
 
 CATEGORIES =		sysutils
 
