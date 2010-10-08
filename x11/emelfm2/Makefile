@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/08 17:12:58 jasper Exp $
 
 COMMENT =		GTK+2 file manager
 
 DISTNAME =		emelfm2-0.7.2
+#REVISION=	0
 
 CATEGORIES =		x11
 HOMEPAGE =		http://emelfm2.net/
@@ -25,16 +26,17 @@ MODULES =	devel/gettext
 WANTLIB =	c cairo glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 expat fontconfig \
-		freetype gio-2.0 glitz pixman-1 png xcb pangoft2-1.0 \
+		freetype gio-2.0 pixman-1 png xcb pangoft2-1.0 \
 		m pthread pthread-stubs z pango-1.0 pangocairo-1.0 \
 		xcb-render xcb-render-util gdk_pixbuf-2.0 gdk-x11-2.0 \
 		gtk-x11-2.0
+WANTLIB +=	glitz
 
 BUILD_DEPENDS =	::devel/libmagic
 RUN_DEPENDS =	::devel/desktop-file-utils \
 		::devel/xdg-utils
 
-MAKE_ENV =	CC=${CC}
+MAKE_ENV =	CC=${CC} lCFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
