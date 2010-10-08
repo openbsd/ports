@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/03 21:10:24 armani Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/08 10:15:54 jasper Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
@@ -27,5 +27,6 @@ USE_GMAKE = 		Yes
 USE_LIBTOOL =		Yes
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE = 	gnu
+CONFIGURE_ARGS +=	--disable-swig
 
 .include <bsd.port.mk>
