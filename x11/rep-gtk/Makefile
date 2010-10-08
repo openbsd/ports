@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/29 17:08:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/08 17:03:30 jasper Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -44,6 +44,8 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=		Yes
 
