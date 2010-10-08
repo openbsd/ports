@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/08 16:57:24 jasper Exp $
 
 COMMENT=	image viewer widget for gtk
 
@@ -31,5 +31,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2,-main
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
