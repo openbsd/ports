@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gtr-utils_c,v 1.1.1.1 2010/09/19 17:24:45 ajacoutot Exp $
---- src/gtr-utils.c.orig	Sun Sep 19 09:29:48 2010
-+++ src/gtr-utils.c	Sun Sep 19 09:31:06 2010
-@@ -789,7 +789,8 @@ gtr_utils_help_display (GtkWindow * parent,
+$OpenBSD: patch-src_gtr-utils_c,v 1.2 2010/10/08 09:43:11 ajacoutot Exp $
+--- src/gtr-utils.c.orig	Thu Sep  9 23:04:47 2010
++++ src/gtr-utils.c	Thu Oct  7 16:42:23 2010
+@@ -791,7 +791,8 @@ gtr_utils_help_display (GtkWindow * parent,
          continue;
  
        path = gtr_dirs_get_gtr_data_dir ();

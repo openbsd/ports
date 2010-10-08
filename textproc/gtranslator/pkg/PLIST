@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/19 17:24:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/08 09:43:11 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-2.0/
 include/gtranslator-2.0/gtranslator/
@@ -57,6 +57,10 @@ lib/gtranslator/plugins/libsourcecodeview.so
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
 share/applications/gtranslator.desktop
+share/glib-2.0/schemas/org.gnome.gtranslator.gschema.xml
+share/glib-2.0/schemas/org.gnome.gtranslator.plugins.codeview.gschema.xml
+share/glib-2.0/schemas/org.gnome.gtranslator.plugins.dictionary.gschema.xml
+share/glib-2.0/schemas/org.gnome.gtranslator.plugins.open-tran.gschema.xml
 share/gnome/help/gtranslator/
 share/gnome/help/gtranslator/C/
 share/gnome/help/gtranslator/C/figures/
@@ -124,6 +128,19 @@ share/gnome/help/gtranslator/es/figures/profiles.png
 share/gnome/help/gtranslator/es/figures/tm.png
 share/gnome/help/gtranslator/es/figures/toolbar.png
 share/gnome/help/gtranslator/es/gtranslator.xml
+share/gnome/help/gtranslator/fr/
+share/gnome/help/gtranslator/fr/figures/
+share/gnome/help/gtranslator/fr/figures/closedialog.png
+share/gnome/help/gtranslator/fr/figures/mainwindow.png
+share/gnome/help/gtranslator/fr/figures/prefs-editor.png
+share/gnome/help/gtranslator/fr/figures/prefs-interface.png
+share/gnome/help/gtranslator/fr/figures/prefs-tm.png
+share/gnome/help/gtranslator/fr/figures/prefs.png
+share/gnome/help/gtranslator/fr/figures/profiles-dialog.png
+share/gnome/help/gtranslator/fr/figures/profiles.png
+share/gnome/help/gtranslator/fr/figures/tm.png
+share/gnome/help/gtranslator/fr/figures/toolbar.png
+share/gnome/help/gtranslator/fr/gtranslator.xml
 share/gnome/help/gtranslator/th/
 share/gnome/help/gtranslator/th/figures/
 share/gnome/help/gtranslator/th/figures/closedialog.png
@@ -242,6 +259,7 @@ share/locale/ku/LC_MESSAGES/gtranslator.mo
 share/locale/lt/LC_MESSAGES/gtranslator.mo
 share/locale/lv/LC_MESSAGES/gtranslator.mo
 share/locale/nb/LC_MESSAGES/gtranslator.mo
+share/locale/nds/LC_MESSAGES/gtranslator.mo
 share/locale/nl/LC_MESSAGES/gtranslator.mo
 share/locale/nn/LC_MESSAGES/gtranslator.mo
 share/locale/oc/LC_MESSAGES/gtranslator.mo
@@ -273,6 +291,7 @@ share/omf/gtranslator/gtranslator-cs.omf
 share/omf/gtranslator/gtranslator-de.omf
 share/omf/gtranslator/gtranslator-el.omf
 share/omf/gtranslator/gtranslator-es.omf
+share/omf/gtranslator/gtranslator-fr.omf
 share/omf/gtranslator/gtranslator-th.omf
 share/omf/gtranslator/gtranslator-uk.omf
 share/omf/gtranslator/gtranslator-zh_CN.omf
@@ -289,11 +308,9 @@ share/pixmaps/gtranslator/oo-logo.png
 share/pixmaps/gtranslator/open-tran.png
 share/pixmaps/gtranslator/suse.png
 share/pixmaps/gtranslator/xfce.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gtranslator.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
