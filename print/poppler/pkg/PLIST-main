@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/13 10:19:37 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/10/09 08:05:30 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -8,6 +8,7 @@ include/poppler/Array.h
 include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
+include/poppler/CachedFile.h
 include/poppler/Catalog.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
@@ -31,6 +32,7 @@ include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 include/poppler/Lexer.h
 include/poppler/Link.h
+include/poppler/LocalPDFDocBuilder.h
 include/poppler/Movie.h
 include/poppler/NameToCharCode.h
 include/poppler/NameToUnicodeTable.h
@@ -39,7 +41,9 @@ include/poppler/OptionalContent.h
 include/poppler/Outline.h
 include/poppler/OutputDev.h
 include/poppler/PDFDoc.h
+include/poppler/PDFDocBuilder.h
 include/poppler/PDFDocEncoding.h
+include/poppler/PDFDocFactory.h
 include/poppler/PSOutputDev.h
 include/poppler/PSTokenizer.h
 include/poppler/Page.h
@@ -48,9 +52,12 @@ include/poppler/Parser.h
 include/poppler/PopplerCache.h
 include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
+include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
+include/poppler/StdinCachedFile.h
+include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
@@ -79,6 +86,8 @@ include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-features.h
 include/poppler/glib/poppler-form-field.h
 include/poppler/glib/poppler-layer.h
+include/poppler/glib/poppler-media.h
+include/poppler/glib/poppler-movie.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
 include/poppler/goo/
@@ -89,6 +98,8 @@ include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
 include/poppler/goo/GooVector.h
+include/poppler/goo/ImgWriter.h
+include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
@@ -138,7 +149,6 @@ share/gtk-doc/html/poppler/index.sgml
 share/gtk-doc/html/poppler/left.png
 share/gtk-doc/html/poppler/poppler-poppler-action.html
 share/gtk-doc/html/poppler/poppler-poppler-annot.html
-share/gtk-doc/html/poppler/poppler-poppler-attachment.html
 share/gtk-doc/html/poppler/poppler-poppler-document.html
 share/gtk-doc/html/poppler/poppler-poppler-enums.html
 share/gtk-doc/html/poppler/poppler-poppler-features.html

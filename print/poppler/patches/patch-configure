@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2010/10/09 08:05:30 kili Exp $
+--- configure.orig	Fri Sep 10 21:08:16 2010
++++ configure	Wed Oct  6 19:31:35 2010
+@@ -20804,7 +20804,7 @@ fi
+ if test x$enable_poppler_qt4 = xyes; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Qt4 moc" >&5
+ $as_echo_n "checking for Qt4 moc... " >&6; }
+-  MOCQT4=`which moc`
++  MOCQT4=`which moc4`
+   mocversion=`$MOCQT4 -v 2>&1`
+   mocversiongrep=`echo $mocversion | grep "Qt 4"`
+   if test x"$mocversiongrep" != x"$mocversion"; then

@@ -1,57 +1,61 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.6 2010/05/08 17:09:48 kili Exp $
---- poppler/XRef.cc.orig	Sun Jan 17 01:06:57 2010
-+++ poppler/XRef.cc	Fri May  7 23:04:39 2010
-@@ -881,45 +881,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+$OpenBSD: patch-poppler_XRef_cc,v 1.7 2010/10/09 08:05:30 kili Exp $
+--- poppler/XRef.cc.orig	Mon Jun 14 20:19:46 2010
++++ poppler/XRef.cc	Wed Oct  6 17:22:17 2010
+@@ -926,49 +926,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permPrint);
-+  return (1);
++  return gTrue;
  }
  
  // we can print at high res if we are only doing security handler revision
  // 2 (and we are allowed to print at all), or with security handler rev
  // 3 and we are allowed to print, and bit 12 is set.
  GBool XRef::okToPrintHighRes(GBool ignoreOwnerPW) {
--  if (2 == encRevision) {
--    return (okToPrint(ignoreOwnerPW));
--  } else if (encRevision >= 3) {
--    return (okToPrint(ignoreOwnerPW) && (permFlags & permHighResPrint));
+-  if (encrypted) {
+-    if (2 == encRevision) {
+-      return (okToPrint(ignoreOwnerPW));
+-    } else if (encRevision >= 3) {
+-      return (okToPrint(ignoreOwnerPW) && (permFlags & permHighResPrint));
+-    } else {
+-      // something weird - unknown security handler version
+-      return gFalse;
+-    }
 -  } else {
--    // something weird - unknown security handler version
--    return gFalse;
+-    return gTrue;
 -  }
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToChange(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permChange);
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToCopy(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permCopy);
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToAddNotes(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permNotes);
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToFillForm(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permFillForm);
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToAccessibility(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAccessibility);
-+  return (1);
++  return gTrue;
  }
  
  GBool XRef::okToAssemble(GBool ignoreOwnerPW) {
 -  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permAssemble);
-+  return (1);
++  return gTrue;
  }
  
  Object *XRef::fetch(int num, int gen, Object *obj) {
