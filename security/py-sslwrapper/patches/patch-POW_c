@@ -1,24 +1,26 @@
-$OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
---- POW.c.orig	2001-11-23 02:03:09.000000000 +0100
-+++ POW.c	2004-01-05 04:51:20.000000000 +0100
+--- POW.c.orig	Fri Nov 23 02:03:09 2001
++++ POW.c	Sat Oct  9 11:33:22 2010
 @@ -34,7 +34,7 @@
  /*                                                                           */
  /*****************************************************************************/
  
 -#include <python2.1/Python.h>
-+#include <python%%MODPY_VERSION%%/Python.h>
++#include <python${MODPY_VERSION}/Python.h>
  
  #include <openssl/crypto.h>
  #include <openssl/rand.h>
-@@ -46,6 +46,7 @@
+@@ -45,7 +45,10 @@
+ #include <openssl/evp.h>
  #include <openssl/err.h>
  #include <openssl/md5.h>
++#ifndef OPENSSL_NO_MD2
  #include <openssl/md2.h>
++#endif
 +#include <openssl/ripemd.h>
  #include <openssl/sha.h>
  #include <openssl/hmac.h>
  
-@@ -145,24 +146,24 @@
+@@ -145,24 +148,24 @@
  #define X_Digest_Check(op) ((op)->ob_type == &digesttype)
  #define X_Ssl_Check(op) ((op)->ob_type == &ssltype)
  
@@ -61,7 +63,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  /*========== Pre-definitions ==========*/
  static PyObject *SSLErrorObject;
-@@ -464,19 +465,19 @@ error:
+@@ -464,19 +467,19 @@ error:
     is used as a buffer which the certificate is read into, from this buffer
     it is read into a char[] and returned as a string.
  */
@@ -94,7 +96,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  X509_object_pem_write(x509_object *self, PyObject *args)
-@@ -525,21 +526,21 @@ error:   
+@@ -525,21 +528,21 @@ error:   
  /*
     Currently this function only supports RSA keys.
  */
@@ -131,7 +133,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -587,33 +588,33 @@ error:
+@@ -587,33 +590,33 @@ error:
  
  }
  
@@ -192,7 +194,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -783,19 +784,19 @@ error:
+@@ -783,19 +786,19 @@ error:
     return NULL;
  }
  
@@ -225,7 +227,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -816,21 +817,21 @@ error:
+@@ -816,21 +819,21 @@ error:
     return NULL;
  }
  
@@ -262,7 +264,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -851,19 +852,19 @@ error:
+@@ -851,19 +854,19 @@ error:
     return NULL;
  }
  
@@ -295,7 +297,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -888,21 +889,21 @@ error:
+@@ -888,21 +891,21 @@ error:
     return NULL;
  }
  
@@ -332,7 +334,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -935,37 +936,37 @@ error:
+@@ -935,37 +938,37 @@ error:
     return NULL;
  }
  
@@ -401,7 +403,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -991,21 +992,21 @@ error:
+@@ -991,21 +994,21 @@ error:
     return NULL;
  }
  
@@ -438,7 +440,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1082,21 +1083,21 @@ error:
+@@ -1082,21 +1085,21 @@ error:
     return NULL;
  }
  
@@ -475,7 +477,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1129,21 +1130,21 @@ error:
+@@ -1129,21 +1132,21 @@ error:
     return NULL;
  }
  
@@ -512,7 +514,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1176,21 +1177,21 @@ error:
+@@ -1176,21 +1179,21 @@ error:
     return  NULL;
  }
  
@@ -549,7 +551,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1211,21 +1212,21 @@ error:
+@@ -1211,21 +1214,21 @@ error:
     return NULL;
  }
  
@@ -586,7 +588,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1246,23 +1247,23 @@ error:
+@@ -1246,23 +1249,23 @@ error:
     return NULL;
  }
  
@@ -627,7 +629,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1283,23 +1284,23 @@ error:
+@@ -1283,23 +1286,23 @@ error:
     return NULL;
  }
  
@@ -668,7 +670,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1320,19 +1321,19 @@ error:
+@@ -1320,19 +1323,19 @@ error:
     return NULL;
  }
  
@@ -701,7 +703,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1428,50 +1429,50 @@ X509_object_dealloc(x509_object *self, c
+@@ -1428,52 +1431,52 @@ X509_object_dealloc(x509_object *self, char *name)
     PyObject_Del(self);
  }
  
@@ -715,40 +717,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         This class provides access to a significant proportion of X509 
 -         functionality of OpenSSL.
 -      </para>
--
--      <example>
--         <title><classname>x509</classname> class usage</title>
--         <programlisting>
--      privateFile = open('test/private.key', 'r')
--      publicFile = open('test/public.key', 'r')
--      certFile = open('test/cacert.pem', 'w')
--
--      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
--      privateKey = POW.pemRead(POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass')
--
--      c = POW.X509()
--
--      name = [  ['C', 'GB'], ['ST', 'Hertfordshire'], 
--                ['O','The House'], ['CN', 'Peter Shannon'] ]
--
--      c.setIssuer( name )
--      c.setSubject( name )
--      c.setSerial(0)
--      c.setNotBefore( time.time() )
--      c.setNotAfter( time.time() + 60*60*24*365)
--      c.setPublicKey(publicKey)
--      c.sign(privateKey)
--
--      certFile.write( c.pemWrite() )
--
--      privateFile.close()
--      publicFile.close()
--      certFile.close()
--         </programlisting>
--      </example>
--
--   </body>
--</class>";
 +static char x509type__doc__[] = "\n"
 +"<class>\n"
 +"   <header>\n"
@@ -794,9 +762,45 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</class>";
  
+-      <example>
+-         <title><classname>x509</classname> class usage</title>
+-         <programlisting>
+-      privateFile = open('test/private.key', 'r')
+-      publicFile = open('test/public.key', 'r')
+-      certFile = open('test/cacert.pem', 'w')
  
+-      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
+-      privateKey = POW.pemRead(POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass')
+-
+-      c = POW.X509()
+-
+-      name = [  ['C', 'GB'], ['ST', 'Hertfordshire'], 
+-                ['O','The House'], ['CN', 'Peter Shannon'] ]
+-
+-      c.setIssuer( name )
+-      c.setSubject( name )
+-      c.setSerial(0)
+-      c.setNotBefore( time.time() )
+-      c.setNotAfter( time.time() + 60*60*24*365)
+-      c.setPublicKey(publicKey)
+-      c.sign(privateKey)
+-
+-      certFile.write( c.pemWrite() )
+-
+-      privateFile.close()
+-      publicFile.close()
+-      certFile.close()
+-         </programlisting>
+-      </example>
+-
+-   </body>
+-</class>";
+-
+-
  static PyTypeObject x509type = {
-@@ -1520,27 +1521,27 @@ error:
+ 	PyObject_HEAD_INIT(&PyType_Type)
+ 	0,				                        /*ob_size*/
+@@ -1520,27 +1523,27 @@ error:
     return NULL;
  }
  
@@ -845,7 +849,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_store_object_verify(x509_store_object *self, PyObject *args)
-@@ -1564,35 +1565,35 @@ error:
+@@ -1564,35 +1567,35 @@ error:
     return NULL;
  }
  
@@ -910,7 +914,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_store_object_verify_chain(x509_store_object *self, PyObject *args)
-@@ -1641,24 +1642,24 @@ error:
+@@ -1641,24 +1644,24 @@ error:
     return NULL;
  }
  
@@ -953,7 +957,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_store_object_add_trust(x509_store_object *self, PyObject *args)
-@@ -1677,26 +1678,26 @@ error:
+@@ -1677,26 +1680,26 @@ error:
     return NULL;
  }
  
@@ -1000,7 +1004,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_store_object_add_crl(x509_store_object *self, PyObject *args)
-@@ -1741,42 +1742,42 @@ x509_store_object_dealloc(x509_store_obj
+@@ -1741,44 +1744,44 @@ x509_store_object_dealloc(x509_store_object *self, cha
     PyObject_Del(self);
  }
  
@@ -1014,32 +1018,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         This class provides preliminary access to OpenSSL X509 verification
 -         facilities.
 -      </para>
--
--      <example>
--         <title><classname>x509_store</classname> class usage</title>
--         <programlisting>
--      store = POW.X509Store()
--
--      caFile = open( 'test/cacert.pem', 'r' )
--      ca = POW.pemRead( POW.X509_CERTIFICATE, caFile.read() )
--      caFile.close()
--
--      store.addTrust( ca )
--
--      certFile = open( 'test/foocom.cert', 'r' )
--      x509 = POW.pemRead( POW.X509_CERTIFICATE, certFile.read() )
--      certFile.close()
--
--      print x509.pprint()
--      
--      if store.verify( x509 ):
--         print 'Verified certificate!.'
--      else:
--         print 'Failed to verify certificate!.'
--         </programlisting>
--      </example>
--   </body>
--</class>";
 +static char x509_storetype__doc__[] = "\n"
 +"<class>\n"
 +"   <header>\n"
@@ -1077,9 +1055,37 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</class>";
  
+-      <example>
+-         <title><classname>x509_store</classname> class usage</title>
+-         <programlisting>
+-      store = POW.X509Store()
  
+-      caFile = open( 'test/cacert.pem', 'r' )
+-      ca = POW.pemRead( POW.X509_CERTIFICATE, caFile.read() )
+-      caFile.close()
+-
+-      store.addTrust( ca )
+-
+-      certFile = open( 'test/foocom.cert', 'r' )
+-      x509 = POW.pemRead( POW.X509_CERTIFICATE, certFile.read() )
+-      certFile.close()
+-
+-      print x509.pprint()
+-      
+-      if store.verify( x509 ):
+-         print 'Verified certificate!.'
+-      else:
+-         print 'Failed to verify certificate!.'
+-         </programlisting>
+-      </example>
+-   </body>
+-</class>";
+-
+-
  static PyTypeObject x509_storetype = {
-@@ -1845,19 +1846,19 @@ error:
+ 	PyObject_HEAD_INIT(&PyType_Type)
+ 	0,				                              /*ob_size*/
+@@ -1845,19 +1848,19 @@ error:
     return NULL;
  }
  
@@ -1112,7 +1118,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1878,21 +1879,21 @@ error:
+@@ -1878,21 +1881,21 @@ error:
     return NULL;
  }
  
@@ -1149,7 +1155,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1922,21 +1923,21 @@ error:
+@@ -1922,21 +1925,21 @@ error:
     return NULL;
  }
  
@@ -1186,7 +1192,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -1958,22 +1959,22 @@ error:
+@@ -1958,22 +1961,22 @@ error:
     return NULL;
  }
  
@@ -1225,7 +1231,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -2009,22 +2010,22 @@ error:
+@@ -2009,22 +2012,22 @@ error:
     return  NULL;
  }
  
@@ -1264,7 +1270,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_crl_object_set_this_update (x509_crl_object *self, PyObject *args)
-@@ -2044,21 +2045,21 @@ error:
+@@ -2044,21 +2047,21 @@ error:
     return NULL;
  }
  
@@ -1301,7 +1307,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_crl_object_get_this_update (x509_crl_object *self, PyObject *args)
-@@ -2073,22 +2074,22 @@ error:
+@@ -2073,22 +2076,22 @@ error:
     return NULL;
  }
  
@@ -1340,7 +1346,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_crl_object_set_next_update (x509_crl_object *self, PyObject *args)
-@@ -2114,21 +2115,21 @@ error:
+@@ -2114,21 +2117,21 @@ error:
     return NULL;
  }
  
@@ -1377,7 +1383,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_crl_object_get_next_update (x509_crl_object *self, PyObject *args)
-@@ -2143,54 +2144,54 @@ error:
+@@ -2143,55 +2146,55 @@ error:
     return NULL;
  }
  
@@ -1400,35 +1406,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -      privateFile = open('test/private.key', 'r')
 -      publicFile = open('test/public.key', 'r')
 -      crlFile = open('test/crl.pem', 'w')
--
--      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
--      privateKey = POW.pemRead(POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass')
--
--      crl = POW.X509Crl()
--
--      name = [  ['C', 'GB'], ['ST', 'Hertfordshire'], 
--                ['O','The House'], ['CN', 'Peter Shannon'] ]
--
--      crl.setIssuer( name )
--      rev = [  POW.X509Revoked(3, int( time.time() ) - 24*60*60 ),
--               POW.X509Revoked(4, int( time.time() ) - 24*60*60 ),
--               POW.X509Revoked(5, int( time.time() ) - 24*60*60 )    ]
--
--      crl.setRevoked( rev )
--      crl.setThisUpdate( time.time() )
--      crl.setNextUpdate( time.time() + 2*60*60*24*365)
--      crl.sign(privateKey)
--
--      crlFile.write( crl.pemWrite() )
--
--      privateFile.close()
--      publicFile.close()
--      crlFile.close()
--         </programlisting>
--      </example>
--
--   </body>
--</method>";
 +static char x509_crl_object_set_revoked__doc__[] = "\n"
 +"<method>\n"
 +"   <header>\n"
@@ -1478,9 +1455,39 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</method>";
  
+-      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
+-      privateKey = POW.pemRead(POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass')
+-
+-      crl = POW.X509Crl()
+-
+-      name = [  ['C', 'GB'], ['ST', 'Hertfordshire'], 
+-                ['O','The House'], ['CN', 'Peter Shannon'] ]
+-
+-      crl.setIssuer( name )
+-      rev = [  POW.X509Revoked(3, int( time.time() ) - 24*60*60 ),
+-               POW.X509Revoked(4, int( time.time() ) - 24*60*60 ),
+-               POW.X509Revoked(5, int( time.time() ) - 24*60*60 )    ]
+-
+-      crl.setRevoked( rev )
+-      crl.setThisUpdate( time.time() )
+-      crl.setNextUpdate( time.time() + 2*60*60*24*365)
+-      crl.sign(privateKey)
+-
+-      crlFile.write( crl.pemWrite() )
+-
+-      privateFile.close()
+-      publicFile.close()
+-      crlFile.close()
+-         </programlisting>
+-      </example>
+-
+-   </body>
+-</method>";
+-
  static PyObject *
  x509_crl_object_set_revoked(x509_crl_object *self, PyObject *args)
-@@ -2276,45 +2277,45 @@ error:
+ {
+@@ -2276,46 +2279,46 @@ error:
     return NULL;
  }
  
@@ -1500,29 +1507,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         <programlisting>
 -      publicFile = open('test/public.key', 'r')
 -      crlFile = open('test/crl.pem', 'r')
--
--      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
--
--      crl = POW.pemRead( POW.X509_CRL, crlFile.read() )
--
--      print crl.pprint()
--      if crl.verify( publicKey ):
--         print 'signature ok!'
--      else:
--         print 'signature not ok!'
--
--      revocations = crl.getRevoked()
--      for revoked in revocations:
--         print 'serial number:', revoked.getSerial()
--         print 'date:', time.ctime( revoked.getDate()[0] )
--
--      publicFile.close()
--      crlFile.close()
--         </programlisting>
--      </example>
--
--   </body>
--</method>";
 +static char x509_crl_object_get_revoked__doc__[] = "\n"
 +"<method>\n"
 +"   <header>\n"
@@ -1563,9 +1547,33 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</method>";
  
+-      publicKey = POW.pemRead(POW.RSA_PUBLIC_KEY, publicFile.read())
+-
+-      crl = POW.pemRead( POW.X509_CRL, crlFile.read() )
+-
+-      print crl.pprint()
+-      if crl.verify( publicKey ):
+-         print 'signature ok!'
+-      else:
+-         print 'signature not ok!'
+-
+-      revocations = crl.getRevoked()
+-      for revoked in revocations:
+-         print 'serial number:', revoked.getSerial()
+-         print 'date:', time.ctime( revoked.getDate()[0] )
+-
+-      publicFile.close()
+-      crlFile.close()
+-         </programlisting>
+-      </example>
+-
+-   </body>
+-</method>";
+-
  static PyObject *
  x509_crl_object_get_revoked(x509_crl_object *self, PyObject *args)
-@@ -2333,32 +2334,32 @@ error:
+ {
+@@ -2333,33 +2336,33 @@ error:
     return  NULL;
  }
  
@@ -1593,8 +1601,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         <member><constant>RIPEMD160_DIGEST</constant></member>
 -     </simplelist>
 -   </body>
--
--</method>";
 +static char x509_crl_object_sign__doc__[] = "\n"
 +"<method>\n"
 +"   <header>\n"
@@ -1622,9 +1628,12 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"\n"
 +"</method>";
  
+-</method>";
+-
  static PyObject *
  x509_crl_object_sign(x509_crl_object *self, PyObject *args)
-@@ -2430,26 +2431,26 @@ error:
+ {
+@@ -2430,26 +2433,26 @@ error:
  
  }
  
@@ -1671,7 +1680,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_crl_object_verify(x509_crl_object *self, PyObject *args)
-@@ -2489,19 +2490,19 @@ error:
+@@ -2489,19 +2492,19 @@ error:
  
  }
  
@@ -1704,7 +1713,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -2546,19 +2547,19 @@ error:   
+@@ -2546,19 +2549,19 @@ error:   
     return NULL;
  }
  
@@ -1737,7 +1746,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -2650,18 +2651,18 @@ x509_crl_object_dealloc(x509_crl_object 
+@@ -2650,18 +2653,18 @@ x509_crl_object_dealloc(x509_crl_object *self, char *n
     PyObject_Del(self);
  }
  
@@ -1768,7 +1777,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyTypeObject x509_crltype = {
-@@ -2708,21 +2709,21 @@ error:
+@@ -2708,21 +2711,21 @@ error:
     return NULL;
  }
  
@@ -1805,7 +1814,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_revoked_object_set_serial(x509_revoked_object *self, PyObject *args)
-@@ -2742,19 +2743,19 @@ error:
+@@ -2742,19 +2745,19 @@ error:
     return NULL;
  }
  
@@ -1838,7 +1847,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  x509_revoked_object_get_serial(x509_revoked_object *self, PyObject *args)
-@@ -2774,22 +2775,22 @@ error:
+@@ -2774,22 +2777,22 @@ error:
     return NULL;
  }
  
@@ -1877,7 +1886,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -2805,22 +2806,22 @@ error:
+@@ -2805,22 +2808,22 @@ error:
     return NULL;
  }
  
@@ -1916,7 +1925,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -2867,24 +2868,24 @@ x509_revoked_object_dealloc(x509_revoked
+@@ -2867,24 +2870,24 @@ x509_revoked_object_dealloc(x509_revoked_object *self,
     PyObject_Del(self);
  }
  
@@ -1959,7 +1968,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyTypeObject x509_revokedtype = {
-@@ -2914,21 +2915,21 @@ static PyTypeObject x509_revokedtype = {
+@@ -2914,21 +2917,21 @@ static PyTypeObject x509_revokedtype = {
  /*========== x509 revoked Code ==========*/
  
  /*========== ssl Code ==========*/
@@ -1996,7 +2005,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_use_certificate(ssl_object *self, PyObject *args)
-@@ -2951,22 +2952,22 @@ error:
+@@ -2951,22 +2954,22 @@ error:
     return NULL;
  }
  
@@ -2035,7 +2044,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_use_key(ssl_object *self, PyObject *args)
-@@ -3015,21 +3016,21 @@ error:
+@@ -3015,21 +3018,21 @@ error:
     return NULL;
  }
  
@@ -2072,7 +2081,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_check_key(ssl_object *self, PyObject *args)
-@@ -3040,23 +3041,23 @@ ssl_object_check_key(ssl_object *self, P
+@@ -3040,23 +3043,23 @@ ssl_object_check_key(ssl_object *self, PyObject *args)
        return Py_BuildValue("i", 0);
  }
  
@@ -2113,7 +2122,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_set_fd(ssl_object *self, PyObject *args)
-@@ -3086,56 +3087,56 @@ error:
+@@ -3086,57 +3089,57 @@ error:
     return NULL;
  }
  
@@ -2133,40 +2142,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         <function>useCertificate</function> and
 -         <function>setFd</function> functions have been called.
 -      </para>
--
--      <example>
--         <title><function>accept</function> function usage</title>
--         <programlisting>
--      keyFile = open( 'test/private.key', 'r' )
--      certFile = open( 'test/cacert.pem', 'r' )
--
--      rsa = POW.pemRead( POW.RSA_PRIVATE_KEY, keyFile.read(), 'pass' )
--      x509 = POW.pemRead( POW.X509_CERTIFICATE, certFile.read() )
--
--      keyFile.close()
--      certFile.close()
--
--      sl = POW.Ssl( POW.SSLV23_SERVER_METHOD )
--      sl.useCertificate( x509 )
--      sl.useKey( rsa )
--
--      s = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
--      s.bind( ('localhost', 1111) )
--      s.listen(5)
--      s2, addr = s.accept()
--
--      s.close()
--
--      sl.setFd( s2.fileno() )
--      sl.accept()
--      print sl.read(1024)
--      sl.write('Message from server to client...')
--
--      s2.close()     
--         </programlisting>
--      </example>
--   </body>
--</method>";
 +static char ssl_object_accept__doc__[] = " \n"
 +"<method>\n"
 +"   <header>\n"
@@ -2218,9 +2193,44 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</method>";
  
+-      <example>
+-         <title><function>accept</function> function usage</title>
+-         <programlisting>
+-      keyFile = open( 'test/private.key', 'r' )
+-      certFile = open( 'test/cacert.pem', 'r' )
+-
+-      rsa = POW.pemRead( POW.RSA_PRIVATE_KEY, keyFile.read(), 'pass' )
+-      x509 = POW.pemRead( POW.X509_CERTIFICATE, certFile.read() )
+-
+-      keyFile.close()
+-      certFile.close()
+-
+-      sl = POW.Ssl( POW.SSLV23_SERVER_METHOD )
+-      sl.useCertificate( x509 )
+-      sl.useKey( rsa )
+-
+-      s = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
+-      s.bind( ('localhost', 1111) )
+-      s.listen(5)
+-      s2, addr = s.accept()
+-
+-      s.close()
+-
+-      sl.setFd( s2.fileno() )
+-      sl.accept()
+-      print sl.read(1024)
+-      sl.write('Message from server to client...')
+-
+-      s2.close()     
+-         </programlisting>
+-      </example>
+-   </body>
+-</method>";
+-
  static PyObject *
  ssl_object_accept(ssl_object *self, PyObject *args)
-@@ -3159,37 +3160,37 @@ error:
+ {
+@@ -3159,38 +3162,38 @@ error:
     return NULL;
  }
  
@@ -2239,22 +2249,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         called after <function>setFd</function> has already been
 -         called.
 -      </para>
--
--      <example>
--         <title><function>connect</function> function usage</title>
--         <programlisting>
--      s = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
--      s.connect(('localhost', 1111))
--
--      sl = POW.Ssl( POW.SSLV23_CLIENT_METHOD )
--      sl.setFd( s.fileno() )
--      sl.connect()
--      sl.write('Message from client to server...')
--      print sl.read(1024)
--         </programlisting>
--      </example>
--   </body>
--</method>";
 +static char ssl_object_connect__doc__[] = "\n"
 +"<method>\n"
 +"   <header>\n"
@@ -2287,9 +2281,26 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</method>";
  
+-      <example>
+-         <title><function>connect</function> function usage</title>
+-         <programlisting>
+-      s = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
+-      s.connect(('localhost', 1111))
+-
+-      sl = POW.Ssl( POW.SSLV23_CLIENT_METHOD )
+-      sl.setFd( s.fileno() )
+-      sl.connect()
+-      sl.write('Message from client to server...')
+-      print sl.read(1024)
+-         </programlisting>
+-      </example>
+-   </body>
+-</method>";
+-
  static PyObject *
  ssl_object_connect(ssl_object *self, PyObject *args)
-@@ -3209,22 +3210,22 @@ ssl_object_connect(ssl_object *self, PyO
+ {
+@@ -3209,22 +3212,22 @@ ssl_object_connect(ssl_object *self, PyObject *args)
     return Py_BuildValue("");
  }
  
@@ -2328,7 +2339,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_write(ssl_object *self, PyObject *args)
-@@ -3249,22 +3250,22 @@ error:
+@@ -3249,22 +3252,22 @@ error:
     return NULL;
  }
  
@@ -2367,7 +2378,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_read(ssl_object *self, PyObject *args)
-@@ -3304,20 +3305,20 @@ error:
+@@ -3304,20 +3307,20 @@ error:
     return NULL;
  }
  
@@ -2402,7 +2413,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -3357,19 +3358,19 @@ error:
+@@ -3357,19 +3360,19 @@ error:
     return NULL;
  }
  
@@ -2435,7 +2446,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_clear(ssl_object *self, PyObject *args)
-@@ -3387,32 +3388,32 @@ error:
+@@ -3387,32 +3390,32 @@ error:
     return NULL;
  }
  
@@ -2494,7 +2505,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_shutdown(ssl_object *self, PyObject *args)
-@@ -3438,28 +3439,28 @@ error:
+@@ -3438,28 +3441,28 @@ error:
     return NULL;
  }
  
@@ -2545,7 +2556,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_get_shutdown(ssl_object *self, PyObject *args)
-@@ -3478,20 +3479,20 @@ error:
+@@ -3478,20 +3481,20 @@ error:
     return NULL;
  }
  
@@ -2580,7 +2591,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_get_ciphers(ssl_object *self, PyObject *args)
-@@ -3535,25 +3536,25 @@ error:
+@@ -3535,25 +3538,25 @@ error:
     return NULL;
  }
  
@@ -2625,7 +2636,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_set_ciphers(ssl_object *self, PyObject *args)
-@@ -3610,18 +3611,18 @@ error:
+@@ -3610,18 +3613,18 @@ error:
     return NULL;
  }
  
@@ -2656,7 +2667,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_get_cipher(ssl_object *self, PyObject *args)
-@@ -3644,30 +3645,30 @@ static int stub_callback(int preverify_o
+@@ -3644,30 +3647,30 @@ static int stub_callback(int preverify_ok, X509_STORE_
     return 1;
  }
  
@@ -2711,7 +2722,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  ssl_object_set_verify_mode(ssl_object *self, PyObject *args)
-@@ -3784,24 +3785,24 @@ ssl_object_dealloc(ssl_object *self)
+@@ -3784,24 +3787,24 @@ ssl_object_dealloc(ssl_object *self)
     PyObject_Del(self);
  }
  
@@ -2754,7 +2765,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyTypeObject ssltype = {
  	PyObject_HEAD_INIT(&PyType_Type)
-@@ -3901,31 +3902,31 @@ error:
+@@ -3901,31 +3904,31 @@ error:
     return NULL;
  }
  
@@ -2811,7 +2822,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -4012,22 +4013,22 @@ error:
+@@ -4012,22 +4015,22 @@ error:
     return NULL;
  }
  
@@ -2850,7 +2861,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  asymmetric_object_public_encrypt(asymmetric_object *self, PyObject *args)
-@@ -4073,22 +4074,22 @@ error:
+@@ -4073,22 +4076,22 @@ error:
     return NULL;
  }
  
@@ -2889,7 +2900,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  asymmetric_object_private_encrypt(asymmetric_object *self, PyObject *args)
-@@ -4134,22 +4135,22 @@ error:
+@@ -4134,22 +4137,22 @@ error:
     return NULL;
  }
  
@@ -2928,7 +2939,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -4196,21 +4197,21 @@ error:
+@@ -4196,21 +4199,21 @@ error:
     return NULL;
  }
  
@@ -2965,7 +2976,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  asymmetric_object_private_decrypt(asymmetric_object *self, PyObject *args)
-@@ -4254,38 +4255,38 @@ error:
+@@ -4254,38 +4257,38 @@ error:
     return NULL;
  }
  
@@ -3036,7 +3047,18 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -4340,68 +4341,68 @@ error:
+@@ -4307,8 +4310,10 @@ asymmetric_object_sign(asymmetric_object *self, PyObje
+ 
+          switch(digest_type)
+          {
++#ifndef OPENSSL_NO_MD2
+             case MD2_DIGEST:
+                { digest_nid = NID_md2; digest_len = MD2_DIGEST_LENGTH; break; }
++#endif
+             case MD5_DIGEST:
+                { digest_nid = NID_md5; digest_len = MD5_DIGEST_LENGTH; break; }
+             case SHA_DIGEST:
+@@ -4340,69 +4345,69 @@ error:
     return NULL;
  }
  
@@ -3061,47 +3083,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -      digest = POW.Digest( POW.RIPEMD160_DIGEST )
 -      digest.update( plain_text )
 -      print '\tDigest text:', digest.digest()
--
--      privateFile = open('test/private.key', 'r')
--      privateKey = POW.pemRead( POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass' )
--      privateFile.close()
--      signed_text =  privateKey.sign(digest.digest(), POW.RIPEMD160_DIGEST)
--      print '\tSigned text:', signed_text
--
--      digest2 = POW.Digest( POW.RIPEMD160_DIGEST )
--      digest2.update( plain_text )
--      publicFile = open('test/public.key', 'r')
--      publicKey = POW.pemRead( POW.RSA_PUBLIC_KEY, publicFile.read() )
--      publicFile.close()
--      if publicKey.verify( signed_text, digest2.digest(), POW.RIPEMD160_DIGEST ):
--         print 'Signing verified!'
--      else:
--         print 'Signing gone wrong!'
--         </programlisting>
--      </example>
--      <para>
--         The parameter <parameter>signedtext</parameter> should be a 
--         signed digest text.  This instance of
--         <classname>Asymmetric</classname> should correspond to the private
--         key used to sign the digest.  The parameter
--         <parameter>digesttext</parameter> should be a digest of the same
--         data used to produce the <parameter>signedtext</parameter> and
--         finally <parameter>digesttype</parameter> should be one of the
--         following:
--      </para>
--      <simplelist>
--         <member><constant>MD2_DIGEST</constant></member>
--         <member><constant>MD5_DIGEST</constant></member>
--         <member><constant>SHA_DIGEST</constant></member>
--         <member><constant>SHA1_DIGEST</constant></member>
--         <member><constant>RIPEMD160_DIGEST</constant></member>
--      </simplelist>
--      <para>
--         If the procedure was successful, 1 is returned, otherwise 0 is
--         returned.
--      </para>
--   </body>
--</method>";
 +static char asymmetric_object_verify__doc__[] = " \n"
 +"<method>\n"
 +"   <header>\n"
@@ -3165,9 +3146,62 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</method>";
  
+-      privateFile = open('test/private.key', 'r')
+-      privateKey = POW.pemRead( POW.RSA_PRIVATE_KEY, privateFile.read(), 'pass' )
+-      privateFile.close()
+-      signed_text =  privateKey.sign(digest.digest(), POW.RIPEMD160_DIGEST)
+-      print '\tSigned text:', signed_text
+-
+-      digest2 = POW.Digest( POW.RIPEMD160_DIGEST )
+-      digest2.update( plain_text )
+-      publicFile = open('test/public.key', 'r')
+-      publicKey = POW.pemRead( POW.RSA_PUBLIC_KEY, publicFile.read() )
+-      publicFile.close()
+-      if publicKey.verify( signed_text, digest2.digest(), POW.RIPEMD160_DIGEST ):
+-         print 'Signing verified!'
+-      else:
+-         print 'Signing gone wrong!'
+-         </programlisting>
+-      </example>
+-      <para>
+-         The parameter <parameter>signedtext</parameter> should be a 
+-         signed digest text.  This instance of
+-         <classname>Asymmetric</classname> should correspond to the private
+-         key used to sign the digest.  The parameter
+-         <parameter>digesttext</parameter> should be a digest of the same
+-         data used to produce the <parameter>signedtext</parameter> and
+-         finally <parameter>digesttype</parameter> should be one of the
+-         following:
+-      </para>
+-      <simplelist>
+-         <member><constant>MD2_DIGEST</constant></member>
+-         <member><constant>MD5_DIGEST</constant></member>
+-         <member><constant>SHA_DIGEST</constant></member>
+-         <member><constant>SHA1_DIGEST</constant></member>
+-         <member><constant>RIPEMD160_DIGEST</constant></member>
+-      </simplelist>
+-      <para>
+-         If the procedure was successful, 1 is returned, otherwise 0 is
+-         returned.
+-      </para>
+-   </body>
+-</method>";
+-
  static PyObject *
  asymmetric_object_verify(asymmetric_object *self, PyObject *args)
-@@ -4484,19 +4485,19 @@ asymmetric_object_dealloc(asymmetric_obj
+ {
+@@ -4418,8 +4423,10 @@ asymmetric_object_verify(asymmetric_object *self, PyOb
+       {
+          switch(digest_type)
+          {
++#ifndef OPENSSL_NO_MD2
+             case MD2_DIGEST:
+                { digest_len = MD2_DIGEST_LENGTH; digest_nid = NID_md2; break; }
++#endif
+             case MD5_DIGEST:
+                { digest_len = MD5_DIGEST_LENGTH; digest_nid = NID_md5; break; }
+             case SHA_DIGEST:
+@@ -4484,19 +4491,19 @@ asymmetric_object_dealloc(asymmetric_object *self, cha
     PyObject_Del(self);
  }
  
@@ -3200,7 +3234,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyTypeObject asymmetrictype = {
  	PyObject_HEAD_INIT(&PyType_Type)
-@@ -4545,27 +4546,27 @@ error:
+@@ -4545,27 +4552,27 @@ error:
     return NULL;
  }
  
@@ -3249,7 +3283,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -4593,23 +4594,23 @@ error:
+@@ -4593,23 +4600,23 @@ error:
     return NULL;
  }
  
@@ -3290,7 +3324,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  symmetric_object_decrypt_init(symmetric_object *self, PyObject *args)
-@@ -4636,21 +4637,21 @@ error:
+@@ -4636,21 +4643,21 @@ error:
     return NULL;
  }
  
@@ -3327,7 +3361,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  symmetric_object_update(symmetric_object *self, PyObject *args)
-@@ -4682,22 +4683,22 @@ error:
+@@ -4682,22 +4689,22 @@ error:
     return NULL;
  }
  
@@ -3366,7 +3400,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  
  static PyObject *
-@@ -4755,43 +4756,43 @@ symmetric_object_dealloc(symmetric_objec
+@@ -4755,45 +4762,45 @@ symmetric_object_dealloc(symmetric_object *self, char 
     PyObject_Del(self);
  }
  
@@ -3393,20 +3427,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -      md5 = POW.Digest( POW.MD5_DIGEST )
 -      md5.update( passphrase )
 -      password = md5.digest()[:8]
--
--      plaintext = 'cast test message'
--      cast = POW.Symmetric( POW.CAST5_CFB ) 
--      cast.encryptInit( password )
--      ciphertext = cast.update(plaintext) + cast.final()
--      print 'Cipher text:', ciphertext
--
--      cast.decryptInit( password )
--      out = cast.update( ciphertext ) + cast.final()
--      print 'Deciphered text:', out
--         </programlisting>
--      </example>
--   </body>
--</class>";
 +static char symmetrictype__doc__[] = "\n"
 +"<class>\n"
 +"   <header>\n"
@@ -3445,9 +3465,25 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</class>";
  
+-      plaintext = 'cast test message'
+-      cast = POW.Symmetric( POW.CAST5_CFB ) 
+-      cast.encryptInit( password )
+-      ciphertext = cast.update(plaintext) + cast.final()
+-      print 'Cipher text:', ciphertext
  
+-      cast.decryptInit( password )
+-      out = cast.update( ciphertext ) + cast.final()
+-      print 'Deciphered text:', out
+-         </programlisting>
+-      </example>
+-   </body>
+-</class>";
+-
+-
  static PyTypeObject symmetrictype = {
-@@ -4854,21 +4855,21 @@ error:
+ 	PyObject_HEAD_INIT(&PyType_Type)
+ 	0,				                           /*ob_size*/
+@@ -4854,21 +4861,21 @@ error:
     return NULL;
  }
  
@@ -3484,7 +3520,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  digest_object_update(digest_object *self, PyObject *args)
-@@ -4888,19 +4889,19 @@ error:
+@@ -4888,19 +4895,19 @@ error:
     return NULL;
  }
  
@@ -3517,7 +3553,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  digest_object_copy(digest_object *self, PyObject *args)
-@@ -4921,21 +4922,21 @@ error:
+@@ -4921,21 +4928,21 @@ error:
     return NULL;
  }
  
@@ -3554,7 +3590,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  digest_object_digest(digest_object *self, PyObject *args)
-@@ -4987,29 +4988,29 @@ digest_object_dealloc(digest_object *sel
+@@ -4987,29 +4994,29 @@ digest_object_dealloc(digest_object *self, char *name)
     PyObject_Del(self);
  }
  
@@ -3607,7 +3643,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyTypeObject digesttype = {
  	PyObject_HEAD_INIT(&PyType_Type)
-@@ -5074,21 +5075,21 @@ error:
+@@ -5074,21 +5081,21 @@ error:
     return NULL;
  }
  
@@ -3644,7 +3680,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  hmac_object_update(hmac_object *self, PyObject *args)
-@@ -5108,19 +5109,19 @@ error:
+@@ -5108,19 +5115,19 @@ error:
     return NULL;
  }
  
@@ -3677,7 +3713,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  hmac_object_copy(hmac_object *self, PyObject *args)
-@@ -5140,21 +5141,21 @@ error:
+@@ -5140,21 +5147,21 @@ error:
     return NULL;
  }
  
@@ -3714,7 +3750,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  hmac_object_mac(hmac_object *self, PyObject *args)
-@@ -5207,20 +5208,20 @@ hmac_object_dealloc(hmac_object *self, c
+@@ -5207,20 +5214,20 @@ hmac_object_dealloc(hmac_object *self, char *name)
     PyObject_Del(self);
  }
  
@@ -3749,7 +3785,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyTypeObject hmactype = {
  	PyObject_HEAD_INIT(&PyType_Type)
-@@ -5249,36 +5250,36 @@ static PyTypeObject hmactype = {
+@@ -5249,37 +5256,37 @@ static PyTypeObject hmactype = {
  /*========== hmac Code ==========*/
  
  /*========== module functions ==========*/
@@ -3766,23 +3802,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         <parameter>protocol</parameter> also determines the protocol type
 -         and version and should be one of the following:
 -      </para>
--
--      <simplelist>
--         <member><constant>SSLV2_SERVER_METHOD</constant></member>
--         <member><constant>SSLV2_CLIENT_METHOD</constant></member>
--         <member><constant>SSLV2_METHOD</constant></member>
--         <member><constant>SSLV3_SERVER_METHOD</constant></member>
--         <member><constant>SSLV3_CLIENT_METHOD</constant></member>
--         <member><constant>SSLV3_METHOD</constant></member>
--         <member><constant>TLSV1_SERVER_METHOD</constant></member>
--         <member><constant>TLSV1_CLIENT_METHOD</constant></member>
--         <member><constant>TLSV1_METHOD</constant></member>
--         <member><constant>SSLV23_SERVER_METHOD</constant></member>
--         <member><constant>SSLV23_CLIENT_METHOD</constant></member>
--         <member><constant>SSLV23_METHOD</constant></member>
--      </simplelist>
--   </body>
--</constructor>";
 +static char pow_module_new_ssl__doc__[] = "\n"
 +"<constructor>\n"
 +"   <header>\n"
@@ -3814,9 +3833,27 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</constructor>";
  
+-      <simplelist>
+-         <member><constant>SSLV2_SERVER_METHOD</constant></member>
+-         <member><constant>SSLV2_CLIENT_METHOD</constant></member>
+-         <member><constant>SSLV2_METHOD</constant></member>
+-         <member><constant>SSLV3_SERVER_METHOD</constant></member>
+-         <member><constant>SSLV3_CLIENT_METHOD</constant></member>
+-         <member><constant>SSLV3_METHOD</constant></member>
+-         <member><constant>TLSV1_SERVER_METHOD</constant></member>
+-         <member><constant>TLSV1_CLIENT_METHOD</constant></member>
+-         <member><constant>TLSV1_METHOD</constant></member>
+-         <member><constant>SSLV23_SERVER_METHOD</constant></member>
+-         <member><constant>SSLV23_CLIENT_METHOD</constant></member>
+-         <member><constant>SSLV23_METHOD</constant></member>
+-      </simplelist>
+-   </body>
+-</constructor>";
+-
  static PyObject *
  pow_module_new_ssl (PyObject *self, PyObject *args)
-@@ -5299,19 +5300,19 @@ error:
+ {
+@@ -5299,19 +5306,19 @@ error:
     return NULL;
  }
  
@@ -3849,7 +3886,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_x509 (PyObject *self, PyObject *args)
-@@ -5331,45 +5332,45 @@ error:
+@@ -5331,46 +5338,46 @@ error:
     return NULL;
  }
  
@@ -3875,23 +3912,6 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 -         <programlisting>
 -      privateFile = open('test/private.key', 'w')
 -      publicFile = open('test/public.key', 'w')
--
--      passphrase = 'my silly passphrase'
--      md5 = POW.Digest( POW.MD5_DIGEST )
--      md5.update( passphrase )
--      password = md5.digest()
--
--      rsa = POW.Asymmetric( POW.RSA_CIPHER, 1024 )
--      privateFile.write( rsa.pemWrite( 
--               POW.RSA_PRIVATE_KEY, POW.DES_EDE3_CFB, password ) )
--      publicFile.write( rsa.pemWrite( POW.RSA_PUBLIC_KEY ) )
--
--      privateFile.close()
--      publicFile.close()
--         </programlisting>
--      </example>
--   </body>
--</constructor>";
 +static char pow_module_new_asymmetric__doc__[] = "\n"
 +"<constructor>\n"
 +"   <header>\n"
@@ -3932,9 +3952,27 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 +"   </body>\n"
 +"</constructor>";
  
+-      passphrase = 'my silly passphrase'
+-      md5 = POW.Digest( POW.MD5_DIGEST )
+-      md5.update( passphrase )
+-      password = md5.digest()
+-
+-      rsa = POW.Asymmetric( POW.RSA_CIPHER, 1024 )
+-      privateFile.write( rsa.pemWrite( 
+-               POW.RSA_PRIVATE_KEY, POW.DES_EDE3_CFB, password ) )
+-      publicFile.write( rsa.pemWrite( POW.RSA_PUBLIC_KEY ) )
+-
+-      privateFile.close()
+-      publicFile.close()
+-         </programlisting>
+-      </example>
+-   </body>
+-</constructor>";
+-
  static PyObject *
  pow_module_new_asymmetric (PyObject *self, PyObject *args)
-@@ -5386,27 +5387,27 @@ error:
+ {
+@@ -5386,27 +5393,27 @@ error:
     return NULL;
  }
  
@@ -3983,7 +4021,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_digest (PyObject *self, PyObject *args)
-@@ -5423,28 +5424,28 @@ error:
+@@ -5423,28 +5430,28 @@ error:
     return NULL;
  }
  
@@ -4034,7 +4072,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_hmac (PyObject *self, PyObject *args)
-@@ -5462,37 +5463,37 @@ error:
+@@ -5462,37 +5469,37 @@ error:
     return NULL;
  }
  
@@ -4103,7 +4141,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_pem_read (PyObject *self, PyObject *args)
-@@ -5536,20 +5537,20 @@ error:
+@@ -5536,20 +5543,20 @@ error:
     return NULL;
  }
  
@@ -4138,7 +4176,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_x509_store (PyObject *self, PyObject *args)
-@@ -5564,64 +5565,64 @@ error:
+@@ -5564,64 +5571,64 @@ error:
     return NULL;
  }
  
@@ -4261,7 +4299,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_symmetric (PyObject *self, PyObject *args)
-@@ -5638,17 +5639,17 @@ error:
+@@ -5638,17 +5645,17 @@ error:
     return NULL;
  }
  
@@ -4290,7 +4328,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_x509_crl (PyObject *self, PyObject *args)
-@@ -5663,23 +5664,23 @@ error:
+@@ -5663,23 +5670,23 @@ error:
     return NULL;
  }
  
@@ -4331,7 +4369,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_new_x509_revoked (PyObject *self, PyObject *args)
-@@ -5707,17 +5708,17 @@ error:
+@@ -5707,17 +5714,17 @@ error:
     return NULL;
  }
  
@@ -4360,7 +4398,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_get_error(PyObject *self, PyObject *args)
-@@ -5742,17 +5743,17 @@ error:
+@@ -5742,17 +5749,17 @@ error:
     return NULL;
  }
  
@@ -4389,7 +4427,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_clear_error(PyObject *self, PyObject *args)
-@@ -5769,28 +5770,28 @@ error:
+@@ -5769,28 +5776,28 @@ error:
     return NULL;
  }
  
@@ -4440,7 +4478,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_seed(PyObject *self, PyObject *args)
-@@ -5810,22 +5811,22 @@ error:
+@@ -5810,22 +5817,22 @@ error:
     return NULL;
  }
  
@@ -4479,7 +4517,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_add(PyObject *self, PyObject *args)
-@@ -5846,20 +5847,20 @@ error:
+@@ -5846,20 +5853,20 @@ error:
     return NULL;
  }
  
@@ -4514,7 +4552,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_write_random_file(PyObject *self, PyObject *args)
-@@ -5879,22 +5880,22 @@ error:
+@@ -5879,22 +5886,22 @@ error:
     return NULL;
  }
  
@@ -4553,7 +4591,7 @@ $OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
  
  static PyObject *
  pow_module_read_random_file(PyObject *self, PyObject *args)
-@@ -5915,23 +5916,23 @@ error:
+@@ -5915,23 +5922,23 @@ error:
     return NULL;
  }
  

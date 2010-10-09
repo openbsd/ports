@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/30 21:16:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/09 10:26:00 benoit Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	OpenSSL Wrappers for Python
 VERSION=	0.6.1
 DISTNAME=	POW-${VERSION}
 PKGNAME=	py-sslwrapper-${VERSION}
-REVISION=	3
+REVISION=	4
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pow/
@@ -25,8 +25,7 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-pre-build:
-	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
-	@perl -pi -e 's,%%MODPY_VERSION%%,${MODPY_VERSION},g' ${WRKSRC}/POW.c
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/{setup.py,POW.c}
 
 .include <bsd.port.mk>
