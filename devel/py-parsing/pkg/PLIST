@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/07/24 08:38:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/10/09 10:38:53 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
@@ -17,6 +17,7 @@ share/doc/py-parsing/identifier-index.html
 share/doc/py-parsing/index.html
 share/doc/py-parsing/module-tree.html
 share/doc/py-parsing/pyparsing.pyparsing-module.html
+share/doc/py-parsing/pyparsing.pyparsing-pysrc.html
 share/doc/py-parsing/pyparsing.pyparsing.And-class.html
 share/doc/py-parsing/pyparsing.pyparsing.CaselessKeyword-class.html
 share/doc/py-parsing/pyparsing.pyparsing.CaselessLiteral-class.html
@@ -51,6 +52,7 @@ share/doc/py-parsing/pyparsing.pyparsing.ParserElement-class.html
 share/doc/py-parsing/pyparsing.pyparsing.QuotedString-class.html
 share/doc/py-parsing/pyparsing.pyparsing.RecursiveGrammarException-class.html
 share/doc/py-parsing/pyparsing.pyparsing.Regex-class.html
+share/doc/py-parsing/pyparsing.pyparsing.Regex.compiledREtype-class.html
 share/doc/py-parsing/pyparsing.pyparsing.SkipTo-class.html
 share/doc/py-parsing/pyparsing.pyparsing.StringEnd-class.html
 share/doc/py-parsing/pyparsing.pyparsing.StringStart-class.html
@@ -75,10 +77,13 @@ share/examples/py-parsing/SimpleCalc.py
 share/examples/py-parsing/SingleForm.dfm
 share/examples/py-parsing/TAP.py
 share/examples/py-parsing/adventureEngine.py
+share/examples/py-parsing/apicheck.py
 share/examples/py-parsing/cLibHeader.py
 share/examples/py-parsing/chemicalFormulas.py
 share/examples/py-parsing/commasep.py
 share/examples/py-parsing/configParse.py
+share/examples/py-parsing/cpp_enum_parser.py
+share/examples/py-parsing/deltaTime.py
 share/examples/py-parsing/dfmparse.py
 share/examples/py-parsing/dhcpd_leases_parser.py
 share/examples/py-parsing/dictExample.py
