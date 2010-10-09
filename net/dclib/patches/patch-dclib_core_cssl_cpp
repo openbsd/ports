@@ -1,0 +1,21 @@
+$OpenBSD: patch-dclib_core_cssl_cpp,v 1.1 2010/10/09 09:41:44 benoit Exp $
+--- dclib/core/cssl.cpp.orig	Sat Oct  9 10:57:51 2010
++++ dclib/core/cssl.cpp	Sat Oct  9 11:02:54 2010
+@@ -48,7 +48,7 @@
+ /** */
+ SSL_CTX * CSSL::InitClientCTX()
+ {
+-	SSL_METHOD *method;
++	const SSL_METHOD *method;
+ 	SSL_CTX *ctx = NULL;
+ 
+ 	OpenSSL_add_all_algorithms();		/* Load cryptos, et.al. */
+@@ -74,7 +74,7 @@
+ /** */
+ SSL_CTX * CSSL::InitServerCTX()
+ {
+-	SSL_METHOD *method;
++	const SSL_METHOD *method;
+ 	SSL_CTX *ctx = NULL;
+ 
+ 	OpenSSL_add_all_algorithms();		/* Load cryptos, et.al. */
