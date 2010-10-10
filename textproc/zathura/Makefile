@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/12 20:43:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/10 18:58:11 jasper Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.1
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB +=	Xinerama Xrandr Xrender atk-1.0 c cairo cairo expat fontconfig
-WANTLIB +=	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz
+WANTLIB +=	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB +=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m 
 WANTLIB +=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png poppler
 WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render
-WANTLIB +=	xcb-render-util z
+WANTLIB +=	xcb-render-util z glitz
 
 MASTER_SITES =	http://pwmt.org/attachments/download/10/
 
@@ -37,6 +37,9 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 NO_REGRESS =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/config.mk
 
 .include <bsd.port.mk>
 
