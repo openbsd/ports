@@ -1,0 +1,9 @@
+Redis is an advanced key-value store. It is similar to memcached, but
+the dataset is not volatile, and values can be strings (exactly like in
+memcached), but also lists, sets, and ordered sets. All this data types
+can be manipulated with atomic operations to push/pop elements, add/remove
+elements, perform server side unions, intersections, and so forth.
+In order to be very fast but at the same time persistent, the whole
+dataset is taken in memory and from time to time and/or when a
+number of changes to the dataset are performed, it is written
+asynchronously to the disk.

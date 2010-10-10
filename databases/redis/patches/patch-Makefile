@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/10/10 15:50:06 dcoppa Exp $
+--- Makefile.orig	Fri Oct  8 14:23:50 2010
++++ Makefile	Fri Oct  8 14:24:24 2010
+@@ -89,10 +89,10 @@ dep:
+ 	$(CC) -MM *.c
+ 
+ staticsymbols:
+-	tclsh utils/build-static-symbols.tcl > staticsymbols.h
++	${TCL_BIN} utils/build-static-symbols.tcl > staticsymbols.h
+ 
+ test:
+-	tclsh8.5 tests/test_helper.tcl --tags "${TAGS}"
++	${TCL_BIN} tests/test_helper.tcl --tags "${TAGS}"
+ 
+ bench:
+ 	./redis-benchmark
