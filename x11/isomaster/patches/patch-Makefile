@@ -1,15 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.7 2010/01/25 09:00:03 giovanni Exp $
+$OpenBSD: patch-Makefile,v 1.8 2010/10/10 15:15:52 jasper Exp $
 --- Makefile.orig	Mon Jan  4 23:43:26 2010
-+++ Makefile	Wed Jan 20 19:34:35 2010
-@@ -67,7 +67,7 @@ all: translations isomaster.desktop isomaster
++++ Makefile	Sun Oct 10 17:15:26 2010
+@@ -67,12 +67,12 @@ all: translations isomaster.desktop isomaster
  
  isomaster: $(OBJECTS) lib iniparser
  	@echo 'Linking isomaster'
 -	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0` -o isomaster
-+	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -lcompat `pkg-config --libs gtk+-2.0` -o isomaster
++	$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -lcompat `pkg-config --libs gtk+-2.0` -o isomaster
  
  # static pattern rule
  $(OBJECTS): %.o: %.c %.h bk/bk.h Makefile
+ 	@echo 'Compiling' $<
+-	@$(CC) $< $(CFLAGS) $(CPPFLAGS) -c -o $@
++	$(CC) $< $(CFLAGS) $(CPPFLAGS) -c -o $@
+ 
+ lib:
+ 	cd bk && $(MAKE)
 @@ -113,10 +113,6 @@ endif
  	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
  	$(INSTALL) -d $(DESTDIR)$(DESKTOPPATH)
