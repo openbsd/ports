@@ -1,7 +1,15 @@
-$OpenBSD: patch-Makefile,v 1.8 2010/10/10 15:15:52 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.9 2010/10/10 15:24:41 jasper Exp $
 --- Makefile.orig	Mon Jan  4 23:43:26 2010
-+++ Makefile	Sun Oct 10 17:15:26 2010
-@@ -67,12 +67,12 @@ all: translations isomaster.desktop isomaster
++++ Makefile	Sun Oct 10 17:23:15 2010
+@@ -61,18 +61,20 @@ CPPFLAGS +=  -DICONPATH=\"$(ICONPATH)\" -DLOCALEDIR=\"
+ # the _FILE_OFFSET_BITS=64 is to enable stat() for large files on linuxish systems
+ CPPFLAGS += -D_FILE_OFFSET_BITS=64
+ 
++CPPFLAGS += -I${LOCALBASE}/include
++
+ OBJECTS = isomaster.o window.o browser.o fsbrowser.o isobrowser.o error.o about.o settings.o boot.o editfile.o
+ 
+ all: translations isomaster.desktop isomaster
  
  isomaster: $(OBJECTS) lib iniparser
  	@echo 'Linking isomaster'
@@ -16,7 +24,7 @@ $OpenBSD: patch-Makefile,v 1.8 2010/10/10 15:15:52 jasper Exp $
  
  lib:
  	cd bk && $(MAKE)
-@@ -113,10 +113,6 @@ endif
+@@ -113,10 +115,6 @@ endif
  	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
  	$(INSTALL) -d $(DESTDIR)$(DESKTOPPATH)
  	$(INSTALL) -m 644 isomaster.desktop $(DESTDIR)$(DESKTOPPATH)
