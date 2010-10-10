@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/10/10 17:39:06 steven Exp $
+@bin bin/${CONFIG}-gfortran
+@comment bin/gccbug
+@bin bin/gfortran
+@info info/gfortran.info
+@comment lib/gcc/${CONFIG}/${V}/finclude/
+lib/gcc/${CONFIG}/${V}/libgcc.a
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/${V}/
+libexec/gcc/${CONFIG}/${V}/cc1
+@comment @bin libexec/gcc/${CONFIG}/${V}/collect2
+@bin libexec/gcc/${CONFIG}/${V}/f951
+@man man/cat1/gfortran.0

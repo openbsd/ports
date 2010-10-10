@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-lib,v 1.1.1.1 2010/10/10 17:39:06 steven Exp $
+lib/gcc/
+lib/gcc/${CONFIG}/
+lib/gcc/${CONFIG}/${V}/
+lib/gcc/${CONFIG}/${V}/libgfortranbegin.a
+lib/gcc/${CONFIG}/${V}/libgfortranbegin.la
+lib/libgfortran.a
+lib/libgfortran.la
+%%SHARED%%
+%%PIC%%
