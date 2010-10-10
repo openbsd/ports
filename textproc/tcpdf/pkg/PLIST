@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/07/22 18:28:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/10 00:49:59 jolan Exp $
 tcpdf/
 tcpdf/2dbarcodes.php
 tcpdf/CHANGELOG.TXT
@@ -105,6 +105,8 @@ tcpdf/examples/example_058.php
 tcpdf/examples/example_059.php
 tcpdf/examples/example_060.php
 tcpdf/examples/example_061.php
+tcpdf/examples/example_062.php
+tcpdf/examples/example_063.php
 tcpdf/examples/index.php
 tcpdf/fonts/
 tcpdf/fonts/README.TXT
@@ -114,6 +116,7 @@ tcpdf/fonts/almohanad.ctg.z
 tcpdf/fonts/almohanad.php
 tcpdf/fonts/almohanad.z
 tcpdf/fonts/arialunicid0.php
+tcpdf/fonts/chinese.php
 tcpdf/fonts/courier.php
 tcpdf/fonts/dejavu-fonts-ttf-2.30/
 tcpdf/fonts/dejavu-fonts-ttf-2.30/AUTHORS
@@ -294,6 +297,7 @@ tcpdf/images/logo_example.gif
 tcpdf/images/logo_example.jpg
 tcpdf/images/logo_example.png
 tcpdf/images/pelican.ai
+tcpdf/images/tcpdf_cell.png
 tcpdf/images/tcpdf_logo.jpg
 tcpdf/images/tcpdf_signature.png
 tcpdf/images/testsvg.svg
