@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2010/10/10 16:02:45 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.0.2
