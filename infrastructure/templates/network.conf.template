@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.150 2010/09/29 15:29:21 jeremy Exp $
+# $OpenBSD: network.conf.template,v 1.151 2010/10/10 20:02:04 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -143,7 +143,7 @@ MASTER_SITE_GNOME+=	\
 MASTER_SITE_PERL_CPAN+=	\
 	http://mirror.sov.uk.goscomb.net/CPAN/modules/by-module/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
-	http://cpan.mirror.anlx.net/CPAN/modules/by-module/ \
+	http://cpan.mirror.anlx.net/modules/by-module/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
 	http://ftp.kddilabs.jp/lang/perl/CPAN/modules/by-module/ \
 	ftp://ftp.dnsbalance.ring.gr.jp/pub/lang/perl/CPAN/modules/by-module/ \
