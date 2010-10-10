@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/02 08:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/10 14:49:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,12 +23,12 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += cairo dbus-1 dbus-glib-1 expat fontconfig freetype anjuta
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnomecanvas-2 gobject-2.0 gthread-2.0
+WANTLIB += gmodule-2.0 gnomecanvas-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs unique-1.0 util xcb
 WANTLIB += xcb-render xcb-render-util xml2 z cdt graph gvc pathplan
 WANTLIB += gcrypt gda-4.0 gdl-1 gnome-keyring gpg-error ncurses
-WANTLIB += stdc++ vte xslt
+WANTLIB += stdc++ vte xslt glitz
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
@@ -44,6 +44,8 @@ MODGCONF2_SCHEMAS_DIR= anjuta
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-plugin-valgrind
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
