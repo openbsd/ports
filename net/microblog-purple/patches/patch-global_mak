@@ -1,0 +1,15 @@
+$OpenBSD: patch-global_mak,v 1.1 2010/10/10 15:12:50 jasper Exp $
+
+Don't forget to look in ${LOCALBASE}/include for headers.
+
+--- global.mak.orig	Sun Oct 10 17:11:20 2010
++++ global.mak	Sun Oct 10 17:11:31 2010
+@@ -92,7 +92,7 @@ PURPLE_CFLAGS = $(CFLAGS) -DPURPLE_PLUGINS -DENABLE_NL
+ PURPLE_CFLAGS += $(shell pkg-config --cflags purple)
+ PURPLE_CFLAGS += $(shell pkg-config --cflags pidgin)
+ #PURPLE_CFLAGS += -Wall -pthread -I. -g -O2 -pipe -fPIC -DPIC 
+-PURPLE_CFLAGS += -Wall -pthread -I. -g -pipe -fPIC -DPIC
++PURPLE_CFLAGS += -Wall -pthread -I. -g -pipe -fPIC -DPIC -I${LOCALBASE}/include
+ PLUGIN_SUFFIX := .so
+ EXE_SUFFIX := 
+ 
