@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/30 08:30:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:04 jasper Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	3
+REVISION =	4
 CATEGORIES =	www x11
 
 # WTFPL
@@ -24,7 +24,7 @@ LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/30 07:41:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:04 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		3.32.0
+REVISION=	0
 API_VERSION=		3.14
 
 PKGNAME=		gtkhtml3-${VERSION}
@@ -27,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gailutil gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-render-util z

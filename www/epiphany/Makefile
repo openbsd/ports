@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/09/15 19:16:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/11 08:19:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.30.6
+REVISION=	0
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 API_V=		2.29
@@ -32,7 +33,7 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c
 WANTLIB += cairo dbus-1 dbus-glib-1 eggdbus-1 enchant expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-keyring gnutls gobject-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gstapp-0.10 gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icudata icui18n
 WANTLIB += icuuc jpeg m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0

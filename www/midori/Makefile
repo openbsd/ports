@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/20 08:24:44 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:04 jasper Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.2.8
 XFCE_GOODIE =	midori
+REVISION=	0
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 CATEGORIES =	www
@@ -35,7 +36,7 @@ BUILD_DEPENDS =	::textproc/py-docutils \
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sqlite3 z \
 		dbus-1 dbus-glib-1 cairo pixman-1 png pthread-stubs xcb xml2 \

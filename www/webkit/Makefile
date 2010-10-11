@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/28 21:20:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:04 jasper Exp $
 
 COMMENT =	open source web browser engine
 
 DISTNAME =	webkit-1.2.4
 EPOCH =		0
+REVISION=	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -53,7 +54,7 @@ RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-ffmpeg \
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
-		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 \
+		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 gmodule-2.0 \
 		gnutls gobject-2.0 gpg-error gthread-2.0 intl jpeg m \
 		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 gailutil \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \

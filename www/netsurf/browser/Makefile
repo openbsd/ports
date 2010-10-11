@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/30 19:45:04 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:04 jasper Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	2.6
+REVISION=	0
 
 CATEGORIES=		www
 
@@ -22,7 +23,7 @@ LIB_DEPENDS =		hubbub::www/netsurf/hubbub \
 			rsvg-2::x11/gnome/librsvg \
 			curl::net/curl
 
-WANTLIB +=		atk-1.0 cairo gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB +=		atk-1.0 cairo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB +=		gthread-2.0 jpeg lcms pango-1.0 pangocairo-1.0
 WANTLIB +=		pangoft2-1.0 parserutils png wapcaplet xml2
 WANTLIB += 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

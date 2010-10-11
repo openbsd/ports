@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/02 08:31:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/11 08:19:03 jasper Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.32.0
 
-REVISION=		0
+REVISION=		1
 
 # sync with www/epiphany
 API_V=		2.29
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
 WANTLIB += enchant expat fontconfig freetype gailutil gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gstapp-0.10 gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0

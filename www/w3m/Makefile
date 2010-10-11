@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2010/10/11 08:19:04 jasper Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.2
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-imagelib=gtk2
 DOCS+=		README.img
 WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
+		gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png Xcomposite Xdamage gio-2.0 pixman-1 \
 		pthread-stubs xcb gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
 .else

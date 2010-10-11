@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/11 08:19:03 jasper Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
 DISTNAME=	bluefish-1.0.7
-REVISION=	6
+REVISION=	7
 CATEGORIES=	www
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
@@ -19,7 +19,7 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
 WANTLIB += expat fontconfig freetype gconf-2 gio-2.0 glib-2.0 gdk_pixbuf-2.0
-WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
+WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs xcb xml2 z
 

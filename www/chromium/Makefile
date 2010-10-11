@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/28 07:02:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:03 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-5.0.359.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES =		www
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xss
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2

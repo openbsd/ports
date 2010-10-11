@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/31 08:15:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/11 08:19:03 jasper Exp $
 
 COMMENT=	CSS editor
 
 DISTNAME=	cssed-0.4.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	www editors
 
 HOMEPAGE=	http://cssed.sourceforge.net/
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cssed/}
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb z vte xml2
 WANTLIB += xcb-render xcb-render-util
