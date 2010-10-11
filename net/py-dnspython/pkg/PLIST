@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/08/28 13:35:17 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/11 14:59:17 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.pyc
@@ -6,6 +6,10 @@ lib/python${MODPY_VERSION}/site-packages/dns/dnssec.py
 lib/python${MODPY_VERSION}/site-packages/dns/dnssec.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/e164.py
 lib/python${MODPY_VERSION}/site-packages/dns/e164.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/edns.py
+lib/python${MODPY_VERSION}/site-packages/dns/edns.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/entropy.py
+lib/python${MODPY_VERSION}/site-packages/dns/entropy.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/exception.py
 lib/python${MODPY_VERSION}/site-packages/dns/exception.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/flags.py
@@ -46,6 +50,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/CERT.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/CERT.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/CNAME.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/CNAME.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DLV.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DLV.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DNAME.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DNAME.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DNSKEY.py
@@ -56,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/GPOS.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/GPOS.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/HINFO.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/HINFO.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/HIP.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/HIP.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/ISDN.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/ISDN.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/KEY.py
@@ -68,6 +76,10 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NS.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NS.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3PARAM.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3PARAM.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NXT.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NXT.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/PTR.py
@@ -121,6 +133,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/dsbase.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/dsbase.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/keybase.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/keybase.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/mxbase.py
