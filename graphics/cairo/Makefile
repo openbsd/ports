@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/02 08:21:14 eric Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/11 08:09:44 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.8.10
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		cairo   9.3
+DISTNAME=		cairo-1.10.0
+SHARED_LIBS=		cairo 10.0
+SHARED_LIBS+=		cairo-trace 0.0
+SHARED_LIBS+=		cairo-gobject 0.0
+SHARED_LIBS+=		cairo-script-interpreter 0.0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/introduction
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-WANTLIB=		X11 Xau Xdmcp Xrender expat fontconfig freetype m \
-			pixman-1.>=12.0 pthread-stubs xcb xcb-render \
-			xcb-render-util z
+WANTLIB=		GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender \
+			Xxf86vm drm expat fontconfig freetype glib-2.0 \
+			gobject-2.0 gthread-2.0 m pcre pixman-1 png \
+			pthread-stubs xcb xcb-render xcb-shm z
 
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,18 +26,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://cairographics.org/releases/
 
+MODULES=		devel/gettext
+
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		png::graphics/png \
-			glitz.>=2:glitz->=0.5.6:graphics/glitz
+LIB_DEPENDS=		::graphics/png \
+			::devel/glib2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-glitz \
-			--enable-pdf \
-			--enable-ps \
-			--enable-xcb
+CONFIGURE_ENV=		PTHREAD_LIBS="-pthread"
+CONFIGURE_ARGS=		--enable-gl \
+			--enable-xml \
+			--enable-xcb \
+			--enable-xlib-xcb \
+			--disable-silent-rules
+
 
 REGRESS_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 
