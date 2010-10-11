@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/07/06 23:16:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/10/11 13:38:11 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -109,6 +109,9 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/file.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/folder.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/grip.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/admin-permissions-TICKET_ADMIN.png
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/admin-permissions.png
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/admin.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/basic-workflow.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/guide/original-workflow.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/ics.png

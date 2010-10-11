@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/11 13:38:11 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=0.12
+MODPY_EGG_VERSION=0.12.1
 DISTNAME=	Trac-${MODPY_EGG_VERSION}
 PKGNAME=	trac-${MODPY_EGG_VERSION}
-REVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
