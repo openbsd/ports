@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/09/29 07:42:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/11 08:11:17 jasper Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp ffi
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 notify c cairo
 WANTLIB += dbus-1 dbus-glib-1 expat fontconfig gnutls freetype gcrypt
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gmime-2.4 glib-2.0 glitz
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gmime-2.4 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring avahi-glib gpod gobject-2.0
 WANTLIB += gpg-error gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10   gthread-2.0 gtk-x11-2.0 m

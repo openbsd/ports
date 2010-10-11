@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/06 17:07:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/11 08:11:16 jasper Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-0.99.14
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xcomposite Xdamage c cairo expat fontconfig freetype m pthread
-WANTLIB += pthread-stubs xcb z xml2 glitz png glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += pthread-stubs xcb z xml2 png glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0 pixman-1
 WANTLIB += gio-2.0 id3tag gpod gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 curl
 WANTLIB += glade-2.0 mp4v2 xcb-render xcb-render-util

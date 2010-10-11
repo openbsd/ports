@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/08/23 18:13:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/11 08:11:17 jasper Exp $
 
 COMMENT-main=		extended module player
 COMMENT-audacious=	extended module player plugin for Audacious
@@ -10,6 +10,9 @@ PKGNAME-audacious=	audacious-${DISTNAME}
 PKGNAME-bmp=		bmp-${DISTNAME}
 PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
+
+REVISION-bmp=	0
+REVISION-audicious=	0
 
 HOMEPAGE=		http://xmp.sourceforge.net/
 
@@ -37,7 +40,7 @@ LIB_DEPENDS-audacious=	::audio/audacious \
 			::x11/gtk+2
 WANTLIB-audacious=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1 \
-			expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
+			expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 gthread-2.0 iconv intl m mcs mowgli pixman-1 \
 			png pthread-stubs samplerate xcb xcb-render xcb-render-util \
 			z audclient.>=1 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
@@ -48,7 +51,7 @@ LIB_DEPENDS-bmp=	::audio/bmp \
 			::x11/gtk+2
 WANTLIB-bmp=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-			freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+			freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 			gthread-2.0 iconv intl m pixman-1 png pthread-stubs \
 			xcb xcb-render xcb-render-util z beep.>=2 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 \

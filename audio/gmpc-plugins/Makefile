@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/11 08:11:16 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,9 +8,9 @@ COMMENT-wikipedia =	wikipedia plugin for gmpc
 VERSION =	0.20.0
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-wikipedia =	1
+REVISION-wikipedia =	2
 
 CATEGORIES =	audio
 
@@ -54,7 +54,7 @@ WANTLIB-wikipedia =	${WANTLIB} ICE SM Xt enchant gcrypt gnutls gpg-error \
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m mpd pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sqlite3 stdc++ xml2 z

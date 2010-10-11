@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/11 08:11:16 jasper Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.9.0
-REVISION=		4
+REVISION=		5
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat
-WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread usb z
 WANTLIB += pthread-stubs xcb id3tag njb tag_c mtp dbus-glib-1

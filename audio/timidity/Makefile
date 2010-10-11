@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2010/08/27 00:52:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/11 08:11:17 jasper Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.13.2
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	::x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gio-2.0 gmodule-2.0 gobject-2.0 \
+		glib-2.0 gio-2.0 gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 gthread-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
 		xcb-render xcb-render-util z

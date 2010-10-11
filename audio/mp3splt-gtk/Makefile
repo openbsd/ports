@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/07 18:40:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/11 08:11:17 jasper Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	audio
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
-WANTLIB += glitz m pixman-1 pthread pthread-stubs xcb z
+WANTLIB += m pixman-1 pthread pthread-stubs xcb z
 WANTLIB += xcb-render xcb-render-util mp3splt atk-1.0 cairo png
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gio-2.0 gthread-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 xml2

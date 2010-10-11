@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/11 08:11:17 jasper Exp $
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
@@ -34,7 +34,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	::x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gthread-2.0 pthread xcb-render
 WANTLIB += xcb-render-util gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0
