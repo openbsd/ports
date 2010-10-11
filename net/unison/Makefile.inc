@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2010/10/11 08:16:52 jasper Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -29,7 +29,7 @@ MAKE_FLAGS=	UISTYLE=gtk2
 USE_X11=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender expat fontconfig freetype pixman-1 pthread-stubs
-WANTLIB += atk-1.0 iconv intl cairo glitz png xcb z
+WANTLIB += atk-1.0 iconv intl cairo png xcb z
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 .endif

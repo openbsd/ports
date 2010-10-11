@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/09/30 07:39:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/11 08:19:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.32.0
+REVISION=	0
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -21,7 +22,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
+WANTLIB += gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 kvm ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render xcb-render-util

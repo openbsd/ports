@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/30 09:26:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=	universal search and navigation for GNOME
 
 GNOME_PROJECT=	deskbar-applet
 GNOME_VERSION=	2.32.0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -19,7 +20,7 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
 WANTLIB += cairo com_err crypto dbus-1 dbus-glib-1 execinfo expat
 WANTLIB += fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
 WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread-stubs smime3 soup-2.4 sqlite3

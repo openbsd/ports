@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2010/09/29 11:30:03 landry Exp $
+# $OpenBSD: Makefile,v 1.102 2010/10/11 08:19:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	9
+REVISION-main=	10
 REVISION-jack=	1
 REVISION-web=	3
 CATEGORIES=	x11
@@ -64,7 +64,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		Xrandr Xrender Xv Xxf86vm a52 atk-1.0 avcodec avformat \
 		avutil bz2 c cairo cddb dbus-1 dbus-glib-1 dca dvbpsi \
 		dvdnav dvdread ebml expat faac faad fontconfig freetype \
-		fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gsm gthread-2.0 gtk-x11-2.0 \
 		jpeg m mad matroska mp3lame mpcdec mpeg2 notify orc-0.4 \
 		ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \

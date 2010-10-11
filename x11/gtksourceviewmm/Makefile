@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/19 22:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	C++ wrapper for gtksourceview
 
 GNOME_PROJECT=	gtksourceviewmm
 GNOME_VERSION=	2.10.1
+REVISION=	0
 
 SHARED_LIBS +=	gtksourceviewmm-2.0    1.0      # .3.0
 
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairomm-1.0
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread-stubs
 WANTLIB += sigc-2.0 xcb xcb-render xcb-render-util xml2 z stdc++

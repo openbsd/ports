@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:57 jasper Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 DISTNAME=	AfterStep-2.2.9
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 CATEGORIES=     x11
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs tiff xcb z dbus-1 rsvg-2
 

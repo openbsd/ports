@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 12:16:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=		time tracker applet for GNOME
 
 GNOME_PROJECT=		hamster-applet
 GNOME_VERSION=		2.32.0
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb z gthread-2.0 xcb-render
 WANTLIB += xcb-render-util

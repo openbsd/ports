@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/30 13:15:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:19 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		2.32.0.0
+REVISION=	0
 
 SHARED_LIBS +=  anjuta-foocanvas     0.0      # 0.0
 SHARED_LIBS +=  anjuta               0.0      # 0.0
@@ -31,7 +32,7 @@ WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt apr-1
 WANTLIB += aprutil-1 asn1 atk-1.0 c cairo crypto db dbus-1 dbus-glib-1
 WANTLIB += devhelp-2 enchant execinfo expat fontconfig freetype
 WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icui18n
 WANTLIB += jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0 gdl-1

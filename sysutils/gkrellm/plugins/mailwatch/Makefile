@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/27 21:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/11 08:18:07 jasper Exp $
 
 COMMENT=	GkrellM2 plugin to monitor multiple mailboxes
 
 V=		2.4.3
 DISTNAME=	gkrellm-mailwatch-${V}
-PKGNAME=	gkrellmmailwatch-${V}p4
+PKGNAME=	gkrellmmailwatch-${V}
+REVISION=	5
 CATEGORIES=	mail
 
 HOMEPAGE=	http://gkrellm.luon.net/mailwatch.phtml

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/01 12:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.4
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		x11
 
@@ -23,7 +23,7 @@ WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat exslt fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gnomeui-2
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl util

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/11 08:12:30 jasper Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,9 +11,9 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p13
-PKGNAME-swt=		swt-${ECLIPSE_VER}p1
-PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p2
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p14
+PKGNAME-swt=		swt-${ECLIPSE_VER}p2
+PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p3
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p3
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
@@ -76,7 +76,7 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xcomposite Xdamage gdk_pixbuf-2.0 \
 			Xrandr Xrender c expat m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 glitz png iconv intl \
+			gobject-2.0 png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
 			pixman-1 gio-2.0 pthread-stubs xcb
 

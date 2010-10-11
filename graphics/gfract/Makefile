@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/30 07:26:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
-REVISION=		6
+REVISION=		7
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
@@ -21,7 +21,7 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs stdc++ xcb z gdk_pixbuf-2.0
 

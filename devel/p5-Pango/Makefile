@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:12:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the Pango libraries
 
 DISTNAME=	Pango-1.221
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 devel
 CPAN_AUTHOR=	TSCH
 
@@ -21,7 +21,7 @@ MODULES=	cpan \
 LIB_DEPENDS=	pangocairo-1.0,pango-1.0,pangoft2-1.0::devel/pango
 
 WANTLIB=	X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 glitz m pixman-1 png \
+		glib-2.0 gmodule-2.0 gobject-2.0 m pixman-1 png \
 		pthread-stubs xcb z xcb-render xcb-render-util
 
 RUN_DEPENDS=	::devel/p5-Glib2 \

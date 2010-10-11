@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/11 08:13:01 jasper Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
-REVISION=		3
+REVISION=		4
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -41,7 +41,7 @@ LIB_DEPENDS+=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 			gio-2.0,gmodule-2.0,gobject-2.0::devel/glib2
 CONFIGURE_ARGS+=	--with-gtk2
 WANTLIB+=		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
-			Xrender atk-1.0 cairo expat fontconfig freetype glitz \
+			Xrender atk-1.0 cairo expat fontconfig freetype \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 			gdk_pixbuf-2.0
 .else

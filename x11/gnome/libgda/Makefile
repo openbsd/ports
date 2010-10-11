@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 13:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:20 jasper Exp $
 
 #
 # XXX:
@@ -24,7 +24,7 @@ GNOME_VERSION=		4.2.0
 GDA_MAJOR=		4.0
 
 REVISION-main=		0
-REVISION-ui=		0
+REVISION-ui=		1
 REVISION-ldap=		0
 REVISION-mdb=		0
 REVISION-mysql= 	0
@@ -121,7 +121,7 @@ WANTLIB-ui += ${WANTLIB} c gcrypt gpg-error pthread gda-${GDA_MAJOR}
 WANTLIB-ui += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1
 WANTLIB-ui += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-ui += glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-ui += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-ui += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB-ui += gnome-keyring goocanvas graph gtksourceview-2.0
 WANTLIB-ui += gvc ltdl pathplan unique-1.0 cdt gpg-error unique-1.0

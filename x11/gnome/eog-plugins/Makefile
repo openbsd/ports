@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/01 08:09:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.1
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 
@@ -21,7 +21,7 @@ WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp gdata
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 gnutls
 WANTLIB += cairo clutter-glx-1.0 clutter-gtk-0.10 dbus-1
 WANTLIB += drm exif expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z gnome-keyring proxy

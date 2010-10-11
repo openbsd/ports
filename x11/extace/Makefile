@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
 DISTNAME=	extace-1.9.9
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11 audio
 
 HOMEPAGE=	http://extace.sourceforge.net/
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=extace/}
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes fftw3
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 audiofile c cairo esd
-WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread sndio z
 WANTLIB += pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0

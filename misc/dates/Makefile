@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/01 10:07:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/11 08:15:46 jasper Exp $
 
 BROKEN=			needs to stop using deprecated functions from e-d-s
 
 COMMENT=		lightweight calendar
 
 DISTNAME=		dates-0.4.8
-PKGNAME=		${DISTNAME}p1
+REVISION=		2
 
 CATEGORIES=		misc x11
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://pimlico-project.org/sources/dates/
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gconf-2 gcrypt
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
 WANTLIB += ical icalss icalvcal m nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs

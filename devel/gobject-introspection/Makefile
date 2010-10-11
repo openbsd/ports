@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/07 11:39:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/11 08:12:30 jasper Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -8,7 +8,7 @@ COMMENT=		GObject Introspection
 GNOME_VERSION=		0.6.14
 GNOME_PROJECT=		gobject-introspection
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -32,7 +32,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-WANTLIB += X11 Xau Xdmcp Xrender c expat fontconfig freetype glitz
+WANTLIB += X11 Xau Xdmcp Xrender c expat fontconfig freetype
 WANTLIB += m pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-render-util z gio-2.0 glib-2.0 gmodule-2.0 ffi
 WANTLIB += gobject-2.0 gthread-2.0 cairo

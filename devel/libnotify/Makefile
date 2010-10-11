@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/25 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/11 08:12:31 jasper Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
 DISTNAME=		libnotify-0.4.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 SHARED_LIBS +=	notify             2.3      # .2.3
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender Xcomposite Xdamage atk-1.0 c cairo expat pcre \
-		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
+		gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		fontconfig freetype glib-2.0 pangoft2-1.0 png pixman-1 \
 		pthread z gio-2.0 pthread-stubs xcb gthread-2.0 xcb-render \
 		xcb-render-util dbus-1 dbus-glib-1 gdk_pixbuf-2.0 \

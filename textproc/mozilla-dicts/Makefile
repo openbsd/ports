@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/11 08:18:29 jasper Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 V=		1.2
 NAME=		mozilla-dicts
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	textproc
 

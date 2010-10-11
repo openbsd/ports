@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-0.1.16.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	gmodule-2.0 X11 Xext Xrender gobject-2.0 glitz png \
+WANTLIB=	gmodule-2.0 X11 Xext Xrender gobject-2.0 png \
 		atk-1.0 fontconfig freetype m c z cairo glib-2.0 pcre \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 Xau Xcursor \
 		Xdmcp Xfixes Xi Xinerama Xrandr exif expat ltdl usb \

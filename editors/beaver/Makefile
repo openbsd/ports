@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/11 08:12:44 jasper Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -6,7 +6,7 @@ DISTNAME=	beaver0_3_0_1
 PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors	
 
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://www.nongnu.org/beaver/
 # XXX should use ${MASTER_SITE_SAVANNAH:=beaver/} but % in the
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
+		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		pthread-stubs xcb z gdk_pixbuf-2.0
 

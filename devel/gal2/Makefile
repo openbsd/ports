@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/11 08:12:30 jasper Exp $
 
 COMMENT=		GNOME Application Libs
 
 VERSION=		2.5.3
 API_VERSION=		2.6
 DISTNAME=		gal-${VERSION}
-PKGNAME=		gal2-${VERSION}p5
+PKGNAME=		gal2-${VERSION}
+REVISION=		6
 
 SHARED_LIBS +=	gal-a11y-2.4         1.0      # .1.0
 SHARED_LIBS +=	gal-2.4              1.0      # .1.0
@@ -26,7 +27,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
 WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z

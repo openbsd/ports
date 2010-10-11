@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/02 07:40:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/11 08:15:54 jasper Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -13,7 +13,7 @@ PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main =		1
+REVISION-main =		2
 EPOCH-main =		0
 REVISION-caca =		0
 
@@ -45,7 +45,7 @@ WANTLIB-main =		${WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
 			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
-			fontconfig freetype glitz ogg pixman-1 png \
+			fontconfig freetype ogg pixman-1 png \
 			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1 \
 			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \

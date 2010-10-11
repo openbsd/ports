@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/26 18:55:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/11 08:12:44 jasper Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,7 +8,7 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		6
+REVISION-main=		7
 REVISION-el=		1
 
 CATEGORIES=		editors
@@ -63,7 +63,7 @@ LIB_DEPENDS-main+=	::x11/gtk+2 \
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
-			glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv intl \
+			glib-2.0 gmodule-2.0 gobject-2.0 iconv intl \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 			z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
 			jpeg png ungif tiff gthread-2.0 pthread-stubs xcb \

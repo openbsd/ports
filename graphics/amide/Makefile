@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -20,7 +20,7 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ssl stdc++ util xml2 z
 WANTLIB += avahi-client avahi-common avahi-glib

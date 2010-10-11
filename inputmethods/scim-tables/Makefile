@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/24 11:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:15:02 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	inputmethods chinese japanese korean
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++ z \
 		gio-2.0 pthread-stubs xcb gtk-x11-2.0 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2010/09/30 09:17:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.30.2
 
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +17,7 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2
 WANTLIB += c cairo dbus-1 dbus-glib-1 execinfo expat fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xml2 z rarian

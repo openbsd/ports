@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/09/11 09:09:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/11 08:15:27 jasper Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 
 DISTNAME=		mail-notification-5.4
-REVISION=		15
+REVISION=		16
 
 CATEGORIES=		mail
 
@@ -22,7 +22,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo crypto
 WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gailutil
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
+WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread
 WANTLIB += pthread-stubs ssl xcb xcb-render xcb-render-util xml2

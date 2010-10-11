@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/30 11:40:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.4
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -19,7 +19,7 @@ WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation cairo crypto
 WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gailutil
 WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread-stubs ssl util xcb xml2
 WANTLIB += gcrypt gpg-error xcb-render xcb-render-util z

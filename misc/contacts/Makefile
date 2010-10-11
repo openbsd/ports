@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/03 14:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/11 08:15:46 jasper Exp $
 
 COMMENT=		lightweight addressbook
 
 GNOME_PROJECT=		contacts
 GNOME_VERSION=		0.12
+REVISION=		0
 
 CATEGORIES=		misc
 
@@ -19,7 +20,7 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
 WANTLIB += com_err crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 nss3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs smime3 soup-2.4 sqlite3 ssl3

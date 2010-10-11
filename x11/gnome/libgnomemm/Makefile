@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/30 13:00:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
 GNOME_VERSION=		2.30.0
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnomemm-2.6	1.0      # .1.5
 
@@ -22,7 +22,7 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 bonobo-2 canberra ltdl ogg pthread stdc++ vorbis
 WANTLIB += bonobo-activation cairo cairomm-1.0 crypto dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += sigc-2.0 ssl util xml2 z

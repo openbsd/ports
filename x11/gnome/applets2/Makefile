@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2010/10/02 09:25:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -9,8 +9,8 @@ GNOME_VERSION=		2.32.0
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
 
-REVISION-main=		1
-REVISION-battstat=	0
+REVISION-main=		2
+REVISION-battstat=	1
 
 CATEGORIES=		x11
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig notify freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z xcb-render
 WANTLIB += xcb-render-util panel-applet-3

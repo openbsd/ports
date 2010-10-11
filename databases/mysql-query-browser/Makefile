@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/11 08:12:04 jasper Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
 PKGNAME=	mysql-query-browser-1.2.12
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	databases
 
@@ -24,7 +24,7 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2
 WANTLIB += bonobo-activation c cairo cairomm-1.0 crypto dbus-1
 WANTLIB += expat fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
 WANTLIB += png popt pthread pthread-stubs sigc-2.0 ssl stdc++

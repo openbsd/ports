@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/11 17:10:40 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/11 08:15:27 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	pdf and ps viewer plugin for Claws Mail
 
 VERSION=	0.9.1
 DISTNAME=	pdf_viewer-${VERSION}
-PKGNAME=	claws-mail-pdfviewer-${VERSION}p6
+PKGNAME=	claws-mail-pdfviewer-${VERSION}
+REVISION=	7
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
@@ -36,7 +37,7 @@ LIB_DEPENDS=	poppler.>=3,poppler-glib.>=3::print/poppler
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 jpeg m pango-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += xcb xml2 z lcms gthread-2.0 openjpeg xcb-render xcb-render-util
 

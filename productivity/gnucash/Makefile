@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/06 17:29:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/11 08:17:46 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
 DOC_VERSION = 	2.2.0
 
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -34,7 +34,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 bz2
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 enchant expat fontconfig
 WANTLIB += freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glade-2.0 glib-2.0 glitz gmodule-2.0 gmp gnome-2 gnome-keyring
+WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gmp gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gsf-1 gthread-2.0
 WANTLIB += gtk-x11-2.0 ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl stdc++

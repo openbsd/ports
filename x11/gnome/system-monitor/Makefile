@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/30 07:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	2.28.2
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -17,7 +18,7 @@ WANTLIB += ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += c cairo cairomm-1.0 croco-0.6 dbus-1 dbus-glib-1
 WANTLIB += execinfo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 kvm m pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util

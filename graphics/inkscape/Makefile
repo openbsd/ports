@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/05 08:57:47 armani Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.0
+REVISION=	0
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender aspell atk-1.0 c cairo \
 		cairomm-1.0 expat fontconfig freetype glib-2.0 glibmm-2.4 \
-		glitz gmodule-2.0 gobject-2.0 gsl gslcblas gthread-2.0 m \
+		gmodule-2.0 gobject-2.0 gsl gslcblas gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 		sigc-2.0 stdc++ xml2 z gio-2.0 giomm-2.4 \
 		pthread-stubs xcb gc.>=3 popt MagickCore Magick++ \

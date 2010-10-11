@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/11 08:15:27 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,11 +10,11 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.6
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 FULLPKGNAME-docs=	claws-mail-docs-${V}
 FULLPKGPATH-docs=	mail/claws-mail,-docs
-PKGNAME-bogofilter=	claws-mail-bogofilter-${V}p0
-PKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
+PKGNAME-bogofilter=	claws-mail-bogofilter-${V}p1
+PKGNAME-spamassassin=	claws-mail-spamassassin-${V}p1
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -46,7 +46,7 @@ RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
-			expat fontconfig freetype gio-2.0 glib-2.0 glitz \
+			expat fontconfig freetype gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
 			gcrypt gpg-error xcb z gdk_pixbuf-2.0

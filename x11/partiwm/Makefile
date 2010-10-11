@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/07 13:54:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://partiwm.googlecode.com/
@@ -23,7 +23,7 @@ MODULES=	devel/gettext \
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	GTK+2 based xmessage(1) clone
 
 DISTNAME=	gxmessage-2.12.4
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -18,7 +19,7 @@ MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gtk-x11-2.0 gdk_pixbuf-2.0
 

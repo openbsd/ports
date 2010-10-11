@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/13 07:24:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/11 08:19:57 jasper Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=	awn                  0.0      # .0.1
 
@@ -32,7 +32,7 @@ WANTLIB += Xrender atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-activation bonobo-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnome-2 wnck-1 gnome-desktop-2
+WANTLIB += gmodule-2.0 gnome-2 wnck-1 gnome-desktop-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png popt pthread ssl startup-notification-1 util xml2

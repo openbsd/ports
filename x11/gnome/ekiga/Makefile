@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/09/26 11:21:55 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net multimedia
 
@@ -22,7 +22,7 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender opal
 WANTLIB += Xv asn1 atk-1.0 c cairo xcb-render xcb-render-util
 WANTLIB += com_err crypto dbus-1 dbus-glib-1 expat fontconfig notify
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 sigc-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 lber ldap ldap_r SDL
 WANTLIB += m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pt pthread pthread-stubs

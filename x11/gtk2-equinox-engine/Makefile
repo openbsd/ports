@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/01 07:12:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/11 08:19:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Equinox GTK+2 engine
 V=		1.20
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0

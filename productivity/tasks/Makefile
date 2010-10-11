@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/30 18:48:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/11 08:17:46 jasper Exp $
 
 COMMENT=		lightweight tasklist
 
 DISTNAME=		tasks-0.16
-PKGNAME=		${DISTNAME}p1
+REVISION=		2
 
 CATEGORIES=		productivity x11
 
@@ -20,7 +20,7 @@ MASTER_SITES=		http://pimlico-project.org/sources/tasks/
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 ical icalss icalvcal
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs soup-2.4 xcb xcb-render xcb-render-util

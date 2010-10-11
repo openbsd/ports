@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2010/10/11 08:14:01 jasper Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -6,9 +6,12 @@ COMMENT-share=	shared data files for Freeciv
 
 VERSION=	2.1.4
 DISTNAME=	freeciv-${VERSION}
-PKGNAME-main=	freeciv-server-${VERSION}p1
-PKGNAME-client=	freeciv-client-${VERSION}p6
-PKGNAME-share=	freeciv-share-${VERSION}p1
+PKGNAME-main=	freeciv-server-${VERSION}
+PKGNAME-client=	freeciv-client-${VERSION}
+PKGNAME-share=	freeciv-share-${VERSION}
+REVISION-main=	1
+REVISION-client=	7
+REVISION-share=	1
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
@@ -51,7 +54,7 @@ RUN_DEPENDS-share=
 WANTLIB-client=	${WANTLIB} \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		Xrandr X11 Xext Xrender atk-1.0 cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		pthread-stubs xcb gdk_pixbuf-2.0
 LIB_DEPENDS-client=${LIB_DEPENDS} \

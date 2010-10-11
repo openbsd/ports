@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2010/08/18 13:33:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/11 08:19:59 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.9
+REVISION=	0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += xml2 z pthread-stubs xcb glade-2.0
 WANTLIB += gthread-2.0 pthread xcb-render xcb-render-util

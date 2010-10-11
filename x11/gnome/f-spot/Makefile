@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/01 12:16:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:19 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		personal photo management application for GNOME
 GNOME_VERSION=		0.8.0
 GNOME_PROJECT=		f-spot
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -26,7 +26,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 cairo
 WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -21,7 +21,7 @@ USE_BZIP2 = 	Yes
 
 WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c expat fontconfig freetype \
-		m pixman-1 z gio-2.0 atk-1.0 cairo glib-2.0 glitz curl \
+		m pixman-1 z gio-2.0 atk-1.0 cairo glib-2.0 curl \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 gmodule-2.0 png \
 		gobject-2.0 pthread-stubs xcb gthread-2.0 pthread \
 		xcb-render xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/11 08:11:40 jasper Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,7 +6,7 @@ CATEGORIES =		cad
 HOMEPAGE =		http://geda.seul.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 USE_LIBTOOL =		Yes
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-			expat fontconfig freetype glitz iconv intl ltdl m \
+			expat fontconfig freetype iconv intl ltdl m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 			png pthread pthread-stubs xcb xcb-render \
 			xcb-render-util z gdk_pixbuf-2.0

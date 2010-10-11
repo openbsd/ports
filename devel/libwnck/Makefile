@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2010/09/27 12:18:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/11 08:12:31 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		2.30.5
+REVISION=	0
 
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
 
@@ -21,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += execinfo expat fontconfig freetype gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util z
 WANTLIB += gthread-2.0 pthread gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0

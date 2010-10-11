@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/30 07:47:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/11 08:19:21 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		2.32.0
+REVISION=	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util z
 WANTLIB += gthread-2.0 notify dbus-glib-1

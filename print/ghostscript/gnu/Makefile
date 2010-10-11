@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2010/08/19 08:19:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2010/10/11 08:17:16 jasper Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-REVISION=	14
+REVISION=	15
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -119,7 +119,7 @@ MODULES+=	devel/gettext
 WANTLIB+=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
 WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
 WANTLIB+=	gdk-x11-2.0.>=1000 gdk_pixbuf-2.0.>=1000 gio-2.0 glib-2.0
-WANTLIB+=	glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0.>=1000
+WANTLIB+=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0.>=1000
 WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
 WANTLIB+=	xcb xcb-render xcb-render-util
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}

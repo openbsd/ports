@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/30 10:33:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.30.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -18,7 +19,7 @@ WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bonobo-2 bonobo-activation c cairo
 WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre wnck-1
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += vorbis vorbisfile xcb xcb-atom xcb-aux xcb-event xml2

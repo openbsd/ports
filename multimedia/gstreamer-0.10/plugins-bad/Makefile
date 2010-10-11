@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/09/30 07:44:47 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/11 08:15:54 jasper Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -10,7 +10,7 @@ DISTNAME =		gst-plugins-bad-${V}
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
-REVISION-main =		1
+REVISION-main =		2
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -36,7 +36,7 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			X11 Xau Xdmcp Xrender bz2 pthread-stubs \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
 			cairo croco-0.6 expat fontconfig freetype stdc++ \
-			gdk_pixbuf-2.0 gio-2.0 glitz gstinterfaces-0.10 \
+			gdk_pixbuf-2.0 gio-2.0 gstinterfaces-0.10 \
 			orc-0.4 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
 			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
 			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \

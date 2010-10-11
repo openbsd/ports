@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/11 08:18:07 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,10 @@ COMMENT-client=	single process stack of system monitors for GTK+2
 
 V=		2.3.4
 DISTNAME=	gkrellm-${V}
-PKGNAME-main=	gkrellm-server-${V}p1
-PKGNAME-client=	gkrellm-${V}p2
+PKGNAME-main=	gkrellm-server-${V}
+REVISION-main=	1
+PKGNAME-client=	gkrellm-${V}
+REVISION-client=3
 CATEGORIES=	sysutils sysutils/gkrellm
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -43,7 +45,7 @@ LIB_DEPENDS-client=	${LIB_DEPENDS} \
 WANTLIB-client += ${WANTLIB}
 WANTLIB-client += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB-client += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
-WANTLIB-client += expat fontconfig freetype glitz m pango-1.0 pangocairo-1.0
+WANTLIB-client += expat fontconfig freetype m pango-1.0 pangocairo-1.0
 WANTLIB-client += pangoft2-1.0 pixman-1 png pthread-stubs ssl xcb z
 WANTLIB-client += gio-2.0 gobject-2.0 gdk_pixbuf-2.0
 

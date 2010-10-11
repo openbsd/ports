@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/22 05:16:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/11 08:17:57 jasper Exp $
 
 COMMENT=	command line utility to run programs as root
 
 DISTNAME=	gksu-polkit-0.0.2
+REVISION=	0
 
 SHARED_LIBS +=  gksu-polkit               0.0 # 0.1
 
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext png
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c expat fontconfig glitz
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c expat fontconfig
 WANTLIB += freetype m pixman-1 pthread pthread-stubs xcb xcb-atom gee
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util z cairo pcre
 WANTLIB += dbus-1 dbus-glib-1 eggdbus-1 execinfo gdk-x11-2.0 atk-1.0 

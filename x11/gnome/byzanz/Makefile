@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/25 08:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:19 jasper Exp $
 
 COMMENT=		simple desktop recording tool
 
 GNOME_VERSION=		0.2.2
 GNOME_PROJECT=		byzanz
+REVISION=		0
 
 CATEGORIES=		multimedia
 
@@ -23,7 +24,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnomecanvas-2 gnomevfs-2 gobject-2.0
+WANTLIB += gmodule-2.0 gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util

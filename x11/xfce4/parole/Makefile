@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/27 12:58:42 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:37 jasper Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.2.0
 XFCE_GOODIE =	parole
-REVISION =	0
+REVISION =	1
 CATEGORIES +=	audio
 
 # GPLv2
@@ -43,7 +43,7 @@ RUN_DEPENDS +=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 execinfo expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 stdc++ xcb xcb-atom xcb-aux

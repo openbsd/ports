@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 06:45:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/11 08:16:51 jasper Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.5
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -21,7 +22,7 @@ WANTLIB +=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2
 WANTLIB +=		c cairo charset expat fontconfig freetype gd
 WANTLIB +=		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB +=		glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB +=		gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB +=		gtk-x11-2.0 iconv intl jpeg m magic pango-1.0
 WANTLIB +=		pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB +=		pthread pthread-stubs rsvg-2 stdc++ xcb

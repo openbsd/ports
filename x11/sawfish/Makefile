@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/09/29 17:07:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/11 08:19:59 jasper Exp $
 
 COMMENT=	extensible window manager
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 VERSION=	1.6.3
 DISTNAME=	sawfish-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/sawfish/
@@ -28,7 +28,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rep xcb z

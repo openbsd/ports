@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/09/06 18:29:22 nicm Exp $
+# $OpenBSD: Makefile,v 1.72 2010/10/11 08:16:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-finch=	2
 REVISION-libpurple= 1
 
@@ -47,7 +47,7 @@ WANTLIB=	c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
 WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo \
 		execinfo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
+		gio-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread-stubs stdc++ xcb-atom \
 		xcb-aux xcb-event xcb-render xcb-render-util xcb ${WANTLIB}
 

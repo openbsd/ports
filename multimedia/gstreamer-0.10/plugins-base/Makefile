@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/30 15:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/11 08:15:54 jasper Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -9,7 +9,7 @@ DISTNAME =		gst-plugins-base-${V}
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
-REVISION-main =		1
+REVISION-main =		2
 REVISION-cdda =		1
 
 MULTI_PACKAGES =	-main -cdda
@@ -44,7 +44,7 @@ WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
 			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10 \
 			pthread-stubs xcb expat fontconfig freetype ogg \
-			Xrender cairo gio-2.0 glitz pixman-1 png \
+			Xrender cairo gio-2.0 pixman-1 png \
 			xcb-render xcb-render-util vorbis vorbisenc pango-1.0 \
 			pangoft2-1.0 pangocairo-1.0 theoradec theoraenc \
 			vorbisidec orc-0.4 orc-test-0.4

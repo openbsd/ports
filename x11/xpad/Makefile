@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/11 08:19:59 jasper Exp $
 
 COMMENT=	virtual sticky pad system
 
 DISTNAME=	xpad-4.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
-WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png z pthread-stubs xcb
 WANTLIB += gthread-2.0 pthread xcb-render xcb-render-util

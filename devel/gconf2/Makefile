@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/30 07:32:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/11 08:12:30 jasper Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.32.0
+REVISION-main=	0
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
@@ -31,7 +32,7 @@ WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z
 WANTLIB-main += ${WANTLIB} gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB-main += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-main += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat
-WANTLIB-main += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB-main += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-main += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB-main += xcb xcb-render xcb-render-util z ORBit-2 xml2 dbus-glib-1

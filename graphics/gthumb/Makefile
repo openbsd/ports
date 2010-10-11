@@ -1,9 +1,10 @@
-#$OpenBSD: Makefile,v 1.33 2010/10/01 08:14:15 jasper Exp $
+#$OpenBSD: Makefile,v 1.34 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.12.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -21,7 +22,7 @@ WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo dbus-1 dbus-glib-1 drm expat fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sqlite3 tiff xcb xcb-render xcb-render-util

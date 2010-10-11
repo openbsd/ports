@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/27 12:58:43 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:37 jasper Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.1.2
 THUNAR_PLUGIN =	thunar-vcs-plugin
-REVISION =	4
+REVISION =	5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +28,7 @@ WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender apr-1 aprutil-1 asn1
 WANTLIB += atk-1.0 c cairo crypto db execinfo exo-0.3 expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gssapi gthread-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg krb5 m neon pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sasl2 sqlite3 ssl startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z xcb-render

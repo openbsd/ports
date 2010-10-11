@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2010/09/30 07:46:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/11 08:12:31 jasper Exp $
 
 COMMENT=		library for layout and rendering of text
 
 V=			1.28.3
 DISTNAME=		pango-${V}
+REVISION=	0
 
 SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
 SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
-		glitz m pcre pixman-1 png pthread pthread-stubs xcb \
+		m pcre pixman-1 png pthread pthread-stubs xcb \
 		xcb-render xcb-render-util z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}

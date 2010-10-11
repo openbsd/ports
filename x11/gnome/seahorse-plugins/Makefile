@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:20 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.30.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security
 
@@ -24,7 +24,7 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 eggdbus-1 expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gpgme
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/07 14:31:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -8,7 +8,7 @@ GNOME_VERSION=	0.8.17
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 PKGNAME=	tracker-search-${VERSION}
-REVISION=	2
+REVISION=	3
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -27,7 +27,7 @@ WANTLIB += c cairo camel-1.2 camel-provider-1.2 com_err crypto
 WANTLIB += dbus-1 dbus-glib-1 ebook-1.2 edataserver-1.2 edataserverui-1.2
 WANTLIB += enchant execinfo exif expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2
+WANTLIB += gio-2.0 glib-2.0 gmime-2.4 gmodule-2.0 gnome-2
 WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
 WANTLIB += gnutls gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14

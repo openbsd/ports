@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/30 17:53:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/11 08:14:08 jasper Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.2.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	0
+REVISION =	2
 
 CATEGORIES =	geo x11
 
@@ -37,7 +37,7 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 expat fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
+WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z Xxf86vm drm

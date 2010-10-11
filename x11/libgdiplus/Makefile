@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/24 09:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-2.6.7
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	x11 devel
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xrender cairo expat fontconfig freetype
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 jpeg m pcre
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 jpeg m pcre
 WANTLIB += pixman-1 png pthread-stubs xcb z exif ungif
 WANTLIB += gthread-2.0 xcb-render xcb-render-util pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 tiff

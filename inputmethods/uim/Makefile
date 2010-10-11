@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/30 07:28:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/11 08:15:02 jasper Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -20,10 +20,10 @@ PKGNAME-kde=	uim-kde-$V
 PKGNAME-gnome=	uim-gnome-$V
 
 REVISION-main=	4
-REVISION-gtk=	5
+REVISION-gtk=	6
 REVISION-qt=	2
 REVISION-kde=	2
-REVISION-gnome=	6
+REVISION-gnome=	7
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -81,7 +81,7 @@ LIB_DEPENDS-gtk=${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
 		::x11/gtk+2
 WANTLIB-gtk=	${WANTLIB} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 uim uim-custom gcroots uim-scm \
-		pangocairo-1.0 cairo glitz png z expat \
+		pangocairo-1.0 cairo png z expat \
 		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 		pcre pixman-1 Xrender fontconfig freetype gtk-x11-2.0 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 anthy anthydic gthread-2.0 pthread \

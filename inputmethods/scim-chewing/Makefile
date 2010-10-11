@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/26 16:35:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/11 08:15:02 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for chewing
 
 DISTNAME=	scim-chewing-0.3.3
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	inputmethods chinese
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gio-2.0 glitz \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gio-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
 		stdc++ xcb z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \

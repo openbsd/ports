@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/30 19:27:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/11 08:15:37 jasper Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	11
+REVISION-main=	12
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -74,7 +74,7 @@ LIB_DEPENDS=	::graphics/jpeg \
 # cairo stuff
 LIB_DEPENDS+= 	::x11/gtk+2
 
-WANTLIB+=	cairo.>=5 glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+WANTLIB+=	cairo.>=5 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		gmodule-2.0 glib-2.0 gobject-2.0 pixman-1 gdk_pixbuf-2.0 \
 		gdk-x11-2.0 gtk-x11-2.0
 

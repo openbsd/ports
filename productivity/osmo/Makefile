@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/11 08:17:46 jasper Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png pthread z dbus-1 dbus-glib-1 gio-2.0 \
 		pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/27 12:58:43 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/11 08:19:37 jasper Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.6.5
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB =	X11 Xcursor Xi Xrandr c cairo dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		pango-1.0 pthread xfce4util wnck-1 xfcegui4 xfce4kbd-private \
 		ICE SM XRes Xau Xcomposite Xdamage Xdmcp Xext Xfixes \
 		Xinerama Xrender atk-1.0 dbus-1 execinfo expat fontconfig \
-		freetype gio-2.0 glitz gmodule-2.0 pangocairo-1.0 pangoft2-1.0 \
+		freetype gio-2.0 gmodule-2.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs startup-notification-1 \
 		xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util \
 		xkbfile xml2 z notify exo-0.3 xklavier xfconf-0

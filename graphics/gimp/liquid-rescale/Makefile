@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
 
 HOMEPAGE = 			http://liquidrescale.wikidot.com/
 DISTNAME = 			gimp-lqr-plugin-0.4.0-4
-PKGNAME = 			gimp-lqr-plugin-0.4.0.4p1
+PKGNAME = 			gimp-lqr-plugin-0.4.0.4
+REVISION =			2
 WRKDIST =			${WRKDIR}/gimp-lqr-plugin-0.4.0
 MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 
@@ -26,7 +27,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv
 WANTLIB += intl m pixman-1 pthread z
-WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 glitz gtk-x11-2.0
+WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread-stubs xcb
 WANTLIB += gio-2.0
 

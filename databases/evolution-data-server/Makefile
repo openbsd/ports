@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/09/30 07:32:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/10/11 08:12:04 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.32.0
+REVISION=		0
 
 CATEGORIES=		databases
 
@@ -35,7 +36,7 @@ WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
 WANTLIB += com_err crypto dbus-1 dbus-glib-1 eggdbus-1 expat fontconfig
 WANTLIB += freetype gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gssapi
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gssapi
 WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png proxy pthread
 WANTLIB += pthread-stubs sasl2 soup-2.4 soup-gnome-2.4 sqlite3

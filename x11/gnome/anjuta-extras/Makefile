@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/10 14:49:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:19 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	extra plugins for anjuta
 GNOME_PROJECT=	anjuta-extras
 GNOME_VERSION=	2.32.0.0
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -28,7 +28,7 @@ WANTLIB += gtk-x11-2.0 ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs unique-1.0 util xcb
 WANTLIB += xcb-render xcb-render-util xml2 z cdt graph gvc pathplan
 WANTLIB += gcrypt gda-4.0 gdl-1 gnome-keyring gpg-error ncurses
-WANTLIB += stdc++ vte xslt glitz
+WANTLIB += stdc++ vte xslt
 
 MODULES=	devel/gconf2 \
 		devel/gettext \

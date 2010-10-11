@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/10/01 17:43:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/10/11 08:12:44 jasper Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
@@ -6,7 +6,7 @@ VERSION=	2.8.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
 
-REVISION=	0
+REVISION=	1
 
 # Merge a patch from Fedora to change default font from Times Roman to
 # DejaVu Serif.: fixes font corruption issue on machines where
@@ -37,7 +37,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo
 WANTLIB += croco-0.6 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gsf-1
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xml2 z xcb-render xcb-render-util wmf-0.2 wmflite-0.2

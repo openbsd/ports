@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		0.4.1
-REVISION=		0
+REVISION=		1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
@@ -30,7 +30,7 @@ MODULES=		devel/gettext \
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
+		glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png tasn1 z pthread-stubs xcb xcb-render \
 		xcb-render-util

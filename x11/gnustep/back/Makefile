@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=	GNUstep gui backend
 
 V=		0.18.0
 DISTNAME=	gnustep-back-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -35,7 +35,7 @@ FLAVOR?=	xlib
 CONFIGURE_ARGS+=--enable-graphics=cairo \
 		--with-name=cairo
 LIB_DEPENDS+=	::graphics/cairo
-WANTLIB+=	Xau Xdmcp Xft Xrender expat fontconfig glitz pixman-1 \
+WANTLIB+=	Xau Xdmcp Xft Xrender expat fontconfig pixman-1 \
 		png cairo
 .elif ${FLAVOR:L} == "libart"
 CONFIGURE_ARGS+=--enable-graphics=art \

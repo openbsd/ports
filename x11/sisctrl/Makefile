@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:59 jasper Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
 DISTNAME=		sisctrl-0.0.20051202
-REVISION=		5
+REVISION=		6
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl
@@ -19,7 +19,7 @@ MASTER_SITES=		http://www.winischhofer.net/sis/
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0
 WANTLIB += c cairo expat fontconfig freetype gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 iconv intl m pango-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 WANTLIB += pthread-stubs xcb gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/11 08:14:00 jasper Exp $
 
 COMMENT=	finish-the-cycle logic puzzle
 CATEGORIES=	games
@@ -6,7 +6,7 @@ CATEGORIES=	games
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DISTNAME=	circuit-0.1.4
-REVISION=	4
+REVISION=	5
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
 
 # BSD
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/21 16:21:54 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/11 08:14:01 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.6.5
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	games x11
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xrender c cairo expat fontconfig freetype
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 m pixman-1 png
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 m pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb z
 
 MODULES=	devel/gettext

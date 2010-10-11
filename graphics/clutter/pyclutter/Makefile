@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/11 08:14:42 jasper Exp $
 
 COMMENT=		python bindings for Clutter
 
 DISTNAME=		pyclutter-${MAJOR}.2
-PKGNAME=		py-clutter-${MAJOR}.2p0
+PKGNAME=		py-clutter-${MAJOR}.2
+REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=pyclutter/${MAJOR}/}
 
@@ -13,7 +14,7 @@ MODULES=		devel/gettext \
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo clutter-glx-0.8
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gstaudio-0.10
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10
 WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xml2 z

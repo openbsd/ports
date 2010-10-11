@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2010/09/30 07:47:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -19,7 +20,7 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
+WANTLIB += glib-2.0 gmime-2.4 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs

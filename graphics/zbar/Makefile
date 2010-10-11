@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.5 2010/10/11 08:14:43 jasper Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
@@ -26,7 +26,7 @@ MODULES=	devel/gettext \
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 bz2 c
-WANTLIB += cairo expat fontconfig freetype gio-2.0 glib-2.0 glitz
+WANTLIB += cairo expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jasper jbig jpeg
 WANTLIB += lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs tiff wmflite

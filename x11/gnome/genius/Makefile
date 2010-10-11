@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/10 07:16:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:19 jasper Exp $
 
 BROKEN=		console is never spawned - pthreads(3) bug?
 
@@ -6,6 +6,7 @@ COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.11
+REVISION=	0
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -21,7 +22,7 @@ WANTLIB += xcb-render X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += c cairo expat fontconfig xcb-render-util
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread readline pthread-stubs xcb
 WANTLIB += termcap xml2 z

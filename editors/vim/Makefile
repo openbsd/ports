@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2010/10/11 08:12:44 jasper Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,8 +8,10 @@ REV=		3
 VERSION=	7.3.${REV}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}p0
-PKGNAME-lang=	vim-lang-${VERSION}p0
+PKGNAME-main=	vim-${VERSION}
+REVISION-main=	1
+PKGNAME-lang=	vim-lang-${VERSION}
+REVISION-lang=	1
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -106,7 +108,7 @@ USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 	 	atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 png expat\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
-		glitz Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
+		Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 		Xrandr pixman-1 pthread-stubs xcb gthread-2.0 xcb-render \
 		xcb-render-util gdk_pixbuf-2.0
 .else

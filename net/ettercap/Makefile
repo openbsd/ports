@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/09/30 07:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/11 08:16:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	multi-purpose sniffer/interceptor/logger
 VER=		0.7.3
 DISTNAME=	ettercap-NG-${VER}
 PKGNAME=	ettercap-${VER}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -45,7 +45,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS+=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb gdk_pixbuf-2.0
 .endif

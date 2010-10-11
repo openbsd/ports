@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:14:01 jasper Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
 DISTNAME=	csmash-0.6.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	games
 HOMEPAGE=	http://cannonsmash.sourceforge.net/
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image \
 
 WANTLIB+=	GL GLU ICE Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo expat \
-		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
+		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs stdc++ xcb z X11 Xext m SDL \
 		gdk_pixbuf-2.0

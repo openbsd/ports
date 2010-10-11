@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/11 08:19:58 jasper Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
 GNOME_PROJECT=		gtkglarea
 GNOME_VERSION=		2.0.1
+REVISION=	0
 
 SHARED_LIBS +=  gtkgl-2.0      0.0               # .1.1
 
@@ -20,7 +21,7 @@ MODULES=		devel/gettext \
 
 WANTLIB += GL GLU X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
-WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0

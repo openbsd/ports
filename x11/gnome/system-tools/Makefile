@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/04 06:49:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=	sytem configuration GUI for desktops
 
 GNOME_PROJECT=	gnome-system-tools
 GNOME_VERSION=	2.32.0
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto
 WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 oobs-1
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-render-util z eggdbus-1 nautilus-extension

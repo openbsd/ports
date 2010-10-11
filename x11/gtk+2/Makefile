@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2010/10/08 07:32:49 robert Exp $
+# $OpenBSD: Makefile,v 1.117 2010/10/11 08:19:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,8 @@ PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
 
-REVISION-main=	1
+REVISION-main=	2
+REVISION-cups=	0
 
 CATEGORIES=	x11 devel
 
@@ -33,7 +34,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype
-WANTLIB += glitz gthread-2.0 m pcre pixman-1 pthread-stubs xcb
+WANTLIB += gthread-2.0 m pcre pixman-1 pthread-stubs xcb
 WANTLIB += xcb-render xcb-render-util z gdk_pixbuf-2.0
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}

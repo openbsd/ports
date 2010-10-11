@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 07:46:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:20 jasper Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
+REVISION=	0
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -22,7 +23,7 @@ WANTLIB += cairo camel-1.2 canberra canberra-gtk com_err croco-0.6
 WANTLIB += crypto dbus-1 dbus-glib-1 ebook-1.2 ecal-1.2 edataserver-1.2
 WANTLIB += execinfo expat ffi fontconfig freetype gailutil gconf-2
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gnomeprintui-2-2
-WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2 gnome-desktop-2
+WANTLIB += glib-2.0 gmime-2.4 gmodule-2.0 gnome-2 gnome-desktop-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomeui-2
 WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ical icalss eggdbus-1

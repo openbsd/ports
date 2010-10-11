@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/30 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/11 08:13:01 jasper Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -8,7 +8,7 @@ DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
 CATEGORIES=		emulators
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://basilisk.cebix.net/
 
@@ -26,7 +26,7 @@ EXTRACT_SUFX=		.tar.bz2
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm
 WANTLIB += atk-1.0 audiofile c cairo expat fontconfig freetype
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0
 

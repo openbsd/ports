@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/26 08:09:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/11 08:14:01 jasper Exp $
 
 V = 0.7.5
 COMMENT-client = race for the galaxy card game
@@ -12,6 +12,8 @@ EXTRACT_SUFX = .tar.bz2
 MASTER_SITES = http://warpcore.org/rftg/
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
+
+REVISION-client=0
 
 # Licence: GPL
 # official authorization from the game publisher (Rio Grande)
@@ -40,7 +42,7 @@ post-install:
 WANTLIB = c m pthread
 WANTLIB-client = ${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
+	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 	gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl pango-1.0 \
 	pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs xcb xcb-render \
 	xcb-render-util z

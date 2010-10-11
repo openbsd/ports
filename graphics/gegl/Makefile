@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/30 07:44:20 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/11 08:14:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
 PKGNAME-main=	gegl-${V}
-REVISION-main=	1
+REVISION-main=	2
 PKGNAME-plugins=gegl-plugins-${V}
 REVISION-plugins=	1
 
@@ -43,7 +43,7 @@ USE_X11=	Yes
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += X11 Xau Xdmcp Xrender c cairo croco-0.6 expat fontconfig
-WANTLIB-main += freetype gdk_pixbuf-2.0 glitz jpeg pango-1.0
+WANTLIB-main += freetype gdk_pixbuf-2.0 jpeg pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB-main += pthread-stubs xcb xml2 xcb-render xcb-render-util
 

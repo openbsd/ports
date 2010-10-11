@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/10 18:58:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/11 08:18:29 jasper Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc x11
 
@@ -24,7 +24,7 @@ WANTLIB +=	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB +=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m 
 WANTLIB +=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png poppler
 WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render
-WANTLIB +=	xcb-render-util z glitz
+WANTLIB +=	xcb-render-util z
 
 MASTER_SITES =	http://pwmt.org/attachments/download/10/
 

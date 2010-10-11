@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/30 19:16:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/11 08:12:04 jasper Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
@@ -9,7 +9,7 @@ PKGNAME-gmdb=	gmdb-${DATE}
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 REVISION-main=	5
-REVISION-gmdb=	7
+REVISION-gmdb=	8
 
 CATEGORIES=	databases converters
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
@@ -53,7 +53,7 @@ WANTLIB-gmdb=	${WANTLIB} \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 cairo crypto dbus-1 \
 		dbus-glib-1 expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glitz \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png popt pthread ssl util xml2 z xcb-render \
