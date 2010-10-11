@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/10 10:26:37 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/11 18:44:43 kili Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
 BASENAME =		supertuxkart-0.6.2a
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS =		::devel/plib
 RUN_DEPENDS =		::devel/desktop-file-utils
 LIB_DEPENDS =		::devel/sdl \
 			::graphics/freeglut \
-			::audio/openal \
+			:openal->=0.0.8p7:audio/openal \
 			::audio/libvorbis
 
 USE_X11 =		Yes
