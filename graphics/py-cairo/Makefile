@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/11 08:12:38 eric Exp $
 
 COMMENT=	cairo bindings for Python
 
-VERSION=	1.8.8
-DISTNAME=	pycairo-${VERSION}
+VERSION=	1.8.10
+DISTNAME=	py2cairo-${VERSION}
 PKGNAME=	py-cairo-${VERSION}
-REVISION=	1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/pycairo/
@@ -20,22 +19,26 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://cairographics.org/releases/
 
-WANTLIB=	X11 Xau Xdmcp Xrender cairo expat fontconfig freetype glitz m
-WANTLIB+=	pixman-1 png pthread-stubs xcb xcb-render xcb-render-util z
+WANTLIB=	GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
+		cairo drm expat fontconfig freetype glib-2.0 gobject-2.0 \
+		gthread-2.0 m pcre pixman-1 png pthread-stubs \
+		xcb xcb-render xcb-shm z
 
+WRKDIST=	${WRKDIR}/pycairo-${VERSION}
 
-MODULES=	lang/python
+MODULES=	lang/python	\
+		devel/gettext
+
 LIB_DEPENDS=	::graphics/cairo
+REGRESS_DEPENDS=::devel/py-py
+
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 
-pre-install:
-	${SUBST_CMD} ${WRKSRC}/test/examples_test.py
-
-do-regress: fake
-	cd ${WRKSRC}/test && env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./examples_test.py
+do-regress: install
+	perl -i -pe "s/python/python${MODPY_VERSION}/g" ${WRKSRC}/test/examples_test.py
+	cd ${WRKSRC}/test && py.test
 
 .include <bsd.port.mk>
