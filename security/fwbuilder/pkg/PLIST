@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/07/14 08:46:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/10/11 20:19:11 sthen Exp $
 @bin bin/fwb_iosacl
 @bin bin/fwb_ipf
 @bin bin/fwb_ipfw
@@ -52,11 +52,13 @@ share/fwbuilder/configlets/cisco/
 share/fwbuilder/configlets/dd-wrt-jffs/
 share/fwbuilder/configlets/dd-wrt-jffs/installer_commands_reg_user
 share/fwbuilder/configlets/dd-wrt-jffs/installer_commands_root
+share/fwbuilder/configlets/dd-wrt-jffs/routing_functions
 share/fwbuilder/configlets/dd-wrt-jffs/script_skeleton
 share/fwbuilder/configlets/dd-wrt-jffs/top_comment
 share/fwbuilder/configlets/dd-wrt-nvram/
 share/fwbuilder/configlets/dd-wrt-nvram/installer_commands_reg_user
 share/fwbuilder/configlets/dd-wrt-nvram/installer_commands_root
+share/fwbuilder/configlets/dd-wrt-nvram/routing_functions
 share/fwbuilder/configlets/dd-wrt-nvram/script_skeleton
 share/fwbuilder/configlets/dd-wrt-nvram/top_comment
 share/fwbuilder/configlets/freebsd/
@@ -91,6 +93,7 @@ share/fwbuilder/configlets/ipfw/script_skeleton
 share/fwbuilder/configlets/ipfw/top_comment
 share/fwbuilder/configlets/linux24/
 share/fwbuilder/configlets/linux24/automatic_rules
+share/fwbuilder/configlets/linux24/block_action
 share/fwbuilder/configlets/linux24/check_utilities
 share/fwbuilder/configlets/linux24/conntrack
 share/fwbuilder/configlets/linux24/constants
@@ -102,6 +105,7 @@ share/fwbuilder/configlets/linux24/load_modules
 share/fwbuilder/configlets/linux24/prolog_epilog_functions
 share/fwbuilder/configlets/linux24/reset_iptables
 share/fwbuilder/configlets/linux24/routing_functions
+share/fwbuilder/configlets/linux24/run_time_address_tables
 share/fwbuilder/configlets/linux24/run_time_wrappers
 share/fwbuilder/configlets/linux24/script_body_iptables_restore
 share/fwbuilder/configlets/linux24/script_body_single_rule
@@ -205,6 +209,10 @@ share/fwbuilder/help/en_US/pix-failover-groups-mapping.png
 share/fwbuilder/help/en_US/pix-statesync-group-1.png
 share/fwbuilder/help/en_US/pix-statesync-group-mapping.png
 share/fwbuilder/help/en_US/release_notes_4.0.0.html
+share/fwbuilder/help/en_US/release_notes_4.0.1.html
+share/fwbuilder/help/en_US/release_notes_4.1.0.html
+share/fwbuilder/help/en_US/release_notes_4.1.1.html
+share/fwbuilder/help/en_US/release_notes_4.1.2.html
 share/fwbuilder/help/en_US/state_sync_configuration.png
 share/fwbuilder/help/en_US/summary.html
 share/fwbuilder/help/en_US/tip01.html

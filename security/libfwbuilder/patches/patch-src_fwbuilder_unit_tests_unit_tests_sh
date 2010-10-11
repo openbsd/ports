@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_fwbuilder_unit_tests_unit_tests_sh,v 1.1 2010/07/14 08:46:35 sthen Exp $
+$OpenBSD: patch-src_fwbuilder_unit_tests_unit_tests_sh,v 1.2 2010/10/11 20:19:11 sthen Exp $
 
 XXX handrolled; no trailing eol
 
---- src/fwbuilder/unit_tests/unit_tests.sh.orig	Tue Jul 13 21:57:36 2010
-+++ src/fwbuilder/unit_tests/unit_tests.sh	Tue Jul 13 22:01:04 2010
-@@ -1,10 +1,10 @@
+--- src/fwbuilder/unit_tests/unit_tests.sh.orig	Sun Feb 28 20:11:11 2010
++++ src/fwbuilder/unit_tests/unit_tests.sh	Sun Oct 10 10:17:28 2010
+@@ -1,11 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
  
@@ -18,3 +18,5 @@ XXX handrolled; no trailing eol
 +    [ ! -e Makefile ] && ${QMAKE} -spec $QMAKESPEC
      $commands || exit 1
      cd -
+ done;
+\ No newline at end of file

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/07/14 08:46:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/10/11 20:19:11 sthen Exp $
 %%SHARED%%
 bin/libfwbuilder-config-4
 include/fwb-4/
@@ -125,6 +125,7 @@ share/libfwbuilder/migration/FWObjectDatabase_12.xslt
 share/libfwbuilder/migration/FWObjectDatabase_13.xslt
 share/libfwbuilder/migration/FWObjectDatabase_14.xslt
 share/libfwbuilder/migration/FWObjectDatabase_15.xslt
+share/libfwbuilder/migration/FWObjectDatabase_16.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.0.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.1.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.10.xslt

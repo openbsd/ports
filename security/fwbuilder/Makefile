@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/24 09:15:55 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/11 20:19:11 sthen Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
 
+V =		4.1.2
 COMMENT =	firewall GUI
-DISTNAME =	fwbuilder-4.0.1
+DISTNAME =	fwbuilder-$V
 CATEGORIES =	net security
 
 HOMEPAGE =	http://www.fwbuilder.org/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
-AUTOMAKE_VERSION =	1.9	# XXX should be 1.10
+AUTOMAKE_VERSION =	1.10
 AUTOCONF_VERSION =	2.63
 
 CONFIGURE_STYLE =	gnu
@@ -31,14 +32,15 @@ BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
 			--with-qtdir=${MODQT_QTDIR} \
-			--with-qmake=qmake4
+			--with-qmake=qmake4 \
+			--without-distcc
 MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
 			CXXFLAGS="${CXXFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
 MODULES =	x11/qt4 converters/libiconv
 DESTDIRNAME =	INSTALL_ROOT
-LIB_DEPENDS =	::security/libfwbuilder \
+LIB_DEPENDS =	:libfwbuilder-$V:security/libfwbuilder \
 		::x11/qt4
 		
 REGRESS_TARGET =tests

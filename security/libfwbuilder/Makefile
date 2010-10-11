@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/31 12:25:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/11 20:19:11 sthen Exp $
 
 COMMENT=	libraries for fwbuilder
-DISTNAME=	libfwbuilder-4.0.1
+DISTNAME=	libfwbuilder-4.1.2
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	14.0 \
-		fwcompiler	14.0
+SHARED_LIBS=	fwbuilder	15.0 \
+		fwcompiler	15.0
 
 HOMEPAGE=	http://www.fwbuilder.org/
 
@@ -25,12 +25,13 @@ LIB_DEPENDS+=	::textproc/libxslt \
 		::textproc/libxml \
 		::net/net-snmp
 
-AUTOMAKE_VERSION =	1.9	# XXX should be 1.10
+AUTOMAKE_VERSION =	1.10
 AUTOCONF_VERSION =	2.63
 
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
+USE_LIBTOOL =		gnu	# wants libtoolize
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
@@ -38,9 +39,11 @@ BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/libfwbuilder \
 			--with-qtdir=${MODQT_QTDIR} \
-			--with-qmake=qmake4
+			--with-qmake=qmake4 \
+			--without-distcc
 MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
-			CXXFLAGS="${CXXFLAGS}"
+			CXXFLAGS="${CXXFLAGS}" \
+			CCACHE=/nonexistent
 
 REGRESS_TARGET=	tests
 
