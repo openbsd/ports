@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/05 08:40:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/11 10:39:22 sebastia Exp $
 
 COMMENT=		C C++ API for memcached
 
-VERSION=		0.43
+VERSION=		0.44
 DISTNAME=		libmemcached-${VERSION}
 CATEGORIES=		devel misc
 
@@ -38,7 +38,6 @@ PKG_ARGS+=		-Datomic=1
 .else
 PKG_ARGS+=		-Datomic=0
 pre-configure:
-	@perl -pi -e 's|am__append_14 |#am__append_14 |g' ${WRKSRC}/Makefile.in
 	@perl -pi -e 's|am__EXEEXT_1 |#am__EXEEXT_1 |g' ${WRKSRC}/Makefile.in
 .endif
 
