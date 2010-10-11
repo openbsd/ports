@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/15 07:14:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/11 09:16:28 jasper Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
 COMMENT=	interactive electronics designing software
 
-V=		0.4.2b
-DISTNAME=	fritzing.2010.08.06.source
+V=		0.4.3b
+DISTNAME=	fritzing.2010.10.01.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
 
