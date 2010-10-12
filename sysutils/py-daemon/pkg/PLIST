@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/12 16:49:09 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/daemon/
+lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
+lib/python${MODPY_VERSION}/site-packages/daemon/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/daemon.py
+lib/python${MODPY_VERSION}/site-packages/daemon/daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.py
+lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/runner.py
+lib/python${MODPY_VERSION}/site-packages/daemon/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/version/
+lib/python${MODPY_VERSION}/site-packages/daemon/version/__init__.py
+lib/python${MODPY_VERSION}/site-packages/daemon/version/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/daemon/version/version_info.py
+lib/python${MODPY_VERSION}/site-packages/daemon/version/version_info.pyc
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+share/doc/py-daemon/
+share/doc/py-daemon/FAQ
