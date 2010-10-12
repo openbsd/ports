@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/04 23:50:21 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/12 17:32:01 ckuethe Exp $
 %%SHARED%%
+include/clog.h
 lib/libclog.a
 lib/libclog_p.a
 lib/libclog_pic.a
