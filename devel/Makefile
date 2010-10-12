@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.844 2010/10/08 09:41:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.845 2010/10/12 14:53:14 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -864,6 +864,7 @@
      SUBDIR += py-kid
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
+     SUBDIR += py-minimock
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime,python2.4
      SUBDIR += py-mxDateTime,python2.6
