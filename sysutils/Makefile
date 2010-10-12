@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2010/10/12 14:54:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.213 2010/10/12 16:49:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -109,6 +109,7 @@
      SUBDIR += p5-Unix-PID
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
+     SUBDIR += py-daemon
      SUBDIR += py-lockfile
      SUBDIR += pciutils
      SUBDIR += pftop
