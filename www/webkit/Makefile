@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/12 08:43:05 landry Exp $
 
 COMMENT =	open source web browser engine
 
-DISTNAME =	webkit-1.2.4
+DISTNAME =	webkit-1.2.5
 EPOCH =		0
-REVISION=	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
