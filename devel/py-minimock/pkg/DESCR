@@ -1,0 +1,2 @@
+MiniMock is a simple library for doing Mock objects with doctest. When
+using doctest, mock objects can be very simple.
