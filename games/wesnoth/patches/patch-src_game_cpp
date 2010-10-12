@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_game_cpp,v 1.1 2009/11/11 16:01:34 jasper Exp $
+$OpenBSD: patch-src_game_cpp,v 1.2 2010/10/12 20:33:18 jasper Exp $
 
 Prevent compilation error on arm:
 game.cpp:1307: warning: `int res' might be used uninitialized in this function
 
---- src/game.cpp.orig	Mon Nov  9 13:13:30 2009
-+++ src/game.cpp	Mon Nov  9 13:13:53 2009
-@@ -1304,7 +1304,7 @@ void game_controller::start_wesnothd()
+--- src/game.cpp.orig	Sun Jul 18 12:10:00 2010
++++ src/game.cpp	Wed Aug 18 20:36:32 2010
+@@ -1157,7 +1157,7 @@ void game_controller::start_wesnothd()
  
  bool game_controller::play_multiplayer()
  {
@@ -13,4 +13,4 @@ game.cpp:1307: warning: `int res' might be used uninitialized in this function
 +	int res = 0;
  
  	state_ = game_state();
- 	state_.campaign_type = "multiplayer";
+ 	state_.classification().campaign_type = "multiplayer";

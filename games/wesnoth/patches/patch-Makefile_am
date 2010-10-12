@@ -1,12 +1,21 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2009/11/11 16:01:33 jasper Exp $
---- Makefile.am.orig	Sun Jul 12 15:41:23 2009
-+++ Makefile.am	Sun Jul 12 15:41:44 2009
+$OpenBSD: patch-Makefile_am,v 1.2 2010/10/12 20:33:18 jasper Exp $
+--- Makefile.am.orig	Thu Apr  8 11:19:10 2010
++++ Makefile.am	Thu Apr  8 11:20:26 2010
 @@ -5,7 +5,7 @@ pkgdatadir=$(datadir)/@DATADIR@
  bin_SCRIPTS =
  
  # Ignore junk -- object files, editor backup files, wmllint backup files.
--findfilterflags=! \( -name .svn -prune -o -name ".\#*" -o -name "*~" -o -name "*bak" -o -name 'Makefile' -o -name '*Makefile' -o -type d -o -wholename "data/test/*" \)
+-findfilterflags=! \( -name .svn -prune -o -name ".\#*" -o -name "*~" -o -name "*bak" -o -name 'Makefile' -o -name '*Makefile' -o -type d -o -regex "data/test/*" \)
 +findfilterflags=! \( -name .svn -prune -o -name ".\#*" -o -name "*~" -o -name "*bak" -o -name 'Makefile' -o -name '*Makefile' -o -type d -o -path "data/test/*" \)
  
  # List all datafiles, ignoring junk
- finddata=(cd $(top_srcdir) && find data fonts icons images sounds $(findfilterflags) -print )
+ finddata=(cd $(top_srcdir) && find data fonts icons images sounds l10n-track $(findfilterflags) -print )
+@@ -86,7 +86,7 @@ if INSTALLDATA
+ 	done
+ if TINYGUI
+ 	@echo "Shrink installed images by a factor of two."
+-	(cd $(top_srcdir) && find data/core/images data/campaigns images  \( $(findfilterflags) -a -name '*.png' -and -not -name 'bar-energy-tinygui.png' -print \) ) | while read p; do \
++	(cd $(top_srcdir) && find data/core/images data/campaigns images  \( $(findfilterflags) -a -name '*.png' -and ! -name 'bar-energy-tinygui.png' -print \) ) | while read p; do \
+ 	  $(w_preparefileinstall) \
+ 	  eval `identify $$d$$p | cut -f 3 -d ' ' | sed s/^/imagewidth=/ | sed s/x/\;imageheight=/` ;\
+ 	  case $${imagewidth}x$$imageheight in \

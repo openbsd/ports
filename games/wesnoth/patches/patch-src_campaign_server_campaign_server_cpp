@@ -1,13 +1,12 @@
-$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.1 2009/11/11 16:01:33 jasper Exp $
---- src/campaign_server/campaign_server.cpp.orig	Sun May 24 10:54:26 2009
-+++ src/campaign_server/campaign_server.cpp	Tue Jul  7 22:18:19 2009
-@@ -40,6 +40,9 @@
+$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.2 2010/10/12 20:33:18 jasper Exp $
+--- src/campaign_server/campaign_server.cpp.orig	Thu Apr  8 11:17:11 2010
++++ src/campaign_server/campaign_server.cpp	Thu Apr  8 11:17:29 2010
+@@ -41,6 +41,8 @@
+ // work on Windows not sure which other platforms have a problem with it.
+ #if !(defined(_WIN32))
  #include <errno.h>
- #endif
- 
 +#include <unistd.h>
 +#include <sys/types.h>
-+
- #define LOG_CS lg::err(lg::network, false)
+ #endif
  
- //compatibility code for MS compilers
+ static lg::log_domain log_network("network");

@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_man_Makefile_am,v 1.1 2010/10/12 20:33:18 jasper Exp $
+
+Don't unconditionally create the language dir, as empty directories
+will be created for languages with no manual pages.
+
+--- doc/man/Makefile.am.orig	Mon Aug 23 10:51:52 2010
++++ doc/man/Makefile.am	Mon Aug 23 10:53:17 2010
+@@ -16,9 +16,9 @@ install-data-hook:
+ 		$(INSTALL) -c -m 644 $(srcdir)/$$j $(DESTDIR)$(mandir)/man6/$$j ; \
+ 	done
+ 	for i in $(MAN_LANG); do \
+-		mkdir -p $(DESTDIR)$(mandir)/$$i/man6 ; \
+ 		for j in $(INSTALL_MAN_PAGES); do \
+ 			if test -f $(srcdir)/$$i/$$j; then \
++				mkdir -p $(DESTDIR)$(mandir)/$$i/man6 ; \
+ 				$(INSTALL) -c -m 644 $(srcdir)/$$i/$$j $(DESTDIR)$(mandir)/$$i/man6/$$j ; \
+ 			fi \
+ 		done \

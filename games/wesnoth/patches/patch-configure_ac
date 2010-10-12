@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/10/12 20:33:18 jasper Exp $
+
+- disable -Wall and -Werror, this breaks astarsearch.cpp.
+
+--- configure.ac.orig	Sun Aug  8 17:53:09 2010
++++ configure.ac	Sun Oct  3 19:51:01 2010
+@@ -95,8 +95,8 @@ then
+ 	CXXFLAGS="-O0 -DDEBUG -ggdb3 -W -Wall -ansi $CXXFLAGS"
+ else
+ 	# Don't use ansi for CFLAGS since it fails to compile.
+-	CFLAGS="-O2 -W -Wall $CFLAGS"
+-	CXXFLAGS="-O2 -W -Wall -ansi $CXXFLAGS"
++	CFLAGS="-W $CFLAGS"
++	CXXFLAGS="-W -ansi $CXXFLAGS"
+ fi
+ 
+ if test "x$profile" = "xyes"
+@@ -108,19 +108,10 @@ fi
+ if test "x$strict" = "xyes"
+ then
+ #   Strict compilation for C files is disabled until somebody wants to clean them.
+-#	CFLAGS="-Werror -Wno-unused -Wno-sign-compare $CFLAGS"
++#	CFLAGS="-Wno-unused -Wno-sign-compare $CFLAGS"
+ 
+ 	# The current networking code breaks strict aliasing in g++ 4.5.
+-	CXXFLAGS="-Werror -Wno-unused-parameter -Wno-strict-aliasing $CXXFLAGS"
+-fi
+-
+-# Make tests default in svn version
+-svn_in_version=`expr match "$WESNOTH_VERSION" '.*svn'`
+-test_build=yes
+-if test $svn_in_version = 0 
+-then
+-	#disabling building tests for release version
+-	test_build=no
++	CXXFLAGS="-Wno-unused-parameter -Wno-strict-aliasing $CXXFLAGS"
+ fi
+ 
+ AC_ARG_ENABLE([tests],

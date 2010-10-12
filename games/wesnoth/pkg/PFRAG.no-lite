@@ -1,19 +1,23 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.8 2009/11/11 16:01:34 jasper Exp $
+@comment $OpenBSD: PFRAG.no-lite,v 1.9 2010/10/12 20:33:18 jasper Exp $
 share/wesnoth/data/core/music/
 share/wesnoth/data/core/music/battle.ogg
 share/wesnoth/data/core/music/breaking_the_chains.ogg
+share/wesnoth/data/core/music/casualties_of_war.ogg
 share/wesnoth/data/core/music/defeat.ogg
 share/wesnoth/data/core/music/defeat2.ogg
 share/wesnoth/data/core/music/elf-land.ogg
 share/wesnoth/data/core/music/elvish-theme.ogg
 share/wesnoth/data/core/music/frantic.ogg
 share/wesnoth/data/core/music/heroes_rite.ogg
+share/wesnoth/data/core/music/into_the_shadows.ogg
+share/wesnoth/data/core/music/journeys_end.ogg
 share/wesnoth/data/core/music/knalgan_theme.ogg
 share/wesnoth/data/core/music/knolls.ogg
 share/wesnoth/data/core/music/legends_of_the_north.ogg
 share/wesnoth/data/core/music/love_theme.ogg
 share/wesnoth/data/core/music/loyalists.ogg
 share/wesnoth/data/core/music/main_menu.ogg
+share/wesnoth/data/core/music/northern_mountains.ogg
 share/wesnoth/data/core/music/northerners.ogg
 share/wesnoth/data/core/music/nunc_dimittis.ogg
 share/wesnoth/data/core/music/revelation.ogg
@@ -32,6 +36,7 @@ share/wesnoth/data/core/music/vengeful.ogg
 share/wesnoth/data/core/music/victory.ogg
 share/wesnoth/data/core/music/victory2.ogg
 share/wesnoth/data/core/music/wanderer.ogg
+share/wesnoth/data/core/music/weight_of_revenge.ogg
 share/wesnoth/data/core/sounds/
 share/wesnoth/data/core/sounds/ambient/
 share/wesnoth/data/core/sounds/ambient/birds1.ogg
@@ -113,6 +118,15 @@ share/wesnoth/data/core/sounds/hiss-big.wav
 share/wesnoth/data/core/sounds/hiss-die.wav
 share/wesnoth/data/core/sounds/hiss-hit.wav
 share/wesnoth/data/core/sounds/hiss.wav
+share/wesnoth/data/core/sounds/horn-signals/
+share/wesnoth/data/core/sounds/horn-signals/horn-1.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-2.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-3.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-4.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-5.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-6.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-7.ogg
+share/wesnoth/data/core/sounds/horn-signals/horn-8.ogg
 share/wesnoth/data/core/sounds/horse-canter.wav
 share/wesnoth/data/core/sounds/horse-die.ogg
 share/wesnoth/data/core/sounds/horse-elf-canter.wav
@@ -204,8 +218,10 @@ share/wesnoth/data/core/sounds/orc-small-hit-1.ogg
 share/wesnoth/data/core/sounds/orc-small-hit-2.ogg
 share/wesnoth/data/core/sounds/orc-small-hit-3.ogg
 share/wesnoth/data/core/sounds/orc-small-hit-4.ogg
+share/wesnoth/data/core/sounds/petrified.ogg
 share/wesnoth/data/core/sounds/pincers.ogg
 share/wesnoth/data/core/sounds/poison.ogg
+share/wesnoth/data/core/sounds/potion.ogg
 share/wesnoth/data/core/sounds/rumble.ogg
 share/wesnoth/data/core/sounds/skeleton-big-die.ogg
 share/wesnoth/data/core/sounds/skeleton-big-hit-1.ogg
@@ -228,7 +244,6 @@ share/wesnoth/data/core/sounds/squishy-hit.wav
 share/wesnoth/data/core/sounds/squishy-miss.wav
 share/wesnoth/data/core/sounds/squishy-strike.wav
 share/wesnoth/data/core/sounds/staff.wav
-share/wesnoth/data/core/sounds/stoned.ogg
 share/wesnoth/data/core/sounds/sword-1.ogg
 share/wesnoth/data/core/sounds/tail.ogg
 share/wesnoth/data/core/sounds/throw-1.wav

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_multiplayer_create_cpp,v 1.1 2010/10/12 20:33:18 jasper Exp $
+--- src/multiplayer_create.cpp.orig	Wed Aug 18 21:27:34 2010
++++ src/multiplayer_create.cpp	Sat Aug 21 19:58:24 2010
+@@ -37,6 +37,9 @@
+ #include "wml_separators.hpp"
+ #include "formula_string_utils.hpp"
+ 
++/* Resolve conflict with nitems() macro from sys/param.h */
++#undef nitems
++
+ static lg::log_domain log_config("config");
+ #define ERR_CF LOG_STREAM(err, log_config)
+ 

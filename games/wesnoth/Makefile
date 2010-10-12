@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/12 20:33:17 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.6.5
-REVISION=	2
+DISTNAME=	wesnoth-1.8.4
 
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://www.wesnoth.org/
-
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
+HOMEPAGE=	http://www.wesnoth.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 EXTRACT_SUFX=	.tar.bz2
@@ -22,22 +21,34 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xrender c cairo expat fontconfig freetype
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 m pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb z
+WANTLIB += pthread pthread-stubs stdc++ xcb z boost_iostreams-mt
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
+WANTLIB += boost_regex-mt SDL SDL_image SDL_net SDL_ttf fribidi
+WANTLIB += pango-1.0 pangoft2-1.0 pangocairo-1.0 lua dbus-1
+WANTLIB += SDL_mixer
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	boost_iostreams-mt::devel/boost \
-		boost_regex-mt::devel/boost \
-		SDL::devel/sdl \
-		SDL_image::devel/sdl-image \
-		SDL_net::devel/sdl-net \
-		SDL_mixer::devel/sdl-mixer \
-		SDL_ttf::devel/sdl-ttf \
-		fribidi::devel/fribidi \
-		pango-1.0,pangoft2-1.0,pangocairo-1.0::devel/pango
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	::devel/boost \
+		::devel/sdl \
+		::devel/sdl-image \
+		::devel/sdl-net \
+		::devel/sdl-mixer \
+		::devel/sdl-ttf \
+		::devel/fribidi \
+		::devel/pango \
+		::lang/lua \
+		::x11/dbus
 
-CONFIGURE_STYLE=gnu
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::textproc/libxslt
+
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+CONFIGURE_STYLE=	gnu
+AUTOMAKE_VERSION=	1.9
+AUTOCONF_VERSION=	2.60
 
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
@@ -68,5 +79,9 @@ BUILD_DEPENDS+=	::graphics/pngmeta \
 		:ImageMagick-*:graphics/ImageMagick
 CONFIGURE_ARGS+=--enable-tinygui
 .endif
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
