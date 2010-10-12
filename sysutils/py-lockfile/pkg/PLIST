@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/12 14:51:56 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/lockfile/
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/lockfile/linklockfile.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/linklockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/lockfile/mkdirlockfile.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/mkdirlockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/lockfile/pidlockfile.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/pidlockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/lockfile/sqlitelockfile.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/sqlitelockfile.pyc
+share/doc/py-lockfile/
+share/doc/py-lockfile/LICENSE
+share/doc/py-lockfile/README
+share/doc/py-lockfile/lockfile.rst
