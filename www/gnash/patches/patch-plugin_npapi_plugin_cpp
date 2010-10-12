@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugin_npapi_plugin_cpp,v 1.1 2010/10/12 09:38:16 dcoppa Exp $
+--- plugin/npapi/plugin.cpp.orig	Mon Aug 16 11:46:55 2010
++++ plugin/npapi/plugin.cpp	Sun Aug 22 21:03:34 2010
+@@ -208,6 +208,7 @@ NS_PluginInitialize()
+ 
+ #if !defined(__OS2__ ) && ! defined(__amigaos4__)
+     newGnashRc.append(SYSCONFDIR);
++    newGnashRc.append("/gnash");
+     newGnashRc.append("/gnashpluginrc");
+ #endif
+ 

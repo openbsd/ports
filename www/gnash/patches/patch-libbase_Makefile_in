@@ -1,18 +1,23 @@
-$OpenBSD: patch-libbase_Makefile_in,v 1.1 2008/06/28 15:46:33 deanna Exp $
---- libbase/Makefile.in.orig	Fri Jun 13 12:12:59 2008
-+++ libbase/Makefile.in	Fri Jun 13 12:14:16 2008
-@@ -948,14 +948,6 @@ mostlyclean-libtool:
- clean-libtool:
- 	-rm -rf .libs _libs
- install-sysconfDATA: $(sysconf_DATA)
--	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
--	@list='$(sysconf_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
--	done
+$OpenBSD: patch-libbase_Makefile_in,v 1.2 2010/10/12 09:38:16 dcoppa Exp $
+--- libbase/Makefile.in.orig	Sat Aug 21 14:04:42 2010
++++ libbase/Makefile.in	Tue Sep 14 02:32:53 2010
+@@ -445,8 +445,8 @@ LIBADD_DLOPEN = @LIBADD_DLOPEN@
+ LIBADD_SHL_LOAD = @LIBADD_SHL_LOAD@
+ LIBAVCODEC_IDENT = @LIBAVCODEC_IDENT@
+ LIBEXT = @LIBEXT@
+-LIBICONV = @LIBICONV@
+-LIBINTL = @LIBINTL@
++LIBICONV = @LTLIBICONV@
++LIBINTL = @LTLIBINTL@
+ LIBLTDL = @LIBLTDL@
+ LIBOBJS = @LIBOBJS@
+ LIBPNG_CFLAGS = @LIBPNG_CFLAGS@
+@@ -1393,7 +1393,7 @@ install-dvi: install-dvi-am
  
- uninstall-sysconfDATA:
- 	@$(NORMAL_UNINSTALL)
+ install-dvi-am:
+ 
+-install-exec-am: install-pkglibLTLIBRARIES install-sysconfDATA
++install-exec-am: install-pkglibLTLIBRARIES
+ 
+ install-html: install-html-am
+ 

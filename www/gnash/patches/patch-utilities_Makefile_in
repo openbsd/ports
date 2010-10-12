@@ -1,0 +1,12 @@
+$OpenBSD: patch-utilities_Makefile_in,v 1.1 2010/10/12 09:38:16 dcoppa Exp $
+--- utilities/Makefile.in.orig	Tue Sep 14 04:13:30 2010
++++ utilities/Makefile.in	Tue Sep 14 04:13:49 2010
+@@ -385,7 +385,7 @@ LIBADD_SHL_LOAD = @LIBADD_SHL_LOAD@
+ LIBAVCODEC_IDENT = @LIBAVCODEC_IDENT@
+ LIBEXT = @LIBEXT@
+ LIBICONV = @LIBICONV@
+-LIBINTL = @LIBINTL@
++LIBINTL = @LTLIBINTL@
+ LIBLTDL = @LIBLTDL@
+ LIBOBJS = @LIBOBJS@
+ LIBPNG_CFLAGS = @LIBPNG_CFLAGS@
