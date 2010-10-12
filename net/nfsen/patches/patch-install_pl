@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_pl,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
+$OpenBSD: patch-install_pl,v 1.2 2010/10/12 09:55:51 sthen Exp $
 --- install.pl.orig	Wed Jun 10 09:34:16 2009
-+++ install.pl	Fri Apr 30 23:05:08 2010
++++ install.pl	Tue Oct 12 09:44:35 2010
 @@ -60,6 +60,8 @@ my @ProfileTag = ( 
  	"# \n",
  );
@@ -192,7 +192,26 @@ $OpenBSD: patch-install_pl,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
  
  # Load the required NfSen modules 
  unshift @INC, "libexec";
-@@ -708,56 +718,63 @@ $NfConf::PERL = GetPerl();
+@@ -677,7 +687,9 @@ if ( -f "$NfConf::CONFDIR/nfsen.conf" && -f "etc/nfsen
+ 
+ Log::LogInit();
+ 
+-my $hints = NfSen::LoadHints();
++my $hints;
++if ($configure) {
++$hints = NfSen::LoadHints();
+ if ( $$$hints{'version'} == -1 ) {
+ 	# initial NfSen install or upgrade from old version without hints
+ 	$$$hints{'version'} 		= $nfsen_version;
+@@ -686,6 +698,7 @@ if ( $$$hints{'version'} == -1 ) {
+ 	print "Upgrade from version '$$$hints{'version'}' installed at " . scalar localtime $$$hints{'installed'};
+ 	print "\n";
+ }
++}
+ 
+ 
+ my $rrd_version = $RRDs::VERSION;
+@@ -708,56 +721,63 @@ $NfConf::PERL = GetPerl();
  
  my ($nfsen_uid, $www_gid ) = VerifyConfig();
  my $nfsen_run = 0;
@@ -296,7 +315,7 @@ $OpenBSD: patch-install_pl,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
  Cleanup();
  SetupEnv($nfsen_uid, $www_gid);
  
-@@ -787,9 +804,10 @@ $$$hints{'version'} 		= $nfsen_version;
+@@ -787,9 +807,10 @@ $$$hints{'version'} 		= $nfsen_version;
  $$$hints{'installed'} 		= time();
  NfSen::StoreHints();
  chown $nfsen_uid, $www_gid, "$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";
