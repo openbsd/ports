@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/17 01:34:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/12 20:12:52 robert Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
 V=		1.4
 DISTNAME=	bro-${V}-release
 PKGNAME=	bro-${V}
+
+REVISION=	0
 
 SHARED_LIBS= 	broccoli	0.0	# .2.0
 
@@ -28,7 +30,8 @@ LIB_DEPENDS=	GeoIP.>=5::net/GeoIP \
 		magic.>=1::devel/libmagic
 
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.59
 
 WRKDIST=	${WRKDIR}/bro-${V}
 
