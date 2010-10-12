@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/10/12 20:33:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/10/12 21:26:18 jasper Exp $
 !%%lite%%
 @bin bin/campaignd
 @bin bin/wesnoth
@@ -39,6 +39,10 @@ man/hu/
 man/hu/man6/
 @man man/hu/man6/wesnoth.6
 @man man/hu/man6/wesnothd.6
+man/id/
+man/id/man6/
+@man man/id/man6/wesnoth.6
+@man man/id/man6/wesnothd.6
 man/it/
 man/it/man6/
 @man man/it/man6/wesnoth.6
