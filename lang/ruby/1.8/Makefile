@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/12 15:39:06 jeremy Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -13,6 +13,8 @@ PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}
+
+REVISION-main=		0
 
 CONFIGURE_ARGS=		--program-suffix=18 \
 			--enable-ipv6 \
