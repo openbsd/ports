@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.28 2010/10/07 17:48:53 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.29 2010/10/12 16:03:41 jeremy Exp $
 
 # ruby module
 
@@ -62,14 +62,15 @@ CONFIGURE_SCRIPT=	${RUBY} extconf.rb
 MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=	:ruby-gems->=1.3.0:devel/ruby-gems
+BUILD_DEPENDS+=	:ruby-gems->=1.3.7p0:devel/ruby-gems
 RUN_DEPENDS+=	::devel/ruby-gems
-NO_BUILD=	Yes
 
 SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
-GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_LIBREV}
+GEM_BASE=	${WRKDIR}/gem-tmp/.gem
+GEM_BASE_BIN=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}/bin
+GEM_LIB=	${PREFIX}/lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_FLAGS=	--local --rdoc --no-force --verbose --default-source-index
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
@@ -91,25 +92,30 @@ do-extract:
 	@cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	@cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}
 .  endif
-.  if !target(pre-fake)
-pre-fake:
+.  if !target(pre-build)
+pre-build:
 	@${ECHO_MSG} "===>  Writing patched gem for ${FULLPKGNAME}${_MASTER}"
 # "special" handling for ruby tar, included in ruby-gems
 	@cd ${WRKDIST} && find . -type f \! -name '*.orig' -print | \
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
 	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 .  endif
+.  if !target(do-build)
+do-build:
+	mkdir -p ${GEM_BASE}
+	env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. ${GEM} install --user-install \
+		${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED}
+.  endif
 .  if !target(do-install)
 do-install:
-	@${INSTALL_DATA_DIR} ${GEM_BASE}
-	@${SUDO} ${GEM} install ${GEM_FLAGS} --install-dir ${GEM_BASE} \
-		${WRKDIR}/${_GEM_PATCHED}
-	@if [ -d ${GEM_BASE}/bin ]; then \
-		for f in ${GEM_BASE}/bin/*; do \
-			mv $$f ${PREFIX}/bin; \
+	@if [ -d ${GEM_BASE_BIN} ]; then \
+		for f in ${GEM_BASE_BIN}/*; do \
+			${INSTALL_SCRIPT} $$f ${PREFIX}/bin; \
 		done; \
-		rm -r ${GEM_BASE}/bin; \
 	fi
+	@${INSTALL_DATA_DIR} ${GEM_LIB}
+	cd ${GEM_BASE}/ruby/${MODRUBY_LIBREV} && mv * ${GEM_LIB}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_LIB}
 .  endif
 .elif ${CONFIGURE_STYLE:L:Msetup}
 MODRUBY_configure= \
