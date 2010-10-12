@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/12 22:05:21 robert Exp $
 
 COMMENT=	Nessus Attack Scripting Language
 DISTNAME=	libnasl-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	nasl	4.7
 
