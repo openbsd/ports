@@ -1,8 +1,0 @@
-The OpenGL Utility Toolkit, a window system independent toolkit for
-writing OpenGL programs. It implements a simple windowing application
-programming interface (API) for OpenGL.  GLUT is designed for
-constructing small to medium sized OpenGL programs. While GLUT is
-well-suited to learning OpenGL and developing simple OpenGL
-applications, GLUT is not a full-featured toolkit so large applications
-requiring sophisticated user interfaces are better off using native
-window system toolkits like Motif.
