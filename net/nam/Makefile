@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/12 20:13:47 jasper Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	UCB/LBNL Network Animator
@@ -35,6 +35,9 @@ ALL_TARGET=
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nam ${PREFIX}/bin
