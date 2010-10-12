@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2010/07/20 14:38:39 merdely Exp $
---- configure.orig	Tue Apr 27 15:58:29 2010
-+++ configure	Mon Jul 19 15:43:39 2010
+$OpenBSD: patch-configure,v 1.7 2010/10/12 19:47:06 robert Exp $
+--- configure.orig	Tue Apr 27 21:58:29 2010
++++ configure	Tue Oct 12 21:31:24 2010
 @@ -4267,7 +4267,7 @@ echo "${ECHO_T}no" >&6; }
  fi
  
@@ -28,6 +28,15 @@ $OpenBSD: patch-configure,v 1.6 2010/07/20 14:38:39 merdely Exp $
     FD_PLUGIN_DIR=""
     have_plugins=no
  fi
+@@ -27280,7 +27280,7 @@ if test "${ac_cv_lib_ssl_EVP_PKEY_encrypt_old+set}" = 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lssl  $LIBS"
++LIBS="-lssl -lcrypto $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
 @@ -43349,13 +43349,13 @@ _ACEOF
  fi
  
