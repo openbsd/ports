@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/10/11 20:41:44 kili Exp $
+# $OpenBSD: Makefile,v 1.96 2010/10/12 09:03:31 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -37,7 +37,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODPY_BUILDDEP=		No
+MODPY_BUILDDEP=		Yes	# XXX: glib2 wants python for the regress tests
 
 WANTLIB-main=		c pthread z pcre fam
 
@@ -52,7 +52,6 @@ RUN_DEPENDS-docs=
 # DBus is only used in the GDBus test cases
 REGRESS_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 			::x11/dbus \
-			${MODPY_RUN_DEPENDS} \
 			::devel/py-gobject \
 			::x11/dbus-python
 
@@ -72,8 +71,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-D_POSIX_MONOTONIC_CLOCK=200112L" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			PYTHON=${MODPY_BIN}
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
