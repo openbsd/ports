@@ -1,87 +1,82 @@
 #!/bin/sh
 #
-#	$OpenBSD: cups-enable,v 1.3 2010/03/31 16:20:02 ajacoutot Exp $
+# $OpenBSD: cups-enable,v 1.4 2010/10/12 12:53:15 ajacoutot Exp $
 #
-#	this script replaces OpenBSD lpd files with the corresponding
-#	files from CUPS.
+# This script replaces OpenBSD lpd files with the corresponding ones from CUPS.
 
-PREFIX=${TRUEPREFIX}
-BINDIR=/usr/bin
-SBINDIR=/usr/sbin
+_PREFIX=${TRUEPREFIX}
+_BINDIR=/usr/bin
+_SBINDIR=/usr/sbin
 
-if [ `id -u` -ne 0 ]; then
-    echo "You must be root to run this script."
-    exit
+if [ "`id -u`" -ne 0 ]; then
+	echo "You must be root to run this script."
+	exit 1
 fi
 
-echo "This script will replace OpenBSD lpd with CUPS"
+echo "This script will replace OpenBSD lpd with CUPS."
 echo ""
 echo -n "Are you sure you want to do this (y/[n])? "
 
 read answer
 echo ""
 
-if [ X$answer != Xy ]; then
-    echo "exit"
-    exit
-fi
+case "${answer}" in
+	y|Y)
+		;;
+	*)
+		echo "Exiting..."
+		exit 1
+		;;
+esac
 
-######################################################################
 if [ -e /usr/sbin/lpd.pre-cups -a ! -f /usr/sbin/lpd -a -L /usr/sbin/lpc ]; then
-    echo "lpd already preserved, not saving old files."
-    echo ""
+	echo "lpd already preserved, not saving old files."
+	echo ""
 elif [ ! -e /usr/sbin/lpd ]; then
-    echo "Couldn't find lpd files, not saving old files."
-    echo ""
+	echo "Couldn't find lpd files, not saving old files."
+	echo ""
 else 
-    echo "Trying to save lpd files:"
+	echo "Trying to save lpd files:"
 
-    for file in \
-	/usr/bin/lpq \
-	/usr/bin/lpr \
-	/usr/bin/lprm \
-	/usr/sbin/lpc \
-	/usr/sbin/lpd \
-	/usr/sbin/lptest \
-	/usr/share/man/cat1/lpq.0 \
-	/usr/share/man/cat1/lpr.0 \
-	/usr/share/man/cat1/lprm.0 \
-	/usr/share/man/cat1/lptest.0 \
-	/usr/share/man/cat8/lpc.0 \
-	/usr/share/man/cat8/lpd.0
-    do
-	if [ -f $file -a ! -L $file ]; then
-	    echo " $file"
-	    mv -f $file $file.pre-cups
+	for file in \
+		/usr/bin/lpq \
+		/usr/bin/lpr \
+		/usr/bin/lprm \
+		/usr/sbin/lpc \
+		/usr/sbin/lpd \
+		/usr/share/man/cat1/lpq.0 \
+		/usr/share/man/cat1/lpr.0 \
+		/usr/share/man/cat1/lprm.0 \
+		/usr/share/man/cat8/lpc.0 \
+		/usr/share/man/cat8/lpd.0
+	do
+	if [ -f ${file} -a ! -L ${file} ]; then
+		echo " ${file}"
+		mv -f ${file} ${file}.pre-cups
 	fi
-    done
+	done
 
-    if [ -f /etc/printcap -a ! -f /etc/printcap.pre-cups ]; then
-	echo " /etc/printcap"
-	cp -f /etc/printcap /etc/printcap.pre-cups
-    fi
+	if [ -f /etc/printcap -a ! -f /etc/printcap.pre-cups ]; then
+		echo " /etc/printcap"
+		cp -f /etc/printcap /etc/printcap.pre-cups
+	fi
 
-    echo done.
-    echo ""
+	echo done.
+	echo ""
 fi
 
-######################################################################
 echo "Creating soft links for binaries:"
 
-for file in \
-    lpq lpr lprm
-do
-    echo " $BINDIR/$file -> $PREFIX/bin/$file"
-    rm -f $BINDIR/$file
-    ln -s $PREFIX/bin/$file $BINDIR/$file
+for file in lpq lpr lprm; do
+	echo " ${_BINDIR}/${file} -> ${_PREFIX}/bin/${file}"
+	rm -f ${_BINDIR}/${file}
+	ln -s ${_PREFIX}/bin/${file} ${_BINDIR}/${file}
 done
 
-for file in \
-    lpc
-do
-    echo " $SBINDIR/$file -> $PREFIX/sbin/$file"
-    rm -f $SBINDIR/$file
-    ln -s $PREFIX/sbin/$file $SBINDIR/$file
+for file in lpc; do
+	echo " ${_SBINDIR}/${file} -> ${_PREFIX}/sbin/${file}"
+	rm -f ${_SBINDIR}/${file}
+	ln -s ${_PREFIX}/sbin/${file} ${_SBINDIR}/${file}
 done
 
 echo done.
