@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/12 10:05:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/13 06:26:04 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -50,15 +50,12 @@ LIB_DEPENDS=	::archivers/bzip2 \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-
 # Gnash requires GNU libtool 2.2 or greater, so use the bundled one
 USE_LIBTOOL=	gnu
 LIBTOOL=	${WRKSRC}/libtool
 LIBTOOL_FLAGS+=	--tag=disable-static
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-cygnal \
-		--disable-debugger \
 		--disable-jemalloc \
 		--disable-silent-rules \
 		--enable-renderer=agg \
