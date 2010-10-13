@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/13 15:04:28 jasper Exp $
 
 COMMENT-main=		extended module player
 COMMENT-audacious=	extended module player plugin for Audacious
@@ -12,7 +12,7 @@ PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
 
 REVISION-bmp=	0
-REVISION-audicious=	0
+REVISION-audacious=	0
 
 HOMEPAGE=		http://xmp.sourceforge.net/
 
