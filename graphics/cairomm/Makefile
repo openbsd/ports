@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:15:48 eric Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/13 14:23:11 naddy Exp $
 
 COMMENT=		C++ interface for cairo
 
 DISTNAME=		cairomm-1.9.2
+REVISION=		0
 SHARED_LIBS=		cairomm-1.0	4.0 # .5.0
 CATEGORIES=		graphics
 
@@ -22,7 +23,7 @@ WANTLIB=		GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender \
 MASTER_SITES=		http://cairographics.org/releases/
 
 LIB_DEPENDS=		::graphics/cairo \
-			::devel/libsigc++-2
+			:libsigc++->=2:devel/libsigc++-2
 
 MODULES=		devel/gettext
 
