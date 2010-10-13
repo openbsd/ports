@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2010/10/13 19:12:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,8 @@ WANTLIB?=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread-stubs xcb xcb-render xcb-render-util z
+		pixman-1 png pthread-stubs xcb xcb-render z \
+		GL X11-xcb Xxf86vm drm xcb-shm
 
 .if defined(EXTRA_WANTLIB)
 WANTLIB+=	${EXTRA_WANTLIB}

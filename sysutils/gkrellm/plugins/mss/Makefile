@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/13 19:12:33 jasper Exp $
 
 COMMENT=	soundscope for GkrellM2 using ESD
 
 DISTNAME=	gkrellmss-2.6
-REVISION=	13
+REVISION=	14
 CATEGORIES=	audio
 
 HOMEPAGE=http://members.dslextreme.com/users/billw/gkrellmss/gkrellmss.html

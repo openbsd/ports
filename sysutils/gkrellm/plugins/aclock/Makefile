@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/13 19:12:33 jasper Exp $
 
 COMMENT=	analog clock for GkrellM2
 
 V=		0.3.3
 DISTNAME=	gkrellaclock-${V}
-REVISION=	13
+REVISION=	14
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.geocities.com/m_muthukumar/gkrellaclock.html

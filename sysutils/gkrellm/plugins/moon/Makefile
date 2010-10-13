@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/13 19:12:33 jasper Exp $
 
 COMMENT=	phase of the Moon for GkrellM2
 
 DISTNAME=	gkrellmoon-0.6
-REVISION=	14
+REVISION=	15
 CATEGORIES=	astro
 
 HOMEPAGE=	http://gkrellmoon.sourceforge.net/

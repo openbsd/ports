@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/13 19:12:33 jasper Exp $
 
 COMMENT=	GkrellM2 load meter with a familiar face
 
 DISTNAME=	gkrellflynn-0.8
-REVISION=	7
+REVISION=	8
 CATEGORIES=	x11
 
 ALL_TARGET=	gkrellm2
