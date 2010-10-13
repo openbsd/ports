@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/13 19:12:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 REVISION-main=	1
 PKGNAME-client=	gkrellm-${V}
-REVISION-client=3
+REVISION-client=4
 CATEGORIES=	sysutils sysutils/gkrellm
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -48,6 +48,7 @@ WANTLIB-client += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
 WANTLIB-client += expat fontconfig freetype m pango-1.0 pangocairo-1.0
 WANTLIB-client += pangoft2-1.0 pixman-1 png pthread-stubs ssl xcb z
 WANTLIB-client += gio-2.0 gobject-2.0 gdk_pixbuf-2.0
+WANTLIB-client += GL X11-xcb Xxf86vm drm xcb-render xcb-shm
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
