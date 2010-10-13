@@ -1,0 +1,31 @@
+$OpenBSD: patch-fofi_FoFiType1_cc,v 1.1 2010/10/13 11:37:25 jasper Exp $
+
+Security fix for CVE-2010-3704. Patch from upstream poppler git:
+http://cgit.freedesktop.org/poppler/poppler/commit/?id=39d140bfc0b8239bdd96d6a55842034ae5c05473
+
+--- fofi/FoFiType1.cc.orig	Wed Oct 13 13:18:58 2010
++++ fofi/FoFiType1.cc	Wed Oct 13 13:21:25 2010
+@@ -18,6 +18,14 @@
+ #include "FoFiEncodings.h"
+ #include "FoFiType1.h"
+ 
++#if defined(__GNUC__) && (__GNUC__ > 2) && defined(__OPTIMIZE__)
++# define likely(x)      __builtin_expect((x), 1)
++# define unlikely(x)    __builtin_expect((x), 0)
++#else
++# define likely(x)      (x)
++# define unlikely(x)    (x)
++#endif
++
+ //------------------------------------------------------------------------
+ // FoFiType1
+ //------------------------------------------------------------------------
+@@ -224,7 +232,7 @@ void FoFiType1::parse() {
+ 		code = code * 8 + (*p2 - '0');
+ 	      }
+ 	    }
+-	    if (code < 256) {
++	    if (likely(code < 256 && code >= 0)) {
+ 	      for (p = p2; *p == ' ' || *p == '\t'; ++p) ;
+ 	      if (*p == '/') {
+ 		++p;
