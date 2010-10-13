@@ -1,0 +1,24 @@
+$OpenBSD: patch-xpdf_Gfx_cc,v 1.4 2010/10/13 17:29:37 jasper Exp $
+
+Security fix for CVE-2010-3702.
+Based on patch from upstream poppler git:
+http://cgit.freedesktop.org/poppler/poppler/commit/?id=e853106b58d6b4b0467dbd6436c9bb1cfbd372cf
+
+--- xpdf/Gfx.cc.orig	Wed Oct 13 18:58:01 2010
++++ xpdf/Gfx.cc	Wed Oct 13 18:59:56 2010
+@@ -443,6 +443,7 @@ Gfx::Gfx(XRef *xrefA, OutputDev *outA, int pageNum, Di
+ 
+   xref = xrefA;
+   subPage = gFalse;
++  parser = NULL;
+   printCommands = globalParams->getPrintCommands();
+ 
+   // start the resource stack
+@@ -485,6 +486,7 @@ Gfx::Gfx(XRef *xrefA, OutputDev *outA, Dict *resDict,
+ 
+   xref = xrefA;
+   subPage = gTrue;
++  parser = NULL;
+   printCommands = globalParams->getPrintCommands();
+ 
+   // start the resource stack
