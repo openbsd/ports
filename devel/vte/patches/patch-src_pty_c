@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_pty_c,v 1.7 2010/09/30 07:36:19 jasper Exp $
+$OpenBSD: patch-src_pty_c,v 1.8 2010/10/13 16:20:23 ajacoutot Exp $
 
 Party revert to previous behaviour of returning -1, instead of failing
 to compile.
 
---- src/pty.c.orig	Wed Sep 29 13:03:12 2010
-+++ src/pty.c	Wed Sep 29 13:07:37 2010
-@@ -792,7 +792,8 @@ _vte_pty_ptsname(int master,
+--- src/pty.c.orig	Sat Oct  9 05:41:51 2010
++++ src/pty.c	Wed Oct 13 18:10:10 2010
+@@ -795,7 +795,8 @@ _vte_pty_ptsname(int master,
                      "%s failed: %s", "ioctl(TIOCGPTN)", g_strerror(errno));
          return NULL;
  #else
@@ -15,7 +15,7 @@ to compile.
  #endif
  }
  
-@@ -900,7 +901,8 @@ _vte_pty_unlockpt(int fd,
+@@ -903,7 +904,8 @@ _vte_pty_unlockpt(int fd,
          }
          return TRUE;
  #else
