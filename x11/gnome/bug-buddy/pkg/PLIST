@@ -1,41 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 07:31:06 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2010/10/13 19:32:37 jasper Exp $
 @bin bin/bug-buddy
-lib/gtk-2.0/
-lib/gtk-2.0/modules/
 @comment lib/gtk-2.0/modules/libgnomesegvhandler.a
 @comment lib/gtk-2.0/modules/libgnomesegvhandler.la
+lib/gtk-2.0/modules/libgnomesegvhandler.so
 @man man/man1/bug-buddy.1
 share/applications/bug-buddy.desktop
 share/bug-buddy/
 share/bug-buddy/bug-buddy.gtkbuilder
 share/bug-buddy/gdb-cmd
-share/icons/
 share/icons/HighContrastLargePrint/
 share/icons/HighContrastLargePrint/48x48/
 share/icons/HighContrastLargePrint/48x48/apps/
 share/icons/HighContrastLargePrint/48x48/apps/bug-buddy.png
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/bug-buddy.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/bug-buddy.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/bug-buddy.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/bug-buddy.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/bug-buddy.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/bug-buddy.svg
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/bug-buddy.mo
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo
@@ -43,8 +25,6 @@ share/locale/as/LC_MESSAGES/bug-buddy.mo
 share/locale/ast/LC_MESSAGES/bug-buddy.mo
 share/locale/az/LC_MESSAGES/bug-buddy.mo
 share/locale/be/LC_MESSAGES/bug-buddy.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/bug-buddy.mo
 share/locale/bg/LC_MESSAGES/bug-buddy.mo
 share/locale/bn/LC_MESSAGES/bug-buddy.mo
@@ -82,8 +62,6 @@ share/locale/ka/LC_MESSAGES/bug-buddy.mo
 share/locale/kn/LC_MESSAGES/bug-buddy.mo
 share/locale/ko/LC_MESSAGES/bug-buddy.mo
 share/locale/ku/LC_MESSAGES/bug-buddy.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/bug-buddy.mo
 share/locale/lt/LC_MESSAGES/bug-buddy.mo
 share/locale/lv/LC_MESSAGES/bug-buddy.mo
@@ -102,8 +80,6 @@ share/locale/oc/LC_MESSAGES/bug-buddy.mo
 share/locale/or/LC_MESSAGES/bug-buddy.mo
 share/locale/pa/LC_MESSAGES/bug-buddy.mo
 share/locale/pl/LC_MESSAGES/bug-buddy.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/bug-buddy.mo
 share/locale/pt/LC_MESSAGES/bug-buddy.mo
 share/locale/pt_BR/LC_MESSAGES/bug-buddy.mo
@@ -121,16 +97,10 @@ share/locale/ta/LC_MESSAGES/bug-buddy.mo
 share/locale/te/LC_MESSAGES/bug-buddy.mo
 share/locale/th/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
-share/locale/uz@cyrillic/
-share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/bug-buddy.mo
 share/locale/vi/LC_MESSAGES/bug-buddy.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/bug-buddy.mo
 share/locale/xh/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN/LC_MESSAGES/bug-buddy.mo
