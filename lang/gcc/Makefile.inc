@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2007/12/25 19:47:35 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2010/10/14 08:03:46 jasper Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -44,16 +44,3 @@ HOMEPAGE?=	http://gcc.gnu.org/
 DIST_SUBDIR=gcc
 CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS+=CONFIG V
-
-MASTER_SITE_GCC+= ftp://gcc.gnu.org/pub/gcc/
-MASTER_SITE_GCC+= ftp://ftp.uvsq.fr/pub/gcc/
-MASTER_SITE_GCC+= ftp://gd.tuwien.ac.at/gnu/gcc/
-MASTER_SITE_GCC+= ftp://gd.tuwien.ac.at/gnu/gcc/
-MASTER_SITE_GCC+= ftp://ftp.fu-berlin.de/unix/languages/gcc/
-MASTER_SITE_GCC+= ftp://ftp.gwdg.de/pub/linux/gcc/
-MASTER_SITE_GCC+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/
-MASTER_SITE_GCC+= ftp://ftp.sunet.se/pub/gnu/gcc/
-MASTER_SITE_GCC+= ftp://ftp.ntua.gr/pub/gnu/gcc/
-MASTER_SITE_GCC+= ftp://ftp.nluug.nl/pub/languages/gcc/
-MASTER_SITE_GCC+= ftp://ftp.dti.ad.jp/pub/lang/gcc/
-MASTER_SITE_GCC+= ftp://sunsite.icm.edu.pl/pub/programming/egcs/
