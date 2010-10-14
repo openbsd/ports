@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_data_test1203,v 1.1 2010/10/14 19:44:27 naddy Exp $
+--- tests/data/test1203.orig	Thu Oct 14 16:18:43 2010
++++ tests/data/test1203	Thu Oct 14 16:18:56 2010
+@@ -29,7 +29,7 @@ gopher-ipv6
+ Gopher IPv6 index
+  </name>
+  <command>
+--g gopher://%HOSTIP:%GOPHER6PORT/1/moo/1203
++-g gopher://%HOST6IP:%GOPHER6PORT/1/moo/1203
+ </command>
+ </client>
+ 
