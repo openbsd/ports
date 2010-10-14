@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/23 22:30:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/14 20:33:09 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	access a MySQL database from Ruby
 
-VERSION=	2.8.1
-DISTNAME=	mysql-ruby-${VERSION}
-PKGNAME=	ruby-mysql-${VERSION}
-REVISION=	2
+DISTNAME=	mysql-2.8.1
+PKGNAME=	ruby-${DISTNAME}
+REVISION=	3
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
@@ -18,23 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=mysql-ruby/}
-
 MODULES=	lang/ruby
 
-WANTLIB=	c m
+WANTLIB=	c m mysqlclient
 
 LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
-		mysqlclient::databases/mysql
+		::databases/mysql
 
-CONFIGURE_STYLE=ruby extconf
+CONFIGURE_STYLE=ruby gem
 
 REGRESS_DEPENDS=::databases/mysql,-server
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby-mysql
-	${INSTALL_DATA} ${WRKBUILD}/README.html ${PREFIX}/share/doc/ruby-mysql
-	${INSTALL_DATA} ${WRKBUILD}/tommy.css ${PREFIX}/share/doc/ruby-mysql
 
 # A running mysqld is required to run the regression tests.
 do-regress:
