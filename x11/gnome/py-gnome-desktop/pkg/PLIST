@@ -1,50 +1,52 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 07:46:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/10/14 14:31:41 ajacoutot Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyo
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ecal.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ecal.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ecal.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeapplet.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeapplet.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeapplet.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/_gnomedesktop.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/_gnomedesktop.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomedesktop/_gnomedesktop.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomekeyring.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomekeyring.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomekeyring.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/_print.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/_print.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/_print.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/ui.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/ui.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnomeprint/ui.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtop.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtop.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtop.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/mediaprofiles.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/mediaprofiles.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/mediaprofiles.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/metacity.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/metacity.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/metacity.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/rsvg.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/rsvg.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/rsvg.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/plparser.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/plparser.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/totem/plparser.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/wnck.la
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/wnck.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/wnck.so
 share/examples/py-gnome-desktop/
 share/examples/py-gnome-desktop/applet/
@@ -112,6 +114,7 @@ share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
 share/pygtk/2.0/defs/ebook.defs
+share/pygtk/2.0/defs/evince.defs
 share/pygtk/2.0/defs/gnomekeyring.defs
 share/pygtk/2.0/defs/mediaprofiles.defs
 share/pygtk/2.0/defs/metacity.defs

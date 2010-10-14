@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/14 14:31:41 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-REVISION=	0
+REVISION=		1
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -50,9 +50,8 @@ LIB_DEPENDS=		::devel/libgsf \
 			::x11/gnome/media \
 			::x11/gnome/metacity \
 			::x11/gnome/panel \
-			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser
-# XXX: Enable again when evince has been update to 2.32.x
-#			::graphics/evince,-main
+			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
+			:evince->=2.32.0:graphics/evince,-main
 
 USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
