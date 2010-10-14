@@ -1,10 +1,10 @@
-$OpenBSD: patch-dnstop_c,v 1.2 2009/08/26 08:36:03 sthen Exp $
+$OpenBSD: patch-dnstop_c,v 1.3 2010/10/14 07:29:44 sthen Exp $
 
 ns_r_refused comes from /usr/include/arpa/nameser.h on systems using
 bind 9-based resolvers; REFUSED is equivalent.
 
---- dnstop.c.orig	Wed Jan 28 21:40:06 2009
-+++ dnstop.c	Tue Aug 25 20:10:32 2009
+--- dnstop.c.orig	Wed Jan 28 20:40:06 2009
++++ dnstop.c	Thu Oct 14 08:23:37 2010
 @@ -45,6 +45,7 @@ static const char *Version = "20090128";
  #include <netdb.h>
  
@@ -22,3 +22,19 @@ bind 9-based resolvers; REFUSED is equivalent.
  }
  
  void
+@@ -1839,6 +1840,7 @@ main(int argc, char *argv[])
+ 	fprintf(stderr, "pcap_setfilter failed\n");
+ 	exit(1);
+     }
++#if 0 /* breaks reading from capture files on OpenBSD */
+     /*
+      * non-blocking call added for Mac OS X bugfix.  Sent by Max Horn. ref
+      * http://www.tcpdump.org/lists/workers/2002/09/msg00033.html
+@@ -1848,6 +1850,7 @@ main(int argc, char *argv[])
+ 	fprintf(stderr, "pcap_setnonblock failed: %s\n", errbuf);
+ 	exit(1);
+     }
++#endif
+     switch (pcap_datalink(pcap)) {
+     case DLT_EN10MB:
+ 	handle_datalink = handle_ether;
