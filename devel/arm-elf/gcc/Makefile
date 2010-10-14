@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/14 14:47:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/14 08:05:09 jasper Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -24,11 +24,7 @@ MAKE_ADA=	No
 
 EXTRACT_SUFX=	.tar.bz2
 
-MASTER_SITE_GCC=ftp://gcc.gnu.org/pub/gcc/ \
-		ftp://ftp.uvsq.fr/pub/gcc/ \
-		ftp://ftp.grolier.fr/pub/egcs/
-
-MASTER_SITES= 	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
+MASTER_SITES= 	http://distfiles.nl/
 
 BUILD_DEPENDS+=	:autoconf-2.13:devel/autoconf/2.13	\
 		::devel/bison				\
