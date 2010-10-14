@@ -6,6 +6,8 @@ MD5 (bash/bash41-004) = M27gN/wsweI1CwUJf73IfA==
 MD5 (bash/bash41-005) = lHHmZnl/CwPrIXXtdSqVUA==
 MD5 (bash/bash41-006) = +4DM1Yyx40lA8630zm5KHg==
 MD5 (bash/bash41-007) = GSqLFh1Bmh0NIRFp8dEEbg==
+MD5 (bash/bash41-008) = HcWgJTgn3svmqlKc3oPhVA==
+MD5 (bash/bash41-009) = 6jYbhCt0Baf167q733Q3Lw==
 RMD160 (bash/bash-4.1.tar.gz) = VUx+y0pj2kMXaMrtH5WMBrj6cgc=
 RMD160 (bash/bash41-001) = IHMPiTtmYaa7ABAlSBVsPLBZ9rw=
 RMD160 (bash/bash41-002) = GleUgfgZU+fx3t4KrxoD5KrSmq8=
@@ -14,6 +16,8 @@ RMD160 (bash/bash41-004) = uBZ7S3/icsynQcXnrWe5uwaOaQ4=
 RMD160 (bash/bash41-005) = mhDHH5LEEHo4Ifjityppxi+q3BQ=
 RMD160 (bash/bash41-006) = HQa7krhya/F9LmrrQ+lzf67506Y=
 RMD160 (bash/bash41-007) = bWLQ49WWrQMc1fOG8+nC3JB2KD8=
+RMD160 (bash/bash41-008) = ZbL5Hecwyau5dJwFDnacbB+7M7A=
+RMD160 (bash/bash41-009) = 6B1ODiXmRZGrG9phuADnaCANngU=
 SHA1 (bash/bash-4.1.tar.gz) = O9HsnGbzaJ9rNJW9qvkHey5dwVA=
 SHA1 (bash/bash41-001) = QeF2+d50nkMr67j6xdAzo5NgRfY=
 SHA1 (bash/bash41-002) = cqmtLgjTXgKsFBfzrt8520y0xm8=
@@ -22,6 +26,8 @@ SHA1 (bash/bash41-004) = Rp3/aXt6wcFX3MYl2TM6Hc24iuI=
 SHA1 (bash/bash41-005) = yEALfT3bL4xxWbu9I4si/BBQThI=
 SHA1 (bash/bash41-006) = lwf8apLU3pBwFlhAdBh8GqyiXyo=
 SHA1 (bash/bash41-007) = YU5GEo1vmGcTKzF2X2ClFLOVrkM=
+SHA1 (bash/bash41-008) = 9OYY5NTAGytXzckz5kjyf4KwFXo=
+SHA1 (bash/bash41-009) = 2HT2FnQUQGCneIZl8VMf4hFnx8I=
 SHA256 (bash/bash-4.1.tar.gz) = P2JxJKg8bTTbUDqSPiBxDTcFc6Kd1dEdbxFtGu574do=
 SHA256 (bash/bash41-001) = puR/oQj4U9DwmZUgUJwRaA03yLeCO5K5bUMXZt1iAng=
 SHA256 (bash/bash41-002) = Mi4ineGGs72H3tq/utg4ZxbxA+h/8AzRstuETg3/ePg=
@@ -30,6 +36,8 @@ SHA256 (bash/bash41-004) = eMBjujTB85Clvy5XJ2JMouJTu+9Jzhh8q7JA7uf0/54=
 SHA256 (bash/bash41-005) = UZY52NFmS+dNfsFYedFjN/6Mca+NZIsC+EzN1PtznBo=
 SHA256 (bash/bash41-006) = WYarzzPAsIe9VnDxrmpkAKjOarfnxN4YuYJtDuEPLEk=
 SHA256 (bash/bash41-007) = dAEqLCi6T7Uyw+tpFVrIcKrI1TmQ+k4eUs3Bc9TCBac=
+SHA256 (bash/bash41-008) = TiwsJRQyzfa4TdW0/QbWmPTb6rtWpsJHyovxhENIEhU=
+SHA256 (bash/bash41-009) = vUAGlkroil7YAywWIIEwCE79Q4Zq/hm7iKFn4MDxVtE=
 SIZE (bash/bash-4.1.tar.gz) = 6598300
 SIZE (bash/bash41-001) = 1445
 SIZE (bash/bash41-002) = 1799
@@ -38,3 +46,5 @@ SIZE (bash/bash41-004) = 1705
 SIZE (bash/bash41-005) = 1626
 SIZE (bash/bash41-006) = 2166
 SIZE (bash/bash41-007) = 1610
+SIZE (bash/bash41-008) = 1610
+SIZE (bash/bash41-009) = 1323
