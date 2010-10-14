@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-djvu,v 1.5 2010/04/20 22:06:50 jasper Exp $
-lib/evince/2/backends/djvudocument.evince-backend
-lib/evince/2/backends/libdjvudocument.la
-lib/evince/2/backends/libdjvudocument.so
+@comment $OpenBSD: PLIST-djvu,v 1.6 2010/10/14 14:31:01 ajacoutot Exp $
+lib/evince/3/backends/djvudocument.evince-backend
+@comment lib/evince/3/backends/libdjvudocument.la
+lib/evince/3/backends/libdjvudocument.so
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/evince-thumbnailer-djvu.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
