@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_TagLib_TagLib_src_TagLib_IFD_Entries_SRational_cs,v 1.1 2010/10/15 16:22:43 robert Exp $
+--- lib/TagLib/TagLib/src/TagLib/IFD/Entries/SRational.cs.orig	Wed Oct 13 22:12:19 2010
++++ lib/TagLib/TagLib/src/TagLib/IFD/Entries/SRational.cs	Wed Oct 13 22:12:32 2010
+@@ -62,8 +62,10 @@ namespace TagLib.IFD.Entries
+ 		/// </param>
+ 		public SRational (int numerator, int denominator)
+ 		{
+-			Numerator = numerator;
+-			Denominator = denominator;
++			if (denominator == 0)
++				throw new ArgumentException ("denominator");
++			this.numerator = numerator;
++			this.denominator = denominator;
+ 		}
+ 
+ #endregion
