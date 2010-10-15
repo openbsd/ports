@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/01 05:23:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/15 16:21:07 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-2.6.7
-REVISION=	1
+DISTNAME=	mono-2.8
 
 CATEGORIES=	lang devel
 
-SHARED_LIBS +=  mono                 1.0      # .0.0
-SHARED_LIBS +=  mono-profiler-cov    1.0      # .0.0
-SHARED_LIBS +=  mono-profiler-aot    1.0      # .0.0
+SHARED_LIBS +=  mono-2.0		1.0	# .0.0
+SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
+SHARED_LIBS +=  monosgen-2.0		0.0	# .0.0
+SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
+SHARED_LIBS +=  mono-profiler-cov	1.0	# .0.0
 
 HOMEPAGE=	http://www.mono-project.com/
 
@@ -21,14 +22,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 \
-		m pcre pthread z stdc++
+WANTLIB=	c iconv m pthread z stdc++
 
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext \
-		lang/mono
+MODULES=	lang/mono
 
 MODMONO_DEPS=	No
 
@@ -47,11 +46,9 @@ LIB_DEPENDS=	gc::devel/boehm-gc
 AUTOCONF_VERSION=2.63
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LC_ALL=C
+		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gc=boehm \
-		--with-glib=system \
 		--enable-quiet-build=no \
 		--disable-shared-handles
 
@@ -78,6 +75,11 @@ BASH_SCRIPTS=	mcs/class/Mono.WebBrowser/build-csproj2k5 \
 		mono/arch/arm/dpiops.sh
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+
+post-patch:
+	@cd ${WRKSRC}/eglib && \
+		${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} && \
+		${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \

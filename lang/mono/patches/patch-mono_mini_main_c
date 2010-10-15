@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_mini_main_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
---- mono/mini/main.c.orig	Sat Aug 15 03:03:10 2009
-+++ mono/mini/main.c	Wed Sep  2 20:31:38 2009
-@@ -26,10 +26,14 @@ main ()
+$OpenBSD: patch-mono_mini_main_c,v 1.2 2010/10/15 16:21:07 robert Exp $
+--- mono/mini/main.c.orig	Tue Oct  5 21:59:29 2010
++++ mono/mini/main.c	Wed Oct 13 18:35:09 2010
+@@ -88,10 +88,14 @@ main ()
  }
  
  #else
@@ -15,5 +15,5 @@ $OpenBSD: patch-mono_mini_main_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
 +  sched_setaffinity(0, sizeof(mask), &mask);
 +#endif
  	mono_build_date = build_date;
- 	return mono_main (argc, argv);
- }
+ 	
+ 	return mono_main_with_options (argc, argv);
