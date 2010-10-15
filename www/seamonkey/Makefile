@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/15 07:16:19 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -11,8 +11,8 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta1
-REVISION-main=		0
-REVISION-lightning =	3
+REVISION-main=		1
+REVISION-lightning =	4
 EPOCH-lightning =	0
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird

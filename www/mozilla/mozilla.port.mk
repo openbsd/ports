@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.7 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: mozilla.port.mk,v 1.8 2010/10/15 07:16:19 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -32,7 +32,7 @@ MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		nspr4.>=21 nss3.>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4.>=21 plds4.>=21 png pthread pthread-stubs \
 		smime3.>=25 sndio softokn3.>=25 ssl3.>=25 stdc++ xcb \
-		xcb-render xcb-render-util z
+		xcb-render GL X11-xcb Xxf86vm drm xcb-shm z
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
@@ -61,7 +61,6 @@ CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
 		--enable-xinerama		\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
-		--enable-system-cairo		\
 		--enable-canvas
 
 # those ones only apply to mozilla branch 1.9.2 but 1.9.1 apps don't complain
