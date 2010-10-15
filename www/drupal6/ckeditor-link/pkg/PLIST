@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/15 10:21:51 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}ckeditor_link/
+${DRUPAL_MODS}ckeditor_link/LICENSE.txt
+${DRUPAL_MODS}ckeditor_link/README.txt
+${DRUPAL_MODS}ckeditor_link/ckeditor_link.css
+${DRUPAL_MODS}ckeditor_link/ckeditor_link.info
+${DRUPAL_MODS}ckeditor_link/ckeditor_link.install
+${DRUPAL_MODS}ckeditor_link/ckeditor_link.module
+${DRUPAL_MODS}ckeditor_link/plugins/
+${DRUPAL_MODS}ckeditor_link/plugins/link/
+${DRUPAL_MODS}ckeditor_link/plugins/link/plugin.js
