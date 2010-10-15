@@ -1,0 +1,26 @@
+$OpenBSD: patch-Source_NSUserDefaults_m,v 1.1 2010/10/15 10:37:51 sebastia Exp $
+
+Introduce the GS_DEFAULTS_LOCKDIR to allow the gnustep ports to
+build with systrace. Otherwise plmerge would try to create a lock
+file in the users home directory.
+
+--- Source/NSUserDefaults.m.orig	Sat Oct  9 10:04:53 2010
++++ Source/NSUserDefaults.m	Sat Oct  9 10:09:24 2010
+@@ -843,9 +843,14 @@ static BOOL setSharedDefaults = NO;     /* Flag to pre
+ - (id) initWithUser: (NSString*)userName
+ {
+   NSString	*path;
+-
+-  path = [GSDefaultsRootForUser(userName)
+-    stringByAppendingPathComponent: defaultsFile];
++  if ([[[NSProcessInfo processInfo] environment] objectForKey:@"GS_DEFAULTS_LOCKDIR"])
++  {
++    path = [[[[NSProcessInfo processInfo] environment] objectForKey:@"GS_DEFAULTS_LOCKDIR"] stringByAppendingPathComponent: defaultsFile];
++  } else 
++  {
++    path = [GSDefaultsRootForUser(userName)
++      stringByAppendingPathComponent: defaultsFile];
++  }
+   return [self initWithContentsOfFile: path];
+ }
+ 
