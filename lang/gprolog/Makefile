@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/27 19:30:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/15 10:23:57 dcoppa Exp $
 
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		Prolog compiler
 
@@ -34,10 +34,6 @@ CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 	--with-html-dir='${PREFIX}/share/doc/gprolog/html' \
 	--with-doc-dir='${PREFIX}/share/doc/gprolog' \
 	--with-c-flags="${CFLAGS}"
-
-MODULES+=       gcc4
-MODGCC4_ARCHES= *
-MODGCC4_LANGS=  c
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 

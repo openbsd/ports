@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/15 10:28:06 dcoppa Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -31,10 +31,6 @@ WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0
 
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip
-
-MODULES =		gcc4
-MODGCC4_ARCHES =	*
-MODGCC4_LANGS =		c
 
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
 			gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
