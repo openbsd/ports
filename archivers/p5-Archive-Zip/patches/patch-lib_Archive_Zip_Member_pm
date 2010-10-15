@@ -1,0 +1,43 @@
+$OpenBSD: patch-lib_Archive_Zip_Member_pm,v 1.1 2010/10/15 18:50:23 sthen Exp $
+
+http://rt.cpan.org/Public/Bug/Display.html?id=61930
+
+--- lib/Archive/Zip/Member.pm.orig	Tue Jun 30 12:51:10 2009
++++ lib/Archive/Zip/Member.pm	Fri Oct 15 19:04:27 2010
+@@ -282,7 +282,7 @@ sub _mapPermissionsToUnix {
+     if ( $format == FA_AMIGA ) {
+         $attribs = $attribs >> 17 & 7;                         # Amiga RWE bits
+         $mode    = $attribs << 6 | $attribs << 3 | $attribs;
+-        return $mode;
++        return sprintf("%d", $mode);
+     }
+ 
+     if ( $format == FA_THEOS ) {
+@@ -304,7 +304,10 @@ sub _mapPermissionsToUnix {
+         || $format == FA_TANDEM )
+     {
+         $mode = $attribs >> 16;
+-        return $mode if $mode != 0 or not $self->localExtraField;
++        if( $mode != 0 or not $self->localExtraField) {
++           $mode = sprintf("%d", $mode);
++            return sprintf("%d", $mode);
++        }
+ 
+         # warn("local extra field is: ", $self->localExtraField, "\n");
+ 
+@@ -340,9 +343,13 @@ sub _mapPermissionsToUnix {
+ 
+     # keep previous $mode setting when its "owner"
+     # part appears to be consistent with DOS attribute flags!
+-    return $mode if ( $mode & 0700 ) == ( 0400 | $attribs << 6 );
++    if( ( $mode & 0700 ) == ( 0400 | $attribs << 6 )) {
++       $mode = sprintf("%d", $mode);
++        return sprintf("%d", $mode);
++    }
+     $mode = 0444 | $attribs << 6 | $attribs << 3 | $attribs;
+-    return $mode;
++    $mode = sprintf("%d", $mode);
++    return sprintf("%d", $mode);
+ }
+ 
+ sub unixFileAttributes {
