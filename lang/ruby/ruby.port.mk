@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.29 2010/10/12 16:03:41 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.30 2010/10/15 20:24:27 jeremy Exp $
 
 # ruby module
 
@@ -112,6 +112,7 @@ do-install:
 		for f in ${GEM_BASE_BIN}/*; do \
 			${INSTALL_SCRIPT} $$f ${PREFIX}/bin; \
 		done; \
+		rm -r ${GEM_BASE_BIN}; \
 	fi
 	@${INSTALL_DATA_DIR} ${GEM_LIB}
 	cd ${GEM_BASE}/ruby/${MODRUBY_LIBREV} && mv * ${GEM_LIB}
