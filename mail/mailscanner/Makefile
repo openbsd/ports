@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/27 09:38:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/15 18:52:05 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
 V=		4.81
 Vs=		4
 Vss=		${Vs}-1
+REVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
 DISTNAME=	mailscanner-${V}.${Vss}
@@ -17,7 +18,7 @@ HOMEPAGE=	http://www.mailscanner.info/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 RUN_DEPENDS+=	::databases/p5-DBI \
-		::archivers/p5-Archive-Zip \
+		:p5-Archive-Zip->=1.30p0:archivers/p5-Archive-Zip \
 		::mail/p5-MIME-tools \
 		::net/p5-Net-CIDR \
 		::net/p5-Sys-Hostname-Long \
