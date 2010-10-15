@@ -1,0 +1,3 @@
+Parse::DMIDecode module provides an OO interface to SMBIOS information
+through the dmidecode(8) command which is known to work under a number of
+Linux, BSD and BeOS variants.

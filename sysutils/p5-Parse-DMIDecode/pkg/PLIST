@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/15 22:44:46 landry Exp $
+${P5SITE}/Parse/
+${P5SITE}/Parse/DMIDecode/
+${P5SITE}/Parse/DMIDecode.pm
+${P5SITE}/Parse/DMIDecode/Constants.pm
+${P5SITE}/Parse/DMIDecode/Examples.pod
+${P5SITE}/Parse/DMIDecode/Handle.pm
+@man man/man3p/Parse::DMIDecode.3p
+@man man/man3p/Parse::DMIDecode::Constants.3p
+@man man/man3p/Parse::DMIDecode::Examples.3p
+@man man/man3p/Parse::DMIDecode::Handle.3p
