@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2010/10/12 16:49:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.214 2010/10/15 22:45:33 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -99,6 +99,7 @@
      SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Filesys-Virtual
      SUBDIR += p5-Filesys-Virtual-Plain
+     SUBDIR += p5-Parse-DMIDecode
      SUBDIR += p5-Proc-ProcessTable
      SUBDIR += p5-Proc-Queue
      SUBDIR += p5-Quota
