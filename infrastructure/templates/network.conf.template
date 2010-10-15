@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.152 2010/10/14 08:03:13 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.153 2010/10/15 20:27:22 jeremy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -274,9 +274,6 @@ MASTER_SITE_APACHE+= \
 MASTER_SITE_BERLIOS+=	\
 	http://download.berlios.de/ \
 	http://download2.berlios.de/
-
-MASTER_SITE_RUBYFORGE+= \
-	http://files.rubyforge.vm.bytemark.co.uk/
 
 MASTER_SITE_MYSQL+= \
 	ftp://ftp.easynet.be/mysql/ \

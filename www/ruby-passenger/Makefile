@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/23 23:25:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/15 20:27:22 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=passenger/}
+MASTER_SITES =		http://files.rubyforge.vm.bytemark.co.uk/passenger/
 
 MODULES =		lang/ruby
 
