@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2010/10/15 08:32:21 landry Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -45,7 +45,7 @@ WANTLIB-main+=		${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 			cairo expat fontconfig freetype gmodule-2.0 \
 			gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0 \
-			xcb-render xcb-render-util \
+			xcb-render GL X11-xcb Xxf86vm drm xcb-shm \
  			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 			nss3.>=22 smime3.>=22 softokn3.>=22 ssl3.>=22
 
@@ -86,7 +86,6 @@ CONFIGURE_ARGS+=	--with-system-jpeg=${LOCALBASE}	\
 			--enable-xinerama		\
 			--enable-svg			\
 			--enable-svg-renderer=cairo	\
-			--enable-system-cairo		\
 			--enable-canvas			\
 			--enable-application=xulrunner	\
 			--enable-extensions=default,cookie,permissions

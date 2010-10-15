@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/15 08:32:21 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
@@ -9,8 +9,8 @@ DIRECTORY=		xulrunner1.9
 MOZILLA_PROJECT=	xulrunner1.9
 DISTNAME=		mozilla-1.9.2
 DISTFILES=		firefox-${FFX_VERSION}.source.tar.bz2
-REVISION-main=		1
-REVISION-devel=		1
+REVISION-main=		2
+REVISION-devel=		2
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 

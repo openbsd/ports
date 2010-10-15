@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/15 08:32:21 landry Exp $
 
 VERSION=		1.8.1.19
-REVISION-main=		7
-REVISION-devel=		7
+REVISION-main=		8
+REVISION-devel=		8
 DIRECTORY=		xulrunner
 
 SO_VERSION=		2.0
@@ -16,6 +16,7 @@ SHARED_LIBS+=		${_lib}	${SO_VERSION}
 
 CONFIGURE_ARGS+=	--with-system-png=${LOCALBASE} \
 			--enable-system-sqlite		\
+			--enable-system-cairo		\
 			--enable-default-toolkit=gtk2
 
 MOB=			${WRKSRC}/dist/bin
