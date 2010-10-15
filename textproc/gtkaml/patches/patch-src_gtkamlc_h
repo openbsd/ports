@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_gtkamlc_h,v 1.6 2010/05/16 08:09:05 ajacoutot Exp $
+$OpenBSD: patch-src_gtkamlc_h,v 1.7 2010/10/15 11:35:23 ajacoutot Exp $
 
 Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 
---- src/gtkamlc.h.orig	Fri May 14 13:47:03 2010
-+++ src/gtkamlc.h	Sun May 16 09:53:28 2010
-@@ -681,7 +681,7 @@ GtkamlImplicitsParameter* gtkaml_implicits_parameter_n
+--- src/gtkamlc.h.orig	Sun Sep 26 22:41:14 2010
++++ src/gtkamlc.h	Fri Oct 15 13:29:03 2010
+@@ -682,7 +682,7 @@ GtkamlImplicitsParameter* gtkaml_implicits_parameter_n
  GtkamlImplicitsParameter* gtkaml_implicits_parameter_construct (GType object_type);
- GType gtkaml_key_file_wrapper_get_type (void);
+ GType gtkaml_key_file_wrapper_get_type (void) G_GNUC_CONST;
  gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFileWrapper* self, const char* group, const char* key);
 -char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1);
 +char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1);

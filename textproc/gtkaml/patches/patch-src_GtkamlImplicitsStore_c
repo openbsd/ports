@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.12 2010/05/16 08:09:05 ajacoutot Exp $
+$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.13 2010/10/15 11:35:23 ajacoutot Exp $
 
 Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 
---- src/GtkamlImplicitsStore.c.orig	Fri May 14 13:47:03 2010
-+++ src/GtkamlImplicitsStore.c	Sun May 16 10:02:18 2010
+--- src/GtkamlImplicitsStore.c.orig	Sun Sep 26 22:41:14 2010
++++ src/GtkamlImplicitsStore.c	Fri Oct 15 13:31:35 2010
 @@ -133,7 +133,7 @@ enum  {
  	GTKAML_KEY_FILE_WRAPPER_DUMMY_PROPERTY
  };
@@ -20,15 +20,17 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 -char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1) {
 +char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1) {
  	char** result = NULL;
- 	GError * _inner_error_;
+ 	GError * _inner_error_ = NULL;
  	g_return_val_if_fail (self != NULL, NULL);
-@@ -461,14 +461,14 @@ ValaList* gtkaml_implicits_store_get_adds (GtkamlImpli
+@@ -460,16 +460,16 @@ ValaList* gtkaml_implicits_store_get_adds (GtkamlImpli
+ 			}
+ 			kfw = (GtkamlKeyFileWrapper*) vala_iterator_get (_kfw_it);
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, "adds")) {
- 				char** _tmp1_;
- 				gint _kf_adds_size_;
 -				gint kf_adds_length1;
--				gint _tmp0_;
 +				gsize kf_adds_length1;
+ 				gint _kf_adds_size_;
+ 				char** _tmp1_;
+-				gint _tmp0_;
 +				gsize _tmp0_;
  				char** kf_adds;
  				kf_adds = (_tmp1_ = gtkaml_key_file_wrapper_get_string_list (kfw, class_name, "adds", &_tmp0_), kf_adds_length1 = _tmp0_, _kf_adds_size_ = kf_adds_length1, _tmp1_);
@@ -40,13 +42,15 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  					add_collection = kf_adds;
  					add_collection_length1 = kf_adds_length1;
  					for (add_it = 0; add_it < kf_adds_length1; add_it = add_it + 1) {
-@@ -514,14 +514,14 @@ ValaList* gtkaml_implicits_store_get_method_parameters
+@@ -513,16 +513,16 @@ ValaList* gtkaml_implicits_store_get_method_parameters
+ 			}
+ 			kfw = (GtkamlKeyFileWrapper*) vala_iterator_get (_kfw_it);
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, method_name)) {
- 				char** _tmp3_;
- 				gint _kf_parameters_size_;
 -				gint kf_parameters_length1;
--				gint _tmp2_;
 +				gsize kf_parameters_length1;
+ 				gint _kf_parameters_size_;
+ 				char** _tmp3_;
+-				gint _tmp2_;
 +				gsize _tmp2_;
  				char** kf_parameters;
  				kf_parameters = (_tmp3_ = gtkaml_key_file_wrapper_get_string_list (kfw, class_name, method_name, &_tmp2_), kf_parameters_length1 = _tmp2_, _kf_parameters_size_ = kf_parameters_length1, _tmp3_);
