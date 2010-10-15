@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/07/12 10:14:51 stephan Exp $
-${DRUPAL_ROOT}/
-${DRUPAL_ROOT}/sites/
-${DRUPAL_ROOT}/sites/all/
+@comment $OpenBSD: PLIST,v 1.5 2010/10/15 10:39:48 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/
 ${DRUPAL_MODS}masquerade/
-${DRUPAL_MODS}masquerade/.cvsignore
+@comment ${DRUPAL_MODS}masquerade/.cvsignore
 ${DRUPAL_MODS}masquerade/LICENSE.txt
 ${DRUPAL_MODS}masquerade/README.txt
 ${DRUPAL_MODS}masquerade/masquerade.info
