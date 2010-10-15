@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 15:02:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/15 10:32:02 dcoppa Exp $
 
 COMMENT=	GL Extension Wrangler library
 
-DISTNAME=	glew-1.5.3
+DISTNAME=	glew-1.5.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	GLEW	2.0
+SHARED_LIBS=	GLEW	3.0
 
 HOMEPAGE=	http://glew.sourceforge.net/
 
