@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/10/14 14:31:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/10/15 06:38:07 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
 @bin bin/evince-thumbnailer
-include/evince/
 include/evince/
 include/evince/${MAJ_V}/
 include/evince/${MAJ_V}/evince-document.h
