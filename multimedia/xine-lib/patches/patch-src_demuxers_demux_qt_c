@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.10 2010/03/21 01:41:15 sthen Exp $
---- src/demuxers/demux_qt.c.orig	Mon Jan 25 19:54:27 2010
-+++ src/demuxers/demux_qt.c	Tue Feb 23 19:29:38 2010
+$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.11 2010/10/15 14:13:03 dcoppa Exp $
+--- src/demuxers/demux_qt.c.orig	Sun Jul 25 00:21:31 2010
++++ src/demuxers/demux_qt.c	Fri Oct 15 15:50:29 2010
 @@ -3184,7 +3184,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
        /* special consideration for DRM-protected files */
        if (this->qt->last_error == QT_DRM_NOT_SUPPORTED)
@@ -10,3 +10,23 @@ $OpenBSD: patch-src_demuxers_demux_qt_c,v 1.10 2010/03/21 01:41:15 sthen Exp $
  
      } else if (last_error != QT_OK) {
  
+@@ -3255,7 +3255,7 @@ static const char *get_identifier (demux_class_t *this
+ }
+ 
+ static const char *get_extensions (demux_class_t *this_gen) {
+-  return "mov qt qtl mp4 m4a m4b";
++  return "mov qt qtl mp4 m4a m4b f4a f4v";
+ }
+ 
+ static const char *get_mimetypes (demux_class_t *this_gen) {
+@@ -3263,8 +3263,8 @@ static const char *get_mimetypes (demux_class_t *this_
+          "video/x-quicktime: mov,qt: Quicktime animation;"
+          "audio/x-m4a: m4a,m4b: MPEG-4 audio;"
+          "application/x-quicktimeplayer: qtl: Quicktime list;"
+-         "video/mp4: mp4,mpg4: MPEG-4 video;"
+-         "audio/mp4: mp4,mpg4: MPEG-4 audio;";
++         "video/mp4: f4v,mp4,mpg4: MPEG-4 video;"
++         "audio/mp4: f4a,mp4,mpg4: MPEG-4 audio;";
+ }
+ 
+ static void class_dispose (demux_class_t *this_gen) {
