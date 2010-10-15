@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/14 10:00:43 stephan Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/15 10:22:59 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -12,6 +12,7 @@ SUBDIR += backup_migrate
 SUBDIR += bueditor
 SUBDIR += captcha
 SUBDIR += cck
+SUBDIR += ckeditor-link
 SUBDIR += compact_forms
 SUBDIR += contemplate
 SUBDIR += content_access
