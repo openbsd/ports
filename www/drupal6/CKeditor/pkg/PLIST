@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 20:44:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/15 10:18:05 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ckeditor/
@@ -9,6 +9,7 @@ ${DRUPAL_MODS}ckeditor/README.txt
 ${DRUPAL_MODS}ckeditor/TROUBLESHOOTING.txt
 ${DRUPAL_MODS}ckeditor/ckeditor/
 ${DRUPAL_MODS}ckeditor/ckeditor.config.js
+@comment ${DRUPAL_MODS}ckeditor/ckeditor.config.js.orig
 ${DRUPAL_MODS}ckeditor/ckeditor.css
 ${DRUPAL_MODS}ckeditor/ckeditor.info
 ${DRUPAL_MODS}ckeditor/ckeditor.install
@@ -25,11 +26,24 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_samples/api.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/api_dialog/
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/api_dialog.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/api_dialog/my_dialog.js
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/advanced.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/events.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/index.html
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/replace.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/replaceall.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/sample_posteddata.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/asp/standalone.asp
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/assets/
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/assets/output_xhtml.css
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/autogrow.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/divreplace.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/enterkey.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/fullpage.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/index.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/jqueryadapter.html
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/output_html.html
+${DRUPAL_MODS}ckeditor/ckeditor/_samples/output_xhtml.html
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/php/
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/php/advanced.php
 ${DRUPAL_MODS}ckeditor/ckeditor/_samples/php/events.php
@@ -70,6 +84,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/event.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/node.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/nodelist.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/range.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/rangelist.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/text.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/walker.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/core/dom/window.js
@@ -168,14 +183,19 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/dialogs/a11yhelp.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/lang/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/lang/en.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/lang/he.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/a11yhelp/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/about/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/about/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/about/dialogs/about.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/about/dialogs/logo_ckeditor.png
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/about/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/autogrow/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/autogrow/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/basicstyles/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/basicstyles/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/bidi/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/bidi/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/blockquote/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/blockquote/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/button/
@@ -195,6 +215,8 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/contextmenu/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialog/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialog/dialogDefinition.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialog/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialogadvtab/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialogadvtab/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialogui/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/dialogui/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/div/
@@ -241,6 +263,8 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/dialogs/radio.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/dialogs/select.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/dialogs/textarea.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/dialogs/textfield.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/images/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/images/hiddenfield.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/forms/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/horizontalrule/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/horizontalrule/plugin.js
@@ -271,6 +295,10 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/list/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/list/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/listblock/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/listblock/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/liststyle/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/liststyle/dialogs/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/liststyle/dialogs/liststyle.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/liststyle/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/maximize/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/maximize/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/menu/
@@ -366,16 +394,18 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/specialchar/dialogs/specialchar.
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/specialchar/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/styles/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/styles/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/styles/styles/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/styles/styles/default.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/stylescombo/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/stylescombo/plugin.js
-${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/stylescombo/styles/
-${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/stylescombo/styles/default.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tab/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tab/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/table/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/table/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/table/dialogs/table.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/table/plugin.js
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tableresize/
+${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tableresize/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tabletools/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tabletools/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/plugins/tabletools/dialogs/tableCell.js
@@ -425,6 +455,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/elementspath.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/icons.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/kama/images/dialog_sides.png
@@ -449,6 +480,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/elementspath.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/icons.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/office2003/images/dialog_sides.png
@@ -472,6 +504,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/elementspath.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/icons.css
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/skins/v2/images/dialog_sides.png
@@ -495,6 +528,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/_source/themes/default/
 ${DRUPAL_MODS}ckeditor/ckeditor/_source/themes/default/theme.js
 ${DRUPAL_MODS}ckeditor/ckeditor/adapters/
 ${DRUPAL_MODS}ckeditor/ckeditor/adapters/jquery.js
+${DRUPAL_MODS}ckeditor/ckeditor/ckeditor.asp
 ${DRUPAL_MODS}ckeditor/ckeditor/ckeditor.js
 ${DRUPAL_MODS}ckeditor/ckeditor/ckeditor.pack
 ${DRUPAL_MODS}ckeditor/ckeditor/ckeditor.php
@@ -574,10 +608,13 @@ ${DRUPAL_MODS}ckeditor/ckeditor/plugins/a11yhelp/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/a11yhelp/lang/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/a11yhelp/lang/en.js
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/a11yhelp/lang/he.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/about/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/about/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/about/dialogs/about.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/autogrow/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/autogrow/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/clipboard/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/clipboard/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/clipboard/dialogs/paste.js
@@ -607,6 +644,8 @@ ${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/dialogs/radio.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/dialogs/select.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/dialogs/textarea.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/dialogs/textfield.js
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/images/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/forms/images/hiddenfield.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/iframedialog/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/iframedialog/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/image/
@@ -618,6 +657,9 @@ ${DRUPAL_MODS}ckeditor/ckeditor/plugins/link/dialogs/anchor.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/link/dialogs/link.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/link/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/link/images/anchor.gif
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/liststyle/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/liststyle/dialogs/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/liststyle/dialogs/liststyle.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/pagebreak/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/pagebreak/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/pagebreak/images/pagebreak.gif
@@ -672,12 +714,14 @@ ${DRUPAL_MODS}ckeditor/ckeditor/plugins/smiley/images/wink_smile.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/specialchar/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/specialchar/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/specialchar/dialogs/specialchar.js
-${DRUPAL_MODS}ckeditor/ckeditor/plugins/stylescombo/
-${DRUPAL_MODS}ckeditor/ckeditor/plugins/stylescombo/styles/
-${DRUPAL_MODS}ckeditor/ckeditor/plugins/stylescombo/styles/default.js
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/styles/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/styles/styles/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/styles/styles/default.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/table/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/table/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/table/dialogs/table.js
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/tableresize/
+${DRUPAL_MODS}ckeditor/ckeditor/plugins/tableresize/plugin.js
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/tabletools/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/tabletools/dialogs/
 ${DRUPAL_MODS}ckeditor/ckeditor/plugins/tabletools/dialogs/tableCell.js
@@ -716,6 +760,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/dialog.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/kama/images/dialog_sides.png
@@ -731,6 +776,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/dialog.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/office2003/images/dialog_sides.png
@@ -745,6 +791,7 @@ ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/dialog.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/editor.css
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/icons.png
+${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/icons_rtl.png
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/images/
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/images/dialog_sides.gif
 ${DRUPAL_MODS}ckeditor/ckeditor/skins/v2/images/dialog_sides.png

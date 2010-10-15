@@ -1,0 +1,14 @@
+$OpenBSD: patch-ckeditor_config_js,v 1.1 2010/10/15 10:18:05 espie Exp $
+--- ckeditor.config.js.orig	Fri Oct 15 14:06:15 2010
++++ ckeditor.config.js	Fri Oct 15 14:06:31 2010
+@@ -124,6 +124,10 @@ CKEDITOR.editorConfig = function(config) {
+     Drupal.settings.ckeditor.linktonode_basepath = Drupal.settings.basePath;
+   }
+ 
++  if (Drupal.settings.ckeditor_link) {
++    config.extraPlugins += (config.extraPlugins) ? ',drupal_path' : 'drupal_path';
++    CKEDITOR.plugins.addExternal('drupal_path', Drupal.settings.ckeditor_link.module_path + '/plugins/link/');
++  }
+   // 'MediaEmbed' plugin. To enable it, uncomment lines below and add 'MediaEmbed' button to selected toolbars.
+   //config.extraPlugins += (config.extraPlugins ? ',mediaembed' : 'mediaembed' );
+   //CKEDITOR.plugins.addExternal('mediaembed', Drupal.settings.ckeditor.module_path + '/plugins/mediaembed/');
