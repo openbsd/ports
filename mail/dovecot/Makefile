@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2010/10/03 23:25:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2010/10/15 15:32:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,13 +7,13 @@ COMMENT-sieve=	Sieve mail filtering for Dovecot
 
 V_MAJOR=	1.2
 V_DOVECOT=	1.2.15
-V_SIEVE=	0.1.17
-V_MANAGESIEVE=	0.11.11
+V_SIEVE=	0.1.18
+V_MANAGESIEVE=	0.11.12
 
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
+REVISION-server=0
 FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
-REVISION-sieve=	4
 EPOCH-sieve=	0
 FULLPKGPATH-sieve= ${PKGPATH},-sieve
 
@@ -27,7 +27,7 @@ DISTFILES=	dovecot-${V_DOVECOT}.tar.gz \
 		dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}.tar.gz:0 \
 		${DIST_MANAGESIEVE}:0
 
-DIST_MANAGESIEVE= dovecot-1.2.14-managesieve-${V_MANAGESIEVE}.diff.gz
+DIST_MANAGESIEVE= dovecot-${V_DOVECOT}-managesieve-${V_MANAGESIEVE}.diff.gz
 
 HOMEPAGE=	http://www.dovecot.org/
 
