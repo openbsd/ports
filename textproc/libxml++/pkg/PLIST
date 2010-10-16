@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/05/06 21:30:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/10/16 14:11:19 ajacoutot Exp $
 %%SHARED%%
 include/libxml++-2.6/
 include/libxml++-2.6/libxml++/
@@ -205,8 +205,8 @@ share/doc/libxml++-2.6/reference/html/namespacemembers_type.html
 share/doc/libxml++-2.6/reference/html/namespaces.html
 share/doc/libxml++-2.6/reference/html/namespacexmlpp.html
 share/doc/libxml++-2.6/reference/html/pages.html
-share/doc/libxml++-2.6/reference/html/since_2_20.html
-share/doc/libxml++-2.6/reference/html/since_2_24.html
+share/doc/libxml++-2.6/reference/html/since__2__20.html
+share/doc/libxml++-2.6/reference/html/since__2__24.html
 share/doc/libxml++-2.6/reference/html/structxmlpp_1_1SaxParser_1_1Attribute-members.html
 share/doc/libxml++-2.6/reference/html/structxmlpp_1_1SaxParser_1_1Attribute.html
 share/doc/libxml++-2.6/reference/html/structxmlpp_1_1SaxParser_1_1AttributeHasName-members.html
