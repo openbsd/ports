@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/16 07:11:27 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/progressbar.py
+lib/python${MODPY_VERSION}/site-packages/progressbar.pyc

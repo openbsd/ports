@@ -1,0 +1,3 @@
+Provides a text mode progressbar. This is tipically used to display the
+progress of a long running operation, providing a visual clue that
+processing is underway. Multiple formats of progressbar can be choosed.
