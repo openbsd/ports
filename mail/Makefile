@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2010/09/13 16:26:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.254 2010/10/16 12:18:58 landry Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -203,7 +203,6 @@
      SUBDIR += sqlgrey
      SUBDIR += swaks
      SUBDIR += sylpheed
-     SUBDIR += sylpheed,gpgme
      SUBDIR += sympa
      SUBDIR += teapop
      SUBDIR += thunderbird-i18n
