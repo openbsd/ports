@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.33 2010/10/16 12:18:04 landry Exp $
-@pkgpath mail/sylpheed,-gpgme
+@comment $OpenBSD: PLIST,v 1.34 2010/10/16 12:21:40 landry Exp $
+@pkgpath mail/sylpheed,gpgme
 %%SHARED%%
 @bin bin/sylpheed
 include/sylpheed/
