@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:19:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/16 09:44:17 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.8
-REVISION=	0
+REVISION=		1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -46,8 +46,9 @@ BUILD_DEPENDS=		::devel/gperf \
 			::graphics/ImageMagick \
 			::devel/doxygen
 
-RUN_DEPENDS=		::misc/rlwrap \
-			::graphics/feh
+RUN_DEPENDS=		::graphics/feh \
+			::misc/rlwrap \
+			::shells/bash
 
 MODULES=		devel/cmake
 
