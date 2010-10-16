@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.654 2010/10/06 07:31:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.655 2010/10/16 08:59:28 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -411,6 +411,7 @@
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msnp
+     SUBDIR += py-nmap
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
      SUBDIR += py-snmp
