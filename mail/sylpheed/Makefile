@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2010/10/11 08:15:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2010/10/16 12:18:03 landry Exp $
 
-COMMENT=	mail/news client in gtk+
+COMMENT =		lightweight and user-friendly e-mail client
 
-MAJOR=		2.7
-VERSION=	${MAJOR}.1
-DISTNAME=	sylpheed-${VERSION}
+DISTNAME =		sylpheed-3.0.3
 
-REVISION=	1
-
-SHARED_LIBS +=  sylph-0              0.0      # .0.1
-SHARED_LIBS +=  sylpheed-plugin-0    0.0      # .0.1
+SHARED_LIBS += 	 	sylph-0                   1.0 # 1.3
+SHARED_LIBS += 		sylpheed-plugin-0         1.0 # 1.3
 
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
@@ -20,18 +16,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	devel/gettext
-LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
-		gtkspell.>=1::textproc/gtkspell
+MODULES =	devel/gettext
+LIB_DEPENDS +=		::x11/gtk+2 \
+			::textproc/gtkspell \
+			::security/gpgme
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto enchant
-WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl stdc++ xcb z
+WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm c crypto atk-1.0 cairo gdk_pixbuf-2.0
+WANTLIB += pango-1.0 pangocairo-1.0 dbus-1 dbus-glib-1 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 drm expat fontconfig freetype m pixman-1
+WANTLIB += pthread pthread-stubs gthread-2.0 iconv intl pcre enchant pangoft2-1.0
+WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
+WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell
 
 RUN_DEPENDS=	::devel/desktop-file-utils
-MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${MAJOR}/
+MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.0/
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -42,27 +41,22 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtkspell \
 			--disable-jpilot \
 			--disable-ldap \
-			--disable-oniguruma
+			--disable-oniguruma \
+			--enable-gpgme
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-FLAVORS=	compface gpgme
+FLAVORS= 		compface
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcompface}
-PERMIT_PACKAGE_CDROM=	No Fee
-PERMIT_DISTFILES_CDROM=	No Fee
-LIB_DEPENDS+=		compface.>=1::mail/faces
+LIB_DEPENDS+=		::mail/faces
+WANTLIB+=		compface
+CONFIGURE_ARGS +=	--enable-compface
+PERMIT_PACKAGE_CDROM =  No fee
+PERMIT_DISTFILES_CDROM =No fee
 .else
 CONFIGURE_ARGS+=	--disable-compface
-.endif
-
-.if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS+=		gpgme.>=4::security/gpgme
-CONFIGURE_ARGS+=	--enable-gpgme
-WANTLIB+=		gpg-error
-.else
-CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 
 .include <bsd.port.mk>

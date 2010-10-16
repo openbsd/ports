@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.32 2010/01/10 10:21:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2010/10/16 12:18:04 landry Exp $
+@pkgpath mail/sylpheed,-gpgme
 %%SHARED%%
 @bin bin/sylpheed
 include/sylpheed/
@@ -92,6 +93,7 @@ share/sylpheed/faq/en/
 share/sylpheed/faq/en/sylpheed-faq-1.html
 share/sylpheed/faq/en/sylpheed-faq-2.html
 share/sylpheed/faq/en/sylpheed-faq-3.html
+share/sylpheed/faq/en/sylpheed-faq-4.html
 share/sylpheed/faq/en/sylpheed-faq.html
 share/sylpheed/faq/es/
 share/sylpheed/faq/es/sylpheed-faq-1.html
@@ -150,6 +152,7 @@ share/sylpheed/manual/ja/sylpheed-22.html
 share/sylpheed/manual/ja/sylpheed-23.html
 share/sylpheed/manual/ja/sylpheed-24.html
 share/sylpheed/manual/ja/sylpheed-25.html
+share/sylpheed/manual/ja/sylpheed-26.html
 share/sylpheed/manual/ja/sylpheed-3.html
 share/sylpheed/manual/ja/sylpheed-4.html
 share/sylpheed/manual/ja/sylpheed-5.html

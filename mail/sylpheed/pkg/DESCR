@@ -11,4 +11,3 @@ enabled by default).
 
 FLAVORS:
 	* compface: support X-Face header
-	* gpgme: compile with gnupg made easy support
