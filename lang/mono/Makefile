@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/15 16:21:07 robert Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/16 13:21:20 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -78,8 +78,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 post-patch:
 	@cd ${WRKSRC}/eglib && \
-		${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} && \
-		${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER}
+		${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} && \
+		${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
