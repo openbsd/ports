@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/13 11:50:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/16 14:12:14 ajacoutot Exp $
 include/gstreamermm-${VERSION}/
 include/gstreamermm-${VERSION}/gstreamermm/
 include/gstreamermm-${VERSION}/gstreamermm.h
@@ -21,6 +21,7 @@ include/gstreamermm-${VERSION}/gstreamermm/basesrc.h
 include/gstreamermm-${VERSION}/gstreamermm/basetransform.h
 include/gstreamermm-${VERSION}/gstreamermm/bin.h
 include/gstreamermm-${VERSION}/gstreamermm/buffer.h
+include/gstreamermm-${VERSION}/gstreamermm/bufferlist.h
 include/gstreamermm-${VERSION}/gstreamermm/bus.h
 include/gstreamermm-${VERSION}/gstreamermm/caps.h
 include/gstreamermm-${VERSION}/gstreamermm/capsfilter.h
@@ -102,6 +103,7 @@ include/gstreamermm-${VERSION}/gstreamermm/private/basesrc_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/basetransform_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/bin_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/buffer_p.h
+include/gstreamermm-${VERSION}/gstreamermm/private/bufferlist_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/bus_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/caps_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/capsfilter_p.h
@@ -283,10 +285,7 @@ lib/libgstreamermm-${VERSION}.la
 @lib lib/libgstreamermm-${VERSION}.so.${LIBgstreamermm-0.10_VERSION}
 lib/libgstreamermm_get_plugin_defs-${VERSION}.la
 @lib lib/libgstreamermm_get_plugin_defs-${VERSION}.so.${LIBgstreamermm_get_plugin_defs-0.10_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gstreamermm-${VERSION}.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/gstreamermm-${VERSION}/
 share/devhelp/books/gstreamermm-${VERSION}/gstreamermm-${VERSION}.devhelp2
 share/doc/gstreamermm-${VERSION}/
@@ -294,6 +293,7 @@ share/doc/gstreamermm-${VERSION}/reference/
 share/doc/gstreamermm-${VERSION}/reference/gstreamermm-${VERSION}.tag
 share/doc/gstreamermm-${VERSION}/reference/html/
 share/doc/gstreamermm-${VERSION}/reference/html/annotated.html
+share/doc/gstreamermm-${VERSION}/reference/html/bc_s.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Adder-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Adder.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Adder__coll__graph.png
@@ -350,6 +350,11 @@ share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Bin.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Bin__coll__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Buffer-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Buffer.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1BufferList-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1BufferList.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1BufferListIterator-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1BufferListIterator.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1BufferList__coll__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Buffer__coll__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Bus-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Bus.html
@@ -864,6 +869,7 @@ share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1XvImageSink.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1XvImageSink__coll__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classT__Interface.html
 share/doc/gstreamermm-${VERSION}/reference/html/classes.html
+share/doc/gstreamermm-${VERSION}/reference/html/closed.png
 share/doc/gstreamermm-${VERSION}/reference/html/doxygen.css
 share/doc/gstreamermm-${VERSION}/reference/html/doxygen.png
 share/doc/gstreamermm-${VERSION}/reference/html/functions.html
@@ -944,6 +950,7 @@ share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__2.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__20.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__21.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__22.png
+share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__23.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__3.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__4.png
 share/doc/gstreamermm-${VERSION}/reference/html/inherit__graph__5.png
@@ -997,11 +1004,15 @@ share/doc/gstreamermm-${VERSION}/reference/html/namespacemembers_func.html
 share/doc/gstreamermm-${VERSION}/reference/html/namespacemembers_type.html
 share/doc/gstreamermm-${VERSION}/reference/html/namespacemembers_vars.html
 share/doc/gstreamermm-${VERSION}/reference/html/namespaces.html
+share/doc/gstreamermm-${VERSION}/reference/html/nav_f.png
+share/doc/gstreamermm-${VERSION}/reference/html/nav_h.png
+share/doc/gstreamermm-${VERSION}/reference/html/open.png
 share/doc/gstreamermm-${VERSION}/reference/html/pages.html
-share/doc/gstreamermm-${VERSION}/reference/html/since__0__10.html
+share/doc/gstreamermm-${VERSION}/reference/html/since_0_10.html
 share/doc/gstreamermm-${VERSION}/reference/html/structGst_1_1VideoRectangle-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/structGst_1_1VideoRectangle.html
-share/doc/gstreamermm-${VERSION}/reference/html/tab_b.gif
-share/doc/gstreamermm-${VERSION}/reference/html/tab_l.gif
-share/doc/gstreamermm-${VERSION}/reference/html/tab_r.gif
+share/doc/gstreamermm-${VERSION}/reference/html/tab_a.png
+share/doc/gstreamermm-${VERSION}/reference/html/tab_b.png
+share/doc/gstreamermm-${VERSION}/reference/html/tab_h.png
+share/doc/gstreamermm-${VERSION}/reference/html/tab_s.png
 share/doc/gstreamermm-${VERSION}/reference/html/tabs.css
