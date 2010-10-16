@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/07/30 23:13:30 lum Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/16 11:26:33 jsg Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
 DISTNAME=	dsniff-2.3
-REVISION=	10
+REVISION=	11
 CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto des pcap ssl rpcsvc
+WANTLIB=		c crypto pcap ssl rpcsvc
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
