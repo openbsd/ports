@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.846 2010/10/14 23:25:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.847 2010/10/16 07:12:03 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -877,6 +877,7 @@
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
      SUBDIR += py-prioritized_methods
+     SUBDIR += py-progressbar
      SUBDIR += py-protocols
      SUBDIR += py-psyco
      SUBDIR += py-py
