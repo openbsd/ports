@@ -1,0 +1,24 @@
+$OpenBSD: patch-server_main_c,v 1.1 2010/10/17 14:20:53 sthen Exp $
+--- server/main.c.orig	Sun Oct 17 14:46:45 2010
++++ server/main.c	Sun Oct 17 14:48:58 2010
+@@ -177,15 +177,15 @@ static void gkrellmd_syslog_log(GLogLevelFlags log_lev
+ 	int facility_priority;
+ 
+ 	// default to info and override with other states if they are more important
+-	facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_INFO);
++	facility_priority = (LOG_DAEMON | LOG_INFO);
+ 	if (log_level & G_LOG_LEVEL_DEBUG)
+-		facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_DEBUG);
++		facility_priority = (LOG_DAEMON | LOG_DEBUG);
+ 	if (log_level & G_LOG_LEVEL_WARNING)
+-		facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_WARNING);
++		facility_priority = (LOG_DAEMON | LOG_WARNING);
+ 	if (log_level & G_LOG_LEVEL_ERROR)
+-		facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_ERR);
++		facility_priority = (LOG_DAEMON | LOG_ERR);
+ 	if (log_level & G_LOG_LEVEL_CRITICAL)
+-		facility_priority = LOG_MAKEPRI(LOG_DAEMON, LOG_CRIT);
++		facility_priority = (LOG_DAEMON | LOG_CRIT);
+ 
+ 	syslog(facility_priority, message);
+ #endif // defined(WIN32)
