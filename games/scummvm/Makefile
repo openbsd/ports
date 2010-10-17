@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2010/07/13 21:23:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/17 19:59:51 jsg Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
-DISTNAME=	scummvm-1.1.1
+DISTNAME=	scummvm-1.2.0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		FLAC.>=5::audio/flac
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--disable-alsa --disable-debug --enable-sci
+CONFIGURE_ARGS+=--disable-alsa --disable-debug
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -57,8 +57,6 @@ CXXFLAGS+=	-O0
 CXXFLAGS+=	-O1
 .endif
 
-CXXFLAGS+=	-fno-stack-protector
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
@@ -69,6 +67,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/scummvm.{svg,xpm} ${PREFIX}/share/icons
 	${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
 	${INSTALL_DATA} ${WRKSRC}/gui/themes/{scummmodern,scummclassic}.zip \
+	    ${PREFIX}/share/scummvm
+	${INSTALL_DATA} ${WRKSRC}/gui/themes/translations.dat \
 	    ${PREFIX}/share/scummvm
 	${INSTALL_DATA} ${WRKSRC}/dists/scummvm.desktop \
 	    ${PREFIX}/share/applications

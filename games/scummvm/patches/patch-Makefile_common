@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_common,v 1.3 2010/07/13 21:23:39 jsg Exp $
---- Makefile.common.orig	Mon Jul 12 22:02:10 2010
-+++ Makefile.common	Mon Jul 12 22:03:00 2010
-@@ -164,28 +164,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
+$OpenBSD: patch-Makefile_common,v 1.4 2010/10/17 19:59:51 jsg Exp $
+--- Makefile.common.orig	Sun Oct 17 15:47:53 2010
++++ Makefile.common	Sun Oct 17 15:48:25 2010
+@@ -156,27 +156,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
  VER_PATCH = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c1)
  VER_EXTRA = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c2-)
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-Makefile_common,v 1.3 2010/07/13 21:23:39 jsg Exp $
 -# Get Subversion's working copy information
 -######################################################################
 -
--ifeq ($(shell LANG=C svn stat $(srcdir) 2>&1 | grep "is not a working copy"),)
+-ifneq ($(shell svn info $(srcdir) 1>/dev/null 2>&1 || echo "error"),error)
 -SVNROOT := $(srcdir)
--ifeq ($(origin SVNREV), undefined)
+-ifeq ($(origin VER_SVNREV), undefined)
 -# Get the working copy base revision
 -VER_SVNREV := $(shell LANG=C svn info $(SVNROOT) | grep "^Revision" | cut -d ' ' -f 2)
 -endif
@@ -21,11 +21,10 @@ $OpenBSD: patch-Makefile_common,v 1.3 2010/07/13 21:23:39 jsg Exp $
 -endif
 -
 -# Define the Subversion revision if available, either autodetected or
--# specified by the user
+-# specified by the user, but only for base/version.cpp.
 -ifneq ($(origin VER_SVNREV), undefined)
--CXXFLAGS+= -DSCUMMVM_SVN_REVISION=\"$(VER_SVNREV)\"
+-base/version.o: CXXFLAGS:=$(CXXFLAGS) -DSCUMMVM_SVN_REVISION=\"$(VER_SVNREV)\"
 -endif
--
 -
  ######################################################################
  # Distribution settings
