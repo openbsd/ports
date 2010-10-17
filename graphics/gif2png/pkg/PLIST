@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:50:08 espie Exp $
-bin/gif2png
+@comment $OpenBSD: PLIST,v 1.7 2010/10/17 06:51:51 benoit Exp $
+@bin bin/gif2png
 bin/web2png
 libexec/web2png.bin
 @man man/man1/gif2png.1
