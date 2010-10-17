@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/03 01:04:57 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/10/17 21:02:48 jasper Exp $
 bin/nosetests
+bin/nosetests-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/nose/
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nose/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nose/__init__.pyc
@@ -35,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/nose/loader.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/allmodules.py
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/allmodules.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/attrib.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/attrib.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/base.py
@@ -43,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/nose/plugins/builtin.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/builtin.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/capture.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/capture.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/collect.py
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/collect.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/cover.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/cover.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/debug.py
@@ -57,8 +63,12 @@ lib/python${MODPY_VERSION}/site-packages/nose/plugins/failuredetail.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/failuredetail.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/isolate.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/isolate.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/logcapture.py
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/logcapture.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/manager.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/manager.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/multiprocess.py
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/multiprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/plugintest.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/plugintest.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/prof.py
@@ -67,18 +77,26 @@ lib/python${MODPY_VERSION}/site-packages/nose/plugins/skip.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/skip.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/testid.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/testid.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/xunit.py
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/xunit.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/proxy.py
 lib/python${MODPY_VERSION}/site-packages/nose/proxy.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/result.py
 lib/python${MODPY_VERSION}/site-packages/nose/result.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/selector.py
 lib/python${MODPY_VERSION}/site-packages/nose/selector.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/__init__.py
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/pluginopts.py
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/pluginopts.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/suite.py
 lib/python${MODPY_VERSION}/site-packages/nose/suite.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/tools.py
 lib/python${MODPY_VERSION}/site-packages/nose/tools.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.py
 lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.pyc
+lib/python${MODPY_VERSION}/site-packages/nose/usage.txt
 lib/python${MODPY_VERSION}/site-packages/nose/util.py
 lib/python${MODPY_VERSION}/site-packages/nose/util.pyc
 @man man/man1/nosetests.1
