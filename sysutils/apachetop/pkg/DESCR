@@ -1,0 +1,2 @@
+ApacheTop is a curses-based top-like display for Apache information,
+including requests per second, bytes per second, most popular URLs, etc.
