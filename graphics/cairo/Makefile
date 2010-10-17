@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/11 08:09:44 eric Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/17 12:50:53 eric Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.10.0
-SHARED_LIBS=		cairo 10.0
+REVISION=		0
+SHARED_LIBS=		cairo 11.0
 SHARED_LIBS+=		cairo-trace 0.0
 SHARED_LIBS+=		cairo-gobject 0.0
 SHARED_LIBS+=		cairo-script-interpreter 0.0
@@ -13,7 +14,7 @@ HOMEPAGE=		http://cairographics.org/introduction
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-WANTLIB=		GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender \
+WANTLIB=		GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender \
 			Xxf86vm drm expat fontconfig freetype glib-2.0 \
 			gobject-2.0 gthread-2.0 m pcre pixman-1 png \
 			pthread-stubs xcb xcb-render xcb-shm z
@@ -40,9 +41,7 @@ CONFIGURE_ENV=		PTHREAD_LIBS="-pthread"
 CONFIGURE_ARGS=		--enable-gl \
 			--enable-xml \
 			--enable-xcb \
-			--enable-xlib-xcb \
 			--disable-silent-rules
-
 
 REGRESS_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 

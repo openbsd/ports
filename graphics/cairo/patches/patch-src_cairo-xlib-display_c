@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cairo-xlib-display_c,v 1.1 2010/10/17 12:50:53 eric Exp $
+--- src/cairo-xlib-display.c.orig	Sat Oct 16 13:08:38 2010
++++ src/cairo-xlib-display.c	Sat Oct 16 13:08:56 2010
+@@ -353,11 +353,7 @@ _cairo_xlib_device_create (Display *dpy)
+     /* Prior to Render 0.10, there is no protocol support for gradients and
+      * we call function stubs instead, which would silently consume the drawing.
+      */
+-#if RENDER_MAJOR == 0 && RENDER_MINOR < 10
+     display->buggy_gradients = TRUE;
+-#else
+-    display->buggy_gradients = FALSE;
+-#endif
+     display->buggy_pad_reflect = FALSE;
+     display->buggy_repeat = FALSE;
+ 
