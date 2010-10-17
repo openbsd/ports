@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_main_h,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
+--- src/main.h.orig	Sun Oct 17 00:19:02 2010
++++ src/main.h	Sun Oct 17 00:19:02 2010
+@@ -0,0 +1,6 @@
++void set_user_file ();
++gchar* get_user_file ();
++gboolean set_system_file ();
++gchar* get_system_file ();
++void add_list_color (gchar *, gchar *, gchar *, gboolean);
++void add_rgb_file (gchar *, gchar *);

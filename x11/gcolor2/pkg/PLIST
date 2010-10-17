@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
+@bin bin/gcolor2
+share/pixmaps/
+share/pixmaps/gcolor2/
+share/pixmaps/gcolor2/about_icon.png
+share/pixmaps/gcolor2/icon.png

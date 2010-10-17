@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
+--- src/main.c.orig	Sun Oct 17 00:19:56 2010
++++ src/main.c	Sat Oct 16 22:57:50 2010
+@@ -3,7 +3,12 @@
+ #endif
+ 
+ #include <gtk/gtk.h>
++#include <glib.h>
++#include <glib/gprintf.h>
++
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #include "interface.h"
+ #include "support.h"
+@@ -14,6 +19,7 @@ GdkWindow    *gdkwin;
+ gchar        *user_filename;
+ gchar        *sys_filename;
+ 
++#include "main.h"
+ 
+ void set_user_file ()
+ {

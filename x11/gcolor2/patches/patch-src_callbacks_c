@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2010/10/17 21:38:05 landry Exp $
+--- src/callbacks.c.orig	Sat Oct 16 10:36:18 2010
++++ src/callbacks.c	Sun Oct 17 00:27:40 2010
+@@ -3,11 +3,17 @@
+ #endif
+ 
+ #include <gtk/gtk.h>
++#include <glib.h>
++#include <glib/gprintf.h>
++
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #include "callbacks.h"
+ #include "interface.h"
+ #include "support.h"
++#include "main.h"
+ 
+ 
+ GtkWidget        *savedialog;
+@@ -400,7 +406,7 @@ gboolean delete_color (gchar* color_name, gchar* color
+ 		g = g_ascii_strtoull (p, &p, 10);
+ 		b = g_ascii_strtoull (p, &p, 10);
+ 		p += strspn (p, " \t");
+-		g_sprintf (file_color_value, "#%2X%2X%2X", r, g, b);
++		g_sprintf (file_color_value, "#%02X%02X%02X", r, g, b);
+ 		file_color_name = g_strchomp (g_strdup (p));
+ 		
+ 		/* make sure to only remove the first matching color. both value and
