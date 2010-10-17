@@ -1,11 +1,11 @@
-$OpenBSD: patch-redis_c,v 1.1.1.1 2010/10/10 15:50:06 dcoppa Exp $
+$OpenBSD: patch-redis_c,v 1.2 2010/10/17 12:48:46 dcoppa Exp $
 
 Fix an alignment problem that was causing a SIGBUS on strict alignment 
 archs like SPARC
 
---- redis.c.orig	Fri Oct  8 12:31:46 2010
-+++ redis.c	Fri Oct  8 12:33:10 2010
-@@ -7442,7 +7442,7 @@ static int deleteIfVolatile(redisDb *db, robj *key) {
+--- redis.c.orig	Fri Oct 15 13:07:25 2010
++++ redis.c	Sun Oct 17 13:41:22 2010
+@@ -7444,7 +7444,7 @@ static int deleteIfVolatile(redisDb *db, robj *key) {
  
  static void expireGenericCommand(redisClient *c, robj *key, robj *param, long offset) {
      dictEntry *de;
