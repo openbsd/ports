@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/25 11:05:25 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/10/17 09:11:08 benoit Exp $
 @mode g+s
 @group games
 @bin bin/lbreakout2
@@ -194,6 +194,7 @@ share/lbreakout2/levels/Circle
 share/lbreakout2/levels/Classique
 share/lbreakout2/levels/Color
 share/lbreakout2/levels/Composers
+share/lbreakout2/levels/Cool
 share/lbreakout2/levels/Crossing
 share/lbreakout2/levels/D2K
 share/lbreakout2/levels/Daves
@@ -234,6 +235,7 @@ share/lbreakout2/levels/Lattsville
 share/lbreakout2/levels/LinuxFun
 share/lbreakout2/levels/Lord
 share/lbreakout2/levels/Maze
+share/lbreakout2/levels/MegaMan2
 share/lbreakout2/levels/Megadoomer
 share/lbreakout2/levels/MontyHall
 share/lbreakout2/levels/NES
