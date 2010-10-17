@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/30 07:21:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/17 22:21:55 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	cross-platform interactive fiction player
 
 DISTNAME =	gargoyle-2009-08-25-sources
 PKGNAME =	gargoyle-20090825
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games x11
 
@@ -37,7 +37,6 @@ LIB_DEPENDS =	SDL.>=2.0::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		atk-1.0::devel/atk \
 		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-		glitz::graphics/glitz \
 		gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
 		jpeg.>=62::graphics/jpeg \
 		pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
