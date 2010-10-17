@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.214 2010/10/15 22:45:33 landry Exp $
+# $OpenBSD: Makefile,v 1.215 2010/10/17 11:15:59 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
      SUBDIR += LPRng
      SUBDIR += acx-firmware
      SUBDIR += anacron
+     SUBDIR += apachetop
      SUBDIR += apc-upsd
      SUBDIR += apcupsd
      SUBDIR += apcd
