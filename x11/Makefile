@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.430 2010/09/06 08:22:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.431 2010/10/17 21:39:38 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -76,6 +76,7 @@
      SUBDIR += gaia
      SUBDIR += gammapage
      SUBDIR += gbdfed
+     SUBDIR += gcolor2
      SUBDIR += gdesklets
      SUBDIR += gdevilspie
      SUBDIR += gentoo
