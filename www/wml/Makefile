@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/31 14:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/17 22:00:07 jasper Exp $
 
 COMMENT=		Website META Language
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}distrib/
+MASTER_SITES=		${HOMEPAGE}/distrib/
 
 WANTLIB=		c m ncurses perl util
 MODULES=		devel/gettext
@@ -27,7 +27,11 @@ RUN_DEPENDS=		::devel/p5-Term-ReadKey \
 			::www/tidy
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-USE_LIBTOOL=		Yes
+# Using perl libtool gives:
+# strip: /usr/obj/ports/wml-2.0.11/fake-amd64//usr/local/libexec/wml/#INST@29788#:
+#	File format not recognized
+# May be unrelated, but forcing GNU libtool lets this build at least.
+USE_LIBTOOL=		Gnu
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-openworld
