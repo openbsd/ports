@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -31,7 +31,6 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gconf-editor

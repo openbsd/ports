@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/27 11:55:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -27,6 +27,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	::devel/glib2
 
+USE_X11=	No
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

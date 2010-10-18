@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=		GNOME Application Libs
 
@@ -42,7 +42,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

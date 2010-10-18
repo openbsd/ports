@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/08 09:41:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -22,6 +22,8 @@ RUN_DEPENDS=	::devel/glib2
 
 # don't inherit USE_LIBTOOL from the gnome MODULE
 USE_LIBTOOL=	No
+
+USE_X11=	No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-silent-rules

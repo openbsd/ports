@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/27 05:02:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=	GObject based collection library 
 
@@ -27,6 +27,8 @@ LIB_DEPENDS=	::devel/glib2
 
 MODULES=	devel/gettext \
 		x11/gnome
+
+USE_X11=	No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

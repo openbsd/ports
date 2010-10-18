@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
@@ -23,7 +23,6 @@ MODULES=	x11/gnome \
 		devel/gettext
 
 DESKTOP_FILES=	Yes
-USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-evolution-data-server
 

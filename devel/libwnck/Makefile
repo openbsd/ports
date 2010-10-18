@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -34,7 +34,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		::x11/gtk+2 \
 			::devel/startup-notification
 
-USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \

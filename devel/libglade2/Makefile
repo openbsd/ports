@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -31,7 +31,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		::x11/gtk+2 \
 			:libxml->=2.6.16p6:textproc/libxml
 
-USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \

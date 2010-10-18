@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/13 16:20:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -50,7 +50,6 @@ LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 			::x11/py-gtk2
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-python \

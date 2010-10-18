@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/10/11 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2010/10/18 13:29:56 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -62,7 +62,6 @@ LIB_DEPENDS= 		:db->=4,<5:databases/db/v4 \
 # objdump: 'a.out': No such file
 USE_LIBTOOL=		gnu
 
-USE_X11=		Yes
 YACC=			bison
 AUTOCONF_VERSION=	2.64
 CONFIGURE_STYLE= 	autoconf gnu

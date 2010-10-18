@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -43,7 +43,6 @@ RUN_DEPENDS=		::x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes
 MODGNOME_HELP_FILES =	Yes
-USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

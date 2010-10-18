@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 13:28:51 jasper Exp $
 
 COMMENT =	library for writing single instance application
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
-
-USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
