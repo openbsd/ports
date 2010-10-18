@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/07 14:27:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:47 espie Exp $
 
 COMMENT =	console client for pandora
 
@@ -40,6 +40,7 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 ALL_TARGET =	pianobar libpiano

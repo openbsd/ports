@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=		compact disk input and control library
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=	::audio/libcddb
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION =	2.61
 

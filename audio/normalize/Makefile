@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	audio file volume normalizer
 
@@ -23,6 +23,7 @@ MODULES=	devel/gettext
 WANTLIB=	c m mad.>=2 audiofile
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 # Do not build xmms plugin for now.
 CONFIGURE_ARGS=	--disable-xmms \

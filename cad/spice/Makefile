@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=	Simulation Program for Integrated Circuit Electronics
 
@@ -18,6 +18,7 @@ MASTER_SITES=		http://embedded.eecs.berkeley.edu/pubs/downloads/spice/
 HOMEPAGE=		http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 MAKE_ENV=		MAKE_PROGRAM='${MAKE_PROGRAM}' CC="${CC}"
 
 NO_REGRESS=		Yes

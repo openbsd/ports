@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	full-screen ncurses or GTK-based audio mixer
 
@@ -31,6 +31,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-own-labels --without-gtk1
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib'
+		USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-gtk

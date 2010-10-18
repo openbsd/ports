@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 16:52:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

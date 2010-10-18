@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:36:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:52:47 espie Exp $
 
 COMMENT =	Python module to handle audio metadata 
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
+USE_GROFF =	Yes
 REGRESS_TARGET =	test
 
 do-regress:

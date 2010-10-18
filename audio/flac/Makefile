@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/25 20:27:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
+USE_GROFF =	Yes
 
 post-install:
 	cd ${PREFIX}/share/doc && mv ${DISTNAME} flac

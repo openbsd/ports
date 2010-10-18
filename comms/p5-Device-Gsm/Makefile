@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/31 16:25:29 fkr Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	Perl extension to interface GSM cellulars / modems
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 RUN_DEPENDS=	::comms/p5-Device-Modem
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

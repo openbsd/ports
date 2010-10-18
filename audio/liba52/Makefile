@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.14 2010/09/06 00:04:28 sthen Exp $
+#$OpenBSD: Makefile,v 1.15 2010/10/18 16:52:45 espie Exp $
 
 CATEGORIES=	audio
 
@@ -17,6 +17,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_DISTFILES_CDROM=Yes

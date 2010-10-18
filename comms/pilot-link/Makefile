@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 16:57:48 espie Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	tools to connect your PalmOS® compatible handheld
@@ -33,6 +33,7 @@ LIB_DEPENDS=		::graphics/png \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

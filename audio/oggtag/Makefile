@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:46 espie Exp $
 COMMENT=	command-line editor for tags in Ogg Vorbis files
 
 DISTNAME=	oggtag_1.0
@@ -26,6 +26,7 @@ LIB_DEPENDS=	::audio/libogg \
 
 WRKDIST= 	${WRKDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 LIBS=		-lvorbis -logg -lm

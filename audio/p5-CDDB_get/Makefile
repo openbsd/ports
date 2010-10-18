@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		perl interface to query for cddb-information
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		FONKIE
+USE_GROFF =	Yes
 
 post-patch:
 	@cp ${WRKSRC}/cddb.pl ${WRKSRC}/cddb

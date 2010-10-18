@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/18 03:00:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
@@ -17,6 +17,7 @@ WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nut/}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 ALL_TARGET=     nut

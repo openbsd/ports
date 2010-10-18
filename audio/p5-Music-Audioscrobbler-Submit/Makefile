@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/27 19:49:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		module providing routines to submit songs to last.fm
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		EALLENIII
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-Config-Options \
 			::www/p5-libwww

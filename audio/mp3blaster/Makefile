@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/01/11 07:51:26 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	text console audio player with an interactive interface
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--without-esd \
 		--without-sdl \
 		--with-sndio
 CONFIGURE_ENV+=	ac_cv_lib_ossaudio_main=no
+USE_GROFF =	Yes
 
 post-extract:
 	@cp ${FILESDIR}/sndioplayer.cc ${WRKSRC}/mpegsound

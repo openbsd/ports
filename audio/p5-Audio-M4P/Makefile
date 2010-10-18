@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/03 10:29:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
@@ -17,4 +17,5 @@ RUN_DEPENDS=		:p5-Crypt-Rijndael-*:security/p5-Crypt-Rijndael \
 			:p5-Tree-Simple-*:devel/p5-Tree-Simple \
 			:p5-Tree-Simple-View-*:devel/p5-Tree-Simple-View
 
+USE_GROFF =	Yes
 .include <bsd.port.mk>

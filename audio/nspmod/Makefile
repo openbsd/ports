@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	MOD/S3M/MTM tracker that does its own DSP
 DISTNAME=	nspmod-0.1
@@ -15,6 +15,7 @@ WANTLIB=		c sndio
 
 MAKE_ENV=	CC=${CC}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

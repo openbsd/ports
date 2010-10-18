@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.9 2010/09/24 15:23:06 sthen Exp $
+#	$OpenBSD: Makefile,v 1.10 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Ace/}
 CONFIGURE_STYLE= perl
 # we patch the Makefile.PL to allow us to set this simply
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT=Yes
+USE_GROFF =	Yes
 
 
 # go through extra indirection to allow both flavors to share most files.

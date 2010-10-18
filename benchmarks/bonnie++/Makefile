@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:30:26 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:57:46 espie Exp $
 
 COMMENT=	enhanced performance test of filesystem I/O
 
@@ -21,6 +21,7 @@ WANTLIB=		c m stdc++
 
 NO_REGRESS=	Yes
 USE_GMAKE=      Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=	CXX="${CXX} ${CXXFLAGS}"
 
 CONFIGURE_STYLE=gnu dest

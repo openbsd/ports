@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/24 07:01:03 ajacoutot Exp $	
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:57:48 espie Exp $	
 
 COMMENT=	convert between GB and BIG-5 codes
 
@@ -21,6 +21,7 @@ EXTRACT_ONLY=	hc-30.tar.gz
 
 WRKDIST=	${WRKDIR}/hc3
 
+USE_GROFF =	Yes
 ALL_TARGET=	hc b2g g2b
 
 NO_REGRESS=	Yes

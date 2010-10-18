@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 16:52:45 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -33,6 +33,7 @@ LIB_DEPENDS =		::audio/libsndfile \
 # uses macros from libtool.m4
 BUILD_DEPENDS =		::devel/libtool
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.61

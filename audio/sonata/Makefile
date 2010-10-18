@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	elegant music player for MPD
 
@@ -38,6 +38,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/py-gtk2
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

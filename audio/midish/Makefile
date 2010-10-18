@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/13 20:48:20 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 16:52:45 espie Exp $
  
 COMMENT=		command line MIDI sequencer and filter
 DISTNAME=		midish-1.0.2
@@ -18,6 +18,7 @@ WANTLIB=		c ncurses readline sndio
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 NO_REGRESS=		Yes
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/midish ${WRKBUILD}/rmidish ${PREFIX}/bin

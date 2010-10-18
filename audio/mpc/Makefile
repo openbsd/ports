@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/26 13:59:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=		command line client for mpd
 
@@ -25,6 +25,7 @@ MODULES=		converters/libiconv
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		ac_cv_func_iconv=yes
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpc

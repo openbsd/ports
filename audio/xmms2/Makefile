@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 16:52:48 espie Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -36,6 +36,7 @@ WANTLIB  =		c gsm faac faad m mp3lame ncurses ogg orc-0.4 \
 			pthread readline schroedinger-1.0 speex stdc++ \
 			theora util vorbis vorbisenc vorbisfile x264 z
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 BUILD_DEPENDS =		::devel/pyrex \

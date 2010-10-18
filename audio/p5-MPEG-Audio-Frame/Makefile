@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/26 03:33:07 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	class for weeding out MPEG audio frames from a file handle
 
 MODULES=	cpan
 DISTNAME=	MPEG-Audio-Frame-0.09
 CATEGORIES=	audio
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:11:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 16:57:49 espie Exp $
 
 COMMENT=	X radio logging program
 
@@ -31,6 +31,7 @@ MASTER_SITES=		http://www.qsl.net/pg4i/download/
 MODULES=		devel/gettext
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		UPDATE_DESKTOP_DATABASE=/usr/bin/true

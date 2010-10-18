@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=		GNOME music player client
 
@@ -37,6 +37,7 @@ MODGCC3_LANGS=  	c
 USE_GMAKE=		Yes
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		::x11/gob2 \

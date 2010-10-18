@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 16:52:44 espie Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	sound library for Enlightenment
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --with-libwrap
 # broken, relies upon v4-mapped addresses
 CONFIGURE_ARGS+= --disable-ipv6
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts

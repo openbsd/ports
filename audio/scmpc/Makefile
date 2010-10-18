@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
@@ -28,6 +28,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="-I${LOCALBASE}/include"
+			USE_GROFF =	Yes
 
 LIB_DEPENDS=		::devel/argtable \
 			::devel/libconfuse \

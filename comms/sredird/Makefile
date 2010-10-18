@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	RFC 2217 compliant serial port redirector
 
@@ -17,6 +17,7 @@ WANTLIB=		c
 
 MASTER_SITES=	http://www.ibiblio.org/pub/Linux/system/serial/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-build:

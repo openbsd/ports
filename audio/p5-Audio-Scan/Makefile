@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/07 21:14:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	XS parser for many common audio formats
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ogg z
 MODULES=	cpan
 CONFIGURE_ARGS+=--with-flac-libs="${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	FLAC::audio/flac
 

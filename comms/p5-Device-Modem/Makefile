@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/09 12:25:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	talk to modem devices connected via serial port
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 BUILD_DEPENDS=	:p5-Device-SerialPort->=1:comms/p5-Device-SerialPort
 
 .include <bsd.port.mk>

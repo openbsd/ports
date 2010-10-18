@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/18 13:56:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -25,5 +25,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pms/}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+			USE_GROFF =	Yes
 
 .include <bsd.port.mk>

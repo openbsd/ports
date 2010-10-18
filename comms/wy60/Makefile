@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	curses-based emulator for the Wyse 60 terminal
 
@@ -18,6 +18,7 @@ WANTLIB=		c curses
 MASTER_SITES=	${HOMEPAGE}html/archive/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wy60

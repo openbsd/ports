@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
@@ -33,5 +33,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=    gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13::x11/gtk+2
 
 CONFIGURE_STYLE=	imake
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

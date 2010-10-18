@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 16:52:46 espie Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
@@ -27,6 +27,7 @@ LIB_DEPENDS=	::audio/libao \
 		::audio/libmad
 
 SEPARATE_BUILD=	concurrent
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-mpg123-symlink
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

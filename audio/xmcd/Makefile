@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 16:52:48 espie Exp $
 
 COMMENT=	Motif CD player
 
@@ -21,6 +21,7 @@ USE_X11=	Yes
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 XMCDLIB=	${PREFIX}/share/xmcd
 

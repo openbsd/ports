@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-nls
+USE_GROFF =	Yes
 
 ALL_TARGET=	all # vcheck
 

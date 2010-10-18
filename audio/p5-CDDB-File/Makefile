@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/08 11:14:55 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 16:52:46 espie Exp $
 
 COMMENT =		parse a CDDB/freedb data file
 
@@ -14,4 +14,5 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+USE_GROFF =	Yes
 .include <bsd.port.mk>

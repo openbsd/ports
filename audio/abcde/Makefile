@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/24 14:38:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
@@ -32,6 +32,7 @@ FLAVORS=	lame
 FLAVOR?=	
 
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mlame}
 DISTFILES+=	id3_0.12.orig.tar.gz:1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/05/20 09:15:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -23,6 +23,7 @@ WANTLIB=	c m ncurses
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu

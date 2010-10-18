@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	MPEG/audio Layer 1 and Layer 2 encoder/decoder
 DISTNAME=	mpegaudio
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MAKE_ENV=	CC="${CC}"
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	CDDA reading utility with extra data verification features
 
@@ -27,6 +27,7 @@ AUTOCONF_VERSION=	2.52
 CONFIGURE_ENV=		GCC=${CC}
 MAKE_FLAGS=	LIBcdda_interface_VERSION=${LIBcdda_interface_VERSION} \
 		LIBcdda_paranoia_VERSION=${LIBcdda_paranoia_VERSION}
+		USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

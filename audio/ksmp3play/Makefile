@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	curses-based mp3 player
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	::devel/sdl \
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ksmp3play/}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \

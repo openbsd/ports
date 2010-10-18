@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/24 07:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 16:57:46 espie Exp $
 
 COMMENT=	Network performance benchmark
 
@@ -25,6 +25,7 @@ WANTLIB=		c m
 MAKE_FILE=	makefile
 MAKE_FLAGS+=	CC="${CC}" CFLAGS='${CFLAGS} -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 SHAREDIR=	${PREFIX}/share/netperf

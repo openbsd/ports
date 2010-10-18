@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/29 09:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=		Gnu Circuit Analysis Package
 
@@ -22,6 +22,7 @@ MASTER_SITES=		${HOMEPAGE}dist/ \
 			http://www.geda.seul.org/dist/
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 post-install:

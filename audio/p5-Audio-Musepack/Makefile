@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	object-oriented interface to Musepack/APE file information
 
@@ -18,5 +18,6 @@ RUN_DEPENDS=	:p5-MP3-Info->=1.20:audio/p5-MP3-Info
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/15 09:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 16:57:47 espie Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
@@ -21,6 +21,7 @@ MASTER_SITES =		http://spacehopper.org/mirrors/ \
 			ftp://ftp.joedog.org/pub/siege/
 
 MAKE_FLAGS =		localstatedir='/var/log/siege'
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--localstatedir=/var/log/siege \

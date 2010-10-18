@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/03 13:46:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:57:49 espie Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -20,6 +20,7 @@ AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 USE_MOTIF=		openmotif
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\

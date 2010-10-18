@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 19:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	edit id3v1 tags from an audio mpeg layer 3
 DISTNAME=	MP3-ID3v1Tag-1.11
@@ -13,5 +13,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

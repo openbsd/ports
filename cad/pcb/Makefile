@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20100929
@@ -40,6 +40,7 @@ MODULES=	devel/gettext \
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-doc \
 		--with-gui=gtk \

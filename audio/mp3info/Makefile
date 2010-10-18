@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
@@ -21,6 +21,7 @@ WANTLIB=		c ncurses
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

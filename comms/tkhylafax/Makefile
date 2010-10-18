@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS=	::comms/hylafax \
 		::print/gv
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

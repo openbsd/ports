@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/13 00:04:11 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		create multichannel WAV audio files
 DISTNAME=		multimux-0.2.5.2
@@ -20,6 +20,7 @@ EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		::graphics/ffmpeg
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

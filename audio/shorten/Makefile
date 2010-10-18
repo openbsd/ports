@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	fast compression for waveform files
 
@@ -17,5 +17,6 @@ WANTLIB=		c m
 MASTER_SITES=	${HOMEPAGE}dist/src/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

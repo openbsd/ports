@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 16:57:47 espie Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
@@ -37,5 +37,6 @@ CONFIGURE_ARGS+=	--disable-tcl \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+			USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/01 21:57:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		complete MPD client library
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	bin
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		:p5-Audio-MPD-Common->=0.1.4:audio/p5-Audio-MPD-Common \
 			::devel/p5-Class-Accessor \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:30:26 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 16:57:46 espie Exp $
 
 COMMENT=	performance test of filesystem I/O
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKBUILD}/bonnie.o -c ${WRKSRC}/Bonnie.c

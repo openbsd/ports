@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 21:30:26 simon Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 16:57:46 espie Exp $
 
 COMMENT=	system performance measurement
 DISTNAME=	lmbench
@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
+USE_GROFF =	Yes
 
 MAN1=	bargraph.1 graph.1
 MAN8=	lmbench.8 lat_proc.8 lat_mmap.8 lat_ctx.8 lat_syscall.8 lat_pipe.8 \

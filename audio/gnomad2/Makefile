@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
@@ -37,6 +37,7 @@ LIB_DEPENDS=		::audio/libid3tag \
 			::x11/gtk+2
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/09/26 13:40:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	vorbis.>=6,vorbisenc.>=2,vorbisfile.>=5::audio/libvorbis \
 WANTLIB=	c iconv m ogg sndio z
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-libtool

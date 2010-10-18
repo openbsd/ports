@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/09 20:41:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	interface to CDDB and freedb servers
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

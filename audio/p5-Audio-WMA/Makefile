@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/16 12:12:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=	read WMA/ASF metadata
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

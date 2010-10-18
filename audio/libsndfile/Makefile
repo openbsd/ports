@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/01/02 17:53:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-shave
 CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Cfg
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	htmldocdir=${PREFIX}/share/doc/libsndfile
 

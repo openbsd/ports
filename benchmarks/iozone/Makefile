@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/07/22 11:53:50 okan Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/18 16:57:46 espie Exp $
 # Uses pthreads
 
 COMMENT=	performance test of sequential file I/O
@@ -20,6 +20,7 @@ WANTLIB=		c pthread
 MAKE_ENV=	CC="${CC}"
 
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 ALL_TARGET=	openbsd-threads
 

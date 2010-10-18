@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/06 00:04:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	Tcl/Tk CD player
 DISTNAME=	xcd-1.7
@@ -24,6 +24,7 @@ FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		CDDIR=${WRKINST}${PREFIX}/lib/xcd \
 		MANDIR=${WRKINST}${PREFIX}/man/man1
 WRKDIST=	${WRKDIR}/xcd
+USE_GROFF =	Yes
 
 MODTK_VERSION=	8.4
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/11 08:11:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -25,6 +25,7 @@ WANTLIB=		c
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 MODULES=		devel/gettext
 

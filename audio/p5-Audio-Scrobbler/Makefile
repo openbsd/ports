@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		submit tracks to last.fm/audioscrobbler
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::www/p5-libwww \
 			::devel/p5-Config-IniFiles

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 16:52:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,5 +23,6 @@ WANTLIB=	ogg
 LIB_DEPENDS=	FLAC.>=8::audio/flac
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

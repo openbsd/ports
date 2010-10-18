@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -30,6 +30,7 @@ RUN_DEPENDS=		:mpg321-*:audio/mpg321 \
 LIB_DEPENDS=		::x11/gtk+2
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \

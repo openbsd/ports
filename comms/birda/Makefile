@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:57:48 espie Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
 COMMENT=		Bohlin's IrDA utilities
@@ -18,5 +18,6 @@ WANTLIB=		c
 
 FAKE_FLAGS=	PREFIX="${LOCALBASE}" MANDIR="${LOCALBASE}/man/cat" \
 		LIBDIR="${LOCALBASE}/lib" DEBUGLIBS=No
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

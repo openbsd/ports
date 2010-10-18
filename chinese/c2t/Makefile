@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/24 08:01:40 ajacoutot Exp $	
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:57:47 espie Exp $	
 
 COMMENT=	translate GB/Big5 encoding to tone pinyin
 
@@ -22,6 +22,7 @@ EXTRACT_ONLY=	c2t.tar.gz
 
 WRKDIST=	${WRKDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

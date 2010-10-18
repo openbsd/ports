@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/31 20:50:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -26,6 +26,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
+			USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ncmpc

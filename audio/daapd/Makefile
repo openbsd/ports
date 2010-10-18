@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	server for the DAA protocol
 DISTNAME=	daapd-0.2.4b
@@ -23,6 +23,7 @@ LIB_DEPENDS=	::multimedia/libmp4v2 \
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FILE=	makefile
 MAKE_ENV+=	CC="${CC}" \
 		CXX="${CXX}" \

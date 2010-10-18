@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/28 10:22:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 16:57:47 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	self-scaling network benchmark
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/code/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_GETRUSAGE"
 ALL_TARGET=	NPtcp
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

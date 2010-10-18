@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	serial and network communications package
 
@@ -26,6 +26,7 @@ MAKE_FLAGS=	KTARGET=openbsd CC="${CC}" CC2="${CC}" \
 		-DCKHTTP" \
 		LIBS="-lcurses -lutil -lm"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/kermit

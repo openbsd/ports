@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/08 12:04:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:52:46 espie Exp $
 
 COMMENT=		bunch of common helper classes for MPD
 
@@ -17,6 +17,7 @@ MODULES=		cpan
 CPAN_AUTHOR=		JQUELIN
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-Class-Accessor \
 			::devel/p5-Readonly

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:57:48 espie Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
@@ -26,6 +26,7 @@ LIB_DEPENDS =		usb::devel/libusb
 
 CONFIGURE_STYLE =	gnu
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 post-install:

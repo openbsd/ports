@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:57:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME=	Device-SerialPort-1.003001
 REVISION=	1
 CATEGORIES=	comms
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 

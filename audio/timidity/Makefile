@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 16:52:47 espie Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS= --enable-audio=sndio \
 		--enable-server \
 		--with-default-path=${SYSCONFDIR}
 
+USE_GROFF =	Yes
 FLAVORS=	gtk2 xaw
 FLAVOR?=
 

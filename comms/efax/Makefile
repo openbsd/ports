@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:57:48 espie Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

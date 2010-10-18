@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 16:52:44 espie Exp $
 
 COMMENT=	free audio editor
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

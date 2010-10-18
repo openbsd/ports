@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 16:52:45 espie Exp $
 
 COMMENT=	command line interface to iRiver music players
 
@@ -22,5 +22,6 @@ LIB_DEPENDS=	::devel/libusb
 WANTLIB=	c usb.>=8
 
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:47 espie Exp $
 
 PKG_ARCH=		*
 
@@ -28,6 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pacpl/}
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

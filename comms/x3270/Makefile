@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/03 14:39:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 16:57:49 espie Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
@@ -24,6 +24,7 @@ WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c crypto ssl \
 RUN_DEPENDS=		::comms/c3270
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 
