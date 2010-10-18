@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/12 21:26:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -66,6 +66,7 @@ MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 FLAVORS=	lite tinygui
 FLAVOR?=

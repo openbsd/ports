@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/07 19:33:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:17 espie Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -27,6 +27,7 @@ MODGCC3_ARCHES=	${GCC4_ARCHS}
 
 BUILD_DEPENDS=		::textproc/texi2html
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 WANTLIB=		c m ossaudio z
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \

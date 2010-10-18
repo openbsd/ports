@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	network head-to-head version of T*tris
 
@@ -18,6 +18,7 @@ WANTLIB=		c ncurses termcap
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 FAKE_FLAGS=	DESTDIR=${WRKINST}${PREFIX}/bin
 

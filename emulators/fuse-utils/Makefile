@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/07 18:00:20 grange Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		Free Unix Spectrum Emulator utilities
 
@@ -23,5 +23,6 @@ LIB_DEPENDS=		spectrum.>=5::devel/libspectrum
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

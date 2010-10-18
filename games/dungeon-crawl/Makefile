@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -18,6 +18,7 @@ EXTRACT_CASES+=	*.tbz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 WRKSRC=	${WRKDIST}/source
 MAKE_FILE=${WRKSRC}/makefile.bsd
 MAKE_FLAGS=EXTRA_FLAGS='${CXXFLAGS} -DSAVE_DIR_PATH=\"${TRUEPREFIX}/lib/dungeon-crawl-$V/\"' CXX='${CXX}' LDFLAGS=
+USE_GROFF =	Yes
 
 ALL_TARGET=debug
 

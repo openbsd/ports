@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/18 18:49:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:17 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=		SDL:sdl-*-!no_x11:devel/sdl \
 			png.>=2::graphics/png
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf

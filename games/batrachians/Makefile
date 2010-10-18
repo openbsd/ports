@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/04 15:35:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
@@ -18,6 +18,7 @@ MASTER_SITES=	http://sarrazip.com/dev/
 WANTLIB=	SDL SDL_image SDL_mixer c m pthread stdc++
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	flatzebra-0.1.>=1.0:flatzebra->=0.1.4:devel/flatzebra

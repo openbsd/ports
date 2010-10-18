@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/12/22 15:11:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 18:00:17 espie Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -44,6 +44,7 @@ RUN_DEPENDS =		::devel/desktop-file-utils
 USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu autoconf
 
 CPPFLAGS =		-I${LOCALBASE}/include \

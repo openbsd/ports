@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2010/10/18 18:00:16 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -46,6 +46,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
+USE_GROFF =	Yes
 MULTI_PACKAGES=	-main -lang
 
 FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby

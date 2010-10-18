@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image \
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-cxxlua=no

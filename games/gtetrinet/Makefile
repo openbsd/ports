@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:00:18 espie Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -71,6 +71,7 @@ FAKE_FLAGS=	gamesdir=${PREFIX}/bin
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

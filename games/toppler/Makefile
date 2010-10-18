@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=		Nebulous rewrite of Tower Toppler
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=		--localstatedir=/var/games
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/toppler

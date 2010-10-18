@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${HOMEPAGE}/src/
 WANTLIB=		c m
 
 CONFIGURE_STYLE=	simple
+USE_GROFF =	Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

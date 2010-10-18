@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2010/10/18 18:00:17 espie Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -28,6 +28,7 @@ EXTRACT_SUFX=	.tar.bz2
 PSEUDO_FLAVORS=	no_x11
 FLAVOR?=
 
+USE_GROFF =	Yes
 MULTI_PACKAGES=	-main -share
 
 MODULES=	devel/gettext

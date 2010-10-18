@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/05 22:38:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:00:17 espie Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.2.1
@@ -24,6 +24,7 @@ LIB_DEPENDS =	SDL_mixer.>=3::devel/sdl-mixer \
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+ =	--without-python

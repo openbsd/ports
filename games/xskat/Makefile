@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:20 espie Exp $
 
 COMMENT=	skat card game
 
@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.xskat.de/
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

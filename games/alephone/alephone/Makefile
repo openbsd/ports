@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.8 2010/07/06 15:32:44 espie Exp $
+#	$OpenBSD: Makefile,v 1.9 2010/10/18 18:00:17 espie Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
@@ -37,6 +37,7 @@ LIB_DEPENDS =		::devel/boost \
 
 USE_X11 =		Yes
 USE_BZIP2 =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VER =		2.61
 AUTOMAKE_VER =		1.9

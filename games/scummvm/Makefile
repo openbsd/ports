@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/17 19:59:51 jsg Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/18 18:00:18 espie Exp $
 
 BROKEN-hppa=	gcc bug
 
@@ -31,6 +31,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa --disable-debug
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+		USE_GROFF =	Yes
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--enable-tremor --disable-vorbis

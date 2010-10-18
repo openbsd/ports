@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=		curses-based Lines game
 
@@ -18,6 +18,7 @@ MASTER_SITES=		http://manticore.2y.net/cgi-bin/dlwct.sh?f=clines/
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clines

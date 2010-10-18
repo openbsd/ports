@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/12/16 01:01:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	GNU version of Shogi
 
@@ -19,6 +19,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-x \
 		--without-xshogi
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

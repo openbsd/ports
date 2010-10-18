@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:00:20 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	No
 WANTLIB=		X11 c pthread-stubs xcb
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 EXTRACT_SUFX=	.tar.Z

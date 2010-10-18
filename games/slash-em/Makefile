@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
@@ -27,6 +27,7 @@ GAMEDIR=lib/slashemdir-$V
 NHDIR=	${PREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 SUBST_VARS=GAMEDIR V
+USE_GROFF =	Yes
 
 # qt flavor is apparently not working yet
 FLAVORS=no_x11 #qt

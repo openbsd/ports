@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/04 10:04:46 armani Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:00:19 espie Exp $
 
 COMMENT-main=	free open source 2D MMORPG
 COMMENT-music=	music addon for TMW
@@ -40,6 +40,7 @@ MODULES=	devel/gettext
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	::devel/sdl-image \

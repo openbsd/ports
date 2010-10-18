@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	drawing program for children
 
@@ -37,6 +37,7 @@ RUN_DEPENDS=	::graphics/netpbm \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} OPTFLAGS="${CFLAGS}"
 CFLAGS+=	-DHAVE_STRCASESTR

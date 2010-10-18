@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/24 10:33:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -40,6 +40,7 @@ LIB_DEPENDS=		::archivers/lzo2 \
 RUN_DEPENDS=            ::devel/desktop-file-utils
 
 CONFIGURE_STYLE=	simple
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--binary-dir=bin \

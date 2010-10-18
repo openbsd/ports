@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/09/30 08:25:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/18 18:00:16 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -38,6 +38,7 @@ MODULES=		converters/libiconv
 
 USE_X11=		Yes
 USE_MOTIF=		Any
+USE_GROFF =	Yes
 ALL_TARGET=		openbsd
 
 NO_REGRESS=		Yes

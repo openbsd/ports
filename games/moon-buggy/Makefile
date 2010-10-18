@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	drive some car across the moon
 
@@ -21,5 +21,6 @@ WANTLIB=	c curses m
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--sharedstatedir=/var --with-setgid=games
 USE_GMAKE=  Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

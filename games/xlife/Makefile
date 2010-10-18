@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
@@ -25,6 +25,7 @@ FAKE_FLAGS=XLIFEPATSDIR=${TRUEPREFIX}/share/xlife
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-build:
 	cd ${WRKDIST}/lifesrc-3.5 && ${MAKE} CFLAGS="${CFLAGS}"

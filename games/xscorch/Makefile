@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:20 espie Exp $
 
 COMMENT=		Scorched Earth-clone
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		mikmod::audio/libmikmod \
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-x \

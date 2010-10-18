@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=		Rich city simulation game for X
 
@@ -23,6 +23,7 @@ USE_X11=		Yes
 
 MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-extract:

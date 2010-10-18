@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/21 11:51:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	interactive tutorial for algorithms and data structures
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 RUN_DEPENDS=	:p5-Tk-*:x11/p5-Tk
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 
 P5SITE=		libdata/perl5/site_perl

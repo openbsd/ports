@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/06 21:23:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	Night Stalker clone for X
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	flatzebra-0.1.>=1.0:flatzebra->=0.1.4:devel/flatzebra
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 

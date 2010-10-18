@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/01/03 23:50:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:00:18 espie Exp $
 
 COMMENT =	GNU version of Go
 
@@ -17,6 +17,7 @@ WANTLIB =	c m ncurses
 MASTER_SITES =	${MASTER_SITE_GNU:=gnugo/}
 
 CONFIGURE_STYLE = gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnugo

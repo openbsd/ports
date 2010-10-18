@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		simple to use text editor for X11
 
@@ -18,6 +18,7 @@ EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/25 17:14:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+= --disable-ccachetest \
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_bind_gethostent=no
+		USE_GROFF =	Yes
 
 pre-build:
 	@perl -pi -e 's|\@LINUX_TRUE\@||g;' \

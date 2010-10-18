@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.1
@@ -18,6 +18,7 @@ WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \

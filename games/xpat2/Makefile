@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	X11 solitaire with 14 variations
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs xcb
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 WRKSRC=		${WRKDIST}/src
 CONFIGURE_STYLE=imake

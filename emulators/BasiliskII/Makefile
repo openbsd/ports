@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:16 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=		esd.>=2::audio/esound \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf

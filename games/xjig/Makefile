@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	jigsaw puzzle game for X11
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs stdc++ xcb
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 MAKE_FILE=	Makefile.Linux
 

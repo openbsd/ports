@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/b/beav/
 
 WRKDIST=	${WRKDIR}/beav-1.40
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

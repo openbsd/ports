@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	falling blocks puzzle game
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	:pygame->=1.7:devel/pygame \
 MODULES=	lang/python
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 do-install:
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKSRC}/angrydd.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -28,6 +28,7 @@ XMKMF=		xmkmf
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 do-build:
 	(cd ${WRKSRC}/spim; ./Configure && ${MAKE})

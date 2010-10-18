@@ -1,5 +1,5 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.38 2009/02/06 09:39:02 form Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		Joe's Own Editor
 
@@ -21,6 +21,7 @@ WANTLIB=		c ncurses m util
 
 CONFIGURE_STYLE=	gnu
 
+USE_GROFF =	Yes
 FAKE_FLAGS=	sysconf_joedir=${PREFIX}/share/examples/joe \
 		sysconf_docdir=${PREFIX}/share/doc/joe
 

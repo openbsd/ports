@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/23 16:13:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	hierarchical notebook
 
@@ -20,6 +20,7 @@ WANTLIB=		c ncurses
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hnb/}
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 

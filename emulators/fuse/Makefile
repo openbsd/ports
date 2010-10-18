@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -18,6 +18,7 @@ WANTLIB=		X11 Xext Xau Xdmcp audiofile gcrypt gpg-error pcre \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \

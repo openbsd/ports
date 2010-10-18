@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/22 12:51:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=	::games/tuxpaint
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} CXX=${CXX}
 

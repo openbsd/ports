@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -32,6 +32,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=	CC="${CC}" OPTI="${CFLAGS}"
 
 WRKSRC= 	${WRKDIST}/src

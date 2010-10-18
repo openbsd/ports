@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	easy to use, graphical editor
 
@@ -29,6 +29,7 @@ CONFIGURE_ENV+=	NOPYTHON=Yes
 
 MODULES=	devel/gettext
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"

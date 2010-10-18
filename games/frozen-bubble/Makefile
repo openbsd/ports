@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:18 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,6 +26,7 @@ MASTER_SITES =		${HOMEPAGE}/data/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 # No regress tests here
 NO_REGRESS =		Yes

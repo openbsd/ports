@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/05 14:28:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	translate common internet acronyms
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.mu.org/~mux/wtf/
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

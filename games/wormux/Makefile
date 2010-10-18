@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/03/21 12:19:00 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -32,6 +32,7 @@ CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			MKDIR_P='mkdir -p'
 CONFIGURE_ARGS+=	--enable-servers
+USE_GROFF =	Yes
 
 post-extract:
 	rm -Rf ${WRKSRC}/data/locale

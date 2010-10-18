@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 18:00:18 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Piece of cake
@@ -28,6 +28,7 @@ FAKE_FLAGS=PREFIX=${PREFIX}
 GAMEDIR=lib/nethackdir-$V
 NHDIR=	${TRUEPREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+USE_GROFF =	Yes
 
 FLAVORS=no_x11 qt
 FLAVOR?=

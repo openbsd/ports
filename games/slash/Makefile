@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
@@ -32,6 +32,7 @@ GAMEDIR=lib/slashdir
 NHDIR=	${PREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 SUBST_VARS=GAMEDIR
+USE_GROFF =	Yes
 
 FLAVORS=no_x11
 FLAVOR?=

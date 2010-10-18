@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/07/08 15:40:11 giovanni Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m stdc++ termlib
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-acpi \
 		 --enable-all-optimizations \

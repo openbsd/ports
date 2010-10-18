@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/05 12:48:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
@@ -23,6 +23,7 @@ WANTLIB=		c pcap pthread
 MAKE_ENV=		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .if ${MACHINE_ARCH} == "i386"

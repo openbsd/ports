@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/04 10:04:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	fast anagram generator
 
@@ -19,6 +19,7 @@ WANTLIB=	c
 
 WRKDIST=	${WRKDIR}/an-${V}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/24 17:47:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	interactive typing tutor
 
@@ -21,6 +21,7 @@ WANTLIB=	c curses
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 CONFIGURE_ENV=	EMACS=no
 
 post-install:

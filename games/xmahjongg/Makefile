@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	colorful solitaire Mah Jongg game for X11
 
@@ -19,6 +19,7 @@ WANTLIB=	ICE SM X11 c m pthread-stubs stdc++ xcb
 MASTER_SITES=	${HOMEPAGE}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 

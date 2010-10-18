@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 18:00:16 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -29,6 +29,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME}/build
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${SYSCONFDIR}/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L} == "canna"
 LIB_DEPENDS+=	canna.>=1.::japanese/canna

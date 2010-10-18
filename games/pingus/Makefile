@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
 		boost_signals::devel/boost
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

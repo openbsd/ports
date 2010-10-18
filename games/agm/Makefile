@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/12/10 07:00:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=		anagram search utility
 
@@ -14,6 +14,7 @@ WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

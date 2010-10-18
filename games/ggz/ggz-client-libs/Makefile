@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/17 18:33:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=		GGZ Gaming Zone - core client libraries
 
@@ -10,6 +10,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=		devel/gettext
+USE_GROFF =	Yes
 
 WANTLIB=		c crypto expat gcrypt gpg-error pthread ssl
 

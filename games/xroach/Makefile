@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	cockroaches hide under your windows
 
@@ -23,6 +23,7 @@ FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
 		BINOWN="root" BINMODE="755"
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/obj

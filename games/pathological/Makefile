@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
@@ -21,6 +21,7 @@ MODULES=	lang/python
 RUN_DEPENDS=	:pygame-*:devel/pygame
 BUILD_DEPENDS=	:netpbm-*:graphics/netpbm
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/pathological

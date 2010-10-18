@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/01/03 21:51:29 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:19 espie Exp $
 
 DISTNAME=	xscavenger-1.4.4
 PKGNAME=	${DISTNAME}p2
@@ -18,6 +18,7 @@ HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= imake

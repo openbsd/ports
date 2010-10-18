@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	GGZ Gaming Zone - GNOME client
 
@@ -15,6 +15,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 popt pthread pthread-stubs xcb xml2 z
 
 MODULES=		devel/gettext
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
 			png::graphics/png \

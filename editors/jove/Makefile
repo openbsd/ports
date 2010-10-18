@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:16 espie Exp $
 #
 
 COMMENT=	Jonathan's Own Version of Emacs
@@ -17,6 +17,7 @@ WANTLIB=		c termcap
 
 WRKDIST=	${WRKDIR}/jove
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

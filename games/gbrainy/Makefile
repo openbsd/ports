@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/26 09:45:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	brain teaser game
 
@@ -31,6 +31,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

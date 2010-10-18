@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/13 07:36:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	text editor
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV+=	JED_ROOT="${PREFIX}/lib/jed"
 
 FLAVORS=	no_x11
 FLAVOR?=
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L} == "no_x11"
 ALL_TARGET=	all getmail

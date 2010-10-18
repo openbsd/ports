@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 13:29:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -42,6 +42,7 @@ DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_pngtopnm=""

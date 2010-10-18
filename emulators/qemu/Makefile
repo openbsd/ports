@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/08/26 13:44:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/18 18:00:17 espie Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -23,6 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 BUILD_DEPENDS =		::textproc/texi2html
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \

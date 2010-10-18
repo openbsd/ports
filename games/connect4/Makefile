@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/07 20:06:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	curses version of the classic game
 
@@ -25,6 +25,7 @@ ALL_TARGET=	c4
 
 WRKDIST=	${WRKDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	X11-based asteroids-style arcade
 
@@ -22,6 +22,7 @@ WRKDIST=	${WRKDIR}
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-extract:
 	@cp ${FILESDIR}/Imakefile ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m pthread-stubs xcb
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=		default
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	Athena port of xminesweeper
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=    Xaw3d.::x11/Xaw3d
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

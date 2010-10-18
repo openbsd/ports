@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/24 12:17:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:00:18 espie Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
@@ -26,6 +26,7 @@ ALL_TARGET=		frotz
 
 CFLAGS+=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

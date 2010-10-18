@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -33,6 +33,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb-render-util xml2
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--with-gtk-app

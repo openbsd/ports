@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/28 09:09:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 DISTNAME=	dosbox-0.74
@@ -23,6 +23,7 @@ LIB_DEPENDS=	SDL_net::devel/sdl-net \
 		png.>=2::graphics/png
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MODULES+=       gcc4

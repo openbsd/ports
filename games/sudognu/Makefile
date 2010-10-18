@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/26 08:25:57 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	sudoku solver and creator
 
@@ -19,6 +19,7 @@ WANTLIB=	c m z pthread
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sudognu/}
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

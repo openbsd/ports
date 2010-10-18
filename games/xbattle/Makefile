@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
@@ -18,6 +18,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xbattle

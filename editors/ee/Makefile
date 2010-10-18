@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		easy to use text editor
 
@@ -22,6 +22,7 @@ EXTRACT_SUFX=		.src.tgz
 WRKDIST=		${WRKDIR}/easyedit-${VERSION}
 MAKE_ENV=		SYSCONFDIR=${SYSCONFDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

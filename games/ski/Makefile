@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=	skiing simulation game
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-build:

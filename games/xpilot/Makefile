@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	multiplayer 2d space battles game
 
@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		${MASTER_SITE_XCONTRIB:=games/multiplayer/}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= imake

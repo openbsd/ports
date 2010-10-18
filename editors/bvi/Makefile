@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/02/11 21:51:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	binary visual display editor, based on vi
 
@@ -21,6 +21,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

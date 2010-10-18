@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/25 00:46:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:17 espie Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 MAKE_FILE =		makefile
 ALL_TARGET =		default

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	Rogue like adventure game
 
@@ -20,6 +20,7 @@ WANTLIB=		c curses
 
 MASTER_SITES=	http://www.e271.net/~marina/
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-install:

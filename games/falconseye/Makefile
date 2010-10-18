@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	NetHack derivative
 
@@ -34,6 +34,7 @@ WRKDIST=	${WRKDIR}
 
 NETHACKCONFIG=	${FILESDIR}/x-config
 USE_X11=        Yes
+USE_GROFF =	Yes
 MAKE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes

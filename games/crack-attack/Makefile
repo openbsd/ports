@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::graphics/freeglut
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/23 12:06:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=		electronic periodic table of the elements
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=		${WRKDIR}/epte
 MAKE_FILE=		makefile
 ALL_TARGET=		epte
+USE_GROFF =	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

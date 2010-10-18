@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/04 14:44:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:00:16 espie Exp $
 
 BRANCH=		21.4
 VERSION=	19
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
 		--pdump \
 		${GCCARCH}
 
+USE_GROFF =	Yes
 FAKE_FLAGS=	prefix='$${WRKINST}$${DESTDIR}${PREFIX}' \
 		infodir='$${WRKINST}$${DESTDIR}${PREFIX}/info/${DISTNAME}'
 

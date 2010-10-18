@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=		speaking ascii cow
 DISTNAME=		cowsay-3.03
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.nog.net/~tony/warez/
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
+USE_GROFF =	Yes
 PKG_ARCH=		*
 
 do-configure:

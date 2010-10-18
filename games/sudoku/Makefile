@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:18 espie Exp $
 
 COMMENT=		console based sudoku
 
@@ -19,6 +19,7 @@ MASTER_SITES=		http://distfiles.nl/ \
 			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-configure:

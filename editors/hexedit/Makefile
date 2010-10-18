@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:00:16 espie Exp $
 
 COMMENT=	view and edit files in hexadecimal or ASCII
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
 CONFIGURE_STYLE= gnu dest
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/hexedit

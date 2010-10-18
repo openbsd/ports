@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:00:17 espie Exp $
 
 COMMENT=	graphical networked AD&D style game
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		curl.>=8::net/curl
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

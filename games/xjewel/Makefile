@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:19 espie Exp $
 
 COMMENT=	dropping jewels game for X11
 
@@ -25,6 +25,7 @@ MAKE_FLAGS=		HSCORE_FILE=/var/games/xjewel.scores \
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-install:
