@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 19:20:42 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
 COMMENT=	fast POSIX-compliant awk
@@ -20,6 +20,7 @@ CONFIGURE_STYLE= gnu old
 
 ALL_TARGET=	mawk
 REGRESS_TARGET=	mawk_test
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mawk ${PREFIX}/bin

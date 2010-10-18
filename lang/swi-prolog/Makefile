@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 19:20:42 espie Exp $
 
 BROKEN-hppa =		build stalls during bootstrap in packages/chr 
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS =	--enable-mt \
 
 USE_X11 =		Yes
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}

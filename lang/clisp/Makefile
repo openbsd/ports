@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/23 13:42:22 joshe Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -27,6 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=		simple
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/08 18:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
@@ -31,6 +31,7 @@ CFLAGS+=		-fPIC
 
 VVP_DOCS=		README.txt opcodes.txt
 DOC_DIR=		${PREFIX}/share/doc/iverilog
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}/{ivlpp,vvp}

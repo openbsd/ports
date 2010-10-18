@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/05/19 14:23:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 19:20:42 espie Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -22,6 +22,7 @@ CONFIGURE_ENV =		RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
 USE_X11 =		Yes
+USE_GROFF =	Yes
 
 WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \
 			pthread-stubs xcb

@@ -1,5 +1,5 @@
 
-# $OpenBSD: Makefile,v 1.5 2010/09/21 22:25:08 joshe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:42 espie Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -31,6 +31,7 @@ PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
 
 BUILD_DEPENDS=		::print/texlive/base
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		::lang/sbcl

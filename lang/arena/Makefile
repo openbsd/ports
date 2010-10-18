@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/18 18:39:07 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
@@ -19,6 +19,7 @@ WANTLIB=		c m
 MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 REGRESS_TARGET=	test
 

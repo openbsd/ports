@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/06/15 20:27:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=	powerful, light-weight programming language
 
@@ -27,6 +27,7 @@ SHARED_ONLY=	Yes
 SHARED_LIBS=	lua 5.1
 MAKE_FLAGS+=	LIBlua_VERSION="${LIBlua_VERSION}"
 WANTLIB=	c m edit curses
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

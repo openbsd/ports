@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/12/20 16:11:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -30,6 +30,7 @@ MAKE_FORTRAN?=No
 MAKE_OBJC?=No
 MAKE_JAVA?=No
 MAKE_ADA?=No
+USE_GROFF =	Yes
 
 
 BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/05 11:15:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX=		.tgz
 WANTLIB=		c m pthread
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 ALL_TARGET=		enough
 
 CONFIGURE_STYLE=	gnu

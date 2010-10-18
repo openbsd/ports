@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/22 13:44:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 19:20:42 espie Exp $
 
 VERSION=		2.4
 PATCHLEVEL=		.6
@@ -11,5 +11,6 @@ PATCH_LIST=		patch-* sup64-*
 .endif
 
 ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 19:20:42 espie Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -32,6 +32,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	c m pthread stdc++
 USE_LIBTOOL =	yes
+USE_GROFF =	Yes
 
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 

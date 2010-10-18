@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/11 19:22:05 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -28,6 +28,7 @@ SHARED_LIBS=	estdc++		7.0 \
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
+USE_GROFF =	Yes
 PSEUDO_FLAVORS=c++ fortran objc java ada
 .if ${MACHINE_ARCH} == "i386"
 FLAVOR?=c++ fortran objc ada

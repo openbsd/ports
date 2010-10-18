@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -54,6 +54,7 @@ BUILD_DEPENDS += 	:bison-*:devel/bison
 
 
 MULTI_PACKAGES =	-main
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS =	::devel/dejagnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/15 16:25:14 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.8
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MODULES=	lang/mono
 

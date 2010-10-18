@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/09/11 19:22:05 martynas Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN=adjust for types changes
@@ -26,6 +26,7 @@ SHARED_LIBS=	estdc++		7.0 \
 		ssp		0.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
+USE_GROFF =	Yes
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes

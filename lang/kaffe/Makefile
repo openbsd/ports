@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/11 08:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 19:20:42 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -28,6 +28,7 @@ MODULES=	devel/gettext
 USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/25 20:05:45 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=	Portable Forth Environment
 
@@ -23,6 +23,7 @@ WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man
+USE_GROFF =	Yes
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--with-regs

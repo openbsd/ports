@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/08/26 10:42:25 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 19:20:42 espie Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -37,6 +37,7 @@ FLAVORS=no_x11
 FLAVOR?=
 
 SUBST_VARS=	V
+USE_GROFF =	Yes
 
 SCM_DATA=	COPYING Idiffer.scm Iedline.scm Init${V}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm \

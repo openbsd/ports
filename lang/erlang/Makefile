@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/22 13:50:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--disable-smp-support
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="-pthread"
 AUTOCONF_VERSION=2.59

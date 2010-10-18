@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/21 10:47:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=		GNU awk
 
@@ -26,6 +26,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-libsigsegv
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+			USE_GROFF =	Yes
 
 SUBST_VARS+=		V
 

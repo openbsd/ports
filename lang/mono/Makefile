@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/16 13:21:20 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -33,6 +33,7 @@ MODMONO_DEPS=	No
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 SUBST_VARS=	LIBTOOL
 

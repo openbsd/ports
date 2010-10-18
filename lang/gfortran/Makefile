@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/14 08:03:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -32,6 +32,7 @@ DIST_SUBDIR =	gcc
 
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 MULTI_PACKAGES =	-main -lib
 

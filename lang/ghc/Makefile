@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/04 09:37:25 kili Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/18 19:20:41 espie Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -62,6 +62,7 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61

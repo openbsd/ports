@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/27 18:16:18 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 19:20:42 espie Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	portable Haskell compiler
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=		OPT="${CFLAGS}"
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX} \

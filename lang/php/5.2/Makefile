@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/10 10:42:17 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 19:20:42 espie Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -15,6 +15,7 @@ PKGNAME-fastcgi=php5-fastcgi-${V}
 WRKDIST=	${WRKDIR}/php-${V}
 
 INI_TEMPLATES=	dist recommended
+USE_GROFF =	Yes
 
 # Loadable php extensions
 # dbase

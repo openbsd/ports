@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/09/24 14:16:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -25,6 +25,7 @@ SEPARATE_BUILD=	simple
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=autoconf no-autoheader gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+USE_GROFF =	Yes
 
 CFLAGS+=	-I${X11BASE}/include
 CONFIGURE_ARGS+=--with-tclconfig="${MODTCL_LIBDIR}" \

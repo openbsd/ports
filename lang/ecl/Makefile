@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/20 18:02:47 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:41 espie Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -24,6 +24,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
 CONFIGURE_STYLE = 	gnu
 USE_GMAKE = 		Yes
 USE_LIBTOOL = 		Yes
+USE_GROFF =	Yes
 NO_REGRESS = 		Yes
 CONFIGURE_ENV +=	LDFLAGS='-pthread -L${LOCALBASE}/lib' \
 			CPPFLAGS=-I${LOCALBASE}/include \

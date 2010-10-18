@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/22 07:24:42 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 19:20:42 espie Exp $
 
 # XXX crashes & hangs, to be dealt with
 NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc mips64 mips64el amd64 sparc64
@@ -31,6 +31,7 @@ USE_X11=	Yes
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Unicon
+USE_GROFF =	Yes
 
 CONFIGURE_TARGET=X-Configure
 

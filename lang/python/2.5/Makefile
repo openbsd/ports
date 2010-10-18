@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/09/22 13:44:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 19:20:42 espie Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.4
@@ -12,6 +12,7 @@ PATCH_LIST=		patch-* sup64-*
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	--with-cxx_main
+USE_GROFF =	Yes
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat

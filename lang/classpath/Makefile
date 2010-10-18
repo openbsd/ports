@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 19:20:41 espie Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -30,6 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	converters/libiconv gcc4
 MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	java
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
 		::lang/antlr2

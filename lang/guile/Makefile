@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/06 22:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
@@ -33,6 +33,7 @@ SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

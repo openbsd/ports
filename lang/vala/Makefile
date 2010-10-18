@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 13:51:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 19:20:42 espie Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=		::devel/glib2
 REGRESS_DEPENDS=	::shells/bash	
 
 USE_X11=		No
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

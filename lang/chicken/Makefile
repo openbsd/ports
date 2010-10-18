@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/19 20:19:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:20:41 espie Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -26,6 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS+=		ffi::devel/libffi
 

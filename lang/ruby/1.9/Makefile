@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/12 15:39:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 19:20:42 espie Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -27,6 +27,7 @@ CONFIGURE_ARGS =	--program-suffix=19 \
 CONFIGURE_ENV =		LIBruby19_VERSION=${LIBruby19_VERSION}
 
 MODULES =		converters/libiconv
+USE_GROFF =	Yes
 
 WANTLIB-main =		c crypto ffi m ncurses pthread readline ssl termcap \
 			util yaml z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/12/20 16:11:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 19:20:41 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -27,6 +27,7 @@ MAKE_ADA?=No
 BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
 SUBPACKAGE?=
+USE_GROFF =	Yes
 
 .if defined(PACKAGING) && ${SUBPACKAGE} != "-estdc"
 WANTLIB=c
