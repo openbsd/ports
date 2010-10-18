@@ -1,6 +1,6 @@
-$OpenBSD: patch-m4_gssapi_m4,v 1.1 2005/02/07 19:28:05 naddy Exp $
---- m4/gssapi.m4.orig	Wed Feb  2 15:41:57 2005
-+++ m4/gssapi.m4	Wed Feb  2 15:41:57 2005
+$OpenBSD: patch-m4_gssapi_m4,v 1.2 2010/10/18 20:29:53 jsg Exp $
+--- m4/gssapi.m4.orig	Wed Mar 19 21:07:06 2008
++++ m4/gssapi.m4	Sat Oct 16 14:32:52 2010
 @@ -49,11 +49,20 @@ AC_DEFUN([MUTT_AM_PATH_GSSAPI],
      dnl Heimdal kerberos V support
      if test "$GSSAPI_IMPL" = "none"
@@ -14,9 +14,9 @@ $OpenBSD: patch-m4_gssapi_m4,v 1.1 2005/02/07 19:28:05 naddy Exp $
 +      then
 +	  AC_CHECK_LIB(gssapi, gss_init_sec_context, [
 +	    GSSAPI_IMPL="Heimdal"
-+	    GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -ldes -lcrypto"
++	    GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -lcrypto"
 +	    GSSAPI_CFLAGS="$CPPFLAGS -I/usr/include/kerberosV"
-+	    ],, -lkrb5 -ldes -lcrypto)
++	    ],, -lkrb5 -lcrypto)
 +      else
 +          AC_CHECK_LIB(gssapi, gss_init_sec_context, [
 +            GSSAPI_IMPL="Heimdal"

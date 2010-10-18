@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2010/09/08 09:57:28 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2010/10/18 20:29:53 jsg Exp $
 
 CATEGORIES=	mail
 
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=	c crypto des gssapi krb5 ssl
+WANTLIB+=	c crypto gssapi krb5 ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=

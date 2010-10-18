@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/10/18 20:29:53 jsg Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.21
-REVISION=	0
+REVISION=	1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/}
 
 WANTLIB=	qdbm.>=14 z
