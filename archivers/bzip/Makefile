@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 21:55:51 sthen Exp $
 
 COMMENT=	block-sorting file compressor, encumbered
 
@@ -16,7 +16,7 @@ WANTLIB=	c
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fomit-frame-pointer -funroll-loops \
 		-Wall -Winline -Wshadow -W"
-		USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${PREFIX}/bin
