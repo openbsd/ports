@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=	automated domain testing tool
 
@@ -18,6 +18,7 @@ do-build:
 	mv ${WRKSRC}/doc ${WRKSRC}/doc.dist
 	sed "s,y0y0y0,${PREFIX}/libexec/doc/," ${WRKSRC}/doc.dist >${WRKSRC}/doc
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

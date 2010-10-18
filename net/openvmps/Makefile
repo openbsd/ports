@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/23 08:25:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:51 espie Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
@@ -24,6 +24,7 @@ WANTLIB=	c
 WRKDIST=	${WRKDIR}/vmpsd
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openvmps

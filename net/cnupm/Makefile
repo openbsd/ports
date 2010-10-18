@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		IPv4/IPv6 traffic collector
 
@@ -18,6 +18,7 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/cat
 CFLAGS+=		-DCNUPM_USER=\"_cnupm\"
+USE_GROFF =	Yes
 
 FLAVORS=		static
 FLAVOR?=

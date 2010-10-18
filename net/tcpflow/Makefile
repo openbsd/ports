@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	tool for capturing data from TCP connections
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap 
 
 CONFIGURE_STYLE=        gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

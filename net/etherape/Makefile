@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:47 espie Exp $
 
 COMMENT =		graphical network monitor
 
@@ -45,5 +45,6 @@ LIB_DEPENDS =		::x11/gtk+2 \
 
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

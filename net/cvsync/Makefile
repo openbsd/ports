@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=	portable CVS repository synchronization utility
 
@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_ENV=	CVSYNC_DEFAULT_CONFIG="${SYSCONFDIR}/cvsync.conf" \
 		CVSYNCD_DEFAULT_CONFIG="${SYSCONFDIR}/cvsyncd.conf" \
 		INSTALL_MAN_OPTS="-o ${MANOWN} -g ${MANGRP} -m ${MANMODE}" \

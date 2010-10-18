@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	Precision Time Protocol daemon
 
@@ -20,6 +20,7 @@ WANTLIB=	c
 
 WRKSRC=		${WRKDIST}/src
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ptpd ${PREFIX}/sbin

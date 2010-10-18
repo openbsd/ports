@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,7 @@ PATCH_LIST=	patch-* align-*
 .endif
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 MODULES=	lang/python
 LIB_DEPENDS=	dnet.>=1::net/libdnet \

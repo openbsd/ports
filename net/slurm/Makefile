@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:58 espie Exp $
 
 COMMENT =	network traffic monitor and statistics
 DISTNAME =	slurm-0.3.3
@@ -20,6 +20,7 @@ WANTLIB =	c ncurses
 MASTER_SITES =	${HOMEPAGE}
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1

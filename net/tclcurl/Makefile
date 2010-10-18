@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=		Tcl bindings for Curl
 SHARED_ONLY=		Yes
@@ -29,6 +29,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tclinclude=${MODTCL_INCDIR}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
+USE_GROFF =	Yes
 
 # broken in this version
 REGRESS_TARGET= 	test

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/22 14:26:53 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:57 espie Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 WRKBUILD=		${WRKSRC}/unix
+USE_GROFF =	Yes
 
 MULTI_PACKAGES= 	-main -gui
 

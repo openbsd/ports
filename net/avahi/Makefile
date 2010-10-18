@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 18:36:45 espie Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -52,6 +52,7 @@ MULTI_PACKAGES=	-main
 MODULES=	devel/gettext \
 		textproc/intltool
 
+USE_GROFF =	Yes
 WANTLIB=	c expat glib-2.0 gobject-2.0 pcre pthread
 
 BUILD_DEPENDS=	::converters/xmltoman

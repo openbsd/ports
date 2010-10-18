@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/05 19:43:57 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
@@ -20,6 +20,7 @@ WANTLIB=		c pcap
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

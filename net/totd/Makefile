@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/06 21:14:07 stsp Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:59 espie Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
@@ -19,6 +19,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS += 	--enable-stf
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 MAKE_FLAGS=		CC="${CC}" SYSCONFDIR="${SYSCONFDIR}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	client and servers for the WIDE DHCP protocol
 
@@ -19,6 +19,7 @@ WANTLIB=		c kvm
 MAKE_FLAGS=	OSTYPE=OpenBSD CC=${CC} CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server" 
 FAKE_FLAGS= 	SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis

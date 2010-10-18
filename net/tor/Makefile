@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/06/20 07:57:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	anonymity service using onion routing
 
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-ssl-dir=/usr
 
 DB_DIR=		/var/tor
 SUBST_VARS=	DB_DIR
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:58 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 COMMENT=	decode tcpdump(1) output
@@ -22,6 +22,7 @@ WRKDIST=	${WRKDIR}
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -DNOETHERNAMES -o tcpshow tcpshow.c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	SIP Express Router
 
@@ -25,6 +25,7 @@ WRKDIST=	${WRKDIR}/ser-${VERSION}
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 ALL_TARGET=	all ser.cfg
 

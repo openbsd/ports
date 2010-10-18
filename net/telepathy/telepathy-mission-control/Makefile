@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/23 14:24:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-mcclient-so6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+			USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

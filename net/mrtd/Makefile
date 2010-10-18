@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:49 espie Exp $
 # Uses pthreads
 
 COMMENT=		daemon/libs/toolkit for routing BGP4+, RIP, OSPF, etc.
@@ -25,6 +25,7 @@ CONFIGURE_STYLE=	gnu
 
 WRKDIST=		${WRKDIR}/mrt-${V}/src
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 FAKE_FLAGS=		DESTDIR=${WRKINST}/${TRUEPREFIX}/sbin \

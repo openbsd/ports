@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/11/09 17:58:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	ftp replacement with advanced user interface
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--disable-ccdv
 CONFIGURE_ENV=	TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

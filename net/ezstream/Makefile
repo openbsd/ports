@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
@@ -29,5 +29,6 @@ SEPARATE_BUILD=	simple
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-taglib="${LOCALBASE}"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

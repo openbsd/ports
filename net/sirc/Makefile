@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	programmable small perl irc client
 
@@ -33,6 +33,7 @@ pre-configure:
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe -ltermcap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	flow-based network traffic analyser
 
@@ -19,6 +19,7 @@ WANTLIB=	c pcap
 
 CONFIGURE_STYLE= gnu
 
+USE_GROFF =	Yes
 NO_REGRESS= Yes
 
 .include <bsd.port.mk>

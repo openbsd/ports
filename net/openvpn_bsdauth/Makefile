@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 18:33:45 fkr Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:51 espie Exp $
 
 COMMENT =	BSD Auth helper program for OpenVPN
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	::net/openvpn
 
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's#!!PREFIX!!#${PREFIX}#g' ${WRKSRC}/openvpn_bsdauth.8

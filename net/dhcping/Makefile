@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		dhcp daemon ping program
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

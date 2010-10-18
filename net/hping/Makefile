@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	TCP/UDP ping/traceroute tool
 
@@ -26,6 +26,7 @@ MAKE_FLAGS=	CC="${CC}" \
 
 CONFIGURE_STYLE=simple
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-install:

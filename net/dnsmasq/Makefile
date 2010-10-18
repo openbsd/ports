@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/12/27 19:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=	caching DNS forwarder and DHCP server
 
@@ -20,6 +20,7 @@ MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 MAKE_ENV=	CC="${CC}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-build:

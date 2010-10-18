@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:47 espie Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
@@ -28,6 +28,7 @@ MASTER_SITES =		http://spacehopper.org/mirrors/
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--bindir=${PREFIX}/sbin
 COPTS +=		-DHAVE_PROGNAME
+USE_GROFF =	Yes
 
 post-build:
 	cd ${WRKSRC}; \

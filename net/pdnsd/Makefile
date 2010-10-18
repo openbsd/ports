@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=		threaded DNS daemon, optimized for caching
 
@@ -22,6 +22,7 @@ WANTLIB=		c pthread
 NO_REGRESS=		Yes
 
 USE_GMAKE=		yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-strict-rfc2181 \

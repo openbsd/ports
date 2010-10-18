@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/02/16 20:47:49 rui Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:46 espie Exp $
 
 DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
@@ -18,5 +18,6 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

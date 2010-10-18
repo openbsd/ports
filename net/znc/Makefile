@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/02 08:53:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:37:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ MAKE_FLAGS+=	VERBOSE=1
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-optimization
 

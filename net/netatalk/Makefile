@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	AFP file and print services for AppleTalk/IP networks
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	db.>=4:db->=4,<5:databases/db/v4
 

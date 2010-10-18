@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=	multiprotocol traceroute tool
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-install:

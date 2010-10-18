@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 18:36:59 espie Exp $
 
 COMMENT-main=	cross-platform remote desktop access
 COMMENT-viewer=	client for cross-platform remote desktop access
@@ -33,6 +33,7 @@ CONFIGURE_STYLE=imake
 
 ALL_TARGET=	World
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c z

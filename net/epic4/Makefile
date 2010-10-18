@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -35,6 +35,7 @@ WANTLIB+=       perl util
 
 INSTALL_TARGET=	install installhelp
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 SUBST_VARS=	VERSION

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/06 08:06:31 stephan Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iperf/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-threads
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/iperf ${PREFIX}/bin

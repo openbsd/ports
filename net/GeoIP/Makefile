@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/08 12:44:45 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
@@ -24,6 +24,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=/var/db \
 		${CONFIGURE_SHARED}
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/GeoIP
 

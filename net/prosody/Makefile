@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/26 18:11:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:56 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MODULES=	lang/lua
 LIB_DEPENDS=	idn::devel/libidn \
 		lua::lang/lua

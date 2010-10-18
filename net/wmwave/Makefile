@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:59 espie Exp $
 
 DISTNAME=	wmwave-0-4
 PKGNAME=	wmwave-0.4
@@ -17,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmwave/}
 EXTRACT_SUFX=	.tgz
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/wmwave
 

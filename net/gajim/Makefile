@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/01 10:55:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 18:36:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	lang/python \

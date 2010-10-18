@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/08 22:44:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=	Perl extension for retrieving bridge tables
 
 MODULES=	cpan
 DISTNAME=	SNMP-BridgeQuery-0.61
 CATEGORIES=	devel net
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

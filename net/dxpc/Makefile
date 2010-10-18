@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	X11 over a low bandwidth link
 VERSION=	3.8.2
@@ -22,6 +22,7 @@ HOMEPAGE=	http://www.vigor.nu/dxpc/
 LIB_DEPENDS=	lzo::archivers/lzo
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=--with-lzo-lib=${DEPBASE}

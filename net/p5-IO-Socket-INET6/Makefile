@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/18 17:25:04 bluhm Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:51 espie Exp $
 
 COMMENT =		object interface for AF_INET and AF_INET6 domain sockets
 
@@ -18,5 +18,6 @@ MODULES =		cpan
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:p5-Socket6->=0.12:net/p5-Socket6
 REGRESS_DEPENDS =	::devel/p5-Test-Pod-Coverage ::devel/p5-Test-Pod
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

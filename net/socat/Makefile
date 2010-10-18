@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/06 09:38:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	socat is a relay for bidirectional data transfer 
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${HOMEPAGE}/download/
 
 WANTLIB=	curses c readline crypto util ssl wrap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu

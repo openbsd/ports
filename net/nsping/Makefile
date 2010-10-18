@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/08/20 15:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	DNS ping
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

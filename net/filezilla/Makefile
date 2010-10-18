@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -49,6 +49,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SED=/usr/bin/sed
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 WRKDIST=	${WRKDIR}/filezilla-$V
 
 do-regress:

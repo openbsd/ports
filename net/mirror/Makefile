@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=	mirror packages on remote sites
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FILE=	makefile
 
 WRKDIST=	${WRKDIR}
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/mirror

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	active packet sniffer
 
@@ -27,6 +27,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCLUDE="-I${LOCALBASE}/include/libnet-1.0" \
 		LIBS="`libnet-config-1.0 --libs` -lpcap"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

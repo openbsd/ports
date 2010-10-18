@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/18 22:38:33 jdixon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:48 espie Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -28,6 +28,7 @@ SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 MAKE_FILE =	Makefile.bsd
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}"
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 LIB_DEPENDS =	pcre,pcreposix::devel/pcre
 

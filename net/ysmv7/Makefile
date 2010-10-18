@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/11/15 00:11:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:37:00 espie Exp $
 
 COMMENT=		ICQ console client with encryption support
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

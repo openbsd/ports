@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	benchmarking tool for analysing TCP and UDP performance
 
@@ -26,6 +26,7 @@ post-extract:
 do-build:
 	${CC} ${CFLAGS} -o ${WRKBUILD}/ttcp ${WRKSRC}/ttcp.c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

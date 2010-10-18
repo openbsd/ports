@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/15 19:16:42 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	utilities to read and parse Argus data
 
@@ -23,6 +23,7 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 BUILD_DEPENDS=	::devel/bison
+USE_GROFF =	Yes
 
 MAKE_FLAGS=	CCOPT="${CFLAGS}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/02 22:40:48 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:55 espie Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::www/p5-URI \

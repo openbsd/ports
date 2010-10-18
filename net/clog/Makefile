@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:46 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 COMMENT=	tcp connection logger daemon
@@ -17,6 +17,7 @@ WANTLIB=		c pcap
 WRKDIST=	${WRKDIR}/clog
 ALL_TARGET=	freebsd
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

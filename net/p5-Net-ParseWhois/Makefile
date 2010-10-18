@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/09/25 18:39:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:53 espie Exp $
 
 COMMENT=	module for getting and parsing whois entries
 
 MODULES=	cpan
 DISTNAME=	Net-ParseWhois-0.7
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/17 14:12:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	small daemon for DNSBLs
 
@@ -23,6 +23,7 @@ MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/ \
 CONFIGURE_STYLE=simple
 WRKDIST=	${WRKDIR}/${DISTNAME:S/rbldnsd_/rbldnsd-/}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=	perl module to get FQDN
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Sys-Hostname-Long-1.4
 REVISION=	0
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/12 20:13:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 18:36:50 espie Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	UCB/LBNL Network Animator
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \
 ALL_TARGET=
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

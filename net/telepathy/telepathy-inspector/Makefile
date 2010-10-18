@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=		glade-2.0::devel/libglade2 \
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		No
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

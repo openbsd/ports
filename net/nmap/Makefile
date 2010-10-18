@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/10/04 20:42:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.92 2010/10/18 18:36:50 espie Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -29,6 +29,7 @@ MULTI_PACKAGES=	-main -zenmap
 WANTLIB-main=	c crypto m pcap ssl stdc++ 
 
 USE_GMAKE=	yes
+USE_GROFF =	Yes
 MODULES=	lang/python
 
 CONFIGURE_STYLE=gnu

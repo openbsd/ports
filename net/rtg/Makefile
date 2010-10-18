@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:57 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -33,5 +33,6 @@ CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} \
 			LDFLAGS=-L${X11BASE}/lib
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.59
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

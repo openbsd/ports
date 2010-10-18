@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/27 19:26:06 weerd Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:49 espie Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
@@ -20,6 +20,7 @@ MASTER_SITES =		${HOMEPAGE}
 AUTOCONF_VERSION =	2.64
 CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ARGS +=	--with-user=_ladvd --with-chroot-dir=/var/empty
+USE_GROFF =	Yes
 
 WANTLIB =		c event
 

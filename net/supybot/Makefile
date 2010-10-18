@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:58 espie Exp $
 
 COMMENT =	cross-platform IRC bot written in Python
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=supybot/}
 
 MODULES =	lang/python
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

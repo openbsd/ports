@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	little X dock.app network monitor
 
@@ -20,6 +20,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c kvm m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

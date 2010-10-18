@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
@@ -55,6 +55,7 @@ DESTDIRNAME=	INSTALL_PREFIX
 INSTALL_TARGET=	install install.man
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

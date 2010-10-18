@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	proxy IRC client with ICB server
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

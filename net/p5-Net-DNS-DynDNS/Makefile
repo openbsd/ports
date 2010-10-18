@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/01 11:13:17 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:52 espie Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
 MODULES =	cpan
 DISTNAME =	Net-DNS-DynDNS-0.95
 CATEGORIES =	net
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

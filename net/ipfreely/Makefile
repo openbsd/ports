@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=		simple, secure TCP proxy daemon
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipfreely/}
 WRKDIST=		${WRKDIR}/ipfreely
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:51 espie Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -43,6 +43,7 @@ WANTLIB-gui=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 RUN_DEPENDS-plugins=:olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MODULES=	gcc3

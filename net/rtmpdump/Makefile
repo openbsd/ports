@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/18 10:37:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:57 espie Exp $
 
 SHARED_LIBS =		rtmp 0.0
 
@@ -23,6 +23,7 @@ MASTER_SITES =		${HOMEPAGE}download/
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= THREADLIB=-pthread
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 do-configure:

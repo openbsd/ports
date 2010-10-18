@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:46 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -47,6 +47,7 @@ WANTLIB-main=	${WANTLIB} ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"
 FAKE_FLAGS=	PREFIX=${WRKINST}${TRUEPREFIX}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

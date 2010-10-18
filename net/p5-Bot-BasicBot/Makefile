@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/13 00:07:51 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:51 espie Exp $
 
 COMMENT =	simple irc bot baseclass
 
 MODULES =	cpan
 DISTNAME =	Bot-BasicBot-0.81
 CATEGORIES =	net
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

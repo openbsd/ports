@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -20,6 +20,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--quiet
 MAKE_FLAGS+=		ARPDIR=/var/arpwatch
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/arpwatch

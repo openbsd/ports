@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/01 07:23:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/18 18:36:50 espie Exp $
 
 COMES_WITH=	4.9
 COMMENT=	authoritative-only name server daemon
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=	--enable-bind8-stats \
 			--with-difffile=/var/nsd/ixfr.db \
 			--with-xfrdfile=/var/nsd/xfrd.state
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCS=		README NSD-FOR-BIND-USERS

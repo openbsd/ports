@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:57 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 COMMENT=	userland smbfs --- SMB to NFS protocols converter
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	ARCH="" THE_CC="${CC}" CFLAGS="${CFLAGS} -Wall"

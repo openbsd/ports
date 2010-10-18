@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/09/07 04:36:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.86 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -22,6 +22,7 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	Prospero client for the archie service
 
@@ -17,6 +17,7 @@ WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/archie-1.4.1-FIX
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:45 espie Exp $
 			
 COMMENT=		ARP reply daemon
 
@@ -19,6 +19,7 @@ MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/
 
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
+USE_GROFF =	Yes
 
 WRKDIST=		${WRKDIR}/arpd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/02 16:16:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 18:37:00 espie Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -28,6 +28,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
 MODULES=		converters/libiconv
+USE_GROFF =	Yes
 
 MULTI_PACKAGES =	-main -web
 PSEUDO_FLAVORS =	no_server

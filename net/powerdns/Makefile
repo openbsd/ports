@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/23 22:59:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,6 +33,7 @@ WANTLIB-main=		c m pthread stdc++ z
 
 MASTER_SITES=		http://downloads.powerdns.com/releases/
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		::devel/boost

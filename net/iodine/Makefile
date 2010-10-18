@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
@@ -18,6 +18,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB=		c z
 
+USE_GROFF =	Yes
 MAKE_ENV=		CC=${CC}
 REGRESS_DEPENDS=	::devel/check
 REGRESS_TARGET=		test

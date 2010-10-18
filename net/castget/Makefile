@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -32,6 +32,7 @@ CONFIGURE_ENV=          CPPFLAGS="-lm -I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=    	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/castget

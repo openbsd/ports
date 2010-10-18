@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	Cisco AAA protocol daemon
 
@@ -26,6 +26,7 @@ EXTRACT_SUFX=   .tar.Z
 
 ALL_TARGET=	tac_plus
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-configure:

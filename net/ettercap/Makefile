@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 18:36:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,7 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59

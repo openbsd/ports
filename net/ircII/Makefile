@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/06/02 17:59:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	Internet Relay Chat client
 
@@ -32,6 +32,7 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--exec-prefix="${PREFIX}"
 CONFIGURE_ENV+=	IRCLIB='$$(DESTDIR)${PREFIX}/share/ircII'
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/07/12 19:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2010/10/18 18:36:58 espie Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP = 	Yes
 WANTLIB =		c m pcap
 
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	simple

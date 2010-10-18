@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/01/02 17:51:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/18 18:36:57 espie Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS =--with-included-popt \
 		--with-rsh="ssh -T"
 
 DOCDIR =	${PREFIX}/share/doc/rsync
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

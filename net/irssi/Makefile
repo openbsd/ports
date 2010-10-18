@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/05/19 15:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 18:36:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	glib-2.0,gmodule-2.0::devel/glib2
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

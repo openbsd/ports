@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	send ICMP nasty garbage
 
@@ -24,5 +24,6 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	INCLUDES="-L${LOCALBASE}/include/libnet-1.0" \
 		LDFLAGS="-L${LOCALBASE}/lib/libnet-1.0"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

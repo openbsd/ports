@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/16 10:44:00 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		DNS zone verification tool
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.domtools.com/pub/
 
+USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

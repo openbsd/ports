@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 18:36:52 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ MODULES=		cpan
 DISTNAME=		Net-DNS-0.65
 REVISION=		0
 CATEGORIES=		net
+USE_GROFF =	Yes
 
 HOMEPAGE=		http://www.net-dns.org/
 

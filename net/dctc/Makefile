@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		Direct Connect clone
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=		db:db->=4,<5:databases/db/v4 \
 			xml2::textproc/libxml
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=		concurrent
 AUTOCONF_VERSION=	2.57
 CONFIGURE_STYLE= 	autoconf

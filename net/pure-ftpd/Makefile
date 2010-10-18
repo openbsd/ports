@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+= --with-everything \
 		 --with-tls
 
 MODULES=	converters/libiconv
+USE_GROFF =	Yes
 
 FLAVORS=	ldap mysql postgresql virtual_chroot
 FLAVOR?=

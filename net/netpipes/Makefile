@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	shell utilities to connect programs to sockets
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/
 
 WRKDIST=	${WRKDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

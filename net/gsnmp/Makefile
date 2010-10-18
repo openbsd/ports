@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/24 16:34:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=		SNMP library based on glib2 and gnet
 
@@ -21,6 +21,7 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		gnet-2.0::net/gnet
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 

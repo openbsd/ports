@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
@@ -21,6 +21,7 @@ WANTLIB=		c m termcap
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 

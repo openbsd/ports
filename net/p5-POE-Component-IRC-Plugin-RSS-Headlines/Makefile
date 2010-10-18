@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/03 18:51:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:55 espie Exp $
 
 COMMENT =		PoCo::IRC Plugin that provides RSS Headline retrieval
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS =	::net/p5-POE-Component-IRC \
 		:p5-POE-Component-Client-HTTP->=0.73:net/p5-POE-Component-Client-HTTP \

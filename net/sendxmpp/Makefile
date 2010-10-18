@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/12 16:15:04 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	perl script to send xmpp messages
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	::net/p5-Net-XMPP
 
 CONFIGURE_STYLE=perl
 
+USE_GROFF =	Yes
 NO_REGRESS=	yes
 PKG_ARCH=	*
 

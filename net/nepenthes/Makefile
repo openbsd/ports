@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:50 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nepenthes/}
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	adns.>=1::net/adns \
 		curl.>=3.3::net/curl \

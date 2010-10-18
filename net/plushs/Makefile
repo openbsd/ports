@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=		simple hostname scanner
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-install:

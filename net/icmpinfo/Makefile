@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	look at the icmp messages received by the host
 
@@ -15,6 +15,7 @@ WANTLIB=		c
 
 ALL_TARGET=
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:51 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	optimise a list of route prefixes
 
@@ -15,6 +15,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

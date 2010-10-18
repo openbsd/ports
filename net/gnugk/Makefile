@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/05/26 14:33:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	h323.>=3::net/h323plus \
 		sqlite3.>=12::databases/sqlite3
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 ALL_TARGET=	optshared addpasswd
 NO_REGRESS=	Yes
 

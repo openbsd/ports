@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/10 03:57:30 lum Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		network statistics gatherer with graphs
 
@@ -21,6 +21,7 @@ EXTRACT_SUFX=		.tar.bz2
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-privdrop-user=_darkstat
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

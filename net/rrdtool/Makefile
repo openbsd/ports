@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/09/23 22:13:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/18 18:36:57 espie Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -36,6 +36,7 @@ MASTER_SITES=	${HOMEPAGE}pub/
 USE_GMAKE=	Yes
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 MULTI_PACKAGES=	-main -perl -python -ruby
 

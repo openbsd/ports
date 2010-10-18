@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:45 espie Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -33,6 +33,7 @@ WANTLIB =	c m pthread z stdc++
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 WANTLIB-main =	${WANTLIB} X11 pthread-stubs wx_gtk2_adv wx_gtk2_core xcb
 WANTLIB-daemon =${WANTLIB} readline termcap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:55 espie Exp $
 
 COMMENT =	perl implementation of RIPE whois
 
@@ -18,5 +18,6 @@ MODULES =		cpan
 CPAN_AUTHOR =		LMC
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

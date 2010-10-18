@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 
 WANTLIB=		c
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

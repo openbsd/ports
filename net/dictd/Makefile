@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:46 espie Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -27,6 +27,7 @@ MASTER_SITES=	ftp://ftp.us0.dict.org/pub/dict/ \
 		ftp://ftp.at0.dict.org/pub/dict/
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-local-zlib \
 		--enable-dictorg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/22 10:27:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
@@ -22,6 +22,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=	CC="${CC}" COPTS+="${CFLAGS}"
 
 REGRESS_TARGET=	test

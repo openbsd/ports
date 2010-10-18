@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/05/16 08:31:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 			--ssl=gnutls
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 MAKE_ENV=		"CC=${CC}" "CFLAGS=${CFLAGS}"
 FAKE_FLAGS=		ETCDIR=${EXAMPLEDIR}
 FAKE_TARGET=		install install-etc

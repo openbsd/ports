@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
@@ -21,6 +21,7 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=tcpreplay/}
 WANTLIB=		c
 
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	dnet.>=1::net/libdnet
 

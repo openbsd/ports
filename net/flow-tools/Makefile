@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:47 espie Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -43,6 +43,7 @@ FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 PYTHON_SCRIPTS=		bin/flow-log2rrd \
 			bin/flow-rpt2rrd \

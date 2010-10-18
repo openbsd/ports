@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	lightweight userspace bandwidth shaper
 DISTNAME=	trickle-1.06
@@ -16,5 +16,6 @@ WANTLIB=		c event
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

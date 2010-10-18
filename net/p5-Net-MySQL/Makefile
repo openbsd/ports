@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:53 espie Exp $
 
 COMMENT=		Pure Perl MySQL network protocol interface
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=		:p5-Digest-SHA1-*:security/p5-Digest-SHA1
 			
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

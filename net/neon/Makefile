@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/03 13:02:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
@@ -22,6 +22,7 @@ WANTLIB=		asn1 crypto expat gssapi krb5 ssl z
 MASTER_SITES=		${HOMEPAGE}
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

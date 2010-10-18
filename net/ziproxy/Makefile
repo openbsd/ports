@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 16:46:10 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:37:00 espie Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
@@ -29,6 +29,7 @@ LIB_DEPENDS =		gif.>=5::graphics/libungif \
 SEPARATE_BUILD =	concurrent
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 CPPFLAGS =		-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 

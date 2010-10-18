@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	VPN scanner and identifier
 DISTNAME=	ike-scan-1.9
@@ -20,6 +20,7 @@ WANTLIB=		c crypto
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-openssl
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ike-scan

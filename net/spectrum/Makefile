@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=        XMPP transport/gateway
 
@@ -28,6 +28,7 @@ SPVARDIR=	/var/spectrum
 # pre-build. Otherwise make configure will work, but afterwards make 
 # will fail with python2.6 unable to find ./setup.py
 CONFIGURE_STYLE=none
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 SUBST_VARS=    	SPVARDIR
 

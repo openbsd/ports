@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:36:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Net-RawIP-0.21
 REVISION=	1
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

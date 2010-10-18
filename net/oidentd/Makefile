@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:51 espie Exp $
 
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.7
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,/etc,${SYSCONFDIR},g' \

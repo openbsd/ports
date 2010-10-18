@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/22 15:20:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.4
@@ -20,5 +20,6 @@ WANTLIB=		c m pcap termlib
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

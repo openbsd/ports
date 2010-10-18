@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:55 espie Exp $
 
 COMMENT =	whois client interface for perl5
 
 MODULES =	cpan
 DISTNAME =	Net-XWhois-0.90
 CATEGORIES =	net
+USE_GROFF =	Yes
 
 HOMEPAGE =	http://sourceforge.net/projects/xwhois/
 MAINTAINER =	jhuldtgren@gmail.com

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:45 espie Exp $
 COMMENT=		aggregation-based network traffic profiler
 
 DISTNAME=		aguri-0.7
@@ -18,6 +18,7 @@ WANTLIB=		c pcap
 MASTER_SITES=		ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
+USE_GROFF =	Yes
 
 do-configure:
 	@perl -pi -e 's,/usr/local,${PREFIX},' ${WRKDIST}/scripts/*

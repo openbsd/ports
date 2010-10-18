@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:54 espie Exp $
 
 COMMENT=	Perl Simple Network Pager Protocol Client
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Net-SNPP-1.17
 REVISION=	0
 CATEGORIES=	net devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 

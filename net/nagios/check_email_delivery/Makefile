@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	Nagios plugin to check full email delivery loop (SMTP/IMAP)
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${HOMEPAGE}/archive/
 PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 # not needed for 0.6.6, but might be later.
 # -> ::net/nagios/plugins,-main

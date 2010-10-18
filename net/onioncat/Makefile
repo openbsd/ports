@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/31 13:59:22 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:51 espie Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
@@ -22,5 +22,6 @@ MASTER_SITES =	${HOMEPAGE}download/
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

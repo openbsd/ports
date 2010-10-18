@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/26 08:28:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:48 espie Exp $
 
 COMMENT =	IP bandwidth analysis tool
 
@@ -19,6 +19,7 @@ MASTER_SITES =		${HOMEPAGE}archive/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 NO_REGRESS =		Yes
 

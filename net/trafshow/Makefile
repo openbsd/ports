@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	full screen visualization of network traffic
 
@@ -28,6 +28,7 @@ CONFIGURE_STYLE= gnu
 
 ALL_TARGET=	trafshow
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

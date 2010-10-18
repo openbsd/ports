@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	console based Jabber client
 
@@ -29,5 +29,6 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE= gnu autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

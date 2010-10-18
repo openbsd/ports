@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/10/07 12:11:52 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
@@ -36,6 +36,7 @@ CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
 USE_LIBTOOL=	gnu
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63

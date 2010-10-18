@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/10 10:14:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:37:00 espie Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 WANTLIB=		c m ncurses pthread readline z iconv intl
 

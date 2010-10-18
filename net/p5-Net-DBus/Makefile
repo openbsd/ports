@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Net-DBus-0.33.6
 REVISION=	1
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
 

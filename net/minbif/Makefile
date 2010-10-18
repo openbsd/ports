@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/13 19:50:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:49 espie Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -22,6 +22,7 @@ LIB_DEPENDS =	::net/pidgin,-libpurple
 WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread stdc++
 CONFIGURE_ENV+=	CPPFLAGS+="-I${X11BASE}/include"
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 # commented out atm, needs testing

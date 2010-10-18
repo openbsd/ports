@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=		traceroute implementation using TCP packets
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		lib/libnet-1.1/net.=11:libnet->=1.1,<1.2:net/libnet/1.1
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 

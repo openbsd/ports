@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/11 08:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/18 18:36:59 espie Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
@@ -38,6 +38,7 @@ LIB_DEPENDS=	curl.>=14::net/curl \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 AUTOCONF_VERSION=2.63
 AUTOCONF=	autoconf -I m4
 CONFIGURE_STYLE=autoconf no-autoheader

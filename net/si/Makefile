@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:57 espie Exp $
 
 COMMENT =	minimalistic SILC client
 
@@ -18,6 +18,7 @@ MODULES =	converters/libiconv
 WANTLIB =	c pthread
 LIB_DEPENDS =	silc,silcclient::devel/silc-toolkit
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

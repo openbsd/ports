@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/07 11:01:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:50 espie Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -33,6 +33,7 @@ BUILD_DEPENDS =		::print/htmldoc \
 			::converters/html2text
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 ALL_TARGET =		default build-doc build-man
 WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 PKG_ARCH =		*

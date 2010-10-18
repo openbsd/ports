@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 10:09:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:48 espie Exp $
 
 COMMENT =		command line podcast aggregator
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c gmp m pthread sqlite3 util
 
 MODULES =		lang/ghc converters/libiconv
+USE_GROFF =	Yes
 MODGHC_BUILD =		cabal hackage nort
 
 BUILD_DEPENDS =		::devel/hs-ConfigFile \

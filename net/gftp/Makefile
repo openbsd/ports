@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:47 espie Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
@@ -33,6 +33,7 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 MODULES=	devel/gettext
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::devel/bison
 

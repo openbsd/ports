@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:58 espie Exp $
 
 COMMENT = 	ipv4 and ipv6 subnet calculator
 
@@ -20,6 +20,7 @@ MASTER_SITES = 	http://www.routemeister.net/projects/sipcalc/files/
 CONFIGURE_STYLE = 	gnu
 WANTLIB =		c
 
+USE_GROFF =	Yes
 NO_REGRESS = 	Yes
 
 .include <bsd.port.mk>

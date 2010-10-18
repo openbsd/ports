@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/23 08:39:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:55 espie Exp $
 
 COMMENT=	DNS module for the Perl Object Environment
 
 MODULES=	cpan
 DISTNAME=	POE-Component-Client-DNS-1.03
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

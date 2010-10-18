@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/15 18:45:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:53 espie Exp $
 
 COMMENT=	perl interface to jabber
 
 MODULES=	cpan
 DISTNAME=	Net-Jabber-2.0
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
 

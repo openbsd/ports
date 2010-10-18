@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:57 espie Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -24,6 +24,7 @@ MODULES =	lang/python
 MODPY_RUNDEPS =	No
 
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE = none
 

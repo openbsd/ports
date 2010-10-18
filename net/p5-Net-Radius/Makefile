@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/20 20:12:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:54 espie Exp $
 
 COMMENT=	Perl interface to Radius
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 REGRESS_DEPENDS=	::devel/p5-Test-Warn
 
 DATADIR=	${PREFIX}/share/p5-Net-Radius

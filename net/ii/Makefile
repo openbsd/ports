@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/23 23:11:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=		minimalist IRC client
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

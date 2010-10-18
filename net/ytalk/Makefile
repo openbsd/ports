@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:37:00 espie Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses 
 
 CONFIGURE_STYLE= gnu dest
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

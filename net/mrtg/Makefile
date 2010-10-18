@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/05/18 08:31:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=	multi-router traffic grapher
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	::net/p5-IO-Socket-INET6 \
 LIB_DEPENDS=	gd.>=18::graphics/gd
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63

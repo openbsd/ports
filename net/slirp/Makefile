@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/24 15:16:20 millert Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	SLIP/CSLIP emulator for users with shell accounts
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 CONFIGURE_STYLE=	simple
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

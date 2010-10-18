@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=		PPTP Server
 
@@ -26,6 +26,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-bsdppp --with-pppd-ip-alloc
 FAKE_FLAGS=		DESTDIR=
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/poptop

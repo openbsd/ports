@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:48 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Internet Relay Chat server
@@ -29,6 +29,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_FLAGS =		AUTOMODULEDIR='$${prefix}/lib/ircd-hybrid/modules' \
 			moduledir='$${prefix}/lib/ircd-hybrid/modules'
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/03 14:36:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	ircd proxy to the twitter API
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	::net/p5-Net-Twitter
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/tircd
 

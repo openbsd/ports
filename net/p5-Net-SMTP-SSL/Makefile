@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/05 13:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:54 espie Exp $
 
 COMMENT=	SSL support for Net::SMTP
 
 MODULES=	cpan
 DISTNAME=	Net-SMTP-SSL-1.01
 CATEGORIES=	net mail
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

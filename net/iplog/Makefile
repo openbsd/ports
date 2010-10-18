@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	TCP/IP traffic logging tool
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap pthread
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 

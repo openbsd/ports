@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
 
 COMMENT=	Perl Interface to the DICT protocol
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Net-Dict-2.07
 REVISION=	1
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

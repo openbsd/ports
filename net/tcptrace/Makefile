@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=		TCP dump file analysis tool
 
@@ -26,6 +26,7 @@ CONFIGURE_ENV=		YACC=bison
 
 ALL_TARGET=		tcptrace
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 DOCFILES=	ARGS COPYRIGHT FAQ README README.mailing_list README.modules \

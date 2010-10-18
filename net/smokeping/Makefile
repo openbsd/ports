@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:58 espie Exp $
 
 COMMENT=	latency logging and graphing system
 
@@ -32,6 +32,7 @@ RUN_DEPENDS=	::databases/p5-ldap \
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 PMDIR=		libdata/perl5/site_perl

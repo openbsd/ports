@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:49 espie Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -34,6 +34,7 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MULTI_PACKAGES=		-main
+USE_GROFF =	Yes
 
 # override python.port.mk's RUN_DEPENDS
 RUN_DEPENDS-main=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Net-Patricia-1.014
 REVISION=	1
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

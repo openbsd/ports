@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=	nosuid, secure TCP/IP ping
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}'
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/poink ${PREFIX}/bin

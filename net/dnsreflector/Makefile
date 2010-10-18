@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		DNS queries reflector
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

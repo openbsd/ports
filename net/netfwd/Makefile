@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	netword traffic redirector
 
@@ -21,6 +21,7 @@ WANTLIB=	c
 MASTER_SITES=	http://www.bsdua.org/files/
 
 EXTRACT_SUFX=	.tar.gz
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netfwd ${PREFIX}/bin

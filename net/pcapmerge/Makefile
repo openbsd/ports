@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:40 sthen Exp $
+#   $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:56 espie Exp $
 
 COMMENT=	merge and extract portions of binary pcap files
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

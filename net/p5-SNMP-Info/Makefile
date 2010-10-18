@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:56 espie Exp $
 COMMENT=	perl5 interface to network devices and MIBs through SNMP
 
 MODULES=	cpan
@@ -18,5 +18,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=SNMP/}
 RUN_DEPENDS=	::net/net-snmp,-perl
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

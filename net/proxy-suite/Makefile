@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	set of programs to enhance firewall security
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu dest
 
 NO_REGRESS=	Yes

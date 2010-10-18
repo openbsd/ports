@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/15 19:15:19 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	Audit Record Generation and Utilization System
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m pcap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu

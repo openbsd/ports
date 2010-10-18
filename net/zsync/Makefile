@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/23 19:29:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:37:00 espie Exp $
 
 COMMENT=	gzip-aware file mirroring over http
 
@@ -22,5 +22,6 @@ WANTLIB += c m
 MASTER_SITES=	${HOMEPAGE}download/
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

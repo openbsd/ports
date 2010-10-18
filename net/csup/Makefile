@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/07 20:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
@@ -20,5 +20,6 @@ WANTLIB=	c crypto pthread z
 
 WRKDIST=	${WRKDIR}/csup
 FAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/cat
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

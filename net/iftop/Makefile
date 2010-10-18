@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:48 espie Exp $
 
 COMMENT =		display bandwidth usage on an inteface
 
@@ -21,6 +21,7 @@ WANTLIB =		c curses m pcap pthread
 MASTER_SITES =		${HOMEPAGE}download/
 
 CONFIGURE_STYLE =	gnu dest
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iftop ${PREFIX}/bin

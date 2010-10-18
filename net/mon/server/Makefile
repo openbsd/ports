@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:49 espie Exp $
 
 COMMENT =	service monitoring daemon
 
@@ -9,6 +9,7 @@ WANTLIB = 	c
 
 RUN_DEPENDS =	::devel/p5-Time-Period
 
+USE_GROFF =	Yes
 NO_REGRESS = 	Yes
 
 EG_DIR = 	${PREFIX}/share/examples/mon/

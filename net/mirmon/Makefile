@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=	monitors the status of mirrors
 
@@ -22,6 +22,7 @@ MODULES=	perl
 ICONDIR=	${PREFIX}/share/examples/mirmon/icons
 
 RUN_DEPENDS=	::net/rsync ::net/wget
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/27 23:55:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=	retrieve DNS zone via DNSSEC NXT/NSEC traversal
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	::net/p5-Net-DNS \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 PKG_ARCH=	*
 

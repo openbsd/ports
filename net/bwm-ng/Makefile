@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:46 espie Exp $
 
 COMMENT=		realtime bandwidth monitoring of interfaces
 
@@ -19,6 +19,7 @@ WANTLIB=		c curses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-libstatgrab
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bwm-ng

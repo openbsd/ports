@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/08/19 13:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:59 espie Exp $
 
 COMMENT=		ftp daemon which aims to be secure
 
@@ -22,6 +22,7 @@ ALL_TARGET=		vsftpd
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-configure:

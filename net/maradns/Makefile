@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:49 espie Exp $
 
 VERSION=	1.3.07.09
 COMMENT=	simple and performant DNS server
@@ -20,6 +20,7 @@ MASTER_SITES=	http://www.maradns.org/download/1.3/${VERSION}/
 
 MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-configure:

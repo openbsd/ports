@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/10 19:48:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -26,6 +26,7 @@ WANTLIB=	c crypto edit kvm m termcap
 # which requires bison
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-parse-clocks \
 		--with-binsubdir=sbin

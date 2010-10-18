@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:45 espie Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.7
@@ -19,5 +19,6 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB =		c pcap
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

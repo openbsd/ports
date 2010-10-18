@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=	icecast source for streaming MP3
 
@@ -55,6 +55,7 @@ CONFIGURE_ARGS+=--without-faad
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ices/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	pipe an Ogg stream to an Icecast server
 
@@ -23,6 +23,7 @@ MASTER_SITES=	http://v2v.cc/~j/oggfwd/
 LIB_DEPENDS=	shout.>=5::net/libshout \
 		speex.>=4::audio/speex
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

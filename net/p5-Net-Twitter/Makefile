@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/07 20:38:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:55 espie Exp $
 
 COMMENT=	perl interface to the Twitter API
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 RUN_DEPENDS=	::converters/p5-JSON-Any \
 		::devel/p5-Data-Visitor \
 		::devel/p5-DateTime-Format-Strptime \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:37:00 espie Exp $
 
 COMMENT=	powerful console ftp client with many features
 
@@ -23,6 +23,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 CONFIGURE_ARGS=	--with-readline --with-catgets --with-krb5=/usr/lib
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 DOCS=	NEWS README TODO
 

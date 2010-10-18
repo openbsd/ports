@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:51 espie Exp $
 
 COMMENT=	clone of the classic Eliza program
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Chatbot-Eliza-1.04
 REVISION=	0
 CATEGORIES=	net
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

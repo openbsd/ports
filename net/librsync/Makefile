@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=	Library for delta compression of streams
 DISTNAME=	librsync-0.9.7
@@ -20,6 +20,7 @@ LIB_DEPENDS=		bz2::archivers/bzip2 \
 WANTLIB=		c z
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --disable-trace
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

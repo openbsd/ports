@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2010/09/18 12:36:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2010/10/18 18:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,6 +56,7 @@ USE_GMAKE=		yes
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.63
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS=		--disable-fam \
 			--localstatedir="/var" \

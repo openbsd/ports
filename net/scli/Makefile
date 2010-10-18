@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/24 16:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=		snmp command line utility
 
@@ -19,6 +19,7 @@ WANTLIB += pthread readline z
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		gsnmp::net/gsnmp \
 			xml2::textproc/libxml

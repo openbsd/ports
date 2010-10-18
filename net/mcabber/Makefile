@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/20 14:08:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:49 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=		glib-2.0,gmodule-2.0::devel/glib2 \
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-gpgme \

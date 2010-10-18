@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/26 08:33:12 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:47 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -71,6 +71,7 @@ SUBST_VARS+=	V
 USE_GMAKE=	Yes
 # depends on libltdl
 USE_LIBTOOL=	gnu
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::net/net-snmp
 LIB_DEPENDS=	gdbm.>=3::databases/gdbm \

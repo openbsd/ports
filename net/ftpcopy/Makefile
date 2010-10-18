@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/20 14:58:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:47 espie Exp $
 
 COMMENT =	FTP listing and transfer tools
 
@@ -24,6 +24,7 @@ FAKE_FLAGS =	prefix="${DESTDIR}/${PREFIX}"
 
 WRKDIST =	${WRKDIR}/web/${DISTNAME}
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 do-install:

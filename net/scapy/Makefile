@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/05 09:18:05 armani Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:57 espie Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ethertypes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+USE_GROFF =	Yes
 
 MODULES=	lang/python
 RUN_DEPENDS=	:py-libdnet-*:net/libdnet,-python \

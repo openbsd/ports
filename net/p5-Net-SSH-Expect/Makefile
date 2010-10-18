@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/01 17:13:42 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:54 espie Exp $
 
 COMMENT =	ssh wrapper to execute remote interactive commands
 
 DISTNAME =	Net-SSH-Expect-1.09
 CATEGORIES =	net
 MODULES =	cpan
+USE_GROFF =	Yes
 
 MAINTAINER =	William Yodlowsky <bsd@openbsd.rutgers.edu>
 

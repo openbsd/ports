@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/02 11:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:45 espie Exp $
 
 COMMENT=	tiny download accelerator
 DISTNAME=	axel-1.1
@@ -21,6 +21,7 @@ WANTLIB=	c pthread
 MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple

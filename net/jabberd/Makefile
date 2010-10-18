@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 18:36:49 espie Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -33,6 +33,7 @@ FLAVORS=		${STORAGES} ldap
 FLAVOR?=		mysql
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--enable-debug \

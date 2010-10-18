@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/15 10:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:50 espie Exp $
 
 COMMENT=	NetBSD's iSCSI (RFC 3720) target
 
@@ -20,6 +20,7 @@ WANTLIB=	c pthread
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 # test harness needs the initiator, not built here (needs fuse)
 NO_REGRESS=	Yes
