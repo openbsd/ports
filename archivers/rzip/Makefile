@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -24,7 +24,7 @@ FAKE=lib
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

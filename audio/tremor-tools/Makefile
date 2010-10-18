@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF=	Yes
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.4
@@ -39,7 +40,6 @@ CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
-		USE_GROFF =	Yes
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake

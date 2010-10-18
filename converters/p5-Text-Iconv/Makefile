@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 21:35:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
@@ -32,6 +32,6 @@ AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

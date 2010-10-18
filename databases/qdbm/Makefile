@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-zlib \
 			--enable-iconv
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS=	LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
 

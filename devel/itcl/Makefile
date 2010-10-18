@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${MODTCL_INCDIR}/generic \
 		-I${MODTCL_INCDIR}/unix" \
 		LIBitcl34_VERSION=${LIBitcl34_VERSION}
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 SUBST_VARS=VERSION
 

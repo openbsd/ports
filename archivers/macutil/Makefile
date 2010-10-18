@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
@@ -23,7 +23,7 @@ MAKE_FILE=		makefile
 WRKDIST=		${WRKDIR}/macutil
 MAKE_ENV=		CF="${CFLAGS}" \
 			CC=${CC}
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

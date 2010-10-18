@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.12
@@ -55,7 +55,7 @@ CONFIGURE_ARGS +=	--enable-ao \
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mtremor}
 CONFIGURE_ARGS +=	--with-tremor \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT =		calculate and print calendars
 
@@ -24,7 +24,7 @@ WANTLIB =		c m ncurses
 CONFIGURE_STYLE =	gnu dest
 CONFIGURE_ARGS =	--enable-easc \
 			--without-included-gettext
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

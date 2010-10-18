@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/10/18 21:35:48 sthen Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -81,7 +81,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-vala \
 			--disable-fm-radio \
 			--disable-lirc
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 # requires libmtp >= 0.3
 CONFIGURE_ARGS+=	--without-mtp

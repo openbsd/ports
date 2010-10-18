@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-introspection \
 		--without-openldap \
 		--enable-defaults-service
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2 \
 		sysconfdir=${PREFIX}/share/examples/gconf2

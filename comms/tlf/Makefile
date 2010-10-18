@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 21:35:48 sthen Exp $
 
 COMMENT=	radio contest logger
 
@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="${SOME_CPP_FLAGS}" \
 		LDFLAGS="${SOME_LD_FLAGS}" \
 		AUTOMAKE_VERSION=${AUTOMAKE_VER} \
 		AUTOCONF_VERSION=${AUTOCONF_VER}
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 pre-configure:
 	cd $(WRKSRC) && env AUTOCONF_VERSION=$(AUTOCONF_VER) \
