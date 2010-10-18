@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 12:26:04 jasper Exp $
 
 BROKEN=		console is never spawned - pthreads(3) bug?
+
+SHARED_ONLY=	Yes
 
 COMMENT=	advanced general purpose calculator
 

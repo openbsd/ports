@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/08 08:18:57 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2010/10/18 12:26:04 jasper Exp $
 @bin bin/genius
 @bin bin/gnome-genius
 include/genius/
@@ -20,6 +19,7 @@ include/genius/utype.h
 lib/genius/
 @comment lib/genius/libtestplugin.a
 @comment lib/genius/libtestplugin.la
+lib/genius/libtestplugin.so
 @bin libexec/genius-readline-helper-fifo
 share/application-registry/
 share/application-registry/genius.applications
