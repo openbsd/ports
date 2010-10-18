@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/01/29 19:07:06 pea Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=		client for Cisco 3000 VPN concentrators
 
@@ -19,6 +19,7 @@ MASTER_SITES=		${HOMEPAGE}
 LIB_DEPENDS=		gcrypt.>=12:libgcrypt->=1.2:security/libgcrypt
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-configure:

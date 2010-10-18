@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/07 09:46:02 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:45 espie Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
@@ -33,6 +33,7 @@ WANTLIB = 		c crypto z readline ssl termcap gpg-error idn
 
 FLAVORS = 		ldap
 FLAVOR ?=
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap

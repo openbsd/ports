@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/29 18:36:02 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:46 espie Exp $
 
 COMMENT = 	storage class for Catalyst Authentication using DBIx::Class
 
@@ -18,6 +18,7 @@ RUN_DEPENDS =	::databases/p5-DBIx-Class \
 		:p5-Catalyst-Plugin-Authentication->=0.10006:security/p5-Catalyst-Plugin-Authentication \
 		::www/p5-Catalyst-Runtime
 BUILD_DEPENDS =	${RUN_DEPENDS}
+USE_GROFF =	Yes
 
 MAKE_ENV =	TEST_POD=Yes
 

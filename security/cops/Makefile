@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	system secureness checker
 
@@ -32,6 +32,7 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}" \
 		CC="${CC}" CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

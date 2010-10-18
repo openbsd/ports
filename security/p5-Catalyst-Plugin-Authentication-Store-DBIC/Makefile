@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 21:41:46 espie Exp $
 
 COMMENT= 	CDBI Authentication for Catalyst
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::databases/p5-DBIx-Class \
 		::databases/p5-Catalyst-Model-DBIC-Schema \

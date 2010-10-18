@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/22 00:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:47 espie Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
@@ -26,6 +26,7 @@ CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR} LOCALBASE=${LOCALBASE} X11
 
 MAKE_FLAGS =	LIBqca_VERSION=${LIBqca_VERSION}
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
+USE_GROFF =	Yes
 
 WANTLIB += c m
 WANTLIB += pthread stdc++

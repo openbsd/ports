@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/08/31 08:15:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -39,6 +39,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin

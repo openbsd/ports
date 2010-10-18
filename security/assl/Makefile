@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 17:00:33 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =		hide awful SSL API in a sane interface
 V =			0.9.1
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://opensource.conformal.com/snapshots/assl/
 EXTRACT_SUFX =		.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 EG_DIR =		${PREFIX}/share/examples/assl
 MAKE_FLAGS=		PREFIX=${LOCALBASE}

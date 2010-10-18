@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	tool for testing network IDS implementations
 
@@ -18,6 +18,7 @@ WANTLIB=		c pcap
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/libpcap-0.4 ${WRKSRC}/Libnet-0.99b
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

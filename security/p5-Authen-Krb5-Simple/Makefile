@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	Perl module to authenticate against a Kerberos server
 SHARED_ONLY=	Yes
@@ -20,5 +20,6 @@ WANTLIB += com_err crypto krb5
 
 CONFIGURE_ENV += KRB5_INCLUDE="/usr/include/kerberosV" \
 		 KRB5_LIB="/usr/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

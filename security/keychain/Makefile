@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=		front-end to ssh-agent
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/keychain ${PREFIX}/bin

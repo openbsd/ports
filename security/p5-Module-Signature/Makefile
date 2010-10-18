@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/02 14:02:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:47 espie Exp $
 
 COMMENT =		module signature file manipulation
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:gnupg-<2:security/gnupg
 

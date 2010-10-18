@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:47 espie Exp $
 # $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 
 COMMENT=	fast scatter/gather TCP port scanner
@@ -19,6 +19,7 @@ WANTLIB=		c
 WRKDIST=	${WRKDIR}/strobe
 ALL_TARGET=	strobe
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

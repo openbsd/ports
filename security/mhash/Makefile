@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/05/29 08:10:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	strong hash library
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

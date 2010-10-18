@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/25 06:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	perl5 interface to GnuPG using scalars
 
@@ -7,6 +7,7 @@ DISTNAME=	GPG-0.06
 REVISION=	1
 CATEGORIES=	security
 CPAN_AUTHOR=	MILES
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	:gnupg-<2:security/gnupg
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/08 23:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:46 espie Exp $
 
 COMMENT= 	ACL support for Catalyst applications
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::devel/p5-Class-Throwable

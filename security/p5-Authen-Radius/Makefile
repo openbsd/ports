@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/01 09:18:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	Perl module to authenticate against a RADIUS server
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5 \
 		:p5-Data-HexDump->=0.02:devel/p5-Data-HexDump
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_GROFF =	Yes
 REGRESS_IS_INTERACTIVE=	Yes
 
 pre-configure:

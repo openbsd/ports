@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 20:19:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:41:45 espie Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -45,6 +45,7 @@ LIB_DEPENDS =	:libfwbuilder-$V:security/libfwbuilder \
 		
 REGRESS_TARGET =tests
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 WANTLIB += c m netsnmp
 WANTLIB += pthread stdc++ util xml2 xslt z

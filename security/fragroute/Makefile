@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/30 13:44:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 21:41:45 espie Exp $
 			
 COMMENT=		intercept, modify, and rewrite egress traffic
 
@@ -22,6 +22,7 @@ MASTER_SITES=		http://monkey.org/~dugsong/fragroute/ \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		 --with-libevent=/usr
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		dnet.>=1::net/libdnet
 

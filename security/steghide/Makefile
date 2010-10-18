@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/20 18:22:38 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:41:47 espie Exp $
 
 COMMENT =		software able to hide data in various kind of files
 
@@ -27,5 +27,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

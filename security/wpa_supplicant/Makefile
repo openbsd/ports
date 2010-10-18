@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/08/28 12:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -20,6 +20,7 @@ WANTLIB=		c ssl crypto pcap
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MAN5=	wpa_supplicant.conf.5

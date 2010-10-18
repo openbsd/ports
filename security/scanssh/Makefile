@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/29 07:49:57 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	SSH remote version scanner
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	dnet.>=1::net/libdnet
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

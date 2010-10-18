@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/14 10:32:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=	::security/openct
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

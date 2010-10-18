@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	RSA encoding and decoding using OpenSSL
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Crypt-OpenSSL-RSA-0.25
 REVISION=	1

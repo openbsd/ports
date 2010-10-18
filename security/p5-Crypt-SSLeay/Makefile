@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Crypt-SSLeay-0.57
 REVISION=	1
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

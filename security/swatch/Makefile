@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/01/08 13:59:17 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	simple log monitoring program
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 .include <bsd.port.mk>

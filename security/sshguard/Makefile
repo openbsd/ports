@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/07 14:13:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
@@ -21,6 +21,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-firewall=pf
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/03/16 11:07:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	IP stack integrity checker
 
@@ -25,6 +25,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
 		`libnet-config-1.1 --defines`" \
 		LIBS="-L${LOCALBASE}/lib/libnet-1.1 -lnet"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

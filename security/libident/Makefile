@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	library to interface the ident protocol server (rfc1413)
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 ALL_TARGET=	openbsd
 
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

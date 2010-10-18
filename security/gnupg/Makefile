@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/09/22 09:02:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -34,6 +34,7 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-gnupg-iconv
+USE_GROFF =	Yes
 .if ${MACHINE_ARCH} == "m68k"
 CONFIGURE_ARGS+= --disable-asm
 .endif

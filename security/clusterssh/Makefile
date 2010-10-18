@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/28 02:02:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	::x11/p5-Tk \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/cssh ${PREFIX}/bin

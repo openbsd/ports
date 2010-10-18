@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Digest-Nilsimsa-0.06
 REVISION=	1
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes

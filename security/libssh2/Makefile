@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/09 06:31:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
@@ -23,6 +23,7 @@ MASTER_SITES =		http://www.libssh2.org/download/
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 
 # The second test will only pass if public key auth is configured for ${USER}
 REGRESS_IS_INTERACTIVE = Yes

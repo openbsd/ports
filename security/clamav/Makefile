@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/09/26 13:40:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.96.3
@@ -32,6 +32,7 @@ RUN_DEPENDS=		::archivers/lha \
 			::archivers/unzip 
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
 

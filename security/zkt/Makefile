@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/20 14:01:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

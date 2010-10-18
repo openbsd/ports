@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	MD5-1.7
 REVISION=	1
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/31 20:01:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=	::security/libgcrypt \
 		::archivers/lzo2
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 # regression tests need this
 PORTHOME=	${WRKDIR}

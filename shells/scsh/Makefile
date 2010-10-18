@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 21:17:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:41:47 espie Exp $
 
 NOT_FOR_ARCHS=		${LP64_ARCHS}
 
@@ -23,6 +23,7 @@ AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf
 
 ALL_TARGET=		enough
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/scsh/emacs

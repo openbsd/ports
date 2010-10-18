@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Crypt-Blowfish-2.12
 REVISION=	0
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

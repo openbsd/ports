@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/09/07 09:10:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	extended C-shell with many useful features
 
@@ -24,6 +24,7 @@ ALL_TARGET=	all catalogs
 AUTOCONF_VERSION=2.59 
 REGRESS_DEPENDS=${MODGNU_AUTOCONF_DEPENDS}
 REGRESS_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh

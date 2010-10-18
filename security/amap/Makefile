@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	next generation scanning tool
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	pcre::devel/pcre
 
 CONFIGURE_STYLE=	gnu dest
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 MAKE_FLAGS=	OPT="${CFLAGS} -I${LOCALBASE}/include"
 

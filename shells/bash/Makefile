@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/14 19:40:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -23,6 +23,7 @@ PATCHFILES+=	bash41-0$i:0
 .endfor
 
 MODULES=	devel/gettext
+USE_GROFF =	Yes
 WANTLIB=	c termcap 
 
 # enable if parse.y is patched

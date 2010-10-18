@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Crypt-SmbHash-0.12
 REVISION=	1
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/01 06:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	Prelude manager
 
@@ -13,6 +13,7 @@ WANTLIB += xml2 preludedb
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	::textproc/libxml \
 		::security/prelude/libpreludedb

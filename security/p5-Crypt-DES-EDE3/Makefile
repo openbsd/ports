@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	Triple-DES EDE encryption/decryption
 
@@ -7,6 +7,7 @@ DISTNAME=	Crypt-DES_EDE3-0.01
 PKGNAME=	p5-${DISTNAME:S/_/-/}
 REVISION=	0
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

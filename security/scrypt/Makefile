@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/22 22:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:41:47 espie Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
@@ -20,6 +20,7 @@ MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 NO_REGRESS =		Yes
 

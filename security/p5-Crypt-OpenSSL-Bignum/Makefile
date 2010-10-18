@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Crypt-OpenSSL-Bignum-0.04
 REVISION=	1
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
 

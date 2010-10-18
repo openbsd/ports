@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/12 22:05:21 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	Nessus Attack Scripting Language
 DISTNAME=	libnasl-${V}
@@ -12,5 +12,6 @@ LIB_DEPENDS=	nessus.>=4,hosts_gatherer.>=4::security/nessus/libraries
 BUILD_DEPENDS=	:bison-*:devel/bison
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

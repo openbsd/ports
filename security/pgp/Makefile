@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	Pretty Good Privacy 2.6.3ia
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
 
 WRKDIST=	${WRKDIR}/src
+USE_GROFF =	Yes
 
 # library and doc files to install
 LIBFILES= config.txt de.hlp en.hlp es.hlp fr.hlp keys.asc \

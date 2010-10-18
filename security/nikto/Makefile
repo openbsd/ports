@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/23 08:59:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX =	.tar.bz2
 RUN_DEPENDS =	:p5-Net-SSLeay-*:security/p5-Net_SSLeay
 
 NO_BUILD =	Yes
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 

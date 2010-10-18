@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/29 11:36:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =	protect LAN IP adress space by ARP spoofing
 
@@ -20,6 +20,7 @@ WANTLIB =	c pcap
 
 LIB_DEPENDS =	lib/libnet-1.1/net.=11:libnet->=1.1.2.1p0,<1.2:net/libnet/1.1
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

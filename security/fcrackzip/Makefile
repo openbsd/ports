@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/31 01:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =	ZIP password cracker
 
@@ -21,6 +21,7 @@ MASTER_SITES =	http://home.schmorp.de/data/marc/
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
+USE_GROFF =	Yes
 
 # for the --use-unzip option
 RUN_DEPENDS =	::archivers/unzip

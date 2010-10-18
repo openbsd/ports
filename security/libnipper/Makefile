@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 23:13:31 lum Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:45 espie Exp $
 
 COMMENT =		library for nipper
 
@@ -22,6 +22,7 @@ WANTLIB=		m stdc++
 CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 pre-configure:

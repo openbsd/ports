@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/10 09:43:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	hashes with encrypting fields
 
 MODULES=	cpan
 DISTNAME=	Tie-EncryptedHash-1.24
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

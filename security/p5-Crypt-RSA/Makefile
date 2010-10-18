@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/05 14:31:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	RSA public-key cryptosystem
 
 MODULES=	cpan
 DISTNAME=	Crypt-RSA-1.99
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

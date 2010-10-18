@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/09 23:04:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
@@ -24,6 +24,7 @@ MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
 WANTLIB=		c
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

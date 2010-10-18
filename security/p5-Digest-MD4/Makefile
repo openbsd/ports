@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 21:41:46 espie Exp $
 
 COMMENT=	interface to md4 message-digest algorithm
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Digest-MD4-1.5
 REVISION=	0
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 

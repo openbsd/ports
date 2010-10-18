@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/12/04 00:07:14 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
 
 COMMENT= 	read and modify Apache .htpasswd files
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 REGRESS_DEPENDS=::security/p5-Crypt-PasswdMD5 \
 		::security/p5-Digest-SHA1
 
+USE_GROFF =	Yes
 MAKE_ENV=	TEST_POD=Yes
 
 .include <bsd.port.mk>

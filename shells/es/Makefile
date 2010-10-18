@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/27 09:24:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	extensible shell, derived from plan9's rc
 
@@ -21,6 +21,7 @@ WANTLIB=	c
 
 ALL_TARGET=	es
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

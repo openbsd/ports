@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/09/03 15:36:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -34,6 +34,7 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 WANTLIB=	asn1 c com_err crypto gssapi krb5
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS='${LDFLAGS}'

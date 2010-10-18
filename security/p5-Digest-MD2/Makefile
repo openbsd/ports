@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Digest-MD2-2.03
 REVISION=	2
 CATEGORIES=	security
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

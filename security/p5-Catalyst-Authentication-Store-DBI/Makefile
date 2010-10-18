@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/26 23:44:13 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:46 espie Exp $
 
 COMMENT = 	storage class for Catalyst Authentication using DBI
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
+USE_GROFF =	Yes
 RUN_DEPENDS =	::databases/p5-Catalyst-Model-DBI \
 		::security/p5-Catalyst-Plugin-Authentication
 

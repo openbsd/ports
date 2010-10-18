@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 21:41:45 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -23,6 +23,7 @@ MASTER_SITES=	${HOMEPAGE} \
 do-build:
 	@cd ${WRKSRC} && env CCTMP="${CC}" CFLAGS="${CFLAGS}" sh netbsd_make_with_bad_rpcgen cfs
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 # ccat and cname only work on old-style cfs < 1.3

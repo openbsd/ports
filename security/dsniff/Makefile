@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/16 11:26:33 jsg Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
@@ -25,6 +25,7 @@ AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db"
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

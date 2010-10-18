@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/03 15:11:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 21:41:47 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl z
 
 MODULES=		cpan
+USE_GROFF =	Yes
 REGRESS_DEPENDS=	::devel/p5-Test-Exception \
 			::devel/p5-Test-Warn \
 			::devel/p5-Test-NoWarnings \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/01 06:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=	Prelude framework library
 
@@ -16,6 +16,7 @@ MODULES=	devel/gettext \
 		lang/python
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 WANTLIB=	c gcrypt tasn1 z gpg-error gnutls
 

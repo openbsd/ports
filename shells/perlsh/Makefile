@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/27 09:24:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=		Perl shell
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=		::devel/p5-Term-ReadLine-Gnu \
 			::devel/p5-BSD-Resource
 
 CONFIGURE_STYLE=	perl
+USE_GROFF =	Yes
 
 PKG_ARCH=		*
 

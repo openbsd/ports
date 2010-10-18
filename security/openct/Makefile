@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/14 10:31:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	drivers for several smart card readers
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	::devel/libusb \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

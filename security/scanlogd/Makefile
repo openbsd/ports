@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/03/13 11:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 21:41:47 espie Exp $
 
 DISTNAME=	scanlogd-2.2.6
 PKGNAME=	${DISTNAME}p4
@@ -23,6 +23,7 @@ LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=	libnids
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

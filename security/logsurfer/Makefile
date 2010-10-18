@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/11/27 21:30:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	processes logfiles and perform certain actions
 
@@ -22,6 +22,7 @@ MASTER_SITES=	http://kerryt.orcon.net.nz/ \
 
 CONFIGURE_STYLE=	gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}

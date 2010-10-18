@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/07 21:29:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:47 espie Exp $
 
 COMMENT=		plugin password complexity checker for passwd(1)
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		utils

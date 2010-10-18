@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/19 10:31:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:41:45 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
 COMMENT=	NetBIOS Auditing Tool / Security Kit
@@ -18,6 +18,7 @@ MAKE_FLAGS=	GUESTACCOUNT=_nbaudit
 
 WANTLIB += c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/01 06:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:47 espie Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -24,6 +24,7 @@ MASTER_SITES=	http://www.prelude-ids.com/download/releases/libpreludedb/
 
 MODULES=	lang/python \
 		devel/gettext
+USE_GROFF =	Yes
 
 SHARED_LIBS=	preludedb	4.9
 

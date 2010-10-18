@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/07/18 13:21:22 dhill Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:41:45 espie Exp $
 # $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
 COMMENT=	The portable OTR Messaging Library and toolkit
@@ -25,5 +25,6 @@ WANTLIB=	c
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/18 22:15:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 21:41:45 espie Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+= --enable-static
 MODGNU_CONFIG_GUESS_DIRS+= ${WRKSRC}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dante
