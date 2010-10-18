@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
@@ -57,7 +57,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-kbd-layout-indicator \
 		--with-libnotify
 
-USE_X11=	Yes
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes
 

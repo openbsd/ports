@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -27,7 +27,6 @@ MODULES=	x11/gnome \
 		devel/gettext \
 		devel/gconf2
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 
 MODGNOME_HELP_FILES=	Yes

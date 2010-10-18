@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/11 08:19:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 13:18:16 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=		::devel/libnotify \
 			::x11/dbus-glib \
 
 MODGNOME_HELP_FILES=	Yes
-USE_X11=		Yes
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.125 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		GNOME session
 
@@ -41,7 +41,6 @@ RUN_DEPENDS=	::x11/gnome/settings-daemon \
 RUN_DEPENDS+=	::x11/polkit-gnome
 RUN_DEPENDS+=	::devel/gconf2,-polkit
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-session
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		utility library for XKB
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=		::devel/iso-codes
 LIB_DEPENDS=		::devel/glib2 \
 			::textproc/libxml
 
-USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x \
 			--with-xkb-base="${SYSCONFDIR}/X11/xkb/" \

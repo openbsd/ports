@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/09/30 07:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -26,6 +26,8 @@ BUILD_DEPENDS=	::devel/popt
 LIB_DEPENDS=	::devel/ORBit2 \
 		::devel/glib2 \
 		::textproc/libxml
+
+USE_X11=	No
 
 # popt usage is deprecated in gnome, but the header file is still included
 # from some libbonobo header and might still be used inside libbonobo

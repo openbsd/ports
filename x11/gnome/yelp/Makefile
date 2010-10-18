@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 13:18:16 jasper Exp $
 
 COMMENT=		GNOME help browser
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=		::devel/startup-notification \
 			::textproc/libxslt \
 			::textproc/rarian
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	yelp
 DESKTOP_FILES=		Yes
 

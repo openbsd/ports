@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/09/30 07:44:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=		:gettext-*:devel/gettext
 # this way, both packages can be installed alongside.
 RUN_DEPENDS+=		 :gtk2-clearlooks-engine->=0.6.2p8:x11/gtk2-clearlooks-engine
 
-USE_X11=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

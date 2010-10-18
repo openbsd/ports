@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,7 +56,6 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::x11/gnome/settings-daemon \
 			::x11/gnome/terminal
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	control-center2

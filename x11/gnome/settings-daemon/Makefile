@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	GNOME settings daemon
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	::devel/libnotify \
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	::x11/gnome/icon-theme
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= control-center2
 

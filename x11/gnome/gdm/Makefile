@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2010/10/18 12:24:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=		::x11/gnome/librsvg \
 MODULES=		devel/gettext \
 			x11/gnome
 
-USE_X11=		Yes
 USE_LIBTOOL=		gnu
 MODGNOME_HELP_FILES=	Yes
 

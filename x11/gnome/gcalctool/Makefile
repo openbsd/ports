@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		GTK2 desktop calculator
 
@@ -31,8 +31,6 @@ BUILD_DEPENDS=		::devel/bison
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
-
-USE_X11=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

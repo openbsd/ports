@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/30 12:00:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 13:18:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=	:gmime->=2.4,<2.6:mail/gmime24 \
 		::textproc/libxml \
 		::devel/libsoup,-gnome
 
+USE_X11=	Yes
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

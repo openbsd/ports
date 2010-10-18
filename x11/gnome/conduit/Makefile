@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 13:18:14 jasper Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -33,7 +33,6 @@ RUN_DEPENDS=		::devel/gettext \
 			::net/avahi \
 			::devel/py-gdata
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 

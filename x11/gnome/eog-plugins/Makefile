@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		plugins for EOG
 
@@ -39,7 +39,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog
 RUN_DEPENDS=		:eog->=2.30.0:x11/gnome/eog
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
 CONFIGURE_ARGS+=	--with-plugins=all
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

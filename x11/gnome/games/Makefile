@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -40,7 +40,6 @@ RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \
 			::multimedia/gstreamer-0.10/plugins-good
 REGRESS_DEPENDS=	::devel/check
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games

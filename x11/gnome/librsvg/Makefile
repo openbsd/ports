@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::www/libcroco
 RUN_DEPENDS=	::x11/gtk-engines2
 
-USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-svgz \
 			--with-croco \
 			--enable-gtk-theme \

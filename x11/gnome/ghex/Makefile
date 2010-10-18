@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 12:24:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=		::x11/gnome/libgnomeui \
 			::x11/gnome/libgnomeprintui
 
 MODGNOME_HELP_FILES=	Yes
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	ghex2
 

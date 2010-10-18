@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	GNOME media utilities
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=	:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins
 		::devel/glade3
 
 MODGNOME_HELP_FILES= Yes
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= gnome-media
 

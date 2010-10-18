@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=		::x11/gnome/py-gnome
 LIB_DEPENDS=		::devel/startup-notification
 
 MODGNOME_HELP_FILES=	Yes
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \

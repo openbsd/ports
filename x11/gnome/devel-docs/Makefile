@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/30 07:42:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		developer documentation for GNOME
 
@@ -15,6 +15,7 @@ MODULES=		x11/gnome
 
 MODGNOME_HELP_FILES=	Yes
 
+USE_X11=		No
 PKG_ARCH=		*
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--disable-scrollkeeper

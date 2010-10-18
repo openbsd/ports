@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	nautilus Python bindings
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		::x11/gnome/nautilus
 RUN_DEPENDS=	::x11/gnome/py-gnome
 
-USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0`" \

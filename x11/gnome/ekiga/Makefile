@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
@@ -41,7 +41,6 @@ LIB_DEPENDS=	::net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 		::devel/libsigc++-2 \
 		::devel/libnotify
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= ekiga

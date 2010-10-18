@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
@@ -43,7 +43,6 @@ RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
 			:xulrunner-devel->=1.9.2.6p3:devel/xulrunner/1.9,-devel
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
-USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.62
 CONFIGURE_STYLE=	autoconf

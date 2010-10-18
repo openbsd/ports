@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 13:18:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,6 @@ WANTLIB +=		pangoft2-1.0 pcre pixman-1 png proxy pthread-stubs
 WANTLIB +=		soup-2.4 sqlite3 tasn1 xcb xcb-render xcb-render-util
 WANTLIB +=		xml2 z soup-gnome-2.4
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	libgweather
 
 CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo" \

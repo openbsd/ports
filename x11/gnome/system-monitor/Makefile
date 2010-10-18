@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
@@ -38,7 +38,6 @@ LIB_DEPENDS=	::x11/gtk2mm \
 		::devel/libwnck \
 		::x11/gnome/librsvg
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes
 MODGCONF2_SCHEMAS_DIR= gnome-applets2

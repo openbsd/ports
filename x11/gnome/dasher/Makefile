@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		graphical predictive text input system
 
@@ -35,7 +35,6 @@ WANTLIB += xcb-render-util gnomeui-2 cspi spi
 LIB_DEPENDS=		::x11/gnome/libgnomeui \
 			::x11/gnome/at-spi
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	dasher

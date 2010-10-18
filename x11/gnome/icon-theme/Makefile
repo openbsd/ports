@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/06 13:51:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	base icon theme for GNOME
 
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	:gettext-*:devel/gettext \
 
 PKG_ARCH=	*
 
-USE_X11=	Yes
 USE_LIBTOOL=	No
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

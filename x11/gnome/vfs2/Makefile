@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/09/30 07:40:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2010/10/18 13:18:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 LIB_DEPENDS=		::archivers/bzip2 \
 			::sysutils/gamin
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-vfs2
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \

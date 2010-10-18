@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 13:18:16 jasper Exp $
 
 COMMENT=	VNC server for remote acces to your GNOME desktop
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	::devel/libnotify \
 		:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		::net/avahi
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	vino

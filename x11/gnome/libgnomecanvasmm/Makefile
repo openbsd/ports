@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=		:glib2mm->=2.8:devel/glib2mm \
 			::devel/pangomm \
 			::x11/gnome/libgnomecanvas
 
-USE_X11=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

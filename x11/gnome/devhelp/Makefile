@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	API documentation browser for GNOME
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	::devel/libwnck \
 		::devel/libunique \
 		::www/webkit
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp
 

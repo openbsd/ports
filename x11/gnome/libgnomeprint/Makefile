@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/09/30 07:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		printing framework for GNOME
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=		::devel/pango \
 			::textproc/libxml \
 			::x11/gnome/libgnomecups
 
-USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--with-cups

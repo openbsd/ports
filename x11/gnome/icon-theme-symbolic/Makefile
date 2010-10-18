@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 20:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	::x11/gnome/icon-theme
 
 PKG_ARCH=	*
 
+USE_X11=	No
 USE_LIBTOOL=	No
 
 CONFIGURE_ENV=	ac_cv_path_GIT=false \

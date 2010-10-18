@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/09/30 07:34:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::devel/gettext \
 		:py-libxslt-*:textproc/libxslt,-python \
 		::textproc/rarian
 
+USE_X11=	No
 USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

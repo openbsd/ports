@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		manage encryption keys
 
@@ -41,7 +41,6 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse

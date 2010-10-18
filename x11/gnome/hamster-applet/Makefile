@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		time tracker applet for GNOME
 
@@ -30,7 +30,6 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	hamster-applet
 MODGCONF2_LIBDEP=	No
 

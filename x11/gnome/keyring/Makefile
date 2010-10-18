@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		password agent for the GNOME project
 
@@ -31,8 +31,6 @@ LIB_DEPENDS=	::security/libgcrypt \
 		::security/libtasn1 \
 		::x11/dbus \
 		::x11/gtk+2
-
-USE_X11=	Yes
 
 CONFIGURE_ARGS=	--with-root-certs=/etc/ssl \
 		--disable-pam \

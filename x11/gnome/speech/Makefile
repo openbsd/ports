@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/25 09:07:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		GNOME speech module
 
@@ -22,7 +22,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		::audio/espeak \
 			::x11/gnome/libbonobo
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \

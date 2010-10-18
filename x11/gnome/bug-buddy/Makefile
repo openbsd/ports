@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/13 19:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-eds
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= bug-buddy
 

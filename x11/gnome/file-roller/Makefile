@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 13:18:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=		::archivers/gtar \
 			:rpm2cpio-*|rpm-*:converters/rpm2cpio
 LIB_DEPENDS=		::x11/gnome/nautilus
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	file-roller

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -41,7 +41,6 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 MODGNOME_HELP_FILES=	Yes
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	eog
 

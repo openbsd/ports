@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 13:18:15 jasper Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -32,7 +32,6 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	::x11/gnome/nautilus
 
-USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-open-terminal
 
 LIBTOOL_FLAGS=	--tag=disable-static

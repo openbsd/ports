@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/13 20:37:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		:gettext-*:devel/gettext \
 			:gtk-engines2->=2.11:x11/gtk-engines2
 
-USE_X11=		Yes
 USE_LIBTOOL=		No
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

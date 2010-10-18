@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -28,7 +28,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	::devel/libgtop2 \
 		::devel/gconf2
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 

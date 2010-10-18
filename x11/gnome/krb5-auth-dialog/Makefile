@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 13:18:14 jasper Exp $
 
 COMMENT=	monitor kerberos tickets
 
@@ -30,7 +30,6 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	::devel/libnotify
 
-USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes

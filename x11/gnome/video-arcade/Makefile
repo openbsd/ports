@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 13:18:16 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=	:sdlmame->=0.132p2:emulators/sdlmame,-main
 LIB_DEPENDS=	::databases/sqlite3 \
 		::devel/libwnck
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=  gnome-video-arcade

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/14 14:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
@@ -53,7 +53,6 @@ LIB_DEPENDS=		::devel/libgsf \
 			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
 			:evince->=2.32.0:graphics/evince,-main
 
-USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

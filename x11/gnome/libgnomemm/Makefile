@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		C++ interface for libgnome
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=		::x11/gnome/libgnome \
 			::x11/gtk2mm \
 			::devel/pangomm
 
-USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static
 

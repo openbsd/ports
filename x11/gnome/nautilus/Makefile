@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -53,7 +53,6 @@ LIB_DEPENDS=		::graphics/libexif \
 			::x11/gnome/desktop \
 			::devel/libunique
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	nautilus
 

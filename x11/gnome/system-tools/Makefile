@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	sytem configuration GUI for desktops
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	::devel/liboobs \
 		::x11/polkit-gnome \
 		::x11/gnome/nautilus
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 
 MODGNOME_HELP_FILES= Yes

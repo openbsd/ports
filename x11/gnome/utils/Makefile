@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/18 13:18:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,6 @@ MODULES=		devel/gconf2 \
 			x11/gnome
 
 MODGNOME_HELP_FILES=	Yes
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-utils
 

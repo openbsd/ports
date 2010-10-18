@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 13:18:15 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,8 +40,6 @@ RUN_DEPENDS=	::archivers/zip \
 		::archivers/bzip2
 LIB_DEPENDS=	::x11/gnome/nautilus \
 		::databases/evolution-data-server
-
-USE_X11=	Yes
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \

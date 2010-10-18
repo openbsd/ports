@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:13 jasper Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=		::devel/gettext \
 			:gnome-menus-*:x11/gnome/menus \
 			:py-gnome-*:x11/gnome/py-gnome
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

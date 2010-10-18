@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/18 13:18:15 jasper Exp $
 
 COMMENT=	graphics library for GNOME
 
@@ -29,8 +29,6 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	::devel/libglade2 \
 		::graphics/libart
-
-USE_X11=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \

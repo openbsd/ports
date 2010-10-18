@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,6 @@ LIB_DEPENDS=	::x11/gnome/panel \
 		::net/telepathy/telepathy-glib \
 		:avahi-gtk-*:net/avahi,-gtk,no_mono,no_qt3,no_qt4
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	vinagre
