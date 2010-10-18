@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/05 10:20:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:06:06 espie Exp $
 
 COMMENT =	on-the-fly HTML to WML conversion
 
@@ -24,6 +24,7 @@ RUN_DEPENDS =	:p5-libwww-*:www/p5-libwww \
 
 NO_BUILD =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

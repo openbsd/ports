@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/07 16:52:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=	:py-gtk2-*:x11/py-gtk2 \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 pre-install:

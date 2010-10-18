@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	object-oriented DBMS
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Tangram-2.10
 REVISION=	0
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

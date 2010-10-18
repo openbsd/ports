@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/22 07:28:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=		xml to manpage converter
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmltoman/}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	pager utility
 
 DISTNAME=	Data-Page-2.00
 CATEGORIES=	databases
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 

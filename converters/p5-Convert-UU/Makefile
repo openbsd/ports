@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2008/04/20 17:40:39 simon Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	Perl5 module for uuencode and uudecode
 
 DISTNAME=	Convert-UU-0.5201
 CATEGORIES=	converters
 MODULES=	cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

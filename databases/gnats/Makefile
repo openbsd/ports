@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/01 09:17:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	GNU Problem Report Management System
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu dest

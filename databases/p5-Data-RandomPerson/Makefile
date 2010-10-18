@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/08 14:10:24 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=		create random people
 
 MODULES=		cpan
 DISTNAME=		Data-RandomPerson-0.4
 CATEGORIES=		databases
+USE_GROFF =	Yes
 
 MAINTAINER=		Jim Razmus <jim@bonetruck.org>
 

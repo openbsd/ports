@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	update Class::DBI objects through CGI::Untaint
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-FromCGI-1.00
 CATEGORIES=	databases www
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

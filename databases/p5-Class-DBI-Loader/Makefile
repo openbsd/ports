@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	dynamic definition of Class::DBI sub classes
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Loader-0.32
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/13 15:59:18 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:07 espie Exp $
 
 COMMENT= 	model class for catalyst
 
@@ -20,5 +20,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV+=	TEST_POD=Yes \
 		C_M_DBIC_SCHEMA_TESTAPP=Yes
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

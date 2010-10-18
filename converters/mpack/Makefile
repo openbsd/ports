@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	external MIME packer/unpacker
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tar.Z
 WRKDIST=	${WRKDIR}/mpack
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

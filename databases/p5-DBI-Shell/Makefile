@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/22 23:08:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	interactive command shell for the DBI
 
 MODULES=	cpan
 DISTNAME=	DBI-Shell-11.95
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 17:06:08 espie Exp $
 
 DISTNAME=	sybperl-2.18
 PKGNAME=	p5-${DISTNAME}
 REVISION=	6
 CATEGORIES=	databases perl5
+USE_GROFF =	Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

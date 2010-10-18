@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/22 11:08:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	programs to aid the PostgreSQL administrator
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	 ::databases/postgresql,-main
 NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 BINFILES=	pg_file2str.pl
 

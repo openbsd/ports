@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 12:52:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=		perl bindings for the xapian search library
 
@@ -6,6 +6,7 @@ V=			1.2.3
 DISTNAME=		Search-Xapian-${V}.0
 CATEGORIES=		databases
 MODULES=		cpan
+USE_GROFF =	Yes
 
 HOMEPAGE=		http://xapian.org/
 

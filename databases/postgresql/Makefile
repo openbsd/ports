@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2010/10/08 06:50:23 pea Exp $
+# $OpenBSD: Makefile,v 1.129 2010/10/18 17:06:08 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -47,6 +47,7 @@ MAKE_FILE=	GNUmakefile
 SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.own.mk>

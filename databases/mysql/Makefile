@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2010/06/18 11:31:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.169 2010/10/18 17:06:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,6 +32,7 @@ WANTLIB=		c m pthread
 DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
+USE_GROFF =	Yes
 
 # XXX gcc bug, gcc/3.3.5
 .if ${MACHINE_ARCH} == "alpha"

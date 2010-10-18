@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/22 10:14:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:06:07 espie Exp $
 
 COMMENT =	MySQL maatkit tools
 
@@ -22,6 +22,7 @@ RUN_DEPENDS =	:p5-DBD-mysql->=1.0:databases/p5-DBD-mysql \
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE = perl
+USE_GROFF =	Yes
 PKG_ARCH =	*
 
 .include <bsd.port.mk>

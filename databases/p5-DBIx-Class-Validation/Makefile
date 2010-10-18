@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/16 20:24:54 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
 
 COMMENT= 	data validation for DBIx::Class
 
@@ -22,5 +22,6 @@ REGRESS_DEPENDS=::databases/p5-DBD-SQLite \
 		::devel/p5-Test-Spelling
 
 MAKE_ENV=	TEST_POD=Yes TEST_AUTHOR=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

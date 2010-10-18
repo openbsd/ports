@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/18 09:00:33 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:05 espie Exp $
 
 COMMENT=		advanced HTML-to-text converter
 
@@ -22,6 +22,7 @@ CONFIGURE_STYLE=	simple
 
 MAKE_FLAGS=		PREFIX="${PREFIX}" CXXFLAGS+="-DVERSION=1.3.2a -DAUTO_PTR_BROKEN ${CXXFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-extract:

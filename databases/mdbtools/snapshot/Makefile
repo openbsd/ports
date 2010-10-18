@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/11 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 17:06:07 espie Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
@@ -28,6 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 WRKDIST=	${WRKDIR}/mdbtools

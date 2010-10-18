@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/06 21:31:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	top clone for MySQL
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	:p5-DBD-mysql->=2.9004:databases/p5-DBD-mysql \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
+USE_GROFF =	Yes
 
 PKG_ARCH=	*
 

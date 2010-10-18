@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/10 20:48:10 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
 
 COMMENT =	top for monitoring PostgreSQL processes
 
@@ -23,5 +23,6 @@ LIB_DEPENDS = 	pq.>=5:postgresql-client-*:databases/postgresql
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-postgresql=${LOCALBASE}
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

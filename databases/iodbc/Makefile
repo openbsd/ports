@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/25 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 17:06:07 espie Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -34,6 +34,7 @@ MASTER_SITES=		${HOMEPAGE}downloads/iODBC/
 MODULES=		devel/gettext
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \

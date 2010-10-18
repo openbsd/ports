@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/03 19:57:42 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:06 espie Exp $
 
 COMMENT =	modification of UTF-7 encoding for IMAP
 
 DISTNAME =	Encode-IMAPUTF7-1.03
 CATEGORIES =	converters
 MODULES =	cpan
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

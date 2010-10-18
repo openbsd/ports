@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2010/10/09 10:25:06 pea Exp $
+# $OpenBSD: Makefile,v 1.94 2010/10/18 17:06:07 espie Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -36,6 +36,7 @@ EXTRACT_SUFX=		.tgz
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	:p5-Net-IDN-Nameprep->=1.100:converters/p5-Net-IDN-Nameprep
 REGRESS_DEPENDS=::devel/p5-Test-NoWarnings

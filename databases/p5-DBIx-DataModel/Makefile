@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/13 14:46:13 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	classes and UML-style associations on top of DBI
 
 MODULES=	cpan
 DISTNAME=	DBIx-DataModel-1.09
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

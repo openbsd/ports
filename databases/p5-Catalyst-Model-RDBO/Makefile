@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
 
 COMMENT= 	base class for Rose::DB::Object for catalyst
 DISTNAME=	Catalyst-Model-RDBO-0.03
 CATEGORIES=	databases www
 MODULES=	cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

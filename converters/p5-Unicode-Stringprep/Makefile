@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/16 07:25:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	preparation of internationalized strings
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS=::devel/p5-Test-NoWarnings
 

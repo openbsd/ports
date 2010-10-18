@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -30,6 +30,7 @@ RUN_DEPENDS=    ::databases/py-psycopg2
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-python=${MODPY_BIN} 

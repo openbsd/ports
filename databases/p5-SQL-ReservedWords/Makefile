@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
 MODULES=	cpan
 DISTNAME=	SQL-ReservedWords-0.7
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

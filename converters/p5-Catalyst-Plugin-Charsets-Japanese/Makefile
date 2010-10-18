@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	jcode interface for catalyst
 
 DISTNAME=	Catalyst-Plugin-Charsets-Japanese-0.06
 CATEGORIES=	converters www
 MODULES=	cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

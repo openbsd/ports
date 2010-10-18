@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/18 17:06:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	DBI-1.609
 REVISION=	0
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://dbi.perl.org/
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
 
 COMMENT =	DBI driver abstraction for rendering charts and graphs
 
 DISTNAME =	DBD-Chart-0.82
 CATEGORIES =	databases graphics
 MODULES =	cpan
+USE_GROFF =	Yes
 
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
 
 COMMENT= 	catalyst model for Class::DBI
 
@@ -16,5 +16,6 @@ RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::databases/p5-Class-DBI-Loader
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

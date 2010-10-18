@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to gdbm
@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdbm::databases/gdbm
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=LOCALBASE=${LOCALBASE}
+USE_GROFF =	Yes
 
 # we extract only this extension, since otherwise makemaker will detect we
 # have the sources to perl...

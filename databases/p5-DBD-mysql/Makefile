@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 17:06:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME=		DBD-mysql-4.014
 REVISION=		0
 CATEGORIES=		databases
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

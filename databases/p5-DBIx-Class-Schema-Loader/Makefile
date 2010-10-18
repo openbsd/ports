@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/11/27 22:08:18 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:06:08 espie Exp $
 
 COMMENT= 	dynamic definition of a DBIx::Class::Schema
 
@@ -24,5 +24,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

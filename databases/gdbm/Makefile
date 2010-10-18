@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/09/01 09:17:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=		GNU dbm
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= 	gnu dest
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

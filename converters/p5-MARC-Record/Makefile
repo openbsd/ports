@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/15 22:03:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	MARC (machine readable cataloging format)
 CATEGORIES=	converters
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAKE_ENV+=	TEST_POD=Yes
 

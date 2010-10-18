@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/01 22:00:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=		non-blocking CouchDB client based on jquery.couch.js
 
@@ -9,6 +9,7 @@ CATEGORIES=		databases devel
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg
+USE_GROFF =	Yes
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

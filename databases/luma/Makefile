@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ MODULES=	lang/python
 RUN_DEPENDS=	::x11/py-qt3 \
 		::databases/py-ldap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

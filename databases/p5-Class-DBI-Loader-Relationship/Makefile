@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	easier relationship specification in CDBI::L
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Loader-Relationship-1.2
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	determine type information for columns
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Class-DBI-Plugin-Type-0.02
 REVISION=	1
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

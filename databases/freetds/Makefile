@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/21 16:10:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -46,6 +46,7 @@ FLAVOR?=
 REGRESS_IS_INTERACTIVE=Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threadsafe \

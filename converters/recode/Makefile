@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	convert files between character sets and usages
 
@@ -24,6 +24,7 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_GNU:=recode/}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 MODPY_RUNDEP=	No
 
 CONFIGURE_STYLE= gnu

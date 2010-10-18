@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/26 20:25:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:06 espie Exp $
 
 COMMENT= 	simple calendar month
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=		::devel/p5-DateTime
 
 CONFIGURE_STYLE= modbuild
+USE_GROFF =	Yes
 MAKE_ENV=	TEST_POD=Yes
 
 .include <bsd.port.mk>

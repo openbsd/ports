@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	abstract Class::DBI's SQL with SQL::Abstract
 
@@ -7,6 +7,7 @@ DISTNAME=	Class-DBI-AbstractSearch-0.07
 CATEGORIES=	databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>
+USE_GROFF =	Yes
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

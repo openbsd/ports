@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:07 espie Exp $
 
 COMMENT=	extensions to Class::DBI for SQLite
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-SQLite-0.11
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

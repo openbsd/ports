@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/27 20:22:37 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	database connection caching and organization
 
 DISTNAME=	Ima-DBI-0.35
 CATEGORIES=	databases
 MODULES=	cpan
+USE_GROFF =	Yes
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

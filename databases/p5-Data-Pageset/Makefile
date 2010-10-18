@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/22 23:11:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	pager utility
 
 DISTNAME=	Data-Pageset-1.05
 CATEGORIES=	databases
 MODULES=	cpan
+USE_GROFF =	Yes
 
 
 # Perl

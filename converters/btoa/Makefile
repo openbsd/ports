@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 17:06:05 espie Exp $
 
 COMMENT=	encode/decode binary to printable ASCII
 
@@ -18,6 +18,7 @@ PATCHFILES=	btoa-5.2-patch1.gz
 MAKE_FLAGS=	DESTDIR=${PREFIX}
 MAKE_FILE=	Makefile.sun
 FAKE_FLAGS=	DESTDIR=${WRKINST}${PREFIX}
+USE_GROFF =	Yes
 
 # Turn off the default from bsd.port.mk (-p0), which screws things up
 PATCH_DIST_STRIP=  

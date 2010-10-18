@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/09/22 21:02:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	character set conversion library
 
@@ -24,6 +24,7 @@ WANTLIB=	c
 BUILD_DEPENDS=	::devel/gperf
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux ${WRKSRC}/libcharset/build-aux

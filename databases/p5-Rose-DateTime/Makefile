@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/01/10 13:45:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	datetime helper functions for Rose
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Rose-DateTime-0.533
 CATEGORIES=	databases devel

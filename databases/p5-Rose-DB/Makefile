@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/10 13:45:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:08 espie Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Rose-DB-0.755
 CATEGORIES=	databases

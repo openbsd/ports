@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/02/05 11:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:06:06 espie Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
@@ -34,6 +34,7 @@ MAKE_FILE =	GNUmakefile
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	 CPPFLAGS="-I${LOCALBASE}/include/libpng/"
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} --enable-static \

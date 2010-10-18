@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:06 espie Exp $
 
 COMMENT=	converter to/from quoted-printable encoding
 
@@ -17,6 +17,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf no-autoheader
+USE_GROFF =	Yes
 
 ALL_TARGET=	prog
 REGRESS_TARGET=	wringer

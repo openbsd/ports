@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/18 17:06:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	DBD-Pg-2.17.1
 REVISION=	0
 CATEGORIES=	databases
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS=	::databases/p5-DBI
