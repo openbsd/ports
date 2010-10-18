@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/12 19:28:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	MIME implementation
 
@@ -18,6 +18,7 @@ WANTLIB=		c termcap
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-configure:

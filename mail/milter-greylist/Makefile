@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/01 14:06:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	greylist milter
 
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--with-user=${USERNAME} \
 			--with-dumpfile=${GREYLISTDIR}/greylist.db \
 			--with-libspf2=${LOCALBASE}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

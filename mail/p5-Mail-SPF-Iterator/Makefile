@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/09/08 14:39:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:17 espie Exp $
 
 COMMENT =		iterative SPF lookup
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:p5-Net-DNS->=0.62:net/p5-Net-DNS \
 			::www/p5-URI

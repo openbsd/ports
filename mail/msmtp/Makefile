@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/05 18:34:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 19:59:16 espie Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -28,6 +28,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
 			--with-ssl=openssl
+			USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/12/12 15:38:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-user=_mdefang \
 		--disable-anti-virus \
 		--enable-poll
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-build:

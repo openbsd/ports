@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	simple mail counter
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cmail 

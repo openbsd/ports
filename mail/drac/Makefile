@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/22 11:05:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	dynamic relay authorization control daemon
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX=   .tar.Z
 WRKDIST=	${WRKDIR}
 
 MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR}
+USE_GROFF =	Yes
 
 pre-build:
 	cd ${WRKSRC} && perl -pi -e "s,/etc,${SYSCONFDIR},g" rpc.dracd.1m

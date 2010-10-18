@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=	spam relay database
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

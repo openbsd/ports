@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	once-popular mail user agent
 
@@ -19,6 +19,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS+= -S -d
 CONFIGURE_ENV+=	PREFIX='$${DESTDIR}${PREFIX}'
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/elm2.4.ME+.66
 

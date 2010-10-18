@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/13 19:44:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=	library for creating easy mail filters
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=    	::devel/p5-File-HomeDir \
 			::devel/p5-File-Tempdir \

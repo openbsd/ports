@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	move your mail box to another location
 
@@ -15,5 +15,6 @@ WANTLIB=		c
 
 MAKE_FLAGS=	
 FAKE_FLAGS=	PREFIX=${PREFIX} MANDIR=${PREFIX}/man/cat
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

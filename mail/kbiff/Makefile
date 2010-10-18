@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/07/06 22:39:23 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -29,6 +29,7 @@ MODULES=        	x11/kde devel/gettext
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
+USE_GROFF =	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

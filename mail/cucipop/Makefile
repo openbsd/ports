@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	Cubic Circle's POP3 daemon
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
+USE_GROFF =	Yes
 
 pre-configure:
 .for f in cucipop.8 makevpopdb.8

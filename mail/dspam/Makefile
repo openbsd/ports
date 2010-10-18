@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/22 06:54:22 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -23,6 +23,7 @@ WANTLIB=		c m
 
 # XXX missing -lkrb5 in pgsql flavor ?
 USE_LIBTOOL=		gnu
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \

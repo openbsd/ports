@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/16 00:17:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=		verify email addresses and mailing lists
 
@@ -18,6 +18,7 @@ EXTRACT_SUFX=		.tar.Z
 WRKDIST=		${WRKDIR}/
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

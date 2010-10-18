@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/08/31 17:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 19:59:20 espie Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -55,6 +55,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 WEBROOT=	/var/www
 

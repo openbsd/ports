@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/03 15:34:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 19:59:15 espie Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 # make SHARED_ONLY=Yes plist
 MULTI_PACKAGES=	-main ${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
 CONFIGURE_ARGS+=--with${NO_SHARED_LIBS:S/Yes/out/:S/No//}-perl
+USE_GROFF =	Yes
 
 FLAVORS=	drac
 FLAVOR?=

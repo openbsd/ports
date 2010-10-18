@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.23 2008/04/15 21:58:13 jasper Exp $
+#   $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=	perl module to talk to a POP3 (RFC1081) server
 
@@ -13,5 +13,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

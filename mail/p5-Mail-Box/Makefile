@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=		perl module to manage mail folders
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate	\
 			:p5-MIME-tools-*:mail/p5-MIME-tools		\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/02 01:22:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -41,6 +41,7 @@ SUPDISTFILES+=		${DIST_SIDEBAR}
 
 AUTOMAKE_VERSION= 1.9
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 post-patch:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/03 15:27:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=		perl module to query Sender Policy Framework
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		:p5-Net-CIDR-Lite->=0.15:net/p5-Net-CIDR-Lite \
 			:p5-Net-DNS->=0.46:net/p5-Net-DNS \

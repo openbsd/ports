@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:17 espie Exp $
 
 COMMENT= 	Email::MIME constructor for starting anew
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Email-MIME-Creator-1.456
 REVISION=	0

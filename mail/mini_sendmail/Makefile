@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/11/24 16:12:18 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:16 espie Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+USE_GROFF =	Yes
 
 MULTI_PACKAGES=	-main -chroot
 

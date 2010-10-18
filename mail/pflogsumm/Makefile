@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/06 09:03:34 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:18 espie Exp $
 
 COMMENT=	Postfix log entry summarizer
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 RUN_DEPENDS=  :p5-Date-Calc->=5.3:devel/p5-Date-Calc

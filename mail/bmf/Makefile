@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/11 07:17:42 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
@@ -18,6 +18,7 @@ WANTLIB=		c
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bmf/}
 
 CONFIGURE_STYLE=	simple
+USE_GROFF =	Yes
 
 FLAVORS=		mysql
 FLAVOR?=

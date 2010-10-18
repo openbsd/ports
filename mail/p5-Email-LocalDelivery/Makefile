@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/08/20 20:36:28 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 19:59:17 espie Exp $
 
 COMMENT= 	deliver a piece of mail locally
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Email-LocalDelivery-0.217
 CATEGORIES=	mail

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/06/15 08:43:30 fkr Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/18 19:59:15 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -35,6 +35,7 @@ WANTLIB-eximon =		${WANTLIB} X11 Xaw Xext Xmu Xt
 RUN_DEPENDS-eximon =	::${PKGPATH},-main
 LIB_DEPENDS-eximon =	pcre::devel/pcre
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 .if !${FLAVOR:L:Mno_eximon}

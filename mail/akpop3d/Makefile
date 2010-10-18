@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	small and secure POP3 daemon
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.synflood.at/akpop3d/ \
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/08 20:32:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 19:59:16 espie Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -32,6 +32,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
 			ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 MAKE_ENV=		INCLUDES="-I${LOCALBASE}/include"
+USE_GROFF =	Yes
 
 SUBST_VARS=             MAILDROPCONF
 

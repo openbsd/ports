@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/09/14 12:45:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/old-versions/
 
 MODULES=	lang/python
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 EXDIR=		${PREFIX}/share/examples/getmail

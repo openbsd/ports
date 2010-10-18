@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/22 08:59:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	addressbook program with mutt support
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=gnu
 
 EXAMPLESDIR=	${PREFIX}/share/examples/abook
 WHITELIST=README abook2whitelist.sh mutt.whitelist whitelist.rc
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/whitelist

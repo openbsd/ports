@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/16 17:52:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 19:59:16 espie Exp $
 
 COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4"	\
 			 LDFLAGS=-L${LOCALBASE}/lib/db4			\
 			 LDADD=-ldb
+			 USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync

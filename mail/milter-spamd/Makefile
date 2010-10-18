@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/15 14:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread milter
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-configure:

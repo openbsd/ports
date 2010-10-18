@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/02/10 19:45:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	mailing list manager
 
@@ -20,6 +20,7 @@ MASTER_SITES=	http://mlmmj.mmj.dk/files/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-recieve-strip=yes
+USE_GROFF =	Yes
 
 DOCS=	README.access README.exim4 README.security README.sendmail TUNABLES
 

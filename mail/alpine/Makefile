@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/31 20:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:15 espie Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -45,6 +45,7 @@ BUILD_DEPENDS=	:c-client->=2007b:mail/imap-uw,-c-client \
 RUN_DEPENDS=	:aspell-*:textproc/aspell/core
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

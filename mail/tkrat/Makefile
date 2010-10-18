@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/13 15:37:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=	mail user agent for X in C with a Tcl/Tk frontend
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
 		--with-tcl-include="${MODTCL_INCDIR}"

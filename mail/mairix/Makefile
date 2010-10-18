@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/24 14:43:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=		program for indexing & searching email
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=		bz2::archivers/bzip2
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV= 		CPPFLAGS="-I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib"
+			USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

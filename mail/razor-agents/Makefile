@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 19:59:20 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,5 +27,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 FAKE_FLAGS=		PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
 
 CONFIGURE_STYLE= 	perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

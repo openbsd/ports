@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:18 espie Exp $
 
 COMMENT=	server: allow users to change password from within Eudora
 
@@ -22,6 +22,7 @@ WRKDIST=	${WRKDIR}/poppassd
 
 ALL_TARGET=	poppassd
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

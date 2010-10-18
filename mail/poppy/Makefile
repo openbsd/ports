@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:18 espie Exp $
 
 COMMENT=	client to perform simple tasks with a POP3/IMAP server
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	http://www.cnpbagwell.com/
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/poppy ${PREFIX}/bin

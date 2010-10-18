@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:16 espie Exp $
 
 COMMENT= 	send emails with Catalyst
 
@@ -22,5 +22,6 @@ RUN_DEPENDS=	::mail/p5-Email-MIME \
 		::www/p5-Catalyst-Runtime
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

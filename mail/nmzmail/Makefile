@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/22 21:20:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	fast maildir search engine
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::textproc/namazu
 
 AUTOCONF_VERSION=2.63
 CONFIGURE_STYLE=autoconf
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nmzmail

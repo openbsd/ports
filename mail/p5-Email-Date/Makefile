@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 19:59:17 espie Exp $
 
 COMMENT= 	find and format date headers
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Email-Date-1.103
 REVISION=	0

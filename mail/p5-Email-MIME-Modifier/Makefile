@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 18:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=	easily modify MIME objects
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-Modifier-1.444
 CATEGORIES=	mail
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	search mailboxes for a particular email
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/p5-Benchmark-Timer
 		
 CONFIGURE_STYLE=perl
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 .include <bsd.port.mk>

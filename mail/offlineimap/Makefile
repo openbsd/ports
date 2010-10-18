@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/17 11:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/o/offlineimap/ \
 		ftp://ftp.de.debian.org/debian/pool/main/o/offlineimap/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MODULES=	lang/python

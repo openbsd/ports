@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=	Sendmail Log Analysis Report
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 MASTER_SITES=	http://www.klake.org/sma/dl/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 ALL_TARGET=	sma
 

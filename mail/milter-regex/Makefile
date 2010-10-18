@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	sendmail milter plugin for regular expression filtering
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread milter
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	DKIM milter
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=		Yes
 WANTLIB=	c crypto milter pthread ssl
 
 EXAMPLESDIR=	share/examples/dkim-milter
+USE_GROFF =	Yes
 
 post-configure:
 	@(echo "define(\`confCC', \`${CC}')"; \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=		simple SMTP client
 
@@ -18,6 +18,7 @@ MASTER_SITES=		ftp://www.ossp.org/pkg/tool/smtpclient/
 
 CONFIGURE_STYLE=	gnu dest
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

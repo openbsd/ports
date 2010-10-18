@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
@@ -29,6 +29,7 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS} -DHAVE_VFSCANF" \
 
 ALL_TARGET=		hypermail
 MAKE_FLAGS=		WARNINGS=''
+USE_GROFF =	Yes
 
 FLAVORS=		gdbm
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/12 20:23:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:17 espie Exp $
 
 COMMENT =	charset Informations for MIME
 
@@ -12,5 +12,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

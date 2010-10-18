@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	emacs-based mail client
 
@@ -24,6 +24,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	elispdir=$(PREFIX)/share/emacs/site-lisp \
 			etcdir=$(PREFIX)/share/emacs/site-lisp/etc
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

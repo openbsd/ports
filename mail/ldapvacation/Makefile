@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:16 espie Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
@@ -24,6 +24,7 @@ EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	ldap_r.>=8,lber.>=8::databases/openldap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

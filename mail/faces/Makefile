@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	visual mail, user and print face server
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
 EXTRACT_SUFX=	.tar.Z
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 WRKDIST=	$(WRKDIR)/faces
 

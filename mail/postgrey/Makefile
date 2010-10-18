@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/06 14:50:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 19:59:20 espie Exp $
 
 COMMENT=	postfix greylist daemon
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

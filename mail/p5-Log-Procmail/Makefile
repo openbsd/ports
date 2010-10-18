@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=		perl module for reading procmail logs
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

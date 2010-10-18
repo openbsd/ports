@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/09/27 19:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2010/10/18 19:59:18 espie Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=	DESTDIR=${WRKINST} \
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 LOCALSTATEDIR=		/var/db/spamassassin
 SAMPLE_CONFDIR=		${PREFIX}/share/examples/SpamAssassin
+USE_GROFF =	Yes
 
 SUBST_VARS=		CONFDIR LOCALSTATEDIR
 

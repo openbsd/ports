@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:15 espie Exp $
 
 COMMENT=	bayesian spam filter
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c m
 MODULES=		converters/libiconv
+USE_GROFF =	Yes
 
 FLAVORS=		db4 sqlite3 qdbm
 FLAVOR?=

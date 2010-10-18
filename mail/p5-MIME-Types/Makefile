@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/26 19:04:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:17 espie Exp $
 
 COMMENT=	perl module to manage MIME types
 
@@ -12,5 +12,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

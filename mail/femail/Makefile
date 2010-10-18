@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/27 18:28:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:16 espie Exp $
 
 COMMENT-main=	simple SMTP client
 COMMENT-chroot=	simple SMTP client for chrooted apache
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MULTI_PACKAGES=	-main -chroot
