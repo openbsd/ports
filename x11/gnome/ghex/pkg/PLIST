@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/10/18 12:24:44 jasper Exp $
 %%SHARED%%
 @bin bin/ghex2
 include/gtkhex/
@@ -6,10 +6,9 @@ include/gtkhex/gtkhex.h
 include/gtkhex/hex-document.h
 lib/libgtkhex.a
 lib/libgtkhex.la
+@lib lib/libgtkhex.so.${LIBgtkhex_VERSION}
 lib/pkgconfig/gtkhex.pc
 share/applications/ghex.desktop
-share/gnome-2.0/
-share/gnome-2.0/ui/
 share/gnome-2.0/ui/ghex-ui.xml
 share/gnome/help/ghex2/
 share/gnome/help/ghex2/C/
@@ -68,23 +67,11 @@ share/gnome/help/ghex2/zh_TW/figures/
 share/gnome/help/ghex2/zh_TW/figures/ghex_window_empty.png
 share/gnome/help/ghex2/zh_TW/figures/ghex_window_open.png
 share/gnome/help/ghex2/zh_TW/ghex2.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/ghex.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/ghex.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/ghex.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/ghex.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ghex.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ghex.svg
 share/locale/am/LC_MESSAGES/ghex-2.0.mo
 share/locale/ar/LC_MESSAGES/ghex-2.0.mo
@@ -132,8 +119,6 @@ share/locale/sk/LC_MESSAGES/ghex-2.0.mo
 share/locale/sl/LC_MESSAGES/ghex-2.0.mo
 share/locale/sq/LC_MESSAGES/ghex-2.0.mo
 share/locale/sr/LC_MESSAGES/ghex-2.0.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/ghex-2.0.mo
 share/locale/sv/LC_MESSAGES/ghex-2.0.mo
 share/locale/tr/LC_MESSAGES/ghex-2.0.mo

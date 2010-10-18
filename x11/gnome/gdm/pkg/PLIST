@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2010/07/07 16:37:05 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.29 2010/10/18 12:24:34 jasper Exp $
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
 @bin bin/gdmXnestchooser
@@ -7,12 +6,12 @@ bin/gdmXnest
 @bin bin/gdmflexiserver
 @bin bin/gdmphotosetup
 bin/gdmthemetester
-lib/gtk-2.0/
-lib/gtk-2.0/modules/
 lib/gtk-2.0/modules/libdwellmouselistener.a
 lib/gtk-2.0/modules/libdwellmouselistener.la
+lib/gtk-2.0/modules/libdwellmouselistener.so
 lib/gtk-2.0/modules/libkeymouselistener.a
 lib/gtk-2.0/modules/libkeymouselistener.la
+lib/gtk-2.0/modules/libkeymouselistener.so
 libexec/gdm-ssh-session
 @bin libexec/gdmchooser
 @bin libexec/gdmgreeter
@@ -184,8 +183,6 @@ share/locale/he/LC_MESSAGES/gdm.mo
 share/locale/hi/LC_MESSAGES/gdm.mo
 share/locale/hr/LC_MESSAGES/gdm.mo
 share/locale/hu/LC_MESSAGES/gdm.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gdm.mo
 share/locale/id/LC_MESSAGES/gdm.mo
 share/locale/is/LC_MESSAGES/gdm.mo
