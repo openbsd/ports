@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -28,7 +28,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_PYTHON="${MODPY_BIN}"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ssl
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS=	::devel/check \
 			::textproc/py-xmldiff

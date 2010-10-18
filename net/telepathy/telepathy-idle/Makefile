@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -24,7 +24,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
 			OPENSSL_CFLAGS="-I/usr/include"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

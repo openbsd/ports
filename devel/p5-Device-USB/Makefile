@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:50:38 sthen Exp $
 
 COMMENT=		perl wrapper around libusb
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =		usb::devel/libusb
 
 CONFIGURE_ENV+= 	LIBUSB_INCDIR="${LOCALBASE}/include" \
 			LIBUSB_LIBDIR="${LOCALBASE}/lib"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/Device/USB.pm

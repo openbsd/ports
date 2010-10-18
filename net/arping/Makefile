@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT =	ARP level ping utility
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
 		`libnet-config-1.1 --defines`" \
 		LIBS="-L${LOCALBASE}/lib/libnet-1.1 -lnet"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 pre-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arping

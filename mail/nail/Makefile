@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
@@ -28,7 +28,7 @@ MAKE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_FLAGS=		SENDMAIL="/usr/sbin/sendmail" \
 			LIBS="-liconv"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

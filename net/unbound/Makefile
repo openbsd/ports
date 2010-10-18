@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=	validating DNS resolver
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--with-ssl=/usr \
 			--with-pidfile=/var/unbound/var/run/unbound.pid \
 			--with-conf-file=/var/unbound/etc/unbound.conf \
 			--with-username=_unbound
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/unbound

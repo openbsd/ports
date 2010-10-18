@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
@@ -22,7 +22,7 @@ WANTLIB=	c
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 

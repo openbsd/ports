@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=		noninteractive ftp client
 DISTNAME=		weex-2.6.1.5
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.13
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/weex

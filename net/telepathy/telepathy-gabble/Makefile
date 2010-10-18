@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV=		UUID_LIBS="`pkg-config --libs e2fs-uuid`" \
 			UUID_CFLAGS="`pkg-config --cflags e2fs-uuid`" \
 			TLS_CFLAGS="-I/usr/include" \
 			TLS_LIBS="-L/usr/lib -lssl -lcrypto"
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

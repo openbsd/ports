@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.124 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -26,7 +26,7 @@ CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
 			--with-kerberos5 \
 			--enable-NTLM
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

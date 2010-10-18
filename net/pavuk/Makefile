@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+= --disable-debug --disable-socks --disable-gnome \
 		 --disable-tree --disable-js --with-regex=posix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes

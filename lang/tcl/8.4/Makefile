@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT =		Tool Command Language
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl84_VERSION}" \
 			CFLAGS=""
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 # Needs a full network connection to run?
 #REGRESS_IS_INTERACTIVE=Yes

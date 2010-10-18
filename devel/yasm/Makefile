@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:50:38 sthen Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
@@ -24,6 +24,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

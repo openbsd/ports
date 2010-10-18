@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:50:39 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to yaz zoom
@@ -20,6 +20,6 @@ WANTLIB += exslt gcrypt gpg-error m pthread xml2 xslt z
 
 MODULES=	cpan \
 		devel/gettext
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/18 21:50:39 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::x11/gnome/icon-theme
 

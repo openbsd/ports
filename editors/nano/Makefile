@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/18 21:50:38 sthen Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -25,7 +25,7 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 post-install:
 	perl -i -pe 's:SYSCONFDIR:${SYSCONFDIR}:g;' \

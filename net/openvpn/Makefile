@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--enable-pthread \
 		--with-lzo-headers=${DEPBASE}/include \
 		--with-lzo-lib=${DEPBASE}/lib \
 		--enable-password-save
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 

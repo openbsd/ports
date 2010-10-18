@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 21:50:39 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -28,7 +28,7 @@ SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--datadir=${PREFIX}/share/examples
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 REGRESS_TARGET =	test
 CONFIGURE_ENV =		LIBudp108_VERSION=${LIBudp108_VERSION}
 

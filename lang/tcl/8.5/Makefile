@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:50:39 sthen Exp $
 
 COMMENT =		Tool Command Language
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl85_VERSION}"
 
