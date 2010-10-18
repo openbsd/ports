@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 21:17:11 espie Exp $
 
 COMMENT=	FTP proxy
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS+= --enable-crypt \
 		 --enable-libwrap \
 		 --with-confpath="${SYSCONFDIR}" \
 		 --with-logpath="/var/log"
-		 USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jftpgw

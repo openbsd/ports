@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 21:17:11 espie Exp $
 
 COMMENT=	command line arbitrary packet builder
 
@@ -22,5 +22,5 @@ WANTLIB=		c m
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --with-libnet_includes=${LOCALBASE}/include/libnet-1.0 \
 		 --with-libnet_libraries=${LOCALBASE}/lib/libnet-1.0
-		 USE_GROFF =	Yes
+USE_GROFF =	Yes
 .include <bsd.port.mk>
