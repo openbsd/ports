@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.26 2010/04/22 23:19:13 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.27 2010/10/18 13:17:24 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -47,3 +47,5 @@ USE_GMAKE?=		Yes
   CONFIGURE_ARGS+=	--disable-silent-rules
 . endif
 .endif
+
+USE_X11?=		Yes
