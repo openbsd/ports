@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 17:48:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	String-CRC32-1.3
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

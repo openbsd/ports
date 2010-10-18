@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/01 00:58:47 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	exporter on steroids
 
 MODULES=	cpan
 DISTNAME=	Sub-Exporter-0.982
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

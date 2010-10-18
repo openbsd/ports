@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/07 15:10:14 stephan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=        merge associative arrays
 
 MODULES=	cpan
 DISTNAME=	Hash-Merge-0.12
 CATEGORIES=     devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/17 21:49:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
 
 COMMENT =		common perl data validation methods
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

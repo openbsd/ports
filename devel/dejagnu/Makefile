@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/11 21:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	framework to test programs
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	ac_cv_path_tclsh=${MODTCL_BIN}
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 MAKE_FLAGS=mkinstalldirs='mkdir -p --'
+USE_GROFF =	Yes
 
 post-build:
 	@cd ${WRKBUILD}/doc && makeinfo --no-split dejagnu.texi

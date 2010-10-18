@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/10 07:57:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=	report versions of all perl modules in memory
 
 MODULES=	cpan
 DISTNAME=	Module-Versions-Report-1.06
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

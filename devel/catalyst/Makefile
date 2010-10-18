@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=		catalyst development bundle
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=	::www/p5-Catalyst-Devel \
 		::www/p5-Catalyst-Action-RenderView \
 		::databases/p5-DBD-SQLite 
 
+USE_GROFF =	Yes
 NO_REGRESS=	no need to
 
 .include <bsd.port.mk>

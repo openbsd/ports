@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/14 07:28:43 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:02 espie Exp $
 
 COMMENT =		perl module implementing simple file locking
 
 MODULES =		cpan
 DISTNAME =		LockFile-Simple-0.207
 CATEGORIES =		devel
+USE_GROFF =	Yes
 
 MAINTAINER =		Pierre-Emmanuel Andre <pea@openbsd.org>
 

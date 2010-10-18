@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2010/09/23 11:46:57 jasper Exp $
+#	$OpenBSD: Makefile,v 1.4 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	object-oriented access to real and tied hashes  
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	modbuild
 

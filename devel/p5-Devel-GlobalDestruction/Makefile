@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:23:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS =		::devel/p5-Scope-Guard \
 			::devel/p5-Sub-Exporter

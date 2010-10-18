@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/19 20:19:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:53 espie Exp $
 
 # m88k - not tested yet, will it ever?
 # vax - libffi hasn't been ported to vax, and most likely never will.
@@ -25,6 +25,7 @@ MASTER_SITES=		ftp://sourceware.org/pub/libffi/
 REGRESS_DEPENDS=	::devel/dejagnu
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

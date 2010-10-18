@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/19 18:57:10 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:57 espie Exp $
 
 COMMENT=	grammar-based, user-friendly config parser
 
 MODULES=	cpan
 DISTNAME=	Config-Grammar-1.10
 CATEGORIES=     devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/28 11:41:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcre glib-2.0 pthread
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 MODULES=		devel/gettext
 

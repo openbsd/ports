@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/12 16:55:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
 
 COMMENT =	timezones module for Data::ICal
 
@@ -7,6 +7,7 @@ DISTNAME =	Data-ICal-TimeZone-1.23
 CATEGORIES =	devel
 
 MODULES =	cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

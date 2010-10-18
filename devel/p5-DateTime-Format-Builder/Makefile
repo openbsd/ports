@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/03 17:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:59 espie Exp $
 
 COMMENT= 	create DateTime parser classes and objects
 
 MODULES=	cpan 
 DISTNAME=	DateTime-Format-Builder-0.7901
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

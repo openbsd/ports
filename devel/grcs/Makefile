@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 DISTNAME=	rcs-5.7
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=	c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple

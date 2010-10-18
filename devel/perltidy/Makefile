@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/17 19:06:33 jim Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 17:48:12 espie Exp $
 
 COMMENT =	tool to indent and reformat perl scripts
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	perl
+USE_GROFF =	Yes
 
 PKG_ARCH =	*
 

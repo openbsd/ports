@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/09 21:14:02 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:57 espie Exp $
 
 COMMENT =	support multimethods and function overloading in Perl
 
 MODULES =	cpan
 DISTNAME =	Class-Multimethods-1.70
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

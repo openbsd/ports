@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/11 23:17:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:56 espie Exp $
 
 COMMENT=        lets you build groups of accessors
 
 MODULES=	cpan
 DISTNAME=	Class-Accessor-Grouped-0.09001
 CATEGORIES=     devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

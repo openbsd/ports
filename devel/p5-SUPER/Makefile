@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/23 10:14:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	module for controlling superclass method dispatch
 
@@ -19,5 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Sub-Identify
 
 CONFIGURE_STYLE=modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

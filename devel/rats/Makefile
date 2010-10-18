@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/06 17:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		source code auditing tool
 
@@ -28,6 +28,7 @@ MAKE_FLAGS=		CFLAGS='${CFLAGS} \
 			  -DDATADIR=\"${LOCALBASE}/share/rats\"'
 
 ALL_TARGET=		rats
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-install:

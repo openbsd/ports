@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/24 18:21:58 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:10 espie Exp $
 
 COMMENT=	calling UNIVERSAL::isa as a function
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	UNIVERSAL-isa-1.03
 PKGNAME=	p5-Universal-isa-1.03
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

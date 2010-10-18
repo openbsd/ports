@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/07 14:48:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=	::devel/glib2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

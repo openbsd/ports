@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/29 17:15:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=		Sugar syntax for moose 'has' fields
 DISTNAME=		MooseX-Has-Sugar-0.05046611
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-MooseX-Types \
 			::devel/p5-Sub-Exporter \

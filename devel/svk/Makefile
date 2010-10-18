@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/11/14 09:24:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	decentralized version control system
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=	:p5-Algorithm-Annotate->=0.10:devel/p5-Algorithm-Annotate \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS=::devel/p5-BSD-Resource \
 		::devel/p5-Test-Pod

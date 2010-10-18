@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/05 16:47:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=		bridge that allows POE to be driven by Event.pm
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ARGS+=	--default
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=		::devel/p5-POE-Test-Loops
 RUN_DEPENDS+=		::devel/p5-Event \

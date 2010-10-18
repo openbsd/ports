@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/07/03 03:23:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	GNU gettext
 
@@ -26,6 +26,7 @@ MODULES=	converters/libiconv
 WANTLIB=	c expat m ncurses stdc++
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-csharp \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/29 13:22:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:55 espie Exp $
 
 COMMENT=	alias for __PACKAGE__
 
@@ -6,6 +6,7 @@ DISTNAME=	CLASS-1.00
 CATEGORIES=	devel
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

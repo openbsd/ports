@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/27 23:00:10 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:56 espie Exp $
 
 COMMENT=	module to create objects that are handles to classes
 
 MODULES=	cpan
 DISTNAME=	Class-Handle-1.07
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

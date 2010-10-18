@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 22:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ipython.scipy.org/dist/${MODPY_EGG_VERSION}/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/05/09 15:17:18 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	mpeg video player library with sound support
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

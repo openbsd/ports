@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:09 espie Exp $
 COMMENT=	LRU cache in memory
 
 MODULES=	cpan
 DISTNAME=	Tie-Cache-LRU-0.21
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-enum \

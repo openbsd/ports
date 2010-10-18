@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=		GNU make debugger
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 WANTLIB=		c readline termcap
 
 do-install:

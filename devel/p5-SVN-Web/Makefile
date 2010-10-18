@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	subversion repository web frontend
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	SVN-Web-0.48
 REVISION=	0
 CATEGORIES=	devel perl5
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

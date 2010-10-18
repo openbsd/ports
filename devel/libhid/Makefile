@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/08 10:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:53 espie Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
@@ -25,6 +25,7 @@ LIB_DEPENDS = 	::devel/libusb
 
 USE_GMAKE = 		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS +=	--disable-swig

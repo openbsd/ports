@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:10 espie Exp $
 
 COMMENT =	YAML implementation using XS and libyaml
 SHARED_ONLY =	Yes
@@ -10,6 +10,7 @@ DISTNAME =	YAML-LibYAML-$V
 PKGNAME =	p5-YAML-XS-$V
 REVISION =	0
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

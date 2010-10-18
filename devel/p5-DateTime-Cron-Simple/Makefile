@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=	parse a cron entry and check against current time
 
 MODULES=	cpan
 DISTNAME=	DateTime-Cron-Simple-0.2
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

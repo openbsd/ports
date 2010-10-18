@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:51 espie Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	like make(1), but more powerful and clean
@@ -25,6 +25,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= --libdir="${PREFIX}/share/locale"
+USE_GROFF =	Yes
 
 REGRESS_TARGET=	sure
 REGRESS_FLAGS=	HOME=/ LOGNAME=nobody

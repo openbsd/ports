@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:56 espie Exp $
 
 COMMENT=		make chained accessors
 
 MODULES=		cpan
 DISTNAME=		Class-Accessor-Chained-0.01
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 

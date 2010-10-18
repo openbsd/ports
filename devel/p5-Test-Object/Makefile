@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:08 espie Exp $
 
 COMMENT=	thoroughly testing objects via registered handlers
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Test-Object-0.07
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

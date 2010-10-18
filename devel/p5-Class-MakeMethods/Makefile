@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:57 espie Exp $
 
 COMMENT= 	framework for generating methods
 
 MODULES=	cpan
 DISTNAME=	Class-MakeMethods-1.01
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

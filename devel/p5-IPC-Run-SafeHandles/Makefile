@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/29 23:10:11 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=	safe guarding for IPC::Run
 
 MODULES=	cpan
 DISTNAME=	IPC-Run-SafeHandles-0.02
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

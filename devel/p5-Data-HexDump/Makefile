@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/30 07:19:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=        hexadecimal dumper
 
 MODULES=	cpan
 DISTNAME=	Data-HexDump-0.02
 CATEGORIES=     devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@the00z.org>
 

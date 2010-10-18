@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=	GNU help2man
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/help2man.info*

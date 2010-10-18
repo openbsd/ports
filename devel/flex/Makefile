@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/28 23:13:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	fast lexical analyzer generator
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	::devel/help2man \
 
 YACC=		bison
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex \
 		--libdir=${PREFIX}/lib/flex \

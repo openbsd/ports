@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ V=		0.09
 DISTNAME=	File-Sync-${V}
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

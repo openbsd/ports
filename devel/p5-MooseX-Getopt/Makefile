@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/02 04:29:32 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=		Moose role for processing command line options
 
 MODULES=		cpan
 DISTNAME=		MooseX-Getopt-0.29
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 

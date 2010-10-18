@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:08 espie Exp $
 
 COMMENT=	check for spelling errors in POD files
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Test-Spelling-0.11
 REVISION=	1
 CATEGORIES=	devel textproc
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

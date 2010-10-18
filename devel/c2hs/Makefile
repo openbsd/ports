@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/22 21:45:07 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:51 espie Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
@@ -23,6 +23,7 @@ SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
 SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
 SETUP_PROG=		${WRKSRC}/Setup
 SUBST_VARS=		V
+USE_GROFF =	Yes
 
 
 # GPL

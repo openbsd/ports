@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/22 08:42:53 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:47:54 espie Exp $
 
 NOT_FOR_ARCHS=	arm
 
@@ -29,6 +29,7 @@ WANTLIB=		c m ncurses readline stdc++
 WANTLIB+=		crypto ssl ICE SM X11 Xt pthread
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LIB_VERSION=${LIB_VERSION}
 CONFIGURE_ARGS+=	--disable-optimize

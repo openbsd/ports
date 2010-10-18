@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Date-Simple-3.02
 REVISION=	2
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

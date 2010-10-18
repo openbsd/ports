@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=		env prompter for zoid shell
 
 MODULES=		cpan
 DISTNAME=		Env-PS1-0.05
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

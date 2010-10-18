@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/03 13:38:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:01 espie Exp $
 
 COMMENT= 	locate install data per-module
 
 MODULES=	cpan
 DISTNAME=	File-ShareDir-1.00
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

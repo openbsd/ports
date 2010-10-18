@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/21 13:49:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
 
 COMMENT=	Perl unit testing framework
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Devel-Symdump \

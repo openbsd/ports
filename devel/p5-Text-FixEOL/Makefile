@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:09 espie Exp $
 
 COMMENT= 	canonical EOL/EOF
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Text-FixEOL-1.05
 CATEGORIES=	devel textproc
 CONFIGURE_STYLE=modbuild
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

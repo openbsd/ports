@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=		general purpose dynamic array
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=judy/}
 CONFIGURE_STYLE=	GNU
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 EXAMPLESDIR=		${PREFIX}/share/examples/libJudy
 

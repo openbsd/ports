@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/18 20:29:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=	Perl extension for Consistent Signal Handling
 
@@ -17,5 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	cpan
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

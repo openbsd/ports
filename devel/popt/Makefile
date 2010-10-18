@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/05/01 11:29:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		getopt(3)-like library with a number of enhancements
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

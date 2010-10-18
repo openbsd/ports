@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/11/11 01:52:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	subversion repository mirroring tool
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 RUN_DEPENDS=	:p5-SVN-Simple->=0.27:devel/p5-SVN-Simple \
 		:p5-Class-Accessor->=0.19:devel/p5-Class-Accessor \
 		:p5-Data-UUID->=0.11:devel/p5-Data-UUID \

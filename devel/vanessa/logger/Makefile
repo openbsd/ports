@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	provides a generic logging layer
 
@@ -9,6 +9,7 @@ SHARED_LIBS=	vanessa_logger			0.3	# 0.3
 
 MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_logger/${VERSION}/}
 
+USE_GROFF =	Yes
 WANTLIB=	c
 
 .include <bsd.port.mk>

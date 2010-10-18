@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=		emulate IO::File interface for in-core strings
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		IO-String-1.08
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Kevin Lo <kevlo@openbsd.org>
 

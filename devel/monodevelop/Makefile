@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/15 16:23:49 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}

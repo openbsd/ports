@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/29 22:53:58 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=		debugging aid based on comments
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		Smart-Comments-v1.0.2
 PKGNAME=		p5-Smart-Comments-1.0.2p1
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 CPAN_AUTHOR=	DCONWAY
 

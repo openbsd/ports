@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/17 21:18:41 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:07 espie Exp $
 
 COMMENT= 	handles various forms of terminal input
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 
 DISTNAME=	Term-Prompt-1.04
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

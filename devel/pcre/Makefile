@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/07/02 10:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -27,6 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-utf8 \

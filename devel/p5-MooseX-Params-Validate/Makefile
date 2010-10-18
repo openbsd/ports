@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 00:33:37 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:03 espie Exp $
 
 COMMENT =	extension of Params::Validate for using Moose types
 
 MODULES =	cpan
 DISTNAME =	MooseX-Params-Validate-0.12
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

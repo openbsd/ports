@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	compiler cache
 
@@ -19,5 +19,6 @@ WANTLIB=		c
 MASTER_SITES=	http://samba.org/ftp/ccache/
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

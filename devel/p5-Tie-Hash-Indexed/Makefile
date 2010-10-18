@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME=	Tie-Hash-Indexed-0.05
 REVISION=	1
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@demirmen.com>
 

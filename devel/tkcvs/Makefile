@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/15 13:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-6.0
@@ -18,6 +18,7 @@ MODULES=	x11/tk
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

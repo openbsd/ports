@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/21 19:17:24 chl Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:50 espie Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
@@ -30,6 +30,7 @@ MAKE_FLAGS=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS=		lispdir=
 #USE_GMAKE=		Yes
 SUBST_VARS=		SUFFIX
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

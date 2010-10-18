@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	utilities for handling Byte Order Marks
 
@@ -17,5 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

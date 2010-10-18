@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=		validate and convert data types
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		Data-Types-0.06
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

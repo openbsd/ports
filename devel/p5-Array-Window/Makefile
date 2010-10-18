@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/27 22:55:38 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:55 espie Exp $
 
 COMMENT=	calculate windows/subsets/pages of arrays
 
 MODULES=	cpan
 DISTNAME=	Array-Window-1.02
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

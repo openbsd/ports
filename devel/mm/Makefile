@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 17:47:54 espie Exp $
 
 # XXX This will panic any vax
 NOT_FOR_ARCHS=	vax
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	 Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

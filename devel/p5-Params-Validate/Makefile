@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 17:48:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Params-Validate-0.95
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 

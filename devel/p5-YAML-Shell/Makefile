@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:10 espie Exp $
 
 COMMENT=		YAML Test Shell
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		:p5-YAML->=0.68:devel/p5-YAML
 

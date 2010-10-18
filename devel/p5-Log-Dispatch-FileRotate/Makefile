@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/23 14:00:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=	log to files that archive/rotate themselves
 
 MODULES=	cpan
 DISTNAME=	Log-Dispatch-FileRotate-1.19
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

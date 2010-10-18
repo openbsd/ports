@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:06 espie Exp $
 
 COMMENT= 	set of integers
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Set-IntRange-5.1
 CATEGORIES=	devel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/03/24 18:42:28 okan Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
@@ -22,6 +22,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE= gnu dest
 
+USE_GROFF =	Yes
 ALL_TARGET=	everything
 INSTALL_TARGET=	install_everything
 

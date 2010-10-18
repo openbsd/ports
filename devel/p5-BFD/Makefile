@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:55 espie Exp $
 
 COMMENT=	impromptu dumping of data structures for debugging purposes
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	BFD-0.31
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

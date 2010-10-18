@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/30 02:31:33 jim Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	module for containing a set of scalars
 
 MODULES=	cpan
 DISTNAME=	Set-Scalar-1.25
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

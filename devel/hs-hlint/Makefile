@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/26 18:36:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=		source code suggestions for Haskell
 
@@ -19,6 +19,7 @@ MODULES=		converters/libiconv \
 			lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/cpphs,-lib \

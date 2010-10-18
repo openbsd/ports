@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/17 20:58:25 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=		talk to other applications
 
 MODULES=		cpan
 DISTNAME=		Expect-1.21
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/14 08:04:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -48,6 +48,7 @@ MAKE_ENV=	MACHINE_ARCH=avr
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 YACC=		bison
 
 REGRESS_DEPENDS=::devel/dejagnu

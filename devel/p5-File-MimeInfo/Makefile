@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=		determine file types
 
 DISTNAME=		File-MimeInfo-0.15
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

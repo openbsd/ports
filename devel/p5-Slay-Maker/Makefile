@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	perl make engine using perl code for rules
 
@@ -6,6 +6,7 @@ DISTNAME=	Slay-Maker-0.07
 REVISION=	0
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

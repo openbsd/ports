@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Test-Taint-1.04
 REVISION=	3
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

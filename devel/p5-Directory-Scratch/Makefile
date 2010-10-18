@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/06 09:52:57 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:00 espie Exp $
 
 COMMENT =	easy-to-use self-cleaning scratch space
 
 MODULES =	cpan
 DISTNAME =	Directory-Scratch-0.14
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

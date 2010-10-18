@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/22 19:34:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:59 espie Exp $
 
 COMMENT =	simple, extensible Perl debugger
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::devel/p5-PadWalker \
 		::devel/p5-YAML-Syck \

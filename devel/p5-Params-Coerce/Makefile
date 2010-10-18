@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/05 12:52:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	allow your classes to do coercion of parameters
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Params-Util
 

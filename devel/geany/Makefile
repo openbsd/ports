@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 17:47:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,7 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

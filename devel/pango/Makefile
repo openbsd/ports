@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -37,6 +37,7 @@ LIB_DEPENDS=		glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gthrea
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

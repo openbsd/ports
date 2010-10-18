@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/29 16:44:12 jim Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
 
 COMMENT =	datetime sets and set math
 
 MODULES =	cpan
 DISTNAME =	DateTime-Set-0.28
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/19 00:26:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
@@ -19,5 +19,6 @@ WANTLIB += c m stdc++
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=re2c/}
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/03 10:31:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
 
 COMMENT= 	deferred and lazy evaluation
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Scalar-Defer-0.18
 CATEGORIES=	devel

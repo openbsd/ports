@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=		screen positioning and coloring module
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		Term-ScreenColor-1.09
 REVISION=		1
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 HOMEPAGE=		http://p-f-m.sourceforge.net/
 

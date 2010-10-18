@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/23 11:09:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =		open source MPI-2 implementation
 
@@ -32,6 +32,7 @@ WANTLIB	+=		c m pthread stdc++ util z
 
 MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
 
+USE_GROFF =	Yes
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu
 

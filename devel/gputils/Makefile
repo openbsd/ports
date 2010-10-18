@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/01 23:05:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:53 espie Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
@@ -26,6 +26,7 @@ DIST_SUBDIR =		gputils
 
 CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ENV =		"CC=${CC}" "CPP=${CPP}" "CFLAGS=${CFLAGS}" "CPPFLAGS=${CPPFLAGS}" "LDFLAGS=${LDFLAGS}"
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION =	2.61
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/30 14:20:34 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	filehandle which supports ungetting of multiple bytes
 
 MODULES=	cpan
 DISTNAME=	FileHandle-Unget-0.1623
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 

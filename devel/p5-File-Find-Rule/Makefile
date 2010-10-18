@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/07 14:57:07 stephan Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	alternative interface to File::Find
 
 MODULES=	cpan
 DISTNAME=	File-Find-Rule-0.32
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes

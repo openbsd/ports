@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		dependency configuration tool
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pmk/}
 CONFIGURE_ENV+=		SYSCONFDIR=${SYSCONFDIR}
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	/bin/sh pmkcfg.sh -p ${PREFIX}
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/30 22:35:20 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	create multiple virtual instances of a Perl interpreter
 
 DISTNAME=	Safe-World-0.14
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 CPAN_AUTHOR=	GMPASSOS
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/11 23:10:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=		peek into the internals of a running POE environment
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-Devel-Size \
 			::devel/p5-POE

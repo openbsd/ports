@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2010/10/12 09:03:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2010/10/18 17:47:53 espie Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -59,6 +59,7 @@ REGRESS_FLAGS=		-k
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \

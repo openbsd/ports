@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/09 21:14:27 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:08 espie Exp $
 
 COMMENT =	check the presence of tabs in your project
 
 MODULES =	cpan
 DISTNAME =	Test-NoTabs-0.3
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

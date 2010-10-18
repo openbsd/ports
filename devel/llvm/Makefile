@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/28 07:38:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -53,6 +53,7 @@ REGRESS_FLAGS =	RUNTESTFLAGS=
 SEPARATE_BUILD =	simple
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 MAKE_ENV =		REQUIRES_RTTI=1
 
 # also supports cmake

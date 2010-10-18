@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 17:48:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Moose-1.08
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

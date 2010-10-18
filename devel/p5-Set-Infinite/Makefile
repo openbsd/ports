@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/11 14:36:12 dhill Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:06 espie Exp $
 
 COMMENT =	sets of intervals
 
 MODULES =	cpan
 DISTNAME =	Set-Infinite-0.65
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

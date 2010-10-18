@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/12 09:40:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=		required attributes which fail only when trying to use them
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-MooseX-Types \
 			::devel/p5-aliased \

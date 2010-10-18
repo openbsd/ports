@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=		per-line Perl profiler
 
 MODULES=		cpan
 DISTNAME=		Devel-SmallProf-2.02
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Srebrenko Sehic <haver@insecure.dk>
 

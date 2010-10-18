@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/18 11:17:11 jim Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:08 espie Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan
 DISTNAME=	Test-MockObject-1.09
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

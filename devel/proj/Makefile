@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/01/23 10:29:45 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=	cartographic projection utilities
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE=	gnu
 WANTLIB=		c m
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=		:unzip-*:archivers/unzip
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/29 16:45:34 jim Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=		DateTime submodule for TZ
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=		::devel/p5-Params-Validate \
 			::devel/p5-Class-Singleton
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 REGRESS_DEPENDS=	::devel/p5-DateTime \
 			::devel/p5-Test-Output
 

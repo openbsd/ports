@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:03 espie Exp $
 
 COMMENT =		template based module starter for CGI apps
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS =		::www/p5-HTML-Template \
 			::devel/p5-Module-Starter

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/12 21:38:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =	string library designed for network communication
 
@@ -25,6 +25,7 @@ REGRESS_FLAGS =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/include"
 SEPARATE_BUILD =	concurrent
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 

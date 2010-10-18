@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/23 21:49:50 okan Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	regression testing software using Slay::Makefile
 
 DISTNAME=	Slay-Makefile-Gress-0.06
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

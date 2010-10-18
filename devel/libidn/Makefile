@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/13 11:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=		internationalized string handling
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-csharp \
 			--disable-java
+			USE_GROFF =	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux
 

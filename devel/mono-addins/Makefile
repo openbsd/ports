@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/15 16:25:38 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	framework for creating extensible applications
 
@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.go-mono.com/sources/mono-addins/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}

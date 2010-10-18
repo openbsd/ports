@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 17:47:52 espie Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 COMMENT=	generate GNU-style ChangeLogs from CVS repositories
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 

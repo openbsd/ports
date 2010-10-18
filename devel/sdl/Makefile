@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/06/15 15:29:29 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -31,6 +31,7 @@ FLAVORS=	aa caca no_x11 altivec
 FLAVOR?=
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 MODULES=	converters/libiconv
 
 SEPARATE_BUILD=	concurrent

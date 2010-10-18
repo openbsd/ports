@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/23 21:48:52 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	wrapper to Slay::Maker that reads the rules from a file
 
 DISTNAME=	Slay-Makefile-0.12
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

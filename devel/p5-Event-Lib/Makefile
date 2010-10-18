@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Event-Lib-1.03
 REVISION=	2
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

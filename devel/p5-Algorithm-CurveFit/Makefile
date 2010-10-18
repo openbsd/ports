@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/03 17:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =	nonlinear least squares curve fitting
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP =		Yes
 CPAN_AUTHOR =	SMUELLER
 
 MODULES =	cpan
+USE_GROFF =	Yes
 RUN_DEPENDS =	::math/p5-Math-MatrixReal \
 		::math/p5-Math-Symbolic
 

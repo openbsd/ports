@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/05 22:04:56 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:10 espie Exp $
 
 COMMENT =	boolean support for Perl
 
 MODULES =	cpan
 DISTNAME =	boolean-0.20
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

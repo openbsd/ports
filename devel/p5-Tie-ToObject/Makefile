@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:09 espie Exp $
 
 COMMENT =	tie to an existing object
 
@@ -6,6 +6,7 @@ MODULES =	cpan
 DISTNAME =	Tie-ToObject-0.03
 REVISION =	0
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Pod-Coverage-0.20
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

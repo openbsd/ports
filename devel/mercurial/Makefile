@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/09 22:50:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =		fast, lightweight source control management
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.selenic.com/mercurial/release/
 
 MODULES =		lang/python
+USE_GROFF =	Yes
 
 BUILD_DEPENDS =		::devel/gettext
 REGRESS_DEPENDS =	${RUN_DEPENDS} \

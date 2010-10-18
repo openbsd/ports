@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:13 espie Exp $
 
 COMMENT =		Tk Standard Library
 
@@ -21,6 +21,7 @@ RUN_DEPENDS =		::devel/tcllib
 REGRESS_DEPENDS =	::devel/tcllib
 REGRESS_IS_INTERACTIVE =x11
 NO_BUILD =		Yes
+USE_GROFF =	Yes
 
 SCRIPTS_TCLSH =		canvas/city.tcl \
 			ntext/ntextDemoBindings.tcl ntext/ntextDemoIndent.tcl ntext/ntextExample.tcl \

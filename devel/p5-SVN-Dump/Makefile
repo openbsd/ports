@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/11 14:15:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	interface to subversion dumps
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

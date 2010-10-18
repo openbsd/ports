@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/25 22:11:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
 COMMENT=	LRU cache in memory
 
 MODULES=	cpan
 DISTNAME=	Tie-Cache-0.17
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

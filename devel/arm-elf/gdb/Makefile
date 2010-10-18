@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:50 espie Exp $
 
 COMMENT=	gdb for arm-elf cross-development
 
@@ -17,6 +17,7 @@ WANTLIB=	c m ncurses
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 CFLAGS+=	-Dunix
 

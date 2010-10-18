@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/20 15:47:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	Streamlined replacement for make
 
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 MAKE_FLAGS=	CC="${CC}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	simple parallel processing fork manager
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Parallel-ForkManager-0.7.5
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://hacks.dlux.hu/Parallel-ForkManager/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/30 10:45:41 stephan Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=	stack trace and stack trace frame objects
 
 MODULES=	cpan
 DISTNAME=	Devel-StackTrace-1.22
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 

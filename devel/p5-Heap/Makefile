@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.7 2010/07/13 19:46:12 sthen Exp $
+#	$OpenBSD: Makefile,v 1.8 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	heap data structure in perl
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Heap-0.80
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

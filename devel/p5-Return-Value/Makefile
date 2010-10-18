@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/18 12:48:25 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
 
 COMMENT= 	polymorphic return values
 
 MODULES=	cpan 
+USE_GROFF =	Yes
 
 DISTNAME=	Return-Value-1.302
 CATEGORIES=	devel

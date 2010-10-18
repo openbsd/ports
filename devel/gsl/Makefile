@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/06/01 13:36:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=	GNU Scientific Library
 
@@ -24,6 +24,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gsl/}
 
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/07 08:24:02 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:56 espie Exp $
 
 COMMENT =	make NEXT suck less
 
 MODULES =	cpan
 DISTNAME =	Class-C3-Adopt-NEXT-0.09
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

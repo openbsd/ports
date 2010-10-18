@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/17 08:54:33 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	D-Bus binding for GObject
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=	::x11/dbus-glib
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

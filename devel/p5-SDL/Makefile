@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:06 espie Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -32,6 +32,7 @@ LIB_DEPENDS =		SDL_gfx::devel/sdl-gfx \
 			smpeg::devel/smpeg
 
 CONFIGURE_STYLE =	perl modbuild
+USE_GROFF =	Yes
 
 # Set AUDIODEVICE to aucat socket if it is in use
 REGRESS_IS_INTERACTIVE =Yes

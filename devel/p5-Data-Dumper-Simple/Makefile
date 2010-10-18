@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/07 22:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=		easily dump variables with names
 
@@ -13,5 +13,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

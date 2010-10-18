@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/12 13:39:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	more sensible way to change directories
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	File-chdir-0.1002
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

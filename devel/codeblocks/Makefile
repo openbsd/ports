@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,6 +52,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

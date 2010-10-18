@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/03 10:30:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	error/exception handling in an OO-ish way
 
 MODULES=	cpan
 DISTNAME=	Error-0.17015
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

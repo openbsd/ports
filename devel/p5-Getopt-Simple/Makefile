@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/15 18:18:22 dhill Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	simple wrapper around Getopt::Long
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAKE_ENV+=		TEST_POD=1
 

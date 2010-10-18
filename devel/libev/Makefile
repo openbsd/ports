@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/14 08:49:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:53 espie Exp $
 
 COMMENT =	high-performance event loop library
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		m
 
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

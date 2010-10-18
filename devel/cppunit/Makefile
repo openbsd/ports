@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/24 14:49:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.12.1
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 WANTLIB=		c m stdc++
 
 CONFIGURE_STYLE=	gnu

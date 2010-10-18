@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -39,5 +39,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

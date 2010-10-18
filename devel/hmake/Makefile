@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:53 espie Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 NO_REGRESS =		Yes
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	simple
 
 WANTLIB +=		c m pthread

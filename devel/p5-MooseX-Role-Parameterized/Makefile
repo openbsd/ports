@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 08:08:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:03 espie Exp $
 
 COMMENT =	roles with composition parameters
 
 DISTNAME =	MooseX-Role-Parameterized-0.19 
 CATEGORIES =	devel
 MODULES =	cpan
+USE_GROFF =	Yes
 
 MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/26 09:15:00 stephan Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	C++ toolkit for GUI
 CATEGORIES=	devel
@@ -33,6 +33,7 @@ PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 FOX=		fox-1.6
 SUBST_VARS=	FOX

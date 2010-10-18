@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/16 19:26:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	copy files and directories with perl
 
@@ -8,6 +8,7 @@ DISTNAME=	File-NCopy0.32
 PKGNAME=	p5-File-NCopy-0.32
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

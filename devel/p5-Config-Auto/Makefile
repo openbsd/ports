@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/04 08:37:06 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:57 espie Exp $
 
 COMMENT =		magical config file parser
 
@@ -6,6 +6,7 @@ MODULES =		cpan
 
 DISTNAME =		Config-Auto-0.20
 CATEGORIES =		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

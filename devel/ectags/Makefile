@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	multilanguage implementation of ctags
 
@@ -28,6 +28,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ectags
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ectags
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 SEPARATE_BUILD= simple
 

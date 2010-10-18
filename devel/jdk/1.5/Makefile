@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 17:47:53 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -43,6 +43,7 @@ BUILD_DEPENDS=		::archivers/gtar \
 			::archivers/unzip \
 			::archivers/bzip2
 USE_MOTIF=		openmotif
+USE_GROFF =	Yes
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xt Xtst c m ossaudio pthread \
 			pthread-stubs xcb stdc++ z

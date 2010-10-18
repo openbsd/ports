@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/26 09:25:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 17:48:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 MULTI_PACKAGES=		-main -perl
 
 WANTLIB-main=		c m stdc++

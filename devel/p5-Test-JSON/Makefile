@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/09 21:14:23 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:08 espie Exp $
 
 COMMENT =	test JSON data
 
@@ -19,6 +19,7 @@ RUN_DEPENDS =		::converters/p5-JSON-Any \
 			::devel/p5-Test-Tester
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 MAKE_ENV +=		TEST_POD=1
 

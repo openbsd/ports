@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 17:47:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Class-MethodMaker-2.12
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/23 14:01:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:01 espie Exp $
 
 COMMENT= 	universal I/O to everything
 
 MODULES=	cpan 
 DISTNAME=	IO-All-0.39
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

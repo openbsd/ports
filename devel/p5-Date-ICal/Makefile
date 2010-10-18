@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=	Perl Extensions for ICal objects
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Date-ICal-1.72
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

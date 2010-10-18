@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	perl support to RFC 3066 language tags
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	I18N-LangTags-0.35
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

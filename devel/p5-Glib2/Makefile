@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 17:48:01 espie Exp $
 
 BROKEN=		glib2 is threaded but our perl is not so we end up with undefined symbols
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES+=	cpan \
 		devel/gettext
+		USE_GROFF =	Yes
 
 LIB_DEPENDS=	glib-2.0,gobject-2.0::devel/glib2
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \

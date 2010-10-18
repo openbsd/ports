@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	generate patchsets from CVS repositories
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c z
 MASTER_SITES=	http://www.cobite.com/cvsps/
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cvsps ${PREFIX}/bin

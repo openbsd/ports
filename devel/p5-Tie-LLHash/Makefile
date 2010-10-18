@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/09 22:54:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
 COMMENT=	ordered hashes
 
 MODULES=	cpan
 DISTNAME=	Tie-LLHash-1.003
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

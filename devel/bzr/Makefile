@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 22:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:51 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,6 +22,7 @@ WANTLIB =	z
 MASTER_SITES =	http://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
 
 MODULES =	lang/python
+USE_GROFF =	Yes
 
 RUN_DEPENDS +=	::net/py-curl \
 		::security/py-paramiko \

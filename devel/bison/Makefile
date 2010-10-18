@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/07/08 00:24:17 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	GNU parser generator
 
@@ -21,5 +21,6 @@ BUILD_DEPENDS=	::devel/m4
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-yacc
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

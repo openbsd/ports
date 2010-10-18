@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/03 17:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 17:47:55 espie Exp $
 
 COMMENT=	provide framework for multiple event loops
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	AnyEvent-5.201
 CATEGORIES=	devel
 CPAN_AUTHOR=	MLEHMANN
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

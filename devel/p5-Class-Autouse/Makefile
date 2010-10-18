@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/11 18:20:55 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:56 espie Exp $
 
 COMMENT=	run-time class loading on first method call
 
 MODULES=	cpan
 DISTNAME=	Class-Autouse-1.29
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

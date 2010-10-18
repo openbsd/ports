@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=		positioning screen based module
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		Term-Screen-1.03
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/14 06:29:07 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:05 espie Exp $
 
 COMMENT =		information about the currently running perl
 MODULES =		cpan
 DISTNAME =		Probe-Perl-0.01
 CATEGORIES =		devel lang
+USE_GROFF =	Yes
 
 CPAN_AUTHOR =		KWILLIAMS
 

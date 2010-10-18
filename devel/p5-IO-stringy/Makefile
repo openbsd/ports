@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
@@ -7,6 +7,7 @@ VERSION=		2.110
 DISTNAME=		IO-stringy-${VERSION}
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

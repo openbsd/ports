@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	implements a flat filesystem
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	File-Flat-0.96
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/03 13:40:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=		generate new packages
 
 MODULES=		cpan
 DISTNAME=		Package-Generator-0.102
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/27 00:16:14 jim Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:56 espie Exp $
 
 COMMENT=	automated accessor generation
 
 MODULES=	cpan
 DISTNAME=	Class-Accessor-0.34
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

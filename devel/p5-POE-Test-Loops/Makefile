@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/26 08:57:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=	Reusable tests for POE::Loop authors 
 
 MODULES=	cpan
 DISTNAME=	POE-Test-Loops-1.035
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://poe.perl.org/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/02 06:02:29 jim Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:10 espie Exp $
 
 COMMENT =		minimal try/catch with proper localization of $\@
 
 MODULES =		cpan
 DISTNAME =		Try-Tiny-0.06
 CATEGORIES =		devel
+USE_GROFF =	Yes
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 

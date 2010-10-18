@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/08 21:38:44 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:08 espie Exp $
 
 COMMENT=	group together related tests in a test suite
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE=modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::devel/p5-File-Slurp
 BUILD_DEPENDS=	${RUN_DEPENDS}

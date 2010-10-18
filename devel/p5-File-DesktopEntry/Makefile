@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/15 18:23:14 dhill Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=		handle .desktop files
 
@@ -15,6 +15,7 @@ RUN_DEPENDS=		:p5-File-BaseDir->=0.03:devel/p5-File-BaseDir
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		PARDUS/File-DesktopEntry

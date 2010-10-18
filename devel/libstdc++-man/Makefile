@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/13 21:59:17 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:54 espie Exp $
 
 PKG_ARCH=	*
 COMMENT=	manpages for the standard C++ library
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/03 17:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	critique perl source code for best practices
 
 MODULES=	cpan
 DISTNAME=	Perl-Critic-1.108
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

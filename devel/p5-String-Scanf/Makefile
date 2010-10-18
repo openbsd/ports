@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	Emulates the sscanf() of the C stdio library
 
@@ -7,6 +7,7 @@ VERSION=	2.1
 DISTNAME=	String-Scanf-${VERSION}
 REVISION=	0
 CATEGORIES=	devel perl5
+USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

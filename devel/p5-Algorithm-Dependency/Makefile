@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	base class for implementing various dependency trees
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Algorithm-Dependency-1.102
 REVISION=	2
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

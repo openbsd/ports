@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:10 espie Exp $
 
 COMMENT=	simple tree object
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Tree-Simple-1.18
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

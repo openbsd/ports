@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:13 espie Exp $
 
 DISTNAME=	ucpp-1.2
 COMMENT=	C preprocessor and lexer
@@ -13,6 +13,7 @@ WANTLIB=		c
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 MAKE_FLAGS=	FLAGS='${CFLAGS} -D_POSIX_SOURCE' CC='${CC}'
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

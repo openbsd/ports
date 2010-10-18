@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/12 19:26:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=		Erlang inspired babysitting
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-POE-API-Peek \
 			::devel/p5-MooseX-POE \

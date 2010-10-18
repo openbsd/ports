@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/05 09:29:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=	extend your attribute interfaces
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 RUN_DEPENDS=	::devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=	dispatches messages to one or more outputs
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Log-Dispatch-2.21
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

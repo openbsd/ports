@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=	finding memory usage of perl variables
 SHARED_ONLY=	Yes
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Devel-Size-0.71
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

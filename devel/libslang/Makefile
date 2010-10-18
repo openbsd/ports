@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/09/13 07:35:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -28,6 +28,7 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
+USE_GROFF =	Yes
 
 REGRESS_TARGET=		runtests
 REGRESS_FLAGS=		TCAPLIB="-ltermlib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 02:23:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=	declarative validation of data structures
 
@@ -23,5 +23,6 @@ RUN_DEPENDS=	::devel/p5-Carp-Clan \
 		::devel/p5-aliased
 
 MAKE_ENV=	TEST_POD=Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

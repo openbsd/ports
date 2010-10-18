@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:51 espie Exp $
 
 COMMENT =	automatically configure source code on many Un*x platforms
 
@@ -34,5 +34,6 @@ FAKE_FLAGS =		lispdir= EMACS=no
 SUBST_VARS =		SUFFIX
 REGRESS_DEPENDS =	::devel/automake/1.9
 REGRESS_FLAGS +=	AUTOMAKE_VERSION=1.9
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

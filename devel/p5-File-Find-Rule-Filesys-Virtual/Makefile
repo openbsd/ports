@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/08 22:44:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	File::Find::Rule adapted to Filesys::Virtual
 
 MODULES=	cpan
 DISTNAME=	File-Find-Rule-Filesys-Virtual-1.22
 CATEGORIES=	net devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_DISTFILES_CDROM=	Yes

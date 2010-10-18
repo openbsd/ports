@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:09 espie Exp $
 
 COMMENT= 	test suite using WWW::Mechanize
 
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Test-WWW-Mechanize-1.12
 REVISION=	1
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 # Artitistic License
 PERMIT_PACKAGE_CDROM=	Yes

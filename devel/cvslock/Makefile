@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	safely manipulate and inspect CVS respositories
 
@@ -17,5 +17,6 @@ WANTLIB=		c
 MASTER_SITES=	http://www.does-not-exist.org/roessler/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

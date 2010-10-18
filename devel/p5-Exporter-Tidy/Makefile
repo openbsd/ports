@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=	alternative to the standard perl exporter
 CATEGORIES=	devel
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

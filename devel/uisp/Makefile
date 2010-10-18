@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
+USE_GROFF =	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=uisp/}
 

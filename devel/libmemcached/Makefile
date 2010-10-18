@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 10:39:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -27,6 +27,7 @@ MODULES=		gcc3
 MODGCC3_ARCHES=		sparc
 MODGCC3_LANGS=		c++
 
+USE_GROFF =	Yes
 WANTLIB += c event m pthread sasl2
 LIB_DEPENDS= 		::security/cyrus-sasl2
 REGRESS_DEPENDS=	::misc/memcached

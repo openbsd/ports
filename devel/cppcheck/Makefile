@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/23 09:34:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=		C/C++ static checker
 
@@ -25,6 +25,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET=		cppcheck
 MAKE_FLAGS=		BIN=${PREFIX}/bin CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

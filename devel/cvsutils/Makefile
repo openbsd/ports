@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/24 21:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=	collection of useful CVS scripts
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

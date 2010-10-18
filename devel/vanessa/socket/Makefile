@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	provides abstract data types (ADTs)
 
@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_socket/${VERSION}/}
 
 WANTLIB=	c
 
+USE_GROFF =	Yes
 LIB_DEPENDS=	vanessa_logger.>=0.3::devel/vanessa/logger \
 		popt.>=0::devel/popt
 

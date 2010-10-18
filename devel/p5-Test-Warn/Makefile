@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/03 09:27:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:09 espie Exp $
 
 COMMENT= 	Perl extension to test methods for warnings
 
 MODULES=	cpan
 DISTNAME=	Test-Warn-0.21
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

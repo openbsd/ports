@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/09/29 07:33:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 17:47:51 espie Exp $
 
 VMEM_WARNING =	Yes
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	simple
+USE_GROFF =	Yes
 
 REGRESS_TARGET =	test
 

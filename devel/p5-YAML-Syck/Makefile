@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:48:10 espie Exp $
 
 COMMENT=	YAML and JSON for perl, optimized C
 
 SHARED_ONLY=	Yes
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	YAML-Syck-1.08
 REVISION=	1

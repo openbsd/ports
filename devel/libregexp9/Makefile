@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	Simple regular expression library from Plan 9
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+USE_GROFF =	Yes
 REGRESS_TARGET=	test
 
 pre-build:

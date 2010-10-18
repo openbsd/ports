@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=	write Perl subroutines in other programming languages
 
 MODULES=	cpan
 DISTNAME=	Inline-0.44
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 

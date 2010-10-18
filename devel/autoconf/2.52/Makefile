@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/05 09:04:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:50 espie Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=		::devel/metaauto
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	M4=/usr/bin/m4
+USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MAKE_FLAGS=pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 SUBST_VARS=SUFFIX

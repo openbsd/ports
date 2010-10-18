@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/03 23:32:05 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	parser for plain-text configuration files
 
 MODULES=	cpan
 DISTNAME=	Parse-PlainConfig-2.06
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

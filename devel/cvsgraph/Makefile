@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/11 20:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -27,6 +27,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
 			--with-gd-lib=${LOCALBASE}/lib \
 			--with-freetype-lib=${X11BASE}/lib
+			USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:05 espie Exp $
 
 COMMENT= 	create readonly variables faster
 
@@ -7,6 +7,7 @@ SHARED_ONLY=	Yes
 DISTNAME=	Readonly-XS-1.05
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl licence
 PERMIT_PACKAGE_CDROM=	Yes

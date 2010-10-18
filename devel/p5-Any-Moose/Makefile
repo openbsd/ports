@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/19 11:49:48 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:55 espie Exp $
 
 COMMENT =	use Moose or Mouse modules
 
 MODULES =	cpan
 DISTNAME =	Any-Moose-0.09
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

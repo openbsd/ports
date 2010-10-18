@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/30 18:37:23 jim Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:08 espie Exp $
 
 COMMENT= 	test framework to run Perl::Critic
 
 MODULES=	cpan
 DISTNAME=	Test-Perl-Critic-1.02
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

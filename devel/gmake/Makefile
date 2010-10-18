@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/05/10 17:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=	GNU make
 
@@ -25,6 +25,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
+		USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
 
 post-install:

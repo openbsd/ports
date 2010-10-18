@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 17:47:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ DISTNAME=	Curses-1.28
 REVISION=	0
 CPAN_AUTHOR=	GIRAFFED
 EXTRACT_SUFX=	.tgz
+USE_GROFF =	Yes
 
 CATEGORIES=	devel
 

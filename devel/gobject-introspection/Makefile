@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:47:53 espie Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -43,6 +43,7 @@ LIB_DEPENDS=		::devel/glib2 \
 BUILD_DEPENDS=		::devel/bison
 
 USE_LIBTOOL=		gnu
+USE_GROFF =	Yes
 
 YACC=			bison
 

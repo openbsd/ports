@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/10/06 22:03:19 stsp Exp $
+# $OpenBSD: Makefile,v 1.79 2010/10/18 17:48:13 espie Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -47,6 +47,7 @@ FLAVORS=	gnome_keyring
 FLAVOR?=
 
 MODULES=	devel/gettext lang/python
+USE_GROFF =	Yes
 
 WANTLIB=	expat db z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	UTF8 support library from Plan 9
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 

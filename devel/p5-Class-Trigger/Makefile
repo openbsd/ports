@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 19:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:57 espie Exp $
 
 COMMENT=	add / call inheritable triggers
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Class-Trigger-0.11
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

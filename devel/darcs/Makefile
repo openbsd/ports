@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 17:47:52 espie Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -29,6 +29,7 @@ REGRESS_DEPENDS =	::shells/bash
 
 # For the documentation
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 # Weird permission alert!
 # http://bugs.darcs.net/issue1815 (it's a bug in Cabal, not in darcs)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/10 00:46:11 william Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=automatic text creation from templates
 CATEGORIES=devel
@@ -29,4 +29,5 @@ CONFIGURE_ARGS=	--without-libregex \
 
 MAKE_FLAGS+=	INFO_DEPS=
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:59 espie Exp $
 
 COMMENT=	perl debugger built with a PerlTk GUI
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptkdb/}
 
 CONFIGURE_ARGS=	INSTALLDIRS="site"
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::x11/p5-Tk
 RUN_DEPENDS=	::x11/tk/8.4 \

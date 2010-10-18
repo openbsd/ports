@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE=      	Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 do-regress:
 	@cd ${WRKBUILD}/test && ./test testinput

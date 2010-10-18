@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/06 18:10:48 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:02 espie Exp $
 
 COMMENT=	share Perl variables between processes
 
 MODULES=	cpan
 DISTNAME=	IPC-Shareable-0.60
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

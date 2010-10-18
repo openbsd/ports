@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/23 14:03:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:55 espie Exp $
 
 COMMENT= 	dispatcher for command line interface programs
 
 MODULES=	cpan
 DISTNAME=	App-CLI-0.08
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

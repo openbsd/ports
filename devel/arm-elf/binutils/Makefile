@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:50 espie Exp $
 
 COMMENT=	binutils for arm-elf cross-development
 
@@ -17,5 +17,6 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

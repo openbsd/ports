@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/17 21:15:41 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:55 espie Exp $
 
 COMMENT =	execute code after a scope finished compilation
 
 MODULES =	cpan
 DISTNAME =	B-Hooks-EndOfScope-0.08
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

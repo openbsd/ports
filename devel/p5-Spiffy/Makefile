@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:06 espie Exp $
 
 COMMENT= 	object-oriented framework
 
 MODULES=	cpan 
+USE_GROFF =	Yes
 
 DISTNAME=	Spiffy-0.30
 CATEGORIES=	devel

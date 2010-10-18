@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/23 14:01:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:00 espie Exp $
 
 COMMENT=		retrieve home directory location
 
 MODULES=		cpan
 DISTNAME=		File-HomeDir-0.84
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 CPAN_AUTHOR=		ADAMK
 

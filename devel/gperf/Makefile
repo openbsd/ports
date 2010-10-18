@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 17:47:53 espie Exp $
 
 COMMENT=	perfect hash functions, to help write parsers
 
@@ -26,6 +26,7 @@ post-extract:
 CONFIGURE_STYLE=	gnu
 # and it also insists upon installing under $(prefix)/doc...
 MAKE_FLAGS=	docdir='${TRUEPREFIX}/share/doc/gperf'
+USE_GROFF =	Yes
 
 # N.B. gperf is a build dependency for libiconv; take care if
 # gettext support is added to gperf.

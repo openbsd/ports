@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:52 espie Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -23,6 +23,7 @@ PSEUDO_FLAVORS=	gui
 FLAVOR?=
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MODULES=	converters/libiconv
 
 LIB_DEPENDS-main=	png.>=4::graphics/png \

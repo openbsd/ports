@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Class-MOP-1.03
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

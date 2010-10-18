@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 02:52:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:47:50 espie Exp $
 
 COMMENT=	library providing malloc debugging via VM protection
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

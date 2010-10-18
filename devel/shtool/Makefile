@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 17:48:13 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
 COMMENT=	GNU Portable Shell Tool
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:58 espie Exp $
 
 COMMENT =	generates iCalendar (RFC 2445) calendar files
 
@@ -8,6 +8,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 MODULES =	cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

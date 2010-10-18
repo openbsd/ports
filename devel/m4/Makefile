@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/11/02 18:11:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 17:47:54 espie Exp $
 
 COMMENT=	GNU m4
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	sigsegv::devel/libsigsegv
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--program-prefix="g"
 MAKE_ENV=	V=1	# disable silent rules
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gm4

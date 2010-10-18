@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/26 05:16:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=		::devel/avr/binutils \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 
 .include <bsd.port.mk>

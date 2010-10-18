@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:07 espie Exp $
 
 COMMENT= 	Test differences in data structures
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Test-Differences-0.47
 REVISION=	0
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

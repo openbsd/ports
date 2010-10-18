@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/21 13:52:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=	perl module for portable testing of commands and scripts
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

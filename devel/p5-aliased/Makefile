@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/05 12:50:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:10 espie Exp $
 
 COMMENT=	use shorter versions of class names
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

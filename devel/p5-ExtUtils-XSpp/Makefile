@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/06 11:29:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:00 espie Exp $
 
 COMMENT =	XS for C++
 
 MODULES =	cpan
 DISTNAME =	ExtUtils-XSpp-0.04
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

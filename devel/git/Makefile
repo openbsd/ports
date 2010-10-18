@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/10/07 09:42:23 bernd Exp $
+# $OpenBSD: Makefile,v 1.70 2010/10/18 17:47:52 espie Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -69,6 +69,7 @@ MAKE_ENV =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
 			REGRESS_SHELL=${LOCALBASE}/bin/bash
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS =	:zip-*:archivers/zip \
 			:cvsps-*:devel/cvsps \

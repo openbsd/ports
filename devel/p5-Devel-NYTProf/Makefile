@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:59 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		z
 
 MODULES =		cpan
+USE_GROFF =	Yes
 RUN_DEPENDS =		::converters/p5-JSON-Any
 
 .include <bsd.port.mk>

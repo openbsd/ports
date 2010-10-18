@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 22:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	Python-based build system
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 
 MODULES=	lang/python
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 SUBST_VARS+=	VERSION

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:06 espie Exp $
 
 COMMENT=	subversion activity notification
 
@@ -21,5 +21,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_STYLE= modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

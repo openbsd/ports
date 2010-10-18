@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:57 espie Exp $
 
 COMMENT=	base class to treat unhandled method calls as errors
 
 MODULES=	cpan
 DISTNAME=	Class-WhiteHole-0.04
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

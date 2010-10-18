@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/11/13 19:05:50 stephan Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:56 espie Exp $
 
 COMMENT =	Carp for clan of modules
 
 MODULES =	cpan
 DISTNAME =	Carp-Clan-6.04
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:54:21 stephan Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 17:47:58 espie Exp $
 
 COMMENT=		perl objected oriented Date Time
 
@@ -8,6 +8,7 @@ MODULES=		cpan
 DISTNAME=		DateTime-0.63
 EPOCH=			0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # Artistic 2.0
 PERMIT_PACKAGE_CDROM=   Yes

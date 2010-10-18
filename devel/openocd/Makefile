@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/17 21:59:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:54 espie Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -21,6 +21,7 @@ WANTLIB =	c usb
 MASTER_SITES =	${MASTER_SITE_BERLIOS:=openocd/}
 EXTRACT_SUFX =	.tar.bz2
 
+USE_GROFF =	Yes
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-werror \
 		--disable-wextra \

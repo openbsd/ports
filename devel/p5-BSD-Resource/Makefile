@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/24 15:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 17:47:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	BSD-Resource-1.2903
 REVISION=	1
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

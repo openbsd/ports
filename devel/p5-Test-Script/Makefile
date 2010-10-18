@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/14 07:34:14 stephan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:08 espie Exp $
 
 COMMENT= 	cross-platform basic tests for scripts
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 
 DISTNAME=	Test-Script-1.07
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

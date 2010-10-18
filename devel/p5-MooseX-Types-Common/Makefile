@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/02 04:35:49 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
 
 COMMENT=		library of commonly used type constraints
 
 MODULES=		cpan
 DISTNAME=		MooseX-Types-Common-0.001002
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 

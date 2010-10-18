@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/29 17:17:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=	automate launching of fake mpd for testing purposes
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-File-ShareDir \
 			::devel/p5-Path-Class \

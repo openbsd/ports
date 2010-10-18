@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/08 23:00:18 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 17:47:51 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
@@ -35,6 +35,7 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION= 2.61
 CONFIGURE_STYLE= autoconf no-autoheader

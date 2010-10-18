@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/05/28 12:41:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:48:13 espie Exp $
 
 # XXX Are we affected by CVE-2008-0386? Our sed(1) does not behave as
 # the GNU version.
@@ -24,6 +24,7 @@ MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/xmlto

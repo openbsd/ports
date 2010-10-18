@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 19:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:03 espie Exp $
 
 COMMENT=		logging role for Moose
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-IO-stringy \
 			::devel/p5-Log-Dispatch-Config \

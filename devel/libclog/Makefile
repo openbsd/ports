@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/12 17:32:01 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:53 espie Exp $
 
 COMMENT =		configurable logging library
 DISTNAME =		clog-0.1
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://opensource.conformal.com/snapshots/clog/
 EXTRACT_SUFX =		.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 MAKE_FLAGS=		PREFIX=${TRUEPREFIX}
 

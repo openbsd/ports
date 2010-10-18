@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:04 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ MODULES=		cpan
 DISTNAME=		MooseX-Role-WithOverloading-0.06
 REVISION=		1
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 

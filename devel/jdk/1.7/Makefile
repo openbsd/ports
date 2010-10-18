@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 17:47:53 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -38,6 +38,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}

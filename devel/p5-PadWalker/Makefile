@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/24 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	peek at lexical variables
 
@@ -8,6 +8,7 @@ DISTNAME=	PadWalker-1.7
 REVISION=	0
 CATEGORIES=	devel
 CPAN_AUTHOR=	ROBIN
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

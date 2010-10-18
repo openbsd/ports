@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/02/06 08:10:18 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	catalyst packages for the tutorial
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -34,5 +34,6 @@ RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::textproc/p5-Catalyst-View-TT
 
 CONFIGURE_ARGS=	--skipdeps
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

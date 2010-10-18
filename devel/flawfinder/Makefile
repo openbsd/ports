@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/08/30 22:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 17:47:52 espie Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${HOMEPAGE} \
 
 MODULES=		lang/python
 
+USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*

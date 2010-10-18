@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 13:53:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:52 espie Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -25,5 +25,6 @@ NO_REGRESS =	Yes
 PKG_ARCH =	*
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

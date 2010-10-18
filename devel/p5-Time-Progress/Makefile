@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/11 14:13:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
 
 COMMENT=	elapsed and estimated finish time reporting
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

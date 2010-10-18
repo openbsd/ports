@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/27 20:58:10 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:51 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU binutils
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 CONFIGURE_ARGS+=--enable-commonbfdlib=no
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 
 .include <bsd.port.mk>

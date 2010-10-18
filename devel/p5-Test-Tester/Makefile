@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/10 15:46:44 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 17:48:08 espie Exp $
 
 COMMENT=        run tests built with Test::Builder
 
 MODULES=	cpan
 DISTNAME=	Test-Tester-0.107
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

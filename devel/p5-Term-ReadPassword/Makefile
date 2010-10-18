@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=		ask passwords from perl
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		Term-ReadPassword-0.11
 REVISION=		0
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

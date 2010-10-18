@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 00:35:51 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
 MODULES =	cpan
 DISTNAME =	MooseX-SemiAffordanceAccessor-0.05
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

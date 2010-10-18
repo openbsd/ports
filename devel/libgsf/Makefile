@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/18 17:47:53 espie Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -58,6 +58,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV+=		GCONF2_SCHEMAS_DIR="${LOCALBASE}/${SCHEMAS_INSTDIR}"
 
 USE_X11=	No
+USE_GROFF =	Yes
 
 RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
 			${MODGCONF2_RUN_DEPENDS}

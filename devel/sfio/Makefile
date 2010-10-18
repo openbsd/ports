@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:13 espie Exp $
 
 COMMENT=	Safe/Fast I/O Library
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GROFF =	Yes
 post-extract:
 	cd ${WRKDIR} && ln -s . ${DISTNAME}
 	cd ${WRKDIR}/man/man3 && \

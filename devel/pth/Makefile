@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 17:48:12 espie Exp $
 
 COMMENT=	GNU portable threads
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

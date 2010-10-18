@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/11 14:37:21 dhill Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:05 espie Exp $
 
 COMMENT=	peek at lexical variables
 
 MODULES=	cpan
 DISTNAME=	Proc-Background-1.10
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

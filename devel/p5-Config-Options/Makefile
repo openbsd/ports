@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/08/23 08:06:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:57 espie Exp $
 
 COMMENT=		provide a configuration hash with options
 
@@ -6,6 +6,7 @@ DISTNAME=		Config-Options-0.08
 CATEGORIES=		devel
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

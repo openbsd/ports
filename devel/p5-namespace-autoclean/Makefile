@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/26 16:30:35 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:10 espie Exp $
 
 COMMENT =	keep imports out of your namespace
 
 MODULES =	cpan
 DISTNAME =	namespace-autoclean-0.09
 CATEGORIES =	devel
+USE_GROFF =	Yes
 
 MAINTAINER =	Cesare Gargano <gar@plusiagamma.org>
 

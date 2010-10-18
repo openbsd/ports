@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/15 13:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:48:08 espie Exp $
 
 COMMENT= 	tests strings for equality
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Test-LongString-0.11
 REVISION=	1

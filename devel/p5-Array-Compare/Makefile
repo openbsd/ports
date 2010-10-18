@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/02 04:13:09 jim Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:55 espie Exp $
 
 COMMENT=	Perl module for comparing arrays
 
 MODULES=	cpan
 DISTNAME=	Array-Compare-2.01
 CATEGORIES=	devel
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

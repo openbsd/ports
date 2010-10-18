@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 17:48:07 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,7 @@ DISTNAME=		TermReadKey-${V}
 PKGNAME=		p5-Term-ReadKey-${V}
 REVISION=		2
 CATEGORIES=		devel
+USE_GROFF =	Yes
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

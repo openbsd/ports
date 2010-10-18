@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:01 espie Exp $
 
 COMMENT=	HASH that stores values without a reference count increase
 
@@ -8,6 +8,7 @@ DISTNAME=	Hash-NoRef-0.03
 REVISION=	1
 CATEGORIES=	devel
 MODULES=	cpan
+USE_GROFF =	Yes
 
 CPAN_AUTHOR=	GMPASSOS
 

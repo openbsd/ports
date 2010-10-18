@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:07 espie Exp $
 
 COMMENT=	parse TAP output
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	ANDYA
 
 CONFIGURE_STYLE= modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/20 06:40:40 pea Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
 
 COMMENT =	create machine readable date/time with natural parsing logic
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 RUN_DEPENDS =		::devel/p5-Date-Calc \
 			::devel/p5-DateTime \
