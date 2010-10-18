@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 22:43:10 sthen Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -17,8 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c ncurses
-LIB_DEPENDS=		glib-2.0::devel/glib2 mpdclient::audio/libmpdclient
+WANTLIB=		c glib-2.0 mpdclient ncurses
+LIB_DEPENDS=		::devel/glib2 \
+			::audio/libmpdclient
 MODULES=		devel/gettext
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}

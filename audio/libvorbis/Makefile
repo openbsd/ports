@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/06/03 15:48:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 22:43:10 sthen Exp $
 
 COMMENT=	audio compression codec library
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
 # no inter-library dependency, but we still build against the API
-LIB_DEPENDS=	ogg.>=6::audio/libogg
+WANTLIB += ogg.>=6
+LIB_DEPENDS=	::audio/libogg
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

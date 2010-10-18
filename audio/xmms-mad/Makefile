@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/10 15:46:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 22:43:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += X11 Xau Xdmcp Xext Xi m gdk glib gmodule gtk pthread-stubs
+WANTLIB += xcb z id3tag xmms mad
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmms-mad/}
 
-LIB_DEPENDS=	xmms.>=4::audio/xmms mad.>=2::audio/libmad \
-		id3tag.>=3::audio/libid3tag
-
-WANTLIB=	X11 Xau Xdmcp Xext Xi m gdk glib gmodule gtk pthread-stubs \
-		xcb z
+LIB_DEPENDS=	::audio/xmms ::audio/libmad \
+		::audio/libid3tag
 
 MODULES=	devel/gettext
 

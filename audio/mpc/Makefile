@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 22:43:10 sthen Exp $
 
 COMMENT=		command line client for mpd
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
-LIB_DEPENDS=		mpdclient::audio/libmpdclient
+WANTLIB=		c mpdclient
+LIB_DEPENDS=		::audio/libmpdclient
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 

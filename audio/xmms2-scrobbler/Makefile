@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/24 17:38:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 22:43:10 sthen Exp $
 
 COMMENT =		last.fm client for xmms2
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c curl pthread
+WANTLIB +=		c curl pthread xmmsclient
 
 MASTER_SITES =		ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
-LIB_DEPENDS =		xmmsclient::audio/xmms2
+LIB_DEPENDS =		::audio/xmms2
 
 USE_GMAKE =		Yes
 

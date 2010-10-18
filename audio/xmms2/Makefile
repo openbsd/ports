@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 22:43:10 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -24,6 +24,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += c gsm faac faad m mp3lame ncurses ogg orc-0.4 pthread readline
+WANTLIB += schroedinger-1.0 speex stdc++ theora util vorbis vorbisenc
+WANTLIB += vorbisfile x264 z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 avcodec avutil ao jack sqlite3 xml2 FLAC curl
+WANTLIB += mad avahi-client avahi-common avahi-glib vorbisidec
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
 EXTRACT_SUFX =		.tar.bz2
@@ -32,28 +38,24 @@ MODULES =		lang/python \
 			devel/gettext \
 			perl
 
-WANTLIB  =		c gsm faac faad m mp3lame ncurses ogg orc-0.4 \
-			pthread readline schroedinger-1.0 speex stdc++ \
-			theora util vorbis vorbisenc vorbisfile x264 z
-
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 BUILD_DEPENDS =		::devel/pyrex \
 			::devel/boost
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
-			gio-2.0.>=1800,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-			avcodec.>=13.1,avutil.>=6:ffmpeg->=20080620p10:graphics/ffmpeg \
-			ao.>=3::audio/libao \
-			jack.>=0::audio/jack \
-			sqlite3.>=13::databases/sqlite3 \
-			xml2.>=10::textproc/libxml \
-			FLAC.>=9::audio/flac \
-			curl.>=13::net/curl \
-			mad.>=2::audio/libmad \
-			avahi-client,avahi-common,avahi-glib::net/avahi \
-			vorbisidec.>=2::audio/tremor
+			::devel/glib2 \
+			:ffmpeg->=20080620p10:graphics/ffmpeg \
+			::audio/libao \
+			::audio/jack \
+			::databases/sqlite3 \
+			::textproc/libxml \
+			::audio/flac \
+			::net/curl \
+			::audio/libmad \
+			::net/avahi \
+			::audio/tremor
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
 			src/clients/lib/xmmsclient++-glib/wscript \

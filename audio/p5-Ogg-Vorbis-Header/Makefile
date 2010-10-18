@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 22:43:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB=	ogg vorbis vorbisfile
 USE_GROFF =	Yes
-WANTLIB=	ogg
 
-LIB_DEPENDS=	vorbis.>=5,vorbisfile.>=4::audio/libvorbis
+LIB_DEPENDS=	::audio/libvorbis
 RUN_DEPENDS=	::devel/p5-Inline
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

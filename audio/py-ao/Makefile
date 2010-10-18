@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 21:36:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 22:43:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,11 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += ao
+
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	ao.>=3::audio/libao
+LIB_DEPENDS=	::audio/libao
 
 NO_REGRESS=	Yes
 
