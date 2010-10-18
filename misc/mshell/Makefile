@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/15 14:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	Unix menuing shell
 
@@ -21,6 +21,7 @@ post-extract:
 	zcat ${FULLDISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/22 09:02:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	tiff.>=36::graphics/tiff \
 		png.>=4::graphics/png
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=	autoconf old dest

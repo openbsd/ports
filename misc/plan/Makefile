@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/03/21 10:52:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
@@ -25,6 +25,7 @@ MAKE_FLAGS=	PLANBASE=${PREFIX} EXAMPLES=${PREFIX}/share/examples/plan
 FAKE_FLAGS=	PLANBASE=${WRKINST}${PREFIX} \
 		EXAMPLES=${WRKINST}${PREFIX}/share/examples/plan
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:

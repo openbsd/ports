@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/09 15:10:19 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	XKCD comic viewer
 
@@ -18,6 +18,7 @@ WRKDIST=		${WRKDIR}/XKCD_viewer
 MODULES=	perl
 
 CONFIGURE_STYLE=perl
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/p5-Gtk2 \

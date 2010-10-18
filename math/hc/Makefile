@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 20:52:05 espie Exp $
 
 COMMENT=	multi-radix integer desk calculator
 
@@ -22,6 +22,7 @@ EXTRACT_SUFX=	.tgz
 
 WRKDIST=	${WRKDIR}/hcdist
 MAKE_FILE=	makefile
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

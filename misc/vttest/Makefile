@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/31 19:11:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	test VT100-type terminal
 
@@ -22,5 +22,6 @@ WANTLIB=	c
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 MAKE_FILE=	makefile
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

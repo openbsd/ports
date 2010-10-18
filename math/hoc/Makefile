@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.25 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	from Kernighan & Pike: High Order Calculator
 
@@ -27,6 +27,7 @@ WANTLIB=		c m
 
 ALL_TARGET=	hoc
 MAKE_FILE=	makefile
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}
 

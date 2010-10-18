@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		GNU command line utilities
 
@@ -19,6 +19,7 @@ MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

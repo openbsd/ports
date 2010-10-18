@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	X11 viewer for text files
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/} \
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

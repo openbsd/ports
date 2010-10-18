@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/18 10:50:11 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -33,6 +33,7 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBlapack_VERSION:R} \
 		TIMER=EXT_ETIME \
 		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+USE_GROFF =	Yes
 REGRESS_FLAGS=	PLAT= OPTS= FORTRAN=${FC} LOADER=${FC} \
 		LAPACKLIB=SRC/liblapack.a \
 		BLASLIB=${LOCALBASE}/lib/libblas.a

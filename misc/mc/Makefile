@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/17 20:28:59 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pcre pthread termcap
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

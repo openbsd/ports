@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/06 18:38:07 nicm Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
@@ -23,6 +23,7 @@ BUILD_DEPENDS=		::devel/bison
 MODULES=		devel/gettext
 WANTLIB=		c m ncurses iconv
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lifelines

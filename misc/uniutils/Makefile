@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/12 12:38:28 nicm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	Unicode utilities
 
@@ -24,5 +24,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl -liconv"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	Perl extension for rounding numbers
 
 MODULES=	cpan
 DISTNAME=	Math-Round-0.06
 CATEGORIES=	math
+USE_GROFF =	Yes
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 

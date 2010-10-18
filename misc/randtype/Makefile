@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/03 21:51:54 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	output characters or lines at random intervals
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c z
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

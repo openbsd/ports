@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/18 20:52:06 espie Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -49,6 +49,7 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		::net/curl
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=autoconf

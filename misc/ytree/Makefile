@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/05/26 14:08:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 20:52:10 espie Exp $
 # $FreeBSD: ports/misc/ytree/Makefile,v 1.10 2000/04/30 20:15:23 steve Exp $
 
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
@@ -22,6 +22,7 @@ WANTLIB=	c curses readline
 
 ALL_TARGET=	ytree
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CFLAGS+=	-DCOLOR_SUPPORT -DREADLINE_SUPPORT

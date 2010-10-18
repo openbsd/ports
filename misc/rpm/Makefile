@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	redhat package manager
 
@@ -25,6 +25,7 @@ LIB_DEPENDS+=	bz2::archivers/bzip2 \
 		popt::devel/popt
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt
 

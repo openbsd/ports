@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/05/23 10:22:33 espie Exp $ 
+# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:06 espie Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=		concurrent
 
 post-install:

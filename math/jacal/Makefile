@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/21 18:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	symbolics math system
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/jacal
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 

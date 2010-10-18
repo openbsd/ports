@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/06 21:46:56 matthieu Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:09 espie Exp $
 
 COMMENT =	OpenMoko serial console tool
 
@@ -20,6 +20,7 @@ MASTER_SITES =		ftp://ftp.laas.fr/pub/ii/matthieu/
 
 LIB_DEPENDS =		:libftdi-*:devel/libftdi
 
+USE_GROFF =	Yes
 NO_REGRESS =		yes
 
 .include <bsd.port.mk>

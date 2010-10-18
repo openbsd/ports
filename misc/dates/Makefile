@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:15:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 20:52:07 espie Exp $
 
 BROKEN=			needs to stop using deprecated functions from e-d-s
 
@@ -35,6 +35,7 @@ MODULES=		devel/gettext \
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		ecal-1.2,edataserver-1.2::databases/evolution-data-server
 RUN_DEPENDS=		::devel/desktop-file-utils

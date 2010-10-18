@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 18:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 20:52:07 espie Exp $
 
 COMMENT=		tiny program emulating the detach feature of screen
 DISTNAME=		dtach-0.8
@@ -17,6 +17,7 @@ WANTLIB=		c util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dtach/}
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		dtach

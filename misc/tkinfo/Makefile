@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/13 22:14:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	Tk script to read GNU info files and display them
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Math-FFT-1.28
 REVISION=	1
 CATEGORIES=	math
+USE_GROFF =	Yes
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

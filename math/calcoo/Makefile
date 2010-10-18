@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/11 08:15:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 20:52:05 espie Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
@@ -27,6 +27,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 

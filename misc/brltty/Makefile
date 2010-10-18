@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 20:52:07 espie Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 		--without-flite --without-x
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 SEPARATE_BUILD=	simple
 

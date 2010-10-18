@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/04 14:05:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 20:52:07 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -22,6 +22,7 @@ WANTLIB=		c
 
 WRKDIST=		${WRKDIR}/bible
 ALL_TARGET=		bible
+USE_GROFF =	Yes
 
 MAKE_FLAGS=	DEST=${PREFIX}
 FAKE_FLAGS=	DEST=${WRKINST}${PREFIX}

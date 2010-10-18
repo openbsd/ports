@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/01 10:10:24 chl Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		zzuf is a transparent application input fuzzer
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

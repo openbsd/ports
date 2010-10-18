@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/11 08:15:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/18 20:52:05 espie Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -95,6 +95,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

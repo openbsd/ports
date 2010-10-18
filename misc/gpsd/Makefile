@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/09/01 06:20:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/18 20:52:09 espie Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -30,6 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
 USE_LIBTOOL=		yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-ntpshm \
 			--enable-gpsd-user=_gpsd \

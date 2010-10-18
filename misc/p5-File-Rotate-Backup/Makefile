@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/16 12:38:41 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		make backups of multiple directories and rotate them
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

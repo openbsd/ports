@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		personal file manager
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 NO_BUILD=		Yes
+USE_GROFF =	Yes
 PKG_ARCH=		*
 
 RUN_DEPENDS=		:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \

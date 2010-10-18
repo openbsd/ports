@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Math-Pari-2.010800
 REVISION=	1
 CATEGORIES=	math
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

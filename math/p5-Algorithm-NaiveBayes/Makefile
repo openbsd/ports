@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/23 22:08:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	clustering algorithm for graphs
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/src/
 WANTLIB=	c m pthread
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/mcl/
 

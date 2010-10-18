@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/p5-Curses
 

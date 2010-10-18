@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
@@ -38,5 +38,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localedir=${LOCALBASE}/share/locale \
 		--disable-scrollkeeper \
 		--enable-packager-mode
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

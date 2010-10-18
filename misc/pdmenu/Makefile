@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/13 21:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -33,6 +33,7 @@ CONFIGURE_ENV=		LIBS="-lm -lcurses -lintl -liconv" \
 			SLANG_H_LOC=${DEPBASE}/include/slang.h
 WRKDIST=		${WRKDIR}/pdmenu
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

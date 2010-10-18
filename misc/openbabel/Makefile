@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/02 17:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	chemistry file translation program
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=	xml2.>=9::textproc/libxml
 REGRESS_DEPENDS=::${BUILD_PKGPATH}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

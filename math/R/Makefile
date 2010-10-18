@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 20:52:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.dk.r-project.org/src/base/R-2/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 MODULES=	fortran devel/gettext x11/tk
 MODFORTRAN_WANTG77=Yes
 

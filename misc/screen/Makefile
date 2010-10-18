@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/09/14 05:12:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/18 20:52:10 espie Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
@@ -23,6 +23,7 @@ CFLAGS+=	-Wall
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
+USE_GROFF =	Yes
 
 FLAVORS=	static shm
 FLAVOR?=

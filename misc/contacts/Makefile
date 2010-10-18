@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 13:48:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 20:52:07 espie Exp $
 
 COMMENT=		lightweight addressbook
 
@@ -33,6 +33,7 @@ MODULES=		devel/gconf2 \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR=	contacts
 
 LIB_DEPENDS=		::databases/evolution-data-server

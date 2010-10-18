@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/12 14:12:10 dhill Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
 DISTNAME=	Finance-Quote-1.13
 CATEGORIES=	misc
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://finance-quote.sourceforge.net
 

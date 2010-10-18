@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/06 06:17:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 20:52:07 espie Exp $
 
 COMMENT=	nice X11-based calendar/scheduling tool (using XView)
 
@@ -25,6 +25,7 @@ MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config \
 		EXTRA_INCLUDES=-I${WRKSRC}/include
 
 MAKE_FLAGS=CCOPTIONS=-I${WRKSRC}/include
+USE_GROFF =	Yes
 
 pre-configure:
 	@mkdir -p ${WRKSRC}/include/images

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/12 23:13:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		translater to LOLCAT
 
@@ -6,6 +6,7 @@ DISTNAME=		Acme-LOLCAT-0.0.5
 CATEGORIES=		misc
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

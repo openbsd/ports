@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/09 22:15:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:09 espie Exp $
 
 COMMENT =		maintains info about a physical person
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS =		::geo/p5-Geography-Countries
 

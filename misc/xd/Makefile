@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	yet another dump utility
 
@@ -15,5 +15,6 @@ WANTLIB=		c
 
 MAKE_ENV=	CC="${CC}"
 FAKE_FLAGS=	PREFIX=${PREFIX}
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

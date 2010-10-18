@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/04 00:18:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		GNU watch command
 
@@ -19,6 +19,7 @@ WANTLIB=		ncurses c
 
 MASTER_SITES=		${HOMEPAGE}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-build:

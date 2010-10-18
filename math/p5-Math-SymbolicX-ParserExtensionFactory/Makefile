@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/12 17:01:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:07 espie Exp $
 
 COMMENT =	generate Math::Symbolic parser extensions
 
@@ -22,5 +22,6 @@ RUN_DEPENDS =	::devel/p5-Parse-RecDescent \
 MAKE_ENV +=	TEST_POD=1
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

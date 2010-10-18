@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 20:52:10 espie Exp $
 COMMENT=		browser for a large lexical database of English
 
 V=			3.0
@@ -45,6 +45,7 @@ CFLAGS+=		-I${MODTK_INCDIR} -I${MODTCL_INCDIR}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/01/16 07:40:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:07 espie Exp $
 
 COMMENT =	format the display of a shell script
 
@@ -24,6 +24,7 @@ WANTLIB =	c m ncurses
 CONFIGURE_STYLE=gnu
 MAKE_FILE =	makefile
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

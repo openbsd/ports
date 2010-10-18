@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/13 21:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	browse or page through a text file
 
@@ -23,6 +23,7 @@ WANTLIB=	c m termcap
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

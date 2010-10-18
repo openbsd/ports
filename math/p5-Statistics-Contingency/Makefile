@@ -15,5 +15,6 @@ RUN_DEPENDS=		:p5-Params-Validate->=0.23:devel/p5-Params-Validate
 CONFIGURE_STYLE=	modbuild
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

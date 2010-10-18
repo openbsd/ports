@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 20:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,5 +19,6 @@ LIB_DEPENDS=		gmp.>=4::devel/gmp
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

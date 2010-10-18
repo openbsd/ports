@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/24 13:41:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:06 espie Exp $
 
 COMMENT =		numeric 1st and 2nd order differentiation
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 NO_REGRESS =		Yes
 

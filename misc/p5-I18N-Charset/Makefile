@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2008/10/08 17:49:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	module to map charset names registered with IANA
 
 MODULES=	cpan
 DISTNAME=	I18N-Charset-1.394
 CATEGORIES=	misc
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

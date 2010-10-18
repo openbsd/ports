@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 20:52:06 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -30,6 +30,7 @@ PERMIT_PACKAGE_CDROM=	Commercial
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}
+USE_GROFF =	Yes
 
 # verify that it makes sense to install maple here
 pre-fetch:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/08/20 15:45:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	convert English text to Jive
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/jive
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

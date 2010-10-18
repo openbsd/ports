@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		wm-dockapp; mandelbrot explorer
 
@@ -22,6 +22,7 @@ MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 RUN_DEPENDS=		:xv-*:graphics/xv
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/22 09:02:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	tty recorder
 
@@ -17,6 +17,7 @@ WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 BIN=	ttyplay ttyrec ttytime

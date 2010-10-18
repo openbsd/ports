@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 20:52:05 espie Exp $
 
 COMMENT=	multi-radix calculator for x11
 
@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/*.orig

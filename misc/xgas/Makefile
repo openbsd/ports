@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	animated simulation of an ideal gas
 
@@ -17,6 +17,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

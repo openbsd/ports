@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/02/01 20:26:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:07 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
 
 COMMENT=	delay program with feedback to the user
@@ -19,6 +19,7 @@ WANTLIB=		c curses
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

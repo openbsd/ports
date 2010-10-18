@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/13 20:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=	implement a back-propagation feed-forward neural network
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 EXTRACT_SUFX=	.zip
 
 WRKDIST=	${WRKDIR}
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

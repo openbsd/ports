@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:06 espie Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX =	.tar.bz2
 MAKE_ENV =	READLINE=1
 MAKE_FILE =	makefile
 FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
+USE_GROFF =	Yes
 
 REGRESS_TARGET =	test
 

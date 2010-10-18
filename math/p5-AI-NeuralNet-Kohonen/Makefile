@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/31 16:45:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:06 espie Exp $
 
 COMMENT=		Kohonen's Self-Organizing Maps
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
 

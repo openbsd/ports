@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:07 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
@@ -18,6 +18,7 @@ WANTLIB=		c curses
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/deco ${PREFIX}/bin

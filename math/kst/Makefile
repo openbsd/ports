@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:06 espie Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -34,6 +34,7 @@ MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 LIB_DEPENDS+=	kdecore.>=6,kwalletclient,DCOP,kutils,kparts,kdeui,kdesu,kmdi,kio,kdefx,kdeprint,khtml,kjs::x11/kde/libs3 \

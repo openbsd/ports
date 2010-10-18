@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/27 11:08:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 20:52:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Bit-Vector-7.1
 REVISION=	0
 CATEGORIES=	math
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

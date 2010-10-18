@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/03 15:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:06 espie Exp $
 
 COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.05
@@ -17,5 +17,6 @@ MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 
 CONFIGURE_STYLE =	modbuild
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=		guess file type
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

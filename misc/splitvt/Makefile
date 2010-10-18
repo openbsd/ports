@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/16 20:58:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	run two shells in a split window/terminal
 
@@ -19,6 +19,7 @@ WANTLIB=	c termcap
 CONFIGURE_STYLE=simple
 ALL_TARGET=
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

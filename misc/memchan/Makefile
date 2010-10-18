@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/03 14:19:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:09 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
 			--prefix=${DESTDIR}${PREFIX}
 REGRESS_TARGET =	test
 SUBST_VARS =		LIBMemchan221_VERSION
+USE_GROFF =	Yes
 
 pre-configure:
 	cp  ${WRKSRC}/doc/random.man  ${WRKSRC}/doc/mchan-random.man

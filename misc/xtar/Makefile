@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	view and manipulate contents of a tar file
 
@@ -19,6 +19,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m pthread-stubs xcb
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
 USE_MOTIF=	any
+USE_GROFF =	Yes
 MAKE_FLAGS=	EXTRA_LDOPTIONS=-L${WRKBUILD}/common
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/11 22:19:36 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:10 espie Exp $
 
 COMMENT=	colorize specific patters in input
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spc ${PREFIX}/bin/spc

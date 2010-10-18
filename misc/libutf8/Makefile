@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/07/04 09:24:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:09 espie Exp $
 
 COMMENT=	provides UTF-8 locale support
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
