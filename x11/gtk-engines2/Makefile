@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 13:53:09 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,8 +33,6 @@ RUN_DEPENDS=	:hicolor-icon-theme-*:x11/hicolor-icon-theme
 
 MODULES=		devel/gettext \
 			x11/gnome
-
-USE_X11=		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \

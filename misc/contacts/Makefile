@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:15:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 13:48:03 jasper Exp $
 
 COMMENT=		lightweight addressbook
 
@@ -31,7 +31,6 @@ MODULES=		devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 MODGCONF2_SCHEMAS_DIR=	contacts

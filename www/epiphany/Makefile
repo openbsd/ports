@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/11 08:19:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/18 13:41:15 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -57,7 +57,6 @@ MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES= 	Yes

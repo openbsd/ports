@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/01 13:49:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 13:51:01 jasper Exp $
 
 COMMENT=		high-performance 2D graphics library
 
@@ -22,6 +22,7 @@ WANTLIB=		m
 
 MODULES=		x11/gnome
 
+USE_X11=		No
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/14 14:31:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 13:51:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -88,7 +88,6 @@ LIB_DEPENDS-nautilus= evdocument::${BASE_PKGPATH} \
 		::x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES= 	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=  evince

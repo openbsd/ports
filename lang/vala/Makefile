@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/23 14:15:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 13:51:01 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -30,6 +30,8 @@ RUN_DEPENDS=		::textproc/libxslt \
 			::textproc/p5-XML-LibXML
 LIB_DEPENDS=		::devel/glib2
 REGRESS_DEPENDS=	::shells/bash	
+
+USE_X11=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

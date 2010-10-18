@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 13:53:09 jasper Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -43,7 +43,6 @@ LIB_DEPENDS=	::devel/atk2mm \
 SEPARATE_BUILD=	concurrent
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

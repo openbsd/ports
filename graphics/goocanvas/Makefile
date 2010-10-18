@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 13:51:01 jasper Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -27,8 +27,6 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
-
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

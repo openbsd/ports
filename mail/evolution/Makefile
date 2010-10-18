@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2010/10/11 08:15:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2010/10/18 13:48:51 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -108,7 +108,6 @@ LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 # needed for the audio-inline plugin
 RUN_DEPENDS-plugins=	::multimedia/gstreamer-0.10/plugins-good
 
-USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution

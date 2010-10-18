@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/26 16:59:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 13:41:15 jasper Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
@@ -24,6 +24,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		::devel/glib2 \
 			::textproc/libxml
 
+USE_X11=		No
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

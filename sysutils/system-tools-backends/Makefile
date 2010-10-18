@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 13:44:12 jasper Exp $
 
 COMMENT=	cross-platform configuration modules
 
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 MODULES=	devel/gettext \
 		x11/gnome
 
+USE_X11=	No
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \

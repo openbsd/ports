@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 13:53:09 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -48,8 +48,6 @@ LIB_DEPENDS=		::security/gnutls \
 LIB_DEPENDS-plugin=	${LIB_DEPENDS} \
 			::${BASE_PKGPATH}
 WANTLIB-plugin=		${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
-
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

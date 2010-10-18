@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 13:45:24 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -63,7 +63,6 @@ LIB_DEPENDS =	goffice-0.8::devel/goffice \
 		gtkhtml-3.14::www/gtkhtml3 \
 		gnomeui-2.>=2400::x11/gnome/libgnomeui
 
-USE_X11 =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

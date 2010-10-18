@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 13:41:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,8 +42,6 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/iso-codes \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
-
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}

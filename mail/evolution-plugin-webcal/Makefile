@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:15:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 13:48:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,7 +40,6 @@ RUN_DEPENDS=		::mail/evolution
 LIB_DEPENDS=		ecal-1.2,edataserver-1.2::databases/evolution-data-server \
 			soup-2.4::devel/libsoup
 
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-webcal
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:18:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 13:44:30 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,6 @@ LIB_DEPENDS=	::x11/gnome/gdl \
 		::x11/gnome/libgda \
 		::devel/libunique
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes
 

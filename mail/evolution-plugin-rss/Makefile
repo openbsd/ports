@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/01 13:42:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 13:48:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,8 +43,6 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:evolution->=2.32.0:mail/evolution
 LIB_DEPENDS=		::devel/libsoup,-gnome
-
-USE_X11=		Yes
 
 MODGCONF2_LIBDEP=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss

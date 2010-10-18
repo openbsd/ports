@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/18 13:53:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,6 @@ RUN_DEPENDS=	:py-cairo->=1.2:graphics/py-cairo \
 
 USE_GMAKE=	No
 
-USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 

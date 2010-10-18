@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2010/10/18 13:51:01 jasper Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-USE_X11=	Yes
 DESKTOP_FILES=	Yes
 
 CONFIGURE_STYLE=gnu

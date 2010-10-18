@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.34 2010/10/11 08:14:42 jasper Exp $
+#$OpenBSD: Makefile,v 1.35 2010/10/18 13:51:01 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -44,7 +44,6 @@ RUN_DEPENDS=	::misc/shared-mime-info
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=gnu

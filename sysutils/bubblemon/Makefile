@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 13:44:12 jasper Exp $
 
 COMMENT=		GNOME panel applet that displays CPU and memory load
 
@@ -32,7 +32,6 @@ WANTLIB += xcb xml2 z
 LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
 			gtop-2.0.>=3.0::devel/libgtop2
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE= 	gnu

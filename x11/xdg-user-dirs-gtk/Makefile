@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 13:53:09 jasper Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
@@ -29,8 +29,6 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/xdg-user-dirs
 LIB_DEPENDS=	::x11/gtk+2
-
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
