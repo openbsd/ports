@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:23:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 16:47:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config.in

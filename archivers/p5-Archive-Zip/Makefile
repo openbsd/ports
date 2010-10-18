@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/15 18:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	perl interface to ZIP files
 
@@ -17,5 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 REGRESS_DEPENDS=:zip-*:archivers/zip \
  		::devel/p5-Test-Pod
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

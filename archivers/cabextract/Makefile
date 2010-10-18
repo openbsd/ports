@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/31 00:30:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=		extracts files from Microsoft CAB archives
 
@@ -20,5 +20,6 @@ WANTLIB=		c
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

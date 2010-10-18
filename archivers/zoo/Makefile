@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	handle the old .ZOO archive format
 
@@ -17,6 +17,7 @@ REVISION =	1
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" OPTIM="${CFLAGS}"
+USE_GROFF =	Yes
 
 MAKE_FILE=	makefile
 

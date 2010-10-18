@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/11 15:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= --program-prefix="g" --disable-uucode --disable-nls
+USE_GROFF =	Yes
 
 post-patch:
 	@touch ${WRKSRC}/po/sharutils.pot

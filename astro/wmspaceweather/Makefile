@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=		wm-dockapp; space weather monitor
 
@@ -21,6 +21,7 @@ MASTER_SITES=		http://distfiles.nl/
 
 MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmSpaceWeather

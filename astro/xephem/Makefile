@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -16,6 +16,7 @@ REVISION =	3
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m
 
 USE_MOTIF=	any
+USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 
 do-configure:

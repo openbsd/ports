@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/12 16:49:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -24,6 +24,7 @@ MASTER_SITES=	http://distfiles.nl/ \
 
 USE_LIBTOOL=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 

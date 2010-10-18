@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/02 05:20:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	unique standard tape archiver
 
@@ -18,6 +18,7 @@ FLAVORS=	static
 FLAVOR?=
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=	CCOM="${CC}" COPTOPT="${CFLAGS}" \
 		CPPOPTX="-DDEFTAPE=\\\"/dev/rst0\\\" \
 			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\"" \

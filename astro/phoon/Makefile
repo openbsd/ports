@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 10:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=		displays the phase of the moon in ascii
 
@@ -23,6 +23,7 @@ MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DOS_BSD" LDFLAGS=""
 
 WRKDIST=		${WRKDIR}/phoon
 NO_REGRESS=		Yes
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/phoon ${PREFIX}/bin

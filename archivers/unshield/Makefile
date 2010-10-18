@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/14 10:27:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=		extract files from InstallShield CAB archives
 
@@ -20,6 +20,7 @@ WANTLIB=		c z
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synce/}
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu

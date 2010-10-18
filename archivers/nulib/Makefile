@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	NuFX archiver
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}"
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/nulib
 

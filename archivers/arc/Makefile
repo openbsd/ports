@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/11 15:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	create & extract files from DOS .ARC files
 
@@ -21,6 +21,7 @@ REVISION =	1
 WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" TMCLOCK=""
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/arc ${WRKBUILD}/marc ${PREFIX}/bin

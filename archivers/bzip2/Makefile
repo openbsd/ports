@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/09/20 18:21:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
@@ -27,6 +27,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \
 REGRESS_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}" LIBbz2_VERSION=${LIBbz2_VERSION}
 
 REGRESS_TARGET=	test
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bzip2

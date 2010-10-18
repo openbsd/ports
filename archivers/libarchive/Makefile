@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/13 17:10:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--without-xml2		# expat suffices
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
+USE_GROFF =	Yes
 
 # Regression tests:
 # libarchive/test_entry fails due to lacking locale/widechar support

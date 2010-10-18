@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/11/20 13:35:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 16:47:00 espie Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 COMMENT=	fast file compressor similar to gzip
@@ -21,5 +21,6 @@ WANTLIB=	c
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
+		USE_GROFF =	Yes
 
 .include <bsd.port.mk>

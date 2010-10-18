@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/04/25 10:36:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
@@ -21,6 +21,7 @@ WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)'
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
+USE_GROFF =	Yes
 
 # Workaround compiler bug on hppa which causes crashes
 .if ${MACHINE_ARCH} == "hppa"

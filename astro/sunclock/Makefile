@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 16:47:00 espie Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -21,6 +21,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 FAKE=			lib
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 NO_REGRESS=		Yes
 

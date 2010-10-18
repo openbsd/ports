@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
@@ -18,6 +18,7 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m
 CONFIGURE_STYLE= imake
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

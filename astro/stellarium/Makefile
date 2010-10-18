@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	free open source planetarium
 
@@ -36,6 +36,7 @@ RUN_DEPENDS=	::net/curl \
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
+USE_GROFF =	Yes
 PORTHOME=	${WRKDIR}
 
 NO_REGRESS=	Yes

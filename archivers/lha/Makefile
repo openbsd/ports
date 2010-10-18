@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/16 11:14:46 simon Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
@@ -20,6 +20,7 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=lha/22231/}
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/ja_JP.EUC/man1

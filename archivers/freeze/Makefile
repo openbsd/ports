@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/26 08:48:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
@@ -19,6 +19,7 @@ WANTLIB=	c
 CONFIGURE_STYLE= gnu dest
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I."
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

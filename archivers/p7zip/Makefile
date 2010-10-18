@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/20 15:54:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 16:47:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,6 +36,7 @@ RUN_DEPENDS-rar=::archivers/p7zip,-main
 WRKDIST=	${WRKDIR}/p7zip_${V}
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FILE=	makefile
 MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
 		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"

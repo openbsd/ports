@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/18 08:32:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	Differential GPS over IP communication device
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/05 16:58:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	GNU copy-in/out (cpio)
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix="g" \
 		--disable-silent-rules \
 		--with-rmt=/etc/rmt
+		USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>

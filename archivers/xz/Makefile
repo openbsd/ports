@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/19 12:04:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
@@ -24,6 +24,7 @@ MODGCC3_ARCHES=	sparc
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

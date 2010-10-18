@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 16:47:00 espie Exp $
 
 COMMENT=		wm-dockapp; displays the earth on an icon
 
@@ -29,5 +29,6 @@ LIB_DEPENDS=		::graphics/jpeg \
 MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
 NO_REGRESS=		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
