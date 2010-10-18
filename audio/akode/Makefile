@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 21:15:57 landry Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS +=	akode                2.1      # .2.0
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=	::audio/flac \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+#XX libtoolize
+USE_LIBTOOL=	gnu
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
