@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	picture viewer for X, with thumbnail-based file selector
 DISTNAME=	xzgv-0.9
@@ -27,6 +27,7 @@ WANTLIB+=	freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
 WANTLIB+=	pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs xcb z
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/08/31 08:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		simple paint program
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
 CONFIGURE_STYLE= 	imake
 ALL_TARGET=		xaw
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/06/28 20:48:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	IJG's JPEG compression utilities
 
@@ -21,6 +21,7 @@ WANTLIB=	c
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-silent-rules
 # Symbol versioning triggers weird linking problems in dependent ports.

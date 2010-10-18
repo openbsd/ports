@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		transforming bitmaps into vector graphics
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=potrace/}
 WANTLIB=		c m z
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 REGRESS_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 

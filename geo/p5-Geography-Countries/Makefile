@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/20 13:56:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:12 espie Exp $
 
 COMMENT =		2-letter, 3-letter, and numerical codes for countries
 
@@ -12,5 +12,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 18:13:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,5 +38,6 @@ CONFIGURE_ARGS=	--disable jpeg,tiff,png,gif,ungif,T1-fonts,TT-fonts,freetype2,w3
 .endif
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	play mpeg movies on X11
 
@@ -18,6 +18,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 WRKDIST=	${WRKDIR}/mpeg_play
 CONFIGURE_STYLE=	imake
+USE_GROFF =	Yes
 
 pre-patch:
 	cp ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile

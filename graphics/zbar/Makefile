@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.5 2010/10/11 08:14:43 jasper Exp $
+#	$OpenBSD: Makefile,v 1.6 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
@@ -40,6 +40,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/py-gtk2
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-video --without-qt

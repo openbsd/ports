@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/31 14:12:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=		::devel/boehm-gc \
 			::math/fftw3
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \

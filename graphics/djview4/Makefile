@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/19 16:03:34 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -31,6 +31,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
 CONFIGURE_ENV+= QTDIR="${MODQT4_QTDIR}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -32,6 +32,7 @@ MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

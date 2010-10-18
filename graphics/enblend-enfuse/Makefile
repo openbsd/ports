@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/15 14:27:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:13 espie Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -46,6 +46,7 @@ LIB_DEPENDS =	::devel/boost \
 CONFIGURE_STYLE = gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 USE_GMAKE = Yes
+USE_GROFF =	Yes
 
 CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
 		-I${LOCALBASE}/include \

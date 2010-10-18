@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:13 espie Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -49,6 +49,7 @@ LIB_DEPENDS =   gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
 USE_X11 =	Yes
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \

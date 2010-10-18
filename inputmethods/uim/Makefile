@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/11 08:15:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 18:13:15 espie Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -48,6 +48,7 @@ MODULES=	converters/libiconv \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 AUTOCONF_VERSION=	2.62
 SUBST_VARS=	MODQT_PLUGINS
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/11/19 08:51:27 stephan Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:14 espie Exp $
 
 COMMENT =	module for 3D graph plotting
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 RUN_DEPENDS=	:p5-GD-Graph->=1.30:graphics/p5-GD-Graph
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 pre-patch:
 	@perl -pi -e 's/\r//' ${WRKSRC}/lib/GD/Graph3d.pm

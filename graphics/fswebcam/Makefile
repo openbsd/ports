@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/09 12:11:53 mglocker Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--disable-v4l1
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

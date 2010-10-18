@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/12 15:23:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:13 espie Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
@@ -27,6 +27,7 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-netpbm=${PREFIX}
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 FAKE_FLAGS+=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
 MULTI_PACKAGES=	-main -gui

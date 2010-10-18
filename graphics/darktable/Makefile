@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
@@ -52,6 +52,7 @@ LIB_DEPENDS=	::databases/sqlite3 \
 SEPARATE_BUILD=	simple
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 # make works for most things, except intltool.m4's .schemas rule
 USE_GMAKE=	Yes
 

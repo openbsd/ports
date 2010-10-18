@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=			3D image rendering package
 
@@ -19,6 +19,7 @@ MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1
 
 DISTFILES=			povuni_s.tgz povuni_d.tgz
 DIST_SUBDIR=			${DISTNAME}
+USE_GROFF =	Yes
 
 LIB_DEPENDS=			png.>=2.::graphics/png
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/07 10:23:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:12 espie Exp $
 
 COMMENT=	offline maps viewer
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 		::graphics/py-Imaging 
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

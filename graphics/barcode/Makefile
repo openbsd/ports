@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/22 09:39:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	convert text strings to printed bars
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=barcode/}
 
 CONFIGURE_STYLE= gnu dest
 
+USE_GROFF =	Yes
 NO_REGRESS=Yes
 
 .include <bsd.port.mk>

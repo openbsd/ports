@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/05 11:45:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:13:14 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -45,6 +45,7 @@ WANTLIB-cal =	${WANTLIB} kabc kresources vcard
 
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

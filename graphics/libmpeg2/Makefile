@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/26 13:40:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	free MPEG-2 video stream decoder
 
@@ -20,6 +20,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xv c pthread-stubs xcb
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -5,7 +5,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.21 2010/07/25 05:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 18:13:15 espie Exp $
 #
 
 COMMENT=	less + zcat + ISO-2022 - a pager similar to more and pg
@@ -37,5 +37,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu dest
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

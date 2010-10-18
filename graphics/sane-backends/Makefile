@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/27 14:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -37,6 +37,7 @@ MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

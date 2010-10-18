@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/25 17:15:25 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:13:13 espie Exp $
 
 HOMEPAGE=	http://www.exiv2.org/
 COMMENT=	manipulate image meta-data such as exif and ipct
@@ -11,6 +11,7 @@ WANTLIB += 	c m stdc++ z expat pthread
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext

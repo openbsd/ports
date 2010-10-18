@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/05/08 06:52:40 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	module to determine the size of images in several formats
 
@@ -19,5 +19,6 @@ REGRESS_DEPENDS=	::devel/p5-Test-Pod \
 			::devel/p5-Test-Pod-Coverage
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

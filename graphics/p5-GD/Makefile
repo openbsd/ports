@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 18:13:14 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,6 +21,7 @@ LIB_DEPENDS =	gd.>=20.28::graphics/gd
 MODULES =	converters/libiconv
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 MODULES +=	cpan
 

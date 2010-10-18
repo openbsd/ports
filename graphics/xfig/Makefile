@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	CAD drawing program for X11
 
@@ -40,6 +40,7 @@ WRKDIST=	${WRKDIR}/xfig.${VERSION}
 NO_REGRESS=	Yes
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-extract:
 	chmod -R a+rX,go-w ${WRKSRC}/Libraries ${WRKSRC}/Doc

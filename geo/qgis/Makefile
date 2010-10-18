@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/07 10:23:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:12 espie Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -54,6 +54,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		gdal geos_c gsl gslcblas pq
 
 CONFIGURE_ENV+=	VERBOSE=1
+USE_GROFF =	Yes
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
 

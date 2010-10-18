@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:15 espie Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
@@ -34,6 +34,7 @@ LIB_DEPENDS =	::inputmethods/anthy \
 
 USE_X11 =	Yes
 USE_LIBTOOL =	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

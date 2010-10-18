@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/15 13:58:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:12 espie Exp $
 
 COMMENT=	calculate geographic distance from a lat/lon pair
 MODULES=	cpan
 DISTNAME=	Geo-Inverse-0.05
 CATEGORIES=	geo
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM= Yes

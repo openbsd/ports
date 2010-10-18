@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2010/09/25 20:51:41 steven Exp $
+# $OpenBSD: Makefile,v 1.108 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=		image processing tools
 
@@ -42,6 +42,7 @@ BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
 
 # using libltdl stuff
 USE_LIBTOOL=		gnu
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \

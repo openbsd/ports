@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/06 10:30:20 eric Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:12 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,6 +34,7 @@ CONFIGURE_ENV=	PGXS=1 \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgresql/contrib \
 		--libdir=${PREFIX}/lib/postgresql
+		USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/postgis/utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/25 05:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	japanese groff
 
@@ -25,6 +25,7 @@ WANTLIB=		c stdc++ m
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	gnu old dest
+USE_GROFF =	Yes
 
 #post-configure:
 #	@cd ${WRKSRC}/xditview && ${SETENV} ${MAKE_ENV} ${XMKMF}

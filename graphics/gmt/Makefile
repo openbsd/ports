@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/30 16:48:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 18:13:13 espie Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -51,6 +51,7 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/gmt/share \
 			--enable-mansect=1 \
 			--enable-netcdf=${LOCALBASE}
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		gmt

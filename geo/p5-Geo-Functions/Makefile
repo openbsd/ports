@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/06 17:00:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:12 espie Exp $
 
 COMMENT=	perl module for geographic functions
 MODULES=	cpan
 DISTNAME=	Geo-Functions-0.07
 CATEGORIES=	geo
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes

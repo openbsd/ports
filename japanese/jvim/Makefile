@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/25 05:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 18:13:15 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	Japanized Vim
@@ -25,6 +25,7 @@ WANTLIB=		c termcap
 FLAVORS=	wnn canna
 FLAVOR?=
 
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mwnn}
 CHOICE=wnn4

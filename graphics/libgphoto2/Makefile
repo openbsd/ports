@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/11/09 08:04:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	digital camera library
 CATEGORIES=	graphics devel
@@ -26,6 +26,7 @@ WANTLIB=		c m
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

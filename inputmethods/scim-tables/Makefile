@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:15:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,6 +36,7 @@ LIB_DEPENDS=	::x11/gtk+2 \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu

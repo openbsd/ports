@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -40,6 +40,7 @@ MODULES=	devel/gettext
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"

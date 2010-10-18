@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=		color ascii art library
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		::misc/zzuf
 REGRESS_DEPENDS=	::devel/cppunit
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

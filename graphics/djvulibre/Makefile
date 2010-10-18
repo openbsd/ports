@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/19 16:03:34 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -34,6 +34,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE} \

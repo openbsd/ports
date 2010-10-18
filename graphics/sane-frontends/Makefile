@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	API for accessing scanners, frontends
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

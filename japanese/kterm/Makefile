@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/25 05:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	Japanese-capable xterm
 
@@ -26,6 +26,7 @@ PATCH_DIST_STRIP=	-p1
 USE_X11=	Yes
 CONFIGURE_STYLE=imake
 MAKE_FLAGS=	CDEBUGFLAGS=-O2
+USE_GROFF =	Yes
 
 FLAVORS=xaw3d tek
 FLAVOR?=

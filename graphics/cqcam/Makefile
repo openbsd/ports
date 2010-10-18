@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/03/23 19:42:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:13 espie Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -19,6 +19,7 @@ HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
 MASTER_SITES=	${HOMEPAGE}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 CONFIGURE_STYLE= gnu dest

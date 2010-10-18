@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/17 08:29:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:14 espie Exp $
 
 COMMENT =	language for typesetting graphs
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP = Yes
 MASTER_SITES =		${HOMEPAGE}
 WANTLIB =		c m stdc++
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

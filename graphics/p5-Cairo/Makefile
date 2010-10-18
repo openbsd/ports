@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ DISTNAME=	Cairo-1.061
 REVISION=	2
 CATEGORIES=	graphics devel
 CPAN_AUTHOR=	TSCH
+USE_GROFF =	Yes
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

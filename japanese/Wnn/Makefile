@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.57 2010/07/25 05:58:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/10/18 18:13:15 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -88,6 +88,7 @@ BUILD_DEPENDS =	:ja-groff-*:japanese/groff
 # this is not needed before package build time.
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz

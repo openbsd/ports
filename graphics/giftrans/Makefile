@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	handle GIF89a transparent option and interlace mode
 
@@ -16,6 +16,7 @@ WANTLIB=		c
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-configure:

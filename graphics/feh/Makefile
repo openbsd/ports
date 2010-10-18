@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/15 12:52:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -34,6 +34,7 @@ FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

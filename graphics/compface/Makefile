@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	programs and library for the 'X-face' mail and news header
 
@@ -18,6 +18,7 @@ MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>
 
 CONFIGURE_STYLE=gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

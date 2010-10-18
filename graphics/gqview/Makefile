@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	Gtk-based graphic file viewer
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		lcms::graphics/lcms
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

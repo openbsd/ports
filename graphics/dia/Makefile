@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/10/18 13:51:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-cairo \
 		--enable-db2html=no \
 		--with-hardbooks=no
+		USE_GROFF =	Yes
 
 FLAVORS=	gnome
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/27 21:20:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -23,6 +23,7 @@ MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		xml2.>=11::textproc/libxml \
 			cdio,iso9660::audio/libcdio \

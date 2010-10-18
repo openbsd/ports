@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	image viewer for X
 
@@ -22,6 +22,7 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/
 LIB_DEPENDS=	SDL_image::devel/sdl-image
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=	concurrent
 AUTOCONF_VERSION=2.13

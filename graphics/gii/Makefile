@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 18:13:13 espie Exp $
 # Uses pthreads
 
 COMMENT=	General Input Library (used by libggi)
@@ -24,6 +24,7 @@ EXTRACT_SUFX=	.src.tar.bz2
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CFLAGS+=	-pthread
 SEPARATE_BUILD= concurrent

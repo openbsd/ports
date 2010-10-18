@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/28 18:39:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/18 18:13:15 espie Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -61,6 +61,7 @@ MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBcanna16_VERSION=$(LIBcanna16_VERSION) \
 		COPTS="${COPTS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

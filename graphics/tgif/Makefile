@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/12/19 22:35:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 18:13:15 espie Exp $
 
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
@@ -27,6 +27,7 @@ RUN_DEPENDS =	::graphics/netpbm
 CONFIGURE_STYLE = imake
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS =	MODULE_CFLAGS="${CFLAGS}"
 

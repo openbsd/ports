@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		commandline screen capture util
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=            giblib.>=1::devel/giblib \
 			Imlib2.>=1::graphics/imlib2
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

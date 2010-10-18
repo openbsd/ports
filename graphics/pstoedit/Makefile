@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/22 19:44:07 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	::print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 		--without-libplot	\

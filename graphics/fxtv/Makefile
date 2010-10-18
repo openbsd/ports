@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/07/02 17:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/18 18:13:13 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -35,6 +35,7 @@ WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xxf86dga Xxf86vm c m \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" \

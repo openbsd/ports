@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 18:13:14 espie Exp $
 # $FreeBSD: ports/graphics/mpeg_encode/Makefile,v 1.11 2000/10/28 13:05:25 lioux Exp $
 
 COMMENT=	UCB's MPEG-I video stream encoder
@@ -19,6 +19,7 @@ MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/
 LIB_DEPENDS=    jpeg.>=62::graphics/jpeg
 
 WRKDIST=	${WRKDIR}/mpeg_encode
+USE_GROFF =	Yes
 
 REGRESS_TARGET=	test_all
 

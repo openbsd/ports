@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/18 18:13:13 espie Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
@@ -38,6 +38,7 @@ CONFIGURE_ARGS +=	--without-included-sqlite3
 LIB_DEPENDS +=		sqlite3:sqlite3->=3.5.9:databases/sqlite3
 
 USE_GMAKE ?=		Yes
+USE_GROFF =	Yes
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 MAKE_ENV =		${CONFIGURE_ENV}

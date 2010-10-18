@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2008/10/08 12:54:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	perl module for getting image information
 
 MODULES=	cpan
 DISTNAME=	Image-Info-1.28
 CATEGORIES=	graphics
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

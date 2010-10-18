@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/30 07:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	graphic library for GTK+2
 
@@ -35,6 +35,7 @@ MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

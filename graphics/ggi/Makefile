@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/04/29 19:50:14 matthieu Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 18:13:13 espie Exp $
 # Uses pthreads
 
 COMMENT=	Generic Graphics Library
@@ -27,6 +27,7 @@ LIB_DEPENDS=	gii.>=0.9,gg:libgii->=0.9:graphics/gii
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CFLAGS+=	-pthread
 CONFIGURE_STYLE= gnu

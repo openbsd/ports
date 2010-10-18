@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	dump frames from mpeg-1 movies
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}
 LIB_DEPENDS=	smpeg.>=1.3:smpeg-*:devel/smpeg
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

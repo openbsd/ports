@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/01 22:22:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:12 espie Exp $
 
 COMMENT=	process aviation weather reports in the METAR format
 MODULES=	cpan
 DISTNAME=	Geo-METAR-1.15
 CATEGORIES=	geo
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		wm-dockapp; WWW image monitor
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick \
 
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmGrabImage

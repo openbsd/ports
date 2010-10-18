@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/06/29 22:40:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	lossless image compression library
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/libjbig"
 MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall" \
 		VERSION="${LIBjbig_VERSION}"

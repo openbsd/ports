@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/04 00:12:42 william Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	OCR program for pnm files
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
 
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/doc/ocrad.1 ${PREFIX}/man/man1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/07/11 07:36:16 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	::graphics/jpeg \
 WANTLIB= X11 Xau Xdmcp c jasper.>=2 jpeg.>=62 m png.>=5 tiff.>=38 z
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
 
 DESTDIRNAME=	none

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=		PNG to ASCII compiler and decompiler
 
@@ -20,6 +20,7 @@ WANTLIB=		m c z
 LIB_DEPENDS=		png::graphics/png
 USE_X11=		yes
 USE_GMAKE=		yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-png-inc=${LOCALBASE}/include/libpng \

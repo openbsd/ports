@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	display kanji files in large letters
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 
 ALL_TARGET=	kbanner
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

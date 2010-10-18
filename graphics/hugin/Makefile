@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/06/10 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
 
 VMEM_WARNING =		Yes
 
@@ -49,6 +49,7 @@ LIB_DEPENDS =		boost_thread-mt::devel/boost \
 			wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_xrc::x11/wxWidgets
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 MODULES +=		devel/cmake
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	cmake

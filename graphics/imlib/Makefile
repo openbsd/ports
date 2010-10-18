@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/18 18:13:14 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
@@ -31,6 +31,7 @@ VMEM_WARNING=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

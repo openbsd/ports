@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	ascii art library
 
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 WRKDIST=	${WRKDIR}/aalib-1.4.0
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 FLAVORS=	no_x11

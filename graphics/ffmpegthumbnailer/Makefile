@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	avcodec.>=14,avformat.>=13,avutil.>=7,swscale.>=2:ffmpeg->=20100512:graphics/ffmpeg \
 		png.>=6::graphics/png \

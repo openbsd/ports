@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -71,6 +71,7 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 AUTOCONF_VERSION= 2.64
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

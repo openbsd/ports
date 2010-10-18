@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/24 15:29:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 18:13:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,5 +25,6 @@ MODULES=	cpan
 CONFIGURE_STYLE=modbuild
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

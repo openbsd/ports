@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/15 13:57:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:12 espie Exp $
 
 COMMENT=	module to calculate geographic location
 MODULES=	cpan
 DISTNAME=	Geo-Forward-0.11
 CATEGORIES=	geo
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes

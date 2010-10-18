@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/11/19 08:13:16 stephan Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
 
 COMMENT =	module for graph plotting
 
@@ -22,5 +22,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

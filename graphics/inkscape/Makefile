@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -52,6 +52,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= 	gnu

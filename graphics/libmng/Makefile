@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/07/16 19:53:13 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
@@ -30,6 +30,7 @@ MAKE_FILE=	makefiles/makefile.openbsd
 
 WRKDIST=	${WRKDIR}/libmng
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:

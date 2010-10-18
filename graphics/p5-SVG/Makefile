@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/24 22:31:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	Scalable Vector Graphics (SVG) in perl
 
@@ -14,5 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

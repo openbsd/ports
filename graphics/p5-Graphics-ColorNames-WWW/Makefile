@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/04 00:02:40 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	WWW color names and equivalent RGB values
 
 MODULES=	cpan
 DISTNAME=	Graphics-ColorNames-WWW-1.00
 CATEGORIES=	graphics www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

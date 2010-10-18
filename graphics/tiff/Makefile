@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/07/21 06:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-jbig \

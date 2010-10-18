@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/23 13:27:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=		create PNG images from LaTeX expressions
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX=		.tgz
 RUN_DEPENDS=		::graphics/ImageMagick \
 			::print/texlive/base
 
+USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/24 15:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/18 18:13:15 espie Exp $
 
 COMMENT=	Kanji -> kana converter, perl interface
 
@@ -22,5 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += kakasi
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

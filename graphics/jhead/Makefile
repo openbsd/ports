@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 10:57:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:14 espie Exp $
 
 COMMENT=	Exif jpeg camera setting parser and thumbnail remover
 
@@ -22,6 +22,7 @@ NO_REGRESS=	Yes
 
 RUN_DEPENDS=	::graphics/jpeg
 
+USE_GROFF =	Yes
 MAKE_FILE=	makefile
 
 do-install:

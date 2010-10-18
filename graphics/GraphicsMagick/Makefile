@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/03/28 17:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:13 espie Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 			xml2.>=9::textproc/libxml
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
