@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 16:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/18 16:42:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
-GNOME_VERSION=	2.32.0
-REVISION=	0
+GNOME_VERSION=	2.32.1
 
 SHARED_LIBS +=	totem-plparser		3.0 # .17.0
 SHARED_LIBS +=	totem-plparser-mini	3.0 # .17.0
@@ -29,6 +28,8 @@ WANTLIB += soup-gnome-2.4 sqlite3 tasn1
 MODULES=	devel/gettext \
 		x11/gnome
 
+USE_X11=	No
+
 LIB_DEPENDS=	:gmime->=2.4,<2.6:mail/gmime24 \
 		::textproc/libxml \
 		::devel/libsoup,-gnome
@@ -37,6 +38,8 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--enable-introspection=no
+		--disable-introspection
+
+FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>
