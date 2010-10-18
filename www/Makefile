@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2010/10/12 19:59:14 kili Exp $
+# $OpenBSD: Makefile,v 1.473 2010/10/18 07:19:07 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -319,6 +319,7 @@
      SUBDIR += perlbal
      SUBDIR += php-markdown
      SUBDIR += php-openid
+     SUBDIR += php-predis
      SUBDIR += php5
      SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
