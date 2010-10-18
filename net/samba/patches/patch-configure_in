@@ -1,16 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.16 2010/07/14 07:20:18 sthen Exp $
---- configure.in.orig	Fri Jun 18 08:01:04 2010
-+++ configure.in	Wed Jul  7 22:31:10 2010
-@@ -761,7 +761,7 @@ if test x$enable_cups != xno; then
- 		ac_save_PRINT_LIBS=$PRINT_LIBS
- 		CFLAGS="$CFLAGS `$CUPS_CONFIG --cflags`"
- 		LDFLAGS="$LDFLAGS `$CUPS_CONFIG --ldflags`"
--		PRINT_LIBS="$PRINT_LIBS -lcups"
-+		PRINT_LIBS="$PRINT_LIBS `$CUPS_CONFIG --libs`"
- 		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
- 		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
- 		        x"$ac_cv_header_cups_language_h" = xyes; then
-@@ -1559,8 +1559,7 @@ DSO_EXPORTS=""
+$OpenBSD: patch-configure_in,v 1.17 2010/10/18 19:07:19 sthen Exp $
+--- configure.in.orig	Fri Oct  8 03:41:16 2010
++++ configure.in	Mon Oct 18 21:55:53 2010
+@@ -1565,8 +1565,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -20,7 +11,7 @@ $OpenBSD: patch-configure_in,v 1.16 2010/07/14 07:20:18 sthen Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -1704,38 +1703,6 @@ if test x"$BLDSHARED" = x"true" ; then
+@@ -1710,38 +1709,6 @@ if test x"$BLDSHARED" = x"true" ; then
  fi
  
  AC_MSG_RESULT($BLDSHARED)
