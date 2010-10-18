@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/18 13:52:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =		download/stream programmes from BBC iPlayer
 
@@ -30,6 +30,7 @@ RUN_DEPENDS =		::audio/id3lib \
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 PKG_ARCH =		*
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/17 22:52:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
@@ -49,6 +49,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
 		-lm -lstdc++ -pthread -liconv" \
 		ac_cv_has_nl_langinfo=no
+USE_GROFF =	Yes
 
 FLAVORS =	no_x11
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/08/22 06:58:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/18 21:25:08 espie Exp $
 
 COMMENT-main=	driver for ZjStream wire protocol compatible printers
 COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
@@ -41,6 +41,7 @@ LIB_DEPENDS-cups=::print/cups
 
 MAKE_FLAGS+=	CUPS_SERVERBIN=`cups-config --serverbin`
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-patch:

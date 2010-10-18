@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/26 16:34:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	interface to palm pdb databases
 
@@ -20,5 +20,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/p5-Palm-1.003_000
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

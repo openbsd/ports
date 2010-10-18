@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/26 16:06:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =		multimedia framework
 
@@ -22,6 +22,7 @@ WANTLIB += gthread-2.0
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
 MODULES =		devel/gettext
+USE_GROFF =	Yes
 
 BUILD_DEPENDS =		::devel/flex
 LIB_DEPENDS =		::textproc/libxml \

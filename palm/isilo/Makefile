@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 19:00:54 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:08 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -23,6 +23,7 @@ MASTER_SITES=	ftp://ftp.iSilo.com/pub/
 
 WRKDIST=        ${WRKDIR}
 NO_BUILD=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:

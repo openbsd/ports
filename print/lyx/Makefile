@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -34,6 +34,7 @@ SEPARATE_BUILD=	concurrent
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=		gnu
 

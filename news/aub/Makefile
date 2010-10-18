@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	assemble usenet binaries
 
@@ -20,6 +20,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin

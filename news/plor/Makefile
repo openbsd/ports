@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	alpha-release readers for reading SOUP and QWK packets
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://linux.psy.unipd.it/pub/pluto/developers/utils/
 CONFIGURE_STYLE=	gnu dest
 
 DOCFILES=	plor.html plor-1.html plor-2.html plor.txt
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/plor

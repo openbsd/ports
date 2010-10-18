@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		converts .dvi files to plain text
 
@@ -15,6 +15,7 @@ WANTLIB=		c
 MASTER_SITES=		http://www.mesa.nl/pub/dvi2tty/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

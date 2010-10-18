@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 21:25:08 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -60,6 +60,7 @@ CONFIGURE_ARGS=		--without-freetype-src \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

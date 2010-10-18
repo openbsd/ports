@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 21:25:09 espie Exp $
 
 COMMENT =	labels and businesss card designer
 
@@ -52,5 +52,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-update-desktopdb \
 			--disable-update-mimedb
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

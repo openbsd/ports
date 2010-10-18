@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/26 20:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	GUI for manipulating BibTeX bibliography databases
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=biblio/bibtex/utils/bibview-2.0/}
 CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/bibview-2.2
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

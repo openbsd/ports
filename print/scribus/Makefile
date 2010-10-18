@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 21:25:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,6 +47,7 @@ LIB_DEPENDS=	jpeg::graphics/jpeg \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=autoconf gnu
 AUTOCONF_VERSION=2.60

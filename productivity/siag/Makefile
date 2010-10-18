@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		tightly integrated, free office package
 
@@ -20,6 +20,7 @@ WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c m ncurses pthread-stubs \
 MASTER_SITES=		http://siag.nu/pub/siag/
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		Mowitz.>=3::x11/mowitz \
 			neXtaw.>=13::x11/neXtaw

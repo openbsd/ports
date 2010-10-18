@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/29 09:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	library for handling paper characteristics
 
@@ -25,6 +25,7 @@ WANTLIB=	c
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/31 10:11:11 laurent Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
@@ -28,6 +28,7 @@ EXTRACT_SUFX =		.tgz
 
 ALL_TARGET =		vitunes
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/08 14:57:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses readline stdc++ 
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 EXAMPLES=		doc/scripts.* doc/todorc.example contrib/*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/18 21:25:07 espie Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -70,5 +70,6 @@ CONFIGURE_ARGS +=	--disable-libvisual \
 			--disable-gnome_vfs \
 			--enable-orc
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

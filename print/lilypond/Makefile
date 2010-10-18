@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 21:25:09 espie Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -51,6 +51,7 @@ CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 MAKE_FILE=		GNUmakefile
 
 # Stupid fontforge writes autosave data to ~/.PfaEdit, even in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:09 espie Exp $
 
 COMMENT =		stylish PDF presentation generator
 
@@ -23,6 +23,7 @@ PY_FLAVOR =		python${MODPY_VERSION}
 # Set NO_BUILD to prevent python.port.mk from adding Python to
 # BUILD_DEPENDS.
 NO_BUILD =		Yes
+USE_GROFF =	Yes
 RUN_DEPENDS =		::graphics/py-opengl \
 			::devel/pygame \
 			:py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR} \

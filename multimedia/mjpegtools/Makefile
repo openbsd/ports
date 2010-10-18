@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -46,6 +46,7 @@ LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x \

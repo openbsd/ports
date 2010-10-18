@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/05/26 13:53:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
@@ -22,6 +22,7 @@ FLAVOR?=	a4
 
 ALL_TARGET=	default
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} $${DEFS}' PREFIX='${PREFIX}'
+USE_GROFF =	Yes
 
 .if   ${FLAVOR:L} == "letter"
 MAKE_FLAGS+=	PAGESIZE=Letter

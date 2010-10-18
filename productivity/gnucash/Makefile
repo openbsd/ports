@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 13:45:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 21:25:09 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -70,6 +70,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-ofx
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 # Steps to build the docs.
 DOC_DIR=		${WRKDIR}/gnucash-docs-${DOC_VERSION}

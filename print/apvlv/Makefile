@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
@@ -29,5 +29,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	--without-djvu
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/apvlv
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/15 07:29:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
@@ -22,6 +22,7 @@ WANTLIB=	c m ncurses pthread
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/calcurse

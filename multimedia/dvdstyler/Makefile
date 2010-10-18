@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=		DVD authoring application
 
@@ -58,6 +58,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 # FIXME: locale/Makefile uses gmake constructs
 USE_GMAKE=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

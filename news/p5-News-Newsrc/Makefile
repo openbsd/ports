@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/09 16:06:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	module for managing newsrc files
 
 MODULES=	cpan
 DISTNAME=	News-Newsrc-1.09
 CATEGORIES=	news
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

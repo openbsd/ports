@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/28 23:03:09 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:09 espie Exp $
 
 PKG_ARCH=	*
 
@@ -26,6 +26,7 @@ WRKDIST=	${WRKDIR}/pdfjam
 
 RUN_DEPENDS=	::print/texlive/base
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

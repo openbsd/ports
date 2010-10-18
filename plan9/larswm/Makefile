@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/24 15:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
@@ -21,6 +21,7 @@ WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCS=   ChangeLog README README.9wm

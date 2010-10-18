@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/22 06:56:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -52,6 +52,7 @@ CONFIGURE_ARGS=		--enable-file-converter-check=no
 MAKE_ENV=		${CONFIGURE_ENV}
 
 FAKE_FLAGS=		ETCDIR="${PREFIX}/share/examples/foomatic"
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure.ac \

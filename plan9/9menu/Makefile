@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/24 15:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	simple menu patterned after plan9
 
@@ -21,6 +21,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 MAKE_FILE=	Makefile.noimake
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 ALL_TARGET=	9menu
 

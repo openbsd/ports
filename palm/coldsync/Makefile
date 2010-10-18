@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/24 17:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		tool for synchronizing PalmOS devices
 
@@ -20,6 +20,7 @@ WANTLIB=		c stdc++ m
 MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-usb --without-libusb
+USE_GROFF =	Yes
 
 # DESTDIR bugs the fake process, so make sure it does not get set
 DESTDIRNAME=		none

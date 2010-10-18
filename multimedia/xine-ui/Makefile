@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/18 20:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=	multimedia player
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=	xine.>=14::multimedia/xine-lib \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
 AUTOCONF_VERSION= 2.64

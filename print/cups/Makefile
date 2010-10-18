@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/10/12 12:53:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -72,6 +72,7 @@ AUTOCONF_VERSION= 2.62
 AUTOMAKE_VERSION= 1.9
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

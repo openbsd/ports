@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=	reencode many media file formats to Ogg Theora
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	avcodec.>=13.1,avdevice.>=3.0,avformat.>=12,avutil.>=6,postproc.>=1
 MODULES=	devel/scons
 
 MODSCONS_FLAGS=	libkate=0
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin

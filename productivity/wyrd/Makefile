@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/12 15:49:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -26,6 +26,7 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::misc/remind
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-install:

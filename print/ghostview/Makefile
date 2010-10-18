@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/26 20:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	X11 front-end for ghostscript
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=    :ghostscript-*:print/ghostscript/gnu
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

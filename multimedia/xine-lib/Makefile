@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/10/15 14:13:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.68 2010/10/18 21:25:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -60,6 +60,7 @@ PKG_ARGS+=	-Di386=0
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 # Should be 2.65

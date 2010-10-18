@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	to-do list manager
 
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= simple
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/03 09:20:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		raster image transmission library
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/download/
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static

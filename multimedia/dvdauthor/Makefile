@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/20 18:18:35 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=		creates DVD file structures
 DISTNAME=		dvdauthor-0.6.14
@@ -23,6 +23,7 @@ WANTLIB=		c freetype iconv m png z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \

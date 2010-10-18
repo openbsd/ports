@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/22 15:41:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -34,6 +34,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/gnome/py-gnome
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS=-I${LOCALBASE}/include \

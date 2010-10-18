@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/30 19:42:14 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 21:25:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -58,6 +58,7 @@ SEPARATE_BUILD=	concurrent
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf automake
 AUTOCONF_VERSION= 2.61

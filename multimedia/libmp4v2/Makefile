@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/15 21:46:28 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -24,6 +24,7 @@ MASTER_SITES =		${HOMEPAGE}/dist/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 

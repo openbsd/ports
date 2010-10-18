@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:25:09 espie Exp $
 
 COMMENT-main= 	object oriented type setting language
 COMMENT-doc=	Lout user and expert documentation
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
 INSTALL_TARGET=	allinstall
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 WANTLIB=	c m z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/07/24 17:43:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
@@ -55,6 +55,7 @@ LIB_DEPENDS+=	::devel/pcre \
 
 ALL_TARGET=	build
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 FILES=		tin.defaults mime.types

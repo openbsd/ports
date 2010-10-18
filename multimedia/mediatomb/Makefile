@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/21 13:28:31 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:07 espie Exp $
 
 COMMENT =	UPnP media server
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS +=	--disable-inotify \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 AUTOCONF_VERSION =	2.63
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mediatomb/

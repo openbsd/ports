@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/24 15:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	hacked 9wm, with support for virtual screens
 
@@ -21,6 +21,7 @@ MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 WRKSRC=${WRKDIR}/${DISTNAME}.orig

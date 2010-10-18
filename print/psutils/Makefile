@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/02/10 16:32:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB +=	c
 
 WRKDIST=	${WRKDIR}/psutils
+USE_GROFF =	Yes
 
 FLAVORS=	a3 a4 a5 b5 b4 letter legal ledger tabloid statement \
 		executive folio quarto s10x14

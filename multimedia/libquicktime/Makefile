@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/18 21:25:07 espie Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -45,6 +45,7 @@ LIB_DEPENDS=		avcodec.>=14,avutil.>=7,swscale.>=2:ffmpeg->=20100512:graphics/ffm
 VMEM_WARNING=		Yes
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
 MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}

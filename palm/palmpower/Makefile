@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/11 00:22:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	disassembler and other tools for palmos binaries
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-Dunix ${CFLAGS}"
+USE_GROFF =	Yes
 
 post-build:
 	@(cd ${WRKSRC}/utils && ${CC} ${CFLAGS} -o splitprc splitprc.c)

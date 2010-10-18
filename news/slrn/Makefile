@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/07/24 17:43:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		SLang-based newsreader
 
@@ -20,6 +20,7 @@ WANTLIB=		c crypto m ssl termcap slang
 
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 LIB_DEPENDS=		::devel/libslang
 MODULES=		devel/gettext

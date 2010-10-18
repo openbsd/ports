@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/28 19:22:50 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=	print information about the content and structure of a DVD
 
@@ -22,5 +22,6 @@ LIB_DEPENDS=	dvdread.>=3::devel/libdvdread
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

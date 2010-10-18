@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	utilities for PostScript Type 1 fonts
 DISTNAME=	t1utils-1.32
@@ -19,5 +19,6 @@ MASTER_SITES=	${HOMEPAGE}
 WANTLIB=	c
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

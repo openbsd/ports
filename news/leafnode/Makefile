@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/24 17:43:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		USENET software package designed for small sites
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
 CONFIGURE_ARGS+=	--with-ipv6
 CONFIGURE_ARGS+=	--with-user=_news
+USE_GROFF =	Yes
 
 DOCS=		README README-FQDN INSTALL FAQ.txt NEWS OLDNEWS
 

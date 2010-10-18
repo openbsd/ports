@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/16 08:15:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=	command-line interface to Google services
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://googlecl.googlecode.com/files/
 
 MODPY_SETUPTOOLS= Yes
+USE_GROFF =	Yes
 LIB_DEPENDS=	::devel/py-gdata
 NO_REGRESS=	Yes
 

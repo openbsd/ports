@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/23 07:51:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 SHARED_LIBS=		dv	5.0
 

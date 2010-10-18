@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/26 20:07:31 edd Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 NO_REGRESS=		Yes
 MAKE_FLAGS=		CFLAGS="${CFLAGS} -DNO_MALLOC_DECL"
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin

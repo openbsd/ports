@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 13:45:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/18 21:25:09 espie Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS=		::x11/py-gtk2
 
 DESKTOP_FILES=		Yes
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 SUBST_VARS+=		VERSION

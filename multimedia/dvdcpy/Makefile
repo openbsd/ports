@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:07 espie Exp $
 
 COMMENT=	copy selected info from dvd
 DISTNAME=	ogmrip-0.10.0
@@ -23,6 +23,7 @@ do-configure:
 
 LIB_DEPENDS=		dvdread::devel/libdvdread
 WANTLIB=		c
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/24 15:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xt c pthread-stubs xcb
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}
 

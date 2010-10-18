@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/10/11 08:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2010/10/18 21:25:08 espie Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -42,6 +42,7 @@ CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES	\
 		-I${LOCALBASE}/include		\
 		-I${LOCALBASE}/include/ijs	\
 		-I${LOCALBASE}/include/libpng
+USE_GROFF =	Yes
 
 # Note: all the device definitions are at the very end of this makefile.
 

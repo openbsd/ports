@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/09/14 08:50:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/18 21:25:09 espie Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--enable-SIGCHLD-fallback \
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 FAKE_FLAGS+=		appdefaultsdir="${PREFIX}/lib/X11/app-defaults/"
 
