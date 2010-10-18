@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/17 21:02:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/18 16:19:24 jasper Exp $
 
 COMMENT=		discovery-based unittest extension
 
-MODPY_EGG_VERSION=	0.11.2
+MODPY_EGG_VERSION=	0.11.4
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
