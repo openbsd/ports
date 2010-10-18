@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.40 2010/09/27 20:20:36 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
 --- get_iplayer.orig	Fri May 28 15:24:50 2010
-+++ get_iplayer	Mon Sep 27 21:15:02 2010
++++ get_iplayer	Mon Oct 18 12:58:35 2010
 @@ -294,6 +294,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -93,6 +93,15 @@ $OpenBSD: patch-get_iplayer,v 1.40 2010/09/27 20:20:36 sthen Exp $
  	for my $cattribs ( @{ $mattribs->{connections} } ) {
  
  		# Get authstring from more specific mediaselector if this mode is specified - fails sometimes otherwise
+@@ -5820,7 +5822,7 @@ sub get_stream_data_cdn {
+ 		# Common attributes
+ 		# swfurl = Default iPlayer swf version
+ 		my $conn = {
+-			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_19216",
++			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_21576",
+ 			ext		=> $ext,
+ 			streamer	=> $streamer,
+ 			bitrate		=> $mattribs->{bitrate},
 @@ -5860,7 +5862,7 @@ sub get_stream_data_cdn {
  
  				if ( $cattribs->{authString} !~ /&slist=/ ) {
