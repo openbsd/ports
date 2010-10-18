@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/19 12:54:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/18 07:43:08 dcoppa Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
 DISTNAME=	libassuan-2.0.1
+REVISION=	0
 
 SHARED_LIBS +=  assuan            0.1      # 1.0
 
@@ -23,7 +24,8 @@ USE_LIBTOOL=		Yes
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		gpg-error::security/libgpg-error
+WANTLIB=		gpg-error
+LIB_DEPENDS=		::security/libgpg-error
 
 CONFIGURE_STYLE=	gnu
 

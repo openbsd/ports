@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2010/10/18 07:43:08 dcoppa Exp $
+--- configure.orig	Mon Aug  9 12:33:37 2010
++++ configure	Thu Oct 14 11:29:50 2010
+@@ -13333,11 +13333,12 @@ if test "${assuan_cv_sys_so_peercred+set}" = set; then
+ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <sys/socket.h>
+ int
+ main ()
+ {
+-struct ucred cr;
++struct sockpeercred cr;
+           int cl = sizeof cr;
+           getsockopt (1, SOL_SOCKET, SO_PEERCRED, &cr, &cl);
+   ;
