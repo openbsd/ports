@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/19 09:21:04 sthen Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=	--disable-shared \
 		--with-configdir=${SYSCONFDIR}/amanda \
 		--with-user=operator \
 		--with-group=operator
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 # Use this flavor to speed things up if you have large AMANDA
 # databases.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 09:21:04 sthen Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-incpath=${LOCALBASE}/include:${LOCALBASE}/include/libpng \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${PREFIX}/grace
-			USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \

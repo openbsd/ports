@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 09:21:04 sthen Exp $
 
 COMMENT =	generates ASCII banner art
 
@@ -25,7 +25,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		figlet-contributed-06092002${EXTRACT_SUFX}:0
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

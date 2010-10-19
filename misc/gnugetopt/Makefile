@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 09:21:04 sthen Exp $
 
 COMMENT=	GNU getopt(1) utility
 
@@ -25,7 +25,7 @@ MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lintl -liconv" \
 		CC="${CC}"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

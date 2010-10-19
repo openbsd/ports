@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 09:21:04 sthen Exp $
 
 COMMENT=	spreadsheet program under X11
 
@@ -20,7 +20,7 @@ USE_X11=	Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
-		USE_GROFF =	Yes
+USE_GROFF =	Yes
 
 INSTALL_TARGET= install install.man
 
