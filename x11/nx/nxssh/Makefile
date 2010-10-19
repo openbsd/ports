@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:52:11 jsg Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
@@ -6,11 +6,11 @@ DASH_VER=	1
 DISTNAME=	nxssh-${MAJOR_VERSION}-${DASH_VER}
 PKGNAME=	nxssh-${MAJOR_VERSION}.${DASH_VER}
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
-WANTLIB += asn1 c com_err crypto des gssapi jpeg krb5 m png stdc++ Xcomp
+WANTLIB += asn1 c com_err crypto gssapi jpeg krb5 m png stdc++ Xcomp
 WANTLIB += util z
 
 LIB_DEPENDS=	::x11/nx/nxcomp
