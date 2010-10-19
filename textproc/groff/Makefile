@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/25 18:56:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 21:26:26 espie Exp $
 
 CATEGORIES =	textproc
 COMMENT =	gnu clone of nroff
 
 # groff 1.15 as patched for OpenBSD-4.7
 DISTNAME = groff-1.15.4.7
-PKGNAME = ${DISTNAME}p1
+REVISION = 2
 MASTER_SITES = http://www.bsdfrog.org/OpenBSD/distfiles/
 
 # GPLv2
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM = 		Yes
 WRKDIST = ${WRKDIR}/groff
 MAKE_FILE = Makefile.bsd-wrapper
 WANTLIB += c m stdc++
+RUN_DEPENDS += ::textproc/groff.mdoc
 
 MAKE_FLAGS = BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/cat \
 	PREFIX=${TRUEPREFIX} DATASUBDIR=${TRUEPREFIX}/share \

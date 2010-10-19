@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2010/09/21 20:35:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.306 2010/10/19 21:26:26 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -32,6 +32,7 @@
      SUBDIR += gnuvd
      SUBDIR += gonzui
      SUBDIR += groff
+     SUBDIR += groff.mdoc
      SUBDIR += gsed
      SUBDIR += gtk-doc
      SUBDIR += gtkaml
