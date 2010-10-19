@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_inc,v 1.1 2010/10/19 01:07:14 sthen Exp $
+--- Makefile.inc.orig	Mon Oct 18 15:33:00 2010
++++ Makefile.inc	Mon Oct 18 15:33:01 2010
+@@ -2,11 +2,7 @@ V=2.82
+ 
+ AR?=	ar
+ CC?=	cc
+-.ifdef DEBUG
+-CFLAGS=-g -Wall
+-.else
+ CFLAGS+=-Wall
+-.endif
+ INSTALL?=install
+ LORDER?=lorder
+ TSORT?=tsort

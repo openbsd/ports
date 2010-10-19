@@ -1,0 +1,49 @@
+$OpenBSD: patch-platform_OpenBSD_sm_io_c,v 1.1 2010/10/19 01:07:14 sthen Exp $
+
+Handle hw.disknames with "devname:" and "devname:uid" formats;
+allow either device name or uid to match the device.
+
+--- platform/OpenBSD/sm_io.c.orig	Sun Jun 28 19:40:29 2009
++++ platform/OpenBSD/sm_io.c	Mon Oct 18 17:22:14 2010
+@@ -51,6 +51,7 @@
+ static char *io_dkstr = NULL;
+ static struct diskstats *io_dkstats = NULL;
+ static char **io_dknames = NULL;
++static char **io_dkuids = NULL;
+ static int io_dks = 0;
+ static int io_maxdks = 0;
+ static size_t io_maxstr = 0;
+@@ -98,6 +99,7 @@ gets_io()
+ 
+         io_dkstats = xrealloc(io_dkstats, io_maxdks * sizeof(struct diskstats));
+         io_dknames = xrealloc(io_dknames, io_maxdks * sizeof(char *));
++        io_dkuids = xrealloc(io_dkuids, io_maxdks * sizeof(char *));
+         io_dkstr = xrealloc(io_dkstr, io_maxstr + 1);
+     }
+ 
+@@ -128,7 +130,13 @@ gets_io()
+             *p = '\0';
+             io_dks++; p++;
+             io_dknames[io_dks] = p;
++            io_dkuids[io_dks] = NULL;
+         }
++        if ((*p == ':') && (*p+1 != '\0')) {
++            *p = '\0';
++            p++;
++            io_dkuids[io_dks] = p;
++	}
+         p++;
+     }
+ }
+@@ -146,8 +154,10 @@ get_io(char *symon_buf, int maxlen, struct stream *st)
+ 
+     /* look for disk */
+     for (i = 0; i <= io_dks; i++) {
+-        if (strncmp(io_dknames[i], st->arg,
++        if ((strncmp(io_dknames[i], st->arg,
+                     (io_dkstr + io_maxstr - io_dknames[i])) == 0)
++        	    || (io_dkuids[i] && (strncmp(io_dkuids[i], st->arg,
++                    (io_dkstr + io_maxstr - io_dkuids[i])) == 0)))
+ #ifdef HAS_IO2
+             return snpack(symon_buf, maxlen, st->arg, MT_IO2,
+                           io_dkstats[i].ds_rxfer,

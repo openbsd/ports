@@ -3,6 +3,6 @@ interface and disk statistics every 5 seconds. This information is
 then spooled over "the network" to symux for further processing.
 
 The port will yield 3 packages:
-symon-mon-${V}.tgz : symon daemon and manual.
-symon-mux-${V}.tgz : symux daemon, manual and rrd creation script.
-symon-${V}.tgz     : all of the above rolled into a single package
+symon-mon: symon daemon and manual.
+symon-mux: symux daemon, manual and rrd creation script.
+symon:     all of the above rolled into a single package.
