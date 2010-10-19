@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
-sbin/l0phtcrack
-sbin/readsmb
+@comment $OpenBSD: PLIST,v 1.4 2010/10/19 07:59:04 jsg Exp $
+@bin sbin/l0phtcrack
+@bin sbin/readsmb
 share/doc/l0phtcrack/
 share/doc/l0phtcrack/readme.txt
 share/l0phtcrack/

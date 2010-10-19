@@ -1,0 +1,39 @@
+$OpenBSD: patch-chal_resp_c,v 1.1 2010/10/19 07:59:04 jsg Exp $
+--- chal_resp.c.orig	Sat Oct 16 15:11:53 2010
++++ chal_resp.c	Sat Oct 16 15:13:08 2010
+@@ -93,16 +93,16 @@ void E_P24(uchar *p21, uchar *c8, uchar *p24)
+ 
+ void D1(uchar *k, uchar *d, uchar *out)
+ { 
+-  des_key_schedule ks;
+-  des_cblock deskey;
++  DES_key_schedule ks;
++  DES_cblock deskey;
+ 
+   str_to_key(k,(uchar *)deskey);
+ #ifdef __FreeBSD__
+   des_set_key(&deskey,ks);
+ #else /* __FreeBSD__ */
+-  des_set_key((des_cblock *)deskey,ks);
++  DES_set_key((DES_cblock *)deskey,&ks);
+ #endif /* __FreeBsd */
+-  des_ecb_encrypt((des_cblock *)d,(des_cblock *)out, ks, DES_DECRYPT);
++  DES_ecb_encrypt((DES_cblock *)d,(des_cblock *)out, &ks, DES_DECRYPT);
+ }    
+ 
+ void E1(uchar *k, uchar *d, uchar *out)
+@@ -112,11 +112,11 @@ void E1(uchar *k, uchar *d, uchar *out)
+      
+   str_to_key(k,(uchar *)deskey);
+ #ifdef __FreeBSD__
+-  des_set_key(&deskey,ks);
++  DES_set_key(&deskey,&ks);
+ #else /* __FreeBsd__ */
+-  des_set_key((des_cblock *)deskey,ks);
++  DES_set_key((des_cblock *)deskey,&ks);
+ #endif /* __FreeBsd__ */
+-  des_ecb_encrypt((des_cblock *)d,(des_cblock *)out, ks, DES_ENCRYPT);
++  DES_ecb_encrypt((des_cblock *)d,(des_cblock *)out, &ks, DES_ENCRYPT);
+ }    
+ 
+ void strupper(char *s)

@@ -1,10 +1,10 @@
-$OpenBSD: patch-includes_h,v 1.1 2007/11/03 15:25:38 naddy Exp $
---- includes.h.orig	Sat Nov  3 16:24:16 2007
-+++ includes.h	Sat Nov  3 16:24:16 2007
+$OpenBSD: patch-includes_h,v 1.2 2010/10/19 07:59:04 jsg Exp $
+--- includes.h.orig	Sat Oct 16 15:06:42 2010
++++ includes.h	Sat Oct 16 15:09:06 2010
 @@ -1,9 +1,17 @@
  #include "md4.h"
 -#include "des.h"
-+#include <des.h>
++#include <openssl/des.h>
  #include <memory.h>
  #include <string.h>
  #include <stdlib.h>

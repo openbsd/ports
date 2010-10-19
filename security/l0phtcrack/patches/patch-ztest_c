@@ -1,0 +1,109 @@
+$OpenBSD: patch-ztest_c,v 1.1 2010/10/19 07:59:04 jsg Exp $
+--- ztest.c.orig	Sat Oct 16 15:08:05 2010
++++ ztest.c	Sat Oct 16 15:09:48 2010
+@@ -137,9 +137,9 @@ int issame(char *, char *, int);
+    	
+ 	fixed_key[] = "\xAA\xD3\xB4\x35\xB5\x14\x04\xEE";
+ 	memset(deskey3, '\0', sizeof(deskey3)); - key of all 0's
+-	des_set_key((des_cblock *)deskey3, ks3); 
+-	des_ecb_encrypt((des_cblock *)fixed_key,
+-  	    (des_cblock *)str_to_crypt, ks3, DES_DECRYPT);
++	DES_set_key((DES_cblock *)deskey3, &ks3); 
++	DES_ecb_encrypt((DES_cblock *)fixed_key,
++  	    (DES_cblock *)str_to_crypt, ks3, DES_DECRYPT);
+ */
+ 
+ char str_to_crypt[] = "\x4b\x47\x53\x21\x40\x23\x24\x25";
+@@ -284,8 +284,8 @@ void main(int argc, char **argv) {
+ int cracklanman(struct user_struct *Ustruct, char *dict_word, char *fullhash){
+   unsigned char passwd[14];
+   unsigned char lanman[16];
+-  des_cblock deskey1, deskey2;
+-  des_key_schedule ks1, ks2;
++  DES_cblock deskey1, deskey2;
++  DES_key_schedule ks1, ks2;
+ 
+ 
+   memset(passwd, '\0', sizeof(passwd));
+@@ -302,18 +302,18 @@ int cracklanman(struct user_struct *Ustruct, char *dic
+ 
+   str_to_key(passwd, deskey1);  /* create the first 8byte odd 
+                                    parity des key */
+-  des_set_key((des_cblock *)deskey1,ks1); /* setup the key schedule */
++  DES_set_key((DES_cblock *)deskey1,&ks1); /* setup the key schedule */
+ 
+-  des_ecb_encrypt((des_cblock *)str_to_crypt, /* encrypt the known 
++  DES_ecb_encrypt((DES_cblock *)str_to_crypt, /* encrypt the known 
+                                                  8byte value */
+-              (des_cblock *)lanman, ks1, DES_ENCRYPT); /* against the 
++              (DES_cblock *)lanman, &ks1, DES_ENCRYPT); /* against the 
+                                                    first des key */
+ 
+   str_to_key(&(passwd[7]), deskey2);
+-  des_set_key((des_cblock *)deskey2,ks2);
++  DES_set_key((DES_cblock *)deskey2,&ks2);
+ 
+-  des_ecb_encrypt((des_cblock *)str_to_crypt,\
+-                              (des_cblock *)&lanman[8], ks2, DES_ENCRYPT);
++  DES_ecb_encrypt((DES_cblock *)str_to_crypt,\
++                              (DES_cblock *)&lanman[8], &ks2, DES_ENCRYPT);
+ 
+   strncpy(fullhash, (const char *)lanman, sizeof(lanman));
+ 
+@@ -715,16 +715,16 @@ int brute_lanman(struct user_struct *head, FILE *outli
+ 
+ void half_lanman(char *half_hash, char *brute_str){
+   unsigned char lanman[8];
+-  des_cblock deskey1;
+-  des_key_schedule ks1;
++  DES_cblock deskey1;
++  DES_key_schedule ks1;
+ 
+   /* create the first 8byte odd parity des key */
+   str_to_key((unsigned char *)brute_str, deskey1);  
+   /* setup the key schedule */
+-  des_set_key((des_cblock *)deskey1,ks1); 
++  DES_set_key((DES_cblock *)deskey1,&ks1); 
+ 
+   /* encrypt the known 8byte value against the first des key */
+-  des_ecb_encrypt((des_cblock *)str_to_crypt, (des_cblock *)lanman, ks1,\
++  DES_ecb_encrypt((DES_cblock *)str_to_crypt, (DES_cblock *)lanman, &ks1,\
+ 	 DES_ENCRYPT); 
+ 
+   memcpy(half_hash, lanman, 8);
+@@ -735,8 +735,8 @@ void half_lanman(char *half_hash, char *brute_str){
+ void full_lanman(char *fullhash, char *dict_word){
+   unsigned char passwd[14];
+   unsigned char lanman[16];
+-  des_cblock deskey1, deskey2;
+-  des_key_schedule ks1, ks2;
++  DES_cblock deskey1, deskey2;
++  DES_key_schedule ks1, ks2;
+ 
+   memset(passwd, '\0', sizeof(passwd));
+   memset(lanman, '\0', sizeof(lanman));
+@@ -745,18 +745,18 @@ void full_lanman(char *fullhash, char *dict_word){
+ 
+   str_to_key(passwd, deskey1);  /* create the first 8byte odd 
+                                    parity des key */
+-  des_set_key((des_cblock *)deskey1,ks1); /* setup the key schedule */
++  DES_set_key((DES_cblock *)deskey1,&ks1); /* setup the key schedule */
+ 
+-  des_ecb_encrypt((des_cblock *)str_to_crypt, /* encrypt the known 
++  DES_ecb_encrypt((DES_cblock *)str_to_crypt, /* encrypt the known 
+                                                  8byte value */
+-              (des_cblock *)lanman, ks1, DES_ENCRYPT); /* against the 
++              (DES_cblock *)lanman, &ks1, DES_ENCRYPT); /* against the 
+                                                    first des key */
+ 
+   str_to_key(&(passwd[7]), deskey2);
+-  des_set_key((des_cblock *)deskey2,ks2);
++  DES_set_key((DES_cblock *)deskey2,&ks2);
+ 
+-  des_ecb_encrypt((des_cblock *)str_to_crypt,\
+-                              (des_cblock *)&lanman[8], ks2, DES_ENCRYPT);
++  DES_ecb_encrypt((DES_cblock *)str_to_crypt,\
++                              (DES_cblock *)&lanman[8], &ks2, DES_ENCRYPT);
+ 
+   strncpy(fullhash, (const char *)lanman, sizeof(lanman));
+ 

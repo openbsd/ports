@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_c,v 1.1 2010/10/19 07:59:04 jsg Exp $
+--- util.c.orig	Sat Oct 16 15:16:15 2010
++++ util.c	Sat Oct 16 15:16:43 2010
+@@ -15,7 +15,7 @@ int isvalid_userline(int, char *str);
+ 
+ void str_to_key(unsigned char *str,unsigned char *key)
+ {
+-	void des_set_odd_parity(des_cblock *);
++	void DES_set_odd_parity(DES_cblock *);
+ 	int i;
+ 
+ 	key[0] = str[0]>>1;
+@@ -29,7 +29,7 @@ void str_to_key(unsigned char *str,unsigned char *key)
+ 	for (i=0;i<8;i++) {
+ 		key[i] = (key[i]<<1);
+ 	}
+-	des_set_odd_parity((des_cblock *)key);
++	DES_set_odd_parity((DES_cblock *)key);
+ }
+ 
+ 

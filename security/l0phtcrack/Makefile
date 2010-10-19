@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:59:03 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	Microsoft LANMAN & NT password sniffer/cracker
 
 PKGNAME=	l0phtcrack-2.52
+REVISION=	0
 CATEGORIES=	security
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c des pcap
+WANTLIB=		c crypto pcap
 
 WRKDIST=	${WRKDIR}
 
