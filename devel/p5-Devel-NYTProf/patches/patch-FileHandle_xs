@@ -1,24 +1,13 @@
-$OpenBSD: patch-FileHandle_xs,v 1.1 2010/05/20 20:04:35 bluhm Exp $
---- FileHandle.xs.orig	Fri Mar 12 11:34:38 2010
-+++ FileHandle.xs	Thu May 20 00:00:08 2010
-@@ -26,6 +26,7 @@
- 
- #ifdef HAS_ZLIB
- #  include <zlib.h>
-+#  include <stdint.h>
- #endif
- 
- #define NYTP_FILE_STDIO         0
-@@ -603,10 +604,11 @@ NYTP_close(NYTP_file file, int discard) {
+$OpenBSD: patch-FileHandle_xs,v 1.2 2010/10/19 18:56:36 bluhm Exp $
+--- FileHandle.xs.orig	Thu Sep 16 18:48:31 2010
++++ FileHandle.xs	Thu Oct  7 01:12:09 2010
+@@ -603,8 +603,9 @@ NYTP_close(NYTP_file file, int discard) {
          const double ratio = file->zs.total_in / (double) file->zs.total_out;
          flush_output(file, Z_FINISH);
          fprintf(raw_file, "#\n"
--                "# Total uncompressed bytes %lu\n"
--                "# Total compressed bytes %lu\n"
-+                "# Total uncompressed bytes %ju\n"
-+                "# Total compressed bytes %ju\n"
-                 "# Compression ratio 1:%2f, data shrunk by %.2f%%\n",
+-                "# Compressed %lu bytes to %lu, ratio %f:1, data shrunk by %f%%\n",
 -                file->zs.total_in, file->zs.total_out, ratio,
++                "# Compressed %ju bytes to %ju, ratio %f:1, data shrunk by %f%%\n",
 +                (uintmax_t)file->zs.total_in, 
 +                (uintmax_t)file->zs.total_out, ratio,
                  100 * (1 - 1 / ratio));

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/05/20 20:04:35 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/19 18:56:36 bluhm Exp $
 bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
-${P5ARCH}/
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/NYTProf/
 ${P5ARCH}/Devel/NYTProf.pm
@@ -40,9 +39,8 @@ ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
-@comment ${P5ARCH}/Devel/benchmark.pl
 @comment ${P5ARCH}/Devel/perftest.pl
-${P5ARCH}/auto/
+@comment ${P5ARCH}/Devel/benchmark.pl
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.bs
@@ -54,7 +52,7 @@ ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
 @man man/man3p/Devel::NYTProf::Apache.3p
 @man man/man3p/Devel::NYTProf::Core.3p
 @man man/man3p/Devel::NYTProf::Data.3p
+@comment @man man/man3p/Devel::NYTProf::FileInfo.3p
 @man man/man3p/Devel::NYTProf::ReadStream.3p
-@man man/man3p/Devel::NYTProf::Reader.3p
 @man man/man3p/Devel::NYTProf::Run.3p
 @man man/man3p/Devel::NYTProf::Util.3p
