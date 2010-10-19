@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 07:23:49 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 18:56:58 landry Exp $
 #
 COMMENT =		color selector in GTK2
 
 DISTNAME =		gcolor2-0.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11
 
 HOMEPAGE =		http://gcolor2.sourceforge.net/
@@ -25,7 +25,8 @@ WANTLIB = GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 
 LIB_DEPENDS = ::x11/gtk+2
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			textproc/intltool
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gcolor2/}
 
 USE_X11 =		Yes
