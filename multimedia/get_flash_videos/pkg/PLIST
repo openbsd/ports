@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/19 08:09:16 sthen Exp $
+bin/get_flash_videos
