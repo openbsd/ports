@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 20:07:14 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -54,7 +54,8 @@ WANTLIB += gtk-x11-2.0.>=400.13 gdk-x11-2.0.>=400.13 gdk_pixbuf-2.0.>=400.13
 WANTLIB += gthread-2.0 xcb-render xcb-render-util
 .endif
 
-LIB_DEPENDS+=		usb.>=8::devel/libusb
+WANTLIB += usb.>=8
+LIB_DEPENDS +=		::devel/libusb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnokii

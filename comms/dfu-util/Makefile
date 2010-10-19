@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 20:07:14 espie Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c
 
 MASTER_SITES =		http://files.lodoss.net/
 
-LIB_DEPENDS =		usb::devel/libusb
+LIB_DEPENDS =		::devel/libusb
+WANTLIB =		c usb
 
 CONFIGURE_STYLE =	gnu
 
