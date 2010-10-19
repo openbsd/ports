@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/02 09:51:05 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 19:45:54 espie Exp $
 
 COMMENT-main=	circuit drawing and schematic capture
 COMMENT-docs=	documentation for the kicad library of components
@@ -32,7 +32,11 @@ RUN_DEPENDS-docs=
 LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
-LIB_DEPENDS= wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui,wx_gtk2_richtext::x11/wxWidgets
+LIB_DEPENDS = ::x11/wxWidgets
+WANTLIB-main += wx_base wx_base_net wx_base_odbc wx_base_xml
+WANTLIB-main += wx_gtk2_adv wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_gl 
+WANTLIB-main += wx_gtk2_html wx_gtk2_qa wx_gtk2_xrc wx_gtk2_aui 
+WANTLIB-main += wx_gtk2_richtext
 
 DOCDIST=	doc_components-2006-12-08.zip
 PKGDIST=	kicad-${V}.tgz

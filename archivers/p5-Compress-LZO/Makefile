@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/19 19:45:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,8 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
 
-LIB_DEPENDS=	lzo.>=1::archivers/lzo
+LIB_DEPENDS =	::archivers/lzo
+WANTLIB =	lzo.>=1
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
