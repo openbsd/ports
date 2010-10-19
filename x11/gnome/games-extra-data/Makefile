@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=		extra themes and artwork for GNOME games
 
@@ -20,7 +20,6 @@ MODULES=		x11/gnome
 
 RUN_DEPENDS=		::x11/gnome/games
 
-USE_X11=		No
 PKG_ARCH=		*
 USE_LIBTOOL=		No
 

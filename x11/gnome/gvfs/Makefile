@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -48,7 +48,6 @@ LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 		::${BASE_PKGPATH},-main \
 		::net/samba
 
-USE_X11=	No
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \

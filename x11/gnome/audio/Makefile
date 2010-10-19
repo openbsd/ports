@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 13:18:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=		audio files for GNOME
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=		No
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

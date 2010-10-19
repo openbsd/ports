@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -40,7 +40,6 @@ LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 MODULES =		devel/gettext \
 			x11/gnome
 
-USE_X11 =		No
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

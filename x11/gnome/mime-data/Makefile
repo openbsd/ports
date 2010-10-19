@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=		MIME and Application database for GNOME
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-USE_X11=		No
 USE_LIBTOOL=		No
 CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=		IDL-2::devel/libIDL \
 			glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
-USE_X11=		No
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.63

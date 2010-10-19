@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2 \
 		glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0,gthread-2.0:glib2->=2.24.0:devel/glib2
 
-USE_X11=	No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	M4='m4 -g'

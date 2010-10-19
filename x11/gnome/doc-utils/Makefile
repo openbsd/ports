@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=	::devel/gettext \
 		:py-libxslt-*:textproc/libxslt,-python \
 		::textproc/rarian
 
-USE_X11=	No
 USE_LIBTOOL=	No
 USE_GROFF =	Yes
 CONFIGURE_ARGS=	--disable-scrollkeeper

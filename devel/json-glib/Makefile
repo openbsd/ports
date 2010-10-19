@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
@@ -22,7 +22,6 @@ MODULES=		devel/gettext x11/gnome
 
 LIB_DEPENDS=		::devel/glib2
 
-USE_X11=		No
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 

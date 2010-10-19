@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=		::textproc/libxslt \
 LIB_DEPENDS=		::devel/glib2
 REGRESS_DEPENDS=	::shells/bash	
 
-USE_X11=		No
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu

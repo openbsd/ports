@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 13:44:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=		documentation metadata library
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=		::shells/bash \
 			::textproc/libxslt
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-USE_X11=		No
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--localstatedir=/var \

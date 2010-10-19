@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 16:42:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/19 15:21:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ WANTLIB += soup-gnome-2.4 sqlite3 tasn1
 MODULES=	devel/gettext \
 		x11/gnome
 
-USE_X11=	No
 
 LIB_DEPENDS=	:gmime->=2.4,<2.6:mail/gmime24 \
 		::textproc/libxml \

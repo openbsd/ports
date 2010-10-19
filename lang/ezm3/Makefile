@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 15:21:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -28,7 +28,6 @@ DISTFILES=	${DISTNAME}b-${M3ARCH}-boot.tar.bz2:0 \
 
 # Ezm3 provides full X11 GUI support even when compiled on systems
 # which do not have X11 installed.
-USE_X11=	No
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 ALL_TARGET=	exportall

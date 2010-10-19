@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=	common automake macros for GNOME
 
@@ -13,7 +13,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-USE_X11=	No
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-common

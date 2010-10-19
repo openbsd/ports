@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=	wrapping library to the System Tools Backends
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 MODULES=	devel/gettext \
 		x11/gnome
 
-USE_X11=	No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

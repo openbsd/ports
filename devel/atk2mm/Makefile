@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=	C++ binding for the ATK library
 
@@ -28,7 +28,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	::devel/glib2mm \
 		::devel/atk
 
-USE_X11=	No
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

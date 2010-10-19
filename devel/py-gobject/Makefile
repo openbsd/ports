@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/19 15:21:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	::devel/glib2 \
 		::devel/libffi
 
-USE_X11=	No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-introspection

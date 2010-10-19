@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
 			sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2 \
 			glibmm-2.4:glib2mm->=2.8:devel/glib2mm
 
-USE_X11=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

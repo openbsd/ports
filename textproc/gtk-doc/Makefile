@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 13:44:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 15:21:03 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-xml-catalog=${WRKDIR}/catalog.xml
 
 PKG_ARCH=		*
-USE_X11=		No
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::textproc/openjade \

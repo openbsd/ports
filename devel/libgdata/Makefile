@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 15:21:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,6 @@ FAKE_FLAGS+=		DATADIRNAME="share"
 RUN_DEPENDS+=		::net/libproxy,-gnome
 BUILD_DEPENDS+=		::net/libproxy,-gnome
 
-USE_X11=		No
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu

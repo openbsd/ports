@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 15:21:04 ajacoutot Exp $
 
 COMMENT=		Industrial icon theme from OpenSUSE
 
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	::x11/icon-naming-utils \
 		::x11/gnome/librsvg \
 		::graphics/ImageMagick
 
-USE_X11=		No
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 PKG_ARCH=		*
