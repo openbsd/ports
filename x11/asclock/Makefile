@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 22:24:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	afterstep clock with some language extensions
 
@@ -28,6 +28,7 @@ FLAVOR?=	classic english
 
 CONFIGURE_STYLE= imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 pre-configure:
 	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:59 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -40,6 +40,7 @@ MODULES=	devel/cmake lang/python
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_ARGS=	-DMANDIR="${PREFIX}/man"

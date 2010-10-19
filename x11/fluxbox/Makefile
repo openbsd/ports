@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=		--enable-xinerama --enable-imlib2
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		GNOME session
 
@@ -48,6 +48,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-rebuilds
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+USE_GROFF =	Yes
 
 # XXX gconf2 MODULE changes this value but gsm-gconf.c uses this to
 # find the right path for gconftool-2

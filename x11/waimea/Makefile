@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/18 13:34:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=		virtual desktop manager for X11
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender
 WANTLIB += c expat fontconfig freetype m pthread-stubs stdc++
 WANTLIB += xcb z

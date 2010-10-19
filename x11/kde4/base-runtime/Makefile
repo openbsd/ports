@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/31 08:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, base runtime
 DISTNAME =		kdebase-runtime-${VERSION}
@@ -10,6 +10,7 @@ LIB_DEPENDS +=	::x11/kde4/libs \
 
 SHARED_LIBS +=	kwalletbackend 		0.0	# 4.4
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.4
+USE_GROFF =	Yes
 
 WANTLIB += Half ICE Iex IlmImf IlmThread IlmThread Imath SM X11 Xau Xcursor \
 	Xdmcp Xext Xft Xpm attica c exiv2 jpeg kde3support kdecore.>=8 kdesu \

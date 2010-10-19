@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	::x11/gnome/libbonobo \
 		::audio/libcanberra
 
 USE_X11=	No
+USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR= libgnome
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

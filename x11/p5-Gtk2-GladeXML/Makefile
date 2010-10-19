@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ MODULES=	cpan \
 		devel/gettext
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	:p5-ExtUtils-Depends->=0.301:devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig \

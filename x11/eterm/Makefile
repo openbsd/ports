@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -29,6 +29,7 @@ LIB_DEPENDS=	::devel/libast \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

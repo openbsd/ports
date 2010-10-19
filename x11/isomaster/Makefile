@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=		gui cd image editor
 
@@ -32,6 +32,7 @@ WANTLIB += gtk-x11-2.0
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 FAKE_FLAGS=	MYMANPATH=${WRKINST}/${TRUEPREFIX}/man/man1 \

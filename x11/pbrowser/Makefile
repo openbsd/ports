@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=		graphical ports system frontend
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	        ::x11/gtk+2
 CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/pbrowser

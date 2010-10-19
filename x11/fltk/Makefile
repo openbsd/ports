@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/09/22 12:47:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
@@ -40,6 +40,7 @@ LIB_DEPENDS=	::graphics/jpeg \
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

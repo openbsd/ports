@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
@@ -27,5 +27,6 @@ DESKTOP_FILES=		Yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

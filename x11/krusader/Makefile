@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,6 +32,7 @@ MODULES=	x11/kde devel/gettext
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils

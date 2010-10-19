@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		gtk+-2 theme switcher
 
@@ -34,6 +34,7 @@ MODULES=		devel/gettext
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-extract:

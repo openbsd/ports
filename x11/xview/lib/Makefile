@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/08/06 06:17:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	OpenLook Toolkit libs, includes, and man pages
 
@@ -18,6 +18,7 @@ CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 MAKE_FLAGS=	SOOLGXREV=${LIBolgx_VERSION} \
 		SOXVIEWREV=${LIBxview_VERSION}
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

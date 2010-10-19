@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -49,6 +49,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${MODTCL_INCDIR}/generic \
 		-I${MODTK_INCDIR}/unix \
 		-I${LOCALBASE}/include/itcl${ITCL_VERSION}" \
 		LIBitk33_VERSION=${LIBitk33_VERSION}
+USE_GROFF =	Yes
 
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=Yes

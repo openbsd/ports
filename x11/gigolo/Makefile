@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:56 espie Exp $
 
 COMMENT =	GVfs mountpoint manager
 
@@ -22,6 +22,7 @@ MODULES =	x11/xfce4 devel/waf
 CONFIGURE_STYLE =	gnu
 NO_REGRESS =	Yes
 DESKTOP_FILES =	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS +=:waf->=1.5.18:devel/waf
 RUN_DEPENDS +=	::x11/gnome/gvfs

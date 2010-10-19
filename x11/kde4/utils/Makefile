@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, utils
 DISTNAME =		kdeutils-${VERSION}
+USE_GROFF =	Yes
 
 SHARED_LIBS +=  kerfuffle            0.0      # .4.0
 SHARED_LIBS +=  superkaramba         0.0      # .4.0

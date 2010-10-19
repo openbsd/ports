@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	window manipulation tool
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=	::devel/libwnck
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/" \

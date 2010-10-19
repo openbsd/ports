@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -48,5 +48,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gnome \
 		--with-wnck \
 		--with-history-file="${LOCALBASE}/share/sdlmame/history.dat"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

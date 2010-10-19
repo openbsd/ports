@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=		Type1 font installation helper
 DISTNAME=		type1inst-0.6.1
@@ -16,6 +16,7 @@ NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
 INSTALL_STRIP=
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/type1inst ${PREFIX}/bin

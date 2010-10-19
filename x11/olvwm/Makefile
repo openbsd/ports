@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/08/02 19:47:32 ian Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	OpenLook Virtual Window manager
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	::x11/xview/lib
 BUILD_DEPENDS=	::x11/xview/config
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config

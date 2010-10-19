@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	slide rule component of X11R3's xcalc
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	no license
 WANTLIB=	X11 Xau Xdmcp Xext c m
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 

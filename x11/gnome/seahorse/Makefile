@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		manage encryption keys
 
@@ -55,6 +55,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-update-mime-database
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/seahorse
 

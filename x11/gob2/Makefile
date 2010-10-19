@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		GTK+ Object Builder
 DISTNAME=		gob2-2.0.17
@@ -25,5 +25,6 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

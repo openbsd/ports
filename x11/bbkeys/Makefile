@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/06 18:01:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	X keygrabber for blackbox
 
@@ -23,6 +23,7 @@ WANTLIB=	c freetype expat fontconfig ICE m SM stdc++ X11 Xau \
 MODULES=	converters/libiconv
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/blackbox

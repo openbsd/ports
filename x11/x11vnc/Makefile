@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/15 08:21:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:14:00 espie Exp $
 
 COMMENT =		VNC server for real X displays
 
@@ -19,6 +19,7 @@ WANTLIB += X11 Xdamage Xext Xfixes Xinerama Xrandr Xtst c crypto
 WANTLIB += pthread ssl z jpeg avahi-client avahi-common
 
 USE_X11 =		Yes
+USE_GROFF =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libvncserver/}
 MODULES =		x11/tk

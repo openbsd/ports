@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:59 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -42,6 +42,7 @@ REGRESS_FLAGS =		HOME=${TESTHOME}
 
 SEPARATE_BUILD =	concurrent
 USE_X11 =		Yes
+USE_GROFF =	Yes
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_STYLE =	autoconf no-autoheader old

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
 HOMEPAGE=		http://pim.kde.org/
+USE_GROFF =	Yes
 
 SHARED_LIBS +=	akonadi-kcal_next 0.0
 SHARED_LIBS +=	akonadi_next 0.0

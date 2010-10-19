@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/21 07:57:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalonetray

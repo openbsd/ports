@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/27 15:23:00 jim Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		dynamic menu for X11
 DISTNAME=		dmenu-4.1.1
@@ -21,6 +21,7 @@ MASTER_SITES=		http://dl.suckless.org/tools/
 FAKE_FLAGS=		DESTDIR=""
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

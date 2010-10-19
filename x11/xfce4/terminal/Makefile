@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	::x11/xfce4/exo \
 		::x11/dbus-glib \

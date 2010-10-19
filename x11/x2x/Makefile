@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=		one keyboard/mouse to multiple X displays
 DISTNAME=		x2x-1.27
@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.europe.digital.com/pub/DEC/SRC/x2x/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 pre-build:

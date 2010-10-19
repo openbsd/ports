@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
 		::x11/xfce4/xfce4-panel \

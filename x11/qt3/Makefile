@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2010/10/19 08:13:59 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -69,6 +69,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"

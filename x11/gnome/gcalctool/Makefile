@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		GTK2 desktop calculator
 
@@ -34,6 +34,7 @@ DESKTOP_FILES=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 FAKE_FLAGS+=		itlocaledir="${PREFIX}/share/locale/"
 

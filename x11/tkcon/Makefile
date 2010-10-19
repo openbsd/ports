@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/24 16:29:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
 
 COMMENT =		enhanced Tk console
 
@@ -19,6 +19,7 @@ BUILD_DEPENDS =		:tcllib->=1.11.1:devel/tcllib
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
+USE_GROFF =	Yes
 
 DOCDIR =		${PREFIX}/share/doc/tkcon
 TCL_MODULES_DIR =	${PREFIX}/lib/tcl8/${MODTCL_VERSION}

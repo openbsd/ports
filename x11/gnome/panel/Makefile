@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2010/10/19 08:13:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,6 +73,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 MODULES+=	lang/python
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
+USE_GROFF =	Yes
 
 pre-configure:
 	perl -pi -e 's,xsltproc -o,xsltproc --nonet -o,g' \

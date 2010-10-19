@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/19 08:13:58 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -36,6 +36,7 @@ LIB_DEPENDS=	::audio/liba52 \
 		::audio/libmad
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 FLAVORS=	altivec
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	quick start-up utility for applications on an X11 display
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 CONFIGURE_STYLE= imake
 WRKDIST=	${WRKDIR}/bricons
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

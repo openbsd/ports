@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/01 09:18:42 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 RUN_DEPENDS=	::archivers/gtar
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
 CONFIGURE_STYLE=gnu

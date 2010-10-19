@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=	--enable-omitgames=gnome-sudoku,lightsoff,swell-foop
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 REGRESS_IS_INTERACTIVE= x11
 

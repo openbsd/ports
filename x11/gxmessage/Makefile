@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	GTK+2 based xmessage(1) clone
 
@@ -28,6 +28,7 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	::x11/gtk+2
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	blow holes through windows
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 do-build:
 	cd ${WRKSRC} && ${CC} blast.c -I${X11BASE}/include ${CFLAGS} -L$(X11BASE)/lib -lX11 -lXext -o blast

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/08/01 15:44:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/19 08:13:56 espie Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -72,6 +72,7 @@ FULLPKGPATH-fvicons=	${PKGPATH},-fvicons
 SUBST_VARS=	VERSION
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu

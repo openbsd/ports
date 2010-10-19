@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -71,6 +71,7 @@ CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include
 CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
+USE_GROFF =	Yes
 
 
 post-extract:

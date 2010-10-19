@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/17 20:32:38 matthieu Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://ftp.sunet.se/pub/X11/ftp.x.org/individual/app/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

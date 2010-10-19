@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -33,6 +33,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm -pthread"
 CONFIGURE_ARGS=	--with-x
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,^GNUSTEP_GUI_MAJOR_VERSION=.*,GNUSTEP_GUI_MAJOR_VERSION=${LIBgnustep-gui_VERSION:R},g;' \

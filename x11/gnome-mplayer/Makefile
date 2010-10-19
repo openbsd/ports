@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:13:57 espie Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.9.2
@@ -39,6 +39,7 @@ RUN_DEPENDS =		::devel/desktop-file-utils \
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR =	gnome-mplayer
 
 CONFIGURE_STYLE =	gnu

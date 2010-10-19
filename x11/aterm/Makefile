@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/19 08:13:56 espie Exp $
 
 DISTNAME=	aterm-0.4.2
 REVISION=	2
@@ -18,6 +18,7 @@ HOMEPAGE=	http://aterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aterm/}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-xgetdefault --enable-ttygid --enable-utmp \
 		--with-xpm --enable-transparency \

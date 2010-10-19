@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	widget that looks just like a Mac OS 9 progress bar
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	::x11/p5-Tk
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

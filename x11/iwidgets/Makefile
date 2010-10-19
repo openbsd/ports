@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
 
 PKG_ARCH=	*
 
@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
 		--with-itcl=${LOCALBASE}/itcl3.4
 
 CONFIGURE_ENV=	ITCL_VERSION=3.4
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,^\.HS,\.TH,' ${WRKBUILD}/doc/*.n

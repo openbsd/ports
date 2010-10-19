@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 08:13:57 espie Exp $
 
 #
 # XXX:
@@ -88,6 +88,7 @@ BUILD_DEPENDS=		:db->=4,<5:databases/db/v4 \
 REGRESS_DEPENDS=	::devel/check
 
 LIBTOOL_FLAGS=		--tag=disable-static
+USE_GROFF =	Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-static \
 			--disable-gtk-doc \

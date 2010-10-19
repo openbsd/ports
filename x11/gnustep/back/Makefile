@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	GNUstep gui backend
 
@@ -19,6 +19,7 @@ WANTLIB=	GL X11 Xt Xext Xmu c freetype m objc pthread z \
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 MODULES=	x11/gnustep
 LIB_DEPENDS=	::x11/gnustep/base \
 		::x11/gnustep/gui

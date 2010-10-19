@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=		command line interface to X selections
 DISTNAME=		xclip-0.11
@@ -19,6 +19,7 @@ WANTLIB+=		X11 Xmu c
 NO_REGRESS=		yes
 USE_X11=		yes
 USE_GMAKE=		yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

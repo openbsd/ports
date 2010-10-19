@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/25 03:14:56 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:59 espie Exp $
 
 COMES_WITH =	4.9
 
@@ -10,6 +10,7 @@ WRKSRC = 	${WRKDIR}/video
 COMMENT = 	record and display with video(4)
 CATEGORIES = 	x11 sysutils
 
+USE_GROFF =	Yes
 NO_REGRESS = 	Yes
 
 WANTLIB = 	X11 Xv c

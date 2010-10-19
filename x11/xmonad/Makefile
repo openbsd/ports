@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/17 13:49:21 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 08:14:01 espie Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -35,6 +35,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			::devel/gmp
 
 USE_X11 =		Yes
+USE_GROFF =	Yes
 
 post-install:
 	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1

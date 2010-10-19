@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		::devel/pango \
 RUN_DEPENDS=		::geo/openbsd-developers
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-xscreensaver \

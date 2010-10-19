@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	fake keyboard and mouse input
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 WANTLIB=		X11 Xau Xdmcp Xext Xtst c \
 			pthread-stubs xcb
 REGRESS_IS_INTERACTIVE=	Yes

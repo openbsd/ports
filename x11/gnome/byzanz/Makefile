@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -37,5 +37,6 @@ MODGCONF2_SCHEMAS_DIR=	byzanz
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

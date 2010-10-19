@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	round, analog X11 clock with bezier curve hands
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 

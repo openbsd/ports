@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/30 06:59:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	full-screen image to adjust your monitor
 
@@ -17,6 +17,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 
 NO_REGRESS=	Yes

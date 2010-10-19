@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -63,6 +63,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::misc/shared-mime-info
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No

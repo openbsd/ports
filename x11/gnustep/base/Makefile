@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/15 10:37:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	GNUstep base library
 
@@ -35,6 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/avahi-compat-libdns_sd" \
 		LDFLAGS="-pthread"
 CONFIGURE_ARGS=	--disable-procfs \
 		--disable-procfs-psinfo
+USE_GROFF =	Yes
 
 CFLAGS+=	-pthread
 

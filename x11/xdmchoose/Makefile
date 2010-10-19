@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	alternative xdm-invoked chooser
 
@@ -20,6 +20,7 @@ WANTLIB=	X11 Xau Xdmcp Xpm c
 MASTER_SITES=	http://frmb.org/download/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -58,6 +58,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-introspection
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mno_plugin}
 CONFIGURE_ARGS+=	--enable-plugin=no

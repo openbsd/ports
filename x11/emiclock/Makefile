@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	hyper-animated face analog clock for X11
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	may not modify/package
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c m
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 LANGRES=	resources/R6/EUC/EmiClock.ad

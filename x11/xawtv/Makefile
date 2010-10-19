@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:14:00 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -40,6 +40,7 @@ MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 post-install:
 	@perl -pi -e "s,/etc/X11,${SYSCONFDIR}," ${PREFIX}/man/man5/xawtvrc.5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	rather neat animated clock
 
@@ -17,6 +17,7 @@ WANTLIB=		ICE SM X11 Xext Xt c
 MASTER_SITES=	${HOMEPAGE}
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}

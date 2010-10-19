@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/17 13:59:44 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:13:56 espie Exp $
 
 COMMENT =		modern tiling window manager
 
@@ -41,6 +41,7 @@ LIB_DEPENDS =		::devel/atk \
 			::x11/gtk+2
 
 USE_X11 =		Yes
+USE_GROFF =	Yes
 
 post-install:
 	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1

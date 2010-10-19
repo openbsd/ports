@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	network sniffer that grabs and displays images
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=	::graphics/libungif \
 		::x11/gtk+2
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	::graphics/jpeg \
 		::graphics/png
 
 USE_X11= 	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu

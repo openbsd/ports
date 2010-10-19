@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -119,6 +119,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib \
 			-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}" \
 		EXEMPI_LIBS="`pkg-config --libs exempi-2.0` -lstdc++"
+USE_GROFF =	Yes
 
 FAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/tracker-search/
 

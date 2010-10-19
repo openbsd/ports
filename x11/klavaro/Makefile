@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =	touch typing tutor program
 
@@ -38,6 +38,7 @@ LIB_DEPENDS = 	::x11/gtk+2 \
 		::net/curl
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

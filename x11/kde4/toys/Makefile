@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, toys
 DISTNAME =		kdetoys-${VERSION}
+USE_GROFF =	Yes
 
 LIB_DEPENDS+= 	::x11/kde4/libs \
 		::x11/kde4/base-workspace

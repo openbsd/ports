@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/21 21:14:47 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=		::devel/fribidi \
 NO_REGRESS=		Yes
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include/ ${CFLAGS}" \

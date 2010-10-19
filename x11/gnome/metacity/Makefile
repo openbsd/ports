@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gtk=2.0
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity

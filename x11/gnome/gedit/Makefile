@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/19 08:13:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -61,5 +61,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 #CONFIGURE_ARGS+=	--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

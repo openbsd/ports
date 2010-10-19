@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/31 08:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
@@ -8,6 +8,7 @@ SHARED_LIBS +=	konqsidebarplugin    5.0      # .4.0
 SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
+USE_GROFF =	Yes
 BUILD_DEPENDS +=	::x11/kde4/automoc
 LIB_DEPENDS +=		::x11/kde4/libs \
 			::multimedia/phonon \

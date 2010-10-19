@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -58,6 +58,7 @@ MODGCONF2_SCHEMAS_DIR=	nautilus
 
 AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE=	autoconf gnu
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \

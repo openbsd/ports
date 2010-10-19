@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2010/10/19 08:14:01 espie Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -60,6 +60,7 @@ LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu

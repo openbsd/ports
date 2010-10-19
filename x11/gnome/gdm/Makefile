@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2010/10/19 08:13:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,6 +38,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 USE_LIBTOOL=		gnu
+USE_GROFF =	Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old

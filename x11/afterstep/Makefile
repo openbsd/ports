@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/11 08:19:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=	::x11/dbus \
 
 FAKE=		lib
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-helpcommand="aterm -e man" \
 		--with-jpeg-includes=${LOCALBASE}/include \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -35,5 +35,6 @@ MODGCONF2_SCHEMAS_DIR=	mousetweaks
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

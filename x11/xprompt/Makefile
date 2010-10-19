@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/07/30 06:59:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	display a dialog box and prompt user for text
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c 
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/26 13:46:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		communicate with the i3 window manager
 
@@ -6,6 +6,7 @@ DISTNAME =		AnyEvent-I3-0.06
 CATEGORIES =		x11 devel
 
 MODULES =		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

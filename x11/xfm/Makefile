@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	X11 File Manager
 
@@ -21,6 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 LIB_DEPENDS=	::x11/Xaw3d
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 
 NO_REGRESS=	Yes

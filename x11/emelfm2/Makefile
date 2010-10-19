@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:56 espie Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -38,6 +38,7 @@ RUN_DEPENDS =	::devel/desktop-file-utils \
 MAKE_ENV =	CC=${CC} lCFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_X11 =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

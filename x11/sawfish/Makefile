@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	extensible window manager
 
@@ -39,6 +39,7 @@ GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=	GNU_ARCH VERSION
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 USE_GMAKE=      Yes
 
 CONFIGURE_STYLE=	gnu

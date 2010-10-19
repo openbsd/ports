@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	tvtwm with pie (circular) menus
 
@@ -17,6 +17,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m
 MASTER_SITES=	http://www.crynwr.com/piewm/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= imake
 

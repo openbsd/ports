@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/31 08:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, accessibility
 DISTNAME =		kdeaccessibility-${VERSION}
@@ -12,6 +12,7 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xtst c kde3support kdecore kdeui \
 	lib/qt4/QtSvg lib/qt4/QtXml m phonon.>=5 pthread stdc++
 
 CONFIGURE_ARGS += -DKDE4_KTTSD_ALSA:BOOL=OFF
+USE_GROFF =	Yes
 
 # these come from libs in real case
 pre-install:

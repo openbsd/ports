@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:59 espie Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+USE_GROFF =	Yes
 RUN_DEPENDS =	::x11/p5-Gtk2-GladeXML \
 		::devel/p5-Locale-gettext \
 		::x11/p5-Gtk2-Ex-PodViewer \

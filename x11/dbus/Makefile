@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/16 12:47:54 tobias Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/19 08:13:56 espie Exp $
 
 # XXX patches/patch-configure_in disables PIE on arm/hppa. This is just a
 # temporary workaround until PIE works.
@@ -29,6 +29,7 @@ SEPARATE_BUILD=	simple
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

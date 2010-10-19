@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm Xss c m sndio stdc++
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 SEPARATE_BUILD=	flavored
 CONFIGURE_STYLE= gnu

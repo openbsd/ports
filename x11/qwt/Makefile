@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,6 +25,7 @@ MODULES=		devel/gettext \
 			x11/qt4
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION}
 

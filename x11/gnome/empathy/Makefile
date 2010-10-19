@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/19 08:13:57 espie Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 #			--enable-tpl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 

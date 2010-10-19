@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/14 08:54:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -34,6 +34,7 @@ RUN_DEPENDS =	::x11/dmenu \
 
 USE_GMAKE =	Yes
 USE_X11 =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

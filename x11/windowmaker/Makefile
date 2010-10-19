@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/10/19 08:13:59 espie Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -29,6 +29,7 @@ NO_REGRESS=		Yes
 SEPARATE_BUILD=		simple
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \

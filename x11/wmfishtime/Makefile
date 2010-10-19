@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=		wm-dockapp; clock application with clock, date and fish
 
@@ -33,6 +33,7 @@ MAKE_FLAGS=		CC="${CC}" \
 			LIBS="`pkg-config --libs gtk+-2.0`"
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

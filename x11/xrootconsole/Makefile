@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 06:59:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
@@ -20,6 +20,7 @@ MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=xrootconsole/}
 
 NO_REGRESS=		Yes
 USE_X11=		Yes
+USE_GROFF =	Yes
 
 CFLAGS+=		-I$(X11BASE)/include
 

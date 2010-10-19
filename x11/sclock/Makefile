@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	simple digital clock
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 WANTLIB=	c X11
 

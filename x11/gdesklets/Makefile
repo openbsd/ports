@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

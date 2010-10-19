@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		graphical predictive text input system
 
@@ -46,5 +46,6 @@ CONFIGURE_ARGS+=	--disable-scrollkeeper \
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include " \
 			LDFLAGS="-L${LOCALBASE}/lib " \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

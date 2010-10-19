@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -70,6 +70,7 @@ PORTHOME=	${WRKDIR}
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= totem
+USE_GROFF =	Yes
 
 # Browser bemused lirc mythtv sample-python sample-val sidebar-test
 # publish iplayer pythonconsole coherence_upnp tracker

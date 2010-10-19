@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/10 08:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		minimalist window manager for the X Window System
 
@@ -19,6 +19,7 @@ WANTLIB=		X11 Xext Xrandr c
 MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 MAKE_FLAGS=		XROOT='${X11BASE}' CC='${CC}'
 
 NO_REGRESS=		Yes

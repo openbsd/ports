@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/09/06 08:42:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.57 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -42,6 +42,7 @@ FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"
 SUBST_VARS =	V
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 MODPY_RUNDEP =	No

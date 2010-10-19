@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	interactive X11 proxy with selective X request replacement
 
@@ -19,6 +19,7 @@ WANTLIB=		X11 Xau Xext Xpm Xt c m
 
 USE_X11=	Yes
 USE_MOTIF=	any
+USE_GROFF =	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-optim "${CFLAGS}" -debug
 MAKE_FLAGS =	MOTIF_LIB="${MOTIFLIB} -lm"

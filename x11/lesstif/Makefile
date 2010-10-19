@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/19 08:13:58 espie Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 COMMENT=	API-compatible clone of the Motif toolkit
@@ -25,6 +25,7 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt c pthread-stubs xcb
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/lib/Xlt ${WRKSRC}/lib/Xbae

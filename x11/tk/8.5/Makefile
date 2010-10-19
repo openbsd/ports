@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:59 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -38,6 +38,7 @@ REGRESS_FLAGS =		HOME=${TESTHOME}
 
 SEPARATE_BUILD =	concurrent
 USE_X11 =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu old
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--includedir="${PREFIX}/include/tk8.5" \

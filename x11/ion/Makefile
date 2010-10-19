@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:58 espie Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=	::lang/lua
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

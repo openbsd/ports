@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		project management application
 
@@ -59,6 +59,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			UPDATE_DESKTOP_DATABASE="/usr/bin/false"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
 

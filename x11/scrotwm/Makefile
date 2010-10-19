@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/16 01:38:53 marco Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=		small tiling window manager
 
@@ -28,6 +28,7 @@ MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/cat" \
 		SHLIB_MAJOR=${LIBswmhack_VERSION:C/\..*//} \
 		SHLIB_MINOR=${LIBswmhack_VERSION:C/.*\.//}
+USE_GROFF =	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/scrotwm.conf ${WRKSRC}/scrotwm.c

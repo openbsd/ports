@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	displays text on your screen
 
@@ -26,5 +26,6 @@ CONFIGURE_ARGS+= --disable-new-plugin --disable-old-plugin
 
 USE_X11=	yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

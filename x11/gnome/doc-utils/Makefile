@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	::devel/gettext \
 
 USE_X11=	No
 USE_LIBTOOL=	No
+USE_GROFF =	Yes
 CONFIGURE_ARGS=	--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

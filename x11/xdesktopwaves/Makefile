@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=		simulation of water waves on the X Window desktop
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xdesktopwaves/}
 
 WANTLIB=		X11 Xext c m
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

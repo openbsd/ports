@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/19 08:13:58 espie Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -19,6 +19,7 @@ SHARED_LIBS +=	kunittestgui         1.0      # .0.0
 MULTI_PACKAGES =	-main -svn
 
 MODULES =		x11/kde devel/gettext
+USE_GROFF =	Yes
 
 RUN_DEPENDS-main +=	:desktop-file-utils-*:devel/desktop-file-utils
 

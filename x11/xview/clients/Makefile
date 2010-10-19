@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/30 06:59:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	OpenLook applications and man pages
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	::x11/xview/lib
 WRKDIST=	${WRKDIR}/x11/xview/lib/${DISTNAME}
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes
+USE_GROFF =	Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WANTLIB=	X11 Xext c m xview olgx

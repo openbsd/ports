@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	Xfce4 extension library
 
@@ -23,6 +23,7 @@ DESKTOP_FILES=	Yes
 CONFIGURE_ARGS=	--disable-python
 CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 		ac_cv_header_sys_mount_h=yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
 LIB_DEPENDS=	::devel/libnotify \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:56 espie Exp $
 
 COMMENT=		X11 file manager. Dockable in Window Maker
 
@@ -24,6 +24,7 @@ FAKE_FLAGS=		NORMAL_INSTALL="" \
 			mandir=${WRKINST}${PREFIX}/man
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 

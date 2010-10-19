@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:59 espie Exp $
 
 COMMENT=	open source client for Windows Terminal Server
 DISTNAME=	rdesktop-1.6.0
@@ -24,6 +24,7 @@ LIB_DEPENDS=	::audio/libao
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-x=${X11BASE} \

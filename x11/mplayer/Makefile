@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.173 2010/10/19 08:13:58 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -80,6 +80,7 @@ BUILD_DEPENDS+=	::devel/yasm
 CONFDIR=	${SYSCONFDIR}/mplayer
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-arts \

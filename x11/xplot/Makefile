@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:14:01 espie Exp $
 
 COMMENT=	fast tool to graph and visualize lots of data
 
@@ -19,6 +19,7 @@ WANTLIB=		X11 c m
 MASTER_SITES=	${HOMEPAGE}xplot/
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu dest
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:13:58 espie Exp $
 
 COMMENT= 		embedded documentation in C++
 CATEGORIES=		x11 x11/kde devel
@@ -11,6 +11,7 @@ MODULES=
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf no-autoheader
 USE_GMAKE=		No
+USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
 
 .include <bsd.port.mk>

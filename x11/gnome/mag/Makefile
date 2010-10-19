@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-colorblind-applet=no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 SUBST_VARS=		LIBgnome-mag_VERSION
 

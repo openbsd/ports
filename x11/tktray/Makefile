@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/20 06:30:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
 
 SHARED_ONLY=    Yes
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=    ${MODTK_RUN_DEPENDS}
 WANTLIB+=	X11
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD= simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

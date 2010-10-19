@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:58 espie Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
@@ -16,6 +16,7 @@ LIB_DEPENDS +=	::x11/kde4/libs \
 BUILD_DEPENDS +=	::x11/kde4/automoc
 
 SUBST_VARS +=	VERSION
+USE_GROFF =	Yes
 
 SHARED_LIBS += kdecorations          3.0                # .4.0
 SHARED_LIBS += kfontinst             2.0                # .4.0

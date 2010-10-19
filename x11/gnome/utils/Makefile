@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/19 08:13:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -51,5 +51,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ipv6=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

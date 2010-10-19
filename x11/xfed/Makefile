@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 08:14:00 espie Exp $
 
 COMMENT=	X11 fonts (.bdf files) editor
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xau Xdmcp Xext c
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:13:59 espie Exp $
 # $FreeBSD: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
 
 COMMENT=	display files containing g3 and/or g4 coded fax pages
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext c
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-install:
