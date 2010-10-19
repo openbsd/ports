@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/19 21:22:52 espie Exp $
+share/tmac/
+share/tmac/mdoc/
+share/tmac/mdoc/doc
+share/tmac/mdoc/doc-common
+share/tmac/mdoc/doc-ditroff
+share/tmac/mdoc/doc-nroff
+share/tmac/mdoc/doc-syms
+share/tmac/tmac.an
+share/tmac/tmac.andoc
+share/tmac/tmac.doc
