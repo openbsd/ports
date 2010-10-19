@@ -1,0 +1,13 @@
+$OpenBSD: patch-auth_c,v 1.1 2010/10/19 20:11:49 naddy Exp $
+--- auth.c.orig	Tue Oct 19 21:27:26 2010
++++ auth.c	Tue Oct 19 21:27:36 2010
+@@ -31,8 +31,8 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ 
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ 
+ #include <ctype.h>
+ #include <openssl/md5.h>

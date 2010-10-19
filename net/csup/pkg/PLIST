@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/07 20:50:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/10/19 20:11:49 naddy Exp $
+bin/cpasswd
 @bin bin/csup
+@man man/cat1/cpasswd.0
 @man man/cat1/csup.0
