@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 19:46:12 naddy Exp $
 
 .include <bsd.own.mk>
 .  if ${COMPILER_VERSION:L:Mgcc4*}
@@ -32,7 +32,6 @@ WRKDIST =		${WRKDIR}/g77
 PATCH_LIST=		gcc4-* patch-*
 .endif
 CONFIGURE_SCRIPT =	${WRKDIST}/gcc/configure
-USE_GROFF =	Yes
 
 SEPARATE_BUILD = 	Yes
 LIBIBERTY_INCLUDES =	${WRKDIST}/libiberty/include

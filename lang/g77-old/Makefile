@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 19:46:12 naddy Exp $
 
 .include <bsd.own.mk>
 .  if ${COMPILER_VERSION:L:Mgcc4*}
@@ -29,7 +29,6 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WRKDIST =		${WRKDIR}/g77
 CONFIGURE_SCRIPT =	${WRKDIST}/gcc/configure
-USE_GROFF =	Yes
 
 SEPARATE_BUILD = 	Yes
 LIBIBERTY_INCLUDES =	${WRKDIR}/libiberty/include
