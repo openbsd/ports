@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.27 2010/10/18 13:17:24 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.28 2010/10/19 15:20:36 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -48,4 +48,7 @@ USE_GMAKE?=		Yes
 . endif
 .endif
 
-USE_X11?=		Yes
+# XXX not 100% reliable
+.if ${WANTLIB:MX11}
+USE_X11=	Yes
+.endif
