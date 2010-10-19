@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/25 20:45:24 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,6 +42,7 @@ MULTI_PACKAGES=	-main -gui -snmp
 
 MODULES=	devel/gettext lang/python
 MODPY_RUNDEP=	No
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \

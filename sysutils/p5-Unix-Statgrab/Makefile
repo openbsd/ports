@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	interface to libstatgrab system statistics library
 SHARED_ONLY=	Yes
@@ -7,6 +7,7 @@ MODULES=	cpan
 DISTNAME=	Unix-Statgrab-0.04
 REVISION=	2
 CATEGORIES=	sysutils
+USE_GROFF =	Yes
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 

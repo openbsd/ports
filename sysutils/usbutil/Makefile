@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/14 00:58:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:43:04 espie Exp $
 
 COMMENT=	USB developer utilities
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 INSTALL_TARGET=	man install

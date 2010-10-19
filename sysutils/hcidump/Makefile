@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	Bluetooth packet analyzer
 
@@ -21,6 +21,7 @@ WANTLIB=	c
 LIB_DEPENDS=	bluetooth.>=2.0::devel/bluetooth-libs
 
 MAKE_FLAGS=	"LDFLAGS+=-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 post-extract:
 	mkdir ${WRKSRC}/bluetooth

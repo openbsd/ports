@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/12 19:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=		module to do NFS (or not) locking
 
@@ -13,5 +13,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

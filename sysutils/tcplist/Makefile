@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/15 14:29:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	list tcp connections to/from the local machine
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	::sysutils/lsof
 
 WRKDIST=	${WRKDIR}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

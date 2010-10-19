@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/01/18 12:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:43:05 espie Exp $
 
 COMMENT=	interactive utility that displays info about online users
 
@@ -22,6 +22,7 @@ WANTLIB=		c kvm ncurses
 
 CONFIGURE_STYLE= autoconf gnu dest
 AUTOCONF_VERSION=2.13
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/03 22:08:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	provide ldap authentication type
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

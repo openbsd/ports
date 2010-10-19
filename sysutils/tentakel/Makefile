@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:43:03 espie Exp $
 
 COMMENT=	distributed command execution
 
@@ -22,6 +22,7 @@ MODULES=	lang/python
 
 WRKSRC=		${WRKDIST}/py
 
+USE_GROFF =	Yes
 REGRESS_IS_INTERACTIVE=	yes
 
 do-configure:

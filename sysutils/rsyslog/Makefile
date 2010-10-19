@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/26 21:28:58 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:43:02 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -42,6 +42,7 @@ CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.63
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS = 	--tag=disable-static
+USE_GROFF =	Yes
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-pgsql \
 			--enable-mysql \

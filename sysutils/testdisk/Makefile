@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/30 22:49:27 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:04 espie Exp $
 
 COMMENT =	data recovery software
 
@@ -26,6 +26,7 @@ SUBST_VARS +=		VERSION
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 LIB_DEPENDS =		e2fs-uuid,ext2fs,ext2fs_com_err::sysutils/e2fsprogs \
 			jpeg::graphics/jpeg

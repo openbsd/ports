@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/05 20:37:30 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:00 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	glib-2.0::devel/glib2 \
 		lua.>=5.1::lang/lua
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

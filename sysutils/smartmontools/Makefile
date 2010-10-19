@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/22 10:39:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 07:43:02 espie Exp $
 
 # conservative setting. macppc found to have some issues.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -14,6 +14,7 @@ HOMEPAGE=		http://smartmontools.sourceforge.net/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>	
 
 USE_GMAKE=      	Yes
+USE_GROFF =	Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=       	gnu 
 CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/smartmontools

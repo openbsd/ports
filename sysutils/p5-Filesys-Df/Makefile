@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:01 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>	

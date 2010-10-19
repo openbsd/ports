@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/27 09:27:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:05 espie Exp $
 
 COMMENT=	GNU oSIP library
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=osip/}
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-debug \

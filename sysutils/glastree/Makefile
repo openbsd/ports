@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/29 11:42:40 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	poor man's daily snapshot
 
@@ -21,5 +21,6 @@ RUN_DEPENDS=	::devel/p5-Date-Calc
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 REGRESS_TARGET=	test
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

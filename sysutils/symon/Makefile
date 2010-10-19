@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/19 01:07:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/19 07:43:02 espie Exp $
 
 COMMENT-main=		active monitoring tool
 V=			2.82
@@ -34,6 +34,7 @@ LIB_DEPENDS-mon=
 COMMENT-mux=		symon data gatherer
 
 USE_X11=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/symon

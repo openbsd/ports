@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/03 18:03:04 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =		monitor the progress of data through a pipeline
 
@@ -18,5 +18,6 @@ MASTER_SITES =		http://pipeviewer.googlecode.com/files/
 WANTLIB =		c
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

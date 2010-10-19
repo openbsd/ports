@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/28 11:15:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	expand crontab(5)-style integer lists
 
 MODULES=	cpan
 DISTNAME=	Set-Crontab-1.02
 CATEGORIES=	sysutils
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Quota-1.5.1
 REVISION=	2
 CATEGORIES=	sysutils
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

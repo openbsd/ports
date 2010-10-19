@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:04 espie Exp $
 
 COMMENT=	Western Digital and SMC ethernet card configuration program
 
@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/network/drivers/
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/wdsetup ${WRKSRC}/wdsetup.c -li386
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

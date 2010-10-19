@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/08/26 00:03:54 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	log file preprocessor
 
@@ -21,5 +21,6 @@ LIB_DEPENDS=	pcre::devel/pcre
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

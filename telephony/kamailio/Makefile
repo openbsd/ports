@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 21:48:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:05 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -48,6 +48,7 @@ FLAVOR ?=
 MULTI_PACKAGES =	-main
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 MAKE_FLAGS =	TLS=1 \

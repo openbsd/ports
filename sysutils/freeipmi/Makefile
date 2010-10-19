@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/25 18:54:19 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:01 espie Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -38,6 +38,7 @@ LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--disable-dependency-tracking

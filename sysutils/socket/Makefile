@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	create tcp socket and connect to stdin/out
 
@@ -15,6 +15,7 @@ WANTLIB=		c
 MAKE_FLAGS=	CC="${CC}" SWITCHES="-DHAVE_SYS_PARAM_H" \
 		CFLAGS='$${SWITCHES} ${CFLAGS}'
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

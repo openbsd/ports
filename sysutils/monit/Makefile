@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/02/28 18:30:08 okan Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
@@ -24,6 +24,7 @@ MASTER_SITES=	${HOMEPAGE}dist/ \
 CONFIGURE_STYLE=gnu
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

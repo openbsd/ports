@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	faster and improved version of dd
 
@@ -28,6 +28,7 @@ do-configure:
 		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
 .endif
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

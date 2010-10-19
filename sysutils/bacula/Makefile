@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/12 19:47:06 robert Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 07:43:00 espie Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -48,6 +48,7 @@ SUBST_VARS=		SD_USER BACULACONF BACULASTATE TRUEPREFIX
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_LIBTOOL=		yes
+USE_GROFF =	Yes
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/09/01 14:25:15 okan Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	GNU system administration tool for networks
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${HOMEPAGE}tarballs/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
 

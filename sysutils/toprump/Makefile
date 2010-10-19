@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/10 06:06:26 lum Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:04 espie Exp $
 
 COMMENT=	modified OpenBSD top command
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 WANTLIB=	c curses 
 

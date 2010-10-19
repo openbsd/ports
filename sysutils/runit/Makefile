@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/07 19:21:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=		daemontools alike replacement for init
 
@@ -28,6 +28,7 @@ DOCS1=			benefits.html chpst.8.html dependencies.html faq.html \
 			upgrade.html useinit.html index.html utmpset.8.html
 DOCS2=			CHANGES README COPYING THANKS
 EXAMPLES=		etc/2 etc/openbsd/1 etc/openbsd/3 etc/openbsd/ctrlaltdel
+USE_GROFF =	Yes
 
 pre-build:
 	echo "${CC} ${CFLAGS} ${COPTS}" > ${WRKSRC}/conf-cc

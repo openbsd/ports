@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/21 15:18:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	interface for getting PID info
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::devel/p5-Class-Std \
 		::devel/p5-Class-Std-Utils \

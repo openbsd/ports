@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/14 08:53:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=		check shell scripts for bash-specific constructs
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/checkbashisms.pl \

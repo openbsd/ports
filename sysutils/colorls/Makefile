@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/04 15:44:44 nicm Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	ls that can use color to display file attributes
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
 
 WRKDIST=	${WRKDIR}/ls
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 # copy file and substitute a string near a CVS keyword

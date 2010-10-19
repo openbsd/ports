@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2010/09/15 09:02:50 pea Exp $
+#	$OpenBSD: Makefile,v 1.12 2010/10/19 07:43:02 espie Exp $
 
 COMMENT = 	incremental backup
 
@@ -23,6 +23,7 @@ MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 
 MODULES	= 		lang/python
 
+USE_GROFF =	Yes
 NO_REGRESS = 		Yes
 
 .include <bsd.port.mk>

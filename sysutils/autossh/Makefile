@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=		SSH monitoring
 
@@ -21,6 +21,7 @@ WANTLIB=		c
 
 EXTRACT_SUFX=		.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		concurrent

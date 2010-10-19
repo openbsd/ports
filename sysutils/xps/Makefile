@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/12/20 21:46:40 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:43:05 espie Exp $
 
 DISTNAME=       xps-4.2
 PKGNAME=	${DISTNAME}p1
@@ -25,6 +25,7 @@ CONFIGURE_ENV=		LDFLAGS=-lm
 
 USE_X11=		Yes
 USE_MOTIF=		any
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

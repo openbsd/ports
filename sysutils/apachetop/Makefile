@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/17 11:15:29 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:00 espie Exp $
 
 COMMENT =		top-like monitor for Apache
 
@@ -19,6 +19,7 @@ MASTER_SITES =		http://www.webta.org/apachetop/
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.59
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS =	--disable-fam \
 			--with-logfile=/var/www/logs/access_log

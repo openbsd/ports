@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/30 15:39:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	centralised configuration management for networks
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::converters/ruby-json \
 		::sysutils/ruby-facter \
 		${MODRUBY_ICONV_DEPENDS}
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
 

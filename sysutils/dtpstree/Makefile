@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/08/19 20:56:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:00 espie Exp $
 
 COMMENT =		display a tree of processes
 
@@ -25,6 +25,7 @@ SEPARATE_BUILD =	concurrent
 
 MAKE_FILE =		GNUmakefile
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes

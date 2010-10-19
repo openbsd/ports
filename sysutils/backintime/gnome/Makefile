@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	simple backup tool -- GNOME UI
 
@@ -11,6 +11,7 @@ WRKSRC=		${WRKDIST}/gnome
 SUBST_FILES=	backintime-gnome
 
 CONFIGURE_ARGS=	--no-check
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::sysutils/backintime/common \
 		::textproc/meld \

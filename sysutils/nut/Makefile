@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/03 22:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/19 07:43:01 espie Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -38,6 +38,7 @@ WEB_ROOT=		/var/www
 NUT_USER=		_ups
 NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \

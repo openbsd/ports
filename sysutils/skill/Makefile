@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/01/19 15:25:21 okan Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	signal or reprioritize specified processes
 
@@ -19,6 +19,7 @@ MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
+USE_GROFF =	Yes
 
 NO_REGRESS=		Yes
 

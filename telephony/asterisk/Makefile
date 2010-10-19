@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2010/09/19 21:14:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2010/10/19 07:43:05 espie Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -41,6 +41,7 @@ MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk/releases/ \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.63

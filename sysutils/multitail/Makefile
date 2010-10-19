@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/07/01 17:34:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	multi-window tail(1) utility
 
@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c m ncurses util panel
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC='${CC}' \

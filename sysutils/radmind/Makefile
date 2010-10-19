@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/15 14:29:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	remote administration software
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-profiled
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/libsnet
 

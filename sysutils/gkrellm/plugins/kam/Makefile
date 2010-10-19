@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/13 19:12:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	webcam plugin for GkrellM2
 
@@ -15,6 +15,7 @@ DISTFILES=	gkrellkam_${V}.tar.gz
 PLUGIN=		${WRKSRC}/gkrellkam2.so
 
 WANTLIB=
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/gkrellkam-list.5 ${PREFIX}/man/man5/gkrellkam.5

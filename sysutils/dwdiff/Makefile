@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 21:11:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:43:00 espie Exp $
 
 COMMENT =		word-based diff program
 
@@ -28,6 +28,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 LANGS =			de nl

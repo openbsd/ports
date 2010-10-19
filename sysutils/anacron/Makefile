@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	periodic command scheduler
 
@@ -20,6 +20,7 @@ WANTLIB=		c
 MASTER_SITES=	    ${MASTER_SITE_SOURCEFORGE:=anacron/}
 
 USE_GMAKE=	    Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS=	    ANACRONTAB="${SYSCONFDIR}/anacrontab"
 

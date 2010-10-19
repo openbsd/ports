@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/24 11:40:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:43:00 espie Exp $
 
 COMMENT =		data recovery tool
 
@@ -23,5 +23,6 @@ BUILD_DEPENDS = 	::devel/help2man
 CONFIGURE_STYLE =	gnu
 ALL_TARGET =		all doc
 INSTALL_TARGET =	install install-man
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

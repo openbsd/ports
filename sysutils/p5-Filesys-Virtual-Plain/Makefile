@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	perl module for a plain virtual filesystem
 DISTNAME=	Filesys-Virtual-Plain-0.10
@@ -15,5 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 RUN_DEPENDS=	:p5-Filesys-Virtual->=0.05:sysutils/p5-Filesys-Virtual
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

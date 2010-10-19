@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	manages software package installations with symlinks
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=stow/}
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

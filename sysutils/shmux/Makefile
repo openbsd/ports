@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/12 09:16:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=		execute a command on many hosts in parallel
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--datarootdir=${PREFIX}/share/doc
+USE_GROFF =	Yes
 LIB_DEPENDS=		pcre::devel/pcre
 RUN_DEPENDS=		::net/fping
 

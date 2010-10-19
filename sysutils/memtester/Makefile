@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/27 04:59:13 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	utility to test for memory faults
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/old-versions/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 WANTLIB=c
 

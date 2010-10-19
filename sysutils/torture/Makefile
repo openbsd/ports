@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/25 05:32:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:04 espie Exp $
 
 COMMENT =		set of kernel torture tools	
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP =   Yes
 
 MASTER_SITES =	http://notendur.hi.is/~thb45/
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 WANTLIB =	c
 

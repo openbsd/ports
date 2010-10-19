@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/03 16:57:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	identify or delete duplicates
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 ALL_TARGET=

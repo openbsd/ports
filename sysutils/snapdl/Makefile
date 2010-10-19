@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.2 2010/07/15 10:32:26 giovanni Exp $
+#$OpenBSD: Makefile,v 1.3 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =		download snapshots of OpenBSD-current
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.ethelred.fr/stuffs/ \
 			http://devio.us/~nlegrand/stuffs/
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	extended script command
 
@@ -18,6 +18,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/superscript ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/superscript.1 ${PREFIX}/man/man1
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

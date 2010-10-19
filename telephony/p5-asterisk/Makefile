@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/27 09:27:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:05 espie Exp $
 
 COMMENT=	collection of perl modules to be used with asterisk
 
@@ -17,5 +17,6 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 CONFIGURE_STYLE=	perl
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

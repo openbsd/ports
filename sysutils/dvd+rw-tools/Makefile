@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/07 01:53:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
@@ -24,6 +24,7 @@ CFLAGS+=		-DI_KNOW_ALL_ABOUT_SUDO
 MAKE_FLAGS+=		CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -fno-exceptions"
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

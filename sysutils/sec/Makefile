@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/12/15 03:22:37 okan Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	simple event correlator
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:43:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,5 +19,6 @@ WANTLIB=		c
 
 MODULES=		cpan
 CPAN_AUTHOR=		MHARNISCH
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

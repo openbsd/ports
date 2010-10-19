@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_GROFF =	Yes
 CONFIGURE_ENV+= ac_cv_func_mbrtowc=no
 
 post-build:

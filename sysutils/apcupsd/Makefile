@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/05 09:04:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -31,6 +31,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu old # old prevents overriding sysconfdir
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www

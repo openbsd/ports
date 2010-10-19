@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 
@@ -23,6 +23,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu dest
 SEPARATE_BUILD=		Simple
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

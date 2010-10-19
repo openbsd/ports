@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/05/24 10:20:37 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	enhanced printer spooler
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl util
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \

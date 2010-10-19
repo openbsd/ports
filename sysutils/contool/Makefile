@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=	console tool for openlook
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	::x11/xview/config
 WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-install:

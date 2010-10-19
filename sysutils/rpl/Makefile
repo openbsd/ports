@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 18:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =		replace strings with new strings in multiple text files
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 WANTLIB =		c
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/05/12 18:01:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:05 espie Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -26,6 +26,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tgz
 
 ALL_TARGET=	# empty
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

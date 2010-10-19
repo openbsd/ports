@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/23 12:59:21 stsp Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:43:00 espie Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
@@ -27,6 +27,7 @@ RUN_DEPENDS +=	::net/py-boto \
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
+USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
 # $NetBSD: Makefile,v 1.4 2001/11/04 03:28:45 tv Exp $
 
 COMMENT=	.bin/.cue to .iso CD image converter
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

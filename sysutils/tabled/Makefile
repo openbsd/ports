@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/03 20:07:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

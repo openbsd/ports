@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/05/17 19:54:40 rui Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
@@ -22,6 +22,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/}
 WANTLIB=		c m stdc++
 
 CONFIGURE_STYLE=        simple
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		:p5-DateManip-*:converters/p5-DateManip
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/21 23:17:33 joshe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:01 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/ \
 		ftp://ftp.ibiblio.org/pub/mirrors/gnu/alpha/gnu/grub/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 CFLAGS=		-ftrampolines -fno-stack-protector
 

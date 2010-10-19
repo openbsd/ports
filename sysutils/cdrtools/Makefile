@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/11/11 01:41:11 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:00 espie Exp $
 
 COMMENT=		ISO 9660 filesystem and CD creation tools
 
@@ -17,6 +17,7 @@ WANTLIB=		c ossaudio
 MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 MAKE_ENV=		MAKEPROG=${MAKE_PROGRAM} \
 			CCOM=${CC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/24 17:54:16 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	syslogd replacement
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS +=	--enable-tcp-wrapper \
 			--disable-sql
 CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto"
+USE_GROFF =	Yes
 
 CFLAGS +=	-I${LOCALBASE}/include
  

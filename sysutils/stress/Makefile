@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/05/26 04:51:16 lum Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	tool to impose configurable amount of load
 DISTNAME=	stress-1.0.4
@@ -15,5 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m 
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

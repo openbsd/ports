@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/15 09:40:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=	LDAP Administration Tool
 
@@ -34,6 +34,7 @@ MODULES=	lang/mono \
 		textproc/intltool
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 DLLMAP_FILES=	gnome-keyring-glue/gnome-keyring-glue.dll.config
 

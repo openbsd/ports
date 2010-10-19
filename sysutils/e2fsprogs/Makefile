@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/05/17 12:01:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 07:43:00 espie Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		utilities to manipulate ext2 filesystems
@@ -31,6 +31,7 @@ SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-elf-shlibs --disable-tls
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 MAKE_FLAGS=		LIBblkid_VERSION=${LIBblkid_VERSION} \
 			LIBe2p_VERSION=${LIBe2p_VERSION} \

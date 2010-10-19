@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/25 10:53:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =		list processes as a tree
 DISTNAME =		pstree-2.33
@@ -14,6 +14,7 @@ WANTLIB =		c
 
 MASTER_SITES =		ftp://ftp.thp.uni-duisburg.de/pub/source/
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 WRKDIST =		${WRKDIR}

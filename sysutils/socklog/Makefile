@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=		small and secure replacement for syslogd
 
@@ -28,6 +28,7 @@ DOCS1=			benefits.html network.html socklog.8.html \
 			socklog-check.8.html upgrade.html install.html \
 			socklog-conf.8.html
 DOCS2=			CHANGES README COPYING
+USE_GROFF =	Yes
 
 pre-build:
 	echo "${CC} ${CFLAGS} ${COPTS}" > ${WRKSRC}/conf-cc

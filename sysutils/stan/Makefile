@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/18 21:06:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =		statistical analyzer for binary streams
 
@@ -22,5 +22,6 @@ MASTER_SITES =		${HOMEPAGE}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

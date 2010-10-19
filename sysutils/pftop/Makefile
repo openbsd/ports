@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/03 22:04:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:43:02 espie Exp $
 #
 
 COMMENT=	curses-based real time state and rule display for pf
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses 
 
+USE_GROFF =	Yes
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
 .include <bsd.port.mk>

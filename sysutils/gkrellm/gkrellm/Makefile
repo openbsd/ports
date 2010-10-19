@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/17 14:20:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/19 07:43:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,7 @@ WANTLIB=	c kvm pthread
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
 EXTRACT_SUFX=	.tar.bz2
 
+USE_GROFF =	Yes
 PSEUDO_FLAVORS=	no_client
 FLAVOR?=
 

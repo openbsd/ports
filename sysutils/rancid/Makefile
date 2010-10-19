@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/05/24 06:40:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:02 espie Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--disable-mk-localstatedir
 
 USE_GMAKE =	yes
+USE_GROFF =	Yes
 
 pre-configure:
 	@cp ${FILESDIR}/fnlogin.in ${WRKSRC}/bin/fnlogin.in

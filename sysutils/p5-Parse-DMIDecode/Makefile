@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/15 22:44:46 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
 
 COMMENT =	interface to SMBIOS using dmidecode
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 CPAN_AUTHOR =		NICOLAW
 CONFIGURE_STYLE =	modbuild
 CONFIGURE_ENV =		AUTOMATED_TESTING=Yes
+USE_GROFF =	Yes
 
 MAKE_ENV+=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/25 15:59:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	draws a graph of CPU usage of a certain process
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 CONFIGURE_STYLE=gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

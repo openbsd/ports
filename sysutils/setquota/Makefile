@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 07:43:02 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	command line quota tools
@@ -17,5 +17,6 @@ WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/setquota/
 FAKE_FLAGS=	PREFIX=${PREFIX}
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

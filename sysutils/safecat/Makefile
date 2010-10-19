@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/07/02 17:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:02 espie Exp $
 
 COMMENT=	copy stdin to a qmail-style maildir
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 ALL_TARGET=
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

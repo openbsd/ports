@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/02 09:48:10 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:43:01 espie Exp $
 
 COMMENT=		ncurses-based du(1)
 
@@ -18,5 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
