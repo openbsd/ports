@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/14 22:55:15 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/19 14:48:57 jeremy Exp $
 bin/bacon
-lib/ruby/gems/${MODRUBY_REV}/bin/
-lib/ruby/gems/${MODRUBY_REV}/bin/bacon
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
