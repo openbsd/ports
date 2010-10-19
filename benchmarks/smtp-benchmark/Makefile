@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=	SMTP benchmark to measure throughput of an MTA
 
@@ -21,7 +21,6 @@ WANTLIB=		c pthread
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

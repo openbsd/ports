@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=		bluetooth network tools
 DISTNAME=		bluetooth-tools-20081122
@@ -22,7 +22,6 @@ MAKE_ENV=		BINDIR=${TRUEPREFIX}/bin \
 			MANDIR=${TRUEPREFIX}/man/cat \
 			COPTS=-I${LOCALBASE}/include \
 			LDADD=-L${LOCALBASE}/lib
-USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

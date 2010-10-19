@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=	small network calculator
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT =		show Ethernet Multicast memberships
 
@@ -21,6 +21,5 @@ WANTLIB =		c kvm
 NO_REGRESS =		Yes
 
 FAKE_FLAGS =		BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/cat"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
 
-USE_GROFF =	Yes
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 MAKE_ENV=	CC="${CC}"

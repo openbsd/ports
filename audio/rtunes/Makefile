@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=		Streams audio to Apple AirPort Express device
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto
 
-USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

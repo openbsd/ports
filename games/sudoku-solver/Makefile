@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -20,7 +20,6 @@ MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 USE_X11=	Yes
-USE_GROFF =	Yes
 USE_MOTIF=	OpenMotif
 
 MODULES=	devel/gettext

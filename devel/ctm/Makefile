@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=		directory synchronization over mail
 
@@ -17,6 +17,5 @@ MASTER_SITES=		http://www.nemeton.com.au/src/
 
 FAKE_FLAGS=		PREFIX=${PREFIX}
 WRKBUILD=		${WRKSRC}/ctm
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

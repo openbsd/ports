@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -25,7 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=		::graphics/gd
 
 MODULES=		converters/libiconv
-USE_GROFF =	Yes
 
 MULTI_PACKAGES=		-main -daemon
 

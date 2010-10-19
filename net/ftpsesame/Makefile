@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 21:04:52 naddy Exp $
 
 COMMENT=	automagic packet filter configurator for FTP
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c pcap
 
 MASTER_SITES=	http://www.sentia.org/downloads/
-USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ftpsesame ${PREFIX}/sbin
