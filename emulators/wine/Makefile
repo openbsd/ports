@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/19 18:43:56 sthen Exp $
+
+
+# XXX  This port is not finished and does not work.
+
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
