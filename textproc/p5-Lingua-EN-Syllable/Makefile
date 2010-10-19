@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/04 13:19:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=		outine for estimating syllable count in words
 
@@ -7,6 +7,7 @@ DISTNAME=		Lingua-EN-Syllable-0.251
 CATEGORIES=		textproc
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=		web/text search engine
 
@@ -33,6 +33,7 @@ RUN_DEPENDS=		::www/p5-URI \
 			::www/p5-HTML-Template
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-pcre
 

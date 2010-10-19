@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/08 16:51:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=		subclass for non-blocking (incremental) parsing
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::textproc/p5-XML-SAX-Expat
 REGRESS_DEPENDS=	::devel/p5-Test-Exception

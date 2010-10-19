@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	small utility used to manipulate SGML and XML catalogs
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlcatmgr/}
 CONFIGURE_STYLE=gnu
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/xmlcatmgr
+USE_GROFF =	Yes
 
 post-build:         
 		@echo "Creating SGML sample catalogs..."

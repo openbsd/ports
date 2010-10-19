@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:18:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:26 espie Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.1
@@ -35,6 +35,7 @@ FAKE_FLAGS =	DESTDIR=''
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

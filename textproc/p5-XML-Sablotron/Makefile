@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/05/23 13:58:14 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/19 07:54:25 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -26,6 +26,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	sablot.>=100::textproc/sablotron
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	 EXPATLIBPATH="${X11BASE}/lib" EXPATINCPATH="${X11BASE}/include" SABLOTLIBPATH="${LOCALBASE}/lib" SABLOTINCPATH="${LOCALBASE}/include"

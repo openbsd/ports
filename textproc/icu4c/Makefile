@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/01 12:48:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=		International Components for Unicode
 
@@ -29,6 +29,7 @@ MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \

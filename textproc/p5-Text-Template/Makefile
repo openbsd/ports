@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/24 08:04:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	expand template text with embedded perl
 
 MODULES=	cpan
 DISTNAME=	Text-Template-1.45
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/25 00:23:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=		GNU text utilities
 
@@ -19,6 +19,7 @@ MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
+USE_GROFF =	Yes
 
 # gpr -> ggpr to fix a conflict with graphviz
 # god -> ggod to fix a conflict with god

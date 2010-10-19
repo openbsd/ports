@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=	Porters stemming algorithm for Denmark
 
@@ -8,6 +8,7 @@ DISTNAME=	Snowball-Norwegian-${VERSION}
 PKGNAME=	p5-Lingua-Stem-Snowball-No-${VERSION}
 REVISION=	0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

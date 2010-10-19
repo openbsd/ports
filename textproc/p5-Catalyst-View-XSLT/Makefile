@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/12/07 06:53:27 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:22 espie Exp $
 
 COMMENT= 	XSLT Views for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-View-XSLT-0.06
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

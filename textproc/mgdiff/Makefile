@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/12/20 21:49:48 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	graphical front end to Unix diff
 
@@ -18,6 +18,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m
 
 USE_X11=	Yes
 USE_MOTIF=	any
+USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 
 NO_REGRESS=	Yes

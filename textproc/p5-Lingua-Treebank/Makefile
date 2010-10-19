@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/19 17:39:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=		manifulate the Penn Treebank format
 
@@ -12,5 +12,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

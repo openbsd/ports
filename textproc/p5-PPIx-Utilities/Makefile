@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/30 17:06:08 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=		extensions to PPI
 
 MODULES=		cpan
 DISTNAME=		PPIx-Utilities-1.000001
 CATEGORIES=		textproc
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

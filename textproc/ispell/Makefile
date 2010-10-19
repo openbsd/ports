@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/08/31 12:35:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/19 07:54:22 espie Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -80,6 +80,7 @@ RUN_DEPENDS=	::textproc/ispell
 RUN_DEPENDS-main=
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR}
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

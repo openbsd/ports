@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/18 19:05:35 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=		A high-level interface for RDF
 DISTNAME=		redland-1.0.8
@@ -23,6 +23,7 @@ LIB_DEPENDS=	raptor.>=2::textproc/raptor
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \

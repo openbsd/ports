@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 20:59:37 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=--disable-wordview
 .endif
 
 CONFIGURE_STYLE=gnu dest
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

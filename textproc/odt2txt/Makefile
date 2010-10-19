@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/03 17:14:24 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=		convert OpenDocument Text to plain text
 
@@ -21,6 +21,7 @@ MODULES=	converters/libiconv
 WANTLIB += c z
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

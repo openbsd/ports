@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:37 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=		C-language sources to HTML converter
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

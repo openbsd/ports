@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	modbuild
 

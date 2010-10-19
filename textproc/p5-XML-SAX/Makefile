@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	perl interface to the SAX2 XML parser
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	XML-SAX-0.96
 REVISION=	0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

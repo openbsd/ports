@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	translate GNU info files into HTML pages
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 FAKE_FLAGS=		PREFIX=${PREFIX}
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/info2html.1 ${PREFIX}/man/man1

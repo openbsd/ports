@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	German grundform reduction
 
 MODULES=	cpan
 DISTNAME=	Text-German-0.06
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

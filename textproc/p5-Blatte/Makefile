@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	text macro/markup/template language
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Blatte-0.9.4
 REVISION=	0
 HOMEPAGE=	http://www.blatte.org/
+USE_GROFF =	Yes
 
 CATEGORIES=	textproc
 

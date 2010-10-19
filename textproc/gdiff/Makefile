@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
@@ -25,5 +25,6 @@ CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

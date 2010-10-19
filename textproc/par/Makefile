@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/25 00:33:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	paragraph reflow for email
 
@@ -19,6 +19,7 @@ WANTLIB=		c
 MASTER_SITES=   ${HOMEPAGE}
 
 ALL_TARGET=
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

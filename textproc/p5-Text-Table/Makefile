@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/05 21:56:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	organize data in tables
 
 MODULES=	cpan
 DISTNAME=	Text-Table-1.114
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

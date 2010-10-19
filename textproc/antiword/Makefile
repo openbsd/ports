@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 20:59:37 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	converts MSWord Documents to ASCII Text and PostScript
 
@@ -21,6 +21,7 @@ WANTLIB=		c
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DNDEBUG" \
 		LD="${CC}"
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCS=		FAQ Netscape QandA ReadMe Mutt

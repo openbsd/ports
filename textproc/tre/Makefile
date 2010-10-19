@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/20 20:06:55 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
@@ -27,6 +27,7 @@ MODULES=		devel/gettext converters/libiconv
 LIB_DEPENDS=		utf8.>=1::misc/libutf8
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-static --with-libutf8=${LOCALBASE}
 

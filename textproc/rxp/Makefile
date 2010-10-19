@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	validating namespace-aware XML parser
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/03 12:38:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:22 espie Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -28,6 +28,7 @@ LIB_DEPENDS =	::graphics/jpeg \
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

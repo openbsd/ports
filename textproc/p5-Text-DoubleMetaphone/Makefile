@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:24 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Text-DoubleMetaphone-0.07
 REVISION=	1
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Jim Razmus II <jim@bonetruck.org>
 

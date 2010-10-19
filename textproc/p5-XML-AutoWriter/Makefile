@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	module for DOCTYPE based XML output
 
 MODULES=	cpan
 DISTNAME=	XML-AutoWriter-0.39
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

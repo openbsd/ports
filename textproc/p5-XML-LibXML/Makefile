@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 07:54:25 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	XML-LibXML-1.69
 REVISION=	0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 LIB_DEPENDS=	xml2.>=6::textproc/libxml
 RUN_DEPENDS=	::textproc/p5-LibXML-Common \

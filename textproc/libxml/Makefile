@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2010/08/31 14:35:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2010/10/19 07:54:22 espie Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -27,6 +27,7 @@ WANTLIB=		m z
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static

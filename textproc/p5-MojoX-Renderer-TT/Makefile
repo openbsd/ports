@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/12 23:49:27 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT =	Template Toolkit renderer for Mojo
 
 MODULES =	cpan
 DISTNAME =	MojoX-Renderer-TT-0.20
 CATEGORIES =	textproc
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

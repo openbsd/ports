@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/23 21:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	front-end to an XSL toolchain
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-getopt=${LOCALBASE}/bin/gnugetopt
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \

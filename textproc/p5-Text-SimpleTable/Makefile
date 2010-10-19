@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/29 21:32:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	simple eyecandy ASCII Tables
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:24 espie Exp $
 
 COMMENT= 	render tabular data as plain text
 
 MODULES=	cpan
 DISTNAME=	Text-TabularDisplay-1.22
 CATEGORIES=	textproc devel
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

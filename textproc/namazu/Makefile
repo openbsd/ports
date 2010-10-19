@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/22 01:09:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.20
@@ -27,6 +27,7 @@ RUN_DEPENDS=	::archivers/unzip \
 		::misc/p5-File-MMagic
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--localstatedir=/var/db
 CFLAGS+=	-I${LOCALBASE}/include

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/11 23:47:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	generic spell checking library/wrapper
 
@@ -29,6 +29,7 @@ RUN_DEPENDS=	::x11/dbus-glib
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/16 22:20:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=		prefixes and suffixes analisys of text
 
@@ -6,6 +6,7 @@ DISTNAME=		Text-Affixes-0.07
 CATEGORIES=		textproc
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

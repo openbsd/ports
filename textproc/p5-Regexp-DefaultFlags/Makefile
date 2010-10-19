@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=	set default flags on regular expressions
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Regexp-DefaultFlags-0.01
 REVISION=	0

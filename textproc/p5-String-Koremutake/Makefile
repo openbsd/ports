@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:23 espie Exp $
 
 COMMENT= 	memorable random strings
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	String-Koremutake-0.30
 CATEGORIES=	textproc devel

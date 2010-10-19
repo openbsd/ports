@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 21:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	Python program to create FAQ's list from formatted data file
 
@@ -24,6 +24,7 @@ MODULES=	lang/python
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+USE_GROFF =	Yes
 
 DOCDIR=		${PREFIX}/share/doc/makefaq
 

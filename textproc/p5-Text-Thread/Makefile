@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/14 13:27:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	convert tree structured items into ascii tree items 
 
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/03 16:59:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=	syntax highlight for HTML
 
 MODULES=	cpan
 DISTNAME=	Syntax-Highlight-HTML-0.04
 CATEGORIES=	textproc www
+USE_GROFF =	Yes
 
 # Perl licence
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	generic classes for simplistic handling of XML data
 
 MODULES=	cpan
 DISTNAME=	XML-Elemental-2.0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

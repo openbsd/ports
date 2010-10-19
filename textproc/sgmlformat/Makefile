@@ -4,7 +4,7 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.17 2010/04/04 18:40:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 07:54:26 espie Exp $
 #
 
 COMMENT=	generate groff/HTML from linuxdoc/docbook SGML documents
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
+USE_GROFF =	Yes
 RUN_DEPENDS=	::textproc/openjade \
 		::textproc/linuxdoc \
 		::textproc/docbook

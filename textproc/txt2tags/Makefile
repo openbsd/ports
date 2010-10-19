@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	utility to turn simply formatted text into markup 
 
@@ -28,6 +28,7 @@ PKG_ARCH=	*
 DOCDIR=		${PREFIX}/share/doc/txt2tags
 EXAMPLESDIR=	${PREFIX}/share/examples/txt2tags
 LOCALEDIR=	${PREFIX}/share/locale
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e "s,^#!/usr/bin/env python,#!${MODPY_BIN}," \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 13:44:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:22 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,5 +55,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-liconv -lintl"
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

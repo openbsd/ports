@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/11/30 18:50:25 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	LaTeX vgrind(1) look-alike
 
@@ -34,6 +34,7 @@ MAKE_FLAGS=	BASEDIR=${PREFIX} \
 		VERSION=${VERSION} \
 		CC='${CC}' CFLAGS='${CFLAGS}'
 FAKE_FLAGS=	BASEDIR=${WRKINST}${PREFIX}
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::print/texlive/base
 BUILD_DEPENDS=	${RUN_DEPENDS}

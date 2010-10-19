@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	simple document format
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	sdf-2.001
 REVISION=	0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 

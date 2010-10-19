@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/20 23:37:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.4.2
@@ -25,6 +25,7 @@ LIB_DEPENDS=	glib-2.0.>=400.8::devel/glib2 \
 WANTLIB=	c m pcre z
 
 USE_LIBTOOL=Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 

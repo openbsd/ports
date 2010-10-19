@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:24 espie Exp $
 
 COMMENT=	converts simple text to web constructs
 
@@ -17,5 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

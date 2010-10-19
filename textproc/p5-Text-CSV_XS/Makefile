@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:50:23 stephan Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 07:54:24 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Text-CSV_XS-0.74
 CATEGORIES=	textproc
 EXTRACT_SUFX=	.tgz
+USE_GROFF =	Yes
 
 MAINTAINER=	David Hill <dhill@openbsd.org>
 

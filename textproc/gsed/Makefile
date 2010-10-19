@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/17 08:39:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=		GNU stream editor
 
@@ -26,5 +26,6 @@ BUILD_DEPENDS=		::devel/bison
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--program-prefix=g
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

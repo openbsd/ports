@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -30,6 +30,7 @@ PORTHOME=	${WRKDIST}
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:

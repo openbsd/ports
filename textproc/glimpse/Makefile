@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/02/14 21:00:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	text search engine
 
@@ -21,6 +21,7 @@ pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
 
 CFLAGS+=-D__STRICT_ANSI__ -Dlog=mylog
+USE_GROFF =	Yes
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 

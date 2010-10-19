@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 21:33:48 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	manages templates and performs variable interpolation
 
 MODULES=	cpan
 DISTNAME=	CGI-FastTemplate-1.09
 CATEGORIES=	textproc www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

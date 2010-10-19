@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=	convert singular to plural, select a or an
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Lingua-EN-Inflect-1.88
 REVISION=	1
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

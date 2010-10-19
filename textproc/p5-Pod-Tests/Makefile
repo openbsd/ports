@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/15 13:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=	extracts embedded tests and code examples from pod
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	Pod-Tests-0.18
 REVISION=	0

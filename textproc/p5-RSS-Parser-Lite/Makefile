@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/22 18:38:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT =		simple and pure Perl RSS parser
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
+USE_GROFF =	Yes
 CPAN_AUTHOR =		EBOSRUP
 
 RUN_DEPENDS =		::www/p5-SOAP-Lite

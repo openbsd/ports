@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/13 20:14:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=	summarize HTML pages
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-Summary-0.017
 REVISION=	0
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 PERMIT_DISTFILES_CDROM=	No permission
 PERMIT_DISTFILES_FTP=	No permission

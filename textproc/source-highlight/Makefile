@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/24 09:28:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	boost_regex::devel/boost
 BUILD_DEPENDS=	::textproc/texi2html
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

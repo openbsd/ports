@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=	collate XML character events in one chunk
 
 MODULES=	cpan
 DISTNAME=	XML-Filter-BufferText-1.01
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

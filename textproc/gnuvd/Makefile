@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/21 21:27:44 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:21 espie Exp $
 
 COMMENT =		query the online Dutch Van Dale dictionary
 DISTNAME =		gnuvd-1.0.11
@@ -19,5 +19,6 @@ MASTER_SITES =		${HOMEPAGE}
 WANTLIB =		c
 
 CONFIGURE_STYLE =	gnu
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

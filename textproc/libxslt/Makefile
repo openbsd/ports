@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/08/31 14:35:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/19 07:54:22 espie Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -41,6 +41,7 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-libxml-include-prefix="${LOCALBASE}/include/" \

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/17 17:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:25 espie Exp $
 
 COMMENT= 	XML::RSS with XML::LibXML
 
 MODULES=	cpan
 DISTNAME=	XML-RSS-LibXML-0.3002
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

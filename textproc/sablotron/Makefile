@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/11/05 15:43:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/19 07:54:26 espie Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS =	:p5-XML-Parser-*:textproc/p5-XML-Parser
 USE_X11 =			Yes
 USE_LIBTOOL =			Yes
 USE_GMAKE =			Yes
+USE_GROFF =	Yes
 AUTOCONF_VERSION = 		2.57
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/autocfg
 

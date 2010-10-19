@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/05 23:03:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:24 espie Exp $
 
 COMMENT= 	explicit encoding for Template Toolkit
 
 MODULES=	cpan
 DISTNAME=	Template-Provider-Encoding-0.10
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

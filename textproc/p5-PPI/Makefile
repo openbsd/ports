@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/30 16:50:02 jim Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 DISTNAME=		PPI-1.212
 CATEGORIES=		textproc
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

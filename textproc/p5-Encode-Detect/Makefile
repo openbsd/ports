@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:22 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ MODULES =	cpan
 DISTNAME =	Encode-Detect-1.01
 REVISION=	0
 CATEGORIES =	textproc
+USE_GROFF =	Yes
 
 WANTLIB +=	stdc++
 

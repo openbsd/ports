@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	RTF document converter
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c 
 
 MAKE_FLAGS=	CFLAGS='${CFLAGS}' CC='${CC}'
+USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/06 22:44:25 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 07:54:22 espie Exp $
 
 COMMENT= 	Template Toolkit views for Catalyst
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::devel/p5-Data-Dump \
 		::devel/p5-Class-Accessor \

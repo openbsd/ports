@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/03 07:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:23 espie Exp $
 
 COMMENT= 		POE Filter for parsing XML
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	modbuild
 

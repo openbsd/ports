@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/15 14:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:26 espie Exp $
 
 COMMENT =		tests lexical similarity in texts
 
@@ -22,6 +22,7 @@ EXTRACT_SUFX =		.zip
 MASTER_SITES =		ftp://ftp.cs.vu.nl/pub/dick/similarity_tester/
 
 MAKE_FLAGS =		CC=${CC} CFLAGS="${CFLAGS} -DUNIX" LDFLAGS="${LDFLAGS}"
+USE_GROFF =	Yes
 
 WRKDIST =		${WRKDIR}
 

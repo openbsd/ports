@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:24 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	Text-Tmpl-0.29
 REVISION=	2
 CATEGORIES=	textproc
+USE_GROFF =	Yes
 
 MAINTAINER=	Alex Feinberg <alex@strlen.net>
 

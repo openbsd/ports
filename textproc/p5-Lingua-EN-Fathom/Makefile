@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/04 13:20:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
 
 COMMENT=		measure readability of English text
 
@@ -6,6 +6,7 @@ DISTNAME=		Lingua-EN-Fathom-1.12
 CATEGORIES=		textproc
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

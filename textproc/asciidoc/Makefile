@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/31 07:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:21 espie Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=	::misc/gnugetopt \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_GROFF =	Yes
 
 post-configure:
 	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env ${MODPY_BIN},g' \

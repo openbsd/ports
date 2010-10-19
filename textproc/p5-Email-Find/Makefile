@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/13 19:00:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=		Find RFC 822 email addresses in plain text
 
 MODULES=		cpan
 DISTNAME=		Email-Find-0.10
 CATEGORIES=		textproc
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::mail/p5-Mail-Tools ::mail/p5-Email-Valid
 BUILD_DEPENDS=		${RUN_DEPENDS}

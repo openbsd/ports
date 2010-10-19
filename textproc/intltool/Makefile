@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 13:44:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/19 07:54:22 espie Exp $
 
 COMMENT=		internationalization tool
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 CONFIGURE_STYLE= 	gnu
 
 USE_X11=		No
+USE_GROFF =	Yes
 NO_BUILD=		Yes # avoid recursive dependency
 PKG_ARCH=		*
 

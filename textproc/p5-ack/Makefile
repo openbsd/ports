@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/03 02:44:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 DISTNAME=		ack-1.90
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
+USE_GROFF =	Yes
 
 MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
 

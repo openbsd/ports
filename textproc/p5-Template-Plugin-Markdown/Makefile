@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/06 11:39:40 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:24 espie Exp $
 
 COMMENT =	TT plugin for Text::Markdown
 
 MODULES =	cpan
 DISTNAME =	Template-Plugin-Markdown-0.02
 CATEGORIES =	textproc
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

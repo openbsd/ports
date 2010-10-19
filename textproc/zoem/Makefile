@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/23 22:09:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	interpretive macro/programming language
 
@@ -19,6 +19,7 @@ WANTLIB=		c m
 MASTER_SITES=	${HOMEPAGE}/src/
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 FAKE_FLAGS=	docexamplesdir=${PREFIX}/share/examples/zoem/
 

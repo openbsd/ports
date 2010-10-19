@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/12 19:08:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:25 espie Exp $
 
 COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor-1.4.18
@@ -22,6 +22,7 @@ WANTLIB=		c crypto idn m ssl z
 MODULES=		devel/gettext
 
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 
 LIB_DEPENDS=		curl.>=12::net/curl \
 			xml2.>=7::textproc/libxml \

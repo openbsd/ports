@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 07:54:26 espie Exp $
 
 COMMENT=	very flexible diff-like program
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m 
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:
