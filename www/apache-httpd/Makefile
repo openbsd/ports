@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/06/27 17:27:03 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	apache HTTP server
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=		Yes
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 WANTLIB=		c crypto m ssl expat apr-1-mt db.>=4 z pthread

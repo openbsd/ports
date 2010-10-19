@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/06 21:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	spawn FastCGI processes
 
@@ -20,5 +20,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.64
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:55 espie Exp $
 
 COMMENT= 	catalyst file storage backend for session data
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-Store-File-0.13
 REVISION=	1
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

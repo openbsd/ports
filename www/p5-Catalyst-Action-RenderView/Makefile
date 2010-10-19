@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/27 00:47:43 jim Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:54 espie Exp $
 
 COMMENT= 	sensible default end action for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Action-RenderView-0.13
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

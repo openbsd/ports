@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ DISTNAME=	Embperl-2.3.0
 PKGNAME=	p5-HTML-${DISTNAME}
 REVISION=	0
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

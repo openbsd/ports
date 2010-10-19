@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/07/11 09:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	read / write PHP session files
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	PHP-Session-0.26
 PKGNAME=        p5-${DISTNAME}p1
 CATEGORIES=     www
+USE_GROFF =	Yes
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=   Yes

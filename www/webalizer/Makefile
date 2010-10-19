@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -27,6 +27,7 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns --enable-geoip
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-ljpeg"
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

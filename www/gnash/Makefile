@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/13 06:26:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/19 08:02:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,6 +52,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Gnash requires GNU libtool 2.2 or greater, so use the bundled one
 USE_LIBTOOL=	gnu
+USE_GROFF =	Yes
 LIBTOOL=	${WRKSRC}/libtool
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu

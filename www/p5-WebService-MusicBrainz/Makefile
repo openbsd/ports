@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/07 11:32:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		interface to Music Brainz
 
@@ -6,6 +6,7 @@ DISTNAME=		WebService-MusicBrainz-0.22
 CATEGORIES=		www
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

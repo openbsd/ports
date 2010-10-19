@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	transparent www proxy driver for pf
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c wrap
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}

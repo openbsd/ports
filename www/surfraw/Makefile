@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/07/30 21:07:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/19 08:02:57 espie Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
@@ -19,6 +19,7 @@ MASTER_SITES =		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE = 	gnu
 USE_GMAKE =		yes
+USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,\.(1sr|1)\.gz,.1,g' ${WRKSRC}/links.IN

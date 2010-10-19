@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -7,6 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 MASTER_SITES0=	http://script.aculo.us/dist/
 DISTNAME=	HTML-Prototype-1.48
+USE_GROFF =	Yes
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		scriptaculous-js-1.7.0.tar.gz:0

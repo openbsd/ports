@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/05 20:57:15 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	library for enabling X-WSSE authentication in LWP
 
 MODULES=	cpan
 DISTNAME=	LWP-Authen-Wsse-0.05
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

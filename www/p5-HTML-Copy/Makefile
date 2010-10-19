@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/11 22:48:41 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	copy a HTML file without breaking links
 
 MODULES=	cpan
 DISTNAME=	HTML-Copy-1.3
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
 

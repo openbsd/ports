@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/08 14:15:42 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:55 espie Exp $
 
 COMMENT =	simple blog code for valid (X)HTML
 
 MODULES =	cpan
 DISTNAME =	HTML-SBC-0.15
 CATEGORIES =	www
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

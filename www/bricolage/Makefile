@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/05 08:31:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	content management system
 
@@ -49,6 +49,7 @@ CONFIGURE_STYLE=perl
 MAKE_FLAGS=	INSTALL_VERBOSITY=QUIET
 ALL_TARGET=	build
 
+USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-configure:

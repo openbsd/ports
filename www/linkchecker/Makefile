@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/19 08:02:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=linkchecker/}
 MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	--no-compile
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	:py-dns-*:net/py-dns
 

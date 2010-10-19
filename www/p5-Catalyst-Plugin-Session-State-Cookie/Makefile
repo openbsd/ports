@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/14 10:31:53 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:02:55 espie Exp $
 
 COMMENT= 	catalyst session IDs with cookies
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-State-Cookie-0.09
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

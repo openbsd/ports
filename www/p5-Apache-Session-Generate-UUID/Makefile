@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/16 09:29:55 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	UUID for session ID generation
 
 MODULES=	cpan
 DISTNAME=	Apache-Session-Generate-UUID-0.2
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

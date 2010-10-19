@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/10 13:11:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	splits big cookies into small pieces
 
 MODULES=	cpan
 DISTNAME=	CGI-Cookie-Splitter-0.02
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/26 20:09:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:58 espie Exp $
 
 COMMENT=	client application for zope-externaleditor
 
@@ -23,6 +23,7 @@ PYTHON_VER=	2.4
 WRKDIST=	${WRKDIR}/zopeedit-${VERSION}
 
 NO_BUILD=      yes
+USE_GROFF =	Yes
  
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zopeedit.py ${PREFIX}/bin/zopeedit

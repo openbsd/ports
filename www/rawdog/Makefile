@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://offog.org/files/
 
 MODULES=	lang/python
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/rawdog

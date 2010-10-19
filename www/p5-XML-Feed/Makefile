@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:57 espie Exp $
 
 COMMENT= 	interface to RSS and Atom feeds
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	XML-Feed-0.12
 CATEGORIES=	www textproc

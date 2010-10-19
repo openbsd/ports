@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/23 12:51:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:58 espie Exp $
 
 COMMENT=	web search application
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xapian-omega \
 		pkglibbindir=${PREFIX}/libexec/xapian-omega/cgi-bin
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/omega/templates

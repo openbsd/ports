@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/08/28 17:02:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2010/10/19 08:02:54 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -39,6 +39,7 @@ EXTRACT_SUFX=	.tar.bz2
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::emulators/fedora/base
 
+USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

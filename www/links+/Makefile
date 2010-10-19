@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/07/12 22:02:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	graphics and text browser
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=	bz2.>=10::archivers/bzip2
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --with-ssl --without-sdl
+USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=

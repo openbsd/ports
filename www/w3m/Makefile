@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -34,6 +34,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 	README.m17n README.mouse README.pre_form README.tab STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
+USE_GROFF =	Yes
 .if ${FLAVOR:L:Mimage}
 USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2

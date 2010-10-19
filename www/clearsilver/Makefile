@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:02:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --disable-csharp \
 		--disable-java \
 		--disable-ruby
+USE_GROFF =	Yes
 
 FLAVORS+=	python
 FLAVOR?=

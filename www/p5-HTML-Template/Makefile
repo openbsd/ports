@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	use HTML Templates from CGI scripts
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-2.9
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/html-template/
 

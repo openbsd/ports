@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/04/12 16:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/19 08:02:53 espie Exp $
 
 BROKEN-alpha=	Alpha architecture not yet supported
 
@@ -25,6 +25,7 @@ NO_REGRESS=	Yes
 
 MAKE_ENV=	LIBcgiparse_VERSION=${LIBcgiparse_VERSION}
 FAKE_FLAGS=	MANDIR=${WRKINST}${PREFIX}/man
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
 

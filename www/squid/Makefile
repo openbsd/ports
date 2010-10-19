@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2010/06/18 10:32:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--with-pthreads \
 		--localstatedir="${SQUIDDIR}" \
 		--enable-follow-x-forwarded-for
+USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mldap}
 BASIC_AUTH+=	LDAP

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2008/07/12 13:32:06 dhill Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	data tables useful for parsing HTML
 
 MODULES=	cpan
 DISTNAME=	HTML-Tagset-3.20
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

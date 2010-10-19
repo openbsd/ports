@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/19 08:02:56 espie Exp $
 
 COMMENT= 	simple interface to HTML::TokeParser
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::www/p5-HTML-Parser
 

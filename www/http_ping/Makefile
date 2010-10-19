@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	HTTP latency performance testing client
 
@@ -20,6 +20,7 @@ WANTLIB=		c crypto ssl
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 MAKE_FILE=	${FILESDIR}/Makefile.bsd
+USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/http_ping
 

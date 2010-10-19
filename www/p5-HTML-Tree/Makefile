@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	perl parser that builds an HTML tree
 
 MODULES=	cpan
 DISTNAME=	HTML-Tree-3.23
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

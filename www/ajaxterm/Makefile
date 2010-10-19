@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
+USE_GROFF =	Yes
 NO_BUILD =		Yes
 
 MODULES =		lang/python

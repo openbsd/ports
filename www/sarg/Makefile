@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/08 08:35:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=		--enable-bindir=${LOCALBASE}/bin \
 			--enable-sysconfdir=${SYSCONFDIR}/sarg \
 			--enable-htmldir=/var/www/htdocs/sarg \
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 EXAMPLESDIR=		${PREFIX}/share/examples/sarg

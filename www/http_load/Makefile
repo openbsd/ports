@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/04 19:15:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	multiprocessing HTTP performance testing client
 
@@ -18,5 +18,6 @@ WANTLIB=		c crypto ssl
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 MAKE_FILE=	${FILESDIR}/Makefile.bsd
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/21 21:14:47 edd Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -33,6 +33,7 @@ LIB_DEPENDS+=		::archivers/bzip2 \
 			::devel/libidn
 
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::devel/gettext
 WANTLIB=		bz2 crypto c idn ssl z

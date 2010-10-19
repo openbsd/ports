@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/10 13:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	AJAX framework for perl
 
 MODULES=	cpan
 DISTNAME=	CGI-Ajax-0.706
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://pjax.sourceforge.net/
 

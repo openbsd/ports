@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/21 09:27:52 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	simple standalone HTTP server
 
 MODULES=	cpan
 DISTNAME=	HTTP-Server-Simple-0.38
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>
 

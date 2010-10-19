@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/03 02:44:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:54 espie Exp $
 
 COMMENT =	Reload changed modules for mod_perl
 
@@ -6,6 +6,7 @@ DISTNAME =	Apache-Reload-0.10
 CATEGORIES =	www perl5
 
 MODULES =	cpan
+USE_GROFF =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	::www/mod_perl

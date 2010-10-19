@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/31 12:17:18 jim Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=		catalyst plugin for prototype
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-Prototype-1.33
 CATEGORIES=		devel www
+USE_GROFF =	Yes
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 

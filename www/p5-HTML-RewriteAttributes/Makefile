@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/23 15:59:07 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	concise attribute rewriting
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-RewriteAttributes-0.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

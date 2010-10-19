@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:02:56 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	HTTP-GHTTP-1.07
 REVISION=	2
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

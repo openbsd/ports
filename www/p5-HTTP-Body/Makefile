@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/02 04:06:11 jim Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	HTTP Body Parser
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=	::www/p5-libwww
 

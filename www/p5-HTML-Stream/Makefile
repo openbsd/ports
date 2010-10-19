@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/05 21:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	HTML output stream class
 
 MODULES=	cpan
 DISTNAME=	HTML-Stream-1.60
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

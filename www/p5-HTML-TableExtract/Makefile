@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	module to extract text contained within HTML tables
 
 MODULES=	cpan
 DISTNAME=	HTML-TableExtract-2.10
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	HTML cleaning module
 
 MODULES=	cpan
 DISTNAME=	HTML-Scrubber-0.08
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

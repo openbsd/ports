@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	filtering HTTP proxy server
 DISTNAME=	ffproxy-1.6
@@ -20,6 +20,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--datadir=/var
 
+USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/15 16:08:22 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	online Image GALlery generator
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::graphics/ImageMagick \
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+USE_GROFF =	Yes
 
 DATADIR=	${PREFIX}/share/igal
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	text browser, displays while downloading
 
@@ -21,5 +21,6 @@ MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/ \
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

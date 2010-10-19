@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/19 08:02:58 espie Exp $
 
 COMMENT=	perl lint program for html
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 PKG_ARCH=	*
+USE_GROFF =	Yes
 
 REGRESS_TARGET=	test
 

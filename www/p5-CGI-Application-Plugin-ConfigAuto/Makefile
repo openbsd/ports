@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/06 22:09:10 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT =	easy config file management
 
 MODULES =	cpan
 DISTNAME =	CGI-Application-Plugin-ConfigAuto-1.30
 CATEGORIES =	www
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/02/10 20:04:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	tiny/turbo/throttling HTTP server
 
@@ -20,6 +20,7 @@ WANTLIB=		c
 MASTER_SITES=		http://www.acme.com/software/thttpd/
 
 CONFIGURE_STYLE=	gnu
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2010/10/18 07:15:56 landry Exp $
+# $OpenBSD: Makefile,v 1.154 2010/10/19 08:02:54 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -33,6 +33,7 @@ MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
 USE_X11 =	Yes
+USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 

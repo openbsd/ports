@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	proxy that can transliterate japanese
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	:p5-Text-Kakasi-*:japanese/p5-Text-Kakasi \
 		:p5-AppConfig-*:devel/p5-AppConfig \
 		:p5-libwww-*:www/p5-libwww
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-build:

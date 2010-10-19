@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/01 13:53:05 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT =	distributed cache for Catalyst
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Cache-Memcached-0.71
 CATEGORIES =	www
+USE_GROFF =	Yes
 
 MAINTAINER =	Jim Razmus <jim@bonetruck.org>
 

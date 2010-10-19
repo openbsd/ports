@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/06 10:33:51 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
 
 COMMENT =	log Perl warnings to your Catalyst log object
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-LogWarnings-0.02
 CATEGORIES =	www
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

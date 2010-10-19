@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/06/25 13:50:47 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -24,6 +24,7 @@ EXTRACT_SUFX=	-src.tar.gz
 NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
 LIB_DEPENDS=	pcre,pcreposix::devel/pcre

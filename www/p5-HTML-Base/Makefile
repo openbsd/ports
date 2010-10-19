@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	base HTML library
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-Base-0.6p0
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

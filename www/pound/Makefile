@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/04 08:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			--with-owner=root \
 			--with-group=bin
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 pre-configure:

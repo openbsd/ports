@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/09/26 17:45:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/19 08:02:57 espie Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-fastcgi \
 		--enable-force-cgi-redirect \
 		--with-config-file-scan-dir=${PHP_CONFIG_PATH}/php5
+USE_GROFF =	Yes
 		
 MODULES=	devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	validate, correct, and pretty-print HTML files
 
@@ -28,6 +28,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		tidy_test_051026${EXTRACT_SUFX}:1
 
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::textproc/libxslt
 

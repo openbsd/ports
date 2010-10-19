@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://dl.suckless.org/surf/
 
 MODULES =	devel/gettext
+USE_GROFF =	Yes
 
 LIB_DEPENDS =	webkit-1.0::www/webkit
 RUN_DEPENDS =	::x11/dmenu

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/05 22:05:05 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
 
 COMMENT =	lightweight, dependency free HTML/XML generation
 
 MODULES =	cpan
 DISTNAME =	HTML-Tiny-1.03
 CATEGORIES =	www
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

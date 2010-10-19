@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/06 17:02:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:56 espie Exp $
 
 COMMENT= 	test framework for HTTP::Server::Simple
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 
 DISTNAME=	Test-HTTP-Server-Simple-0.09
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

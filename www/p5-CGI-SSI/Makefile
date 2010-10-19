@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/23 22:31:39 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	use SSI from CGI scripts
 
 MODULES=	cpan
 DISTNAME=	CGI-SSI-0.92
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

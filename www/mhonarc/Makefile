@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=		highly customizable e-mail to HTML converter
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS=		PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
 			INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3p'
 
 ALL_TARGET=		default
+USE_GROFF =	Yes
 
 EXAMPLES=		mha-preview mhasiteinit.pl mhonarc.vim *.mrc
 EXTRAS=			mha-mhedit/*

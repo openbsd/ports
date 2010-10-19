@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/20 18:06:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=	apr-1 aprutil-1 db expat
 
 USE_LIBTOOL=	Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \

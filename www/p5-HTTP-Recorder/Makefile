@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	record interaction with websites
 
 MODULES=	cpan
 DISTNAME=	HTTP-Recorder-0.05
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

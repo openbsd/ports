@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	banner-ad blocking proxy server
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	
 
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:

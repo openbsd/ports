@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/19 08:02:53 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -49,6 +49,7 @@ FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR=	liferea
 
 CONFIGURE_STYLE=	gnu

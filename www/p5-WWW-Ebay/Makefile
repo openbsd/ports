@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/06 09:44:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		search and manage eBay accounts
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::security/p5-Crypt-SSLeay \
 			::www/p5-WWW-Search-Ebay \

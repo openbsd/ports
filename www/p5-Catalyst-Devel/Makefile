@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/03 03:58:15 jim Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:54 espie Exp $
 
 COMMENT= 	Catalyst development tools
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Devel-1.28
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.catalystframework.org/
 

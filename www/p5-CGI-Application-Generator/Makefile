@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:54 espie Exp $
 
 COMMENT= 	skeleton for application based on CGI::Application
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 DISTNAME=	CGI-Application-Generator-1.0
 CATEGORIES=	www

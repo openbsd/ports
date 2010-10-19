@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	convert Netscape bookmarks into a Yahoo-like website
 
@@ -19,6 +19,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-standard-datadir
 MAKE_FLAGS=		CXXFLAGS="${CXXFLAGS}"
+USE_GROFF =	Yes
 
 
 post-install:

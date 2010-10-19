@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/27 13:31:16 stephan Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:57 espie Exp $
 
 COMMENT= 	combines WWW::Mechanize and HTML::TreeBuilder
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 
 DISTNAME=	WWW-Mechanize-TreeBuilder-1.10003
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 

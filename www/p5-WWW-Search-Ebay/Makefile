@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/01/06 09:32:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		backend for searching www.ebay.com
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::www/p5-WWW-Search
 REGRESS_DEPENDS=	::devel/p5-IO-Capture

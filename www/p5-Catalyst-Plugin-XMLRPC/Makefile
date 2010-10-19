@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=		dispatch XML-RPC methods with Catalyst
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-XMLRPC-1.0
 CATEGORIES=		www
+USE_GROFF =	Yes
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 

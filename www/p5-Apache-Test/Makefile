@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	Test wrapper with helpers for testing Apache
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Apache-Test-1.30
 REVISION=	0
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

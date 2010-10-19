@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/24 15:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SHARED_ONLY=		Yes
 
 CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2
+USE_GROFF =	Yes
 LIB_DEPENDS=		apr-1::devel/apr \
 			aprutil-1::devel/apr-util
 RUN_DEPENDS=		::www/apache-httpd

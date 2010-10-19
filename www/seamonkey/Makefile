@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/18 07:15:55 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/19 08:02:57 espie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -75,6 +75,7 @@ MODULES=	www/mozilla devel/gettext lang/python
 BUILD_DEPENDS+=	:unzip-*:archivers/unzip
 
 USE_X11=	Yes
+USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS+=	${WRKSRC}/directory/c-sdk/config/autoconf

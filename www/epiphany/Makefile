@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/18 13:41:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/19 08:02:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,6 +17,7 @@ M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 API_V=		2.29
 SUBST_VARS=	M API_V
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 HOMEPAGE=	http://projects.gnome.org/epiphany/
 

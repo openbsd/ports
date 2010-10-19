@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/27 20:37:19 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		Perl interface for the Tumblr API
 
@@ -8,6 +8,7 @@ CATEGORIES=		www
 MAINTAINER=		Chris Kuethe <ckuethe@openbsd.org>
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

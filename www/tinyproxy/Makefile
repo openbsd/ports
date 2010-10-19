@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/04/11 23:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		lightweight HTTP/SSL proxy
 
@@ -21,6 +21,7 @@ WANTLIB=		c
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy/tinyproxy.conf
+USE_GROFF =	Yes
 
 REGRESS_TARGET=		check
 

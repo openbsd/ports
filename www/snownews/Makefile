@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/09/18 20:51:35 martynas Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.12
@@ -18,6 +18,7 @@ WANTLIB=		c crypto m ncurses z
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	::textproc/p5-XML-LibXML

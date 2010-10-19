@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/09/20 13:55:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/19 08:02:58 espie Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
+USE_GROFF =	Yes
 
 WWWDIR=		/var/www
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/07 15:35:56 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	just-in-time compiler for HTML::Template
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-JIT-0.05
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 

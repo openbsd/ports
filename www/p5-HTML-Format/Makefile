@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	HTML text formating class
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-Format-2.04
 REVISION=	1
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

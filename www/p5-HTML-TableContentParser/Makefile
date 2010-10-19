@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:56 espie Exp $
 
 COMMENT=	module to parse the content of tables in HTML text
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-TableContentParser-0.13
 REVISION=	1
 CATEGORIES=	www devel
+USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

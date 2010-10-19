@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/21 17:35:37 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
 
 COMMENT =	HTML to text conversion with links as footnotes
 
 MODULES =	cpan
 DISTNAME =	HTML-FormatText-WithLinks-0.11
 CATEGORIES =	www textproc
+USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

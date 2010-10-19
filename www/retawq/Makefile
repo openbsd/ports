@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/25 18:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:57 espie Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
@@ -22,6 +22,7 @@ WANTLIB =		c crypto pthread ncurses ssl
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS = 	--enable-ipv6 --set-tls=2
 
+USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 pre-configure:

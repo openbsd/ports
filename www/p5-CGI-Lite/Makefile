@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/30 23:44:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	process and decode WWW forms and cookies	
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+USE_GROFF =	Yes
 
 EG_DIR= 	${PREFIX}/share/examples/p5-CGI-Lite
 

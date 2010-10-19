@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/04 20:30:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		virtual base class for WWW searches
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 RUN_DEPENDS=		::converters/p5-DateManip \
 			::devel/p5-File-Slurp \

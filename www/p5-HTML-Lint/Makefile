@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/04 10:44:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:02:55 espie Exp $
 # Original from: Andy Lester <andy@petdance.com>
 
 COMMENT=		check for HTML errors in a string or file
@@ -6,6 +6,7 @@ COMMENT=		check for HTML errors in a string or file
 MODULES=		cpan
 DISTNAME=		HTML-Lint-2.06
 CATEGORIES=		www
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

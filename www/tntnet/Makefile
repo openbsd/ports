@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/27 21:49:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		modular webapplication server for C++
 
@@ -36,6 +36,7 @@ LIB_DEPENDS= 		cxxtools.>=2::devel/cxxtools
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-ssl=openssl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

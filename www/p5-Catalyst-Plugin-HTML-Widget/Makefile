@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:55 espie Exp $
 
 COMMENT= 	HTML widget and validation framework for Catalyst
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-HTML-Widget-1.1
 REVISION=	1
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

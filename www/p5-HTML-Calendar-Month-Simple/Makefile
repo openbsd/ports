@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=	Simple HTML Calendars
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 DISTNAME=	HTML-CalendarMonthSimple-1.25
 REVISION=	0
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

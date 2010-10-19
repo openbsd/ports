@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/17 22:00:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:58 espie Exp $
 
 COMMENT=		Website META Language
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 #	File format not recognized
 # May be unrelated, but forcing GNU libtool lets this build at least.
 USE_LIBTOOL=		Gnu
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-openworld

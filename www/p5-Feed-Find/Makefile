@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:55 espie Exp $
 
 COMMENT=		autodiscover syndication feeds
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 CPAN_AUTHOR=		BTROTT
 DISTNAME=		Feed-Find-0.06
 CATEGORIES=		www
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/11 13:03:46 jim Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -26,6 +26,7 @@ LIB_DEPENDS = 		::devel/pcre
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=varnish/}
 
 USE_LIBTOOL =		Yes
+USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localstatedir=/var

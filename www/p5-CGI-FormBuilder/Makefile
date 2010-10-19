@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/13 20:14:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	easily generate and process stateful forms
 
@@ -7,6 +7,7 @@ DISTNAME=	CGI-FormBuilder-3.0501
 REVISION=	0
 CATEGORIES=	www
 EXTRACT_SUFX=	.tgz
+USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

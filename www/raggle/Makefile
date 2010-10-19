@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/07 18:10:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=	console RSS aggregator
 
@@ -26,5 +26,6 @@ NO_BUILD=	Yes
 PKG_ARCH=	*
 MAKE_ENV=	RUBY=${RUBY}
 MODRUBY_ADJ_FILES=	raggle *.rb
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>

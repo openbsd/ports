@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/22 15:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	secure webserver
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		webrootdir=${WEBROOTDIR}
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-xslt
+USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/hiawatha/hiawatha.conf.in \

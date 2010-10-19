@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/09 19:46:08 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	command-line online gallery generator
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	::graphics/ImageMagick \
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+USE_GROFF =	Yes
 
 MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR}
 

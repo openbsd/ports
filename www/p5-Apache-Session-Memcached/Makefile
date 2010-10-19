@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/13 19:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	Apache::Session storage using memcached
 
 MODULES=	cpan
 DISTNAME=	Apache-Session-Memcached-0.03
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 MAINTAINER=	Jim Razmus II <jim@bonetruck.org>
 

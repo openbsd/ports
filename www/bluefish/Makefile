@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/11 08:19:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
@@ -40,6 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 

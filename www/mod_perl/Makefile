@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/09/26 17:45:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/19 08:02:54 espie Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
@@ -34,6 +34,7 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs"
+USE_GROFF =	Yes
 
 INSTALL_TARGET=	pure_install doc_install
 

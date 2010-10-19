@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:53 espie Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -46,6 +46,7 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/xulrunner1.9" \
 USE_LIBTOOL =		Yes
 
 USE_GMAKE =		Yes
+USE_GROFF =	Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 

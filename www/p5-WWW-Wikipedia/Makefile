@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/02 13:15:32 stephan Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:57 espie Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
@@ -8,6 +8,7 @@ CATEGORIES=		www
 MAINTAINER=		Stephan A. Rickauer <stephan@openbsd.org>
 
 MODULES=		cpan
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

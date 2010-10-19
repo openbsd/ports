@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/26 16:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:54 espie Exp $
 
 COMMENT= 	single-threaded Catalyst engine based on POE
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Engine-HTTP-POE-0.08
 CATEGORIES=	www
+USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/19 08:02:53 espie Exp $
 
 COMMENT=	convert man pages to HTML
 
@@ -23,5 +23,6 @@ CONFIGURE_ARGS+= --disable-lynx		# requires lynxcgi support
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/helpers
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/man2web
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
