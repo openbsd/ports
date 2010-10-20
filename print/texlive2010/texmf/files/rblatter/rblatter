@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby18
 # Copyright (c) 2008-2010, Edd Barrett <vext01@gmail.com>
 # 
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: rblatter,v 1.1.1.1 2010/10/08 22:08:06 edd Exp $
+# $Id: rblatter,v 1.2 2010/10/20 13:15:55 edd Exp $
 #
 # == Synopsis
 # RBlatter is a ruby script which allows you to add and subtract TeXmf
@@ -57,7 +57,7 @@
 #
 #	Available file types are 'run', 'src', 'bin' and 'doc'.
 
-$RBLATTER_V = "$OpenBSD: rblatter,v 1.1.1.1 2010/10/08 22:08:06 edd Exp $"
+$RBLATTER_V = "$OpenBSD: rblatter,v 1.2 2010/10/20 13:15:55 edd Exp $"
 $QUIET = true;
 $FILEPREFIX = ""
 $ARCH = "i386-openbsd"
@@ -93,7 +93,7 @@ opts.each do | opt, arg |
 	when '--help'
 		RDoc::usage
 		exit 1
-	when '--no-missing-files':
+	when '--no-missing-files'
 		$MISSING_FILES = false
 	when '--outdir'
 		$OUTDIR = arg

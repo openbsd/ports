@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: subsetshaper.rb,v 1.1.1.1 2010/10/08 22:08:06 edd Exp $
+# $Id: subsetshaper.rb,v 1.2 2010/10/20 13:15:55 edd Exp $
 #
 # Adds and subtracts texmf subset file lists in order to make new subsets.
 
@@ -242,10 +242,22 @@ class SubsetShaper
 
 	end
 
+	# add directories and their parent directories
+	def addDir(basefile)
+		dir = File.dirname(basefile)
+
+		# recurse - add parent dirs also
+		if (dir != ".") then
+			@dirList << dir
+			addDir(dir)
+		end
+	end
+
 	# Write packing list to the output directory
-	def writePlist()
+	def writePlist
 		File.open("#{$OUTDIR}/PLIST", "w") do |plist|
 			for line in @finalFiles do
+				line = line.chomp
 
 				ok = true
 				if $MISSING_FILES == false then
@@ -257,17 +269,17 @@ class SubsetShaper
 				end
 
 				if ok then
-					plist.write $FILEPREFIX + line
+					plist.write $FILEPREFIX + line + "\n"
 					if $ADD_DIRS then
-						@dirList << File.dirname(line)
+						addDir(line)
 					end
 				end
 			end
 
 			# add directory entries to satisfy openbsd pkgtools
 			if $ADD_DIRS then
-				for line in @dirList do
-					plist.write $FILEPREFIX + line + "/\n"
+				for file in @dirList do
+					plist.write $FILEPREFIX + file + "/\n"
 				end
 			end
 		end
