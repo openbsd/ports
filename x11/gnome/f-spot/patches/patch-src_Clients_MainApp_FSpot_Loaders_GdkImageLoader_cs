@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Clients_MainApp_FSpot_Loaders_GdkImageLoader_cs,v 1.1 2010/10/20 10:17:33 robert Exp $
+--- src/Clients/MainApp/FSpot.Loaders/GdkImageLoader.cs.orig	Wed Oct 20 12:05:40 2010
++++ src/Clients/MainApp/FSpot.Loaders/GdkImageLoader.cs	Wed Oct 20 12:05:52 2010
+@@ -112,7 +112,7 @@ namespace FSpot.Loaders {
+ 		public new bool Close ()
+ 		{
+ 			lock (sync_handle) {
+-				return base.Close (true);
++				return base.Close ();
+ 			}
+ 		}
+ #endregion
