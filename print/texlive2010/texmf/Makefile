@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2010/10/09 15:41:28 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/20 23:13:00 edd Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
@@ -29,12 +29,7 @@ do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/*
 
-# XXX re-add when ready
-#post-install:
-#	mv ${PREFIX}/share/texmf/web2c/updmap.cfg \
-#		${PREFIX}/share/texmf/web2c/updmap.cfg-dist
-#	${SUBST_CMD} ${PREFIX}/share/texmf/web2c/texmf.cnf
-#	mv  ${PREFIX}/share/texmf/web2c/fmtutil.cnf \
-#		${PREFIX}/share/texmf/web2c/fmtutil.cnf-full
+post-install:
+	${SUBST_CMD} ${PREFIX}/share/texmf/web2c/texmf.cnf
 
 .include <bsd.port.mk>

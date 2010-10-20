@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/09/24 15:44:41 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/10/20 23:13:00 edd Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -18,3 +18,4 @@ V ?=		2010
 DIST_V ?=	${V}0722
 
 MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
+PATCHORIG ?=	.origy

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/29 13:14:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/20 23:13:00 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -251,7 +251,7 @@ bin/texmfstart
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
-bin/tl-link-config
+@comment bin/tl-link-config
 @comment bin/tl-link-config.beforesubst
 @comment bin/tlmgr
 bin/tpic2pdftex
@@ -490,7 +490,6 @@ share/doc/texlive/README.OpenBSD
 share/lcdf-typetools-for-tex-live/
 share/texmf/
 share/texmf/web2c/
-share/texmf/web2c/fmtutil.cnf-minimal
 @comment texmf/
 @comment texmf-dist/
 @comment texmf-dist/bibtex/
@@ -798,16 +797,13 @@ texmf/scripts/texlive/rungs.tlu
 @comment texmf/xindy/modules/styles/
 @comment texmf/xindy/modules/styles/basic.xdy
 @comment texmf/xindy/modules/styles/makeidx.xdy
-@comment ---- RE-ENABLE THESE LATER XXX ----
-@comment @exec %D/bin/tl-link-config
-@comment @exec mktexlsr > /dev/null 2>&1
-@comment @exec texlinks
-@comment @exec fmtutil-sys --all > /dev/null 2>&1
-@comment @exec updmap-sys --syncwithtrees > /dev/null 2>&1
-@comment @extraunexec rm -Rf %D/share/texmf-var/
-@comment @extraunexec rm -Rf %D/share/texmf-config/
-@comment @extra share/texmf/ls-R
-@comment @extra share/texmf-dist/ls-R
-@comment @extra share/texmf-var/ls-R
-@comment @extra share/texmf-config/ls-R
-@comment @extra share/texmf/web2c/fmtutil.cnf
+@exec mktexlsr > /dev/null 2>&1
+@exec texlinks
+@exec fmtutil-sys --all > /dev/null 2>&1
+@exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@extraunexec rm -Rf %D/share/texmf-var/
+@extraunexec rm -Rf %D/share/texmf-config/
+@extra share/texmf/ls-R
+@extra share/texmf-dist/ls-R
+@extra share/texmf-var/ls-R
+@extra share/texmf-config/ls-R

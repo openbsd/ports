@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/20 23:13:00 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -18,9 +18,8 @@ RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:dvi2tty-*:print/dvi2tty \
 			:ps2eps-*:print/ps2eps \
 			:psutils-*:print/psutils \
-			:t1utils-*:print/t1utils
-# XXX - RE-ADD THIS DEP LATER
-#			:texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+			:t1utils-*:print/t1utils \
+			:texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main
 			
 LIB_DEPENDS =		::devel/t1lib \
 			::graphics/png \
@@ -61,7 +60,8 @@ PKG_ARGS +=		-Dxindy=0
 .endif
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
-CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
+CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
+			--x-includes=${X11BASE}/include \
 			--x-libraries=${X11BASE}/lib \
 			--with-system-freetype2 \
 			--with-system-freetype \
@@ -97,7 +97,6 @@ CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
 			--with-system-xpdf # link poppler, yay :)
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
-PATCHORIG = 		.origy
 
 # just to silence error - never used
 pre-install:
@@ -107,10 +106,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/texlive
-	${INSTALL_SCRIPT} ${FILESDIR}/tl-link-config ${PREFIX}/bin
-	${SUBST_CMD} ${PREFIX}/bin/tl-link-config
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/web2c
-	${INSTALL_DATA} -c ${FILESDIR}/fmtutil.cnf-minimal \
-		${PREFIX}/share/texmf/web2c
 
 .include <bsd.port.mk>

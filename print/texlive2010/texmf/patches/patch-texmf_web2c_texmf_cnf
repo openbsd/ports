@@ -1,0 +1,52 @@
+$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.1 2010/10/20 23:13:00 edd Exp $
+--- texmf/web2c/texmf.cnf.origy	Wed Oct 20 22:10:45 2010
++++ texmf/web2c/texmf.cnf	Wed Oct 20 22:13:34 2010
+@@ -41,7 +41,11 @@
+ % separator as well as the comma for this: /usr/local/{mytex:othertex}
+ % also expands to /usr/local/mytex:/usr/local/othertex.  We make
+ % extensive use of this.
++%
++% Hacked for OpenBSD ports
+ 
++OBSD_TMF = ${LOCALBASE}/share
++
+ %  Part 1: Search paths and directories.
+ 
+ % You can set an environment variable to override TEXMF if you're testing
+@@ -53,15 +57,15 @@
+ 
+ % The tree containing the runtime files closely related to the specific
+ % program version used:
+-TEXMFMAIN = $SELFAUTOPARENT/texmf
++TEXMFMAIN = $OBSD_TMF/texmf
+ 
+ % The main distribution tree:
+-TEXMFDIST = $SELFAUTOPARENT/texmf-dist
++TEXMFDIST = $OBSD_TMF/texmf-dist
+ 
+ % A place for local additions to a "standard" texmf tree.
+ % This tree is not used for local configuration maintained by
+ % texconfig, it uses TEXMFCONFIG below.
+-TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
++TEXMFLOCAL = $OBSD_TMF/../texmf-local
+ 
+ % TEXMFSYSVAR, where texconfig-sys stores variable runtime data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -69,7 +73,7 @@ TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
+ %   TEXMFSYSVAR = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+-TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
++TEXMFSYSVAR = $OBSD_TMF/texmf-var
+ 
+ % TEXMFSYSCONFIG, where texconfig-sys stores configuration data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -77,7 +81,7 @@ TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+ %   TEXMFSYSCONFIG = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
+-TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
++TEXMFSYSCONFIG = $OBSD_TMF/texmf-config
+ 
+ % User texmf trees are allowed as follows.
+ % This used to be HOMETEXMF.
