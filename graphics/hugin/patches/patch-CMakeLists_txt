@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2010/05/29 01:23:55 sthen Exp $
---- CMakeLists.txt.orig	Tue Mar  2 23:17:21 2010
-+++ CMakeLists.txt	Sat May  8 10:00:46 2010
-@@ -125,6 +125,7 @@ ENDIF(WIN32)
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2010/10/20 15:32:40 sthen Exp $
+--- CMakeLists.txt.orig	Mon Aug 30 23:32:07 2010
++++ CMakeLists.txt	Sat Sep  4 21:51:34 2010
+@@ -152,6 +152,7 @@ ENDIF(WIN32)
  #  finding the wxWidgets distributions of those packages (Win32 only).
  
  SET(wxWidgets_USE_LIBS base core xrc html xml adv gl net)

@@ -3,4 +3,4 @@ similar image features and generate control points. As autopano-sift-C
 uses the SIFT algorithm, which is patented in the USA, this is not
 automatically installed as a dependency.
 
-Either "pkg_add autopano-sift-c" or select these manually.
+Either "pkg_add autopano-sift-c" or select your control points manually.

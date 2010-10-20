@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/05/29 01:23:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/20 15:32:40 sthen Exp $
 %%SHARED%%
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
@@ -16,7 +16,10 @@ bin/autopano-noop.sh
 @bin bin/matchpoint
 @bin bin/nona
 @bin bin/nona_gui
+@bin bin/pano_modify
+@bin bin/pano_trafo
 @bin bin/pto2mk
+@bin bin/pto_merge
 @bin bin/tca_correct
 @bin bin/vig_optimize
 @man man/man1/PTBatcherGUI.1
@@ -32,7 +35,10 @@ bin/autopano-noop.sh
 @man man/man1/hugin_stitch_project.1
 @man man/man1/nona.1
 @man man/man1/nona_gui.1
+@man man/man1/pano_modify.1
+@man man/man1/pano_trafo.1
 @man man/man1/pto2mk.1
+@man man/man1/pto_merge.1
 @man man/man1/tca_correct.1
 @man man/man1/vig_optimize.1
 share/applications/PTBatcherGUI.desktop
@@ -107,6 +113,7 @@ share/hugin/xrc/data/help_en_EN/180px-Fast_preview_guide_start.png
 share/hugin/xrc/data/help_en_EN/180px-Focal_length.gif
 share/hugin/xrc/data/help_en_EN/180px-LagardePont-fish.jpg
 share/hugin/xrc/data/help_en_EN/180px-Lamp_enfuse.jpg
+share/hugin/xrc/data/help_en_EN/197px-Field-of-view.svg.png
 share/hugin/xrc/data/help_en_EN/1f09c25c5247c1eaf121df644ca42f8c.png
 share/hugin/xrc/data/help_en_EN/200px-Ben_Architectural.jpg
 share/hugin/xrc/data/help_en_EN/200px-Ben_Equirectangular_panini.jpg
@@ -126,6 +133,7 @@ share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_crop.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_drag.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_identify.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_photometric.svg.png
+share/hugin/xrc/data/help_en_EN/22px-Preview_layout.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Show_Control_Points_Button.svg.png
 share/hugin/xrc/data/help_en_EN/24597ccab188a3598a0828c69e380228.png
 share/hugin/xrc/data/help_en_EN/250px-Cubic.jpg
@@ -141,6 +149,7 @@ share/hugin/xrc/data/help_en_EN/250px-TKS-Mmm-obliquev120-recti.png
 share/hugin/xrc/data/help_en_EN/29e2300eb2f198d830f04682f14872e2.png
 share/hugin/xrc/data/help_en_EN/3016f25d3d1249eab1305b78b0b82d3d.png
 share/hugin/xrc/data/help_en_EN/312418a7fcf9d47adc8e5683e89c58cd.png
+share/hugin/xrc/data/help_en_EN/360px-Pantheon-150x100-rect-panini.jpg
 share/hugin/xrc/data/help_en_EN/38d368a092f7d5a4d2b42bdf4d0dd89c.png
 share/hugin/xrc/data/help_en_EN/3d6de401d007ea0cffc99610ad623239.png
 share/hugin/xrc/data/help_en_EN/400px-220x120deg-panini-grid.png
@@ -278,10 +287,14 @@ share/hugin/xrc/data/help_en_EN/Hugin_Fast_Preview_window.html
 share/hugin/xrc/data/help_en_EN/Hugin_Images_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Keyboard_shortcuts.html
 share/hugin/xrc/data/help_en_EN/Hugin_Main_window.html
+share/hugin/xrc/data/help_en_EN/Hugin_Mask_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Optimizer_tab.html
+share/hugin/xrc/data/help_en_EN/Hugin_Parameters_for_Control_Point_Detectors_dialog.html
 share/hugin/xrc/data/help_en_EN/Hugin_Preferences.html
 share/hugin/xrc/data/help_en_EN/Hugin_Preview_window.html
+share/hugin/xrc/data/help_en_EN/Hugin_Reset_Values_window.html
 share/hugin/xrc/data/help_en_EN/Hugin_Stitcher_tab.html
+share/hugin/xrc/data/help_en_EN/Hugin_Trackers.html
 share/hugin/xrc/data/help_en_EN/Hugin_add_project.png
 share/hugin/xrc/data/help_en_EN/Hugin_cancel_batch.png
 share/hugin/xrc/data/help_en_EN/Hugin_center_pano.png
@@ -320,6 +333,7 @@ share/hugin/xrc/data/help_en_EN/JPEG.html
 share/hugin/xrc/data/help_en_EN/LICENCE.manual
 share/hugin/xrc/data/help_en_EN/Landscape.html
 share/hugin/xrc/data/help_en_EN/Laplacian-of-gaussian.png
+share/hugin/xrc/data/help_en_EN/Layout-small.png
 share/hugin/xrc/data/help_en_EN/Lens_correction_model.html
 share/hugin/xrc/data/help_en_EN/Lens_distortion.html
 share/hugin/xrc/data/help_en_EN/Lightprobe.html
@@ -344,6 +358,7 @@ share/hugin/xrc/data/help_en_EN/PTblender.html
 share/hugin/xrc/data/help_en_EN/PTmender.html
 share/hugin/xrc/data/help_en_EN/PTtiff2psd.html
 share/hugin/xrc/data/help_en_EN/Pano12.html
+share/hugin/xrc/data/help_en_EN/Pano_modify.html
 share/hugin/xrc/data/help_en_EN/Panoglview.html
 share/hugin/xrc/data/help_en_EN/Panoinfo.html
 share/hugin/xrc/data/help_en_EN/Panomatic.html
@@ -363,6 +378,7 @@ share/hugin/xrc/data/help_en_EN/Pitch.html
 share/hugin/xrc/data/help_en_EN/Portrait.html
 share/hugin/xrc/data/help_en_EN/Projections.html
 share/hugin/xrc/data/help_en_EN/Pto2mk.html
+share/hugin/xrc/data/help_en_EN/Pto_merge.html
 share/hugin/xrc/data/help_en_EN/QTVR.html
 share/hugin/xrc/data/help_en_EN/Qtvr2img.html
 share/hugin/xrc/data/help_en_EN/RAW.html
@@ -559,6 +575,7 @@ share/hugin/xrc/data/optimize.png
 share/hugin/xrc/data/pause.png
 share/hugin/xrc/data/preview.png
 share/hugin/xrc/data/preview_auto_update.png
+share/hugin/xrc/data/preview_layout_small.png
 share/hugin/xrc/data/preview_num_transform.png
 share/hugin/xrc/data/preview_show_all.png
 share/hugin/xrc/data/preview_show_none.png
@@ -583,13 +600,13 @@ share/hugin/xrc/lens_panel.xrc
 share/hugin/xrc/main_frame.xrc
 share/hugin/xrc/main_menu.xrc
 share/hugin/xrc/main_tool.xrc
+share/hugin/xrc/mask_editor_panel.xrc
 share/hugin/xrc/optimize_panel.xrc
 share/hugin/xrc/optimize_photo_panel.xrc
 share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
-share/hugin/xrc/vig_corr_dlg.xrc
 share/icons/
 share/icons/gnome/
 share/icons/gnome/48x48/

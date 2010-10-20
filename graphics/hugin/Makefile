@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/20 15:32:40 sthen Exp $
 
 VMEM_WARNING =		Yes
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-2010.0.0
+DISTNAME =		hugin-2010.2.0
 
-PKGNAME =		${DISTNAME:S/_//:L}p1
+PKGNAME =		${DISTNAME:S/_//:L}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS =		celeste 0.0 \
-			huginANN 0.0 \
-			huginbase 1.0 \
-			huginjhead 0.0 \
-			huginvigraimpex 0.0
+SHARED_LIBS +=  huginbasewx               0.0
+SHARED_LIBS +=  celeste                   0.0
+SHARED_LIBS +=  huginANN                  0.0
+SHARED_LIBS +=  huginbase                 1.0
+SHARED_LIBS +=  huginvigraimpex           0.0
 
 CATEGORIES =		graphics x11
 
@@ -27,7 +27,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL GLU ICE SM X11 Xext Xi Xmu c m pthread stdc++ z
+WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread ICE SM X11
+WANTLIB += Xext Xi Xmu boost_date_time-mt boost_thread-mt c
+WANTLIB += exiv2 glut.>=4.1 jpeg m pano13.>=2.0 png pthread
+WANTLIB += stdc++ tiff wx_base wx_base_net wx_base_xml wx_gtk2_adv
+WANTLIB += wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_xrc z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
@@ -36,20 +40,20 @@ RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils \
 			::graphics/enblend-enfuse \
 			::graphics/p5-Image-ExifTool \
 			::devel/gmake # yes, really a RUN_DEPENDS
-LIB_DEPENDS =		boost_thread-mt::devel/boost \
-			exiv2.>=0.1:exiv2->=0.12:graphics/exiv2 \
-			GLEW::graphics/glew \
-			glut.>=4.1::graphics/freeglut \
-			Half,Iex,Imath,IlmThread::graphics/ilmbase \
-			jpeg::graphics/jpeg \
-			pano13::graphics/libpano13 \
-			IlmImf::graphics/openexr \
-			png::graphics/png \
-			tiff::graphics/tiff \
-			wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_xrc::x11/wxWidgets
+LIB_DEPENDS =		::devel/boost \
+			:exiv2->=0.12:graphics/exiv2 \
+			::graphics/glew \
+			::graphics/freeglut \
+			::graphics/ilmbase \
+			::graphics/jpeg \
+			:libpano13->=2.9.17rc1:graphics/libpano13 \
+			::graphics/openexr \
+			::graphics/png \
+			::graphics/tiff \
+			::x11/wxWidgets
 
-USE_X11=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
+USE_X11	=		Yes
 MODULES +=		devel/cmake
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	cmake

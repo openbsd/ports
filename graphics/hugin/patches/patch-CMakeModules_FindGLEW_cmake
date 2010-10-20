@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeModules_FindGLEW_cmake,v 1.1 2010/05/29 01:23:55 sthen Exp $
---- CMakeModules/FindGLEW.cmake.orig	Sun Sep  6 12:20:05 2009
-+++ CMakeModules/FindGLEW.cmake	Sun Sep  6 21:47:04 2009
-@@ -8,8 +8,8 @@ IF(WIN32)
-   # for dynamic build, it's glew32.lib and the dll must be copied into hugin's bin folder
+$OpenBSD: patch-CMakeModules_FindGLEW_cmake,v 1.2 2010/10/20 15:32:40 sthen Exp $
+--- CMakeModules/FindGLEW.cmake.orig	Sat Sep  4 21:51:34 2010
++++ CMakeModules/FindGLEW.cmake	Sat Sep  4 21:51:34 2010
+@@ -12,8 +12,8 @@ IF(WIN32)
    SET(GLEW_LIBRARIES ${SOURCE_BASE_DIR}/glew/lib/glew32s.lib)
+   ENDIF(${HUGIN_SHARED})
  ELSE(WIN32)
 -  FIND_PATH(GLEW_INCLUDE_DIR GL/glew.h PATHS /usr/include /usr/local/include)
 -  FIND_LIBRARY(GLEW_LIBRARIES GLEW PATHS /usr/lib /usr/local/lib)
