@@ -1,445 +1,450 @@
-share/man/man1/
-share/man/man1/a2ping.1
-share/man/man1/a2ping.man1.pdf
-share/man/man1/afm2afm.1
-share/man/man1/afm2afm.man1.pdf
-share/man/man1/afm2pl.1
-share/man/man1/afm2pl.man1.pdf
-share/man/man1/afm2tfm.1
-share/man/man1/afm2tfm.man1.pdf
-share/man/man1/aleph.1
-share/man/man1/aleph.man1.pdf
-share/man/man1/allcm.1
-share/man/man1/allcm.man1.pdf
-share/man/man1/allec.1
-share/man/man1/allec.man1.pdf
-share/man/man1/allneeded.1
-share/man/man1/allneeded.man1.pdf
-share/man/man1/amstex.1
-share/man/man1/amstex.man1.pdf
-share/man/man1/arlatex.1
-share/man/man1/arlatex.man1.pdf
-share/man/man1/asy.1
-share/man/man1/asy.man1.pdf
-share/man/man1/autoinst.1
-share/man/man1/autoinst.man1.pdf
-share/man/man1/bbox.1
-share/man/man1/bbox.man1.pdf
-share/man/man1/bg5conv.1
-share/man/man1/bg5conv.man1.pdf
-share/man/man1/bibtex.1
-share/man/man1/bibtex.man1.pdf
-share/man/man1/bundledoc.1
-share/man/man1/bundledoc.man1.pdf
-share/man/man1/cef5conv.1
-share/man/man1/cef5conv.man1.pdf
-share/man/man1/cefconv.1
-share/man/man1/cefconv.man1.pdf
-share/man/man1/cefsconv.1
-share/man/man1/cefsconv.man1.pdf
-share/man/man1/cfftot1.1
-share/man/man1/cfftot1.man1.pdf
-share/man/man1/chktex.1
-share/man/man1/chktex.man1.pdf
-share/man/man1/chkweb.1
-share/man/man1/chkweb.man1.pdf
-share/man/man1/cmap2enc.1
-share/man/man1/cmap2enc.man1.pdf
-share/man/man1/ctangle.1
-share/man/man1/ctangle.man1.pdf
-share/man/man1/ctie.1
-share/man/man1/ctie.man1.pdf
-share/man/man1/ctxtools.1
-share/man/man1/ctxtools.man1.pdf
-share/man/man1/cweave.1
-share/man/man1/cweave.man1.pdf
-share/man/man1/cweb.1
-share/man/man1/cweb.man1.pdf
-share/man/man1/detex.1
-share/man/man1/detex.man1.pdf
-share/man/man1/deweb.1
-share/man/man1/deweb.man1.pdf
-share/man/man1/dvi2fax.1
-share/man/man1/dvi2fax.man1.pdf
-share/man/man1/dvicopy.1
-share/man/man1/dvicopy.man1.pdf
-share/man/man1/dvigif.1
-share/man/man1/dvigif.man1.pdf
-share/man/man1/dvihp.1
-share/man/man1/dvihp.man1.pdf
-share/man/man1/dvilj.1
-share/man/man1/dvilj.man1.pdf
-share/man/man1/dvilj2p.1
-share/man/man1/dvilj2p.man1.pdf
-share/man/man1/dvilj4.1
-share/man/man1/dvilj4.man1.pdf
-share/man/man1/dvilj4l.1
-share/man/man1/dvilj4l.man1.pdf
-share/man/man1/dvilj6.1
-share/man/man1/dvilj6.man1.pdf
-share/man/man1/dvipdfm.1
-share/man/man1/dvipdfm.man1.pdf
-share/man/man1/dvipdft.1
-share/man/man1/dvipdft.man1.pdf
-share/man/man1/dvipng.1
-share/man/man1/dvipng.man1.pdf
-share/man/man1/dvipos.1
-share/man/man1/dvipos.man1.pdf
-share/man/man1/dvips.1
-share/man/man1/dvips.man1.pdf
-share/man/man1/dvired.1
-share/man/man1/dvired.man1.pdf
-share/man/man1/dvisvgm.1
-share/man/man1/dvisvgm.man1.pdf
-share/man/man1/dvitomp.1
-share/man/man1/dvitomp.man1.pdf
-share/man/man1/dvitype.1
-share/man/man1/dvitype.man1.pdf
-share/man/man1/e2pall.1
-share/man/man1/e2pall.man1.pdf
-share/man/man1/ebb.1
-share/man/man1/ebb.man1.pdf
-share/man/man1/eplain.1
-share/man/man1/eplain.man1.pdf
-share/man/man1/epsffit.1
-share/man/man1/epsffit.man1.pdf
-share/man/man1/epstopdf.1
-share/man/man1/epstopdf.man1.pdf
-share/man/man1/etex.1
-share/man/man1/etex.man1.pdf
-share/man/man1/extconv.1
-share/man/man1/extconv.man1.pdf
-share/man/man1/extractbb.1
-share/man/man1/extractbb.man1.pdf
-share/man/man1/extractres.1
-share/man/man1/extractres.man1.pdf
-share/man/man1/findhyph.1
-share/man/man1/findhyph.man1.pdf
-share/man/man1/fixdlsrps.1
-share/man/man1/fixdlsrps.man1.pdf
-share/man/man1/fixfmps.1
-share/man/man1/fixfmps.man1.pdf
-share/man/man1/fixmacps.1
-share/man/man1/fixmacps.man1.pdf
-share/man/man1/fixpsditps.1
-share/man/man1/fixpsditps.man1.pdf
-share/man/man1/fixpspps.1
-share/man/man1/fixpspps.man1.pdf
-share/man/man1/fixscribeps.1
-share/man/man1/fixscribeps.man1.pdf
-share/man/man1/fixtpps.1
-share/man/man1/fixtpps.man1.pdf
-share/man/man1/fixwfwps.1
-share/man/man1/fixwfwps.man1.pdf
-share/man/man1/fixwpps.1
-share/man/man1/fixwpps.man1.pdf
-share/man/man1/fixwwps.1
-share/man/man1/fixwwps.man1.pdf
-share/man/man1/fmtutil-sys.1
-share/man/man1/fmtutil-sys.man1.pdf
-share/man/man1/fmtutil.1
-share/man/man1/fmtutil.man1.pdf
-share/man/man1/font2afm.1
-share/man/man1/font2afm.man1.pdf
-share/man/man1/fontinst.1
-share/man/man1/fontinst.man1.pdf
-share/man/man1/getafm.1
-share/man/man1/getafm.man1.pdf
-share/man/man1/gftodvi.1
-share/man/man1/gftodvi.man1.pdf
-share/man/man1/gftopk.1
-share/man/man1/gftopk.man1.pdf
-share/man/man1/gftype.1
-share/man/man1/gftype.man1.pdf
-share/man/man1/gsftopk.1
-share/man/man1/gsftopk.man1.pdf
-share/man/man1/hbf2gf.1
-share/man/man1/hbf2gf.man1.pdf
-share/man/man1/includeres.1
-share/man/man1/includeres.man1.pdf
-share/man/man1/install-tl.1
-share/man/man1/install-tl.man1.pdf
-share/man/man1/kpseaccess.1
-share/man/man1/kpseaccess.man1.pdf
-share/man/man1/kpsepath.1
-share/man/man1/kpsepath.man1.pdf
-share/man/man1/kpsereadlink.1
-share/man/man1/kpsereadlink.man1.pdf
-share/man/man1/kpsestat.1
-share/man/man1/kpsestat.man1.pdf
-share/man/man1/kpsetool.1
-share/man/man1/kpsetool.man1.pdf
-share/man/man1/kpsewhere.1
-share/man/man1/kpsewhere.man1.pdf
-share/man/man1/kpsewhich.1
-share/man/man1/kpsewhich.man1.pdf
-share/man/man1/kpsexpand.1
-share/man/man1/kpsexpand.man1.pdf
-share/man/man1/lamed.1
-share/man/man1/lamed.man1.pdf
-share/man/man1/latex.1
-share/man/man1/latex.man1.pdf
-share/man/man1/latexdiff-vc.1
-share/man/man1/latexdiff-vc.man1.pdf
-share/man/man1/latexdiff.1
-share/man/man1/latexdiff.man1.pdf
-share/man/man1/latexmk.1
-share/man/man1/latexmk.man1.pdf
-share/man/man1/latexrevise.1
-share/man/man1/latexrevise.man1.pdf
-share/man/man1/luatex.1
-share/man/man1/luatex.man1.pdf
-share/man/man1/makeindex.1
-share/man/man1/makeindex.man1.pdf
-share/man/man1/mf-nowin.1
-share/man/man1/mf-nowin.man1.pdf
-share/man/man1/mf.1
-share/man/man1/mf.man1.pdf
-share/man/man1/mft.1
-share/man/man1/mft.man1.pdf
-share/man/man1/mkindex.1
-share/man/man1/mkindex.man1.pdf
-share/man/man1/mkjobtexmf.1
-share/man/man1/mkjobtexmf.man1.pdf
-share/man/man1/mkocp.1
-share/man/man1/mkocp.man1.pdf
-share/man/man1/mkofm.1
-share/man/man1/mkofm.man1.pdf
-share/man/man1/mktexfmt.1
-share/man/man1/mktexfmt.man1.pdf
-share/man/man1/mktexlsr.1
-share/man/man1/mktexlsr.man1.pdf
-share/man/man1/mktexmf.1
-share/man/man1/mktexmf.man1.pdf
-share/man/man1/mktexpk.1
-share/man/man1/mktexpk.man1.pdf
-share/man/man1/mktextfm.1
-share/man/man1/mktextfm.man1.pdf
-share/man/man1/mmafm.1
-share/man/man1/mmafm.man1.pdf
-share/man/man1/mmpfb.1
-share/man/man1/mmpfb.man1.pdf
-share/man/man1/mpost.1
-share/man/man1/mpost.man1.pdf
-share/man/man1/mptopdf.1
-share/man/man1/mptopdf.man1.pdf
-share/man/man1/odvicopy.1
-share/man/man1/odvicopy.man1.pdf
-share/man/man1/odvips.man1.pdf
-share/man/man1/odvitype.1
-share/man/man1/odvitype.man1.pdf
-share/man/man1/ofm2opl.1
-share/man/man1/ofm2opl.man1.pdf
-share/man/man1/opl2ofm.1
-share/man/man1/opl2ofm.man1.pdf
-share/man/man1/ot2kpx.1
-share/man/man1/ot2kpx.man1.pdf
-share/man/man1/otangle.1
-share/man/man1/otangle.man1.pdf
-share/man/man1/otfinfo.1
-share/man/man1/otfinfo.man1.pdf
-share/man/man1/otftotfm.1
-share/man/man1/otftotfm.man1.pdf
-share/man/man1/otp2ocp.1
-share/man/man1/otp2ocp.man1.pdf
-share/man/man1/outocp.1
-share/man/man1/outocp.man1.pdf
-share/man/man1/ovf2ovp.1
-share/man/man1/ovf2ovp.man1.pdf
-share/man/man1/ovp2ovf.1
-share/man/man1/ovp2ovf.man1.pdf
-share/man/man1/patgen.1
-share/man/man1/patgen.man1.pdf
-share/man/man1/pdf180.1
-share/man/man1/pdf180.man1.pdf
-share/man/man1/pdf270.1
-share/man/man1/pdf270.man1.pdf
-share/man/man1/pdf90.1
-share/man/man1/pdf90.man1.pdf
-share/man/man1/pdfbook.1
-share/man/man1/pdfbook.man1.pdf
-share/man/man1/pdfetex.1
-share/man/man1/pdfetex.man1.pdf
-share/man/man1/pdfflip.1
-share/man/man1/pdfflip.man1.pdf
-share/man/man1/pdfjam-pocketmod.1
-share/man/man1/pdfjam-pocketmod.man1.pdf
-share/man/man1/pdfjam-slides3up.1
-share/man/man1/pdfjam-slides3up.man1.pdf
-share/man/man1/pdfjam-slides6up.1
-share/man/man1/pdfjam-slides6up.man1.pdf
-share/man/man1/pdfjam.1
-share/man/man1/pdfjam.man1.pdf
-share/man/man1/pdfjoin.1
-share/man/man1/pdfjoin.man1.pdf
-share/man/man1/pdflatex.1
-share/man/man1/pdflatex.man1.pdf
-share/man/man1/pdfnup.1
-share/man/man1/pdfnup.man1.pdf
-share/man/man1/pdfpun.1
-share/man/man1/pdfpun.man1.pdf
-share/man/man1/pdftex.1
-share/man/man1/pdftex.man1.pdf
-share/man/man1/pdftosrc.1
-share/man/man1/pdftosrc.man1.pdf
-share/man/man1/perltex.1
-share/man/man1/perltex.man1.pdf
-share/man/man1/pfm2kpx.1
-share/man/man1/pfm2kpx.man1.pdf
-share/man/man1/pkfix-helper.1
-share/man/man1/pkfix-helper.man1.pdf
-share/man/man1/pktogf.1
-share/man/man1/pktogf.man1.pdf
-share/man/man1/pktype.1
-share/man/man1/pktype.man1.pdf
-share/man/man1/pltotf.1
-share/man/man1/pltotf.man1.pdf
-share/man/man1/pooltype.1
-share/man/man1/pooltype.man1.pdf
-share/man/man1/ps2eps.1
-share/man/man1/ps2eps.man1.pdf
-share/man/man1/ps2frag.1
-share/man/man1/ps2frag.man1.pdf
-share/man/man1/psbook.1
-share/man/man1/psbook.man1.pdf
-share/man/man1/pslatex.1
-share/man/man1/pslatex.man1.pdf
-share/man/man1/psmerge.1
-share/man/man1/psmerge.man1.pdf
-share/man/man1/psnup.1
-share/man/man1/psnup.man1.pdf
-share/man/man1/psresize.1
-share/man/man1/psresize.man1.pdf
-share/man/man1/psselect.1
-share/man/man1/psselect.man1.pdf
-share/man/man1/pstopdf.1
-share/man/man1/pstopdf.man1.pdf
-share/man/man1/pstops.1
-share/man/man1/pstops.man1.pdf
-share/man/man1/purifyeps.1
-share/man/man1/purifyeps.man1.pdf
-share/man/man1/repstopdf.1
-share/man/man1/repstopdf.man1.pdf
-share/man/man1/rubibtex.1
-share/man/man1/rubibtex.man1.pdf
-share/man/man1/rumakeindex.1
-share/man/man1/rumakeindex.man1.pdf
-share/man/man1/showglyphs.1
-share/man/man1/showglyphs.man1.pdf
-share/man/man1/sjisconv.1
-share/man/man1/sjisconv.man1.pdf
-share/man/man1/splitindex.1
-share/man/man1/splitindex.man1.pdf
-share/man/man1/synctex.1
-share/man/man1/synctex.man1.pdf
-share/man/man1/t1ascii.1
-share/man/man1/t1ascii.man1.pdf
-share/man/man1/t1asm.1
-share/man/man1/t1asm.man1.pdf
-share/man/man1/t1binary.1
-share/man/man1/t1binary.man1.pdf
-share/man/man1/t1disasm.1
-share/man/man1/t1disasm.man1.pdf
-share/man/man1/t1dotlessj.1
-share/man/man1/t1dotlessj.man1.pdf
-share/man/man1/t1lint.1
-share/man/man1/t1lint.man1.pdf
-share/man/man1/t1mac.1
-share/man/man1/t1mac.man1.pdf
-share/man/man1/t1mapper.1
-share/man/man1/t1mapper.man1.pdf
-share/man/man1/t1rawafm.1
-share/man/man1/t1rawafm.man1.pdf
-share/man/man1/t1reencode.1
-share/man/man1/t1reencode.man1.pdf
-share/man/man1/t1testpage.1
-share/man/man1/t1testpage.man1.pdf
-share/man/man1/t1unmac.1
-share/man/man1/t1unmac.man1.pdf
-share/man/man1/tangle.1
-share/man/man1/tangle.man1.pdf
-share/man/man1/tcdialog.1
-share/man/man1/tcdialog.man1.pdf
-share/man/man1/tex.1
-share/man/man1/tex.man1.pdf
-share/man/man1/tex2xindy.1
-share/man/man1/tex2xindy.man1.pdf
-share/man/man1/texconfig-sys.1
-share/man/man1/texconfig-sys.man1.pdf
-share/man/man1/texconfig.1
-share/man/man1/texconfig.man1.pdf
-share/man/man1/texdiff.1
-share/man/man1/texdiff.man1.pdf
-share/man/man1/texdirflatten.1
-share/man/man1/texdirflatten.man1.pdf
-share/man/man1/texdoc.1
-share/man/man1/texdoc.man1.pdf
-share/man/man1/texdoctk.1
-share/man/man1/texdoctk.man1.pdf
-share/man/man1/texexec.1
-share/man/man1/texexec.man1.pdf
-share/man/man1/texhash.1
-share/man/man1/texhash.man1.pdf
-share/man/man1/texindy.1
-share/man/man1/texindy.man1.pdf
-share/man/man1/texlinks.1
-share/man/man1/texlinks.man1.pdf
-share/man/man1/texlua.1
-share/man/man1/texlua.man1.pdf
-share/man/man1/texluac.1
-share/man/man1/texluac.man1.pdf
-share/man/man1/texmfstart.1
-share/man/man1/texmfstart.man1.pdf
-share/man/man1/tftopl.1
-share/man/man1/tftopl.man1.pdf
-share/man/man1/thumbpdf.1
-share/man/man1/thumbpdf.man1.pdf
-share/man/man1/tie.1
-share/man/man1/tie.man1.pdf
-share/man/man1/tlmgr.1
-share/man/man1/tlmgr.man1.pdf
-share/man/man1/tpic2pdftex.1
-share/man/man1/tpic2pdftex.man1.pdf
-share/man/man1/ttf2afm.1
-share/man/man1/ttf2afm.man1.pdf
-share/man/man1/ttf2pk.1
-share/man/man1/ttf2pk.man1.pdf
-share/man/man1/ttf2tfm.1
-share/man/man1/ttf2tfm.man1.pdf
-share/man/man1/ttfdump.1
-share/man/man1/ttfdump.man1.pdf
-share/man/man1/ttftotype42.1
-share/man/man1/ttftotype42.man1.pdf
-share/man/man1/updmap-sys.1
-share/man/man1/updmap-sys.man1.pdf
-share/man/man1/updmap.1
-share/man/man1/updmap.man1.pdf
-share/man/man1/vftovp.1
-share/man/man1/vftovp.man1.pdf
-share/man/man1/vlna.1
-share/man/man1/vlna.man1.pdf
-share/man/man1/vptovf.1
-share/man/man1/vptovf.man1.pdf
-share/man/man1/weave.1
-share/man/man1/weave.man1.pdf
-share/man/man1/xasy.1
-share/man/man1/xasy.man1.pdf
-share/man/man1/xdvi.1
-share/man/man1/xdvi.man1.pdf
-share/man/man1/xdvizilla.1
-share/man/man1/xdvizilla.man1.pdf
-share/man/man1/xindy.1
-share/man/man1/xindy.man1.pdf
-share/man/man5/
-share/man/man5/fmtutil.cnf.5
-share/man/man5/fmtutil.cnf.man5.pdf
-share/man/man5/synctex.5
-share/man/man5/synctex.man5.pdf
-share/man/man5/updmap.cfg.5
-share/man/man5/updmap.cfg.man5.pdf
+@comment share/man/
+@comment share/man/man1/
+@comment share/man/man1/a2ping.1
+@comment share/man/man1/a2ping.man1.pdf
+@comment share/man/man1/afm2afm.1
+@comment share/man/man1/afm2afm.man1.pdf
+@comment share/man/man1/afm2pl.1
+@comment share/man/man1/afm2pl.man1.pdf
+@comment share/man/man1/afm2tfm.1
+@comment share/man/man1/afm2tfm.man1.pdf
+@comment share/man/man1/aleph.1
+@comment share/man/man1/aleph.man1.pdf
+@comment share/man/man1/allcm.1
+@comment share/man/man1/allcm.man1.pdf
+@comment share/man/man1/allec.1
+@comment share/man/man1/allec.man1.pdf
+@comment share/man/man1/allneeded.1
+@comment share/man/man1/allneeded.man1.pdf
+@comment share/man/man1/amstex.1
+@comment share/man/man1/amstex.man1.pdf
+@comment share/man/man1/arlatex.1
+@comment share/man/man1/arlatex.man1.pdf
+@comment share/man/man1/asy.1
+@comment share/man/man1/asy.man1.pdf
+@comment share/man/man1/autoinst.1
+@comment share/man/man1/autoinst.man1.pdf
+@comment share/man/man1/bbox.1
+@comment share/man/man1/bbox.man1.pdf
+@comment share/man/man1/bg5conv.1
+@comment share/man/man1/bg5conv.man1.pdf
+@comment share/man/man1/bibtex.1
+@comment share/man/man1/bibtex.man1.pdf
+@comment share/man/man1/bundledoc.1
+@comment share/man/man1/bundledoc.man1.pdf
+@comment share/man/man1/cef5conv.1
+@comment share/man/man1/cef5conv.man1.pdf
+@comment share/man/man1/cefconv.1
+@comment share/man/man1/cefconv.man1.pdf
+@comment share/man/man1/cefsconv.1
+@comment share/man/man1/cefsconv.man1.pdf
+@comment share/man/man1/cfftot1.1
+@comment share/man/man1/cfftot1.man1.pdf
+@comment share/man/man1/chktex.1
+@comment share/man/man1/chktex.man1.pdf
+@comment share/man/man1/chkweb.1
+@comment share/man/man1/chkweb.man1.pdf
+@comment share/man/man1/cmap2enc.1
+@comment share/man/man1/cmap2enc.man1.pdf
+@comment share/man/man1/ctangle.1
+@comment share/man/man1/ctangle.man1.pdf
+@comment share/man/man1/ctie.1
+@comment share/man/man1/ctie.man1.pdf
+@comment share/man/man1/ctxtools.1
+@comment share/man/man1/ctxtools.man1.pdf
+@comment share/man/man1/cweave.1
+@comment share/man/man1/cweave.man1.pdf
+@comment share/man/man1/cweb.1
+@comment share/man/man1/cweb.man1.pdf
+@comment share/man/man1/detex.1
+@comment share/man/man1/detex.man1.pdf
+@comment share/man/man1/deweb.1
+@comment share/man/man1/deweb.man1.pdf
+@comment share/man/man1/dvi2fax.1
+@comment share/man/man1/dvi2fax.man1.pdf
+@comment share/man/man1/dvicopy.1
+@comment share/man/man1/dvicopy.man1.pdf
+@comment share/man/man1/dvigif.1
+@comment share/man/man1/dvigif.man1.pdf
+@comment share/man/man1/dvihp.1
+@comment share/man/man1/dvihp.man1.pdf
+@comment share/man/man1/dvilj.1
+@comment share/man/man1/dvilj.man1.pdf
+@comment share/man/man1/dvilj2p.1
+@comment share/man/man1/dvilj2p.man1.pdf
+@comment share/man/man1/dvilj4.1
+@comment share/man/man1/dvilj4.man1.pdf
+@comment share/man/man1/dvilj4l.1
+@comment share/man/man1/dvilj4l.man1.pdf
+@comment share/man/man1/dvilj6.1
+@comment share/man/man1/dvilj6.man1.pdf
+@comment share/man/man1/dvipdfm.1
+@comment share/man/man1/dvipdfm.man1.pdf
+@comment share/man/man1/dvipdft.1
+@comment share/man/man1/dvipdft.man1.pdf
+@comment share/man/man1/dvipng.1
+@comment share/man/man1/dvipng.man1.pdf
+@comment share/man/man1/dvipos.1
+@comment share/man/man1/dvipos.man1.pdf
+@comment share/man/man1/dvips.1
+@comment share/man/man1/dvips.man1.pdf
+@comment share/man/man1/dvired.1
+@comment share/man/man1/dvired.man1.pdf
+@comment share/man/man1/dvisvgm.1
+@comment share/man/man1/dvisvgm.man1.pdf
+@comment share/man/man1/dvitomp.1
+@comment share/man/man1/dvitomp.man1.pdf
+@comment share/man/man1/dvitype.1
+@comment share/man/man1/dvitype.man1.pdf
+@comment share/man/man1/e2pall.1
+@comment share/man/man1/e2pall.man1.pdf
+@comment share/man/man1/ebb.1
+@comment share/man/man1/ebb.man1.pdf
+@comment share/man/man1/eplain.1
+@comment share/man/man1/eplain.man1.pdf
+@comment share/man/man1/epsffit.1
+@comment share/man/man1/epsffit.man1.pdf
+@comment share/man/man1/epstopdf.1
+@comment share/man/man1/epstopdf.man1.pdf
+@comment share/man/man1/etex.1
+@comment share/man/man1/etex.man1.pdf
+@comment share/man/man1/extconv.1
+@comment share/man/man1/extconv.man1.pdf
+@comment share/man/man1/extractbb.1
+@comment share/man/man1/extractbb.man1.pdf
+@comment share/man/man1/extractres.1
+@comment share/man/man1/extractres.man1.pdf
+@comment share/man/man1/findhyph.1
+@comment share/man/man1/findhyph.man1.pdf
+@comment share/man/man1/fixdlsrps.1
+@comment share/man/man1/fixdlsrps.man1.pdf
+@comment share/man/man1/fixfmps.1
+@comment share/man/man1/fixfmps.man1.pdf
+@comment share/man/man1/fixmacps.1
+@comment share/man/man1/fixmacps.man1.pdf
+@comment share/man/man1/fixpsditps.1
+@comment share/man/man1/fixpsditps.man1.pdf
+@comment share/man/man1/fixpspps.1
+@comment share/man/man1/fixpspps.man1.pdf
+@comment share/man/man1/fixscribeps.1
+@comment share/man/man1/fixscribeps.man1.pdf
+@comment share/man/man1/fixtpps.1
+@comment share/man/man1/fixtpps.man1.pdf
+@comment share/man/man1/fixwfwps.1
+@comment share/man/man1/fixwfwps.man1.pdf
+@comment share/man/man1/fixwpps.1
+@comment share/man/man1/fixwpps.man1.pdf
+@comment share/man/man1/fixwwps.1
+@comment share/man/man1/fixwwps.man1.pdf
+@comment share/man/man1/fmtutil-sys.1
+@comment share/man/man1/fmtutil-sys.man1.pdf
+@comment share/man/man1/fmtutil.1
+@comment share/man/man1/fmtutil.man1.pdf
+@comment share/man/man1/font2afm.1
+@comment share/man/man1/font2afm.man1.pdf
+@comment share/man/man1/fontinst.1
+@comment share/man/man1/fontinst.man1.pdf
+@comment share/man/man1/getafm.1
+@comment share/man/man1/getafm.man1.pdf
+@comment share/man/man1/gftodvi.1
+@comment share/man/man1/gftodvi.man1.pdf
+@comment share/man/man1/gftopk.1
+@comment share/man/man1/gftopk.man1.pdf
+@comment share/man/man1/gftype.1
+@comment share/man/man1/gftype.man1.pdf
+@comment share/man/man1/gsftopk.1
+@comment share/man/man1/gsftopk.man1.pdf
+@comment share/man/man1/hbf2gf.1
+@comment share/man/man1/hbf2gf.man1.pdf
+@comment share/man/man1/includeres.1
+@comment share/man/man1/includeres.man1.pdf
+@comment share/man/man1/install-tl.1
+@comment share/man/man1/install-tl.man1.pdf
+@comment share/man/man1/kpseaccess.1
+@comment share/man/man1/kpseaccess.man1.pdf
+@comment share/man/man1/kpsepath.1
+@comment share/man/man1/kpsepath.man1.pdf
+@comment share/man/man1/kpsereadlink.1
+@comment share/man/man1/kpsereadlink.man1.pdf
+@comment share/man/man1/kpsestat.1
+@comment share/man/man1/kpsestat.man1.pdf
+@comment share/man/man1/kpsetool.1
+@comment share/man/man1/kpsetool.man1.pdf
+@comment share/man/man1/kpsewhere.1
+@comment share/man/man1/kpsewhere.man1.pdf
+@comment share/man/man1/kpsewhich.1
+@comment share/man/man1/kpsewhich.man1.pdf
+@comment share/man/man1/kpsexpand.1
+@comment share/man/man1/kpsexpand.man1.pdf
+@comment share/man/man1/lamed.1
+@comment share/man/man1/lamed.man1.pdf
+@comment share/man/man1/latex.1
+@comment share/man/man1/latex.man1.pdf
+@comment share/man/man1/latexdiff-vc.1
+@comment share/man/man1/latexdiff-vc.man1.pdf
+@comment share/man/man1/latexdiff.1
+@comment share/man/man1/latexdiff.man1.pdf
+@comment share/man/man1/latexmk.1
+@comment share/man/man1/latexmk.man1.pdf
+@comment share/man/man1/latexrevise.1
+@comment share/man/man1/latexrevise.man1.pdf
+@comment share/man/man1/luatex.1
+@comment share/man/man1/luatex.man1.pdf
+@comment share/man/man1/makeindex.1
+@comment share/man/man1/makeindex.man1.pdf
+@comment share/man/man1/mf-nowin.1
+@comment share/man/man1/mf-nowin.man1.pdf
+@comment share/man/man1/mf.1
+@comment share/man/man1/mf.man1.pdf
+@comment share/man/man1/mft.1
+@comment share/man/man1/mft.man1.pdf
+@comment share/man/man1/mkindex.1
+@comment share/man/man1/mkindex.man1.pdf
+@comment share/man/man1/mkjobtexmf.1
+@comment share/man/man1/mkjobtexmf.man1.pdf
+@comment share/man/man1/mkocp.1
+@comment share/man/man1/mkocp.man1.pdf
+@comment share/man/man1/mkofm.1
+@comment share/man/man1/mkofm.man1.pdf
+@comment share/man/man1/mktexfmt.1
+@comment share/man/man1/mktexfmt.man1.pdf
+@comment share/man/man1/mktexlsr.1
+@comment share/man/man1/mktexlsr.man1.pdf
+@comment share/man/man1/mktexmf.1
+@comment share/man/man1/mktexmf.man1.pdf
+@comment share/man/man1/mktexpk.1
+@comment share/man/man1/mktexpk.man1.pdf
+@comment share/man/man1/mktextfm.1
+@comment share/man/man1/mktextfm.man1.pdf
+@comment share/man/man1/mmafm.1
+@comment share/man/man1/mmafm.man1.pdf
+@comment share/man/man1/mmpfb.1
+@comment share/man/man1/mmpfb.man1.pdf
+@comment share/man/man1/mpost.1
+@comment share/man/man1/mpost.man1.pdf
+@comment share/man/man1/mptopdf.1
+@comment share/man/man1/mptopdf.man1.pdf
+@comment share/man/man1/odvicopy.1
+@comment share/man/man1/odvicopy.man1.pdf
+@comment share/man/man1/odvips.man1.pdf
+@comment share/man/man1/odvitype.1
+@comment share/man/man1/odvitype.man1.pdf
+@comment share/man/man1/ofm2opl.1
+@comment share/man/man1/ofm2opl.man1.pdf
+@comment share/man/man1/opl2ofm.1
+@comment share/man/man1/opl2ofm.man1.pdf
+@comment share/man/man1/ot2kpx.1
+@comment share/man/man1/ot2kpx.man1.pdf
+@comment share/man/man1/otangle.1
+@comment share/man/man1/otangle.man1.pdf
+@comment share/man/man1/otfinfo.1
+@comment share/man/man1/otfinfo.man1.pdf
+@comment share/man/man1/otftotfm.1
+@comment share/man/man1/otftotfm.man1.pdf
+@comment share/man/man1/otp2ocp.1
+@comment share/man/man1/otp2ocp.man1.pdf
+@comment share/man/man1/outocp.1
+@comment share/man/man1/outocp.man1.pdf
+@comment share/man/man1/ovf2ovp.1
+@comment share/man/man1/ovf2ovp.man1.pdf
+@comment share/man/man1/ovp2ovf.1
+@comment share/man/man1/ovp2ovf.man1.pdf
+@comment share/man/man1/patgen.1
+@comment share/man/man1/patgen.man1.pdf
+@comment share/man/man1/pdf180.1
+@comment share/man/man1/pdf180.man1.pdf
+@comment share/man/man1/pdf270.1
+@comment share/man/man1/pdf270.man1.pdf
+@comment share/man/man1/pdf90.1
+@comment share/man/man1/pdf90.man1.pdf
+@comment share/man/man1/pdfbook.1
+@comment share/man/man1/pdfbook.man1.pdf
+@comment share/man/man1/pdfetex.1
+@comment share/man/man1/pdfetex.man1.pdf
+@comment share/man/man1/pdfflip.1
+@comment share/man/man1/pdfflip.man1.pdf
+@comment share/man/man1/pdfjam-pocketmod.1
+@comment share/man/man1/pdfjam-pocketmod.man1.pdf
+@comment share/man/man1/pdfjam-slides3up.1
+@comment share/man/man1/pdfjam-slides3up.man1.pdf
+@comment share/man/man1/pdfjam-slides6up.1
+@comment share/man/man1/pdfjam-slides6up.man1.pdf
+@comment share/man/man1/pdfjam.1
+@comment share/man/man1/pdfjam.man1.pdf
+@comment share/man/man1/pdfjoin.1
+@comment share/man/man1/pdfjoin.man1.pdf
+@comment share/man/man1/pdflatex.1
+@comment share/man/man1/pdflatex.man1.pdf
+@comment share/man/man1/pdfnup.1
+@comment share/man/man1/pdfnup.man1.pdf
+@comment share/man/man1/pdfpun.1
+@comment share/man/man1/pdfpun.man1.pdf
+@comment share/man/man1/pdftex.1
+@comment share/man/man1/pdftex.man1.pdf
+@comment share/man/man1/pdftosrc.1
+@comment share/man/man1/pdftosrc.man1.pdf
+@comment share/man/man1/perltex.1
+@comment share/man/man1/perltex.man1.pdf
+@comment share/man/man1/pfm2kpx.1
+@comment share/man/man1/pfm2kpx.man1.pdf
+@comment share/man/man1/pkfix-helper.1
+@comment share/man/man1/pkfix-helper.man1.pdf
+@comment share/man/man1/pktogf.1
+@comment share/man/man1/pktogf.man1.pdf
+@comment share/man/man1/pktype.1
+@comment share/man/man1/pktype.man1.pdf
+@comment share/man/man1/pltotf.1
+@comment share/man/man1/pltotf.man1.pdf
+@comment share/man/man1/pooltype.1
+@comment share/man/man1/pooltype.man1.pdf
+@comment share/man/man1/ps2eps.1
+@comment share/man/man1/ps2eps.man1.pdf
+@comment share/man/man1/ps2frag.1
+@comment share/man/man1/ps2frag.man1.pdf
+@comment share/man/man1/psbook.1
+@comment share/man/man1/psbook.man1.pdf
+@comment share/man/man1/pslatex.1
+@comment share/man/man1/pslatex.man1.pdf
+@comment share/man/man1/psmerge.1
+@comment share/man/man1/psmerge.man1.pdf
+@comment share/man/man1/psnup.1
+@comment share/man/man1/psnup.man1.pdf
+@comment share/man/man1/psresize.1
+@comment share/man/man1/psresize.man1.pdf
+@comment share/man/man1/psselect.1
+@comment share/man/man1/psselect.man1.pdf
+@comment share/man/man1/pstopdf.1
+@comment share/man/man1/pstopdf.man1.pdf
+@comment share/man/man1/pstops.1
+@comment share/man/man1/pstops.man1.pdf
+@comment share/man/man1/purifyeps.1
+@comment share/man/man1/purifyeps.man1.pdf
+@comment share/man/man1/repstopdf.1
+@comment share/man/man1/repstopdf.man1.pdf
+@comment share/man/man1/rubibtex.1
+@comment share/man/man1/rubibtex.man1.pdf
+@comment share/man/man1/rumakeindex.1
+@comment share/man/man1/rumakeindex.man1.pdf
+@comment share/man/man1/showglyphs.1
+@comment share/man/man1/showglyphs.man1.pdf
+@comment share/man/man1/sjisconv.1
+@comment share/man/man1/sjisconv.man1.pdf
+@comment share/man/man1/splitindex.1
+@comment share/man/man1/splitindex.man1.pdf
+@comment share/man/man1/synctex.1
+@comment share/man/man1/synctex.man1.pdf
+@comment share/man/man1/t1ascii.1
+@comment share/man/man1/t1ascii.man1.pdf
+@comment share/man/man1/t1asm.1
+@comment share/man/man1/t1asm.man1.pdf
+@comment share/man/man1/t1binary.1
+@comment share/man/man1/t1binary.man1.pdf
+@comment share/man/man1/t1disasm.1
+@comment share/man/man1/t1disasm.man1.pdf
+@comment share/man/man1/t1dotlessj.1
+@comment share/man/man1/t1dotlessj.man1.pdf
+@comment share/man/man1/t1lint.1
+@comment share/man/man1/t1lint.man1.pdf
+@comment share/man/man1/t1mac.1
+@comment share/man/man1/t1mac.man1.pdf
+@comment share/man/man1/t1mapper.1
+@comment share/man/man1/t1mapper.man1.pdf
+@comment share/man/man1/t1rawafm.1
+@comment share/man/man1/t1rawafm.man1.pdf
+@comment share/man/man1/t1reencode.1
+@comment share/man/man1/t1reencode.man1.pdf
+@comment share/man/man1/t1testpage.1
+@comment share/man/man1/t1testpage.man1.pdf
+@comment share/man/man1/t1unmac.1
+@comment share/man/man1/t1unmac.man1.pdf
+@comment share/man/man1/tangle.1
+@comment share/man/man1/tangle.man1.pdf
+@comment share/man/man1/tcdialog.1
+@comment share/man/man1/tcdialog.man1.pdf
+@comment share/man/man1/tex.1
+@comment share/man/man1/tex.man1.pdf
+@comment share/man/man1/tex2xindy.1
+@comment share/man/man1/tex2xindy.man1.pdf
+@comment share/man/man1/texconfig-sys.1
+@comment share/man/man1/texconfig-sys.man1.pdf
+@comment share/man/man1/texconfig.1
+@comment share/man/man1/texconfig.man1.pdf
+@comment share/man/man1/texdiff.1
+@comment share/man/man1/texdiff.man1.pdf
+@comment share/man/man1/texdirflatten.1
+@comment share/man/man1/texdirflatten.man1.pdf
+@comment share/man/man1/texdoc.1
+@comment share/man/man1/texdoc.man1.pdf
+@comment share/man/man1/texdoctk.1
+@comment share/man/man1/texdoctk.man1.pdf
+@comment share/man/man1/texexec.1
+@comment share/man/man1/texexec.man1.pdf
+@comment share/man/man1/texhash.1
+@comment share/man/man1/texhash.man1.pdf
+@comment share/man/man1/texindy.1
+@comment share/man/man1/texindy.man1.pdf
+@comment share/man/man1/texlinks.1
+@comment share/man/man1/texlinks.man1.pdf
+@comment share/man/man1/texlua.1
+@comment share/man/man1/texlua.man1.pdf
+@comment share/man/man1/texluac.1
+@comment share/man/man1/texluac.man1.pdf
+@comment share/man/man1/texmfstart.1
+@comment share/man/man1/texmfstart.man1.pdf
+@comment share/man/man1/tftopl.1
+@comment share/man/man1/tftopl.man1.pdf
+@comment share/man/man1/thumbpdf.1
+@comment share/man/man1/thumbpdf.man1.pdf
+@comment share/man/man1/tie.1
+@comment share/man/man1/tie.man1.pdf
+@comment share/man/man1/tlmgr.1
+@comment share/man/man1/tlmgr.man1.pdf
+@comment share/man/man1/tpic2pdftex.1
+@comment share/man/man1/tpic2pdftex.man1.pdf
+@comment share/man/man1/ttf2afm.1
+@comment share/man/man1/ttf2afm.man1.pdf
+@comment share/man/man1/ttf2pk.1
+@comment share/man/man1/ttf2pk.man1.pdf
+@comment share/man/man1/ttf2tfm.1
+@comment share/man/man1/ttf2tfm.man1.pdf
+@comment share/man/man1/ttfdump.1
+@comment share/man/man1/ttfdump.man1.pdf
+@comment share/man/man1/ttftotype42.1
+@comment share/man/man1/ttftotype42.man1.pdf
+@comment share/man/man1/updmap-sys.1
+@comment share/man/man1/updmap-sys.man1.pdf
+@comment share/man/man1/updmap.1
+@comment share/man/man1/updmap.man1.pdf
+@comment share/man/man1/vftovp.1
+@comment share/man/man1/vftovp.man1.pdf
+@comment share/man/man1/vlna.1
+@comment share/man/man1/vlna.man1.pdf
+@comment share/man/man1/vptovf.1
+@comment share/man/man1/vptovf.man1.pdf
+@comment share/man/man1/weave.1
+@comment share/man/man1/weave.man1.pdf
+@comment share/man/man1/xasy.1
+@comment share/man/man1/xasy.man1.pdf
+@comment share/man/man1/xdvi.1
+@comment share/man/man1/xdvi.man1.pdf
+@comment share/man/man1/xdvizilla.1
+@comment share/man/man1/xdvizilla.man1.pdf
+@comment share/man/man1/xindy.1
+@comment share/man/man1/xindy.man1.pdf
+@comment share/man/man5/
+@comment share/man/man5/fmtutil.cnf.5
+@comment share/man/man5/fmtutil.cnf.man5.pdf
+@comment share/man/man5/synctex.5
+@comment share/man/man5/synctex.man5.pdf
+@comment share/man/man5/updmap.cfg.5
+@comment share/man/man5/updmap.cfg.man5.pdf
+share/texmf-dist/
+share/texmf-dist/doc/
+share/texmf-dist/doc/aleph/
 share/texmf-dist/doc/aleph/base/
 share/texmf-dist/doc/aleph/base/News
 share/texmf-dist/doc/aleph/base/readme.txt
+share/texmf-dist/doc/amstex/
 share/texmf-dist/doc/amstex/base/
 share/texmf-dist/doc/amstex/base/README
 share/texmf-dist/doc/amstex/base/amsguide.pdf
@@ -450,6 +455,7 @@ share/texmf-dist/doc/amstex/base/amstinst.ps.gz
 share/texmf-dist/doc/amstex/base/amstinst.tex
 share/texmf-dist/doc/amstex/base/joyerr.tex
 share/texmf-dist/doc/amstex/base/joyerr2.tex
+share/texmf-dist/doc/bibtex/
 share/texmf-dist/doc/bibtex/abstyles/
 share/texmf-dist/doc/bibtex/abstyles/README
 share/texmf-dist/doc/bibtex/abstyles/a4c.sty
@@ -568,12 +574,16 @@ share/texmf-dist/doc/bibtex/vancouver/
 share/texmf-dist/doc/bibtex/vancouver/README
 share/texmf-dist/doc/bibtex/vancouver/vancouver.pdf
 share/texmf-dist/doc/bibtex/vancouver/vancouver.tex
+share/texmf-dist/doc/context/
 share/texmf-dist/doc/context/bib/
 share/texmf-dist/doc/context/bib/bibmod-doc.pdf
 share/texmf-dist/doc/context/bib/bibmod-doc.tex
+share/texmf-dist/doc/context/document/
+share/texmf-dist/doc/context/document/general/
 share/texmf-dist/doc/context/document/general/manuals/
 share/texmf-dist/doc/context/document/general/manuals/mreadme.pdf
 share/texmf-dist/doc/context/document/general/manuals/tiptrick.pdf
+share/texmf-dist/doc/context/manuals/
 share/texmf-dist/doc/context/manuals/allkind/
 share/texmf-dist/doc/context/manuals/allkind/mcommon.tex
 share/texmf-dist/doc/context/manuals/allkind/mreadme.tex
@@ -734,9 +744,11 @@ share/texmf-dist/doc/context/manuals/reference/en/typography/encodings.pdf
 share/texmf-dist/doc/context/manuals/reference/en/typography/encodings.tex
 share/texmf-dist/doc/context/manuals/reference/en/typography/glyphs.pdf
 share/texmf-dist/doc/context/manuals/reference/en/typography/glyphs.tex
+share/texmf-dist/doc/context/scripts/
 share/texmf-dist/doc/context/scripts/perl/
 share/texmf-dist/doc/context/scripts/perl/texshow.1
 share/texmf-dist/doc/context/scripts/perl/texshow.html
+share/texmf-dist/doc/context/third/
 share/texmf-dist/doc/context/third/account/
 share/texmf-dist/doc/context/third/account/README
 share/texmf-dist/doc/context/third/account/account-doc.pdf
@@ -869,6 +881,7 @@ share/texmf-dist/doc/context/third/vim/
 share/texmf-dist/doc/context/third/vim/README
 share/texmf-dist/doc/context/third/vim/vim-demo.pdf
 share/texmf-dist/doc/context/third/vim/vim-doc.pdf
+share/texmf-dist/doc/cslatex/
 share/texmf-dist/doc/cslatex/base/
 share/texmf-dist/doc/cslatex/base/INSTALL.cslatex
 share/texmf-dist/doc/cslatex/base/README-cspsfont
@@ -904,6 +917,7 @@ share/texmf-dist/doc/eplain/doc/xhyper.jpg
 share/texmf-dist/doc/eplain/util/
 share/texmf-dist/doc/eplain/util/idxuniq
 share/texmf-dist/doc/eplain/util/trimsee
+share/texmf-dist/doc/etex/
 share/texmf-dist/doc/etex/base/
 share/texmf-dist/doc/etex/base/NTS-FAQ
 share/texmf-dist/doc/etex/base/etex_gen.tex
@@ -915,6 +929,7 @@ share/texmf-dist/doc/etex/base/etex_src.html
 share/texmf-dist/doc/etex/base/legal.html
 share/texmf-dist/doc/etex/base/nts-group.html
 share/texmf-dist/doc/etex/base/webmerge.tex
+share/texmf-dist/doc/fonts/
 share/texmf-dist/doc/fonts/Asana-Math/
 share/texmf-dist/doc/fonts/Asana-Math/README.1ST
 share/texmf-dist/doc/fonts/Type1fonts/
@@ -1057,6 +1072,7 @@ share/texmf-dist/doc/fonts/arev/prosper-kerkis.tex
 share/texmf-dist/doc/fonts/arev/prosper-lcmss.tex
 share/texmf-dist/doc/fonts/arev/prosper-text.tex
 share/texmf-dist/doc/fonts/armenian/
+share/texmf-dist/doc/fonts/armenian/examples/
 share/texmf-dist/doc/fonts/armenian/examples/latex/
 share/texmf-dist/doc/fonts/armenian/examples/latex/manual.tex
 share/texmf-dist/doc/fonts/armenian/examples/latex/raffi.tex
@@ -1267,6 +1283,7 @@ share/texmf-dist/doc/fonts/cmcyr/merge.iso
 share/texmf-dist/doc/fonts/cmcyr/merge.koi
 share/texmf-dist/doc/fonts/cmcyr/merge.o6w
 share/texmf-dist/doc/fonts/cmcyr/merge.win
+share/texmf-dist/doc/fonts/cmcyr/vf/
 share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6i/
 share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6i/merge.bat
 share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6k/
@@ -1282,6 +1299,7 @@ share/texmf-dist/doc/fonts/cmcyr/wnckoi8e
 share/texmf-dist/doc/fonts/cmll/
 share/texmf-dist/doc/fonts/cmll/README
 share/texmf-dist/doc/fonts/cmll/cmll.pdf
+share/texmf-dist/doc/fonts/cns/
 share/texmf-dist/doc/fonts/cns/cns40-1/
 share/texmf-dist/doc/fonts/cns/cns40-1/README
 share/texmf-dist/doc/fonts/cns/cns40-2/
@@ -1380,6 +1398,7 @@ share/texmf-dist/doc/fonts/eiad/recreat.tex
 share/texmf-dist/doc/fonts/elvish/
 share/texmf-dist/doc/fonts/elvish/README
 share/texmf-dist/doc/fonts/elvish/teng.tex
+share/texmf-dist/doc/fonts/enc/
 share/texmf-dist/doc/fonts/enc/c90/
 share/texmf-dist/doc/fonts/enc/c90/c90.pdf
 share/texmf-dist/doc/fonts/epigrafica/
@@ -1456,6 +1475,7 @@ share/texmf-dist/doc/fonts/fontinst/encspecs/encspecs.tex
 share/texmf-dist/doc/fonts/fontinst/encspecs/omxdraft.etx
 share/texmf-dist/doc/fonts/fontinst/encspecs/ot1draft.etx
 share/texmf-dist/doc/fonts/fontinst/encspecs/t1draft.etx
+share/texmf-dist/doc/fonts/fontinst/examples/
 share/texmf-dist/doc/fonts/fontinst/examples/basic/
 share/texmf-dist/doc/fonts/fontinst/examples/basic/basicex.tex
 share/texmf-dist/doc/fonts/fontinst/examples/basic/basicex2.tex
@@ -2212,8 +2232,10 @@ share/texmf-dist/doc/fonts/marvosym/mac/docs/
 share/texmf-dist/doc/fonts/marvosym/mac/docs/obsolete/
 share/texmf-dist/doc/fonts/marvosym/mac/docs/obsolete/tex-me.tex
 share/texmf-dist/doc/fonts/marvosym/mac/docs/textures
+share/texmf-dist/doc/fonts/marvosym/mac/oztex/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/configs/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/configs/addmarvo
+share/texmf-dist/doc/fonts/marvosym/mac/oztex/dvips/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/dvips/inputs/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/dvips/inputs/config.fmv
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/dvips/inputs/fmv.map
@@ -2221,6 +2243,7 @@ share/texmf-dist/doc/fonts/marvosym/mac/oztex/ps-files/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/ps-files/marvosym.afm
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/ps-files/marvosym.pfa
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/ps-files/readme.txt
+share/texmf-dist/doc/fonts/marvosym/mac/oztex/tex-font/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/tex-font/misc/
 share/texmf-dist/doc/fonts/marvosym/mac/oztex/tex-font/misc/fmvr8x.tfm
 share/texmf-dist/doc/fonts/marvosym/mac/readme.txt
@@ -2531,6 +2554,7 @@ share/texmf-dist/doc/fonts/txfontsb/
 share/texmf-dist/doc/fonts/txfontsb/README
 share/texmf-dist/doc/fonts/txfontsb/txfontsb.pdf
 share/texmf-dist/doc/fonts/txfontsb/txfontsb.tex
+share/texmf-dist/doc/fonts/uhc/
 share/texmf-dist/doc/fonts/uhc/umj/
 share/texmf-dist/doc/fonts/uhc/umj/README
 share/texmf-dist/doc/fonts/universa/
@@ -2547,6 +2571,7 @@ share/texmf-dist/doc/fonts/venturisadf/README
 share/texmf-dist/doc/fonts/venturisadf/manifest.txt
 share/texmf-dist/doc/fonts/venturisadf/venturisadf.pdf
 share/texmf-dist/doc/fonts/venturisadf/venturisadf.tex
+share/texmf-dist/doc/fonts/wadalab/
 share/texmf-dist/doc/fonts/wadalab/dgj/
 share/texmf-dist/doc/fonts/wadalab/dgj/README
 share/texmf-dist/doc/fonts/wadalab/dmj/
@@ -2581,6 +2606,7 @@ share/texmf-dist/doc/fonts/xq/xqexample.pdf
 share/texmf-dist/doc/fonts/xq/xqexample.tex
 share/texmf-dist/doc/fonts/zhmetrics/
 share/texmf-dist/doc/fonts/zhmetrics/README
+share/texmf-dist/doc/generic/
 share/texmf-dist/doc/generic/2up/
 share/texmf-dist/doc/generic/2up/2up-doc.pdf
 share/texmf-dist/doc/generic/2up/2up-doc.tex
@@ -3271,6 +3297,7 @@ share/texmf-dist/doc/generic/insbox/pic1.eps
 share/texmf-dist/doc/generic/insbox/pic2.eps
 share/texmf-dist/doc/generic/kastrup/
 share/texmf-dist/doc/generic/kastrup/binhex.pdf
+share/texmf-dist/doc/generic/knuth/
 share/texmf-dist/doc/generic/knuth/errata/
 share/texmf-dist/doc/generic/knuth/errata/cm85.bug
 share/texmf-dist/doc/generic/knuth/errata/errata.pdf
@@ -4524,6 +4551,7 @@ share/texmf-dist/doc/generic/tex-ewd/README
 share/texmf-dist/doc/generic/tex-ewd/bsdlic.txt
 share/texmf-dist/doc/generic/tex-ewd/p0.tex
 share/texmf-dist/doc/generic/tex-ewd/t1.tex
+share/texmf-dist/doc/generic/tex-ps/
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/README
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/cmyk-doc.pdf
@@ -5245,6 +5273,7 @@ share/texmf-dist/doc/generic/yax/
 share/texmf-dist/doc/generic/yax/README
 share/texmf-dist/doc/generic/yax/yax-doc.pdf
 share/texmf-dist/doc/generic/yax/yax-doc.tex
+share/texmf-dist/doc/latex/
 share/texmf-dist/doc/latex/12many/
 share/texmf-dist/doc/latex/12many/12many.pdf
 share/texmf-dist/doc/latex/12many/README
@@ -5441,6 +5470,7 @@ share/texmf-dist/doc/latex/aiaa/pre2004/aiaa.dtx
 share/texmf-dist/doc/latex/aiaa/pre2004/aiaa.ins
 share/texmf-dist/doc/latex/aiaa/pre2004/aiaa.pdf
 share/texmf-dist/doc/latex/aiaa/pre2004/aiaalgo.eps
+share/texmf-dist/doc/latex/aiaa/pre2004/demos/
 share/texmf-dist/doc/latex/aiaa/pre2004/demos/paper/
 share/texmf-dist/doc/latex/aiaa/pre2004/demos/paper/smpaiaa.ps
 share/texmf-dist/doc/latex/aiaa/pre2004/demos/paper/smpaiaa.tex
@@ -6160,6 +6190,7 @@ share/texmf-dist/doc/latex/beamer/examples/beamerexample-lecture-beamer-version.
 share/texmf-dist/doc/latex/beamer/examples/beamerexample-lecture-print-version.pdf
 share/texmf-dist/doc/latex/beamer/examples/lyx-based-presentation/
 share/texmf-dist/doc/latex/beamer/examples/lyx-based-presentation/beamerexample-lyx.lyx
+share/texmf-dist/doc/latex/beamer/solutions/
 share/texmf-dist/doc/latex/beamer/solutions/conference-talks/
 share/texmf-dist/doc/latex/beamer/solutions/conference-talks/conference-ornate-20min.de.lyx
 share/texmf-dist/doc/latex/beamer/solutions/conference-talks/conference-ornate-20min.de.tex
@@ -6215,11 +6246,11 @@ share/texmf-dist/doc/latex/bgreek/bgman.tex
 share/texmf-dist/doc/latex/bgreek/bgreek.etx
 share/texmf-dist/doc/latex/bgreek/cbgreek.etx
 share/texmf-dist/doc/latex/bgreek/qbgreek.etx
-share/texmf-dist/doc/latex/bibarts/
-share/texmf-dist/doc/latex/bibarts/bibarts.pdf
-share/texmf-dist/doc/latex/bibarts/bibarts.tex
-share/texmf-dist/doc/latex/bibarts/gbib209.bat
-share/texmf-dist/doc/latex/bibarts/gbib2e.bat
+@comment share/texmf-dist/doc/latex/bibarts/
+@comment share/texmf-dist/doc/latex/bibarts/bibarts.pdf
+@comment share/texmf-dist/doc/latex/bibarts/bibarts.tex
+@comment share/texmf-dist/doc/latex/bibarts/gbib209.bat
+@comment share/texmf-dist/doc/latex/bibarts/gbib2e.bat
 @comment share/texmf-dist/doc/latex/bibarts/gbibsort.exe
 share/texmf-dist/doc/latex/bibexport/
 share/texmf-dist/doc/latex/bibexport/README
@@ -6855,6 +6886,7 @@ share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/cwtb.map
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/dvipdfmx.cfg
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/gen-map.pl
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/map.list
+share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/texinput/
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/texinput/Bg5/
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/texinput/Bg5/c00cwtb.fd
 share/texmf-dist/doc/latex/cjk/doc/pdfhowto/examples/texinput/Bg5/c00tmpl.fd
@@ -6930,6 +6962,7 @@ share/texmf-dist/doc/latex/cjk/texlive/cjk.pl
 share/texmf-dist/doc/latex/cjk/texlive/dnp.pl
 share/texmf-dist/doc/latex/cjk/texlive/garuda-c90.pl
 share/texmf-dist/doc/latex/cjk/texlive/norasi-c90.pl
+share/texmf-dist/doc/latex/cjk/utils/
 share/texmf-dist/doc/latex/cjk/utils/pyhyphen/
 share/texmf-dist/doc/latex/cjk/utils/pyhyphen/pytest.tex
 share/texmf-dist/doc/latex/cjkpunct/
@@ -7165,6 +7198,7 @@ share/texmf-dist/doc/latex/confproc/example/papers/p_003.pdf
 share/texmf-dist/doc/latex/confproc/example/papers/p_005.pdf
 share/texmf-dist/doc/latex/confproc/example/papers/p_007.pdf
 share/texmf-dist/doc/latex/confproc/example/papers/p_009.pdf
+share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_001/
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_001/dafx_06.sty
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_001/fft_plot2.png
@@ -7185,6 +7219,7 @@ share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_007/dafx_06.
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_007/fft_plot2.png
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_007/p_007.bib
 share/texmf-dist/doc/latex/confproc/example/papers/sources_pdftex/p_007/p_007.tex
+share/texmf-dist/doc/latex/confproc/example/papers/sources_tex/
 share/texmf-dist/doc/latex/confproc/example/papers/sources_tex/p_009/
 share/texmf-dist/doc/latex/confproc/example/papers/sources_tex/p_009/dafx_06.sty
 share/texmf-dist/doc/latex/confproc/example/papers/sources_tex/p_009/fft_plot2.png
@@ -7501,6 +7536,7 @@ share/texmf-dist/doc/latex/dashrule/README
 share/texmf-dist/doc/latex/dashrule/dashrule.pdf
 share/texmf-dist/doc/latex/dashundergaps/
 share/texmf-dist/doc/latex/dashundergaps/README
+share/texmf-dist/doc/latex/dashundergaps/doc/
 share/texmf-dist/doc/latex/dashundergaps/doc/pdf/
 share/texmf-dist/doc/latex/dashundergaps/doc/pdf/dashundergaps.pdf
 share/texmf-dist/doc/latex/dashundergaps/doc/tex/
@@ -7785,6 +7821,7 @@ share/texmf-dist/doc/latex/drs/
 share/texmf-dist/doc/latex/drs/README
 share/texmf-dist/doc/latex/drs/drsdoc.pdf
 share/texmf-dist/doc/latex/drs/drsdoc.tex
+share/texmf-dist/doc/latex/dtk/
 share/texmf-dist/doc/latex/dtk/doc/
 share/texmf-dist/doc/latex/dtk/doc/beispiel.bib
 share/texmf-dist/doc/latex/dtk/doc/beispiel.pdf
@@ -9145,6 +9182,7 @@ share/texmf-dist/doc/latex/guide-to-latex/demo.pdf
 share/texmf-dist/doc/latex/guide-to-latex/demodoc.pdf
 share/texmf-dist/doc/latex/guide-to-latex/demodoc.ps
 share/texmf-dist/doc/latex/guide-to-latex/demodoc.tex
+share/texmf-dist/doc/latex/guide-to-latex/exercises/
 share/texmf-dist/doc/latex/guide-to-latex/exercises/chap10/
 share/texmf-dist/doc/latex/guide-to-latex/exercises/chap10/exer10-1.tex
 share/texmf-dist/doc/latex/guide-to-latex/exercises/chap10/exer10-10.tex
@@ -9551,6 +9589,7 @@ share/texmf-dist/doc/latex/inlinedef/
 share/texmf-dist/doc/latex/inlinedef/README
 share/texmf-dist/doc/latex/inlinedef/inlinedef.pdf
 share/texmf-dist/doc/latex/inlinedef/inlinetest.tex
+share/texmf-dist/doc/latex/interactiveworkbook/
 share/texmf-dist/doc/latex/interactiveworkbook/documentation/
 share/texmf-dist/doc/latex/interactiveworkbook/documentation/interactiveworkbookmanual.pdf
 share/texmf-dist/doc/latex/interactiveworkbook/documentation/interactiveworkbookmanual.tex
@@ -9829,6 +9868,7 @@ share/texmf-dist/doc/latex/juraabbrev/abbrevtest.tex
 share/texmf-dist/doc/latex/juraabbrev/juraabbrev.pdf
 share/texmf-dist/doc/latex/jurabib/
 share/texmf-dist/doc/latex/jurabib/changes.txt
+share/texmf-dist/doc/latex/jurabib/docs/
 share/texmf-dist/doc/latex/jurabib/docs/english/
 share/texmf-dist/doc/latex/jurabib/docs/english/jbendoc.pdf
 share/texmf-dist/doc/latex/jurabib/docs/english/jbendoc.tex
@@ -9913,6 +9953,8 @@ share/texmf-dist/doc/latex/knittingpattern/introduction.tex
 share/texmf-dist/doc/latex/knittingpattern/lion.png
 share/texmf-dist/doc/latex/knittingpattern/template.pdf
 share/texmf-dist/doc/latex/knittingpattern/template.tex
+share/texmf-dist/doc/latex/kopka/
+share/texmf-dist/doc/latex/kopka/uebungen/
 share/texmf-dist/doc/latex/kopka/uebungen/kapitel2/
 share/texmf-dist/doc/latex/kopka/uebungen/kapitel2/a4.sty
 share/texmf-dist/doc/latex/kopka/uebungen/kapitel2/readme_2
@@ -11122,6 +11164,7 @@ share/texmf-dist/doc/latex/latex-veryshortguide/menno-a.jpg
 share/texmf-dist/doc/latex/latex-veryshortguide/veryshortguide-imposed.pdf
 share/texmf-dist/doc/latex/latex-veryshortguide/veryshortguide.pdf
 share/texmf-dist/doc/latex/latex-veryshortguide/veryshortguide.tex
+share/texmf-dist/doc/latex/latex-web-companion/
 share/texmf-dist/doc/latex/latex-web-companion/apa/
 share/texmf-dist/doc/latex/latex-web-companion/apa/README.apa
 share/texmf-dist/doc/latex/latex-web-companion/apa/latexexa-raw.xml
@@ -13003,6 +13046,7 @@ share/texmf-dist/doc/latex/montex/TODO
 share/texmf-dist/doc/latex/montex/UPDATE
 share/texmf-dist/doc/latex/montex/cyrename.pl
 share/texmf-dist/doc/latex/montex/fontlist.tex
+share/texmf-dist/doc/latex/montex/mfinput/
 share/texmf-dist/doc/latex/montex/mfinput/bithe/
 share/texmf-dist/doc/latex/montex/mfinput/bithe/testfont.input
 share/texmf-dist/doc/latex/montex/mfinput/bithe/testfont.sh
@@ -13084,6 +13128,7 @@ share/texmf-dist/doc/latex/mtgreek/
 share/texmf-dist/doc/latex/mtgreek/mtgreek.pdf
 share/texmf-dist/doc/latex/mtgreek/mtgreek.tex
 share/texmf-dist/doc/latex/mtgreek/mtgtest.tex
+share/texmf-dist/doc/latex/muench/
 share/texmf-dist/doc/latex/muench/hrefhide/
 share/texmf-dist/doc/latex/muench/hrefhide/README
 share/texmf-dist/doc/latex/muench/hrefhide/hrefhide-example.pdf
@@ -14384,6 +14429,7 @@ share/texmf-dist/doc/latex/placeins/
 share/texmf-dist/doc/latex/placeins/placeins.txt
 share/texmf-dist/doc/latex/plantslabels/
 share/texmf-dist/doc/latex/plantslabels/README
+share/texmf-dist/doc/latex/plantslabels/doc/
 share/texmf-dist/doc/latex/plantslabels/doc/pdf/
 share/texmf-dist/doc/latex/plantslabels/doc/pdf/plantslabels.pdf
 share/texmf-dist/doc/latex/plantslabels/doc/tex/
@@ -14391,6 +14437,7 @@ share/texmf-dist/doc/latex/plantslabels/doc/tex/Makefile
 share/texmf-dist/doc/latex/plantslabels/doc/tex/perso.ist
 share/texmf-dist/doc/latex/plantslabels/doc/tex/plantslabels.forlisting
 share/texmf-dist/doc/latex/plantslabels/doc/tex/plantslabels.tex
+share/texmf-dist/doc/latex/plantslabels/example/
 share/texmf-dist/doc/latex/plantslabels/example/pdf/
 share/texmf-dist/doc/latex/plantslabels/example/pdf/example.pdf
 share/texmf-dist/doc/latex/plantslabels/example/tex/
@@ -14809,6 +14856,7 @@ share/texmf-dist/doc/latex/presentations/README
 share/texmf-dist/doc/latex/presentations/Textdemo.tex
 share/texmf-dist/doc/latex/presentations/beamer-demo.tex
 share/texmf-dist/doc/latex/presentations/beamer-demo2.tex
+share/texmf-dist/doc/latex/presentations/images/
 share/texmf-dist/doc/latex/presentations/images/beamer/
 share/texmf-dist/doc/latex/presentations/images/beamer/FULogo.png
 share/texmf-dist/doc/latex/presentations/images/beamer/FULuft.jpg
@@ -15321,6 +15369,7 @@ share/texmf-dist/doc/latex/revtex/auguide/summary4-1.pdf
 share/texmf-dist/doc/latex/revtex/auguide/summary4-1.tex
 share/texmf-dist/doc/latex/revtex/auguide/whatsnew4-1.pdf
 share/texmf-dist/doc/latex/revtex/auguide/whatsnew4-1.tex
+share/texmf-dist/doc/latex/revtex/sample/
 share/texmf-dist/doc/latex/revtex/sample/aip/
 share/texmf-dist/doc/latex/revtex/sample/aip/aipsamp.bib
 share/texmf-dist/doc/latex/revtex/sample/aip/aipsamp.pdf
@@ -18238,11 +18287,13 @@ share/texmf-dist/doc/latex/zwpagelayout/coversample.pdf
 share/texmf-dist/doc/latex/zwpagelayout/coversample.tex
 share/texmf-dist/doc/latex/zwpagelayout/zwpagelayout.pdf
 share/texmf-dist/doc/latex/zwpagelayout/zwpagelayout.tex
+share/texmf-dist/doc/lualatex/
 share/texmf-dist/doc/lualatex/luainputenc/
 share/texmf-dist/doc/lualatex/luainputenc/NEWS
 share/texmf-dist/doc/lualatex/luainputenc/README
 share/texmf-dist/doc/lualatex/luainputenc/inputenc.sty.diff
 share/texmf-dist/doc/lualatex/luainputenc/luainputenc.pdf
+share/texmf-dist/doc/luatex/
 share/texmf-dist/doc/luatex/base/
 share/texmf-dist/doc/luatex/base/luatexref-env.tex
 share/texmf-dist/doc/luatex/base/luatexref-t.pdf
@@ -18296,6 +18347,7 @@ share/texmf-dist/doc/luatex/luatextra/News
 share/texmf-dist/doc/luatex/luatextra/README
 share/texmf-dist/doc/luatex/luatextra/luatextra-reference.pdf
 share/texmf-dist/doc/luatex/luatextra/luatextra.pdf
+share/texmf-dist/doc/metapost/
 share/texmf-dist/doc/metapost/automata/
 share/texmf-dist/doc/metapost/automata/README
 share/texmf-dist/doc/metapost/automata/example.mp
@@ -18478,6 +18530,7 @@ share/texmf-dist/doc/metapost/featpost/doc/featexamples.html
 share/texmf-dist/doc/metapost/featpost/doc/featpost.1.gz
 share/texmf-dist/doc/metapost/featpost/doc/featpost.sgml
 share/texmf-dist/doc/metapost/featpost/doc/tug2004.pdf
+share/texmf-dist/doc/metapost/featpost/example/
 share/texmf-dist/doc/metapost/featpost/example/bugtrack/
 share/texmf-dist/doc/metapost/featpost/example/bugtrack/bughunt.mp
 share/texmf-dist/doc/metapost/featpost/example/bugtrack/gstr.mp
@@ -18837,6 +18890,7 @@ share/texmf-dist/doc/metapost/textpath/textpathfigs.mp
 share/texmf-dist/doc/metapost/textpath/textpathfigs.tex
 share/texmf-dist/doc/metapost/venn/
 share/texmf-dist/doc/metapost/venn/README
+share/texmf-dist/doc/mex/
 share/texmf-dist/doc/mex/base/
 share/texmf-dist/doc/mex/base/00readme
 share/texmf-dist/doc/mex/base/mex.html
@@ -18856,6 +18910,7 @@ share/texmf-dist/doc/mex/utf8mex/examples/tilde2.tex
 share/texmf-dist/doc/mex/utf8mex/test-math.utf8.tex
 share/texmf-dist/doc/mex/utf8mex/test.utf8.tex
 share/texmf-dist/doc/mex/utf8mex/utf8math.el
+share/texmf-dist/doc/omega/
 share/texmf-dist/doc/omega/antomega/
 share/texmf-dist/doc/omega/antomega/README
 share/texmf-dist/doc/omega/antomega/antomega.pdf
@@ -18869,8 +18924,11 @@ share/texmf-dist/doc/omega/ocherokee/chief.tex
 share/texmf-dist/doc/omega/ocherokee/proverb.tex
 share/texmf-dist/doc/omega/omega-devanagari/
 share/texmf-dist/doc/omega/omega-devanagari/india.ps.gz
+share/texmf-dist/doc/otherformats/
+share/texmf-dist/doc/otherformats/alatex/
 share/texmf-dist/doc/otherformats/alatex/base/
 share/texmf-dist/doc/otherformats/alatex/base/alatex.tex
+share/texmf-dist/doc/otherformats/jadetex/
 share/texmf-dist/doc/otherformats/jadetex/base/
 share/texmf-dist/doc/otherformats/jadetex/base/ChangeLog
 share/texmf-dist/doc/otherformats/jadetex/base/ChangeLog-old
@@ -18886,16 +18944,20 @@ share/texmf-dist/doc/otherformats/jadetex/base/logo.png
 share/texmf-dist/doc/otherformats/jadetex/base/pdfjadetex.1
 share/texmf-dist/doc/otherformats/jadetex/base/releasenotes.dsl
 share/texmf-dist/doc/otherformats/jadetex/base/releasenotes.xml
+share/texmf-dist/doc/otherformats/phyzzx/
 share/texmf-dist/doc/otherformats/phyzzx/base/
 share/texmf-dist/doc/otherformats/phyzzx/base/phyzdoc.dvi
 share/texmf-dist/doc/otherformats/phyzzx/base/phyzdoc.tex
+share/texmf-dist/doc/otherformats/psizzl/
 share/texmf-dist/doc/otherformats/psizzl/base/
 share/texmf-dist/doc/otherformats/psizzl/base/psizzl.commands
 share/texmf-dist/doc/otherformats/psizzl/base/psizzl.doc
+share/texmf-dist/doc/otherformats/startex/
 share/texmf-dist/doc/otherformats/startex/base/
 share/texmf-dist/doc/otherformats/startex/base/guide.pdf
 share/texmf-dist/doc/otherformats/startex/base/ideas.pdf
 share/texmf-dist/doc/otherformats/startex/base/startex.pdf
+share/texmf-dist/doc/otherformats/texsis/
 share/texmf-dist/doc/otherformats/texsis/base/
 share/texmf-dist/doc/otherformats/texsis/base/COPYING
 share/texmf-dist/doc/otherformats/texsis/base/Example.tex
@@ -18940,6 +19002,7 @@ share/texmf-dist/doc/otherformats/texsis/base/penguin2.eps
 share/texmf-dist/doc/otherformats/texsis/base/texsis.1
 share/texmf-dist/doc/otherformats/texsis/base/texsis.el
 share/texmf-dist/doc/otherformats/texsis/base/texsis.lsm
+share/texmf-dist/doc/otherformats/xmltex/
 share/texmf-dist/doc/otherformats/xmltex/base/
 share/texmf-dist/doc/otherformats/xmltex/base/englishutf16.xml
 share/texmf-dist/doc/otherformats/xmltex/base/englishutf8.xml
@@ -19000,6 +19063,7 @@ share/texmf-dist/doc/pdftex/pdftex-pdfkeys/fdl.tex
 share/texmf-dist/doc/pdftex/pdftex-pdfkeys/pdftex-pdfkeys.bbl
 share/texmf-dist/doc/pdftex/pdftex-pdfkeys/pdftex-pdfkeys.pdf
 share/texmf-dist/doc/pdftex/pdftex-pdfkeys/pdftex-pdfkeys.tex
+share/texmf-dist/doc/pdftex/thanh/
 share/texmf-dist/doc/pdftex/thanh/ext/
 share/texmf-dist/doc/pdftex/thanh/ext/abbr.tex
 share/texmf-dist/doc/pdftex/thanh/ext/efcode.tex
@@ -19011,6 +19075,7 @@ share/texmf-dist/doc/pdftex/thanh/ext/mktextfm.ext
 share/texmf-dist/doc/pdftex/thanh/ext/mktfm8z
 share/texmf-dist/doc/pdftex/thanh/ext/protcode.tex
 share/texmf-dist/doc/pdftex/thanh/ext/ufntinst.sty
+share/texmf-dist/doc/plain/
 share/texmf-dist/doc/plain/cweb/
 share/texmf-dist/doc/plain/cweb/cwebman.dvi
 share/texmf-dist/doc/plain/figflow/
@@ -19194,6 +19259,7 @@ share/texmf-dist/doc/plain/yannisgr/rgrhyph.tex
 share/texmf-dist/doc/plain/yannisgr/rgrpaper.tex
 share/texmf-dist/doc/plain/yannisgr/rgrtestfont.tex
 share/texmf-dist/doc/plain/yannisgr/tomakeformat.txt
+share/texmf-dist/doc/ptex/
 share/texmf-dist/doc/ptex/base/
 share/texmf-dist/doc/ptex/base/COPYRIGHT
 share/texmf-dist/doc/ptex/base/COPYRIGHT.txt
@@ -19227,6 +19293,7 @@ share/texmf-dist/doc/ptex/pbibtex/jbtxdoc.pdf
 share/texmf-dist/doc/ptex/pbibtex/jbtxdoc.tex
 share/texmf-dist/doc/ptex/pbibtex/jbtxhak.pdf
 share/texmf-dist/doc/ptex/pbibtex/jbtxhak.tex
+share/texmf-dist/doc/support/
 share/texmf-dist/doc/support/asciichart/
 share/texmf-dist/doc/support/asciichart/ascii.tex
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/
@@ -19418,6 +19485,7 @@ share/texmf-dist/doc/support/findhyph/findhyph.txt
 share/texmf-dist/doc/support/fontools/
 share/texmf-dist/doc/support/fontools/GPLv2.txt
 share/texmf-dist/doc/support/fontools/README
+share/texmf-dist/doc/support/fontools/examples/
 share/texmf-dist/doc/support/fontools/examples/berling/
 share/texmf-dist/doc/support/fontools/examples/berling/berling.sty
 share/texmf-dist/doc/support/fontools/examples/berling/berling.sub
@@ -19561,6 +19629,7 @@ share/texmf-dist/doc/support/texdraw/txdexamp.latex
 share/texmf-dist/doc/support/texdraw/txdexamp.tex
 share/texmf-dist/doc/support/texloganalyser/
 share/texmf-dist/doc/support/texloganalyser/README
+share/texmf-dist/doc/xelatex/
 share/texmf-dist/doc/xelatex/arabxetex/
 share/texmf-dist/doc/xelatex/arabxetex/README
 share/texmf-dist/doc/xelatex/arabxetex/arabxetex.pdf
@@ -19667,6 +19736,7 @@ share/texmf-dist/doc/xelatex/xltxtra/README
 share/texmf-dist/doc/xelatex/xltxtra/xltxtra.pdf
 share/texmf-dist/doc/xelatex/xunicode/
 share/texmf-dist/doc/xelatex/xunicode/README
+share/texmf-dist/doc/xetex/
 share/texmf-dist/doc/xetex/base/
 share/texmf-dist/doc/xetex/base/XeTeX-notes.pdf
 share/texmf-dist/doc/xetex/base/XeTeX-notes.tex
@@ -19687,6 +19757,8 @@ share/texmf-dist/doc/xetex/zhspacing/README
 share/texmf-dist/doc/xetex/zhspacing/zhs-man.pdf
 share/texmf-dist/doc/xetex/zhspacing/zhs-man.tex
 share/texmf-dist/doc/xetex/zhspacing/zhspacing-context-test.tex
+share/texmf/
+share/texmf/doc/
 share/texmf/doc/asymptote/
 share/texmf/doc/asymptote/CAD.pdf
 share/texmf/doc/asymptote/asymptote.pdf
@@ -20036,6 +20108,7 @@ share/texmf/doc/dvips/dvips.html
 share/texmf/doc/dvips/dvips.pdf
 share/texmf/doc/extconv/
 share/texmf/doc/extconv/extconv.pdf
+share/texmf/doc/generic/
 share/texmf/doc/generic/elhyphen/
 share/texmf/doc/generic/elhyphen/README
 share/texmf/doc/generic/elhyphen/anc-test.ltx
@@ -20079,132 +20152,132 @@ share/texmf/doc/texdoc/
 share/texmf/doc/texdoc/News
 share/texmf/doc/texdoc/texdoc.pdf
 share/texmf/doc/texdoc/texdoc.tex
-share/texmf/doc/texlive/
-share/texmf/doc/texlive/index.html
-share/texmf/doc/texlive/texlive-common/
-share/texmf/doc/texlive/texlive-common/examples/
-share/texmf/doc/texlive/texlive-common/examples/ex5.tex
-share/texmf/doc/texlive/texlive-common/examples/ex6.tex
-share/texmf/doc/texlive/texlive-common/examples/ex6a.tex
-share/texmf/doc/texlive/texlive-common/examples/ex6b.tex
-share/texmf/doc/texlive/texlive-common/examples/ex6c.tex
-share/texmf/doc/texlive/texlive-common/install-lnx-main.png
-share/texmf/doc/texlive/texlive-common/psview.png
-share/texmf/doc/texlive/texlive-common/stdcoll.png
-share/texmf/doc/texlive/texlive-common/tlmgr-general-options.png
-share/texmf/doc/texlive/texlive-common/tlmgr-gui.png
-share/texmf/doc/texlive/texlive-common/tlmgr-paper-options.png
-share/texmf/doc/texlive/texlive-common/wizard-w32.png
-share/texmf/doc/texlive/texlive-cz/
-share/texmf/doc/texlive/texlive-cz/Makefile
-share/texmf/doc/texlive/texlive-cz/cs-tex-live.sty
-share/texmf/doc/texlive/texlive-cz/csquote.sty
-share/texmf/doc/texlive/texlive-cz/ec-lmr10-19.png
-share/texmf/doc/texlive/texlive-cz/live4ht.cfg
-share/texmf/doc/texlive/texlive-cz/tex-live.css
-share/texmf/doc/texlive/texlive-cz/texlive-cz.css
-share/texmf/doc/texlive/texlive-cz/texlive-cz.html
-share/texmf/doc/texlive/texlive-cz/texlive-cz.pdf
-share/texmf/doc/texlive/texlive-cz/texlive-cz.tex
-share/texmf/doc/texlive/texlive-de/
-share/texmf/doc/texlive/texlive-de/Makefile
-share/texmf/doc/texlive/texlive-de/lmsy10-40.png
-share/texmf/doc/texlive/texlive-de/texlive-de.css
-share/texmf/doc/texlive/texlive-de/texlive-de.html
-share/texmf/doc/texlive/texlive-de/texlive-de.pdf
-share/texmf/doc/texlive/texlive-de/texlive-de.tex
-share/texmf/doc/texlive/texlive-en/
-share/texmf/doc/texlive/texlive-en/Makefile
-share/texmf/doc/texlive/texlive-en/README
-share/texmf/doc/texlive/texlive-en/archive/
-share/texmf/doc/texlive/texlive-en/archive/bv-live.tex
-share/texmf/doc/texlive/texlive-en/archive/bvoutln.sty
-share/texmf/doc/texlive/texlive-en/archive/changemail
-share/texmf/doc/texlive/texlive-en/archive/l.pl
-share/texmf/doc/texlive/texlive-en/archive/live-2003.tex
-share/texmf/doc/texlive/texlive-en/archive/live-2004.tex
-share/texmf/doc/texlive/texlive-en/archive/live-2005.tex
-share/texmf/doc/texlive/texlive-en/archive/live-2007.tex
-share/texmf/doc/texlive/texlive-en/archive/live-2008.tex
-share/texmf/doc/texlive/texlive-en/archive/live-2009.tex
-share/texmf/doc/texlive/texlive-en/archive/live-tl7.tex
-share/texmf/doc/texlive/texlive-en/archive/live4ht.cfg-2004
-share/texmf/doc/texlive/texlive-en/archive/mod.pl
-share/texmf/doc/texlive/texlive-en/archive/nocites.tex
-share/texmf/doc/texlive/texlive-en/archive/picture.tex
-share/texmf/doc/texlive/texlive-en/archive/split.pl
-share/texmf/doc/texlive/texlive-en/archive/status.pl
-share/texmf/doc/texlive/texlive-en/archive/tex-live.bib
-share/texmf/doc/texlive/texlive-en/archive/tex-live.bst
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2003
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2004
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2005
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2007
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2008
-share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2009
-share/texmf/doc/texlive/texlive-en/archive/texlive.pl
-share/texmf/doc/texlive/texlive-en/live4ht.cfg
-share/texmf/doc/texlive/texlive-en/tex-live.css
-share/texmf/doc/texlive/texlive-en/tex-live.sty
-share/texmf/doc/texlive/texlive-en/texlive-en.css
-share/texmf/doc/texlive/texlive-en/texlive-en.html
-share/texmf/doc/texlive/texlive-en/texlive-en.pdf
-share/texmf/doc/texlive/texlive-en/texlive-en.tex
-share/texmf/doc/texlive/texlive-fr/
-share/texmf/doc/texlive/texlive-fr/Makefile
-share/texmf/doc/texlive/texlive-fr/live4ht.cfg
-share/texmf/doc/texlive/texlive-fr/notes
-share/texmf/doc/texlive/texlive-fr/tex-live.css
-share/texmf/doc/texlive/texlive-fr/texlive-fr.css
-share/texmf/doc/texlive/texlive-fr/texlive-fr.html
-share/texmf/doc/texlive/texlive-fr/texlive-fr.pdf
-share/texmf/doc/texlive/texlive-fr/texlive-fr.tex
-share/texmf/doc/texlive/texlive-it/
-share/texmf/doc/texlive/texlive-it/Makefile
-share/texmf/doc/texlive/texlive-it/texlive-it.html
-share/texmf/doc/texlive/texlive-it/texlive-it.pdf
-share/texmf/doc/texlive/texlive-it/texlive-it.tex
-share/texmf/doc/texlive/texlive-pl/
-share/texmf/doc/texlive/texlive-pl/Makefile
-share/texmf/doc/texlive/texlive-pl/live4ht.cfg
-share/texmf/doc/texlive/texlive-pl/tex-live.css
-share/texmf/doc/texlive/texlive-pl/tex-livep.sty
-share/texmf/doc/texlive/texlive-pl/texlive-pl.css
-share/texmf/doc/texlive/texlive-pl/texlive-pl.html
-share/texmf/doc/texlive/texlive-pl/texlive-pl.pdf
-share/texmf/doc/texlive/texlive-pl/texlive-pl.tex
-share/texmf/doc/texlive/texlive-ru/
-share/texmf/doc/texlive/texlive-ru/Makefile
-share/texmf/doc/texlive/texlive-ru/live4ht.cfg
-share/texmf/doc/texlive/texlive-ru/tex-live.css
-share/texmf/doc/texlive/texlive-ru/texlive-ru.css
-share/texmf/doc/texlive/texlive-ru/texlive-ru.html
-share/texmf/doc/texlive/texlive-ru/texlive-ru.pdf
-share/texmf/doc/texlive/texlive-ru/texlive-ru.tex
-share/texmf/doc/texlive/texlive-sr/
-share/texmf/doc/texlive/texlive-sr/Makefile
-share/texmf/doc/texlive/texlive-sr/README-SR.txt
-share/texmf/doc/texlive/texlive-sr/images/
-share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-collections-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-expert-gui-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-platforms-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-wizard-win32-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-main-screen-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-options-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-paper-options-freebsd-sr.png
-share/texmf/doc/texlive/texlive-sr/texlive-sr.css
-share/texmf/doc/texlive/texlive-sr/texlive-sr.html
-share/texmf/doc/texlive/texlive-sr/texlive-sr.pdf
-share/texmf/doc/texlive/texlive-sr/texlive-sr.sty
-share/texmf/doc/texlive/texlive-sr/texlive-sr.tex
-share/texmf/doc/texlive/texlive-zh-cn/
-share/texmf/doc/texlive/texlive-zh-cn/Makefile
-share/texmf/doc/texlive/texlive-zh-cn/README-live.ZH-CN
-share/texmf/doc/texlive/texlive-zh-cn/tex-live-zh-cn.sty
-share/texmf/doc/texlive/texlive-zh-cn/texlive-zh-cn.pdf
-share/texmf/doc/texlive/texlive-zh-cn/texlive-zh-cn.tex
-share/texmf/doc/texworks/
-share/texmf/doc/texworks/README
+@comment share/texmf/doc/texlive/
+@comment share/texmf/doc/texlive/index.html
+@comment share/texmf/doc/texlive/texlive-common/
+@comment share/texmf/doc/texlive/texlive-common/examples/
+@comment share/texmf/doc/texlive/texlive-common/examples/ex5.tex
+@comment share/texmf/doc/texlive/texlive-common/examples/ex6.tex
+@comment share/texmf/doc/texlive/texlive-common/examples/ex6a.tex
+@comment share/texmf/doc/texlive/texlive-common/examples/ex6b.tex
+@comment share/texmf/doc/texlive/texlive-common/examples/ex6c.tex
+@comment share/texmf/doc/texlive/texlive-common/install-lnx-main.png
+@comment share/texmf/doc/texlive/texlive-common/psview.png
+@comment share/texmf/doc/texlive/texlive-common/stdcoll.png
+@comment share/texmf/doc/texlive/texlive-common/tlmgr-general-options.png
+@comment share/texmf/doc/texlive/texlive-common/tlmgr-gui.png
+@comment share/texmf/doc/texlive/texlive-common/tlmgr-paper-options.png
+@comment share/texmf/doc/texlive/texlive-common/wizard-w32.png
+@comment share/texmf/doc/texlive/texlive-cz/
+@comment share/texmf/doc/texlive/texlive-cz/Makefile
+@comment share/texmf/doc/texlive/texlive-cz/cs-tex-live.sty
+@comment share/texmf/doc/texlive/texlive-cz/csquote.sty
+@comment share/texmf/doc/texlive/texlive-cz/ec-lmr10-19.png
+@comment share/texmf/doc/texlive/texlive-cz/live4ht.cfg
+@comment share/texmf/doc/texlive/texlive-cz/tex-live.css
+@comment share/texmf/doc/texlive/texlive-cz/texlive-cz.css
+@comment share/texmf/doc/texlive/texlive-cz/texlive-cz.html
+@comment share/texmf/doc/texlive/texlive-cz/texlive-cz.pdf
+@comment share/texmf/doc/texlive/texlive-cz/texlive-cz.tex
+@comment share/texmf/doc/texlive/texlive-de/
+@comment share/texmf/doc/texlive/texlive-de/Makefile
+@comment share/texmf/doc/texlive/texlive-de/lmsy10-40.png
+@comment share/texmf/doc/texlive/texlive-de/texlive-de.css
+@comment share/texmf/doc/texlive/texlive-de/texlive-de.html
+@comment share/texmf/doc/texlive/texlive-de/texlive-de.pdf
+@comment share/texmf/doc/texlive/texlive-de/texlive-de.tex
+@comment share/texmf/doc/texlive/texlive-en/
+@comment share/texmf/doc/texlive/texlive-en/Makefile
+@comment share/texmf/doc/texlive/texlive-en/README
+@comment share/texmf/doc/texlive/texlive-en/archive/
+@comment share/texmf/doc/texlive/texlive-en/archive/bv-live.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/bvoutln.sty
+@comment share/texmf/doc/texlive/texlive-en/archive/changemail
+@comment share/texmf/doc/texlive/texlive-en/archive/l.pl
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2003.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2004.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2005.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2007.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2008.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-2009.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live-tl7.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/live4ht.cfg-2004
+@comment share/texmf/doc/texlive/texlive-en/archive/mod.pl
+@comment share/texmf/doc/texlive/texlive-en/archive/nocites.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/picture.tex
+@comment share/texmf/doc/texlive/texlive-en/archive/split.pl
+@comment share/texmf/doc/texlive/texlive-en/archive/status.pl
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.bib
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.bst
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2003
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2004
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2005
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2007
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2008
+@comment share/texmf/doc/texlive/texlive-en/archive/tex-live.sty-2009
+@comment share/texmf/doc/texlive/texlive-en/archive/texlive.pl
+@comment share/texmf/doc/texlive/texlive-en/live4ht.cfg
+@comment share/texmf/doc/texlive/texlive-en/tex-live.css
+@comment share/texmf/doc/texlive/texlive-en/tex-live.sty
+@comment share/texmf/doc/texlive/texlive-en/texlive-en.css
+@comment share/texmf/doc/texlive/texlive-en/texlive-en.html
+@comment share/texmf/doc/texlive/texlive-en/texlive-en.pdf
+@comment share/texmf/doc/texlive/texlive-en/texlive-en.tex
+@comment share/texmf/doc/texlive/texlive-fr/
+@comment share/texmf/doc/texlive/texlive-fr/Makefile
+@comment share/texmf/doc/texlive/texlive-fr/live4ht.cfg
+@comment share/texmf/doc/texlive/texlive-fr/notes
+@comment share/texmf/doc/texlive/texlive-fr/tex-live.css
+@comment share/texmf/doc/texlive/texlive-fr/texlive-fr.css
+@comment share/texmf/doc/texlive/texlive-fr/texlive-fr.html
+@comment share/texmf/doc/texlive/texlive-fr/texlive-fr.pdf
+@comment share/texmf/doc/texlive/texlive-fr/texlive-fr.tex
+@comment share/texmf/doc/texlive/texlive-it/
+@comment share/texmf/doc/texlive/texlive-it/Makefile
+@comment share/texmf/doc/texlive/texlive-it/texlive-it.html
+@comment share/texmf/doc/texlive/texlive-it/texlive-it.pdf
+@comment share/texmf/doc/texlive/texlive-it/texlive-it.tex
+@comment share/texmf/doc/texlive/texlive-pl/
+@comment share/texmf/doc/texlive/texlive-pl/Makefile
+@comment share/texmf/doc/texlive/texlive-pl/live4ht.cfg
+@comment share/texmf/doc/texlive/texlive-pl/tex-live.css
+@comment share/texmf/doc/texlive/texlive-pl/tex-livep.sty
+@comment share/texmf/doc/texlive/texlive-pl/texlive-pl.css
+@comment share/texmf/doc/texlive/texlive-pl/texlive-pl.html
+@comment share/texmf/doc/texlive/texlive-pl/texlive-pl.pdf
+@comment share/texmf/doc/texlive/texlive-pl/texlive-pl.tex
+@comment share/texmf/doc/texlive/texlive-ru/
+@comment share/texmf/doc/texlive/texlive-ru/Makefile
+@comment share/texmf/doc/texlive/texlive-ru/live4ht.cfg
+@comment share/texmf/doc/texlive/texlive-ru/tex-live.css
+@comment share/texmf/doc/texlive/texlive-ru/texlive-ru.css
+@comment share/texmf/doc/texlive/texlive-ru/texlive-ru.html
+@comment share/texmf/doc/texlive/texlive-ru/texlive-ru.pdf
+@comment share/texmf/doc/texlive/texlive-ru/texlive-ru.tex
+@comment share/texmf/doc/texlive/texlive-sr/
+@comment share/texmf/doc/texlive/texlive-sr/Makefile
+@comment share/texmf/doc/texlive/texlive-sr/README-SR.txt
+@comment share/texmf/doc/texlive/texlive-sr/images/
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-collections-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-expert-gui-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-platforms-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-install-tl-wizard-win32-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-main-screen-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-options-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/images/tl2010-tlmgr-paper-options-freebsd-sr.png
+@comment share/texmf/doc/texlive/texlive-sr/texlive-sr.css
+@comment share/texmf/doc/texlive/texlive-sr/texlive-sr.html
+@comment share/texmf/doc/texlive/texlive-sr/texlive-sr.pdf
+@comment share/texmf/doc/texlive/texlive-sr/texlive-sr.sty
+@comment share/texmf/doc/texlive/texlive-sr/texlive-sr.tex
+@comment share/texmf/doc/texlive/texlive-zh-cn/
+@comment share/texmf/doc/texlive/texlive-zh-cn/Makefile
+@comment share/texmf/doc/texlive/texlive-zh-cn/README-live.ZH-CN
+@comment share/texmf/doc/texlive/texlive-zh-cn/tex-live-zh-cn.sty
+@comment share/texmf/doc/texlive/texlive-zh-cn/texlive-zh-cn.pdf
+@comment share/texmf/doc/texlive/texlive-zh-cn/texlive-zh-cn.tex
+@comment share/texmf/doc/texworks/
+@comment share/texmf/doc/texworks/README
 share/texmf/doc/tpic2pdftex/
 share/texmf/doc/tpic2pdftex/Makefile
 share/texmf/doc/tpic2pdftex/beamerexample.pdf
@@ -20257,7 +20330,8 @@ share/texmf/doc/xindy/style-tutorial/style2.xdy
 share/texmf/doc/xindy/tex2xindy.pdf
 share/texmf/doc/xindy/texindy.pdf
 share/texmf/doc/xindy/xindy.pdf
-@comment share/texmf/scripts/texlive/
-@comment share/texmf/scripts/texlive/NEWS
+share/texmf/scripts/
+share/texmf/scripts/texlive/
+share/texmf/scripts/texlive/NEWS
 @comment share/tlpkg/
 @comment share/tlpkg/README

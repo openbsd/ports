@@ -1,34 +1,39 @@
-share/man/man1/
-share/man/man1/dt2dv.1
-share/man/man1/dt2dv.man1.pdf
-share/man/man1/dv2dt.1
-share/man/man1/dv2dt.man1.pdf
-share/man/man1/dvi2tty.1
-share/man/man1/dvi2tty.man1.pdf
-share/man/man1/dvibook.1
-share/man/man1/dvibook.man1.pdf
-share/man/man1/dviconcat.1
-share/man/man1/dviconcat.man1.pdf
-share/man/man1/dvidvi.1
-share/man/man1/dvidvi.man1.pdf
-share/man/man1/dviselect.1
-share/man/man1/dviselect.man1.pdf
-share/man/man1/dvitodvi.1
-share/man/man1/dvitodvi.man1.pdf
-share/man/man1/mag.1
-share/man/man1/mag.man1.pdf
-share/man/man1/pfb2pfa.1
-share/man/man1/pfb2pfa.man1.pdf
-share/man/man1/pk2bm.1
-share/man/man1/pk2bm.man1.pdf
-share/man/man1/ps2pk.1
-share/man/man1/ps2pk.man1.pdf
+@comment share/man/
+@comment share/man/man1/
+@comment share/man/man1/dt2dv.1
+@comment share/man/man1/dt2dv.man1.pdf
+@comment share/man/man1/dv2dt.1
+@comment share/man/man1/dv2dt.man1.pdf
+@comment share/man/man1/dvi2tty.1
+@comment share/man/man1/dvi2tty.man1.pdf
+@comment share/man/man1/dvibook.1
+@comment share/man/man1/dvibook.man1.pdf
+@comment share/man/man1/dviconcat.1
+@comment share/man/man1/dviconcat.man1.pdf
+@comment share/man/man1/dvidvi.1
+@comment share/man/man1/dvidvi.man1.pdf
+@comment share/man/man1/dviselect.1
+@comment share/man/man1/dviselect.man1.pdf
+@comment share/man/man1/dvitodvi.1
+@comment share/man/man1/dvitodvi.man1.pdf
+@comment share/man/man1/mag.1
+@comment share/man/man1/mag.man1.pdf
+@comment share/man/man1/pfb2pfa.1
+@comment share/man/man1/pfb2pfa.man1.pdf
+@comment share/man/man1/pk2bm.1
+@comment share/man/man1/pk2bm.man1.pdf
+@comment share/man/man1/ps2pk.1
+@comment share/man/man1/ps2pk.man1.pdf
+share/texmf-dist/
+share/texmf-dist/bibtex/
+share/texmf-dist/bibtex/bib/
 share/texmf-dist/bibtex/bib/base/
 share/texmf-dist/bibtex/bib/base/xampl.bib
 share/texmf-dist/bibtex/bib/gustlib/
 share/texmf-dist/bibtex/bib/gustlib/plbib.bib
 share/texmf-dist/bibtex/bib/index/
 share/texmf-dist/bibtex/bib/index/test.bib
+share/texmf-dist/bibtex/bst/
 share/texmf-dist/bibtex/bst/amscls/
 share/texmf-dist/bibtex/bst/amscls/amsalpha.bst
 share/texmf-dist/bibtex/bst/amscls/amsplain.bst
@@ -116,6 +121,7 @@ share/texmf-dist/bibtex/bst/swebib/swealpha.bst
 share/texmf-dist/bibtex/bst/swebib/sweplain.bst
 share/texmf-dist/bibtex/bst/swebib/sweplnat.bst
 share/texmf-dist/bibtex/bst/swebib/sweunsrt.bst
+share/texmf-dist/bibtex/csf/
 share/texmf-dist/bibtex/csf/base/
 share/texmf-dist/bibtex/csf/base/88591lat.csf
 share/texmf-dist/bibtex/csf/base/88591sca.csf
@@ -137,6 +143,8 @@ share/texmf-dist/bibtex/csf/polish-csf/88592pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/cp1250pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/cp852pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/iso8859-7.csf
+share/texmf-dist/context/
+share/texmf-dist/context/data/
 share/texmf-dist/context/data/scite/
 share/texmf-dist/context/data/scite/cont-cs-scite.properties
 share/texmf-dist/context/data/scite/cont-cz-scite.properties
@@ -177,6 +185,8 @@ share/texmf-dist/context/data/texworks/configuration/texworks-config.txt
 share/texmf-dist/context/data/texworks/configuration/tools.ini
 share/texmf-dist/context/data/texworks/texworks-context.rme
 share/texmf-dist/context/data/texworks/texworks-setup.ini
+share/texmf-dist/doc/
+share/texmf-dist/doc/latex/
 share/texmf-dist/doc/latex/koma-script/
 share/texmf-dist/doc/latex/koma-script/INSTALL.txt
 share/texmf-dist/doc/latex/koma-script/INSTALLD.txt
@@ -205,6 +215,7 @@ share/texmf-dist/doc/latex/koma-script/scrreprt.html
 share/texmf-dist/doc/latex/koma-script/scrtime.html
 share/texmf-dist/doc/latex/koma-script/tocstyle.pdf
 share/texmf-dist/doc/latex/koma-script/typearea.html
+share/texmf-dist/dvips/
 share/texmf-dist/dvips/arphic/
 share/texmf-dist/dvips/arphic/config.bkaiu
 share/texmf-dist/dvips/arphic/config.bsmiu
@@ -361,6 +372,9 @@ share/texmf-dist/dvips/zapfchan/
 share/texmf-dist/dvips/zapfchan/config.uzc
 share/texmf-dist/dvips/zapfding/
 share/texmf-dist/dvips/zapfding/config.uzd
+share/texmf-dist/fonts/
+share/texmf-dist/fonts/afm/
+share/texmf-dist/fonts/afm/adobe/
 share/texmf-dist/fonts/afm/adobe/avantgar/
 share/texmf-dist/fonts/afm/adobe/avantgar/pagd8a.afm
 share/texmf-dist/fonts/afm/adobe/avantgar/pagdo8a.afm
@@ -417,6 +431,7 @@ share/texmf-dist/fonts/afm/adobe/zapfchan/
 share/texmf-dist/fonts/afm/adobe/zapfchan/pzcmi8a.afm
 share/texmf-dist/fonts/afm/adobe/zapfding/
 share/texmf-dist/fonts/afm/adobe/zapfding/pzdr.afm
+share/texmf-dist/fonts/afm/arphic/
 share/texmf-dist/fonts/afm/arphic/bkaiu/
 share/texmf-dist/fonts/afm/arphic/bkaiu/bkaiu00.afm
 share/texmf-dist/fonts/afm/arphic/bkaiu/bkaiu02.afm
@@ -821,11 +836,13 @@ share/texmf-dist/fonts/afm/arphic/gkaiu/gkaiu9e.afm
 share/texmf-dist/fonts/afm/arphic/gkaiu/gkaiu9f.afm
 share/texmf-dist/fonts/afm/arphic/gkaiu/gkaiufe.afm
 share/texmf-dist/fonts/afm/arphic/gkaiu/gkaiuff.afm
+share/texmf-dist/fonts/afm/bitstrea/
 share/texmf-dist/fonts/afm/bitstrea/charter/
 share/texmf-dist/fonts/afm/bitstrea/charter/bchb8a.afm
 share/texmf-dist/fonts/afm/bitstrea/charter/bchbi8a.afm
 share/texmf-dist/fonts/afm/bitstrea/charter/bchr8a.afm
 share/texmf-dist/fonts/afm/bitstrea/charter/bchri8a.afm
+share/texmf-dist/fonts/afm/hoekwater/
 share/texmf-dist/fonts/afm/hoekwater/context/
 share/texmf-dist/fonts/afm/hoekwater/context/contnav.afm
 share/texmf-dist/fonts/afm/hoekwater/mflogo/
@@ -844,6 +861,7 @@ share/texmf-dist/fonts/afm/hoekwater/stmaryrd/stmary6.afm
 share/texmf-dist/fonts/afm/hoekwater/stmaryrd/stmary7.afm
 share/texmf-dist/fonts/afm/hoekwater/stmaryrd/stmary8.afm
 share/texmf-dist/fonts/afm/hoekwater/stmaryrd/stmary9.afm
+share/texmf-dist/fonts/afm/ibm/
 share/texmf-dist/fonts/afm/ibm/courier/
 share/texmf-dist/fonts/afm/ibm/courier/cour.afm
 share/texmf-dist/fonts/afm/ibm/courier/courb.afm
@@ -862,9 +880,12 @@ share/texmf-dist/fonts/afm/ibm/times/ntnb8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnbi8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnr8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnri8a.afm
+share/texmf-dist/fonts/afm/jmn/
 share/texmf-dist/fonts/afm/jmn/hans/
 share/texmf-dist/fonts/afm/jmn/hans/hans-sh.afm
 share/texmf-dist/fonts/afm/jmn/hans/hans.afm
+share/texmf-dist/fonts/afm/public/
+share/texmf-dist/fonts/afm/public/amsfonts/
 share/texmf-dist/fonts/afm/public/amsfonts/cm/
 share/texmf-dist/fonts/afm/public/amsfonts/cm/cmb10.afm
 share/texmf-dist/fonts/afm/public/amsfonts/cm/cmbsy10.afm
@@ -1887,6 +1908,7 @@ share/texmf-dist/fonts/afm/public/xypic/xyluat12.afm
 share/texmf-dist/fonts/afm/public/xypic/xylubt10.afm
 share/texmf-dist/fonts/afm/public/xypic/xylubt11.afm
 share/texmf-dist/fonts/afm/public/xypic/xylubt12.afm
+share/texmf-dist/fonts/afm/uhc/
 share/texmf-dist/fonts/afm/uhc/umj/
 share/texmf-dist/fonts/afm/uhc/umj/umj00.afm
 share/texmf-dist/fonts/afm/uhc/umj/umj01.afm
@@ -1921,6 +1943,7 @@ share/texmf-dist/fonts/afm/uhc/umj/umj35.afm
 share/texmf-dist/fonts/afm/uhc/umj/umj36.afm
 share/texmf-dist/fonts/afm/uhc/umj/umj37.afm
 share/texmf-dist/fonts/afm/uhc/umj/umj38.afm
+share/texmf-dist/fonts/afm/urw/
 share/texmf-dist/fonts/afm/urw/avantgar/
 share/texmf-dist/fonts/afm/urw/avantgar/uagb8a.afm
 share/texmf-dist/fonts/afm/urw/avantgar/uagbi8a.afm
@@ -1970,6 +1993,7 @@ share/texmf-dist/fonts/afm/urw/zapfchan/
 share/texmf-dist/fonts/afm/urw/zapfchan/uzcmi8a.afm
 share/texmf-dist/fonts/afm/urw/zapfding/
 share/texmf-dist/fonts/afm/urw/zapfding/uzdr.afm
+share/texmf-dist/fonts/afm/vntex/
 share/texmf-dist/fonts/afm/vntex/chartervn/
 share/texmf-dist/fonts/afm/vntex/chartervn/bchb8v.afm
 share/texmf-dist/fonts/afm/vntex/chartervn/bchbi8v.afm
@@ -2013,6 +2037,7 @@ share/texmf-dist/fonts/afm/vntex/vntopia/putb8v.afm
 share/texmf-dist/fonts/afm/vntex/vntopia/putbi8v.afm
 share/texmf-dist/fonts/afm/vntex/vntopia/putr8v.afm
 share/texmf-dist/fonts/afm/vntex/vntopia/putri8v.afm
+share/texmf-dist/fonts/afm/wadalab/
 share/texmf-dist/fonts/afm/wadalab/dgj/
 share/texmf-dist/fonts/afm/wadalab/dgj/dgjgreek.afm
 share/texmf-dist/fonts/afm/wadalab/dgj/dgjhira.afm
@@ -2201,6 +2226,7 @@ share/texmf-dist/fonts/afm/wadalab/mrj/mrjkz.afm
 share/texmf-dist/fonts/afm/wadalab/mrj/mrjroma.afm
 share/texmf-dist/fonts/afm/wadalab/mrj/mrjrussian.afm
 share/texmf-dist/fonts/afm/wadalab/mrj/mrjsy.afm
+share/texmf-dist/fonts/cid/
 share/texmf-dist/fonts/cid/fontforge/
 share/texmf-dist/fonts/cid/fontforge/adobe-cns1-4.cidmap
 share/texmf-dist/fonts/cid/fontforge/adobe-gb1-4.cidmap
@@ -2209,6 +2235,7 @@ share/texmf-dist/fonts/cid/fontforge/adobe-japan1-5.cidmap
 share/texmf-dist/fonts/cid/fontforge/adobe-japan1-6.cidmap
 share/texmf-dist/fonts/cid/fontforge/adobe-japan2-0.cidmap
 share/texmf-dist/fonts/cid/fontforge/adobe-korea1-2.cidmap
+share/texmf-dist/fonts/cmap/
 share/texmf-dist/fonts/cmap/adobemapping/
 share/texmf-dist/fonts/cmap/adobemapping/LICENSE
 share/texmf-dist/fonts/cmap/adobemapping/MappingOther/
@@ -2341,6 +2368,7 @@ share/texmf-dist/fonts/cmap/adobemapping/ag15/CMap/UniGB-UTF32-V
 share/texmf-dist/fonts/cmap/adobemapping/ag15/CMap/UniGB-UTF8-H
 share/texmf-dist/fonts/cmap/adobemapping/ag15/CMap/UniGB-UTF8-V
 share/texmf-dist/fonts/cmap/adobemapping/ag15/cid2code.txt
+share/texmf-dist/fonts/cmap/adobemapping/ai0/
 share/texmf-dist/fonts/cmap/adobemapping/ai0/CMap/
 share/texmf-dist/fonts/cmap/adobemapping/ai0/CMap/Identity-H
 share/texmf-dist/fonts/cmap/adobemapping/ai0/CMap/Identity-V
@@ -2439,6 +2467,8 @@ share/texmf-dist/fonts/cmap/adobemapping/ak12/CMap/UniKS-UTF32-V
 share/texmf-dist/fonts/cmap/adobemapping/ak12/CMap/UniKS-UTF8-H
 share/texmf-dist/fonts/cmap/adobemapping/ak12/CMap/UniKS-UTF8-V
 share/texmf-dist/fonts/cmap/adobemapping/ak12/cid2code.txt
+share/texmf-dist/fonts/enc/
+share/texmf-dist/fonts/enc/dvips/
 share/texmf-dist/fonts/enc/dvips/base/
 share/texmf-dist/fonts/enc/dvips/base/6w.enc
 share/texmf-dist/fonts/enc/dvips/base/7t.enc
@@ -2607,6 +2637,7 @@ share/texmf-dist/fonts/enc/dvips/xypic/
 share/texmf-dist/fonts/enc/dvips/xypic/xycirc.enc
 share/texmf-dist/fonts/enc/dvips/xypic/xyd.enc
 share/texmf-dist/fonts/enc/dvips/xypic/xyd2.enc
+share/texmf-dist/fonts/enc/pdftex/
 share/texmf-dist/fonts/enc/pdftex/vntex/
 share/texmf-dist/fonts/enc/pdftex/vntex/t5d.enc
 share/texmf-dist/fonts/enc/pdftex/vntex/t5uni.enc
@@ -2617,16 +2648,20 @@ share/texmf-dist/fonts/enc/t2/t2a.enc
 share/texmf-dist/fonts/enc/t2/t2b.enc
 share/texmf-dist/fonts/enc/t2/t2c.enc
 share/texmf-dist/fonts/enc/t2/x2.enc
+share/texmf-dist/fonts/fea/
 share/texmf-dist/fonts/fea/context/
 share/texmf-dist/fonts/fea/context/greek-babel.fea
 share/texmf-dist/fonts/fea/context/test-features.fea
 share/texmf-dist/fonts/fea/context/texhistoric.fea
 share/texmf-dist/fonts/fea/context/verbose-digits.fea
+share/texmf-dist/fonts/map/
+share/texmf-dist/fonts/map/dvipdfm/
 share/texmf-dist/fonts/map/dvipdfm/lm/
 share/texmf-dist/fonts/map/dvipdfm/lm/lm-ec.map
 share/texmf-dist/fonts/map/dvipdfm/lm/lm-math.map
 share/texmf-dist/fonts/map/dvipdfm/lm/lm-rm.map
 share/texmf-dist/fonts/map/dvipdfm/lm/lm-texnansi.map
+share/texmf-dist/fonts/map/dvips/
 share/texmf-dist/fonts/map/dvips/amsfonts/
 share/texmf-dist/fonts/map/dvips/amsfonts/cm.map
 share/texmf-dist/fonts/map/dvips/amsfonts/cmextra.map
@@ -2887,8 +2922,10 @@ share/texmf-dist/fonts/map/glyphlist/
 share/texmf-dist/fonts/map/glyphlist/glyphlist.txt
 share/texmf-dist/fonts/map/glyphlist/pdfglyphlist.txt
 share/texmf-dist/fonts/map/glyphlist/texglyphlist.txt
+share/texmf-dist/fonts/map/luatex/
 share/texmf-dist/fonts/map/luatex/context/
 share/texmf-dist/fonts/map/luatex/context/demo-font.lum
+share/texmf-dist/fonts/map/pdftex/
 share/texmf-dist/fonts/map/pdftex/context/
 share/texmf-dist/fonts/map/pdftex/context/8r-base.map
 share/texmf-dist/fonts/map/pdftex/context/ec-base.map
@@ -2920,6 +2957,7 @@ share/texmf-dist/fonts/map/pdftex/context/t5-base.map
 share/texmf-dist/fonts/map/pdftex/context/t5-os-public-lm.map
 share/texmf-dist/fonts/map/pdftex/context/texnansi-base.map
 share/texmf-dist/fonts/map/pdftex/context/texnansi-os-public-lm.map
+share/texmf-dist/fonts/map/vtex/
 share/texmf-dist/fonts/map/vtex/cm-super/
 share/texmf-dist/fonts/map/vtex/cm-super/cm-super-t1.ali
 share/texmf-dist/fonts/map/vtex/cm-super/cm-super-t2a.ali
@@ -2928,6 +2966,7 @@ share/texmf-dist/fonts/map/vtex/cm-super/cm-super-t2c.ali
 share/texmf-dist/fonts/map/vtex/cm-super/cm-super-ts1.ali
 share/texmf-dist/fonts/map/vtex/cm-super/cm-super-x2.ali
 share/texmf-dist/fonts/map/vtex/cm-super/cm-super.ali
+share/texmf-dist/fonts/misc/
 share/texmf-dist/fonts/misc/cns/
 share/texmf-dist/fonts/misc/cns/4040w0.bin
 share/texmf-dist/fonts/misc/cns/4040w1.bin
@@ -2945,6 +2984,8 @@ share/texmf-dist/fonts/misc/cns/cns40-5.hbf
 share/texmf-dist/fonts/misc/cns/cns40-6.hbf
 share/texmf-dist/fonts/misc/cns/cns40-7.hbf
 share/texmf-dist/fonts/misc/cns/cns40-b5.hbf
+share/texmf-dist/fonts/misc/xetex/
+share/texmf-dist/fonts/misc/xetex/fontmapping/
 share/texmf-dist/fonts/misc/xetex/fontmapping/base/
 share/texmf-dist/fonts/misc/xetex/fontmapping/base/qx-unicode.map
 share/texmf-dist/fonts/misc/xetex/fontmapping/base/qx-unicode.tec
@@ -2953,6 +2994,8 @@ share/texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.tec
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/tlig.map
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/tlig.tec
+share/texmf-dist/fonts/ofm/
+share/texmf-dist/fonts/ofm/public/
 share/texmf-dist/fonts/ofm/public/omega/
 share/texmf-dist/fonts/ofm/public/omega/omarab.ofm
 share/texmf-dist/fonts/ofm/public/omega/omarabb.ofm
@@ -2967,6 +3010,8 @@ share/texmf-dist/fonts/ofm/public/omega/uctt12.ofm
 share/texmf-dist/fonts/ofm/public/omega/uctt8.ofm
 share/texmf-dist/fonts/ofm/public/omega/uctt9.ofm
 share/texmf-dist/fonts/ofm/public/omega/ucvtt10.ofm
+share/texmf-dist/fonts/opentype/
+share/texmf-dist/fonts/opentype/public/
 share/texmf-dist/fonts/opentype/public/gfsbaskerville/
 share/texmf-dist/fonts/opentype/public/gfsbaskerville/GFSBaskerville.otf
 share/texmf-dist/fonts/opentype/public/gfsporson/
@@ -3084,6 +3129,8 @@ share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf
 share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf
 share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf
 share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf
+share/texmf-dist/fonts/ovf/
+share/texmf-dist/fonts/ovf/public/
 share/texmf-dist/fonts/ovf/public/omega/
 share/texmf-dist/fonts/ovf/public/omega/omarab.ovf
 share/texmf-dist/fonts/ovf/public/omega/omarabb.ovf
@@ -3098,6 +3145,8 @@ share/texmf-dist/fonts/ovf/public/omega/uctt12.ovf
 share/texmf-dist/fonts/ovf/public/omega/uctt8.ovf
 share/texmf-dist/fonts/ovf/public/omega/uctt9.ovf
 share/texmf-dist/fonts/ovf/public/omega/ucvtt10.ovf
+share/texmf-dist/fonts/ovp/
+share/texmf-dist/fonts/ovp/public/
 share/texmf-dist/fonts/ovp/public/omega/
 share/texmf-dist/fonts/ovp/public/omega/omarab.ovp
 share/texmf-dist/fonts/ovp/public/omega/omarabb.ovp
@@ -3112,6 +3161,10 @@ share/texmf-dist/fonts/ovp/public/omega/uctt12.ovp
 share/texmf-dist/fonts/ovp/public/omega/uctt8.ovp
 share/texmf-dist/fonts/ovp/public/omega/uctt9.ovp
 share/texmf-dist/fonts/ovp/public/omega/ucvtt10.ovp
+share/texmf-dist/fonts/pk/
+share/texmf-dist/fonts/pk/ljfour/
+share/texmf-dist/fonts/pk/ljfour/public/
+share/texmf-dist/fonts/pk/ljfour/public/cm/
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmbx10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk
@@ -3129,6 +3182,7 @@ share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy7.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmti10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi720/
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi720/cmbx12.pk
+share/texmf-dist/fonts/sfd/
 share/texmf-dist/fonts/sfd/dnp/
 share/texmf-dist/fonts/sfd/dnp/DNP.sfd
 share/texmf-dist/fonts/sfd/ttf2pk/
@@ -3145,6 +3199,8 @@ share/texmf-dist/fonts/sfd/ttf2pk/UJIS.sfd
 share/texmf-dist/fonts/sfd/ttf2pk/UKS-HLaTeX.sfd
 share/texmf-dist/fonts/sfd/ttf2pk/UKS.sfd
 share/texmf-dist/fonts/sfd/ttf2pk/Unicode.sfd
+share/texmf-dist/fonts/source/
+share/texmf-dist/fonts/source/jknappen/
 share/texmf-dist/fonts/source/jknappen/ec/
 share/texmf-dist/fonts/source/jknappen/ec/ecbi.mf
 share/texmf-dist/fonts/source/jknappen/ec/ecbi0500.mf
@@ -3810,6 +3866,7 @@ share/texmf-dist/fonts/source/jknappen/ec/txromod.mf
 share/texmf-dist/fonts/source/jknappen/ec/txrsuper.mf
 share/texmf-dist/fonts/source/jknappen/ec/txsymb.mf
 share/texmf-dist/fonts/source/jknappen/ec/txsymbol.mf
+share/texmf-dist/fonts/source/lh/
 share/texmf-dist/fonts/source/lh/base/
 share/texmf-dist/fonts/source/lh/base/fikparm.mf
 share/texmf-dist/fonts/source/lh/base/lcyrbeg.mf
@@ -4365,6 +4422,7 @@ share/texmf-dist/fonts/source/lh/specific/lgnoncl.mf
 share/texmf-dist/fonts/source/lh/specific/lgnoncu.mf
 share/texmf-dist/fonts/source/lh/specific/lgrucl.mf
 share/texmf-dist/fonts/source/lh/specific/lgrucu.mf
+share/texmf-dist/fonts/source/ptex/
 share/texmf-dist/fonts/source/ptex/ascgrp/
 share/texmf-dist/fonts/source/ptex/ascgrp/ascgrp.mf
 share/texmf-dist/fonts/source/ptex/ascgrp/ascii.mf
@@ -4411,6 +4469,8 @@ share/texmf-dist/fonts/source/ptex/standard/tmin6.pl
 share/texmf-dist/fonts/source/ptex/standard/tmin7.pl
 share/texmf-dist/fonts/source/ptex/standard/tmin8.pl
 share/texmf-dist/fonts/source/ptex/standard/tmin9.pl
+share/texmf-dist/fonts/source/public/
+share/texmf-dist/fonts/source/public/amsfonts/
 share/texmf-dist/fonts/source/public/amsfonts/cmextra/
 share/texmf-dist/fonts/source/public/amsfonts/cmextra/cmbsy5.mf
 share/texmf-dist/fonts/source/public/amsfonts/cmextra/cmbsy6.mf
@@ -6734,6 +6794,7 @@ share/texmf-dist/fonts/source/public/yhmath/yhbigdel.mf
 share/texmf-dist/fonts/source/public/yhmath/yhcmex10.mf
 share/texmf-dist/fonts/source/public/yhmath/yhmathex.mf
 share/texmf-dist/fonts/source/public/yhmath/yrcmex10.mf
+share/texmf-dist/fonts/source/vntex/
 share/texmf-dist/fonts/source/vntex/vnr/
 share/texmf-dist/fonts/source/vntex/vnr/vnaccent.mf
 share/texmf-dist/fonts/source/vntex/vnr/vnacomp.mf
@@ -6833,6 +6894,8 @@ share/texmf-dist/fonts/source/vntex/vnr/vnuur.mf
 share/texmf-dist/fonts/source/vntex/vnr/vnuyr.mf
 share/texmf-dist/fonts/source/vntex/vnr/vnvtt10.mf
 share/texmf-dist/fonts/source/vntex/vnr/vnycomp.mf
+share/texmf-dist/fonts/tfm/
+share/texmf-dist/fonts/tfm/adobe/
 share/texmf-dist/fonts/tfm/adobe/avantgar/
 share/texmf-dist/fonts/tfm/adobe/avantgar/pagd.tfm
 share/texmf-dist/fonts/tfm/adobe/avantgar/pagd7t.tfm
@@ -7232,6 +7295,7 @@ share/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 share/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8t.tfm
 share/texmf-dist/fonts/tfm/adobe/zapfding/
 share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
+share/texmf-dist/fonts/tfm/arphic/
 share/texmf-dist/fonts/tfm/arphic/bkaimp/
 share/texmf-dist/fonts/tfm/arphic/bkaimp/bkaimp00.tfm
 share/texmf-dist/fonts/tfm/arphic/bkaimp/bkaimp01.tfm
@@ -7816,6 +7880,7 @@ share/texmf-dist/fonts/tfm/arphic/gkaiu/gkaiu9e.tfm
 share/texmf-dist/fonts/tfm/arphic/gkaiu/gkaiu9f.tfm
 share/texmf-dist/fonts/tfm/arphic/gkaiu/gkaiufe.tfm
 share/texmf-dist/fonts/tfm/arphic/gkaiu/gkaiuff.tfm
+share/texmf-dist/fonts/tfm/bitstrea/
 share/texmf-dist/fonts/tfm/bitstrea/charter/
 share/texmf-dist/fonts/tfm/bitstrea/charter/bchb7t.tfm
 share/texmf-dist/fonts/tfm/bitstrea/charter/bchb8c.tfm
@@ -7845,6 +7910,7 @@ share/texmf-dist/fonts/tfm/bitstrea/charter/bchro7t.tfm
 share/texmf-dist/fonts/tfm/bitstrea/charter/bchro8c.tfm
 share/texmf-dist/fonts/tfm/bitstrea/charter/bchro8r.tfm
 share/texmf-dist/fonts/tfm/bitstrea/charter/bchro8t.tfm
+share/texmf-dist/fonts/tfm/cg/
 share/texmf-dist/fonts/tfm/cg/courier/
 share/texmf-dist/fonts/tfm/cg/courier/ccrb.tfm
 share/texmf-dist/fonts/tfm/cg/courier/ccrb8t.tfm
@@ -7911,6 +7977,7 @@ share/texmf-dist/fonts/tfm/cg/times/trr6j.tfm
 share/texmf-dist/fonts/tfm/cg/times/trr7j.tfm
 share/texmf-dist/fonts/tfm/cg/times/trr8u.tfm
 share/texmf-dist/fonts/tfm/cg/times/trr9t.tfm
+share/texmf-dist/fonts/tfm/cns/
 share/texmf-dist/fonts/tfm/cns/c0so12/
 share/texmf-dist/fonts/tfm/cns/c0so12/c0so1201.tfm
 share/texmf-dist/fonts/tfm/cns/c0so12/c0so1202.tfm
@@ -8177,6 +8244,7 @@ share/texmf-dist/fonts/tfm/cns/c7so12/c7so1223.tfm
 share/texmf-dist/fonts/tfm/cns/c7so12/c7so1224.tfm
 share/texmf-dist/fonts/tfm/cns/c7so12/c7so1225.tfm
 share/texmf-dist/fonts/tfm/cns/c7so12/c7so1226.tfm
+share/texmf-dist/fonts/tfm/cspsfonts-adobe/
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/avantgar/
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/avantgar/pagd8z.tfm
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/avantgar/pagdc8z.tfm
@@ -8267,6 +8335,7 @@ share/texmf-dist/fonts/tfm/cspsfonts-adobe/zapfchan/pzcmi8z.tfm
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/zapfchan/rpzcmi.tfm
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/zapfding/
 share/texmf-dist/fonts/tfm/cspsfonts-adobe/zapfding/rpzdr.tfm
+share/texmf-dist/fonts/tfm/groff/
 share/texmf-dist/fonts/tfm/groff/avantgar/
 share/texmf-dist/fonts/tfm/groff/avantgar/pagd8g.tfm
 share/texmf-dist/fonts/tfm/groff/avantgar/pagdo8g.tfm
@@ -8308,9 +8377,11 @@ share/texmf-dist/fonts/tfm/groff/times/ptmr8g.tfm
 share/texmf-dist/fonts/tfm/groff/times/ptmri8g.tfm
 share/texmf-dist/fonts/tfm/groff/zapfchan/
 share/texmf-dist/fonts/tfm/groff/zapfchan/pzcmi8g.tfm
+share/texmf-dist/fonts/tfm/hoekwater/
 share/texmf-dist/fonts/tfm/hoekwater/context/
 share/texmf-dist/fonts/tfm/hoekwater/context/contnav.tfm
 share/texmf-dist/fonts/tfm/hoekwater/context/fmvr8x.tfm
+share/texmf-dist/fonts/tfm/jknappen/
 share/texmf-dist/fonts/tfm/jknappen/ec/
 share/texmf-dist/fonts/tfm/jknappen/ec/ecbi0500.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/ecbi0600.tfm
@@ -8877,9 +8948,11 @@ share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2074.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2488.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2986.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt3583.tfm
+share/texmf-dist/fonts/tfm/jmn/
 share/texmf-dist/fonts/tfm/jmn/hans/
 share/texmf-dist/fonts/tfm/jmn/hans/hans-sh.tfm
 share/texmf-dist/fonts/tfm/jmn/hans/hans.tfm
+share/texmf-dist/fonts/tfm/monotype/
 share/texmf-dist/fonts/tfm/monotype/helvetic/
 share/texmf-dist/fonts/tfm/monotype/helvetic/arb10u.tfm
 share/texmf-dist/fonts/tfm/monotype/helvetic/arb2n.tfm
@@ -8911,6 +8984,7 @@ share/texmf-dist/fonts/tfm/monotype/helvetic/mhvri.tfm
 share/texmf-dist/fonts/tfm/monotype/helvetic/mhvri8t.tfm
 share/texmf-dist/fonts/tfm/monotype/symbol/
 share/texmf-dist/fonts/tfm/monotype/symbol/msyr.tfm
+share/texmf-dist/fonts/tfm/ptex/
 share/texmf-dist/fonts/tfm/ptex/ascgrp/
 share/texmf-dist/fonts/tfm/ptex/ascgrp/ascgrp.tfm
 share/texmf-dist/fonts/tfm/ptex/ascgrp/ascii10.tfm
@@ -8993,6 +9067,7 @@ share/texmf-dist/fonts/tfm/ptex/standard/tmin6.tfm
 share/texmf-dist/fonts/tfm/ptex/standard/tmin7.tfm
 share/texmf-dist/fonts/tfm/ptex/standard/tmin8.tfm
 share/texmf-dist/fonts/tfm/ptex/standard/tmin9.tfm
+share/texmf-dist/fonts/tfm/public/
 share/texmf-dist/fonts/tfm/public/ae/
 share/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
 share/texmf-dist/fonts/tfm/public/ae/aebx10.tfm
@@ -9044,6 +9119,7 @@ share/texmf-dist/fonts/tfm/public/ae/aett9.tfm
 share/texmf-dist/fonts/tfm/public/ae/laess8.tfm
 share/texmf-dist/fonts/tfm/public/ae/laessb8.tfm
 share/texmf-dist/fonts/tfm/public/ae/laessi8.tfm
+share/texmf-dist/fonts/tfm/public/amsfonts/
 share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/
 share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
@@ -12774,6 +12850,7 @@ share/texmf-dist/fonts/tfm/public/xypic/xyqc10.tfm
 share/texmf-dist/fonts/tfm/public/yhmath/
 share/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 share/texmf-dist/fonts/tfm/public/yhmath/yrcmex10.tfm
+share/texmf-dist/fonts/tfm/uhc/
 share/texmf-dist/fonts/tfm/uhc/umj/
 share/texmf-dist/fonts/tfm/uhc/umj/umj00.tfm
 share/texmf-dist/fonts/tfm/uhc/umj/umj01.tfm
@@ -14473,6 +14550,7 @@ share/texmf-dist/fonts/tfm/uhc/wmj/wmjxo6.tfm
 share/texmf-dist/fonts/tfm/uhc/wmj/wmjxo7.tfm
 share/texmf-dist/fonts/tfm/uhc/wmj/wmjxo8.tfm
 share/texmf-dist/fonts/tfm/uhc/wmj/wmjxo9.tfm
+share/texmf-dist/fonts/tfm/urw35vf/
 share/texmf-dist/fonts/tfm/urw35vf/avantgar/
 share/texmf-dist/fonts/tfm/urw35vf/avantgar/uagb7t.tfm
 share/texmf-dist/fonts/tfm/urw35vf/avantgar/uagb8c.tfm
@@ -14749,6 +14827,7 @@ share/texmf-dist/fonts/tfm/urw35vf/zapfchan/uzcmi8r.tfm
 share/texmf-dist/fonts/tfm/urw35vf/zapfchan/uzcmi8t.tfm
 share/texmf-dist/fonts/tfm/urw35vf/zapfding/
 share/texmf-dist/fonts/tfm/urw35vf/zapfding/uzdr.tfm
+share/texmf-dist/fonts/tfm/vntex/
 share/texmf-dist/fonts/tfm/vntex/arevvn/
 share/texmf-dist/fonts/tfm/vntex/arevvn/favb8v.tfm
 share/texmf-dist/fonts/tfm/vntex/arevvn/favbi8v.tfm
@@ -14908,6 +14987,7 @@ share/texmf-dist/fonts/tfm/vntex/vntopia/putr8v.tfm
 share/texmf-dist/fonts/tfm/vntex/vntopia/putrc8v.tfm
 share/texmf-dist/fonts/tfm/vntex/vntopia/putri8v.tfm
 share/texmf-dist/fonts/tfm/vntex/vntopia/putro8v.tfm
+share/texmf-dist/fonts/tfm/wadalab/
 share/texmf-dist/fonts/tfm/wadalab/dgj/
 share/texmf-dist/fonts/tfm/wadalab/dgj/dgjgreek.tfm
 share/texmf-dist/fonts/tfm/wadalab/dgj/dgjhira.tfm
@@ -15472,6 +15552,7 @@ share/texmf-dist/fonts/tfm/wadalab/umrj/umrj9d.tfm
 share/texmf-dist/fonts/tfm/wadalab/umrj/umrj9e.tfm
 share/texmf-dist/fonts/tfm/wadalab/umrj/umrj9f.tfm
 share/texmf-dist/fonts/tfm/wadalab/umrj/umrjff.tfm
+share/texmf-dist/fonts/tfm/zhmetrics/
 share/texmf-dist/fonts/tfm/zhmetrics/cyberb/
 share/texmf-dist/fonts/tfm/zhmetrics/cyberb/cyberb00.tfm
 share/texmf-dist/fonts/tfm/zhmetrics/cyberb/cyberb01.tfm
@@ -20400,8 +20481,12 @@ share/texmf-dist/fonts/tfm/zhmetrics/uniyou/uniyouslfc.tfm
 share/texmf-dist/fonts/tfm/zhmetrics/uniyou/uniyouslfd.tfm
 share/texmf-dist/fonts/tfm/zhmetrics/uniyou/uniyouslfe.tfm
 share/texmf-dist/fonts/tfm/zhmetrics/uniyou/uniyouslff.tfm
+share/texmf-dist/fonts/truetype/
+share/texmf-dist/fonts/truetype/hoekwater/
 share/texmf-dist/fonts/truetype/hoekwater/lmextra/
 share/texmf-dist/fonts/truetype/hoekwater/lmextra/lmtypewriter10-regular.ttf
+share/texmf-dist/fonts/type1/
+share/texmf-dist/fonts/type1/adobe/
 share/texmf-dist/fonts/type1/adobe/courier/
 share/texmf-dist/fonts/type1/adobe/courier/pcrb8a.pfb
 share/texmf-dist/fonts/type1/adobe/courier/pcrbi8a.pfb
@@ -20414,6 +20499,7 @@ share/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb
 share/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb
 share/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb
 share/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb
+share/texmf-dist/fonts/type1/arphic/
 share/texmf-dist/fonts/type1/arphic/bkaiu/
 share/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu00.pfb
 share/texmf-dist/fonts/type1/arphic/bkaiu/bkaiu02.pfb
@@ -20818,11 +20904,13 @@ share/texmf-dist/fonts/type1/arphic/gkaiu/gkaiu9e.pfb
 share/texmf-dist/fonts/type1/arphic/gkaiu/gkaiu9f.pfb
 share/texmf-dist/fonts/type1/arphic/gkaiu/gkaiufe.pfb
 share/texmf-dist/fonts/type1/arphic/gkaiu/gkaiuff.pfb
+share/texmf-dist/fonts/type1/bitstrea/
 share/texmf-dist/fonts/type1/bitstrea/charter/
 share/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb
 share/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb
 share/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb
 share/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb
+share/texmf-dist/fonts/type1/hoekwater/
 share/texmf-dist/fonts/type1/hoekwater/context/
 share/texmf-dist/fonts/type1/hoekwater/context/contnav.pfb
 share/texmf-dist/fonts/type1/hoekwater/mflogo/
@@ -20847,15 +20935,19 @@ share/texmf-dist/fonts/type1/hoekwater/stmaryrd/stmary8.pfb
 share/texmf-dist/fonts/type1/hoekwater/stmaryrd/stmary8.pfm
 share/texmf-dist/fonts/type1/hoekwater/stmaryrd/stmary9.pfb
 share/texmf-dist/fonts/type1/hoekwater/stmaryrd/stmary9.pfm
+share/texmf-dist/fonts/type1/jmn/
 share/texmf-dist/fonts/type1/jmn/hans/
 share/texmf-dist/fonts/type1/jmn/hans/hans-sh.pfb
 share/texmf-dist/fonts/type1/jmn/hans/hans-sh.pfm
 share/texmf-dist/fonts/type1/jmn/hans/hans.pfb
 share/texmf-dist/fonts/type1/jmn/hans/hans.pfm
+share/texmf-dist/fonts/type1/ptex/
 share/texmf-dist/fonts/type1/ptex/ascgrp/
 share/texmf-dist/fonts/type1/ptex/ascgrp/ascgrp.pfb
 share/texmf-dist/fonts/type1/ptex/ascgrp/ascii10.pfb
 share/texmf-dist/fonts/type1/ptex/ascgrp/ascii36.pfb
+share/texmf-dist/fonts/type1/public/
+share/texmf-dist/fonts/type1/public/amsfonts/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfm
@@ -23485,6 +23577,7 @@ share/texmf-dist/fonts/type1/public/xypic/xylubt12.pfb
 share/texmf-dist/fonts/type1/public/xypic/xylubt12.pfm
 share/texmf-dist/fonts/type1/public/yhmath/
 share/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb
+share/texmf-dist/fonts/type1/uhc/
 share/texmf-dist/fonts/type1/uhc/umj/
 share/texmf-dist/fonts/type1/uhc/umj/umj00.pfb
 share/texmf-dist/fonts/type1/uhc/umj/umj01.pfb
@@ -23519,6 +23612,7 @@ share/texmf-dist/fonts/type1/uhc/umj/umj35.pfb
 share/texmf-dist/fonts/type1/uhc/umj/umj36.pfb
 share/texmf-dist/fonts/type1/uhc/umj/umj37.pfb
 share/texmf-dist/fonts/type1/uhc/umj/umj38.pfb
+share/texmf-dist/fonts/type1/urw/
 share/texmf-dist/fonts/type1/urw/avantgar/
 share/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb
 share/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfm
@@ -23605,6 +23699,7 @@ share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfm
 share/texmf-dist/fonts/type1/urw/zapfding/
 share/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
 share/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfm
+share/texmf-dist/fonts/type1/vntex/
 share/texmf-dist/fonts/type1/vntex/arevvn/
 share/texmf-dist/fonts/type1/vntex/arevvn/ArevSans-Bold-T5.pfb
 share/texmf-dist/fonts/type1/vntex/arevvn/ArevSans-BoldOblique-T5.pfb
@@ -23731,6 +23826,7 @@ share/texmf-dist/fonts/type1/vntex/vntopia/putb8v.pfb
 share/texmf-dist/fonts/type1/vntex/vntopia/putbi8v.pfb
 share/texmf-dist/fonts/type1/vntex/vntopia/putr8v.pfb
 share/texmf-dist/fonts/type1/vntex/vntopia/putri8v.pfb
+share/texmf-dist/fonts/type1/wadalab/
 share/texmf-dist/fonts/type1/wadalab/dgj/
 share/texmf-dist/fonts/type1/wadalab/dgj/dgjgreek.pfb
 share/texmf-dist/fonts/type1/wadalab/dgj/dgjhira.pfb
@@ -23919,6 +24015,8 @@ share/texmf-dist/fonts/type1/wadalab/mrj/mrjkz.pfb
 share/texmf-dist/fonts/type1/wadalab/mrj/mrjroma.pfb
 share/texmf-dist/fonts/type1/wadalab/mrj/mrjrussian.pfb
 share/texmf-dist/fonts/type1/wadalab/mrj/mrjsy.pfb
+share/texmf-dist/fonts/vf/
+share/texmf-dist/fonts/vf/adobe/
 share/texmf-dist/fonts/vf/adobe/avantgar/
 share/texmf-dist/fonts/vf/adobe/avantgar/pagd.vf
 share/texmf-dist/fonts/vf/adobe/avantgar/pagd7t.vf
@@ -24212,6 +24310,7 @@ share/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi.vf
 share/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
 share/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi8c.vf
 share/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi8t.vf
+share/texmf-dist/fonts/vf/arphic/
 share/texmf-dist/fonts/vf/arphic/bkaimp/
 share/texmf-dist/fonts/vf/arphic/bkaimp/bkaimp00.vf
 share/texmf-dist/fonts/vf/arphic/bkaimp/bkaimp01.vf
@@ -24392,6 +24491,7 @@ share/texmf-dist/fonts/vf/arphic/gkaimp/gkaimp29.vf
 share/texmf-dist/fonts/vf/arphic/gkaimp/gkaimp30.vf
 share/texmf-dist/fonts/vf/arphic/gkaimp/gkaimp31.vf
 share/texmf-dist/fonts/vf/arphic/gkaimp/gkaimp32.vf
+share/texmf-dist/fonts/vf/bitstrea/
 share/texmf-dist/fonts/vf/bitstrea/charter/
 share/texmf-dist/fonts/vf/bitstrea/charter/bchb7t.vf
 share/texmf-dist/fonts/vf/bitstrea/charter/bchb8c.vf
@@ -24415,6 +24515,7 @@ share/texmf-dist/fonts/vf/bitstrea/charter/bchri8t.vf
 share/texmf-dist/fonts/vf/bitstrea/charter/bchro7t.vf
 share/texmf-dist/fonts/vf/bitstrea/charter/bchro8c.vf
 share/texmf-dist/fonts/vf/bitstrea/charter/bchro8t.vf
+share/texmf-dist/fonts/vf/cg/
 share/texmf-dist/fonts/vf/cg/courier/
 share/texmf-dist/fonts/vf/cg/courier/ccrb.vf
 share/texmf-dist/fonts/vf/cg/courier/ccrb8t.vf
@@ -24433,6 +24534,7 @@ share/texmf-dist/fonts/vf/cg/times/ctmr.vf
 share/texmf-dist/fonts/vf/cg/times/ctmr8t.vf
 share/texmf-dist/fonts/vf/cg/times/ctmri.vf
 share/texmf-dist/fonts/vf/cg/times/ctmri8t.vf
+share/texmf-dist/fonts/vf/cspsfonts-adobe/
 share/texmf-dist/fonts/vf/cspsfonts-adobe/avantgar/
 share/texmf-dist/fonts/vf/cspsfonts-adobe/avantgar/pagd8z.vf
 share/texmf-dist/fonts/vf/cspsfonts-adobe/avantgar/pagdc8z.vf
@@ -24491,6 +24593,7 @@ share/texmf-dist/fonts/vf/cspsfonts-adobe/times/ptmrc8z.vf
 share/texmf-dist/fonts/vf/cspsfonts-adobe/times/ptmri8z.vf
 share/texmf-dist/fonts/vf/cspsfonts-adobe/zapfchan/
 share/texmf-dist/fonts/vf/cspsfonts-adobe/zapfchan/pzcmi8z.vf
+share/texmf-dist/fonts/vf/monotype/
 share/texmf-dist/fonts/vf/monotype/helvetic/
 share/texmf-dist/fonts/vf/monotype/helvetic/mhvb.vf
 share/texmf-dist/fonts/vf/monotype/helvetic/mhvb8t.vf
@@ -24500,6 +24603,7 @@ share/texmf-dist/fonts/vf/monotype/helvetic/mhvr.vf
 share/texmf-dist/fonts/vf/monotype/helvetic/mhvr8t.vf
 share/texmf-dist/fonts/vf/monotype/helvetic/mhvri.vf
 share/texmf-dist/fonts/vf/monotype/helvetic/mhvri8t.vf
+share/texmf-dist/fonts/vf/ptex/
 share/texmf-dist/fonts/vf/ptex/jis/
 share/texmf-dist/fonts/vf/ptex/jis/jis-v.vf
 share/texmf-dist/fonts/vf/ptex/jis/jis.vf
@@ -24563,6 +24667,7 @@ share/texmf-dist/fonts/vf/ptex/standard/tmin6.vf
 share/texmf-dist/fonts/vf/ptex/standard/tmin7.vf
 share/texmf-dist/fonts/vf/ptex/standard/tmin8.vf
 share/texmf-dist/fonts/vf/ptex/standard/tmin9.vf
+share/texmf-dist/fonts/vf/public/
 share/texmf-dist/fonts/vf/public/ae/
 share/texmf-dist/fonts/vf/public/ae/aeb10.vf
 share/texmf-dist/fonts/vf/public/ae/aebx10.vf
@@ -25201,6 +25306,7 @@ share/texmf-dist/fonts/vf/public/txfonts/tyxttsc.vf
 share/texmf-dist/fonts/vf/public/txfonts/tyxttsl.vf
 share/texmf-dist/fonts/vf/public/yhmath/
 share/texmf-dist/fonts/vf/public/yhmath/yhcmex10.vf
+share/texmf-dist/fonts/vf/uhc/
 share/texmf-dist/fonts/vf/uhc/uwmj/
 share/texmf-dist/fonts/vf/uhc/uwmj/uwmj00.vf
 share/texmf-dist/fonts/vf/uhc/uwmj/uwmj01.vf
@@ -26635,6 +26741,7 @@ share/texmf-dist/fonts/vf/uhc/wmj/wmjxo6.vf
 share/texmf-dist/fonts/vf/uhc/wmj/wmjxo7.vf
 share/texmf-dist/fonts/vf/uhc/wmj/wmjxo8.vf
 share/texmf-dist/fonts/vf/uhc/wmj/wmjxo9.vf
+share/texmf-dist/fonts/vf/urw35vf/
 share/texmf-dist/fonts/vf/urw35vf/avantgar/
 share/texmf-dist/fonts/vf/urw35vf/avantgar/uagb7t.vf
 share/texmf-dist/fonts/vf/urw35vf/avantgar/uagb8c.vf
@@ -26851,6 +26958,7 @@ share/texmf-dist/fonts/vf/urw35vf/zapfchan/
 share/texmf-dist/fonts/vf/urw35vf/zapfchan/uzcmi7t.vf
 share/texmf-dist/fonts/vf/urw35vf/zapfchan/uzcmi8c.vf
 share/texmf-dist/fonts/vf/urw35vf/zapfchan/uzcmi8t.vf
+share/texmf-dist/fonts/vf/vntex/
 share/texmf-dist/fonts/vf/vntex/chartervn/
 share/texmf-dist/fonts/vf/vntex/chartervn/bchbc8v.vf
 share/texmf-dist/fonts/vf/vntex/chartervn/bchrc8v.vf
@@ -26872,6 +26980,7 @@ share/texmf-dist/fonts/vf/vntex/urwvn/utmrc8v.vf
 share/texmf-dist/fonts/vf/vntex/vntopia/
 share/texmf-dist/fonts/vf/vntex/vntopia/putbc8v.vf
 share/texmf-dist/fonts/vf/vntex/vntopia/putrc8v.vf
+share/texmf-dist/fonts/vf/wadalab/
 share/texmf-dist/fonts/vf/wadalab/udgj/
 share/texmf-dist/fonts/vf/wadalab/udgj/udgj00.vf
 share/texmf-dist/fonts/vf/wadalab/udgj/udgj03.vf
@@ -27248,6 +27357,7 @@ share/texmf-dist/fonts/vf/wadalab/umrj/umrj9d.vf
 share/texmf-dist/fonts/vf/wadalab/umrj/umrj9e.vf
 share/texmf-dist/fonts/vf/wadalab/umrj/umrj9f.vf
 share/texmf-dist/fonts/vf/wadalab/umrj/umrjff.vf
+share/texmf-dist/makeindex/
 share/texmf-dist/makeindex/babel/
 share/texmf-dist/makeindex/babel/bbglo.ist
 share/texmf-dist/makeindex/babel/bbind.ist
@@ -27275,6 +27385,7 @@ share/texmf-dist/makeindex/nomencl/
 share/texmf-dist/makeindex/nomencl/nomencl.ist
 share/texmf-dist/makeindex/plain/
 share/texmf-dist/makeindex/plain/plaintex.ist
+share/texmf-dist/metafont/
 share/texmf-dist/metafont/base/
 share/texmf-dist/metafont/base/expr.mf
 share/texmf-dist/metafont/base/io.mf
@@ -27302,6 +27413,7 @@ share/texmf-dist/metafont/misc/waits.mf
 share/texmf-dist/metafont/misc/ztest.mf
 share/texmf-dist/metafont/roex/
 share/texmf-dist/metafont/roex/roex.mf
+share/texmf-dist/metapost/
 share/texmf-dist/metapost/automata/
 share/texmf-dist/metapost/automata/automata.mp
 share/texmf-dist/metapost/base/
@@ -27363,6 +27475,7 @@ share/texmf-dist/metapost/cmarrows/tgbx0007.mp
 share/texmf-dist/metapost/cmarrows/tgbx0027.mp
 share/texmf-dist/metapost/config/
 share/texmf-dist/metapost/config/mfplain.ini
+share/texmf-dist/metapost/context/
 share/texmf-dist/metapost/context/base/
 share/texmf-dist/metapost/context/base/metafun.mp
 share/texmf-dist/metapost/context/base/mp-back.mp
@@ -27388,6 +27501,7 @@ share/texmf-dist/metapost/context/base/mp-tool.mp
 share/texmf-dist/metapost/context/base/mp-txts.mp
 share/texmf-dist/metapost/context/font/
 share/texmf-dist/metapost/context/font/punkfont.mp
+share/texmf-dist/metapost/context/third/
 share/texmf-dist/metapost/context/third/gnuplot/
 share/texmf-dist/metapost/context/third/gnuplot/mp-gnuplot.mp
 share/texmf-dist/metapost/drv/
@@ -27520,6 +27634,7 @@ share/texmf-dist/metapost/textpath/
 share/texmf-dist/metapost/textpath/textpath.mp
 share/texmf-dist/metapost/venn/
 share/texmf-dist/metapost/venn/venn.mp
+share/texmf-dist/mft/
 share/texmf-dist/mft/base/
 share/texmf-dist/mft/base/README
 share/texmf-dist/mft/base/cmbase.mft
@@ -27527,6 +27642,8 @@ share/texmf-dist/mft/base/e.mft
 share/texmf-dist/mft/base/mplain.mft
 share/texmf-dist/mft/base/pl.mft
 share/texmf-dist/mft/base/plain.mft
+share/texmf-dist/omega/
+share/texmf-dist/omega/ocp/
 share/texmf-dist/omega/ocp/antomega/
 share/texmf-dist/omega/ocp/antomega/babel2de.ocp
 share/texmf-dist/omega/ocp/antomega/babel2es.ocp
@@ -27677,6 +27794,7 @@ share/texmf-dist/omega/ocp/omega/uppercase.ocp
 share/texmf-dist/omega/ocp/uni2char/
 share/texmf-dist/omega/ocp/uni2char/out88591.ocp
 share/texmf-dist/omega/ocp/uni2char/oututf8.ocp
+share/texmf-dist/omega/otp/
 share/texmf-dist/omega/otp/antomega/
 share/texmf-dist/omega/otp/antomega/babel2de.otp
 share/texmf-dist/omega/otp/antomega/babel2es.otp
@@ -27815,6 +27933,7 @@ share/texmf-dist/omega/otp/omega/uppercase.otp
 share/texmf-dist/omega/otp/uni2char/
 share/texmf-dist/omega/otp/uni2char/out88591.otp
 share/texmf-dist/omega/otp/uni2char/oututf8.otp
+share/texmf-dist/pbibtex/
 share/texmf-dist/pbibtex/bib/
 share/texmf-dist/pbibtex/bib/jxampl.bib
 share/texmf-dist/pbibtex/bst/
@@ -27827,6 +27946,7 @@ share/texmf-dist/pbibtex/bst/jplain.bst
 share/texmf-dist/pbibtex/bst/junsrt.bst
 share/texmf-dist/pbibtex/bst/tieice.bst
 share/texmf-dist/pbibtex/bst/tipsj.bst
+share/texmf-dist/scripts/
 share/texmf-dist/scripts/accfonts/
 share/texmf-dist/scripts/accfonts/mkt1font
 share/texmf-dist/scripts/accfonts/vpl2ovp
@@ -27834,6 +27954,7 @@ share/texmf-dist/scripts/accfonts/vpl2vpl
 share/texmf-dist/scripts/cachepic/
 share/texmf-dist/scripts/cachepic/cachepic.cmd
 share/texmf-dist/scripts/cachepic/cachepic.tlu
+share/texmf-dist/scripts/context/
 share/texmf-dist/scripts/context/lua/
 share/texmf-dist/scripts/context/lua/luatools.lua
 share/texmf-dist/scripts/context/lua/luatools.rme
@@ -27922,6 +28043,7 @@ share/texmf-dist/scripts/context/ruby/textools.rb
 share/texmf-dist/scripts/context/ruby/texutil.rb
 share/texmf-dist/scripts/context/ruby/tmftools.rb
 share/texmf-dist/scripts/context/ruby/xmltools.rb
+share/texmf-dist/scripts/context/stubs/
 @comment share/texmf-dist/scripts/context/stubs/mswin/
 @comment share/texmf-dist/scripts/context/stubs/mswin/context.exe
 @comment share/texmf-dist/scripts/context/stubs/mswin/ctxtools.exe
@@ -28000,12 +28122,16 @@ share/texmf-dist/scripts/pst2pdf/
 share/texmf-dist/scripts/pst2pdf/pst2pdf
 share/texmf-dist/scripts/thumbpdf/
 share/texmf-dist/scripts/thumbpdf/thumbpdf.pl
+share/texmf-dist/scripts/xetex/
 share/texmf-dist/scripts/xetex/perl/
+share/texmf-dist/scripts/xetex/perl/lib/
 share/texmf-dist/scripts/xetex/perl/lib/PDF/
 share/texmf-dist/scripts/xetex/perl/lib/PDF/Reuse.pm
 share/texmf-dist/scripts/xetex/perl/lib/PDF/Reuse/
 share/texmf-dist/scripts/xetex/perl/lib/PDF/Reuse/Util.pm
 share/texmf-dist/scripts/xetex/perl/xdv2pdf_mergemarks
+share/texmf-dist/source/
+share/texmf-dist/source/latex/
 share/texmf-dist/source/latex/koma-script/
 share/texmf-dist/source/latex/koma-script/ChangeLog
 share/texmf-dist/source/latex/koma-script/ChangeLog.2
@@ -28161,6 +28287,8 @@ share/texmf-dist/source/latex/koma-script/scrstrop.inc
 share/texmf-dist/source/latex/koma-script/scrtime.dtx
 share/texmf-dist/source/latex/koma-script/tocbasic.dtx
 share/texmf-dist/source/latex/koma-script/tocstyle.dtx
+share/texmf-dist/tex/
+share/texmf-dist/tex/amstex/
 share/texmf-dist/tex/amstex/base/
 share/texmf-dist/tex/amstex/base/amsppt.sti
 share/texmf-dist/tex/amstex/base/amsppt.sty
@@ -28169,6 +28297,7 @@ share/texmf-dist/tex/amstex/base/amstex.bug
 share/texmf-dist/tex/amstex/base/amstex.tex
 share/texmf-dist/tex/amstex/config/
 share/texmf-dist/tex/amstex/config/amstex.ini
+share/texmf-dist/tex/context/
 share/texmf-dist/tex/context/base/
 share/texmf-dist/tex/context/base/anch-bar.mkii
 share/texmf-dist/tex/context/base/anch-bar.mkiv
@@ -29540,6 +29669,7 @@ share/texmf-dist/tex/context/patterns/lang-us.rme
 share/texmf-dist/tex/context/patterns/lang-zh.hyp
 share/texmf-dist/tex/context/patterns/lang-zh.pat
 share/texmf-dist/tex/context/patterns/lang-zh.rme
+share/texmf-dist/tex/context/pgf/
 share/texmf-dist/tex/context/pgf/basiclayer/
 share/texmf-dist/tex/context/pgf/basiclayer/t-pgf.tex
 share/texmf-dist/tex/context/pgf/basiclayer/t-pgfbim.tex
@@ -29586,6 +29716,7 @@ share/texmf-dist/tex/context/sample/zapf.tex
 share/texmf-dist/tex/context/test/
 share/texmf-dist/tex/context/test/context-test.tex
 share/texmf-dist/tex/context/test/x-cals-test.cdx
+share/texmf-dist/tex/context/third/
 share/texmf-dist/tex/context/third/account/
 share/texmf-dist/tex/context/third/account/t-account.mkii
 share/texmf-dist/tex/context/third/account/t-account.mkiv
@@ -29618,6 +29749,7 @@ share/texmf-dist/tex/context/third/games/holz280.jpg
 share/texmf-dist/tex/context/third/games/t-games.tex
 share/texmf-dist/tex/context/third/gnuplot/
 share/texmf-dist/tex/context/third/gnuplot/t-gnuplot.tex
+share/texmf-dist/tex/context/third/letter/
 share/texmf-dist/tex/context/third/letter/base/
 share/texmf-dist/tex/context/third/letter/base/t-correspondence.mkii
 share/texmf-dist/tex/context/third/letter/base/t-correspondence.mkiv
@@ -29793,6 +29925,7 @@ share/texmf-dist/tex/context/third/vim/2context.vim
 share/texmf-dist/tex/context/third/vim/t-vim.tex
 share/texmf-dist/tex/context/user/
 share/texmf-dist/tex/context/user/cont-sys.rme
+share/texmf-dist/tex/cslatex/
 share/texmf-dist/tex/cslatex/base/
 share/texmf-dist/tex/cslatex/base/cslatex-utf8.ini
 share/texmf-dist/tex/cslatex/base/cslatex.ini
@@ -29821,6 +29954,7 @@ share/texmf-dist/tex/cslatex/base/xl2pnc.fd
 share/texmf-dist/tex/cslatex/base/xl2ppl.fd
 share/texmf-dist/tex/cslatex/base/xl2ptm.fd
 share/texmf-dist/tex/cslatex/base/xl2pzc.fd
+share/texmf-dist/tex/csplain/
 share/texmf-dist/tex/csplain/base/
 share/texmf-dist/tex/csplain/base/cavantga.tex
 share/texmf-dist/tex/csplain/base/cbookman.tex
@@ -29858,6 +29992,7 @@ share/texmf-dist/tex/eplain/btxmac.tex
 share/texmf-dist/tex/eplain/eplain.aux
 share/texmf-dist/tex/eplain/eplain.ini
 share/texmf-dist/tex/eplain/eplain.tex
+share/texmf-dist/tex/fontinst/
 share/texmf-dist/tex/fontinst/base/
 share/texmf-dist/tex/fontinst/base/bbox.sty
 share/texmf-dist/tex/fontinst/base/cfntinst.sty
@@ -29934,6 +30069,7 @@ share/texmf-dist/tex/fontinst/smblmtx/
 share/texmf-dist/tex/fontinst/smblmtx/resetosf.mtx
 share/texmf-dist/tex/fontinst/smblmtx/textcomp.mtx
 share/texmf-dist/tex/fontinst/smblmtx/unsetnum.mtx
+share/texmf-dist/tex/generic/
 share/texmf-dist/tex/generic/babel/
 share/texmf-dist/tex/generic/babel/8859-8.def
 share/texmf-dist/tex/generic/babel/UKenglish.sty
@@ -30236,6 +30372,7 @@ share/texmf-dist/tex/generic/genmisc/zip.tex
 share/texmf-dist/tex/generic/german/
 share/texmf-dist/tex/generic/german/german.sty
 share/texmf-dist/tex/generic/german/ngerman.sty
+share/texmf-dist/tex/generic/hyph-utf8/
 share/texmf-dist/tex/generic/hyph-utf8/conversions/
 share/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex
 share/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-il2.tex
@@ -30310,6 +30447,7 @@ share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tk.tex
 share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tr.tex
 share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-uk.tex
 share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/
 share/texmf-dist/tex/generic/hyph-utf8/patterns/tex-special/
 share/texmf-dist/tex/generic/hyph-utf8/patterns/tex-special/exhyph-ru.tex
 share/texmf-dist/tex/generic/hyph-utf8/patterns/tex-special/exhyph-uk.tex
@@ -30749,6 +30887,7 @@ share/texmf-dist/tex/generic/omegahyph/
 share/texmf-dist/tex/generic/omegahyph/bghyph.tex
 share/texmf-dist/tex/generic/omegahyph/lthyph.tex
 share/texmf-dist/tex/generic/omegahyph/srhyph.tex
+share/texmf-dist/tex/generic/pgf/
 share/texmf-dist/tex/generic/pgf/basiclayer/
 share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
@@ -30766,6 +30905,7 @@ share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+share/texmf-dist/tex/generic/pgf/frontendlayer/
 share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
 share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/
 share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary3d.code.tex
@@ -31164,6 +31304,7 @@ share/texmf-dist/tex/generic/ruhyphen/ruhyphen.tex
 share/texmf-dist/tex/generic/ruhyphen/ruhyphmg.tex
 share/texmf-dist/tex/generic/ruhyphen/ruhyphvl.tex
 share/texmf-dist/tex/generic/ruhyphen/ruhyphzn.tex
+share/texmf-dist/tex/generic/t2/
 share/texmf-dist/tex/generic/t2/cyrfinst/
 share/texmf-dist/tex/generic/t2/cyrfinst/6r.etx
 share/texmf-dist/tex/generic/t2/cyrfinst/README
@@ -31344,6 +31485,7 @@ share/texmf-dist/tex/generic/xypic/xyweb.tex
 share/texmf-dist/tex/generic/xypic/xyxdvi.tex
 share/texmf-dist/tex/generic/zhmetrics/
 share/texmf-dist/tex/generic/zhmetrics/zhwinfonts.tex
+share/texmf-dist/tex/lambda/
 share/texmf-dist/tex/lambda/antomega/
 share/texmf-dist/tex/lambda/antomega/antomega.cfg
 share/texmf-dist/tex/lambda/antomega/antomega.sty
@@ -31403,6 +31545,7 @@ share/texmf-dist/tex/lambda/base/ut1enc.def
 share/texmf-dist/tex/lambda/config/
 share/texmf-dist/tex/lambda/config/lambda.ini
 share/texmf-dist/tex/lambda/config/language.dat
+share/texmf-dist/tex/latex/
 share/texmf-dist/tex/latex/12many/
 share/texmf-dist/tex/latex/12many/12many.sty
 share/texmf-dist/tex/latex/SIunits/
@@ -31813,6 +31956,7 @@ share/texmf-dist/tex/latex/beamer/multimedia/
 share/texmf-dist/tex/latex/beamer/multimedia/multimedia.sty
 share/texmf-dist/tex/latex/beamer/multimedia/multimediasymbols.sty
 share/texmf-dist/tex/latex/beamer/multimedia/xmpmulti.sty
+share/texmf-dist/tex/latex/beamer/themes/
 share/texmf-dist/tex/latex/beamer/themes/color/
 share/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemealbatross.sty
 share/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
@@ -31894,6 +32038,7 @@ share/texmf-dist/tex/latex/beamer/themes/theme/compatibility/beamerthemesidebar.
 share/texmf-dist/tex/latex/beamer/themes/theme/compatibility/beamerthemesplit.sty
 share/texmf-dist/tex/latex/beamer/themes/theme/compatibility/beamerthemetree.sty
 share/texmf-dist/tex/latex/beamer/translator/
+share/texmf-dist/tex/latex/beamer/translator/dicts/
 share/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/
 share/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-Croatian.dict
 share/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
@@ -32020,6 +32165,8 @@ share/texmf-dist/tex/latex/cite/drftcite.sty
 share/texmf-dist/tex/latex/cite/overcite.sty
 share/texmf-dist/tex/latex/citeref/
 share/texmf-dist/tex/latex/citeref/citeref.sty
+share/texmf-dist/tex/latex/cjk/
+share/texmf-dist/tex/latex/cjk/contrib/
 share/texmf-dist/tex/latex/cjk/contrib/wadalab/
 share/texmf-dist/tex/latex/cjk/contrib/wadalab/c42goth.fd
 share/texmf-dist/tex/latex/cjk/contrib/wadalab/c42goth.fdx
@@ -32248,6 +32395,7 @@ share/texmf-dist/tex/latex/cjk/texinput/thai/thaicjk.ldf
 share/texmf-dist/tex/latex/cjk/texinput/xCJK.sty
 share/texmf-dist/tex/latex/cjk/texinput/xpmC.chr
 share/texmf-dist/tex/latex/cjk/texinput/xpmC.enc
+share/texmf-dist/tex/latex/cjk/utils/
 share/texmf-dist/tex/latex/cjk/utils/pyhyphen/
 share/texmf-dist/tex/latex/cjk/utils/pyhyphen/pinyin.ldf
 share/texmf-dist/tex/latex/cjkpunct/
@@ -33404,6 +33552,7 @@ share/texmf-dist/tex/latex/pgf-soroban/
 share/texmf-dist/tex/latex/pgf-soroban/pgf-soroban.sty
 share/texmf-dist/tex/latex/pgf-umlsd/
 share/texmf-dist/tex/latex/pgf-umlsd/pgf-umlsd.sty
+share/texmf-dist/tex/latex/pgf/
 share/texmf-dist/tex/latex/pgf/basiclayer/
 share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 share/texmf-dist/tex/latex/pgf/basiclayer/pgfbaseimage.sty
@@ -34248,10 +34397,12 @@ share/texmf-dist/tex/latex/zhmetrics/c70zhkai.fd
 share/texmf-dist/tex/latex/zhmetrics/c70zhli.fd
 share/texmf-dist/tex/latex/zhmetrics/c70zhsong.fd
 share/texmf-dist/tex/latex/zhmetrics/c70zhyou.fd
+share/texmf-dist/tex/luatex/
 share/texmf-dist/tex/luatex/hyph-utf8/
 share/texmf-dist/tex/luatex/hyph-utf8/etex.src
 share/texmf-dist/tex/luatex/hyph-utf8/hyphen.cfg
 share/texmf-dist/tex/luatex/hyph-utf8/luatex-hyphen.lua
+share/texmf-dist/tex/mex/
 share/texmf-dist/tex/mex/base/
 share/texmf-dist/tex/mex/base/lamex.tex
 share/texmf-dist/tex/mex/base/mex.tex
@@ -34265,10 +34416,13 @@ share/texmf-dist/tex/mex/utf8mex/
 share/texmf-dist/tex/mex/utf8mex/utf8-pl.tex
 share/texmf-dist/tex/mex/utf8mex/utf8mex.ini
 share/texmf-dist/tex/mex/utf8mex/utf8plsq.tex
+share/texmf-dist/tex/mltex/
 share/texmf-dist/tex/mltex/config/
 share/texmf-dist/tex/mltex/config/mltex.ini
+share/texmf-dist/tex/mptopdf/
 share/texmf-dist/tex/mptopdf/config/
 share/texmf-dist/tex/mptopdf/config/mptopdf.ini
+share/texmf-dist/tex/plain/
 share/texmf-dist/tex/plain/amsfonts/
 share/texmf-dist/tex/plain/amsfonts/amssym.def
 share/texmf-dist/tex/plain/amsfonts/amssym.tex
@@ -34384,6 +34538,7 @@ share/texmf-dist/tex/plain/misc/xepsf.tex
 share/texmf-dist/tex/plain/omega/
 share/texmf-dist/tex/plain/omega/grlccode.tex
 share/texmf-dist/tex/plain/omega/omega.tex
+share/texmf-dist/tex/plain/pgf/
 share/texmf-dist/tex/plain/pgf/basiclayer/
 share/texmf-dist/tex/plain/pgf/basiclayer/pgf.tex
 share/texmf-dist/tex/plain/pgf/basiclayer/pgfbaseimage.tex
@@ -34416,6 +34571,7 @@ share/texmf-dist/tex/plain/vntex/t5code.tex
 share/texmf-dist/tex/plain/vntex/vntexinfo.tex
 share/texmf-dist/tex/plain/wasy/
 share/texmf-dist/tex/plain/wasy/wasyfont.tex
+share/texmf-dist/tex/platex/
 share/texmf-dist/tex/platex/base/
 share/texmf-dist/tex/platex/base/ascmac.sty
 share/texmf-dist/tex/platex/base/jarticle.cls
@@ -34470,12 +34626,14 @@ share/texmf-dist/tex/platex/jsclasses/minijs.sty
 share/texmf-dist/tex/platex/jsclasses/morisawa.sty
 share/texmf-dist/tex/platex/jsclasses/okumacro.sty
 share/texmf-dist/tex/platex/jsclasses/okuverb.sty
+share/texmf-dist/tex/ptex/
 share/texmf-dist/tex/ptex/base/
 share/texmf-dist/tex/ptex/base/ascii-jplain.tex
 share/texmf-dist/tex/ptex/base/kinsoku.tex
 share/texmf-dist/tex/ptex/base/ptex.tex
 share/texmf-dist/tex/ptex/config/
 share/texmf-dist/tex/ptex/config/ptex.ini
+share/texmf-dist/tex/ptexgeneric/
 share/texmf-dist/tex/ptexgeneric/config/
 share/texmf-dist/tex/ptexgeneric/config/language.ptx
 share/texmf-dist/tex/ptexgeneric/hyphen/
@@ -34561,11 +34719,14 @@ share/texmf-dist/tex/texinfo/txi-ru.tex
 share/texmf-dist/tex/texinfo/txi-sr.tex
 share/texmf-dist/tex/texinfo/txi-tr.tex
 share/texmf-dist/tex/texinfo/txi-uk.tex
+share/texmf-dist/tex/xelatex/
 share/texmf-dist/tex/xelatex/xetexconfig/
 share/texmf-dist/tex/xelatex/xetexconfig/crop.cfg
 share/texmf-dist/tex/xelatex/xetexconfig/hyperref.cfg
 share/texmf-dist/tex/xelatex/xgreek/
 share/texmf-dist/tex/xelatex/xgreek/xgreek.sty
+share/texmf-dist/tex/xetex/
+share/texmf-dist/tex/xetex/zhspacing/
 share/texmf-dist/tex/xetex/zhspacing/context/
 share/texmf-dist/tex/xetex/zhspacing/context/t-zhspacing.tex
 share/texmf-dist/tex/xetex/zhspacing/latex/
@@ -34576,11 +34737,15 @@ share/texmf-dist/tex/xetex/zhspacing/plain/zhmath.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhsmyclass.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhspacing.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhsusefulmacros.sty
+share/texmf/
+share/texmf/doc/
+share/texmf/dvipdfm/
 share/texmf/dvipdfm/config/
 share/texmf/dvipdfm/config/config
 @comment share/texmf/dvipdfm/config/config-win32
 share/texmf/dvipdfmx/
 share/texmf/dvipdfmx/dvipdfmx.cfg
+share/texmf/dvips/
 share/texmf/dvips/base/
 share/texmf/dvips/base/color.pro
 share/texmf/dvips/base/crop.pro
@@ -34637,11 +34802,14 @@ share/texmf/dvips/tetex/config.outline
 share/texmf/dvips/tetex/config.pdf
 share/texmf/dvips/tetex/config.pk
 share/texmf/dvips/tetex/config.www
+share/texmf/fonts/
 share/texmf/fonts/cmap/
 share/texmf/fonts/cmap/README
 share/texmf/fonts/cmap/dvipdfmx/
 share/texmf/fonts/cmap/dvipdfmx/EUC-UCS2
 share/texmf/fonts/cmap/dvipdfmx/README
+share/texmf/fonts/enc/
+share/texmf/fonts/enc/dvips/
 share/texmf/fonts/enc/dvips/afm2pl/
 share/texmf/fonts/enc/dvips/afm2pl/afm2pl-ot1.enc
 share/texmf/fonts/enc/dvips/afm2pl/afm2pl-ot1ital.enc
@@ -34661,8 +34829,10 @@ share/texmf/fonts/enc/dvips/tetex/bbad153f.enc
 share/texmf/fonts/enc/dvips/tetex/d9b29452.enc
 share/texmf/fonts/enc/dvips/tetex/f7b6d320.enc
 share/texmf/fonts/enc/dvips/tetex/mtex.enc
+share/texmf/fonts/enc/ttf2pk/
 share/texmf/fonts/enc/ttf2pk/base/
 share/texmf/fonts/enc/ttf2pk/base/T1-WGL4.enc
+share/texmf/fonts/lig/
 share/texmf/fonts/lig/afm2pl/
 share/texmf/fonts/lig/afm2pl/accents.lig
 share/texmf/fonts/lig/afm2pl/bound.lig
@@ -34671,6 +34841,8 @@ share/texmf/fonts/lig/afm2pl/defpost.lig
 share/texmf/fonts/lig/afm2pl/defpre.lig
 share/texmf/fonts/lig/afm2pl/forge.lig
 share/texmf/fonts/lig/afm2pl/ligtex.lig
+share/texmf/fonts/map/
+share/texmf/fonts/map/dvipdfm/
 share/texmf/fonts/map/dvipdfm/tetex/
 share/texmf/fonts/map/dvipdfm/tetex/cm-dvipdfm-fix.map
 share/texmf/fonts/map/dvipdfm/updmap/
@@ -34679,6 +34851,7 @@ share/texmf/fonts/map/dvipdfm/updmap/dvipdfm_dl14.map
 share/texmf/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
 share/texmf/fonts/map/dvipdfmx/
 share/texmf/fonts/map/dvipdfmx/cid-x.map
+share/texmf/fonts/map/dvips/
 share/texmf/fonts/map/dvips/tetex/
 share/texmf/fonts/map/dvips/tetex/cid-base.map
 share/texmf/fonts/map/dvips/tetex/dvipdfm35.map
@@ -34693,10 +34866,12 @@ share/texmf/fonts/map/dvips/updmap/ps2pk.map
 share/texmf/fonts/map/dvips/updmap/psfonts.map
 share/texmf/fonts/map/dvips/updmap/psfonts_pk.map
 share/texmf/fonts/map/dvips/updmap/psfonts_t1.map
+share/texmf/fonts/map/pdftex/
 share/texmf/fonts/map/pdftex/updmap/
 share/texmf/fonts/map/pdftex/updmap/pdftex.map
 share/texmf/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf/fonts/map/pdftex/updmap/pdftex_ndl14.map
+share/texmf/fonts/map/ttf2pk/
 share/texmf/fonts/map/ttf2pk/config/
 share/texmf/fonts/map/ttf2pk/config/ttfonts.map
 share/texmf/hbf2gf/
@@ -34716,12 +34891,14 @@ share/texmf/hbf2gf/gsfs14.cfg
 share/texmf/hbf2gf/j2so12.cfg
 share/texmf/hbf2gf/jsso12.cfg
 share/texmf/hbf2gf/ksso17.cfg
+share/texmf/scripts/
 share/texmf/scripts/simpdftex/
 share/texmf/scripts/simpdftex/simpdftex
 share/texmf/scripts/tetex/
 share/texmf/scripts/tetex/e2pall.pl
 share/texmf/scripts/tetex/updmap.pl
 @comment share/texmf/scripts/texlive/
+@comment share/texmf/scripts/texlive/lua/
 @comment share/texmf/scripts/texlive/lua/texlive/
 @comment share/texmf/scripts/texlive/lua/texlive/getopt.tlu
 @comment share/texmf/scripts/texlive/lua/texlive/tlpdb.tlu
@@ -34733,11 +34910,14 @@ share/texmf/scripts/tetex/updmap.pl
 @comment share/texmf/scripts/texlive/tlmgrgui.ico
 @comment share/texmf/scripts/texlive/tlmgrgui.pl
 @comment share/texmf/scripts/texlive/uninstall-win32.pl
+share/texmf/tex/
+share/texmf/tex/fontinst/
 share/texmf/tex/fontinst/afm2pl/
 share/texmf/tex/fontinst/afm2pl/README
 share/texmf/tex/fontinst/afm2pl/ly1.etx
 share/texmf/tex/fontinst/afm2pl/ly1c.etx
 share/texmf/tex/fontinst/afm2pl/makesc8y.tex
+share/texmf/tex/generic/
 share/texmf/tex/generic/config/
 share/texmf/tex/generic/config/language.dat
 share/texmf/tex/generic/config/language.dat.lua
@@ -34764,6 +34944,7 @@ share/texmf/tex/generic/hyphen/ibyhyph.tex
 share/texmf/tex/generic/hyphen/zerohyph.tex
 share/texmf/tex/generic/pdftex/
 share/texmf/tex/generic/pdftex/glyphtounicode.tex
+share/texmf/tex/latex/
 share/texmf/tex/latex/afm2pl/
 share/texmf/tex/latex/afm2pl/uclcptm.sty
 share/texmf/tex/latex/dvipdfm/
