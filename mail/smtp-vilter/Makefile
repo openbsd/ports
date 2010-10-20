@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -21,7 +21,6 @@ WANTLIB=		c m pthread milter
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 FLAVORS=	ldap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/20 15:23:04 naddy Exp $
 #
 
 COMMENT=	powerful command-line front end to diff
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
-USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/idiff ${PREFIX}/bin

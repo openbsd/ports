@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=		Nostromo webserver
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl
 
-USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 # Change bsd.port.mk vars

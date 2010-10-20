@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=		APC SmartUPS daemon
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-USE_GROFF =	Yes
 NO_REGRESS=		Yes
 
 do-install:

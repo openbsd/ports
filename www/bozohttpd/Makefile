@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT =	bozotic HTTP server
 
@@ -22,7 +22,6 @@ MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
 FAKE_FLAGS =		BINDIR=${TRUEPREFIX}/libexec MANDIR=${TRUEPREFIX}/man/cat
-USE_GROFF =	Yes
 
 REGRESS_TARGET =	check
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
@@ -25,7 +25,6 @@ EXTRACT_SUFX=	.tgz
 LIB_DEPENDS=	ldap_r.>=8,lber.>=8::databases/openldap
 RUN_DEPENDS=	::comms/hylafax
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

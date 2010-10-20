@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=		daemon for changing passwords
 
@@ -25,6 +25,5 @@ WANTLIB=		c
 
 MAKE_ENV=		MANDIR="${PREFIX}/man/cat" \
 			BINDIR="${PREFIX}/libexec"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

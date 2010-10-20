@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=	Garmin GPS upload/download utilities
 
@@ -15,5 +15,4 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-USE_GROFF =	Yes
 .include <bsd.port.mk>

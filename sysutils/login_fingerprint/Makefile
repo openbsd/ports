@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/20 15:23:04 naddy Exp $
 
 COMMENT=	provide fingerprint authentication
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=		fprint.>=0::security/libfprint \
 			MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 			usb::devel/libusb
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/login_fingerprint
