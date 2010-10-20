@@ -1,0 +1,26 @@
+$OpenBSD: patch-py_lekatnet_config_py,v 1.1 2010/10/20 11:29:46 dcoppa Exp $
+--- py/lekatnet/config.py.orig	Wed Oct 20 13:06:10 2010
++++ py/lekatnet/config.py	Wed Oct 20 13:08:06 2010
+@@ -52,7 +52,7 @@ import pwd
+ import tempfile
+ import sys
+ import tpg
+-import popen2
++from subprocess import Popen, PIPE
+ 
+ PARAMS = {	'ssh_path': "/usr/bin/ssh",
+ 		'rsh_path': "/usr/bin/rsh",
+@@ -265,10 +265,9 @@ class ConfigBase(dict):
+ 		for dhost in dhosts:
+ 			if not os.path.isabs(dhost):
+ 				dhost = os.path.join(_user_dir, dhost)
+-			p = popen2.Popen3(dhost, capturestderr=True)
+-			p.tochild.close()
+-			err = p.childerr.read()
+-			out = p.fromchild.read()
++			p = Popen(dhost, stderr=PIPE, stdin=PIPE, stdout=PIPE, close_fds=True, shell=True)
++			err = p.stderr.read()
++			out = p.stdout.read()
+ 			status = p.wait() >> 8
+ 			if err:
+ 				for line in err.split('\n'):

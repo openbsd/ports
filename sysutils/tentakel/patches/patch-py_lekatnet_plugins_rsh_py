@@ -1,0 +1,16 @@
+$OpenBSD: patch-py_lekatnet_plugins_rsh_py,v 1.1 2010/10/20 11:29:46 dcoppa Exp $
+--- py/lekatnet/plugins/rsh.py.orig	Wed Oct 20 13:15:33 2010
++++ py/lekatnet/plugins/rsh.py	Wed Oct 20 13:18:22 2010
+@@ -26,7 +26,11 @@ from lekatnet.remote import registerRemoteCommandPlugi
+ from lekatnet.remote import RemoteCommand
+ import time
+ import random
+-import md5
++
++try:
++    from hashlib import md5
++except ImportError:
++    from md5 import new as md5
+ 
+ class RSHRemoteCommand(RemoteCommand):
+ 	"RSH remote execution class"
