@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/30 19:18:07 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/20 10:16:50 robert Exp $
 
 COMMENT=	Flickr .Net API Library
 
 V=		2.2.0
 DISTNAME=	FlickrNet${V:C/^([0-9]+\.[0-9]+).*/\1/}-Src-48055
-PKGNAME=	mono-flickrnet-${V}p0
+PKGNAME=	mono-flickrnet-${V}p1
 CATEGORIES=	devel graphics
 
 HOMEPAGE=	http://www.codeplex.com/FlickrNet
@@ -18,17 +18,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/mono
 
-USE_GMAKE=	Yes
-
 WRKSRC=		${WRKDIST}/FlickrNet
 
-do-configure:
-	cd ${WRKSRC} && prj2make FlickrNet.csproj
+do-build:
+	cd ${WRKSRC} && XBUILD_COLORS=disable xbuild FlickrNet.csproj
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/mono/flickrnet
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	cd ${WRKSRC}/bin/Debug && ${INSTALL_DATA} FlickrNet.dll ${PREFIX}/lib/mono/flickrnet
+	cd ${WRKSRC}/bin/Debug && ${INSTALL_DATA} FlickrNet.dll FlickrNet.dll.mdb \
+		${PREFIX}/lib/mono/flickrnet
 	cd ${WRKSRC} && sed -e 's|@prefix@|${TRUEPREFIX}|g;s|@version@|${V}|g' \
 		< flickrnet.pc.in > flickrnet.pc
 	${INSTALL_DATA} ${WRKSRC}/flickrnet.pc ${PREFIX}/lib/pkgconfig

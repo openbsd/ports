@@ -1,0 +1,717 @@
+$OpenBSD: patch-FlickrNet_FlickrNet_csproj,v 1.1 2010/10/20 10:16:50 robert Exp $
+--- FlickrNet/FlickrNet.csproj.orig	Wed Oct 20 12:12:15 2010
++++ FlickrNet/FlickrNet.csproj	Wed Oct 20 12:12:19 2010
+@@ -1,396 +1,317 @@
+-<VisualStudioProject>
+-    <CSHARP
+-        ProjectType = "Local"
+-        ProductVersion = "7.10.3077"
+-        SchemaVersion = "2.0"
+-        ProjectGuid = "{5F017126-C1FF-4996-85CC-6150E80C6AFC}"
+-    >
+-        <Build>
+-            <Settings
+-                ApplicationIcon = ""
+-                AssemblyKeyContainerName = ""
+-                AssemblyName = "FlickrNet"
+-                AssemblyOriginatorKeyFile = ""
+-                DefaultClientScript = "JScript"
+-                DefaultHTMLPageLayout = "Grid"
+-                DefaultTargetSchema = "IE50"
+-                DelaySign = "false"
+-                OutputType = "Library"
+-                PreBuildEvent = ""
+-                PostBuildEvent = ""
+-                RootNamespace = "FlickrNet"
+-                RunPostBuildEvent = "OnBuildSuccess"
+-                StartupObject = ""
+-            >
+-                <Config
+-                    Name = "Debug"
+-                    AllowUnsafeBlocks = "false"
+-                    BaseAddress = "285212672"
+-                    CheckForOverflowUnderflow = "false"
+-                    ConfigurationOverrideFile = ""
+-                    DefineConstants = "DEBUG;TRACE"
+-                    DocumentationFile = "bin\Debug\FlickrNet.xml"
+-                    DebugSymbols = "true"
+-                    FileAlignment = "4096"
+-                    IncrementalBuild = "false"
+-                    NoStdLib = "false"
+-                    NoWarn = ""
+-                    Optimize = "false"
+-                    OutputPath = "bin\Debug\"
+-                    RegisterForComInterop = "false"
+-                    RemoveIntegerChecks = "false"
+-                    TreatWarningsAsErrors = "false"
+-                    WarningLevel = "4"
+-                />
+-                <Config
+-                    Name = "Release"
+-                    AllowUnsafeBlocks = "false"
+-                    BaseAddress = "285212672"
+-                    CheckForOverflowUnderflow = "false"
+-                    ConfigurationOverrideFile = ""
+-                    DefineConstants = "TRACE"
+-                    DocumentationFile = ""
+-                    DebugSymbols = "false"
+-                    FileAlignment = "4096"
+-                    IncrementalBuild = "false"
+-                    NoStdLib = "false"
+-                    NoWarn = ""
+-                    Optimize = "true"
+-                    OutputPath = "bin\Release\"
+-                    RegisterForComInterop = "false"
+-                    RemoveIntegerChecks = "false"
+-                    TreatWarningsAsErrors = "false"
+-                    WarningLevel = "4"
+-                />
+-            </Settings>
+-            <References>
+-                <Reference
+-                    Name = "System"
+-                    AssemblyName = "System"
+-                    HintPath = "..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+-                />
+-                <Reference
+-                    Name = "System.Data"
+-                    AssemblyName = "System.Data"
+-                    HintPath = "..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+-                />
+-                <Reference
+-                    Name = "System.XML"
+-                    AssemblyName = "System.Xml"
+-                    HintPath = "..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+-                />
+-                <Reference
+-                    Name = "System.Web"
+-                    AssemblyName = "System.Web"
+-                    HintPath = "..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+-                />
+-                <Reference
+-                    Name = "System.Drawing"
+-                    AssemblyName = "System.Drawing"
+-                    HintPath = "..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+-                />
+-            </References>
+-        </Build>
+-        <Files>
+-            <Include>
+-                <File
+-                    RelPath = "ActivityEvent.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "ActivityItem.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "ApiKeyRequiredException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "AssemblyInfo.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Auth.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "AuthenticationRequiredException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Blogs.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "BoundaryBox.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Cache.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Categories.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Comments.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Contacts.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Context.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "DateGranularity.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Enums.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "example_app.config"
+-                    BuildAction = "None"
+-                />
+-                <File
+-                    RelPath = "ExifPhoto.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Flickr.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "FlickrApiException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "FlickrConfigurationManager.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "FlickrConfigurationSettings.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "FlickrException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "FlickrNet.ndoc"
+-                    BuildAction = "None"
+-                />
+-                <File
+-                    RelPath = "FlickrNet.snk"
+-                    BuildAction = "None"
+-                />
+-                <File
+-                    RelPath = "FlickrWebException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "GeoAccuracy.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "GeoPermissions.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Groups.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "GroupSearchResults.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "License.txt"
+-                    BuildAction = "Content"
+-                />
+-                <File
+-                    RelPath = "Licenses.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Location.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "LockFile.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Methods.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PartialSearchOptions.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PersistentCache.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Person.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Photo.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoCounts.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoDates.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoInfo.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoInfoUsage.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoLocation.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoPermissions.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Photos.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoSearchExtras.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoSearchOptions.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoSearchOrder.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "PhotoSets.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Place.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Response.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "ResponseXmlException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "SafeNativeMethods.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "SignatureRequiredException.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Sizes.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Tags.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Uploader.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "UploadProgressEvent.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "User.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-                <File
+-                    RelPath = "Utils.cs"
+-                    SubType = "Code"
+-                    BuildAction = "Compile"
+-                />
+-            </Include>
+-        </Files>
+-    </CSHARP>
+-</VisualStudioProject>
+-
++﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
++  <PropertyGroup>
++    <ProjectType>Local</ProjectType>
++    <ProductVersion>9.0.30729</ProductVersion>
++    <SchemaVersion>2.0</SchemaVersion>
++    <ProjectGuid>{5F017126-C1FF-4996-85CC-6150E80C6AFC}</ProjectGuid>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
++    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
++    <ApplicationIcon>
++    </ApplicationIcon>
++    <AssemblyKeyContainerName>
++    </AssemblyKeyContainerName>
++    <AssemblyName>FlickrNet</AssemblyName>
++    <AssemblyOriginatorKeyFile>FlickrNet.snk</AssemblyOriginatorKeyFile>
++    <DefaultClientScript>JScript</DefaultClientScript>
++    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
++    <DefaultTargetSchema>IE50</DefaultTargetSchema>
++    <DelaySign>false</DelaySign>
++    <OutputType>Library</OutputType>
++    <RootNamespace>FlickrNet</RootNamespace>
++    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
++    <StartupObject>
++    </StartupObject>
++    <FileUpgradeFlags>
++    </FileUpgradeFlags>
++    <UpgradeBackupLocation>
++    </UpgradeBackupLocation>
++    <OldToolsVersion>2.0</OldToolsVersion>
++    <PublishUrl>publish\</PublishUrl>
++    <Install>true</Install>
++    <InstallFrom>Disk</InstallFrom>
++    <UpdateEnabled>false</UpdateEnabled>
++    <UpdateMode>Foreground</UpdateMode>
++    <UpdateInterval>7</UpdateInterval>
++    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
++    <UpdatePeriodically>false</UpdatePeriodically>
++    <UpdateRequired>false</UpdateRequired>
++    <MapFileExtensions>true</MapFileExtensions>
++    <ApplicationRevision>0</ApplicationRevision>
++    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
++    <IsWebBootstrapper>false</IsWebBootstrapper>
++    <UseApplicationTrust>false</UseApplicationTrust>
++    <BootstrapperEnabled>true</BootstrapperEnabled>
++    <SignAssembly>true</SignAssembly>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
++    <OutputPath>bin\Debug\</OutputPath>
++    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
++    <BaseAddress>285212672</BaseAddress>
++    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
++    <ConfigurationOverrideFile>
++    </ConfigurationOverrideFile>
++    <DefineConstants>DEBUG;TRACE</DefineConstants>
++    <DocumentationFile>bin\Debug\FlickrNet.xml</DocumentationFile>
++    <DebugSymbols>true</DebugSymbols>
++    <FileAlignment>4096</FileAlignment>
++    <NoStdLib>false</NoStdLib>
++    <NoWarn>
++    </NoWarn>
++    <Optimize>false</Optimize>
++    <RegisterForComInterop>false</RegisterForComInterop>
++    <RemoveIntegerChecks>false</RemoveIntegerChecks>
++    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
++    <WarningLevel>4</WarningLevel>
++    <DebugType>full</DebugType>
++    <ErrorReport>prompt</ErrorReport>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
++    <OutputPath>bin\Release\</OutputPath>
++    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
++    <BaseAddress>285212672</BaseAddress>
++    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
++    <ConfigurationOverrideFile>
++    </ConfigurationOverrideFile>
++    <DefineConstants>TRACE</DefineConstants>
++    <DocumentationFile>
++    </DocumentationFile>
++    <DebugSymbols>false</DebugSymbols>
++    <FileAlignment>4096</FileAlignment>
++    <NoStdLib>false</NoStdLib>
++    <NoWarn>
++    </NoWarn>
++    <Optimize>true</Optimize>
++    <RegisterForComInterop>false</RegisterForComInterop>
++    <RemoveIntegerChecks>false</RemoveIntegerChecks>
++    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
++    <WarningLevel>4</WarningLevel>
++    <DebugType>none</DebugType>
++    <ErrorReport>prompt</ErrorReport>
++  </PropertyGroup>
++  <ItemGroup>
++    <Reference Include="System">
++      <Name>System</Name>
++    </Reference>
++    <Reference Include="System.configuration" />
++    <Reference Include="System.Data">
++      <Name>System.Data</Name>
++    </Reference>
++    <Reference Include="System.Drawing">
++      <Name>System.Drawing</Name>
++    </Reference>
++    <Reference Include="System.Web">
++      <Name>System.Web</Name>
++    </Reference>
++    <Reference Include="System.Xml">
++      <Name>System.XML</Name>
++    </Reference>
++  </ItemGroup>
++  <ItemGroup>
++    <Compile Include="ActivityEvent.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="ActivityItem.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="ApiKeyRequiredException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="AssemblyInfo.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Auth.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="AuthenticationRequiredException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Blogs.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="BoundaryBox.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Cache.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Categories.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Comments.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Contacts.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Context.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="DateGranularity.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Enums.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="ExifPhoto.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Flickr.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="FlickrApiException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="FlickrConfigurationManager.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="FlickrConfigurationSettings.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="FlickrException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="FlickrWebException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="GeoAccuracy.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="GeoPermissions.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="GroupSearchResults.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Groups.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Licenses.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Location.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="LockFile.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Methods.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PartialSearchOptions.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PersistentCache.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Person.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Photo.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoCounts.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoDates.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoInfo.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoInfoUsage.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoLocation.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoPermissions.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoSearchExtras.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoSearchOptions.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoSearchOrder.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="PhotoSets.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Photos.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Place.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Response.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="ResponseXmlException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="SafeNativeMethods.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="SignatureRequiredException.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Sizes.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Tags.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="UploadProgressEvent.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Uploader.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="User.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <Compile Include="Utils.cs">
++      <SubType>Code</SubType>
++    </Compile>
++    <None Include="example_app.config" />
++    <None Include="FlickrNet.ndoc" />
++    <None Include="FlickrNet.snk" />
++    <Content Include="License.txt" />
++  </ItemGroup>
++  <ItemGroup>
++    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
++      <Visible>False</Visible>
++      <ProductName>.NET Framework Client Profile</ProductName>
++      <Install>false</Install>
++    </BootstrapperPackage>
++    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
++      <Visible>False</Visible>
++      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
++      <Install>true</Install>
++    </BootstrapperPackage>
++    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
++      <Visible>False</Visible>
++      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
++      <Install>false</Install>
++    </BootstrapperPackage>
++    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
++      <Visible>False</Visible>
++      <ProductName>.NET Framework 3.5</ProductName>
++      <Install>false</Install>
++    </BootstrapperPackage>
++    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
++      <Visible>False</Visible>
++      <ProductName>.NET Framework 3.5 SP1</ProductName>
++      <Install>false</Install>
++    </BootstrapperPackage>
++  </ItemGroup>
++  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
++  <PropertyGroup>
++    <PreBuildEvent>
++    </PreBuildEvent>
++    <PostBuildEvent>
++    </PostBuildEvent>
++  </PropertyGroup>
++</Project>
