@@ -1,31 +1,36 @@
-TeX Live for OpenBSD (PuffTeX) - Notes
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/09/24 15:44:41 edd Exp $
+TeX Live for OpenBSD - Notes
+$OpenBSD: README.OpenBSD,v 1.2 2010/10/21 15:41:55 edd Exp $
 ----------------------------
 
 There are a number of texmf trees in the OpenBSD packages:
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users
-  who do not need many extra macros or ConTeXt (approx 237MB).
+  who do not need many extra macros or ConTeXt (approx 302MB).
 
 texmf-full:
-  Extra macros and ConTeXt support (approx 191MB).
+  Extra macros and ConTeXt support (approx 163MB).
 
 texmf-doc:
-  Documentation for all of TeX Live (approx 612MB).
+  Documentation for all of TeX Live (approx 760MB).
 
 All sizes are compressed package sizes.
 
 The texmf package contents do not overlap.
 
 Individual users may override or add to the tex class and style files
-supplied by TeX Live by installing them into ~/.texmf and running
-mktexlsr(1) (as themselves). After this you can test the installation by
-searching for the files using kpsewhich(1).
+supplied by TeX Live by installing them into ~/texmf. There is no need
+to run mktexlsr(1) for a texmf tree in a user's $HOME. You can test the
+installation by searching for the files using kpsewhich(1). Eg:
 
-Be warned that the package tools manipulate TeX configuration files
-(texmf.cnf, fmtutil.cnf, etc.) when adding/deleting texlive related
-packages.
+% find $HOME/texmf
+/home/edd/texmf
+/home/edd/texmf/tex
+/home/edd/texmf/tex/latex
+/home/edd/texmf/tex/latex/acronym
+/home/edd/texmf/tex/latex/acronym/acronym.sty
+% kpsewhich acronym.sty
+/home/edd/texmf/tex/latex/acronym/acronym.sty
 
 The 'tlmgr' script was disabled in the OpenBSD package. This is because
 updating TeX Live in this way will upset the package tools due to
