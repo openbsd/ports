@@ -1,24 +1,31 @@
 TeX Live 2010 - Work in Progress (edd@)
-$OpenBSD: README,v 1.4 2010/10/20 23:13:00 edd Exp $
+$OpenBSD: README,v 1.5 2010/10/21 13:00:30 edd Exp $
 -------------------------------------------------------------------
 
  * Get base compilers working:		done
  * Get xindy linking against clisp:	done
- * Test build works.
+ * Test build works.			done
    -> amd64				done
-   -> i386
+   -> i386				done
    -> sparc64				done
- * Do texmf split:			initial split done
- * Get basic texmf packaging:		almost done
- * Re-add depenedencies:		started
- * Get -full config working:
- * Hack configs for subsets:
+ * Do texmf split:			done
+ * Get basic texmf packaging:		done
+ * Re-add depenedencies:		done
+ * Get -full config working:		done
+ * Hack configs for subsets:		
    -> hack texmf.cnf:			done
-      (fix $HOME ls-R owned root bug)
-   -> make fmtutil.cnf configs:		no need this year
- * Implement remaining @xxx directives:
+   -> fix $HOME ls-R owned root bug:
+   -> make fmtutil.cnf configs:		not needed this year
+ * Implement remaining @xxx directives:	done
+ * Put mans from texmf into separate
+   dist and pull into _base:
  * Test lots:
  * Link to build as print/texlive:
+
+--- KNOWN ISSUES ---
+
+ * gmverb is broken
+ * man pages make noise
 
 --- EXTRA ---
 

@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/20 23:13:00 edd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/10/21 13:00:30 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
 @pkgpath print/teTeX/base,-fmt
-@comment @unexec texlinks -u
+@comment mptopdf must be before texlinks -u
+bin/mptopdf
+@unexec texlinks -u
 bin/a2ping
 bin/afm2afm
 @bin bin/afm2pl
@@ -146,7 +148,6 @@ bin/mktextfm
 @bin bin/mmafm
 @bin bin/mmpfb
 @bin bin/mpost
-bin/mptopdf
 %%SHARED%%
 %%xindy%%
 bin/mtxrun
@@ -729,7 +730,7 @@ texmf/scripts/texdoc/texdoc.tlu
 texmf/scripts/texlive/
 texmf/scripts/texlive/rungs.tlu
 @comment texmf/scripts/texlive/tlmgr.pl
-@comment texmf/scripts/xindy/
+texmf/scripts/xindy/
 @comment texmf/texconfig/
 @comment texmf/texconfig/README
 @comment texmf/texconfig/g/

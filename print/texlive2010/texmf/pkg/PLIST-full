@@ -1,3 +1,9 @@
+@comment $OpenBSD: PLIST-full,v 1.3 2010/10/21 13:00:30 edd Exp $
+@conflict teTeX_texmf-*
+@conflict texlive_texmf-docs-<2010
+@conflict texlive_texmf-minimal-<2010
+@pkgpath print/texlive/texmf-full
+@pkgpath print/teTeX/texmf
 @comment share/man/
 @comment share/man/man1/
 @comment share/man/man1/lacheck.1
@@ -28107,3 +28113,11 @@ share/texmf/xindy/modules/tex/inputenc/latin.xdy
 share/texmf/xindy/modules/tex/inputenc/latin1.xdy
 share/texmf/xindy/modules/tex/inputenc/latin2.xdy
 share/texmf/xindy/modules/tex/inputenc/latin3.xdy
+@exec mktexlsr > /dev/null 2>&1
+@comment @exec fmtutil-sys --all > /dev/null 2>&1
+@exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@exec texlinks
+@unexec-delete mktexlsr > /dev/null 2>&1
+@comment @unexec-delete fmtutil-sys --all > /dev/null 2>&1
+@unexec-delete updmap-sys --syncwithtrees > /dev/null 2>&1
+@unexec-delete texlinks

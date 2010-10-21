@@ -1,3 +1,10 @@
+@comment $OpenBSD: PLIST-main,v 1.3 2010/10/21 13:00:30 edd Exp $
+@conflict teTeX_texmf-*
+@conflict texlive_base-<2010
+@conflict texlive_texmf-docs-<2010
+@conflict texlive_texmf-full-<2010
+@pkgpath print/texlive/texmf-minimal
+@pkgpath print/teTeX/texmf
 @comment share/man/
 @comment share/man/man1/
 @comment share/man/man1/dt2dv.1
@@ -24,7 +31,7 @@
 @comment share/man/man1/pk2bm.man1.pdf
 @comment share/man/man1/ps2pk.1
 @comment share/man/man1/ps2pk.man1.pdf
-share/texmf-dist/
+@extra share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
 share/texmf-dist/bibtex/bib/base/
@@ -34737,7 +34744,7 @@ share/texmf-dist/tex/xetex/zhspacing/plain/zhmath.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhsmyclass.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhspacing.sty
 share/texmf-dist/tex/xetex/zhspacing/plain/zhsusefulmacros.sty
-share/texmf/
+@extra share/texmf/
 share/texmf/doc/
 share/texmf/dvipdfm/
 share/texmf/dvipdfm/config/
@@ -34996,7 +35003,7 @@ share/texmf/web2c/tcvn-t5.tcx
 share/texmf/web2c/texmf.cnf
 share/texmf/web2c/texmfcnf.lua
 share/texmf/web2c/updmap-hdr.cfg
-share/texmf/web2c/updmap.cfg
+@sample share/texmf/web2c/updmap.cfg
 share/texmf/web2c/viscii-t5.tcx
 share/texmf/xdvi/
 share/texmf/xdvi/XDvi

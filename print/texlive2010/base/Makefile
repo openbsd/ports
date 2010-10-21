@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/20 23:13:00 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/21 13:00:30 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -42,7 +42,7 @@ NO_REGRESS =		Yes # not worth the effort.
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=	-fPIC
