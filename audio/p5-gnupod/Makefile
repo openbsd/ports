@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/21 21:44:36 sthen Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
 DISTNAME =	gnupod-0.99.8
 PKGNAME =	p5-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio
 
 HOMEPAGE =	http://www.gnu.org/software/gnupod/
