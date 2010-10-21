@@ -1,0 +1,15 @@
+$OpenBSD: patch-third-party_dht_dht_c,v 1.1 2010/10/21 21:52:51 naddy Exp $
+--- third-party/dht/dht.c.orig	Sat Oct 16 19:35:35 2010
++++ third-party/dht/dht.c	Sat Oct 16 19:35:49 2010
+@@ -41,10 +41,10 @@ THE SOFTWARE.
+ #include <sys/time.h>
+ 
+ #ifndef WIN32
+-#include <arpa/inet.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #else
+ #include <w32api.h>
+ #define WINVER WindowsXP

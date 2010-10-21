@@ -1,0 +1,11 @@
+$OpenBSD: patch-third-party_miniupnp_miniwget_c,v 1.1 2010/10/21 21:52:51 naddy Exp $
+--- third-party/miniupnp/miniwget.c.orig	Sat Oct 16 19:34:07 2010
++++ third-party/miniupnp/miniwget.c	Sat Oct 16 19:37:47 2010
+@@ -26,6 +26,7 @@
+ #include <sys/select.h>
+ #endif /* #else defined(__amigaos__) && !defined(__amigaos4__) */
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #define closesocket close

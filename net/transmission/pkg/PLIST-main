@@ -1,11 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/03/21 16:30:28 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2010/10/21 21:52:51 naddy Exp $
 @pkgpath net/transmission
+@bin bin/transmission-cli
+@bin bin/transmission-create
 @bin bin/transmission-daemon
+@bin bin/transmission-edit
 @bin bin/transmission-remote
-@bin bin/transmissioncli
+@bin bin/transmission-show
+@man man/man1/transmission-cli.1
+@man man/man1/transmission-create.1
 @man man/man1/transmission-daemon.1
+@man man/man1/transmission-edit.1
 @man man/man1/transmission-remote.1
-@man man/man1/transmissioncli.1
+@man man/man1/transmission-show.1
 @comment share/applications/
 share/transmission/
 share/transmission/web/
@@ -18,6 +24,7 @@ share/transmission/web/images/buttons/file_wanted_buttons.png
 share/transmission/web/images/buttons/info_activity.png
 share/transmission/web/images/buttons/info_files.png
 share/transmission/web/images/buttons/info_general.png
+share/transmission/web/images/buttons/info_peers.png
 share/transmission/web/images/buttons/info_trackers.png
 share/transmission/web/images/buttons/tab_backgrounds.png
 share/transmission/web/images/buttons/toolbar_buttons.png
@@ -29,8 +36,10 @@ share/transmission/web/images/graphics/chrome.png
 share/transmission/web/images/graphics/filter_bar.png
 share/transmission/web/images/graphics/filter_icon.png
 share/transmission/web/images/graphics/iphone_chrome.png
+share/transmission/web/images/graphics/lock_icon.png
 share/transmission/web/images/graphics/logo.png
 share/transmission/web/images/graphics/transfer_arrows.png
+share/transmission/web/images/graphics/wait20.gif
 share/transmission/web/images/progress/
 share/transmission/web/images/progress/progress.png
 share/transmission/web/images/webclip-icon.png
@@ -38,8 +47,10 @@ share/transmission/web/index.html
 share/transmission/web/javascript/
 share/transmission/web/javascript/common.js
 share/transmission/web/javascript/dialog.js
+share/transmission/web/javascript/formatter.js
 share/transmission/web/javascript/jquery/
 share/transmission/web/javascript/jquery/jquery.contextmenu.min.js
+share/transmission/web/javascript/jquery/jquery.form-2.21.js
 share/transmission/web/javascript/jquery/jquery.form.min.js
 share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
