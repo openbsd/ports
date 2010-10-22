@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2010/10/22 15:18:48 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2010/10/22 15:32:33 jasper Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -21,3 +21,5 @@ CONFIGURE_ARGS+=--target=arm-elf    \
 		--disable-werror
 
 EXTRACT_SUFX?=	.tar.bz2
+
+USE_GROFF?=	Yes

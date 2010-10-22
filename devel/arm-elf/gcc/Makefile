@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/22 15:20:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/22 15:32:33 jasper Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -44,7 +44,6 @@ MAKE_ENV=	MACHINE_ARCH=arm-elf
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 YACC=		bison
 
 REGRESS_DEPENDS=::devel/dejagnu
