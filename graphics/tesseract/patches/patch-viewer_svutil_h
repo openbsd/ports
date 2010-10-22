@@ -1,6 +1,5 @@
-$OpenBSD: patch-viewer_svutil_h,v 1.2 2009/08/24 07:12:40 ajacoutot Exp $
---- viewer/svutil.h.orig	Wed Jun  3 15:01:03 2009
-+++ viewer/svutil.h	Sun Aug 23 20:25:45 2009
+--- viewer/svutil.h.orig	Tue Oct  5 20:48:35 2010
++++ viewer/svutil.h	Tue Oct  5 20:48:58 2010
 @@ -34,6 +34,11 @@
  #else
  #include <pthread.h>

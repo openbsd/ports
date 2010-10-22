@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2010/10/22 19:31:43 ajacoutot Exp $
+@lib lib/libtesseract_api.so.${LIBtesseract_api_VERSION}
+@lib lib/libtesseract_ccstruct.so.${LIBtesseract_ccstruct_VERSION}
+@lib lib/libtesseract_ccutil.so.${LIBtesseract_ccutil_VERSION}
+@lib lib/libtesseract_classify.so.${LIBtesseract_classify_VERSION}
+@lib lib/libtesseract_cutil.so.${LIBtesseract_cutil_VERSION}
+@lib lib/libtesseract_dict.so.${LIBtesseract_dict_VERSION}
+@lib lib/libtesseract_image.so.${LIBtesseract_image_VERSION}
+@lib lib/libtesseract_main.so.${LIBtesseract_main_VERSION}
+@lib lib/libtesseract_textord.so.${LIBtesseract_textord_VERSION}
+@lib lib/libtesseract_training.so.${LIBtesseract_training_VERSION}
+@lib lib/libtesseract_viewer.so.${LIBtesseract_viewer_VERSION}
+@lib lib/libtesseract_wordrec.so.${LIBtesseract_wordrec_VERSION}

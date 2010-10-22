@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/17 08:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/22 19:31:43 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 COMMENT-de=	German language data for tesseract
@@ -8,17 +8,29 @@ COMMENT-it=	Italian language data for tesseract
 COMMENT-nl=	Dutch language data for tesseract
 COMMENT-pt=	Portuguese (Brazilian) language data for tesseract
 
-DISTNAME=	tesseract-2.04
+DISTNAME=	tesseract-3.00
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
 PKGNAME-de=	tesseract-de-2.00
 PKGNAME-es=	tesseract-es-2.00
 PKGNAME-fr=	tesseract-fr-2.00
 PKGNAME-it=	tesseract-it-2.00
 PKGNAME-nl=	tesseract-nl-2.00
 PKGNAME-pt=	tesseract-pt-2.01
+
+SHARED_LIBS +=  tesseract_api             0.0 # 3.0
+SHARED_LIBS +=  tesseract_ccstruct        0.0 # 3.0
+SHARED_LIBS +=  tesseract_ccutil          0.0 # 3.0
+SHARED_LIBS +=  tesseract_classify        0.0 # 3.0
+SHARED_LIBS +=  tesseract_cutil           0.0 # 3.0
+SHARED_LIBS +=  tesseract_dict            0.0 # 3.0
+SHARED_LIBS +=  tesseract_image           0.0 # 3.0
+SHARED_LIBS +=  tesseract_main            0.0 # 3.0
+SHARED_LIBS +=  tesseract_textord         0.0 # 3.0
+SHARED_LIBS +=  tesseract_training        0.0 # 3.0
+SHARED_LIBS +=  tesseract_viewer          0.0 # 3.0
+SHARED_LIBS +=  tesseract_wordrec         0.0 # 3.0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		tesseract-2.00.deu.tar.gz \
@@ -62,9 +74,12 @@ PKG_ARCH-pt=	*
 
 MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/
 
+USE_LIBTOOL=	Yes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/ccutil/debugwin.cpp
