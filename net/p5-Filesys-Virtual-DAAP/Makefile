@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/22 19:40:01 jasper Exp $
 
 COMMENT=	presents a DAAP share as a VFS
 
 MODULES=	cpan
 DISTNAME=	Filesys-Virtual-DAAP-0.04
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Filesys-Virtual-DAAP
-	${INSTALL} ${WRKSRC}/ftp_republish \
+	${INSTALL_DATA} ${WRKSRC}/ftp_republish \
 		${PREFIX}/share/examples/p5-Filesys-Virtual-DAAP
 
 .include <bsd.port.mk>
