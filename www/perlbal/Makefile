@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/22 19:34:09 jasper Exp $
 
 COMMENT=	Perl-based reverse proxy load balancer and web server
 
@@ -21,13 +21,15 @@ RUN_DEPENDS=	::net/p5-Danga-Socket \
 		::devel/p5-BSD-Resource
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	conf
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/perlbal
 
 post-install:
+	${MODCPAN_POST_INSTALL}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-Perlbal
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Perlbal
-	${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/share/examples/p5-Perlbal
 	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/p5-Perlbal
 
 # XXX IO::AIO not ported yet
