@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/22 06:41:15 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -7,15 +7,41 @@ share/gnome/help/simple-scan/C/
 share/gnome/help/simple-scan/C/adf.page
 share/gnome/help/simple-scan/C/crop.page
 share/gnome/help/simple-scan/C/dpi.page
-share/gnome/help/simple-scan/C/edit.page
 share/gnome/help/simple-scan/C/email.page
 share/gnome/help/simple-scan/C/index.page
 share/gnome/help/simple-scan/C/legal.xml
 share/gnome/help/simple-scan/C/print.page
+share/gnome/help/simple-scan/C/reorder.page
 share/gnome/help/simple-scan/C/rotate.page
 share/gnome/help/simple-scan/C/save.page
 share/gnome/help/simple-scan/C/scanner.page
 share/gnome/help/simple-scan/C/scanning.page
+share/gnome/help/simple-scan/POT/
+share/gnome/help/simple-scan/POT/adf.page
+share/gnome/help/simple-scan/POT/crop.page
+share/gnome/help/simple-scan/POT/dpi.page
+share/gnome/help/simple-scan/POT/email.page
+share/gnome/help/simple-scan/POT/index.page
+share/gnome/help/simple-scan/POT/legal.xml
+share/gnome/help/simple-scan/POT/print.page
+share/gnome/help/simple-scan/POT/reorder.page
+share/gnome/help/simple-scan/POT/rotate.page
+share/gnome/help/simple-scan/POT/save.page
+share/gnome/help/simple-scan/POT/scanner.page
+share/gnome/help/simple-scan/POT/scanning.page
+share/gnome/help/simple-scan/de/
+share/gnome/help/simple-scan/de/adf.page
+share/gnome/help/simple-scan/de/crop.page
+share/gnome/help/simple-scan/de/dpi.page
+share/gnome/help/simple-scan/de/email.page
+share/gnome/help/simple-scan/de/index.page
+share/gnome/help/simple-scan/de/legal.xml
+share/gnome/help/simple-scan/de/print.page
+share/gnome/help/simple-scan/de/reorder.page
+share/gnome/help/simple-scan/de/rotate.page
+share/gnome/help/simple-scan/de/save.page
+share/gnome/help/simple-scan/de/scanner.page
+share/gnome/help/simple-scan/de/scanning.page
 share/locale/af/LC_MESSAGES/simple-scan.mo
 share/locale/ar/LC_MESSAGES/simple-scan.mo
 share/locale/ast/LC_MESSAGES/simple-scan.mo
@@ -59,6 +85,26 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/simple-scan.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/simple-scan/
+share/simple-scan/icons/
+share/simple-scan/icons/hicolor/
+share/simple-scan/icons/hicolor/16x16/
+share/simple-scan/icons/hicolor/16x16/actions/
+share/simple-scan/icons/hicolor/16x16/actions/object-crop.png
+share/simple-scan/icons/hicolor/22x22/
+share/simple-scan/icons/hicolor/22x22/actions/
+share/simple-scan/icons/hicolor/22x22/actions/object-crop.png
+share/simple-scan/icons/hicolor/24x24/
+share/simple-scan/icons/hicolor/24x24/actions/
+share/simple-scan/icons/hicolor/24x24/actions/object-crop.png
+share/simple-scan/icons/hicolor/32x32/
+share/simple-scan/icons/hicolor/32x32/actions/
+share/simple-scan/icons/hicolor/32x32/actions/object-crop.png
+share/simple-scan/icons/hicolor/48x48/
+share/simple-scan/icons/hicolor/48x48/actions/
+share/simple-scan/icons/hicolor/48x48/actions/object-crop.png
+share/simple-scan/icons/hicolor/scalable/
+share/simple-scan/icons/hicolor/scalable/actions/
+share/simple-scan/icons/hicolor/scalable/actions/object-crop.svg
 share/simple-scan/simple-scan.ui
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

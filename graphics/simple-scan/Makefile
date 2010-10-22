@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/22 06:41:15 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
-GNOME_VERSION=	0.9.7
-REVISION=	1
+GNOME_VERSION=	2.32.0.1
 
 EXTRACT_SUFX=	.tar.gz
 
@@ -26,9 +25,9 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render GL Xxf86vm dbus-glib-1 drm jpeg xcb-shm
 
-MASTER_SITES=	http://people.ubuntu.com/~robert-ancell/simple-scan/
+#MASTER_SITES=	http://people.ubuntu.com/~robert-ancell/simple-scan/
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -47,5 +46,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURED_SHARED}
+
+FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>

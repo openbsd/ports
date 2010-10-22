@@ -1,74 +1,117 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
---- configure.orig	Sat Mar 13 09:34:20 2010
-+++ configure	Sat Mar 13 09:34:36 2010
-@@ -5244,7 +5244,6 @@ if test -n "$PKG_CONFIG"; then
+$OpenBSD: patch-configure,v 1.2 2010/10/22 06:41:15 ajacoutot Exp $
+--- configure.orig	Fri Oct 22 05:20:30 2010
++++ configure	Fri Oct 22 07:54:38 2010
+@@ -5249,24 +5249,20 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "
-     gtk+-2.0
-@@ -5254,7 +5253,6 @@ if test -n "$PKG_CONFIG"; then
+     gtk+-2.0 >= $GTK_REQUIRED
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -5267,7 +5265,6 @@ if test -n "$PKG_CONFIG"; then
+@@ -5276,12 +5272,10 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -5289,7 +5286,6 @@ if test -n "$PKG_CONFIG"; then
+@@ -5298,24 +5292,20 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "
-     gtk+-2.0
-@@ -5299,7 +5295,6 @@ if test -n "$PKG_CONFIG"; then
+     gtk+-2.0 >= $GTK_REQUIRED
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -5312,7 +5307,6 @@ if test -n "$PKG_CONFIG"; then
+@@ -5325,12 +5315,10 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -5340,7 +5334,6 @@ fi
+@@ -5356,12 +5344,10 @@ fi
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
- "`
+ " 2>&1`
          else
- 	        SIMPLE_SCAN_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "
-@@ -5351,7 +5344,6 @@ fi
+ 	        SIMPLE_SCAN_PKG_ERRORS=`$PKG_CONFIG --print-errors "
+@@ -5369,12 +5355,10 @@ fi
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
- "`
+ " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -5365,7 +5357,6 @@ fi
+@@ -5385,12 +5369,10 @@ fi
+     gconf-2.0
+     gmodule-export-2.0
+     gthread-2.0
+-    zlib
      cairo
      gdk-pixbuf-2.0
      cairo-pdf
+     dbus-glib-1
 -    gudev-1.0
  ) were not met:
  

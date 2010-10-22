@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_simple-scan_c,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_c,v 1.2 2010/10/22 06:41:15 ajacoutot Exp $
 
 No gudev under OpenBSD.
 
---- src/simple-scan.c.orig	Sat Mar 13 09:34:47 2010
-+++ src/simple-scan.c	Sat Mar 13 09:36:03 2010
+--- src/simple-scan.c.orig	Tue Aug 24 09:22:59 2010
++++ src/simple-scan.c	Fri Oct 22 07:57:34 2010
 @@ -14,7 +14,9 @@
  #include <glib/gi18n.h>
  #include <gtk/gtk.h>
@@ -11,10 +11,30 @@ No gudev under OpenBSD.
 +#ifndef __OpenBSD__
  #include <gudev/gudev.h>
 +#endif
+ #include <dbus/dbus-glib.h>
  
  #include <sane/sane.h> // For SANE_STATUS_CANCELLED
+@@ -28,7 +30,9 @@ static ScanDevice *default_device = NULL;
  
-@@ -493,17 +495,21 @@ get_options (int argc, char **argv)
+ static gboolean have_devices = FALSE;
+ 
++#ifndef __OpenBSD__
+ static GUdevClient *udev_client;
++#endif
+ 
+ static SimpleScan *ui;
+ 
+@@ -404,7 +408,9 @@ quit_cb (SimpleScan *ui)
+ {
+     g_object_unref (book);
+     g_object_unref (ui);
++#ifndef __OpenBSD__
+     g_object_unref (udev_client);
++#endif
+     scanner_free (scanner);
+     gtk_main_quit ();
+ }
+@@ -541,17 +547,21 @@ get_options (int argc, char **argv)
  }
  
  
@@ -26,17 +46,17 @@ No gudev under OpenBSD.
  }
 +#endif
  
+ 
  int
  main (int argc, char **argv)
  {
 +#ifndef __OpenBSD__
-     GUdevClient *udev_client;
      const char *udev_subsystems[] = { "usb", NULL };
 +#endif
      gchar *path;
  
      g_thread_init (NULL);
-@@ -547,8 +553,10 @@ main (int argc, char **argv)
+@@ -594,8 +604,10 @@ main (int argc, char **argv)
      g_signal_connect (G_OBJECT (scanner), "scan-failed", G_CALLBACK (scanner_failed_cb), NULL);
      g_signal_connect (G_OBJECT (scanner), "scanning-changed", G_CALLBACK (scanner_scanning_changed_cb), NULL);
  
@@ -45,5 +65,5 @@ No gudev under OpenBSD.
      g_signal_connect (udev_client, "uevent", G_CALLBACK (on_uevent), NULL);
 +#endif
  
-     if (default_device)
-         ui_set_selected_device (ui, default_device);
+     if (default_device) {
+         GList device_list;
