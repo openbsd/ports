@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/22 16:41:28 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.9
-REVISION=	0
+REVISION=		1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,7 +33,6 @@ RUN_DEPENDS=	::misc/shared-mime-info
 LIB_DEPENDS=	::devel/libglade2
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
@@ -63,7 +64,7 @@ do-install:
 	@cp -R ${WRKSRC}/ROX-Filer/$i ${PREFIX}/rox/ROX-Filer
 .endfor
 	@echo '#!/bin/sh' > ${PREFIX}/bin/rox
-	@echo 'exec /usr/local/rox/ROX-Filer/AppRun "$$@"' >> ${PREFIX}/bin/rox
+	@echo 'exec ${PREFIX}/rox/ROX-Filer/AppRun "$$@"' >> ${PREFIX}/bin/rox
 	@chmod ugo+rx ${PREFIX}/bin/rox
 
 .include <bsd.port.mk>
