@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/10/13 16:57:30 jasper Exp $
---- src/Makefile.in.orig	Tue Oct 13 18:39:37 2009
-+++ src/Makefile.in	Tue Oct 13 18:41:15 2009
-@@ -107,7 +107,7 @@ LIBOBJS = @LIBOBJS@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/10/22 18:20:58 jasper Exp $
+--- src/Makefile.in.orig	Fri Oct 15 23:44:39 2010
++++ src/Makefile.in	Fri Oct 22 18:24:12 2010
+@@ -124,7 +124,7 @@ LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
  LTLIBOBJS = @LTLIBOBJS@
  MAKEINFO = @MAKEINFO@
