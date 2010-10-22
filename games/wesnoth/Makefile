@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/22 18:35:57 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -76,8 +76,7 @@ CONFIGURE_ARGS+=--enable-lowmem
 .endif
 
 .if ${FLAVOR:L:Mtinygui}
-BUILD_DEPENDS+=	::graphics/pngmeta \
-		:ImageMagick-*:graphics/ImageMagick
+BUILD_DEPENDS+=:ImageMagick-*:graphics/ImageMagick
 CONFIGURE_ARGS+=--enable-tinygui
 .endif
 
