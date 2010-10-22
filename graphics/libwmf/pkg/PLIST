@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/16 19:22:16 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/10/22 16:29:46 jasper Exp $
 %%SHARED%%
 bin/libwmf-config
 bin/libwmf-fontmap
-bin/wmf2eps
-bin/wmf2fig
-bin/wmf2svg
-bin/wmf2x
+@bin bin/wmf2eps
+@bin bin/wmf2fig
+@bin bin/wmf2svg
+@bin bin/wmf2x
 include/libwmf/
 include/libwmf/api.h
 include/libwmf/canvas.h
