@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 07:15:56 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/22 19:22:36 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -8,13 +8,11 @@ MOZILLA_BRANCH =	1.9.1
 MOZILLA_CODENAME =	calendar
 
 DISTNAME =		lightning-sunbird-1.0b1.source
-REVISION =		4
+REVISION =		5
 EPOCH =			0
 
 CATEGORIES =	productivity mail
 
-# need to be in synch with SO_VERSION in
-# mail/mozilla-thunderbird and www/seamonkey for lighting to work
 SO_VERSION =	16.0
 
 MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
