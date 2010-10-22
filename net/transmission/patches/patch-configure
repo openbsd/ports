@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.21 2010/10/21 21:52:51 naddy Exp $
---- configure.orig	Sat Oct 16 19:15:21 2010
-+++ configure	Sat Oct 16 19:16:05 2010
+$OpenBSD: patch-configure,v 1.22 2010/10/22 13:36:39 naddy Exp $
+--- configure.orig	Sun Oct 17 02:15:03 2010
++++ configure	Fri Oct 22 15:32:32 2010
 @@ -10870,8 +10870,8 @@ if test 0 = "0"; then
  else
    supported_build=no
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.21 2010/10/21 21:52:51 naddy Exp $
  
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking gcc version" >&5
  $as_echo_n "checking gcc version... " >&6; }
-@@ -15399,7 +15399,7 @@ $as_echo_n "checking gcc version... " >&6; }
+@@ -15399,10 +15399,10 @@ $as_echo_n "checking gcc version... " >&6; }
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GCC_VERSION" >&5
  $as_echo "$GCC_VERSION" >&6; }
      if test $GCC_VERSION_NUM -ge 304; then
@@ -29,4 +29,8 @@ $OpenBSD: patch-configure,v 1.21 2010/10/21 21:52:51 naddy Exp $
 +                : CFLAGS="$CFLAGS -Wextra -Wdeclaration-after-statement -Winit-self"
      fi
      if test $GCC_VERSION_NUM -ge 403; then
-                 CFLAGS="$CFLAGS -Wvariadic-macros"
+-                CFLAGS="$CFLAGS -Wvariadic-macros"
++                : CFLAGS="$CFLAGS -Wvariadic-macros"
+     fi
+ fi
+ 
