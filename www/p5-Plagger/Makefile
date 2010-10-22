@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/22 20:25:07 jasper Exp $
 
 COMMENT=	pluggable RSS/Atom aggregator
 
@@ -52,15 +52,15 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SHAREDIR=	${PREFIX}/share/p5-Plagger
 
+MODCPAN_EXAMPLES=	Yes
+
 pre-configure:
 	perl -pi -e 's!%%SHAREDIR%%!${SHAREDIR}!' \
 		${WRKSRC}/lib/Plagger/{Plugin,Template}.pm
 
 post-install:
-	${INSTALL_DATA_DIR} ${SHAREDIR}/assets \
-		${PREFIX}/share/examples/p5-Plagger
+	${MODCPAN_POST_INSTALL}
+	${INSTALL_DATA_DIR} ${SHAREDIR}/assets
 	cd ${WRKSRC}/assets && pax -rw . ${SHAREDIR}/assets
-	${INSTALL_DATA} ${WRKSRC}/examples/*.yaml \
-		${PREFIX}/share/examples/p5-Plagger
 
 .include <bsd.port.mk>
