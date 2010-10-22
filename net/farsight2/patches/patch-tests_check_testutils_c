@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_check_testutils_c,v 1.1 2010/10/22 18:20:22 jasper Exp $
+--- tests/check/testutils.c.orig	Fri Oct 22 18:43:23 2010
++++ tests/check/testutils.c	Fri Oct 22 18:43:52 2010
+@@ -27,7 +27,9 @@
+ #include "testutils.h"
+ 
+ #ifdef HAVE_GETIFADDRS
+- #include <sys/socket.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+  #include <ifaddrs.h>
+  #include <net/if.h>
+  #include <arpa/inet.h>

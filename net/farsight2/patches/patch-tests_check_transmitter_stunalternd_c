@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_check_transmitter_stunalternd_c,v 1.1 2010/10/22 18:20:22 jasper Exp $
+--- tests/check/transmitter/stunalternd.c.orig	Fri Oct 22 18:44:04 2010
++++ tests/check/transmitter/stunalternd.c	Fri Oct 22 18:44:17 2010
+@@ -38,6 +38,7 @@
+ #include <getopt.h>
+ #include <errno.h>
+ #include <limits.h>
++#include <sys/uio.h>
+ 
+ #include <pthread.h>
+ 
