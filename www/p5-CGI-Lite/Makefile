@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/22 19:24:42 jasper Exp $
 
 COMMENT=	process and decode WWW forms and cookies	
 
@@ -16,10 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-EG_DIR= 	${PREFIX}/share/examples/p5-CGI-Lite
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EG_DIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

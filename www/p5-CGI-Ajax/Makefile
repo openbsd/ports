@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/22 19:24:42 jasper Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-CGI-Ajax
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${PREFIX}/share/examples/p5-CGI-Ajax
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	scripts
 
 .include <bsd.port.mk>

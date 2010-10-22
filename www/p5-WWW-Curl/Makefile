@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/22 19:24:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,12 +25,10 @@ LIB_DEPENDS=	curl.>=2.2::net/curl
 
 MAKE_ENV+=	CURL_TEST_URL="http://www.openbsd.org/"
 
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/p5-WWW-Curl
+
 post-configure:
 	@perl -pi -e s,'t/\*.t','t/new/\*.t',g ${WRKSRC}/Makefile
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-WWW-Curl
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-WWW-Curl
 
 .include <bsd.port.mk>
