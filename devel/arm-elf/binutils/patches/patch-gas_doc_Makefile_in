@@ -1,11 +1,11 @@
-$OpenBSD: patch-gas_doc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
---- gas/doc/Makefile.in.orig	Thu Oct 12 12:49:14 2006
-+++ gas/doc/Makefile.in	Thu Oct 12 12:52:02 2006
-@@ -50,7 +50,7 @@ CONFIG_CLEAN_FILES =
+$OpenBSD: patch-gas_doc_Makefile_in,v 1.2 2010/10/22 15:19:28 jasper Exp $
+--- gas/doc/Makefile.in.orig	Wed Oct 13 23:30:43 2010
++++ gas/doc/Makefile.in	Wed Oct 13 23:30:51 2010
+@@ -60,7 +60,7 @@ CONFIG_CLEAN_VPATH_FILES =
  depcomp =
  am__depfiles_maybe =
  SOURCES =
--INFO_DEPS = $(srcdir)/as.info
+-INFO_DEPS = as.info
 +INFO_DEPS =
  TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
  am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
