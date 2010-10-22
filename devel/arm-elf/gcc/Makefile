@@ -1,22 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/22 15:20:04 jasper Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
-VERSION=	3.4.5
-FULL_VERSION=	3.4-20050913
-DISTNAME=	gcc-${FULL_VERSION}
+VERSION=	4.4.4
+DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
-REVISION=	2
 
 SUBST_VARS+=	VERSION
 
-# GPL
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-
-WANTLIB=	c
+WANTLIB=	c gmp mpfr
 DIST_SUBDIR=	gcc
 
 MAKE_GXX=	No
@@ -25,14 +17,14 @@ MAKE_OBJC=	No
 MAKE_JAVA=	No
 MAKE_ADA=	No
 
-EXTRACT_SUFX=	.tar.bz2
-
-MASTER_SITES= 	http://distfiles.nl/
+MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
 BUILD_DEPENDS+=	:autoconf-2.13:devel/autoconf/2.13	\
 		::devel/bison				\
 		::devel/metaauto			\
 		::devel/arm-elf/binutils
+
+LIB_DEPENDS=	::devel/mpfr
 
 LANGS=		c,c++
 CC=		/usr/bin/gcc
@@ -40,7 +32,11 @@ CFLAGS=		-O2 -g
 
 CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--enable-multilib		\
+		--enable-interwork		\
+		--with-newlib			\
 		--enable-cpp
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # cope with user settings in /etc/mk.conf
 MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include"
@@ -55,6 +51,6 @@ REGRESS_DEPENDS=::devel/dejagnu
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/lib/gcc/${CONFIG}/${VERSION}/include
+		${PREFIX}/lib/gcc/${CONFIG}/${VERSION}/
 
 .include <bsd.port.mk>

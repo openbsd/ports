@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_arm_unknown-elf_h,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
---- gcc/config/arm/unknown-elf.h.orig	Tue Feb 24 15:25:22 2004
-+++ gcc/config/arm/unknown-elf.h	Sat Oct 14 18:06:38 2006
-@@ -46,7 +46,7 @@
+$OpenBSD: patch-gcc_config_arm_unknown-elf_h,v 1.2 2010/10/22 15:20:04 jasper Exp $
+--- gcc/config/arm/unknown-elf.h.orig	Fri Feb 20 16:20:38 2009
++++ gcc/config/arm/unknown-elf.h	Thu Oct 14 09:41:14 2010
+@@ -49,7 +49,7 @@
  #define SUBTARGET_CPP_SPEC  "-D__USES_INITFINI__"
  
  #undef  PREFERRED_DEBUGGING_TYPE

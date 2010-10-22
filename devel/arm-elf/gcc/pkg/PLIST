@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/10/14 09:58:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/22 15:20:04 jasper Exp $
 arm-elf/
 arm-elf/lib/
 @bin bin/arm-elf-c++
@@ -15,30 +15,28 @@ lib/gcc/arm-elf/${VERSION}/crtend.o
 lib/gcc/arm-elf/${VERSION}/crti.o
 lib/gcc/arm-elf/${VERSION}/crtn.o
 lib/gcc/arm-elf/${VERSION}/include/
-lib/gcc/arm-elf/${VERSION}/include/README
+lib/gcc/arm-elf/${VERSION}/include-fixed/
+lib/gcc/arm-elf/${VERSION}/include-fixed/README
+lib/gcc/arm-elf/${VERSION}/include-fixed/limits.h
+lib/gcc/arm-elf/${VERSION}/include-fixed/syslimits.h
+lib/gcc/arm-elf/${VERSION}/include/arm_neon.h
 lib/gcc/arm-elf/${VERSION}/include/float.h
 lib/gcc/arm-elf/${VERSION}/include/iso646.h
-lib/gcc/arm-elf/${VERSION}/include/limits.h
 lib/gcc/arm-elf/${VERSION}/include/mmintrin.h
 lib/gcc/arm-elf/${VERSION}/include/stdarg.h
 lib/gcc/arm-elf/${VERSION}/include/stdbool.h
 lib/gcc/arm-elf/${VERSION}/include/stddef.h
-lib/gcc/arm-elf/${VERSION}/include/syslimits.h
+lib/gcc/arm-elf/${VERSION}/include/stdfix.h
+lib/gcc/arm-elf/${VERSION}/include/tgmath.h
 lib/gcc/arm-elf/${VERSION}/include/unwind.h
 lib/gcc/arm-elf/${VERSION}/include/varargs.h
 lib/gcc/arm-elf/${VERSION}/install-tools/
+lib/gcc/arm-elf/${VERSION}/install-tools/fixinc_list
 lib/gcc/arm-elf/${VERSION}/install-tools/gsyslimits.h
 lib/gcc/arm-elf/${VERSION}/install-tools/include/
 lib/gcc/arm-elf/${VERSION}/install-tools/include/README
-lib/gcc/arm-elf/${VERSION}/install-tools/include/float.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/iso646.h
 lib/gcc/arm-elf/${VERSION}/install-tools/include/limits.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/mmintrin.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/stdarg.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/stdbool.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/stddef.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/unwind.h
-lib/gcc/arm-elf/${VERSION}/install-tools/include/varargs.h
+lib/gcc/arm-elf/${VERSION}/install-tools/macro_list
 lib/gcc/arm-elf/${VERSION}/install-tools/mkheaders.conf
 lib/gcc/arm-elf/${VERSION}/interwork/
 lib/gcc/arm-elf/${VERSION}/interwork/crtbegin.o
@@ -49,7 +47,6 @@ lib/gcc/arm-elf/${VERSION}/interwork/libgcc.a
 lib/gcc/arm-elf/${VERSION}/interwork/libgcov.a
 lib/gcc/arm-elf/${VERSION}/libgcc.a
 lib/gcc/arm-elf/${VERSION}/libgcov.a
-lib/gcc/arm-elf/${VERSION}/specs
 lib/gcc/arm-elf/${VERSION}/thumb/
 lib/gcc/arm-elf/${VERSION}/thumb/crtbegin.o
 lib/gcc/arm-elf/${VERSION}/thumb/crtend.o
@@ -74,6 +71,7 @@ libexec/gcc/arm-elf/${VERSION}/install-tools/
 libexec/gcc/arm-elf/${VERSION}/install-tools/fixinc.sh
 @bin libexec/gcc/arm-elf/${VERSION}/install-tools/fixincl
 libexec/gcc/arm-elf/${VERSION}/install-tools/mkheaders
+libexec/gcc/arm-elf/${VERSION}/install-tools/mkinstalldirs
 @man man/man1/arm-elf-cpp.1
 @man man/man1/arm-elf-g++.1
 @man man/man1/arm-elf-gcc.1
