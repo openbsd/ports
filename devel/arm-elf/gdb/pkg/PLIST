@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
-bin/arm-elf-gdb
-bin/arm-elf-gdbtui
-bin/arm-elf-run
+@comment $OpenBSD: PLIST,v 1.2 2010/10/22 15:20:21 jasper Exp $
+@bin bin/arm-elf-gdb
+@bin bin/arm-elf-gdbtui
+@bin bin/arm-elf-run
 lib/libarm-elf-sim.a
 @man man/man1/arm-elf-gdb.1
 @man man/man1/arm-elf-gdbtui.1
 @man man/man1/arm-elf-run.1
+share/gdb/
+share/gdb/syscalls/
+share/gdb/syscalls/amd64-linux.xml
+share/gdb/syscalls/gdb-syscalls.dtd
+share/gdb/syscalls/i386-linux.xml
+share/gdb/syscalls/ppc-linux.xml
+share/gdb/syscalls/ppc64-linux.xml
