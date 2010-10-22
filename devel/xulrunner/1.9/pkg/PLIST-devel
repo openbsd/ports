@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.10 2010/09/26 07:42:03 espie Exp $
+@comment $OpenBSD: PLIST-devel,v 1.11 2010/10/22 19:25:19 landry Exp $
 @option no-default-conflict
 @conflict xulrunner-devel->=1.9
 %%jit%%
@@ -1139,6 +1139,18 @@ ${MOZILLA_PROJECT}/include/ImageLogging.h
 ${MOZILLA_PROJECT}/include/NSReg.h
 ${MOZILLA_PROJECT}/include/VerReg.h
 ${MOZILLA_PROJECT}/include/XPCIDispatch.h
+${MOZILLA_PROJECT}/include/cairo/
+${MOZILLA_PROJECT}/include/cairo/cairo-deprecated.h
+${MOZILLA_PROJECT}/include/cairo/cairo-features.h
+${MOZILLA_PROJECT}/include/cairo/cairo-ft.h
+${MOZILLA_PROJECT}/include/cairo/cairo-pdf.h
+${MOZILLA_PROJECT}/include/cairo/cairo-platform.h
+${MOZILLA_PROJECT}/include/cairo/cairo-ps.h
+${MOZILLA_PROJECT}/include/cairo/cairo-rename.h
+${MOZILLA_PROJECT}/include/cairo/cairo-version.h
+${MOZILLA_PROJECT}/include/cairo/cairo-xlib-xrender.h
+${MOZILLA_PROJECT}/include/cairo/cairo-xlib.h
+${MOZILLA_PROJECT}/include/cairo/cairo.h
 ${MOZILLA_PROJECT}/include/domstubs.h
 ${MOZILLA_PROJECT}/include/expat.h
 ${MOZILLA_PROJECT}/include/expat_config.h
@@ -2996,6 +3008,8 @@ ${MOZILLA_PROJECT}/include/oggz/oggz_seek.h
 ${MOZILLA_PROJECT}/include/oggz/oggz_stream.h
 ${MOZILLA_PROJECT}/include/oggz/oggz_table.h
 ${MOZILLA_PROJECT}/include/oggz/oggz_write.h
+${MOZILLA_PROJECT}/include/pixman-version.h
+${MOZILLA_PROJECT}/include/pixman.h
 ${MOZILLA_PROJECT}/include/pldhash.h
 ${MOZILLA_PROJECT}/include/png.h
 ${MOZILLA_PROJECT}/include/pngconf.h

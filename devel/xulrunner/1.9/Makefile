@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/15 08:32:21 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/22 19:25:19 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.2.10
-FFX_VERSION=		3.6.10
+VERSION=		1.9.2.11
+FFX_VERSION=		3.6.11
 DIRECTORY=		xulrunner1.9
 # needed for mozilla.port.mk
 MOZILLA_PROJECT=	xulrunner1.9
 DISTNAME=		mozilla-1.9.2
 DISTFILES=		firefox-${FFX_VERSION}.source.tar.bz2
-REVISION-main=		2
-REVISION-devel=		2
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
