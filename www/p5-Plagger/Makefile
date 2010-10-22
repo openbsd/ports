@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/22 20:25:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/22 20:28:17 jasper Exp $
 
 COMMENT=	pluggable RSS/Atom aggregator
 
 MODULES=	cpan
 DISTNAME=	Plagger-0.7.17
+REVISION=	0
 CATEGORIES=	www textproc
 USE_GROFF =	Yes
 
@@ -50,13 +51,14 @@ RUN_DEPENDS=	::devel/p5-Cache-Cache \
 		::www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+
 SHAREDIR=	${PREFIX}/share/p5-Plagger
+SUBST_VARS+=	SHAREDIR
 
 MODCPAN_EXAMPLES=	Yes
 
 pre-configure:
-	perl -pi -e 's!%%SHAREDIR%%!${SHAREDIR}!' \
-		${WRKSRC}/lib/Plagger/{Plugin,Template}.pm
+	${SUBST_CMD} ${WRKSRC}/lib/Plagger/{Plugin,Template}.pm
 
 post-install:
 	${MODCPAN_POST_INSTALL}

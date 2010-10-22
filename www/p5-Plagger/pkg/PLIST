@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/10 19:36:23 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/22 20:28:17 jasper Exp $
 bin/plagger
 bin/plagger-ircbot
 ${P5SITE}/Plagger/
@@ -21,6 +21,7 @@ ${P5SITE}/Plagger/Mechanize.pm
 ${P5SITE}/Plagger/Operator.pm
 ${P5SITE}/Plagger/Plugin/
 ${P5SITE}/Plagger/Plugin.pm
+@comment ${P5SITE}/Plagger/Plugin.pm.beforesubst
 @comment ${P5SITE}/Plagger/Plugin.pm.orig
 ${P5SITE}/Plagger/Plugin/Aggregator/
 ${P5SITE}/Plagger/Plugin/Aggregator/Null.pm
@@ -261,6 +262,7 @@ ${P5SITE}/Plagger/TT/Plagger/
 ${P5SITE}/Plagger/TT/Plagger/Util.pm
 ${P5SITE}/Plagger/Tag.pm
 ${P5SITE}/Plagger/Template.pm
+@comment ${P5SITE}/Plagger/Template.pm.beforesubst
 @comment ${P5SITE}/Plagger/Template.pm.orig
 ${P5SITE}/Plagger/Text.pm
 ${P5SITE}/Plagger/Thing.pm
