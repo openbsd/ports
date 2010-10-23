@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_alephone_6,v 1.1 2010/10/23 12:59:19 phessler Exp $
+--- docs/alephone.6.orig	Sat Oct 23 14:32:45 2010
++++ docs/alephone.6	Sat Oct 23 14:33:39 2010
+@@ -50,7 +50,7 @@ Entries
+ .I later
+ in the list have precedence over entries earlier in the list.
+ The default is
+-.BR /usr/share/games/AlephOne:/usr/share/games/AlephOne .
++.BR /usr/local/share/alephone:/usr/local/share/alephone .
+ .SH "SEE ALSO"
+ The latest news regarding engine and scenario development can be found at
+ .URL "http://source.bungie.org/" "the project web site" "."

@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.9 2010/10/18 18:00:17 espie Exp $
+#	$OpenBSD: Makefile,v 1.10 2010/10/23 12:59:19 phessler Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
 
-DISTNAME =		AlephOne-20091015
-PKGNAME =		alephone-0.22.1p0
+DISTNAME =		AlephOne-20100424
+PKGNAME =		alephone-0.23.2
 
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES =		games x11
@@ -21,23 +21,27 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=marathon/} \
 			http://www.treellama.org/alephone/
-WANTLIB = 		GL GLU SDL c m ogg pthread smpeg stdc++ z
+
+WANTLIB +=		GL GLU c m pthread stdc++ z
+WANTLIB +=		SDL SDL_net SDL_image SDL_ttf mad ogg png sndfile
+WANTLIB +=		smpeg speex speexdsp vorbis vorbisfile zzip
 
 BUILD_DEPENDS =		::devel/automake/${AUTOMAKE_VER} \
 			::devel/autoconf/${AUTOCONF_VER}
-LIB_DEPENDS =		::devel/boost \
-			SDL_net::devel/sdl-net \
-			SDL_image::devel/sdl-image \
-			SDL_ttf::devel/sdl-ttf \
-			smpeg.>=1.3::devel/smpeg \
-			mad::audio/libmad \
-			sndfile::audio/libsndfile \
-			speexdsp,speex::audio/speex \
-			vorbis,vorbisfile::audio/libvorbis
+LIB_DEPENDS =		::archivers/zziplib \
+			::devel/boost \
+			::devel/sdl-net \
+			::devel/sdl-image \
+			::devel/sdl-ttf \
+			::devel/smpeg \
+			::audio/libmad \
+			::audio/libsndfile \
+			::audio/speex \
+			::audio/libvorbis
 
 USE_X11 =		Yes
 USE_BZIP2 =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VER =		2.61
 AUTOMAKE_VER =		1.9
