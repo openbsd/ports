@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 15:40:19 landry Exp $
+@bin bin/viking
+bin/viking-remote
+share/applications/viking.desktop
+share/gnome/help/viking/
+share/gnome/help/viking/C/
+share/gnome/help/viking/C/figures/
+share/gnome/help/viking/C/figures/properties_degree.png
+share/gnome/help/viking/C/figures/properties_units.png
+share/gnome/help/viking/C/legal.xml
+share/gnome/help/viking/C/viking.xml
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/viking.png
+share/locale/cs/LC_MESSAGES/viking.mo
+share/locale/da/LC_MESSAGES/viking.mo
+share/locale/de/LC_MESSAGES/viking.mo
+share/locale/el/LC_MESSAGES/viking.mo
+share/locale/en_GB/LC_MESSAGES/viking.mo
+share/locale/es/LC_MESSAGES/viking.mo
+share/locale/fr/LC_MESSAGES/viking.mo
+share/locale/he/LC_MESSAGES/viking.mo
+share/locale/id/LC_MESSAGES/viking.mo
+share/locale/it/LC_MESSAGES/viking.mo
+share/locale/ja/LC_MESSAGES/viking.mo
+share/locale/lt/LC_MESSAGES/viking.mo
+share/locale/lv/LC_MESSAGES/viking.mo
+share/locale/nb/LC_MESSAGES/viking.mo
+share/locale/nl/LC_MESSAGES/viking.mo
+share/locale/pl/LC_MESSAGES/viking.mo
+share/locale/pt_BR/LC_MESSAGES/viking.mo
+share/locale/ru/LC_MESSAGES/viking.mo
+share/locale/sl/LC_MESSAGES/viking.mo
+share/locale/sv/LC_MESSAGES/viking.mo
+share/locale/zh_CN/LC_MESSAGES/viking.mo
+share/locale/zh_TW/LC_MESSAGES/viking.mo
+share/omf/viking/
+share/omf/viking/viking-C.omf
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
