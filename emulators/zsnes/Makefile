@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/23 22:01:30 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		Super Nintendo emulator for x86
 VERSION=		1.42
 DISTNAME=		zsnes_${VERSION:S/./_/}
-PKGNAME=		zsnes-${VERSION}p0
+PKGNAME=		zsnes-${VERSION}
+REVISION=		0
 CATEGORIES=		emulators games
 HOMEPAGE=		http://www.zsnes.com/
 
@@ -20,15 +21,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		GL c m pthread stdc++ z
+WANTLIB=		GL SDL c m png pthread stdc++ z
 
 BUILD_DEPENDS=		::devel/nasm \
 			${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=		SDL:sdl-*-!no_x11:devel/sdl \
-			png.>=2::graphics/png
+LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
+			::graphics/png
 
 USE_X11=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf

@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=	character encoding converter generator package
 
-DISTNAME=       trans120
-PKGNAME=        trans-1.20p0
-CATEGORIES=     converters russian
+DISTNAME=	trans120
+PKGNAME=	trans-1.20
+REVISION=	0
+CATEGORIES=	converters russian
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
-MASTER_SITES=   http://www.kostis.net/freeware/
+MASTER_SITES=	http://www.kostis.net/freeware/
 
 LIBDIR= ${PREFIX}/lib/trans
 ALL= transhtm transiso transce8 transtab checkiso checkuni

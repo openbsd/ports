@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/19 18:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/23 22:01:30 sthen Exp $
 
 
 # XXX  This port is not finished and does not work.
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		wine enables you to run windows binaries
 
 DISTNAME =		wine-1.1.21
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 
 SHARED_LIBS =		wine 0.0
 
@@ -26,23 +26,24 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m z pthread ssl GL GLU crypto ossaudio ncurses \
-			ICE SM X11 Xext Xpm Xxf86dga Xxf86vm gphoto2 \
-			gphoto2_port jpeg lcms png sane xslt iconv drm \
-			pthread-stubs xcb
+WANTLIB += c m z pthread ssl GL GLU crypto ossaudio ncurses
+WANTLIB += ICE SM X11 Xext Xpm Xxf86dga Xxf86vm gphoto2
+WANTLIB += gphoto2_port jpeg lcms png sane xslt iconv drm
+WANTLIB += pthread-stubs xcb jpeg png gphoto2 gphoto2_port
+WANTLIB += sane lcms iconv
 
 MASTER_SITES =		http://ibiblio.org/pub/linux/system/emulators/wine/ \
 			http://prdownloads.sourceforge.net/wine/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		:bison-*:devel/bison
-LIB_DEPENDS =		xslt.>=3::textproc/libxslt \
-			jpeg.>=62::graphics/jpeg \
-			png.>=4::graphics/png \
-			gphoto2.>=2,gphoto2_port.>=5::graphics/libgphoto2 \
-			sane.>=1::graphics/sane-backends \
-			lcms.>=1::graphics/lcms \
-			iconv.>=1::converters/libiconv
+LIB_DEPENDS =		::textproc/libxslt \
+			::graphics/jpeg \
+			::graphics/png \
+			::graphics/libgphoto2 \
+			::graphics/sane-backends \
+			::graphics/lcms \
+			::converters/libiconv
 RUN_DEPENDS =		::devel/desktop-file-utils
 
 USE_X11 =		Yes

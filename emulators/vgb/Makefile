@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/23 22:01:30 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	emulates the Nintendo Gameboy
 
-PKGNAME=	vgb-2.1p0
+PKGNAME=	vgb-2.1
+REVISION=	0
 DISTNAME=	VGB21-Linux-80x86-bin
 
 CATEGORIES=	emulators games

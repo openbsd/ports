@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/23 22:01:29 sthen Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -28,10 +28,10 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm
 WANTLIB += atk-1.0 audiofile c cairo expat fontconfig freetype
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0
+WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0 esd gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		esd.>=2::audio/esound \
-			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		::audio/esound \
+			::x11/gtk+2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

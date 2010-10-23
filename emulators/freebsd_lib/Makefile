@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/23 22:01:30 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	libraries necessary for FreeBSD compatibility
 
 DISTNAME=	freebsd_lib-4.11
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_ONLY=

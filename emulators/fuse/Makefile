@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -12,21 +12,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xau Xdmcp audiofile gcrypt gpg-error pcre \
-			bz2 c m z pthread-stubs xcb
+WANTLIB += X11 Xext Xau Xdmcp audiofile gcrypt gpg-error pcre
+WANTLIB += bz2 c m z pthread-stubs xcb glib-2.0 samplerate spectrum
+WANTLIB += png xml2 ao
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
 USE_X11=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \
-			samplerate::audio/libsamplerate \
-			spectrum.>=5::devel/libspectrum \
-			png.>=3::graphics/png \
-			xml2.>=7::textproc/libxml \
-			ao::audio/libao
+LIB_DEPENDS=		::devel/glib2 \
+			::audio/libsamplerate \
+			::devel/libspectrum \
+			::graphics/png \
+			::textproc/libxml \
+			::audio/libao
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \

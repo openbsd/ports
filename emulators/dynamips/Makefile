@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
 DISTNAME=		dynamips-0.2.8-RC2
-PKGNAME=		${DISTNAME:S/-RC/rc/}p2
+PKGNAME=		${DISTNAME:S/-RC/rc/}
+REVISION=		2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.ipflow.utc.fr/index.php/Cisco_7200_Simulator
@@ -17,13 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		elf::devel/libelf
-WANTLIB=		c pcap pthread
+LIB_DEPENDS=		::devel/libelf
+WANTLIB=		c elf pcap pthread
 
 MAKE_ENV=		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 .if ${MACHINE_ARCH} == "i386"

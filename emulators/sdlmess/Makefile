@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/15 10:28:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/23 22:01:30 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -27,13 +27,14 @@ WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB +=	gobject-2.0 gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
-WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0
+WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0 SDL
+WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
 
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip
 
-LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
-			gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+LIB_DEPENDS =		::devel/sdl gconf-2.>=5::devel/gconf2 \
+			::x11/gtk+2
 RUN_DEPENDS =		:sdlmame-tools-${V}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes

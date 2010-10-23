@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=	descramble scrambled DVDs using ACSS
 
 VER=		0.3
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 DISTNAME=	libdvd-${VER}
 CATEGORIES=	converters
 MASTER_SITES=	http://www.rommelwood.de/~hshoexer/${VER}/ \
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Free speech issue
 PERMIT_PACKAGE_FTP=	Yes
+
 WANTLIB=		crypto
 
 CONFIGURE_STYLE=	gnu

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 22:01:30 sthen Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/05 06:38:32 form Exp $
 
 COMMENT=		DEC Professional 350 emulator based on SIMH
 
 VERSION=		9-16-06
 DISTNAME=		xhomer-${VERSION}
-PKGNAME=		xhomer-${VERSION:S/-/./g}p0
+PKGNAME=		xhomer-${VERSION:S/-/./g}
+REVISION=		0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		emulators
 

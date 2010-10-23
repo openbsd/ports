@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/07 09:18:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
-PKGNAME=	fedora_base-4.0p7
+PKGNAME=	fedora_base-4.0
+REVISION=	7
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2010/03/21 09:26:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2010/10/23 22:01:30 sthen Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
 DISTNAME=		simh-3.8.1
-PKGNAME=		${DISTNAME}p2
+REVISION=		2
 CATEGORIES=		emulators
 MASTER_SITES=		${HOMEPAGE}/sources/
 DISTFILES=		simhv38-1.zip
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m pcap
 
 WRKDIST=		${WRKDIR}

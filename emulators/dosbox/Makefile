@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/23 22:01:29 sthen Exp $
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 DISTNAME=	dosbox-0.74
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		SDL X11 c m pthread z
+WANTLIB=		SDL SDL_net SDL_sound png X11 c m pthread z
 
-LIB_DEPENDS=	SDL_net::devel/sdl-net \
-		SDL_sound::devel/sdl-sound \
-		png.>=2::graphics/png
+LIB_DEPENDS=	::devel/sdl-net \
+		::devel/sdl-sound \
+		::graphics/png
 
 USE_X11=	Yes
 USE_GROFF =	Yes

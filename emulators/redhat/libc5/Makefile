@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/23 22:01:30 sthen Exp $
 
 COMMENT=	Linux libc5
 
-PKGNAME=	redhat_libc5-6.2p1
+PKGNAME=	redhat_libc5-6.2
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITE_REDHAT:=redhat/linux/6.2/en/os/i386/RedHat/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_REDHAT:=redhat/linux/updates/6.2/en/os/i386/}
