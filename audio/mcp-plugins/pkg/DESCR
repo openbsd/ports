@@ -1,0 +1,9 @@
+The MCP plugins consist of:
+- cs_phaser: a series connection of 1 to 30 first order allpass
+  filters with feedback.
+- cs_chorus: two low frequency oscillators, each having 3 outputs
+  that are 120 degree apart in phase.
+- mvclpf24: accurate digital implementation of voltage controlled
+  lowpass Moog filter.
+- mvchpf24: digital implementation of voltage controlled hipass
+  Moog filter.
