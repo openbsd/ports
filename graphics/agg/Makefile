@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/23 11:04:19 jasper Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.5
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 SHARED_LIBS=	agg		3.0 \
 		aggfontfreetype	3.0 \
 		aggplatformsdl	3.0 \
@@ -11,8 +11,6 @@ SHARED_LIBS=	agg		3.0 \
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.antigrain.com/
-
-MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

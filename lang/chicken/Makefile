@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/23 11:04:19 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-2.6
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	chicken              1.0      # .0.0
 SHARED_LIBS +=	uchicken             1.0      # .0.0
@@ -11,8 +11,6 @@ SHARED_LIBS +=	uchicken             1.0      # .0.0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.call-with-current-continuation.org/
-
-MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 MASTER_SITES=	${HOMEPAGE}
 

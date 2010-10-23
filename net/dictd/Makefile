@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/23 11:04:19 jasper Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -8,13 +8,12 @@ DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
-REVISION-main=	1
+REVISION-main=	2
+REVISION-server=0
 
 CATEGORIES=	net education
 
 HOMEPAGE=	http://www.dict.org
-
-MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>     
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/23 11:04:19 jasper Exp $
 
 COMMENT=	translate Wiki formatted text into other formats
 
 DISTNAME=	Text-WikiFormat-0.78
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 MODULES=	cpan
 USE_GROFF =	Yes
-
-MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

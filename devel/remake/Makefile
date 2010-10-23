@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 11:04:19 jasper Exp $
 
 COMMENT=		GNU make debugger
 
 PKGNAME=		remake-0.61p0
 DISTNAME=		remake-3.80+dbg-0.61
+REVISION=		0
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://bashdb.sourceforge.net/remake/mdb.html
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
-
-MAINTAINER=		Deanna Phillips <deanna@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
