@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:46:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/23 10:05:08 jasper Exp $
 ${P5SITE}/SVG/Frame.pm
 ${P5SITE}/SVG/Graph/
 ${P5SITE}/SVG/Graph.pm
@@ -22,7 +22,26 @@ ${P5SITE}/SVG/Graph/Glyph/pictogram.pm
 ${P5SITE}/SVG/Graph/Glyph/scatter.pm
 ${P5SITE}/SVG/Graph/Glyph/tree.pm
 ${P5SITE}/SVG/Graph/Glyph/wedge.pm
+@man man/man3p/SVG::Frame.3p
 @man man/man3p/SVG::Graph.3p
+@man man/man3p/SVG::Graph::Data.3p
+@man man/man3p/SVG::Graph::Data::Datum.3p
+@man man/man3p/SVG::Graph::Data::Node.3p
+@man man/man3p/SVG::Graph::Data::Tree.3p
+@man man/man3p/SVG::Graph::File.3p
+@man man/man3p/SVG::Graph::Frame.3p
+@man man/man3p/SVG::Graph::Glyph.3p
+@man man/man3p/SVG::Graph::Glyph::axis.3p
+@man man/man3p/SVG::Graph::Glyph::bar.3p
+@man man/man3p/SVG::Graph::Glyph::barflex.3p
+@man man/man3p/SVG::Graph::Glyph::bezier.3p
+@man man/man3p/SVG::Graph::Glyph::bubble.3p
+@man man/man3p/SVG::Graph::Glyph::heatmap.3p
+@man man/man3p/SVG::Graph::Glyph::line.3p
+@man man/man3p/SVG::Graph::Glyph::pictogram.3p
+@man man/man3p/SVG::Graph::Glyph::scatter.3p
+@man man/man3p/SVG::Graph::Glyph::tree.3p
+@man man/man3p/SVG::Graph::Glyph::wedge.3p
 share/examples/p5-SVG-Graph/
 share/examples/p5-SVG-Graph/bar.pl
 share/examples/p5-SVG-Graph/bar_test.pl
