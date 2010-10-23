@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.2 2009/11/08 16:36:08 jasper Exp $
+$OpenBSD: patch-Imakefile,v 1.3 2010/10/23 10:52:58 landry Exp $
 --- Imakefile.orig	Thu Sep  2 08:33:47 1999
-+++ Imakefile	Sun Nov  8 09:33:10 2009
-@@ -74,7 +74,9 @@ XCOMM
++++ Imakefile	Sat Oct 23 04:51:29 2010
+@@ -74,15 +74,11 @@ XCOMM
  /* IRIX */
  #ifdef	SGIArchitecture
  #define	StartupSound	myu.aiff
@@ -10,8 +10,16 @@ $OpenBSD: patch-Imakefile,v 1.2 2009/11/08 16:36:08 jasper Exp $
 +#endif /* !OpenBSD/sgi */
  #endif	/* SGIArchitecture */
  
- /* HP-UX */
-@@ -104,8 +106,14 @@ XCOMM
+-/* HP-UX */
+-#ifdef	HPArchitecture
+-#define	StartupSound	myu.au
+-#define	SoundLibrary	-lAlib
+-#endif	/* HPArchitecture */
+-
+ /* SunOS, Solaris */
+ #ifdef	SunArchitecture
+ #define	StartupSound	myu.au
+@@ -104,8 +100,14 @@ XCOMM
  /* FreeBSD */
  #if defined(i386BsdArchitecture) && (defined(i386FreeBsd) || defined(FreeBSDArchitecture))
  #define	StartupSound	myu.au
@@ -26,7 +34,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2009/11/08 16:36:08 jasper Exp $
  #else	/* USE_NETAUDIO */
  
  /* netaudio (NCDaudio) */
-@@ -234,6 +242,6 @@ XCOMM
+@@ -234,6 +236,6 @@ XCOMM
  
  #ifdef	USE_SOUND
  install:: sounds/StartupSound

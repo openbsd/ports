@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/23 10:52:58 landry Exp $
 
 COMMENT=	hyper-animated face analog clock for X11
 
 DISTNAME=	emiclock-2.0.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	http://download.vector.co.jp/pack/unix/personal/tokei/
