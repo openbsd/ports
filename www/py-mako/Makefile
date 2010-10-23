@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 09:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 21:44:02 jasper Exp $
 
 COMMENT =	super-fast templating language
 
@@ -30,8 +30,5 @@ MODPY_SETUPTOOLS = Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mako
 	cd ${WRKSRC}/doc && pax -rw *.html *.css ${PREFIX}/share/doc/py-mako
-
-#do-regress:
-#	cd ${WRKSRC} && env PYTHONPATH=lib ${MODPY_BIN} test/alltests.py
 
 .include <bsd.port.mk>
