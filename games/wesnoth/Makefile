@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/22 18:35:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/23 12:32:01 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -53,7 +53,6 @@ AUTOCONF_VERSION=	2.60
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
-# XXX: Provide the tools
 CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
