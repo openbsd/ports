@@ -1,0 +1,5 @@
+CAPS, the C* Audio Plugin Suite, is a collection of refined LADSPA audio
+plugins capable of (and mainly intended for) realtime operation.  The
+suite includes DSP units emulating instrument amplifiers, stomp-box
+classics, versatile 'virtual analogue' oscillators, fractal oscillation,
+reverb, equalization and more.

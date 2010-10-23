@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 21:59:58 jakemsr Exp $
+lib/ladspa/
+lib/ladspa/caps.so
+share/ladspa/
+share/ladspa/rdf/
+share/ladspa/rdf/caps.rdf
