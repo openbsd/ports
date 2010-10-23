@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	perl interface to jabber
 
@@ -18,9 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:p5-Net-XMPP-*:net/p5-Net-XMPP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Net-Jabber
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pl \
-	${PREFIX}/share/examples/p5-Net-Jabber
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

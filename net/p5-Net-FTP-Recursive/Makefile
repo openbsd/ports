@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	recursive FTP client module
 
@@ -15,12 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXAMPLE_DIR=${PREFIX}/share/examples/p5-Net-FTP-Recursive
-
 WRKDIST =	${WRKDIR}/Net-FTP-Recursive
 
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${EXAMPLE_DIR}
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	samples
 
 .include <bsd.port.mk>

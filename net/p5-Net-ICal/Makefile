@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	Perl interface to RFC2445 (iCalendar) objects
 
@@ -21,11 +21,6 @@ RUN_DEPENDS=	::devel/p5-Class-MethodMapper \
 		::devel/p5-Date-ICal
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-EXAMPLESDIR=	${PREFIX}/share/examples/p5-Net-ICal
-
-post-install:
-	@${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

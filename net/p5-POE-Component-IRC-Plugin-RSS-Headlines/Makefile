@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT =		PoCo::IRC Plugin that provides RSS Headline retrieval
 
@@ -22,10 +22,6 @@ RUN_DEPENDS =	::net/p5-POE-Component-IRC \
 
 MAKE_ENV+=	TEST_POD=Yes
 
-EG_DIR= 	${PREFIX}/share/examples/p5-POE-Component-IRC-Plugin-RSS-Headlines
-
-post-install:
-	${INSTALL_DATA_DIR} ${EG_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EG_DIR}
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

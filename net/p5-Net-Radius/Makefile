@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	Perl interface to Radius
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
+MODCPAN_EXAMPLES=	Yes
 USE_GROFF =	Yes
 REGRESS_DEPENDS=	::devel/p5-Test-Warn
 
@@ -92,9 +93,6 @@ DOCS=		README \
 		README.debian \
 		README.packets \
 		README.server
-EXDIR=		${PREFIX}/share/examples/p5-Net-Radius
-EXAMPLES=	example-client.pl example-menu.pl example-unix.pl \
-		example-yes.pl radius2ldap.pl tutorial.pl
 
 post-install:
 	${INSTALL_DATA_DIR} ${DATADIR}
@@ -106,8 +104,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCDIR}
 .endfor
 	${INSTALL_DATA_DIR} ${EXDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXDIR}
-.endfor	
+	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>

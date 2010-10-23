@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	event-driven IRC-client module
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
+MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=	::devel/p5-POE \
 		:p5-POE-Component-Pluggable->=1.24:devel/p5-POE-Component-Pluggable \
@@ -28,7 +29,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/* \
 		${PREFIX}/share/doc/p5-POE-Component-IRC
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-POE-Component-IRC
-	${INSTALL_DATA} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/p5-POE-Component-IRC
+	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>

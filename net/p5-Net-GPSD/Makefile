@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	perl module that provides a client interface to gpsd
 MODULES=	cpan
@@ -18,10 +18,11 @@ RUN_DEPENDS=	::geo/p5-GPS-PRN \
 		::geo/p5-Geo-Inverse \
 		::www/p5-libwww
 
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	bin
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Net-GPSD
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/* \
-		${PREFIX}/share/examples/p5-Net-GPSD
+	${MODCPAN_POST_INSTALL}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/*.cgi \
 		${PREFIX}/share/examples/p5-Net-GPSD
 	${INSTALL_DATA} ${WRKSRC}/doc/*.db \

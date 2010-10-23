@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=		XMPP perl library
 
@@ -19,9 +19,6 @@ USE_GROFF =	Yes
 RUN_DEPENDS=		::security/p5-Digest-SHA1 \
 			::textproc/p5-XML-Stream
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Net-XMPP
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pl \
-		${PREFIX}/share/examples/p5-Net-XMPP
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

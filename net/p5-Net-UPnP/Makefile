@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 09:35:20 jasper Exp $
 
 COMMENT=	extension for UPnP
 
@@ -13,9 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Net-UPnP
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pl \
-		${PREFIX}/share/examples/p5-Net-UPnP
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
