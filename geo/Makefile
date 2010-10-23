@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/04/18 13:30:58 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/23 15:40:46 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
  
      SUBDIR =
@@ -40,5 +40,6 @@
      SUBDIR += ruby-findmyiphone
      SUBDIR += tangogps
      SUBDIR += tilecache
+     SUBDIR += viking
 
 .include <bsd.port.subdir.mk>
