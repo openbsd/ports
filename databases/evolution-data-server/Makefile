@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/10/18 13:29:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2010/10/23 09:41:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.32.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 
@@ -34,15 +34,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
-WANTLIB += com_err crypto dbus-1 dbus-glib-1 eggdbus-1 expat fontconfig
+WANTLIB += com_err crypto dbus-1 expat fontconfig
 WANTLIB += freetype gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gssapi
 WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png proxy pthread
 WANTLIB += pthread-stubs sasl2 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl tasn1 xcb xcb-render xcb-render-util xml2 z
-WANTLIB += db ldap lber gpg-error gnutls nss3.>=19 smime3 ssl3 ical
+WANTLIB += ssl tasn1 xcb xcb-render xml2 z nssutil3
+WANTLIB += db ldap-2.3 lber-2.3 gpg-error gnutls nss3.>=19 smime3 ssl3 ical
 WANTLIB += icalss icalvcal gnome-keyring.>=6 gweather gdata
+WANTLIB += GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -57,10 +58,6 @@ LIB_DEPENDS= 		:db->=4,<5:databases/db/v4 \
 			::x11/gnome/libgweather \
 			::devel/libgdata \
 			::devel/eggdbus
-
-# XXX Use of uninitialized value $filename in concatenation (.) or string at /usr/ports/infrastructure/bin/libtool line 1112.
-# objdump: 'a.out': No such file
-USE_LIBTOOL=		gnu
 
 YACC=			bison
 AUTOCONF_VERSION=	2.64
