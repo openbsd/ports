@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/23 12:35:10 landry Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -23,11 +23,11 @@ WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ssl stdc++ util xml2 z
-WANTLIB += avahi-client avahi-common avahi-glib
-WANTLIB += pthread-stubs xcb
+WANTLIB += GL Xxf86vm drm xcb-shm gnomevfs-2
+WANTLIB += pthread-stubs xcb gsl gslcblas gnomecanvas-2
 WANTLIB += faac faad mp3lame ogg orc-0.4 schroedinger-1.0
-WANTLIB += theora vorbis vorbisenc x264
-WANTLIB += gsm speex xcb-render xcb-render-util
+WANTLIB += theora vorbis vorbisenc x264 mdc avcodec avutil
+WANTLIB += gsm speex xcb-render
                 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amide/}
 
@@ -40,11 +40,11 @@ BUILD_DEPENDS =	::devel/m4 \
 		::x11/gnome/doc-utils
 RUN_DEPENDS =	::devel/desktop-file-utils \
 		::x11/gnome/yelp
-LIB_DEPENDS =   gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
-		gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
-		gnomevfs-2.>=2400::x11/gnome/vfs2 \
-		mdc.>=2::graphics/xmedcon \
-		avcodec.>=14,avutil.>=7:ffmpeg->=20100512:graphics/ffmpeg
+LIB_DEPENDS =	:gsl->=1.6:devel/gsl \
+		::x11/gnome/libgnomecanvas \
+		::x11/gnome/vfs2 \
+		::graphics/xmedcon \
+		:ffmpeg->=20100512:graphics/ffmpeg
 
 USE_X11 =	Yes
 USE_LIBTOOL =	Yes
