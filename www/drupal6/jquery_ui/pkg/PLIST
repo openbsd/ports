@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/20 12:01:12 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/23 22:25:22 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}jquery_ui/
@@ -332,3 +332,5 @@ ${DRUPAL_MODS}jquery_ui/jquery.ui/version.txt
 ${DRUPAL_MODS}jquery_ui/jquery_ui.info
 ${DRUPAL_MODS}jquery_ui/jquery_ui.install
 ${DRUPAL_MODS}jquery_ui/jquery_ui.module
+${DRUPAL_MODS}jquery_ui/translations/
+${DRUPAL_MODS}jquery_ui/translations/hu.po
