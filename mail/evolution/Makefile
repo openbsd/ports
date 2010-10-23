@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.112 2010/10/23 13:01:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2010/10/23 16:30:01 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.0
-REVISION-main=		1
-REVISION-plugins=	1
+REVISION-main=		2
+REVISION-plugins=	2
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -140,19 +140,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-nm \
 			--disable-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
+				-Wl,--as-needed" \
 			PTHREAD_LIB="-pthread"
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
-
-# ltasneededhack in bsd.gnome.mk from FreeBSD ports
-USE_LIBTOOL=	gnu
-LIBTOOL=	${WRKDIR}/bin/libtool
-post-patch:
-	sed '/^archive_cmds=/s/-shared/-shared -Wl,--as-needed/ ; \
-		/^archive_expsym_cmds=/s/-shared/-shared -Wl,--as-needed/' \
-		${LOCALBASE}/bin/libtool > ${WRKDIR}/bin/libtool
-	chmod +x ${WRKDIR}/bin/libtool
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
