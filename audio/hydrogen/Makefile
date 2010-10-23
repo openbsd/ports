@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/23 17:04:14 jakemsr Exp $
 
 COMMENT=		software drum machine
 DISTNAME=		hydrogen-0.9.4
+REVISION=		0
 CATEGORIES=		audio
 HOMEPAGE=		http://www.hydrogen-music.org/
 MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
@@ -13,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m ogg pthread sndio stdc++ QtGui QtNetwork QtXml sndfile.>=1
-WANTLIB += FLAC.>=8 FLAC++.>=7 jack archive
+WANTLIB += FLAC.>=8 FLAC++.>=7 jack archive lrdf
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hydrogen/}
 
@@ -21,7 +22,8 @@ LIB_DEPENDS=		::x11/qt4 \
 			::audio/libsndfile \
 			::audio/flac \
 			::audio/jack \
-			::archivers/libarchive
+			::archivers/libarchive \
+			::textproc/liblrdf
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -33,7 +35,7 @@ MODSCONS_FLAGS=		localinc="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			locallib="-L${LOCALBASE}/lib -L${X11BASE}/lib -logg -pthread" \
 			optflags="${CXXFLAGS} " \
 			libarchive="1" sndio="1" oss="0" alsa="0" portmidi="0" \
-			portaudio="0" lash="0" lrdf="0"
+			portaudio="0" lash="0" lrdf="1"
 
 NO_REGRESS=		Yes
 
