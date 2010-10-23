@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/23 18:24:14 naddy Exp $
 
 COMMENT=	X11 solitaire with 14 variations
 
 DISTNAME=	xpat2-1.07
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=	games
 
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/games/solitaires/

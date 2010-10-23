@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Imakefile,v 1.3 2007/12/07 16:49:36 ajacoutot Exp $
+$OpenBSD: patch-src_Imakefile,v 1.4 2010/10/23 18:24:14 naddy Exp $
 --- src/Imakefile.orig	Sun Nov  5 20:05:10 2000
-+++ src/Imakefile	Fri Dec  7 17:43:10 2007
++++ src/Imakefile	Sat Oct 23 20:18:07 2010
 @@ -188,7 +188,7 @@ STDOBJS		= rules.o commands.o messages.o hints.o layou
  		  r_Calculatio.o r_Michaels.o r_Royal.o r_Canfield.o \
  		  r_mdCanfield.o r_Bakers.o r_Oonsoo.o r_BlueMoon.o
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Imakefile,v 1.3 2007/12/07 16:49:36 ajacoutot Exp $
  
  
  MYPROG		= xpat2
-@@ -205,23 +205,23 @@ XCOMM X-widget.c additionally requires TableauP.h
+@@ -205,23 +205,20 @@ XCOMM X-widget.c additionally requires TableauP.h
  all::		$(MYPROG)
  
  install::	$(MYPROGS)
@@ -41,9 +41,6 @@ $OpenBSD: patch-src_Imakefile,v 1.3 2007/12/07 16:49:36 ajacoutot Exp $
 -	mkdirhier $(XPATMANDIR)
 -	cp xpat2.man $(XPATMANDIR)/xpat2.6x
 -	chmod 644 $(XPATMANDIR)/xpat2.6x
-+	mkdirhier $(DESTDIR)$(XPATMANDIR)
-+	cp xpat2.man $(DESTDIR)$(XPATMANDIR)/xpat2.6
-+	chmod 644 $(DESTDIR)$(XPATMANDIR)/xpat2.6
  
  ComplexProgramTarget($(MYPROG))
  InstallAppDefaults(XPat)
