@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2010/09/30 08:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2010/10/23 13:01:26 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -518,8 +518,6 @@ lib/evolution/${R}/
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
 lib/evolution/${R}/plugins/
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a

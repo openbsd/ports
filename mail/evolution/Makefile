@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.111 2010/10/18 13:48:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2010/10/23 13:01:26 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.0
-REVISION-main=	0
-REVISION-plugins=	0
+REVISION-main=		1
+REVISION-plugins=	1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -37,8 +37,7 @@ art_lgpl gnomecanvas eutil evolution-a11y filter emiscwidgets etext \
 etimezonedialog etable menus eshell essmime evolution-smime emformat \
 eabutil evolution-addressbook-importers econtacteditor \
 econtactlisteditor composer evolution-mail evolution-mail-importers \
-evolution-calendar-importers evolution-calendar evolution-mail-settings \
-evolution-calendar-importer
+evolution-calendar evolution-mail-settings evolution-calendar-importers
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -51,7 +50,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1
 WANTLIB += atk-1.0 c cairo com_err crypto dbus-1 dbus-glib-1
-WANTLIB += eggdbus-1 enchant execinfo expat fontconfig freetype
+WANTLIB += enchant execinfo expat fontconfig freetype
 WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring canberra
 WANTLIB += gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
@@ -59,21 +58,34 @@ WANTLIB += ical krb5 m nspr4 pango-1.0 camel-1.2 camel-provider-1.2
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
 WANTLIB += stdc++ tasn1 xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xcb-render-util xml2 z gtkhtml-3.14 gtkhtml-editor-3.14
+WANTLIB += xml2 z gtkhtml-3.14 gtkhtml-editor-3.14
 WANTLIB += gdata proxy soup-gnome-2.4 gdata ebook-1.2
 WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 unique-1.0
 WANTLIB += gnome-desktop-2 nss3 smime3 ssl3 notify soup-2.4
+WANTLIB += GL Xxf86vm canberra-gtk db drm ebackend-1.2 egroupwise-1.2
+WANTLIB += icalss icalvcal ltdl nssutil3 ogg softokn3 vorbis vorbisfile
+WANTLIB += xcb-shm
 
-WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk
+WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk sasl2 ssl
 WANTLIB-main += gweather icalss icalvcal ogg db gtkimageview
-WANTLIB-main += icalss icalvcal ldap ltdl ogg pst softokn3
-WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis
+WANTLIB-main += icalss icalvcal ldap-2.3 ltdl ogg pst softokn3
+WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis lber-2.3
 
 WANTLIB-plugins += ${WANTLIB} gstreamer-0.10
 WANTLIB-plugins += lib/evolution/${R}/composer lib/evolution/${R}/emformat
 WANTLIB-plugins += lib/evolution/${R}/eshell lib/evolution/${R}/evolution-calendar
 WANTLIB-plugins += lib/evolution/${R}/evolution-mail lib/evolution/${R}/emiscwidgets
 WANTLIB-plugins += lib/evolution/${R}/eutil
+WANTLIB-plugins += lib/evolution/${R}/art_lgpl lib/evolution/${R}/econtacteditor
+WANTLIB-plugins += lib/evolution/${R}/econtactlisteditor
+WANTLIB-plugins += lib/evolution/${R}/essmime
+WANTLIB-plugins += lib/evolution/${R}/etable lib/evolution/${R}/etext
+WANTLIB-plugins += lib/evolution/${R}/etimezonedialog
+WANTLIB-plugins += lib/evolution/${R}/evolution-a11y
+WANTLIB-plugins += lib/evolution/${R}/evolution-calendar-importers
+WANTLIB-plugins += lib/evolution/${R}/evolution-smime.
+WANTLIB-plugins += lib/evolution/${R}/filter lib/evolution/${R}/gnomecanvas
+WANTLIB-plugins += lib/evolution/${R}/menus lib/evolution/${R}/eabutil
 
 MULTI_PACKAGES=		-main -plugins
 
