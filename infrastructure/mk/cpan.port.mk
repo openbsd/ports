@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.10 2010/10/01 21:55:20 jasper Exp $
+# $OpenBSD: cpan.port.mk,v 1.11 2010/10/23 11:58:33 jasper Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -23,7 +23,8 @@ REGRESS_DEPENDS +=	::devel/p5-Test-Pod \
 .endif
 
 MODCPAN_POST_INSTALL = ${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}; \
-	${INSTALL_DATA} ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/* ${MODCPAN_EXAMPLES_DIR}
+	cd ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/ && pax -rw . ${MODCPAN_EXAMPLES_DIR};\
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MODCPAN_EXAMPLES_DIR}
 
 .if defined(MODCPAN_EXAMPLES) && ${MODCPAN_EXAMPLES:L} == "yes"
 MODCPAN_EXAMPLES_DIR ?= ${PREFIX}/share/examples/p5-${DISTNAME:C/-([0-9]+\.[0-9]+).*$//g}
@@ -31,7 +32,8 @@ MODCPAN_EXAMPLES_DIST ?= examples
 .  if !target(post-install)
 post-install:
 	${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}
-	${INSTALL_DATA} ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/* ${MODCPAN_EXAMPLES_DIR}
+	cd ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/ && pax -rw . ${MODCPAN_EXAMPLES_DIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MODCPAN_EXAMPLES_DIR}
 .  endif
 .endif
 
