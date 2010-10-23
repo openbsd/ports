@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.8 2010/10/23 15:05:47 steven Exp $
+# $OpenBSD: fortran.port.mk,v 1.9 2010/10/23 15:16:27 steven Exp $
 
 MODFORTRAN_COMPILER ?= g77
 
@@ -6,7 +6,7 @@ MODFORTRAN_COMPILER ?= g77
 ERRORS += "Fatal: need to specify MODFORTRAN_COMPILER"
 .endif
 
-.if ${MODFORTRAN_COMPILER:L} == "g77" || ${MODFORTRAN_WANTG77:L} == "yes"
+.if ${MODFORTRAN_COMPILER:L} == "g77"
 .  if ${COMPILER_VERSION:L:Mgcc[34]*}
 _MODFORTRAN_LIB_DEPENDS_G77 = ::devel/libf2c
 _MODFORTRAN_WANTLIB_G77 = g2c
