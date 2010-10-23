@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/30 07:15:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/23 12:26:48 ajacoutot Exp $
 @conflict gtk+2-<2.22
+@conflict gtk+2-docs-<2.22
 %%SHARED%%
 @bin bin/gdk-pixbuf-csource
 @bin bin/gdk-pixbuf-query-loaders

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 12:26:48 ajacoutot Exp $
 
 COMMENT=	graphic library for GTK+2
 
 V=		2.22.0
 DISTNAME=	gdk-pixbuf-${V}
+
+REVISION=	0
 
 CATEGORIES=	graphics
 
