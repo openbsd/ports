@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/23 18:35:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
 
 DISTNAME=	klogic-1.6
-PKGNAME=	${DISTNAME}p4
+REVISION=	4
 CATEGORIES=	cad education x11 x11/kde
 
 MASTER_SITES=	http://distfiles.nl/
@@ -15,11 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	art_lgpl_2 jpeg kwalletclient ICE SM X11 Xext \
-		Xrender c m png pthread stdc++ util z idn \
-		Xau Xdmcp fam rpcsvc pthread-stubs xcb
+WANTLIB += art_lgpl_2 jpeg kwalletclient ICE SM X11 Xext
+WANTLIB += Xrender c m png pthread stdc++ util z idn
+WANTLIB += Xau Xdmcp fam rpcsvc pthread-stubs xcb
+WANTLIB += kdecore DCOP kdefx kdesu kdeui kio
 
-LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
+LIB_DEPENDS=	::x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext
 

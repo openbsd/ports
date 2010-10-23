@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/23 18:35:23 sthen Exp $
 
 COMMENT=		Gnu Circuit Analysis Package
 
 DISTNAME=		gnucap-0.35
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		cad
 
 HOMEPAGE=		http://www.gnucap.org/
