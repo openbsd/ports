@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.307 2010/10/23 08:35:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.308 2010/10/23 16:49:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -303,6 +303,7 @@
      SUBDIR += unrtf
      SUBDIR += urlview
      SUBDIR += validate
+     SUBDIR += vgrind
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += xerces
