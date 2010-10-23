@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/23 14:10:16 ajacoutot Exp $
 
 COMMENT=	sytem configuration GUI for desktops
 
@@ -40,6 +40,7 @@ MODGCONF2_SCHEMAS_DIR= gnome-system-tools
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-rules \
+		--disable-schemas-compile \
 		--disable-services
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

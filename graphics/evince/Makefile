@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/23 14:10:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -100,6 +100,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-introspection \
+		--disable-schemas-compile \
 		--disable-static \
 		--disable-comics \
 		--disable-impress \

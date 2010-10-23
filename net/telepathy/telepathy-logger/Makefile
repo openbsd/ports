@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/04 06:49:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/23 14:10:16 ajacoutot Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -31,7 +31,8 @@ MODPY_RUNDEP=		No
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-silent-rules \
-			--enable-gtk-doc=no \
+			--disable-gtk-doc \
+			--disable-schemas-compile \
 			--enable-shave
 
 REGRESS_IS_INTERACTIVE=x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 14:10:16 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -25,6 +25,7 @@ USE_LIBTOOL=	No
 
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-silent-rules
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-schemas-compile
 
 .include <bsd.port.mk>

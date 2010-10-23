@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/23 14:10:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,6 +43,7 @@ LIB_DEPENDS=	::x11/gnome/nautilus \
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
+		--disable-schemas-compile \
 		--with-gajim=${LOCALBASE}
 
 # --with-plugins=all ; empathy comes with its own nautilus-sendto plugin

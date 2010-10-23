@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 14:10:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,6 +49,7 @@ MODGNOME_HELP_FILES= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
+		--disable-schemas-compile \
 		--with-gtkspell \
 		--with-dictionary
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
