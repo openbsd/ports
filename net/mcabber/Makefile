@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/22 17:00:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/23 14:20:13 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,11 +41,6 @@ CONFIGURE_ARGS= 	--enable-gpgme \
 			--enable-sigwinch \
 			--with-libotr-prefix=${LOCALBASE}/lib \
 			--with-libotr-inc-prefix=${LOCALBASE}/include
-
-pre-install:
-	cd ${WRKSRC}/doc \
-		&& tbl mcabber.1 > mcabber.1.new \
-		&& mv mcabber.1.new mcabber.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
