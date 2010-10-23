@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 16:49:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/23 17:09:35 sthen Exp $
 
 COMMENT=		grind nice listings of programs
 
 DISTNAME=		vgrind-1.0
+REVISION=		0
 CATEGORIES=		textproc
 
 # 3-clause BSD
@@ -15,7 +16,7 @@ WANTLIB +=		c
 
 MASTER_SITES=		http://distfiles.nl/
 
-USE_GROFF=		Yes
+RUN_DEPENDS=		::textproc/groff
 
 NO_REGRESS=		Yes
 
