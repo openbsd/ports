@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/07 07:28:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/23 17:04:52 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -87,6 +87,7 @@ share/examples/polkit/polkit-1/
 @sample ${SYSCONFDIR}/polkit-1/
 @sample /var/db/polkit-1/
 @mode
+@sample ${SYSCONFDIR}/polkit-1/localauthority/
 share/examples/polkit/polkit-1/localauthority.conf.d/
 @sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/
 share/examples/polkit/polkit-1/localauthority.conf.d/50-localauthority.conf
