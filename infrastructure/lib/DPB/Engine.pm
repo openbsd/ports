@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.2 2010/10/23 17:58:55 espie Exp $
+# $OpenBSD: Engine.pm,v 1.3 2010/10/23 18:14:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,6 @@ sub new
 	    buildable => $heuristics->new_queue,
 	    later => {}, building => {},
 	    installable => {}, builder => $builder,
-	    packages => {},
 	    all => {},
 	    heuristics => $heuristics,
 	    locker => $locker,
@@ -89,7 +88,6 @@ sub report
 {
 	my $self = shift;
 	return join(" ",
-	    "P=".$self->count("packages"),
 	    "I=".$self->count("installable"),
 	    "B=".$self->count("built"),
 	    "Q=".$self->{buildable}->count,
@@ -104,7 +102,6 @@ sub stats
 	my $fh = $self->{stats};
 	$self->{statline} //= "";
 	my $line = join(" ",
-	    "P=".$self->count("packages"),
 	    "I=".$self->count("installable"),
 	    "B=".$self->count("built"),
 	    "Q=".$self->{buildable}->count,
@@ -203,31 +200,6 @@ sub adjust_extra
 	return 0;
 }
 
-sub can_package
-{
-	my ($self, $v) = @_;
-	if (defined $v->{info}{NEEDED_BY}) {
-		for my $w (values %{$v->{info}{NEEDED_BY}}) {
-			if ($self->{packages}{$w}) {
-				delete $v->{info}{NEEDED_BY}{$w};
-			} else {
-				return 0;
-			}
-		}
-	}
-	if (defined $v->{info}{BNEEDED_BY}) {
-		for my $w (values %{$v->{info}{BNEEDED_BY}}) {
-			if ($self->{packages}{$w} || $self->{built}{$w} ||
-			    $self->{installable}{$w}) {
-				delete $v->{info}{BNEEDED_BY}{$w};
-			} else {
-				return 0;
-			}
-		}
-	}
-	return 1;
-}
-
 sub check_buildable
 {
 	my $self = shift;
@@ -235,17 +207,6 @@ sub check_buildable
 	my $changes;
 	do {
 		$changes = 0;
-		# move stuff to packages once we know all reverse dependencies
-		if ($done_scanning) {
-			for my $v (values %{$self->{installable}}) {
-				if ($self->can_package($v)) {
-					$self->log_no_ts('P', $v);
-					$self->{packages}{$v} = $v;
-					delete $self->{installable}{$v};
-					$changes++;
-				}
-			}
-		}
 		for my $v (values %{$self->{tobuild}}) {
 			if ($self->was_built($v)) {
 				$changes++;
@@ -437,7 +398,7 @@ sub dump
 {
 	my ($self, $fh) = @_;
 	$fh //= \*STDOUT;
-	for my $k (qw(packages built tobuild installable)) {
+	for my $k (qw(built tobuild installable)) {
 		$self->dump_category($k, $fh);
 	}
 	print $fh "\n";
