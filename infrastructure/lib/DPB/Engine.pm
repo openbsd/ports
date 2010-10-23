@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.3 2010/10/23 18:14:19 espie Exp $
+# $OpenBSD: Engine.pm,v 1.4 2010/10/23 21:46:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -112,11 +112,9 @@ sub stats
 	}
 }
 
-my $done_scanning = 0;
 sub finished_scanning
 {
 	my $self = shift;
-	$done_scanning = 1;
 	# this is scary, we need to do it by-pkgname
 	my $needed_by = {};
 	my $bneeded_by = {};
@@ -127,13 +125,17 @@ sub finished_scanning
 			next unless defined $v->{info}{$kind};
 			for my $depend (values %{$v->{info}{$kind}}) {
 				next if $depend eq $v;
-				$needed_by->{$depend->fullpkgname}{$v} = $v;
+				my $pkgname = $depend->fullpkgname;
+				next if !defined $pkgname;
+				$needed_by->{$pkgname}{$v} = $v;
 			}
 		}
 		if (defined $v->{info}{BUILD_DEPENDS}) {
 			for my $depend (values %{$v->{info}{BUILD_DEPENDS}}) {
 				next if $depend eq $v;
-				$bneeded_by->{$depend->fullpkgname}{$v} = $v;
+				my $pkgname = $depend->fullpkgname;
+				next if !defined $pkgname;
+				$bneeded_by->{$pkgname}{$v} = $v;
 			}
 		}
 	}
