@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 10:39:22 jasper Exp $
+lib/gtk-2.0/2.10.0/engines/librezlooks.la
+lib/gtk-2.0/2.10.0/engines/librezlooks.so
+share/themes/Rezlooks-Orange/
+share/themes/Rezlooks-Orange/gtk-2.0/
+share/themes/Rezlooks-Orange/gtk-2.0/gtkrc
+share/themes/Rezlooks-Sydney/
+share/themes/Rezlooks-Sydney/gtk-2.0/
+share/themes/Rezlooks-Sydney/gtk-2.0/gtkrc
+share/themes/Rezlooks-Watercolor/
+share/themes/Rezlooks-Watercolor/gtk-2.0/
+share/themes/Rezlooks-Watercolor/gtk-2.0/gtkrc
+share/themes/Rezlooks-candy/
+share/themes/Rezlooks-candy/gtk-2.0/
+share/themes/Rezlooks-candy/gtk-2.0/gtkrc
+share/themes/Rezlooks-pastelgreen/
+share/themes/Rezlooks-pastelgreen/gtk-2.0/
+share/themes/Rezlooks-pastelgreen/gtk-2.0/gtkrc
+share/themes/RezlooksGreen/
+share/themes/RezlooksGreen/gtk-2.0/
+share/themes/RezlooksGreen/gtk-2.0/gtkrc
+share/themes/RezlooksSoftGray2/
+share/themes/RezlooksSoftGray2/gtk-2.0/
+share/themes/RezlooksSoftGray2/gtk-2.0/gtkrc
