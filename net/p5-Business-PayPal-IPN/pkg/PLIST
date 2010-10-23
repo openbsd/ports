@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 16:07:43 jasper Exp $
+${P5SITE}/Business/
+${P5SITE}/Business/PayPal/
+${P5SITE}/Business/PayPal/IPN.pm
+@man man/man3p/Business::PayPal::IPN.3p

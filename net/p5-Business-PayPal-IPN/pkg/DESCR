@@ -1,0 +1,4 @@
+Business::PayPal::IPN implements PayPal IPN version 1.5. It validates
+transactions and gives you means to get notified of payments to your
+PayPal account. If you don't already know what PayPal IPN is this
+library may not be for you.
