@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 09:03:14 jasper Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 0.2.5
+MODPY_EGG_VERSION = 0.3.4
 DISTNAME =	Mako-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,13 +16,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${HOMEPAGE}downloads/
+MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::www/py-beaker
+RUN_DEPENDS =	::textproc/py-MarkupSafe \
+		::www/py-beaker
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  ::www/py-webtest
+		  :py-nose->=0.11:devel/py-nose
 
 MODPY_SETUPTOOLS = Yes
 
@@ -31,7 +31,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mako
 	cd ${WRKSRC}/doc && pax -rw *.html *.css ${PREFIX}/share/doc/py-mako
 
-do-regress:
-	cd ${WRKSRC} && env PYTHONPATH=lib ${MODPY_BIN} test/alltests.py
+#do-regress:
+#	cd ${WRKSRC} && env PYTHONPATH=lib ${MODPY_BIN} test/alltests.py
 
 .include <bsd.port.mk>
