@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/10/23 21:52:00 jakemsr Exp $
+--- configure.orig	Wed May 20 15:10:18 2009
++++ configure	Mon Feb  1 04:20:50 2010
+@@ -16619,7 +16619,7 @@ if test "${ac_cv_lib_jack_jack_port_register+set}" = s
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ljack  $LIBS"
++LIBS="`pkg-config --libs jack`  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -17075,7 +17075,7 @@ $as_echo "$set_enable_debug" >&6; }
+ if test "$set_enable_debug" = "yes"; then
+   CXXFLAGS="$CXXFLAGS -O0 -g -Wall"
+ else
+-  CXXFLAGS="$CXXFLAGS -O3 -finline-functions -finline-functions-called-once -Wall"
++  CXXFLAGS="$CXXFLAGS -finline-functions -finline-functions-called-once -Wall"
+ fi
+ 
+  if test "$DSSI_FOUND" = "yes"; then

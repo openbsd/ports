@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_calf_primitives_h,v 1.1.1.1 2010/10/23 21:52:00 jakemsr Exp $
+--- src/calf/primitives.h.orig	Mon Feb  1 22:04:52 2010
++++ src/calf/primitives.h	Mon Feb  1 22:05:20 2010
+@@ -462,7 +462,7 @@ inline int fastf2i_drm(float f)
+     __asm ( "flds %1; fistpl %0" : "=m"(v) : "m"(f));
+     return v;
+ #else
+-    return (int)nearbyintf(f);
++    return (int)rintf(f);
+ #endif
+ }
+ 
