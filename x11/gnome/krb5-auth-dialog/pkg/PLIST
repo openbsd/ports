@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/12 20:29:24 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2010/10/23 11:56:32 jasper Exp $
 @bin bin/krb5-auth-dialog
 @bin bin/krb5-auth-dialog-preferences
 lib/krb5-auth-dialog/
 lib/krb5-auth-dialog/plugins/
 @comment lib/krb5-auth-dialog/plugins/libka-plugin-afs.a
-@comment lib/krb5-auth-dialog/plugins/libka-plugin-afs.la
 @comment lib/krb5-auth-dialog/plugins/libka-plugin-dummy.a
+@comment lib/krb5-auth-dialog/plugins/libka-plugin-afs.la
+lib/krb5-auth-dialog/plugins/libka-plugin-afs.so
 @comment lib/krb5-auth-dialog/plugins/libka-plugin-dummy.la
+lib/krb5-auth-dialog/plugins/libka-plugin-dummy.so
 @man man/man1/krb5-auth-dialog-preferences.1
 @man man/man1/krb5-auth-dialog.1
 share/applications/krb5-auth-dialog-preferences.desktop
@@ -59,18 +60,12 @@ share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-expired.png
 share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-expiring.png
 share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-valid.png
 share/gnome/help/krb5-auth-dialog/sv/krb5-auth-dialog.xml
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/status/
 share/icons/hicolor/22x22/status/krb-expiring-ticket.png
 share/icons/hicolor/22x22/status/krb-no-valid-ticket.png
 share/icons/hicolor/22x22/status/krb-valid-ticket.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/status/
 share/icons/hicolor/48x48/status/krb-expiring-ticket.png
 share/icons/hicolor/48x48/status/krb-no-valid-ticket.png
 share/icons/hicolor/48x48/status/krb-valid-ticket.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/status/
 share/icons/hicolor/scalable/status/krb-expiring-ticket.svg
 share/icons/hicolor/scalable/status/krb-no-valid-ticket.svg
 share/icons/hicolor/scalable/status/krb-valid-ticket.svg
