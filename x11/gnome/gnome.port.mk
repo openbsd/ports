@@ -1,15 +1,15 @@
-# $OpenBSD: gnome.port.mk,v 1.29 2010/10/19 22:49:35 espie Exp $
+# $OpenBSD: gnome.port.mk,v 1.30 2010/10/23 14:37:17 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
 
-.if !defined(GNOME_PROJECT) || !defined(GNOME_VERSION)
-ERRORS+=	"Fatal: using GNOME module, but missing GNOME_PROJECT and/or GNOME_VERSION"
-.endif
-
-CATEGORIES+=		x11/gnome
+.if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-VERSION?=		${GNOME_VERSION}
+VERSION=		${GNOME_VERSION}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+EXTRACT_SUFX=		.tar.bz2
+CATEGORIES+=		x11/gnome
+.endif
 
 .if ${NO_BUILD:L} == "no"
 USE_LIBTOOL?=		Yes
@@ -35,9 +35,6 @@ BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
 .if defined(MODGNOME_RUN_DEPENDS)
 RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 .endif
-
-MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-EXTRACT_SUFX?=		.tar.bz2
 
 USE_GMAKE?=		Yes
 
