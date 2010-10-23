@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/23 18:26:20 sthen Exp $
 
 
 COMMENT=	X11 based RTF editor
 V=		2.17
 DISTNAME=	ted-$V
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	editors textproc print
 HOMEPAGE=	http://www.nllgg.nl/Ted/
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
@@ -15,14 +15,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c m pthread-stubs xcb z
+
+WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m pthread-stubs xcb z
+WANTLIB += png jpeg tiff
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/Ted-$V
-LIB_DEPENDS=	png.>=2.::graphics/png \
-		jpeg.>=62::graphics/jpeg \
-		tiff.>=35::graphics/tiff
+LIB_DEPENDS=	::graphics/png \
+		::graphics/jpeg \
+		::graphics/tiff
 
 USE_X11=	Yes
 USE_MOTIF=	openmotif

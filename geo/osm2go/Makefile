@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:14:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 18:26:20 sthen Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
@@ -26,10 +26,10 @@ CONFIGURE_STYLE =	gnu
 MODULES =	devel/gettext \
 		devel/gconf2
 
-LIB_DEPENDS =	gnome-2::x11/gnome/libgnome \
-		soup-2.4::devel/libsoup \
-		curl::net/curl \
-		goocanvas::graphics/goocanvas
+LIB_DEPENDS =	::x11/gnome/libgnome \
+		::devel/libsoup \
+		::net/curl \
+		::graphics/goocanvas
 
 RUN_DEPENDS =	::devel/desktop-file-utils
 
@@ -40,6 +40,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
 WANTLIB += xcb xml2 z gnomevfs-2 xcb-render xcb-render-util
+WANTLIB += gnome-2 soup-2.4 curl goocanvas
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/osm2go-ubuntu.desktop

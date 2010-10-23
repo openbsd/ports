@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/26 14:45:59 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/23 18:26:20 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -38,7 +38,8 @@ SUBPACKAGE?=    -en_GB
 .for i in ${LANGUAGES}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.oxt
-PKGNAME-$i=	${NAME}-$i-${V}p1
+PKGNAME-$i=	${NAME}-$i-${V}
+REVISION-$i=	1
 COMMENT-$i=	$i dictionary for OpenOffice.Org 3
 .endfor
 PKGNAME-en_GB=  ${NAME}-en_GB-${V}p1

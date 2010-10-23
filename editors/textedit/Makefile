@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/23 18:26:21 sthen Exp $
 
 COMMENT=	standard OpenLook text editor for X11
 
 DISTNAME=	textedit
-PKGNAME=	textedit-1.0p2
+PKGNAME=	textedit-1.0
+REVISION=	2
 CATEGORIES=	editors
 
 PERMIT_PACKAGE_CDROM=	No license information
 PERMIT_PACKAGE_FTP=	No license information
 PERMIT_DISTFILES_CDROM=	No license information
 PERMIT_DISTFILES_FTP=	No license information
-WANTLIB=		X11 Xext c pthread-stubs xcb
+
+WANTLIB=		X11 Xext c pthread-stubs xcb xview olgx
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-LIB_DEPENDS=    xview.>=3,olgx.>=3::x11/xview/lib
+LIB_DEPENDS=    ::x11/xview/lib
 BUILD_DEPENDS=	::x11/xview/config
 
 CONFIGURE_STYLE=imake

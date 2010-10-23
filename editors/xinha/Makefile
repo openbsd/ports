@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/22 13:54:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 18:26:21 sthen Exp $
 
 COMMENT=	online HTML editor
 
 V=		0.931
 DISTNAME=	Xinha_$V
-PKGNAME=	xinha-${V}p0
+PKGNAME=	xinha-${V}
+REVISION=	0
 CATEGORIES=	editors www
 
 HOMEPAGE=	http://xinha.webfactional.com/

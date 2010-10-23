@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 18:26:20 sthen Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
@@ -19,12 +19,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += proj
+
 MASTER_SITES =		http://pyproj.googlecode.com/files/
 
 MODULES =		lang/python
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-LIB_DEPENDS +=		proj::devel/proj
+LIB_DEPENDS +=		::devel/proj
 RUN_DEPENDS +=		::math/py-numpy
 
 do-regress: fake
