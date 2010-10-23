@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.10 2010/10/23 15:30:00 steven Exp $
+# $OpenBSD: fortran.port.mk,v 1.11 2010/10/23 15:45:59 steven Exp $
 
 MODFORTRAN_COMPILER ?= g77
 
@@ -26,7 +26,7 @@ if test -e /usr/bin/g77 -o -e /usr/bin/f77; then \
 fi
 .elif ${MODFORTRAN_COMPILER:L} == "gfortran"
 .  if ${COMPILER_VERSION:L:Mgcc4}
-_MODFORTRAN_LIB_DEPENDS_GFORTRAN = ::lang/gfortran,-libgfortran
+_MODFORTRAN_LIB_DEPENDS_GFORTRAN = ::lang/gfortran,-lib
 _MODFORTRAN_WANTLIB_GFORTRAN = gfortran
 _MODFORTRAN_BUILD_DEPENDS_GFORTRAN = ::lang/gfortran
 .  else
