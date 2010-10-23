@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/23 11:59:58 jasper Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
@@ -28,12 +28,10 @@ REGRESS_DEPENDS=::devel/p5-Test-Differences \
 		:p5-Test-Manifest->=0.9:devel/p5-Test-Manifest \
 		::devel/p5-Test-Pod-Coverage
 
-EXAMPLE_LOC=	${PREFIX}/share/examples/p5-XML-RSS
+MODCPAN_EXAMPLES=	Yes
 
 post-install:
 	find ${WRKSRC} -name \*.orig -print0 | xargs -0 rm -f
-	${INSTALL_DATA_DIR} ${EXAMPLE_LOC}
-	cd ${WRKSRC}/examples && pax -rw . ${EXAMPLE_LOC}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLE_LOC}
+	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>

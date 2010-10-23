@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 10:05:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/23 11:59:58 jasper Exp $
 
 COMMENT =		visualize your data in SVG format
 
@@ -21,10 +21,7 @@ RUN_DEPENDS =		::devel/p5-Tree-DAG_Node \
 			::math/p5-Math-Spline \
 			::math/p5-Statistics-Descriptive \
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-SVG-Graph/data/
-	${INSTALL_DATA} ${WRKSRC}/eg/data/* \
-		${PREFIX}/share/examples/p5-SVG-Graph/data
-	${INSTALL_DATA} ${WRKSRC}/eg/*.pl ${PREFIX}/share/examples/p5-SVG-Graph/
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>

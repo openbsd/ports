@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 13:53:05 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/23 11:59:58 jasper Exp $
 ${P5SITE}/Geo/Coder/
 ${P5SITE}/Geo/Coder/US/
 ${P5SITE}/Geo/Coder/US.pm
@@ -7,6 +7,18 @@ ${P5SITE}/Geo/Coder/US/Import.pm
 @man man/man3p/Geo::Coder::US::Import.3p
 share/examples/p5-Geo-Coder-US/
 share/examples/p5-Geo-Coder-US/bdb_lookup.pl
+share/examples/p5-Geo-Coder-US/clients/
+share/examples/p5-Geo-Coder-US/clients/rest.pl
+share/examples/p5-Geo-Coder-US/clients/soap.pl
+share/examples/p5-Geo-Coder-US/clients/xmlrpc.pl
+share/examples/p5-Geo-Coder-US/demo/
+share/examples/p5-Geo-Coder-US/demo/demo.cgi
+share/examples/p5-Geo-Coder-US/demo/error.html
+share/examples/p5-Geo-Coder-US/demo/footer.html
+share/examples/p5-Geo-Coder-US/demo/form.html
+share/examples/p5-Geo-Coder-US/demo/header.html
+share/examples/p5-Geo-Coder-US/demo/multiple.html
+share/examples/p5-Geo-Coder-US/demo/single.html
 share/examples/p5-Geo-Coder-US/geocode_benchmark.pl
 share/examples/p5-Geo-Coder-US/geocode_cli.pl
 share/examples/p5-Geo-Coder-US/import_fips.pl

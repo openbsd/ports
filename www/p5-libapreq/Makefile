@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/23 11:59:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,9 +29,11 @@ RUN_DEPENDS=	:mod_perl-*:www/mod_perl
 MAKE_ENV+=	APACHE_TEST_HTTPD=/usr/sbin/httpd
 PORTHOME=	${WRKDIR}
 
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-libapreq
-	@cp -R ${WRKSRC}/eg/* ${PREFIX}/share/examples/p5-libapreq
+	${MODCPAN_POST_INSTALL}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libapreq
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/libapreq
 

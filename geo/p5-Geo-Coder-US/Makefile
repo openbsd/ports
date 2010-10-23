@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 11:59:58 jasper Exp $
 
 COMMENT=	geocode any US address
 MODULES=	cpan
 DISTNAME=	Geo-Coder-US-1.00
+REVISION=	0
 CATEGORIES=	geo
 USE_GROFF =	Yes
 
@@ -16,9 +17,7 @@ RUN_DEPENDS=	::geo/p5-Geo-Fips55 \
 		::geo/p5-Geo-StreetAddress-US \
 		::geo/p5-Geo-TigerLine
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Geo-Coder-US
-	${INSTALL_SCRIPT} ${WRKSRC}/eg/*.pl \
-		${PREFIX}/share/examples/p5-Geo-Coder-US
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>
