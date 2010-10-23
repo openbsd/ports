@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/23 11:59:11 jasper Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan
 DISTNAME=	Spreadsheet-ParseExcel-0.57
+REVISION=	0
 CATEGORIES=	misc
 USE_GROFF =	Yes
 
@@ -23,10 +24,7 @@ BUILD_DEPENDS = ${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
 
-EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Spreadsheet-ParseExcel
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/*.pl ${EXAMPLE_DIR}
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	sample
 
 .include <bsd.port.mk>

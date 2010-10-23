@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/11 09:44:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/23 11:59:12 jasper Exp $
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/ParseExcel/
 ${P5SITE}/Spreadsheet/ParseExcel.pm
@@ -33,7 +33,20 @@ ${P5SITE}/Spreadsheet/ParseExcel/Worksheet.pm
 @man man/man3p/Spreadsheet::ParseExcel::Workbook.3p
 @man man/man3p/Spreadsheet::ParseExcel::Worksheet.3p
 share/examples/p5-Spreadsheet-ParseExcel/
+share/examples/p5-Spreadsheet-ParseExcel/Excel/
+share/examples/p5-Spreadsheet-ParseExcel/Excel/AuthorK.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/AuthorK95.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/FmtTest.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Rich.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test1904.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test1904_95.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test95.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test95J.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test97.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/Test97J.xls
+share/examples/p5-Spreadsheet-ParseExcel/Excel/oem.xls
 share/examples/p5-Spreadsheet-ParseExcel/Ilya.pl
+share/examples/p5-Spreadsheet-ParseExcel/README
 share/examples/p5-Spreadsheet-ParseExcel/chkFmt.pl
 share/examples/p5-Spreadsheet-ParseExcel/chkInfo.pl
 share/examples/p5-Spreadsheet-ParseExcel/dmpEx.pl
