@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/09/12 12:35:20 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/10/23 13:12:57 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
@@ -44,7 +44,7 @@ share/examples/nagios/resource.cfg
 @group
 @sample /var/www/nagios/
 %%chroot%%
-@extraunexec rm -f ${CHROOT}${SYSCONFDIR}/nagios/*
+@extraunexec rm -rf ${CHROOT}${SYSCONFDIR}/nagios/*
 @extraunexec rm -f ${CHROOT}/var/log/nagios/archives/*
 @extra ${CHROOT}/var/log/nagios/nagios.log
 @extra ${CHROOT}/var/nagios/comments.dat
