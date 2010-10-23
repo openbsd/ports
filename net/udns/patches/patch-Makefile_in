@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/10/23 22:55:01 sebastia Exp $
+
+run ranlib to fix build on vax and m88k
+
+--- Makefile.in.orig	Sat Oct 23 11:42:57 2010
++++ Makefile.in	Sat Oct 23 11:43:17 2010
+@@ -65,6 +65,7 @@ staticlib: $(LIB)
+ $(LIB): $(OBJS)
+ 	-rm -f $@
+ 	$(AR) rv $@ $(OBJS)
++	$(RANLIB) $(LIB)
+ .c.o:
+ 	$(CC) $(CFLAGS) $(CDEFS) -c $<
+ 
