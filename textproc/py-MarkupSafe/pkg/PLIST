@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 08:35:12 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/markupsafe/
+lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.py
+lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_constants.py
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_constants.pyc
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_native.py
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_native.pyc
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.c
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.so
+lib/python${MODPY_VERSION}/site-packages/markupsafe/tests.py
+lib/python${MODPY_VERSION}/site-packages/markupsafe/tests.pyc
