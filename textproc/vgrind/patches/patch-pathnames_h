@@ -1,0 +1,9 @@
+$OpenBSD: patch-pathnames_h,v 1.1.1.1 2010/10/23 16:49:11 jasper Exp $
+--- pathnames.h.orig	Sat Oct 23 18:46:53 2010
++++ pathnames.h	Sat Oct 23 18:47:07 2010
+@@ -32,4 +32,4 @@
+  *	@(#)pathnames.h	8.1 (Berkeley) 6/6/93
+  */
+ 
+-#define	_PATH_VGRINDEFS	"/usr/share/misc/vgrindefs"
++#define	_PATH_VGRINDEFS "${LOCALBASE}/share/vgrind/vgrindefs"

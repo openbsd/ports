@@ -1,0 +1,31 @@
+$OpenBSD: patch-vgrind_1,v 1.1.1.1 2010/10/23 16:49:11 jasper Exp $
+--- vgrind.1.orig	Sat Oct 23 18:32:04 2010
++++ vgrind.1	Sat Oct 23 18:32:37 2010
+@@ -99,7 +99,7 @@ The options are as follows:
+ .It Fl d Ar file
+ Specifies an alternate language definitions
+ file (default is
+-.Pa /usr/share/misc/vgrindefs ) .
++.Pa ${PREFIX}/share/misc/vgrindefs ) .
+ .It Fl f
+ Forces filter mode.
+ .It Fl h Ar header
+@@ -164,14 +164,14 @@ option and the file
+ as argument.
+ .El
+ .Sh FILES
+-.Bl -tag -width /usr/share/misc/vgrindefsxx -compact
++.Bl -tag -width ${PREFIX}/share/misc/vgrindefsxx -compact
+ .It Pa index
+ file where source for index is created
+-.It Pa /usr/share/tmac/tmac.vgrind
++.It Pa ${PREFIX}/share/tmac/tmac.vgrind
+ macro package
+-.It Pa /usr/libexec/vfontedpr
++.It Pa ${PREFIX}/libexec/vfontedpr
+ preprocessor
+-.It Pa /usr/share/misc/vgrindefs
++.It Pa ${PREFIX}/share/misc/vgrindefs
+ language descriptions
+ .El
+ .Sh SEE ALSO

@@ -1,0 +1,14 @@
+$OpenBSD: patch-vgrind_sh,v 1.1.1.1 2010/10/23 16:49:11 jasper Exp $
+--- vgrind.sh.orig	Sat Oct 23 18:31:58 2010
++++ vgrind.sh	Sat Oct 23 18:32:29 2010
+@@ -40,8 +40,8 @@ else
+ 	set troff = "groff"
+ endif
+ 
+-set vf=/usr/libexec/vfontedpr
+-set tm=/usr/share/tmac
++set vf=${PREFIX}/libexec/vfontedpr
++set tm=${PREFIX}/share/tmac
+ 
+ set voptions=
+ set options=

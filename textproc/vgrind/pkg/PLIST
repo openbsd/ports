@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 16:49:11 jasper Exp $
+bin/vgrind
+@bin libexec/vfontedpr
+@man man/man1/vgrind.1
+@man man/man5/vgrindefs.5
+share/tmac/
+share/tmac/tmac.vgrind
+share/vgrind/
+share/vgrind/vgrindefs
+share/vgrind/vgrindefs.db
