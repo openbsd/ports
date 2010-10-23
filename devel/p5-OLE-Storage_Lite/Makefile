@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/23 09:56:21 jasper Exp $
 
 COMMENT=	simple class for OLE document interface
 
 MODULES=	cpan
-DISTNAME=       OLE-Storage_Lite-0.17
+DISTNAME=       OLE-Storage_Lite-0.19
 CATEGORIES=	devel perl5
 USE_GROFF =	Yes
 
