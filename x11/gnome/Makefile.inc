@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2009/02/11 15:47:49 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2010/10/23 11:10:18 jasper Exp $
 
 DIST_SUBDIR=		gnome
 
@@ -8,5 +8,7 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 .if !defined(NO_BUILD)
+. if !defined(MODULES) || !${MODULES:Mdevel/waf}
 CONFIGURE_STYLE?=	gnu
+. endif
 .endif

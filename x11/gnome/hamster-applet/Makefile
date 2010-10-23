@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/23 11:10:18 jasper Exp $
 
 COMMENT=		time tracker applet for GNOME
 
@@ -57,6 +57,5 @@ post-install:
 
 .include <bsd.port.mk>
 
-# Need to override the defaults set by the gconf and gnome module
-CONFIGURE_STYLE=
+# Need to override the defaults set by the gconf module
 CONFIGURE_ARGS=
