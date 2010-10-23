@@ -1,0 +1,4 @@
+Business::PayPal::API supports both certificate authentication and the
+new 3-token "Signature" authentication.
+
+It also support PayPal's development sandbox for testing.

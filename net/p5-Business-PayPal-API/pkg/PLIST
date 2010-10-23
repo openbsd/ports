@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/23 16:05:53 jasper Exp $
+${P5SITE}/Business/PayPal/
+${P5SITE}/Business/PayPal/API/
+${P5SITE}/Business/PayPal/API.pm
+${P5SITE}/Business/PayPal/API/AuthorizationRequest.pm
+${P5SITE}/Business/PayPal/API/CaptureRequest.pm
+${P5SITE}/Business/PayPal/API/DirectPayments.pm
+${P5SITE}/Business/PayPal/API/ExpressCheckout.pm
+${P5SITE}/Business/PayPal/API/GetTransactionDetails.pm
+${P5SITE}/Business/PayPal/API/MassPay.pm
+${P5SITE}/Business/PayPal/API/ReauthorizationRequest.pm
+${P5SITE}/Business/PayPal/API/RecurringPayments.pm
+${P5SITE}/Business/PayPal/API/RefundTransaction.pm
+${P5SITE}/Business/PayPal/API/TransactionSearch.pm
+${P5SITE}/Business/PayPal/API/VoidRequest.pm
+@man man/man3p/Business::PayPal::API.3p
+@man man/man3p/Business::PayPal::API::AuthorizationRequest.3p
+@man man/man3p/Business::PayPal::API::CaptureRequest.3p
+@man man/man3p/Business::PayPal::API::DirectPayments.3p
+@man man/man3p/Business::PayPal::API::ExpressCheckout.3p
+@man man/man3p/Business::PayPal::API::GetTransactionDetails.3p
+@man man/man3p/Business::PayPal::API::MassPay.3p
+@man man/man3p/Business::PayPal::API::ReauthorizationRequest.3p
+@man man/man3p/Business::PayPal::API::RecurringPayments.3p
+@man man/man3p/Business::PayPal::API::RefundTransaction.3p
+@man man/man3p/Business::PayPal::API::TransactionSearch.3p
+@man man/man3p/Business::PayPal::API::VoidRequest.3p
+share/examples/p5-Business-PayPal-API/
+share/examples/p5-Business-PayPal-API/paypal-checkout-example.pl
