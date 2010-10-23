@@ -1,0 +1,5 @@
+Business::PayPal makes the automation of PayPal transactions as simple
+as doing credit card transactions through a regular processor. It
+includes methods for creating PayPal buttons and for validating the
+Instant Payment Notification that is sent when PayPal processes a
+payment.
