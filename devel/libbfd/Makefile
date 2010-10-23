@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/13 11:46:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/23 17:55:57 jasper Exp $
 
 COMMENT=	GNU Binary File Descriptor library
 
@@ -25,7 +25,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
-CONFIGURE_ARGS+= --disable-nls --disable-shared
+CONFIGURE_ARGS+= --disable-nls \
+		--disable-shared \
+		--disable-werror
 
 WRKSRC=${WRKDIR}/${DISTNAME}/bfd
 
