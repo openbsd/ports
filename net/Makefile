@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.656 2010/10/23 16:08:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.657 2010/10/23 22:59:16 sebastia Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -520,6 +520,7 @@
      SUBDIR += twirssi
      SUBDIR += twitux
      SUBDIR += ucspi-unix
+     SUBDIR += udns
      SUBDIR += udptunnel
      SUBDIR += unbound
      SUBDIR += unison
