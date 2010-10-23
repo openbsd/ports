@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.9 2010/10/23 15:16:27 steven Exp $
+# $OpenBSD: fortran.port.mk,v 1.10 2010/10/23 15:30:00 steven Exp $
 
 MODFORTRAN_COMPILER ?= g77
 
@@ -27,7 +27,7 @@ fi
 .elif ${MODFORTRAN_COMPILER:L} == "gfortran"
 .  if ${COMPILER_VERSION:L:Mgcc4}
 _MODFORTRAN_LIB_DEPENDS_GFORTRAN = ::lang/gfortran,-libgfortran
-_MODFORTRAN_WANTLIB_GFORTRAN =
+_MODFORTRAN_WANTLIB_GFORTRAN = gfortran
 _MODFORTRAN_BUILD_DEPENDS_GFORTRAN = ::lang/gfortran
 .  else
 MODULES += gcc4
