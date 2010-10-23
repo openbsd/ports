@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/23 16:47:33 steven Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
-DISTNAME =	mathomatic-14.5.5
-REVISION =	0
+DISTNAME =	mathomatic-15.3.0
 
 CATEGORIES =	math
 
-HOMEPAGE =	http://www.mathomatic.org/
+HOMEPAGE =	http://www.mathomatic.org/math/
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,7 +21,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 MAKE_ENV =	READLINE=1
 MAKE_FILE =	makefile
-FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
+USE_GMAKE =	Yes
 USE_GROFF =	Yes
 
 REGRESS_TARGET =	test

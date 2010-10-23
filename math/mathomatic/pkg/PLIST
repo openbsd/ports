@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/12/21 22:07:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/10/23 16:47:34 steven Exp $
 @bin bin/mathomatic
 @man man/man1/mathomatic.1
 share/applications/mathomatic.desktop
@@ -15,6 +15,7 @@ share/doc/mathomatic/factorial/fact.py
 share/doc/mathomatic/factorial/factorial
 share/doc/mathomatic/factorial/intfact.c
 share/doc/mathomatic/html/
+share/doc/mathomatic/html/README.txt
 share/doc/mathomatic/html/am.html
 share/doc/mathomatic/html/doc.css
 share/doc/mathomatic/html/favicon.ico
@@ -22,22 +23,28 @@ share/doc/mathomatic/html/greenfade.png
 share/doc/mathomatic/html/index.html
 share/doc/mathomatic/html/led_circle_green.png
 share/doc/mathomatic/html/manual.html
+share/doc/mathomatic/html/matho-mult.1.html
 share/doc/mathomatic/html/matho-pascal.1.html
 share/doc/mathomatic/html/matho-primes.1.html
+share/doc/mathomatic/html/matho-sum.1.html
 share/doc/mathomatic/html/matho-sumsq.1.html
 share/doc/mathomatic/html/mathomatic.1.html
 share/doc/mathomatic/html/mathomatic16x16.png
 share/doc/mathomatic/html/open_book_nae_02.png
+share/doc/mathomatic/html/primorial.1.html
 share/doc/mathomatic/m4/
 share/doc/mathomatic/m4/README.txt
 share/doc/mathomatic/m4/functions.m4
 share/doc/mathomatic/m4/matho
+share/doc/mathomatic/m4/matho-install
+share/doc/mathomatic/m4/matho-uninstall
 share/doc/mathomatic/m4/rmath
 share/doc/mathomatic/tests/
 share/doc/mathomatic/tests/README.txt
 share/doc/mathomatic/tests/all.in
 share/doc/mathomatic/tests/all.out
 share/doc/mathomatic/tests/circles.in
+share/doc/mathomatic/tests/collatz.in
 share/doc/mathomatic/tests/conversions.in
 share/doc/mathomatic/tests/cubic.in
 share/doc/mathomatic/tests/david.in
@@ -67,14 +74,14 @@ share/doc/mathomatic/tests/poly.in
 share/doc/mathomatic/tests/pyth3d.in
 share/doc/mathomatic/tests/radius.in
 share/doc/mathomatic/tests/simplify.in
-share/doc/mathomatic/tests/test
+share/doc/mathomatic/tests/t
 share/doc/mathomatic/tests/test.in
 share/doc/mathomatic/tests/test1.in
 share/doc/mathomatic/tests/test2.in
 share/doc/mathomatic/tests/test6.in
-share/doc/mathomatic/tests/torus.in
 share/doc/mathomatic/tests/trig.in
 share/pixmaps/
 share/pixmaps/mathomatic.png
+share/pixmaps/mathomatic.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

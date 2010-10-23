@@ -1,17 +1,18 @@
-$OpenBSD: patch-makefile,v 1.10 2009/10/10 10:16:17 steven Exp $
---- makefile.orig	Sat Sep  5 17:12:42 2009
-+++ makefile	Sat Oct 10 12:13:26 2009
-@@ -6,7 +6,7 @@
+$OpenBSD: patch-makefile,v 1.11 2010/10/23 16:47:34 steven Exp $
+--- makefile.orig	Fri Oct  8 01:43:47 2010
++++ makefile	Sat Oct 23 18:07:42 2010
+@@ -9,7 +9,8 @@ INSTALL		?= install # installer to use
+ INSTALL_PROGRAM	?= $(INSTALL) # command to install program files
+ INSTALL_DATA	?= $(INSTALL) -m 0644 # command to install data files
+ 
+-CC_OPTIMIZE	= -O # default C compiler optimization flags
++CC_OPTIMIZE	=
++#CC_OPTIMIZE	= -O # default C compiler optimization flags
+ #CC_OPTIMIZE	= -O3 -msse2 -mfpmath=sse -fomit-frame-pointer # optimize for speed on a Pentium 4 or higher CPU
  
  VERSION		= `cat VERSION`
- CFLAGS		+= -Wall -Wshadow -Wno-char-subscripts -fomit-frame-pointer # gcc specific flags
--CFLAGS		+= -O -DUNIX -DVERSION=\"$(VERSION)\"
-+CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\"
- LDLIBS		+= -lm # libraries to link
- 
- # "make READLINE=1" to include readline support:
-@@ -20,7 +20,7 @@ LDLIBS		+= $(READLINE:1=-lreadline -lncurses)
- # Install directories follow, installs everything in /usr/local by default:
+@@ -31,7 +32,7 @@ LDLIBS		+= $(READLINE:1=-lreadline -lncurses)
+ # DESTDIR is only used by package maintainers, who should remove all DESTDIR patches soon.
  prefix		?= /usr/local
  bindir		?= $(prefix)/bin
 -mandir		?= $(prefix)/share/man

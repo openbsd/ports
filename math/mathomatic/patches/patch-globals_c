@@ -1,8 +1,8 @@
-$OpenBSD: patch-globals_c,v 1.13 2009/10/10 10:16:17 steven Exp $
---- globals.c.orig	Mon Aug  3 11:45:43 2009
-+++ globals.c	Sat Oct 10 12:14:08 2009
-@@ -61,7 +61,7 @@ int		debug_level;				/* current debug level */
- #if	LIBRARY
+$OpenBSD: patch-globals_c,v 1.14 2010/10/23 16:47:34 steven Exp $
+--- globals.c.orig	Fri Oct  8 19:57:18 2010
++++ globals.c	Sat Oct 23 18:05:12 2010
+@@ -81,7 +81,7 @@ int		debug_level;				/* current debug level */
+ #if	LIBRARY || NO_COLOR
  int		color_flag = false;		/* library shouldn't default to color mode */
  #else
 -int		color_flag = true;		/* "set color" flag, true for color output mode */
