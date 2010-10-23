@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/22 16:41:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/23 18:43:58 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.9
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -57,9 +57,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-types
 	${INSTALL_SCRIPT} ${WRKSRC}/Choices/MIME-types/* \
 		${PREFIX}/share/rox/Choices/MIME-types
-.for p in ROX-Filer ROX-Filer.dbg
-	${INSTALL_PROGRAM} ${WRKSRC}/ROX-Filer/$p ${PREFIX}/rox/ROX-Filer
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/ROX-Filer/ROX-Filer ${PREFIX}/rox/ROX-Filer
 .for i in ${INSTDATA}
 	@cp -R ${WRKSRC}/ROX-Filer/$i ${PREFIX}/rox/ROX-Filer
 .endfor

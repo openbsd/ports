@@ -1,0 +1,18 @@
+$OpenBSD: patch-ROX-Filer_src_Makefile_in,v 1.1 2010/10/23 18:43:58 jasper Exp $
+
+Don't create a debug binary (that doesn't work anyway), this
+breaks mips64(el).
+
+--- ROX-Filer/src/Makefile.in.orig	Sun May 10 14:22:54 2009
++++ ROX-Filer/src/Makefile.in	Sat Oct 23 20:17:07 2010
+@@ -47,10 +47,6 @@ OBJECTS = abox.o action.o appinfo.o appmenu.o bind.o b
+ ${PROG}: ${OBJECTS}
+ 	${CC} -o "${PROG}" ${OBJECTS} ${LDFLAGS}
+ 	mv "${PROG}" "${PLATFORM_DIR}"
+-	-(cd "${PLATFORM_DIR}" && \
+-	 objcopy --only-keep-debug ROX-Filer ROX-Filer.dbg && \
+-	 strip ROX-Filer && \
+-	 objcopy --add-gnu-debuglink=ROX-Filer.dbg ROX-Filer)
+ 
+ clean:
+ 	rm -f *.o Makefile.bak
