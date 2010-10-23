@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.30 2010/10/23 14:37:17 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.31 2010/10/23 15:26:27 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -7,7 +7,7 @@
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX?=		.tar.bz2
 CATEGORIES+=		x11/gnome
 .endif
 
