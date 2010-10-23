@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2010/06/28 18:20:56 robert Exp $
+# $OpenBSD: Makefile,v 1.246 2010/10/23 22:08:47 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -15,6 +15,8 @@
      SUBDIR += bladeenc
      SUBDIR += bmp
      SUBDIR += bonk
+     SUBDIR += calf
+     SUBDIR += caps-plugins
      SUBDIR += cdparanoia
      SUBDIR += cmixer
      SUBDIR += cmt
@@ -80,6 +82,7 @@
      SUBDIR += libworkman
      SUBDIR += mac
      SUBDIR += madplay
+     SUBDIR += mcp-plugins
      SUBDIR += midish
      SUBDIR += milkytracker
      SUBDIR += mixer.app
