@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_node_d_exim_mailstats_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d/exim_mailstats.in.orig	Sat Oct 23 15:40:44 2010
++++ plugins/node.d/exim_mailstats.in	Sat Oct 23 15:41:36 2010
+@@ -128,7 +128,7 @@ sub parseEximfile
+ }
+ 
+ 
+-my $EXIM = "/usr/sbin/exim";
++my $EXIM = "/usr/local/bin/exim";
+ 
+ $EXIM = "/usr/sbin/exim4" if (-x "/usr/sbin/exim4");    # a Debianism
+ $EXIM = $ENV{'exim'}      if defined $ENV{'exim'};

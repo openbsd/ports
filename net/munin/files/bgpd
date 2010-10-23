@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: bgpd,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+# $OpenBSD: bgpd,v 1.2 2010/10/23 15:52:22 sthen Exp $
 #
 # Script to monitor OpenBGPD peers
 # (c) 2007 Michael Knudsen <mk@openbsd.org>
@@ -29,8 +29,8 @@ if [ "$1" = "autoconf" ]; then
 		echo yes
 		exit 0
 	else
-		echo no
-		exit 1
+		echo "no ($RSOCK not a socket)"
+		exit 0
 	fi
 fi
 

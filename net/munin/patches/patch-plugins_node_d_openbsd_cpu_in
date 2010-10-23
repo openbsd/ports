@@ -1,7 +1,7 @@
-$OpenBSD: patch-node_node_d_openbsd_cpu_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
---- node/node.d.openbsd/cpu.in.orig	Mon Nov 16 19:50:02 2009
-+++ node/node.d.openbsd/cpu.in	Mon Nov 16 19:54:38 2009
-@@ -83,12 +83,7 @@ fi
+$OpenBSD: patch-plugins_node_d_openbsd_cpu_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d.openbsd/cpu.in.orig	Fri Oct 15 00:05:17 2010
++++ plugins/node.d.openbsd/cpu.in	Fri Oct 15 00:05:46 2010
+@@ -35,12 +35,7 @@ fi
  
  if [ "$1" = "config" ]; then
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-node_node_d_openbsd_cpu_in,v 1.1.1.1 2009/11/17 11:11:21 sthen E
  	PERCENT=`/sbin/sysctl -n hw.ncpu | awk '{print ($1)*100}'`
  	NCPU=`/sbin/sysctl -n hw.ncpu`
  	if [ "$scaleto100" = yes ]; then
-@@ -152,5 +147,5 @@ if [ "$1" = "config" ]; then
+@@ -104,5 +99,5 @@ if [ "$1" = "config" ]; then
  	exit 0
  fi
  

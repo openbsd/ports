@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_node_d_sendmail_mailqueue_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d/sendmail_mailqueue.in.orig	Thu Oct 14 18:45:04 2010
++++ plugins/node.d/sendmail_mailqueue.in	Thu Oct 14 18:45:23 2010
+@@ -38,7 +38,7 @@ Unknown license
+ 
+ =cut
+ 
+-MSP_QUEUE=/var/spool/mqueue-client
++MSP_QUEUE=/var/spool/clientmqueue
+ MTA_QUEUE=/var/spool/mqueue
+ if [ "$mspqueue"  ]; then MSP_QUEUE=$mspqueue ; fi
+ if [ "$mtaqueue"  ]; then MTA_QUEUE=$mtaqueue ; fi

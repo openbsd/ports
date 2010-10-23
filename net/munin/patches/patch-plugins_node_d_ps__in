@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_node_d_ps__in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d/ps_.in.orig	Thu Oct 14 18:46:50 2010
++++ plugins/node.d/ps_.in	Thu Oct 14 18:46:58 2010
+@@ -40,7 +40,7 @@ Unknown license
+ =head1 MAGIC MARKERS
+ 
+  #%# family=auto
+- #%# capabilities=autoconf suggest
++ #%# capabilities=autoconf
+ 
+ =cut
+ 

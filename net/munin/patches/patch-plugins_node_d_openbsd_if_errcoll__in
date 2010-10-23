@@ -1,14 +1,17 @@
-$OpenBSD: patch-node_node_d_openbsd_if_errcoll__in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
---- node/node.d.openbsd/if_errcoll_.in.orig	Thu Feb 21 13:24:36 2008
-+++ node/node.d.openbsd/if_errcoll_.in	Mon Nov 16 20:03:08 2009
-@@ -3,7 +3,7 @@
+$OpenBSD: patch-plugins_node_d_openbsd_if_errcoll__in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d.openbsd/if_errcoll_.in.orig	Fri Oct 15 00:03:18 2010
++++ plugins/node.d.openbsd/if_errcoll_.in	Fri Oct 15 00:04:55 2010
+@@ -3,9 +3,9 @@
  # Wildcard-plugin to monitor network interfaces. To monitor an
  # interface, link if_<interface> to this file. E.g.
  #
 -#    ln -s /usr/share/munin/node/plugins-auto/if_ /etc/munin/node.d/if_eth0
-+#    ln -s /usr/share/munin/node/plugins-auto/if_errcoll_ /etc/munin/node.d/if_errcoll_eth0
++#    ln -s /usr/share/munin/node/plugins-auto/if_errcoll_ /etc/munin/node.d/if_errcoll_em0
  #
- # ...will monitor eth0.
+-# ...will monitor eth0.
++# ...will monitor em0.
+ #
+ # Any device found in /usr/bin/netstat can be monitored.
  #
 @@ -30,7 +30,7 @@ fi
  

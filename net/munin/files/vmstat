@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: vmstat,v 1.1.1.1 2009/11/17 11:11:20 sthen Exp $
+# $OpenBSD: vmstat,v 1.2 2010/10/23 15:52:22 sthen Exp $
 #
 # Adapted from node/node.d.freebsd/vmstat.in
 #
@@ -81,4 +81,4 @@ if [ "$1" = "config" ]; then
 	exit 0
 fi
 
-/usr/bin/vmstat 1 2 | /usr/bin/awk 'END { print "wait.value " $1 "\nblocked.value " $2 "\npagewait.value " $3}' 
+/usr/bin/vmstat 1 2 | /usr/bin/awk 'END { print "running.value " $1 "\nblocked.value " $2 "\npagewait.value " $3}' 

@@ -1,6 +1,18 @@
-$OpenBSD: patch-node_node_d_openbsd_if__in,v 1.2 2009/11/17 11:47:06 sthen Exp $
---- node/node.d.openbsd/if_.in.orig	Thu Feb 21 13:24:36 2008
-+++ node/node.d.openbsd/if_.in	Tue Nov 17 11:41:17 2009
+$OpenBSD: patch-plugins_node_d_openbsd_if__in,v 1.1 2010/10/23 15:52:23 sthen Exp $
+--- plugins/node.d.openbsd/if_.in.orig	Fri Oct 15 00:06:05 2010
++++ plugins/node.d.openbsd/if_.in	Fri Oct 15 00:08:13 2010
+@@ -3,9 +3,9 @@
+ # Wildcard-plugin to monitor network interfaces. To monitor an
+ # interface, link if_<interface> to this file. E.g.
+ #
+-#    ln -s /usr/share/munin/node/plugins-auto/if_ /etc/munin/node.d/if_eth0
++#    ln -s /usr/share/munin/node/plugins-auto/if_ /etc/munin/node.d/if_em0
+ #
+-# ...will monitor eth0.
++# ...will monitor em0.
+ #
+ # To aggregate all network interfaces on the system (except lo0), 
+ # link if_aggregated to this file.
 @@ -33,7 +33,7 @@ fi
  
  if [ "$1" = "suggest" ]; then
@@ -14,7 +26,7 @@ $OpenBSD: patch-node_node_d_openbsd_if__in,v 1.2 2009/11/17 11:47:06 sthen Exp $
  	echo 'graph_args --base 1000'
  	echo 'graph_vlabel bits per ${graph_period} in (-) / out (+)'
  	echo 'graph_category network'
--	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments."
+-	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is unsuitable for most production environments."
 +	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes."
  	echo 'rbytes.label received'
 -        echo 'rbytes.type COUNTER'
