@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Engine.pm,v 1.2 2010/10/23 17:58:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -77,7 +77,7 @@ sub errors_string
 	my @l = ();
 	for my $e (@{$self->{errors}}) {
 		my $s = $e->fullpkgpath;
-		if (defined $e->{host}) {
+		if (defined $e->{host} && !$e->{host}->is_localhost) {
 			$s .= "(".$e->{host}->name.")";
 		}
 		push(@l, $s);

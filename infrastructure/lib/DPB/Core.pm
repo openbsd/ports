@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Core.pm,v 1.2 2010/10/23 17:58:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -44,6 +44,22 @@ sub fullname
 		$name .= "/$self->{prop}->{jobs}";
 	}
 	return $name;
+}
+
+sub name_is_localhost
+{
+	my ($class, $host) = @_;
+	if ($host eq "localhost" or $host eq DPB::Core::Local->hostname) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub is_localhost
+{
+	my $o = shift;
+	return $o->name_is_localhost($o->{host});
 }
 
 
@@ -373,7 +389,7 @@ my $init = {};
 sub new
 {
 	my ($class, $host, $prop) = @_;
-	if ($host eq "localhost" or $host eq DPB::Core::Local->hostname) {
+	if (DPB::Host->name_is_localhost($host)) {
 		return $init->{localhost} //= DPB::Core::Local->new_noreg($host, $prop);
 	} else {
 		require DPB::Core::Distant;
