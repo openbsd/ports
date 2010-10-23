@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_iconloader_qticonloader_cpp,v 1.1 2010/10/23 09:23:09 dcoppa Exp $
+
+Use the gnome icon theme unconditionally: fixes a problem with minitube
+GUI not having icons under fvwm/cwm/kde3/...
+
+--- src/iconloader/qticonloader.cpp.orig	Mon Oct 11 23:44:46 2010
++++ src/iconloader/qticonloader.cpp	Fri Oct 22 10:32:08 2010
+@@ -104,7 +104,6 @@ Q_GLOBAL_STATIC(QtIconLoaderImplementation, iconLoader
+     QIcon icon;
+ 
+ #ifdef Q_WS_X11
+-#if QT_VERSION < 0x040600
+     QString pngExtension(QLatin1String(".png"));
+     QList<int> iconSizes;
+     iconSizes << 16 << 22 << 24 << 32 << 48;
+@@ -112,9 +111,6 @@ Q_GLOBAL_STATIC(QtIconLoaderImplementation, iconLoader
+         icon.addPixmap(iconLoaderInstance()->findIcon(size, name));
+     }
+ #else
+-    icon = QIcon::fromTheme(name);
+-#endif
+-#else
+         icon = QIcon(QString(":/images/%1.png").arg(name));
+         if (!icon.isNull()) {
+             icon.addPixmap(QString(":/images/%1_active.png").arg(name), QIcon::Active);
+@@ -179,11 +175,15 @@ void QtIconLoaderImplementation::lookupIconTheme() con
+ #ifdef Q_WS_X11
+     QString dataDirs = QFile::decodeName(getenv("XDG_DATA_DIRS"));
+     if (dataDirs.isEmpty())
+-        dataDirs = QLatin1String("/usr/local/share/:/usr/share/");
++        dataDirs = QLatin1String("${LOCALBASE}/share/:/usr/share/");
+     
+     dataDirs.prepend(QDir::homePath() + QLatin1String("/:"));
+     iconDirs = dataDirs.split(QLatin1Char(':'));
+     
++    if (themeName.isEmpty())
++        themeName = QLatin1String("gnome");
++    return;
++    
+     // If we are running GNOME we resolve and use GConf. In all other
+     // cases we currently use the KDE icon theme
+     
+@@ -228,7 +228,7 @@ void QtIconLoaderImplementation::lookupIconTheme() con
+     
+     // KDE (and others)
+     if (dataDirs.isEmpty())
+-        dataDirs = QLatin1String("/usr/local/share/:/usr/share/");
++        dataDirs = QLatin1String("${LOCALBASE}/share/:/usr/share/");
+     
+     dataDirs += QLatin1Char(':') + kdeHome() + QLatin1String("/share");
+     dataDirs.prepend(QDir::homePath() + QLatin1String("/:"));
