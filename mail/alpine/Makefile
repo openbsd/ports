@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/23 19:41:47 jsg Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -18,7 +18,7 @@ PKGNAME-main=	alpine-${V}
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-pico=	1
 REVISION-pilot=	3
 
@@ -35,7 +35,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
 
 WANTLIB=	c ncurses pthread
-WANTLIB-main=	${WANTLIB} asn1 com_err crypto des gssapi kafs krb5 ssl
+WANTLIB-main=	${WANTLIB} asn1 com_err crypto gssapi kafs krb5 ssl
 
 MULTI_PACKAGES=	-main -pico -pilot
 

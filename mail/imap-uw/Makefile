@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/23 19:39:46 jsg Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -7,9 +7,13 @@ COMMENT-c-client=University of Washington's c-client mail access routines
 V=		2007e
 DISTNAME=	imap-${V}
 
-PKGNAME-server=	imap-uw-${V}p0
-PKGNAME-mailutil=mailutil-uw-${V}p0
-PKGNAME-c-client=c-client-${V}p0
+PKGNAME-server=	imap-uw-${V}
+PKGNAME-mailutil=mailutil-uw-${V}
+PKGNAME-c-client=c-client-${V}
+
+REVISION-server=	1
+REVISION-mailutil=	1
+REVISION-c-client=	1
 
 #WRKDIST=	${WRKDIR}/imap-2007b
 
@@ -35,7 +39,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	asn1 c com_err crypto des gssapi kafs krb5 ssl
+WANTLIB=	asn1 c com_err crypto gssapi kafs krb5 ssl
 WANTLIB-c-client=
 
 ALL_TARGET=	bso

@@ -1,6 +1,6 @@
-$OpenBSD: patch-alpine_Makefile_in,v 1.4 2008/10/15 14:31:04 ajacoutot Exp $
+$OpenBSD: patch-alpine_Makefile_in,v 1.5 2010/10/23 19:41:47 jsg Exp $
 --- alpine/Makefile.in.orig	Tue Jun  3 17:54:15 2008
-+++ alpine/Makefile.in	Sat Oct 11 18:58:57 2008
++++ alpine/Makefile.in	Sat Oct 16 13:55:29 2010
 @@ -84,14 +84,14 @@ rpdump_LDADD = $(LDADD)
  rpdump_DEPENDENCIES = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
  	../pith/libpith.a ../pith/osdep/libpithosd.a \
@@ -23,7 +23,7 @@ $OpenBSD: patch-alpine_Makefile_in,v 1.4 2008/10/15 14:31:04 ajacoutot Exp $
  AMTAR = @AMTAR@
  AM_CFLAGS = @AM_CFLAGS@
 -AM_LDFLAGS = `cat $(top_srcdir)/c-client/LDFLAGS`
-+AM_LDFLAGS = -L/usr/lib -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lssl -lcrypto
++AM_LDFLAGS = -L/usr/lib -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -lssl -lcrypto
  AR = @AR@
  AUTOCONF = @AUTOCONF@
  AUTOHEADER = @AUTOHEADER@
