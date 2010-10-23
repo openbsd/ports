@@ -1,8 +1,8 @@
-$OpenBSD: patch-tads_Jamfile,v 1.2 2009/08/28 01:02:21 sthen Exp $
---- tads/Jamfile.orig	Sat Jan 17 11:27:28 2009
-+++ tads/Jamfile	Fri Jun 19 12:35:32 2009
-@@ -26,6 +26,15 @@ if $(OS) = LINUX || $(OS) = SOLARIS
-         ;
+$OpenBSD: patch-tads_Jamfile,v 1.3 2010/10/23 09:15:16 jasper Exp $
+--- tads/Jamfile.orig	Mon Sep 13 16:53:08 2010
++++ tads/Jamfile	Mon Oct 18 00:09:08 2010
+@@ -32,6 +32,15 @@ if $(OS) = MACOSX
+     LINKFLAGS = -headerpad_max_install_names $(MAINARCH) $(ALTARCH) ;
  }
  
 +if $(OS) = OPENBSD
@@ -16,8 +16,8 @@ $OpenBSD: patch-tads_Jamfile,v 1.2 2009/08/28 01:02:21 sthen Exp $
 +
  SUBDIRC++FLAGS = $(SUBDIRCCFLAGS) ;
  
- SEARCH_SOURCE = [ FDirName $(SUBDIR) tads2 ] ;
-@@ -74,7 +83,7 @@ Main tadsr :
+ SEARCH_SOURCE =
+@@ -81,7 +90,7 @@ Main tadsr :
  
  LinkLibraries tadsr : libtads2 libtads3 ;
  

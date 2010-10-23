@@ -1,9 +1,9 @@
-$OpenBSD: patch-Jamrules,v 1.4 2010/10/17 22:21:55 jasper Exp $
---- Jamrules.orig	Sat Jun  6 08:17:22 2009
-+++ Jamrules	Fri Jun 19 12:35:31 2009
-@@ -7,8 +7,8 @@ BUILD ?= RELEASE ;
+$OpenBSD: patch-Jamrules,v 1.5 2010/10/23 09:15:16 jasper Exp $
+--- Jamrules.orig	Mon Sep 27 15:05:16 2010
++++ Jamrules	Thu Oct 21 23:12:05 2010
+@@ -6,8 +6,8 @@ BUILD ?= RELEASE ;
  USESDL = yes ;
- # USEFMOD = yes ;
+ BUNDLEFONTS = yes ;
  
 -CC      = gcc ;
 -C++     = g++ ;
@@ -12,9 +12,9 @@ $OpenBSD: patch-Jamrules,v 1.4 2010/10/17 22:21:55 jasper Exp $
  
  if $(CROSS)
  {
-@@ -72,6 +72,23 @@ switch $(OS)
- 	    SHRLINKLIBS += -lSDL_mixer -lSDL -lsmpeg -lvorbisfile ;
- 	}
+@@ -89,6 +89,23 @@ switch $(OS)
+         else      { SHRLINKLIBS += $(GARGLKLIBS) ; }
+ 
  
 +    case OPENBSD :
 +        Echo "OS is OpenBSD (gtk+)" ;
@@ -34,9 +34,9 @@ $OpenBSD: patch-Jamrules,v 1.4 2010/10/17 22:21:55 jasper Exp $
 +	}
 +
      case MACOSX :
-         Echo "OS is MACOSX (gtk+)" ;
+         Echo "OS is MACOSX (cocoa)" ;
          SUFDLL = .dylib ;
-@@ -98,7 +115,7 @@ switch $(BUILD)
+@@ -121,7 +138,7 @@ switch $(BUILD)
  
      case RELEASE :
          Echo "BUILD is RELEASE" ;

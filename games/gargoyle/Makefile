@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/17 22:21:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/23 09:15:16 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	cross-platform interactive fiction player
 
-DISTNAME =	gargoyle-2009-08-25-sources
-PKGNAME =	gargoyle-20090825
-REVISION =	1
+DISTNAME =	gargoyle-2010.1-sources
+PKGNAME =	gargoyle-2010.1
+EPOCH =		0
 
 CATEGORIES =	games x11
 
@@ -25,23 +25,21 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
 		freetype iconv m pixman-1 pthread pthread-stubs xcb stdc++ \
-		vorbisfile z gdk_pixbuf-2.0
+		vorbisfile z gdk_pixbuf-2.0 SDL.>=2.0 SDL_sound SDL_mixer \
+		atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
+		gdk-x11-2.0 jpeg.>=62 pango-1.0.>=1600.0 \
+		pangocairo-1.0.>=1600.0 pangoft2-1.0.>=1600.0 png.>=3 smpeg \
+		GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
 MASTER_SITES =	http://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip
 
 MODULES =	devel/gettext
 BUILD_DEPENDS =	::devel/jam
-LIB_DEPENDS =	SDL.>=2.0::devel/sdl \
-		SDL_sound::devel/sdl-sound \
-		SDL_mixer::devel/sdl-mixer \
-		atk-1.0::devel/atk \
-		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-		gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
-		jpeg.>=62::graphics/jpeg \
-		pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
-		png.>=3::graphics/png \
-		smpeg::devel/smpeg
+LIB_DEPENDS =	::devel/sdl-sound \
+		::devel/sdl-mixer \
+		::x11/gtk+2 \
+		::graphics/jpeg
 
 USE_X11 =		Yes
 
@@ -55,8 +53,8 @@ JAMDEBUG +=	-q	# die quickly on build failure
 MAKE_ENV +=		CC=${CC} CXX=${CXX}
 DESTDIRNAME =		DESTPREFIX
 
-post-extract:
-	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/garglk/launchgtk.c
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${JAMDEBUG}
@@ -71,6 +69,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/openbsd.release/garglk/gargoyle \
 	    ${PREFIX}/libexec/gargoyle/
 	ln -s ${TRUEPREFIX}/libexec/gargoyle/gargoyle ${PREFIX}/bin/
+	ln -s ${TRUEPREFIX}/libexec/gargoyle/libgarglk.so ${PREFIX}/lib/
 .for i in License.txt licenses/* garglk/*txt
 	cd ${WRKSRC} && ${INSTALL_DATA} $i ${PREFIX}/share/doc/gargoyle
 .endfor
