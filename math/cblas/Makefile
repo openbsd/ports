@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -29,7 +29,7 @@ WRKDIST=	${WRKDIR}/CBLAS
 WRKSRC=		${WRKDIST}/src
 
 MODULES=		fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER =	g77
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	blas.>=1.0::math/blas

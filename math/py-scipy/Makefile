@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/14 12:07:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
@@ -22,7 +22,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
 HOMEPAGE=		http://numeric.scipy.org/
 
 MODULES=		lang/python fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER =	g77
 MODPY_SETUPTOOLS=       Yes
 MODPY_SETUP=            setupegg.py
 MODPY_BADEGGS=		scipy

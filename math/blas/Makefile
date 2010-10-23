@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -28,7 +28,7 @@ DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}/BLAS
 
 MODULES=	fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER = g77
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
 MAKE_FILE=	${FILESDIR}/Makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/23 15:09:57 steven Exp $
 
 COMMENT =		open source MPI-2 implementation
 
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.open-mpi.org/
 
 MAINTAINER =		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 MODULES =		fortran
-MODFORTRAN_WANTG77 =	Yes
+MODFORTRAN_COMPILER =	g77
 BUILD_DEPENDS +=	${MODFORTRAN_BUILD_DEPENDS}
 
 # BSD

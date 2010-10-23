@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/23 15:09:57 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 MODULES=	devel/gettext \
 		fortran
 
-MODFORTRAN_WANTG77 = Yes
+MODFORTRAN_COMPILER = g77
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

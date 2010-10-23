@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -21,7 +21,7 @@ DISTFILES=	${DISTNAME}.tar.gz patch.tar.gz ug.ps.gz
 DIST_SUBDIR=	arpack
 
 MODULES=		fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER =	g77
 BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 
 # See bsd.lib.mk:162

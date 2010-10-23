@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/05/29 15:27:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	No
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
 
 MODULES=	fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER = g77
 
 WANTLIB=	GL GLU X11 Xmu c m pthread-stubs xcb ${MODFORTRAN_WANTLIB}
 

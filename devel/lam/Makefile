@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/23 15:09:57 steven Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
@@ -33,7 +33,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/mpi2c++
 CONFIGURE_ARGS+=	--with-rsh="ssh -x"
 
 MODULES=		fortran
-MODFORTRAN_WANTG77=	Yes
+MODFORTRAN_COMPILER = 	g77
 BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

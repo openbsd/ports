@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/23 15:09:57 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 USE_X11=	Yes
 USE_GROFF =	Yes
 MODULES=	fortran devel/gettext x11/tk
-MODFORTRAN_WANTG77=Yes
+MODFORTRAN_COMPILER = g77
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \

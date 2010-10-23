@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/23 15:09:57 steven Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -33,7 +33,7 @@ MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://neacm.fe.up.pt/pub/octave/
 
 MODULES=	fortran
-MODFORTRAN_WANTG77=Yes
+MODFORTRAN_COMPILER = g77
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		::devel/desktop-file-utils

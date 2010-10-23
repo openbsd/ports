@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/05 10:23:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
 WANTLIB=	blas c lapack m pthread sndio ${MODFORTRAN_WANTLIB}
 MODULES=	converters/libiconv fortran
-MODFORTRAN_WANTG77=Yes
+MODFORTRAN_COMPILER = g77
 
 USE_LIBTOOL=	Yes
 

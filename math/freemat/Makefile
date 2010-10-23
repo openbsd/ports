@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/07/26 09:31:48 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
@@ -25,7 +25,7 @@ WANTLIB= 	GL GLU amd c curses m pthread stdc++ z \
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
 MODULES=	x11/qt4 devel/gettext fortran
-MODFORTRAN_WANTG77= Yes
+MODFORTRAN_COMPILER = g77
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	::devel/ffcall \

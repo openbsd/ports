@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/23 15:09:57 steven Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qrupdate/}
 
 MODULES =		fortran
-MODFORTRAN_WANTG77 =	Yes
+MODFORTRAN_COMPILER =	g77
 
 WANTLIB =		m ${MODFORTRAN_WANTLIB}
 

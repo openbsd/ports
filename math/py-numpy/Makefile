@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/23 15:09:57 steven Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -30,7 +30,7 @@ MODPY_SETUP=		setupegg.py
 
 REGRESS_DEPENDS=	::devel/py-nose
 
-MODFORTRAN_WANTG77 =	Yes
+MODFORTRAN_COMPILER =	g77
 
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=            lapack::math/lapack \
