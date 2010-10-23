@@ -1,8 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2010/09/13 19:44:40 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2010/10/23 12:48:29 landry Exp $
 --- CMakeLists.txt.orig	Sun May 16 09:37:39 2010
-+++ CMakeLists.txt	Thu Jul  1 21:21:44 2010
-@@ -10,7 +10,7 @@ IF(NOT MAN_PREFIX)
- 	SET(MAN_PREFIX ${CMAKE_INSTALL_PREFIX}/share/man/man8/)
++++ CMakeLists.txt	Sat Oct 23 14:37:42 2010
+@@ -7,10 +7,10 @@ SET(CONF_NAME minbif.conf)
+ SET(MOTD_NAME minbif.motd)
+ 
+ IF(NOT MAN_PREFIX)
+-	SET(MAN_PREFIX ${CMAKE_INSTALL_PREFIX}/share/man/man8/)
++	SET(MAN_PREFIX ${CMAKE_INSTALL_PREFIX}/man/man8/)
  ENDIF(NOT MAN_PREFIX)
  IF(NOT CONF_PREFIX)
 -	SET(CONF_PREFIX ${CMAKE_INSTALL_PREFIX}/etc/minbif)

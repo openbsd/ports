@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/13 19:45:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/10/23 12:48:29 landry Exp $
 @newgroup _minbif:655
 @newuser _minbif:655:_minbif:daemon:Minbif Account:/nonexistent:/sbin/nologin
 @bin bin/minbif
+@man man/man8/minbif.8
 share/doc/minbif/
 share/doc/minbif/COPYING
 share/doc/minbif/Doxyfile
@@ -13,9 +14,6 @@ share/examples/minbif/minbif.conf
 @sample ${SYSCONFDIR}/minbif/minbif.conf
 share/examples/minbif/minbif.motd
 @sample ${SYSCONFDIR}/minbif/minbif.motd
-share/man/
-share/man/man8/
-@man share/man/man8/minbif.8
 @owner _minbif
 @group _minbif
 @sample /var/minbif/
