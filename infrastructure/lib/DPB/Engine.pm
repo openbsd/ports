@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.4 2010/10/23 21:46:03 espie Exp $
+# $OpenBSD: Engine.pm,v 1.5 2010/10/24 10:01:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,6 +40,16 @@ sub new
 	$o->{log} = DPB::Util->make_hot($logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($logger->open("stats"));
 	return $o;
+}
+
+sub has_errors
+{
+	my $self = shift;
+	if (@{$self->{errors}} != 0) {
+		$self->{locker}->recheck_errors($self);
+		return 1;
+	}
+	return 0;
 }
 
 sub log_no_ts

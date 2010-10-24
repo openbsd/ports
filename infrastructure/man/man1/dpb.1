@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.4 2010/10/23 18:14:19 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.5 2010/10/24 10:01:57 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 23 2010 $
+.Dd $Mdocdate: October 24 2010 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl acersuUx
+.Op Fl aceqrsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl h Ar hosts
@@ -116,6 +116,8 @@ Avoid for now, as mfs has serious race conditions which yield
 random errors under stress conditions such as bulk build.
 .It Fl P Ar subdirlist
 Read list of pkgpaths from file
+.It Fl q
+Don't quit while errors/locks are around.
 .It Fl r
 Random build order.
 Disregard any kind of smart heuristics.

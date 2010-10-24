@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.2 2010/08/20 15:22:21 espie Exp $
+# $OpenBSD: dpb,v 1.3 2010/10/24 10:01:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -43,7 +43,7 @@ use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
 our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
-    $opt_r, $opt_s, $opt_u, $opt_U,
+    $opt_q, $opt_r, $opt_s, $opt_u, $opt_U,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
 
@@ -107,7 +107,7 @@ $ui->{opt} = {
 	    parse_size_file(shift, $heuristics);
 	}
     };
-$ui->handle_options('acersuUh:xA:f:j:m:P:b:L:S:t:T:', 
+$ui->handle_options('aceqrsuUh:xA:f:j:m:P:b:L:S:t:T:', 
     "[-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 
@@ -247,15 +247,21 @@ $engine->check_buildable;
 
 DPB::Core->start_clock($opt_T);
 while (1) {
-	handle_non_waiting_jobs(0);
-	if (!DPB::Core->running && (!$keep_going || !$engine->can_build)) {
-		$engine->check_buildable;
-		if (!$engine->can_build) {
-			last;
+	while (1) {
+		handle_non_waiting_jobs(0);
+		if (!DPB::Core->running && 
+		    (!$keep_going || !$engine->can_build)) {
+			$engine->check_buildable;
+			if (!$engine->can_build) {
+				last;
+			}
+		}
+		if (DPB::Core->running) {
+			DPB::Core->reap_wait;
 		}
 	}
-	if (DPB::Core->running) {
-		DPB::Core->reap_wait;
+	if (!$opt_q || !$engine->has_errors) {
+		last;
 	}
 }
 
