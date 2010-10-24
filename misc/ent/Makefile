@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:57:47 ajacoutot Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/ 
 
 CATEGORIES=		misc
@@ -9,7 +9,7 @@ EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://www.fourmilab.ch/random/
 MAINTAINER=		Brad Tilley <brad@16systems.com>
-MASTER_SITES=		http://16systems.com/ent/		
+MASTER_SITES=		http://16s.us/ent/		
 
 WRKSRC=			${WRKDIR}
 ALL_TARGET=		ent
