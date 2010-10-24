@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 19:10:15 jakemsr Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -22,9 +22,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 gthread-2.0 m mp3lame ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
 		pthread-stubs samplerate sndfile sndio stdc++ vorbis \
-		vorbisenc vorbisfile xcb xcb-render xcb-render-util z \
+		vorbisenc vorbisfile xcb xcb-render xcb-shm z \
 		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 xml2 lua mac mad \
-		mpcdec FLAC avcodec avformat avutil jack wavpack
+		mpcdec FLAC avcodec avformat avutil jack wavpack \
+		lrdf GL Xxf86vm drm
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 
@@ -39,7 +40,8 @@ LIB_DEPENDS=	::audio/flac \
 		::graphics/ffmpeg \
 		::lang/lua \
 		::textproc/libxml \
-		::x11/gtk+2
+		::x11/gtk+2 \
+		::textproc/liblrdf
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 		
@@ -53,11 +55,11 @@ CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 
 # cddb, ifp (requires lib*) - no package
 # cdda (requires libcdio) - no package
-# ladspa (requires liblrdf) - no package
 # mod (requires libmodplug) - no package
 # speex (requires liboggz) - no package
 CONFIGURE_ARGS=	--with-flac \
 		--with-jack \
+		--with-ladspa \
 		--with-lame \
 		--with-lavc \
 		--with-loop \
@@ -77,7 +79,6 @@ CONFIGURE_ARGS=	--with-flac \
 		--without-cdda \
 		--without-cddb \
 		--without-ifp \
-		--without-ladspa \
 		--without-mod \
 		--without-oss \
 		--without-speex
