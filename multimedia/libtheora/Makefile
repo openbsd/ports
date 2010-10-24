@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/03 00:21:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT=	open video codec
 
 DISTNAME=	libtheora-1.1.1
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 EXTRACT_SUFX=	.tar.bz2
@@ -22,8 +22,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += ogg
+
 # uses Ogg headers
-LIB_DEPENDS=	ogg.>=5::audio/libogg
+LIB_DEPENDS=	::audio/libogg
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

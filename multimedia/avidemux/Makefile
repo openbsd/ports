@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=	free video editor
 
@@ -26,20 +26,22 @@ WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
 WANTLIB += stdc++ xcb xcb-render xcb-render-util z gdk_pixbuf-2.0
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0 faac faad mp3lame vorbis vorbisenc
+WANTLIB += xml2 xvidcore x264
 
 MODULES=	devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		faac.>=1::audio/faac \
-		faad.>=2::audio/faad \
-		mp3lame.>=1::audio/lame \
-		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
-		xml2.>=9::textproc/libxml \
-		xvidcore.>=4::multimedia/xvidcore \
-		x264::multimedia/x264
+LIB_DEPENDS=	::x11/gtk+2 \
+		::audio/faac \
+		::audio/faad \
+		::audio/lame \
+		::audio/libvorbis \
+		::textproc/libxml \
+		::multimedia/xvidcore \
+		::multimedia/x264
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

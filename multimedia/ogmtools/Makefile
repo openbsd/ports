@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
@@ -14,14 +14,15 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+WANTLIB += c m stdc++ ogg dvdread vorbis vorbisenc
+
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-dvdread-includes=${LOCALBASE} \
 			--with-dvdread-libs=${LOCALBASE}
 
-LIB_DEPENDS=		dvdread::devel/libdvdread \
-			vorbis,vorbisenc::audio/libvorbis
+LIB_DEPENDS=		::devel/libdvdread \
+			::audio/libvorbis
 
-WANTLIB=		c m stdc++ ogg
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT=	Fast tool to backup Video DVDs 'on the fly'
 DISTNAME=	streamdvd-0.4
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	dvdread.>=3.0::devel/libdvdread
-WANTLIB=	c m stdc++
+LIB_DEPENDS=	::devel/libdvdread
+WANTLIB=	c m stdc++ dvdread
 
 WRKDIST=	${WRKDIR}/StreamDVD-0.4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT=	multimedia player
 
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender Xtst Xv Xxf86vm c \
 		expat fontconfig freetype m ncurses pthread pthread-stubs \
-		readline xcb z
+		readline xcb xine z curl png
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	xine.>=14::multimedia/xine-lib \
-		curl.>=2::net/curl \
-		png.>=4::graphics/png
+LIB_DEPENDS=	::multimedia/xine-lib \
+		::net/curl \
+		::graphics/png
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

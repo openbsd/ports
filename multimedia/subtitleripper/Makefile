@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:27:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT=	subtitle ripper, used with transcode
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=subtitleripper/}
 
-WANTLIB=	c m z
+WANTLIB=	c m z png netpbm
 
 USE_GMAKE=	Yes
-LIB_DEPENDS=	png.>=5::graphics/png \
-		netpbm.>=1::graphics/netpbm
+LIB_DEPENDS=	::graphics/png \
+		::graphics/netpbm
 RUN_DEPENDS=	::multimedia/transcode
 
 WRKDIST=        ${WRKDIR}/subtitleripper

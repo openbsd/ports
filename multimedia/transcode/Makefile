@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:40:39 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xpm Xrandr Xrender Xt \
-		Xv bz2 c faad freetype gsm m orc-0.4 pthread-stubs pthread \
-		schroedinger-1.0 sndio speex usbhid xcb z
+
+WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xpm Xrandr Xrender Xt
+WANTLIB += Xv bz2 a52 avcodec avformat avutil c dv dvdread faac faad
+WANTLIB += freetype gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4
+WANTLIB += postproc pthread-stubs pthread schroedinger-1.0 sndio
+WANTLIB += speex theora usbhid vorbis x264 xcb xml2 xvidcore z
 
 FLAVORS=	lzo mjpegtools quicktime altivec
 FLAVOR?=
@@ -31,25 +34,25 @@ PKG_ARGS+=	-Di386=0
 .endif
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	SDL.>=2::devel/sdl \
-		a52::audio/liba52 \
-		avcodec.>=13.1,avformat.>=12,avutil.>=6,postproc.>=6:ffmpeg->=20080620p10:graphics/ffmpeg \
-		dv.>=4::multimedia/libdv \
-		dvdread.>=3::devel/libdvdread \
-		jpeg.>=62::graphics/jpeg \
-		mp3lame::audio/lame \
-		faac::audio/faac \
-		mpeg2,mpeg2convert::graphics/libmpeg2 \
-		ogg.>=5::audio/libogg \
-		theora.>=1::multimedia/libtheora \
-		vorbis.>=3,vorbisenc.>=2,vorbisfile.>=4::audio/libvorbis \
-		xml2.>=8::textproc/libxml \
-		xvidcore::multimedia/xvidcore \
-		x264::multimedia/x264
-RUN_DEPENDS=	::graphics/ffmpeg \
-		::audio/sox \
+LIB_DEPENDS=	::audio/faac \
+		::audio/lame \
+		::audio/liba52 \
+		::audio/libogg \
+		::audio/libvorbis \
+		::devel/libdvdread \
+		::devel/sdl \
+		:ffmpeg->=20080620p10:graphics/ffmpeg \
+		::graphics/jpeg \
+		::graphics/libmpeg2 \
+		::multimedia/libdv \
+		::multimedia/libtheora \
+		::multimedia/x264 \
+		::multimedia/xvidcore \
+		::textproc/libxml
+RUN_DEPENDS=	::audio/sox \
 		::audio/vorbis-tools \
 		::audio/toolame \
+		::graphics/ffmpeg \
 		::x11/mplayer
 
 BUILD_DEPENDS+=	::devel/libtool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=	reencode many media file formats to Ogg Theora
 
@@ -18,20 +18,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xfixes bz2 c gsm iconv m ogg pthread \
-			faac faad mp3lame orc-0.4 sndio speex \
-			schroedinger-1.0 x264 z
+WANTLIB += X11 Xext Xfixes bz2 c gsm iconv m ogg pthread
+WANTLIB += faac faad mp3lame orc-0.4 sndio speex
+WANTLIB += schroedinger-1.0 x264 z avcodec avdevice avformat
+WANTLIB += avutil postproc swscale vorbis vorbisenc
+WANTLIB += theora theoradec theoraenc
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	avcodec.>=13.1,avdevice.>=3.0,avformat.>=12,avutil.>=6,postproc.>=13,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
-		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
-		theora.>=2,theoradec.>=1,theoraenc.>=1::multimedia/libtheora
+LIB_DEPENDS=	:ffmpeg->=20080620p10:graphics/ffmpeg \
+		::audio/libvorbis \
+		::multimedia/libtheora
 
 MODULES=	devel/scons
 
 MODSCONS_FLAGS=	libkate=0
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin

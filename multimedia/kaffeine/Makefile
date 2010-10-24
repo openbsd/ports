@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/15 14:11:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=	video player for KDE
 
@@ -20,16 +20,19 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xinerama Xrender Xtst art_lgpl_2 \
-		c expat fam fontconfig freetype iconv idn intl jpeg m ogg \
-		pcre pcreposix png pthread pthread-stubs rpcsvc stdc++ util \
-		xcb z
+
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xinerama Xrender Xtst art_lgpl_2
+WANTLIB += c expat fam fontconfig freetype iconv idn intl jpeg m ogg
+WANTLIB += pcre pcreposix png pthread pthread-stubs rpcsvc stdc++
+WANTLIB += util xcb z kdecore DCOP kdesu kio kdefx kparts kutils
+WANTLIB += kdeprint kdeui kwalletclient khtml kjs vorbis vorbisenc
+WANTLIB += cdio cdio_cdda cdio_paranoia xine
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
-		vorbis,vorbisenc::audio/libvorbis \
-		cdio,cdio_cdda,cdio_paranoia::audio/libcdio \
-		xine.>=20::multimedia/xine-lib
+LIB_DEPENDS=	::x11/kde/libs3 \
+		::audio/libvorbis \
+		::audio/libcdio \
+		::multimedia/xine-lib
 
 SUBST_VARS=	VERSION
 

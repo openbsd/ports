@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -13,16 +13,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c m popt pthread
+
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 SHARED_LIBS=		dv	5.0
 
-WANTLIB += c m pthread
-
-LIB_DEPENDS=		popt::devel/popt
+LIB_DEPENDS=		::devel/popt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

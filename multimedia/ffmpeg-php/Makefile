@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/17 04:00:16 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:40:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for ffmpeg
 DISTNAME=	ffmpeg-php-0.6.0
-PKGNAME=	${DISTNAME}p3
+REVISION=	3
 EXTRACT_SUFX=	.tbz2
 CATEGORIES=	multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg-php/}
@@ -30,11 +30,11 @@ LIBTOOL_FLAGS=	--tag=disable-static
 BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	avcodec,avformat,swscale::graphics/ffmpeg \
-		gd::graphics/gd
+LIB_DEPENDS=	::graphics/ffmpeg \
+		::graphics/gd
 RUN_DEPENDS=	:php5-core-*:www/php5/core \
 		:php5-gd-*:www/php5/extensions,-gd
-WANTLIB=	expat fontconfig freetype iconv jpeg m png z
+WANTLIB=	expat fontconfig freetype iconv jpeg m png z gd avcodec avformat swscale
 
 CONFIGURE_ARGS+=--enable-skip-gd-check
 # force link to gd so $frame->toGDImage() works properly

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=	copy selected info from dvd
 DISTNAME=	ogmrip-0.10.0
-PKGNAME=	dvdcpy-0.10.0p0
+PKGNAME=	dvdcpy-0.10.0
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 
@@ -16,14 +17,15 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+WANTLIB += c dvdread
+
 WRKDIST=	${WRKDIR}/${DISTNAME}/dvdcpy
 
 do-configure:
 	ln -sf ${FILESDIR}/config.h ${WRKDIST}
 
-LIB_DEPENDS=		dvdread::devel/libdvdread
-WANTLIB=		c
-USE_GROFF =	Yes
+LIB_DEPENDS=		::devel/libdvdread
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 do-build:

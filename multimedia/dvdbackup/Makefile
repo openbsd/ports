@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/30 19:10:28 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=		DVD ripper
 
 DISTNAME=		dvdbackup-0.1.1
-PKGNAME=		${DISTNAME}p3
+REVISION=		3
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://dvd-create.sourceforge.net/
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dvd-create.sourceforge.net/
 
-LIB_DEPENDS=		dvdnav.>=6::multimedia/libdvdnav
-WANTLIB=		c dvdread pthread
+LIB_DEPENDS=		::multimedia/libdvdnav
+WANTLIB=		c dvdnav dvdread pthread
 
 NO_REGRESS=		Yes
 

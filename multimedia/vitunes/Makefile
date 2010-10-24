@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:40:39 sthen Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c  m ncurses util
+WANTLIB =		c m ncurses tag tag_c util
 
-LIB_DEPENDS =		tag,tag_c::audio/taglib
-
+LIB_DEPENDS =		::audio/taglib
 RUN_DEPENDS =		::x11/mplayer
 			
 MASTER_SITES =		${HOMEPAGE}/files/
@@ -27,9 +26,8 @@ MASTER_SITES =		${HOMEPAGE}/files/
 EXTRACT_SUFX =		.tgz
 
 ALL_TARGET =		vitunes
-
-USE_GROFF =	Yes
-NO_REGRESS=		Yes
+USE_GROFF =		Yes
+NO_REGRESS =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vitunes ${PREFIX}/bin

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:38 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-1.0.4
-PKGNAME =		${DISTNAME}p4
+REVISION=		4
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
@@ -19,9 +19,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		ICE SM X11 Xau Xdmcp Xext Xrender \
-			art_lgpl_2 c fam idn m ogg png pthread \
-			pthread-stubs stdc++ util xcb z
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn
+WANTLIB += m ogg png pthread pthread-stubs stdc++ util xcb z jpeg
+WANTLIB += samplerate dvdread mad mpcdec vorbis vorbisenc vorbisfile
+WANTLIB += mp3lame avcodec avformat sndfile FLAC FLAC++ tag artsc
+WANTLIB += DCOP kdecore kdefx kdesu kdeui kio kparts kwalletclient
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
 EXTRACT_SUFX =		.tar.bz2
@@ -37,19 +39,19 @@ RUN_DEPENDS =		::sysutils/cdrtools \
 			::x11/hicolor-icon-theme \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
-LIB_DEPENDS =		jpeg::graphics/jpeg \
-			samplerate::audio/libsamplerate \
-			dvdread::devel/libdvdread \
-			mad::audio/libmad \
-			mpcdec::audio/libmpcdec \
-			vorbis,vorbisenc,vorbisfile::audio/libvorbis \
-			mp3lame::audio/lame \
-			avcodec.>=14,avformat.>=13:ffmpeg->=20100512:graphics/ffmpeg \
-			sndfile::audio/libsndfile \
-			FLAC,FLAC++::audio/flac \
-			tag::audio/taglib \
-			artsc::x11/kde/arts3 \
-			DCOP,kdecore,kdefx,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
+LIB_DEPENDS =		::audio/flac \
+			::audio/lame \
+			::audio/libmad \
+			::audio/libmpcdec \
+			::audio/libsamplerate \
+			::audio/libsndfile \
+			::audio/libvorbis \
+			::audio/taglib \
+			::devel/libdvdread \
+			:ffmpeg->=20100512:graphics/ffmpeg \
+			::graphics/jpeg \
+			::x11/kde/arts3 \
+			::x11/kde/libs3
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

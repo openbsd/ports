@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/28 19:27:30 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:40:38 sthen Exp $
 
 COMMENT=	DVD read/navigation library
 DISTNAME=	libdvdnav-4.1.3
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+WANTLIB += dvdread
+
 EXTRACT_SUFX=	.tar.bz2
 
 AUTOMAKE_VERSION=1.9
@@ -25,7 +27,7 @@ USE_LIBTOOL=	gnu
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS=	dvdread.>=4.3::devel/libdvdread
+LIB_DEPENDS=	::devel/libdvdread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	DVDREAD_CFLAGS="-I${LOCALBASE}/include" \

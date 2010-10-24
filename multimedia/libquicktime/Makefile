@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:40:39 sthen Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -17,30 +17,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= GL ICE SM X11 Xau Xaw Xcomposite Xcursor \
-	Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-	Xrender Xt Xv atk-1.0 c cairo expat faac \
-	faad fontconfig freetype gio-2.0 glib-2.0 \
-	gmodule-2.0 gobject-2.0 gsm \
-	gthread-2.0 m ogg orc-0.4 pango-1.0 \
-	pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-	pthread pthread-stubs schroedinger-1.0 \
-	sndio speex theora xcb xcb-render \
-	xcb-render-util z gdk_pixbuf-2.0
+WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xv atk-1.0 c
+WANTLIB += cairo expat faac faad fontconfig freetype gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gsm gthread-2.0 m ogg orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread
+WANTLIB += pthread-stubs schroedinger-1.0 sndio speex theora xcb
+WANTLIB += xcb-render xcb-render-util z gdk_pixbuf-2.0 avcodec avutil
+WANTLIB += swscale dv gtk-x11-2.0 gdk-x11-2.0 jpeg mp3lame png vorbis
+WANTLIB += vorbisfile vorbisenc x264
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:doxygen-*:devel/doxygen
-LIB_DEPENDS=		avcodec.>=14,avutil.>=7,swscale.>=2:ffmpeg->=20100512:graphics/ffmpeg \
-			dv.>=4::multimedia/libdv \
-			gtk-x11-2.0.>=800.8,gdk-x11-2.0.>=800.8::x11/gtk+2 \
-			jpeg.>=9::graphics/jpeg \
-			mp3lame::audio/lame \
-			png.>=4::graphics/png \
-			vorbis.>=3,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
-			x264::multimedia/x264
+LIB_DEPENDS=		:ffmpeg->=20100512:graphics/ffmpeg \
+			::multimedia/libdv \
+			::x11/gtk+2 \
+			::graphics/jpeg \
+			::audio/lame \
+			::graphics/png \
+			::audio/libvorbis \
+			::multimedia/x264
 
 VMEM_WARNING=		Yes
 USE_LIBTOOL=		Yes
