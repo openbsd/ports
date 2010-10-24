@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/07 04:34:59 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 07:53:23 landry Exp $
 
 COMMENT=	cross-platform 3D audio API
 
 DISTNAME=	openal-0.0.8
-REVISION=	7
+REVISION=	8
 CATEGORIES=	audio
 SHARED_LIBS +=  openal               1.0      # .0.0
 
@@ -20,7 +20,8 @@ WANTLIB=		m sndio
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+# auto* uses libtool macros
+USE_LIBTOOL=	gnu
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
