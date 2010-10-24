@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/10/22 19:31:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/10/24 12:45:53 ajacoutot Exp $
 %%SHARED%%
 @bin bin/cntraining
 @bin bin/combine_tessdata
@@ -313,14 +313,7 @@ share/tessdata/configs/kannada
 share/tessdata/configs/logfile
 share/tessdata/configs/makebox
 share/tessdata/configs/unlv
-share/tessdata/eng.DangAmbigs
-share/tessdata/eng.freq-dawg
-share/tessdata/eng.inttemp
-share/tessdata/eng.normproto
-share/tessdata/eng.pffmtable
-share/tessdata/eng.unicharset
-share/tessdata/eng.user-words
-share/tessdata/eng.word-dawg
+share/tessdata/eng.traineddata
 share/tessdata/tessconfigs/
 share/tessdata/tessconfigs/batch
 share/tessdata/tessconfigs/batch.nochop

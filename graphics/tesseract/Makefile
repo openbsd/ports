@@ -1,23 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/22 19:31:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 12:45:53 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
-COMMENT-de=	German language data for tesseract
-COMMENT-es=	Spanish language data for tesseract
-COMMENT-fr=	French language data for tesseract
-COMMENT-it=	Italian language data for tesseract
-COMMENT-nl=	Dutch language data for tesseract
-COMMENT-pt=	Portuguese (Brazilian) language data for tesseract
 
-DISTNAME=	tesseract-3.00
+V=		3.00
+DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-PKGNAME-de=	tesseract-de-2.00
-PKGNAME-es=	tesseract-es-2.00
-PKGNAME-fr=	tesseract-fr-2.00
-PKGNAME-it=	tesseract-it-2.00
-PKGNAME-nl=	tesseract-nl-2.00
-PKGNAME-pt=	tesseract-pt-2.01
 
 SHARED_LIBS +=  tesseract_api             0.0 # 3.0
 SHARED_LIBS +=  tesseract_ccstruct        0.0 # 3.0
@@ -33,14 +22,8 @@ SHARED_LIBS +=  tesseract_viewer          0.0 # 3.0
 SHARED_LIBS +=  tesseract_wordrec         0.0 # 3.0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		tesseract-2.00.deu.tar.gz \
-		tesseract-2.00.eng.tar.gz \
-		tesseract-2.00.fra.tar.gz \
-		tesseract-2.00.ita.tar.gz \
-		tesseract-2.00.nld.tar.gz \
-		tesseract-2.01.por.tar.gz \
-		tesseract-2.00.spa.tar.gz
-
+		eng.traineddata.gz
+			
 HOMEPAGE=	http://code.google.com/p/tesseract-ocr/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -51,26 +34,34 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -de -es -fr -it -nl -pt
+MULTI_PACKAGES=	-main
+
+### languages ##########################################################
+# language files are unversionned
+MAJOR_V=	${V:C/^([0-9]+).*/\1/}
+LANG_V=		${MAJOR_V}.20101024
+DIST_SUBDIR=tesseract-${LANG_V}
+
+LANGS+=	bul cat ces chi_sim chi_tra dan-frak dan deu ell fin fra hun ind
+LANGS+=	ita jpn kor lav lit nld nor pol por ron rus slk slv spa srp swe
+LANGS+=	tgl tur ukr vie
+
+.for l in ${LANGS}
+COMMENT-${l}=	${l} language data for Tesseract
+DISTFILES+=	${l}.traineddata.gz
+PKGNAME-${l}=	tesseract-${l}-${LANG_V}
+MULTI_PACKAGES+=-${l}
+#REVISION-${l}=
+RUN_DEPENDS-${l}=:tesseract->=${MAJOR_V}:${BASE_PKGPATH}
+PKG_ARCH-${l}=	*
+.endfor
+### end languages ######################################################
 
 WANTLIB-main=	c jpeg m pthread stdc++ z tiff png
 
 LIB_DEPENDS-main= ::graphics/tiff \
 		::graphics/png
 
-RUN_DEPENDS-de=	::${BASE_PKGPATH}
-RUN_DEPENDS-es=	::${BASE_PKGPATH}
-RUN_DEPENDS-fr=	::${BASE_PKGPATH}
-RUN_DEPENDS-it=	::${BASE_PKGPATH}
-RUN_DEPENDS-nl=	::${BASE_PKGPATH}
-RUN_DEPENDS-pt=	::${BASE_PKGPATH}
-
-PKG_ARCH-de=	*
-PKG_ARCH-es=	*
-PKG_ARCH-fr=	*
-PKG_ARCH-it=	*
-PKG_ARCH-nl=	*
-PKG_ARCH-pt=	*
 
 MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/
 
@@ -85,7 +76,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/ccutil/debugwin.cpp
 
 post-install:
-	cp -R ${WRKDIR}/tessdata ${PREFIX}/share
+	cp ${WRKDIR}/*.traineddata ${PREFIX}/share/tessdata/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tesseract
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tesseract
