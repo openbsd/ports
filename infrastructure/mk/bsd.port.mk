@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1042 2010/10/22 15:51:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1043 2010/10/24 20:41:23 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -275,7 +275,6 @@ DEF_UMASK ?= 022
 
 # These variables must be defined before modules
 CONFIGURE_STYLE ?=
-USE_X11 ?= No
 NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_REGRESS ?= No
@@ -1315,8 +1314,8 @@ IGNORE += "is an interactive port"
 .elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
 IGNORE += "is not an interactive port"
 .endif
-.if ${USE_X11:L} == "yes" && !exists(${X11BASE})
-IGNORE += "uses X11, but ${X11BASE} not found"
+.if !exists(${X11BASE})
+IGNORE += "building ports requires X11 but ${X11BASE} not found"
 .endif
 .if !defined(_ARCH_OK${SUBPACKAGE}) || ${_ARCH_OK${SUBPACKAGE}} == 0
 .  if defined(ONLY_FOR_ARCHS${SUBPACKAGE})

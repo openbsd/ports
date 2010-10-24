@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.59 2010/10/19 18:18:29 bluhm Exp $
+# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -102,7 +102,6 @@ MASTER_SITES =		???
 #
 #SEPARATE_BUILD =	simple (build in a directory other than WRKSRC)
 #SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
-#USE_X11 =		Yes
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
 # Programs that uses libtool should use this option,

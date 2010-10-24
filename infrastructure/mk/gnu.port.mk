@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.38 2010/07/22 19:14:09 ajacoutot Exp $
+# $OpenBSD: gnu.port.mk,v 1.39 2010/10/24 20:41:23 ajacoutot Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -44,9 +44,6 @@ CONFIGURE_STYLE += autoheader
 .endif
 .if !defined(CONFIG_SITE)
 CONFIG_SITE = ${PORTSDIR}/infrastructure/db/config.site
-.  if ${USE_X11:L} == "yes"
-CONFIG_SITE += ${PORTSDIR}/infrastructure/db/config.x11.site
-.  endif
 .endif
 .if !empty(CONFIG_SITE)
 CONFIGURE_ENV += CONFIG_SITE='${CONFIG_SITE}'
