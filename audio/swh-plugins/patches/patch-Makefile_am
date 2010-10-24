@@ -1,0 +1,100 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
+
+- skip plugins that need shm_open
+- use "libtool archives" (PIC) instead of static archives
+
+--- Makefile.am.orig	Tue Aug  8 08:56:35 2006
++++ Makefile.am	Fri Oct 22 11:45:47 2010
+@@ -4,7 +4,7 @@ plugin_LTLIBRARIES = \
+ 	amp_1181.la diode_1185.la \
+ 	divider_1186.la shaper_1187.la ringmod_1188.la comb_1190.la \
+ 	declip_1195.la foverdrive_1196.la sinus_wavewrapper_1198.la \
+-	hermes_filter_1200.la multivoice_chorus_1201.la flanger_1191.la \
++	multivoice_chorus_1201.la flanger_1191.la \
+ 	decimator_1202.la single_para_1203.la triple_para_1204.la \
+ 	transient_1206.la fad_delay_1192.la \
+ 	dc_remove_1207.la retro_flange_1208.la valve_1209.la \
+@@ -15,8 +15,8 @@ plugin_LTLIBRARIES = \
+ 	valve_rect_1405.la split_1406.la alias_1407.la \
+ 	satan_maximiser_1408.la karaoke_1409.la gate_1410.la \
+ 	comb_splitter_1411.la wave_terrain_1412.la \
+-	hard_limiter_1413.la smooth_decimate_1414.la fm_osc_1415.la \
+-	analogue_osc_1416.la rate_shifter_1417.la freq_tracker_1418.la \
++	hard_limiter_1413.la smooth_decimate_1414.la \
++	rate_shifter_1417.la freq_tracker_1418.la \
+ 	mod_delay_1419.la matrix_st_ms_1420.la matrix_ms_st_1421.la \
+ 	matrix_spatialiser_1422.la plate_1423.la gong_1424.la \
+ 	sc1_1425.la sc2_1426.la sc3_1427.la zm1_1428.la inv_1429.la \
+@@ -43,15 +43,15 @@ plugindir = @prefix@/lib/ladspa
+ 
+ # Uncomment below for Darwin support.  Or add a conditional for this.
+ #AM_CFLAGS = -fno-common -flat_namespace -bundle -undefined suppress -lbundle1.o
+-AM_LDFLAGS = -module -avoid-version -Wc,-nostartfiles
++AM_LDFLAGS = -module -avoid-version -nostartfiles
+ DESTDIR = $(INSTALL_ROOT)
+ DISTFN = $(distdir)
+ 
+ # Files needed for FFT based plugins
+-pitch_scale_1193_la_LIBADD = util/libpitchscale.a $(FFTW_LIBS)
++pitch_scale_1193_la_LIBADD = util/libpitchscale.la $(FFTW_LIBS)
+ pitch_scale_1193_la_CFLAGS = $(FFTW_CFLAGS)
+ pitch_scale_1193_la_SOURCES = pitch_scale_1193.c
+-pitch_scale_1194_la_LIBADD = util/libpitchscale.a $(FFTW_LIBS)
++pitch_scale_1194_la_LIBADD = util/libpitchscale.la $(FFTW_LIBS)
+ pitch_scale_1194_la_CFLAGS = $(FFTW_CFLAGS)
+ pitch_scale_1194_la_SOURCES = pitch_scale_1194.c
+ mbeq_1197_la_LIBADD = $(FFTW_LIBS)
+@@ -60,33 +60,33 @@ mbeq_1197_la_SOURCES = mbeq_1197.c
+ imp_1199_la_LIBADD = $(FFTW_LIBS)
+ imp_1199_la_CFLAGS = $(FFTW_CFLAGS)
+ imp_1199_la_DEPENDENCIES = @top_srcdir@/impulses/*
+-hermes_filter_1200_la_DEPENDENCIES = util/libblo.a
+-hermes_filter_1200_la_LIBADD = util/libblo.a
+-fm_osc_1415_la_DEPENDENCIES = util/libblo.a
+-fm_osc_1415_la_LIBADD = util/libblo.a
+-analogue_osc_1416_la_DEPENDENCIES = util/libblo.a
+-analogue_osc_1416_la_LIBADD = util/libblo.a
+-sc1_1425_la_LIBADD = util/libdb.a util/librms.a
+-sc2_1426_la_LIBADD = util/libdb.a util/librms.a
+-sc3_1427_la_LIBADD = util/libdb.a util/librms.a
+-sc4_1882_la_LIBADD = util/libdb.a util/librms.a
+-sc4m_1916_la_LIBADD = util/libdb.a util/librms.a
+-se4_1883_la_LIBADD = util/libdb.a util/librms.a
+-gsm_1215_la_LIBADD = gsm/libgsm.a
+-gverb_1216_la_LIBADD = gverb/libgverb.a
++hermes_filter_1200_la_DEPENDENCIES = util/libblo.la
++hermes_filter_1200_la_LIBADD = util/libblo.la
++fm_osc_1415_la_DEPENDENCIES = util/libblo.la
++fm_osc_1415_la_LIBADD = util/libblo.la
++analogue_osc_1416_la_DEPENDENCIES = util/libblo.la
++analogue_osc_1416_la_LIBADD = util/libblo.la
++sc1_1425_la_LIBADD = util/libdb.la util/librms.la
++sc2_1426_la_LIBADD = util/libdb.la util/librms.la
++sc3_1427_la_LIBADD = util/libdb.la util/librms.la
++sc4_1882_la_LIBADD = util/libdb.la util/librms.la
++sc4m_1916_la_LIBADD = util/libdb.la util/librms.la
++se4_1883_la_LIBADD = util/libdb.la util/librms.la
++gsm_1215_la_LIBADD = gsm/libgsm.la
++gverb_1216_la_LIBADD = gverb/libgverb.la
+ lcr_delay_1436_la_DEPENDENCIES = util/biquad.h
+ 
+-highpass_iir_1890_la_LIBADD = util/libiir.a
++highpass_iir_1890_la_LIBADD = util/libiir.la
+ highpass_iir_1890_la_SOURCES = highpass_iir_1890.c
+-lowpass_iir_1891_la_LIBADD = util/libiir.a
++lowpass_iir_1891_la_LIBADD = util/libiir.la
+ lowpass_iir_1891_la_SOURCES = lowpass_iir_1891.c
+-bandpass_iir_1892_la_LIBADD = util/libiir.a
++bandpass_iir_1892_la_LIBADD = util/libiir.la
+ bandpass_iir_1892_la_SOURCES = bandpass_iir_1892.c
+-bandpass_a_iir_1893_la_LIBADD = util/libiir.a
++bandpass_a_iir_1893_la_LIBADD = util/libiir.la
+ bandpass_a_iir_1893_la_SOURCES = bandpass_a_iir_1893.c
+-notch_iir_1894_la_LIBADD = util/libiir.a
++notch_iir_1894_la_LIBADD = util/libiir.la
+ notch_iir_1894_la_SOURCES = notch_iir_1894.c
+-butterworth_1902_la_LIBADD = util/libiir.a
++butterworth_1902_la_LIBADD = util/libiir.la
+ butterworth_1902_la_SOURCES = butterworth_1902.c
+ 
+ # Rule to build .c files from XML source

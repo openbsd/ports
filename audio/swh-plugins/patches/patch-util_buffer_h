@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_buffer_h,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
+
+- const qualifier neither needed nor correctly used
+
+--- util/buffer.h.orig	Sun Jan 18 01:23:46 2009
++++ util/buffer.h	Sun Jan 18 01:38:24 2009
+@@ -6,12 +6,10 @@
+  * this could be sped up by vector operations
+  */
+ 
+-static inline void buffer_sub(const float* a, const float *b, const float *c, int cnt) {
++static inline void buffer_sub(const float* a, const float *b, float *c, int cnt) {
+ 	int i;
+-	float *h;
+-	h = c;
+ 	for(i=0;i<cnt;++i)
+-		*h++ = *a++ - *b++;
++		*c++ = *a++ - *b++;
+ }
+ 
+ #endif

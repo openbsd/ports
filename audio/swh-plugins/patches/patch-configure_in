@@ -1,0 +1,81 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
+--- configure.in.orig	Tue Aug  8 08:47:16 2006
++++ configure.in	Sun Jan 18 02:01:04 2009
+@@ -22,7 +22,7 @@ AC_DEFUN([AC_C99_FUNC_LRINTF],
+   ac_cv_c99_lrintf,
+ [
+ lrintf_save_CFLAGS=$CFLAGS
+-CFLAGS="-O3 -lm"
++CFLAGS="-lm"
+ AC_TRY_LINK([
+ #define		_ISOC9X_SOURCE	1
+ #define 	_ISOC99_SOURCE	1
+@@ -64,7 +64,7 @@ PKG_CHECK_MODULES(FFTW, fftw3f >= 3.0,
+         [
+             FFTW_LIBS="-lsrfftw -lsfftw"
+ 	    STATIC_FFTW_LIBS="$LIBS /usr/lib/libsfftw.a /usr/lib/libsrfftw.a /sw/lib/libsfftw.a"
+-	    AC_DEFINE_UNQUOTED(EXPLICIT_S, "")
++	    AC_DEFINE_UNQUOTED(EXPLICIT_S, "", [Define if libfftw is actually libsrfftw])
+         ],
+         [ AC_CHECK_LIB(fftw,fftw_one,
+             [
+@@ -87,52 +87,31 @@ AC_CHECK_LIB(m, log10f,, [
+ AC_CHECK_FUNC(shm_open,,[AC_CHECK_LIB(rt,shm_open)])
+ AC_C99_FUNC_LRINTF()
+ 
+-AC_ARG_ENABLE(3dnow, [  --enable-3dnow Enables 3DNow! acceleration], AC_DEFINE_UNQUOTED(ACCEL_3DNOW, ""))
++AC_ARG_ENABLE(3dnow, [  --enable-3dnow Enables 3DNow! acceleration], AC_DEFINE_UNQUOTED(ACCEL_3DNOW, "", [Define to use 3Dnow!]))
+ AC_ARG_ENABLE(sse, [  --enable-sse Uses SSE instructions where possible, requires gcc3 and a processor with SSE support], USE_SSE="-msse -mfpmath=sse -malign-double")
+ AC_ARG_ENABLE(darwin, [  --enable-darwin Builds plugins that will be shared object in the Darwin OS], DARWIN_CFLAGS="-fno-common -flat_namespace -bundle -undefined suppress -lbundle1.o")
+ 
+-CFLAGS=$lrintf_save_CFLAGS -I@top_srcdir@/intl -I@top_srcdir@
++CFLAGS=$lrintf_save_CFLAGS
+ 
+-if [ echo ${CFLAGS} | grep "\-march=" ]; then
+-  AC_MSG_WARN([CFLAGS appears to allready contain architecture specifaction, using exiting one])
+-else
+-  AC_MSG_WARN([Can't find architecture specifaction in CFLAGS, picking one from build host CPU type])
+-  AC_MSG_WARN([May result in non-portable code])
+-  dnl For gcc use:
+-  MACHINE="-march=${build_cpu}"
+-  if test ${build_cpu} = "powerpc"; then MACHINE=""; fi
+-  if test ${build_cpu} = "powerpc64"; then MACHINE=""; fi
+-  if test ${build_cpu} = "x86_64"; then MACHINE=""; fi
+-
+-  CFLAGS="$CFLAGS -Wall -O3 -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -fPIC -DPIC ${MACHINE} ${USE_SSE} ${DARWIN_CFLAGS}"
+-
+-  dnl For Intel's C compiler use:
+-  dnl CC="icc"
+-  dnl CFLAGS="$CFLAGS -O2 -rcd -tpp6 -xiMK -KPIC -DPIC"
+-  
+-  dnl For debugging use:
+-  dnl CFLAGS="$CFLAGS -Wall -g -ffast-math -fPIC -DPIC"
+-fi
+-
+ AC_PROG_LD
+ AM_PROG_LIBTOOL
+ 
+ dnl Set PACKAGE_LOCALE_DIR in config.h.
+ if test "x${prefix}" = xNONE; then
+-  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${ac_default_prefix}/${DATADIRNAME}/locale")
++  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${ac_default_prefix}/${DATADIRNAME}/locale", [Define to package locale dir])
+ else
+-  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${prefix}/${DATADIRNAME}/locale")
++  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${prefix}/${DATADIRNAME}/locale", [Define to package locale dir])
+ fi
+ 
+ dnl Set PACKAGE_DATA_DIR in config.h.
+ if test "x${datadir}" = 'x${prefix}/share'; then
+   if test "x${prefix}" = xNONE; then
+-    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}")
++    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Define to package data dir])
+   else
+-    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${prefix}/share/${PACKAGE}")
++    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${prefix}/share/${PACKAGE}", [Define to package data dir])
+   fi
+ else
+-  AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${datadir}/${PACKAGE}")
++  AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${datadir}/${PACKAGE}", [Define to package data dir])
+ fi
+ 
+ subdirs="util gsm gverb metadata"
