@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_introspection,v 1.1 2010/10/24 15:33:14 jasper Exp $
+--- Makefile.introspection.orig	Sun Oct 24 16:58:12 2010
++++ Makefile.introspection	Sun Oct 24 16:58:24 2010
+@@ -61,7 +61,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
+ _gir_export_packages = $(foreach pkg,$($(_gir_name)_EXPORT_PACKAGES),--pkg-export=$(pkg))
+ 
+ # Reuse the LIBTOOL variable from by automake if it's set
+-_gir_libtool = $(if $(LIBTOOL),--libtool="$(LIBTOOL)")
++_gir_libtool = $(if $(LIBTOOL),--libtool="${LIBTOOL}")
+ 
+ # Macros for AM_SILENT_RULES prettiness
+ _gir_verbosity = $(if $(AM_DEFAULT_VERBOSITY),$(AM_DEFAULT_VERBOSITY),1)

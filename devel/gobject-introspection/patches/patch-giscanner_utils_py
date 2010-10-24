@@ -1,0 +1,31 @@
+$OpenBSD: patch-giscanner_utils_py,v 1.1 2010/10/24 15:33:14 jasper Exp $
+
+Make sure try to compile/link with the right libtool,
+this overrides the --libtool option to girscanner.
+
+--- giscanner/utils.py.orig	Fri Sep 10 15:20:57 2010
++++ giscanner/utils.py	Sun Oct 24 17:30:13 2010
+@@ -107,22 +107,7 @@ def get_libtool_command(options):
+     if not libtool_infection:
+         return None
+ 
+-    libtool_path = options.libtool_path
+-    if libtool_path:
+-        # Automake by default sets:
+-        # LIBTOOL = $(SHELL) $(top_builddir)/libtool
+-        # To be strictly correct we would have to parse shell.  For now
+-        # we simply split().
+-        return libtool_path.split(' ')
+-
+-    try:
+-        subprocess.check_call(['libtool', '--version'],
+-                              stdout=open(os.devnull))
+-    except (subprocess.CalledProcessError, OSError), e:
+-        # If libtool's not installed, assume we don't need it
+-        return None
+-
+-    return ['libtool']
++    return ['${LIBTOOL}']
+ 
+ 
+ def files_are_identical(path1, path2):
