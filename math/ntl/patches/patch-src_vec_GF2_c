@@ -1,8 +1,8 @@
---- src/vec_GF2.c.orig	Sat Mar 14 18:38:29 2009
-+++ src/vec_GF2.c	Sat Mar 14 18:38:42 2009
-@@ -3,6 +3,8 @@
- 
+--- src/vec_GF2.c.orig	Fri Aug 14 14:53:11 2009
++++ src/vec_GF2.c	Sun Oct 24 10:56:44 2010
+@@ -4,6 +4,8 @@
  #include <NTL/new.h>
+ #include <stdio.h>
  
 +#include <cstdio>
 +

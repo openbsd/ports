@@ -1,6 +1,6 @@
---- src/DoConfig.orig	Tue May  5 08:46:39 2009
-+++ src/DoConfig	Thu May 21 21:46:51 2009
-@@ -12,9 +12,9 @@
+--- src/DoConfig.orig	Fri Aug 14 14:53:11 2009
++++ src/DoConfig	Sun Oct 24 11:03:33 2010
+@@ -12,14 +12,14 @@
  
  %MakeVal = (
  
@@ -13,6 +13,12 @@
  'CXXFLAGS'    => '$(CFLAGS)',
  'AR'	      => 'ar',
  'ARFLAGS'     => 'ruv',
+ 'RANLIB'      => 'ranlib',
+-'LIBTOOL'     => 'libtool',
++'LIBTOOL'     => '${LIBTOOL}',
+ 
+ 'LDFLAGS'     => '',
+ 'LDFLAGS_CXX' => '$(LDFLAGS)',
 @@ -27,12 +27,14 @@
  'LDLIBS_CXX'  => '$(LDLIBS)',
  'CPPFLAGS'    => '',

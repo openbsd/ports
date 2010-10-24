@@ -1,5 +1,6 @@
---- src/VERSION_INFO~	Tue May  5 08:46:39 2009
-+++ src/VERSION_INFO	Fri May 22 09:58:36 2009
+$OpenBSD: patch-src_VERSION_INFO,v 1.2 2010/10/24 09:38:10 landry Exp $
+--- src/VERSION_INFO.orig	Fri Aug 14 14:53:12 2009
++++ src/VERSION_INFO	Sun Oct 24 10:56:43 2010
 @@ -1 +1 @@
--0:1:0
+-1:0:1
 +0:0:0

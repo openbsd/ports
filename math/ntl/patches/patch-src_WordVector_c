@@ -1,8 +1,8 @@
---- src/WordVector.c.orig	Sat Mar 14 18:36:31 2009
-+++ src/WordVector.c	Sat Mar 14 18:36:53 2009
-@@ -3,6 +3,8 @@
- 
+--- src/WordVector.c.orig	Fri Aug 14 14:53:10 2009
++++ src/WordVector.c	Sun Oct 24 10:56:43 2010
+@@ -4,6 +4,8 @@
  #include <NTL/new.h>
+ #include <stdio.h>
  
 +#include <cstdio>
 +
