@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.10 2010/10/22 19:17:01 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.11 2010/10/24 17:56:11 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -79,10 +79,12 @@ CONFIGURE_ARGS +=--disable-freetypetest		\
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_VERSION:C/\..*//} == "4"
+.if ${MOZILLA_VERSION:C/\..*//} == "4" || \
+	${MOZILLA_PROJECT} == "xulrunner2.0"
 WRKDIST =	${WRKDIR}/mozilla-central
 .elif ${MOZILLA_PROJECT} == "mozilla-firefox" || \
-	${MOZILLA_PROJECT} == "firefox35"
+	${MOZILLA_PROJECT} == "firefox35" || \
+	${MOZILLA_PROJECT} == "xulrunner1.9"
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
 WRKDIST =	${WRKDIR}/comm-${MOZILLA_BRANCH}
@@ -97,13 +99,13 @@ MOB =		${WRKSRC}/${_MOZDIR}/dist/bin
 # needed for PLIST and config/autoconf.mk.in
 SUBST_VARS +=	MOZILLA_PROJECT
 
-MAKE_ENV =	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
+MAKE_ENV +=	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
 		LD_LIBRARY_PATH=${MOB} \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 
-CONFIGURE_ENV =	${MAKE_ENV} \
+CONFIGURE_ENV +=${MAKE_ENV} \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 		MOZ_ENABLE_COREXFONTS=1 \
 		topsrcdir=${WRKSRC}
@@ -145,7 +147,7 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/${_MOZ_PROJECT_SHORT} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client ${MOZ}
-.if ${MOZILLA_VERSION:C/\..*//} != "4"
+.if ${MOZILLA_VERSION:C/\..*//} != "4" && ${MOZILLA_PROJECT} != "xulrunner2.0"
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOZ}
 .endif
 	if [ -f ${FILESDIR}/README.OpenBSD ]; then \
