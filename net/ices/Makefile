@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=	icecast source for streaming MP3
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ogg perl pthread theora util vorbis vorbisfile z
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 

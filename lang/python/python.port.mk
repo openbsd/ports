@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.37 2010/09/16 22:58:19 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.38 2010/10/24 15:53:55 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -23,9 +23,10 @@ MODPY_JSON =		::devel/py-simplejson
 MODPY_JSON =
 .endif
 
+MODPY_WANTLIB=		python${MODPY_VERSION}
 MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
-MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:${MODPYSPEC}:lang/python/${MODPY_VERSION}
-_MODPY_BUILD_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
+MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
+_MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
 
 MODPY_BUILDDEP?=	Yes
 MODPY_RUNDEP?=		Yes

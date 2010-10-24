@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:19:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=		avant window navigator
 
@@ -37,6 +37,7 @@ WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png popt pthread ssl startup-notification-1 util xml2
 WANTLIB += z pthread-stubs xcb execinfo ffi xcb-atom xcb-aux xcb-event
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		::devel/py-xdg \
 			::x11/py-gtk2

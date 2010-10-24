@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -24,6 +24,7 @@ WANTLIB += pthread-stubs startup-notification-1 util xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util
 WANTLIB += xcb-render xcb-render-util xml2 z gnome-desktop-2
 WANTLIB += rsvg-2 gsf-1 bz2 croco-0.6
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gconf2 \
 			devel/gettext \

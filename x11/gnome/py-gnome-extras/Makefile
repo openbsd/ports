@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/24 15:53:56 sthen Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
@@ -27,6 +27,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png popt pthread-stubs ssl stdc++
 WANTLIB += gcrypt gpg-error xcb-render xcb-render-util
 WANTLIB += util xcb xml2 z gtkspell gdl-1 enchant gda-4.0
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
 			lang/python \

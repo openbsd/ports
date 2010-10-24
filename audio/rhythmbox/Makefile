@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/22 07:33:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2010/10/24 15:53:55 sthen Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -36,6 +36,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png proxy
 WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 tasn1 util xcb xml2 z
 WANTLIB += eggdbus-1 xcb-render xcb-render-util gnome-media-profiles
 WANTLIB += totem-plparser soup-gnome-2.4 avahi-client avahi-common
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
 			x11/gnome \

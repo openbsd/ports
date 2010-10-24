@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/24 15:53:55 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -112,6 +112,7 @@ WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl util xcb xml2 z gdk_pixbuf-2.0
+WANTLIB-main += ${MODPY_WANTLIB}
 RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 
 .include <bsd.own.mk>

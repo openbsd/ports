@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/23 14:24:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
@@ -11,6 +11,7 @@ MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-farsight/}
 WANTLIB += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstbase-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += m pcre util xml2 z gstfarsight-0.10 telepathy-glib
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
 			lang/python

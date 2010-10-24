@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP?=	Yes
 WANTLIB += ICE SM X11 Xau Xdmcp Xext asn1 c crypto expat fontconfig
 WANTLIB += freetype gssapi krb5 m pthread pthread-stubs ssl stdc++
 WANTLIB += util xcb z
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 

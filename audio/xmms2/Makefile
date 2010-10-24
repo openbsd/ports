@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -29,6 +29,7 @@ WANTLIB += schroedinger-1.0 speex stdc++ theora util vorbis vorbisenc
 WANTLIB += vorbisfile x264 z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 avcodec avutil ao jack sqlite3 xml2 FLAC curl
 WANTLIB += mad avahi-client avahi-common avahi-glib vorbisidec
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 

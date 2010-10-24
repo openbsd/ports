@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -45,6 +45,7 @@ WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1
 WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1 cdt
 WANTLIB += vala-0.10 gda-4.0 ltdl gnome-keyring gvc graph pathplan
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 			::devel/p5-Locale-gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/22 16:57:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=		audio/video communications framework
 
@@ -19,6 +19,7 @@ MASTER_SITES=		${HOMEPAGE}/releases/farsight2/
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 gstnetbuffer-0.10
 WANTLIB += gstreamer-0.10 gstrtp-0.10 gthread-2.0 m pcre xml2
 WANTLIB += z nice util
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		::net/libnice \

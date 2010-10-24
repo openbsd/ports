@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c edit event m ncurses pcap pthread util z
+WANTLIB += ${MODPY_WANTLIB}
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* align-*

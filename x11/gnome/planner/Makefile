@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 15:53:56 sthen Exp $
 
 COMMENT=		project management application
 
@@ -29,6 +29,7 @@ WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl util
 WANTLIB += xml2 xslt z bonoboui-2
 WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
 			lang/python \

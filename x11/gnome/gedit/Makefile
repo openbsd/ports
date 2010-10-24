@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,6 +32,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ util xcb  xcb-render xcb-render-util xml2 z
 WANTLIB += gtksourceview-2.0 enchant
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gconf2 \
 			devel/gettext \

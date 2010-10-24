@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/30 07:35:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre util z glib-2.0 gio-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
 			lang/python \

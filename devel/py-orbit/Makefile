@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/python \

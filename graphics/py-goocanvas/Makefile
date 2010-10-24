@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=		Python bindings for goocanvas
 
@@ -27,6 +27,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
 		xcb z
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		::textproc/libxslt \
 			::x11/py-gtk2

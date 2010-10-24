@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -24,6 +24,7 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
 WANTLIB += xcb-render xcb-render-util gdk_pixbuf-2.0
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	::textproc/docbook-xsl
 LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \

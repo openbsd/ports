@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -33,6 +33,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs util xcb z gdk_pixbuf-2.0
+WANTLIB += ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 

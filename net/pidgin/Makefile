@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,6 +54,7 @@ WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 WANTLIB-libpurple= crypto ssl ${WANTLIB}
 
 WANTLIB-finch=	X11 Xau Xdmcp ncurses panel pthread-stubs xcb ${WANTLIB}
+WANTLIB-finch += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		textproc/intltool \

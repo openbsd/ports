@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 15:53:55 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,6 +34,7 @@ WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c cairo \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 \
 			pixman-1 png pthread pthread-stubs tiff util xcb \
 			xcb-render xcb-render-util xkbfile xkbui xml2 z
+WANTLIB += ${MODPY_WANTLIB}
  
 MODULES=		devel/gettext lang/python
 

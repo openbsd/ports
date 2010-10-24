@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 15:53:56 sthen Exp $
 
 COMMENT=	nautilus Python bindings
 
@@ -20,6 +20,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += gthread-2.0 xcb-render xcb-render-util
 WANTLIB += png pthread-stubs util xcb z nautilus-extension
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/python \

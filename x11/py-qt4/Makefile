@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/21 22:10:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 15:53:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL GLU X11 Xext c dbus-1 m pthread stdc++ 
 WANTLIB += QtAssistantClient QtDesigner QtGui QtNetwork QtOpenGL
 WANTLIB += QtScript QtSql QtSvg QtTest QtXml
+WANTLIB += ${MODPY_WANTLIB}
 
 MULTI_PACKAGES=	-main -docs
 

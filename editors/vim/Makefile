@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.114 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -72,7 +72,7 @@ CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m pthread util
+WANTLIB+=	m pthread util ${MODPY_WANTLIB}
 .endif
 
 .if ${FLAVOR:L:Mruby}

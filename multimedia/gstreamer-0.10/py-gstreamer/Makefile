@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT =		Python bindings for GStreamer
 
@@ -16,6 +16,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 \
 			gstreamer-0.10 gthread-2.0 gstpbutils-0.10 \
 			m pcre xml2 z util gstinterfaces-0.10 gstaudio-0.10 \
 			gsttag-0.10 gstvideo-0.10
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES =		devel/gettext \
 			lang/python

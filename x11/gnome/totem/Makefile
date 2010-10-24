@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/24 15:53:56 sthen Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -28,6 +28,7 @@ WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unique-1.0
 WANTLIB += util xcb xml2 z eggdbus-1 xcb-render xcb-render-util
 WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
 WANTLIB += gsttag-0.10 totem-plparser galago nautilus-extension gdata
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/python \

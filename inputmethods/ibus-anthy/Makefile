@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/12 11:50:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	anthy anthydic m util
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 15:53:55 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -52,6 +52,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \
 		stdc++ z proj QtGui QtNetwork QtXml QtSql QtCore QtSvg QtWebKit\
 		gdal geos_c gsl gslcblas pq
+WANTLIB += ${MODPY_WANTLIB}
 
 CONFIGURE_ENV+=	VERBOSE=1
 USE_GROFF =	Yes
