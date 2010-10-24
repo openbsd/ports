@@ -1,5 +1,5 @@
 TeX Live 2010 - Work in Progress (edd@)
-$OpenBSD: README,v 1.6 2010/10/21 15:41:55 edd Exp $
+$OpenBSD: README,v 1.7 2010/10/24 22:31:00 edd Exp $
 -------------------------------------------------------------------
 
  * Get base compilers working:		done
@@ -17,8 +17,6 @@ $OpenBSD: README,v 1.6 2010/10/21 15:41:55 edd Exp $
    -> fix $HOME ls-R owned root bug:	done
    -> make fmtutil.cnf configs:		not needed this year
  * Implement remaining @xxx directives:	done
- * Put mans from texmf into separate \
-   dist and pull into _base:
  * Test lots:
  * Link to build as print/texlive:
 

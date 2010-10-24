@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.4 2010/10/21 15:41:55 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.5 2010/10/24 22:31:00 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2010
 @conflict texlive_texmf-minimal-<2010
@@ -28114,8 +28114,6 @@ share/texmf/xindy/modules/tex/inputenc/latin1.xdy
 share/texmf/xindy/modules/tex/inputenc/latin2.xdy
 share/texmf/xindy/modules/tex/inputenc/latin3.xdy
 @exec mktexlsr > /dev/null 2>&1
-@exec updmap-sys --syncwithtrees > /dev/null 2>&1
 @exec texlinks
 @unexec-delete mktexlsr > /dev/null 2>&1
-@unexec-delete updmap-sys --syncwithtrees > /dev/null 2>&1
 @unexec-delete texlinks

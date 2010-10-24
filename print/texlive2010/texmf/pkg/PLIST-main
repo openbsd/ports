@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/10/21 13:00:30 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/10/24 22:31:00 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2010
 @conflict texlive_texmf-docs-<2010
@@ -35011,3 +35011,68 @@ share/texmf/xdvi/pixmap/
 share/texmf/xdvi/pixmap/toolbar.xpm
 share/texmf/xdvi/pixmap/toolbar2.xpm
 share/texmf/xdvi/xdvi.cfg
+share/texmf-var/
+share/texmf-var/web2c/
+share/texmf-var/web2c/luatex/
+share/texmf-var/web2c/luatex/dviluatex.fmt
+share/texmf-var/web2c/luatex/dvilualatex.fmt
+share/texmf-var/web2c/luatex/lualatex.fmt
+share/texmf-var/web2c/luatex/luatex.fmt
+share/texmf-var/web2c/pdftex/
+share/texmf-var/web2c/pdftex/pdfetex.fmt
+share/texmf-var/web2c/pdftex/amstex.fmt
+share/texmf-var/web2c/pdftex/cont-en.fmt
+share/texmf-var/web2c/pdftex/cslatex.fmt
+share/texmf-var/web2c/pdftex/pdfcslatex.fmt
+share/texmf-var/web2c/pdftex/csplain.fmt
+share/texmf-var/web2c/pdftex/pdfcsplain.fmt
+share/texmf-var/web2c/pdftex/eplain.fmt
+share/texmf-var/web2c/pdftex/latex.fmt
+share/texmf-var/web2c/pdftex/pdflatex.fmt
+share/texmf-var/web2c/pdftex/mex.fmt
+share/texmf-var/web2c/pdftex/pdfmex.fmt
+share/texmf-var/web2c/pdftex/utf8mex.fmt
+share/texmf-var/web2c/pdftex/mltex.fmt
+share/texmf-var/web2c/pdftex/mllatex.fmt
+share/texmf-var/web2c/pdftex/mptopdf.fmt
+share/texmf-var/web2c/pdftex/pdftex.fmt
+share/texmf-var/web2c/pdftex/etex.fmt
+share/texmf-var/web2c/xetex/
+share/texmf-var/web2c/xetex/cont-en.fmt
+share/texmf-var/web2c/xetex/xetex.fmt
+share/texmf-var/web2c/xetex/xelatex.fmt
+share/texmf-var/web2c/metapost/
+share/texmf-var/web2c/metapost/mpost.mem
+share/texmf-var/web2c/metapost/metafun.mem
+share/texmf-var/web2c/metapost/mplib-luatex.mem
+share/texmf-var/web2c/metapost/mfplain.mem
+share/texmf-var/web2c/aleph/
+share/texmf-var/web2c/aleph/aleph.fmt
+share/texmf-var/web2c/aleph/lamed.fmt
+share/texmf-var/web2c/metafont/
+share/texmf-var/web2c/metafont/mf.base
+share/texmf-var/web2c/ptex/
+share/texmf-var/web2c/ptex/ptex.fmt
+share/texmf-var/web2c/ptex/platex.fmt
+share/texmf-var/web2c/tex/
+share/texmf-var/web2c/tex/tex.fmt
+share/texmf-var/fonts/
+share/texmf-var/fonts/map/
+share/texmf-var/fonts/map/dvips/
+share/texmf-var/fonts/map/dvips/updmap/
+share/texmf-var/fonts/map/dvips/updmap/download35.map
+share/texmf-var/fonts/map/dvips/updmap/builtin35.map
+share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map
+share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map
+share/texmf-var/fonts/map/dvips/updmap/ps2pk.map
+share/texmf-var/fonts/map/dvips/updmap/psfonts.map
+share/texmf-var/fonts/map/pdftex/
+share/texmf-var/fonts/map/pdftex/updmap/
+share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
+share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
+share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+share/texmf-var/fonts/map/dvipdfm/
+share/texmf-var/fonts/map/dvipdfm/updmap/
+share/texmf-var/fonts/map/dvipdfm/updmap/dvipdfm_dl14.map
+share/texmf-var/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
+share/texmf-var/fonts/map/dvipdfm/updmap/dvipdfm.map

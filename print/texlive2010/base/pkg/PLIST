@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/21 13:00:30 edd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/24 22:31:00 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -800,8 +800,6 @@ texmf/scripts/xindy/
 @comment texmf/xindy/modules/styles/makeidx.xdy
 @exec mktexlsr > /dev/null 2>&1
 @exec texlinks
-@exec fmtutil-sys --all > /dev/null 2>&1
-@exec updmap-sys --syncwithtrees > /dev/null 2>&1
 @extraunexec rm -Rf %D/share/texmf-var/
 @extraunexec rm -Rf %D/share/texmf-config/
 @extra share/texmf/ls-R

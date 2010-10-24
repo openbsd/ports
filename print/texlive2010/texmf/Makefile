@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/21 13:00:30 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 22:31:00 edd Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
 COMMENT-docs =		texlive documentation
 
 DISTNAME =		texlive-${DIST_V}-texmf
+MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			texmf-var-pregen-2010${EXTRACT_SUFX}:0
 
 PKGNAME-main = 		texlive_texmf-minimal-${V}
 PKGNAME-full = 		texlive_texmf-full-${V}
@@ -26,6 +29,8 @@ SUBST_VARS +=		LOCALBASE
 do-install:
 	mv ${WRKDIST}/texmf ${PREFIX}/share
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
+# plug in my pregenerated map and formats
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/*
 
 post-install:
