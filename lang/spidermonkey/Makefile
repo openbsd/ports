@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/21 17:51:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:11:46 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/js/ \
 		http://ftp.mozilla.org/pub/mozilla.org/js/older-packages/
 
-WANTLIB=	c m pthread readline termcap
+WANTLIB=	c m pthread readline termcap nspr4
 
-LIB_DEPENDS=	nspr4.>=16:nspr->=4.6.3:devel/nspr
+LIB_DEPENDS=	:nspr->=4.6.3:devel/nspr
 
 WRKDIST=	${WRKDIR}/js
 WRKSRC=		${WRKDIST}/src

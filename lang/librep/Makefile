@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/24 21:11:46 sthen Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -24,12 +24,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=           http://download.tuxfamily.org/sawfish/librep/
 EXTRACT_SUFX=           .tar.bz2
 
-WANTLIB=		c m ncurses readline
+WANTLIB=		c gdbm gmp ffi m ncurses readline
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		gdbm.>=2::databases/gdbm \
-			gmp::devel/gmp \
-			ffi::devel/libffi
+LIB_DEPENDS=		::databases/gdbm \
+			::devel/gmp \
+			::devel/libffi
 
 GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=		GNU_ARCH VERSION

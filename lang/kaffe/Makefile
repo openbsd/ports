@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/24 21:11:45 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -27,6 +27,7 @@ MODULES=	devel/gettext
 # libtool needs to support -dlopen option
 USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
+USE_X11=	Yes
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
