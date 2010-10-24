@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/24 13:12:16 landry Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,10 +11,14 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p14
-PKGNAME-swt=		swt-${ECLIPSE_VER}p2
-PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p3
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p3
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
+REVISION-main=		15
+PKGNAME-swt=		swt-${ECLIPSE_VER}
+REVISION-swt=		2
+PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
+REVISION-gnome=		3
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
+REVISION-browser=	4
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -57,7 +61,7 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
+BUILD_DEPENDS=		:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant
 
 USE_GMAKE=		Yes
@@ -78,7 +82,8 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
-			pixman-1 gio-2.0 pthread-stubs xcb
+			pixman-1 gio-2.0 pthread-stubs xcb \
+			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
 
 LIB_DEPENDS-swt=	gtk-x11-2.0::x11/gtk+2
 WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0
@@ -88,10 +93,10 @@ LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2
 
 RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
-WANTLIB-browser=	c nspr4 plc4 plds4
+LIB_DEPENDS-browser=	:xulrunner->=1.9:devel/xulrunner/1.9
+WANTLIB-browser=	xulrunner1.9/xpcom xulrunner1.9/xul c nspr4 plc4 plds4 m stdc++
 
-MOZILLA_HOME=		${LOCALBASE}/xulrunner
+MOZILLA_HOME=		${LOCALBASE}/xulrunner1.9
 ECLIPSE_WS=		gtk
 ECLIPSE_BUILD=		3236
 ECLIPSE_OS=		openbsd
@@ -138,7 +143,7 @@ do-install:
 	@tar xzf ${WRKBUILD}/result/openbsd-gtk-${ECLIPSE_ARCH}-sdk.tar.gz \
 		-C ${PREFIX}
 	@sed -e "s+%%ECLIPSE_HOME%%+${TRUEPREFIX}/eclipse+g" \
-		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/xulrunner+g" \
+		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/xulrunner1.9+g" \
 		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp ${PREFIX}/bin/eclipse
 	${INSTALL_PROGRAM} ${WRKBUILD}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
