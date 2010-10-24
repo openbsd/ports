@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/25 00:56:54 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/24 10:45:31 robert Exp $
 bin/rst2html
 bin/rst2latex
+bin/rst2man
 bin/rst2newlatex
+bin/rst2odt
+bin/rst2odt_prepstyles
 bin/rst2pseudoxml
 bin/rst2s5
 bin/rst2xml
@@ -10,6 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/docutils/
 lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/_compat.py
+lib/python${MODPY_VERSION}/site-packages/docutils/_compat.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/_string_template_compat.py
+lib/python${MODPY_VERSION}/site-packages/docutils/_string_template_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/core.py
 lib/python${MODPY_VERSION}/site-packages/docutils/core.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/examples.py
@@ -39,6 +46,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/fi.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fi.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fr.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fr.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/gl.py
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/gl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/he.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/he.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/it.py
@@ -47,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/ja.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/ja.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/nl.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/nl.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/pl.py
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/pl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/pt_br.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/pt_br.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/ru.py
@@ -144,6 +155,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fi.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fi.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fr.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fr.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/gl.py
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/gl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/he.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/he.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/it.py
@@ -152,6 +165,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ja.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ja.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/nl.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/nl.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/pl.py
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/pl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/pt_br.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/pt_br.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ru.py
@@ -224,7 +239,10 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/template.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/latex2e.tex
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/default.tex
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/titlepage.tex
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/manpage.py
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/manpage.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/__init__.pyc
@@ -233,6 +251,12 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/unicode_map
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/unicode_map.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/null.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/null.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/__init__.py
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/pygmentsformatter.py
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/pygmentsformatter.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/styles.odt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/__init__.pyc
