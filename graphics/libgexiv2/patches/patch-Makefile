@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/10/24 22:29:50 landry Exp $
+--- Makefile.orig	Sat Aug 21 01:07:07 2010
++++ Makefile	Mon Sep  6 21:45:03 2010
+@@ -134,7 +134,7 @@ vapi: $(VAPI_FILE)
+ .PHONY: install
+ install:
+ 	@mkdir -p $(DESTDIR)$(PREFIX)/$(LIB)
+-	libtool --mode=install $(INSTALL_PROGRAM) $(LIBRARY).la $(DESTDIR)$(PREFIX)/$(LIB)
++	${LIBTOOL} --mode=install $(INSTALL_PROGRAM) $(LIBRARY).la $(DESTDIR)$(PREFIX)/$(LIB)
+ 	@mkdir -p $(DESTDIR)$(PREFIX)/include/$(PKGNAME)
+ 	$(INSTALL_DATA) $(EXPANDED_INSTALLED_HEADER_FILES) $(DESTDIR)$(PREFIX)/include/$(PKGNAME)
+ 	@mkdir -p $(DESTDIR)$(PREFIX)/$(LIB)/pkgconfig
+@@ -147,7 +147,7 @@ install-vapi:
+ 	$(INSTALL_DATA) $(VAPI_FILE) $(DESTDIR)$(PREFIX)/share/vala/vapi
+ 
+ uninstall:
+-	libtool --mode=uninstall rm -f $(DESTDIR)$(PREFIX)/$(LIB)/$(LIBRARY).la
++	${LIBTOOL} --mode=uninstall rm -f $(DESTDIR)$(PREFIX)/$(LIB)/$(LIBRARY).la
+ 	rm -rf $(DESTDIR)$(PREFIX)/include/$(PKGNAME)
+ 	rm -f $(DESTDIR)$(PREFIX)/$(LIB)/pkgconfig/$(PKGNAME).pc
+ 	rm -f $(DESTDIR)$(PREFIX)/share/vala/vapi/$(PKGNAME).vapi
+@@ -158,13 +158,13 @@ $(VAPI_FILE): $(EXPANDED_VAPI_INPUT) $(DESTDIR_HEADER_
+ 	vapigen --library=$(PKGNAME) --metadata=vapi/$(PKGNAME).metadata vapi/$(PKGNAME).gi
+ 
+ $(PC_FILE) : $(PC_INPUT) Makefile $(CONFIG_IN)
+-	m4 '--define=_VERSION_=$(VERSION)' '--define=_PREFIX_=$(PREFIX)' $< > $@
++	m4 '-D_VERSION_=$(VERSION)' '-D_PREFIX_=$(PREFIX)' $< > $@
+ 
+ $(EXPANDED_OBJ_FILES): $(BUILD_DIR)/%.o: gexiv2/%.cpp $(EXPANDED_HEADER_FILES) $(CONFIG_IN) Makefile
+ 	@pkg-config --print-errors --exists '$(EXT_PKG_VERSIONS)'
+ 	@mkdir -p $(BUILD_DIR)
+-	libtool --mode=compile --tag=CC $(CXX) -c $(EXT_PKGS_CFLAGS) $(CFLAGS) -I. -o $@ $<
++	${LIBTOOL} --mode=compile --tag=CC $(CXX) -c $(EXT_PKGS_CFLAGS) $(CFLAGS) -I. -o $@ $<
+ 
+ $(LIBRARY_BIN): $(EXPANDED_OBJ_FILES)
+-	libtool --mode=link --tag=CC $(CXX) -rpath $(PREFIX)/$(LIB) $(EXPANDED_LO_FILES) $(EXT_PKGS_LDFLAGS) $(CFLAGS) $(LDFLAGS) -o $(LIBRARY_BIN)
++	${LIBTOOL} --mode=link --tag=CC $(CXX) -rpath $(PREFIX)/$(LIB) $(EXPANDED_LO_FILES) $(EXT_PKGS_LDFLAGS) $(CFLAGS) $(LDFLAGS) -o $(LIBRARY_BIN)
+ 

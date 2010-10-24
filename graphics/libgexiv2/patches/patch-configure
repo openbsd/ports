@@ -1,0 +1,9 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/10/24 22:29:50 landry Exp $
+--- configure.orig	Thu Jul  1 22:15:58 2010
++++ configure	Thu Jul  1 22:16:02 2010
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#!/bin/sh
+ #
+ # Copyright 2010 Yorba Foundation
+ #

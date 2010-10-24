@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 22:29:50 landry Exp $
+%%SHARED%%
+include/gexiv2/
+include/gexiv2/gexiv2-managed-stream.h
+include/gexiv2/gexiv2-metadata.h
+include/gexiv2/gexiv2-preview-image.h
+include/gexiv2/gexiv2-preview-properties.h
+include/gexiv2/gexiv2.h
+lib/libgexiv2.a
+lib/libgexiv2.la
+lib/pkgconfig/
+lib/pkgconfig/gexiv2.pc
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gexiv2.vapi
