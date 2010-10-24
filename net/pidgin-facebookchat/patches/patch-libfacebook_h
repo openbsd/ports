@@ -1,0 +1,13 @@
+$OpenBSD: patch-libfacebook_h,v 1.1 2010/10/24 19:19:06 steven Exp $
+--- libfacebook.h.orig	Sun Oct 24 19:03:03 2010
++++ libfacebook.h	Sun Oct 24 19:03:27 2010
+@@ -51,6 +51,9 @@
+ #	define dlsym(a,b) GetProcAddress(a,b)
+ #	define dlclose(a) FreeLibrary(a)
+ #else
++#	include <sys/types.h>
++#	include <sys/socket.h>
++#	include <netinet/in.h>
+ #	include <arpa/inet.h>
+ #	include <dlfcn.h>
+ #	include <netinet/in.h>
