@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.26 2010/10/02 10:26:17 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.27 2010/10/24 20:44:50 ajacoutot Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,6 @@ my $vars = {
     USE_GROFF => 'YesNoVar',
     USE_LIBTOOL => 'YesNoGnuVar',
     USE_MOTIF => 'YesNoVar',
-    USE_X11 => 'YesNoVar',
     WANTLIB => 'WantlibVar',
 };
 
