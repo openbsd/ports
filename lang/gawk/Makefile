@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:06:28 sthen Exp $
 
 COMMENT=		GNU awk
 
 V=			3.1.7
 DISTNAME=		gawk-$V
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.gnu.org/software/gawk/gawk.html
@@ -26,7 +26,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-libsigsegv
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 SUBST_VARS+=		V
 

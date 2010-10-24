@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:06:28 sthen Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	MIT Object Tcl
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.4/generic \
 		--x-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION}
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:06:28 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	Modula-3 distribution for building CVSup
 DISTNAME=	ezm3-1.0
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.cvsup.org/ezm3/

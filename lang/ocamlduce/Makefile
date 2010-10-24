@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/20 03:24:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:06:28 sthen Exp $
 
 COMMENT=	XML extension types for Objective Caml
 CATEGORIES=	lang textproc
@@ -6,7 +6,7 @@ CATEGORIES=	lang textproc
 BROKEN=		"needs update to match OCaml 3.11"
 V=		3.09.2pl1
 DISTNAME=	ocamlduce-${V}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 MASTER_SITES=	http://pauillac.inria.fr/~frisch/ocamlcduce/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

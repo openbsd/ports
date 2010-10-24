@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:06:28 sthen Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -7,7 +7,7 @@ BROKEN-hppa =	infinite loop during build
 
 V =		8.12.0
 DISTNAME = 	ecl-$V
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 SHARED_LIBS +=	ecl	0.0
 
 HOMEPAGE = 	http://ecls.sourceforge.net/
@@ -40,10 +40,10 @@ MODGNU_CONFIG_GUESS_DIRS = 	${WRKDIST} \
 				${WRKDIST}/src/gc \
 				${WRKDIST}/src/gmp
 
-LIB_DEPENDS +=	gmp::devel/gmp \
-		gc::devel/boehm-gc
+LIB_DEPENDS +=	::devel/gmp \
+		::devel/boehm-gc
 		
-WANTLIB +=	c m pthread
+WANTLIB +=	c gc gmp m pthread
 
 post-build:
 	cd ${WRKBUILD}/build/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \

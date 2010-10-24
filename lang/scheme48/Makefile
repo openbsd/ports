@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:06:28 sthen Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
 V=		1.8
 DISTNAME=	scheme48-$V
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.tgz
 WANTLIB=		c m pthread
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 ALL_TARGET=		enough
 
 CONFIGURE_STYLE=	gnu
