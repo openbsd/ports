@@ -1,28 +1,24 @@
-# $OpenBSD: Makefile,v 1.81 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2010/10/24 20:36:44 sthen Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.1.4
+VERSION=	2.2.3
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
-REVISION-main=	1
-REVISION-client=	7
-REVISION-share=	1
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/} \
-		ftp://ftp.freeciv.org/pub/freeciv/stable/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_x11
@@ -32,38 +28,39 @@ USE_GROFF =	Yes
 MULTI_PACKAGES=	-main -share
 
 MODULES=	devel/gettext
-WANTLIB=	c m z ncurses readline
+WANTLIB=	bz2 c m z ncurses readline
 
 CONFIGURE_ARGS=	--with-ggz-client=no
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
-MULTI_PACKAGES+=-client
-
-CONFIGURE_ARGS+=--enable-client=gtk2 \
-		--disable-sdl-mixer \
-		--with-esd-prefix=${LOCALBASE}
+MULTI_PACKAGES+= -client
+CONFIGURE_ARGS+= --enable-client=gtk2 \
+		 --disable-sdl-mixer
 .else
-CONFIGURE_ARGS+=--enable-client=no
+CONFIGURE_ARGS+= --enable-client=no
 .endif
 
 PKG_ARCH-share=	*
 LIB_DEPENDS-share=
 WANTLIB-share=
-RUN_DEPENDS-share=
 
-WANTLIB-client=	${WANTLIB} \
-		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
-		Xrandr X11 Xext Xrender atk-1.0 cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs xcb gdk_pixbuf-2.0
-LIB_DEPENDS-client=${LIB_DEPENDS} \
-	gtk-x11-2.0.>=0.5,gdk-x11-2.0.>=0.5::x11/gtk+2
-RUN_DEPENDS-client=	:desktop-file-utils-*:devel/desktop-file-utils \
-			:freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+LIB_DEPENDS=	::archivers/bzip2
 
-RUN_DEPENDS-main=	:freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+WANTLIB-client = ${WANTLIB}
+WANTLIB-client += GL Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
+WANTLIB-client += Xrandr Xxf86vm X11 Xext Xrender atk-1.0 cairo drm expat
+WANTLIB-client += fontconfig freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
+WANTLIB-client += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB-client += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB-client += png pthread pthread-stubs xcb xcb-render xcb-shm
+
+LIB_DEPENDS-main= ${LIB_DEPENDS}
+LIB_DEPENDS-client= ${LIB_DEPENDS} ::x11/gtk+2
+RUN_DEPENDS-client= :desktop-file-utils-*:devel/desktop-file-utils \
+		    :freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+
+RUN_DEPENDS-main=   :freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
 
 USE_GMAKE=	Yes
 

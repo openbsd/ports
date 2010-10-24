@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST-client,v 1.7 2009/12/22 16:28:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-client,v 1.8 2010/10/24 20:36:44 sthen Exp $
 @conflict freeciv-share-<2
 @pkgpath games/freeciv,-client,gtk2
-bin/civclient
-bin/civmanual
-@man man/man6/civclient.6
+@bin bin/civmanual
+@bin bin/freeciv-gtk2
+@comment lib/libfreeciv.a
+@comment lib/libfreeciv.la
+@comment @man man/man6/freeciv-ftwl.6
+@man man/man6/freeciv-gtk2.6
+@comment @man man/man6/freeciv-sdl.6
+@comment @man man/man6/freeciv-win32.6
+@comment @man man/man6/freeciv-xaw.6
 share/applications/freeciv-server.desktop
 share/applications/freeciv.desktop
 share/freeciv/amplio/
@@ -26,6 +32,8 @@ share/freeciv/amplio/moderncities.png
 share/freeciv/amplio/moderncities.spec
 share/freeciv/amplio/nuke.png
 share/freeciv/amplio/nuke.spec
+share/freeciv/amplio/ocean.png
+share/freeciv/amplio/ocean.spec
 share/freeciv/amplio/select-alpha.png
 share/freeciv/amplio/select.png
 share/freeciv/amplio/select.spec
@@ -37,6 +45,8 @@ share/freeciv/amplio/tiles.png
 share/freeciv/amplio/tiles.spec
 share/freeciv/amplio/units.png
 share/freeciv/amplio/units.spec
+share/freeciv/amplio/water.png
+share/freeciv/amplio/water.spec
 share/freeciv/amplio/wonders.spec
 share/freeciv/buildings/
 share/freeciv/buildings/airport.png
@@ -86,6 +96,10 @@ share/freeciv/flags/aborigines-shield.png
 share/freeciv/flags/aborigines.png
 share/freeciv/flags/afghanistan-shield.png
 share/freeciv/flags/afghanistan.png
+share/freeciv/flags/ainu-shield.png
+share/freeciv/flags/ainu.png
+share/freeciv/flags/akwe-shield.png
+share/freeciv/flags/akwe.png
 share/freeciv/flags/algeria-shield.png
 share/freeciv/flags/algeria.png
 share/freeciv/flags/antarctica-shield.png
@@ -104,6 +118,8 @@ share/freeciv/flags/australia-shield.png
 share/freeciv/flags/australia.png
 share/freeciv/flags/austria-shield.png
 share/freeciv/flags/austria.png
+share/freeciv/flags/aymara-shield.png
+share/freeciv/flags/aymara.png
 share/freeciv/flags/azerbaijan-shield.png
 share/freeciv/flags/azerbaijan.png
 share/freeciv/flags/aztec-shield.png
@@ -116,6 +132,8 @@ share/freeciv/flags/barbarian-shield.png
 share/freeciv/flags/barbarian.png
 share/freeciv/flags/bavarian-shield.png
 share/freeciv/flags/bavarian.png
+share/freeciv/flags/belarus-shield.png
+share/freeciv/flags/belarus.png
 share/freeciv/flags/belgium-shield.png
 share/freeciv/flags/belgium.png
 share/freeciv/flags/boer-shield.png
@@ -124,8 +142,14 @@ share/freeciv/flags/bosnia-shield.png
 share/freeciv/flags/bosnia.png
 share/freeciv/flags/brasil-shield.png
 share/freeciv/flags/brasil.png
+share/freeciv/flags/brittany-shield.png
+share/freeciv/flags/brittany.png
 share/freeciv/flags/bulgaria-shield.png
 share/freeciv/flags/bulgaria.png
+share/freeciv/flags/burgundy-shield.png
+share/freeciv/flags/burgundy.png
+share/freeciv/flags/burundi-shield.png
+share/freeciv/flags/burundi.png
 share/freeciv/flags/byzantium-shield.png
 share/freeciv/flags/byzantium.png
 share/freeciv/flags/canada-shield.png
@@ -140,6 +164,8 @@ share/freeciv/flags/chile-shield.png
 share/freeciv/flags/chile.png
 share/freeciv/flags/china-shield.png
 share/freeciv/flags/china.png
+share/freeciv/flags/chola-shield.png
+share/freeciv/flags/chola.png
 share/freeciv/flags/colombia-shield.png
 share/freeciv/flags/colombia.png
 share/freeciv/flags/constantine-shield.png
@@ -154,18 +180,24 @@ share/freeciv/flags/czech-shield.png
 share/freeciv/flags/czech.png
 share/freeciv/flags/denmark-shield.png
 share/freeciv/flags/denmark.png
+share/freeciv/flags/dominica-shield.png
+share/freeciv/flags/dominica.png
 share/freeciv/flags/egypt-shield.png
 share/freeciv/flags/egypt.png
 share/freeciv/flags/egypt_ancient-shield.png
 share/freeciv/flags/egypt_ancient.png
 share/freeciv/flags/england-shield.png
 share/freeciv/flags/england.png
+share/freeciv/flags/esperanto-shield.png
+share/freeciv/flags/esperanto.png
 share/freeciv/flags/estonia-shield.png
 share/freeciv/flags/estonia.png
 share/freeciv/flags/ethiopia-shield.png
 share/freeciv/flags/ethiopia.png
 share/freeciv/flags/europe-shield.png
 share/freeciv/flags/europe.png
+share/freeciv/flags/euskadi-shield.png
+share/freeciv/flags/euskadi.png
 share/freeciv/flags/finland-shield.png
 share/freeciv/flags/finland.png
 share/freeciv/flags/france-shield.png
@@ -186,8 +218,18 @@ share/freeciv/flags/greece_ancient-shield.png
 share/freeciv/flags/greece_ancient.png
 share/freeciv/flags/greenland-shield.png
 share/freeciv/flags/greenland.png
+share/freeciv/flags/gupta-shield.png
+share/freeciv/flags/gupta.png
+share/freeciv/flags/hacker-shield.png
+share/freeciv/flags/hacker.png
+share/freeciv/flags/hawaii-shield.png
+share/freeciv/flags/hawaii.png
+share/freeciv/flags/himyar-shield.png
+share/freeciv/flags/himyar.png
 share/freeciv/flags/hittite-shield.png
 share/freeciv/flags/hittite.png
+share/freeciv/flags/hopi-shield.png
+share/freeciv/flags/hopi.png
 share/freeciv/flags/hungary-shield.png
 share/freeciv/flags/hungary.png
 share/freeciv/flags/iceland-shield.png
@@ -200,6 +242,8 @@ share/freeciv/flags/india-shield.png
 share/freeciv/flags/india.png
 share/freeciv/flags/indonesia-shield.png
 share/freeciv/flags/indonesia.png
+share/freeciv/flags/innu-shield.png
+share/freeciv/flags/innu.png
 share/freeciv/flags/iran-shield.png
 share/freeciv/flags/iran.png
 share/freeciv/flags/iran_ancient-shield.png
@@ -218,12 +262,32 @@ share/freeciv/flags/italy-shield.png
 share/freeciv/flags/italy.png
 share/freeciv/flags/japan-shield.png
 share/freeciv/flags/japan.png
+share/freeciv/flags/jbonai-shield.png
+share/freeciv/flags/jbonai.png
 share/freeciv/flags/kampuchea-shield.png
 share/freeciv/flags/kampuchea.png
+share/freeciv/flags/kanem-bornu-shield.png
+share/freeciv/flags/kanem-bornu.png
+share/freeciv/flags/kazakhstan-shield.png
+share/freeciv/flags/kazakhstan.png
+share/freeciv/flags/keetoowah-shield.png
+share/freeciv/flags/keetoowah.png
 share/freeciv/flags/kenya-shield.png
 share/freeciv/flags/kenya.png
+share/freeciv/flags/khwarezm-shield.png
+share/freeciv/flags/khwarezm.png
+share/freeciv/flags/kongo-shield.png
+share/freeciv/flags/kongo.png
 share/freeciv/flags/korea-shield.png
 share/freeciv/flags/korea.png
+share/freeciv/flags/korea_ancient-shield.png
+share/freeciv/flags/korea_ancient.png
+share/freeciv/flags/kurd-shield.png
+share/freeciv/flags/kurd.png
+share/freeciv/flags/kyrgyzstan-shield.png
+share/freeciv/flags/kyrgyzstan.png
+share/freeciv/flags/laos-shield.png
+share/freeciv/flags/laos.png
 share/freeciv/flags/latvia-shield.png
 share/freeciv/flags/latvia.png
 share/freeciv/flags/libya-shield.png
@@ -234,20 +298,28 @@ share/freeciv/flags/macedonia-shield.png
 share/freeciv/flags/macedonia.png
 share/freeciv/flags/madagascar-shield.png
 share/freeciv/flags/madagascar.png
+share/freeciv/flags/majapahit-shield.png
+share/freeciv/flags/majapahit.png
 share/freeciv/flags/malaysia-shield.png
 share/freeciv/flags/malaysia.png
 share/freeciv/flags/mali-shield.png
 share/freeciv/flags/mali.png
 share/freeciv/flags/maori-shield.png
 share/freeciv/flags/maori.png
+share/freeciv/flags/mapuche-shield.png
+share/freeciv/flags/mapuche.png
 share/freeciv/flags/mars-shield.png
 share/freeciv/flags/mars.png
 share/freeciv/flags/maya-shield.png
 share/freeciv/flags/maya.png
 share/freeciv/flags/mexico-shield.png
 share/freeciv/flags/mexico.png
+share/freeciv/flags/moldova-shield.png
+share/freeciv/flags/moldova.png
 share/freeciv/flags/mongolia-shield.png
 share/freeciv/flags/mongolia.png
+share/freeciv/flags/muskogee-shield.png
+share/freeciv/flags/muskogee.png
 share/freeciv/flags/myanmar-shield.png
 share/freeciv/flags/myanmar.png
 share/freeciv/flags/nato-shield.png
@@ -258,10 +330,18 @@ share/freeciv/flags/newzealand-shield.png
 share/freeciv/flags/newzealand.png
 share/freeciv/flags/nigeria-shield.png
 share/freeciv/flags/nigeria.png
+share/freeciv/flags/normandy-shield.png
+share/freeciv/flags/normandy.png
+share/freeciv/flags/north_korea-shield.png
+share/freeciv/flags/north_korea.png
 share/freeciv/flags/norway-shield.png
 share/freeciv/flags/norway.png
-share/freeciv/flags/observer-shield.png
-share/freeciv/flags/observer.png
+share/freeciv/flags/nubia-shield.png
+share/freeciv/flags/nubia.png
+share/freeciv/flags/numidia-shield.png
+share/freeciv/flags/numidia.png
+share/freeciv/flags/nuu-chah-nulth-shield.png
+share/freeciv/flags/nuu-chah-nulth.png
 share/freeciv/flags/ottoman-shield.png
 share/freeciv/flags/ottoman.png
 share/freeciv/flags/pakistan-shield.png
@@ -276,10 +356,18 @@ share/freeciv/flags/philippines-shield.png
 share/freeciv/flags/philippines.png
 share/freeciv/flags/phoenicia-shield.png
 share/freeciv/flags/phoenicia.png
+share/freeciv/flags/pirate-shield.png
+share/freeciv/flags/pirate.png
 share/freeciv/flags/poland-shield.png
 share/freeciv/flags/poland.png
+share/freeciv/flags/polynesian-shield.png
+share/freeciv/flags/polynesian.png
 share/freeciv/flags/portugal-shield.png
 share/freeciv/flags/portugal.png
+share/freeciv/flags/prussia-shield.png
+share/freeciv/flags/prussia.png
+share/freeciv/flags/purhepecha-shield.png
+share/freeciv/flags/purhepecha.png
 share/freeciv/flags/qing-shield.png
 share/freeciv/flags/qing.png
 share/freeciv/flags/quebec-shield.png
@@ -294,8 +382,12 @@ share/freeciv/flags/rwanda-shield.png
 share/freeciv/flags/rwanda.png
 share/freeciv/flags/ryukyu-shield.png
 share/freeciv/flags/ryukyu.png
+share/freeciv/flags/samogitia-shield.png
+share/freeciv/flags/samogitia.png
 share/freeciv/flags/sapmi-shield.png
 share/freeciv/flags/sapmi.png
+share/freeciv/flags/saxony-shield.png
+share/freeciv/flags/saxony.png
 share/freeciv/flags/scotland-shield.png
 share/freeciv/flags/scotland.png
 share/freeciv/flags/serbia-shield.png
@@ -318,6 +410,8 @@ share/freeciv/flags/spain-shield.png
 share/freeciv/flags/spain.png
 share/freeciv/flags/srilanka-shield.png
 share/freeciv/flags/srilanka.png
+share/freeciv/flags/srivijaya-shield.png
+share/freeciv/flags/srivijaya.png
 share/freeciv/flags/stpatrick-shield.png
 share/freeciv/flags/stpatrick.png
 share/freeciv/flags/sudan-shield.png
@@ -332,18 +426,36 @@ share/freeciv/flags/swiss-shield.png
 share/freeciv/flags/swiss.png
 share/freeciv/flags/syria-shield.png
 share/freeciv/flags/syria.png
+share/freeciv/flags/taino-shield.png
+share/freeciv/flags/taino.png
+share/freeciv/flags/tairona-shield.png
+share/freeciv/flags/tairona.png
 share/freeciv/flags/taiwan-shield.png
 share/freeciv/flags/taiwan.png
+share/freeciv/flags/tajikistan-shield.png
+share/freeciv/flags/tajikistan.png
+share/freeciv/flags/templar-shield.png
+share/freeciv/flags/templar.png
 share/freeciv/flags/texas-shield.png
 share/freeciv/flags/texas.png
 share/freeciv/flags/thailand-shield.png
 share/freeciv/flags/thailand.png
+share/freeciv/flags/thrace-shield.png
+share/freeciv/flags/thrace.png
 share/freeciv/flags/tibet-shield.png
 share/freeciv/flags/tibet.png
+share/freeciv/flags/tocharian-shield.png
+share/freeciv/flags/tocharian.png
 share/freeciv/flags/tunisia-shield.png
 share/freeciv/flags/tunisia.png
+share/freeciv/flags/tupi-shield.png
+share/freeciv/flags/tupi.png
 share/freeciv/flags/turkey-shield.png
 share/freeciv/flags/turkey.png
+share/freeciv/flags/turkmenistan-shield.png
+share/freeciv/flags/turkmenistan.png
+share/freeciv/flags/uae-shield.png
+share/freeciv/flags/uae.png
 share/freeciv/flags/ukraine-shield.png
 share/freeciv/flags/ukraine.png
 share/freeciv/flags/united_kingdom-shield.png
@@ -352,10 +464,14 @@ share/freeciv/flags/united_nations-shield.png
 share/freeciv/flags/united_nations.png
 share/freeciv/flags/unknown-shield.png
 share/freeciv/flags/unknown.png
+share/freeciv/flags/uruguay-shield.png
+share/freeciv/flags/uruguay.png
 share/freeciv/flags/usa-shield.png
 share/freeciv/flags/usa.png
 share/freeciv/flags/uyghur-shield.png
 share/freeciv/flags/uyghur.png
+share/freeciv/flags/uzbekistan-shield.png
+share/freeciv/flags/uzbekistan.png
 share/freeciv/flags/venezuela-shield.png
 share/freeciv/flags/venezuela.png
 share/freeciv/flags/vietnam-shield.png
@@ -397,6 +513,8 @@ share/freeciv/isophex/terrain2.png
 share/freeciv/isophex/terrain2.spec
 share/freeciv/isophex/tiles.png
 share/freeciv/isophex/tiles.spec
+share/freeciv/isophex/water.png
+share/freeciv/isophex/water.spec
 share/freeciv/isotrident/
 share/freeciv/isotrident.tilespec
 share/freeciv/isotrident/cities.png
@@ -419,6 +537,8 @@ share/freeciv/isotrident/tiles.png
 share/freeciv/isotrident/tiles.spec
 share/freeciv/isotrident/unitextras.png
 share/freeciv/isotrident/unitextras.spec
+share/freeciv/isotrident/water.png
+share/freeciv/isotrident/water.spec
 share/freeciv/misc/
 share/freeciv/misc/buildings.png
 share/freeciv/misc/buildings.spec
@@ -433,6 +553,8 @@ share/freeciv/misc/colors.spec
 share/freeciv/misc/colors.tilespec
 share/freeciv/misc/cursors.png
 share/freeciv/misc/cursors.spec
+share/freeciv/misc/editor.png
+share/freeciv/misc/editor.spec
 share/freeciv/misc/flags.spec
 share/freeciv/misc/icons.spec
 share/freeciv/misc/intro.png
@@ -602,10 +724,6 @@ share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Tabs/tab-top-active.png
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Tabs/tab-top.png
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/toolbar.png
-share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/toolbutton-normal.png
-share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/toolbutton-prelight.png
-share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/toolbutton-pressed.png
-share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar/toolbutton-toggled.png
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/bg.png
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/gtkrc
 share/freeciv/themes/gui-gtk-2.0/Freeciv/gtk-2.0/menubar.rc
@@ -615,6 +733,8 @@ share/freeciv/trident.tilespec
 share/freeciv/trident/auto_ll.spec
 share/freeciv/trident/cities.png
 share/freeciv/trident/cities.spec
+share/freeciv/trident/earth.png
+share/freeciv/trident/earth.spec
 share/freeciv/trident/explosions.png
 share/freeciv/trident/explosions.spec
 share/freeciv/trident/fog.png
