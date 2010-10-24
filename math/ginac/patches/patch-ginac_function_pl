@@ -1,6 +1,6 @@
-$OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
---- ginac/function.pl.orig	Wed Jul 15 06:29:52 2009
-+++ ginac/function.pl	Mon Jun  7 10:48:59 2010
+$OpenBSD: patch-ginac_function_pl,v 1.2 2010/10/24 22:36:37 pirofti Exp $
+--- ginac/function.pl.orig	Tue Jul  6 15:39:14 2010
++++ ginac/function.pl	Sun Oct 24 20:37:54 2010
 @@ -59,7 +59,7 @@ sub generate {
  $declare_function_macro = generate(
  	<<'END_OF_DECLARE_FUNCTION_MACRO','typename T${N}','const T${N} & p${N}','GiNaC::ex(p${N})');
@@ -108,7 +108,7 @@ $OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
  {
  
  	// Force re-evaluation even if the exprseq was already evaluated
-@@ -840,12 +841,12 @@ function::function(unsigned ser, const exprseq & es) :
+@@ -840,7 +841,7 @@ function::function(unsigned ser, const exprseq & es) :
  	clearflag(status_flags::evaluated);
  }
  
@@ -116,6 +116,9 @@ $OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
 +function::function(serial_t ser, const exvector & v, bool discardable) 
    : exprseq(v,discardable), serial(ser)
  {
+ 	if ( ser >= registered_functions().size() ) {
+@@ -848,7 +849,7 @@ function::function(unsigned ser, const exvector & v, b
+ 	}
  }
  
 -function::function(unsigned ser, std::auto_ptr<exvector> vp) 
@@ -123,7 +126,7 @@ $OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
    : exprseq(vp), serial(ser)
  {
  }
-@@ -1343,7 +1344,7 @@ void function::store_remember_table(ex const & result)
+@@ -1346,7 +1347,7 @@ void function::store_remember_table(ex const & result)
  
  // public
  
@@ -132,7 +135,7 @@ $OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
  {
  	size_t same_name = 0;
  	for (size_t i=0; i<registered_functions().size(); ++i) {
-@@ -1372,7 +1373,7 @@ unsigned function::register_new(function_options const
+@@ -1375,10 +1376,10 @@ unsigned function::register_new(function_options const
  
  /** Find serial number of function by name and number of parameters.
   *  Throws exception if function was not found. */
@@ -140,4 +143,8 @@ $OpenBSD: patch-ginac_function_pl,v 1.1 2010/06/07 13:47:44 espie Exp $
 +serial_t function::find_function(const std::string &name, unsigned nparams)
  {
  	std::vector<function_options>::const_iterator i = function::registered_functions().begin(), end = function::registered_functions().end();
- 	unsigned serial = 0;
+-	unsigned serial = 0;
++	serial_t serial = 0;
+ 	while (i != end) {
+ 		if (i->get_name() == name && i->get_nparams() == nparams)
+ 			return serial;

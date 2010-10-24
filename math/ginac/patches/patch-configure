@@ -1,29 +1,56 @@
---- configure.orig	Thu Jul 30 19:06:02 2009
-+++ configure	Mon Jun  7 03:59:36 2010
-@@ -11835,7 +11835,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+$OpenBSD: patch-configure,v 1.4 2010/10/24 22:36:37 pirofti Exp $
+--- configure.orig	Tue Jul  6 15:41:06 2010
++++ configure	Sun Oct 24 22:08:49 2010
+@@ -10803,7 +10803,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldl  $LIBS"
 +LIBS="$LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -12157,7 +12157,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldl  $LIBS"
-+LIBS="$LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -12293,7 +12293,7 @@ if test "${ac_cv_lib_dld_dld_link+set}" = set; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10856,7 +10856,7 @@ if test "${ac_cv_lib_dld_shl_load+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldld  $LIBS"
 +LIBS="$LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10899,7 +10899,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10977,7 +10977,7 @@ if test "${ac_cv_lib_dld_dld_link+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldld  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15504,14 +15504,14 @@ fi
+ 
+ if test "$CONFIG_EXCOMPILER" = "yes"; then
+ 			found_dlopen_lib="no"
+-	DL_LIBS="-ldl"
++	DL_LIBS=""
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+ $as_echo_n "checking for dlopen in -ldl... " >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

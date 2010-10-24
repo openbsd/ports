@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.9 2010/10/18 20:52:05 espie Exp $
+# $Id: Makefile,v 1.10 2010/10/24 22:36:37 pirofti Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
-DISTNAME=	ginac-1.5.3
+DISTNAME=	ginac-1.5.8
 REVISION=	0
 SHARED_LIBS +=	ginac	2.0	# 0.3
 CATEGORIES=	math
