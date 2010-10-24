@@ -1,46 +1,46 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/06/05 15:23:28 landry Exp $
-@bin bin/Terminal
-bin/terminal
+@comment $OpenBSD: PLIST,v 1.12 2010/10/24 19:03:55 landry Exp $
+@conflict terminal-<=0.4.5p1
+@bin bin/xfce4-terminal
 man/ca/
 man/ca/man1/
-@man man/ca/man1/Terminal.1
+@man man/ca/man1/xfce4-terminal.1
 man/da/
 man/da/man1/
-@man man/da/man1/Terminal.1
+@man man/da/man1/xfce4-terminal.1
 man/es/
 man/es/man1/
-@man man/es/man1/Terminal.1
+@man man/es/man1/xfce4-terminal.1
 man/fr/
 man/fr/man1/
-@man man/fr/man1/Terminal.1
+@man man/fr/man1/xfce4-terminal.1
 man/gl/
 man/gl/man1/
-@man man/gl/man1/Terminal.1
+@man man/gl/man1/xfce4-terminal.1
 man/hr/
 man/hr/man1/
-@man man/hr/man1/Terminal.1
+@man man/hr/man1/xfce4-terminal.1
 man/id/
 man/id/man1/
-@man man/id/man1/Terminal.1
+@man man/id/man1/xfce4-terminal.1
 man/it/
 man/it/man1/
-@man man/it/man1/Terminal.1
+@man man/it/man1/xfce4-terminal.1
 man/ja/
 man/ja/man1/
-@man man/ja/man1/Terminal.1
-@man man/man1/Terminal.1
+@man man/ja/man1/xfce4-terminal.1
+@man man/man1/xfce4-terminal.1
 man/pt/
 man/pt/man1/
-@man man/pt/man1/Terminal.1
+@man man/pt/man1/xfce4-terminal.1
 man/ru/
 man/ru/man1/
-@man man/ru/man1/Terminal.1
+@man man/ru/man1/xfce4-terminal.1
 man/ug/
 man/ug/man1/
-@man man/ug/man1/Terminal.1
+@man man/ug/man1/xfce4-terminal.1
 man/zh_CN/
 man/zh_CN/man1/
-@man man/zh_CN/man1/Terminal.1
+@man man/zh_CN/man1/xfce4-terminal.1
 share/Terminal/
 share/Terminal/Terminal-toolbars.ui
 share/Terminal/Terminal.glade

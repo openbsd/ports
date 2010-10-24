@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 19:03:55 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	0.4.5
 XFCE_GOODIE=	Terminal
 # :L is here for a reason
-PKGNAME=	${DISTNAME:L}
-REVISION=	1
+PKGNAME=	xfce4-${DISTNAME:L}
+REVISION=	2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 USE_GROFF =	Yes
+CONFIGURE_ARGS +=	--program-transform-name='s/Terminal/xfce4-terminal/'
 
 LIB_DEPENDS=	::x11/xfce4/exo \
 		::x11/dbus-glib \
