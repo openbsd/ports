@@ -1,0 +1,8 @@
+FooBillard is a free OpenGL-billard game for Linux with realistic
+physics, AI-player and many gametypes like pool carambol or snooker. Why
+foo? Well, actually I had this logo (F.B.-Florian Berger) and then foo
+sounds a bit like pool (Somehow I wasn't quite attracted by the name
+FoolBillard) The main physics is quite mature but not yet perfect. If
+you are a billard-pro and you're missing some physics, please tell me.
+Cause I've implemented it like I think it should work, which might
+differ from reality.
