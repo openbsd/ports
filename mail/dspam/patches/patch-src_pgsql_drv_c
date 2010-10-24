@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pgsql_drv_c,v 1.5 2008/12/11 00:46:01 todd Exp $
+$OpenBSD: patch-src_pgsql_drv_c,v 1.6 2010/10/24 12:14:08 naddy Exp $
 --- src/pgsql_drv.c.orig	Sat Jul 29 15:38:48 2006
-+++ src/pgsql_drv.c	Sun Apr 29 17:57:52 2007
++++ src/pgsql_drv.c	Sun Oct 24 13:51:05 2010
 @@ -1146,7 +1146,7 @@ _ds_get_signature (DSPAM_CTX * CTX, struct _ds_spam_si
  
      p = _pgsql_drv_getpwuid (CTX, uid);
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_pgsql_drv_c,v 1.5 2008/12/11 00:46:01 todd Exp $
        return EFAILURE;
      }
      username = strdup(p->pw_name);
-@@ -1241,7 +1241,7 @@
+@@ -1241,7 +1241,7 @@ _ds_set_signature (DSPAM_CTX * CTX, struct _ds_spam_si
    mem = PQescapeBytea(SIG->data, SIG->length, &length);
  
    snprintf (scratch, sizeof (scratch),
