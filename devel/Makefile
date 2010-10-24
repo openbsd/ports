@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.848 2010/10/17 19:07:54 armani Exp $
+# $OpenBSD: Makefile,v 1.849 2010/10/24 11:42:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -618,6 +618,7 @@
      SUBDIR += p5-Number-Compare-Date
      SUBDIR += p5-OLE-Storage_Lite
      SUBDIR += p5-Object-Declare
+     SUBDIR += p5-Object-Pluggable
      SUBDIR += p5-Object-Realize
      SUBDIR += p5-Object-Signature
      SUBDIR += p5-PAR
