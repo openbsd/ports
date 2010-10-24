@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 22:18:38 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -11,5 +11,6 @@
      SUBDIR += imageviewer
      SUBDIR += make
      SUBDIR += pantomime
+     SUBDIR += terminal
 
 .include <bsd.port.subdir.mk>
