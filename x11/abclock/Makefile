@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=	analogue bitmap clock
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	X11 c
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" \

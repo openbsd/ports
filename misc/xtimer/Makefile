@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	super simple digital timer for X11
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/17 14:55:21 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS =		:hs-X11->=1.3.0:x11/hs-X11 \
 			::devel/hs-parsec \
 			::devel/hs-stm
 
-USE_X11 =		Yes
 
 EXAMPLEDIR =		${PREFIX}/share/examples/xmobar
 

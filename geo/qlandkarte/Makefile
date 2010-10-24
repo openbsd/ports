@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:47 ajacoutot Exp $
 
 COMMENT=	garmin gps map management tool
 
@@ -20,7 +20,6 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qlandkarte/}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 MODULES=	x11/qt4
 LIB_DEPENDS+=	::devel/proj \

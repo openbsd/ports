@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:22:23 ajacoutot Exp $
 
 COMMENT=	extra japanese fonts
 
@@ -21,7 +21,6 @@ FONTDIR=${PREFIX}/lib/X11/fonts/ja
 EXTRACT_CASES=*) tar zxf ${FULLDISTDIR}/$$archive `sed <${FILESDIR}/list -e s,^,${DISTNAME}/,`;;
 
 # bdftopcf
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu dest
 NO_BUILD=		Yes

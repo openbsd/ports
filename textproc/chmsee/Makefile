@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:18:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT =	html help viewer
 
@@ -38,7 +38,6 @@ LIB_DEPENDS =	::devel/nspr \
 		::x11/gtk+2 \
 		::security/libgcrypt
 
-USE_X11 =	Yes
 
 NO_REGRESS =	Yes
 

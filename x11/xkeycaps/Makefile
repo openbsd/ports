@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	keymap editor for the X window system
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c 
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 

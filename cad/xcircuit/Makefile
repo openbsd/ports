@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:04:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 MODULES=		x11/tk
 LIB_DEPENDS+=		${MODTK_LIB_DEPENDS}
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 

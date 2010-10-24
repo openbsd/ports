@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,6 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/qt4
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py

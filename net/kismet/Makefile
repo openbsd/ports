@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:30:01 ajacoutot Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -56,7 +56,6 @@ MULTI_PACKAGES=		-main
 WANTLIB-main=		c m ncurses panel pcap stdc++
 
 .if !${FLAVOR:L:Mno_gpsmap}
-USE_X11=		Yes
 MULTI_PACKAGES+=	-gpsmap
 WANTLIB-gpsmap=		c expat freetype m pthread stdc++ z
 WANTLIB-main+=		z

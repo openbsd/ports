@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:32:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -60,7 +60,6 @@ CONFIGURE_ARGS=		--without-freetype-src \
 			--with-regular-link
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=		Yes

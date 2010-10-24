@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
@@ -22,7 +22,6 @@ WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
 		smpeg.>=1.3:smpeg-*:devel/smpeg
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

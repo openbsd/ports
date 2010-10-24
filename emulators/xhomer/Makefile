@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:17:49 ajacoutot Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/05 06:38:32 form Exp $
 
 COMMENT=		DEC Professional 350 emulator based on SIMH
@@ -24,7 +24,6 @@ WANTLIB=		X11 Xext Xxf86dga c m pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 MAKE_ENV=		X11DIR=${X11BASE}
 ALL_TARGET=		xhomer

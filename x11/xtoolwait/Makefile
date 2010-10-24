@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	tool startup utility for X11
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c 
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 

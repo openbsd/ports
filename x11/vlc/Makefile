@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.104 2010/10/24 21:15:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,7 +73,6 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
 		xcb-render-util xcb xml2 z
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu # XXX links with static library archives
 USE_GROFF =	Yes

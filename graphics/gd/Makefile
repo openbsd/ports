@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/09/27 19:54:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	library for dynamic creation of images
 
@@ -25,7 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --without-xpm
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 post-patch:

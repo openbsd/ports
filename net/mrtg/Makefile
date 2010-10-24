@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	multi-router traffic grapher
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=	::net/p5-IO-Socket-INET6 \
 		:p5-RRD-*:net/rrdtool,-perl
 LIB_DEPENDS=	gd.>=18::graphics/gd
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= autoconf

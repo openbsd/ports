@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -43,7 +43,6 @@ WANTLIB-main =	${WANTLIB} GL ltdl Xrandr \
 
 WANTLIB-cal =	${WANTLIB} kabc kresources vcard
 
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static

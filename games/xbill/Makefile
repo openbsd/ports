@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	save your computers from the evil clutches of Bill
 
@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-x \
 		--disable-motif \
 		--disable-gtk
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

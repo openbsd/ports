@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/19 01:24:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
@@ -19,7 +19,6 @@ MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=localstatedir=/var

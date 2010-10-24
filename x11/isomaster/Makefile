@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		gui cd image editor
 
@@ -30,7 +30,6 @@ WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png z pthread-stubs xcb gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes

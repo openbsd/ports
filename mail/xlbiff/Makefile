@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=	display from/subject from incoming mails using X11
 
@@ -18,7 +18,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs \
 		xcb
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

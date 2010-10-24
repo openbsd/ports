@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -36,7 +36,6 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 
 USE_GROFF =	Yes
 .if ${FLAVOR:L:Mimage}
-USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 CONFIGURE_ARGS+=--with-imagelib=gtk2
 DOCS+=		README.img

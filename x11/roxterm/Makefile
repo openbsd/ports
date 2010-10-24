@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=		::devel/vte \
 
 RUN_DEPENDS=		::devel/desktop-file-utils
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 

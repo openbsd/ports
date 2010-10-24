@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT =		Python bindings for OpenGL
 MODPY_EGG_VERSION =	3.0.0
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
-USE_X11 =		Yes
 REGRESS_IS_INTERACTIVE = X11
 
 LIB_DEPENDS =		glut.>=4::graphics/freeglut

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT =	gtk livejournal client
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
 
 RUN_DEPENDS =	::devel/desktop-file-utils
 
-USE_X11 =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-gnome \

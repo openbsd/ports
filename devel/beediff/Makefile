@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT=	graphical file comparator
 
@@ -25,7 +25,6 @@ LIB_DEPENDS+=	lib/qt4/QtGui::x11/qt4
 WRKDIST=	${WRKDIR}/beediff
 
 MODULES=	x11/qt4
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CXX=${CXX} \

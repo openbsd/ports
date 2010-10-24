@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/02 16:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	implementation of the OpenGL Character Renderer
 
@@ -24,7 +24,6 @@ WANTLIB=	GL GLU X11 Xau Xdmcp expat fontconfig freetype m \
 
 LIB_DEPENDS=	fribidi::devel/fribidi
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 # Needs GLEW MX

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:10:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -50,7 +50,6 @@ MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread pthread-stubs \
 			sndio stdc++ xcb z
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 

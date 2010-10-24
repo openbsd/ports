@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT-main=		active monitoring tool
 V=			2.82
@@ -33,7 +33,6 @@ LIB_DEPENDS-mon=
 # gatherer only package
 COMMENT-mux=		symon data gatherer
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

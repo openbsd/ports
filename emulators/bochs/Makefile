@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -43,7 +43,6 @@ WANTLIB+=	curses readline
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --with-nogui
 .else
-USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x11
 WANTLIB+=	ICE SM X11 Xau Xdmcp pthread-stubs xcb
 .endif

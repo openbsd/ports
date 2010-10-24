@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	classic BSD4.4 cat-and-mouse
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 c m pthread-stubs xcb
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
 		BINOWN=${BINOWN} BINMODE=${BINMODE}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 post-extract:

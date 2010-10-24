@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/11 17:10:40 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:25:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 

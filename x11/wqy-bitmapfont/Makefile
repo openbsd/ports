@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/01/27 14:43:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wqy/}
 
 WRKDIST=	${WRKDIR}/wqy-bitmapfont
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*

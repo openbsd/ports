@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =		modern tiling window manager
 
@@ -40,7 +40,6 @@ LIB_DEPENDS =		::devel/atk \
 			::textproc/libxml \
 			::x11/gtk+2
 
-USE_X11 =		Yes
 USE_GROFF =	Yes
 
 post-install:

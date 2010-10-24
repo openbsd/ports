@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
@@ -29,7 +29,6 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+=	--without-gtk
 .else
-USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk-x11-2.0::x11/gtk+2
 

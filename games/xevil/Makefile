@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/06/15 19:04:05 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
 #
 
 COMMENT=	side-view, fast-action, kill everything type of game
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xpm c m pthread-stubs stdc++ xcb
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 WRKDIST=	${WRKDIR}

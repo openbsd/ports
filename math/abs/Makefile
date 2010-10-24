@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT=	free spreadsheet with graphical user interface
 
@@ -17,7 +17,6 @@ WANTLIB=		X11 Xaw Xext Xmu Xpm Xt c.>=35 m pthread-stubs xcb
 
 MASTER_SITES=	http://www.ping.be/bertin/
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

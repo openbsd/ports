@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	3D filesystem visualizer
 
@@ -36,7 +36,6 @@ WANTLIB += xcb xml2 z gnomeui-2 gtkgl-2.0
 LIB_DEPENDS=	::x11/gnome/libgnomeui \
 		::x11/gtkglarea
 
-USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 

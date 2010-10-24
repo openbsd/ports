@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -31,7 +31,6 @@ MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
 USE_GROFF =	Yes
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static

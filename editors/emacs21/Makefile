@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -54,7 +54,6 @@ WANTLIB-main=		c m ncurses ossaudio
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
-USE_X11=Yes
 LIB_DEPENDS-main=	::graphics/libungif \
 			::graphics/png \
 			::graphics/tiff

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	mold spreading over your X11 screen
 
@@ -18,7 +18,6 @@ WANTLIB=	X11 Xau Xdmcp Xext c m
 
 MASTER_SITES=	ftp://cclub.cc.tut.ac.jp/pub/xwin/
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/02 14:26:21 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:01 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -28,7 +28,6 @@ RUN_DEPENDS=	:p5-Tk->=804.025:x11/p5-Tk \
 		::graphics/jhead \
 		::x11/p5-Tk-Splash
 
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

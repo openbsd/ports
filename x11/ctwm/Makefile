@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=	twm, plus support for multiple virtual screens, etc
 
@@ -19,7 +19,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 

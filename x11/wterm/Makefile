@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		color vt102 terminal emulator with transparency support
 
@@ -22,7 +22,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wterm/}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:windowmaker->=0.50.0:x11/windowmaker
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu

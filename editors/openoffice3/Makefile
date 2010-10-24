@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/24 21:16:25 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -142,7 +142,6 @@ RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			::java/javaPathHelper
 WANTLIB-java=		c ${STDLIB} m pthread
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:00:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=		Scorched Earth-clone
 
@@ -27,7 +27,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		mikmod::audio/libmikmod \
 			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 

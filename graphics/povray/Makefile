@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=			3D image rendering package
 
@@ -31,7 +31,6 @@ WRKDIST=			${WRKDIR}/povray31/source/unix
 
 .if !${FLAVOR:L:Mno_x11}
 ALL_TARGET=                     newxwin
-USE_X11=			Yes
 WANTLIB+=			X11 pthread-stubs xcb
 .endif
 ALL_TARGET+=			newunix

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/05/31 05:28:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:11:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,7 +69,6 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 MAKE_FLAGS=	MAJOR_VERSION=${LIBpt_VERSION:R} \
 		MINOR_VERSION=${LIBpt_VERSION:E}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 20:58:59 ajacoutot Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=   Yes
 REVISION =	1
 WANTLIB=	X11 c m
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	CAT=cat \

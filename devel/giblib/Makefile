@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
@@ -23,7 +23,6 @@ MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
 LIB_DEPENDS=		Imlib2.>=1::graphics/imlib2
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \

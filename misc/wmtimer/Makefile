@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:15:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; alarm clock
 
@@ -28,7 +28,6 @@ WANTLIB += pixman-1 png pthread pthread-stubs xcb z gdk_pixbuf-2.0
 
 LIB_DEPENDS=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmtimer

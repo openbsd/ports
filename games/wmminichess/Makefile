@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; chess game
 
@@ -21,7 +21,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=		:gnuchess-*:games/gnuchess
 
-USE_X11=		Yes
 NO_REGRESS=		Tes
 
 ALL_TARGET=		minichess

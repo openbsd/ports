@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/09 08:12:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =		blinkensisters - hunt for the lost pixels
 
@@ -26,7 +26,6 @@ LIB_DEPENDS =		::devel/sdl-net			\
 WANTLIB +=		SDL SDL_image SDL_mixer SDL_net SDL_ttf X11 Xau
 WANTLIB +=		Xdmcp Xext Xrandr Xrender c freetype m pthread stdc++
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:23:04 ajacoutot Exp $
 
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
@@ -21,7 +21,6 @@ MAINTAINER=	Jung <moorang@gmail.com>
 WANTLIB=	ICE SM X11 Xaw Xext Xmu Xt c pthread-stubs termcap util xcb
 
 MODULES=	converters/libiconv
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	small EWMH compliant pager
 
@@ -22,7 +22,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=simple
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.66 2010/09/16 22:34:08 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.67 2010/10/24 21:24:04 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -90,7 +90,6 @@ PKG_ARGS+=	-Dctypes=0
 .  endif
 .endif
 
-USE_X11=		Yes
 
 AUTOCONF_VERSION?=	2.59
 CONFIGURE_STYLE=	autoconf

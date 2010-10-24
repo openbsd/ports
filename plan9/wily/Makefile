@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:31:50 ajacoutot Exp $
 
 COMMENT=	clone of the Plan9 editor 'acme'
 
@@ -23,7 +23,6 @@ WANTLIB=		ICE SM X11 Xg Xt c frame m plan9c pthread-stubs xcb
 LIB_DEPENDS=		::plan9/9libs
 
 SEPARATE_BUILD=		simple
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-9libs=${LOCALBASE}/include/9libs

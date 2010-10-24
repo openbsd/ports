@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:06:36 ajacoutot Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -39,7 +39,6 @@ LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
 			pst.>=1::${BASE_PKGPATH} \
 			boost_python.>=1::devel/boost
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes

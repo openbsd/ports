@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/21 21:14:47 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT =		easy to use LaTeX and ConTeXt editor
 
@@ -26,7 +26,6 @@ LIB_DEPENDS =		::textproc/hunspell \
 			::x11/qt4
 RUN_DEPENDS = 		:texlive_base-*:print/texlive/base
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 
 NO_REGRESS =		Yes

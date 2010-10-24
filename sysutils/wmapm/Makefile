@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:36:04 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
@@ -21,7 +21,6 @@ WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

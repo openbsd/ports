@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 15:29:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/24 21:25:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,7 +40,6 @@ MODULES=	devel/gettext \
 
 MODFORTRAN_COMPILER = g77
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 BUILD_DEPENDS=	::print/ghostscript/gnu-fonts \

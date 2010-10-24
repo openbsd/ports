@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -31,7 +31,6 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

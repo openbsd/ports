@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:15:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
 MODULES=	devel/gettext
 USE_GMAKE=	Yes
-USE_X11=	Yes
 VMEM_WARNING=	Yes
 
 BUILD_DEPENDS=	::devel/cppunit

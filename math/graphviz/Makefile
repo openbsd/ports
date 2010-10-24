@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -93,7 +93,6 @@ RUN_DEPENDS=	:tk->=8.4,<8.5:x11/tk/8.4 \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/swig
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 AUTOCONF_VERSION=2.59

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:21:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,6 @@ REGRESS_DEPENDS=::devel/p5-Test-Pod \
 MODULES=	cpan
 CONFIGURE_STYLE=modbuild
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
@@ -19,7 +19,6 @@ WANTLIB=		Xmu m X11 ncurses crypto c stdc++ SM readline ICE \
 MASTER_SITES=		${HOMEPAGE}releases/
 
 CONFIGURE_STYLE=        gnu
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes

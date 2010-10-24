@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:02 ajacoutot Exp $
 
 COMMENT=	medical image conversion
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	::x11/gtk+2
 
 FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/xmedcon
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 USE_LIBTOOL=	Yes
 

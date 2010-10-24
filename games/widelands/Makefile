@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -34,7 +34,6 @@ MODPY_RUNDEP=	No
 
 WRKDIST=	${WRKDIR}/widelands
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 MODSCONS_FLAGS=	\

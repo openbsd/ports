@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT =		kde interface to exif
 CATEGORIES =		graphics devel x11 x11/kde
@@ -19,7 +19,6 @@ WANTLIB =	ICE Xrender SM Xext X11 util m z \
 MODULES =	x11/kde
 
 MODKDE_VERSION =	3.5
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_STYLE =	autoconf

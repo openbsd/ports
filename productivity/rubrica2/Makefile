@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:33:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,6 @@ MODULES=	devel/gettext \
 		textproc/intltool \
 		devel/gconf2
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

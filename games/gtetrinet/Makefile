@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:01 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -70,7 +70,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 FAKE_FLAGS=	gamesdir=${PREFIX}/bin
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

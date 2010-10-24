@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/22 18:20:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	fast and easy porn downloader
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=		::devel/libglade2 \
 			::textproc/libxml
 RUN_DEPENDS=		::devel/desktop-file-utils
 
-USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnaughty
 

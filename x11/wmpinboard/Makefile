@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; resembling a miniature pin board
 
@@ -17,7 +17,6 @@ WANTLIB=		X11 Xext Xpm c
 MASTER_SITES=		${HOMEPAGE}
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	X11 Cursors themes generator
 DIST_VERS=	1.0.3
@@ -26,7 +26,6 @@ WANTLIB=		Xrender Xcursor X11 Xfixes Xdmcp Xau c m z \
 			pthread-stubs xcb png
 
 SEPARATE_BUILD= 	concurrent
-USE_X11=		Yes
 USE_GROFF =	Yes
 AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE=	autoconf no-autoheader

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/22 12:51:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:32:40 ajacoutot Exp $
 
 COMMENT=		X Printing Panel
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=		::print/cups \
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
-USE_X11=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

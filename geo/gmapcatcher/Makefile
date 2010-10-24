@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 17:50:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:47 ajacoutot Exp $
 
 COMMENT=	offline maps viewer
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 		:py-sqlite2-*:databases/py-sqlite2 \
 		::graphics/py-Imaging 
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

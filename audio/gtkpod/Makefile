@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-0.99.14
@@ -23,7 +23,6 @@ WANTLIB += gthread-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0 pixman-1
 WANTLIB += gio-2.0 id3tag gpod gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 curl
 WANTLIB += glade-2.0 mp4v2 xcb-render xcb-render-util
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/09/05 12:59:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/24 21:21:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,6 @@ ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"
 
 MODPY_VERSION=		${FLAVOR:S/python//}
 
-USE_X11=		Yes
 
 do-configure:
 	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g; s|!MODPY_VERSION!|${MODPY_VERSION}|g" \

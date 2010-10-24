@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -39,7 +39,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --disable-gui-client
 .else
-USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	X11 Xext Xrender Xrandr expat fontconfig freetype m z cairo \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \

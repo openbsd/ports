@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/11 08:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/24 21:30:46 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 VMEM_WARNING=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

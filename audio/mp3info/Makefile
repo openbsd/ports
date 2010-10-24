@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
@@ -30,7 +30,6 @@ FLAVOR?=
 ALL_TARGET=	mp3info doc
 INSTALL_TARGET=	install-mp3info
 .else
-USE_X11=	Yes
 MODULES=	devel/gettext
 LIB_DEPENDS=	::x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

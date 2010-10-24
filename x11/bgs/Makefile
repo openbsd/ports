@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =		simple background setter
 
@@ -20,7 +20,6 @@ WANTLIB =		X11 Xinerama c Imlib2
 
 LIB_DEPENDS =		::graphics/imlib2
 
-USE_X11 =		Yes
 USE_GROFF =	Yes
 NO_REGRESS =		Yes
 SUBST_VARS =		VERSION

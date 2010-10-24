@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	Motif minesweeper game
 
@@ -14,7 +14,6 @@ PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm Xt c m pthread-stubs stdc++ xcb
 
-USE_X11=	Yes
 USE_MOTIF=	any
 
 WRKDIST=	${WRKDIR}/xminehunter

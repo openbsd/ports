@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
@@ -45,7 +45,6 @@ RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base \
 
 MODULES =	devel/gettext
 
-USE_X11=		Yes
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--enable-gstreamer

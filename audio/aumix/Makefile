@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	full-screen ncurses or GTK-based audio mixer
 
@@ -43,7 +43,6 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 WANTLIB += pthread-stubs xcb gdk-x11-2.0.>=0.14 gdk_pixbuf-2.0.>=0.14
 WANTLIB += gtk-x11-2.0.>=0.14 gthread-2.0 pthread xcb-render xcb-render-util
-USE_X11=	Yes
 .endif
 
 .if ${FLAVOR:L:Mno_curses} 

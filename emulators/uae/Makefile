@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
@@ -26,7 +26,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS+=	::x11/gtk+2 \
 		::devel/sdl
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 			--with-sdl-sound

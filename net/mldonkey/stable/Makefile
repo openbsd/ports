@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.5
@@ -38,7 +38,6 @@ CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include/libpng\
 			-I${LOCALBASE}/include -I${X11BASE}/include'
 CONFIGURE_ENV +=	LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
 BUILD_DEPENDS =	::x11/lablgtk2

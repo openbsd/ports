@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	clone of the commodore 64 game paradroids
 DISTNAME=	freedroid-1.0.2
@@ -18,7 +18,6 @@ WANTLIB=	SDL X11 Xext c jpeg m png pthread pthread-stubs usbhid vorbis \
 		xcb z
 
 USE_GROFF =	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 

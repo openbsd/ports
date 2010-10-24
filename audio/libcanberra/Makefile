@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
@@ -50,7 +50,6 @@ LIB_DEPENDS=	::audio/libvorbis \
 		::x11/gtk+2
 RUN_DEPENDS=	:sound-theme-freedesktop->=0.6:audio/sound-theme-freedesktop
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
@@ -38,7 +38,6 @@ SUBST_VARS=	V
 CONFIGURE_ARGS+= --without-x --without-gd
 .else
 LIB_DEPENDS=	gd.>=20::graphics/gd
-USE_X11=	Yes
 USE_GROFF =	Yes
 WANTLIB+=	X11 fontconfig freetype iconv jpeg png
 CONFIGURE_ARGS+= --with-x

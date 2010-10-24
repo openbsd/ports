@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=	qt home accounting program
 
@@ -30,7 +30,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL X11 Xau Xdmcp c m pthread pthread-stubs stdc++ xcb
 
 MODULES=	x11/qt3
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 MAKE_ENV=	QTDIR=${MODQT_LIBDIR} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}

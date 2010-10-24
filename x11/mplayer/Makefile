@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.174 2010/10/24 21:15:33 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -143,7 +143,6 @@ CONFIGURE_ARGS+=--disable-gl \
 		--disable-fontconfig \
 		--disable-freetype
 .else
-USE_X11=	Yes
 WANTLIB+=	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm fontconfig \
 		freetype 
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils

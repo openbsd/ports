@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -27,7 +27,6 @@ XMKMF=		xmkmf
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 do-build:

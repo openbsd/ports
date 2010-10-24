@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	one-player puzzle game for x11
 
@@ -22,7 +22,6 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 MAKE_ENV=	JOY=NO

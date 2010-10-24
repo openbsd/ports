@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/24 21:24:04 ajacoutot Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -35,7 +35,6 @@ CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 BUILD_DEPENDS+=	${MODTK_BUILD_DEPENDS}

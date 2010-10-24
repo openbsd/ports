@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 12:32:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -46,7 +46,6 @@ ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 .  endif
 .else
 REGRESS_IS_INTERACTIVE=	x11
-USE_X11=		Yes
 USE_MOTIF=		openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt
 .  if ${FLAVOR:L:Mxmhtml}

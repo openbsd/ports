@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		libXaw widget set replacement
 
@@ -21,7 +21,6 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xt \
 
 MASTER_SITES=		http://siag.nu/pub/neXtaw/
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

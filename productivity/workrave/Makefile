@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
@@ -39,7 +39,6 @@ MODULES=		devel/gettext \
 			lang/python \
 			textproc/intltool
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 

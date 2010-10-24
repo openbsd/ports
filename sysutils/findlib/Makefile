@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=	Objective Caml package manager
 CATEGORIES=	sysutils
@@ -27,7 +27,6 @@ ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,all opt,:S,No,,}
 FAKE_FLAGS=	prefix=${DESTDIR}
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

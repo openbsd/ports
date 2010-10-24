@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:11:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	SDL_ttf::devel/sdl-ttf \
 		SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl-config"

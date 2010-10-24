@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	Motif tool for editing X11 bitmap fonts
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 EXTRACT_SUFX=	.tar.bz2
 PATCHFILES=	xmbdfed-${VERSION}-patch1
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 USE_MOTIF=	any
 

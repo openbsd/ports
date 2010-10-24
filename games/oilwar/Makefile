@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL c m pthread stdc++
 
-USE_X11=	Yes
 NO_REGRESS=     Yes
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image \

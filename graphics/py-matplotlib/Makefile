@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/24 21:21:01 ajacoutot Exp $
 
 VMEM_WARNING=	Yes
 
@@ -41,7 +41,6 @@ LIB_DEPENDS=	png.>=3::graphics/png
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
 		LDSHARED="${CC} -shared -fPIC"
 
-USE_X11=	Yes
 
 NO_REGRESS=	Yes
 

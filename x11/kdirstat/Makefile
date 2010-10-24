@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
@@ -36,7 +36,6 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	${MODKDE_CONFIGURE_ENV}
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf

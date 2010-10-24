@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	General Toolkit for X11 GUI
 
@@ -25,7 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xi m pthread-stubs xcb glib gmodule
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

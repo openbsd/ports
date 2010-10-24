@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	screen saver that displays a countdown to a selected date
 
@@ -38,7 +38,6 @@ MAKE_ENV+= 	UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}

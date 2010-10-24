@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::audio/id3lib \
 		::audio/libid3tag
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gtk2

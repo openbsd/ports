@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:10:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
@@ -24,7 +24,6 @@ MODULES=	x11/kde devel/gettext
 
 LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}

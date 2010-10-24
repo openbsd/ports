@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -40,7 +40,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gtk
 MODULES=	devel/gettext
-USE_X11=	Yes
 LIB_DEPENDS+=	::x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
@@ -53,7 +52,6 @@ WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 .if ${FLAVOR:L:Mxaw}
 CONFIGURE_ARGS+=--enable-xaw
-USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/16 20:42:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT =	sets the window manager name property of the root window
 
@@ -18,7 +18,6 @@ WANTLIB =	X11 c
 
 MASTER_SITES =	http://code.suckless.org/dl/tools/
 
-USE_X11 =	Yes
 
 NO_REGRESS =	Yes
 

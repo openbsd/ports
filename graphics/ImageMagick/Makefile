@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.109 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		image processing tools
 
@@ -76,7 +76,6 @@ CONFIGURE_ARGS+=	--without-x \
 .else
 WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig \
 			freetype iconv pthread-stubs xcb
-USE_X11=		Yes
 LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf \
 			xml2.>=9::textproc/libxml
 RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu

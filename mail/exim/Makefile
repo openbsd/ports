@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2010/10/24 21:25:12 ajacoutot Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -39,7 +39,6 @@ USE_GROFF =	Yes
 NO_REGRESS =		Yes
 
 .if !${FLAVOR:L:Mno_eximon}
-USE_X11 =		Yes
 MULTI_PACKAGES +=	-eximon
 EXIM_MAKECAT +=		"EXIM_MONITOR=eximon.bin\n"
 .endif

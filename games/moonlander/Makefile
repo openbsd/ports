@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
@@ -21,7 +21,6 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/moon-lander
 

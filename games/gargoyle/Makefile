@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/23 09:15:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:01 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -41,7 +41,6 @@ LIB_DEPENDS =	::devel/sdl-sound \
 		::x11/gtk+2 \
 		::graphics/jpeg
 
-USE_X11 =		Yes
 
 NO_REGRESS =		Yes
 

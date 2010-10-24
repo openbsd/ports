@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 NO_REGRESS=	Yes
 USE_GROFF =	Yes
 

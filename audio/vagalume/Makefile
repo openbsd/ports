@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		last.fm client for GNOME
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=		::devel/libidn \
 			::multimedia/gstreamer-0.10/plugins-base \
 			::net/curl
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

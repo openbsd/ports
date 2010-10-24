@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT=		GUI client for MySQL
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=		::databases/mysql
 MAKE_ENV=		LOCALBASE=${LOCALBASE} HACK_CFLAGS="${CFLAGS}"
 MAKE_FLAGS=   		CC=${CC} CXX=${CXX} LINK=${CXX}
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS} \
 			--with-mysql-lib=${LOCALBASE}/lib/mysql \

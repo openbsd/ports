@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:00 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -18,7 +18,6 @@ WANTLIB=		c m stdc++
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
 MASTER_SITES=	${HOMEPAGE}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 

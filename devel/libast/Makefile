@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:10:57 ajacoutot Exp $
 
 COMMENT=		library of assorted spiffy things
 
@@ -21,7 +21,6 @@ MASTER_SITES=		http://www.eterm.org/download/
 
 LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 

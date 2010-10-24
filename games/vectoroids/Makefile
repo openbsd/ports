@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		SDL_image::devel/sdl-image
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 

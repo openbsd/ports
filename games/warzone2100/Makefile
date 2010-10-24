@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	::devel/bison \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

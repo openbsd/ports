@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -31,7 +31,6 @@ RUN_DEPENDS-main=${RUN_DEPENDS} \
 LIB_DEPENDS =	wx_base_net,wx_base:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 WANTLIB =	c m pthread z stdc++
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 

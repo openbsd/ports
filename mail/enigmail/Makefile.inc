@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2010/08/25 06:34:50 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2010/10/24 21:25:12 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,7 +21,6 @@ RUN_DEPENDS =	:gnupg-<2:security/gnupg
 LIB_DEPENDS =	::${MOZAPP_PKGPATH},-main
 WANTLIB =	c m nspr4 plc4 plds4 stdc++ ${MOZAPP_DIR}/xpcom ${MOZAPP_DIR}/xpcom_core
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
 

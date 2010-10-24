@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::audio/esound \
 		::math/fftw3
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu

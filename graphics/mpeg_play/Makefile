@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 18:29:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	play mpeg movies on X11
 
@@ -25,6 +25,5 @@ pre-patch:
 	cp ${WRKSRC}/mpeg_play.1 ${WRKSRC}/mpeg_play.man
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 .include <bsd.port.mk>

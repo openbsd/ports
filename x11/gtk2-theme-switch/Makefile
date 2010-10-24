@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		switch GTK+2 themes quickly
 
@@ -26,7 +26,6 @@ MASTER_SITES=		http://www.muhri.net/
 MODULES=		devel/gettext
 LIB_DEPENDS=		::x11/gtk+2
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

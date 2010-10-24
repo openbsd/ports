@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 18:44:43 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =		::devel/sdl \
 			:openal->=0.0.8p7:audio/openal \
 			::audio/libvorbis
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu

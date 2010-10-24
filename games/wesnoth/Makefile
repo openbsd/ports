@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/23 12:32:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -63,7 +63,6 @@ CONFIGURE_ARGS+=--enable-server \
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 

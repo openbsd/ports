@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:26:49 ajacoutot Exp $
 
 BROKEN=			needs to stop using deprecated functions from e-d-s
 
@@ -32,7 +32,6 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			textproc/intltool
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes

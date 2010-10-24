@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/24 15:35:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:02:53 ajacoutot Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
@@ -23,7 +23,6 @@ MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 
 WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --without-java

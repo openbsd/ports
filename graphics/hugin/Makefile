@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/20 15:32:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:21:01 ajacoutot Exp $
 
 VMEM_WARNING =		Yes
 
@@ -53,7 +53,6 @@ LIB_DEPENDS =		::devel/boost \
 			::x11/wxWidgets
 
 USE_GROFF =		Yes
-USE_X11	=		Yes
 MODULES +=		devel/cmake
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	cmake

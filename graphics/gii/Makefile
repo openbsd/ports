@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:21:00 ajacoutot Exp $
 # Uses pthreads
 
 COMMENT=	General Input Library (used by libggi)
@@ -21,7 +21,6 @@ WANTLIB=	X11 Xau Xdmcp c m pthread pthread-stubs xcb
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/
 EXTRACT_SUFX=	.src.tar.bz2
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

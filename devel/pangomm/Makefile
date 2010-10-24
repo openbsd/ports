@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -31,7 +31,6 @@ WANTLIB =		X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
 			png pthread-stubs sigc-2.0 xcb z xcb-render \
 			gthread-2.0 xcb-render-util
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 

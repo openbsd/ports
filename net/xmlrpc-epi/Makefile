@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -25,7 +25,6 @@ RUN_DEPENDS +=		::devel/gettext
 CONFIGURE_STYLE=	gnu autoconf
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_X11=		Yes
 
 CONFIGURE_ENV+= 	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -41,7 +41,6 @@ MAKE_FLAGS =	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"
 SUBST_VARS =	V
 
-USE_X11 =	Yes
 USE_GROFF =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

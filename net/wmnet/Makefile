@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT=	little X dock.app network monitor
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext c kvm m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

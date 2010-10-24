@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/22 12:48:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		text editor widget for FLTK
 
@@ -28,7 +28,6 @@ EXTRACT_SUFX=		.tgz
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/fltk
 
-USE_X11=		Yes
 REGRESS_TARGET=		test
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

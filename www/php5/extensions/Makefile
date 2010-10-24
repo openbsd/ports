@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/08/24 09:14:43 robert Exp $
+# $OpenBSD: Makefile,v 1.62 2010/10/24 21:40:10 ajacoutot Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -96,7 +96,6 @@ CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
 FULLPKGNAME-gd=		php5-gd-${V}-no_x11
 FULLPKGPATH-gd=		www/php5/extensions,-gd,no_x11
 . else
-USE_X11=		yes
 FULLPKGNAME-gd=		php5-gd-${V}
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 WANTLIB-gd+=		X11 Xpm freetype

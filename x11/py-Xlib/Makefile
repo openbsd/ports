@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		fully functional X client library for Python programs
 
@@ -23,7 +23,6 @@ MODULES=		lang/python
 
 BUILD_DEPENDS=		::textproc/texi2html
 
-USE_X11=		Yes
 
 TESTS=			events_be events_le rdb requests_be requests_le
 

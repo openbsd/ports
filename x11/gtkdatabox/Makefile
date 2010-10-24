@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT =	GTK+2 widget to display large amounts of numerical data
 
@@ -33,7 +33,6 @@ MODULES =	devel/gettext
 
 LIB_DEPENDS =	::x11/gtk+2
 
-USE_X11 =	Yes
 
 USE_LIBTOOL = 	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 20:07:54 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
@@ -31,7 +31,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0
 
 LIB_DEPENDS=	::www/webkit
 
-USE_X11=	Yes
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV+=	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"

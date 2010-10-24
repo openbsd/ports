@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=	visual mail, user and print face server
 
@@ -16,7 +16,6 @@ WANTLIB=		X11 c pthread-stubs xcb
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
 EXTRACT_SUFX=	.tar.Z
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 WRKDIST=	$(WRKDIR)/faces

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/17 13:43:37 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
@@ -27,7 +27,6 @@ RUN_DEPENDS =		${LIB_DEPENDS} \
 			::graphics/freeglut
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-USE_X11 =		Yes
 
 MODGHC_SETUP_CONF_ENV =	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
@@ -50,7 +50,6 @@ LIB_DEPENDS=		::devel/libwnck \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	awn
 
 CONFIGURE_STYLE=	gnu

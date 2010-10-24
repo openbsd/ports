@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
@@ -25,7 +25,6 @@ WANTLIB += xcb-render-util z gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 AUTOCONF_VERSION=	2.59

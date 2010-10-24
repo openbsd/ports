@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -68,7 +68,6 @@ LIBswscale_EXTRALIBS=-lm
 # configure wants a directory it can execute files in 
 WRKTMP=		${WRKDIR}/tmp
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= simple

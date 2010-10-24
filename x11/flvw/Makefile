@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/22 12:48:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
@@ -25,7 +25,6 @@ EXTRACT_SUFX=		.tgz
 BUILD_DEPENDS=		::x11/fltk
 RUN_DEPENDS=		::x11/fltk
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

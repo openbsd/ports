@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	ascii art library
 
@@ -32,7 +32,6 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
 .else
-USE_X11=	Yes
 WANTLIB+=	X11 Xau Xdmcp pthread-stubs xcb
 .endif
 

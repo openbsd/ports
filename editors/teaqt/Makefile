@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 13:24:39 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
@@ -25,7 +25,6 @@ WANTLIB += c m pthread stdc++ z QtGui QtScript QtSvg QtXml aspell
 MODULES =	x11/qt4
 CONFIGURE_ENV =	USE_ASPELL=true USE_HUNSPELL=false
 
-USE_X11 =	Yes
 NO_REGRESS =	Yes
 
 do-configure:

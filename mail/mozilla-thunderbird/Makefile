@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2010/10/22 19:19:56 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -44,7 +44,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	www/mozilla devel/gettext lang/python
 
-USE_X11 =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; WWW image monitor
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick \
 			:xv-*:graphics/xv
 
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

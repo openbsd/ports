@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -28,7 +28,6 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS=		--enable-xinerama --enable-imlib2
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 

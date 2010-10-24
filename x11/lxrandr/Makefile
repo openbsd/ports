@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	simple xrandr config tool
 
@@ -31,7 +31,6 @@ MODULES+=	textproc/intltool
 LIB_DEPENDS=	::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

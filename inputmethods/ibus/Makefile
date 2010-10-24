@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:15:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:44 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -47,7 +47,6 @@ RUN_DEPENDS =	::devel/iso-codes \
 
 MODGCONF2_SCHEMAS_DIR = ibus
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static

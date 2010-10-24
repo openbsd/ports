@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -26,7 +26,6 @@ EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR}
 
 CONFIGURE_STYLE=	imake
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 WRKDIST=	${WRKDIR}
 

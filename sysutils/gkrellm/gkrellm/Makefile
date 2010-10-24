@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/24 21:36:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,6 @@ FLAVOR?=
 MULTI_PACKAGES=	-main
 .if !${FLAVOR:L:Mno_client}
 MULTI_PACKAGES+=-client
-USE_X11=	Yes
 .else
 WRKBUILD=	${WRKDIST}/server
 .endif

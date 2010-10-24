@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:24:04 ajacoutot Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -47,7 +47,6 @@ LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm \
 RUN_DEPENDS-gdbm=       
 
 .if !${FLAVOR:L:Mno_x11}
-USE_X11=		Yes
 MULTI_PACKAGES+=	-tk
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \

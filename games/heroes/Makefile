@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -28,7 +28,6 @@ WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

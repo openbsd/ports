@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
@@ -41,7 +41,6 @@ BUILD_DEPENDS=	::devel/bison
 LIB_DEPENDS+=	glib-2.0.>=1803::devel/glib2
 CONFIGURE_ARGS+=--disable-gtkport
 .else
-USE_X11=	Yes
 LIB_DEPENDS+=	gtk-x11-2.0.>=600.10,gdk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

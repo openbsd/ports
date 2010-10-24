@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:31:50 ajacoutot Exp $
 
 COMMENT=	hacked 9wm, with support for virtual screens
 
@@ -20,7 +20,6 @@ WANTLIB =	X11 Xau Xdmcp Xext c pthread-stubs xcb
 MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

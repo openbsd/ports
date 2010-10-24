@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/06 21:23:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT=	generic game engine library
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer
 
 MODULES=	converters/libiconv
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu

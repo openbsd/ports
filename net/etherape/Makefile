@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT =		graphical network monitor
 
@@ -43,7 +43,6 @@ LIB_DEPENDS =		::x11/gtk+2 \
 			::devel/libglade2 \
 			::x11/gnome/libgnomeui
 
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
 

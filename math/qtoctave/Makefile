@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/18 10:50:12 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:25:51 ajacoutot Exp $
 
 COMMENT=	graphical front-end for octave
 
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--qtdir=${MODQT4_QTDIR}
 
 DESTDIRNAME=	INSTALL_ROOT
 
-USE_X11=	Yes
 
 QTOCTHELP_PATH=	${PREFIX}/share/doc/qtoctave
 OCTHELP_PATH=	${LOCALBASE}/share/doc/octave/interpreter

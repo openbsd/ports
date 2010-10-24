@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:30:01 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -40,7 +40,6 @@ M3FLAGS=	 -DPREFIX=${PREFIX} -DX11BASE=${X11BASE}
 .if ${FLAVOR:L:Mno_x11}
 M3FLAGS+=	-DNOGUI
 .else
-USE_X11=	Yes
 WANTLIB-main=	${WANTLIB} ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	finish-the-cycle logic puzzle
 CATEGORIES=	games
@@ -25,7 +25,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 do-build:

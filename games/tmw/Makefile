@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT-main=	free open source 2D MMORPG
 COMMENT-music=	music addon for TMW
@@ -37,7 +37,6 @@ MULTI_PACKAGES=	-main -music
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

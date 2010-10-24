@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
@@ -35,7 +35,6 @@ RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

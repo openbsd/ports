@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=		colorful game where you blow other people/robots up
 
@@ -17,7 +17,6 @@ WANTLIB=		X11 c m pthread-stubs xcb
 
 MASTER_SITES=		ftp://ftp.billsgames.com/unix/x/xbomber/
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/xbomber
 MAKE_FILE=		makefile

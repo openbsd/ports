@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	virtual sticky pad system
 
@@ -32,7 +32,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

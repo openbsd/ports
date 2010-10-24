@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/22 12:50:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:31:20 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 COMMENT=		Palm OS Emulator
@@ -27,6 +27,5 @@ AUTOCONF_VERSION=	2.13
 CONFIGURE_ARGS=		--with-fltk=${LOCALBASE} --enable-static-link --with-x
 AUTOMAKE_VERSION=	1.4
 USE_GMAKE=		Yes
-USE_X11=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xpm pthread-stubs xcb
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent

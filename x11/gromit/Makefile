@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
@@ -28,7 +28,6 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 DOCDIR=			${PREFIX}/share/doc/gromit/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; shows photos and execute commands on that photo
 
@@ -21,7 +21,6 @@ MASTER_SITES=		${HOMEPAGE}
 RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		KDE UPS Monitoring tool
 
@@ -27,7 +27,6 @@ MODULES=		x11/kde
 LIB_DEPENDS=		DCOP,kdecore.>=4,kdefx,kdeui::x11/kde/libs3 \
 			art_lgpl_2::graphics/libart
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	autoconf

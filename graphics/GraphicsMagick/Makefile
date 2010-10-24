@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:20:59 ajacoutot Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--without-x \
 			--without-wmf
 .else
 WANTLIB+=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs xcb
-USE_X11=		Yes
 LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
 BUILD_DEPENDS+=		:transfig-*:print/transfig

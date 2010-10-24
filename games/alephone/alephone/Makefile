@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.10 2010/10/23 12:59:19 phessler Exp $
+#	$OpenBSD: Makefile,v 1.11 2010/10/24 21:19:01 ajacoutot Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
@@ -39,7 +39,6 @@ LIB_DEPENDS =		::archivers/zziplib \
 			::audio/speex \
 			::audio/libvorbis
 
-USE_X11 =		Yes
 USE_BZIP2 =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu

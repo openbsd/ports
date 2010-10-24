@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	essentially an Asteroids clone
 
@@ -20,7 +20,6 @@ WANTLIB=	SDL c m pthread
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 SEPARATE_BUILD=	concurrent

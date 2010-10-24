@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
@@ -29,7 +29,6 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 NO_REGRESS=	Yes
 MAKE_FILE=	makefile
 

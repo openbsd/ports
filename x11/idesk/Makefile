@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		put clickable icons on the desktop
 
@@ -25,7 +25,6 @@ WANTLIB=		ICE stdc++ c X11 Xrender Xau Xdmcp expat z m Imlib2 \
 
 LIB_DEPENDS=		::graphics/imlib2
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"

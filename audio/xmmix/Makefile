@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT=	Motif-based audio mixer
 VERSION=	1.2.2
@@ -18,7 +18,6 @@ MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/${VERSION}/src/
 
 CONFIGURE_STYLE=	imake
 USE_MOTIF=		any
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/xmmix-1.2

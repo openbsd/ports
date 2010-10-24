@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/06/10 21:24:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	minimal window manager
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	no license
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender c expat fontconfig
 WANTLIB += freetype m pthread-stubs stdc++ xcb z
 
-USE_X11=	Yes
 CONFIGURE_STYLE=	gnu
 
 NO_REGRESS=	Yes

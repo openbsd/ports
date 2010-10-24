@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/11 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::databases/openldap \
 		::textproc/libxml
 
-USE_X11=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.57
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} \

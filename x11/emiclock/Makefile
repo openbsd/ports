@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 10:52:58 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	hyper-animated face analog clock for X11
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	may not modify/package
 
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c m
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/22 12:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	art_lgpl_2.>=5::graphics/libart \
 		idn.>=16.30:libidn->=1.1:devel/libidn \
 		DCOP.>=7,kdecore,kdefx,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 USE_LIBTOOL=	Yes

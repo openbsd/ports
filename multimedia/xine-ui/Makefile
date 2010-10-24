@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:27:41 ajacoutot Exp $
 
 COMMENT=	multimedia player
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	xine.>=14::multimedia/xine-lib \
 		curl.>=2::net/curl \
 		png.>=4::graphics/png
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf

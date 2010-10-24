@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/14 18:29:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=	SDL.>=7::devel/sdl \
 		vorbis.>=5::audio/libvorbis \
 		png.>=5::graphics/png
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 DATA_DIR=	campaigns graphics intro maps languages scripts sounds units

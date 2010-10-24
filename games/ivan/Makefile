@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/15 07:10:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
 
 BROKEN-sparc64=	SIGBUS on sparc64 when starting
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	SDL.>=6::devel/sdl
 
 VMEM_WARNING=	Yes
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 

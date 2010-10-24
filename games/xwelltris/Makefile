@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m stdc++
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -46,7 +46,6 @@ CONFIGURE_ARGS+=--without-x
 .else
 MODULES=	x11/qt3
 RUN_DEPENDS+=	::devel/desktop-file-utils
-USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xau Xdmcp pthread-stubs xcb
 CONFIGURE_ARGS+=--enable-djview
 CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \

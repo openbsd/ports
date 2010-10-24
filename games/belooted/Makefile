@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:14:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	32-card trick-taking game
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::x11/gnome/librsvg
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

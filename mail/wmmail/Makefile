@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; mail notifier
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 LIB_DEPENDS=		PropList.>=2::devel/libproplist
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu

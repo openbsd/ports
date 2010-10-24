@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	turn-based strategy engine
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf

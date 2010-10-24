@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/22 12:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	kdecore.>=7,DCOP,kdefx,kdesu,kdeui,kio,kparts,kwalletclient::x11/kd
 
 PORTHOME=	${WRKDIR}
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes

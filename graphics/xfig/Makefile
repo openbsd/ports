@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/24 21:21:02 ajacoutot Exp $
 
 COMMENT=	CAD drawing program for X11
 
@@ -39,7 +39,6 @@ WRKDIST=	${WRKDIR}/xfig.${VERSION}
 
 NO_REGRESS=	Yes
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 post-extract:

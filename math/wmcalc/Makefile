@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:25:51 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; simple four-function calculator
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}wmcalc/
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 SAMPLE_DIR=		${PREFIX}/share/examples/wmcalc

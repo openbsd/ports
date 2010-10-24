@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; application launching program
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 SAMPLE_DIR=		${PREFIX}/share/examples/wmbutton

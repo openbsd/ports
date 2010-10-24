@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	zombies clone
 
@@ -22,7 +22,6 @@ MASTER_SITES=	http://hocwp.free.fr/
 LIB_DEPENDS=	SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
 

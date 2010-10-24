@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:38:06 ajacoutot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -25,7 +25,6 @@ MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 MODULES=	converters/libiconv
 LIB_DEPENDS=	sablot.>=100::textproc/sablotron
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= perl

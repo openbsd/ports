@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	graphics file viewer for X11
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=	::graphics/png \
 		::graphics/tiff
 WANTLIB=	X11 c jpeg m z png tiff
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include/libpng -I${DEPBASE}/include" \

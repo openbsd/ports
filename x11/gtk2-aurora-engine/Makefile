@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 MODULES=	devel/gettext
 

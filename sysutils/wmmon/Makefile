@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=	WindowMaker dock app similar to xload
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c kvm pthread-stubs xcb
 
-USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/wmmon.app
 WRKSRC=		${WRKDIST}/wmmon

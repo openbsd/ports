@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; calendar/clock
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

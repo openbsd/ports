@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/07/23 18:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=	displays the date and resembles the toolbar
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c m stdc++
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
 

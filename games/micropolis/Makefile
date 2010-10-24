@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/23 11:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	city-building simulation
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 RUN_DEPENDS=	::devel/desktop-file-utils
 WANTLIB=	X11 Xext Xpm c m pthread pthread-stubs xcb
 LIB_DEPENDS=	SDL::devel/sdl \

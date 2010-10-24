@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/23 17:04:14 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		software drum machine
 DISTNAME=		hydrogen-0.9.4
@@ -27,7 +27,6 @@ LIB_DEPENDS=		::x11/qt4 \
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=		Yes
 MODULES=		x11/qt4 devel/scons
 
 MAKE_ENV+=		QTDIR="${MODQT4_QTDIR}"

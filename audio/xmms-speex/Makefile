@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/05 22:00:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:00:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	::audio/xmms \
 WANTLIB=	X11 Xext Xi gdk glib gmodule gtk iconv intl m ogg \
 		xmms.>=4 speex.>=5
 
-USE_X11=	Yes
 WRKDIST=	${WRKDIR}/speex-xmms
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fPIC -I${LOCALBASE}/include/speex -pthread"

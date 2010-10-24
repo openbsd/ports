@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT=	CD player for X11
 DISTNAME=	xcdplayer-2.2
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 NO_REGRESS=	Yes

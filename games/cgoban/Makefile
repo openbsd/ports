@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	X11 Go Toolset
 
@@ -21,7 +21,6 @@ CONFIGURE_STYLE=gnu
 ALL_TARGET=
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 do-install:

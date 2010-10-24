@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	simple GTK+ text editor
 
@@ -28,7 +28,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	gtk-x11-2.0.>=1000,gdk-x11-2.0.>=1000::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

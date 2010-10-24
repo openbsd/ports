@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -26,7 +26,6 @@ VMEM_WARNING=	Yes
 USE_MOTIF=	any
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	extensible window manager
 
@@ -38,7 +38,6 @@ MODULES=	devel/gettext
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
 SUBST_VARS=	GNU_ARCH VERSION
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 USE_GMAKE=      Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
 
 DISTNAME=	ratmen-2.2.2
 CATEGORIES=	x11
@@ -13,7 +13,6 @@ WANTLIB=		X11 c
 COMMENT=	launch commands with your keyboard
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

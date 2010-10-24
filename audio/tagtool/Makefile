@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -44,6 +44,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -logg"
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 19:28:50 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	::audio/portaudio-svn \
 		::math/umfpack \
 		::x11/qt4
 
-USE_X11=	Yes
 
 NO_REGRESS=	Yes
 

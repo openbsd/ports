@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		::x11/gtk+2 \
 			::editors/scintilla
 
 USE_GMAKE=		Yes
-USE_X11=		Yes
 NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/scite
 WRKSRC=			${WRKDIST}/gtk

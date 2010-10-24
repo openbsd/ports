@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=	project management tool
 
@@ -29,7 +29,6 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	x11/kde
 MODKDE_VERSION=	3.4
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoconf

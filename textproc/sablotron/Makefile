@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
@@ -27,7 +27,6 @@ MODULES =	converters/libiconv
 # required to build the documentation
 BUILD_DEPENDS =	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
-USE_X11 =			Yes
 USE_LIBTOOL =			Yes
 USE_GMAKE =			Yes
 USE_GROFF =	Yes

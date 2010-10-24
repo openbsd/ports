@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
@@ -45,6 +45,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 .include <bsd.port.mk>

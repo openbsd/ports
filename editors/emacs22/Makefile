@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -58,7 +58,6 @@ CONFIGURE_ARGS+=	--without-x
 
 .elif ${FLAVOR:L:Mgtk}
 CONFIGURE_ARGS+=	--with-gtk
-USE_X11=		Yes
 LIB_DEPENDS-main+=	::x11/gtk+2 \
 			::graphics/libungif
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
@@ -71,7 +70,6 @@ WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			xcb-render xcb-render-util
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
-USE_X11=		Yes
 LIB_DEPENDS-main+=	::graphics/png \
 			::graphics/tiff \
 			::graphics/libungif 

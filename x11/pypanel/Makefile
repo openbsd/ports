@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/py-Xlib
 LIB_DEPENDS=	::graphics/imlib2
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 PYTHONPATH=	${WRKINST}${MODPY_SITEPKG}

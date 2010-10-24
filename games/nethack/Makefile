@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/24 21:19:02 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Piece of cake
@@ -41,7 +41,6 @@ MODULES=	x11/qt3
 WANTLIB+=	SM m pthread stdc++
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
-USE_X11=	Yes
 WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 

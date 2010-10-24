@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=		simple to use text editor for X11
 
@@ -19,7 +19,6 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB:=editors/}
 EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

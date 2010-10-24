@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
@@ -28,7 +28,6 @@ RUN_DEPENDS =	::x11/py-gtk2 \
 		::databases/py-pgsql \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11 =	Yes
 
 NO_REGRESS = 	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ WANTLIB += xcb-render xcb-render-util gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0
 
 MODULES+=	devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	::x11/gtk+2

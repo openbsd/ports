@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/09/30 07:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -24,7 +24,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		glib-2.0::devel/glib2
 RUN_DEPENDS=		::sysutils/lsof
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \

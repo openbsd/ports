@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/01 12:47:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT =	suite of portable game libraries
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-GL=${X11BASE}

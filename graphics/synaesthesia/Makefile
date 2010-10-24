@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		visual sound representation
 
@@ -25,7 +25,6 @@ FLAVOR?=	esd
 LIB_DEPENDS=		SDL.::devel/sdl
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 

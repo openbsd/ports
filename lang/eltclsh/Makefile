@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/23 21:49:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:24:04 ajacoutot Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -26,7 +26,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl=${LOCALBASE}/lib/tcl8.5 \
 			--with-tk=${LOCALBASE}/lib/tk8.5
 CONFIGURE_ENV =		MKDEP=/bin/false
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 FAKE_FLAGS =		"ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl"

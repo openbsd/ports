@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2008/11/09 21:56:35 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/10/24 21:15:33 ajacoutot Exp $
 
 CATEGORIES?=	x11 x11/matchbox
 
@@ -14,4 +14,3 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-USE_X11?=	Yes

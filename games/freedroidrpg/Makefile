@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/21 10:47:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
 WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z
 
-USE_X11=	Yes
 
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \

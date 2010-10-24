@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 19:55:46 stephan Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	FOX-1.6.>=1::devel/fox
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

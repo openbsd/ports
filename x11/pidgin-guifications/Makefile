@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,6 @@ MODULES=	devel/gettext textproc/intltool
 LIB_DEPENDS=	::net/pidgin,-libpurple
 BUILD_DEPENDS=	::net/pidgin
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu

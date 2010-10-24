@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:00:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	::audio/xmms ::audio/libmad \
 
 MODULES=	devel/gettext
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu

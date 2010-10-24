@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -27,7 +27,6 @@ WANTLIB += m pthread-stubs util xcb z ast ttf
 LIB_DEPENDS=	::devel/libast \
 		::print/freetype
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 

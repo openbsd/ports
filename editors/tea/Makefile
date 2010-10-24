@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	powerful and simple GTK editor
 
@@ -37,6 +37,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lm -lstdc++"
-USE_X11=		Yes
 
 .include <bsd.port.mk>

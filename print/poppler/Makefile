@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/12 07:00:04 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -92,7 +92,6 @@ CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${QT4INC}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 .include <bsd.port.mk>

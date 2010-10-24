@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:00:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		::devel/libnotify
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

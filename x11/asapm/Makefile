@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:15:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -23,7 +23,6 @@ WANTLIB=		ICE SM X11 Xext Xpm c jpeg
 
 LIB_DEPENDS=		::graphics/jpeg
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu

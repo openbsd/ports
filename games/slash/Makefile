@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
@@ -42,7 +42,6 @@ NETHACKCONFIG=${FILESDIR}/simple-config
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
 WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
-USE_X11=	Yes
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata

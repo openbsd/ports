@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	digital camera command-line interface
 CATEGORIES=	graphics
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=		c exif m ncurses readline ltdl pthread usb
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:40:09 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -65,7 +65,6 @@ MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
 		CC=${LOCALBASE}/bin/egcc
 .endif
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 NO_REGRESS =	Yes

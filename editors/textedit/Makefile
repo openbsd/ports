@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/23 18:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	standard OpenLook text editor for X11
 
@@ -23,7 +23,6 @@ CONFIGURE_STYLE=imake
 
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

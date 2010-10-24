@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -30,7 +30,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES= 	-demos -main
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-themes \

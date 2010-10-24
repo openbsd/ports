@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/20 07:00:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
@@ -46,7 +46,6 @@ PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	simple
 
-USE_X11 =		Yes
 ALL_TARGET = 		all qch_docs
 
 #NO_REGRESS =		Yes

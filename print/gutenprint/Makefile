@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -48,7 +48,6 @@ RUN_DEPENDS-foomatic=	::print/foomatic-db \
 			::${BUILD_PKGPATH},-main
 PKG_ARCH-foomatic=	*
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

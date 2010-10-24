@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/13 18:03:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
@@ -25,7 +25,6 @@ WANTLIB=	ICE X11 c m pthread-stubs sndio xcb
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
 
-USE_X11=	Yes
 
 MODULES=	devel/gettext
 

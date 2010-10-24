@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
@@ -17,7 +17,6 @@ WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.tgz
 
-USE_X11=		Yes
 
 MAKE_FLAGS=		CFLAGS="${CFLAGS} -DOpenBSD -Wall -I${X11BASE}/include"
 

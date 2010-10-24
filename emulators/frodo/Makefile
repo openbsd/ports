@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		SDL c m pthread sndio stdc++
 
 CONFIGURE_STYLE=	gnu
-USE_X11=		Yes
 
 RUN_DEPENDS=	::x11/tk/8.4
 LIB_DEPENDS=	:sdl-*-!no_x11:devel/sdl

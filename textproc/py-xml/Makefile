@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/24 21:38:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/python
-USE_X11=	Yes
 
 MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=/usr \
 				--with-xslt

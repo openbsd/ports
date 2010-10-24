@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 
 WANTLIB=		X11 Xau Xdmcp Xext Xi c m pcap pthread-stubs xcb
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu

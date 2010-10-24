@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/29 11:03:17 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
@@ -23,7 +23,6 @@ MASTER_SITES=	http://download.gna.org/vodovod/
 LIB_DEPENDS=	SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer
 
-USE_X11=	Yes
 
 MAKE_ENV+=	CC="${CXX}" CCFLAGS="${CXXFLAGS}" \
 		DATADIR="${PREFIX}/share/vodovod" \

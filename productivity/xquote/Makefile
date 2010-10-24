@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://distfiles.nl/
 
 LIB_DEPENDS=	Xbae::x11/xbae
 
-USE_X11=	Yes
 USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page

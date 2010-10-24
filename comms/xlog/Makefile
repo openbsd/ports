@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 16:57:49 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	X radio logging program
 
@@ -30,7 +30,6 @@ MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
 MODULES=		devel/gettext
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu

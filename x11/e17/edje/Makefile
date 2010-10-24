@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-0.9.92.061
@@ -21,7 +21,6 @@ WANTLIB += evas expat fontconfig freetype jpeg m pthread pthread-stubs
 WANTLIB += ssl xcb z ecore ecore_imf_evas ecore_imf ecore_con embryo
 WANTLIB += ecore_evas ecore_file ecore_input ecore_job ecore_txt ecore_x
 
-USE_X11 =		Yes
 
 MODULES =		converters/libiconv \
 			lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -75,7 +75,6 @@ WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio esd.>=2.34 \
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-oss

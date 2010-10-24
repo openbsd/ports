@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:24:04 ajacoutot Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -46,7 +46,6 @@ CONFIGURE_TARGET=	Configure
 .else
 CONFIGURE_TARGET=	X-Configure
 WANTLIB-main+=		X11 Xpm pthread-stubs xcb
-USE_X11=Yes
 .endif
 
 do-configure:

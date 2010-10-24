@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		OpenGL image compositing library
 
@@ -24,7 +24,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://cairographics.org/snapshots/
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2010/10/24 21:27:41 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -22,7 +22,6 @@ MULTI_PACKAGES =	-main -aalib \
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
-USE_X11 =		Yes
 MODULES =		devel/gettext \
 			devel/gconf2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/12 22:17:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	go client and fully featured sgf editor
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qgo/}
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-r1//}
 
-USE_X11=Yes 
 USE_GMAKE=Yes
 USE_LIBTOOL=Yes
 

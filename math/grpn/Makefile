@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:15:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:25:51 ajacoutot Exp $
 
 COMMENT=	graphical reverse polish notation calculator
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 MAKE_FLAGS=	CC="${CC}"
 ALL_TARGET=
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

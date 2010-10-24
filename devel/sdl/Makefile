@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/10/24 21:11:03 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -75,7 +75,6 @@ SUPDISTFILES+=	patch-libsd1.2.7-libcaca0.9.diff:0
 CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
-USE_X11=	Yes
 WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 .endif
 

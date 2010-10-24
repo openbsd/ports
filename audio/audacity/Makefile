@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	:wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 USE_LIBTOOL=		Yes

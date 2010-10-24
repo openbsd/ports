@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-0.9.9.061
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-USE_X11 =		Yes
 
 USE_LIBTOOL =		Yes
 

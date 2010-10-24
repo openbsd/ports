@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/11/23 10:48:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
@@ -35,7 +35,6 @@ CONFIGURE_ARGS =	--program-transform-name='s/ht/hte/'
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS +=	--disable-x11-textmode
 .else
-USE_X11 =		Yes
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			X11BASE=${X11BASE}
 CONFIGURE_ARGS +=	--enable-x11-textmode

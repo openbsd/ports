@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -34,7 +34,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gthread-2.0.>=1800.0::devel/glib2 \
 			cairo.>=9::graphics/cairo
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

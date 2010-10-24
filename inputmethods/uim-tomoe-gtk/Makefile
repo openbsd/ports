@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:15:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:44 ajacoutot Exp $
 
 COMMENT=	japanese handwriting
 
@@ -20,7 +20,6 @@ CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 LIB_DEPENDS=	::inputmethods/libtomoe-gtk \
 		::inputmethods/uim

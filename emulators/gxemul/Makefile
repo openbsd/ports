@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
@@ -28,7 +28,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS=		--disable-x
 .else
-USE_X11=		Yes
 WANTLIB+=		X11 pthread-stubs xcb
 .endif
 

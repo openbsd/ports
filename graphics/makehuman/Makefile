@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=	animorph::graphics/animorph \
 		mhgui::graphics/mhgui \
 		png.>=5::graphics/png
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 

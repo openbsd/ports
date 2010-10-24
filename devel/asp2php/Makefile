@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT=	convert ASP code to PHP code
 
@@ -21,7 +21,6 @@ FLAVORS=	no_x11
 FLAVOR?=		
 
 .if ${FLAVOR} != "no_x11"
-USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 ALL_TARGET=	all gui
 

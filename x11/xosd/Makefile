@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	displays text on your screen
 
@@ -24,7 +24,6 @@ MASTER_SITES=	http://www.ignavus.net/
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-new-plugin --disable-old-plugin
 
-USE_X11=	yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 

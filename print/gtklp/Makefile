@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -32,7 +32,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	::x11/gtk+2 \
 		::print/cups
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

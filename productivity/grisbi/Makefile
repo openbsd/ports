@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
@@ -36,7 +36,6 @@ LIB_DEPENDS=	xml2.>=9::textproc/libxml \
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

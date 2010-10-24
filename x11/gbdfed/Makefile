@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	GTK-based BDF font editor
 
@@ -24,7 +24,6 @@ WANTLIB += z gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tbz2
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 MODULES=	devel/gettext

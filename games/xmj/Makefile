@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	Mahjongg game for X11
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake noman
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

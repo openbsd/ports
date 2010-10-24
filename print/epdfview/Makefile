@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT=	lightweight PDF document viewer
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 
 CONFIGURE_STYLE=gnu
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 FLAVORS=	cups

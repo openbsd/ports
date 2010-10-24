@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 09:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:25:51 ajacoutot Exp $
 
 COMMENT=	spreadsheet program under X11
 
@@ -16,7 +16,6 @@ WANTLIB=		X11 c curses m pthread-stubs termlib xcb
 
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
-USE_X11=	Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"

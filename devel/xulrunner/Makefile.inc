@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2010/10/22 19:24:47 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2010/10/24 21:11:03 ajacoutot Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -55,7 +55,6 @@ WANTLIB-devel+=		${WANTLIB} IDL-2 nspr4 plc4 plds4 ${DIRECTORY}/mozjs ${DIRECTOR
 
 VMEM_WARNING=		Yes
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 

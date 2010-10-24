@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	digital clock with optional military time and alarm
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		X11 Xt c
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}

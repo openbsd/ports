@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/19 15:51:07 ray Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		fixed width fonts especially for long hacking sessions
 
@@ -19,7 +19,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
 
 CONFIGURE_STYLE=	simple
 NO_REGRESS=		Yes
-USE_X11=		Yes
 
 ALL_TARGET=		n12
 

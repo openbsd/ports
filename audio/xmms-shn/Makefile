@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/06 00:04:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:00:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ MASTER_SITES=	${HOMEPAGE}dist/src/
 RUN_DEPENDS=	::audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 LIBTOOL_FLAGS=	--tag=disable-static

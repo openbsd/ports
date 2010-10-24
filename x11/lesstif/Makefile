@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/24 21:15:33 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 COMMENT=	API-compatible clone of the Motif toolkit
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt c pthread-stubs xcb
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

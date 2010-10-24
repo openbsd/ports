@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/19 20:07:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -39,7 +39,6 @@ CONFIGURE_ARGS=		--enable-security \
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
-USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 LIB_DEPENDS=		::x11/gtk+2 \
 			::textproc/libical

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	open source client for Windows Terminal Server
 DISTNAME=	rdesktop-1.6.0
@@ -23,7 +23,6 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	::audio/libao
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

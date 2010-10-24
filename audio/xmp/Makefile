@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT-main=		extended module player
 COMMENT-audacious=	extended module player plugin for Audacious
@@ -28,7 +28,6 @@ SHARED_ONLY=		Yes
 
 MULTI_PACKAGES=		-main -audacious -bmp -xmms
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 

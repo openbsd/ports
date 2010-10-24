@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		library to compress the standard X protocol
 
@@ -22,7 +22,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 WRKDIST=		${WRKDIR}/nxcomp
 
-USE_X11=		Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libXcomp.so.${LIBXcomp_VERSION} \

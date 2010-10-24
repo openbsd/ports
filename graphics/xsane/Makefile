@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:21:02 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::devel/xdg-utils
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

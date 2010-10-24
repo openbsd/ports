@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/11 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT=	visual administration console for MySQL
 
@@ -40,7 +40,6 @@ LIB_DEPENDS=	::devel/pcre \
 		::x11/gtk2mm \
 		:libxml->=2.6.2:textproc/libxml
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \

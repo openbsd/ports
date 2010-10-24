@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:37 ajacoutot Exp $
 
 COMMENT=	X11 window interface tool
 
@@ -18,7 +18,6 @@ WANTLIB += X11 Xau Xdmcp Xext c
 
 MASTER_SITES=		${MASTER_SITE_XCONTRIB:=utilities/}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 

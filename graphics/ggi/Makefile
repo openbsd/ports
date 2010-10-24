@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/24 21:21:00 ajacoutot Exp $
 # Uses pthreads
 
 COMMENT=	Generic Graphics Library
@@ -24,7 +24,6 @@ EXTRACT_SUFX=	.src.tar.bz2
 
 LIB_DEPENDS=	gii.>=0.9,gg:libgii->=0.9:graphics/gii
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

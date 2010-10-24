@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; shows rotating 3d-object and CPU load
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xext Xpm c m pthread-stubs xcb
 
 MASTER_SITES=		http://kling.mine.nu/files/
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 MAKE_FILE=		Makefile.OPENBSD

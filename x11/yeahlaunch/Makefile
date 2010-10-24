@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/04 16:39:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/24 21:15:37 ajacoutot Exp $
 
 COMMENT=	animated autohiding applications launcher
 
@@ -19,7 +19,6 @@ WANTLIB=	X11 c
 
 MASTER_SITES=	http://phrat.de/
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:21:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,7 +39,6 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += X11 Xau Xdmcp Xrender c cairo croco-0.6 expat fontconfig

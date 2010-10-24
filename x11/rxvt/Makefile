@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT-main=	color, low memory usage, xterm replacement
 COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
@@ -30,7 +30,6 @@ WANTLIB-main=		${WANTLIB} Xau Xdmcp pthread-stubs xcb
 
 MULTI_PACKAGES=	-main -clock
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-shared
 USE_GROFF =	Yes

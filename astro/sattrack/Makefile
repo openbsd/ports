@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/26 11:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 20:58:58 ajacoutot Exp $
 
 V=		3.1.6
 COMMENT=	real-time satellite tracking and orbit propagation program
@@ -16,7 +16,6 @@ WANTLIB=	ICE SM X11 Xt c m
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
-USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/SatTrack-${V}
 WRKSRC=		${WRKDIST}/src

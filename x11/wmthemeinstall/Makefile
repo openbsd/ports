@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:35 ajacoutot Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 COMMENT=		neat theme manager for Window Maker
@@ -24,7 +24,6 @@ RUN_DEPENDS=		::x11/windowmaker
 LIB_DEPENDS=		::x11/gtk+
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:36:04 ajacoutot Exp $
 
 DISTNAME=       xps-4.2
 PKGNAME=	${DISTNAME}p1
@@ -23,7 +23,6 @@ CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
 			--with-motif-libs=${LOCALBASE}/lib
 CONFIGURE_ENV=		LDFLAGS=-lm
 
-USE_X11=		Yes
 USE_MOTIF=		any
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/22 16:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
@@ -26,7 +26,6 @@ AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS} --disable-final
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}

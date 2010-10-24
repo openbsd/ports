@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/26 22:33:36 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:27:41 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =		jpeg::graphics/jpeg \
 			artsc::x11/kde/arts3 \
 			DCOP,kdecore,kdefx,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static

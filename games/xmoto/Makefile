@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -33,7 +33,6 @@ LIB_DEPENDS =	SDL_mixer::devel/sdl-mixer \
 		png::graphics/png \
 		sqlite3::databases/sqlite3
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu

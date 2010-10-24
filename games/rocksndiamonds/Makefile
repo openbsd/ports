@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/17 09:07:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =	maze game resembling boulderdash
 
@@ -24,7 +24,6 @@ LIB_DEPENDS =	SDL_mixer::devel/sdl-mixer \
 		SDL_net:sdl-net->=1.2.7:devel/sdl-net
 
 USE_GMAKE =	Yes
-USE_X11 =	Yes
 MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \
 		RO_GAME_DIR="${PREFIX}/share/rocksndiamonds" \
 		RW_GAME_DIR="/var/games/rocksndiamonds"

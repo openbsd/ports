@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	city simulation game
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS=	::devel/jam
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 NO_REGRESS=	Yes
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

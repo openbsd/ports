@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
@@ -30,7 +30,6 @@ CONFIGURE_STYLE=gnu
 
 MODULES+=	devel/gettext
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 NO_REGRESS=	Yes
 

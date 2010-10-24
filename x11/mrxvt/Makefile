@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
  
-USE_X11=	Yes
 USE_GROFF =	Yes
 BUILD_DEPENDS=	:bzip2-*:archivers/bzip2
 LIB_DEPENDS=	::graphics/jpeg \

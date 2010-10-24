@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:10 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 LIB_DEPENDS=		::graphics/swfdec
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

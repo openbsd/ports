@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =	devel/gettext
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -30,7 +30,6 @@ LIB_DEPENDS =	jpeg.>=62::graphics/jpeg \
 # XXX dillo should be patched to use ftp(1)
 RUN_DEPENDS =	::net/wget
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	easy to use, graphical editor
 
@@ -28,7 +28,6 @@ CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif
 
 MODULES=	devel/gettext
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu

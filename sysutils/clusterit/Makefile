@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
@@ -30,7 +30,6 @@ USE_GROFF =	Yes
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS=		--without-x11
 .else
-USE_X11=		Yes
 WANTLIB+=		X11 pthread-stubs util xcb
 MAKE_FLAGS=		EXTRA_SUBDIRS="${X11_SUBDIRS}"
 .endif

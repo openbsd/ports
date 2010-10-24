@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xxf86vm c m stdc++
 
 USE_GMAKE=		Yes
-USE_X11=		Yes
 
 MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			PREFIX="${PREFIX}" \

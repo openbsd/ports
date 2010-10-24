@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:28:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:23:04 ajacoutot Exp $
 
 COMMENT=	extra Korean fonts
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 # bdftopcf, mkfontdir
-USE_X11=	Yes
 
 FONTDIR=	${PREFIX}/lib/X11/fonts/korean
 WRKDIST=	${WRKDIR}/hanterm-font

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =		keep X clipboard and cutbuffer in sync
 
@@ -22,7 +22,6 @@ WANTLIB =		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c \
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=autocutsel/}
 
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 

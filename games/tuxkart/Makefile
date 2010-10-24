@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/26 13:22:40 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =	tuxkart is a simple Go-Kart racing game.
 
@@ -22,7 +22,6 @@ WANTLIB =		GL ICE SM X11 Xext Xi Xmu c m pthread pthread-stubs \
 
 BUILD_DEPENDS =		::devel/plib
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu

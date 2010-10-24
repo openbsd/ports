@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	puzzle game for KDE
 
@@ -30,7 +30,6 @@ MAKE_ENV=	${CONFIGURE_ENV}
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/10/18 18:00:15 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
@@ -47,7 +47,6 @@ MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-0.9.9.061
@@ -29,7 +29,6 @@ WANTLIB += ssl xcb z evas
 
 MODULES=		converters/libiconv
 
-USE_X11 =		Yes
 
 USE_LIBTOOL =		Yes
 

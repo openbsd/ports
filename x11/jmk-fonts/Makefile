@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		nice fixed width fonts, easy on the eye
 
@@ -23,7 +23,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	imake
 
-USE_X11=		Yes
 
 NO_REGRESS=		Yes
 

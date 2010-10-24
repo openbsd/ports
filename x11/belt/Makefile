@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
@@ -26,7 +26,6 @@ EXTRACT_ONLY=		belticons.tar.gz
 
 RUN_DEPENDS=		::x11/p5-Tk
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=		Yes

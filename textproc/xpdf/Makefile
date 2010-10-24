@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
@@ -26,7 +26,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
 USE_MOTIF=	openmotif
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

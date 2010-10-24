@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=		::graphics/jpeg \
 .else
 LIB_DEPENDS=		::x11/fltk
 WANTLIB+=		X11 Xau Xdmcp Xext Xpm fltk fltk_images pthread
-USE_X11=		Yes
 .endif
 
 CONFIGURE_STYLE=	gnu dest

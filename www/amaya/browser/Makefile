@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/06/06 12:27:26 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:40:09 ajacoutot Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -15,7 +15,6 @@ FLAVOR?=		motif
 
 WANTLIB=		ICE SM X11 Xext Xt c expat m pthread-stubs xcb z
 
-USE_X11=		Yes
 
 .if ${FLAVOR:L} == "gtk"
 

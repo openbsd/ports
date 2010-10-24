@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -28,7 +28,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext textproc/intltool
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 

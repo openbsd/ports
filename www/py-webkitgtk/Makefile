@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
@@ -41,6 +41,5 @@ CONFIGURE_STYLE=	gnu
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 
 .include <bsd.port.mk>

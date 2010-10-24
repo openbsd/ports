@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	display the current time using the X11 root cursor
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c 
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=	imake noman
 XMKMF=		xmkmf

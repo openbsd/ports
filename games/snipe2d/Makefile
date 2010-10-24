@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/11 22:33:53 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =		overhead shooting game
 
@@ -25,7 +25,6 @@ MASTER_SITES =		http://icculus.org/oes/
 LIB_DEPENDS =		SDL_image.>=2::devel/sdl-image \
 			SDL_mixer.>=3::devel/sdl-mixer
 
-USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
 

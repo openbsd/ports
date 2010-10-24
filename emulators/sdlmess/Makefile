@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:17:48 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -38,7 +38,6 @@ LIB_DEPENDS =		::devel/sdl gconf-2.>=5::devel/gconf2 \
 RUN_DEPENDS =		:sdlmame-tools-${V}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
-USE_X11 =		Yes
 
 NO_REGRESS =		Yes
 

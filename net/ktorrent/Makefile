@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/26 11:55:18 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:30:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,6 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 USE_LIBTOOL=	Yes

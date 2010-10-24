@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/24 21:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS-demo=	::x11/p5-Tk
 PKG_ARCH-demo=		*
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 REGRESS_IS_INTERACTIVE=	x11

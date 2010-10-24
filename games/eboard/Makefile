@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	gtk+2 chess board interface
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --compiler="${CXX}" \

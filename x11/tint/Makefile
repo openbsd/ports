@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:34 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -38,7 +38,6 @@ RUN_DEPENDS=	::x11/py-gtk2 \
 
 MODULES=	devel/cmake lang/python
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:19:02 ajacoutot Exp $
 
 BROKEN-hppa=	gcc bug
 
@@ -43,7 +43,6 @@ WANTLIB+=	ogg
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
 

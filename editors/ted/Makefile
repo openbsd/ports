@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:16:25 ajacoutot Exp $
 
 
 COMMENT=	X11 based RTF editor
@@ -26,7 +26,6 @@ LIB_DEPENDS=	::graphics/png \
 		::graphics/jpeg \
 		::graphics/tiff
 
-USE_X11=	Yes
 USE_MOTIF=	openmotif
 ALL_TARGET=	compile.shared
 SHARED_ONLY=	Yes

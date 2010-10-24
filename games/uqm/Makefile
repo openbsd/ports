@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/11 14:05:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -56,7 +56,6 @@ WANTLIB-main=		c m pthread z SDL
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 WRKSRC=	${WRKDIST}/sc2
 

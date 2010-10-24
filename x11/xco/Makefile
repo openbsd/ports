@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	display X11 color names and colors
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 

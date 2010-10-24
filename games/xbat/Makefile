@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:19:03 ajacoutot Exp $
 #
 
 COMMENT=	XEVIOUS-like shooting game
@@ -21,7 +21,6 @@ MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/Xev111
 ALL_TARGET=	xbat
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

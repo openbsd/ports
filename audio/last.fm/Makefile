@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT =		official Last.fm client
 
@@ -41,7 +41,6 @@ LIB_DEPENDS =		::x11/qt4 \
 			::audio/portaudio-svn
 RUN_DEPENDS =		::devel/desktop-file-utils
 
-USE_X11 =		Yes
 
 NO_REGRESS =		Yes
 

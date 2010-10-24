@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/07/24 17:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:33:55 ajacoutot Exp $
 
 COMMENT=	setup X11 fonts for russian language (koi8-r)
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/fonts
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

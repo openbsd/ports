@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
@@ -35,7 +35,6 @@ MODULES=	x11/kde devel/gettext
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

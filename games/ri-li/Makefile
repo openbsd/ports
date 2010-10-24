@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	drive a toy wood engine
 
@@ -25,7 +25,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
 		SDL.>=6::devel/sdl
 
-USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl-config

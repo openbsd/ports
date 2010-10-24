@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		slit pager for fluxbox window manager
 
@@ -21,7 +21,6 @@ WANTLIB=		m ICE X11 c SM stdc++
 
 RUN_DEPENDS=		:fluxbox-*:x11/fluxbox
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 

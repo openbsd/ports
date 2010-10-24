@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 post-install:

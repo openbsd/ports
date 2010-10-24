@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:06:36 ajacoutot Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
@@ -31,7 +31,6 @@ LIB_DEPENDS =	::devel/libgsf \
 
 MAKE_FILE =	GNUmakefile
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/11 15:50:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT =	fontconfig-based alternative to banner(1)
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c expat fontconfig freetype z
-USE_X11 =	Yes
 
 do-extract:		
 	cp ${DISTDIR}/fcbanner.c ${WRKSRC}/

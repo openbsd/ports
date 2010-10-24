@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
@@ -27,7 +27,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext c crypto m png \
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

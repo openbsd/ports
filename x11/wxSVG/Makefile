@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=		avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080
 			wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
 
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

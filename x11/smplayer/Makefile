@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT =		complete front-end for MPlayer
 
@@ -28,7 +28,6 @@ RUN_DEPENDS =		:mplayer->=20090708:x11/mplayer \
 			::devel/desktop-file-utils
 LIB_DEPENDS =		::x11/qt4
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_GROFF =	Yes
 

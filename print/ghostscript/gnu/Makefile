@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -136,7 +136,6 @@ NOGTK_DEVICES= display
 .endif
 
 .if !${FLAVOR:L:Mno_x11}
-USE_X11=	Yes
 WANTLIB+=	X11 Xt Xext
 DEVICES+=	${GTK_DEVICES} ${X11_DEVICES} ${NOGTK_DEVICES}
 SOC_LIBS+=	-L${X11BASE}/lib -lXt -lXt -lXext

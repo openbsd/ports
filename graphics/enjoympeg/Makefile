@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	mpeg-1 video player
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	smpeg.>=1.3:smpeg-*:devel/smpeg
 
-USE_X11=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

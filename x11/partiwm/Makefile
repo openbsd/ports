@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	tiling window manager
 
@@ -34,7 +34,6 @@ RUN_DEPENDS=	::devel/ipython \
 		::x11/dbus-python \
 		::x11/py-gtk2
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

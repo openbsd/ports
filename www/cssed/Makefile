@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT=	CSS editor
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	::devel/vte \
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	ftp client for X window system
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext c
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT=	X11 front end to the MySQL database engine
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	forms::x11/xforms \
 		lib/mysql/mysqlclient.>=10::databases/mysql \
 		jpeg.>=62::graphics/jpeg
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}

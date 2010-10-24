@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -29,7 +29,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=artwizaleczapka/}
 EXTRACT_SUFX=	.tar.bz2
 
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*

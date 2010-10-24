@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/01 08:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
@@ -48,7 +48,6 @@ SEPARATE_BUILD=	concurrent
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 do-configure:
 	cd ${WRKBUILD} && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:36:04 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 .else
 WANTLIB+=	X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender \
 		expat fontconfig freetype pthread-stubs xcb
-USE_X11=	Yes
 .endif
 
 CONFIGURE_STYLE=gnu

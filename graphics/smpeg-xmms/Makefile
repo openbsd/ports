@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	MPEG and VCD video playback in XMMS
 SHARED_ONLY=	Yes
@@ -24,7 +24,6 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/smpeg-xmms/
 LIB_DEPENDS=	xmms.>=2::audio/xmms \
 		smpeg.>=1.3::devel/smpeg
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=	mail user agent for X in C with a Tcl/Tk frontend
 
@@ -26,7 +26,6 @@ MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \

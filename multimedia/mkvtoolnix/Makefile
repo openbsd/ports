@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:27:41 ajacoutot Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
@@ -57,7 +57,6 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS += --disable-gui --disable-wxwidgets
 .else
-USE_X11 =	Yes
 LIB_DEPENDS +=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.10:x11/wxWidgets
 CONFIGURE_ARGS += --enable-gui --enable-wxwidgets
 .endif

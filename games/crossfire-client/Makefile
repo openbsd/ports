@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	graphical networked AD&D style game
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glut.>=4::graphics/freeglut \
 		curl.>=8::net/curl
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu

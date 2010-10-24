@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	communication package for X11
 
@@ -22,7 +22,6 @@ CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/seyon
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; xeyes clone using South Park characters
 
@@ -21,7 +21,6 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m \
 
 MASTER_SITES=		http://www.okb-1.org/speyes/
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake noman
 

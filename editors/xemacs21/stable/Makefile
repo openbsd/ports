@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:16:25 ajacoutot Exp $
 
 BRANCH=		21.4
 VERSION=	19
@@ -38,7 +38,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x11
 .else
-USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xau Xaw Xext Xmu Xpm Xt pthread-stubs xcb z
 
 CONFIGURE_ARGS+=--with-menubars=lucid \

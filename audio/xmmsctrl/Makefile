@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/05 22:00:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT=	small utility to control XMMS from the command line
 
@@ -22,7 +22,6 @@ WANTLIB=	X11 Xext Xi c gdk glib gmodule gtk m xmms
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 NO_REGRESS=	Yes

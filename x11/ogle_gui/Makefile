@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/13 18:40:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/24 21:15:33 ajacoutot Exp $
 
 CATEGORIES=	x11
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	::x11/ogle \
 		::textproc/libxml \
 
 MODULES=	devel/gettext
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 LIB_DEPENDS+=	::devel/libglade2 \

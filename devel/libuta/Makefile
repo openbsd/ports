@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT=	graphical user interface library for C++
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	smpeg.>=1.3::devel/smpeg \
 		ttf.>=1.3::print/freetype
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

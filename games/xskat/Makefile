@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 18:00:20 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	skat card game
 
@@ -16,7 +16,6 @@ WANTLIB=		X11 c pthread-stubs xcb
 MASTER_SITES=	http://www.xskat.de/
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

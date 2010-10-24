@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:25:51 ajacoutot Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -33,7 +33,6 @@ CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIR}
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 

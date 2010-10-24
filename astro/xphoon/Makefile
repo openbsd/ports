@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 20:58:59 ajacoutot Exp $
 
 COMMENT=	set the root window to the moon in its current phase
 DISTNAME=	xphoon
@@ -20,7 +20,6 @@ WANTLIB=	X11 Xau Xdmcp Xext c m
 
 CONFIGURE_STYLE= imake
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

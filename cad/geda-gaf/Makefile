@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -40,7 +40,6 @@ BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS = 		:shared-mime-info-*:misc/shared-mime-info \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}

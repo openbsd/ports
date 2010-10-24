@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.4.0
@@ -33,7 +33,6 @@ BUILD_DEPENDS=		::shells/bash
 LIB_DEPENDS=		::x11/gtk+2
 RUN_DEPENDS=		::devel/desktop-file-utils
 
-USE_X11=		Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu

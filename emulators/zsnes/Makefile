@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS=		::devel/nasm \
 LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
 			::graphics/png
 
-USE_X11=		Yes
 USE_GROFF=		Yes
 
 AUTOCONF_VERSION=	2.59

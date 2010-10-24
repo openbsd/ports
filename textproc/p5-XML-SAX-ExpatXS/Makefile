@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT=	SAX2 driver directly based on expat
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	::textproc/p5-XML-SAX \
 		::textproc/p5-XML-NamespaceSupport
 
 WANTLIB=	expat
-USE_X11=	Yes
 
 CONFIGURE_ARGS=	EXPATLIBPATH=${X11BASE}/lib \
 		EXPATINCPATH=${X11BASE}/include

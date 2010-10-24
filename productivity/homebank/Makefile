@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT =	personal accounting application
 
@@ -36,7 +36,6 @@ LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE = 	gnu

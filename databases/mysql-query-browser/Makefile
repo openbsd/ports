@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/11 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/24 21:07:50 ajacoutot Exp $
 
 COMMENT=	visual query tool for MySQL
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	::x11/gtk2mm \
 		::x11/gnome/libgnome \
 		::devel/libglade2
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.59

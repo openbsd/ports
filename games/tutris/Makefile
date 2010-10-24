@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
@@ -14,7 +14,6 @@ WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 

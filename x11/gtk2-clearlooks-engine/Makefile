@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	GTK+ 2.x engine based on Bluecurve
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=	:gtk-engines2->=2.16.1p2:x11/gtk-engines2
 
 SHARED_ONLY=	Yes
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu 
 

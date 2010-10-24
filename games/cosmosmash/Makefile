@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	astrosmash clone for X
 
@@ -22,7 +22,6 @@ MASTER_SITES=	http://sarrazip.com/dev/
 LIB_DEPENDS=	flatzebra-0.1.>=1.0:flatzebra->=0.1.4:devel/flatzebra
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

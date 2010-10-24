@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
@@ -34,7 +34,6 @@ MODCONFIG_GUESS_DIRS+=	${MODKDE_CONFIG_GUESS_DIRS}
 AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 
 PORTHOME?=		${WRKDIR}
 

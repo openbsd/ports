@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	voxel-style landscape rendering fly-by
 
@@ -20,7 +20,6 @@ WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb
 
 LIB_DEPENDS=	SDL::devel/sdl
 
-USE_X11=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

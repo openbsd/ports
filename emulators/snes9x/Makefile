@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -41,7 +41,6 @@ BUILD_DEPENDS =  ::devel/nasm
 
 MODULES =	devel/gettext
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE = gnu

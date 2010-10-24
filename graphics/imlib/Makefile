@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/24 21:21:01 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
@@ -28,7 +28,6 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xi c glib gmodule m \
 
 VMEM_WARNING=	Yes
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

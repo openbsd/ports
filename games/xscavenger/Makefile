@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:03 ajacoutot Exp $
 
 DISTNAME=	xscavenger-1.4.4
 PKGNAME=	${DISTNAME}p2
@@ -17,7 +17,6 @@ COMMENT=	Lode Runner clone
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

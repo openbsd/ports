@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xau Xdmcp
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=imake
 MAKE_FLAGS=	SOXAWREV=${LIBXaw3d_VERSION}

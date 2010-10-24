@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/24 11:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:21:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,6 @@ MASTER_SITES=	http://uim.googlecode.com/files/
 LIB_DEPENDS=	::chinese/libchewing \
 		::inputmethods/uim
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/24 21:17:48 ajacoutot Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -42,7 +42,6 @@ CONFIGURE_ARGS +=	--disable-sdl
 .else
 LIB_DEPENDS =    	::devel/sdl
 
-USE_X11 =		Yes
 WANTLIB +=		SDL X11
 .endif
 .if ${FLAVOR:L:Mdebug}

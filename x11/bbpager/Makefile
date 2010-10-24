@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
@@ -25,7 +25,6 @@ MODULES =	converters/libiconv
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat fontconfig \
 		freetype m stdc++ z pthread-stubs xcb
 
-USE_X11 = Yes
 
 CONFIGURE_STYLE = gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	powerful and intuitive editor for programmers
 
@@ -23,7 +23,6 @@ MASTER_SITES=	http://scapa.dnsalias.net/distfiles/ \
 		http://www.phxbsd.com/OpenBSD/
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
 

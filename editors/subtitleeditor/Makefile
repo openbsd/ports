@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:16:25 ajacoutot Exp $
 
 SHARED_ONLY=   	Yes
 
@@ -55,7 +55,6 @@ RUN_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
 MODULES+=	devel/gettext \
 		textproc/intltool
 
-USE_X11=	Yes
 USE_GMAKE=      Yes
 USE_LIBTOOL=    Yes
 USE_GROFF =	Yes

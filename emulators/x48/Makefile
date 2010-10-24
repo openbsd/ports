@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:49 ajacoutot Exp $
 #
 
 COMMENT=		HP48sx emulator
@@ -21,7 +21,6 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE:=system/emulators/}
 CONFIGURE_STYLE=	imake noman
 
 NO_REGRESS=		Yes
-USE_X11=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/x48

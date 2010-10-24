@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -18,7 +18,6 @@ WANTLIB += png xml2 ao
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-USE_X11=		Yes
 USE_GROFF=		Yes
 
 MODULES=		devel/gettext

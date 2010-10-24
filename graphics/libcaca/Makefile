@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		color ascii art library
 
@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else
 LIB_DEPENDS=    	Imlib2.>=1::graphics/imlib2
-USE_X11=		Yes
 WANTLIB+=		X11 Xau Xdmcp Xext freetype pthread-stubs xcb
 .endif
 

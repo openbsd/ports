@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:24:04 ajacoutot Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 c m pthread-stubs xcb
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu

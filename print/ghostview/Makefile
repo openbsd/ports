@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:32:39 ajacoutot Exp $
 
 COMMENT=	X11 front-end for ghostscript
 
@@ -19,7 +19,6 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb
 RUN_DEPENDS=    :ghostscript-*:print/ghostscript/gnu
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/07/26 20:37:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	themed window manager
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	::audio/esound \
 
 SEPARATE_BUILD=	concurrent
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

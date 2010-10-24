@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/09/18 10:24:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT=	common libraries and data for the MySQL GUI Suites
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	::devel/gettext \
 		::databases/mysql \
 		::devel/pcre
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

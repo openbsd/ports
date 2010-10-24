@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=	network security scanner
 DISTNAME=	nessus-core-${V}
@@ -14,7 +14,6 @@ BUILD_DEPENDS=	:bison-*:devel/bison
 USE_GROFF =	Yes
 
 .if empty(FLAVOR:L:Mno_x11)
-USE_X11=	Yes
 MODULES=	devel/gettext
 WANTLIB += 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += 	Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

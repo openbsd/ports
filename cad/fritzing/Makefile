@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/11 09:16:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:04:39 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
@@ -29,7 +29,6 @@ WANTLIB +=	phonon c m pthread sqlite3 stdc++ z
 LIB_DEPENDS=	::x11/qt4
 
 MODULES=        x11/qt4
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 RUN_DEPENDS=	::devel/desktop-file-utils

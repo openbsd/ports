@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -55,7 +55,6 @@ CONFIGURE_ARGS+=	--without-lua
 CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
-USE_X11=		Yes
 WANTLIB+=		X11
 .endif
 

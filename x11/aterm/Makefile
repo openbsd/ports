@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/24 21:15:31 ajacoutot Exp $
 
 DISTNAME=	aterm-0.4.2
 REVISION=	2
@@ -17,7 +17,6 @@ COMMENT=	color vt102 terminal emulator with transparency support
 HOMEPAGE=	http://aterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aterm/}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-xgetdefault --enable-ttygid --enable-utmp \

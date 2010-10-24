@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/23 18:35:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:04:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
@@ -29,7 +29,6 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu

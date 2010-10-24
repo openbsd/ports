@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 
-USE_X11 =		Yes
 MODULES =		devel/gettext
 
 BUILD_DEPENDS =		::x11/gnome/doc-utils

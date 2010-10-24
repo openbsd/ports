@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/01 11:27:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=	Sega Genesis emulator
 
@@ -22,7 +22,6 @@ LIB_DEPENDS+=	::archivers/bzip2 \
 		::devel/sdl \
 		::graphics/jpeg
 
-USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-sdl --with-sdl-audio --without-gcc
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

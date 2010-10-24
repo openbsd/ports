@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	dynamic window manager
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	::devel/libixp
 
 RUN_DEPENDS=	::x11/dmenu
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:41 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:19:01 ajacoutot Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -32,7 +32,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
-USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif

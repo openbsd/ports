@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2010/10/13 19:12:33 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2010/10/24 21:36:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,6 @@ RUN_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-USE_X11?=	Yes
 
 PLUGINDIR=	${PREFIX}/lib/gkrellm2/plugins
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/13 13:48:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:11:03 ajacoutot Exp $
 
 COMMENT=	graphical front-end to the diff program
 
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 do-configure:
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/tkdiff

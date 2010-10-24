@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/26 13:40:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	image manipulation library
 
@@ -25,7 +25,6 @@ LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
 		bz2::archivers/bzip2 \
 		id3tag.>=3::audio/libid3tag
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

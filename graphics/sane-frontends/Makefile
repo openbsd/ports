@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, frontends
 
@@ -33,7 +33,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

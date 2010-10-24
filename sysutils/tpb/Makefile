@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:04 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:36:04 ajacoutot Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_FTP=	yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-xosd-config=${LOCALBASE}/bin/xosd-config
 
-USE_X11=	yes
 USE_GROFF =	Yes
 MODULES=	devel/gettext
 LIB_DEPENDS=	xosd.>=4::x11/xosd

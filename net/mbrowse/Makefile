@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=	graphical MIB browser
 
@@ -22,7 +22,6 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-snmp-type=net \
 		--with-snmp-prefix=${LOCALBASE} \

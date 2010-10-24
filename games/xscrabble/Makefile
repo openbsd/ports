@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	bz2.>=10::archivers/bzip2
 
 CONFIGURE_STYLE=imake noman
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble

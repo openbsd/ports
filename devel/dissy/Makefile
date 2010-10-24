@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -24,7 +24,6 @@ RUN_DEPENDS =	::x11/py-gtk2
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 
-USE_X11 =	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

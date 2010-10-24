@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,6 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:11:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 20:58:58 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	::x11/gtkglext \
 		::multimedia/libtheora
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:00:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	::audio/wavpack \
 		::audio/xmms,-main
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

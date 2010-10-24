@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/26 10:55:05 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	bomberman clone with multiplayer mode
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image \
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-debug

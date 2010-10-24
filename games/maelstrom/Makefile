@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/04 16:23:33 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =		asteroid-like game
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-USE_X11 =		Yes
 CONFIGURE_STYLE = 	gnu
 
 WANTLIB =		SDL c m pthread stdc++

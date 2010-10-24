@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:32:39 ajacoutot Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -50,7 +50,6 @@ CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 MAKE_FILE=		GNUmakefile
 

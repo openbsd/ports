@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; sound mixer
 
@@ -21,7 +21,6 @@ WANTLIB=		X11 Xext Xpm c m ossaudio stdc++
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

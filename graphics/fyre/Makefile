@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -34,7 +34,6 @@ RUN_DEPENDS=		::misc/shared-mime-info \
 			::x11/hicolor-icon-theme
 
 USE_GMAKE=		Yes
-USE_X11=		yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-openexr \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	GUI toolkit for X11
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL X11 Xau Xdmcp Xext Xpm c jpeg m tiff
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		LIBflimage_VERSION=${LIBflimage_VERSION} \

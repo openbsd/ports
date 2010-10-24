@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -56,7 +56,6 @@ CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 
 MAKE_ENV+=		VERBOSE=1
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 

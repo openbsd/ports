@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2010/10/24 21:24:04 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -27,16 +27,15 @@ MODULES=	devel/gettext
 # libtool needs to support -dlopen option
 USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes
-LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gmp.>=4.::devel/gmp \
-		audiofile::devel/libaudiofile \
-		esd.>=2::audio/esound \
-		ltdl::devel/libtool,-ltdl
+LIB_DEPENDS=	::x11/gtk+2 \
+		::devel/gmp \
+		::devel/libaudiofile \
+		::audio/esound \
+		::devel/libtool,-ltdl
 RUN_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes
 
@@ -45,6 +44,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 gdk_pixbuf-2.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio xcb z
+WANTLIB += gdk-x11-2.0,gtk-x11-2.0 gmp audiofile esd ltdl
 
 SEPARATE_BUILD=	concurrent
 

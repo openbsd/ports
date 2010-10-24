@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:27:41 ajacoutot Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -43,7 +43,6 @@ LIB_DEPENDS=		avcodec.>=14,avutil.>=7,swscale.>=2:ffmpeg->=20100512:graphics/ffm
 			x264::multimedia/x264
 
 VMEM_WARNING=		Yes
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=		--tag=disable-static

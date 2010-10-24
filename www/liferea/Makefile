@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:40:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,7 +47,6 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR=	liferea

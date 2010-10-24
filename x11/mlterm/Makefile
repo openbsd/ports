@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
@@ -26,7 +26,6 @@ WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 SHARED_ONLY=Yes
 

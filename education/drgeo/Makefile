@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/11 08:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:17:05 ajacoutot Exp $
 
 COMMENT=	interactive geometry program
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	::devel/libglade2 \
 		::lang/guile
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

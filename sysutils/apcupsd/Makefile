@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -61,7 +61,6 @@ RUN_DEPENDS-cgi =
 
 .if !${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES +=	-x11
-USE_X11 =		Yes
 CONFIGURE_ARGS +=	--enable-gapcmon
 LIB_DEPENDS-x11 =	::devel/gconf2 \
 			${MODGETTEXT_LIB_DEPENDS}

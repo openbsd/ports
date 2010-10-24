@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:32 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -54,7 +54,6 @@ MODULES =	devel/gettext \
 LIB_DEPENDS =	::x11/gtk+2
 
 USE_LIBTOOL =	Yes
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static

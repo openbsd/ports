@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:40:10 ajacoutot Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	::graphics/jpeg \
 
 NO_REGRESS=	Yes
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

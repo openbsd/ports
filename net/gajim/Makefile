@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/24 21:30:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,6 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} 
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

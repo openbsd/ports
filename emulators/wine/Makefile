@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/24 21:17:49 ajacoutot Exp $
 
 
 # XXX  This port is not finished and does not work.
@@ -46,7 +46,6 @@ LIB_DEPENDS =		::textproc/libxslt \
 			::converters/libiconv
 RUN_DEPENDS =		::devel/desktop-file-utils
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes

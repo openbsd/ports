@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	x bust a move clone
 
@@ -23,7 +23,6 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		png.>=2::graphics/png
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu

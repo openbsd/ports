@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=		Rich city simulation game for X
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xau Xdmcp Xext c m pthread-stubs stdc++ xcb
 MASTER_SITES=		ftp://ftp.demon.co.uk/pub/unix/linux/games/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-USE_X11=		Yes
 
 MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity

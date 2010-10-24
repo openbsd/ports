@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/23 23:11:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		simple X screen locker
 
@@ -24,7 +24,6 @@ MAKE_ENV=		CC="${CC}" \
 			LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

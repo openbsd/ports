@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/20 00:20:06 marco Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT =		vi-like minimalists web browser
 
@@ -33,7 +33,6 @@ MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 
 EXTRACT_SUFX =		.tgz
 
-USE_X11 =		Yes
 
 
 NO_REGRESS=		Yes

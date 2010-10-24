@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/15 10:32:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	GL Extension Wrangler library
 
@@ -24,7 +24,6 @@ MAKE_ENV=	LIBGLEW_VERSION=${LIBGLEW_VERSION} \
 		GLEW_DEST=${PREFIX}
 MAKE_FLAGS=	LD=${CC}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/10/24 21:27:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -57,7 +57,6 @@ PKG_ARGS+=	-Di386=1
 PKG_ARGS+=	-Di386=0
 .endif
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

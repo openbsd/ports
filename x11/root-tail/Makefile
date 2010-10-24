@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	tails a given file anywhere on your X11 root window
 
@@ -20,7 +20,6 @@ WANTLIB += X11 Xau Xdmcp Xext c
 MASTER_SITES=		${HOMESITE}/data/
 
 CONFIGURE_STYLE=	imake
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes
 

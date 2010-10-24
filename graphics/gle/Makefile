@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		OpenGL Extrusion library
 
@@ -21,7 +21,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xi m pthread-stubs xcb
 MASTER_SITES=		http://www.linas.org/gle/pub/
 
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu

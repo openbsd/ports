@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:17:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -21,7 +21,6 @@ EXTRACT_SUFX=	.tar.Z
 
 RUN_DEPENDS=	::emulators/fedora/base
 
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 16:57:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	X DX cluster watcher
 
@@ -29,7 +29,6 @@ MODULES=	devel/gettext
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	::x11/gtk+2
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

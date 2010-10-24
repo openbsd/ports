@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cannonsmash/}
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 MODULES=	devel/gettext
 

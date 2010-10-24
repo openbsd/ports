@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:14:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -36,7 +36,6 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 CONFIGURE_ARGS+=--localstatedir=/var
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 

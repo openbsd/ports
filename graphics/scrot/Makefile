@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		commandline screen capture util
 
@@ -23,7 +23,6 @@ MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 LIB_DEPENDS=            giblib.>=1::devel/giblib \
 			Imlib2.>=1::graphics/imlib2
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
@@ -27,7 +27,6 @@ MODSCONS_FLAGS=	prefix=${PREFIX} \
 		datadir=share/gaia \
 		gpsd=1
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 LIB_DEPENDS=	SDL.>=6::devel/sdl \
 		gps.>=16::misc/gpsd \

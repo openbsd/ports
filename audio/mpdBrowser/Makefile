@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:36:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		click & play MPD client
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=		::audio/py-mpd \
 			::devel/desktop-file-utils \
 			:py-gtk2->=2.12.1:x11/py-gtk2
 
-USE_X11=		Yes
 
 NO_REGRESS=		Yes
 

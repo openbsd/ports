@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/24 21:25:50 ajacoutot Exp $
 
 COMMENT=	GTK2-based scientific calculator
 
@@ -33,7 +33,6 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	glade-2.0::devel/libglade2
 
 SEPARATE_BUILD=	simple
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

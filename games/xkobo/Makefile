@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	multi-way scrolling shoot'em up for X11, addictive
 
@@ -29,7 +29,6 @@ WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs stdc++ xcb
 CONFIGURE_STYLE=	imake
 
 ALL_TARGET=	xkobo
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

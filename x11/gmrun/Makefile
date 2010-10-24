@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=		X11 program launcher
 
@@ -31,7 +31,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gmrun/}
 LIB_DEPENDS=		::x11/gtk+2 \
 			::devel/popt
 
-USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

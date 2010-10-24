@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 RUN_DEPENDS=	::devel/desktop-file-utils

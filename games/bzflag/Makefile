@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 MODULES=	devel/gettext
 

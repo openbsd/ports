@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/24 21:30:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -34,7 +34,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}pub/
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 

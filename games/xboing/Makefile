@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	blockout style game for X11
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/xboing
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

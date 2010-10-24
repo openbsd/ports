@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/23 18:35:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
@@ -23,7 +23,6 @@ MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 MODULES=	x11/qt3
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 PORTHOME=	${WRKDIR}

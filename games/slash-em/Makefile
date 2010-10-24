@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
@@ -43,7 +43,6 @@ PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS=qt.2.::x11/qt2
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
-USE_X11=	Yes
 WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 

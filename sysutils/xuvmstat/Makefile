@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=	graphical display for the current uvm status
 
@@ -20,7 +20,6 @@ WRKDIST=	${WRKDIR}/xuvmstat
 MAKE_ENV=	X11BASE="${X11BASE}"
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xuvmstat ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:30:01 ajacoutot Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
@@ -25,7 +25,6 @@ WRKDIST=	${WRKDIR}/ns-$V
 BUILD_DEPENDS=	:tclcl->=1.0b13p0:devel/tclcl
 LIB_DEPENDS=	otcl::lang/otcl
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \

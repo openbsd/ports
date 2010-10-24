@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:27:41 ajacoutot Exp $
 
 COMMENT=	convert media files to Vorbis, Theora and Dirac
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}/releases/${MODPY_EGG_VERSION}/ \
 
 MODULES=	lang/python
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 

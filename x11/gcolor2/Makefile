@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 18:56:58 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:32 ajacoutot Exp $
 #
 COMMENT =		color selector in GTK2
 
@@ -29,7 +29,6 @@ MODULES =		devel/gettext \
 			textproc/intltool
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gcolor2/}
 
-USE_X11 =		Yes
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

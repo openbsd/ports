@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/23 18:35:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT=	electronic CAD system
 
@@ -38,7 +38,6 @@ MAKE_FLAGS=	CHIPMUNKCC="${CC} ${CFLAGS}" XINCLUDEDIR="${X11BASE}/include" \
 		WOLLIBDIR="${LDIR}" \
 		UNTILPSMAP="${LDIR}/pensps.map"
 		
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-extract:

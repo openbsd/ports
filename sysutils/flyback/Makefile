@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/05 12:24:11 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		Time Machine-like backup tool
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://flyback.googlecode.com/files/
 
-USE_X11=		Yes
 
 MODULES=		lang/python
 

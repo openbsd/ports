@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:00 ajacoutot Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -56,7 +56,6 @@ CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
 LDFLAGS +=	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
 
-USE_X11 =	Yes
 
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

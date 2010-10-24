@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info->=0.21:misc/shared-mime-info
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	astrology program for X11 and alpha-numeric terminals
 
@@ -26,7 +26,6 @@ WANTLIB=		X11 c m pthread-stubs xcb
 
 EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
-USE_X11=	Yes
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 WRKDIST=	${WRKDIR}

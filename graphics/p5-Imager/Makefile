@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:21:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	t1.>=3::devel/t1lib \
 CONFIGURE_ARGS=	--enable jpeg,tiff,png,ungif,T1-fonts,freetype2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
 		--libpath="${LOCALBASE}/lib:${X11BASE}/lib"
-USE_X11=	Yes
 .else
 # Don't use the libs although they might be installed.
 CONFIGURE_ARGS=	--disable jpeg,tiff,png,gif,ungif,T1-fonts,TT-fonts,freetype2,w32

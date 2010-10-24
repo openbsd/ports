@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:25:51 ajacoutot Exp $
 
 COMMENT=	interpreted language for scientific computing
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 c m
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 Y_SITE=		${PREFIX}/share/yorick

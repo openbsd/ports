@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -58,7 +58,6 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
 			::graphics/gdk-pixbuf2
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 NO_REGRESS=		Yes

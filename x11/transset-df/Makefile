@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		manage opacity property of windows, extended version
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xrender c m \
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 ALL_TARGET=
 

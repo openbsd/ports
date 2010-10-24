@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -21,7 +21,6 @@ MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://ftp.gwdg.de/pub/x11/x.org/pub/individual/app/ \
 		ftp://ftp.sunet.se/pub/X11/ftp.x.org/individual/app/
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.6 2010/10/18 18:13:15 espie Exp $
+#	$OpenBSD: Makefile,v 1.7 2010/10/24 21:21:02 ajacoutot Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
@@ -39,7 +39,6 @@ LIB_DEPENDS=	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/py-gtk2
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu

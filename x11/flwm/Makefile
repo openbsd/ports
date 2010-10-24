@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	fast-light window manager
 
@@ -15,7 +15,6 @@ CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	::x11/fltk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/07/30 11:56:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -39,7 +39,6 @@ PKG_ARCH-doc=		*
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 
 DOCDIR= 		${PREFIX}/share/doc/OpenEXR
 

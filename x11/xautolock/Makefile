@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT= 		fire up programs in case of user inactivity under X
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xss c
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=        imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=	graphical interface for GnuPG
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=	:gnupg-<2:security/gnupg
 LIB_DEPENDS=	::security/gpgme \
 		::x11/gtk+2
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/21 21:52:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
@@ -69,7 +69,6 @@ LIB_DEPENDS+=	::x11/gtk+2 \
 RUN_DEPENDS-gtk=:${PKGNAME-main}:net/transmission,-main \
 		::devel/desktop-file-utils \
 		:gamin-*:sysutils/gamin,-server,no_python
-USE_X11=	Yes
 .endif
 
 .include <bsd.port.mk>

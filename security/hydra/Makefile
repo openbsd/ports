@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/11 08:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -40,7 +40,6 @@ ALL_TARGET=	hydra pw-inspector
 do-install:
 	cd ${WRKBUILD}; $(INSTALL_PROGRAM) hydra pw-inspector $(PREFIX)/bin
 .else
-USE_X11=	Yes
 
 MULTI_PACKAGES+=-gui
 

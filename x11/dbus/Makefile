@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/24 21:15:31 ajacoutot Exp $
 
 # XXX patches/patch-configure_in disables PIE on arm/hppa. This is just a
 # temporary workaround until PIE works.
@@ -28,7 +28,6 @@ MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 SEPARATE_BUILD=	simple
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu

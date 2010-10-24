@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:24:04 ajacoutot Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -21,7 +21,6 @@ DESTDIRNAME =		ROOT
 CONFIGURE_ENV =		RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
-USE_X11 =		Yes
 USE_GROFF =	Yes
 
 WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \

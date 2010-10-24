@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/17 19:12:33 armani Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS +=  ode                  0.0      # .2.1
@@ -22,7 +22,6 @@ WANTLIB += GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xxf86vm c drm m
 WANTLIB += pthread pthread-stubs stdc++ xcb 
 
 USE_LIBTOOL = 		Yes
-USE_X11 = 		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	--enable-shared

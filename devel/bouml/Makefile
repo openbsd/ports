@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/05 10:42:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:10:56 ajacoutot Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -31,7 +31,6 @@ WANTLIB-main=		X11 Xext c m pthread stdc++
 RUN_DEPENDS-main=	::devel/desktop-file-utils
 
 MODULES=		x11/qt3
-USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 

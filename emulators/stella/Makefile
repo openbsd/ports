@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/08/25 10:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
@@ -29,7 +29,6 @@ CXXFLAGS +=		-I${LOCALBASE}/include/libpng \
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-gl
 
-USE_X11 =		Yes
 USE_GMAKE =		Yes
 
 NO_REGRESS =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; shows basic network info
 
@@ -20,7 +20,6 @@ WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tgz
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 post-extract:

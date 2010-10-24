@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
 CONFIGURE_ENV+= QTDIR="${MODQT4_QTDIR}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

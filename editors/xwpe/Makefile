@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/23 18:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	powerful programming editor
 
@@ -24,7 +24,6 @@ DESTDIRNAME=	none
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
 FAKE_FLAGS=	prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

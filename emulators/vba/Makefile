@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT=		Gameboy Advance emulator
 
@@ -34,7 +34,6 @@ MODGCC3_LANGS=          c c++
 MODULES+=		devel/gettext
 
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 USE_GMAKE=		Yes
 
 LIB_DEPENDS=		::devel/libglademm \

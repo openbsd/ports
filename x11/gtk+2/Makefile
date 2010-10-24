@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.118 2010/10/24 21:15:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -80,7 +80,6 @@ WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 WANTLIB-cups += ssl cups gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 REGRESS_IS_INTERACTIVE= x11

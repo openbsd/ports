@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/07/30 12:03:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT=	small and fast window manager
 
@@ -24,7 +24,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	::graphics/imlib
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu		
 CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	X11-based presentation tool
 
@@ -29,7 +29,6 @@ RUN_DEPENDS+=	::graphics/netpbm \
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf gnu imake no-autoheader

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
 #
 
 COMMENT=	watch what you are doing -- are you hostile
@@ -21,7 +21,6 @@ CONFIGURE_STYLE=imake noman
 
 WRKDIST=	${WRKDIR}/xeyes
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:24:04 ajacoutot Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -13,7 +13,7 @@ CATEGORIES=	lang
 
 V=5e5
 DISTNAME=	scm-$V
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
@@ -30,6 +30,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c curses termcap m readline
 
 FLAVORS=no_x11
@@ -62,7 +63,6 @@ OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
 WANTLIB+=	X11 pthread-stubs xcb
-USE_X11=	Yes
 .endif
 
 BUILD_DEPENDS=::devel/slib

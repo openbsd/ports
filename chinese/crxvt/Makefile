@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:05:24 ajacoutot Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
@@ -20,7 +20,6 @@ WANTLIB=		c X11
 
 RUN_DEPENDS=	::chinese/taipeifonts
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu old

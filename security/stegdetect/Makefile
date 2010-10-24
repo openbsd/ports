@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=	steganography detection tool
 DISTNAME=	stegdetect-0.6
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c crypto m
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 AUTOCONF_VERSION=2.52

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; displays scrolling text
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/wminfo

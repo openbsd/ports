@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/23 22:01:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:17:48 ajacoutot Exp $
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 DISTNAME=	dosbox-0.74
@@ -22,7 +22,6 @@ LIB_DEPENDS=	::devel/sdl-net \
 		::devel/sdl-sound \
 		::graphics/png
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

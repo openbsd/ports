@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	turns your keyboard into an fast pointer mover
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
-USE_X11=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xtst c pthread-stubs xcb
 NO_REGRESS=	Yes
 

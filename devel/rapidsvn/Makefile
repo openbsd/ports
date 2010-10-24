@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/17 01:30:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT=	graphical subversion client
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

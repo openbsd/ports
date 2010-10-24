@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/14 05:37:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
@@ -24,7 +24,6 @@ WANTLIB=	GL
 
 LIB_DEPENDS=	png.>=5::graphics/png
 
-USE_X11=	Yes
 
 REGRESS_IS_INTERACTIVE=	x11
 

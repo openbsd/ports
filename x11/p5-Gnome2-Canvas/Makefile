@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,6 @@ WANTLIB += z pthread-stubs xcb art_lgpl_2 gnomecanvas-2
 MODULES=	cpan \
 		devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \

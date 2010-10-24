@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/12 22:31:05 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=		V4L compatible video application
 
@@ -21,7 +21,6 @@ WANTLIB=	SDL c pthread
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS+="-I${X11BASE}/include -I${LOCALBASE}/include"
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

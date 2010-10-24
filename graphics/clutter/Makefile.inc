@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2010/09/28 07:52:04 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2010/10/24 21:21:00 ajacoutot Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -16,7 +16,6 @@ MASTER_SITES_CLUTTER?=	${HOMEPAGE}/sources/
 DIST_SUBDIR=		clutter
 
 USE_GMAKE?=		Yes
-USE_X11?=		Yes
 
 USE_LIBTOOL?=		Yes
 LIBTOOL_FLAGS?=		--tag=disable-static

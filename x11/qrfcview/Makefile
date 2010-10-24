@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/30 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=qrfcview/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	x11/qt4
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-configure:

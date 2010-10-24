@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/24 21:38:07 ajacoutot Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.1
@@ -33,7 +33,6 @@ LIB_DEPENDS =	::print/poppler
 MAKE_FLAGS = 	MANPREFIX=${WRKINST}/${PREFIX}/man CC=${CC}
 FAKE_FLAGS =	DESTDIR=''
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 

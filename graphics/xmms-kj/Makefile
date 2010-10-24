@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:21:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,6 @@ WRKDIST=	${WRKDIR}/xmms-kj
 MAKE_FILE=      makefile
 ALL_TARGET=	vislib
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng
 MAKE_FLAGS=	CC="${CC}"

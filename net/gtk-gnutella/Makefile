@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
@@ -54,7 +54,6 @@ MAKE_FLAGS=	GNUTLS_LDFLAGS= GNUTLS_CFLAGS=
 DESTDIRNAME=	INSTALL_PREFIX
 INSTALL_TARGET=	install install.man
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

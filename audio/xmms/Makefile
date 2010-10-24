@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -48,7 +48,6 @@ RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		::x11/gtk+ \
 			::devel/glib
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS=		--tag=disable-static

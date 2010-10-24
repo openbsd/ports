@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/21 12:45:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT =		open source alternative to glut
 DISTNAME =		freeglut-2.6.0
@@ -17,7 +17,6 @@ WANTLIB =		GL X11 Xau Xdmcp Xext Xi Xxf86vm m pthread-stubs xcb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freeglut/}
 
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

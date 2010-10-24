@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/05 10:49:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.4.1
@@ -26,7 +26,6 @@ WANTLIB=	SDL c m pthread stdc++
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image
 
-USE_X11=	Yes
 
 FAKE=		all
 

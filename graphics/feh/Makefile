@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -32,7 +32,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 MAKE_FLAGS=	LDFLAGS="${LDFLAGS}" man_dir="${DESTDIR}${PREFIX}/man"
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

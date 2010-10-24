@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/24 21:19:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,7 +53,6 @@ RUN_DEPENDS=	::games/gnuchess \
 		::multimedia/gstreamer-0.10/plugins-base \
 		:yelp-*:x11/gnome/yelp
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

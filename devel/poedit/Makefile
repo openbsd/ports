@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:11:02 ajacoutot Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 WANTLIB=	c m pthread stdc++

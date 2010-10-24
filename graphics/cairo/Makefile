@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/17 12:50:53 eric Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -29,7 +29,6 @@ MASTER_SITES=		http://cairographics.org/releases/
 
 MODULES=		devel/gettext
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 

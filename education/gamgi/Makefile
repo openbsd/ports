@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/29 18:45:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:17:05 ajacoutot Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.gamgi.org/gamgi/src/
 
 USE_GMAKE=		Yes
-USE_X11=		Yes
 
 WANTLIB += GL GLU X11 Xext Xi Xmu atk-1.0 c cairo expat freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0

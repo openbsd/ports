@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT =	simple and fast image viewer for X
 
@@ -32,7 +32,6 @@ RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 MODULES +=      textproc/intltool
 
 USE_GMAKE =	yes
-USE_X11 =	yes
 USE_LIBTOOL =	yes
 
 # regress tests in po dir are broken

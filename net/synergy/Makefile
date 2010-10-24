@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -23,7 +23,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synergy2/}
 
 CONFIGURE_STYLE=        gnu
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 post-install:

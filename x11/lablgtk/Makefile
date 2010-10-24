@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	OCaml interface to GTK+
 
@@ -25,7 +25,6 @@ FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk \
 		DLLDIR=${WRKINST}${PREFIX}/lib/ocaml/stublibs
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 MODULES=	devel/gettext \
 		lang/ocaml

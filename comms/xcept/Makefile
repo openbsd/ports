@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 16:57:49 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:05:57 ajacoutot Exp $
 
 COMMENT=	decoder for the CEPT (Btx) protocol
 
@@ -15,7 +15,6 @@ WANTLIB=		X11 c pthread-stubs xcb
 
 MAKE_FLAGS=	SYSCONFDIR="${SYSCONFDIR}"
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CFLAGS+=-Dlog=logit

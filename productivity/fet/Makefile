@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=		automatically create timetables
 
@@ -27,7 +27,6 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		::x11/qt4
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 PORTHOME=		${WRKDIR}

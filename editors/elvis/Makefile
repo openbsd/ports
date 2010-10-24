@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:16:25 ajacoutot Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+= --with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 CFLAGS+=	-I${X11BASE}/include/freetype2
-USE_X11=	Yes
 USE_GROFF =	Yes
 WANTLIB+=	X11 Xft Xpm pthread-stubs xcb
 .endif

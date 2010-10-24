@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	open source standalone flash(tm) player
 
@@ -23,7 +23,6 @@ MASTER_SITES=	${HOMEPAGE}
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

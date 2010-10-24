@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/13 17:11:10 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -35,7 +35,6 @@ RUN_DEPENDS =	:dbus-python->=0.82.1:x11/dbus-python \
 		::multimedia/gstreamer-0.10/plugins-ugly,-main \
 		::multimedia/gstreamer-0.10/py-gstreamer
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 REGRESS_TARGET=	test

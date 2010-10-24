@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/22 19:22:36 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -34,7 +34,6 @@ MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/calendar/${MOZILLA_PR
 
 MODULES =	www/mozilla devel/gettext lang/python
 
-USE_X11 =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 

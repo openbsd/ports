@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:10:58 ajacoutot Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=		::x11/dbus \
 			::x11/dbus-glib \
 			::x11/gtk+2
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

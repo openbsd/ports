@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/17 09:11:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
@@ -26,7 +26,6 @@ LIB_DEPENDS =	SDL_mixer::devel/sdl-mixer \
 		::graphics/png
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu

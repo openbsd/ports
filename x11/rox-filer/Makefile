@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/23 18:43:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::misc/shared-mime-info
 LIB_DEPENDS=	::devel/libglade2
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

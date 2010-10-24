@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/24 21:02:15 ajacoutot Exp $
 
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
@@ -23,7 +23,6 @@ PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=	imake
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

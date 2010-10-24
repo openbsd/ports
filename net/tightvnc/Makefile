@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/23 21:55:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:30:02 ajacoutot Exp $
 
 COMMENT-main=	cross-platform remote desktop access
 COMMENT-viewer=	client for cross-platform remote desktop access
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vnc-tight/}
 
-USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/vnc_unixsrc
 

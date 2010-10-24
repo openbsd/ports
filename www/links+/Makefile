@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT=	graphics and text browser
 
@@ -35,7 +35,6 @@ FLAVOR?=
 LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \
 		tiff.>=35::graphics/tiff
-USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x --enable-graphics
 WANTLIB+=	X11 pthread-stubs xcb
 MESSAGE=	${PKGDIR}/MESSAGE.x11

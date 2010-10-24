@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/09/28 09:09:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2010/10/24 21:15:34 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -82,7 +82,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-USE_X11 =	Yes
 MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"

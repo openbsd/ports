@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:06:36 ajacoutot Exp $
 
 COMMENT=		convert pf logs to XML
 
@@ -29,7 +29,6 @@ MAKE_FLAGS=		WITH_EXPAT=1 \
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/pflogx/
-USE_X11=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${PREFIX}/bin/

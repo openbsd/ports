@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/04/15 18:25:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/24 21:19:01 ajacoutot Exp $
 
 BROKEN-sparc=	Does not work on SPARC
 BROKEN-vax=	gmake loops forever
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	unclear
 PERMIT_DISTFILES_FTP=	unclear
 WANTLIB=		X11 Xext c m pthread-stubs stdc++ xcb
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT= 		personal finance tracking and performance tool
 
@@ -18,7 +18,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xpm Xt c m
 
 MASTER_SITES=	http://distfiles.nl/
 
-USE_X11=	Yes
 USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page

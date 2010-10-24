@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2010/10/24 21:15:36 ajacoutot Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m pthread stdc++
 
-USE_X11=		Yes
 MODULES=		x11/qt3
 
 MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png z pthread-stubs xcb
 MODULES=	cpan \
 		devel/gettext
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	:p5-ExtUtils-Depends->=0.301:devel/p5-ExtUtils-Depends \

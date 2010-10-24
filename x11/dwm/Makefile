@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=		dynamic window manager
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=		:dmenu->=4.1.1:x11/dmenu \
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=		Yes

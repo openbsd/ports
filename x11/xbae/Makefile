@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
@@ -25,7 +25,6 @@ WANTLIB += expat fontconfig freetype z iconv pthread-stubs xcb
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xbae/}
 
 USE_LIBTOOL=	 Yes
-USE_X11=	 Yes
 USE_MOTIF=	 Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

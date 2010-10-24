@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
@@ -16,7 +16,6 @@ WANTLIB=		X11 Xext Xpm Xt c m
 
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/plan/
 
-USE_X11=	Yes
 USE_MOTIF=	any
 
 WRKSRC=		${WRKDIST}/src

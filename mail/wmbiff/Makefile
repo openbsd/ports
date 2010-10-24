@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=	multiple mailbox checker dockapp
 DISTNAME=	wmbiff-0.4.27
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += X11 Xext Xpm c gcrypt gpg-error iconv intl pthread-stubs tasn1 xcb z
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	gnutls.>=12::security/gnutls

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/10/24 21:25:12 ajacoutot Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
@@ -28,7 +28,6 @@ RUN_DEPENDS=		:expect-*:lang/expect\
 			:nmh-*:mail/nmh\
 			:metamail-*:mail/metamail\
 			${MODTK_RUN_DEPENDS}
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

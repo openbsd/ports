@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/10/24 21:27:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,7 +56,6 @@ BUILD_DEPENDS+=	::devel/libtool
 
 SEPARATE_BUILD=	concurrent
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

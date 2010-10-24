@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:11:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		music tracking tool for X11
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=		::audio/libsndfile \
 
 MODULES=		devel/gettext
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-alsa \
 			--disable-sgi \

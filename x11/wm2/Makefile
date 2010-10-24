@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		stylish window manager
 
@@ -19,7 +19,6 @@ MASTER_SITES=		http://www.all-day-breakfast.com/wm2/
 
 FAKE_FLAGS=		PREFIX="${PREFIX}"
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=		Yes

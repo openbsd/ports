@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/03 10:35:24 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -21,7 +21,6 @@ MASTER_SITES=		${HOMEPAGE}
 LIB_DEPENDS=		png.>=6::graphics/png \
 			t1.>=6::devel/t1lib
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

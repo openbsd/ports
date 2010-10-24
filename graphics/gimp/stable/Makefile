@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -68,7 +68,6 @@ MODULES=	devel/gettext \
 		textproc/intltool \
 		lang/python
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

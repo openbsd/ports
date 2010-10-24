@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:02 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -27,7 +27,6 @@ MODULES=		converters/libiconv
 LIB_DEPENDS=		SDL::devel/sdl
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu

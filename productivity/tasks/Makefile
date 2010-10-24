@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:17:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=		lightweight tasklist
 
@@ -29,7 +29,6 @@ WANTLIB += xml2 z
 MODULES=		devel/gettext \
 			textproc/intltool
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 

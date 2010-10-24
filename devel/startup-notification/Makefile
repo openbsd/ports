@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/12 15:52:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:11:03 ajacoutot Exp $
 
 COMMENT=		library for tracking application startup
 
@@ -22,7 +22,6 @@ MASTER_SITES=		http://www.freedesktop.org/software/startup-notification/releases
 
 LIB_DEPENDS=		execinfo::devel/libexecinfo
 
-USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

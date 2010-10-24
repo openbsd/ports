@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

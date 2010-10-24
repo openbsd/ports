@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/09 17:34:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	gd binding for the lua language
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg png.>=2::graphics/png \
 		gd.>=20.33::graphics/gd
 
 NO_REGRESS=	Yes
-USE_X11=	Yes
 
 do-build:
 	$(CC) $(CFLAGS) -DGD_JPEG -DGD_FONTCONFIG -DGD_FREETYPE -DGD_PNG\

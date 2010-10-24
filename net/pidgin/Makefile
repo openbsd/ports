@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/10/24 19:17:31 steven Exp $
+# $OpenBSD: Makefile,v 1.76 2010/10/24 21:30:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -74,7 +74,6 @@ MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
 
 SEPARATE_BUILD=	simple
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes

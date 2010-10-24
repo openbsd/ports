@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/21 13:00:30 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:32:40 ajacoutot Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -39,7 +39,6 @@ CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV = 		${CONFIGURE_ENV}
 NO_REGRESS =		Yes # not worth the effort.
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 USE_GROFF=	Yes

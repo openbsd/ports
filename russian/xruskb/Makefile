@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/24 21:33:55 ajacoutot Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xmu Xt c
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

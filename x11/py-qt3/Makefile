@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/07 19:21:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,6 @@ MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt3/ \
 MODULES=	x11/qt3 \
 		lang/python
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py

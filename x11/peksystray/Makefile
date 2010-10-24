@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		freedesktop.org compliant system tray
 
@@ -20,7 +20,6 @@ WANTLIB=		c X11 ICE SM
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=peksystray/}
 
 SEPARATE_BUILD=		simple
-USE_X11=		Yes
 CONFIGURE_STYLE=	simple
 
 NO_REGRESS=		Yes

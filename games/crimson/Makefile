@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.1
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid \
 			xcb z
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

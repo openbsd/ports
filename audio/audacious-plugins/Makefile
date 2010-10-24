@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 21:00:29 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -70,7 +70,6 @@ CONFIGURE_ARGS += --disable-jack
 MULTI_PACKAGES += -jack
 .endif
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 AUTOCONF_VERSION =	2.61

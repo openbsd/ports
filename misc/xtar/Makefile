@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	view and manipulate contents of a tar file
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_MOTIF=	any
 USE_GROFF =	Yes
 MAKE_FLAGS=	EXTRA_LDOPTIONS=-L${WRKBUILD}/common

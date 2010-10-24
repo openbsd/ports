@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT =		Gradius clone
 
@@ -24,7 +24,6 @@ LIB_DEPENDS =		::devel/gmp \
 BUILD_DEPENDS =		::graphics/hs-GLUT \
 			:hs-OpenGL->=2.0:graphics/hs-OpenGL
 
-USE_X11 =		Yes
 
 post-install:
 	mv ${PREFIX}/share/${DISTNAME}/* ${PREFIX}/share/doc/${DISTNAME}

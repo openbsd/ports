@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	X11 viewer for text files
 
@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/} \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

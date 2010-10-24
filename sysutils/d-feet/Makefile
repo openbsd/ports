@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/16 08:19:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/dbus-python \
 			::x11/gnome/py-gnome-desktop
 
-USE_X11=		Yes
 
 NO_REGRESS=		Yes
 

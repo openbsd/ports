@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 
 WRKDIST=        ${WRKDIR}/wmtime.app/
 WRKSRC=		${WRKDIST}/wmtime/
-USE_X11=	Yes
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		themes and icons for Window Maker
 
@@ -21,7 +21,6 @@ MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 
 RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu

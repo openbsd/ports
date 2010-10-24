@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 22:01:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:17:48 ajacoutot Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -33,7 +33,6 @@ WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0 esd gdk-x11-2.0 gtk-x11-2.0
 LIB_DEPENDS=		::audio/esound \
 			::x11/gtk+2
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 

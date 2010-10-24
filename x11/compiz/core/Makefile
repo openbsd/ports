@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:31 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -43,7 +43,6 @@ LIB_DEPENDS =	::graphics/png \
 		::textproc/libxml \
 		::textproc/libxslt
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 14:33:40 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::x11/gnome/mono-gnome \
 		::x11/gnome/yelp
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

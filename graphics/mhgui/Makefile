@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=	animorph::graphics/animorph \
 		glut.>=4::graphics/freeglut \
 		png.>=5::graphics/png
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

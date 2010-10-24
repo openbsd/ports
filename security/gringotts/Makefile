@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=	::x11/gtk+2 \
 		::security/libgringotts \
 		::devel/popt
 
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

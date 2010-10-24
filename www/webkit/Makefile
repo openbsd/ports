@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/12 08:43:05 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT =	open source web browser engine
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =	Yes
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 

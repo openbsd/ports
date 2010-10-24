@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/23 18:35:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:04:39 ajacoutot Exp $
 
 COMMENT-main=	circuit drawing and schematic capture
 COMMENT-docs=	documentation for the kicad library of components
@@ -48,7 +48,6 @@ DIST_SUBDIR=	kicad
 WRKDIST=	${WRKDIR}/kicad-dev
 MAKE_FILE=	makefile.gtk
 USE_GMAKE=	Yes
-USE_X11=	Yes
 
 MAKE_FLAGS=	CC=${CXX} CXX=${CXX} LD=${CXX} \
 		CXXFLAGS="${CXXFLAGS}" X11BASE=${X11BASE}

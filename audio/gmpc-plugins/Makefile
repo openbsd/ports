@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:00:29 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -66,7 +66,6 @@ RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		::x11/gob2
 USE_LIBTOOL =	Yes
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =gnu

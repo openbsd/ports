@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:31 ajacoutot Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
@@ -56,7 +56,6 @@ CONFIGURE_STYLE=	cmake
 
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=		Yes

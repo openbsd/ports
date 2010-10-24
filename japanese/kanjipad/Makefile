@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:22:23 ajacoutot Exp $
 
 COMMENT=	Japanese handwriting recognition
 
@@ -25,7 +25,6 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 LIB_DEPENDS=	::x11/gtk+2
 
 MODULES=	devel/gettext
-USE_X11=	Yes
 
 MAKE_FLAGS=OPTIMIZE='${CFLAGS}' PREFIX=${PREFIX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/24 21:25:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -79,7 +79,6 @@ LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 MODULES=		devel/gettext
-USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

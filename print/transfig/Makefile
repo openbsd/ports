@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:32:40 ajacoutot Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCHORIG=	.pat.orig
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 FLAVORS=	a4

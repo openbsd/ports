@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	X11 Xau Xdmcp Xft Xrender c expat fontconfig \
 		freetype m perl pthread-stubs util xcb z
 
-USE_X11 =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

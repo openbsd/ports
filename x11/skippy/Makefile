@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 08:02:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
 		freetype m z pthread-stubs xcb Imlib2
 
-USE_X11=		Yes
 
 NO_REGRESS=		Yes
 

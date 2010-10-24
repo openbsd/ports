@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:12:38 eric Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=	::graphics/cairo
 REGRESS_DEPENDS=::devel/py-py
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 

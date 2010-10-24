@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	minimalistic X11 window manager
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm c 
 
 CONFIGURE_STYLE=gnu
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 SEPARATE_BUILD= simple

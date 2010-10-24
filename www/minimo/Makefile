@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/24 21:40:10 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
@@ -41,7 +41,6 @@ RUN_DEPENDS=	::devel/desktop-file-utils
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-USE_X11=	Yes
 VMEM_WARNING=	Yes
 
 WRKDIST=	${WRKDIR}/mozilla

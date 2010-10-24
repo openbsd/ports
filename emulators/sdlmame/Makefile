@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/24 21:17:48 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -48,7 +48,6 @@ LIB_DEPENDS =		::devel/sdl \
 RUN_DEPENDS-main =	:${PKGNAME-tools}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
-USE_X11 =		Yes
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes

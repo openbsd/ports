@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/24 21:17:49 ajacoutot Exp $
 
 COMMENT=	emulator for US Robotics Pilot PDA
 
@@ -16,7 +16,6 @@ WANTLIB=		ICE SM X11 Xext Xpm Xt c pthread-stubs xcb
 
 MASTER_SITES=	http://xcopilot.cuspy.com/build/
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

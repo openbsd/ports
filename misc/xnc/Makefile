@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -23,7 +23,6 @@ WANTLIB=		ICE SM X11 Xext c jpeg m pthread-stubs stdc++ xcb z
 LIB_DEPENDS=	tiff.>=36::graphics/tiff \
 		png.>=4::graphics/png
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

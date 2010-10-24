@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	breakout game for the X Window System
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xpm c m pthread-stubs sndio stdc++ xcb
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

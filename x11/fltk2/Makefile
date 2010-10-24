@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/01 05:47:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:32 ajacoutot Exp $
 
 COMMENT =	fast light toolkit
 
@@ -30,7 +30,6 @@ MASTER_SITES =	http://ftp.easysw.com/pub/fltk/snapshots/ \
 LIB_DEPENDS =	::graphics/jpeg \
 		::graphics/png
 
-USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 MAKE_FLAGS=	CC=${CC} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/19 20:34:14 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT =	lightweight web browser
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/xfce4 devel/waf
 
-USE_X11 =	Yes
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 

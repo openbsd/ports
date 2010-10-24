@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:34 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -37,7 +37,6 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 REGRESS_FLAGS =		HOME=${TESTHOME}
 
 SEPARATE_BUILD =	concurrent
-USE_X11 =		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu old
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

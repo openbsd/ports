@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/30 07:23:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
@@ -20,7 +20,6 @@ WANTLIB=		X11 Xext Xpm c m dockapp
 
 MASTER_SITES=		http://www.fcoutant.freesurf.fr/download/
 
-USE_X11=		Yes
 
 LIB_DEPENDS=		::devel/libdockapp
 

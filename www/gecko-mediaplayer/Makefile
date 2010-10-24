@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/22 15:25:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:40:09 ajacoutot Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			0.9.9.2
@@ -27,7 +27,6 @@ MODULES =		devel/gettext \
 BUILD_DEPENDS =		:xulrunner-devel->=1.9.2:devel/xulrunner/1.9,-devel
 RUN_DEPENDS =		:gnome-mplayer->=${V}:x11/gnome-mplayer
 
-USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
 SHARED_ONLY =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:00:29 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; audio mixer
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xpm c m ossaudio stdc++
 
 EXTRACT_SUFX=		.tgz
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake noman
 

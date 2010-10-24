@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/31 21:06:32 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
-USE_X11=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/numlockx

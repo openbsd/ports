@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -147,7 +147,6 @@ CONFIGURE_ARGS+= --disable-qt4
 .endif
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 MODPY_RUNDEP=	No

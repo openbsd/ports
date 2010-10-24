@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:38:06 ajacoutot Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
@@ -17,7 +17,6 @@ MASTER_SITES=		${HOMEPAGE}bin/
 
 RUN_DEPENDS=		::x11/tk/8.4
 
-USE_X11=		Yes
 USE_GROFF =	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

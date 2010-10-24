@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=	interact with an EWMH/NetWM window manager
 DISTNAME=	wmctrl-1.07
@@ -19,7 +19,6 @@ WANTLIB=		ICE SM X11 Xmu c glib-2.0
 
 MODULES=		devel/gettext
 
-USE_X11=	Yes
 
 LIB_DEPENDS=	::devel/glib2
 

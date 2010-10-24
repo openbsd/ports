@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 21:26:49 ajacoutot Exp $
 
 COMMENT=	task-based timeclock for KDE
 
@@ -33,7 +33,6 @@ MAKE_ENV=	KDEDIR="${LOCALBASE}"
 # Ensure qt3 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/30 06:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; shows the date, time, and Internet time
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xext Xpm c m
 MASTER_SITES=		http://dockapps.org/files/22/29/ \
 			http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/wmitime

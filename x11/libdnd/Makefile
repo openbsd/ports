@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=		drag and drop library
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tgz
 
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		LIBDnd_VERSION=${LIBDnd_VERSION} \
 			LIBDnd++_VERSION=${LIBDnd++_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
 
 COMMENT=	Athena port of xminesweeper
 
@@ -19,7 +19,6 @@ WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xmu Xpm Xt c pthread-stubs xcb
 LIB_DEPENDS=    Xaw3d.::x11/Xaw3d
 
 CONFIGURE_STYLE=imake
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

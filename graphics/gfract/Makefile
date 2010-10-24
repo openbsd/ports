@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
@@ -29,7 +29,6 @@ LIB_DEPENDS=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=		devel/gettext
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/24 20:58:59 ajacoutot Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -29,7 +29,6 @@ do-build:
 	@cd ${WRKSRC}/GUI/xephem && \
 	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

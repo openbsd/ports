@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/18 16:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/24 21:00:30 ajacoutot Exp $
 
 COMMENT=	Motif CD player
 
@@ -17,7 +17,6 @@ WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c curses \
 
 MASTER_SITES=	http://distfiles.nl/
 
-USE_X11=	Yes
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake
 NO_REGRESS=	Yes

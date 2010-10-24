@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/04 06:18:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/24 21:34:55 ajacoutot Exp $
 
 COMMENT=	allows deniable private conversations using Pidgin
 
@@ -23,7 +23,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 WANTLIB=	gpg-error gcrypt
 
-USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/24 21:40:10 ajacoutot Exp $
 
 COMMENT=		browser for wap/wml
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=		::www/p5-libwww \
 			::x11/p5-Tk
 
 NO_REGRESS=		Yes
-USE_X11=		Yes
 USE_GROFF =	Yes
 PKG_ARCH=		*
 

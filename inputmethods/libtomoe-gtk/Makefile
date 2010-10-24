@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:15:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:44 ajacoutot Exp $
 
 COMMENT=	japanese handwriting input widget
 
@@ -34,6 +34,5 @@ WANTLIB=	Xrender Xext X11 m z png freetype fontconfig \
 		pangoft2-1.0 cairo atk-1.0 gobject-2.0 pixman-1 \
 		pthread-stubs xcb gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0
 
-USE_X11=	Yes
 
 .include <bsd.port.mk>

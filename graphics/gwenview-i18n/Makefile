@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/27 09:11:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	image viewer for KDE, translations
 
@@ -26,7 +26,6 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}

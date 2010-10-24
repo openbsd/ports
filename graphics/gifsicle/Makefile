@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:21:00 ajacoutot Exp $
 
 COMMENT=	creating & editing GIF images and animations
 
@@ -32,7 +32,6 @@ USE_GROFF =	Yes
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--disable-gifview
 .else
-USE_X11=	Yes
 WANTLIB+=	ICE SM X11
 .endif
 

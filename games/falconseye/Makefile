@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	NetHack derivative
 
@@ -33,7 +33,6 @@ SUBST_VARS=	GAMEDIR
 WRKDIST=	${WRKDIR}
 
 NETHACKCONFIG=	${FILESDIR}/x-config
-USE_X11=        Yes
 USE_GROFF =	Yes
 MAKE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
 

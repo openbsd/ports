@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:30:01 ajacoutot Exp $
 
 COMMENT=		GNOME MUD/Moo Client
 
@@ -22,7 +22,6 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z gdk_pixbuf-2.0
 
-USE_X11=		Yes
 
 LIB_DEPENDS=		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2

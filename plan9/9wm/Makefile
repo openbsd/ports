@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/24 21:31:50 ajacoutot Exp $
 
 COMMENT=	8 1/2-like Window Manager for X11
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =	X11 Xau Xdmcp Xext c pthread-stubs xcb
 
-USE_X11=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
 

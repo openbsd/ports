@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/10/24 21:21:01 ajacoutot Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	:gimp->=2,<3:graphics/gimp/stable \
 
 MODULES=	devel/gettext
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:02 ajacoutot Exp $
 
 COMMENT=	drawing program for children
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 RUN_DEPENDS=	::graphics/netpbm \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

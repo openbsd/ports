@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:18:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/24 21:36:04 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
@@ -40,7 +40,6 @@ RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	notification-daemon
 
 CONFIGURE_STYLE=	gnu

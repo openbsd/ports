@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/24 21:15:33 ajacoutot Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -24,7 +24,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	::lang/lua
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 

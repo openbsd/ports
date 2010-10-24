@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/10/24 21:40:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,7 +48,6 @@ LIB_DEPENDS=	::archivers/bzip2 \
 		::net/curl \
 		::x11/gtk+2
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 # Gnash requires GNU libtool 2.2 or greater, so use the bundled one
 USE_LIBTOOL=	gnu

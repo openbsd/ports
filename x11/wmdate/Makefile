@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:35 ajacoutot Exp $
 
 COMMENT=		wm-dockapp; shows the current date
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xpm c dockapp
 
 LIB_DEPENDS=		::devel/libdockapp
 
-USE_X11=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake noman
 

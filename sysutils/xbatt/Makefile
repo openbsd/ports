@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/03/21 11:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/24 21:36:04 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
@@ -22,7 +22,6 @@ WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c \
 
 CONFIGURE_STYLE=	imake noman
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

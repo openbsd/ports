@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/24 21:19:01 ajacoutot Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image \
 		xerces-c::textproc/xerces-c
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
