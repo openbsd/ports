@@ -1,10 +1,10 @@
-$OpenBSD: patch-girepository_giroffsets_c,v 1.3 2010/03/29 15:17:10 jasper Exp $
+$OpenBSD: patch-girepository_giroffsets_c,v 1.4 2010/10/24 13:40:27 jasper Exp $
 
 Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
 
---- girepository/giroffsets.c.orig	Thu Mar 18 22:46:41 2010
-+++ girepository/giroffsets.c	Mon Mar 29 16:52:28 2010
-@@ -316,7 +316,7 @@ get_field_size_alignment (GIrNodeField *field,
+--- girepository/giroffsets.c.orig	Tue Aug 17 19:14:51 2010
++++ girepository/giroffsets.c	Thu Sep 30 15:25:34 2010
+@@ -314,7 +314,7 @@ get_field_size_alignment (GIrTypelibBuild    *build,
    return success;
  }
  
@@ -12,9 +12,9 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
 +#define G_ALIGN(n, align) (((n) + (align) - 1) & ~((align) - 1))
  
  static gboolean
- compute_struct_field_offsets (GIrNode     *node,
-@@ -350,7 +350,7 @@ compute_struct_field_offsets (GIrNode     *node,
- 					    module, modules,
+ compute_struct_field_offsets (GIrTypelibBuild   *build,
+@@ -346,7 +346,7 @@ compute_struct_field_offsets (GIrTypelibBuild   *build
+ 	      if (get_field_size_alignment (build, field, node,
  					    &member_size, &member_alignment))
  		{
 -		  size = ALIGN (size, member_alignment);
@@ -22,7 +22,7 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
  		  alignment = MAX (alignment, member_alignment);
  		  field->offset = size;
  		  size += member_size;
-@@ -364,14 +364,14 @@ compute_struct_field_offsets (GIrNode     *node,
+@@ -360,14 +360,14 @@ compute_struct_field_offsets (GIrTypelibBuild   *build
  	}
        else if (member->type == G_IR_NODE_CALLBACK)
  	{
@@ -39,7 +39,7 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
  
    if (!have_error)
      {
-@@ -429,7 +429,7 @@ compute_union_field_offsets (GIrNode     *node,
+@@ -423,7 +423,7 @@ compute_union_field_offsets (GIrTypelibBuild *build,
      }
  
    /* Unions are tail-padded out to a multiple of their alignment */

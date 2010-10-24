@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2010/10/24 13:40:27 jasper Exp $
+
+Too much libtool abuse going on in tests/ needs to be sorted out
+first before entering again.
+
+--- Makefile.in.orig	Wed Oct  6 22:54:28 2010
++++ Makefile.in	Sun Oct 24 15:03:00 2010
+@@ -305,7 +305,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = girepository giscanner tools gir docs tests examples
++SUBDIRS = girepository giscanner tools gir docs examples
+ DIST_SUBDIRS = m4 $(SUBDIRS)
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ man_MANS = \
