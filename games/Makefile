@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2010/10/06 17:06:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2010/10/24 20:20:15 phessler Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -53,6 +53,7 @@
      SUBDIR += f1spirit
      SUBDIR += falconseye
      SUBDIR += fire
+     SUBDIR += foobillard
      SUBDIR += forcedattack
      SUBDIR += fotaq
      SUBDIR += freeciv
