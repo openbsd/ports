@@ -1,0 +1,18 @@
+$OpenBSD: patch-app_wlib_gtklib_CMakeLists_txt,v 1.1.1.1 2010/10/24 20:07:55 sebastia Exp $
+
+switch from old gtkhtml to webkit based on Debian patches:
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=549039
+
+--- app/wlib/gtklib/CMakeLists.txt.orig	Mon Jul  6 20:22:42 2009
++++ app/wlib/gtklib/CMakeLists.txt	Sun Oct 24 11:26:04 2010
+@@ -28,8 +28,8 @@ SET_SOURCE_FILES_PROPERTIES(wpref.c PROPERTIES COMPILE
+ 
+ INCLUDE_DIRECTORIES(${XTrkCAD_BINARY_DIR})
+ INCLUDE_DIRECTORIES(${GTK_INCLUDE_DIRS})
+-INCLUDE_DIRECTORIES(${GTKHTML_INCLUDE_DIRS})
++INCLUDE_DIRECTORIES(${GTK_WEBKIT_INCLUDE_DIRS})
+ 
+ ADD_LIBRARY(xtrkcad-wlib ${HEADERS} ${SOURCES})
+ TARGET_LINK_LIBRARIES(xtrkcad-wlib ${GTK_LIBRARIES})
+-TARGET_LINK_LIBRARIES(xtrkcad-wlib ${GTKHTML_LIBRARIES})
++TARGET_LINK_LIBRARIES(xtrkcad-wlib ${GTK_WEBKIT_LIBRARIES})

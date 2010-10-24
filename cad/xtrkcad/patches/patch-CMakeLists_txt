@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2010/10/24 20:07:55 sebastia Exp $
+
+switch from old libgtkhtml to webkit based on Debian patches:
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=549039
+
+--- CMakeLists.txt.orig	Mon Jul  6 20:22:42 2009
++++ CMakeLists.txt	Sun Oct 24 10:43:38 2010
+@@ -61,7 +61,7 @@ ENDIF(WIN32 AND NOT XTRKCAD_USE_GTK)
+ IF(XTRKCAD_USE_GTK)
+ 	INCLUDE(FindPkgConfig)
+ 	PKG_CHECK_MODULES(GTK REQUIRED "gtk+-2.0")
+-	PKG_CHECK_MODULES(GTKHTML REQUIRED "libgtkhtml-2.0")
++	PKG_CHECK_MODULES(GTK_WEBKIT "webkit-1.0")
+ ENDIF(XTRKCAD_USE_GTK)
+ 
+ IF(XTRKCAD_USE_PACKAGEMAKER)
