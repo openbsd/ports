@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/08/18 21:36:00 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/10/24 19:17:31 steven Exp $
 @conflict gaim-*
 @pkgpath net/pidgin
 @bin bin/pidgin
@@ -151,6 +151,7 @@ share/locale/lo/
 share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
+share/locale/mai/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
@@ -531,7 +532,6 @@ share/pixmaps/pidgin/emotes/small/coffee.png
 share/pixmaps/pidgin/emotes/small/cold.png
 share/pixmaps/pidgin/emotes/small/confused.png
 share/pixmaps/pidgin/emotes/small/console.png
-share/pixmaps/pidgin/emotes/small/cool.png
 share/pixmaps/pidgin/emotes/small/cross.png
 share/pixmaps/pidgin/emotes/small/crying.png
 share/pixmaps/pidgin/emotes/small/devil.png
@@ -543,7 +543,6 @@ share/pixmaps/pidgin/emotes/small/excited.png
 share/pixmaps/pidgin/emotes/small/excruciating.png
 share/pixmaps/pidgin/emotes/small/eyeroll.png
 share/pixmaps/pidgin/emotes/small/girl.png
-share/pixmaps/pidgin/emotes/small/grin.png
 share/pixmaps/pidgin/emotes/small/grumpy.png
 share/pixmaps/pidgin/emotes/small/happy.png
 share/pixmaps/pidgin/emotes/small/hot.png
@@ -588,6 +587,7 @@ share/pixmaps/pidgin/emotes/small/suit.png
 share/pixmaps/pidgin/emotes/small/surfing.png
 share/pixmaps/pidgin/emotes/small/theme
 share/pixmaps/pidgin/emotes/small/thinking.png
+share/pixmaps/pidgin/emotes/small/thunder.png
 share/pixmaps/pidgin/emotes/small/tongue.png
 share/pixmaps/pidgin/emotes/small/tv.png
 share/pixmaps/pidgin/emotes/small/typing.png

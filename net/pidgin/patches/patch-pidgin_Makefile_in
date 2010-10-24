@@ -1,12 +1,12 @@
-$OpenBSD: patch-pidgin_Makefile_in,v 1.13 2010/08/01 20:11:48 steven Exp $
---- pidgin/Makefile.in.orig	Wed Jul 21 00:16:04 2010
-+++ pidgin/Makefile.in	Mon Jul 26 18:58:53 2010
-@@ -110,7 +110,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
- LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
- 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
- 	$(AM_CFLAGS) $(CFLAGS)
+$OpenBSD: patch-pidgin_Makefile_in,v 1.14 2010/10/24 19:17:31 steven Exp $
+--- pidgin/Makefile.in.orig	Wed Oct 20 11:51:00 2010
++++ pidgin/Makefile.in	Thu Oct 21 19:56:22 2010
+@@ -122,7 +122,7 @@ am__v_CC_0 = @echo "  CC    " $@;
+ AM_V_at = $(am__v_at_$(V))
+ am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+ am__v_at_0 = @
 -CCLD = $(CC)
 +CCLD = $(CXX)
- LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- SOURCES = $(pidgin_SOURCES)

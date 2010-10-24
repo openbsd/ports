@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.3 2008/09/13 22:04:40 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.4 2010/10/24 19:17:31 steven Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -25,8 +25,6 @@
 #include "version.h"
 
 #define SSL_OPENSSL_PLUGIN_ID "ssl-openssl"
-
-#ifdef HAVE_OPENSSL
 
 #include <openssl/ssl.h>
 #include <openssl/err.h>
@@ -275,12 +273,9 @@ static PurpleSslOps ssl_ops = {
 	ssl_openssl_write
 };
 
-#endif /* HAVE_OPENSSL */
-
 static gboolean
 plugin_load(PurplePlugin *plugin)
 {
-#ifdef HAVE_OPENSSL
 	if (!purple_ssl_get_ops())
 		purple_ssl_set_ops(&ssl_ops);
 
@@ -288,18 +283,13 @@ plugin_load(PurplePlugin *plugin)
 	ssl_openssl_init_openssl();
 
 	return (TRUE);
-#else
-	return (FALSE);
-#endif
 }
 
 static gboolean
 plugin_unload(PurplePlugin *plugin)
 {
-#ifdef HAVE_OPENSSL
 	if (purple_ssl_get_ops() == &ssl_ops)
 		purple_ssl_set_ops(NULL);
-#endif
 
 	return (TRUE);
 }
