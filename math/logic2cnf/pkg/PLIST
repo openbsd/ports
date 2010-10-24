@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 13:55:41 edd Exp $
+@bin bin/logic2cnf
+@man man/man1/logic2cnf.1
+share/l2cstd/
+share/l2cstd/l2c_arith.m4
+share/l2cstd/l2c_bitwise.m4
+share/l2cstd/l2c_sparc64.m4
+share/l2cstd/l2c_util.m4

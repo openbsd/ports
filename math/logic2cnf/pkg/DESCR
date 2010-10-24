@@ -1,0 +1,4 @@
+Logic2CNF is an easy to use propositional logic solver based upon
+MiniSAT (http://minisat.se). Logic is programmed using a simple grammar
+(instead of having to convert logic to DIMACS) and all CNF conversion is
+automatic.
