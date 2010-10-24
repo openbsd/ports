@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.30 2010/10/15 20:24:27 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.31 2010/10/24 09:16:13 sthen Exp $
 
 # ruby module
 
@@ -29,8 +29,15 @@ MODRUBY_DOCDIR=		${PREFIX}/share/doc/ruby
 MODRUBY_EXAMPLEDIR=	${PREFIX}/share/examples/ruby
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 
+MODRUBY_BUILDDEP?=	Yes
+MODRUBY_RUNDEP?=	Yes
+
+.if ${NO_BUILD:L} == "no" && ${MODRUBY_BUILDDEP:L} == "yes"
 BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
+.endif
+.if ${MODRUBY_RUNDEP:L} == "yes"
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
+.endif
 
 .if ${MODRUBY_REGRESS:L:Mrake}
 REGRESS_DEPENDS+=	::devel/ruby-rake
