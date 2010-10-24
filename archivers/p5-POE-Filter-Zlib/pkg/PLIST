@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 11:38:22 jasper Exp $
+${P5SITE}/POE/Filter/Zlib/
+${P5SITE}/POE/Filter/Zlib.pm
+${P5SITE}/POE/Filter/Zlib/Stream.pm
+@man man/man3p/POE::Filter::Zlib.3p
+@man man/man3p/POE::Filter::Zlib::Stream.3p
