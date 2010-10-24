@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.113 2010/10/23 16:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2010/10/24 11:44:37 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.0
-REVISION-main=		2
-REVISION-plugins=	2
+REVISION-main=		3
+REVISION-plugins=	3
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -150,6 +150,11 @@ FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
+
+# needed to prevent lazy bindings failures on pthreads(3) functions
+post-configure:
+	perl -pi -e 's|-Wl,--as-needed||g' \
+		${WRKBUILD}/{shell,calendar/gui/alarm-notify,plugins/backup-restore}/Makefile
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
