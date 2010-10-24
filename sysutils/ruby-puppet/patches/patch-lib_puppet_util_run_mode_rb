@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.1 2010/10/24 10:23:48 robert Exp $
+--- lib/puppet/util/run_mode.rb.orig	Sun Oct 24 12:20:37 2010
++++ lib/puppet/util/run_mode.rb	Sun Oct 24 12:20:40 2010
+@@ -34,7 +34,7 @@ module Puppet
+ 
+       def var_dir
+         which_dir(
+-          (Puppet.features.microsoft_windows? ? File.join(Dir::WINDOWS, "puppet", "var") : "/var/lib/puppet"),
++          (Puppet.features.microsoft_windows? ? File.join(Dir::WINDOWS, "puppet", "var") : "/var/puppet"),
+           "~/.puppet/var"
+         )
+       end
