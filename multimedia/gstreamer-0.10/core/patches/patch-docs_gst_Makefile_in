@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_gst_Makefile_in,v 1.1 2010/10/24 13:15:26 naddy Exp $
+--- docs/gst/Makefile.in.orig	Sun Oct 24 06:59:57 2010
++++ docs/gst/Makefile.in	Sun Oct 24 07:00:08 2010
+@@ -936,7 +936,7 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+ 	-cp $(srcdir)/$(DOC_MODULE).types $(distdir)/
+ 	-cp $(srcdir)/$(DOC_MODULE)-sections.txt $(distdir)/
+ 	cd $(distdir) && rm -f $(DISTCLEANFILES)
+-        -gtkdoc-rebase --online --relative --html-dir=$(distdir)/html
++	-gtkdoc-rebase --online --relative --html-dir=$(distdir)/html
+ 
+ .PHONY : dist-hook-local docs
+ 
