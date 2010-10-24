@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 22:16:38 sebastia Exp $
+@conflict terminal-<=0.4.5p1
+bin/Terminal
+libexec/GNUstep/
+libexec/GNUstep/Terminal.app/
+libexec/GNUstep/Terminal.app/Resources/
+libexec/GNUstep/Terminal.app/Resources/DefaultTerminalServices.svcs
+libexec/GNUstep/Terminal.app/Resources/English.lproj/
+libexec/GNUstep/Terminal.app/Resources/English.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/French.lproj/
+libexec/GNUstep/Terminal.app/Resources/French.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/German.lproj/
+libexec/GNUstep/Terminal.app/Resources/German.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Hungarian.lproj/
+libexec/GNUstep/Terminal.app/Resources/Hungarian.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Info-gnustep.plist
+libexec/GNUstep/Terminal.app/Resources/Italian.lproj/
+libexec/GNUstep/Terminal.app/Resources/Italian.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Norwegian.lproj/
+libexec/GNUstep/Terminal.app/Resources/Norwegian.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Russian.lproj/
+libexec/GNUstep/Terminal.app/Resources/Russian.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Spanish.lproj/
+libexec/GNUstep/Terminal.app/Resources/Spanish.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Swedish.lproj/
+libexec/GNUstep/Terminal.app/Resources/Swedish.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/Terminal.desktop
+libexec/GNUstep/Terminal.app/Resources/Terminal.tiff
+libexec/GNUstep/Terminal.app/Resources/TerminalInfo.plist
+libexec/GNUstep/Terminal.app/Resources/Turkish.lproj/
+libexec/GNUstep/Terminal.app/Resources/Turkish.lproj/Localizable.strings
+libexec/GNUstep/Terminal.app/Resources/cursor_filled.tiff
+libexec/GNUstep/Terminal.app/Resources/cursor_inverted.tiff
+libexec/GNUstep/Terminal.app/Resources/cursor_line.tiff
+libexec/GNUstep/Terminal.app/Resources/cursor_stroked.tiff
+@bin libexec/GNUstep/Terminal.app/Terminal
+libexec/GNUstep/Terminal.app/stamp.make
