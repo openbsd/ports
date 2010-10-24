@@ -1,0 +1,15 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2010/10/24 22:41:09 landry Exp $
+--- SConstruct.orig	Mon Mar 22 17:40:47 2010
++++ SConstruct	Sun Oct 24 12:14:27 2010
+@@ -725,6 +726,11 @@ if not preconfigured:
+         thread_suffix = ''
+         env.Append(LIBS = 'pthread')
+     
++    if env['PLATFORM'] == 'OpenBSD':
++        thread_suffix = '-mt'
++        env.Append(LIBS = 'pthread')
++        env.Append(LINKFLAGS = ['-lstdc++'])
++
+     if env['SYSTEM_FONTS']:
+         if not os.path.isdir(env['SYSTEM_FONTS']):
+             color_print(1,'Warning: Directory specified for SYSTEM_FONTS does not exist!')

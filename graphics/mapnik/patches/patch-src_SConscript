@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_SConscript,v 1.1.1.1 2010/10/24 22:41:09 landry Exp $
+dont install stupid symlinks and set our libversion
+--- src/SConscript.orig	Mon Mar 22 17:40:13 2010
++++ src/SConscript	Tue Oct  5 15:25:34 2010
+@@ -144,16 +144,9 @@ if env['PLATFORM'] != 'Darwin':
+ 
+     major, minor, micro = ABI_VERSION
+     
+-    soFile = "%s.%d.%d.%d" % (os.path.basename(str(mapnik[0])), major, minor, micro)
++    soFile = "%s.${LIBmapnik_VERSION}" % (os.path.basename(str(mapnik[0])))
+     libDir = install_prefix + '/' + env['LIBDIR_SCHEMA']
+     env.Alias(target='install', source=env.InstallAs(target=os.path.join(libDir, soFile), source=mapnik))
+-    # Install symlinks
+-    link1 = env.Command(os.path.join(libDir, "%s.%d.%d" % (os.path.basename(str(mapnik[0])),major, minor)), 
+-                        os.path.join(libDir, soFile), symlink)
+-    env.Alias(target='install', source=link1)
+-    link2 = env.Command(os.path.join(libDir, os.path.basename(str(mapnik[0]))), 
+-                        os.path.join(libDir, "%s.%d.%d" % (os.path.basename(str(mapnik[0])),major, minor)), symlink)
+-    env.Alias(target='install', source=link2)
+ else:
+     env.Alias(target='install', source=env.Install(install_prefix + '/' + env['LIBDIR_SCHEMA'], mapnik))
+ 
