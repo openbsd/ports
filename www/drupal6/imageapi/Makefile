@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/03 16:25:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/24 19:06:47 stephan Exp $
 
 COMMENT =	image API
 
-DISTNAME = 	imageapi-6.x-1.8
-PKGNAME =	drupal6-imageapi-1.8
+DISTNAME = 	imageapi-6.x-1.9
+PKGNAME =	drupal6-imageapi-1.9
 
 .include <bsd.port.mk>
