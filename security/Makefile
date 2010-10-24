@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2010/09/22 05:18:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.242 2010/10/24 08:16:34 sebastia Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -70,6 +70,7 @@
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
      SUBDIR += libgringotts
+     SUBDIR += libgsasl
      SUBDIR += libident
      SUBDIR += libksba
      SUBDIR += libmcrypt
