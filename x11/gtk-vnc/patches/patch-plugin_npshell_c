@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugin_npshell_c,v 1.1 2010/10/24 09:23:34 landry Exp $
+Don't call NPN_GetValue with NPNVToolkit. For unknown reasons
+this doesn't work with xl 1.9.
+--- plugin/npshell.c.orig	Wed Jul 14 12:28:15 2010
++++ plugin/npshell.c	Sun Oct 24 01:18:58 2010
+@@ -81,7 +81,7 @@ Contributor(s): Adobe Systems Incorporated.
+ #include <string.h>
+ 
+ #include <npapi.h>
+-#include <npupp.h>
++#include <prtypes.h>
+ 
+ #include "gtk-vnc-plugin.h"
+ 
+@@ -174,7 +174,7 @@ NPP_New(NPMIMEType pluginType G_GNUC_UNUSED,
+   if (err != NPERR_NO_ERROR || supportsXEmbed != PR_TRUE)
+     return NPERR_INCOMPATIBLE_VERSION_ERROR;
+ 
+-#if 1
++#if 0
+   err = NPN_GetValue (instance,
+                       NPNVToolkit,
+                       (void *)&toolkit);

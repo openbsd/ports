@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/24 09:23:34 landry Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		0.4.1
-REVISION=		1
+REVISION=		2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
@@ -37,11 +37,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 WANTLIB-main=	${WANTLIB} c ffi pthread gnutls.>=13 sasl2.>=2
 
-MULTI_PACKAGES=		-main
-PSEUDO_FLAVORS=		no_plugin
-FLAVOR?=
+MULTI_PACKAGES=		-main -plugin
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS+=		:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
 RUN_DEPENDS=		::x11/py-gtk2
 LIB_DEPENDS=		::security/gnutls \
 			::security/cyrus-sasl2
@@ -55,22 +54,15 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-python \
 			--with-sasl \
 			--without-libview \
+			--enable-plugin=yes \
 			--disable-introspection
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
-
-.if ${FLAVOR:L:Mno_plugin}
-CONFIGURE_ARGS+=	--enable-plugin=no
-.else
-MULTI_PACKAGES+=	-plugin
-BUILD_DEPENDS+=		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
-CONFIGURE_ARGS+=	--enable-plugin=yes
-CONFIGURE_ENV+=		MOZILLA_PLUGIN_CFLAGS="-I${LOCALBASE}/xulrunner/include/plugin \
-				-I${LOCALBASE}/xulrunner/include/java \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			MOZILLA_PLUGIN_CFLAGS="-I${LOCALBASE}/xulrunner1.9/include/ \
 				-I${LOCALBASE}/include/nspr" \
-			MOZILLA_PLUGIN_LIBS="-L${LOCALBASE}/xulrunner"
-.endif
+			MOZILLA_PLUGIN_LIBS="-L${LOCALBASE}/xulrunner1.9"
+
+USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk-vnc

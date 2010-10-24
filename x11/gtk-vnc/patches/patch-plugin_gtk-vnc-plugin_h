@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugin_gtk-vnc-plugin_h,v 1.1 2010/10/24 09:23:34 landry Exp $
+--- plugin/gtk-vnc-plugin.h.orig	Sun Oct 24 01:46:47 2010
++++ plugin/gtk-vnc-plugin.h	Sun Oct 24 01:47:21 2010
+@@ -36,6 +36,7 @@
+ #ifndef GTK_VNC_PLUGIN_H
+ #define GTK_VNC_PLUGIN_H
+ 
++#include <prtypes.h>
+ #include <npapi.h>
+ #include <gtk/gtk.h>
+ #include <X11/Xlib.h>
