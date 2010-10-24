@@ -1,0 +1,22 @@
+$OpenBSD: patch-PrefController+InterfaceCreation_m,v 1.1 2010/10/24 08:28:50 sebastia Exp $
+
+Fix label of the buttons in the preferences
+
+--- PrefController+InterfaceCreation.m.orig	Sat Oct 23 19:21:51 2010
++++ PrefController+InterfaceCreation.m	Sat Oct 23 19:22:37 2010
+@@ -104,13 +104,13 @@
+ 
+     button = [matrix cellAtRow:0 column:0];
+     [button setTag:0];
+-    [button setStringValue:_(@"Reset")];
++    [button setTitle:_(@"Reset")];
+     [button setBordered:YES];
+     [button setButtonType:NSMomentaryPushButton];
+ 
+     button = [matrix cellAtRow:0 column:1];
+     [button setTag:1];
+-    [button setStringValue:_(@"Set")];
++    [button setTitle:_(@"Set")];
+     [button setBordered:YES];
+     [button setButtonType:NSMomentaryPushButton];
+ }

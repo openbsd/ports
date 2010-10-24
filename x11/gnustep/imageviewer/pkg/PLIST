@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/14 11:07:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/24 08:28:50 sebastia Exp $
 bin/ImageViewer
 libexec/GNUstep/
 libexec/GNUstep/ImageViewer.app/
@@ -16,6 +16,8 @@ libexec/GNUstep/ImageViewer.app/Resources/French.lproj/
 libexec/GNUstep/ImageViewer.app/Resources/French.lproj/Localizable.strings
 libexec/GNUstep/ImageViewer.app/Resources/German.lproj/
 libexec/GNUstep/ImageViewer.app/Resources/German.lproj/Localizable.strings
+libexec/GNUstep/ImageViewer.app/Resources/Hungarian.lproj/
+libexec/GNUstep/ImageViewer.app/Resources/Hungarian.lproj/Localizable.strings
 libexec/GNUstep/ImageViewer.app/Resources/ImageViewer.desktop
 libexec/GNUstep/ImageViewer.app/Resources/ImageViewer.tiff
 libexec/GNUstep/ImageViewer.app/Resources/ImageViewerInfo.plist
