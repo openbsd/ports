@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/15 07:14:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/24 20:10:28 sebastia Exp $
 
      SUBDIR =
      SUBDIR += chipmunk
@@ -15,5 +15,6 @@
      SUBDIR += spice
      SUBDIR += xcircuit
      SUBDIR += xnecview
+     SUBDIR += xtrkcad
 
 .include <bsd.port.subdir.mk>
