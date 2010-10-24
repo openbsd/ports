@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2010/07/23 16:05:40 phessler Exp $
+$OpenBSD: patch-Makefile,v 1.2 2010/10/24 12:13:27 phessler Exp $
 --- Makefile.orig	Sun Mar 28 20:10:18 2010
-+++ Makefile	Fri Jul  2 10:07:41 2010
++++ Makefile	Sun Aug 22 14:44:17 2010
 @@ -1,6 +1,6 @@
  all: library all_samples 
  
 -CFLAGS=-O4  -I. -w
-+CFLAGS+=  -I. -w
++CFLAGS+=  -I. -w -fPIC
  
  # OpenMP support
  #CFLAGS=-O4  -I. -w -fopenmp

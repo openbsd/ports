@@ -1,10 +1,10 @@
 prefix=/usr/local
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
-includedir=${prefix}/include/libraw
+includedir=${prefix}/include
 
 Name: raw
 Description: libraw
 Version: %%VERSION%%
 Libs: -L${libdir} -lraw
-Cflags: -I${includedir}
+Cflags: -I${includedir}/libraw
