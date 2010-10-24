@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:35:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/24 12:49:39 jasper Exp $
 crack/
 crack/Crack
 @comment crack/Crack.orig
@@ -120,13 +120,13 @@ crack/manual.html
 crack/manual.txt
 crack/run/
 crack/run/bin/
-crack/run/bin/cracker
-crack/run/bin/dawg
-crack/run/bin/dictfilt
-crack/run/bin/kickdict
+@bin crack/run/bin/cracker
+@bin crack/run/bin/dawg
+@bin crack/run/bin/dictfilt
+@bin crack/run/bin/kickdict
 crack/run/bin/libc5.a
 crack/run/bin/stdlib-cracker
-crack/run/bin/xdawg
+@bin crack/run/bin/xdawg
 crack/run/dict/
 crack/run/dict/.dictmade
 crack/run/dict/1.dwg.gz
@@ -254,6 +254,6 @@ crack/src/util/elcid.c,trad
 @comment crack/src/util/elcid.c.orig
 crack/src/util/elcid.h
 crack/src/util/kickdict.c
-@comment crack/src/util/kickdict.c.orig
 @extraunexec rm -f %D/crack/run/dict/*
 @extraunexec rm -f %D/crack/run/*
+@comment crack/src/util/kickdict.c.orig

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Crack,v 1.3 2001/11/19 21:48:37 jsyn Exp $
+$OpenBSD: patch-Crack,v 1.4 2010/10/24 12:49:39 jasper Exp $
 --- Crack.orig	Sat Dec 21 02:09:41 1996
-+++ Crack	Mon Mar 12 16:17:16 2001
-@@ -42,8 +42,7 @@ C5FLAGS="-DUSE_STRING_H -DUSE_STDLIB_H -
++++ Crack	Sun Oct 24 14:45:50 2010
+@@ -42,8 +42,7 @@ C5FLAGS="-DUSE_STRING_H -DUSE_STDLIB_H -DUSE_SIGNAL_H 
  #
  
  # vanilla unix cc

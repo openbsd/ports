@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 12:49:39 jasper Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	sensible unix password cracker
 
 DISTNAME=	crack5.0
-PKGNAME=	crack-5.0p2
+PKGNAME=	crack-5.0
+REVISION=	3
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.crypticide.com/users/alecm/security/
 
-MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
+MASTER_SITES=	${HOMEPAGE}/crack/ \
 		${MASTER_SITE_PACKETSTORM:=Crackers/crack/}
 
 # Artistic
@@ -20,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/c50a
+
+NO_REGRESS=	Yes
 
 pre-configure:
 .if !defined(USE_DES)
@@ -41,16 +44,13 @@ do-build:
 	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
 .endif
 
-NO_REGRESS=	Yes
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/crack
 	@rm -f ${WRKSRC}/Run/*
 	@${INSTALL_SCRIPT} ${FILESDIR}/openbsd2spf ${WRKSRC}/scripts
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/crack/README.OpenBSD
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/crack
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/crack
-	@perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," ${PREFIX}/crack/README.OpenBSD
 	@perl -pi -e "s,^make.*,# make removed for runtime," ${PREFIX}/crack/Crack
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: README.OpenBSD,v 1.1 2003/11/18 19:07:54 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/10/24 12:49:39 jasper Exp $
 
 To use Crack 5.0 on OpenBSD:
 
-   $ cd %%TRUEPREFIX%%/crack
+   $ cd ${TRUEPREFIX}/crack
    $ sudo ./Crack -fmt openbsd /etc/master.passwd
 
 This will start a background process trying to crack all the passwords
