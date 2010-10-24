@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/24 10:51:21 jasper Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
-DISTNAME=	XML-Twig-3.35
+DISTNAME=	XML-Twig-3.37
 MODULES=	cpan
 CATEGORIES=	textproc
 USE_GROFF =	Yes
