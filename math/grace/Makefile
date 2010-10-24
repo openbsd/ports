@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 09:21:04 sthen Exp $
-# $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
-# Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
+# $OpenBSD: Makefile,v 1.32 2010/10/24 12:32:42 naddy Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -83,12 +81,12 @@ post-install:
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/grace
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/gracebat
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/xmgrace
-	ln -sf ${GRACE_DIR}/doc/xmgrace.1 ${PREFIX}/man/man1/xmgrace.1
+	ln -sf ../../grace/doc/xmgrace.1 ${PREFIX}/man/man1/xmgrace.1
 .endif
 	ln -sf ${GRACE_DIR}/include/grace_np.h ${PREFIX}/include/grace_np.h
 	ln -sf ${GRACE_DIR}/lib/libgrace_np.a ${PREFIX}/lib/libgrace_np.a
-	ln -sf ${GRACE_DIR}/doc/grace.1 ${PREFIX}/man/man1/grace.1
-	ln -sf ${GRACE_DIR}/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
-	ln -sf ${GRACE_DIR}/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
+	ln -sf ../../grace/doc/grace.1 ${PREFIX}/man/man1/grace.1
+	ln -sf ../../grace/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
+	ln -sf ../../grace/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
 	
 .include <bsd.port.mk>
