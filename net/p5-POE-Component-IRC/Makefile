@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/24 11:35:12 jasper Exp $
 
 COMMENT=	event-driven IRC-client module
 
@@ -28,7 +28,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-POE-Component-IRC
 	${INSTALL_DATA} ${WRKSRC}/docs/* \
 		${PREFIX}/share/doc/p5-POE-Component-IRC
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-POE-Component-IRC
 	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>
