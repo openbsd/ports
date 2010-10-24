@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2010/10/23 22:08:47 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.247 2010/10/24 13:21:27 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -176,8 +176,10 @@
      SUBDIR += speex
      SUBDIR += squeezecenter
      SUBDIR += streamripper
+     SUBDIR += swh-plugins
      SUBDIR += taglib
      SUBDIR += tagtool
+     SUBDIR += tap-plugins
      SUBDIR += teknap
      SUBDIR += tempest
      SUBDIR += timidity
