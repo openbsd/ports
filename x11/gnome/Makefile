@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2010/10/25 10:24:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2010/10/25 17:44:30 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -66,6 +66,7 @@
      SUBDIR += libslab
      SUBDIR += libxklavier
      SUBDIR += mag
+     SUBDIR += main-menu
      SUBDIR += media
      SUBDIR += menus
      SUBDIR += metacity
