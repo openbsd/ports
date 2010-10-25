@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/25 09:27:07 stephan Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/25 09:43:58 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -41,12 +41,14 @@ SUBDIR += locale-fr
 SUBDIR += locale-it
 SUBDIR += locale-ja
 SUBDIR += masquerade
+SUBDIR += menu_force
 SUBDIR += meta-tags
 SUBDIR += modalframe
 SUBDIR += nodeaccess_userreference
 SUBDIR += nodetype
 SUBDIR += noderelationships
 SUBDIR += notify
+SUBDIR += override_node_options
 SUBDIR += panels
 SUBDIR += pathauto
 SUBDIR += phpmailer
