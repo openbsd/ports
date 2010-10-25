@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/25 10:59:20 stephan Exp $
+# $OpenBSD: Makefile,v 1.39 2010/10/25 11:34:29 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -59,6 +59,7 @@ SUBDIR += printer-friendly
 SUBDIR += publishcontent
 SUBDIR += relevant_content
 SUBDIR += rules
+SUBDIR += search_config
 SUBDIR += scheduler
 SUBDIR += schema
 SUBDIR += securelogin
@@ -69,6 +70,7 @@ SUBDIR += theme-newsflash
 SUBDIR += theme-zen
 SUBDIR += themesettingsapi
 SUBDIR += token
+SUBDIR += transliteration
 SUBDIR += user_import
 SUBDIR += user_readonly
 SUBDIR += view_unpublished
