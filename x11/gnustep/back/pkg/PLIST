@@ -1,5 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/05 18:29:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/10/25 17:38:57 sebastia Exp $
+@pkgpath ${BASE_PKGPATH},cairo
+@pkgpath ${BASE_PKGPATH},libart
+@pkgpath ${BASE_PKGPATH},xlib
 @bin bin/gpbs
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/English.lproj/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/English.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/libgnustep-back-${BACKENDV}.so
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/stamp.make
 lib/GNUstep/Fonts/
 lib/GNUstep/Fonts/Helvetica.nfont/
 lib/GNUstep/Fonts/Helvetica.nfont/FontInfo.plist
@@ -28,6 +40,3 @@ lib/GNUstep/Fonts/Helvetica.nfont/n019064l.afm
 lib/GNUstep/Fonts/Helvetica.nfont/n019064l.pfb
 lib/GNUstep/Fonts/Helvetica.nfont/n019064l.pfm
 @man man/man1/gpbs.1
-%%cairo%%
-%%libart%%
-%%xlib%%
