@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/23 20:23:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/25 12:38:32 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
 DISTNAME=		telepathy-glib-0.12.0
+REVISION=		0
 
 SHARED_LIBS +=	telepathy-glib       7.0      # .45.0
 
@@ -16,18 +17,22 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=           No
 
-BUILD_DEPENDS=		::textproc/libxslt
+BUILD_DEPENDS=		:gobject-introspection->=0.9.12p0:devel/gobject-introspection \
+			::lang/vala \
+			::textproc/libxslt
 LIB_DEPENDS=		::x11/dbus-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-introspection
+			--enable-introspection \
+			--enable-vala-bindings
 #CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure \
+		${WRKSRC}/telepathy-glib/Makefile.in \
 		${WRKSRC}/tests/all-errors-documented.py
 
 .include <bsd.port.mk>
