@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 21:52:00 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/25 08:41:27 landry Exp $
 
 SHARED_ONLY =		Yes
 
@@ -35,6 +35,7 @@ MODGCC4_LANGS =		c c++
 RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS =		::audio/jack \
 			::devel/libglade2
+BUILD_DEPENDS +=	::audio/ladspa
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
