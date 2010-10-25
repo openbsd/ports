@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:32:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/25 22:55:43 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -105,5 +105,16 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/texlive
+	# stop this crap turning up in packing list
+	rm -Rf ${WRKINST}/${TRUEPREFIX}/texmf
+	rm -Rf ${WRKINST}/${TRUEPREFIX}/texmf-dist
+	# not needed but committing commented incase i need later XXX
+	for link in `find ${PREFIX}/bin -type l`; do \
+		dest=`stat -f %Y $${link}`; \
+		if ! [ -z "`echo $${dest} | grep -e '^\.\.\/texmf'`" ]; then \
+			newdest=`echo $${dest} | sed -e 's/\.\.\/texmf/\.\.\/share\/texmf/g'`; \
+			ln -sf $${newdest} $${link}; \
+		fi \
+	done
 
 .include <bsd.port.mk>
