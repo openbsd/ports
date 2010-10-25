@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.1.1.1 2010/08/20 13:40:14 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.2 2010/10/25 10:46:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -287,7 +287,8 @@ sub lines
 	my $n = 2;
 	my $r = '';
 
-	while (my $newline = shift @new) {
+	while (@new > 0) {
+		my $newline = shift @new;
 		my $oldline = shift @{$self->{oldlines}};
 		return $r if $n++ > $self->{height};
 		# line didn't change: try to go down
