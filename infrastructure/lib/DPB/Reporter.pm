@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.2 2010/10/25 10:46:11 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.3 2010/10/25 17:23:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -309,7 +309,8 @@ sub lines
 		$r .= $self->clamped($newline);
 	}
 	# extra lines must disappear
-	while (my $line = shift(@{$self->{oldlines}})) {
+	while (@{$self->{oldlines}} > 0) {
+		my $line = shift @{$self->{oldlines}};
 		if ($self->{cleareol}) {
 			$r .= $self->clear_clamped('');
 		} else {
