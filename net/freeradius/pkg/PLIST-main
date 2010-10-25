@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/06/17 13:40:08 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2010/10/25 13:22:20 pea Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -6,6 +6,7 @@
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
 @bin bin/radclient
 @bin bin/radconf2xml
+bin/radcrypt
 @bin bin/radeapclient
 bin/radlast
 @bin bin/radsniff
@@ -144,12 +145,13 @@ sbin/raddebug
 sbin/radwatch
 @comment sbin/rc.radiusd
 share/doc/freeradius/
-share/doc/freeradius/Acct-Type
-share/doc/freeradius/Autz-Type
-@comment share/doc/freeradius/CYGWIN
+share/doc/freeradius/Acct-Type.rst
+share/doc/freeradius/Autz-Type.rst
+share/doc/freeradius/CYGWIN.rst
 share/doc/freeradius/ChangeLog
-share/doc/freeradius/DIFFS
+share/doc/freeradius/DIFFS.rst
 @comment share/doc/freeradius/MACOSX
+share/doc/freeradius/Makefile.sphinx
 @comment share/doc/freeradius/OS2
 share/doc/freeradius/Post-Auth-Type
 share/doc/freeradius/RADIUS-LDAP-eDirectory
@@ -157,21 +159,22 @@ share/doc/freeradius/RADIUS-SQL.schema
 share/doc/freeradius/README
 share/doc/freeradius/Session-Type
 share/doc/freeradius/Simultaneous-Use
-share/doc/freeradius/aaa.txt
+share/doc/freeradius/aaa.rst
 share/doc/freeradius/ascend
 share/doc/freeradius/bay
 share/doc/freeradius/bugs
-share/doc/freeradius/cisco
-share/doc/freeradius/coding-methods.txt
-share/doc/freeradius/configurable_failover
+share/doc/freeradius/cisco.rst
+share/doc/freeradius/coding-methods.rst
+share/doc/freeradius/configurable_failover.rst
 share/doc/freeradius/examples/
-share/doc/freeradius/load-balance.txt
-share/doc/freeradius/misc-nas
-share/doc/freeradius/module_interface
+share/doc/freeradius/index.rst
+share/doc/freeradius/load-balance.rst
+share/doc/freeradius/misc-nas.rst
+share/doc/freeradius/module_interface.rst
 share/doc/freeradius/performance-testing
-share/doc/freeradius/processing_users_file
-share/doc/freeradius/proxy
-share/doc/freeradius/release-method.txt
+share/doc/freeradius/processing_users_file.rst
+share/doc/freeradius/proxy.rst
+share/doc/freeradius/release-method.rst
 share/doc/freeradius/rfc/
 share/doc/freeradius/rfc/attributes.html
 share/doc/freeradius/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
@@ -203,6 +206,7 @@ share/doc/freeradius/rfc/rfc2868.txt
 share/doc/freeradius/rfc/rfc2869.txt
 share/doc/freeradius/rfc/rfc2882.txt
 share/doc/freeradius/rfc/rfc2924.txt
+share/doc/freeradius/rfc/rfc3079.txt
 share/doc/freeradius/rfc/rfc3162.txt
 share/doc/freeradius/rfc/rfc3575.txt
 share/doc/freeradius/rfc/rfc3576.txt
@@ -227,6 +231,9 @@ share/doc/freeradius/rfc/rfc5176.txt
 share/doc/freeradius/rfc/rfc5247.txt
 share/doc/freeradius/rfc/rfc5281.txt
 share/doc/freeradius/rfc/rfc5580.txt
+share/doc/freeradius/rfc/rfc5607.txt
+share/doc/freeradius/rfc/rfc5904.txt
+share/doc/freeradius/rfc/rfc5997.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_expiration
@@ -241,9 +248,9 @@ share/doc/freeradius/rlm_sql
 share/doc/freeradius/rlm_sqlcounter
 share/doc/freeradius/rlm_sqlippool
 share/doc/freeradius/snmp
-share/doc/freeradius/supervise-radiusd.txt
+share/doc/freeradius/supervise-radiusd.rst
 share/doc/freeradius/tuning_guide
-share/doc/freeradius/variables.txt
+share/doc/freeradius/variables.rst
 share/examples/freeradius/
 @mode 755
 @group _freeradius
@@ -322,6 +329,8 @@ share/examples/freeradius/modules/detail.log
 @sample ${SYSCONFDIR}/raddb/modules/detail.log
 share/examples/freeradius/modules/digest
 @sample ${SYSCONFDIR}/raddb/modules/digest
+share/examples/freeradius/modules/dynamic_clients
+@sample ${SYSCONFDIR}/raddb/modules/dynamic_clients
 share/examples/freeradius/modules/echo
 @sample ${SYSCONFDIR}/raddb/modules/echo
 share/examples/freeradius/modules/etc_group
@@ -352,6 +361,8 @@ share/examples/freeradius/modules/mschap
 @sample ${SYSCONFDIR}/raddb/modules/mschap
 share/examples/freeradius/modules/ntlm_auth
 @sample ${SYSCONFDIR}/raddb/modules/ntlm_auth
+share/examples/freeradius/modules/opendirectory
+@sample ${SYSCONFDIR}/raddb/modules/opendirectory
 share/examples/freeradius/modules/otp
 @sample ${SYSCONFDIR}/raddb/modules/otp
 @comment share/examples/freeradius/modules/pam
@@ -521,6 +532,7 @@ share/freeradius/dictionary.merit
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
 share/freeradius/dictionary.motorola
+share/freeradius/dictionary.motorola.wimax
 share/freeradius/dictionary.navini
 share/freeradius/dictionary.netscreen
 share/freeradius/dictionary.networkphysics
@@ -549,6 +561,7 @@ share/freeradius/dictionary.rfc3576
 share/freeradius/dictionary.rfc3580
 share/freeradius/dictionary.rfc4072
 share/freeradius/dictionary.rfc4372
+share/freeradius/dictionary.rfc4603
 share/freeradius/dictionary.rfc4675
 share/freeradius/dictionary.rfc4679
 share/freeradius/dictionary.rfc4818
@@ -556,6 +569,8 @@ share/freeradius/dictionary.rfc4849
 share/freeradius/dictionary.rfc5090
 share/freeradius/dictionary.rfc5176
 share/freeradius/dictionary.rfc5580
+share/freeradius/dictionary.rfc5607
+share/freeradius/dictionary.rfc5904
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
 share/freeradius/dictionary.shasta
@@ -580,6 +595,7 @@ share/freeradius/dictionary.walabi
 share/freeradius/dictionary.waverider
 share/freeradius/dictionary.wichorus
 share/freeradius/dictionary.wimax
+share/freeradius/dictionary.wimax.wichorus
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia
 share/freeradius/dictionary.xylan
