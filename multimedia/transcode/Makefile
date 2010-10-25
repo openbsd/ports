@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/10/25 07:46:43 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xpm Xrandr Xrender Xt
 WANTLIB += Xv bz2 a52 avcodec avformat avutil c dv dvdread faac faad
 WANTLIB += freetype gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4
 WANTLIB += postproc pthread-stubs pthread schroedinger-1.0 sndio
-WANTLIB += speex theora usbhid vorbis x264 xcb xml2 xvidcore z
+WANTLIB += speex theora usbhid vorbis vorbisenc vorbisfile x264 xcb xml2 xvidcore z
 
 FLAVORS=	lzo mjpegtools quicktime altivec
 FLAVOR?=
