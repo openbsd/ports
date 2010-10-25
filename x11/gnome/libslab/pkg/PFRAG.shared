@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/25 10:23:29 ajacoutot Exp $
+@lib lib/libslab.so.${LIBslab_VERSION}

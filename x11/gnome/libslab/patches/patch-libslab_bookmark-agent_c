@@ -1,0 +1,34 @@
+$OpenBSD: patch-libslab_bookmark-agent_c,v 1.1.1.1 2010/10/25 10:23:29 ajacoutot Exp $
+
+Bug 594164 - gnome-main-menu issues doesn't display correctly  
+https://bugzilla.gnome.org/show_bug.cgi?id=594164
+
+--- libslab/bookmark-agent.c.orig	Wed Mar 24 16:57:04 2010
++++ libslab/bookmark-agent.c	Mon Oct 25 12:16:58 2010
+@@ -26,6 +26,8 @@
+ #	define PACKAGE "gnome-main-menu"
+ #endif
+ 
++#define MAIN_MENU "gnome-main-menu"
++
+ #include <gtk/gtk.h>
+ 
+ #include <string.h>
+@@ -562,7 +564,7 @@ bookmark_agent_new (BookmarkStoreType type)
+ 		priv->user_modifiable = GPOINTER_TO_INT (libslab_get_gconf_value (priv->lockdown_key));
+ 
+ 		priv->user_store_path = g_build_filename (
+-			g_get_user_data_dir (), PACKAGE, priv->store_filename, NULL);
++			g_get_user_data_dir (), MAIN_MENU, priv->store_filename, NULL);
+ 
+ 		priv->update_path = update_user_spec_path;
+ 
+@@ -959,7 +961,7 @@ find_package_data_file (const gchar *filename)
+ 	dirs = g_get_system_data_dirs ();
+ 	
+ 	for (i = 0; ! path && dirs && dirs [i]; ++i) {
+-		path = g_build_filename (dirs [i], PACKAGE, filename, NULL);
++		path = g_build_filename (dirs [i], MAIN_MENU, filename, NULL);
+ 		
+ 		if (! g_file_test (path, G_FILE_TEST_EXISTS)) {
+ 			g_free (path);
