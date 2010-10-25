@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+--- src/Makefile.orig	Fri Sep 24 11:49:02 2010
++++ src/Makefile	Fri Sep 24 11:49:24 2010
+@@ -1,6 +1,6 @@
+-CC = gcc
+-CFLAGS = -O2
+-LDLIBS = -lm
++CC ?= gcc
++CFLAGS ?= -O2
++LDLIBS ?= -lm
+ OBJS = vnstat.o ifinfo.o dbxml.o dbshow.o dbaccess.o dbmerge.o common.o misc.o cfg.o traffic.o
+ DOBJS = vnstatd.o ifinfo.o dbaccess.o dbcache.o common.o misc.o cfg.o
+ IOBJS = vnstati.o image.o dbaccess.o dbmerge.o common.o misc.o cfg.o

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+@newgroup _vnstat:658
+@newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/bin/sh
+@bin bin/vnstat
+@bin bin/vnstati
+@man man/man1/vnstat.1
+@man man/man1/vnstatd.1
+@man man/man1/vnstati.1
+@man man/man5/vnstat.conf.5
+@bin sbin/vnstatd
+@owner _vnstat
+@sample /var/log/vnstat/
+@sample /var/run/vnstat/
+@group _vnstat
+@sample /var/db/vnstat/
+@sample
+@owner
+@group
+share/doc/vnstat/
+share/doc/vnstat/README.OpenBSD
+share/examples/vnstat/
+share/examples/vnstat/vnstat.conf
+@sample ${SYSCONFDIR}/vnstat.conf

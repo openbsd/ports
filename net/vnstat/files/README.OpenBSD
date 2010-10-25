@@ -1,0 +1,28 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+
+All the command must be launched as the user _vnstat.
+
+1) Launch vnstat --iflist to see all the available interfaces.
+
+2) For each interface that you want to monitor, launch this command:
+   # vnstat -i interface -u
+This will create the database for the specified interface.
+
+3) Edit ${SYSCONFDIR}/vnstat.conf if necessary
+
+4) Finally launch the vnstatd daemon:
+   # /usr/local/sbin/vnstatd -d
+
+5) Add the following to your ${SYSCONFDIR}/rc.local:
+   if [ -x /usr/local/sbin/vnstatd ]; then
+      echo -n ' vnstatd'
+      install -d -o _vnstat /var/run/vnstat
+      su -l _vnstat -c "/usr/local/sbin/vnstatd -d"
+   fi
+
+6) Create graphics with the command vnstati
+
+
+Random hints:
+    * You can enable debug in ${SYSCONFDIR}/vnstat.conf and check 
+      the logs in /var/log/vnstat/vnstat.log

@@ -1,0 +1,29 @@
+$OpenBSD: patch-cfg_vnstat_conf,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+--- cfg/vnstat.conf.orig	Sat Jan  2 18:36:13 2010
++++ cfg/vnstat.conf	Fri Sep 24 13:47:14 2010
+@@ -2,10 +2,10 @@
+ ##
+ 
+ # default interface
+-Interface "eth0"
++Interface "lo0"
+ 
+ # location of the database directory
+-DatabaseDir "/var/lib/vnstat"
++DatabaseDir "/var/db/vnstat"
+ 
+ # locale (LC_ALL) ("-" = use system locale)
+ Locale "-"
+@@ -90,10 +90,10 @@ SaveOnStatusChange 1
+ UseLogging 2
+ 
+ # file used for logging if UseLogging is set to 1
+-LogFile "/var/log/vnstat.log"
++LogFile "/var/log/vnstat/vnstat.log"
+ 
+ # file used as daemon pid / lock file
+-PidFile "/var/run/vnstat.pid"
++PidFile "/var/run/vnstat/vnstat.pid"
+ 
+ 
+ # vnstati
