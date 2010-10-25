@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.11 2010/10/24 17:56:11 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.12 2010/10/25 10:48:00 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -136,6 +136,7 @@ pre-configure:
 .endfor
 
 # common install target - ports can use post-install for specific stuff
+.if ${MOZILLA_BRANCH:C/\..*//} != "2"
 do-install:
 	cd ${MOB} && \
 		find ${MOZILLA_DATADIRS} -type d \
@@ -147,9 +148,7 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/${_MOZ_PROJECT_SHORT} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client ${MOZ}
-.if ${MOZILLA_VERSION:C/\..*//} != "4" && ${MOZILLA_PROJECT} != "xulrunner2.0"
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOZ}
-.endif
 	if [ -f ${FILESDIR}/README.OpenBSD ]; then \
 		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
 			${MOZ}/README.OpenBSD ; \
@@ -159,3 +158,4 @@ do-install:
 		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
 			${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
 	fi ;
+.endif
