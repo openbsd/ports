@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/06 13:53:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/25 09:59:02 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION=		1.3.2
-REVISION=		0
+VERSION=		1.3.3
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
@@ -59,6 +58,7 @@ MAKE_ENV+=	OBJC_INCLUDE_PATH="${LOCALBASE}/include/postgresql;${LOCALBASE}/inclu
 MAKE_FLAGS+=	MAJOR_VERSION=${SO_MAJOR} MINOR_VERSION=${SO_MINOR}
 MAKE_FLAGS+=	SOPE_MAJOR_VERSION=4 SOPE_MINOR_VERSION=9
 CONFIGURE_ENV+=	${MAKE_ENV}
+NO_REGRESS=	Yes
 		  
 post-extract:
 	# those fhs.make files are not needed and may cause harm if they exist

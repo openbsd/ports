@@ -1,10 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
+$OpenBSD: patch-configure,v 1.2 2010/10/25 09:59:02 sebastia Exp $
 
 do not link against gnustep-gui in case its installed
 decouple version of sope from the shared library interface versions
+remove unused ssl check that generates a make variable with whitespace in
+its name
 
 --- configure.orig	Thu Aug 19 17:13:13 2010
-+++ configure	Thu Sep 23 15:54:32 2010
++++ configure	Sun Oct 24 19:22:44 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -31,3 +33,16 @@ decouple version of sope from the shared library interface versions
      cfgwrite "SOPE_DBADAPTORS=\${SOPE_LIBDIR}/dbadaptors"
      cfgwrite "SOPE_PRODUCTS=\${SOPE_LIBDIR}/products"
      cfgwrite "SOPE_SAXDRIVERS=\${SOPE_LIBDIR}/saxdrivers"
+@@ -469,11 +470,7 @@ checkDependencies() {
+   cfgwrite "# library dependencies"
+   checkLinking "xml2"        optional;
+   checkLinking "ldap"        optional;
+-  if [ `uname` = "OpenBSD" ];then
+-    checkLinking "ssl crypto"  required; # TODO: make optional
+-  else
+-    checkLinking "ssl"         required; # TODO: make optional
+-  fi
++  checkLinking "ssl"         required; # TODO: make optional
+   checkLinking "pq"          optional;
+ #  checkLinking "sqlite3"     optional;
+   cfgwrite "HAS_LIBRARY_sqlite3=no"
