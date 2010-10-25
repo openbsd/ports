@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/25 12:42:02 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		2.30.3
-REVISION=		6
+GNOME_VERSION=		2.32.0.1
 
 CATEGORIES=		net
 
@@ -16,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		devel/gconf2 \
-			devel/gettext \
+MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
@@ -36,7 +34,7 @@ WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render ltdl
 WANTLIB += xcb-render-util xml2 z canberra canberra-gtk camel-1.2
 WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.8
 WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
-#WANTLIB += telepathy-logger
+WANTLIB += telepathy-logger folks folks-telepathy
 
 BUILD_DEPENDS=		::devel/iso-codes \
 			::x11/py-gtk2 \
@@ -52,9 +50,10 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::graphics/clutter/clutter-gtk \
 			::net/telepathy/telepathy-farsight \
 			::net/telepathy/telepathy-mission-control \
-			::textproc/enchant
-#			::net/telepathy/telepathy-logger
-
+			::net/telepathy/telepathy-logger \
+			::textproc/enchant \
+			::x11/gnome/folks \
+			::x11/gnome/keyring
 RUN_DEPENDS=		::devel/iso-codes \
 			::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
@@ -66,8 +65,6 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	empathy
 
-AUTOCONF_VERSION=	2.62
-CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--enable-spell=Yes \
@@ -75,11 +72,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-map=Yes\
 			--enable-webkit=no \
 			--enable-nautilus-sendto \
-			--enable-control-center-embedding=no
-#			--enable-tpl
+			--enable-control-center-embedding=no \
+			--with-connectivity=no \
+			--with-eds \
+			--disable-schemas-compile \
+			--enable-gtk3=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 
