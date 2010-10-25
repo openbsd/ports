@@ -1,35 +1,35 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/25 08:46:49 espie Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
+ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
-CATEGORIES=	x11
+CATEGORIES =	x11
 
-COMMENT=	DVD player
-DISTNAME=	ogle-0.9.2
-REVISION=	11
-SHARED_LIBS=	dvdcontrol	11.0 \
+COMMENT =	DVD player
+DISTNAME =	ogle-0.9.2
+REVISION =	12
+SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
-HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
+HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
-MASTER_SITES=	${HOMEPAGE}dist/
+MASTER_SITES =	${HOMEPAGE}dist/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE =	gnu
 
 #FAKE=all
 # GPL
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_PACKAGE_CDROM=Yes
-PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c m z xml2 jpeg mad \
+WANTLIB =	ICE SM X11 Xext Xinerama Xv Xxf86vm c m z xml2 jpeg mad \
 		Xau Xdmcp pthread-stubs sndio xcb a52 dvdread 
 
-MODULES=	converters/libiconv
+MODULES =	converters/libiconv
 
-LIB_DEPENDS=	::audio/liba52 \
+LIB_DEPENDS =	::audio/liba52 \
 		::devel/libdvdread \
 		:libxml->=2.4.19:textproc/libxml \
 		::graphics/jpeg \
@@ -37,28 +37,28 @@ LIB_DEPENDS=	::audio/liba52 \
 
 USE_GROFF =	Yes
 
-FLAVORS=	altivec
-FLAVOR?=
+FLAVORS =	altivec
+FLAVOR ?=
 
-USE_LIBTOOL=	Yes
-CONFIGURE_ARGS=--disable-oss --disable-sunaudio --enable-obsdaudio
+USE_LIBTOOL =	Yes
+CONFIGURE_ARGS =	--disable-oss --disable-sunaudio --enable-obsdaudio
 
 .if ${FLAVOR:L} == "altivec"
-ONLY_FOR_ARCHS=	powerpc
-CONFIGURE_ARGS+=--enable-altivec
+ONLY_FOR_ARCHS =	powerpc
+CONFIGURE_ARGS +=	--enable-altivec
 .else
-CONFIGURE_ARGS+=--disable-altivec
+CONFIGURE_ARGS +=	--disable-altivec
 .endif
-CONFIGURE_ARGS+=--with-libjpeg=${DEPBASE} \
-		--with-dvdread=${DEPBASE} \
-		--with-liba52=${DEPBASE} \
-		--with-libmad=${DEPBASE} \
-		--with-xml-prefix=${DEPBASE}
+CONFIGURE_ARGS +=	--with-libjpeg=${DEPBASE} \
+			--with-dvdread=${DEPBASE} \
+			--with-liba52=${DEPBASE} \
+			--with-libmad=${DEPBASE} \
+			--with-xml-prefix=${DEPBASE}
 
-CONFIGURE_ENV+=xml_config_args=--prefix=${DEPBASE} LIBOGLEAO_LIBS="-lsndio"
+CONFIGURE_ENV +=	xml_config_args=--prefix=${DEPBASE} \
+			LIBOGLEAO_LIBS="-lsndio"
 
 post-install:
-	cd ${PREFIX}/man/man5 && mv oglerc.5 oglerc.tbl
 	cd ${PREFIX}/lib && \
 	ln -sf ${TRUEPREFIX}/lib/ogle/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
 	cd ${PREFIX}/lib && \
