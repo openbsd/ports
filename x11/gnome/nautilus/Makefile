@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/10/25 10:30:08 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -7,6 +7,7 @@ COMMENT=		GNOME shell and file manager
 # (i.e. ${LOCALBASE}/lib/nautilus/extensions-2.0)
 # graphics/evince
 # x11/gnome/file-roller
+# x11/gnome/main-menu
 # x11/gnome/nautilus-open-terminal
 # x11/gnome/nautilus-sendto
 # x11/gnome/seahorse-plugins
