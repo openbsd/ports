@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.657 2010/10/23 22:59:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.658 2010/10/25 10:18:26 pea Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -530,6 +530,7 @@
      SUBDIR += valknut
      SUBDIR += vicq
      SUBDIR += vncsnapshot
+     SUBDIR += vnstat
      SUBDIR += vsftpd
      SUBDIR += walker
      SUBDIR += weex
