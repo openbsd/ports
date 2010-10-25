@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2010/10/24 20:20:15 phessler Exp $
+# $OpenBSD: Makefile,v 1.215 2010/10/25 12:13:55 edd Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += chocolate-doom
      SUBDIR += circuit
      SUBDIR += clines
+     SUBDIR += clonekeen
      SUBDIR += cmatrix
      SUBDIR += connect4
      SUBDIR += corewars
