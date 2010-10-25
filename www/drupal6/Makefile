@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 08:57:40 stephan Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/25 07:34:46 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -12,6 +12,7 @@ SUBDIR += backup_migrate
 SUBDIR += bueditor
 SUBDIR += captcha
 SUBDIR += cck
+SUBDIR += cck_blocks
 SUBDIR += ckeditor-link
 SUBDIR += compact_forms
 SUBDIR += contemplate
@@ -21,6 +22,7 @@ SUBDIR += ctools
 SUBDIR += date
 SUBDIR += devel
 SUBDIR += dhtml_menu
+SUBDIR += diff
 SUBDIR += draft
 SUBDIR += filefield
 SUBDIR += filefield_sources
@@ -43,6 +45,7 @@ SUBDIR += modalframe
 SUBDIR += nodeaccess_userreference
 SUBDIR += nodetype
 SUBDIR += noderelationships
+SUBDIR += notify
 SUBDIR += panels
 SUBDIR += pathauto
 SUBDIR += phpmailer
