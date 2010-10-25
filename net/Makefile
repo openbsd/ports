@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.658 2010/10/25 10:18:26 pea Exp $
+# $OpenBSD: Makefile,v 1.659 2010/10/25 12:45:00 pea Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += axel
      SUBDIR += axyftp
      SUBDIR += balance
+     SUBDIR += bindgraph
      SUBDIR += bing
      SUBDIR += bird
      SUBDIR += bird,v6
