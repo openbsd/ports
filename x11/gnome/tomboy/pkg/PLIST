@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/10/01 16:04:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/10/25 17:41:14 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -84,6 +84,7 @@ share/gnome/help/tomboy/C/note-edit-prefs.page
 share/gnome/help/tomboy/C/prefs.page
 share/gnome/help/tomboy/C/problems.page
 share/gnome/help/tomboy/C/search.page
+share/gnome/help/tomboy/C/sync-setup.page
 share/gnome/help/tomboy/C/sync.page
 share/gnome/help/tomboy/C/whatsnew.page
 share/gnome/help/tomboy/ca/
@@ -124,6 +125,7 @@ share/gnome/help/tomboy/ca/note-edit-prefs.page
 share/gnome/help/tomboy/ca/prefs.page
 share/gnome/help/tomboy/ca/problems.page
 share/gnome/help/tomboy/ca/search.page
+share/gnome/help/tomboy/ca/sync-setup.page
 share/gnome/help/tomboy/ca/sync.page
 share/gnome/help/tomboy/ca/whatsnew.page
 share/gnome/help/tomboy/cs/
@@ -164,6 +166,7 @@ share/gnome/help/tomboy/cs/note-edit-prefs.page
 share/gnome/help/tomboy/cs/prefs.page
 share/gnome/help/tomboy/cs/problems.page
 share/gnome/help/tomboy/cs/search.page
+share/gnome/help/tomboy/cs/sync-setup.page
 share/gnome/help/tomboy/cs/sync.page
 share/gnome/help/tomboy/cs/whatsnew.page
 share/gnome/help/tomboy/de/
@@ -204,6 +207,7 @@ share/gnome/help/tomboy/de/note-edit-prefs.page
 share/gnome/help/tomboy/de/prefs.page
 share/gnome/help/tomboy/de/problems.page
 share/gnome/help/tomboy/de/search.page
+share/gnome/help/tomboy/de/sync-setup.page
 share/gnome/help/tomboy/de/sync.page
 share/gnome/help/tomboy/de/whatsnew.page
 share/gnome/help/tomboy/el/
@@ -244,6 +248,7 @@ share/gnome/help/tomboy/el/note-edit-prefs.page
 share/gnome/help/tomboy/el/prefs.page
 share/gnome/help/tomboy/el/problems.page
 share/gnome/help/tomboy/el/search.page
+share/gnome/help/tomboy/el/sync-setup.page
 share/gnome/help/tomboy/el/sync.page
 share/gnome/help/tomboy/el/whatsnew.page
 share/gnome/help/tomboy/en_GB/
@@ -284,6 +289,7 @@ share/gnome/help/tomboy/en_GB/note-edit-prefs.page
 share/gnome/help/tomboy/en_GB/prefs.page
 share/gnome/help/tomboy/en_GB/problems.page
 share/gnome/help/tomboy/en_GB/search.page
+share/gnome/help/tomboy/en_GB/sync-setup.page
 share/gnome/help/tomboy/en_GB/sync.page
 share/gnome/help/tomboy/en_GB/whatsnew.page
 share/gnome/help/tomboy/es/
@@ -324,6 +330,7 @@ share/gnome/help/tomboy/es/note-edit-prefs.page
 share/gnome/help/tomboy/es/prefs.page
 share/gnome/help/tomboy/es/problems.page
 share/gnome/help/tomboy/es/search.page
+share/gnome/help/tomboy/es/sync-setup.page
 share/gnome/help/tomboy/es/sync.page
 share/gnome/help/tomboy/es/whatsnew.page
 share/gnome/help/tomboy/eu/
@@ -364,6 +371,7 @@ share/gnome/help/tomboy/eu/note-edit-prefs.page
 share/gnome/help/tomboy/eu/prefs.page
 share/gnome/help/tomboy/eu/problems.page
 share/gnome/help/tomboy/eu/search.page
+share/gnome/help/tomboy/eu/sync-setup.page
 share/gnome/help/tomboy/eu/sync.page
 share/gnome/help/tomboy/eu/whatsnew.page
 share/gnome/help/tomboy/fr/
@@ -404,6 +412,7 @@ share/gnome/help/tomboy/fr/note-edit-prefs.page
 share/gnome/help/tomboy/fr/prefs.page
 share/gnome/help/tomboy/fr/problems.page
 share/gnome/help/tomboy/fr/search.page
+share/gnome/help/tomboy/fr/sync-setup.page
 share/gnome/help/tomboy/fr/sync.page
 share/gnome/help/tomboy/fr/whatsnew.page
 share/gnome/help/tomboy/gl/
@@ -444,6 +453,7 @@ share/gnome/help/tomboy/gl/note-edit-prefs.page
 share/gnome/help/tomboy/gl/prefs.page
 share/gnome/help/tomboy/gl/problems.page
 share/gnome/help/tomboy/gl/search.page
+share/gnome/help/tomboy/gl/sync-setup.page
 share/gnome/help/tomboy/gl/sync.page
 share/gnome/help/tomboy/gl/whatsnew.page
 share/gnome/help/tomboy/hu/
@@ -484,6 +494,7 @@ share/gnome/help/tomboy/hu/note-edit-prefs.page
 share/gnome/help/tomboy/hu/prefs.page
 share/gnome/help/tomboy/hu/problems.page
 share/gnome/help/tomboy/hu/search.page
+share/gnome/help/tomboy/hu/sync-setup.page
 share/gnome/help/tomboy/hu/sync.page
 share/gnome/help/tomboy/hu/whatsnew.page
 share/gnome/help/tomboy/it/
@@ -524,6 +535,7 @@ share/gnome/help/tomboy/it/note-edit-prefs.page
 share/gnome/help/tomboy/it/prefs.page
 share/gnome/help/tomboy/it/problems.page
 share/gnome/help/tomboy/it/search.page
+share/gnome/help/tomboy/it/sync-setup.page
 share/gnome/help/tomboy/it/sync.page
 share/gnome/help/tomboy/it/whatsnew.page
 share/gnome/help/tomboy/lt/
@@ -564,6 +576,7 @@ share/gnome/help/tomboy/lt/note-edit-prefs.page
 share/gnome/help/tomboy/lt/prefs.page
 share/gnome/help/tomboy/lt/problems.page
 share/gnome/help/tomboy/lt/search.page
+share/gnome/help/tomboy/lt/sync-setup.page
 share/gnome/help/tomboy/lt/sync.page
 share/gnome/help/tomboy/lt/whatsnew.page
 share/gnome/help/tomboy/oc/
@@ -604,6 +617,7 @@ share/gnome/help/tomboy/oc/note-edit-prefs.page
 share/gnome/help/tomboy/oc/prefs.page
 share/gnome/help/tomboy/oc/problems.page
 share/gnome/help/tomboy/oc/search.page
+share/gnome/help/tomboy/oc/sync-setup.page
 share/gnome/help/tomboy/oc/sync.page
 share/gnome/help/tomboy/oc/whatsnew.page
 share/gnome/help/tomboy/pl/
@@ -644,6 +658,7 @@ share/gnome/help/tomboy/pl/note-edit-prefs.page
 share/gnome/help/tomboy/pl/prefs.page
 share/gnome/help/tomboy/pl/problems.page
 share/gnome/help/tomboy/pl/search.page
+share/gnome/help/tomboy/pl/sync-setup.page
 share/gnome/help/tomboy/pl/sync.page
 share/gnome/help/tomboy/pl/whatsnew.page
 share/gnome/help/tomboy/pt_BR/
@@ -684,6 +699,7 @@ share/gnome/help/tomboy/pt_BR/note-edit-prefs.page
 share/gnome/help/tomboy/pt_BR/prefs.page
 share/gnome/help/tomboy/pt_BR/problems.page
 share/gnome/help/tomboy/pt_BR/search.page
+share/gnome/help/tomboy/pt_BR/sync-setup.page
 share/gnome/help/tomboy/pt_BR/sync.page
 share/gnome/help/tomboy/pt_BR/whatsnew.page
 share/gnome/help/tomboy/ru/
@@ -724,6 +740,7 @@ share/gnome/help/tomboy/ru/note-edit-prefs.page
 share/gnome/help/tomboy/ru/prefs.page
 share/gnome/help/tomboy/ru/problems.page
 share/gnome/help/tomboy/ru/search.page
+share/gnome/help/tomboy/ru/sync-setup.page
 share/gnome/help/tomboy/ru/sync.page
 share/gnome/help/tomboy/ru/whatsnew.page
 share/gnome/help/tomboy/sv/
@@ -764,6 +781,7 @@ share/gnome/help/tomboy/sv/note-edit-prefs.page
 share/gnome/help/tomboy/sv/prefs.page
 share/gnome/help/tomboy/sv/problems.page
 share/gnome/help/tomboy/sv/search.page
+share/gnome/help/tomboy/sv/sync-setup.page
 share/gnome/help/tomboy/sv/sync.page
 share/gnome/help/tomboy/sv/whatsnew.page
 share/gnome/help/tomboy/uk/
@@ -804,6 +822,7 @@ share/gnome/help/tomboy/uk/note-edit-prefs.page
 share/gnome/help/tomboy/uk/prefs.page
 share/gnome/help/tomboy/uk/problems.page
 share/gnome/help/tomboy/uk/search.page
+share/gnome/help/tomboy/uk/sync-setup.page
 share/gnome/help/tomboy/uk/sync.page
 share/gnome/help/tomboy/uk/whatsnew.page
 share/gnome/help/tomboy/vi/
@@ -844,6 +863,7 @@ share/gnome/help/tomboy/vi/note-edit-prefs.page
 share/gnome/help/tomboy/vi/prefs.page
 share/gnome/help/tomboy/vi/problems.page
 share/gnome/help/tomboy/vi/search.page
+share/gnome/help/tomboy/vi/sync-setup.page
 share/gnome/help/tomboy/vi/sync.page
 share/gnome/help/tomboy/vi/whatsnew.page
 share/gnome/help/tomboy/zh_CN/
@@ -884,6 +904,7 @@ share/gnome/help/tomboy/zh_CN/note-edit-prefs.page
 share/gnome/help/tomboy/zh_CN/prefs.page
 share/gnome/help/tomboy/zh_CN/problems.page
 share/gnome/help/tomboy/zh_CN/search.page
+share/gnome/help/tomboy/zh_CN/sync-setup.page
 share/gnome/help/tomboy/zh_CN/sync.page
 share/gnome/help/tomboy/zh_CN/whatsnew.page
 share/icons/hicolor/16x16/
