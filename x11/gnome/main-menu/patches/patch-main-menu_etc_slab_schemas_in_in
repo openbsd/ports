@@ -1,0 +1,20 @@
+$OpenBSD: patch-main-menu_etc_slab_schemas_in_in,v 1.1.1.1 2010/10/25 17:43:15 ajacoutot Exp $
+
+From 4feca5f553e75385799b2d53a2f478cd831595ec Mon Sep 17 00:00:00 2001
+From: Vincent Untz <vuntz@gnome.org>
+Date: Mon, 28 Jun 2010 13:17:56 +0000
+Subject: [main-menu] Fix typos in schema
+
+https://bugzilla.gnome.org/show_bug.cgi?id=620269
+
+--- main-menu/etc/slab.schemas.in.in.orig	Fri May 21 12:36:44 2010
++++ main-menu/etc/slab.schemas.in.in	Mon Oct 25 11:05:18 2010
+@@ -152,7 +152,7 @@
+ 			<default>8</default>
+ 			<locale name="C">
+ 				<short>determines the limit of items in the file-area.</short>
+-				<long>determines the limit of items in the file-area.  The number favorite items is not limited.  This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items.  If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored.</long>
++				<long>determines the limit of items in the file-area.  The number of favorite items is not limited.  This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items.  If the number of favorite items exceeds max_total_items - min_recent_items then this limit is ignored.</long>
+ 			</locale>
+ 		</schema>
+ 
