@@ -1,0 +1,55 @@
+$OpenBSD: patch-bindgraph_cgi,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
+--- bindgraph.cgi.orig	Mon May  5 00:26:18 2003
++++ bindgraph.cgi	Wed Oct  6 14:02:01 2010
+@@ -8,11 +8,12 @@
+ 
+ use RRDs;
+ use strict;
++use POSIX qw(uname);
+ 
+ my $VERSION = '0.1';
+ 
+ # hostname. will be printed in the HTML page
+-my $hostname = 'hostname.example.net (please edit bindgraph.cgi)';
++my $hostname = (POSIX::uname())[1];
+ # path of the RRD database
+ my $rrd = '/var/www/as112/rrd/bindgraph.rrd';
+ # temporary directory where the images will be saved
+@@ -37,7 +38,7 @@ my @graphs = (
+ 	{ title => 'Year Graph',		seconds => 3600*24*365,	},
+ );
+ 
+-my @query_t = qw(AAAA CNAME NS ANY _other_ A PTR SOA TKEY);
++my @query_t = qw(AAAA CNAME NS ANY _other_ A MX PTR SOA TKEY);
+ my %color = (
+ 	MX		=> 'AA0000',
+ 	A		=> 'FF0080',
+@@ -89,6 +90,10 @@ sub graph($$$;$) {
+ 		}
+ 	}
+ 
++       my $comment = 'last update: ' . localtime(last_update($rrd))
++          . '    graph created on ' . localtime(time) . '\r';
++       $comment =~ s|:|\\:|g unless $RRDs::VERSION < 1.199908;
++
+ 	my ($text, $xs, $ys) = RRDs::graph(
+ 		$file,
+ 		'--imgformat', 'PNG',
+@@ -102,8 +107,7 @@ sub graph($$$;$) {
+ 		@rrdef,
+ 		@rrprint,
+ 		'COMMENT:\s',
+-		'COMMENT:last update: ' . localtime(last_update($rrd))
+-			. '    graph created on ' . localtime(time) . '\r',
++                'COMMENT:' . $comment,
+ 	);
+ 	my $err = RRDs::error;
+ 	die_fatal("RRDs::graph($file, ...): $err") if $err;
+@@ -209,6 +213,7 @@ sub main {
+ 	$uri =~ s#/#,#g;
+ 	$uri =~ s#~#tilde,#g;
+ 
++       	mkdir("$tmp_dir", 0755);
+ 	die_fatal("ERROR: $tmp_dir does not exist") if not -d $tmp_dir;
+ 
+ 	if (not -d "$tmp_dir/$uri") {

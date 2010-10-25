@@ -1,0 +1,12 @@
+$OpenBSD: patch-bindgraph_pl,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
+--- bindgraph.pl.orig	Wed Oct  6 13:47:54 2010
++++ bindgraph.pl	Wed Oct  6 13:48:14 2010
+@@ -13,7 +13,7 @@ my $daemon_rrd_dir = '.';
+ my $daemon_pidfile;
+ my $rrd = 'bindgraph.rrd';
+ 
+-my @query_t = qw(TKEY SOA PTR A AAAA CNAME NS ANY _other_);
++my @query_t = qw(TKEY SOA PTR A AAAA CNAME MX NS ANY _other_);
+ 
+ ##############################################################################
+ ##############################################################################
