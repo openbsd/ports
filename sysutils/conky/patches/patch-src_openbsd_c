@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_openbsd_c,v 1.8 2010/04/27 20:56:11 sthen Exp $
---- src/openbsd.c.orig	Sat Aug  8 21:05:55 2009
-+++ src/openbsd.c	Tue Apr 27 20:40:38 2010
+$OpenBSD: patch-src_openbsd_c,v 1.9 2010/10/25 18:11:26 sthen Exp $
+--- src/openbsd.c.orig	Sat Aug  8 22:05:55 2009
++++ src/openbsd.c	Mon Oct 25 20:05:06 2010
+@@ -271,7 +271,7 @@ void update_total_processes()
+ 	int n_processes;
+ 
+ 	kvm_init();
+-	kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
++	kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(n_processes), &n_processes);
+ 
+ 	info.procs = n_processes;
+ }
 @@ -454,14 +454,13 @@ void update_obsd_sensors()
  
  	dev = obsd_sensors.device;	// FIXME: read more than one device
