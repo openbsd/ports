@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/23 11:35:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/25 12:40:51 jasper Exp $
 
     SUBDIR =
+    SUBDIR += folks
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-gabble
