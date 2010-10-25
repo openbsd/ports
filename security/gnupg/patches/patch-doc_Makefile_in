@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2008/01/30 20:18:10 bernd Exp $
---- doc/Makefile.in.orig	Thu Dec 20 08:54:08 2007
-+++ doc/Makefile.in	Mon Jan 28 21:09:10 2008
-@@ -296,7 +296,7 @@ gnupg1_TEXINFOS = gnupg1.texi
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2010/10/25 12:57:13 pea Exp $
+--- doc/Makefile.in.orig	Mon Oct 18 11:53:58 2010
++++ doc/Makefile.in	Wed Oct 20 09:19:27 2010
+@@ -299,7 +299,7 @@ gnupg1_TEXINFOS = gnupg1.texi
  
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 
--pkgdata_DATA = FAQ faq.html
-+#pkgdata_DATA = FAQ faq.html
- BUILT_SOURCES = FAQ faq.html 
+-pkgdata_DATA = FAQ
++#pkgdata_DATA = FAQ
+ 
  # we can't add gpg.texi gpgv.texi here because automake does not like them to
  # be built files. 

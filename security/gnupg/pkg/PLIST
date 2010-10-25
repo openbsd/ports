@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2010/07/08 17:01:57 pea Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/10/25 12:57:13 pea Exp $
 @option no-default-conflict
 @bin bin/gpg
 bin/gpg-zip
@@ -25,7 +25,6 @@ share/doc/gnupg/OpenPGP
 share/doc/gnupg/README
 share/doc/gnupg/THANKS
 share/doc/gnupg/TODO
-share/doc/gnupg/faq.html
 share/gnupg/
 share/gnupg/options.skel
 share/locale/be/LC_MESSAGES/gnupg.mo
