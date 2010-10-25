@@ -1,0 +1,21 @@
+$OpenBSD: patch-qt_qtr_pro,v 1.1 2010/10/25 20:28:05 naddy Exp $
+--- qt/qtr.pro.orig	Sun Oct 17 02:14:40 2010
++++ qt/qtr.pro	Mon Oct 18 20:10:19 2010
+@@ -8,7 +8,7 @@ target.path = /bin
+ INSTALLS += target
+ 
+ unix: INSTALLS += man
+-man.path = /share/man/man1/
++man.path = /man/man1/
+ man.files = transmission-qt.1
+ 
+ CONFIG += qt qdbus thread debug link_pkgconfig
+@@ -21,7 +21,7 @@ LIBS += $${TRANSMISSION_TOP}/libtransmission/libtransm
+ LIBS += $${TRANSMISSION_TOP}/third-party/dht/libdht.a
+ LIBS += $${TRANSMISSION_TOP}/third-party/miniupnp/libminiupnp.a
+ LIBS += $${TRANSMISSION_TOP}/third-party/libnatpmp/libnatpmp.a
+-unix: LIBS += -levent
++unix: LIBS += -leventextra -levent
+ win32:DEFINES += QT_DBUS
+ win32:LIBS += -levent -lws2_32 -lintl
+ win32:LIBS += -lidn -liconv -lwldap32 -liphlpapi

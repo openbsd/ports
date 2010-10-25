@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/10/25 20:28:04 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
+COMMENT-qt=	lightweight BitTorrent client with Qt interface
 
 VER=		2.11
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
+PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -21,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://mirrors.m0k.org/transmission/files/
 EXTRACT_SUFX=	.tar.bz2
 
-PSEUDO_FLAVORS=	no_gtk
+PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
 
 MULTI_PACKAGES=	-main
@@ -69,6 +71,25 @@ LIB_DEPENDS+=	::x11/gtk+2 \
 RUN_DEPENDS-gtk=:${PKGNAME-main}:net/transmission,-main \
 		::devel/desktop-file-utils \
 		:gamin-*:sysutils/gamin,-server,no_python
+.endif
+
+.include <bsd.own.mk>
+
+.if ${COMPILER_VERSION:L:Mgcc4*} && !${FLAVOR:L:Mno_qt}
+MULTI_PACKAGES+=-qt
+LIB_DEPENDS+=	::x11/qt4
+WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
+		dbus-1 expat fontconfig freetype stdc++
+RUN_DEPENDS-qt=	:${PKGNAME-main}:net/transmission,-main
+USE_X11=	Yes
+
+post-build:
+	cd ${WRKSRC}/qt; qmake4 qtr.pro; make ${MAKE_FLAGS}
+
+post-install:
+	cd ${WRKSRC}/qt; make ${MAKE_FLAGS} install INSTALL_ROOT=${PREFIX} \
+	    INSTALL_FILE="${INSTALL_DATA}" \
+	    INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 .endif
 
 .include <bsd.port.mk>
