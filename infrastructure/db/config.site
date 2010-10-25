@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.16 2010/10/24 20:41:23 ajacoutot Exp $
+# $OpenBSD: config.site,v 1.17 2010/10/25 12:30:29 sthen Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -345,7 +345,6 @@ ac_cv_func_isxdigit=${ac_cv_func_isxdigit=yes}
 ac_cv_func_kill=${ac_cv_func_kill=yes}	
 ac_cv_func_killpg=${ac_cv_func_killpg=yes}	
 ac_cv_func_kqueue=${ac_cv_func_kqueue=yes}	
-ac_cv_func_kvm_getprocs=${ac_cv_func_kvm_getprocs=yes}	
 ac_cv_func_kvm_open=${ac_cv_func_kvm_open=yes}	
 ac_cv_func_kvm_openfiles=${ac_cv_func_kvm_openfiles=yes}	
 ac_cv_func_lchown=${ac_cv_func_lchown=yes}
