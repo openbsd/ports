@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/25 07:46:43 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2010/10/25 10:11:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	4
+REVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -18,11 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xpm Xrandr Xrender Xt
+WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt
 WANTLIB += Xv bz2 a52 avcodec avformat avutil c dv dvdread faac faad
 WANTLIB += freetype gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4
 WANTLIB += postproc pthread-stubs pthread schroedinger-1.0 sndio
-WANTLIB += speex theora usbhid vorbis vorbisenc vorbisfile x264 xcb xml2 xvidcore z
+WANTLIB += speex theora usbhid vorbis vorbisenc vorbisfile x264
+WANTLIB += xcb xml2 xvidcore z
 
 FLAVORS=	lzo mjpegtools quicktime altivec
 FLAVOR?=
@@ -34,6 +35,7 @@ PKG_ARGS+=	-Di386=0
 .endif
 
 MODULES=	converters/libiconv
+
 LIB_DEPENDS=	::audio/faac \
 		::audio/lame \
 		::audio/liba52 \
@@ -49,6 +51,7 @@ LIB_DEPENDS=	::audio/faac \
 		::multimedia/x264 \
 		::multimedia/xvidcore \
 		::textproc/libxml
+
 RUN_DEPENDS=	::audio/sox \
 		::audio/vorbis-tools \
 		::audio/toolame \
