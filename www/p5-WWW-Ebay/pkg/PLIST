@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/06 09:44:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/25 10:25:02 jasper Exp $
 ${P5SITE}/WWW/Ebay/
 ${P5SITE}/WWW/Ebay.pm
 ${P5SITE}/WWW/Ebay/Customer.pm
@@ -10,7 +10,6 @@ ${P5SITE}/WWW/Search/Ebay/ByBidderID.pm
 ${P5SITE}/WWW/Search/Ebay/Completed/
 ${P5SITE}/WWW/Search/Ebay/Completed.pm
 ${P5SITE}/WWW/Search/Ebay/Completed/Category.pm
-${P5SITE}/WWW/bug.pl
 @man man/man3p/WWW::Ebay.3p
 @man man/man3p/WWW::Ebay::Customer.3p
 @man man/man3p/WWW::Ebay::Listing.3p
