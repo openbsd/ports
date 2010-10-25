@@ -1,0 +1,14 @@
+$OpenBSD: patch-GormObjCHeaderParser_GNUmakefile,v 1.1.1.1 2010/10/25 09:43:28 sebastia Exp $
+
+Add the xxx_INTERFACE_VERSION to be able to tweak it.
+
+--- GormObjCHeaderParser/GNUmakefile.orig	Mon Oct 25 01:52:25 2010
++++ GormObjCHeaderParser/GNUmakefile	Mon Oct 25 01:53:32 2010
+@@ -18,6 +18,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+ LIBRARY_VAR=GMOBJCHEADERPARSER
+ LIBRARY_NAME=libGormObjCHeaderParser
++libGormObjCHeaderParser_INTERFACE_VERSION=$(VERSION)
+ libGormObjCHeaderParser_HEADER_FILES_DIR=.
+ libGormObjCHeaderParser_HEADER_FILES_INSTALL_DIR=/GormObjCHeaderParser
+ ADDITIONAL_INCLUDE_DIRS = -I..

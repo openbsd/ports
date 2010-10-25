@@ -1,0 +1,14 @@
+$OpenBSD: patch-GormCore_GNUmakefile,v 1.1.1.1 2010/10/25 09:43:28 sebastia Exp $
+
+Add the xxx_INTERFACE_VERSION to be able to tweak it. 
+
+--- GormCore/GNUmakefile.orig	Mon Oct 25 02:17:56 2010
++++ GormCore/GNUmakefile	Mon Oct 25 02:19:46 2010
+@@ -32,6 +32,7 @@ PACKAGE_NAME=GormCore
+ LIBRARY_VAR=GORMCORE
+ LIBRARY_NAME=GormCore
+ GormCore_HEADER_FILES_DIR=.
++GormCore_INTERFACE_VERSION=$(VERSION)
+ GormCore_HEADER_FILES_INSTALL_DIR=/GormCore
+ ADDITIONAL_INCLUDE_DIRS = -I..
+ srcdir = .

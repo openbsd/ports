@@ -1,0 +1,14 @@
+$OpenBSD: patch-GormPrefs_GNUmakefile,v 1.1.1.1 2010/10/25 09:43:28 sebastia Exp $
+
+Add the xxx_INTERFACE_VERSION to be able to tweak it.
+
+--- GormPrefs/GNUmakefile.orig	Mon Oct 25 02:55:37 2010
++++ GormPrefs/GNUmakefile	Mon Oct 25 02:56:10 2010
+@@ -21,6 +21,7 @@ LIBRARY_VAR=GORMPREFS
+ LIBRARY_NAME=GormPrefs
+ 
+ GormPrefs_HEADER_FILES_DIR=.
++GormPrefs_INTERFACE_VERSION=$(VERSION)
+ GormPrefs_HEADER_FILES_INSTALL_DIR=/GormPrefs
+ ADDITIONAL_INCLUDE_DIRS = -I..
+ srcdir = .
