@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_ocat_h,v 1.1 2010/10/25 17:37:52 pirofti Exp $
+--- src/ocat.h.orig	Mon Oct 25 02:37:36 2010
++++ src/ocat.h	Mon Oct 25 02:37:52 2010
+@@ -34,6 +34,11 @@
+ #include <ctype.h>
+ #include <syslog.h>
+ 
++#include <sys/types.h>
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include <sys/time.h>
+@@ -41,9 +46,6 @@
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+ 
+-#ifdef HAVE_SYS_SOCKET_H
+-#include <sys/socket.h>
+-#endif
+ #ifdef HAVE_ENDIAN_H
+ #include <endian.h>
+ #elif HAVE_SYS_ENDIAN_H
