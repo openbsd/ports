@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
+--- configure.orig	Fri Jan 26 20:22:30 2007
++++ configure	Tue Sep 23 14:13:54 2008
+@@ -3470,7 +3470,7 @@ fi
+ 
+ 
+ if test -n "$GCC"; then
+-     CFLAGS="-O3 -Wall -g"
++     CFLAGS="$CFLAGS -Wall -g"
+ else
+      { echo "$as_me:$LINENO: WARNING: Ouch!! Only gcc is supported..." >&5
+ echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
+@@ -4687,7 +4687,7 @@ else
+ 
+    LIBNET_INCLUDE="-I$libnet_dir"
+    LIBNET_LINK="-L`dirname $libnet_dir`/lib"
+-   LIBNET_CONFIG="$libnet_config_dir/libnet-config"
++#   LIBNET_CONFIG="$libnet_config_dir/libnet-config"
+ 
+ 
+ 
+@@ -6676,7 +6676,7 @@ if test "${ac_cv_lib_pthread_pthread_create+set}" = se
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6736,7 +6736,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+ 

@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_interfaces_c,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
+--- src/interfaces.c.orig	Sun Jul 16 14:37:31 2006
++++ src/interfaces.c	Mon Oct 25 23:26:02 2010
+@@ -142,6 +142,7 @@ interfaces_init(THREAD *pcap_th)
+     while (index)
+     {
+         if ( (strncmp(index->name,"any",strlen(index->name))) && 
++             (strstr(index->name,"pflog") == NULL) && 
+              (index->flags != PCAP_IF_LOOPBACK) )
+         {
+            if ((iface_data = (struct interface_data *) calloc(1, sizeof(struct interface_data))) == NULL) {
+@@ -321,6 +322,7 @@ interfaces_init_data(struct interface_data *interface)
+ 
+     
+     etheraddr = libnet_get_hwaddr(libnet_handler);
++    libnet_destroy(libnet_handler);
+ 
+     if (etheraddr && memcmp((void *)etheraddr,"\x0\x0\x0\x0\x0\x0",6) )
+     {
+@@ -329,14 +331,13 @@ interfaces_init_data(struct interface_data *interface)
+              etheraddr->ether_addr_octet[0], etheraddr->ether_addr_octet[1],
+              etheraddr->ether_addr_octet[2], etheraddr->ether_addr_octet[3],
+              etheraddr->ether_addr_octet[4], etheraddr->ether_addr_octet[5]);       */
+-    }
+-    
+-    libnet_destroy(libnet_handler);
+-
+-     write_log(0," %s MAC = %02x%02x.%02x%02x.%02x%02x\n", interface->ifname, 
++        write_log(0," %s MAC = %02x%02x.%02x%02x.%02x%02x\n", interface->ifname, 
+              etheraddr->ether_addr_octet[0], etheraddr->ether_addr_octet[1],
+              etheraddr->ether_addr_octet[2], etheraddr->ether_addr_octet[3],
+              etheraddr->ether_addr_octet[4], etheraddr->ether_addr_octet[5]); 
++    }
++    else
++        write_log(0," %s MAC not found!\n", interface->ifname);
+     
+     return 0;
+ }

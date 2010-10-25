@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_protocols_h,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
+--- src/protocols.h.orig	Sun Jul 16 14:37:31 2006
++++ src/protocols.h	Thu Apr 24 23:46:12 2008
+@@ -26,6 +26,7 @@
+ #define __PROTOCOLS_H__
+ 
+ #include <pcap.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ 
+ #ifdef SOLARIS

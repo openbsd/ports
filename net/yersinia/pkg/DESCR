@@ -1,0 +1,15 @@
+Yersinia is a network tool designed to take advantage of some weaknesses
+in different network protocols. It pretends to be a solid framework for
+analyzing and testing the deployed networks and systems.
+
+Attacks for the following network protocols are implemented:
+
+   * Spanning Tree Protocol (STP)
+   * Cisco Discovery Protocol (CDP)
+   * Dynamic Trunking Protocol (DTP)
+   * Dynamic Host Configuration Protocol (DHCP)
+   * Hot Standby Router Protocol (HSRP)
+   * IEEE 802.1Q
+   * IEEE 802.1X
+   * Inter-Switch Link Protocol (ISL)
+   * VLAN Trunking Protocol (VTP)
