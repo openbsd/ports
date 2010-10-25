@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.3 2010/10/25 17:23:13 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.4 2010/10/25 17:31:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -280,6 +280,25 @@ sub clear_clamped
 	}
 }
 
+sub do_line
+{
+	my ($self, $new, $old) = @_;
+	# line didn't change: try to go down
+	if (defined $old && $old eq $new) {
+		if ($self->{down}) {
+			return $self->{down};
+		}
+	}
+	# adjust newline to correct length
+	if (defined $old && (length $old) > (length $new)) {
+		if ($self->{cleareol}) {
+			return $self->clear_clamped($new);
+		}
+		$new .= " "x ((length $old) - (length $new));
+	}
+	return $self->clamped($new);
+}
+
 sub lines
 {
 	my ($self, @new) = @_;
@@ -288,25 +307,8 @@ sub lines
 	my $r = '';
 
 	while (@new > 0) {
-		my $newline = shift @new;
-		my $oldline = shift @{$self->{oldlines}};
 		return $r if $n++ > $self->{height};
-		# line didn't change: try to go down
-		if (defined $oldline && $oldline eq $newline) {
-			if ($self->{down}) {
-				$r .= $self->{down};
-				next;
-			}
-		}
-		# adjust newline to correct length
-		if (defined $oldline && (length $oldline) > (length $newline)) {
-			if ($self->{cleareol}) {
-				$r .= $self->clear_clamped($newline);
-				next;
-			}
-			$newline .= " "x ((length $oldline) - (length $newline));
-		}
-		$r .= $self->clamped($newline);
+		$r .= $self->do_line(shift @new, shift @{$self->{oldlines}});
 	}
 	# extra lines must disappear
 	while (@{$self->{oldlines}} > 0) {
@@ -317,7 +319,7 @@ sub lines
 			$line = " "x (length $line);
 			$r .= $self->clamped($line);
 		}
-		return if $n++ > $self->{height};
+		last if $n++ > $self->{height};
 	}
 	return $r;
 }
