@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/25 12:42:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/25 12:46:24 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -52,7 +52,7 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::net/telepathy/telepathy-mission-control \
 			::net/telepathy/telepathy-logger \
 			::textproc/enchant \
-			::x11/gnome/folks \
+			::net/telepathy/folks \
 			::x11/gnome/keyring
 RUN_DEPENDS=		::devel/iso-codes \
 			::net/telepathy/telepathy-butterfly \
