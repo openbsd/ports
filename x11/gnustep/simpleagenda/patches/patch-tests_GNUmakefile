@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_GNUmakefile,v 1.1.1.1 2010/10/25 09:39:31 sebastia Exp $
+
+Make it find e2fs-uuid
+
+--- tests/GNUmakefile.orig	Sun Oct 24 19:55:10 2010
++++ tests/GNUmakefile	Sun Oct 24 19:55:20 2010
+@@ -21,7 +21,7 @@ SimpleAgendaTests_OBJC_FILES = \
+ 
+ SimpleAgendaTests_TOOL_LIBS = -lObjcUnit -lical -lgnustep-gui
+ #ifeq(have_libuuid,yes)
+-SimpleAgendaTests_TOOL_LIBS += -luuid
++SimpleAgendaTests_TOOL_LIBS += -le2fs-uuid
+ #endif
+ 
+ ADDITIONAL_OBJCFLAGS = -Wno-import -Wall

@@ -1,0 +1,15 @@
+$OpenBSD: patch-GNUmakefile_preamble,v 1.1.1.1 2010/10/25 09:39:31 sebastia Exp $
+
+make it find e2fs-uuid
+
+--- GNUmakefile.preamble.orig	Sun Oct 24 19:54:46 2010
++++ GNUmakefile.preamble	Sun Oct 24 19:55:01 2010
+@@ -14,7 +14,7 @@ ADDITIONAL_CFLAGS += 
+ # Additional flags to pass to the linker
+ ADDITIONAL_LDFLAGS += -lical
+ ifeq ($(LIBUUID),yes)
+-ADDITIONAL_LDFLAGS += -luuid
++ADDITIONAL_LDFLAGS += -le2fs-uuid
+ endif
+ ifeq ($(ADDRESSES),yes)
+ ADDITIONAL_LDFLAGS += -lAddresses
