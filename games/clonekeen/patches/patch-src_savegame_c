@@ -1,0 +1,104 @@
+$OpenBSD: patch-src_savegame_c,v 1.1.1.1 2010/10/25 12:12:05 edd Exp $
+
+Make sure the saves are in the user's home dir where they have write access
+
+--- src/savegame.c.orig	Tue May 25 03:11:52 2010
++++ src/savegame.c	Sun Oct 24 23:11:23 2010
+@@ -1,26 +1,50 @@
+ // routines for handling save&load of savegames
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
++
+ #include "keen.h"
+ #include "savegame.fdh"
+ 
+ #define SG_HEADERSIZE			8
+ 
+-
+ char game_save(int slot)
+ {
+ FILE *fp;
+-char fname[20];
++char fname[KEEN_MAX_SAVENAME];
+ int i;
++char *userhome;
++struct stat st;
+ 
+ 	// can't save game under certain circumstances
+ 	if (fade_in_progress()) return 1;
+ 	
+-	
+-	sprintf(fname, "savegame%d.dat", slot);
+-		
++	userhome = getenv("HOME");
++	if (userhome == NULL) {
++		fprintf(stderr, "can't get $HOME\n");
++		return 1;
++	}
++
++	snprintf(fname, KEEN_MAX_SAVENAME, "%s/" KEEN_SAVE_DIR, userhome);
++	if (mkdir(fname, 0755) != 0) {
++		/* ok to fail so long as a dir */
++		stat(fname, &st);
++		if (! (st.st_mode & S_IFDIR)) {
++			perror(fname);
++			return 1;
++		}
++	}
++
++	snprintf(fname, KEEN_MAX_SAVENAME, 
++	    "%s/" KEEN_SAVE_DIR "/savegame%d.dat", userhome, slot);
++
+ 	lprintf("Saving game to %s\n", fname);
+ 	fp = fileopen(fname, "wb");
+-	if (!fp) return 1;
++	if (!fp) {
++		perror(fname);	
++		return 1;
++	}
+ 	
+ 	fprintf(fp, "CKSAVE%c", SAVEGAMEVERSION);
+ 	fputc(IsBigEndian(), fp);
+@@ -127,12 +151,19 @@ char custom = 0;
+ char game_load(int slot)
+ {
+ FILE *fp;
+-char fname[20];
++char fname[KEEN_MAX_SAVENAME];
+ uchar episode, level, lives, iscustom;
+ int i;
++char *userhome;
+ 
++	userhome = getenv("HOME");
++	if (userhome == NULL) {
++		fprintf(stderr, "can't get $HOME\n");
++		return 1;
++	}
+ 	
+-	sprintf(fname, "savegame%d.dat", slot);
++	snprintf(fname, KEEN_MAX_SAVENAME,
++	    "%s/" KEEN_SAVE_DIR "/savegame%d.dat", userhome, slot);
+ 	
+ 	if (!IsValidSaveGame(fname))
+ 	{
+@@ -210,8 +241,16 @@ int i;
+ 
+ void DeleteSaveGame(int slot)
+ {
+-char fname[20];
++char fname[KEEN_MAX_SAVENAME];
++char *userhome;
+ 
+-	sprintf(fname, "savegame%d.dat", slot);
++	userhome = getenv("HOME");
++	if (userhome == NULL) {
++		fprintf(stderr, "can't get $HOME\n");
++		return;
++	}
++
++	snprintf(fname, KEEN_MAX_SAVENAME,
++	    "%s/" KEEN_SAVE_DIR "/savegame%d.dat", userhome, slot);
+ 	remove(fname);	
+ }

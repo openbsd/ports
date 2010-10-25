@@ -1,0 +1,20 @@
+CloneKeen Game Data Install Instructions
+========================================
+
+1) Go and download/buy commander keen for DOS and unzip it somewhere.
+   In this example we unzip in /tmp/dos.
+
+2) Install dosbox and boot it.
+
+3) At the dosbox prompt type:
+   MOUNT D /tmp/dos
+   D:
+   INSTALL.EXE
+
+4) Follow the installer and choose to install in D:\KEEN
+
+5) When the installer is complete, exit dosbox.
+
+6) (as root) cp /tmp/dos/KEEN/* ${TRUEPREFIX}/share/clonekeen/data
+
+7) type 'keen' and enjoy!

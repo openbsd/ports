@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_menu_savegames_c,v 1.1.1.1 2010/10/25 12:12:05 edd Exp $
+--- src/menu_savegames.c.orig	Sun Oct 24 23:00:24 2010
++++ src/menu_savegames.c	Sun Oct 24 23:01:32 2010
+@@ -59,10 +59,19 @@ void loadsavegamenames(void)
+ FILE *fp;
+ int i;
+ char fname[40];
++char *userhome;
++
++	userhome = getenv("HOME");
++	if (userhome == NULL) {
++		fprintf(stderr, "can't get $HOME\n");
++		return;
++	}
++
+ 	justsaved = -1;
+ 	for(i=1;i<10;i++)
+ 	{
+-		sprintf(fname, "savegame%d.dat", i);
++		snprintf(fname, KEEN_MAX_SAVENAME,
++		    "%s/" KEEN_SAVE_DIR "/savegame%d.dat", userhome, i);
+ 		savegames[i].exists = 0;
+ 		if (IsValidSaveGame(fname))
+ 		{
