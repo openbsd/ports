@@ -1,0 +1,178 @@
+$OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.1 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/host/hr_swrun.c.orig	Mon Oct 25 00:15:26 2010
++++ agent/mibgroup/host/hr_swrun.c	Mon Oct 25 02:26:50 2010
+@@ -122,6 +122,8 @@ static int      LowProcIndex;
+ #if defined(hpux10) || defined(hpux11)
+ struct pst_status *proc_table;
+ struct pst_dynamic pst_dyn;
++#elif HAVE_KVM_GETPROC2
++struct kinfo_proc2 *proc_table;
+ #elif HAVE_KVM_GETPROCS
+ struct kinfo_proc *proc_table;
+ #elif defined(solaris2)
+@@ -504,7 +506,7 @@ var_hrswrun(struct variable * vp,
+     time_t          now;
+     static int      oldpid = -1;
+ #endif
+-#if HAVE_KVM_GETPROCS
++#ifdef (HAVE_KVM_GETPROCS || HAVE_KVM_GETPROC2)
+     char          **argv;
+ #endif
+ #ifdef linux
+@@ -550,7 +552,7 @@ var_hrswrun(struct variable * vp,
+ #else
+         if (kd == NULL)
+             return NULL;
+-        if ((proc_buf = kvm_getproc(kd, pid)) == NULL)
++        if ((proc_buf = kvm_getproc(kd, pid)) == NULL) /* XXX */
+             return NULL;
+ #endif
+         oldpid = pid;
+@@ -611,6 +613,12 @@ var_hrswrun(struct variable * vp,
+         cp = strchr(string, ' ');
+         if (cp != NULL)
+             *cp = '\0';
++#elif HAVE_KVM_GETPROC2
++        strlcpy(string, proc_table[LowProcIndex].p_comm, sizeof(string));
++	/* process name: truncate the string at the first space */
++        cp = strchr(string, ' ');
++        if (cp != NULL)
++            *cp = '\0';
+ #elif HAVE_KVM_GETPROCS
+     #if defined(freebsd5) && __FreeBSD_version >= 500014
+         strcpy(string, proc_table[LowProcIndex].ki_comm);
+@@ -734,6 +742,12 @@ var_hrswrun(struct variable * vp,
+         cp = strchr(string, ' ');
+         if (cp != NULL)
+             *cp = '\0';
++#elif HAVE_KVM_GETPROC2
++        /* Should be path, but this is not available, just use argv[0] again */
++        strlcpy(string, proc_table[LowProcIndex].p_comm, sizeof(string));
++        cp = strchr(string, ' ');
++        if (cp != NULL)
++            *cp = '\0';
+ #elif HAVE_KVM_GETPROCS
+     #if defined(freebsd5) && __FreeBSD_version >= 500014
+         strcpy(string, proc_table[LowProcIndex].ki_comm);
+@@ -851,6 +865,17 @@ var_hrswrun(struct variable * vp,
+             sprintf(string, "%s", cp);
+         } else
+             string[0] = '\0';
++#elif HAVE_KVM_GETPROC2
++        string[0] = 0;
++        argv = kvm_getargv2(kd, proc_table + LowProcIndex, sizeof(string));
++        if (argv)
++            argv++;
++        while (argv && *argv) {
++            if (string[0] != 0)
++                strcat(string, " ");
++            strcat(string, *argv);
++            argv++;
++        }
+ #elif HAVE_KVM_GETPROCS
+         string[0] = 0;
+         argv = kvm_getargv(kd, proc_table + LowProcIndex, sizeof(string));
+@@ -933,6 +958,11 @@ var_hrswrun(struct variable * vp,
+ 			long_return = 2;	/* kernel process */
+ 		} else
+ 			long_return = 4;	/* application */
++#elif HAVE_KVM_GETPROC2
++        if (proc_table[LowProcIndex].p_flag & P_SYSTEM)
++	    long_return = 2;	/* operatingSystem */
++	else
++	    long_return = 4;	/* application */
+ #elif HAVE_KVM_GETPROCS
+     #if defined(freebsd5) && __FreeBSD_version >= 500014
+ 	if (proc_table[LowProcIndex].ki_flag & P_SYSTEM) {
+@@ -981,7 +1011,9 @@ var_hrswrun(struct variable * vp,
+             break;
+         }
+ #else
+-#if HAVE_KVM_GETPROCS
++#if HAVE_KVM_GETPROC2
++        switch (proc_table[LowProcIndex].p_stat) {
++#elif HAVE_KVM_GETPROCS
+     #if defined(freebsd5) && __FreeBSD_version >= 500014
+         switch (proc_table[LowProcIndex].ki_stat) {
+     #else
+@@ -1082,6 +1114,10 @@ var_hrswrun(struct variable * vp,
+ #else
+         long_return = proc_buf->p_utime * 100 + proc_buf->p_stime * 100;
+ #endif
++#elif HAVE_KVM_GETPROC2
++        long_return = proc_table[LowProcIndex].p_uticks +
++            proc_table[LowProcIndex].p_sticks +
++            proc_table[LowProcIndex].p_iticks;
+ #elif HAVE_KVM_GETPROCS
+     #if defined(NOT_DEFINED) && defined(freebsd5) && __FreeBSD_version >= 500014
+         /* XXX: Accessing ki_paddr causes sig10 ...
+@@ -1196,6 +1232,11 @@ var_hrswrun(struct variable * vp,
+ #endif
+ #elif defined(aix4) || defined(aix5) || defined(aix6) || defined(aix7)
+         long_return = proc_table[LowProcIndex].pi_size * getpagesize() / 1024;
++#elif HAVE_KVM_GETPROC2
++        long_return = proc_table[LowProcIndex].p_vm_tsize +
++            proc_table[LowProcIndex].p_vm_ssize +
++            proc_table[LowProcIndex].p_vm_dsize;
++        long_return = long_return * (getpagesize() / 1024);
+ #elif HAVE_KVM_GETPROCS && !defined(darwin8)
+   #if defined(NOT_DEFINED) && defined(freebsd5) && __FreeBSD_version >= 500014
+ 	    /* XXX
+@@ -1468,13 +1509,21 @@ Init_HR_SWRun(void)
+ 			proc_table = realloc(proc_table, avail * sizeof(proc_table[0]));
+ 		}
+     }
++#elif HAVE_KVM_GETPROC2
++    {
++        if (kd == NULL) {
++            nproc = 0;
++            return;
++        }
++        proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof (*proc_table), &nproc);
++    }
+ #elif HAVE_KVM_GETPROCS
+     {
+         if (kd == NULL) {
+             nproc = 0;
+             return;
+         }
+-        proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc);
++        proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc); /* XXX */
+     }
+ #else
+ 
+@@ -1524,6 +1573,9 @@ Get_Next_HR_SWRun(void)
+         return proc_table[current_proc_entry++].pst_pid;
+ #elif defined(solaris2)
+         return proc_table[current_proc_entry++];
++#elif HAVE_KVM_GETPROC2
++        if (proc_table[current_proc_entry].p_stat != 0)
++            return proc_table[current_proc_entry++].p_pid;
+ #elif HAVE_KVM_GETPROCS
+     #if defined(freebsd5) && __FreeBSD_version >= 500014
+         if (proc_table[current_proc_entry].ki_stat != 0)
+@@ -1558,13 +1610,13 @@ End_HR_SWRun(void)
+ int
+ count_processes(void)
+ {
+-#if !(defined(linux) || defined(cygwin) || defined(hpux10) || defined(hpux11) || defined(solaris2) || HAVE_KVM_GETPROCS || defined(dynix))
++#if !(defined(linux) || defined(cygwin) || defined(hpux10) || defined(hpux11) || defined(solaris2) || HAVE_KVM_GETPROCS || HAVE_KVM_GETPROC2 || defined(dynix))
+     int             i;
+ #endif
+     int             total = 0;
+ 
+     Init_HR_SWRun();
+-#if defined(hpux10) || defined(hpux11) || HAVE_KVM_GETPROCS || defined(solaris2)
++#if defined(hpux10) || defined(hpux11) || HAVE_KVM_GETPROCS || HAVE_KVM_GETPROC2 || defined(solaris2)
+     total = nproc;
+ #else
+ #if defined(aix4) || defined(aix5) || defined(aix6) || defined(aix7)
+@@ -1578,7 +1630,7 @@ count_processes(void)
+ #endif
+         ++total;
+     }
+-#endif                          /* !hpux10 && !hpux11 && !HAVE_KVM_GETPROCS && !solaris2 */
++#endif                         /* !hpux10 && !hpux11 && !HAVE_KVM_GETPROCS && !HAVE_KVM_GETPROC2 && !solaris2 */
+     End_HR_SWRun();
+     return total;
+ }

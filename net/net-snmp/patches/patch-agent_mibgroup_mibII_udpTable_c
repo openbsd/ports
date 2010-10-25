@@ -1,0 +1,15 @@
+$OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.1 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/mibII/udpTable.c.orig	Sun Oct 24 19:33:28 2010
++++ agent/mibgroup/mibII/udpTable.c	Sun Oct 24 19:34:04 2010
+@@ -64,6 +64,11 @@ struct netsnmp_udpEntry_s {
+ #ifdef linux
+ #define INP_NEXT_SYMBOL		inp_next
+ #endif
++#ifdef openbsd4
++/* XXX smelly hack */
++#undef INP_NEXT_SYMBOL
++#define INP_NEXT_SYMBOL		inp_queue.cqe_next
++#endif
+ 
+ #if defined(freebsd4) || defined(darwin) || defined(osf5)
+ typedef struct netsnmp_inpcb_s netsnmp_inpcb;

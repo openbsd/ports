@@ -1,0 +1,12 @@
+$OpenBSD: patch-net-snmp-config_in,v 1.4 2010/10/25 22:59:12 sthen Exp $
+--- net-snmp-config.in.orig	Tue Oct 19 02:21:02 2010
++++ net-snmp-config.in	Tue Oct 19 02:22:10 2010
+@@ -57,7 +57,7 @@ NSC_EXEC_PREFIX=$exec_prefix
+ NSC_SRCDIR=@srcdir@
+ NSC_INCDIR=${NSC_PREFIX}/include
+ NSC_BASE_SUBAGENT_LIBS="-lnetsnmpagent -lnetsnmp"
+-NSC_BASE_AGENT_LIBS="-lnetsnmpagent -lnetsnmpmibs -lnetsnmp"
++NSC_BASE_AGENT_LIBS="-pthread -lnetsnmpagent -lnetsnmpmibs -lnetsnmp"
+ NSC_SRC_LIBDIRS="agent/.libs snmplib/.libs"
+ NSC_SRC_LIBDEPS="agent/.libs/libnetsnmpmibs.a agent/.libs/libnetsnmpagent.a snmplib/.libs/libnetsnmp.a"
+ 

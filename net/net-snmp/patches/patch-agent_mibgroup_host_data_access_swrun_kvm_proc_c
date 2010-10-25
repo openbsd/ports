@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kvm_proc_c,v 1.1 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/host/data_access/swrun_kvm_proc.c.orig	Mon Oct 25 00:15:53 2010
++++ agent/mibgroup/host/data_access/swrun_kvm_proc.c	Mon Oct 25 00:16:43 2010
+@@ -103,7 +103,7 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+         entry = netsnmp_swrun_entry_create(pid);
+         if (NULL == entry)
+             continue;   /* error already logged by function */
+-        if (NULL == (proc_buf = kvm_getproc( kd, pid))) {
++        if (NULL == (proc_buf = kvm_getproc( kd, pid))) { /* XXX */
+             /* release entry */
+             continue;
+         }

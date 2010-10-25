@@ -1,7 +1,7 @@
-$OpenBSD: patch-snmplib_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
---- snmplib/Makefile.in.orig	Mon Jun 18 22:34:43 2007
-+++ snmplib/Makefile.in	Sat Sep 15 23:12:29 2007
-@@ -127,7 +127,7 @@ INSTALLUCDHEADERS= asn1.h \
+$OpenBSD: patch-snmplib_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
+--- snmplib/Makefile.in.orig	Thu May 27 05:06:32 2010
++++ snmplib/Makefile.in	Wed Oct  6 23:28:02 2010
+@@ -133,7 +133,7 @@ INSTALLUCDHEADERS= asn1.h \
  	transform_oids.h
  
  # libraries
@@ -10,12 +10,12 @@ $OpenBSD: patch-snmplib_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
  INSTALLUCDLIBS=libsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
  
  #
-@@ -187,7 +187,7 @@ CPPFLAGS = $(TOP_INCLUDES) -I. 	$(SNMPLIB_INCLUDES) @C
+@@ -199,7 +199,7 @@ CPPFLAGS = $(TOP_INCLUDES) -I. 	$(SNMPLIB_INCLUDES) @C
  all: standardall
  
  # how to build the libraries.
 -libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION):    $(TOBJS)
 +libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION):    $(TOBJS)
- 	$(LIB_LD_CMD) $@ $(TOBJS) $(LDFLAGS) @LNETSNMPLIBS@
+ 	$(LIB_LD_CMD) $@ $(TOBJS) @LD_NO_UNDEFINED@ $(LDFLAGS) @LNETSNMPLIBS@
  	$(RANLIB) $@
  

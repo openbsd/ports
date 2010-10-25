@@ -1,35 +1,27 @@
-$OpenBSD: patch-agent_helpers_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
---- agent/helpers/Makefile.in.orig	Tue Jun 26 22:45:20 2007
-+++ agent/helpers/Makefile.in	Sat Sep 15 23:12:28 2007
-@@ -12,7 +12,7 @@ top_builddir=../..
+$OpenBSD: patch-agent_helpers_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
+--- agent/helpers/Makefile.in.orig	Sun May 30 21:19:04 2010
++++ agent/helpers/Makefile.in	Wed Oct  6 23:28:43 2010
+@@ -16,13 +16,13 @@ top_builddir=../..
  # What to install
  #
  
 -INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
 +INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
  INCLUDESUBDIR=agent
- HEADERS=all_helpers.h \
- 	baby_steps.h \
-@@ -48,10 +48,10 @@ INCLUDESUBDIRHEADERS=$(HEADERS) $(HEADERSONLY)
+ 
  #
  # Build info
  #
--NETSNMPLIB      = ../../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
 -HELPERLIB       = libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
--AGENTLIB        = ../libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
--MIBLIB          = ../libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
-+NETSNMPLIB      = ../../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
 +HELPERLIB       = libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
-+AGENTLIB        = ../libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
-+MIBLIB          = ../libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
  # -I. -I.. -I../..
  CPPFLAGS= $(TOP_INCLUDES) -I. $(AGENT_INCLUDES) $(MIBGROUP_INCLUDES) \
  	$(SNMPLIB_INCLUDES) @CPPFLAGS@
-@@ -139,6 +139,6 @@ LOBJS = all_helpers.lo \
+@@ -33,6 +33,6 @@ LOBJS = dummy.lo
  
  all: standardall
  
 -libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION):    $(LOBJS)
 +libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION):    $(LOBJS)
- 	$(LIB_LD_CMD) $@ $(LOBJS) $(AGENTLIB) $(NETSNMPLIB) $(LDFLAGS) $(LIB_LD_LIBS)
+ 	$(LIB_LD_CMD) $@ $(LOBJS) @LD_NO_UNDEFINED@ $(LDFLAGS) $(LIB_LD_LIBS)
  	$(RANLIB) $@

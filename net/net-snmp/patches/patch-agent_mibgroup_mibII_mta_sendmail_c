@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_mibII_mta_sendmail_c,v 1.2 2007/09/26 20:03:42 rui Exp $
---- agent/mibgroup/mibII/mta_sendmail.c.orig	Fri Sep 15 01:48:50 2006
-+++ agent/mibgroup/mibII/mta_sendmail.c	Sat Sep 15 23:12:28 2007
-@@ -520,7 +520,7 @@ open_sendmailst(BOOL config)
+$OpenBSD: patch-agent_mibgroup_mibII_mta_sendmail_c,v 1.3 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/mibII/mta_sendmail.c.orig	Mon Aug 16 17:03:44 2010
++++ agent/mibgroup/mibII/mta_sendmail.c	Wed Oct  6 23:25:16 2010
+@@ -499,7 +499,7 @@ open_sendmailst(BOOL config)
  count_queuegroup(struct QGrp *qg)
  {
      struct QDir    *d;

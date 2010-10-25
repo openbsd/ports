@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/10/25 22:59:12 sthen Exp $
+
+# XXX note there are various "openbsd[234]" ifdefs which will need adjusting when
+# OpenBSD goes to 5.x
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.4.3
-DISTNAME=	net-snmp-${V}
+V=		5.6
+DISTNAME=	net-snmp-$V
 PKGNAME-main=	${DISTNAME}
-PKGNAME-perl=	p5-SNMP-${V}
-PKGNAME-tkmib=	net-snmp-tkmib-${V}
-SHARED_LIBS=	netsnmp		8.0	\
-		netsnmpagent	8.1	\
-		netsnmphelpers	8.0	\
-		netsnmpmibs	8.0	\
-		netsnmptrapd	8.0
+PKGNAME-perl=	p5-SNMP-$V
+PKGNAME-tkmib=	net-snmp-tkmib-$V
+SHARED_LIBS=	netsnmp		9.0	\
+		netsnmpagent	9.0	\
+		netsnmphelpers	9.0	\
+		netsnmpmibs	9.0	\
+		netsnmptrapd	9.0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
@@ -25,13 +28,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=		c crypto kvm m perl util wrap
+WANTLIB-main=		c crypto kvm m perl pthread util wrap
 
 MULTI_PACKAGES=		-main -perl -tkmib
 
-WANTLIB-perl=		netsnmp netsnmpagent netsnmphelpers netsnmptrapd
-WANTLIB-perl+=		netsnmpmibs
+WANTLIB-perl=		crypto netsnmp netsnmpagent netsnmptrapd netsnmpmibs
 LIB_DEPENDS-perl=	::net/net-snmp,-main
+
 RUN_DEPENDS-tkmib=	::net/net-snmp,-perl \
 			::x11/p5-Tk
 
@@ -44,10 +47,12 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs)
 OPENBSD_MIBS=		OPENBSD-BASE-MIB:OPENBSD-MEM-MIB:OPENBSD-SENSORS-MIB:OPENBSD-SNMPD-CONF
 
+USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.63
+CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--enable-ipv6 \
 	--enable-mfd-rewrites \
 	--with-libwrap \

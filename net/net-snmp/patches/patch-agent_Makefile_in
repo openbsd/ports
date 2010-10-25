@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
---- agent/Makefile.in.orig	Thu Jul  5 00:26:56 2007
-+++ agent/Makefile.in	Sat Sep 15 23:12:28 2007
+$OpenBSD: patch-agent_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
+--- agent/Makefile.in.orig	Tue Jun  8 22:05:11 2010
++++ agent/Makefile.in	Wed Oct  6 23:29:46 2010
 @@ -18,8 +18,8 @@ top_builddir	= ..
  SUBDIRS=helpers mibgroup
  
@@ -11,33 +11,31 @@ $OpenBSD: patch-agent_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
 +INSTALLPOSTLIBS	= libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
  
  INCLUDESUBDIR=agent
- INCLUDESUBDIRHEADERS=agent_read_config.h \
-@@ -74,10 +74,10 @@ INSTALLUCDHEADERS= \
+ HEADERS=\
+@@ -108,9 +108,9 @@ INSTALLUCDHEADERS= \
  #
  # how to build it info
  #
 -USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
--HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
 -AGENTLIB	= libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
 -MIBLIB		= libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
 +USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
-+HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
 +AGENTLIB	= libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
-+MIBLIB		= libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmib_VERSION)
++MIBLIB		= libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
  
- LOCAL_LIBS	= -L../snmplib/.libs -L../snmplib -L./.libs -L./helpers/.libs -L./helpers
+ LOCAL_LIBS	= -L../snmplib/.libs -L../snmplib -L./.libs
  LAGENTLIBS	= @LAGENTLIBS@
-@@ -142,11 +142,11 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(AGENTLIB) $
+@@ -248,11 +248,11 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(AGENTLIB) $
  	$(LINK) $(CFLAGS) -o $@ ${LAGENTOBJS} $(LOCAL_LIBS) ${LDFLAGS} ${OUR_AGENT_LIBS}
  
  
 -libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION):    ${LLIBAGENTOBJS} $(USELIBS)
 +libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION):    ${LLIBAGENTOBJS} $(USELIBS)
- 	$(LIB_LD_CMD) $(AGENTLIB) ${LLIBAGENTOBJS} $(USELIBS) ${LAGENTLIBS} $(LDFLAGS) $(PERLLDOPTS_FOR_LIBS) $(LIB_LD_LIBS)
+ 	$(LIB_LD_CMD) $(AGENTLIB) ${LLIBAGENTOBJS} $(USELIBS) ${LAGENTLIBS} @LD_NO_UNDEFINED@ $(LDFLAGS) $(PERLLDOPTS_FOR_LIBS) $(LIB_LD_LIBS) @AGENTLIBS@
  	$(RANLIB) $(AGENTLIB)
  
--libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION): ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS)
-+libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION): ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS)
- 	$(LIB_LD_CMD) $(MIBLIB) ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS) ${LMIBLIBS} $(LDFLAGS) $(LIB_LD_LIBS)
+-libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION): ${LMIBOBJS} $(AGENTLIB) $(USELIBS)
++libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION): ${LMIBOBJS} $(AGENTLIB) $(USELIBS)
+ 	$(LIB_LD_CMD) $(MIBLIB) ${LMIBOBJS} $(AGENTLIB) $(USELIBS) @LD_NO_UNDEFINED@ $(LDFLAGS) ${LMIBLIBS} $(LIB_LD_LIBS) @AGENTLIBS@
  	$(RANLIB) $(MIBLIB)
  

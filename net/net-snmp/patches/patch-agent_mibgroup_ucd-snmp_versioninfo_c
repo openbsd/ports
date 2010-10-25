@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_ucd-snmp_versioninfo_c,v 1.3 2007/09/26 20:03:42 rui Exp $
---- agent/mibgroup/ucd-snmp/versioninfo.c.orig	Fri Sep 15 01:48:50 2006
-+++ agent/mibgroup/ucd-snmp/versioninfo.c	Sat Sep 15 23:12:28 2007
-@@ -94,7 +94,13 @@ var_extensible_version(struct variable *vp,
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_versioninfo_c,v 1.4 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/ucd-snmp/versioninfo.c.orig	Sun Jan 24 11:41:03 2010
++++ agent/mibgroup/ucd-snmp/versioninfo.c	Wed Oct  6 23:25:17 2010
+@@ -87,7 +87,13 @@ var_extensible_version(struct variable *vp,
      char           *cptr;
      time_t          curtime;
  #ifdef NETSNMP_CONFIGURE_OPTIONS

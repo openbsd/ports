@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_d_config_os_libs,v 1.1 2010/10/25 22:59:12 sthen Exp $
+--- configure.d/config_os_libs.orig	Fri Aug 13 17:04:07 2010
++++ configure.d/config_os_libs	Mon Oct 25 00:13:48 2010
+@@ -163,17 +163,20 @@ NETSNMP_SEARCH_LIBS(kstat_lookup, kstat,
+ if test "x$PARTIALTARGETOS" = "xlinux"; then
+   NETSNMP_SEARCH_LIBS(pthread_create, pthread,,,, LMIBLIBS)
+ fi
++if test "x$PARTIALTARGETOS" = "xopenbsd4"; then
++  LMIBLIBS="$LMIBLIBS -pthread"
++fi
+ 
+ 
+ #   libkvm
+ #
+ NETSNMP_SEARCH_LIBS(kvm_read, kvm,,,, LAGENTLIBS)
+ NETSNMP_SEARCH_LIBS(kvm_openfiles, kvm,,,, LAGENTLIBS)
+-NETSNMP_SEARCH_LIBS(kvm_getprocs, kvm,,,, LMIBLIBS)
++NETSNMP_SEARCH_LIBS(kvm_getproc2, kvm,,,, LMIBLIBS)
+ NETSNMP_SEARCH_LIBS(kvm_getswapinfo, kvm,,,, LMIBLIBS)
+ netsnmp_save_LIBS="$LIBS"
+ LIBS="$LAGENTLIBS $LMIBLIBS $LIBS"
+-AC_CHECK_FUNCS([kvm_openfiles kvm_getprocs kvm_getswapinfo])
++AC_CHECK_FUNCS([kvm_openfiles kvm_getproc2 kvm_getswapinfo])
+ LIBS="$netsnmp_save_LIBS"
+ 
+ 

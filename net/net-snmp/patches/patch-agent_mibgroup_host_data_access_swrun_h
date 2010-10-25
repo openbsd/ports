@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_h,v 1.1 2010/10/25 22:59:12 sthen Exp $
+--- agent/mibgroup/host/data_access/swrun.h.orig	Mon Oct 25 13:09:45 2010
++++ agent/mibgroup/host/data_access/swrun.h	Mon Oct 25 13:16:56 2010
+@@ -35,7 +35,7 @@ config_exclude(host/hr_swrun)
+ #elif defined( aix4 ) || defined( aix5 ) || defined( aix6 ) || defined( aix7 )
+     config_require(host/data_access/swrun_procinfo)
+ /* Should really be #elif HAVE_KVM_GETPROCS */
+-#elif defined(freebsd) || defined(openbsd) || defined(netbsd)
++#elif defined(freebsd) || defined(openbsd4) || defined(netbsd)
+     config_require(host/data_access/swrun_kinfo)
+ #elif defined( linux )
+     config_require(host/data_access/swrun_procfs_status)
