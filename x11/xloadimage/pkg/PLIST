@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/08 15:51:07 naddy Exp $
-bin/uufilter
-bin/xloadimage
+@comment $OpenBSD: PLIST,v 1.9 2010/10/26 16:57:57 naddy Exp $
+@bin bin/uufilter
+@bin bin/xloadimage
 bin/xsetbg
 bin/xview
 @man man/man1/uufilter.1
