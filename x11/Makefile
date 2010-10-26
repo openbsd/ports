@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2010/10/23 10:40:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.433 2010/10/26 12:59:21 giovanni Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -69,6 +69,7 @@
      SUBDIR += freefarsi-ttf
      SUBDIR += freefont-ttf
      SUBDIR += freefonts
+     SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
      SUBDIR += fvwm2,i18n
