@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.6 2010/09/30 07:37:05 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.7 2010/10/26 17:20:28 ajacoutot Exp $
 
 OpenBSD does not support uPower.
 
---- gnome-session/gsm-manager.c.orig	Thu Jul 15 14:53:08 2010
-+++ gnome-session/gsm-manager.c	Tue Sep 28 13:53:51 2010
+--- gnome-session/gsm-manager.c.orig	Tue Oct 26 19:10:23 2010
++++ gnome-session/gsm-manager.c	Tue Oct 26 19:12:14 2010
 @@ -38,7 +38,9 @@
  #include <dbus/dbus-glib.h>
  #include <dbus/dbus-glib-lowlevel.h>
@@ -24,7 +24,7 @@ OpenBSD does not support uPower.
  };
  
  enum {
-@@ -983,6 +987,7 @@ manager_perhaps_lock (GsmManager *manager)
+@@ -1005,6 +1009,7 @@ manager_perhaps_lock (GsmManager *manager)
  static void
  manager_attempt_hibernate (GsmManager *manager)
  {
@@ -32,7 +32,7 @@ OpenBSD does not support uPower.
          gboolean  can_hibernate;
          GError   *error;
          gboolean  ret;
-@@ -1001,11 +1006,13 @@ manager_attempt_hibernate (GsmManager *manager)
+@@ -1023,11 +1028,13 @@ manager_attempt_hibernate (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -46,7 +46,7 @@ OpenBSD does not support uPower.
          gboolean  can_suspend;
          GError   *error;
          gboolean  ret;
-@@ -1024,6 +1031,7 @@ manager_attempt_suspend (GsmManager *manager)
+@@ -1046,6 +1053,7 @@ manager_attempt_suspend (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -54,7 +54,7 @@ OpenBSD does not support uPower.
  }
  
  static void
-@@ -2196,10 +2204,12 @@ gsm_manager_dispose (GObject *object)
+@@ -2253,10 +2261,12 @@ gsm_manager_dispose (GObject *object)
                  manager->priv->gconf_client = NULL;
          }
  
@@ -67,7 +67,7 @@ OpenBSD does not support uPower.
  
          G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
  }
-@@ -2429,7 +2439,9 @@ gsm_manager_init (GsmManager *manager)
+@@ -2488,7 +2498,9 @@ gsm_manager_init (GsmManager *manager)
                            G_CALLBACK (on_presence_status_changed),
                            manager);
  
@@ -77,7 +77,7 @@ OpenBSD does not support uPower.
  
          /* GConf setup */
          gconf_client_add_dir (manager->priv->gconf_client,
-@@ -2953,10 +2965,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+@@ -3024,10 +3036,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
          gboolean can_suspend;
          gboolean can_hibernate;
  
@@ -87,6 +87,6 @@ OpenBSD does not support uPower.
                        "can-hibernate", &can_hibernate,
                        NULL);
 +#endif
- 
+ #ifdef GNOME_ENABLE_DEBUG
          g_debug ("GsmManager: CanShutdown called");
- 
+ #endif
