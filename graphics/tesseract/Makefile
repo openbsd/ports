@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 12:47:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/26 14:43:53 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -7,7 +7,7 @@ DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS +=  tesseract_api             0.0 # 3.0
 SHARED_LIBS +=  tesseract_ccstruct        0.0 # 3.0
@@ -79,6 +79,8 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tesseract
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tesseract
+	${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
 	${INSTALL_DATA} ${WRKSRC}/README ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/tesseract
 	${INSTALL_DATA} ${WRKSRC}/{eurotext.tif,phototest.tif} \

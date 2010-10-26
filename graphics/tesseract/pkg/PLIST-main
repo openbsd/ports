@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/10/24 12:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/10/26 14:43:53 ajacoutot Exp $
 %%SHARED%%
 @bin bin/cntraining
 @bin bin/combine_tessdata
@@ -295,6 +295,14 @@ lib/libtesseract_viewer.a
 lib/libtesseract_viewer.la
 lib/libtesseract_wordrec.a
 lib/libtesseract_wordrec.la
+@man man/man1/cntraining.1
+@man man/man1/combine_tessdata.1
+@man man/man1/mftraining.1
+@man man/man1/tesseract.1
+@man man/man1/unicharset_extractor.1
+@man man/man1/wordlist2dawg.1
+@man man/man5/unicharambigs.5
+@man man/man5/unicharset.5
 share/doc/tesseract/
 share/doc/tesseract/README
 share/doc/tesseract/README.OpenBSD
