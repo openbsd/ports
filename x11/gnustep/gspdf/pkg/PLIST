@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 14:56:01 sebastia Exp $
+bin/GSPdf
+libexec/GNUstep/
+libexec/GNUstep/GSPdf.app/
+@bin libexec/GNUstep/GSPdf.app/GSPdf
+libexec/GNUstep/GSPdf.app/Resources/
+libexec/GNUstep/GSPdf.app/Resources/FileEPS.tiff
+libexec/GNUstep/GSPdf.app/Resources/FilePDF.tiff
+libexec/GNUstep/GSPdf.app/Resources/FilePS.tiff
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.desktop
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.gorm/
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.gorm/data.classes
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.gorm/data.info
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.gorm/objects.gorm
+libexec/GNUstep/GSPdf.app/Resources/GSPdf.tiff
+libexec/GNUstep/GSPdf.app/Resources/GSPdfConsole.gorm/
+libexec/GNUstep/GSPdf.app/Resources/GSPdfConsole.gorm/data.classes
+libexec/GNUstep/GSPdf.app/Resources/GSPdfConsole.gorm/data.info
+libexec/GNUstep/GSPdf.app/Resources/GSPdfConsole.gorm/objects.gorm
+libexec/GNUstep/GSPdf.app/Resources/GSPdfDocument.gorm/
+libexec/GNUstep/GSPdf.app/Resources/GSPdfDocument.gorm/data.classes
+libexec/GNUstep/GSPdf.app/Resources/GSPdfDocument.gorm/data.info
+libexec/GNUstep/GSPdf.app/Resources/GSPdfDocument.gorm/objects.gorm
+libexec/GNUstep/GSPdf.app/Resources/Info-gnustep.plist
+libexec/GNUstep/GSPdf.app/Resources/hand.tiff
+libexec/GNUstep/GSPdf.app/Resources/left.tiff
+libexec/GNUstep/GSPdf.app/Resources/page.tiff
+libexec/GNUstep/GSPdf.app/Resources/papersizes.plist
+libexec/GNUstep/GSPdf.app/Resources/right.tiff
+libexec/GNUstep/GSPdf.app/Resources/zoomin.tiff
+libexec/GNUstep/GSPdf.app/Resources/zoomout.tiff
+libexec/GNUstep/GSPdf.app/stamp.make

@@ -1,0 +1,3 @@
+GSPdf is a PDF and PostScript file viewer for GNUstep. GSPdf is a
+frond-end for GhostScript, which is required at runtime to properly
+render the pages.
