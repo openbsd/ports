@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/29 15:29:21 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.4 2010/10/26 21:20:20 jeremy Exp $
 
 COMMENT=		Ruby library to physically locate iPhones
 
 VERSION=		0.2.0
 DISTNAME=		findmyiphone-${VERSION}
 PKGNAME=		ruby-findmyiphone-${VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		geo
 
 HOMEPAGE=		http://github.com/mattb/findmyiphone
@@ -22,9 +20,6 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
-WANTLIB=		c m
-
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::www/ruby-mechanize \
 			::converters/ruby-json \
