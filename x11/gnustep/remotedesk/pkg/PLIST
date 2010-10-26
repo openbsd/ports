@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 17:38:22 sebastia Exp $
+bin/RemoteDesk
+libexec/GNUstep/
+libexec/GNUstep/RemoteDesk.app/
+@bin libexec/GNUstep/RemoteDesk.app/RemoteDesk
+libexec/GNUstep/RemoteDesk.app/Resources/
+libexec/GNUstep/RemoteDesk.app/Resources/Info-gnustep.plist
+libexec/GNUstep/RemoteDesk.app/Resources/LICENSE
+libexec/GNUstep/RemoteDesk.app/Resources/README
+libexec/GNUstep/RemoteDesk.app/Resources/RemoteDesk.desktop
+libexec/GNUstep/RemoteDesk.app/Resources/RemoteDesk.gorm/
+libexec/GNUstep/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
+libexec/GNUstep/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
+libexec/GNUstep/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
+libexec/GNUstep/RemoteDesk.app/Resources/remotedesk.tiff
+libexec/GNUstep/RemoteDesk.app/stamp.make
