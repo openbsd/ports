@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 23:12:02 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/26 07:57:57 ajacoutot Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	http://www.yersinia.net/download/
 
-WANTLIB =	c ncurses panel pcap pthread
+WANTLIB =	c ncurses panel pcap pthread net
 
-LIB_DEPENDS =	net::net/libnet/1.1
+LIB_DEPENDS =	:libnet->=1.1:net/libnet/1.1
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-gtk \
