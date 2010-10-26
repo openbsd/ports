@@ -1,0 +1,4 @@
+aria2 is a multi-protocol & multi-source, cross platform download
+utility. The supported protocols are HTTP(S), FTP, BitTorrent, Metalink.
+It can download a file from multiple sources/protocols and tries to
+utilize your maximum download bandwidth.
