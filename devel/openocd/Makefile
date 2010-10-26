@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/26 09:29:32 jasper Exp $
 
 COMMENT =	Open On-Chip Debugging
 
-DISTNAME =	openocd-0.2.0
+DISTNAME =	openocd-0.4.0
 CATEGORIES =	devel
 
 SHARED_LIBS +=  openocd		0.0 # .0.0
@@ -11,12 +11,12 @@ HOMEPAGE =	http://openocd.berlios.de/
 
 MAINTAINER =	Sylvestre Gallon <ccna.syl@gmail.com>
 
-# GPL
-PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
+# GPLv2
+PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
-WANTLIB =	c usb
+PERMIT_DISTFILES_FTP =  Yes
+WANTLIB =	c usb ftdi
 
 MASTER_SITES =	${MASTER_SITE_BERLIOS:=openocd/}
 EXTRACT_SUFX =	.tar.bz2
@@ -38,8 +38,9 @@ CONFIGURE_ARGS = --disable-werror \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS =	ftdi::devel/libftdi
+LIB_DEPENDS =	::devel/libftdi
 
+USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 NO_REGRESS =	Yes
 
