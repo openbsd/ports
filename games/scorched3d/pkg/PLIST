@@ -1,7 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 10:34:02 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/26 12:54:09 jasper Exp $
 @bin bin/scorched3d
 @bin bin/scorched3dc
 @bin bin/scorched3ds
+share/doc/scorched3d/
+share/doc/scorched3d/README-EXPAT.txt
+share/doc/scorched3d/README-ODE.txt
+share/doc/scorched3d/README-SDL.txt
+share/doc/scorched3d/README-SDLMIXER.txt
+share/doc/scorched3d/README-SDLNET.txt
+share/doc/scorched3d/README-apoc.txt
+share/doc/scorched3d/README-ft2.txt
+share/doc/scorched3d/README-libjpg.txt
+share/doc/scorched3d/README-ogg.txt
+share/doc/scorched3d/README-png.txt
+share/doc/scorched3d/README-wxwindows.txt
+share/doc/scorched3d/README-zlib.txt
 share/scorched3d/
 share/scorched3d/data/
 share/scorched3d/data/autoexec.xml
@@ -1867,16 +1880,3 @@ share/scorched3d/data/ssgame.xml
 share/scorched3d/data/statstables.sql
 share/scorched3d/data/tips.txt
 share/scorched3d/data/tutorial.xml
-share/scorched3d/documentation/
-share/scorched3d/documentation/README-EXPAT.txt
-share/scorched3d/documentation/README-ODE.txt
-share/scorched3d/documentation/README-SDL.txt
-share/scorched3d/documentation/README-SDLMIXER.txt
-share/scorched3d/documentation/README-SDLNET.txt
-share/scorched3d/documentation/README-apoc.txt
-share/scorched3d/documentation/README-ft2.txt
-share/scorched3d/documentation/README-libjpg.txt
-share/scorched3d/documentation/README-ogg.txt
-share/scorched3d/documentation/README-png.txt
-share/scorched3d/documentation/README-wxwindows.txt
-share/scorched3d/documentation/README-zlib.txt

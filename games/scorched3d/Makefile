@@ -1,15 +1,16 @@
- # $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 10:34:00 phessler Exp $
+ # $OpenBSD: Makefile,v 1.2 2010/10/26 12:54:09 jasper Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-43.1c-src
 PKGNAME =		${DISTNAME:L:S/-src//}
+REVISION =		0
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://www.scorched3d.co.uk
+HOMEPAGE =		http://www.scorched3d.co.uk/
 
-# GPLv2 or later
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -34,8 +35,8 @@ RUN_DEPENDS =		::devel/xdg-utils
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	--disable-openaltest \
-			--datarootdir=${PREFIX}/share/scorched3d/ \
-			--docdir=${PREFIX}/share/doc/scorched3d/
+			--datarootdir=${PREFIX}/share/scorched3d/
+FAKE_FLAGS+=		docdir="${PREFIX}/share/doc/scorched3d/"
 
 WRKDIST =		${WRKDIR}/scorched
 
