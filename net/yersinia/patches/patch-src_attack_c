@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_attack_c,v 1.1 2010/10/26 10:44:53 steven Exp $
+--- src/attack.c.orig	Tue Oct 26 12:04:42 2010
++++ src/attack.c	Tue Oct 26 12:13:45 2010
+@@ -248,8 +248,12 @@ attacks->attack_th.id);
+ void
+ attack_gen_mac(u_int8_t *mac)
+ {
+-    *((in_addr_t *)mac) = libnet_get_prand(LIBNET_PRu32);
+-    *((u_int16_t *)(mac + 4)) = libnet_get_prand(LIBNET_PRu16);
++    u_int32_t tmp1;
++    u_int16_t tmp2;
++    tmp1 = libnet_get_prand(LIBNET_PRu32);
++    memcpy(mac, &tmp1, sizeof(tmp1));
++    tmp2 = libnet_get_prand(LIBNET_PRu16);
++    memcpy(mac + 4, &tmp2, sizeof(tmp2));
+ }
+ 
+ 
