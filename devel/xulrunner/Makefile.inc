@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile.inc,v 1.15 2010/10/26 10:01:33 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2010/10/26 10:15:39 landry Exp $
 
-COMMENT-main=		standalone XUL/XPCOM runtime environment
-COMMENT-devel=		devel files for Gecko
+COMMENT-main =		standalone XUL/XPCOM runtime environment
+COMMENT-devel =		devel files for Gecko
 PKGNAME =		xulrunner-${MOZILLA_VERSION}
 PKGNAME-main =		xulrunner-${MOZILLA_VERSION}
 PKGNAME-devel =		xulrunner-devel-${MOZILLA_VERSION}
 
 MOZILLA_CODENAME =	xulrunner
-CATEGORIES+=		devel
+CATEGORIES +=		devel
 
-HOMEPAGE=		http://developer.mozilla.org/en/docs/XULRunner
+HOMEPAGE =		http://developer.mozilla.org/en/docs/XULRunner
 
-MULTI_PACKAGES+=	-main -devel
+MULTI_PACKAGES +=	-main -devel
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes

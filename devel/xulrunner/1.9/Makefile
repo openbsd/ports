@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/26 10:01:33 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/26 10:15:39 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.11
-FFX_VERSION=		3.6.11
+FFX_VERSION =		3.6.11
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 REVISION-main =		0
@@ -9,9 +9,9 @@ REVISION-devel =	0
 DISTNAME =		firefox-${FFX_VERSION}.source
 
 
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
+MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
-SO_VERSION=		3.1
+SO_VERSION =		3.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	imgicon mozjs xpcom xul sqlite3 nullplugin unixprintplugin
@@ -25,17 +25,17 @@ PKG_ARGS+=	-Djit=0 -Damd64=0
 .endif
 
 # use files and patches from www/mozilla-firefox
-PATCHDIR=		${PORTSDIR}/www/mozilla-firefox/patches
-FILESDIR=		${PORTSDIR}/www/mozilla-firefox/files
+PATCHDIR =		${PORTSDIR}/www/mozilla-firefox/patches
+FILESDIR =		${PORTSDIR}/www/mozilla-firefox/files
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries greprefs \
 			icons modules plugins res
 MOZILLA_AUTOCONF_DIRS +=	js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in \
 				xulrunner/setup/nsXULAppInstall.js
-DISTDIRS=		idl include
-TOOLS=			nsinstall xpcshell xpidl xpt_dump xpt_link xulrunner-bin xulrunner-stub
-PCFILES=		libxul.pc libxul-embedding.pc mozilla-js.pc \
+DISTDIRS =		idl include
+TOOLS =			nsinstall xpcshell xpidl xpt_dump xpt_link xulrunner-bin xulrunner-stub
+PCFILES =		libxul.pc libxul-embedding.pc mozilla-js.pc \
 			mozilla-plugin.pc mozilla-gtkmozembed.pc \
 			mozilla-gtkmozembed-embedding.pc
 
