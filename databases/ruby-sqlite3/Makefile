@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/28 20:12:16 jeremy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2010/10/26 21:17:49 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
@@ -20,14 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
-WANTLIB=		c m
+WANTLIB=		sqlite3.>=8
+LIB_DEPENDS=		:sqlite3->=3.3.4:databases/sqlite3 
 
-# swig is needed to build the native extension
-BUILD_DEPENDS=		::devel/swig
-LIB_DEPENDS=		sqlite3.>=8:sqlite3->=3.3.4:databases/sqlite3 \
-			${MODRUBY_LIB_DEPENDS}
-
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE=	ruby gem ext
 
 REGRESS_DEPENDS=	::devel/ruby-mocha \
 			::${BASE_PKGPATH}
