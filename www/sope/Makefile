@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/25 09:59:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/26 12:43:41 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -32,8 +32,10 @@ PERMIT_DISTFILES_FTP=   Yes
 MULTI_PACKAGES=	-main -mysql -postgres
 
 MODULES=	converters/libiconv x11/gnustep apache-module
-WANTLIB += m objc gnustep-base
-WANTLIB-main += ${WANTLIB} c crypto m ssl z pthread lber ldap xml2
+MODGNUSTEP_NEEDS_GUI=	No
+
+WANTLIB +=	m
+WANTLIB-main += ${WANTLIB} c pthread crypto ssl z lber ldap xml2
 
 WANTLIB-mysql += ${WANTLIB} GDLAccess EOControl mysqlclient crypto ssl z
 WANTLIB-postgres += ${WANTLIB} GDLAccess EOControl pq
