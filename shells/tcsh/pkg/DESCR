@@ -4,3 +4,6 @@ usable both as an interactive login shell and a shell script command
 processor.  It includes a command-line editor, programmable word
 completion, spelling correction, a history mechanism, job control
 and a C-like syntax.
+
+Flavors:
+	static - Build with statically linked binaries.

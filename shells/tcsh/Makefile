@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/26 15:19:27 jasper Exp $
 
 COMMENT=	extended C-shell with many useful features
 
 DISTNAME=	tcsh-6.17.00
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
@@ -16,6 +17,13 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
 		ftp://ftp.astron.com/pub/tcsh/old/
 
 WANTLIB=	c termlib 
+
+FLAVORS=	static
+FLAVOR?=
+
+.if ${FLAVOR:L} == "static"
+CONFIGURE_ENV=	LDFLAGS="-static"
+.endif
 
 CONFIGURE_STYLE=gnu
 
