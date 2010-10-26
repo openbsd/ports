@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2010/10/25 12:13:55 edd Exp $
+# $OpenBSD: Makefile,v 1.216 2010/10/26 10:34:47 phessler Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -132,6 +132,7 @@
      SUBDIR += ri-li
      SUBDIR += roadfighter
      SUBDIR += rocksndiamonds
+     SUBDIR += scorched3d
      SUBDIR += scummvm
      SUBDIR += scummvm-tools
      SUBDIR += sdlroids
