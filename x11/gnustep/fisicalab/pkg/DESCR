@@ -1,0 +1,11 @@
+FisicaLab is an educational application to solve physics problems.  The
+problems are setting adding elements from the palette to chalkboard, and
+writing the data of each element. The elements are objects as Blocks,
+Pulleys, Mobiles, Forces, ... . Use the SI and English systems,
+scientific notation and many conversion factors. The problems that can
+be solved with FisicaLab, are:
+
+* Kinematics of particles, include circular motion.
+* Static of particles and rigid bodies in 2D.
+* Dynamic of particles in 2D (doesn't include dynamic of circular motion)
+* Heat, calorimetry, ideal gas and expansion.
