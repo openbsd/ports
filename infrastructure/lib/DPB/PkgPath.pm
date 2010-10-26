@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.2 2010/10/26 15:45:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -30,17 +30,25 @@ sub create
 {
 	my ($class, $fullpkgpath) = @_;
 	# subdivide into flavors/multi
-	my @list = split /,/, $fullpkgpath;
+	# XXX we want to preserve empty fields
+	my @list = split /,/, $fullpkgpath, -1;
 	my $pkgpath = shift @list;
-	my %flavors = map {($_, 1)} grep { !/^\-/} @list;
-	my @multi = grep { /^\-/} @list;
-	my $multi = pop(@multi) || undef;
-	if (@multi > 0) {
-		die "$fullpkgpath has >1 multi\n";
+	my %flavors = ();
+	my $sawflavor = 0;
+	my $multi = undef;
+	for my $v (@list) {
+		if ($v =~ m/^\-/) {
+			die "$fullpkgpath has >1 multi\n" if defined $multi;
+			$multi = $v;
+		} else {
+			$sawflavor = 1;
+			$flavors{$v} = 1 unless $v eq '';
+		}
 	}
 
 	bless {pkgpath => $pkgpath,
 		flavors => \%flavors,
+		sawflavor => $sawflavor,
 		multi => $multi}, $class;
 }
 
@@ -84,6 +92,8 @@ sub basic_list
 	my @list = ($self->{pkgpath});
 	if (keys %{$self->{flavors}}) {
 		push(@list, sort keys %{$self->{flavors}});
+	} elsif ($self->{sawflavor}) {
+		push(@list, '');
 	}
 	return @list;
 }
@@ -130,6 +140,8 @@ sub compose
 	my ($class, $fullpkgpath, $pseudo) = @_;
 	my $o = $class->create($fullpkgpath);
 	$o->{flavors} = $pseudo->copy_flavors;
+	$o->{sawflavor} = $pseudo->{sawflavor};
+	my $p = $o->normalize;
 	return $o->normalize;
 }
 

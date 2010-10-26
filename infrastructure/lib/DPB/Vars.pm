@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Vars.pm,v 1.2 2010/10/26 15:45:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,6 +81,12 @@ EOT
 	return @list;
 }
 
+sub subdirlist
+{
+	my ($class, $list) = @_;
+	return join(' ', sort @$list);
+}
+
 sub grab_list
 {
 	my ($class, $core, $ports, $make, $subdirs, $log, $dpb, $code) = @_;
@@ -90,13 +96,13 @@ sub grab_list
 		if (defined $shell) {
 			my $s='';
 			if (defined $subdirs) {
-				$s="SUBDIR='".join(' ', sort @$subdirs)."'";
+				$s="SUBDIR='".$class->subdirlist($subdirs)."'";
 			}
 			$shell->run("cd $ports && $s ".
 			    join(' ', $shell->make, @args));
 		} else {
 			if (defined $subdirs) {
-				$ENV{SUBDIR} = join(' ', sort @$subdirs);
+				$ENV{SUBDIR} = $class->subdirlist($subdirs);
 			}
 			chdir($ports) or die "Bad directory $ports";
 			exec {$make} ('make', @args);
@@ -133,7 +139,7 @@ sub grab_list
 				$value = $1;
 			}
 			my $o = DPB::PkgPath->compose($pkgpath, $subdir);
-			my $info = DPB::PortInfo->new($o, $subdir);
+			my $info = DPB::PortInfo->new($o);
 			$h->{$o} = $o;
 			eval { $info->add($var, $value); };
 			if ($@) {

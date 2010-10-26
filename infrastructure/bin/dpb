@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.3 2010/10/24 10:01:57 espie Exp $
+# $OpenBSD: dpb,v 1.4 2010/10/26 15:45:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -124,6 +124,7 @@ if (@ARGV == 0) {
 	$opt_a = 1;
 }
 for my $arg (@ARGV) {
+	$arg =~ s/\/+$//;
 	my ($path, $weight) = ($arg, 5000);
 	if ($arg =~ m/^(.*)\=(\d+)$/) {
 		($path, $weight) = ($1, $2);
