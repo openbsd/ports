@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/26 12:39:10 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
@@ -24,6 +24,9 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep \
 		converters/libiconv
+MODGNUSTEP_NEEDS_GUI=	No
+MODGNUSTEP_NEEDS_BASE=	No
+
 LIB_DEPENDS=	::devel/libffi \
 		::devel/gmp \
 		::textproc/libxslt \

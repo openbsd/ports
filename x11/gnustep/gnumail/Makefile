@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 13:03:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/26 12:39:10 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME=	GNUMail-1.2.0pre3
 PKGNAME=	${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	GNUMail 2.0	# .1.2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.collaboration-world.com/gnumail
 
-WANTLIB += c gnustep-base gnustep-gui m objc pthread AddressView
-WANTLIB += Addresses Pantomime
+WANTLIB+=	c m pthread AddressView Addresses Pantomime
 
 MASTER_SITES=	${HOMEPAGE}.data/releases/Stable/
 
 MODULES=	x11/gnustep
 LIB_DEPENDS=	::x11/gnustep/addresses \
-		::x11/gnustep/addresses \
 		::x11/gnustep/pantomime
-RUN_DEPENDS=	:gnustep-back-*:x11/gnustep/back
 
 MAKE_ENV+=	GNUMail_INTERFACE_VERSION=${LIBGNUMail_VERSION}
 

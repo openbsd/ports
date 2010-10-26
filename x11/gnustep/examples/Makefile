@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/26 12:39:10 sebastia Exp $
 
 COMMENT=	GNUstep example applications
 
 DISTNAME=	gnustep-examples-1.3.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.gnustep.org/experience/examples.html
 
-WANTLIB=	GL GLU c m objc pthread gnustep-base gnustep-gui
+WANTLIB=	GL GLU c m pthread
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep
-LIB_DEPENDS=	::x11/gnustep/base \
-		::x11/gnustep/gui
-RUN_DEPENDS=	:gnustep-back-*:x11/gnustep/back
 
 pre-configure:
 	@perl -pi -e 's,!!X11BASE!!,${X11BASE},g' \
