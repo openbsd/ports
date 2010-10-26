@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/26 17:43:07 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.9
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -61,7 +61,7 @@ do-install:
 	@cp -R ${WRKSRC}/ROX-Filer/$i ${PREFIX}/rox/ROX-Filer
 .endfor
 	@echo '#!/bin/sh' > ${PREFIX}/bin/rox
-	@echo 'exec ${PREFIX}/rox/ROX-Filer/AppRun "$$@"' >> ${PREFIX}/bin/rox
+	@echo 'exec ${TRUEPREFIX}/rox/ROX-Filer/AppRun "$$@"' >> ${PREFIX}/bin/rox
 	@chmod ugo+rx ${PREFIX}/bin/rox
 
 .include <bsd.port.mk>
