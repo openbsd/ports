@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/26 17:45:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		module that embeds Ruby into Apache
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		m
+WANTLIB=		m ${MODRUBY_WANTLIB}
 
 MODAPACHE_NAME=		ruby
 

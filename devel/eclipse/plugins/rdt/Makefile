@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 22:11:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
@@ -22,8 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rubyeclipse/}
 
-RUN_DEPENDS=		:eclipse-sdk->=3.1:devel/eclipse/sdk\
-			:ruby-*:lang/ruby/1.8,-main
+MODULES=		lang/ruby
+MODRUBY_BUILDDEP=	No
+RUN_DEPENDS=		:eclipse-sdk->=3.1:devel/eclipse/sdk
+			
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

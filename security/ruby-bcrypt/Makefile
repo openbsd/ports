@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/28 20:12:18 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.7 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
@@ -20,10 +18,7 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 
-WANTLIB =		c m
-LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS}
-
-CONFIGURE_STYLE =	ruby gem
+CONFIGURE_STYLE =	ruby gem ext
 
 REGRESS_DEPENDS =	::devel/ruby-rcov \
 			::devel/ruby-diff-lcs \

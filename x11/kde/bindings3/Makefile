@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -9,12 +9,12 @@ SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
 SHARED_LIBS +=	smokekde             4.0      # .3.2
 
-MODULES =	x11/kde devel/gettext
+MODULES =	x11/kde devel/gettext lang/ruby
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS =	::x11/kde/libs3 \
 		::x11/qt3 \
-		:ruby->=1.8,<=1.9:lang/ruby/1.8,-main
+		${MODRUBY_LIB_DEPENDS}
 
 REVISION =	11
 #XXX missing -rpath to /usr/local ?
@@ -26,7 +26,7 @@ WANTLIB = GL GLU ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam \
 	lib/kde3/khtml lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kscript lib/kde3/kspell \
 	lib/kde3/kutils lib/kde3/kwalletclient m pcre pcreposix png pthread \
-	pthread-stubs qui-mt ruby18 stdc++ util xcb z
+	pthread-stubs qui-mt stdc++ util xcb z ${MODRUBY_WANTLIB}
 
 PYTHON_VER =		2.5
 BUILD_DEPENDS =		:python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}

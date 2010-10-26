@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/09/23 22:12:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT-main=	simplified wrapper and interface generator
 
@@ -22,10 +22,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
-MODULES=	lang/python lang/tcl
+MODULES=	lang/python lang/tcl lang/ruby
 RUN_DEPENDS-main=
+MODRUBY_RUNDEP=	No
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
-		:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
 		::lang/guile
 
 

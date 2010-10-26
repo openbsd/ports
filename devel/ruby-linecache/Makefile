@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/28 20:12:17 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	caches (Ruby source) files
 
@@ -19,10 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
 
-CONFIGURE_STYLE = ruby gem
-
-WANTLIB =	c m
-LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
+CONFIGURE_STYLE = ruby gem ext
 
 MODRUBY_REGRESS = rake
 

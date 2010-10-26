@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/28 20:12:19 jeremy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.14 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=	fast HTTP library and server for Ruby
 
@@ -19,11 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m
-
 MODULES=	lang/ruby
-
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:ruby-daemons->=1.0.3:devel/ruby-daemons \
@@ -32,7 +26,7 @@ RUN_DEPENDS=	:ruby-daemons->=1.0.3:devel/ruby-daemons \
 
 GEM_SKIPDEPENDS=cgi_multipart_eof_fix
 
-CONFIGURE_STYLE=ruby gem
+CONFIGURE_STYLE=ruby gem ext
 
 REGRESS_DEPENDS=:${PKGNAME}:www/ruby-mongrel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
@@ -16,10 +16,9 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	lang/ruby
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
-WANTLIB=	c crypto m ssl stdc++
+WANTLIB=	crypto ssl stdc++
 
-CONFIGURE_STYLE=ruby gem
+CONFIGURE_STYLE=ruby gem ext
 
 .include <bsd.port.mk>

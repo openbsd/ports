@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/06 16:26:57 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.6 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	PostgreSQL database interface for ruby
 
@@ -16,13 +14,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c m
-
 MODULES =	lang/ruby
 
-LIB_DEPENDS =	pq.>=2::databases/postgresql \
-		${MODRUBY_LIB_DEPENDS}
+WANTLIB =	pq.>=2
+LIB_DEPENDS =	::databases/postgresql
 
-CONFIGURE_STYLE = ruby gem
+CONFIGURE_STYLE = ruby gem ext
 
 .include <bsd.port.mk>

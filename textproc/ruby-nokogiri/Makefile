@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:18 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.6 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
@@ -18,13 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m xml2
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}  \
-			exslt.>=9,xslt.>=3::textproc/libxslt
+WANTLIB=		xml2 exslt.>=9 xslt.>=3
+LIB_DEPENDS=		::textproc/libxslt
 
 BUILD_DEPENDS=		::devel/ruby-rake
 
 MODULES=		lang/ruby
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE=	ruby gem ext
 
 .include <bsd.port.mk>

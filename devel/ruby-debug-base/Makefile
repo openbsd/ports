@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/28 20:12:16 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.9 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	faster implementation of the standard debug.rb - base
 
@@ -19,11 +17,9 @@ PERMIT_DISTFILES_FTP =		Yes
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	::devel/ruby-linecache
 
-LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
-WANTLIB +=	c m
 MODULES =	lang/ruby
 
-CONFIGURE_STYLE = ruby gem
+CONFIGURE_STYLE = ruby gem ext
 
 MODRUBY_REGRESS = rake
 

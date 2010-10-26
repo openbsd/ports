@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/28 20:12:18 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.8 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		flexible HTML parser
 
@@ -18,14 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
-
 BUILD_DEPENDS=		::devel/ruby-rake
 
 MODULES=		lang/ruby
 
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE=	ruby gem ext
 
 REGRESS_DEPENDS=	::textproc/ruby-hpricot
 

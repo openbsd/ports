@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:19 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
@@ -18,10 +16,8 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
-CONFIGURE_STYLE = ruby gem
+CONFIGURE_STYLE = ruby gem ext
 
-WANTLIB =	c m
-LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	:ruby-rack->=0.3.0:www/ruby-rack \
 		:ruby-daemons->=1.0.9:devel/ruby-daemons \

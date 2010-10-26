@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/09/23 22:30:28 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.33 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		Ruby interface to LBL Packet Capture library
 
@@ -17,13 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pcap 
+WANTLIB=		pcap 
 
 MASTER_SITES=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 
 MODULES=		lang/ruby
-
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes
 

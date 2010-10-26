@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/28 20:12:16 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.9 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		JSON implementation for Ruby
 
@@ -19,10 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
-CONFIGURE_STYLE=	ruby gem
-
-WANTLIB=		c m
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
+CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_REGRESS=	rake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/03 07:12:18 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 
-CONFIGURE_STYLE =	extconf
+CONFIGURE_STYLE =	ruby extconf
 
 MODULES =	lang/ruby
-WANTLIB =	c crypto ssl
-LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
+WANTLIB =	crypto ssl
+MODRUBY_WANTLIB_m = No
 NO_REGRESS =	Yes
 
 do-install:

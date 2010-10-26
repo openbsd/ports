@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/07 15:06:08 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT =	faster SELECTs when using ruby-sequel with ruby-pg
 
@@ -17,16 +15,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c m pq.>=2
+WANTLIB =	pq.>=2
 
 MODULES =	lang/ruby
 
-LIB_DEPENDS =	::databases/postgresql \
-		${MODRUBY_LIB_DEPENDS}
+LIB_DEPENDS =	::databases/postgresql
 RUN_DEPENDS =	::databases/ruby-sequel \
 		::databases/ruby-pg
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
-CONFIGURE_STYLE = ruby gem
+CONFIGURE_STYLE = ruby gem ext
 
 .include <bsd.port.mk>

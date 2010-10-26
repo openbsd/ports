@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/15 20:27:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/26 21:42:14 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,7 +21,7 @@ MASTER_SITES =		http://files.rubyforge.vm.bytemark.co.uk/passenger/
 
 MODULES =		lang/ruby
 
-WANTLIB =		c m pthread stdc++
+WANTLIB =		c m pthread stdc++ ${MODRUBY_WANTLIB}
 
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS}
 

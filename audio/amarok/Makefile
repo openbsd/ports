@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/10/26 21:42:13 jeremy Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -25,7 +25,7 @@ WANTLIB += pcreposix png pthread stdc++ usb util xml2 z
 WANTLIB += pthread-stubs xcb lib/qt3/qt-mt.>=3.33 konqsidebarplugin
 WANTLIB += kdecore.>=6 DCOP khtml kwalletclient kdefx kdeprint
 WANTLIB += kutils kdeui kparts kio kdesu kjs knewstuff kdnssd tag.>=5.0
-WANTLIB += xine sqlite3 gpod njb ruby18 mtp
+WANTLIB += xine sqlite3 gpod njb mtp ${MODRUBY_WANTLIB}
 
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS +=	::x11/qt3 \
@@ -37,14 +37,15 @@ LIB_DEPENDS +=	::x11/qt3 \
 		::databases/sqlite3 \
 		::audio/libgpod \
 		::audio/libnjb \
-		:ruby->=1.8,<=1.9:lang/ruby/1.8 \
-		::devel/libmtp
+		::devel/libmtp \
+		${MODRUBY_LIB_DEPENDS}
 
 SHARED_LIBS +=	amarok               0.0      # .0.0
 SHARED_LIBS +=	http11               0.0      # .0.0
 
-MODULES =		x11/kde
+MODULES =		x11/kde lang/ruby
 MODKDE_VERSION =	3.5.7
+MODRUBY_BUILDDEP=	No
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}
@@ -61,8 +62,6 @@ CONFIGURE_ARGS +=	--with-xine \
 			--without-musicbrainz \
 			--without-opengl \
 			--without-xmms
-
-RUBY =        ${LOCALBASE}/bin/ruby18
 
 pre-configure:
 	cd ${WRKSRC} && find . -name '*.rb' -exec \

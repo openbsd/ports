@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/23 22:15:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/26 21:42:14 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m pthread
+WANTLIB=		c m pthread ${MODRUBY_WANTLIB}
 MODULES=		lang/ruby
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \

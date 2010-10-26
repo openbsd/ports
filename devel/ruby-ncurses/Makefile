@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/09/23 22:30:26 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.26 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		Ruby interface to ncurses
 
@@ -17,14 +15,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c form m ncurses panel
+WANTLIB=		form ncurses panel
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=ncurses-ruby/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/ruby
-
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	ruby extconf
 

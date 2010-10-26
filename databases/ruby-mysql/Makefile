@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/14 20:33:09 jeremy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.14 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=	access a MySQL database from Ruby
 
@@ -19,12 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	c m mysqlclient
+WANTLIB=	mysqlclient
 
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
-		::databases/mysql
+LIB_DEPENDS=	::databases/mysql
 
-CONFIGURE_STYLE=ruby gem
+CONFIGURE_STYLE=ruby gem ext
 
 REGRESS_DEPENDS=::databases/mysql,-server
 

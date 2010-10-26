@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
@@ -15,9 +15,6 @@ PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	c m
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
-
-CONFIGURE_STYLE=ruby gem
+CONFIGURE_STYLE=ruby gem ext
 
 .include <bsd.port.mk>

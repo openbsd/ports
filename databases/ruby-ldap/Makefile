@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/23 22:30:25 jeremy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.15 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
@@ -22,10 +20,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ruby-ldap/}
 
 MODULES=		lang/ruby
 
-WANTLIB=		c crypto m pthread ssl
+WANTLIB=		crypto pthread ssl ldap.>=9 ldap_r.>=9 lber.>=9
 
-LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
-			ldap.>=9,ldap_r.>=9,lber.>=9::databases/openldap
+LIB_DEPENDS=		::databases/openldap
 
 CONFIGURE_STYLE=	ruby extconf
 

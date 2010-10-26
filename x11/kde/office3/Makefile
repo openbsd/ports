@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/09/23 22:25:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.66 2010/10/26 21:42:14 jeremy Exp $
 
 COMMENT=		office suite for KDE
 
@@ -75,7 +75,7 @@ SEPARATE_BUILD=	flavored
 MODKDE_VERSION=	3.5.7
 AUTOCONF_VERSION=2.61
 
-MODULES =	x11/kde devel/gettext
+MODULES =	x11/kde devel/gettext lang/ruby
 
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	::x11/kde/libs3 \
@@ -85,14 +85,14 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::graphics/ImageMagick \
 		::graphics/jbigkit \
 		::databases/mysql \
-		:ruby->=1.8,<=1.9:lang/ruby/1.8,-main \
 		::graphics/libexif \
 		::print/libpaper \
 		::print/poppler,-qt \
 		::graphics/GraphicsMagick \
 		::textproc/libwpd \
 		::databases/libpqxx \
-		::databases/postgresql
+		::databases/postgresql \
+		${MODRUBY_LIB_DEPENDS}
 
 
 REVISION =	16
@@ -109,9 +109,9 @@ WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
 	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
-	python2.5 qtmcop readline ruby18 sndio soundserver_idl ssl stdc++ \
+	python2.5 qtmcop readline sndio soundserver_idl ssl stdc++ \
 	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd \
-	wv2 xcb xml2 xslt z
+	wv2 xcb xml2 xslt z ${MODRUBY_WANTLIB}
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql

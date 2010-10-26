@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/28 20:12:16 jeremy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.10 2010/10/26 21:42:13 jeremy Exp $
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
@@ -19,11 +17,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
-WANTLIB=	c id3.>=4 m stdc++ z
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
-		::audio/id3lib
+WANTLIB=	id3.>=4 stdc++ z
+LIB_DEPENDS=	::audio/id3lib
 
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE=	ruby gem ext
 
 REGRESS_DEPENDS=	:${PKGNAME}:${BASE_PKGPATH}
 MODRUBY_REGRESS=	rake 
