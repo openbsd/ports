@@ -1,0 +1,16 @@
+$OpenBSD: patch-Modules_Compiler_GNU_cmake,v 1.1 2010/10/26 18:31:18 dcoppa Exp $
+--- Modules/Compiler/GNU.cmake.orig	Tue Oct 26 11:06:23 2010
++++ Modules/Compiler/GNU.cmake	Tue Oct 26 11:08:37 2010
+@@ -27,9 +27,9 @@ macro(__compiler_gnu lang)
+   # Initial configuration flags.
+   set(CMAKE_${lang}_FLAGS_INIT "")
+   set(CMAKE_${lang}_FLAGS_DEBUG_INIT "-g")
+-  set(CMAKE_${lang}_FLAGS_MINSIZEREL_INIT "-Os -DNDEBUG")
+-  set(CMAKE_${lang}_FLAGS_RELEASE_INIT "-O3 -DNDEBUG")
+-  set(CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT "-O2 -g")
++  set(CMAKE_${lang}_FLAGS_MINSIZEREL_INIT "-DNDEBUG")
++  set(CMAKE_${lang}_FLAGS_RELEASE_INIT "-DNDEBUG")
++  set(CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT "-g")
+   set(CMAKE_${lang}_CREATE_PREPROCESSED_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <FLAGS> -E <SOURCE> > <PREPROCESSED_SOURCE>")
+   set(CMAKE_${lang}_CREATE_ASSEMBLY_SOURCE "<CMAKE_${lang}_COMPILER> <DEFINES> <FLAGS> -S <SOURCE> -o <ASSEMBLY_SOURCE>")
+   if(NOT APPLE)

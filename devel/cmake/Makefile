@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/10/26 18:31:18 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 
@@ -6,7 +6,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.2
-REVISION =	2
+REVISION =	3
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -52,6 +52,7 @@ pre-configure:
 # Remove spurious post-build files
 post-install:
 	@rm -f ${WRKDIST}/Modules/*.{beforesubst,orig}
+	@rm -f ${WRKDIST}/Modules/Compiler/*.orig
 	@rm -f ${WRKDIST}/Modules/Platform/*.orig
 
 .include <bsd.port.mk>
