@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/10/26 17:00:34 steven Exp $
+# $OpenBSD: Makefile,v 1.99 2010/10/26 17:40:27 steven Exp $
 #
 
      SUBDIR =
@@ -93,6 +93,7 @@
      SUBDIR += qtoctave
      SUBDIR += sc
      SUBDIR += udunits
+     SUBDIR += ufconfig
      SUBDIR += umfpack
      SUBDIR += wcalc
      SUBDIR += wmcalc
