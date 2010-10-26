@@ -1,0 +1,73 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 22:40:57 jasper Exp $
+${P5SITE}/IO/Lambda/
+${P5SITE}/IO/Lambda.pm
+${P5SITE}/IO/Lambda/Backtrace.pm
+${P5SITE}/IO/Lambda/Compat.pm
+${P5SITE}/IO/Lambda/DBI.pm
+${P5SITE}/IO/Lambda/DNS.pm
+${P5SITE}/IO/Lambda/Flock.pm
+${P5SITE}/IO/Lambda/Fork.pm
+${P5SITE}/IO/Lambda/HTTP/
+${P5SITE}/IO/Lambda/HTTP.pm
+${P5SITE}/IO/Lambda/HTTP/Authen/
+${P5SITE}/IO/Lambda/HTTP/Authen/NTLM.pm
+${P5SITE}/IO/Lambda/HTTP/Authen/Negotiate.pm
+${P5SITE}/IO/Lambda/HTTP/HTTPS.pm
+${P5SITE}/IO/Lambda/Loop/
+${P5SITE}/IO/Lambda/Loop/AnyEvent.pm
+${P5SITE}/IO/Lambda/Loop/POE.pm
+${P5SITE}/IO/Lambda/Loop/Prima.pm
+${P5SITE}/IO/Lambda/Loop/Select.pm
+${P5SITE}/IO/Lambda/Message.pm
+${P5SITE}/IO/Lambda/Mutex.pm
+${P5SITE}/IO/Lambda/Poll.pm
+${P5SITE}/IO/Lambda/SNMP.pm
+${P5SITE}/IO/Lambda/Signal.pm
+${P5SITE}/IO/Lambda/Socket.pm
+${P5SITE}/IO/Lambda/Thread.pm
+${P5SITE}/IO/Lambda/Throttle.pm
+@man man/man3p/IO::Lambda.3p
+@man man/man3p/IO::Lambda::Backtrace.3p
+@man man/man3p/IO::Lambda::Compat.3p
+@man man/man3p/IO::Lambda::DBI.3p
+@man man/man3p/IO::Lambda::DNS.3p
+@man man/man3p/IO::Lambda::Flock.3p
+@man man/man3p/IO::Lambda::Fork.3p
+@man man/man3p/IO::Lambda::HTTP.3p
+@man man/man3p/IO::Lambda::HTTP::Authen::NTLM.3p
+@man man/man3p/IO::Lambda::HTTP::HTTPS.3p
+@man man/man3p/IO::Lambda::Loop::AnyEvent.3p
+@man man/man3p/IO::Lambda::Loop::POE.3p
+@man man/man3p/IO::Lambda::Loop::Prima.3p
+@man man/man3p/IO::Lambda::Loop::Select.3p
+@man man/man3p/IO::Lambda::Message.3p
+@man man/man3p/IO::Lambda::Mutex.3p
+@man man/man3p/IO::Lambda::Poll.3p
+@man man/man3p/IO::Lambda::SNMP.3p
+@man man/man3p/IO::Lambda::Signal.3p
+@man man/man3p/IO::Lambda::Socket.3p
+@man man/man3p/IO::Lambda::Thread.3p
+@man man/man3p/IO::Lambda::Throttle.3p
+share/examples/p5-IO-Lambda/
+share/examples/p5-IO-Lambda/bench/
+share/examples/p5-IO-Lambda/bench/1.2GHz-win32.tcpbenchmark
+share/examples/p5-IO-Lambda/bench/2.4GHz-x86-64.tcp.benchmark
+share/examples/p5-IO-Lambda/bench/tcp-batch
+share/examples/p5-IO-Lambda/bench/tcp-batch.bat
+share/examples/p5-IO-Lambda/bench/tcp-lambda-optimized.pl
+share/examples/p5-IO-Lambda/bench/tcp-lambda.pl
+share/examples/p5-IO-Lambda/bench/tcp-poe-components.pl
+share/examples/p5-IO-Lambda/bench/tcp-poe-optimized.pl
+share/examples/p5-IO-Lambda/bench/tcp-poe-raw.pl
+share/examples/p5-IO-Lambda/bench/tcp-raw.pl
+share/examples/p5-IO-Lambda/dbi.pl
+share/examples/p5-IO-Lambda/dns.pl
+share/examples/p5-IO-Lambda/fork.pl
+share/examples/p5-IO-Lambda/http-redirect.pl
+share/examples/p5-IO-Lambda/loop.pl
+share/examples/p5-IO-Lambda/parallel.pl
+share/examples/p5-IO-Lambda/sequential.pl
+share/examples/p5-IO-Lambda/snmp.pl
+share/examples/p5-IO-Lambda/thread.pl
+share/examples/p5-IO-Lambda/throttle.pl
+share/examples/p5-IO-Lambda/webserver.pl
