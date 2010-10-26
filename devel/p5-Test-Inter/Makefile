@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 15:21:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/26 17:20:58 jasper Exp $
 
 COMMENT=		framework for more readable interactive test scripts  
 
@@ -14,5 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
+
+USE_GROFF=		Yes
 
 .include <bsd.port.mk>
