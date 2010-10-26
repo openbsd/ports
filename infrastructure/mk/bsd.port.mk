@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1044 2010/10/26 10:39:22 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1045 2010/10/26 17:04:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -308,6 +308,13 @@ TARGETS =
 .  for _s in pre do post
 .    if target(${_s}-${_t})
 TARGETS += ${_s}-${_t}
+.    endif
+.  endfor
+.endfor
+.for _t in post-patch pre-configure configure pre-fake pre-install
+.  for _m in ${MODULES:T:U}
+.    if defined(MOD${_m}_${_t})
+TARGETS += MOD${_m}_${_t}
 .    endif
 .  endfor
 .endfor
