@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/31 19:20:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/10/26 09:41:51 jasper Exp $
 @bin bin/pokerth
 @bin bin/pokerth_server
 share/applications/pokerth.desktop
@@ -231,8 +231,6 @@ share/pokerth/data/gfx/gui/misc/actionpics/action_raise.png
 share/pokerth/data/gfx/gui/misc/actionpics/action_winner.png
 share/pokerth/data/gfx/gui/misc/background_gamelist.png
 share/pokerth/data/gfx/gui/misc/fileopen16.png
-share/pokerth/data/gfx/gui/misc/lock.png
-share/pokerth/data/gfx/gui/misc/logoChip3D.png
 share/pokerth/data/gfx/gui/misc/rating.png
 share/pokerth/data/gfx/gui/misc/startwindowbg.png
 share/pokerth/data/gfx/gui/misc/welcomepokerth.png
@@ -262,6 +260,8 @@ share/pokerth/data/gfx/gui/table/danuxi1/playeraction_orange.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_orange_checked.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_orange_checked_hover.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_orange_hover.png
+share/pokerth/data/gfx/gui/table/danuxi1/playeraction_purple.png
+share/pokerth/data/gfx/gui/table/danuxi1/playeraction_purple_hover.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_red.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_red_checked.png
 share/pokerth/data/gfx/gui/table/danuxi1/playeraction_red_checked_hover.png
@@ -299,6 +299,8 @@ share/pokerth/data/gfx/gui/table/default/playeraction_orange.png
 share/pokerth/data/gfx/gui/table/default/playeraction_orange_checked.png
 share/pokerth/data/gfx/gui/table/default/playeraction_orange_checked_hover.png
 share/pokerth/data/gfx/gui/table/default/playeraction_orange_hover.png
+share/pokerth/data/gfx/gui/table/default/playeraction_purple.png
+share/pokerth/data/gfx/gui/table/default/playeraction_purple_hover.png
 share/pokerth/data/gfx/gui/table/default/playeraction_red.png
 share/pokerth/data/gfx/gui/table/default/playeraction_red_checked.png
 share/pokerth/data/gfx/gui/table/default/playeraction_red_checked_hover.png
@@ -328,7 +330,10 @@ share/pokerth/data/sounds/default/playerconnected.wav
 share/pokerth/data/sounds/default/raise.wav
 share/pokerth/data/sounds/default/yourturn.wav
 share/pokerth/data/translations/
+share/pokerth/data/translations/pokerth_af.qm
 share/pokerth/data/translations/pokerth_bg.qm
+share/pokerth/data/translations/pokerth_ca.qm
+share/pokerth/data/translations/pokerth_cz.qm
 share/pokerth/data/translations/pokerth_de.qm
 share/pokerth/data/translations/pokerth_dk.qm
 share/pokerth/data/translations/pokerth_es.qm
@@ -337,6 +342,7 @@ share/pokerth/data/translations/pokerth_fr.qm
 share/pokerth/data/translations/pokerth_gr.qm
 share/pokerth/data/translations/pokerth_hu.qm
 share/pokerth/data/translations/pokerth_it.qm
+share/pokerth/data/translations/pokerth_lt.qm
 share/pokerth/data/translations/pokerth_nl.qm
 share/pokerth/data/translations/pokerth_no.qm
 share/pokerth/data/translations/pokerth_pl.qm
@@ -345,6 +351,7 @@ share/pokerth/data/translations/pokerth_ptpt.qm
 share/pokerth/data/translations/pokerth_ru.qm
 share/pokerth/data/translations/pokerth_sk.qm
 share/pokerth/data/translations/pokerth_sv.qm
+share/pokerth/data/translations/pokerth_ta.qm
 share/pokerth/data/translations/pokerth_tr.qm
 share/pokerth/data/translations/pokerth_zhcn.qm
 share/pokerth/data/translations/qt_de.qm
@@ -354,8 +361,8 @@ share/pokerth/data/translations/qt_nl.qm
 share/pokerth/data/translations/qt_pl.qm
 share/pokerth/data/translations/qt_pt.qm
 share/pokerth/data/translations/qt_ru.qm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 share/pokerth/data/translations/qt_sk.qm
 share/pokerth/data/translations/qt_sv.qm
 share/pokerth/data/translations/qt_zh_CN.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
