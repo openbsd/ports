@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/10/26 14:15:01 naddy Exp $
 
 COMMENT=	GNU gettext
 
 DISTNAME=	gettext-0.18.1
+REVISION=	0
 SHARED_LIBS +=  intl                 5.0      # .9.1
 SHARED_LIBS +=  asprintf             1.0      # .0.0
 SHARED_LIBS +=  gettextlib           3.0      # .0.0
@@ -43,6 +44,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 EXTRA_LOCALES=	en he hr hu lv no
+
+# avoid triggering autotools rebuild cascade
+post-patch:
+	touch -r ${WRKSRC}/gettext-runtime/m4/fcntl-o.m4.orig \
+	    ${WRKSRC}/gettext-runtime/m4/fcntl-o.m4
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
