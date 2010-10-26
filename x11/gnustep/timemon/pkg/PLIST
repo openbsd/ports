@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 17:41:55 sebastia Exp $
+bin/TimeMon
+libexec/GNUstep/
+libexec/GNUstep/TimeMon.app/
+libexec/GNUstep/TimeMon.app/Resources/
+libexec/GNUstep/TimeMon.app/Resources/Info-gnustep.plist
+libexec/GNUstep/TimeMon.app/Resources/README.rtf
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.desktop
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.gorm/
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.gorm/data.classes
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.gorm/data.info
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.gorm/icon.png
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.gorm/objects.gorm
+libexec/GNUstep/TimeMon.app/Resources/TimeMon.tiff
+libexec/GNUstep/TimeMon.app/Resources/TimeMonP.tiff
+@bin libexec/GNUstep/TimeMon.app/TimeMon
+libexec/GNUstep/TimeMon.app/stamp.make
