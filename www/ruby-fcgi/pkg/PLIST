@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 20:19:49 jcs Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2010/10/26 21:34:30 jeremy Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
@@ -14,6 +13,8 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/extconf.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/fcgi.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/fcgi.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/mkmf.log
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/fcgi.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fcgi.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fcgi.so
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

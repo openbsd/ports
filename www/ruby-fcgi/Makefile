@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/28 20:12:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/26 21:34:30 jeremy Exp $
 
 COMMENT=	ruby FastCGI library
 
 DISTNAME=	fcgi-0.8.7
 PKGNAME=	ruby-${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www 
 
 # ruby license
@@ -15,12 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	c m
+WANTLIB=	fcgi
 
-LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
-		fcgi:fcgi->=2.4.0:www/fcgi
+LIB_DEPENDS=	:fcgi->=2.4.0:www/fcgi
 
-CONFIGURE_STYLE=ruby gem
+CONFIGURE_STYLE=ruby gem ext
 CONFIGURE_ARGS=	--with-fcgi-include=${LOCALBASE}/include \
 		--with-fcgi-lib=${LOCALBASE}/lib
 
