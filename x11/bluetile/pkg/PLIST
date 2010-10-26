@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/16 14:08:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/26 22:19:22 jasper Exp $
 @bin bin/bluetile
-@bin bin/bluetiledock
-@bin bin/bluetilegreet
-@bin bin/bluetilemockwin
+@bin bin/gnome-bluetile-session
+@bin libexec/bluetiledock
+@bin libexec/bluetilegreet
+@bin libexec/bluetilemockwin
 @man man/man1/bluetile.1
 share/${DISTNAME}/
 share/${DISTNAME}/bluetiledock/
@@ -13,6 +14,9 @@ share/${DISTNAME}/bluetiledock/tiled1.svg
 share/${DISTNAME}/bluetiledock/tiled2.svg
 share/${DISTNAME}/bluetilegreet/
 share/${DISTNAME}/bluetilegreet/bluetilegreet.glade
+share/${DISTNAME}/etc/
+share/${DISTNAME}/etc/bluetilerc
+share/${DISTNAME}/etc/bluetilerc_user_template
 share/${DISTNAME}/logo/
 share/${DISTNAME}/logo/bluetile-icon-48x48.png
 share/${DISTNAME}/logo/bluetile-icon.svg
