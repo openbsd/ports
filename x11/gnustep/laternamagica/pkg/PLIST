@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 15:57:14 sebastia Exp $
+bin/LaternaMagica
+libexec/GNUstep/
+libexec/GNUstep/LaternaMagica.app/
+@bin libexec/GNUstep/LaternaMagica.app/LaternaMagica
+libexec/GNUstep/LaternaMagica.app/Resources/
+libexec/GNUstep/LaternaMagica.app/Resources/Info-gnustep.plist
+libexec/GNUstep/LaternaMagica.app/Resources/LaternaMagica.desktop
+libexec/GNUstep/LaternaMagica.app/Resources/LaternaMagica.gorm/
+libexec/GNUstep/LaternaMagica.app/Resources/LaternaMagica.gorm/data.classes
+libexec/GNUstep/LaternaMagica.app/Resources/LaternaMagica.gorm/data.info
+libexec/GNUstep/LaternaMagica.app/Resources/LaternaMagica.gorm/objects.gorm
+libexec/GNUstep/LaternaMagica.app/Resources/laternamagica_48.tif
+libexec/GNUstep/LaternaMagica.app/Resources/laternamagica_64.tif
+libexec/GNUstep/LaternaMagica.app/stamp.make
