@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/24 11:43:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/26 09:12:42 jasper Exp $
 ${P5SITE}/POE/Component/IRC/
 ${P5SITE}/POE/Component/IRC.pm
 ${P5SITE}/POE/Component/IRC/Common.pm
@@ -7,6 +7,7 @@ ${P5SITE}/POE/Component/IRC/Cookbook/
 ${P5SITE}/POE/Component/IRC/Cookbook.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/BasicBot.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Disconnecting.pod
+${P5SITE}/POE/Component/IRC/Cookbook/Gtk2.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Hailo.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Reload.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Resolver.pod
@@ -45,6 +46,7 @@ ${P5SITE}/POE/Filter/IRC/Compat.pm
 @man man/man3p/POE::Component::IRC::Cookbook.3p
 @man man/man3p/POE::Component::IRC::Cookbook::BasicBot.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Disconnecting.3p
+@man man/man3p/POE::Component::IRC::Cookbook::Gtk2.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Hailo.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Reload.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Resolver.3p
@@ -77,7 +79,8 @@ ${P5SITE}/POE/Filter/IRC/Compat.pm
 share/doc/p5-POE-Component-IRC/
 share/doc/p5-POE-Component-IRC/ctcpspec.html
 share/doc/p5-POE-Component-IRC/dccspec.html
-share/doc/p5-POE-Component-IRC/isupport-draft.txt
+share/doc/p5-POE-Component-IRC/draft-brocklesby-irc-isupport-03.txt
+share/doc/p5-POE-Component-IRC/draft-mitchell-irc-capabilities-02.html
 share/doc/p5-POE-Component-IRC/rfc1459.html
 share/doc/p5-POE-Component-IRC/rfc2810.html
 share/doc/p5-POE-Component-IRC/rfc2811.html
