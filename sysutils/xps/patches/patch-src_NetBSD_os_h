@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_NetBSD_os_h,v 1.1 2010/10/26 16:36:59 sthen Exp $
+--- src/NetBSD/os.h.orig	Tue Oct 26 18:33:09 2010
++++ src/NetBSD/os.h	Tue Oct 26 18:33:15 2010
+@@ -36,7 +36,7 @@
+ #define XPS_HAVE_KERNEL_PROCS 
+ 
+ #include "kvm.h"
+-typedef struct kinfo_proc *ProcInfo;
++typedef struct kinfo_proc2 *ProcInfo;
+ 
+ typedef int signal_t;
+ 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/10/26 16:36:59 sthen Exp $
 
 DISTNAME=       xps-4.2
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=     sysutils x11
 
 MASTER_SITES=	http://internap.dl.sourceforge.net/sourceforge/motif-pstree/
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
 CONFIGURE_ENV=		LDFLAGS=-lm
 
 USE_MOTIF=		any
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 NO_REGRESS=		Yes
 

@@ -1,0 +1,143 @@
+$OpenBSD: patch-src_NetBSD_os_c,v 1.1 2010/10/26 16:36:59 sthen Exp $
+
+yes, I know there's a src/OpenBSD in there too.
+it's not used somehow...
+
+--- src/NetBSD/os.c.orig	Thu Apr 24 02:21:29 2003
++++ src/NetBSD/os.c	Tue Oct 26 18:33:52 2010
+@@ -27,6 +27,7 @@
+ #include <limits.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
++#include <stdlib.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/StringDefs.h>
+ #include <Xm/Xm.h>
+@@ -66,7 +67,7 @@ unsigned int 
+ GetProcInfo(void)
+ {
+   static kvm_t *kd = NULL;
+-  struct kinfo_proc *kp;
++  struct kinfo_proc2 *kp;
+   char errbuf[_POSIX2_LINE_MAX];
+   int nentries;
+ 
+@@ -82,11 +83,7 @@ GetProcInfo(void)
+     exit(5);
+   }
+ 
+-#ifdef OpenBSD
+-  kp = kvm_getprocs(kd, KERN_PROC_KTHREAD, 0, &nentries);
+-#else
+-  kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nentries);
+-#endif
++  kp = kvm_getproc2(kd, KERN_PROC_KTHREAD, 0, sizeof(struct kinfo_proc2), &nentries);
+   if (kp == NULL) {
+     char msg[_POSIX2_LINE_MAX * 2];
+ 
+@@ -126,7 +123,7 @@ GetStatus(ProcInfo *p)
+ #ifdef HAVE_REGEX
+     if (active.match_regexp) {
+       int regmatch = regexec(&active.re_pat, 
+-			     IDtouser(proc->kp_eproc.e_pcred.p_ruid), 
++			     IDtouser(proc->p_ruid), 
+ 			     (size_t) NULL, (regmatch_t *) NULL,
+ 			     REG_NOTBOL|REG_NOTEOL);
+       if (regmatch == REG_NOMATCH) {
+@@ -134,7 +131,7 @@ GetStatus(ProcInfo *p)
+       }
+     } else {
+ #endif
+-      if (active.uid_displayed != proc->kp_eproc.e_pcred.p_ruid)
++      if (active.uid_displayed != proc->p_ruid)
+ 	return False;
+ #ifdef HAVE_REGEX
+     }
+@@ -142,7 +139,7 @@ GetStatus(ProcInfo *p)
+ }
+ 
+   /* root process */
+-  if (proc->kp_proc.p_pid == ROOT_PID && base.showKernel == False)
++  if (proc->p_pid == ROOT_PID && base.showKernel == False)
+     return False;
+ 
+   /* 
+@@ -157,19 +154,19 @@ GetStatus(ProcInfo *p)
+ 
+     See also the comments in BSDI/xps.c.  */
+ 
+-  if (proc->kp_proc.p_flag & P_SYSTEM && base.showKernel == False)
++  if (proc->p_flag & P_SYSTEM && base.showKernel == False)
+     /* a "kernel" process */
+     return False;
+   
+-  EndNode->pid = proc->kp_proc.p_pid;
+-  EndNode->ppid = proc->kp_eproc.e_ppid;
++  EndNode->pid = proc->p_pid;
++  EndNode->ppid = proc->p_ppid;
+ 
+-  if (proc->kp_proc.p_pid == MyPid && !cmd_options.me_too)
++  if (proc->p_pid == MyPid && !cmd_options.me_too)
+     pstat = SSLEEP;
+-  else if ((proc->kp_proc.p_flag & P_INMEM) == 0)
++  else if ((proc->p_flag & P_INMEM) == 0)
+     pstat = SSWAP;
+   else
+-    pstat = proc->kp_proc.p_stat;
++    pstat = proc->p_stat;
+ 
+   EndNode->color = base.nodeColor[pstat];
+   return True;
+@@ -179,26 +176,26 @@ void 
+ GetProcName(ProcInfo *p, TREENODE *node)
+ {
+   ProcInfo proc = *p;
+-  node->uid = proc->kp_eproc.e_pcred.p_ruid;
++  node->uid = proc->p_ruid;
+ 
+-  if (proc->kp_proc.p_stat == SZOMB)
++  if (proc->p_stat == SZOMB)
+     strcpy(node->label, "*zombie*");
+-  else if (proc->kp_proc.p_pid == ROOT_PID)
++  else if (proc->p_pid == ROOT_PID)
+     strcpy(node->label, "*root*");
+-  else if (proc->kp_proc.p_flag & SIDL)
++  else if (proc->p_flag & SIDL)
+     strcpy(node->label, "*kernel*");
+   else  {
+       char *username;
+       int i;
+ 
+-      strncpy(node->label, proc->kp_proc.p_comm, 16);
+-      if ((proc->kp_proc.p_pid != MyPid) && (proc->kp_proc.p_stat != SSLEEP)) return;
++      strncpy(node->label, proc->p_comm, 16);
++      if ((proc->p_pid != MyPid) && (proc->p_stat != SSLEEP)) return;
+ 
+       /* We've got a sleeping process. (Hopefully that's the majority of 
+ 	 the processes. Assign a color based on userid. */
+-      node->color = GetUID_Color(proc->kp_eproc.e_pcred.p_ruid);
++      node->color = GetUID_Color(proc->p_ruid);
+  
+-      if ( (username=IDtouser(proc->kp_eproc.e_pcred.p_ruid)) != NULL ) {
++      if ( (username=IDtouser(proc->p_ruid)) != NULL ) {
+ 	strcpy(node->label1, username);
+       } else {
+ 	strcpy(node->label1, UNKNOWN_USER);
+@@ -209,7 +206,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
+ #ifdef XPS_RECOLOR_LOGIN_PROCESSES      
+       for (i=0;i<NUMLABS ;i++ ) {
+ 	if (strcmp(node->label, label_array[i]) == 0) {
+-	  strcpy(node->label, IDtouser(proc->kp_eproc.e_pcred.p_ruid));
++	  strcpy(node->label, IDtouser(proc->p_ruid));
+ 	  strcpy(node->label1, label_array[i]);
+ 	  node->color = base.xterm;
+ 	  node->show_username = 1;
+@@ -218,7 +215,7 @@ GetProcName(ProcInfo *p, TREENODE *node)
+       } /* endfor */
+ #endif
+ 
+-      if ((proc->kp_proc.p_pid == base.selected_pid)) {
++      if ((proc->p_pid == base.selected_pid)) {
+ 	node->color = base.selected_color;
+       }
+ 
