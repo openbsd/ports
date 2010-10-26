@@ -1,0 +1,14 @@
+$OpenBSD: patch-libfreerdp_tcp_c,v 1.1.1.1 2010/10/26 12:56:57 giovanni Exp $
+--- libfreerdp/tcp.c.orig	Tue Jul 27 10:34:38 2010
++++ libfreerdp/tcp.c	Tue Jul 27 10:35:58 2010
+@@ -50,6 +50,10 @@
+ #define TCP_BLOCKS (errno == EWOULDBLOCK)
+ #endif
+ 
++#ifdef __OpenBSD__
++#define MSG_NOSIGNAL 0
++#endif
++
+ #ifdef __APPLE__
+ #define MSG_NOSIGNAL SO_NOSIGPIPE
+ #endif

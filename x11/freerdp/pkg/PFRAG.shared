@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/26 12:56:57 giovanni Exp $
+lib/freerdp/audin.so
+lib/freerdp/cliprdr.so
+lib/freerdp/disk.so
+lib/freerdp/drdynvc.so
+lib/freerdp/parallel.so
+lib/freerdp/pnpdr.so
+lib/freerdp/printer.so
+lib/freerdp/rdpdr.so
+lib/freerdp/serial.so
+@lib lib/libfreerdp.so.${LIBfreerdp_VERSION}
+@lib lib/libfreerdpchanman.so.${LIBfreerdpchanman_VERSION}
+@lib lib/libfreerdpgdi.so.${LIBfreerdpgdi_VERSION}
+@lib lib/libfreerdpkbd.so.${LIBfreerdpkbd_VERSION}

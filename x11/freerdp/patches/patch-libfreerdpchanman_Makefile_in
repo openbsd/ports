@@ -1,0 +1,12 @@
+$OpenBSD: patch-libfreerdpchanman_Makefile_in,v 1.1.1.1 2010/10/26 12:56:57 giovanni Exp $
+--- libfreerdpchanman/Makefile.in.orig	Tue Jul 27 11:17:46 2010
++++ libfreerdpchanman/Makefile.in	Tue Jul 27 11:17:58 2010
+@@ -251,7 +251,7 @@ libfreerdpchanman_la_SOURCES = \
+ libfreerdpchanman_la_CFLAGS = -I$(top_srcdir) -I$(top_srcdir)/include \
+ 	-DPLUGIN_PATH=\"$(PLUGIN_PATH)\"
+ 
+-libfreerdpchanman_la_LDFLAGS = -ldl -lpthread
++libfreerdpchanman_la_LDFLAGS = -lpthread
+ libfreerdpchanman_la_LIBDADD = ../libfreerdp/libfreerdp.la
+ 
+ # extra
