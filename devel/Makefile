@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.850 2010/10/24 20:12:04 kili Exp $
+# $OpenBSD: Makefile,v 1.851 2010/10/26 15:22:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -730,6 +730,7 @@
      SUBDIR += p5-Test-Group
      SUBDIR += p5-Test-HTML-Tidy
      SUBDIR += p5-Test-Inline
+     SUBDIR += p5-Test-Inter
      SUBDIR += p5-Test-JSON
      SUBDIR += p5-Test-LeakTrace
      SUBDIR += p5-Test-LongString
