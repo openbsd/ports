@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/08/04 12:11:46 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/10/26 15:01:17 espie Exp $
 %%SHARED%%
 kaffe/
 kaffe/bin/
@@ -76,7 +76,6 @@ kaffe/jre/lib/${GNU_ARCH}/libzip.a
 kaffe/jre/lib/${GNU_ARCH}/libzip.la
 kaffe/jre/lib/logging.properties
 kaffe/jre/lib/rt.jar
-@symlink kaffe/jre/lib/rt.jar
 kaffe/jre/lib/security/
 kaffe/jre/lib/security/Kaffe.security
 kaffe/lib/
