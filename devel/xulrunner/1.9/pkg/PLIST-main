@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/09/26 07:42:03 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/10/26 10:01:33 landry Exp $
 @option no-default-conflict
 @conflict xulrunner->=1.9
 @unexec xulrunner1.9 --unregister-global
-bin/${MOZILLA_PROJECT}
+@bin bin/${MOZILLA_PROJECT}
 ${MOZILLA_PROJECT}/
-${MOZILLA_PROJECT}/LICENSE
+${MOZILLA_PROJECT}/README.OpenBSD
 ${MOZILLA_PROJECT}/chrome/
 ${MOZILLA_PROJECT}/chrome/classic.jar
 ${MOZILLA_PROJECT}/chrome/classic.manifest
@@ -307,7 +307,7 @@ ${MOZILLA_PROJECT}/res/viewsource.css
 ${MOZILLA_PROJECT}/run-mozilla.sh
 @bin ${MOZILLA_PROJECT}/xulrunner-bin
 @bin ${MOZILLA_PROJECT}/xulrunner-stub
-${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+@bin ${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 @sample ${SYSCONFDIR}/gre.d/
 @exec xulrunner1.9 --register-global
 @exec TEMP=`mktemp -d` && cd %D/xulrunner1.9 && env HOME=$TEMP LD_LIBRARY_PATH=%D/xulrunner1.9 ./regxpcom && rm -fr $TEMP

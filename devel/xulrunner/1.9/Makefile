@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/22 19:25:19 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/10/26 10:01:33 landry Exp $
 
-ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
-
-VERSION=		1.9.2.11
+MOZILLA_VERSION =	1.9.2.11
 FFX_VERSION=		3.6.11
-DIRECTORY=		xulrunner1.9
-# needed for mozilla.port.mk
-MOZILLA_PROJECT=	xulrunner1.9
-DISTNAME=		mozilla-1.9.2
-DISTFILES=		firefox-${FFX_VERSION}.source.tar.bz2
+MOZILLA_BRANCH =	1.9.2
+MOZILLA_PROJECT =	xulrunner1.9
+REVISION-main =		0
+REVISION-devel =	0
+DISTNAME =		firefox-${FFX_VERSION}.source
+
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
 SO_VERSION=		3.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in imgicon mozjs xpcom xul sqlite3 nullplugin unixprintplugin
-SHARED_LIBS+=	${_lib}	${SO_VERSION}
-.endfor
+MOZILLA_LIBS =	imgicon mozjs xpcom xul sqlite3 nullplugin unixprintplugin
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Djit=1 -Damd64=0
@@ -27,80 +24,41 @@ PKG_ARGS+=	-Djit=1 -Damd64=1
 PKG_ARGS+=	-Djit=0 -Damd64=0
 .endif
 
-LIB_DEPENDS+=	:nspr->=4.8.6:devel/nspr
-
 # use files and patches from www/mozilla-firefox
 PATCHDIR=		${PORTSDIR}/www/mozilla-firefox/patches
 FILESDIR=		${PORTSDIR}/www/mozilla-firefox/files
 
-MODULES+=		lang/python
-MODPY_RUNDEP=		No
-
-CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2 \
-			--disable-system-sqlite \
-			--disable-crashreporter \
-			--disable-ipc \
-			--disable-libnotify \
-			--disable-necko-wifi
-WANTLIB-devel+=		gthread-2.0 gobject-2.0
-WANTLIB-main+=		sndio
-
-MOB=			${WRKSRC}/dist/bin
-MOZ=			${PREFIX}/${DIRECTORY}
-SUBST_VARS+=		DIRECTORY MOZILLA_PROJECT
-
-DATADIRS=		chrome components defaults dictionaries greprefs \
+MOZILLA_DATADIRS =	chrome components defaults dictionaries greprefs \
 			icons modules plugins res
+MOZILLA_AUTOCONF_DIRS +=	js/src
+MOZILLA_SUBST_FILES +=		config/autoconf.mk.in \
+				xulrunner/setup/nsXULAppInstall.js
 DISTDIRS=		idl include
-TOOLS=			mozilla-xremote-client nsinstall regxpcom xpcshell \
-			xpidl xpt_dump xpt_link xulrunner-bin xulrunner-stub
+TOOLS=			nsinstall xpcshell xpidl xpt_dump xpt_link xulrunner-bin xulrunner-stub
 PCFILES=		libxul.pc libxul-embedding.pc mozilla-js.pc \
 			mozilla-plugin.pc mozilla-gtkmozembed.pc \
 			mozilla-gtkmozembed-embedding.pc
-
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/js/src/build/autoconf
-post-extract:
-	cp -f ${FILESDIR}/sydney_audio_sndio.c \
-		${WRKSRC}/media/libsydneyaudio/src/
-	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
-
-pre-configure:
-	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
-		${WRKSRC}/config/autoconf.mk.in \
-		${WRKSRC}/build/unix/mozilla.in \
-		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
-		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
-		${WRKSRC}/toolkit/xre/nsXREDirProvider.cpp \
-		${WRKSRC}/xulrunner/setup/nsXULAppInstall.js
 
 post-build:
 	cd ${WRKSRC}/xulrunner/installer && env -i ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} ${PCFILES}
 
-do-install:
+pre-install:
+	cd ${MOB} && ln -sf xulrunner ${MOZILLA_PROJECT}
+	cd ${MOB} && ln -sf xulrunner-bin ${MOZILLA_PROJECT}-bin
+
+post-install:
 	cd ${WRKSRC}/dist && \
 		find ${DISTDIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
 		find ${DISTDIRS} ! -type d \
 			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
-	cd ${MOZ} && ln -s xulrunner-bin xulrunner1.9-bin
-	cd ${MOB} && \
-		find ${DATADIRS} -type d \
-			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
-		find ${DATADIRS} ! -type d \
-			-exec ${INSTALL_DATA} {} ${MOZ}/{} \; && \
-		${INSTALL_PROGRAM} ${TOOLS} ${MOZ}
-	${INSTALL_DATA} ${MOB}/LICENSE ${MOB}/platform.ini \
-		${MOB}/*.so.${SO_VERSION} \
-		${WRKSRC}/dist/lib/libxpcomglue.a \
+	${INSTALL_DATA}	${WRKSRC}/dist/lib/libxpcomglue.a \
 		${WRKSRC}/dist/lib/libxpcomglue_s.a ${MOZ}
 	# needed to please libtool - libs are built with fPIC
-	cd ${MOZ} && ln -s libxpcomglue_s.a libxpcomglue_s_pic.a
-	cd ${MOZ} && ln -s libxpcomglue.a libxpcomglue_pic.a
-	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/xulrunner ${PREFIX}/bin/xulrunner1.9
+	cd ${MOZ} && ln -sf libxpcomglue_s.a libxpcomglue_s_pic.a
+	cd ${MOZ} && ln -sf libxpcomglue.a libxpcomglue_pic.a
+	cd ${MOB} && ${INSTALL_PROGRAM} ${TOOLS} ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 .for pcfile in ${PCFILES}
 	${INSTALL_DATA} ${WRKBUILD}/xulrunner/installer/${pcfile} \
