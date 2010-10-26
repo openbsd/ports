@@ -1,0 +1,17 @@
+$OpenBSD: patch-Framework_GNUmakefile_postamble,v 1.1.1.1 2010/10/26 17:35:36 sebastia Exp $
+
+Otherwise this would leave root owned files there, which would make a 
+make clean as non root user fail. Those root files would be created
+while running make fake
+
+--- Framework/GNUmakefile.postamble.orig	Tue Oct 26 17:19:19 2010
++++ Framework/GNUmakefile.postamble	Tue Oct 26 17:20:02 2010
+@@ -31,6 +31,5 @@
+ #after-uninstall::
+ #	rm -rf $(GNUSTEP_LIBRARIES)/libProjectCenter*
+ 
+-#after-install::
+-#	cp -r Protocols $(GNUSTEP_HEADERS)/ProjectCenter
+-#	cp -r Widgets $(GNUSTEP_HEADERS)/ProjectCenter
++after-install::
++	rm -rf ProjectCenter.framework/Headers/Protocols

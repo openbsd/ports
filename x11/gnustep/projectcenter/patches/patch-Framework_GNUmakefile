@@ -1,0 +1,11 @@
+$OpenBSD: patch-Framework_GNUmakefile,v 1.1.1.1 2010/10/26 17:35:36 sebastia Exp $
+--- Framework/GNUmakefile.orig	Mon Oct 25 03:29:53 2010
++++ Framework/GNUmakefile	Mon Oct 25 03:34:54 2010
+@@ -10,6 +10,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ #
+ VERSION = 0.5.0
+ FRAMEWORK_NAME = ProjectCenter
++ProjectCenter_VERSION=$(VERSION)
+ ProjectCenter_CURRENT_VERSION_NAME = 0.5.0
+ ProjectCenter_DEPLOY_WITH_CURRENT_VERSION = yes
+ ProjectCenter_HEADER_FILES_DIR = ../Headers/ProjectCenter
