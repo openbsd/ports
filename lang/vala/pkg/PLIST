@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/09/23 14:15:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/10/26 21:01:47 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-0.10
@@ -75,14 +75,10 @@ share/vala-0.10/vapi/fuse.vapi
 share/vala-0.10/vapi/gconf-2.0.vapi
 share/vala-0.10/vapi/gdk-2.0.deps
 share/vala-0.10/vapi/gdk-2.0.vapi
-share/vala-0.10/vapi/gdk-3.0.deps
-share/vala-0.10/vapi/gdk-3.0.vapi
 share/vala-0.10/vapi/gdk-pixbuf-2.0.deps
 share/vala-0.10/vapi/gdk-pixbuf-2.0.vapi
 share/vala-0.10/vapi/gdk-x11-2.0.deps
 share/vala-0.10/vapi/gdk-x11-2.0.vapi
-share/vala-0.10/vapi/gdk-x11-3.0.deps
-share/vala-0.10/vapi/gdk-x11-3.0.vapi
 share/vala-0.10/vapi/gdl-1.0.deps
 share/vala-0.10/vapi/gdl-1.0.vapi
 share/vala-0.10/vapi/gdu-gtk.deps
@@ -147,8 +143,6 @@ share/vala-0.10/vapi/gstreamer-video-0.10.deps
 share/vala-0.10/vapi/gstreamer-video-0.10.vapi
 share/vala-0.10/vapi/gtk+-2.0.deps
 share/vala-0.10/vapi/gtk+-2.0.vapi
-share/vala-0.10/vapi/gtk+-3.0.deps
-share/vala-0.10/vapi/gtk+-3.0.vapi
 share/vala-0.10/vapi/gtkmozembed.deps
 share/vala-0.10/vapi/gtkmozembed.vapi
 share/vala-0.10/vapi/gtksourceview-2.0.deps
