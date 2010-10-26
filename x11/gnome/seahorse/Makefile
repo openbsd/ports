@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/26 14:53:05 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.32.0
-REVISION=	0
+REVISION=		1
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 

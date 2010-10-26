@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/09/30 07:46:44 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.17 2010/10/26 14:53:05 jasper Exp $
 @bin bin/seahorse
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -9,8 +8,9 @@ include/libcryptui/cryptui-key-list.h
 include/libcryptui/cryptui-key-store.h
 include/libcryptui/cryptui-keyset.h
 include/libcryptui/cryptui.h
-lib/libcryptui.a
-lib/libcryptui.la
+@comment lib/libcryptui.a
+@comment lib/libcryptui.la
+@lib lib/libcryptui.so.${LIBcryptui_VERSION}
 lib/pkgconfig/cryptui-0.0.pc
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -150,24 +150,14 @@ share/gtk-doc/html/libseahorse/object-tree.html
 share/gtk-doc/html/libseahorse/right.png
 share/gtk-doc/html/libseahorse/style.css
 share/gtk-doc/html/libseahorse/up.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo

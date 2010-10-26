@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2008/11/21 19:12:32 jasper Exp $
-@lib lib/libcryptui.so.${LIBcryptui_VERSION}
