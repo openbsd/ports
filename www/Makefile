@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.473 2010/10/18 07:19:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.474 2010/10/26 09:09:34 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -87,7 +87,6 @@
      SUBDIR += midori
      SUBDIR += mimetex
      SUBDIR += mindterm
-     SUBDIR += minimo
      SUBDIR += minitube
      SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_kerb
