@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/10/26 08:25:26 dcoppa Exp $
 
 COMMENT=	audio sample rate conversion library
 
 DISTNAME=	libsamplerate-0.1.7
+REVISION=	0
 SHARED_LIBS=	samplerate	2.0	# .1.3
 CATEGORIES=	audio
 
