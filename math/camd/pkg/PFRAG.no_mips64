@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1.1.1 2010/10/26 16:59:53 steven Exp $
+lib/libcamd_pic.a

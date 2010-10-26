@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 16:59:53 steven Exp $
+%%SHARED%%
+%%no_mips64%%
+include/camd/
+include/camd/UFconfig.h
+include/camd/camd.h
+lib/libcamd.a
+lib/libcamd_p.a
