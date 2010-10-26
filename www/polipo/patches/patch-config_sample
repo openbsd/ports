@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_sample,v 1.1 2010/10/26 15:29:24 kili Exp $
+--- config.sample.orig	Mon Feb  1 00:13:20 2010
++++ config.sample	Tue Oct 26 16:52:27 2010
+@@ -11,6 +11,13 @@
+ ### Basic configuration
+ ### *******************
+ 
++# Comment to let polipo log to /var/log/polipo. You'll have to
++# create an initially empty log file owned by the _polipo user in
++# this case, for example by running
++# install -m 640 -o _polipo /dev/null /var/log/polipo
++logSyslog = true
++logFacility = daemon
++
+ # Uncomment one of these if you want to allow remote clients to
+ # connect:
+ 
