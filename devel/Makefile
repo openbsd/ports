@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.851 2010/10/26 15:22:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.852 2010/10/26 22:43:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -543,6 +543,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-KQueue
+     SUBDIR += p5-IO-Lambda
      SUBDIR += p5-IO-LockedFile
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-Pager
@@ -696,6 +697,7 @@
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Identify
      SUBDIR += p5-Sub-Install
+     SUBDIR += p5-Sub-Lambda
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
