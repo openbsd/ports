@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_swish_c,v 1.1 2010/10/26 12:21:35 merdely Exp $
+--- src/swish.c.orig	Tue Oct 26 01:41:44 2010
++++ src/swish.c	Tue Oct 26 01:41:58 2010
+@@ -269,15 +269,15 @@ static void    usage()
+     const char *defaultIndexingSystem = "";
+ 
+     printf(" usage:\n");
+-    printf("    swish [-e] [-i dir file ... ] [-S system] [-c file] [-f file] [-l] [-v (num)]\n");
+-    printf("    swish -w word1 word2 ... [-f file1 file2 ...] \\\n");
++    printf("    swish-e [-e] [-i dir file ... ] [-S system] [-c file] [-f file] [-l] [-v (num)]\n");
++    printf("    swish-e -w word1 word2 ... [-f file1 file2 ...] \\\n");
+     printf("          [-P phrase_delimiter] [-p prop1 ...] [-s sortprop1 [asc|desc] ...] \\\n");
+     printf("          [-m num] [-t str] [-d delim] [-H (num)] [-x output_format] \\\n");
+     printf("          [-R rank_scheme] [-L prop low high] [-a]\n");
+-    printf("    swish -k (char|*) [-f file1 file2 ...]\n");
+-    printf("    swish -M index1 index2 ... outputfile\n");
+-    printf("    swish -N /path/to/compare/file\n");
+-    printf("    swish -V\n");
++    printf("    swish-e -k (char|*) [-f file1 file2 ...]\n");
++    printf("    swish-e -M index1 index2 ... outputfile\n");
++    printf("    swish-e -N /path/to/compare/file\n");
++    printf("    swish-e -V\n");
+     putchar('\n');
+     printf("options: defaults are in brackets\n");
+ 

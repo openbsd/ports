@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_filter_c,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
---- src/filter.c.orig	Tue Sep 11 10:07:02 2007
-+++ src/filter.c	Tue Sep 11 10:07:13 2007
-@@ -51,7 +51,7 @@ $Id: filter.c,v 1.35 2007/01/05 22:14:10 whmoseley Exp
+$OpenBSD: patch-src_filter_c,v 1.2 2010/10/26 12:21:35 merdely Exp $
+--- src/filter.c.orig	Sat Apr  4 21:58:32 2009
++++ src/filter.c	Tue Oct 26 01:40:11 2010
+@@ -51,7 +51,7 @@ $Id: patch-src_filter_c,v 1.2 2010/10/26 12:21:35 merdely Exp $
  #endif /* HAVE_SYS_WAIT_H */
  #endif /* HAVE_WORKING_FORK */
  

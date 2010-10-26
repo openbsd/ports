@@ -1,0 +1,24 @@
+$OpenBSD: patch-man_swish-e_1,v 1.1 2010/10/26 12:21:35 merdely Exp $
+--- man/swish-e.1.orig	Tue Oct 26 01:42:39 2010
++++ man/swish-e.1	Tue Oct 26 01:42:59 2010
+@@ -135,14 +135,14 @@ Swish\-e \- A Search Engine
+ .SH "SYNOPSIS"
+ .IX Header "SYNOPSIS"
+ .Vb 8
+-\&    swish [-e] [-i dir file ... ] [-S system] [-c file] [-f file] [-l] [-v (num)]
+-\&    swish -w word1 word2 ... [-f file1 file2 ...] \e
++\&    swish-e [-e] [-i dir file ... ] [-S system] [-c file] [-f file] [-l] [-v (num)]
++\&    swish-e -w word1 word2 ... [-f file1 file2 ...] \e
+ \&          [-P phrase_delimiter] [-p prop1 ...] [-s sortprop1 [asc|desc] ...] \e
+ \&          [-m num] [-t str] [-d delim] [-H (num)] [-x output_format]
+-\&    swish -k (char|*) [-f file1 file2 ...]
+-\&    swish -M index1 index2 ... outputfile
+-\&    swish -N /path/to/compare/file
+-\&    swish -V
++\&    swish-e -k (char|*) [-f file1 file2 ...]
++\&    swish-e -M index1 index2 ... outputfile
++\&    swish-e -N /path/to/compare/file
++\&    swish-e -V
+ .Ve
+ .PP
+ See the the \s-1\fISWISH\-RUN\s0\fR\|(1) man page for details on run-time options.
