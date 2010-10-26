@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/10/26 06:28:29 stephan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl module for parsing XML documents
 
 MODULES=	cpan
-DISTNAME=	XML-Parser-2.36
-REVISION=	2
+DISTNAME=	XML-Parser-2.40
 CATEGORIES=	textproc
 USE_GROFF =	Yes
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

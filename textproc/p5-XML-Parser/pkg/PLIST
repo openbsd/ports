@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/10/01 16:01:51 simon Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/10/26 06:28:29 stephan Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/Parser/
@@ -8,6 +8,7 @@ ${P5ARCH}/XML/Parser/Encodings/Japanese_Encodings.msg
 ${P5ARCH}/XML/Parser/Encodings/README
 ${P5ARCH}/XML/Parser/Encodings/big5.enc
 ${P5ARCH}/XML/Parser/Encodings/euc-kr.enc
+${P5ARCH}/XML/Parser/Encodings/ibm866.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-2.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-3.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-4.enc
@@ -15,8 +16,11 @@ ${P5ARCH}/XML/Parser/Encodings/iso-8859-5.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-7.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-8.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-9.enc
+${P5ARCH}/XML/Parser/Encodings/koi8-r.enc
 ${P5ARCH}/XML/Parser/Encodings/windows-1250.enc
+${P5ARCH}/XML/Parser/Encodings/windows-1251.enc
 ${P5ARCH}/XML/Parser/Encodings/windows-1252.enc
+${P5ARCH}/XML/Parser/Encodings/windows-1255.enc
 ${P5ARCH}/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
 ${P5ARCH}/XML/Parser/Encodings/x-euc-jp-unicode.enc
 ${P5ARCH}/XML/Parser/Encodings/x-sjis-cp932.enc
