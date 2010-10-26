@@ -1,0 +1,2 @@
+This module provides syntactic sugar for lambda abstractions and
+applications. Perl supports lambdas through subroutine references.
