@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.12 2010/10/25 10:48:00 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.13 2010/10/26 17:36:02 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -51,7 +51,6 @@ CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
 		--with-system-nss		\
 		--with-pthreads			\
 		--disable-optimize		\
-		--disable-debug			\
 		--disable-tests			\
 		--disable-pedantic		\
 		--disable-installer		\
@@ -75,6 +74,14 @@ CONFIGURE_ARGS +=--disable-freetypetest		\
 		--disable-libnotify		\
 		--enable-xft			\
 		--disable-ipc
+
+FLAVORS +=	debug
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS +=	--enable-debug \
+ 			--disable-install-strip
+.endif
 
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
