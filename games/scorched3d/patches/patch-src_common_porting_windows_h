@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_common_porting_windows_h,v 1.1.1.1 2010/10/26 10:34:00 phessler Exp $
+--- src/common/porting/windows.h.orig	Sun Mar  2 19:47:36 2008
++++ src/common/porting/windows.h	Sat Oct 23 16:29:28 2010
+@@ -20,7 +20,6 @@ typedef unsigned int	UINT;
+ typedef unsigned short  WORD;
+ typedef unsigned char   BYTE;
+ 
+-typedef int 	HWND;
+ typedef void * 	HINSTANCE;
+ typedef int 	WPARAM;
+ typedef int 	LPARAM;
