@@ -1,0 +1,25 @@
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.8 2010/10/26 17:30:38 sthen Exp $
+--- mono/utils/mono-proclib.c.orig	Tue Oct 26 18:43:09 2010
++++ mono/utils/mono-proclib.c	Tue Oct 26 18:44:41 2010
+@@ -22,16 +22,16 @@
+ #include <sys/user.h>
+ #endif
+ #ifdef HAVE_STRUCT_KINFO_PROC_KP_PROC
++#    define kinfo_pid_member kp_proc.p_pid
++#    define kinfo_name_member kp_proc.p_comm
++#else
+ #  ifdef KERN_PROC2
+ #    define kinfo_pid_member p_pid
+ #    define kinfo_name_member p_comm
+ #  else
+-#    define kinfo_pid_member kp_proc.p_pid
+-#    define kinfo_name_member kp_proc.p_comm
++#    define kinfo_pid_member ki_pid
++#    define kinfo_name_member ki_comm
+ #  endif
+-#else
+-#define kinfo_pid_member ki_pid
+-#define kinfo_name_member ki_comm
+ #endif
+ #define USE_SYSCTL 1
+ #endif
