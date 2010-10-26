@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1043 2010/10/24 20:41:23 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1044 2010/10/26 10:39:22 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2335,6 +2335,11 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .if target(pre-configure)
 	@${_MAKESYS} pre-configure
 .endif
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_pre-configure)
+	@${MOD${_m}_pre-configure}
+.  endif
+.endfor
 .if target(do-configure)
 	@${_MAKESYS} do-configure
 .else
