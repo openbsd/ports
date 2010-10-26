@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/26 16:22:51 jasper Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.4.1
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
@@ -29,16 +30,9 @@ BUILD_DEPENDS =		:hs-X11->=1.4:x11/hs-X11 \
 			:hs-xmonad-contrib->=0.9.1:x11/hs-xmonad-contrib \
 			:xmonad-lib->=0.9.1:x11/xmonad,-lib
 
-LIB_DEPENDS =		::devel/atk \
-			::devel/glib2 \
-			::devel/gmp \
+LIB_DEPENDS =		::devel/gmp \
 			::devel/libglade2 \
-			::devel/pango \
-			::graphics/cairo \
-			::graphics/glitz \
-			::graphics/png \
-			::textproc/libxml \
-			::x11/gtk+2
+			::graphics/glitz
 
 USE_GROFF =	Yes
 
