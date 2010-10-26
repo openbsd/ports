@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.5 2010/10/24 10:01:57 espie Exp $
+# $OpenBSD: Engine.pm,v 1.6 2010/10/26 16:57:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -35,6 +35,7 @@ sub new
 	    locker => $locker,
 	    logger => $logger,
 	    errors => [],
+	    locks => [],
 	    requeued => [],
 	    ignored => []}, $class;
 	$o->{log} = DPB::Util->make_hot($logger->open("engine"));
@@ -45,7 +46,7 @@ sub new
 sub has_errors
 {
 	my $self = shift;
-	if (@{$self->{errors}} != 0) {
+	if (@{$self->{errors}} != 0 || @{$self->{locks}} != 0) {
 		$self->{locker}->recheck_errors($self);
 		return 1;
 	}
@@ -82,9 +83,9 @@ sub count
 
 sub errors_string
 {
-	my $self = shift;
+	my ($self, $name) = @_;
 	my @l = ();
-	for my $e (@{$self->{errors}}) {
+	for my $e (@{$self->{$name}}) {
 		my $s = $e->fullpkgpath;
 		if (defined $e->{host} && !$e->{host}->is_localhost) {
 			$s .= "(".$e->{host}->name.")";
@@ -103,7 +104,8 @@ sub report
 	    "Q=".$self->{buildable}->count,
 	    "T=".$self->count("tobuild"),
 	    "!=".$self->count("ignored"))."\n".
-	    "E=".$self->errors_string."\n";
+	    "L=".$self->errors_string('locks')."\n".
+	    "E=".$self->errors_string('errors')."\n";
 }
 
 sub stats
@@ -378,7 +380,7 @@ sub start_new_job
 			$self->new_job($core, $v, $lock);
 			return;
 		} else {
-			push(@{$self->{errors}}, $v);
+			push(@{$self->{locks}}, $v);
 			$self->log('L', $v);
 		}
 	}

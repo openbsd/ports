@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Locks.pm,v 1.2 2010/10/26 16:57:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -107,16 +107,18 @@ sub recheck_errors
 {
 	my ($self, $engine) = (@_);
 
-	my $e = $engine->{errors};
-	$engine->{errors} = [];
-	while (my $v = shift @$e) {
-		if ($v->{info} && $engine->{builder}->check($v)) {
-			$self->unlock($v);
-		}
-		if ($self->locked($v)) {
-			push(@{$engine->{errors}}, $v);
-		} else {
-			$engine->requeue($v);
+	for my $name (qw(errors locks)) {
+		my $e = $engine->{$name};
+		$engine->{$name} = [];
+		while (my $v = shift @$e) {
+			if ($v->{info} && $engine->{builder}->check($v)) {
+				$self->unlock($v);
+			}
+			if ($self->locked($v)) {
+				push(@{$engine->{$name}}, $v);
+			} else {
+				$engine->requeue($v);
+			}
 		}
 	}
 }

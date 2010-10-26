@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.5 2010/10/24 10:01:57 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.6 2010/10/26 16:57:10 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 24 2010 $
+.Dd $Mdocdate: October 26 2010 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -152,7 +152,7 @@ figures out in which order to build things on the fly, and constantly
 displays information relative to what's currently building.
 There's a list currently running, one line per task, with the task name,
 local pid, the build host name, and advancement based on the log file size.
-This is followed by a two-line display:
+This is followed by a three-line display:
 .Bl -tag -width BB=
 .It I=
 number of built packages that can be installed.
@@ -166,6 +166,8 @@ we have a free slot.
 number of packages to build, where dependencies are not yet resolved.
 .It !=
 number of ignored packages.
+.It L=
+list of packages that cannot currently be built because of locks.
 .It E=
 list of packages in error, that cannot currently be built.
 .El
