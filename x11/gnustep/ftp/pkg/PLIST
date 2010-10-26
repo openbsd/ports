@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 14:19:29 sebastia Exp $
+bin/FTP
+libexec/GNUstep/
+libexec/GNUstep/FTP.app/
+@bin libexec/GNUstep/FTP.app/FTP
+libexec/GNUstep/FTP.app/Resources/
+libexec/GNUstep/FTP.app/Resources/FTP.desktop
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/arrow_left.tiff
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/arrow_right.tiff
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/data.classes
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/data.info
+libexec/GNUstep/FTP.app/Resources/FTP.gorm/objects.gorm
+libexec/GNUstep/FTP.app/Resources/FTP_icon_gs.tif
+libexec/GNUstep/FTP.app/Resources/Info-gnustep.plist
+libexec/GNUstep/FTP.app/Resources/arrow_left.tiff
+libexec/GNUstep/FTP.app/Resources/arrow_right.tiff
+libexec/GNUstep/FTP.app/stamp.make
