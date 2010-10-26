@@ -1,0 +1,37 @@
+$OpenBSD: patch-psinfo_c,v 1.1 2010/10/26 16:13:40 sthen Exp $
+--- psinfo.c.orig	Sun Mar 15 03:15:49 2009
++++ psinfo.c	Tue Oct 26 18:09:12 2010
+@@ -90,7 +90,11 @@ char *getProcessNameByProcessID(int pid)
+     {
+         int found;
+         kvm_t *kd;
+-        struct kinfo_proc *givenproc;
++#if defined(__OpenBSD__)
++        struct kinfo_proc2 *givenproc;
++#else
++        struct kinfo_procs *givenproc;
++#endif
+     
+         
+         /* get kvm_t descriptor on /dev/mem */
+@@ -103,7 +107,11 @@ char *getProcessNameByProcessID(int pid)
+          * get kinfo_proc structure from kernel for our pid.
+          * Since pids are had better be unique, we should only get one.
+          */
++#if defined(__OpenBSD__)
++        givenproc = kvm_getproc2(kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc2), &found);
++#else
+         givenproc = kvm_getprocs(kd, KERN_PROC_PID, pid, &found);
++#endif
+     
+         switch (found) {
+             case 0:
+@@ -117,6 +125,8 @@ char *getProcessNameByProcessID(int pid)
+                 name = xstrdup(givenproc->ki_comm);
+                 #elif defined(__DragonFly_version)
+                 name = xstrdup(givenproc->kp_comm);
++                #elif defined(__OpenBSD__)
++                name = xstrdup(givenproc->p_comm);
+                 # else
+                 name = xstrdup(givenproc->kp_proc.p_comm);
+                 #endif	/* __FreeBSD__ */
