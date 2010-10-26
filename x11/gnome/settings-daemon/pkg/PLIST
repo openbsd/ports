@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/09/30 07:37:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/10/26 14:38:55 jasper Exp $
 @conflict control-center2-<=2.22
-%%SHARED%%
 include/gnome-settings-daemon-2.0/
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
@@ -15,34 +14,49 @@ lib/gnome-settings-daemon-2.0/keybindings.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
 @comment lib/gnome-settings-daemon-2.0/liba11y-keyboard.a
 @comment lib/gnome-settings-daemon-2.0/liba11y-keyboard.la
+lib/gnome-settings-daemon-2.0/liba11y-keyboard.so
 @comment lib/gnome-settings-daemon-2.0/libbackground.a
 @comment lib/gnome-settings-daemon-2.0/libbackground.la
+lib/gnome-settings-daemon-2.0/libbackground.so
 @comment lib/gnome-settings-daemon-2.0/libclipboard.a
 @comment lib/gnome-settings-daemon-2.0/libclipboard.la
+lib/gnome-settings-daemon-2.0/libclipboard.so
 @comment lib/gnome-settings-daemon-2.0/libfont.a
 @comment lib/gnome-settings-daemon-2.0/libfont.la
+lib/gnome-settings-daemon-2.0/libfont.so
 @comment lib/gnome-settings-daemon-2.0/libhousekeeping.a
 @comment lib/gnome-settings-daemon-2.0/libhousekeeping.la
+lib/gnome-settings-daemon-2.0/libhousekeeping.so
 @comment lib/gnome-settings-daemon-2.0/libkeybindings.a
 @comment lib/gnome-settings-daemon-2.0/libkeybindings.la
+lib/gnome-settings-daemon-2.0/libkeybindings.so
 @comment lib/gnome-settings-daemon-2.0/libkeyboard.a
 @comment lib/gnome-settings-daemon-2.0/libkeyboard.la
+lib/gnome-settings-daemon-2.0/libkeyboard.so
 @comment lib/gnome-settings-daemon-2.0/libmedia-keys.a
 @comment lib/gnome-settings-daemon-2.0/libmedia-keys.la
+lib/gnome-settings-daemon-2.0/libmedia-keys.so
 @comment lib/gnome-settings-daemon-2.0/libmouse.a
 @comment lib/gnome-settings-daemon-2.0/libmouse.la
+lib/gnome-settings-daemon-2.0/libmouse.so
 @comment lib/gnome-settings-daemon-2.0/libsmartcard.a
 @comment lib/gnome-settings-daemon-2.0/libsmartcard.la
+lib/gnome-settings-daemon-2.0/libsmartcard.so
 @comment lib/gnome-settings-daemon-2.0/libsound.a
 @comment lib/gnome-settings-daemon-2.0/libsound.la
+lib/gnome-settings-daemon-2.0/libsound.so
 @comment lib/gnome-settings-daemon-2.0/libtyping-break.a
 @comment lib/gnome-settings-daemon-2.0/libtyping-break.la
+lib/gnome-settings-daemon-2.0/libtyping-break.so
 @comment lib/gnome-settings-daemon-2.0/libxrandr.a
 @comment lib/gnome-settings-daemon-2.0/libxrandr.la
+lib/gnome-settings-daemon-2.0/libxrandr.so
 @comment lib/gnome-settings-daemon-2.0/libxrdb.a
 @comment lib/gnome-settings-daemon-2.0/libxrdb.la
+lib/gnome-settings-daemon-2.0/libxrdb.so
 @comment lib/gnome-settings-daemon-2.0/libxsettings.a
 @comment lib/gnome-settings-daemon-2.0/libxsettings.la
+lib/gnome-settings-daemon-2.0/libxsettings.so
 lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/smartcard.gnome-settings-plugin
@@ -56,7 +70,6 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-datetime-mechanism
 @bin libexec/gsd-locate-pointer
 share/dbus-1/services/org.gnome.SettingsDaemon.service
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.gnome.SettingsDaemon.DateTimeMechanism.service
 share/examples/gnome-settings-daemon/
 share/examples/gnome-settings-daemon/dbus-1/
@@ -97,39 +110,21 @@ share/gnome-settings-daemon/xrdb/General.ad
 share/gnome-settings-daemon/xrdb/Motif.ad
 share/gnome-settings-daemon/xrdb/Tk.ad
 share/gnome-settings-daemon/xrdb/Xaw.ad
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/touchpad-disabled.png
 share/icons/hicolor/16x16/actions/touchpad-enabled.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/touchpad-disabled.png
 share/icons/hicolor/22x22/actions/touchpad-enabled.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gsd-xrandr.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/actions/
 share/icons/hicolor/24x24/actions/touchpad-disabled.png
 share/icons/hicolor/24x24/actions/touchpad-enabled.png
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gsd-xrandr.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/actions/
 share/icons/hicolor/32x32/actions/touchpad-disabled.png
 share/icons/hicolor/32x32/actions/touchpad-enabled.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gsd-xrandr.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/actions/
 share/icons/hicolor/scalable/actions/touchpad-disabled.svg
 share/icons/hicolor/scalable/actions/touchpad-enabled.svg
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gsd-xrandr.svg
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/am/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ar/LC_MESSAGES/gnome-settings-daemon.mo
@@ -137,20 +132,14 @@ share/locale/as/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ast/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/az/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/be/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/bg/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/bn/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/bs/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ca/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/cs/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/cy/LC_MESSAGES/gnome-settings-daemon.mo
@@ -192,14 +181,10 @@ share/locale/mn/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/mr/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ms/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/nb/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ne/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/nl/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/nn/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/nso/
-share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/oc/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/or/LC_MESSAGES/gnome-settings-daemon.mo
@@ -223,19 +208,13 @@ share/locale/th/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/uk/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/vi/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/xh/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/zu/
-share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.gnome.settingsdaemon.datetimemechanism.policy
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_housekeeping.schemas
