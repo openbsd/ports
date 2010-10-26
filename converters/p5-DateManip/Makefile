@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/10/26 15:23:05 jasper Exp $
 
 COMMENT=	manipulate dates in perl
-DISTNAME=	Date-Manip-5.54
-PKGNAME=	p5-DateManip-5.54
+DISTNAME=	Date-Manip-6.14
+PKGNAME=	p5-DateManip-6.14
 CATEGORIES=	converters
 MODULES=	cpan
 USE_GROFF =	Yes
-
-HOMEPAGE=	http://www.cise.ufl.edu/~sbeck/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -19,6 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 
-MAKE_ENV+=      TEST_POD=Yes
+MAKE_ENV+=      	TEST_POD=Yes
+
+BUILD_DEPENDS=		::devel/p5-Test-Inter
+RUN_DEPENDS=		::devel/p5-YAML-Syck
+
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
