@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.1 2010/08/20 13:50:11 espie Exp $
+# $OpenBSD: check-manpages,v 1.2 2010/10/26 21:56:40 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -65,4 +65,4 @@ $state->progress->for_list("Scanning packages", \@ARGV,
     });
 
 $state->errsay("Running makewhatis in #1", join(' ', keys(%mandirs)));
-$state->system("/usr/libexec/makewhatis -p ".join(' ', keys(%mandirs)));
+$state->system("/usr/libexec/makewhatis", "-p", keys(%mandirs));
