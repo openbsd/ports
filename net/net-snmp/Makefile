@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/25 22:59:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/26 00:42:21 sthen Exp $
 
 # XXX note there are various "openbsd[234]" ifdefs which will need adjusting when
 # OpenBSD goes to 5.x
@@ -10,6 +10,7 @@ COMMENT-tkmib=	graphical SNMP MIB browser
 V=		5.6
 DISTNAME=	net-snmp-$V
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
 SHARED_LIBS=	netsnmp		9.0	\

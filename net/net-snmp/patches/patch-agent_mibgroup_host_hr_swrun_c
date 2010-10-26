@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.1 2010/10/25 22:59:12 sthen Exp $
---- agent/mibgroup/host/hr_swrun.c.orig	Mon Oct 25 00:15:26 2010
-+++ agent/mibgroup/host/hr_swrun.c	Mon Oct 25 02:26:50 2010
+$OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.2 2010/10/26 00:42:21 sthen Exp $
+--- agent/mibgroup/host/hr_swrun.c.orig	Thu Jul 29 16:58:47 2010
++++ agent/mibgroup/host/hr_swrun.c	Tue Oct 26 02:31:04 2010
 @@ -122,6 +122,8 @@ static int      LowProcIndex;
  #if defined(hpux10) || defined(hpux11)
  struct pst_status *proc_table;
@@ -128,7 +128,7 @@ $OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.1 2010/10/25 22:59:12 sthen E
 +            nproc = 0;
 +            return;
 +        }
-+        proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof (*proc_table), &nproc);
++        proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof (struct kinfo_proc2), &nproc);
 +    }
  #elif HAVE_KVM_GETPROCS
      {
