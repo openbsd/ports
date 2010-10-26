@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
---- sysdeps/bsd/procmap.c.orig	Fri Apr 27 00:27:34 2007
-+++ sysdeps/bsd/procmap.c	Fri Dec 28 19:18:15 2007
+$OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.2 2010/10/26 09:44:59 sthen Exp $
+--- sysdeps/bsd/procmap.c.orig	Tue Feb  9 13:38:53 2010
++++ sysdeps/bsd/procmap.c	Mon Oct 25 19:38:34 2010
 @@ -34,7 +34,8 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
@@ -27,8 +27,15 @@ $OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -100,7 +103,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+@@ -97,10 +100,15 @@ glibtop_map_entry *
+ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
+ 			pid_t pid)
+ {
++#if (defined(__OpenBSD__)) /* also some netbsd, but not sure which */
++	struct kinfo_proc2 *pinfo;
++#else
  	struct kinfo_proc *pinfo;
++#endif
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
@@ -37,7 +44,28 @@ $OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -165,7 +169,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+@@ -128,7 +136,11 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	glibtop_suid_enter (server);
+ 
+ 	/* Get the process data */
++#if (defined(__OpenBSD__)) /* also some netbsd, but not sure which */
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc2), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count < 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return (glibtop_map_entry*) g_array_free(maps, TRUE);
+@@ -139,6 +151,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	if (kvm_read (server->machine.kd,
+ #if (defined(__FreeBSD__) && (__FreeBSD_version >= 500013)) || defined(__FreeBSD_kernel__)
+ 		      (unsigned long) pinfo [0].ki_vmspace,
++#elif (defined(__OpenBSD__))
++		      (unsigned long) pinfo [0].p_vmspace,
+ #else
+ 		      (unsigned long) pinfo [0].kp_proc.p_vmspace,
+ #endif
+@@ -165,7 +179,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
  
  	/* I tested this a few times with `mmap'; as soon as you write
  	 * to the mmap'ed area, the object type changes from OBJT_VNODE
@@ -46,7 +74,7 @@ $OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
  
  	do {
  		glibtop_map_entry *mentry;
-@@ -190,7 +194,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+@@ -190,7 +204,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
   			continue;
  #endif
  #else
@@ -56,7 +84,7 @@ $OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -200,7 +205,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+@@ -200,7 +215,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
  #endif
  
  
@@ -66,7 +94,7 @@ $OpenBSD: patch-sysdeps_bsd_procmap_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -224,7 +230,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+@@ -224,7 +240,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  

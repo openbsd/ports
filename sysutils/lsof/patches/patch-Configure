@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.28 2010/07/24 23:01:56 naddy Exp $
---- Configure.orig	Wed Mar 25 13:24:01 2009
-+++ Configure	Sat Jul 24 16:50:36 2010
-@@ -3694,12 +3694,6 @@ return(0); }
+$OpenBSD: patch-Configure,v 1.29 2010/10/26 09:44:32 sthen Exp $
+--- Configure.orig	Mon Jan 18 20:01:14 2010
++++ Configure	Mon Oct 25 19:47:58 2010
+@@ -3738,12 +3738,6 @@ return(0); }
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=2090
  	;;
@@ -14,7 +14,7 @@ $OpenBSD: patch-Configure,v 1.28 2010/07/24 23:01:56 naddy Exp $
        3.0*)
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3000
-@@ -3740,16 +3734,52 @@ return(0); }
+@@ -3784,16 +3778,52 @@ return(0); }
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3090
  	;;
@@ -73,7 +73,7 @@ $OpenBSD: patch-Configure,v 1.28 2010/07/24 23:01:56 naddy Exp $
  	;;
        esac	# }
      fi	# }
-@@ -3757,7 +3787,7 @@ return(0); }
+@@ -3801,7 +3831,7 @@ return(0); }
      # Test for legal OpenBSD version.
  
      case $LSOF_VERS in	# {
@@ -82,3 +82,18 @@ $OpenBSD: patch-Configure,v 1.28 2010/07/24 23:01:56 naddy Exp $
        ;;
      *)
        echo "Unknown OpenBSD version: $LSOF_VERS"
+@@ -4041,6 +4071,14 @@ return(0); }
+     if test -r ${LSOF_INCLUDE}/sys/pipe.h	# {
+     then
+       LSOF_CFGF="$LSOF_CFGF -DHAS_SYS_PIPEH"
++    fi	# }
++    if test -r ${LSOF_INCLUDE}/kvm.h	# {
++    then
++      grep -q kvm_getproc2 ${LSOF_INCLUDE}/kvm.h
++      if test $? -eq 0	# {
++      then
++	  LSOF_CFGF="$LSOF_CFGF -DHASKVMGETPROC2"
++      fi	# }
+     fi	# }
+     LSOF_CFGL="$LSOF_CFGL -lkvm"
+     LSOF_DIALECT_DIR=n+obsd
