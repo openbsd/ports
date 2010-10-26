@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 17:43:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/26 09:13:35 ajacoutot Exp $
 
 COMMENT=	alternative applications/documents menu for GNOME
 
 GNOME_PROJECT=	gnome-main-menu
 GNOME_VERSION=	0.9.15
 
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,7 +37,8 @@ LIB_DEPENDS=	::x11/gnome/libslab \
 		::devel/libgtop2
 
 RUN_DEPENDS=	::x11/gnome/system-monitor \
-		::x11/gnome/controlcenter2
+		::x11/gnome/controlcenter2 \
+		::x11/gnome/tracker
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= gnome-main-menu
