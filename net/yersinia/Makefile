@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/26 07:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/26 07:59:28 ajacoutot Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
 DISTNAME =	yersinia-0.7.1
 CATEGORIES =	net security
+REVISION =	0
 
 HOMEPAGE =	http://www.yersinia.net/
 
