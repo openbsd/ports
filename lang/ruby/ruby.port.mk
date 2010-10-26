@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.31 2010/10/24 09:16:13 sthen Exp $
+# $OpenBSD: ruby.port.mk,v 1.32 2010/10/26 21:14:24 jeremy Exp $
 
 # ruby module
 
@@ -14,7 +14,8 @@ RSPEC=			${LOCALBASE}/bin/spec
 
 MODRUBY_REGRESS?=
 
-MODRUBY_LIB_DEPENDS=	ruby${MODRUBY_BINREV}:ruby->=1.8,<=1.9:lang/ruby/${MODRUBY_REV}
+MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
+MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_RUN_DEPENDS=	:ruby->=1.8,<=1.9:lang/ruby/${MODRUBY_REV}
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 
@@ -62,6 +63,16 @@ pre-configure:
 .  endif
 .endif
 
+.if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
+SHARED_ONLY=	Yes
+WANTLIB+=	c ${MODRUBY_WANTLIB}
+MODRUBY_WANTLIB_m?=	Yes
+.  if ${MODRUBY_WANTLIB_m:L:Myes}
+WANTLIB+=	m
+.  endif
+LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
+.endif
+
 .if ${CONFIGURE_STYLE:L:Mextconf}
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	${RUBY} extconf.rb
@@ -71,7 +82,6 @@ EXTRACT_SUFX=	.gem
 
 BUILD_DEPENDS+=	:ruby-gems->=1.3.7p0:devel/ruby-gems
 RUN_DEPENDS+=	::devel/ruby-gems
-
 SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
