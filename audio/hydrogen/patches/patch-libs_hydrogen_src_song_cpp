@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_hydrogen_src_song_cpp,v 1.1 2010/10/27 22:06:13 espie Exp $
+--- libs/hydrogen/src/song.cpp.orig	Wed Oct 27 23:58:12 2010
++++ libs/hydrogen/src/song.cpp	Wed Oct 27 23:58:24 2010
+@@ -141,7 +141,7 @@ Song* Song::get_default_song(){
+ 		song->set_swing_factor( 0.0 );
+ 
+ 		InstrumentList* pList = new InstrumentList();
+-		Instrument *pNewInstr = new Instrument(QString( 0 ), "New instrument", new ADSR());
++		Instrument *pNewInstr = new Instrument(QString(), "New instrument", new ADSR());
+ 		pList->add( pNewInstr );
+ 		song->set_instrument_list( pList );
+ 		
