@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.16 2010/10/27 17:37:55 steven Exp $
+# $OpenBSD: libtool,v 1.17 2010/10/27 23:41:27 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1600,7 +1600,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($convenience) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
 			Trace::debug {($convenience ? "convenience" : "static")." lib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
