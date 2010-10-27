@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1045 2010/10/26 17:04:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1046 2010/10/27 14:29:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -373,6 +373,7 @@ LIBTOOL_FLAGS ?=
 
 # where configuration files should go
 SYSCONFDIR ?= /etc
+RCDIR ?= /etc/rc.d
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
 BUILD_DEPENDS += ::devel/gmake
@@ -918,7 +919,7 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
-	MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX
+	MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX ^RCDIR
 _tmpvars =
 
 _PKG_ADD_AUTO ?=
@@ -2487,6 +2488,15 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	fi
 .  endfor
 .endif
+	@cd ${PKGDIR} && for i in *.rc; do \
+		if test X"$$i" != "X*.rc"; then \
+			r=${WRKINST}${RCDIR}/$${i%.rc}; \
+			echo "Installing ${PKGDIR}/$$i as $$r"; \
+			${SUDO} ${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c $$i $$r; \
+			${SUDO} chmod ${BINMODE} $$r; \
+		fi; \
+	done
+			
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 .if empty(PLIST_DB)

@@ -3,6 +3,8 @@
     etc
 	firmware
 	..
+	rc.d
+	..
     ..
     usr
 	local
