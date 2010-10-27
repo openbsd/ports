@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 14:10:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/27 11:05:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.12
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc devel
 
@@ -32,7 +32,8 @@ WANTLIB += GL X11-xcb Xxf86vm drm gconf-2 gnome-keyring xcb-shm
 MODULES=	devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	::devel/gsettings-desktop-schemas
+RUN_DEPENDS=	::devel/gsettings-desktop-schemas \
+		::devel/dconf
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 LIB_DEPENDS=	::x11/gnome/gdl \

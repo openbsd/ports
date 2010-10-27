@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/23 14:10:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/10/27 11:04:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,8 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  evdocument 1.0                   # .2.0
 SHARED_LIBS +=  evview     1.0                   # .2.0
@@ -62,7 +64,8 @@ LIB_DEPENDS-main= ::print/poppler \
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		:shared-mime-info-*:misc/shared-mime-info \
 		:ghostscript-*:print/ghostscript/gnu \
-		::x11/gnome/icon-theme
+		::x11/gnome/icon-theme \
+		::devel/dconf
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument djvulibre
 # port-lib-depends-check misses these ones because the depending lib

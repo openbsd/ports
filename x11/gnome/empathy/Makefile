@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/25 12:46:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/10/27 11:06:06 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.32.0.1
+
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -59,7 +61,8 @@ RUN_DEPENDS=		::devel/iso-codes \
 			::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-idle \
 			::net/telepathy/telepathy-salut \
-			:gnome-icon-theme->=2.30.3:x11/gnome/icon-theme
+			:gnome-icon-theme->=2.30.3:x11/gnome/icon-theme \
+			::devel/dconf
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
