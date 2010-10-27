@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.6 2010/10/26 16:57:10 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.7 2010/10/27 17:53:24 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 26 2010 $
+.Dd $Mdocdate: October 27 2010 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -177,10 +177,6 @@ Note that those numbers refer to pkgpaths known to
 In general, those numbers will be slightly higher than the actual number
 of packages being built, since several paths may lead to the same package.
 .Pp
-P will stay at zero until the listing job is finished, since
-.Nm
-needs full backwards dependencies to compute it.
-.Pp
 .Nm
 uses some heuristics to try to maximise Q as soon as possible.
 There's also a provision for a feedback-directed build, where timings from
@@ -229,6 +225,15 @@ current work, but it can be handy: in an emergency, one can start a second
 .Nm
 to obtain a specific package right now, in parallel with the original
 .Nm .
+.Pp
+Note that
+.Nm
+is very careful not to run two builds from the same pkgpath at the
+same time, even on different machines:
+in some cases, MULTI_PACKAGES and FLAVOR combinations may lead to the
+same package being built simultaneously, and since the package repository
+is shared, this can easily lead to trouble.
+.Pp
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
