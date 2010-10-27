@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/27 22:39:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/27 22:43:47 merdely Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,8 +30,7 @@ RUN_DEPENDS =		:php5-core-*:www/php5/core
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			PHP_EXECUTABLE=${LOCALBASE}/bin/php
+			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 LIB_DEPENDS =		::devel/libmagic
 WANTLIB +=		z magic
