@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysdeps_bsd_cpu_c,v 1.1 2010/10/27 12:52:42 ajacoutot Exp $
+--- sysdeps/bsd/cpu.c.orig	Wed Oct 27 14:15:06 2010
++++ sysdeps/bsd/cpu.c	Wed Oct 27 14:15:22 2010
+@@ -26,7 +26,7 @@
+ 
+ #include <glibtop_suid.h>
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/sched.h>
+ #endif
+ 
