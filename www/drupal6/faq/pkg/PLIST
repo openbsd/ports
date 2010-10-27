@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/27 13:08:18 stephan Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}faq/
+${DRUPAL_MODS}faq/LICENSE.txt
+${DRUPAL_MODS}faq/README.txt
+${DRUPAL_MODS}faq/faq.admin.inc
+${DRUPAL_MODS}faq/faq.css
+${DRUPAL_MODS}faq/faq.info
+${DRUPAL_MODS}faq/faq.install
+${DRUPAL_MODS}faq/faq.js
+${DRUPAL_MODS}faq/faq.module
+${DRUPAL_MODS}faq/includes/
+${DRUPAL_MODS}faq/includes/faq-category-hide-answer.tpl.php
+${DRUPAL_MODS}faq/includes/faq-category-new-page.tpl.php
+${DRUPAL_MODS}faq/includes/faq-category-questions-inline.tpl.php
+${DRUPAL_MODS}faq/includes/faq-category-questions-top-answers.tpl.php
+${DRUPAL_MODS}faq/includes/faq-category-questions-top.tpl.php
+${DRUPAL_MODS}faq/includes/faq-hide-answer.tpl.php
+${DRUPAL_MODS}faq/includes/faq-new-page.tpl.php
+${DRUPAL_MODS}faq/includes/faq-questions-inline.tpl.php
+${DRUPAL_MODS}faq/includes/faq-questions-top.tpl.php
+${DRUPAL_MODS}faq/includes/faq.hide_answer.inc
+${DRUPAL_MODS}faq/includes/faq.new_page.inc
+${DRUPAL_MODS}faq/includes/faq.questions_inline.inc
+${DRUPAL_MODS}faq/includes/faq.questions_top.inc
+${DRUPAL_MODS}faq/translations/
+${DRUPAL_MODS}faq/translations/de.po
+${DRUPAL_MODS}faq/translations/es.po
+${DRUPAL_MODS}faq/translations/faq-module.pot
+${DRUPAL_MODS}faq/translations/fr.po
+${DRUPAL_MODS}faq/translations/it.po
+${DRUPAL_MODS}faq/translations/ja.po
+${DRUPAL_MODS}faq/translations/nl.po
+${DRUPAL_MODS}faq/translations/pl.po
+${DRUPAL_MODS}faq/translations/pt.po
+${DRUPAL_MODS}faq/translations/ru.po
