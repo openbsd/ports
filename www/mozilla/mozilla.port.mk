@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.13 2010/10/26 17:36:02 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.14 2010/10/27 16:58:30 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -80,7 +80,8 @@ FLAVOR ?=
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug \
- 			--disable-install-strip
+			--disable-install-strip
+INSTALL_STRIP =
 .endif
 
 # from browser/config/mozconfig
