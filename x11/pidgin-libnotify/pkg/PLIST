@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/21 02:30:22 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/27 09:37:09 jasper Exp $
 lib/purple-2/pidgin-libnotify.la
 lib/purple-2/pidgin-libnotify.so
+share/locale/bg/LC_MESSAGES/pidgin-libnotify.mo
+share/locale/de/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/es/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/fr/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/gl/LC_MESSAGES/pidgin-libnotify.mo
@@ -11,5 +13,7 @@ share/locale/pl/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/pt/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/pt_BR/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/ro/LC_MESSAGES/pidgin-libnotify.mo
+share/locale/ru/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/sl/LC_MESSAGES/pidgin-libnotify.mo
+share/locale/sv/LC_MESSAGES/pidgin-libnotify.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin-libnotify.mo
