@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 10:45:48 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2010/10/27 13:40:29 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ MODULES=	lang/ruby
 NO_BUILD=	Yes
 
 REGRESS_DEPENDS= ::devel/ruby-mocha
+BUILD_DEPENDS +=	${MODRUBY_BUILD_DEPENDS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ruby-facter
