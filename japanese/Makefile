@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/19 13:52:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/27 20:43:11 fgsch Exp $
 
      SUBDIR =
      SUBDIR += Wnn
@@ -14,6 +14,7 @@
      SUBDIR += kanatest
      SUBDIR += kanjipad
      SUBDIR += kanjips
+     SUBDIR += kanjistrokeorders-ttf
      SUBDIR += kasumi
      SUBDIR += kbanner
      SUBDIR += kinput2,canna
