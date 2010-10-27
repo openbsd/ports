@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/27 13:00:55 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -8,7 +8,7 @@ MOZILLA_BRANCH =	1.9.1
 MOZILLA_CODENAME =	calendar
 
 DISTNAME =		lightning-sunbird-1.0b1.source
-REVISION =		5
+REVISION =		6
 EPOCH =			0
 
 CATEGORIES =	productivity mail
