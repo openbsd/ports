@@ -1,0 +1,20 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/cupsd"
+pexp="${daemon} -C ${SYSCONFDIR}/cups/cupsd.conf"
+
+rc_pre() {
+	chown _cups /dev/ulpt[0-1]
+	chown _cups /dev/lp[a,t][0-2]
+	echo y | ${TRUEPREFIX}/sbin/cups-enable >/dev/null
+}
+
+rc_post() {
+	echo y | ${TRUEPREFIX}/sbin/cups-disable >/dev/null
+	chown root /dev/lp[a,t][0-2]
+	chown root /dev/ulpt[0-1]
+}
+
+rc_cmd $1

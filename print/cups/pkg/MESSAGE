@@ -1,20 +1,3 @@
-To enable CUPS, execute '${PREFIX}/sbin/cups-enable' as root.
-To disable CUPS, execute '${PREFIX}/sbin/cups-disable' as root.
-
-To start cups at boot time, add the following to
-/etc/rc.local:
-
-if [ -x ${PREFIX}/sbin/cupsd ]; then
-	#chown _cups /dev/ulpt[0-1] # uncomment if using USB printer
-	#chown _cups /dev/lp[a,t][0-2] # uncomment if using parallel printer
-	echo y | ${PREFIX}/sbin/cups-enable > /dev/null
-	echo -n ' cupsd'; ${PREFIX}/sbin/cupsd
-fi
-
-Starting cupsd will overwrite /etc/printcap. A backup copy of this file
-is saved as /etc/printcap.pre-cups by '${PREFIX}/sbin/cups-enable'
-and will be restored when you run '${PREFIX}/sbin/cups-disable'.
-
 If you want to print to non-Postscript printers or use CUPS bundled PPD
 files (i.e. drivers), you'll need to install ghostscript.  You will also
 most probably want to install the foomatic-filters package which
