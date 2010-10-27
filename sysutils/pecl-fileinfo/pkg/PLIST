@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/27 22:39:16 merdely Exp $
+@comment conf/php5.sample/
+@group bin
+conf/php5.sample/fileinfo.ini
+@comment lib/
+@comment lib/php/
+@comment lib/php/modules/
+@owner root
+lib/php/modules/fileinfo.so
