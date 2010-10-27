@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 12:48:29 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/27 13:25:01 steven Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
 DISTNAME=	minbif-1.0.3
 CATEGORIES=	net
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE =	http://minbif.im/
 MASTER_SITES=	${HOMEPAGE}attachments/download/50/

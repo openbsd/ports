@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/09 09:37:37 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/27 13:25:01 steven Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
 V =			0.1.2
 DISTNAME =		opensnc-src${V}
-PKGNAME =		opensonic-${V}p1
+PKGNAME =		opensonic-${V}
+REVISION =		2
 
 CATEGORIES=		games
 

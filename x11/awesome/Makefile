@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/27 13:25:01 steven Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.8
-REVISION=		1
+REVISION=		2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/10/27 13:25:01 steven Exp $
 
 VMEM_WARNING =		Yes
 
@@ -7,6 +7,7 @@ COMMENT =		panorama image stitcher
 DISTNAME =		hugin-2010.2.0
 
 PKGNAME =		${DISTNAME:S/_//:L}
+REVISION =		0
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS +=  huginbasewx               0.0
