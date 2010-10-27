@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/26 22:19:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/27 09:38:13 jasper Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.5.3
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
@@ -21,8 +22,7 @@ WANTLIB =		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			pthread-stubs util xcb xcb-render \
 			xml2 z GL Xft Xxf86vm drm xcb-shm
 
-MODULES =		converters/libiconv \
-			devel/gettext\
+MODULES =		devel/gettext\
 			lang/ghc
 MODGHC_BUILD =		cabal hackage nort
 
