@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_proctable_cpp,v 1.1 2010/10/27 12:09:43 ajacoutot Exp $
+--- src/proctable.cpp.orig	Wed Oct 27 14:03:01 2010
++++ src/proctable.cpp	Wed Oct 27 14:03:10 2010
+@@ -220,7 +220,7 @@ proctable_new (ProcData * const procdata)
+ 		N_("CPU Time"),
+ 		N_("Started"),
+ 		N_("Nice"),
+-		N_("ID"),
++		N_("PID"),
+ 		N_("Security Context"),
+ 		N_("Command Line"),
+ 		N_("Memory"),
