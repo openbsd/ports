@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2010/07/27 17:01:16 landry Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2010/10/27 12:54:34 landry Exp $
 
 If you encounter strange problems or Thunderbird doesn't start at
 all, try the -safe-mode switch.
@@ -21,3 +21,10 @@ ${TRUEPREFIX}/mozilla-thunderbird/plugins and
 ${LOCALBASE}/lib/mozilla/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
+
+Debugging
+
+If you encounter crashes, you might want to build the debug FLAVOR of
+this package, and run 'thunderbird -g' to run thunderbird inside gdb, so
+that you can gather debugging logs and traces.
+Bug reports without that information will be ignored.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2010/10/27 12:54:34 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -14,25 +14,34 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta2
 EPOCH-lightning =	0
-REVISION-lightning =	6
+REVISION-lightning =	7
+REVISION-main =		0
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
 SO_VERSION =	17.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
-# and sunbird SO_VERSION and LIB_DEPENDS to match.
+# SO_VERSION and LIB_DEPENDS to match.
 
 MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome commandlines \
 	calbasecomps composer cookie docshell embedcomponents fileview \
 	gkgfxthebes gklayout gkplugin htmlpars i18n imgicon imglib2 import \
-	intlapp jar50 jsctypes jsd mail mailcomps mork mozfind mozldap msgsmime necko \
+	intlapp jar50 jsctypes jsd mailcomps mork mozfind mozldap msgsmime necko \
 	nsappshell permissions pipboot pipnss pippki pref rdf remoteservice \
 	satchel spellchecker storagecomps system-pref tkautocomplete \
 	toolkitcomps txmgr uconv ucvmath universalchardet unixproxy webbrwsr \
 	widget_gtk2 windowds xpautocomplete xpconnect xpinstall zipwriter \
 	gfxpsshar gkgfx gtkxtbin ldap60 ldif60 mozjs prldap60 sqlite3 ssldap60 \
 	thebes xpcom xpcom_core xul nullplugin unixprintplugin
+
+FLAVOR ?=
+.if ${FLAVOR:L:Mdebug}
+MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
+	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
+.else
+MOZILLA_LIBS+=	mail
+.endif
 
 CATEGORIES=	mail news
 
