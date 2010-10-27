@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/27 13:12:09 stephan Exp $
+# $OpenBSD: Makefile,v 1.43 2010/10/27 13:24:03 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -74,6 +74,7 @@ SUBDIR += theme-zen
 SUBDIR += themesettingsapi
 SUBDIR += token
 SUBDIR += transliteration
+SUBDIR += ubercart
 SUBDIR += user_import
 SUBDIR += user_readonly
 SUBDIR += view_unpublished
