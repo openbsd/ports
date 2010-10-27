@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.2 2010/10/27 12:58:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

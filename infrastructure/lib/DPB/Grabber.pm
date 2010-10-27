@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.2 2010/10/23 18:02:59 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.3 2010/10/27 12:58:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,13 +25,15 @@ package DPB::Grabber;
 sub new
 {
 	my ($class, $ports, $make, $logger, $engine, $dpb, $endcode) = @_;
-	bless { ports => $ports, make => $make,
+	my $o = bless { ports => $ports, make => $make,
 		loglist => DPB::Util->make_hot($logger->open("vars")),
 		engine => $engine,
 		dpb => $dpb,
 		keep_going => 1,
 		endcode => $endcode
 	    }, $class;
+	$engine->{grabber} = $o;
+	return $o;
 }
 
 sub finish

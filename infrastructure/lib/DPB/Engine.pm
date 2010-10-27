@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.6 2010/10/26 16:57:10 espie Exp $
+# $OpenBSD: Engine.pm,v 1.7 2010/10/27 12:58:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -312,6 +312,12 @@ sub requeue
 	$self->{heuristics}->finish_special($v);
 }
 
+sub rescan
+{
+	my ($self, $v) = @_;
+	push(@{$self->{requeued}}, $v);
+}
+
 sub add_fatal
 {
 	my ($self, $v) = @_;
@@ -350,10 +356,10 @@ sub rebuild_info
 	for my $v (@l) {
 		delete $v->{info};
 	}
-	# todo: calls vars again after stripping stuff bare.
-	for my $v (@l) {
-		$self->new_path($v);
-	}
+	my @subdirs = map {$_->fullpkgpath} @l;
+	$self->{grabber}->grab_subdirs($core, \@subdirs);
+	# XXX todo something needs to happen after the rescan,
+	# along the lines of finished_scanning
 }
 
 sub start_new_job
