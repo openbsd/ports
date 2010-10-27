@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/27 10:50:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/27 11:38:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	configuration backend system
 
 GNOME_PROJECT=	dconf
 GNOME_VERSION=	0.5.1
+
+REVISION=	0
 
 SHARED_LIBS+=	dconf 0.0 # 0.0.0
 
