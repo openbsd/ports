@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/27 20:41:25 fgsch Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/KanjiStrokeOrders/
+lib/X11/fonts/KanjiStrokeOrders/KanjiStrokeOrders_v2.015.ttf
+lib/X11/fonts/KanjiStrokeOrders/copyright.txt
+lib/X11/fonts/KanjiStrokeOrders/readme_en_v2.015.txt
