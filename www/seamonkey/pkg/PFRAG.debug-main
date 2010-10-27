@@ -1,0 +1,16 @@
+@comment $OpenBSD: PFRAG.debug-main,v 1.1 2010/10/27 13:02:39 landry Exp $
+@lib ${MOZILLA_PROJECT}/components/libaddrbook.so.${LIBaddrbook_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libbayesflt.so.${LIBbayesflt_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libfts3tok.so.${LIBfts3tok_VERSION}
+@lib ${MOZILLA_PROJECT}/components/liblocalmail.so.${LIBlocalmail_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmailnews.so.${LIBmailnews_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmailview.so.${LIBmailview_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmime.so.${LIBmime_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmimeemitter.so.${LIBmimeemitter_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgcompose.so.${LIBmsgcompose_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgdb.so.${LIBmsgdb_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgimap.so.${LIBmsgimap_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgmdn.so.${LIBmsgmdn_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libmsgnews.so.${LIBmsgnews_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libvcard.so.${LIBvcard_VERSION}
+@lib ${MOZILLA_PROJECT}/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}

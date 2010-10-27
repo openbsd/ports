@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2010/10/27 13:02:38 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -11,17 +11,17 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta1
-REVISION-lightning =	6
+REVISION-lightning =	7
+REVISION-main =		0
 EPOCH-lightning =	0
 
-# must be in sync with SO_VERSION in mail/mozilla-thunderbird
-# for mail/enigmail and productivity/sunbird,-seamonkey to work fine
+# must be in sync with SO_VERSION in main/enigmail/seamonkey
 SO_VERSION=	16.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome commandlines \
 	calbasecomps composer cookie docshell embedcomponents fileview gkgfxthebes gklayout \
-	gkplugin htmlpars i18n imgicon imglib2 import intlapp jar50 jsd mail \
+	gkplugin htmlpars i18n imgicon imglib2 import intlapp jar50 jsd \
 	mork mozfind mozldap msgsmime necko nsappshell oji permissions pipboot \
 	pipnss pippki places pref rdf remoteservice satchel spellchecker \
 	storagecomps suite system-pref tkautocomplete toolkitcomps txmgr uconv \
@@ -29,6 +29,15 @@ MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome comman
 	xpautocomplete xpconnect xpinstall zipwriter gfxpsshar gkgfx gtkxtbin \
 	jsj ldap60 ldif60 mozjs prldap60 sqlite3 ssldap60 thebes xpcom \
 	xpcom_core xul nullplugin unixprintplugin
+
+
+FLAVOR ?=
+.if ${FLAVOR:L:Mdebug}
+MOZILLA_LIBS += addrbook bayesflt fts3tok localmail mailnews mailview mime \
+	mimeemitter msgcompose msgdb msgimap msgmdn msgnews vcard msgbaseutil
+.else
+MOZILLA_LIBS+=	mail
+.endif
 
 CATEGORIES=	www mail net news
 

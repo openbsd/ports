@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2010/04/03 09:30:14 landry Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2010/10/27 13:02:39 landry Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
@@ -28,3 +28,10 @@ This package contains internationalizations for all supported
 languages.  To configure Seamonkey for your language, go to
 Edit->Preferences->Appearance->Languages/Content and select your
 favorite Language/Content pack.
+
+Debugging
+
+If you encounter crashes, you might want to build the debug FLAVOR of
+this package, and run 'seamonkey -g' to run seamonkey inside gdb, so
+that you can gather debugging logs and traces.
+Bug reports without that information will be ignored.
