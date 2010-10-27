@@ -1,4 +1,4 @@
-# $OpenBSD: drupal6.port.mk,v 1.4 2009/07/27 12:39:36 espie Exp $
+# $OpenBSD: drupal6.port.mk,v 1.5 2010/10/27 11:02:37 stephan Exp $
 
 
 # three types of things we can install, by default plugin
@@ -15,7 +15,8 @@ DIST_SUBDIR ?= drupal6
 CATEGORIES +=	www www/drupal6
 
 HOMEPAGE ?=	http://drupal.org/
-MASTER_SITES ?=	ftp://ftp.drupal.org/pub/drupal/files/projects/
+MASTER_SITES ?=	http://www.drupal.org/files/projects/ \
+		ftp://ftp.drupal.org/pub/drupal/files/projects/
 PKG_ARCH ?=	*
 
 .if !defined(WRKDIST)
