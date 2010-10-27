@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:37 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/27 14:32:31 jasper Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
-DISTNAME =		gtk-0.11.0
-REVISION =		0
+DISTNAME =		gtk-0.11.2
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -22,10 +21,10 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		::devel/gtk2hs-buildtools
 
-LIB_DEPENDS =		:hs-glib->=0.11,<0.12:devel/hs-glib \
-			:hs-gio->=0.11,<0.12:devel/hs-gio \
-			:hs-pango->=0.11,<0.12:devel/hs-pango \
-			:hs-cairo->=0.11,<0.12:graphics/hs-cairo \
+LIB_DEPENDS =		:hs-glib->=0.11.1,<0.12:devel/hs-glib \
+			:hs-gio->=0.11.1,<0.12:devel/hs-gio \
+			:hs-pango->=0.11.1,<0.12:devel/hs-pango \
+			:hs-cairo->=0.11.1,<0.12:graphics/hs-cairo \
 			::x11/gtk+2
 RUN_DEPENDS =		${LIB_DEPENDS}
 
