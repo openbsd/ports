@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.17 2010/10/27 23:41:27 steven Exp $
+# $OpenBSD: libtool,v 1.18 2010/10/27 23:42:49 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1470,15 +1470,14 @@ if ($mode eq 'compile') {
 
 	my @objs;
 	my @sobjs;
-	my $allpicobj;
 	if ($opts{'objectlist'}) {
 		my $objectlist = $opts{'objectlist'};
 		open(my $ol, '<', $objectlist) or die "cannot open $objectlist: $!\n";
 		my @objlist = <$ol>;
 		for (@objlist) { chomp; }
-		$allpicobj = generate_objlist(\@objs, \@sobjs, \@objlist);
+		generate_objlist(\@objs, \@sobjs, \@objlist);
 	} else {
-		$allpicobj = generate_objlist(\@objs, \@sobjs, \@ARGV);
+		generate_objlist(\@objs, \@sobjs, \@ARGV);
 	}
 	Trace::debug {"objs = @objs\n"};
 	Trace::debug {"sobjs = @sobjs\n"};
@@ -1768,7 +1767,6 @@ sub generate_objlist
 	my $objs = shift;
 	my $sobjs = shift;
 	my $objsource = shift;
-	my $allpic = 1;
 
 	my $result = [];
 	foreach my $a (@$objsource) {
@@ -1787,8 +1785,6 @@ sub generate_objlist
 				$o .= "$odir/" if ($odir ne '.');
 				$o .= $loinfo->{'pic_object'};
 				push @$sobjs, $o;
-			} else {
-				$allpic = 0;
 			}
 		} elsif ($a =~ m/\S+\.o$/) {
 			push @$objs, $a;
@@ -1797,7 +1793,6 @@ sub generate_objlist
 		}
 	}
 	@$objsource = @$result;
-	return $allpic;
 }
 
 # XXX reuse code from SharedLibs.pm instead
