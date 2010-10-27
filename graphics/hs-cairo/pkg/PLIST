@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/16 14:02:30 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/27 13:39:02 jasper Exp $
 lib/${DISTNAME}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/
@@ -46,6 +46,16 @@ lib/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
 lib/${DISTNAME}/unregister.sh
+share/${DISTNAME}/
+share/${DISTNAME}/CairoGhci.hs
+share/${DISTNAME}/Clock.hs
+share/${DISTNAME}/Drawing.hs
+share/${DISTNAME}/Drawing2.hs
+share/${DISTNAME}/Graph.hs
+share/${DISTNAME}/Makefile
+share/${DISTNAME}/StarAndRing.hs
+share/${DISTNAME}/Text.hs
+share/${DISTNAME}/cairo-clock-icon.png
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/COPYRIGHT
 share/doc/${DISTNAME}/html/
