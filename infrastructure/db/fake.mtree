@@ -138,6 +138,8 @@
 		dict
 		..
 		doc
+			pkg-readmes
+			..
 		..
 		examples
 		..
