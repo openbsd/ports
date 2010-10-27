@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/24 11:38:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/27 23:09:07 merdely Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -34,6 +34,7 @@
      SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
+     SUBDIR += pecl-lzf
      SUBDIR += pecl-rar
      SUBDIR += pecl-zip
      SUBDIR += py-lzo
