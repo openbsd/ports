@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.13 2010/10/27 09:05:30 steven Exp $
+# $OpenBSD: libtool,v 1.14 2010/10/27 11:03:17 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -631,7 +631,7 @@ sub find
 	Trace::debug {"searching .la for $l\n"};
 	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
 	foreach my $d (@sdirs) {
-		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
+		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.la") {
 			if (-f $la_candidate) {
 				Trace::debug {"found $la_candidate\n"};
 				return $la_candidate;
