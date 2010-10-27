@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/27 13:24:03 stephan Exp $
+# $OpenBSD: Makefile,v 1.44 2010/10/27 14:01:36 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -79,6 +79,7 @@ SUBDIR += user_import
 SUBDIR += user_readonly
 SUBDIR += view_unpublished
 SUBDIR += views
+SUBDIR += views_bonus
 SUBDIR += views_bulk_operations
 SUBDIR += webform
 SUBDIR += workflow
