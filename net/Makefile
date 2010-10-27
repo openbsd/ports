@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.660 2010/10/25 23:12:47 steven Exp $
+# $OpenBSD: Makefile,v 1.661 2010/10/27 18:15:54 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -105,8 +105,6 @@
      SUBDIR += gnaughty
      SUBDIR += gnet
      SUBDIR += gnugk
-     SUBDIR += gnugk,mysql
-     SUBDIR += gnugk,pgsql
      SUBDIR += gopher
      SUBDIR += gotthard
      SUBDIR += gsnmp
