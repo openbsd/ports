@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/26 18:06:10 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/27 18:25:08 steven Exp $
 
 COMMENT =	library for column approximate minimum degree ordering
 
 DISTNAME =	CCOLAMD-2.7.2
 PKGNAME = 	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 SHARED_LIBS +=  ccolamd	0.0
 CATEGORIES =	math
 
@@ -23,6 +23,7 @@ WRKDIST =	${WRKDIR}/CCOLAMD
 WRKSRC =	${WRKDIST}/Source
 
 BUILD_DEPENDS =	::math/ufconfig
+RUN_DEPENDS =	::math/ufconfig
 
 MAKE_ENV=	SHLIB_MAJOR=${LIBccolamd_VERSION:R} \
 		SHLIB_MINOR=${LIBccolamd_VERSION:E}

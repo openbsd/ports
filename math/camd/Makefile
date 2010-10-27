@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/26 17:42:51 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/27 18:25:08 steven Exp $
 
 COMMENT=	constrained approximate minimum degree 
 
 VERSION=	2.2.1
 DISTNAME=	CAMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 SHARED_LIBS=	camd	0.0
 
 CATEGORIES=	math
@@ -22,6 +23,7 @@ WRKDIST=	${WRKDIR}/CAMD
 WRKSRC=		${WRKDIST}/Source
 
 BUILD_DEPENDS=	::math/ufconfig
+RUN_DEPENDS=	::math/ufconfig
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBcamd_VERSION:R} \
