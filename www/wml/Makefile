@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/27 12:48:55 steven Exp $
 
 COMMENT=		Website META Language
 
@@ -27,11 +27,7 @@ RUN_DEPENDS=		::devel/p5-Term-ReadKey \
 			::www/tidy
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-# Using perl libtool gives:
-# strip: /usr/obj/ports/wml-2.0.11/fake-amd64//usr/local/libexec/wml/#INST@29788#:
-#	File format not recognized
-# May be unrelated, but forcing GNU libtool lets this build at least.
-USE_LIBTOOL=		Gnu
+USE_LIBTOOL =	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
