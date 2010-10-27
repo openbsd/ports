@@ -1,0 +1,21 @@
+$OpenBSD: patch-texmaker_cpp,v 1.1 2010/10/27 08:52:47 sthen Exp $
+--- texmaker.cpp.orig	Thu Jul 29 14:19:28 2010
++++ texmaker.cpp	Fri Jul 30 21:06:38 2010
+@@ -2621,7 +2621,7 @@ makeidx_package=config->value( "Quick/MakeIndex",false
+ author=config->value("Quick/Author","").toString();
+ 
+ #if defined( Q_WS_X11 )
+-QString dicDir=PREFIX"/share/texmaker/";
++QString dicDir=PREFIX"/share/hunspell/";
+ #endif
+ #if defined( Q_WS_MACX )
+ QString dicDir=QCoreApplication::applicationDirPath() + "/../Resources/";
+@@ -2631,7 +2631,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+ #endif
+ QString defaultDic=dicDir+QString(QLocale::system().name())+".dic";
+ QFileInfo fi(defaultDic);
+-if (!fi.exists() || !fi.isReadable()) defaultDic=dicDir+"en_GB.dic";
++if (!fi.exists() || !fi.isReadable()) defaultDic=dicDir+"default.dic";
+ spell_dic=config->value("Spell/Dic",defaultDic).toString();
+ 
+ spell_ignored_words=config->value("Spell/Words","").toString();

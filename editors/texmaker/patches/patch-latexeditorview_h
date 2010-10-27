@@ -1,0 +1,12 @@
+$OpenBSD: patch-latexeditorview_h,v 1.1 2010/10/27 08:52:47 sthen Exp $
+--- latexeditorview.h.orig	Sat Feb  6 17:20:18 2010
++++ latexeditorview.h	Sat Feb  6 17:20:30 2010
+@@ -18,7 +18,7 @@
+ #include "latexeditor.h"
+ #include "linenumberwidget.h"
+ #include "findwidget.h"
+-#include "hunspell/hunspell.hxx"
++#include <hunspell.hxx>
+ 
+ class LatexEditorView : public QWidget  {
+    Q_OBJECT

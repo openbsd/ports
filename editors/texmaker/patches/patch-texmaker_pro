@@ -1,0 +1,81 @@
+$OpenBSD: patch-texmaker_pro,v 1.1 2010/10/27 08:52:47 sthen Exp $
+--- texmaker.pro.orig	Thu Jul 29 21:40:36 2010
++++ texmaker.pro	Fri Jul 30 21:12:41 2010
+@@ -4,7 +4,8 @@ TARGET	 = texmaker
+ QT += network \
+       xml \
+       webkit
+-CONFIG	+= qt warn_off release
++CONFIG	+= qt warn_off release link_pkgconfig
++PKGCONFIG = hunspell poppler-qt4
+ TEXMAKERVERSION=2.0
+ DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
+ ###############################
+@@ -48,25 +49,6 @@ HEADERS	+= texmaker.h \
+ 	pdfdocumentwidget.h \
+ 	pdfscrollarea.h \
+ 	userquickdialog.h \
+-	hunspell/affentry.hxx \
+-	hunspell/affixmgr.hxx \
+-	hunspell/atypes.hxx \
+-	hunspell/baseaffix.hxx \
+-	hunspell/csutil.hxx \
+-	hunspell/dictmgr.hxx \
+-	hunspell/hashmgr.hxx \
+-	hunspell/htypes.hxx \
+-	hunspell/hunspell.hxx \
+-	hunspell/hunspell.h \
+-	hunspell/langnum.hxx \
+-	hunspell/license.hunspell \
+-	hunspell/phonet.hxx \
+-	hunspell/suggestmgr.hxx \
+-	hunspell/license.myspell \
+-	hunspell/filemgr.hxx \
+-	hunspell/hunzip.hxx \
+-	hunspell/replist.hxx \
+-	hunspell/w_char.hxx \
+ 	singleapp/qtlocalpeer.h \
+ 	singleapp/qtlockedfile.h \
+ 	singleapp/qtsingleapplication.h \
+@@ -111,18 +93,6 @@ SOURCES	+= main.cpp \
+ 	pdfdocumentwidget.cpp \
+ 	pdfscrollarea.cpp \
+ 	userquickdialog.cpp \
+-	hunspell/affentry.cxx \
+-	hunspell/affixmgr.cxx \
+-	hunspell/csutil.cxx \
+-	hunspell/dictmgr.cxx \
+-	hunspell/hashmgr.cxx \
+-	hunspell/hunspell.cxx \
+-	hunspell/phonet.cxx \
+-	hunspell/suggestmgr.cxx \
+-	hunspell/utf_info.cxx \
+-	hunspell/filemgr.cxx \
+-	hunspell/replist.cxx \
+-	hunspell/hunzip.cxx \
+ 	singleapp/qtlocalpeer.cpp \
+ 	singleapp/qtlockedfile.cpp \
+ 	singleapp/qtsingleapplication.cpp \
+@@ -248,21 +218,7 @@ utilities.files = doc/doc1.png \
+ 	locale/texmaker_ru.qm \
+ 	locale/texmaker_zh_CN.qm \
+ 	locale/texmaker_zh_TW.qm \
+-	locale/texmaker_cs.qm \
+-	dictionaries/de_DE.aff \
+-	dictionaries/de_DE.dic \
+-	dictionaries/en_GB.aff \
+-	dictionaries/en_GB.dic \
+-	dictionaries/es_ES.aff \
+-	dictionaries/es_ES.dic \
+-	dictionaries/fr_FR.aff \
+-	dictionaries/fr_FR.dic \
+-	dictionaries/it_IT.aff \
+-	dictionaries/it_IT.dic \
+-	dictionaries/it_IT_README.txt \
+-	dictionaries/README_de_DE_frami.txt \
+-	dictionaries/README_DIC_fr_FR.txt \
+-	dictionaries/README_es_ES.txt 
++	locale/texmaker_cs.qm
+ INSTALLS += utilities
+ desktop.path = $${DESKTOPDIR}
+ desktop.files = utilities/texmaker.desktop

@@ -1,0 +1,12 @@
+$OpenBSD: patch-spellerdialog_h,v 1.1 2010/10/27 08:52:47 sthen Exp $
+--- spellerdialog.h.orig	Sat Jan 30 11:45:07 2010
++++ spellerdialog.h	Sat Jan 30 11:17:14 2010
+@@ -13,7 +13,7 @@
+ 
+ #include "ui_spellerdialog.h"
+ #include "latexeditor.h"
+-#include "hunspell/hunspell.hxx"
++#include <hunspell.hxx>
+ 
+ #include <QTextCursor>
+ 
