@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/27 10:23:42 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		fftw3f m
 
-MASTER_SITES =		${HOMEPAGE}releases/0.4.15/
+MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
+			http://distfiles.nl/
 
 BUILD_DEPENDS =		::audio/ladspa \
 			::devel/libtool
