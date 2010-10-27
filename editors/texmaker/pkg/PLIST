@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/09 14:43:03 naddy Exp $
-bin/texmaker
+@comment $OpenBSD: PLIST,v 1.2 2010/10/27 08:16:16 sthen Exp $
+@bin bin/texmaker
+share/applications/texmaker.desktop
+share/pixmaps/
+share/pixmaps/texmaker.png
 share/texmaker/
-share/texmaker/blank.gif
+share/texmaker/AUTHORS
+share/texmaker/CHANGELOG.txt
+share/texmaker/COPYING
+share/texmaker/blank.png
 share/texmaker/doc1.png
+share/texmaker/doc10.png
 share/texmaker/doc11.png
 share/texmaker/doc12.png
 share/texmaker/doc13.png
@@ -10,23 +17,57 @@ share/texmaker/doc14.png
 share/texmaker/doc15.png
 share/texmaker/doc16.png
 share/texmaker/doc17.png
+share/texmaker/doc18.png
+share/texmaker/doc19.png
 share/texmaker/doc2.png
+share/texmaker/doc20.png
+share/texmaker/doc21.png
+share/texmaker/doc22.png
 share/texmaker/doc3.png
 share/texmaker/doc4.png
 share/texmaker/doc5.png
 share/texmaker/doc6.png
+share/texmaker/doc6bis.png
 share/texmaker/doc7.png
 share/texmaker/doc8.png
+share/texmaker/doc9.png
 share/texmaker/latexhelp.html
 share/texmaker/next.gif
 share/texmaker/next_d.gif
 share/texmaker/prev.gif
 share/texmaker/prev_d.gif
 share/texmaker/psheader.txt
+share/texmaker/qt_cs.qm
+share/texmaker/qt_de.qm
+share/texmaker/qt_es.qm
+share/texmaker/qt_fr.qm
+share/texmaker/qt_pt.qm
+share/texmaker/qt_ru.qm
+share/texmaker/qt_zh_CN.qm
+share/texmaker/qt_zh_TW.qm
 share/texmaker/style.css
+share/texmaker/texmaker.svg
+share/texmaker/texmaker128x128.png
 share/texmaker/texmaker16x16.png
+share/texmaker/texmaker22x22.png
 share/texmaker/texmaker32x32.png
 share/texmaker/texmaker48x48.png
+share/texmaker/texmaker64x64.png
+share/texmaker/texmaker_ca.qm
+share/texmaker/texmaker_cs.qm
+share/texmaker/texmaker_de.qm
+share/texmaker/texmaker_es.qm
+share/texmaker/texmaker_fa.qm
+share/texmaker/texmaker_fr.qm
+share/texmaker/texmaker_gl.qm
+share/texmaker/texmaker_it.qm
+share/texmaker/texmaker_pt_BR.qm
+share/texmaker/texmaker_ru.qm
+share/texmaker/texmaker_zh_CN.qm
+share/texmaker/texmaker_zh_TW.qm
 share/texmaker/up.gif
 share/texmaker/up_d.gif
-share/texmaker/usermanual.html
+share/texmaker/usermanual_en.html
+share/texmaker/usermanual_fr.html
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
