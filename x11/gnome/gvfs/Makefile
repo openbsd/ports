@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/10/27 12:00:36 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -8,6 +8,8 @@ GNOME_VERSION=	1.6.4
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  gvfscommon           3.0      # .0.0
 SHARED_LIBS +=  gvfscommon-dnssd     1.0      # .0.0
