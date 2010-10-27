@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.14 2010/10/27 11:03:17 steven Exp $
+# $OpenBSD: libtool,v 1.15 2010/10/27 12:43:41 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -360,7 +360,8 @@ sub parse_linkargs1
 # fill staticlibs array, which is the sequence of static and convenience
 #   libraries
 # XXX the variable $parser->{seen_la_shared} will register whether or not
-#     a .la file is found which refers to a shared library
+#     a .la file is found which refers to a shared library and which is not
+#     yet installed
 #     this is used to decide where to link executables and create wrappers
 sub parse_linkargs2
 {
@@ -413,7 +414,9 @@ sub parse_linkargs2
 			my $lainfo = LaFile->parse($fulla);
 			my $dlname = $lainfo->stringize('dlname');
 			my $oldlib = $lainfo->stringize('old_library');
-			if ($dlname ne '') {
+			my $installed = $lainfo->stringize('installed');
+			if ($dlname ne '' && $installed eq 'no') {
+				Trace::debug {"seen uninstalled la shared in $a\n"};
 				$self->{seen_la_shared} = 1;
 			}
 			if ($dlname eq '' && -f "$d/$ltdir/$oldlib") {
