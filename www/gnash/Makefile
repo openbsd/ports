@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/10/27 07:57:34 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.8
 DISTNAME=	gnash-${VER}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
 
@@ -51,7 +51,7 @@ LIB_DEPENDS=	::archivers/bzip2 \
 USE_GMAKE=	Yes
 # Gnash requires GNU libtool 2.2 or greater, so use the bundled one
 USE_LIBTOOL=	gnu
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 LIBTOOL=	${WRKSRC}/libtool
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu

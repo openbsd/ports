@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/12 09:38:16 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/10/27 07:57:34 dcoppa Exp $
 bin/gnash
 @bin bin/gprocessor
 @bin bin/gtk-gnash
@@ -212,11 +212,10 @@ share/doc/gnash/images/
 share/doc/gnash/images/car_crash.png
 share/doc/gnash/images/rtmp.png
 share/examples/gnash/
-@sample ${SYSCONFDIR}/gnash/
 share/examples/gnash/gnashpluginrc
-@sample ${SYSCONFDIR}/gnash/gnashpluginrc
+@sample ${SYSCONFDIR}/gnashpluginrc
 share/examples/gnash/gnashrc
-@sample ${SYSCONFDIR}/gnash/gnashrc
+@sample ${SYSCONFDIR}/gnashrc
 share/gnash/
 share/gnash/GnashG.png
 share/gnash/gnash_128_96.ico
