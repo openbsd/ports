@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.8 2010/10/27 22:53:33 espie Exp $
+# $OpenBSD: Engine.pm,v 1.9 2010/10/27 22:58:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -318,7 +318,6 @@ sub rebuild_info
 	}
 	my @subdirs = map {$_->fullpkgpath} @l;
 	$self->{grabber}->grab_subdirs($core, \@subdirs);
-	# XXX todo something needs to happen after the rescan ?
 }
 
 sub start_new_job
