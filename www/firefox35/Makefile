@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/10/27 08:14:17 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -14,9 +14,6 @@ MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
 		xpcom xul nullplugin unixprintplugin
 
 CATEGORIES =	www
-
-FLAVORS =	debug
-FLAVOR ?=
 
 HOMEPAGE=	http://www.mozilla.org/projects/firefox/
 
@@ -41,11 +38,6 @@ CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--enable-system-sqlite
 LIB_DEPENDS +=		:sqlite3->=3.6.16:databases/sqlite3
 WANTLIB +=		sqlite3.>=13.3
-
-.if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 			greprefs icons modules plugins res searchplugins
