@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/16 14:01:33 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/27 13:39:22 jasper Exp $
 lib/${DISTNAME}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango.chi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Attributes.chi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Attributes.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/BasicTypes.chi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/BasicTypes.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Cairo.chi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Cairo.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Context.chi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Context.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/Rendering/Pango/Description.chi
@@ -36,12 +40,14 @@ lib/${DISTNAME}/unregister.sh
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/COPYING
 share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Cairo.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Context.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Enums.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Font.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Layout.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Markup.html
 share/doc/${DISTNAME}/html/Graphics-Rendering-Pango-Rendering.html
+share/doc/${DISTNAME}/html/Graphics-Rendering-Pango.html
 share/doc/${DISTNAME}/html/doc-index-A.html
 share/doc/${DISTNAME}/html/doc-index-C.html
 share/doc/${DISTNAME}/html/doc-index-D.html
@@ -64,12 +70,17 @@ share/doc/${DISTNAME}/html/haddock.css
 share/doc/${DISTNAME}/html/haskell_icon.gif
 share/doc/${DISTNAME}/html/index-frames.html
 share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Cairo.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Context.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Enums.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Font.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Layout.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Markup.html
 share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango-Rendering.html
+share/doc/${DISTNAME}/html/mini_Graphics-Rendering-Pango.html
 share/doc/${DISTNAME}/html/minus.gif
 share/doc/${DISTNAME}/html/pango.haddock
 share/doc/${DISTNAME}/html/plus.gif
+share/${DISTNAME}/
+share/${DISTNAME}/Layout.hs
+share/${DISTNAME}/Makefile
