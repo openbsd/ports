@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/17 13:54:30 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/10/27 12:52:49 jasper Exp $
 
 COMMENT =		tools to build Gtk2Hs
 
-DISTNAME =		gtk2hs-buildtools-0.9
+DISTNAME =		gtk2hs-buildtools-0.11.2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-REVISION =		0
 WANTLIB =		c gmp m pthread util
 
 MODULES =		lang/ghc converters/libiconv
