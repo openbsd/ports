@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.852 2010/10/26 22:43:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.853 2010/10/27 10:54:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -74,6 +74,7 @@
      SUBDIR += cvsweb
      SUBDIR += cxxtools
      SUBDIR += darcs
+     SUBDIR += dconf
      SUBDIR += ddd
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
