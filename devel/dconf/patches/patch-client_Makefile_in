@@ -1,0 +1,57 @@
+$OpenBSD: patch-client_Makefile_in,v 1.1.1.1 2010/10/27 10:50:04 ajacoutot Exp $
+--- client/Makefile.in.orig	Wed Sep 15 22:11:42 2010
++++ client/Makefile.in	Tue Oct 26 23:17:04 2010
+@@ -34,7 +34,7 @@ POST_INSTALL = :
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-shlib_PROGRAMS = libdconf.so.0.0.0$(EXEEXT)
++shlib_PROGRAMS = libdconf.so.${LIBdconf_VERSION}$(EXEEXT)
+ subdir = client
+ DIST_COMMON = $(am__dist_gir_DATA_DIST) $(dconfinclude_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+@@ -239,12 +239,12 @@ top_srcdir = @top_srcdir@
+ AM_CFLAGS = -std=c89 -Wall -Wmissing-prototypes -Wwrite-strings -D__dconf_h__ -fPIC -DPIC
+ INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/gvdb -I$(top_srcdir)/engine $(gio_CFLAGS)
+ shlibdir = $(libdir)
+-nodist_noinst_DATA = libdconf.so.0 libdconf.so
++nodist_noinst_DATA =
+ dconfinclude_HEADERS = \
+ 	dconf-client.h	\
+ 	dconf.h
+ 
+-libdconf_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so.0 $(gio_LIBS)
++libdconf_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so $(gio_LIBS)
+ libdconf_so_0_0_0_SOURCES = \
+ 	../common/dconf-shmdir.c	\
+ 	../common/dconf-paths.c		\
+@@ -332,8 +332,8 @@ uninstall-shlibPROGRAMS:
+ 
+ clean-shlibPROGRAMS:
+ 	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+-libdconf.so.0.0.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
+-	@rm -f libdconf.so.0.0.0$(EXEEXT)
++libdconf.so.${LIBdconf_VERSION}$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
++	@rm -f libdconf.so.${LIBdconf_VERSION}$(EXEEXT)
+ 	$(AM_V_CCLD)$(libdconf_so_0_0_0_LINK) $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+@@ -752,17 +752,12 @@ uninstall-am: uninstall-dconfincludeHEADERS uninstall-
+ 
+ @HAVE_INTROSPECTION_TRUE@dconf-1.0.gir: libdconf.so.0 libdconf.so
+ 
+-libdconf.so.0 libdconf.so: libdconf.so.0.0.0
+-	$(AM_V_GEN) ln -fs libdconf.so.0.0.0 $@
+-
+ install-data-hook:
+-	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so.0
+-	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so
+ 
+ uninstall-hook:
+ 	rm -f $(DESTDIR)$(shlibdir)/libdconf.so.0
+ 	rm -f $(DESTDIR)$(shlibdir)/libdconf.so
+-dconf.vapi: libdconf.so.0
++dconf.vapi:
+ 
+ dconf.deps:
+ 	$(AM_V_GEN) echo gio-2.0 > dconf.deps

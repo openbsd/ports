@@ -1,0 +1,21 @@
+$OpenBSD: patch-editor_Makefile_in,v 1.1.1.1 2010/10/27 10:50:04 ajacoutot Exp $
+--- editor/Makefile.in.orig	Tue Oct 26 23:28:11 2010
++++ editor/Makefile.in	Tue Oct 26 23:28:33 2010
+@@ -50,7 +50,7 @@ am_dconf_editor_OBJECTS = dconf-editor.$(OBJEXT) dconf
+ 	dconf-schema.$(OBJEXT) dconf-view.$(OBJEXT)
+ dconf_editor_OBJECTS = $(am_dconf_editor_OBJECTS)
+ am__DEPENDENCIES_1 =
+-dconf_editor_DEPENDENCIES = ../client/libdconf.so.0 \
++dconf_editor_DEPENDENCIES = ../client/libdconf.so.${LIBdconf_VERSION} \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/aux/depcomp
+@@ -194,7 +194,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CFLAGS = $(gtk_CFLAGS) $(libxml_CFLAGS) -I$(top_srcdir)/common -I$(top_srcdir)/client
+ AM_VALAFLAGS = --vapidir ../client --pkg gtk+-2.0 --pkg libxml-2.0 --pkg dconf
+-dconf_editor_LDADD = ../client/libdconf.so.0 $(gtk_LIBS) $(gee_LIBS) $(libxml_LIBS)
++dconf_editor_LDADD = ../client/libdconf.so.${LIBdconf_VERSION} $(gtk_LIBS) $(gee_LIBS) $(libxml_LIBS)
+ dconf_editor_SOURCES = dconf-editor.vala dconf-model.vala dconf-schema.vala dconf-view.vala
+ all: all-am
+ 
