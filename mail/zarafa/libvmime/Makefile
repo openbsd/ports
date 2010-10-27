@@ -1,17 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/30 06:42:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/27 18:25:44 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
-DISTNAME=	libvmime-0.7.1
-PKGNAME=	zarafa-${DISTNAME}p5
-
-# patches are modified in the upstream tarball without notice nor
-# version bump, so we use this to force a new download instead of
-# failing because of checksum mismatch
-DIST_SUBDIR=	zarafa/libvmime-20100630
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		zarafa-vmime-patches.tar.gz
+VMIME=		libvmime-0.7.1
+PKGNAME=	zarafa-${VMIME}
+REVISION=	6
 
 CATEGORIES=	mail devel
 
@@ -19,12 +12,12 @@ CATEGORIES=	mail devel
 # cohabitate with the "official" one (i.e. devel/libvmime).
 SHARED_LIBS+=	vmime-zarafa	1.0	# .7.1
 
-EXTRACT_SUFX=	.tar.bz2
-
-MASTER_SITES=	http://developer.zarafa.com/download/
+WANTLIB +=	m stdc++
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	::archivers/bzip2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,11 +33,14 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-messaging-proto-sendmail \
 		--enable-platform-posix
 
+WRKDIST=	${WRKDIR}/${VMIME}
+
+post-extract:
+	${BZIP2} -dc ${WRKDIR}/${DISTNAME}/${VMIME}.tar.bz2 | ${TAR} xf - -C ${WRKDIR}
+
 # apply zarafa provided patches at pre-configure to not mess with our own
 pre-configure:
-	# doesn't apply and we use gcc3 anyway
-	rm ${WRKDIR}/vmime-gcc-4.4-support.diff
 	cd ${WRKSRC} && \
-		for i in ${WRKDIR}/*.diff; do patch -z .beforezarafa -s -E -p1 < $$i; done
+		for i in ${WRKDIR}/${DISTNAME}/vmime-patches/*.diff; do patch -z .beforezarafa -s -E -p1 < $$i; done
  
 .include <bsd.port.mk>
