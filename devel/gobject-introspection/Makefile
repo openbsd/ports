@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/25 11:39:59 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/27 13:09:35 jasper Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -9,11 +9,10 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		0.9.12
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
-#SHARED_LIBS +=	everything-1.0      0.0          # .0.0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -41,8 +40,7 @@ LIB_DEPENDS=		::devel/glib2 \
 			::graphics/cairo
 BUILD_DEPENDS=		::devel/bison
 
-# weird libtool use by some python script
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 YACC=			bison
