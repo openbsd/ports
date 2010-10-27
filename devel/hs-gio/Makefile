@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:36 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/27 12:53:35 jasper Exp $
 
 COMMENT =		Haskell bindings to gio
 
-DISTNAME =		gio-0.11.0
-REVISION =		0
+DISTNAME =		gio-0.11.1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -20,10 +19,11 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-BUILD_DEPENDS =		::devel/gtk2hs-buildtools
+BUILD_DEPENDS =		::devel/gtk2hs-buildtools \
+			:hs-glib->=0.11.1,<0.12:devel/hs-glib
 
 LIB_DEPENDS =		::devel/glib2 \
-			:hs-glib->=0.11,<0.12:devel/hs-glib
+			:hs-glib->=0.11.1,<0.12:devel/hs-glib
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>
