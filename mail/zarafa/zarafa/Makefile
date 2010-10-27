@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/10/27 18:26:16 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 
-V=		6.40.2
-DISTNAME=	zarafa-${V}
-
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
 CATEGORIES=	mail www productivity
@@ -32,7 +29,7 @@ BUILD_DEPENDS=	::www/php5/core \
 		::net/curl
 
 WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
-WANTLIB-main += sasl2 stdc++ z xml2 mysqlclient lber ldap uuid execinfo
+WANTLIB-main += sasl2 stdc++ z xml2 mysqlclient lber-2.3 ldap-2.3 uuid execinfo
 WANTLIB-main += vmime-zarafa ical icalss
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
@@ -41,7 +38,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		::databases/openldap \
 		::devel/uuid \
 		::devel/libexecinfo \
-		:zarafa-libvmime->=0.7.1p3:mail/zarafa/libvmime \
+		:zarafa-libvmime->=0.7.1p6:mail/zarafa/libvmime \
 		::textproc/libical
 
 WANTLIB-web += execinfo ical icalss uuid vmime-zarafa common_mapi
@@ -94,6 +91,11 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
+
+WRKDIST=	${WRKDIR}/zarafa-${V}
+
+post-extract:
+	${GZIP_CMD} -dc ${WRKDIR}/${DISTNAME}/zcp-${V}.tar.gz | ${TAR} xf - -C ${WRKDIR}
 
 post-patch:
 	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \
