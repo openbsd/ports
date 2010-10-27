@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.12 2010/09/28 18:52:36 steven Exp $
+# $OpenBSD: libtool,v 1.13 2010/10/27 09:05:30 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -292,7 +292,7 @@ sub parse_linkargs1
 					push @$result, $lafile;
 					next;
 				} else {
-					$libs->{$key}->find($dirs, 1, 'notyet', $libsearchdirs);
+					$libs->{$key}->find($dirs, 1, 0, 'notyet', $libsearchdirs);
 					my @deps = $libs->{$key}->inspect;
 					foreach my $d (@deps) {
 						my $k = main::basename $d;
@@ -711,7 +711,7 @@ sub link
 			next if (!defined $l->{lafile});
 			my $lainfo = LaFile->parse($l->{lafile});
 			next if ($lainfo->stringize('dlname') ne '');
-			$l->find($dirs, 0, $what);
+			$l->find($dirs, 0, 0, $what);
 			my $a = $l->{fullpath};
 			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 				# extract objects from archive
@@ -741,7 +741,7 @@ sub link
 	my $tmp = [];
 	while (my $k = shift @$finalorderedlibs) {
 		my $l = $libs->{$k};
-		$l->find($dirs, 1, $what);
+		$l->find($dirs, 1, $opts->{'static'}, $what);
 		if ($l->{dropped}) {
 			# remove library if dependency on it has been dropped
 			delete $libs->{$k};
@@ -915,8 +915,8 @@ sub link
 	my $opts = shift;
 
 	my $ltdir = $main::ltdir;
-	Trace::debug {"linking program (",
-		($self->{shared}) ? "dynam" : "stat", "ically)\n"};
+	Trace::debug {"linking program (", ($opts->{'static'}) ? "not " : "",
+	      	"dynamically linking not-installed libtool libraries)\n"};
 
 	my $what = ref($self);
 	my $fpath  = $self->{outfilepath};
@@ -947,7 +947,7 @@ sub link
 	if ($odir ne '.') {
 		$symlinkdir = "$odir/$ltdir";
 	}
-	if ($self->{shared} && $parser->{seen_la_shared}) {
+	if ($parser->{seen_la_shared}) {
 		$dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
 		mkdir $symlinkdir if (! -d $symlinkdir);
 		$self->write_wrapper();
@@ -982,7 +982,7 @@ sub link
 			$libs->{$k} = Library->new($k);
 		}
 		my $l = $libs->{$k};
-		$l->find($dirs, $self->{shared}, $what);
+		$l->find($dirs, 1, $opts->{'static'}, $what);
 	}
 
 	my @libobjects = values %$libs;
@@ -1009,7 +1009,6 @@ sub link
 
 	@cmd = @$ltprog;
 	push @cmd, '-o', $dst;
-	push @cmd, '-static' if (!$self->{shared});
 	push @cmd, @$args if ($args);
 	push @cmd, @{$self->{objlist}} if (@{$self->{objlist}});
 	push @cmd, @$staticlibs if (@$staticlibs);
@@ -1025,7 +1024,7 @@ package Library;
 # XXX pick the right one if multiple are found!
 sub find
 {
-	my ($self, $dirs, $shared, $linkmode, $ldconfigdirs) = @_;
+	my ($self, $dirs, $shared, $staticflag, $linkmode, $ldconfigdirs) = @_;
 
 	my $libtofind = $self->{key};
 	my $libfile = 0;
@@ -1044,12 +1043,13 @@ sub find
 		my $dlname = $lainfo->{'dlname'};
 		my $oldlib = $lainfo->{'old_library'};
 		my $libdir = $lainfo->{'libdir'};
+		my $installed = $lainfo->{'installed'};
  		my $d = main::abs_path(main::dirname($self->{lafile}));
 		# get the name we need (this may include a -release)
 		if (!$dlname && !$oldlib) {
 			die "neither static nor shared library found in $self->{lafile}\n";
 		}
-		if ($d !~ m/\Q$ltdir\E$/ && $lainfo->{'installed'} eq 'no') {
+		if ($d !~ m/\Q$ltdir\E$/ && $installed eq 'no') {
 			$d .= "/$ltdir";
 		}
 		if ($shared) {
@@ -1057,6 +1057,11 @@ sub find
 				$libfile = "$d/$dlname";
 			} else {
 				# fall back to static
+				$libfile = "$d/$oldlib";
+			}
+			# if -static has been passed, don't link dynamically
+			# against not-installed libraries
+			if ($staticflag && $installed eq 'no') {
 				$libfile = "$d/$oldlib";
 			}
 		} else {
@@ -1477,11 +1482,6 @@ if ($mode eq 'compile') {
 		# XXX give higher priority to dirs of not installed libs
 		if ($opts{'export-dynamic'}) {
 			push(@{$parser->{args}}, "-Wl,-E");
-		}
-		if ($opts{'static'}) {
-			$program->{shared} = 0;
-		} else {
-			$program->{shared} = 1;
 		}
 
 		$parser->parse_linkargs1($deplibs, \@Rresolved, \@libsearchdirs,
