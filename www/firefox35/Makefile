@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/27 08:14:17 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2010/10/27 12:59:29 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -7,11 +7,26 @@ MOZILLA_BRANCH =	1.9.1
 MOZILLA_PROJECT =	firefox35
 MOZILLA_CODENAME =	browser
 
+REVISION =		0
+
 SO_VERSION =	24.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
 		xpcom xul nullplugin unixprintplugin
+
+FLAVOR ?=
+.if ${FLAVOR:L:Mdebug}
+MOZILLA_LIBS += accessibility appcomps auth autoconfig caps chardet chrome \
+	commandlines composer cookie docshell embedcomponents fileview \
+	gkgfxthebes gklayout gkplugin htmlpars i18n imglib2 intlapp \
+	jar50 jsd mozfind necko nsappshell oji permissions \
+	pipboot pipnss pippki places pref rdf remoteservice \
+	satchel spellchecker storagecomps system-pref tkautocomplete \
+	toolkitcomps txmgr uconv ucvmath universalchardet \
+	unixproxy webbrwsr widget_gtk2 windowds xpconnect xpinstall \
+	zipwriter gfxpsshar gkgfx gtkxtbin jsj thebes xpcom_core
+.endif
 
 CATEGORIES =	www
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/08/02 16:05:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/10/27 12:59:29 landry Exp $
 bin/${MOZILLA_PROJECT}
 ${MOZILLA_PROJECT}/
 ${MOZILLA_PROJECT}/LICENSE
@@ -347,8 +347,10 @@ ${MOZILLA_PROJECT}/searchplugins/google.xml
 ${MOZILLA_PROJECT}/searchplugins/wikipedia.xml
 ${MOZILLA_PROJECT}/searchplugins/yahoo.xml
 share/applications/${MOZILLA_PROJECT}.desktop
+%%debug%%
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec TEMP=`mktemp -d` && cd %D/firefox35 && env HOME=$TEMP LD_LIBRARY_PATH=%D/firefox35 ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/firefox35/components/compreg.dat
 @unexec rm -f %D/firefox35/components/xpti.dat
+@unexec rm -Rf %D/firefox35/updates
