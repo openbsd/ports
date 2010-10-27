@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.15 2010/10/27 12:43:41 steven Exp $
+# $OpenBSD: libtool,v 1.16 2010/10/27 17:37:55 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1242,6 +1242,13 @@ while (@ARGV) {
 }
 Trace::debug {"ltprog = \"@$ltprog\"\n"};
 if (@$ltprog == 0) { die "no libtool command\n" };
+# make ltprog a list of elements without whitespace (prevent exec errors)
+my @tmp_ltprog = @$ltprog;
+@$ltprog = ();
+for my $el (@tmp_ltprog) {
+	my @parts = split /\s+/, $el;
+	push @$ltprog, @parts;
+}
 
 # check mode and guess it if needed
 if (!($mode && grep { $_ eq $mode } @valid_modes)) {
