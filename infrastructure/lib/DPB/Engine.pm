@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.7 2010/10/27 12:58:26 espie Exp $
+# $OpenBSD: Engine.pm,v 1.8 2010/10/27 22:53:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,46 +121,6 @@ sub stats
 	if ($line ne $self->{statline}) {
 		$self->{statline} = $line;
 		print $fh $self->{ts}, " ", $line, "\n";
-	}
-}
-
-sub finished_scanning
-{
-	my $self = shift;
-	# this is scary, we need to do it by-pkgname
-	my $needed_by = {};
-	my $bneeded_by = {};
-	for my $v (values %{$self->{all}}) {
-	# also, this is an approximation, we could be more specific wrt
-	# BUILD/RUN_DEPENDS, this leads to more code in check_buildable...
-		for my $kind (qw(RUN_DEPENDS LIB_DEPENDS)) {
-			next unless defined $v->{info}{$kind};
-			for my $depend (values %{$v->{info}{$kind}}) {
-				next if $depend eq $v;
-				my $pkgname = $depend->fullpkgname;
-				next if !defined $pkgname;
-				$needed_by->{$pkgname}{$v} = $v;
-			}
-		}
-		if (defined $v->{info}{BUILD_DEPENDS}) {
-			for my $depend (values %{$v->{info}{BUILD_DEPENDS}}) {
-				next if $depend eq $v;
-				my $pkgname = $depend->fullpkgname;
-				next if !defined $pkgname;
-				$bneeded_by->{$pkgname}{$v} = $v;
-			}
-		}
-	}
-	# then we link each pkgpath to its array
-	for my $v (values %{$self->{all}}) {
-		if (defined $needed_by->{$v->fullpkgname}) {
-			$v->{info}{NEEDED_BY} = $needed_by->{$v->fullpkgname};
-			bless $v->{info}{NEEDED_BY}, "AddDepends";
-		}
-		if (defined $bneeded_by->{$v->fullpkgname}) {
-			$v->{info}{BNEEDED_BY} = $bneeded_by->{$v->fullpkgname};
-			bless $v->{info}{BNEEDED_BY}, "AddDepends";
-		}
 	}
 }
 
@@ -358,8 +318,7 @@ sub rebuild_info
 	}
 	my @subdirs = map {$_->fullpkgpath} @l;
 	$self->{grabber}->grab_subdirs($core, \@subdirs);
-	# XXX todo something needs to happen after the rescan,
-	# along the lines of finished_scanning
+	# XXX todo something needs to happen after the rescan ?
 }
 
 sub start_new_job

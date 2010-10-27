@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.4 2010/10/26 15:45:09 espie Exp $
+# $OpenBSD: dpb,v 1.5 2010/10/27 22:53:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -241,7 +241,6 @@ if (!$opt_e) {
 }
 # and let's wait for all jobs now.
 
-$engine->finished_scanning;
 #$engine->dump($dump);
 $engine->check_buildable;
 #$engine->dump($dump);
