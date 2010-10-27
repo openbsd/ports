@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/09 21:10:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/27 17:56:26 espie Exp $
 
 COMMENT=		open source micro messaging platform
 
 DISTNAME=		statusnet-0.8.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
+REVISION=		1
 
 CATEGORIES=		www net
 
@@ -46,7 +47,6 @@ SUBST_VARS=             INSTDIR
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

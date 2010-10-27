@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/03 14:17:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/10/27 17:56:26 espie Exp $
 @pkgpath www/statusnet,mysql
 @pkgpath www/statusnet,pgsql
 @owner www
@@ -7,7 +7,6 @@ statusnet/
 statusnet/COPYING
 statusnet/EVENTS.txt
 statusnet/README
-statusnet/README.OpenBSD
 statusnet/actions/
 statusnet/actions/accesstoken.php
 statusnet/actions/all.php
@@ -922,3 +921,5 @@ statusnet/theme/pigeonthoughts/logo.png
 statusnet/theme/readme.txt
 statusnet/tpl/
 statusnet/tpl/index.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
