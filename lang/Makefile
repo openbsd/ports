@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2010/10/10 17:39:49 steven Exp $
+# $OpenBSD: Makefile,v 1.103 2010/10/27 08:15:04 todd Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += mawk
      SUBDIR += mono
      SUBDIR += mono-basic
+     SUBDIR += newlisp
      SUBDIR += nhc98
      SUBDIR += ocaml
      SUBDIR += ocamlduce
