@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.11 2010/04/28 06:56:38 landry Exp $
+$OpenBSD: README.OpenBSD,v 1.12 2010/10/27 12:56:28 landry Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -62,3 +62,10 @@ In order to use CUPS for printing, you will need to install the cups
 subpackage of gtk+2, i.e.:
 
 # pkg_add gtk+2-cups
+
+Debugging
+
+If you encounter crashes, you might want to build the debug FLAVOR of
+this package, and run 'firefox -g' to run firefox inside gdb, so
+that you can gather debugging logs and traces.
+Bug reports without that information will be ignored.
