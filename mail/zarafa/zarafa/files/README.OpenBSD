@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.14 2010/07/13 07:31:00 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.15 2010/10/28 14:46:56 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -34,56 +34,6 @@ After zarafa-server was started for the first time
     # ${TRUEPREFIX}/bin/zarafa-admin -c zadmin -p secret -e zarafa.admin@domain.tld -f "John Doe" -a 2
 
 
-Starting Zarafa on boot-up
---------------------------
-
-To start all zarafa services on boot-up, add the following lines to
-/etc/rc.local:
-
-if [ -x ${TRUEPREFIX}/bin/zarafa-server ]; then
-	# make sure mysqld is running before starting zarafa-server
-	# (give up after 15 secs)
-	i=1
-	while [ ! -S "/var/run/mysql/mysql.sock" -a ${i} -lt 15 ]; do
-		sleep 1
-		i=`expr ${i} + 1`
-	done
-	for i in zarafa-server zarafa-spooler zarafa-monitor zarafa-gateway zarafa-ical; do
-		echo -n " ${i}"; ${TRUEPREFIX}/bin/${i}
-	done
-fi
-
-
-Shutting down Zarafa
---------------------
-
-zarafa-server may need some time to correctly shut down.
-It is advised you use something like the following at the end of your
-/etc/rc.shutdown file:
-
-if [ "`pgrep zarafa`" ]; then
-	echo "Shutting down Zarafa..."
-	pkill zarafa-ical
-	pkill zarafa-gateway
-	pkill zarafa-monitor
-	pkill zarafa-spooler
-	pkill zarafa-server
-	sleep 5
-	i=0
-	while [ ${i} -lt 15 ]
-		do
-		if [ "`pgrep zarafa\-`" ]; then
-			pkill zarafa\-
-			sleep 5
-			i=`expr ${i} + 5`
-		else
-			i=15
-		fi
-	done
-	pkill -9 zarafa\-
-fi
-
-
 Mail delivery agent configuration
 ---------------------------------
 
@@ -94,8 +44,8 @@ See the following URL for other MTA integration:
 
 Anyway, here are the 3 ways of integrating Zarafa with sendmail(8).
 
-1. Using procmail.
-==================
+* Using procmail.
+
 First, install the procmail package and configure ${SYSCONFDIR}/procmailrc
 the following way:
  
@@ -107,16 +57,15 @@ Next, you need to add the following line to your sendmail.mc file then
 restart sendmail(8):
     FEATURE(`local_procmail')dnl
 
-2. Configuring sendmail to use the zarafa-dagent directly.
-==========================================================
+* Configuring sendmail to use the zarafa-dagent directly.
+
 To enable the Zarafa dagent delivery from localhost, add the following
 lines to your sendmail.mc and restart sendmail(8):
     FEATURE(`local_zarafa')dnl
 To enable the Zarafa dagent for all other deliveries, add the following:
     MAILER(`zarafa')dnl
 
-3. Using a .forward file.
-=========================
+* Using a .forward file.
 
 Add the following .forward file under the user(s) home directory that
 will use Zarafa:

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/zarafa-server"
+
+rc_pre() {
+	i=1
+	while [ $i -lt 10 ]; do
+		${LOCALBASE}/bin/mysqladmin -s ping && break
+		sleep 1
+		i=`expr $i + 1`
+	done
+}
+
+rc_cmd $1

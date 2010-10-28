@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/zarafa-ical"
+
+rc_cmd $1

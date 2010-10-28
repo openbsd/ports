@@ -1,0 +1,28 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="/bin/true"
+_zarafa_daemons="server spooler monitor gateway ical"
+
+rc_start() {
+	for i in ${_zarafa_daemons}; do /etc/rc.d/zarafa-$i start; done
+}
+
+rc_check() {
+	for i in ${_zarafa_daemons}; do /etc/rc.d/zarafa-$i check || return; done
+}
+
+rc_reload() {
+	for i in ${_zarafa_daemons}; do /etc/rc.d/zarafa-$i reload; done
+}
+
+rc_stop() {
+	for i in ${_zarafa_daemons}; do /etc/rc.d/zarafa-$i stop; done
+}
+
+rc_restart() {
+	for i in ${_zarafa_daemons}; do /etc/rc.d/zarafa-$i restart; done
+}
+
+rc_cmd $1
