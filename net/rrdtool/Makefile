@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/10/28 13:39:35 jeremy Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -15,7 +15,7 @@ PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
 REVISION-main=	1
 REVISION-python=1
-REVISION-ruby=	2
+REVISION-ruby=	3
 
 SHARED_LIBS+=	rrd 3.0
 SHARED_LIBS+=	rrd_th 3.0
@@ -67,8 +67,8 @@ LIB_DEPENDS-python=	rrd:rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 MODPY_EGG_VERSION=	0.2.1
 
-LIB_DEPENDS-ruby=	rrd:rrdtool-${VERSION}:net/rrdtool \
+LIB_DEPENDS-ruby=	:rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
-WANTLIB-ruby=		c m
+WANTLIB-ruby=		c m rrd ${MODRUBY_WANTLIB}
 
 .include <bsd.port.mk>
