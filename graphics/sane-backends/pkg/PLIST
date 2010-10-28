@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/04/27 14:29:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/10/28 12:32:57 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -507,6 +507,7 @@ share/sane/artec_eplus48u/
 share/sane/epjitsu/
 share/sane/gt68xx/
 share/sane/snapscan/
+@rcscript ${RCDIR}/saned
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/
