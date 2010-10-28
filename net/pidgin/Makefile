@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2010/10/28 10:10:24 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -104,7 +104,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
-FLAVORS=	audio gtkspell
+FLAVORS=	audio debug gtkspell
 FLAVOR?=	
 
 MULTI_PACKAGES= -main -finch -libpurple
@@ -120,16 +120,16 @@ LIB_DEPENDS-main+=	purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch+=	purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 .endif
 
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=	--enable-debug
+DEBUG=			-O0 -g
+.endif
+
 .if ${FLAVOR:L:Mgtkspell}
 LIB_DEPENDS-main+=	gtkspell::textproc/gtkspell
 WANTLIB-main+=		enchant
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell
-.endif
-
-.if defined(DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-INSTALL_STRIP=
 .endif
 
 post-extract:
