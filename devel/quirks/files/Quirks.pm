@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.32 2010/10/24 19:06:34 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.33 2010/10/28 08:18:25 fgsch Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -154,6 +154,7 @@ my $stem_extensions = {
 	'Audio-MPD' => 'p5-Audio-MPD',
 	'p5-IDNA-Punycode' => 'p5-Net-IDN-Encode',
 	'py-CouchDB' => 'py-couchdb',
+	'py-pymilter' => 'py-milter',
 	'tesseract-de' => 'tesseract-deu',
 	'tesseract-es' => 'tesseract-spa',
 	'tesseract-fr' => 'tesseract-fra',
