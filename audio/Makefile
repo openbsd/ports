@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2010/10/24 13:21:27 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.248 2010/10/28 16:14:03 edd Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -102,6 +102,7 @@
      SUBDIR += mpc
      SUBDIR += mpd
      SUBDIR += mpd,tremor
+     SUBDIR += mpd-add-similar
      SUBDIR += mpdBrowser
      SUBDIR += mpegaudio
      SUBDIR += mpg123
@@ -150,6 +151,7 @@
      SUBDIR += py-cddb
      SUBDIR += py-eyed3
      SUBDIR += py-id3
+     SUBDIR += py-last
      SUBDIR += py-mpd
      SUBDIR += py-mutagen
      SUBDIR += py-ogg
