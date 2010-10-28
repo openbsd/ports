@@ -1,0 +1,25 @@
+$OpenBSD: patch-tmac_tmac_an,v 1.1 2010/10/28 14:41:55 schwarze Exp $
+Increase the -man -Tascii text width from 65 to 78 characters.
+Patch by millert@, see OpenBSD tmac.an rev. 1.2.
+--- tmac/tmac.an.orig	Sun Apr  9 09:58:30 2000
++++ tmac/tmac.an	Mon May 24 22:59:49 2010
+@@ -59,7 +59,18 @@
+ .el \{\
+ .  nr IN 7.2n
+ .\}
+-.nr LL 6.5i
++.if n \{\
++.  nr ll 78n
++.  ll 78n
++.  nr lt 78n
++.  lt 78n
++.\}
++.el \{\
++.  nr ll 6.5i
++.  ll 6.5i
++.  nr lt 6.5i
++.  lt 6.5i
++.\}
+ .PD
+ .nr PS 10 \" normal point-size
+ .nr SN 3n \" the indentation of sub-sub-headings relative to sub-headings
