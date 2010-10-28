@@ -1,0 +1,20 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/avahi-daemon"
+daemon_flags="-D"
+
+rc_check() {
+	${daemon} --check
+}
+
+rc_reload() {
+	${daemon} --reload
+}
+
+rc_stop() {
+	${daemon} --kill
+}
+
+rc_cmd $1
