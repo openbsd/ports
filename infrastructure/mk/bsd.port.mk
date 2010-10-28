@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1049 2010/10/28 11:14:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1050 2010/10/28 14:26:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2480,14 +2480,14 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@if test -e ${PKGDIR}/README; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
 		echo "Installing ${PKGDIR}/README as $$r"; \
-		${SUDO} ${SUBST_CMD} -c ${PKGDIR}/README $$r; \
+		${SUDO} ${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${PKGDIR}/README $$r; \
 	fi
 .else
 .  for _s in ${MULTI_PACKAGES}
 	@if test -e ${PKGDIR}/README-${_s}; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
 		echo "Installing ${PKGDIR}/README-${_s} as $$r"; \
-		${SUDO} ${SUBST_CMD} -c ${PKGDIR}/README-${_s} $$r; \
+		${SUDO} ${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${PKGDIR}/README-${_s} $$r; \
 	fi
 .  endfor
 .endif
