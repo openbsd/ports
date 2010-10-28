@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.128 2010/10/26 17:20:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2010/10/28 22:42:44 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.0
 
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -61,12 +61,5 @@ USE_GROFF =	Yes
 CONFIGURE_ENV+=		GCONFTOOL=${LOCALBASE}/bin/gconftool-2
 
 MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-session
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/gnome-session/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/gnome-session/README.OpenBSD
 
 .include <bsd.port.mk>
