@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.17 2010/10/25 12:30:29 sthen Exp $
+# $OpenBSD: config.site,v 1.18 2010/10/28 09:29:27 espie Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -1065,7 +1065,6 @@ ac_cv_header_X11_Xpoll_h=${ac_cv_header_X11_Xpoll_h=yes}
 ac_cv_header_X11_Xproto_h=${ac_cv_header_X11_Xproto_h=yes}
 ac_cv_header_X11_Xresource_h=${ac_cv_header_X11_Xresource_h=yes}
 ac_cv_header_X11_Xutil_h=${ac_cv_header_X11_Xutil_h=yes}
-ac_cv_header_X11_extensions_Print_h=${ac_cv_header_X11_extensions_Print_h=yes}
 ac_cv_header_X11_extensions_XEVI_h=${ac_cv_header_X11_extensions_XEVI_h=yes}
 ac_cv_header_X11_extensions_XKB_h=${ac_cv_header_X11_extensions_XKB_h=yes}
 ac_cv_header_X11_extensions_XKBrules_h=${ac_cv_header_X11_extensions_XKBrules_h=yes}
