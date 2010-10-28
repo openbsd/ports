@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/21 11:20:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/28 13:54:20 jasper Exp $
 
 COMMENT =		fast and easy to use XHTML 1.0 Strict combinators
 
 DISTNAME =		xhtml-combinators-0.2.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

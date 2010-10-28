@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/21 10:58:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/28 13:51:47 jasper Exp $
 
 COMMENT =		monad classes using functional dependencies
 
 DISTNAME =		monads-fd-0.1.0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

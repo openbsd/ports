@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/17 13:43:37 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/10/28 13:53:51 jasper Exp $
 
 COMMENT =	Haskell cryptographic library
 CATEGORIES =	security
@@ -6,7 +6,7 @@ CATEGORIES =	security
 DISTNAME =	Crypto-4.2.1
 # Historically named with a lower case `c'.
 PKGNAME =	${DISTNAME:S,C,hs-c,}
-REVISION =	3
+REVISION =	4
 HOMEPAGE =	http://www.haskell.org/crypto/
 
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
@@ -22,10 +22,6 @@ MODGHC_BUILD=		cabal hackage haddock register
 LIB_DEPENDS +=		::devel/hs-HUnit \
 			:hs-QuickCheck->=2:devel/hs-QuickCheck
 RUN_DEPENDS =		${LIB_DEPENDS}
-
-post-install:
-	mv ${PREFIX}/share/${DISTNAME}/*.html ${PREFIX}/share/doc/${DISTNAME}
-	rmdir ${PREFIX}/share/${DISTNAME}
 
 do-regress:
 .for t in HMACTest QuickTest RSATest SHA1Test SymmetricTest WordListTest

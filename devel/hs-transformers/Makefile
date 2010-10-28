@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/19 15:36:55 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/28 13:51:47 jasper Exp $
 
 COMMENT =		concrete monad transformers
 
 DISTNAME =		transformers-0.2.1.0
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

@@ -1,37 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/19 15:58:21 kili Exp $
-lib/${DISTNAME}/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/Base/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/Base.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/Base/Context.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/Base/Impl.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/Regex/Base/RegexLike.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
-lib/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
-lib/${DISTNAME}/unregister.sh
-share/doc/${DISTNAME}/
-share/doc/${DISTNAME}/LICENSE
-share/doc/${DISTNAME}/html/
-share/doc/${DISTNAME}/html/Text-Regex-Base-Context.html
-share/doc/${DISTNAME}/html/Text-Regex-Base-Impl.html
-share/doc/${DISTNAME}/html/Text-Regex-Base-RegexLike.html
-share/doc/${DISTNAME}/html/Text-Regex-Base.html
-share/doc/${DISTNAME}/html/doc-index.html
-share/doc/${DISTNAME}/html/frames.html
-share/doc/${DISTNAME}/html/haddock-util.js
-share/doc/${DISTNAME}/html/haddock.css
-share/doc/${DISTNAME}/html/haskell_icon.gif
-share/doc/${DISTNAME}/html/index-frames.html
-share/doc/${DISTNAME}/html/index.html
-share/doc/${DISTNAME}/html/mini_Text-Regex-Base-Context.html
-share/doc/${DISTNAME}/html/mini_Text-Regex-Base-Impl.html
-share/doc/${DISTNAME}/html/mini_Text-Regex-Base-RegexLike.html
-share/doc/${DISTNAME}/html/mini_Text-Regex-Base.html
-share/doc/${DISTNAME}/html/minus.gif
-share/doc/${DISTNAME}/html/plus.gif
-share/doc/${DISTNAME}/html/regex-base.haddock
+@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:51:47 jasper Exp $
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Text/
+lib/ghc/${DISTNAME}/Text/Regex/
+lib/ghc/${DISTNAME}/Text/Regex/Base/
+lib/ghc/${DISTNAME}/Text/Regex/Base.hi
+lib/ghc/${DISTNAME}/Text/Regex/Base/Context.hi
+lib/ghc/${DISTNAME}/Text/Regex/Base/Impl.hi
+lib/ghc/${DISTNAME}/Text/Regex/Base/RegexLike.hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Text-Regex-Base-Context.html
+share/doc/hs-${DISTNAME}/html/Text-Regex-Base-Impl.html
+share/doc/hs-${DISTNAME}/html/Text-Regex-Base-RegexLike.html
+share/doc/hs-${DISTNAME}/html/Text-Regex-Base.html
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/frames.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock.css
+share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/index-frames.html
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Regex-Base-Context.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Regex-Base-Impl.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Regex-Base-RegexLike.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Regex-Base.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/regex-base.haddock

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/06/18 20:42:03 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/10/28 13:52:55 jasper Exp $
 @pkgpath devel/haddock
 @bin bin/haddock
 share/doc/haddock/
@@ -19,12 +19,12 @@ share/doc/haddock/ix01.html
 share/doc/haddock/license.html
 share/doc/haddock/markup.html
 share/doc/haddock/module-attributes.html
-share/${DISTNAME}/
-share/${DISTNAME}/html/
-share/${DISTNAME}/html/frames.html
-share/${DISTNAME}/html/haddock-DEBUG.css
-share/${DISTNAME}/html/haddock-util.js
-share/${DISTNAME}/html/haddock.css
-share/${DISTNAME}/html/haskell_icon.gif
-share/${DISTNAME}/html/minus.gif
-share/${DISTNAME}/html/plus.gif
+share/hs-${DISTNAME}/
+share/hs-${DISTNAME}/html/
+share/hs-${DISTNAME}/html/frames.html
+share/hs-${DISTNAME}/html/haddock-DEBUG.css
+share/hs-${DISTNAME}/html/haddock-util.js
+share/hs-${DISTNAME}/html/haddock.css
+share/hs-${DISTNAME}/html/haskell_icon.gif
+share/hs-${DISTNAME}/html/minus.gif
+share/hs-${DISTNAME}/html/plus.gif

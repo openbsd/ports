@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/17 13:43:36 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/28 13:51:46 jasper Exp $
 
 COMMENT =		Haskell bindings to libglade2
 
 DISTNAME =		glade-0.11.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

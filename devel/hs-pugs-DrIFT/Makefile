@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/17 13:43:37 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/28 13:51:47 jasper Exp $
 
 COMMENT =		DrIFT with pugs-specific rules
 
 DISTNAME =		pugs-DrIFT-2.2.3.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://pugscode.org/
 
@@ -15,15 +15,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c gmp m pthread util
 
-MODULES =		lang/ghc converters/libiconv
+MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 LIB_DEPENDS =		::devel/hs-HsSyck \
 			::devel/hs-stm
 RUN_DEPENDS =		${LIB_DEPENDS}
-
-post-install:
-	mv ${PREFIX}/share/${DISTNAME}/* ${PREFIX}/share/doc/${DISTNAME}
-	rmdir ${PREFIX}/share/${DISTNAME}
 
 .include <bsd.port.mk>

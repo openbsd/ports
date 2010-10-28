@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/21 16:19:39 jim Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/28 13:54:09 jasper Exp $
 
 COMMENT =		XML parser/formatter based on expat
 
 DISTNAME =		hexpat-0.18.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

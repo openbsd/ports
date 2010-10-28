@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/26 16:52:52 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/10/28 13:51:46 jasper Exp $
 
 COMMENT =		Haskell Object Observation Debugger
 
 DISTNAME =		hood-0.2
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.ittc.ku.edu/csdl/fpg/Hood
 

@@ -1,34 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/19 15:58:19 kili Exp $
-lib/${DISTNAME}/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Lexer.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Parser.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Types.hi
-lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
-lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
-lib/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
-lib/${DISTNAME}/unregister.sh
-share/doc/${DISTNAME}/
-share/doc/${DISTNAME}/COPYRIGHT
-share/doc/${DISTNAME}/html/
-share/doc/${DISTNAME}/html/ConfigFile.haddock
-share/doc/${DISTNAME}/html/Data-ConfigFile-Parser.html
-share/doc/${DISTNAME}/html/Data-ConfigFile-Types.html
-share/doc/${DISTNAME}/html/Data-ConfigFile.html
-share/doc/${DISTNAME}/html/doc-index.html
-share/doc/${DISTNAME}/html/frames.html
-share/doc/${DISTNAME}/html/haddock-util.js
-share/doc/${DISTNAME}/html/haddock.css
-share/doc/${DISTNAME}/html/haskell_icon.gif
-share/doc/${DISTNAME}/html/index-frames.html
-share/doc/${DISTNAME}/html/index.html
-share/doc/${DISTNAME}/html/mini_Data-ConfigFile-Parser.html
-share/doc/${DISTNAME}/html/mini_Data-ConfigFile-Types.html
-share/doc/${DISTNAME}/html/mini_Data-ConfigFile.html
-share/doc/${DISTNAME}/html/minus.gif
-share/doc/${DISTNAME}/html/plus.gif
+@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:51:45 jasper Exp $
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Data/
+lib/ghc/${DISTNAME}/Data/ConfigFile/
+lib/ghc/${DISTNAME}/Data/ConfigFile.hi
+lib/ghc/${DISTNAME}/Data/ConfigFile/Lexer.hi
+lib/ghc/${DISTNAME}/Data/ConfigFile/Parser.hi
+lib/ghc/${DISTNAME}/Data/ConfigFile/Types.hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/COPYRIGHT
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/ConfigFile.haddock
+share/doc/hs-${DISTNAME}/html/Data-ConfigFile-Parser.html
+share/doc/hs-${DISTNAME}/html/Data-ConfigFile-Types.html
+share/doc/hs-${DISTNAME}/html/Data-ConfigFile.html
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/frames.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/haddock.css
+share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/index-frames.html
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile-Parser.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile-Types.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/plus.gif

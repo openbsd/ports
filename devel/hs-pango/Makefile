@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/27 13:39:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/28 13:51:47 jasper Exp $
 
 COMMENT =		Haskell bindings to pango
 
 DISTNAME =		pango-0.11.2
+REVISION =		0
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

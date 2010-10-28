@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 09:39:11 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/28 13:51:45 jasper Exp $
 
 COMMENT =		fast, lightweight YAML loader and dumper
 
 DISTNAME =		HsSyck-0.45
+REVISION =		0OB
 CATEGORIES =		devel
 
 # MIT (see comment in HsSyck.cabal)
@@ -13,9 +14,5 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
-
-post-install:
-	mv ${PREFIX}/share/${DISTNAME}/* ${PREFIX}/share/doc/${DISTNAME}
-	rmdir ${PREFIX}/share/${DISTNAME}
 
 .include <bsd.port.mk>

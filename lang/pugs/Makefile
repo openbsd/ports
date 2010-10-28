@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/14 18:58:01 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/28 13:53:26 jasper Exp $
 
 COMMENT =		Perl 6 Implementation
 
 DISTNAME =		Pugs-6.2.13.15
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 HOMEPAGE =		http://pugscode.org/
 
