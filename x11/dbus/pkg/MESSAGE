@@ -1,11 +1,3 @@
-To start systemwide message dbus daemon whenever the machine boots,
-add the following lines to /etc/rc.local:
-
-if [ -x ${PREFIX}/bin/dbus-daemon ]; then
-	install -d -o _dbus -g _dbus /var/run/dbus
-	echo -n ' dbus'; ${PREFIX}/bin/dbus-daemon --system
-fi
-
 To start a session bus instance of dbus-daemon (needed by at least gvfs
 aware applications and ${PREFIX}/share/dbus-1/services/*.service),
 add the following lines in .xinitrc or .xsession before starting the
