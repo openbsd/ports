@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.22 2010/10/28 23:48:40 steven Exp $
+# $OpenBSD: libtool,v 1.23 2010/10/28 23:50:15 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -950,9 +950,9 @@ sub link
 	if ($odir ne '.') {
 		$symlinkdir = "$odir/$ltdir";
 	}
+	mkdir $symlinkdir if (! -d $symlinkdir);
 	if ($parser->{seen_la_shared}) {
 		$dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
-		mkdir $symlinkdir if (! -d $symlinkdir);
 		$self->write_wrapper();
 	} else {
 		$dst = ($odir eq '.') ? $fname : "$odir/$fname";
