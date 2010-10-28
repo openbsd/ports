@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/27 09:49:12 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/10/28 09:04:19 steven Exp $
 
 COMMENT=		zzuf is a transparent application input fuzzer
 
 DISTNAME=		zzuf-0.13
+REVISION=		0
 CATEGORIES=		misc
 MASTER_SITES=		http://libcaca.zoy.org/files/zzuf/
 
