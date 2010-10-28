@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2010/10/27 22:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.217 2010/10/28 11:50:32 steven Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -91,6 +91,7 @@
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
      SUBDIR += notification-daemon
+     SUBDIR += ns4
      SUBDIR += nut
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
