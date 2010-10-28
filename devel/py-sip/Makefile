@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/07 08:57:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/28 14:56:24 espie Exp $
 
 # XXX: Don't forget to update x11/py-qt{3,4} when updating this port.
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
@@ -7,7 +7,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
-DISTNAME=	sip-4.11.1
+DISTNAME=	sip-4.11.2
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 

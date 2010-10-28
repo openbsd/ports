@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/09/07 08:58:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/10/28 14:56:24 espie Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
 lib/python${MODPY_VERSION}/site-packages/PyQt4/
 lib/python${MODPY_VERSION}/site-packages/PyQt4/Qt.so
-lib/python${MODPY_VERSION}/site-packages/PyQt4/QtAssistant.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtCore.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtDesigner.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtGui.so
@@ -80,6 +79,8 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qaxcontainer.p
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qaxcontainer.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtdeclarative.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtdeclarative.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
@@ -87,9 +88,6 @@ lib/qt4/plugins/designer/libpythonplugin.so
 share/sip/
 share/sip/Qt/
 share/sip/Qt/Qtmod.sip
-share/sip/QtAssistant/
-share/sip/QtAssistant/QtAssistantmod.sip
-share/sip/QtAssistant/qassistantclient.sip
 share/sip/QtCore/
 share/sip/QtCore/QtCoremod.sip
 share/sip/QtCore/qabstractanimation.sip
@@ -113,6 +111,7 @@ share/sip/QtCore/qdatetime.sip
 share/sip/QtCore/qdir.sip
 share/sip/QtCore/qdiriterator.sip
 share/sip/QtCore/qeasingcurve.sip
+share/sip/QtCore/qelapsedtimer.sip
 share/sip/QtCore/qeventloop.sip
 share/sip/QtCore/qeventtransition.sip
 share/sip/QtCore/qfile.sip
@@ -357,6 +356,7 @@ share/sip/QtGui/qsplitter.sip
 share/sip/QtGui/qstackedlayout.sip
 share/sip/QtGui/qstackedwidget.sip
 share/sip/QtGui/qstandarditemmodel.sip
+share/sip/QtGui/qstatictext.sip
 share/sip/QtGui/qstatusbar.sip
 share/sip/QtGui/qstringlistmodel.sip
 share/sip/QtGui/qstyle.sip
@@ -417,6 +417,8 @@ share/sip/QtNetwork/qhttp.sip
 share/sip/QtNetwork/qlocalserver.sip
 share/sip/QtNetwork/qlocalsocket.sip
 share/sip/QtNetwork/qnetworkaccessmanager.sip
+share/sip/QtNetwork/qnetworkconfigmanager.sip
+share/sip/QtNetwork/qnetworkconfiguration.sip
 share/sip/QtNetwork/qnetworkcookie.sip
 share/sip/QtNetwork/qnetworkcookiejar.sip
 share/sip/QtNetwork/qnetworkdiskcache.sip
@@ -424,6 +426,7 @@ share/sip/QtNetwork/qnetworkinterface.sip
 share/sip/QtNetwork/qnetworkproxy.sip
 share/sip/QtNetwork/qnetworkreply.sip
 share/sip/QtNetwork/qnetworkrequest.sip
+share/sip/QtNetwork/qnetworksession.sip
 share/sip/QtNetwork/qssl.sip
 share/sip/QtNetwork/qsslcertificate.sip
 share/sip/QtNetwork/qsslcipher.sip
@@ -439,6 +442,7 @@ share/sip/QtOpenGL/
 share/sip/QtOpenGL/QtOpenGLmod.sip
 share/sip/QtOpenGL/opengl_types.sip
 share/sip/QtOpenGL/qgl.sip
+share/sip/QtOpenGL/qglbuffer.sip
 share/sip/QtOpenGL/qglcolormap.sip
 share/sip/QtOpenGL/qglframebufferobject.sip
 share/sip/QtOpenGL/qglpixelbuffer.sip
