@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.10 2010/10/28 08:54:22 espie Exp $
+# $OpenBSD: Engine.pm,v 1.11 2010/10/28 16:40:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,6 @@ sub new
 	    buildable => $heuristics->new_queue,
 	    later => {}, building => {},
 	    installable => {}, builder => $builder,
-	    all => {},
 	    heuristics => $heuristics,
 	    locker => $locker,
 	    logger => $logger,
@@ -233,7 +232,6 @@ sub was_built
 sub new_path
 {
 	my ($self, $v) = @_;
-	$self->{all}{$v} = $v;
 	if (!$self->was_built($v)) {
 #		$self->{heuristics}->todo($v);
 		$self->{tobuild}{$v} = $v;
