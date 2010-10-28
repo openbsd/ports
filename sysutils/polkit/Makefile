@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/23 17:04:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/10/28 10:02:05 steven Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -32,6 +32,8 @@ MODULES=	textproc/intltool \
 
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS}
+# needs libtoolize
+BUILD_DEPENDS+=	::devel/libtool
 
 # We do no want to depends on gtk-doc as it creates a dependency loop:
 # polkit -> gtk-doc -> yelp -> gconf2 -> polkit
@@ -59,8 +61,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-authfw=bsdauth
 
 USE_GMAKE=	Yes
-# XXX needs libtoolize
-USE_LIBTOOL=	gnu
+USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit

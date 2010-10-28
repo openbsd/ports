@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 07:53:23 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/28 10:02:04 steven Exp $
 
 COMMENT=	cross-platform 3D audio API
 
@@ -20,8 +20,10 @@ WANTLIB=		m sndio
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+
 # auto* uses libtool macros
-USE_LIBTOOL=	gnu
+BUILD_DEPENDS=	::devel/libtool
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9

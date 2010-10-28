@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/10/28 10:02:04 steven Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
@@ -35,11 +35,12 @@ LIB_DEPENDS=	::audio/flac \
 		::audio/jack
 
 USE_GMAKE=	Yes
-#XX libtoolize
-USE_LIBTOOL=	gnu
+USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
+# uses libtoolize
+BUILD_DEPENDS+=	::devel/libtool
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.60
