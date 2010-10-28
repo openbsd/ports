@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.3 2010/10/27 12:58:26 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.4 2010/10/28 10:33:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,6 +42,7 @@ sub finish
 	for my $v (values %$h) {
 		if ($v->{broken}) {
 			delete $v->{info};
+			delete $v->{broken};
 			$self->{engine}->add_fatal($v);
 		} else {
 			$self->{engine}->new_path($v);

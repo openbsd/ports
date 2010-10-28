@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.2 2010/10/26 15:45:09 espie Exp $
+# $OpenBSD: Vars.pm,v 1.3 2010/10/28 10:33:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,6 +92,8 @@ sub grab_list
 	my ($class, $core, $ports, $make, $subdirs, $log, $dpb, $code) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
+		close STDERR;
+		open STDERR, '>&STDOUT' or die "bad redirect";
 		my @args = ('dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 		if (defined $shell) {
 			my $s='';
@@ -124,7 +126,10 @@ sub grab_list
 	while(<$fh>) {
 		chomp;
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
-			push(@errors, "Problem in $1\n");
+			my $dir = DPB::PkgPath->new_hidden($1);
+			$dir->{broken} = 1;
+			$h->{$dir} = $dir;
+			push(@errors, "Problem in ".$dir->fullpkgpath."\n");
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
 			print $log $_, "\n";
