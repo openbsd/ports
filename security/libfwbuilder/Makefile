@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/11 20:19:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/28 10:03:27 steven Exp $
 
 COMMENT=	libraries for fwbuilder
 DISTNAME=	libfwbuilder-4.1.2
@@ -31,10 +31,11 @@ AUTOCONF_VERSION =	2.63
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-USE_LIBTOOL =		gnu	# wants libtoolize
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
+# wants libtoolize but does not use libtool
+BUILD_DEPENDS +=::devel/libtool
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/libfwbuilder \
