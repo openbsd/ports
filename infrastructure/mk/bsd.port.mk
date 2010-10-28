@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1048 2010/10/27 17:38:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1049 2010/10/28 11:14:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -93,7 +93,7 @@ _PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
-	SUBPACKAGE MULTI_PACKAGES FULLSUBDIR
+	SUBPACKAGE MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
 	PKG_ARCH EPOCH REVISION
