@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2010/10/18 12:24:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2010/10/28 11:01:18 ajacoutot Exp $
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
 @bin bin/gdmXnestchooser
@@ -279,6 +279,7 @@ share/pixmaps/nohost.png
 share/xsessions/
 @comment share/xsessions/gnome.desktop
 share/xsessions/ssh.desktop
+@rcscript ${RCDIR}/gdm
 @mode 0755
 @sample /var/log/gdm/
 @mode 1770

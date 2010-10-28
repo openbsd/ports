@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2010/10/28 11:01:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME display manager
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
 
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -24,7 +24,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render rsvg-2
-WANTLIB += xcb-render-util xml2 z gnomecanvas-2
+WANTLIB += xml2 z gnomecanvas-2 GL Xxf86vm drm xcb-shm
 
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \

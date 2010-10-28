@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/gdm"
+pexp="${TRUEPREFIX}/sbin/gdm-binary"
+
+rc_start() {
+	(sleep 5; ${daemon})&
+}
+
+rc_cmd $1
