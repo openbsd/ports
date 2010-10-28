@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/23 18:26:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/10/28 13:46:54 landry Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
@@ -53,6 +53,7 @@ CXXFLAGS+=		-O0 -g
 
 USE_LIBTOOL=		Yes
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			::devel/libtool \
 			${MODGNU_AUTOMAKE_DEPENDS}
 MULTI_PACKAGES=		-main -devel
 WANTLIB-main=		m c stdc++ curses
