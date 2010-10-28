@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/07 17:00:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/28 21:47:23 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.1.5
 DISTNAME=		ejabberd-$V
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -73,7 +73,6 @@ post-install:
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ejabberd/{} \; && \
 		find . -name '*.html' -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/ejabberd/{} \; && \
 		find . -name '*.png' -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/ejabberd/{} \;
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/ejabberd/README.OpenBSD
 	${SUBST_CMD} ${PREFIX}/share/examples/ejabberd/ejabberd.cfg
 	${SUBST_CMD} ${PREFIX}/sbin/ejabberdctl
 	@chown ${SHAREOWN}:${BINGRP} ${PREFIX}/sbin/ejabberdctl

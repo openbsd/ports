@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/09/13 17:17:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/10/28 21:47:23 jasper Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -212,7 +212,6 @@ lib/ejabberd/priv/msgs/zh.msg
 sbin/ejabberdctl
 share/doc/ejabberd/
 share/doc/ejabberd/COPYING
-share/doc/ejabberd/README.OpenBSD
 @comment share/doc/ejabberd/api/
 share/doc/ejabberd/dev.html
 share/doc/ejabberd/discorus.png
@@ -223,6 +222,7 @@ share/doc/ejabberd/logo.png
 share/doc/ejabberd/webadmmain.png
 share/doc/ejabberd/webadmmainru.png
 share/doc/ejabberd/yozhikheader.png
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ejabberd/
 @sample ${SYSCONFDIR}/ejabberd/
 share/examples/ejabberd/ejabberd.cfg

@@ -1,2 +1,2 @@
-Please see ${PREFIX}/share/doc/ejabberd/README.OpenBSD
+Please see ${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME}
 for information about running ejabberd
