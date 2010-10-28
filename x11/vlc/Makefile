@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2010/10/28 11:55:16 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	10
-REVISION-jack=	1
-REVISION-web=	3
+REVISION-main=	11
+REVISION-jack=	2
+REVISION-web=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -74,7 +74,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		xcb-render-util xcb xml2 z
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	gnu # XXX links with static library archives
+USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
@@ -174,6 +174,7 @@ PKG_ARGS+=-Di386=0
 
 pre-configure:
 	@perl -pi -e 's/grep -v /grep -av /' ${WRKSRC}/src/Makefile.in
+	@find ${WRKSRC} -name 'Makefile.in' -exec perl -pi -e 's/-export-symbol-regex/-export-symbols-regex/' {} \;
 
 post-install:
 .for _img in 16x16 32x32 48x48 128x128
