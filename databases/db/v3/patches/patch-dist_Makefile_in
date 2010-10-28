@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.6 2010/10/28 10:33:16 steven Exp $
 --- dist/Makefile.in.orig	Tue Jul 18 17:37:57 2000
-+++ dist/Makefile.in	Sun Dec 25 20:00:19 2005
++++ dist/Makefile.in	Thu Oct 28 12:30:14 2010
 @@ -26,7 +26,9 @@ LIBTSO_LIBS=	@LIBTSO_LIBS@
  LIBXSO_LIBS=	@LIBXSO_LIBS@
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
  SOFLAGS=	@SOFLAGS@
  SOMAJOR=	@DB_VERSION_MAJOR@
  SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
-@@ -34,11 +36,11 @@ SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSIO
+@@ -34,11 +36,11 @@ SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
  libdb=		libdb.a
  
  libso_base=	libdb
@@ -28,7 +28,7 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
  
  ##################################################
  # C++
-@@ -49,10 +51,10 @@ libso_major=	$(libso_base)-$(SOMAJOR).@S
+@@ -49,10 +51,10 @@ libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
  ##################################################
  libcxx=		libdb_cxx.a
  libxso_base=	libdb_cxx
@@ -42,7 +42,7 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
  
  ##################################################
  # JAVA
-@@ -71,11 +73,11 @@ JAVA_DBDIR=	$(JAVA_SRCDIR)/com/sleepycat
+@@ -71,11 +73,11 @@ JAVA_DBDIR=	$(JAVA_SRCDIR)/com/sleepycat/db
  JAVA_EXDIR=	$(JAVA_SRCDIR)/com/sleepycat/examples
  
  libjso_base=	libdb_java
@@ -58,7 +58,7 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
  
  ##################################################
  # TCL
-@@ -86,10 +88,10 @@ libjso_g=	$(libjso_base)-$(SOVERSION)_g.
+@@ -86,10 +88,10 @@ libjso_g=	$(libjso_base)-$(SOVERSION)_g.@SOSUFFIX@
  ##################################################
  TCFLAGS=	@TCFLAGS@
  libtso_base=	libdb_tcl
@@ -114,46 +114,109 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2005/12/25 20:35:42 sturm Exp $
  	@cd $(includedir) && $(chmod) $(fmode) db.h db_185.h db_cxx.h
  
  install_static: install_setup
-@@ -424,9 +427,9 @@ install_dynamic: install_setup
- 	@cd $(libdir) && \
+@@ -411,69 +414,72 @@ install_static: install_setup
+ 
+ install_static_cxx: install_setup
+ 	@echo "Installing DB C++ static library: $(libdir) ..."
+-	@test -d $(libdir) || \
++	test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+-	@cd $(libdir) && $(rm) -f $(libcxx)
+-	@$(cp) -p $(libcxx) $(libdir)
+-	@cd $(libdir) && $(chmod) $(fmode) $(libcxx)
++	cd $(libdir) && $(rm) -f $(libcxx)
++	$(cp) -p $(libcxx) $(libdir)
++	cd $(libdir) && $(chmod) $(fmode) $(libcxx)
+ 
+ install_dynamic: install_setup
+ 	@echo "Installing DB library: $(libdir) ..."
+ 	@test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+-	@cd $(libdir) && \
++	cd $(libdir) && \
  	    $(rm) -f $(libso) $(libso_default) $(libso_major)
- 	@$(INSTALLER) $(libso_target) $(libdir)
-+	@cd $(libsdir) && $(ln) -s db/$(libso)
- 	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
- 	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
+-	@$(INSTALLER) $(libso_target) $(libdir)
+-	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
+-	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
 -	@$(LIBTOOL) --mode=finish $(libdir)
++	$(INSTALLER) $(libso_target) $(libdir)
++	cd $(libsdir) && $(ln) -s db/$(libso)
++	cd $(libdir) && $(ln) -s $(libso) $(libso_default)
++	cd $(libdir) && $(ln) -s $(libso) $(libso_major)
  
  install_dynamic_cxx: install_setup
  	@echo "Installing DB C++ library: $(libdir) ..."
-@@ -435,6 +438,7 @@ install_dynamic_cxx: install_setup
- 	@cd $(libdir) && \
+-	@test -d $(libdir) || \
++	test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+-	@cd $(libdir) && \
++	cd $(libdir) && \
  	    $(rm) -f $(libxso) $(libxso_default) $(libxso_major)
- 	@$(INSTALLER) $(libxso_target) $(libdir)
-+	@cd $(libsdir) && $(ln) -s db/$(libxso)
- 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
- 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
+-	@$(INSTALLER) $(libxso_target) $(libdir)
+-	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
+-	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
++	$(INSTALLER) $(libxso_target) $(libdir)
++	cd $(libsdir) && $(ln) -s db/$(libxso)
++	cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
++	cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
  
-@@ -445,6 +449,7 @@ install_tcl: install_setup
- 	@cd $(libdir) && \
+ install_tcl: install_setup
+ 	@echo "Installing DB Tcl library: $(libdir) ..."
+-	@test -d $(libdir) || \
++	test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+-	@cd $(libdir) && \
++	cd $(libdir) && \
  	    $(rm) -f $(libtso) $(libtso_default) $(libtso_major)
- 	@$(INSTALLER) $(libtso_target) $(libdir)
-+	@cd $(libsdir) && $(ln) -s db/$(libtso)
- 	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_default)
- 	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_major)
+-	@$(INSTALLER) $(libtso_target) $(libdir)
+-	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_default)
+-	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_major)
++	$(INSTALLER) $(libtso_target) $(libdir)
++	cd $(libsdir) && $(ln) -s db/$(libtso)
++	cd $(libdir) && $(ln) -s $(libtso) $(libtso_default)
++	cd $(libdir) && $(ln) -s $(libtso) $(libtso_major)
  
-@@ -465,13 +470,14 @@ install_docs: install_setup
+ install_java: install_setup
+ 	@echo "Installing DB Java library: $(libdir) ..."
+-	@test -d $(libdir) || \
++	test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+-	@cd $(libdir) && \
++	cd $(libdir) && \
+ 	    $(rm) -f $(libjso) $(libjso_default) $(libjso_major)
+-	@$(INSTALLER) $(libjso_target) $(libdir)
+-	@cd $(libdir) && $(ln) -s $(libjso) $(libjso_default)
+-	@cd $(libdir) && $(ln) -s $(libjso) $(libjso_major)
+-	@cd $(libdir) && $(ln) -s $(libjso) $(libjso_g)
++	$(INSTALLER) $(libjso_target) $(libdir)
++	cd $(libdir) && $(ln) -s $(libjso) $(libjso_default)
++	cd $(libdir) && $(ln) -s $(libjso) $(libjso_major)
++	cd $(libdir) && $(ln) -s $(libjso) $(libjso_g)
+ 
+ install_docs: install_setup
+ 	@echo "Installing documentation: $(docdir) ..."
+-	@test -d $(docdir) || \
++	test -d $(docdir) || \
  	    ($(mkdir) -p $(docdir) && $(chmod) $(dmode) $(docdir))
- 	@cd $(docdir) && $(rm) -rf *
- 	@cd $(srcdir)/docs && $(cp) -pr * $(docdir)/
-+	@chown -R root:wheel $(docdir)/
+-	@cd $(docdir) && $(rm) -rf *
+-	@cd $(srcdir)/docs && $(cp) -pr * $(docdir)/
++	cd $(docdir) && $(rm) -rf *
++	cd $(srcdir)/docs && $(cp) -pr * $(docdir)/
++	chown -R root:wheel $(docdir)/
  
  install_utilities: install_setup
  	@echo "Installing DB utilities: $(bindir) ..."
- 	@test -d $(bindir) || \
+-	@test -d $(bindir) || \
++	test -d $(bindir) || \
  	    ($(mkdir) -p $(bindir) && $(chmod) $(dmode) $(bindir))
- 	@cd $(bindir) && $(rm) -f $(PROGS)
+-	@cd $(bindir) && $(rm) -f $(PROGS)
 -	@$(INSTALLER) -fp $(PROGS) $(bindir)
-+	@$(INSTALLER) $(PROGS) $(bindir)
- 	@cd $(bindir) && (test ! -f $(strip) || $(strip) $(PROGS))
- 	@cd $(bindir) && $(chmod) $(emode) $(PROGS)
+-	@cd $(bindir) && (test ! -f $(strip) || $(strip) $(PROGS))
+-	@cd $(bindir) && $(chmod) $(emode) $(PROGS)
++	cd $(bindir) && $(rm) -f $(PROGS)
++	$(INSTALLER) $(PROGS) $(bindir)
++	cd $(bindir) && (test ! -f $(strip) || $(strip) $(PROGS))
++	cd $(bindir) && $(chmod) $(emode) $(PROGS)
  
+ uninstall:
+ 	-cd $(bindir) && $(rm) -f $(PROGS)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_env.c.orig	2004-01-08 23:27:00.000000000 +0100
-+++ tcl/tcl_env.c	2004-01-08 23:27:53.000000000 +0100
+$OpenBSD: patch-tcl_tcl_env_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- tcl/tcl_env.c.orig	Wed May 10 22:12:18 2000
++++ tcl/tcl_env.c	Thu Oct 28 12:28:52 2010
 @@ -127,7 +127,7 @@ env_Cmd(clientData, interp, objc, objv)
  	 * Get the command name index from the object based on the berkdbcmds
  	 * defined above.
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &cmdindex) != TCL_OK)
  		return (IS_HELP(objv[1]));
  	res = NULL;
-@@ -309,7 +309,7 @@ tcl_EnvRemove(interp, objc, objv, envp, 
+@@ -309,7 +309,7 @@ tcl_EnvRemove(interp, objc, objv, envp, envip)
  
  	i = 2;
  	while (i < objc) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			goto error;
-@@ -525,7 +525,7 @@ tcl_EnvVerbose(interp, envp, which, onof
+@@ -525,7 +525,7 @@ tcl_EnvVerbose(interp, envp, which, onoff)
  	int on, optindex, ret;
  	u_int32_t wh;
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &optindex) != TCL_OK)
  		return (IS_HELP(which));
  
-@@ -545,7 +545,7 @@ tcl_EnvVerbose(interp, envp, which, onof
+@@ -545,7 +545,7 @@ tcl_EnvVerbose(interp, envp, which, onoff)
  	default:
  		return(TCL_ERROR);
  	}

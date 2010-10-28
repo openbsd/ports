@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_db.c.orig	2004-01-08 23:21:17.000000000 +0100
-+++ tcl/tcl_db.c	2004-01-08 23:22:34.000000000 +0100
+$OpenBSD: patch-tcl_tcl_db_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- tcl/tcl_db.c.orig	Mon May 22 20:36:50 2000
++++ tcl/tcl_db.c	Thu Oct 28 12:28:52 2010
 @@ -121,7 +121,7 @@ db_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
@@ -46,7 +46,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			/*
  			 * If we don't have a -glob or -txn, then the
-@@ -1286,7 +1286,7 @@ tcl_DbCursor(interp, objc, objv, dbp, db
+@@ -1286,7 +1286,7 @@ tcl_DbCursor(interp, objc, objv, dbp, dbcp)
  	 */
  	i = 2;
  	while (i < objc) {
@@ -55,7 +55,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			goto out;
-@@ -1359,7 +1359,7 @@ tcl_DbJoin(interp, objc, objv, dbp, dbcp
+@@ -1359,7 +1359,7 @@ tcl_DbJoin(interp, objc, objv, dbp, dbcp)
  	i = 2;
  	adj = i;
  	while (i < objc) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-db_db_cam_c,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
---- db/db_cam.c.orig	2003-12-07 13:54:14.000000000 +0100
-+++ db/db_cam.c	2003-12-07 13:54:43.000000000 +0100
-@@ -13,6 +13,7 @@ static const char revid[] = "$Id: db_cam
+$OpenBSD: patch-db_db_cam_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- db/db_cam.c.orig	Wed Jul 26 23:20:05 2000
++++ db/db_cam.c	Thu Oct 28 12:28:52 2010
+@@ -13,6 +13,7 @@ static const char revid[] = "$Id: db_cam.c,v 11.32.2.1
  
  #ifndef NO_SYSTEM_INCLUDES
  #include <sys/types.h>

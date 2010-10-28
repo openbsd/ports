@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.4 2005/12/25 20:35:42 sturm Exp $
+$OpenBSD: patch-dist_configure,v 1.5 2010/10/28 10:33:16 steven Exp $
 --- dist/configure.orig	Mon Jul 31 18:58:18 2000
-+++ dist/configure	Sun Dec 25 19:59:25 2005
++++ dist/configure	Thu Oct 28 12:28:52 2010
 @@ -728,7 +728,7 @@ echo "$ac_t""no" 1>&6
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-dist_configure,v 1.4 2005/12/25 20:35:42 sturm Exp $
  DEFAULT_LIB="\$(libdb)"
  DEFAULT_INSTALL="install_static"
  
-@@ -1602,7 +1602,6 @@ echo "configure:1601: checking libtool c
+@@ -1602,7 +1602,6 @@ echo "configure:1601: checking libtool configuration" 
  	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
  		--no-verify $srcdir/ltmain.sh \
  		--output=./libtool $host_os \
@@ -18,7 +18,7 @@ $OpenBSD: patch-dist_configure,v 1.4 2005/12/25 20:35:42 sturm Exp $
  	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
  	SOSUFFIX=`sed -e '/^library_names_spec=/!d' -e 's/.*\.\([a-zA-Z0-9_]*\).*/\1/' ./libtool`
-@@ -1615,9 +1614,11 @@ echo "configure:1601: checking libtool c
+@@ -1615,9 +1614,11 @@ echo "configure:1601: checking libtool configuration" 
  	MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${SAVE_CXX}"
  	MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${SAVE_CC}"
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-dist_configure,v 1.4 2005/12/25 20:35:42 sturm Exp $
  	SOFLAGS="-rpath \$(libdir)"
  	o=".lo"
  fi
-@@ -1936,7 +1937,7 @@ echo "configure:1911: checking for exist
+@@ -1936,7 +1937,7 @@ echo "configure:1911: checking for existence of $TCL_B
  		TCFLAGS="-I$TCL_PREFIX/include"
  	fi
  

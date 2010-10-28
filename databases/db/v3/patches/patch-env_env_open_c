@@ -1,7 +1,7 @@
-$OpenBSD: patch-env_env_open_c,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
---- env/env_open.c.orig	Tue Jun 17 01:25:53 2003
-+++ env/env_open.c	Tue Jun 17 01:26:27 2003
-@@ -784,7 +784,7 @@ illegal:	__db_err(dbenv, "mis-formatted 
+$OpenBSD: patch-env_env_open_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- env/env_open.c.orig	Fri Jun 30 15:34:54 2000
++++ env/env_open.c	Thu Oct 28 12:28:52 2010
+@@ -784,7 +784,7 @@ illegal:	__db_err(dbenv, "mis-formatted name-value pai
  		return (dbenv->set_lg_dir(dbenv, value));
  
  	if (!strcasecmp(name, "set_lk_detect")) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-env_env_open_c,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
  			goto badarg;
  		if (!strcasecmp(value, "db_lock_default"))
  			flags = DB_LOCK_DEFAULT;
-@@ -840,7 +840,7 @@ illegal:	__db_err(dbenv, "mis-formatted 
+@@ -840,7 +840,7 @@ illegal:	__db_err(dbenv, "mis-formatted name-value pai
  	}
  
  	if (!strcasecmp(name, "set_verbose")) {

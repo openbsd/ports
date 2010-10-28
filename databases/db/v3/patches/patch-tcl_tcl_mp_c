@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_mp.c.orig	2004-01-08 23:29:23.000000000 +0100
-+++ tcl/tcl_mp.c	2004-01-08 23:29:58.000000000 +0100
+$OpenBSD: patch-tcl_tcl_mp_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- tcl/tcl_mp.c.orig	Wed May 17 21:40:01 2000
++++ tcl/tcl_mp.c	Thu Oct 28 12:28:52 2010
 @@ -187,7 +187,7 @@ tcl_Mp(interp, objc, objv, envp, envip)
  	memset(newname, 0, MSG_SIZE);
  	while (i < objc) {
@@ -37,7 +37,7 @@ $OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -697,7 +697,7 @@ tcl_Pg(interp, objc, objv, page, mp, pgi
+@@ -697,7 +697,7 @@ tcl_Pg(interp, objc, objv, page, mp, pgip, putop)
  	flag = 0;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],

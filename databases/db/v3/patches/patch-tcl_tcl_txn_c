@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_txn.c.orig	2004-01-08 23:30:03.000000000 +0100
-+++ tcl/tcl_txn.c	2004-01-08 23:30:50.000000000 +0100
-@@ -90,7 +90,7 @@ tcl_TxnCheckpoint(interp, objc, objv, en
+$OpenBSD: patch-tcl_tcl_txn_c,v 1.2 2010/10/28 10:33:16 steven Exp $
+--- tcl/tcl_txn.c.orig	Fri Apr 21 20:18:58 2000
++++ tcl/tcl_txn.c	Thu Oct 28 12:28:53 2010
+@@ -90,7 +90,7 @@ tcl_TxnCheckpoint(interp, objc, objv, envp)
  	i = 2;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -451,7 +451,7 @@ tcl_TxnCommit(interp, objc, objv, txnp, 
+@@ -451,7 +451,7 @@ tcl_TxnCommit(interp, objc, objv, txnp, txnip)
  		return (TCL_ERROR);
  	}
  	if (objc == 3) {

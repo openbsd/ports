@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.9 2007/10/26 14:06:02 steven Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.10 2010/10/28 10:33:16 steven Exp $
 --- dist/Makefile.in.orig	Thu Jul  5 20:35:02 2007
-+++ dist/Makefile.in	Sat Sep 15 20:54:42 2007
++++ dist/Makefile.in	Thu Oct 28 12:27:31 2010
 @@ -11,7 +11,8 @@ exec_prefix=@exec_prefix@
  bindir=	@bindir@
  includedir=@includedir@
@@ -224,19 +224,41 @@ $OpenBSD: patch-dist_Makefile_in,v 1.9 2007/10/26 14:06:02 steven Exp $
  	$(CCLINK) -o $@ $(LDFLAGS) \
  	    db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
-@@ -738,7 +733,7 @@ install_include:
+@@ -727,41 +722,36 @@ library_install: install_include install_lib install_u
+ uninstall: uninstall_include uninstall_lib uninstall_utilities uninstall_docs
+ 
+ install_setup:
+-	@test -d $(DESTDIR)$(prefix) || \
++	test -d $(DESTDIR)$(prefix) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(prefix) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(prefix))
+ 
+ INCDOT=	db.h db_cxx.h @ADDITIONAL_INCS@
+ install_include:
+ 	@echo "Installing DB include files: $(DESTDIR)$(includedir) ..."
+-	@test -d $(DESTDIR)$(includedir) || \
++	test -d $(DESTDIR)$(includedir) || \
  	    ($(MKDIR) -p $(DESTDIR)$(includedir) && \
  	    $(CHMOD) $(dmode) $(DESTDIR)$(includedir))
- 	@cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
+-	@cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
 -	@$(CP) -p $(INCDOT) $(DESTDIR)$(includedir)
-+	@${BSD_INSTALL_DATA} -p $(INCDOT) $(DESTDIR)$(includedir)
- 	@cd $(DESTDIR)$(includedir) && $(CHMOD) $(fmode) $(INCDOT)
+-	@cd $(DESTDIR)$(includedir) && $(CHMOD) $(fmode) $(INCDOT)
++	cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
++	${BSD_INSTALL_DATA} -p $(INCDOT) $(DESTDIR)$(includedir)
++	cd $(DESTDIR)$(includedir) && $(CHMOD) $(fmode) $(INCDOT)
  
  uninstall_include:
-@@ -752,15 +747,10 @@ install_lib:
- 	@cd $(DESTDIR)$(libdir) && $(RM) -f $(LIB_INSTALL_FILE_LIST)
- 	@$(INSTALLER) @INSTALL_LIBS@ $(DESTDIR)$(libdir)
- 	@(cd $(DESTDIR)$(libdir) && \
+ 	@cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
+ 
+ install_lib:
+ 	@echo "Installing DB library: $(DESTDIR)$(libdir) ..."
+-	@test -d $(DESTDIR)$(libdir) || \
++	test -d $(DESTDIR)$(libdir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(libdir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(libdir))
+-	@cd $(DESTDIR)$(libdir) && $(RM) -f $(LIB_INSTALL_FILE_LIST)
+-	@$(INSTALLER) @INSTALL_LIBS@ $(DESTDIR)$(libdir)
+-	@(cd $(DESTDIR)$(libdir) && \
 -	    test -f $(libso) && $(LN) -s $(libso) $(libso_default); \
 -	    test -f $(libso) && $(LN) -s $(libso) $(libso_major); \
 -	    test -f $(libxso) && $(LN) -s $(libxso) $(libxso_default); \
@@ -246,18 +268,44 @@ $OpenBSD: patch-dist_Makefile_in,v 1.9 2007/10/26 14:06:02 steven Exp $
 -	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_default); \
 -	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_major); \
 -	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_g)) || exit 0
+-	@(test -f $(libj_jarfile) && \
++	cd $(DESTDIR)$(libdir) && $(RM) -f $(LIB_INSTALL_FILE_LIST)
++	$(INSTALLER) @INSTALL_LIBS@ $(DESTDIR)$(libdir)
++	(cd $(DESTDIR)$(libdir) && \
 +	    test -f $(libso) && $(LN) -s db4/$(libso) ..; \
 +	    test -f $(libxso) && $(LN) -s db4/$(libxso) ..; \
 +	    test -f $(libtso) && $(LN) -s db4/$(libtso) ..; \
 +	    test -f $(libjso) && $(LN) -s db4/$(libjso) ..) || exit 0
- 	@(test -f $(libj_jarfile) && \
++	(test -f $(libj_jarfile) && \
  	    $(CP) $(libj_jarfile) $(DESTDIR)$(libdir) && \
  	    $(CHMOD) $(fmode) $(DESTDIR)$(libdir)/$(libj_jarfile)) || exit 0
-@@ -796,6 +786,7 @@ install_docs:
+ 
+@@ -770,10 +760,10 @@ uninstall_lib:
+ 
+ install_utilities:
+ 	@echo "Installing DB utilities: $(DESTDIR)$(bindir) ..."
+-	@test -d $(DESTDIR)$(bindir) || \
++	test -d $(DESTDIR)$(bindir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(bindir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(bindir))
+-	@for i in $(UTIL_PROGS); do \
++	for i in $(UTIL_PROGS); do \
+ 		test -f $$i.exe && i=$$i.exe || i=$$i; \
+ 		$(RM) -f $(DESTDIR)$(bindir)/$$i; \
+ 		$(INSTALLER) $$i $(DESTDIR)$(bindir)/$$i; \
+@@ -791,11 +781,12 @@ DOCLIST=api_c api_cxx api_tcl articles collections gsg
+ 
+ install_docs:
+ 	@echo "Installing documentation: $(DESTDIR)$(docdir) ..."
+-	@test -d $(DESTDIR)$(docdir) || \
++	test -d $(DESTDIR)$(docdir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(docdir) && \
  	    $(CHMOD) $(dmode) $(DESTDIR)$(docdir))
- 	@cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
- 	@cd $(srcdir)/docs && $(CP) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
-+	@chown -R root:wheel $(DESTDIR)$(docdir)/
+-	@cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
+-	@cd $(srcdir)/docs && $(CP) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
++	cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
++	cd $(srcdir)/docs && $(CP) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
++	chown -R root:wheel $(DESTDIR)$(docdir)/
  
  uninstall_docs:
  	@cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
