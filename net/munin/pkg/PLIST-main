@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/10/23 15:52:23 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/10/28 11:01:47 jasper Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -310,3 +310,4 @@ share/examples/munin/plugins/
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/
 @extraunexec rm -rf /var/log/munin
+@rcscript ${RCDIR}/munin-node

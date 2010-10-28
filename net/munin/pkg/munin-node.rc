@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/munin-node"
+pexp="perl: ${daemon}"
+
+rc_pre() {
+        install -d -o _munin /var/run/munin
+}
+
+rc_cmd $1
