@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.3 2010/10/28 12:51:37 espie Exp $
+# $OpenBSD: Core.pm,v 1.4 2010/10/28 22:14:54 landry Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -453,7 +453,7 @@ sub one_core
 	my ($core, $time) = @_;
 	my $hostname = $core->hostname;
 	return $core->job->name." [$core->{pid}]".
-	    (DPB::Host->name_is_localhost($hostname) ? "" : "on ".$hostname).
+	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
 	    $core->job->watched($time);
 }
 
