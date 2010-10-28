@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2010/10/28 09:10:54 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2010/10/28 22:20:59 jasper Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_LIBTOOL=		Yes
+#XXX mail/bogofilter configure fails when using ports libtool
+USE_LIBTOOL=		gnu
 
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
