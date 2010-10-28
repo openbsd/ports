@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2010/07/13 12:45:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.56 2010/10/28 13:50:30 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.23
+DISTNAME=	tar-1.24
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
@@ -16,7 +16,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
+
+BUILD_DEPENDS=	::archivers/xz
+EXTRACT_CASES=	*.tar.xz) \
+		${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 MODULES=	devel/gettext
 # only force dependencies for compressors that have a single-letter option
@@ -34,7 +38,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 FLAVORS=	static
 FLAVOR?=
 
-REVISION =	1
 .if ${FLAVOR:L:Mstatic}
 LDSTATIC=	-static
 MODULES=
@@ -45,6 +48,8 @@ LDSTATIC=
 WANTLIB=	c
 .endif
 
+# Tests 34, 53 are known to fail because getcwd(3) fails if the
+# parent directory is unreadable.
 REGRESS_DEPENDS=:autoconf-2.63:devel/autoconf/2.63
 REGRESS_FLAGS=	AUTOCONF_VERSION=2.63
 

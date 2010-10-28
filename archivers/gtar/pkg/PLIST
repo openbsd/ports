@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2008/12/30 17:37:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/10/28 13:50:30 naddy Exp $
 @bin bin/gtar
 @info info/tar.info
 @comment lib/charset.alias
 @bin libexec/grmt
 share/locale/bg/LC_MESSAGES/tar.mo
+share/locale/ca/LC_MESSAGES/tar.mo
 share/locale/cs/LC_MESSAGES/tar.mo
 share/locale/da/LC_MESSAGES/tar.mo
 share/locale/de/LC_MESSAGES/tar.mo

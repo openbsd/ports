@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2010/03/28 18:35:01 naddy Exp $
---- configure.orig	Wed Mar 10 11:52:13 2010
-+++ configure	Wed Mar 17 18:29:46 2010
-@@ -48383,7 +48383,7 @@ fi
+$OpenBSD: patch-configure,v 1.11 2010/10/28 13:50:30 naddy Exp $
+--- configure.orig	Sun Oct 24 23:38:00 2010
++++ configure	Mon Oct 25 13:11:50 2010
+@@ -51697,7 +51697,7 @@ fi
  $as_echo "$acl_cv_rpath" >&6; }
    wl="$acl_cv_wl"
    acl_libext="$acl_cv_libext"
