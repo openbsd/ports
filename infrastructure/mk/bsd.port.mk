@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1050 2010/10/28 14:26:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1051 2010/10/28 21:09:52 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2499,7 +2499,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 			${SUDO} chmod ${BINMODE} $$r; \
 		fi; \
 	done
-			
+
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 .if empty(PLIST_DB)
