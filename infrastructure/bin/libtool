@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.20 2010/10/28 22:19:03 jasper Exp $
+# $OpenBSD: libtool,v 1.21 2010/10/28 23:45:59 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1349,6 +1349,7 @@ if ($mode eq 'compile') {
 	}
 	my $toinstall = {};
 	my $tosymlink = {};	# for libraries with a -release in their name
+	my $tostrip = [];
 	my $addedmode = 0;
 	foreach my $s (@src) {
 		my $dstfile = basename $s;
@@ -1375,6 +1376,7 @@ if ($mode eq 'compile') {
 			my $laipath = "$srcdir/$ltdir/$srcfile".'i';
 			$toinstall->{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib"
 				if ($staticlib);
+			push @$tostrip, "$dstdir/$staticlib" if ($install_opts{'s'} && $staticlib);
 			$toinstall->{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib"
 				if ($sharedlib);
 			$toinstall->{"$laipath"} = "$dstdir/$dstfile";
@@ -1390,10 +1392,15 @@ if ($mode eq 'compile') {
 	while (my ($s, $d) = each %$toinstall) {
 		my @realinstopts = @instopts;
 		# do not try to strip .la files
-		if ($s =~ m/\.la$/ || $d =~ m /\.la$/) {
+		# do not strip static libraries, this is done below
+		if ($s =~ m/\.la$/ || $d =~ m /\.la$/ || $d =~ m/\.a$/) {
 			@realinstopts = grep { $_ ne '-s' } @realinstopts;
 		}
 		Exec->command(@$ltprog, @realinstopts, $s, $d);
+	}
+	foreach my $f (@$tostrip) {
+		my @stripopts = ('--strip-debug');
+		Exec->command('strip', @stripopts, $f);
 	}
 	while (my ($d, $s) = each %$tosymlink) {
 		unlink("$dstdir/$d");
@@ -1470,15 +1477,14 @@ if ($mode eq 'compile') {
 
 	my @objs;
 	my @sobjs;
-	my $allpicobj;
 	if ($opts{'objectlist'}) {
 		my $objectlist = $opts{'objectlist'};
 		open(my $ol, '<', $objectlist) or die "cannot open $objectlist: $!\n";
 		my @objlist = <$ol>;
 		for (@objlist) { chomp; }
-		$allpicobj = generate_objlist(\@objs, \@sobjs, \@objlist);
+		generate_objlist(\@objs, \@sobjs, \@objlist);
 	} else {
-		$allpicobj = generate_objlist(\@objs, \@sobjs, \@ARGV);
+		generate_objlist(\@objs, \@sobjs, \@ARGV);
 	}
 	Trace::debug {"objs = @objs\n"};
 	Trace::debug {"sobjs = @sobjs\n"};
@@ -1600,7 +1606,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($convenience) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
 			Trace::debug {($convenience ? "convenience" : "static")." lib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
@@ -1768,7 +1774,6 @@ sub generate_objlist
 	my $objs = shift;
 	my $sobjs = shift;
 	my $objsource = shift;
-	my $allpic = 1;
 
 	my $result = [];
 	foreach my $a (@$objsource) {
@@ -1787,8 +1792,6 @@ sub generate_objlist
 				$o .= "$odir/" if ($odir ne '.');
 				$o .= $loinfo->{'pic_object'};
 				push @$sobjs, $o;
-			} else {
-				$allpic = 0;
 			}
 		} elsif ($a =~ m/\S+\.o$/) {
 			push @$objs, $a;
@@ -1797,7 +1800,6 @@ sub generate_objlist
 		}
 	}
 	@$objsource = @$result;
-	return $allpic;
 }
 
 # XXX reuse code from SharedLibs.pm instead
