@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/saslauthd"
+daemon_flags="-a getpwent"
+
+rc_cmd $1
