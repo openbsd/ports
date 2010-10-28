@@ -1,0 +1,9 @@
+To configure OpenBSD's base httpd for rackmonkey, please create a symbolic
+link from ${PREFIX}/conf/modules.sample/httpd-rackmonkey.conf
+to ${PREFIX}/conf/modules/httpd-rackmonkey.conf
+
+cd ${PREFIX}/conf/modules; ln -s ../modules.sample/httpd-rackmonkey.conf
+
+See ${PREFIX}/rackmonkey/doc/install.txt for more information which
+has been adapted to be relevant to OpenBSD.
+
