@@ -1,0 +1,2 @@
+#! /bin/sh
+exec /usr/bin/locate -d ${TRUEPREFIX}/share/pkglocatedb "$@"
