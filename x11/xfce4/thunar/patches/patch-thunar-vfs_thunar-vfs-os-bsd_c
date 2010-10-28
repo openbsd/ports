@@ -1,0 +1,12 @@
+$OpenBSD: patch-thunar-vfs_thunar-vfs-os-bsd_c,v 1.1 2010/10/28 15:12:57 sthen Exp $
+--- thunar-vfs/thunar-vfs-os-bsd.c.orig	Thu Oct 28 03:13:34 2010
++++ thunar-vfs/thunar-vfs-os-bsd.c	Thu Oct 28 03:13:38 2010
+@@ -66,7 +66,7 @@ _thunar_vfs_os_is_dir_empty (const gchar *absolute_pat
+ {
+   struct dirent *dp;
+ #ifndef HAVE_GETDENTS
+-  glong          basep = 0;
++  off_t          basep = 0;
+ #endif
+   gchar          dbuf[8 * DIRBLKSIZ];
+   gint           size = 0;
