@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/01/12 18:58:26 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/10/28 11:24:35 jasper Exp $
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
 @man man/man1/mpd.1
@@ -21,3 +21,4 @@ share/examples/mpd/mpd.conf
 @sample /var/spool/mpd/playlists/
 @extraunexec rm -rf /var/log/mpd/*
 @extraunexec find /var/spool/mpd \! -name playlists -mindepth 1 -exec rm -rf "{}" \;
+@rcscript ${RCDIR}/mpd
