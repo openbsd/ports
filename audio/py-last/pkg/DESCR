@@ -1,0 +1,11 @@
+Last.fm client library for python. Supports the following features:
+
+* Simple public interface.
+* Access to all the data exposed by the Last.fm webservices.
+* Scrobbling support.
+* Full object-oriented design.
+* Proxy support.
+* Internal caching support for some webservices calls (disabled by default).
+* No extra dependencies but python itself.
+* Active development.
+* Support for other API-compatible networks like Libre.fm 
