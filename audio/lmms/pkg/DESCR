@@ -1,0 +1,17 @@
+LMMS is a music production program.  This includes the creation of
+melodies and beats, the synthesis and mixing of sounds, and arrangement
+of samples.  You can have fun with your MIDI keyboard and much more.
+
+Features:
+
+* Song Editor for composing songs
+* A Beat+Bassline Editor for creating beats and basslines
+* An easy to use Piano Roll for editing patterns and melodies
+* An FX mixer with 64 FX channels and arbitrary number of effects
+  allow unlimited mixing possibilities
+* Many powerful instrument and effects plugins out of the box
+* Full user defined track based automation and computer controlled
+  automation sources
+* Compatible with many standards such as SoundFont2, LADSPA, and full
+  MIDI support
+* Import of MIDI and FLP (Frootyloops Project) files

@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_core_mixer_cpp,v 1.1.1.1 2010/10/28 22:33:41 jakemsr Exp $
+--- src/core/mixer.cpp.orig	Thu Sep  2 15:27:46 2010
++++ src/core/mixer.cpp	Sun Oct 24 08:05:47 2010
+@@ -47,6 +47,7 @@
+ #include "AudioPortAudio.h"
+ #include "AudioPulseAudio.h"
+ #include "AudioSdl.h"
++#include "AudioSndio.h"
+ #include "AudioDummy.h"
+ 
+ // platform-specific midi-interface-classes
+@@ -54,6 +55,7 @@
+ #include "MidiAlsaSeq.h"
+ #include "MidiOss.h"
+ #include "MidiWinMM.h"
++#include "MidiSndio.h"
+ #include "MidiDummy.h"
+ 
+ 
+@@ -1027,6 +1029,20 @@ AudioDevice * mixer::tryAudioDevices()
+ #endif
+ 
+ 
++#ifdef LMMS_HAVE_SNDIO
++	if( dev_name == AudioSndio::name() || dev_name == "" )
++	{
++		dev = new AudioSndio( success_ful, this );
++		if( success_ful )
++		{
++			m_audioDevName = AudioSndio::name();
++			return dev;
++		}
++		delete dev;
++	}
++#endif
++
++
+ #ifdef LMMS_HAVE_JACK
+ 	if( dev_name == AudioJack::name() || dev_name == "" )
+ 	{
+@@ -1113,6 +1129,19 @@ MidiClient * mixer::tryMidiClients()
+ 			return moss;
+ 		}
+ 		delete moss;
++	}
++#endif
++
++#ifdef LMMS_HAVE_SNDIO
++	if( client_name == MidiSndio::name() || client_name == "" )
++	{
++		MidiSndio * msndio = new MidiSndio;
++		if( msndio->isRunning() )
++		{
++			m_midiClientName = MidiSndio::name();
++			return msndio;
++		}
++		delete msndio;
+ 	}
+ #endif
+ 

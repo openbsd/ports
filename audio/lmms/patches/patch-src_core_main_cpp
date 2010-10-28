@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_main_cpp,v 1.1.1.1 2010/10/28 22:33:41 jakemsr Exp $
+--- src/core/main.cpp.orig	Tue Aug 11 09:52:18 2009
++++ src/core/main.cpp	Thu Dec 24 00:01:42 2009
+@@ -52,6 +52,8 @@
+ #include <unistd.h>
+ #endif
+ 
++#include <unistd.h>
++
+ #include "config_mgr.h"
+ #include "embed.h"
+ #include "engine.h"

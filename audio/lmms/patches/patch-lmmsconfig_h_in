@@ -1,0 +1,11 @@
+$OpenBSD: patch-lmmsconfig_h_in,v 1.1.1.1 2010/10/28 22:33:41 jakemsr Exp $
+--- lmmsconfig.h.in.orig	Mon Feb 23 14:34:25 2009
++++ lmmsconfig.h.in	Wed Dec 23 17:30:47 2009
+@@ -12,6 +12,7 @@
+ #cmakedefine LMMS_HAVE_JACK
+ #cmakedefine LMMS_HAVE_OGGVORBIS
+ #cmakedefine LMMS_HAVE_OSS
++#cmakedefine LMMS_HAVE_SNDIO
+ #cmakedefine LMMS_HAVE_PORTAUDIO
+ #cmakedefine LMMS_HAVE_PULSEAUDIO
+ #cmakedefine LMMS_HAVE_SDL

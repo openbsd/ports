@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_RemotePlugin_h,v 1.1.1.1 2010/10/28 22:33:41 jakemsr Exp $
+--- include/RemotePlugin.h.orig	Tue Aug 11 09:52:17 2009
++++ include/RemotePlugin.h	Wed Dec 23 23:41:15 2009
+@@ -61,6 +61,10 @@
+ 
+ #else /* USE_QT_SEMAPHORES */
+ 
++#ifdef LMMS_HAVE_SYS_TYPES_H
++#include <sys/types.h>
++#endif
++
+ #ifdef LMMS_HAVE_SYS_IPC_H
+ #include <sys/ipc.h>
+ #endif
+@@ -68,6 +72,8 @@
+ #ifdef LMMS_HAVE_SEMAPHORE_H
+ #include <semaphore.h>
+ #endif
++
++#include <unistd.h>
+ 
+ #endif
+ 

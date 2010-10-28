@@ -1,0 +1,2041 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/28 22:33:42 jakemsr Exp $
+@bin bin/lmms
+include/lmms/
+include/lmms/AudioAlsa.h
+include/lmms/AudioDevice.h
+include/lmms/AudioDummy.h
+include/lmms/AudioFileDevice.h
+include/lmms/AudioFileOgg.h
+include/lmms/AudioFileWave.h
+include/lmms/AudioJack.h
+include/lmms/AudioOss.h
+include/lmms/AudioPort.h
+include/lmms/AudioPortAudio.h
+include/lmms/AudioPulseAudio.h
+include/lmms/AudioSampleRecorder.h
+include/lmms/AudioSdl.h
+include/lmms/AudioSndio.h
+include/lmms/AutomatableModel.h
+include/lmms/AutomatableModelView.h
+include/lmms/AutomationEditor.h
+include/lmms/AutomationPattern.h
+include/lmms/AutomationPatternView.h
+include/lmms/AutomationTrack.h
+include/lmms/Clipboard.h
+include/lmms/ComboBoxModel.h
+include/lmms/Controller.h
+include/lmms/ControllerConnection.h
+include/lmms/ControllerConnectionDialog.h
+include/lmms/ControllerDialog.h
+include/lmms/ControllerRackView.h
+include/lmms/ControllerView.h
+include/lmms/DetuningHelper.h
+include/lmms/DummyEffect.h
+include/lmms/DummyInstrument.h
+include/lmms/DummyPlugin.h
+include/lmms/Effect.h
+include/lmms/EffectChain.h
+include/lmms/EffectControlDialog.h
+include/lmms/EffectControls.h
+include/lmms/EffectRackView.h
+include/lmms/EffectSelectDialog.h
+include/lmms/EffectView.h
+include/lmms/EnvelopeAndLfoParameters.h
+include/lmms/EnvelopeAndLfoView.h
+include/lmms/FxMixer.h
+include/lmms/FxMixerView.h
+include/lmms/ImportFilter.h
+include/lmms/InlineAutomation.h
+include/lmms/Instrument.h
+include/lmms/InstrumentFunctionViews.h
+include/lmms/InstrumentFunctions.h
+include/lmms/InstrumentMidiIOView.h
+include/lmms/InstrumentPlayHandle.h
+include/lmms/InstrumentSoundShaping.h
+include/lmms/InstrumentSoundShapingView.h
+include/lmms/InstrumentTrack.h
+include/lmms/InstrumentView.h
+include/lmms/JournallingObject.h
+include/lmms/LadspaBase.h
+include/lmms/LadspaControl.h
+include/lmms/LadspaControlView.h
+include/lmms/LfoController.h
+include/lmms/MainWindow.h
+include/lmms/MeterDialog.h
+include/lmms/MeterModel.h
+include/lmms/MicroTimer.h
+include/lmms/MidiAlsaRaw.h
+include/lmms/MidiAlsaSeq.h
+include/lmms/MidiClient.h
+include/lmms/MidiController.h
+include/lmms/MidiDummy.h
+include/lmms/MidiEventProcessor.h
+include/lmms/MidiOss.h
+include/lmms/MidiPort.h
+include/lmms/MidiPortMenu.h
+include/lmms/MidiSndio.h
+include/lmms/MidiWinMM.h
+include/lmms/Model.h
+include/lmms/ModelView.h
+include/lmms/Oscillator.h
+include/lmms/PeakController.h
+include/lmms/Piano.h
+include/lmms/PianoView.h
+include/lmms/Plugin.h
+include/lmms/PluginView.h
+include/lmms/ProjectJournal.h
+include/lmms/ProjectRenderer.h
+include/lmms/RemotePlugin.h
+include/lmms/SerializingObject.h
+include/lmms/SideBar.h
+include/lmms/SideBarWidget.h
+include/lmms/SweepOscillator.h
+include/lmms/TempoSyncKnob.h
+include/lmms/TempoSyncKnobModel.h
+include/lmms/ToolPlugin.h
+include/lmms/ToolPluginView.h
+include/lmms/about_dialog.h
+include/lmms/aeffectx.h
+include/lmms/atomic_int.h
+include/lmms/automatable_button.h
+include/lmms/automatable_slider.h
+include/lmms/base64.h
+include/lmms/basic_filters.h
+include/lmms/bb_editor.h
+include/lmms/bb_track.h
+include/lmms/bb_track_container.h
+include/lmms/caption_menu.h
+include/lmms/combobox.h
+include/lmms/config_mgr.h
+include/lmms/cpuload_widget.h
+include/lmms/custom_events.h
+include/lmms/debug.h
+include/lmms/drumsynth.h
+include/lmms/effect_lib.h
+include/lmms/embed.cpp
+include/lmms/embed.h
+include/lmms/endian_handling.h
+include/lmms/engine.h
+include/lmms/export.h
+include/lmms/export_project_dialog.h
+include/lmms/fade_button.h
+include/lmms/fader.h
+include/lmms/fft_helpers.h
+include/lmms/fifo_buffer.h
+include/lmms/file_browser.h
+include/lmms/graph.h
+include/lmms/group_box.h
+include/lmms/gui_templates.h
+include/lmms/interpolation.h
+include/lmms/knob.h
+include/lmms/ladspa.h
+include/lmms/ladspa_2_lmms.h
+include/lmms/ladspa_manager.h
+include/lmms/lcd_spinbox.h
+include/lmms/led_checkbox.h
+include/lmms/lmms_basics.h
+include/lmms/lmms_constants.h
+include/lmms/lmms_math.h
+include/lmms/lmms_style.h
+include/lmms/lmmsconfig.h
+include/lmms/lmmsversion.h
+include/lmms/midi.h
+include/lmms/midi_time.h
+include/lmms/mixer.h
+include/lmms/mmp.h
+include/lmms/note.h
+include/lmms/note_play_handle.h
+include/lmms/nstate_button.h
+include/lmms/panning.h
+include/lmms/panning_constants.h
+include/lmms/pattern.h
+include/lmms/pch.h
+include/lmms/piano_roll.h
+include/lmms/pixmap_button.h
+include/lmms/play_handle.h
+include/lmms/plugin_browser.h
+include/lmms/preset_preview_play_handle.h
+include/lmms/project_notes.h
+include/lmms/project_version.h
+include/lmms/rename_dialog.h
+include/lmms/rubberband.h
+include/lmms/sample_buffer.h
+include/lmms/sample_play_handle.h
+include/lmms/sample_record_handle.h
+include/lmms/sample_track.h
+include/lmms/setup_dialog.h
+include/lmms/shared_object.h
+include/lmms/song.h
+include/lmms/song_editor.h
+include/lmms/string_pair_drag.h
+include/lmms/surround_area.h
+include/lmms/tab_bar.h
+include/lmms/tab_button.h
+include/lmms/tab_widget.h
+include/lmms/templates.h
+include/lmms/text_float.h
+include/lmms/timeline.h
+include/lmms/tool_button.h
+include/lmms/tooltip.h
+include/lmms/track.h
+include/lmms/track_container.h
+include/lmms/track_container_view.h
+include/lmms/track_label_button.h
+include/lmms/transformable_auto_model.h
+include/lmms/update_event.h
+include/lmms/visualization_widget.h
+include/lmms/volume.h
+lib/lmms/
+@bin lib/lmms/RemoteZynAddSubFx
+lib/lmms/libZynAddSubFxCore.so
+lib/lmms/libaudiofileprocessor.so
+lib/lmms/libbassbooster.so
+lib/lmms/libbitinvader.so
+lib/lmms/libflpimport.so
+lib/lmms/libkicker.so
+lib/lmms/libladspabrowser.so
+lib/lmms/libladspaeffect.so
+lib/lmms/liblb302.so
+lib/lmms/libmidiimport.so
+lib/lmms/liborganic.so
+lib/lmms/libpapu.so
+lib/lmms/libpatman.so
+lib/lmms/libpeakcontrollereffect.so
+lib/lmms/libsf2player.so
+lib/lmms/libsid.so
+lib/lmms/libspectrumanalyzer.so
+lib/lmms/libstereoenhancer.so
+lib/lmms/libstereomatrix.so
+lib/lmms/libtripleoscillator.so
+lib/lmms/libvibedstrings.so
+lib/lmms/libzynaddsubfx.so
+@man man/man1/lmms.1
+share/applications/lmms.desktop
+share/lmms/
+share/lmms/backgrounds/
+share/lmms/backgrounds/lmms_tile.png
+share/lmms/backgrounds/vinnie.png
+share/lmms/locale/
+share/lmms/locale/ca.qm
+share/lmms/locale/cs.qm
+share/lmms/locale/de.qm
+share/lmms/locale/en.qm
+share/lmms/locale/es.qm
+share/lmms/locale/fr.qm
+share/lmms/locale/ir.qm
+share/lmms/locale/it.qm
+share/lmms/locale/ja.qm
+share/lmms/locale/ko.qm
+share/lmms/locale/nl.qm
+share/lmms/locale/pt_br.qm
+share/lmms/locale/ru.qm
+share/lmms/locale/sv.qm
+share/lmms/presets/
+share/lmms/presets/AudioFileProcessor/
+share/lmms/presets/AudioFileProcessor/Bass-Mania.xpf
+share/lmms/presets/AudioFileProcessor/Erazor.xpf
+share/lmms/presets/AudioFileProcessor/Fat-Reversed-Kick.xpf
+share/lmms/presets/AudioFileProcessor/Kick-4-your-Subwoofer.xpf
+share/lmms/presets/AudioFileProcessor/SString.xpf
+share/lmms/presets/AudioFileProcessor/orion.xpf
+share/lmms/presets/BitInvader/
+share/lmms/presets/BitInvader/alien_strings.xpf
+share/lmms/presets/BitInvader/beehive.xpf
+share/lmms/presets/BitInvader/bell.xpf
+share/lmms/presets/BitInvader/cello.xpf
+share/lmms/presets/BitInvader/drama.xpf
+share/lmms/presets/BitInvader/epiano.xpf
+share/lmms/presets/BitInvader/pluck.xpf
+share/lmms/presets/BitInvader/soft_pad.xpf
+share/lmms/presets/BitInvader/spacefx.xpf
+share/lmms/presets/BitInvader/subbass.xpf
+share/lmms/presets/BitInvader/sweep_pad.xpf
+share/lmms/presets/BitInvader/toy_piano.xpf
+share/lmms/presets/BitInvader/wah_synth.xpf
+share/lmms/presets/LB302/
+share/lmms/presets/LB302/GoodOldTimes.xpf
+share/lmms/presets/LB302/Oh Synth.xpf
+share/lmms/presets/LB302/STrash.xpf
+share/lmms/presets/Organic/
+share/lmms/presets/Organic/organ_blues.xpf
+share/lmms/presets/Organic/organ_risingsun.xpf
+share/lmms/presets/Organic/organ_swish.xpf
+share/lmms/presets/Organic/pad_ethereal.xpf
+share/lmms/presets/Organic/pad_rich.xpf
+share/lmms/presets/Organic/pad_sweep.xpf
+share/lmms/presets/Organic/puresine.xpf
+share/lmms/presets/Organic/sequencer_64.xpf
+share/lmms/presets/TripleOscillator/
+share/lmms/presets/TripleOscillator/AmazingBubbles.xpf
+share/lmms/presets/TripleOscillator/AnalogDreamz.xpf
+share/lmms/presets/TripleOscillator/AnalogTimes.xpf
+share/lmms/presets/TripleOscillator/AnalogTimes2.xpf
+share/lmms/presets/TripleOscillator/Analogous.xpf
+share/lmms/presets/TripleOscillator/ArpKing.xpf
+share/lmms/presets/TripleOscillator/Arpeggio_1.xpf
+share/lmms/presets/TripleOscillator/Arpeggio_2.xpf
+share/lmms/presets/TripleOscillator/Bell.xpf
+share/lmms/presets/TripleOscillator/Bell_2.xpf
+share/lmms/presets/TripleOscillator/ChurchOrgan.xpf
+share/lmms/presets/TripleOscillator/DeathBass.xpf
+share/lmms/presets/TripleOscillator/Distorted-FM-Bass.xpf
+share/lmms/presets/TripleOscillator/Dull-Bell-Arp.xpf
+share/lmms/presets/TripleOscillator/E-Organ.xpf
+share/lmms/presets/TripleOscillator/E-Organ2.xpf
+share/lmms/presets/TripleOscillator/Erazzor.xpf
+share/lmms/presets/TripleOscillator/Fat-FMish-Bells.xpf
+share/lmms/presets/TripleOscillator/Fat-TB303-Arp.xpf
+share/lmms/presets/TripleOscillator/Fat.xpf
+share/lmms/presets/TripleOscillator/FatCheese.xpf
+share/lmms/presets/TripleOscillator/Freaky-Bass.xpf
+share/lmms/presets/TripleOscillator/FutureBass.xpf
+share/lmms/presets/TripleOscillator/Gong.xpf
+share/lmms/presets/TripleOscillator/Harmonium.xpf
+share/lmms/presets/TripleOscillator/Harp-of-a-Fairy.xpf
+share/lmms/presets/TripleOscillator/Harpsichord.xpf
+share/lmms/presets/TripleOscillator/HiPad.xpf
+share/lmms/presets/TripleOscillator/Jupiter.xpf
+share/lmms/presets/TripleOscillator/Kick.xpf
+share/lmms/presets/TripleOscillator/Kick2.xpf
+share/lmms/presets/TripleOscillator/LFO-party.xpf
+share/lmms/presets/TripleOscillator/LovelyDream.xpf
+share/lmms/presets/TripleOscillator/MoogArpeggio.xpf
+share/lmms/presets/TripleOscillator/MoveYourBody.xpf
+share/lmms/presets/TripleOscillator/OldComputerGames.xpf
+share/lmms/presets/TripleOscillator/Play-some-rock.xpf
+share/lmms/presets/TripleOscillator/PluckArpeggio.xpf
+share/lmms/presets/TripleOscillator/Plucked.xpf
+share/lmms/presets/TripleOscillator/PowerStrings.xpf
+share/lmms/presets/TripleOscillator/RaveBass.xpf
+share/lmms/presets/TripleOscillator/Ravemania.xpf
+share/lmms/presets/TripleOscillator/ResoBass.xpf
+share/lmms/presets/TripleOscillator/ResonantPad.xpf
+share/lmms/presets/TripleOscillator/RockOrgan.xpf
+share/lmms/presets/TripleOscillator/Rough!.xpf
+share/lmms/presets/TripleOscillator/SBass.xpf
+share/lmms/presets/TripleOscillator/SBass2.xpf
+share/lmms/presets/TripleOscillator/SEGuitar.xpf
+share/lmms/presets/TripleOscillator/SawLead.xpf
+share/lmms/presets/TripleOscillator/SawReso.xpf
+share/lmms/presets/TripleOscillator/Short1.xpf
+share/lmms/presets/TripleOscillator/Short2.xpf
+share/lmms/presets/TripleOscillator/Short3.xpf
+share/lmms/presets/TripleOscillator/Short4.xpf
+share/lmms/presets/TripleOscillator/Snare.xpf
+share/lmms/presets/TripleOscillator/SoftBass.xpf
+share/lmms/presets/TripleOscillator/SoftStrings.xpf
+share/lmms/presets/TripleOscillator/SpaceBass.xpf
+share/lmms/presets/TripleOscillator/Square.xpf
+share/lmms/presets/TripleOscillator/Supernova.xpf
+share/lmms/presets/TripleOscillator/TB303-Arpeggio.xpf
+share/lmms/presets/TripleOscillator/TB303.xpf
+share/lmms/presets/TripleOscillator/TheFirstOne.xpf
+share/lmms/presets/TripleOscillator/TheMaster.xpf
+share/lmms/presets/TripleOscillator/TranceLead.xpf
+share/lmms/presets/TripleOscillator/WarmStack.xpf
+share/lmms/presets/TripleOscillator/Whistle.xpf
+share/lmms/presets/TripleOscillator/Xylophon.xpf
+share/lmms/presets/Vibed/
+share/lmms/presets/Vibed/Harpsichord.xpf
+share/lmms/presets/Vibed/SadPad.xpf
+share/lmms/presets/ZynAddSubFX/
+share/lmms/presets/ZynAddSubFX/Arpeggios/
+share/lmms/presets/ZynAddSubFX/Arpeggios/0001-Arpeggio1.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0002-Arpeggio2.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0003-Arpeggio3.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0004-Arpeggio4.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0005-Arpeggio5.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0006-Aporggio6.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0007-Arpeggio7.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0008-Arpeggio8.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0009-Arpeggio9.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0010-Arpeggio10.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0011-Arpeggio11.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0033-Sequence1.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0034-Sequence2.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0036-Echoed Synth.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0037-Echo FX.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0039-Soft Arpeggio1.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0040-Soft Arpeggio2.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0041-Soft Arpeggio3.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0042-Soft Arpeggio4.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0043-Soft Arpeggio5.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0065-Hyper Organ1.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0066-Hyper Arpeggio.xiz
+share/lmms/presets/ZynAddSubFX/Arpeggios/0068-Glass Arpeggio.xiz
+share/lmms/presets/ZynAddSubFX/Bass/
+share/lmms/presets/ZynAddSubFX/Bass/0001-Bass 1.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0002-Bass 2.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0003-Bass 3 _analog_.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0004-Bass 4.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0005-Bass 5.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0006-Analogue Bass.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0033-Wah Bass.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0035-FM Bass 1.xiz
+share/lmms/presets/ZynAddSubFX/Bass/0036-FM Bass 2.xiz
+share/lmms/presets/ZynAddSubFX/Brass/
+share/lmms/presets/ZynAddSubFX/Brass/0001-FM Thrumpet.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0003-Synth Brazz 1.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0004-Synth Brazz 2.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0005-Synth Brass 3.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0006-Synth Brass 4.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0007-Synth Brass 5.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0008-Brass Pad.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0009-Wah Brass.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0010-Solo Synth1.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0011-Brazz 1.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0012-Brazz 2.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0033-Analog Brass 1.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0034-Analog Brass 2.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0035-Analog Brass 3.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0036-Analog Brass 4.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0065-Simple Brass.xiz
+share/lmms/presets/ZynAddSubFX/Brass/0066-Fat Brass.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0001-AHH Choir 1.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0002-AHH Choir 2.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0003-EHH Choir 1.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0004-Voice OOH.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0005-Choir Pad1.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0006-Choir Pad2.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0007-Choir Pad3.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0008-Choir Pad4.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0009-Choir Pad5.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0010-Choir Pad6.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0033-Choir.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0034-Slow Morph_Choir.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0035-Wah Choir.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0036-Eooooo.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0037-Voiced Synth.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0039-Ohh Choir.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0065-Vocal Morph 1.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0066-Vocal Morph 2.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0067-Vocal Morph 3.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0068-Vocal Morph 4.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0069-Vocal Morph 5.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0070-Vocal Morph 6.xiz
+share/lmms/presets/ZynAddSubFX/ChoirAndVoice/0071-Vocal Morph 7.xiz
+share/lmms/presets/ZynAddSubFX/Collections/
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0001-Xylophone.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0002-Vibraphone.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0003-Soft Vibes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0004-Simple Chimes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0005-Silver Bell.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0008-Ethereal.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0010-Trem Lead.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0012-Trem Synth Piano 3.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0015-Simple Square.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0016-Full Square.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0018-Steel Wire.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0020-Fantasia.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0021-Soft.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0028-Echo Bubbles.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0029-Full Strings.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0030-Slow Strings.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0032-Pizzicato Strings.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0033-Trem Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0034-Warm Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0035-Hard Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0036-Bright Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0037-Multi Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0038-Slow Saw.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0039-Medium Saw.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0040-Hard Saw.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0041-Voiced Saw.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0042-Matrix.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0043-Sweep Matrix.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0044-Wipe Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0045-Hard Stereo Sweep Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0046-Master Synth Low.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0047-Master Synth High.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0048-Sharp Synth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0050-Fretless Bass.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0051-Decay Bass.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0052-Steel Bass.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0053-Synth Bass.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0057-Sub Delay.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0058-Reed Organ.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0059-Soft Organ.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0060-Thin Pipe.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0061-Great Organ.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0062-Hammond Organ.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0064-Sines.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0067-Soft Flute.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0068-Warm Flute.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0071-Ocarina.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0073-Variable Reed.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0075-Smooth.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0077-Whistle.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0078-Ghost Whistle.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0079-Ice Field.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0080-Hollow Ice Field.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0081-Beyond.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0083-Sweep Pad.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0084-Breathy Pad.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0085-Bottle.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0086-ReedBank.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0087-Sweep Rushes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0088-Rushes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0089-Medium Rushes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0090-Bright Rushes.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0091-Bright Rush Pipe.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0092-Bright Rush Long Tail.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0093-Voyager.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0094-Soft Voyager.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0095-Soft Voyager Reverse.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0096-Echo Choir.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0097-Sharp.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0098-Sharp and Deep.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0099-Sharp Reed.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0100-Far Reed.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0102-Bassoon.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0103-Clarinet.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0106-Aooww.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0107-Daooww.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0108-Yaooww.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0109-Yiee.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0110-Eeoow.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0112-Overdrive.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0113-Overdrive 2.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0114-Overdrive 3.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0116-Power Guitar 1.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0117-Power Guitar 2.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0120-Wet Brass.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0123-Prophesy.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0125-Pan Pipe 32.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0126-Pan Pipe.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0127-Pan Pipe 96.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0131-Lite Guitar.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0132-Trem Guitar.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0133-Smooth Guitar.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0134-Nylon Guitar.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0139-Home Piano.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0140-Moonlight Piano.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0141-Soft Piano1.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0142-Soft Piano2.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0143-Space Piano.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0146-Space Voice.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0147-Space Voice 2.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0149-Soft Choir.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0150-Full Choir.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0151-Soft Ahh.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0152-Breathy Ahh.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0155-Super Pad.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0156-Hyper Pad.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0157-Hyper Matrix.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0158-Extreme.xiz
+share/lmms/presets/ZynAddSubFX/Collections/WillGodfrey/0160-Wind and Surf.xiz
+share/lmms/presets/ZynAddSubFX/Drums/
+share/lmms/presets/ZynAddSubFX/Drums/0001-Drums Kit1.xiz
+share/lmms/presets/ZynAddSubFX/Dual/
+share/lmms/presets/ZynAddSubFX/Dual/0001-Layered1.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0002-Layered2.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0005-Organ and Saw.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0007-Organ Choir Pad1.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0008-Organ Choir Pad2.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0033-Rhodes Strings1.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0034-Rhodes Strings2.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0035-Rhodes Strings3.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0036-Rhodes Strings4.xiz
+share/lmms/presets/ZynAddSubFX/Dual/0065-Dream of the Saw.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/
+share/lmms/presets/ZynAddSubFX/Fantasy/0001-Emptyness1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0002-Emptyness2.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0003-Space Synth.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0004-Weird Pad.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0006-Space SynthBrass.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0008-Space Voice1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0009-Space Voice2.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0010-Space Voice3.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0011-Space Choir1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0012-Space Choir2.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0014-Glass Voices.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0015-Strange Voice.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0033-ImpossibleDream1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0034-ImpossibleDream2.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0035-ImpossibleDream3.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0036-ImpossibleDream4.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0037-ImpossibleDream5.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0040-Delayed Echo.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0041-Fade Down Echo.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0042-Rhodes Space1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0043-Rhodes Space2.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0065-Long SpaceChoir1.xiz
+share/lmms/presets/ZynAddSubFX/Fantasy/0066-Long SpaceChoir2.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/
+share/lmms/presets/ZynAddSubFX/Guitar/0001-Dist Guitar 1.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0002-Dist Guitar 2.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0003-Dist Guitar 3.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0004-Dist Guitar 4.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0005-Dist Guitar 5.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0033-Trash Guitar 1.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0034-Trash Guitar 2.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0035-Short.xiz
+share/lmms/presets/ZynAddSubFX/Guitar/0065-Clean Guitar1.xiz
+share/lmms/presets/ZynAddSubFX/Misc/
+share/lmms/presets/ZynAddSubFX/Misc/0001-Memories.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0002-Bells 1.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0003-Bells 2.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0004-Bells 3.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0006-SuperSaw 1.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0007-SuperSaw 2.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0008-SuperSaw 3.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0009-SuperSaw 4.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0010-SuperSaw 5.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0033-Trash Synth 1.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0034-Trash Synth 2.xiz
+share/lmms/presets/ZynAddSubFX/Misc/0035-Trash Synth 3.xiz
+share/lmms/presets/ZynAddSubFX/Noises/
+share/lmms/presets/ZynAddSubFX/Noises/0001-Synth Effect.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0002-Ioioioioioi.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0003-Noise1.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0004-Noise2.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0006-Wind.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0033-Metal Sound 1.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0034-Metal Sound 2.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0035-Metal Sound 3.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0037-Metal Sound 4.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0038-Metal Sound 5.xiz
+share/lmms/presets/ZynAddSubFX/Noises/0065-Short noise.xiz
+share/lmms/presets/ZynAddSubFX/Organ/
+share/lmms/presets/ZynAddSubFX/Organ/0001-Organ 1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0002-Organ 2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0003-Organ 3.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0004-Organ 4.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0005-Organ 5.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0006-Organ 6.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0007-Organ 7.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0008-Organ 8.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0009-Organ 9.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0010-Organ 10.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0011-Organ 11.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0033-Cathedral Organ1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0034-Cathedral Organ2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0035-Cathedral Organ3.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0037-Church Organ 1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0038-Church Organ 2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0039-Church Organ 3.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0041-Church Organ Soft.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0065-Nice Organ 1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0066-Nice Organ 2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0067-Sub_Organ.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0068-Square Organ.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0069-Soft Organ 1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0070-Soft Organ 2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0071-Synth Organ.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0072-Fantasy Organ.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0097-Accordion Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0098-Accordion Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0099-Synth Accordion1.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0100-Synth Accordion2.xiz
+share/lmms/presets/ZynAddSubFX/Organ/0101-Accordion 1.xiz
+share/lmms/presets/ZynAddSubFX/Pads/
+share/lmms/presets/ZynAddSubFX/Pads/0001-Sine Pad.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0002-sin2x  pad.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0003-Analog Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0004-Analog Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0005-Square Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0006-Square Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0008-Resonance Pad1.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0009-Resonance Pad2.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0033-Synth Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0034-Synth Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0035-Synth Pad 3.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0036-Synth Pad 4.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0065-Soft Pad.xiz
+share/lmms/presets/ZynAddSubFX/Pads/0066-Flanged Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/
+share/lmms/presets/ZynAddSubFX/Plucked/0001-Plucked 1.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0002-Plucked 2.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0003-Plucked 3.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0004-Plucked 4.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0005-Plucked 5.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0006-Plucked 6.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0033-Plucked String1.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0034-Plucked String2.xiz
+share/lmms/presets/ZynAddSubFX/Plucked/0036-Plucked Wah.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0001-Flute 1.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0002-Flute 2.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0003-Flute 3.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0005-FM Reed.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0006-Clarinet.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0007-Breathy1.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0033-Reed 1.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0034-Reed 2.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0035-Reed 3.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0036-Reed 4.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0037-Reed 5.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0038-Reed 6.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0039-Reed 7.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0065-Fat Reed1.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0066-Fat Reed2.xiz
+share/lmms/presets/ZynAddSubFX/ReedAndWind/0067-Fat Reed3 square.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/
+share/lmms/presets/ZynAddSubFX/Rhodes/0001-DX Rhodes 1.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0002-DX Rhodes 2.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0003-DX Rhodes 3.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0004-DX Rhodes 4.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0005-DX Rhodes 5.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0007-Dig Rhodes.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0008-Synth Rhodes1.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0009-Synth Rhodes2.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0010-Synth Rhodes3.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0012-Ice Rhodes1.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0013-Ice Rhodes2.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0014-Ice Rhodes3.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0033-FM Rhodes 1.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0034-FM Rhodes 2.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0035-FM Rhodes 3.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0036-FM Rhodes 4.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0037-FM Rhodes 5.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0038-FM Rhodes 6.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0041-Soft Rhodes.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0042-Hard Rhodes1.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0043-Hard Rhodes2.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0044-Echo Rhodes.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0045-A long time ago.xiz
+share/lmms/presets/ZynAddSubFX/Rhodes/0065-Steel Rhodes.xiz
+share/lmms/presets/ZynAddSubFX/Splited/
+share/lmms/presets/ZynAddSubFX/Splited/0001-Strings and Reed1.xiz
+share/lmms/presets/ZynAddSubFX/Splited/0002-Strings and Reed2.xiz
+share/lmms/presets/ZynAddSubFX/Splited/0003-Strings and Flute.xiz
+share/lmms/presets/ZynAddSubFX/Splited/0033-Choir and Reed.xiz
+share/lmms/presets/ZynAddSubFX/Strings/
+share/lmms/presets/ZynAddSubFX/Strings/0001-Saw Strings 1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0002-Saw Strings 2.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0003-Saw Strings 3.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0004-Saw Strings 4.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0005-Saw Strings 5.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0006-Saw Strings 6.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0007-Saw Strings 7.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0008-Saw Strings 8.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0011-Strings Pad1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0012-Strings Pad2.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0013-Strings Pad3.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0016-Sweep Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0017-Sweep Pad 1 Fat.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0018-Sweep Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0019-Sweep Pad 3Wah.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0020-Sweep Pad 4.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0033-Strings1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0034-Dark Strings.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0035-Octave Pad.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0036-Fast Attack.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0038-Fat Saw.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0041-Saw 1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0042-Saw 2.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0043-Saw 3.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0044-Saw Pad.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0045-Soft Saw Pad.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0046-Echoed Saw.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0047-Vibratto Saw1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0048-Wah1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0050-Synth Violin 1.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0051-Synth Violin 2 Fat.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0065-Simple Strings.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0066-Dual Strings.xiz
+share/lmms/presets/ZynAddSubFX/Strings/0067-Dual StringsOct.xiz
+share/lmms/presets/ZynAddSubFX/Synth/
+share/lmms/presets/ZynAddSubFX/Synth/0001-Soft Synth 1.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0002-Soft Synth 2.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0004-Pulse Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0005-Pulse Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0007-Analog Filter 1.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0008-Analog Filter 2.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0033-Phased Pad 1.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0034-Phased Pad 2.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0035-Phased Pad 3.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0037-Resonance Synth.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0039-Multi-phase synth.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0065-Computer Lead.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0067-Detuned Harmonic.xiz
+share/lmms/presets/ZynAddSubFX/Synth/0097-FM Synth.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/
+share/lmms/presets/ZynAddSubFX/SynthPiano/0001-Soft Piano 1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0002-Soft Piano 2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0004-Fantasy Bell.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0005-Synth Piano1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0006-Synth Piano2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0007-Termollo1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0008-Termollo2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0009-Termollo3.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0011-Drop1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0012-Drop2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0033-Analog Piano 1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0034-Analog Piano 2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0035-Analog Piano 3.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0037-FM Synth1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0039-BinaryPiano1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0040-BinaryPiano2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0065-Synth Piano 1.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0066-Synth Piano 2.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0067-Synth Piano 3.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0068-Synth Piano 3 fat.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0069-Synth Piano 3 det.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0070-Synth Piano 4.xiz
+share/lmms/presets/ZynAddSubFX/SynthPiano/0071-Synth Piano 5.xiz
+share/lmms/projects/
+share/lmms/projects/cool_songs/
+share/lmms/projects/cool_songs/BlueWolf-DreamTravel.mmp
+share/lmms/projects/cool_songs/Chris-HorizonRemix.mmp
+share/lmms/projects/cool_songs/Chris-RaveRiff.mmpz
+share/lmms/projects/cool_songs/Djeezus-BeatRolls.mmp
+share/lmms/projects/cool_songs/Djeezus-Oscilisous.mmp
+share/lmms/projects/cool_songs/Lokori-Systematic_Chaos.mmp
+share/lmms/projects/cool_songs/Malex-Horizon4.mmp
+share/lmms/projects/cool_songs/Marfil-MarfilDrum01.mmp
+share/lmms/projects/cool_songs/MysthR-Living.mmpz
+share/lmms/projects/cool_songs/OrtalDj-FirstProyect.mmpz
+share/lmms/projects/cool_songs/SharkyX-Experiments.mmp
+share/lmms/projects/cool_songs/Siegel-DreamWave.mmp
+share/lmms/projects/cool_songs/Siegel-SpeedTrack.mmp
+share/lmms/projects/cool_songs/Silva-ElvesCall.mmp
+share/lmms/projects/cool_songs/Skiessi-Onion.mmpz
+share/lmms/projects/cool_songs/Skiessi-RandomProjectNumber14253.mmpz
+share/lmms/projects/cool_songs/Skiessi-TurningPoint.mmpz
+share/lmms/projects/cool_songs/StrictProduction-DearJonDoe.mmp
+share/lmms/projects/cool_songs/StrictProduction-Lamentelnes.mmp
+share/lmms/projects/cool_songs/StrictProduction-Underline.mmp
+share/lmms/projects/cool_songs/TobyDox-Confused.mmp
+share/lmms/projects/cool_songs/TobyDox-Psycho.mmp
+share/lmms/projects/cool_songs/TobyDox-TheFourthDimension.mmp
+share/lmms/projects/cool_songs/j1m-DingDong.mmp
+share/lmms/projects/demos/
+share/lmms/projects/demos/TobyDox-Crystallo.mmp
+share/lmms/projects/demos/Zvonsully-RaceTheZBeat.mmp
+share/lmms/projects/demos/beat_collection.mmp
+share/lmms/projects/demos/demo1.mmp
+share/lmms/projects/demos/demo2.mmp
+share/lmms/projects/demos/demo3.mmp
+share/lmms/projects/demos/demo4.mmp
+share/lmms/projects/demos/demo5.mmp
+share/lmms/projects/demos/demo6.mmp
+share/lmms/projects/demos/lb302quick.mmpz
+share/lmms/projects/demos/loop_collection.mmp
+share/lmms/projects/demos/newFangled.mmpz
+share/lmms/projects/demos/some_basslines.mmp
+share/lmms/projects/tutorials/
+share/lmms/projects/tutorials/editing_note_volumes.mmp
+share/lmms/samples/
+share/lmms/samples/basses/
+share/lmms/samples/basses/bass01.ogg
+share/lmms/samples/basses/bass_acid01.ogg
+share/lmms/samples/basses/bass_acid02.ogg
+share/lmms/samples/basses/bass_hard01.ogg
+share/lmms/samples/basses/bass_hard02.ogg
+share/lmms/samples/basses/bass_punch01.ogg
+share/lmms/samples/basses/horror_bass01.ogg
+share/lmms/samples/basses/matrix1000_pluck01.ogg
+share/lmms/samples/basses/rave_bass01.ogg
+share/lmms/samples/basses/rave_bass02.ogg
+share/lmms/samples/basses/rave_bass03.ogg
+share/lmms/samples/basses/rave_bass04.ogg
+share/lmms/samples/basses/synth_acid01.ogg
+share/lmms/samples/basses/synth_acid02.ogg
+share/lmms/samples/basses/techno_synth01.ogg
+share/lmms/samples/bassloopes/
+share/lmms/samples/bassloopes/briff01.ogg
+share/lmms/samples/bassloopes/rave_bass01.ogg
+share/lmms/samples/bassloopes/rave_bass02.ogg
+share/lmms/samples/bassloopes/tb303_01.ogg
+share/lmms/samples/bassloopes/techno_bass01.ogg
+share/lmms/samples/bassloopes/techno_bass02.ogg
+share/lmms/samples/bassloopes/techno_synth01.ogg
+share/lmms/samples/bassloopes/techno_synth02.ogg
+share/lmms/samples/bassloopes/techno_synth03.ogg
+share/lmms/samples/bassloopes/techno_synth04.ogg
+share/lmms/samples/beats/
+share/lmms/samples/beats/909beat01.ogg
+share/lmms/samples/beats/break01.ogg
+share/lmms/samples/beats/break02.ogg
+share/lmms/samples/beats/break03.ogg
+share/lmms/samples/beats/electro_beat01.ogg
+share/lmms/samples/beats/electro_beat02.ogg
+share/lmms/samples/beats/house_loop01.ogg
+share/lmms/samples/beats/jungle01.ogg
+share/lmms/samples/beats/rave_hihat01.ogg
+share/lmms/samples/beats/rave_hihat02.ogg
+share/lmms/samples/beats/rave_kick01.ogg
+share/lmms/samples/beats/rave_kick02.ogg
+share/lmms/samples/beats/rave_snare01.ogg
+share/lmms/samples/drums/
+share/lmms/samples/drums/bassdrum01.ogg
+share/lmms/samples/drums/bassdrum02.ogg
+share/lmms/samples/drums/bassdrum03.ogg
+share/lmms/samples/drums/bassdrum04.ogg
+share/lmms/samples/drums/bassdrum_acoustic01.ogg
+share/lmms/samples/drums/bassdrum_acoustic02.ogg
+share/lmms/samples/drums/clap01.ogg
+share/lmms/samples/drums/clap02.ogg
+share/lmms/samples/drums/clap03.ogg
+share/lmms/samples/drums/clap04.ogg
+share/lmms/samples/drums/clav01.ogg
+share/lmms/samples/drums/clav02.ogg
+share/lmms/samples/drums/crash01.ogg
+share/lmms/samples/drums/crash02.ogg
+share/lmms/samples/drums/hihat_closed01.ogg
+share/lmms/samples/drums/hihat_closed02.ogg
+share/lmms/samples/drums/hihat_closed03.ogg
+share/lmms/samples/drums/hihat_closed04.ogg
+share/lmms/samples/drums/hihat_closed05.ogg
+share/lmms/samples/drums/hihat_foot_pedal01.ogg
+share/lmms/samples/drums/hihat_opened01.ogg
+share/lmms/samples/drums/hihat_opened02.ogg
+share/lmms/samples/drums/hihat_opened03.ogg
+share/lmms/samples/drums/kick01.ogg
+share/lmms/samples/drums/kick02.ogg
+share/lmms/samples/drums/kick03.ogg
+share/lmms/samples/drums/kick04.ogg
+share/lmms/samples/drums/kick_distorted01.ogg
+share/lmms/samples/drums/kick_hard01.ogg
+share/lmms/samples/drums/kick_hardcore01.ogg
+share/lmms/samples/drums/kick_hiphop01.ogg
+share/lmms/samples/drums/kick_long01.ogg
+share/lmms/samples/drums/kick_soft01.ogg
+share/lmms/samples/drums/kick_soft02.ogg
+share/lmms/samples/drums/nasty_bass01.ogg
+share/lmms/samples/drums/nasty_rim01.ogg
+share/lmms/samples/drums/nasty_snare01.ogg
+share/lmms/samples/drums/ride01.ogg
+share/lmms/samples/drums/ride02.ogg
+share/lmms/samples/drums/rim01.ogg
+share/lmms/samples/drums/shaker01.ogg
+share/lmms/samples/drums/shaker02.ogg
+share/lmms/samples/drums/shaker03.ogg
+share/lmms/samples/drums/sidestick01.ogg
+share/lmms/samples/drums/snare01.ogg
+share/lmms/samples/drums/snare02.ogg
+share/lmms/samples/drums/snare03.ogg
+share/lmms/samples/drums/snare04.ogg
+share/lmms/samples/drums/snare05.ogg
+share/lmms/samples/drums/snare06.ogg
+share/lmms/samples/drums/snare07.ogg
+share/lmms/samples/drums/snare_acoustic01.ogg
+share/lmms/samples/drums/snare_electro01.ogg
+share/lmms/samples/drums/snare_harsh01.ogg
+share/lmms/samples/drums/snare_hiphop01.ogg
+share/lmms/samples/drums/snare_hiphop02.ogg
+share/lmms/samples/drums/snare_muffled01.ogg
+share/lmms/samples/drums/snare_muffled02.ogg
+share/lmms/samples/drums/snare_rim01.ogg
+share/lmms/samples/drums/snare_short01.ogg
+share/lmms/samples/drums/tom01.ogg
+share/lmms/samples/drums/tom02.ogg
+share/lmms/samples/drums/tom03.ogg
+share/lmms/samples/drums/tom04.ogg
+share/lmms/samples/drums/tom05.ogg
+share/lmms/samples/drums/tom_hi01.ogg
+share/lmms/samples/drums/tom_low01.ogg
+share/lmms/samples/drums/tom_mid01.ogg
+share/lmms/samples/drums/wood01.ogg
+share/lmms/samples/drums/zap01.ogg
+share/lmms/samples/drums/zap02.ogg
+share/lmms/samples/drums/zap03.ogg
+share/lmms/samples/drumsynth/
+share/lmms/samples/drumsynth/acoustic/
+share/lmms/samples/drumsynth/acoustic/Brush1.ds
+share/lmms/samples/drumsynth/acoustic/Brush2.ds
+share/lmms/samples/drumsynth/acoustic/JazzKick.ds
+share/lmms/samples/drumsynth/acoustic/JazzSnr.ds
+share/lmms/samples/drumsynth/acoustic/JazzSnr_H.ds
+share/lmms/samples/drumsynth/acoustic/K_Muffle.ds
+share/lmms/samples/drumsynth/acoustic/Kick.ds
+share/lmms/samples/drumsynth/acoustic/Plain_Kick.ds
+share/lmms/samples/drumsynth/acoustic/Ride.ds
+share/lmms/samples/drumsynth/acoustic/Ride2.ds
+share/lmms/samples/drumsynth/acoustic/Ride3.ds
+share/lmms/samples/drumsynth/acoustic/Snare.ds
+share/lmms/samples/drumsynth/cr78/
+share/lmms/samples/drumsynth/cr78/Bongo_h.ds
+share/lmms/samples/drumsynth/cr78/Bongo_l.ds
+share/lmms/samples/drumsynth/cr78/Clave.ds
+share/lmms/samples/drumsynth/cr78/Conga.ds
+share/lmms/samples/drumsynth/cr78/Cymbal.ds
+share/lmms/samples/drumsynth/cr78/Hihat.ds
+share/lmms/samples/drumsynth/cr78/Kick.ds
+share/lmms/samples/drumsynth/cr78/Maracas.ds
+share/lmms/samples/drumsynth/cr78/Rim.ds
+share/lmms/samples/drumsynth/cr78/Snare.ds
+share/lmms/samples/drumsynth/cr78/Tamb.ds
+share/lmms/samples/drumsynth/cr8000/
+share/lmms/samples/drumsynth/cr8000/Clap.ds
+share/lmms/samples/drumsynth/cr8000/Clave.ds
+share/lmms/samples/drumsynth/cr8000/Conga_l.ds
+share/lmms/samples/drumsynth/cr8000/Conga_m.ds
+share/lmms/samples/drumsynth/cr8000/Cowbell.ds
+share/lmms/samples/drumsynth/cr8000/Cymbal.ds
+share/lmms/samples/drumsynth/cr8000/Hat_c.ds
+share/lmms/samples/drumsynth/cr8000/Hat_o.ds
+share/lmms/samples/drumsynth/cr8000/Kick.ds
+share/lmms/samples/drumsynth/cr8000/Rim.ds
+share/lmms/samples/drumsynth/cr8000/Snare.ds
+share/lmms/samples/drumsynth/effects/
+share/lmms/samples/drumsynth/effects/Bubble.ds
+share/lmms/samples/drumsynth/effects/Cicada.ds
+share/lmms/samples/drumsynth/effects/Glass.ds
+share/lmms/samples/drumsynth/effects/Glass_rn.ds
+share/lmms/samples/drumsynth/effects/Gunshot.ds
+share/lmms/samples/drumsynth/effects/Hammer.ds
+share/lmms/samples/drumsynth/effects/Laser.ds
+share/lmms/samples/drumsynth/effects/Reverse.ds
+share/lmms/samples/drumsynth/effects/Ringing.ds
+share/lmms/samples/drumsynth/effects/Scissors.ds
+share/lmms/samples/drumsynth/effects/Sonar.ds
+share/lmms/samples/drumsynth/effects/dialing.ds
+share/lmms/samples/drumsynth/effects/hammer2.ds
+share/lmms/samples/drumsynth/effects/impulses.ds
+share/lmms/samples/drumsynth/effects/loop.ds
+share/lmms/samples/drumsynth/effects/thunder.ds
+share/lmms/samples/drumsynth/electro/
+share/lmms/samples/drumsynth/electro/Boom.ds
+share/lmms/samples/drumsynth/electro/H_closed.ds
+share/lmms/samples/drumsynth/electro/H_open.ds
+share/lmms/samples/drumsynth/electro/Hi-q.ds
+share/lmms/samples/drumsynth/electro/Hi-q_2.ds
+share/lmms/samples/drumsynth/electro/K_8bit.ds
+share/lmms/samples/drumsynth/electro/K_Linn.ds
+share/lmms/samples/drumsynth/electro/K_reverb.ds
+share/lmms/samples/drumsynth/electro/S_8bit.ds
+share/lmms/samples/drumsynth/electro/S_Linn.ds
+share/lmms/samples/drumsynth/electro/S_reverb.ds
+share/lmms/samples/drumsynth/electro/Syntom_1.ds
+share/lmms/samples/drumsynth/electro/Syntom_2.ds
+share/lmms/samples/drumsynth/electro/s_eq.ds
+share/lmms/samples/drumsynth/farfisa/
+share/lmms/samples/drumsynth/farfisa/Fisa_Bongo.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_Cym.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_Hat.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_K_H.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_K_K.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_Kick.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_S_B.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_Snare.ds
+share/lmms/samples/drumsynth/farfisa/Fisa_Tom.ds
+share/lmms/samples/drumsynth/ferraro/
+share/lmms/samples/drumsynth/ferraro/curb_meat_bass.ds
+share/lmms/samples/drumsynth/ferraro/eel_bass.ds
+share/lmms/samples/drumsynth/ferraro/feed_this.ds
+share/lmms/samples/drumsynth/ferraro/gerbil_snare.ds
+share/lmms/samples/drumsynth/ferraro/grumpy_buzzard.ds
+share/lmms/samples/drumsynth/ferraro/jaguar_hats.ds
+share/lmms/samples/drumsynth/ferraro/radio_hats.ds
+share/lmms/samples/drumsynth/ferraro/worm_bass.ds
+share/lmms/samples/drumsynth/instrument/
+share/lmms/samples/drumsynth/instrument/E_Piano.ds
+share/lmms/samples/drumsynth/instrument/FM_Bass.ds
+share/lmms/samples/drumsynth/instrument/Moog_bass.ds
+share/lmms/samples/drumsynth/instrument/Oboe.ds
+share/lmms/samples/drumsynth/instrument/Temple_Bell.ds
+share/lmms/samples/drumsynth/instrument/flute.ds
+share/lmms/samples/drumsynth/instrument/mute_bass.ds
+share/lmms/samples/drumsynth/instrument/pizzi.ds
+share/lmms/samples/drumsynth/instrument/soft_piano.ds
+share/lmms/samples/drumsynth/instrument/square_lead.ds
+share/lmms/samples/drumsynth/instrument/sweep.ds
+share/lmms/samples/drumsynth/instrument/techno_stab.ds
+share/lmms/samples/drumsynth/instrument/tinkle.ds
+share/lmms/samples/drumsynth/instrument/trumpet.ds
+share/lmms/samples/drumsynth/instrument/upright_bass.ds
+share/lmms/samples/drumsynth/instrument/violin.ds
+share/lmms/samples/drumsynth/instrument/whistler.ds
+share/lmms/samples/drumsynth/jorgensohn/
+share/lmms/samples/drumsynth/jorgensohn/hihatopclo.ds
+share/lmms/samples/drumsynth/jorgensohn/kick.ds
+share/lmms/samples/drumsynth/jorgensohn/ramacymlong.ds
+share/lmms/samples/drumsynth/jorgensohn/ramacymshort.ds
+share/lmms/samples/drumsynth/jorgensohn/ride6.ds
+share/lmms/samples/drumsynth/jorgensohn/snare5.ds
+share/lmms/samples/drumsynth/jorgensohn/vibra.ds
+share/lmms/samples/drumsynth/jorgensohn/wood.ds
+share/lmms/samples/drumsynth/jorgensohn/wood2.ds
+share/lmms/samples/drumsynth/jorgensohn/zurrr.ds
+share/lmms/samples/drumsynth/latin/
+share/lmms/samples/drumsynth/latin/Bongo_h.ds
+share/lmms/samples/drumsynth/latin/Bongo_m2.ds
+share/lmms/samples/drumsynth/latin/Bongo_mu.ds
+share/lmms/samples/drumsynth/latin/Clave_we.ds
+share/lmms/samples/drumsynth/latin/Gamelan.ds
+share/lmms/samples/drumsynth/latin/Maracas.ds
+share/lmms/samples/drumsynth/latin/Shaker_1.ds
+share/lmms/samples/drumsynth/latin/Shaker_2.ds
+share/lmms/samples/drumsynth/latin/Tamb_hit.ds
+share/lmms/samples/drumsynth/latin/Tamb_shk.ds
+share/lmms/samples/drumsynth/latin/ThumbPno.ds
+share/lmms/samples/drumsynth/latin/Triangle.ds
+share/lmms/samples/drumsynth/latin/bongo_l.ds
+share/lmms/samples/drumsynth/latin/guiro.ds
+share/lmms/samples/drumsynth/latin/one_clap.ds
+share/lmms/samples/drumsynth/latin/taiko.ds
+share/lmms/samples/drumsynth/linn/
+share/lmms/samples/drumsynth/linn/linn_cab.ds
+share/lmms/samples/drumsynth/linn/linn_cga1.ds
+share/lmms/samples/drumsynth/linn/linn_cga2.ds
+share/lmms/samples/drumsynth/linn/linn_cga3.ds
+share/lmms/samples/drumsynth/linn/linn_cgam.ds
+share/lmms/samples/drumsynth/linn/linn_clp.ds
+share/lmms/samples/drumsynth/linn/linn_cow.ds
+share/lmms/samples/drumsynth/linn/linn_kik.ds
+share/lmms/samples/drumsynth/linn/linn_snr.ds
+share/lmms/samples/drumsynth/linn/linn_stk.ds
+share/lmms/samples/drumsynth/linn/linn_tamb.ds
+share/lmms/samples/drumsynth/linn/linn_tom1.ds
+share/lmms/samples/drumsynth/linn/linn_tom2.ds
+share/lmms/samples/drumsynth/linn/linn_tom3.ds
+share/lmms/samples/drumsynth/linn/linn_tom4.ds
+share/lmms/samples/drumsynth/linn/linn_tom5.ds
+share/lmms/samples/drumsynth/magnetboy/
+share/lmms/samples/drumsynth/magnetboy/Eye_Eye.ds
+share/lmms/samples/drumsynth/magnetboy/Fp1.ds
+share/lmms/samples/drumsynth/magnetboy/Mist1.ds
+share/lmms/samples/drumsynth/magnetboy/Mist2.ds
+share/lmms/samples/drumsynth/magnetboy/Randion1.ds
+share/lmms/samples/drumsynth/magnetboy/Squelb.ds
+share/lmms/samples/drumsynth/magnetboy/Throaties1.ds
+share/lmms/samples/drumsynth/magnetboy/Tone1.ds
+share/lmms/samples/drumsynth/magnetboy/Tone10.ds
+share/lmms/samples/drumsynth/magnetboy/Tone11.ds
+share/lmms/samples/drumsynth/magnetboy/Tone12.ds
+share/lmms/samples/drumsynth/magnetboy/Tone14.ds
+share/lmms/samples/drumsynth/magnetboy/Tone15.ds
+share/lmms/samples/drumsynth/magnetboy/Tone16.ds
+share/lmms/samples/drumsynth/magnetboy/Tone17.ds
+share/lmms/samples/drumsynth/magnetboy/Tone18.ds
+share/lmms/samples/drumsynth/magnetboy/Tone19.ds
+share/lmms/samples/drumsynth/magnetboy/Tone2.ds
+share/lmms/samples/drumsynth/magnetboy/Tone20.ds
+share/lmms/samples/drumsynth/magnetboy/Tone3.ds
+share/lmms/samples/drumsynth/magnetboy/Tone4.ds
+share/lmms/samples/drumsynth/magnetboy/Tone5.ds
+share/lmms/samples/drumsynth/magnetboy/Tone6.ds
+share/lmms/samples/drumsynth/magnetboy/Tone7.ds
+share/lmms/samples/drumsynth/magnetboy/Tone8.ds
+share/lmms/samples/drumsynth/magnetboy/Tone9.ds
+share/lmms/samples/drumsynth/magnetboy/Tone_float1.ds
+share/lmms/samples/drumsynth/misc/
+share/lmms/samples/drumsynth/misc/'lectro_hammer.ds
+share/lmms/samples/drumsynth/misc/'lectro_square_hammer.ds
+share/lmms/samples/drumsynth/misc/12-bit_heavy_hitter.ds
+share/lmms/samples/drumsynth/misc/909_hard_snare.ds
+share/lmms/samples/drumsynth/misc/AAH.ds
+share/lmms/samples/drumsynth/misc/B1_B2.ds
+share/lmms/samples/drumsynth/misc/Clap.ds
+share/lmms/samples/drumsynth/misc/Distant_Thunder.ds
+share/lmms/samples/drumsynth/misc/N_low.ds
+share/lmms/samples/drumsynth/misc/N_vlow.ds
+share/lmms/samples/drumsynth/misc/RimShot.ds
+share/lmms/samples/drumsynth/misc/Saber_fight.ds
+share/lmms/samples/drumsynth/misc/Simple-c.ds
+share/lmms/samples/drumsynth/misc/Simple-r.ds
+share/lmms/samples/drumsynth/misc/Simple-s.ds
+share/lmms/samples/drumsynth/misc/Tone_dis.ds
+share/lmms/samples/drumsynth/misc/Tone_sw2.ds
+share/lmms/samples/drumsynth/misc/Tone_swp.ds
+share/lmms/samples/drumsynth/misc/airbrush_bd.ds
+share/lmms/samples/drumsynth/misc/ambient_noise_snare.ds
+share/lmms/samples/drumsynth/misc/amen_bd.ds
+share/lmms/samples/drumsynth/misc/amen_sn_1.ds
+share/lmms/samples/drumsynth/misc/and_loud_sn.ds
+share/lmms/samples/drumsynth/misc/another_909_moment.ds
+share/lmms/samples/drumsynth/misc/another_example_snare.ds
+share/lmms/samples/drumsynth/misc/application_bass_drum.ds
+share/lmms/samples/drumsynth/misc/b1_0.ds
+share/lmms/samples/drumsynth/misc/b1_2.ds
+share/lmms/samples/drumsynth/misc/b1_5.ds
+share/lmms/samples/drumsynth/misc/b1_9.ds
+share/lmms/samples/drumsynth/misc/basic_808_click_hum.ds
+share/lmms/samples/drumsynth/misc/battle_hook_sn.ds
+share/lmms/samples/drumsynth/misc/bauble_bd.ds
+share/lmms/samples/drumsynth/misc/beat_box_bd.ds
+share/lmms/samples/drumsynth/misc/beefy_wack.ds
+share/lmms/samples/drumsynth/misc/big_80's.ds
+share/lmms/samples/drumsynth/misc/big_80's_2.ds
+share/lmms/samples/drumsynth/misc/big_sleeper_snare.ds
+share/lmms/samples/drumsynth/misc/blended_snare.ds
+share/lmms/samples/drumsynth/misc/bouncy809bd.ds
+share/lmms/samples/drumsynth/misc/break_kick.ds
+share/lmms/samples/drumsynth/misc/breathing_snare.ds
+share/lmms/samples/drumsynth/misc/bright_house_sn.ds
+share/lmms/samples/drumsynth/misc/buff_hit.ds
+share/lmms/samples/drumsynth/misc/buff_sound.ds
+share/lmms/samples/drumsynth/misc/bug_into_water.ds
+share/lmms/samples/drumsynth/misc/bulge_n_yr_woofer.ds
+share/lmms/samples/drumsynth/misc/bumpin_quickie.ds
+share/lmms/samples/drumsynth/misc/calamity_snare.ds
+share/lmms/samples/drumsynth/misc/change_the_channel_snare.ds
+share/lmms/samples/drumsynth/misc/chow_bd.ds
+share/lmms/samples/drumsynth/misc/clappy_snare.ds
+share/lmms/samples/drumsynth/misc/clean_low_key_kick.ds
+share/lmms/samples/drumsynth/misc/clean_soft_808.ds
+share/lmms/samples/drumsynth/misc/clearly_snare.ds
+share/lmms/samples/drumsynth/misc/close_mic_sn.ds
+share/lmms/samples/drumsynth/misc/compression_does_it_808.ds
+share/lmms/samples/drumsynth/misc/crusty_bump.ds
+share/lmms/samples/drumsynth/misc/crusty_snare.ds
+share/lmms/samples/drumsynth/misc/cymbal.ds
+share/lmms/samples/drumsynth/misc/decompression_snare.ds
+share/lmms/samples/drumsynth/misc/deep_bauble_bd.ds
+share/lmms/samples/drumsynth/misc/deep_tones.ds
+share/lmms/samples/drumsynth/misc/difference_snare.ds
+share/lmms/samples/drumsynth/misc/different_909_snare.ds
+share/lmms/samples/drumsynth/misc/dirty_world_bd.ds
+share/lmms/samples/drumsynth/misc/dist_sub_kick.ds
+share/lmms/samples/drumsynth/misc/dist_sub_kick_2.ds
+share/lmms/samples/drumsynth/misc/electro_dnb_kick.ds
+share/lmms/samples/drumsynth/misc/electro_snare_layer.ds
+share/lmms/samples/drumsynth/misc/electronic_rim.ds
+share/lmms/samples/drumsynth/misc/end_transmission.ds
+share/lmms/samples/drumsynth/misc/every_909.ds
+share/lmms/samples/drumsynth/misc/fatness.ds
+share/lmms/samples/drumsynth/misc/fattie_bd.ds
+share/lmms/samples/drumsynth/misc/feel_me!.ds
+share/lmms/samples/drumsynth/misc/few_people_will_use_this_snare.ds
+share/lmms/samples/drumsynth/misc/flat_tire.ds
+share/lmms/samples/drumsynth/misc/fm.ds
+share/lmms/samples/drumsynth/misc/fried_food.ds
+share/lmms/samples/drumsynth/misc/funky_trashcan_snare.ds
+share/lmms/samples/drumsynth/misc/fuzzy_sn.ds
+share/lmms/samples/drumsynth/misc/gabbakick.ds
+share/lmms/samples/drumsynth/misc/gimme_a_hard_tone.ds
+share/lmms/samples/drumsynth/misc/gimmie_a_tone.ds
+share/lmms/samples/drumsynth/misc/hard_electro_brush_sn.ds
+share/lmms/samples/drumsynth/misc/hard_electronic_snare.ds
+share/lmms/samples/drumsynth/misc/hard_hittin.ds
+share/lmms/samples/drumsynth/misc/hardcore_a_bd.ds
+share/lmms/samples/drumsynth/misc/hardcore_bd.ds
+share/lmms/samples/drumsynth/misc/hardersnare.ds
+share/lmms/samples/drumsynth/misc/heady_mix_sn.ds
+share/lmms/samples/drumsynth/misc/heavy.ds
+share/lmms/samples/drumsynth/misc/hed_chunk_snare.ds
+share/lmms/samples/drumsynth/misc/hi-pass.ds
+share/lmms/samples/drumsynth/misc/hi_pic.ds
+share/lmms/samples/drumsynth/misc/hip-hop_fantasy_kick.ds
+share/lmms/samples/drumsynth/misc/hipster_joint_bd.ds
+share/lmms/samples/drumsynth/misc/hit_me_wooden_snare.ds
+share/lmms/samples/drumsynth/misc/hitthosesubs.ds
+share/lmms/samples/drumsynth/misc/hot_morning_bass_drum.ds
+share/lmms/samples/drumsynth/misc/hot_snare.ds
+share/lmms/samples/drumsynth/misc/i_luv_u_fat_noise.ds
+share/lmms/samples/drumsynth/misc/invisible_909_kick.ds
+share/lmms/samples/drumsynth/misc/it's_like_that_snare.ds
+share/lmms/samples/drumsynth/misc/just_the_bass_drum.ds
+share/lmms/samples/drumsynth/misc/kneel_and_buzz.ds
+share/lmms/samples/drumsynth/misc/large_hall_bd.ds
+share/lmms/samples/drumsynth/misc/laughter_and_jellybeans_snare.ds
+share/lmms/samples/drumsynth/misc/light_snare.ds
+share/lmms/samples/drumsynth/misc/lo-fi_bass_drum.ds
+share/lmms/samples/drumsynth/misc/lo-fi_march.ds
+share/lmms/samples/drumsynth/misc/lo-fi_rim.ds
+share/lmms/samples/drumsynth/misc/loudness_sn.ds
+share/lmms/samples/drumsynth/misc/lovely_clean_bd.ds
+share/lmms/samples/drumsynth/misc/lower_electro_bd.ds
+share/lmms/samples/drumsynth/misc/mack_bd.ds
+share/lmms/samples/drumsynth/misc/manipulate_bd.ds
+share/lmms/samples/drumsynth/misc/many_frequencies.ds
+share/lmms/samples/drumsynth/misc/mello_bd.ds
+share/lmms/samples/drumsynth/misc/mind_ya_heds.ds
+share/lmms/samples/drumsynth/misc/missing_snare.ds
+share/lmms/samples/drumsynth/misc/missing_snare_2.ds
+share/lmms/samples/drumsynth/misc/more_basic_bd.ds
+share/lmms/samples/drumsynth/misc/more_snap.ds
+share/lmms/samples/drumsynth/misc/muted_snare.ds
+share/lmms/samples/drumsynth/misc/n_hi.ds
+share/lmms/samples/drumsynth/misc/n_mid.ds
+share/lmms/samples/drumsynth/misc/neo808.ds
+share/lmms/samples/drumsynth/misc/neo808_2.ds
+share/lmms/samples/drumsynth/misc/noise.ds
+share/lmms/samples/drumsynth/misc/noise_calling_kick.ds
+share/lmms/samples/drumsynth/misc/noise_clip.ds
+share/lmms/samples/drumsynth/misc/nosie_calling_kick_2.ds
+share/lmms/samples/drumsynth/misc/odd_snare.ds
+share/lmms/samples/drumsynth/misc/original_tone_snare.ds
+share/lmms/samples/drumsynth/misc/ot_12.ds
+share/lmms/samples/drumsynth/misc/ot_34.ds
+share/lmms/samples/drumsynth/misc/ot_sine.ds
+share/lmms/samples/drumsynth/misc/overdriver_kick.ds
+share/lmms/samples/drumsynth/misc/pleasure_factory_kick.ds
+share/lmms/samples/drumsynth/misc/pop_1_off_snare.ds
+share/lmms/samples/drumsynth/misc/power_out.ds
+share/lmms/samples/drumsynth/misc/psychoacoutic_bd.ds
+share/lmms/samples/drumsynth/misc/punchy_clean_kick.ds
+share/lmms/samples/drumsynth/misc/puppy_kick.ds
+share/lmms/samples/drumsynth/misc/q'ey_bass_drum.ds
+share/lmms/samples/drumsynth/misc/q_kick_2.ds
+share/lmms/samples/drumsynth/misc/questoin_kick.ds
+share/lmms/samples/drumsynth/misc/r+b_fantasy_kick.ds
+share/lmms/samples/drumsynth/misc/reverb_please_snare.ds
+share/lmms/samples/drumsynth/misc/rimmy_noise.ds
+share/lmms/samples/drumsynth/misc/rimshot_1.ds
+share/lmms/samples/drumsynth/misc/rimshot_2.ds
+share/lmms/samples/drumsynth/misc/ring_fray_kick.ds
+share/lmms/samples/drumsynth/misc/ring_mod_drone_bd.ds
+share/lmms/samples/drumsynth/misc/rm.ds
+share/lmms/samples/drumsynth/misc/rubber_'82.ds
+share/lmms/samples/drumsynth/misc/rubbery_deep_house_kick.ds
+share/lmms/samples/drumsynth/misc/serious_bd.ds
+share/lmms/samples/drumsynth/misc/short_909.ds
+share/lmms/samples/drumsynth/misc/simon's_snare.ds
+share/lmms/samples/drumsynth/misc/simple-h.ds
+share/lmms/samples/drumsynth/misc/simple-k.ds
+share/lmms/samples/drumsynth/misc/simple_click_bd.ds
+share/lmms/samples/drumsynth/misc/skiwlz_snare.ds
+share/lmms/samples/drumsynth/misc/slepper_n_the_wilderness.ds
+share/lmms/samples/drumsynth/misc/sloppy_electric.ds
+share/lmms/samples/drumsynth/misc/smooth_rim.ds
+share/lmms/samples/drumsynth/misc/snappy_809.ds
+share/lmms/samples/drumsynth/misc/softsnare.ds
+share/lmms/samples/drumsynth/misc/sounding_kick.ds
+share/lmms/samples/drumsynth/misc/sounds_like_a_low_tom.ds
+share/lmms/samples/drumsynth/misc/special_man_bass_drum.ds
+share/lmms/samples/drumsynth/misc/splatter.ds
+share/lmms/samples/drumsynth/misc/sticky_q_kick.ds
+share/lmms/samples/drumsynth/misc/stiffy_snare.ds
+share/lmms/samples/drumsynth/misc/sweet_tight_snare.ds
+share/lmms/samples/drumsynth/misc/tchak_snare.ds
+share/lmms/samples/drumsynth/misc/terror_n_yr_hood_snare.ds
+share/lmms/samples/drumsynth/misc/test.ds
+share/lmms/samples/drumsynth/misc/think_bd.ds
+share/lmms/samples/drumsynth/misc/think_sn_1.ds
+share/lmms/samples/drumsynth/misc/think_sn_2.ds
+share/lmms/samples/drumsynth/misc/this_snare_spells_electronic.ds
+share/lmms/samples/drumsynth/misc/tomita_clip.ds
+share/lmms/samples/drumsynth/misc/tone.ds
+share/lmms/samples/drumsynth/misc/tone_deg.ds
+share/lmms/samples/drumsynth/misc/tone_snare.ds
+share/lmms/samples/drumsynth/misc/transient_snare.ds
+share/lmms/samples/drumsynth/misc/trashyovertones.ds
+share/lmms/samples/drumsynth/misc/type_snare.ds
+share/lmms/samples/drumsynth/misc/ultra_electro_bd.ds
+share/lmms/samples/drumsynth/misc/usgae_bd.ds
+share/lmms/samples/drumsynth/misc/verby_soundin_808.ds
+share/lmms/samples/drumsynth/misc/very_basic_snare.ds
+share/lmms/samples/drumsynth/misc/verylong.ds
+share/lmms/samples/drumsynth/misc/warm_deep_house_kick.ds
+share/lmms/samples/drumsynth/misc/warm_digi_808_click.ds
+share/lmms/samples/drumsynth/misc/whoa_bd.ds
+share/lmms/samples/drumsynth/misc/wobble_wobble.ds
+share/lmms/samples/drumsynth/misc/wobbly_thumb_bd.ds
+share/lmms/samples/drumsynth/misc/yet_another_electric_bass_drum.ds
+share/lmms/samples/drumsynth/misc/yr_808_hummer.ds
+share/lmms/samples/drumsynth/misc/zoom#4.ds
+share/lmms/samples/drumsynth/misc_bass/
+share/lmms/samples/drumsynth/misc_bass/a_day_in_the_noise.ds
+share/lmms/samples/drumsynth/misc_bass/bumble_bass.ds
+share/lmms/samples/drumsynth/misc_bass/depth_bass_drum.ds
+share/lmms/samples/drumsynth/misc_bass/dirty_a.ds
+share/lmms/samples/drumsynth/misc_bass/filter_idea_bd.ds
+share/lmms/samples/drumsynth/misc_bass/jarre_bass_drum.ds
+share/lmms/samples/drumsynth/misc_bass/jungle_laser.ds
+share/lmms/samples/drumsynth/misc_bass/low_end_hum.ds
+share/lmms/samples/drumsynth/misc_bass/melodictone.ds
+share/lmms/samples/drumsynth/misc_bass/metal_bass.ds
+share/lmms/samples/drumsynth/misc_bass/more_bass.ds
+share/lmms/samples/drumsynth/misc_bass/more_bass_2.ds
+share/lmms/samples/drumsynth/misc_bass/rubber.ds
+share/lmms/samples/drumsynth/misc_bass/smooth_bass.ds
+share/lmms/samples/drumsynth/misc_bass/solid.ds
+share/lmms/samples/drumsynth/misc_bass/synthbass.ds
+share/lmms/samples/drumsynth/misc_bass/the_funk.ds
+share/lmms/samples/drumsynth/misc_bass/warm_bass.ds
+share/lmms/samples/drumsynth/misc_claps/
+share/lmms/samples/drumsynth/misc_claps/big_beat_clap.ds
+share/lmms/samples/drumsynth/misc_claps/bright_clap.ds
+share/lmms/samples/drumsynth/misc_claps/clap.ds
+share/lmms/samples/drumsynth/misc_claps/clap2.ds
+share/lmms/samples/drumsynth/misc_claps/clap_layer.ds
+share/lmms/samples/drumsynth/misc_claps/classic_clap.ds
+share/lmms/samples/drumsynth/misc_claps/electro_clap.ds
+share/lmms/samples/drumsynth/misc_claps/filter_clappy.ds
+share/lmms/samples/drumsynth/misc_claps/pitch_clap.ds
+share/lmms/samples/drumsynth/misc_claps/pitch_clap_2.ds
+share/lmms/samples/drumsynth/misc_claps/shutter_clap.ds
+share/lmms/samples/drumsynth/misc_claps/u_don't_kno.ds
+share/lmms/samples/drumsynth/misc_electro/
+share/lmms/samples/drumsynth/misc_electro/'lectro_spliff.ds
+share/lmms/samples/drumsynth/misc_electro/a_round_thing.ds
+share/lmms/samples/drumsynth/misc_electro/applied_engineering.ds
+share/lmms/samples/drumsynth/misc_electro/atmosphere_of_space.ds
+share/lmms/samples/drumsynth/misc_electro/bottle_bill_fx.ds
+share/lmms/samples/drumsynth/misc_electro/casio_poppin.ds
+share/lmms/samples/drumsynth/misc_electro/category.ds
+share/lmms/samples/drumsynth/misc_electro/cheap_fx.ds
+share/lmms/samples/drumsynth/misc_electro/chrip_q.ds
+share/lmms/samples/drumsynth/misc_electro/clean_rock_bd.ds
+share/lmms/samples/drumsynth/misc_electro/cold_shot.ds
+share/lmms/samples/drumsynth/misc_electro/confusion.ds
+share/lmms/samples/drumsynth/misc_electro/cymbal_madness.ds
+share/lmms/samples/drumsynth/misc_electro/depth_fx.ds
+share/lmms/samples/drumsynth/misc_electro/dialed.ds
+share/lmms/samples/drumsynth/misc_electro/doom_bump.ds
+share/lmms/samples/drumsynth/misc_electro/electric_triangle.ds
+share/lmms/samples/drumsynth/misc_electro/electro_perc_long.ds
+share/lmms/samples/drumsynth/misc_electro/electro_perc_short.ds
+share/lmms/samples/drumsynth/misc_electro/electro_rim.ds
+share/lmms/samples/drumsynth/misc_electro/electro_rim_2.ds
+share/lmms/samples/drumsynth/misc_electro/electro_rim_3.ds
+share/lmms/samples/drumsynth/misc_electro/electro_squeek.ds
+share/lmms/samples/drumsynth/misc_electro/fuzzy_q_bd.ds
+share/lmms/samples/drumsynth/misc_electro/g_question.ds
+share/lmms/samples/drumsynth/misc_electro/general_obscurity.ds
+share/lmms/samples/drumsynth/misc_electro/hard_bork.ds
+share/lmms/samples/drumsynth/misc_electro/hello_q.ds
+share/lmms/samples/drumsynth/misc_electro/just_the_tweet.ds
+share/lmms/samples/drumsynth/misc_electro/lo-fi_house_c.ds
+share/lmms/samples/drumsynth/misc_electro/lo-fi_metal.ds
+share/lmms/samples/drumsynth/misc_electro/lo-finess.ds
+share/lmms/samples/drumsynth/misc_electro/long_q_1.ds
+share/lmms/samples/drumsynth/misc_electro/long_q_2.ds
+share/lmms/samples/drumsynth/misc_electro/long_q_3.ds
+share/lmms/samples/drumsynth/misc_electro/long_quack.ds
+share/lmms/samples/drumsynth/misc_electro/low_bit_tom.ds
+share/lmms/samples/drumsynth/misc_electro/metal_noise_shot.ds
+share/lmms/samples/drumsynth/misc_electro/open_reso.ds
+share/lmms/samples/drumsynth/misc_electro/paging_the_jetsons.ds
+share/lmms/samples/drumsynth/misc_electro/pan.ds
+share/lmms/samples/drumsynth/misc_electro/pleasant_combo.ds
+share/lmms/samples/drumsynth/misc_electro/q-ziq_for_the_masses.ds
+share/lmms/samples/drumsynth/misc_electro/rich_bd.ds
+share/lmms/samples/drumsynth/misc_electro/ring.ds
+share/lmms/samples/drumsynth/misc_electro/ringing_sn.ds
+share/lmms/samples/drumsynth/misc_electro/rockin_electro_bass_drum.ds
+share/lmms/samples/drumsynth/misc_electro/shocking_kiss.ds
+share/lmms/samples/drumsynth/misc_electro/siren_sing.ds
+share/lmms/samples/drumsynth/misc_electro/slide_tom.ds
+share/lmms/samples/drumsynth/misc_electro/space_dynamic.ds
+share/lmms/samples/drumsynth/misc_electro/spaceness.ds
+share/lmms/samples/drumsynth/misc_electro/startling_one.ds
+share/lmms/samples/drumsynth/misc_electro/tone_percussion.ds
+share/lmms/samples/drumsynth/misc_electro/tweet.ds
+share/lmms/samples/drumsynth/misc_electro/wee_dog.ds
+share/lmms/samples/drumsynth/misc_electro/what_to_do_at_220.ds
+share/lmms/samples/drumsynth/misc_electro/who_hears_all_sound.ds
+share/lmms/samples/drumsynth/misc_electro/why_hit.ds
+share/lmms/samples/drumsynth/misc_electro/yr_tv_will_be_next.ds
+share/lmms/samples/drumsynth/misc_electro/zappy_bells.ds
+share/lmms/samples/drumsynth/misc_fx/
+share/lmms/samples/drumsynth/misc_fx/2-bit_zone_drone.ds
+share/lmms/samples/drumsynth/misc_fx/2_bit_click.ds
+share/lmms/samples/drumsynth/misc_fx/a_blast.ds
+share/lmms/samples/drumsynth/misc_fx/across_the_universe.ds
+share/lmms/samples/drumsynth/misc_fx/alarm_3.ds
+share/lmms/samples/drumsynth/misc_fx/alarming_buzz.ds
+share/lmms/samples/drumsynth/misc_fx/alarming_buzz_2.ds
+share/lmms/samples/drumsynth/misc_fx/alien_curiousity.ds
+share/lmms/samples/drumsynth/misc_fx/ambient_backgroud.ds
+share/lmms/samples/drumsynth/misc_fx/click.ds
+share/lmms/samples/drumsynth/misc_fx/coo.ds
+share/lmms/samples/drumsynth/misc_fx/detonate.ds
+share/lmms/samples/drumsynth/misc_fx/dirty_transform.ds
+share/lmms/samples/drumsynth/misc_fx/dirty_transform_2.ds
+share/lmms/samples/drumsynth/misc_fx/distorion_oscilator.ds
+share/lmms/samples/drumsynth/misc_fx/electric_intro_to_a.ds
+share/lmms/samples/drumsynth/misc_fx/electric_waves_out_my_window.ds
+share/lmms/samples/drumsynth/misc_fx/elekperc1.ds
+share/lmms/samples/drumsynth/misc_fx/elekperc2.ds
+share/lmms/samples/drumsynth/misc_fx/end_of_broadcast_day.ds
+share/lmms/samples/drumsynth/misc_fx/entre.ds
+share/lmms/samples/drumsynth/misc_fx/experiment_1.ds
+share/lmms/samples/drumsynth/misc_fx/experiment_2_-_turn_off_the_tv.ds
+share/lmms/samples/drumsynth/misc_fx/experiment_3_-_the_transform.ds
+share/lmms/samples/drumsynth/misc_fx/experiment_4_-_clean.ds
+share/lmms/samples/drumsynth/misc_fx/f#m7_space_signal.ds
+share/lmms/samples/drumsynth/misc_fx/feedback.ds
+share/lmms/samples/drumsynth/misc_fx/flashy_wind.ds
+share/lmms/samples/drumsynth/misc_fx/flipper.ds
+share/lmms/samples/drumsynth/misc_fx/formant_techno.ds
+share/lmms/samples/drumsynth/misc_fx/frequency_revolution.ds
+share/lmms/samples/drumsynth/misc_fx/fried_food_for_dinner.ds
+share/lmms/samples/drumsynth/misc_fx/funky_stab.ds
+share/lmms/samples/drumsynth/misc_fx/future.ds
+share/lmms/samples/drumsynth/misc_fx/gmaj_lo-fi_chord.ds
+share/lmms/samples/drumsynth/misc_fx/gmaj_lo-fi_chord_2.ds
+share/lmms/samples/drumsynth/misc_fx/halt_variety.ds
+share/lmms/samples/drumsynth/misc_fx/hip-hop_stop.ds
+share/lmms/samples/drumsynth/misc_fx/hip-hop_stop_2.ds
+share/lmms/samples/drumsynth/misc_fx/hollow.ds
+share/lmms/samples/drumsynth/misc_fx/howdy_oil_barrel.ds
+share/lmms/samples/drumsynth/misc_fx/jaggies.ds
+share/lmms/samples/drumsynth/misc_fx/laser_gun_&_ricochet.ds
+share/lmms/samples/drumsynth/misc_fx/machine_drone.ds
+share/lmms/samples/drumsynth/misc_fx/metal_twist.ds
+share/lmms/samples/drumsynth/misc_fx/modular.ds
+share/lmms/samples/drumsynth/misc_fx/modular_fm_counterpoint.ds
+share/lmms/samples/drumsynth/misc_fx/multi-ping.ds
+share/lmms/samples/drumsynth/misc_fx/my_atari_memory.ds
+share/lmms/samples/drumsynth/misc_fx/new_sweep.ds
+share/lmms/samples/drumsynth/misc_fx/noise_filtering.ds
+share/lmms/samples/drumsynth/misc_fx/not_trying_too_hard.ds
+share/lmms/samples/drumsynth/misc_fx/numb.ds
+share/lmms/samples/drumsynth/misc_fx/obligatory_ufo_liftoff.ds
+share/lmms/samples/drumsynth/misc_fx/obligatory_ufo_liftoff_2.ds
+share/lmms/samples/drumsynth/misc_fx/oom_paa.ds
+share/lmms/samples/drumsynth/misc_fx/oom_pulse.ds
+share/lmms/samples/drumsynth/misc_fx/owwww.ds
+share/lmms/samples/drumsynth/misc_fx/playing_in_water.ds
+share/lmms/samples/drumsynth/misc_fx/plot_thickens_2.ds
+share/lmms/samples/drumsynth/misc_fx/punch_flange.ds
+share/lmms/samples/drumsynth/misc_fx/punch_flange_2.ds
+share/lmms/samples/drumsynth/misc_fx/q_zone_drone.ds
+share/lmms/samples/drumsynth/misc_fx/recption.ds
+share/lmms/samples/drumsynth/misc_fx/sci-fi.ds
+share/lmms/samples/drumsynth/misc_fx/sci-fi_door_open.ds
+share/lmms/samples/drumsynth/misc_fx/sickly_wineglass.ds
+share/lmms/samples/drumsynth/misc_fx/sign_off.ds
+share/lmms/samples/drumsynth/misc_fx/slow_moving_traffic.ds
+share/lmms/samples/drumsynth/misc_fx/synthetic_dive.ds
+share/lmms/samples/drumsynth/misc_fx/synthetic_dive_crust.ds
+share/lmms/samples/drumsynth/misc_fx/teeth.ds
+share/lmms/samples/drumsynth/misc_fx/the_plot_thickens.ds
+share/lmms/samples/drumsynth/misc_fx/the_tweek.ds
+share/lmms/samples/drumsynth/misc_fx/transportive.ds
+share/lmms/samples/drumsynth/misc_fx/ufo_buzz.ds
+share/lmms/samples/drumsynth/misc_fx/ufo_buzz_2.ds
+share/lmms/samples/drumsynth/misc_fx/what_time_is_it.ds
+share/lmms/samples/drumsynth/misc_fx/wipeout.ds
+share/lmms/samples/drumsynth/misc_fx/wooo.ds
+share/lmms/samples/drumsynth/misc_fx/yeah_hit.ds
+share/lmms/samples/drumsynth/misc_fx/yeah_hit_dry.ds
+share/lmms/samples/drumsynth/misc_fx/zipper.ds
+share/lmms/samples/drumsynth/misc_hats/
+share/lmms/samples/drumsynth/misc_hats/amen_ride.ds
+share/lmms/samples/drumsynth/misc_hats/band_pass_cymbal.ds
+share/lmms/samples/drumsynth/misc_hats/basic_hh.ds
+share/lmms/samples/drumsynth/misc_hats/bright_808_hat.ds
+share/lmms/samples/drumsynth/misc_hats/bright_808_hat_2.ds
+share/lmms/samples/drumsynth/misc_hats/bright_808_hat_3.ds
+share/lmms/samples/drumsynth/misc_hats/bring_me_out.ds
+share/lmms/samples/drumsynth/misc_hats/clicky_hat.ds
+share/lmms/samples/drumsynth/misc_hats/close_ride.ds
+share/lmms/samples/drumsynth/misc_hats/default_hi-hat.ds
+share/lmms/samples/drumsynth/misc_hats/drama_hat.ds
+share/lmms/samples/drumsynth/misc_hats/drama_hat_2.ds
+share/lmms/samples/drumsynth/misc_hats/dusty_simple_hh.ds
+share/lmms/samples/drumsynth/misc_hats/dusty_simple_oh.ds
+share/lmms/samples/drumsynth/misc_hats/electro_hh.ds
+share/lmms/samples/drumsynth/misc_hats/electrometallic_hat.ds
+share/lmms/samples/drumsynth/misc_hats/errie_ride.ds
+share/lmms/samples/drumsynth/misc_hats/fedora_hat.ds
+share/lmms/samples/drumsynth/misc_hats/feelin'_high_hat_1.ds
+share/lmms/samples/drumsynth/misc_hats/feelin'_high_hat_2.ds
+share/lmms/samples/drumsynth/misc_hats/feelin'_high_hat_3.ds
+share/lmms/samples/drumsynth/misc_hats/feelin'_open_high_hat.ds
+share/lmms/samples/drumsynth/misc_hats/flat_cymbal.ds
+share/lmms/samples/drumsynth/misc_hats/get_out.ds
+share/lmms/samples/drumsynth/misc_hats/hardhat.ds
+share/lmms/samples/drumsynth/misc_hats/hardhat_2.ds
+share/lmms/samples/drumsynth/misc_hats/hardly_hh.ds
+share/lmms/samples/drumsynth/misc_hats/heavy_electrihat.ds
+share/lmms/samples/drumsynth/misc_hats/hh.ds
+share/lmms/samples/drumsynth/misc_hats/hip_overtone_hat.ds
+share/lmms/samples/drumsynth/misc_hats/large_open_hh.ds
+share/lmms/samples/drumsynth/misc_hats/lighthat.ds
+share/lmms/samples/drumsynth/misc_hats/little_hat.ds
+share/lmms/samples/drumsynth/misc_hats/live_hat.ds
+share/lmms/samples/drumsynth/misc_hats/live_sound_hh.ds
+share/lmms/samples/drumsynth/misc_hats/live_sound_oh.ds
+share/lmms/samples/drumsynth/misc_hats/loaded_hat.ds
+share/lmms/samples/drumsynth/misc_hats/loaded_open_hat.ds
+share/lmms/samples/drumsynth/misc_hats/oh_so_high_hat.ds
+share/lmms/samples/drumsynth/misc_hats/oil_hat.ds
+share/lmms/samples/drumsynth/misc_hats/pedal_hh.ds
+share/lmms/samples/drumsynth/misc_hats/q_ride.ds
+share/lmms/samples/drumsynth/misc_hats/q_ride_2.ds
+share/lmms/samples/drumsynth/misc_hats/sandy_ride.ds
+share/lmms/samples/drumsynth/misc_hats/scratchy_hh.ds
+share/lmms/samples/drumsynth/misc_hats/shaker_ride.ds
+share/lmms/samples/drumsynth/misc_hats/shaker_ride_long.ds
+share/lmms/samples/drumsynth/misc_hats/simple_ride.ds
+share/lmms/samples/drumsynth/misc_hats/sleepy_1.ds
+share/lmms/samples/drumsynth/misc_hats/sleepy_2.ds
+share/lmms/samples/drumsynth/misc_hats/sleepy_ride.ds
+share/lmms/samples/drumsynth/misc_hats/sleepy_ride_2.ds
+share/lmms/samples/drumsynth/misc_hats/slick_hat.ds
+share/lmms/samples/drumsynth/misc_hats/slick_hat_compressd_open.ds
+share/lmms/samples/drumsynth/misc_hats/slick_hat_half_open.ds
+share/lmms/samples/drumsynth/misc_hats/slick_hat_open.ds
+share/lmms/samples/drumsynth/misc_hats/slide_hat.ds
+share/lmms/samples/drumsynth/misc_hats/softie_lo-fi_hat.ds
+share/lmms/samples/drumsynth/misc_hats/softie_lo-fi_open_hat.ds
+share/lmms/samples/drumsynth/misc_hats/softie_lo-fi_open_hat_2.ds
+share/lmms/samples/drumsynth/misc_hats/squeeze_me_hat.ds
+share/lmms/samples/drumsynth/misc_hats/squeeze_me_open_hat.ds
+share/lmms/samples/drumsynth/misc_hats/stack_hhh.ds
+share/lmms/samples/drumsynth/misc_hats/starry_hh.ds
+share/lmms/samples/drumsynth/misc_hats/starry_short_oh.ds
+share/lmms/samples/drumsynth/misc_hats/static_tone_hat.ds
+share/lmms/samples/drumsynth/misc_hats/tarp_hh.ds
+share/lmms/samples/drumsynth/misc_hats/the_sting_hat.ds
+share/lmms/samples/drumsynth/misc_hats/the_sting_hat_2.ds
+share/lmms/samples/drumsynth/misc_hats/the_sting_open_hat.ds
+share/lmms/samples/drumsynth/misc_hats/threshold_noise.ds
+share/lmms/samples/drumsynth/misc_hats/threshold_noise_open.ds
+share/lmms/samples/drumsynth/misc_hats/touch_me_hat.ds
+share/lmms/samples/drumsynth/misc_perc/
+share/lmms/samples/drumsynth/misc_perc/ambient_tom.ds
+share/lmms/samples/drumsynth/misc_perc/bell.ds
+share/lmms/samples/drumsynth/misc_perc/bell_rim.ds
+share/lmms/samples/drumsynth/misc_perc/clav.ds
+share/lmms/samples/drumsynth/misc_perc/clav_2.ds
+share/lmms/samples/drumsynth/misc_perc/deep_cowbell.ds
+share/lmms/samples/drumsynth/misc_perc/dist_tom.ds
+share/lmms/samples/drumsynth/misc_perc/dist_tom_2.ds
+share/lmms/samples/drumsynth/misc_perc/door_knock.ds
+share/lmms/samples/drumsynth/misc_perc/electric_clav.ds
+share/lmms/samples/drumsynth/misc_perc/feel_me_clinky.ds
+share/lmms/samples/drumsynth/misc_perc/fidelity_faction_tom.ds
+share/lmms/samples/drumsynth/misc_perc/funk_box_perc_1.ds
+share/lmms/samples/drumsynth/misc_perc/funk_box_perc_2.ds
+share/lmms/samples/drumsynth/misc_perc/funkay_timbale.ds
+share/lmms/samples/drumsynth/misc_perc/give_it_to_me.ds
+share/lmms/samples/drumsynth/misc_perc/hammond_cowbell.ds
+share/lmms/samples/drumsynth/misc_perc/hollow_wood.ds
+share/lmms/samples/drumsynth/misc_perc/hollow_wood_2.ds
+share/lmms/samples/drumsynth/misc_perc/it's_the_simple_things.ds
+share/lmms/samples/drumsynth/misc_perc/layered_sleigh_bell.ds
+share/lmms/samples/drumsynth/misc_perc/light_tamb_1.ds
+share/lmms/samples/drumsynth/misc_perc/light_tamb_2.ds
+share/lmms/samples/drumsynth/misc_perc/light_tamb_3.ds
+share/lmms/samples/drumsynth/misc_perc/like_a_tabla_1.ds
+share/lmms/samples/drumsynth/misc_perc/like_a_tabla_2.ds
+share/lmms/samples/drumsynth/misc_perc/like_a_tabla_3.ds
+share/lmms/samples/drumsynth/misc_perc/limited_shaker.ds
+share/lmms/samples/drumsynth/misc_perc/lo-fi_tamb.ds
+share/lmms/samples/drumsynth/misc_perc/low_key_tom.ds
+share/lmms/samples/drumsynth/misc_perc/low_ping.ds
+share/lmms/samples/drumsynth/misc_perc/mellow_shake.ds
+share/lmms/samples/drumsynth/misc_perc/metallic_node.ds
+share/lmms/samples/drumsynth/misc_perc/mild_tamb.ds
+share/lmms/samples/drumsynth/misc_perc/ol'_skool_shake.ds
+share/lmms/samples/drumsynth/misc_perc/poppy.ds
+share/lmms/samples/drumsynth/misc_perc/q_tom.ds
+share/lmms/samples/drumsynth/misc_perc/resonant_knock.ds
+share/lmms/samples/drumsynth/misc_perc/ringmod_rim.ds
+share/lmms/samples/drumsynth/misc_perc/ringmod_rim_2.ds
+share/lmms/samples/drumsynth/misc_perc/shaaka.ds
+share/lmms/samples/drumsynth/misc_perc/shaaka_2.ds
+share/lmms/samples/drumsynth/misc_perc/short_tom.ds
+share/lmms/samples/drumsynth/misc_perc/short_tom_1.ds
+share/lmms/samples/drumsynth/misc_perc/short_tom_2.ds
+share/lmms/samples/drumsynth/misc_perc/sickly_cowbell.ds
+share/lmms/samples/drumsynth/misc_perc/slinky_tamb.ds
+share/lmms/samples/drumsynth/misc_perc/super_tom.ds
+share/lmms/samples/drumsynth/misc_perc/sweetness_shaker.ds
+share/lmms/samples/drumsynth/misc_perc/timbale_sound.ds
+share/lmms/samples/drumsynth/misc_perc/tom.ds
+share/lmms/samples/drumsynth/misc_perc/tom_tone.ds
+share/lmms/samples/drumsynth/misc_perc/tommy.ds
+share/lmms/samples/drumsynth/misc_perc/tone_tom.ds
+share/lmms/samples/drumsynth/misc_perc/torn_tweeter.ds
+share/lmms/samples/drumsynth/misc_perc/tweety_cowbell.ds
+share/lmms/samples/drumsynth/misc_perc/tweety_cowbell_2.ds
+share/lmms/samples/drumsynth/misc_perc/type_noise.ds
+share/lmms/samples/drumsynth/misc_perc/very_high_clav.ds
+share/lmms/samples/drumsynth/misc_perc/video_game_clip.ds
+share/lmms/samples/drumsynth/misc_perc/weird_1.ds
+share/lmms/samples/drumsynth/misc_perc/wood_and_metal.ds
+share/lmms/samples/drumsynth/misc_synth/
+share/lmms/samples/drumsynth/misc_synth/average_rock.ds
+share/lmms/samples/drumsynth/misc_synth/c_maj_chord.ds
+share/lmms/samples/drumsynth/misc_synth/casio_piano_c.ds
+share/lmms/samples/drumsynth/misc_synth/chorded_perc.ds
+share/lmms/samples/drumsynth/misc_synth/consumer_fm.ds
+share/lmms/samples/drumsynth/misc_synth/dark_and_sweet_fm.ds
+share/lmms/samples/drumsynth/misc_synth/dist_high_c.ds
+share/lmms/samples/drumsynth/misc_synth/eno's_lift.ds
+share/lmms/samples/drumsynth/misc_synth/eno's_pad.ds
+share/lmms/samples/drumsynth/misc_synth/eno's_ride.ds
+share/lmms/samples/drumsynth/misc_synth/flat_square_c.ds
+share/lmms/samples/drumsynth/misc_synth/fm_c_bass_burst.ds
+share/lmms/samples/drumsynth/misc_synth/fur_strings.ds
+share/lmms/samples/drumsynth/misc_synth/fur_strings_2.ds
+share/lmms/samples/drumsynth/misc_synth/it's_the_music_tom_c.ds
+share/lmms/samples/drumsynth/misc_synth/layered_bass_synth_c.ds
+share/lmms/samples/drumsynth/misc_synth/my_red_hot_guitar.ds
+share/lmms/samples/drumsynth/misc_synth/raver_organ.ds
+share/lmms/samples/drumsynth/misc_synth/strong_c_dub_bass.ds
+share/lmms/samples/drumsynth/misc_synth/sync_drift.ds
+share/lmms/samples/drumsynth/misc_synth/sync_man.ds
+share/lmms/samples/drumsynth/misc_synth/that_house_chord_cm.ds
+share/lmms/samples/drumsynth/misc_synth/vibrato_pad.ds
+share/lmms/samples/drumsynth/misc_synth/who_loves_ya,_baby.ds
+share/lmms/samples/drumsynth/misc_synth/wowmelodictone.ds
+share/lmms/samples/drumsynth/r_n_b/
+share/lmms/samples/drumsynth/r_n_b/Hat_O.ds
+share/lmms/samples/drumsynth/r_n_b/S_hollow.ds
+share/lmms/samples/drumsynth/r_n_b/clapfilt.ds
+share/lmms/samples/drumsynth/r_n_b/hat.ds
+share/lmms/samples/drumsynth/r_n_b/hat_rattle.ds
+share/lmms/samples/drumsynth/r_n_b/k_hard.ds
+share/lmms/samples/drumsynth/r_n_b/k_muffle.ds
+share/lmms/samples/drumsynth/r_n_b/k_soft.ds
+share/lmms/samples/drumsynth/r_n_b/old_kik.ds
+share/lmms/samples/drumsynth/r_n_b/popclap.ds
+share/lmms/samples/drumsynth/r_n_b/popsnare.ds
+share/lmms/samples/drumsynth/r_n_b/s_pitch.ds
+share/lmms/samples/drumsynth/r_n_b/s_spit.ds
+share/lmms/samples/drumsynth/r_n_b/snare&hat.ds
+share/lmms/samples/drumsynth/r_n_b/x_backwd.ds
+share/lmms/samples/drumsynth/tr606/
+share/lmms/samples/drumsynth/tr606/TR606_Cymbal.ds
+share/lmms/samples/drumsynth/tr606/TR606_Hat_C.ds
+share/lmms/samples/drumsynth/tr606/TR606_Hat_O.ds
+share/lmms/samples/drumsynth/tr606/TR606_Kick.ds
+share/lmms/samples/drumsynth/tr606/TR606_Snare.ds
+share/lmms/samples/drumsynth/tr606/TR606_Tom_H.ds
+share/lmms/samples/drumsynth/tr606/TR606_Tom_L.ds
+share/lmms/samples/drumsynth/tr77/
+share/lmms/samples/drumsynth/tr77/Tr77_cui1.ds
+share/lmms/samples/drumsynth/tr77/Tr77_cui2.ds
+share/lmms/samples/drumsynth/tr77/Tr77_cym.ds
+share/lmms/samples/drumsynth/tr77/Tr77_hat.ds
+share/lmms/samples/drumsynth/tr77/Tr77_kick.ds
+share/lmms/samples/drumsynth/tr77/Tr77_snare.ds
+share/lmms/samples/drumsynth/tr77/Tr77_tom1.ds
+share/lmms/samples/drumsynth/tr77/Tr77_tom2.ds
+share/lmms/samples/drumsynth/tr808/
+share/lmms/samples/drumsynth/tr808/Clave.ds
+share/lmms/samples/drumsynth/tr808/Cowbell.ds
+share/lmms/samples/drumsynth/tr808/Handclap.ds
+share/lmms/samples/drumsynth/tr808/Hat_c.ds
+share/lmms/samples/drumsynth/tr808/Hat_o.ds
+share/lmms/samples/drumsynth/tr808/Kick.ds
+share/lmms/samples/drumsynth/tr808/Kickhard.ds
+share/lmms/samples/drumsynth/tr808/Kicklong.ds
+share/lmms/samples/drumsynth/tr808/Ride.ds
+share/lmms/samples/drumsynth/tr808/Rimshot.ds
+share/lmms/samples/drumsynth/tr808/Snare.ds
+share/lmms/samples/drumsynth/tr808/Snr_snap.ds
+share/lmms/samples/drumsynth/tr808/Tom_hi.ds
+share/lmms/samples/drumsynth/tr808/Tom_lo.ds
+share/lmms/samples/drumsynth/tr808/Tom_mid.ds
+share/lmms/samples/drumsynth/tr909/
+share/lmms/samples/drumsynth/tr909/Clap.ds
+share/lmms/samples/drumsynth/tr909/Hat-c.ds
+share/lmms/samples/drumsynth/tr909/Hat-c2.ds
+share/lmms/samples/drumsynth/tr909/Hat-o.ds
+share/lmms/samples/drumsynth/tr909/Hat-o2.ds
+share/lmms/samples/drumsynth/tr909/Kick.ds
+share/lmms/samples/drumsynth/tr909/Kick_1.ds
+share/lmms/samples/drumsynth/tr909/Kick_2.ds
+share/lmms/samples/drumsynth/tr909/Kick_3.ds
+share/lmms/samples/drumsynth/tr909/Snare.ds
+share/lmms/samples/drumsynth/tr909/Snare2.ds
+share/lmms/samples/drumsynth/tr909/TR909_Clap.ds
+share/lmms/samples/drumsynth/tr909/TR909_Kick.ds
+share/lmms/samples/effects/
+share/lmms/samples/effects/chroma_sound_effect01.ogg
+share/lmms/samples/effects/explode01.ogg
+share/lmms/samples/effects/filter_sweep01.ogg
+share/lmms/samples/effects/scratch01.ogg
+share/lmms/samples/effects/start01.ogg
+share/lmms/samples/effects/start02.ogg
+share/lmms/samples/effects/stop01.ogg
+share/lmms/samples/effects/warp01.ogg
+share/lmms/samples/effects/warp02.ogg
+share/lmms/samples/effects/wind_chimes01.ogg
+share/lmms/samples/instruments/
+share/lmms/samples/instruments/bassslap01.ogg
+share/lmms/samples/instruments/bassslap02.ogg
+share/lmms/samples/instruments/cello01.ogg
+share/lmms/samples/instruments/church_organ01.ogg
+share/lmms/samples/instruments/church_organ02.ogg
+share/lmms/samples/instruments/church_organ03.ogg
+share/lmms/samples/instruments/church_organ04.ogg
+share/lmms/samples/instruments/e_organ01.ogg
+share/lmms/samples/instruments/e_piano_accord01.ogg
+share/lmms/samples/instruments/e_piano_accord02.ogg
+share/lmms/samples/instruments/flute01.ogg
+share/lmms/samples/instruments/harpsichord01.ogg
+share/lmms/samples/instruments/piano01.ogg
+share/lmms/samples/instruments/piano02.ogg
+share/lmms/samples/instruments/steel_guitar01.ogg
+share/lmms/samples/instruments/steel_guitar_heavy_distorted01.ogg
+share/lmms/samples/instruments/steel_guitar_medium_distorted01.ogg
+share/lmms/samples/instruments/steel_guitar_slight_distorted01.ogg
+share/lmms/samples/instruments/trumpet01.ogg
+share/lmms/samples/instruments/violin_double_stop01.ogg
+share/lmms/samples/instruments/violin_fingered01.ogg
+share/lmms/samples/instruments/violin_pizzicato01.ogg
+share/lmms/samples/latin/
+share/lmms/samples/latin/latin_brass01.ogg
+share/lmms/samples/latin/latin_guitar01.ogg
+share/lmms/samples/latin/latin_guitar02.ogg
+share/lmms/samples/latin/latin_guitar03.ogg
+share/lmms/samples/misc/
+share/lmms/samples/misc/applause01.ogg
+share/lmms/samples/misc/bass!.ogg
+share/lmms/samples/misc/breath01.ogg
+share/lmms/samples/misc/buzz!.ogg
+share/lmms/samples/misc/dong01.ogg
+share/lmms/samples/misc/dong02.ogg
+share/lmms/samples/misc/dong03.ogg
+share/lmms/samples/misc/electric_ping01.ogg
+share/lmms/samples/misc/hit01.ogg
+share/lmms/samples/misc/hit02.ogg
+share/lmms/samples/misc/metalish_dong01.ogg
+share/lmms/samples/misc/metronome01.ogg
+share/lmms/samples/misc/raving_crowd01.ogg
+share/lmms/samples/misc/snaph01.ogg
+share/lmms/samples/misc/undefined01.ogg
+share/lmms/samples/shapes/
+share/lmms/samples/shapes/additive.wav
+share/lmms/samples/shapes/additive2.wav
+share/lmms/samples/shapes/bunglist.wav
+share/lmms/samples/shapes/bunglist2.wav
+share/lmms/samples/shapes/bunglist3.wav
+share/lmms/samples/shapes/bunglist4.wav
+share/lmms/samples/shapes/bunglist5.wav
+share/lmms/samples/shapes/bunglist6.wav
+share/lmms/samples/shapes/bunglist7.wav
+share/lmms/samples/shapes/bunglist8.wav
+share/lmms/samples/shapes/bunglist9.wav
+share/lmms/samples/shapes/harmonics.wav
+share/lmms/samples/shapes/low_sine.wav
+share/lmms/samples/shapes/micro.wav
+share/lmms/samples/shapes/moog.wav
+share/lmms/samples/shapes/roundbass.wav
+share/lmms/samples/shapes/roundsaw.ogg
+share/lmms/samples/shapes/saw+sine.wav
+share/lmms/samples/shapes/sine_dist.ogg
+share/lmms/samples/shapes/smooth_inv_saw.ogg
+share/lmms/samples/shapes/smooth_inv_saw2.ogg
+share/lmms/samples/shapes/smooth_inv_saw_dist.ogg
+share/lmms/samples/shapes/technobass.wav
+share/lmms/samples/shapes/technosynth1.wav
+share/lmms/samples/shapes/technosynth2.wav
+share/lmms/samples/shapes/technosynth3.wav
+share/lmms/samples/shapes/technosynth4.wav
+share/lmms/samples/shapes/technosynth5.wav
+share/lmms/samples/shapes/technosynth6.wav
+share/lmms/samples/shapes/vowel_a.wav
+share/lmms/samples/shapes/vowel_u.wav
+share/lmms/samples/stringsnpads/
+share/lmms/samples/stringsnpads/bell_choir01.ogg
+share/lmms/samples/stringsnpads/bell_choir02.ogg
+share/lmms/samples/stringsnpads/chorus01.ogg
+share/lmms/samples/stringsnpads/chorus02.ogg
+share/lmms/samples/stringsnpads/heaven_strings01.ogg
+share/lmms/samples/stringsnpads/juno_pad01.ogg
+share/lmms/samples/stringsnpads/korg_poly6_drone01.ogg
+share/lmms/samples/stringsnpads/nord_ambient01.ogg
+share/lmms/samples/stringsnpads/orion_string01.ogg
+share/lmms/samples/stringsnpads/rave_choir01.ogg
+share/lmms/samples/stringsnpads/space_strings01.ogg
+share/lmms/samples/stringsnpads/space_strings02.ogg
+share/lmms/samples/stringsnpads/space_strings03.ogg
+share/lmms/samples/stringsnpads/strings01.ogg
+share/lmms/themes/
+share/lmms/themes/default/
+share/lmms/themes/default/add.png
+share/lmms/themes/default/add_automation.png
+share/lmms/themes/default/add_bb_track.png
+share/lmms/themes/default/add_controller.png
+share/lmms/themes/default/add_sample_track.png
+share/lmms/themes/default/analysis.png
+share/lmms/themes/default/apply.png
+share/lmms/themes/default/arp_down.png
+share/lmms/themes/default/arp_free.png
+share/lmms/themes/default/arp_random.png
+share/lmms/themes/default/arp_sort.png
+share/lmms/themes/default/arp_sync.png
+share/lmms/themes/default/arp_up.png
+share/lmms/themes/default/arp_up_and_down.png
+share/lmms/themes/default/automation.png
+share/lmms/themes/default/automation_track.png
+share/lmms/themes/default/autoscroll_off.png
+share/lmms/themes/default/autoscroll_on.png
+share/lmms/themes/default/back_to_start.png
+share/lmms/themes/default/back_to_zero.png
+share/lmms/themes/default/background_artwork.png
+share/lmms/themes/default/bb_track.png
+share/lmms/themes/default/black_key.png
+share/lmms/themes/default/black_key_pressed.png
+share/lmms/themes/default/cancel.png
+share/lmms/themes/default/clock.png
+share/lmms/themes/default/colorize.png
+share/lmms/themes/default/combobox_arrow.png
+share/lmms/themes/default/combobox_arrow_selected.png
+share/lmms/themes/default/combobox_bg.png
+share/lmms/themes/default/computer.png
+share/lmms/themes/default/controller.png
+share/lmms/themes/default/controller_bg.png
+share/lmms/themes/default/cpuload_bg.png
+share/lmms/themes/default/cpuload_leds.png
+share/lmms/themes/default/dont_know.png
+share/lmms/themes/default/drum.png
+share/lmms/themes/default/edit_copy.png
+share/lmms/themes/default/edit_cut.png
+share/lmms/themes/default/edit_draw.png
+share/lmms/themes/default/edit_erase.png
+share/lmms/themes/default/edit_move.png
+share/lmms/themes/default/edit_paste.png
+share/lmms/themes/default/edit_redo.png
+share/lmms/themes/default/edit_rename.png
+share/lmms/themes/default/edit_select.png
+share/lmms/themes/default/edit_undo.png
+share/lmms/themes/default/effect_plugin.png
+share/lmms/themes/default/envelope_graph.png
+share/lmms/themes/default/error.png
+share/lmms/themes/default/exit.png
+share/lmms/themes/default/exp_wave_active.png
+share/lmms/themes/default/exp_wave_inactive.png
+share/lmms/themes/default/factory_files.png
+share/lmms/themes/default/fader_background.png
+share/lmms/themes/default/fader_knob.png
+share/lmms/themes/default/fader_leds.png
+share/lmms/themes/default/filter_2lp.png
+share/lmms/themes/default/filter_ap.png
+share/lmms/themes/default/filter_bp.png
+share/lmms/themes/default/filter_hp.png
+share/lmms/themes/default/filter_lp.png
+share/lmms/themes/default/filter_notch.png
+share/lmms/themes/default/folder.png
+share/lmms/themes/default/folder_locked.png
+share/lmms/themes/default/folder_opened.png
+share/lmms/themes/default/freeze.png
+share/lmms/themes/default/frozen.png
+share/lmms/themes/default/fx_mixer.png
+share/lmms/themes/default/hand.png
+share/lmms/themes/default/help.png
+share/lmms/themes/default/hint.png
+share/lmms/themes/default/home.png
+share/lmms/themes/default/hq_mode.png
+share/lmms/themes/default/icon.png
+share/lmms/themes/default/instrument_track.png
+share/lmms/themes/default/keep_stop_position.png
+share/lmms/themes/default/knob01.png
+share/lmms/themes/default/knob02.png
+share/lmms/themes/default/knob03.png
+share/lmms/themes/default/knob04.png
+share/lmms/themes/default/lcd_19green.png
+share/lmms/themes/default/lcd_19red.png
+share/lmms/themes/default/lcd_21pink.png
+share/lmms/themes/default/led_green.png
+share/lmms/themes/default/led_off.png
+share/lmms/themes/default/led_red.png
+share/lmms/themes/default/led_yellow.png
+share/lmms/themes/default/lfo_controller_artwork.png
+share/lmms/themes/default/lfo_d100_active.png
+share/lmms/themes/default/lfo_d100_inactive.png
+share/lmms/themes/default/lfo_graph.png
+share/lmms/themes/default/lfo_x100_active.png
+share/lmms/themes/default/lfo_x100_inactive.png
+share/lmms/themes/default/lfo_x1_active.png
+share/lmms/themes/default/lfo_x1_inactive.png
+share/lmms/themes/default/loop_point.png
+share/lmms/themes/default/loop_points_off.png
+share/lmms/themes/default/loop_points_on.png
+share/lmms/themes/default/main_toolbar_bg.png
+share/lmms/themes/default/master_pitch.png
+share/lmms/themes/default/master_volume.png
+share/lmms/themes/default/midi_file.png
+share/lmms/themes/default/moog_saw_wave_active.png
+share/lmms/themes/default/moog_saw_wave_inactive.png
+share/lmms/themes/default/muted.png
+share/lmms/themes/default/note.png
+share/lmms/themes/default/note_double_whole.png
+share/lmms/themes/default/note_eighth.png
+share/lmms/themes/default/note_half.png
+share/lmms/themes/default/note_none.png
+share/lmms/themes/default/note_quarter.png
+share/lmms/themes/default/note_sixteenth.png
+share/lmms/themes/default/note_thirtysecond.png
+share/lmms/themes/default/note_tripleteighth.png
+share/lmms/themes/default/note_triplethalf.png
+share/lmms/themes/default/note_tripletquarter.png
+share/lmms/themes/default/note_tripletsixteenth.png
+share/lmms/themes/default/note_tripletthirtysecond.png
+share/lmms/themes/default/note_whole.png
+share/lmms/themes/default/output_graph.png
+share/lmms/themes/default/pause.png
+share/lmms/themes/default/piano.png
+share/lmms/themes/default/play.png
+share/lmms/themes/default/playpos_marker.png
+share/lmms/themes/default/plugins.png
+share/lmms/themes/default/ports.png
+share/lmms/themes/default/pr_black_key.png
+share/lmms/themes/default/pr_black_key_pressed.png
+share/lmms/themes/default/pr_white_key_big.png
+share/lmms/themes/default/pr_white_key_big_pressed.png
+share/lmms/themes/default/pr_white_key_small.png
+share/lmms/themes/default/pr_white_key_small_pressed.png
+share/lmms/themes/default/preset_file.png
+share/lmms/themes/default/project_export.png
+share/lmms/themes/default/project_file.png
+share/lmms/themes/default/project_import.png
+share/lmms/themes/default/project_new.png
+share/lmms/themes/default/project_new_from_template.png
+share/lmms/themes/default/project_notes.png
+share/lmms/themes/default/project_open.png
+share/lmms/themes/default/project_open_down.png
+share/lmms/themes/default/project_open_recent.png
+share/lmms/themes/default/project_save.png
+share/lmms/themes/default/project_saveas.png
+share/lmms/themes/default/quantize.png
+share/lmms/themes/default/record.png
+share/lmms/themes/default/record_accompany.png
+share/lmms/themes/default/reload.png
+share/lmms/themes/default/round_square_wave_active.png
+share/lmms/themes/default/round_square_wave_inactive.png
+share/lmms/themes/default/sample_file.png
+share/lmms/themes/default/sample_track.png
+share/lmms/themes/default/saw_wave_active.png
+share/lmms/themes/default/saw_wave_inactive.png
+share/lmms/themes/default/setup_audio.png
+share/lmms/themes/default/setup_directories.png
+share/lmms/themes/default/setup_general.png
+share/lmms/themes/default/setup_midi.png
+share/lmms/themes/default/setup_performance.png
+share/lmms/themes/default/sin_wave_active.png
+share/lmms/themes/default/sin_wave_inactive.png
+share/lmms/themes/default/songeditor.png
+share/lmms/themes/default/splash.png
+share/lmms/themes/default/square_wave_active.png
+share/lmms/themes/default/square_wave_inactive.png
+share/lmms/themes/default/step_btn_add.png
+share/lmms/themes/default/step_btn_off.png
+share/lmms/themes/default/step_btn_off_light.png
+share/lmms/themes/default/step_btn_on.png
+share/lmms/themes/default/step_btn_on_100.png
+share/lmms/themes/default/step_btn_on_yellow.png
+share/lmms/themes/default/step_btn_remove.png
+share/lmms/themes/default/stop.png
+share/lmms/themes/default/style.css
+share/lmms/themes/default/tempo_sync.png
+share/lmms/themes/default/text_block.png
+share/lmms/themes/default/text_bold.png
+share/lmms/themes/default/text_center.png
+share/lmms/themes/default/text_italic.png
+share/lmms/themes/default/text_left.png
+share/lmms/themes/default/text_right.png
+share/lmms/themes/default/text_under.png
+share/lmms/themes/default/timeline.png
+share/lmms/themes/default/toolbar_bg.png
+share/lmms/themes/default/track_op_grip.png
+share/lmms/themes/default/track_op_menu.png
+share/lmms/themes/default/triangle_wave_active.png
+share/lmms/themes/default/triangle_wave_inactive.png
+share/lmms/themes/default/uhoh.png
+share/lmms/themes/default/unavailable_sound.png
+share/lmms/themes/default/unfreeze.png
+share/lmms/themes/default/unknown_file.png
+share/lmms/themes/default/usr_wave_active.png
+share/lmms/themes/default/usr_wave_inactive.png
+share/lmms/themes/default/whatsthis.png
+share/lmms/themes/default/white_key.png
+share/lmms/themes/default/white_key_pressed.png
+share/lmms/themes/default/white_noise_wave_active.png
+share/lmms/themes/default/white_noise_wave_inactive.png
+share/lmms/themes/default/zoom.png
+share/lmms/themes/default/zoom_x.png
+share/lmms/themes/default/zoom_y.png
+share/menu/
+share/menu/lmms
+share/mime/packages/lmms.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+share/pixmaps/
+share/pixmaps/lmms.png
