@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/10/28 11:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2010/10/28 12:15:13 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,6 +37,7 @@ LIB_DEPENDS=		::x11/gnome/librsvg \
 MODULES=		devel/gettext \
 			x11/gnome
 
+# has 2 different libraries with same name
 USE_LIBTOOL=		gnu
 USE_GROFF =	Yes
 MODGNOME_HELP_FILES=	Yes
