@@ -1,0 +1,4 @@
+mpd-add-similar is a little cli app that can populate your current MPD
+playlist with similar tracks to the ones in it. Using it is as easy as
+typing `mpd-add-similar` in a terminal. Run `mpd-add-similar -h` to see
+how you can tweak its behaviour.

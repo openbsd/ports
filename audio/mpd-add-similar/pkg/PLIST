@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/28 16:11:52 edd Exp $
+bin/mpd-add-similar
+lib/python${MODPY_VERSION}/site-packages/mpd_add_similar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mpdaddsimilar.py
+lib/python${MODPY_VERSION}/site-packages/mpdaddsimilar.pyc
