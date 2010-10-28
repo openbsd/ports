@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.67 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.68 2010/10/28 08:22:11 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -15,8 +15,14 @@ COMMENT-tests=	Python test suite
 COMMENT-tkinter=tk GUI module for Python
 COMMENT-tools=	extra tools for Python
 
-PKGNAME-main=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
+PKGNAME-main=	python-${VERSION}${PATCHLEVEL}
+PKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}
+PKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}
+PKGNAME-idle=	python-idle-${VERSION}${PATCHLEVEL}
+PKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}
+PKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}
+PKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
 		http://python.mirrors.pair.com/pub/${PSUBDIR}/
@@ -44,7 +50,7 @@ ONLY_FOR_ARCHS-bsddb=	amd64 i386
 
 # All subpackages depend on the main python package.
 
-RUN_DEPENDS=		:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERSION},-main
+RUN_DEPENDS=		:${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS=
 
 LIB_DEPENDS-main=	bz2::archivers/bzip2
@@ -63,14 +69,9 @@ LIB_DEPENDS-tkinter=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
 			tk84:tk->=8.4,<8.5:x11/tk/8.4
 WANTLIB-tkinter=	X11
 
-FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-idle=	python-idle-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
+PATCH_LIST =		patch-* sup64-*
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
@@ -90,8 +91,9 @@ PKG_ARGS+=	-Dctypes=0
 .  endif
 .endif
 
+USE_GROFF =	Yes
 
-AUTOCONF_VERSION?=	2.59
+AUTOCONF_VERSION?=	2.61
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
@@ -111,6 +113,9 @@ FAKE_FLAGS+=	RANLIB=:
 
 ALL_TARGET?=	everything ./Lib/plat-openbsd4
 
+post-extract:
+	rm -r ${WRKDIST}/Modules/expat
+
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
@@ -126,13 +131,12 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
 .if ${VERSION} == "2.5" || ${VERSION} == "2.6"
-		${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
-		${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-			${PREFIX}/share/emacs/site-lisp/python-mode-${VERSION}.el
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
+		${PREFIX}/share/emacs/site-lisp/python-mode-${VERSION}.el
 .endif
 
 REGRESS_TARGET=	test
 REGRESS_FLAGS=	"EXTRATESTOPTS=-w"
 # Some regress tests write to $HOME
 PORTHOME=	${WRKDIR}
-

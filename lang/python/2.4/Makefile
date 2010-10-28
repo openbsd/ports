@@ -1,16 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/10/28 08:22:11 fgsch Exp $
 
 VERSION=		2.4
 PATCHLEVEL=		.6
-PKG_PATCHLEVEL=		p4
+REVISION=		4
 SHARED_LIBS=		python2.4 1.0
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
-PATCH_LIST=		patch-* sup64-*
-.endif
-
 ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
-USE_GROFF =	Yes
+AUTOCONF_VERSION =	2.59
 
 .include <bsd.port.mk>
