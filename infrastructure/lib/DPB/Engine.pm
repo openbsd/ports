@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.9 2010/10/27 22:58:02 espie Exp $
+# $OpenBSD: Engine.pm,v 1.10 2010/10/28 08:54:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -318,6 +318,7 @@ sub rebuild_info
 	}
 	my @subdirs = map {$_->fullpkgpath} @l;
 	$self->{grabber}->grab_subdirs($core, \@subdirs);
+	$core->mark_ready;
 }
 
 sub start_new_job
