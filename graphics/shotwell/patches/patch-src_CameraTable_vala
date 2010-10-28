@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_CameraTable_vala,v 1.1.1.1 2010/10/28 12:36:10 landry Exp $
+We don't have gudev.. won't be able to detect cameras
+--- src/CameraTable.vala.orig	Wed Jun 30 20:44:30 2010
++++ src/CameraTable.vala	Thu Jul  1 23:19:30 2010
+@@ -24,7 +24,6 @@ public class CameraTable {
+     
+     private static CameraTable instance = null;
+     
+-    private GUdev.Client client = new GUdev.Client(SUBSYSTEMS);
+     private OneShotScheduler camera_update_scheduler = null;
+     private GPhoto.Context null_context = new GPhoto.Context();
+     private GPhoto.CameraAbilitiesList abilities_list;
+@@ -40,9 +39,6 @@ public class CameraTable {
+         camera_update_scheduler = new OneShotScheduler("CameraTable update scheduler",
+             on_update_cameras);
+         
+-        // listen for interesting events on the specified subsystems
+-        client.uevent.connect(on_udev_event);
+-        
+         // because loading the camera abilities list takes a bit of time and slows down app
+         // startup, delay loading it (and notifying any observers) for a small period of time,
+         // after the dust has settled
+@@ -99,31 +95,6 @@ public class CameraTable {
+     private string[] get_all_usb_cameras() {
+         string[] cameras = new string[0];
+         
+-        GLib.List<GUdev.Device> device_list = client.query_by_subsystem(null);
+-        foreach (GUdev.Device device in device_list) {
+-            string device_file = device.get_device_file();
+-            if(
+-                // only keep devices that have a non-null device file and that
+-                // have both the ID_GPHOTO2 and GPHOTO2_DRIVER properties set
+-                (device_file != null) &&
+-                (device.has_property("ID_GPHOTO2")) &&
+-                (device.has_property("GPHOTO2_DRIVER"))
+-            ) {
+-                int camera_bus, camera_device;
+-                // extract the bus and device IDs from the device file string
+-                // TODO: is it safe to parse the absolute path or should we be
+-                // smarter and use a regex to only pick up the end of the path?
+-                if (device_file.scanf("/dev/bus/usb/%d/%d", out camera_bus, out camera_device) < 2) {
+-                    critical("get_all_usb_cameras: Failed to scanf device file %s", device_file);
+-                    
+-                    continue;
+-                }
+-                string camera = "usb:%.3d,%.3d".printf(camera_bus, camera_device);
+-                debug("USB camera detected at %s", camera);
+-                cameras += camera;
+-            }
+-        }
+-        
+         return cameras;
+     }
+     
+@@ -311,13 +282,6 @@ public class CameraTable {
+         }
+     }
+     
+-    private void on_udev_event(string action, GUdev.Device device) {
+-        debug("udev event: %s on %s", action, device.get_name());
+-        
+-        // Device add/removes often arrive in pairs; this allows for a single
+-        // update to occur when they come in all at once
+-        camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);
+-    }
+     
+     private void on_update_cameras() {
+         try {
