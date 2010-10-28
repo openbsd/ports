@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.475 2010/10/26 12:34:48 landry Exp $
+# $OpenBSD: Makefile,v 1.476 2010/10/28 14:34:26 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -372,6 +372,7 @@
      SUBDIR += py-wsgiproxy
      SUBDIR += py-zine
      SUBDIR += pyblosxom
+     SUBDIR += rackmonkey
      SUBDIR += raggle
      SUBDIR += ratproxy
      SUBDIR += rawdog
