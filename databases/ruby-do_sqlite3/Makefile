@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/28 20:12:16 jeremy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.7 2010/10/28 22:15:36 jeremy Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
 VERSION =	0.10.0
 DISTNAME =	do_sqlite3-${VERSION}
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	databases
 
 # MIT
@@ -18,14 +16,13 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 
-CONFIGURE_STYLE =	ruby gem
+CONFIGURE_STYLE =	ruby gem ext
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:ruby-data_objects->=${VERSION}:databases/ruby-data_objects
 
-WANTLIB =		c m
-LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
-			sqlite3::databases/sqlite3
+WANTLIB =		sqlite3
+LIB_DEPENDS =		::databases/sqlite3
 
 MODRUBY_REGRESS =	rspec
 REGRESS_DEPENDS =	::devel/ruby-rake \
