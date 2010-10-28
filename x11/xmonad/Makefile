@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/10/28 13:55:21 jasper Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -6,8 +6,8 @@ COMMENT-lib =		libraries for runtime configuration
 DISTNAME =		xmonad-0.9.1
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-main =		2
-REVISION-lib =		4
+REVISION-main =		3
+REVISION-lib =		5
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -37,10 +37,11 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 USE_GROFF =	Yes
 
 post-install:
-	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/CONFIG ${PREFIX}/share/doc/${DISTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/man/xmonad.hs ${PREFIX}/share/doc/${DISTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/CONFIG ${PREFIX}/share/doc/hs-${DISTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/man/xmonad.hs ${PREFIX}/share/doc/hs-${DISTNAME}/xmonad.hs
+	@# Don't know why, but it installs the xmonad.hs into that directory:
+	@rm -rf ${PREFIX}/share/hs-${DISTNAME}
 
 # Needs to be built with different configuration.
 NO_REGRESS =	Yes
