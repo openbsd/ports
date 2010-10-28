@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.13 2010/09/23 12:26:37 jasper Exp $
+# $OpenBSD: ghc.port.mk,v 1.14 2010/10/28 13:49:09 jasper Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -50,6 +50,12 @@ MODGHC_SETUP_PROG ?=		${WRKSRC}/Setup
 MODGHC_SETUP_CONF_ARGS ?=
 MODGHC_SETUP_CONF_ENV ?=
 
+.  if !${MODGHC_BUILD:L:Mnort}
+MODGHC_SETUP_CONF_ARGS +=	--datasubdir=hs-\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
+.  endif
+
 .  if ${MODGHC_BUILD:L:Mhaddock}
 BUILD_DEPENDS +=		::devel/haddock \
 				::lang/ghc,-doc
@@ -96,8 +102,8 @@ do-install:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} copy --destdir=${DESTDIR}
 .   if ${MODGHC_BUILD:L:Mregister}
-	@${INSTALL_SCRIPT} ${WRKBUILD}/register.sh ${PREFIX}/lib/${DISTNAME}
-	@${INSTALL_SCRIPT} ${WRKBUILD}/unregister.sh ${PREFIX}/lib/${DISTNAME}
+	@${INSTALL_SCRIPT} ${WRKBUILD}/register.sh ${PREFIX}/lib/ghc/${DISTNAME}
+	@${INSTALL_SCRIPT} ${WRKBUILD}/unregister.sh ${PREFIX}/lib/ghc/${DISTNAME}
 .   endif
 .  endif
 
