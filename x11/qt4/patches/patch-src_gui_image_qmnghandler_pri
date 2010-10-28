@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_image_qmnghandler_pri,v 1.1 2010/10/28 14:55:47 espie Exp $
+--- src/gui/image/qmnghandler.pri.orig	Sun Oct 24 14:22:26 2010
++++ src/gui/image/qmnghandler.pri	Sun Oct 24 14:22:42 2010
+@@ -3,7 +3,7 @@ INCLUDEPATH *= $$PWD
+ HEADERS += $$PWD/qmnghandler_p.h
+ SOURCES += $$PWD/qmnghandler.cpp
+ contains(QT_CONFIG, system-mng) {
+-        if(unix|win32-g++*):LIBS += -lmng
++        if(unix|win32-g++*):LIBS += -lmng -llcms -ljpeg -lz
+         else:win32:         LIBS += libmng.lib
+ } else {
+     include($$PWD/../../3rdparty/libmng.pri)

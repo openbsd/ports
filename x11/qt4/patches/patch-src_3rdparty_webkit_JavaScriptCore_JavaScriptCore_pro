@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_3rdparty_webkit_JavaScriptCore_JavaScriptCore_pro,v 1.1 2010/05/23 10:36:49 espie Exp $
---- src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro.orig	Mon May 17 16:15:09 2010
-+++ src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro	Mon May 17 16:15:18 2010
-@@ -26,9 +26,9 @@ INCLUDEPATH += $$GENERATED_SOURCES_DIR
- 
- !CONFIG(QTDIR_build) {
-     CONFIG(debug, debug|release) {
+$OpenBSD: patch-src_3rdparty_webkit_JavaScriptCore_JavaScriptCore_pro,v 1.2 2010/10/28 14:55:47 espie Exp $
+--- src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro.orig	Fri Sep 10 11:05:22 2010
++++ src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro	Sun Oct 24 14:19:32 2010
+@@ -22,9 +22,9 @@ CONFIG(QTDIR_build) {
+     win32|mac:!macx-xcode:CONFIG += debug_and_release
+ } else {
+     !CONFIG(release, debug|release) {
 -        OBJECTS_DIR = obj/debug
 +        OBJECTS_DIR = .obj/debug
      } else { # Release
 -        OBJECTS_DIR = obj/release
 +        OBJECTS_DIR = .obj/release
      }
- }
- 
+     # Make sure that build_all follows the build_all config in WebCore
+     mac:contains(QT_CONFIG, qt_framework):!CONFIG(webkit_no_framework):!build_pass:CONFIG += build_all

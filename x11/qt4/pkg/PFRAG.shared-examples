@@ -1,4 +1,7 @@
-@comment $OpenBSD: PFRAG.shared-examples,v 1.5 2007/08/29 12:30:58 espie Exp $
+@comment $OpenBSD: PFRAG.shared-examples,v 1.6 2010/10/28 14:55:47 espie Exp $
+lib/qt4/examples/declarative/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
+lib/qt4/examples/declarative/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so
+lib/qt4/examples/declarative/plugins/libqmlqwidgetsplugin.so
 lib/qt4/examples/tools/echoplugin/plugin/libechoplugin.so
 lib/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so
 lib/qt4/examples/tools/styleplugin/styles/libsimplestyleplugin.so

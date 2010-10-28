@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_plugins_graphicssystems_trace_qgraphicssystem_trace_cpp,v 1.1 2010/04/19 09:36:30 espie Exp $
---- src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp.orig	Sun Dec  6 13:01:23 2009
-+++ src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp	Sun Dec  6 13:03:54 2009
+$OpenBSD: patch-src_plugins_graphicssystems_trace_qgraphicssystem_trace_cpp,v 1.2 2010/10/28 14:55:47 espie Exp $
+--- src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp.orig	Fri Sep 10 11:05:26 2010
++++ src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp	Sun Oct 24 12:32:07 2010
 @@ -79,7 +79,9 @@ QTraceWindowSurface::QTraceWindowSurface(QWidget *widg
  QTraceWindowSurface::~QTraceWindowSurface()
  {
@@ -11,4 +11,4 @@ $OpenBSD: patch-src_plugins_graphicssystems_trace_qgraphicssystem_trace_cpp,v 1.
 +        QFile outputFile(a_string.arg(winId));
          if (outputFile.open(QIODevice::WriteOnly)) {
              QDataStream out(&outputFile);
-             out.writeBytes("qttrace", 7);
+             out.setFloatingPointPrecision(QDataStream::SinglePrecision);

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.7 2010/05/25 08:01:59 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.8 2010/10/28 14:55:47 espie Exp $
 %%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
-@lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/libQtCLucene.so.${LIBQtCLucene_VERSION}
 @lib lib/libQtCore.so.${LIBQtCore_VERSION}
 @lib lib/libQtDBus.so.${LIBQtDBus_VERSION}
+@lib lib/libQtDeclarative.so.${LIBQtDeclarative_VERSION}
 @lib lib/libQtDesigner.so.${LIBQtDesigner_VERSION}
 @lib lib/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
 @lib lib/libQtGui.so.${LIBQtGui_VERSION}
@@ -20,11 +20,15 @@
 @lib lib/libQtXml.so.${LIBQtXml_VERSION}
 @lib lib/libQtXmlPatterns.so.${LIBQtXmlPatterns_VERSION}
 @lib lib/libphonon.so.${LIBphonon_VERSION}
+lib/qt4/imports/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
+lib/qt4/imports/Qt/labs/gestures/libqmlgesturesplugin.so
+lib/qt4/imports/Qt/labs/particles/libqmlparticlesplugin.so
+lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
 @lib lib/qt4/libQt3Support.so.${LIBQt3Support_VERSION}
-@lib lib/qt4/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/qt4/libQtCLucene.so.${LIBQtCLucene_VERSION}
 @lib lib/qt4/libQtCore.so.${LIBQtCore_VERSION}
 @lib lib/qt4/libQtDBus.so.${LIBQtDBus_VERSION}
+@lib lib/qt4/libQtDeclarative.so.${LIBQtDeclarative_VERSION}
 @lib lib/qt4/libQtDesigner.so.${LIBQtDesigner_VERSION}
 @lib lib/qt4/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
 @lib lib/qt4/libQtGui.so.${LIBQtGui_VERSION}
@@ -42,7 +46,10 @@
 @lib lib/qt4/libphonon.so.${LIBphonon_VERSION}
 lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
 lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
+lib/qt4/plugins/bearer/libqgenericbearer.so
+lib/qt4/plugins/bearer/libqnmbearer.so
 lib/qt4/plugins/designer/libphononwidgets.so
+lib/qt4/plugins/designer/libqdeclarativeview.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
 lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
 lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so

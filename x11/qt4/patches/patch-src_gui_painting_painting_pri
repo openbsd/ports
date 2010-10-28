@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_painting_painting_pri,v 1.1 2010/06/21 16:40:52 espie Exp $
---- src/gui/painting/painting.pri.orig	Mon Jun 21 12:56:33 2010
-+++ src/gui/painting/painting.pri	Mon Jun 21 13:01:10 2010
-@@ -221,7 +221,7 @@ contains(QMAKE_MAC_XARCH, no) {
+$OpenBSD: patch-src_gui_painting_painting_pri,v 1.2 2010/10/28 14:55:47 espie Exp $
+--- src/gui/painting/painting.pri.orig	Fri Sep 10 11:05:25 2010
++++ src/gui/painting/painting.pri	Sun Oct 24 12:32:07 2010
+@@ -225,7 +225,7 @@ contains(QMAKE_MAC_XARCH, no) {
  
          DEFINES += QT_HAVE_MMXEXT
      }

@@ -1,22 +1,22 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_runtime_JSValue_h,v 1.1 2010/06/15 21:27:57 landry Exp $
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_runtime_JSValue_h,v 1.2 2010/10/28 14:55:47 espie Exp $
 Fix build on sparc64, from netbsd x11/qt4-libs/patches/path-au
---- src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h.orig	Thu Jun 10 13:39:11 2010
-+++ src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h	Thu Jun 10 13:39:29 2010
-@@ -468,7 +468,7 @@ namespace JSC {
+--- src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h.orig	Fri Sep 10 11:05:24 2010
++++ src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h	Sun Oct 24 14:16:41 2010
+@@ -491,7 +491,7 @@ namespace JSC {
              u.asBits.tag = CellTag;
          else
              u.asBits.tag = EmptyValueTag;
 -        u.asBits.payload = reinterpret_cast<int32_t>(ptr);
 +        u.asBits.payload = reinterpret_cast<intptr_t>(ptr);
-     }
- 
-     inline JSValue::JSValue(const JSCell* ptr)
-@@ -477,7 +477,7 @@ namespace JSC {
+ #if ENABLE(JSC_ZOMBIES)
+         ASSERT(!isZombie());
+ #endif
+@@ -503,7 +503,7 @@ namespace JSC {
              u.asBits.tag = CellTag;
          else
              u.asBits.tag = EmptyValueTag;
 -        u.asBits.payload = reinterpret_cast<int32_t>(const_cast<JSCell*>(ptr));
 +        u.asBits.payload = reinterpret_cast<intptr_t>(const_cast<JSCell*>(ptr));
-     }
- 
-     inline JSValue::operator bool() const
+ #if ENABLE(JSC_ZOMBIES)
+         ASSERT(!isZombie());
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2010/06/21 16:40:52 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2010/10/28 14:55:47 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -23,6 +23,7 @@ include/X11/qt4/Qt/
 include/X11/qt4/Qt/Qt3Support
 include/X11/qt4/Qt/QtCore
 include/X11/qt4/Qt/QtDBus
+include/X11/qt4/Qt/QtDeclarative
 include/X11/qt4/Qt/QtGui
 include/X11/qt4/Qt/QtHelp
 include/X11/qt4/Qt/QtMultimedia
@@ -213,6 +214,7 @@ include/X11/qt4/Qt/qauthenticator.h
 include/X11/qt4/Qt/qbasicatomic.h
 include/X11/qt4/Qt/qbasictimer.h
 include/X11/qt4/Qt/qbenchmark.h
+include/X11/qt4/Qt/qbenchmarkmetric.h
 include/X11/qt4/Qt/qbitarray.h
 include/X11/qt4/Qt/qbitmap.h
 include/X11/qt4/Qt/qboxlayout.h
@@ -271,6 +273,27 @@ include/X11/qt4/Qt/qdbusreply.h
 include/X11/qt4/Qt/qdbusserver.h
 include/X11/qt4/Qt/qdbusservicewatcher.h
 include/X11/qt4/Qt/qdebug.h
+include/X11/qt4/Qt/qdeclarative.h
+include/X11/qt4/Qt/qdeclarativecomponent.h
+include/X11/qt4/Qt/qdeclarativecontext.h
+include/X11/qt4/Qt/qdeclarativeengine.h
+include/X11/qt4/Qt/qdeclarativeerror.h
+include/X11/qt4/Qt/qdeclarativeexpression.h
+include/X11/qt4/Qt/qdeclarativeextensioninterface.h
+include/X11/qt4/Qt/qdeclarativeextensionplugin.h
+include/X11/qt4/Qt/qdeclarativeimageprovider.h
+include/X11/qt4/Qt/qdeclarativeinfo.h
+include/X11/qt4/Qt/qdeclarativeitem.h
+include/X11/qt4/Qt/qdeclarativelist.h
+include/X11/qt4/Qt/qdeclarativenetworkaccessmanagerfactory.h
+include/X11/qt4/Qt/qdeclarativeparserstatus.h
+include/X11/qt4/Qt/qdeclarativeprivate.h
+include/X11/qt4/Qt/qdeclarativeproperty.h
+include/X11/qt4/Qt/qdeclarativepropertymap.h
+include/X11/qt4/Qt/qdeclarativepropertyvalueinterceptor.h
+include/X11/qt4/Qt/qdeclarativepropertyvaluesource.h
+include/X11/qt4/Qt/qdeclarativescriptstring.h
+include/X11/qt4/Qt/qdeclarativeview.h
 include/X11/qt4/Qt/qdecoration_qws.h
 include/X11/qt4/Qt/qdecorationdefault_qws.h
 include/X11/qt4/Qt/qdecorationfactory_qws.h
@@ -291,6 +314,7 @@ include/X11/qt4/Qt/qdom.h
 include/X11/qt4/Qt/qdrag.h
 include/X11/qt4/Qt/qdrawutil.h
 include/X11/qt4/Qt/qeasingcurve.h
+include/X11/qt4/Qt/qelapsedtimer.h
 include/X11/qt4/Qt/qendian.h
 include/X11/qt4/Qt/qerrormessage.h
 include/X11/qt4/Qt/qevent.h
@@ -326,6 +350,7 @@ include/X11/qt4/Qt/qgenericmatrix.h
 include/X11/qt4/Qt/qgesture.h
 include/X11/qt4/Qt/qgesturerecognizer.h
 include/X11/qt4/Qt/qgl.h
+include/X11/qt4/Qt/qglbuffer.h
 include/X11/qt4/Qt/qglcolormap.h
 include/X11/qt4/Qt/qglframebufferobject.h
 include/X11/qt4/Qt/qglobal.h
@@ -442,6 +467,8 @@ include/X11/qt4/Qt/qmovie.h
 include/X11/qt4/Qt/qmutex.h
 include/X11/qt4/Qt/qnamespace.h
 include/X11/qt4/Qt/qnetworkaccessmanager.h
+include/X11/qt4/Qt/qnetworkconfigmanager.h
+include/X11/qt4/Qt/qnetworkconfiguration.h
 include/X11/qt4/Qt/qnetworkcookie.h
 include/X11/qt4/Qt/qnetworkcookiejar.h
 include/X11/qt4/Qt/qnetworkdiskcache.h
@@ -449,6 +476,7 @@ include/X11/qt4/Qt/qnetworkinterface.h
 include/X11/qt4/Qt/qnetworkproxy.h
 include/X11/qt4/Qt/qnetworkreply.h
 include/X11/qt4/Qt/qnetworkrequest.h
+include/X11/qt4/Qt/qnetworksession.h
 include/X11/qt4/Qt/qnumeric.h
 include/X11/qt4/Qt/qobject.h
 include/X11/qt4/Qt/qobjectcleanuphandler.h
@@ -589,6 +617,7 @@ include/X11/qt4/Qt/qstackedwidget.h
 include/X11/qt4/Qt/qstandarditemmodel.h
 include/X11/qt4/Qt/qstate.h
 include/X11/qt4/Qt/qstatemachine.h
+include/X11/qt4/Qt/qstatictext.h
 include/X11/qt4/Qt/qstatusbar.h
 include/X11/qt4/Qt/qstring.h
 include/X11/qt4/Qt/qstringbuilder.h
@@ -1035,11 +1064,6 @@ include/X11/qt4/Qt3Support/q3whatsthis.h
 include/X11/qt4/Qt3Support/q3widgetstack.h
 include/X11/qt4/Qt3Support/q3wizard.h
 include/X11/qt4/Qt3Support/qiconset.h
-include/X11/qt4/QtAssistant/
-include/X11/qt4/QtAssistant/QAssistantClient
-include/X11/qt4/QtAssistant/QtAssistant
-include/X11/qt4/QtAssistant/qassistantclient.h
-include/X11/qt4/QtAssistant/qassistantclient_global.h
 include/X11/qt4/QtCore/
 include/X11/qt4/QtCore/QAbstractAnimation
 include/X11/qt4/QtCore/QAbstractConcatenable
@@ -1087,6 +1111,7 @@ include/X11/qt4/QtCore/QDir
 include/X11/qt4/QtCore/QDirIterator
 include/X11/qt4/QtCore/QDynamicPropertyChangeEvent
 include/X11/qt4/QtCore/QEasingCurve
+include/X11/qt4/QtCore/QElapsedTimer
 include/X11/qt4/QtCore/QEvent
 include/X11/qt4/QtCore/QEventLoop
 include/X11/qt4/QtCore/QEventTransition
@@ -1300,6 +1325,7 @@ include/X11/qt4/QtCore/QtCleanUpFunction
 include/X11/qt4/QtCore/QtConcurrentFilter
 include/X11/qt4/QtCore/QtConcurrentMap
 include/X11/qt4/QtCore/QtConcurrentRun
+include/X11/qt4/QtCore/QtConfig
 include/X11/qt4/QtCore/QtContainerFwd
 include/X11/qt4/QtCore/QtCore
 include/X11/qt4/QtCore/QtDebug
@@ -1365,6 +1391,7 @@ include/X11/qt4/QtCore/qdebug.h
 include/X11/qt4/QtCore/qdir.h
 include/X11/qt4/QtCore/qdiriterator.h
 include/X11/qt4/QtCore/qeasingcurve.h
+include/X11/qt4/QtCore/qelapsedtimer.h
 include/X11/qt4/QtCore/qendian.h
 include/X11/qt4/QtCore/qeventloop.h
 include/X11/qt4/QtCore/qeventtransition.h
@@ -1515,6 +1542,52 @@ include/X11/qt4/QtDBus/qdbuspendingreply.h
 include/X11/qt4/QtDBus/qdbusreply.h
 include/X11/qt4/QtDBus/qdbusserver.h
 include/X11/qt4/QtDBus/qdbusservicewatcher.h
+include/X11/qt4/QtDeclarative/
+include/X11/qt4/QtDeclarative/QDeclarativeAttachedPropertiesFunc
+include/X11/qt4/QtDeclarative/QDeclarativeComponent
+include/X11/qt4/QtDeclarative/QDeclarativeContext
+include/X11/qt4/QtDeclarative/QDeclarativeEngine
+include/X11/qt4/QtDeclarative/QDeclarativeError
+include/X11/qt4/QtDeclarative/QDeclarativeExpression
+include/X11/qt4/QtDeclarative/QDeclarativeExtensionInterface
+include/X11/qt4/QtDeclarative/QDeclarativeExtensionPlugin
+include/X11/qt4/QtDeclarative/QDeclarativeImageProvider
+include/X11/qt4/QtDeclarative/QDeclarativeInfo
+include/X11/qt4/QtDeclarative/QDeclarativeItem
+include/X11/qt4/QtDeclarative/QDeclarativeListProperty
+include/X11/qt4/QtDeclarative/QDeclarativeListReference
+include/X11/qt4/QtDeclarative/QDeclarativeNetworkAccessManagerFactory
+include/X11/qt4/QtDeclarative/QDeclarativeParserStatus
+include/X11/qt4/QtDeclarative/QDeclarativeProperties
+include/X11/qt4/QtDeclarative/QDeclarativeProperty
+include/X11/qt4/QtDeclarative/QDeclarativePropertyMap
+include/X11/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+include/X11/qt4/QtDeclarative/QDeclarativePropertyValueSource
+include/X11/qt4/QtDeclarative/QDeclarativeScriptString
+include/X11/qt4/QtDeclarative/QDeclarativeTypeInfo
+include/X11/qt4/QtDeclarative/QDeclarativeView
+include/X11/qt4/QtDeclarative/QtDeclarative
+include/X11/qt4/QtDeclarative/qdeclarative.h
+include/X11/qt4/QtDeclarative/qdeclarativecomponent.h
+include/X11/qt4/QtDeclarative/qdeclarativecontext.h
+include/X11/qt4/QtDeclarative/qdeclarativeengine.h
+include/X11/qt4/QtDeclarative/qdeclarativeerror.h
+include/X11/qt4/QtDeclarative/qdeclarativeexpression.h
+include/X11/qt4/QtDeclarative/qdeclarativeextensioninterface.h
+include/X11/qt4/QtDeclarative/qdeclarativeextensionplugin.h
+include/X11/qt4/QtDeclarative/qdeclarativeimageprovider.h
+include/X11/qt4/QtDeclarative/qdeclarativeinfo.h
+include/X11/qt4/QtDeclarative/qdeclarativeitem.h
+include/X11/qt4/QtDeclarative/qdeclarativelist.h
+include/X11/qt4/QtDeclarative/qdeclarativenetworkaccessmanagerfactory.h
+include/X11/qt4/QtDeclarative/qdeclarativeparserstatus.h
+include/X11/qt4/QtDeclarative/qdeclarativeprivate.h
+include/X11/qt4/QtDeclarative/qdeclarativeproperty.h
+include/X11/qt4/QtDeclarative/qdeclarativepropertymap.h
+include/X11/qt4/QtDeclarative/qdeclarativepropertyvalueinterceptor.h
+include/X11/qt4/QtDeclarative/qdeclarativepropertyvaluesource.h
+include/X11/qt4/QtDeclarative/qdeclarativescriptstring.h
+include/X11/qt4/QtDeclarative/qdeclarativeview.h
 include/X11/qt4/QtDesigner/
 include/X11/qt4/QtDesigner/QAbstractExtensionFactory
 include/X11/qt4/QtDesigner/QAbstractExtensionManager
@@ -1890,8 +1963,15 @@ include/X11/qt4/QtGui/QResizeEvent
 include/X11/qt4/QtGui/QRgb
 include/X11/qt4/QtGui/QRubberBand
 include/X11/qt4/QtGui/QS60MainAppUi
+include/X11/qt4/QtGui/QS60MainAppUiBase
 include/X11/qt4/QtGui/QS60MainApplication
+include/X11/qt4/QtGui/QS60MainApplicationBase
 include/X11/qt4/QtGui/QS60MainDocument
+include/X11/qt4/QtGui/QS60MainDocumentBase
+include/X11/qt4/QtGui/QS60StubAknAppUi
+include/X11/qt4/QtGui/QS60StubAknAppUiBase
+include/X11/qt4/QtGui/QS60StubMAknTouchPaneObserver
+include/X11/qt4/QtGui/QS60StubMEikStatusPaneObserver
 include/X11/qt4/QtGui/QS60Style
 include/X11/qt4/QtGui/QScreen
 include/X11/qt4/QtGui/QScreenCursor
@@ -1919,6 +1999,7 @@ include/X11/qt4/QtGui/QStackedWidget
 include/X11/qt4/QtGui/QStandardItem
 include/X11/qt4/QtGui/QStandardItemEditorCreator
 include/X11/qt4/QtGui/QStandardItemModel
+include/X11/qt4/QtGui/QStaticText
 include/X11/qt4/QtGui/QStatusBar
 include/X11/qt4/QtGui/QStatusTipEvent
 include/X11/qt4/QtGui/QStringListModel
@@ -2314,6 +2395,7 @@ include/X11/qt4/QtGui/qsplitter.h
 include/X11/qt4/QtGui/qstackedlayout.h
 include/X11/qt4/QtGui/qstackedwidget.h
 include/X11/qt4/QtGui/qstandarditemmodel.h
+include/X11/qt4/QtGui/qstatictext.h
 include/X11/qt4/QtGui/qstatusbar.h
 include/X11/qt4/QtGui/qstringlistmodel.h
 include/X11/qt4/QtGui/qstyle.h
@@ -2450,6 +2532,8 @@ include/X11/qt4/QtNetwork/QLocalSocket
 include/X11/qt4/QtNetwork/QNetworkAccessManager
 include/X11/qt4/QtNetwork/QNetworkAddressEntry
 include/X11/qt4/QtNetwork/QNetworkCacheMetaData
+include/X11/qt4/QtNetwork/QNetworkConfiguration
+include/X11/qt4/QtNetwork/QNetworkConfigurationManager
 include/X11/qt4/QtNetwork/QNetworkCookie
 include/X11/qt4/QtNetwork/QNetworkCookieJar
 include/X11/qt4/QtNetwork/QNetworkDiskCache
@@ -2459,6 +2543,7 @@ include/X11/qt4/QtNetwork/QNetworkProxyFactory
 include/X11/qt4/QtNetwork/QNetworkProxyQuery
 include/X11/qt4/QtNetwork/QNetworkReply
 include/X11/qt4/QtNetwork/QNetworkRequest
+include/X11/qt4/QtNetwork/QNetworkSession
 include/X11/qt4/QtNetwork/QSsl
 include/X11/qt4/QtNetwork/QSslCertificate
 include/X11/qt4/QtNetwork/QSslCipher
@@ -2482,6 +2567,8 @@ include/X11/qt4/QtNetwork/qhttp.h
 include/X11/qt4/QtNetwork/qlocalserver.h
 include/X11/qt4/QtNetwork/qlocalsocket.h
 include/X11/qt4/QtNetwork/qnetworkaccessmanager.h
+include/X11/qt4/QtNetwork/qnetworkconfigmanager.h
+include/X11/qt4/QtNetwork/qnetworkconfiguration.h
 include/X11/qt4/QtNetwork/qnetworkcookie.h
 include/X11/qt4/QtNetwork/qnetworkcookiejar.h
 include/X11/qt4/QtNetwork/qnetworkdiskcache.h
@@ -2489,6 +2576,7 @@ include/X11/qt4/QtNetwork/qnetworkinterface.h
 include/X11/qt4/QtNetwork/qnetworkproxy.h
 include/X11/qt4/QtNetwork/qnetworkreply.h
 include/X11/qt4/QtNetwork/qnetworkrequest.h
+include/X11/qt4/QtNetwork/qnetworksession.h
 include/X11/qt4/QtNetwork/qssl.h
 include/X11/qt4/QtNetwork/qsslcertificate.h
 include/X11/qt4/QtNetwork/qsslcipher.h
@@ -2501,6 +2589,7 @@ include/X11/qt4/QtNetwork/qtcpsocket.h
 include/X11/qt4/QtNetwork/qudpsocket.h
 include/X11/qt4/QtNetwork/qurlinfo.h
 include/X11/qt4/QtOpenGL/
+include/X11/qt4/QtOpenGL/QGLBuffer
 include/X11/qt4/QtOpenGL/QGLColormap
 include/X11/qt4/QtOpenGL/QGLContext
 include/X11/qt4/QtOpenGL/QGLFormat
@@ -2518,6 +2607,7 @@ include/X11/qt4/QtOpenGL/QMacCompatGLuint
 include/X11/qt4/QtOpenGL/QMacGLCompatTypes
 include/X11/qt4/QtOpenGL/QtOpenGL
 include/X11/qt4/QtOpenGL/qgl.h
+include/X11/qt4/QtOpenGL/qglbuffer.h
 include/X11/qt4/QtOpenGL/qglcolormap.h
 include/X11/qt4/QtOpenGL/qglframebufferobject.h
 include/X11/qt4/QtOpenGL/qglpixelbuffer.h
@@ -2655,6 +2745,7 @@ include/X11/qt4/QtTest/QTestXunitStreamer
 include/X11/qt4/QtTest/QtTest
 include/X11/qt4/QtTest/QtTestGui
 include/X11/qt4/QtTest/qbenchmark.h
+include/X11/qt4/QtTest/qbenchmarkmetric.h
 include/X11/qt4/QtTest/qsignalspy.h
 include/X11/qt4/QtTest/qtest.h
 include/X11/qt4/QtTest/qtest_global.h
@@ -2772,6 +2863,8 @@ include/X11/qt4/phonon/AudioCaptureDevice
 include/X11/qt4/phonon/AudioCaptureDeviceModel
 include/X11/qt4/phonon/AudioChannelDescription
 include/X11/qt4/phonon/AudioChannelDescriptionModel
+include/X11/qt4/phonon/AudioDataOutput
+include/X11/qt4/phonon/AudioDataOutputInterface
 include/X11/qt4/phonon/AudioOutput
 include/X11/qt4/phonon/AudioOutputDevice
 include/X11/qt4/phonon/AudioOutputDeviceModel
@@ -2787,6 +2880,7 @@ include/X11/qt4/phonon/EffectInterface
 include/X11/qt4/phonon/EffectParameter
 include/X11/qt4/phonon/EffectWidget
 include/X11/qt4/phonon/Global
+include/X11/qt4/phonon/GlobalConfig
 include/X11/qt4/phonon/MediaController
 include/X11/qt4/phonon/MediaNode
 include/X11/qt4/phonon/MediaObject
@@ -2799,6 +2893,7 @@ include/X11/qt4/phonon/ObjectDescriptionModelData
 include/X11/qt4/phonon/Path
 include/X11/qt4/phonon/Phonon
 include/X11/qt4/phonon/PlatformPlugin
+include/X11/qt4/phonon/PulseSupport
 include/X11/qt4/phonon/SeekSlider
 include/X11/qt4/phonon/StreamInterface
 include/X11/qt4/phonon/SubtitleDescription
@@ -2806,6 +2901,8 @@ include/X11/qt4/phonon/SubtitleDescriptionModel
 include/X11/qt4/phonon/VideoPlayer
 include/X11/qt4/phonon/VideoWidget
 include/X11/qt4/phonon/VideoWidgetInterface
+include/X11/qt4/phonon/VideoWidgetInterface44
+include/X11/qt4/phonon/VideoWidgetInterfaceLatest
 include/X11/qt4/phonon/VolumeFaderEffect
 include/X11/qt4/phonon/VolumeFaderInterface
 include/X11/qt4/phonon/VolumeSlider
@@ -2813,6 +2910,8 @@ include/X11/qt4/phonon/abstractaudiooutput.h
 include/X11/qt4/phonon/abstractmediastream.h
 include/X11/qt4/phonon/abstractvideooutput.h
 include/X11/qt4/phonon/addoninterface.h
+include/X11/qt4/phonon/audiodataoutput.h
+include/X11/qt4/phonon/audiodataoutputinterface.h
 include/X11/qt4/phonon/audiooutput.h
 include/X11/qt4/phonon/audiooutputinterface.h
 include/X11/qt4/phonon/backendcapabilities.h
@@ -2821,6 +2920,7 @@ include/X11/qt4/phonon/effect.h
 include/X11/qt4/phonon/effectinterface.h
 include/X11/qt4/phonon/effectparameter.h
 include/X11/qt4/phonon/effectwidget.h
+include/X11/qt4/phonon/globalconfig.h
 include/X11/qt4/phonon/mediacontroller.h
 include/X11/qt4/phonon/medianode.h
 include/X11/qt4/phonon/mediaobject.h
@@ -2834,6 +2934,7 @@ include/X11/qt4/phonon/phonon_export.h
 include/X11/qt4/phonon/phonondefs.h
 include/X11/qt4/phonon/phononnamespace.h
 include/X11/qt4/phonon/platformplugin.h
+include/X11/qt4/phonon/pulsesupport.h
 include/X11/qt4/phonon/seekslider.h
 include/X11/qt4/phonon/streaminterface.h
 include/X11/qt4/phonon/videoplayer.h
@@ -2846,7 +2947,6 @@ lib/qt4/
 lib/qt4/bin/
 @bin lib/qt4/bin/assistant
 lib/qt4/bin/assistant4
-@bin lib/qt4/bin/assistant_adp
 @bin lib/qt4/bin/designer
 lib/qt4/bin/findtr
 @bin lib/qt4/bin/lconvert
@@ -2865,6 +2965,7 @@ lib/qt4/bin/moc4
 @bin lib/qt4/bin/qhelpconverter
 @bin lib/qt4/bin/qhelpgenerator
 @bin lib/qt4/bin/qmake
+@bin lib/qt4/bin/qmlviewer
 @bin lib/qt4/bin/qt3to4
 @bin lib/qt4/bin/qtconfig
 @bin lib/qt4/bin/qttracereplay
@@ -2874,16 +2975,28 @@ lib/qt4/bin/syncqt
 @bin lib/qt4/bin/uic3
 @bin lib/qt4/bin/xmlpatterns
 @bin lib/qt4/bin/xmlpatternsvalidator
+lib/qt4/imports/
+lib/qt4/imports/Qt/
+lib/qt4/imports/Qt/labs/
+lib/qt4/imports/Qt/labs/folderlistmodel/
+lib/qt4/imports/Qt/labs/folderlistmodel/qmldir
+lib/qt4/imports/Qt/labs/gestures/
+lib/qt4/imports/Qt/labs/gestures/qmldir
+lib/qt4/imports/Qt/labs/particles/
+lib/qt4/imports/Qt/labs/particles/qmldir
+lib/qt4/imports/QtWebKit/
+lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
-lib/qt4/libQtAssistantClient.prl
 lib/qt4/libQtCLucene.la
 lib/qt4/libQtCLucene.prl
 @comment lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
 lib/qt4/libQtDBus.la
 lib/qt4/libQtDBus.prl
+lib/qt4/libQtDeclarative.la
+lib/qt4/libQtDeclarative.prl
 lib/qt4/libQtDesigner.prl
 lib/qt4/libQtDesignerComponents.prl
 @comment lib/qt4/libQtGui.la
@@ -2928,17 +3041,40 @@ lib/qt4/mkspecs/aix-xlc-64/qplatformdefs.h
 lib/qt4/mkspecs/aix-xlc/qmake.conf
 lib/qt4/mkspecs/aix-xlc/qplatformdefs.h
 lib/qt4/mkspecs/common/
+lib/qt4/mkspecs/common/aix/
+lib/qt4/mkspecs/common/aix/qplatformdefs.h
+lib/qt4/mkspecs/common/armcc.conf
+lib/qt4/mkspecs/common/c89/
+lib/qt4/mkspecs/common/c89/qplatformdefs.h
 lib/qt4/mkspecs/common/g++.conf
 lib/qt4/mkspecs/common/linux.conf
 lib/qt4/mkspecs/common/llvm.conf
 lib/qt4/mkspecs/common/mac-g++.conf
 lib/qt4/mkspecs/common/mac-llvm.conf
 lib/qt4/mkspecs/common/mac.conf
+lib/qt4/mkspecs/common/posix/
+lib/qt4/mkspecs/common/posix/qplatformdefs.h
 lib/qt4/mkspecs/common/qws.conf
 lib/qt4/mkspecs/common/symbian/
+lib/qt4/mkspecs/common/symbian/header-wrappers/
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknDoc.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknLayoutFont.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknPopupFader.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknServerApp.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknUtils.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsBasicBackgroundControlContext.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsConstants.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsDrawUtils.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsItemID.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsSkinInstance.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/AknsUtils.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/CDirectoryLocalizer.h
+lib/qt4/mkspecs/common/symbian/header-wrappers/DocumentHandler.h
 lib/qt4/mkspecs/common/symbian/qplatformdefs.h
 lib/qt4/mkspecs/common/symbian/stl-off/
 lib/qt4/mkspecs/common/symbian/stl-off/new
+lib/qt4/mkspecs/common/symbian/symbian-makefile.conf
+lib/qt4/mkspecs/common/symbian/symbian-mmp.conf
 lib/qt4/mkspecs/common/symbian/symbian.conf
 lib/qt4/mkspecs/common/unix.conf
 lib/qt4/mkspecs/common/wince/
@@ -2952,7 +3088,6 @@ lib/qt4/mkspecs/darwin-g++/qmake.conf
 lib/qt4/mkspecs/darwin-g++/qplatformdefs.h
 lib/qt4/mkspecs/default
 lib/qt4/mkspecs/features/
-lib/qt4/mkspecs/features/assistant.prf
 lib/qt4/mkspecs/features/build_pass.prf
 lib/qt4/mkspecs/features/dbusadaptors.prf
 lib/qt4/mkspecs/features/dbusinterfaces.prf
@@ -2994,6 +3129,7 @@ lib/qt4/mkspecs/features/release.prf
 lib/qt4/mkspecs/features/resources.prf
 lib/qt4/mkspecs/features/shared.prf
 lib/qt4/mkspecs/features/silent.prf
+lib/qt4/mkspecs/features/sis_targets.prf
 lib/qt4/mkspecs/features/static.prf
 lib/qt4/mkspecs/features/static_and_shared.prf
 lib/qt4/mkspecs/features/staticlib.prf
@@ -3002,16 +3138,24 @@ lib/qt4/mkspecs/features/symbian/add_mmp_rules.prf
 lib/qt4/mkspecs/features/symbian/application_icon.prf
 lib/qt4/mkspecs/features/symbian/armcc_warnings.prf
 lib/qt4/mkspecs/features/symbian/data_caging_paths.prf
+lib/qt4/mkspecs/features/symbian/debug.prf
 lib/qt4/mkspecs/features/symbian/def_files.prf
 lib/qt4/mkspecs/features/symbian/def_files_disabled.prf
 lib/qt4/mkspecs/features/symbian/default_post.prf
 lib/qt4/mkspecs/features/symbian/default_pre.prf
+lib/qt4/mkspecs/features/symbian/do_not_build_as_thumb.prf
 lib/qt4/mkspecs/features/symbian/epocallowdlldata.prf
 lib/qt4/mkspecs/features/symbian/moc.prf
 lib/qt4/mkspecs/features/symbian/platform_paths.prf
 lib/qt4/mkspecs/features/symbian/qt.prf
+lib/qt4/mkspecs/features/symbian/qt_config.prf
+lib/qt4/mkspecs/features/symbian/release.prf
+lib/qt4/mkspecs/features/symbian/run_on_phone.prf
 lib/qt4/mkspecs/features/symbian/stl.prf
 lib/qt4/mkspecs/features/symbian/stl_off.prf
+lib/qt4/mkspecs/features/symbian/symbian_building.prf
+lib/qt4/mkspecs/features/symbian/thread.prf
+lib/qt4/mkspecs/features/testcase.prf
 lib/qt4/mkspecs/features/uic.prf
 lib/qt4/mkspecs/features/uitools.prf
 lib/qt4/mkspecs/features/unix/
@@ -3182,6 +3326,8 @@ lib/qt4/mkspecs/macx-xcode/qplatformdefs.h
 lib/qt4/mkspecs/macx-xlc/
 lib/qt4/mkspecs/macx-xlc/qmake.conf
 lib/qt4/mkspecs/macx-xlc/qplatformdefs.h
+lib/qt4/mkspecs/modules/
+lib/qt4/mkspecs/modules/qt_webkit_version.pri
 lib/qt4/mkspecs/netbsd-g++/
 lib/qt4/mkspecs/netbsd-g++/qmake.conf
 lib/qt4/mkspecs/netbsd-g++/qplatformdefs.h
@@ -3202,6 +3348,9 @@ lib/qt4/mkspecs/qws/freebsd-generic-g++/qplatformdefs.h
 lib/qt4/mkspecs/qws/linux-arm-g++/
 lib/qt4/mkspecs/qws/linux-arm-g++/qmake.conf
 lib/qt4/mkspecs/qws/linux-arm-g++/qplatformdefs.h
+lib/qt4/mkspecs/qws/linux-arm-gnueabi-g++/
+lib/qt4/mkspecs/qws/linux-arm-gnueabi-g++/qmake.conf
+lib/qt4/mkspecs/qws/linux-arm-gnueabi-g++/qplatformdefs.h
 lib/qt4/mkspecs/qws/linux-armv6-g++/
 lib/qt4/mkspecs/qws/linux-armv6-g++/qmake.conf
 lib/qt4/mkspecs/qws/linux-armv6-g++/qplatformdefs.h
@@ -3283,6 +3432,7 @@ lib/qt4/mkspecs/solaris-g++-64/qmake.conf
 lib/qt4/mkspecs/solaris-g++-64/qplatformdefs.h
 lib/qt4/mkspecs/solaris-g++/qmake.conf
 lib/qt4/mkspecs/solaris-g++/qplatformdefs.h
+lib/qt4/mkspecs/symbian/
 lib/qt4/mkspecs/symbian-abld/
 lib/qt4/mkspecs/symbian-abld/qmake.conf
 lib/qt4/mkspecs/symbian-abld/qplatformdefs.h
@@ -3296,6 +3446,16 @@ lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_store_build.flm
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qt.xml
 lib/qt4/mkspecs/symbian-sbsv2/qmake.conf
 lib/qt4/mkspecs/symbian-sbsv2/qplatformdefs.h
+lib/qt4/mkspecs/symbian/linux-armcc/
+lib/qt4/mkspecs/symbian/linux-armcc/features/
+lib/qt4/mkspecs/symbian/linux-armcc/features/default_post.prf
+lib/qt4/mkspecs/symbian/linux-armcc/qmake.conf
+lib/qt4/mkspecs/symbian/linux-armcc/qplatformdefs.h
+lib/qt4/mkspecs/symbian/linux-gcce/
+lib/qt4/mkspecs/symbian/linux-gcce/features/
+lib/qt4/mkspecs/symbian/linux-gcce/features/default_post.prf
+lib/qt4/mkspecs/symbian/linux-gcce/qmake.conf
+lib/qt4/mkspecs/symbian/linux-gcce/qplatformdefs.h
 lib/qt4/mkspecs/tru64-cxx/
 lib/qt4/mkspecs/tru64-cxx/qmake.conf
 lib/qt4/mkspecs/tru64-cxx/qplatformdefs.h
@@ -3319,6 +3479,9 @@ lib/qt4/mkspecs/unsupported/qnx-g++/
 lib/qt4/mkspecs/unsupported/qnx-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/qnx-g++/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/qws/
+lib/qt4/mkspecs/unsupported/qws/qnx-641/
+lib/qt4/mkspecs/unsupported/qws/qnx-641/qmake.conf
+lib/qt4/mkspecs/unsupported/qws/qnx-641/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qplatformdefs.h
@@ -3340,6 +3503,9 @@ lib/qt4/mkspecs/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/vxworks-simpentium-g++/
 lib/qt4/mkspecs/unsupported/vxworks-simpentium-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+lib/qt4/mkspecs/unsupported/win32-g++-cross/
+lib/qt4/mkspecs/unsupported/win32-g++-cross/qmake.conf
+lib/qt4/mkspecs/unsupported/win32-g++-cross/qplatformdefs.h
 lib/qt4/mkspecs/win32-borland/
 lib/qt4/mkspecs/win32-borland/qmake.conf
 lib/qt4/mkspecs/win32-borland/qplatformdefs.h
@@ -3349,18 +3515,6 @@ lib/qt4/mkspecs/win32-g++/qplatformdefs.h
 lib/qt4/mkspecs/win32-icc/
 lib/qt4/mkspecs/win32-icc/qmake.conf
 lib/qt4/mkspecs/win32-icc/qplatformdefs.h
-lib/qt4/mkspecs/win32-msvc/
-lib/qt4/mkspecs/win32-msvc.net/
-lib/qt4/mkspecs/win32-msvc.net/qmake.conf
-lib/qt4/mkspecs/win32-msvc.net/qplatformdefs.h
-lib/qt4/mkspecs/win32-msvc/features/
-lib/qt4/mkspecs/win32-msvc/features/incremental.prf
-lib/qt4/mkspecs/win32-msvc/features/incremental_off.prf
-lib/qt4/mkspecs/win32-msvc/qmake.conf
-lib/qt4/mkspecs/win32-msvc/qplatformdefs.h
-lib/qt4/mkspecs/win32-msvc2002/
-lib/qt4/mkspecs/win32-msvc2002/qmake.conf
-lib/qt4/mkspecs/win32-msvc2002/qplatformdefs.h
 lib/qt4/mkspecs/win32-msvc2003/
 lib/qt4/mkspecs/win32-msvc2003/qmake.conf
 lib/qt4/mkspecs/win32-msvc2003/qplatformdefs.h
@@ -3370,6 +3524,9 @@ lib/qt4/mkspecs/win32-msvc2005/qplatformdefs.h
 lib/qt4/mkspecs/win32-msvc2008/
 lib/qt4/mkspecs/win32-msvc2008/qmake.conf
 lib/qt4/mkspecs/win32-msvc2008/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc2010/
+lib/qt4/mkspecs/win32-msvc2010/qmake.conf
+lib/qt4/mkspecs/win32-msvc2010/qplatformdefs.h
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/default_post.prf
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/qmake.conf
@@ -3458,6 +3615,7 @@ lib/qt4/phrasebooks/dutch.qph
 lib/qt4/phrasebooks/finnish.qph
 lib/qt4/phrasebooks/french.qph
 lib/qt4/phrasebooks/german.qph
+lib/qt4/phrasebooks/hungarian.qph
 lib/qt4/phrasebooks/italian.qph
 lib/qt4/phrasebooks/japanese.qph
 lib/qt4/phrasebooks/norwegian.qph
@@ -3467,10 +3625,10 @@ lib/qt4/phrasebooks/spanish.qph
 lib/qt4/phrasebooks/swedish.qph
 lib/qt4/pkgconfig/
 lib/qt4/pkgconfig/Qt3Support.pc
-lib/qt4/pkgconfig/QtAssistantClient.pc
 lib/qt4/pkgconfig/QtCLucene.pc
 lib/qt4/pkgconfig/QtCore.pc
 lib/qt4/pkgconfig/QtDBus.pc
+lib/qt4/pkgconfig/QtDeclarative.pc
 lib/qt4/pkgconfig/QtDesigner.pc
 lib/qt4/pkgconfig/QtDesignerComponents.pc
 lib/qt4/pkgconfig/QtGui.pc
@@ -3489,6 +3647,7 @@ lib/qt4/pkgconfig/QtXmlPatterns.pc
 lib/qt4/pkgconfig/phonon.pc
 lib/qt4/plugins/
 lib/qt4/plugins/accessible/
+lib/qt4/plugins/bearer/
 lib/qt4/plugins/designer/
 lib/qt4/plugins/graphicssystems/
 lib/qt4/plugins/iconengines/
@@ -3499,16 +3658,11 @@ lib/qt4/plugins/script/
 lib/qt4/plugins/sqldrivers/
 lib/qt4/q3porting.xml
 lib/qt4/translations/
-lib/qt4/translations/assistant_adp_de.qm
-lib/qt4/translations/assistant_adp_ja.qm
-lib/qt4/translations/assistant_adp_pl.qm
-lib/qt4/translations/assistant_adp_ru.qm
-lib/qt4/translations/assistant_adp_zh_CN.qm
-lib/qt4/translations/assistant_adp_zh_TW.qm
 lib/qt4/translations/assistant_cs.qm
 lib/qt4/translations/assistant_da.qm
 lib/qt4/translations/assistant_de.qm
 lib/qt4/translations/assistant_fr.qm
+lib/qt4/translations/assistant_hu.qm
 lib/qt4/translations/assistant_ja.qm
 lib/qt4/translations/assistant_pl.qm
 lib/qt4/translations/assistant_ru.qm
@@ -3517,6 +3671,7 @@ lib/qt4/translations/assistant_zh_TW.qm
 lib/qt4/translations/designer_cs.qm
 lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_fr.qm
+lib/qt4/translations/designer_hu.qm
 lib/qt4/translations/designer_ja.qm
 lib/qt4/translations/designer_pl.qm
 lib/qt4/translations/designer_ru.qm
@@ -3526,6 +3681,7 @@ lib/qt4/translations/designer_zh_TW.qm
 lib/qt4/translations/linguist_cs.qm
 lib/qt4/translations/linguist_de.qm
 lib/qt4/translations/linguist_fr.qm
+lib/qt4/translations/linguist_hu.qm
 lib/qt4/translations/linguist_ja.qm
 lib/qt4/translations/linguist_pl.qm
 lib/qt4/translations/linguist_ru.qm
@@ -3542,12 +3698,14 @@ lib/qt4/translations/qt_help_cs.qm
 lib/qt4/translations/qt_help_da.qm
 lib/qt4/translations/qt_help_de.qm
 lib/qt4/translations/qt_help_fr.qm
+lib/qt4/translations/qt_help_hu.qm
 lib/qt4/translations/qt_help_ja.qm
 lib/qt4/translations/qt_help_pl.qm
 lib/qt4/translations/qt_help_ru.qm
 lib/qt4/translations/qt_help_zh_CN.qm
 lib/qt4/translations/qt_help_zh_TW.qm
-lib/qt4/translations/qt_ja_JP.qm
+lib/qt4/translations/qt_hu.qm
+lib/qt4/translations/qt_ja.qm
 lib/qt4/translations/qt_pl.qm
 lib/qt4/translations/qt_pt.qm
 lib/qt4/translations/qt_ru.qm
@@ -3557,10 +3715,12 @@ lib/qt4/translations/qt_sv.qm
 lib/qt4/translations/qt_uk.qm
 lib/qt4/translations/qt_zh_CN.qm
 lib/qt4/translations/qt_zh_TW.qm
+lib/qt4/translations/qtconfig_hu.qm
 lib/qt4/translations/qtconfig_pl.qm
 lib/qt4/translations/qtconfig_ru.qm
 lib/qt4/translations/qtconfig_zh_CN.qm
 lib/qt4/translations/qtconfig_zh_TW.qm
+lib/qt4/translations/qvfb_hu.qm
 lib/qt4/translations/qvfb_pl.qm
 lib/qt4/translations/qvfb_ru.qm
 lib/qt4/translations/qvfb_zh_CN.qm

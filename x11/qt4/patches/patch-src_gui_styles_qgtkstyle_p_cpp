@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_styles_qgtkstyle_p_cpp,v 1.1 2010/05/26 11:34:13 dcoppa Exp $
---- src/gui/styles/qgtkstyle_p.cpp.orig	Wed May 26 12:27:53 2010
-+++ src/gui/styles/qgtkstyle_p.cpp	Wed May 26 12:28:04 2010
-@@ -304,8 +304,7 @@ GtkStyle* QGtkStylePrivate::gtkStyle(const QString &pa
+$OpenBSD: patch-src_gui_styles_qgtkstyle_p_cpp,v 1.2 2010/10/28 14:55:47 espie Exp $
+--- src/gui/styles/qgtkstyle_p.cpp.orig	Fri Sep 10 11:05:25 2010
++++ src/gui/styles/qgtkstyle_p.cpp	Sun Oct 24 12:32:07 2010
+@@ -309,8 +309,7 @@ GtkStyle* QGtkStylePrivate::gtkStyle(const QHashableLa
   */
  void QGtkStylePrivate::resolveGtk() const
  {

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2010/10/28 14:55:47 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,39 +23,31 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-mysql =	3
-REVISION-postgresql =	3
-REVISION-examples =	3
-REVISION-sqlite2 =	3
-REVISION-sqlite =	3	
-REVISION-tds =		3
-REVISION-main = 	3
-
 SHARED_LIBS =	Qt3Support 8.0 \
-		QtCore 8.0 \
+		QtCore 9.0 \
 		QtDesigner 7.0 \
 		QtDesignerComponents 7.0 \
-		QtGui 9.0 \
-		QtNetwork 8.0 \
+		QtGui 10.0 \
+		QtNetwork 9.0 \
 		QtOpenGL 7.0 \
 		QtSql 8.0 \
 		QtXml 8.0 \
 		QtSvg 7.0 \
 		QtTest 7.0 \
-		QtAssistantClient 3.0 \
 		QtDBus 2.0 \
 		QtMultimedia 0.0 \
-		QtScript 1.0 \
+		QtScript 2.0 \
 		QtCLucene 0.0 \
 		QtHelp 1.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
 		QtWebKit 1.0 \
-		phonon 4.1
+		phonon 4.1 \
+		QtDeclarative 0.0 
 
 
-VERSION =	4.6.3
-PKGVERSION =	4.6.3
+VERSION =	4.7.0
+PKGVERSION =	4.7.0
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
@@ -183,11 +175,11 @@ WANTLIB =
 
 commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
 			Xext GL Xi m X11.>=10 z fontconfig \
-			expat
-commonLIB_DEPENDS =	png.>=2::graphics/png
+			expat png.>=2
+commonLIB_DEPENDS =	::graphics/png
 
-sqlWANTLIB =		m
-sqlLIB_DEPENDS = 	QtCore.>=4,QtSql::${BASE_PKGPATH}
+sqlWANTLIB =		m lib/qt4/QtCore.>=4 QtSql
+sqlLIB_DEPENDS = 	::${BASE_PKGPATH}
 
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
@@ -233,10 +225,10 @@ WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} lib/qt4/QtDesigner \
 			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
 			lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtXml \
 			lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/Qt3Support \
-			lib/qt4/QtAssistantClient lib/qt4/QtDBus \
+			lib/qt4/QtDBus \
 			lib/qt4/QtScript lib/qt4/QtScriptTools \
 			lib/qt4/QtHelp lib/qt4/QtCLucene lib/qt4/phonon \
-			lib/qt4/QtMultimedia
+			lib/qt4/QtMultimedia lib/qt4/QtDeclarative
 
 LIB_DEPENDS-html =
 WANTLIB-html =
@@ -249,7 +241,7 @@ CONFIGURE_ARGS +=	-platform openbsd-g++4
 PKG_ARGS += -DGCC4=1
 WANTLIB += stdc++
 LIB_DEPENDS-examples +=	::${BASE_PKGPATH}
-WANTLIB-examples +=	sqlite3 QtWebKit QtXmlPatterns
+WANTLIB-examples +=	sqlite3 lib/qt4/QtWebKit lib/qt4/QtXmlPatterns
 LIB_DEPENDS-main += ::databases/sqlite3
 WANTLIB-main += sqlite3
 .else

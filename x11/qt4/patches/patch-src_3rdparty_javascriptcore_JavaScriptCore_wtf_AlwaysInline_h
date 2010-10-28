@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_AlwaysInline_h,v 1.1 2010/04/19 09:36:30 espie Exp $
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h.orig	Sun Dec  6 12:46:00 2009
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h	Sun Dec  6 12:46:28 2009
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_AlwaysInline_h,v 1.2 2010/10/28 14:55:47 espie Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h.orig	Fri Sep 10 11:05:23 2010
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h	Sun Oct 24 12:32:06 2010
 @@ -21,7 +21,7 @@
  #include "Platform.h"
  
@@ -8,5 +8,5 @@ $OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_AlwaysInline_h,v 
 -#if COMPILER(GCC) && defined(NDEBUG) && !COMPILER(MINGW)
 +#if COMPILER(GCC) && defined(NDEBUG) && !COMPILER(MINGW) && !PLATFORM(OPENBSD)
  #define ALWAYS_INLINE inline __attribute__((__always_inline__))
- #elif COMPILER(MSVC) && defined(NDEBUG)
+ #elif (COMPILER(MSVC) || COMPILER(RVCT)) && defined(NDEBUG)
  #define ALWAYS_INLINE __forceinline

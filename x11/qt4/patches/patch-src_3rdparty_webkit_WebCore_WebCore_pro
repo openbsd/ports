@@ -1,16 +1,15 @@
-$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.2 2010/06/21 16:40:52 espie Exp $
---- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Wed Jun  2 04:03:11 2010
-+++ src/3rdparty/webkit/WebCore/WebCore.pro	Mon Jun 21 11:32:32 2010
-@@ -49,10 +49,10 @@ CONFIG(QTDIR_build) {
+$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.3 2010/10/28 14:55:47 espie Exp $
+--- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Fri Sep 10 11:05:18 2010
++++ src/3rdparty/webkit/WebCore/WebCore.pro	Sun Oct 24 14:20:31 2010
+@@ -67,9 +67,9 @@ CONFIG(standalone_package) {
+     isEmpty(JSC_GENERATED_SOURCES_DIR):JSC_GENERATED_SOURCES_DIR = ../JavaScriptCore/generated
  
-     CONFIG(debug, debug|release) {
-         isEmpty(GENERATED_SOURCES_DIR):GENERATED_SOURCES_DIR = generated$${QMAKE_DIR_SEP}debug
+     !CONFIG(release, debug|release) {
 -        OBJECTS_DIR = obj/debug
 +        OBJECTS_DIR = .obj/debug
      } else { # Release
-         isEmpty(GENERATED_SOURCES_DIR):GENERATED_SOURCES_DIR = generated$${QMAKE_DIR_SEP}release
 -        OBJECTS_DIR = obj/release
 +        OBJECTS_DIR = .obj/release
      }
  
-     DESTDIR = $$OUTPUT_DIR/lib
+ }
