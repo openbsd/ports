@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/10/28 11:39:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/10/28 20:43:49 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newgroup _avahi-autoipd:630
@@ -170,5 +170,5 @@ share/locale/sv/LC_MESSAGES/avahi.mo
 share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
 share/locale/zh_TW/LC_MESSAGES/avahi.mo
-@rcscript ${RCDIR}/avahi-daemon
-@rcscript ${RCDIR}/avahi-dnsconfd
+@rcscript ${RCDIR}/avahi_daemon
+@rcscript ${RCDIR}/avahi_dnsconfd
