@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.3 2010/09/02 11:16:09 jasper Exp $
+# $OpenBSD: Port.pm,v 1.4 2010/10/28 11:56:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -109,6 +109,16 @@ sub notime { 0 }
 package DPB::Task::Port::NoTime;
 our @ISA = qw(DPB::Task::Port);
 sub notime { 1 }
+
+package DPB::Task::Port::Prepare;
+our @ISA = qw(DPB::Task::Port::NoTime);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	return 1;
+}
 
 package DPB::Task::Port::Depends;
 our @ISA=qw(DPB::Task::Port::NoTime);
@@ -259,7 +269,7 @@ package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
 	clean => 'DPB::Task::Port::Clean',
-	prepare => 'DPB::Task::Port::NoTime',
+	prepare => 'DPB::Task::Port::Prepare',
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
 	'show-size' => 'DPB::Task::Port::ShowSize',
