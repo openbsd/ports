@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.4 2010/10/28 10:33:20 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.5 2010/10/28 14:54:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -27,6 +27,7 @@ sub new
 	my ($class, $ports, $make, $logger, $engine, $dpb, $endcode) = @_;
 	my $o = bless { ports => $ports, make => $make,
 		loglist => DPB::Util->make_hot($logger->open("vars")),
+		logger => $logger,
 		engine => $engine,
 		dpb => $dpb,
 		keep_going => 1,
@@ -55,7 +56,7 @@ sub grab_subdirs
 {
 	my ($self, $core, $list) = @_;
 	DPB::Vars->grab_list($core, $self->{ports}, $self->{make}, $list,
-	    $self->{loglist}, $self->{dpb},
+	    $self->{loglist}, $self->{logger}, $self->{dpb},
 	    sub {
 		$self->finish(shift);
 	});

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.5 2010/10/27 22:53:32 espie Exp $
+# $OpenBSD: dpb,v 1.6 2010/10/28 14:54:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -183,8 +183,7 @@ my $builder = DPB::PortBuilder->new(
 
 my $locker = DPB::Locks->new($lockdir);
 my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
-my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core",
-    "DPB::Vars", $engine);
+my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core", $engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;

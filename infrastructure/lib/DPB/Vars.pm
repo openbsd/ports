@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.3 2010/10/28 10:33:20 espie Exp $
+# $OpenBSD: Vars.pm,v 1.4 2010/10/28 14:54:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,23 +20,6 @@ use warnings;
 package DPB::Vars;
 
 use OpenBSD::Paths;
-my @errors = ();
-my $last_errors = 0;
-
-sub report
-{
-	return join('', @errors);
-}
-
-sub important
-{
-	my $class = shift;
-	if (@errors > $last_errors) {
-		$last_errors = @errors;
-		return $class->report;
-	}
-}
-
 sub get
 {
 	my ($class, $make, @names) = @_;
@@ -89,7 +72,8 @@ sub subdirlist
 
 sub grab_list
 {
-	my ($class, $core, $ports, $make, $subdirs, $log, $dpb, $code) = @_;
+	my ($class, $core, $ports, $make, $subdirs, $log, $logger, $dpb, 
+	    $code) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
@@ -123,15 +107,19 @@ sub grab_list
 			$h = {};
 		    };
 
+	my @current = ();
 	while(<$fh>) {
+		push(@current, $_);
 		chomp;
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			my $dir = DPB::PkgPath->new_hidden($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
-			push(@errors, "Problem in ".$dir->fullpkgpath."\n");
+			open my $quicklog,  '>>', $logger->log_pkgpath($dir);
+			print $quicklog @current;
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
+			@current = ("$_\n");
 			print $log $_, "\n";
 			$core->job->set_status(" at $1");
 			$subdir = DPB::PkgPath->new_hidden($1);
