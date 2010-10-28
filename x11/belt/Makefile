@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/10/28 14:47:31 jasper Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
-REVISION=		1
+REVISION=		2
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming.html\#belt
 MASTER_SITES=		http://www.stacken.kth.se/~maxz/files/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
 DISTFILES=		${DISTNAME} menu.conf.EXAMPLE belticons.tar.gz
 DIST_SUBDIR=		belt
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -26,7 +24,7 @@ EXTRACT_ONLY=		belticons.tar.gz
 
 RUN_DEPENDS=		::x11/p5-Tk
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
