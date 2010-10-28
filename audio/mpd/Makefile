@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/28 11:24:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/28 11:30:08 jasper Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.12
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
