@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 09:04:19 steven Exp $
-@conflict zzuf-*
+@comment $OpenBSD: PLIST,v 1.5 2010/10/28 10:17:54 steven Exp $
 %%SHARED%%
 @bin bin/unzip-mem
 @bin bin/unzzip
