@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/10/28 11:39:53 steven Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -25,8 +25,9 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 MODULES =		devel/gettext \
 			devel/gconf2
 
-# XXX: needs libtoolize
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
+# needs libtoolize
+BUILD_DEPENDS +=	::devel/libtool
 
 MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	gst-plugins
