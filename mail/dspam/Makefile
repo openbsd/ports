@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/10/28 09:13:16 steven Exp $
 
 COMMENT=	anti-spam filter
 
@@ -21,8 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-# XXX missing -lkrb5 in pgsql flavor ?
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
