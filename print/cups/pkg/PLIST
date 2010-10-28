@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/10/27 15:42:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/10/28 15:12:50 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -144,10 +144,6 @@ libexec/cups/notifier/
 @man man/man8/lpmove.8
 @man man/man8/reject.8
 sbin/accept
-@mode 700
-sbin/cups-disable
-sbin/cups-enable
-@mode
 @bin sbin/cupsaccept
 @bin sbin/cupsaddsmb
 @bin sbin/cupsctl

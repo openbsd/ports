@@ -5,14 +5,58 @@
 daemon="${TRUEPREFIX}/sbin/cupsd"
 pexp="${daemon} -C ${SYSCONFDIR}/cups/cupsd.conf"
 
+_lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
+         /usr/sbin/lpd /usr/share/man/cat1/lpq.0 /usr/share/man/cat1/lpr.0
+	 /usr/share/man/cat1/lprm.0 /usr/share/man/cat8/lpc.0
+	 /usr/share/man/cat8/lpd.0"
+
 rc_pre() {
 	chown _cups /dev/ulpt[0-1]
 	chown _cups /dev/lp[a,t][0-2]
-	echo y | ${TRUEPREFIX}/sbin/cups-enable >/dev/null
+
+	if [ -e /usr/sbin/lpd.pre-cups -a ! -f /usr/sbin/lpd -a -L /usr/sbin/lpc ]; then
+		return
+	elif [ ! -e /usr/sbin/lpd ]; then
+		return
+	else
+		for i in ${_lpfiles}; do
+			if [ -f $i -a ! -L $i ]; then
+				mv -f $i $i.pre-cups
+			fi
+		done
+	fi
+	if [ -f /etc/printcap -a ! -f /etc/printcap.pre-cups ]; then
+		cp -f /etc/printcap /etc/printcap.pre-cups
+	fi
+	for i in lpq lpr lprm; do
+		rm -f /usr/bin/$i
+		ln -s ${TRUEPREFIX}/bin/$i /usr/bin/$i
+	done
+	rm -f /usr/sbin/lpc
+	ln -s ${TRUEPREFIX}/sbin/lpc /usr/sbin/lpc
 }
 
 rc_post() {
-	echo y | ${TRUEPREFIX}/sbin/cups-disable >/dev/null
+	if [ ! -L /usr/sbin/lpc ]; then
+		return
+	else
+		for i in lpq lpr lprm; do
+			rm -f /usr/bin/$i
+		done
+
+		rm -f /usr/sbin/lpc
+
+		if [ ! -e /usr/sbin/lpd.pre-cups ]; then
+			return
+		else
+			for i in ${_lpfiles} /etc/printcap; do
+				if [ -e $i.pre-cups ]; then
+					mv $i.pre-cups $i
+				fi
+			done
+		fi
+	fi
+
 	chown root /dev/lp[a,t][0-2]
 	chown root /dev/ulpt[0-1]
 }

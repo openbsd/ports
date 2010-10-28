@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2010/10/27 15:42:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2010/10/28 15:12:49 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.4.4
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	print sysutils
 
@@ -133,11 +133,6 @@ post-configure:
 post-install:
 	ln -sf ${LOCALBASE}/bin/smbspool \
 		${PREFIX}/libexec/cups/backend/smb
-.for file in cups-enable cups-disable
-	cp ${FILESDIR}/${file} ${WRKBUILD}
-	${SUBST_CMD} ${WRKBUILD}/${file}
-	${INSTALL_SCRIPT} ${WRKBUILD}/${file} ${PREFIX}/sbin
-.endfor
 
 # Create a link to foomatic drivers database ; we do it here instead of
 # using --enable-ppds-to-cups in the foomatic-db port so that we don't
