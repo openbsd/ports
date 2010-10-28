@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.9 2010/02/03 12:59:24 jasper Exp $
-
-ONLY_FOR_ARCHS = i386
+# $OpenBSD: Makefile,v 1.10 2010/10/28 01:45:44 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.3.1
+V =		1.5.3
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
+DISTFILES =	${DISTNAME}.tar.gz \
+		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0 \
+		jruby-${V}-ffi-${MACHINE_ARCH}.tar.gz:0
 
 HOMEPAGE =	http://www.jruby.org/
 
-MAINTAINER =	Bernd Ahlers <bernd@openbsd.org>
+MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
-# CPL/GPL/LGPL
+# CPL/GPLv2/LGPLv2.1/GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://dist.codehaus.org/jruby/${V}/
+MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/$V/
+MASTER_SITES0 =	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 MODULES =	java
 MODJAVA_VER =	1.7+
@@ -33,49 +35,61 @@ BUILD_DEPENDS =	::devel/apache-ant
 RUN_DEPENDS =	::java/javaPathHelper \
 		::shells/bash
 
-MAKE_ENV =	JAVA_HOME=${JAVA_HOME} ANT_OPTS="-Xmx64m -XX:MaxPermSize=64m"
+MAKE_ENV =	JAVA_HOME=${JAVA_HOME} ANT_OPTS="-Xms256m -Xmx256m"
 JRUBY_HOME =	${PREFIX}/jruby
 
 WRKDIST =	${WRKDIR}/jruby-${V}
-SUBST_VARS =	JRUBY_HOME
-
-# disable regress tests for now. i have to figure out how to run them
-# properly
-NO_REGRESS =	Yes
+ANT_CMD =	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
+JFFI_HOME =	${WRKDIST}/jffi
+JFFI_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
+FFI_ARCH=	${JFFI_ARCH:L}
+SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH
 
 post-extract:
-	@cd ${WRKSRC}/lib/native && ls -1 | fgrep -v openbsd | xargs -r rm -rf
-	@cd ${WRKSRC}/lib/ruby/1.8/ffi/platform && \
-		ls -1 | fgrep -v openbsd | xargs -r rm -rf
+	mv ${WRKDIR}/wmeissner-jffi-e0d10e9 ${JFFI_HOME}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
-	@cd ${WRKSRC}/tool/nailgun && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${JFFI_HOME} && ${ANT_CMD} jar test && \
+		cp dist/jffi-*-OpenBSD.jar ${WRKDIST}/build_lib
+	@cd ${WRKSRC} && rm \
+	  src/org/jruby/runtime/invokedynamic/InvokeDynamicSupport.java
+	@cd ${WRKSRC} && ${ANT_CMD}
+	@cd ${WRKSRC}/tool/nailgun && \
+		${SETENV} ${CONFIGURE_ENV} ./configure && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
 post-build:
 	@${SUBST_CMD} ${WRKBUILD}/bin/jruby
+	@cd ${WRKSRC}/lib/native && rm -r !(*OpenBSD*)
+	@cd ${WRKSRC}/lib/ruby/site_ruby/shared/ffi/platform && \
+	  rm -r !(${FFI_ARCH}|*.ffi)
 
 do-install:
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/autospec ${JRUBY_HOME}/bin/jautospec
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/jgem ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/jirb ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/jirb_swing ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/jruby ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/jrubyc ${JRUBY_HOME}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/rake ${JRUBY_HOME}/bin/jrake
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/rdoc ${JRUBY_HOME}/bin/jrdoc
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/ri ${JRUBY_HOME}/bin/jri
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/spec ${JRUBY_HOME}/bin/jspec
+	for file in jgem jirb jirb_swing jruby jrubyc; do \
+	  ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
+	done
+	for file in ast rdoc ri; do \
+	  ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/j$$file; \
+	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
 	cd ${WRKBUILD} && tar -cf - share | \
 		tar -C ${JRUBY_HOME} -xf -
+	${SET_ENV} ${MAKE_ENV} ${PREFIX}/jruby/bin/jruby -S gem install \
+		${WRKBUILD}/build_lib/{rake,rspec}*.gem
+	for file in autospec rake spec; do \
+	  ln ${JRUBY_HOME}/bin/$$file ${JRUBY_HOME}/bin/j$$file; \
+	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/tool/nailgun
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/nailgun/ng ${JRUBY_HOME}/tool/nailgun
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share \
 		${JRUBY_HOME}/tool
+
+do-regress:
+	cd ${WRKSRC} && ${ANT_CMD} test
+	cd ${WRKSRC} && ${ANT_CMD} spec
 
 .include <bsd.port.mk>
