@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1 2009/07/01 12:43:55 naddy Exp $
---- gcc/config/alpha/openbsd.h.orig	Sat Sep  1 15:28:30 2007
-+++ gcc/config/alpha/openbsd.h	Wed Jul  1 04:33:56 2009
-@@ -17,23 +17,13 @@ You should have received a copy of the GNU General Pub
+$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2010/10/29 08:50:38 naddy Exp $
+--- gcc/config/alpha/openbsd.h.orig	Sat Sep  1 17:28:30 2007
++++ gcc/config/alpha/openbsd.h	Tue Oct 26 16:38:28 2010
+@@ -17,82 +17,67 @@ You should have received a copy of the GNU General Pub
  along with GCC; see the file COPYING3.  If not see
  <http://www.gnu.org/licenses/>.  */
  
@@ -10,11 +10,29 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1 2009/07/01 12:43:55 naddy Exp $
 -
  /* Controlling the compilation driver.  */
  
--/* alpha needs __start.  */
--#undef LINK_SPEC
--#define LINK_SPEC \
++#undef TARGET_DEFAULT
++#define TARGET_DEFAULT \
++	(MASK_FPREGS | MASK_IEEE | MASK_IEEE_CONFORMANT | MASK_GAS)
++
+ /* alpha needs __start.  */
+ #undef LINK_SPEC
+ #define LINK_SPEC \
 -  "%{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp %{assert*}"
--
++  "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
++   %{shared:-shared} %{R*} \
++   %{static:-Bstatic} \
++   %{!static:-Bdynamic} \
++   %{assert*} \
++   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
+ 
++/* As an elf system, we need crtbegin/crtend stuff.  */
++#undef STARTFILE_SPEC
++#define STARTFILE_SPEC "\
++	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
++	crtbegin%O%s} %{shared:crtbeginS%O%s}"
++#undef ENDFILE_SPEC
++#define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
++
  /* run-time target specifications */
  #define TARGET_OS_CPP_BUILTINS()		\
      do {					\
@@ -27,18 +45,41 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1 2009/07/01 12:43:55 naddy Exp $
      } while (0)
  
  /* Layout of source language data types.  */
-@@ -52,47 +42,4 @@ along with GCC; see the file COPYING3.  If not see
+ 
+-/* This must agree with <machine/ansi.h> */
++/* This must agree with <machine/_types.h> */
+ #undef SIZE_TYPE
+ #define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+ #define PTRDIFF_TYPE "long int"
+ 
++#undef INTMAX_TYPE
++#define INTMAX_TYPE "long long int"
++
++#undef UINTMAX_TYPE
++#define UINTMAX_TYPE "long long unsigned int"
++
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
+ 
+ #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
- 
+-
 -#undef PREFERRED_DEBUGGING_TYPE
 -#define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
--
++#undef WINT_TYPE
++#define WINT_TYPE "int"
+ 
++/* Output and generation of labels.  */
  #define LOCAL_LABEL_PREFIX	"."
--
+ 
 -/* We don't have an init section yet.  */
 -#undef HAS_INIT_SECTION
--
++/* .set on alpha is not used to output labels.  */
++#undef SET_ASM_OP
+ 
 -/* collect2 support (assembler format: macros for initialization).  */
 -
 -/* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
@@ -75,3 +116,6 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1 2009/07/01 12:43:55 naddy Exp $
 - } while (0)
 -
 -
++/* don't want no friggin' stack checks.  */
++#undef STACK_CHECK_BUILTIN
++#define STACK_CHECK_BUILTIN 0
