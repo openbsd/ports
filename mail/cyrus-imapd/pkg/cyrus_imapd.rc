@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/libexec/cyrus-imapd/master"
+daemon_flags="-d"
+
+rc_post() {
+	rm /var/run/cyrus-master.pid
+}
+
+rc_cmd $1

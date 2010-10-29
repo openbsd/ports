@@ -1,0 +1,35 @@
+$OpenBSD: patch-imap_mbexamine_c,v 1.3 2010/10/29 09:26:58 ajacoutot Exp $
+--- imap/mbexamine.c.orig	Sat Oct 23 12:50:51 2010
++++ imap/mbexamine.c	Sat Oct 23 12:52:55 2010
+@@ -263,7 +263,7 @@ int do_examine(char *name,
+     printf("  Number of Messages: %u  Mailbox Size: " UQUOTA_T_FMT " bytes\n",
+ 	   mailbox->i.exists, mailbox->i.quota_mailbox_used);
+     printf("  Last Append Date: (%lu) %s",
+-	   mailbox->i.last_appenddate, ctime(&mailbox->i.last_appenddate));
++	   (long unsigned int)mailbox->i.last_appenddate, ctime(&mailbox->i.last_appenddate));
+     printf("  UIDValidity: %u  Last UID: %u\n",
+ 	   mailbox->i.uidvalidity, mailbox->i.last_uid);
+     printf("  Deleted: %u  Answered: %u  Flagged: %u\n",
+@@ -283,7 +283,7 @@ int do_examine(char *name,
+ 	}
+     }
+     printf("\n");
+-    printf("  Last POP3 Login: (%ld) %s", mailbox->i.pop3_last_login,
++    printf("  Last POP3 Login: (%ld) %s", (long int)mailbox->i.pop3_last_login,
+ 	   ctime((const long *) &mailbox->i.pop3_last_login));
+     printf("  Highest Mod Sequence: " MODSEQ_FMT "\n",
+ 	   mailbox->i.highestmodseq);
+@@ -308,10 +308,10 @@ int do_examine(char *name,
+ 	}
+ 
+ 	printf("%06u> UID:%08u   INT_DATE:%lu SENTDATE:%lu SIZE:%-6u\n",
+-	       msgno, record.uid, record.internaldate,
+-	       record.sentdate, record.size);
++	       msgno, record.uid, (long unsigned int)record.internaldate,
++	       (long unsigned int)record.sentdate, record.size);
+ 	printf("      > HDRSIZE:%-6u LASTUPD :%lu SYSFLAGS:%08X",
+-	       record.header_size, record.last_updated,
++	       record.header_size, (long unsigned int)record.last_updated,
+ 	       record.system_flags);
+ 	if (mailbox->i.minor_version >= 5)
+ 	    printf("   LINES:%-6u\n", record.content_lines);

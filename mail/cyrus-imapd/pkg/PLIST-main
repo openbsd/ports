@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/09/10 07:20:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/10/29 09:26:58 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
@@ -18,6 +18,7 @@ include/cyrus/auth.h
 include/cyrus/bsearch.h
 include/cyrus/byteorder64.h
 include/cyrus/charset.h
+include/cyrus/crc32.h
 include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
@@ -41,6 +42,7 @@ include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
 include/cyrus/rfc822date.h
+include/cyrus/signals.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
@@ -60,7 +62,9 @@ libexec/cyrus-imapd/
 @bin libexec/cyrus-imapd/cyr_dbtool
 @bin libexec/cyrus-imapd/cyr_df
 @bin libexec/cyrus-imapd/cyr_expire
+@bin libexec/cyrus-imapd/cyr_sequence
 @bin libexec/cyrus-imapd/cyr_synclog
+@bin libexec/cyrus-imapd/cyr_userseen
 @bin libexec/cyrus-imapd/cyrdump
 @bin libexec/cyrus-imapd/deliver
 @bin libexec/cyrus-imapd/fetchnews
@@ -120,8 +124,6 @@ libexec/cyrus-imapd/
 @comment @man man/man8/imapd.8
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
-@man man/man8/make_md5.8
-@man man/man8/make_sha1.8
 @comment @man man/man8/master.8
 @man man/man8/mbexamine.8
 @man man/man8/mbpath.8
@@ -144,10 +146,6 @@ share/doc/cyrus-imapd/
 share/doc/cyrus-imapd/COPYRIGHT
 share/doc/cyrus-imapd/text/
 @comment share/doc/cyrus-imapd/text/.cvsignore
-@comment share/doc/cyrus-imapd/text/CVS/
-@comment share/doc/cyrus-imapd/text/CVS/Entries
-@comment share/doc/cyrus-imapd/text/CVS/Repository
-@comment share/doc/cyrus-imapd/text/CVS/Root
 @comment share/doc/cyrus-imapd/text/Makefile
 share/doc/cyrus-imapd/text/altnamespace
 share/doc/cyrus-imapd/text/anoncvs
@@ -192,10 +190,6 @@ share/examples/cyrus-imapd/normal.conf
 share/examples/cyrus-imapd/prefork.conf
 share/examples/cyrus-imapd/small.conf
 share/examples/cyrus-imapd/tools/
-@comment share/examples/cyrus-imapd/tools/CVS/
-@comment share/examples/cyrus-imapd/tools/CVS/Entries
-@comment share/examples/cyrus-imapd/tools/CVS/Repository
-@comment share/examples/cyrus-imapd/tools/CVS/Root
 @comment share/examples/cyrus-imapd/tools/arbitronsort.pl
 @comment share/examples/cyrus-imapd/tools/config2header
 @comment share/examples/cyrus-imapd/tools/config2man
@@ -211,6 +205,7 @@ share/examples/cyrus-imapd/tools/rehash
 share/examples/cyrus-imapd/tools/translatesieve
 share/examples/cyrus-imapd/tools/undohash
 share/examples/cyrus-imapd/tools/upgradesieve
+@rcscript ${RCDIR}/cyrus_imapd
 @mode 750
 @owner _cyrus
 @group _cyrus

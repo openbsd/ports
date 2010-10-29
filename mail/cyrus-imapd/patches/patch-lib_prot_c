@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_prot_c,v 1.1 2010/10/29 09:26:58 ajacoutot Exp $
+--- lib/prot.c.orig	Fri Oct 22 21:54:45 2010
++++ lib/prot.c	Fri Oct 22 21:55:04 2010
+@@ -715,7 +715,7 @@ int prot_fill(struct protstream *s)
+ 	char timebuf[20];
+ 
+ 	time(&newtime);
+-	snprintf(timebuf, sizeof(timebuf), "<%ld<", newtime);
++	snprintf(timebuf, sizeof(timebuf), "<%d<", newtime);
+ 	n = write(s->logfd, timebuf, strlen(timebuf));
+ 
+ 	left = s->cnt;
+@@ -758,7 +758,7 @@ static void prot_flush_log(struct protstream *s) 
+ 	char timebuf[20];
+ 	
+ 	time(&newtime);
+-	snprintf(timebuf, sizeof(timebuf), ">%ld>", newtime);
++	snprintf(timebuf, sizeof(timebuf), ">%d>", newtime);
+ 	n = write(s->logfd, timebuf, strlen(timebuf));
+ 
+ 	do {
