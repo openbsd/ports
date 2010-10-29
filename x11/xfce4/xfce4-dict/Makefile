@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/10/29 12:44:06 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	::x11/xfce4/xfce4-panel
 

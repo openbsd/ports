@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/28 15:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/10/29 12:44:06 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 NO_REGRESS=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \

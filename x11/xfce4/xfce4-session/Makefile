@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 19:04:38 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2010/10/29 12:44:06 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_ARGS=	--enable-session-screenshots
 
