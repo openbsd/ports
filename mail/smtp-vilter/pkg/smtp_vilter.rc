@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/smtp-vilter"
+pexp="smtp-vilter:
+
+rc_cmd $1

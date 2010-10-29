@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/11/12 12:09:14 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/10/29 11:59:22 ajacoutot Exp $
 @newgroup _vilter:538
 @newuser _vilter:538:538:daemon:smtp-vilter:/nonexistent:/sbin/nologin
 lib/smtp-vilter/
@@ -28,4 +28,9 @@ share/examples/smtp-vilter/smtp-vilter.conf
 @sample ${SYSCONFDIR}/smtp-vilter/smtp-vilter.conf
 share/examples/smtp-vilter/spamd.conf
 @sample ${SYSCONFDIR}/smtp-vilter/spamd.conf
+@sample /var/smtp-vilter/
+@owner _vilter
+@sample /var/smtp-vilter/tmp/
+@owner
 @extraunexec rm -fr /var/smtp-vilter/*
+@rcscript ${RCDIR}/smtp_vilter

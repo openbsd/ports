@@ -1,7 +1,16 @@
-$OpenBSD: patch-etc_smtp-vilter_smtp-vilter_conf,v 1.1 2009/11/26 14:02:58 jasper Exp $
---- etc/smtp-vilter/smtp-vilter.conf.orig	Sun Jan 21 13:09:38 2007
-+++ etc/smtp-vilter/smtp-vilter.conf	Fri Oct 23 16:28:10 2009
-@@ -126,6 +126,22 @@ unwanted-strategy=mark
+$OpenBSD: patch-etc_smtp-vilter_smtp-vilter_conf,v 1.2 2010/10/29 11:59:22 ajacoutot Exp $
+--- etc/smtp-vilter/smtp-vilter.conf.orig	Sun Jan 21 14:09:38 2007
++++ etc/smtp-vilter/smtp-vilter.conf	Fri Oct 29 13:57:44 2010
+@@ -29,7 +29,7 @@ tmpfiles=setgrp
+ 
+ # Define the path to load backends from
+ 
+-backend-path=/usr/local/lib/smtp-vilter
++backend-path=${TRUEPREFIX}/lib/smtp-vilter
+ 
+ # Scanning Options
+ #
+@@ -126,9 +126,25 @@ unwanted-strategy=mark
  
  error-strategy=tempfail
  
@@ -23,4 +32,20 @@ $OpenBSD: patch-etc_smtp-vilter_smtp-vilter_conf,v 1.1 2009/11/26 14:02:58 jaspe
 +
  # Define the socket over which smtp-vilter communicates with sendmail
  
- port=unix:/var/run/smtp-vilter.sock
+-port=unix:/var/run/smtp-vilter.sock
++port=unix:/tmp/smtp-vilter.sock
+ 
+ # Define the path to a directory for temporary files
+ 
+@@ -165,7 +181,7 @@ option=logall
+ 
+ option=markall
+ 
+-react on virus add to table blacklist
+-react on spam delete from table whitelist
+-react on unwanted-content add to table blacklist
+-react on clean add to table cleanlist
++#react on virus add to table blacklist
++#react on spam delete from table whitelist
++#react on unwanted-content add to table blacklist
++#react on clean add to table cleanlist
