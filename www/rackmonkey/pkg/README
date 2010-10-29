@@ -1,3 +1,5 @@
+# $OpenBSD: README,v 1.2 2010/10/29 12:45:57 ajacoutot Exp $
+
 To configure OpenBSD's base httpd for rackmonkey, please create a symbolic
 link from ${PREFIX}/conf/modules.sample/httpd-rackmonkey.conf
 to ${PREFIX}/conf/modules/httpd-rackmonkey.conf

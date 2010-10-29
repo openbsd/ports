@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/10/27 17:56:26 espie Exp $
+# $OpenBSD: README,v 1.2 2010/10/29 12:45:57 ajacoutot Exp $
 
 This document will briefly describe the steps needed before one can
 complete the Status.net installation. After taking these steps you
