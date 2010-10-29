@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.4 2010/10/28 22:14:54 landry Exp $
+# $OpenBSD: Core.pm,v 1.5 2010/10/29 11:51:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -404,6 +404,7 @@ sub init_cores
 	my ($self, $logger, $startup) = @_;
 	return if $inited;
 
+	DPB::Core->set_logdir($logger->{logdir});
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger);
 		if (!defined $core->prop->{jobs}) {
@@ -432,6 +433,17 @@ package DPB::Core;
 our @ISA = qw(DPB::Core::WithJobs);
 
 my @available = ();
+
+# used to remove cores from the build
+my %stopped = ();
+
+my $logdir;
+
+sub set_logdir
+{
+	my $class = shift;
+	$logdir = shift;
+}
 
 my @extra_report = ();
 my @extra_important = ();
@@ -488,14 +500,25 @@ sub mark_ready
 {
 	my $self = shift;
 	$self->SUPER::mark_ready;
-	push(@available, $self);
+	my $hostname = $self->hostname;
+	if (-e "$logdir/stop-$hostname") {
+		push(@{$stopped{$hostname}}, $self);
+	} else {
+		push(@available, $self);
+	}
 	return $self;
 }
 
 sub avail
 {
 	my $self = shift;
-	return @available > 0;
+	for my $h (keys %stopped) {
+		if (!-e "$logdir/stop-$h") {
+			push(@available, @{$stopped{$h}});
+			delete $stopped{$h};
+		}
+	}
+	return scalar(@available);
 }
 
 sub running

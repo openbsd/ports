@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.11 2010/10/28 16:40:48 espie Exp $
+# $OpenBSD: Engine.pm,v 1.12 2010/10/29 11:51:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ sub new
 	return $o;
 }
 
-sub has_errors
+sub recheck_errors
 {
 	my $self = shift;
 	if (@{$self->{errors}} != 0 || @{$self->{locks}} != 0) {
