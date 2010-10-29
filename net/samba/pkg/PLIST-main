@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/04/28 08:02:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/10/29 09:40:41 espie Exp $
 @conflict samba-docs-<=3.5.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -181,8 +181,8 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/vfs_streams_xattr.8
 @man man/man8/vfs_xattr_tdb.8
 @man man/man8/winbindd.8
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/samba/README
-share/doc/samba/README.OpenBSD
 share/examples/samba/
 @sample ${SYSCONFDIR}/samba/
 share/examples/samba/smb.conf.default

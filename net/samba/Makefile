@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2010/10/18 19:07:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2010/10/29 09:40:41 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.5.6
 PKGNAME-main=		${DISTNAME}
+REVISION-main =		0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
 SHARED_LIBS=		smbclient	2.0 \
@@ -179,9 +180,6 @@ post-install:
 	    xargs chmod ${SHAREMODE}
 	@find ${PREFIX}/share/examples/samba -type d | \
 	    xargs chmod ${DIRMODE}
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-	    -c ${FILESDIR}/README.OpenBSD \
-	    ${PREFIX}/share/doc/samba/README.OpenBSD
 	@for i in ${SAMBA_DOCS}; do \
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;	\
 	done

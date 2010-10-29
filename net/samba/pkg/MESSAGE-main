@@ -1,7 +1,4 @@
-See the documentation at ${LOCALBASE}/share/doc/samba/
-for information on configuring samba.
-
 !!! ATTENTION !!!
 The default passdb backend has been changed to 'tdbsam'!
-See the ${LOCALBASE}/share/doc/samba/README.OpenBSD file for
+See the ${LOCALBASE}/share/doc/pkg-readmes/${FULLPKGNAME} file for
 more information.
