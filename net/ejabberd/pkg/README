@@ -1,3 +1,5 @@
+# $OpenBSD: README,v 1.2 2010/10/29 12:41:58 ajacoutot Exp $
+
 * Migration
   When moving database between machines, or upgrading from 1.1.x to
   2.x.x version you will need to follow the instructions available at
