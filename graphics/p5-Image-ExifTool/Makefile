@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/10/29 12:42:52 ajacoutot Exp $
 
 COMMENT=	read and write meta information in image/audio/video files
 
 DISTNAME=	Image-ExifTool-8.25
 CATEGORIES=	graphics
+
+REVISION=	0
 
 HOMEPAGE=	http://owl.phy.queensu.ca/~phil/exiftool/
 
