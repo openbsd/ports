@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $OpenBSD: saned.rc,v 1.2 2010/10/29 12:54:43 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
