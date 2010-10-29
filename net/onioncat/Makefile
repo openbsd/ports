@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/25 17:37:52 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/29 09:54:50 jasper Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
-DISTNAME =	onioncat-0.2.1
+V =		0.2.1
+DISTNAME =	onioncat-$V
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.abenteuerland.at/onioncat/
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =	http://www.cypherpunk.at/ocat/download/Source/stable/
+MASTER_SITES =	http://www.cypherpunk.at/ocat/download/Source/$V/
 
 RUN_DEPENDS =	::net/tor
 
