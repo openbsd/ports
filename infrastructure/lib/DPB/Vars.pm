@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.4 2010/10/28 14:54:38 espie Exp $
+# $OpenBSD: Vars.pm,v 1.5 2010/10/29 12:35:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -17,7 +17,37 @@
 use strict;
 use warnings;
 
+package DPB::GetThings;
+sub subdirlist
+{
+	my ($class, $list) = @_;
+	return join(' ', sort @$list);
+}
+
+sub run_command
+{
+	my ($class, $core, $shell, $ports, $make, $subdirs, @args) = @_;
+
+	if (defined $shell) {
+		my $s='';
+		if (defined $subdirs) {
+			$s="SUBDIR='".$class->subdirlist($subdirs)."'";
+		}
+		$shell->run("cd $ports && $s ".
+		    join(' ', $shell->make, @args));
+	} else {
+		if (defined $subdirs) {
+			$ENV{SUBDIR} = $class->subdirlist($subdirs);
+		}
+		chdir($ports) or die "Bad directory $ports";
+		exec {$make} ('make', @args);
+	}
+	exit(1);
+}
+
 package DPB::Vars;
+
+our @ISA = qw(DPB::GetThings);
 
 use OpenBSD::Paths;
 sub get
@@ -64,37 +94,23 @@ EOT
 	return @list;
 }
 
-sub subdirlist
+sub run_pipe
 {
-	my ($class, $list) = @_;
-	return join(' ', sort @$list);
+	my ($class, $core, $ports, $make, $subdirs, $dpb) = @_;
+	$core->start_pipe(sub {
+		my $shell = shift;
+		close STDERR;
+		open STDERR, '>&STDOUT' or die "bad redirect";
+		$class->run_command($core, $shell, $ports, $make, $subdirs,
+		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
+	}, "LISTING");
 }
 
 sub grab_list
 {
 	my ($class, $core, $ports, $make, $subdirs, $log, $logger, $dpb, 
 	    $code) = @_;
-	$core->start_pipe(sub {
-		my $shell = shift;
-		close STDERR;
-		open STDERR, '>&STDOUT' or die "bad redirect";
-		my @args = ('dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
-		if (defined $shell) {
-			my $s='';
-			if (defined $subdirs) {
-				$s="SUBDIR='".$class->subdirlist($subdirs)."'";
-			}
-			$shell->run("cd $ports && $s ".
-			    join(' ', $shell->make, @args));
-		} else {
-			if (defined $subdirs) {
-				$ENV{SUBDIR} = $class->subdirlist($subdirs);
-			}
-			chdir($ports) or die "Bad directory $ports";
-			exec {$make} ('make', @args);
-		}
-		exit(1);
-	}, "LISTING");
+	$class->run_pipe($core, $ports, $make, $subdirs, $dpb);
 	my $h = {};
 	my $fh = $core->fh;
 	my $subdir;
