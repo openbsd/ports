@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/26 14:34:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/10/29 15:07:25 ajacoutot Exp $
 @comment @bin bin/network-admin
 @bin bin/shares-admin
 @bin bin/time-admin
@@ -18,8 +18,6 @@ share/examples/gnome-system-tools/gnome-system-tools/
 @sample ${SYSCONFDIR}/gnome-system-tools/
 share/examples/gnome-system-tools/gnome-system-tools/user-profiles.conf
 @sample ${SYSCONFDIR}/gnome-system-tools/user-profiles.conf
-share/glib-2.0/
-share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.gnome.system-tools.gschema.xml
 share/gnome-system-tools/
 share/gnome-system-tools/pixmaps/
@@ -397,26 +395,13 @@ share/gnome/help/users-admin/zh_CN/figures/
 share/gnome/help/users-admin/zh_CN/figures/groups.png
 share/gnome/help/users-admin/zh_CN/figures/users-tool.png
 share/gnome/help/users-admin/zh_CN/users-admin.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/time-admin.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/time-admin.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/time-admin.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/time-admin.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/time-admin.png
-share/icons/hicolor/48x48/devices/
 share/icons/hicolor/48x48/devices/irda.png
 share/icons/hicolor/48x48/devices/plip.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/time-admin.svg
 share/locale/af/LC_MESSAGES/gnome-system-tools.mo
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
