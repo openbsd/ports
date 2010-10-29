@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/10/29 10:37:48 jasper Exp $
 
 COMMENT =	high-performance event loop library
 
@@ -10,7 +10,8 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 SHARED_LIBS=	ev 1.0 #.3
 
 HOMEPAGE =	http://software.schmorp.de/pkg/libev.html
-MASTER_SITES =	http://dist.schmorp.de/libev/
+MASTER_SITES =	http://dist.schmorp.de/libev/ \
+		http://dist.schmorp.de/libev/Attic/
 
 # BSD / GPL
 PERMIT_PACKAGE_CDROM =	Yes
