@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/28 11:49:49 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/10/29 08:29:14 steven Exp $
 
 PKG_ARCH =	*
 
@@ -6,10 +6,11 @@ COMMENT =	configuration management tool
 
 DISTNAME =	ns436
 PKGNAME =	ns4-4.3.6
+REVISION =	0
 
 CATEGORIES =	sysutils net
 
-HOMEPAGE =	http://www.netnix.org/index.php?post_id=1
+HOMEPAGE =	http://netnix.org/index.php?post_id=1
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
