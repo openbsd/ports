@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/28 21:10:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/10/29 12:59:03 ajacoutot Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -49,6 +49,7 @@ lib/pkgconfig/dbus-1.pc
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/system-services/
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dbus/
 share/examples/dbus/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/

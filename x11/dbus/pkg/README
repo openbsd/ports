@@ -1,3 +1,5 @@
+# $OpenBSD: README,v 1.1 2010/10/29 12:59:03 ajacoutot Exp $
+
 To start a session bus instance of dbus-daemon (needed by at least gvfs
 aware applications and ${PREFIX}/share/dbus-1/services/*.service),
 add the following lines in .xinitrc or .xsession before starting the
