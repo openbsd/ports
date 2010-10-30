@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/10/25 20:28:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2010/10/30 22:05:43 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
@@ -81,7 +81,6 @@ LIB_DEPENDS+=	::x11/qt4
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
 		dbus-1 expat fontconfig freetype stdc++
 RUN_DEPENDS-qt=	:${PKGNAME-main}:net/transmission,-main
-USE_X11=	Yes
 
 post-build:
 	cd ${WRKSRC}/qt; qmake4 qtr.pro; make ${MAKE_FLAGS}
