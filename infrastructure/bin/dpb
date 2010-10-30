@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.7 2010/10/29 11:51:42 espie Exp $
+# $OpenBSD: dpb,v 1.8 2010/10/30 11:19:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -43,7 +43,7 @@ use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
 our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
-    $opt_q, $opt_r, $opt_s, $opt_u, $opt_U,
+    $opt_q, $opt_r, $opt_R, $opt_s, $opt_u, $opt_U,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
 
@@ -107,8 +107,8 @@ $ui->{opt} = {
 	    parse_size_file(shift, $heuristics);
 	}
     };
-$ui->handle_options('aceqrsuUh:xA:f:j:m:P:b:L:S:t:T:', 
-    "[-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
+$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:L:S:t:T:', 
+    "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 
 if ($opt_r) {
@@ -177,8 +177,9 @@ if (@build_files > 0) {
 }
 
 DPB::Core::Factory->init_cores($logger);
+
 my $builder = DPB::PortBuilder->new(
-    $opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make,
+    $opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $fullrepo, $logger, $ports, $make,
     $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);

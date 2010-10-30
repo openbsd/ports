@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.12 2010/10/29 11:51:42 espie Exp $
+# $OpenBSD: Engine.pm,v 1.13 2010/10/30 11:19:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,6 +40,13 @@ sub new
 	$o->{log} = DPB::Util->make_hot($logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($logger->open("stats"));
 	return $o;
+}
+
+sub set_grabber
+{
+	my ($self, $g) = @_;
+	$self->{grabber} = $g;
+	$self->{builder}->set_grabber($g);
 }
 
 sub recheck_errors

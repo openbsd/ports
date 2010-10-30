@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.2 2010/10/27 12:58:26 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.3 2010/10/30 11:19:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -28,9 +28,10 @@ use DPB::Job::Port;
 sub new
 {
 	my $class = shift;
-	my ($opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make,
+	my ($opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $fullrepo, $logger, $ports, $make,
 	    $h) = @_;
 	my $self = bless {clean => $opt_c,  size => $opt_s,
+	    rebuild => $opt_R,
 	    fullrepo => $fullrepo,
 	    logger => $logger, ports => $ports, make => $make,
 	    heuristics => $h}, $class;
@@ -44,11 +45,26 @@ sub new
 	return $self;
 }
 
+sub set_grabber
+{
+	my ($self, $g) = @_;
+	$self->{grabber} = $g;
+}
+
 sub init
 {
 	my $self = shift;
 	File::Path::make_path($self->{fullrepo});
 	$self->{global} = $self->{logger}->open("build");
+	if ($self->{rebuild}) {
+		require OpenBSD::PackageRepository;
+		$self->{repository} = OpenBSD::PackageRepository->new(
+		    "file:/$self->{fullrepo}");
+		# this is just a dummy core, for running quick pipes
+		$self->{core} = DPB::Core->new_noreg('localhost');
+		$self->{logrebuild} = DPB::Util->make_hot(
+		    $self->{logger}->open('rebuild'));
+	}
 }
 
 sub pkgfile
@@ -58,10 +74,42 @@ sub pkgfile
 	return "$self->{fullrepo}/$name.tgz";
 }
 
+my $signature_is_uptodate = {};
+
+sub signature_check
+{
+	my ($self, $v) = @_;
+	my $name = $v->fullpkgname;
+	return 0 unless -f "$self->{fullrepo}/$name.tgz";
+	if ($signature_is_uptodate->{$name}) {
+		return 1;
+	}
+	# check the package
+	my $p = $self->{repository}->find("$name.tgz");
+	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
+	my $pkgsig = $plist->signature->string;
+	# and the port
+	my $portsig = $self->{grabber}->grab_signature($self->{core}, 
+	    $v->fullpkgpath);
+	if ($portsig eq $pkgsig) {
+		$signature_is_uptodate->{$name} = 1;
+		print {$self->{logrebuild}} "$name: uptodate\n";
+		return 1;
+	} else {
+		print {$self->{logrebuild}} "$name: rebuild\n";
+		unlink("$self->{fullrepo}/$name.tgz");
+		return 0;
+	}
+}
+
 sub check
 {
 	my ($self, $v) = @_;
-	return -f $self->pkgfile($v);
+	if ($self->{rebuild}) {
+		return $self->signature_check($v);
+	} else {
+		return -f $self->pkgfile($v);
+	}
 }
 
 sub report

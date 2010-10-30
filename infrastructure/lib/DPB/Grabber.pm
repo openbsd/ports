@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.6 2010/10/30 10:35:09 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.7 2010/10/30 11:19:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -33,7 +33,7 @@ sub new
 		keep_going => 1,
 		endcode => $endcode
 	    }, $class;
-	$engine->{grabber} = $o;
+	$engine->set_grabber($o);
 	return $o;
 }
 
@@ -83,7 +83,7 @@ sub grab_subdirs
 sub grab_signature
 {
 	my ($self, $core, $pkgpath) = @_;
-	return DPB::Vars->grab_signature($core, $self, $pkgpath);
+	return DPB::PortSignature->grab_signature($core, $self, $pkgpath);
 }
 
 sub complete_subdirs
