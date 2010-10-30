@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.6 2010/10/30 10:35:09 espie Exp $
+# $OpenBSD: Vars.pm,v 1.7 2010/10/30 11:36:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -182,6 +182,22 @@ sub grab_signature
 	}
 	$core->terminate;
 	return $signature;
+}
+
+package DPB::CleanPackage;
+our @ISA = qw(DPB::GetThings);
+sub clean
+{
+	my ($class, $core, $grabber, $subdir) = @_;
+	$core->start_pipe(sub {
+		my $shell = shift;
+		$class->run_command($core, $shell, $grabber, [$subdir],
+			'clean=package')
+	}, "CLEAN-PACKAGE");
+	my $fh = $core->fh;
+	while (<$fh>) {
+	}
+	$core->terminate;
 }
 
 1;
