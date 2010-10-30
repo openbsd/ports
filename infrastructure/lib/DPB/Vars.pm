@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.5 2010/10/29 12:35:00 espie Exp $
+# $OpenBSD: Vars.pm,v 1.6 2010/10/30 10:35:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,7 +26,9 @@ sub subdirlist
 
 sub run_command
 {
-	my ($class, $core, $shell, $ports, $make, $subdirs, @args) = @_;
+	my ($class, $core, $shell, $grabber, $subdirs, @args) = @_;
+
+	my $ports = $grabber->ports;
 
 	if (defined $shell) {
 		my $s='';
@@ -40,7 +42,7 @@ sub run_command
 			$ENV{SUBDIR} = $class->subdirlist($subdirs);
 		}
 		chdir($ports) or die "Bad directory $ports";
-		exec {$make} ('make', @args);
+		exec {$grabber->make} ('make', @args);
 	}
 	exit(1);
 }
@@ -96,21 +98,20 @@ EOT
 
 sub run_pipe
 {
-	my ($class, $core, $ports, $make, $subdirs, $dpb) = @_;
+	my ($class, $core, $grabber, $subdirs, $dpb) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
 		open STDERR, '>&STDOUT' or die "bad redirect";
-		$class->run_command($core, $shell, $ports, $make, $subdirs,
+		$class->run_command($core, $shell, $grabber, $subdirs,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 	}, "LISTING");
 }
 
 sub grab_list
 {
-	my ($class, $core, $ports, $make, $subdirs, $log, $logger, $dpb, 
-	    $code) = @_;
-	$class->run_pipe($core, $ports, $make, $subdirs, $dpb);
+	my ($class, $core, $grabber, $subdirs, $log, $dpb, $code) = @_;
+	$class->run_pipe($core, $grabber, $subdirs, $dpb);
 	my $h = {};
 	my $fh = $core->fh;
 	my $subdir;
@@ -131,7 +132,8 @@ sub grab_list
 			my $dir = DPB::PkgPath->new_hidden($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
-			open my $quicklog,  '>>', $logger->log_pkgpath($dir);
+			open my $quicklog,  '>>', 
+			    $grabber->logger->log_pkgpath($dir);
 			print $quicklog @current;
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
@@ -159,6 +161,27 @@ sub grab_list
 	}
 	&$reset;
 	$core->terminate;
+}
+
+package DPB::PortSignature;
+our @ISA = qw(DPB::GetThings);
+
+sub grab_signature
+{
+	my ($class, $core, $grabber, $subdir) = @_;
+	my $signature;
+	$core->start_pipe(sub {
+		my $shell = shift;
+		$class->run_command($core, $shell, $grabber, [$subdir],
+			'print-package-signature', 'ECHO_MSG=:')
+	}, "PORT-SIGNATURE");
+	my $fh = $core->fh;
+	while (<$fh>) {
+		chomp;
+		$signature = $_;
+	}
+	$core->terminate;
+	return $signature;
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.5 2010/10/28 14:54:38 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.6 2010/10/30 10:35:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -52,16 +52,39 @@ sub finish
 	$self->{keepgoing} = &{$self->{endcode}};
 }
 
+sub ports
+{
+	my $self = shift;
+	return $self->{ports};
+}
+
+sub make
+{
+	my $self = shift;
+	return $self->{make};
+}
+
+sub logger
+{
+	my $self = shift;
+	return $self->{logger};
+}
+
 sub grab_subdirs
 {
 	my ($self, $core, $list) = @_;
-	DPB::Vars->grab_list($core, $self->{ports}, $self->{make}, $list,
-	    $self->{loglist}, $self->{logger}, $self->{dpb},
+	DPB::Vars->grab_list($core, $self, $list,
+	    $self->{loglist}, $self->{dpb},
 	    sub {
 		$self->finish(shift);
 	});
 }
 
+sub grab_signature
+{
+	my ($self, $core, $pkgpath) = @_;
+	return DPB::Vars->grab_signature($core, $self, $pkgpath);
+}
 
 sub complete_subdirs
 {
