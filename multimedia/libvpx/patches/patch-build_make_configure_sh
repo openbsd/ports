@@ -1,13 +1,13 @@
-$OpenBSD: patch-build_make_configure_sh,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
---- build/make/configure.sh.orig	Thu Sep  2 14:56:47 2010
-+++ build/make/configure.sh	Sat Sep 25 17:14:07 2010
+$OpenBSD: patch-build_make_configure_sh,v 1.2 2010/10/31 21:05:38 ckuethe Exp $
+--- build/make/configure.sh.orig	Thu Oct 28 09:14:14 2010
++++ build/make/configure.sh	Thu Oct 28 21:59:18 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure.sh
  ##
-@@ -812,8 +812,6 @@ process_common_toolchain() {
+@@ -857,8 +857,6 @@ process_common_toolchain() {
                  esac
                  ;;
              gcc*)
@@ -16,7 +16,7 @@ $OpenBSD: patch-build_make_configure_sh,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Ex
                  link_with_cc=gcc
                  tune_cflags="-march="
              setup_gnu_toolchain
-@@ -896,7 +894,7 @@ EOF
+@@ -952,7 +950,7 @@ EOF
      if enabled multithread; then
          case ${toolchain} in
              *-win*);;

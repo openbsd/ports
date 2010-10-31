@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.2 2010/10/07 18:59:47 kili Exp $
---- configure.orig	Thu Sep  2 14:56:47 2010
-+++ configure	Mon Oct  4 22:26:58 2010
+$OpenBSD: patch-configure,v 1.3 2010/10/31 21:05:38 ckuethe Exp $
+--- configure.orig	Thu Oct 28 09:14:14 2010
++++ configure	Thu Oct 28 22:06:24 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure
  ##
-@@ -128,19 +128,6 @@ for t in ${all_targets}; do
+@@ -132,19 +132,6 @@ for t in ${all_targets}; do
      [ -f ${source_path}/${t}.mk ] && enable ${t}
  done
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.2 2010/10/07 18:59:47 kili Exp $
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -408,12 +395,6 @@ EOF
+@@ -415,12 +402,6 @@ EOF
  }
  
  process_detect() {
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.2 2010/10/07 18:59:47 kili Exp $
 -        # Can only build shared libs on a subset of platforms. Doing this check
 -        # here rather than at option parse time because the target auto-detect
 -        # magic happens after the command line has been parsed.
--	enabled linux || die "--enable-shared only supported on ELF for now"
+-        enabled linux || die "--enable-shared only supported on ELF for now"
 -    fi
      if [ -z "$CC" ]; then
          echo "Bypassing toolchain for environment detection."

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/07 18:59:47 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/10/31 21:05:38 ckuethe Exp $
 
 COMMENT=	Google VP8 video codec
 
-V=		0.9.2
+V=		0.9.5
 DISTNAME=	libvpx-v${V}
 PKGNAME=	libvpx-${V}
-REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	vpx	0.0
+SHARED_LIBS=	vpx	1.0
 
 HOMEPAGE=	http://www.webmproject.org/
 
@@ -41,21 +40,14 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/libvpx-${V}
-
 ALL_TARGET=
 
-SUBST_FILES=	build/make/armlink_adapter.sh \
-		build/make/configure.sh \
+SUBST_FILES=	build/make/configure.sh \
 		build/make/gen_asm_deps.sh \
-		build/make/gen_msvs_def.sh \
-		build/make/gen_msvs_proj.sh \
-		build/make/gen_msvs_sln.sh \
 		build/make/version.sh \
 		configure \
 		examples/gen_example_code.sh \
-		examples/gen_example_text.sh \
-		release.sh
+		examples/gen_example_text.sh
 
 pre-configure:
 	@cd ${WRKDIST} && ${SUBST_CMD} ${SUBST_FILES}
@@ -68,7 +60,5 @@ post-install:
 .include <bsd.port.mk>
 
 .if ${NO_SHARED_LIBS:L} == "no"
-CONFIGURE_ENV+=	CFLAGS+=-fPIC
-CONFIGURE_ARGS+=--enable-shared \
-		--enable-pic
+CONFIGURE_ARGS+=--enable-shared
 .endif

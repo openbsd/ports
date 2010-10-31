@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/10/31 21:05:38 ckuethe Exp $
 %%SHARED%%
-@bin bin/ivfdec
-@bin bin/ivfenc
+@bin bin/vpxdec
+@bin bin/vpxenc
 include/vpx/
 include/vpx/vp8.h
 include/vpx/vp8cx.h
