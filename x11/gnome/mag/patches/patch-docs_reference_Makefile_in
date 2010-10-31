@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_reference_Makefile_in,v 1.7 2010/09/30 07:35:00 ajacoutot Exp $
---- docs/reference/Makefile.in.orig	Tue Sep 28 22:58:22 2010
-+++ docs/reference/Makefile.in	Wed Sep 29 18:57:24 2010
-@@ -479,9 +479,9 @@ uninstall-reference: html/index.html
+$OpenBSD: patch-docs_reference_Makefile_in,v 1.8 2010/10/31 05:39:13 ajacoutot Exp $
+--- docs/reference/Makefile.in.orig	Sat Oct 30 16:17:09 2010
++++ docs/reference/Makefile.in	Sun Oct 31 06:29:07 2010
+@@ -477,9 +477,9 @@ uninstall-reference: html/index.html
  	  rm -f $(DESTDIR)$(referencedir)/$$f; \
  	done
  
