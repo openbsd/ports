@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/29 08:50:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2010/10/31 22:38:42 kurt Exp $
 
 ONLY_FOR_ARCHS = i386 m68k sparc sparc64 powerpc vax amd64
 # work in progress
@@ -23,7 +23,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 REVISION-main = 1
 REVISION-c++ = 3
 REVISION-f95 = 2
-REVISION-java = 1
+REVISION-java = 2
 REVISION-objc = 2
 REVISION-ada = 2
 EPOCH = 0
