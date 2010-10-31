@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.8 2010/10/30 11:19:38 espie Exp $
+# $OpenBSD: dpb,v 1.9 2010/10/31 11:07:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ use DPB::Grabber;
 use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
-our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
+our ($opt_t, $opt_d, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
     $opt_q, $opt_r, $opt_R, $opt_s, $opt_u, $opt_U,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
@@ -107,9 +107,9 @@ $ui->{opt} = {
 	    parse_size_file(shift, $heuristics);
 	}
     };
-$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:L:S:t:T:', 
+$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:', 
     "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
-    "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+    "[-b log] [-d log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 
 if ($opt_r) {
 	$heuristics->random;
@@ -225,6 +225,9 @@ sub handle_non_waiting_jobs
 my $grabber = DPB::Grabber->new($ports, $make, $logger, $engine, $dpb,
 	sub { handle_non_waiting_jobs(1) });
 
+if ($opt_d) {
+	$grabber->grab_subdirs($core, $engine->find_best($opt_d, 10));
+}
 if (@subdirlist > 0) {
 	$grabber->grab_subdirs($core, \@subdirlist);
 }
@@ -244,6 +247,7 @@ if (!$opt_e) {
 }
 # and let's wait for all jobs now.
 
+$engine->dump_dependencies;
 #$engine->dump($dump);
 $engine->check_buildable;
 #$engine->dump($dump);
