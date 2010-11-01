@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.25 2010/11/01 13:05:13 steven Exp $
+# $OpenBSD: libtool,v 1.26 2010/11/01 13:05:57 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -811,8 +811,6 @@ sub install
 	my $srcdir = dirname $src;
 	my $srcfile = basename $src;
 	my $dstfile = $srcfile;
-
-	my $toinstall = {};
 
 	my @opts = @$instopts;
 	my @stripopts = ('--strip-debug');
