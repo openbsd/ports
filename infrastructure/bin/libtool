@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.24 2010/11/01 12:48:15 steven Exp $
+# $OpenBSD: libtool,v 1.25 2010/11/01 13:05:13 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -813,7 +813,6 @@ sub install
 	my $dstfile = $srcfile;
 
 	my $toinstall = {};
-	my $tostrip = [];
 
 	my @opts = @$instopts;
 	my @stripopts = ('--strip-debug');
@@ -826,24 +825,26 @@ sub install
 	my $staticlib = $lainfo->{'old_library'};
 	my $laipath = "$srcdir/$ltdir/$srcfile".'i';
 	if ($staticlib) {
-		$toinstall->{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib";
-		push @$tostrip, "$dstdir/$staticlib" if ($strip);
+		# do not strip static libraries, this is done below
+		my @realinstopts = @opts;
+		@realinstopts = grep { $_ ne '-s' } @realinstopts;
+		my $s = "$srcdir/$ltdir/$staticlib";
+		my $d = "$dstdir/$staticlib";
+		Exec->command(@$instprog, @realinstopts, $s, $d);
+		Exec->command('strip', @stripopts, $d) if ($strip);
 	}
 	if ($sharedlib) {
-		$toinstall->{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib";
+		my $s = "$srcdir/$ltdir/$sharedlib";
+		my $d = "$dstdir/$sharedlib";
+		Exec->command(@$instprog, @opts, $s, $d);
 	}
-	$toinstall->{"$laipath"} = "$dstdir/$dstfile";
-	while (my ($s, $d) = each %$toinstall) {
-		my @realinstopts = @opts;
+	if ($laipath) {
 		# do not try to strip .la files
-		# do not strip static libraries, this is done below
-		if ($s =~ m/\.la$/ || $d =~ m /\.la$/ || $d =~ m/\.a$/) {
-			@realinstopts = grep { $_ ne '-s' } @realinstopts;
-		}
+		my @realinstopts = @opts;
+		@realinstopts = grep { $_ ne '-s' } @realinstopts;
+		my $s = $laipath;
+		my $d = "$dstdir/$dstfile";
 		Exec->command(@$instprog, @realinstopts, $s, $d);
-	}
-	foreach my $f (@$tostrip) {
-		Exec->command('strip', @stripopts, $f);
 	}
 	# for libraries with a -release in their name
 	my @libnames = split /\s+/, $lainfo->{'library_names'};
