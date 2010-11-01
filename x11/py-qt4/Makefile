@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/28 14:56:24 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/01 10:39:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,8 @@ LIB_DEPENDS=	:qt4->=4.7.0:x11/qt4 \
 NO_REGRESS=	Yes
 
 MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/ \
-		http://spacehopper.org/mirrors/
+		http://spacehopper.org/mirrors/ \
+		http://distfiles.nl/
 
 MODULES=	devel/gettext \
 		lang/python \
