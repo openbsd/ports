@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.23 2010/10/28 23:50:15 steven Exp $
+# $OpenBSD: libtool,v 1.24 2010/11/01 12:48:15 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -798,6 +798,63 @@ sub link
 	Exec->command(@cmd);
 }
 
+sub install
+{
+	my $class = shift;
+	my $src = shift;
+	my $dstdir = shift;
+	my $instprog = shift;
+	my $instopts = shift;
+	my $strip = shift;
+
+	my $ltdir = $main::ltdir;
+	my $srcdir = dirname $src;
+	my $srcfile = basename $src;
+	my $dstfile = $srcfile;
+
+	my $toinstall = {};
+	my $tostrip = [];
+
+	my @opts = @$instopts;
+	my @stripopts = ('--strip-debug');
+	if ($$instprog[-1] =~ m/install([.-]sh)?$/) {
+		push @opts, '-m', '644';
+	}
+
+	my $lainfo = $class->parse($src);
+	my $sharedlib = $lainfo->{'dlname'};
+	my $staticlib = $lainfo->{'old_library'};
+	my $laipath = "$srcdir/$ltdir/$srcfile".'i';
+	if ($staticlib) {
+		$toinstall->{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib";
+		push @$tostrip, "$dstdir/$staticlib" if ($strip);
+	}
+	if ($sharedlib) {
+		$toinstall->{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib";
+	}
+	$toinstall->{"$laipath"} = "$dstdir/$dstfile";
+	while (my ($s, $d) = each %$toinstall) {
+		my @realinstopts = @opts;
+		# do not try to strip .la files
+		# do not strip static libraries, this is done below
+		if ($s =~ m/\.la$/ || $d =~ m /\.la$/ || $d =~ m/\.a$/) {
+			@realinstopts = grep { $_ ne '-s' } @realinstopts;
+		}
+		Exec->command(@$instprog, @realinstopts, $s, $d);
+	}
+	foreach my $f (@$tostrip) {
+		Exec->command('strip', @stripopts, $f);
+	}
+	# for libraries with a -release in their name
+	my @libnames = split /\s+/, $lainfo->{'library_names'};
+	foreach my $n (@libnames) {
+		next if ($n eq $sharedlib);
+		unlink("$dstdir/$n");
+		symlink($sharedlib, "$dstdir/$n");
+	}
+}
+
+
 package LoFile;
 our @ISA=(qw(LaLoFile));
 use File::Basename;
@@ -1348,9 +1405,6 @@ if ($mode eq 'compile') {
 		}
 	}
 	my $toinstall = {};
-	my $tosymlink = {};	# for libraries with a -release in their name
-	my $tostrip = [];
-	my $addedmode = 0;
 	foreach my $s (@src) {
 		my $dstfile = basename $s;
 		# resolve symbolic links, so we don't try to test later
@@ -1363,26 +1417,7 @@ if ($mode eq 'compile') {
 		Trace::debug {"srcdir = $srcdir\nsrcfile = $srcfile\n"};
 		Trace::debug {"dstdir = $dstdir\ndstfile = $dstfile\n"};
 		if ($srcfile =~ m/^\S+\.la$/) {
-			# we are installing a .la library
-			if ($$ltprog[-1] =~ m/install([.-]sh)?$/) {
-				push @instopts, '-m', '644' unless $addedmode;
-				$addedmode = 1;
-			}
-			my $lainfo = LaFile->parse($s);
-			# replace info where needed when installing the .la file
-			my $sharedlib = $lainfo->{'dlname'};
-			my $staticlib = $lainfo->{'old_library'};
-			my @libnames = split /\s+/, $lainfo->{'library_names'};
-			my $laipath = "$srcdir/$ltdir/$srcfile".'i';
-			$toinstall->{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib"
-				if ($staticlib);
-			push @$tostrip, "$dstdir/$staticlib" if ($install_opts{'s'} && $staticlib);
-			$toinstall->{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib"
-				if ($sharedlib);
-			$toinstall->{"$laipath"} = "$dstdir/$dstfile";
-			foreach my $n (@libnames) {
-				$tosymlink->{$n} = $sharedlib if ($n ne $sharedlib);
-			}
+			LaFile->install($s, $dstdir, $ltprog, \@instopts, $install_opts{'s'});
 		} elsif (-f "$srcdir/$ltdir/$srcfile" && Program::is_wrapper($s)) {
 			$toinstall->{"$srcdir/$ltdir/$srcfile"} = $dst;
 		} else {
@@ -1390,21 +1425,7 @@ if ($mode eq 'compile') {
 		}
 	}
 	while (my ($s, $d) = each %$toinstall) {
-		my @realinstopts = @instopts;
-		# do not try to strip .la files
-		# do not strip static libraries, this is done below
-		if ($s =~ m/\.la$/ || $d =~ m /\.la$/ || $d =~ m/\.a$/) {
-			@realinstopts = grep { $_ ne '-s' } @realinstopts;
-		}
-		Exec->command(@$ltprog, @realinstopts, $s, $d);
-	}
-	foreach my $f (@$tostrip) {
-		my @stripopts = ('--strip-debug');
-		Exec->command('strip', @stripopts, $f);
-	}
-	while (my ($d, $s) = each %$tosymlink) {
-		unlink("$dstdir/$d");
-		symlink($s, "$dstdir/$d");
+		Exec->command(@$ltprog, @instopts, $s, $d);
 	}
 	if (defined $install_opts{'d'}) {
 		Exec->command(@$ltprog, @instopts, @ARGV);
