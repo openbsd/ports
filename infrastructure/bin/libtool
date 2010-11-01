@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.26 2010/11/01 13:05:57 steven Exp $
+# $OpenBSD: libtool,v 1.27 2010/11/01 13:26:41 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1077,6 +1077,21 @@ sub link
 	Exec->command(@cmd);
 }
 
+sub install
+{
+	my $class = shift;
+	my $src = shift;
+	my $dst = shift;
+	my $instprog = shift;
+	my $instopts = shift;
+
+	my $ltdir = $main::ltdir;
+	my $srcdir = dirname $src;
+	my $srcfile = basename $src;
+	my $realpath = "$srcdir/$ltdir/$srcfile";
+	Exec->command(@$instprog, @$instopts, $realpath, $dst);
+}
+
 package Library;
 
 # find actual library filename
@@ -1403,7 +1418,6 @@ if ($mode eq 'compile') {
 			$dstdir = dirname $dst;
 		}
 	}
-	my $toinstall = {};
 	foreach my $s (@src) {
 		my $dstfile = basename $s;
 		# resolve symbolic links, so we don't try to test later
@@ -1418,13 +1432,10 @@ if ($mode eq 'compile') {
 		if ($srcfile =~ m/^\S+\.la$/) {
 			LaFile->install($s, $dstdir, $ltprog, \@instopts, $install_opts{'s'});
 		} elsif (-f "$srcdir/$ltdir/$srcfile" && Program::is_wrapper($s)) {
-			$toinstall->{"$srcdir/$ltdir/$srcfile"} = $dst;
+			Program->install($s, $dst, $ltprog, \@instopts);
 		} else {
-			$toinstall->{$s} = $dst;
+			Exec->command(@$ltprog, @instopts, $s, $dst);
 		}
-	}
-	while (my ($s, $d) = each %$toinstall) {
-		Exec->command(@$ltprog, @instopts, $s, $d);
 	}
 	if (defined $install_opts{'d'}) {
 		Exec->command(@$ltprog, @instopts, @ARGV);
