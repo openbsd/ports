@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 17:39:22 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/01 09:35:09 steven Exp $
 
 PKG_ARCH =	*
 
 COMMENT =	configuration header file shared by the SuiteSparse ports
 
-VERSION =	3.0.0
+VERSION =	3.5.0
 DISTNAME =	UFconfig-${VERSION}
 PKGNAME =	${DISTNAME:L}
 
