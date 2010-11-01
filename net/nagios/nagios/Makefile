@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/01 21:49:04 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.2.1
+V=		3.2.3
 DISTNAME=	nagios-${V}
 PKGNAME-main=	nagios-${V}
-REVISION-main=	0
 PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
@@ -63,11 +62,11 @@ PREFIX-web=	/var/www
 .if ${FLAVOR:L:Mchroot}
 WANTLIB-web=
 LIB_DEPENDS-web=
-RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
+RUN_DEPENDS-web= :nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
-WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg png z
-LIB_DEPENDS-web=gd::graphics/gd
-RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
+WANTLIB-web=	${WANTLIB} fontconfig freetype gd jpeg png z
+LIB_DEPENDS-web= ::graphics/gd
+RUN_DEPENDS-web= :nagios-${V}-!chroot:net/nagios/nagios
 .endif
 
 WANTLIB-main=	${WANTLIB} ltdl.>=4 pthread
