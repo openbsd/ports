@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/09 21:45:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/01 19:49:41 jasper Exp $
 
 COMMENT=		simple BitTorrent implementation
 
@@ -22,6 +22,7 @@ WANTLIB=		c crypto event
 
 NO_REGRESS=		Yes
 
+USE_GROFF=		Yes
 MAKE_FILE=		BSDmakefile
 
 do-install:
