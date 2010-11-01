@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.8 2010/10/31 11:07:20 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.9 2010/11/01 12:24:47 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 31 2010 $
+.Dd $Mdocdate: November 1 2010 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -26,7 +26,6 @@
 .Op Fl aceqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
-.Op Fl d Ar logfile
 .Op Fl h Ar hosts
 .Op Fl j Ar n
 .Op Fl L Ar logdir
@@ -61,9 +60,6 @@ Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
 .It Fl c
 Clean port working directory and log before each build.
-.It Fl d Ar logfile
-Use a dependency logfile from a previous build to look at the most important
-10 pkgpaths first before scanning the rest of the tree.
 .It Fl e
 The listing job is extra and won't be given back to the pool when it's
 finished.
@@ -281,7 +277,10 @@ and finishes at
 .It Pa clean.log
 Paths that do not clean correctly, and required sudo to clean the directory.
 .It Pa dependencies.log
-List of pkgpath frequencies, filled at end of LISTING.
+List of pkgpath frequencies, filled at end of LISTING if
+.Fl a .
+Will be automatically reused when restarting a build: a quick LISTING of
+the most important dependencies will happen before the general LISTING.
 .It Pa size.log
 Size of work directory at the end of each build, built only with
 .Fl s .
