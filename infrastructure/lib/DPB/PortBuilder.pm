@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.4 2010/10/30 11:36:07 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.5 2010/11/01 10:55:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -76,9 +76,9 @@ sub pkgfile
 
 my $signature_is_uptodate = {};
 
-sub signature_check
+sub check_signature
 {
-	my ($self, $v) = @_;
+	my ($self, $core, $v) = @_;
 	my $name = $v->fullpkgname;
 	return 0 unless -f "$self->{fullrepo}/$name.tgz";
 	if ($signature_is_uptodate->{$name}) {
@@ -89,7 +89,7 @@ sub signature_check
 	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
 	my $pkgsig = $plist->signature->string;
 	# and the port
-	my $portsig = $self->{grabber}->grab_signature($self->{core}, 
+	my $portsig = $self->{grabber}->grab_signature($core,
 	    $v->fullpkgpath);
 	if ($portsig eq $pkgsig) {
 		$signature_is_uptodate->{$name} = 1;
@@ -97,7 +97,7 @@ sub signature_check
 		return 1;
 	} else {
 		print {$self->{logrebuild}} "$name: rebuild\n";
-		$self->{grabber}->clean_package($self->{core},
+		$self->{grabber}->clean_package($core,
 		    $v->fullpkgpath);
 		return 0;
 	}
@@ -106,20 +106,29 @@ sub signature_check
 sub check
 {
 	my ($self, $v) = @_;
+	my $check = -f $self->pkgfile($v);
+	return 0 unless $check;
 	if ($self->{rebuild}) {
-		return $self->signature_check($v);
+		return $signature_is_uptodate->{$v->fullpkgname};
 	} else {
-		return -f $self->pkgfile($v);
+		return 1;
 	}
+}
+
+sub register_built
+{
+	my ($self, $v) = @_;
+	$signature_is_uptodate->{$v->fullpkgname} = -f $self->pkgfile($v);
 }
 
 sub report
 {
 	my ($self, $v, $job, $core) = @_;
+	return if $job->{signature_only};
 	my $pkgpath = $v->fullpkgpath;
 	my $host = $core->fullhostname;
-	my $sz = (stat $self->{logger}->log_pkgpath($v))[7];
 	my $log = $self->{global};
+	my $sz = (stat $self->{logger}->log_pkgpath($v))[7];
 	if (defined $job->{offset}) {
 		$sz -= $job->{offset};
 	}
@@ -159,8 +168,6 @@ sub build
 	$job = DPB::Job::Port->new($log, $v, $self, $special,
 	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
 	$core->start_job($job, $v);
-#	(sub {
-#	}, 	$v, " (".$self->{heuristics}->measure($v).")");
 	print $lock "host=", $core->hostname, "\n";
 	print $lock "pid=$core->{pid}\n";
 	print $lock "start=$start (", DPB::Util->time2string($start), ")\n";

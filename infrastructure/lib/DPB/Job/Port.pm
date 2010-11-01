@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.5 2010/10/28 14:21:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.6 2010/11/01 10:55:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -109,6 +109,29 @@ sub notime { 0 }
 package DPB::Task::Port::NoTime;
 our @ISA = qw(DPB::Task::Port);
 sub notime { 1 }
+
+package DPB::Task::Port::Signature;
+our @ISA =qw(DPB::Task::Port::NoTime);
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	exit($job->{builder}->check_signature($core, $job->{v}));
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	my $job = $core->job;
+	if ($core->{status} == 0) {
+		$job->add_normal_tasks;
+	} else {
+		$job->{signature_only} = 1;
+	}
+	return 1;
+}
 
 package DPB::Task::Port::Depends;
 our @ISA=qw(DPB::Task::Port::NoTime);
@@ -291,7 +314,34 @@ use Time::HiRes qw(time);
 sub new
 {
 	my ($class, $log, $v, $builder, $special, $endcode) = @_;
+	my $e;
+	if ($builder->{rebuild}) {
+		$e = sub { $builder->register_built($v); &$endcode; };
+	} else {
+		$e = $endcode;
+	}
+	my $job = bless {
+	    tasks => [],
+	    log => $log, v => $v,
+	    special => $special,  current => '',
+	    builder => $builder, endcode => $e},
+		$class;
+
+	if ($builder->{rebuild}) {
+		push(@{$job->{tasks}}, 
+		    DPB::Task::Port::Signature->new('signature'));
+	} else {
+		$job->add_normal_tasks;
+	}
+	return $job;
+}
+
+sub add_normal_tasks
+{
+	my $self = shift;
+
 	my @todo;
+	my $builder = $self->{builder};
 	if ($builder->{clean}) {
 		push @todo, "clean";
 	}
@@ -304,12 +354,7 @@ sub new
 		push @todo, 'show-fake-size';
 	}
 	push @todo, 'clean';
-	bless {
-	    tasks => [map {DPB::Port::TaskFactory->create($_)} @todo],
-	    log => $log, v => $v,
-	    special => $special,  current => '',
-	    builder => $builder, endcode => $endcode},
-		$class;
+	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
 }
 
 sub current_task
