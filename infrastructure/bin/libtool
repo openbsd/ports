@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.27 2010/11/01 13:26:41 steven Exp $
+# $OpenBSD: libtool,v 1.28 2010/11/01 13:40:36 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -477,7 +477,7 @@ sub read
 {
 	my ($class, $filename) = @_;
 	my $info = $class->new;
-	open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
+	open(my $fh, '<', $filename) or die "Cannot read $filename: $!\n";
 	my $_;
 	while (<$fh>) {
 		chomp;
@@ -557,7 +557,7 @@ sub write
 	my $shouldnotlink = $lainfo->stringize('shouldnotlink');
 	my $libdir = $lainfo->stringize('libdir');
 
-	open(my $la, '>', $filename) or die "cannot write $filename: $!\n";
+	open(my $la, '>', $filename) or die "Cannot write $filename: $!\n";
 	say "creating $filename" if $main::verbose || $main::D;
 	print $la <<EOF
 # $name - libtool library file
@@ -762,7 +762,7 @@ sub link
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@$finalorderedlibs) {
-		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
+		my $a = $libs->{$k}->{fullpath} || die "Link error: $k not found in \$libs\n";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			push @libflags, '-Wl,-whole-archive' unless $prev_was_archive;
@@ -867,7 +867,7 @@ sub write
 
 	my $name = basename $filename;
 
-	open(my $lo, '>', $filename) or die "cannot write $filename: $!\n";
+	open(my $lo, '>', $filename) or die "Cannot write $filename: $!\n";
 	say "creating $filename" if $main::verbose || $main::D;
 	print $lo <<EOF
 # $name - a libtool object file
@@ -925,7 +925,7 @@ sub write_wrapper
 	my $version = $main::version;
 	my $pfile = basename $program;
 	my $realprogram = $ltdir . '/' . $pfile;
-	open(my $pw, '>', $program) or die "cannot write $program: $!\n";
+	open(my $pw, '>', $program) or die "Cannot write $program: $!\n";
 	print $pw <<EOF
 #!/bin/sh
 
@@ -958,7 +958,7 @@ sub is_wrapper
 #	my $self = shift;
 	my $program = shift;
 
-	open(my $pw, '<', $program) or die "cannot open $program: $!\n";
+	open(my $pw, '<', $program) or die "Cannot open $program: $!\n";
 	return eval(grep { m/wrapper\sfor/ } <$pw>);
 }
 
@@ -1050,7 +1050,7 @@ sub link
 
 	main::create_symlinks($symlinkdir, $libs);
 	foreach my $k (@$finalorderedlibs) {
-		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
+		my $a = $libs->{$k}->{fullpath} || die "Link error: $k not found in \$libs\n";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			push @libflags, $a;
@@ -1121,7 +1121,7 @@ sub find
  		my $d = main::abs_path(main::dirname($self->{lafile}));
 		# get the name we need (this may include a -release)
 		if (!$dlname && !$oldlib) {
-			die "neither static nor shared library found in $self->{lafile}\n";
+			die "Link error: neither static nor shared library found in $self->{lafile}\n";
 		}
 		if ($d !~ m/\Q$ltdir\E$/ && $installed eq 'no') {
 			$d .= "/$ltdir";
@@ -1190,7 +1190,7 @@ sub find
 			say "warning: dependency on $libtofind dropped";
 			$self->{dropped} = 1;
 		} elsif ($linkmode eq 'Program') {
-			die "$libtofind not found!\n";
+			die "Link error: $libtofind not found!\n";
 		}
 	} else {
 		$self->{fullpath} = $libfile;
@@ -1312,7 +1312,7 @@ while (@ARGV) {
 	if ($arg =~ /install([-.]sh)?$/) { last; }
 }
 Trace::debug {"ltprog = \"@$ltprog\"\n"};
-if (@$ltprog == 0) { die "no libtool command\n" };
+if (@$ltprog == 0) { die "No libtool command given.\n" };
 # make ltprog a list of elements without whitespace (prevent exec errors)
 my @tmp_ltprog = @$ltprog;
 @$ltprog = ();
@@ -1370,7 +1370,7 @@ if ($mode eq 'compile') {
 				last;
 			}
 		}
-		$found or die "cannot find source file in command\n";
+		$found or die "Cannot find source file in command\n";
 		# the output file ends up in the current directory
 		$odir = '.';
 		($ofile = basename $srcfile) =~ s/\.($srcext)$/.lo/i;
@@ -1393,15 +1393,15 @@ if ($mode eq 'compile') {
 	if ($$ltprog[-1] =~ m/install([.-]sh)?$/) {
 		getopts('BbCcdf:g:m:o:pSs', \%install_opts);
 		if (@ARGV < 2 && (!defined $install_opts{'d'} && @ARGV == 1)) {
-			die "wrong number of arguments for install\n";
+			die "Wrong number of arguments for install\n";
 		}
 	} elsif ($$ltprog[-1] =~ m/cp$/) {
 		getopts('HLPRfipr', \%install_opts);
 		if (@ARGV < 2) {
-			die "wrong number of arguments for install\n";
+			die "Wrong number of arguments for install\n";
 		}
 	} else {
-		die "unsupported install program $$ltprog[-1]\n";
+		die "Unsupported install program $$ltprog[-1]\n";
 	}
 	my @instopts = @argvcopy[0 .. (@argvcopy - @ARGV - 1)];
 	my $dst = pop @ARGV;
@@ -1413,7 +1413,7 @@ if ($mode eq 'compile') {
 		# dst is not a directory, i.e. a file
 		if (@src > 1) {
 			# XXX not really libtool's task to check this
-			die "multiple source files combined with file destination";
+			die "Multiple source files combined with file destination.\n";
 		} else {
 			$dstdir = dirname $dst;
 		}
@@ -1423,7 +1423,7 @@ if ($mode eq 'compile') {
 		# resolve symbolic links, so we don't try to test later
 		# whether the symlink is a program wrapper etc.
 		if (-l $s) {
-			$s = readlink($s) or die "Cannot readlink $s";
+			$s = readlink($s) or die "Cannot readlink $s: $!\n";
 		}
 		my $srcdir = dirname $s;
 		my $srcfile = basename $s;
@@ -1490,7 +1490,7 @@ if ($mode eq 'compile') {
 
 	my $outfile = $opts{'o'};
 	if (!$outfile) {
-		die "no output file given.\n";
+		die "No output file given.\n";
 	}
 	Trace::debug {"outfile = $outfile\n"};
 	my $odir = dirname $outfile;
@@ -1510,7 +1510,7 @@ if ($mode eq 'compile') {
 	my @sobjs;
 	if ($opts{'objectlist'}) {
 		my $objectlist = $opts{'objectlist'};
-		open(my $ol, '<', $objectlist) or die "cannot open $objectlist: $!\n";
+		open(my $ol, '<', $objectlist) or die "Cannot open $objectlist: $!\n";
 		my @objlist = <$ol>;
 		for (@objlist) { chomp; }
 		generate_objlist(\@objs, \@sobjs, \@objlist);
@@ -1685,7 +1685,7 @@ if ($mode eq 'compile') {
 }
 
 if (Exec->performed == 0) {
-	die "no commands to execute.\n"
+	die "No commands to execute.\n"
 }
 
 ###########################################################################
@@ -1710,7 +1710,7 @@ EOF
 
 sub notyet
 {
-	die "option not implemented yet.\n";
+	die "Option not implemented yet.\n";
 }
 
 # XXX incomplete
@@ -1734,7 +1734,7 @@ sub parse_version_info
 	} elsif ($vinfo =~ m/^(\d+)$/) {
 		return ($1, 0, 0);
 	} else {
-		die "error parsing -version-info $vinfo\n";
+		die "Error parsing -version-info $vinfo\n";
 	}
 }
 
@@ -1744,7 +1744,7 @@ sub create_symlinks
 	my $libs = shift;
 
 	if (! -d $dir) {
-		mkdir $dir or die "cannot create directory: $!\n";
+		mkdir $dir or die "Cannot create directory: $!\n";
 	}
 	foreach my $l (values %$libs) {
 		my $f = $l->{fullpath};
@@ -1762,7 +1762,7 @@ sub create_symlinks
 		foreach my $libfile (@$libnames) {
 			Trace::debug {"ln -s $f $dir/$libfile\n"};
 			if (! -f "$dir/$libfile") {
-				symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
+				symlink abs_path($f), "$dir/$libfile" or die "Cannot create symlink: $!\n";
 			}
 		}
 	}
@@ -1889,7 +1889,7 @@ sub get_symbollist
 
 	Trace::debug {"generating symbol list in file: $filepath\n"};
 	my $symbols = [];
-	open(my $sh, '-|', 'nm', @$objlist) or die "error running nm on object list\n";
+	open(my $sh, '-|', 'nm', @$objlist) or die "Error running nm on object list\n";
 	my $c = 0;
 	while (my $line = <$sh>) {
 		chomp $line;
@@ -1905,7 +1905,7 @@ sub get_symbollist
 	}
 	$symbols = reverse_zap_duplicates_ref($symbols);
 	@$symbols = sort @$symbols;
-	open(my $fh, '>', $filepath) or die "cannot open $filepath\n";
+	open(my $fh, '>', $filepath) or die "Cannot open $filepath\n";
 	print $fh join("\n", @$symbols), "\n";
 }
 
