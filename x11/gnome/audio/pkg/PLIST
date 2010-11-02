@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/23 17:42:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/02 14:06:39 giovanni Exp $
 share/sounds/
 share/sounds/card_shuffle.wav
+share/sounds/desktop-login.wav
 share/sounds/email.wav
 share/sounds/error.wav
 share/sounds/generic.wav
