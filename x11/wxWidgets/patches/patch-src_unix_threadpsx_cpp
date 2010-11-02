@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_unix_threadpsx_cpp,v 1.1 2010/11/02 13:10:52 dcoppa Exp $
+--- src/unix/threadpsx.cpp.orig	Thu Apr 15 11:04:33 2010
++++ src/unix/threadpsx.cpp	Thu Oct 28 07:27:58 2010
+@@ -1109,19 +1109,29 @@ wxThreadError wxThread::Create(unsigned int WXUNUSED_S
+         wxLogError(_("Cannot retrieve thread scheduling policy."));
+     }
+ 
+-#ifdef __VMS__
++#if defined(__VMS__) || defined (__OPENBSD__)
+    /* the pthread.h contains too many spaces. This is a work-around */
++   /* on OpenBSD, priority min/max are declared in libpthread private hdr */
+ # undef sched_get_priority_max
+ #undef sched_get_priority_min
++#endif
++#ifdef __VMS__
+ #define sched_get_priority_max(_pol_) \
+      (_pol_ == SCHED_OTHER ? PRI_FG_MAX_NP : PRI_FIFO_MAX)
+ #define sched_get_priority_min(_pol_) \
+      (_pol_ == SCHED_OTHER ? PRI_FG_MIN_NP : PRI_FIFO_MIN)
+ #endif
+ 
++#ifdef __OPENBSD__
++// on OpenBSD, priority min/max are declared in libpthread private hdr
++    int max_prio = 31,
++        min_prio = 0,
++        prio = m_internal->GetPriority();
++#else
+     int max_prio = sched_get_priority_max(policy),
+         min_prio = sched_get_priority_min(policy),
+         prio = m_internal->GetPriority();
++#endif
+ 
+     if ( min_prio == -1 || max_prio == -1 )
+     {

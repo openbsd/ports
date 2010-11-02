@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_src_fl_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp $
---- contrib/src/fl/Makefile.in.orig	Fri Mar  6 13:11:16 2009
-+++ contrib/src/fl/Makefile.in	Sun May  2 10:38:03 2010
-@@ -123,14 +123,14 @@ FLLIB_ODEP =  $(_____pch_wxprec_fllib_wx_wxprec_h_gch_
+$OpenBSD: patch-contrib_src_fl_Makefile_in,v 1.5 2010/11/02 13:10:51 dcoppa Exp $
+--- contrib/src/fl/Makefile.in.orig	Thu Apr 15 11:03:43 2010
++++ contrib/src/fl/Makefile.in	Wed Oct 27 12:36:07 2010
+@@ -124,14 +124,14 @@ FLLIB_ODEP =  $(_____pch_wxprec_fllib_wx_wxprec_h_gch_
  @COND_PLATFORM_WIN32_0@WXDLLNAMEPREFIXGUI = wx_$(PORTNAME)$(WXUNIVNAME)
  @COND_PLATFORM_WIN32_1@WXDLLNAMEPREFIXGUI = \
  @COND_PLATFORM_WIN32_1@	wx$(PORTNAME)$(WXUNIVNAME)$(WX_RELEASE_NODOT)
@@ -18,7 +18,7 @@ $OpenBSD: patch-contrib_src_fl_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp 
  @COND_SHARED_1@__fldll___depname = $(COND_SHARED_1___fldll___depname)
  @COND_WXUNIV_1@__WXUNIV_DEFINE_p_1 = --define __WXUNIVERSAL__
  @COND_USE_EXCEPTIONS_0@__EXCEPTIONS_DEFINE_p_1 = --define wxNO_EXCEPTIONS
-@@ -220,10 +220,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
+@@ -238,10 +238,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
  @COND_wxUSE_EXPAT_builtin@	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
  @COND_PLATFORM_WIN32_1@__fldll___win32rc = fldll_version_rc.o
  COND_MONOLITHIC_0___WXLIB_CORE_p = \
@@ -31,7 +31,7 @@ $OpenBSD: patch-contrib_src_fl_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp 
  @COND_MONOLITHIC_0@__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
  COND_SHARED_0___fllib___depname = \
  	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_fl-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
-@@ -245,12 +245,11 @@ COND_SHARED_0___fllib___depname = \
+@@ -263,12 +263,11 @@ COND_SHARED_0___fllib___depname = \
  all: $(__fldll___depname) $(__fllib___depname)
  
  install: $(__install_fldll___depname) $(__install_fllib___depname)
@@ -47,7 +47,7 @@ $OpenBSD: patch-contrib_src_fl_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp 
  	done
  
  uninstall: $(__uninstall_fldll___depname) $(__uninstall_fllib___depname)
-@@ -272,15 +271,14 @@ clean: 
+@@ -290,15 +289,14 @@ clean: 
  distclean: clean
  	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-contrib_src_stc_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp $
---- contrib/src/stc/Makefile.in.orig	Fri Mar  6 13:11:16 2009
-+++ contrib/src/stc/Makefile.in	Sun May  2 10:39:59 2010
+$OpenBSD: patch-contrib_src_stc_Makefile_in,v 1.5 2010/11/02 13:10:51 dcoppa Exp $
+--- contrib/src/stc/Makefile.in.orig	Thu Apr 15 11:03:43 2010
++++ contrib/src/stc/Makefile.in	Wed Oct 27 12:36:07 2010
 @@ -257,14 +257,14 @@ STCLIB_OBJECTS =  \
  @COND_PLATFORM_WIN32_0@WXDLLNAMEPREFIXGUI = wx_$(PORTNAME)$(WXUNIVNAME)
  @COND_PLATFORM_WIN32_1@WXDLLNAMEPREFIXGUI = \
@@ -18,7 +18,7 @@ $OpenBSD: patch-contrib_src_stc_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp
  @COND_SHARED_1@__stcdll___depname = $(COND_SHARED_1___stcdll___depname)
  @COND_WXUNIV_1@__WXUNIV_DEFINE_p_1 = --define __WXUNIVERSAL__
  @COND_USE_EXCEPTIONS_0@__EXCEPTIONS_DEFINE_p_1 = --define wxNO_EXCEPTIONS
-@@ -349,10 +349,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
+@@ -366,10 +366,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
  @COND_wxUSE_EXPAT_builtin@	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
  @COND_PLATFORM_WIN32_1@__stcdll___win32rc = stcdll_version_rc.o
  COND_MONOLITHIC_0___WXLIB_CORE_p = \
@@ -31,7 +31,7 @@ $OpenBSD: patch-contrib_src_stc_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp
  @COND_MONOLITHIC_0@__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
  COND_SHARED_0___stclib___depname = \
  	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_stc-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
-@@ -369,12 +369,11 @@ COND_SHARED_0___stclib___depname = \
+@@ -386,12 +386,11 @@ COND_SHARED_0___stclib___depname = \
  all: $(__stcdll___depname) $(__stclib___depname)
  
  install: $(__install_stcdll___depname) $(__install_stclib___depname)
@@ -47,7 +47,7 @@ $OpenBSD: patch-contrib_src_stc_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp
  	done
  
  uninstall: $(__uninstall_stcdll___depname) $(__uninstall_stclib___depname)
-@@ -396,15 +395,14 @@ clean: 
+@@ -413,15 +412,14 @@ clean: 
  distclean: clean
  	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
  

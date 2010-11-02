@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp $
---- contrib/src/plot/Makefile.in.orig	Fri Mar  6 13:11:16 2009
-+++ contrib/src/plot/Makefile.in	Sun May  2 10:39:38 2010
-@@ -91,14 +91,14 @@ PLOTLIB_ODEP =  $(_____pch_wxprec_plotlib_wx_wxprec_h_
+$OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.5 2010/11/02 13:10:51 dcoppa Exp $
+--- contrib/src/plot/Makefile.in.orig	Thu Apr 15 11:03:43 2010
++++ contrib/src/plot/Makefile.in	Wed Oct 27 12:36:07 2010
+@@ -93,14 +93,14 @@ PLOTLIB_ODEP =  $(_____pch_wxprec_plotlib_wx_wxprec_h_
  @COND_PLATFORM_WIN32_0@WXDLLNAMEPREFIXGUI = wx_$(PORTNAME)$(WXUNIVNAME)
  @COND_PLATFORM_WIN32_1@WXDLLNAMEPREFIXGUI = \
  @COND_PLATFORM_WIN32_1@	wx$(PORTNAME)$(WXUNIVNAME)$(WX_RELEASE_NODOT)
@@ -18,7 +18,7 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Ex
  @COND_SHARED_1@__plotdll___depname = $(COND_SHARED_1___plotdll___depname)
  @COND_WXUNIV_1@__WXUNIV_DEFINE_p_1 = --define __WXUNIVERSAL__
  @COND_USE_EXCEPTIONS_0@__EXCEPTIONS_DEFINE_p_1 = --define wxNO_EXCEPTIONS
-@@ -188,10 +188,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
+@@ -208,10 +208,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
  @COND_wxUSE_EXPAT_builtin@	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
  @COND_PLATFORM_WIN32_1@__plotdll___win32rc = plotdll_version_rc.o
  COND_MONOLITHIC_0___WXLIB_CORE_p = \
@@ -31,7 +31,7 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Ex
  @COND_MONOLITHIC_0@__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
  COND_SHARED_0___plotlib___depname = \
  	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
-@@ -213,12 +213,11 @@ COND_SHARED_0___plotlib___depname = \
+@@ -233,12 +233,11 @@ COND_SHARED_0___plotlib___depname = \
  all: $(__plotdll___depname) $(__plotlib___depname)
  
  install: $(__install_plotdll___depname) $(__install_plotlib___depname)
@@ -47,7 +47,7 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Ex
  	done
  
  uninstall: $(__uninstall_plotdll___depname) $(__uninstall_plotlib___depname)
-@@ -240,15 +239,14 @@ clean: 
+@@ -260,15 +259,14 @@ clean: 
  distclean: clean
  	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
  

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gtk_assertdlg_gtk_c,v 1.1 2010/11/02 13:10:52 dcoppa Exp $
+--- src/gtk/assertdlg_gtk.c.orig	Wed Oct 27 16:02:54 2010
++++ src/gtk/assertdlg_gtk.c	Wed Oct 27 16:03:38 2010
+@@ -90,7 +90,7 @@ void gtk_assert_dialog_append_text_column (GtkWidget *
+ 
+     renderer = gtk_cell_renderer_text_new ();
+     column = gtk_tree_view_column_new_with_attributes (name, renderer,
+-                                                       "text", index, NULL);
++                                                       "text", index, (char *)NULL);
+     gtk_tree_view_insert_column (GTK_TREE_VIEW (treeview), column, index);
+     gtk_tree_view_column_set_resizable (column, TRUE);
+     gtk_tree_view_column_set_reorderable (column, TRUE);
+@@ -172,7 +172,7 @@ void gtk_assert_dialog_save_backtrace_callback (GtkWid
+                                           GTK_FILE_CHOOSER_ACTION_SAVE,
+                                           GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                           GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+-                                          NULL);
++                                          (char *)NULL);
+ 
+     if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+     {

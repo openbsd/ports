@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_common_uri_cpp,v 1.1 2010/11/02 13:10:52 dcoppa Exp $
+
+gcc4 fix
+
+--- src/common/uri.cpp.orig	Wed Oct 27 13:29:20 2010
++++ src/common/uri.cpp	Wed Oct 27 13:30:27 2010
+@@ -886,7 +886,7 @@ void wxURI::Resolve(const wxURI& base, int flags)
+                     op += 3;
+             }
+ 
+-            m_path = base.m_path.substr(0, bp - base.m_path.c_str()) +
++            m_path = (const wxString)base.m_path.substr(0, bp - base.m_path.c_str()) +
+                     m_path.substr((op - m_path.c_str()), m_path.Length());
+         }
+     }

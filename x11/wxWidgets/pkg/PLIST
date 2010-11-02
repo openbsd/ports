@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/10 21:23:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/02 13:10:52 dcoppa Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -380,26 +380,6 @@ include/wx/menuitem.h
 include/wx/metafile.h
 include/wx/mimetype.h
 include/wx/minifram.h
-include/wx/mmedia/
-include/wx/mmedia/cdbase.h
-include/wx/mmedia/cdunix.h
-include/wx/mmedia/cdwin.h
-include/wx/mmedia/sndaiff.h
-include/wx/mmedia/sndbase.h
-include/wx/mmedia/sndcodec.h
-include/wx/mmedia/sndcpcm.h
-include/wx/mmedia/sndesd.h
-include/wx/mmedia/sndfile.h
-include/wx/mmedia/sndg72x.h
-include/wx/mmedia/sndmsad.h
-include/wx/mmedia/sndoss.h
-include/wx/mmedia/sndpcm.h
-include/wx/mmedia/sndulaw.h
-include/wx/mmedia/sndwav.h
-include/wx/mmedia/sndwin.h
-include/wx/mmedia/vidbase.h
-include/wx/mmedia/vidwin.h
-include/wx/mmedia/vidxanm.h
 include/wx/module.h
 include/wx/msgdlg.h
 include/wx/msgout.h
@@ -654,7 +634,6 @@ include/wx/zstream.h
 @lib lib/libwx_gtk2_gizmos_xrc.so.${LIBwx_gtk2_gizmos_xrc_VERSION}
 @lib lib/libwx_gtk2_gl.so.${LIBwx_gtk2_gl_VERSION}
 @lib lib/libwx_gtk2_html.so.${LIBwx_gtk2_html_VERSION}
-@lib lib/libwx_gtk2_mmedia.so.${LIBwx_gtk2_mmedia_VERSION}
 @lib lib/libwx_gtk2_ogl.so.${LIBwx_gtk2_ogl_VERSION}
 @lib lib/libwx_gtk2_plot.so.${LIBwx_gtk2_plot_VERSION}
 @lib lib/libwx_gtk2_qa.so.${LIBwx_gtk2_qa_VERSION}
