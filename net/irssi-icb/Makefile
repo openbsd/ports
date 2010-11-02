@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/02 08:21:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/02 21:28:00 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 # Needs AC_PROG_LIBTOOL
-USE_LIBTOOL=	gnu
+USE_LIBTOOL =	Yes
+BUILD_DEPENDS += ::devel/libtool
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION=2.61
