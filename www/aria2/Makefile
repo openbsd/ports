@@ -1,7 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		lightweight multi-protocol & multi-source download utility
-DISTNAME =		aria2-1.10.5
+DISTNAME =		aria2-1.10.6
 CATEGORIES =		www
 HOMEPAGE =		http://aria2.sourceforge.net/
 
