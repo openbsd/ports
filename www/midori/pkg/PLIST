@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/09/20 08:24:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/11/02 09:56:19 landry Exp $
 @bin bin/midori
 include/midori-0.2/
 include/midori-0.2/extensions/
-include/midori-0.2/extensions/external-applications.h
 include/midori-0.2/extensions/history-list.h
 lib/midori/
 lib/midori/libadblock.so
@@ -10,7 +9,6 @@ lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
 lib/midori/libcopy-tabs.so
-lib/midori/libexternal-applications.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
@@ -84,8 +82,6 @@ share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/midori.mo
 share/locale/uk/LC_MESSAGES/midori.mo
 share/locale/zh_CN/LC_MESSAGES/midori.mo
@@ -101,8 +97,6 @@ share/midori/res/speeddial-head.html
 share/midori/res/speeddial.json
 share/vala/
 share/vala/vapi/
-share/vala/vapi/external-applications.deps
-share/vala/vapi/external-applications.vapi
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
