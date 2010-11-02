@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.5 2010/11/01 10:55:26 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.6 2010/11/02 20:32:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -97,7 +97,7 @@ sub check_signature
 		return 1;
 	} else {
 		print {$self->{logrebuild}} "$name: rebuild\n";
-		$self->{grabber}->clean_package($core,
+		$self->{grabber}->clean_packages($core,
 		    $v->fullpkgpath);
 		return 0;
 	}

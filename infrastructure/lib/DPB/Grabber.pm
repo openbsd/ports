@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.8 2010/10/30 11:36:07 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.9 2010/11/02 20:32:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -86,10 +86,10 @@ sub grab_signature
 	return DPB::PortSignature->grab_signature($core, $self, $pkgpath);
 }
 
-sub clean_package
+sub clean_packages
 {
 	my ($self, $core, $pkgpath) = @_;
-	return DPB::CleanPackage->clean($core, $self, $pkgpath);
+	return DPB::CleanPackages->clean($core, $self, $pkgpath);
 }
 
 sub complete_subdirs
