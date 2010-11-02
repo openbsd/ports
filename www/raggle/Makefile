@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/02 13:27:29 jasper Exp $
 
 COMMENT=	console RSS aggregator
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/files/
 
 MODULES=	lang/ruby
 RUN_DEPENDS=	::devel/ruby-ncurses
+BUILD_DEPENDS+=${MODRUBY_BUILD_DEPENDS}
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
