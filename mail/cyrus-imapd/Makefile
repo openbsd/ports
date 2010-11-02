@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/29 12:54:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/02 07:08:04 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -78,8 +78,9 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
 BUILD_DEPENDS+=	::mail/drac
-PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
-		drac-patch-imap_Makefile_in
+PATCH_LIST+=	drac-patch-imap_Makefile_in
+pre-patch:
+	cd ${WRKSRC} && ${PATCH} -s -z .drac -p1 < contrib/drac_auth.patch
 .endif
 
 WANTLIB-main +=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
