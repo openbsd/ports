@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/27 11:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/02 13:10:05 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	0.0.1
-
-REVISION=	0
+GNOME_VERSION=	0.1.0
 
 CATEGORIES=	devel
 
@@ -28,5 +26,7 @@ USE_LIBTOOL=	No
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-schemas-compile
+
+FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>
