@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.9 2010/11/01 12:24:47 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.10 2010/11/02 11:34:29 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 1 2010 $
+.Dd $Mdocdate: November 2 2010 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -80,7 +80,9 @@ Number of jobs to run on that host, defaults to hw.ncpu.
 .It memory=thr
 Builds everything below that wrkdir threshold in /tmp, assuming
 it is a memory filesystem.
-Avoid for now, as mfs has serious race conditions which yield
+Avoid for now, as
+.Xr mfs 8
+has serious race conditions which yield
 random errors under stress conditions such as bulk build.
 .It sf=n
 Speed factor.
@@ -112,7 +114,9 @@ Defaults to
 .It Fl m Ar threshold
 Build ports besides the memory threshold within
 .Pa /tmp .
-Avoid for now, as mfs has serious race conditions which yield
+Avoid for now, as
+.Xr mfs 8
+has serious race conditions which yield
 random errors under stress conditions such as bulk build.
 .It Fl P Ar subdirlist
 Read list of pkgpaths from file
@@ -183,8 +187,8 @@ of packages being built, since several paths may lead to the same package.
 .Pp
 .Nm
 uses some heuristics to try to maximise Q as soon as possible.
-There's also a provision for a feedback-directed build, where timings from
-a previous build can be used to try to build long-running jobs first.
+There are also provisions for a feedback-directed build, where information from
+previous builds can be used to try to build long-running jobs first.
 .Sh LOCKS AND ERRORS
 When building a package,
 .Nm
@@ -356,6 +360,25 @@ as there are bottlenecks in parts of the tree.
 considers all pkgpaths it explores as valid candidates for packages.
 This is not the case for some pkgpath:patch depends.
 It should not try to reach them.
+Note that
+.Nm
+does not manage installed packages in any intelligent way, it will just
+call
+.Xr pkg_add 1
+during its depend stage to install its dependencies.
+With
+.Fl u ,
+it will call pkg_add -r.
+With
+.Fl U ,
+it will call pkg_add -r -D installed,
+but there is nothing else going on.
+This is especially true when using
+.Fl R ,
+ensure the machine is clean of possibly older packages first, or run
+.Nm
+with
+.Fl U .
 .Pp
 On heterogeneous networks, calibration of build info and choice of speed
 factors is not perfect, and somewhat a dark art.
@@ -376,7 +399,9 @@ You have to stop
 .Nm ,
 cleanup and restart.
 .Pp
-There's a bug in mfs that prevents it from proper use in bulk builds.
+There's a bug in
+.Xr mfs 8
+that prevents it from proper use in bulk builds.
 .Pp
 The default limits in
 .Pa login.conf
