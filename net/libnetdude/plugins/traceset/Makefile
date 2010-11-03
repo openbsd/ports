@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/03 16:18:43 jasper Exp $
 
 COMMENT=	netdude plugin providing an API for trace sets
 
@@ -13,7 +13,8 @@ MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 RUN_DEPENDS=	::net/libnetdude/libnetdude
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::devel/libtool,-ltdl
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
