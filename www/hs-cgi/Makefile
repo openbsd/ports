@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/28 13:54:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/03 22:18:39 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
 DISTNAME =		cgi-3001.1.7.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www devel
 HOMEPAGE =		http://andersk.mit.edu/haskell/cgi/
 
