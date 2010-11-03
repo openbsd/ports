@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/28 13:51:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/03 22:13:38 kili Exp $
 
 COMMENT =		automatic testing of Haskell programs
 
 DISTNAME =		QuickCheck-2.1.1.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cse.chalmers.se/~koen
 

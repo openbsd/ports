@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/28 13:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/03 22:17:15 kili Exp $
 
 COMMENT=		abstract syntax, lexer, parser and pretty printer
 
 DISTNAME=		haskell-src-exts-1.9.3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		lang devel
 
 # 3-clause BSD

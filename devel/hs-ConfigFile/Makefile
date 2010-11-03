@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/28 13:51:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/03 22:13:38 kili Exp $
 
 COMMENT =		parser and writer for config files
 
 DISTNAME =		ConfigFile-1.0.6
-REVISION =		6
+REVISION =		7
 CATEGORIES =		devel sysutils
 HOMEPAGE =		http://software.complete.org/configfile
 

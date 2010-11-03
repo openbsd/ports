@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/28 13:51:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/03 22:13:38 kili Exp $
 
 COMMENT =		functional graph library
 
 DISTNAME =		fgl-5.4.2.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://web.engr.oregonstate.edu/~erwig/fgl/haskell/
 

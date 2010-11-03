@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/28 13:51:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/03 22:12:01 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-REVISION =	4
+REVISION =		5
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register

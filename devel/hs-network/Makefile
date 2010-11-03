@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/28 13:51:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/03 22:13:39 kili Exp $
 
 COMMENT =		Haskell networking library
 
 DISTNAME =		network-2.2.1.7
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

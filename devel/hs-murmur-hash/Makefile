@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/28 13:51:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/03 22:13:39 kili Exp $
 
 COMMENT =		general purpose, non-cryptographic hashing function
 
 DISTNAME =		murmur-hash-0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

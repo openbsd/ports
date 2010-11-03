@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/28 13:51:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/03 22:13:38 kili Exp $
 
 COMMENT =		common interface to various Haskell types that are list-like
 
 DISTNAME =		ListLike-1.0.1
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 HOMEPAGE = 		http://software.complete.org/listlike
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

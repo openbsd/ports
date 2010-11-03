@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/28 13:51:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/03 22:13:39 kili Exp $
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
 DISTNAME =		pugs-compat-0.0.6.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3

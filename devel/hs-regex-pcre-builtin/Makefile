@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/28 13:51:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/03 22:13:39 kili Exp $
 
 # XXX use system pcre instead of the one included the distfile
 
 COMMENT =		replaces/enhances Text.Regex
 
 DISTNAME =		regex-pcre-builtin-0.94.2.1.7.7
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
 

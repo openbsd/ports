@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/28 13:53:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/03 22:17:40 kili Exp $
 
 COMMENT =		socket functions that use Data.ByteString
 
 DISTNAME =		network-bytestring-0.1.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

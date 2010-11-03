@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/28 13:52:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/03 22:13:38 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -9,7 +9,7 @@ DISTNAME =	cpphs-1.11
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
 REVISION-main =	4
-REVISION-lib =	0
+REVISION-lib =	1
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =	http://haskell.org/cpphs/

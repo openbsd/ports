@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/28 13:51:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/03 22:13:38 kili Exp $
 
 COMMENT =		List monad transformer and a List class
 
 DISTNAME =		List-0.4.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
