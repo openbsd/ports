@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/03 07:20:50 jasper Exp $
 
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
 REVISION=	3
 CATEGORIES=	benchmarks x11
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
+MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/ \
+		http://distfiles.nl/xengine/
 DISTFILES=	part01.z patch1.z
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
