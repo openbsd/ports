@@ -15,3 +15,7 @@ chroot dir:
 
 # mkdir /var/www/var
 # mkdir -m 1777 /var/www/var/tmp
+
+After upgrading to a newer version of fossil, it is always a good idea
+to run: "fossil all rebuild". Running "rebuild" this way is not always
+necessary, but it never hurts.
