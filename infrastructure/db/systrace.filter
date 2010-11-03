@@ -123,6 +123,7 @@
 	native-msync: permit
 	native-munmap: permit
 	native-nanosleep: permit
+	native-ogetdirentries: permit
 	native-osigaltstack: permit
 	native-pathconf: permit
 	native-pipe: permit
