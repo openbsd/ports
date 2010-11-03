@@ -1,0 +1,31 @@
+$OpenBSD: patch-libraries_Cabal_Distribution_InstalledPackageInfo_hs,v 1.1 2010/11/03 21:32:08 kili Exp $
+--- libraries/Cabal/Distribution/InstalledPackageInfo.hs.orig	Wed Jun  9 20:10:19 2010
++++ libraries/Cabal/Distribution/InstalledPackageInfo.hs	Fri Oct 29 14:59:14 2010
+@@ -101,6 +101,7 @@ data InstalledPackageInfo_ m
+         description       :: String,
+         category          :: String,
+         -- these parts are required by an installed package only:
++        pkgpath           :: String,
+         exposed           :: Bool,
+         exposedModules    :: [m],
+         hiddenModules     :: [m],
+@@ -141,6 +142,7 @@ emptyInstalledPackageInfo
+         pkgUrl            = "",
+         description       = "",
+         category          = "",
++        pkgpath           = "",
+         exposed           = False,
+         exposedModules    = [],
+         hiddenModules     = [],
+@@ -227,7 +229,10 @@ basicFieldDescrs =
+ 
+ installedFieldDescrs :: [FieldDescr InstalledPackageInfo]
+ installedFieldDescrs = [
+-   boolField "exposed"
++   simpleField "pkgpath"
++        showFreeText       parseFreeText
++        pkgpath            (\val pkg -> pkg{pkgpath=val})
++ , boolField "exposed"
+         exposed            (\val pkg -> pkg{exposed=val})
+  , listField   "exposed-modules"
+         disp               parseModuleNameQ

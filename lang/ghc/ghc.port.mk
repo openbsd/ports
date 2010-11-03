@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.14 2010/10/28 13:49:09 jasper Exp $
+# $OpenBSD: ghc.port.mk,v 1.15 2010/11/03 21:32:08 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -91,7 +91,8 @@ do-build:
 .   endif
 .   if ${MODGHC_BUILD:L:Mregister}
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} register --gen-script
+		${MODGHC_SETUP_PROG} register --gen-script \
+			--pkgpath="${PKGPATH}"
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} unregister --gen-script
 .   endif

@@ -1,0 +1,19 @@
+$OpenBSD: patch-libraries_bin-package-db_Distribution_InstalledPackageInfo_Binary_hs,v 1.1 2010/11/03 21:32:08 kili Exp $
+--- libraries/bin-package-db/Distribution/InstalledPackageInfo/Binary.hs.orig	Wed Jun  9 20:10:13 2010
++++ libraries/bin-package-db/Distribution/InstalledPackageInfo/Binary.hs	Fri Oct 29 14:59:06 2010
+@@ -43,6 +43,7 @@ putInstalledPackageInfo ipi = do
+   put (pkgUrl ipi)
+   put (description ipi)
+   put (category ipi)
++  put (pkgpath ipi)
+   put (exposed ipi)
+   put (exposedModules ipi)
+   put (hiddenModules ipi)
+@@ -75,6 +76,7 @@ getInstalledPackageInfo = do
+   pkgUrl <- get
+   description <- get
+   category <- get
++  pkgpath <- get
+   exposed <- get
+   exposedModules <- get
+   hiddenModules <- get
