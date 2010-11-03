@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/06 06:21:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/03 07:12:41 ajacoutot Exp $
 bin/gtk-redshift
 @bin bin/redshift
 lib/python${MODPY_VERSION}/site-packages/gtk_redshift/
@@ -14,19 +14,21 @@ lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.pyo
 lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.py
 lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyo
+@man man/man1/redshift.1
 share/applications/gtk-redshift.desktop
-share/icons/hicolor/scalable/apps/redshift-idle.svg
+share/icons/hicolor/scalable/apps/redshift-status-off.svg
+share/icons/hicolor/scalable/apps/redshift-status-on.svg
 share/icons/hicolor/scalable/apps/redshift.svg
 share/icons/ubuntu-mono-dark/
 share/icons/ubuntu-mono-dark/scalable/
 share/icons/ubuntu-mono-dark/scalable/apps/
-share/icons/ubuntu-mono-dark/scalable/apps/redshift-idle.svg
-share/icons/ubuntu-mono-dark/scalable/apps/redshift.svg
+share/icons/ubuntu-mono-dark/scalable/apps/redshift-status-off.svg
+share/icons/ubuntu-mono-dark/scalable/apps/redshift-status-on.svg
 share/icons/ubuntu-mono-light/
 share/icons/ubuntu-mono-light/scalable/
 share/icons/ubuntu-mono-light/scalable/apps/
-share/icons/ubuntu-mono-light/scalable/apps/redshift-idle.svg
-share/icons/ubuntu-mono-light/scalable/apps/redshift.svg
+share/icons/ubuntu-mono-light/scalable/apps/redshift-status-off.svg
+share/icons/ubuntu-mono-light/scalable/apps/redshift-status-on.svg
 share/locale/cs/LC_MESSAGES/redshift.mo
 share/locale/da/LC_MESSAGES/redshift.mo
 share/locale/de/LC_MESSAGES/redshift.mo
@@ -36,6 +38,8 @@ share/locale/fi/LC_MESSAGES/redshift.mo
 share/locale/fr/LC_MESSAGES/redshift.mo
 share/locale/he/LC_MESSAGES/redshift.mo
 share/locale/it/LC_MESSAGES/redshift.mo
+share/locale/ka/LC_MESSAGES/redshift.mo
+share/locale/lt/LC_MESSAGES/redshift.mo
 share/locale/pt_BR/LC_MESSAGES/redshift.mo
 share/locale/ru/LC_MESSAGES/redshift.mo
 share/locale/zh_CN/LC_MESSAGES/redshift.mo

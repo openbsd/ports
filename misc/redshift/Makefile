@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/06 06:22:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/03 07:12:40 ajacoutot Exp $
 
 COMMENT=	automatic color temperature adjustment
 
-DISTNAME=	redshift-1.5
+V=		1.6
+DISTNAME=	redshift-${V}
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	misc
@@ -17,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xxf86vm c glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pthread pthread-stubs xcb xcb-randr ORBit-2
-WANTLIB += dbus-1 gconf-2
+WANTLIB += gconf-2 gio-2.0
 
-MASTER_SITES=	http://launchpad.net/redshift/trunk/1.5/+download/
+MASTER_SITES=	http://launchpad.net/redshift/trunk/${V:C/^([0-9]+\.[0-9]+).*/\1/}/+download/
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::devel/py-xdg
@@ -37,8 +38,6 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-gnome-clock \
 		--enable-gui
 
-pre-configure:
-	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
-		${WRKSRC}/src/gtk-redshift/gtk-redshift
+MODPY_ADJ_FILES= src/gtk-redshift/gtk-redshift
 
 .include <bsd.port.mk>
