@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/03 22:43:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/03 16:37:47 jasper Exp $
+include/utarray.h
 include/uthash.h
+include/utlist.h
+include/utstring.h
 share/doc/uthash/
 share/doc/uthash/ChangeLog.html
 share/doc/uthash/img/
@@ -18,4 +21,6 @@ share/doc/uthash/tdh-quirks.css
 share/doc/uthash/tdh.css
 share/doc/uthash/toc.css
 share/doc/uthash/userguide.html
+share/doc/uthash/utarray.html
 share/doc/uthash/utlist.html
+share/doc/uthash/utstring.html

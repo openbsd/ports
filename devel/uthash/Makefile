@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/03 22:43:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/03 16:37:46 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
-DISTNAME=		uthash-1.6
+DISTNAME=		uthash-1.9.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://uthash.sf.net/
@@ -22,7 +22,7 @@ PKG_ARCH=		*
 REGRESS_TARGET= 	run_tests
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/uthash.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uthash/img
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.{css,html} \
 		${PREFIX}/share/doc/uthash

@@ -1,20 +1,11 @@
-$OpenBSD: patch-tests_Makefile,v 1.5 2009/06/03 22:43:59 jasper Exp $
+$OpenBSD: patch-tests_Makefile,v 1.6 2010/11/03 16:37:46 jasper Exp $
 
 - Remove GNU make crap that never applied to us anyway.
 
---- tests/Makefile.orig	Wed Jun  3 16:41:44 2009
-+++ tests/Makefile	Wed Jun  3 16:42:50 2009
-@@ -6,38 +6,20 @@ PROGS = test1 test2 test3 test4 test5 test6 test7 test
-         test18 test19 test20 test21 test22 test23 test24 test25 \
-         test26 test27 test28 test29 test30 test31 test32 test33 \
-         test34 test35 test36 test37 test38 test39
--CFLAGS = -I$(HASHDIR) 
--CFLAGS += -O3
--#CFLAGS += -g
--CFLAGS += -Wall 
-+CFLAGS += -I$(HASHDIR) 
-+CFLAGS += -O2
-+CFLAGS += -Wall
+--- tests/Makefile.orig	Wed Nov  3 17:36:15 2010
++++ tests/Makefile	Wed Nov  3 17:37:15 2010
+@@ -19,53 +19,10 @@ CFLAGS += -Wall 
+ #CFLAGS += -std=c89
  CFLAGS += ${EXTRA_CFLAGS}
  
 -ifeq ($(HASH_DEBUG),1)
@@ -28,6 +19,14 @@ $OpenBSD: patch-tests_Makefile,v 1.5 2009/06/03 22:43:59 jasper Exp $
  TEST_TARGET=run_tests
  TESTS=./do_tests
  
+ MUR_CFLAGS = -DHASH_USING_NO_STRICT_ALIASING -fno-strict-aliasing
+-# On GNU we use -fno-strict-aliasing when using the Murmurhash
+-ifneq ($(strip $(shell $(CC) -v 2>&1 |egrep "gcc")),)
+-ifeq ($(HASH_FUNCTION),"HASH_MUR")
+-  CFLAGS += $(MUR_CFLAGS)
+-endif
+-endif
+-
 -# Prefer 64-bit compilation on Mac OS X (not necessary, just faster)
 -ifneq ($(strip $(shell $(CC) -v 2>&1 |egrep "i[0-9]+-apple-darwin")),)
 -  CFLAGS += -m64
@@ -38,16 +37,24 @@ $OpenBSD: patch-tests_Makefile,v 1.5 2009/06/03 22:43:59 jasper Exp $
 -  TESTS=./do_tests.cygwin
 -endif
 -
-+# gnu make idiom...
- # detect MinGW
+-# detect MinGW
 -ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "mingw")),)
 -  TEST_TARGET=run_tests_mingw
 -  TESTS=./do_tests.mingw
 -endif
-+#ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "mingw")),)
-+#  TEST_TARGET=run_tests_mingw
-+#  TESTS=./do_tests.mingw
-+#endif
+-
+-#detect Linux (platform specific utilities)
+-ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "linux")),)
+-  PLAT_UTILS = hashscan sleep_test
+-endif
+-
+-#detect FreeBSD (platform specific utilities)
+-ifeq ($(strip $(shell uname -s)), FreeBSD)
+-  ifeq ($(shell if [ `sysctl -n kern.osreldate` -ge 0801000 ]; then echo "ok"; fi), ok)
+-    PLAT_UTILS = hashscan sleep_test
+-  endif
+-endif
+-
  
- 
+ all: $(PROGS) $(UTILS) $(PLAT_UTILS) $(FUNCS) $(SPECIAL_FUNCS) $(TEST_TARGET) 
  
