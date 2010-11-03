@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_dircolors_c,v 1.4 2010/11/03 06:56:37 jasper Exp $
 --- src/dircolors.c.orig	Mon Aug  7 12:46:16 2000
 +++ src/dircolors.c	Mon Feb 24 23:18:38 2003
 @@ -69,13 +69,15 @@ static const char *const slack_codes[] =

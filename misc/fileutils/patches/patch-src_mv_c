@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_mv_c,v 1.1 2003/02/25 14:35:43 brad Exp $
---- src/mv.c.orig	Sat Feb  3 11:48:34 2001
-+++ src/mv.c	Mon Feb 24 23:21:17 2003
+$OpenBSD: patch-src_mv_c,v 1.2 2010/11/03 06:56:37 jasper Exp $
+--- src/mv.c.orig	Sat Feb  3 17:48:34 2001
++++ src/mv.c	Wed Nov  3 07:55:57 2010
 @@ -1,5 +1,5 @@
  /* mv -- move or rename files
 -   Copyright (C) 86, 89, 90, 91, 1995-2001 Free Software Foundation, Inc.
@@ -8,13 +8,13 @@ $OpenBSD: patch-src_mv_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
-@@ -235,6 +235,19 @@ do_move (const char *source, const char 
+@@ -235,7 +235,20 @@ do_move (const char *source, const char *dest, const s
  	  struct rm_options rm_options;
  	  struct File_spec fs;
  	  enum RM_status status;
 +         static int first_rm = 1;
 +         static struct dev_ino cwd_dev_ino;
-+
+ 
 +         if (first_rm)
 +           {
 +             struct stat cwd_sb;
@@ -25,10 +25,11 @@ $OpenBSD: patch-src_mv_c,v 1.1 2003/02/25 14:35:43 brad Exp $
 +             cwd_dev_ino.st_dev = cwd_sb.st_dev;
 +             cwd_dev_ino.st_ino = cwd_sb.st_ino;
 +           }
- 
++
  	  rm_option_init (&rm_options);
  	  rm_options.verbose = x->verbose;
-@@ -247,7 +260,7 @@ do_move (const char *source, const char 
+ 
+@@ -247,7 +260,7 @@ do_move (const char *source, const char *dest, const s
  	     took the else branch of movefile.  */
  	  strip_trailing_slashes_2 (fs.filename);
  

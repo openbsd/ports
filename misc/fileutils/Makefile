@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/03 06:56:37 jasper Exp $
 
 COMMENT-main= 		GNU versions of common file management utilities
 COMMENT-ls=		colorized GNU 'ls'
@@ -26,7 +26,7 @@ MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

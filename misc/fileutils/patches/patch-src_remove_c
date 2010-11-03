@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
---- src/remove.c.orig	Sun Feb 18 11:17:32 2001
-+++ src/remove.c	Mon Feb 24 23:21:17 2003
-@@ -433,10 +433,13 @@ same_file (const char *file_1, const cha
+$OpenBSD: patch-src_remove_c,v 1.2 2010/11/03 06:56:37 jasper Exp $
+--- src/remove.c.orig	Sun Feb 18 17:17:32 2001
++++ src/remove.c	Wed Nov  3 07:55:57 2010
+@@ -433,10 +433,13 @@ same_file (const char *file_1, const char *file_2)
  
  
  /* Recursively remove all of the entries in the current directory.
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  {
    /* NOTE: this is static.  */
    static DIR *dirp = NULL;
-@@ -549,7 +552,7 @@ remove_cwd_entries (const struct rm_opti
+@@ -549,7 +552,7 @@ remove_cwd_entries (const struct rm_options *x)
  	  /* CAUTION: after this call to rm, DP may not be valid --
  	     it may have been freed due to a close in a recursive call
  	     (through rm and remove_dir) to this function.  */
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  
  	  /* Update status.  */
  	  if (tmp_status > status)
-@@ -664,12 +667,14 @@ remove_file (struct File_spec *fs, const
+@@ -664,12 +667,14 @@ remove_file (struct File_spec *fs, const struct rm_opt
     FIXME: describe need_save_cwd parameter.  */
  
  static enum RM_status
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  
    if (!x->recursive)
      {
-@@ -738,6 +743,9 @@ was replaced with either another directo
+@@ -738,6 +743,9 @@ was replaced with either another directory or a link t
  	       (unsigned long)(sb.st_dev),
  	       (unsigned long)(sb.st_ino));
        }
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
    }
  
    push_dir (dir_name);
-@@ -747,7 +755,7 @@ was replaced with either another directo
+@@ -747,7 +755,7 @@ was replaced with either another directory or a link t
       remove_cwd_entries may close the directory.  */
    ASSIGN_STRDUPA (dir_name, dir_name);
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  
    pop_dir ();
  
-@@ -761,11 +769,34 @@ was replaced with either another directo
+@@ -761,11 +769,34 @@ was replaced with either another directory or a link t
  	}
        free_cwd (&cwd);
      }
@@ -100,7 +100,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
      }
  
    if (x->interactive)
-@@ -814,10 +845,13 @@ was replaced with either another directo
+@@ -814,10 +845,13 @@ was replaced with either another directory or a link t
     things.  Return RM_OK if it is removed, and RM_ERROR or RM_USER_DECLINED
     if not.  If USER_SPECIFIED_NAME is non-zero, then the name part of FS may
     be `.', `..', or may contain slashes.  Otherwise, it must be a simple file
@@ -116,7 +116,7 @@ $OpenBSD: patch-src_remove_c,v 1.1 2003/02/25 14:35:43 brad Exp $
  {
    mode_t filetype_mode;
  
-@@ -899,7 +933,7 @@ The following two directories have the s
+@@ -899,7 +933,7 @@ The following two directories have the same inode numb
        if (need_save_cwd)
  	need_save_cwd = (strchr (fs->filename, '/') != NULL);
  
