@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/ushare"
+daemon_flags="-D"
+
+rc_cmd $1

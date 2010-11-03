@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/03 10:23:24 jasper Exp $
 @bin bin/ushare
 share/examples/ushare/
 share/examples/ushare/ushare.conf
 @sample ${SYSCONFDIR}/ushare.conf
 share/locale/de/LC_MESSAGES/ushare.mo
 share/locale/fr/LC_MESSAGES/ushare.mo
+@rcscript ${RCDIR}/ushare
