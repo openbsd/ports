@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:51:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/03 19:23:05 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/GHC/
 lib/ghc/${DISTNAME}/GHC/Paths.hi
@@ -8,5 +8,5 @@ lib/ghc/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh
-share/doc/hs-${DISTNAME}/
-share/doc/hs-${DISTNAME}/LICENSE
+@comment share/doc/hs-${DISTNAME}/
+@comment share/doc/hs-${DISTNAME}/LICENSE
