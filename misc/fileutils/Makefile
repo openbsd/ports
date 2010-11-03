@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/03 06:56:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/03 07:00:01 jasper Exp $
 
 COMMENT-main= 		GNU versions of common file management utilities
 COMMENT-ls=		colorized GNU 'ls'
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		${MASTER_SITE_GNU:=fileutils/}
+MASTER_SITES=		http://distfiles.nl/ \
+			${MASTER_SITE_GNU:=fileutils/}
 
 MODULES=		devel/gettext
 
