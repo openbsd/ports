@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $OpenBSD: ushare.rc,v 1.2 2010/11/03 10:55:30 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
