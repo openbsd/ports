@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/02 13:10:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/04 12:05:25 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	c++ cross-platform GUI toolkit
 V =		2.8.11
 DISTNAME =	wxWidgets-${V}
 PKGNAME =	wxWidgets-gtk2-${V}
+REVISION =	0
 
 SHARED_LIBS =	wx_base			2.0	\
 		wx_base_net		2.0	\
@@ -85,6 +86,10 @@ CONFIGURE_ARGS =--with-expat=sys \
 		--enable-unicode \
 		--disable-backtrace \
 		--disable-stl
+
+.ifdef DEBUG
+CONFIGURE_ARGS += --enable-debug
+.endif
 
 .for _l _v in ${SHARED_LIBS}
 MAKE_ENV +=	LIB${_l}_VERSION=${_v}
