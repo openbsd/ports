@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/04 13:45:10 sthen Exp $
+
+# XXX Don't even think of updating ocaml alone.
+# Do check that the ports that depend on it still work, or repair them. 
 
 NOT_FOR_ARCHS=	hppa
 
