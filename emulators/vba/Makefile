@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/04 17:57:21 jasper Exp $
 
 COMMENT=		Gameboy Advance emulator
 
@@ -30,6 +30,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vba/}
 MODULES=		gcc3
 MODGCC3_ARCHES=         sparc
 MODGCC3_LANGS=          c c++
+
+VMEM_WARNING=		Yes
 
 MODULES+=		devel/gettext
 
