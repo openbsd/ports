@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2010/10/24 14:40:13 steven Exp $
+# $OpenBSD: Makefile,v 1.245 2010/11/04 22:01:03 ian Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += ccrypt
      SUBDIR += cfs
      SUBDIR += cgichk
+     SUBDIR += chntpw
      SUBDIR += chrootuid
      SUBDIR += clamav
      SUBDIR += clusterssh
