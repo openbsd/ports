@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_tds_h,v 1.1 2010/11/04 22:13:33 sthen Exp $
+--- include/tds.h.orig	Thu Nov  4 22:07:05 2010
++++ include/tds.h	Thu Nov  4 22:07:08 2010
+@@ -26,6 +26,9 @@
+ #include <stdio.h>
+ #include <time.h>
+ 
++#if HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif /* HAVE_NET_INET_IN_H */
+ #if HAVE_ARPA_INET_H
+ #include <arpa/inet.h>
+ #endif /* HAVE_ARPA_INET_H */

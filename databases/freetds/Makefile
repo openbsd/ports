@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/04 21:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/04 22:13:33 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
 PATCHVER=	20100728
 DISTNAME=	freetds-$V
-REVISION=	1
+REVISION=	2
 PKGNAME=	${DISTNAME}.1pre${PATCHVER}
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
 
@@ -75,7 +75,7 @@ pre-configure:
 	cd ${WRKSRC}; \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    ./autogen.sh
+	    NOCONFIGURE=1 ./autogen.sh
 	@${SUBST_CMD} ${WRKSRC}/src/odbc/connectparams.c
 
 post-install:
