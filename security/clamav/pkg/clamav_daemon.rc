@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: clamav_daemon.rc,v 1.1 2010/11/04 11:18:12 sthen Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/clamd"
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1
