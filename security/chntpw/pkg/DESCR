@@ -1,0 +1,12 @@
+"Forgot your Windows NT/2k/XP/Vista admin password?
+Reinstall? Oh no... But not any more...
+
+"chntpw is a utility to (re)set the password of any user that has a
+valid (local) account on your Windows NT/2k/XP/Vista etc system.
+You do not need to know the old password to set a new one.
+It works offline, that is, you have to shutdown your computer and
+boot off a floppydisk or CD or another system.
+Will detect and offer to unlock locked or disabled out user accounts!
+There is also a registry editor and other registry utilities that
+works under linux/unix, and can be used for other things than
+password editing."

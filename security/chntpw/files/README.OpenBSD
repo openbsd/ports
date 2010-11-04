@@ -1,0 +1,30 @@
+USE AT OWN RISK. READ ALL DOCUMENTS CAREFULLY. One thing worse than
+being unable to login is being unable to boot; you can get there from here.
+
+To use this program, you must have built a kernel with the config option
+
+option NTFS
+
+(Most kernels built after 2010/09/08 have this enabled by default).
+
+And, you must have mounted the root of your Windoze filesystem as something like
+
+mount -t ntfs -o rw /dev/wd1i /mnt
+
+If your NT disk is small enough to dd to a file on your real disk, you can
+experiment along these lines (see mount_vnd to understand):
+
+# mount -t vnd -o c xp-test.hd /dev/vnd0c
+# mount -t ntfs /dev/vnd0i /mnt
+
+Then
+
+cd /mnt/Windows/System32/config
+
+chntpw -u noobish sam system security ... or other commands,
+or
+chntpw SAM SYSTEM SECURITY # sometimes names are upper case.
+as per the README.txt file in this directory.
+See also the other text files.
+
+READ ALL WARNINGS. As it says there and on the web site: USE AT OWN RISK.

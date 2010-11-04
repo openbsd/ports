@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/04 21:59:20 ian Exp $
+@bin bin/chntpw
+@bin bin/chntpw.static
+@bin bin/cpnt
+@bin bin/reged
+@bin bin/reged.static
+share/doc/chntpw/
+share/doc/chntpw/GPL.txt
+share/doc/chntpw/HISTORY.txt
+share/doc/chntpw/INSTALL.txt
+share/doc/chntpw/LGPL.txt
+share/doc/chntpw/README.OpenBSD
+share/doc/chntpw/README.txt
+share/doc/chntpw/WinReg.txt
+share/doc/chntpw/regedit.txt
