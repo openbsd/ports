@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/04 17:44:14 jasper Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=     x11
-MASTER_SITES=	${HOMEPAGE}archive/qvwm/
+MASTER_SITES=	${HOMEPAGE}/archive/qvwm/
 
 HOMEPAGE=	http://www.csg.is.titech.ac.jp/~kourai/qvwm/
 
@@ -18,7 +18,6 @@ WANTLIB=		ICE SM X11 Xext Xpm Xss c m sndio stdc++
 
 USE_GROFF =	Yes
 
-SEPARATE_BUILD=	flavored
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS+= --without-esd \
