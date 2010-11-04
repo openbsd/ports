@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/04 20:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/04 21:33:49 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -31,8 +31,12 @@ WANTLIB += pthread readline tasn1 z
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 MASTER_SITES0=	http://spacehopper.org/mirrors/
 
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.9
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen
+BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	::databases/iodbc,-main \
 		::security/libgcrypt \
 		::security/gnutls \
@@ -67,16 +71,21 @@ DOC=		share/doc/freetds
 SUBST_VARS=	DOC V
 
 pre-configure:
+	cd ${WRKSRC}/doc/doc; ln -s freetds-0.82 freetds-0.82.1
+	cd ${WRKSRC}; \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	    ./autogen.sh
 	@${SUBST_CMD} ${WRKSRC}/src/odbc/connectparams.c
 
 post-install:
-	@mkdir ${PREFIX}/share/examples/freetds
+	@mkdir ${PREFIX}/share/examples/freetds; \
 	${INSTALL_DATA} ${WRKSRC}/freetds.conf \
-		${PREFIX}/share/examples/freetds/freetds.conf-sample
+		${PREFIX}/share/examples/freetds/freetds.conf-sample; \
 	${INSTALL_DATA} ${WRKSRC}/src/pool/pool.conf \
-		${PREFIX}/share/examples/freetds/pool.conf-sample
-	@cd ${PREFIX}/lib && ln -s libtdsodbc.so.${LIBtdsodbc_VERSION} \
-		libtdsodbc.so
-	@mv ${PREFIX}/share/doc/freetds-* ${PREFIX}/share/doc/freetds
+		${PREFIX}/share/examples/freetds/pool.conf-sample; \
+	cd ${PREFIX}/lib && ln -s libtdsodbc.so.${LIBtdsodbc_VERSION} \
+		libtdsodbc.so; \
+	mv ${PREFIX}/share/doc/freetds-* ${PREFIX}/share/doc/freetds
 
 .include <bsd.port.mk>
