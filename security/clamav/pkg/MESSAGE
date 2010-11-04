@@ -1,4 +1,0 @@
-Edit ${SYSCONFDIR}/clamd.conf and ${SYSCONFDIR}/freshclam.conf
-to use ClamAV.
-
-Use freshclam to install an up-to-date virus signature database.
