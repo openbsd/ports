@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/10/28 10:10:24 steven Exp $
+# $OpenBSD: Makefile,v 1.78 2010/11/04 07:18:54 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.4
+VERSION=	2.7.5
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -105,7 +105,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
 FLAVORS=	audio debug gtkspell
-FLAVOR?=	
+FLAVOR?=
 
 MULTI_PACKAGES= -main -finch -libpurple
 
