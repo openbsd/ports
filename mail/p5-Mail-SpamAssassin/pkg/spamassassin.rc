@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: spamassassin.rc,v 1.1 2010/11/04 12:07:09 sthen Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/spamd"
+daemon_flags="-d -u _spamdaemon -P"
+pexp="perl: ${daemon} ${daemon_flags}"
+
+rc_cmd $1
