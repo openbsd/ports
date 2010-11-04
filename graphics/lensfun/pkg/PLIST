@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/16 10:04:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/04 20:14:43 jasper Exp $
 @bin bin/tmod
 include/lensfun.h
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
@@ -13,7 +13,10 @@ share/doc/lensfun/manual/addcamera.html
 share/doc/lensfun/manual/addlens.html
 share/doc/lensfun/manual/annotated.html
 share/doc/lensfun/manual/basearch.html
+share/doc/lensfun/manual/bc_s.png
 share/doc/lensfun/manual/cc-by-ca.html
+share/doc/lensfun/manual/classes.html
+share/doc/lensfun/manual/closed.png
 share/doc/lensfun/manual/credits.html
 share/doc/lensfun/manual/database.html
 share/doc/lensfun/manual/dbformat.html
@@ -45,11 +48,14 @@ share/doc/lensfun/manual/group__Database.html
 share/doc/lensfun/manual/group__Lens.html
 share/doc/lensfun/manual/group__Mount.html
 share/doc/lensfun/manual/index.html
-share/doc/lensfun/manual/lensfun_8h-source.html
 share/doc/lensfun/manual/lensfun_8h.html
+share/doc/lensfun/manual/lensfun_8h_source.html
 share/doc/lensfun/manual/lgpl.html
 share/doc/lensfun/manual/license.html
 share/doc/lensfun/manual/modules.html
+share/doc/lensfun/manual/nav_f.png
+share/doc/lensfun/manual/nav_h.png
+share/doc/lensfun/manual/open.png
 share/doc/lensfun/manual/pages.html
 share/doc/lensfun/manual/programming.html
 share/doc/lensfun/manual/samplecode.html
@@ -71,9 +77,10 @@ share/doc/lensfun/manual/structlfMount-members.html
 share/doc/lensfun/manual/structlfMount.html
 share/doc/lensfun/manual/structlfParameter-members.html
 share/doc/lensfun/manual/structlfParameter.html
-share/doc/lensfun/manual/tab_b.gif
-share/doc/lensfun/manual/tab_l.gif
-share/doc/lensfun/manual/tab_r.gif
+share/doc/lensfun/manual/tab_a.png
+share/doc/lensfun/manual/tab_b.png
+share/doc/lensfun/manual/tab_h.png
+share/doc/lensfun/manual/tab_s.png
 share/doc/lensfun/manual/tabs.css
 share/doc/lensfun/manual/tfun_8cpp-example.html
 share/doc/lensfun/manual/tmod_8cpp-example.html

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/04 20:14:20 jasper Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
 PATCHVER=	20100728
 DISTNAME=	freetds-$V
-REVISION=	0
+REVISION=	1
 PKGNAME=	${DISTNAME}.1pre${PATCHVER}
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
 
@@ -32,7 +32,7 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 MASTER_SITES0=	http://spacehopper.org/mirrors/
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/doxygen
+BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen
 LIB_DEPENDS=	::databases/iodbc,-main \
 		::security/libgcrypt \
 		::security/gnutls \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/04 20:14:50 jasper Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-1.1.5
-REVISION=		2
+REVISION=		3
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	4.0
 
@@ -31,7 +31,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:doxygen-*:devel/doxygen
+BUILD_DEPENDS=		:doxygen->=1.7.2:devel/doxygen
 LIB_DEPENDS=		:ffmpeg->=20100512:graphics/ffmpeg \
 			::multimedia/libdv \
 			::x11/gtk+2 \

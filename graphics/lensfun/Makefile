@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/16 10:04:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/04 20:14:43 jasper Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.2.5
 SHARED_LIBS=	lensfun 1.0
+REVISION=	0
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.berlios.de/
@@ -20,7 +21,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python devel/gettext
 MODPY_RUNDEP=		No
-BUILD_DEPENDS=		::devel/doxygen
+BUILD_DEPENDS=		:doxygen->=1.7.2:devel/doxygen
 
 LIB_DEPENDS=		::devel/glib2 \
 			::graphics/png

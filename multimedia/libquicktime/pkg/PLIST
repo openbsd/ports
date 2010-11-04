@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/05/26 22:31:23 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/04 20:14:50 jasper Exp $
 @bin bin/libquicktime_config
 bin/lqt-config
 @bin bin/lqt_transcode
@@ -53,7 +53,10 @@ share/aclocal/lqt.m4
 share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
-share/doc/libquicktime/apiref/colormodels_8h-source.html
+share/doc/libquicktime/apiref/bc_s.png
+share/doc/libquicktime/apiref/classes.html
+share/doc/libquicktime/apiref/closed.png
+share/doc/libquicktime/apiref/colormodels_8h_source.html
 share/doc/libquicktime/apiref/dirs.html
 share/doc/libquicktime/apiref/doxygen.css
 share/doc/libquicktime/apiref/doxygen.png
@@ -88,21 +91,25 @@ share/doc/libquicktime/apiref/group__video__codecs.html
 share/doc/libquicktime/apiref/group__video__decode.html
 share/doc/libquicktime/apiref/group__video__encode.html
 share/doc/libquicktime/apiref/index.html
-share/doc/libquicktime/apiref/lqt_8h-source.html
 share/doc/libquicktime/apiref/lqt_8h.html
-share/doc/libquicktime/apiref/lqt__atoms_8h-source.html
-share/doc/libquicktime/apiref/lqt__codecinfo_8h-source.html
+share/doc/libquicktime/apiref/lqt_8h_source.html
+share/doc/libquicktime/apiref/lqt__atoms_8h_source.html
+share/doc/libquicktime/apiref/lqt__codecinfo_8h_source.html
 share/doc/libquicktime/apiref/modules.html
-share/doc/libquicktime/apiref/quicktime_8h-source.html
+share/doc/libquicktime/apiref/nav_f.png
+share/doc/libquicktime/apiref/nav_h.png
+share/doc/libquicktime/apiref/open.png
 share/doc/libquicktime/apiref/quicktime_8h.html
+share/doc/libquicktime/apiref/quicktime_8h_source.html
 share/doc/libquicktime/apiref/structlqt__codec__info__s.html
 share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
 share/doc/libquicktime/apiref/structquicktime__clap__t.html
 share/doc/libquicktime/apiref/structquicktime__colr__t.html
 share/doc/libquicktime/apiref/structquicktime__pasp__t.html
-share/doc/libquicktime/apiref/tab_b.gif
-share/doc/libquicktime/apiref/tab_l.gif
-share/doc/libquicktime/apiref/tab_r.gif
+share/doc/libquicktime/apiref/tab_a.png
+share/doc/libquicktime/apiref/tab_b.png
+share/doc/libquicktime/apiref/tab_h.png
+share/doc/libquicktime/apiref/tab_s.png
 share/doc/libquicktime/apiref/tabs.css
 share/doc/libquicktime/apiref/unionlqt__parameter__value__t.html
 share/locale/de/LC_MESSAGES/libquicktime.mo
