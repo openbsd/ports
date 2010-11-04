@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/16 22:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/04 17:51:46 jasper Exp $
 
 COMMENT=		Visual Tcl development environment
 
 DISTNAME=		vtcl-1.6.1a1
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://vtcl.sourceforge.net/
@@ -18,19 +19,11 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vtcl/}
 MODTCL_VERSION=		8.4
 MODTK_VERSION=		8.4
 MODULES=		x11/tk
+NO_BUILD=		Yes
 RUN_DEPENDS=		${MODTK_RUN_DEPENDS}
 
 pre-patch:
 	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
-
-# override configure/build stage to separate vtcl from its lib
-do-build:
-	echo "#!/bin/sh" > ${WRKSRC}/vtcl
-	echo "VTCL_HOME=${LOCALBASE}/lib/vtcl" >> ${WRKSRC}/vtcl
-	echo "PATH_TO_WISH=${MODTK_BIN}" >> ${WRKSRC}/vtcl
-	echo "export PATH_TO_WISH VTCL_HOME" >> ${WRKSRC}/vtcl
-	echo "exec \$${PATH_TO_WISH} \$${VTCL_HOME}/vtcl.tcl \$$*" >> ${WRKSRC}/vtcl
-	chmod +x ${WRKSRC}/vtcl
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtcl
@@ -40,7 +33,8 @@ do-install:
 	     ${WRKSRC}/demo ${PREFIX}/lib/vtcl
 	cp -R ${WRKSRC}/sample ${PREFIX}/share/examples/vtcl
 	cp -R ${WRKSRC}/doc ${PREFIX}/share/doc/vtcl
-	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
+	${SUBST_CMD} -c ${FILESDIR}/vtcl ${WRKDIST}/vtcl
+	${INSTALL_SCRIPT} ${WRKDIST}/vtcl ${PREFIX}/bin
 
 NO_REGRESS=		Yes
 
