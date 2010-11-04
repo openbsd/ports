@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/04 09:50:44 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
-DISTNAME=		notification-daemon-0.4.0
-REVISION=		9
+GNOME_VERSION=		0.5.0
+GNOME_PROJECT=		notification-daemon
+
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -14,38 +15,31 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage \
-		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c \
-		cairo dbus-1 dbus-glib-1 execinfo expat fontconfig freetype \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread pthread-stubs startup-notification-1 xcb \
-		xcb-atom xcb-aux xcb-event xml2 z
-
-MASTER_SITES=		${HOMEPAGE}/files/releases/source/notification-daemon/
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += GL ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm execinfo expat
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs startup-notification-1 vorbis
+WANTLIB += vorbisfile xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += xcb-shm z canberra-gtk canberra ltdl notify wnck-1
 
 MODULES=		devel/gettext \
-			textproc/intltool \
+			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		notify.>=2::devel/libnotify \
-			glade-2.0.>=1::devel/libglade2 \
-			gstreamer-0.10::multimedia/gstreamer-0.10/core \
-			wnck-1::devel/libwnck \
-			sexy::x11/libsexy
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			::multimedia/gstreamer-0.10/plugins-good
+LIB_DEPENDS=		::devel/libnotify \
+			::devel/libtool,-ltdl \
+			::devel/libwnck \
+			::audio/libcanberra
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 MODGCONF2_SCHEMAS_DIR=	notification-daemon
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
-			--enable-sound=gstreamer
+			--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

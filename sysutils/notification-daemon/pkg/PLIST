@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/22 12:51:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/04 09:50:44 ajacoutot Exp $
 @conflict notification-daemon-xfce-*
 @conflict xfce4-notifyd-*
 %%SHARED%%
 @bin bin/notification-properties
 lib/notification-daemon-1.0/
 lib/notification-daemon-1.0/engines/
-lib/notification-daemon-1.0/engines/libstandard.a
-lib/notification-daemon-1.0/engines/libstandard.la
+@comment lib/notification-daemon-1.0/engines/libslider.a
+@comment lib/notification-daemon-1.0/engines/libslider.la
+@comment lib/notification-daemon-1.0/engines/libstandard.a
+@comment lib/notification-daemon-1.0/engines/libstandard.la
 @bin libexec/notification-daemon
 share/applications/notification-properties.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Notifications.service
 share/icons/
 share/icons/hicolor/
@@ -32,16 +32,30 @@ share/icons/hicolor/48x48/apps/notification-properties.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/notification-properties.svg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/notification-daemon.mo
+share/locale/cs/LC_MESSAGES/notification-daemon.mo
+share/locale/da/LC_MESSAGES/notification-daemon.mo
 share/locale/de/LC_MESSAGES/notification-daemon.mo
+share/locale/el/LC_MESSAGES/notification-daemon.mo
+share/locale/es/LC_MESSAGES/notification-daemon.mo
+share/locale/et/LC_MESSAGES/notification-daemon.mo
+share/locale/fr/LC_MESSAGES/notification-daemon.mo
+share/locale/gl/LC_MESSAGES/notification-daemon.mo
+share/locale/hu/LC_MESSAGES/notification-daemon.mo
 share/locale/it/LC_MESSAGES/notification-daemon.mo
+share/locale/ja/LC_MESSAGES/notification-daemon.mo
+share/locale/lt/LC_MESSAGES/notification-daemon.mo
+share/locale/nb/LC_MESSAGES/notification-daemon.mo
 share/locale/nl/LC_MESSAGES/notification-daemon.mo
+share/locale/pa/LC_MESSAGES/notification-daemon.mo
 share/locale/pl/LC_MESSAGES/notification-daemon.mo
+share/locale/pt_BR/LC_MESSAGES/notification-daemon.mo
+share/locale/ru/LC_MESSAGES/notification-daemon.mo
+share/locale/sl/LC_MESSAGES/notification-daemon.mo
 share/locale/sv/LC_MESSAGES/notification-daemon.mo
+share/locale/zh_CN/LC_MESSAGES/notification-daemon.mo
 share/notification-daemon/
-share/notification-daemon/notification-properties.glade
+share/notification-daemon/notification-properties.ui
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/notification-daemon.schemas
