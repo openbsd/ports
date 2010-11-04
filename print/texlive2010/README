@@ -1,5 +1,5 @@
 TeX Live 2010 - Work in Progress (edd@)
-$OpenBSD: README,v 1.7 2010/10/24 22:31:00 edd Exp $
+$OpenBSD: README,v 1.8 2010/11/04 16:16:28 edd Exp $
 -------------------------------------------------------------------
 
  * Get base compilers working:		done
@@ -12,7 +12,7 @@ $OpenBSD: README,v 1.7 2010/10/24 22:31:00 edd Exp $
  * Get basic texmf packaging:		done
  * Re-add depenedencies:		done
  * Get -full config working:		done
- * Hack configs for subsets:		
+ * Hack configs for subsets:		done
    -> hack texmf.cnf:			done
    -> fix $HOME ls-R owned root bug:	done
    -> make fmtutil.cnf configs:		not needed this year
@@ -49,6 +49,10 @@ Can't parse /usr/local/man/cat1/mendex.0 (not a manpage ?)
 Can't parse /usr/local/man/cat1/vlna.0 (not a manpage ?)
 texlive_base-2010: ok
 ---8<---
+
+  -> Bogus symlink warnings, bacause -base installs symlinks which are not
+     resolved until the texmf is installed. I am told cups has this issue
+     too. They are only warnings however.
 
 --- EXTRA ---
 
