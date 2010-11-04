@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2009/08/06 10:30:20 eric Exp $
---- doc/Makefile.in.orig	Wed Jul  8 17:16:53 2009
-+++ doc/Makefile.in	Mon Aug  3 14:07:35 2009
-@@ -41,8 +41,8 @@ DBLATEX = @DBLATEX@
- IMAGEMAGICK = @IMAGEMAGICK@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2010/11/04 13:45:54 eric Exp $
+--- doc/Makefile.in.orig	Sun Sep 19 14:21:28 2010
++++ doc/Makefile.in	Tue Nov  2 17:59:04 2010
+@@ -41,25 +41,14 @@ DBLATEX=@DBLATEX@
+ IMAGEMAGICK=@IMAGEMAGICK@
  
  # Directories for postgresql subdirectories
 -PGSQL_DOCDIR=@PGSQL_DOCDIR@
@@ -11,16 +11,38 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2009/08/06 10:30:20 eric Exp $
 +PGSQL_MANDIR=${WRKINST}@PGSQL_MANDIR@
  PGSQL_SHAREDIR=@PGSQL_SHAREDIR@
  
++
  # If XSLTPROC or XSLBASE were not found during configure, we cannot
-@@ -77,11 +77,6 @@ chunked-html: postgis-out.xml
- 		$(CHUNK_HTML_DOCBOOK_XSL) \
- 		$<
+ # build the documentation
+-ifeq ($(XSLTPROC),)
+-all: requirements_not_met_xsltproc
+-else
+-ifeq ($(XSLBASE),)
+-all: requirements_not_met_xslbase
+-else
+-ifeq ($(IMAGEMAGICK),)
+-all: requirements_not_met_imagemagick
+-else
+-all: images html/postgis.html postgis_comments.sql
+-endif
+-endif
+-endif
++all:
  
--html/postgis.html: postgis-out.xml
--	$(XSLTPROC) $(XSLTPROC_COMMONOPTS) $(XSLTPROC_HTMLOPTS) \
--		--output html/postgis.html \
--		$(HTML_DOCBOOK_XSL) \
--		$<
+ postgis_aggs_mm.xml: ./xsl/postgis_aggs_mm.xml.xsl postgis.xml
+ 	$(XSLTPROC) ./xsl/postgis_aggs_mm.xml.xsl postgis.xml > $@
+@@ -130,10 +119,13 @@ comments-install: comments
+ comments-uninstall:
+ 	make -f Makefile.comments uninstall
  
- 
- postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}.${POSTGIS_MICRO_VERSION}.pdf: postgis-out.xml
+-install: html/postgis.html man/shp2pgsql.1 man/pgsql2shp.1
++install:
+ 	@mkdir -p $(PGSQL_DOCDIR)/postgis
++	@mkdir -p $(PGSQL_DOCDIR)/postgis/images
+ 	@mkdir -p $(PGSQL_MANDIR)/man1
++	cp html/images/* $(PGSQL_DOCDIR)/postgis/images/
+ 	cp html/postgis.html $(PGSQL_DOCDIR)/postgis/postgis.html
++	cp html/style.css $(PGSQL_DOCDIR)/postgis/style.css
+ 	cp ../README.postgis $(PGSQL_DOCDIR)/postgis/README.postgis
+ 	cp man/pgsql2shp.1 $(PGSQL_MANDIR)/man1/pgsql2shp.1
+ 	cp man/shp2pgsql.1 $(PGSQL_MANDIR)/man1/shp2pgsql.1
