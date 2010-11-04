@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dirdef_cpp,v 1.1 2008/01/06 10:02:59 eric Exp $
---- src/dirdef.cpp.orig	Sun Jan 28 13:28:50 2007
-+++ src/dirdef.cpp	Sat Dec 29 01:27:05 2007
-@@ -71,11 +71,16 @@ void DirDef::addFile(FileDef *fd)
+$OpenBSD: patch-src_dirdef_cpp,v 1.2 2010/11/04 20:13:10 sthen Exp $
+--- src/dirdef.cpp.orig	Fri Apr 30 11:45:25 2010
++++ src/dirdef.cpp	Thu Sep 16 11:35:27 2010
+@@ -73,11 +73,16 @@ void DirDef::addFile(FileDef *fd)
  static QCString encodeDirName(const QCString &anchor)
  {
    QCString result;

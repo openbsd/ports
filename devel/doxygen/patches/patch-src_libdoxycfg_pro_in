@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_libdoxycfg_pro_in,v 1.2 2008/01/06 10:02:59 eric Exp $
---- src/libdoxycfg.pro.in.orig	Tue Feb 20 19:27:36 2007
-+++ src/libdoxycfg.pro.in	Wed Dec 19 20:34:17 2007
-@@ -20,6 +20,7 @@ HEADERS      =  config.h portable.h
- SOURCES      =	config.cpp portable.cpp
+$OpenBSD: patch-src_libdoxycfg_pro_in,v 1.3 2010/11/04 20:13:10 sthen Exp $
+--- src/libdoxycfg.pro.in.orig	Fri Jan  1 11:53:11 2010
++++ src/libdoxycfg.pro.in	Thu Sep 16 12:30:34 2010
+@@ -20,7 +20,8 @@ HEADERS      =  config.h configoptions.h portable.h
+ SOURCES      =	config.cpp configoptions.cpp portable.cpp portable_c.c
  win32:TMAKE_CXXFLAGS       += -DQT_NODLL
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
+-INCLUDEPATH                += ../qtools
 +TMAKE_CXXFLAGS             += $(_CFLAGS)
- INCLUDEPATH                += ../qtools
++INCLUDEPATH                += ../qtools $(LOCALBASE)/include
  win32:INCLUDEPATH          += .
  DESTDIR                    =  ../lib
+ TARGET                     =  doxycfg

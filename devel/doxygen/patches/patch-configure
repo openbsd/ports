@@ -1,33 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2008/01/22 20:03:31 eric Exp $
---- configure.orig	Sun Jan 20 11:00:49 2008
-+++ configure	Sun Jan 20 11:01:03 2008
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#! /bin/sh
- #
- # $Id: patch-configure,v 1.4 2008/01/22 20:03:31 eric Exp $
- #
-@@ -259,7 +259,7 @@ if test "$f_wizard" = YES; then
-     echo "  QTDIR environment variable not set!"
-     echo -n "  Checking for Qt..."
-     for d in /usr/{lib,share,qt}/{qt-3,qt3,qt,qt*,3}; do
--      if test -d "$d/lib" -a -d "$d/include" -a -x "$d/bin/moc"; then
-+      if test -d "$d/lib" -a -d "$d/include" -a -x ${MOC}; then
-         QTDIR=$d
-       fi
-     done
-@@ -285,10 +285,6 @@ if test "$f_wizard" = YES; then
-       echo "QTDIR is set to $QTDIR, but include directory $QTDIR/include does not exist!"
-       exit 2
-     fi
--    if test ! -x "$QTDIR/bin/moc"; then
--      echo "QTDIR is set to $QTDIR, but the moc tool could not be found in $QTDIR/bin!"
--      exit 2
--    fi
-     echo " headers $QTDIR/include,"
-     echo "                     libraries $QTDIR/$LIBDIR"  
-     if test -n "`ls $QTDIR/$LIBDIR/* | grep qt-mt`"; then
-@@ -518,7 +514,7 @@ EOF
+$OpenBSD: patch-configure,v 1.5 2010/11/04 20:13:10 sthen Exp $
+--- configure.orig	Fri Jun 25 10:46:38 2010
++++ configure	Thu Sep 16 11:35:26 2010
+@@ -576,7 +576,7 @@ EOF
  fi
  if test "$f_wizard" = YES; then
    cat >> .tmakeconfig <<EOF
@@ -36,30 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2008/01/22 20:03:31 eric Exp $
  EOF
  fi
  
-@@ -544,20 +540,19 @@ EOF
-      if test $i = Makefile.in; then
-        echo "" >> $DST
-        echo "all: src/version.cpp " >> $DST
--       echo "	\$(MAKE) -C qtools" >> $DST
--       echo "	\$(MAKE) -C libpng" >> $DST
--       echo "	\$(MAKE) -C libmd5" >> $DST
--       echo "	\$(MAKE) -C src" >> $DST
-+       echo "	(cd qtools && \$(MAKE))" >> $DST
-+       echo "	(cd libmd5 && \$(MAKE))" >> $DST
-+       echo "	(cd src && \$(MAKE))" >> $DST
-        if test $f_wizard = YES; then
--         echo "	\$(MAKE) -C addon/doxywizard" >> $DST
-+         echo "	(cd addon/doxywizard && \$(MAKE))" >> $DST
-        fi
-        if test $f_app = YES; then
--         echo "	\$(MAKE) -C addon/doxyapp" >> $DST
-+         echo "	(cd addon/doxyapp && \$(MAKE))" >> $DST
-        fi
-        echo "" >> $DST
-        echo "doxywizard_install:" >> $DST
-        if test $f_wizard = YES; then
--         echo "	\$(MAKE) -C addon/doxywizard install" >> $DST
-+         echo "	(cd addon/doxywizard && \$(MAKE) install)" >> $DST
-        fi
-        echo "" >> $DST
-      fi

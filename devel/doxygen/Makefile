@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/04 20:13:10 sthen Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
-VERSION=	1.5.4
+VERSION=	1.7.2
 DISTNAME=	doxygen-${VERSION}.src
-PKGNAME-main=	doxygen-${VERSION}p0
+PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
 CATEGORIES=	devel textproc 
 
@@ -26,10 +26,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 MODULES=	converters/libiconv
 
-LIB_DEPENDS-main=	png.>=4::graphics/png \
-			${LIB_DEPENDS}
-
-WANTLIB=	m c stdc++
+WANTLIB=	c m pthread stdc++
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
@@ -41,12 +38,12 @@ MULTI_PACKAGES=	-main
 CONFIGURE_ARGS+=--with-doxywizard
 CONFIGURE_ENV=	QTDIR=${LOCALBASE}
 
-MODULES+=	x11/qt3
+MODULES+=	x11/qt4
 
 MULTI_PACKAGES+=-gui
 .endif
 
-WANTLIB-gui=	${WANTLIB} X11 Xext pthread pthread-stubs xcb
+WANTLIB-gui=	${WANTLIB} QtGui QtXml
 LIB_DEPENDS-gui=${MODQT_LIB_DEPENDS} \
 		${LIB_DEPENDS}
 RUN_DEPENDS-gui=:doxygen-${VERSION}:${BUILD_PKGPATH}
@@ -55,12 +52,10 @@ WANTLIB-main=	${WANTLIB} z
 
 MAKE_FLAGS+=	CXX=${CXX} CC=${CC} _CFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS+=	DESTDIR=
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
-
-pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
