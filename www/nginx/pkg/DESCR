@@ -24,3 +24,6 @@ Mail proxy server features:
           o SMTP: AUTH LOGIN PLAIN CRAM-MD5
     * SSL support.
     * STARTTLS and STLS support.
+
+Documentation on nginx can be found on the wiki:
+    http://wiki.nginx.org/
