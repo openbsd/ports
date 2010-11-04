@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2010/09/25 03:34:40 william Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/04 01:41:11 dlg Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-DISTNAME=	nginx-0.7.67
-REVISION=	1
+DISTNAME=	nginx-0.8.53
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.net/
@@ -20,7 +19,7 @@ WANTLIB=		c crypto pcre ssl z
 
 MASTER_SITES=		http://sysoev.ru/nginx/
 
-LIB_DEPENDS=		::devel/pcre
+LIB_DEPENDS=		pcre::devel/pcre
 
 NGINX_DIR=		/var/nginx
 SUBST_VARS=		NGINX_DIR
