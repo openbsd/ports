@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/04 07:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/04 23:33:45 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -21,7 +21,7 @@ WANTLIB=		c crypto pcre ssl z
 
 MASTER_SITES=		http://sysoev.ru/nginx/
 
-LIB_DEPENDS=		pcre::devel/pcre
+LIB_DEPENDS=		::devel/pcre
 
 NGINX_DIR=		/var/nginx
 SUBST_VARS=		NGINX_DIR
