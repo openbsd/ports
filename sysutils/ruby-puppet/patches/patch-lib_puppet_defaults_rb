@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.4 2010/11/04 07:20:57 robert Exp $
+--- lib/puppet/defaults.rb.orig	Fri Oct 29 09:57:15 2010
++++ lib/puppet/defaults.rb	Fri Oct 29 09:58:43 2010
+@@ -379,8 +379,8 @@ module Puppet
+   )
+ 
+   setdefaults(:master,
+-    :user => ["puppet", "The user puppet master should run as."],
+-    :group => ["puppet", "The group puppet master should run as."],
++    :user => ["_puppet", "The user puppet master should run as."],
++    :group => ["_puppet", "The group puppet master should run as."],
+     :manifestdir => ["$confdir/manifests", "Where puppet master looks for its manifests."],
+     :manifest => ["$manifestdir/site.pp", "The entry-point manifest for puppet master."],
+     :code => ["", "Code to parse directly.  This is essentially only used
