@@ -1,14 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: nginx.rc,v 1.2 2010/11/04 07:54:51 ajacoutot Exp $
+
 . /etc/rc.d/rc.subr
 
 daemon=${TRUEPREFIX}/sbin/nginx
 pexp="nginx:.*master.*process"
 
 rc_reload() {
-	$daemon -s reload >/dev/null
+	${daemon} -s reload >/dev/null
 }
 
 rc_stop() {
-	$daemon -s stop >/dev/null
+	${daemon} -s stop >/dev/null
 	[ $? -gt 0 ] && pkill -f "^${pexp}"
 }
 
