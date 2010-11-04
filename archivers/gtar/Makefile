@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/28 13:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/04 22:51:13 jasper Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -41,7 +41,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mstatic}
 LDSTATIC=	-static
 MODULES=
-BUILD_DEPENDS=	:gettext->=0.17:devel/gettext
+BUILD_DEPENDS+=	:gettext->=0.17:devel/gettext
 CONFIGURE_ENV+=	SHLIBEXT=""
 .else
 LDSTATIC=
