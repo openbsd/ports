@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2010/11/04 22:27:22 landry Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -85,7 +85,7 @@ SKIP_TESTS =		t9502-gitweb-standalone-parse-output.sh
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
 .for distfile in ${DOC_DISTFILES}
-	@${TAR} -C ${WRKSRC}/doc -xzf ${FULLDISTDIR}/${distfile}${EXTRACT_SUFX}
+	@cd ${WRKSRC}/doc && ${TAR} -xzf ${FULLDISTDIR}/${distfile}${EXTRACT_SUFX}
 .endfor
 	@rm -f ${WRKSRC}/doc/man1/git-p4import.1
 	@cd ${WRKSRC} && perl -pi -e "s|/usr/share/git|${TRUEPREFIX}/share/git|g" \
