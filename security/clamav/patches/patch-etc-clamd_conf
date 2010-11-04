@@ -1,5 +1,5 @@
---- etc/clamd.conf.orig	Fri Jul 30 13:25:16 2010
-+++ etc/clamd.conf	Thu Aug 12 21:54:06 2010
+--- etc/clamd.conf.orig	Fri Jul 30 14:25:16 2010
++++ etc/clamd.conf	Thu Nov  4 12:22:07 2010
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -27,3 +27,12 @@
  
  # Initialize supplementary group access (clamd must be started by root).
  # Default: no
+@@ -405,7 +405,7 @@ Example
+ # deeply the process should be continued.
+ # Note: setting this limit too high may result in severe damage to the system.
+ # Default: 16
+-#MaxRecursion 10
++MaxRecursion 12
+ 
+ # Number of files to be scanned within an archive, a document, or any other
+ # container file.
