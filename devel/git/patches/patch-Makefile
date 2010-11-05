@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Sep 19 01:43:54 2010
-+++ Makefile	Tue Sep 21 14:44:36 2010
+--- Makefile.orig	Fri Oct 22 05:49:16 2010
++++ Makefile	Mon Oct 25 14:47:08 2010
 @@ -257,7 +257,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
@@ -58,7 +58,7 @@
  PTHREAD_CFLAGS =
  GCOV = gcov
  
-@@ -922,13 +916,14 @@ ifeq ($(uname_S),FreeBSD)
+@@ -924,13 +918,14 @@ ifeq ($(uname_S),FreeBSD)
  	HAVE_PATHS_H = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -76,7 +76,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1244,7 +1239,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+@@ -1247,7 +1242,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
  	PROGRAM_OBJS += daemon.o
  endif
  ifndef NO_OPENSSL
@@ -85,7 +85,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -2034,7 +2029,7 @@ export NO_SVN_TESTS
+@@ -2037,7 +2032,7 @@ export NO_SVN_TESTS
  
  ### Testing rules
  

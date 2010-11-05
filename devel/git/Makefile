@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2010/11/04 22:27:22 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2010/11/05 08:23:04 bernd Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.7.3.1
+V =		1.7.3.2
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -113,8 +113,6 @@ post-install:
 	cd ${WRKBUILD}/gitweb && \
 		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/git
 
 do-regress:
 	cd ${WRKSRC}/t && rm -f ${SKIP_TESTS}

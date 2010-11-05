@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1 2010/10/07 09:42:23 bernd Exp $
+$OpenBSD: README-main,v 1.1 2010/11/05 08:23:04 bernd Exp $
 
 Some notes on using git in an OpenBSD environment.
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2010/10/07 09:42:23 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2010/11/05 08:23:04 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -309,7 +309,6 @@ libexec/git/git-web--browse
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
 share/doc/git/
-share/doc/git/README.OpenBSD
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -664,6 +663,7 @@ share/doc/git/urls-remotes.txt
 share/doc/git/urls.txt
 share/doc/git/user-manual.html
 share/doc/git/user-manual.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/git-blame.el
