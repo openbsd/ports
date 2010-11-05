@@ -1,0 +1,24 @@
+$OpenBSD: patch-base_mdns_py,v 1.1 2010/11/05 10:29:48 ajacoutot Exp $
+
+XXX Unable to setup multicatst socket... [Errno 22] Invalid argument
+
+--- base/mdns.py.orig	Sun Sep 26 19:07:36 2010
++++ base/mdns.py	Fri Nov  5 11:06:53 2010
+@@ -211,12 +211,13 @@ def detectNetworkDevices(ttl=4, timeout=10):
+         pass
+ 
+     try:
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_TTL, ttl)
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf) + socket.inet_aton('0.0.0.0'))
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_LOOP ,1)
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf))
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, socket.inet_aton(mcast_addr) +  socket.inet_aton(intf))
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP ,1)
+     except Exception, e:
+         log.error("Unable to setup multicast socket for mDNS: %s" % e)
+-        return {}
++        pass
+ 
+     now = time.time()
+     next = now

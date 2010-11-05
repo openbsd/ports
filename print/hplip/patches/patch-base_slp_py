@@ -1,0 +1,24 @@
+$OpenBSD: patch-base_slp_py,v 1.1 2010/11/05 10:29:48 ajacoutot Exp $
+
+XXX Unable to setup multicatst socket... [Errno 22] Invalid argument
+
+--- base/slp.py.orig	Sun Sep 26 19:07:36 2010
++++ base/slp.py	Fri Nov  5 11:06:42 2010
+@@ -69,12 +69,13 @@ def detectNetworkDevices(ttl=4, timeout=10): #, xid=No
+         pass
+ 
+     try:
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_TTL, ttl)
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf) + socket.inet_aton('0.0.0.0'))
+-        s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_LOOP ,1)
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf))
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, socket.inet_aton(mcast_addr) +  socket.inet_aton(intf))
++        s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP, 1)
+     except Exception, e:
+         log.error("Unable to setup multicast socket for SLP: %s" % e)
+-        return {}
++        pass
+ 
+     packet = ''.join(['\x01\x06\x00\x2c\x00\x00\x65\x6e\x00\x03', 
+         struct.pack('!H', random.randint(1, 65535)), '\x00\x00\x00\x18service:x-hpnp-discover:\x00\x00\x00\x00'])
