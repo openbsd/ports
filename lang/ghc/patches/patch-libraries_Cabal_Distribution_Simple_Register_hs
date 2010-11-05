@@ -1,16 +1,25 @@
-$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.4 2010/11/03 21:32:08 kili Exp $
+$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.5 2010/11/05 21:23:46 kili Exp $
 --- libraries/Cabal/Distribution/Simple/Register.hs.orig	Wed Jun  9 20:10:19 2010
-+++ libraries/Cabal/Distribution/Simple/Register.hs	Fri Oct 29 14:59:14 2010
-@@ -129,7 +129,7 @@ register pkg@PackageDescription { library       = Just
-   = do
++++ libraries/Cabal/Distribution/Simple/Register.hs	Fri Nov  5 19:25:46 2010
+@@ -130,13 +130,14 @@ register pkg@PackageDescription { library       = Just
  
      installedPkgInfo <- generateRegistrationInfo
--                           verbosity pkg lib lbi clbi inplace distPref
-+                           verbosity pkg lib lbi clbi inplace distPref pkgPath
+                            verbosity pkg lib lbi clbi inplace distPref
++    let installedPkgInfo' = installedPkgInfo { IPI.pkgpath = pkgPath }
  
       -- Three different modes:
      case () of
-@@ -152,6 +152,7 @@ register pkg@PackageDescription { library       = Just
+-     _ | modeGenerateRegFile   -> writeRegistrationFile installedPkgInfo
+-       | modeGenerateRegScript -> writeRegisterScript   installedPkgInfo
++     _ | modeGenerateRegFile   -> writeRegistrationFile installedPkgInfo'
++       | modeGenerateRegScript -> writeRegisterScript   installedPkgInfo'
+        | otherwise             -> registerPackage' verbosity
+-                                    installedPkgInfo pkg lbi inplace packageDbs
++                                    installedPkgInfo' pkg lbi inplace packageDbs
+ 
+   where
+     modeGenerateRegFile = isJust (flagToMaybe (regGenPkgConf regFlags))
+@@ -152,6 +153,7 @@ register pkg@PackageDescription { library       = Just
      packageDbs = nub $ withPackageDB lbi
                      ++ maybeToList (flagToMaybe  (regPackageDB regFlags))
      distPref  = fromFlag (regDistPref regFlags)
@@ -18,26 +27,6 @@ $OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.4 2010/11/03
      verbosity = fromFlag (regVerbosity regFlags)
  
      writeRegistrationFile installedPkgInfo = do
-@@ -181,8 +182,9 @@ generateRegistrationInfo :: Verbosity
-                          -> ComponentLocalBuildInfo
-                          -> Bool
-                          -> FilePath
-+			 -> String
-                          -> IO InstalledPackageInfo
--generateRegistrationInfo verbosity pkg lib lbi clbi inplace distPref = do
-+generateRegistrationInfo verbosity pkg lib lbi clbi inplace distPref pkgPath = do
-   --TODO: eliminate pwd!
-   pwd <- getCurrentDirectory
- 
-@@ -201,7 +203,7 @@ generateRegistrationInfo verbosity pkg lib lbi clbi in
-         | inplace   = inplaceInstalledPackageInfo pwd distPref
-                         pkg lib lbi clbi
-         | otherwise = absoluteInstalledPackageInfo
--                        pkg lib lbi clbi
-+                        pkg lib lbi clbi pkgPath
- 
-   return installedPkgInfo{ IPI.installedPackageId = ipid }
- 
 @@ -311,6 +313,7 @@ generalInstalledPackageInfo adjustRelIncDirs pkg lib c
      IPI.pkgUrl             = pkgUrl      pkg,
      IPI.description        = description pkg,
@@ -46,17 +35,3 @@ $OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.4 2010/11/03
      IPI.exposed            = libExposed  lib,
      IPI.exposedModules     = exposedModules lib,
      IPI.hiddenModules      = otherModules bi,
-@@ -380,9 +383,11 @@ absoluteInstalledPackageInfo :: PackageDescription
-                              -> Library
-                              -> LocalBuildInfo
-                              -> ComponentLocalBuildInfo
-+			     -> String
-                              -> InstalledPackageInfo
--absoluteInstalledPackageInfo pkg lib lbi clbi =
--    generalInstalledPackageInfo adjustReativeIncludeDirs pkg lib clbi installDirs
-+absoluteInstalledPackageInfo pkg lib lbi clbi pkgPath =
-+    let ipi = generalInstalledPackageInfo adjustReativeIncludeDirs pkg lib clbi installDirs
-+    in ipi { IPI.pkgpath = pkgPath }
-   where
-     -- For installed packages we install all include files into one dir,
-     -- whereas in the build tree they may live in multiple local dirs.
