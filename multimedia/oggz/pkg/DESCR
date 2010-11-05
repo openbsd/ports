@@ -1,0 +1,11 @@
+Oggz comprises liboggz and the tool oggz, which provides commands to
+inspect, edit and validate Ogg files. The oggz-chop tool can also be
+used to serve time ranges of Ogg media over HTTP by any web server that
+supports CGI.
+
+liboggz is a C library for reading and writing Ogg files and streams.
+It offers various features over the reference libogg, including
+support for seeking, validation and timestamp interpretation. Ogg is
+an interleaving data container developed by Monty at Xiph.org,
+originally to support the Ogg Vorbis audio format but now used for
+many free codecs including Dirac, FLAC, Speex and Theora.

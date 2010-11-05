@@ -1,0 +1,39 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
+--- doc/Makefile.in.orig	Thu Apr 29 03:39:46 2010
++++ doc/Makefile.in	Wed Nov  3 11:48:35 2010
+@@ -478,12 +478,8 @@ html: oggz.1.html oggz-diff.1.html oggz-dump.1.html og
+ @HAVE_MAN2HTML_TRUE@%.1.html: %.1
+ @HAVE_MAN2HTML_TRUE@	man2html $< > $@
+ 
+-@HAVE_DOXYGEN_TRUE@doxygen-build.stamp: Doxyfile $(top_srcdir)/include/oggz/*.h $(top_srcdir)/src/examples/*.c
+-@HAVE_DOXYGEN_TRUE@	doxygen
+-@HAVE_DOXYGEN_TRUE@	touch doxygen-build.stamp
+-@HAVE_DOXYGEN_FALSE@doxygen-build.stamp:
+-@HAVE_DOXYGEN_FALSE@	echo "*** Warning: Doxygen not found; documentation will not be built."
+-@HAVE_DOXYGEN_FALSE@	touch doxygen-build.stamp
++doxygen-build.stamp:
++	touch doxygen-build.stamp
+ 
+ dist-hook:
+ 	if test -d liboggz; then \
+@@ -503,17 +499,9 @@ dist-hook:
+ 
+ install-data-local: doxygen-build.stamp
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	if test -d liboggz; then \
+-	  for dir in liboggz/*; do \
+-	    if test -d $$dir; then \
+-	      b=`basename $$dir`; \
+-	      $(mkinstalldirs) $(DESTDIR)$(docdir)/$$b; \
+-	      for f in $$dir/*; do \
+-		$(INSTALL_DATA) $$f $(DESTDIR)$(docdir)/$$b; \
+-              done \
+-	    fi \
+-	  done \
+-	fi
++	for f in liboggz/html/*; do \
++		$(INSTALL_DATA) $$f $(DESTDIR)$(docdir)/; \
++	done
+ 
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(docdir)

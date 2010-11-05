@@ -1,0 +1,104 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
+%%SHARED%%
+@bin bin/oggz
+@bin bin/oggz-chop
+@bin bin/oggz-codecs
+@bin bin/oggz-comment
+bin/oggz-diff
+@bin bin/oggz-dump
+@bin bin/oggz-info
+@bin bin/oggz-known-codecs
+@bin bin/oggz-merge
+@bin bin/oggz-rip
+@bin bin/oggz-scan
+@bin bin/oggz-sort
+@bin bin/oggz-validate
+include/oggz/
+include/oggz/oggz.h
+include/oggz/oggz_comments.h
+include/oggz/oggz_constants.h
+include/oggz/oggz_deprecated.h
+include/oggz/oggz_io.h
+include/oggz/oggz_off_t.h
+include/oggz/oggz_off_t_generated.h
+include/oggz/oggz_packet.h
+include/oggz/oggz_read.h
+include/oggz/oggz_seek.h
+include/oggz/oggz_stream.h
+include/oggz/oggz_table.h
+include/oggz/oggz_write.h
+lib/liboggz.a
+lib/liboggz.la
+lib/pkgconfig/
+lib/pkgconfig/oggz.pc
+@man man/man1/oggz-chop.1
+@man man/man1/oggz-codecs.1
+@man man/man1/oggz-comment.1
+@man man/man1/oggz-diff.1
+@man man/man1/oggz-dump.1
+@man man/man1/oggz-info.1
+@man man/man1/oggz-known-codecs.1
+@man man/man1/oggz-merge.1
+@man man/man1/oggz-rip.1
+@man man/man1/oggz-scan.1
+@man man/man1/oggz-sort.1
+@man man/man1/oggz-validate.1
+@man man/man1/oggz.1
+share/doc/liboggz/
+share/doc/liboggz/annotated.html
+share/doc/liboggz/classes.html
+share/doc/liboggz/doxygen.css
+share/doc/liboggz/doxygen.png
+share/doc/liboggz/files.html
+share/doc/liboggz/functions.html
+share/doc/liboggz/functions_vars.html
+share/doc/liboggz/globals.html
+share/doc/liboggz/globals_defs.html
+share/doc/liboggz/globals_enum.html
+share/doc/liboggz/globals_eval.html
+share/doc/liboggz/globals_func.html
+share/doc/liboggz/globals_type.html
+share/doc/liboggz/group__basics.html
+share/doc/liboggz/group__building.html
+share/doc/liboggz/group__configuration.html
+share/doc/liboggz/group__force__feed.html
+share/doc/liboggz/group__hungry.html
+share/doc/liboggz/group__install.html
+share/doc/liboggz/group__metric.html
+share/doc/liboggz/group__read__api.html
+share/doc/liboggz/group__seek__api.html
+share/doc/liboggz/group__seek__semantics.html
+share/doc/liboggz/group__write__api.html
+share/doc/liboggz/index.html
+share/doc/liboggz/modules.html
+share/doc/liboggz/oggz_8h.html
+share/doc/liboggz/oggz_8h_source.html
+share/doc/liboggz/oggz__comments_8h.html
+share/doc/liboggz/oggz__comments_8h_source.html
+share/doc/liboggz/oggz__constants_8h.html
+share/doc/liboggz/oggz__constants_8h_source.html
+share/doc/liboggz/oggz__deprecated_8h.html
+share/doc/liboggz/oggz__deprecated_8h_source.html
+share/doc/liboggz/oggz__io_8h.html
+share/doc/liboggz/oggz__io_8h_source.html
+share/doc/liboggz/oggz__off__t_8h.html
+share/doc/liboggz/oggz__off__t_8h_source.html
+share/doc/liboggz/oggz__packet_8h.html
+share/doc/liboggz/oggz__packet_8h_source.html
+share/doc/liboggz/oggz__read_8h.html
+share/doc/liboggz/oggz__read_8h_source.html
+share/doc/liboggz/oggz__seek_8h.html
+share/doc/liboggz/oggz__seek_8h_source.html
+share/doc/liboggz/oggz__stream_8h.html
+share/doc/liboggz/oggz__stream_8h_source.html
+share/doc/liboggz/oggz__table_8h.html
+share/doc/liboggz/oggz__table_8h_source.html
+share/doc/liboggz/oggz__write_8h.html
+share/doc/liboggz/oggz__write_8h_source.html
+share/doc/liboggz/structOggzComment.html
+share/doc/liboggz/structoggz__packet.html
+share/doc/liboggz/structoggz__position.html
+share/doc/liboggz/tab_b.gif
+share/doc/liboggz/tab_l.gif
+share/doc/liboggz/tab_r.gif
+share/doc/liboggz/tabs.css
