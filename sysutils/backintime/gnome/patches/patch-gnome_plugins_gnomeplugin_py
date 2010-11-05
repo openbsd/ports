@@ -1,0 +1,31 @@
+$OpenBSD: patch-gnome_plugins_gnomeplugin_py,v 1.1 2010/11/05 16:39:10 ajacoutot Exp $
+
+GError: 0 is not a valid notification ID
+
+--- gnome/plugins/gnomeplugin.py.orig	Fri Nov  5 17:10:07 2010
++++ gnome/plugins/gnomeplugin.py	Fri Nov  5 17:13:01 2010
+@@ -24,6 +24,11 @@ import threading
+ import time
+ import gettext
+ 
++try:
++    import glib
++except ImportError:
++    import gobject as glib
++
+ _=gettext.gettext
+ 
+ if len( os.getenv( 'DISPLAY', '' ) ) == 0:
+@@ -147,7 +152,11 @@ class GnomePlugin( pluginmanager.Plugin ):
+ 			status_icon.set_visible( False )
+ 			gtk.main_iteration( False )
+ 
+-			self.notification.close()
++			try:
++			    self.notification.close()
++			except glib.GError:
++			    pass # Ignore error thrown when there's no message to close
++
+ 			pynotify.uninit()
+ 			
+ 			logger.info( '[GnomePlugin.Systray.run] end loop' )

@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_config_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
---- common/config.py.orig	Tue May  4 10:28:34 2010
-+++ common/config.py	Tue May  4 10:29:26 2010
-@@ -27,7 +27,7 @@ import tools
+$OpenBSD: patch-common_config_py,v 1.2 2010/11/05 16:39:10 ajacoutot Exp $
+--- common/config.py.orig	Wed Oct 27 21:56:06 2010
++++ common/config.py	Fri Nov  5 16:21:44 2010
+@@ -29,7 +29,7 @@ import logger
  
  _=gettext.gettext
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-common_config_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
  gettext.textdomain( 'backintime' )
  
  
-@@ -70,11 +70,11 @@ class Config( configfile.ConfigFile ):
+@@ -77,11 +77,11 @@ class Config( configfile.ConfigFileWithProfiles ):
+ 		configfile.ConfigFileWithProfiles.__init__( self, _('Main profile') )
  
- 	def __init__( self ):
  		self._APP_PATH =  os.path.dirname( os.path.abspath( os.path.dirname( __file__ ) ) )
 -		self._DOC_PATH = '/usr/share/doc/backintime'
 +		self._DOC_PATH = '${PREFIX}/share/doc/backintime'
@@ -24,12 +24,33 @@ $OpenBSD: patch-common_config_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
  
  		HOME_FOLDER = os.path.expanduser( '~' )
  		self._LOCAL_DATA_FOLDER = os.path.join( os.getenv( 'XDG_DATA_HOME', '$HOME/.local/share' ).replace( '$HOME', HOME_FOLDER ), 'backintime' )
-@@ -466,7 +466,7 @@ class Config( configfile.ConfigFile ):
- 			cron_line = 'echo "@monthly {cmd}"'
+@@ -579,18 +579,6 @@ class Config( configfile.ConfigFileWithProfiles ):
+ 	def set_run_nice_from_cron_enabled( self, value, profile_id = None ):
+ 		self.set_profile_bool_value( 'snapshots.cron.nice', value, profile_id )
  
- 		if len( cron_line ) > 0:
--			cmd = '/usr/bin/backintime --backup-job >/dev/null 2>&1'
-+			cmd = '${PREFIX}/bin/backintime --backup-job >/dev/null 2>&1'
- 			if self.is_run_nice_from_cron_enabled():
- 				cmd = 'nice -n 19 ' + cmd
- 			cron_line = cron_line.replace( '{cmd}', cmd )
+-	def is_run_ionice_from_cron_enabled( self, profile_id = None ):
+-		return self.get_profile_bool_value( 'snapshots.cron.ionice', True, profile_id )
+-
+-	def set_run_ionice_from_cron_enabled( self, value, profile_id = None ):
+-		self.set_profile_bool_value( 'snapshots.cron.ionice', value, profile_id )
+-
+-	def is_run_ionice_from_user_enabled( self, profile_id = None ):
+-		return self.get_profile_bool_value( 'snapshots.user_backup.ionice', False, profile_id )
+-
+-	def set_run_ionice_from_user_enabled( self, value, profile_id = None ):
+-		self.set_profile_bool_value( 'snapshots.user_backup.ionice', value, profile_id )
+-
+ 	def is_no_on_battery_enabled( self, profile_id = None ):
+ 		return self.get_profile_bool_value( 'snapshots.no_on_battery', False, profile_id )
+ 
+@@ -809,9 +797,7 @@ class Config( configfile.ConfigFileWithProfiles ):
+ 				cron_line = 'echo "{msg}\n0 ' + str(self.get_automatic_backup_time( profile_id ) / 100) + ' 1 * * {cmd}"'
+ 
+ 			if len( cron_line ) > 0:
+-				cmd = "/usr/bin/backintime --profile \\\"%s\\\" --backup-job >/dev/null 2>&1" % profile_name
+-				if self.is_run_ionice_from_cron_enabled():
+-					cmd = 'ionice -c2 -n7 ' + cmd
++				cmd = "${PREFIX}/bin/backintime --profile \\\"%s\\\" --backup-job >/dev/null 2>&1" % profile_name
+ 				if self.is_run_nice_from_cron_enabled( profile_id ):
+ 					cmd = 'nice -n 19 ' + cmd
+ 				cron_line = cron_line.replace( '{cmd}', cmd )
