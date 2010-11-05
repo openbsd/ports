@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/05 10:06:44 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/05 13:47:46 espie Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -72,7 +72,7 @@ LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
 		::print/poppler
-LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 \
+LIB_DEPENDS-qt4=::x11/qt4 \
 		${MODGETTEXT_LIB_DEPENDS} \
 		::print/poppler
 
@@ -84,7 +84,8 @@ WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 WANTLIB-qt=	${cWANTLIB} lcms openjpeg xml2 poppler png ${MODQT3_WANTLIB}
 WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
                 Xinerama Xrender glib-2.0 gobject-2.0 gthread-2.0 lcms \
-		openjpeg pcre png poppler pthread-stubs xcb xml2
+		openjpeg pcre png poppler pthread-stubs xcb xml2 \
+		QtCore QtGui QtXml
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
