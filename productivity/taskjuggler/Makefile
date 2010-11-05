@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	project management tool
 
 DISTNAME=	taskjuggler-2.4.1
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 
 CATEGORIES=	productivity
 
@@ -21,7 +21,7 @@ WANTLIB += DCOP ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
 WANTLIB += fam iconv idn intl jpeg kabc kdecore kdefx kdeprint
 WANTLIB += kdesu kdeui khtml kio kjs kparts kresources ktexteditor
 WANTLIB += kutils kwalletclient m pcre pcreposix png pthread pthread-stubs
-WANTLIB += rpcsvc stdc++ util vcard xcb z
+WANTLIB += rpcsvc stdc++ util vcard xcb z kcal kmime ktnef
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
 		ac_cv_prog_DOCBOOK_TO_MAN=no
 
-LIB_DEPENDS=	kcal,kmime,ktnef::x11/kde/pim3
+LIB_DEPENDS=	::x11/kde/pim3
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 # XXX tries building the documentation from XML, which fails

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
-PKGNAME=		${DISTNAME}p4
+REVISION=		4
 CATEGORIES=		productivity x11
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
@@ -14,11 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb Xbae
 
 MASTER_SITES=	http://distfiles.nl/
 
-LIB_DEPENDS=	Xbae::x11/xbae
+LIB_DEPENDS=	::x11/xbae
 
 USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake

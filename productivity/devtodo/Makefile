@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/DevTodo/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses readline stdc++ 
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 
 EXAMPLES=		doc/scripts.* doc/todorc.example contrib/*

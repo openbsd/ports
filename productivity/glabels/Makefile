@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT =	labels and businesss card designer
 
@@ -36,9 +36,10 @@ WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
 WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl ssl3 tasn1 util xcb xml2 z xcb-render xcb-render-util
+WANTLIB += gnomeui-2 camel-1.2 ebook-1.2 edataserver-1.2
 
-LIB_DEPENDS =	gnomeui-2::x11/gnome/libgnomeui \
-		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+LIB_DEPENDS =	::x11/gnome/libgnomeui \
+		::databases/evolution-data-server
 
 RUN_DEPENDS =	::misc/shared-mime-info
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
@@ -27,18 +27,19 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb z pcre crypto ssl gdk_pixbuf-2.0
+WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0 ofx
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	xml2.>=9::textproc/libxml \
-		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		ofx.>=3::devel/libofx
+LIB_DEPENDS=	::textproc/libxml \
+		::x11/gtk+2 \
+		::devel/libofx
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

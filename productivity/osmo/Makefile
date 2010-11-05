@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	handy personal organizer
 
@@ -22,18 +22,19 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png pthread z dbus-1 dbus-glib-1 gio-2.0 \
 		pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util \
-		gdk_pixbuf-2.0
+		gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 xml2 ical icalss \
+		icalvcal gringotts notify gtkspell
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		xml2.>=9::textproc/libxml \
-		ical,icalss,icalvcal::textproc/libical \
-		gringotts::security/libgringotts \
-		notify.>=2::devel/libnotify \
-		gtkspell.>=1::textproc/gtkspell
+LIB_DEPENDS=	::security/libgringotts \
+		::devel/libnotify \
+		::textproc/libxml \
+		::textproc/libical \
+		::textproc/gtkspell \
+		::x11/gtk+2
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 

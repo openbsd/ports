@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	to-do list manager
 
 DISTNAME=	tdl-1.5.2
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	productivity
 
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= simple
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

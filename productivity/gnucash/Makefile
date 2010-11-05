@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/05 07:57:07 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -40,6 +40,7 @@ WANTLIB += gtk-x11-2.0 ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl stdc++
 WANTLIB += util xcb xcb-render xcb-render-util xml2 z
 WANTLIB += canberra gcrypt gpg-error ogg vorbis vorbisfile
+WANTLIB += goffice-0.8 guile gtkhtml-3.14 gnomeui-2
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
 		${HOMEPAGE}pub/gnucash/sources/stable/
@@ -58,10 +59,10 @@ MODGNOME_HELP_FILES =	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS =	::devel/slib \
 		::devel/slib-guile
-LIB_DEPENDS =	goffice-0.8::devel/goffice \
-		guile::lang/guile \
-		gtkhtml-3.14::www/gtkhtml3 \
-		gnomeui-2.>=2400::x11/gnome/libgnomeui
+LIB_DEPENDS =	::devel/goffice \
+		::lang/guile \
+		::www/gtkhtml3 \
+		::x11/gnome/libgnomeui
 
 CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so

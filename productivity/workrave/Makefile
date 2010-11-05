@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
@@ -26,14 +26,15 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += sigc-2.0 ssl stdc++ util xcb xcb-render xcb-render-util
 WANTLIB += xml2 z atkmm-1.6
+WANTLIB += gnet-2.0 gstreamer-0.10 panel-applet-2 gdkmm-2.4 gtkmm-2.4
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
 BUILD_DEPENDS=		::devel/py-cheetah
-LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
-			gnet-2.0::net/gnet \
-			panel-applet-2::x11/gnome/panel \
-			gdkmm-2.4,gtkmm-2.4::x11/gtk2mm
+LIB_DEPENDS=		::multimedia/gstreamer-0.10/core \
+			::net/gnet \
+			::x11/gnome/panel \
+			::x11/gtk2mm
 
 MODULES=		devel/gettext \
 			lang/python \

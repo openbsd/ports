@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -18,13 +18,13 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread
-WANTLIB += stdc++ z
+WANTLIB += stdc++ z Qt3Support QtGui QtNetwork QtSql QtXml
 
 MODULES=	devel/gettext \
 		x11/qt4
 
 RUN_DEPENDS=	::archivers/zip
-LIB_DEPENDS=	Qt3Support,QtGui,QtNetwork,QtSql,QtXml::x11/qt4
+LIB_DEPENDS=	::x11/qt4
 
 PORTHOME=	${WRKDIR}
 NO_REGRESS=	Yes

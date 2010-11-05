@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://distfiles.nl/
 
 NO_BUILD=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 PKG_ARCH=		*
 
  # Requires interactive terminal and other hoops not worth going through.

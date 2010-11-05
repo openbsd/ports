@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT =	personal accounting application
 
@@ -28,10 +28,11 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 	 	png pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0 \
 	 	glib-2.0 gmodule-2.0 gobject-2.0 cairo m z \
 		pixman-1  gio-2.0 pthread-stubs xcb osp pthread gthread-2.0 \
-		xcb-render xcb-render-util gdk_pixbuf-2.0
+		xcb-render xcb-render-util gdk_pixbuf-2.0 \
+		gdk-x11-2.0 gtk-x11-2.0 ofx
 
-LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		ofx.>=3::devel/libofx 
+LIB_DEPENDS =	::x11/gtk+2 \
+		::devel/libofx 
 
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info

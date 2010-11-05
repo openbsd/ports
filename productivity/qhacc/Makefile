@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/05 07:57:07 sthen Exp $
 
 COMMENT=	qt home accounting program
 
 DISTNAME=	qhacc-3.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://qhacc.sourceforge.net/
