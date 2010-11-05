@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/04 20:13:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/05 09:15:57 landry Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -26,6 +26,8 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 MODULES=	converters/libiconv
 
+
+BUILD_DEPENDS +=	::devel/bison
 WANTLIB=	c m pthread stdc++
 
 CONFIGURE_STYLE=simple
