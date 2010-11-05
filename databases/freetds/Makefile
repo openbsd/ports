@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/04 22:13:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/05 09:50:52 landry Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -34,7 +34,9 @@ MASTER_SITES0=	http://spacehopper.org/mirrors/
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
 MODULES=	devel/gettext
+# XXX uses libtool m4 macros
 BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen \
+		::devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	::databases/iodbc,-main \
