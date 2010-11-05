@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2010/10/29 12:54:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2010/11/05 07:51:57 landry Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -122,8 +122,8 @@ post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 pre-configure:
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I config-scripts
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf -I config-scripts
+	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION} aclocal -I config-scripts
+	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf -I config-scripts
 	${SUBST_CMD} ${WRKSRC}/Makedefs.in
 
 post-configure:
