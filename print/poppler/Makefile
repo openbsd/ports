@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/05 00:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/05 10:06:44 espie Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -39,7 +39,7 @@ FLAVOR?=${FLAVOR-${MACHINE_ARCH}}
 
 NOT_FOR_ARCHS-qt4 = arm powerpc
 
-WANTLIB=	expat freetype fontconfig jpeg m z stdc++
+cWANTLIB=	expat freetype fontconfig jpeg m z stdc++
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
@@ -76,13 +76,13 @@ LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 \
 		${MODGETTEXT_LIB_DEPENDS} \
 		::print/poppler
 
-WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
+WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 gdk_pixbuf-2.0 openjpeg \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo pcre png \
 		pthread-stubs xcb xcb-render xcb-render-util gdk-x11-2.0 lcms
-WANTLIB-qt=	${WANTLIB} lcms openjpeg xml2 poppler png
-WANTLIB-qt4=	${WANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
+WANTLIB-qt=	${cWANTLIB} lcms openjpeg xml2 poppler png ${MODQT3_WANTLIB}
+WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
                 Xinerama Xrender glib-2.0 gobject-2.0 gthread-2.0 lcms \
 		openjpeg pcre png poppler pthread-stubs xcb xml2
 

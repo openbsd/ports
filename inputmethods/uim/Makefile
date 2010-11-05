@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/05 10:06:44 espie Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -51,14 +51,14 @@ USE_GROFF =	Yes
 AUTOCONF_VERSION=	2.62
 SUBST_VARS=	MODQT_PLUGINS
 
-WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
+Wcommon =	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main=::inputmethods/anthy \
 		${MODLIBICONV_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-main=	${WANTLIB} Xrender fontconfig freetype curses \
+WANTLIB-main=	${Wcommon} Xrender fontconfig freetype curses \
 		util Xft expat z stdc++ anthy anthydic
 
 uim_LIB_DEPENDS=::inputmethods/uim
@@ -67,19 +67,20 @@ LIB_DEPENDS-qt=	${MODQT_LIB_DEPENDS} \
 		${uim_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-qt=	${WANTLIB} pthread stdc++ uim uim-custom gcroots uim-scm
+WANTLIB-qt =	${Wcommon} ${MODQT_WANTLIB} \
+		pthread stdc++ uim uim-custom gcroots uim-scm
 
 LIB_DEPENDS-kde=uim,gcroots,uim-scm::inputmethods/uim \
 		${MODLIBICONV_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		kdecore.>=7,DCOP,kdefx,kdeui::x11/kde/libs3
-WANTLIB-kde=	${WANTLIB} Xrender ICE SM idn jpeg png util z \
+WANTLIB-kde =	${Wcommon} Xrender ICE SM idn jpeg png util z \
 		art_lgpl_2 qt-mt stdc++
 
 
 LIB_DEPENDS-gtk=${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
 		::x11/gtk+2
-WANTLIB-gtk=	${WANTLIB} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
+WANTLIB-gtk =	${Wcommon} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 uim uim-custom gcroots uim-scm \
 		pangocairo-1.0 cairo png z expat \
 		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \

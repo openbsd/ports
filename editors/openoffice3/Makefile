@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/05 10:06:44 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -127,7 +127,8 @@ MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
-WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender ${STDLIB} m \
+WANTLIB-kde=		${MODQT_WANTLIB} \
+			X11 Xau Xdmcp Xext Xrandr Xrender ${STDLIB} m \
 			pthread-stubs xcb
 
 .if !${FLAVOR:L:Mno_java}

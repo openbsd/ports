@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/29 12:54:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/05 10:06:44 espie Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -53,11 +53,11 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 USE_GROFF =	Yes
-WANTLIB=	c expat glib-2.0 gobject-2.0 pcre pthread
 
 BUILD_DEPENDS=	::converters/xmltoman
 
-WANTLIB-main=	${WANTLIB} glib-2.0 gobject-2.0 gthread-2.0 gdbm \
+WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
+		glib-2.0 gobject-2.0 gthread-2.0 gdbm \
 		daemon dbus-1
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		::devel/glib2 \
@@ -130,7 +130,7 @@ LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread-stubs xcb z \
-		avahi-common stdc++
+		avahi-common stdc++ ${MODQT3_WANTLIB}
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif

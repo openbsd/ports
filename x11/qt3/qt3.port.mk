@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.12 2008/09/03 21:58:17 brad Exp $
+# $OpenBSD: qt3.port.mk,v 1.13 2010/11/05 10:06:44 espie Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -17,13 +17,16 @@ _MODQT3_SETUP =	MOC=${MODQT3_MOC} \
 		MODQT_INCDIR=${MODQT3_INCDIR} \
 		MODQT_LIBDIR=${MODQT3_LIBDIR}
 .if ${MODQT3_OVERRIDE_UIC:L} == "yes"
-_MODQT3_SETUP +=UIC=${MODQT3_UIC}
+_MODQT3_SETUP +=	UIC=${MODQT3_UIC}
 .endif
 _MODQT_SETUP ?= ${MODQT3_SETUP}
 
-MODQT3_LIB_DEPENDS = lib/qt3/qt-mt.>=3::x11/qt3
+MODQT3_LIB_DEPENDS = ::x11/qt3
 MODQT_LIB_DEPENDS ?= ${MODQT3_LIB_DEPENDS}
+MODQT3_WANTLIB = lib/qt3/qt-mt.>=3
+MODQT_WANTLIB ?= ${MODQT3_WANTLIB}
 LIB_DEPENDS +=	${MODQT3_LIB_DEPENDS}
+WANTLIB += ${MODQT3_WANTLIB}
 
 # may be needed to find plugins
 MODQT3_MOC =	${LOCALBASE}/bin/moc3-mt

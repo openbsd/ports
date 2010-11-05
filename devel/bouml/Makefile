@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/05 10:06:44 espie Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -26,7 +26,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 
 MULTI_PACKAGES= 	-main -docs
 
-WANTLIB-main=		X11 Xext c m pthread stdc++
+WANTLIB =		X11 Xext c m pthread stdc++
 
 RUN_DEPENDS-main=	::devel/desktop-file-utils
 
@@ -40,6 +40,7 @@ CONFIGURE_STYLE=	# empty
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=	# empty
 RUN_DEPENDS-docs=	# empty
+WANTLIB-docs =		# empty
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
