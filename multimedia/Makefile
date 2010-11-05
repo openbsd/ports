@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/19 08:09:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/05 13:00:09 eric Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -36,6 +36,7 @@
      SUBDIR += moovida
      SUBDIR += mpgtx
      SUBDIR += oggconvert
+     SUBDIR += oggz
      SUBDIR += ogmtools
      SUBDIR += pspvc
      SUBDIR += recordmydesktop
