@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/05 09:50:52 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/05 10:25:24 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
 PATCHVER=	20100728
 DISTNAME=	freetds-$V
-REVISION=	2
+REVISION=	3
 PKGNAME=	${DISTNAME}.1pre${PATCHVER}
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
 
