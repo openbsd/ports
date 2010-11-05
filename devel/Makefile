@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.853 2010/10/27 10:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.854 2010/11/05 14:02:59 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1000,6 +1000,7 @@
      SUBDIR += spe
      SUBDIR += splint
      SUBDIR += startup-notification
+     SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
      SUBDIR += subversion,gnome_keyring
