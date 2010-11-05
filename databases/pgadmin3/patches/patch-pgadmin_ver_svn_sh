@@ -1,0 +1,9 @@
+$OpenBSD: patch-pgadmin_ver_svn_sh,v 1.1 2010/11/05 15:34:02 pea Exp $
+--- pgadmin/ver_svn.sh.orig	Fri Nov  5 14:30:41 2010
++++ pgadmin/ver_svn.sh	Fri Nov  5 14:30:47 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ OV=unknown
+ if [ -d .svn -o -d ../.git ]; then

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/21 13:41:56 pea Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/11/05 15:34:02 pea Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/
@@ -173,6 +173,9 @@ share/pgadmin3/docs/en_US/hints/saving-passwords.html
 share/pgadmin3/docs/en_US/hints/vacuum.html
 share/pgadmin3/docs/en_US/hints/view-without-pk.html
 share/pgadmin3/docs/en_US/images/
+share/pgadmin3/docs/en_US/images/backup-2.png
+share/pgadmin3/docs/en_US/images/backup-3.png
+share/pgadmin3/docs/en_US/images/backup-4.png
 share/pgadmin3/docs/en_US/images/backup.png
 share/pgadmin3/docs/en_US/images/connect.png
 share/pgadmin3/docs/en_US/images/debugger.png
@@ -190,11 +193,15 @@ share/pgadmin3/docs/en_US/images/maintenance.png
 share/pgadmin3/docs/en_US/images/manage-macros.png
 share/pgadmin3/docs/en_US/images/no-hba.png
 share/pgadmin3/docs/en_US/images/not-running.png
+share/pgadmin3/docs/en_US/images/options-browser.png
+share/pgadmin3/docs/en_US/images/options-colours.png
 share/pgadmin3/docs/en_US/images/options-display.png
 share/pgadmin3/docs/en_US/images/options-general.png
 share/pgadmin3/docs/en_US/images/options-logging.png
 share/pgadmin3/docs/en_US/images/options-pref.png
+share/pgadmin3/docs/en_US/images/options-preferences.png
 share/pgadmin3/docs/en_US/images/options-query.png
+share/pgadmin3/docs/en_US/images/options-querytool.png
 share/pgadmin3/docs/en_US/images/password.png
 share/pgadmin3/docs/en_US/images/pgagent-jobdetails.png
 share/pgadmin3/docs/en_US/images/pgagent-jobproperties.png
@@ -210,6 +217,9 @@ share/pgadmin3/docs/en_US/images/query-connect.png
 share/pgadmin3/docs/en_US/images/query.png
 share/pgadmin3/docs/en_US/images/reporttool-html.png
 share/pgadmin3/docs/en_US/images/reporttool-xml.png
+share/pgadmin3/docs/en_US/images/restore-2.png
+share/pgadmin3/docs/en_US/images/restore-3.png
+share/pgadmin3/docs/en_US/images/restore-4.png
 share/pgadmin3/docs/en_US/images/restore-content.png
 share/pgadmin3/docs/en_US/images/restore.png
 share/pgadmin3/docs/en_US/images/server.png
@@ -238,6 +248,7 @@ share/pgadmin3/docs/en_US/options-tab2.html
 share/pgadmin3/docs/en_US/options-tab3.html
 share/pgadmin3/docs/en_US/options-tab4.html
 share/pgadmin3/docs/en_US/options-tab5.html
+share/pgadmin3/docs/en_US/options-tab6.html
 share/pgadmin3/docs/en_US/options.html
 share/pgadmin3/docs/en_US/password.html
 share/pgadmin3/docs/en_US/pgadmin3.css
@@ -395,6 +406,7 @@ share/pgadmin3/docs/fr_FR/options-tab2.html
 share/pgadmin3/docs/fr_FR/options-tab3.html
 share/pgadmin3/docs/fr_FR/options-tab4.html
 share/pgadmin3/docs/fr_FR/options-tab5.html
+share/pgadmin3/docs/fr_FR/options-tab6.html
 share/pgadmin3/docs/fr_FR/options.html
 share/pgadmin3/docs/fr_FR/password.html
 share/pgadmin3/docs/fr_FR/pgadmin3.css
