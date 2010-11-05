@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c glib-2.0 xml2
 
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.bz2
@@ -21,8 +21,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		glib-2.0::devel/glib2 \
-			xml2::textproc/libxml
+LIB_DEPENDS=		::devel/glib2 \
+			::textproc/libxml
 
 USE_GMAKE=		Yes
 USE_GROFF =	Yes

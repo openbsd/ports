@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	geek code generator
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/19 09:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -13,9 +13,11 @@ PKGVERSION=   ${DISTVERSION:S/p/./}
 
 DISTNAME=	amanda-${DISTVERSION}
 
-PKGNAME-main=	amanda-${PKGVERSION}p1
-PKGNAME-client=	amanda-client-${PKGVERSION}p0
+PKGNAME-main=	amanda-${PKGVERSION}
+PKGNAME-client=	amanda-client-${PKGVERSION}
 PKGNAME-doc=	amanda-doc-${PKGVERSION}
+REVISION-main=	1
+REVISION-client=0
 
 CATEGORIES=	misc
 
@@ -70,7 +72,8 @@ USE_GROFF =	Yes
 # Use this flavor to speed things up if you have large AMANDA
 # databases.
 .if ${FLAVOR:L:Mdb}
-LIB_DEPENDS+=    lib/db4/db.>=4:db->=4,<5:databases/db/v4
+WANTLIB+=	lib/db4/db
+LIB_DEPENDS+=	:db->=4,<5:databases/db/v4
 CONFIGURE_ARGS+= --with-db=db
 CFLAGS+=	 -L${LOCALBASE}/lib
 .endif

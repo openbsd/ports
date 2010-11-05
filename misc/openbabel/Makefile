@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	chemistry file translation program
 
 V=		2.2.3
 DISTNAME=	openbabel-${V}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	misc
 
 SUBST_VARS=	V
@@ -21,12 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 
-WANTLIB=	c m stdc++ z
+WANTLIB=	c m stdc++ xml2 z
 
 MODULES=	converters/libiconv
 
 BUILD_DEPENDS=	::devel/boost
-LIB_DEPENDS=	xml2.>=9::textproc/libxml
+LIB_DEPENDS=	::textproc/libxml
 REGRESS_DEPENDS=::${BUILD_PKGPATH}
 
 USE_LIBTOOL=	Yes

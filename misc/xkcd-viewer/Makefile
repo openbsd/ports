@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	XKCD comic viewer
 
 DISTNAME=	XKCD_viewer-0.1
-PKGNAME=	${DISTNAME:L:S/_/-/}p0
+PKGNAME=	${DISTNAME:L:S/_/-/}
+REVISION=	0
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.autistici.org/fox/files/XKCD_viewer/

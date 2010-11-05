@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	Tk script to read GNU info files and display them
 
 DISTNAME=	tkinfo-2.8
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	misc 
 
 MASTER_SITES=	${HOMEPAGE}

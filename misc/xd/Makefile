@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	yet another dump utility
 
 DISTNAME=	xd-8087
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	misc
 
 # BSD 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 MAKE_ENV=	CC="${CC}"

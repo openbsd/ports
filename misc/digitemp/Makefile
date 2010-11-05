@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	program for reading values from 1-wire devices
 
@@ -13,11 +13,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m
+WANTLIB=	c m usb
 
 MASTER_SITES=	${HOMEPAGE}/software/linux/
 
-LIB_DEPENDS=	usb::devel/libusb
+LIB_DEPENDS=	::devel/libusb
 
 NO_CONFIGURE=	Yes
 USE_GMAKE=	Yes
@@ -26,7 +26,7 @@ ALL_TARGET=	ds9097 ds9097u ds2490
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 MAKE_FLAGS=	CC=${CC}
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 NO_REGRESS=	Yes
 

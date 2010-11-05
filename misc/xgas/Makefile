@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	animated simulation of an ideal gas
 
 DISTNAME=	xgas
-PKGNAME=        xgas-1.0p1
-CATEGORIES=     misc
+PKGNAME=	xgas-1.0
+REVISION=	1
+CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/demos/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -13,11 +13,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c curses iconv m
+
+WANTLIB=		c curses iconv m slang
 
 MASTER_SITES=		http://ftp.de.debian.org/debian/pool/main/p/pdmenu/
 
-LIB_DEPENDS=		slang.>=15::devel/libslang
+LIB_DEPENDS=		::devel/libslang
 MODULES=		devel/gettext
 
 DESTDIRNAME=		INSTALL_PREFIX

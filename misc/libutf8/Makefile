@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	provides UTF-8 locale support
 
 DISTNAME=	libutf8-0.8
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 SHARED_LIBS=	utf8	1.0
 CATEGORIES=     misc devel
 

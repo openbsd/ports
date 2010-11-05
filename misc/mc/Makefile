@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pcre pthread termcap
+WANTLIB += c m pcre pthread termcap glib-2.0 gmodule-2.0 slang
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -29,8 +29,8 @@ CONFIGURE_ARGS+=	--without-x
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		glib-2.0.>=0.8,gmodule-2.0.>=0.8::devel/glib2 \
-			slang::devel/libslang
+LIB_DEPENDS=		::devel/glib2 \
+			::devel/libslang
 RUN_DEPENDS=		:unzip-*:archivers/unzip \
 			:zip-*:archivers/zip
 

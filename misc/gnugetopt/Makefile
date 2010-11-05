@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 09:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	GNU getopt(1) utility
 
 DISTNAME=	getopt-1.1.4
-PKGNAME=	gnu${DISTNAME}p2
+PKGNAME=	gnu${DISTNAME}
+REVISION=	2
 CATEGORIES=	misc
 
 HOMEPAGE=	http://software.frodo.looijaard.name/getopt/

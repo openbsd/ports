@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		GNU watch command
 
@@ -15,11 +15,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		ncurses c
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 do-build:

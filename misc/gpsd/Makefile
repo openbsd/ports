@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -51,8 +51,8 @@ CONFIGURE_ARGS+=	--without-x
 MULTI_PACKAGES+=	-motif
 WANTLIB-motif=		ICE Xaw7 Xau Xdmcp Xext Xft Xmu Xpm Xrender X11 SM Xt \
 			c m pthread expat fontconfig freetype iconv jpeg png \
-			pthread-stubs xcb z
-LIB_DEPENDS-motif=	Xm::x11/openmotif gps::misc/gpsd
+			pthread-stubs xcb z Xm gps
+LIB_DEPENDS-motif=	::x11/openmotif ::misc/gpsd
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
 .endif

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:50 sthen Exp $
 COMMENT=		browser for a large lexical database of English
 
 V=			3.0
 DISTNAME=		WordNet-$V
-PKGNAME=		wordnet-$Vp4
+PKGNAME=		wordnet-$V
+REVISION=		4
 
 CATEGORIES=		misc
 

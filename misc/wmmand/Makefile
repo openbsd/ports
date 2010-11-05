@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		wm-dockapp; mandelbrot explorer
 
 DISTNAME=		wmMand-1.0
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}
+REVISION=		0
 CATEGORIES=     	misc x11 x11/windowmaker
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/

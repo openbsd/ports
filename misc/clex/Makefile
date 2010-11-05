@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT=		commandline shell and file manager
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c ncurses
 
 MASTER_SITES=		${HOMEPAGE:=download/}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/20 15:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	Garmin GPS upload/download utilities
 
 DISTNAME=	garmin-utils-2.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	misc geo
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 .include <bsd.port.mk>

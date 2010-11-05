@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/02/23 20:09:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT =		generates lists of words given certain information
 
 DISTNAME =		WordGenerator-1.9
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 CATEGORIES =		misc education
 
 HOMEPAGE =		http://billposer.org/Software/WordGenerator.html

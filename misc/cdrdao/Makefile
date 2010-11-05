@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
 DISTNAME= 	cdrdao-1.2.0
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	audio misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
 
@@ -15,10 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m stdc++
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib/conf
 CONFIGURE_ARGS+=	--with-posix-threads=no \
@@ -32,11 +33,11 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-lame-lib=${LOCALBASE}/lib \
 			--with-lame-include=${LOCALBASE}/include
 BUILD_DEPENDS+=		:libmad->=0.15.1bp0:audio/libmad
-LIB_DEPENDS+=		ao.>=3::audio/libao \
-			mp3lame::audio/lame \
-			mad.>=2::audio/libmad \
-			vorbis.>=4::audio/libvorbis
-WANTLIB+=		ogg.>=5 vorbisfile.>=4
+LIB_DEPENDS+=		::audio/libao \
+			::audio/lame \
+			::audio/libmad \
+			::audio/libvorbis
+WANTLIB+=		ao mp3lame mad vorbis ogg vorbisfile
 .else
 CONFIGURE_ARGS+=	--with-ogg-support=no \
 			--with-mp3-support=no \

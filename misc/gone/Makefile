@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	terminal locking utility
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}/downloads/

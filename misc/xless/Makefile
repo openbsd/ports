@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	X11 viewer for text files
 
 DISTNAME=	xless-1.7
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	misc	
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB=		c m ncurses iconv
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		YACC="bison -y" \
 			LDFLAGS="-L/usr/local/lib" \
@@ -21,7 +23,6 @@ CONFIGURE_ENV+=		YACC="bison -y" \
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 BUILD_DEPENDS=		::devel/bison
 MODULES=		devel/gettext
-WANTLIB=		c m ncurses iconv
 USE_GMAKE=		Yes
 USE_GROFF =	Yes
 

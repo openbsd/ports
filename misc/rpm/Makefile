@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	redhat package manager
 
-PKGNAME=	${DISTNAME}p4
 DISTNAME=	rpm-3.0.6
+REVISION=	4
 SHARED_LIBS=	rpm		0.1 \
 		rpmbuild	0.0
 CATEGORIES=	misc archivers emulators
@@ -12,7 +12,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c z
+
+WANTLIB += bz2 c popt z
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -21,8 +22,8 @@ MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0
 		ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	bz2::archivers/bzip2 \
-		popt::devel/popt
+LIB_DEPENDS+=	::archivers/bzip2 \
+		::devel/popt
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/16 19:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -7,7 +7,8 @@ ONLY_FOR_ARCHS= powerpc
 
 VERSION=	1.0.4
 DISTNAME=	hfsplus_${VERSION}
-PKGNAME=	hfsplus-${VERSION}p2
+PKGNAME=	hfsplus-${VERSION}
+REVISION=	2
 WRKDIST=	${WRKDIR}/hfsplus-${VERSION}
 CATEGORIES=	misc 
 EXTRACT_SUFX=	.src.tar.bz2
@@ -18,11 +19,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c
+WANTLIB=	c utf8
 
 AUTOCONF_VERSION=	2.59
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	utf8::misc/libutf8 
+LIB_DEPENDS=	::misc/libutf8 
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

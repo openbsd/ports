@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT=	Unix menuing shell
 
 DISTNAME=	mshell
-PKGNAME=	mshell-1.0p1
+PKGNAME=	mshell-1.0
+REVISION=	1
 CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	no explict license
 PERMIT_PACKAGE_FTP=	no explict license
 PERMIT_DISTFILES_CDROM=	no explict license
 PERMIT_DISTFILES_FTP=	no explict license
+
 WANTLIB=		c curses termlib
 
 post-extract:

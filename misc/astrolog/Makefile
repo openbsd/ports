@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT=	astrology program for X11 and alpha-numeric terminals
 
 V=		5.40
 DISTNAME=	ast54unx
-PKGNAME=	astrolog-${V}p0
+PKGNAME=	astrolog-${V}
+REVISION=	0
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.astrolog.org/astrolog.htm

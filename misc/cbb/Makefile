@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2009/07/17 16:38:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/05 08:24:49 sthen Exp $
 
 COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73
-PKGNAME=	${DISTNAME}p5
+REVISION=	5
 CATEGORIES=	misc
 HOMEPAGE=	http://www.fifi.org/doc/cbb/html/
 

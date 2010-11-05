@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/29 23:10:53 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/05 08:24:50 sthen Exp $
 
 COMMENT =	Tk frontend to crontab
 
 DISTNAME =	tkcron-2.12
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	misc 
 
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
