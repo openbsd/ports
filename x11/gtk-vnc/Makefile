@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 09:23:34 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/05 13:52:59 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.4.1
-REVISION=		2
+GNOME_VERSION=		0.4.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
@@ -33,20 +32,23 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png tasn1 z pthread-stubs xcb xcb-render \
-		xcb-render-util
-
-WANTLIB-main=	${WANTLIB} c ffi pthread gnutls.>=13 sasl2.>=2
+		GL Xxf86vm drm xcb-shm
 
 MULTI_PACKAGES=		-main -plugin
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-BUILD_DEPENDS+=		:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
-RUN_DEPENDS=		::x11/py-gtk2
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			::textproc/p5-Text-CSV \
+			:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
+
 LIB_DEPENDS=		::security/gnutls \
 			::security/cyrus-sasl2
+
+RUN_DEPENDS-main=	::x11/py-gtk2
+WANTLIB-main += ${WANTLIB} c ffi pthread gnutls.>=13 sasl2.>=2
+
 LIB_DEPENDS-plugin=	${LIB_DEPENDS} \
 			::${BASE_PKGPATH}
-WANTLIB-plugin=		${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
+WANTLIB-plugin += ${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

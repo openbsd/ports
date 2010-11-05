@@ -1,6 +1,8 @@
-$OpenBSD: patch-plugin_npunix_c,v 1.1 2010/10/24 09:23:34 landry Exp $
+$OpenBSD: patch-plugin_npunix_c,v 1.2 2010/11/05 13:52:59 ajacoutot Exp $
+
 grab npunix.c from ffx 3.6.11 tarball
-with NPP_NewStream call still commented out..
+with NPP_NewStream call still commented out...
+
 --- plugin/npunix.c.orig	Wed Jul 14 12:28:15 2010
 +++ plugin/npunix.c	Sun Oct 24 10:40:26 2010
 @@ -54,11 +54,9 @@

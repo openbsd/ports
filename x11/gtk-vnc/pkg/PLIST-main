@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/07/12 09:31:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/05 13:52:59 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvnccapture
 @bin bin/gvncviewer
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/gtkvnc.la
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.so
 @man man/man1/gvnccapture.1
 share/locale/ca/LC_MESSAGES/gtk-vnc.mo
+share/locale/ca@valencia/LC_MESSAGES/gtk-vnc.mo
+share/locale/cs/LC_MESSAGES/gtk-vnc.mo
 share/locale/da/LC_MESSAGES/gtk-vnc.mo
 share/locale/de/LC_MESSAGES/gtk-vnc.mo
 share/locale/el/LC_MESSAGES/gtk-vnc.mo
@@ -40,10 +42,13 @@ share/locale/gl/LC_MESSAGES/gtk-vnc.mo
 share/locale/hu/LC_MESSAGES/gtk-vnc.mo
 share/locale/it/LC_MESSAGES/gtk-vnc.mo
 share/locale/ja/LC_MESSAGES/gtk-vnc.mo
+share/locale/nb/LC_MESSAGES/gtk-vnc.mo
+share/locale/nds/LC_MESSAGES/gtk-vnc.mo
 share/locale/pa/LC_MESSAGES/gtk-vnc.mo
 share/locale/pl/LC_MESSAGES/gtk-vnc.mo
 share/locale/pt/LC_MESSAGES/gtk-vnc.mo
 share/locale/pt_BR/LC_MESSAGES/gtk-vnc.mo
+share/locale/ro/LC_MESSAGES/gtk-vnc.mo
 share/locale/ru/LC_MESSAGES/gtk-vnc.mo
 share/locale/sl/LC_MESSAGES/gtk-vnc.mo
 share/locale/sv/LC_MESSAGES/gtk-vnc.mo
