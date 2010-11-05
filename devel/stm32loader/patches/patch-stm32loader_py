@@ -1,0 +1,33 @@
+$OpenBSD: patch-stm32loader_py,v 1.1.1.1 2010/11/05 14:02:25 jasper Exp $
+
+- Adjust default serial port.
+
+--- stm32loader.py.orig	Fri Nov  5 14:35:48 2010
++++ stm32loader.py	Fri Nov  5 14:36:13 2010
+@@ -44,7 +44,7 @@ class CmdException(Exception):
+     pass
+ 
+ class CommandInterface:
+-    def open(self, aport='/dev/tty.usbserial-ftCYPMYJ', abaudrate=115200) :
++    def open(self, aport='/dev/cua00', abaudrate=115200) :
+         self.sp = serial.Serial(
+             port=aport,
+             baudrate=abaudrate,     # baudrate
+@@ -314,7 +314,7 @@ def usage():
+     -v          Verify
+     -r          Read
+     -l length   Length of read
+-    -p port     Serial port (default: /dev/tty.usbserial-ftCYPMYJ)
++    -p port     Serial port (default: /dev/cua00)
+     -b baud     Baud speed (default: 115200)
+     -a addr     Target address
+ 
+@@ -334,7 +334,7 @@ if __name__ == "__main__":
+         pass
+ 
+     conf = {
+-            'port': '/dev/tty.usbserial-ftCYPMYJ',
++            'port': '/dev/cua00',
+             'baud': 115200,
+             'address': 0x08000000,
+             'erase': 0,
