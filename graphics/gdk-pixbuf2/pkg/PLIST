@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/23 12:26:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/06 06:25:10 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 %%SHARED%%
@@ -303,6 +303,9 @@ share/locale/tr/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/tt/
 share/locale/tt/LC_MESSAGES/
 share/locale/tt/LC_MESSAGES/gdk-pixbuf.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/uk/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/uz/
 share/locale/uz/LC_MESSAGES/
