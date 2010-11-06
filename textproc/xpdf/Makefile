@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2010/11/06 18:42:35 espie Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
@@ -38,13 +38,14 @@ CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
 
 LIB_DEPENDS-utils=
-LIB_DEPENDS-main=	t1.>=3::devel/t1lib ${LIB_DEPENDS}
+LIB_DEPENDS-main=	::devel/t1lib ${LIB_DEPENDS}
 RUN_DEPENDS-utils=	::print/ghostscript/gnu-fonts
 RUN_DEPENDS-main=	${RUN_DEPENDS-utils} \
 			:${FULLPKGNAME-utils}:textproc/xpdf,-utils
 
 WANTLIB-utils=		c m pthread stdc++ z
-WANTLIB-main=		${WANTLIB-utils} ICE SM X11 Xext Xpm Xt freetype
+WANTLIB-main=		${WANTLIB} ${WANTLIB-utils} ICE SM X11 Xext Xpm Xt \
+			freetype t1.>=3
 
 NO_REGRESS=	Yes
 
