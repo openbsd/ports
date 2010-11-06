@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogg123_cfgfile_options_c,v 1.1 2010/11/06 12:19:38 landry Exp $
+--- ogg123/cfgfile_options.c.orig	Sat Jan 26 12:06:37 2002
++++ ogg123/cfgfile_options.c	Sat Nov  6 13:09:16 2010
+@@ -441,7 +441,7 @@ void parse_std_configs (file_option_t opts[])
+   char filename[FILENAME_MAX];
+   char *homedir = getenv("HOME");
+ 
+-  parse_config_file(opts, "/etc/ogg123rc");
++  parse_config_file(opts, "${SYSCONFDIR}/igg123rc");
+   if (homedir && strlen(homedir) < FILENAME_MAX - 10) {
+     /* Try ~/.ogg123 */
+     strncpy(filename, homedir, FILENAME_MAX);

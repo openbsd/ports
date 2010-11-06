@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/06 12:19:38 landry Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
 PKGNAME=	${DISTNAME:S/vorbis/tremor/}
-REVISION=	4
+REVISION=	5
 CATEGORIES=    	audio
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/
 
@@ -19,12 +19,6 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.4
-
-BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake->=${AUTOMAKE_VERSION},<1.5:devel/automake/${AUTOMAKE_VERSION} \
-		::devel/metaauto
 LIB_DEPENDS=	::audio/libao \
 		::audio/libogg \
 		::audio/tremor \
@@ -36,21 +30,15 @@ WANTLIB=	ao.>=3 c curl.>=2 crypto idn ogg.>=5 pthread ssl vorbisidec.>=1 z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-vorbistest
-CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
 
 pre-configure:
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-	@perl -pi -e s,"hardcode_libdir_flag_spec=.*",,g ${WRKSRC}/configure
-	@perl -pi -e s,-O20,,g ${WRKSRC}/configure
-	@perl -pi -e s,'CFLAGS="-O"','CFLAGS=""',g ${WRKSRC}/configure
-	@perl -pi -e s,'/etc/ogg123rc',${SYSCONFDIR}/igg123rc,g \
-		${WRKSRC}/ogg123/cfgfile_options.c
+	${SUBST_CMD} ${WRKSRC}/ogg123/cfgfile_options.c
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ogg123/ogg123 ${PREFIX}/bin/igg123
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tremor-tools
 	${INSTALL_DATA} ${WRKSRC}/ogg123/ogg123rc-example \
 		${PREFIX}/share/examples/tremor-tools/igg123rc

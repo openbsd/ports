@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1 2010/11/06 12:19:38 landry Exp $
+--- configure.orig	Fri Jul 19 16:18:55 2002
++++ configure	Sat Nov  6 13:00:10 2010
+@@ -7267,7 +7267,7 @@ else
+                 ;;
+         *)
+                 DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O20 -fsigned-char"
++                CFLAGS="-fsigned-char"
+                 PROFILE="-O20 -g -pg -fsigned-char"
+                 ;;
+         esac
+@@ -7521,9 +7521,9 @@ fi
+     VORBIS_LIBS="-L$prefix/lib"
+   fi
+ 
+-  VORBISFILE_LIBS="$VORBIS_LIBS -lvorbisfile"
++  VORBISFILE_LIBS="$VORBIS_LIBS -lvorbisidec"
+   VORBISENC_LIBS="$VORBIS_LIBS -lvorbisenc"
+-  VORBIS_LIBS="$VORBIS_LIBS -lvorbis -lm"
++  VORBIS_LIBS="$VORBIS_LIBS -lvorbisidec"
+ 
+   if test "x$vorbis_includes" != "x" ; then
+     VORBIS_CFLAGS="-I$vorbis_includes"
+@@ -7555,7 +7555,7 @@ else
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <vorbis/codec.h>
++#include <tremor/ivorbiscodec.h>
+ 
+ int main ()
+ {

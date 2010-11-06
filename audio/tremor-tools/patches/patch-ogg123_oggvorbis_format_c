@@ -1,6 +1,6 @@
-$OpenBSD: patch-ogg123_oggvorbis_format_c,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
---- ogg123/oggvorbis_format.c.orig	Fri Jul 19 05:31:53 2002
-+++ ogg123/oggvorbis_format.c	Mon Apr 11 23:29:08 2005
+$OpenBSD: patch-ogg123_oggvorbis_format_c,v 1.2 2010/11/06 12:19:38 landry Exp $
+--- ogg123/oggvorbis_format.c.orig	Fri Jul 19 12:31:53 2002
++++ ogg123/oggvorbis_format.c	Sat Nov  6 12:15:35 2010
 @@ -19,8 +19,8 @@
  #include <string.h>
  #include <ctype.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-ogg123_oggvorbis_format_c,v 1.1.1.1 2005/06/03 01:04:36 jolan Ex
  #include "transport.h"
  #include "format.h"
  #include "utf8.h"
-@@ -150,8 +150,7 @@ int ovf_read (decoder_t *decoder, void *
+@@ -150,8 +150,7 @@ int ovf_read (decoder_t *decoder, void *ptr, int nbyte
    while (nbytes > 0) {
  
      old_section = priv->current_section;
@@ -22,7 +22,7 @@ $OpenBSD: patch-ogg123_oggvorbis_format_c,v 1.1.1.1 2005/06/03 01:04:36 jolan Ex
  		  &priv->current_section);
  
      if (ret == 0) {
-@@ -193,15 +192,17 @@ int ovf_read (decoder_t *decoder, void *
+@@ -193,15 +192,17 @@ int ovf_read (decoder_t *decoder, void *ptr, int nbyte
  }
  
  

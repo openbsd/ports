@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogg123_ogg123rc-example,v 1.1 2010/11/06 12:19:38 landry Exp $
+--- ogg123/ogg123rc-example.orig	Sat Nov  6 13:14:49 2010
++++ ogg123/ogg123rc-example	Sat Nov  6 13:14:56 2010
+@@ -5,7 +5,7 @@
+ #
+ # $ ogg123 -c
+ 
+-default_device=oss
++default_device=sndio
+ shuffle=n
+ verbose=1
+ outbuffer=0
