@@ -1,13 +1,21 @@
-$OpenBSD: patch-configure,v 1.3 2010/10/31 21:05:38 ckuethe Exp $
+$OpenBSD: patch-configure,v 1.4 2010/11/06 23:28:23 jakemsr Exp $
 --- configure.orig	Thu Oct 28 09:14:14 2010
-+++ configure	Thu Oct 28 22:06:24 2010
++++ configure	Wed Nov  3 20:31:26 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure
  ##
-@@ -132,19 +132,6 @@ for t in ${all_targets}; do
+@@ -101,6 +101,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
+ all_platforms="${all_platforms} ppc64-darwin8-gcc"
+ all_platforms="${all_platforms} ppc64-darwin9-gcc"
+ all_platforms="${all_platforms} ppc64-linux-gcc"
++all_platforms="${all_platforms} sparc-linux-gcc"
+ all_platforms="${all_platforms} sparc-solaris-gcc"
+ all_platforms="${all_platforms} x86-darwin8-gcc"
+ all_platforms="${all_platforms} x86-darwin8-icc"
+@@ -132,19 +133,6 @@ for t in ${all_targets}; do
      [ -f ${source_path}/${t}.mk ] && enable ${t}
  done
  
@@ -27,7 +35,7 @@ $OpenBSD: patch-configure,v 1.3 2010/10/31 21:05:38 ckuethe Exp $
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -415,12 +402,6 @@ EOF
+@@ -415,12 +403,6 @@ EOF
  }
  
  process_detect() {
