@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/30 15:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/06 10:54:53 landry Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -24,11 +24,14 @@ MODPY_RUNDEP=		No
 
 AUTOCONF_VERSION=	2.59
 
-BUILD_DEPENDS=		::devel/metaauto
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
 
 SUFFIX=			-${VERSION}
 CONFIGURE_STYLE=	gnu
+MAKE_ENV +=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+CONFIGURE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
+
 CONFIGURE_ARGS=		--infodir=${PREFIX}/info
 MAKE_FLAGS+=		pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}

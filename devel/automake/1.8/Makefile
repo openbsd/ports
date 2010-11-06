@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/22 12:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/06 10:54:53 landry Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 AUTOCONF_VERSION=	2.59
 
-BUILD_DEPENDS=		::devel/metaauto
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
 
 SUFFIX=			-${VERSION}
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
 MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
 			pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}
