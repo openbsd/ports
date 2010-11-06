@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/08/23 16:31:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/11/06 16:07:00 espie Exp $
 @bin bin/clisp
 lib/clisp/
 lib/clisp/base/
@@ -58,10 +58,10 @@ share/doc/clisp/README.de
 share/doc/clisp/README.es
 share/doc/clisp/SUMMARY
 share/doc/clisp/clisp.1
-share/doc/clisp/clisp.dvi
+@comment share/doc/clisp/clisp.dvi
 share/doc/clisp/clisp.html
 share/doc/clisp/clisp.png
-share/doc/clisp/clisp.ps
+@comment share/doc/clisp/clisp.ps
 share/doc/clisp/impnotes.css
 share/doc/clisp/impnotes.html
 share/doc/clisp/lisp.vim

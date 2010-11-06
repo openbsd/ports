@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/05 10:06:44 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -51,7 +51,9 @@ USE_GROFF =	Yes
 AUTOCONF_VERSION=	2.62
 SUBST_VARS=	MODQT_PLUGINS
 
-Wcommon =	X11 Xau Xdmcp Xext c m pthread-stubs xcb
+Wcommon =	X11 Xau Xdmcp Xext c m pthread-stubs xcb \
+		${MODGETTEXT_WANTLIB} ${MODLIBICONV_WANTLIB}
+
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils
@@ -89,8 +91,6 @@ WANTLIB-gtk =	${Wcommon} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		xcb-render xcb-render-util
 
 LIB_DEPENDS-gnome=uim,gcroots,uim-scm::inputmethods/uim \
-		${MODLIBICONV_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS} \
 		::x11/gtk+2 \
 		::x11/gnome/panel
 WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 pthread ssl \

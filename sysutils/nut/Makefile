@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -62,7 +62,8 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			::net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
-WANTLIB-cgi=		X11 Xau Xdmcp c crypto expat fontconfig freetype gd
+WANTLIB-cgi=		${MODGETTEXT_WANTLIB} \
+			X11 Xau Xdmcp c crypto expat fontconfig freetype gd
 WANTLIB-cgi+=		jpeg m png pthread-stubs ssl upsclient xcb z
 
 WANTLIB-snmp=		${WANTLIB} netsnmp

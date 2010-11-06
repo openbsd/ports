@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -53,7 +53,7 @@ post-configure:
 
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
-WANTLIB-main=	${WANTLIB} ssl crypto
+WANTLIB-main=	c m ssl crypto
 LIB_DEPENDS-gui=::x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-gui=:hydra-${VERSION}:security/hydra,-main \

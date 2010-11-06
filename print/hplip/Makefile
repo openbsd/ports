@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/05 10:29:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/06 16:07:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,10 +41,10 @@ MULTI_PACKAGES=	-main -hpijs -hpcups -libs -gui
 
 MODPY_RUNDEP=	No
 
-WANTLIB += crypto m pthread
+cWANTLIB = crypto m pthread
 
-WANTLIB-main += ${WANTLIB} sane cups hpip hpmud asn1 gssapi krb5 ssl
-WANTLIB-main += avahi-client avahi-common c crypto dbus-1 exif gphoto2
+WANTLIB-main += ${WANTLIB} ${cWANTLIB} sane cups hpip hpmud asn1 gssapi krb5 
+WANTLIB-main += ssl avahi-client avahi-common c crypto dbus-1 exif gphoto2
 WANTLIB-main += gphoto2_port jpeg ltdl netsnmp tiff usb z
 
 BUILD_DEPENDS=	::sysutils/polkit
@@ -61,18 +61,18 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::print/hplip,-hpcups \
 		::devel/xdg-utils
 
-WANTLIB-hpijs += ${WANTLIB} asn1 gssapi krb5 ssl asn1 gssapi krb5 ssl
+WANTLIB-hpijs += ${cWANTLIB} asn1 gssapi krb5 ssl asn1 gssapi krb5 ssl
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1
 LIB_DEPENDS-hpijs= hpip,hpmud::print/hplip,-libs \
 		::graphics/jpeg \
 		::x11/dbus
 
-WANTLIB-hpcups += ${WANTLIB} png tiff z asn1 gssapi krb5 ssl
+WANTLIB-hpcups += ${cWANTLIB} png tiff z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage
 LIB_DEPENDS-hpcups= ::print/hplip,-libs \
 		::print/cups
 
-WANTLIB-libs +=	${WANTLIB} netsnmp usb
+WANTLIB-libs +=	${cWANTLIB} netsnmp usb
 LIB_DEPENDS-libs= ::net/net-snmp \
 		::devel/libusb
 

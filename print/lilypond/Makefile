@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/06 16:07:00 espie Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -58,11 +58,12 @@ MAKE_FILE=		GNUmakefile
 PORTHOME=		${WRKDIR}
 
 PKG_ARCH-docs=		*
+WANTLIB-docs =
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 WANTLIB-main=		X11 c expat fontconfig freetype gmp gthread-2.0 ltdl m \
-			pthread stdc++ z
+			pthread stdc++ z ${WANTLIB}
 MODULES=		devel/gettext lang/python
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			guile.>=20::lang/guile \

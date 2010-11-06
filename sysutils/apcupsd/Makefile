@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -23,15 +23,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c pthread
 MODULES =		devel/gettext
 LIB_DEPENDS-main =
+WANTLIB-main =		c pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu old # old prevents overriding sysconfdir
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www
@@ -55,7 +55,7 @@ MULTI_PACKAGES =	-main
 MULTI_PACKAGES +=	-cgi
 PREFIX-cgi =		${WEB_ROOT}
 CONFIGURE_ARGS +=	--enable-cgi
-WANTLIB-cgi = 		${WANTLIB} gd
+WANTLIB-cgi = 		c pthread gd
 LIB_DEPENDS-cgi =	::graphics/gd
 RUN_DEPENDS-cgi =
 
@@ -72,7 +72,7 @@ WANTLIB-x11 += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB-x11 += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-x11 += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB-x11 += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-x11 += pthread-stubs xcb-render xcb z ${WANTLIB}
+WANTLIB-x11 += pthread-stubs xcb-render xcb z ${WANTLIB} c pthread
 WANTLIB-x11 += GL X11-xcb Xxf86vm drm xcb-shm
 .endif
 

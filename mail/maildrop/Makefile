@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -79,9 +79,9 @@ MODULES=		converters/libiconv \
 
 LIB_DEPENDS=		idn::devel/libidn
 
-WANTLIB-utils=		c
+WANTLIB =		c
 
-WANTLIB-main=		c gdbm m stdc++
+WANTLIB-main=		${WANTLIB} gdbm m stdc++
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gdbm.>=3::databases/gdbm \
 			pcre.>=1::devel/pcre \

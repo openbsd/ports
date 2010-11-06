@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
 COMMENT-python=	gamin Python bindings
+NOT_FOR_ARCHES-python = ${NO_SHARED_ARCHS}
 
 GNOME_PROJECT=	gamin
 GNOME_VERSION=	0.1.10
@@ -39,30 +40,30 @@ FLAVOR?=
 MODULES=	x11/gnome
 
 
-LIB_DEPENDS-main=
-RUN_DEPENDS-main=
+WANTLIB-main =
+LIB_DEPENDS-main =
+RUN_DEPENDS-main =
 
-LIB_DEPENDS-server= ${LIB_DEPENDS} \
-		::devel/glib2
+LIB_DEPENDS-server = 	${LIB_DEPENDS} ::devel/glib2
 
-LIB_DEPENDS-python= ::sysutils/gamin,-main
+LIB_DEPENDS-python = 	::sysutils/gamin,-main
 
 .if !${FLAVOR:L:Mno_server}
-MULTI_PACKAGES+= -server
-MODULES+=	devel/gettext
-CONFIGURE_ARGS+= --enable-server
-WANTLIB-server += c pcre glib-2.0.>=1800 pthread
+MULTI_PACKAGES += 	-server
+MODULES +=		devel/gettext
+CONFIGURE_ARGS += 	--enable-server
+WANTLIB-server = 	${WANTLIB} c pcre glib-2.0.>=1800 pthread
 .else
-CONFIGURE_ARGS+= --disable-server
+CONFIGURE_ARGS += 	--disable-server
 .endif
 
 .if !${FLAVOR:L:Mno_python}
-MULTI_PACKAGES+= -python
-MODULES+=	lang/python
-WANTLIB-python += gamin-1
-RUN_DEPENDS-python += ${MODPY_RUN_DEPENDS}
+MULTI_PACKAGES += 	-python
+MODULES +=		lang/python
+WANTLIB-python += 	gamin-1
+RUN_DEPENDS-python += 	${MODPY_RUN_DEPENDS}
 .else
-CONFIGURE_ARGS+= --without-python
+CONFIGURE_ARGS += 	--without-python
 .endif
 
 MODPY_RUNDEP=	No
@@ -105,5 +106,5 @@ do-regress:
 .include <bsd.port.mk>
 
 .if ${NO_SHARED_LIBS:L} == "yes"
-FLAVOR=		no_python
+CONFIGURE_ARGS +=	--without-python
 .endif

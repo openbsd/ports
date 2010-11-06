@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -35,7 +35,7 @@ MULTI_PACKAGES=		-main -foomatic
 
 MODULES=	devel/gettext
 
-WANTLIB-main +=	c m ncurses readline ijs
+WANTLIB-main +=	c m ncurses readline ijs ${MODGETTEXT_WANTLIB}
 
 BUILD_DEPENDS=		:foomatic-db-engine->=4.0.3:print/foomatic-db-engine
 

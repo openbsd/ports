@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/06 16:07:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -61,7 +61,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::devel/p5-Time-TimeDate
 
-WANTLIB-gui=	gcrypt gpg-error m tasn1 util xml2 z
+WANTLIB-gui=	${MODGETTEXT_WANTLIB} gcrypt gpg-error m tasn1 util xml2 z
 LIB_DEPENDS-gui=${LIB_DEPENDS} \
 		bz2.>=10::archivers/bzip2 \
 		gnutls.>=12::security/gnutls \

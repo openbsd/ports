@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/06 16:07:00 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -51,8 +51,9 @@ LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-server =	${MODGETTEXT_LIB_DEPENDS} \
 			glib-2.0::devel/glib2
 
-WANTLIB-main =		SDL X11 m pango-1.0 pthread pthread-stubs xcb
-WANTLIB-server =	c
+WANTLIB-main =		${MODGETTEXT_WANTLIB} \
+			SDL X11 m pango-1.0 pthread pthread-stubs xcb
+WANTLIB-server =	${MODGETTEXT_WANTLIB} c
 
 MULTI_PACKAGES =	-main -server
 

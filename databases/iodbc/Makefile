@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 13:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -42,15 +42,15 @@ CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
 
 MULTI_PACKAGES=		-main -admin
 
-WANTLIB=		c pthread
+WANTLIB-main =		c pthread
 
-LIB_DEPENDS-admin=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-admin =	${MODGETTEXT_LIB_DEPENDS} \
 			::databases/iodbc,-main \
 			::x11/gtk+2
 
-LIB_DEPENDS-main=	# this space intentionally left blank
+LIB_DEPENDS-main =	# this space intentionally left blank
 
-WANTLIB-admin= ${WANTLIB} \
+WANTLIB-admin = ${MODGETTEXT_WANTLIB} c pthread \
         GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
         Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm \
         expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \

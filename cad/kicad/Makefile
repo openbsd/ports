@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=	circuit drawing and schematic capture
 COMMENT-docs=	documentation for the kicad library of components
@@ -27,7 +27,7 @@ MODULES=	devel/gettext
 
 MULTI_PACKAGES=	-main -docs
 
-WANTLIB-main=	GL GLU c m pthread stdc++
+WANTLIB-main=	${WANTLIB} GL GLU c m pthread stdc++
 WANTLIB-docs=
 RUN_DEPENDS-docs=
 LIB_DEPENDS-docs=

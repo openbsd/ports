@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -122,7 +122,7 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	confuse
+WANTLIB-carrierroute =	${MODGETTEXT_WANTLIB} confuse
 LIB_DEPENDS-carrierroute = ::devel/libconfuse \
 			   ${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-carrierroute = ${MODGETTEXT_RUN_DEPENDS}

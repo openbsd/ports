@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2010/10/28 11:55:16 steven Exp $
+# $OpenBSD: Makefile,v 1.106 2010/11/06 16:07:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -71,7 +71,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		png postproc proxy pthread-stubs pthread stdc++.>=46.0 \
 		schroedinger-1.0 sndio speex swscale tag tiff theora \
 		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
-		xcb-render-util xcb xml2 z
+		xcb-render-util xcb xml2 z ${WANTLIB}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -141,7 +141,7 @@ LIB_DEPENDS-web=${LIB_DEPENDS} \
 		::devel/nspr
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
 WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m nspr4 plc4 plds4 \
-		pthread-stubs stdc++ vlc vlccore xcb
+		pthread-stubs stdc++ vlc vlccore xcb ${WANTLIB}
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
@@ -155,7 +155,7 @@ LIB_DEPENDS-jack=${LIB_DEPENDS} \
 		 ::audio/jack
 # any FLAVOR of VLC will do
 RUN_DEPENDS-jack=::${BASE_PKGPATH}
-WANTLIB-jack=	m jack vlccore
+WANTLIB-jack=	${WANTLIB} m jack vlccore
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"

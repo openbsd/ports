@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/06 08:46:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/06 16:07:00 espie Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	::www/php5/core \
 		::textproc/xmlto \
 		::net/curl
 
+WANTLIB-main =	${MODGETTEXT_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
 WANTLIB-main += sasl2 stdc++ z xml2 mysqlclient lber-2.3 ldap-2.3 uuid execinfo
 WANTLIB-main += vmime-zarafa ical icalss
@@ -43,6 +44,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		:zarafa-libvmime->=0.7.1p6:mail/zarafa/libvmime \
 		::textproc/libical
 
+WANTLIB-web += ${MODGETTEXT_WANTLIB}
 WANTLIB-web += execinfo ical icalss uuid vmime-zarafa common_mapi
 WANTLIB-web += common_util freebusy icalmapi inetmapi mapi m stdc++ z
 
