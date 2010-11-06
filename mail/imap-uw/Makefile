@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/06 08:14:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/06 08:32:42 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -11,7 +11,7 @@ PKGNAME-server=	imap-uw-${V}
 PKGNAME-mailutil=mailutil-uw-${V}
 PKGNAME-c-client=c-client-${V}
 
-REVISION-server=	2
+REVISION-server=	3
 REVISION-mailutil=	1
 REVISION-c-client=	1
 
