@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/06 23:52:59 espie Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -57,31 +57,32 @@ Wcommon =	X11 Xau Xdmcp Xext c m pthread-stubs xcb \
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-main=::inputmethods/anthy \
-		${MODLIBICONV_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-main =	::inputmethods/anthy \
+			${MODLIBICONV_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS}
 WANTLIB-main=	${Wcommon} Xrender fontconfig freetype curses \
 		util Xft expat z stdc++ anthy anthydic
 
 uim_LIB_DEPENDS=::inputmethods/uim
 
-LIB_DEPENDS-qt=	${MODQT_LIB_DEPENDS} \
-		${uim_LIB_DEPENDS} \
-		${MODLIBICONV_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-qt=		${MODQT_LIB_DEPENDS} \
+			${uim_LIB_DEPENDS} \
+			${MODLIBICONV_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS}
 WANTLIB-qt =	${Wcommon} ${MODQT_WANTLIB} \
 		pthread stdc++ uim uim-custom gcroots uim-scm
 
-LIB_DEPENDS-kde=uim,gcroots,uim-scm::inputmethods/uim \
-		${MODLIBICONV_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS} \
-		kdecore.>=7,DCOP,kdefx,kdeui::x11/kde/libs3
+LIB_DEPENDS-kde	=	::inputmethods/uim \
+			${MODLIBICONV_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			::x11/kde/libs3
 WANTLIB-kde =	${Wcommon} Xrender ICE SM idn jpeg png util z \
-		art_lgpl_2 qt-mt stdc++
+		art_lgpl_2 qt-mt stdc++ kdecore.>=7 DCOP kdefx kdeui \
+		uim gcroots uim-scm
 
 
-LIB_DEPENDS-gtk=${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
-		::x11/gtk+2
+LIB_DEPENDS-gtk =	${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
+			::x11/gtk+2
 WANTLIB-gtk =	${Wcommon} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 uim uim-custom gcroots uim-scm \
 		pangocairo-1.0 cairo png z expat \
@@ -90,9 +91,9 @@ WANTLIB-gtk =	${Wcommon} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 anthy anthydic gthread-2.0 pthread \
 		xcb-render xcb-render-util
 
-LIB_DEPENDS-gnome=uim,gcroots,uim-scm::inputmethods/uim \
-		::x11/gtk+2 \
-		::x11/gnome/panel
+LIB_DEPENDS-gnome =	::inputmethods/uim \
+			::x11/gtk+2 \
+			::x11/gnome/panel
 WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 pthread ssl \
 		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \
 		bonobo-activation gconf-2 gnome-2 gnomecanvas-2 \
@@ -100,7 +101,8 @@ WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 pthread ssl \
 		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 		dbus-1 dbus-glib-1 gailutil pcre pixman-1 util \
 		avahi-client avahi-common avahi-glib gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 panel-applet-2
+		gdk-x11-2.0 gdk_pixbuf-2.0 panel-applet-2 \
+		uim gcroots uim-scm
 
 MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11' \
