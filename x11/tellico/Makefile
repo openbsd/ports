@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/06 23:49:20 espie Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
@@ -44,14 +44,19 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info->=0.21:misc/shared-mime-info
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
-		exempi::textproc/exempi \
-		kcal,ktnef,kmime::x11/kde/pim3 \
-		kcddb::x11/kde/multimedia3 \
-		kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
-		lcms::graphics/lcms \
-		poppler-qt.>=3::print/poppler,-qt \
-		tag::audio/taglib \
-		yaz::net/yaz
+		::textproc/exempi \
+		::x11/kde/pim3 \
+		::x11/kde/multimedia3 \
+		::x11/kde/libs3 \
+		::graphics/lcms \
+		::print/poppler,-qt \
+		::audio/taglib \
+		::net/yaz
+
+WANTLIB +=	exempi kcal ktnef kmime kcddb \
+		kdecore.>=6 DCOP kabc kdefx kdeprint kdesu kdeui khtml \
+		kio kjs knewstuff kparts kresources kutils kwalletclient \
+		vcard lcms poppler-qt.>=3 tag yaz
 
 NO_REGRESS=	Yes
 

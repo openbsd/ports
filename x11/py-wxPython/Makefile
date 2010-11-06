@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/06 23:49:20 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxpython/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
-LIB_DEPENDS=    wx_gtk2_aui,wx_gtk2_richtext,wx_gtk2_gizmos,wx_gtk2_stc,wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_gtk2_gl,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+LIB_DEPENDS=    :wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+WANTLIB +=	wx_gtk2_aui wx_gtk2_richtext wx_gtk2_gizmos wx_gtk2_stc \
+		wx_base_xml wx_gtk2_qa wx_base_odbc wx_gtk2_html \
+		wx_gtk2_gl wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core \
+		wx_base_net wx_gtk2_dbgrid
 
 WRKSRC=		${WRKDIST}/wxPython
 NO_REGRESS=	Yes

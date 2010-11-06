@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/06 23:49:20 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -26,7 +26,8 @@ WANTLIB =		X11 c m pthread-stubs xcb
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-LIB_DEPENDS =           tcl84:tcl-${V}:lang/tcl/8.4
+LIB_DEPENDS =           :tcl-${V}:lang/tcl/8.4
+WANTLIB +=		tcl84
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk84.a" \

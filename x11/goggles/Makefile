@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/06 23:49:20 espie Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -26,13 +26,16 @@ NO_REGRESS=	Yes
 
 CONFIGURE_ENV=LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} LP64_ARCHS="${LP64_ARCHS}"
 
-LIB_DEPENDS=	FOX-1.6.>=1::devel/fox \
-		dvdcontrol,msgevents::x11/ogle
-	
 WANTLIB=	GL GLU X11 Xext Xcursor Xrandr bz2 c jpeg \
 		m png pthread stdc++ tiff z Xau Xdmcp Xft \
 		Xrender expat fontconfig freetype \
 		pthread-stubs xcb
+
+LIB_DEPENDS=	::devel/fox \
+		::x11/ogle
+	
+WANTLIB +=	FOX-1.6.>=1 dvdcontrol msgevents
+		
 
 MAKE_FLAGS=	-f ${WRKCONF}/conf.mk 
 
