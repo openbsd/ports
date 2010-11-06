@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/08/21 20:35:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/11/06 08:35:34 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
-timetrex/README.OpenBSD
 timetrex/README.txt
 timetrex/UPGRADE.txt
 timetrex/api/
@@ -3026,3 +3025,5 @@ timetrex/unit_tests/USPayrollDeductionTest2010.php
 @exec-add cd %D/%D/timetrex && ln -sf ../../../timetrex/tmp tmp
 @unexec-delete rm -rf %D/%D/timetrex
 @extraunexec rm -rf ${INSTDIR}/templates_c
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

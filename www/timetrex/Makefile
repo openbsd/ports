@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/21 20:35:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/06 08:35:34 ajacoutot Exp $
 
 COMMENT=	web-based payroll and time management suite
 
@@ -6,6 +6,8 @@ V=		3.2.1
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
+
+REVISION=	0
 
 EXTRACT_SUFX=	.zip
 
@@ -33,9 +35,7 @@ SUBST_VARS=	INSTDIR
 
 do-install:
 	mv ${WRKSRC} ${INSTDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${INSTDIR}
-	${SUBST_CMD} ${INSTDIR}/timetrex.ini.php-example_linux \
-		${INSTDIR}/README.OpenBSD
+	${SUBST_CMD} ${INSTDIR}/timetrex.ini.php-example_linux
 	find ${INSTDIR} -type f -name \*.orig -or -name \*.bak | xargs rm
 	find ${INSTDIR} -name \*.beforesubst | xargs rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
