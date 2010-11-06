@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/06 22:06:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ WANTLIB= 	GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xmu Xrender Xss Xt \
 		gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ncurses pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png  pthread-stubs \
 		readline tiff xcb xcb-render xcb-shm z \
-		${MODFORTRAN_WANTLIB}
+		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.uk.r-project.org/src/base/R-2/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/30 23:14:15 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/06 22:06:59 espie Exp $
 
 REV=		3
 DBLIBDIR=	lib/db
@@ -16,9 +16,9 @@ CONFIGURE_STYLE=gnu dest
 DEST_SUBDIR=
 WANTLIB=c
 
-WANTLIB-tcl=		m
-LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
-RUN_DEPENDS-tcl=	:db->=3,<4:databases/db/v${REV}
+WANTLIB-tcl =		m ${MODTCL_WANTLIB}
+LIB_DEPENDS-tcl =	${MODTCL_LIB_DEPENDS}
+RUN_DEPENDS-tcl =	:db->=3,<4:databases/db/v${REV}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/test/include.tcl

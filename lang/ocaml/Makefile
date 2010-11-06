@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/04 13:45:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/06 22:06:59 espie Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
@@ -40,9 +40,10 @@ FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
-BUILD_DEPENDS+=	${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS+=	${MODTK_RUN_DEPENDS}
-LIB_DEPENDS+=	${MODTK_LIB_DEPENDS}
+BUILD_DEPENDS +=${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
+LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
+WANTLIB +=	${MODTK_WANTLIB}
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
 	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \

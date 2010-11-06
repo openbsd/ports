@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/06 22:06:59 espie Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB =		m usb.>=9
 WANTLIB-main =		${WANTLIB} c stdc++ z  xml2 iconv
 WANTLIB-python =	${WANTLIB} hamlib ${MODPY_WANTLIB}
-WANTLIB-tcl =		${WANTLIB} hamlib
+WANTLIB-tcl =		${WANTLIB} hamlib ${MODTCL_WANTLIB}
 
 LIB_DEPENDS-main=	::textproc/libxml \
 			::converters/libiconv \

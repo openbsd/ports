@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/06 22:06:59 espie Exp $
 COMMENT=		browser for a large lexical database of English
 
 V=			3.0
@@ -25,7 +25,8 @@ MASTER_SITES=		http://wordnet.princeton.edu/3.0/
 
 MODULES=		x11/tk
 
-LIB_DEPENDS+=		${MODTK_LIB_DEPENDS}
+LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
+WANTLIB +=		${MODTK_WANTLIB}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/include/wn.h ${WRKSRC}/src/wnb

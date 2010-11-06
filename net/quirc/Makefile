@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/06 22:06:59 espie Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
@@ -20,8 +20,9 @@ WANTLIB=		ICE SM X11 c m stdc++ ${MODTCL_LIB}
 
 MODULES=	x11/tk
 
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
-LIB_DEPENDS=	${MODTK_LIB_DEPENDS}
+MASTER_SITES =	${MASTER_SITE_OPENBSD}
+LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
+WANTLIB +=	${MODTK_WANTLIB}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-tcl-include-dir=${MODTCL_INCDIR} \

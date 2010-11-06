@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/06 22:06:59 espie Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/tk
-WANTLIB=	X11
+WANTLIB=	X11 ${MODTK_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 

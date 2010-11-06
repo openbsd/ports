@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/06 22:06:59 espie Exp $
 
 COMMENT=	Objective Caml package manager
 CATEGORIES=	sysutils
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		X11 c curses m pthread pthread-stubs tcl85 xcb
 
 MODULES+=	lang/ocaml x11/tk
-LIB_DEPENDS=	${MODTK_LIB_DEPENDS}
+LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
+WANTLIB +=	${MODTK_WANTLIB}
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple
