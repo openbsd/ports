@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/06 09:11:22 ajacoutot Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
-DISTNAME=		gtkaml-0.2.11
+DISTNAME=		gtkaml-0.4.0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 gobject-2.0 gthread-2.0 pthread xml2 vala-0.10
+WANTLIB += gio-2.0 gmodule-2.0
 
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2
@@ -33,5 +34,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		--disable-silent-rules
 
 .include <bsd.port.mk>
