@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/18 18:37:00 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/06 09:01:06 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -13,7 +13,8 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-main=		3
+REVISION-main=		4
+REVISION-web=		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -45,7 +46,7 @@ LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			::net/net-snmp \
 			::textproc/iksemel
 RUN_DEPENDS-server =	::net/fping
-# we want the _zabbix user&group as well as README.OpenBSD
+# we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	:zabbix-agent-${VERSION}:net/zabbix,-main
 WANTLIB-server =	${WANTLIB} crypto idn ssl z curl netsnmp iksemel
 
@@ -106,14 +107,14 @@ post-install:
 	cd ${WRKBUILD}/frontends/php && tar -cf - . | \
 		tar -C ${DESTDIR}${PREFIX-web}/zabbix -xf -
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/zabbix/README.OpenBSD
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/modules.sample
-	${SUBST_CMD} -c ${FILESDIR}/zabbix.conf \
+	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${FILESDIR}/zabbix.conf \
 		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/php5.sample
-	${SUBST_CMD} -c ${FILESDIR}/zabbix.ini \
+	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${FILESDIR}/zabbix.ini \
 		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data
@@ -130,9 +131,5 @@ post-install:
 	# Script to easy upgrading from previous major version
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/zabbix/README.OpenBSD \
-		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf \
-		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
 
 .include <bsd.port.mk>

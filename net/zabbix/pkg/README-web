@@ -1,3 +1,5 @@
+$OpenBSD: README-web,v 1.1 2010/11/06 09:01:07 ajacoutot Exp $
+
 The Zabbix web frontend has been installed into
 ${PREFIX-web}/zabbix
 
