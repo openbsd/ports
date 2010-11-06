@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/10/28 12:32:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/11/06 07:58:40 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -251,6 +251,7 @@ lib/sane/
 @man man/man5/sane-xerox_mfp.5
 @man man/man7/sane.7
 @man man/man8/saned.8
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/sane-backends/
 share/doc/sane-backends/AUTHORS
 share/doc/sane-backends/COPYING
@@ -259,7 +260,6 @@ share/doc/sane-backends/LICENSE
 share/doc/sane-backends/NEWS
 share/doc/sane-backends/PROBLEMS
 share/doc/sane-backends/PROJECTS
-share/doc/sane-backends/README.OpenBSD
 share/doc/sane-backends/backend-writing.txt
 share/doc/sane-backends/canon/
 share/doc/sane-backends/canon/canon.changes

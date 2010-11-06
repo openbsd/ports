@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/29 12:54:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/06 07:58:40 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.21
-REVISION=	2
+REVISION=	3
 
 PATCHFILES=	sane-backends-1.0.21-i18n.patch
 PATCH_DIST_STRIP= -p1
@@ -58,9 +58,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 post-install:
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/sane-backends/README.OpenBSD
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/sane-backends
 	cp -R ${WRKSRC}/tools/openbsd/ \
 		${PREFIX}/share/examples/sane-backends/hotplug
 
