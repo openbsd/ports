@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/23 19:39:46 jsg Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/06 08:14:37 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -11,7 +11,7 @@ PKGNAME-server=	imap-uw-${V}
 PKGNAME-mailutil=mailutil-uw-${V}
 PKGNAME-c-client=c-client-${V}
 
-REVISION-server=	1
+REVISION-server=	2
 REVISION-mailutil=	1
 REVISION-c-client=	1
 
@@ -75,8 +75,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imap-uw
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/imap-uw
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/imap-uw/README.OpenBSD
 	${INSTALL_DATA} ${FILESDIR}/c-client.cf \
 		${PREFIX}/share/examples/imap-uw
 	tar -C ${WRKSRC}/docs -cf - . | \
