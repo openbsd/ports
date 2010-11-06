@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/04 21:59:20 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/06 17:47:11 merdely Exp $
 @bin bin/chntpw
 @bin bin/chntpw.static
 @bin bin/cpnt
@@ -9,7 +9,7 @@ share/doc/chntpw/GPL.txt
 share/doc/chntpw/HISTORY.txt
 share/doc/chntpw/INSTALL.txt
 share/doc/chntpw/LGPL.txt
-share/doc/chntpw/README.OpenBSD
 share/doc/chntpw/README.txt
 share/doc/chntpw/WinReg.txt
 share/doc/chntpw/regedit.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
