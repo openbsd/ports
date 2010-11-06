@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.153 2010/11/06 10:18:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-server=		bz2 c crypto gssapi krb5 ssl z
-WANTLIB-sieve=		c crypto ssl
+WANTLIB-server=		${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
+WANTLIB-sieve=		${MODLIBICONV_WANTLIB} c crypto ssl
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	::archivers/bzip2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 19:46:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/06 10:18:38 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -37,9 +37,10 @@ MULTI_PACKAGES =	-main -lib
 
 MODULES =		converters/libiconv
 
-WANTLIB-main =		c iberty gmp
+WANTLIB-main =		${MODLIBICONV_WANTLIB} c iberty gmp
 LIB_DEPENDS-main =	mpfr::devel/mpfr \
 			${MODLIBICONV_LIB_DEPENDS}
+WANTLIB-lib =
 LIB_DEPENDS-lib =
 RUN_DEPENDS-main =	::${BASE_PKGPATH},-lib
 

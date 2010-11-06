@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/11/05 08:23:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.73 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -41,7 +41,7 @@ BUILD_DEPENDS =		::archivers/gtar \
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c expat crypto curl ssl z
+WANTLIB-main =		c expat crypto curl ssl z ${MODLIBICONV_WANTLIB}
 RUN_DEPENDS-main =	::net/rsync \
 			::devel/p5-Error \
 			:cvsps-*:devel/cvsps \
@@ -55,11 +55,13 @@ RUN_DEPENDS-svn =	::${BASE_PKGPATH} \
 			::www/p5-URI \
 			::www/p5-libwww
 LIB_DEPENDS-svn =
+WANTLIB-svn =
 PKG_ARCH-svn =		*
 
 RUN_DEPENDS-x11 =	::${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 LIB_DEPENDS-x11 =
+WANTLIB-x11 =
 PKG_ARCH-x11 =		*
 
 MAKE_ENV =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \

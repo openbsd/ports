@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -36,7 +36,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -iconv -gdbm
 
-WANTLIB-iconv=		c m ruby18
+WANTLIB-iconv=		${MODLIBICONV_WANTLIB} c m ruby18
 LIB_DEPENDS-iconv=	${MODLIBICONV_LIB_DEPENDS} \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-iconv=	${MODLIBICONV_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/03 22:19:02 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/06 10:18:39 espie Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		X11 Xext Xinerama c gmp m pthread util
+WANTLIB-main =		${WANTLIB} X11 Xext Xinerama c gmp m pthread util
+WANTLIB-lib =
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage haddock register

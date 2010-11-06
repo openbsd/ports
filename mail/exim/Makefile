@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2010/11/06 10:18:38 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -29,9 +29,9 @@ MULTI_PACKAGES =	-main
 
 MODULES =		converters/libiconv
 LIB_DEPENDS-main =	${LIB_DEPENDS} pcre::devel/pcre
-WANTLIB =		c m
-WANTLIB-main =		${WANTLIB} crypto perl ssl util wrap
-WANTLIB-eximon =		${WANTLIB} X11 Xaw Xext Xmu Xt
+cWANTLIB =		c m
+WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util wrap
+WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt
 RUN_DEPENDS-eximon =	::${PKGPATH},-main
 LIB_DEPENDS-eximon =	pcre::devel/pcre
 

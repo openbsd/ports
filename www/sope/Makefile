@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/26 12:43:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -34,11 +34,12 @@ MULTI_PACKAGES=	-main -mysql -postgres
 MODULES=	converters/libiconv x11/gnustep apache-module
 MODGNUSTEP_NEEDS_GUI=	No
 
-WANTLIB +=	m
-WANTLIB-main += ${WANTLIB} c pthread crypto ssl z lber ldap xml2
+WANTLIB =		m
+WANTLIB-main = 		${WANTLIB} c pthread crypto ssl z lber ldap xml2
 
-WANTLIB-mysql += ${WANTLIB} GDLAccess EOControl mysqlclient crypto ssl z
-WANTLIB-postgres += ${WANTLIB} GDLAccess EOControl pq
+WANTLIB-mysql = 	${MODGNUSTEP_WANTLIB} m GDLAccess EOControl \
+			mysqlclient crypto ssl z
+WANTLIB-postgres = 	${MODGNUSTEP_WANTLIB} m GDLAccess EOControl pq
 
 LIB_DEPENDS-main=	::x11/gnustep/base \
 			::databases/openldap \

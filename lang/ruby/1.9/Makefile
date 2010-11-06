@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -30,7 +30,7 @@ MODULES =		converters/libiconv
 USE_GROFF =	Yes
 
 WANTLIB-main =		c crypto ffi m ncurses pthread readline ssl termcap \
-			util yaml z
+			util yaml z ${MODLIBICONV_WANTLIB}
 LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
 			::devel/libyaml \
 			::devel/libffi

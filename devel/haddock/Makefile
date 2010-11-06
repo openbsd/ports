@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -34,7 +34,9 @@ LIB_DEPENDS-lib =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			::devel/gmp
 
-WANTLIB-main =		c gmp m pthread util
+WANTLIB-lib =
+WANTLIB-main =		${WANTLIB} \
+			c gmp m pthread util
 
 BUILD_DEPENDS +=	::devel/alex \
 			::devel/happy \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =		little brother's database, email address query tools
 COMMENT-ldap =		LDAP support for lbdb
@@ -27,8 +27,9 @@ RUN_DEPENDS-ldap =	::databases/p5-ldap \
 			:${PKGNAME-main}:databases/lbdb
 
 MODULES =		converters/libiconv
-WANTLIB-main =		c
+WANTLIB-main =		c ${MODLIBICONV_WANTLIB}
 LIB_DEPENDS-ldap =
+WANTLIB-ldap =
 
 MASTER_SITES =		http://www.spinnaker.de/debian/
 

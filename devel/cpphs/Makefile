@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -35,6 +35,7 @@ MODGHC_BUILD =		cabal haddock register
 LIB_DEPENDS-main =	${LIB_DEPENDS} ::devel/gmp
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
+WANTLIB-lib =
 .else
 # NHC: use the good old makefile for now (though it *should* be possible
 # to build with cabal, too).

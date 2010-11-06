@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -28,9 +28,8 @@ MODULES=		converters/libiconv
 
 MULTI_PACKAGES=		-main -daemon
 
-WANTLIB-main=		c m z jpeg png
-LIB_DEPENDS-main=	gd.>=20::graphics/gd \
-			${MODLIBICONV_LIB_DEPENDS}
+WANTLIB-main=		${MODLIBICONV_WANTLIB} c m z jpeg png gd.>=20
+LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} ::graphics/gd
 WANTLIB-daemon=		c
 LIB_DEPENDS-daemon=
 RUN_DEPENDS-daemon=

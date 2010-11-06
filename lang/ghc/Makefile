@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/05 21:23:46 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/06 10:18:38 espie Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -37,9 +37,10 @@ RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
 
 REVISION-main =		6
-WANTLIB-main =		c gmp m ncursesw pthread util
+WANTLIB-main =		${WANTLIB} c gmp m ncursesw pthread util
 
 REVISION-doc =		2
+WANTLIB-doc =
 
 MASTER_SITES =		http://darcs.haskell.org/download/dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/${MODGHC_VER}/ \
