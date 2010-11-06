@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.1 2010/10/29 12:59:03 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2010/11/06 07:56:48 ajacoutot Exp $
 
 To start a session bus instance of dbus-daemon (needed by at least gvfs
 aware applications and ${PREFIX}/share/dbus-1/services/*.service),

@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.2 2010/10/29 12:41:58 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2010/11/06 07:56:48 ajacoutot Exp $
 
 * Migration
   When moving database between machines, or upgrading from 1.1.x to

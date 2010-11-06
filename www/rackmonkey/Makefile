@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/29 12:45:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/06 07:56:48 ajacoutot Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
@@ -6,7 +6,7 @@ VER=		1.2.5-1
 DISTNAME=	rackmonkey-${VER}
 PKGNAME=	rackmonkey-${VER:S/-/./}
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www net databases
 
