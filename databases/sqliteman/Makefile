@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/21 21:16:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/06 22:50:03 espie Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
@@ -23,8 +23,9 @@ MODULES =		devel/cmake
 CONFIGURE_STYLE =	cmake
 SEPARATE_BUILD =	simple
 
-LIB_DEPENDS =	QtCore,QtGui,QtSql,QtXml::x11/qt4 \
-		qscintilla2::editors/qscintilla
+LIB_DEPENDS =	::x11/qt4 \
+		::editors/qscintilla
+WANTLIB +=	QtCore QtGui QtSql QtXml qscintilla2
 
 RUN_DEPENDS =	::x11/qt4,-sqlite \
 		:desktop-file-utils-*:devel/desktop-file-utils

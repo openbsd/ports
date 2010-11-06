@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,8 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	pq.>=3:postgresql-client-*:databases/postgresql
+LIB_DEPENDS =	:postgresql-client-*:databases/postgresql
+WANTLIB +=	pq.>=3
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 

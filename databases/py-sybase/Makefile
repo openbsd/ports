@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/06 22:50:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,8 @@ MODULES=	lang/python \
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-DHAVE_FREETDS=61
 
-LIB_DEPENDS=	ct.>=1::databases/freetds
+LIB_DEPENDS =	::databases/freetds
+WANTLIB +=	ct.>=1
 
 MAKE_ENV+=	SYBASE="${LOCALBASE}"
 NO_REGRESS=	Yes

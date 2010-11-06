@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/05 15:34:02 pea Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/06 22:50:02 espie Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -25,10 +25,14 @@ MASTER_SITES=	ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/pgadmin3/rel
     ftp://ftp5.es.postgresql.org/mirror/postgresql/pgadmin3/release/v$V/src/ \
     ftp://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/
 
-LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_richtext,wx_gtk2_stc,wx_gtk2_ogl,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.7:x11/wxWidgets \
-		pq.>=4::databases/postgresql \
-		xml2.>=6:libxml->=2.4.8:textproc/libxml \
-		xslt.>=3::textproc/libxslt
+LIB_DEPENDS=	:wxWidgets-gtk2->=2.8.7:x11/wxWidgets \
+		::databases/postgresql \
+		:libxml->=2.4.8:textproc/libxml \
+		::textproc/libxslt
+WANTLIB +=      wx_base_xml wx_base_odbc wx_gtk2_html wx_gtk2_richtext \
+		wx_gtk2_stc wx_gtk2_ogl wx_gtk2_adv wx_gtk2_aui wx_gtk2_xrc \
+		wx_base_net wx_gtk2_dbgrid wx_gtk2_qa wx_base wx_gtk2_core \
+		pq.>=4 xml2.>=6 xslt.>=3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"

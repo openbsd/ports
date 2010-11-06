@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ DISTNAME=		DBD-mysql-4.014
 REVISION=		0
 CATEGORIES=		databases
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,8 +19,9 @@ WANTLIB=		crypto m ssl z
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
+LIB_DEPENDS=		::databases/mysql
 REGRESS_DEPENDS=	:mysql-server-*:databases/mysql,-server
+WANTLIB +=		lib/mysql/mysqlclient.>=10
 
 REGRESS_IS_INTERACTIVE=	Yes
 

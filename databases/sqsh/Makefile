@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 17:06:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/06 22:50:03 espie Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p2
@@ -16,7 +16,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/} ${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	ct.>=2::databases/freetds
+LIB_DEPENDS=	::databases/freetds
+WANTLIB +=	ct.>=2
 
 CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf

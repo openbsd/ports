@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/07 16:57:03 eric Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/06 22:50:03 espie Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 
-LIB_DEPENDS =	sqlite3.>=8.6::databases/sqlite3
+LIB_DEPENDS =	::databases/sqlite3
+WANTLIB +=	sqlite3.>=8.6
 BUILD_DEPENDS =	::textproc/py-sphinx
 
 MODULES =	lang/python

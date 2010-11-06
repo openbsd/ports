@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.170 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -77,9 +77,10 @@ MULTI_PACKAGES=		-main -server -tests
 
 RUN_DEPENDS-server=	:mysql-client->=5.1,<5.2:${BASE_PKGPATH} \
 			:p5-DBD-mysql-*:databases/p5-DBD-mysql
-LIB_DEPENDS-server=	mysqlclient:mysql-client->=5.1,<5.2:${BASE_PKGPATH}
+LIB_DEPENDS-server=	:mysql-client->=5.1,<5.2:${BASE_PKGPATH}
 
-WANTLIB-server=		${WANTLIB} crypto ssl stdc++ wrap z
+WANTLIB-server=		${WANTLIB} crypto ssl stdc++ wrap z \
+			mysqlclient
 WANTLIB-main=		${WANTLIB} crypto ncurses readline ssl z
 WANTLIB-tests=		${WANTLIB}
 

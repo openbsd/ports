@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/01 13:48:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/06 22:50:03 espie Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/python
-LIB_DEPENDS =	pq.>=5:postgresql-client-*:databases/postgresql
+LIB_DEPENDS =	:postgresql-client-*:databases/postgresql
+WANTLIB +=	pq.>=5
 BUILD_DEPENDS =	:postgresql-server-*:databases/postgresql,-server
 RUN_DEPENDS =	:postgresql-client-*:databases/postgresql,-main
 

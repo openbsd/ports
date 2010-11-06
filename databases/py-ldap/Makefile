@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/03 12:34:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,8 +30,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=python-ldap/}
 MODULES=		lang/python
 MODPY_VERSION=		${FLAVOR:S/python//}
 
-LIB_DEPENDS-main=	ldap_r.>=7,lber.>=7::databases/openldap \
-			sasl2.>=2::security/cyrus-sasl2
+LIB_DEPENDS-main=	::databases/openldap \
+			::security/cyrus-sasl2
+WANTLIB-main +=		ldap_r.>=7 lber.>=7 sasl2.>=2
 
 FLAVORS=		python2.4 python2.6
 FLAVOR?=		python2.6

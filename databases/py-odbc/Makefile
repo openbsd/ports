@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/14 13:16:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,7 +25,8 @@ EXTRACT_SUFX =	.zip
 
 MODPY_SETUPTOOLS = Yes
 MODULES =	lang/python
-LIB_DEPENDS =	iodbc::databases/iodbc
+LIB_DEPENDS =	::databases/iodbc
+WANTLIB +=	iodbc
 
 CFLAGS +=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/27 21:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/06 22:50:03 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	qt3 sqlite3 plugin
@@ -16,7 +16,8 @@ WRKDIST=	${WRKDIR}/$P
 
 MODULES=	x11/qt3
 
-LIB_DEPENDS+=	sqlite3::databases/sqlite3
+LIB_DEPENDS +=	::databases/sqlite3
+WANTLIB +=	sqlite3
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/06 22:50:02 espie Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
@@ -25,8 +25,9 @@ PY_FLAVOR =	python${MODPY_VERSION}
 
 BUILD_DEPENDS =		::databases/postgresql
 RUN_DEPENDS =		:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR}
-LIB_DEPENDS =		pq.>=5::databases/postgresql
+LIB_DEPENDS =		::databases/postgresql
 REGRESS_DEPENDS =	${RUN_DEPENDS}
+WANTLIB +=		pq.>=5
 
 # To run the tests, create and start a test database as follows:
 #     createdb -E UNICODE pypgsql

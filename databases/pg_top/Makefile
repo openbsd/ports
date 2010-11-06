@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/06 22:50:02 espie Exp $
 
 COMMENT =	top for monitoring PostgreSQL processes
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c kvm m termcap
 
-LIB_DEPENDS = 	pq.>=5:postgresql-client-*:databases/postgresql
+LIB_DEPENDS = 	:postgresql-client-*:databases/postgresql
+WANTLIB +=	pq.>=5
 
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/13 13:09:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/06 22:50:02 espie Exp $
 
 SHARED_ONLY=	Yes
  
@@ -25,9 +25,10 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/338/
 MODULES=	lang/tcl
 
 MODTCL_VERSION=	8.4
-LIB_DEPENDS=	pq.>=5:postgresql-client-*:databases/postgresql  
+LIB_DEPENDS=	:postgresql-client-*:databases/postgresql  
 RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
+WANTLIB +=	pq.>=5
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
