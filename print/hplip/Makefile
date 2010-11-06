@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/06 19:07:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,7 @@ PKGNAME-gui=	hplip-gui-${V}
 
 REVISION-main=	2
 REVISION-gui=	0
+REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -61,9 +62,9 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::print/hplip,-hpcups \
 		::devel/xdg-utils
 
-WANTLIB-hpijs += ${cWANTLIB} asn1 gssapi krb5 ssl asn1 gssapi krb5 ssl
-WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1
-LIB_DEPENDS-hpijs= hpip,hpmud::print/hplip,-libs \
+WANTLIB-hpijs += ${cWANTLIB} asn1 gssapi krb5 ssl hpip
+WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1 hpmud
+LIB_DEPENDS-hpijs= ::print/hplip,-libs \
 		::graphics/jpeg \
 		::x11/dbus
 

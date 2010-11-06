@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/06 19:05:28 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -16,7 +16,7 @@ PKGNAME-mono=	mono-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 
-REVISION-main=	4
+REVISION-main=	5
 REVISION-gtk=	1
 REVISION-qt3=	0
 REVISION-qt4=	0
@@ -57,8 +57,8 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	::converters/xmltoman
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
-		glib-2.0 gobject-2.0 gthread-2.0 gdbm \
-		daemon dbus-1 ${MODGETTEXT_WANTLIB}
+		gthread-2.0 gdbm  daemon dbus-1 \
+		${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		::devel/glib2 \
 		::databases/gdbm \
