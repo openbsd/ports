@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2010/10/28 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2010/11/06 08:46:05 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -181,9 +181,9 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-monitor.cfg.5
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/zarafa/
 share/doc/zarafa/AGPL-3
-share/doc/zarafa/README.OpenBSD
 share/doc/zarafa/createuser.dotforward
 share/doc/zarafa/db-calc-storesize
 share/doc/zarafa/db-convert-4.1-to-4.2

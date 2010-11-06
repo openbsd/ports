@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.15 2010/10/28 14:46:56 ajacoutot Exp $
+$OpenBSD: README-main,v 1.1 2010/11/06 08:46:05 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
