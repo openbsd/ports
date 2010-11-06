@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/20 17:01:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/06 08:27:27 ajacoutot Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
 V=		4.2
 DISTNAME=	tikiwiki-${V}
 CATEGORIES=	www
+
+REVISION=	0
 
 HOMEPAGE=	http://tikiwiki.org/
 
@@ -29,11 +31,9 @@ RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd \
 		:php5-xmlrpc-*:www/php5/extensions,-xmlrpc \
 		:php5-mbstring-*:www/php5/extensions,-mbstring \
 		:php5-mysqli-*:www/php5/extensions,-mysqli
-		
+
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	@mv ${INSTDIR}-${V} ${INSTDIR}
-	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${INSTDIR}
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

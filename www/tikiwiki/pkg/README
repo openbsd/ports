@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2010/03/20 17:01:28 jasper Exp $
+$OpenBSD: README,v 1.1 2010/11/06 08:27:27 ajacoutot Exp $
 
 The default superuser account is: admin (password: admin).
 

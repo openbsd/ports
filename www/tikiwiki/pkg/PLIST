@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/03/20 17:01:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/06 08:27:27 ajacoutot Exp $
+@group daemon
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
-tikiwiki/README.OpenBSD
 tikiwiki/_htaccess
 tikiwiki/about.php
 tikiwiki/article_image.php
+@group
 @mode 775
 @group www
 tikiwiki/backups/
 @mode
 @group
+@group daemon
 tikiwiki/backups/README
 tikiwiki/backups/index.php
 tikiwiki/banner_click.php
@@ -33,11 +35,13 @@ tikiwiki/css/ie7.css
 tikiwiki/css/ie8.css
 tikiwiki/css/index.php
 tikiwiki/css/jscalendar.css
+@group
 @mode 775
 @group www
 tikiwiki/db/
 @mode
 @group
+@group daemon
 tikiwiki/db/.htaccess
 tikiwiki/db/index.php
 tikiwiki/db/tiki-4.2-mysql.sql
@@ -58,11 +62,13 @@ tikiwiki/display_banner.php
 tikiwiki/doc/
 tikiwiki/doc/index.php
 tikiwiki/doc/readme.txt
+@group
 @mode 775
 @group www
 tikiwiki/dump/
 @mode
 @group
+@group daemon
 tikiwiki/dump/index.php
 tikiwiki/favicon.ico
 tikiwiki/favicon.png
@@ -1029,11 +1035,13 @@ tikiwiki/img/tiki/tikibutton3.png
 tikiwiki/img/tiki/tikilogo.png
 tikiwiki/img/tiki/tikisitelogo.gif
 tikiwiki/img/tiki/tikisitelogo.png
+@group
 @mode 775
 @group www
 tikiwiki/img/trackers/
 @mode
 @group
+@group daemon
 tikiwiki/img/trackers/index.php
 tikiwiki/img/valid-xhtml10.png
 tikiwiki/img/webmail/
@@ -1053,18 +1061,22 @@ tikiwiki/img/webmail/search.gif
 tikiwiki/img/webmail/settings.gif
 tikiwiki/img/webmail/unflagged.gif
 tikiwiki/img/webmail/view.gif
+@group
 @mode 775
 @group www
 tikiwiki/img/wiki/
 @mode
 @group
+@group daemon
 tikiwiki/img/wiki/README
 tikiwiki/img/wiki/index.php
+@group
 @mode 775
 @group www
 tikiwiki/img/wiki_up/
 @mode
 @group
+@group daemon
 tikiwiki/img/wiki_up/README
 tikiwiki/img/wiki_up/index.php
 tikiwiki/index.php
@@ -8431,11 +8443,13 @@ tikiwiki/messu-sent.php
 tikiwiki/modsadm.php
 tikiwiki/modules/
 tikiwiki/modules/.htaccess
+@group
 @mode 775
 @group www
 tikiwiki/modules/cache/
 @mode
 @group
+@group daemon
 tikiwiki/modules/cache/.htaccess
 tikiwiki/modules/cache/README
 tikiwiki/modules/cache/index.php
@@ -8957,11 +8971,13 @@ tikiwiki/setup.sh
 tikiwiki/setup_fckeditor.php
 tikiwiki/setup_smarty.php
 tikiwiki/show_image.php
+@group
 @mode 775
 @group www
 tikiwiki/styles/
 @mode
 @group
+@group daemon
 tikiwiki/styles/BiDi/
 tikiwiki/styles/BiDi/BiDi.css
 tikiwiki/styles/BiDi/index.php
@@ -9139,18 +9155,22 @@ tikiwiki/styles/tikinewt/pics/icons/
 tikiwiki/styles/tikinewt/pics/icons/oleftcol.png
 tikiwiki/styles/tikinewt/pics/icons/orightcol.png
 tikiwiki/styles/tikinewt/tikinewt.png
+@group
 @mode 775
 @group www
 tikiwiki/temp/
 @mode
 @group
+@group daemon
 tikiwiki/temp/.htaccess
 tikiwiki/temp/README
+@group
 @mode 775
 @group www
 tikiwiki/temp/cache/
 @mode
 @group
+@group daemon
 tikiwiki/temp/cache/index.php
 tikiwiki/temp/index.php
 tikiwiki/temp/mail_attachs/
@@ -9158,11 +9178,13 @@ tikiwiki/temp/mail_attachs/README
 tikiwiki/temp/mail_attachs/index.php
 tikiwiki/temp/public/
 tikiwiki/temp/public/.htaccess
+@group
 @mode 775
 @group www
 tikiwiki/templates/
 @mode
 @group
+@group daemon
 tikiwiki/templates/.htaccess
 tikiwiki/templates/antibot.tpl
 tikiwiki/templates/attachments.tpl
@@ -10110,12 +10132,14 @@ tikiwiki/tiki-index.php
 tikiwiki/tiki-index_p.php
 tikiwiki/tiki-index_raw.php
 tikiwiki/tiki-information.php
+@group
 @mode 664
 @group www
 @comment no checksum
 tikiwiki/tiki-install.php
 @mode
 @group
+@group daemon
 tikiwiki/tiki-integrator.php
 tikiwiki/tiki-interactive_trans.php
 tikiwiki/tiki-jscalendar.php
@@ -10313,11 +10337,16 @@ tikiwiki/tikimovies/
 tikiwiki/tikimovies/controller.swf
 tikiwiki/tikimovies/multiplayer.swf
 tikiwiki/tikimovies/multiplayer.xml
+@group
 @mode 775
 @group www
 tikiwiki/whelp/
 @mode
 @group
+@group daemon
 tikiwiki/whelp/index.php
 tikiwiki/x_maps.php
 tikiwiki/xmlrpc.php
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
