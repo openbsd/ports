@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/02 17:05:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/06 08:03:05 ajacoutot Exp $
 @conflict thinkingrock-<=2.0.1p1
 bin/email
 bin/open
@@ -16,8 +16,7 @@ bin/xdg-screensaver
 @man man/man1/xdg-mime.1
 @man man/man1/xdg-open.1
 @man man/man1/xdg-screensaver.1
-share/doc/xdg-utils/
-share/doc/xdg-utils/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/xdg-utils/
 share/examples/xdg-utils/xdg-email-hook.pl
 share/examples/xdg-utils/xdg-open-hook.sh

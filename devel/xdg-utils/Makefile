@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/06 08:03:05 ajacoutot Exp $
 
 # XXX Are we affected by CVE-2008-0386? Our sed(1) does not behave as
 # the GNU version.
@@ -6,8 +6,9 @@
 COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.0.2
-PKGNAME=	${DISTNAME}p8
 CATEGORIES=	devel
+
+REVISION=	9
 
 HOMEPAGE=	http://portland.freedesktop.org/wiki/
 
@@ -38,11 +39,6 @@ post-install:
 	# some java apps use 'email' and 'open' as fallbacks.
 	ln -s xdg-email ${PREFIX}/bin/email
 	ln -s xdg-open ${PREFIX}/bin/open
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xdg-utils
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/xdg-utils/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/xdg-utils/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdg-utils
 	${INSTALL_SCRIPT} ${FILESDIR}/x* ${PREFIX}/share/examples/xdg-utils
 
