@@ -1,4 +1,23 @@
-$OpenBSD: README,v 1.1 2010/11/06 08:27:27 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2010/11/06 08:38:44 ajacoutot Exp $
+
+Post-install/update instructions for Tikiwiki
+=============================================
+
+Tikiwiki has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+ # ln -s ../tikiwiki /var/www/htdocs/tikiwiki
+(make sure you use a relative symlink since Apache is chrooted)
+
+*** First install
+To complete the installation point your web browser to:
+http://<hostname>/tikiwiki/tiki-install.php
+
+*** Upgrade
+To complete the upgrade, you must update your database schema using the
+scripts under ${INSTDIR}/tikiwiki/db/.
+Make sure to read the official documentation at:
+http://tikiwiki.org/ReleaseNotes20#1_9_x_to_2_0_migration_tips
 
 The default superuser account is: admin (password: admin).
 
