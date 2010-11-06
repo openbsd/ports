@@ -1,36 +1,70 @@
-$OpenBSD: patch-Makefile,v 1.5 2010/05/26 21:18:17 jakemsr Exp $
---- Makefile.orig	Tue May 11 16:45:09 2010
-+++ Makefile	Tue May 11 18:11:56 2010
-@@ -112,6 +112,7 @@ endif
+$OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
+--- Makefile.orig	Sun Oct 31 17:45:08 2010
++++ Makefile	Sun Oct 31 18:53:02 2010
+@@ -78,7 +78,9 @@ ifdef ARCH_X86
+ ASFLAGS += -Icommon/x86/
+ SRCS   += common/x86/mc-c.c common/x86/predict-c.c
+ OBJASM  = $(ASMSRC:%.asm=%.o)
++SOBJASM = $(ASMSRC:%.asm=%.so)
+ $(OBJASM): common/x86/x86inc.asm common/x86/x86util.asm
++$(SOBJASM): common/x86/x86inc.asm common/x86/x86util.asm
+ checkasm: tools/checkasm-a.o
+ endif
+ endif
+@@ -120,8 +122,10 @@ endif
  endif
  
  OBJS = $(SRCS:%.c=%.o)
 +SOBJS = $(SRCS:%.c=%.so)
  OBJCLI = $(SRCCLI:%.c=%.o)
  OBJSO = $(SRCSO:%.c=%.o)
++SOBJSO = $(SRCSO:%.c=%.so)
  DEP  = depend
-@@ -124,8 +125,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
+ 
+ .PHONY: all default fprofiled clean distclean install uninstall dox test testclean
+@@ -132,8 +136,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
  	$(AR) rc libx264.a $(OBJS) $(OBJASM)
  	$(RANLIB) libx264.a
  
 -$(SONAME): .depend $(OBJS) $(OBJASM) $(OBJSO)
 -	$(CC) -shared -o $@ $(OBJS) $(OBJASM) $(OBJSO) $(SOFLAGS) $(LDFLAGS)
-+$(SONAME): .depend $(SOBJS) $(OBJASM) $(OBJSO)
-+	$(CC) -shared -o $@ $(SOBJS) $(OBJASM) $(OBJSO) $(SOFLAGS) $(LDFLAGS)
++$(SONAME): .depend $(SOBJS) $(SOBJASM) $(SOBJSO)
++	$(CC) -shared -fPIC -o $@ $(SOBJS) $(SOBJASM) $(SOBJSO) $(SOFLAGS) $(LDFLAGS)
  
  x264$(EXE): $(OBJCLI) libx264.a
- 	$(CC) -o $@ $+ $(LDFLAGS) $(LDFLAGSCLI)
-@@ -141,6 +142,9 @@ checkasm: tools/checkasm.o libx264.a
+ 	$(CC) -o $@ $+ $(LDFLAGSCLI) $(LDFLAGS)
+@@ -145,10 +149,21 @@ checkasm: tools/checkasm.o libx264.a
  	$(AS) $(ASFLAGS) -o $@ $<
  	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
  
++%.so: %.asm
++	$(AS) $(ASFLAGS) -DPIC -o $@ &<
++	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
++
+ %.o: %.S
+ 	$(AS) $(ASFLAGS) -o $@ $<
+ 	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
+ 
++%.so: %.S
++	$(AS) $(ASFLAGS) -DPIC -o $@ $<
++	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
++
 +%.so: %.c
 +	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
 +
  .depend: config.mak
  	@rm -f .depend
  	@$(foreach SRC, $(SRCS) $(SRCCLI) $(SRCSO), $(CC) $(CFLAGS) $(SRC) -MT $(SRC:%.c=%.o) -MM -g0 1>> .depend;)
-@@ -206,7 +210,6 @@ install: x264$(EXE) $(SONAME)
+@@ -192,7 +207,7 @@ fprofiled:
+ endif
+ 
+ clean:
+-	rm -f $(OBJS) $(OBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a x264 x264.exe .depend TAGS
++	rm -f $(OBJS) $(SOBJS) $(OBJASM) $(SOBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a x264 x264.exe .depend TAGS
+ 	rm -f checkasm checkasm.exe tools/checkasm.o tools/checkasm-a.o
+ 	rm -f $(SRC2:%.c=%.gcda) $(SRC2:%.c=%.gcno)
+ 	- sed -e 's/ *-fprofile-\(generate\|use\)//g' config.mak > config.mak2 && mv config.mak2 config.mak
+@@ -214,7 +229,6 @@ install: x264$(EXE) $(SONAME)
  ifeq ($(SYS),MINGW)
  	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(bindir))
  else

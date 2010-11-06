@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/15 10:07:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/06 23:05:48 jakemsr Exp $
 
 COMMENT=	free H264/AVC encoder
 
-V=		20100511
+V=		20101023
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	x264	4.0
+SHARED_LIBS=	x264	5.0
 
 HOMEPAGE=	http://www.videolan.org/developers/x264.html
 
@@ -29,9 +29,10 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
 CONFIGURE_ARGS+=--disable-asm \
-		--disable-ffms-input \
-		--disable-lavf-input \
-		--disable-mp4-output \
+		--disable-ffms \
+		--disable-gpac \
+		--disable-lavf \
+		--disable-swscale \
 		--prefix=${PREFIX}
 
 NO_REGRESS=	Yes
@@ -39,6 +40,5 @@ NO_REGRESS=	Yes
 .include <bsd.port.mk>
 
 .if ${NO_SHARED_LIBS:L} == "no"
-CONFIGURE_ARGS+=--enable-shared \
-		--enable-pic
+CONFIGURE_ARGS+=--enable-shared
 .endif
