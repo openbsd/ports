@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/10/28 11:39:53 steven Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/06 20:48:11 espie Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -41,7 +41,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z gstreamer-0.10 gstbase-0.10
 LIB_DEPENDS =		:gstreamer->=0.10.30:$P/core
 
-WANTLIB-main =		${WANTLIB} gdk_pixbuf-2.0 \
+WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
 			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/05 10:06:44 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/06 20:48:11 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -94,24 +94,29 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 MODULES+=	lang/python \
 		devel/gconf2
 MODGCONF2_LIBDEP=No
-LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
+LIB_DEPENDS-main=::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
-		db.>=4:db->=4,<5:databases/db/v4 \
-		xslt.>=3::textproc/libxslt \
-		curl.>=7::net/curl \
-		neon.>=24::net/neon \
-		wpd.>=8::textproc/libwpd \
-		icuuc.>=0,icudata.>=0,icui18n,icule::textproc/icu4c \
+		:db->=4,<5:databases/db/v4 \
+		::textproc/libxslt \
+		::net/curl \
+		::net/neon \
+		::textproc/libwpd \
+		::textproc/icu4c \
 		::devel/gperf \
-		raptor.>=2::textproc/raptor \
-		rasqal,rdf.>=0::textproc/redland \
+		::textproc/raptor \
+		::textproc/redland \
 		${MODGCONF2_LIB_DEPENDS}
-WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+WANTLIB-main =	gdk-x11-2.0.>=400.14 gtk-x11-2.0.>=400.14 \
+		db.>=4 xslt.>=3 curl.>=7 neon.>=24 wpd.>=8 \
+		icuuc.>=0 icudata.>=0 icui18n icule \
+		raptor.>=2 rasqal rdf.>=0
+WANTLIB-main +=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto dbus-1 expat fontconfig freetype gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread pthread-stubs ssl util xcb xml2 z gdk_pixbuf-2.0
+		png pthread pthread-stubs ssl util xcb xml2 z gdk_pixbuf-2.0 \
+		${MODGCONF2_WANTLIB}
 WANTLIB-main += ${MODPY_WANTLIB}
 RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -120,16 +125,17 @@ RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 STDLIB=			stdc++
 .else
 STDLIB=			estdc++
-LIB_DEPENDS-main+=	estdc++.>=11:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
+LIB_DEPENDS-main +=	:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
+WANTLIB-main +=		estdc++.>=11
 .endif
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
-			kabc,kdecore,kdeui,kio::x11/kde/libs3
+			::x11/kde/libs3
 WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 Xau Xdmcp Xext Xrandr Xrender ${STDLIB} m \
-			pthread-stubs xcb
+			pthread-stubs xcb kabc kdecore kdeui kio
 
 .if !${FLAVOR:L:Mno_java}
 MODULES+=		java

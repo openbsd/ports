@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/06 20:48:11 espie Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -39,15 +39,17 @@ MODULES=		textproc/intltool \
 			devel/gconf2
 
 LIB_DEPENDS-main=	${MODGCONF2_LIB_DEPENDS} \
-			gnome-2::x11/gnome/libgnome \
-			gnomeui-2::x11/gnome/libgnomeui \
-			esd:esound->=0.2.38:audio/esound
+			::x11/gnome/libgnome \
+			::x11/gnome/libgnomeui \
+			:esound->=0.2.38:audio/esound
 LIB_DEPENDS-themes=
+WANTLIB-themes=
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			:desktop-file-utils-*:devel/desktop-file-utils
 RUN_DEPENDS-themes=	::games/gtetrinet
 PKG_ARCH-themes=	*
 
+WANTLIB-main += gnome-2 gnomeui-2 esd ${MODGCONF2_WANTLIB}
 WANTLIB-main += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB-main += audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo
