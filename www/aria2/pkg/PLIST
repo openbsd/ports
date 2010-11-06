@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/02 09:41:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/06 07:52:28 ajacoutot Exp $
 @bin bin/aria2c
 @man man/man1/aria2c.1
 share/doc/aria2/
@@ -9,7 +9,6 @@ share/doc/aria2/xmlrpc/
 share/doc/aria2/xmlrpc/README.txt
 share/doc/aria2/xmlrpc/aria2mon
 share/doc/aria2/xmlrpc/aria2rpc
-share/doc/pkg-readmes/
 share/locale/bg/LC_MESSAGES/aria2.mo
 share/locale/ca/LC_MESSAGES/aria2.mo
 share/locale/da/LC_MESSAGES/aria2.mo
