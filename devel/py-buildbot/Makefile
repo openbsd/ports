@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/07 17:17:42 fgsch Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
-MODPY_EGG_VERSION =	0.7.12
+MODPY_EGG_VERSION =	0.8.2
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =   	devel
 
@@ -24,12 +23,15 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=buildbot/}
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
+MODPY_BADEGGS =	buildbot
 
 RUN_DEPENDS =	::devel/py-twisted/core \
 		::devel/py-twisted/conch \
 		::devel/py-twisted/mail \
 		::devel/py-twisted/web \
-		::devel/py-twisted/words
+		::devel/py-twisted/words \
+		::www/py-jinja2 \
+		${MODPY_JSON}
 REGRESS_DEPENDS =	${RUN_DEPENDS}
 
 post-configure:
@@ -49,7 +51,7 @@ post-install:
 
 do-regress: fake
 	@${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-	    ${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD} \
+	    ${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD}/regress \
 	    buildbot.test
 
 .include <bsd.port.mk>
