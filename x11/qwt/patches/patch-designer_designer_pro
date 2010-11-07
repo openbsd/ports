@@ -1,12 +1,12 @@
-$OpenBSD: patch-designer_designer_pro,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
---- designer/designer.pro.orig	Wed Sep  5 00:44:17 2007
-+++ designer/designer.pro	Wed Sep  5 00:44:32 2007
-@@ -92,7 +92,7 @@ contains(CONFIG, QwtDesigner) {
+$OpenBSD: patch-designer_designer_pro,v 1.2 2010/11/07 00:26:13 merdely Exp $
+--- designer/designer.pro.orig	Sun Apr 11 05:55:06 2010
++++ designer/designer.pro	Tue Oct 26 04:56:10 2010
+@@ -126,7 +126,7 @@ contains(CONFIG, QwtDesigner) {
          RESOURCES += \
              qwt_designer_plugin.qrc
  
 -        target.path = $$[QT_INSTALL_PLUGINS]/designer
-+        target.path = !!QTDIR!!/plugins/designer
++        target.path = ${WRKINST}${PREFIX}/lib/qt4/plugins/designer
          INSTALLS += target
      }
- 
+ }

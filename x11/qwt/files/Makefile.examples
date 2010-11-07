@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile.examples,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+# $OpenBSD: Makefile.examples,v 1.2 2010/11/07 00:26:13 merdely Exp $
 
-EXAMPLES=	!!EXAMPLES!!
+EX_LIST=	${EXAMPLES}
 
 all:
-	@for I in ${EXAMPLES}; \
+	@for I in ${EX_LIST}; \
 	  do (cd $$I; echo "==> Building for $$I"; \
-	    qmake4 $$I.pro && gmake; \
+	    qmake4 $$I.pro && env LOCALBASE=${LOCALBASE} gmake; \
             echo "";); \
 	done
 
 clean:
-	@for I in ${EXAMPLES}; \
+	@for I in ${EX_LIST}; \
 	  do (cd $$I; echo "==> Cleaning for $$I"; \
 	    gmake distclean; \
 	    rm -Rf obj; \

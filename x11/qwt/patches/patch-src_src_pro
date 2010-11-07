@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_src_pro,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
---- src/src.pro.orig	Wed Sep  5 02:00:12 2007
-+++ src/src.pro	Wed Sep  5 02:00:17 2007
-@@ -190,7 +190,7 @@ contains(CONFIG, QwtWidgets) {
+$OpenBSD: patch-src_src_pro,v 1.2 2010/11/07 00:26:14 merdely Exp $
+--- src/src.pro.orig	Sun Apr 11 05:55:06 2010
++++ src/src.pro	Tue Oct 26 02:59:04 2010
+@@ -222,7 +222,7 @@ contains(CONFIG, QwtWidgets) {
  headers.files  = $$HEADERS
- doc.files      = ../doc/html
+ doc.files      = $${QWT_ROOT}/doc/html $${QWT_ROOT}/doc/qwt-5.2.0.qch
  unix {
--    doc.files      += ../doc/man
-+#    doc.files      += ../doc/man
+-    doc.files      += $${QWT_ROOT}/doc/man
++    # doc.files      += $${QWT_ROOT}/doc/man
  }
  
  INSTALLS       = target headers doc

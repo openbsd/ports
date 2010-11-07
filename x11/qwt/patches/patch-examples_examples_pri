@@ -1,20 +1,23 @@
-$OpenBSD: patch-examples_examples_pri,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
---- examples/examples.pri.orig	Tue Sep 11 21:11:54 2007
-+++ examples/examples.pri	Tue Sep 11 21:13:42 2007
-@@ -7,14 +7,12 @@
- # modify it under the terms of the Qwt License, Version 1.0
- ###################################################################
+$OpenBSD: patch-examples_examples_pri,v 1.2 2010/11/07 00:26:14 merdely Exp $
+--- examples/examples.pri.orig	Sun Apr 11 05:55:06 2010
++++ examples/examples.pri	Tue Oct 26 03:03:10 2010
+@@ -9,8 +9,6 @@
  
--include( ../../qwtconfig.pri )
+ QWT_ROOT = ../..
+ 
+-include( $${QWT_ROOT}/qwtconfig.pri )
 -
+ SUFFIX_STR =
+ VVERSION = $$[QT_VERSION]
+ isEmpty(VVERSION) {
+@@ -35,8 +33,8 @@ else {
  TEMPLATE     = app
  
  MOC_DIR      = moc
- OBJECTS_DIR  = obj
--INCLUDEPATH += ../../src
--DEPENDPATH  += ../../src
-+INCLUDEPATH += !!PREFIX!!/include
-+DEPENDPATH  += !!PREFIX!!/lib
- 
- unix:LIBS        += -L../../lib -lqwt
+-INCLUDEPATH += $${QWT_ROOT}/src
+-DEPENDPATH  += $${QWT_ROOT}/src
++INCLUDEPATH += ${PREFIX}/include
++DEPENDPATH  += ${PREFIX}/lib
+ OBJECTS_DIR  = obj$${SUFFIX_STR}
+ DESTDIR      = $${QWT_ROOT}/examples/bin$${SUFFIX_STR}
  

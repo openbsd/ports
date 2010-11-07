@@ -1,16 +1,16 @@
-$OpenBSD: patch-qwtconfig_pri,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
---- qwtconfig.pri.orig	Mon Jun 11 01:41:29 2007
-+++ qwtconfig.pri	Tue Sep 11 10:59:39 2007
-@@ -3,7 +3,7 @@
- ######################################################################
+$OpenBSD: patch-qwtconfig_pri,v 1.2 2010/11/07 00:26:14 merdely Exp $
+--- qwtconfig.pri.orig	Sun Apr 11 05:55:06 2010
++++ qwtconfig.pri	Tue Oct 26 04:57:31 2010
+@@ -8,7 +8,7 @@ VER_PAT      = 1
+ VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-5.0.2
-+    INSTALLBASE    = !!PREFIX!!
+-    INSTALLBASE    = /usr/local/qwt-5.2.1
++    INSTALLBASE    = ${WRKINST}${PREFIX}
  }
  
  win32 {
-@@ -12,7 +12,7 @@ win32 {
+@@ -17,7 +17,7 @@ win32 {
  
  target.path    = $$INSTALLBASE/lib
  headers.path   = $$INSTALLBASE/include

@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1 2010/11/07 00:26:14 merdely Exp $
+
+Building QWT Examples on OpenBSD
+
+To build the qwt examples:
+  cd ${TRUEPREFIX}/share/examples/qwt
+  make
+
+A qwt example binary will be built in each subdirectory of
+${TRUEPREFIX}/share/examples/qwt.
+
