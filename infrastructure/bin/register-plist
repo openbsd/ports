@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.2 2010/08/20 14:23:02 espie Exp $
+# $OpenBSD: register-plist,v 1.3 2010/11/07 00:01:40 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -73,6 +73,10 @@ sub forget_details
 {
 }
 
+sub forget_more_details
+{
+}
+
 sub flatten
 {
 	my ($self, $l) = @_;
@@ -132,6 +136,13 @@ sub forget_details
 	undef $self->{d};
 	undef $self->{md5};
 	undef $self->{size};
+}
+
+sub forget_more_details
+{
+	my $self = shift;
+	undef $self->{symlink};
+	undef $self->{link};
 }
 
 package OpenBSD::PackingElement::SpecialFile;
@@ -395,10 +406,10 @@ sub more_mogrified
 	$p1->find_mogrified($state);
 }
 
-sub compare_lists
+sub act_on_compare
 {
-	my ($p1, $p2, $result, $state) = @_;
-	my $r = my_compare($p1, $p2, $state);
+	my ($r, $p1, $p2, $result, $state) = @_;
+
 	if ($r == 1) {
 		my $t = "$result-new";
 		more_mogrified($p1, $p2, $state);
@@ -423,9 +434,16 @@ sub compare_lists
 	return 0;
 }
 
+sub compare_lists
+{
+	my ($p1, $p2, $result, $state) = @_;
+	my $r = my_compare($p1, $p2, $state);
+	return act_on_compare($r, $p1, $p2, $result, $state);
+}
+
 my $state = OpenBSD::State->new('register-plist');
-$state->handle_options('t', '[-t p1 p2] dir pkg ...');
-if (@ARGV < 2) {
+$state->handle_options('tp', '[-t p1 p2] dir pkg ...');
+if (@ARGV < 2 && !$state->opt('p')) {
 	$state->usage;
 }
 
@@ -443,6 +461,27 @@ if ($state->opt('t')) {
 my @dirs = split(/:/, shift);
 if (!-d $dirs[0]) {
 	$state->usage("not a directory: #1", $dirs[0]);
+}
+
+if ($state->opt('p')) {
+	my $plist = OpenBSD::PackingList->read(\*STDIN);
+	$plist->forget_details;
+	for my $dir (@dirs) {
+		next unless -d $dir;
+		my $result = $dir.'/'.$plist->pkgname;
+		if (-f $result) {
+			my $plist2 = OpenBSD::PackingList->fromfile($result);
+			$plist2->forget_details;
+			$plist2->forget_more_details;
+			my $r = my_compare($plist, $plist2, $state);
+			if ($r == 2) {
+				$r = 0;
+			}
+			exit(act_on_compare($r, $plist, $plist2, $result, 
+			    $state));
+		}
+	}
+	exit(1);
 }
 
 my $error =0;
