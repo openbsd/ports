@@ -1,37 +1,37 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/07 00:26:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/07 00:27:56 merdely Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY =		Yes
 
-COMMENT=		Qt Widgets for Technical Applications
-DISTNAME=		qwt-5.2.1
-SHARED_LIBS=		qwt 6.0
-CATEGORIES=		x11
-EXTRACT_SUFX=		.tar.bz2
+COMMENT =		Qt Widgets for Technical Applications
+DISTNAME =		qwt-5.2.1
+SHARED_LIBS =		qwt 6.0
+CATEGORIES =		x11
+EXTRACT_SUFX =		.tar.bz2
 
-HOMEPAGE=		http://qwt.sourceforge.net/
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qwt/}
+HOMEPAGE =		http://qwt.sourceforge.net/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 
 # Qwt License, Version 1.0
 # http://qwt.sourceforge.net/qwtlicense.html
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		x11/qt4
-NO_REGRESS=		Yes
-USE_GMAKE=		Yes
+NO_REGRESS =		Yes
+USE_GMAKE =		Yes
 
-MAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION}
+MAKE_FLAGS =		LIBqwt_VERSION=${LIBqwt_VERSION}
 
 WANTLIB +=		m stdc++ QtDesigner QtGui QtScript QtXml
 
 # svgmap example not included to prevent the need of svg dependencies
-EXAMPLES=	bode realtime_plot cpuplot dials radio event_filter \
+EXAMPLES =	bode realtime_plot cpuplot dials radio event_filter \
 		data_plot sliders histogram spectrogram sysinfo \
 		curvdemo1 curvdemo2 simple_plot
 
-SUBST_VARS=	WRKINST EXAMPLES
+SUBST_VARS =	WRKINST EXAMPLES
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/qwtconfig.pri ${WRKSRC}/designer/designer.pro \
