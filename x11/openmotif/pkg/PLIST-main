@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/12/14 18:03:36 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/11/07 19:52:00 jasper Exp $
 @conflict lesstif-*
 @pkgpath x11/openmotif
 @bin bin/mwm
@@ -999,8 +999,8 @@ share/doc/openmotif/BUGREPORT
 share/doc/openmotif/COPYRIGHT.MOTIF
 share/doc/openmotif/LICENSE
 share/doc/openmotif/README
-share/doc/openmotif/README.OpenBSD
 share/doc/openmotif/RELEASE
 share/doc/openmotif/RELNOTES
 share/doc/openmotif/TODO
+share/doc/pkg-readmes/${FULLPKGNAME}
 %%SHARED%%

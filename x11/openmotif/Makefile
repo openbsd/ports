@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/07 19:52:00 jasper Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -8,7 +8,7 @@ DISTNAME=		openmotif-${VERSION}
 PKGNAME-main=		openmotif-${VERSION}
 PKGNAME-demos=		openmotif-demos-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-demos= 	1
 
 SHARED_LIBS=		Mrm	4.1	\
@@ -85,7 +85,6 @@ DOCDIR=${PREFIX}/share/doc/openmotif
 post-install:
 	@${INSTALL_DATA_DIR} ${DOCDIR}
 	@for i in ${DOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; done
-	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 	@${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/config
 	@${INSTALL_DATA} ${WRKSRC}/config/cf/Motif.rules \
 	    ${PREFIX}/lib/X11/config/Motif.rules
