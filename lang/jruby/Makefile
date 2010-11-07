@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/28 01:45:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/07 16:37:42 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	pure-Java implementation of the Ruby language
 V =		1.5.3
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
+REVISION =	0
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0 \
@@ -28,10 +29,12 @@ MASTER_SITES0 =	http://www.bsdfrog.org/OpenBSD/distfiles/
 MODULES =	java
 MODJAVA_VER =	1.7+
 MODJAVA_JRERUN = Yes
+USE_GMAKE =	Yes
 
 WANTLIB =	c
 
-BUILD_DEPENDS =	::devel/apache-ant
+BUILD_DEPENDS =	::devel/apache-ant \
+		::shells/bash
 RUN_DEPENDS =	::java/javaPathHelper \
 		::shells/bash
 
@@ -78,7 +81,8 @@ do-install:
 		tar -C ${JRUBY_HOME}/lib -xf -
 	cd ${WRKBUILD} && tar -cf - share | \
 		tar -C ${JRUBY_HOME} -xf -
-	${SET_ENV} ${MAKE_ENV} ${PREFIX}/jruby/bin/jruby -S gem install \
+	${SET_ENV} ${MAKE_ENV} PATH=${JRUBY_HOME}/bin:$$PATH \
+		${PREFIX}/jruby/bin/jgem install \
 		${WRKBUILD}/build_lib/{rake,rspec}*.gem
 	for file in autospec rake spec; do \
 	  ln ${JRUBY_HOME}/bin/$$file ${JRUBY_HOME}/bin/j$$file; \
