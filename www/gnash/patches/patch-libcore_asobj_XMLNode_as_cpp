@@ -1,0 +1,18 @@
+$OpenBSD: patch-libcore_asobj_XMLNode_as_cpp,v 1.1 2010/11/07 18:58:24 dcoppa Exp $
+
+Mark parent XMLNodes. Fixes bug #31044.
+
+--- libcore/asobj/XMLNode_as.cpp.orig	Sat Aug  7 11:50:00 2010
++++ libcore/asobj/XMLNode_as.cpp	Fri Nov  5 21:15:00 2010
+@@ -465,6 +465,11 @@ XMLNode_as::stringify(const XMLNode_as& xml, std::ostr
+ void
+ XMLNode_as::setReachable() 
+ {
++    // If there is a parent, make sure its object is reachable. This goes
++    // up towards the root node of tree without marking the XMLNode
++    // resources (which would cause infinite recursion).
++    if (_parent && _parent->_object) _parent->_object->setReachable();
++
+ 	// Mark children
+     std::for_each(_children.begin(), _children.end(),
+             boost::mem_fn(&XMLNode_as::setReachable));

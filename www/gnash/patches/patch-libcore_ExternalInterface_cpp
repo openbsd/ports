@@ -1,0 +1,31 @@
+$OpenBSD: patch-libcore_ExternalInterface_cpp,v 1.1 2010/11/07 18:58:24 dcoppa Exp $
+
+Don't wait for data in ::readBrowser, read only if data is available..
+
+--- libcore/ExternalInterface.cpp.orig	Sat Aug  7 11:50:00 2010
++++ libcore/ExternalInterface.cpp	Fri Nov  5 21:29:04 2010
+@@ -663,21 +663,12 @@ ExternalInterface::readBrowser(int fd)
+     std::string empty;
+     // Wait for some data from the player
+     int bytes = 0;
+-    fd_set fdset;
+-    FD_ZERO(&fdset);
+-    FD_SET(fd, &fdset);
+-    struct timeval tval;
+-    tval.tv_sec = 10;
+-    tval.tv_usec = 0;
+-    // log_debug("Waiting for data... ");
+-    if (select(fd+1, &fdset, NULL, NULL, &tval)) {
+-        // log_debug("There is data in the network");
++
+ #ifndef _WIN32
+-        ioctl(fd, FIONREAD, &bytes);
++    ioctl(fd, FIONREAD, &bytes);
+ #else
+-        ioctlSocket(fd, FIONREAD, &bytes);
++    ioctlSocket(fd, FIONREAD, &bytes);
+ #endif
+-    }  
+ 
+     // No data yet
+     if (bytes == 0) {
