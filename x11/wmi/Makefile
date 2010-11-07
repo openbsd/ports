@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
@@ -23,7 +23,6 @@ MASTER_SITES=	http://code.suckless.org/dl/misc/
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>

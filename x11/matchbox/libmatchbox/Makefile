@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT=	matchbox base library
 DISTNAME=	libmatchbox-1.9
@@ -25,7 +25,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-jpeg \
 			--enable-pango
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

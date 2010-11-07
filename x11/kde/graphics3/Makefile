@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -83,12 +83,6 @@ WANTLIB-sane +=	avahi-client avahi-common c dbus-1 \
 	lib/kde3/kabc lib/kde3/kdeprint lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard ltdl pthread sane \
 	tiff usb
-
-			
-
-
-CONFIGURE_ENV +=	\
-	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 
 post-patch:
 	@cp ${FILESDIR}/part_init.cpp ${WRKSRC}/kghostview

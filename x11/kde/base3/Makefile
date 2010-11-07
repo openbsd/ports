@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2010/07/12 20:44:02 kili Exp $
+# $OpenBSD: Makefile,v 1.100 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-plugins =	Konqueror nsplugins, essentially native JDK
@@ -73,8 +73,6 @@ EXTRA_CONFIG =	xdg/menus/kde-settings.menu \
 		xdg/menus/applications-merged/kde-essential.menu \
 		ksysguarddrc
 
-
-CONFIGURE_ENV += PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
 
 SAMPLECONFDIR = ${PREFIX}/share/apps/kde-conf-sample
 

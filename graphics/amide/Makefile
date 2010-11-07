@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -53,7 +53,6 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig" \
 			XMEDCON_CONFIG="${LOCALBASE}/bin/xmedcon-config"
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \

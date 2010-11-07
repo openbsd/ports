@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -36,7 +36,5 @@ NO_REGRESS=		Yes
 SEPARATE_BUILD=		simple
 
 LIB_DEPENDS=		::graphics/imlib2
-
-CONFIGURE_ENV=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 .include <bsd.port.mk>

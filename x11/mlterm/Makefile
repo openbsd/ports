@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/07 19:50:10 jasper Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
@@ -37,8 +37,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
 		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2" \
-		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
 		LIBmkf_VERSION=${LIBmkf_VERSION}
 

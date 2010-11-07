@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/07 19:50:10 jasper Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=--enable-mmx
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-aa --disable-motif --disable-gl \
 		--disable-dv --disable-quicktime
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
 NO_REGRESS=	Yes
