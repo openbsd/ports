@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2010/06/26 15:48:11 robert Exp $
---- configure.in.orig.port	Wed May 26 20:21:11 2010
-+++ configure.in	Fri Jun 25 23:57:08 2010
+$OpenBSD: patch-configure_in,v 1.4 2010/11/07 19:04:41 robert Exp $
+--- configure.in.orig.port	Wed May 26 12:21:11 2010
++++ configure.in	Sat Nov  6 12:39:17 2010
 @@ -1053,6 +1053,18 @@ case "$build_os" in
  		echo "AIX is an alpha port --- Use at own risk" >> warn
  		_os=AIX
@@ -39,15 +39,6 @@ $OpenBSD: patch-configure_in,v 1.3 2010/06/26 15:48:11 robert Exp $
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -3691,7 +3708,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
-         test "$with_system_libwpd" != "no"; then
-     AC_MSG_RESULT([external])
-     SYSTEM_LIBWPD=YES
--    PKG_CHECK_MODULES( LIBWPD, libwpd-0.8 )
-+    PKG_CHECK_MODULES( LIBWPD, libwpd )
- else
-     AC_MSG_RESULT([internal])
-     SYSTEM_LIBWPD=NO
 @@ -3811,12 +3828,13 @@ if test -n "$with_system_python" -o -n "$with_system_l
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
