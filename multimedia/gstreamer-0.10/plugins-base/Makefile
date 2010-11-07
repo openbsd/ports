@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/07 20:15:42 espie Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -37,8 +37,8 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
-			z m pcre
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10.30:${P}/core
+			z m pcre gstreamer-0.10
+LIB_DEPENDS =		:gstreamer->=0.10.30:${P}/core
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
