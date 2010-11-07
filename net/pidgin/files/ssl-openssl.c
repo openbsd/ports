@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.4 2010/10/24 19:17:31 steven Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.5 2010/11/07 12:32:07 steven Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -59,6 +59,11 @@ ssl_openssl_init_openssl(void)
 	 * should in purple-win32.
 	 */
 	SSL_library_init();
+
+	/*
+	 * add all digest algorithms and ciphers
+	 */
+	OpenSSL_add_all_algorithms();
 }
 
 /*
