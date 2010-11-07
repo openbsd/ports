@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/07 18:50:57 espie Exp $
 
 COMMENT=		Free Unix Spectrum Emulator utilities
 
@@ -19,10 +19,11 @@ WANTLIB=		c m stdc++ z gcrypt bz2 glib-2.0 gpg-error pcre \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-LIB_DEPENDS=		spectrum.>=5::devel/libspectrum
+LIB_DEPENDS=		::devel/libspectrum
+WANTLIB +=		spectrum.>=5
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

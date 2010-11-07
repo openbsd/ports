@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.117 2010/11/07 18:50:57 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -101,14 +101,15 @@ WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
 MAKE_FLAGS+=	'LDFLAGS=-pthread'
 MAKE_FLAGS+=	'CFLAGS=-pthread'
-LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 	 	atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 png expat\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
 		Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 		Xrandr pixman-1 pthread-stubs xcb gthread-2.0 xcb-render \
-		xcb-render-util gdk_pixbuf-2.0
+		xcb-render-util gdk_pixbuf-2.0 gdk-x11-2.0.>=0.11 \
+		gtk-x11-2.0.>=0.11
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif

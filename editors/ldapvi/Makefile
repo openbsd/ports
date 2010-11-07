@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/07 18:50:57 espie Exp $
 
 COMMENT=	update LDAP entries with a text editor
 
@@ -23,9 +23,10 @@ WANTLIB=	c curses crypto readline ssl
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::textproc/libxslt
-LIB_DEPENDS=	glib-2.0.>=0.8::devel/glib2 \
-		lber,ldap:openldap-client-*:databases/openldap \
-		popt::devel/popt
+LIB_DEPENDS=	::devel/glib2 \
+		:openldap-client-*:databases/openldap \
+		::devel/popt
+WANTLIB +=	glib-2.0.>=0.8 lber ldap popt
 
 MAKE_FILE=	GNUmakefile
 USE_GMAKE=	Yes

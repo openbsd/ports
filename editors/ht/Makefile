@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/07 18:50:57 espie Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
@@ -25,7 +25,8 @@ USE_GMAKE =		Yes
 FLAVORS =		no_x11
 FLAVOR ?=
 
-LIB_DEPENDS =		lzo2::archivers/lzo2
+LIB_DEPENDS =		::archivers/lzo2
+WANTLIB +=		lzo2
 
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
