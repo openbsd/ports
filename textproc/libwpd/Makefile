@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/11 06:11:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/07 19:04:18 robert Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
 DISTNAME=	libwpd-0.8.9
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc
 
-SHARED_LIBS=	wpd		8.9 \
-		wpd-stream	8.9
+REVISION=	2
+
+SHARED_LIBS=	wpd-0.8		8.9 \
+		wpd-stream-0.8	8.9
 
 HOMEPAGE=	http://libwpd.sourceforge.net/
 
@@ -31,12 +32,5 @@ REGRESS_DEPENDS=	::devel/cppunit
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
-
-pre-configure:
-	@cd ${WRKSRC} && \
-		for PCFILE in *.pc.in; do \
-			cp $$PCFILE \
-			`echo $$PCFILE | sed 's/-0.8//g'`; \
-		done
 
 .include <bsd.port.mk>
