@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2010/10/28 11:50:32 steven Exp $
+# $OpenBSD: Makefile,v 1.218 2010/11/07 18:07:50 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -175,6 +175,7 @@
      SUBDIR += usbutil
      SUBDIR += uvideo-firmware
      SUBDIR += vifm
+     SUBDIR += vmwh
      SUBDIR += wdsetup
      SUBDIR += whowatch
      SUBDIR += wmapm
