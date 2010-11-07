@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/07 20:33:59 espie Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		blas m ${MODFORTRAN_WANTLIB}
+WANTLIB=		blas m lapack ${MODFORTRAN_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
@@ -33,7 +33,7 @@ REGRESS_DEPENDS=	::devel/py-nose
 MODFORTRAN_COMPILER =	g77
 
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=            lapack::math/lapack \
+LIB_DEPENDS=            ::math/lapack \
 			${MODFORTRAN_LIB_DEPENDS}
 
 # XXX Segmentation fault on powerpc when building py-scipy:

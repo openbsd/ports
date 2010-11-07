@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 2010/10/24 22:36:37 pirofti Exp $
+# $Id: Makefile,v 1.11 2010/11/07 20:33:58 espie Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -21,9 +21,9 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		${HOMEPAGE}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	c m ncurses readline stdc++ gmp
+WANTLIB=	c m ncurses readline stdc++ gmp cln
 
-LIB_DEPENDS=	cln::devel/cln
+LIB_DEPENDS=	::devel/cln
 
 MODULES=	gcc3
 MODGCC3_ARGHES=	sparc

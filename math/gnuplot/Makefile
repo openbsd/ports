@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/07 20:33:58 espie Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
@@ -35,12 +35,12 @@ REGRESS_IS_INTERACTIVE=	x11
 SUBST_VARS=	V
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+= --without-x --without-gd
+CONFIGURE_ARGS += --without-x --without-gd
 .else
-LIB_DEPENDS=	gd.>=20::graphics/gd
+LIB_DEPENDS =	::graphics/gd
 USE_GROFF =	Yes
-WANTLIB+=	X11 fontconfig freetype iconv jpeg png
-CONFIGURE_ARGS+= --with-x
+WANTLIB +=	X11 fontconfig freetype iconv jpeg png gd.>=20
+CONFIGURE_ARGS += --with-x
 .endif
 
 post-install:

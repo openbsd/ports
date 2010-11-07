@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/07 20:33:59 espie Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
@@ -33,17 +33,19 @@ CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIR}
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
-LIB_DEPENDS+=	kdecore.>=6,kwalletclient,DCOP,kutils,kparts,kdeui,kdesu,kmdi,kio,kdefx,kdeprint,khtml,kjs::x11/kde/libs3 \
-		gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
-		netcdf,netcdf_c++::math/netcdf \
-		cfitsio::math/cfitsio
+LIB_DEPENDS +=	::x11/kde/libs3 \
+		:gsl->=1.6:devel/gsl \
+		::math/netcdf \
+		::math/cfitsio
 
-WANTLIB=	c m util stdc++ pthread z X11 ICE Xrender SM Xext \
+WANTLIB =	c m util stdc++ pthread z X11 ICE Xrender SM Xext \
 		png jpeg art_lgpl_2 idn pcre pcreposix \
 		Xau Xdmcp fam rpcsvc ncurses readline qui \
-		pthread-stubs xcb
+		pthread-stubs xcb kdecore.>=6 kwalletclient DCOP \
+		kutils kparts kdeui kdesu kmdi kio kdefx kdeprint khtml kjs \
+		gsl.>=7 gslcblas netcdf netcdf_c++ cfitsio
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/07 20:33:58 espie Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -31,8 +31,9 @@ PKG_ARGS+=	-Dno_mips64=0
 PKG_ARGS+=	-Dno_mips64=1
 .endif
 
-LIB_DEPENDS=	lapack.>=1::math/lapack \
-		blas.>=1::math/blas
+LIB_DEPENDS =	::math/lapack \
+		::math/blas
+WANTLIB =	lapack.>=1 blas.>=1
 
 WRKDIST=	${WRKDIR}/ARPACK
 WRKSRC=		${WRKDIST}/SRC

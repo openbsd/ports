@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/07 20:33:58 espie Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -29,11 +29,12 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--enable-grace-home=${PREFIX}/grace
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
-		png.>=2::graphics/png \
-		t1.>=5::devel/t1lib \
-		tiff.>=35::graphics/tiff \
-		pdf.>=2::print/pdflib
+LIB_DEPENDS =	::graphics/jpeg \
+		::graphics/png \
+		::devel/t1lib \
+		::graphics/tiff \
+		::print/pdflib
+WANTLIB +=	jpeg.>=62 png.>=2 t1.>=5 tiff.>=35 pdf.>=2
 
 FLAVORS=	no_x11 fftw netcdf xmhtml
 FLAVOR?=
@@ -49,7 +50,8 @@ REGRESS_IS_INTERACTIVE=	x11
 USE_MOTIF=		openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt
 .  if ${FLAVOR:L:Mxmhtml}
-LIB_DEPENDS+=		XmHTML.>=1::www/xmhtml
+LIB_DEPENDS +=		::www/xmhtml
+WANTLIB +=		XmHTML.>=1
 CONFIGURE_ARGS+=	--enable-xmhtml
 .  else
 CONFIGURE_ARGS+=	--disable-xmhtml
@@ -58,14 +60,16 @@ CONFIGURE_ENV=		LDFLAGS=-lm
 .endif
 
 .if ${FLAVOR:L:Mfftw}
-LIB_DEPENDS+=		fftw.>=2::math/fftw
+LIB_DEPENDS +=		::math/fftw
+WANTLIB +=		fftw.>=2
 CONFIGURE_ARGS+=	--with-fftw
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if ${FLAVOR:L:Mnetcdf}
-LIB_DEPENDS+=		netcdf.>=1::math/netcdf
+LIB_DEPENDS +=		::math/netcdf
+WANTLIB +=		netcdf.>=1
 CONFIGURE_ARGS+=	--enable-netcdf
 .else
 CONFIGURE_ARGS+=	--disable-netcdf

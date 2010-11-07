@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/07 20:33:58 espie Exp $
 
 COMMENT=	GTK2-based scientific calculator
 
@@ -30,7 +30,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galculator/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	glade-2.0::devel/libglade2
+LIB_DEPENDS=	::devel/libglade2
+WANTLIB +=	glade-2.0
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
