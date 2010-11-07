@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/07 19:28:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/07 19:29:56 jasper Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
@@ -24,8 +24,6 @@ WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
 NO_REGRESS=		Yes
 
 LIB_DEPENDS=		::graphics/imlib2
-
-MAKE_FLAGS+=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/skippy
