@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/07 20:47:08 jasper Exp $
+
 Using conserver in an OpenBSD environment:
 
 1. Customize the configuration for your needs, see /etc/conserver.cf
@@ -10,12 +12,12 @@ Using conserver in an OpenBSD environment:
    echo -n 'starting local daemons:'
    ...
    if [ -f /etc/conserver.cf ]; then
-       if [ X"${conserver}" = X"YES" -a -x /usr/local/sbin/conserver ]; then
-           echo -n ' conserver';    /usr/local/sbin/conserver -d -n
+       if [ X"${conserver}" = X"YES" -a -x ${PREFIX}/sbin/conserver ]; then
+           echo -n ' conserver';    ${PREFIX}/sbin/conserver -d -n
        fi
    fi
    ...
    echo '.'
 
 4. See the man pages for conserver, conserver.cf, and console as well as
-   the files in /usr/local/share/examples/conserver for more information.
+   the files in ${PREFIX}/share/examples/conserver for more information.
