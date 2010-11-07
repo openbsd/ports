@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:14:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/07 19:12:42 espie Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -26,8 +26,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
 
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			gps::misc/gpsd
+LIB_DEPENDS =		::devel/gconf2 \
+			::misc/gpsd
+WANTLIB +=		gconf-2 gps
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/07 19:12:42 espie Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -36,25 +36,25 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -iconv -gdbm
 
-WANTLIB-iconv=		${MODLIBICONV_WANTLIB} c m ruby18
-LIB_DEPENDS-iconv=	${MODLIBICONV_LIB_DEPENDS} \
+WANTLIB-iconv =		${MODLIBICONV_WANTLIB} c m ruby18
+LIB_DEPENDS-iconv =	${MODLIBICONV_LIB_DEPENDS} \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
-RUN_DEPENDS-iconv=	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-iconv =	${MODLIBICONV_RUN_DEPENDS}
 
-WANTLIB-gdbm=		c gdbm m ruby18
-LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm \
+WANTLIB-gdbm =		c gdbm.>=3 m ruby18
+LIB_DEPENDS-gdbm =	::databases/gdbm \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
-RUN_DEPENDS-gdbm=       
+RUN_DEPENDS-gdbm =       
 
 .if !${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES+=	-tk
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
 			--with-X11-dir=${X11BASE}
-WANTLIB-tk=		X11 c m ruby18 tcl85 tk85
-LIB_DEPENDS-tk=		:tk->=8.5,<8.6:x11/tk/8.5 \
+WANTLIB-tk =		X11 c m ruby18 tcl85 tk85
+LIB_DEPENDS-tk =		:tk->=8.5,<8.6:x11/tk/8.5 \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
-RUN_DEPENDS-tk=		
+RUN_DEPENDS-tk =		
 .endif
 
 # Known regression failures in OpenSSL extension on sparc64

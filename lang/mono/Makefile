@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/26 17:30:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/07 19:12:42 espie Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -43,7 +43,8 @@ MAKE_FLAGS=	EXTERNAL_MCS=false
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/libgdiplus
-LIB_DEPENDS=	gc::devel/boehm-gc
+LIB_DEPENDS=	::devel/boehm-gc
+WANTLIB +=	gc
 
 AUTOCONF_VERSION=2.63
 CONFIGURE_STYLE=autoconf

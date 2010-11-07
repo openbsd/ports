@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/31 22:38:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/07 19:12:42 espie Exp $
 
 ONLY_FOR_ARCHS = i386 m68k sparc sparc64 powerpc vax amd64
 # work in progress
@@ -206,9 +206,9 @@ RUN_DEPENDS-c++ =	${RUN_DEPENDS} :libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:
 WANTLIB-estdc =		c m
 WANTLIB-java =		c m pthread z
 
-LIB_DEPENDS-f95 =	gmp:gmp->=4.2:devel/gmp \
-			mpfr::devel/mpfr
-
+LIB_DEPENDS-f95 =	:gmp->=4.2:devel/gmp \
+			::devel/mpfr
+WANTLIB-f95 =		${WANTLIB} gmp mpfr
 .include <bsd.port.mk>
 
 ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}

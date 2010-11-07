@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/23 11:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/07 19:12:42 espie Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -26,7 +26,8 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 
-LIB_DEPENDS+=		ffi::devel/libffi
+LIB_DEPENDS +=		::devel/libffi
+WANTLIB +=		ffi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

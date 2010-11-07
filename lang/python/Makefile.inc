@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.68 2010/10/28 08:22:11 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.69 2010/11/07 19:12:42 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -53,21 +53,24 @@ ONLY_FOR_ARCHS-bsddb=	amd64 i386
 RUN_DEPENDS=		:${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS=
 
-LIB_DEPENDS-main=	bz2::archivers/bzip2
-RUN_DEPENDS-main=
-WANTLIB-main=		ssl panelw m crypto c util z readline pthread \
-			ncursesw stdc++ expat ossaudio
+LIB_DEPENDS-main =	::archivers/bzip2
+RUN_DEPENDS-main =
+WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
+			ncursesw stdc++ expat ossaudio bz2
 .if ${VERSION} == "2.5" || ${VERSION} == "2.6"
-LIB_DEPENDS-main+=	sqlite3::databases/sqlite3
+LIB_DEPENDS-main +=	::databases/sqlite3
+WANTLIB-main +=		sqlite3
 .endif
 
-LIB_DEPENDS-bsddb=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
-LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
-RUN_DEPENDS-idle=	${RUN_DEPENDS} \
+LIB_DEPENDS-bsddb =	:db->=4,<5:databases/db/v4
+WANTLIB-bsddb =		lib/db4/db.>=4
+LIB_DEPENDS-gdbm =	::databases/gdbm
+WANTLIB-gdbm =		gdbm.>=3
+RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			::lang/python/${VERSION},-tkinter
-LIB_DEPENDS-tkinter=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
-			tk84:tk->=8.4,<8.5:x11/tk/8.4
-WANTLIB-tkinter=	X11
+LIB_DEPENDS-tkinter =	:tcl->=8.4,<8.5:lang/tcl/8.4 \
+			:tk->=8.4,<8.5:x11/tk/8.4
+WANTLIB-tkinter =	X11 tcl84 tk84
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
