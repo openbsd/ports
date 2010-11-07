@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1052 2010/10/28 22:39:44 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1053 2010/11/07 00:03:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -477,18 +477,22 @@ USE_MOTIF ?= No
 
 .if ${USE_MOTIF:L} != "no"
 .  if ${USE_MOTIF:L} == "lesstif"
-LIB_DEPENDS += Xm.>=1::x11/lesstif
+LIB_DEPENDS += ::x11/lesstif
+WANTLIB +=	Xm.>=1
 .  elif ${USE_MOTIF:L} == "openmotif"
-LIB_DEPENDS += Xm.>=2::x11/openmotif
+LIB_DEPENDS += ::x11/openmotif
+WANTLIB += Xm.>=2
 .  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
 FLAVORS += lesstif
 .    if ${FLAVOR:L:Mlesstif} && ${FLAVOR:L:Mmotif}
 ERRORS += "Fatal: choose motif or lesstif, not both."
 .    endif
 .    if ${FLAVOR:L:Mlesstif}
-LIB_DEPENDS += Xm.>=1::x11/lesstif
+LIB_DEPENDS += ::x11/lesstif
+WANTLIB +=	Xm.>=1
 .    else
-LIB_DEPENDS += Xm.>=2::x11/openmotif
+LIB_DEPENDS += ::x11/openmotif
+WANTLIB += Xm.>=2
 .    endif
 .  else
 ERRORS += "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
@@ -1590,6 +1594,22 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 ### end of variable setup. Only targets now
 ###
 
+check-register:
+.if empty(PLIST_DB)
+	@exit 1
+.else
+	@if cd ${.CURDIR} && ${MAKE} print-plist-with-depends | ${_PERLSCRIPT}/register-plist -p ${PLIST_DB}; then \
+		echo "${FULLPKGNAME${SUBPACKAGE}} okay"; \
+	else \
+		echo "${FULLPKGNAME${SUBPACKAGE}} BAD"; \
+	fi
+.endif
+
+check-register-all:
+.for _S in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} check-register
+.endfor
+
 .for _S in ${MULTI_PACKAGES}
 
 ${_CACHE_REPO}/${_PKGFILE${_S}}:
@@ -1623,6 +1643,10 @@ ${_PACKAGE_COOKIE${_S}}:
 .    else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
+.  if ${LIB_DEPENDS${_S}:M?*\:*\:*}
+	@${ECHO_MSG} "WARNING: Old style LIB_DEPENDS:"
+	@${ECHO_MSG} "LIB_DEPENDS${_S} = ${LIB_DEPENDS${_S}}"
+.  endif
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
