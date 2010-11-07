@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_network_c,v 1.1 2010/11/07 19:13:40 jasper Exp $
+
+http://redmine.lighttpd.net/issues/2269
+
+--- src/network.c.orig	Sat Nov  6 16:13:11 2010
++++ src/network.c	Sat Nov  6 16:13:35 2010
+@@ -521,6 +521,7 @@ int network_init(server *srv) {
+ 		if (srv->ssl_is_init == 0) {
+ 			SSL_load_error_strings();
+ 			SSL_library_init();
++			OpenSSL_add_all_algorithms();
+ 			srv->ssl_is_init = 1;
+ 
+ 			if (0 == RAND_status()) {
