@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/26 14:43:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/07 18:48:24 jasper Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -7,7 +7,7 @@ DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	1
+REVISION-main=	2
 
 SHARED_LIBS +=  tesseract_api             0.0 # 3.0
 SHARED_LIBS +=  tesseract_ccstruct        0.0 # 3.0
@@ -25,7 +25,7 @@ SHARED_LIBS +=  tesseract_wordrec         0.0 # 3.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		eng.traineddata.gz
 			
-HOMEPAGE=	http://code.google.com/p/tesseract-ocr/
+HOMEPAGE=	http://tesseract-ocr.googlecode.com/
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,7 +39,7 @@ MULTI_PACKAGES=	-main
 # language files are unversionned
 MAJOR_V=	${V:C/^([0-9]+).*/\1/}
 LANG_V=		${MAJOR_V}.20101024
-DIST_SUBDIR=tesseract-${LANG_V}
+DIST_SUBDIR=	tesseract-${LANG_V}
 
 LANGS+=	bul cat ces chi_sim chi_tra dan-frak dan deu ell fin fra hun ind
 LANGS+=	ita jpn kor lav lit nld nor pol por ron rus slk slv spa srp swe
@@ -62,7 +62,7 @@ LIB_DEPENDS-main= ::graphics/tiff \
 		::graphics/png
 
 
-MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/
+MASTER_SITES=	${HOMEPAGE}/files/
 
 USE_LIBTOOL=	Yes
 
@@ -77,12 +77,9 @@ pre-configure:
 post-install:
 	cp ${WRKDIR}/*.traineddata ${PREFIX}/share/tessdata/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tesseract
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tesseract
 	${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
-	${INSTALL_DATA} ${WRKSRC}/README ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/tesseract
 	${INSTALL_DATA} ${WRKSRC}/{eurotext.tif,phototest.tif} \
 		${PREFIX}/share/examples/tesseract
 
