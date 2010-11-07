@@ -1,0 +1,8 @@
+vmwh is a vmware helper for X11, developed on OpenBSD to run in userland
+alongside the vmt(4) vmware kernel driver and the vmmouse Xorg driver.
+It detects when the mouse cursor switches back to the host ("ungrabs")
+and sends the guest's X11 clipboard data (read from xclip) to the host
+through the vmware backdoor, which gets put onto the host's clipboard.
+It then detects when the mouse cursor switches back to the guest
+("grabs") and replaces the X11 clipboard contents (via xclip) with the
+host's, which is read through the vmware backdoor.

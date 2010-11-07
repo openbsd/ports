@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/07 18:06:00 dcoppa Exp $
+@bin bin/vmwh

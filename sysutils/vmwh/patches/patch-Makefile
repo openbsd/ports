@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/11/07 18:06:00 dcoppa Exp $
+--- Makefile.orig	Thu Nov  4 16:40:17 2010
++++ Makefile	Thu Nov  4 16:40:52 2010
+@@ -1,7 +1,8 @@
+ # vim:ts=8
+ 
+ CC	= cc
+-CFLAGS	= -O2 -Wall -Wunused -Wmissing-prototypes -Wstrict-prototypes
++CFLAGS	?= -O2 -Wall
++CFLAGS	+= -Wunused -Wmissing-prototypes -Wstrict-prototypes
+ #CFLAGS += -g
+ 
+ PREFIX	 = /usr/local
