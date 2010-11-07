@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/31 07:35:55 form Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/07 18:29:54 jasper Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/07 10:28:55 form Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
@@ -6,9 +6,10 @@ ONLY_FOR_ARCHS=		amd64 i386
 COMMENT=		thorough, stand alone memory test
 VERSION=		4.10
 DISTNAME=		memtest86+-${VERSION}
+REVISION=		0
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://www.memtest.org
+HOMEPAGE=		http://www.memtest.org/
 
 MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
@@ -27,13 +28,10 @@ MAKE_ENV=		V=${VERSION}
 
 post-build:
 	@cd ${WRKBUILD} && sh ${WRKDIST}/makeiso.sh
-	@sed -e s,!!PREFIX!!,${TRUEPREFIX},g ${FILESDIR}/README.OpenBSD \
-	    > ${WRKBUILD}/README.OpenBSD
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/memtest86+
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/memtest86+
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/memtest86+
 	${INSTALL_DATA} ${WRKBUILD}/memtest ${PREFIX}/share/memtest86+
 	${INSTALL_DATA} ${WRKBUILD}/memtest_s \
 	    ${PREFIX}/share/memtest86+/memtest-serial

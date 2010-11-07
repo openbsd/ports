@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/02/09 14:54:40 form Exp $
+$OpenBSD: README,v 1.1 2010/11/07 18:29:54 jasper Exp $
 $RuOBSD: README.OpenBSD,v 1.2 2009/02/07 16:01:57 form Exp $
 
 Using Memtest86+ in OpenBSD environment
@@ -7,10 +7,10 @@ o Reboot the machine and boot Memtest86+ using `boot /stand/memtest' command
   at the `boot>' prompt.  You can also boot Memtest86+ from network using
   pxeboot(8).
 
-o Use `dd if=!!PREFIX!!/share/memtest86+/memtest.floppy of=/dev/fd0c' command
+o Use `dd if=${PREFIX}/share/memtest86+/memtest.floppy of=/dev/fd0c' command
   to create a bootable Memtest86+ floppy.
 
-o Use `!!PREFIX!!/share/memtest86+/memtest.iso' file to create a bootable
+o Use `${PREFIX}/share/memtest86+/memtest.iso' file to create a bootable
   Memtest86+ CD-ROM.
 
 Use `memtest-serial', `memtest-serial.floppy' or `memtest-serial.iso' files
