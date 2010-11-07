@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2009/01/03 23:02:57 jasper Exp $
+$OpenBSD: README,v 1.1 2010/11/07 19:28:48 jasper Exp $
 
 Copy the sample ${TRUEPREFIX}/share/examples/skippy/skippyrc-default to
 your home directory as .skippyrc before running it.

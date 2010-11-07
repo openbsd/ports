@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/07 19:28:48 jasper Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
 DISTNAME=		skippy-0.5.0
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11
 
 MASTER_SITES=		http://thegraveyard.org/files/
@@ -28,13 +28,8 @@ LIB_DEPENDS=		::graphics/imlib2
 MAKE_FLAGS+=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/skippy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/skippy
 	${INSTALL_DATA} ${WRKSRC}/skippyrc-default \
 	    ${PREFIX}/share/examples/skippy
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/skippy/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/skippy/README.OpenBSD
 
 .include <bsd.port.mk>
