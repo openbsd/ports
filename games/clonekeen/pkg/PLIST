@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 12:12:05 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/07 18:58:39 jasper Exp $
 bin/keen
 share/clonekeen/
 share/clonekeen/custom/
@@ -54,5 +54,4 @@ share/clonekeen/gfx/yorpshield.tga
 share/clonekeen/keen.conf
 share/clonekeen/palette.ini
 share/clonekeen/strings.dat
-share/doc/clonekeen/
-share/doc/clonekeen/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}

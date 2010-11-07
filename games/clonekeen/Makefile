@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 12:12:05 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/07 18:58:39 jasper Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
+REVISION =		0
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen
@@ -37,9 +38,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/keen ${PREFIX}/share/clonekeen
 	${SUBST_CMD} -c -o root -g bin ${FILESDIR}/keen ${PREFIX}/bin/keen
 	chmod 755 ${PREFIX}/bin/keen
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clonekeen
-	${SUBST_CMD} -c -o root -g bin ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/clonekeen/README.OpenBSD
-	chmod 444 ${PREFIX}/share/doc/clonekeen/README.OpenBSD
 
 .include <bsd.port.mk>
