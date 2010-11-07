@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/07 18:46:57 jasper Exp $
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.6
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
