@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/23 10:29:45 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 09:57:39 espie Exp $
 
 COMMENT=	GIS TIFF interchange library
 
@@ -29,9 +29,9 @@ CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
 			--with-proj=${LOCALBASE} \
 			--with-libtiff=${LOCALBASE}
 
-WANTLIB=		c jpeg m z
+WANTLIB=		c jpeg m z proj tiff
 
-LIB_DEPENDS=		proj::devel/proj \
-			tiff::graphics/tiff
+LIB_DEPENDS=		::devel/proj \
+			::graphics/tiff
 
 .include <bsd.port.mk>

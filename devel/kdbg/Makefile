@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/08 09:57:40 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
@@ -16,13 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m \
 		fam rpcsvc png pthread stdc++ util z idn Xau Xdmcp \
-		pthread-stubs xcb
+		pthread-stubs xcb kdecore.>=4 DCOP kdefx kdesu kdeui \
+		kio kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 
 MODULES=	x11/kde devel/gettext
 
-LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
+LIB_DEPENDS=	::x11/kde/libs3
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader

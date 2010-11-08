@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 09:57:39 espie Exp $
 
 COMMENT=	generic game engine library
 
@@ -21,11 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += SDL X11 Xau Xdmcp Xext Xrandr Xrender jpeg m mikmod
 WANTLIB += ogg png pthread-stubs smpeg sndio tiff usbhid vorbis
 WANTLIB += vorbisfile xcb z
+WANTLIB += SDL_image.>=2 SDL_mixer.>=3
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
-		SDL_mixer.>=3::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer
 
 MODULES=	converters/libiconv
 USE_LIBTOOL=	Yes

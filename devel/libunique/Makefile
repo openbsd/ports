@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 09:57:40 espie Exp $
 
 COMMENT =	library for writing single instance application
 
@@ -29,13 +29,14 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 MODULES =	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		dbus-glib-1::x11/dbus-glib
+LIB_DEPENDS =	::x11/gtk+2 \
+		::x11/dbus-glib
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 expat \
 		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
+		pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0 \
+		gdk-x11-2.0 gtk-x11-2.0 dbus-glib-1
 
 .include <bsd.port.mk>

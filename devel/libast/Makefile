@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 09:57:40 espie Exp $
 
 COMMENT=		library of assorted spiffy things
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE m SM freetype X11 Xau Xdmcp Xext pthread-stubs \
-			xcb z
+			xcb z Imlib2.>=2
 
 MASTER_SITES=		http://www.eterm.org/download/
 
-LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2
+LIB_DEPENDS=		::graphics/imlib2
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

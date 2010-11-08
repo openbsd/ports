@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/08 09:57:39 espie Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -32,13 +32,13 @@ WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-render-util xml2
-WANTLIB += z
+WANTLIB += z dbus-glib-1 gnomeui-2
 
 MODULES=		devel/gettext \
 			x11/gnome
     
-LIB_DEPENDS=            dbus-glib-1::x11/dbus-glib \
-			gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=            ::x11/dbus-glib \
+			::x11/gnome/libgnomeui
 RUN_DEPENDS=		::x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 09:57:39 espie Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -23,7 +23,7 @@ MODULES =	lang/python
 USE_LIBTOOL =	Yes
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+		::x11/gtk+2
 
 RUN_DEPENDS =	::x11/py-gtk2
 BUILD_DEPENDS+=	${RUN_DEPENDS}
@@ -33,7 +33,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs util xcb z gdk_pixbuf-2.0
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB} gtk-x11-2.0 gdk-x11-2.0
 
 CONFIGURE_STYLE =	gnu
 

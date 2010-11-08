@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/05 14:37:43 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/08 09:57:39 espie Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=		c m gmp.>=7
 
-LIB_DEPENDS=		gmp.>=7::devel/gmp
+LIB_DEPENDS=		::devel/gmp
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/11 13:18:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 09:57:40 espie Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -22,11 +22,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
 
-WANTLIB=	gcrypt gpg-error tasn1 z
+WANTLIB=	gcrypt gpg-error tasn1 z gnutls.>=14
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gnutls.>=14::security/gnutls
+LIB_DEPENDS=	::security/gnutls
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

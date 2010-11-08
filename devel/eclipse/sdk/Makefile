@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/08 09:57:39 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -73,7 +73,7 @@ RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
 			:swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
 			::devel/desktop-file-utils
-LIB_DEPENDS-main=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS-main=	::x11/gtk+2
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xcomposite Xdamage gdk_pixbuf-2.0 \
@@ -83,13 +83,14 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
 			pixman-1 gio-2.0 pthread-stubs xcb \
 			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
+			gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS-swt=	gtk-x11-2.0::x11/gtk+2
-WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0
+LIB_DEPENDS-swt=	::x11/gtk+2
+WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0 gtk-x11-2.0
 
 RUN_DEPENDS-gnome=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
-WANTLIB-gnome=		gnome-2 gnomevfs-2
+LIB_DEPENDS-gnome=	::x11/gnome/libgnomeui
+WANTLIB-gnome=		gnome-2 gnomevfs-2 gnomeui-2
 
 RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
 LIB_DEPENDS-browser=	:xulrunner->=1.9:devel/xulrunner/1.9

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/08 09:57:39 espie Exp $
 
 COMMENT=		GNOME Application Libs
 
@@ -32,6 +32,7 @@ WANTLIB += gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
 WANTLIB += pthread-stubs xcb
+WANTLIB += gnomeui-2 gnomeprintui-2-2
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/2.5/}
 EXTRACT_SUFX=		.tar.bz2
@@ -39,8 +40,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
-			gnomeprintui-2-2::x11/gnome/libgnomeprintui
+LIB_DEPENDS=		::x11/gnome/libgnomeui \
+			::x11/gnome/libgnomeprintui
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

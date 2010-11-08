@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/27 12:52:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/08 09:57:40 espie Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += Xau c kvm pcre pthread
+WANTLIB += Xau c kvm pcre pthread glib-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		glib-2.0::devel/glib2
+LIB_DEPENDS=		::devel/glib2
 RUN_DEPENDS=		::sysutils/lsof
 
 CONFIGURE_STYLE=	gnu
