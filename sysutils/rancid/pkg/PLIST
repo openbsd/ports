@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/23 11:18:43 pea Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/08 08:24:32 jasper Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
@@ -111,12 +111,12 @@ bin/zrancid
 @man man/man5/lg.conf.5
 @man man/man5/rancid.conf.5
 @man man/man5/router.db.5
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rancid/
 share/doc/rancid/CHANGES
 share/doc/rancid/COPYING
 share/doc/rancid/FAQ
 share/doc/rancid/README
-share/doc/rancid/README.OpenBSD
 share/doc/rancid/README.lg
 share/doc/rancid/UPGRADING
 share/examples/rancid/

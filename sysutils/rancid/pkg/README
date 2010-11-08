@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2008/12/19 12:57:53 pea Exp $
+$OpenBSD: README,v 1.1 2010/11/08 08:24:32 jasper Exp $
 
 On OpenBSD, RANCID lives and works in /var/rancid, with user id _rancid.
 

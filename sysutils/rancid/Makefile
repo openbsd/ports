@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 08:24:32 jasper Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
 DISTNAME =	rancid-2.3.3
-PKGNAME =	${DISTNAME}p0v0
+REVISION =	1
+EPOCH = 	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.shrubbery.net/rancid/
@@ -34,10 +35,5 @@ USE_GROFF =	Yes
 
 pre-configure:
 	@cp ${FILESDIR}/fnlogin.in ${WRKSRC}/bin/fnlogin.in
-
-post-install:
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-		${PREFIX}/share/doc/rancid/README.OpenBSD
 
 .include <bsd.port.mk>
