@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/12 15:27:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/08 15:06:32 dcoppa Exp $
 lib/mozilla/
 lib/mozilla/plugins/
 lib/mozilla/plugins/gecko-mediaplayer-dvx.so
@@ -15,6 +15,7 @@ share/doc/gecko-mediaplayer/NEWS
 share/doc/gecko-mediaplayer/README
 share/doc/gecko-mediaplayer/javascript.txt
 share/locale/cs/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/de/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/es/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/fr/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/it/LC_MESSAGES/gecko-mediaplayer.mo
@@ -23,7 +24,3 @@ share/locale/nl/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pl/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/tr/LC_MESSAGES/gecko-mediaplayer.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gecko-mediaplayer.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

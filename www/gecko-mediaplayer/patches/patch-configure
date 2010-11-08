@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2010/09/22 15:25:26 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.5 2010/11/08 15:06:31 dcoppa Exp $
 
 use -pthread instead of -lpthread for pthreads linkage
 remove -ldl
 fix GECKO_CFLAGS and GECKO_LIBS
 
---- configure.orig	Wed Sep 22 16:12:14 2010
-+++ configure	Wed Sep 22 16:14:37 2010
-@@ -8710,8 +8710,8 @@ fi
- if test "${with_xulrunner_sdk+set}" = set; then
+--- configure.orig	Fri Nov  5 17:13:48 2010
++++ configure	Mon Nov  8 12:27:11 2010
+@@ -7206,8 +7206,8 @@ fi
+ if test "${with_xulrunner_sdk+set}" = set; then :
    withval=$with_xulrunner_sdk;
  	XULRUNNER_SDK_PREFIX=$with_xulrunner_sdk
 -	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -I$XULRUNNER_SDK_PREFIX/include/plugin -I$XULRUNNER_SDK_PREFIX/include/nspr -I$XULRUNNER_SDK_PREFIX/include/xpcom -I$XULRUNNER_SDK_PREFIX/include/string -I$XULRUNNER_SDK_PREFIX/include/java"
@@ -15,5 +15,5 @@ fix GECKO_CFLAGS and GECKO_LIBS
 +	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -DOPENBSD"
 +	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -pthread"
  	# Check whether --enable-new-libxul was given.
- if test "${enable_new_libxul+set}" = set; then
+ if test "${enable_new_libxul+set}" = set; then :
    enableval=$enable_new_libxul; usenewlibxul=$enableval
