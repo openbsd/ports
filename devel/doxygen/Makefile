@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/05 09:15:57 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 13:15:10 espie Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -27,9 +27,6 @@ USE_GROFF =	Yes
 MODULES=	converters/libiconv
 
 
-BUILD_DEPENDS +=	::devel/bison
-WANTLIB=	c m pthread stdc++
-
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
 		--install /usr/bin/install \
@@ -45,14 +42,20 @@ MODULES+=	x11/qt4
 MULTI_PACKAGES+=-gui
 .endif
 
-WANTLIB-gui=	${WANTLIB} QtGui QtXml
-LIB_DEPENDS-gui=${MODQT_LIB_DEPENDS} \
-		${LIB_DEPENDS}
-RUN_DEPENDS-gui=:doxygen-${VERSION}:${BUILD_PKGPATH}
+BUILD_DEPENDS +=	::devel/bison
+COMMON_WANTLIB =	c m pthread stdc++ ${MODLIBICONV_WANTLIB}
+COMMON_LIB_DEPENDS =	${MODLIBICONV_LIB_DEPENDS}
 
-WANTLIB-main=	${WANTLIB} z
+WANTLIB-main = ${COMMON_WANTLIB} z
+LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
 
-MAKE_FLAGS+=	CXX=${CXX} CC=${CC} _CFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+WANTLIB-gui=	${COMMON_WANTLIB} ${MODQT_WANTLIB} QtGui QtXml
+LIB_DEPENDS-gui=${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
+RUN_DEPENDS-gui=:doxygen-${VERSION}:${BASE_PKGPATH}
+
+
+MAKE_FLAGS+=	CXX=${CXX} CC=${CC} \
+		_CFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS+=	DESTDIR=
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
