@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 23:36:15 jeremy Exp $
 
 COMMENT =	script which automates a limited set of rubyforge operations
 
-DISTNAME =	rubyforge-1.0.4
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+DISTNAME =	rubyforge-2.0.0
 CATEGORIES =	devel net
 
 # MIT
@@ -16,7 +14,5 @@ PERMIT_DISTFILES_FTP =		yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	 ruby gem
-
-PKG_ARCH =	*
 
 .include <bsd.port.mk>
