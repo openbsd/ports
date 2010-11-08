@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/08 18:18:11 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -82,7 +82,7 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			gobject-2.0 png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
 			pixman-1 gio-2.0 pthread-stubs xcb \
-			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
+			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm \
 			gdk-x11-2.0 gtk-x11-2.0
 
 LIB_DEPENDS-swt=	::x11/gtk+2
