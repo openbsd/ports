@@ -1,3 +1,5 @@
+$OpenBSD: README-server,v 1.2 2010/11/08 14:57:56 ajacoutot Exp $
+
 Using PostgreSQL in an OpenBSD environment
 
 At least two different accounts are involved when working with PostgreSQL:
