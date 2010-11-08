@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 21:08:43 bluhm Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -69,6 +69,8 @@ RUN_DEPENDS =	::archivers/p5-Archive-Zip \
 		::www/p5-HTML-Format \
 		::www/p5-HTML-StripScripts-Parser \
 		::www/p5-HTML-Tree
+
+NO_REGRESS =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/lib/confdef.pm
