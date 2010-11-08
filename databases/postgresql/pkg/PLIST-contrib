@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-contrib,v 1.6 2010/03/23 10:24:45 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.7 2010/11/08 14:12:24 pea Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
 @bin bin/oid2name
+@bin bin/pg_archivecleanup
 @bin bin/pg_standby
+@bin bin/pg_upgrade
 @bin bin/pgbench
 @bin bin/vacuumlo
 lib/postgresql/_int.so
@@ -28,6 +30,7 @@ lib/postgresql/pg_buffercache.so
 lib/postgresql/pg_freespacemap.so
 lib/postgresql/pg_stat_statements.so
 lib/postgresql/pg_trgm.so
+lib/postgresql/pg_upgrade_support.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
 lib/postgresql/pgstattuple.so
@@ -76,6 +79,7 @@ share/postgresql/contrib/tablefunc.sql
 share/postgresql/contrib/test_parser.sql
 share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch2.sql
+share/postgresql/contrib/unaccent.sql
 share/postgresql/contrib/uninstall__int.sql
 share/postgresql/contrib/uninstall_adminpack.sql
 share/postgresql/contrib/uninstall_btree_gin.sql
@@ -107,5 +111,6 @@ share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
 share/postgresql/contrib/uninstall_test_parser.sql
 share/postgresql/contrib/uninstall_tsearch2.sql
+share/postgresql/contrib/uninstall_unaccent.sql
 share/postgresql/contrib/uninstall_uuid-ossp.sql
 share/postgresql/contrib/uuid-ossp.sql

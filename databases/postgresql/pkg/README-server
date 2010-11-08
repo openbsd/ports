@@ -25,27 +25,6 @@ accessed by programs/users that have the right to do so.
 Please consult the PostgreSQL website for more information, especially when
 you are upgrading an existing database installation.
 
-Auto Start and Stop
-
-To start PostgreSQL at boot and shut it down when the system shuts down,
-add the following lines to /etc/rc.local and /etc/rc.shutdown, respectively:
-
-/etc/rc.local:
-
-if [ -x !!PREFIX!!/bin/pg_ctl ]; then
-	echo -n ' postgresql'
-	su -l _postgresql -c "nohup !!PREFIX!!/bin/pg_ctl start \
-	    -D /var/postgresql/data -l /var/postgresql/logfile \
-	    -o '-D /var/postgresql/data' >/dev/null"
-fi
-
-/etc/rc.shutdown:
-
-if [ -f /var/postgresql/data/postmaster.pid ]; then
-	su -l _postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
-	     -D /var/postgresql/data"
-	rm -f /var/postgresql/data/postmaster.pid
-fi
 
 Network Connections and Tuning
 
@@ -113,7 +92,7 @@ To generate the keytab:
 
 Clients/Frontends
 
-Many applications can use the PostgreSQL database right away.  To faciliate
+Many applications can use the PostgreSQL database right away.  To facilitate
 administration of a PostgreSQL database, two clients are notable:
 
 www/phppgadmin		A web based user interface that uses PHP5

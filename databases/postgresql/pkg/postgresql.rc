@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: postgresql.rc,v 1.1 2010/11/08 14:12:24 pea Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/postgres"
+bin="${TRUEPREFIX}/bin/pg_ctl"
+datadir="/var/postgresql/data"
+
+rc_start() {
+	/usr/bin/su -l _postgresql -c \
+		"${bin} -D ${datadir} start -l /var/postgresql/logfile" \
+		>/dev/null
+}
+
+rc_stop() {
+	/usr/bin/su -l _postgresql -c \
+		"${bin} -D ${datadir} stop -m fast" >/dev/null && \
+		/bin/rm -f ${datadir}/postmaster.pid
+}
+
+rc_cmd $1

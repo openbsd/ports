@@ -1,4 +1,0 @@
-To use the postgresql server you have to create a database first.
-
-You find detailed instructions on how to install a database in the file
-${PREFIX}/share/doc/postgresql/README.OpenBSD.
