@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2009/10/09 16:09:31 steven Exp $
+$OpenBSD: README,v 1.1 2010/11/08 21:29:10 jasper Exp $
 
 You will need to have a ~/.flickcurl.conf .
 
