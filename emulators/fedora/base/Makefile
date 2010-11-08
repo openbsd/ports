@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 16:02:45 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
 PKGNAME=	fedora_base-4.0
-REVISION=	7
+REVISION=	8
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -113,8 +113,6 @@ do-install:
 .for rpm in ${RPMS:S/:0//}
 	cd ${FEDORADIR}; rpm2cpio ${RPMDIR}/${rpm} | cpio -id
 .endfor
-# fix gcpio -d creating dirs with mode 700
-	find ${FEDORADIR} -type d -perm 700 | xargs -r chmod 755
 
 # get rid of some unnecessary files and directories
 .for D in ${REMOVE_DIRS}
