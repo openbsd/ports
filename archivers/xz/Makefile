@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 20:11:13 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
-DISTNAME=	xz-4.999.9beta
-SHARED_LIBS +=  lzma                 0.0      # .0.0
+DISTNAME=	xz-5.0.0
+SHARED_LIBS=	lzma                 1.0      # .5.0
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://tukaani.org/xz/
@@ -28,7 +28,6 @@ USE_GROFF =	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-dynamic=yes \
 		--disable-threads
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 

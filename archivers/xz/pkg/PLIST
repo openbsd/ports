@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/10 15:27:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/08 20:11:13 naddy Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 %%SHARED%%
@@ -34,11 +34,11 @@ include/lzma/check.h
 include/lzma/container.h
 include/lzma/delta.h
 include/lzma/filter.h
+include/lzma/hardware.h
 include/lzma/index.h
 include/lzma/index_hash.h
 include/lzma/lzma.h
 include/lzma/stream_flags.h
-include/lzma/subblock.h
 include/lzma/version.h
 include/lzma/vli.h
 lib/liblzma.a
@@ -80,3 +80,6 @@ share/doc/xz/faq.txt
 share/doc/xz/history.txt
 share/doc/xz/lzma-file-format.txt
 share/doc/xz/xz-file-format.txt
+share/locale/cs/LC_MESSAGES/xz.mo
+share/locale/de/LC_MESSAGES/xz.mo
+share/locale/it/LC_MESSAGES/xz.mo
