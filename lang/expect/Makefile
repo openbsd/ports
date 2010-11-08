@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/11/08 09:28:25 espie Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -43,9 +43,10 @@ WANTLIB +=	${MODTK_WANTLIB}
 CONFIGURE_ARGS+=--with-tk="${MODTK_LIBDIR}" \
 		--with-tkinclude="${MODTK_INCDIR}"
 .else
-MODULES=	lang/tcl
-LIB_DEPENDS+=	${MODTCL_LIB_DEPENDS}
-CONFIGURE_ARGS+=--with-tk=no
+MODULES =	lang/tcl
+LIB_DEPENDS +=	${MODTCL_LIB_DEPENDS}
+WANTLIB +=	${MODTCL_WANTLIB}
+CONFIGURE_ARGS +=--with-tk=no
 .endif
 
 REGRESS_TARGET=	test
