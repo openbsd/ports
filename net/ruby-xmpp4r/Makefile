@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=	Ruby XMPP/Jabber library
 
 DISTNAME=	xmpp4r-0.4
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
@@ -20,8 +19,6 @@ PERMIT_DISTFILES_FTP=	yes
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
-
-PKG_ARCH=	*
 
 MODRUBY_REGRESS = rake
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=	SNMP network management library for Ruby
 
 DISTNAME=	snmp-1.0.2
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 # bsd/ruby
@@ -15,10 +14,6 @@ PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	lang/ruby
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 CONFIGURE_STYLE=ruby gem
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

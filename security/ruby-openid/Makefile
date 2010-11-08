@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=	robust library for verifying and serving OpenID identities
 
-DISTNAME=	ruby-openid-2.1.6
-PKGNAME=	${DISTNAME}
-REVISION =      1
+DISTNAME=	ruby-${PKGNAME}
+PKGNAME=	openid-2.1.6
+REVISION =      2
 CATEGORIES=	security
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
-
-PKG_ARCH=	*
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -rubygems admin/runtests.rb

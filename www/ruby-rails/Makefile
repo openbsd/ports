@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/28 20:12:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/08 23:28:56 jeremy Exp $
 
 COMMENT=	ruby MVC web application framework
 
-DISTNAME=	rails-2.3.4
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+VERSION=	2.3.4
+DISTNAME=	rails-${VERSION}
+REVISION=	1
 CATEGORIES=	www
 
 # MIT License
@@ -16,16 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-rake->=0.7.3:devel/ruby-rake \
-		:ruby-activesupport->=2.3.4:devel/ruby-activesupport \
-		:ruby-activerecord->=2.3.4:databases/ruby-activerecord \
-		:ruby-actionpack->=2.3.4:devel/ruby-actionpack \
-		:ruby-actionmailer->=2.3.4:mail/ruby-actionmailer \
-		:ruby-activeresource->=2.3.4:www/ruby-activeresource \
-		:ruby-gems->=1.3.2:devel/ruby-gems
+RUN_DEPENDS=	${MODRUBY_RAKE_DEPENDS} \
+		:${MODRUBY_PKG_PREFIX}-activesupport->=${VERSION}:devel/ruby-activesupport,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-activerecord->=${VERSION}:databases/ruby-activerecord,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-actionpack->=${VERSION}:devel/ruby-actionpack,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-actionmailer->=${VERSION}:mail/ruby-actionmailer,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-activeresource->=${VERSION}:www/ruby-activeresource,${FLAVOR}
 
 CONFIGURE_STYLE=ruby gem
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

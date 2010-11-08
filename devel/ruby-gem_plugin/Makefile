@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT=	install Ruby gems as plugins
 
 DISTNAME=	gem_plugin-0.2.3
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # RubyLicense
@@ -18,8 +17,6 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/ruby-rake
-
-PKG_ARCH=	*
+RUN_DEPENDS=	${MODRUBY_RAKE_DEPENDS}
 
 .include <bsd.port.mk>

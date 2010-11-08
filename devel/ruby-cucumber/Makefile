@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/29 21:26:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	execute plain-text documents as automated functional tests
 
-V =		0.3.96
-DISTNAME =	cucumber-$V
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	1
+DISTNAME =	cucumber-0.3.96
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =
@@ -19,17 +17,15 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::devel/ruby-term-ansicolor \
-			:ruby-treetop->=1.3.0:textproc/ruby-treetop \
-			::devel/ruby-diff-lcs \
-			::textproc/ruby-builder
+RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-term-ansicolor-*:devel/ruby-term-ansicolor,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-treetop->=1.3.0:textproc/ruby-treetop,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-diff-lcs-*:devel/ruby-diff-lcs,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-builder-*:textproc/ruby-builder,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-PKG_ARCH =		*
-
-REGRESS_DEPENDS =	:ruby-cucumber->=${V}:devel/ruby-cucumber \
-			:ruby-hoe->=2.3.3:devel/ruby-hoe
+REGRESS_DEPENDS =	:${FULLPKGNAME}:${BUILD_PKGPATH} \
+			:${MODRUBY_PKG_PREFIX}-hoe->=2.3.3:devel/ruby-hoe,${FLAVOR}
 
 MODRUBY_REGRESS =	rake rspec
 

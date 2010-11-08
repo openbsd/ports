@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	recursive descent parser combinator framework
 
 DISTNAME =	rparsec-1.0
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	devel
 
 # BSD
@@ -16,8 +15,6 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
-
-PKG_ARCH =	*
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -I${WRKBUILD}/rparsec:${WRKBUILD}/test/src \

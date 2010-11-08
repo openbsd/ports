@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	sexp helper library for parsetree
 
 DISTNAME =	sexp_processor-3.0.3
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	devel
 
 # MIT
@@ -17,11 +16,9 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
 
-GEM_SKIPDEPENDS =	hoe
-
-REGRESS_DEPENDS = ::devel/ruby-hoe
+BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
 MODRUBY_REGRESS = rake
 
-PKG_ARCH =	*
 
 .include <bsd.port.mk>

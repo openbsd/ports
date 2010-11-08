@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/26 21:20:20 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT=		Ruby library to physically locate iPhones
 
-VERSION=		0.2.0
-DISTNAME=		findmyiphone-${VERSION}
-PKGNAME=		ruby-findmyiphone-${VERSION}
-REVISION=		2
+DISTNAME=		findmyiphone-0.2.0
+REVISION=		3
 CATEGORIES=		geo
 
 HOMEPAGE=		http://github.com/mattb/findmyiphone
@@ -21,11 +19,10 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::www/ruby-mechanize \
-			::converters/ruby-json \
+RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-mechanize-*:www/ruby-mechanize,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-json-*:converters/ruby-json,${FLAVOR} \
 			${MODRUBY_ICONV_DEPENDS}
 
 MODRUBY_REGRESS=	rake
-PKG_ARCH=		*
 
 .include <bsd.port.mk>

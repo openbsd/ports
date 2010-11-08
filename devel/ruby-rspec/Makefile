@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT=		Ruby framework for Behaviour Driven Development
 
 DISTNAME=		rspec-1.2.8
-PKGNAME=		ruby-${DISTNAME}
-REVISION =      	0
+REVISION =      	1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://rspec.rubyforge.net/
@@ -18,7 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-PKG_ARCH=		*
 
 .include <bsd.port.mk>

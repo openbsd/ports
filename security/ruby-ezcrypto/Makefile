@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/28 20:12:18 jeremy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=		Ruby interface to openssl
 
 DISTNAME=		ezcrypto-0.7.2
-PKGNAME=		ruby-${DISTNAME}
-REVISION =      	0
+REVISION =      	1
 CATEGORIES=		security
 
 HOMEPAGE=		http://rubyforge.org/projects/ezcrypto/
@@ -20,7 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

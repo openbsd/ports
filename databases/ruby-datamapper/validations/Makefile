@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/23 22:30:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	provides validations for DataMapper model classes
 
 DISTNAME =	dm-validations-${VERSION}
-REVISION =      0
+REVISION =      1
 
-RUN_DEPENDS =	:ruby-dm-core->=${VERSION}:databases/ruby-datamapper/core
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-dm-core->=${VERSION}:databases/ruby-datamapper/core,${FLAVOR}
 
-REGRESS_DEPENDS =	::databases/ruby-do_sqlite3
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-do_sqlite3-*:databases/ruby-do_sqlite3,${FLAVOR}
 
 .include <bsd.port.mk>

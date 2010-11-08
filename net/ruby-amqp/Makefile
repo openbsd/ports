@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/15 15:36:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	simple AMQP driver for Ruby
 
 DISTNAME =	amqp-0.6.7
-PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	net
 
 # Ruby license
@@ -17,10 +17,10 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::net/ruby-eventmachine
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-eventmachine-*:net/ruby-eventmachine,${FLAVOR}
 
-REGRESS_DEPENDS =	::${BUILD_PKGPATH} \
-			::devel/ruby-bacon 
+REGRESS_DEPENDS =	:${FULLPKGNAME}:${BUILD_PKGPATH} \
+			:${MODRUBY_PKG_PREFIX}-bacon-*:devel/ruby-bacon,${FLAVOR} 
 MODRUBY_REGRESS =	rake 
 RAKE_REGRESS_TARGET =	spec
 

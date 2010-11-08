@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=		flexible HTML parser
 
-VERSION=		0.8.1
-DISTNAME=		hpricot-${VERSION}
-PKGNAME=		ruby-${DISTNAME}
-REVISION=		0
+DISTNAME=		hpricot-0.8.1
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/
@@ -16,13 +14,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		::devel/ruby-rake
+BUILD_DEPENDS=		${MODRUBY_RAKE_DEPENDS}
 
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
 
-REGRESS_DEPENDS=	::textproc/ruby-hpricot
+REGRESS_DEPENDS=	:${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
 	@cd ${WRKSRC} && /usr/local/bin/ruby -rubygems -Ilib:test:lib \

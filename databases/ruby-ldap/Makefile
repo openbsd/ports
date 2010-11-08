@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
-DISTNAME=	ruby-ldap-0.9.7
-REVISION=	9
+PKGNAME=	ldap-0.9.7
+DISTNAME=	ruby-${PKGNAME}
+REVISION=	10
 CATEGORIES=	databases
 
 HOMEPAGE=	http://ruby-ldap.sourceforge.net/
@@ -20,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ruby-ldap/}
 
 MODULES=		lang/ruby
 
-WANTLIB=		crypto pthread ssl ldap.>=9 ldap_r.>=9 lber.>=9
+WANTLIB=		crypto pthread ssl ldap ldap_r lber
 
 LIB_DEPENDS=		::databases/openldap
 

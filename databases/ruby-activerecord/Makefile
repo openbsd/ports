@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	object relation model implementation for ruby
 
 DISTNAME =	activerecord-2.3.4
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	databases
 
 # MIT License
@@ -16,15 +15,13 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS = 	:ruby-activesupport->=2.3.4:devel/ruby-activesupport
+RUN_DEPENDS = 	:${MODRUBY_PKG_PREFIX}-activesupport-2.3.4:devel/ruby-activesupport,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-PKG_ARCH =	*
-
 MODRUBY_REGRESS =	rake
-REGRESS_DEPENDS =	:ruby-mysql-*:databases/ruby-mysql \
-			:ruby-sqlite3-*:databases/ruby-sqlite3 \
-			:ruby-pg-*:databases/ruby-pg
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mysql-*:databases/ruby-mysql,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-sqlite3-*:databases/ruby-sqlite3,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-pg-*:databases/ruby-pg,${FLAVOR}
 
 .include <bsd.port.mk>

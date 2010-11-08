@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/23 22:30:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT =	Fast, Nimble PDF Generation For Ruby - prawn-format
 
 DISTNAME =	prawn-format-0.2.0.1
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
-RUN_DEPENDS =            ::textproc/ruby-prawn/core
+RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-prawn-core-*:textproc/ruby-prawn/core,${FLAVOR}
 
 MODRUBY_REGRESS =	rake
-REGRESS_DEPENDS =	::devel/ruby-echoe \
-			::textproc/ruby-prawn/prawn
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-echoe-*:devel/ruby-echoe,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-prawn-*:textproc/ruby-prawn/prawn,${FLAVOR}
 
 .include <bsd.port.mk>

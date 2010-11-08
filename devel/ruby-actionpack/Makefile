@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	eases web-request routing, handling, and response
 
 DISTNAME =	actionpack-2.3.4
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	devel
 
 # MIT License
@@ -16,18 +15,16 @@ PERMIT_DISTFILES_FTP =   Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:ruby-activesupport->=2.3.4:devel/ruby-activesupport \
-		:ruby-rack->=1.0.0:www/ruby-rack
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-activesupport->=2.3.4:devel/ruby-activesupport,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-rack->=1.0.0:www/ruby-rack,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =	*
 
 post-extract:
 	@find ${WRKSRC} -name '*~' | xargs -r rm -f
 
-REGRESS_DEPENDS =	:ruby-mocha->=0.9.7:devel/ruby-mocha \
-			:ruby-activerecord-*:databases/ruby-activerecord
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha->=0.9.7:devel/ruby-mocha,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-activerecord-*:databases/ruby-activerecord,${FLAVOR}
 MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

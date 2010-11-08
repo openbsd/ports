@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	caches (Ruby source) files
 
 DISTNAME =	linecache-0.43
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>

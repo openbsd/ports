@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/28 20:12:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:56 jeremy Exp $
 
 COMMENT =	simple REST client for Ruby
 
 DISTNAME =	rest-client-1.0.3
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	www
 
 HOMEPAGE =	http://rest-client.heroku.com/
@@ -18,8 +17,6 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 MODRUBY_REGRESS =	rake rspec
 

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =		basic APIs for localization
 
 DISTNAME =		locale-2.0.4
-PKGNAME =		ruby-${DISTNAME}
-REVISION =      	0
+REVISION =      	1
 CATEGORIES =		devel
 
-HOMEPAGE =
+HOMEPAGE =		http://www.yotabanana.com/hiki/ruby-locale.html
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
@@ -18,8 +17,6 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 MODRUBY_REGRESS =	rake
 

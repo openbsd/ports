@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 14:48:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT=		small RSpec clone
 
 DISTNAME=		bacon-1.1.0
-PKGNAME=		ruby-${DISTNAME}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://chneukirchen.org/repos/bacon/README
@@ -20,8 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-PKG_ARCH=		*
 
 MODRUBY_REGRESS=	rake
 

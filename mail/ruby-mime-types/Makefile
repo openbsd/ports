@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT=		MIME type library for Ruby
 
 DISTNAME=		mime-types-1.16
-PKGNAME=		ruby-${DISTNAME}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://mime-types.rubyforge.org/
@@ -18,7 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-PKG_ARCH=		*
 
 .include <bsd.port.mk>

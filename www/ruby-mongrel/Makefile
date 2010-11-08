@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 23:28:56 jeremy Exp $
 
 COMMENT=	fast HTTP library and server for Ruby
 
 DISTNAME=	mongrel-1.1.5
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	Jason LaRiviere <jason@indelicate.net>
@@ -20,15 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-daemons->=1.0.3:devel/ruby-daemons \
-		:ruby-gem_plugin->=0.2.3:devel/ruby-gem_plugin \
-		:ruby-fastthread->=1.0.1:devel/ruby-fastthread
-
-GEM_SKIPDEPENDS=cgi_multipart_eof_fix
+RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-daemons->=1.0.3:devel/ruby-daemons,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-gem_plugin->=0.2.3:devel/ruby-gem_plugin,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-fastthread->=1.0.1:devel/ruby-fastthread,${FLAVOR}
 
 CONFIGURE_STYLE=ruby gem ext
 
-REGRESS_DEPENDS=:${PKGNAME}:www/ruby-mongrel
+REGRESS_DEPENDS=:${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
 	@cd ${WRKDIST} && touch Rakefile && ${RUBY} setup.rb test && \

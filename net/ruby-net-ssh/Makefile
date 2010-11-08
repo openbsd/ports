@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT =	pure-ruby implementation of the SSH2 client protocol
 
 DISTNAME =	net-ssh-2.0.15
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	net
 
 # bsd/ruby
@@ -16,16 +15,13 @@ PERMIT_DISTFILES_FTP =		yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:ruby-highline-*:devel/ruby-highline
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:ruby-mocha-*:devel/ruby-mocha \
-			::devel/ruby-test-unit
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha-*:devel/ruby-mocha,${FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -Ilib -rubygems test/test_all.rb
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

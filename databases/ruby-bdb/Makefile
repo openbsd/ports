@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT=		ruby interface to Berkeley DB
 DISTNAME=		bdb-0.6.2
-PKGNAME=		ruby-${DISTNAME}
-REVISION=		8
+REVISION=		9
 CATEGORIES=		databases
 
 HOMEPAGE=		http://moulon.inra.fr/ruby/bdb.html
@@ -34,8 +33,8 @@ EXAMPLES=		basic.rb cats.rb clean.rb cursor.rb \
 			queue.rb recno.rb record.rb txn.rb \
 			zeroc.rb wordlist wordtest
 
-DOC_DIR=		${MODRUBY_DOCDIR}/ruby-bdb
-EXAMPLE_DIR=		${MODRUBY_EXAMPLEDIR}/ruby-bdb
+DOC_DIR=		${MODRUBY_DOCDIR}/bdb
+EXAMPLE_DIR=		${MODRUBY_EXAMPLEDIR}/bdb
 
 pre-install:
 		@perl -i -pe 's,/usr,${LOCALBASE},' ${WRKSRC}/examples/*.rb

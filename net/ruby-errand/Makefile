@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/06 07:30:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	bindings for RRD functions
 
 DISTNAME =	errand-0.7.2
-PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	net
 
 # MIT
@@ -15,8 +15,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 RUN_DEPENDS =		::net/rrdtool,-ruby
 

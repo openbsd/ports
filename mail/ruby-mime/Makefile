@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	MIME library for Ruby
 
 DISTNAME =	mime-0.1
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	mail
 
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
@@ -19,7 +18,6 @@ HOMEPAGE =	http://mime.rubyforge.org/
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
-PKG_ARCH =	*
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -Ilib test/mime_test.rb

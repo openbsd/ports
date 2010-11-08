@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT=		library for making beautiful graphs
 
 DISTNAME=		gruff-0.3.4
-PKGNAME=		ruby-${DISTNAME}
-REVISION =      	0
+REVISION =      	1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://nubyonrails.com/pages/gruff/
@@ -20,13 +19,9 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::graphics/ruby-rmagick
+RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-rmagick-*:graphics/ruby-rmagick,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
 
-GEM_SKIPDEPENDS=	hoe
-
-PKG_ARCH=		*
-
-REGRESS_DEPENDS=	::devel/ruby-hoe
 MODRUBY_REGRESS=	rake
 
 pre-regress:

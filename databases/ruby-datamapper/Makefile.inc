@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2010/11/08 23:28:53 jeremy Exp $
 
 VERSION ?=	0.10.1
-PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	databases
 
 HOMEPAGE ?=	http://www.datamapper.org/
@@ -17,7 +16,5 @@ MODULES ?= lang/ruby
 BUILD_DEPENDS ?= ${RUN_DEPENDS}
 
 CONFIGURE_STYLE ?= ruby gem
-
-PKG_ARCH ?=	*
 
 MODRUBY_REGRESS ?= rake rspec

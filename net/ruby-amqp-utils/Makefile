@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/15 15:40:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	AMQP command line utilities
 
 DISTNAME =	amqp-utils-0.2.3
-PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	net
 
 # MIT
@@ -16,16 +16,12 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
 
-PKG_ARCH =	*
-
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:ruby-facets->=2.7.0:devel/ruby-facets \
-		:ruby-trollop->=1.10.2:devel/ruby-trollop \
-		:ruby-amqp->=0.6.0:net/ruby-amqp \
-		:ruby-json->=1.1.6:converters/ruby-json \
-		::devel/ruby-clio
-
-GEM_SKIPDEPENDS = trollop
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-facets->=2.7.0:devel/ruby-facets,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-trollop->=1.10.2:devel/ruby-trollop,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-amqp->=0.6.0:net/ruby-amqp,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-json->=1.1.6:converters/ruby-json,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-clio-*:devel/ruby-clio,${FLAVOR}
 
 MODRUBY_REGRESS = rake
 

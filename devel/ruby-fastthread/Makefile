@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT=	optimized replacement for Ruby thread.rb primitives
 
 DISTNAME=	fastthread-1.0.7
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # Ruby's license
@@ -17,7 +16,7 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem ext
 
-REGRESS_DEPENDS=:${PKGNAME}:devel/ruby-fastthread
+REGRESS_DEPENDS=:${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress: fake
 	@cd ${WRKBUILD} && ${RUBY} -rubygems test/test_all.rb

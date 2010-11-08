@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/05 19:23:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	generic interface to multiple Ruby template engines 
 
 DISTNAME =	tilt-1.1
-PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel textproc
 
 HOMEPAGE =	http://github.com/rtomayko/tilt
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 .include <bsd.port.mk>

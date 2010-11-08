@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=	HTML templating language for Ruby
 
 DISTNAME=	markaby-0.5
-PKGNAME=	ruby-${DISTNAME}
-REVISION =      3
+REVISION =      4
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://code.whytheluckystiff.net/markaby/
@@ -20,9 +19,7 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-builder->=2.1.1:textproc/ruby-builder
-
-PKG_ARCH=	*
+RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-builder->=2.1.1:textproc/ruby-builder,${FLAVOR}
 
 MODRUBY_REGRESS=	rake
 

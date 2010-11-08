@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2010/11/08 23:28:55 jeremy Exp $
 
 VERSION ?=	0.5.0.1
-PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	textproc
 
 HOMEPAGE ?=	http://prawn.majesticseacreature.com/
@@ -19,5 +18,3 @@ MODULES ?=	lang/ruby
 BUILD_DEPENDS ?= ${RUN_DEPENDS}
 
 CONFIGURE_STYLE ?= ruby gem
-
-PKG_ARCH ?=	*

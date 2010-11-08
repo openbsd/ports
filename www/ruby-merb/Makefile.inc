@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.8 2010/09/28 21:40:13 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2010/11/08 23:28:56 jeremy Exp $
 
 VERSION ?=	1.0.15
-PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	www
 
 HOMEPAGE ?=	http://www.merbivore.com/
@@ -19,5 +18,3 @@ MODULES ?=	lang/ruby
 BUILD_DEPENDS ?= ${RUN_DEPENDS}
 
 CONFIGURE_STYLE ?= ruby gem
-
-PKG_ARCH ?=	*

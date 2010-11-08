@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	utility classes and extensions for rails framework 
 
 DISTNAME =	activesupport-2.3.4
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	devel
 
 # MIT License
@@ -15,11 +14,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/ruby
 
-RUN_DEPENDS =	${MODRUBY_ICONV_DEPENDS} \
-		::devel/ruby-gems
+RUN_DEPENDS =	${MODRUBY_ICONV_DEPENDS}
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =	*
 
 .include <bsd.port.mk>

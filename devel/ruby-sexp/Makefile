@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
 
 COMMENT =	parse strings of Lisp style s-expressions
 
 DISTNAME =	sexp-0.2.1
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # MIT
@@ -18,8 +17,6 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:ruby-rparsec->=1.0:devel/ruby-rparsec
-
-PKG_ARCH =		*
+RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-rparsec->=1.0:devel/ruby-rparsec,${FLAVOR}
 
 .include <bsd.port.mk>

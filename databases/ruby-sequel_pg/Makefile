@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	faster SELECTs when using ruby-sequel with ruby-pg
 
 DISTNAME =	sequel_pg-1.0.1
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -20,8 +19,8 @@ WANTLIB =	pq.>=2
 MODULES =	lang/ruby
 
 LIB_DEPENDS =	::databases/postgresql
-RUN_DEPENDS =	::databases/ruby-sequel \
-		::databases/ruby-pg
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-sequel-*:databases/ruby-sequel,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-pg-*:databases/ruby-pg,${FLAVOR}
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE = ruby gem ext

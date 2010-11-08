@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	faster implementation of the standard debug.rb - base
 
 DISTNAME =	ruby-debug-base-0.10.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::devel/ruby-linecache
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-linecache-*:devel/ruby-linecache,${FLAVOR}
 
 MODULES =	lang/ruby
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
 DISTNAME =	treetop-1.3.0
-PKGNAME =	ruby-${DISTNAME}
-REVISION =      0
+REVISION =      1
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://treetop.rubyforge.org/
@@ -18,10 +17,8 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:ruby-polyglot->=0.2.5:devel/ruby-polyglot
+RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-polyglot->=0.2.5:devel/ruby-polyglot,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 .include <bsd.port.mk>

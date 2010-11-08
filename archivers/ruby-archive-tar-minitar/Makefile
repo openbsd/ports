@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 20:12:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
 DISTNAME =	archive-tar-minitar-0.5.2
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	archivers
 
 HOMEPAGE =	http://ruwiki.rubyforge.org/
@@ -19,8 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-PKG_ARCH=		*
-
 do-regress:
 	@cd ${WRKBUILD}/tests && ${RUBY} testall.rb
+
 .include <bsd.port.mk>

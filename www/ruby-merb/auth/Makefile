@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/23 22:30:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:56 jeremy Exp $
 
 COMMENT =	extensible architecture for authentication
 
 DISTNAME =	merb-auth-${VERSION}
-REVISION =	0
+REVISION =	1
 
-RUN_DEPENDS =	:ruby-merb-auth-core->=${VERSION}:www/ruby-merb/auth-core \
-		:ruby-merb-auth-more->=${VERSION}:www/ruby-merb/auth-more \
-		:ruby-merb-auth-slice-password->=${VERSION}:www/ruby-merb/auth-slice-password
+RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-merb-auth-core->=${VERSION}:www/ruby-merb/auth-core,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-merb-auth-more->=${VERSION}:www/ruby-merb/auth-more,${FLAVOR} \
+		:${MODRUBY_PKG_PREFIX}-merb-auth-slice-password->=${VERSION}:www/ruby-merb/auth-slice-password,${FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 21:09:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:53 jeremy Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
 DISTNAME =	echoe-3.2
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/fauna
@@ -18,12 +17,10 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::devel/ruby-rake \
-			::devel/ruby-rubyforge \
-			::devel/ruby-highline
+RUN_DEPENDS =		${MODRUBY_RAKE_DEPENDS} \
+			:${MODRUBY_PKG_PREFIX}-rubyforge-*:devel/ruby-rubyforge,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 .include <bsd.port.mk>

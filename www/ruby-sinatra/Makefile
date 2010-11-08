@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/05 19:25:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:56 jeremy Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
 DISTNAME =	sinatra-1.0
-PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.sinatrarb.com/
@@ -19,15 +19,13 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::devel/ruby-tilt \
-			:ruby-rack->=0.9.1:www/ruby-rack
-
-PKG_ARCH =		*
+RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-tilt-*:devel/ruby-tilt,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-rack->=1.0.0:www/ruby-rack,${FLAVOR}
 
 MODRUBY_REGRESS =	rake
 
-REGRESS_DEPENDS =	::textproc/ruby-haml \
-			::textproc/ruby-builder \
-			::devel/ruby-rack-test
+REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-haml-*:textproc/ruby-haml,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-builder-*:textproc/ruby-builder,${FLAVOR} \
+			:${MODRUBY_PKG_PREFIX}-rack-test-*:devel/ruby-rack-test,${FLAVOR}
 
 .include <bsd.port.mk>

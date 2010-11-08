@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT =	HTML entity encoding and decoding for Ruby
 
-# www/ruby-typo needs 4.0.0. Check it before you update!
 DISTNAME =	htmlentities-4.0.0
-PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc www
 
 HOMEPAGE =	http://htmlentities.rubyforge.org/
@@ -19,8 +17,6 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-PKG_ARCH =		*
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} test/test_all.rb

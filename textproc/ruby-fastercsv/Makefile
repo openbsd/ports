@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/28 20:12:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 23:28:55 jeremy Exp $
 
 COMMENT=	faster Ruby CSV library
 
 DISTNAME=	fastercsv-1.5.0
-PKGNAME=	ruby-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 # GPLv2
@@ -16,8 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
-
-PKG_ARCH=	*
 
 MODRUBY_REGRESS= rake
 
