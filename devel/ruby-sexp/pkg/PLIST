@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/27 19:43:27 pirofti Exp $
-lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/.require_paths
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sexp.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sexpressions.rb
-lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
+@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:41 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.require_paths
+${GEM_LIB}/gems/${DISTNAME}/sexp.rb
+${GEM_LIB}/gems/${DISTNAME}/sexpressions.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/17 20:11:53 bernd Exp $
-lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/ncurses_bin.so
-lib/ruby/site_ruby/${MODRUBY_REV}/ncurses.rb
-share/doc/ruby/
-share/doc/ruby/ruby-ncurses/
-share/doc/ruby/ruby-ncurses/README
-share/examples/ruby/
-share/examples/ruby/ruby-ncurses/
-share/examples/ruby/ruby-ncurses/LICENSES_for_examples
-share/examples/ruby/ruby-ncurses/example.rb
-share/examples/ruby/ruby-ncurses/form.rb
-share/examples/ruby/ruby-ncurses/form2.rb
-share/examples/ruby/ruby-ncurses/hello_ncurses.rb
-share/examples/ruby/ruby-ncurses/rain.rb
-share/examples/ruby/ruby-ncurses/read_line.rb
-share/examples/ruby/ruby-ncurses/tclock.rb
-share/examples/ruby/ruby-ncurses/test_scanw.rb
+@comment $OpenBSD: PLIST,v 1.6 2010/11/08 23:24:40 jeremy Exp $
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/ncurses_bin.so
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/ncurses.rb
+${MODRUBY_RELDOCDIR}/
+${MODRUBY_RELDOCDIR}/ncurses/
+${MODRUBY_RELDOCDIR}/ncurses/README
+${MODRUBY_RELEXAMPLEDIR}/
+${MODRUBY_RELEXAMPLEDIR}/ncurses/
+${MODRUBY_RELEXAMPLEDIR}/ncurses/LICENSES_for_examples
+${MODRUBY_RELEXAMPLEDIR}/ncurses/example.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/form.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/form2.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/hello_ncurses.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/rain.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/read_line.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/tclock.rb
+${MODRUBY_RELEXAMPLEDIR}/ncurses/test_scanw.rb
