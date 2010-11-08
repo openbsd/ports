@@ -1,44 +1,26 @@
-$OpenBSD: patch-src_main_c,v 1.6 2010/07/08 06:29:12 dcoppa Exp $
-
-fixes from upstream svn:
-fix memory leak when we have an invalid item to play
-change metadata timeout count from 10 to 50 (fix upstream bug #391)
+$OpenBSD: patch-src_main_c,v 1.7 2010/11/08 15:04:15 dcoppa Exp $
 
 set some sane defaults:
 use mplayer's software volume control (see pkg/MESSAGE)
 disable bar animation in full screen
 use xscrnsaver controls over gnome-power-manager
 
---- src/main.c.orig	Thu Feb 25 17:01:41 2010
-+++ src/main.c	Wed May  5 08:57:01 2010
-@@ -260,6 +260,8 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
-     } else {
-         if (verbose > 1)
-             printf("iter is invalid, nothing to play\n");
-+        g_free(thread_data);
-+        thread_data = NULL;
-         return 0;
-     }
- 
-@@ -281,7 +283,7 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
-     if (!streaming_media(uri) && !device_name(uri)) {
-         i = 0;
-         if (playable) {
--            while (demuxer == NULL && i < 10) {
-+            while (demuxer == NULL && i < 50) {
-                 g_free(title);
-                 g_free(artist);
-                 g_free(album);
-@@ -688,7 +690,7 @@ int main(int argc, char *argv[])
+--- src/main.c.orig	Tue Oct 19 18:33:40 2010
++++ src/main.c	Mon Nov  8 15:43:36 2010
+@@ -689,9 +689,9 @@ int main(int argc, char *argv[])
      playlist_visible = FALSE;
      disable_fullscreen = FALSE;
      disable_framedrop = FALSE;
 -    softvol = FALSE;
+-    remember_softvol = FALSE;
+-    volume_softvol = -1;
 +    softvol = TRUE;
-     remember_softvol = FALSE;
-     volume_softvol = -1;
++    remember_softvol = TRUE;
++    volume_softvol = 50;
      volume_gain = 0;
-@@ -703,7 +705,7 @@ int main(int argc, char *argv[])
+     subtitlefont = NULL;
+     subtitle_codepage = NULL;
+@@ -705,7 +705,7 @@ int main(int argc, char *argv[])
      reallyverbose = 0;
      embedding_disabled = FALSE;
      disable_pause_on_click = FALSE;
@@ -47,12 +29,12 @@ use xscrnsaver controls over gnome-power-manager
      auto_hide_timeout = 3;
      use_mediakeys = TRUE;
      use_defaultpl = FALSE;
-@@ -742,7 +744,7 @@ int main(int argc, char *argv[])
+@@ -744,7 +744,7 @@ int main(int argc, char *argv[])
      start_second = 0;
      play_length = 0;
      save_loc = TRUE;
 -    use_xscrnsaver = FALSE;
 +    use_xscrnsaver = TRUE;
      screensaver_disabled = FALSE;
- 
-     sa.sa_handler = hup_handler;
+     update_control_flag = FALSE;
+     gchar *filename;

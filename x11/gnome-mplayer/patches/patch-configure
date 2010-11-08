@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.3 2010/09/23 17:06:18 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.4 2010/11/08 15:04:15 dcoppa Exp $
 
 don't check for libgpod 0.6.x: it's not in our ports tree
 disable gnome-power-manager support
 
---- configure.orig	Mon Feb 22 22:46:24 2010
-+++ configure	Thu Sep 23 18:16:27 2010
-@@ -653,8 +653,6 @@ GPOD_CFLAGS
+--- configure.orig	Fri Nov  5 17:16:53 2010
++++ configure	Mon Nov  8 11:10:05 2010
+@@ -609,8 +609,6 @@ GPOD_CFLAGS
  GPOD07_LIBS
  GPOD07_CFLAGS
  GPOD_DEFINES
@@ -14,7 +14,7 @@ disable gnome-power-manager support
  NOTIFY_DEFINES
  NOTIFY_LIBS
  NOTIFY_CFLAGS
-@@ -855,8 +853,6 @@ ALSA_CFLAGS
+@@ -818,8 +816,6 @@ ALSA_CFLAGS
  ALSA_LIBS
  NOTIFY_CFLAGS
  NOTIFY_LIBS
@@ -23,7 +23,7 @@ disable gnome-power-manager support
  GPOD07_CFLAGS
  GPOD07_LIBS
  MUSICBRAINZ_CFLAGS
-@@ -1562,9 +1558,6 @@ Some influential environment variables:
+@@ -1519,9 +1515,6 @@ Some influential environment variables:
    NOTIFY_CFLAGS
                C compiler flags for NOTIFY, overriding pkg-config
    NOTIFY_LIBS linker flags for NOTIFY, overriding pkg-config
@@ -33,22 +33,22 @@ disable gnome-power-manager support
    GPOD07_CFLAGS
                C compiler flags for GPOD07, overriding pkg-config
    GPOD07_LIBS linker flags for GPOD07, overriding pkg-config
-@@ -9879,87 +9872,6 @@ fi
- if test "x$with_libgpod" != xno; then
+@@ -8338,84 +8331,6 @@ fi
+ if test "x$with_libgpod" != xno; then :
  
  pkg_failed=no
--{ $as_echo "$as_me:$LINENO: checking for GPOD06" >&5
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GPOD06" >&5
 -$as_echo_n "checking for GPOD06... " >&6; }
 -
 -if test -n "$GPOD06_CFLAGS"; then
 -    pkg_cv_GPOD06_CFLAGS="$GPOD06_CFLAGS"
 - elif test -n "$PKG_CONFIG"; then
 -    if test -n "$PKG_CONFIG" && \
--    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\"") >&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "libgpod-1.0 <= 0.6.0") 2>&5
 -  ac_status=$?
--  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
 -  pkg_cv_GPOD06_CFLAGS=`$PKG_CONFIG --cflags "libgpod-1.0 <= 0.6.0" 2>/dev/null`
 -else
 -  pkg_failed=yes
@@ -60,11 +60,11 @@ disable gnome-power-manager support
 -    pkg_cv_GPOD06_LIBS="$GPOD06_LIBS"
 - elif test -n "$PKG_CONFIG"; then
 -    if test -n "$PKG_CONFIG" && \
--    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\"") >&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "libgpod-1.0 <= 0.6.0") 2>&5
 -  ac_status=$?
--  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
 -  pkg_cv_GPOD06_LIBS=`$PKG_CONFIG --libs "libgpod-1.0 <= 0.6.0" 2>/dev/null`
 -else
 -  pkg_failed=yes
@@ -90,22 +90,20 @@ disable gnome-power-manager support
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$GPOD06_PKG_ERRORS" >&5
 -
--	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
--                { $as_echo "$as_me:$LINENO: WARNING: Compiling without libgpod 0.6.0 support" >&5
+-                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Compiling without libgpod 0.6.0 support" >&5
 -$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
 -elif test $pkg_failed = untried; then
--	{ $as_echo "$as_me:$LINENO: WARNING: Compiling without libgpod 0.6.0 support" >&5
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Compiling without libgpod 0.6.0 support" >&5
 -$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
 -else
 -	GPOD06_CFLAGS=$pkg_cv_GPOD06_CFLAGS
 -	GPOD06_LIBS=$pkg_cv_GPOD06_LIBS
--        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 -$as_echo "yes" >&6; }
 -	GPOD_DEFINES="-DHAVE_GPOD -DGPOD_06"
--cat >>confdefs.h <<\_ACEOF
--#define GPOD_ENABLED 1
--_ACEOF
+-$as_echo "#define GPOD_ENABLED 1" >>confdefs.h
 -
 -fi
 -
@@ -114,16 +112,15 @@ disable gnome-power-manager support
 -
 -fi
 -
--
--if test "x$with_libgpod" != xno; then
+-if test "x$with_libgpod" != xno; then :
 -
 -pkg_failed=no
- { $as_echo "$as_me:$LINENO: checking for GPOD07" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GPOD07" >&5
  $as_echo_n "checking for GPOD07... " >&6; }
  
-@@ -10038,8 +9950,8 @@ fi
- fi
+@@ -8491,8 +8406,8 @@ fi
  
+ fi
  
 -GPOD_CFLAGS="$GPOD06_CFLAGS $GPOD07_CFLAGS"
 -GPOD_LIBS="$GPOD06_LIBS $GPOD07_LIBS"
@@ -132,52 +129,44 @@ disable gnome-power-manager support
  
  
  
-@@ -10294,48 +10206,6 @@ _ACEOF
+@@ -8749,40 +8664,6 @@ $as_echo "#define SS_INHIBIT 0" >>confdefs.h
  
  
  
 -# Check whether --with-gpm-new-method was given.
--if test "${with_gpm_new_method+set}" = set; then
+-if test "${with_gpm_new_method+set}" = set; then :
 -  withval=$with_gpm_new_method; CHECK_GPM=no
--cat >>confdefs.h <<\_ACEOF
--#define SM_INHIBIT 1
--_ACEOF
+-$as_echo "#define SM_INHIBIT 1" >>confdefs.h
 -
 -fi
 -
 -
 -# Check whether --with-gpm-old-method was given.
--if test "${with_gpm_old_method+set}" = set; then
+-if test "${with_gpm_old_method+set}" = set; then :
 -  withval=$with_gpm_old_method; CHECK_GPM=no
--cat >>confdefs.h <<\_ACEOF
--#define SS_INHIBIT 1
--_ACEOF
+-$as_echo "#define SS_INHIBIT 1" >>confdefs.h
 -
 -fi
 -
 -
 -if test x$CHECK_GPM = "xyes"; then
 -    if test -x `which gnome-power-manager`; then
--            { $as_echo "$as_me:$LINENO: Checking for gnome-power-manager support" >&5
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: Checking for gnome-power-manager support" >&5
 -$as_echo "$as_me: Checking for gnome-power-manager support" >&6;}
 -            GPMVER=`gnome-power-manager --version | sed -e 's/.* 2.//' | cut -b1-2`
 -            if test $GPMVER -ge 26; then
 -
--cat >>confdefs.h <<\_ACEOF
--#define SM_INHIBIT 1
--_ACEOF
+-$as_echo "#define SM_INHIBIT 1" >>confdefs.h
 -
 -            fi
 -            if test $GPMVER -lt 26; then
 -
--cat >>confdefs.h <<\_ACEOF
--#define SS_INHIBIT 1
--_ACEOF
+-$as_echo "#define SS_INHIBIT 1" >>confdefs.h
 -
 -            fi
 -
 -    fi
 -fi
  
- 
  for ac_header in mntent.h
+ do :
