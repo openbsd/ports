@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.82 2010/11/08 12:26:01 espie Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -51,11 +51,6 @@ USE_GROFF =	Yes
 
 WANTLIB=	expat db z
 
-LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
-		apr-1::devel/apr \
-		aprutil-1::devel/apr-util \
-		sasl2.>=2::security/cyrus-sasl2 \
-		sqlite3::databases/sqlite3
 
 # autogen.sh checks for libtoolize
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
@@ -63,7 +58,16 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 MULTI_PACKAGES=	-main
 
-WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl
+MAINSPEC =	:${PKGNAME}:devel/subversion,-main
+LIB_DEPENDS-main = ${LIB_DEPENDS} \
+		:neon->=0.26.2:net/neon \
+		::devel/apr \
+		::devel/apr-util \
+		::security/cyrus-sasl2 \
+		::databases/sqlite3
+
+WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl \
+		neon.>=26 apr-1 aprutil-1 sasl2.>=2 sqlite3
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
@@ -94,10 +98,10 @@ TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 .if !${FLAVOR:L:Mno_ap2}
 MULTI_PACKAGES+=	-ap2
 WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 sqlite3
-LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
-LIB_DEPENDS-ap2+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
+WANTLIB-ap2 +=	${_lib}.>=${SO_VERSION}
 .  endfor
 BUILD_DEPENDS+=		::www/apache-httpd
 RUN_DEPENDS-ap2=	::www/apache-httpd
@@ -109,27 +113,28 @@ SHARED_ONLY=	Yes
 
 WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
-LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
+WANTLIB-perl +=	${_lib}.>=${SO_VERSION}
 .  endfor
 
 WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
 			krb5 neon sasl2 sqlite3 ssl ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
+			${MAINSPEC}
 .  for _lib in ${SVN_LIBS}
-LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
+WANTLIB-python +=	${_lib}.>=${SO_VERSION}
 .  endfor
 
 WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
 			krb5 neon sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
-			${MODGETTEXT_LIB_DEPENDS}
+			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .  for _lib in ${SVN_LIBS}
-LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
+WANTLIB-ruby +=	${_lib}.>=${SO_VERSION}
 .  endfor
 
 MODULES+=	lang/ruby
@@ -139,13 +144,13 @@ BUILD_DEPENDS+=	:swig->=1.3.36:devel/swig
 .if ${FLAVOR:L:Mgnome_keyring}
 SHARED_ONLY=	Yes
 MODULES+=	converters/libiconv
-LIB_DEPENDS-main+= ${LIB_DEPENDS} \
-		dbus-1.>=7::x11/dbus \
-		glib-2.0::devel/glib2 \
-		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-		pcre.>=2::devel/pcre \
-		${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-main+=	apr-1 aprutil-1 gcrypt gpg-error
+LIB_DEPENDS-main += 	::x11/dbus \
+			::devel/glib2 \
+			:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+			::devel/pcre \
+			${MODGETTEXT_LIB_DEPENDS}
+WANTLIB-main+=	apr-1 aprutil-1 gcrypt gpg-error \
+		dbus-1.>=7 glib-2.0 gnome-keyring.>=6 pcre.>=2
 SHARED_LIBS+=	svn_auth_gnome_keyring-1 ${SO_VERSION}
 # gnome-keyring depends on dbus depends on pthread, so svn won't be able
 # to load libsvn_auth_gnome_keyring without the main executable being compiled
