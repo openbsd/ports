@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
@@ -21,16 +21,16 @@ USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer \
-		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer \
+		::x11/gtk+2
 
 WANTLIB+=	GL GLU ICE Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs stdc++ xcb z X11 Xext m SDL \
-		gdk_pixbuf-2.0
+		gdk_pixbuf-2.0 SDL_image SDL_mixer gdk-x11-2.0 gtk-x11-2.0
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \

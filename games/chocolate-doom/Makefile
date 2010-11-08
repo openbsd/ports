@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 13:51:52 espie Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.2.1
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.chocolate-doom.org/
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	SDL c m pthread
+WANTLIB =	SDL c m pthread SDL_mixer.>=3 SDL_net.>=1 samplerate.>=1
 
-LIB_DEPENDS =	SDL_mixer.>=3::devel/sdl-mixer \
-		SDL_net.>=1::devel/sdl-net \
-		samplerate.>=1::audio/libsamplerate
+LIB_DEPENDS =	::devel/sdl-mixer \
+		::devel/sdl-net \
+		::audio/libsamplerate
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
 

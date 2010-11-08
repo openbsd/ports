@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}
+REVISION =	2
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}files/
 
@@ -14,15 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid \
-			xcb z
+			xcb z SDL_mixer SDL_net SDL_ttf
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
-		SDL_net::devel/sdl-net \
-		SDL_ttf::devel/sdl-ttf
+LIB_DEPENDS=	::devel/sdl-mixer \
+		::devel/sdl-net \
+		::devel/sdl-ttf
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-bi2cf --enable-cfed --enable-comet

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -25,12 +25,12 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png popt pthread xml2 z dbus-1 gio-2.0 \
-		pthread-stubs xcb
+		pthread-stubs xcb gnome-2 gnomeui-2
 
 MODULES=	textproc/intltool
 
-LIB_DEPENDS=	gnome-2::x11/gnome/libgnome \
-		gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=	::x11/gnome/libgnome \
+		::x11/gnome/libgnomeui
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_ARGS+=--localstatedir=/var

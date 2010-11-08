@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -20,15 +20,15 @@ USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	SDL.>=4::devel/sdl \
-		curl.>=3::net/curl \
-		GLEW::graphics/glew \
-		cares::net/libcares
+LIB_DEPENDS=	::devel/sdl \
+		::net/curl \
+		::graphics/glew \
+		::net/libcares
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xrandr Xrender c \
 		crypto idn m ncurses pthread-stubs pthread sndio \
-		ssl stdc++ usbhid xcb z
+		ssl stdc++ usbhid xcb z SDL.>=4 curl.>=3 GLEW cares
 
 AUTOCONF_VERSION= 2.61
 CONFIGURE_STYLE= autoconf

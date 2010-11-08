@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
 DISTNAME=	barrage-1.0.2
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	games
 
 HOMEPAGE=	http://lgames.sourceforge.net/?project=Barrage
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	SDL c m pthread
+WANTLIB=	SDL c m pthread SDL_mixer
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgames/}
 
-LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-mixer
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu

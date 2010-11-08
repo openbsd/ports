@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/08 13:51:52 espie Exp $
 
 COMMENT=	jump'n run game with unique video effects
 
 VERSION=	0.8.10
 DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
-PKGNAME=	amph-${VERSION}p2
+PKGNAME=	amph-${VERSION}
+REVISION =	2
 CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,12 +21,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext Xpm Xt c m pthread pthread-stubs stdc++ \
-			usbhid xcb
+			usbhid xcb SDL
 
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \
 		${DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	SDL::devel/sdl
+LIB_DEPENDS=	::devel/sdl
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
