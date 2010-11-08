@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/04 22:51:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/08 16:31:51 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.24
+DISTNAME=	tar-1.25
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
@@ -48,9 +48,7 @@ LDSTATIC=
 WANTLIB=	c
 .endif
 
-# Tests 34, 53 are known to fail because getcwd(3) fails if the
+# Tests 35 56 are known to fail because getcwd(3) fails if the
 # parent directory is unreadable.
-REGRESS_DEPENDS=:autoconf-2.63:devel/autoconf/2.63
-REGRESS_FLAGS=	AUTOCONF_VERSION=2.63
 
 .include <bsd.port.mk>
