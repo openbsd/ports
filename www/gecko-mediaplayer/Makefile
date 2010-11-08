@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/08 15:06:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/08 15:20:33 dcoppa Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			1.0.0
@@ -28,8 +28,6 @@ RUN_DEPENDS =		:gnome-mplayer->=${V}:x11/gnome-mplayer
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
 SHARED_ONLY =		Yes
-
-MODGCONF2_SCHEMAS_DIR =	gecko-mediaplayer
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
