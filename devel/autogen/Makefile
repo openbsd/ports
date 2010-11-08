@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/08 01:22:36 espie Exp $
 
 COMMENT=automatic text creation from templates
 CATEGORIES=devel
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_CDROM=Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	c gmp ltdl m pthread z
-LIB_DEPENDS=	guile::lang/guile \
-		xml2::textproc/libxml
+WANTLIB=	c gmp ltdl m pthread z guile xml2
+LIB_DEPENDS=	::lang/guile \
+		::textproc/libxml
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-libregex \
 		--includedir=${PREFIX}/include/autogen \

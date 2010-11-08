@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 01:22:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,8 +43,12 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=codeblocks/}
 
 BUILD_DEPENDS=	::archivers/zip
 
-LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
-		wx_base.>=1,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
+LIB_DEPENDS=	::archivers/bzip2 \
+		::x11/wxWidgets
+
+WANTLIB +=	bz2.>=10 wx_base.>=1 wx_base_net wx_base_odbc wx_base_xml \
+		wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid \
+		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info->=0.21:misc/shared-mime-info

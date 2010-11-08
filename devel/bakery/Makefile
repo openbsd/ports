@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 01:22:36 espie Exp $
 
 COMMENT=		C++ Application Framework for use with Gtkmm
 
@@ -29,10 +29,11 @@ WANTLIB += gio-2.0 giomm-2.4 glade-2.0 glib-2.0 glibmm-2.4
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread-stubs sigc-2.0 xcb xml2 z
+WANTLIB += gconfmm-2.6 glademm-2.4 xml++-2.6
 
-LIB_DEPENDS=		gconfmm-2.6::devel/gconfmm \
-			glademm-2.4::devel/libglademm \
-			xml++-2.6::textproc/libxml++
+LIB_DEPENDS =		::devel/gconfmm \
+			::devel/libglademm \
+			::textproc/libxml++
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

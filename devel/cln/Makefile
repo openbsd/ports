@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/02/09 12:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 01:22:36 espie Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB	+=		c m stdc++
+WANTLIB	+=		c m stdc++ gmp
 
-LIB_DEPENDS =		gmp::devel/gmp 
+LIB_DEPENDS =		::devel/gmp 
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

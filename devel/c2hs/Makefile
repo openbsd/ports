@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/08 01:22:36 espie Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
@@ -32,9 +32,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=		c m gmp
 
-LIB_DEPENDS=		gmp::devel/gmp
+LIB_DEPENDS=		::devel/gmp
 
 BUILD_DEPENDS=		::devel/alex ::devel/happy ::textproc/sgmlformat
 

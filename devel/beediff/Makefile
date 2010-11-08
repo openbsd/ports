@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 01:22:36 espie Exp $
 
 COMMENT=	graphical file comparator
 
@@ -19,8 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 iconv intl
 WANTLIB += m png pthread pthread-stubs stdc++ xcb z
+WANTLIB += lib/qt4/QtGui
 
-LIB_DEPENDS+=	lib/qt4/QtGui::x11/qt4
+LIB_DEPENDS+=	::x11/qt4
 
 WRKDIST=	${WRKDIR}/beediff
 

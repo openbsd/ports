@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 01:22:37 espie Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -11,13 +11,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c jpeg m png z
+WANTLIB=		c jpeg m png z gd.>=18
 
 MODULES=		converters/libiconv
 
 MASTER_SITES=		${HOMEPAGE}/release/
 
-LIB_DEPENDS=		gd.>=18::graphics/gd
+LIB_DEPENDS=		::graphics/gd
 
 ALL_TARGET=		
 
