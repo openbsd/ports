@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/07 17:17:42 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/11/08 01:20:06 fgsch Exp $
 bin/buildbot
 lib/python${MODPY_VERSION}/site-packages/buildbot/
-lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildbot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/__init__.pyc

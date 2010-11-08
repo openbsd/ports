@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/07 17:17:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 01:20:06 fgsch Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
 MODPY_EGG_VERSION =	0.8.2
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =   	devel
 
@@ -49,8 +50,8 @@ post-install:
 	    ${PREFIX}/share/doc/py-buildbot/images
 	cd ${WRKSRC} && pax -rw contrib ${PREFIX}/share/doc/py-buildbot
 
-do-regress: fake
-	@${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+do-regress:
+	@${MAKE_ENV} PYTHONPATH=${WRKSRC} \
 	    ${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD}/regress \
 	    buildbot.test
 
