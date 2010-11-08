@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/08 20:46:43 jasper Exp $
 
-COMMENT=		A high-level interface for RDF
+COMMENT=		high-level interface for RDF
 DISTNAME=		redland-1.0.8
+REVISION=		0
 CATEGORIES=		textproc
 
 SHARED_LIBS=		rasqal	1.0 \
@@ -17,13 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto curl iconv idn intl m ssl xml2 xslt z
+WANTLIB=	c crypto curl iconv idn intl m ssl xml2 xslt z raptor.>=2
 
-LIB_DEPENDS=	raptor.>=2::textproc/raptor
+LIB_DEPENDS=	::textproc/raptor
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
