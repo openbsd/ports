@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/08 12:29:24 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,8 +35,8 @@ MULTI_PACKAGES=		-main -perl
 WANTLIB-main=		c m stdc++
 
 CATEGORIES-perl=	devel perl5
-WANTLIB-perl=
-LIB_DEPENDS-perl=	uuid.>=12::devel/uuid
+WANTLIB-perl=		uuid.>=12
+LIB_DEPENDS-perl=	::devel/uuid
 
 USE_LIBTOOL=		Yes
 
