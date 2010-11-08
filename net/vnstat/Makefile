@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/08 13:20:44 pea Exp $
 
 COMMENT = 	network traffic monitor
 
 DISTNAME = 	vnstat-1.10
 CATEGORIES = 	net sysutils
+
+REVISION = 	0
 
 HOMEPAGE = 	http://humdi.net/vnstat/
 
@@ -30,12 +32,5 @@ INSTALL_TARGET = bsdinstall
 LDFLAGS += 	-L${LOCALBASE}/lib -L/usr/X11R6/lib
 MAKE_FLAGS = 	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vnstat
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/vnstat/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/vnstat/README.OpenBSD
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: vnstatd.rc,v 1.1 2010/11/08 13:20:44 pea Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/vnstatd"
+daemon_flags="-d"
+
+rc_pre() {
+	/usr/bin/install -d -o _vnstat /var/run/vnstat
+}
+
+rc_start() {
+	/usr/bin/su -l _vnstat -c "${daemon} ${daemon_flags}" > /dev/null
+}
+
+rc_cmd $1
