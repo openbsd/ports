@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/13 08:29:17 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/08 20:12:13 jasper Exp $
 bin/mbchk
 @info info/grub.info
 @info info/multiboot.info
@@ -27,8 +27,7 @@ sbin/grub-install
 sbin/grub-md5-crypt
 sbin/grub-set-default
 sbin/grub-terminfo
-share/doc/grub/
-share/doc/grub/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/grub/
 share/examples/grub/menu.lst
 @sample /grub/

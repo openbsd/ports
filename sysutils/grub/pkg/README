@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/08 20:12:13 jasper Exp $
+
 GRUB's configuration file is /grub/menu.lst which is described in detail
 in GRUB's info page. A minimal menu.lst looks like this:
 
@@ -42,7 +44,7 @@ Offset: 0       Signature: 0xAA55
 When booting, the kernel will use the disklabel from the first OpenBSD
 partition found, therefor grub has to set the partition type of unused
 partitions to another value as can be seen in
-%%TRUEPREFIX%%/share/examples/grub/menu.lst. The type of the last
+${TRUEPREFIX}/share/examples/grub/menu.lst. The type of the last
 partition, in this case partition 3, has to stay at 0xa6 in all cases,
 otherwise grub won't be able to find its /grub/menu.lst file. This means
 you have to install grub in the OpenBSD partition with the largest number.
