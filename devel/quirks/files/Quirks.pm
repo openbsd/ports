@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.33 2010/10/28 08:18:25 fgsch Exp $
+# $OpenBSD: Quirks.pm,v 1.34 2010/11/08 23:39:04 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -163,6 +163,7 @@ my $stem_extensions = {
 	'tesseract-pt' => 'tesseract-por',
 	'transmission-gui' => 'transmission-gtk',
 	'terminal' => 'xfce4-terminal',
+	'nmap-parser' => 'ruby-nmap-parser',
 };
 
 # ->is_base_system($handle, $state):
