@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,15 +22,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto expat m sasl2 sndio ssl
+WANTLIB=	c crypto expat m sasl2 sndio ssl lber ldap ldap_r SDL
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
 BUILD_DEPENDS=	::devel/bison \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	lber,ldap,ldap_r::databases/openldap \
-		SDL::devel/sdl
+LIB_DEPENDS=	::databases/openldap \
+		::devel/sdl
 
 .include <bsd.own.mk>
 .if !${COMPILER_VERSION:L:Mgcc4}

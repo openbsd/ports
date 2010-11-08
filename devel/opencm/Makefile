@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/04/01 17:42:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=		OpenCM change management system
 
@@ -6,7 +6,8 @@ V=			0.1.2alpha8
 sV=			-2
 DISTFILES=		opencm-${V}${sV}-src.tgz
 DISTNAME=		opencm-${V}
-PKGNAME=		opencm-${V}p1
+PKGNAME=		opencm-${V}
+REVISION =		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.opencm.org/
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ncurses pthread readline ssl z
+WANTLIB=		c crypto ncurses pthread readline ssl z gc.>=3
 
 MASTER_SITES=		${HOMEPAGE}releases/
 
@@ -48,7 +49,7 @@ post-install:
 	gunzip ${PREFIX}/info/opencm.info.gz
 
 
-LIB_DEPENDS=		gc.>=3::devel/boehm-gc
+LIB_DEPENDS=		::devel/boehm-gc
 
 WRKSRC=			${WRKDIST}/base
 

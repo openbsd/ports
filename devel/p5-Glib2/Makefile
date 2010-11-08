@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 21:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/08 10:28:22 espie Exp $
 
 BROKEN=		glib2 is threaded but our perl is not so we end up with undefined symbols
 
@@ -22,9 +22,10 @@ MODULES+=	cpan \
 		devel/gettext
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	glib-2.0,gobject-2.0::devel/glib2
+LIB_DEPENDS=	::devel/glib2
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig
+WANTLIB =	glib-2.0 gobject-2.0
 
 CONFIGURE_ARGS=	 --disable-threadsafe
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 10:28:22 espie Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -24,12 +24,13 @@ WANTLIB += GL GLU SDL jpeg png pthread
 
 RUN_DEPENDS =		::devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}
-LIB_DEPENDS =		SDL_gfx::devel/sdl-gfx \
-			SDL_image::devel/sdl-image \
-			SDL_mixer::devel/sdl-mixer \
-			SDL_net::devel/sdl-net \
-			SDL_ttf::devel/sdl-ttf \
-			smpeg::devel/smpeg
+LIB_DEPENDS =		::devel/sdl-gfx \
+			::devel/sdl-image \
+			::devel/sdl-mixer \
+			::devel/sdl-net \
+			::devel/sdl-ttf \
+			::devel/smpeg
+WANTLIB +=		SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf smpeg
 
 CONFIGURE_STYLE =	perl modbuild
 USE_GROFF =	Yes

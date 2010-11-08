@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=		wrapper class around the pcre library
 
 DISTNAME=		pcre++-0.9.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
+REVISION =		1
 SHARED_LIBS=		pcre++ 1.0
 
 CATEGORIES=		devel
@@ -19,7 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		pcre::devel/pcre
+LIB_DEPENDS =		::devel/pcre
+WANTLIB =		pcre
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
@@ -28,7 +30,7 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE=      	Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-regress:
 	@cd ${WRKBUILD}/test && ./test testinput

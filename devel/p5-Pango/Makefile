@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 10:28:22 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,11 +19,12 @@ MODULES=	cpan \
 		devel/gettext
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	pangocairo-1.0,pango-1.0,pangoft2-1.0::devel/pango
+LIB_DEPENDS=	::devel/pango
 
 WANTLIB=	X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
 		glib-2.0 gmodule-2.0 gobject-2.0 m pixman-1 png \
-		pthread-stubs xcb z xcb-render xcb-render-util
+		pthread-stubs xcb z xcb-render xcb-render-util \
+		pangocairo-1.0 pango-1.0 pangoft2-1.0
 
 RUN_DEPENDS=	::devel/p5-Glib2 \
 		::graphics/p5-Cairo

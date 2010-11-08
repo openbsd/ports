@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/11/13 20:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/08 10:28:22 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,8 +26,8 @@ MASTER_SITES =		${HOMEPAGE}releases/
 
 MULTI_PACKAGES =	-main -docs
 
-LIB_DEPENDS-main =	mysqlclient::databases/mysql
-WANTLIB-main =		m
+LIB_DEPENDS-main =	::databases/mysql
+WANTLIB-main =		m mysqlclient
 PKG_ARCH-docs =		*
 
 NO_REGRESS =		Yes

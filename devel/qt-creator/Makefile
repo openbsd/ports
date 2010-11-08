@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
-PKGNAME =		qt-creator-${V}p2
+PKGNAME =		qt-creator-${V}
+REVISION =		2
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -33,14 +34,15 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	c m pthread stdc++ sqlite3
-
+WANTLIB +=	QtDBus QtWebKit QtXmlPatterns QtDesigner.>=7 
+WANTLIB +=	QtDesignerComponents.>=7 QtGui.>=8 QtHelp QtNetwork.>=7 
+WANTLIB +=	QtScript QtSql.>=7 QtSvg.>=7 QtXml.>=7 phonon
 MASTER_SITES =	http://get.qt.nokia.com/qtcreator/
 
 MODULES =	x11/qt4
 
-LIB_DEPENDS =	QtDBus,QtWebKit,QtXmlPatterns,QtDesigner.>=7,QtDesignerComponents.>=7,QtGui.>=8,QtHelp,QtNetwork.>=7,QtScript,QtSql.>=7,QtSvg.>=7,QtXml.>=7,phonon::x11/qt4
 BUILD_DEPENDS = ::x11/qt4,-sqlite
-RUN_DEPENDS = ::x11/qt4,-sqlite ::devel/gmake
+RUN_DEPENDS = 	::x11/qt4,-sqlite ::devel/gmake
 
 PORTHOME =		${WRKDIR}
 

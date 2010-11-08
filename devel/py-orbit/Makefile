@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -16,16 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB =	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 ORBit-2 ORBit-imodule-2
+WANTLIB += 	${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		ORBit-2,ORBit-imodule-2::devel/ORBit2
+		::devel/ORBit2
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

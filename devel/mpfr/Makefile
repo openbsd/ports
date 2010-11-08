@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/26 13:40:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -18,8 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
 
+LIB_DEPENDS =	:gmp->=4.2.0:devel/gmp
 # no interlibrary dependency, though
-LIB_DEPENDS=	gmp:gmp->=4.2.0:devel/gmp
+WANTLIB =	gmp
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes

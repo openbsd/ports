@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/08 10:28:22 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL X11 jpeg png pthread-stubs smpeg xcb
+WANTLIB += SDL X11 jpeg png pthread-stubs smpeg xcb SDL_ttf SDL_image SDL_mixer
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 
@@ -25,9 +25,9 @@ MODULES=	lang/python
 
 BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
 
-LIB_DEPENDS=	SDL_ttf::devel/sdl-ttf \
-		SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-ttf \
+		::devel/sdl-image \
+		::devel/sdl-mixer
 
 
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \

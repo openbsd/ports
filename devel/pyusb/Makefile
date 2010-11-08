@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=		python interface to libusb
@@ -20,7 +20,8 @@ NO_REGRESS=	Yes
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	usb::devel/libusb
+LIB_DEPENDS=	::devel/libusb
+WANTLIB =	usb
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.py

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=	graphical subversion client
 
 VERSION=	0.9.4
 DISTNAME=	rapidsvn-${VERSION}
-PKGNAME=	${DISTNAME}p6
+REVISION =	6
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.rapidsvn.org/
@@ -26,10 +26,15 @@ USE_LIBTOOL=	Yes
 
 WANTLIB += apr-1 aprutil-1 asn1 c crypto db expat gssapi krb5
 WANTLIB += m neon pthread sasl2 sqlite3 ssl stdc++ z
+WANTLIB += wx_base_xml wx_gtk2_html wx_gtk2_dbgrid wx_gtk2_adv wx_gtk2_xrc 
+WANTLIB += wx_base_net wx_gtk2_qa wx_base wx_base_odbc wx_gtk2_core 
+WANTLIB += wx_gtk2_aui wx_gtk2_richtext
+WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 
+WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1 
+WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1
 
-LIB_DEPENDS=	wx_base_xml,wx_gtk2_html,wx_gtk2_dbgrid,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_qa,wx_base,wx_base_odbc,wx_gtk2_core,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
-		svn_client-1,svn_delta-1,svn_diff-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_ra-1,svn_ra_local-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1,svn_fs_util-1,svn_ra_neon-1:subversion->=1.2:devel/subversion
-
+LIB_DEPENDS=	:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
+		:subversion->=1.2:devel/subversion
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/03 16:23:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 10:28:22 espie Exp $
 
 BROKEN=		does not work with Qt >= 4.6
 
@@ -18,7 +18,8 @@ MAKE_FLAGS+=LIB$l_VERSION=$v
 DIST_SUBDIR=	qt4-eventsview-$V
 V=		0.1
 DISTNAME=	57337-eventsview
-PKGNAME=	qt4-eventsview-$Vp1
+PKGNAME=	qt4-eventsview-$V
+REVISION =	1
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 
 WRKDIST=	${WRKDIR}/eventsview
@@ -38,11 +39,11 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/test/{Makefile,main.cpp} ${SAMPLE}
 	${INSTALL_PROGRAM} ${WRKBUILD}/test/test ${SAMPLE}
 
-LIB_DEPENDS=	glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-		lib/qt4/QtGui::x11/qt4
+LIB_DEPENDS=	::devel/glib2
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype iconv intl m png pthread pthread-stubs stdc++ xcb z
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 lib/qt4/QtGui
 
 SUBST_VARS=	SAMPLE
 

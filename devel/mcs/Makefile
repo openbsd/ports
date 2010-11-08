@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/14 21:07:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 10:28:22 espie Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 	c
+WANTLIB = 	c mowgli
 
 MASTER_SITES =	http://distfiles.atheme.org/
 EXTRACT_SUFX =	.tgz
 
-LIB_DEPENDS =	mowgli::devel/mowgli
+LIB_DEPENDS =	::devel/mowgli
 
 MAKE_ENV =	LIBmcs_VERSION=${LIBmcs_VERSION}
 

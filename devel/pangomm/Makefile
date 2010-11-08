@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 10:28:22 espie Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -22,14 +22,15 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		pangoft2-1.0,pangocairo-1.0,pango-1.0::devel/pango \
-			glibmm-2.4::devel/glib2mm \
-			cairomm-1.0::graphics/cairomm
+LIB_DEPENDS =		::devel/pango \
+			::devel/glib2mm \
+			::graphics/cairomm
 
 WANTLIB =		X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
 			glib-2.0 gmodule-2.0 gobject-2.0 m pcre pixman-1 \
 			png pthread-stubs sigc-2.0 xcb z xcb-render \
-			gthread-2.0 xcb-render-util
+			gthread-2.0 xcb-render-util pangoft2-1.0 \
+			pangocairo-1.0 pango-1.0 glibmm-2.4 cairomm-1.0
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

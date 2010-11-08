@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 10:28:22 espie Exp $
 
 COMMENT=		python bindings for libnotify
 
@@ -22,7 +22,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += z
+WANTLIB += z notify
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notify-python/
 EXTRACT_SUFX=		.tar.bz2
@@ -32,7 +32,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		notify::devel/libnotify
+LIB_DEPENDS=		::devel/libnotify
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 10:28:23 espie Exp $
 
 COMMENT=		library for tracking application startup
 
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp pthread-stubs xcb xcb-atom xcb-aux
-WANTLIB += xcb-event
+WANTLIB += xcb-event execinfo
 
 MASTER_SITES=		http://www.freedesktop.org/software/startup-notification/releases/
 
-LIB_DEPENDS=		execinfo::devel/libexecinfo
+LIB_DEPENDS=		::devel/libexecinfo
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
