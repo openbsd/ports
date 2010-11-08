@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/04 13:45:54 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 14:32:56 eric Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-1.5.2
 CATEGORIES=	geo databases
+REVISION=	0
 
 HOMEPAGE=	http://www.postgis.org/
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-WANTLIB=	c geos_c m pq proj xml2 z
+WANTLIB=	c geos_c m pq.>=5.3 proj xml2 z
 
 MODULES=        converters/libiconv
 
