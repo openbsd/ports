@@ -1,15 +1,15 @@
-# $OpenBSD: tcl.port.mk,v 1.8 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: tcl.port.mk,v 1.9 2010/11/08 09:04:52 espie Exp $
 
 CATEGORIES +=		lang/tcl
 
 MODTCL_VERSION ?=	8.5
 
 .if ${MODTCL_VERSION} == 8.4
-_MODTCL_SPEC = tcl->=${MODTCL_VERSION},<8.5
-MODTCL_WANTLIB = tcl84
+_MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.5
+MODTCL_LIB ?=		tcl84
 .elif ${MODTCL_VERSION} == 8.5
-_MODTCL_SPEC = tcl->=${MODTCL_VERSION},<8.6
-MODTCL_WANTLIB = tcl85
+_MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.6
+MODTCL_LIB ?=		tcl85
 .endif
 
 MODTCL_BIN ?=		${LOCALBASE}/bin/tclsh${MODTCL_VERSION}
@@ -20,6 +20,7 @@ MODTCL_CONFIG ?=	${MODTCL_LIBDIR}/tclConfig.sh
 MODTCL_BUILD_DEPENDS ?=	:${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}
 MODTCL_RUN_DEPENDS ?=	:${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}
 MODTCL_LIB_DEPENDS ?=	:${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}
+MODTCL_WANTLIB ?= 	${MODTCL_LIB}
 
 
 # Handle the two most commonly used methods
