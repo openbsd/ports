@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.17 2010/06/04 07:45:56 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.18 2010/11/08 19:28:32 ajacoutot Exp $
 --- configure.orig	Thu Jun  3 22:34:33 2010
-+++ configure	Fri Jun  4 08:07:19 2010
++++ configure	Mon Nov  8 19:38:46 2010
 @@ -32153,7 +32153,6 @@ fi
  if test x$with_tcp_wrappers = xno ; then
  	echo "TCP wrappers disabled"
@@ -39,16 +39,24 @@ $OpenBSD: patch-configure,v 1.17 2010/06/04 07:45:56 ajacoutot Exp $
  	HOST_XSESSION_SHELL=/bin/sh
  	HOST_SOUND_PROGRAM="$real_gdm_prefix/bin/play"
  	HOST_GDMGNOMESESSIONCMD=gnome-session
-@@ -35075,6 +35075,12 @@ else
-    GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
+@@ -35076,13 +35076,19 @@ else
     X_CONFIG_OPTIONS="-audit 0"
  fi
-+
+ 
 +case $host in
 +    i386-*-openbsd*|amd64-*-openbsd*)
 +        X_CONFIG_OPTIONS="$X_CONFIG_OPTIONS vt5"
 +        ;;
 +esac
- 
++
  # Use Xephyr if it is available.  It works better than Xnest since Xephyr
  # supports the Xserver extensions, even if on a remote machine.
+ #
+ X_XNEST_UNSCALED_FONTPATH="true"
+ if test -x $X_SERVER_PATH/Xephyr; then
+     X_XNEST_CMD="$X_SERVER_PATH/Xephyr"
+-    X_XNEST_CONFIG_OPTIONS="-audit 0"
++    X_XNEST_CONFIG_OPTIONS="-screen 800x600 -audit 0"
+ else
+     if test -x /usr/openwin/bin/Xnest; then
+         # If on Solaris, Xnest is only shipped with the Xsun Xserver, so
