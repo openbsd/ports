@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/26 21:17:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/08 23:35:15 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
-VERSION=	1.2.4
+VERSION=	1.3.1
 DISTNAME=	sqlite3-ruby-${VERSION}
-PKGNAME=	ruby-sqlite3-${VERSION}
-REVISION =      1
+PKGNAME=	sqlite3-${VERSION}
 CATEGORIES=	databases
 
 HOMEPAGE=	http://sqlite-ruby.rubyforge.org/
@@ -18,15 +17,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
-WANTLIB=		sqlite3.>=8
+WANTLIB=		sqlite3
 LIB_DEPENDS=		:sqlite3->=3.3.4:databases/sqlite3 
 
 CONFIGURE_STYLE=	ruby gem ext
 
-REGRESS_DEPENDS=	::devel/ruby-mocha \
-			::${BASE_PKGPATH}
-
-do-regress:
-	@cd ${WRKBUILD} && ${RUBY} test/tests.rb
+MODRUBY_REGRESS=	rake
+REGRESS_DEPENDS=	:{MODRUBY_PKG_PREFIX}-mocha:devel/ruby-mocha,${FLAVOR} \
+			:${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
