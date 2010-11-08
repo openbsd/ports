@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_phusion_passenger_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
+--- lib/phusion_passenger.rb.orig	Wed Oct 27 15:14:30 2010
++++ lib/phusion_passenger.rb	Wed Oct 27 15:28:20 2010
+@@ -46,10 +46,10 @@ module PhusionPassenger
+ 		return @natively_packaged
+ 	end
+ 	
+-	NATIVELY_PACKAGED_SOURCE_ROOT        = "/usr/share/phusion-passenger/source"
+-	NATIVELY_PACKAGED_DOCDIR             = "/usr/share/doc/phusion-passenger"
+-	NATIVELY_PACKAGED_AGENTS_DIR         = "/usr/lib/phusion-passenger/agents"
+-	NATIVELY_PACKAGED_HELPER_SCRIPTS_DIR = "/usr/share/phusion-passenger/helper-scripts"
++	NATIVELY_PACKAGED_SOURCE_ROOT        = "/usr/local/share/phusion-passenger/source"
++	NATIVELY_PACKAGED_DOCDIR             = "/usr/local/share/doc/phusion-passenger"
++	NATIVELY_PACKAGED_AGENTS_DIR         = "/usr/local/lib/phusion-passenger/agents"
++	NATIVELY_PACKAGED_HELPER_SCRIPTS_DIR = "/usr/local/lib/phusion-passenger/bin"
+ 	NATIVELY_PACKAGED_APACHE2_MODULE     = "/usr/lib/apache2/modules/mod_passenger.so"
+ 	
+ 	# Directory containing the Phusion Passenger Ruby libraries.
+@@ -62,7 +62,7 @@ module PhusionPassenger
+ 	LOCAL_DIR      = ".passenger"
+ 	
+ 	# Directories in which to look for plugins.
+-	PLUGIN_DIRS    = ["/usr/share/phusion-passenger/plugins",
++	PLUGIN_DIRS    = [
+ 		"/usr/local/share/phusion-passenger/plugins",
+ 		"~/#{LOCAL_DIR}/plugins"]
+ 	

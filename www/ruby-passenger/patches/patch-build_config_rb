@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_config_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
+--- build/config.rb.orig	Wed Oct 27 15:09:05 2010
++++ build/config.rb	Wed Oct 27 15:10:41 2010
+@@ -18,9 +18,9 @@ OPTIMIZE = boolean_option("OPTIMIZE")
+ CC       = string_option("CC", "gcc")
+ CXX      = string_option("CXX", "g++")
+ if OPTIMIZE
+-	OPTIMIZATION_FLAGS = "#{PlatformInfo.debugging_cflags} -O2 -DBOOST_DISABLE_ASSERTS".strip
++	OPTIMIZATION_FLAGS = "#{ENV['CFLAGS']} -DBOOST_DISABLE_ASSERTS".strip
+ else
+-	OPTIMIZATION_FLAGS = "#{PlatformInfo.debugging_cflags} -DPASSENGER_DEBUG -DBOOST_DISABLE_ASSERTS".strip
++	OPTIMIZATION_FLAGS = "#{ENV['CFLAGS']} #{PlatformInfo.debugging_cflags} -DPASSENGER_DEBUG -DBOOST_DISABLE_ASSERTS".strip
+ end
+ 
+ # Extra compiler flags that should always be passed to the C/C++ compiler.

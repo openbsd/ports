@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_common_AgentBase_cpp,v 1.1 2010/11/08 23:47:37 jeremy Exp $
+--- ext/common/AgentBase.cpp.orig	Wed Oct 27 15:44:19 2010
++++ ext/common/AgentBase.cpp	Wed Oct 27 15:44:34 2010
+@@ -132,8 +132,6 @@ appendSignalReason(char *buf, siginfo_t *info) {
+ 	#endif
+ 	SI_CODE_HANDLER(SI_QUEUE);
+ 	SI_CODE_HANDLER(SI_TIMER);
+-	SI_CODE_HANDLER(SI_ASYNCIO);
+-	SI_CODE_HANDLER(SI_MESGQ);
+ 	#ifdef SI_SIGIO
+ 		SI_CODE_HANDLER(SI_SIGIO);
+ 	#endif

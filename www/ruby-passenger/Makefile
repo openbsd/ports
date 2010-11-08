@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 23:47:37 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Nginx module for deploying Ruby applications
 
-DISTNAME =	passenger-2.2.5
+DISTNAME =	passenger-3.0.0
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	4
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/
@@ -44,13 +43,11 @@ do-build:
 do-install:
 	cd ${WRKBUILD}/pkg/fakeroot/usr/local && \
 		tar -cf - * | tar -C ${PREFIX} -xf -
-	rm -f ${PREFIX}/bin/passenger-install-apache2-module
-	rm -f ${PREFIX}/bin/passenger-make-enterprisey
 	rm -f ${PREFIX}/bin/passenger-install-nginx-module
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/phusion_passenger/ext
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/phusion-passenger/ext
 	cd ${WRKBUILD}/ext && tar -cf - common nginx | \
-		tar -C ${PREFIX}/lib/phusion_passenger/ext -xf -
-	find ${PREFIX}/lib/phusion_passenger/ext -name '*.orig' | \
+		tar -C ${PREFIX}/lib/phusion-passenger/ext -xf -
+	find ${PREFIX}/lib/phusion-passenger/ext -name '*.orig' | \
 		xargs -r rm -f
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx
 	${INSTALL_DATA} ${FILESDIR}/*.sample ${PREFIX}/share/nginx

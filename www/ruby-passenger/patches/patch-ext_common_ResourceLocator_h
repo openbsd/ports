@@ -1,0 +1,39 @@
+$OpenBSD: patch-ext_common_ResourceLocator_h,v 1.1 2010/11/08 23:47:37 jeremy Exp $
+--- ext/common/ResourceLocator.h.orig	Wed Oct 27 16:15:28 2010
++++ ext/common/ResourceLocator.h	Wed Oct 27 16:16:13 2010
+@@ -44,7 +44,7 @@ class ResourceLocator { (public)
+ 	
+ 	string getSourceRoot() const {
+ 		if (nativelyPackaged) {
+-			return "/usr/lib/phusion-passenger/source";
++			return "/usr/local/lib/phusion-passenger/source";
+ 		} else {
+ 			return root;
+ 		}
+@@ -52,7 +52,7 @@ class ResourceLocator { (public)
+ 	
+ 	string getAgentsDir() const {
+ 		if (nativelyPackaged) {
+-			return "/usr/lib/phusion-passenger/agents";
++			return "/usr/local/lib/phusion-passenger/agents";
+ 		} else {
+ 			return root + "/agents";
+ 		}
+@@ -60,7 +60,7 @@ class ResourceLocator { (public)
+ 	
+ 	string getHelperScriptsDir() const {
+ 		if (nativelyPackaged) {
+-			return "/usr/share/phusion-passenger/helper-scripts";
++			return "/usr/local/lib/phusion-passenger/bin";
+ 		} else {
+ 			return root + "/helper-scripts";
+ 		}
+@@ -72,7 +72,7 @@ class ResourceLocator { (public)
+ 	
+ 	string getCertificatesDir() const {
+ 		if (nativelyPackaged) {
+-			return "/usr/share/phusion-passenger/certificates";
++			return "/usr/local/share/phusion-passenger/certificates";
+ 		} else {
+ 			return root + "/misc";
+ 		}

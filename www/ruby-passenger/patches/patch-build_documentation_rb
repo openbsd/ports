@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_documentation_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
+--- build/documentation.rb.orig	Sun Nov  7 19:51:08 2010
++++ build/documentation.rb	Sun Nov  7 19:51:47 2010
+@@ -29,7 +29,7 @@ task :doc => Packaging::ASCII_DOCS
+ Packaging::ASCII_DOCS.each do |target|
+ 	source = target.sub(/\.html$/, '.txt')
+ 	file target => [source] + Dir["doc/users_guide_snippets/**/*"] do
+-		if PlatformInfo.asciidoc
++		if false
+ 			if target =~ /apache/i
+ 				type = "-a apache"
+ 			elsif target =~ /nginx/i

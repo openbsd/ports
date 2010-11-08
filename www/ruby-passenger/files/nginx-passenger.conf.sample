@@ -1,4 +1,4 @@
-# $OpenBSD: nginx-passenger.conf.sample,v 1.1.1.1 2009/08/20 20:36:13 bernd Exp $
+# $OpenBSD: nginx-passenger.conf.sample,v 1.2 2010/11/08 23:47:37 jeremy Exp $
 #
 # Example nginx.conf for Phusion Passenger
 #
@@ -29,7 +29,7 @@ http {
 
     # Some more
     passenger_log_level 1;
-    passenger_ruby /usr/local/bin/ruby;
+    passenger_ruby /usr/local/bin/ruby18;
 
     server {
         listen       80;
