@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
 DISTNAME=	roadfighter.src_1.0.1269
-PKGNAME=	${DISTNAME:S/.src_/-/}p0
+PKGNAME=	${DISTNAME:S/.src_/-/}
+REVISION =	0
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_/-/}
 
 EXTRACT_SUFX=	.tgz
@@ -22,10 +23,10 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 RUN_DEPENDS=	::devel/desktop-file-utils
-LIB_DEPENDS=	SDL_sound::devel/sdl-sound \
-		SDL_image::devel/sdl-image \
-		SDL_ttf::devel/sdl-ttf \
-		SDL_mixer::devel/sdl-mixer
-WANTLIB=	SDL c stdc++ m pthread
+LIB_DEPENDS=	::devel/sdl-sound \
+		::devel/sdl-image \
+		::devel/sdl-ttf \
+		::devel/sdl-mixer
+WANTLIB=	SDL c stdc++ m pthread SDL_sound SDL_image SDL_ttf SDL_mixer
 
 .include <bsd.port.mk>

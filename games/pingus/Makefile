@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -18,13 +18,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL X11 Xi c m png pthread pthread-stubs xcb stdc++ z
+WANTLIB += SDL_mixer.>=3 SDL_image.>=2 boost_signals
 
 MODULES=	converters/libiconv \
 		devel/scons
 
-LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
-		SDL_image.>=2::devel/sdl-image \
-		boost_signals::devel/boost
+LIB_DEPENDS=	::devel/sdl-mixer \
+		::devel/sdl-image \
+		::devel/boost
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

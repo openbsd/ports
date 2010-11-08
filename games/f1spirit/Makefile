@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:53 espie Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1412
-PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}p0
+PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
+REVISION =	0
 WRKDIST=	${WRKDIR}/f1spirit-0.rc9
 
 EXTRACT_SUFX=	.tgz
@@ -22,11 +23,12 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 RUN_DEPENDS=	::devel/desktop-file-utils
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_net::devel/sdl-net \
-		SDL_mixer::devel/sdl-mixer \
-		curl::net/curl \
-		idn::devel/libidn
-WANTLIB=	GL GLU SDL c m crypto pthread ssl z
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-net \
+		::devel/sdl-mixer \
+		::net/curl \
+		::devel/libidn
+WANTLIB=	GL GLU SDL c m crypto pthread ssl z SDL_image SDL_net \
+		SDL_mixer curl idn
 
 .include <bsd.port.mk>

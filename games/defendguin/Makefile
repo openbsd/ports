@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 15:54:53 espie Exp $
 
 COMMENT =	clone of arcade game 'Defender' with a Linux theme
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	SDL c m pthread
+WANTLIB =	SDL c m pthread SDL_mixer
 
 MASTER_SITES =	ftp://ftp.billsgames.com/unix/x/defendguin/src/
 
-LIB_DEPENDS =	SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS =	::devel/sdl-mixer
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes

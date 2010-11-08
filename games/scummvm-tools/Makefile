@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/09 21:55:01 jsg Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/08 15:54:54 espie Exp $
 # XXX hardcoded endian list
 
 COMMENT=	collection of various tools for scummvm
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ogg stdc++ z
+WANTLIB=		c m ogg stdc++ z FLAC png vorbis vorbisenc
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -28,9 +28,9 @@ CFLAGS+=	-DSCUMM_BIG_ENDIAN
 CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
 .endif
 
-LIB_DEPENDS=	FLAC::audio/flac \
-		png::graphics/png \
-		vorbis,vorbisenc::audio/libvorbis
+LIB_DEPENDS=	::audio/flac \
+		::graphics/png \
+		::audio/libvorbis
 
 RUN_DEPENDS=	::audio/lame \
 		::audio/vorbis-tools

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	SDL clone of the popular Game of Life
 
 DISTNAME=	life-1.0
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games
 
@@ -13,11 +13,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pthread stdc++
+WANTLIB=		c m pthread stdc++ SDL
 
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	SDL::devel/sdl
+LIB_DEPENDS=	::devel/sdl
 
 WRKDIST=${WRKDIR}/life
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/27 03:47:28 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/08 15:54:54 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -12,9 +12,12 @@ CATEGORIES =		games x11
 
 V =			0.8.1
 
-PKGNAME-main =		openarena-${V}p1
-PKGNAME-server =	openarena-server-${V}p0
-PKGNAME-data =		openarena-data-${V}p1
+PKGNAME-main =		openarena-${V}
+REVISION-main =		1
+PKGNAME-server =	openarena-server-${V}
+REVISION-server =	0
+PKGNAME-data =		openarena-data-${V}
+REVISION-data =		1
 
 PKG_ARCH-data =		amd64,i386,macppc
 
@@ -33,15 +36,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		GL c m pthread sndio
+WANTLIB-main =		GL c m pthread sndio ogg.>=5 SDL.>=7 vorbis.>=7 \
+			vorbisfile.>=5
 WANTLIB-server =	c m
 
-LIB_DEPENDS-main =	ogg.>=5::audio/libogg \
-			SDL.>=7::devel/sdl \
-			vorbis.>=6::audio/libvorbis \
-			vorbisfile.>=5::audio/libvorbis
-RUN_DEPENDS-main =	:openarena-data-*:${BUILD_PKGPATH},-data
-RUN_DEPENDS-server =	:openarena-data-*:${BUILD_PKGPATH},-data
+LIB_DEPENDS-main =	::audio/libogg \
+			::devel/sdl \
+			::audio/libvorbis
+RUN_DEPENDS-main =	:openarena-data-*:${BASE_PKGPATH},-data
+RUN_DEPENDS-server =	:openarena-data-*:${BASE_PKGPATH},-data
 
 ALL_TARGET =		release
 USE_GMAKE =		Yes

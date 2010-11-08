@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/08 15:54:54 espie Exp $
 
 BROKEN-hppa=	gcc bug
 
@@ -16,16 +16,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb z
+WANTLIB=	X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb z \
+		SDL mad.>=2 FLAC.>=5
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	::devel/nasm
 .endif
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	SDL::devel/sdl \
-		mad.>=2::audio/libmad \
-		FLAC.>=5::audio/flac
+LIB_DEPENDS=	::devel/sdl \
+		::audio/libmad \
+		::audio/flac
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa --disable-debug
@@ -34,11 +35,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GROFF =	Yes
 
 .if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS+=--enable-tremor --disable-vorbis
-LIB_DEPENDS+=	vorbisidec.>=1::audio/tremor
+CONFIGURE_ARGS +=	--enable-tremor --disable-vorbis
+LIB_DEPENDS +=		::audio/tremor
+WANTLIB +=		vorbisidec.>=1
 .else
-LIB_DEPENDS+=	vorbis.>=0,vorbisfile.>=1::audio/libvorbis
-WANTLIB+=	ogg
+LIB_DEPENDS +=		::audio/libvorbis
+WANTLIB +=		ogg vorbis.>=0 vorbisfile.>=1
 .endif
 
 NO_REGRESS=	Yes

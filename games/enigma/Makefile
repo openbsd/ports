@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/08 15:54:53 espie Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.01
 DISTNAME=	enigma-${V}-64bit
-PKGNAME=	enigma-${V}p0
+PKGNAME=	enigma-${V}
+REVISION =	0
 
 CATEGORIES=	games x11
 
@@ -16,7 +17,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	SDL c m pthread stdc++ z
+WANTLIB=	SDL c m pthread stdc++ z SDL_image.>=1 SDL_mixer.>=2 \
+		SDL_ttf.>=7 png.>=8 zipios.>=1 xerces-c
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=enigma-game/}
 
@@ -26,12 +28,12 @@ MODULES=	devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	::net/enet
-LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image \
-		SDL_mixer.>=2::devel/sdl-mixer \
-		SDL_ttf.>=7::devel/sdl-ttf \
-		png.>=8::graphics/png \
-		zipios.>=1::archivers/zipios \
-		xerces-c::textproc/xerces-c
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer \
+		::devel/sdl-ttf \
+		::graphics/png \
+		::archivers/zipios \
+		::textproc/xerces-c
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

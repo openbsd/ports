@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	enhanced clone of Id Software's Doom game; multiplayer
 DISTNAME=	prboom-2.4.7
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prboom/}
 
@@ -14,13 +14,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		SDL c m pthread z GL GLU
+WANTLIB =	SDL c m pthread z GL GLU SDL_mixer.>=3 SDL_net.>=1 png.>=4
 
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
-		SDL_net.>=1::devel/sdl-net \
-		png.>=4::graphics/png
+LIB_DEPENDS =	::devel/sdl-mixer \
+		::devel/sdl-net \
+		::graphics/png
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"

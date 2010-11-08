@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:53 espie Exp $
 
 COMMENT=	clone of the commodore 64 game paradroids
 DISTNAME=	freedroid-1.0.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext c jpeg m png pthread pthread-stubs usbhid vorbis \
-		xcb z
+		xcb z SDL_image SDL_mixer
 
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer
 
 .include <bsd.port.mk>

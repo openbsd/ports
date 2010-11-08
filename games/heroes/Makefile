@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,7 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -45,24 +45,26 @@ ERRORS+=	"Fatal: Choose only one flavor: sdl or ggi"
 .endif
 
 .if ${FLAVOR:L:Msdl}
-LIB_DEPENDS+=	SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS +=	::devel/sdl \
+		::devel/sdl-mixer
+WANTLIB +=	SDL SDL_mixer
 
 CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
-WANTLIB+=	X11 Xext pthread pthread-stubs usbhid xcb
+WANTLIB +=	X11 Xext pthread pthread-stubs usbhid xcb
 .else
 CONFIGURE_ARGS+= --without-sdl --without-sdl-mixer
-WANTLIB+=	gii
+WANTLIB +=	gii
 .endif
 
 .if ${FLAVOR:L:Mggi}
 # Sound support is disabled with the ggi flavor since it is dependent
 # on sdl-mixer.  No alternatives for now.
-LIB_DEPENDS+=	ggi.2.0::graphics/ggi
-CONFIGURE_ARGS+= --with-ggi="${LOCALBASE}"
-PKGNAME=	heroes-${VERSION}p0
+LIB_DEPENDS +=	::graphics/ggi
+WANTLIB +=	ggi.>=2.0
+CONFIGURE_ARGS += --with-ggi="${LOCALBASE}"
+FULLPKGNAME =	heroes-${VERSION}
 .else
-CONFIGURE_ARGS+= --without-ggi
+CONFIGURE_ARGS += --without-ggi
 .endif
 
 SEPARATE_BUILD=	concurrent

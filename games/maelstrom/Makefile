@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:54 espie Exp $
 
 COMMENT =		asteroid-like game
 
 DISTNAME =		Maelstrom-3.0.6
-PKGNAME = 		${DISTNAME:L}p0
+PKGNAME = 		${DISTNAME:L}
+REVISION =		0
 CATEGORIES =		games x11
 HOMEPAGE =		http://www.devolution.com/~slouken/Maelstrom/
 MASTER_SITES =		${HOMEPAGE}/src/
@@ -18,8 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE = 	gnu
 
-WANTLIB =		SDL c m pthread stdc++
-LIB_DEPENDS =		SDL_net::devel/sdl-net
+WANTLIB =		SDL c m pthread stdc++ SDL_net
+LIB_DEPENDS =		::devel/sdl-net
 
 pre-configure:
 	@perl -pi -e 's,	Maelstrom,	maelstrom,g' ${WRKSRC}/README.network

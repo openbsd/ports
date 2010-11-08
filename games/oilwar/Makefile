@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
-PKGNAME=	${DISTNAME:L}p3
+PKGNAME=	${DISTNAME:L}
+REVISION =	3
 CATEGORIES=	games x11
 MASTER_SITES=	http://openbsddistfiles.com/jolan/
 
@@ -14,12 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	SDL c m pthread stdc++
+WANTLIB=	SDL c m pthread stdc++ SDL_image SDL_mixer
 
 NO_REGRESS=     Yes
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer
 
 CONFIGURE_STYLE=gnu
 

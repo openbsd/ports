@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 
@@ -17,16 +17,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL SDL X11 c m pthread pthread-stubs stdc++ xcb z
+WANTLIB=	GL SDL X11 c m pthread pthread-stubs stdc++ xcb z \
+		SDL_gfx SDL_image SDL_mixer SDL_ttf physfs xml2
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	SDL_gfx::devel/sdl-gfx \
-		SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer \
-		SDL_ttf::devel/sdl-ttf \
-		physfs::devel/physfs \
-		xml2::textproc/libxml
+LIB_DEPENDS=	::devel/sdl-gfx \
+		::devel/sdl-image \
+		::devel/sdl-mixer \
+		::devel/sdl-ttf \
+		::devel/physfs \
+		::textproc/libxml
 BUILD_DEPENDS=	::devel/jam
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 NO_REGRESS=	Yes

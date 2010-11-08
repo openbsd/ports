@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 15:54:53 espie Exp $
 
 COMMENT=	isometric RPG game
 
@@ -19,12 +19,13 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
-WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z
+WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z \
+		SDL_image.>=2 SDL_mixer.>=3 execinfo
 
 
-LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
-		SDL_mixer.>=3::devel/sdl-mixer \
-		execinfo::devel/libexecinfo
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer \
+		::devel/libexecinfo
 
 # needed to avoid a SIGSEGV
 # (int i corruption in enemy.c line 2056:

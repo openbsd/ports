@@ -1,42 +1,44 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/08 15:54:53 espie Exp $
 
-COMMENT=	NetHack derivative
+COMMENT =	NetHack derivative
 
-VERSION=	1.9.3
-DISTNAME=	nethack_source_331_jtp_${VERSION:S/.//g}
-PKGNAME=	falconseye-${VERSION}p3
-CATEGORIES=	games x11
-EXTRACT_SUFX=	.zip
+VERSION =	1.9.3
+DISTNAME =	nethack_source_331_jtp_${VERSION:S/.//g}
+PKGNAME =	falconseye-${VERSION}
+REVISION =	3
+CATEGORIES =	games x11
+EXTRACT_SUFX =	.zip
 
-HOMEPAGE=	http://falconseye.sourceforge.net/
+HOMEPAGE =	http://falconseye.sourceforge.net/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c curses m pthread pthread-stubs usbhid xcb
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=falconseye/}
+WANTLIB =	X11 Xext c curses m pthread pthread-stubs usbhid xcb SDL
 
-LIB_DEPENDS=	SDL::devel/sdl
-RUN_DEPENDS=	:hackdata-*:games/hackdata
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=falconseye/}
 
-FAKE_FLAGS=	PREFIX="${PREFIX}"
+LIB_DEPENDS =	::devel/sdl
+RUN_DEPENDS =	:hackdata-*:games/hackdata
 
-GAMEDIR=	lib/falconseyedir
-NHDIR=		${PREFIX}/${GAMEDIR}
-MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
-SUBST_VARS=	GAMEDIR
+FAKE_FLAGS =	PREFIX="${PREFIX}"
 
-WRKDIST=	${WRKDIR}
+GAMEDIR =	lib/falconseyedir
+NHDIR =		${PREFIX}/${GAMEDIR}
+MAKE_ENV =	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
+SUBST_VARS =	GAMEDIR
 
-NETHACKCONFIG=	${FILESDIR}/x-config
+WRKDIST =	${WRKDIR}
+
+NETHACKCONFIG =	${FILESDIR}/x-config
 USE_GROFF =	Yes
-MAKE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
+MAKE_ENV +=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_REGRESS =	Yes
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks

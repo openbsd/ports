@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	GGZ Gaming Zone - GNOME client
 
@@ -13,13 +13,14 @@ WANTLIB += gdk_pixbuf-2.0 ggz gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 popt pthread pthread-stubs xcb xml2 z
+WANTLIB += ggzcore ggzmod png gnomeui-2
 
 MODULES=		devel/gettext
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
-			png::graphics/png \
-			gnomeui-2::x11/gnome/libgnomeui
+LIB_DEPENDS=		::games/ggz/ggz-client-libs \
+			::graphics/png \
+			::x11/gnome/libgnomeui
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 .include <bsd.port.mk>

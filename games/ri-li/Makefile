@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.0
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games
 
 HOMEPAGE=	http://ri-li.sourceforge.net
@@ -18,12 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ri-li/}
 
-WANTLIB=	Xext X11 c m pthread pthread-stubs stdc++ usbhid xcb
+WANTLIB=	Xext X11 c m pthread pthread-stubs stdc++ usbhid xcb \
+		SDL_mixer.>=3 SDL.>=6
 
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
-		SDL.>=6::devel/sdl
+LIB_DEPENDS=	::devel/sdl-mixer \
+		::devel/sdl
 
 CONFIGURE_STYLE=gnu
 

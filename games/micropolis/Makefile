@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/08 15:54:54 espie Exp $
 
 COMMENT=	city-building simulation
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 RUN_DEPENDS=	::devel/desktop-file-utils
-WANTLIB=	X11 Xext Xpm c m pthread pthread-stubs xcb
-LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer
+WANTLIB=	X11 Xext Xpm c m pthread pthread-stubs xcb SDL SDL_mixer
+LIB_DEPENDS=	::devel/sdl \
+		::devel/sdl-mixer
 
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 

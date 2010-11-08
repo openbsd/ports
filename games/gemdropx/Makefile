@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 15:54:53 espie Exp $
 
 COMMENT=	one-player puzzle game for x11
 
 VERSION=	0.7
 DISTNAME=	gemdropx-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/gemdropx/
@@ -15,12 +15,13 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb
+WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb \
+			SDL SDL_mixer
 
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 
-LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl \
+		::devel/sdl-mixer
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
