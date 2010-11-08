@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/27 11:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/08 10:34:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,7 +55,7 @@ WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 \
 		gnome-keyring gs gcrypt gpg-error \
 		jpeg pthread tiff xml2 lcms openjpeg \
 		poppler poppler-glib spectre gnome-keyring \
-		gailutil stdc++
+		gailutil stdc++ ${MODGCONF2_WANTLIB}
 LIB_DEPENDS-main= ::print/poppler \
 		::print/libspectre \
 		::x11/gnome/libgnome-keyring \
