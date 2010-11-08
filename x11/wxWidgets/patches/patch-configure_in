@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.5 2010/11/02 13:10:51 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.6 2010/11/08 10:58:05 dcoppa Exp $
 --- configure.in.orig	Thu Apr 15 11:02:51 2010
 +++ configure.in	Tue Nov  2 10:21:20 2010
 @@ -3090,7 +3090,7 @@ if test "$wxUSE_LIBJPEG" != "no" ; then
@@ -78,25 +78,3 @@ $OpenBSD: patch-configure_in,v 1.5 2010/11/02 13:10:51 dcoppa Exp $
  else
      AC_MSG_WARN([Wide character support is unavailable])
  fi
-@@ -5609,8 +5595,13 @@ if test "$TOOLKIT" != "MSW" -a "$USE_OS2" != 1; then
-       dnl      (this one can be in either libpthread or libposix4 (under Solaris))
-       dnl   3. pthread_attr_getschedparam and pthread_attr_setschedparam
-       HAVE_PRIOR_FUNCS=0
-+      if test "$USE_OPENBSD" = 1; then
-       AC_CHECK_FUNC(pthread_attr_getschedpolicy,
-                      [AC_CHECK_FUNC(pthread_attr_setschedparam,
-+                         HAVE_PRIOR_FUNCS=1)])
-+      else
-+      AC_CHECK_FUNC(pthread_attr_getschedpolicy,
-+                     [AC_CHECK_FUNC(pthread_attr_setschedparam,
-                        [AC_CHECK_FUNC(sched_get_priority_max,
-                            HAVE_PRIOR_FUNCS=1,
-                            [AC_CHECK_LIB([posix4], sched_get_priority_max,
-@@ -5622,6 +5613,7 @@ if test "$TOOLKIT" != "MSW" -a "$USE_OS2" != 1; then
-                        )]
-                      )]
-                    )
-+      fi
- 
-       if test "$HAVE_PRIOR_FUNCS" = 1; then
-         AC_DEFINE(HAVE_THREAD_PRIORITY_FUNCTIONS)
