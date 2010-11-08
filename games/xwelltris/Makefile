@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 23:12:32 espie Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1
 DISTFILES=	${DISTNAME}.src.tar.gz
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}src/
 
@@ -30,8 +30,8 @@ CONFIGURE_ARGS+=--with-x
 WANTLIB+=	ICE SM X11 Xext pthread-stubs xcb
 .else
 CONFIGURE_ARGS+=--with-sdl
-LIB_DEPENDS=	SDL_image::devel/sdl-image
-WANTLIB+=	SDL pthread
+LIB_DEPENDS=	::devel/sdl-image
+WANTLIB+=	SDL pthread SDL_image
 .endif
 
 do-install:

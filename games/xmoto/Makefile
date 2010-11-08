@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/08 23:12:32 espie Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -19,22 +19,23 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU SDL X11 c m pthread pthread-stubs stdc++ xcb z
+WANTLIB += SDL_mixer SDL_net SDL_ttf bz2 curl jpeg ode lua png sqlite3
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS =	SDL_mixer::devel/sdl-mixer \
-		SDL_net::devel/sdl-net \
-		SDL_ttf::devel/sdl-ttf \
-		bz2::archivers/bzip2 \
-		curl::net/curl \
-		jpeg::graphics/jpeg \
-		ode::devel/ode \
-		lua::lang/lua \
-		png::graphics/png \
-		sqlite3::databases/sqlite3
+LIB_DEPENDS =	::devel/sdl-mixer \
+		::devel/sdl-net \
+		::devel/sdl-ttf \
+		::archivers/bzip2 \
+		::net/curl \
+		::graphics/jpeg \
+		::devel/ode \
+		::lang/lua \
+		::graphics/png \
+		::databases/sqlite3
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \

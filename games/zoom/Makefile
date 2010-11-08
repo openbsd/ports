@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/08 23:12:32 espie Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -14,12 +14,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat \
-			fontconfig freetype m pthread-stubs xcb z
+			fontconfig freetype m pthread-stubs xcb z \
+			png.>=6 t1.>=6
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		png.>=6::graphics/png \
-			t1.>=6::devel/t1lib
+LIB_DEPENDS=		::graphics/png \
+			::devel/t1lib
 
 USE_GMAKE=		Yes
 

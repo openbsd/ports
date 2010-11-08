@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/08 23:12:32 espie Exp $
 
 COMMENT=	Athena port of xminesweeper
 
 DISTNAME=	xmine-1.0.3-Xaw
-PKGNAME=	xmine-1.0.3p2
+PKGNAME=	xmine-1.0.3
+REVISION =	2
 CATEGORIES=	games
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
@@ -14,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xmu Xpm Xt c pthread-stubs xcb
+WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xmu Xpm Xt c pthread-stubs xcb Xaw3d
 
-LIB_DEPENDS=    Xaw3d.::x11/Xaw3d
+LIB_DEPENDS=    ::x11/Xaw3d
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes

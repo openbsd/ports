@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/08 23:12:32 espie Exp $
 
 COMMENT=	cuddlesome teddy for the X11 desktop
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext c
+WANTLIB += X11 Xext c Imlib2
 
-LIB_DEPENDS=	Imlib2::graphics/imlib2
+LIB_DEPENDS=	::graphics/imlib2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

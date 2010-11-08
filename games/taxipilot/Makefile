@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/08 23:12:32 espie Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
 DISTNAME=	taxipilot-0.7.2
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://taxipilot.sourceforge.net/
@@ -17,11 +17,12 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
-		m png pthread pthread-stubs rpcsvc stdc++ util xcb z
+		m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
+		kdecore.>=4 DCOP kdefx kdesu kdeui kio kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 
-LIB_DEPENDS=	kdecore.>=4,DCOP,kdecore,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
+LIB_DEPENDS=	::x11/kde/libs3
 
 MODULES=	x11/qt3 devel/gettext
 
