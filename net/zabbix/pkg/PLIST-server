@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.8 2010/08/22 14:43:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.9 2010/11/08 06:27:32 ajacoutot Exp $
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
 @sample ${SYSCONFDIR}/zabbix/
@@ -52,14 +52,14 @@ share/zabbix/dbpatches/1.6/oracle/
 share/zabbix/dbpatches/1.6/oracle/patch.sql
 share/zabbix/dbpatches/1.6/postgresql/
 share/zabbix/dbpatches/1.6/postgresql/patch.sql
-share/zabbix/dbpatches/1.8/
-share/zabbix/dbpatches/1.8/mysql/
-share/zabbix/dbpatches/1.8/mysql/patch.sql
-share/zabbix/dbpatches/1.8/mysql/upgrade
-share/zabbix/dbpatches/1.8/oracle/
-share/zabbix/dbpatches/1.8/oracle/patch.sql
-share/zabbix/dbpatches/1.8/postgresql/
-share/zabbix/dbpatches/1.8/postgresql/patch.sql
+share/zabbix/dbpatches/${MAJV}/
+share/zabbix/dbpatches/${MAJV}/mysql/
+share/zabbix/dbpatches/${MAJV}/mysql/patch.sql
+share/zabbix/dbpatches/${MAJV}/mysql/upgrade
+share/zabbix/dbpatches/${MAJV}/oracle/
+share/zabbix/dbpatches/${MAJV}/oracle/patch.sql
+share/zabbix/dbpatches/${MAJV}/postgresql/
+share/zabbix/dbpatches/${MAJV}/postgresql/patch.sql
 share/zabbix/schema/
 share/zabbix/schema/mysql.sql
 share/zabbix/schema/oracle.sql
