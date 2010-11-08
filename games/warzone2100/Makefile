@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
 DISTNAME=	warzone2100-2.0.7
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
@@ -17,17 +17,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	GL GLU SDL X11 Xext c m ogg pthread pthread-stubs \
-		sndio usbhid xcb z
+		sndio usbhid xcb z SDL_net.>=1 physfs.>=1 openal.>=1 \
+		vorbis.>=5 vorbisfile.>=4 mad.>=2 jpeg.>=62 png.>=5
 
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
-LIB_DEPENDS=	SDL_net.>=1::devel/sdl-net \
-		physfs.>=1::devel/physfs \
-		openal.>=1::audio/openal \
-		vorbis.>=5,vorbisfile.>=4::audio/libvorbis \
-		mad.>=2::audio/libmad \
-		jpeg.>=62::graphics/jpeg \
-		png.>=5::graphics/png
+LIB_DEPENDS=	::devel/sdl-net \
+		::devel/physfs \
+		::audio/openal \
+		::audio/libvorbis \
+		::audio/libmad \
+		::graphics/jpeg \
+		::graphics/png
 
 BUILD_DEPENDS=	::devel/bison \
 		::archivers/unzip \

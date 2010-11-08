@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
 VERSION=	1.1.0
 DISTNAME=	vectoroids-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
@@ -15,13 +15,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb
+WANTLIB=	X11 Xext c m pthread pthread-stubs usbhid xcb \
+		SDL SDL_mixer SDL_image
 
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
-LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer \
-		SDL_image::devel/sdl-image
+LIB_DEPENDS=	::devel/sdl \
+		::devel/sdl-mixer \
+		::devel/sdl-image
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

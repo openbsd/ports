@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	tetrinet server
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c
+WANTLIB=	c adns
 
-LIB_DEPENDS=	adns::net/adns
+LIB_DEPENDS=	::net/adns
 
 WRKSRC=		${WRKDIST}/src
 

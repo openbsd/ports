@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME =	${DISTNAME:L}
+REVISION =	1
 CATEGORIES=	games x11
 
 # GPL
@@ -10,9 +11,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb
+WANTLIB=	SDL X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb \
+		SDL_image
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image
+LIB_DEPENDS=	::devel/sdl-image
 
 
 CONFIGURE_STYLE=gnu

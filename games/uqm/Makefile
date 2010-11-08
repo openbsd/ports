@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/08 18:14:21 espie Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -22,7 +22,8 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME-main=		uqm-0.6.2p1
+PKGNAME-main=		uqm-0.6.2
+REVISION-main =		1
 PKGNAME-content=	uqm-content-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
@@ -40,9 +41,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS-main=	mikmod.>=2.4::audio/libmikmod \
-			vorbisidec.>=1::audio/tremor \
-			SDL_image::devel/sdl-image
+LIB_DEPENDS-main=	::audio/libmikmod \
+			::audio/tremor \
+			::devel/sdl-image
 PKG_ARCH-content=	*
 PKG_ARCH-remix1=	*
 PKG_ARCH-remix2=	*
@@ -52,7 +53,8 @@ PKG_ARCH-voice=		*
 RUN_DEPENDS=		:${PKGNAME-main}:games/uqm
 RUN_DEPENDS-content=	
 RUN_DEPENDS-main=	:${PKGNAME-content}:games/uqm,-content
-WANTLIB-main=		c m pthread z SDL
+WANTLIB-main=		c m pthread z SDL mikmod.>=2.4 vorbisidec.>=1 \
+			SDL_image
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

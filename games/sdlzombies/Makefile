@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	zombies clone
 
 VERSION=	1.0.0
 DISTNAME=	sdlzombies-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://hocwp.free.fr/sdlzombies.html
@@ -15,12 +15,13 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb
+WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
+			SDL_image SDL_mixer
 
 MASTER_SITES=	http://hocwp.free.fr/
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer
 
 
 CONFIGURE_STYLE= gnu

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
 DISTNAME=	vodovod-1.10-src
-PKGNAME=	vodovod-1.10p1
+PKGNAME=	vodovod-1.10
+REVISION =	1
 CATEGORIES=	games
 
 HOMEPAGE=	http://home.gna.org/vodovod/
@@ -16,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	SDL c m pthread stdc++
+WANTLIB=	SDL c m pthread stdc++ SDL_image SDL_mixer
 
 MASTER_SITES=	http://download.gna.org/vodovod/
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer
 
 
 MAKE_ENV+=	CC="${CXX}" CCFLAGS="${CXXFLAGS}" \

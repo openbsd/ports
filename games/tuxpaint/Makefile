@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/08 18:14:21 espie Exp $
 
 COMMENT=	drawing program for children
 
@@ -22,16 +22,18 @@ WANTLIB += SDL X11 Xau Xdmcp Xrender c cairo expat fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pixman-1 png pthread pthread-stubs xcb
 WANTLIB += z gio-2.0 gthread-2.0 xcb-render xcb-render-util
+WANTLIB += SDL_image.>=2 SDL_mixer.>=3 SDL_ttf.>=7 rsvg-2.>=18
+WANTLIB += paper utf8.>=1 SDL_Pango fribidi
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
-		SDL_mixer.>=3::devel/sdl-mixer \
-		SDL_ttf.>=7:sdl-ttf->=2.0.8:devel/sdl-ttf \
-		rsvg-2.>=18::x11/gnome/librsvg \
-		paper::print/libpaper \
-		utf8.>=1::misc/libutf8 \
-		SDL_Pango::devel/sdl-pango \
-		fribidi::devel/fribidi
+LIB_DEPENDS=	::devel/sdl-image \
+		::devel/sdl-mixer \
+		:sdl-ttf->=2.0.8:devel/sdl-ttf \
+		::x11/gnome/librsvg \
+		::print/libpaper \
+		::misc/libutf8 \
+		::devel/sdl-pango \
+		::devel/fribidi
 RUN_DEPENDS=	::graphics/netpbm \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
