@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/07 18:48:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/08 16:54:55 naddy Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -50,7 +50,7 @@ COMMENT-${l}=	${l} language data for Tesseract
 DISTFILES+=	${l}.traineddata.gz
 PKGNAME-${l}=	tesseract-${l}-${LANG_V}
 MULTI_PACKAGES+=-${l}
-REVISION-${l}=	0
+REVISION-${l}=	1
 RUN_DEPENDS-${l}=:tesseract->=${MAJOR_V}:${BASE_PKGPATH}
 PKG_ARCH-${l}=	*
 .endfor
