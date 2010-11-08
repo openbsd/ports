@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/08 08:53:05 jasper Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
 DISTNAME = 	pgbouncer-1.3.3	
-PKGNAME =	${DISTNAME}p1
+REVISION =	2
 
 CATEGORIES = 	databases
 
@@ -27,6 +27,7 @@ CONFIGURE_STYLE = 	gnu
 #Disable the detection of asciidoc since docs are already included
 CONFIGURE_ENV =         ASCIIDOC=' '
 CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE}
+MAKE_FLAGS+=		V=1
 
 USE_GMAKE = 		Yes
 USE_GROFF =	Yes
@@ -35,11 +36,5 @@ USE_GROFF =	Yes
 # They want to create full postgres install and also play with 
 # firewall (iptables)
 NO_REGRESS = 		Yes
-
-post-install:
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/pgbouncer/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/pgbouncer/README.OpenBSD
 
 .include <bsd.port.mk>

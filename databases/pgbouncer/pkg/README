@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2010/07/08 16:23:54 ajacoutot Exp $
+$OpenBSD: README,v 1.1 2010/11/08 08:53:05 jasper Exp $
 
 1) Carefully edit ${SYSCONFDIR}/pgbouncer/pgbouncer.ini and 
    ${SYSCONFDIR}/pgbouncer/userlist.txt to fit your needs.
