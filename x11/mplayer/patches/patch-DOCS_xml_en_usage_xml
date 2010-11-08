@@ -1,0 +1,21 @@
+$OpenBSD: patch-DOCS_xml_en_usage_xml,v 1.1 2010/11/08 21:25:44 edd Exp $
+--- DOCS/xml/en/usage.xml.orig	Tue Oct 26 12:49:00 2010
++++ DOCS/xml/en/usage.xml	Tue Oct 26 12:50:35 2010
+@@ -452,7 +452,7 @@ syntax is the same, except that you need to use dvdnav
+ </para>
+ 
+ <para>
+-The default DVD device is <filename>/dev/dvd</filename>. If your setup
++The default DVD device is <filename>/dev/rcd0c</filename>. If your setup
+ differs, make a symlink or specify the correct device on the command
+ line with the <option>-dvd-device</option> option.
+ </para>
+@@ -527,7 +527,7 @@ Syntax for a standard Video CD (VCD) is as follows:
+ <screen>mplayer vcd://<replaceable>&lt;track&gt;</replaceable> [-cdrom-device <replaceable>&lt;device&gt;</replaceable>]</screen>
+ Example:
+ <screen>mplayer vcd://2 -cdrom-device /dev/hdc</screen>
+-The default VCD device is <filename>/dev/cdrom</filename>. If your setup
++The default VCD device is <filename>/dev/rcd0c</filename>. If your setup
+ differs, make a symlink or specify the correct device on the command line
+ with the <option>-cdrom-device</option> option.
+ </para>

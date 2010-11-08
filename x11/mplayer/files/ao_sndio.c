@@ -157,8 +157,10 @@ static int init(int rate, int channels, int format, int flags)
 		ac3 = 1;
 		break;
 	default:
-		mp_msg(MSGT_AO, MSGL_ERR, "ao2: unsupported format\n");
-		return 0;
+		mp_msg(MSGT_AO, MSGL_V, "ao2: unsupported format\n");
+		par.bits = 16;
+		par.sig = 1;
+		par.le = SIO_LE_NATIVE;
 	}
 	par.rate = rate;
 	par.pchan = channels;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ffmpeg_libavutil_x86_cpu_h,v 1.1 2010/11/08 21:25:44 edd Exp $
+--- ffmpeg/libavutil/x86_cpu.h.orig	Mon Oct 25 23:02:43 2010
++++ ffmpeg/libavutil/x86_cpu.h	Mon Oct 25 23:03:10 2010
+@@ -71,7 +71,7 @@ typedef int x86_reg;
+ #define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE))
+ #define HAVE_6REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE || HAVE_EBP_AVAILABLE))
+ 
+-#if ARCH_X86_64 && defined(PIC)
++#if ARCH_X86_64 // && defined(PIC)
+ #    define BROKEN_RELOCATIONS 1
+ #endif
+ 

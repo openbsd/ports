@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/08/06 20:05:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/11/08 21:25:44 edd Exp $
 @pkgpath x11/mplayer,mad
 @pkgpath x11/mplayer,mad,no_x11
 @pkgpath x11/mplayer,sdl,mad
@@ -8,13 +8,12 @@
 @man man/man1/mplayer.1
 share/doc/mplayer/
 share/doc/mplayer/MPlayer.html
-share/doc/mplayer/README.OpenBSD
 share/doc/mplayer/aalib.html
 share/doc/mplayer/advaudio-channels.html
 share/doc/mplayer/advaudio-surround.html
 share/doc/mplayer/advaudio-volume.html
-share/doc/mplayer/advaudio.html
 share/doc/mplayer/aspect.html
+share/doc/mplayer/blinkenlights.html
 share/doc/mplayer/bsd.html
 share/doc/mplayer/bugreports.html
 share/doc/mplayer/bugreports_advusers.html
@@ -25,14 +24,12 @@ share/doc/mplayer/bugreports_security.html
 share/doc/mplayer/bugreports_what.html
 share/doc/mplayer/bugreports_where.html
 share/doc/mplayer/caca.html
-share/doc/mplayer/cd-dvd.html
 share/doc/mplayer/codec-installation.html
 share/doc/mplayer/commandline.html
 share/doc/mplayer/control.html
 share/doc/mplayer/dfbmga.html
 share/doc/mplayer/dga.html
 share/doc/mplayer/directfb.html
-share/doc/mplayer/drives.html
 share/doc/mplayer/dummy.html
 share/doc/mplayer/dvd.html
 share/doc/mplayer/edl.html
@@ -68,14 +65,11 @@ share/doc/mplayer/menc-feat-xvid.html
 share/doc/mplayer/mencoder.html
 share/doc/mplayer/mga_vid.html
 share/doc/mplayer/mpeg_decoders.html
-share/doc/mplayer/mtrr.html
+share/doc/mplayer/networksync.html
 share/doc/mplayer/opengl.html
-share/doc/mplayer/other.html
 share/doc/mplayer/ports.html
-share/doc/mplayer/radio-input.html
 share/doc/mplayer/radio.html
 share/doc/mplayer/rtc.html
-share/doc/mplayer/sdl.html
 share/doc/mplayer/skin-file.html
 share/doc/mplayer/skin-fonts.html
 share/doc/mplayer/skin-gui.html
@@ -90,7 +84,6 @@ share/doc/mplayer/tdfx_vid.html
 share/doc/mplayer/tdfxfb.html
 share/doc/mplayer/tv-input.html
 share/doc/mplayer/tv-teletext.html
-share/doc/mplayer/tv.html
 share/doc/mplayer/tvout.html
 share/doc/mplayer/unix.html
 share/doc/mplayer/usage.html
@@ -101,6 +94,8 @@ share/doc/mplayer/vidix.html
 share/doc/mplayer/windows.html
 share/doc/mplayer/x11.html
 share/doc/mplayer/xv.html
+share/doc/mplayer/zr.html
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mplayer/
 @sample ${CONFDIR}/
 share/examples/mplayer/codecs.conf
