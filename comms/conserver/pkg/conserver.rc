@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: conserver.rc,v 1.1 2010/11/08 09:58:11 sthen Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon=${TRUEPREFIX}/sbin/conserver
+daemon_flags="-d -n"
+
+rc_cmd $1
