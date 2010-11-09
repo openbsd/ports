@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2009/06/12 18:14:26 kurt Exp $
+$OpenBSD: README,v 1.1 2010/11/09 21:38:37 jasper Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -22,7 +22,7 @@ http://your.tomcat.host:8080/jsp-examples/ for Tomcat 5).
 Sample configuration files will be installed to /var/www/conf if you don't
 already have them.
 
-1) Enable the module by executing /usr/local/sbin/mod_jk-enable with root
+1) Enable the module by executing ${TRUEPREFIX}/sbin/mod_jk-enable with root
 privileges (using sudo).
 
 2) If Tomcat is installed on another machine, edit the sample 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/09 21:38:37 jasper Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
 V=			1.2.28
-REVISION=		1
+REVISION=		2
 DISTNAME=		tomcat-connectors-${V}-src
 PKGNAME=		mod_jk-${V}
 CATEGORIES=		www
@@ -48,9 +48,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../conf/${file} ${PREFIX}/share/examples/mod_jk
 .endfor
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	sed 's,/usr/local,${TRUEPREFIX},' \
-		< ${FILESDIR}/README.OpenBSD >${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/LICENSE ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/NOTICE ${DOCDIR}
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
