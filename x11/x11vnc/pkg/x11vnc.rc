@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: x11vnc.rc,v 1.1 2010/11/09 10:52:22 ajacoutot Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/bin/x11vnc"
+daemon_flags="-localhost -logfile /var/log/x11vnc -ncache 0 -display :0 -forever -loop100 -auth /etc/X11/xdm/authdir/authfiles/A:0-*"
+
+rc_start() {
+	type rc_pre >/dev/null && rc_pre
+	${daemon} ${daemon_flags} >/dev/null 2>&1 &
+}
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1

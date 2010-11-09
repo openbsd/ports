@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/15 08:21:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/11/09 10:52:22 ajacoutot Exp $
 @bin bin/x11vnc
 include/rfb/
 include/rfb/keysym.h
@@ -29,3 +29,4 @@ share/x11vnc/classes/ssl/ultra.vnc
 share/x11vnc/classes/ssl/ultrasigned.vnc
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@rcscript ${RCDIR}/x11vnc
