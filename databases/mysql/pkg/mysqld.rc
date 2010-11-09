@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $OpenBSD: mysqld.rc,v 1.2 2010/11/09 08:58:06 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
@@ -13,7 +15,7 @@ rc_reload() {
 }
 
 rc_start() {
-	$daemon $daemon_flags >/dev/null 2>&1 &
+	${daemon} ${daemon_flags} >/dev/null 2>&1 &
 }
 
 rc_stop() {
