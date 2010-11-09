@@ -1,28 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.13 2007/06/09 23:10:45 espie Exp $
+$OpenBSD: patch-configure_in,v 1.14 2010/11/09 16:27:04 naddy Exp $
 --- configure.in.orig	Wed May 30 23:53:52 2007
 +++ configure.in	Fri Jun  1 01:48:15 2007
-@@ -532,10 +532,10 @@ KDE_FIND_PATH(pkg-config, PKGCONFIG, [${prefix}/bin ${
- ])
- 
- if test -n "$PKGCONFIG"; then
--  vers=`$PKGCONFIG libwpd-0.8 --modversion 2>/dev/null`
-+  vers=`$PKGCONFIG libwpd --modversion 2>/dev/null`
-   if test -n "$vers"
-   then
--     LIBWPD_LIBS="`$PKGCONFIG libwpd-0.8 --libs`"
-+     LIBWPD_LIBS="`$PKGCONFIG libwpd --libs`"
-      LIBWPD_RPATH=
-      for args in $LIBWPD_LIBS; do
-           case $args in
-@@ -545,7 +545,7 @@ if test -n "$PKGCONFIG"; then
-           esac
-      done
-      LIBWPD_RPATH=`echo $LIBWPD_RPATH | $SED -e "s/-L/-R/g"`
--     LIBWPD_CFLAGS="`$PKGCONFIG libwpd-0.8 --cflags`"
-+     LIBWPD_CFLAGS="`$PKGCONFIG libwpd --cflags`"
- 
-      AC_DEFINE_UNQUOTED(HAVE_WPD, 1, [Defines if your system has the libwpd library])
-   fi
 @@ -984,8 +984,8 @@ dnl *** Check that the paths given to configure are va
  
      AC_MSG_CHECKING([for PostgreSQL C API libraries])

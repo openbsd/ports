@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/09 16:27:04 naddy Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
+REVISION =		17
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
@@ -94,8 +95,6 @@ LIB_DEPENDS=	::x11/kde/libs3 \
 		::databases/postgresql \
 		${MODRUBY_LIB_DEPENDS}
 
-
-REVISION =	16
 WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
@@ -110,7 +109,7 @@ WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
 	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
 	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
 	python2.5 qtmcop readline sndio soundserver_idl ssl stdc++ \
-	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd \
+	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd-0.8 \
 	wv2 xcb xml2 xslt z ${MODRUBY_WANTLIB}
 
 
