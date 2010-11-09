@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/09 21:33:24 jasper Exp $
 
 COMMENT=	GNU Problem Report Management System
 
 DISTNAME=	gnats-3.113.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
@@ -27,9 +27,6 @@ CONFIGURE_ENV+=	SEND_PR=/usr/bin/false
 INSTALL_TARGET=	install-gnats install-send-pr install-info
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnats/
-	sed "s%y0y0y0%${TRUEPREFIX}%g" ${FILESDIR}/README.OpenBSD > \
-		${PREFIX}/share/doc/gnats/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnats/
 	sed "s%/var/lib%${TRUEPREFIX}/share%g" \
 		${WRKDIST}/gnats/gnats-db.conf > \

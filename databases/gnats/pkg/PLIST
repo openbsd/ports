@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/31 17:22:40 alek Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/09 21:33:24 jasper Exp $
 @newuser _gnats:501:daemon::GNATS database owner:${PREFIX}/share/gnats:/sbin/nologin
 bin/edit-pr
-bin/getclose
+@bin bin/getclose
 bin/install-sid
 bin/nedit-pr
-bin/nquery-pr
-bin/query-pr
+@bin bin/nquery-pr
+@bin bin/query-pr
 bin/send-pr
-bin/sub-type
+@bin bin/sub-type
 @info info/gnats.info
 @info info/send-pr.info
 @info info/standards.info
@@ -17,30 +17,30 @@ libexec/gnats/
 libexec/gnats/at-pr
 libexec/gnats/check-db
 libexec/gnats/delete-pr
-libexec/gnats/file-pr
+@bin libexec/gnats/file-pr
 @mode 4555
 @owner _gnats
-libexec/gnats/gen-index
+@bin libexec/gnats/gen-index
 @mode
 @owner
 libexec/gnats/gnats-edit-pr
-libexec/gnats/gnatsd
+@bin libexec/gnats/gnatsd
 libexec/gnats/mail-query
 libexec/gnats/mkcat
 libexec/gnats/mkdist
-libexec/gnats/npr-addr
-libexec/gnats/npr-edit
-libexec/gnats/pr-addr
-libexec/gnats/pr-age
+@bin libexec/gnats/npr-addr
+@bin libexec/gnats/npr-edit
+@bin libexec/gnats/pr-addr
+@bin libexec/gnats/pr-age
 @mode 4555
 @owner _gnats
-libexec/gnats/pr-edit
+@bin libexec/gnats/pr-edit
 @mode
 @owner
-libexec/gnats/pr-mail
+@bin libexec/gnats/pr-mail
 @mode 4555
 @owner _gnats
-libexec/gnats/queue-pr
+@bin libexec/gnats/queue-pr
 @mode
 @owner
 libexec/gnats/rmcat
@@ -54,8 +54,7 @@ libexec/gnats/rmcat
 @man man/man8/mkdist.8
 @man man/man8/queue-pr.8
 @man man/man8/rmcat.8
-share/doc/gnats/
-share/doc/gnats/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gnats/
 share/examples/gnats/gnats-db.conf
 @sample ${SYSCONFDIR}/gnats-db.conf
