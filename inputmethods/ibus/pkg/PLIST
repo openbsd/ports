@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/30 07:26:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/09 20:00:38 jasper Exp $
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
@@ -157,8 +157,7 @@ libexec/ibus-ui-gtk
 @bin libexec/ibus-x11
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
-share/doc/ibus/
-share/doc/ibus/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/gtk-doc/html/ibus/
 share/gtk-doc/html/ibus/IBusAttrList.html
 share/gtk-doc/html/ibus/IBusAttribute.html

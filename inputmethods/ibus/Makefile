@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/09 20:00:38 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,13 +6,13 @@ COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.7
 
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =	ibus	0.0	# 2.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
-HOMEPAGE =	http://code.google.com/p/ibus/
+HOMEPAGE =	http://ibus.googlecode.com/
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +28,7 @@ WANTLIB =	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread pthread-stubs xcb xcb-render xcb-render-util z
 
-MASTER_SITES =	http://ibus.googlecode.com/files/
+MASTER_SITES =	${HOMEPAGE}/files/
 
 MODULES =	devel/gconf2 \
 		devel/gettext \
@@ -59,9 +59,5 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ibus
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/ibus
 
 .include <bsd.port.mk>

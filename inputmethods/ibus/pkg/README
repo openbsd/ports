@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/08/19 18:57:50 fgsch Exp $
+$OpenBSD: README,v 1.1 2010/11/09 20:00:38 jasper Exp $
 
 To make IBus work when X is started add the following lines to
 ~/.xinitrc or ~/.xsession:
