@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2010/09/21 07:21:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/09 21:46:50 jasper Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.14
+REVISION=	0
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
@@ -66,7 +67,6 @@ post-install:
 	@for file in FAQ NEWS README* UPGRADING; do \
 	    ${INSTALL_DATA} ${WRKDIST}/$$file ${MMDOC}; \
 	done
-	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${MMDOC}
 	@${INSTALL_DATA_DIR} ${MMEXAMPLES}
 	@mv ${WRKINST}/var/spool/mailman/data/sitelist.cfg ${MMEXAMPLES}
 

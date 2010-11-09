@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/09/21 07:21:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/11/09 21:46:50 jasper Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -2431,7 +2431,6 @@ share/doc/mailman/README
 share/doc/mailman/README-I18N.en
 share/doc/mailman/README.CONTRIB
 share/doc/mailman/README.NETSCAPE
-share/doc/mailman/README.OpenBSD
 share/doc/mailman/README.USERAGENT
 share/doc/mailman/UPGRADING
 @mode 0775
@@ -2454,7 +2453,9 @@ share/doc/mailman/UPGRADING
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mailman/
 share/examples/mailman/sitelist.cfg
 @sample /var/spool/mailman/data/sitelist.cfg
 @extra /var/cron/tabs/_mailman
+@rcscript ${RCDIR}/mailman

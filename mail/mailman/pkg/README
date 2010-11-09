@@ -1,8 +1,7 @@
-$OpenBSD: README.OpenBSD,v 1.8 2006/08/31 00:25:43 fgsch Exp $
+$OpenBSD: README,v 1.1 2010/11/09 21:46:50 jasper Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
-in. This defaults to /usr/local/lib/mailman. If you install your ports
-elsewhere, exchange that path with /usr/local. Most of this text is 
+in. This defaults to ${TRUEPREFIX}/lib/mailman. Most of this text is 
 taken from the file INSTALL of the mailman distribution, with some
 OpenBSD specific comments added. It's a good time to become root, now.
 
@@ -83,14 +82,7 @@ OpenBSD specific comments added. It's a good time to become root, now.
   % bin/mailmanctl start
 
   If you want to start Mailman every time you reboot your system,
-  add something like
-
-  if [ -x /usr/local/lib/mailman/bin/mailmanctl ]; then
-          echo -n ' mailman'
-          /usr/local/lib/mailman/bin/mailmanctl -s -q start
-  fi
-
-  to your /etc/rc.local
+  enable the rc script.
 
 - Look to see if there is special instructions about hooking your
   MTA up to Mailman.  If so, there will be a README.<yourMTA> file

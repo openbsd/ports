@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $OpenBSD
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/lib/mailman/bin/mailmanctl"
+daemon_flags="-s -q"
+
+rc_start() {
+	${daemon} ${daemon_flags} start
+}
+
+rc_stop() {
+	${daemon} ${daemon_flags} stop
+}
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1
