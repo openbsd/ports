@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/02 21:55:38 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/09 11:33:34 fgsch Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.6
 CATEGORIES =	net
+REVISION =	0
+
 EXTRACT_SUFX =	.tar.bz2
 
 HOMEPAGE =	http://www.ircd-ratbox.org/
@@ -18,10 +20,10 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =		c crypto ssl z
+WANTLIB =		c crypto ltdl sqlite3 ssl z
 
-LIB_DEPENDS =		sqlite3::databases/sqlite3 \
-			ltdl:libltdl-*:devel/libtool,-ltdl
+LIB_DEPENDS =		::databases/sqlite3 \
+			:libltdl-*:devel/libtool,-ltdl
 
 USE_LIBTOOL =		Yes
 NO_REGRESS =		Yes
