@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-PKGNAME=		${DISTNAME}p5
+REVISION =		5
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam idn \
-		jpeg m png pthread pthread-stubs rpcsvc stdc++ util xcb z
+		jpeg m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
+		kdecore.>=6 DCOP kdefx kdesu kdeui kio kmediaplayer kparts \
+		kwalletclient kipi exiv2
 
-LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,kwalletclient::x11/kde/libs3 \
-		kipi::graphics/libkipi \
-		exiv2::graphics/exiv2
+LIB_DEPENDS=	::x11/kde/libs3 \
+		::graphics/libkipi \
+		::graphics/exiv2
 
 RUN_DEPENDS=	::databases/qt3-sqlite3-plugin \
 		:desktop-file-utils-*:devel/desktop-file-utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/08 10:34:53 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/09 18:22:26 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -85,8 +85,8 @@ LIB_DEPENDS-dvi= ${MODGETTEXT_LIB_DEPENDS} \
 		::print/libspectre
 RUN_DEPENDS-dvi= ${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension
-LIB_DEPENDS-nautilus= evdocument::${BASE_PKGPATH} \
+WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument
+LIB_DEPENDS-nautilus= ::${BASE_PKGPATH} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
 		::x11/gnome/nautilus

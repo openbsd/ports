@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
@@ -16,16 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c gd
 
-LIB_DEPENDS=		gd::graphics/gd
+LIB_DEPENDS=		::graphics/gd
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--disable-v4l1
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=	jpeg pixel interpolator
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
-LIB_DEPENDS=		jpeg.>=62::graphics/jpeg
+WANTLIB=		c m jpeg.>=62
+LIB_DEPENDS=		::graphics/jpeg
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-nls \

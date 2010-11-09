@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/09 18:22:26 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
 COMMENT=	capture utility for Brooktree-based cards
 DISTNAME=	fxtv-1.03
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://people.freebsd.org/~rhh/fxtv/
@@ -14,9 +14,9 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/fxtv/
 
-LIB_DEPENDS=	tiff.>=35::graphics/tiff \
-		jpeg.>=62::graphics/jpeg \
-		Xaw3d.>=6.1::x11/Xaw3d
+LIB_DEPENDS=	::graphics/tiff \
+		::graphics/jpeg \
+		::x11/Xaw3d
 
 RUN_DEPENDS=	:sox->=12.12:audio/sox \
 		:mpg321-*:audio/mpg321 \
@@ -31,7 +31,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xxf86dga Xxf86vm c m \
-			ossaudio pthread-stubs xcb z
+			ossaudio pthread-stubs xcb z tiff.>=35 jpeg.>=62 \
+			Xaw3d.>=6.1
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

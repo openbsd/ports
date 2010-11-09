@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=		color ascii art library
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=		::misc/zzuf
 REGRESS_DEPENDS=	::devel/cppunit
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -33,8 +33,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else
-LIB_DEPENDS=    	Imlib2.>=1::graphics/imlib2
-WANTLIB+=		X11 Xau Xdmcp Xext freetype pthread-stubs xcb
+LIB_DEPENDS =    	::graphics/imlib2
+WANTLIB +=		X11 Xau Xdmcp Xext freetype pthread-stubs xcb \
+			Imlib2.>=1
 .endif
 
 CONFIGURE_STYLE= 	gnu

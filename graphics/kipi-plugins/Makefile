@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/09 18:22:26 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -16,9 +16,8 @@ SHARED_LIBS +=	kipiplugins          0.0      # .0.1
 SUBST_VARS +=	PKGNAME-cal
 MULTI_PACKAGES =-main -cal
 SHARED_ONLY =	Yes
-LIB_DEPENDS =	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3 \
-		kipi::graphics/libkipi \
-		lib/qt3/qt-mt.>=3.33::x11/qt3 \
+LIB_DEPENDS =	::x11/kde/libs3 \
+		::graphics/libkipi
 
 LIB_DEPENDS-main =${LIB_DEPENDS} \
 		khtml,kjs,kutils::x11/kde/libs3 \
@@ -27,8 +26,8 @@ LIB_DEPENDS-main =${LIB_DEPENDS} \
 		kdcraw::graphics/libkdcraw
 
 LIB_DEPENDS-cal =${LIB_DEPENDS} \
-		kcal,kmime,ktnef::x11/kde/pim3 \
-		kipiplugins::graphics/kipi-plugins,-main
+		::x11/kde/pim3 \
+		::graphics/kipi-plugins,-main
 
 RUN_DEPENDS =	::graphics/ImageMagick
 
@@ -36,12 +35,14 @@ MODULES =	x11/kde
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 \
 		fam iconv idn intl jpeg m png pthread-stubs rpcsvc stdc++ \
-		util xcb z
+		util xcb z kdecore.>=6 DCOP kdefx kdeprint kdesu kdeui kio \
+		kparts kwalletclient kipi lib/qt3/qt-mt.>=3.33
+
 WANTLIB-main =	${WANTLIB} GL ltdl Xrandr \
 		pcre pcreposix tiff exif expat lcms \
 		exslt xslt xml2 gpg-error gcrypt exiv2
 
-WANTLIB-cal =	${WANTLIB} kabc kresources vcard
+WANTLIB-cal =	${WANTLIB} kabc kresources vcard kcal kmime ktnef kipiplugins
 
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes

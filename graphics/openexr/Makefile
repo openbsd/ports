@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/09 18:22:26 espie Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -6,8 +6,10 @@ COMMENT-doc=	developer documentation for OpenEXR
 
 V=		1.6.1
 DISTNAME=	openexr-$V
-PKGNAME-main=	OpenEXR-$Vp1
-PKGNAME-tools=  OpenEXR-tools-$Vp0
+PKGNAME-main=	OpenEXR-$V
+REVISION-main = 1
+PKGNAME-tools=  OpenEXR-tools-$V
+REVISION-tools =	0
 PKGNAME-doc=	OpenEXR-doc-$V
 SHARED_LIBS=	IlmImf               4.0      # .6.0	
 CATEGORIES=	graphics
@@ -25,12 +27,11 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 
 MULTI_PACKAGES= 	-main -tools -doc
 
-WANTLIB-main=		m z stdc++
-LIB_DEPENDS-main=	Half,Iex,Imath,IlmThread::graphics/ilmbase
+WANTLIB-main=		m z stdc++ Half Iex Imath IlmThread
+LIB_DEPENDS-main=	::graphics/ilmbase
 
-WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++
-LIB_DEPENDS-tools=	${LIB_DEPENDS-main} \
-			IlmImf.>=4::graphics/openexr
+WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++ IlmImf.>=4
+LIB_DEPENDS-tools=	${LIB_DEPENDS-main} ::graphics/openexr
 PKG_ARCH-doc=		*
 
 # Regress unhappy with separate build

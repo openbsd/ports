@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/09 18:22:26 espie Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
 V =			0.1.6
 DISTNAME =		libkipi-$V
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY =		Yes
-LIB_DEPENDS +=		lib/qt3/qt-mt.>=3.33::x11/qt3 \
-			kdecore.>=6,kwalletclient,DCOP,kio,kdeui,kdefx,kdesu::x11/kde/libs3
+LIB_DEPENDS +=		::x11/kde/libs3
 
 WANTLIB =		ICE Xrender SM Xext X11 util m z \
 			jpeg png art_lgpl_2 iconv idn \
 			Xau Xdmcp fam intl rpcsvc stdc++ \
-			pthread-stubs xcb
+			pthread-stubs xcb lib/qt3/qt-mt.>=3.33 \
+			kdecore.>=6 kwalletclient DCOP kio kdeui kdefx kdesu
 
 FLAVORS =	debug
 MODULES =	x11/kde

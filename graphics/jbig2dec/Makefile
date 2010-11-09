@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=	decoder for JBIG2 monochrome hi-res image compression format
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://ghostscript.com/~giles/jbig2/jbig2dec/
 MASTER_SITES0=		http://jbig2dec.sourceforge.net/ubc/
 
-WANTLIB +=		c m z
+WANTLIB +=		c m z png
 
-LIB_DEPENDS=		png::graphics/png
+LIB_DEPENDS=		::graphics/png
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/09 18:22:27 espie Exp $
 
 COMMENT=	tool for extracting metadata from PNG files
 
@@ -14,12 +14,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m z
+WANTLIB=		c m z png.>=4
 
-LIB_DEPENDS=		png.>=4::graphics/png
+LIB_DEPENDS=		::graphics/png
 
 MAKE_FILE=		${FILESDIR}/Makefile
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

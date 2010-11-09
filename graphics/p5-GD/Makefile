@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/09 18:22:26 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	fontconfig freetype jpeg m png z
+WANTLIB =	fontconfig freetype jpeg m png z gd.>=20.28
 
-LIB_DEPENDS =	gd.>=20.28::graphics/gd
+LIB_DEPENDS =	::graphics/gd
 
 MODULES =	converters/libiconv
 

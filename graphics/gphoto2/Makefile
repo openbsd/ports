@@ -1,41 +1,42 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/09 18:22:26 espie Exp $
 
-COMMENT=	digital camera command-line interface
-CATEGORIES=	graphics
+COMMENT =	digital camera command-line interface
+CATEGORIES =	graphics
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.4.7
-DISTNAME=	gphoto2-${VERSION}
-PKGNAME=	gphoto-${VERSION}
+VERSION =	2.4.7
+DISTNAME =	gphoto2-${VERSION}
+PKGNAME =	gphoto-${VERSION}
 
-HOMEPAGE=	http://gphoto.sourceforge.net/
+HOMEPAGE =	http://gphoto.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 # GPLv2
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_DISTFILES_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
 
-WANTLIB=		c exif m ncurses readline ltdl pthread usb
 
-USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_LIBTOOL =		Yes
+USE_GROFF =		Yes
 
-MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
+MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-aalib --without-cdk
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =		--without-aalib --without-cdk
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			POPT_CFLAGS="-I${LOCALBASE}/include" \
 			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
 
-MODULES=	devel/gettext
-LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
-		jpeg::graphics/jpeg \
-		popt::devel/popt
+MODULES =	devel/gettext
+LIB_DEPENDS =	::graphics/libgphoto2 \
+		::graphics/jpeg \
+		::devel/popt
 
+WANTLIB =	c exif m ncurses readline ltdl pthread usb \
+		gphoto2 gphoto2_port jpeg popt
 .include <bsd.port.mk>

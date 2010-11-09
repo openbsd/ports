@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/09 18:22:26 espie Exp $
 
 COMMENT=	disc cover designer
 
 DISTNAME=	discwrapper-1.2.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://discwrapper.sourceforge.net/
@@ -17,11 +17,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=discwrapper/}
 
 WANTLIB += c m pthread stdc++
-
+WANTLIB += wx_base.>=1 wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
+WANTLIB += wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa 
+WANTLIB += wx_gtk2_richtext wx_gtk2_xrc
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info->=0.21:misc/shared-mime-info
 
-LIB_DEPENDS=	wx_base.>=1,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
+LIB_DEPENDS=	::x11/wxWidgets
 
 CONFIGURE_STYLE=gnu
 

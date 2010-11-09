@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/09 18:22:27 espie Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -12,10 +12,10 @@ HOMEPAGE=		http://spiegl.de/qiv/
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-LIB_DEPENDS=		magic::devel/libmagic \
-			Imlib2::graphics/imlib2 \
-			exif::graphics/libexif \
-			gdk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		::devel/libmagic \
+			::graphics/imlib2 \
+			::graphics/libexif \
+			::x11/gtk+2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,12 +26,13 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
 			freetype gio-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
+			pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0 \
+			magic Imlib2 exif gdk-x11-2.0
 
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

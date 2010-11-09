@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/09 18:22:27 espie Exp $
 
 COMMENT=			3D image rendering package
 
 DISTNAME=			povray-3.1g
-PKGNAME=			${DISTNAME}p1
+REVISION =			1
 CATEGORIES=			graphics
 
 HOMEPAGE=			http://www.povray.org
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=		Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
 PERMIT_DISTFILES_FTP=		Yes
-WANTLIB=			c m z
+WANTLIB=			c m z png.>=2
 
 MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1g/Unix/ \
 				ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
@@ -21,7 +21,7 @@ DISTFILES=			povuni_s.tgz povuni_d.tgz
 DIST_SUBDIR=			${DISTNAME}
 USE_GROFF =	Yes
 
-LIB_DEPENDS=			png.>=2.::graphics/png
+LIB_DEPENDS=			::graphics/png
 
 FLAVORS=			no_x11
 FLAVOR?=

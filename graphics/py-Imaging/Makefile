@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/09 18:22:27 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-main=		freetype tcl84 z
+WANTLIB-main=		freetype tcl84 z jpeg.>=62 tk84
 
 MASTER_SITES=		http://effbot.org/media/downloads/
 
@@ -36,8 +36,8 @@ RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 RUN_DEPENDS-bin=	${RUN_DEPENDS} \
 			:py-Imaging-*:graphics/py-Imaging
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg \
-			tk84:tk->=8.4,<8.5:x11/tk/8.4
+LIB_DEPENDS-main=	::graphics/jpeg \
+			:tk->=8.4,<8.5:x11/tk/8.4
 
 FLAVORS=		python2.4 python2.6
 FLAVOR?=		python2.6

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/09 18:22:27 espie Exp $
 
 COMMENT =	python bindings for pigment
 
@@ -31,13 +31,15 @@ USE_GMAKE =	Yes
 RUN_DEPENDS =	::multimedia/gstreamer-0.10/py-gstreamer
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
-LIB_DEPENDS =	pigment-0.3,pigment-gtk-0.3,pigment-imaging-0.3::graphics/pigment
+LIB_DEPENDS =	::graphics/pigment
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xml2
-WANTLIB += gstvideo-0.10 gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 gstbase-0.10 gstreamer-0.10
+WANTLIB += gstvideo-0.10 gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 
+WANTLIB += gstbase-0.10 gstreamer-0.10
+WANTLIB += pigment-0.3 pigment-gtk-0.3 pigment-imaging-0.3
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/09 18:22:26 espie Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -6,7 +6,8 @@ COMMENT-full=		full resolution coastline data for GMT
 
 V=			4.1.3
 DISTNAME=		GMT$V
-PKGNAME-main=		gmt-$Vp2
+PKGNAME-main=		gmt-$V
+REVISION-main =		2
 PKGNAME-high=		gmt-high-$V
 PKGNAME-full=		gmt-full-$V
 CATEGORIES=		graphics geo
@@ -39,8 +40,8 @@ EXTRACT_CASES=		GMT4.1_*.tar.bz2) bzip2 -dc ${FULLDISTDIR}/$$archive | \
 
 MULTI_PACKAGES=		-main -high -full
 
-LIB_DEPENDS-main=	netcdf.>=1::math/netcdf
-WANTLIB-main=		c m
+LIB_DEPENDS-main=	::math/netcdf
+WANTLIB-main=		c m netcdf.>=1
 
 RUN_DEPENDS-high=	:gmt-$V:graphics/gmt
 RUN_DEPENDS-full=	:gmt-$V:graphics/gmt
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/gmt/share \
 			--enable-mansect=1 \
 			--enable-netcdf=${LOCALBASE}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		gmt

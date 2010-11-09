@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/16 05:50:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/09 18:22:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,11 +25,11 @@ AUTOMAKE_VERSION=	1.9
 BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	MagickCore,MagickWand::graphics/ImageMagick
+LIB_DEPENDS=	::graphics/ImageMagick
 RUN_DEPENDS=	:php5-core-*:www/php5/core
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt bz2 expat fontconfig freetype \
 		iconv jasper jbig jpeg lcms m png pthread-stubs tiff \
-		wmflite xcb xml2 z
+		wmflite xcb xml2 z MagickCore MagickWand
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

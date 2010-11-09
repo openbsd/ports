@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
 
 COMMENT =	simple and fast image viewer for X
 
@@ -16,6 +16,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 jpeg
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += gio-2.0 pthread pthread-stubs xcb z gdk_pixbuf-2.0
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
@@ -27,7 +28,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lxde/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS =	::x11/gtk+2
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 MODULES +=      textproc/intltool
 

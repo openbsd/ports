@@ -1,47 +1,48 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/09 18:22:26 espie Exp $
 
-COMMENT=	digital camera library
-CATEGORIES=	graphics devel
+COMMENT =	digital camera library
+CATEGORIES =	graphics devel
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.4.7
-DISTNAME=	libgphoto2-${VERSION}
-PKGNAME=	libgphoto-${VERSION}
-SHARED_LIBS+=	gphoto2		3.1 # 6.0
-SHARED_LIBS+=	gphoto2_port	6.0 # 8.0
+VERSION =	2.4.7
+DISTNAME =	libgphoto2-${VERSION}
+PKGNAME =	libgphoto-${VERSION}
+SHARED_LIBS +=	gphoto2		3.1 # 6.0
+SHARED_LIBS +=	gphoto2_port	6.0 # 8.0
 
-HOMEPAGE=	http://www.gphoto.org/
+HOMEPAGE =	http://www.gphoto.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 # LGPLv2
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_DISTFILES_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
 
-WANTLIB=		c m
+WANTLIB =		c m
 
-MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
+MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 
-USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+USE_LIBTOOL =		Yes
+USE_GROFF =		Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_DOXYGEN=false
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--enable-static \
 			--without-hal \
 			--without-bonjour
 
-SUBST_VARS=		VERSION
+SUBST_VARS =		VERSION
 
-MODULES=		devel/gettext
-LIB_DEPENDS=		exif::graphics/libexif \
-			jpeg::graphics/jpeg \
-			usb::devel/libusb \
-			ltdl.>=4::devel/libtool,-ltdl
+MODULES =		devel/gettext
+LIB_DEPENDS =		::graphics/libexif \
+			::graphics/jpeg \
+			::devel/libusb \
+			::devel/libtool,-ltdl
 
+WANTLIB +=		exif jpeg usb ltdl.>=4
 .include <bsd.port.mk>
