@@ -1,5 +1,5 @@
 TeX Live 2010 - Work in Progress (edd@)
-$OpenBSD: README,v 1.8 2010/11/04 16:16:28 edd Exp $
+$OpenBSD: README,v 1.9 2010/11/09 13:38:22 edd Exp $
 -------------------------------------------------------------------
 
  * Get base compilers working:		done
@@ -22,40 +22,19 @@ $OpenBSD: README,v 1.8 2010/11/04 16:16:28 edd Exp $
 
 --- KNOWN ISSUES ---
 
- * gmverb is broken -- reported upstream, awaiting diff
+ * gmverb is broken -- reported upstream, being ignored by package author.
 
  * man pages make noise
-   -> At packaging:
----8<---
-% make package
-`/usr/ports/pobj/texlive_base-2010/fake-i386/.fake_done' is up to date.
-===>  Building package for texlive_base-2010
-Create /usr/ports/packages/i386/all/texlive_base-2010.tgz
-checksumming|********************************************                                                 | 48%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/ctxtools.1:4: can't find macro file `www.tmac'
-                                                         **                                               | 50%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/dvipos.1:5: can't find macro file `www.tmac'
-                                                           ******                                         | 55%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/mptopdf.1:5: can't find macro file `www.tmac'
-                                                                 **                                       | 58%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/pstopdf.1:5: can't find macro file `www.tmac'
-                                                                   **                                     | 60%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/texexec.1:5: can't find macro file `www.tmac'
-                                                                                                          | 61%/usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/texmfstart.1:5: can't find macro file `www.tmac'
-Link to /usr/ports/packages/i386/ftp/texlive_base-2010.tgz
-Link to /usr/ports/packages/i386/cdrom/texlive_base-2010.tgz
----8<---
+   At package time:
+     /usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/texmfstart.1 :5: can't find macro file `www.tmac'
 
-  -> At install/uninstall:
----8<---
-% make uninstall
-===> Deinstalling for texlive_base-2010
-Can't parse /usr/local/man/cat1/mendex.0 (not a manpage ?)
-Can't parse /usr/local/man/cat1/vlna.0 (not a manpage ?)
-texlive_base-2010: ok
----8<---
+   At install/uninstall:
+     Can't parse /usr/local/man/cat1/mendex.0 (not a manpage ?)
 
-  -> Bogus symlink warnings, bacause -base installs symlinks which are not
-     resolved until the texmf is installed. I am told cups has this issue
-     too. They are only warnings however.
-
---- EXTRA ---
+--- EXTRA? ---
 
  * Split down -docs even further this year: docs_srcs + docs_built (?)
+   Probably not.
+
  * Pre-generate maps and formats and install from FILESDIR
-   -> check this is platform independent.
+   -> check this is platform independent.	done - works

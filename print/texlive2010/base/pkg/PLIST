@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/25 22:55:43 edd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/11/09 13:38:22 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -493,6 +493,269 @@ share/lcdf-typetools-for-tex-live/
 @exec texlinks
 @extraunexec rm -Rf %D/share/texmf-var/
 @extraunexec rm -Rf %D/share/texmf-config/
+@comment share/texmf-dist/bibtex/csf/base/88591lat.csf
+@comment share/texmf-dist/bibtex/csf/base/88591sca.csf
+@comment share/texmf-dist/bibtex/csf/base/ascii.csf
+@comment share/texmf-dist/bibtex/csf/base/cp437lat.csf
+@comment share/texmf-dist/bibtex/csf/base/cp850lat.csf
+@comment share/texmf-dist/bibtex/csf/base/cp850sca.csf
+@comment share/texmf-dist/bibtex/csf/base/cp866rus.csf
+@comment share/texmf-dist/bibtex/csf/base/csfile.txt
+@comment share/texmf-dist/fonts/enc/dvips/base/7t.enc
+@comment share/texmf-dist/fonts/map/glyphlist/glyphlist.txt
+@comment share/texmf-dist/fonts/map/glyphlist/pdfglyphlist.txt
+@comment share/texmf-dist/fonts/map/glyphlist/texglyphlist.txt
+share/texmf-dist/scripts/accfonts/mkt1font
+share/texmf-dist/scripts/accfonts/vpl2ovp
+share/texmf-dist/scripts/accfonts/vpl2vpl
+share/texmf-dist/scripts/authorindex/
+share/texmf-dist/scripts/authorindex/authorindex
+share/texmf-dist/scripts/bengali/
+share/texmf-dist/scripts/bengali/ebong.py
+share/texmf-dist/scripts/bibexport/
+share/texmf-dist/scripts/bibexport/bibexport.sh
+share/texmf-dist/scripts/bundledoc/
+share/texmf-dist/scripts/bundledoc/arlatex
+share/texmf-dist/scripts/bundledoc/bundledoc
+share/texmf-dist/scripts/cachepic/cachepic.tlu
+share/texmf-dist/scripts/context/perl/mptopdf.pl
+share/texmf-dist/scripts/de-macro/
+share/texmf-dist/scripts/de-macro/de-macro
+share/texmf-dist/scripts/dviasm/
+share/texmf-dist/scripts/dviasm/dviasm.py
+share/texmf-dist/scripts/epspdf/epspdf
+share/texmf-dist/scripts/epspdf/epspdftk
+share/texmf-dist/scripts/epstopdf/epstopdf.pl
+share/texmf-dist/scripts/fig4latex/fig4latex
+share/texmf-dist/scripts/findhyph/
+share/texmf-dist/scripts/findhyph/findhyph
+share/texmf-dist/scripts/fontools/afm2afm
+share/texmf-dist/scripts/fontools/autoinst
+share/texmf-dist/scripts/fontools/cmap2enc
+share/texmf-dist/scripts/fontools/font2afm
+share/texmf-dist/scripts/fontools/ot2kpx
+share/texmf-dist/scripts/fontools/pfm2kpx
+share/texmf-dist/scripts/fontools/showglyphs
+share/texmf-dist/scripts/fragmaster/
+share/texmf-dist/scripts/fragmaster/fragmaster.pl
+share/texmf-dist/scripts/glossaries/
+share/texmf-dist/scripts/glossaries/makeglossaries
+share/texmf-dist/scripts/latex2man/
+share/texmf-dist/scripts/latex2man/latex2man
+share/texmf-dist/scripts/latexdiff/
+share/texmf-dist/scripts/latexdiff/latexdiff-vc.pl
+share/texmf-dist/scripts/latexdiff/latexdiff.pl
+share/texmf-dist/scripts/latexdiff/latexrevise.pl
+share/texmf-dist/scripts/latexmk/
+share/texmf-dist/scripts/latexmk/latexmk.pl
+share/texmf-dist/scripts/listings-ext/
+share/texmf-dist/scripts/listings-ext/listings-ext.sh
+share/texmf-dist/scripts/luaotfload/
+share/texmf-dist/scripts/luaotfload/mkluatexfontdb.lua
+share/texmf-dist/scripts/mathspic/mathspic.pl
+share/texmf-dist/scripts/mkgrkindex/mkgrkindex
+share/texmf-dist/scripts/mkjobtexmf/
+share/texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
+share/texmf-dist/scripts/oberdiek/pdfatfi.pl
+share/texmf-dist/scripts/pax/
+share/texmf-dist/scripts/pax/pdfannotextractor.pl
+share/texmf-dist/scripts/pdfcrop/
+share/texmf-dist/scripts/pdfcrop/pdfcrop.pl
+share/texmf-dist/scripts/pdfjam/
+share/texmf-dist/scripts/pdfjam/pdf180
+share/texmf-dist/scripts/pdfjam/pdf270
+share/texmf-dist/scripts/pdfjam/pdf90
+share/texmf-dist/scripts/pdfjam/pdfbook
+share/texmf-dist/scripts/pdfjam/pdfflip
+share/texmf-dist/scripts/pdfjam/pdfjam
+share/texmf-dist/scripts/pdfjam/pdfjam-pocketmod
+share/texmf-dist/scripts/pdfjam/pdfjam-slides3up
+share/texmf-dist/scripts/pdfjam/pdfjam-slides6up
+share/texmf-dist/scripts/pdfjam/pdfjoin
+share/texmf-dist/scripts/pdfjam/pdfnup
+share/texmf-dist/scripts/pdfjam/pdfpun
+share/texmf-dist/scripts/perltex/
+share/texmf-dist/scripts/perltex/perltex.pl
+share/texmf-dist/scripts/pkfix/
+share/texmf-dist/scripts/pkfix-helper/
+share/texmf-dist/scripts/pkfix-helper/pkfix-helper
+share/texmf-dist/scripts/pkfix/pkfix.pl
+share/texmf-dist/scripts/ppower4/
+share/texmf-dist/scripts/ppower4/pdfthumb.tlu
+share/texmf-dist/scripts/ppower4/ppower4.tlu
+share/texmf-dist/scripts/pst-pdf/ps4pdf
+share/texmf-dist/scripts/pst2pdf/pst2pdf
+share/texmf-dist/scripts/purifyeps/
+share/texmf-dist/scripts/purifyeps/purifyeps
+share/texmf-dist/scripts/splitindex/
+share/texmf-dist/scripts/splitindex/perl/
+share/texmf-dist/scripts/splitindex/perl/splitindex.pl
+share/texmf-dist/scripts/svn-multi/
+share/texmf-dist/scripts/svn-multi/svn-multi.pl
+share/texmf-dist/scripts/tex4ht/
+share/texmf-dist/scripts/tex4ht/ht.sh
+share/texmf-dist/scripts/tex4ht/htcontext.sh
+share/texmf-dist/scripts/tex4ht/htlatex.sh
+share/texmf-dist/scripts/tex4ht/htmex.sh
+share/texmf-dist/scripts/tex4ht/httex.sh
+share/texmf-dist/scripts/tex4ht/httexi.sh
+share/texmf-dist/scripts/tex4ht/htxelatex.sh
+share/texmf-dist/scripts/tex4ht/htxetex.sh
+share/texmf-dist/scripts/tex4ht/mk4ht.pl
+share/texmf-dist/scripts/texcount/
+share/texmf-dist/scripts/texcount/texcount.pl
+share/texmf-dist/scripts/texdiff/
+share/texmf-dist/scripts/texdiff/texdiff
+share/texmf-dist/scripts/texdirflatten/
+share/texmf-dist/scripts/texdirflatten/texdirflatten
+share/texmf-dist/scripts/texloganalyser/
+share/texmf-dist/scripts/texloganalyser/texloganalyser
+share/texmf-dist/scripts/thumbpdf/thumbpdf.pl
+share/texmf-dist/scripts/ulqda/
+share/texmf-dist/scripts/ulqda/ulqda.pl
+share/texmf-dist/scripts/vpe/
+share/texmf-dist/scripts/vpe/vpe.pl
+@comment share/texmf/chktex/
+@comment share/texmf/chktex/chktexrc
+@comment share/texmf/doc/bibtex8/
+@comment share/texmf/doc/bibtex8/00readme.txt
+@comment share/texmf/doc/bibtex8/HISTORY
+@comment share/texmf/doc/bibtex8/csfile.txt
+@comment share/texmf/doc/bibtex8/file_id.diz
+@comment share/texmf/doc/bibtexu/
+@comment share/texmf/doc/bibtexu/00readme.txt
+@comment share/texmf/doc/bibtexu/HISTORY
+@comment share/texmf/doc/bibtexu/csfile.txt
+@comment share/texmf/doc/bibtexu/file_id.diz
+@comment share/texmf/doc/chktex/
+@comment share/texmf/doc/chktex/ChkTeX.pdf
+@comment share/texmf/doc/tetex/
+@comment share/texmf/doc/tetex/TETEXDOC.pdf
+@comment share/texmf/doc/tetex/teTeX-FAQ
+@comment share/texmf/doc/xindy/
+@comment share/texmf/doc/xindy/README
+@comment share/texmf/doc/xindy/dataflow.gif
+@comment share/texmf/doc/xindy/faq-1.html
+@comment share/texmf/doc/xindy/faq-2.html
+@comment share/texmf/doc/xindy/faq-3.html
+@comment share/texmf/doc/xindy/faq-4.html
+@comment share/texmf/doc/xindy/faq.html
+@comment share/texmf/doc/xindy/index.gif
+@comment share/texmf/doc/xindy/makeindex4.pdf
+@comment share/texmf/doc/xindy/manual-1.html
+@comment share/texmf/doc/xindy/manual-2.html
+@comment share/texmf/doc/xindy/manual-3.html
+@comment share/texmf/doc/xindy/manual-4.html
+@comment share/texmf/doc/xindy/manual-5.html
+@comment share/texmf/doc/xindy/manual-6.html
+@comment share/texmf/doc/xindy/manual-7.html
+@comment share/texmf/doc/xindy/manual.html
+@comment share/texmf/doc/xindy/mappings.gif
+@comment share/texmf/doc/xindy/next.gif
+@comment share/texmf/doc/xindy/prev.gif
+@comment share/texmf/doc/xindy/style-tutorial/
+@comment share/texmf/doc/xindy/style-tutorial-1.html
+@comment share/texmf/doc/xindy/style-tutorial-2.html
+@comment share/texmf/doc/xindy/style-tutorial-3.html
+@comment share/texmf/doc/xindy/style-tutorial-4.html
+@comment share/texmf/doc/xindy/style-tutorial.html
+@comment share/texmf/doc/xindy/style-tutorial/ex1.raw
+@comment share/texmf/doc/xindy/style-tutorial/ex1.tex
+@comment share/texmf/doc/xindy/style-tutorial/ex2.raw
+@comment share/texmf/doc/xindy/style-tutorial/ex2.tex
+@comment share/texmf/doc/xindy/style-tutorial/index.tex
+@comment share/texmf/doc/xindy/style-tutorial/style1.xdy
+@comment share/texmf/doc/xindy/style-tutorial/style2.xdy
+@comment share/texmf/doc/xindy/tex2xindy.pdf
+@comment share/texmf/doc/xindy/texindy.pdf
+@comment share/texmf/doc/xindy/toc.gif
+@comment share/texmf/doc/xindy/xindy.pdf
+@comment share/texmf/dvipdfmx/dvipdfmx.cfg
+@comment share/texmf/dvips/base/color.pro
+@comment share/texmf/dvips/base/crop.pro
+@comment share/texmf/dvips/base/finclude.pro
+@comment share/texmf/dvips/base/hps.pro
+@comment share/texmf/dvips/base/special.pro
+@comment share/texmf/dvips/base/tex.pro
+@comment share/texmf/dvips/base/texc.pro
+@comment share/texmf/dvips/base/texps.pro
+@comment share/texmf/dvips/gsftopk/render.ps
+@comment share/texmf/fonts/cmap/dvipdfmx/EUC-UCS2
+@comment share/texmf/fonts/map/dvipdfm/dvipdfmx/
+@comment share/texmf/fonts/map/dvipdfm/dvipdfmx/cid-x.map
+share/texmf/scripts/a2ping/
+share/texmf/scripts/a2ping/a2ping.pl
+share/texmf/scripts/simpdftex/simpdftex
+share/texmf/scripts/tetex/e2pall.pl
+share/texmf/scripts/tetex/texdoctk.pl
+share/texmf/scripts/texdoc/
+share/texmf/scripts/texdoc/texdoc.tlu
+share/texmf/scripts/texlive/
+share/texmf/scripts/texlive/rungs.tlu
+share/texmf/scripts/texlive/tlmgr.pl
+@comment share/texmf/scripts/xindy/
+@comment share/texmf/scripts/xindy/texindy.pl
+@comment share/texmf/scripts/xindy/xindy.pl
+@comment share/texmf/texconfig/README
+@comment share/texmf/texconfig/g/generic
+@comment share/texmf/texconfig/generic
+@comment share/texmf/texconfig/tcfmgr
+@comment share/texmf/texconfig/tcfmgr.map
+@comment share/texmf/texconfig/v/vt100
+@comment share/texmf/texconfig/x/xterm
+@comment share/texmf/web2c/fmtutil.cnf
+@comment share/texmf/web2c/mktex.opt
+@comment share/texmf/web2c/mktexdir
+@comment share/texmf/web2c/mktexdir.opt
+@comment share/texmf/web2c/mktexnam
+@comment share/texmf/web2c/mktexnam.opt
+@comment share/texmf/web2c/mktexupd
+@comment share/texmf/web2c/texmf.cnf
+@comment share/texmf/xdvi/XDvi
+@comment share/texmf/xdvi/pixmap/toolbar.xpm
+@comment share/texmf/xdvi/pixmap/toolbar2.xpm
+@comment share/texmf/xdvi/xdvi.cfg
+@comment share/texmf/xindy/
+@comment share/texmf/xindy/VERSION
+@comment share/texmf/xindy/modules/
+@comment share/texmf/xindy/modules/base/
+@comment share/texmf/xindy/modules/base/book-order.xdy
+@comment share/texmf/xindy/modules/base/ff-ranges-only.xdy
+@comment share/texmf/xindy/modules/base/ff-ranges.xdy
+@comment share/texmf/xindy/modules/base/german-sty.xdy
+@comment share/texmf/xindy/modules/base/ignore-hyphen.xdy
+@comment share/texmf/xindy/modules/base/ignore-punctuation.xdy
+@comment share/texmf/xindy/modules/base/keep-blanks.xdy
+@comment share/texmf/xindy/modules/base/latex-loc-fmts.xdy
+@comment share/texmf/xindy/modules/base/latex.xdy
+@comment share/texmf/xindy/modules/base/latin-lettergroups.xdy
+@comment share/texmf/xindy/modules/base/letter-order.xdy
+@comment share/texmf/xindy/modules/base/makeindex.xdy
+@comment share/texmf/xindy/modules/base/numeric-sort.xdy
+@comment share/texmf/xindy/modules/base/page-ranges.xdy
+@comment share/texmf/xindy/modules/base/tex.xdy
+@comment share/texmf/xindy/modules/base/texindy.xdy
+@comment share/texmf/xindy/modules/base/word-order.xdy
+@comment share/texmf/xindy/modules/class/
+@comment share/texmf/xindy/modules/class/pagenums.xdy
+@comment share/texmf/xindy/modules/lang/
+@comment share/texmf/xindy/modules/lang/german/
+@comment share/texmf/xindy/modules/lang/german/din5007.xdy
+@comment share/texmf/xindy/modules/lang/german/duden.xdy
+@comment share/texmf/xindy/modules/lang/german/tex.xdy
+@comment share/texmf/xindy/modules/lang/latin/
+@comment share/texmf/xindy/modules/lang/latin/caseisrt.xdy
+@comment share/texmf/xindy/modules/lang/latin/letgroup.xdy
+@comment share/texmf/xindy/modules/ord/
+@comment share/texmf/xindy/modules/ord/letorder.xdy
+@comment share/texmf/xindy/modules/rules/
+@comment share/texmf/xindy/modules/rules/isolatin1-exchange.xdy
+@comment share/texmf/xindy/modules/rules/isolatin1-tolower.xdy
+@comment share/texmf/xindy/modules/rules/latin-exchange.xdy
+@comment share/texmf/xindy/modules/rules/latin-tolower.xdy
+@comment share/texmf/xindy/modules/styles/
+@comment share/texmf/xindy/modules/styles/basic.xdy
+@comment share/texmf/xindy/modules/styles/makeidx.xdy
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
 @extra share/texmf-var/ls-R

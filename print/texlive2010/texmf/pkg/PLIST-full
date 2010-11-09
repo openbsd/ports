@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.5 2010/10/24 22:31:00 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.6 2010/11/09 13:38:23 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2010
 @conflict texlive_texmf-minimal-<2010
@@ -16981,73 +16981,73 @@ share/texmf-dist/omega/otp/otibet/tibspecial.otp
 share/texmf-dist/omega/otp/otibet/tibuniuni.otp
 share/texmf-dist/omega/otp/otibet/tibvowel.otp
 share/texmf-dist/scripts/
-share/texmf-dist/scripts/authorindex/
-share/texmf-dist/scripts/authorindex/authorindex
+@comment share/texmf-dist/scripts/authorindex/
+@comment share/texmf-dist/scripts/authorindex/authorindex
 share/texmf-dist/scripts/bengali/
-share/texmf-dist/scripts/bengali/ebong.py
-share/texmf-dist/scripts/bibexport/
-share/texmf-dist/scripts/bibexport/bibexport.sh
-share/texmf-dist/scripts/bundledoc/
-share/texmf-dist/scripts/bundledoc/arlatex
-share/texmf-dist/scripts/bundledoc/bundledoc
-share/texmf-dist/scripts/de-macro/
-share/texmf-dist/scripts/de-macro/de-macro
-share/texmf-dist/scripts/dviasm/
-share/texmf-dist/scripts/dviasm/dviasm.py
-share/texmf-dist/scripts/findhyph/
-share/texmf-dist/scripts/findhyph/findhyph
-share/texmf-dist/scripts/fragmaster/
-share/texmf-dist/scripts/fragmaster/fragmaster.pl
-share/texmf-dist/scripts/glossaries/
-share/texmf-dist/scripts/glossaries/makeglossaries
-share/texmf-dist/scripts/glossaries/makeglossaries.bat
+@comment share/texmf-dist/scripts/bengali/ebong.py
+@comment share/texmf-dist/scripts/bibexport/
+@comment share/texmf-dist/scripts/bibexport/bibexport.sh
+@comment share/texmf-dist/scripts/bundledoc/
+@comment share/texmf-dist/scripts/bundledoc/arlatex
+@comment share/texmf-dist/scripts/bundledoc/bundledoc
+@comment share/texmf-dist/scripts/de-macro/
+@comment share/texmf-dist/scripts/de-macro/de-macro
+@comment share/texmf-dist/scripts/dviasm/
+@comment share/texmf-dist/scripts/dviasm/dviasm.py
+@comment share/texmf-dist/scripts/findhyph/
+@comment share/texmf-dist/scripts/findhyph/findhyph
+@comment share/texmf-dist/scripts/fragmaster/
+@comment share/texmf-dist/scripts/fragmaster/fragmaster.pl
+@comment share/texmf-dist/scripts/glossaries/
+@comment share/texmf-dist/scripts/glossaries/makeglossaries
+@comment share/texmf-dist/scripts/glossaries/makeglossaries.bat
 share/texmf-dist/scripts/jmlr/
 share/texmf-dist/scripts/jmlr/makejmlrbook
 share/texmf-dist/scripts/jmlr/makejmlrbook.bat
-share/texmf-dist/scripts/latex2man/
-share/texmf-dist/scripts/latex2man/latex2man
-share/texmf-dist/scripts/latexdiff/
-share/texmf-dist/scripts/latexdiff/latexdiff-vc.pl
-share/texmf-dist/scripts/latexdiff/latexdiff.pl
-share/texmf-dist/scripts/latexdiff/latexrevise.pl
-share/texmf-dist/scripts/latexmk/
-share/texmf-dist/scripts/latexmk/latexmk.pl
-share/texmf-dist/scripts/listings-ext/
-share/texmf-dist/scripts/listings-ext/listings-ext.sh
-share/texmf-dist/scripts/luaotfload/
-share/texmf-dist/scripts/luaotfload/mkluatexfontdb.lua
-share/texmf-dist/scripts/mkjobtexmf/
-share/texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
+@comment share/texmf-dist/scripts/latex2man/
+@comment share/texmf-dist/scripts/latex2man/latex2man
+@comment share/texmf-dist/scripts/latexdiff/
+@comment share/texmf-dist/scripts/latexdiff/latexdiff-vc.pl
+@comment share/texmf-dist/scripts/latexdiff/latexdiff.pl
+@comment share/texmf-dist/scripts/latexdiff/latexrevise.pl
+@comment share/texmf-dist/scripts/latexmk/
+@comment share/texmf-dist/scripts/latexmk/latexmk.pl
+@comment share/texmf-dist/scripts/listings-ext/
+@comment share/texmf-dist/scripts/listings-ext/listings-ext.sh
+@comment share/texmf-dist/scripts/luaotfload/
+@comment share/texmf-dist/scripts/luaotfload/mkluatexfontdb.lua
+@comment share/texmf-dist/scripts/mkjobtexmf/
+@comment share/texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
 share/texmf-dist/scripts/pax/
 share/texmf-dist/scripts/pax/pax.jar
-share/texmf-dist/scripts/pax/pdfannotextractor.pl
+@comment share/texmf-dist/scripts/pax/pdfannotextractor.pl
 share/texmf-dist/scripts/pdfcrop/
-share/texmf-dist/scripts/pdfcrop/pdfcrop.pl
-share/texmf-dist/scripts/pdfjam/
-share/texmf-dist/scripts/pdfjam/pdf180
-share/texmf-dist/scripts/pdfjam/pdf270
-share/texmf-dist/scripts/pdfjam/pdf90
-share/texmf-dist/scripts/pdfjam/pdfbook
-share/texmf-dist/scripts/pdfjam/pdfflip
-share/texmf-dist/scripts/pdfjam/pdfjam
-share/texmf-dist/scripts/pdfjam/pdfjam-pocketmod
-share/texmf-dist/scripts/pdfjam/pdfjam-slides3up
-share/texmf-dist/scripts/pdfjam/pdfjam-slides6up
-share/texmf-dist/scripts/pdfjam/pdfjoin
-share/texmf-dist/scripts/pdfjam/pdfnup
-share/texmf-dist/scripts/pdfjam/pdfpun
-share/texmf-dist/scripts/perltex/
-share/texmf-dist/scripts/perltex/perltex.pl
-share/texmf-dist/scripts/pkfix-helper/
-share/texmf-dist/scripts/pkfix-helper/pkfix-helper
-share/texmf-dist/scripts/pkfix/
-share/texmf-dist/scripts/pkfix/pkfix.pl
+@comment share/texmf-dist/scripts/pdfcrop/pdfcrop.pl
+@comment share/texmf-dist/scripts/pdfjam/
+@comment share/texmf-dist/scripts/pdfjam/pdf180
+@comment share/texmf-dist/scripts/pdfjam/pdf270
+@comment share/texmf-dist/scripts/pdfjam/pdf90
+@comment share/texmf-dist/scripts/pdfjam/pdfbook
+@comment share/texmf-dist/scripts/pdfjam/pdfflip
+@comment share/texmf-dist/scripts/pdfjam/pdfjam
+@comment share/texmf-dist/scripts/pdfjam/pdfjam-pocketmod
+@comment share/texmf-dist/scripts/pdfjam/pdfjam-slides3up
+@comment share/texmf-dist/scripts/pdfjam/pdfjam-slides6up
+@comment share/texmf-dist/scripts/pdfjam/pdfjoin
+@comment share/texmf-dist/scripts/pdfjam/pdfnup
+@comment share/texmf-dist/scripts/pdfjam/pdfpun
+@comment share/texmf-dist/scripts/perltex/
+@comment share/texmf-dist/scripts/perltex/perltex.pl
+@comment share/texmf-dist/scripts/pkfix-helper/
+@comment share/texmf-dist/scripts/pkfix-helper/pkfix-helper
+@comment share/texmf-dist/scripts/pkfix/
+@comment share/texmf-dist/scripts/pkfix/pkfix.pl
 share/texmf-dist/scripts/ppower4/
-share/texmf-dist/scripts/ppower4/pdfthumb.tlu
+@comment share/texmf-dist/scripts/ppower4/pdfthumb.tlu
 share/texmf-dist/scripts/ppower4/pp4p.jar
-share/texmf-dist/scripts/ppower4/ppower4.tlu
-share/texmf-dist/scripts/purifyeps/
-share/texmf-dist/scripts/purifyeps/purifyeps
+@comment share/texmf-dist/scripts/ppower4/ppower4.tlu
+@comment share/texmf-dist/scripts/purifyeps/
+@comment share/texmf-dist/scripts/purifyeps/purifyeps
 share/texmf-dist/scripts/shipunov/
 share/texmf-dist/scripts/shipunov/biokey2html.bat
 share/texmf-dist/scripts/shipunov/biokey2html.sh
@@ -17055,32 +17055,32 @@ share/texmf-dist/scripts/shipunov/biokey2html1.pl
 share/texmf-dist/scripts/shipunov/biokey2html2.pl
 share/texmf-dist/scripts/shipunov/biokey2html3.pl
 share/texmf-dist/scripts/splitindex/
-share/texmf-dist/scripts/splitindex/perl/
-share/texmf-dist/scripts/splitindex/perl/splitindex.pl
-share/texmf-dist/scripts/svn-multi/
-share/texmf-dist/scripts/svn-multi/svn-multi.pl
-share/texmf-dist/scripts/tex4ht/
-share/texmf-dist/scripts/tex4ht/ht.sh
-share/texmf-dist/scripts/tex4ht/htcontext.sh
-share/texmf-dist/scripts/tex4ht/htlatex.sh
-share/texmf-dist/scripts/tex4ht/htmex.sh
-share/texmf-dist/scripts/tex4ht/httex.sh
-share/texmf-dist/scripts/tex4ht/httexi.sh
-share/texmf-dist/scripts/tex4ht/htxelatex.sh
-share/texmf-dist/scripts/tex4ht/htxetex.sh
-share/texmf-dist/scripts/tex4ht/mk4ht.pl
-share/texmf-dist/scripts/texcount/
-share/texmf-dist/scripts/texcount/texcount.pl
-share/texmf-dist/scripts/texdiff/
-share/texmf-dist/scripts/texdiff/texdiff
-share/texmf-dist/scripts/texdirflatten/
-share/texmf-dist/scripts/texdirflatten/texdirflatten
-share/texmf-dist/scripts/texloganalyser/
-share/texmf-dist/scripts/texloganalyser/texloganalyser
-share/texmf-dist/scripts/ulqda/
-share/texmf-dist/scripts/ulqda/ulqda.pl
-share/texmf-dist/scripts/vpe/
-share/texmf-dist/scripts/vpe/vpe.pl
+@comment share/texmf-dist/scripts/splitindex/perl/
+@comment share/texmf-dist/scripts/splitindex/perl/splitindex.pl
+@comment share/texmf-dist/scripts/svn-multi/
+@comment share/texmf-dist/scripts/svn-multi/svn-multi.pl
+@comment share/texmf-dist/scripts/tex4ht/
+@comment share/texmf-dist/scripts/tex4ht/ht.sh
+@comment share/texmf-dist/scripts/tex4ht/htcontext.sh
+@comment share/texmf-dist/scripts/tex4ht/htlatex.sh
+@comment share/texmf-dist/scripts/tex4ht/htmex.sh
+@comment share/texmf-dist/scripts/tex4ht/httex.sh
+@comment share/texmf-dist/scripts/tex4ht/httexi.sh
+@comment share/texmf-dist/scripts/tex4ht/htxelatex.sh
+@comment share/texmf-dist/scripts/tex4ht/htxetex.sh
+@comment share/texmf-dist/scripts/tex4ht/mk4ht.pl
+@comment share/texmf-dist/scripts/texcount/
+@comment share/texmf-dist/scripts/texcount/texcount.pl
+@comment share/texmf-dist/scripts/texdiff/
+@comment share/texmf-dist/scripts/texdiff/texdiff
+@comment share/texmf-dist/scripts/texdirflatten/
+@comment share/texmf-dist/scripts/texdirflatten/texdirflatten
+@comment share/texmf-dist/scripts/texloganalyser/
+@comment share/texmf-dist/scripts/texloganalyser/texloganalyser
+@comment share/texmf-dist/scripts/ulqda/
+@comment share/texmf-dist/scripts/ulqda/ulqda.pl
+@comment share/texmf-dist/scripts/vpe/
+@comment share/texmf-dist/scripts/vpe/vpe.pl
 share/texmf-dist/tex/
 share/texmf-dist/tex/alatex/
 share/texmf-dist/tex/alatex/base/
@@ -27597,10 +27597,10 @@ share/texmf/chktex/
 share/texmf/chktex/chktexrc
 share/texmf/doc/
 share/texmf/scripts/
-share/texmf/scripts/a2ping/
-share/texmf/scripts/a2ping/a2ping.pl
-share/texmf/scripts/tetex/
-share/texmf/scripts/tetex/texdoctk.pl
+@comment share/texmf/scripts/a2ping/
+@comment share/texmf/scripts/a2ping/a2ping.pl
+@comment share/texmf/scripts/tetex/
+@comment share/texmf/scripts/tetex/texdoctk.pl
 share/texmf/scripts/tex4ht/
 share/texmf/scripts/tex4ht/htcopy.pl
 share/texmf/scripts/tex4ht/htmove.pl
@@ -27614,11 +27614,11 @@ share/texmf/scripts/texdoc/functions.tlu
 share/texmf/scripts/texdoc/main.tlu
 share/texmf/scripts/texdoc/score.tlu
 share/texmf/scripts/texdoc/search.tlu
-share/texmf/scripts/texdoc/texdoc.tlu
+@comment share/texmf/scripts/texdoc/texdoc.tlu
 share/texmf/scripts/texdoc/view.tlu
-share/texmf/scripts/xindy/
-share/texmf/scripts/xindy/texindy.pl
-share/texmf/scripts/xindy/xindy.pl
+@comment share/texmf/scripts/xindy/
+@comment share/texmf/scripts/xindy/texindy.pl
+@comment share/texmf/scripts/xindy/xindy.pl
 share/texmf/tex/
 share/texmf/tex/context/
 share/texmf/tex/context/asymptote/

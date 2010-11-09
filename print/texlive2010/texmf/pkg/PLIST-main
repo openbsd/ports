@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/10/24 22:31:00 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/09 13:38:23 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2010
 @conflict texlive_texmf-docs-<2010
@@ -27955,12 +27955,12 @@ share/texmf-dist/pbibtex/bst/tieice.bst
 share/texmf-dist/pbibtex/bst/tipsj.bst
 share/texmf-dist/scripts/
 share/texmf-dist/scripts/accfonts/
-share/texmf-dist/scripts/accfonts/mkt1font
-share/texmf-dist/scripts/accfonts/vpl2ovp
-share/texmf-dist/scripts/accfonts/vpl2vpl
+@comment share/texmf-dist/scripts/accfonts/mkt1font
+@comment share/texmf-dist/scripts/accfonts/vpl2ovp
+@comment share/texmf-dist/scripts/accfonts/vpl2vpl
 share/texmf-dist/scripts/cachepic/
 share/texmf-dist/scripts/cachepic/cachepic.cmd
-share/texmf-dist/scripts/cachepic/cachepic.tlu
+@comment share/texmf-dist/scripts/cachepic/cachepic.tlu
 share/texmf-dist/scripts/context/
 share/texmf-dist/scripts/context/lua/
 share/texmf-dist/scripts/context/lua/luatools.lua
@@ -27997,7 +27997,7 @@ share/texmf-dist/scripts/context/lua/mtxrun.rme
 share/texmf-dist/scripts/context/lua/x-ldx.lua
 share/texmf-dist/scripts/context/perl/
 share/texmf-dist/scripts/context/perl/makempy.pl
-share/texmf-dist/scripts/context/perl/mptopdf.pl
+@comment share/texmf-dist/scripts/context/perl/mptopdf.pl
 share/texmf-dist/scripts/context/perl/path_tre.pm
 share/texmf-dist/scripts/context/perl/pdftrimwhite.pl
 share/texmf-dist/scripts/context/perl/texfind.pl
@@ -28079,33 +28079,33 @@ share/texmf-dist/scripts/context/stubs/unix/rlxtools
 share/texmf-dist/scripts/context/stubs/unix/texexec
 share/texmf-dist/scripts/context/stubs/unix/texmfstart
 share/texmf-dist/scripts/epspdf/
-share/texmf-dist/scripts/epspdf/epspdf
+@comment share/texmf-dist/scripts/epspdf/epspdf
 share/texmf-dist/scripts/epspdf/epspdf.help
 share/texmf-dist/scripts/epspdf/epspdf.icns
 share/texmf-dist/scripts/epspdf/epspdf.ico
 share/texmf-dist/scripts/epspdf/epspdf.rb
 share/texmf-dist/scripts/epspdf/epspdfrc.rb
-share/texmf-dist/scripts/epspdf/epspdftk
+@comment share/texmf-dist/scripts/epspdf/epspdftk
 share/texmf-dist/scripts/epspdf/epspdftk.tcl
 share/texmf-dist/scripts/epspdf/makegray.pro
 share/texmf-dist/scripts/epstopdf/
-share/texmf-dist/scripts/epstopdf/epstopdf.pl
+@comment share/texmf-dist/scripts/epstopdf/epstopdf.pl
 share/texmf-dist/scripts/fig4latex/
-share/texmf-dist/scripts/fig4latex/fig4latex
-share/texmf-dist/scripts/fontools/
-share/texmf-dist/scripts/fontools/afm2afm
-share/texmf-dist/scripts/fontools/autoinst
-share/texmf-dist/scripts/fontools/cmap2enc
-share/texmf-dist/scripts/fontools/font2afm
-share/texmf-dist/scripts/fontools/ot2kpx
-share/texmf-dist/scripts/fontools/pfm2kpx
-share/texmf-dist/scripts/fontools/showglyphs
+@comment share/texmf-dist/scripts/fig4latex/fig4latex
+@comment share/texmf-dist/scripts/fontools/
+@comment share/texmf-dist/scripts/fontools/afm2afm
+@comment share/texmf-dist/scripts/fontools/autoinst
+@comment share/texmf-dist/scripts/fontools/cmap2enc
+@comment share/texmf-dist/scripts/fontools/font2afm
+@comment share/texmf-dist/scripts/fontools/ot2kpx
+@comment share/texmf-dist/scripts/fontools/pfm2kpx
+@comment share/texmf-dist/scripts/fontools/showglyphs
 share/texmf-dist/scripts/lua-alt-getopt/
 share/texmf-dist/scripts/lua-alt-getopt/alt_getopt.lua
-share/texmf-dist/scripts/mathspic/
-share/texmf-dist/scripts/mathspic/mathspic.pl
-share/texmf-dist/scripts/mkgrkindex/
-share/texmf-dist/scripts/mkgrkindex/mkgrkindex
+@comment share/texmf-dist/scripts/mathspic/
+@comment share/texmf-dist/scripts/mathspic/mathspic.pl
+@comment share/texmf-dist/scripts/mkgrkindex/
+@comment share/texmf-dist/scripts/mkgrkindex/mkgrkindex
 share/texmf-dist/scripts/oberdiek/
 share/texmf-dist/scripts/oberdiek/luacolor.lua
 share/texmf-dist/scripts/oberdiek/magicnum.lua
@@ -28113,7 +28113,7 @@ share/texmf-dist/scripts/oberdiek/oberdiek.luacolor.lua
 share/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua
 share/texmf-dist/scripts/oberdiek/oberdiek.magicnum.lua
 share/texmf-dist/scripts/oberdiek/oberdiek.pdftexcmds.lua
-share/texmf-dist/scripts/oberdiek/pdfatfi.pl
+@comment share/texmf-dist/scripts/oberdiek/pdfatfi.pl
 share/texmf-dist/scripts/oberdiek/pdftexcmds.lua
 share/texmf-dist/scripts/pgfplots/
 share/texmf-dist/scripts/pgfplots/matlab2pgfplots.m
@@ -28121,14 +28121,14 @@ share/texmf-dist/scripts/pgfplots/matlab2pgfplots.sh
 share/texmf-dist/scripts/pgfplots/pgf2pdf.sh
 share/texmf-dist/scripts/pgfplots/pgfplots.py
 share/texmf-dist/scripts/pst-pdf/
-share/texmf-dist/scripts/pst-pdf/ps4pdf
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.noMiKTeX
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.w95
-share/texmf-dist/scripts/pst2pdf/
-share/texmf-dist/scripts/pst2pdf/pst2pdf
+@comment share/texmf-dist/scripts/pst-pdf/ps4pdf
+@comment share/texmf-dist/scripts/pst-pdf/ps4pdf.bat
+@comment share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.noMiKTeX
+@comment share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.w95
+@comment share/texmf-dist/scripts/pst2pdf/
+@comment share/texmf-dist/scripts/pst2pdf/pst2pdf
 share/texmf-dist/scripts/thumbpdf/
-share/texmf-dist/scripts/thumbpdf/thumbpdf.pl
+@comment share/texmf-dist/scripts/thumbpdf/thumbpdf.pl
 share/texmf-dist/scripts/xetex/
 share/texmf-dist/scripts/xetex/perl/
 share/texmf-dist/scripts/xetex/perl/lib/
@@ -34899,10 +34899,10 @@ share/texmf/hbf2gf/j2so12.cfg
 share/texmf/hbf2gf/jsso12.cfg
 share/texmf/hbf2gf/ksso17.cfg
 share/texmf/scripts/
-share/texmf/scripts/simpdftex/
-share/texmf/scripts/simpdftex/simpdftex
+@comment share/texmf/scripts/simpdftex/
+@comment share/texmf/scripts/simpdftex/simpdftex
 share/texmf/scripts/tetex/
-share/texmf/scripts/tetex/e2pall.pl
+@comment share/texmf/scripts/tetex/e2pall.pl
 share/texmf/scripts/tetex/updmap.pl
 @comment share/texmf/scripts/texlive/
 @comment share/texmf/scripts/texlive/lua/

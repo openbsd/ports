@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/25 22:55:43 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/09 13:38:22 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -97,18 +97,24 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
+# silence symlink warnings - annoying i need to do this
+#pre-fake:
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-dist/scripts/accfonts/
+
 # just to silence error - never used
 pre-install:
 	mkdir ${WRKSRC}/inst
 
 post-install:
+	rm -Rf ${WRKSRC}/inst
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/texlive
-	# stop this crap turning up in packing list
-	rm -Rf ${WRKINST}/${TRUEPREFIX}/texmf
-	rm -Rf ${WRKINST}/${TRUEPREFIX}/texmf-dist
-	# not needed but committing commented incase i need later XXX
+
+	# following tradition, texmf is in ${PREFIX}/share
+	mv ${PREFIX}/texmf ${PREFIX}/share/texmf
+	mv ${PREFIX}/texmf-dist ${PREFIX}/share/texmf-dist
+	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \
 		dest=`stat -f %Y $${link}`; \
 		if ! [ -z "`echo $${dest} | grep -e '^\.\.\/texmf'`" ]; then \
