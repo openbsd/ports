@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 22:23:50 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/09 10:06:34 robert Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
 DISTNAME=	libwpd-0.8.9
 CATEGORIES=	textproc
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	wpd-0.8		8.9 \
 		wpd-stream-0.8	8.9
@@ -28,11 +28,11 @@ WANTLIB += gthread-2.0 pthread
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		::devel/doxygen
 LIB_DEPENDS=		gsf-1::devel/libgsf
 REGRESS_DEPENDS=	::devel/cppunit
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS=		--without-docs
 
 .include <bsd.port.mk>
