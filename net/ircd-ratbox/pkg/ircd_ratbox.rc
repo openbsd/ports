@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: ircd-ratbox.rc,v 1.2 2010/11/09 11:53:53 ajacoutot Exp $
+# $OpenBSD: ircd_ratbox.rc,v 1.1 2010/11/09 11:56:17 jasper Exp $
 
 . /etc/rc.d/rc.subr
 
