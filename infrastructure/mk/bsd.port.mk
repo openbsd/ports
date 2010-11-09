@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1054 2010/11/09 11:18:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1055 2010/11/09 23:55:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2161,7 +2161,7 @@ update-patches:
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
-	${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
+	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
 .  else
 ${_t}: _internal-${_t}
 .  endif
