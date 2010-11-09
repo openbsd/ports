@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/08 16:31:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/09 16:28:59 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -34,6 +34,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+
+# supply result to skip a test that will abort configure if run as root
+CONFIGURE_ENV+=	gl_cv_func_mknod_works=no
 
 FLAVORS=	static
 FLAVOR?=
