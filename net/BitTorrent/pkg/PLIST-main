@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/08/11 23:47:14 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/11/09 19:46:52 jasper Exp $
 @pkgpath net/BitTorrent
 bin/bittorrent-console
 bin/bittorrent-curses
@@ -152,13 +152,13 @@ lib/python${MODPY_VERSION}/site-packages/khashmir/utkhashmir.py
 lib/python${MODPY_VERSION}/site-packages/khashmir/utkhashmir.pyc
 share/doc/BitTorrent/
 share/doc/BitTorrent/LICENSE.txt
-share/doc/BitTorrent/README.OpenBSD
 share/doc/BitTorrent/README.txt
 share/doc/BitTorrent/TRACKERLESS.txt
 share/doc/BitTorrent/credits-l10n.txt
 share/doc/BitTorrent/credits.txt
 share/doc/BitTorrent/public.key
 @comment share/doc/BitTorrent/redirdonate.html
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/locale/
 share/locale/af/
 share/locale/af/LC_MESSAGES/

@@ -1,4 +1,4 @@
-#	$OpenBSD: README.OpenBSD,v 1.4 2005/10/18 14:12:35 naddy Exp $
+$OpenBSD: README-main,v 1.1 2010/11/09 19:46:52 jasper Exp $
 
 To begin using BitTorrent quickly, simply fetch a torrent file and
 run bittorrent (X11) or bittorrent-curses:
