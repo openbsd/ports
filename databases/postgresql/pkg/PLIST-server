@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2010/11/08 14:12:24 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2010/11/09 09:07:28 landry Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -546,7 +546,7 @@ lib/postgresql/utf8_and_win.so
 @man man/man1/pg_resetxlog.1
 @man man/man1/postgres.1
 @man man/man1/postmaster.1
-share/doc/pkg-readmes/postgresql-server-${VERSION}
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/postgresql/pg_hba.conf.sample
 share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample
