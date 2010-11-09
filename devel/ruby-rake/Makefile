@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/28 20:12:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/09 15:45:58 jeremy Exp $
 
 COMMENT=	ruby make
 
 DISTNAME=	rake-0.8.7
-PKGNAME=	ruby-${DISTNAME}
-REVISION =      0
+REVISION =	1
 CATEGORIES=	devel
 
 # MIT License
@@ -19,9 +18,7 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem format-executable
 
-PKG_ARCH=	*
-
-REGRESS_DEPENDS=:${PKGNAME}:devel/ruby-rake \
+REGRESS_DEPENDS=:${FULLPKGNAME}:${BUILD_PKGPATH} \
 		::devel/ruby-rcov \
 		::devel/ruby-flexmock
 MODRUBY_REGRESS=rake
