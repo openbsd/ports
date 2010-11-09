@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/09 20:13:25 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,8 +26,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0.>=1403,gtk-x11-2.0::x11/gtk+2 \
-		curl.>=15::net/curl
+LIB_DEPENDS=	::x11/gtk+2 \
+		::net/curl
 
 RUN_DEPENDS=	::mail/claws-mail
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -38,6 +38,7 @@ WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 idn m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl xcb
 WANTLIB += xcb-render xcb-render-util z gdk_pixbuf-2.0
+WANTLIB += gdk-x11-2.0.>=1403 gtk-x11-2.0 curl.>=15
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

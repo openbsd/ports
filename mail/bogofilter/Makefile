@@ -1,53 +1,57 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/09 20:13:25 espie Exp $
 
-COMMENT=	bayesian spam filter
+COMMENT =	bayesian spam filter
 
-DISTNAME=	bogofilter-1.1.6
-PKGNAME =	${DISTNAME}p1
-CATEGORIES=	mail
+DISTNAME =	bogofilter-1.1.6
+REVISION =	1
+CATEGORIES =	mail
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-HOMEPAGE=	http://bogofilter.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
+HOMEPAGE =	http://bogofilter.sourceforge.net/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
 
 # GPLv2/GPLv3
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB=		c m
-MODULES=		converters/libiconv
-USE_GROFF =	Yes
+WANTLIB =		c m
+MODULES =		converters/libiconv
+USE_GROFF =		Yes
 
-FLAVORS=		db4 sqlite3 qdbm
-FLAVOR?=
+FLAVORS =		db4 sqlite3 qdbm
+FLAVOR ?=
 
 .if ${FLAVOR:L} == "db4"
-DB_DIR=			db4
-LIB_DEPENDS+=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
+DB_DIR =		db4
+LIB_DEPENDS +=		:db->=4,<5:databases/db/v4
+WANTLIB +=		lib/db4/db.>=4
 .elif ${FLAVOR:L} == "sqlite3"
-DB_ENGINE=		sqlite3
-LIB_DEPENDS+=		sqlite3.>=8::databases/sqlite3
+DB_ENGINE =		sqlite3
+LIB_DEPENDS +=		::databases/sqlite3
+WANTLIB +=		sqlite3.>=8
 .elif ${FLAVOR:L} == "qdbm"
-DB_ENGINE=		qdbm
-LIB_DEPENDS+=		qdbm.>=11::databases/qdbm
+DB_ENGINE =		qdbm
+LIB_DEPENDS +=		::databases/qdbm
+WANTLIB +=		qdbm.>=11
 .else
-BROKEN-hppa=		configure stuck on testing if BDB supports shared environments
-DB_DIR=			db
-LIB_DEPENDS+=		lib/db/db.=3:db->=3,<4:databases/db/v3
+BROKEN-hppa =		configure stuck on testing if BDB supports shared environments
+DB_DIR =		db
+LIB_DEPENDS +=		:db->=3,<4:databases/db/v3
+WANTLIB +=		lib/db/db.=3
 .endif
 
-DB_ENGINE?=		db
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-included-gsl \
+DB_ENGINE ?=		db
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--with-included-gsl \
 			--with-database=${DB_ENGINE}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/${DB_DIR}" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/${DB_DIR}" \
 			LDFLAGS="-L${LOCALBASE}/lib/${DB_DIR}"
 
-SAMPLEDIR=		${PREFIX}/share/examples/bogofilter
-DOCDIR=			${PREFIX}/share/doc/bogofilter
+SAMPLEDIR =		${PREFIX}/share/examples/bogofilter
+DOCDIR =		${PREFIX}/share/doc/bogofilter
 
 post-install:
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}

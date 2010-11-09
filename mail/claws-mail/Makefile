@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/24 21:25:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/09 20:13:25 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,11 +10,14 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.6
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}
+REVISION-main =		1
 FULLPKGNAME-docs=	claws-mail-docs-${V}
 FULLPKGPATH-docs=	mail/claws-mail,-docs
-PKGNAME-bogofilter=	claws-mail-bogofilter-${V}p1
-PKGNAME-spamassassin=	claws-mail-spamassassin-${V}p1
+PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
+REVISION-bogofilter =	1
+PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
+REVISION-spamassassin =	1
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -49,27 +52,29 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			expat fontconfig freetype gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
-			gcrypt gpg-error xcb z gdk_pixbuf-2.0
+			gcrypt gpg-error xcb z gdk_pixbuf-2.0 \
+			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan.>=13 sasl2
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 \
-			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event
+			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event \
+			startup-notification-1 enchant gnutls gpgme dbus-glib-1
 
 WANTLIB-docs=
 
-LIB_DEPENDS=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-			execinfo::devel/libexecinfo \
-			etpan.>=13::mail/libetpan \
-			sasl2::security/cyrus-sasl2
+LIB_DEPENDS=		::x11/gtk+2 \
+			::devel/libexecinfo \
+			::mail/libetpan \
+			::security/cyrus-sasl2
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			startup-notification-1::devel/startup-notification \
-			enchant::textproc/enchant \
-			gnutls::security/gnutls \
-			gpgme::security/gpgme \
-			dbus-glib-1::x11/dbus-glib
+			::devel/startup-notification \
+			::textproc/enchant \
+			::security/gnutls \
+			::security/gpgme \
+			::x11/dbus-glib
 
 CONFIGURE_ARGS+=	--disable-gnomeprint \
 			--disable-networkmanager-support \
@@ -90,7 +95,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
 .if ${FLAVOR:L:Mjpilot}
-LIB_DEPENDS-main+=	pisock::comms/pilot-link 
+LIB_DEPENDS-main+=	::comms/pilot-link 
+WANTLIB-main +=		pisock
 RUN_DEPENDS-main+=	::comms/jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
@@ -99,14 +105,15 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=   No Fee
 PERMIT_DISTFILES_CDROM= No Fee
-LIB_DEPENDS-main+=     compface.>=1::mail/faces
+LIB_DEPENDS-main+=     	::mail/faces
+WANTLIB-main +=		compface.>=1
 .else
 CONFIGURE_ARGS+=       --disable-compface
 .endif
 
 .if ${FLAVOR:L:Mldap}
-WANTLIB-main+=		asn1 com_err gssapi krb5
-LIB_DEPENDS-main+=	lber,ldap:openldap-client-*:databases/openldap
+WANTLIB-main+=		asn1 com_err gssapi krb5 lber ldap
+LIB_DEPENDS-main+=	:openldap-client-*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif

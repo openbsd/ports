@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/09 20:13:25 espie Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -84,26 +84,27 @@ MULTI_PACKAGES=		-main
 FLAVOR?=
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 
-WANTLIB-main=		c
+WANTLIB-main=		c ltdl
 
-LIB_DEPENDS-main=	ltdl::devel/libtool,-ltdl
+LIB_DEPENDS-main=	::devel/libtool,-ltdl
 
-WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5
-LIB_DEPENDS-ldap=	courierauthcommon,courierauth::${BUILD_PKGPATH} \
-			ldap,lber::databases/openldap \
-			sasl2::security/cyrus-sasl2
+WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5 \
+			courierauthcommon courierauth ldap lber sasl2
+LIB_DEPENDS-ldap=	::${BUILD_PKGPATH} \
+			::databases/openldap \
+			::security/cyrus-sasl2
 
-WANTLIB-mysql=		crypto m ssl z
-LIB_DEPENDS-mysql=	courierauthcommon,courierauth::${BUILD_PKGPATH} \
-			mysqlclient::databases/mysql
+WANTLIB-mysql=		crypto m ssl z courierauthcommon courierauth mysqlclient
+LIB_DEPENDS-mysql=	::${BUILD_PKGPATH} \
+			::databases/mysql
 
-WANTLIB-pgsql=		m
-LIB_DEPENDS-pgsql=	courierauthcommon,courierauth::${BUILD_PKGPATH} \
-			pq::databases/postgresql
+WANTLIB-pgsql=		m courierauthcommon courierauth pq
+LIB_DEPENDS-pgsql=	::${BUILD_PKGPATH} \
+			::databases/postgresql
 
-WANTLIB-userdb=		c
-LIB_DEPENDS-userdb=	courierauthcommon,courierauth::${BUILD_PKGPATH} \
-			gdbm.>=3::databases/gdbm
+WANTLIB-userdb=		c courierauthcommon courierauth gdbm.>=3
+LIB_DEPENDS-userdb=	::${BUILD_PKGPATH} \
+			::databases/gdbm
 
 
 .if ${FLAVOR:L:Mno_ldap}
