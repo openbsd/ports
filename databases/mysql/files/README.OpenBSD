@@ -23,12 +23,7 @@ Rebuild the login.conf.db file if necessary:
 
 	# cap_mkdb /etc/login.conf
 
-And start the server like this:
-
-	if [ -x ${TRUEPREFIX}/bin/mysqld_safe ] ; then
-		echo -n ' mysql'
-		su -c mysql root -c '${TRUEPREFIX}/bin/mysqld_safe >/dev/null 2>&1 &' 
-	fi
+And then modify the rc.d script accordingly.
 
 mysqld_safe(1) is the recommended way to start a MySQL server,
 it creates the directory for the socket and adds some safety
