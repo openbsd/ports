@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/12 12:31:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/09 09:14:31 espie Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		m stdc++
+WANTLIB =		m stdc++ Half Iex IlmThread Imath
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ampasctl/}
 
-LIB_DEPENDS =		Half,Iex,IlmThread,Imath::graphics/ilmbase
+LIB_DEPENDS =		::graphics/ilmbase
 
 SEPARATE_BUILD =	concurrent
 

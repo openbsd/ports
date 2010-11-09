@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/09 09:14:31 espie Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -18,18 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=		c iconv jpeg m z
+WANTLIB +=		c iconv jpeg m z bz2.>=10 jbig.>=1.2 png.>=4 \
+			tiff.>=36 lcms.>=1 jasper.>=1 xml2.>=9
 
-LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
-			jbig.>=1.2::graphics/jbigkit \
-			png.>=4::graphics/png \
-			tiff.>=36::graphics/tiff \
-			lcms.>=1::graphics/lcms \
-			jasper.>=1::graphics/jasper \
-			xml2.>=9::textproc/libxml
+LIB_DEPENDS =		::archivers/bzip2 \
+			::graphics/jbigkit \
+			::graphics/png \
+			::graphics/tiff \
+			::graphics/lcms \
+			::graphics/jasper \
+			::textproc/libxml
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
@@ -51,20 +52,21 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
-RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
-CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no
-CONFIGURE_ARGS+=	--without-x \
+BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu,no_x11
+RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu,no_x11
+CONFIGURE_ENV +=	ac_cv_path_FIGDecodeDelegate=no
+CONFIGURE_ARGS +=	--without-x \
 			--without-ttf \
 			--without-wmf
 .else
-WANTLIB+=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs xcb
-LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf
-BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
-BUILD_DEPENDS+=		:transfig-*:print/transfig
-RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS+=		:transfig-*:print/transfig
-CONFIGURE_ARGS+=	--with-wmf
+WANTLIB +=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs xcb \
+			wmflite.>=7
+LIB_DEPENDS +=		::graphics/libwmf
+BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu
+BUILD_DEPENDS +=	:transfig-*:print/transfig
+RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS +=		:transfig-*:print/transfig
+CONFIGURE_ARGS +=	--with-wmf
 .endif
 
 # with FLAVOR=no_x11, some regession tests do not pass

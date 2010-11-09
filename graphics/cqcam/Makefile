@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/09 09:14:31 espie Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	color QuickCam control program
 
 DISTNAME=	cqcam-0.91
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	graphics
 
 # GPLv2
@@ -13,13 +13,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m stdc++
+WANTLIB=		c m stdc++ jpeg.>=62
 
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
 MASTER_SITES=	${HOMEPAGE}
 
 USE_GROFF =	Yes
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
+LIB_DEPENDS=	::graphics/jpeg
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS= --enable-jpeg \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/10/25 08:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2010/11/09 09:14:31 espie Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -24,11 +24,12 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
 WANTLIB += xcb-render xcb-render-util gdk_pixbuf-2.0
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0 art_lgpl_2.>=5 xslt.>=3
 
 BUILD_DEPENDS=	::textproc/docbook-xsl
-LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		art_lgpl_2.>=5::graphics/libart \
-		xslt.>=3::textproc/libxslt
+LIB_DEPENDS=	::x11/gtk+2 \
+		::graphics/libart \
+		::textproc/libxslt
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -54,13 +55,13 @@ CONFIGURE_ARGS+=--enable-gnome \
 		--with-python \
 		--with-swig
 BUILD_DEPENDS+=	::devel/swig
-LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
+LIB_DEPENDS +=	::x11/gnome/libgnomeui \
 		${MODPY_LIB_DEPENDS}
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 bonobo-activation
 WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
 WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt ssl
 WANTLIB += util canberra gcrypt gpg-error ltdl ogg vorbis vorbisfile
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB} gnomeui-2
 MODGNOME_HELP_FILES= Yes
 .else
 # help is only installed and usable with yelp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/09 09:14:31 espie Exp $
 
 COMMENT=	3D creation software
 
@@ -25,14 +25,15 @@ MODULES=	devel/scons lang/python
 
 RUN_DEPENDS=	::graphics/tiff
 BUILD_DEPENDS=	::graphics/tiff
-LIB_DEPENDS=	png::graphics/png \
-		jpeg::graphics/jpeg \
-		GLEW::graphics/glew \
-		SDL::devel/sdl \
+LIB_DEPENDS=	::graphics/png \
+		::graphics/jpeg \
+		::graphics/glew \
+		::devel/sdl \
 		${MODPY_LIB_DEPENDS}
 
-WANTLIB=	GL GLU X11 Xi c m pthread stdc++ util z
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB =	GL GLU X11 Xi c m pthread stdc++ util z
+WANTLIB += 	${MODPY_WANTLIB}
+WANTLIB +=	png jpeg GLEW SDL
 
 SEPARATE_BUILD=	simple
 NO_REGRESS=	Yes

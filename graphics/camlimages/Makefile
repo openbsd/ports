@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/09 09:14:31 espie Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
 
 DISTNAME=	camlimages-2.2.0
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
 
@@ -32,10 +32,11 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include/libpng" LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	CAMLDIR="${CAMLDIR}" LIBDIR="${CAMLDIR}/camlimages"
 
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg tiff.>=36::graphics/tiff \
-		png.>=4::graphics/png ungif.>=5::graphics/libungif
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu ::x11/lablgtk
-BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS =	::graphics/jpeg ::graphics/tiff ::graphics/png \
+		::graphics/libungif
+WANTLIB =	jpeg.>=62 tiff.>=36 png.>=4 ungif.>=5
+RUN_DEPENDS =	:ghostscript-*:print/ghostscript/gnu ::x11/lablgtk
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 ALL_TARGET=	byt ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 
