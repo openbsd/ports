@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/09 18:47:57 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Ruby interface to hyperestraier
 
 DISTNAME=		hyperestraier-1.4.13
 PKGNAME=		ruby-hyperestraier-1.0.0
-REVISION=		15
+REVISION=		16
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m pthread ${MODRUBY_WANTLIB}
+WANTLIB=		c m pthread estraier ${MODRUBY_WANTLIB}
 MODULES=		lang/ruby
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
-			estraier.>=8::textproc/hyperestraier
+			::textproc/hyperestraier
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
@@ -33,10 +33,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 WRKSRC=			${WRKDIST}/rubynative
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ruby-hyperestraier
+	${INSTALL_DATA_DIR} ${MODRUBY_EXAMPLEDIR}/hyperestraier
 	${INSTALL_DATA} ${WRKSRC}/example/*.rb \
-		${PREFIX}/share/examples/ruby-hyperestraier
-	cd ${WRKSRC} && ${LOCALBASE}/bin/rdoc18 -o ${PREFIX}/share/doc/ruby-hyperestraier \
-		estraier-doc.rb
+		${MODRUBY_EXAMPLEDIR}/hyperestraier
 
 .include <bsd.port.mk>
