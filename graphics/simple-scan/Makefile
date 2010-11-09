@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/22 06:41:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/09 19:00:28 espie Exp $
 
 COMMENT=	simple scanning utility
 
@@ -26,6 +26,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z
 WANTLIB += xcb-render GL Xxf86vm dbus-glib-1 drm jpeg xcb-shm
+WANTLIB += sane.>=2
 
 #MASTER_SITES=	http://people.ubuntu.com/~robert-ancell/simple-scan/
 
@@ -33,7 +34,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	sane.>=2::graphics/sane-backends
+LIB_DEPENDS=	::graphics/sane-backends
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes

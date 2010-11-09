@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/09 19:00:28 espie Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -17,17 +17,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m z
+WANTLIB += c m z xml2.>=11 cdio iso9660 popt
 
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		xml2.>=11::textproc/libxml \
-			cdio,iso9660::audio/libcdio \
-			popt::devel/popt
+LIB_DEPENDS=		::textproc/libxml \
+			::audio/libcdio \
+			::devel/popt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/09 19:00:28 espie Exp $
 
 COMMENT=	picture viewer for X, with thumbnail-based file selector
 DISTNAME=	xzgv-0.9
@@ -19,9 +19,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xzgv/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS+=   gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+LIB_DEPENDS+=   ::x11/gtk+2
 
-WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes gdk_pixbuf-2.0
+WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes 
+WANTLIB +=	gdk_pixbuf-2.0 gdk-x11-2.0.>=0.11 gtk-x11-2.0.>=0.11
 WANTLIB+=	Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB+=	freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
 WANTLIB+=	pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs xcb z
