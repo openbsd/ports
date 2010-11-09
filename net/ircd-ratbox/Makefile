@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/09 11:33:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/09 11:53:53 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.6
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
