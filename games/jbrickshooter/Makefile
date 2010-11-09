@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/04 12:03:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/09 20:26:16 landry Exp $
 
 COMMENT =	brick shooter reflexion game
 
-V=		1.4.1
+V=		1.5.1
 DISTNAME=	JBrickShooter_v${V}
 PKGNAME=	jbrickshooter-${V}
 CATEGORIES=	games java
