@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/12 01:17:11 ian Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/09 21:39:57 jasper Exp $
 
 COMMENT =		continuous integration server
 
 VERSION =		1.365
 DISTNAME =		hudson # nonsensical versioning, alas.
+REVISION =		0
 PKGNAME =		hudson-${VERSION}
 DIST_SUBDIR =		hudson-${VERSION}
 
@@ -42,7 +43,6 @@ SUBST_VARS +=		HOMEDIR
 do-install:
 	${INSTALL_DATA_DIR} ${WARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/hudson.war ${WARDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${WARDIR}
 	${INSTALL_DATA} ${FILESDIR}/hudson ${WRKDIST}
 	${SUBST_CMD} ${WRKDIST}/hudson
 	${INSTALL_SCRIPT} ${WRKDIST}/hudson ${BINDIR}
