@@ -1,6 +1,6 @@
---- sal/osl/unx/system.h.orig.port	Wed May 26 20:28:29 2010
-+++ sal/osl/unx/system.h	Fri Jun 25 23:56:14 2010
-@@ -187,6 +187,32 @@
+--- sal/osl/unx/system.h.orig.port	Thu Oct 21 13:59:19 2010
++++ sal/osl/unx/system.h	Sat Oct 23 18:40:07 2010
+@@ -192,6 +192,32 @@
  #	define  NO_PTHREAD_RTL
  #endif
  
@@ -33,12 +33,12 @@
  #ifdef SCO
  #   define AF_IPX -1
  #	include <strings.h>
-@@ -362,7 +388,7 @@ int macxp_resolveAlias(char *path, int buflen);
+@@ -338,7 +364,7 @@ int macxp_resolveAlias(char *path, int buflen);
+ #if !defined(_WIN32)  && !defined(_WIN16) && !defined(OS2)  && \
      !defined(LINUX)   && !defined(NETBSD) && !defined(FREEBSD) && !defined(SCO)  && \
  	!defined(AIX)     && !defined(HPUX)   && \
- 	!defined(SOLARIS) && !defined(IRIX)   && \
--	!defined(MACOSX)
-+	!defined(MACOSX) && !defined(OPENBSD)
+-	!defined(SOLARIS) && !defined(MACOSX)
++	!defined(SOLARIS) && !defined(MACOSX) && !defined(OPENBSD)
  #	error "Target platform not specified!"
  #endif
  

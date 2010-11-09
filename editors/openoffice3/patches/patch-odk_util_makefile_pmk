@@ -1,16 +1,16 @@
-$OpenBSD: patch-odk_util_makefile_pmk,v 1.5 2010/06/26 15:48:12 robert Exp $
---- odk/util/makefile.pmk.orig.port	Wed May 26 20:25:03 2010
-+++ odk/util/makefile.pmk	Fri Jun 25 23:56:14 2010
-@@ -70,7 +70,7 @@ CONVERTTAGFLAG = $(MISC)$/$(CONVERTTAGFLAGNAME)
+$OpenBSD: patch-odk_util_makefile_pmk,v 1.6 2010/11/09 18:40:04 robert Exp $
+--- odk/util/makefile.pmk.orig.port	Thu Oct 21 13:50:20 2010
++++ odk/util/makefile.pmk	Sat Oct 23 18:40:07 2010
+@@ -70,7 +70,7 @@ CONVERTTAGFLAG = $(MISC)/$(CONVERTTAGFLAGNAME)
  
- MY_AUTODOC=$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) $(SOLARBINDIR)$/autodoc
+ MY_AUTODOC=$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) $(SOLARBINDIR)/autodoc
  
 -.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
 +.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
  MY_COPY=$(GNUCOPY)
  MY_COPY_RECURSIVE=$(GNUCOPY) -r
  .ELSE
-@@ -157,6 +157,12 @@ DESTPLATFROM=netbsd
+@@ -160,6 +160,12 @@ DESTPLATFROM=netbsd
  # FREEBSD
  ###########
  DESTPLATFROM=freebsd
@@ -21,5 +21,5 @@ $OpenBSD: patch-odk_util_makefile_pmk,v 1.5 2010/06/26 15:48:12 robert Exp $
 +###########
 +DESTPLATFROM=openbsd
  
- .ELIF "$(OS)"=="IRIX"
+ .ELIF "$(OS)"=="MACOSX"
  ###########

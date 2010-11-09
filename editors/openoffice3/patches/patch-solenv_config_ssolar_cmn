@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_config_ssolar_cmn,v 1.4 2010/03/30 11:03:07 robert Exp $
---- solenv/config/ssolar.cmn.orig.port	Sun Jan 24 16:12:33 2010
-+++ solenv/config/ssolar.cmn	Sun Jan 24 16:44:53 2010
-@@ -308,7 +308,7 @@ unxsogs
+$OpenBSD: patch-solenv_config_ssolar_cmn,v 1.5 2010/11/09 18:40:04 robert Exp $
+--- solenv/config/ssolar.cmn.orig.port	Thu Oct 21 14:04:07 2010
++++ solenv/config/ssolar.cmn	Sat Oct 23 18:40:07 2010
+@@ -321,7 +321,7 @@ unxsogs
  {
  }
  

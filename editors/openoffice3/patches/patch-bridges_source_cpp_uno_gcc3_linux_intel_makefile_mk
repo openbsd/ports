@@ -1,0 +1,12 @@
+$OpenBSD: patch-bridges_source_cpp_uno_gcc3_linux_intel_makefile_mk,v 1.1 2010/11/09 18:40:04 robert Exp $
+--- bridges/source/cpp_uno/gcc3_linux_intel/makefile.mk.orig.port	Tue Nov  9 00:45:26 2010
++++ bridges/source/cpp_uno/gcc3_linux_intel/makefile.mk	Tue Nov  9 00:45:38 2010
+@@ -38,7 +38,7 @@ ENABLE_EXCEPTIONS=TRUE
+ 
+ # --- Files --------------------------------------------------------
+ 
+-.IF "$(COM)$(OS)$(CPU)$(COMNAME)" == "GCCLINUXIgcc3"
++.IF "$(COM)$(OS)$(CPU)$(COMNAME)" == "GCCOPENBSDIgcc3"
+ 
+ .IF "$(cppu_no_leak)" == ""
+ CFLAGS += -DLEAK_STATIC_DATA

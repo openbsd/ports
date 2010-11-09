@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdext_source_pdfimport_filterdet_cxx,v 1.3 2010/06/26 15:48:12 robert Exp $
---- sdext/source/pdfimport/filterdet.cxx.orig.port	Wed May 26 20:29:30 2010
-+++ sdext/source/pdfimport/filterdet.cxx	Fri Jun 25 23:56:14 2010
-@@ -710,46 +710,6 @@ uno::Reference< io::XStream > getAdditionalStream( con
+$OpenBSD: patch-sdext_source_pdfimport_filterdet_cxx,v 1.4 2010/11/09 18:40:04 robert Exp $
+--- sdext/source/pdfimport/filterdet.cxx.orig.port	Thu Oct 21 14:03:08 2010
++++ sdext/source/pdfimport/filterdet.cxx	Sat Oct 23 18:40:07 2010
+@@ -710,48 +710,6 @@ uno::Reference< io::XStream > getAdditionalStream( con
                          OSL_ENSURE( pObject, "object not found\n" );
                          if( pObject )
                          {
@@ -30,11 +30,13 @@ $OpenBSD: patch-sdext_source_pdfimport_filterdet_cxx,v 1.3 2010/06/26 15:48:12 r
 -                                        xEmbed.clear();
 -                                        break;
 -                                    }
+-                                    
+-                                    rtl::OUString aDocName( rInPDFFileURL.copy( rInPDFFileURL.lastIndexOf( sal_Unicode('/') )+1 ) );
 -
 -                                    bool bEntered = false;
 -                                    do
 -                                    {
--                                        bEntered = getPassword( xIntHdl, io_rPwd, ! bEntered );
+-                                        bEntered = getPassword( xIntHdl, io_rPwd, ! bEntered, aDocName );
 -                                        rtl::OString aIsoPwd = rtl::OUStringToOString( io_rPwd,
 -                                                                                       RTL_TEXTENCODING_ISO_8859_1 );
 -                                        bAuthenticated = pPDFFile->setupDecryptionData( aIsoPwd.getStr() );

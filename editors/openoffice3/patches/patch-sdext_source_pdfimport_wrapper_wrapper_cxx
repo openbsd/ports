@@ -1,11 +1,11 @@
-$OpenBSD: patch-sdext_source_pdfimport_wrapper_wrapper_cxx,v 1.3 2010/06/26 15:48:12 robert Exp $
---- sdext/source/pdfimport/wrapper/wrapper.cxx.orig.port	Wed May 26 20:29:31 2010
-+++ sdext/source/pdfimport/wrapper/wrapper.cxx	Fri Jun 25 23:56:14 2010
-@@ -941,8 +941,6 @@ bool xpdf_ImportFromFile( const ::rtl::OUString&      
+$OpenBSD: patch-sdext_source_pdfimport_wrapper_wrapper_cxx,v 1.4 2010/11/09 18:40:04 robert Exp $
+--- sdext/source/pdfimport/wrapper/wrapper.cxx.orig.port	Thu Oct 21 14:03:09 2010
++++ sdext/source/pdfimport/wrapper/wrapper.cxx	Sat Oct 23 18:40:07 2010
+@@ -957,8 +957,6 @@ bool xpdf_ImportFromFile( const ::rtl::OUString&      
      // check for encryption, if necessary get password
      rtl::OUString aPwd( rPwd );
      bool bIsEncrypted = false;
--    if( checkEncryption( aSysUPath, xIHdl, aPwd, bIsEncrypted ) == false )
+-    if( checkEncryption( aSysUPath, xIHdl, aPwd, bIsEncrypted, aDocName ) == false )
 -        return false;
  
      rtl::OUStringBuffer converterURL = rtl::OUString::createFromAscii("xpdfimport");

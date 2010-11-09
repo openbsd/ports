@@ -1,6 +1,6 @@
---- solenv/bin/modules/installer/parameter.pm.orig.port	Wed Sep  9 07:08:29 2009
-+++ solenv/bin/modules/installer/parameter.pm	Tue Feb 16 19:37:49 2010
-@@ -315,6 +315,10 @@ sub setglobalvariables
+--- solenv/bin/modules/installer/parameter.pm.orig.port	Thu Oct 21 14:04:06 2010
++++ solenv/bin/modules/installer/parameter.pm	Sat Oct 23 18:40:07 2010
+@@ -314,6 +314,10 @@ sub setglobalvariables
  	
  	if ( $installer::globals::compiler =~ /unxso[lg]i/ ) { $installer::globals::issolarisx86build = 1; }
  

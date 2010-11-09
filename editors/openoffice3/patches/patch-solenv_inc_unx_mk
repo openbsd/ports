@@ -1,7 +1,6 @@
-# i100395
-$OpenBSD: patch-solenv_inc_unx_mk,v 1.4 2010/06/26 15:48:12 robert Exp $
---- solenv/inc/unx.mk.orig.port	Wed May 26 20:30:12 2010
-+++ solenv/inc/unx.mk	Fri Jun 25 23:56:14 2010
+$OpenBSD: patch-solenv_inc_unx_mk,v 1.5 2010/11/09 18:40:04 robert Exp $
+--- solenv/inc/unx.mk.orig.port	Thu Oct 21 14:04:11 2010
++++ solenv/inc/unx.mk	Sat Oct 23 18:40:07 2010
 @@ -28,6 +28,9 @@
  # --- Unix-Environment ---------------------------------------
  # Used if "$(GUI)" == "UNX"
@@ -12,19 +11,3 @@ $OpenBSD: patch-solenv_inc_unx_mk,v 1.4 2010/06/26 15:48:12 robert Exp $
  
  # Dieses Define gilt fuer alle  WNT- Plattformen
  # fuer Compiler, wo kein Java unterstuetzt wird, muss dies ge'undeft werden
-@@ -216,7 +219,13 @@ SOLARLIB+=-L$(KDE_ROOT)/lib
- AUGMENT_LIBRARY_PATH *= : && \
-     LD_LIBRARY_PATH=$${{LD_LIBRARY_PATH+$${{LD_LIBRARY_PATH}}:}}$(SOLARLIBDIR)
- .ELSE
-+.IF "$(SOLAR_JAVA)" != ""
- AUGMENT_LIBRARY_PATH *= if ($$?LD_LIBRARY_PATH == 1) \
--    eval 'setenv LD_LIBRARY_PATH "$${{LD_LIBRARY_PATH}}:$(SOLARLIBDIR)"' && \
--    if ($$?LD_LIBRARY_PATH == 0) setenv LD_LIBRARY_PATH "$(SOLARLIBDIR)" &&
-+    eval 'setenv LD_LIBRARY_PATH "$${{LD_LIBRARY_PATH}}:$(SOLARLIBDIR):."' && \
-+    if ($$?LD_LIBRARY_PATH == 0) setenv LD_LIBRARY_PATH "$(SOLARLIBDIR):." &&
-+.ELSE
-+AUGMENT_LIBRARY_PATH *= if ($$?LD_LIBRARY_PATH == 1) \
-+    eval 'setenv LD_LIBRARY_PATH "$${{LD_LIBRARY_PATH}}:$(SOLARLIBDIR):."' && \
-+    if ($$?LD_LIBRARY_PATH == 0) setenv LD_LIBRARY_PATH "$(SOLARLIBDIR):." &&
-+.ENDIF
- .ENDIF

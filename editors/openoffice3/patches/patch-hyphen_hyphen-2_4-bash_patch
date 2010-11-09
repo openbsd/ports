@@ -1,0 +1,12 @@
+$OpenBSD: patch-hyphen_hyphen-2_4-bash_patch,v 1.1 2010/11/09 18:40:04 robert Exp $
+--- hyphen/hyphen-2.4-bash.patch.orig.port	Sun Oct 24 18:55:17 2010
++++ hyphen/hyphen-2.4-bash.patch	Sun Oct 24 18:54:02 2010
+@@ -0,0 +1,8 @@
++--- misc/hyphen-2.4/tests/test.sh	Wed Apr 30 14:12:33 2008
+++++ misc/build/hyphen-2.4/tests/test.sh	Sun Oct 24 18:53:49 2010
++@@ -1,4 +1,4 @@
++-#!/bin/bash
+++#!/usr/local/bin/bash
++ 
++ function check_valgrind_log () {
++ if [ "$VALGRIND" != "" ]; then

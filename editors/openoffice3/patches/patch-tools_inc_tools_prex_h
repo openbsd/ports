@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_inc_tools_prex_h,v 1.1 2010/11/09 18:40:04 robert Exp $
+--- tools/inc/tools/prex.h.orig.port	Tue Nov  9 00:55:08 2010
++++ tools/inc/tools/prex.h	Tue Nov  9 00:55:16 2010
+@@ -47,7 +47,7 @@
+ extern "C" {
+ #endif
+ 
+-#if defined(LINUX) || defined(FREEBSD) || defined(MACOSX) // should really check for xfree86 or for X11R6.1 and higher
++#if defined(LINUX) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD) // should really check for xfree86 or for X11R6.1 and higher
+ #define __XKeyboardExtension__ 1
+ #else
+ #define __XKeyboardExtension__ 0

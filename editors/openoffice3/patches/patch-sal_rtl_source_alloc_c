@@ -1,21 +1,12 @@
-$OpenBSD: patch-sal_rtl_source_alloc_c,v 1.4 2010/06/26 15:48:12 robert Exp $
---- sal/rtl/source/alloc.c.orig.port	Wed May 26 20:28:32 2010
-+++ sal/rtl/source/alloc.c	Fri Jun 25 23:56:14 2010
+$OpenBSD: patch-sal_rtl_source_alloc_c,v 1.5 2010/11/09 18:40:04 robert Exp $
+--- sal/rtl/source/alloc.c.orig.port	Thu Oct 21 13:59:31 2010
++++ sal/rtl/source/alloc.c	Sat Oct 23 18:40:07 2010
 @@ -69,7 +69,7 @@ typedef pthread_mutex_t mutex_type;
  #define RTL_MUTEX_ACQUIRE(a)  pthread_mutex_lock((a))
  #define RTL_MUTEX_RELEASE(a)  pthread_mutex_unlock((a))
  
 -#if   defined(FREEBSD) || defined(NETBSD) || defined(MACOSX)
-+#if   defined(FREEBSD) || defined(NETBSD) || defined(MACOSX) || defined (OPENBSD)
++#if   defined(FREEBSD) || defined(NETBSD) || defined(MACOSX) || defined(OPENBSD)
  static sal_Size __rtl_memory_vmpagesize (void)
  {
  	/* xBSD */
-@@ -87,7 +87,7 @@ static sal_Size __rtl_memory_vmpagesize (void)
- 	/* other */
- 	return (sal_Size)(0x2000);
- }
--#endif /* FREEBSD || NETBSD || MACOSX || IRIX || LINUX || SOLARIS */
-+#endif /* FREEBSD || NETBSD || MACOSX || IRIX || LINUX || SOLARIS || OPENBSD */
- 
- #ifndef PROT_HEAP
- #define PROT_HEAP (PROT_READ | PROT_WRITE | PROT_EXEC)

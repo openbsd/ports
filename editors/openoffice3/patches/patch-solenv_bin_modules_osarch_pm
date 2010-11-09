@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- solenv/bin/modules/osarch.pm.orig.port	Thu Mar 27 06:47:56 2003
-+++ solenv/bin/modules/osarch.pm	Fri Aug 18 15:47:45 2006
+$OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.2 2010/11/09 18:40:04 robert Exp $
+--- solenv/bin/modules/osarch.pm.orig.port	Thu Oct 21 14:04:06 2010
++++ solenv/bin/modules/osarch.pm	Sat Oct 23 18:40:07 2010
 @@ -22,6 +22,7 @@ chop( $m_str, $s_str );
  			   "Linux",		"linux",
  			   "FreeBSD",	"freebsd",
@@ -9,7 +9,7 @@ $OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.1.1.1 2008/10/30 18:51:06 rober
  			   "OSF1",		"decunix",
  			   "SCO_SV",	"scoosr5",
  #			   "SCO_SV",	"scouw21",
-@@ -37,6 +38,7 @@ chop( $m_str, $s_str );
+@@ -36,6 +37,7 @@ chop( $m_str, $s_str );
  			   "Linux",		"-DLINUX",
  			   "FreeBSD",	"-DFREEBSD",
  			   "NetBSD",	"-DNETBSD",
@@ -17,7 +17,7 @@ $OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.1.1.1 2008/10/30 18:51:06 rober
  			   "OSF1",		"-DSYSV -DDECUNIX",
  			   "SCO_SV",	"-DSYSV -DSCO -DSCO_OSR5",
  #			   "SCO_SV",	"-DSYSV -DSCO -DSCO_UW21",
-@@ -53,6 +55,7 @@ chop( $m_str, $s_str );
+@@ -51,6 +53,7 @@ chop( $m_str, $s_str );
  			   "Linux",	"lng",
  			   "FreeBSD",	"fbsd",
  			   "NetBSD",	"bsd",

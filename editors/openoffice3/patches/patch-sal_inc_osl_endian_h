@@ -1,11 +1,11 @@
---- sal/inc/osl/endian.h.orig.port	Wed May 26 20:28:28 2010
-+++ sal/inc/osl/endian.h	Fri Jun 25 23:56:14 2010
-@@ -164,7 +164,8 @@ extern "C" {
+--- sal/inc/osl/endian.h.orig.port	Thu Oct 21 13:59:14 2010
++++ sal/inc/osl/endian.h	Sat Oct 23 18:40:07 2010
+@@ -149,7 +149,8 @@ extern "C" {
+ #if !defined(_WIN32)  && !defined(_WIN16) && !defined(OS2)   && \
      !defined(LINUX)   && !defined(NETBSD) && !defined(SCO)   && \
  	!defined(AIX)     && !defined(HPUX)   && \
- 	!defined(SOLARIS) && !defined(IRIX)   && \
--	!defined(MACOSX) && !defined(FREEBSD)
-+	!defined(MACOSX) && !defined(FREEBSD) && \
+-	!defined(SOLARIS) && !defined(MACOSX) && !defined(FREEBSD)
++	!defined(SOLARIS) && !defined(MACOSX) && !defined(FREEBSD) && \
 +	!defined(OPENBSD)
  #	error "Target platform not specified !"
  #endif

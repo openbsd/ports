@@ -1,6 +1,6 @@
---- extensions/source/plugin/unx/makefile.mk.orig.port	Wed May 26 20:22:21 2010
-+++ extensions/source/plugin/unx/makefile.mk	Fri Jun 25 23:56:13 2010
-@@ -78,7 +78,7 @@ APP1STDLIBS+=-lXm -lXt -lXext -lX11 -ldl
+--- extensions/source/plugin/unx/makefile.mk.orig.port	Thu Oct 21 13:36:23 2010
++++ extensions/source/plugin/unx/makefile.mk	Sat Oct 23 18:40:06 2010
+@@ -78,7 +78,7 @@ APP1STDLIBS+=-lXm -lXt $(X11LINK_DYNAMIC) -ldl
  .IF "$(DISABLE_XAW)" != "TRUE"
  APP1STDLIBS+=-lXaw 
  .ENDIF
@@ -8,4 +8,4 @@
 +.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
  APP1STDLIBS+= -lXt -lXext -lX11
  .ELSE
- APP1STDLIBS+= -lXt -lXext -lX11 -ldl
+ APP1STDLIBS+= -lXt $(X11LINK_DYNAMIC) -ldl

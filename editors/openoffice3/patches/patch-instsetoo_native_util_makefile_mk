@@ -1,5 +1,5 @@
---- instsetoo_native/util/makefile.mk.orig.port	Wed May 26 20:23:36 2010
-+++ instsetoo_native/util/makefile.mk	Fri Jun 25 23:56:13 2010
+--- instsetoo_native/util/makefile.mk.orig.port	Thu Oct 21 13:45:54 2010
++++ instsetoo_native/util/makefile.mk	Sat Oct 23 18:40:06 2010
 @@ -43,12 +43,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR):$(SOLARLIBDI
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
@@ -15,7 +15,7 @@
  
  .EXPORT: ENABLE_DOWNLOADSETS
  .EXPORT: LAST_MINOR
-@@ -100,9 +102,9 @@ ALLTAR : $(LOCALPYFILES)
+@@ -85,9 +87,9 @@ ALLTAR  : $(LOCALPYFILES)
  .ELSE			# "$(GUI)"!="WNT" && "$(EPM)"=="NO" && "$(USE_PACKAGER)"==""
  .IF "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
  .IF "$(BUILD_TYPE)"=="$(BUILD_TYPE:s/ODK//)"
@@ -27,7 +27,7 @@
  .ENDIF
  .ELSE			# "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
  ALLTAR : updatepack
-@@ -391,14 +393,14 @@ hack_msitemplates .PHONY:
+@@ -314,14 +316,14 @@ hack_msitemplates .PHONY:
  	-$(MKDIRHIER) $(MSILANGPACKTEMPLATEDIR)$/Binary
  	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)$/Binary
  	-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)$/Binary

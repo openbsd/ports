@@ -1,6 +1,6 @@
---- tools/inc/tools/solar.h.orig.port	Wed May 26 20:33:52 2010
-+++ tools/inc/tools/solar.h	Fri Jun 25 23:56:14 2010
-@@ -329,6 +329,7 @@ template<typename T> inline T Abs(T a) { return (a>=0?
+--- tools/inc/tools/solar.h.orig.port	Fri Oct 29 12:47:07 2010
++++ tools/inc/tools/solar.h	Tue Nov  9 00:03:01 2010
+@@ -309,6 +309,7 @@ template<typename T> inline T Abs(T a) { return (a>=0?
  #define SYSTEM_UNXSOGI		32
  #define SYSTEM_UNXMACXI		33
  #define SYSTEM_OS2GCCI		34
@@ -8,12 +8,12 @@
  #define SYSTEM_WNTGCCI  	99
  
  #if defined WNT
-@@ -394,6 +395,8 @@ template<typename T> inline T Abs(T a) { return (a>=0?
+@@ -376,6 +377,8 @@ template<typename T> inline T Abs(T a) { return (a>=0?
    #define __DLLEXTENSION "mxp.dylib"
  #elif defined MACOSX && defined X86
    #define __DLLEXTENSION "mxi.dylib"
 +#elif defined OPENBSD
-+  #define __DLLEXTENSION ".so"
++  #define __DLLEXTENSION "ob.so"
  #else
    #define __DLLEXTENSION ".so"
  #endif

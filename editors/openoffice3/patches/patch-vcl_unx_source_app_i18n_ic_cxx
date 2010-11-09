@@ -1,12 +1,12 @@
-$OpenBSD: patch-vcl_unx_source_app_i18n_ic_cxx,v 1.4 2010/06/26 15:48:12 robert Exp $
---- vcl/unx/source/app/i18n_ic.cxx.orig.port	Wed May 26 20:34:29 2010
-+++ vcl/unx/source/app/i18n_ic.cxx	Fri Jun 25 23:56:14 2010
+$OpenBSD: patch-vcl_unx_source_app_i18n_ic_cxx,v 1.5 2010/11/09 18:40:04 robert Exp $
+--- vcl/unx/source/app/i18n_ic.cxx.orig.port	Thu Oct 21 14:12:27 2010
++++ vcl/unx/source/app/i18n_ic.cxx	Sat Oct 23 18:40:08 2010
 @@ -337,7 +337,7 @@ SalI18N_InputContext::SalI18N_InputContext ( SalFrame 
  
          if ( mnPreeditStyle != XIMPreeditNone )
          {
--#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX
-+#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined OPENBSD
+-#if defined LINUX || defined FREEBSD || defined NETBSD
++#if defined LINUX || defined FREEBSD || defined NETBSD || defined OPENBSD
              if ( mpPreeditAttributes != NULL )
  #endif
                  mpAttributes = XVaAddToNestedList( mpAttributes,
@@ -14,8 +14,8 @@ $OpenBSD: patch-vcl_unx_source_app_i18n_ic_cxx,v 1.4 2010/06/26 15:48:12 robert 
          }
          if ( mnStatusStyle != XIMStatusNone )
          {
--#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX
-+#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined OPENBSD
+-#if defined LINUX || defined FREEBSD || defined NETBSD
++#if defined LINUX || defined FREEBSD || defined NETBSD || defined OPENBSD
              if ( mpStatusAttributes != NULL )
  #endif
                  mpAttributes = XVaAddToNestedList( mpAttributes,

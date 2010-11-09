@@ -1,6 +1,6 @@
-$OpenBSD: patch-soltools_mkdepend_ifparser_c,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- soltools/mkdepend/ifparser.c.orig.port	Thu Apr 22 06:06:37 2004
-+++ soltools/mkdepend/ifparser.c	Fri Aug 18 15:47:45 2006
+$OpenBSD: patch-soltools_mkdepend_ifparser_c,v 1.2 2010/11/09 18:40:04 robert Exp $
+--- soltools/mkdepend/ifparser.c.orig.port	Thu Oct 21 14:04:15 2010
++++ soltools/mkdepend/ifparser.c	Sat Oct 23 18:40:07 2010
 @@ -58,6 +58,8 @@
   */
  
@@ -8,5 +8,5 @@ $OpenBSD: patch-soltools_mkdepend_ifparser_c,v 1.1.1.1 2008/10/30 18:51:07 rober
 +#include <stdlib.h>
 +#include <string.h>
  #include <ctype.h>
- 
- /****************************************************************************
+ #include <stdlib.h>
+ #include <string.h>

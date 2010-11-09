@@ -1,25 +1,25 @@
-$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.3 2010/06/26 15:48:12 robert Exp $
---- sal/osl/unx/nlsupport.c.orig.port	Wed May 26 20:28:29 2010
-+++ sal/osl/unx/nlsupport.c	Fri Jun 25 23:56:14 2010
+$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.4 2010/11/09 18:40:04 robert Exp $
+--- sal/osl/unx/nlsupport.c.orig.port	Thu Oct 21 13:59:18 2010
++++ sal/osl/unx/nlsupport.c	Sat Oct 23 18:40:07 2010
 @@ -30,7 +30,7 @@
  #include <osl/process.h>
  #include <rtl/memory.h>
  
--#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX)
++#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)
  #include <pthread.h>
  #ifndef MACOSX
   #include <locale.h>
-@@ -226,7 +226,7 @@ static rtl_Locale * _parse_locale( const char * locale
+@@ -231,7 +231,7 @@ static rtl_Locale * _parse_locale( const char * locale
      return NULL;
  }
          
--#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD)
++#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps
-@@ -549,6 +549,35 @@ const _pair _nl_language_list[] = {
+@@ -535,6 +535,35 @@ const _pair _nl_language_list[] = {
      { "UTF-8",         RTL_TEXTENCODING_UTF8           }  /* ISO-10646/UTF-8 */
  };
  
@@ -52,33 +52,33 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.3 2010/06/26 15:48:12 robert Exp $
 +    { "UTF-8",         RTL_TEXTENCODING_UTF8           }  /* ISO-10646/UTF-8 */
 +};
 +
- #endif /* ifdef SOLARIS IRIX LINUX FREEBSD NETBSD */
+ #endif /* ifdef SOLARIS LINUX FREEBSD NETBSD */
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
-@@ -938,7 +967,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
-             snprintf(env_buf, sizeof(env_buf), "LC_ALL=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
-+#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX ) || defined( OPENBSD )
+@@ -917,7 +946,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+     {
+         /* only change env vars that exist already */
+         if( getenv( "LC_ALL" ) ) {
+-#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
++#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX ) || defined( OPENBSD )
              setenv( "LC_ALL", locale_buf, 1);
  #else
              setenv( "LC_ALL", locale_buf );
-@@ -950,7 +979,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
-             snprintf(env_buf, sizeof(env_buf), "LC_CTYPE=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
-+#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX  || defined( OPENBSD )
+@@ -925,7 +954,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+         }
+ 
+         if( getenv( "LC_CTYPE" ) ) {
+-#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
++#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX ) || defined ( OPENBSD )
              setenv("LC_CTYPE", locale_buf, 1 );
  #else
              setenv( "LC_CTYPE", locale_buf );
-@@ -962,7 +991,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
-             snprintf(env_buf, sizeof(env_buf), "LANG=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
-+#elif defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX ) || defined( OPENBSD )
+@@ -933,7 +962,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+         }
+ 
+         if( getenv( "LANG" ) ) {
+-#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX )
++#if defined( FREEBSD ) || defined( NETBSD ) || defined( MACOSX ) || defined ( OPENBSD )
              setenv("LC_CTYPE", locale_buf, 1 );
  #else
              setenv( "LANG", locale_buf );

@@ -1,0 +1,12 @@
+$OpenBSD: patch-bridges_inc_bridges_cpp_uno_shared_vtablefactory_hxx,v 1.1 2010/11/09 18:40:04 robert Exp $
+--- bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx.orig.port	Tue Nov  9 00:46:11 2010
++++ bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx	Tue Nov  9 00:46:26 2010
+@@ -37,7 +37,7 @@
+ #include <hash_map>
+ 
+ /*See: http://people.redhat.com/drepper/selinux-mem.html*/
+-#ifdef LINUX
++#if defined(LINUX) || defined(OPENBSD)
+ #define USE_DOUBLE_MMAP
+ #endif
+ 

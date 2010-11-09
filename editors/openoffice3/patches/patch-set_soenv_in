@@ -1,6 +1,6 @@
---- set_soenv.in.orig.port	Wed Dec  9 11:51:13 2009
-+++ set_soenv.in	Thu Feb 11 17:28:10 2010
-@@ -785,6 +785,57 @@ elsif ( $platform =~ m/aix/ )
+--- set_soenv.in.orig.port	Thu Oct 21 14:03:29 2010
++++ set_soenv.in	Mon Oct 25 14:42:27 2010
+@@ -802,6 +802,57 @@ elsif ( $platform =~ m/aix/ )
     $OS             = "AIX";
     $PATH_SEPERATOR = $ps;
  }
@@ -58,30 +58,30 @@
  else {
  	print "\nset_soenv:  Cannot figure out what platform you are running\n";
  	print "For $platform.\n";
-@@ -1045,7 +1096,7 @@ if ($platform =~ m/solaris/) 
+@@ -1041,7 +1092,7 @@ if ($platform =~ m/solaris/) 
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
--elsif ($platform =~ m/linux|netbsd|osf1|irix|freebsd|aix/)
-+elsif ($platform =~ m/linux|netbsd|osf1|irix|freebsd|aix|openbsd/)
+-elsif ($platform =~ m/linux|netbsd|osf1|freebsd|aix/)
++elsif ($platform =~ m/linux|netbsd|osf1|freebsd|aix|openbsd/)
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1111,7 +1162,7 @@ if ($platform =~ m/cygwin|os2/)
+@@ -1107,7 +1158,7 @@ if ($platform =~ m/cygwin|os2/)
  }
       
  # The general environment path.
--if ($platform =~ m/linux|netbsd|odf1|irix|freebsd|aix|solaris/)
-+if ($platform =~ m/linux|netbsd|odf1|irix|freebsd|aix|solaris|openbsd/)
+-if ($platform =~ m/linux|netbsd|odf1|freebsd|aix|solaris/)
++if ($platform =~ m/linux|netbsd|odf1|freebsd|aix|solaris|openbsd/)
  {  $PATH              = $cur_dir.
  #                        $ps.'$SOLARVER'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1345,11 +1396,12 @@ if ($platform =~ m/solaris/) 
+@@ -1333,11 +1384,12 @@ if ($platform =~ m/solaris/) 
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
--elsif ($platform =~ m/linux|netbasd|osf1|irix|aix|freebsd/)
-+elsif ($platform =~ m/linux|netbasd|osf1|irix|aix|freebsd|openbsd/)
+-elsif ($platform =~ m/linux|netbasd|osf1|aix|freebsd/)
++elsif ($platform =~ m/linux|netbasd|osf1|aix|freebsd|openbsd/)
  {  $SOLARLIB          = $L.$par_dir.$LIB.
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$INPATH'.$LIB.
@@ -90,26 +90,22 @@
                          $L.'$JAVA_HOME'.$LIB64.
                          $L.$JRELIBDIR.
                          $L.$JRETOOLKITDIR.
-@@ -1388,10 +1440,10 @@ $SOLARINC             = $I.$cur_dir.
+@@ -1376,7 +1428,7 @@ $SOLARINC             = $I.$cur_dir.
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
--if ($platform =~ m/solaris|linux|osf1|freebsd|netbsd|irix/)
-+if ($platform =~ m/solaris|linux|osf1|freebsd|netbsd|irix|openbsd/)
+-if ($platform =~ m/solaris|linux|osf1|freebsd|netbsd/)
++if ($platform =~ m/solaris|linux|osf1|freebsd|netbsd|openbsd/)
  {
  $SOLARINC	     .= $STLPORT_stlport;
--if ($platform =~ m/linux|freebsd|netbsd/)
-+if ($platform =~ m/linux|freebsd|netbsd|openbsd/)
- {
- # This simply adds an include path, so even cases that break the FHS work
- $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1413,9 +1465,15 @@ if ($platform =~ m/linux/)
+ if ($platform =~ m/linux|freebsd|netbsd/)
+@@ -1400,9 +1452,15 @@ if ($platform =~ m/linux/)
  }
  
  
 -   	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31".
 -                     $I.'$JAVA_HOME'.$INCLUDE;
-+   	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31";
++	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31";
  
 +        # pickup system jpeg over java jpeg
 +        if ($platform =~ m/openbsd/)
@@ -121,9 +117,9 @@
  	#include system dependent Java include directory
  	if (!($JDK eq "gcj"))
  	{
-@@ -1437,13 +1495,16 @@ if ($platform =~ m/linux/)
-    		elsif ($platform =~ m/irix/)
-    		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."irix";
+@@ -1421,13 +1479,16 @@ if ($platform =~ m/linux/)
+    		elsif ($platform =~ m/netbsd/)
+    		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
     		}
 +                elsif ($platform =~ m/openbsd/)
 +                {  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."openbsd";

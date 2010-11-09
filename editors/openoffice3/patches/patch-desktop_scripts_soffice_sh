@@ -1,18 +1,19 @@
---- desktop/scripts/soffice.sh.orig.port	Wed May 26 20:21:55 2010
-+++ desktop/scripts/soffice.sh	Fri Jun 25 23:56:13 2010
-@@ -39,6 +39,11 @@ export SAL_ENABLE_FILE_LOCKING
- # working on your system.
- # SAL_NOOPENGL=true; export SAL_NOOPENGL
+$OpenBSD: patch-desktop_scripts_soffice_sh,v 1.6 2010/11/09 18:40:04 robert Exp $
+--- desktop/scripts/soffice.sh.orig.port	Thu Oct 21 13:29:19 2010
++++ desktop/scripts/soffice.sh	Sat Oct 23 18:40:06 2010
+@@ -35,6 +35,11 @@
+ SAL_ENABLE_FILE_LOCKING=1
+ export SAL_ENABLE_FILE_LOCKING
  
 +if [ -z $SAL_USE_VCLPLUGIN ]; then
-+       export SAL_USE_VCLPLUGIN=gtk
++	export SAL_USE_VCLPLUGIN=gtk
 +fi
 +export SAL_ENABLE_NATIVE_XFONTS=0
 +
- # the following test is needed on Linux PPC with IBM j2sdk142
- if [ "`uname -s`" = "Linux" -a "`uname -m`" = "ppc" ] ; then
-     JITC_PROCESSOR_TYPE=6
-@@ -93,6 +98,16 @@ for sd_arg in "$@"; do
+ # Uncomment the line below if you suspect that OpenGL is not
+ # working on your system.
+ # SAL_NOOPENGL=true; export SAL_NOOPENGL
+@@ -90,6 +95,16 @@ for sd_arg in "$@"; do
  done
  "$sd_prog/../basis-link/program/pagein" -L"$sd_prog/../basis-link/program" \
      ${sd_pagein_args}
@@ -20,11 +21,11 @@
 +# this is a temporary hack until we can live with the default search paths
 +case "`uname -s`" in
 +OpenBSD)
-+       sd_prog1="$sd_prog/../basis-link/program"
-+       sd_prog2="$sd_prog/../basis-link/ure-link/lib"
-+       LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
-+       export LD_LIBRARY_PATH
-+       ;;
++	sd_prog1="$sd_prog/../basis-link/program"
++	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
++	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++	export LD_LIBRARY_PATH
++	;;
 +esac
  
  # extend the ld_library_path for java: javaldx checks the sofficerc for us
