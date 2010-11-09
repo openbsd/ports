@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/23 11:10:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/09 19:49:03 landry Exp $
 
 COMMENT=		time tracker applet for GNOME
+BROKEN-sparc64=		waf stalls during build
 
 GNOME_PROJECT=		hamster-applet
 GNOME_VERSION=		2.32.0
