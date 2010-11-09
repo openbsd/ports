@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1 2010/11/09 13:23:21 sthen Exp $
+emul/fedora/etc/krb5.conf
+emul/fedora/lib/libcom_err.so.2
+emul/fedora/lib/libcom_err.so.${LIBcom_err_VERSION}
+emul/fedora/lib/libcrypto.so.0.9.7f
+emul/fedora/lib/libcrypto.so.5
+emul/fedora/lib/libssl.so.0.9.7f
+emul/fedora/lib/libssl.so.5
+emul/fedora/usr/bin/openssl
+emul/fedora/usr/lib/libcups.so.2
+emul/fedora/usr/lib/libcupsimage.so.2
+emul/fedora/usr/lib/libgssapi_krb5.so.2
+emul/fedora/usr/lib/libgssapi_krb5.so.${LIBgssapi_krb5_VERSION}
+emul/fedora/usr/lib/libk5crypto.so.3
+emul/fedora/usr/lib/libk5crypto.so.${LIBk5crypto_VERSION}
+emul/fedora/usr/lib/libkrb5.so.3
+emul/fedora/usr/lib/libkrb5.so.${LIBkrb5_VERSION}
+emul/fedora/usr/lib/libkrb5support.so.0
+emul/fedora/usr/lib/libkrb5support.so.${LIBkrb5support_VERSION}
