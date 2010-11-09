@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2010/11/09 08:58:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2010/11/09 09:55:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 
-REVISION-server=1
+REVISION-server=2
 
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
@@ -88,13 +88,9 @@ WANTLIB-main=		${WANTLIB} crypto ncurses readline ssl z
 WANTLIB-tests=		${WANTLIB}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
 	cd ${PREFIX}/lib && \
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
 		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
-	cp ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
-	${SUBST_CMD} ${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 
 do-regress:
