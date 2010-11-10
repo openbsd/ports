@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1 2010/11/10 21:21:26 jasper Exp $
+
+Several steps need to be taken to properly configure the NTP daemon.
+
+1. First, create or update the file ${SYSCONFDIR}/ntp.conf.  Several
+   example configuration files can be found here:
+
+     ${PREFIX}/share/examples/ntp
+
+2. Now ntp can be started with:
+
+     /etc/rc.d/ntpd start
+
+   Or to start 'ntpd' at every boot, add it to rc_scripts in
+   /etc/rc.conf.local.

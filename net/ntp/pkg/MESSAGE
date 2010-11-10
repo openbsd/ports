@@ -1,3 +1,0 @@
-Several steps need to be taken to properly configure the NTP daemon.
-Please refer to ${PREFIX}/share/examples/ntp/README.OpenBSD for more
-information.

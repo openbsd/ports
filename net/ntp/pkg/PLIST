@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/07/03 02:49:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/11/10 21:21:26 jasper Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man1/ntp-keygen.1
@@ -223,9 +223,9 @@ share/doc/ntp/sitemap.html
 share/doc/ntp/sntp.html
 share/doc/ntp/tickadj.html
 share/doc/ntp/xleave.html
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ntp/
 share/examples/ntp/README
-share/examples/ntp/README.OpenBSD
 share/examples/ntp/baldwin.conf
 share/examples/ntp/beauregard.conf
 share/examples/ntp/grundoon.conf
@@ -233,3 +233,4 @@ share/examples/ntp/malarky.conf
 share/examples/ntp/pogo.conf
 share/examples/ntp/rackety.conf
 @extra ${SYSCONFDIR}/ntp.conf
+@rcscript ${RCDIR}/ntpd

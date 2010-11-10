@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/10 21:21:26 jasper Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -9,6 +9,7 @@ COMMENT=	Network Time Protocol reference implementation
 VERSION=	4.2.6p2
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://archive.ntp.org/ntp4/ntp-4.2/
 
@@ -33,15 +34,10 @@ CONFIGURE_ARGS=	--enable-parse-clocks \
 CONFIGURE_ENV=	CPPFLAGS='-DCONFIG_FILE="\"${SYSCONFDIR}/ntp.conf\"" \
 			  -DKEYFILE="\"${SYSCONFDIR}/ntp.keys\""'
 
-post-build:
-	@${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ntp
 	@cd ${WRKSRC}/html && pax -rw * ${PREFIX}/share/doc/ntp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp
 	@cd ${WRKSRC}/conf && pax -rw * ${PREFIX}/share/examples/ntp
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-	    ${PREFIX}/share/examples/ntp/
 
 .include <bsd.port.mk>
