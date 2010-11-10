@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/10 22:44:03 jasper Exp $
 
 COMMENT=		high performance full-text search system
 
 DISTNAME=		hyperestraier-1.4.13
-REVISION=		2
+REVISION=		3
 CATEGORIES=		textproc
 SHARED_LIBS=		estraier	8.38
 
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m pthread z
+WANTLIB=		c m pthread z qdbm.>=14.11
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		qdbm.>=14.11::databases/qdbm
+LIB_DEPENDS=		::databases/qdbm
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/10 22:44:03 jasper Exp $
 
 COMMENT=		HTML, XHTML validator
 
 DISTNAME=		validate-1.2.2
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.htmlhelp.com/tools/validator/offline/

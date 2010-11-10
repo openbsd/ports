@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.130 2010/11/10 22:44:03 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -7,8 +7,8 @@ VERSION=		2.7.6
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py-libxml-${VERSION}
-REVISION-main=		0
-REVISION-python=	0
+REVISION-main=		1
+REVISION-python=	1
 SHARED_LIBS=		xml2	11.0
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
@@ -48,10 +48,10 @@ RUN_DEPENDS-main=
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
-LIB_DEPENDS-python=	xml2.>=11::textproc/libxml,-main \
+LIB_DEPENDS-python=	::textproc/libxml,-main \
 			${MODPY_LIB_DEPENDS} \
 			${MODLIBICONV_LIB_DEPENDS}
-WANTLIB-python=		m z util ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
+WANTLIB-python=		m z util xml2.>=11 ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
 .endif
 

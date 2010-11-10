@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/10 22:44:03 jasper Exp $
 
 COMMENT=	gtk2 spelling checker
 DISTNAME=	gtkspell-2.0.16
 SHARED_LIBS=	gtkspell 1.0 # .0.0
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc x11
 
@@ -25,7 +25,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs stdc++ xcb z gio-2.0 \
-		gthread-2.0 xcb-render xcb-render-util gdk_pixbuf-2.0
+		gthread-2.0 xcb-render xcb-render-util gdk_pixbuf-2.0 \
+		enchant.>=5 gdk-x11-2.0 gtk-x11-2.0
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
@@ -33,8 +34,8 @@ USE_GMAKE=	Yes
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	enchant.>=5::textproc/enchant \
-		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	::textproc/enchant \
+		::x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

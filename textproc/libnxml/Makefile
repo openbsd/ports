@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/10 21:37:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/10 22:44:03 jasper Exp $
 
 COMMENT =		XML manipulation library
 
 VERSION =		0.18.3
 DISTNAME =		libnxml-${VERSION}
-PKGNAME =		${DISTNAME}p0
+REVISION =		1
 CATEGORIES =		textproc
 MASTER_SITES =		http://www.autistici.org/bakunin/libnxml/
 SHARED_LIBS =		nxml 0.0 # 18.3
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS =		curl::net/curl
-WANTLIB +=		crypto idn ssl z
+LIB_DEPENDS =		::net/curl
+WANTLIB +=		crypto idn ssl z curl
 
 MODULES =		devel/gettext
 
