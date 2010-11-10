@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/16 15:17:02 eric Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/11/10 13:24:41 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/storm/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -51,6 +51,13 @@ lib/python${MODPY_VERSION}/site-packages/storm/properties.py
 lib/python${MODPY_VERSION}/site-packages/storm/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/references.py
 lib/python${MODPY_VERSION}/site-packages/storm/references.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/schema/
+lib/python${MODPY_VERSION}/site-packages/storm/schema/__init__.py
+lib/python${MODPY_VERSION}/site-packages/storm/schema/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/schema/patch.py
+lib/python${MODPY_VERSION}/site-packages/storm/schema/patch.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/schema/schema.py
+lib/python${MODPY_VERSION}/site-packages/storm/schema/schema.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/sqlobject.py
 lib/python${MODPY_VERSION}/site-packages/storm/sqlobject.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/store.py
@@ -76,5 +83,9 @@ lib/python${MODPY_VERSION}/site-packages/storm/zope/metaconfigure.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metaconfigure.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metadirectives.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metadirectives.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/zope/schema.py
+lib/python${MODPY_VERSION}/site-packages/storm/zope/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/zope/testing.py
+lib/python${MODPY_VERSION}/site-packages/storm/zope/testing.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/zstorm.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/zstorm.pyc
