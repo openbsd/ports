@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/10 22:10:03 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-bin=		binaries for the Python Imaging Library
 VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
 PKGNAME-main=		py-${DISTNAME}
-REVISION-main=		2
+REVISION-main=		3
 FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
 EPOCH-examples=		0
 FULLPKGPATH-examples=	graphics/py-Imaging,-examples
@@ -51,11 +51,10 @@ ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
 MODPY_VERSION=		${FLAVOR:S/python//}
-
+MODPY_ADJ_FILES=	Scripts/pil*.py
 
 do-configure:
-	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g; s|!MODPY_VERSION!|${MODPY_VERSION}|g" \
-		${WRKSRC}/setup.py ${WRKSRC}/Scripts/pil*.py
+	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/Scripts/pilfont.py
 
 INCDIR=${PREFIX}/include/python${MODPY_VERSION}
 post-install:

@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.3 2010/09/05 13:04:43 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.4 2010/11/10 22:10:03 jasper Exp $
 --- setup.py.orig	Sun Dec  3 11:37:29 2006
 +++ setup.py	Sun Sep  5 13:59:42 2010
 @@ -199,6 +199,9 @@ class pil_build_ext(build_ext):
          add_directory(library_dirs, "/usr/lib")
          add_directory(include_dirs, "/usr/include")
  
-+	add_directory(library_dirs, "/usr/X11R6/lib")
-+	add_directory(include_dirs, "/usr/X11R6/include")
++	add_directory(library_dirs, "${X11BASE}/lib")
++	add_directory(include_dirs, "${X11BASE}/include")
 +
          #
          # insert new dirs *before* default libs, to avoid conflicts
@@ -17,7 +17,7 @@ $OpenBSD: patch-setup_py,v 1.3 2010/09/05 13:04:43 sthen Exp $
                  "_imagingtk", ["_imagingtk.c", "Tk/tkImaging.c"],
 -                libraries=[feature.tcl, feature.tk]
 +                libraries=[feature.tcl, feature.tk],
-+		include_dirs=["/usr/local/include/tk8.4", "/usr/local/include/tcl8.4", "/usr/X11R6/include"]
++		include_dirs=["${LOCALBASE}/include/tk8.4", "${LOCALBASE}/include/tcl8.4", "${X11BASE}/include"]
                  ))
  
          if os.path.isfile("_imagingmath.c"):
