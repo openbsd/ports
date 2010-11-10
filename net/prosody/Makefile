@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/10 19:25:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/10 23:35:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME=	prosody-0.7.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
