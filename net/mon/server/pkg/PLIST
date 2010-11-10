@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/10 13:54:56 pea Exp $
 @newgroup _mon:643
 @newuser _mon:643:_mon:daemon:Mon Server:/var/empty:/bin/sh
 bin/mon
@@ -59,7 +59,6 @@ lib/mon/mon.d/up_rtt.monitor
 lib/mon/mon.d/xedia-ipsec-tunnel.monitor
 @man man/man8/mon.8
 share/doc/mon/
-share/doc/mon/README.OpenBSD
 share/doc/mon/README.alerts
 share/doc/mon/README.cgi-bin
 share/doc/mon/README.hints
@@ -75,6 +74,7 @@ share/doc/mon/README.software
 share/doc/mon/README.syslog.monitor
 share/doc/mon/README.traps
 share/doc/mon/README.variables
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mon/
 @owner _mon
 @group _mon
@@ -94,3 +94,4 @@ share/examples/mon/very-simple.cf
 @sample ${SYSCONFDIR}/mon/mon.cf
 @sample /var/mon/state.d/
 @sample /var/mon/log.d/
+@rcscript ${RCDIR}/mon

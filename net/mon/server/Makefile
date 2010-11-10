@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/10 13:54:56 pea Exp $
 
 COMMENT =	service monitoring daemon
 
 DISTNAME = 	mon-${V}
-REVISION =	0
+REVISION =	1
 
 WANTLIB = 	c
 
@@ -37,9 +37,5 @@ do-install:
 	@cd ${WRKSRC}/mon.d && env -i ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
-post-install:
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-		${PREFIX}/share/doc/mon/README.OpenBSD
 
 .include <bsd.port.mk>
