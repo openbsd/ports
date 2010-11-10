@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/10 10:23:36 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/10 13:12:02 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -51,7 +51,7 @@ FLAVOR?=	sqlite3
 ERRORS+= "Fatal: choose either domainscale or largescale, not both"
 . endif
 
-.for d in mysql sqlite mysql pgsql hash sqlite3
+.for d in sqlite3 sqlite mysql pgsql hash
 .  if ${FLAVOR:L:M$d}
 DRIVER ?= $d
 .    if ${DRIVER} != "$d"
