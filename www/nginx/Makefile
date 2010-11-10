@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/08 23:50:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/10 08:18:18 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 DISTNAME=	nginx-0.8.53
 CATEGORIES=	www
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://nginx.net/
 
@@ -35,6 +35,8 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--http-client-body-temp-path=${NGINX_DIR}/tmp/client_body_temp \
 			--http-proxy-temp-path=${NGINX_DIR}/tmp/proxy_temp \
 			--http-fastcgi-temp-path=${NGINX_DIR}/tmp/fastcgi_temp \
+			--http-scgi-temp-path=${NGINX_DIR}/tmp/scgi_temp \
+			--http-uwsgi-temp-path=${NGINX_DIR}/tmp/uwsgi_temp \
 			--http-log-path=/var/log/nginx/access.log \
 			--error-log-path=/var/log/nginx/error.log \
 			--user=_nginx \
@@ -54,7 +56,6 @@ CONFIGURE_ARGS +=	--add-module=${LOCALBASE}/lib/phusion-passenger/ext/nginx
 BUILD_DEPENDS +=	::www/ruby-passenger
 RUN_DEPENDS +=		::www/ruby-passenger
 WANTLIB +=		m pthread stdc++
-REVISION =		0
 .endif
 
 NO_REGRESS=		Yes
@@ -66,7 +67,8 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
-.for i in koi-win koi-utf win-utf fastcgi_params mime.types nginx.conf
+.for i in koi-win koi-utf win-utf mime.types nginx.conf \
+	fastcgi_params scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/share/nginx/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/html/
