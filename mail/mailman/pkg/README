@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/09 21:46:50 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/10 07:36:44 ajacoutot Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to ${TRUEPREFIX}/lib/mailman. Most of this text is 
@@ -187,4 +187,3 @@ system and version of Python.
              the mail wrapper ($mailmandir/mail/wrapper) to the directory
              identifying executables allowed to run under smrsh. Have
              a look at the manpage of smrsh(8).
-

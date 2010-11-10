@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/09 21:33:24 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/10 07:33:02 ajacoutot Exp $
 
 Post-installation
 -----------------
@@ -49,4 +49,3 @@ Post-deinstallation
 -------------------
 
 Reverse all of the above! :-)
-
