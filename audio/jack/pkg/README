@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/10 08:00:03 jasper Exp $
+
 In this package of jackd, the 'dummy' and 'sndio' drivers are supported.
 The 'dummy' driver is mostly useful for testing jackd itself.  The
 'sndio' driver uses sndio(7).  To start jackd with default driver
