@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	small utility used to manipulate SGML and XML catalogs
 
 DISTNAME=	xmlcatmgr-2.2
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://xmlcatmgr.sourceforge.net/

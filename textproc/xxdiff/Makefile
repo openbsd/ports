@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:38:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
 DISTNAME=	xxdiff-3.1
-PKGNAME=	${DISTNAME}p1
+REVISION=	2
 CATEGORIES=	textproc x11
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 

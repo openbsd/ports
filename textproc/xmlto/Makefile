@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	front-end to an XSL toolchain
 
 DISTNAME=	xmlto-0.0.18
-PKGNAME=	${DISTNAME}p1
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
 

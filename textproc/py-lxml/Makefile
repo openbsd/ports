@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
 MODPY_EGG_VERSION=	2.0.4
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -21,11 +21,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	m xml2 z
+WANTLIB=	m xml2 z exslt xslt
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	exslt,xslt::textproc/libxslt
+LIB_DEPENDS=	::textproc/libxslt
 
 MODPY_SETUPTOOLS=Yes
 

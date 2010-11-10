@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	YAML parser and emitter in Python
 
 MODPY_EGG_VERSION=3.08
 DISTNAME=	PyYAML-${MODPY_EGG_VERSION}
 PKGNAME=	py-yaml-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://pyyaml.org/wiki/PyYAML
@@ -20,9 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 
+WANTLIB+=	yaml
+
 MODULES=	lang/python
 
-LIB_DEPENDS=	yaml::devel/libyaml
+LIB_DEPENDS=	::devel/libyaml
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.cfg

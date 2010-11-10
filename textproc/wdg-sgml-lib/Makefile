@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/10 22:24:16 jasper Exp $
 
 COMMENT=	collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs
 
 DISTNAME=	wdg-sgml-lib-1.1.4
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
