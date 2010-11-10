@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/10 08:19:30 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/10 15:09:47 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -31,7 +31,8 @@ MASTER_SITES=	http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/3.3.0
 		ftp://openoffice.mirror.cygnal.ca/openoffice/stable/${VERSION}/
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
-MASTER_SITES1=	http://hg.services.openoffice.org/binaries/
+MASTER_SITES1=	http://hg.services.openoffice.org/binaries/ \
+		http://humppa.hu/ooo/
 
 DISTFILES=	ooo-desktop-0.2.tar.gz:0
 SUPDISTFILES=	067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:1 \
