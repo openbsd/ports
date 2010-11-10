@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/01 10:39:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/10 22:12:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
-V=		4.8
+V=		4.8.1
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
@@ -49,7 +49,6 @@ MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/ \
 MODULES=	devel/gettext \
 		lang/python \
 		x11/qt4
-
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
