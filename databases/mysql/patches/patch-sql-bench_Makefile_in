@@ -1,8 +1,8 @@
-$OpenBSD: patch-sql-bench_Makefile_in,v 1.3 2010/03/21 01:20:47 sthen Exp $
---- sql-bench/Makefile.in.orig	Thu Feb  4 06:46:24 2010
-+++ sql-bench/Makefile.in	Fri Feb 19 20:24:30 2010
-@@ -380,7 +380,7 @@ yassl_libs = @yassl_libs@
- yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
+$OpenBSD: patch-sql-bench_Makefile_in,v 1.4 2010/11/10 21:03:03 sthen Exp $
+--- sql-bench/Makefile.in.orig	Tue Aug  3 13:28:55 2010
++++ sql-bench/Makefile.in	Tue Aug 24 22:56:29 2010
+@@ -384,7 +384,7 @@ yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_
+ yassl_thread_cxxflags = @yassl_thread_cxxflags@
  zlib_dir = @zlib_dir@
  benchdir_root = $(prefix)
 -benchdir = $(benchdir_root)/sql-bench

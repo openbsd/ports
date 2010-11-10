@@ -1,0 +1,31 @@
+$OpenBSD: patch-sql_set_var_cc,v 1.1 2010/11/10 21:03:38 sthen Exp $
+--- sql/set_var.cc.orig	Thu Oct 28 21:43:43 2010
++++ sql/set_var.cc	Thu Oct 28 21:44:56 2010
+@@ -2713,26 +2713,10 @@ int set_var_collation_client::update(THD *thd)
+ 
+ /****************************************************************************/
+ 
+-bool sys_var_timestamp::check(THD *thd, set_var *var)
+-{
+-  time_t val;
+-  var->save_result.ulonglong_value= var->value->val_int();
+-  val= (time_t) var->save_result.ulonglong_value;
+-  if (val < (time_t) MY_TIME_T_MIN || val > (time_t) MY_TIME_T_MAX)
+-  {
+-    my_message(ER_UNKNOWN_ERROR, 
+-               "This version of MySQL doesn't support dates later than 2038",
+-               MYF(0));
+-    return TRUE;
+-  }
+-  return FALSE;
+-}
+-
+-
+ bool sys_var_timestamp::update(THD *thd,  set_var *var)
+ {
+   thd->set_time((time_t) var->save_result.ulonglong_value);
+-  return FALSE;
++  return 0;
+ }
+ 
+ 

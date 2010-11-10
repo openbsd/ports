@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/07/27 15:19:15 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/11/10 21:03:04 sthen Exp $
 @conflict mysql-server-<=5.0.83
 @pkgpath databases/mysql
 @bin bin/mysql
@@ -23,6 +23,7 @@ include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/my_alloc.h
 include/mysql/my_attribute.h
+include/mysql/my_compiler.h
 include/mysql/my_config.h
 include/mysql/my_dbug.h
 include/mysql/my_dir.h
