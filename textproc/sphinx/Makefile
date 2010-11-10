@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/22 15:53:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/10 22:56:06 jasper Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 
 DISTNAME =	sphinx-0.9.8.1
+REVISION =	0
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.sphinxsearch.com/
@@ -32,10 +33,11 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mpgsql}
 CONFIGURE_ARGS +=--with-pgsql \
 		--without-mysql
-LIB_DEPENDS +=	pq::databases/postgresql
+LIB_DEPENDS +=	::databases/postgresql
+WANTLIB +=	pq
 .else
-LIB_DEPENDS +=	mysqlclient::databases/mysql
-WANTLIB +=	crypto ssl z
+LIB_DEPENDS +=	::databases/mysql
+WANTLIB +=	crypto ssl z mysqlclient
 .endif
 
 # Needs php5 with pdo_mysql setup.
