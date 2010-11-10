@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/10/01 10:55:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/11/10 08:04:15 pea Exp $
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
@@ -992,6 +992,7 @@ share/gajim/icons/hicolor/48x48/actions/gajim-security_low.png
 share/gajim/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
 share/gajim/icons/hicolor/48x48/actions/gajim-subscription_request.png
 share/gajim/icons/hicolor/48x48/actions/gajim-unsubscribed.png
+share/gajim/icons/hicolor/48x48/actions/gajim-warning.png
 share/gajim/icons/hicolor/64x64/
 share/gajim/icons/hicolor/64x64/apps/
 share/gajim/icons/hicolor/64x64/apps/gajim.png
