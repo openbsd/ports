@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/07/26 18:11:42 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/10 19:25:25 jasper Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -103,9 +103,9 @@ lib/prosody/util/ztact.lua
 @man man/man1/prosodyctl.1
 sbin/prosody
 sbin/prosodyctl
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/prosody/
 share/doc/prosody/README
-share/doc/prosody/README.OpenBSD
 share/examples/prosody/
 @sample ${SYSCONFDIR}/prosody/
 share/examples/prosody/certs/
@@ -116,9 +116,9 @@ share/examples/prosody/certs/localhost.key
 @sample ${SYSCONFDIR}/prosody/certs/localhost.key
 share/examples/prosody/prosody.cfg.lua
 @sample ${SYSCONFDIR}/prosody/prosody.cfg.lua
+@mode 770
 @owner _prosody
 @group _prosody
-@mode 770
 @sample /var/prosody/
 share/examples/prosody/prosody.log
 @mode 660
