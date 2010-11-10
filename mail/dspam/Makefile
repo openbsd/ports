@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/28 09:13:16 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/10 10:23:36 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
@@ -41,90 +41,80 @@ DOCS=		${WRKSRC}/README ${WRKSRC}/UPGRADING ${WRKSRC}/RELEASE.NOTES \
 		${WRKSRC}/doc/relay.txt ${WRKSRC}/doc/sendmail.txt
 
 EXAMPLESDIR=	${PREFIX}/share/examples/dspam
-DRIVER=
 DAEMON_SUPPORT=
 
 FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap preferences \
 		domainscale largescale
 FLAVOR?=	sqlite3
 
-.if ${FLAVOR:L:Mmysql}
-.if !empty(DRIVER)
-ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
+. if ${FLAVOR:L:Mlargescale} && ${FLAVOR:L:Mdomainscale}
+ERRORS+= "Fatal: choose either domainscale or largescale, not both"
+. endif
+
+.for d in mysql sqlite mysql pgsql hash sqlite3
+.  if ${FLAVOR:L:M$d}
+DRIVER ?= $d
+.    if ${DRIVER} != "$d"
+ERRORS += "Fatal: choose either mysql or pgsql or sqlite or sqlite3 or hash"
+.    endif
+.  endif
+.endfor
+
+.if !defined(DRIVER)
+DRIVER = sqlite3
+FLAVOR += sqlite3
 .endif
+
+
+.if ${DRIVER} == "mysql"
 CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--enable-virtual-users
-LIB_DEPENDS+=		lib/mysql/mysqlclient.>=14::databases/mysql
-DRIVER=			mysql
-WANTLIB+=		z ssl crypto
-.endif
-
-.if ${FLAVOR:L:Mpgsql}
-.if !empty(DRIVER)
-ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
-.endif
+LIB_DEPENDS+=		::databases/mysql
+WANTLIB+=		z ssl crypto lib/mysql/mysqlclient.>=14
+.elif ${DRIVER} == "pgsql"
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
 			--with-pgsql-libraries=${LOCALBASE}/lib \
 			--enable-virtual-users
-LIB_DEPENDS+=		pq.>=4:postgresql-client-*:databases/postgresql
-DRIVER=			pgsql
-.endif
-
-.if ${FLAVOR:L:Mhash}
-.if !empty(DRIVER)
-ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
-.endif
+LIB_DEPENDS+=		:postgresql-client-*:databases/postgresql
+WANTLIB +=		pq.>=4
+.elif ${DRIVER} == "hash"
 CONFIGURE_ARGS+=	--with-storage-driver=hash_drv
-DRIVER=			hash
-.endif
-
-.if ${FLAVOR:L:Msqlite}
-.if !empty(DRIVER)
-ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
-.endif
+.elif ${DRIVER} == "sqlite"
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		sqlite.>=8::databases/sqlite
-DRIVER=			sqlite
-.endif
-
-.if ${FLAVOR:L:Msqlite3} || empty(DRIVER)
-.if !empty(DRIVER)
-ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
-.else
-FLAVOR+=		sqlite3
-.endif
+LIB_DEPENDS+=		::databases/sqlite
+WANTLIB +=		sqlite.>=8
+.elif ${DRIVER} == "sqlite3"
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		sqlite3.>=8::databases/sqlite3
-DRIVER=			sqlite
+LIB_DEPENDS+=		::databases/sqlite3
+WANTLIB +=		sqlite3.>=8
 .endif
 
-.if empty(FLAVOR:L:Msqlite3) && empty(FLAVOR:L:Msqlite)
+.if !${DRIVER:Msqlite*}
 DAEMON_SUPPORT=		Yes
+CONFIGURE_ARGS+=	--enable-daemon
+WANTLIB+=		pthread
 .endif
 
 .if ${FLAVOR:L:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		clamav.>=1::security/clamav
+LIB_DEPENDS+=		::security/clamav
+WANTLIB +=		clamav.>=1
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
 			LDFLAGS="-L${DEPBASE}/lib"
-LIB_DEPENDS+=		ldap.>=8,lber.>=8::databases/openldap
-WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5
-.endif
-
-.if !empty(DAEMON_SUPPORT)
-CONFIGURE_ARGS+=	--enable-daemon
-WANTLIB+=		pthread
+LIB_DEPENDS+=		::databases/openldap
+WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
+			ldap.>=8 lber.>=8
 .endif
 
 .if ${FLAVOR:L:Mpreferences}
@@ -133,18 +123,12 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 
 .if ${FLAVOR:L:Mdomainscale}
 CONFIGURE_ARGS+=	--enable-domain-scale
-. if ${FLAVOR:L:Mlargescale}
-ERRORS+=		choose either domainscale or largescale, not both
-. endif
 .else
 CONFIGURE_ARGS+=	--disable-domain-scale
 .endif
 
 .if ${FLAVOR:L:Mlargescale}
 CONFIGURE_ARGS+=	--enable-large-scale
-. if ${FLAVOR:L:Mdomainscale}
-ERRORS+=		choose either domainscale or largescale, not both
-. endif
 .else
 CONFIGURE_ARGS+=	--disable-large-scale
 .endif
