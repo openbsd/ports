@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/27 11:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/10 19:02:09 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.32.0.1
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -89,12 +89,5 @@ FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 pre-configure:
 	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
 		${WRKDIR}/bin/python-config
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/empathy
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/empathy/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/empathy/README.OpenBSD
 
 .include <bsd.port.mk>
