@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/09 18:40:04 robert Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/10 08:19:30 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,9 +7,9 @@ COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
 MR=		3.3
-VERSION=	${MR}.0rc3_20101029
+VERSION=	${MR}.0rc4_20101108
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOO330_m13
+WRKDIST=	${WRKDIR}/OOO330_m14
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
