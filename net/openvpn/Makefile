@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/10 13:50:04 fkr Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-VERSION=	2.1.2
+VERSION=	2.1.4
 DISTNAME=	openvpn-${VERSION}
-REVISION=	0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -19,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto ssl pthread
 
-MASTER_SITES=	${HOMEPAGE}/release/
+MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 
 LIB_DEPENDS=	lzo2::archivers/lzo2
 
