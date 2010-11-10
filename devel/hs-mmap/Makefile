@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/10 13:00:19 kili Exp $
 
 COMMENT =		mmap API for Haskell
 
 DISTNAME =		mmap-0.5.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -18,6 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-BUILD_DEPENDS =		::devel/hs-HUnit
+RUN_DEPENDS =		::devel/hs-HUnit
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
