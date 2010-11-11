@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/11 19:41:31 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/
 MULTI_PACKAGES=	-main -plugins
 
 WANTLIB += bz2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre z
+WANTLIB += gthread-2.0 m pcre z execinfo
 
 MODULES=	devel/gettext
 
@@ -47,7 +47,7 @@ WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB-main += pthread-stubs xcb xml2 xcb-render xcb-render-util
 WANTLIB-main += rsvg-2 babl-0.1
 
-LIB_DEPENDS=	execinfo::devel/libexecinfo
+LIB_DEPENDS=	::devel/libexecinfo
 
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			::x11/gnome/librsvg \
