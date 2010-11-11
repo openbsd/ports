@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 18:43:10 espie Exp $
 # $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
 COMMENT=	The portable OTR Messaging Library and toolkit
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gpg-error::security/libgpg-error \
-		gcrypt::security/libgcrypt
-WANTLIB=	c
+LIB_DEPENDS=	::security/libgpg-error \
+		::security/libgcrypt
+WANTLIB=	c gpg-error gcrypt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

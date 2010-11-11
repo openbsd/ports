@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/11 18:43:10 espie Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto gcrypt gpg-error m tasn1 xml2 z
+WANTLIB += c crypto gcrypt gpg-error m tasn1 xml2 z ltdl xslt.>=3 gnutls.>=13
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -35,13 +35,13 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		ltdl::devel/libtool,-ltdl \
-			xslt.>=3::textproc/libxslt \
-			gnutls.>=13::security/gnutls
+LIB_DEPENDS=		::devel/libtool,-ltdl \
+			::textproc/libxslt \
+			::security/gnutls
 
 # depends on libltdl
 USE_LIBTOOL=		gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

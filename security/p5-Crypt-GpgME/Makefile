@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 18:43:10 espie Exp $
 
 COMMENT=	Perl interface to gpgme
 SHARED_ONLY=	Yes
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	gpg-error iconv intl
+WANTLIB=	gpg-error iconv intl gpgme
 
-LIB_DEPENDS=	gpgme:gpgme->=1.1.4:security/gpgme
+LIB_DEPENDS=	:gpgme->=1.1.4:security/gpgme
 
 RUN_DEPENDS=	::devel/p5-IO-stringy \
 		::devel/p5-Test-Exception \

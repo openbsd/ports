@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/11 18:43:10 espie Exp $
 
 COMMENT=	network security scanner
 DISTNAME=	nessus-core-${V}
@@ -7,9 +7,9 @@ REVISION=	7
 FLAVORS=	no_x11
 FLAVOR?=
 
-WANTLIB += c crypto hosts_gatherer m nessus pcap rpcsvc ssl util
+WANTLIB += c crypto hosts_gatherer m nessus pcap rpcsvc ssl util nasl.>=4
 
-LIB_DEPENDS=	nasl.>=4::security/nessus/libnasl
+LIB_DEPENDS=	::security/nessus/libnasl
 BUILD_DEPENDS=	:bison-*:devel/bison
 USE_GROFF =	Yes
 
