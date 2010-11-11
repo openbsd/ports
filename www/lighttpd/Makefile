@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2010/11/11 19:56:19 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,13 +42,14 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --with-ldap
-LIB_DEPENDS+=	lber,ldap::databases/openldap
-WANTLIB+=	sasl2 asn1 com_err gssapi krb5
+LIB_DEPENDS+=	::databases/openldap
+WANTLIB+=	sasl2 asn1 com_err gssapi krb5 lber ldap
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
-LIB_DEPENDS+=	mysqlclient.>=10::databases/mysql
+LIB_DEPENDS+=	::databases/mysql
+WANTLIB +=	mysqlclient.>=10
 .endif
 
 post-extract:

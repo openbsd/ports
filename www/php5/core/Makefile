@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/11 19:56:19 espie Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -52,8 +52,8 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-WANTLIB=	c crypto m ssl z pthread
-LIB_DEPENDS=	xml2.>=8::textproc/libxml
+WANTLIB=	c crypto m ssl z pthread xml2.>=8
+LIB_DEPENDS=	::textproc/libxml
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
