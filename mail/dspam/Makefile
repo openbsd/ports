@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/10 13:12:02 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/11 18:20:52 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -94,9 +94,10 @@ CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 LIB_DEPENDS+=		::databases/sqlite3
 WANTLIB +=		sqlite3.>=8
+DRIVER =		sqlite
 .endif
 
-.if !${DRIVER:Msqlite*}
+.if ${DRIVER} != "sqlite"
 DAEMON_SUPPORT=		Yes
 CONFIGURE_ARGS+=	--enable-daemon
 WANTLIB+=		pthread
