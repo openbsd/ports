@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/11 19:46:30 espie Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
@@ -11,14 +11,14 @@ HOMEPAGE=		http://www.hypermail.org/
 
 MASTER_SITES=		${HOMEPAGE}dist/
 
-LIB_DEPENDS+=		pcre::devel/pcre
+LIB_DEPENDS+=		::devel/pcre
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
+WANTLIB=		c m pcre
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/src/pcre

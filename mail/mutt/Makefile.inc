@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.34 2010/10/18 20:29:53 jsg Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2010/11/11 19:46:30 espie Exp $
 
 CATEGORIES=	mail
 
@@ -52,9 +52,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=		slang.>=14::devel/libslang
+LIB_DEPENDS+=		::devel/libslang
 CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
-WANTLIB+=		m termlib
+WANTLIB+=		m termlib slang.>=14
 .else
 CONFIGURE_ARGS+=	--with-curses
 WANTLIB+=		ncurses 
