@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/11 09:27:14 jasper Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.2
+REVISION=	0
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
@@ -31,12 +32,5 @@ FAKE_FLAGS+=	PREFIX=${PREFIX} \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/slim.1 ${WRKSRC}/slim.conf
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/slim
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/slim/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/slim/README.OpenBSD
 
 .include <bsd.port.mk>
