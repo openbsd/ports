@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: icecast.rc,v 1.1 2010/11/11 10:32:54 edd Exp $
+# $OpenBSD: icecast.rc,v 1.2 2010/11/11 10:38:47 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
-daemon="/usr/local/bin/icecast"
+daemon="${TRUEPREFIX}/bin/icecast"
 daemon_flags="-b -c /var/icecast/icecast.xml"
 
 rc_cmd $1
