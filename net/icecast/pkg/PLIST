@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/11/18 21:22:03 pea Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/11 10:32:54 edd Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
 @bin bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
 share/doc/icecast/NEWS
-share/doc/icecast/README.OpenBSD
 share/doc/icecast/icecast2_admin.html
 share/doc/icecast/icecast2_basicsetup.html
 share/doc/icecast/icecast2_changes.html
@@ -24,6 +23,7 @@ share/doc/icecast/listener_auth2.jpg
 share/doc/icecast/listener_auth3.jpg
 share/doc/icecast/masterslave.png
 share/doc/icecast/relay.png
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/icecast/
 @owner _icecast
 @group _icecast
@@ -81,3 +81,4 @@ share/examples/icecast/web/tunein.png
 @sample /var/icecast/web/tunein.png
 @sample /var/icecast/log/
 @sample /var/icecast/etc/
+@rcscript ${RCDIR}/icecast

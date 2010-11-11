@@ -1,7 +1,7 @@
-$OpenBSD: README.OpenBSD,v 1.4 2008/11/18 21:22:02 pea Exp $
+$OpenBSD: README,v 1.1 2010/11/11 10:32:54 edd Exp $
 
 Icecast v2 is very versatile and can be used in many different
-envionrments.  A streaming service provider has different requirements
+environments.  A streaming service provider has different requirements
 than someone who wants to set up a jukebox at home.
 
 To get a better understanding of streaming with Icecast,
@@ -35,11 +35,11 @@ unprivileged account.
      Add the command line parameter `-b' to daemonize.
 
   4. Test your server.  Use a source client to create a stream and
-     listen to it with your favorite player that supports streaming.
+     listen to it with your favourite player that supports streaming.
 
      Also test Icecast's web interface.  Be aware that Icecast sends
      everything located in <webroot> to those who request it like a
-     regular (basic) web server.  You can restrict this behavior to
+     regular (basic) web server.  You can restrict this behaviour to
      serve only .xsl files by setting <fileserve> to 0 in your
      icecast.xml; however, you should definitely take a closer look at
      what you actually want to show the world here.  There is no reason
@@ -48,16 +48,14 @@ unprivileged account.
      prevent CSS stylesheets and images from being sent, making the web
      interface less pleasant to look at.
 
-  5. Add the following to your /etc/rc.local:
+  5. Make Icecast start at boot.
 
-     if [ -x ${TRUEPREFIX}/bin/icecast ] ; then
-	echo -n ' icecast'
-	${TRUEPREFIX}/bin/icecast -b -c /var/icecast/icecast.xml
-     fi
+     Add 'icecast' to rc_scripts in /etc/rc.conf.local. Eg:
+     rc_scripts="icecast"
 
 Random hints:
 
-   * Remember to give your mountpoint a proper name -- MP3 streams
+   * Remember to give your mount point a proper name -- MP3 streams
      should use no extension, Ogg Vorbis streams should use .ogg, so
      that dumb or broken players can send the stream to the appropriate
      decoder.

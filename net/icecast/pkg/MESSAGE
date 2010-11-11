@@ -1,2 +1,1 @@
-Please see ${PREFIX}/share/doc/icecast/README.OpenBSD for
-a brief intro to using icecast on OpenBSD.
+Change the password! Read ${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME}
