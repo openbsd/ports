@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/11 11:19:10 espie Exp $
 
 COMMENT=	multiple mailbox checker dockapp
 DISTNAME=	wmbiff-0.4.27
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	mail x11 x11/windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmbiff/}
 
@@ -14,11 +14,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += X11 Xext Xpm c gcrypt gpg-error iconv intl pthread-stubs tasn1 xcb z
+WANTLIB += 	X11 Xext Xpm c gcrypt gpg-error iconv intl pthread-stubs \
+		tasn1 xcb z gnutls.>=12
 
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	gnutls.>=12::security/gnutls
+LIB_DEPENDS=	::security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	ac_cv_path_CVS2CL=""

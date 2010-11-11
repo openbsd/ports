@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/11 11:19:10 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
 			::x11/gtk+2 \
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x \
@@ -66,11 +66,11 @@ CONFIGURE_ARGS+=	--disable-simd-accel
 .endif
 
 .if ${FLAVOR:L:Mquicktime}
-LIB_DEPENDS+=		quicktime.>=2::multimedia/libquicktime
-CONFIGURE_ARGS+=	--with-libquicktime
-WANTLIB+=		GL
+LIB_DEPENDS +=		quicktime.>=2::multimedia/libquicktime
+WANTLIB +=		quicktime.>=2 GL
+CONFIGURE_ARGS +=	--with-libquicktime
 .else
-CONFIGURE_ARGS+=	--without-libquicktime
+CONFIGURE_ARGS +=	--without-libquicktime
 .endif
 
 .include <bsd.port.mk>

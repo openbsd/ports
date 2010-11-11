@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/11 11:19:10 espie Exp $
 
 COMMENT=	mail image display for X11
 
 DISTNAME=	xfaces-3.3
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
-		pthread-stubs xcb
+		pthread-stubs xcb compface
 
-LIB_DEPENDS=	compface::mail/faces
+LIB_DEPENDS=	::mail/faces
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes
