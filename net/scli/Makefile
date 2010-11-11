@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		snmp command line utility
 
@@ -14,15 +14,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 gmodule-2.0 gnet-2.0 gthread-2.0 m ncurses
-WANTLIB += pthread readline z
+WANTLIB += pthread readline z gsnmp xml2
 
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		gsnmp::net/gsnmp \
-			xml2::textproc/libxml
+LIB_DEPENDS=		::net/gsnmp \
+			::textproc/libxml
 
 CONFIGURE_STYLE=	gnu
 

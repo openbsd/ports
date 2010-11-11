@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 13:48:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -27,15 +27,17 @@ WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 ltdl
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ tasn1 vorbis vorbisfile
 WANTLIB += xcb xml2 z xcb-render xcb-render-util
+WANTLIB += soup-2.4 sexy gnome-keyring.>=6 notify canberra canberra-gtk
+WANTLIB += enchant
 
 BUILD_DEPENDS=	:iso-codes-*:devel/iso-codes
 
-LIB_DEPENDS=	soup-2.4::devel/libsoup \
-		sexy::x11/libsexy \
-		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-		notify::devel/libnotify \
-		canberra,canberra-gtk::audio/libcanberra \
-		enchant::textproc/enchant
+LIB_DEPENDS=	::devel/libsoup \
+		::x11/libsexy \
+		:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+		::devel/libnotify \
+		::audio/libcanberra \
+		::textproc/enchant
 
 MODULES=	devel/gconf2 \
 		devel/gettext \

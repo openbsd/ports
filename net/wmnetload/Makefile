@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xpm c kvm m pthread-stubs xcb
+WANTLIB=		X11 Xext Xpm c kvm m pthread-stubs xcb dockapp
 
 MASTER_SITES=		ftp://truffula.com/pub/
 
-LIB_DEPENDS=		dockapp::devel/libdockapp
+LIB_DEPENDS=		::devel/libdockapp
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

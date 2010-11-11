@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv x11/qt3
-LIB_DEPENDS=	dc::net/dclib \
-		jpeg::graphics/jpeg \
-		bz2::archivers/bzip2
+LIB_DEPENDS=	::net/dclib \
+		::graphics/jpeg \
+		::archivers/bzip2
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext c crypto m png \
-		pthread pthread-stubs ssl stdc++ xcb xml2 z
+		pthread pthread-stubs ssl stdc++ xcb xml2 z \
+		dc jpeg bz2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

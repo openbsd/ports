@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2010/11/06 07:56:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2010/11/11 17:20:28 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -91,8 +91,8 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -docs
 
 .if ${FLAVOR:L:Mcups}
-LIB_DEPENDS+=		cups::print/cups
-WANTLIB+= 		asn1 crypto gssapi krb5 m ssl z
+LIB_DEPENDS+=		::print/cups
+WANTLIB+= 		asn1 crypto gssapi krb5 m ssl z cups
 .else
 CONFIGURE_ARGS+= --disable-cups
 .endif
@@ -102,7 +102,8 @@ ERRORS+= "Fatal: ldap and ads flavors conflict"
 .endif
 
 .if ${FLAVOR:L:Mldap} || ${FLAVOR:L:Mads}
-LIB_DEPENDS+=	ldap,lber::databases/openldap
+LIB_DEPENDS+=	::databases/openldap
+WANTLIB +=	ldap lber
 BUILD_DEPENDS+=	::misc/libutf8
 .else
 CONFIGURE_ARGS+= 	--without-ldap

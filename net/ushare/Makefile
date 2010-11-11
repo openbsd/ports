@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 10:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=	UPnP A/V media server
 
@@ -18,13 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c pthread
+WANTLIB += c pthread ixml threadutil upnp
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	ixml,threadutil,upnp::net/libupnp
+LIB_DEPENDS=	::net/libupnp
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/31 15:54:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -20,7 +20,7 @@ SHARED_LIBS +=	xmlrpc_server_cgi    1.0      # .9.15
 
 HOMEPAGE=	http://xmlrpc-c.sourceforge.net/
 
-WANTLIB=	c crypto idn pthread ssl z
+WANTLIB=	c crypto idn pthread ssl z curl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-c/}
 
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		curl::net/curl
+LIB_DEPENDS=		::net/curl
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes

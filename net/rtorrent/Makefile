@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -15,15 +15,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto iconv intl idn m ncurses sigc-2.0 ssl stdc++ z
+WANTLIB=		c crypto iconv intl idn m ncurses sigc-2.0 ssl \
+			stdc++ z torrent.>=17 curl.>=14
 
 MASTER_SITES=		${HOMEPAGE}downloads/
 
-LIB_DEPENDS=		torrent.>=17::net/libtorrent \
-			curl.>=14::net/curl
+LIB_DEPENDS=		::net/libtorrent \
+			::net/curl
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-debug

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/11 17:20:28 espie Exp $
 
 COMMENT-main=	cross-platform remote desktop access
 COMMENT-viewer=	client for cross-platform remote desktop access
@@ -37,8 +37,8 @@ NO_REGRESS=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c z
 
-WANTLIB-viewer=		${WANTLIB} ICE SM Xaw Xmu Xpm Xt 
-LIB_DEPENDS-viewer=	jpeg.>=62.::graphics/jpeg
+WANTLIB-viewer=		${WANTLIB} ICE SM Xaw Xmu Xpm Xt jpeg.>=62
+LIB_DEPENDS-viewer=	::graphics/jpeg
 
 WANTLIB-main=		${WANTLIB} m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:16:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/11 17:20:28 espie Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -35,14 +35,14 @@ WANTLIB-main =	${WANTLIB} \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		iconv intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs xcb z gdk_pixbuf-2.0
+		png pthread-stubs xcb z gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0
 
 WANTLIB-utils =	${WANTLIB} ncurses
 
 LIB_DEPENDS =	:libusb-*:devel/libusb
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+			::x11/gtk+2
 
 RUN_DEPENDS-main = 	:spectrum-tools-utils-*:net/spectrum-tools,-utils
 

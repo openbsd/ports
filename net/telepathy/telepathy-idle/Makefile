@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -8,7 +8,7 @@ REVISION=		2
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-idle/}
 
 WANTLIB += c crypto dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 pcre pthread ssl
+WANTLIB += gobject-2.0 pcre pthread ssl telepathy-glib
 
 MODULES=		devel/gettext \
 			lang/python
@@ -16,7 +16,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::devel/py-twisted/words
 RUN_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		telepathy-glib::net/telepathy/telepathy-glib
+LIB_DEPENDS=		::net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-silent-rules

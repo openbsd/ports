@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -15,18 +15,18 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-render-util xml2 z
+WANTLIB += xcb-render-util xml2 z glade-2.0 telepathy-glib
 
 MODULES=	devel/gettext \
 		lang/python
 
 BUILD_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		glade-2.0::devel/libglade2 \
-			telepathy-glib::net/telepathy/telepathy-glib
+LIB_DEPENDS=		::devel/libglade2 \
+			::net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		No
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

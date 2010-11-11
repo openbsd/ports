@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:37:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 17:20:28 espie Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
@@ -19,18 +19,20 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-WANTLIB=		c m ncurses pthread readline z iconv intl
+WANTLIB=		c m ncurses pthread readline z iconv intl \
+			xml2 gpg-error gcrypt exslt xslt icudata \
+			icui18n icuuc
 
 MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/ \
 			ftp://ftp.indexdata.dk/pub/yaz/
 
-LIB_DEPENDS=		xml2::textproc/libxml \
-			gpg-error::security/libgpg-error \
-			gcrypt::security/libgcrypt \
-			exslt,xslt::textproc/libxslt \
-			icudata,icui18n,icuuc::textproc/icu4c
+LIB_DEPENDS=		::textproc/libxml \
+			::security/libgpg-error \
+			::security/libgcrypt \
+			::textproc/libxslt \
+			::textproc/icu4c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-gnutls
