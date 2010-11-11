@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_facter_memory_rb,v 1.1 2010/11/11 20:37:29 robert Exp $
+--- lib/facter/memory.rb.orig	Thu Nov 11 21:35:38 2010
++++ lib/facter/memory.rb	Thu Nov 11 21:35:50 2010
+@@ -46,7 +46,7 @@ if Facter.value(:kernel) == "AIX" and Facter.value(:id
+ end
+ 
+ if Facter.value(:kernel) == "OpenBSD"
+-    swap = Facter::Util::Resolution.exec('swapctl -l | sed 1d')
++    swap = Facter::Util::Resolution.exec('swapctl -l | sed 1d') || ""
+     swapfree, swaptotal = 0, 0
+     swap.each do |dev|
+         if dev =~ /^\S+\s+(\S+)\s+\S+\s+(\S+)\s+.*$/
