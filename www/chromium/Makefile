@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/11 19:06:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -30,11 +30,13 @@ WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
 		${HOMEPAGE}
 
-MODULES =	devel/gettext
-PYTHON_VER=	2.6
+MODULES =	devel/gettext \
+		lang/python
+
+MODPY_RUNDEP =	No
+
 RUN_DEPENDS =	:gamin-*:sysutils/gamin,-server
-BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
-		::devel/gperf \
+BUILD_DEPENDS =	::devel/gperf \
 		::devel/bison \
 		::shells/bash
 LIB_DEPENDS =	::devel/libexecinfo \
@@ -69,7 +71,8 @@ USE_GMAKE =	Yes
 
 NO_REGRESS =	Yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_STYLE = none # prevent python MODULE from overriding do-build
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 ALL_TARGET =	chrome
@@ -77,12 +80,12 @@ ALL_TARGET =	chrome
 BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 
 pre-configure:
-	@ln -sf ${LOCALBASE}/bin/python${PYTHON_VER} ${WRKDIR}/bin/python
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
 	@cd ${WRKSRC} && \
-	env -i ${CONFIGURE_ENV} python build/gyp_chromium -fmake --ignore-environment \
+	env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium -fmake --ignore-environment \
 	-Ibuild/common.gypi -Ibuild/features_override.gypi "--depth=${WRKSRC}" \
 	-DOS=openbsd -Duse_system_libxml=1 -Duse_system_libjpeg=1 \
 	build/all.gyp
