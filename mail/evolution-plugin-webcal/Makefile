@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 13:48:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/11 10:54:02 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 ical icalss
 WANTLIB += icalvcal m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs xcb xml2 z
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render xcb-render-util ecal-1.2 edataserver-1.2
+WANTLIB += soup-2.4
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -37,8 +38,8 @@ MODULES=		devel/gettext \
 
 RUN_DEPENDS=		::mail/evolution
 
-LIB_DEPENDS=		ecal-1.2,edataserver-1.2::databases/evolution-data-server \
-			soup-2.4::devel/libsoup
+LIB_DEPENDS=		::databases/evolution-data-server \
+			::devel/libsoup
 
 MODGCONF2_SCHEMAS_DIR=	evolution-webcal
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/11 10:54:02 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
 DISTNAME=		kbiff-3.8
-PKGNAME=		${DISTNAME}p3
+REVISION =		3
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
@@ -19,17 +19,19 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=  	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c jpeg \
-			m png pthread pthread-stubs stdc++ util xcb z idn fam rpcsvc
+			m png pthread pthread-stubs stdc++ util xcb z idn \
+			fam rpcsvc kdecore.>=4 kio kdeui kdefx kdesu DCOP \
+			kwalletclient.>=1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
-LIB_DEPENDS=		kdecore.>=4,kio,kdeui,kdefx,kdesu,DCOP,kwalletclient.>=1::x11/kde/libs3
+LIB_DEPENDS=		::x11/kde/libs3
 
 MODULES=        	x11/kde devel/gettext
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

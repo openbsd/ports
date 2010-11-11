@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/11 10:54:02 espie Exp $
 
 COMMENT=		program for indexing & searching email
 
 DISTNAME=		mairix-0.21
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		mail
 HOMEPAGE=		http://www.rpcurnow.force9.co.uk/mairix/
 
@@ -18,15 +18,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mairix/} \
 			http://www.rpcurnow.force9.co.uk/mairix/
 
-WANTLIB=		c z
+WANTLIB=		c z bz2
 
-BUILD_DEPENDS=		:bison-*:devel/bison
-LIB_DEPENDS=		bz2::archivers/bzip2
+BUILD_DEPENDS=		::devel/bison
+LIB_DEPENDS=		::archivers/bzip2
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV= 		CPPFLAGS="-I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

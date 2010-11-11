@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/11/11 10:54:02 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -28,14 +28,14 @@ FLAVOR ?=
 MULTI_PACKAGES =	-main
 
 MODULES =		converters/libiconv
-LIB_DEPENDS-main =	${LIB_DEPENDS} pcre::devel/pcre
+LIB_DEPENDS-main =	${LIB_DEPENDS} ::devel/pcre
 cWANTLIB =		c m
-WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util wrap
-WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt
+WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util wrap pcre
+WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
 RUN_DEPENDS-eximon =	::${PKGPATH},-main
-LIB_DEPENDS-eximon =	pcre::devel/pcre
+LIB_DEPENDS-eximon =	::devel/pcre
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 .if !${FLAVOR:L:Mno_eximon}
@@ -47,33 +47,38 @@ EXIM_MAKECAT +=		"EXIM_MONITOR=eximon.bin\n"
 EXIM_MAKECAT +=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE +=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
-LIB_DEPENDS-main +=	lib/mysql/mysqlclient.>=10:mysql-client-*:databases/mysql
+LIB_DEPENDS-main +=	:mysql-client-*:databases/mysql
+WANTLIB-main +=		lib/mysql/mysqlclient.>=10
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 EXIM_MAKECAT +=		"LOOKUP_PGSQL=yes\n"
 EXIM_LOOKUP_INCLUDE +=	-I${LOCALBASE}/include/postgresql
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/ -lpq
-LIB_DEPENDS-main +=	pq.>=2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS-main +=	:postgresql-client-*:databases/postgresql
+WANTLIB-main +=		pq.>=2
 .endif
 
 .if ${FLAVOR:L:Msqlite3}
 EXIM_MAKECAT +=		"LOOKUP_SQLITE=yes\n"
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/ -lsqlite3
-LIB_DEPENDS-main +=	sqlite3.>=8::databases/sqlite3
+LIB_DEPENDS-main +=	::databases/sqlite3
+WANTLIB-main +=		sqlite3.>=8
 .endif
 
 .if ${FLAVOR:L:Mldap}
 EXIM_MAKECAT +=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT +=		"LDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib -lldap -llber
-LIB_DEPENDS-main +=	ldap.>=9,lber:openldap-client->=2.3:databases/openldap
+LIB_DEPENDS-main +=	:openldap-client->=2.3:databases/openldap
+WANTLIB-main +=		ldap.>=9 lber
 .endif
 
 .if ${FLAVOR:L:Msasl}
 EXIM_MAKECAT +=		"AUTH_CYRUS_SASL=yes\n"
 EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -lsasl2
-LIB_DEPENDS-main +=	sasl2::security/cyrus-sasl2
+LIB_DEPENDS-main +=	::security/cyrus-sasl2
+WANTLIB-main +=		sasl2
 .endif
 
 EXIM_EXTRA_LIBS +=	-lwrap -L${LOCALBASE}/lib -liconv

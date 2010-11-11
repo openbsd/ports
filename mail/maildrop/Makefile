@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/11 10:54:02 espie Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
 V=			2.5.0
 DISTNAME=		maildrop-$V
-PKGNAME-main=		maildrop-${V}p0
+PKGNAME-main=		maildrop-${V}
+REVISION-main =		0
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
@@ -32,7 +33,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
 			ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 MAKE_ENV=		INCLUDES="-I${LOCALBASE}/include"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 SUBST_VARS=             MAILDROPCONF
 
@@ -77,15 +78,15 @@ CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier"
 MODULES=		converters/libiconv \
 			devel/gettext
 
-LIB_DEPENDS=		idn::devel/libidn
+LIB_DEPENDS=		::devel/libidn
 
-WANTLIB =		c
+WANTLIB =		c idn
 
-WANTLIB-main=		${WANTLIB} gdbm m stdc++
+WANTLIB-main=		${WANTLIB} gdbm m stdc++ gdbm.>=3 pcre.>=1 courierauth
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			gdbm.>=3::databases/gdbm \
-			pcre.>=1::devel/pcre \
-			courierauth::mail/courier-authlib
+			::databases/gdbm \
+			::devel/pcre \
+			::mail/courier-authlib
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop

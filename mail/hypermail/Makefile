@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/11 10:54:02 espie Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
 VERSION=		2.1.8
 DISTNAME=		hypermail-${VERSION}
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		mail www
 
 HOMEPAGE=		http://www.hypermail.org/
@@ -29,16 +29,17 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS} -DHAVE_VFSCANF" \
 
 ALL_TARGET=		hypermail
 MAKE_FLAGS=		WARNINGS=''
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		gdbm
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gdbm"
-CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-LIB_DEPENDS+=	gdbm.::databases/gdbm
+CONFIGURE_ARGS +=--with-gdbm=${LOCALBASE}
+LIB_DEPENDS +=	::databases/gdbm
+WANTLIB +=	gdbm
 .else
-CONFIGURE_ARGS+=--without-gdbm
+CONFIGURE_ARGS +=--without-gdbm
 .endif
 
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/14 07:03:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 10:54:02 espie Exp $
 
 COMMENT=	MIME messages creation and parsing library (v2.4)
 
@@ -19,13 +19,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	pcre z
+WANTLIB=	pcre z glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gmime/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 
+LIB_DEPENDS=	::devel/glib2 
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

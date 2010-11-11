@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 10:54:02 espie Exp $
 
 COMMENT=	remote IMAP filtering utility
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto m ssl
+WANTLIB=	c crypto m ssl pcre lua
 
-LIB_DEPENDS=	pcre::devel/pcre \
-		lua::lang/lua
+LIB_DEPENDS=	::devel/pcre \
+		::lang/lua
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	-p ${PREFIX} \

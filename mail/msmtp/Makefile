@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/11 10:54:02 espie Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -14,12 +14,12 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
-WANTLIB =		c crypto ssl
+WANTLIB =		c crypto ssl idn
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=msmtp/}
 EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS =		idn::devel/libidn
+LIB_DEPENDS =		::devel/libidn
 
 MODULES =		devel/gettext
 
@@ -28,7 +28,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
 			--with-ssl=openssl
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp
