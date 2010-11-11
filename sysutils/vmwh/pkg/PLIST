@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/07 18:06:00 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/11 14:52:01 dcoppa Exp $
 @bin bin/vmwh
+share/doc/pkg-readmes/${FULLPKGNAME}

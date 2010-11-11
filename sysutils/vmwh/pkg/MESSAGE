@@ -1,5 +1,0 @@
-To copy and paste from/to xterm, you have to put:
-
-XTerm*selectToClipboard:true
-
-into your ~/.Xdefaults
