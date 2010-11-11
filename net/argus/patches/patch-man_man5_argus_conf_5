@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_man5_argus_conf_5,v 1.1 2010/11/11 19:33:27 steven Exp $
+--- man/man5/argus.conf.5.orig	Thu Nov 11 09:32:21 2010
++++ man/man5/argus.conf.5	Thu Nov 11 09:32:43 2010
+@@ -4,7 +4,7 @@
+ .\" All rights reserved.
+ .\"
+ .\"
+-.TH ARGUS.CONF 1 "07 November 2000"
++.TH ARGUS.CONF 5 "07 November 2000"
+ .SH NAME
+ \fBargus.conf\fP \- \fBargus\fP resource file.
+ .SH SYNOPSIS

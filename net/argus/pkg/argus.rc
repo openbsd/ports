@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: argus.rc,v 1.1 2010/11/11 19:33:27 steven Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/argus"
+pexp="argus"
+
+rc_reload() {
+	rc_err "$0: reload is not supported."
+}
+
+rc_cmd $1

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 08:40:27 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 19:33:27 steven Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
 DISTNAME =	argus-3.0.2
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/
@@ -32,6 +33,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/argus/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/argus/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/argus/
+	find ${WRKSRC}/support -type f -name '*.orig' -exec rm -f {} \;
 	cd ${WRKSRC}/support && tar cf - . | \
 		tar -C ${PREFIX}/share/examples/argus/ -xf - 
 

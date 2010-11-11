@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/15 19:15:19 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/11 19:33:27 steven Exp $
 @newgroup _argus:603
 @newuser _argus:603:_argus:daemon:Argus Daemon:/nonexistent:/sbin/nologin
 bin/argusbug
@@ -12,6 +12,7 @@ share/examples/argus/Archive/
 share/examples/argus/Archive/argusarchive
 share/examples/argus/Config/
 share/examples/argus/Config/argus.conf
+@sample ${SYSCONFDIR}/argus.conf
 share/examples/argus/Deployment/
 share/examples/argus/Deployment/sample
 share/examples/argus/README
@@ -25,3 +26,7 @@ share/examples/argus/System/magic
 @owner _argus
 @group _argus
 @sample /var/argus/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/argus

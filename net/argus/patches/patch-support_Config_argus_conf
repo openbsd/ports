@@ -1,0 +1,54 @@
+$OpenBSD: patch-support_Config_argus_conf,v 1.1 2010/11/11 19:33:27 steven Exp $
+--- support/Config/argus.conf.orig	Mon Oct  5 17:22:30 2009
++++ support/Config/argus.conf	Thu Nov 11 12:01:58 2010
+@@ -137,12 +137,12 @@ ARGUS_ACCESS_PORT=561
+ # an HTTP service or DNS service, you'll want to turn 
+ # promiscuous mode off.
+ #
+-# The default value is go into prmiscuous mode.
++# The default value is go into promiscuous mode.
+ #
+ # Commandline equivalent   -p
+ #
+  
+-#ARGUS_GO_PROMISCUOUS=yes
++ARGUS_GO_PROMISCUOUS=no
+ 
+ 
+ # By default, Argus will provide its own reliable output collection
+@@ -186,7 +186,7 @@ ARGUS_ACCESS_PORT=561
+ # Commandline equivalent   -u
+ #
+ 
+-#ARGUS_SETUSER_ID=user
++ARGUS_SETUSER_ID=_argus
+ 
+ 
+ # Argus can be directed to change its group id using the setgid() system
+@@ -199,7 +199,7 @@ ARGUS_ACCESS_PORT=561
+ # Commandline equivalent   -g
+ #
+ 
+-#ARGUS_SETGROUP_ID=group
++ARGUS_SETGROUP_ID=_argus
+  
+ 
+ # Argus can write its output to one or a number of files.
+@@ -218,7 +218,7 @@ ARGUS_ACCESS_PORT=561
+ # Commandline equivalent   -w
+ #
+ 
+-#ARGUS_OUTPUT_FILE=/var/log/argus/argus.out
++ARGUS_OUTPUT_FILE=/var/log/argus/argus.out
+ 
+ 
+ # When Argus is configured to run as a daemon, with the -d
+@@ -238,7 +238,7 @@ ARGUS_ACCESS_PORT=561
+ # No Commandline equivalent   
+ #
+ 
+-ARGUS_SET_PID=yes
++ARGUS_SET_PID=no
+ ARGUS_PID_PATH="/var/run"
+ 
+ 
