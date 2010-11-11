@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.72 2010/08/31 06:03:32 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.73 2010/11/11 10:57:40 espie Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
-DISTNAME?=	postfix-${VERSION}
+DISTNAME ?=	postfix-${VERSION}
 .if defined(PATCHLEVEL)
-PKGNAME?=	postfix-${VERSION:S/-/./}p${PATCHLEVEL}
+PKGNAME ?=	postfix-${VERSION:S/-/./}p${PATCHLEVEL}
 .else
-PKGNAME?=	postfix-${VERSION:S/-/./}
+PKGNAME ?=	postfix-${VERSION:S/-/./}
 .endif
 CATEGORIES=	mail
 
@@ -29,63 +29,68 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
-MAKE_DEBUG?=
-MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
-MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
-MAKE_CCARGS+=	-DUSE_TLS
-MAKE_AUXLIBS+=	-lssl -lcrypto
+MAKE_DEBUG ?=
+MAKE_CCARGS +=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
+MAKE_CCARGS +=	-DDEF_DATA_DIR=\"/var/postfix\"
+MAKE_CCARGS +=	-DUSE_TLS
+MAKE_AUXLIBS +=	-lssl -lcrypto
 
-WANTLIB=	c crypto ssl
+WANTLIB=	c crypto ssl pcre
 
 ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-MAKE_CCARGS+=	-DUSE_SASL_AUTH
+MAKE_CCARGS +=	-DUSE_SASL_AUTH
 
 # always include pcre
-LIB_DEPENDS+=	pcre::devel/pcre
-MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+LIB_DEPENDS +=	::devel/pcre
+MAKE_CCARGS +=	-DHAS_PCRE -I${LOCALBASE}/include
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpcre
 
-FLAVORS+=	sasl2 ldap mysql pgsql db4
-FLAVOR?=
+FLAVORS +=	sasl2 ldap mysql pgsql db4
+FLAVOR ?=
 
 .if ${FLAVOR:L:Msasl2}
-LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
-MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_CYRUS_SASL
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
+LIB_DEPENDS +=	::security/cyrus-sasl2
+WANTLIB +=	sasl2
+MAKE_CCARGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_CYRUS_SASL
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsasl2
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap.>=2,lber:openldap-client->=2,<3:databases/openldap
-MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+LIB_DEPENDS +=	:openldap-client->=2,<3:databases/openldap
+WANTLIB +=	ldap.>=2 lber
+MAKE_CCARGS +=	-I${LOCALBASE}/include -DHAS_LDAP
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
-MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+LIB_DEPENDS +=	::databases/mysql
+WANTLIB +=	lib/mysql/mysqlclient.>=10
+MAKE_CCARGS +=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
-MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
+LIB_DEPENDS +=	:postgresql-client-*:databases/postgresql
+WANTLIB +=	pq.>=3
+MAKE_CCARGS +=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpq
 .endif
 
 .if ${FLAVOR:L:Mdb4}
-LIB_DEPENDS+=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
-MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
+LIB_DEPENDS +=	:db->=4,<5:databases/db/v4
+WANTLIB +=	lib/db4/db.>=4
+MAKE_CCARGS +=	-I${LOCALBASE}/include/db4
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
 
 .if ${FLAVOR:L:Msqlite}
-WANTLIB+=	pthread
-LIB_DEPENDS+=	sqlite3::databases/sqlite3
-MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_SQLITE
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3 -pthread
+LIB_DEPENDS +=	::databases/sqlite3
+WANTLIB +=	pthread sqlite3
+MAKE_CCARGS +=	-I${LOCALBASE}/include -DHAS_SQLITE
+MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsqlite3 -pthread
 .endif
 
 pre-configure:
