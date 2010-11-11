@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 09:42:52 fgsch Exp $
 
 COMMENT =	japanese input engine for ibus
 
-DISTNAME =	ibus-anthy-1.2.1
+DISTNAME =	ibus-anthy-1.2.4
 
 CATEGORIES =	inputmethods japanese
 
