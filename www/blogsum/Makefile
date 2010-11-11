@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/08 05:51:52 jdixon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 23:02:21 jasper Exp $
 
 COMMENT =		simple weblog
 
 DISTNAME =		blogsum-1.1
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://blogsum.obfuscurity.com/
 
@@ -34,12 +35,8 @@ RUN_DEPENDS =	::databases/p5-DBD-SQLite \
 		::www/p5-HTTP-Lite
 
 
-post-extract:
-	@cp ${FILESDIR}/README.OpenBSD ${WRKSRC}/docs/
-
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/README.OpenBSD \
-		${WRKSRC}/examples/httpd-blogsum.conf
+	${SUBST_CMD} ${WRKSRC}/examples/httpd-blogsum.conf
 
 do-install:
 	@find ${WRKDIST} -name \*.bak -or -name \*.orig | xargs rm

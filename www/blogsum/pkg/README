@@ -1,5 +1,6 @@
-# Blogsum README.OpenBSD
+$OpenBSD: README,v 1.1 2010/11/11 23:02:21 jasper Exp $
 
+# Blogsum README for OpenBSD
 
 #########################
 ### UPGRADING BLOGSUM ###
@@ -55,5 +56,3 @@ viewed at /index.cgi.  Posts can be created and edited at /admin.cgi.
 Please refer to the online support resources if you have questions.
 
 	http://blogsum.obfuscurity.com/
-
-# EOF

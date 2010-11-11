@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/14 05:28:28 jdixon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/11 23:02:21 jasper Exp $
 @owner root
 @group daemon
 blogsum/
@@ -15,7 +15,6 @@ blogsum/docs/
 blogsum/docs/LICENSE
 blogsum/docs/LICENSE.images
 blogsum/docs/README
-blogsum/docs/README.OpenBSD
 @group daemon
 blogsum/examples/
 @group bin
@@ -45,3 +44,7 @@ blogsum/themes/default/images/plus.gif
 blogsum/themes/default/images/xml.gif
 blogsum/themes/default/index.tmpl
 blogsum/themes/default/style.css
+@group
+@owner
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
