@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 19:00:48 espie Exp $
 
 COMMENT=	Bluetooth packet analyzer
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c
-LIB_DEPENDS=	bluetooth.>=2.0::devel/bluetooth-libs
+WANTLIB=	c bluetooth.>=2.0
+LIB_DEPENDS=	::devel/bluetooth-libs
 
 MAKE_FLAGS=	"LDFLAGS+=-L${LOCALBASE}/lib"
 USE_GROFF =	Yes

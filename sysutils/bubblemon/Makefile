@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/11 19:00:48 espie Exp $
 
 COMMENT=		GNOME panel applet that displays CPU and memory load
 
@@ -27,13 +27,13 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
 WANTLIB += gnomecanvas-2 gnome-keyring gnomeui-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
-WANTLIB += xcb xml2 z
+WANTLIB += xcb xml2 z panel-applet-2 gtop-2.0.>=3
 
-LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
-			gtop-2.0.>=3.0::devel/libgtop2
+LIB_DEPENDS=		::x11/gnome/panel \
+			::devel/libgtop2
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include \

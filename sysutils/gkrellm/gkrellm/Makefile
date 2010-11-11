@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/11 19:00:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	c kvm pthread
 
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
 EXTRACT_SUFX=	.tar.bz2
@@ -38,11 +37,12 @@ WRKBUILD=	${WRKDIST}/server
 .endif
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
+WANTLIB=		c kvm pthread glib-2.0 gmodule-2.0 gthread-2.0
+LIB_DEPENDS=		::devel/glib2
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
-			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+			::x11/gtk+2
 
-WANTLIB-client += ${WANTLIB}
+WANTLIB-client += ${WANTLIB} gdk-x11-2.0 gtk-x11-2.0
 WANTLIB-client += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB-client += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
 WANTLIB-client += expat fontconfig freetype m pango-1.0 pangocairo-1.0

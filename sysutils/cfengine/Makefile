@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/11 19:00:48 espie Exp $
 
 COMMENT=	GNU system administration tool for networks
 
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m pthread
+WANTLIB=		c crypto m pthread lib/db4/db.>=4
 
 MASTER_SITES=		${HOMEPAGE}tarballs/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
+LIB_DEPENDS=		:db->=4,<5:databases/db/v4
 
 .include <bsd.port.mk>

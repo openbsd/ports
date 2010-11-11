@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/25 18:11:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/11 19:00:48 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -20,15 +20,16 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	c crypto kvm idn m ossaudio pthread ssl z
+WANTLIB=	c crypto kvm idn m ossaudio pthread ssl z \
+		glib-2.0 pcre curl xml2 lua.>=5.1
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	glib-2.0::devel/glib2 \
-		pcre::devel/pcre \
-		curl::net/curl \
-		xml2::textproc/libxml \
-		lua.>=5.1::lang/lua
+LIB_DEPENDS=	::devel/glib2 \
+		::devel/pcre \
+		::net/curl \
+		::textproc/libxml \
+		::lang/lua
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

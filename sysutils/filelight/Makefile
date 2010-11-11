@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	concentric segmented-rings disk usage visualisation
 
 DISTNAME=	filelight-1.0
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 CATEGORIES=	sysutils x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -22,12 +22,13 @@ MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam \
 		iconv idn intl jpeg m png pthread pthread-stubs rpcsvc \
-		stdc++ util xcb z
+		stdc++ util xcb z kdecore.>=7 DCOP kdefx kdesu kdeui \
+		kio kparts kwalletclient
 
 MODULES=	x11/kde
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=7,DCOP,kdefx,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
+LIB_DEPENDS=	::x11/kde/libs3
 
 PORTHOME=	${WRKDIR}
 

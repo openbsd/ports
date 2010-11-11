@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:48 espie Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-2.5.1
-PKGNAME=	g${DISTNAME}p1
+PKGNAME=	g${DISTNAME}
+REVISION =	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.gnu.org/software/grep/grep.html
 
@@ -14,12 +15,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+WANTLIB=		c pcre
 
 MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	pcre::devel/pcre
+LIB_DEPENDS=	::devel/pcre
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu

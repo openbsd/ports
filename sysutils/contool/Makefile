@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/11 19:00:48 espie Exp $
 
 COMMENT=	console tool for openlook
 
 DISTNAME=	contool-3.3a
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	sysutils
 
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
@@ -12,9 +12,9 @@ PERMIT_PACKAGE_CDROM=	NOFEE
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	NOFEE
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xext c pthread-stubs xcb
 
-LIB_DEPENDS=	xview.>=3,olgx.>=3::x11/xview/lib
+WANTLIB=	X11 Xau Xdmcp Xext c pthread-stubs xcb xview.>=3 olgx.>=3
+LIB_DEPENDS=	::x11/xview/lib
 BUILD_DEPENDS=	::x11/xview/config
 
 WRKDIST=	${WRKDIR}

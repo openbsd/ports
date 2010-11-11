@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.12 2010/10/19 07:43:02 espie Exp $
+#	$OpenBSD: Makefile,v 1.13 2010/11/11 19:00:49 espie Exp $
 
 COMMENT = 	incremental backup
 
@@ -17,13 +17,14 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-LIB_DEPENDS += 		rsync::net/librsync
+WANTLIB +=		rsync
+LIB_DEPENDS += 		::net/librsync
 
 MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 
 MODULES	= 		lang/python
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS = 		Yes
 
 .include <bsd.port.mk>

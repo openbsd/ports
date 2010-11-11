@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/01 20:17:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/11 19:00:49 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,8 @@ MODULES=	lang/lua
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/4508/
 
-LIB_DEPENDS=	statgrab::sysutils/libstatgrab
+WANTLIB =	statgrab
+LIB_DEPENDS=	::sysutils/libstatgrab
 REGRESS_DEPENDS=::${BUILD_PKGPATH}
 
 do-build:
