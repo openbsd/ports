@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:55 espie Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -30,8 +30,8 @@ MULTI_PACKAGES= 	-main -gui
 
 WANTLIB=		c
 WANTLIB-gui=		X11 Xext Xi c glib gmodule iconv intl m \
-			pthread-stubs xcb
-LIB_DEPENDS-gui=	gtk.>=1,gdk.>=1::x11/gtk+
+			pthread-stubs xcb gtk.>=1 gdk.>=1
+LIB_DEPENDS-gui=	::x11/gtk+
 
 pre-configure:
 	cd ${WRKSRC} && ./mkfiles.pl

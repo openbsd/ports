@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 16:27:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=	z
+WANTLIB+=	z ft
 
 HOMEPAGE=	http://code.google.com/p/pyflowtools/
 MASTER_SITES=	http://pyflowtools.googlecode.com/files/
 
-LIB_DEPENDS=	ft::net/flow-tools
+LIB_DEPENDS=	::net/flow-tools
 MODULES=	lang/python
 
 NO_REGRESS= 	Yes

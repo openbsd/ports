@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/11 16:27:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,13 +24,15 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	art_lgpl_2 jpeg GL ICE SM X11 Xau Xcursor Xdmcp Xext \
 		Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt c dbus-1 \
 		expat fontconfig freetype lcms m mng pcre pcreposix \
-		png pthread pthread-stubs stdc++ util xcb z idn fam rpcsvc
-
+		png pthread pthread-stubs stdc++ util xcb z idn fam rpcsvc \
+		kdecore.>=6 DCOP kdefx kdeprint kdesu kparts kdeui khtml \
+		kio kjs kutils kwalletclient gmp.>=4 avahi-client \
+		avahi-common avahi-qt3
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,khtml,kio,kjs,kutils,kwalletclient::x11/kde/libs3 \
-		gmp.>=4.::devel/gmp \
-		avahi-client,avahi-common::net/avahi \
-		avahi-qt3::net/avahi,-qt3,no_gtk,no_mono,no_qt4
+LIB_DEPENDS=	::x11/kde/libs3 \
+		::devel/gmp \
+		::net/avahi \
+		::net/avahi,-qt3,no_gtk,no_mono,no_qt4
 
 SUBST_VARS+=	VERSION
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/17 19:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:55 espie Exp $
 
 COMMENT=	IP accounting software
 
@@ -13,11 +13,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m pcap z
+WANTLIB=	c m pcap z sqlite3.>=8
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS+=	sqlite3.>=8::databases/sqlite3
+LIB_DEPENDS+=	::databases/sqlite3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-64bit \
@@ -32,7 +32,8 @@ FLAVORS=	mysql postgresql threads
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pq.>=2::databases/postgresql
+LIB_DEPENDS+=	::databases/postgresql
+WANTLIB +=	pq.>=2
 CONFIGURE_ARGS+= --enable-pgsql \
 		--with-pgsql-includes="${LOCALBASE}/include/postgresql/"
 .else
@@ -40,7 +41,8 @@ CONFIGURE_ARGS+= --disable-pgsql
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
+LIB_DEPENDS+=	::databases/mysql
+WANTLIB +=	lib/mysql/mysqlclient.>=10
 CONFIGURE_ARGS+= --enable-mysql
 .else
 CONFIGURE_ARGS+= --disable-mysql

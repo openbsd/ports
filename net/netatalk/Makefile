@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=	AFP file and print services for AppleTalk/IP networks
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-WANTLIB=			c crypto rpcsvc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 
@@ -23,7 +22,8 @@ CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	db.>=4:db->=4,<5:databases/db/v4
+WANTLIB=	c crypto rpcsvc db.>=4
+LIB_DEPENDS=	:db->=4,<5:databases/db/v4
 
 CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 

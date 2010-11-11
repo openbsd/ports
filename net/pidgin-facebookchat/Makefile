@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 19:19:06 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/11 16:27:55 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -26,7 +26,8 @@ WRKDIST =	${WRKDIR}/pidgin-facebookchat
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	:libpurple->=2.0.0:net/pidgin
-LIB_DEPENDS =	json-glib-1.0.>=1.0:json-glib->=0.7.6:devel/json-glib
+LIB_DEPENDS =	:json-glib->=0.7.6:devel/json-glib
+WANTLIB =	json-glib-1.0.>=1.0
 
 MAKE_FLAGS =	LINUX32_COMPILER="${CC}" LOCALBASE=${LOCALBASE}
 ALL_TARGET =	libfacebook.so

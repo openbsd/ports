@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/10 13:50:04 fkr Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto ssl pthread
+WANTLIB=		c crypto ssl pthread lzo2
 
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 
-LIB_DEPENDS=	lzo2::archivers/lzo2
+LIB_DEPENDS=	::archivers/lzo2
 
 SEPARATE_BUILD=	concurrent
 

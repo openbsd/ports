@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 16:27:54 espie Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
@@ -26,9 +26,9 @@ USE_LIBTOOL =	Yes
 CONFIGURE_ARGS =	--without-gnome
 
 MODULES =	devel/gettext
-LIB_DEPENDS =	soup-2.4::devel/libsoup
+LIB_DEPENDS =	::devel/libsoup
 
 WANTLIB += gcrypt gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
-WANTLIB += gpg-error gthread-2.0 m pcre tasn1 xml2 z
+WANTLIB += gpg-error gthread-2.0 m pcre tasn1 xml2 z soup-2.4
 
 .include <bsd.port.mk>

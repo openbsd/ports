@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2010/11/11 16:27:54 espie Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -26,8 +26,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-main -zenmap
 
-WANTLIB-main=	c crypto m pcap ssl stdc++ 
-
 USE_GMAKE=	yes
 USE_GROFF =	Yes
 MODULES=	lang/python
@@ -45,13 +43,13 @@ CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-mandir=${LOCALBASE}/man \
 		--disable-nls
 
-LIB_DEPENDS=	pcre::devel/pcre \
-		dnet::net/libdnet \
-		lua.>=5::lang/lua
-
-LIB_DEPENDS-zenmap=
+WANTLIB-main=		c crypto m pcap ssl stdc++ pcre dnet lua.>=5
+LIB_DEPENDS-main=	::devel/pcre \
+			::net/libdnet \
+			::lang/lua
 
 RUN_DEPENDS-main=
+
 RUN_DEPENDS-zenmap=	::x11/py-gtk2 \
 			::databases/py-sqlite2 \
 			::devel/desktop-file-utils \

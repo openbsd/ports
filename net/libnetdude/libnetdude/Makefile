@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=	packet manipulation backend of Netdude framework
 
@@ -12,8 +12,8 @@ HOMEPAGE=	http://netdude.sourceforge.net/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-LIB_DEPENDS=	pcapnav::net/libpcapnav \
-		glib::devel/glib
+LIB_DEPENDS=	::net/libpcapnav \
+		::devel/glib
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pcap
+WANTLIB=		c pcap pcapnav glib
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu

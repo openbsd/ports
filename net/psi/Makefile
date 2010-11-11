@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/11 16:27:55 espie Exp $
 
 COMMENT=	multiplatform Jabber client
 
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xss m c pthread pthread-stubs stdc++ xcb z
+WANTLIB=		X11 Xext Xss m c pthread pthread-stubs stdc++ xcb z \
+			qca.>=1
 
 MODULES=		x11/qt3
 
@@ -25,7 +26,7 @@ MODQT_OVERRIDE_UIC=	No
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		qca.>=1::security/qca
+LIB_DEPENDS=		::security/qca
 RUN_DEPENDS=		::security/qca-tls
 
 CONFIGURE_STYLE=	simple

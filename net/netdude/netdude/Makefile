@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
@@ -19,12 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
-		pcapnav::net/libpcapnav \
-		glib.>=1,gmodule.>=1::devel/glib \
-		gdk,gtk::x11/gtk+
+LIB_DEPENDS=	::net/libnetdude/libnetdude \
+		::net/libpcapnav \
+		::devel/glib \
+		::x11/gtk+
 
-WANTLIB=		X11 Xau Xdmcp Xext Xi c m pcap pthread-stubs xcb
+WANTLIB=	X11 Xau Xdmcp Xext Xi c m pcap pthread-stubs xcb netdude \
+		pcapnav glib.>=1 gmodule.>=1 gdk gtk
 
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

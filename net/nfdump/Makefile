@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/11 16:27:54 espie Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -39,12 +39,14 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-ftconv \
 			--with-ftpath=${LOCALBASE} \
 			--enable-sflow
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MULTI_PACKAGES =	-main -nfprofile
 
-LIB_DEPENDS-main =	ft:flow-tools->=0.68.5:net/flow-tools
-LIB_DEPENDS-nfprofile =	rrd:rrdtool-*:net/rrdtool
+LIB_DEPENDS-main =	:flow-tools->=0.68.5:net/flow-tools
+WANTLIB-main =		${WANTLIB} ft
+LIB_DEPENDS-nfprofile =	:rrdtool-*:net/rrdtool
+WANTLIB-nfprofile =	${WANTLIB} rrd
 RUN_DEPENDS-nfprofile =	:nfdump-$V:net/nfdump,-main
 
 post-build:

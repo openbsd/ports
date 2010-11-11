@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=		desktop presence framework
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.galago-project.org/files/releases/source/libgalago/
 
-WANTLIB=		dbus-1 glib-2.0 gobject-2.0 pcre
+WANTLIB=		dbus-1 glib-2.0 gobject-2.0 pcre dbus-glib-1
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		dbus-glib-1::x11/dbus-glib
+LIB_DEPENDS=		::x11/dbus-glib
 BUILD_DEPENDS=		:check->=0.9.5:devel/check
 REGRESS_DEPENDS=	${BUILD_DEPENDS}
 

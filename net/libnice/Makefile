@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/22 14:28:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:54 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${HOMEPAGE}/releases/
 
 WANTLIB += c glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pcre
-WANTLIB += xml2 z
+WANTLIB += xml2 z gstbase-0.10 gstreamer-0.10
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		gstbase-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/core
+LIB_DEPENDS =		::multimedia/gstreamer-0.10/core
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \

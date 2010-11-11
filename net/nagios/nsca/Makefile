@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/05 20:28:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 16:27:54 espie Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-WANTLIB=		c
-LIB_DEPENDS=		mcrypt.>=8::security/libmcrypt
+WANTLIB=		c mcrypt.>=8
+LIB_DEPENDS=		::security/libmcrypt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-nsca-user=_nagios \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 16:27:55 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,8 @@ MASTER_SITES=		${HOMEPAGE}/files/
 MODULES=		lang/python
 CATEGORIES =		net
 
-LIB_DEPENDS=		adns::net/adns
+LIB_DEPENDS=		::net/adns
+WANTLIB =		adns
 
 NO_REGRESS=		Yes
 

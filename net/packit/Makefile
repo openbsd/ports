@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 16:27:55 espie Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
@@ -17,13 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		lib/libnet-1.1/net.=11:libnet->=1.1,<1.2:net/libnet/1.1
-WANTLIB=		c pcap
+LIB_DEPENDS=		:libnet->=1.1,<1.2:net/libnet/1.1
+WANTLIB=		c pcap lib/libnet-1.1/net.=11
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libnet-includes=${LOCALBASE}/include/libnet-1.1 \
 			--with-libnet-libraries=${LOCALBASE}/lib/libnet-1.1
 CONFIGURE_ENV=		CPPFLAGS=`libnet-config-1.1 --cflags`
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

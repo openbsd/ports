@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/11 16:27:55 espie Exp $
 
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
@@ -31,12 +31,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GROFF =	Yes
 
 .if !${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=	gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xrandr Xrender atk-1.0 cairo expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb gdk_pixbuf-2.0
+WANTLIB += gtk-x11-2.0 gdk-x11-2.0
 .else
 CONFIGURE_ARGS+= --disable-gtk
 .endif

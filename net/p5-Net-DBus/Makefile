@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::textproc/p5-XML-Twig
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	dbus-1.>=6::x11/dbus
+LIB_DEPENDS=	::x11/dbus
+WANTLIB =	dbus-1.>=6
 
 .include <bsd.port.mk>

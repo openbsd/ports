@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 16:27:55 espie Exp $
 
 COMMENT =		GeoIP Python API
 
@@ -22,7 +22,8 @@ MASTER_SITES =		http://geolite.maxmind.com/download/geoip/api/python/
 
 MODULES =		lang/python
 
-LIB_DEPENDS =		GeoIP.>=7::net/GeoIP
+LIB_DEPENDS =		::net/GeoIP
+WANTLIB =		GeoIP.>=7
 
 EXAMPLEDIR =		${PREFIX}/share/examples/py-GeoIP
 NO_REGRESS =		Yes

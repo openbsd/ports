@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 16:27:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,15 +32,16 @@ USE_GMAKE=		Yes
 
 MULTI_PACKAGES=		-main -gnome
 
-LIB_DEPENDS-gnome=	proxy::${BUILD_PKGPATH},-main \
-			gconf-2::devel/gconf2
+LIB_DEPENDS-gnome=	::${BUILD_PKGPATH},-main \
+			::devel/gconf2
 
 WANTLIB-main=		ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread \
 			pthread-stubs xcb
 
-WANTLIB-gnome =		ICE ORBit-2 SM X11 Xau Xdmcp Xext Xmu Xt dbus-1 dbus-glib-1 \
-			glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv \
-			intl m pcre pthread-stubs xcb
+WANTLIB-gnome =		ICE ORBit-2 SM X11 Xau Xdmcp Xext Xmu Xt dbus-1 \
+			dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
+			gthread-2.0 iconv intl m pcre pthread-stubs xcb \
+			proxy gconf-2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=	network grep
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c pcap
-LIB_DEPENDS=	pcre::devel/pcre
+WANTLIB=	c pcap pcre
+LIB_DEPENDS=	::devel/pcre
 
 NO_REGRESS=	Yes
 

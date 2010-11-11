@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/11 16:27:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto idn ssl z
 
 MASTER_SITES=	${HOMEPAGE}download/ \
 		${HOMEPAGE}download/00-OLD-VERSIONS/
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	curl.>=12::net/curl
+LIB_DEPENDS=	::net/curl
+WANTLIB=	crypto idn ssl z curl.>=12
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 16:27:54 espie Exp $
 
 COMMENT=		network pipe meter
 
@@ -14,11 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= c
+WANTLIB= c oop.>=4
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nepim/}
 
-LIB_DEPENDS=		oop.>=4::devel/liboop
+LIB_DEPENDS=		::devel/liboop
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/11 16:27:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	GeoIP.>=4::net/GeoIP
+LIB_DEPENDS=	::net/GeoIP
+WANTLIB =	GeoIP.>=4
 
 CONFIGURE_ARGS= LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
 
