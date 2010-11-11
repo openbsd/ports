@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/10/25 12:57:13 pea Exp $
+# $OpenBSD: Makefile,v 1.76 2010/11/11 18:34:59 espie Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -23,11 +23,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z readline termcap ssl crypto idn
 
 MODULES= devel/gettext
-LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
-		curl.>=3::net/curl
+LIB_DEPENDS=	::archivers/bzip2 \
+		::net/curl
+WANTLIB=	c z readline termcap ssl crypto idn bz2.>=10 curl.>=3
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.64
@@ -57,14 +57,16 @@ SUPDISTFILES=	idea.c.gz:0
 .endif
 
 .if ${FLAVOR:L:Mcard}
-LIB_DEPENDS+=		usb::devel/libusb
+LIB_DEPENDS+=		::devel/libusb
+WANTLIB +=		usb
 .else
 CONFIGURE_ARGS+=	--disable-card-support --without-libusb
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		ldap.>=8::databases/openldap
+LIB_DEPENDS+=		::databases/openldap
+WANTLIB +=		ldap.>=8
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif

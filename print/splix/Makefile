@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/21 10:14:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 18:34:59 espie Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto gssapi krb5 m pthread ssl stdc++ z
+WANTLIB += cups.>=3 cupsimage jbig.>=2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
-LIB_DEPENDS=	cups.>=3,cupsimage::print/cups \
-		jbig.>=2::graphics/jbigkit
+LIB_DEPENDS=	::print/cups \
+		::graphics/jbigkit
 # pstoraster
 RUN_DEPENDS=	::print/ghostscript/gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/11 18:34:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP?=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext asn1 c crypto expat fontconfig
 WANTLIB += freetype gssapi krb5 m pthread pthread-stubs ssl stdc++
-WANTLIB += util xcb z
+WANTLIB += util xcb z jpeg lcms art_lgpl_2 png tiff cups xml2
 WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
@@ -36,14 +36,14 @@ MODPY_VERSION=	2.6
 
 RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info \
 		::devel/desktop-file-utils
-LIB_DEPENDS=	jpeg::graphics/jpeg \
-		lcms::graphics/lcms \
-		art_lgpl_2::graphics/libart \
-		png::graphics/png \
-		tiff::graphics/tiff \
+LIB_DEPENDS=	::graphics/jpeg \
+		::graphics/lcms \
+		::graphics/libart \
+		::graphics/png \
+		::graphics/tiff \
 		${MODPY_LIB_DEPENDS} \
-		cups::print/cups \
-		xml2::textproc/libxml
+		::print/cups \
+		::textproc/libxml
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

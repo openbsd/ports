@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/11 18:34:59 espie Exp $
 			
 COMMENT=		intercept, modify, and rewrite egress traffic
 
@@ -15,16 +15,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c event pcap
+WANTLIB=		c event pcap dnet.>=1
 
 MASTER_SITES=		http://monkey.org/~dugsong/fragroute/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		 --with-libevent=/usr
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		dnet.>=1::net/libdnet
+LIB_DEPENDS=		::net/libdnet
 
 post-install:
 			${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fragroute/

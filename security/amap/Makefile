@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 18:34:59 espie Exp $
 
 COMMENT=	next generation scanning tool
 
 DISTNAME=	amap-5.2
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-amap/
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
-WANTLIB=	c crypto ssl
+WANTLIB=	c crypto ssl pcre
 
-LIB_DEPENDS=	pcre::devel/pcre
+LIB_DEPENDS=	::devel/pcre
 
 CONFIGURE_STYLE=	gnu dest
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/11 18:34:59 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -9,7 +9,8 @@ SHARED_LIBS =		kpathsea	2.0
 
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
 			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms pthread \
-			pthread-stubs stdc++ xcb xml2
+			pthread-stubs stdc++ xcb xml2 t1.>=4 png.>=3 gd ttf \
+			poppler
 
 RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
@@ -19,11 +20,11 @@ RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:t1utils-*:print/t1utils \
 			:texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 			
-LIB_DEPENDS =		t1.>=4::devel/t1lib \
-			png.>=3::graphics/png \
-			gd::graphics/gd \
-			ttf::print/freetype \
-			poppler::print/poppler
+LIB_DEPENDS =		::devel/t1lib \
+			::graphics/png \
+			::graphics/gd \
+			::print/freetype \
+			::print/poppler
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu

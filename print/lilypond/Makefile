@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/11 18:34:59 espie Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -63,12 +63,14 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 WANTLIB-main=		X11 c expat fontconfig freetype gmp gthread-2.0 ltdl m \
-			pthread stdc++ z ${WANTLIB}
+			pthread stdc++ z guile.>=20 glib-2.0.>=1000 \
+			gmodule-2.0.>=1000 gobject-2.0.>=1000 \
+			pango-1.0.>=1200 pangoft2-1.0.>=1200 ${WANTLIB}
 MODULES=		devel/gettext lang/python
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			guile.>=20::lang/guile \
-			glib-2.0.>=1000,gmodule-2.0.>=1000,gobject-2.0.>=1000::devel/glib2 \
-			pango-1.0.>=1200,pangoft2-1.0.>=1200::devel/pango
+			::lang/guile \
+			::devel/glib2 \
+			::devel/pango
 RUN_DEPENDS=		::print/ghostscript/gnu
 BUILD_DEPENDS= 		::print/mftrace \
 			::devel/bison \

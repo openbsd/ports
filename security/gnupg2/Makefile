@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 18:34:59 espie Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
@@ -33,22 +33,24 @@ WANTLIB = 		c crypto z readline ssl termcap gpg-error idn
 
 FLAVORS = 		ldap
 FLAVOR ?=
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		ldap.>=8::databases/openldap
+LIB_DEPENDS+=		::databases/openldap
+WANTLIB +=		ldap.>=8
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
-LIB_DEPENDS = 		usb::devel/libusb \
-			bz2::archivers/bzip2 \
-			assuan::security/libassuan \
-			gcrypt::security/libgcrypt \
-			ksba.::security/libksba \
-			curl.>=6::net/curl \
-			pth.::devel/pth
+WANTLIB +=		usb bz2 assuan gcrypt ksba curl.>=6 pth
+LIB_DEPENDS = 		::devel/libusb \
+			::archivers/bzip2 \
+			::security/libassuan \
+			::security/libgcrypt \
+			::security/libksba \
+			::net/curl \
+			::devel/pth
 
 RUN_DEPENDS = 		::security/pinentry
 

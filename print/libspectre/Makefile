@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/10 12:14:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 18:34:59 espie Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
@@ -24,7 +24,8 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 
 # we want the 'display' device from ghostscript, which is not available
 # in the no_x11 FLAVOR
-LIB_DEPENDS=	gs.>=11:ghostscript-*-!no_x11:print/ghostscript/gnu
+LIB_DEPENDS=	:ghostscript-*-!no_x11:print/ghostscript/gnu
+WANTLIB =	gs.>=11
 
 USE_LIBTOOL=	Yes
 
