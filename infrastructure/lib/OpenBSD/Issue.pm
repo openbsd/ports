@@ -1,4 +1,4 @@
-# $OpenBSD: Issue.pm,v 1.1 2010/08/20 15:29:41 espie Exp $
+# $OpenBSD: Issue.pm,v 1.2 2010/11/11 12:43:03 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -76,7 +76,7 @@ our @ISA = qw(OpenBSD::Issue);
 sub message
 {
 	my $self = shift;
-	return "LIB_DEPENDS:   ". $self->stringize;
+	return "WANTLIB:   ". $self->stringize;
 }
 
 package OpenBSD::Issue::IndirectDependency;
