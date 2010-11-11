@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/10 18:11:50 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/11 14:00:45 espie Exp $
 
 COMMENT=	simple network library
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	glib-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS=	::devel/glib2
 
-WANTLIB=	pcre
+WANTLIB=	pcre glib-2.0 gthread-2.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \

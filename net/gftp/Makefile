@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/11 14:00:44 espie Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
@@ -38,17 +38,18 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	::devel/bison
 
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=	glib-2.0.>=1803::devel/glib2
-CONFIGURE_ARGS+=--disable-gtkport
+LIB_DEPENDS +=	::devel/glib2
+WANTLIB += 	glib-2.0.>=1803
+CONFIGURE_ARGS +=--disable-gtkport
 .else
-LIB_DEPENDS+=	gtk-x11-2.0.>=600.10,gdk-x11-2.0.>=600.0::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += z gdk_pixbuf-2.0
+WANTLIB += z gdk_pixbuf-2.0 gtk-x11-2.0.>=600.10 gdk-x11-2.0.>=600.0
 .endif
 
 .include <bsd.port.mk>

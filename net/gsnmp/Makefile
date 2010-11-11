@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 14:00:45 espie Exp $
 
 COMMENT=		SNMP library based on glib2 and gnet
 
@@ -14,14 +14,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/
 
-WANTLIB += c glib-2.0 gthread-2.0 pcre pthread
+WANTLIB += 		c glib-2.0 gthread-2.0 pcre pthread gnet-2.0
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		gnet-2.0::net/gnet
+LIB_DEPENDS=		::net/gnet
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 14:00:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,12 +27,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/source/download/
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m sasl2
-WANTLIB += ssl
+WANTLIB += ssl pt.>=3 avutil.>=6 speex.>=4 gsm.>=1
 
-LIB_DEPENDS=	pt.>=3::devel/ptlib \
-		avutil.>=6::graphics/ffmpeg \
-		speex.>=4::audio/speex \
-		gsm.>=1::audio/gsm
+LIB_DEPENDS=	::devel/ptlib \
+		::graphics/ffmpeg \
+		::audio/speex \
+		::audio/gsm
 
 WRKDIST=	${WRKDIR}/h323plus
 

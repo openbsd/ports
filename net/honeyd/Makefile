@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/11 14:00:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c edit event m ncurses pcap pthread util z
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB=	c edit event m ncurses pcap pthread util z
+WANTLIB += 	${MODPY_WANTLIB} dnet.>=1 pcre.>=1 eventextra.>=1
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* align-*
@@ -30,10 +30,10 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 MODULES=	lang/python
-LIB_DEPENDS=	dnet.>=1::net/libdnet \
+LIB_DEPENDS=	::net/libdnet \
 		${MODPY_LIB_DEPENDS} \
-		pcre.>=1::devel/pcre \
-		eventextra.>=1::devel/libeventextra
+		::devel/pcre \
+		::devel/libeventextra
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu

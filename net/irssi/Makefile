@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/11 14:00:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${HOMEPAGE}files/
 
-WANTLIB=	c crypto m ncurses perl ssl util pcre
+WANTLIB=	c crypto m ncurses perl ssl util pcre glib-2.0 gmodule-2.0
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	glib-2.0,gmodule-2.0::devel/glib2
+LIB_DEPENDS=	::devel/glib2
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

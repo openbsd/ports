@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/02 21:30:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 14:00:45 espie Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ogg pthread sndio theora vorbis vorbisenc z
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
@@ -29,9 +28,11 @@ USE_LIBTOOL =	Yes
 # Needs AC_PROG_LIBTOOL	
 BUILD_DEPENDS += ::devel/libtool
 MODULES=	converters/libiconv
-LIB_DEPENDS=	shout.>=3::net/libshout \
-		speex.>=4::audio/speex \
-		xml2.>=9::textproc/libxml
+WANTLIB=	c m ogg pthread sndio theora vorbis vorbisenc z \
+		shout.>=3 speex.>=4 xml2.>=9
+LIB_DEPENDS=	::net/libshout \
+		::audio/speex \
+		::textproc/libxml
 
 SEPARATE_BUILD=	simple
 

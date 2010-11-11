@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 14:00:45 espie Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	c
+WANTLIB =	c pcre pcreposix
 
 MASTER_SITES =	${HOMEPAGE}/download/1.3/src/
 
@@ -30,7 +30,7 @@ MAKE_FLAGS +=	CC="${CC}" LD="${CC}"
 
 USE_GROFF =	Yes
 NO_REGRESS =	Yes
-LIB_DEPENDS =	pcre,pcreposix::devel/pcre
+LIB_DEPENDS =	::devel/pcre
 
 DOCS =		architecture configuration gpl haproxy-en haproxy-fr lgpl
 EXAMPLES =	acl-content-sw content-sw-sample haproxy \

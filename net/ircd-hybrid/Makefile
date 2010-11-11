@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 14:00:45 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Internet Relay Chat server
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP = Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =		.tgz
 
-WANTLIB =		c crypto ssl z
+WANTLIB =		c crypto ssl z pcre
 
-LIB_DEPENDS =		pcre::devel/pcre
+LIB_DEPENDS =		::devel/pcre
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,7 +29,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_FLAGS =		AUTOMODULEDIR='$${prefix}/lib/ircd-hybrid/modules' \
 			moduledir='$${prefix}/lib/ircd-hybrid/modules'
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 pre-configure:
