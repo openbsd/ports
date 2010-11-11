@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/03 15:06:48 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/11 20:19:52 kili Exp $
 @newgroup _polipo:548
 @newuser _polipo:548:_polipo:daemon:Polipo Account:/nonexistent:/sbin/nologin
-bin/polipo
+@bin bin/polipo
 @info info/polipo.info
 @man man/man1/polipo.1
 share/doc/polipo/
@@ -88,3 +88,7 @@ share/examples/polipo/forbidden.sample
 @sample /var/polipo/
 @sample /var/polipo/cache/
 @extraunexec rm -rf /var/polipo/*
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/polipo
