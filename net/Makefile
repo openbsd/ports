@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.661 2010/10/27 18:15:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.662 2010/11/11 09:19:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -408,6 +408,7 @@
      SUBDIR += py-dpkt
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
+     SUBDIR += py-ftpdlib
      SUBDIR += py-impacket
      SUBDIR += py-irclib
      SUBDIR += py-libpcap
