@@ -1,0 +1,4 @@
+Python FTP server library provides a high-level portable interface to
+easily write asynchronous FTP servers with Python.  pyftpdlib is
+currently the most complete RFC-959 FTP server implementation available
+for Python programming language.
