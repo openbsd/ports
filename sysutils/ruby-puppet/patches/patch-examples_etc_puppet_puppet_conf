@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_etc_puppet_puppet_conf,v 1.1 2010/11/11 20:40:56 robert Exp $
+--- examples/etc/puppet/puppet.conf.orig	Thu Nov 11 21:39:24 2010
++++ examples/etc/puppet/puppet.conf	Thu Nov 11 21:40:11 2010
+@@ -1,9 +1,9 @@
+-[puppetd]
++[agent]
+ report = true
+ factsync = true
+ pluginsync = true
+ 
+-[puppetmasterd]
++[master]
+ reports = store,rrdgraph,tagmail,log
+ node_terminus = ldap
+ ldapserver = culain.madstop.com
