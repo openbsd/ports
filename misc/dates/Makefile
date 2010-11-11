@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/11 11:16:03 espie Exp $
 
 BROKEN=			needs to stop using deprecated functions from e-d-s
 
@@ -34,7 +34,7 @@ MODULES=		devel/gettext \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 LIB_DEPENDS=		::databases/evolution-data-server
 RUN_DEPENDS=		::devel/desktop-file-utils
