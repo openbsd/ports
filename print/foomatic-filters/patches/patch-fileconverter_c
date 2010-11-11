@@ -1,0 +1,18 @@
+$OpenBSD: patch-fileconverter_c,v 1.1 2010/11/11 12:55:24 ajacoutot Exp $
+
+Upstream r241.
+
+--- fileconverter.c.orig	Thu Nov 11 13:47:02 2010
++++ fileconverter.c	Thu Nov 11 13:46:20 2010
+@@ -49,8 +49,10 @@ void set_fileconverter(const char *fc)
+ {
+     int i;
+     for (i = 0; fileconverters[i][0]; i++) {
+-        if (!strcmp(fc, fileconverters[i][0]))
++      if (!strcmp(fc, fileconverters[i][0])) {
+             strlcpy(fileconverter, fileconverters[i][1], PATH_MAX);
++	    break;
++      }
+     }
+     if (!fileconverters[i][0])
+         strlcpy(fileconverter, fc, PATH_MAX);
