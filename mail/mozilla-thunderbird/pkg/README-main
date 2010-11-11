@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.6 2010/10/27 12:54:34 landry Exp $
+$OpenBSD: README-main,v 1.1 2010/11/11 09:30:36 jasper Exp $
 
 If you encounter strange problems or Thunderbird doesn't start at
 all, try the -safe-mode switch.
