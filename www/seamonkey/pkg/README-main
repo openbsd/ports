@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.6 2010/10/27 13:02:39 landry Exp $
+$OpenBSD: README-main,v 1.1 2010/11/11 09:55:05 jasper Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
