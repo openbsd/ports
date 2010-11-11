@@ -1,12 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2010/11/11 14:11:34 espie Exp $
 
 # Don't hard code -O2 -Wall.
 # Use BSD_INSTALL_* macros for installation.
 
 --- Makefile.in.orig	Thu May 29 21:18:26 2008
-+++ Makefile.in	Sun Jun  1 13:16:18 2008
-@@ -22,7 +22,7 @@ LDFLAGS	= @LDFLAGS@
++++ Makefile.in	Thu Nov 11 14:43:19 2010
+@@ -20,9 +20,10 @@ CC	= @CC@
+ LD	= @CXX@
+ LDFLAGS	= @LDFLAGS@
  LIBS	= @LIBS@
++LIBZ    = -lz
  CLIBS   = @CLIBS@
  CFLAGS	= @CFLAGS@
 -CXXFLAGS = -O2 -Wall -DVERSION_MAJOR=\"$(VERSION_MAJOR)\" -DVERSION_MINOR=\"$(VERSION_MINOR)\" -DVERSION_TINY=\"$(VERSION_TINY)\" -DTIMESTAMP=\"`cat TIMESTAMP`\" @CXXFLAGS@
@@ -14,7 +17,18 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  CPPFLAGS = @CPPFLAGS@
  SUID	= @suid@
  
-@@ -138,53 +138,55 @@ checkuiconfig:
+@@ -101,8 +102,8 @@ $(GPSL):	$(GPSLBUILDO)
+ 	@if test "$(GPSLBUILD)"x = "x"; then \
+ 		echo "Gpsmap cannot be built, check the output of configure"; \
+ 	else \
+-		echo $(LD) $(LDFLAGS) -o $(GPSL) $(GPSLO) $(LIBS) `Magick-config --cflags --cppflags --ldflags` `Magick-config --libs` $(THREADL) -lexpat -lgmp; \
+-		$(LD) $(LDFLAGS) -o $(GPSL) $(GPSLO) $(LIBS) `Magick-config --cflags --cppflags --ldflags` `Magick-config --libs` $(THREADL) -lexpat -lgmp; \
++		echo $(LD) $(LDFLAGS) -o $(GPSL) $(GPSLO) $(LIBS) `Magick-config --cflags --cppflags --ldflags` `Magick-config --libs` $(THREADL) -lexpat -lgmp $(LIBZ); \
++		$(LD) $(LDFLAGS) -o $(GPSL) $(GPSLO) $(LIBS) `Magick-config --cflags --cppflags --ldflags` `Magick-config --libs` $(THREADL) -lexpat -lgmp $(LIBZ); \
+ 	fi
+ 
+ #$(HOPPER):	$(HOPPERO)
+@@ -138,53 +139,55 @@ checkuiconfig:
  		echo "latest version is `grep version= conf/kismet_ui.conf | cut -f 2 -d=`"; \
  	fi
  
@@ -105,7 +119,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  
  	@if test -f $(BIN)/kismet_curses; then \
  		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
-@@ -197,22 +199,22 @@ suidinstall: $(PS) $(DRONE) $(WRAP) $(NC) $(GPSLBUILD)
+@@ -197,22 +200,22 @@ suidinstall: $(PS) $(DRONE) $(WRAP) $(NC) $(GPSLBUILD)
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -134,7 +148,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -230,22 +232,22 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
+@@ -230,22 +233,22 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -163,7 +177,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -261,11 +263,11 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
+@@ -261,11 +264,11 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
  forceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binuserinstall
@@ -178,7 +192,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -280,11 +282,11 @@ forceinstall: $(PS)
+@@ -280,11 +283,11 @@ forceinstall: $(PS)
  suidforceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binsuidinstall
@@ -193,7 +207,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -371,13 +373,11 @@ depend:
+@@ -371,13 +374,11 @@ depend:
  	@$(MAKE) $(DEPEND)
  
  $(DEPEND):

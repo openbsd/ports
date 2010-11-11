@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.2 2008/06/27 22:10:14 kili Exp $
+$OpenBSD: patch-configure,v 1.3 2010/11/11 14:11:34 espie Exp $
 --- configure.orig	Mon May 12 22:14:14 2008
-+++ configure	Sun Jun  1 13:24:55 2008
++++ configure	Thu Nov 11 15:01:31 2010
+@@ -9474,7 +9474,7 @@ if test $ac_cv_lib_z_gzopen = yes; then
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBZ 1
+ _ACEOF
+- LIBS="$LIBS -lz" libz="yes"
++ libz="yes"
+ else
+   { echo "$as_me:$LINENO: WARNING: Unable to find libz compression" >&5
+ echo "$as_me: WARNING: Unable to find libz compression" >&2;}
 @@ -9877,7 +9877,7 @@ sharedatadir=`(
      test "$exec_prefix" = NONE && exec_prefix=${prefix}
      eval echo "$sharedatadir"

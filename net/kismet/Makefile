@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/11 14:11:34 espie Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=m68k m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-REVISION=	0
+REVISION=	1
 PKGNAME-main=	kismet-${V:S,-,,g}
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
@@ -40,7 +40,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 SAMPLES_DIR=		${DESTDIR}${LOCALBASE}/share/examples/kismet
 FAKE_FLAGS+=		ETC=${SAMPLES_DIR}
@@ -54,13 +54,13 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 WANTLIB-main=		c m ncurses panel pcap stdc++
+WANTLIB-gpsmap=		c expat freetype m pthread stdc++ z \
+			MagickCore.>=1 MagickWand.>=1 gmp.>=6
+LIB_DEPENDS-gpsmap=	::graphics/ImageMagick \
+			::devel/gmp
 
 .if !${FLAVOR:L:Mno_gpsmap}
 MULTI_PACKAGES+=	-gpsmap
-WANTLIB-gpsmap=		c expat freetype m pthread stdc++ z
-WANTLIB-main+=		z
-LIB_DEPENDS-gpsmap=	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
-			gmp.>=6::devel/gmp
 .else
 CONFIGURE_ARGS+=	--disable-gpsmap
 .endif
