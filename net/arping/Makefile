@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/11 11:54:08 espie Exp $
 
 COMMENT =	ARP level ping utility
 
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c pcap
+WANTLIB =	c pcap lib/libnet-1.1/net.=11
 
 MASTER_SITES =	http://www.habets.pp.se/synscan/files/ \
 		http://www.arcane-labs.net/download/OpenBSD/
 
-LIB_DEPENDS =	lib/libnet-1.1/net.=11:libnet->=1.1,<1.2:net/libnet/1.1
+LIB_DEPENDS =	:libnet->=1.1,<1.2:net/libnet/1.1
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \

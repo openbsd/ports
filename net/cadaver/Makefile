@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/11 11:54:08 espie Exp $
 
 COMMENT=		command-line WebDAV client
 
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto curses expat gssapi krb5 readline ssl
-WANTLIB += z
+WANTLIB += z neon
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		neon::net/neon
+LIB_DEPENDS=		::net/neon
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -28,6 +28,6 @@ CONFIGURE_ARGS=		--with-ssl \
 			--with-expat \
 			--with-neon="${LOCALBASE}"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

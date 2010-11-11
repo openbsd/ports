@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/12 20:12:52 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 11:54:08 espie Exp $
 
 COMMENT=	highly flexible sniffer/NIDS
 
@@ -22,12 +22,12 @@ PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
-WANTLIB=	c crypto m pcap ssl stdc++ termcap z
+WANTLIB=	c crypto m pcap ssl stdc++ termcap z GeoIP.>=5 magic.>=1
 
 MASTER_SITES=	ftp://bro-ids.org/
 
-LIB_DEPENDS=	GeoIP.>=5::net/GeoIP \
-		magic.>=1::devel/libmagic
+LIB_DEPENDS=	::net/GeoIP \
+		::devel/libmagic
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=autoconf

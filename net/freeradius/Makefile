@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/25 13:22:20 pea Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/11 11:54:09 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -36,7 +36,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	crypto ssl
-WANTLIB-main=	${WANTLIB} c com_err krb5 pcap pthread readline termcap
 
 CONFIGURE_STYLE=autoconf dest
 AUTOCONF_VERSION=2.61
@@ -74,8 +73,10 @@ USE_LIBTOOL=	gnu
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::net/net-snmp
-LIB_DEPENDS=	gdbm.>=3::databases/gdbm \
-		ltdl.>=4::devel/libtool,-ltdl
+LIB_DEPENDS-main =	::databases/gdbm \
+			::devel/libtool,-ltdl
+WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
+			termcap gdbm.>=3 ltdl.>=4
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=		
@@ -86,8 +87,8 @@ CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 MULTI_PACKAGES+=	-iodbc
 BUILD_DEPENDS+=		::databases/iodbc
 CONFIGURE_ARGS+=	--with-rlm_sql_iodbc
-LIB_DEPENDS-iodbc=	iodbc.>=2::databases/iodbc
-WANTLIB-iodbc=
+LIB_DEPENDS-iodbc=	::databases/iodbc
+WANTLIB-iodbc=		iodbc.>=2
 .endif
 
 .if ${FLAVOR:L:Mno_ldap}
@@ -95,9 +96,10 @@ CONFIGURE_ARGS+=	--without-rlm_ldap
 .else
 MULTI_PACKAGES+=	-ldap
 BUILD_DEPENDS+=		:openldap-client-*:databases/openldap
-LIB_DEPENDS-ldap=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
-			freeradius-radius.>=1::net/freeradius
-WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5
+LIB_DEPENDS-ldap=	:openldap-client-*:databases/openldap \
+			::${BASE_PKGPATH}
+WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
+			lber.>=8 ldap_r.>=8 freeradius-radius.>=1
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
@@ -105,8 +107,8 @@ CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .else
 MULTI_PACKAGES+=	-mysql
 BUILD_DEPENDS+=		:mysql-client-*:databases/mysql
-LIB_DEPENDS-mysql=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
-WANTLIB-mysql=		${WANTLIB} m pthread z
+LIB_DEPENDS-mysql=	:mysql-client-*:databases/mysql
+WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r.>=16
 .endif
 
 .if ${FLAVOR:L:Mno_pgsql}
@@ -115,8 +117,8 @@ CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 MULTI_PACKAGES+=	-pgsql
 BUILD_DEPENDS+=		:postgresql-client-*:databases/postgresql
 CONFIGURE_ARGS+=	--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
-LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
-WANTLIB-pgsql=
+LIB_DEPENDS-pgsql=	:postgresql-client-*:databases/postgresql
+WANTLIB-pgsql=		pq.>=2
 .endif
 
 .for i in ${MULTI_PACKAGES:N-main}

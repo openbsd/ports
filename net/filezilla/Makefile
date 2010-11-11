@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 11:54:09 espie Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -26,12 +26,14 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += idn gnutls.>=13 dbus-1 wx_gtk2_aui wx_base_xml wx_gtk2_adv
+WANTLIB += wx_gtk2_xrc wx_base_net wx_base wx_gtk2_core
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	idn::devel/libidn \
-		gnutls.>=13::security/gnutls \
-		dbus-1::x11/dbus \
-		wx_gtk2_aui,wx_base_xml,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+LIB_DEPENDS=	::devel/libidn \
+		::security/gnutls \
+		::x11/dbus \
+		:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 
 BUILD_DEPENDS=	::devel/cppunit \
 		::devel/xdg-utils

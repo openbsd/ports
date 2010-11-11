@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/11 11:54:09 espie Exp $
 
 COMMENT=		Direct Connect clone
 
@@ -17,15 +17,16 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		devel/gettext
 
-WANTLIB=		c gpg-error m pcre pthread z
+WANTLIB=		c gpg-error m pcre pthread z db glib-2.0 gthread-2.0 \
+			gcrypt xml2
 
-LIB_DEPENDS=		db:db->=4,<5:databases/db/v4 \
-			glib-2.0,gthread-2.0::devel/glib2 \
-			gcrypt::security/libgcrypt \
-			xml2::textproc/libxml
+LIB_DEPENDS=		:db->=4,<5:databases/db/v4 \
+			::devel/glib2 \
+			::security/libgcrypt \
+			::textproc/libxml
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 SEPARATE_BUILD=		concurrent
 AUTOCONF_VERSION=	2.57
 CONFIGURE_STYLE= 	autoconf

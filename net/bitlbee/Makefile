@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/11 11:54:08 espie Exp $
 
 COMMENT=	IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pthread
+WANTLIB=		c pthread glib-2.0 gmodule-2.0 gnutls.>=13
 
 MASTER_SITES=		http://get.bitlbee.org/src/
 
@@ -27,8 +27,8 @@ EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
 DOCS=			${WRKSRC}/doc/user-guide/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
-LIB_DEPENDS=		glib-2.0,gmodule-2.0::devel/glib2 \
-			gnutls.>=13::security/gnutls
+LIB_DEPENDS=		::devel/glib2 \
+			::security/gnutls
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \

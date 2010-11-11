@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/11 11:54:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,10 +20,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c crypto form menu ncurses panel pcap pthread ssl z
+WANTLIB += lib/libnet-1.1/net.=11 ltdl pcre
 
-LIB_DEPENDS=	lib/libnet-1.1/net.=11:libnet->=1.1,<1.2:net/libnet/1.1 \
-		ltdl::devel/libtool,-ltdl \
-		pcre::devel/pcre
+LIB_DEPENDS=	:libnet->=1.1,<1.2:net/libnet/1.1 \
+		::devel/libtool,-ltdl \
+		::devel/pcre
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -41,13 +42,14 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --enable-gtk=no
 .else
-MODULES=	devel/gettext
-LIB_DEPENDS+=	gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+MODULES =	devel/gettext
+LIB_DEPENDS +=	::x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb gdk_pixbuf-2.0
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 .endif
 
 NO_REGRESS=	Yes

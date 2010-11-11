@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/11 11:54:09 espie Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
@@ -16,14 +16,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c iconv m ogg pthread theora vorbis vorbisfile z
+WANTLIB=	c iconv m ogg pthread theora vorbis vorbisfile z \
+		shout.>=3 speex.>=4 xml2.>=9 tag_c.>=1
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/
 
-LIB_DEPENDS=	shout.>=3::net/libshout \
-		speex.>=4::audio/speex \
-		xml2.>=9::textproc/libxml \
-		tag_c.>=1::audio/taglib
+LIB_DEPENDS=	::net/libshout \
+		::audio/speex \
+		::textproc/libxml \
+		::audio/taglib
 
 SEPARATE_BUILD=	simple
 
