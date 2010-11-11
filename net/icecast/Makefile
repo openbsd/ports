@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/11 10:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/11 11:15:26 edd Exp $
 
 COMMENT=	server for streaming various media formats
 
 DISTNAME=	icecast-2.3.2
-REVISION =	1
+REVISION =	2
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
