@@ -1,4 +1,4 @@
-# $OpenBSD: Recorder.pm,v 1.2 2010/09/13 14:38:05 espie Exp $
+# $OpenBSD: Recorder.pm,v 1.3 2010/11/11 12:17:20 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -125,7 +125,7 @@ sub retrieve
 		chomp;
 		if (m/^(.*?)\:\s(.*)$/) {
 			my ($binary, $libs) = ($1, $2);
-			if ($binary =~ m/^(.*)\(.*\)$/) {
+			if ($binary =~ m/^(.*)\((.*)\)$/) {
 				$binary = $1;
 				my @path = split(':', $2);
 				$self->{$binary}{rpath} = \@path;
