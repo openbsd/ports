@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/06/05 15:26:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/11/11 10:09:34 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -29,6 +29,7 @@ libexec/balou-install-theme
 @man man/man1/xfce4-session-logout.1
 @man man/man1/xfce4-session.1
 share/applications/xfce-session-settings.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/xfce4-session/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
@@ -176,7 +177,6 @@ share/themes/Default/balou/
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
 share/xfce4/
-share/xfce4/README.OpenBSD
 share/xfce4/doc/
 share/xfce4/doc/C/
 share/xfce4/doc/C/images/
