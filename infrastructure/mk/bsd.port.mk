@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1056 2010/11/11 12:38:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1057 2010/11/11 19:03:25 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1644,8 +1644,9 @@ ${_PACKAGE_COOKIE${_S}}:
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 .  if ${LIB_DEPENDS${_S}:M?*\:*\:*}
-	@${ECHO_MSG} "WARNING: Old style LIB_DEPENDS:"
+	@${ECHO_MSG} "Error: Old style LIB_DEPENDS:"
 	@${ECHO_MSG} "LIB_DEPENDS${_S} = ${LIB_DEPENDS${_S}}"
+	@exit 1
 .  endif
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
