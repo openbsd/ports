@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/20 13:39:22 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	fully featured mod_perl content management system
 
 VERSION=	7.3.21
 DISTNAME=	webgui-${VERSION}-stable
-PKGNAME=	WebGUI-${VERSION}p0
+PKGNAME=	WebGUI-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.plainblack.com/webgui

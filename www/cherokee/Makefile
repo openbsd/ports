@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/11 12:35:09 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,27 +47,27 @@ MODULES =	lang/python
 BUILD_DEPENDS =	::textproc/py-docutils \
 		::www/php5/core,-fastcgi
 
-LIB_DEPENDS-main =	pcre::devel/pcre
-WANTLIB-main =		c crypto pthread ssl
+LIB_DEPENDS-main =	::devel/pcre
+WANTLIB-main =		c crypto pcre pthread ssl
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::www/spawn-fcgi \
 			::net/rrdtool
 
-LIB_DEPENDS-geoip =	GeoIP.>=6::net/GeoIP
-WANTLIB-geoip =		crypto
+LIB_DEPENDS-geoip =	::net/GeoIP
+WANTLIB-geoip =		crypto GeoIP.>=6
 RUN_DEPENDS-geoip =	::${BASE_PKGPATH}
 
-LIB_DEPENDS-ldap =	lber.>=9,ldap::databases/openldap
-WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 sasl2 ssl
+LIB_DEPENDS-ldap =	::databases/openldap
+WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber.>=9 ldap sasl2 ssl
 RUN_DEPENDS-ldap =	::${BASE_PKGPATH}
 
-LIB_DEPENDS-mysql =	mysqlclient.>=19::databases/mysql
-WANTLIB-mysql =		crypto m ssl z
+LIB_DEPENDS-mysql =	::databases/mysql
+WANTLIB-mysql =		crypto m mysqlclient.>=19 ssl z
 RUN_DEPENDS-mysql =	::${BASE_PKGPATH}
 
-LIB_DEPENDS-streaming =	avutil.>=6,avcodec.>=13,avformat.>=12::graphics/ffmpeg \
-			bz2::archivers/bzip2
-WANTLIB-streaming =	crypto m
+LIB_DEPENDS-streaming =	::graphics/ffmpeg \
+			::archivers/bzip2
+WANTLIB-streaming =	avcodec.>=13 avformat.>=12 avutil.>=6 bz2 crypto m
 RUN_DEPENDS-streaming = ::${BASE_PKGPATH}
 
 USE_LIBTOOL =	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 11:13:39 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	PluggableAuthService plugins that use LDAP
 
 DISTNAME=	LDAPMultiPlugins-1.5
-PKGNAME=	zope-${DISTNAME:L}p2
+PKGNAME=	zope-${DISTNAME:L}
+REVISION=	2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.dataflake.org/software/ldapmultiplugins/

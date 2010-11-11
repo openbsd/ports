@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2010/11/11 12:35:18 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -13,11 +13,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c crypto curses gc.>=3 m pthread ssl z
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gc.>=3::devel/boehm-gc
-WANTLIB=	c crypto curses m pthread ssl z
+LIB_DEPENDS=	::devel/boehm-gc
 
 FLAVORS=	image japanese
 FLAVOR?=
@@ -36,14 +37,15 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 
 USE_GROFF =	Yes
 .if ${FLAVOR:L:Mimage}
-LIB_DEPENDS+=	gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+LIB_DEPENDS+=	::x11/gtk+2
 CONFIGURE_ARGS+=--with-imagelib=gtk2
 DOCS+=		README.img
-WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0 \
-		gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png Xcomposite Xdamage gio-2.0 pixman-1 \
-		pthread-stubs xcb gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
+WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 png Xcomposite Xdamage gio-2.0 pixman-1
+WANTLIB += pthread-stubs xcb gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
+WANTLIB += gdk-x11-2.0.>=1000 gtk-x11-2.0.>=1000
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif

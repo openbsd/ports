@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/03/20 11:58:26 winiger Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	Wiki engine for Zope
 
 DISTNAME=	ZWiki-0.41.0
-PKGNAME=	zope-${DISTNAME:L}p0
+PKGNAME=	zope-${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://zwiki.org/

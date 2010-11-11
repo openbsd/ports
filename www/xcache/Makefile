@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/17 16:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:19 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	fast and stable PHP opcode cacher
 
 VERSION=	1.3.0
 DISTNAME=	xcache-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
 

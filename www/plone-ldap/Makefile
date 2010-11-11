@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	LDAP adapter for Plone
 
 VERSION=	1.0
 DISTNAME=	PloneLDAP-${VERSION}
-PKGNAME=	${DISTNAME:S/Plone/plone-/:L}p0
+PKGNAME=	${DISTNAME:S/Plone/plone-/:L}
+REVISION=	0
 
 CATEGORIES=	www
 HOMEPAGE=	http://plone.org/products/ploneldap

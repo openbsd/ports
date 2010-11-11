@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/11 12:35:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.dev.ecos.de/pub/perl/embperl/
 RUN_DEPENDS=	:mod_perl->=1.22:www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	xml2.>=10::textproc/libxml \
-		xslt.>=3::textproc/libxslt
-WANTLIB=	m z
+LIB_DEPENDS=	::textproc/libxml \
+		::textproc/libxslt
+WANTLIB=	m xml2.>=10 xslt.>=3 z
 
 CONFIGURE_ENV=	EPHTTPD="/usr/sbin/httpd" \
 		APACHE_SRC="/usr/lib/apache" \

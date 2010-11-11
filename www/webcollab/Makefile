@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	collaborative web-based system for project management
 
 V=		1.70
 DISTNAME=	webcollab-${V}
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://webcollab.sourceforge.net/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.10.1.1
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++ z
+WANTLIB =		c execinfo m pcre pcreposix stdc++ z
 
 # This is deliberately not downloaded directly from the author's
 # master site, since although it is GPL code, the author only
@@ -23,8 +23,8 @@ WANTLIB =		c m stdc++ z
 MASTER_SITES =		http://spacehopper.org/mirrors/
 #MASTER_SITES =		http://dansguardian.org/downloads/2/Stable/
 
-LIB_DEPENDS =		pcre.>=1,pcreposix.>=1::devel/pcre \
-			execinfo::devel/libexecinfo
+LIB_DEPENDS =		::devel/pcre \
+			::devel/libexecinfo
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

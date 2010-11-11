@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	web page hit counter for Zope
 
 VERSION=	1.2
 DISTNAME=	FSCounter.${VERSION}
-PKGNAME=	zope-fscounter-${VERSION}p0
+PKGNAME=	zope-fscounter-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/andym/FSCounter/	

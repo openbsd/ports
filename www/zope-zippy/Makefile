@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2008/03/20 11:58:26 winiger Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	insert random 'Zippy the Pinhead' quotes in your documents
 
 # unversioned, so impose a version
 VERSION=	1.0	
 DISTNAME=	Zippy
-PKGNAME=	zope-zippy-${VERSION}p0
+PKGNAME=	zope-zippy-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/michel/Products/Zippy/

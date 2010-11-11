@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	generic form generator for Plone
 
 VERSION=	1.2.4
 DISTNAME=	ploneformgen-${VERSION:S/./-/g}
-PKGNAME=	plone-formgen-${VERSION}p0
+PKGNAME=	plone-formgen-${VERSION}
+REVISION=	0
 
 CATEGORIES=	www
 HOMEPAGE=	http://plone.org/products/ploneformgen

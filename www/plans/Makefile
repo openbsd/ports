@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	powerful and flexible web calendar
 
 V=		6.5.4
 DISTNAME=	plans_${V}
-PKGNAME=	${DISTNAME:S/_/-/}p0
+PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.planscalendar.com/

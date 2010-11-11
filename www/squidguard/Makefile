@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/02/09 13:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:18 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
 DISTNAME =		squidGuard-1.4
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.squidguard.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c pthread
+WANTLIB =		c lib/db4/db pthread
 
 MASTER_SITES =		http://www.squidguard.org/Downloads/
 
@@ -23,7 +23,7 @@ SG_DIR =		/var/db/squidGuard
 CONFIG_DIR =		${SYSCONFDIR}/squidguard
 SUBST_VARS =		SG_DIR CONFIG_DIR
 
-LIB_DEPENDS =		lib/db4/db.>=4:db->=4,<5:databases/db/v4
+LIB_DEPENDS =		:db->=4,<5:databases/db/v4
 RUN_DEPENDS =		::www/squid
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
@@ -46,16 +46,17 @@ FLAVORS =	ldap mysql
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS +=		ldap:openldap-client-*:databases/openldap
+LIB_DEPENDS +=		:openldap-client-*:databases/openldap
+WANTLIB +=		ldap
 CONFIGURE_ARGS +=	--with-ldap=yes
 .else
 CONFIGURE_ARGS +=	--with-ldap=no
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS +=		mysqlclient::databases/mysql
+LIB_DEPENDS +=		::databases/mysql
 CONFIGURE_ARGS +=	--with-mysql=${LOCALBASE}
-WANTLIB +=		z
+WANTLIB +=		mysqlclient z
 .else
 CONFIGURE_ARGS +=	--with-mysql=no
 .endif

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	base HTML library
 
 MODULES=	cpan
 DISTNAME=	HTML-0.6
-PKGNAME=	p5-HTML-Base-0.6p0
+PKGNAME=	p5-HTML-Base-0.6
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

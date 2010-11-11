@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	.zip file importer for Plone
 
 VERSION=	0.9
 DISTNAME=	MassLoader-${VERSION}
-PKGNAME=	plone-${DISTNAME:L}p1
+PKGNAME=	plone-${DISTNAME:L}
+REVISION=	1
 CATEGORIES=	www
 HOMEPAGE=	http://plone.org/products/massloader
 

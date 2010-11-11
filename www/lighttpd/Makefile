@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/11/07 19:13:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2010/11/11 12:35:09 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,10 +18,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ssl z
+WANTLIB=		c crypto lua.>=5.1 m pcre ssl z
 
-LIB_DEPENDS+=	pcre::devel/pcre \
-		lua.>=5.1::lang/lua
+LIB_DEPENDS+=	::devel/pcre \
+		::lang/lua
 RUN_DEPENDS+=	:spawn-fcgi-*:www/spawn-fcgi
 
 USE_LIBTOOL=	Yes

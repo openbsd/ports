@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pthread z
+
+WANTLIB += c pcre pcreposix pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
 EXTRACT_SUFX=	-src.tar.gz
@@ -27,7 +28,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
-LIB_DEPENDS=	pcre,pcreposix::devel/pcre
+LIB_DEPENDS=	::devel/pcre
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \

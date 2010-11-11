@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/30 23:44:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/11 12:35:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GeoIP
+
 MASTER_SITES=	http://pecl.php.net/get/
 EXTRACT_SUFX=	.tgz
 
@@ -25,7 +27,7 @@ AUTOMAKE_VERSION=	1.9
 BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	GeoIP::net/GeoIP
+LIB_DEPENDS=	::net/GeoIP
 RUN_DEPENDS=	:php5-core-*:www/php5/core
 
 CONFIGURE_STYLE=gnu

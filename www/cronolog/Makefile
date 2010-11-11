@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	web log rotation program
 
 DISTNAME=	cronolog-1.6.2
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.cronolog.org/download/
 

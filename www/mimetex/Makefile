@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/02/06 22:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
 DISTNAME=		mimetex-1.65
-PKGNAME=		${DISTNAME}p1
+REVISION=		1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.forkosh.com/mimetex.html

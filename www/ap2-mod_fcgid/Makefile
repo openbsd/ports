@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:09 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		binary compatible alternative to Apache mod_fastcgi
 DISTNAME=		mod_fcgid.2.2
-PKGNAME=		ap2-mod_fcgid-2.2p1
+PKGNAME=		ap2-mod_fcgid-2.2
+REVISION=		1
 
 CATEGORIES=		www
 

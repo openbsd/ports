@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 13:41:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -34,16 +34,15 @@ WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
 WANTLIB += sqlite3 stdc++ tasn1 webkit-1.0 xcb xcb-render xcb-render-util
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z gpg-error
 
 MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:epiphany->=2.30.2:www/epiphany
-LIB_DEPENDS=	gpg-error::security/libgpg-error
+LIB_DEPENDS=	::security/libgpg-error
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

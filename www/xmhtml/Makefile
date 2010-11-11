@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/11 12:35:19 sthen Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
 COMMENT=	Motif widget capable of displaying HTML 3.2 conforming text
 
 DISTNAME=	XmHTML-1.1.7
-PKGNAME=	${DISTNAME:L}p5
+PKGNAME=	${DISTNAME:L}
+REVISION=	5
 CATEGORIES=     www x11
 SHARED_LIBS=	XmHTML	1.2
 

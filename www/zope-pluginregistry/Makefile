@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/25 15:40:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	pluggable architecture for Zope
 
 DISTNAME=	PluginRegistry-1.1.2
-PKGNAME=	zope-${DISTNAME:L}p1
+PKGNAME=	zope-${DISTNAME:L}
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Products/PluginRegistry/

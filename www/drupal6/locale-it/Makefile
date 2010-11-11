@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/26 12:20:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT =	italian translation
 LANG =		it
 EXTRACT_ONLY =
 
 DISTNAME =	${LANG}-6.x-1.4
-PKGNAME =	drupal6-${LANG}-1.4p1
+PKGNAME =	drupal6-${LANG}-1.4
+REVISION =	1
 
 post-extract:
 	mkdir -p ${WRKDIST}

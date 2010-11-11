@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	Apache LDAP authentication module
 
@@ -20,10 +20,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += ldap lber
+
 MODAPACHE_NAME=		auth_ldap
 MODAPACHE_FILE=		${MODAPACHE_LOCATION}/auth_ldap.so
 
-LIB_DEPENDS=	ldap,lber::databases/openldap
+LIB_DEPENDS=	::databases/openldap
 
 NO_REGRESS=	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	weblog system for Zope
 
 V=		1.2
 DISTNAME=	COREBlog${V:S/.//}
-PKGNAME=	zope-coreblog-${V}p0
+PKGNAME=	zope-coreblog-${V}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.coreblog.org/

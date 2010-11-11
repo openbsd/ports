@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/20 11:58:26 winiger Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	Zope product to display RSS files
 
 V=		2-4
 DISTNAME=	RDFSummary-${V}
-PKGNAME=	zope-rdfsummary-${V:S/-/./}p0
+PKGNAME=	zope-rdfsummary-${V:S/-/./}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/EIONET/RDFSummary/

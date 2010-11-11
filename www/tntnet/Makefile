@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:18 sthen Exp $
 
 COMMENT=		modular webapplication server for C++
 
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m pthread ssl stdc++ z
+
+WANTLIB += c crypto cxxtools.>=2 m pthread ssl stdc++ z
 
 MASTER_SITES=		${HOMEPAGE}download/
 
@@ -32,7 +33,7 @@ MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=		c++
 
 BUILD_DEPENDS=		::archivers/zip
-LIB_DEPENDS= 		cxxtools.>=2::devel/cxxtools
+LIB_DEPENDS= 		::devel/cxxtools
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

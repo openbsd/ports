@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	2.6
-REVISION=	0
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -13,15 +13,15 @@ MASTER_SITES =		${HOMEPAGE}downloads/releases/
 
 MODULE =		devel/gettext
 
-LIB_DEPENDS =		hubbub::www/netsurf/hubbub \
-			css::www/netsurf/libcss \
-			nsgif::www/netsurf/libnsgif \
-			nsbmp::www/netsurf/libnsbmp \
-			mng::graphics/libmng \
-			gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-			glade-2.0::devel/libglade2 \
-			rsvg-2::x11/gnome/librsvg \
-			curl::net/curl
+LIB_DEPENDS =		::www/netsurf/hubbub \
+			::www/netsurf/libcss \
+			::www/netsurf/libnsgif \
+			::www/netsurf/libnsbmp \
+			::graphics/libmng \
+			::x11/gtk+2 \
+			::devel/libglade2 \
+			::x11/gnome/librsvg \
+			::net/curl
 
 WANTLIB +=		atk-1.0 cairo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB +=		gthread-2.0 jpeg lcms pango-1.0 pangocairo-1.0
@@ -30,6 +30,8 @@ WANTLIB += 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += 		Xi Xinerama Xrandr Xrender c crypto expat fontconfig
 WANTLIB += 		freetype m pixman-1 pthread pthread-stubs ssl xcb
 WANTLIB +=		xcb-render xcb-render-util z gdk_pixbuf-2.0
+WANTLIB +=		hubbub css nsgif nsbmp mng gdk-x11-2.0 gtk-x11-2.0
+WANTLIB +=		glade-2.0 rsvg-2 curl
 
 WRKDIST =		${WRKDIR}/netsurf
 

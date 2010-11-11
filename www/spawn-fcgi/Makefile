@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/11 12:35:18 sthen Exp $
 
 COMMENT=	spawn FastCGI processes
 
 DISTNAME=	spawn-fcgi-1.6.3
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/
 

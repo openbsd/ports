@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	client application for zope-externaleditor
 
 VERSION=	0.9.3
 DISTNAME=	zopeedit-${VERSION}-src
-PKGNAME=	zopeedit-${VERSION}p0
+PKGNAME=	zopeedit-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://plope.com/software/ExternalEditor

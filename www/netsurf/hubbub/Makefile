@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT =		HTML parser
 
@@ -9,6 +9,7 @@ CATEGORIES =		www
 SHARED_LIBS =		hubbub 0.0 #0.0.2
 
 LIB_DEPENDS =		parserutils::www/netsurf/libparserutils
+WANTLIB =		::www/netsurf/libparserutils
 
 # regress broken - needs an old version of json-c
 # REGRESS_DEPENDS =	::devel/json-c

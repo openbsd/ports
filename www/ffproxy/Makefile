@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	filtering HTTP proxy server
 DISTNAME=	ffproxy-1.6
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://faith.eu.org/ffproxy/
 

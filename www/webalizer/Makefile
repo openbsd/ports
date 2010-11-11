@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	web server log file analysis program
 
 DISTNAME=	webalizer-2.01-10-RB21-src
-PKGNAME=	webalizer-2.01.10p8
+PKGNAME=	webalizer-2.01.10
+REVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
 

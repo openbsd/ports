@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/10 13:07:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	GNOME http client library
 
 DISTNAME=	libghttp-1.0.9
-PKGNAME=	${DISTNAME}p2
+REVISION=	2
 CATEGORIES=	www
 SHARED_LIBS=	ghttp	1.0
 MODGNU_SHARED_LIBS=ghttp ''

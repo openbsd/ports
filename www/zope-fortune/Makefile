@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	insert randomly-selected fortunes in your documents
 
 VERSION=	0.5.2
 DISTNAME=	Fortune-${VERSION}
-PKGNAME=	zope-fortune-${VERSION}p0
+PKGNAME=	zope-fortune-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/lalo/Fortune/

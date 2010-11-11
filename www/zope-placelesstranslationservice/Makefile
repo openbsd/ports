@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/03/20 11:58:26 winiger Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	translation service based on potfiles for Zope
 
 VERSION=	1.2.7
 DISTNAME=	PlacelessTranslationService-${VERSION}
-PKGNAME=	zope-${DISTNAME:L}p0
+PKGNAME=	zope-${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	www
 HOMEPAGE=	http://plone.org/products/pts/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/11 12:35:09 sthen Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -6,29 +6,30 @@ COMMENT=		test-bed browser/authoring tool of the W3C
 
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
-PKGNAME=		amaya-${AMAYA_VERSION}p6
+PKGNAME=		amaya-${AMAYA_VERSION}
+REVISION=		6
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 
 FLAVORS=		motif gtk
 FLAVOR?=		motif
 
-WANTLIB=		ICE SM X11 Xext Xt c expat m pthread-stubs xcb z
-
+WANTLIB += ICE SM X11 Xext Xt c expat m pthread-stubs xcb z
 
 .if ${FLAVOR:L} == "gtk"
 
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 # I'm too lazy to write a proper imlib autoconf test.
-LIB_DEPENDS+=		gdk_imlib.>=19::graphics/imlib
+LIB_DEPENDS+=		::graphics/imlib
 
-WANTLIB+=		Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff
+WANTLIB += Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff gdk_imlib.>=19
 
 .elif ${FLAVOR:L} == "motif"
 
 USE_MOTIF=		any
-LIB_DEPENDS+=		jpeg.>=62::graphics/jpeg \
-			png.>=2::graphics/png 
+WANTLIB += jpeg png
+LIB_DEPENDS+=		::graphics/jpeg \
+			::graphics/png 
 CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-includes=${LOCALBASE}/include \
 			--with-motif-libraries=${LOCALBASE}/lib

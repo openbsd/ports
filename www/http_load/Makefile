@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/20 15:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	multiprocessing HTTP performance testing client
 
 DISTNAME=	http_load-12mar2006
-PKGNAME=	http_load-20060312p0
+PKGNAME=	http_load-20060312
+REVISION=	0
 CATEGORIES=	www benchmarks
 MASTER_SITES=	${HOMEPAGE}
 

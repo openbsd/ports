@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:19 sthen Exp $
 
 COMMENT=	tool to manage groups of users within Zope
 
 DISTNAME=	GroupUserFolder-3.2
-PKGNAME=	zope-${DISTNAME:L}p0
+PKGNAME=	zope-${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://ingeniweb.sourceforge.net/Products/GroupUserFolder/

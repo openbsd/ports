@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/26 17:45:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
@@ -18,11 +18,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+WANTLIB += lber ldap
+
 MODAPACHE_NAME=		ldapvhost
 
 NO_REGRESS=		Yes
 
-LIB_DEPENDS=		ldap,lber::databases/openldap
+LIB_DEPENDS=		::databases/openldap
 
 do-build:
 	(cd ${WRKBUILD}; make)

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/11 12:35:09 sthen Exp $
 
 BROKEN-alpha=	Alpha architecture not yet supported
 
 COMMENT=	C library to parse CGI Forms
 
 DISTNAME=	cgiparse-0.9b
-PKGNAME=	${DISTNAME}p0
+REVISION=	0
 CATEGORIES=	www
 SHARED_LIBS=	cgiparse	1.0
 

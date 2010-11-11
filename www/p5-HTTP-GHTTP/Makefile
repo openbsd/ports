@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/11 12:35:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	ghttp.>=1::www/libghttp
+WANTLIB += ghttp.>=1
+
+LIB_DEPENDS=	::www/libghttp
 
 .include <bsd.port.mk>

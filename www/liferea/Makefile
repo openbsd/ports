@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/11 12:35:09 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,20 +27,22 @@ WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-x11-2.0 icudata icui18n icuuc jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sqlite3 stdc++ tasn1 xcb xml2 z
+WANTLIB += gnutls.>=12 lua.>=5 notify.>=2 xslt.>=3.3 glade-2.0
+WANTLIB += soup-2.4 enchant.>=6 webkit-1.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
 MODULES=		devel/gettext \
 			textproc/intltool \
 			devel/gconf2
-LIB_DEPENDS=		gnutls.>=12::security/gnutls \
-			lua.>=5::lang/lua \
-			notify.>=2::devel/libnotify \
-			xslt.>=3.3::textproc/libxslt \
-			glade-2.0.::devel/libglade2 \
-			soup-2.4::devel/libsoup,-main \
-			enchant.>=6::textproc/enchant \
-			webkit-1.0::www/webkit
+LIB_DEPENDS=		::security/gnutls \
+			::lang/lua \
+			::devel/libnotify \
+			::textproc/libxslt \
+			::devel/libglade2 \
+			::devel/libsoup,-main \
+			::textproc/enchant \
+			::www/webkit
 
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme

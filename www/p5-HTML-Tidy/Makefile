@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:14 sthen Exp $
 
 COMMENT=	(X)HTML validation in a Perl object
 SHARED_ONLY=	Yes
@@ -17,7 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tidy::www/tidy
+WANTLIB += tidy
+
+LIB_DEPENDS=	::www/tidy
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.35.1
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 CATEGORIES =		www
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cntlm/}
 HOMEPAGE =		http://cntlm.sourceforge.net/

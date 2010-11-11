@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/14 21:09:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	html editor designed for the experienced web designer
 
 DISTNAME=	august0.63b.src
-PKGNAME=	august-0.63bp0
+PKGNAME=	august-0.63b
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.bostream.nu/johanb/august/

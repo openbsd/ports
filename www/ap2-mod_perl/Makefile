@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/11 12:35:09 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -7,7 +7,7 @@ PKGNAME=	ap2-${DISTNAME}
 REVISION=	3
 CATEGORIES=	www net
 
-WANTLIB=	c m perl util db expat
+WANTLIB=	c m perl util db expat apr-1 aprutil-1
 MODULES=	cpan converters/libiconv
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN:=Apache/}
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 SHARED_ONLY=		Yes
 
 CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2
-USE_GROFF =	Yes
-LIB_DEPENDS=		apr-1::devel/apr \
-			aprutil-1::devel/apr-util
+USE_GROFF =		Yes
+LIB_DEPENDS=		::devel/apr \
+			::devel/apr-util
 RUN_DEPENDS=		::www/apache-httpd
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			:p5-Apache-Test->=1.29:www/p5-Apache-Test
