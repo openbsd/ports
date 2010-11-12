@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2010/05/09 21:57:09 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/12 13:20:28 jasper Exp $
+
+BROKEN-amd64=	build hangs due threading?
 
 COMMENT=	.NET build tool inspired by Ant
 
