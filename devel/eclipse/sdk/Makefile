@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/08 18:18:11 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/11/12 21:32:17 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -46,12 +46,7 @@ PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\
-	http://ftp.osuosl.org/pub/eclipse/eclipse/downloads/drops/ \
-	http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/ \
-	ftp://eclipse.mirrors.tds.net/pub/eclipse.org/eclipse/downloads/drops/ \
-	http://eclipse.objectweb.org/downloads/drops/ \
-	http://mirror.pacific.net.au/eclipse/eclipse/downloads/drops/ \
-	http://download2.eclipse.org/eclipse/downloads/drops/
+	http://archive.eclipse.org/eclipse/downloads/drops/
  
 MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.2.2-200702121330/}
 EXTRACT_SUFX=		.zip
