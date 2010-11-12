@@ -1,0 +1,41 @@
+$OpenBSD: patch-argus_argus_c,v 1.1 2010/11/12 21:03:45 steven Exp $
+--- argus/argus.c.orig	Tue Nov 10 16:43:21 2009
++++ argus/argus.c	Fri Nov 12 21:14:47 2010
+@@ -243,6 +243,7 @@ main (int argc, char *argv[])
+    uflag = 0;
+    pflag = 6;
+ 
++   ArgusProgramName = argv[0];
+    
+    if (strchr (argv[0], '/')) {
+ #if defined(HAVE_STRLCPY)
+@@ -251,10 +252,9 @@ main (int argc, char *argv[])
+       bzero(path, MAXPATHNAMELEN);
+       strncpy(path, argv[0], MAXPATHNAMELEN - 1);
+ #endif
+-      argv[0] = strrchr(argv[0], '/') + 1;
++      ArgusProgramName = strrchr(argv[0], '/') + 1;
+    }
+ 
+-   ArgusProgramName = argv[0];
+ 
+ #ifdef ARGUS_SYSLOG
+ #ifndef LOG_PERROR
+@@ -318,7 +318,7 @@ main (int argc, char *argv[])
+    setArgusMarReportInterval (ArgusOutputTask,ARGUS_MARSTATUSTIMER);
+ 
+    if (!doconf) {
+-      snprintf (path, MAXPATHNAMELEN - 1, "/etc/argus.conf");
++      snprintf (path, MAXPATHNAMELEN - 1, SYSCONFDIR "/argus.conf");
+       if (stat (path, &statbuf) == 0) {
+          ArgusParseResourceFile (ArgusModel, path);
+       }
+@@ -556,7 +556,7 @@ main (int argc, char *argv[])
+       ArgusLog(LOG_WARNING, "started");
+ 
+    if (daemonflag) {
+-      if (getArguspidflag() && ((ArgusPidFile = ArgusCreatePIDFile (ArgusSourceTask, ArgusPidPath, argv[0])) == NULL))
++      if (getArguspidflag() && ((ArgusPidFile = ArgusCreatePIDFile (ArgusSourceTask, ArgusPidPath, ArgusProgramName)) == NULL))
+          ArgusLog (LOG_ERR, "daemon cannot create pid file");
+    }
+ 

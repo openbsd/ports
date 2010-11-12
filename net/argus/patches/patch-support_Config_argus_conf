@@ -1,4 +1,4 @@
-$OpenBSD: patch-support_Config_argus_conf,v 1.1 2010/11/11 19:33:27 steven Exp $
+$OpenBSD: patch-support_Config_argus_conf,v 1.2 2010/11/12 21:03:45 steven Exp $
 --- support/Config/argus.conf.orig	Mon Oct  5 17:22:30 2009
 +++ support/Config/argus.conf	Thu Nov 11 12:01:58 2010
 @@ -137,12 +137,12 @@ ARGUS_ACCESS_PORT=561
@@ -39,7 +39,7 @@ $OpenBSD: patch-support_Config_argus_conf,v 1.1 2010/11/11 19:33:27 steven Exp $
  #
  
 -#ARGUS_OUTPUT_FILE=/var/log/argus/argus.out
-+ARGUS_OUTPUT_FILE=/var/log/argus/argus.out
++ARGUS_OUTPUT_FILE=/var/argus/argus.out
  
  
  # When Argus is configured to run as a daemon, with the -d
