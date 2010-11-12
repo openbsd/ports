@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/12 16:26:01 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-0.1.16.1
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://gphoto.sourceforge.net/proj/gtkam/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
