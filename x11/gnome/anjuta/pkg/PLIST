@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 07:37:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/11/12 15:05:17 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -173,7 +173,6 @@ lib/anjuta/libanjuta-language-vala.la
 lib/anjuta/libanjuta-language-vala.so
 @comment lib/anjuta/libanjuta-loader.la
 lib/anjuta/libanjuta-loader.so
-@comment lib/anjuta/libanjuta-macro.la
 @comment lib/anjuta/libanjuta-message-view.la
 lib/anjuta/libanjuta-message-view.so
 @comment lib/anjuta/libanjuta-patch.la

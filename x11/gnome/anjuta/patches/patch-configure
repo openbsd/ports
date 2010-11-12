@@ -1,25 +1,25 @@
-$OpenBSD: patch-configure,v 1.1 2010/09/30 07:37:46 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2010/11/12 15:05:17 ajacoutot Exp $
 
 Be sure to pickup the right Python.
 
---- configure.orig	Mon Sep 27 20:01:54 2010
-+++ configure	Wed Sep 29 09:44:33 2010
-@@ -3015,14 +3015,6 @@ echo timestamp > conftest.file
+--- configure.orig	Fri Nov 12 14:54:47 2010
++++ configure	Fri Nov 12 15:16:18 2010
+@@ -2878,14 +2878,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -16304,7 +16296,7 @@ fi
+@@ -16063,7 +16055,7 @@ fi
  
          # Find any Python interpreter.
      if test -z "$PYTHON"; then

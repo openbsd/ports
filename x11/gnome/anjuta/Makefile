@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/12 15:05:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		2.32.0.0
-REVISION=	0
+GNOME_VERSION=		2.32.1.0
 
 SHARED_LIBS +=  anjuta-foocanvas     0.0      # 0.0
 SHARED_LIBS +=  anjuta               0.0      # 0.0
@@ -39,13 +38,13 @@ WANTLIB += jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0 gdl-1
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++ vte
 WANTLIB += tasn1 unique-1.0 util webkit-1.0 wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util xml2 xslt z
-WANTLIB += gstapp-0.10 gladeui-1 gtksourceview-2.0 eggdbus-1
+WANTLIB += xcb-aux xcb-event xcb-render xml2 xslt z
+WANTLIB += gstapp-0.10 gladeui-1 gtksourceview-2.0
 WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1
 WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1 cdt
 WANTLIB += vala-0.10 gda-4.0 ltdl gnome-keyring gvc graph pathplan
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB} GL Xxf86vm drm icudata icuuc xcb-shm
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 			::devel/p5-Locale-gettext
