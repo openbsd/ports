@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/10/28 22:34:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/11/12 14:43:13 jasper Exp $
 @pkgpath emulators/qemu,kqemu
 @bin bin/qemu
 @bin bin/qemu-img
@@ -22,8 +22,8 @@
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
 @man man/man8/qemu-nbd.8
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
-share/doc/qemu/README.OpenBSD
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-tech.html
 share/examples/qemu/
