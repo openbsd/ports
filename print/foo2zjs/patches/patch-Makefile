@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.9 2010/08/22 06:58:14 ajacoutot Exp $
---- Makefile.orig	Tue Aug 17 17:14:59 2010
-+++ Makefile	Sun Aug 22 08:41:51 2010
+$OpenBSD: patch-Makefile,v 1.10 2010/11/12 16:06:33 ajacoutot Exp $
+--- Makefile.orig	Fri Nov 12 13:05:04 2010
++++ Makefile	Fri Nov 12 17:01:51 2010
 @@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -157,7 +157,7 @@ $OpenBSD: patch-Makefile,v 1.9 2010/08/22 06:58:14 ajacoutot Exp $
  	    rm -f $(LOCALMODEL)/KonicaMinolta*; \
  	    cd PPD; \
  	    for ppd in *.ppd; do \
-@@ -1313,11 +1260,8 @@ install-doc: doc
+@@ -1314,11 +1261,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)
