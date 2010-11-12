@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/28 12:04:50 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/12 09:08:02 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.12
 FFX_VERSION =		3.6.12
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 DISTNAME =		firefox-${FFX_VERSION}.source
+REVISION-main =	0
 
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
