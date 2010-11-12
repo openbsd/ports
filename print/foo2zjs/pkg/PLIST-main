@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/08/22 06:58:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/11/12 07:02:24 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
@@ -65,6 +65,7 @@ share/doc/foo2zjs/README
 share/doc/foo2zjs/getweb
 share/doc/foo2zjs/manual.pdf
 share/doc/foo2zjs/msexpand
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/foo2hiperc/
 share/foo2hiperc/icm/
 share/foo2hp/

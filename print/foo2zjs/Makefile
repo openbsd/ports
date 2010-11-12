@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/12 07:02:24 ajacoutot Exp $
 
 COMMENT-main=	driver for ZjStream wire protocol compatible printers
 COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
@@ -8,6 +8,8 @@ DISTNAME=	foo2zjs-${VERSION}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-cups=	foo2zjs-cup-${VERSION}
+
+REVISION-main=	0
 
 CATEGORIES=	print
 
