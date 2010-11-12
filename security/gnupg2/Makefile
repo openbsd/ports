@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/12 11:58:36 dcoppa Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
 DISTNAME = 	gnupg-2.0.16
+REVISION =	0
 CATEGORIES = 	security
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -14,36 +15,26 @@ MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
 		ftp://pgp.iijlab.net/pub/pgp/gnupg/ \
 		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
 
-
 HOMEPAGE = 	http://www.gnupg.org/
 
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
+
+WANTLIB +=		assuan bz2 c crypto curl gcrypt gpg-error
+WANTLIB +=		idn ksba pth readline ssl termcap usb z
 
 EXTRACT_SUFX = 		.tar.bz2
 
 MODULES = 		devel/gettext
 
-WANTLIB = 		c crypto z readline ssl termcap gpg-error idn
-
 FLAVORS = 		ldap
 FLAVOR ?=
-USE_GROFF =		Yes
 
-.if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		::databases/openldap
-WANTLIB +=		ldap.>=8
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
-WANTLIB +=		usb bz2 assuan gcrypt ksba curl.>=6 pth
 LIB_DEPENDS = 		::devel/libusb \
 			::archivers/bzip2 \
 			::security/libassuan \
@@ -52,19 +43,28 @@ LIB_DEPENDS = 		::devel/libusb \
 			::net/curl \
 			::devel/pth
 
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS +=	--enable-ldap
+WANTLIB +=		ldap
+LIB_DEPENDS +=		::databases/openldap
+.else
+CONFIGURE_ARGS +=	--disable-ldap
+.endif
+
 RUN_DEPENDS = 		::security/pinentry
 
 # gpg-agent must be installed to run the regress tests
-REGRESS_DEPENDS = 	${PKGNAME}::${BUILD_PKGPATH}
+REGRESS_DEPENDS = 	:${PKGNAME}:${BUILD_PKGPATH}
 
 USE_GMAKE = 		Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" 
 CONFIGURE_ARGS = 	docdir=${LOCALBASE}/share/doc/gnupg2
 
-# Avoid conflit with gnupg-1.x
+# Avoid conflict with gnupg-1.x
 post-install:
 	@mv ${PREFIX}/man/man1/gpg-zip.1 ${PREFIX}/man/man1/gpg2-zip.1
 

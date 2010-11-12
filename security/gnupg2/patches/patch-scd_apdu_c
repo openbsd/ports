@@ -1,0 +1,29 @@
+$OpenBSD: patch-scd_apdu_c,v 1.1 2010/11/12 11:58:36 dcoppa Exp $
+
+The pcsc backend does not work due to problems with our current
+threading implementation: one has to use a card reader supported
+by GnuPG's internal CCID driver.
+
+--- scd/apdu.c.orig	Wed Mar 17 13:11:30 2010
++++ scd/apdu.c	Fri Nov 12 08:30:02 2010
+@@ -66,7 +66,8 @@
+ /* Due to conflicting use of threading libraries we usually can't link
+    against libpcsclite.   Instead we use a wrapper program.  */
+ #ifdef USE_GNU_PTH
+-#if !defined(HAVE_W32_SYSTEM) && !defined(__CYGWIN__)
++/* XXX */
++#if !defined(HAVE_W32_SYSTEM) && !defined(__CYGWIN__) && !defined(__OpenBSD__)
+ #define NEED_PCSC_WRAPPER 1
+ #endif
+ #endif
+@@ -2388,6 +2389,10 @@ apdu_open_reader (const char *portstr, int *r_no_servi
+   /* No ctAPI configured, so lets try the PC/SC API */
+   if (!pcsc_api_loaded)
+     {
++      /* XXX */
++#ifdef __OpenBSD__
++      return -1;
++#endif
+ #ifndef NEED_PCSC_WRAPPER
+       void *handle;
+ 
