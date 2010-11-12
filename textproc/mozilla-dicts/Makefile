@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:18:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/12 21:41:34 martynas Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 
 PKG_ARCH=	*
 
-V=		1.2
+V=		1.3
 NAME=		mozilla-dicts
 PKGNAME=	${NAME}-${V}
-REVISION=	0
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	https://addons.mozilla.org/firefox/browse/type:3
+HOMEPAGE=	https://addons.mozilla.org/language-tools/
 
 MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
@@ -22,13 +21,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://openbsddistfiles.com/martynas/mozilla/dicts/${V}/
+MASTER_SITES=	http://spacehopper.org/martynas/mozilla/dicts/${V}/
 
-LANGUAGES=	af ar be bg ca cs cy-GB da de-AT de-CH de-DE el-EN \
-		el en-AU en-CA en-GB en-ZA eo es-AR es-ES et eu fr \
-		fy-NL ga-IE gl he hr hsb hu id is it ku la lt lv \
-		nb-NO nl nn-NO pl pt-BR pt-PT ro ru sk sl sq sr \
-		sv-SE uk
+LANGUAGES=	af ak am-ET ar az-IR be bg bn-BD ca-valencia ca cs \
+		csb cy-GB da de-AT de-CH de-DE dsb el en-AU en-CA \
+		en-GB en-ZA eo es-AR es-MX es-VE es-es et eu fa \
+		fo-FO fr fur-IT fy-NL ga-IE gl gu-IN he hi-IN hr-HR \
+		hr hsb hu id is it ku la lb-LU lt lv mg-MG mi mn \
+		nb-NO ne-NP nl nn-NO nr nso ny-MW oc or-IN pa-IN \
+		pl pt-BR pt-PT ro ru sk-SK sl sq sr ss st sv-SE \
+		sw-TZ ta tn ts uk ur ve vi xh yi zu
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 

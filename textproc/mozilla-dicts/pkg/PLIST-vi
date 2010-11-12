@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-vi,v 1.1 2010/11/12 21:41:35 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/vi-x-New.aff
+share/mozilla-dicts/vi-x-New.dic
+share/mozilla-dicts/vi-x-Old.aff
+share/mozilla-dicts/vi-x-Old.dic

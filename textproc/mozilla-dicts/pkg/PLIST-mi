@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-mi,v 1.1 2010/11/12 21:41:35 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/mi-x-Tai Tokerau.aff
+share/mozilla-dicts/mi-x-Tai Tokerau.dic
+share/mozilla-dicts/mi.aff
+share/mozilla-dicts/mi.dic
