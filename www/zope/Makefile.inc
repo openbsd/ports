@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/11/12 14:35:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,11 +41,8 @@ pre-configure:
 	@perl -pi -e 's,%%ZOPEPRODUCTSDIR%%,${ZOPEPRODUCTSDIR},g;' \
 		-e 's,%%ZOPEUSER%%,${ZOPEUSER},g' \
 			${WRKSRC}/skel/etc/zope.conf.in
-	@sed -e 's,%%ZOPEHOME%%,${ZOPEHOME},g' \
-		< ${FILESDIR}/README.OpenBSD > ${WRKSRC}/README.OpenBSD
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${ZOPEHOME}/doc
 	@find ${WRKINST} -type f -exec chmod 755 {} \;
 
 do-regress: fake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2008/03/20 11:37:47 winiger Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/12 14:35:23 jasper Exp $
 @pkgpath www/zope-btreefolder2
 @newgroup _zope:534
 @newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
@@ -42,7 +42,6 @@ lib/zope/doc/FAQ.txt
 lib/zope/doc/HELPSYS.txt
 lib/zope/doc/HISTORY.txt
 lib/zope/doc/INSTALL.txt
-lib/zope/doc/README.OpenBSD
 lib/zope/doc/RESTRUCTUREDSTEXT.txt
 lib/zope/doc/SECURITY.txt
 lib/zope/doc/SETUID.txt
@@ -9911,4 +9910,5 @@ lib/zope/skel/log/
 lib/zope/skel/log/README.txt
 lib/zope/skel/var/
 lib/zope/skel/var/README.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 %%SHARED%%
