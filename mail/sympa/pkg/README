@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/12 16:10:17 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/12 16:17:36 ajacoutot Exp $
 
 SYMPA is now installed, and sample configuration files were created in
 ${SYSCONFDIR}/sympa.conf and ${SYSCONFDIR}/wwsympa.conf
@@ -74,8 +74,8 @@ define(`ALIAS_FILE', `/etc/mail/aliases,${SYMPA_HOME}/sympa_aliases')dnl
 
 If you're using postfix, edit main.cf and set :
 
-alias_database = hash:${SYSCONFDIR}/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
-alias_maps = hash:${SYSCONFDIR}/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
+alias_database = hash:/etc/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
+alias_maps = hash:/etc/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
 
 Security considerations
 =======================

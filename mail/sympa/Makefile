@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/12 16:10:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/12 16:17:36 ajacoutot Exp $
 
 COMMENT =	mailing list manager with web interface
 
 DISTNAME =	sympa-6.0.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	mail www
 
 HOMEPAGE =	http://www.sympa.org
