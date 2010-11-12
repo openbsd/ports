@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 21:08:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/12 16:10:17 jasper Exp $
 
 COMMENT =	mailing list manager with web interface
 
 DISTNAME =	sympa-6.0.1
-PKGNAME =	${DISTNAME}p0
+REVISION =	1
 CATEGORIES =	mail www
 
 HOMEPAGE =	http://www.sympa.org
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/distribution/
+MASTER_SITES =		${HOMEPAGE}/distribution/ \
+			http://distfiles.nl/
 
 MODULES =	perl
 USE_GMAKE =	Yes
@@ -83,8 +84,5 @@ post-install:
 		${PREFIX}/sbin/sympa_wizard.pl --create sympa.conf \
 		--target ${PREFIX}/share/examples/sympa/sympa.conf
 	mv ${PREFIX}/bin/create_db.* ${PREFIX}/share/examples/sympa/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sympa/
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/sympa/README.OpenBSD
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/sympa
 
 .include <bsd.port.mk>

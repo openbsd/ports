@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/12 16:10:17 jasper Exp $
+
 SYMPA is now installed, and sample configuration files were created in
 ${SYSCONFDIR}/sympa.conf and ${SYSCONFDIR}/wwsympa.conf
 

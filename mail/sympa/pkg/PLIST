@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/27 11:49:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/12 16:10:17 jasper Exp $
 @newgroup _sympa:648
 @newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
 bin/arc2webarc.pl
@@ -92,8 +92,7 @@ sbin/sympa
 sbin/sympa.pl
 sbin/sympa_wizard.pl
 sbin/task_manager.pl
-share/doc/sympa/
-share/doc/sympa/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/sympa/
 share/examples/sympa/create_db.Oracle
 share/examples/sympa/create_db.Pg
