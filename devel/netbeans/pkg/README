@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/12 12:26:16 jasper Exp $
+
 NetBeans 6.8 on OpenBSD
 =======================
 
@@ -11,7 +13,7 @@ as this dependency is optional.
 If you have Firefox 3.5 on your system you may want to set up the
 following symbolic link:
 
-ln -s /usr/local/bin/firefox35 /usr/local/bin/firefox
+ln -s ${LOCALBASE}/bin/firefox35 ${LOCALBASE}/bin/firefox
 
 You can also customize this setting within the IDE by going to
 Tools> Options> General> Web Browser.
@@ -35,4 +37,3 @@ will likely not work:
 - cnd
 - dlight
 - ruby
-

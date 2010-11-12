@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/07/09 07:34:07 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/12 12:26:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		NetBeans Java IDE
 
-V=			6.9
+V=			6.9.1
 DISTNAME=		netbeans-${V}
 CATEGORIES=		java devel
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
-EXTRACT_SUFX=		-201006101454-ml.zip
+EXTRACT_SUFX=		-201007282301-ml.zip
 
 MODULES=		java
 MODJAVA_VER=		1.6+
@@ -50,7 +50,6 @@ do-install:
 		${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans
 	@chmod ${BINMODE} ${PREFIX}/bin/netbeans
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${NB}
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
 		${FILESDIR}/netbeans.desktop \
