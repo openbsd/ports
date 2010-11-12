@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/12 14:08:46 jasper Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.8.6
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://libtorrent.rakshasa.no/
@@ -29,16 +30,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-debug
 
-post-build:
-	@sed -e 's,@TRUEPREFIX@,${TRUEPREFIX},g' \
-		< ${FILESDIR}/README.OpenBSD \
-		> ${WRKBUILD}/README.OpenBSD
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtorrent
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rtorrent
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-		${PREFIX}/share/doc/rtorrent/README.OpenBSD
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc \
 		${PREFIX}/share/examples/rtorrent/rtorrent.rc
 
