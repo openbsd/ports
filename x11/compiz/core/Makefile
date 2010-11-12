@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/12 14:22:13 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS =	decoration	0.0
 
@@ -62,10 +62,5 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --disable-kconfig
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/compiz
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-	  ${PREFIX}/share/doc/compiz
 
 .include <bsd.port.mk>

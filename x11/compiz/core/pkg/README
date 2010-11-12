@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/09/01 01:49:14 fgsch Exp $
+$OpenBSD: README,v 1.1 2010/11/12 14:22:13 jasper Exp $
 
 At this point, only core functionality is provided. In particular,
 there is no configuration GUI, so use:
