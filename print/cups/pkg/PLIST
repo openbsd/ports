@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/10/28 15:12:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/11/12 07:09:00 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -122,7 +122,6 @@ libexec/cups/notifier/
 @man man/man5/printers.conf.5
 @man man/man5/subscriptions.conf.5
 @man man/man7/backend.7
-@man man/man7/drv.7
 @man man/man7/filter.7
 @man man/man7/notifier.7
 @man man/man8/accept.8
@@ -921,7 +920,6 @@ share/doc/cups/help/man-cupsd.html
 share/doc/cups/help/man-cupsenable.html
 share/doc/cups/help/man-cupstestdsc.html
 share/doc/cups/help/man-cupstestppd.html
-share/doc/cups/help/man-drv.html
 share/doc/cups/help/man-filter.html
 share/doc/cups/help/man-lp.html
 share/doc/cups/help/man-lpadmin.html
@@ -986,6 +984,7 @@ share/doc/cups/images/cups-icon.png
 share/doc/cups/images/cups-postscript-chain.png
 share/doc/cups/images/cups-raster-chain.png
 share/doc/cups/images/cups.png
+share/doc/cups/images/generic.png
 share/doc/cups/images/left.gif
 share/doc/cups/images/raster.png
 share/doc/cups/images/right.gif

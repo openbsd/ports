@@ -1,7 +1,7 @@
-$OpenBSD: patch-systemv_lpadmin_c,v 1.5 2010/03/31 16:20:02 ajacoutot Exp $
---- systemv/lpadmin.c.orig	Tue Feb 17 00:57:08 2009
-+++ systemv/lpadmin.c	Sun Aug 30 15:14:02 2009
-@@ -1952,14 +1952,14 @@ set_printer_options(
+$OpenBSD: patch-systemv_lpadmin_c,v 1.6 2010/11/12 07:09:00 ajacoutot Exp $
+--- systemv/lpadmin.c.orig	Fri Aug 13 03:34:04 2010
++++ systemv/lpadmin.c	Fri Nov 12 07:31:19 2010
+@@ -1367,14 +1367,14 @@ set_printer_options(
  static int				/* O - 0 if name is no good, 1 if name is good */
  validate_name(const char *name)		/* I - Name to check */
  {
@@ -18,7 +18,7 @@ $OpenBSD: patch-systemv_lpadmin_c,v 1.5 2010/03/31 16:20:02 ajacoutot Exp $
      if (*ptr == '@')
        break;
      else if ((*ptr >= 0 && *ptr <= ' ') || *ptr == 127 || *ptr == '/' ||
-@@ -1970,7 +1970,7 @@ validate_name(const char *name)		/* I - Name to check 
+@@ -1385,7 +1385,7 @@ validate_name(const char *name)		/* I - Name to check 
    * All the characters are good; validate the length, too...
    */
  

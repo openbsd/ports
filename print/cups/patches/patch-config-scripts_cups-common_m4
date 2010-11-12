@@ -1,9 +1,9 @@
-$OpenBSD: patch-config-scripts_cups-common_m4,v 1.3 2010/07/02 07:52:08 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.4 2010/11/12 07:09:00 ajacoutot Exp $
 
 STR #3447: dbus notifier no longer builds
 
---- config-scripts/cups-common.m4.orig	Thu Jun 17 20:25:43 2010
-+++ config-scripts/cups-common.m4	Fri Jul  2 09:19:02 2010
+--- config-scripts/cups-common.m4.orig	Thu Nov 11 21:11:32 2010
++++ config-scripts/cups-common.m4	Fri Nov 12 07:31:19 2010
 @@ -130,7 +130,6 @@ AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
  AC_CHECK_HEADER(usersec.h,AC_DEFINE(HAVE_USERSEC_H))
  AC_CHECK_HEADER(sys/ioctl.h,AC_DEFINE(HAVE_SYS_IOCTL_H))
@@ -11,8 +11,8 @@ STR #3447: dbus notifier no longer builds
 -AC_CHECK_HEADER(sys/ucred.h,AC_DEFINE(HAVE_SYS_UCRED_H))
  AC_CHECK_HEADER(scsi/sg.h,AC_DEFINE(HAVE_SCSI_SG_H))
  
- dnl Checks for string functions.
-@@ -276,6 +275,8 @@ if test "x$enable_dbus" != xno; then
+ dnl Checks for statfs and its many headers...
+@@ -283,6 +282,8 @@ if test "x$enable_dbus" != xno; then
  				dbus_message_iter_init_append,
  				AC_DEFINE(HAVE_DBUS_MESSAGE_ITER_INIT_APPEND),,
  				`$PKGCONFIG --libs dbus-1`)
