@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/12 15:04:51 jasper Exp $
 
 COMMENT=		PPTP Server
 
 V=			1.3.4
 DISTNAME=		pptpd-$V
 PKGNAME=		poptop-$V
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.poptop.org/
@@ -32,7 +32,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/poptop
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
 		${PREFIX}/share/examples/poptop/pptpd.conf-sample
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/poptop/
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/poptop/
 
 .include <bsd.port.mk>
