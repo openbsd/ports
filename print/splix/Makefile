@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/12 13:54:58 jasper Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-REVISION =	4
+REVISION =	5
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2
@@ -35,12 +35,5 @@ MAKE_FLAGS=	V=1 \
 		MAKE=${MAKE_PROGRAM} \
 		CXX=${CXX} \
 		OPTIM_CXXFLAGS="${CXXFLAGS}"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/splix
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/splix/README.OpenBSD
-	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/splix/README.OpenBSD
 
 .include <bsd.port.mk>

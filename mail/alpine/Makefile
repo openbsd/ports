@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/23 19:41:47 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/12 13:54:47 jasper Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -18,7 +18,7 @@ PKGNAME-main=	alpine-${V}
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-pico=	1
 REVISION-pilot=	3
 
@@ -85,7 +85,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt \
 		${WRKSRC}/doc/mailcap.unx \
 		${WRKSRC}/doc/mime.types \
-		${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/alpine
 
 .include <bsd.port.mk>

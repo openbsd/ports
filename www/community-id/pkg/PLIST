@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/06 14:56:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/12 13:54:28 jasper Exp $
 communityid/
 communityid/Acl.php
 communityid/Application.php
@@ -7,7 +7,6 @@ communityid/CHANGELOG
 communityid/CONTRIBUTORS
 communityid/INSTALL
 communityid/README
-communityid/README.OpenBSD
 communityid/bootstrap.php
 communityid/communityid.conf.dist
 @sample /var/www/conf/modules.sample/communityid.conf
@@ -4818,3 +4817,5 @@ communityid/webdir/styles/style.css
 @unexec-delete rm -f %D/communityid/webdir/captchas/*
 @unexec-delete rm -f %D/conf/modules/communityid.conf
 @unexec-delete rm -f /var/www/htdocs/openid
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

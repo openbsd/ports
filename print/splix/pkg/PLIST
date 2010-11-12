@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/22 16:40:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/12 13:54:58 jasper Exp $
 @bin libexec/cups/filter/pstoqpdl
 @bin libexec/cups/filter/rastertoqpdl
 share/cups/model/dell/
@@ -139,5 +139,4 @@ share/cups/model/xerox/ph6110pt.ppd
 share/cups/model/xerox/wc3119.ppd
 share/cups/model/xerox/wc3119fr.ppd
 share/cups/model/xerox/wc3119pt.ppd
-share/doc/splix/
-share/doc/splix/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
