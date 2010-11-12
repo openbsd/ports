@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_mbdump_c,v 1.1 2010/10/29 09:26:58 ajacoutot Exp $
---- imap/mbdump.c.orig	Sat Oct 23 12:49:41 2010
-+++ imap/mbdump.c	Sat Oct 23 12:49:56 2010
-@@ -141,7 +141,7 @@ static int dump_annotations(const char *mailbox __attr
+$OpenBSD: patch-imap_mbdump_c,v 1.2 2010/11/12 06:26:40 ajacoutot Exp $
+--- imap/mbdump.c.orig	Thu Nov 11 23:15:33 2010
++++ imap/mbdump.c	Fri Nov 12 07:12:58 2010
+@@ -368,7 +368,7 @@ static int dump_annotations(const char *mailbox __attr
  		" {" SIZE_T_FMT "%s}\r\n%s)",
  		ename_size, (!ctx->tag ? "+" : ""),
  		userid, entry,
