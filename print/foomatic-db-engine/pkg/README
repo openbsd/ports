@@ -1,3 +1,8 @@
+$OpenBSD: README,v 1.1 2010/11/13 09:48:42 ajacoutot Exp $
+
+Using foomatic-db-engine under OpenBSD
+======================================
+
 PPD files can be generated using foomatic-ppdfile(1) as in the following
 example for an Epson Stylus C64:
 
