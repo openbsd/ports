@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/25 23:45:05 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/13 07:31:59 ajacoutot Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_6_4
 PKGNAME=	openfire-3.6.4
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
@@ -49,10 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/docs/*-guide.html \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA} ${WRKSRC}/documentation/docs/database.html \
-		${PREFIX}/share/doc/openfire
-	@sed -e "s|__PREFIX__|${TRUEPREFIX}|g" ${FILESDIR}/README.OpenBSD > \
-		${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
 	${INSTALL_DATA} ${WRKSRC}/target/openfire/conf/openfire.xml \

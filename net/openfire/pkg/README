@@ -1,14 +1,17 @@
+$OpenBSD: README,v 1.1 2010/11/13 07:31:59 ajacoutot Exp $
+
 Using openfire in an OpenBSD environment
+========================================
 
 1) openfire requires a database.  If you intend on using the embedded
    (HSQLDB) database you may skip to step #2.  If you intend on using
    MySQL or PostgreSQL, instructions are available at:
 
-    __PREFIX__/share/doc/openfire/database.html
+    ${TRUEPREFIX}/share/doc/openfire/database.html
 
 2) openfire may be started by executing:
 
-   '__PREFIX__/sbin/openfirectl start'
+   '${TRUEPREFIX}/sbin/openfirectl start'
 
    as root.
 
@@ -18,7 +21,7 @@ Using openfire in an OpenBSD environment
 4) openfire's automated setup and plugin installation services require
    several directories to be writable by the _openfire user.  When you
    complete the installation process, you may wish to tighten permissions
-   on __PREFIX__/openfire and its subdirectories.
+   on ${TRUEPREFIX}/openfire and its subdirectories.
 
 5) openfire's DIGEST-MD5 SASL mechanism does not interoperate very well.
    If you experience issues with client authentication, you may need to
@@ -28,7 +31,6 @@ Using openfire in an OpenBSD environment
 
    to:
 
-   __PREFIX__/openfire/conf/openfire.xml
+   ${TRUEPREFIX}/openfire/conf/openfire.xml
 
    Then restart openfire for the changes to take effect.
-
