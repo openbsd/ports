@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/07 09:58:42 simon Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/13 06:52:41 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
+@conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
 @bin bin/encspeed
@@ -259,5 +260,6 @@ share/ircd-hybrid/messages/ircd-polish.lang
 share/ircd-hybrid/messages/ircd-russian.lang
 share/ircd-hybrid/messages/ircd-spanish.lang
 share/ircd-hybrid/messages/ircd-swedish.lang
+@rcscript ${RCDIR}/ircd_hybrid
 @owner _ircd-hybrid
 @sample /var/log/ircd-hybrid/
