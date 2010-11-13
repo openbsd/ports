@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/13 16:26:41 naddy Exp $
 
-ONLY_FOR_ARCHS = i386 m68k sparc sparc64 powerpc vax amd64
-# work in progress
-#ONLY_FOR_ARCHS += alpha
+ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
 
 V = 4.2.4
