@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/27 14:01:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/11/13 09:36:22 ajacoutot Exp $
 @conflict hpijs-<1.5p1
 @conflict cups-<=1.2.7p13
 @bin bin/foomatic-rip
@@ -6,6 +6,7 @@ libexec/cups/backend/
 libexec/cups/backend/beh
 libexec/cups/filter/foomatic-rip
 @man man/man1/foomatic-rip.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/foomatic/
 @sample ${SYSCONFDIR}/foomatic/
 @comment share/examples/foomatic/direct/

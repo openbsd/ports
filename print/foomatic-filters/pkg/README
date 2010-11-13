@@ -1,3 +1,8 @@
+$OpenBSD: README,v 1.1 2010/11/13 09:36:22 ajacoutot Exp $
+
+Using foomatic-filters in OpenBSD
+=================================
+
 To use foomatic-rip(1) as the input filter for lpd(8), create a
 printcap(5) entry similar to the following:
 
