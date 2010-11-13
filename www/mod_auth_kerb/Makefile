@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/29 15:49:54 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/13 07:44:33 ajacoutot Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
-REVISION=	5
+REVISION=	6
 DISTNAME=	mod_auth_kerb-5.3
 CATEGORIES=	www
 
@@ -34,8 +34,6 @@ post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mod_auth_kerb
-	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/mod_auth_kerb
 	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

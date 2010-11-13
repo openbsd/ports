@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2006/05/27 16:08:16 alek Exp $
+$OpenBSD: README,v 1.1 2010/11/13 07:44:33 ajacoutot Exp $
 
 If you haven't already run the module enabler, you can manually enable
 Kerberos support by adding the following lines into httpd.conf near the
