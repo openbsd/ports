@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/13 09:24:52 ajacoutot Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
-conf/cvsweb/README.chroot
 conf/cvsweb/cvsweb.conf-freebsd.dist
 conf/cvsweb/cvsweb.conf-netbsd.dist
 conf/cvsweb/cvsweb.conf-openbsd.dist
@@ -15,3 +14,5 @@ icons/cvsweb/miniback.gif
 icons/cvsweb/minidir.gif
 icons/cvsweb/minitext.gif
 icons/cvsweb/text.gif
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,4 +1,5 @@
-# $OpenBSD: README.chroot,v 1.8 2009/11/25 19:54:19 naddy Exp $
+$OpenBSD: README,v 1.1 2010/11/13 09:24:52 ajacoutot Exp $
+
 # Author: Jolan Luff <jolan@openbsd.org>
 
 In order to make CVSweb operate in a chroot environment, it is
