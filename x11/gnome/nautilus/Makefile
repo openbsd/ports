@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/10/25 10:30:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2010/11/13 13:07:46 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -16,9 +16,7 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		2.32.0
-
-REVISION=		1
+GNOME_VERSION=		2.32.1
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -40,7 +38,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-atom xcb-aux xcb-event xml2 z gnome-desktop-2 unique-1.0
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += xcb-render GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			x11/gnome \
