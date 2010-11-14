@@ -1,7 +1,7 @@
-$OpenBSD: patch-gobject_tests_Makefile_in,v 1.1 2010/10/11 20:41:44 kili Exp $
---- gobject/tests/Makefile.in.orig	Mon Sep 27 18:10:13 2010
-+++ gobject/tests/Makefile.in	Sun Oct 10 14:41:27 2010
-@@ -658,7 +658,7 @@ test: test-nonrecursive
+$OpenBSD: patch-gobject_tests_Makefile_in,v 1.2 2010/11/14 15:56:55 ajacoutot Exp $
+--- gobject/tests/Makefile.in.orig	Sun Nov 14 07:02:01 2010
++++ gobject/tests/Makefile.in	Sun Nov 14 16:14:34 2010
+@@ -659,7 +659,7 @@ test: test-nonrecursive
  
  # test-nonrecursive: run tests only in cwd
  test-nonrecursive: ${TEST_PROGS}

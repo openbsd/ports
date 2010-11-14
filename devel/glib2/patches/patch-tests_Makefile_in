@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.17 2010/10/11 20:41:44 kili Exp $
---- tests/Makefile.in.orig	Mon Sep 27 18:10:13 2010
-+++ tests/Makefile.in	Sun Oct 10 15:00:56 2010
-@@ -639,8 +639,7 @@ test_programs = \
+$OpenBSD: patch-tests_Makefile_in,v 1.18 2010/11/14 15:56:55 ajacoutot Exp $
+--- tests/Makefile.in.orig	Sun Nov 14 07:02:03 2010
++++ tests/Makefile.in	Sun Nov 14 16:14:34 2010
+@@ -640,8 +640,7 @@ test_programs = \
  	thread-test				\
  	threadpool-test				\
  	type-test				\
@@ -11,7 +11,7 @@ $OpenBSD: patch-tests_Makefile_in,v 1.17 2010/10/11 20:41:44 kili Exp $
  
  test_scripts = run-collate-tests.sh run-assert-msg-test.sh
  test_script_support_programs = unicode-collate
-@@ -1403,7 +1402,7 @@ test: test-nonrecursive
+@@ -1404,7 +1403,7 @@ test: test-nonrecursive
  
  # test-nonrecursive: run tests only in cwd
  test-nonrecursive: ${TEST_PROGS}

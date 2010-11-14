@@ -1,10 +1,10 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.19 2010/09/30 07:17:19 ajacoutot Exp $
+$OpenBSD: patch-glib_Makefile_in,v 1.20 2010/11/14 15:56:55 ajacoutot Exp $
 
 Don't install gtester-report, it'll only pull in python.
 
---- glib/Makefile.in.orig	Mon Sep 27 18:10:13 2010
-+++ glib/Makefile.in	Mon Sep 27 18:44:45 2010
-@@ -777,7 +777,7 @@ INSTALL_PROGS = $(am__append_5) $(am__append_6) $(am__
+--- glib/Makefile.in.orig	Sun Nov 14 07:01:58 2010
++++ glib/Makefile.in	Sun Nov 14 16:14:34 2010
+@@ -778,7 +778,7 @@ INSTALL_PROGS = $(am__append_5) $(am__append_6) $(am__
  @OS_WIN32_TRUE@@OS_WIN32_X64_FALSE@gspawn_win32_helper_console_LDADD = libglib-2.0.la
  @OS_UNIX_TRUE@gtester_SOURCES = gtester.c
  @OS_UNIX_TRUE@gtester_LDADD = libglib-2.0.la 
@@ -13,7 +13,7 @@ Don't install gtester-report, it'll only pull in python.
  @OS_UNIX_TRUE@bin_SCRIPTS = ${auto_config_binscripts}
  @OS_UNIX_TRUE@CONFIGVARS = \
  @OS_UNIX_TRUE@	"bindir"    	: "${bindir}",		\
-@@ -1539,7 +1539,7 @@ info: info-recursive
+@@ -1540,7 +1540,7 @@ info: info-recursive
  
  info-am:
  
@@ -22,7 +22,7 @@ Don't install gtester-report, it'll only pull in python.
  	install-glibincludeHEADERS install-glibsubincludeHEADERS \
  	install-tapsetDATA
  	@$(NORMAL_INSTALL)
-@@ -1793,9 +1793,7 @@ distclean-local:
+@@ -1794,9 +1794,7 @@ distclean-local:
  libglib-gdb.py: libglib-gdb.py.in
  	$(AM_V_GEN) $(SED) -e "s|\@datadir\@|$(datadir)|" $(srcdir)/libglib-gdb.py.in > libglib-gdb.py
  
