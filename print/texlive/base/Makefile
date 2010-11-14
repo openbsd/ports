@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/14 16:58:39 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		6
+REVISION =		7
 SHARED_LIBS =		kpathsea	2.0
 
-WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
-			ncurses Xaw Xau Xdmcp expat iconv jpeg lcms pthread \
-			pthread-stubs stdc++ xcb xml2 t1.>=4 png.>=3 gd ttf \
-			poppler
+WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu gd \
+			ncurses openjpeg Xaw Xau Xdmcp expat iconv jpeg lcms \
+			png.>=3	poppler pthread pthread-stubs stdc++ t1.>=4 \
+			ttf xcb	xml2 z
 
 RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
@@ -111,9 +111,6 @@ pre-install:
 	mkdir ${WRKSRC}/inst
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/texlive
 	${INSTALL_SCRIPT} ${FILESDIR}/tl-link-config ${PREFIX}/bin
 	${SUBST_CMD} ${PREFIX}/bin/tl-link-config
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/web2c

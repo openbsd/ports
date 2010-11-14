@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/03/21 13:22:55 edd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/11/14 16:58:39 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -459,8 +459,7 @@ lib/libkpathsea.la
 @man man/man5/fmtutil.cnf.5
 @man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
-share/doc/texlive/
-share/doc/texlive/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/lcdf-typetools/
 share/texmf/
 share/texmf/web2c/

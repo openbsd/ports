@@ -1,5 +1,5 @@
 TeX Live for OpenBSD (PuffTeX) - Notes
-$OpenBSD: README.OpenBSD,v 1.7 2010/03/21 13:22:55 edd Exp $
+$OpenBSD: README,v 1.1 2010/11/14 16:58:39 edd Exp $
 ----------------------------
 
 There are a number of texmf trees in the OpenBSD packages:
@@ -19,7 +19,7 @@ All sizes are compressed package sizes.
 The texmf package contents do not overlap.
 
 Individual users may override or add to the tex class and style files
-supplied by TeX Live by installing them into ~/.texmf and running
+supplied by TeX Live by installing them into ~/texmf and running
 mktexlsr(1) (as themselves). After this you can test the installation by
 searching for the files using kpsewhich(1).
 
