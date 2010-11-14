@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/14 14:16:43 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.32.0
-REVISION-main=	0
+REVISION-main=	1
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
