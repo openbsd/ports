@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/11/14 12:20:27 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2010/11/14 23:37:41 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -38,7 +38,7 @@ EDISTFILES=	ooo-desktop-0.2.tar.gz:0
 .for dfile in binfilter core extensions l10n system
 EDISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
 .endfor
-EXTRACT_ONLY=	${EDISTFILES}
+EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
 		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:1 \
