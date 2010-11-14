@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/10 15:09:47 robert Exp $
+# $OpenBSD: Makefile,v 1.60 2010/11/14 12:20:27 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -34,8 +34,14 @@ MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 MASTER_SITES1=	http://hg.services.openoffice.org/binaries/ \
 		http://humppa.hu/ooo/
 
-DISTFILES=	ooo-desktop-0.2.tar.gz:0
-SUPDISTFILES=	067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:1 \
+EDISTFILES=	ooo-desktop-0.2.tar.gz:0
+.for dfile in binfilter core extensions l10n system
+EDISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+.endfor
+EXTRACT_ONLY=	${EDISTFILES}
+
+DISTFILES+=	${EDISTFILES} \
+		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:1 \
 		128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz:1 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:1 \
 		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:1 \
