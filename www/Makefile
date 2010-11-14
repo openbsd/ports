@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.476 2010/10/28 14:34:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.477 2010/11/14 19:59:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -351,6 +351,7 @@
      SUBDIR += py-jinja2
      SUBDIR += py-jonpy
      SUBDIR += py-mako
+     SUBDIR += py-mechanize
      SUBDIR += py-meld3
      SUBDIR += py-nevow
      SUBDIR += py-paste
