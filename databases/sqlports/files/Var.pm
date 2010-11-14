@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.6 2010/10/02 10:26:17 espie Exp $
+# $OpenBSD: Var.pm,v 1.7 2010/11/14 08:42:00 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -222,7 +222,12 @@ sub add
 	my ($self, $ins) = @_;
 	$self->SUPER::add($ins);
 	for my $depends ($self->words) {
-		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
+		$depends =~ s/^\:+//;
+		my ($pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
+		if ($pkgspec =~ m/\//) {
+			($pkgspec, $pkgpath2, $rest) = 
+			    ('', $pkgspec, $pkgpath2);
+		}
 		if (!defined $pkgpath2) {
 			print STDERR "Wrong depends $depends\n";
 			return;
@@ -231,11 +236,6 @@ sub add
 		    $ins->find_pathkey($pkgpath2),
 		    $ins->convert_depends($self->depends_type),
 		    $pkgspec, $rest);
-		if ($libs ne '') {
-			for my $lib (split(/\,/, $libs)) {
-				$self->add_lib($ins, $lib);
-			}
-		}
 	}
 }
 
@@ -252,19 +252,9 @@ sub create_table
 	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
 }
 
-sub add_lib
-{
-}
-
 package LibDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Library' }
-
-sub add_lib
-{
-	my ($self, $ins, $lib) = @_;
-	WantlibVar->add_value($ins, $lib);
-}
 
 package RunDependsVar;
 our @ISA = qw(DependsVar);
