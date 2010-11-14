@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2010/10/21 13:00:30 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2010/11/14 12:27:18 edd Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2010
 @conflict texlive_texmf-minimal-<2010
@@ -19544,32 +19544,32 @@ share/texmf-dist/doc/support/latex2man/latex2man.tex
 share/texmf-dist/doc/support/latex2man/latex2man.texi
 share/texmf-dist/doc/support/latex2man/latex2man.trans
 share/texmf-dist/doc/support/latex2man/latex2man.txt
-share/texmf-dist/doc/support/latexmk/
-share/texmf-dist/doc/support/latexmk/CHANGES
-share/texmf-dist/doc/support/latexmk/COPYING
-share/texmf-dist/doc/support/latexmk/INSTALL
-share/texmf-dist/doc/support/latexmk/README
-share/texmf-dist/doc/support/latexmk/example_rcfiles/
-share/texmf-dist/doc/support/latexmk/example_rcfiles/README
-share/texmf-dist/doc/support/latexmk/example_rcfiles/asymptote_latexmkrc
-share/texmf-dist/doc/support/latexmk/example_rcfiles/glossary_latexmkrc
-share/texmf-dist/doc/support/latexmk/example_rcfiles/pdflatexmkrc
-share/texmf-dist/doc/support/latexmk/example_rcfiles/sagetex_latexmkrc
-share/texmf-dist/doc/support/latexmk/extra-scripts/
-share/texmf-dist/doc/support/latexmk/extra-scripts/README1
-share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfm_call
-share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfm_call.bat
-share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfmx_call
-share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfmx_call.bat
-share/texmf-dist/doc/support/latexmk/extra-scripts/kickxdvi
-share/texmf-dist/doc/support/latexmk/extra-scripts/l1
-share/texmf-dist/doc/support/latexmk/extra-scripts/l2
-share/texmf-dist/doc/support/latexmk/extra-scripts/pst2pdf_for_latexmk
-share/texmf-dist/doc/support/latexmk/extra-scripts/pst2pdf_for_latexmk_README.txt
-share/texmf-dist/doc/support/latexmk/extra-scripts/startacroread
-share/texmf-dist/doc/support/latexmk/latexmk.bat
-share/texmf-dist/doc/support/latexmk/latexmk.pdf
-share/texmf-dist/doc/support/latexmk/latexmk.txt
+@comment share/texmf-dist/doc/support/latexmk/
+@comment share/texmf-dist/doc/support/latexmk/CHANGES
+@comment share/texmf-dist/doc/support/latexmk/COPYING
+@comment share/texmf-dist/doc/support/latexmk/INSTALL
+@comment share/texmf-dist/doc/support/latexmk/README
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/README
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/asymptote_latexmkrc
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/glossary_latexmkrc
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/pdflatexmkrc
+@comment share/texmf-dist/doc/support/latexmk/example_rcfiles/sagetex_latexmkrc
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/README1
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfm_call
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfm_call.bat
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfmx_call
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/dvipdfmx_call.bat
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/kickxdvi
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/l1
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/l2
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/pst2pdf_for_latexmk
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/pst2pdf_for_latexmk_README.txt
+@comment share/texmf-dist/doc/support/latexmk/extra-scripts/startacroread
+@comment share/texmf-dist/doc/support/latexmk/latexmk.bat
+@comment share/texmf-dist/doc/support/latexmk/latexmk.pdf
+@comment share/texmf-dist/doc/support/latexmk/latexmk.txt
 share/texmf-dist/doc/support/lua-alt-getopt/
 share/texmf-dist/doc/support/lua-alt-getopt/ChangeLog
 share/texmf-dist/doc/support/lua-alt-getopt/Makefile

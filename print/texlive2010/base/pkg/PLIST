@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/09 13:38:22 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/11/14 12:27:18 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -116,7 +116,7 @@ bin/kpsexpand
 bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
-bin/latexmk
+@comment bin/latexmk
 bin/latexrevise
 bin/listings-ext.sh
 @bin bin/luatex
@@ -546,8 +546,8 @@ share/texmf-dist/scripts/latexdiff/
 share/texmf-dist/scripts/latexdiff/latexdiff-vc.pl
 share/texmf-dist/scripts/latexdiff/latexdiff.pl
 share/texmf-dist/scripts/latexdiff/latexrevise.pl
-share/texmf-dist/scripts/latexmk/
-share/texmf-dist/scripts/latexmk/latexmk.pl
+@comment share/texmf-dist/scripts/latexmk/
+@comment share/texmf-dist/scripts/latexmk/latexmk.pl
 share/texmf-dist/scripts/listings-ext/
 share/texmf-dist/scripts/listings-ext/listings-ext.sh
 share/texmf-dist/scripts/luaotfload/

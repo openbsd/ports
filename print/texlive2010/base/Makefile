@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/09 13:38:22 edd Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/14 12:27:18 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -19,7 +19,8 @@ RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:ps2eps-*:print/ps2eps \
 			:psutils-*:print/psutils \
 			:t1utils-*:print/t1utils \
-			:texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main
+			:texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
+			::print/latex-mk
 			
 LIB_DEPENDS =		::devel/t1lib \
 			::graphics/png \
