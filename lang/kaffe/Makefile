@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/25 08:04:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/14 17:50:09 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -14,7 +14,7 @@ CATEGORIES=	lang
 SHARED_LIBS+=           ${_lib} 2.0
 .endfor
 
-MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
+MASTER_SITES=	${HOMEPAGE}/ftp/pub/kaffe/v1.1.x-development/
 
 HOMEPAGE=	http://www.kaffe.org/
 
