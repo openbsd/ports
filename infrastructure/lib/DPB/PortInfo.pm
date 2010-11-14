@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.2 2010/10/27 12:58:26 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.3 2010/11/14 07:44:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -82,7 +82,8 @@ sub new
 	for my $_ ($class->make_list($value)) {
 		my $copy = $_;
 		next if m/^$/;
-		s/^.*?\:.*?\://;
+		s/^\:+//;
+		s/^[^\/]*\://;
 		if (s/\:(?:patch|build|configure)$//) {
 			Extra->add('EXTRA', $self, $_);
 		} else {
