@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.155 2010/11/12 16:30:44 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.156 2010/11/14 12:10:12 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -200,20 +200,12 @@ MASTER_SITE_SAVANNAH+=	\
 	http://ftp.cc.uoc.gr/mirrors/nongnu.org/ \
 	http://ftp.twaren.net/Unix/NonGNU/ \
 	http://mirror.csclub.uwaterloo.ca/nongnu/ \
-	http://mirror.dknss.com/nongnu/ \
-	http://mirror.publicns.net/pub/nongnu/ \
-	ftp://mirror.publicns.net/pub/nongnu/ \
-	ftp://mirrors.localhost.net.ar/pub/mirrors/savannah-nongnu/ \
 	http://mirrors.zerg.biz/nongnu/ \
 	http://nongnu.askapache.com/ \
-	http://nongnu.mirror.ironie.org/ \
 	http://piotrkosoft.net/pub/mirrors/savannah.gnu.org/ \
-	ftp://ftp.piotrkosoft.net/pub/mirrors/savannah.gnu.org/ \
 	http://savannah.c3sl.ufpr.br/ \
 	ftp://savannah.c3sl.ufpr.br/savannah-nongnu/ \
-	http://savannah.inetbridge.net/ \
-	http://savannah.releasenotes.org/ \
-	http://www.very-clever.com/download/nongnu/
+	http://savannah.inetbridge.net/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
