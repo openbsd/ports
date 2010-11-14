@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_libreoffice_solenv_inc_libs_mk,v 1.1.1.1 2010/11/14 23:46:34 robert Exp $
+--- build/libreoffice/solenv/inc/libs.mk.orig.port	Mon Nov  8 14:13:04 2010
++++ build/libreoffice/solenv/inc/libs.mk	Sun Nov 14 16:09:57 2010
+@@ -231,7 +231,7 @@ NEON3RDLIB=$(SOLARLIBDIR)/libneon.dylib
+ NEON3RDLIB=-lneon
+ .ENDIF
+ .IF "$(SYSTEM_DB)" == "YES"
+-BERKELEYLIB=-ldb
++BERKELEYLIB=-l$(DB_LIB)
+ .ELSE
+ BERKELEYLIB=-ldb-4.7
+ .ENDIF

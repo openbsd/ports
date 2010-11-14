@@ -1,0 +1,68 @@
+$OpenBSD: patch-bin_package-ooo,v 1.1.1.1 2010/11/14 23:46:34 robert Exp $
+--- bin/package-ooo.orig.port	Wed Nov 10 19:50:42 2010
++++ bin/package-ooo	Sun Nov 14 16:09:57 2010
+@@ -101,7 +101,9 @@ fi
+ #       you cannot include this link directly into the package
+ #       For example, the Novell package mark this symlink as %ghost
+ #	and update it in %post and %postun
+-ln -sf $OOINSTBASE/program/soffice$BINSUFFIX $PREFIX/bin/soffice$BINSUFFIX
++if test "z$VENDORNAME" != "zOpenBSD"; then
++    ln -sf $OOINSTBASE/program/soffice$BINSUFFIX $PREFIX/bin/soffice$BINSUFFIX
++fi
+ 
+ # no man-page so ...
+ if test "z$VENDORNAME" != "zDebian" -a "z$VENDORNAME" != "zMandriva"; then
+@@ -176,11 +178,11 @@ case $VENDORNAME in
+         # Icons and menu stuff is handled in actions.py
+         ;;
+   *)
+-	mkdir -p $OODESTDIR/usr/share/applications
++	mkdir -p $PREFIX/share/applications
+ 	cd $TOOLSDIR/desktop
+ 	for source in *.desktop ; do
+ 	    dest=`echo $source | sed "s|.desktop\$||"`
+-	    dest="$OODESTDIR/usr/share/applications/$dest$BINSUFFIX.desktop"
++	    dest="$PREFIX/share/applications/$dest$BINSUFFIX.desktop"
+ 	    add_version=
+ 	    test "z$VENDORNAME" = "zNovell" -a "z$BINSUFFIX" != "z" && add_version=" ($VERSION)" || :
+ 	    sed -e "s|\(^Name.*\)\$|\1$add_version|
+@@ -188,31 +190,31 @@ case $VENDORNAME in
+ 	done
+ 
+ 	# icons
+-	icondir=/usr/share/icons/hicolor
++	icondir=$PREFIX/share/icons/hicolor
+ 	for size in 16x16 22x22 24x24 32x32 48x48 scalable ; do
+-	    mkdir -p $OODESTDIR/$icondir/$size/apps
++	    mkdir -p $icondir/$size/apps
+ 	    cd $TOOLSDIR/desktop/$size/
+ 	    # note that the scalable directory includes .svg icons
+ 	    for source in ooo-*.[ps][nv]g ; do
+ 		suffix=`echo $source | sed "s|^.*\(\.[ps][nv]g\)\$|\1|"`
+ 		dest=`echo $source | sed "s|$suffix\$||"`
+-		dest="$OODESTDIR/$icondir/$size/apps/$dest$BINSUFFIX$suffix"
++		dest="$icondir/$size/apps/$dest$BINSUFFIX$suffix"
+ 		cp $source "$dest" || exit 1;
+ 	    done
+ 	done
+ 
+ 	# create symlinks below share/pixmaps to keep the backward compatibility
+-	pixmapsdir=$OODESTDIR/usr/share/pixmaps
++	pixmapsdir=$PREFIX/share/pixmaps
+ 	mkdir -p $pixmapsdir
+-	cd $OODESTDIR/$icondir/48x48/apps
++	cd $icondir/48x48/apps
+ 	for icon in ooo-*.png ; do
+-	    ln -sf $icondir/48x48/apps/$icon $pixmapsdir
++	    ln -sf ../icons/hicolor/48x48/apps/$icon $pixmapsdir
+ 	done
+ 	
+ 	# shared MIME info
+-	mkdir -p $OODESTDIR/usr/share/mime/packages
++	mkdir -p $PREFIX/share/mime/packages
+ 	cd $TOOLSDIR/desktop
+-	cp openoffice.xml $OODESTDIR/usr/share/mime/packages
++	cp openoffice.xml $PREFIX/share/mime/packages
+ 	if test "z$RUN_POST_INSTALL_SCRIPTS" = "zyes" && 
+ 	   which update-mime-database >/dev/null 2>&1 ; then
+ 	    update-mime-database /usr/share/mime || :

@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_install-artwork,v 1.1.1.1 2010/11/14 23:46:34 robert Exp $
+--- bin/install-artwork.orig.port	Tue Nov  2 12:17:35 2010
++++ bin/install-artwork	Sun Nov 14 16:09:57 2010
+@@ -43,7 +43,7 @@ if test -d $dest/default_images; then
+ 	cp $src/layout/*.png $dest/default_images/res/commandimagelist
+ 	cp $src/layout/*.png $dest/ooo_custom_images/industrial/res/commandimagelist
+ 	cp $src/layout/*.png $dest/ooo_custom_images/tango/res/commandimagelist
+-	tar -C $src/layout --exclude=.svn -cf- default_images ooo_custom_images | tar -C $dest -xf-
++	gtar ${GNUTAR} -C $src/layout --exclude=.svn -cf- default_images ooo_custom_images | tar -C $dest -xf-
+ 
+ 	# Extra command images
+ 	cp -f $src/icons/*.png $dest/default_images/res/commandimagelist/ || exit 1

@@ -1,0 +1,2 @@
+Provides integration of LibreOffice to java features. Some features may
+only be available when this subpackage is installed.
