@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1057 2010/11/11 19:03:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1058 2010/11/14 11:17:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -376,7 +376,7 @@ SYSCONFDIR ?= /etc
 RCDIR ?= /etc/rc.d
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
-BUILD_DEPENDS += ::devel/gmake
+BUILD_DEPENDS += devel/gmake
 MAKE_PROGRAM = ${GMAKE}
 CONFIGURE_ENV += MAKE=${MAKE_PROGRAM}
 .else
@@ -387,7 +387,7 @@ _lt_libs =
 .if ${USE_LIBTOOL:L} != "no"
 .  if ${USE_LIBTOOL:L} == "gnu"
 LIBTOOL ?= ${DEPBASE}/bin/libtool
-BUILD_DEPENDS += ::devel/libtool
+BUILD_DEPENDS += devel/libtool
 .  else
 LIBTOOL ?= ${PORTSDIR}/infrastructure/bin/libtool
 .  endif
@@ -477,22 +477,22 @@ USE_MOTIF ?= No
 
 .if ${USE_MOTIF:L} != "no"
 .  if ${USE_MOTIF:L} == "lesstif"
-LIB_DEPENDS += ::x11/lesstif
-WANTLIB +=	Xm.>=1
+LIB_DEPENDS += x11/lesstif
+WANTLIB +=	Xm>=1
 .  elif ${USE_MOTIF:L} == "openmotif"
-LIB_DEPENDS += ::x11/openmotif
-WANTLIB += Xm.>=2
+LIB_DEPENDS += x11/openmotif
+WANTLIB += Xm>=2
 .  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
 FLAVORS += lesstif
 .    if ${FLAVOR:L:Mlesstif} && ${FLAVOR:L:Mmotif}
 ERRORS += "Fatal: choose motif or lesstif, not both."
 .    endif
 .    if ${FLAVOR:L:Mlesstif}
-LIB_DEPENDS += ::x11/lesstif
-WANTLIB +=	Xm.>=1
+LIB_DEPENDS += x11/lesstif
+WANTLIB +=	Xm>=1
 .    else
-LIB_DEPENDS += ::x11/openmotif
-WANTLIB += Xm.>=2
+LIB_DEPENDS += x11/openmotif
+WANTLIB += Xm>=2
 .    endif
 .  else
 ERRORS += "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
@@ -563,7 +563,7 @@ ERRORS += "Fatal: no flavors for this port."
 
 USE_GROFF ?= No
 .if ${USE_GROFF:L} == "yes"
-BUILD_DEPENDS += :groff->=1.15.4.7p2:textproc/groff
+BUILD_DEPENDS += groff->=1.15.4.7p2:textproc/groff
 _PKG_ARGS += -DUSE_GROFF=1
 .endif
 
@@ -1209,12 +1209,12 @@ _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This i
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
-BUILD_DEPENDS += :unzip-*:archivers/unzip
+BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.zip) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
 .if ${_USE_BZIP2:L} != "no"
-BUILD_DEPENDS += :bzip2-*:archivers/bzip2
+BUILD_DEPENDS += archivers/bzip2
 EXTRACT_CASES += *.tar.bz2|*.tbz2) \
 	${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
@@ -1419,32 +1419,50 @@ _PKG_ADD_FORCE =
 
 _FULL_PACKAGE_NAME ?= No
 
+# XXX save result pre-normalization, just for checking
+_CHECK_DEPENDS =
+
+# normalization of depends to remove extra :
+.for _v in BUILD LIB RUN REGRESS
+_CHECK_DEPENDS +:= ${${_v}_DEPENDS}
+${_v}_DEPENDS := ${${_v}_DEPENDS:S/^://:S/^://}
+.endfor
+.for _s in ${MULTI_PACKAGES}
+.  for _v in RUN LIB
+_CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
+${_v}_DEPENDS${_s} := ${${_v}_DEPENDS${_s}:S/^://:S/^://}
+.  endfor
+.endfor
+
+
 _BUILDLIB_DEPENDS = ${LIB_DEPENDS}
 _BUILDWANTLIB = ${WANTLIB}
 # strip inter-multi-packages dependencies during building
 .for _path in ${PKGPATH:S,^mystuff/,,}
 .  for _s in ${_MULTI_PACKAGES}
-_BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
+_BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*:N${_path}:N${_path},*}
 _BUILDWANTLIB += ${WANTLIB${_s}}
-_LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*}
+_LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*} ${LIB_DEPENDS${_s}:M${_path}} ${LIB_DEPENDS${_s}:M${_path},*}
 _LIB4 += ${_LIB4${_s}}
 .  endfor
 .endfor
 
 .if ${NO_DEPENDS:L} == "no"
-_BUILD_DEPLIST = ${BUILD_DEPENDS:S/^://}
-_RUN_DEPLIST = ${RUN_DEPENDS${SUBPACKAGE}:S/^://}
-_REGRESS_DEPLIST = ${REGRESS_DEPENDS:S/^://}
-_BUILDLIB_DEPLIST = ${_BUILDLIB_DEPENDS:C/^[^:]*://}
-_RUNLIB_DEPLIST = ${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
+_BUILD_DEPLIST = ${BUILD_DEPENDS}
+_RUN_DEPLIST = ${RUN_DEPENDS${SUBPACKAGE}}
+_REGRESS_DEPLIST = ${REGRESS_DEPENDS}
+_BUILDLIB_DEPLIST = ${_BUILDLIB_DEPENDS}
+_RUNLIB_DEPLIST = ${LIB_DEPENDS${SUBPACKAGE}}
 .endif
+
 _DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} \
 	${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
 
+# compute DEPBUILD_COOKIES and friends
 .for _DEP in BUILD RUN BUILDLIB RUNLIB REGRESS
 _DEP${_DEP}_COOKIES =
 .  for _i in ${_${_DEP}_DEPLIST}
-_DEP${_DEP}_COOKIES += ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}
+_DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}
 .  endfor
 .endfor
 
@@ -1474,40 +1492,50 @@ _FETCH_MAKEFILE_NAMES += ${PKGPATH}/${FULLPKGNAME${_S}}
 .endfor
 
 # Internal variables, used by dependencies targets
-# Only keep pkg:dir spec
+# Only keep pkg:dir spec, strip extra target
 
-_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_BUILD_DEP3 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.for _mod in C/:(patch|configure|build)$$//
+_BUILD_DEP2 = ${BUILD_DEPENDS:${_mod}}
+_BUILD_DEP3 = ${BUILD_DEPENDS:${_mod}}
 
-_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
+_RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 
-_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_REGRESS_DEP2 = ${REGRESS_DEPENDS:${_mod}}
 
-.if ${NO_SHARED_LIBS:L} != "yes"
-_RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.  if ${NO_SHARED_LIBS:L} != "yes"
+_RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:${_mod}}
 _LIB_DEP3 = ${LIB_DEPENDS${SUBPACKAGE}}
-_DEPRUNLIBS = ${LIB_DEPENDS${SUBPACKAGE}:C/:.*//:S/,/ /g}
-.else
+.  else
 _LIB_DEP3 =
-_DEPRUNLIBS =
-.endif
+.  endif
 
-_BUILD_DEP2 += ${_BUILDLIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_DEPBUILDLIBS = ${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
+_BUILD_DEP2 += ${_BUILDLIB_DEPENDS:${_mod}}
 
-_DEPBUILDLIBS += ${_BUILDWANTLIB}
-_DEPRUNLIBS += ${WANTLIB${SUBPACKAGE}}
+.  for _S in ${MULTI_PACKAGES}
+_BUILD_DEP3${_S} = ${_BUILD_DEP3}
+_RUN_DEP3${_S} = ${RUN_DEPENDS${_S}:${_mod}}
+.    if ${NO_SHARED_LIBS:L} != "yes"
+_LIB_DEP3${_S} = ${LIB_DEPENDS${_S}}
+.    else
+_LIB_DEP3${_S} =
+.    endif
+.  endfor
+
+.endfor
+
+_DEPBUILDLIBS = ${_BUILDWANTLIB}
+_DEPRUNLIBS = ${WANTLIB${SUBPACKAGE}}
 
 # the _DEP*LIBSPECS_COOKIES are only there to force reevaluation of
 # _DEPBUILDWANTLIB_COOKIE and _DEPRUNWANTLIB_COOKIE when the dependencies
 # change (the list will change, and so the cookie will be regenerated)
 .if ${NO_DEPENDS:L} == "no"
-.  for i in ${_DEPBUILDLIBS:C,[|:/<=>*],-,g}
+.  for i in ${_DEPBUILDLIBS:C,>=,-ge-,g:C,=,-gt-,g:C,/,-,g}
 _DEPBUILDLIBSPECS_COOKIES += ${WRKDIR}/.spec-$i
 .  endfor
 _DEPBUILDWANTLIB_COOKIE = ${WRKDIR}/.buildwantlibs
-.  for i in ${_DEPRUNLIBS:C,[|:/<=>*],-,g}
+.  for i in ${_DEPRUNLIBS:C,>=,-ge-,g:C,=,-gt-,g:C,/,-,g}
 _DEPRUNLIBSPECS_COOKIES += ${WRKDIR}/.spec-$i
 .  endfor
 _DEPRUNWANTLIB_COOKIE = ${WRKDIR}/.runwantlibs${SUBPACKAGE}
@@ -1518,19 +1546,10 @@ _DEPRUNWANTLIB_COOKIE =
 
 _DEPLIBSPECS_COOKIES = ${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 
-_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
-_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
-_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
-
-.for _S in ${MULTI_PACKAGES}
-_BUILD_DEP3${_S} = ${_BUILD_DEP3}
-_RUN_DEP3${_S} = ${RUN_DEPENDS${_S}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-.  if ${NO_SHARED_LIBS:L} != "yes"
-_LIB_DEP3${_S} = ${LIB_DEPENDS${_S}}
-.  else
-_LIB_DEP3${_S} =
-.  endif
-.endfor
+# strip optional pkgspec, only keep the path
+_BUILD_DEP = ${_BUILD_DEP2:C,^[^:/]*:,,}
+_RUN_DEP = ${_RUN_DEP2:C,^[^:/]*:,,}
+_REGRESS_DEP = ${_REGRESS_DEP2:C,^[^:/]*:,,}
 
 README_NAME ?= ${TEMPLATES}/README.port
 
@@ -1584,10 +1603,34 @@ _zap_last_line = sed -e '$$d'
 
 _sort_dependencies = tsort -r|${_zap_last_line}
 
+_version2stem = sed -e 's,-[0-9].*,,'
 _version2default = sed -e 's,-[0-9].*,-*,'
 
 _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
+
+_parse_spec = \
+	IFS=:; read pkg subdir target; \
+	case "X$$pkg" in \
+	*/*) target="$$subdir"; subdir="$$pkg"; pkg=;; \
+	esac; unset IFS; ${_flavor_fragment}
+
+_compute_default = \
+	if ! default=`eval $$toset ${MAKE} _print-packagename`; then \
+		echo 1>&2 "Problem with dependency ${_i}"; \
+		exit 1; \
+	fi
+
+_set_pkg2default= pkg=`echo $$default|${_version2default}`
+_set_stem2default=stem=`echo $$default|${_version2stem}`; \
+		pkg="$$stem$${pkg\#STEM}"
+
+_complete_pkgspec = \
+	${_compute_default}; \
+	case "X$$pkg" in \
+	X) ${_set_pkg2default};; \
+	XSTEM*) ${_set_stem2default};; \
+	esac
 
 
 ###
@@ -1643,11 +1686,6 @@ ${_PACKAGE_COOKIE${_S}}:
 .    else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
-.  if ${LIB_DEPENDS${_S}:M?*\:*\:*}
-	@${ECHO_MSG} "Error: Old style LIB_DEPENDS:"
-	@${ECHO_MSG} "LIB_DEPENDS${_S} = ${LIB_DEPENDS${_S}}"
-	@exit 1
-.  endif
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
@@ -1809,13 +1847,13 @@ _print-packagename:
 .endif
 
 .for _i in ${_DEPLIST}
-.  if !target(${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g})
-${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
+.  if !target(${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g})
+${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
 	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
-		IFS=:; read pkg subdir target; \
+		${_parse_spec}; \
 		extra_msg="(DEPENDS ${_i})"; \
-		${_flavor_fragment}; defaulted=false; checkinstall=true; \
+		checkinstall=true; \
 		_ignore_cookie=${@:S/.dep/.ignored/}; \
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
@@ -1836,16 +1874,22 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			exit 1;; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
-		case "X$$pkg" in X) \
-			if pkg=`eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in \
+		X) \
+			if default=`eval $$toset ${MAKE} _print-packagename`; \
 			then \
-				defaulted=true; \
-				pkg=`echo $$pkg|${_version2default}`; \
+				${_set_pkg2default}; \
 			else \
 				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
 				${REPORT_PROBLEM}; \
 				exit 1; \
-			fi;; esac; \
+			fi;; \
+		XSTEM*) \
+			if default=`eval $$toset ${MAKE} _print-packagename`; \
+			then \
+				${_set_stem2default}; \
+			fi;; \
+		esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
@@ -1904,8 +1948,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@libs=`for i in ${_LIB4:QL}; do echo "$$i"| { \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
+		${_parse_spec}; \
 		eval $$toset ${MAKE} print-plist-libs; \
 		}; \
 		done;`; \
@@ -2996,65 +3039,40 @@ print-package-signature:
 .endif
 	@echo
 
+
 _print-package-args:
 .for _i in ${RUN_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
-		if default=`eval $$toset ${MAKE} _print-packagename`; then \
-			case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; \
-			esac; \
-			echo "-P $$subdir:$$pkg:$$default"; \
-		else \
-			echo 1>&2 "Problem with dependency ${_i}"; \
-			exit 1; \
-		fi; \
+		${_parse_spec}; \
+		${_complete_pkgspec}; \
+		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .endfor
 .if ${NO_SHARED_LIBS:L} != "yes"
 .  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}'|{ \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
-		if default=`eval $$toset ${MAKE} _print-packagename`; then \
-			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
+		${_parse_spec}; \
+		${_complete_pkgspec}; \
+		libs=`eval $$toset ${MAKE} print-plist-libs`; \
+		needed=false; \
+		exec 3>&2; \
+		for d in ${_DEPRUNLIBS:QL}; do \
+			if $$needed; then continue; fi; \
+			exec 2>/dev/null; \
+			${_libresolve_fragment}; \
+			case "$$check" in \
+			*.a|Failed) \
+				continue;; \
+			*) \
+				needed=true;; \
 			esac; \
-			libs=`eval $$toset ${MAKE} print-plist-libs`; \
-			needed=false; \
-			IFS=,; for d in $$dep; do \
- 				${_libresolve_fragment}; \
- 				case "$$check" in \
-				*.a) continue;; \
-				Failed) \
-					echo 1>&2 "Can't resolve libspec $$d (for ${_i} in ${SUBPACKAGE})"; \
-					exit 1;; \
- 				*) \
-					needed=true;; \
-				esac; \
-			done; \
-			exec 3>&2; \
-			unset IFS; for d in ${_DEPRUNLIBS:QL}; do \
-				if $$needed; then continue; fi; \
-				exec 2>/dev/null; \
-				${_libresolve_fragment}; \
-				case "$$check" in \
-				*.a|Failed) \
-					continue;; \
-				*) \
-					needed=true;; \
-				esac; \
-			done; \
-			exec 2>&3; \
-			if $$needed; then echo "-P $$subdir:$$pkg:$$default"; fi; \
-		else \
-			echo 1>&2 "Problem with dependency ${_i}"; \
-			exit 1; \
-		fi; \
+		done; \
+		exec 2>&3; \
+		if $$needed; then echo "-P $$subdir:$$pkg:$$default"; fi; \
 	}
 .  endfor
 	@libs=`for i in ${_LIB4${SUBPACKAGE}:QL}; do echo "$$i"| { \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
+		${_parse_spec}; \
 		if ! eval $$toset ${MAKE} print-plist-libs; \
 		then \
 			echo 1>&2 "Problem with dependency ${_i}"; \
@@ -3109,9 +3127,8 @@ _list-port-libs:
 _print-package-signature-run:
 .for _i in ${RUN_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
+		${_parse_spec}; \
+		${_compute_default}; \
 		echo "$$default"; \
 	}
 .endfor
@@ -3120,9 +3137,8 @@ _print-package-signature-lib:
 	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} ${_PERLSCRIPT}/resolve-lib ${_DEPRUNLIBS:QL}
 .for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
-		IFS=:; read dep pkg subdir target; \
-		${_flavor_fragment}; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
+		${_parse_spec}; \
+		${_compute_default}; \
 		echo "$$default"; \
 	}
 .endfor
