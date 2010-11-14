@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/14 14:25:23 sthen Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
-DISTNAME =	hunspell-1.2.8
-REVISION =	0
+DISTNAME =	hunspell-1.2.12
 
 SHARED_LIBS =	hunspell-1.2 	0.0 #	.0.0
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c curses m ncurses readline stdc++
+WANTLIB += c m ncurses ncursesw readline stdc++
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hunspell/}
 
@@ -27,7 +26,7 @@ MODULES =		devel/gettext
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${WRKBUILD}/src/hunspell/.libs"
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-ui \
 			--with-readline

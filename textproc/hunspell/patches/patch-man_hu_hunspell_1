@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_hu_hunspell_1,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
---- man/hu/hunspell.1.orig	Mon May 26 11:42:10 2008
-+++ man/hu/hunspell.1	Fri Jun  5 20:41:01 2009
+$OpenBSD: patch-man_hu_hunspell_1,v 1.2 2010/11/14 14:25:23 sthen Exp $
+--- man/hu/hunspell.1.orig	Tue Feb 23 10:08:52 2010
++++ man/hu/hunspell.1	Sat Sep 25 11:39:53 2010
 @@ -65,12 +65,12 @@ a javaslattevést). Az első szótár mindig alapszót
  .PP
  Az alapértelmezett szótár a környezet nyelvi beállításától függ

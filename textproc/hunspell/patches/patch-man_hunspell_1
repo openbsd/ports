@@ -1,10 +1,10 @@
-$OpenBSD: patch-man_hunspell_1,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
---- man/hunspell.1.orig	Fri Jun  5 20:03:16 2009
-+++ man/hunspell.1	Fri Jun  5 20:04:20 2009
-@@ -360,10 +360,10 @@ Dictionary path.
- Equivalent to 
- .I \-p.
- .SH FILES
+$OpenBSD: patch-man_hunspell_1,v 1.2 2010/11/14 14:25:23 sthen Exp $
+--- man/hunspell.1.orig	Tue Feb 23 11:02:17 2010
++++ man/hunspell.1	Sat Sep 25 11:47:18 2010
+@@ -366,10 +366,10 @@ following environment variables are searched: LC_ALL,
+ LC_MESSAGES, and LANG. If none are set then the following
+ fallbacks are used:
+ 
 -.BI /usr/share/myspell/default.aff
 +.BI ${PREFIX}/share/myspell/default.aff
  Path of default affix file. See hunspell(4).
