@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2010/09/30 07:44:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2010/11/15 17:41:03 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-<0.6.2p7
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -2607,6 +2607,8 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/gnome-themes.mo
 share/locale/el/LC_MESSAGES/gnome-themes.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
 share/locale/en@shaw/LC_MESSAGES/gnome-themes.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
