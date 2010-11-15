@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/10 19:02:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2010/11/15 14:52:31 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		2.32.0.1
-
-REVISION=		1
+GNOME_VERSION=		2.32.1
 
 CATEGORIES=		net
 
@@ -24,7 +22,7 @@ MODULES=		devel/gettext \
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
 WANTLIB += atk-1.0 c cairo clutter-glx-1.0 com_err crypto dbus-1
-WANTLIB += dbus-glib-1 drm eggdbus-1 expat fontconfig freetype
+WANTLIB += dbus-glib-1 drm expat fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 unique-1.0
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gstbase-0.10 gstfarsight-0.10 gstinterfaces-0.10
@@ -33,7 +31,7 @@ WANTLIB += nss3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre enchant
 WANTLIB += pixman-1 plc4 plds4 png proxy pthread pthread-stubs
 WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++ notify
 WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render ltdl
-WANTLIB += xcb-render-util xml2 z canberra canberra-gtk camel-1.2
+WANTLIB += gconf-2 gdata gee xcb-shm xml2 z canberra canberra-gtk camel-1.2
 WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.8
 WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
 WANTLIB += telepathy-logger folks folks-telepathy
