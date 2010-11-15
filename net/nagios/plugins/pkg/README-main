@@ -1,12 +1,21 @@
-Some nagios plugins need elevated privileges to run properly. As the code
-quality of these plugins is not really good, they are not installed suid
-root by default, but instead I suggest running them with systrace's
-privilege elevation feature. This way they are run as _nagios, but single
-syscalls are run as root.
+$OpenBSD: README-main,v 1.1 2010/11/15 09:56:53 sthen Exp $
+
+Setting up Nagios' plugins on OpenBSD
+-------------------------------------
+
+The check_icmp and check_dhcp Nagios plugins need elevated privileges to
+run properly. As the code quality of these plugins is not really good,
+they are not installed suid root by default.
+
+If you have to use these plugins (note that check_fping could be used
+in place of check_icmp), instead of running the whole plugin as root,
+it is possible to run them with systrace's privilege elevation feature.
+This way the plugin runs as _nagios, but the individual system calls
+requiring privileges are run as root.
 
 1) Create a preliminary systrace policy for the plugin.
 
-# cd ${PREFIX}/libexec/nagios
+# cd ${TRUEPREFIX}/libexec/nagios
 # systrace -A -d /tmp ./<plugin> <plugin arguments>
 
 This creates a policy for the plugin <plugin> in /tmp.
@@ -21,7 +30,7 @@ native-bind: sockaddr eq "inet-[0.0.0.0]:68" then permit as root
 4) Run visudo as root and configure sudo for user _nagios like this.
 
 _nagios ALL=NOPASSWD: /bin/systrace -a -c 550\:550 \
-    ${PREFIX}/libexec/nagios/<plugin> <plugin arguments>
+    ${TRUEPREFIX}/libexec/nagios/<plugin> <plugin arguments>
 
 5) Configure the respective command in nagios.
 
@@ -31,4 +40,3 @@ define command {
 }
 
 6) In case of problems, systrace will log to /var/log/messages.
-

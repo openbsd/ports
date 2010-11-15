@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/28 09:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 09:56:53 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -22,6 +22,8 @@ PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
 PKGNAME-samba=	nagios-plugins-samba-${V}
 PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
+
+REVISION-main=	0
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
 
@@ -119,10 +121,5 @@ MODULES=	devel/gettext
 
 # many broken tests, but...
 REGRESS_IS_INTERACTIVE=Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nagios-plugins
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/nagios-plugins
 
 .include <bsd.port.mk>

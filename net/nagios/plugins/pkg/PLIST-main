@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/10/26 15:02:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/15 09:56:53 sthen Exp $
 @pkgpath net/nagios/plugins
 @comment lib/charset.alias
 libexec/nagios/
@@ -55,8 +55,7 @@ libexec/nagios/check_wave
 @bin libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
-share/doc/nagios-plugins/
-share/doc/nagios-plugins/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
