@@ -1,6 +1,7 @@
+$OpenBSD: README,v 1.1 2010/11/15 08:11:54 jasper Exp $
+
 TeX Live for OpenBSD - Notes
-$OpenBSD: README.OpenBSD,v 1.2 2010/10/21 15:41:55 edd Exp $
-----------------------------
+=======================================================================
 
 There are a number of texmf trees in the OpenBSD packages:
 

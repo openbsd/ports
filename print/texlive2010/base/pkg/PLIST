@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/11/14 15:31:46 edd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/11/15 08:11:54 jasper Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -486,8 +486,7 @@ lib/libptexenc.la
 @man man/man5/fmtutil.cnf.5
 @man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
-share/doc/texlive/
-share/doc/texlive/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/lcdf-typetools-for-tex-live/
 @exec mktexlsr > /dev/null 2>&1
 @exec texlinks

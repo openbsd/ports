@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/14 15:31:46 edd Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 08:11:54 jasper Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -109,9 +109,6 @@ pre-install:
 
 post-install:
 	rm -Rf ${WRKSRC}/inst
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/texlive
 
 	# following tradition, texmf is in ${PREFIX}/share
 	mv ${PREFIX}/texmf ${PREFIX}/share/texmf
