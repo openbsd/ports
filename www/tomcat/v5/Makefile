@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 10:45:53 sthen Exp $
 
 COMMENT-main=	Java servlet 2.4 and Java server pages 2.0 server
 COMMENT-admin=	administration web application
@@ -10,9 +10,9 @@ PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-admin=	tomcat-admin-${V}
 PKGNAME-examples=tomcat-examples-${V}
-REVISION-main=	1
+REVISION-main=	2
 REVISION-admin=	0
-REVISION-examples= 0
+REVISION-examples= 1
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -80,11 +80,6 @@ do-install:
 		xargs rm
 	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
 		${PREFIX}/tomcat/bin/setclasspath.sh
-	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
-		-e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
-		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
-		< ${FILESDIR}/README.OpenBSD \
-		> ${PREFIX}/tomcat/README.OpenBSD
 	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
 		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc

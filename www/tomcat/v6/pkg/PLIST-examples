@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2009/06/12 17:46:56 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2010/11/15 10:45:54 sthen Exp $
+@conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
 @group _tomcat

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/11/15 10:45:54 sthen Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v6
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/tomcat/
 @owner _tomcat
 @group _tomcat
@@ -73,7 +74,6 @@ share/examples/tomcat/web.xml
 tomcat/
 tomcat/LICENSE
 tomcat/NOTICE
-tomcat/README.OpenBSD
 tomcat/RELEASE-NOTES
 tomcat/RUNNING.txt
 tomcat/bin/

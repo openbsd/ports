@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 10:45:53 sthen Exp $
 
 COMMENT-main=	Java servlet 2.3 and Java server pages 1.2 server
 COMMENT-admin=	administration web application
@@ -9,9 +9,9 @@ DISTNAME=	apache-tomcat-${V}-LE-jdk14
 PKGNAME-main=	tomcat-${V}
 PKGNAME-admin=	tomcat-admin-${V}
 PKGNAME-examples=tomcat-examples-${V}
-REVISION-main=	0
+REVISION-main=	1
 REVISION-admin=	0
-REVISION-examples= 0
+REVISION-examples= 1
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-4/v$V/bin/} \
@@ -69,11 +69,6 @@ do-install:
 	@perl -pi -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		${WRKINST}/${CATALINA_BASE}/webapps/admin.xml \
 		${WRKINST}/${CATALINA_BASE}/webapps/manager.xml
-	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
-		-e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
-		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
-		< ${FILESDIR}/README.OpenBSD \
-		> ${PREFIX}/tomcat/README.OpenBSD
 	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
 		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
