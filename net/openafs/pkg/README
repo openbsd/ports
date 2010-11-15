@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/15 08:11:17 jasper Exp $
+
 Using OpenAFS in an OpenBSD environment
 
 Some knob twiddling you may find useful:

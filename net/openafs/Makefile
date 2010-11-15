@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/07/24 23:01:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 08:11:17 jasper Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		net
 
@@ -54,16 +54,12 @@ post-patch:
 		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/openafs
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/openafs/README.OpenBSD
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
 	${SUBST_CMD} -c ${FILESDIR}/krb5.conf \
 		${PREFIX}/share/examples/openafs/krb5.conf
 	${SUBST_CMD} -c ${FILESDIR}/openafs-setup \
 		${PREFIX}/sbin/openafs-setup
 	chown ${BINOWN}:${BINGRP} \
-		${PREFIX}/share/openafs/README.OpenBSD \
 		${PREFIX}/share/examples/openafs/krb5.conf \
 		${PREFIX}/sbin/openafs-setup
 	chmod u+x ${PREFIX}/sbin/openafs-setup
