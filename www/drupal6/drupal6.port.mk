@@ -1,4 +1,4 @@
-# $OpenBSD: drupal6.port.mk,v 1.5 2010/10/27 11:02:37 stephan Exp $
+# $OpenBSD: drupal6.port.mk,v 1.6 2010/11/15 09:05:40 stephan Exp $
 
 
 # three types of things we can install, by default plugin
@@ -28,8 +28,8 @@ DRUPAL ?=	drupal6
 DRUPAL_ROOT ?=	htdocs/${DRUPAL}
 DRUPAL_MODS ?=	${DRUPAL_ROOT}/sites/all/modules/
 DRUPAL_THEMES ?=${DRUPAL_ROOT}/sites/all/themes/
-DRUPAL_OWNER =	www
-DRUPAL_GROUP =	www
+DRUPAL_OWNER =	root
+DRUPAL_GROUP =	daemon
 SUBST_VARS += 	DRUPAL_MODS DRUPAL_THEMES DRUPAL_ROOT \
 		DRUPAL_OWNER DRUPAL_GROUP
 
@@ -37,19 +37,18 @@ SUBST_VARS += 	DRUPAL_MODS DRUPAL_THEMES DRUPAL_ROOT \
 MODDRUPAL_INSTALL = \
 		mkdir -p ${PREFIX}/${DRUPAL_THEMES}; \
 		cp -R ${WRKDIST} ${PREFIX}/${DRUPAL_THEMES}; \
-		chown -R www.www ${PREFIX}/${DRUPAL_THEMES} 
+		chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_THEMES} 
 .elif ${MODDRUPAL_LANG:L} == "yes"
 MODDRUPAL_INSTALL = \
 	mkdir -p ${PREFIX}/${DRUPAL_ROOT}; \
 	cp -R ${WRKDIST}/* ${PREFIX}/${DRUPAL_ROOT}; \
-	chown -R www.www ${PREFIX}/${DRUPAL_ROOT}
+	chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_ROOT}
 SUBST_VARS += LANG
-#RUN_DEPENDS ?=	::www/drupal5/autolocale
 .else
 MODDRUPAL_INSTALL = \
 		mkdir -p ${PREFIX}/${DRUPAL_MODS}; \
 		cp -R ${WRKDIST} ${PREFIX}/${DRUPAL_MODS}; \
-		chown -R www.www ${PREFIX}/${DRUPAL_MODS} 
+		chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_MODS} 
 .endif
 
 RUN_DEPENDS ?=	:drupal->=6,<7:www/drupal6/core

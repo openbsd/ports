@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/05 09:09:23 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/15 09:05:41 stephan Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -13,7 +13,9 @@ ${DRUPAL_ROOT}/LICENSE.txt
 ${DRUPAL_ROOT}/MAINTAINERS.txt
 ${DRUPAL_ROOT}/UPGRADE.txt
 ${DRUPAL_ROOT}/cron.php
+@owner www
 ${DRUPAL_ROOT}/files/
+@owner ${DRUPAL_OWNER}
 ${DRUPAL_ROOT}/includes/
 ${DRUPAL_ROOT}/includes/actions.inc
 ${DRUPAL_ROOT}/includes/batch.inc
@@ -388,11 +390,19 @@ ${DRUPAL_ROOT}/scripts/drupal.sh
 ${DRUPAL_ROOT}/sites/
 ${DRUPAL_ROOT}/sites/all/
 ${DRUPAL_ROOT}/sites/all/README.txt
+@owner
+@group
 ${DRUPAL_MODS}/
 ${DRUPAL_THEMES}/
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/sites/default/
+@mode 640
+@group www
 ${DRUPAL_ROOT}/sites/default/default.settings.php
 @sample ${DRUPAL_ROOT}/sites/default/settings.php
+@mode
+@group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/themes/
 ${DRUPAL_ROOT}/themes/README.txt
 ${DRUPAL_ROOT}/themes/bluemarine/
