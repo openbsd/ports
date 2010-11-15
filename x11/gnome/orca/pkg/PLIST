@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/30 10:20:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/11/15 22:59:56 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -344,6 +344,9 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/__init__.
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/script.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/script.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/speech_generator.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/speech_generator.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/speech_generator.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-screensaver-dialog/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-screensaver-dialog/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-screensaver-dialog/__init__.pyc
@@ -642,6 +645,7 @@ share/icons/hicolor/32x32/apps/orca.png
 share/icons/hicolor/48x48/apps/orca.png
 share/icons/hicolor/scalable/apps/orca.svg
 share/locale/ar/LC_MESSAGES/orca.mo
+share/locale/ast/LC_MESSAGES/orca.mo
 share/locale/bg/LC_MESSAGES/orca.mo
 share/locale/bn/LC_MESSAGES/orca.mo
 share/locale/bn_IN/LC_MESSAGES/orca.mo

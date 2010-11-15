@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 22:59:56 ajacoutot Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		2.32.0
+GNOME_VERSION=		2.32.1
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -21,7 +21,8 @@ RUN_DEPENDS=		::x11/gnome/py-gnome \
 			::x11/gnome/mag \
 			::x11/gnome/speech \
 			::x11/dbus-python \
-			::devel/gettext
+			::devel/gettext \
+			::devel/py-xdg
 
 DESKTOP_FILES=		Yes
 
