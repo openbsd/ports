@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/26 15:19:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 00:26:16 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
 #
 
@@ -9,7 +9,6 @@
     SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
-    SUBDIR += tcsh,static
     SUBDIR += zoidberg
     SUBDIR += zsh
 
