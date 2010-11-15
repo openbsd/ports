@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.5 2009/01/01 21:03:27 djm Exp $
+$OpenBSD: patch-setup_py,v 1.6 2010/11/15 20:55:25 sthen Exp $
 --- setup.py.orig	Fri Oct 17 04:58:19 2008
 +++ setup.py	Fri Dec 26 12:42:10 2008
 @@ -17,6 +17,11 @@ from distutils.command.install_lib import install_lib
@@ -154,7 +154,7 @@ $OpenBSD: patch-setup_py,v 1.5 2009/01/01 21:03:27 djm Exp $
          tcllib = tklib = tcl_includes = tk_includes = None
 -        for version in ['8.5', '85', '8.4', '84', '8.3', '83', '8.2',
 -                        '82', '8.1', '81', '8.0', '80']:
-+        for version in ['84']:
++        for version in ['85']:
              tklib = self.compiler.find_library_file(lib_dirs, 'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs, 'tcl' + version)
              if tklib and tcllib:

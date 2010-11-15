@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.69 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.70 2010/11/15 20:55:24 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -68,9 +68,10 @@ LIB_DEPENDS-gdbm =	::databases/gdbm
 WANTLIB-gdbm =		gdbm.>=3
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			::lang/python/${VERSION},-tkinter
-LIB_DEPENDS-tkinter =	:tcl->=8.4,<8.5:lang/tcl/8.4 \
-			:tk->=8.4,<8.5:x11/tk/8.4
-WANTLIB-tkinter =	X11 tcl84 tk84
+# XXX Tcl/Tk version number handled in patch-setup_py
+MODULES +=		x11/tk
+LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS}
+WANTLIB-tkinter =	X11 ${MODTK_WANTLIB}
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
