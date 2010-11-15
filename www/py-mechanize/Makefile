@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/14 19:58:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 12:14:28 jasper Exp $
 
 COMMENT=		stateful programmatic web browsing module
 
 MODPY_EGG_VERSION=	0.2.4
 DISTNAME=		mechanize-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -22,6 +23,11 @@ MODPY_SETUPTOOLS=	Yes
 MASTER_SITES=		${HOMEPAGE}/src/
 
 REGRESS_DEPENDS=	::devel/py-twisted/web2/
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-mechanize
+	cd ${WRKSRC}/examples && umask 022 && pax -rw . \
+		 ${PREFIX}/share/examples/py-mechanize
 
 do-regress: fake
 	cd ${WRKSRC} && \

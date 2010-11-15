@@ -1,2 +1,11 @@
 Stateful programmatic web browsing in Python, after Andy Lester's Perl
 module WWW::Mechanize.
+
+The library is layered: mechanize.Browser (stateful web browser),
+mechanize.UserAgent (configurable URL opener), plus urllib2 handlers.
+  
+Features include: ftp:, http: and file: URL schemes, browser history,
+high-level hyperlink and HTML form support, HTTP cookies, HTTP-EQUIV
+and Refresh, Referer [sic] header, robots.txt, redirections, proxies,
+and Basic and Digest HTTP authentication. mechanize's response
+objects are (lazily-) .seek()able and still work after .close().
