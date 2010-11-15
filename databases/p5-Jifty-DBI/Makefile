@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 12:44:20 espie Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -35,6 +35,6 @@ RUN_DEPENDS=	devel/p5-Class-Accessor \
 
 # a lot of tests will be skipped without DB connections
 
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

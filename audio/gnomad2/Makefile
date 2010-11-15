@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 12:44:20 espie Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
@@ -42,6 +42,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils
 
 .include <bsd.port.mk>

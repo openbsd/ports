@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.134 2010/11/15 12:44:20 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -81,7 +81,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 INSTALL_TARGET=	install-world
 
-LIB_DEPENDS-main= ::textproc/libxml
+LIB_DEPENDS-main= textproc/libxml
 WANTLIB-main =	${WANTLIB} xml2
 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/13 11:53:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 12:44:20 espie Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
@@ -18,12 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 WANTLIB=		sqlite3
-LIB_DEPENDS=		:sqlite3->=3.3.4:databases/sqlite3 
+LIB_DEPENDS=		sqlite3->=3.3.4:databases/sqlite3 
 
 CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_REGRESS=	rake
-REGRESS_DEPENDS=	:${MODRUBY_PKG_PREFIX}-mocha:devel/ruby-mocha,${FLAVOR} \
-			:${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	devel/ruby-mocha,${FLAVOR} \
+			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 12:44:20 espie Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -48,7 +48,7 @@ USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
-BUILD_DEPENDS=		::devel/swig
+BUILD_DEPENDS=		devel/swig
 
 RUN_DEPENDS-main=
 RUN_DEPENDS-tcl=

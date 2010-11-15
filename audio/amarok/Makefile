@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/15 12:44:20 espie Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -27,7 +27,7 @@ WANTLIB += kdecore>=6 DCOP khtml kwalletclient kdefx kdeprint
 WANTLIB += kutils kdeui kparts kio kdesu kjs knewstuff kdnssd tag>=5.0
 WANTLIB += xine sqlite3 gpod njb mtp ${MODRUBY_WANTLIB}
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS +=	x11/kde/libs3 \
 		x11/kde/base3 \
 		x11/gtk+2 \
