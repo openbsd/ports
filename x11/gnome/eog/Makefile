@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/15 23:04:02 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		2.32.0
-REVISION=		0
+GNOME_VERSION=		2.32.1
 
 CATEGORIES=		graphics
 
@@ -22,8 +21,8 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs startup-notification-1 util xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util
-WANTLIB += xcb-render xcb-render-util xml2 z gnome-desktop-2
-WANTLIB += rsvg-2 gsf-1 bz2 croco-0.6
+WANTLIB += xcb-render GL Xxf86vm drm xcb-shm xml2 z gnome-desktop-2
+WANTLIB += rsvg-2 croco-0.6
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gconf2 \
