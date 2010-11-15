@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/15 22:16:19 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
-GNOME_VERSION=		2.32.0
-
-REVISION=		1
+GNOME_VERSION=		2.32.1
 
 CATEGORIES=		games
 
@@ -20,12 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage rsvg-2
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm guile
 WANTLIB += atk-1.0 c cairo canberra canberra-gtk clutter-glx-1.0
-WANTLIB += croco-0.6 dbus-1 dbus-glib-1 drm expat fontconfig freetype
+WANTLIB += croco-0.6 xcb-shm drm expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 gthread-2.0 gtk-x11-2.0 json-glib-1.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs stdc++ vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-render-util xml2 z clutter-gtk-0.10
+WANTLIB += xcb xcb-render xml2 z clutter-gtk-0.10
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
