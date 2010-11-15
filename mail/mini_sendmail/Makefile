@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 18:13:55 jasper Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
@@ -6,8 +6,10 @@ COMMENT-chroot=	static mini_sendmail for chrooted apache
 V=		1.3.6
 DISTNAME=	mini_sendmail-${V}
 PKGNAME=	mini_sendmail-${V}p0
-PKGNAME-main=	mini_sendmail-${V}p0
-PKGNAME-chroot=	mini_sendmail-chroot-${V}p0
+PKGNAME-main=	mini_sendmail-${V}
+REVISION-main=	1
+PKGNAME-chroot=	mini_sendmail-chroot-${V}
+REVISION-chroot=0
 CATEGORIES=	mail www
 MASTER_SITES=	${HOMEPAGE}
 
@@ -34,7 +36,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mini_sendmail
 	${INSTALL_MAN} ${WRKSRC}/mini_sendmail.8 ${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mini_sendmail
-	${INSTALL_DATA} ${FILESDIR}/README.php ${PREFIX}/share/doc/mini_sendmail
 	${INSTALL_PROGRAM_DIR} ${WRKINST}/var/www/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mini_sendmail-static \
 		${WRKINST}/var/www/bin/mini_sendmail

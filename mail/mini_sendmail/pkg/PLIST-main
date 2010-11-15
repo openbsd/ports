@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 09:37:39 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/11/15 18:13:55 jasper Exp $
 @pkgpath mail/mini_sendmail
-bin/mini_sendmail
+@bin bin/mini_sendmail
 @man man/man8/mini_sendmail.8
 share/doc/mini_sendmail/
 share/doc/mini_sendmail/README
-share/doc/mini_sendmail/README.php
+share/doc/pkg-readmes/${FULLPKGNAME}

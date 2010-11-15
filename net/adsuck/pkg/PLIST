@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/09 03:57:39 todd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/15 18:13:45 jasper Exp $
 @newgroup _adsuck:620
 @newuser _adsuck:620:_adsuck:daemon:adsuck Daemon:/var/empty:/sbin/nologin
 @man man/cat8/adsuck.0
@@ -7,7 +7,7 @@ share/adsuck/
 share/adsuck/dhclient-script.diff
 share/doc/adsuck/
 share/doc/adsuck/README
-share/doc/adsuck/README.dhclient
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/adsuck/
 @sample /var/adsuck/
 @sample /var/adsuck/files/

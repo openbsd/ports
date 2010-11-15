@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/15 18:13:45 jasper Exp $
+
 To make dhclient play nice with adsuck, patching dhclient-script is necessary:
 
  cd /sbin
