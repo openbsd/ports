@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/15 09:09:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/15 09:33:53 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 BROKEN-sparc64=		waf stalls during build
@@ -35,8 +35,7 @@ MODGCONF2_SCHEMAS_DIR=	hamster-applet
 MODGCONF2_LIBDEP=	No
 
 # controlcenter2 is needed for custom keybindings
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:waf->=1.5.18:devel/waf
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/controlcenter2 \
 			::x11/gnome/py-gnome-desktop \
 			::devel/py-xdg \
