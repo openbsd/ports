@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 18:26:38 jasper Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.5.8
-PKGNAME =		tcl-8.5.8p0
+PKGNAME =		tcl-8.5.8
+REVISION =		1
 SHARED_LIBS =		tcl85 0.5
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -40,7 +41,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl85_VERSION}"
 
@@ -65,13 +66,7 @@ DOCDIR =		${PREFIX}/share/doc/tcltk8.5
 pre-regress:
 	@mkdir -p ${TESTHOME}
 
-pre-configure:
-	cp ${FILESDIR}/README.OpenBSD ${WRKBUILD}
-	${SUBST_CMD} ${WRKBUILD}/README.OpenBSD
-
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${DOCDIR}
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 	ln -s libtcl85.a ${PREFIX}/lib/libtcl85_pic.a
 	ln -s libtclstub85.a ${PREFIX}/lib/libtclstub85_pic.a

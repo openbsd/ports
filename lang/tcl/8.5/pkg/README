@@ -1,4 +1,4 @@
-# $ OpenBSD$
+# $OpenBSD: README,v 1.1 2010/11/15 18:26:39 jasper Exp $
 
 cat << "EOTEXT" > /dev/null
 
@@ -28,36 +28,36 @@ Files / Directories
 Configuration files
 tclConfig.sh, tkConfig.sh
 normally in
-${PREFIX}/lib
+${TRUEPREFIX}/lib
 now in
-${PREFIX}/lib/tcl8.5, ${PREFIX}/lib/tk8.5
+${TRUEPREFIX}/lib/tcl8.5, ${TRUEPREFIX}/lib/tk8.5
 
 Include files ('public' - see below)
 *.h
 normally in
-${PREFIX}/include
+${TRUEPREFIX}/include
 now in
-${PREFIX}/include/tcl8.5, ${PREFIX}/include/tk8.5
+${TRUEPREFIX}/include/tcl8.5, ${TRUEPREFIX}/include/tk8.5
 
 Manual pages
 *.1, *.3, *.n
 normally in
-${PREFIX}/man
+${TRUEPREFIX}/man
 now in
-${PREFIX}/lib/tcl8.5/man, ${PREFIX}/lib/tk8.5/man
+${TRUEPREFIX}/lib/tcl8.5/man, ${TRUEPREFIX}/lib/tk8.5/man
 
 Demos
 *.tcl, *
 normally in
-${PREFIX}/lib/tk8.5/demos
+${TRUEPREFIX}/lib/tk8.5/demos
 now in
-${PREFIX}/share/examples/tk8.5
+${TRUEPREFIX}/share/examples/tk8.5
 
 
 Additional Header Files
 
 Additional (what Tcl/Tk calls 'private') include (.h) files are installed
-under ${PREFIX}/include/tcl8.5 and ${PREFIX}/include/tk8.5 in a
+under ${TRUEPREFIX}/include/tcl8.5 and ${TRUEPREFIX}/include/tk8.5 in a
 directory structure which mimics the Tcl and Tk source code directory
 layouts.  Some software that compiles and links against Tcl or Tk
 requires these 'private' headers and therefore assumes that the Tcl or Tk
@@ -117,8 +117,8 @@ cat << "EOPATCH" | patch -p0 -s -o - /etc/man.conf
  _whatdb		/usr/share/man/whatis.db
  _whatdb		/usr/local/man/whatis.db
  _whatdb		/usr/X11R6/man/whatis.db
-+_whatdb		/usr/local/lib/tcl8.5/man/whatis.db
-+_whatdb		/usr/local/lib/tk8.5/man/whatis.db
++_whatdb		${TRUEPREFIX}/lib/tcl8.5/man/whatis.db
++_whatdb		${TRUEPREFIX}/lib/tk8.5/man/whatis.db
  
  # Subdirectories for paths ending in '/', IN SEARCH ORDER.
  _subdir		cat1 man1 cat8 man8 cat6 man6 cat2 man2 cat3 man3 cat5 man5 cat7 man7 cat4 man4 cat9 man9 cat3p man3p cat3f man3f catn mann
@@ -133,8 +133,8 @@ cat << "EOPATCH" | patch -p0 -s -o - /etc/man.conf
  X11		/usr/X11R6/man/
  X11R6		/usr/X11R6/man/
  local		/usr/local/man/
-+tcl		/usr/local/lib/tcl8.5/man/
-+tk		/usr/local/lib/tk8.5/man/
++tcl		${TRUEPREFIX}/lib/tcl8.5/man/
++tk		${TRUEPREFIX}/lib/tk8.5/man/
  
  # Specific section/directory combinations.
  1		/usr/{share,X11R6,local}/man/{cat,man}1
