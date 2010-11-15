@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_common_h,v 1.3 2010/11/15 11:11:34 dcoppa Exp $
+
+fix from upstream: don't hide controls and mouse in fullscreen mode
+when mouse is over controls
+
+--- src/common.h.orig	Tue Oct 19 18:33:40 2010
++++ src/common.h	Mon Nov 15 08:35:10 2010
+@@ -369,6 +369,7 @@ gboolean disable_embeddedfonts;
+ gboolean disable_animation;
+ gint auto_hide_timeout;
+ gboolean always_hide_after_timeout;
++gboolean mouse_over_controls;
+ gchar *subtitlefont;
+ gdouble subtitle_scale;
+ gdouble subtitle_delay;

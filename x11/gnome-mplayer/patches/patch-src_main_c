@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.7 2010/11/08 15:04:15 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.8 2010/11/15 11:11:34 dcoppa Exp $
 
 set some sane defaults:
 use mplayer's software volume control (see pkg/MESSAGE)
@@ -6,30 +6,30 @@ disable bar animation in full screen
 use xscrnsaver controls over gnome-power-manager
 
 --- src/main.c.orig	Tue Oct 19 18:33:40 2010
-+++ src/main.c	Mon Nov  8 15:43:36 2010
-@@ -689,9 +689,9 @@ int main(int argc, char *argv[])
++++ src/main.c	Mon Nov 15 11:49:10 2010
+@@ -689,8 +689,8 @@ int main(int argc, char *argv[])
      playlist_visible = FALSE;
      disable_fullscreen = FALSE;
      disable_framedrop = FALSE;
 -    softvol = FALSE;
 -    remember_softvol = FALSE;
--    volume_softvol = -1;
 +    softvol = TRUE;
 +    remember_softvol = TRUE;
-+    volume_softvol = 50;
+     volume_softvol = -1;
      volume_gain = 0;
      subtitlefont = NULL;
-     subtitle_codepage = NULL;
-@@ -705,7 +705,7 @@ int main(int argc, char *argv[])
+@@ -705,8 +705,9 @@ int main(int argc, char *argv[])
      reallyverbose = 0;
      embedding_disabled = FALSE;
      disable_pause_on_click = FALSE;
 -    disable_animation = FALSE;
 +    disable_animation = TRUE;
      auto_hide_timeout = 3;
++    mouse_over_controls = FALSE;
      use_mediakeys = TRUE;
      use_defaultpl = FALSE;
-@@ -744,7 +744,7 @@ int main(int argc, char *argv[])
+     mplayer_bin = NULL;
+@@ -744,7 +745,7 @@ int main(int argc, char *argv[])
      start_second = 0;
      play_length = 0;
      save_loc = TRUE;
@@ -38,3 +38,26 @@ use xscrnsaver controls over gnome-power-manager
      screensaver_disabled = FALSE;
      update_control_flag = FALSE;
      gchar *filename;
+@@ -796,9 +797,10 @@ int main(int argc, char *argv[])
+     audio_channels = gm_pref_store_get_int(gm_store, AUDIO_CHANNELS);
+     use_hw_audio = gm_pref_store_get_boolean(gm_store, USE_HW_AUDIO);
+     fullscreen = gm_pref_store_get_boolean(gm_store, FULLSCREEN);
+-    softvol = gm_pref_store_get_boolean(gm_store, SOFTVOL);
+-    remember_softvol = gm_pref_store_get_boolean(gm_store, REMEMBER_SOFTVOL);
+-    volume_softvol = gm_pref_store_get_int(gm_store, VOLUME_SOFTVOL);
++    softvol = gm_pref_store_get_boolean_with_default(gm_store, SOFTVOL, softvol);
++    remember_softvol = gm_pref_store_get_boolean_with_default(gm_store, REMEMBER_SOFTVOL, remember_softvol);
++    volume_softvol = gm_pref_store_get_int_with_default(gm_store, VOLUME_SOFTVOL, volume_softvol);
++    if (volume_softvol == -1) volume_softvol = 50;
+     volume_gain = gm_pref_store_get_int(gm_store, VOLUME_GAIN);
+     forcecache = gm_pref_store_get_boolean(gm_store, FORCECACHE);
+     vertical_layout = gm_pref_store_get_boolean(gm_store, VERTICAL);
+@@ -815,7 +817,7 @@ int main(int argc, char *argv[])
+     disable_ass = gm_pref_store_get_boolean(gm_store, DISABLEASS);
+     disable_embeddedfonts = gm_pref_store_get_boolean(gm_store, DISABLEEMBEDDEDFONTS);
+     disable_pause_on_click = gm_pref_store_get_boolean(gm_store, DISABLEPAUSEONCLICK);
+-    disable_animation = gm_pref_store_get_boolean(gm_store, DISABLEANIMATION);
++    disable_animation = gm_pref_store_get_boolean_with_default(gm_store, DISABLEANIMATION, disable_animation);
+     auto_hide_timeout =
+         gm_pref_store_get_int_with_default(gm_store, AUTOHIDETIMEOUT, auto_hide_timeout);
+     disable_cover_art_fetch = gm_pref_store_get_boolean(gm_store, DISABLE_COVER_ART_FETCH);
