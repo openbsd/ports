@@ -1,9 +1,11 @@
-To enable a decent configuration of drupal, please create a symbolic
-link from ${PREFIX}/conf/modules.sample/drupal6.conf
-to ${PREFIX}/conf/modules/drupal6.conf
+$OpenBSD: README,v 1.1 2010/11/15 12:58:52 stephan Exp $
 
-ln -s ${PREFIX}/conf/modules.sample/drupal6.conf \
-	${PREFIX}/conf/modules
+To enable a decent configuration of drupal, please create a symbolic
+link from ${TRUEPREFIX}/conf/modules.sample/drupal6.conf
+to ${TRUEPREFIX}/conf/modules/drupal6.conf
+
+ln -s ${TRUEPREFIX}/conf/modules.sample/drupal6.conf \
+	${TRUEPREFIX}/conf/modules
 
 In order to run with standard OpenBSD chroot'ed httpd:
 
@@ -38,7 +40,7 @@ Updating from a drupal5 installation:
 
 a lot of things now work. Major stumbling blocks:
 * views are lost. Recreating them may be quick, or very painful if you
-have a lot of them.
+  have a lot of them.
 * usernodes no longer exist.
 * image has been replaced by imagefield.
 
@@ -48,7 +50,7 @@ have a lot of them.
 - make sure you have enough space (database, website...)
 - install the drupal6 packages you need.
 - cp the defaults.settings.php to the settings.php, edit it to point to
-your existing database. You will often also need $update_free_access=TRUE
+  your existing database. You will often also need $update_free_access=TRUE
 - point your browser to update.php
 - assuming things work, go to the /admin page, enable the modules you need
 - rerun update.php

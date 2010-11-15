@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/15 09:05:41 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/15 12:58:52 stephan Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -541,3 +541,5 @@ ${DRUPAL_ROOT}/themes/pushbutton/tabs-option-on.png
 ${DRUPAL_ROOT}/update.php
 ${DRUPAL_ROOT}/xmlrpc.php
 @extraunexec rm -rf ${DRUPAL_ROOT}/files/*
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
