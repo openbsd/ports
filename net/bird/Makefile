@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/10 10:11:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 09:47:26 sthen Exp $
 
 COMMENT-main=	bird internet routing daemon
 COMMENT-doc=	bird internet routing daemon (documentation)
 
-V=		1.2.2
-PORTVER=
-# XXX handle standard PKGNAME-main and FULLPKGNAME-main bumps by
-# setting PORTVER. see below.
+V=		1.2.5
 DISTNAME=	bird-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/-/-doc-/}${EXTRACT_SUFX}
@@ -33,12 +30,11 @@ FLAVOR?=
 SUBST_VARS+=	SIX
 
 .if ${FLAVOR:L:Mv6}
-FULLPKGNAME-main= bird-v6-$V${PORTVER}
-# XXX avoid warnings
+FULLPKGNAME-main= bird-v6-$V
 FULLPKGPATH-main= net/bird,-main,v6
 SIX=		6
 .else
-PKGNAME-main=	bird-$V${PORTVER}
+PKGNAME-main=	bird-$V
 .endif
 
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
