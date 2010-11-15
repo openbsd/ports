@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 17:39:47 jasper Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-1.0RC3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 USE_GROFF =	Yes
 
@@ -45,7 +45,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/*.png ${ICONSDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/{README,INSTALL} ${DOCSDIR}
-	${SUBST_CMD} -c ${FILESDIR}/README.chroot ${DOCSDIR}/README.chroot
-	chown ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/README.chroot
 
 .include <bsd.port.mk>

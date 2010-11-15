@@ -1,4 +1,7 @@
-# $OpenBSD: README.chroot,v 1.4 2009/12/23 18:58:54 landry Exp $
+$OpenBSD: README,v 1.1 2010/11/15 17:39:47 jasper Exp $
+
+Running KnowledgeTree in a chroot on OpenBSD
+============================================
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -44,13 +47,13 @@ Next, the A::G images and templates:
 
 $ cd /var/www${LOCALBASE}
 # mkdir -p share libdata/perl5/site_perl/`machine`-openbsd
-# cp -pR ${LOCALBASE}/share/Apache-Gallery share
+# cp -pR ${TRUEPREFIX}/share/Apache-Gallery share
 
 Next, the non-base Perl stuff:
 
 $ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
 # mkdir -p {,`machine`-openbsd/{,auto/}}Apache
-# cp -p ${LOCALBASE}/libdata/perl5/site_perl/Apache/Gallery.pm Apache
+# cp -p ${TRUEPREFIX}/libdata/perl5/site_perl/Apache/Gallery.pm Apache
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/Apache* \
 	`machine`-openbsd
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Apache \
@@ -80,12 +83,12 @@ Setting up httpd
 	ErrorLog    logs/gallery-error
 	CustomLog   logs/gallery-access combined
 	ServerName  gallery.site.tld
-	Alias /icons/gallery/ "${LOCALBASE}/share/Apache-Gallery/icons/"
-	Alias /gallery.css "${LOCALBASE}/share/Apache-Gallery/templates/new/gallery.css"
+	Alias /icons/gallery/ "${TRUEPREFIX}/share/Apache-Gallery/icons/"
+	Alias /gallery.css "${TRUEPREFIX}/share/Apache-Gallery/templates/new/gallery.css"
 	# This is necessary.
 	Options -Indexes
 	PerlSetVar  GalleryCacheDir '/tmp/'
-	PerlSetVar  GalleryTemplateDir '${LOCALBASE}/share/Apache-Gallery/templates/new/'
+	PerlSetVar  GalleryTemplateDir '${TRUEPREFIX}/share/Apache-Gallery/templates/new/'
 	PerlSetVar  GalleryInfo 'Picture Taken => DateTimeOriginal, Flash => Flash'
 	PerlSetVar  GallerySizes '640 1024'
 	PerlSetVar GalleryThumbnailSize '100x75'
@@ -93,7 +96,7 @@ Setting up httpd
 	# Note that you will want to change this.
 	PerlSetVar GalleryCopyrightImage '${LOCALBASE}/share/Apache-Gallery/icons/c.png'
 
-	<Directory ${LOCALBASE}/share/Apache-Gallery>
+	<Directory ${TRUEPREFIX}/share/Apache-Gallery>
 		order allow,deny
 		allow from all
 	</Directory>

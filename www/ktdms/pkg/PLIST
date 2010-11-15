@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/12 13:21:43 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/15 17:37:16 jasper Exp $
 @group daemon
 ktdms/
 ktdms/.htaccess
@@ -72,8 +72,6 @@ ktdms/docs/CHANGELOG
 ktdms/docs/CHANGELOG-build
 ktdms/docs/CHANGELOG-release
 ktdms/docs/COPYING
-ktdms/docs/INSTALL
-ktdms/docs/README.chroot
 ktdms/docs/README.txt
 ktdms/docs/VERSION-NAME.txt
 ktdms/docs/VERSION-OSS.txt
@@ -3719,3 +3717,5 @@ ktdms/var/uploads/
 @mode
 @group daemon
 ktdms/view.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

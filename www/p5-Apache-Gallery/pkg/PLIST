@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/05/03 15:58:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/15 17:39:47 jasper Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Gallery.pm
 @man man/man3p/Apache::Gallery.3p
@@ -68,4 +68,4 @@ share/Apache-Gallery/templates/new/slideshowoff.tpl
 share/doc/Apache-Gallery/
 share/doc/Apache-Gallery/INSTALL
 share/doc/Apache-Gallery/README
-share/doc/Apache-Gallery/README.chroot
+share/doc/pkg-readmes/${FULLPKGNAME}
