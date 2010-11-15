@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 18:30:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.1
 DISTNAME=		gdesklets-${V}
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11
 
@@ -32,7 +32,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 ffi gtop-2.0 \
 		pangoft2-1.0 pcre pixman-1 png xml2 z pthread-stubs xcb \
-		gthread-2.0 xcb-render xcb-render-util
+		gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm
 
 LIB_DEPENDS=		::devel/libgtop2 \
 			::x11/gnome/librsvg
