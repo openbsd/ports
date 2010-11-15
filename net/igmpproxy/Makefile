@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 11:39:30 jasper Exp $
 
 COMMENT =	Multicast router utilizing IGMP forwarding
 
 VERSION =	0.1-beta2
 DISTNAME =	igmpproxy-src-${VERSION}
 PKGNAME =	igmpproxy-${VERSION:S/-beta/b/}
+REVISION =	0
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=igmpproxy/}
 
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WRKDIST =		${WRKDIR}/igmpproxy/src
 
@@ -31,11 +32,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/igmpproxy
 	${INSTALL_DATA} ${WRKSRC}/igmpproxy.conf \
 	    ${PREFIX}/share/examples/igmpproxy
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/igmpproxy
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-	    ${PREFIX}/share/doc/igmpproxy
-	@perl -pi -e 's,%%PREFIX%%,${TRUEPREFIX},g;' \
-	    -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' \
-	    ${PREFIX}/share/doc/igmpproxy/README.OpenBSD
 
 .include <bsd.port.mk>

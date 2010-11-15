@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/15 11:39:30 jasper Exp $
 @man man/man5/igmpproxy.conf.5
 @man man/man8/igmpproxy.8
-sbin/igmpproxy
-share/doc/igmpproxy/
-share/doc/igmpproxy/README.OpenBSD
+@bin sbin/igmpproxy
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/igmpproxy/
 share/examples/igmpproxy/igmpproxy.conf
 @sample ${SYSCONFDIR}/igmpproxy.conf

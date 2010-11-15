@@ -1,5 +1,10 @@
+$OpenBSD: README,v 1.1 2010/11/15 11:39:30 jasper Exp $
+
+Running igmpproxy on OpenBSD
+-----------------------------
+
 To use igmpproxy on OpenBSD, you will need to configure it by
-editing %%SYSCONFDIR%%/igmpproxy.conf, and configure the OS for
+editing ${SYSCONFDIR}/igmpproxy.conf, and configure the OS for
 multicast forwarding:
 
 # echo multicast_router=YES >> /etc/rc.conf.local
@@ -10,8 +15,8 @@ be configured with multicast_host=YES.
 
 To have igmpproxy start at boot time, add this to /etc/rc.local:
 
-if [ -x %%PREFIX%%/sbin/igmpproxy ]; then
-        echo -n ' igmpproxy';   %%PREFIX%%/sbin/igmpproxy
+if [ -x ${TRUEPREFIX}/sbin/igmpproxy ]; then
+        echo -n ' igmpproxy';   ${TRUEPREFIX}/sbin/igmpproxy
 fi
 
 PF must be configured so that control packets (proto igmp) and
