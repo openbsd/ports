@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:51 espie Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -44,31 +44,31 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
 WANTLIB-main =		crypto m ssl z mysqlclient dbi
-LIB_DEPENDS-main =	::databases/mysql \
-			::databases/libdbi
+LIB_DEPENDS-main =	databases/mysql \
+			databases/libdbi
 
 WANTLIB-pgsql =		m pq dbi
-LIB_DEPENDS-pgsql =	::databases/postgresql \
-			::databases/libdbi
+LIB_DEPENDS-pgsql =	databases/postgresql \
+			databases/libdbi
 
 WANTLIB-sqlite =	m sqlite dbi
-LIB_DEPENDS-sqlite =	::databases/sqlite \
-			::databases/libdbi
+LIB_DEPENDS-sqlite =	databases/sqlite \
+			databases/libdbi
 
 WANTLIB-sqlite3 =	m sqlite3 dbi
-LIB_DEPENDS-sqlite3 =	::databases/sqlite3 \
-			::databases/libdbi
+LIB_DEPENDS-sqlite3 =	databases/sqlite3 \
+			databases/libdbi
 
 WANTLIB-freetds =	iconv m ct dbi
-LIB_DEPENDS-freetds =	::databases/freetds \
-			::databases/libdbi
+LIB_DEPENDS-freetds =	databases/freetds \
+			databases/libdbi
 
 REGRESS_IS_INTERACTIVE =Yes
-REGRESS_DEPENDS =	::databases/libdbi-drivers,-main \
-			::databases/libdbi-drivers,-pgsql \
-			::databases/libdbi-drivers,-sqlite \
-			::databases/libdbi-drivers,-sqlite3 \
-			::databases/libdbi-drivers,-freetds
+REGRESS_DEPENDS =	databases/libdbi-drivers,-main \
+			databases/libdbi-drivers,-pgsql \
+			databases/libdbi-drivers,-sqlite \
+			databases/libdbi-drivers,-sqlite3 \
+			databases/libdbi-drivers,-freetds
 
 post-install:
 .for d in mysql pgsql sqlite sqlite3

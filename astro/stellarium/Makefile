@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/27 13:25:01 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	free open source planetarium
 
@@ -27,11 +27,9 @@ MODULES=	devel/gettext \
 		devel/cmake \
 		x11/qt4
 
-LIB_DEPENDS=	::x11/qt4
-
 # used to download more stars definitions
-RUN_DEPENDS=	::net/curl \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	net/curl \
+		devel/desktop-file-utils
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}

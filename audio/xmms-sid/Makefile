@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,12 +18,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk \
-			iconv intl m pthread-stubs stdc++ xcb sidplay.>=1
+			iconv intl m pthread-stubs stdc++ xcb sidplay>=1
 
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 
-LIB_DEPENDS=	::audio/libsidplay
-RUN_DEPENDS=	::audio/xmms
+LIB_DEPENDS=	audio/libsidplay
+RUN_DEPENDS=	audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes

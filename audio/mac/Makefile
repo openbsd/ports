@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:47 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -30,7 +30,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	::devel/yasm
+BUILD_DEPENDS=	devel/yasm
 CONFIGURE_ARGS= --enable-assembly=yes
 .else
 CONFIGURE_ARGS= --enable-assembly=no

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:53 espie Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
@@ -29,9 +29,9 @@ MODULES=		java
 MODJAVA_VER?=		1.5+
 MODJAVA_JRERUN=		yes
 
-BUILD_DEPENDS=		::devel/apache-ant
-REGRESS_DEPENDS=	::databases/postgresql \
-			:junit-3.8.2:java/junit
+BUILD_DEPENDS=		devel/apache-ant
+REGRESS_DEPENDS=	databases/postgresql \
+			junit-3.8.2:java/junit
 RUN_DEPENDS-docs=
 
 JUNIT_JAR=		${LOCALBASE}/share/java/classes/junit-3.8.2/junit.jar

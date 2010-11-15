@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/python
 
 WANTLIB += xmms
-LIB_DEPENDS=	::audio/xmms
+LIB_DEPENDS=	audio/xmms
 
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-I${LOCALBASE}/include \

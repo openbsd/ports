@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 21:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	visual query tool for MySQL
 
@@ -28,21 +28,21 @@ WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
 WANTLIB += png popt pthread pthread-stubs sigc-2.0 ssl stdc++
-WANTLIB += xcb xml2 z gtkmm-2.4 atkmm-1.6 gdkmm-2.4 enchant.>=5
-WANTLIB += mysqlclient_r gtkhtml-3.14 gnome-2.>=2400 glade-2.0.>=1
+WANTLIB += xcb xml2 z gtkmm-2.4 atkmm-1.6 gdkmm-2.4 enchant>=5
+WANTLIB += mysqlclient_r gtkhtml-3.14 gnome-2>=2400 glade-2.0>=1
 
 MODULES=	devel/gettext \
 		textproc/intltool
-BUILD_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common \
-		::x11/gnome/libgnomeprintui # ${WRKSRC}/source/linux/gtksourceview
-RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common \
-		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/gtk2mm \
-		::textproc/enchant \
-		::databases/mysql \
-		:gtkhtml3->=3.14:www/gtkhtml3 \
-		::x11/gnome/libgnome \
-		::devel/libglade2
+BUILD_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common \
+		x11/gnome/libgnomeprintui # ${WRKSRC}/source/linux/gtksourceview
+RUN_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common \
+		devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk2mm \
+		textproc/enchant \
+		databases/mysql \
+		gtkhtml3->=3.14:www/gtkhtml3 \
+		x11/gnome/libgnome \
+		devel/libglade2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

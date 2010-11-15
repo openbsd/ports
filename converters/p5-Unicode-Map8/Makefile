@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:50 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::converters/p5-Unicode-String
+RUN_DEPENDS=	converters/p5-Unicode-String
 
 .include <bsd.port.mk>

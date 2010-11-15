@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	command line interface to iRiver music players
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ifp-driver/}
 
-LIB_DEPENDS=	::devel/libusb
+LIB_DEPENDS=	devel/libusb
 
-WANTLIB=	c usb.>=8
+WANTLIB=	c usb>=8
 
 NO_REGRESS=	Yes
 USE_GROFF =	Yes

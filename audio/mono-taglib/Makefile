@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	tagging library for the Mono framework
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/mono
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/gnome/mono-gnome
+RUN_DEPENDS=	x11/gnome/mono-gnome
 
 USE_GMAKE=	Yes
 

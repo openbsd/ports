@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
 
 SHARED_ONLY=	Yes
  
@@ -6,7 +6,8 @@ COMMENT=	Tcl interface to PostgreSQL
 
 V=		1.5
 DISTNAME=	pgtcl$V
-PKGNAME=	pgtcl-$Vp1
+PKGNAME=	pgtcl-$V
+REVISION =	1
 SHARED_LIBS= 	pgtcl	0.0
 CATEGORIES=	databases
 
@@ -25,10 +26,10 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/338/
 MODULES=	lang/tcl
 
 MODTCL_VERSION=	8.4
-LIB_DEPENDS=	:postgresql-client-*:databases/postgresql  
+LIB_DEPENDS=	databases/postgresql  
 RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
-WANTLIB +=	pq.>=5
+WANTLIB +=	pq>=5
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

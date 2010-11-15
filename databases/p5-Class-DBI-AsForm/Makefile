@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	produce HTML form elements for database columns
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Class-DBI-Plugin-Type \
-		::www/p5-HTML-Tree
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+RUN_DEPENDS=	databases/p5-Class-DBI-Plugin-Type \
+		www/p5-HTML-Tree
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

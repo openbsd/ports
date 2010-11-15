@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
@@ -20,7 +20,7 @@ WANTLIB += Xrender c m png pthread stdc++ util z idn
 WANTLIB += Xau Xdmcp fam rpcsvc pthread-stubs xcb
 WANTLIB += kdecore DCOP kdefx kdesu kdeui kio
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext
 

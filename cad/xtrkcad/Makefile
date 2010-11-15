@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
@@ -29,7 +29,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0
 
-LIB_DEPENDS=	::www/webkit
+LIB_DEPENDS=	www/webkit
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV+=	CFLAGS=-I${PREFIX}/include \

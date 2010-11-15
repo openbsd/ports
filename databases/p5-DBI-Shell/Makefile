@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	interactive command shell for the DBI
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBI \
-		::devel/p5-IO-Tee \
-		::textproc/p5-Text-Reform
+RUN_DEPENDS=	databases/p5-DBI \
+		devel/p5-IO-Tee \
+		textproc/p5-Text-Reform
 
 .include <bsd.port.mk>

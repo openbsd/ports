@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=		GUI client for MySQL
 
@@ -19,12 +19,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext c m pthread pthread-stubs stdc++ xcb z
-WANTLIB += lib/mysql/mysqlclient.>=10
+WANTLIB += lib/mysql/mysqlclient>=10
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysqlcc/}
 
 MODULES=		x11/qt3
-LIB_DEPENDS=		::databases/mysql
+LIB_DEPENDS=		databases/mysql
 
 MAKE_ENV=		LOCALBASE=${LOCALBASE} HACK_CFLAGS="${CFLAGS}"
 MAKE_FLAGS=   		CC=${CC} CXX=${CXX} LINK=${CXX}

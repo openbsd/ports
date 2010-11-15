@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
 
 PKG_ARCH=		*
 
@@ -28,35 +28,35 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pacpl/}
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 MULTI_PACKAGES=		-main -konqueror -amarok
 
-RUN_DEPENDS=		::audio/bonk \
-			::audio/faac \
-			::audio/lame \
-			::audio/mpg321 \
-			::audio/sox \
-			::audio/vorbis-tools \
-			::audio/p5-Audio-FLAC-Header \
-			::audio/p5-Audio-Musepack \
-			::audio/p5-Audio-WMA \
-			::audio/p5-CDDB_get \
-			::audio/p5-MP3-ID3v1Tag \
-			::audio/p5-MP3-Tag \
-			::audio/p5-MP4-Info \
-			::audio/p5-Ogg-Vorbis-Header \
-			::graphics/ffmpeg \
-			::x11/mplayer
+RUN_DEPENDS=		audio/bonk \
+			audio/faac \
+			audio/lame \
+			audio/mpg321 \
+			audio/sox \
+			audio/vorbis-tools \
+			audio/p5-Audio-FLAC-Header \
+			audio/p5-Audio-Musepack \
+			audio/p5-Audio-WMA \
+			audio/p5-CDDB_get \
+			audio/p5-MP3-ID3v1Tag \
+			audio/p5-MP3-Tag \
+			audio/p5-MP4-Info \
+			audio/p5-Ogg-Vorbis-Header \
+			graphics/ffmpeg \
+			x11/mplayer
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-RUN_DEPENDS-konqueror=	::${BUILD_PKGPATH} \
-			::x11/kde/base3
-RUN_DEPENDS-amarok=	::${BUILD_PKGPATH} \
-			::audio/amarok
+RUN_DEPENDS-konqueror=	${BUILD_PKGPATH} \
+			x11/kde/base3
+RUN_DEPENDS-amarok=	${BUILD_PKGPATH} \
+			audio/amarok
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-konq \

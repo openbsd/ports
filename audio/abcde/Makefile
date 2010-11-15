@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
@@ -26,7 +26,7 @@ MASTER_SITES1=	http://lly.org/~rcw/id3/old/ \
 DISTFILES=	${DISTNAME:S,-,_,}.orig.tar.gz \
 		cd-discid_${V2}.orig.tar.gz:0
 
-RUN_DEPENDS=	:cdparanoia-*:audio/cdparanoia
+RUN_DEPENDS=	audio/cdparanoia
 
 FLAVORS=	lame
 FLAVOR?=	
@@ -36,9 +36,9 @@ USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mlame}
 DISTFILES+=	id3_0.12.orig.tar.gz:1
-RUN_DEPENDS+=	:lame-*:audio/lame
+RUN_DEPENDS+=	audio/lame
 .else
-RUN_DEPENDS+=	:vorbis-tools-*:audio/vorbis-tools
+RUN_DEPENDS+=	audio/vorbis-tools
 .endif
 SUPDISTFILES=	id3_0.12.orig.tar.gz:1
 

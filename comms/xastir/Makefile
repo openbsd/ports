@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:05:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -19,7 +19,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 USE_MOTIF=		openmotif
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\
@@ -38,16 +38,16 @@ CONFIGURE_ARGS=		--with-shapelib					\
 			--with-bdb-incdir=$(LOCALBASE)/include/db4
 
 WANTLIB += ICE SM c pthread freetype Xt Xpm Xext m X11 z proj
-WANTLIB += tiff iconv curl shp geotiff MagickCore.>=1
-WANTLIB += MagickWand.>=1 lib/db4/db.>=4 pcre
+WANTLIB += tiff iconv curl shp geotiff MagickCore>=1
+WANTLIB += MagickWand>=1 lib/db4/db>=4 pcre
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::net/curl \
-		::devel/shapelib \
-		::devel/geotiff \
-		::graphics/ImageMagick \
-		:db->=4,<5:databases/db/v4 \
-		::devel/pcre
+LIB_DEPENDS=	net/curl \
+		devel/shapelib \
+		devel/geotiff \
+		graphics/ImageMagick \
+		db->=4,<5:databases/db/v4 \
+		devel/pcre
 
 .include <bsd.port.mk>

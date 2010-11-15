@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2010/09/26 20:08:11 martynas Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/11/15 00:22:46 espie Exp $
 
 MASTER_SITES?=	http://openbsddistfiles.com/jolan/
 DIST_SUBDIR?=	festival
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP?=	Yes
 NO_BUILD?=	Yes
 NO_REGRESS?=	Yes
 
-OGI_US_DEPS?=	::audio/festival/festlex/festlex_POSLEX \
-		::audio/festival/ogi/OGIlexicon
+OGI_US_DEPS?=	audio/festival/festlex/festlex_POSLEX \
+		audio/festival/ogi/OGIlexicon
 
 WRKDIST?=	${WRKDIR}/festival
 OGI_WRK?=	${WRKDIST}/lib/voices/${LANG}/${VO}_diphone

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	library for reading ID3 tags
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 
 WANTLIB=	z
 
-BUILD_DEPENDS=	::devel/gperf
+BUILD_DEPENDS=	devel/gperf
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple

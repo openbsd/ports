@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2010/11/15 00:22:49 espie Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xi glib gmodule m pthread-stubs xcb
-WANTLIB += gtk.>=1.2 gdk.>=1.2 gthread.>=1.2
+WANTLIB += gtk>=1.2 gdk>=1.2 gthread>=1.2
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
@@ -44,12 +44,12 @@ WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread sndio
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS=		:unzip-*:archivers/unzip
-LIB_DEPENDS=		::x11/gtk+ \
-			::devel/glib
+RUN_DEPENDS=		archivers/unzip
+LIB_DEPENDS=		x11/gtk+ \
+			devel/glib
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.59
@@ -72,18 +72,18 @@ CFLAGS +=		-O0
 
 DOCS=			README NEWS FAQ
 
-LIB_DEPENDS-vorbis=	${LIB_DEPENDS} ::audio/libvorbis
-RUN_DEPENDS-vorbis=	::audio/xmms
-WANTLIB-vorbis=		${WANTLIB} ogg vorbis vorbisfile.>=1
+LIB_DEPENDS-vorbis=	${LIB_DEPENDS} audio/libvorbis
+RUN_DEPENDS-vorbis=	audio/xmms
+WANTLIB-vorbis=		${WANTLIB} ogg vorbis vorbisfile>=1
 
-LIB_DEPENDS-mikmod=	${LIB_DEPENDS} ::audio/libmikmod
-RUN_DEPENDS-mikmod=	::audio/xmms
+LIB_DEPENDS-mikmod=	${LIB_DEPENDS} audio/libmikmod
+RUN_DEPENDS-mikmod=	audio/xmms
 WANTLIB-mikmod=		${WANTLIB} sndio mikmod
 
 PERMIT_PACKAGE_CDROM-mp3=	patent issues
 PERMIT_DISTFILES_CDROM-mp3= 	patent issues
-LIB_DEPENDS-mp3=	${LIB_DEPENDS} :xmms-${VERSION}:${BUILD_PKGPATH}
-WANTLIB-mp3=		${WANTLIB} xmms.>=4 z
+LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms-${VERSION}:${BUILD_PKGPATH}
+WANTLIB-mp3=		${WANTLIB} xmms>=4 z
 
 post-patch:
 	@mkdir -p ${WRKSRC}/Output/sndio

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/28 10:02:04 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	cross-platform 3D audio API
 
@@ -23,7 +23,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 # auto* uses libtool macros
-BUILD_DEPENDS=	::devel/libtool
+BUILD_DEPENDS=	devel/libtool
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9

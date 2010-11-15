@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 20:53:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=	sqlite-based object persistence system for python
 
@@ -22,12 +22,12 @@ MASTER_SITES=	http://ekyo.nerim.net/distfiles/
 
 MODULES=	lang/python
 
-COMMON_DEPENDS=	:py-epsilon-*:devel/py-epsilon \
-		:py-sqlite2-*:databases/py-sqlite2
+COMMON_DEPENDS=	devel/py-epsilon \
+		databases/py-sqlite2
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
-		:py-twisted-conch-*:devel/py-twisted/conch
+		devel/py-twisted/conch
 
 REGRESS_DEPENDS=${COMMON_DEPENDS}
 

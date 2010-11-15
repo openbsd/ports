@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
@@ -26,8 +26,8 @@ VMEM_WARNING=		Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-LIB_DEPENDS =		::audio/taglib \
-			::devel/boost
+LIB_DEPENDS =		audio/taglib \
+			devel/boost
 
 CONFIGURE_ARGS +=	--boost-python-libname=boost_python-mt \
 			--boost-compiler=gcc42 \

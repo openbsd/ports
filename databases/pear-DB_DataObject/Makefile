@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=	SQL builder, object interface to database tables
 
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/pear-MDB2
+RUN_DEPENDS=	databases/pear-MDB2
 
 .include <bsd.port.mk>

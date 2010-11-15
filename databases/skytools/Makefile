@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:54 espie Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -24,9 +24,9 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2561/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::databases/postgresql,-server 
+BUILD_DEPENDS=	databases/postgresql,-server 
 
-RUN_DEPENDS=    ::databases/py-psycopg2
+RUN_DEPENDS=    databases/py-psycopg2
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

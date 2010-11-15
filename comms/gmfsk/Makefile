@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 13:20:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -26,8 +26,8 @@ WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs sndio
 WANTLIB += stdc++ xcb xcb-render xcb-render-util xml2 z
-WANTLIB += fftw.>=2 gailutil gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
-WANTLIB += hamlib.>=2 gnomeui-2
+WANTLIB += fftw>=2 gailutil gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
+WANTLIB += hamlib>=2 gnomeui-2
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -37,11 +37,11 @@ MODGNOME_HELP_FILES=	Yes
 USE_GMAKE=		No
 MODGCONF2_SCHEMAS_DIR=	gmfsk
 
-BUILD_DEPENDS=		::textproc/rarian
-LIB_DEPENDS=		::comms/hamlib \
-			::math/fftw \
-			::x11/gtk+2 \
-			::x11/gnome/libgnomeui
+BUILD_DEPENDS=		textproc/rarian
+LIB_DEPENDS=		comms/hamlib \
+			math/fftw \
+			x11/gtk+2 \
+			x11/gnome/libgnomeui
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib

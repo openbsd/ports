@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,6 +23,6 @@ NO_REGRESS=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=	::audio/libcdaudio
+LIB_DEPENDS=	audio/libcdaudio
 
 .include <bsd.port.mk>

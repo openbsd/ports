@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,10 +20,10 @@ WANTLIB=	m
 MODULES=	devel/gettext \
 		cpan
 
-LIB_DEPENDS =	::databases/freetds
+LIB_DEPENDS =	databases/freetds
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:p5-DBI-*:databases/p5-DBI
-WANTLIB +=	ct.>=3
+RUN_DEPENDS =	databases/p5-DBI
+WANTLIB +=	ct>=3
 
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
 CONFIGURE_ARGS=	--chained=y --accept_test_defaults

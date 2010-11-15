@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:46 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,14 +38,14 @@ CONFIGURE_ARGS+=	--disable-wikipedia
 MODULES =	devel/gettext
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			:taglib->=1.5:audio/taglib \
-			::x11/dbus-glib \
-			::net/avahi
+			taglib->=1.5:audio/taglib \
+			x11/dbus-glib \
+			net/avahi
 WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0 tag tag_c dbus-glib-1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
-			::www/webkit
+			www/webkit
 WANTLIB-wikipedia =	${WANTLIB} ICE SM Xt enchant gcrypt gnutls gpg-error \
 			icudata icui18n icuuc jpeg soup-2.4 tasn1 xslt \
 			gailutil gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 \
@@ -60,11 +60,11 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sqlite3 stdc++ xml2 z
 WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
 
-RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
-		::audio/vorbis-tools
+RUN_DEPENDS =	gmpc->=${VERSION}:audio/gmpc \
+		audio/vorbis-tools
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		::x11/gob2
+		x11/gob2
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:52 espie Exp $
 
 COMMENT= 	dynamic definition of a DBIx::Class::Schema
 
@@ -14,14 +14,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBIx-Class \
-		::devel/p5-Data-Dump \
-		:p5-Universal-exports-<0.05|p5-Universal-require->=0.11:devel/p5-Universal-require \
-		::textproc/p5-Lingua-EN-Inflect \
-		::textproc/p5-Lingua-EN-Inflect-Number
+RUN_DEPENDS=	databases/p5-DBIx-Class \
+		devel/p5-Data-Dump \
+		p5-Universal-exports-<0.05|p5-Universal-require->=0.11:devel/p5-Universal-require \
+		textproc/p5-Lingua-EN-Inflect \
+		textproc/p5-Lingua-EN-Inflect-Number
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::databases/p5-DBD-SQLite
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+		databases/p5-DBD-SQLite
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 MAKE_ENV=	TEST_POD=Yes
 USE_GROFF =	Yes

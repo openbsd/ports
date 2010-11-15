@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:54 espie Exp $
 
 COMMENT =	PostgreSQL database interface for ruby
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	lang/ruby
 
 WANTLIB =	pq ssl crypto com_err
-LIB_DEPENDS =	::databases/postgresql
+LIB_DEPENDS =	databases/postgresql
 
 CONFIGURE_STYLE = ruby gem ext
 

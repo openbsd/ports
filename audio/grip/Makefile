@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
@@ -24,21 +24,21 @@ WANTLIB += atk-1.0 gconf-2 bonoboui-2 popt pangoft2-1.0 gnomecanvas-2
 WANTLIB += xml2 ORBit-2 pango-1.0 gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gnome-2 cairo pangocairo-1.0 idn Xcursor Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr gnome-keyring gailutil pixman-1 pthread-stubs xcb gnomeui-2
-WANTLIB += id3.>=3.8 curl.>=3 vte.>=8 cdda_interface cdda_paranoia
+WANTLIB += id3>=3.8 curl>=3 vte>=8 cdda_interface cdda_paranoia
 WANTLIB += xcb-render xcb-render-util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gnome/libgnomeui \
-		::audio/id3lib \
-		::net/curl \
-		::devel/vte \
-		::audio/cdparanoia
-RUN_DEPENDS=	::x11/gnome/yelp \
-		::audio/vorbis-tools \
-		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gnome/libgnomeui \
+		audio/id3lib \
+		net/curl \
+		devel/vte \
+		audio/cdparanoia
+RUN_DEPENDS=	x11/gnome/yelp \
+		audio/vorbis-tools \
+		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	classes and UML-style associations on top of DBI
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBI \
-		::databases/p5-SQL-Abstract
-REGRESS_DEPENDS=::databases/p5-DBD-Mock
+RUN_DEPENDS=	databases/p5-DBI \
+		databases/p5-SQL-Abstract
+REGRESS_DEPENDS=databases/p5-DBD-Mock
 
 CONFIGURE_STYLE=modbuild
 

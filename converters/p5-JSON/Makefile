@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:50 espie Exp $
 
 COMMENT= 	parse and convert to JSON (JavaScript Object Notation)
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-libwww
-REGRESS_DEPENDS=::converters/p5-JSON-XS
+RUN_DEPENDS=	www/p5-libwww
+REGRESS_DEPENDS=converters/p5-JSON-XS
 
 MAKE_ENV=	TEST_POD=Yes
 

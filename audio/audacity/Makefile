@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	free audio editor
 
@@ -26,26 +26,26 @@ WANTLIB += c expat glib-2.0 gobject-2.0 gtk-x11-2.0 m ogg pthread
 WANTLIB += sndfile sndio stdc++ wx_base_xml wx_base_odbc wx_gtk2_aui
 WANTLIB += wx_gtk2_html wx_gtk2_adv wx_gtk2_xrc wx_base_net wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate.>=1
-WANTLIB += FLAC.>=8 FLAC++.>=7 vorbis.>=5 vorbisfile.>=4 vorbisenc.>=2
-WANTLIB += id3tag.>=2 mad.>=2 portaudio.>=1 SoundTouch vamp-hostsdk.>=1
+WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
+WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
 WANTLIB += tag
 
-BUILD_DEPENDS=	::archivers/zip
-LIB_DEPENDS=	:wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
-		::audio/libsamplerate \
-		::audio/flac \
-		::audio/libvorbis \
-		::audio/libid3tag \
-		::audio/libmad \
-		:portaudio-svn->=1406p1:audio/portaudio-svn \
-		::audio/soundtouch \
-		::audio/vamp-plugin-sdk \
-		::audio/taglib
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info-*:misc/shared-mime-info
+BUILD_DEPENDS=	archivers/zip
+LIB_DEPENDS=	wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
+		audio/libsamplerate \
+		audio/flac \
+		audio/libvorbis \
+		audio/libid3tag \
+		audio/libmad \
+		portaudio-svn->=1406p1:audio/portaudio-svn \
+		audio/soundtouch \
+		audio/vamp-plugin-sdk \
+		audio/taglib
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	Castilian Spanish male speaker (EL)
 DISTNAME=	festvox_ellpc11k
@@ -6,7 +6,7 @@ DISTNAME=	festvox_ellpc11k
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_PACKAGE_CDROM=	no fee
 
-RUN_DEPENDS=	::audio/festival/core
+RUN_DEPENDS=	audio/festival/core
 
 do-install:
 	${INSTALL_DATA_DIR} ${VOX_PRE}/spanish/el_diphone

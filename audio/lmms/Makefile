@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/28 22:33:41 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:47 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,15 +28,14 @@ MODULES =		x11/qt4 devel/cmake gcc4
 MODGCC4_ARCHES =	*
 MODGCC4_LANGS =		c c++
 
-RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils \
-			:shared-mime-info-*:misc/shared-mime-info
-LIB_DEPENDS =		::x11/qt4 \
-			::audio/jack \
-			::math/fftw3,float \
-			::audio/fluidsynth \
-			::audio/libsamplerate \
-			::audio/libvorbis \
-			::x11/fltk
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info
+LIB_DEPENDS =		audio/jack \
+			math/fftw3,float \
+			audio/fluidsynth \
+			audio/libsamplerate \
+			audio/libvorbis \
+			x11/fltk
 
 USE_X11 =		Yes
 

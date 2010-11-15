@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:34:03 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:54 espie Exp $
 
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}
+REVISION =	1
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite               8.6      # .0.0
 
@@ -32,7 +33,7 @@ NO_REGRESS=	Yes
 CONFIGURE_ARGS+=--disable-tcl
 .else
 REGRESS_TARGET=	test
-BUILD_DEPENDS+=	::lang/tcl/8.4
+BUILD_DEPENDS+=	lang/tcl/8.4
 CONFIGURE_ENV+=	config_TARGET_TCL_LIBS="-L${LOCALBASE}/lib -ltcl84 -lm"
 CONFIGURE_ENV+=	config_TARGET_TCL_INC="-I${LOCALBASE}/include/tcl8.4"
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=		file copying over the OBEX protocol
 DISTNAME=		obexftp-0.10.4
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c openobex.>=1
+WANTLIB=		c openobex>=1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openobex/}
 
-LIB_DEPENDS=		::comms/openobex
+LIB_DEPENDS=		comms/openobex
 CONFIGURE_STYLE=	gnu
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:54 espie Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
@@ -23,12 +23,12 @@ MODULES=		lang/ruby
 
 WANTLIB=		crypto pthread ssl ldap ldap_r lber
 
-LIB_DEPENDS=		::databases/openldap
+LIB_DEPENDS=		databases/openldap
 
 CONFIGURE_STYLE=	ruby extconf
 
 REGRESS_TARGET=		test
-REGRESS_DEPENDS=	:openldap-server-*:databases/openldap,-server
+REGRESS_DEPENDS=	databases/openldap,-server
 
 do-regress:
 	cd ${WRKSRC} &&	/bin/sh ./test/test.sh ruby openldap2 \

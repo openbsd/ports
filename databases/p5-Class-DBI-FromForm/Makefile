@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	update Class:DBI data from html forms
 
@@ -14,6 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # XXX note this can retrieve data from several sources
-RUN_DEPENDS=	::databases/p5-Class-DBI
+RUN_DEPENDS=	databases/p5-Class-DBI
 
 .include <bsd.port.mk>

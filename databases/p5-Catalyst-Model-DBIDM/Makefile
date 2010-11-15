@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	DBIx::DataModel model class
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBIx-DataModel \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	databases/p5-DBIx-DataModel \
+		www/p5-Catalyst-Runtime
 
 CONFIGURE_STYLE=modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:51 espie Exp $
 
 COMMENT-main =		little brother's database, email address query tools
 COMMENT-ldap =		LDAP support for lbdb
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS-ldap =	::databases/p5-ldap \
-			:${PKGNAME-main}:databases/lbdb
+RUN_DEPENDS-ldap =	databases/p5-ldap \
+			databases/lbdb
 
 MODULES =		converters/libiconv
 WANTLIB-main =		c ${MODLIBICONV_WANTLIB}
@@ -36,7 +36,7 @@ MASTER_SITES =		http://www.spinnaker.de/debian/
 MAKE_ENV =		install_prefix=${WRKINST}
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS += 	--libdir=${PREFIX}/lib/lbdb \

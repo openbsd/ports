@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=		Pure Perl MySQL driver for the Perl DBI
 
 DISTNAME=		DBD-mysqlPP-0.04
 CATEGORIES=		databases
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		:p5-DBI->=1.14:databases/p5-DBI \
-			:p5-Net-MySQL->=0.08:net/p5-Net-MySQL
-RUN_DEPENDS=		:p5-DBI->=1.14:databases/p5-DBI \
-			:p5-Net-MySQL->=0.08:net/p5-Net-MySQL
+BUILD_DEPENDS=		p5-DBI->=1.14:databases/p5-DBI \
+			p5-Net-MySQL->=0.08:net/p5-Net-MySQL
+RUN_DEPENDS=		p5-DBI->=1.14:databases/p5-DBI \
+			p5-Net-MySQL->=0.08:net/p5-Net-MySQL
 
 .include <bsd.port.mk>

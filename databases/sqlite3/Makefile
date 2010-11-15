@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/06 22:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/15 00:22:54 espie Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
 V=		3.6.23
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}p0
+PKGNAME-main=	sqlite3-${V}
+REVISION-main =	0
 PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
@@ -49,7 +50,7 @@ MODULES+=	lang/tcl
 .endif
 
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
-LIB_DEPENDS-tcl = ::${BUILD_PKGPATH},-main
+LIB_DEPENDS-tcl = ${BUILD_PKGPATH},-main
 WANTLIB-tcl =	sqlite3
 
 .if ${MULTI_PACKAGES:M-tcl}

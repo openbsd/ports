@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.27 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:48 espie Exp $
 
-COMMENT=	MOD player
-DISTNAME=	tracker-5.3
-REVISION=	1
-CATEGORIES=	audio
+COMMENT =	MOD player
+DISTNAME =	tracker-5.3
+REVISION =	1
+CATEGORIES =	audio
 
-MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES =	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
+EXTRACT_SUFX =	.tgz
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
 # for redistribution on the CD.
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB=		c m sndio
+WANTLIB =		c m sndio
 
-WRKDIST=		${WRKDIR}/tracker
-MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
+WRKDIST =		${WRKDIR}/tracker
+MAKE_FLAGS =	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		CFLAGS_openbsd='-O3 -funroll-loops -finline-functions ${COPTS}' \
 		LIBS_openbsd='-lm -lsndio' \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
@@ -28,7 +28,7 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \
 		PREFIX='$${DESTDIR}/${TRUEPREFIX}'
 
-NO_REGRESS=	Yes
+NO_REGRESS =	Yes
 
 
 post-extract:

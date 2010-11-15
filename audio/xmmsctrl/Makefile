@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	small utility to control XMMS from the command line
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	::audio/xmms
+LIB_DEPENDS=	audio/xmms
 WANTLIB=	X11 Xext Xi c gdk glib gmodule gtk m xmms
 
 MODULES=	devel/gettext

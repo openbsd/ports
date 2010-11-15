@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ WANTLIB=		m stdc++
 
 MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 
-RUN_DEPENDS=	::audio/xmms
+RUN_DEPENDS=	audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	CXX="${CXX}"

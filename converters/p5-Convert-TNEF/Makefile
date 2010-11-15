@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	module to read TNEF files
 
@@ -16,6 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-MIME-tools-*:mail/p5-MIME-tools
+RUN_DEPENDS=	mail/p5-MIME-tools
 
 .include <bsd.port.mk>

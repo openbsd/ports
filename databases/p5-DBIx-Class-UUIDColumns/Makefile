@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:52 espie Exp $
 
 COMMENT= 	unique identifiers as columns in DBIx::Class
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
 
-RUN_DEPENDS=	::databases/p5-DBIx-Class \
-		::devel/p5-Data-UUID 
+RUN_DEPENDS=	databases/p5-DBIx-Class \
+		devel/p5-Data-UUID 
 
 MAKE_ENV=	TEST_POD=Yes
 USE_GROFF =	Yes

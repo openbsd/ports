@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/15 00:22:48 espie Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -43,24 +43,24 @@ MODULES=		devel/gettext \
 			lang/python \
 			devel/gconf2
 
-BUILD_DEPENDS=		::multimedia/gstreamer-0.10/py-gstreamer
+BUILD_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			::devel/libnotify \
-			::x11/gnome/media \
-			::x11/gnome/totem-pl-parser \
-			::multimedia/gstreamer-0.10/plugins-base \
-			::devel/libsoup,-gnome \
-			::net/avahi \
-			::audio/libgpod
-RUN_DEPENDS+=		::x11/gnome/icon-theme \
-			::multimedia/gstreamer-0.10/py-gstreamer
+			devel/libnotify \
+			x11/gnome/media \
+			x11/gnome/totem-pl-parser \
+			multimedia/gstreamer-0.10/plugins-base \
+			devel/libsoup,-gnome \
+			net/avahi \
+			audio/libgpod
+RUN_DEPENDS+=		x11/gnome/icon-theme \
+			multimedia/gstreamer-0.10/py-gstreamer
 
 # needed for the magnatune plugin
-RUN_DEPENDS+=		::x11/gnome/py-gnome-desktop
+RUN_DEPENDS+=		x11/gnome/py-gnome-desktop
 # needed for sndio
-RUN_DEPENDS+=		::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
-REGRESS_DEPENDS=	::devel/check
+REGRESS_DEPENDS=	devel/check
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes

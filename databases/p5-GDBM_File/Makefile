@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:52 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to gdbm
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	::databases/gdbm
+LIB_DEPENDS=	databases/gdbm
 WANTLIB +=	gdbm
 
 CONFIGURE_STYLE= perl

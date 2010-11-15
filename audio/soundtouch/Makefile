@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/28 19:32:50 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -20,9 +20,9 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	c m stdc++
 
-BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake->=1.9,<1.10:devel/automake/${AUTOMAKE_VERSION} \
-		::devel/libtool
+BUILD_DEPENDS=	autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+		automake->=1.9,<1.10:devel/automake/${AUTOMAKE_VERSION} \
+		devel/libtool
 
 USE_LIBTOOL=	Yes
 

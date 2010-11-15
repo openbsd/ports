@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
@@ -20,7 +20,7 @@ WANTLIB=		c curses usb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libnjb/}
 
-LIB_DEPENDS=		::devel/libusb
+LIB_DEPENDS=		devel/libusb
 
 USE_LIBTOOL=		Yes
 

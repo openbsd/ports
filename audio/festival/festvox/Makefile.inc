@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2006/02/03 19:42:44 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/11/15 00:22:46 espie Exp $
 
 V?=		1.95
 PKGNAME?=	${DISTNAME}-20040804
@@ -22,10 +22,10 @@ PERMIT_PACKAGE_FTP?=	Yes
 NO_BUILD?=	Yes
 NO_REGRESS?=	Yes
 
-VOX_UK_DEPS?=	::audio/festival/festlex/festlex_OALD \
-		::audio/festival/festlex/festlex_POSLEX
-VOX_US_DEPS?=	::audio/festival/festlex/festlex_CMU \
-		::audio/festival/festlex/festlex_POSLEX
+VOX_UK_DEPS?=	audio/festival/festlex/festlex_OALD \
+		audio/festival/festlex/festlex_POSLEX
+VOX_US_DEPS?=	audio/festival/festlex/festlex_CMU \
+		audio/festival/festlex/festlex_POSLEX
 
 WRKDIST?=	${WRKDIR}/festival
 VOX_PRE?=	${PREFIX}/lib/festival/voices

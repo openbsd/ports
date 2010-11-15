@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:51 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	binding of sqlite3 for lua
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += sqlite3.>=8
+WANTLIB += sqlite3>=8
 
 MODULES=	lang/lua
 
@@ -25,8 +25,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-lua-dir=${PREFIX}
 CFLAGS+=	-fPIC -DPIC
 
-LIB_DEPENDS=	::databases/sqlite3
-REGRESS_DEPENDS=::databases/luasqlite3
+LIB_DEPENDS=	databases/sqlite3
+REGRESS_DEPENDS=databases/luasqlite3
 REGRESS_TARGET=	check
 
 pre-install:

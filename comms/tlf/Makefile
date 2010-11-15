@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	radio contest logger
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	hamlib.>=2 ncurses pthread ossaudio c m
+WANTLIB=	hamlib>=2 ncurses pthread ossaudio c m
 
 SOME_LD_FLAGS=	-lossaudio
 SOME_CPP_FLAGS=
@@ -27,12 +27,12 @@ SOME_CPP_FLAGS=
 AUTOCONF_VER=	2.59
 AUTOMAKE_VER=	1.9
 
-BUILD_DEPENDS=	::devel/automake/${AUTOMAKE_VER} \
-		::devel/autoconf/${AUTOCONF_VER}
+BUILD_DEPENDS=	devel/automake/${AUTOMAKE_VER} \
+		devel/autoconf/${AUTOCONF_VER}
 
 
 CONFIGURE_ARGS+=--enable-hamlib
-LIB_DEPENDS=	::comms/hamlib
+LIB_DEPENDS=	comms/hamlib
 SOME_CPP_FLAGS	+= -I${LOCALBASE}/include
 SOME_LD_FLAGS	+= -L${LOCALBASE}/lib
 

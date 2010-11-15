@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ WANTLIB=		X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk iconv \
 
 MASTER_SITES=	${HOMEPAGE}dist/src/
 
-RUN_DEPENDS=	::audio/xmms
+RUN_DEPENDS=	audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes

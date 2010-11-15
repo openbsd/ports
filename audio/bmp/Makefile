@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/15 00:22:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,15 +33,15 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
-                xcb xcb-render xcb-render-util z gdk_pixbuf-2.0.>=400.3 \
-                gdk-x11-2.0.>=400.3 gtk-x11-2.0.>=0.5 glib-2.0.>=400.2 \
-                gthread-2.0.>=400.2
+                xcb xcb-render xcb-render-util z gdk_pixbuf-2.0>=400.3 \
+                gdk-x11-2.0>=400.3 gtk-x11-2.0>=0.5 glib-2.0>=400.2 \
+                gthread-2.0>=400.2
 
 MODULES=	devel/gettext
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/glib2
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/glib2
 
 MULTI_PACKAGES=-main
 PSEUDO_FLAVORS=	no_mp3 no_vorbis
@@ -55,23 +55,23 @@ MULTI_PACKAGES+=-vorbis
 .endif
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
-		:desktop-file-utils-*:devel/desktop-file-utils
+		devel/desktop-file-utils
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::audio/esound \
-		::devel/libglade2 \
-		::textproc/libxml
+		audio/esound \
+		devel/libglade2 \
+		textproc/libxml
 LIB_DEPENDS-vorbis=${LIB_DEPENDS} \
-		::audio/libvorbis
+		audio/libvorbis
 
 LIB_DEPENDS-mp3=${LIB_DEPENDS} \
-		::${BUILD_PKGPATH}
+		${BUILD_PKGPATH}
 WANTLIB-mp3=	${WANTLIB} beep
 
-WANTLIB-vorbis=	${WANTLIB} ogg vorbis vorbisfile.>=4.0
+WANTLIB-vorbis=	${WANTLIB} ogg vorbis vorbisfile>=4.0
 
-RUN_DEPENDS-vorbis=	::${BUILD_PKGPATH}
-WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio esd.>=2.34 \
-		glade-2.0.>=0.4 xml2.>=9.0
+RUN_DEPENDS-vorbis=	${BUILD_PKGPATH}
+WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio esd>=2.34 \
+		glade-2.0>=0.4 xml2>=9
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

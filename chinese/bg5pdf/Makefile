@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/13 04:46:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB +=	pdf z
 
 MODULES=	lang/python
-RUN_DEPENDS=	::chinese/taipeifonts
-LIB_DEPENDS=	::print/pdflib
+RUN_DEPENDS=	chinese/taipeifonts
+LIB_DEPENDS=	print/pdflib
 
 CONFIGURE_STYLE=none
 

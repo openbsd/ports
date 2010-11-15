@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		compact disk input and control library
 
@@ -28,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::audio/libcddb
+LIB_DEPENDS=	audio/libcddb
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

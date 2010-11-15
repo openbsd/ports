@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/06 22:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 00:22:54 espie Exp $
 
 COMMENT=	X11 front end to the MySQL database engine
 
 DISTNAME=	xmysql-1.10
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	databases
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
@@ -15,10 +15,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		GL X11 Xext Xpm c m pthread-stubs xcb
 
-LIB_DEPENDS=	::x11/xforms \
-		::databases/mysql \
-		::graphics/jpeg
-WANTLIB +=	forms lib/mysql/mysqlclient.>=10 jpeg.>=62
+LIB_DEPENDS=	x11/xforms \
+		databases/mysql \
+		graphics/jpeg
+WANTLIB +=	forms lib/mysql/mysqlclient>=10 jpeg>=62
 
 NO_REGRESS=	Yes
 

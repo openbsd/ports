@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:51 espie Exp $
 
 COMMENT= 	catalyst model for Class::DBI
 
@@ -12,8 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
-		::databases/p5-Class-DBI-Loader
+RUN_DEPENDS=	www/p5-Catalyst-Runtime \
+		databases/p5-Class-DBI-Loader
 
 MAKE_ENV=	TEST_POD=Yes
 USE_GROFF =	Yes

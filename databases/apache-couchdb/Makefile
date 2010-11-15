@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:51 espie Exp $
 
 COMMENT =	distributed, document-oriented database
 
@@ -21,12 +21,12 @@ WANTLIB +=	icudata icui18n icuuc js curl idn
 
 MASTER_SITES =	${MASTER_SITE_APACHE:=couchdb/${COUCH_VER}/}
 
-BUILD_DEPENDS =	::lang/erlang
-RUN_DEPENDS =	::lang/erlang
-LIB_DEPENDS =	::textproc/icu4c \
-		::lang/spidermonkey \
-		::net/curl \
-		::devel/libidn
+BUILD_DEPENDS =	lang/erlang
+RUN_DEPENDS =	lang/erlang
+LIB_DEPENDS =	textproc/icu4c \
+		lang/spidermonkey \
+		net/curl \
+		devel/libidn
 
 MAKE_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		CFLAGS="-I${LOCALBASE}/include/nspr" \

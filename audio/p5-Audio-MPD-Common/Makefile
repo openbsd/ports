@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/03 09:21:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		bunch of common helper classes for MPD
 
@@ -19,9 +19,9 @@ CPAN_AUTHOR=		JQUELIN
 CONFIGURE_STYLE=	modbuild
 USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/p5-Class-Accessor \
-			::devel/p5-MooseX-Has-Sugar \
-			::devel/p5-MooseX-Types \
-			::devel/p5-Readonly
+RUN_DEPENDS=		devel/p5-Class-Accessor \
+			devel/p5-MooseX-Has-Sugar \
+			devel/p5-MooseX-Types \
+			devel/p5-Readonly
 
 .include <bsd.port.mk>

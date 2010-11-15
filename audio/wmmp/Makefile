@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=		wm-dockapp to control MPD
 DISTNAME=		WMmp-0.10.0
@@ -20,6 +20,6 @@ MASTER_SITES=		http://mercury.chem.pitt.edu/~shank/
 CONFIGURE_STYLE=	gnu
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

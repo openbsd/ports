@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:50 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,6 +21,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS=	::devel/p5-common-sense
+RUN_DEPENDS=	devel/p5-common-sense
 
 .include <bsd.port.mk>

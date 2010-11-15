@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/05 22:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	OpenAL Utility Toolkit
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m openal.>=1.0 pthread sndio
+WANTLIB=	m openal>=1.0 pthread sndio
 
 MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 
-LIB_DEPENDS=	::audio/openal
+LIB_DEPENDS=	audio/openal
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

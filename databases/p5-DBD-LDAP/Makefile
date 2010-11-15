@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	DBI driver for LDAP databases
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::databases/p5-DBI \
-		::databases/p5-ldap
+RUN_DEPENDS=	databases/p5-DBI \
+		databases/p5-ldap
 
 .include <bsd.port.mk>

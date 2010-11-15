@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	OpenLook-based CD player
 DISTNAME=	WorkMan-1.3a
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext c xview.>=3.2 olgx.>=3.2
+WANTLIB += X11 Xext c xview>=3.2 olgx>=3.2
 
-LIB_DEPENDS=	::x11/xview/lib
-BUILD_DEPENDS=	::x11/xview/config
+LIB_DEPENDS=	x11/xview/lib
+BUILD_DEPENDS=	x11/xview/config
 
 CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config

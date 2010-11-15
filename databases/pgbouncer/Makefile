@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 08:53:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
@@ -21,7 +21,7 @@ WANTLIB = 	c event
 
 MASTER_SITES = 	http://pgfoundry.org/frs/download.php/2677/
 
-BUILD_DEPENDS =	::devel/libeventextra
+BUILD_DEPENDS =	devel/libeventextra
 
 CONFIGURE_STYLE = 	gnu
 #Disable the detection of asciidoc since docs are already included
@@ -30,7 +30,7 @@ CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE}
 MAKE_FLAGS+=		V=1
 
 USE_GMAKE = 		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # The actual regress tests are (cd ${WRKSRC}/test; ./test.sh)
 # They want to create full postgres install and also play with 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:34:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:54 espie Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
@@ -18,13 +18,13 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem ext
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-data_objects->=${VERSION}:databases/ruby-data_objects,${FLAVOR}
+RUN_DEPENDS =		${MODRUBY_PKG_PREFIX}-data_objects->=${VERSION}:databases/ruby-data_objects,${FLAVOR}
 
 WANTLIB =		sqlite3
-LIB_DEPENDS =		::databases/sqlite3
+LIB_DEPENDS =		databases/sqlite3
 
-REGRESS_DEPENDS =	:${FULLPKGNAME}:${BUILD_PKGPATH} \
-			:${MODRUBY_PKG_PREFIX}-bacon-*:devel/ruby-bacon,${FLAVOR}
+REGRESS_DEPENDS =	${BUILD_PKGPATH} \
+			devel/ruby-bacon,${FLAVOR}
 do-regress:
 	cd ${WRKSRC} && bacon${GEM_BIN_SUFFIX} spec/*_spec.rb
 

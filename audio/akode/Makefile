@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/28 10:02:04 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
@@ -23,16 +23,16 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	bz2 c faac faad gsm m mp3lame ogg pthread orc-0.4 \
 		samplerate schroedinger-1.0 sndio stdc++ theora x264 z \
-		FLAC.>=8 mad speex ltdl vorbis vorbisfile vorbisenc \
-		jack avcodec.>=14 avformat.>=13 avutil.>=7
+		FLAC>=8 mad speex ltdl vorbis vorbisfile vorbisenc \
+		jack avcodec>=14 avformat>=13 avutil>=7
 
-LIB_DEPENDS=	::audio/flac \
-		::audio/libmad \
-		::audio/speex \
-		::audio/libvorbis \
-		::devel/libtool,-ltdl \
-		:ffmpeg->=20100512:graphics/ffmpeg \
-		::audio/jack
+LIB_DEPENDS=	audio/flac \
+		audio/libmad \
+		audio/speex \
+		audio/libvorbis \
+		devel/libtool,-ltdl \
+		ffmpeg->=20100512:graphics/ffmpeg \
+		audio/jack
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -40,7 +40,7 @@ USE_LIBTOOL=	Yes
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 # uses libtoolize
-BUILD_DEPENDS+=	::devel/libtool
+BUILD_DEPENDS+=	devel/libtool
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.60

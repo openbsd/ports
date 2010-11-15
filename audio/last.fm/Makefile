@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =		official Last.fm client
 
@@ -33,13 +33,12 @@ WANTLIB += fftw3f.>=4 gpod.>=600.0 mad samplerate.>=1 portaudio
 
 MODULES =		x11/qt4
 
-LIB_DEPENDS =		::x11/qt4 \
-			::math/fftw3,float \
-			::audio/libgpod \
-			::audio/libmad \
-			::audio/libsamplerate \
-			::audio/portaudio-svn
-RUN_DEPENDS =		::devel/desktop-file-utils
+LIB_DEPENDS =		math/fftw3,float \
+			audio/libgpod \
+			audio/libmad \
+			audio/libsamplerate \
+			audio/portaudio-svn
+RUN_DEPENDS =		devel/desktop-file-utils
 
 
 NO_REGRESS =		Yes

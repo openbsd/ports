@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:05:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -25,7 +25,7 @@ WANTLIB=		c
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MODULES=		devel/gettext
 
@@ -40,21 +40,21 @@ CONFIGURE_ARGS=		--enable-security \
 CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
-LIB_DEPENDS=		::x11/gtk+2 \
-			::textproc/libical
-RUN_DEPENDS+=		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=		x11/gtk+2 \
+			textproc/libical
+RUN_DEPENDS+=		devel/desktop-file-utils
 
 WANTLIB += X11 Xau Xdmcp Xpm Xrender fontconfig freetype z Xcomposite Xdamage
-WANTLIB += pixman-1 gio-2.0 m pthread pcre atk-1.0.>=800.0 glib-2.0.>=400.8
-WANTLIB += gmodule-2.0.>=400.8 gobject-2.0.>=400.8 pango-1.0.>=600.0
-WANTLIB += pangoft2-1.0.>=600.0 pangocairo-1.0 cairo png expat Xcursor
+WANTLIB += pixman-1 gio-2.0 m pthread pcre atk-1.0>=800 glib-2.0>=400.8
+WANTLIB += gmodule-2.0>=400.8 gobject-2.0>=400.8 pango-1.0>=600
+WANTLIB += pangoft2-1.0>=600 pangocairo-1.0 cairo png expat Xcursor
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr pthread-stubs xcb ical
-WANTLIB += gtk-x11-2.0.>=400.13 gdk-x11-2.0.>=400.13 gdk_pixbuf-2.0.>=400.13
+WANTLIB += gtk-x11-2.0>=400.13 gdk-x11-2.0>=400.13 gdk_pixbuf-2.0>=400.13
 WANTLIB += gthread-2.0 xcb-render xcb-render-util
 .endif
 
-WANTLIB += usb.>=8
-LIB_DEPENDS +=		::devel/libusb
+WANTLIB += usb>=8
+LIB_DEPENDS +=		devel/libusb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnokii

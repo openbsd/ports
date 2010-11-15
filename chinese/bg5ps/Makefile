@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/09/07 03:41:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
@@ -20,8 +20,8 @@ WANTLIB=		c m ttf
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MODULES=	lang/python
-RUN_DEPENDS=	::chinese/arphicttf
-LIB_DEPENDS=	::print/freetype
+RUN_DEPENDS=	chinese/arphicttf
+LIB_DEPENDS=	print/freetype
 
 # python.port.mk overrides various targets when CONFIGURE_STYLE is empty
 CONFIGURE_STYLE=none

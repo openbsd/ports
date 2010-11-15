@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/10/23 09:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2010/11/15 00:22:51 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,23 +41,23 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png proxy pthread
 WANTLIB += pthread-stubs sasl2 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl tasn1 xcb xcb-render xml2 z nssutil3
-WANTLIB += db ldap-2.3 lber-2.3 gpg-error gnutls nss3.>=19 smime3 ssl3 ical
-WANTLIB += icalss icalvcal gnome-keyring.>=6 gweather gdata
+WANTLIB += db ldap-2.3 lber-2.3 gpg-error gnutls nss3>=19 smime3 ssl3 ical
+WANTLIB += icalss icalvcal gnome-keyring>=6 gweather gdata
 WANTLIB += GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		:bison-*:devel/bison \
-			:gperf-*:devel/gperf
-LIB_DEPENDS= 		:db->=4,<5:databases/db/v4 \
-			::databases/openldap \
-			:nss->=3.11.4p1:security/nss \
-			::textproc/libical \
-			::x11/gnome/libgweather \
-			::devel/libgdata \
-			::devel/eggdbus
+BUILD_DEPENDS=		devel/bison \
+			devel/gperf
+LIB_DEPENDS= 		db->=4,<5:databases/db/v4 \
+			databases/openldap \
+			nss->=3.11.4p1:security/nss \
+			textproc/libical \
+			x11/gnome/libgweather \
+			devel/libgdata \
+			devel/eggdbus
 
 YACC=			bison
 AUTOCONF_VERSION=	2.64

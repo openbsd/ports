@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		click & play MPD client
 
@@ -17,9 +17,9 @@ EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python textproc/intltool
 
-RUN_DEPENDS=		::audio/py-mpd \
-			::devel/desktop-file-utils \
-			:py-gtk2->=2.12.1:x11/py-gtk2
+RUN_DEPENDS=		audio/py-mpd \
+			devel/desktop-file-utils \
+			py-gtk2->=2.12.1:x11/py-gtk2
 
 
 NO_REGRESS=		Yes

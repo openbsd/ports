@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
@@ -15,16 +15,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::databases/p5-DBD-SQLite \
-		::databases/p5-DBIx-DBSchema \
-		::devel/p5-Cache-Simple-TimedExpiry \
-		::devel/p5-Class-Accessor \
-		::devel/p5-Class-ReturnValue \
-		::devel/p5-Clone \
-		::devel/p5-capitalization \
-		::devel/p5-Want
+RUN_DEPENDS=	databases/p5-DBD-SQLite \
+		databases/p5-DBIx-DBSchema \
+		devel/p5-Cache-Simple-TimedExpiry \
+		devel/p5-Class-Accessor \
+		devel/p5-Class-ReturnValue \
+		devel/p5-Clone \
+		devel/p5-capitalization \
+		devel/p5-Want
 
-REGRESS_DEPENDS= ::devel/p5-Test-Pod \
-		 ::devel/p5-Devel-StackTrace
+REGRESS_DEPENDS= devel/p5-Test-Pod \
+		 devel/p5-Devel-StackTrace
 
 .include <bsd.port.mk>

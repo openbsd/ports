@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/24 15:28:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	686 class CPU optimized mp3 encoder
 DISTNAME=	gogo226a	
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 
 ONLY_FOR_ARCHS= i386
 
-BUILD_DEPENDS=	::devel/nasm
+BUILD_DEPENDS=	devel/nasm
 
 MAINTAINER=	Bob Beck <beck@openbsd.org>
 

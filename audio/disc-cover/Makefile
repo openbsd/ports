@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=disc-cover/}
 
-RUN_DEPENDS=	::print/texlive/base \
-		:ImageMagick-*:graphics/ImageMagick \
-		:p5-libwww-*:www/p5-libwww \
-		:p5-Audio-CD-*:audio/p5-Audio-CD
+RUN_DEPENDS=	print/texlive/base \
+		graphics/ImageMagick \
+		www/p5-libwww \
+		audio/p5-Audio-CD
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/31 16:03:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	character set conversion library
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
-BUILD_DEPENDS=	::devel/gperf
+BUILD_DEPENDS=	devel/gperf
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple

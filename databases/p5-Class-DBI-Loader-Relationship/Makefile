@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	easier relationship specification in CDBI::L
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-Class-DBI-Loader \
-		::textproc/p5-Lingua-EN-Inflect-Number
+RUN_DEPENDS=	databases/p5-Class-DBI \
+		databases/p5-Class-DBI-Loader \
+		textproc/p5-Lingua-EN-Inflect-Number
 
 .include <bsd.port.mk>

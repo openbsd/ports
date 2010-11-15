@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	character encoding converter generator package
 
@@ -44,5 +44,5 @@ do-install:
 	cd ${WRKSRC}/xlt && $(INSTALL_DATA) * ${LIBDIR}/xlt
 
 REGRESS_TARGET=	check
-REGRESS_DEPENDS=::converters/trans
+REGRESS_DEPENDS=converters/trans
 .include <bsd.port.mk>

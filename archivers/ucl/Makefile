@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	portable lossless data compression library
 
@@ -20,7 +20,7 @@ REVISION = 	0
 MASTER_SITES=	${HOMEPAGE}/download/
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	:nasm-*:devel/nasm
+BUILD_DEPENDS=	devel/nasm
 .endif
 
 CONFIGURE_STYLE=	gnu

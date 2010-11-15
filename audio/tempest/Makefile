@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	sends AM radio signals using a monitor
 
@@ -21,9 +21,9 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	:madplay-*:audio/madplay \
-		:sox-*:audio/sox
-LIB_DEPENDS=	::devel/sdl
+RUN_DEPENDS=	audio/madplay \
+		audio/sox
+LIB_DEPENDS=	devel/sdl
 
 
 SEPARATE_BUILD=	concurrent

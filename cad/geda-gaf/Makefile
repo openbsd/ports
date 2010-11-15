@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:49 espie Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -31,14 +31,14 @@ MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		::devel/glib2 \
-			::x11/gtk+2 \
-			::lang/guile \
-			::devel/gmp
+LIB_DEPENDS =		devel/glib2 \
+			x11/gtk+2 \
+			lang/guile \
+			devel/gmp
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
-RUN_DEPENDS = 		:shared-mime-info-*:misc/shared-mime-info \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS = 		misc/shared-mime-info \
+			devel/desktop-file-utils
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

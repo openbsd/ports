@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	update Class::DBI objects through CGI::Untaint
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::www/p5-CGI-Untaint
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+RUN_DEPENDS=	databases/p5-Class-DBI \
+		www/p5-CGI-Untaint
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

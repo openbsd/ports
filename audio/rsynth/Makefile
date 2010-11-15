@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	speech synthesizer
 DISTNAME=	rsynth-2.0
@@ -15,7 +15,7 @@ WANTLIB=		c gdbm m sndio
 
 FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 
-LIB_DEPENDS=	::databases/gdbm
+LIB_DEPENDS=	databases/gdbm
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf

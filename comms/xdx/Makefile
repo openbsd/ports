@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:05:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	X DX cluster watcher
 
@@ -26,8 +26,8 @@ CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
 
 USE_GROFF =	Yes
 

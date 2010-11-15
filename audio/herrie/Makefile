@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		minimalistic console-based audio player
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c ncurses ogg pthread mad.>=2 id3tag.>=3 sndfile.>=1
-WANTLIB += vorbis.>=5 vorbisfile.>=4 glib-2.0.>=1000.0 gthread-2.0.>=1000.0
-WANTLIB += curl.>=9 ao
+WANTLIB += c ncurses ogg pthread mad>=2 id3tag>=3 sndfile>=1
+WANTLIB += vorbis>=5 vorbisfile>=4 glib-2.0>=1000 gthread-2.0>=1000
+WANTLIB += curl>=9 ao
 
 MODULES=		devel/gettext
 
@@ -24,13 +24,13 @@ MASTER_SITES=		${HOMEPAGE}/distfiles/ \
 			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
 
-LIB_DEPENDS=		::audio/libmad \
-			::audio/libid3tag \
-			::audio/libsndfile \
-			::audio/libvorbis \
-			::devel/glib2 \
-			::net/curl \
-			:libao->=0.8.8p1:audio/libao
+LIB_DEPENDS=		audio/libmad \
+			audio/libid3tag \
+			audio/libsndfile \
+			audio/libvorbis \
+			devel/glib2 \
+			net/curl \
+			libao->=0.8.8p1:audio/libao
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CONFDIR=${SYSCONFDIR} \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS= 	ncurses \
 			verbose \
 			ao
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 LANGS=			ca da de es fi ga nl pl pt_BR ru sv tr uk vi zh_CN

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:46 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -29,9 +29,9 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs xcb xcb-render xcb-render-util z
 WANTLIB-main =	${WANTLIB} cddb dbus-1 dbus-glib-1 mowgli ogg sndio stdc++ \
-		faad.>=2 mp4ff.>=1 FLAC.>=7 mp3lame mad cdio cdio_cdda \
-		mpcdec.>=2 sndfile.>=2 vorbis.>=5 vorbisfile.>=4 vorbisenc \
-		tag.>=6 wavpack.>=0 SDL.>=6 curl.>=5 neon.>=26 xml2
+		faad>=2 mp4ff>=1 FLAC>=7 mp3lame mad cdio cdio_cdda \
+		mpcdec>=2 sndfile>=2 vorbis>=5 vorbisfile>=4 vorbisenc \
+		tag>=6 wavpack SDL>=6 curl>=5 neon>=26 xml2
 WANTLIB-jack =	${WANTLIB} jack samplerate
 
 MASTER_SITES =	http://distfiles.atheme.org/
@@ -42,24 +42,24 @@ MULTI_PACKAGES =	-main
 
 BUILD_DEPENDS =	${RUN_DEPENDS-main}
 
-RUN_DEPENDS-main =	:audacious->=1.5.1:audio/audacious
-RUN_DEPENDS-jack =	::audio/audacious-plugins,-main
+RUN_DEPENDS-main =	audacious->=1.5.1:audio/audacious
+RUN_DEPENDS-jack =	audio/audacious-plugins,-main
 
-LIB_DEPENDS-main =	::audio/faad \
-			::audio/flac \
-			::audio/lame \
-			::audio/libmad \
-			::audio/libcdio \
-			::audio/libmpcdec \
-			::audio/libsndfile \
-			::audio/libvorbis \
-			:taglib->=1.4:audio/taglib \
-			::audio/wavpack \
-			::devel/sdl \
-			::net/curl \
-			::net/neon \
-			::textproc/libxml
-LIB_DEPENDS-jack =	::audio/jack
+LIB_DEPENDS-main =	audio/faad \
+			audio/flac \
+			audio/lame \
+			audio/libmad \
+			audio/libcdio \
+			audio/libmpcdec \
+			audio/libsndfile \
+			audio/libvorbis \
+			taglib->=1.4:audio/taglib \
+			audio/wavpack \
+			devel/sdl \
+			net/curl \
+			net/neon \
+			textproc/libxml
+LIB_DEPENDS-jack =	audio/jack
 
 PSEUDO_FLAVORS =	no_jack
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/27 10:23:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:48 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -21,9 +21,9 @@ WANTLIB =		fftw3f m
 MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
 			http://distfiles.nl/
 
-BUILD_DEPENDS =		::audio/ladspa \
-			::devel/libtool
-LIB_DEPENDS =		:fftw3-float-*:math/fftw3,float
+BUILD_DEPENDS =		audio/ladspa \
+			devel/libtool
+LIB_DEPENDS =		math/fftw3,float
 
 USE_LIBTOOL =		Yes
 

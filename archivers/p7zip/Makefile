@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -rar
 
-RUN_DEPENDS-rar=::archivers/p7zip,-main
+RUN_DEPENDS-rar= ${BASE_PKGPATH},-main
 
 WRKDIST=	${WRKDIR}/p7zip_${V}
 

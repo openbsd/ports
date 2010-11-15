@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/10 13:18:42 phessler Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:48 espie Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
@@ -29,13 +29,13 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
 
 # msgfmt
-BUILD_DEPENDS =		::devel/gettext
+BUILD_DEPENDS =		devel/gettext
 
-RUN_DEPENDS =		:py-qt4->=4.1:x11/py-qt4 \
-			:py-mutagen->=1.9:audio/py-mutagen \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =		py-qt4->=4.1:x11/py-qt4 \
+			py-mutagen->=1.9:audio/py-mutagen \
+			devel/desktop-file-utils
 
-REGRESS_DEPENDS =	::${BASE_PKGPATH}
+REGRESS_DEPENDS =	${BASE_PKGPATH}
 
 PLUGINS_DIRS =		lastfm \
 			replaygain

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/06 21:55:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =		database toolkit for Python
 
@@ -27,8 +27,8 @@ PKG_ARCH =		*
 MAKE_ENV +=		PYTHONPATH=.
 
 # Other DB connectors would work, too.
-REGRESS_DEPENDS =	::databases/py-sqlite2 \
-			::devel/py-nose
+REGRESS_DEPENDS =	databases/py-sqlite2 \
+			devel/py-nose
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy

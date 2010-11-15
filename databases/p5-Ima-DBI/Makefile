@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	database connection caching and organization
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=	PERRIN
 
-RUN_DEPENDS=	::databases/p5-DBI \
-		::databases/p5-DBIx-ContextualFetch \
-		::devel/p5-Class-Data-Inheritable
+RUN_DEPENDS=	databases/p5-DBI \
+		databases/p5-DBIx-ContextualFetch \
+		devel/p5-Class-Data-Inheritable
 
 .include <bsd.port.mk>

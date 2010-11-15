@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/24 07:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:49 espie Exp $
 
 COMMENT =	A modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
@@ -17,8 +17,8 @@ WANTLIB =		m c pthread
 
 MAINTAINER =		Jung <moorang@gmail.com>
 
-BUILD_DEPENDS =		::textproc/libxslt \
-			::textproc/docbook-xsl
+BUILD_DEPENDS =		textproc/libxslt \
+			textproc/docbook-xsl
 NO_REGRESS =		Yes
 
 CONFIGURE_STYLE =	gnu
@@ -32,7 +32,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS +=	--with-mysql
-LIB_DEPENDS +=		::databases/mysql
+LIB_DEPENDS +=		databases/mysql
 WANTLIB +=		crypto ssl z lib/mysql/mysqlclient_r
 .else
 CONFIGURE_ARGS +=	--with-mysql=no
@@ -40,7 +40,7 @@ CONFIGURE_ARGS +=	--with-mysql=no
 
 .if ${FLAVOR:L:Mpgsql}
 CONFIGURE_ARGS +=	--with-pgsql
-LIB_DEPENDS +=		:postgresql-client-*:databases/postgresql
+LIB_DEPENDS +=		databases/postgresql
 WANTLIB +=		pq
 #crypto ssl
 .else

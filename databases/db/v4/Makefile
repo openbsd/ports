@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/12 08:06:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/15 00:22:51 espie Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -33,9 +33,9 @@ WANTLIB=	c m stdc++
 PSEUDO_FLAVORS=	java
 FLAVOR?=
 
-RUN_DEPENDS-java=	:db->=4,<5:databases/db/v${REV} \
+RUN_DEPENDS-java=	db->=4,<5:databases/db/v${REV} \
 			${MODJAVA_RUN_DEPENDS}
-RUN_DEPENDS-tcl=	:db->=4,<5:databases/db/v${REV}
+RUN_DEPENDS-tcl=	db->=4,<5:databases/db/v${REV}
 WANTLIB-java=
 
 .if ${FLAVOR:L:Mjava}

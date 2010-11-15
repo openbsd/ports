@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	elegant music player for MPD
 
@@ -29,13 +29,13 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=sonata/}
 MODULES=	devel/gettext \
 		lang/python
 
-BUILD_DEPENDS=	::x11/py-gtk2
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::net/py-zsi \
-		::audio/py-mpd \
-		::audio/py-tagpy \
-		::x11/dbus-python \
-		::x11/py-gtk2
+BUILD_DEPENDS=	x11/py-gtk2
+RUN_DEPENDS=	devel/desktop-file-utils \
+		net/py-zsi \
+		audio/py-mpd \
+		audio/py-tagpy \
+		x11/dbus-python \
+		x11/py-gtk2
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

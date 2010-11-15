@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	pager utility
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Class-Accessor-Chained \
-		::devel/p5-Test-Exception
+RUN_DEPENDS=	devel/p5-Class-Accessor-Chained \
+		devel/p5-Test-Exception
 
 .include <bsd.port.mk>

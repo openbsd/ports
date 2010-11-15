@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:54 espie Exp $
 
 COMMENT=	search engine library
 
@@ -25,7 +25,7 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 # needs uuid_generate(3) which devel/uuid does not provide
-LIB_DEPENDS=	::sysutils/e2fsprogs
+LIB_DEPENDS=	sysutils/e2fsprogs
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

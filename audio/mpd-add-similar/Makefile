@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/28 16:11:52 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =		add similar tracks to your mpd playlist
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}/trunk/0.1.6/+download/
 
 MODULES =	lang/python
-RUN_DEPENDS =	::audio/py-last \
-		::audio/py-mpd
+RUN_DEPENDS =	audio/py-last \
+		audio/py-mpd
 
 NO_REGRESS =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -19,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-WANTLIB=	c m ogg.>=5 stdc++
+WANTLIB=	c m ogg>=5 stdc++
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::audio/libogg
+LIB_DEPENDS=	audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/nasm
+BUILD_DEPENDS+=	devel/nasm
 .endif
 
 USE_LIBTOOL=	Yes

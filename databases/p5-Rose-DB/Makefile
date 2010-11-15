@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
@@ -14,16 +14,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::math/p5-Bit-Vector \
-		::devel/p5-DateTime-Format-Pg \
-		::devel/p5-DateTime-Format-MySQL \
-		::databases/p5-SQL-ReservedWords \
-		::devel/p5-Time-Clock \
-		::databases/p5-DBI \
-		::databases/p5-Rose-Object \
-		::databases/p5-Rose-DateTime \
-		::devel/p5-Clone \
-		::devel/p5-YAML-Syck
+RUN_DEPENDS=	math/p5-Bit-Vector \
+		devel/p5-DateTime-Format-Pg \
+		devel/p5-DateTime-Format-MySQL \
+		databases/p5-SQL-ReservedWords \
+		devel/p5-Time-Clock \
+		databases/p5-DBI \
+		databases/p5-Rose-Object \
+		databases/p5-Rose-DateTime \
+		devel/p5-Clone \
+		devel/p5-YAML-Syck
 
 REGRESS_FLAGS +=	AUTOMATED_TESTING=1
 .include <bsd.port.mk>

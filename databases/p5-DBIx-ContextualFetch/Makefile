@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	add contextual fetches to DBI
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-DBI->=1.35:databases/p5-DBI
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+RUN_DEPENDS=	p5-DBI->=1.35:databases/p5-DBI
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

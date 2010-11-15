@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:51 espie Exp $
 
 COMMENT =	easy DBI access
 
@@ -14,12 +14,12 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		::databases/p5-DBI \
-			::www/p5-CGI-Application
+RUN_DEPENDS =		databases/p5-DBI \
+			www/p5-CGI-Application
 
-REGRESS_DEPENDS =	::databases/p5-DBD-Mock
+REGRESS_DEPENDS =	databases/p5-DBD-Mock
 
 MAKE_ENV +=		TEST_POD=1
 

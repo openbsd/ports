@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	text console audio player with an interactive interface
 
@@ -16,8 +16,8 @@ WANTLIB=	c m ncurses ogg pthread sidplay sndio stdc++ vorbis vorbisfile
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3blaster/}
 
-LIB_DEPENDS=	::audio/libsidplay \
-		::audio/libvorbis
+LIB_DEPENDS=	audio/libsidplay \
+		audio/libvorbis
 
 AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9

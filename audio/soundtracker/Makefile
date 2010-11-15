@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		music tracking tool for X11
 
@@ -31,8 +31,8 @@ WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
 WANTLIB += sndio xcb xml2 z xcb-render xcb-render-util
 WANTLIB += sndfile gnomeui-2
 
-LIB_DEPENDS=		::audio/libsndfile \
-			::x11/gnome/libgnomeui
+LIB_DEPENDS=		audio/libsndfile \
+			x11/gnome/libgnomeui
 
 MODULES=		devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:46 espie Exp $
 
 SHARED_ONLY = 	Yes
 
@@ -24,7 +24,7 @@ WANTLIB = 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z \
-		samplerate mcs mowgli dbus-glib-1 dbus-1.>=6 \
+		samplerate mcs mowgli dbus-glib-1 dbus-1>=6 \
 		gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 execinfo \
 		xcb-render xcb-render-util
 
@@ -34,15 +34,15 @@ EXTRACT_SUFX = 	.tgz
 
 MODULES = 	devel/gettext
 
-BUILD_DEPENDS = :libxml-*:textproc/libxml
-RUN_DEPENDS = 	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 	::audio/libsamplerate \
-		::devel/libexecinfo \
-		:mcs->=0.7.0:devel/mcs \
-		:mowgli->=0.4.0:devel/mowgli \
-		::x11/dbus-glib \
-		::x11/dbus \
-		::x11/gtk+2
+BUILD_DEPENDS = textproc/libxml
+RUN_DEPENDS = 	devel/desktop-file-utils
+LIB_DEPENDS = 	audio/libsamplerate \
+		devel/libexecinfo \
+		mcs->=0.7.0:devel/mcs \
+		mowgli->=0.4.0:devel/mowgli \
+		x11/dbus-glib \
+		x11/dbus \
+		x11/gtk+2
 
 MAKE_ENV = 	LIBaudclient_VERSION=${LIBaudclient_VERSION}
 

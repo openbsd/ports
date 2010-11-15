@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	extensions to Class::DBI for MySQL
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-DBD-mysql
-REGRESS_DEPENDS=:mysql-server-*:databases/mysql,-server
+RUN_DEPENDS=	databases/p5-Class-DBI \
+		databases/p5-DBD-mysql
+REGRESS_DEPENDS=databases/mysql,-server
 
 REGRESS_IS_INTERACTIVE=Yes
 

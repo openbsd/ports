@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	CouchDB persistence layer written in Ruby
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-activesupport-*:devel/ruby-activesupport,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-couchrest-*:databases/ruby-couchrest,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-validatable-*:databases/ruby-validatable,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-activesupport,${FLAVOR} \
+			databases/ruby-couchrest,${FLAVOR} \
+			databases/ruby-validatable,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

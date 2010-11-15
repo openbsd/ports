@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 19:39:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:46 espie Exp $
 
 COMMENT =		Python implementation of the LZO library
 
@@ -22,7 +22,7 @@ MASTER_SITES =	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/
 
 MODULES =	lang/python
 
-LIB_DEPENDS =	::archivers/lzo
+LIB_DEPENDS =	archivers/lzo
 WANTLIB =	lzo
 
 MAKE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

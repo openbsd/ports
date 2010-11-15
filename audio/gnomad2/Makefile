@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
@@ -29,14 +29,14 @@ WANTLIB += xcb-render xcb-render-util
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		::audio/libid3tag \
-			::audio/libnjb \
-			::audio/taglib \
-			::devel/libmtp \
-			::x11/dbus-glib \
-			::x11/gtk+2
+LIB_DEPENDS=		audio/libid3tag \
+			audio/libnjb \
+			audio/taglib \
+			devel/libmtp \
+			x11/dbus-glib \
+			x11/gtk+2
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	read/write access to ASN.1-encoded PEM files
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::converters/p5-Convert-ASN1 \
-		::devel/p5-Class-ErrorHandler \
-		::security/p5-Crypt-DES-EDE3
+RUN_DEPENDS=	converters/p5-Convert-ASN1 \
+		devel/p5-Class-ErrorHandler \
+		security/p5-Crypt-DES-EDE3
 
 .include <bsd.port.mk>

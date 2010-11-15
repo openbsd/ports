@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/15 00:22:49 espie Exp $
 
 COMMENT-main=		extended module player
 COMMENT-audacious=	extended module player plugin for Audacious
@@ -29,35 +29,35 @@ SHARED_ONLY=		Yes
 MULTI_PACKAGES=		-main -audacious -bmp -xmms
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
 WANTLIB-main=		c m sndio
 
-LIB_DEPENDS-audacious=	::audio/audacious \
-			::devel/pango \
-			::x11/gtk+2
+LIB_DEPENDS-audacious=	audio/audacious \
+			devel/pango \
+			x11/gtk+2
 WANTLIB-audacious=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1 \
 			expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 gthread-2.0 iconv intl m mcs mowgli pixman-1 \
 			png pthread-stubs samplerate xcb xcb-render xcb-render-util \
-			z audclient.>=1 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+			z audclient>=1 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-LIB_DEPENDS-bmp=	::audio/bmp \
-			::devel/pango \
-			::x11/gtk+2
+LIB_DEPENDS-bmp=	audio/bmp \
+			devel/pango \
+			x11/gtk+2
 WANTLIB-bmp=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 			freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 			gthread-2.0 iconv intl m pixman-1 png pthread-stubs \
-			xcb xcb-render xcb-render-util z beep.>=2 pango-1.0 \
+			xcb xcb-render xcb-render-util z beep>=2 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
 			gtk-x11-2.0
 
-LIB_DEPENDS-xmms=	::audio/xmms
+LIB_DEPENDS-xmms=	audio/xmms
 WANTLIB-xmms=		X11 Xext Xi gdk glib gmodule gtk iconv intl m xmms
 
 CONFIGURE_STYLE=	gnu

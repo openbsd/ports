@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
@@ -24,9 +24,9 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::x11/py-gtk2 \
-		::databases/py-pgsql \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	x11/py-gtk2 \
+		databases/py-pgsql \
+		devel/desktop-file-utils
 
 
 NO_REGRESS = 	Yes

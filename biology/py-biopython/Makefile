@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/08/30 16:48:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		Python tools for computational molecular biology
@@ -24,10 +24,10 @@ MODULES=	lang/python
 
 WANTLIB+=	stdc++
 
-BUILD_DEPENDS=	::devel/swig \
-		::math/py-numpy
-RUN_DEPENDS=	::math/py-numpy \
-		::print/py-reportlab/reportlab
+BUILD_DEPENDS=	devel/swig \
+		math/py-numpy
+RUN_DEPENDS=	math/py-numpy \
+		print/py-reportlab/reportlab
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 CFLAGS+=	-fPIC

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	embedding CDDB information in MP3s
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::audio/p5-MP3-Info \
-		::audio/p5-cddb \
-		::audio/mp3info
+RUN_DEPENDS=	audio/p5-MP3-Info \
+		audio/p5-cddb \
+		audio/mp3info
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

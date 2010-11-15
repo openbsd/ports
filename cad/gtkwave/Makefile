@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
@@ -25,11 +25,11 @@ WANTLIB += xcb-render-util z bz2 lzma gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		::devel/gperf
+BUILD_DEPENDS=		devel/gperf
 
-LIB_DEPENDS=		::archivers/bzip2 \
-			::archivers/xz \
-			::x11/gtk+2
+LIB_DEPENDS=		archivers/bzip2 \
+			archivers/xz \
+			x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-tcl \

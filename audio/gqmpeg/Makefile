@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -25,11 +25,11 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
 
 MODULES=		devel/gettext
 
-RUN_DEPENDS=		:mpg321-*:audio/mpg321 \
-			:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=		::x11/gtk+2
+RUN_DEPENDS=		audio/mpg321 \
+			devel/desktop-file-utils
+LIB_DEPENDS=		x11/gtk+2
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \

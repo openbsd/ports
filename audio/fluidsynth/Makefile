@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:46 espie Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.0.9
@@ -21,7 +21,7 @@ WANTLIB =		c jack m ncurses pthread readline sndio
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=fluid/}
 
-LIB_DEPENDS =		::audio/jack
+LIB_DEPENDS =		audio/jack
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9

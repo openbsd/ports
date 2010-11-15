@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
@@ -22,8 +22,8 @@ WANTLIB=	c m util
 
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 
-RUN_DEPENDS=	::print/ghostscript/gnu \
-		::graphics/netpbm
+RUN_DEPENDS=	print/ghostscript/gnu \
+		graphics/netpbm
 
 WRKDIST=	${WRKDIR}/mgetty-${VERSION}
 

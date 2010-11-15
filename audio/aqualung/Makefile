@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/07 00:50:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	advanced music player
 
@@ -32,24 +32,24 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::audio/flac \
-		::audio/jack \
-		::audio/libcdio \
-		::audio/libcddb \
-		::audio/libmad \
-		::audio/libmodplug \
-		::audio/libmpcdec \
-		::audio/mac \
-		::audio/speex \
-		::audio/wavpack \
-		::graphics/ffmpeg \
-		::lang/lua \
-		::multimedia/oggz \
-		::textproc/liblrdf \
-		::textproc/libxml \
-		::x11/gtk+2
+LIB_DEPENDS=	audio/flac \
+		audio/jack \
+		audio/libcdio \
+		audio/libcddb \
+		audio/libmad \
+		audio/libmodplug \
+		audio/libmpcdec \
+		audio/mac \
+		audio/speex \
+		audio/wavpack \
+		graphics/ffmpeg \
+		lang/lua \
+		multimedia/oggz \
+		textproc/liblrdf \
+		textproc/libxml \
+		x11/gtk+2
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 		
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

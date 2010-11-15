@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:51 espie Exp $
 
 COMMENT= 	RDBO and RHTMLO base classes for Catalyst
 DISTNAME=	Catalyst-Controller-Rose-0.02
@@ -12,11 +12,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Catalyst-Model-RDBO \
-		::databases/p5-Sort-SQL \
-		::devel/p5-YAML-Syck \
-		::www/p5-Rose-HTMLx-Form-Field-Autocomplete \
-		::databases/p5-Data-Pageset
+RUN_DEPENDS=	databases/p5-Catalyst-Model-RDBO \
+		databases/p5-Sort-SQL \
+		devel/p5-YAML-Syck \
+		www/p5-Rose-HTMLx-Form-Field-Autocomplete \
+		databases/p5-Data-Pageset
 
 
 .include <bsd.port.mk>

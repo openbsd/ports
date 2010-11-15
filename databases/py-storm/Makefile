@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/10 13:24:41 eric Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=		generic object relational mapper for Python
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::databases/py-sqlite2
+REGRESS_DEPENDS=	databases/py-sqlite2
 
 do-regress:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./test

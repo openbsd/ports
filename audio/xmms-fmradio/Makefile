@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,12 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xi gdk glib gmodule gtk iconv intl m xmms.>=2
+WANTLIB += X11 Xext Xi gdk glib gmodule gtk iconv intl m xmms>=2
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	::audio/xmms
+LIB_DEPENDS=	audio/xmms
 
 MAKE_ENV=	CC="${CC}"
 

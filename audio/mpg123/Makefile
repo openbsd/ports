@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c ltdl m sndio
-LIB_DEPENDS=	::devel/libtool,-ltdl
+LIB_DEPENDS=	devel/libtool,-ltdl
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

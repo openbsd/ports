@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-0.99.14
@@ -26,12 +26,12 @@ WANTLIB += glade-2.0 mp4v2 xcb-render xcb-render-util
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::audio/libid3tag \
-		::audio/libgpod \
-		::devel/libglade2 \
-		::net/curl \
-		::multimedia/libmp4v2
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	audio/libid3tag \
+		audio/libgpod \
+		devel/libglade2 \
+		net/curl \
+		multimedia/libmp4v2
 
 MODULES=	devel/gettext textproc/intltool
 

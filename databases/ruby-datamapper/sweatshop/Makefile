@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:54 espie Exp $
 
 COMMENT =	model factory for DataMapper
 
 DISTNAME =	dm-sweatshop-${VERSION}
 REVISION =	1
 
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-dm-core->=${VERSION}:databases/ruby-datamapper/core,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-randexp-*:textproc/ruby-randexp,${FLAVOR}
+RUN_DEPENDS =	STEM->=${VERSION}:databases/ruby-datamapper/core,${FLAVOR} \
+		textproc/ruby-randexp,${FLAVOR}
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-dm-validations-*:databases/ruby-datamapper/validations,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-do_sqlite3-*:databases/ruby-do_sqlite3,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-parsetree-*:devel/ruby-parsetree,${FLAVOR}
+REGRESS_DEPENDS =	databases/ruby-datamapper/validations,${FLAVOR} \
+			databases/ruby-do_sqlite3,${FLAVOR} \
+			devel/ruby-parsetree,${FLAVOR}
 
 .include <bsd.port.mk>

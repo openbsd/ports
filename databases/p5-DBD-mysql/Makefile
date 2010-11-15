@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 00:22:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto m ssl z
 
-BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-LIB_DEPENDS=		::databases/mysql
-REGRESS_DEPENDS=	:mysql-server-*:databases/mysql,-server
-WANTLIB +=		lib/mysql/mysqlclient.>=10
+BUILD_DEPENDS=		p5-DBI->=1.08:databases/p5-DBI
+RUN_DEPENDS=		p5-DBI->=1.08:databases/p5-DBI
+LIB_DEPENDS=		databases/mysql
+REGRESS_DEPENDS=	databases/mysql,-server
+WANTLIB +=		lib/mysql/mysqlclient>=10
 
 REGRESS_IS_INTERACTIVE=	Yes
 

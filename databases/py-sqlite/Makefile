@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/06 22:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS =	::databases/sqlite
-WANTLIB +=	sqlite.>=8.6
+LIB_DEPENDS =	databases/sqlite
+WANTLIB +=	sqlite>=8.6
 
 MODULES=	lang/python
 

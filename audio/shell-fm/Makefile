@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		console based player for last.fm radio streams
 
@@ -20,12 +20,12 @@ WANTLIB += ao c m mad tag tag_c
 
 MASTER_SITES=		http://distfiles.nl/
 
-LIB_DEPENDS=		::audio/libao \
-			::audio/libmad \
-			::audio/taglib
+LIB_DEPENDS=		audio/libao \
+			audio/libmad \
+			audio/taglib
 
 USE_GMAKE=		yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 FAKE_FLAGS=		DESTDIR="${WRKINST}${PREFIX}"
 
 NO_REGRESS=		yes

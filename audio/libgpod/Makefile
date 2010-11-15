@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/09/30 07:42:54 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 00:22:47 espie Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -32,15 +32,15 @@ MODULES=	devel/gettext \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=		::audio/py-mutagen \
-			::devel/swig
-RUN_DEPENDS-python=	::audio/py-mutagen
+BUILD_DEPENDS=		audio/py-mutagen \
+			devel/swig
+RUN_DEPENDS-python=	audio/py-mutagen
 LIB_DEPENDS-python=	${LIB_DEPENDS} \
-			::devel/libffi \
-			::${BUILD_PKGPATH},-main
-LIB_DEPENDS=		::devel/glib2 \
-			::graphics/gdk-pixbuf2 \
-			::textproc/libxml
+			devel/libffi \
+			${BUILD_PKGPATH},-main
+LIB_DEPENDS=		devel/glib2 \
+			graphics/gdk-pixbuf2 \
+			textproc/libxml
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m z pcre
 WANTLIB += gdk_pixbuf-2.0 xml2

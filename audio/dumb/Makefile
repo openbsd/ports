@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	IT/MOD/XM player and library
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	alleg c m pthread
 
 USE_GMAKE=	yes
-LIB_DEPENDS=	::games/allegro
+LIB_DEPENDS=	games/allegro
 
 NO_REGRESS=	Yes
 

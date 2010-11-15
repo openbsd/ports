@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -35,11 +35,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=		:libmpd->=0.17:audio/libmpd \
-			::textproc/libnxml \
-			::audio/taglib \
-			::devel/libglade2
-RUN_DEPENDS=		::devel/desktop-file-utils
+LIB_DEPENDS=		libmpd->=0.17:audio/libmpd \
+			textproc/libnxml \
+			audio/taglib \
+			devel/libglade2
+RUN_DEPENDS=		devel/desktop-file-utils
 
 post-extract:
 	rm ${WRKSRC}/po/Makefile.in.in

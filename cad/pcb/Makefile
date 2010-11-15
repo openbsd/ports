@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20100929
@@ -24,15 +24,15 @@ WANTLIB += gtk-x11-2.0 gthread-2.0 pthread xcb-render xcb-render-util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 
-RUN_DEPENDS=	::devel/m4 \
-		::devel/desktop-file-utils \
-		::graphics/ImageMagick \
-		::misc/shared-mime-info \
+RUN_DEPENDS=	devel/m4 \
+		devel/desktop-file-utils \
+		graphics/ImageMagick \
+		misc/shared-mime-info \
 		${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::shells/bash
-LIB_DEPENDS=	::graphics/gd \
-		::x11/gtk+2
+		shells/bash
+LIB_DEPENDS=	graphics/gd \
+		x11/gtk+2
 
 MODULES=	devel/gettext \
 		textproc/intltool \

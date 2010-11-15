@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	perl multi-level hash/array DBM that supports transactions
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-IO-stringy \
-		::devel/p5-Test-Deep \
-		::devel/p5-Test-Warn
+RUN_DEPENDS=	devel/p5-IO-stringy \
+		devel/p5-Test-Deep \
+		devel/p5-Test-Warn
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	seamless DB up- and downgrades
 
@@ -11,9 +11,9 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=modbuild
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Class-Accessor \
-		::devel/p5-File-Slurp
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		devel/p5-File-Slurp
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 MAKE_ENV+=	TEST_POD=1
 

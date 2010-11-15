@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:52 espie Exp $
 
 COMMENT =	DBI wrapper intended to Do What I Want
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::databases/p5-DBI \
-		::databases/p5-DBD-mysql
+RUN_DEPENDS =	databases/p5-DBI \
+		databases/p5-DBD-mysql
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pthread argtable2.>=1 confuse.>=0 daemon.>=2 curl.>=5
+WANTLIB=		c pthread argtable2>=1 confuse daemon>=2 curl>=5
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=scmpc/}
 EXTRACT_SUFX=		.tar.bz2
@@ -28,12 +28,12 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="-I${LOCALBASE}/include"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		::devel/argtable \
-			::devel/libconfuse \
-			::devel/libdaemon \
-			::net/curl
+LIB_DEPENDS=		devel/argtable \
+			devel/libconfuse \
+			devel/libdaemon \
+			net/curl
 
 USE_GMAKE=		Yes
 

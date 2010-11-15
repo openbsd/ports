@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 20:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -28,10 +28,10 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
 WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0 lua theora
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtkglext \
-		::lang/lua \
-		::multimedia/libtheora
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtkglext \
+		lang/lua \
+		multimedia/libtheora
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

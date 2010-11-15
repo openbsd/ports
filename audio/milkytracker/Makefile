@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =		Fasttracker II inspired MOD tracker
 DISTNAME =		milkytracker-0.90.80
@@ -20,9 +20,9 @@ WANTLIB =		SDL c m pthread stdc++
 MASTER_SITES =		${HOMEPAGE}/files/
 
 # libjack accessed via dlopen()
-RUN_DEPENDS =		::audio/jack
+RUN_DEPENDS =		audio/jack
 BUILD_DEPENDS =		${RUN_DEPENDS}
-LIB_DEPENDS =		::devel/sdl
+LIB_DEPENDS =		devel/sdl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

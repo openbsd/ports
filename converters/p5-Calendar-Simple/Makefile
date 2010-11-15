@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:50 espie Exp $
 
 COMMENT= 	simple calendar month
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/p5-DateTime
+RUN_DEPENDS=		devel/p5-DateTime
 
 CONFIGURE_STYLE= modbuild
 USE_GROFF =	Yes

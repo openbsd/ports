@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:46 espie Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -21,26 +21,26 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	lang/python
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:dbus-python->=0.82.1:x11/dbus-python \
-		:py-notify->=0.1.1:devel/py-notify \
-		:py-mutagen->=1.11:audio/py-mutagen \
-		:py-cddb->=1.4:audio/py-cddb \
-		:py-gtk2->=2.17:x11/py-gtk2 \
-		::devel/libglade2 \
-		::devel/desktop-file-utils \
-		::multimedia/gstreamer-0.10/core \
-		::multimedia/gstreamer-0.10/plugins-bad,-main \
-		::multimedia/gstreamer-0.10/plugins-base,-main \
-		::multimedia/gstreamer-0.10/plugins-good,-main \
-		::multimedia/gstreamer-0.10/plugins-ugly,-main \
-		::multimedia/gstreamer-0.10/py-gstreamer
+RUN_DEPENDS =	dbus-python->=0.82.1:x11/dbus-python \
+		py-notify->=0.1.1:devel/py-notify \
+		py-mutagen->=1.11:audio/py-mutagen \
+		py-cddb->=1.4:audio/py-cddb \
+		py-gtk2->=2.17:x11/py-gtk2 \
+		devel/libglade2 \
+		devel/desktop-file-utils \
+		multimedia/gstreamer-0.10/core \
+		multimedia/gstreamer-0.10/plugins-bad,-main \
+		multimedia/gstreamer-0.10/plugins-base,-main \
+		multimedia/gstreamer-0.10/plugins-good,-main \
+		multimedia/gstreamer-0.10/plugins-ugly,-main \
+		multimedia/gstreamer-0.10/py-gstreamer
 
 USE_GMAKE =	Yes
 
 REGRESS_TARGET=	test
 PORTHOME =	${WRKDIR}
-REGRESS_DEPENDS=::devel/py-nose \
-		::devel/py-mox
+REGRESS_DEPENDS=devel/py-nose \
+		devel/py-mox
 
 CONFIGURE_STYLE =none
 SUBST_VARS +=	MODPY_SITEPKG

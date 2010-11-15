@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=		xml to manpage converter
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmltoman/}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::textproc/p5-XML-Parser
+RUN_DEPENDS=		textproc/p5-XML-Parser
 
 post-extract:
 	perl -pi -e 's,/usr/share,${PREFIX}/share,g;s,doc/xmltoman/examples,examples/xmltoman,g' \

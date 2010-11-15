@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/28 10:17:54 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	lightweight library for extracting data from zip files
 
@@ -28,9 +28,9 @@ EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-BUILD_DEPENDS=		::archivers/zip
+BUILD_DEPENDS=		archivers/zip
 
 post-extract:
 	cd ${WRKDIST}/docs && tar xf ${WRKDIST}/docs/zziplib-manpages.tar

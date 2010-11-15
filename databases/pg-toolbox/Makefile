@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=	programs to aid the PostgreSQL administrator
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1943/
 
-RUN_DEPENDS=	 ::databases/postgresql,-main
+RUN_DEPENDS=	databases/postgresql,-main
 
 NO_REGRESS=	Yes
 

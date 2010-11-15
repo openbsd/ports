@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/26 08:25:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	audio sample rate conversion library
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	c m sndfile.>=1
+WANTLIB=	c m sndfile>=1
 
-LIB_DEPENDS=	::audio/libsndfile
+LIB_DEPENDS=	audio/libsndfile
 
 USE_LIBTOOL=	yes
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"

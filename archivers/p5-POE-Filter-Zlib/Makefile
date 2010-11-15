@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 11:38:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:45 espie Exp $
 
 COMMENT=		POE filter wrapped around Compress::Zlib
 
@@ -16,6 +16,6 @@ USE_GROFF=		Yes
 MODULES=		cpan
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/p5-POE
+RUN_DEPENDS=		devel/p5-POE
 
 .include <bsd.port.mk>

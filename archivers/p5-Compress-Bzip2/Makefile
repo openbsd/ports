@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 19:45:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-LIB_DEPENDS =	::archivers/bzip2
-WANTLIB =	bz2.>=10
+LIB_DEPENDS =	archivers/bzip2
+WANTLIB =	bz2>=10
 USE_GROFF =	Yes
 
 pre-configure:

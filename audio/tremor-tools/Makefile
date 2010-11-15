@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/06 12:19:38 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
@@ -19,14 +19,14 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
-LIB_DEPENDS=	::audio/libao \
-		::audio/libogg \
-		::audio/tremor \
-		::net/curl
+LIB_DEPENDS=	audio/libao \
+		audio/libogg \
+		audio/tremor \
+		net/curl
 
 MODULES=	devel/gettext
 
-WANTLIB=	ao.>=3 c curl.>=2 crypto idn ogg.>=5 pthread ssl vorbisidec.>=1 z
+WANTLIB=	ao>=3 c curl>=2 crypto idn ogg>=5 pthread ssl vorbisidec>=1 z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-vorbistest

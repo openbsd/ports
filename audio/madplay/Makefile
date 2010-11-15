@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	command-line MPEG audio decoder and player
 
@@ -19,9 +19,9 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::audio/libid3tag \
-		::audio/libmad
-WANTLIB=	c id3tag.>=3 m mad.>=2 sndio z
+LIB_DEPENDS=	audio/libid3tag \
+		audio/libmad
+WANTLIB=	c id3tag>=3 m mad>=2 sndio z
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

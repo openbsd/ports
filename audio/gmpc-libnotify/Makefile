@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:46 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,10 +31,10 @@ WANTLIB += xcb-render-util
 
 MODULES=		devel/gettext \
 			textproc/intltool
-RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \
-			:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
+RUN_DEPENDS=		gmpc->=${VERSION}:audio/gmpc \
+			notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		::devel/libnotify
+LIB_DEPENDS=		devel/libnotify
 
 USE_LIBTOOL=		Yes
 

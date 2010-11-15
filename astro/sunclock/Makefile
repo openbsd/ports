@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 20:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:46 espie Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -20,7 +20,7 @@ SUPDISTFILES=		big_images_270804.tar.bz2:0 \
 EXTRACT_SUFX=		.tar.bz2
 
 FAKE=			lib
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 NO_REGRESS=		Yes
 
@@ -49,8 +49,8 @@ WANTLIB-main=		X11 Xext Xpm Xau Xdmcp c m z jpeg png
 DIST_SUBDIR=		sunclock
 
 
-LIB_DEPENDS-main=	::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS-main=	graphics/jpeg \
+			graphics/png
 
 .if ${MULTI_PACKAGES:M-maps} # with maps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}

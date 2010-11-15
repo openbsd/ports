@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:50 espie Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main += c expat fontconfig freetype jpeg m png pthread stdc++
 WANTLIB-main += z
-WANTLIB-main += gd.>=20 ${MODLIBICONV_WANTLIB}
+WANTLIB-main += gd>=20 ${MODLIBICONV_WANTLIB}
 
-WANTLIB-python += pst.>=1 boost_python.>=1 ${MODLIBICONV_WANTLIB}
+WANTLIB-python += pst>=1 boost_python>=1 ${MODLIBICONV_WANTLIB}
 
 MASTER_SITES=		${HOMEPAGE}/packages/
 
@@ -34,17 +34,17 @@ MODULES=		converters/libiconv \
 			lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS-main}
-RUN_DEPENDS-main=	::graphics/ImageMagick
+RUN_DEPENDS-main=	graphics/ImageMagick
 LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} \
-			::graphics/gd
+			graphics/gd
 
 LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
-			::${BASE_PKGPATH} \
-			::devel/boost
+			${BASE_PKGPATH} \
+			devel/boost
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

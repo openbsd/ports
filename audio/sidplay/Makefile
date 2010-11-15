@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	Commodore 64 music player and SID chip emulator
 
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ossaudio sidplay.>=1 stdc++
+WANTLIB=		c m ossaudio sidplay>=1 stdc++
 
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	::audio/libsidplay
+LIB_DEPENDS=	audio/libsidplay
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \

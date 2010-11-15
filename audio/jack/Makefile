@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/10 08:00:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:47 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,17 +23,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c m pthread readline sndio termcap sndfile.>=1 samplerate.>=1
+WANTLIB += c m pthread readline sndio termcap sndfile>=1 samplerate>=1
 
 MASTER_SITES =		${HOMEPAGE}downloads/
 
-LIB_DEPENDS =		::audio/libsndfile \
-			::audio/libsamplerate
+LIB_DEPENDS =		audio/libsndfile \
+			audio/libsamplerate
 
 # uses macros from libtool.m4
-BUILD_DEPENDS =		::devel/libtool
+BUILD_DEPENDS =		devel/libtool
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.61

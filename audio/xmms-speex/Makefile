@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,10 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://jzb.rapanden.dk/pub/
 
-LIB_DEPENDS=	::audio/xmms \
-		::audio/speex
+LIB_DEPENDS=	audio/xmms \
+		audio/speex
 WANTLIB=	X11 Xext Xi gdk glib gmodule gtk iconv intl m ogg \
-		xmms.>=4 speex.>=5
+		xmms>=4 speex>=5
 
 WRKDIST=	${WRKDIR}/speex-xmms
 MAKE_FLAGS=	CC="${CC}" \

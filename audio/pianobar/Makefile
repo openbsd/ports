@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/13 12:59:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
 
 COMMENT =	console client for pandora
 
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	ao c faad m mad pthread
 
-LIB_DEPENDS =	::audio/libao \
-		::audio/faad \
-		::audio/libmad
+LIB_DEPENDS =	audio/libao \
+		audio/faad \
+		audio/libmad
 
 CFLAGS +=	-I${LOCALBASE}/include
 

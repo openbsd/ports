@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
 
 COMMENT =		regular expression-based parser for NCBI Entrez Gene
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 MODCPAN_EXAMPLES=	Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WRKDIST =		${WRKDIR}/Bio-ASN1-EntrezGene-${M:S/-withoutworldwriteables//}
 
-RUN_DEPENDS =		::biology/bioperl
+RUN_DEPENDS =		biology/bioperl
 
 .include <bsd.port.mk>

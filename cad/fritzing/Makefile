@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:49 espie Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
@@ -26,12 +26,10 @@ EXTRACT_SUFX=	.tar.bz2
 WANTLIB +=	QtDBus QtGui QtNetwork QtSql QtSvg QtWebKit QtXml QtXmlPatterns
 WANTLIB +=	phonon c m pthread sqlite3 stdc++ z
 
-LIB_DEPENDS=	::x11/qt4
-
 MODULES=        x11/qt4
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/fapplication.cpp

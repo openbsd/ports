@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	pager utility for Class::DBI
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-Data-Page \
-		::devel/p5-Exporter-Lite
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite
+RUN_DEPENDS=	databases/p5-Class-DBI \
+		databases/p5-Data-Page \
+		devel/p5-Exporter-Lite
+REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

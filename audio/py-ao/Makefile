@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	::audio/libao
+LIB_DEPENDS=	audio/libao
 
 NO_REGRESS=	Yes
 

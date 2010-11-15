@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 16:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 00:22:47 espie Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
@@ -22,9 +22,9 @@ WANTLIB=		ao.>=3 c id3tag.>=2 mad.>=2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpg321/}
 
-LIB_DEPENDS=	::audio/libao \
-		::audio/libid3tag \
-		::audio/libmad
+LIB_DEPENDS=	audio/libao \
+		audio/libid3tag \
+		audio/libmad
 
 SEPARATE_BUILD=	concurrent
 USE_GROFF =	Yes

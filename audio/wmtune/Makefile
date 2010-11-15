@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	premier dockable radio tuner
 
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext Xpm c
 MASTER_SITES=		${HOMEPAGE}dl/
 
 MAKE_ENV=		CC="${CC}"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		zoltrix
 FLAVOR?=

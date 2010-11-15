@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 16:52:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	server for the DAA protocol
 DISTNAME=	daapd-0.2.4b
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c m pthread stdc++ z mp4v2.>=1 id3tag.>=3.0 howl
+WANTLIB=	c m pthread stdc++ z mp4v2>=1 id3tag>=3.0 howl
 
-LIB_DEPENDS=	::multimedia/libmp4v2 \
-		::audio/libid3tag \
-		::net/avahi
+LIB_DEPENDS=	multimedia/libmp4v2 \
+		audio/libid3tag \
+		net/avahi
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

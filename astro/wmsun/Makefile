@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 20:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=		wm-dockapp; shows sunrise/sunset times
 
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext Xpm c m
 MASTER_SITES=		http://distfiles.nl/
 
 MAKE_ENV=		CC="${CC}"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmSun

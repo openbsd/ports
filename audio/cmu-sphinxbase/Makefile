@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
@@ -28,7 +28,7 @@ MODFORTRAN_COMPILER = g77
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	::math/lapack \
+LIB_DEPENDS=	math/lapack \
 		${MODFORTRAN_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

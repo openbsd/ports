@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	object relation model implementation for ruby
 
@@ -15,13 +15,13 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS = 	:${MODRUBY_PKG_PREFIX}-activesupport-2.3.4:devel/ruby-activesupport,${FLAVOR}
+RUN_DEPENDS = 	STEM-2.3.4:devel/ruby-activesupport,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_REGRESS =	rake
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mysql-*:databases/ruby-mysql,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-sqlite3-*:databases/ruby-sqlite3,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-pg-*:databases/ruby-pg,${FLAVOR}
+REGRESS_DEPENDS =	databases/ruby-mysql,${FLAVOR} \
+			databases/ruby-sqlite3,${FLAVOR} \
+			databases/ruby-pg,${FLAVOR}
 
 .include <bsd.port.mk>

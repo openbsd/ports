@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/09/03 12:34:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/15 00:22:53 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,8 +34,8 @@ MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::databases/postgresql,-server
-RUN_DEPENDS=	::databases/postgresql
+BUILD_DEPENDS=	databases/postgresql,-server
+RUN_DEPENDS=	databases/postgresql
 
 FLAVORS=	python2.4 python2.6
 FLAVOR?=	python2.6
@@ -49,13 +49,13 @@ ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
 MODPY_VERSION=	${FLAVOR:L:S/python//}
-BUILD_DEPENDS+=	:py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
-RUN_DEPENDS+=	:py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
+BUILD_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
+RUN_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
 
-RUN_DEPENDS-examples=	:py-psycopg-${VERSION}:${PKGPATH}
+RUN_DEPENDS-examples=	py-psycopg-${VERSION}:${PKGPATH}
 PKG_ARCH-examples=	*
 
-RUN_DEPENDS-zope=	:py-psycopg-${VERSION}-python2.4:${BUILD_PKGPATH} \
+RUN_DEPENDS-zope=	py-psycopg-${VERSION}-python2.4:${BUILD_PKGPATH} \
 			${MODPY_RUN_DEPENDS}
 PKG_ARCH-zope=		*
 

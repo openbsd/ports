@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
 
 COMMENT =		last.fm client for xmms2
 
@@ -20,7 +20,7 @@ WANTLIB +=		c curl pthread xmmsclient
 
 MASTER_SITES =		ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
-LIB_DEPENDS =		::audio/xmms2
+LIB_DEPENDS =		audio/xmms2
 
 USE_GMAKE =		Yes
 

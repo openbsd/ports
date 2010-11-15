@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:51 espie Exp $
 
 REV=		3
 DBLIBDIR=	lib/db
@@ -18,7 +18,7 @@ WANTLIB=c
 
 WANTLIB-tcl =		m ${MODTCL_WANTLIB}
 LIB_DEPENDS-tcl =	${MODTCL_LIB_DEPENDS}
-RUN_DEPENDS-tcl =	:db->=3,<4:databases/db/v${REV}
+RUN_DEPENDS-tcl =	db->=3,<4:databases/db/v${REV}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/test/include.tcl

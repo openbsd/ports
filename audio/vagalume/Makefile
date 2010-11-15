@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=		last.fm client for GNOME
 
@@ -32,17 +32,17 @@ WANTLIB += xcb-render xcb-render-util
 MODULES+=		devel/gettext \
 			textproc/intltool
 
-RUN_DEPENDS+=		::devel/desktop-file-utils \
-			::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS+=		devel/desktop-file-utils \
+			multimedia/gstreamer-0.10/plugins-good
 
-LIB_DEPENDS=		::devel/libidn \
-			::devel/libnotify \
-			::multimedia/gstreamer-0.10/plugins-base \
-			::net/curl
+LIB_DEPENDS=		devel/libidn \
+			devel/libnotify \
+			multimedia/gstreamer-0.10/plugins-base \
+			net/curl
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-platform=gnome \

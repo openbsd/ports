@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,7 @@ WANTLIB += xcb z id3tag xmms mad
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmms-mad/}
 
-LIB_DEPENDS=	::audio/xmms ::audio/libmad \
-		::audio/libid3tag
+LIB_DEPENDS=	audio/xmms audio/libmad audio/libid3tag
 
 MODULES=	devel/gettext
 

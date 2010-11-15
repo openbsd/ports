@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/03 18:18:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.12
@@ -21,15 +21,15 @@ MASTER_SITES =		${HOMEPAGE}/uploads/files/ \
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		::devel/libaudiofile \
-			::audio/libao \
-			::audio/libsamplerate \
-			::audio/flac \
-			::audio/libid3tag \
-			::audio/libmad \
-			::audio/libmikmod \
-			::net/curl \
-			::devel/glib2
+LIB_DEPENDS =		devel/libaudiofile \
+			audio/libao \
+			audio/libsamplerate \
+			audio/flac \
+			audio/libid3tag \
+			audio/libmad \
+			audio/libmikmod \
+			net/curl \
+			devel/glib2
 
 FLAVORS =		tremor
 FLAVOR ?=
@@ -66,17 +66,17 @@ CONFIGURE_ARGS +=	--with-tremor \
 			--disable-lame-encoder \
 			--disable-aac \
 			--disable-mpc
-LIB_DEPENDS +=		::audio/tremor
+LIB_DEPENDS +=		audio/tremor
 WANTLIB +=		vorbisidec
 .else
 WANTLIB +=		theora vorbis vorbisfile vorbisenc speex mp3lame \
 			shout faad mp4ff mpcdec
-LIB_DEPENDS +=		::audio/libvorbis \
-			::audio/speex \
-			::audio/lame \
-			::net/libshout \
-			:faad->=2.6.1p0:audio/faad \
-			::audio/libmpcdec
+LIB_DEPENDS +=		audio/libvorbis \
+			audio/speex \
+			audio/lame \
+			net/libshout \
+			faad->=2.6.1p0:audio/faad \
+			audio/libmpcdec
 CONFIGURE_ARGS +=	--enable-aac
 .endif
 

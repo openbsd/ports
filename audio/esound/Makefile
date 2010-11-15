@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/15 00:22:46 espie Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	sound library for Enlightenment
@@ -39,7 +39,7 @@ USE_GROFF =	Yes
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts
 MODULES+=	devel/gettext
-LIB_DEPENDS+=	::x11/kde/arts3
+LIB_DEPENDS+=	x11/kde/arts3
 WANTLIB+=	glib-2.0 gthread-2.0 gmodule-2.0 pcre pthread stdc++ artsc
 .else
 CONFIGURE_ARGS+=--disable-arts

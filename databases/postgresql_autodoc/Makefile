@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/14 08:42:34 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	documentation generator for postgresql databases
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	::databases/p5-DBD-Pg \
-		::devel/p5-Term-ReadKey \
-		::www/p5-HTML-Template
+RUN_DEPENDS =	databases/p5-DBD-Pg \
+		devel/p5-Term-ReadKey \
+		www/p5-HTML-Template
 
 WRKDIST =	${WRKDIR}/postgresql_autodoc
 

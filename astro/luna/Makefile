@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 10:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	display the moon's phase
 
@@ -19,7 +19,7 @@ WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
 
-BUILD_DEPENDS=	::archivers/lha
+BUILD_DEPENDS=	archivers/lha
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	makefile

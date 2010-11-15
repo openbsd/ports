@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:52 espie Exp $
 
 COMMENT= 	data validation for DBIx::Class
 
@@ -12,14 +12,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBIx-Class \
-		::devel/p5-DateTime-Format-MySQL \
-		::devel/p5-FormValidator-Simple
+RUN_DEPENDS=	databases/p5-DBIx-Class \
+		devel/p5-DateTime-Format-MySQL \
+		devel/p5-FormValidator-Simple
 
-REGRESS_DEPENDS=::databases/p5-DBD-SQLite \
-		::databases/p5-SQL-Translator \
-		::devel/p5-Data-FormValidator \
-		::devel/p5-Test-Spelling
+REGRESS_DEPENDS=databases/p5-DBD-SQLite \
+		databases/p5-SQL-Translator \
+		devel/p5-Data-FormValidator \
+		devel/p5-Test-Spelling
 
 MAKE_ENV=	TEST_POD=Yes TEST_AUTHOR=Yes
 USE_GROFF =	Yes

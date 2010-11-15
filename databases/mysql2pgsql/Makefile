@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	convert a MySQL dump to a PostgreSQL dump
 
@@ -13,7 +13,7 @@ EXTRACT_ONLY=	#empty
 
 HOMEPAGE=	http://www.rot13.org/~dpavlin/projects.html
 
-RUN_DEPENDS=	::databases/p5-DBI
+RUN_DEPENDS=	databases/p5-DBI
 
 MAINTAINER=	Pete Fritchman <petef@databits.net>
 

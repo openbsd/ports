@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,8 +22,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=luma/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
-RUN_DEPENDS=	::x11/py-qt3 \
-		::databases/py-ldap
+RUN_DEPENDS=	x11/py-qt3 \
+		databases/py-ldap
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

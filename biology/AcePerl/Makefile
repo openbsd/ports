@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.10 2010/10/18 16:57:47 espie Exp $
+#	$OpenBSD: Makefile,v 1.11 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
@@ -26,8 +26,8 @@ USE_GROFF =	Yes
 # go through extra indirection to allow both flavors to share most files.
 SUBST_VARS=	P5ACE
 
-RUN_DEPENDS=	::devel/p5-Cache-Cache \
-		::devel/p5-WeakRef
+RUN_DEPENDS=	devel/p5-Cache-Cache \
+		devel/p5-WeakRef
 
 .if ${FLAVOR:L:Mopt}
 SHARED_ONLY=Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/28 18:07:56 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -22,8 +22,8 @@ NO_BUILD =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 
-RUN_DEPENDS =	:php5-core-*:www/php5/core \
-		:php5-gd-*:www/php5/extensions,-gd
+RUN_DEPENDS =	www/php5/core \
+		www/php5/extensions,-gd
 
 pre-configure:
 	@perl -pi -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \

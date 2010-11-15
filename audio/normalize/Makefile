@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 16:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	audio file volume normalizer
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	c m mad.>=2 audiofile
+WANTLIB=	c m mad>=2 audiofile
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
@@ -35,8 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-LIB_DEPENDS=	::audio/libmad \
-		::devel/libaudiofile
+LIB_DEPENDS=	audio/libmad \
+		devel/libaudiofile
 
 USE_LIBTOOL=	Yes
 

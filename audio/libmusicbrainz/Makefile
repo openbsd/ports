@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=		library for audio metadata lookup
 
@@ -24,7 +24,7 @@ MODULES=		converters/libiconv \
 
 WANTLIB=		m neon stdc++
 
-LIB_DEPENDS=		::net/neon
+LIB_DEPENDS=		net/neon
 
 USE_GMAKE=		Yes
 

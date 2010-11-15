@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/15 13:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=	database abstraction layer for PHP
 
 DISTNAME=	DB-1.7.6
-PKGNAME=	pear-${DISTNAME}p2
+PKGNAME=	pear-${DISTNAME}
+REVISION =	2
 CATEGORIES=	net databases
 
 MODULES=	www/pear

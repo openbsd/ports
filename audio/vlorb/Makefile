@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
@@ -14,15 +14,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 
-RUN_DEPENDS=		:cdparanoia-*:audio/cdparanoia \
-			:flac-*:audio/flac \
-			:vorbis-tools-*:audio/vorbis-tools \
-			:vorbisgain-*:audio/vorbisgain \
-			:p5-CDDB-*:audio/p5-cddb
+RUN_DEPENDS=		audio/cdparanoia \
+			audio/flac \
+			audio/vorbis-tools \
+			audio/vorbisgain \
+			audio/p5-cddb
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 PKG_ARCH=		*
 
 pre-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	modbuild
 
 MAKE_ENV=		TEST_POD=Yes
-RUN_DEPENDS=		::devel/p5-Sub-Exporter
+RUN_DEPENDS=		devel/p5-Sub-Exporter
 
 .include <bsd.port.mk>

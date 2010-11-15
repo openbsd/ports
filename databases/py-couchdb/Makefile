@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/22 18:53:47 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	Python library for working with CouchDB
 
@@ -20,10 +20,10 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=C/CouchDB/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::www/py-httplib2 \
+RUN_DEPENDS =	www/py-httplib2 \
 		${MODPY_JSON}
-REGRESS_DEPENDS = ::databases/apache-couchdb \
-		  :${PKGNAME}:${BASE_PKGPATH}
+REGRESS_DEPENDS = databases/apache-couchdb \
+		  ${BASE_PKGPATH}
 
 MODPY_SETUPTOOLS =	Yes
 

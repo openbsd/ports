@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
@@ -30,7 +30,7 @@ WANTLIB += gthread-2.0 m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sndio xml2 z
 WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += vorbis vorbisfile ltdl gstreamer-0.10
-WANTLIB += gdk_pixbuf-2.0.>=1400.0 gdk-x11-2.0.>=1400.0 gtk-x11-2.0.>=1400.0
+WANTLIB += gdk_pixbuf-2.0>=1400 gdk-x11-2.0>=1400 gtk-x11-2.0>=1400
 
 MODULES=	devel/gettext \
 		devel/gconf2
@@ -44,11 +44,11 @@ AUTOCONF_VERSION= 2.62
 AUTOMAKE_VERSION= 1.9
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::audio/libvorbis \
-		::devel/libtool,-ltdl \
-		::multimedia/gstreamer-0.10/core \
-		::x11/gtk+2
-RUN_DEPENDS=	:sound-theme-freedesktop->=0.6:audio/sound-theme-freedesktop
+LIB_DEPENDS=	audio/libvorbis \
+		devel/libtool,-ltdl \
+		multimedia/gstreamer-0.10/core \
+		x11/gtk+2
+RUN_DEPENDS=	sound-theme-freedesktop->=0.6:audio/sound-theme-freedesktop
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

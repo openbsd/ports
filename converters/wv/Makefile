@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:06:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:51 espie Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
@@ -25,9 +25,9 @@ MODULES =	devel/gettext
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
-RUN_DEPENDS =	::graphics/ImageMagick
-LIB_DEPENDS =	::devel/libgsf \
-		::graphics/libwmf
+RUN_DEPENDS =	graphics/ImageMagick
+LIB_DEPENDS =	devel/libgsf \
+		graphics/libwmf
 
 MAKE_FILE =	GNUmakefile
 

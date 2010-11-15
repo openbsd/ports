@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
 WANTLIB=	X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk iconv intl m ogg \
-		pthread-stubs xcb xmms.>=4 FLAC.>=9
-LIB_DEPENDS=	::audio/xmms \
-		::audio/flac
+		pthread-stubs xcb xmms>=4 FLAC>=9
+LIB_DEPENDS=	audio/xmms \
+		audio/flac
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

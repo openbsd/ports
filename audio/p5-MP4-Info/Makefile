@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 16:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	fetch info from MPEG-4 files
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-IO-String
+RUN_DEPENDS=	devel/p5-IO-String
 
 .include <bsd.port.mk>

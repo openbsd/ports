@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:54 espie Exp $
 
 COMMENT =		provide ActiveRecord looking validations
 
@@ -18,7 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha-*:devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
 MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

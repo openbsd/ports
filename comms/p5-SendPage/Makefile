@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:50 espie Exp $
 
 
 COMMENT=		SNPP, TAP, email notification application
@@ -20,10 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sendpage/}
 
-RUN_DEPENDS=	::comms/p5-Device-SerialPort \
-		::mail/p5-Mail-Tools \
-		::net/p5-Net-SNPP \
-		::databases/p5-DBI
+RUN_DEPENDS=	comms/p5-Device-SerialPort \
+		mail/p5-Mail-Tools \
+		net/p5-Net-SNPP \
+		databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl

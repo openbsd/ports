@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
 
 COMMENT=	object-oriented DBMS
 
@@ -17,16 +17,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://tangram.utsl.gen.nz/
 
-RUN_DEPENDS=		::devel/p5-Set-Object \
-			::devel/p5-Data-Lazy \
-			::databases/p5-DBI \
-			::devel/p5-Class-Date
+RUN_DEPENDS=		devel/p5-Set-Object \
+			devel/p5-Data-Lazy \
+			databases/p5-DBI \
+			devel/p5-Class-Date
 
 # avoid interactive configuration, test with sqlite
 post-extract:
 	cp ${FILESDIR}/CONFIG ${WRKDIST}/t
 
-REGRESS_DEPENDS=	::devel/p5-Test-Manifest \
-			::databases/p5-DBD-SQLite
+REGRESS_DEPENDS=	devel/p5-Test-Manifest \
+			databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

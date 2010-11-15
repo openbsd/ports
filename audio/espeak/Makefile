@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/29 20:35:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=		compact speech synthesizer
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX=		.zip
 
 WANTLIB=		c m pthread stdc++ portaudio
 
-LIB_DEPENDS=		::audio/portaudio-svn
+LIB_DEPENDS=		audio/portaudio-svn
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

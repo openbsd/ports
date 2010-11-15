@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/15 00:22:51 espie Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
@@ -31,21 +31,21 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 WRKDIST=	${WRKDIR}/mdbtools
-BUILD_DEPENDS=	::devel/bison \
-		::lang/gawk
+BUILD_DEPENDS=	devel/bison \
+		lang/gawk
 
-LIB_DEPENDS=	::devel/glib2
+LIB_DEPENDS=	devel/glib2
 WANTLIB=	c pcre glib-2.0 pthread
 
 MODULES=	devel/gettext
 
 
 LIB_DEPENDS-gmdb=${LIB_DEPENDS} \
-		::x11/gnome/libgnomeui \
-		::devel/glib2 \
-		::databases/mdbtools/snapshot
+		x11/gnome/libgnomeui \
+		devel/glib2 \
+		databases/mdbtools/snapshot
 RUN_DEPENDS-gmdb=${RUN_DEPENDS} \
-		:yelp-*:x11/gnome/yelp
+		x11/gnome/yelp
 
 WANTLIB-gmdb=	${WANTLIB} \
 		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \

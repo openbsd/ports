@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:48 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,9 +20,9 @@ WANTLIB=		ogg vorbis.>=1 vorbisfile.>=2
 
 MODULES=		cpan
 CPAN_AUTHOR=		FOOF
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		::audio/libvorbis
+LIB_DEPENDS=		audio/libvorbis
 
 pre-configure:
 	@perl -i -p -e 's#/usr/local#${LOCALBASE}#' ${WRKDIST}/Makefile.PL

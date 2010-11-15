@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:45 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,10 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
-BUILD_DEPENDS=	:pear-*:www/pear \
+BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS=	:php5-core-*:www/php5/core
+RUN_DEPENDS=	www/php5/core
 
 REVISION =	0
 WANTLIB=	z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/15 00:22:46 espie Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -25,7 +25,7 @@ WANTLIB=		m
 
 # bootstrap checks for libtoolize
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		::devel/libtool
+		devel/libtool
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
@@ -45,19 +45,19 @@ MULTI_PACKAGES=-main
 
 .if !${FLAVOR:L:Mno_xmms}
 MULTI_PACKAGES+=-xmms
-BUILD_DEPENDS+=		::audio/id3lib
+BUILD_DEPENDS+=		audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
 .else
 CONFIGURE_ARGS+= --without-xmms
 .endif
 
-LIB_DEPENDS-xmms=	::audio/xmms \
-			::audio/faad
-RUN_DEPENDS-xmms=	::audio/xmms
+LIB_DEPENDS-xmms=	audio/xmms \
+			audio/faad
+RUN_DEPENDS-xmms=	audio/xmms
 WANTLIB-xmms=		${WANTLIB} \
 			X11 Xau Xdmcp Xext Xi iconv intl glib \
 			gmodule gtk gdk pthread-stubs xcb \
-			xmms.>=3 faad mp4ff
+			xmms>=3 faad mp4ff
 WANTLIB-main=		${WANTLIB} c
 
 post-patch:

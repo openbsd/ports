@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
@@ -22,10 +22,10 @@ WANTLIB += glib-2.0 xml2 gsf-1 bz2
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS+=	::devel/glib2 \
-		::textproc/libxml \
-		::devel/libgsf \
-		::archivers/bzip2
+LIB_DEPENDS+=	devel/glib2 \
+		textproc/libxml \
+		devel/libgsf \
+		archivers/bzip2
 
 USE_LIBTOOL= Yes
 USE_GMAKE= Yes

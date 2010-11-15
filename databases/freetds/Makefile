@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/05 10:25:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/15 00:22:51 espie Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -35,15 +35,15 @@ AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
 MODULES=	devel/gettext
 # XXX uses libtool m4 macros
-BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen \
-		::devel/libtool \
+BUILD_DEPENDS=	doxygen->=1.7.2:devel/doxygen \
+		devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::databases/iodbc,-main \
-		::security/libgcrypt \
-		::security/gnutls \
-		::security/libgpg-error \
-		::security/libtasn1
+LIB_DEPENDS=	databases/iodbc,-main \
+		security/libgcrypt \
+		security/gnutls \
+		security/libgpg-error \
+		security/libtasn1
 
 FLAVORS=	msdblib
 FLAVOR?=

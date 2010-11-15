@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/21 21:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:48 espie Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
@@ -23,17 +23,17 @@ MODULES =	perl
 CONFIGURE_STYLE =gnu
 USE_GROFF =	Yes
 
-RUN_DEPENDS =	::security/p5-Digest-SHA1 \
-		::textproc/p5-XML-Parser \
-		::converters/p5-Unicode-String \
-		::audio/p5-MP3-Info \
-		::www/p5-libwww \
-		::devel/p5-Time-TimeDate \
-		::audio/p5-Audio-FLAC-Header \
-		::audio/p5-Ogg-Vorbis-Header-PurePerl \
-		::graphics/ffmpeg \
-		::graphics/ImageMagick \
-		::net/curl 
+RUN_DEPENDS =	security/p5-Digest-SHA1 \
+		textproc/p5-XML-Parser \
+		converters/p5-Unicode-String \
+		audio/p5-MP3-Info \
+		www/p5-libwww \
+		devel/p5-Time-TimeDate \
+		audio/p5-Audio-FLAC-Header \
+		audio/p5-Ogg-Vorbis-Header-PurePerl \
+		graphics/ffmpeg \
+		graphics/ImageMagick \
+		net/curl 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_REGRESS =	Yes

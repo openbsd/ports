@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/16 07:33:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:53 espie Exp $
 
 COMMENT =	declarative mapper for SQLAlchemy
 
@@ -22,9 +22,9 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=E/Elixir/}
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		::databases/py-sqlalchemy \
-			::security/py-crypto
-REGRESS_DEPENDS =	::databases/py-sqlite2 \
+RUN_DEPENDS =		databases/py-sqlalchemy \
+			security/py-crypto
+REGRESS_DEPENDS =	databases/py-sqlite2 \
 			${RUN_DEPENDS}
 MAKE_ENV +=	PYTHONPATH='${WRKSRC}'
 

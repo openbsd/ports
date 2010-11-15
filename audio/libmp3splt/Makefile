@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	library to split mp3/ogg files without decoding
 
@@ -22,10 +22,10 @@ WANTLIB=	id3tag m mad ltdl ogg vorbis vorbisfile z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 
-LIB_DEPENDS=	::audio/libmad \
-		::devel/libtool,-ltdl \
-		::audio/libvorbis \
-		::audio/libid3tag
+LIB_DEPENDS=	audio/libmad \
+		devel/libtool,-ltdl \
+		audio/libvorbis \
+		audio/libid3tag
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

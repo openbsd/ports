@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-4.4.6
@@ -22,14 +22,14 @@ FLAVOR?=
 
 WANTLIB=		c jbig m stdc++ tiff util z
 
-BUILD_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS=		::mail/metamail
-LIB_DEPENDS=		::graphics/jbigkit \
-			::graphics/tiff
+BUILD_DEPENDS=		print/ghostscript/gnu
+RUN_DEPENDS=		mail/metamail
+LIB_DEPENDS=		graphics/jbigkit \
+			graphics/tiff
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ARGS=		--nointeractive \
 			--disable-pam \

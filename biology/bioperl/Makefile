@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/10 13:46:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
 
 CATEGORIES=	biology perl5
 
@@ -17,24 +17,24 @@ PERMIT_DISTFILES_FTP=Yes
 
 PKG_ARCH=	*
 
-RUN_DEPENDS=	:p5-libwww-*:www/p5-libwww \
-		:p5-HTML-Parser-*:www/p5-HTML-Parser \
-		:p5-IO-stringy-*:devel/p5-IO-stringy \
-		:p5-IO-String-*:devel/p5-IO-String \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:p5-XML-Writer-*:textproc/p5-XML-Writer \
-		:p5-Libxml-*:textproc/p5-Libxml \
-		:p5-XML-Twig-*:textproc/p5-XML-Twig \
-		:p5-SOAP-Lite-*:www/p5-SOAP-Lite \
-		:p5-DBD-mysql-*:databases/p5-DBD-mysql \
-		:p5-GD-*:graphics/p5-GD \
-		:p5-Clone-*:devel/p5-Clone \
-		:p5-XML-SAX-*:textproc/p5-XML-SAX \
-		:p5-SVG-*:graphics/p5-SVG \
-		:AcePerl-*:biology/AcePerl \
-		:p5-GD-SVG-*:graphics/p5-GD-SVG \
-		:p5-Graph-*:devel/p5-Graph \
-		:p5-Class-AutoClass-*:devel/p5-Class-AutoClass
+RUN_DEPENDS=	www/p5-libwww \
+		www/p5-HTML-Parser \
+		devel/p5-IO-stringy \
+		devel/p5-IO-String \
+		textproc/p5-XML-Parser \
+		textproc/p5-XML-Writer \
+		textproc/p5-Libxml \
+		textproc/p5-XML-Twig \
+		www/p5-SOAP-Lite \
+		databases/p5-DBD-mysql \
+		graphics/p5-GD \
+		devel/p5-Clone \
+		textproc/p5-XML-SAX \
+		graphics/p5-SVG \
+		biology/AcePerl \
+		graphics/p5-GD-SVG \
+		devel/p5-Graph \
+		devel/p5-Class-AutoClass
 
 REGRESS_DEPENDS=${RUN_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
@@ -26,22 +26,22 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 
-LIB_DEPENDS =	::audio/libmp3splt \
-		::devel/atk \
-		::devel/glib2 \
-		::devel/pango \
-		::graphics/cairo \
-		::graphics/png \
-		::multimedia/gstreamer-0.10/core \
-		::textproc/libxml \
-		::x11/gtk+2
+LIB_DEPENDS =	audio/libmp3splt \
+		devel/atk \
+		devel/glib2 \
+		devel/pango \
+		graphics/cairo \
+		graphics/png \
+		multimedia/gstreamer-0.10/core \
+		textproc/libxml \
+		x11/gtk+2
 
-BUILD_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base
+BUILD_DEPENDS =	multimedia/gstreamer-0.10/plugins-base
 
-RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base \
-		:desktop-file-utils-*:devel/desktop-file-utils \
-		::multimedia/gstreamer-0.10/plugins-ugly \
-		::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
+		devel/desktop-file-utils \
+		multimedia/gstreamer-0.10/plugins-ugly \
+		multimedia/gstreamer-0.10/plugins-good
 
 MODULES =	devel/gettext
 

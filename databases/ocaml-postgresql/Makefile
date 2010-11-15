@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/01 09:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:51 espie Exp $
 
 BROKEN-hppa=		ocamldoc hangs build
 
@@ -25,8 +25,8 @@ NO_REGRESS= 	Yes
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	::databases/postgresql
-RUN_DEPENDS=	::databases/postgresql
+BUILD_DEPENDS=	databases/postgresql
+RUN_DEPENDS=	databases/postgresql
 MY_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include/postgresql
 MY_LIBDIRS=	${LOCALBASE]/lib
 EXAMPLES_DIR=	${PREFIX}/share/examples/ocaml-postgresql

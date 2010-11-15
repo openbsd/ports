@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 14:20:15 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:46 espie Exp $
 
 COMMENT =	simple curses mixer
 
@@ -18,7 +18,7 @@ MASTER_SITES =	http://rhaalovely.net/stuff/
 NO_BUILD=	yes
 NO_REGRESS=	yes
 
-RUN_DEPENDS=	::devel/p5-Curses-UI
+RUN_DEPENDS=	devel/p5-Curses-UI
 
 PKG_ARCH=	*
 

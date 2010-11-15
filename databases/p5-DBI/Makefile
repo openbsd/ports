@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/15 00:22:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-PlRPC->=0.2017:net/p5-PlRPC
+RUN_DEPENDS=	p5-PlRPC->=0.2017:net/p5-PlRPC
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=::devel/p5-Test-Pod-Coverage
+REGRESS_DEPENDS=devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>

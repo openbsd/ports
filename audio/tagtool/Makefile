@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -23,20 +23,20 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread-stubs stdc++ xcb xml2 z gthread-2.0 pthread
-WANTLIB += xcb-render xcb-render-util id3.>=3.8 vorbis.>=5.0
-WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0.>=0.3
-WANTLIB += vorbisfile.>=4
+WANTLIB += xcb-render xcb-render-util id3>=3.8 vorbis>=5
+WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0>=0.3
+WANTLIB += vorbisfile>=4
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	::audio/id3lib \
-		::audio/libvorbis \
-		:gtk+2->=2.10:x11/gtk+2 \
-		::devel/libglade2 \
-		::audio/libvorbis
-RUN_DEPENDS=	::x11/hicolor-icon-theme \
-		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	audio/id3lib \
+		audio/libvorbis \
+		gtk+2->=2.10:x11/gtk+2 \
+		devel/libglade2 \
+		audio/libvorbis
+RUN_DEPENDS=	x11/hicolor-icon-theme \
+		devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:00:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/15 00:22:49 espie Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
@@ -20,14 +20,14 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gthread-2.0 pthread xcb-render
-WANTLIB += xcb-render-util id3 id3tag.>=2 gdk_pixbuf-2.0
+WANTLIB += xcb-render-util id3 id3tag>=2 gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
 MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::audio/id3lib \
-		::audio/libid3tag
+LIB_DEPENDS=	x11/gtk+2 \
+		audio/id3lib \
+		audio/libid3tag
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

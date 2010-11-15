@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 MODULES=	lang/python
 
 WANTLIB += ogg
-LIB_DEPENDS=	::audio/libogg
+LIB_DEPENDS=	audio/libogg
 
 do-configure:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./config_unix.py --prefix ${PREFIX} 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/15 00:22:50 espie Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	tools to connect your PalmOS® compatible handheld
@@ -25,15 +25,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m png.>=4 popt readline termcap z pthread
+WANTLIB=		c m png>=4 popt readline termcap z pthread
 
 MODULES=		converters/libiconv
-LIB_DEPENDS=		::graphics/png \
-			::devel/popt
+LIB_DEPENDS=		graphics/png \
+			devel/popt
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

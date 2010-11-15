@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:49 espie Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -42,21 +42,21 @@ MODULES =		lang/python \
 USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
-BUILD_DEPENDS =		::devel/pyrex \
-			::devel/boost
+BUILD_DEPENDS =		devel/pyrex \
+			devel/boost
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
-			::devel/glib2 \
-			:ffmpeg->=20080620p10:graphics/ffmpeg \
-			::audio/libao \
-			::audio/jack \
-			::databases/sqlite3 \
-			::textproc/libxml \
-			::audio/flac \
-			::net/curl \
-			::audio/libmad \
-			::net/avahi \
-			::audio/tremor
+			devel/glib2 \
+			ffmpeg->=20080620p10:graphics/ffmpeg \
+			audio/libao \
+			audio/jack \
+			databases/sqlite3 \
+			textproc/libxml \
+			audio/flac \
+			net/curl \
+			audio/libmad \
+			net/avahi \
+			audio/tremor
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
 			src/clients/lib/xmmsclient++-glib/wscript \

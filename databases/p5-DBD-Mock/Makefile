@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:52 espie Exp $
 
 COMMENT=	mock database driver for testing
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::databases/p5-DBI
+RUN_DEPENDS=	databases/p5-DBI
 
 CONFIGURE_STYLE=modbuild
 

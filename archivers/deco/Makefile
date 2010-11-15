@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/11 15:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:45 espie Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -33,16 +33,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DECO=		${WRKDIR}/${DISTNAME}
 ARCHIVE=	${WRKDIR}/deco-archive-${ARCHIVE_V}
 
-RUN_DEPENDS=	::archivers/arc \
-		::archivers/bzip2 \
-		::archivers/cabextract \
-		::archivers/p7zip \
-		::archivers/lzop \
-		::archivers/rzip \
-		::archivers/unzip \
-		::archivers/zoo \
-		::audio/flac \
-		:rpm2cpio-*|rpm-*:converters/rpm2cpio \
+RUN_DEPENDS=	archivers/arc \
+		archivers/bzip2 \
+		archivers/cabextract \
+		archivers/p7zip \
+		archivers/lzop \
+		archivers/rzip \
+		archivers/unzip \
+		archivers/zoo \
+		audio/flac \
+		rpm2cpio-*|rpm-*:converters/rpm2cpio
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE"
 

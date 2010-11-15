@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:00:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -40,7 +40,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gtk
 MODULES=	devel/gettext
-LIB_DEPENDS+=	::x11/gtk+2
+LIB_DEPENDS+=	x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \

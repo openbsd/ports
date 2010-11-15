@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:50 espie Exp $
 
 COMMENT=	stringprep profile for Internationalized Domain Names
 
@@ -16,7 +16,7 @@ MODULES=		cpan
 CONFIGURE_STYLE=	modbuild
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::converters/p5-Unicode-Stringprep
-REGRESS_DEPENDS=::devel/p5-Test-NoWarnings
+RUN_DEPENDS=	converters/p5-Unicode-Stringprep
+REGRESS_DEPENDS=devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>

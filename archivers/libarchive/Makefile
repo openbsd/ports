@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/30 17:27:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:45 espie Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://libarchive.googlecode.com/files/
 
-WANTLIB=	c expat z bz2.>=10 lzma.>=0
-LIB_DEPENDS=	::archivers/bzip2 \
-		::archivers/xz
+WANTLIB=	c expat z bz2>=10 lzma
+LIB_DEPENDS=	archivers/bzip2 \
+		archivers/xz
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

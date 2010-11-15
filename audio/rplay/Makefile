@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	network audio player
 DISTNAME=	rplay-3.3.2
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c gsm.>=1.0 m
+WANTLIB=		c gsm>=1.0 m
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 
-LIB_DEPENDS=	::audio/gsm
+LIB_DEPENDS=	audio/gsm
  
 FAKE=		lib
 CONFIGURE_STYLE= gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/18 22:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -20,15 +20,15 @@ WANTLIB += mad id3tag mp3lame wavpack png gsm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
 # see CONFIGURE_ARGS below
-LIB_DEPENDS=	::audio/libvorbis \
-		::audio/flac \
-		::devel/libmagic \
-		::audio/libmad \
-		::audio/libid3tag \
-		::audio/lame \
-		::audio/wavpack \
-		::graphics/png \
-		::audio/gsm
+LIB_DEPENDS=	audio/libvorbis \
+		audio/flac \
+		devel/libmagic \
+		audio/libmad \
+		audio/libid3tag \
+		audio/lame \
+		audio/wavpack \
+		graphics/png \
+		audio/gsm
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

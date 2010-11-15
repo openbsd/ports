@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/05 10:25:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB += m stdc++
 
-BUILD_DEPENDS=	::audio/ladspa
+BUILD_DEPENDS=	audio/ladspa
 
 WRKBUILD=	${WRKDIST}/src
 MAKE_FILE=	makefile

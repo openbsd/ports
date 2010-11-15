@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:48 espie Exp $
 
 COMMENT=		utility for Rio mp3 players
 
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c usb.>=7.0 z
+WANTLIB=		c usb>=7.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rioutil/}
 
-LIB_DEPENDS=		::devel/libusb
+LIB_DEPENDS=		devel/libusb
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libusb
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \

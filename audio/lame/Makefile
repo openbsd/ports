@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/15 00:22:47 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-fileio=lame
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/nasm
+BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
 CONFIGURE_ARGS+= --disable-nasm

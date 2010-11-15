@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 19:45:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:46 espie Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
 		${HOMEPAGE}ftp/rzip/old-versions/
 
-LIB_DEPENDS =	::archivers/bzip2
+LIB_DEPENDS =	archivers/bzip2
 WANTLIB =	c bz2
 
 FAKE=lib

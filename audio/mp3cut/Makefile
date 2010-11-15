@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:47 espie Exp $
 
 COMMENT =		cut and cat MP3 files
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CPAN_AUTHOR =		JV
 
-RUN_DEPENDS =		::audio/p5-CDDB-File \
-			::audio/p5-MPEG-Audio-Frame
+RUN_DEPENDS =		audio/p5-CDDB-File \
+			audio/p5-MPEG-Audio-Frame
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 .include <bsd.port.mk>

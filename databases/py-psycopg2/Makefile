@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/06 22:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:53 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_CDROM = Yes
 MASTER_SITES =	http://initd.org/pub/software/psycopg/
 
 MODULES =	lang/python
-LIB_DEPENDS =	::databases/postgresql
+LIB_DEPENDS =	databases/postgresql
 WANTLIB +=	pq
-RUN_DEPENDS =	:postgresql-client-*:databases/postgresql
+RUN_DEPENDS =	databases/postgresql
 REGRESS_DEPENDS = ${RUN_DEPENDS}
 
 # To run the tests, create and start a test database as follows:

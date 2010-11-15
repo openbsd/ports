@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 17:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:53 espie Exp $
 
 DISTNAME=	sybperl-2.18
 PKGNAME=	p5-${DISTNAME}
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB +=	m sybdb.>=5 ct.>=3
+WANTLIB +=	m sybdb>=5 ct>=3
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
 MASTER_SITES=	http://www.peppler.org/downloads/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::databases/freetds
+LIB_DEPENDS=	databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"

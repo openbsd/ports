@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
 
 COMMENT =	on-the-fly HTML to WML conversion
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=     Yes
 MASTER_SITES =	http://maddingue.free.fr/softwares/download/Html2Wml/
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:p5-libwww-*:www/p5-libwww \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:p5-XML-LibXML-*:textproc/p5-XML-LibXML \
-		:p5-XML-Checker-*:textproc/p5-XML-Checker \
-		:p5-Text-Template-*:textproc/p5-Text-Template
+RUN_DEPENDS =	www/p5-libwww \
+		textproc/p5-XML-Parser \
+		textproc/p5-XML-LibXML \
+		textproc/p5-XML-Checker \
+		textproc/p5-Text-Template
 
 NO_BUILD =	Yes
 USE_GMAKE =	Yes

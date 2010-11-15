@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:54 espie Exp $
 
 COMMENT =		lightweight ORM library for Ruby
 
@@ -20,7 +20,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-sqlite3-*:databases/ruby-sqlite3
+REGRESS_DEPENDS =	databases/ruby-sqlite3
 MODRUBY_REGRESS =	rake rspec
 RAKE_REGRESS_TARGET =	spec spec_plugin spec_sqlite
 
