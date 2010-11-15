@@ -1,39 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 20:21:01 espie Exp $
 
-COMMENT =	automatically configure source code on many Un*x platforms
-
-DISTNAME =	autoconf-2.63
-CATEGORIES =	devel
-MASTER_SITES =	${MASTER_SITE_GNU:=autoconf/}
-
-HOMEPAGE =	http://www.gnu.org/software/autoconf/
-MAINTAINER =	Marc Espie <espie@openbsd.org>
-
-# GPL
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
+VERSION =	2.63
 
 BUILD_DEPENDS =		devel/help2man
-RUN_DEPENDS =		devel/metaauto
 
-SUFFIX =		-2.63
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--program-suffix=${SUFFIX} \
-			--without-lispdir \
+CONFIGURE_ARGS +=	--without-lispdir \
 			--mandir=${PREFIX}/man \
 			--infodir=${PREFIX}/info
-CONFIGURE_ENV +=	M4="/usr/bin/m4"
-CONFIGURE_ENV +=	AWK="${AWK}" ac_cv_sh_n_works=yes
-CONFIGURE_ENV +=	MKDIR_P='mkdir -p'
 MODGNU_CONFIG_GUESS_DIRS =${WRKSRC}/build-aux
-MAKE_FLAGS =		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX} EMACS=no
-FAKE_FLAGS =		lispdir= EMACS=no
-#USE_GMAKE =		Yes
-SUBST_VARS =		SUFFIX
+MAKE_FLAGS =		EMACS=no
+FAKE_FLAGS =		EMACS=no
 REGRESS_DEPENDS =	devel/automake/1.9
 REGRESS_FLAGS +=	AUTOMAKE_VERSION=1.9
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
