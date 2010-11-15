@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/15 23:06:20 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
-GNOME_VERSION=		2.32.0
-REVISION=	0
+GNOME_VERSION=		2.32.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,8 +16,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util z
-WANTLIB += gthread-2.0 notify dbus-glib-1
+WANTLIB += pthread pthread-stubs xcb xcb-render z
+WANTLIB += gthread-2.0 notify dbus-glib-1 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			x11/gnome
