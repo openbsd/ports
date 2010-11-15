@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/09 19:49:03 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 09:09:24 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 BROKEN-sparc64=		waf stalls during build
 
 GNOME_PROJECT=		hamster-applet
 GNOME_VERSION=		2.32.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		productivity
 
@@ -39,7 +39,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			:waf->=1.5.18:devel/waf
 RUN_DEPENDS=		::x11/gnome/controlcenter2 \
 			::x11/gnome/py-gnome-desktop \
-			::devel/py-xdg
+			::devel/py-xdg \
+			::x11/dbus-python
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
