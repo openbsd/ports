@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/27 08:16:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 23:22:07 espie Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
@@ -23,11 +23,11 @@ WANTLIB += m phonon poppler poppler-qt4 pthread sqlite3 stdc++
 
 MODULES=		x11/qt4
 
-RUN_DEPENDS=		::print/texlive/base \
-			::devel/desktop-file-utils
+RUN_DEPENDS=		print/texlive/base \
+			devel/desktop-file-utils
 
-LIB_DEPENDS=		::textproc/hunspell \
-			::print/poppler,-qt4
+LIB_DEPENDS=		textproc/hunspell \
+			print/poppler,-qt4
 
 NO_REGRESS=		Yes
 

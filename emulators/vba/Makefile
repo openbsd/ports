@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/04 17:57:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=		Gameboy Advance emulator
 
@@ -38,10 +38,10 @@ MODULES+=		devel/gettext
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		::devel/libglademm \
-			::devel/sdl \
-			::graphics/cairo \
-			::graphics/png
+LIB_DEPENDS=		devel/libglademm \
+			devel/sdl \
+			graphics/cairo \
+			graphics/png
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
@@ -54,7 +54,7 @@ CONFIGURE_ARGS= 	--disable-profiling \
 			--enable-gtk=2.4
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+= 	::devel/nasm
+BUILD_DEPENDS+= 	devel/nasm
 CONFIGURE_ARGS+=	--enable-c-core
 .endif
 

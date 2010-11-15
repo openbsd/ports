@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
@@ -23,8 +23,8 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	::x11/gtk+2 \
-		::devel/sdl
+LIB_DEPENDS+=	x11/gtk+2 \
+		devel/sdl
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \

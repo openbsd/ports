@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 23:22:07 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -34,7 +34,7 @@ USE_GROFF =	Yes
 
 .if ${FLAVOR:L} == "canna"
 WANTLIB+=	canna
-LIB_DEPENDS+=	::japanese/canna
+LIB_DEPENDS+=	japanese/canna
 CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
 
 CANNA_OPT.euc-jp=canna cannactrl cannakey=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	interactive tutorial for algorithms and data structures
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://people.ofset.org/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
-RUN_DEPENDS=	:p5-Tk-*:x11/p5-Tk
+RUN_DEPENDS=	x11/p5-Tk
 
 USE_GROFF =	Yes
 NO_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/03 18:09:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	source code editing component for GTK+
 
@@ -31,7 +31,7 @@ MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
 		NO_SHARED_LIBS='${NO_SHARED_LIBS:L}'
 
 WANTLIB=	m stdc++ gtk-x11-2.0 gdk-x11-2.0
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 .for n v in ${SHARED_LIBS}
 MAKE_ENV+=	LIB$n_VERSION=${LIB$n_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	text editor
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m slang.>=15 termcap util
+WANTLIB += c m slang>=15 termcap util
 
-LIB_DEPENDS=	::devel/libslang
+LIB_DEPENDS=	devel/libslang
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}

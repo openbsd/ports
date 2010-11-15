@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/26 15:02:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 23:22:07 espie Exp $
 
 SHARED_ONLY=   	Yes
 
@@ -45,16 +45,16 @@ WANTLIB += GL Xxf86vm drm gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB += gstreamermm-0.10 gstcdda-0.10 gstnetbuffer-0.10 gstrtp-0.10
 
 
-BUILD_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
-		:iso-codes-*:devel/iso-codes
-LIB_DEPENDS=	:pcre->=6.4p2:devel/pcre \
-		::textproc/enchant \
-		::multimedia/gstreamer-0.10/mm \
-		::multimedia/gstreamer-0.10/plugins-base \
-		::x11/gtk2mm
-RUN_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
-		:iso-codes-*:devel/iso-codes \
-		:desktop-file-utils-*:devel/desktop-file-utils
+BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
+		devel/iso-codes
+LIB_DEPENDS=	pcre->=6.4p2:devel/pcre \
+		textproc/enchant \
+		multimedia/gstreamer-0.10/mm \
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/gtk2mm
+RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
+		devel/iso-codes \
+		devel/desktop-file-utils
 
 MODULES+=	devel/gettext \
 		textproc/intltool

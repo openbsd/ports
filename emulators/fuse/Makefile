@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -21,12 +21,12 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 USE_GROFF=		Yes
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		::devel/glib2 \
-			::audio/libsamplerate \
-			::devel/libspectrum \
-			::graphics/png \
-			::textproc/libxml \
-			::audio/libao
+LIB_DEPENDS=		devel/glib2 \
+			audio/libsamplerate \
+			devel/libspectrum \
+			graphics/png \
+			textproc/libxml \
+			audio/libao
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
@@ -38,13 +38,14 @@ FLAVORS=gtk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=		gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-			gio-2.0,gmodule-2.0,gobject-2.0::devel/glib2
+LIB_DEPENDS+=		x11/gtk+2 \
+			devel/glib2
 CONFIGURE_ARGS+=	--with-gtk2
 WANTLIB+=		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			Xrender atk-1.0 cairo expat fontconfig freetype \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-			gdk_pixbuf-2.0
+			gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 gio-2.0 \
+			gmodule-2.0 gobject-2.0
 .else
 CONFIGURE_ARGS+=	--without-gtk
 WANTLIB+=		ICE SM

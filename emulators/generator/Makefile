@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	Sega Genesis emulator
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_CDROM=	can't sell
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	c m pthread z bz2 SDL jpeg
 
-LIB_DEPENDS+=	::archivers/bzip2 \
-		::devel/sdl \
-		::graphics/jpeg
+LIB_DEPENDS+=	archivers/bzip2 \
+		devel/sdl \
+		graphics/jpeg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-sdl --with-sdl-audio --without-gcc
@@ -28,7 +28,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/nasm
+BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+=--with-raze
 .else
 CONFIGURE_ARGS+=--with-cmz80

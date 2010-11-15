@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:08 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -42,10 +42,10 @@ MASTER_SITES0 = 	http://www.arcade-history.com/dats/
 DISTFILES+=		${DISTNAME}${EXTRACT_SUFX} \
 			mamehistory137.zip:0
 
-BUILD_DEPENDS = 	::archivers/unzip
-LIB_DEPENDS =		::devel/sdl \
-			::devel/gconf2
-RUN_DEPENDS-main =	:${PKGNAME-tools}:emulators/sdlmame,-tools
+BUILD_DEPENDS = 	archivers/unzip
+LIB_DEPENDS =		devel/sdl \
+			devel/gconf2
+RUN_DEPENDS-main =	${PKGNAME-tools}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
 

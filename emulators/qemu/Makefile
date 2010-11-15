@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/12 14:43:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/15 23:22:08 espie Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -21,7 +21,7 @@ WANTLIB =		c m ossaudio pthread util z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
-BUILD_DEPENDS =		::textproc/texi2html
+BUILD_DEPENDS =		textproc/texi2html
 
 USE_GMAKE =		Yes
 USE_GROFF =	Yes
@@ -41,7 +41,7 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS +=	--disable-sdl
 .else
-LIB_DEPENDS =    	::devel/sdl
+LIB_DEPENDS =    	devel/sdl
 
 WANTLIB +=		SDL X11
 .endif

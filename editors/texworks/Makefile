@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 23:22:07 espie Exp $
 
 COMMENT =		easy to use LaTeX and ConTeXt editor
 
@@ -20,11 +20,10 @@ WANTLIB +=		QtDBus QtGui QtXml c dbus-1 hunspell-1.2 m poppler \
 MASTER_SITES =		http://texworks.googlecode.com/files/
 
 MODULES =		x11/qt4
-LIB_DEPENDS =		::textproc/hunspell \
-			::x11/dbus \
-			::print/poppler,-qt4 \
-			::x11/qt4
-RUN_DEPENDS = 		:texlive_base-*:print/texlive/base
+LIB_DEPENDS =		textproc/hunspell \
+			x11/dbus \
+			print/poppler,-qt4
+RUN_DEPENDS = 		print/texlive/base
 
 USE_GMAKE =		Yes
 

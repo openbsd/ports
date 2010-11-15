@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/11/14 23:37:41 robert Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/15 23:22:07 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -119,43 +119,43 @@ LANGS=			bg ca de es fa fi fr hu it ja ko \
 MULTI_PACKAGES+=	-i18n-$l
 PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
-RUN_DEPENDS-i18n-$l=	::editors/openoffice3
+RUN_DEPENDS-i18n-$l=	editors/openoffice3
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
 .endfor
 .endif
 
-BUILD_DEPENDS+=	:zip-*:archivers/zip \
-		:unzip-*:archivers/unzip \
-		:gtar-*:archivers/gtar \
-		:bison-*:devel/bison \
-		:bash-*:shells/bash \
-		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
-		::print/cups \
-		:boost->=1.41.0:devel/boost \
-		::misc/fileutils
+BUILD_DEPENDS+=	archivers/zip \
+		archivers/unzip \
+		archivers/gtar \
+		devel/bison \
+		shells/bash \
+		archivers/p5-Archive-Zip \
+		print/cups \
+		boost->=1.41.0:devel/boost \
+		misc/fileutils
 
 MODULES+=	lang/python \
 		devel/gconf2
 MODGCONF2_LIBDEP=No
-LIB_DEPENDS-main=::x11/gtk+2 \
+LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
-		:db->=4,<5:databases/db/v4 \
-		::textproc/libxslt \
-		::net/curl \
-		::net/neon \
-		::textproc/libwpd \
-		::textproc/icu4c \
-		::devel/gperf \
-		::textproc/raptor \
-		::textproc/redland \
-		::textproc/hunspell \
-		::devel/cppunit \
+		db->=4,<5:databases/db/v4 \
+		textproc/libxslt \
+		net/curl \
+		net/neon \
+		textproc/libwpd \
+		textproc/icu4c \
+		devel/gperf \
+		textproc/raptor \
+		textproc/redland \
+		textproc/hunspell \
+		devel/cppunit \
 		${MODGCONF2_LIB_DEPENDS}
-WANTLIB-main=	gdk-x11-2.0.>=400.14 gtk-x11-2.0.>=400.14 \
-		db.>=4 xslt.>=3 curl.>=7 neon.>=24 \
-		icuuc.>=0 icudata.>=0 icui18n icule \
-		raptor.>=2 rasqal rdf.>=0
+WANTLIB-main=	gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
+		db>=4 xslt>=3 curl>=7 neon>=24 \
+		icuuc>=0 icudata>=0 icui18n icule \
+		raptor>=2 rasqal rdf>=0
 WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
@@ -166,14 +166,14 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 WANTLIB-main+=	GL Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 
-RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-main=	devel/desktop-file-utils
 
 .include <bsd.own.mk>
 
 MODULES+=		x11/qt3
-RUN_DEPENDS-kde=	::editors/openoffice3
+RUN_DEPENDS-kde=	editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
-			::x11/kde/libs3
+			x11/kde/libs3
 WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 Xau Xdmcp Xext Xrandr Xrender stdc++ m \
 			pthread-stubs xcb kabc kdecore kdeui kio
@@ -183,11 +183,11 @@ MODULES+=		java
 MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
 .endif
-LIB_DEPENDS-java=	:db-java->=4,<5:databases/db/v4,-java,java \
-			::devel/apache-ant
+LIB_DEPENDS-java=	db-java->=4,<5:databases/db/v4,-java,java \
+			devel/apache-ant
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
-			::editors/openoffice3 \
-			::java/javaPathHelper
+			editors/openoffice3 \
+			java/javaPathHelper
 WANTLIB-java=		c stdc++ m pthread
 
 USE_GMAKE=	Yes

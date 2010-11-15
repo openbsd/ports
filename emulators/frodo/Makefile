@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -23,8 +23,8 @@ WANTLIB=		SDL c m pthread sndio stdc++
 
 CONFIGURE_STYLE=	gnu
 
-RUN_DEPENDS=	::x11/tk/8.4
-LIB_DEPENDS=	:sdl-*-!no_x11:devel/sdl
+RUN_DEPENDS=	x11/tk/8.4
+LIB_DEPENDS=	sdl-*-!no_x11:devel/sdl
 
 WISH=wish8.4
 FRODOLIBDIR=${PREFIX}/lib/frodo

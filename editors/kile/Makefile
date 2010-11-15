@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
@@ -24,11 +24,11 @@ WANTLIB += pthread-stubs xcb DCOP kabc katepartinterfaces kdecore
 WANTLIB += kdefx kdeprint kdesu kdeui khtml kio kjs kparts kresources 
 WANTLIB += kspell ktexteditor kutils kwalletclient vcard
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 	
-RUN_DEPENDS=	::x11/kde/graphics3 \
-		::print/texlive/base \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	x11/kde/graphics3 \
+		print/texlive/base \
+		devel/desktop-file-utils
 
 MODULES=	x11/kde devel/gettext
 

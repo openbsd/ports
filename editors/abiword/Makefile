@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
@@ -22,11 +22,11 @@ HOMEPAGE=	http://www.abisource.com/
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::devel/fribidi \
-		::converters/wv \
-		::textproc/enchant \
-		::x11/gnome/librsvg
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/fribidi \
+		converters/wv \
+		textproc/enchant \
+		x11/gnome/librsvg
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

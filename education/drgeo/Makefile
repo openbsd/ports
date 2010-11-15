@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:17:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	interactive geometry program
 
@@ -26,9 +26,9 @@ WANTLIB += png pthread pthread-stubs stdc++ xcb xml2 z glade-2.0
 MODULES=	devel/gettext \
 		textproc/intltool
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::devel/libglade2 \
-		::lang/guile
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/libglade2 \
+		lang/guile
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

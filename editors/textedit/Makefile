@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	standard OpenLook text editor for X11
 
@@ -16,8 +16,8 @@ WANTLIB=		X11 Xext c pthread-stubs xcb xview olgx
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-LIB_DEPENDS=    ::x11/xview/lib
-BUILD_DEPENDS=	::x11/xview/config
+LIB_DEPENDS=    x11/xview/lib
+BUILD_DEPENDS=	x11/xview/config
 
 CONFIGURE_STYLE=imake
 

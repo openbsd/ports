@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 23:22:07 espie Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-LIB_DEPENDS =	::textproc/aspell/core
+LIB_DEPENDS =	textproc/aspell/core
 WANTLIB += c m pthread stdc++ z QtGui QtScript QtSvg QtXml aspell
 
 MODULES =	x11/qt4

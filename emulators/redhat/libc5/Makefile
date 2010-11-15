@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	Linux libc5
 
@@ -15,7 +15,7 @@ RPMDIR=		${FULLDISTDIR}
 RPMS=		libc-5.3.12-31.i386.rpm \
 		ld.so-1.9.5-13.i386.rpm 
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	emulators/fedora/base
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

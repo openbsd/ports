@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/15 23:22:07 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -31,7 +31,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 DISTFILES=		emacs-${VERSION}a.tar.gz leim-${VERSION}.tar.gz
 
 MULTI_PACKAGES=		-main -el -leim
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -54,14 +54,14 @@ WANTLIB-main=		c m ncurses ossaudio
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
-LIB_DEPENDS-main=	::graphics/libungif \
-			::graphics/png \
-			::graphics/tiff
+LIB_DEPENDS-main=	graphics/libungif \
+			graphics/png \
+			graphics/tiff
 WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 WANTLIB-main+=		ungif jpeg png tiff
 .endif
 
-RUN_DEPENDS=		:emacs-${VERSION}:${PKGPATH}
+RUN_DEPENDS=		emacs-${VERSION}:${PKGPATH}
 RUN_DEPENDS-main=
 
 PKG_ARCH-el=		*

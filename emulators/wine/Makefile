@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/15 23:22:08 espie Exp $
 
 
 # XXX  This port is not finished and does not work.
@@ -36,19 +36,19 @@ MASTER_SITES =		http://ibiblio.org/pub/linux/system/emulators/wine/ \
 			http://prdownloads.sourceforge.net/wine/
 EXTRACT_SUFX =		.tar.bz2
 
-BUILD_DEPENDS =		:bison-*:devel/bison
-LIB_DEPENDS =		::textproc/libxslt \
-			::graphics/jpeg \
-			::graphics/png \
-			::graphics/libgphoto2 \
-			::graphics/sane-backends \
-			::graphics/lcms \
-			::converters/libiconv
-RUN_DEPENDS =		::devel/desktop-file-utils
+BUILD_DEPENDS =		devel/bison
+LIB_DEPENDS =		textproc/libxslt \
+			graphics/jpeg \
+			graphics/png \
+			graphics/libgphoto2 \
+			graphics/sane-backends \
+			graphics/lcms \
+			converters/libiconv
+RUN_DEPENDS =		devel/desktop-file-utils
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu autoconf
 
 CPPFLAGS =		-I${LOCALBASE}/include \
@@ -92,7 +92,8 @@ CONFIGURE_ARGS +=	--without-cups
 .endif
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS +=	--with-esd
-LIB_DEPENDS =		esd.>=2::sound/esound
+LIB_DEPENDS =		sound/esound
+WANTLIB +=		esd>=2
 .else
 CONFIGURE_ARGS +=	--without-esd
 .endif

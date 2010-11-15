@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -23,10 +23,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL SDL c m png pthread stdc++ z
 
-BUILD_DEPENDS=		::devel/nasm \
+BUILD_DEPENDS=		devel/nasm \
 			${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
-			::graphics/png
+LIB_DEPENDS=		sdl-*-!no_x11:devel/sdl \
+			graphics/png
 
 USE_GROFF=		Yes
 

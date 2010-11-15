@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/01 10:05:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 23:22:07 espie Exp $
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 
@@ -27,8 +27,6 @@ MODULES = devel/gettext x11/qt4
 WANTLIB =	ICE SM X11 Xext Xi Xinerama Xrender expat fontconfig \
 		freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread-stubs \
 		xcb z stdc++ QtCore QtGui
-
-LIB_DEPENDS =	::x11/qt4
 
 CONFIGURE_ENV =	HOME=${WRKDIR}
 MAKE_FLAGS =	QMAKE_CXX=${CXX} QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \

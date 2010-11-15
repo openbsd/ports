@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -21,7 +21,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
 
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
-BUILD_DEPENDS=	:bison-*:devel/bison
+BUILD_DEPENDS=	devel/bison
 
 XMKMF=		xmkmf
 

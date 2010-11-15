@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 23:22:07 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -28,7 +28,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 MULTI_PACKAGES=		-main -el
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		gtk no_x11
 FLAVOR?=
@@ -51,15 +51,15 @@ SUBST_VARS=		GCCARCH VERSION
 WANTLIB-main=		c m ncurses ossaudio
 
 .if ${FLAVOR:L:Mno_x11}
-.if ${FLAVOR:L:Mgtk}
+.  if ${FLAVOR:L:Mgtk}
 ERRORS=			"Fatal: gtk and no_x11 flavors are mutually exclusive"
-.endif
+.  endif
 CONFIGURE_ARGS+=	--without-x
 
 .elif ${FLAVOR:L:Mgtk}
 CONFIGURE_ARGS+=	--with-gtk
-LIB_DEPENDS-main+=	::x11/gtk+2 \
-			::graphics/libungif
+LIB_DEPENDS-main+=	x11/gtk+2 \
+			graphics/libungif
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
@@ -70,14 +70,14 @@ WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			xcb-render xcb-render-util
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
-LIB_DEPENDS-main+=	::graphics/png \
-			::graphics/tiff \
-			::graphics/libungif 
+LIB_DEPENDS-main+=	graphics/png \
+			graphics/tiff \
+			graphics/libungif 
 WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 WANTLIB-main+=		jpeg png tiff ungif
 .endif
 
-RUN_DEPENDS-el=		:emacs-${VERSION}:${PKGPATH}
+RUN_DEPENDS-el=		emacs-${VERSION}:${PKGPATH}
 PKG_ARCH-el=		*
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64"

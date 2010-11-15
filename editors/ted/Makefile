@@ -1,39 +1,39 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:07 espie Exp $
 
 
-COMMENT=	X11 based RTF editor
-V=		2.17
-DISTNAME=	ted-$V
-REVISION=	1
-CATEGORIES=	editors textproc print
-HOMEPAGE=	http://www.nllgg.nl/Ted/
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
+COMMENT =	X11 based RTF editor
+V =		2.17
+DISTNAME =	ted-$V
+REVISION =	1
+CATEGORIES =	editors textproc print
+HOMEPAGE =	http://www.nllgg.nl/Ted/
+MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
 
-DISTFILES=	ted-$V.src.tar.gz
+DISTFILES =	ted-$V.src.tar.gz
 # GPL
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m pthread-stubs xcb z
 WANTLIB += png jpeg tiff
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-WRKDIST=	${WRKDIR}/Ted-$V
-LIB_DEPENDS=	::graphics/png \
-		::graphics/jpeg \
-		::graphics/tiff
+WRKDIST =	${WRKDIR}/Ted-$V
+LIB_DEPENDS =	graphics/png \
+		graphics/jpeg \
+		graphics/tiff
 
-USE_MOTIF=	openmotif
-ALL_TARGET=	compile.shared
-SHARED_ONLY=	Yes
-NO_REGRESS=	Yes
+USE_MOTIF =	openmotif
+ALL_TARGET =	compile.shared
+SHARED_ONLY =	Yes
+NO_REGRESS =	Yes
 
-AFMDIR=		${PREFIX}/share/Ted/afm
-INDDIR=		${PREFIX}/share/Ted/ind
-INFODIR=	${PREFIX}/share/doc/Ted
+AFMDIR =	${PREFIX}/share/Ted/afm
+INDDIR =	${PREFIX}/share/Ted/ind
+INFODIR =	${PREFIX}/share/doc/Ted
 
 post-extract:
 	cd ${WRKDIST}/tedPackage && tar xf TedBindist.tar
@@ -55,7 +55,7 @@ pre-configure:
 		cat config.h.in.bak >>config.h.in; \
 	done
 
-#CFLAGS+=-DAFMDIR=${AFMDIR} -DINDDIR=${INDDIR} -DINFODIR=${INFODIR}
+#CFLAGS += -DAFMDIR=${AFMDIR} -DINDDIR=${INDDIR} -DINFODIR=${INFODIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/Ted/Ted ${PREFIX}/bin/Ted

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/07 18:50:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 23:22:07 espie Exp $
 
 BRANCH=		21.4
 VERSION=	19
@@ -49,10 +49,10 @@ CONFIGURE_ARGS+=--with-menubars=lucid \
 		--with-tiff \
 		--site-includes="${LOCALBASE}/include/libpng"
 
-LIB_DEPENDS+=	::graphics/jpeg \
-		::graphics/png \
-		::graphics/tiff
-WANTLIB +=	jpeg.>=62 png.>=2 tiff.>=35
+LIB_DEPENDS+=	graphics/jpeg \
+		graphics/png \
+		graphics/tiff
+WANTLIB +=	jpeg>=62 png>=2 tiff>=35
 
 . if ${FLAVOR:L:Mmule}
 CONFIGURE_ARGS+=--with-xim=xlib
@@ -64,15 +64,15 @@ MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 
 . if ${FLAVOR:L:Mcanna}
-LIB_DEPENDS+=	::japanese/canna
+LIB_DEPENDS+=	japanese/canna
 CONFIGURE_ARGS+=--with-canna
-WANTLIB +=	canna.>=1 RKC.>=1
+WANTLIB +=	canna>=1 RKC>=1
 . else
 CONFIGURE_ARGS+=--with-canna=no
 . endif
 
 . if ${FLAVOR:L:Mwnn}
-BUILD_DEPENDS+= ::japanese/Wnn
+BUILD_DEPENDS+= japanese/Wnn
 CONFIGURE_ARGS+=--with-wnn
 . else
 CONFIGURE_ARGS+=--with-wnn=no

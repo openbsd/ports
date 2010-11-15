@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 23:22:08 espie Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -27,16 +27,16 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MASTER_SITES =	http://sites.google.com/site/bearoso/snes9x/
 EXTRACT_SUFX =	.tar.bz2
 
-BUILD_DEPENDS =	::textproc/intltool
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	::devel/libglade2 \
-		::devel/sdl \
-		::graphics/png \
-		::textproc/libxml \
-		::x11/gtk+2 
+BUILD_DEPENDS =	textproc/intltool
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	devel/libglade2 \
+		devel/sdl \
+		graphics/png \
+		textproc/libxml \
+		x11/gtk+2 
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS =  ::devel/nasm 
+BUILD_DEPENDS =  devel/nasm 
 .endif
 
 MODULES =	devel/gettext

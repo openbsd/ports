@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:17:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -26,8 +26,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pthread
 WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0
 
-LIB_DEPENDS=		::x11/gtkglext
-RUN_DEPENDS=		::graphics/netpbm
+LIB_DEPENDS=		x11/gtkglext
+RUN_DEPENDS=		graphics/netpbm
 
 WRKDIST=		${WRKDIR}/gamgi${V}/
 WRKSRC= 		${WRKDIST}/src/

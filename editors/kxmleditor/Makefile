@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/15 23:22:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,7 @@ WANTLIB += kdesu kdeui kio kparts kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde
 MODKDE_VERSION=	3.1

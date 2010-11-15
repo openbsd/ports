@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/12 14:43:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 23:22:08 espie Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -25,9 +25,9 @@ MASTER_SITES=		${MASTER_SITE_OPENBSD}
 MODULES=	gcc3
 MODGCC3_ARCHES=	${GCC4_ARCHS}
 
-BUILD_DEPENDS=		::textproc/texi2html
+BUILD_DEPENDS=		textproc/texi2html
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 WANTLIB=		c m ossaudio z
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
@@ -47,7 +47,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-gfx-check \
 			--disable-sdl
 .else
-LIB_DEPENDS=    	::devel/sdl
+LIB_DEPENDS=    	devel/sdl
 
 WANTLIB+=		pthread SDL
 .endif

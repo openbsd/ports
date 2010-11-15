@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/15 23:22:07 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -37,7 +37,7 @@ WANTLIB += c expat fontconfig freetype m z
 MODULES=		converters/libiconv
 
 USE_MOTIF=		Any
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 ALL_TARGET=		openbsd
 
 NO_REGRESS=		Yes

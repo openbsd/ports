@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/08 20:08:55 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 23:22:07 espie Exp $
 
 COMMENT =		simple LaTeX editor
 
@@ -29,12 +29,12 @@ MASTER_SITES =		http://dev.midnightcoding.org/redmine/attachments/download/90/
 
 MODULES =		devel/gettext textproc/intltool
 
-RUN_DEPENDS =		::devel/desktop-file-utils \
-			:texlive_base-*:print/texlive/base
+RUN_DEPENDS =		devel/desktop-file-utils \
+			print/texlive/base
 
-LIB_DEPENDS =		::print/poppler \
-			::textproc/gtkspell \
-			::x11/gtksourceview
+LIB_DEPENDS =		print/poppler \
+			textproc/gtkspell \
+			x11/gtksourceview
 
 CONFIGURE_STYLE =	gnu
 

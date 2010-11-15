@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	Motif toolkit Linux libraries
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	Mrm	2.1 \
 DISTFILES=	openmotif21-2.1.30-14.i386.rpm
 MASTER_SITES=	${MASTER_SITE_FEDORA:=4/i386/os/Fedora/RPMS/}
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	emulators/fedora/base
 
 EXTRACT_FILES=	./usr/X11R6/lib/libMrm.so.2.1 \
 		./usr/X11R6/lib/libUil.so.2.1 \

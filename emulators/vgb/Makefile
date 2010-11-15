@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:08 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.Z
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	emulators/fedora/base
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

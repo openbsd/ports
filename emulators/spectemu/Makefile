@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=		ZX Spectrum 48k emulator
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext c pthread-stubs readline termcap xcb
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 

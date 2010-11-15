@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -20,9 +20,9 @@ MASTER_SITES=	http://sarrazip.com/dev/
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
-LIB_DEPENDS=	::x11/gtk+2 \
-		::textproc/libxml
+BUILD_DEPENDS=	textproc/p5-XML-Parser
+LIB_DEPENDS=	x11/gtk+2 \
+		textproc/libxml
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

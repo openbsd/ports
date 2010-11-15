@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2010/11/09 13:23:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=	Linux CUPS package based on Fedora Core 4
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	com_err	2.1 \
 MASTER_SITES=	${MASTER_SITE_FEDORA:=4/i386/os/Fedora/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_FEDORA:=updates/4/i386/}
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	emulators/fedora/base
 
 DISTFILES=	${RPMS}
 

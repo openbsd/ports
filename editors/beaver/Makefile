@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/07 18:50:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 23:22:07 espie Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -26,9 +26,9 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

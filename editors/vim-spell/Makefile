@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/22 18:24:10 stsp Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 23:22:07 espie Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -203,7 +203,7 @@ PLIST = 	${PKGDIR}/PLIST-$l
 .endfor
 
 NO_BUILD = 	Yes
-RUN_DEPENDS = 	::editors/vim
+RUN_DEPENDS = 	editors/vim
 
 SUBST_VARS = 	LANG_NAME P
 

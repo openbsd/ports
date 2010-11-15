@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dyna-gen/}
 
 MODULES=		lang/python
-RUN_DEPENDS=		::emulators/dynamips
+RUN_DEPENDS=		emulators/dynamips
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

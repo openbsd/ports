@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 23:22:08 espie Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		::devel/libelf
+LIB_DEPENDS=		devel/libelf
 WANTLIB=		c elf pcap pthread
 
 MAKE_ENV=		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}

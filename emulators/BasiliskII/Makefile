@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 23:22:07 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -30,11 +30,11 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0 esd gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::audio/esound \
-			::x11/gtk+2
+LIB_DEPENDS=		audio/esound \
+			x11/gtk+2
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf
