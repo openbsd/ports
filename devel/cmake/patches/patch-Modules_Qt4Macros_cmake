@@ -1,16 +1,16 @@
-$OpenBSD: patch-Modules_Qt4Macros_cmake,v 1.1 2010/05/31 06:29:28 dcoppa Exp $
---- Modules/Qt4Macros.cmake.orig	Tue Apr  6 16:45:32 2010
-+++ Modules/Qt4Macros.cmake	Sat May 29 14:11:39 2010
-@@ -131,6 +131,8 @@ MACRO (QT4_GENERATE_MOC infile outfile )
-    GET_FILENAME_COMPONENT(abs_infile ${infile} ABSOLUTE)
-    QT4_CREATE_MOC_COMMAND(${abs_infile} ${outfile} "${moc_flags}" "")
+$OpenBSD: patch-Modules_Qt4Macros_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
+--- Modules/Qt4Macros.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/Qt4Macros.cmake	Wed Nov 10 09:01:26 2010
+@@ -135,6 +135,8 @@ MACRO (QT4_GENERATE_MOC infile outfile )
+    ENDIF(NOT IS_ABSOLUTE "${outfile}")
+    QT4_CREATE_MOC_COMMAND(${abs_infile} ${_outfile} "${moc_flags}" "")
     SET_SOURCE_FILES_PROPERTIES(${outfile} PROPERTIES SKIP_AUTOMOC TRUE)  # dont run automoc on this file
 +
 +   MACRO_ADD_FILE_DEPENDENCIES(${abs_infile} ${outfile})
  ENDMACRO (QT4_GENERATE_MOC)
  
  
-@@ -210,9 +212,22 @@ MACRO(QT4_ADD_DBUS_INTERFACE _sources _interface _base
+@@ -213,9 +215,22 @@ MACRO(QT4_ADD_DBUS_INTERFACE _sources _interface _base
    SET(_impl   ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.cpp)
    SET(_moc    ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.moc)
  

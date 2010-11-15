@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.8 2010/07/12 19:19:30 dcoppa Exp $
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.9 2010/11/15 11:39:09 dcoppa Exp $
 --- Modules/FindQt4.cmake.orig	Mon Jun 28 17:15:57 2010
 +++ Modules/FindQt4.cmake	Mon Jul  5 11:23:18 2010
-@@ -364,13 +364,20 @@ GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRE
+@@ -461,13 +461,20 @@ GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRE
  # check for qmake
  # Debian uses qmake-qt4
  # macports' Qt uses qmake-mac
@@ -29,32 +29,32 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.8 2010/07/12 19:19:30 dcoppa Exp $
  
  IF (QT_QMAKE_EXECUTABLE)
  
-@@ -957,6 +964,12 @@ IF (QT4_QMAKE_FOUND)
-     _QT4_ADJUST_LIB_VARS(QAxServer)
+@@ -964,6 +971,12 @@ IF (QT4_QMAKE_FOUND)
      _QT4_ADJUST_LIB_VARS(QAxContainer)
-   ENDIF(WIN32)
-+  # qt on OpenBSD needs to be linked with -pthread 
+   ENDIF(Q_WS_WIN)
+ 
++  # Qt4 on OpenBSD needs to be linked with -pthread
 +  IF(CMAKE_SYSTEM MATCHES "OpenBSD*")
 +    FIND_PACKAGE(Threads)
 +    SET(QT_QTCORE_LIBRARY ${QT_QTCORE_LIBRARY}
 +              ${CMAKE_THREAD_LIBS_INIT})
 +  ENDIF(CMAKE_SYSTEM MATCHES "OpenBSD*")
  
-   # If Qt is installed as a framework, we need to add QT_QTCORE_LIBRARY here (which
-   # is the framework directory in that case), since this will make the cmake include_directories()
-@@ -991,13 +1004,13 @@ IF (QT4_QMAKE_FOUND)
+   #######################################
+   #
+@@ -988,13 +1001,13 @@ IF (QT4_QMAKE_FOUND)
    ENDIF(QT_QMAKE_CHANGED)
    
    FIND_PROGRAM(QT_MOC_EXECUTABLE
 -    NAMES moc-qt4 moc
-+    NAMES moc-qt4 moc4 moc 
++    NAMES moc4 moc-qt4 moc
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH
      )
  
    FIND_PROGRAM(QT_UIC_EXECUTABLE
 -    NAMES uic-qt4 uic
-+    NAMES uic-qt4 uic4 uic
++    NAMES uic4 uic-qt4 uic
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH
      )

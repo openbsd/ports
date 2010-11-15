@@ -1,12 +1,11 @@
-$OpenBSD: patch-Modules_Compiler_G95-Fortran_cmake,v 1.1 2010/10/26 18:31:18 dcoppa Exp $
---- Modules/Compiler/G95-Fortran.cmake.orig	Mon Jun 28 17:15:57 2010
-+++ Modules/Compiler/G95-Fortran.cmake	Tue Oct 26 15:20:40 2010
+$OpenBSD: patch-Modules_Compiler_G95-Fortran_cmake,v 1.2 2010/11/15 11:39:08 dcoppa Exp $
+--- Modules/Compiler/G95-Fortran.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/Compiler/G95-Fortran.cmake	Wed Nov 10 10:34:50 2010
 @@ -1,7 +1,5 @@
  set(CMAKE_Fortran_FLAGS_INIT "")
  set(CMAKE_Fortran_FLAGS_DEBUG_INIT "-g")
 -set(CMAKE_Fortran_FLAGS_MINSIZEREL_INIT "-Os")
 -set(CMAKE_Fortran_FLAGS_RELEASE_INIT "-O3")
--set(CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT "-O2 -g")
-+set(CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT "-g")
+ set(CMAKE_Fortran_FLAGS_RELWITHDEBINFO_INIT "-O2 -g")
  set(CMAKE_Fortran_MODDIR_FLAG "-fmod=")
  set(CMAKE_Fortran_VERBOSE_FLAG "-v")

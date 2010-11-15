@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindJNI.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindJNI.cmake	Tue May 11 15:42:37 2010
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
+--- Modules/FindJNI.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/FindJNI.cmake	Wed Nov 10 09:01:25 2010
 @@ -26,6 +26,8 @@
- # (To distributed this file outside of CMake, substitute the full
+ # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
 +SET(MODJAVA_VER $ENV{MODJAVA_VER})
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  # Expand {libarch} occurences to java_libarch subdirectory(-ies) and set ${_var}
  MACRO(java_append_library_directories _var)
      # Determine java arch-specific library subdir
-@@ -71,29 +73,51 @@ SET(JAVA_AWT_LIBRARY_DIRECTORIES
+@@ -96,29 +98,51 @@ SET(JAVA_AWT_LIBRARY_DIRECTORIES
  
  FILE(TO_CMAKE_PATH "$ENV{JAVA_HOME}" _JAVA_HOME)
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  
  SET(JAVA_JVM_LIBRARY_DIRECTORIES)
  FOREACH(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
-@@ -105,29 +129,47 @@ FOREACH(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -130,29 +154,47 @@ FOREACH(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  ENDFOREACH(dir)
  
@@ -155,7 +155,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  FOREACH(JAVA_PROG "${JAVA_RUNTIME}" "${JAVA_COMPILE}" "${JAVA_ARCHIVE}")
    GET_FILENAME_COMPONENT(jpath "${JAVA_PROG}" PATH)
    FOREACH(JAVA_INC_PATH ../include ../java/include ../share/java/include)
-@@ -200,6 +242,7 @@ FIND_PATH(JAVA_INCLUDE_PATH2 jni_md.h 
+@@ -225,6 +267,7 @@ FIND_PATH(JAVA_INCLUDE_PATH2 jni_md.h 
    ${JAVA_INCLUDE_PATH}/win32
    ${JAVA_INCLUDE_PATH}/linux
    ${JAVA_INCLUDE_PATH}/freebsd

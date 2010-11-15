@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/07/12 19:19:31 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/11/15 11:39:09 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -72,6 +72,7 @@ share/cmake/Modules/CMakeJavaInformation.cmake
 share/cmake/Modules/CMakeMSYSFindMake.cmake
 share/cmake/Modules/CMakeMinGWFindMake.cmake
 share/cmake/Modules/CMakeNMakeFindMake.cmake
+share/cmake/Modules/CMakeParseArguments.cmake
 share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake
 share/cmake/Modules/CMakePlatformId.h.in
 share/cmake/Modules/CMakePrintSystemInformation.cmake
@@ -242,6 +243,7 @@ share/cmake/Modules/FindKDE3.cmake
 share/cmake/Modules/FindKDE4.cmake
 share/cmake/Modules/FindLAPACK.cmake
 share/cmake/Modules/FindLATEX.cmake
+share/cmake/Modules/FindLibArchive.cmake
 share/cmake/Modules/FindLibIntl.cmake
 share/cmake/Modules/FindLibXml2.cmake
 share/cmake/Modules/FindLibXslt.cmake
@@ -268,6 +270,7 @@ share/cmake/Modules/FindPerlLibs.cmake
 share/cmake/Modules/FindPhysFS.cmake
 share/cmake/Modules/FindPike.cmake
 share/cmake/Modules/FindPkgConfig.cmake
+share/cmake/Modules/FindPostgreSQL.cmake
 share/cmake/Modules/FindProducer.cmake
 share/cmake/Modules/FindProtobuf.cmake
 share/cmake/Modules/FindPythonInterp.cmake
@@ -367,6 +370,21 @@ share/cmake/Modules/Platform/AIX.cmake
 share/cmake/Modules/Platform/BSDOS.cmake
 share/cmake/Modules/Platform/BeOS.cmake
 share/cmake/Modules/Platform/BlueGeneL.cmake
+share/cmake/Modules/Platform/BlueGeneP-base.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-GNU-C.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-GNU-CXX.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-GNU-Fortran.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-XL-C.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-XL-CXX.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic-XL-Fortran.cmake
+share/cmake/Modules/Platform/BlueGeneP-dynamic.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-GNU-C.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-GNU-CXX.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-GNU-Fortran.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-XL-C.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-XL-CXX.cmake
+share/cmake/Modules/Platform/BlueGeneP-static-XL-Fortran.cmake
+share/cmake/Modules/Platform/BlueGeneP-static.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-C.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-CXX.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-Fortran.cmake

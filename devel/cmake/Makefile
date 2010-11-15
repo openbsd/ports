@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/26 18:31:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/15 11:39:08 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-2.8.2
-REVISION =	3
+DISTNAME =	cmake-2.8.3
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -17,9 +16,11 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto curl curses expat form m ssl stdc++ z
+WANTLIB =		archive c crypto curl curses expat form m \
+			ssl stdc++ z
 
-LIB_DEPENDS =		::net/curl
+LIB_DEPENDS =		::archivers/libarchive \
+			::net/curl
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
@@ -38,6 +39,8 @@ REGRESS_TARGET =	test
 .if ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-O0
 .endif
+
+MAKE_FLAGS +=		VERBOSE=1
 
 pre-configure:
 	@cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/

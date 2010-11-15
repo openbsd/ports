@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.4 2010/07/12 19:19:30 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Mon Jun 28 17:15:57 2010
-+++ Modules/Platform/OpenBSD.cmake	Fri Jul  9 16:21:13 2010
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.5 2010/11/15 11:39:09 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/Platform/OpenBSD.cmake	Fri Nov 12 10:04:21 2010
 @@ -1,5 +1,24 @@
  INCLUDE(Platform/NetBSD)
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindBoost_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindBoost.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindBoost.cmake	Fri Apr 23 15:55:13 2010
-@@ -70,7 +70,9 @@
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.2 2010/11/15 11:39:08 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/FindBoost.cmake	Wed Nov 10 09:01:25 2010
+@@ -71,7 +71,9 @@
  # omit the 3rd version number from include paths if it is 0 although not all
  # binary Boost releases do so.
  #

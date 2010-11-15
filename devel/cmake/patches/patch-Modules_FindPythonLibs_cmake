@@ -1,11 +1,11 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
 --- Modules/FindPythonLibs.cmake.orig	Tue Apr  6 16:45:31 2010
 +++ Modules/FindPythonLibs.cmake	Tue May 11 14:26:12 2010
 @@ -27,7 +27,16 @@ INCLUDE(CMakeFindFrameworks)
  # Search for the python framework on Apple.
  CMAKE_FIND_FRAMEWORKS(Python)
  
--FOREACH(_CURRENT_VERSION 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
+-FOREACH(_CURRENT_VERSION 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
 +SET(MODPY_VERSION $ENV{MODPY_VERSION})
 +SET(MODPY_INCDIR $ENV{MODPY_INCDIR})
 +
@@ -19,7 +19,7 @@ $OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Ex
    STRING(REPLACE "." "" _CURRENT_VERSION_NO_DOTS ${_CURRENT_VERSION})
    IF(WIN32)
      FIND_LIBRARY(PYTHON_DEBUG_LIBRARY
-@@ -68,14 +77,18 @@ FOREACH(_CURRENT_VERSION 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1
+@@ -68,14 +77,18 @@ FOREACH(_CURRENT_VERSION 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2
      ENDFOREACH(dir)
    ENDIF(Python_FRAMEWORKS AND NOT PYTHON_INCLUDE_DIR)
  

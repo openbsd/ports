@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindTclsh.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindTclsh.cmake	Tue May 11 13:55:06 2010
+$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
+--- Modules/FindTclsh.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/FindTclsh.cmake	Wed Nov 10 09:01:26 2010
 @@ -20,14 +20,21 @@
- # (To distributed this file outside of CMake, substitute the full
+ # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
 +SET(MODTCL_VERSION $ENV{MODTCL_VERSION})

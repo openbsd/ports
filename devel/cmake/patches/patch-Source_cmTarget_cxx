@@ -1,15 +1,15 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.6 2010/07/28 20:34:22 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Mon Jun 28 17:15:59 2010
-+++ Source/cmTarget.cxx	Wed Jul 28 21:12:36 2010
-@@ -3164,6 +3164,36 @@ void cmTarget::GetLibraryNames(std::string& name,
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.7 2010/11/15 11:39:09 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Wed Nov  3 20:58:29 2010
++++ Source/cmTarget.cxx	Fri Nov 12 11:50:00 2010
+@@ -3191,6 +3191,36 @@ void cmTarget::GetLibraryNames(std::string& name,
    std::string suffix;
    this->GetFullNameInternal(config, false, prefix, base, suffix);
  
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION 
 +  // environment variable. Needed for OpenBSD ports system.
-+  if(this->GetType() == cmTarget::SHARED_LIBRARY && 
-+     this->Makefile->GetDefinition(sonameFlag.c_str()))
++  if(this->GetType() == cmTarget::SHARED_LIBRARY ||
++     this->GetType() == cmTarget::MODULE_LIBRARY)
 +    {
 +    std::string env_name = "LIB" + base + "_VERSION";
 +    char *env_vers_cstr = getenv(env_name.c_str());
@@ -38,7 +38,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.6 2010/07/28 20:34:22 dcoppa Exp $
    // The library name.
    name = prefix+base+suffix;
  
-@@ -3191,8 +3221,27 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -3218,8 +3248,27 @@ void cmTarget::GetLibraryNames(std::string& name,
    if(version)
      {
      realName += ".";
