@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 13:08:38 espie Exp $
 COMMENT=	command-line editor for tags in Ogg Vorbis files
 
 DISTNAME=	oggtag_1.0
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ogg.>=5 vorbis.>=3
+WANTLIB=		c m ogg>=5 vorbis>=3
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oggtag/}
 EXTRACT_SUFX=	.tgz

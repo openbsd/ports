@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/15 13:08:37 espie Exp $
 
 COMMENT=	free audio editor
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB += c expat glib-2.0 gobject-2.0 gtk-x11-2.0 m ogg pthread
 WANTLIB += sndfile sndio stdc++ wx_base_xml wx_base_odbc wx_gtk2_aui
 WANTLIB += wx_gtk2_html wx_gtk2_adv wx_gtk2_xrc wx_base_net wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate.>=1
+WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate>=1
 WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
 WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
 WANTLIB += tag

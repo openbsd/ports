@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/15 13:08:38 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ogg vorbis.>=1 vorbisfile.>=2
+WANTLIB=		ogg vorbis>=1 vorbisfile>=2
 
 MODULES=		cpan
 CPAN_AUTHOR=		FOOF

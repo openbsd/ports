@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 13:08:37 espie Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ao.>=3 c id3tag.>=2 mad.>=2 z
+WANTLIB=		ao>=3 c id3tag>=2 mad>=2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpg321/}
 

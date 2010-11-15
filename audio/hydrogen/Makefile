@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 13:08:37 espie Exp $
 
 COMMENT=		software drum machine
 DISTNAME=		hydrogen-0.9.4
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m ogg pthread sndio stdc++ QtGui QtNetwork QtXml sndfile.>=1
-WANTLIB += FLAC.>=8 FLAC++.>=7 jack archive lrdf
+WANTLIB += c m ogg pthread sndio stdc++ QtGui QtNetwork QtXml sndfile>=1
+WANTLIB += FLAC>=8 FLAC++>=7 jack archive lrdf
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hydrogen/}
 

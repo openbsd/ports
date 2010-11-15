@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 13:08:38 espie Exp $
 
 CATEGORIES=	databases x11 x11/kde
 COMMENT=	MDB (access) file migration driver for kexi
@@ -35,7 +35,7 @@ LIB_DEPENDS +=	x11/kde/libs3 \
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender jpeg m png rpcsvc
 WANTLIB += stdc++ util z art_lgpl_2 fam glib-2.0 iconv idn intl
-WANTLIB += pcre pthread-stubs xcb kdecore.>=7 DCOP kabc kdefx
+WANTLIB += pcre pthread-stubs xcb kdecore>=7 DCOP kabc kdefx
 WANTLIB += kdeprint kdesu kdeui kparts kutils kwalletclient kio
 WANTLIB += kmdi knewstuff kresources ktexteditor vcard kofficecore>=3
 WANTLIB += kexicore kexidatatable kexidb kexidbparser kexiextendedwidgets
