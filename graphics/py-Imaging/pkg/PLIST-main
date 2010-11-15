@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/09/03 12:34:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/11/15 20:57:10 sthen Exp $
 @option no-default-conflict
 @conflict py-Imaging-*-python${MODPY_VERSION}
 @pkgpath graphics/py-Imaging
@@ -57,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/Image.py
 lib/python${MODPY_VERSION}/site-packages/PIL/Image.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageChops.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageChops.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageCms.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageCms.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageColor.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageColor.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageDraw.py
@@ -91,6 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageQt.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageQt.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageSequence.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageSequence.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageShow.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageShow.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageStat.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageStat.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageTk.py
@@ -115,6 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/PIL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/PaletteFile.py
@@ -164,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so

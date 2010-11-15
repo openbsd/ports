@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.6 2010/02/26 19:18:28 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.7 2010/11/15 20:57:10 sthen Exp $
 @pkgpath graphics/py-Imaging,-examples,python2.4
 @pkgpath graphics/py-Imaging,-examples,python2.5
 @pkgpath graphics/py-Imaging,-examples,python2.6
@@ -7,7 +7,6 @@ share/examples/py-Imaging/README
 share/examples/py-Imaging/enhancer.py
 share/examples/py-Imaging/explode.py
 share/examples/py-Imaging/gifmaker.py
-share/examples/py-Imaging/image2py.py
 share/examples/py-Imaging/painter.py
 share/examples/py-Imaging/pilconvert.py
 share/examples/py-Imaging/pildriver.py

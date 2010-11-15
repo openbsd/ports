@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/10 22:10:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/15 20:57:10 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		Python imaging library
 COMMENT-examples=	example programs for the Python Imaging Library
 COMMENT-bin=		binaries for the Python Imaging Library
+COMMENT-docs=		documentation for the Python Imaging Library
 
-VERSION=		1.1.6
-DISTNAME=		Imaging-${VERSION}
+MODPY_EGG_VERSION=	1.1.7
+DISTNAME=		Imaging-${MODPY_EGG_VERSION}
 PKGNAME-main=		py-${DISTNAME}
-REVISION-main=		3
-FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
+FULLPKGNAME-examples=	py-Imaging-examples-${MODPY_EGG_VERSION}
 EPOCH-examples=		0
 FULLPKGPATH-examples=	graphics/py-Imaging,-examples
-PKGNAME-bin=		py-Imaging-bin-${VERSION}
-REVISION-bin=		4
+PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
+FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
+FULLPKGPATH-docs=	graphics/py-Imaging,-docs
 
 CATEGORIES=		graphics
 
@@ -26,18 +27,20 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-main=		freetype tcl84 z jpeg.>=62 tk84
+
+WANTLIB-main=		freetype z jpeg.>=62 lcms ${MODTK_WANTLIB}
 
 MASTER_SITES=		http://effbot.org/media/downloads/
 
-MODULES=		lang/python
+MODULES=		lang/python x11/tk
 
 RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 RUN_DEPENDS-bin=	${RUN_DEPENDS} \
 			:py-Imaging-*:graphics/py-Imaging
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS-main=	::graphics/jpeg \
-			:tk->=8.4,<8.5:x11/tk/8.4
+			::graphics/lcms \
+			${MODTK_LIB_DEPENDS}
 
 FLAVORS=		python2.4 python2.6
 FLAVOR?=		python2.6
@@ -45,16 +48,13 @@ FLAVOR?=		python2.6
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
 .elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
-MULTI_PACKAGES= -main -examples -bin
+MULTI_PACKAGES= -main -examples -bin -docs
 .else
 ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
 MODPY_VERSION=		${FLAVOR:S/python//}
 MODPY_ADJ_FILES=	Scripts/pil*.py
-
-do-configure:
-	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/Scripts/pilfont.py
 
 INCDIR=${PREFIX}/include/python${MODPY_VERSION}
 post-install:
@@ -66,14 +66,14 @@ post-install:
 	for file in ${WRKSRC}/Scripts/pil*.py; do \
 		${INSTALL_SCRIPT} $$file ${PREFIX}/bin/`basename $$file .py`; \
 	done
-	find ${WRKINST} -name \*.egg-info -exec rm {} \;
 	${INSTALL_DATA_DIR} ${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/libImaging/ImPlatform.h ${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/libImaging/Imaging.h ${INCDIR}
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/doc/py-Imaging
+	${INSTALL_SCRIPT} ${WRKSRC}/Docs/* ${PREFIX}/share/doc/py-Imaging
 
 do-regress: fake
-	@cd ${WRKSRC} && \
-		${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG}/PIL \
-		${MODPY_BIN} ./selftest.py
+	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${REGRESS_ENV} ${MODPY_BIN} ./selftest.py
 
 .include <bsd.port.mk>

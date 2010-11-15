@@ -1,7 +1,7 @@
-$OpenBSD: patch-Tk_tkImaging_c,v 1.4 2010/09/05 13:04:43 sthen Exp $
---- Tk/tkImaging.c.orig	Sun Dec  3 11:37:29 2006
-+++ Tk/tkImaging.c	Sun Sep  5 13:59:42 2010
-@@ -240,8 +240,8 @@ PyImagingPhotoGet(ClientData clientdata, Tcl_Interp* i
+$OpenBSD: patch-Tk_tkImaging_c,v 1.5 2010/11/15 20:57:10 sthen Exp $
+--- Tk/tkImaging.c.orig	Sun Nov  1 05:44:12 2009
++++ Tk/tkImaging.c	Sat Nov 13 14:56:09 2010
+@@ -258,8 +258,8 @@ PyImagingPhotoGet(ClientData clientdata, Tcl_Interp* i
  void
  TkImaging_Init(Tcl_Interp* interp)
  {
