@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/07/08 16:21:17 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/11/15 10:05:05 jasper Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -477,8 +477,7 @@ sbin/recvstats
 @bin sbin/tsitest
 @bin sbin/typetest
 sbin/xferfaxstats
-share/doc/hylafax/
-share/doc/hylafax/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 @exec ln -sf %D/libdata/hylafax /var/spool/hylafax
 @exec mkfifo %D/libdata/hylafax/FIFO; chown uucp:dialer %D/libdata/hylafax/FIFO; chmod 600 %D/libdata/hylafax/FIFO
 @unexec rm %D/libdata/hylafax/FIFO

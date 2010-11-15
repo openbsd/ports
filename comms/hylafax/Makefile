@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2010/11/15 10:05:05 jasper Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-4.4.6
+REVISION=		0
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
@@ -52,11 +53,5 @@ NO_REGRESS=	Yes
 
 pre-configure:
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure
-
-post-install:
-	@sed -e s,%%PREFIX%%,${TRUEPREFIX},g ${FILESDIR}/README.OpenBSD > \
-		${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hylafax/
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/hylafax/
 
 .include <bsd.port.mk>
