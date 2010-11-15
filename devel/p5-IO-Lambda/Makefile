@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 22:40:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	non-blocking I/O as lambda calculus
 
@@ -18,10 +18,10 @@ USE_GROFF=	Yes
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg
 
-RUN_DEPENDS=	::devel/p5-Sub-Name \
-		::net/p5-Net-DNS \
-		::security/p5-IO-Socket-SSL \
-		::www/p5-libwww
+RUN_DEPENDS=	devel/p5-Sub-Name \
+		net/p5-Net-DNS \
+		security/p5-IO-Socket-SSL \
+		www/p5-libwww
 # Additionally these can be installed:
 # 'SNMP'            => 0,     # for IO::Lambda::SNMP
 # 'AnyEvent'        => 0,     # for alternative event loop

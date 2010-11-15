@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/02 13:10:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/dconf
+RUN_DEPENDS=	devel/dconf
 
 # don't inherit USE_LIBTOOL from the gnome MODULE
 USE_LIBTOOL=	No

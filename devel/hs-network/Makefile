@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		Haskell networking library
 
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		::devel/hs-parsec
+LIB_DEPENDS =		devel/hs-parsec
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

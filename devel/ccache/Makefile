@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	compiler cache
 
 DISTNAME=	ccache-2.4
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 HOMEPAGE=	http://ccache.samba.org/
 
@@ -19,6 +19,6 @@ WANTLIB=		c
 MASTER_SITES=	http://samba.org/ftp/ccache/
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

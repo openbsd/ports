@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 19:45:59 espie Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
-PKGNAME=		${DISTNAME}p2
+REVISION =		2
 SHARED_LIBS +=  lamf77mpi	0.0	# .0.0
 SHARED_LIBS +=  pmpi		0.0	# .0.0
 SHARED_LIBS +=  lam		0.0	# .0.0
@@ -26,7 +26,7 @@ MASTER_SITES=		http://www.lam-mpi.org/download/files/ \
 
 HOMEPAGE=		http://www.lam-mpi.org/
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/mpi2c++

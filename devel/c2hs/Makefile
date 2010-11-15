@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/08 01:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:45:56 espie Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
@@ -23,7 +23,7 @@ SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
 SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
 SETUP_PROG=		${WRKSRC}/Setup
 SUBST_VARS=		V
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 
 # GPL
@@ -34,9 +34,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m gmp
 
-LIB_DEPENDS=		::devel/gmp
+LIB_DEPENDS=		devel/gmp
 
-BUILD_DEPENDS=		::devel/alex ::devel/happy ::textproc/sgmlformat
+BUILD_DEPENDS=		devel/alex devel/happy textproc/sgmlformat
 
 do-configure:
 	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.hs

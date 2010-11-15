@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=        validate user input from a constraint object
 
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::graphics/p5-Image-Size \
-		::devel/p5-Date-Calc \
-		::devel/p5-Perl6-Junction \
-		::misc/p5-File-MMagic \
-		::mail/p5-Email-Valid \
-		::mail/p5-MIME-Types \
-		::textproc/p5-Regexp-Common
-REGRESS_DEPENDS=::www/p5-CGI-Simple
+RUN_DEPENDS=	graphics/p5-Image-Size \
+		devel/p5-Date-Calc \
+		devel/p5-Perl6-Junction \
+		misc/p5-File-MMagic \
+		mail/p5-Email-Valid \
+		mail/p5-MIME-Types \
+		textproc/p5-Regexp-Common
+REGRESS_DEPENDS=www/p5-CGI-Simple
 
 CONFIGURE_STYLE=modbuild
 

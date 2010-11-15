@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2010/11/08 09:20:49 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2010/11/15 19:46:10 espie Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -26,8 +26,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
 
 LIB_DEPENDS-devel +=	${MODGETTEXT_LIB_DEPENDS} \
-			::devel/libIDL \
-			:${PKGNAME-main}:devel/xulrunner/${MOZILLA_VERSION:R:R},-main
+			devel/libIDL \
+			${PKGNAME-main}:devel/xulrunner/${MOZILLA_VERSION:R:R},-main
 WANTLIB-devel +=	${MODGETTEXT_WANTLIB} \
 			c glib-2.0 gobject-2.0 gthread-2.0 m pthread stdc++ \
 			IDL-2 nspr4 plc4 plds4 \

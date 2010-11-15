@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	check for pod coverage in your distribution
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Pod-Coverage
+RUN_DEPENDS=	devel/p5-Pod-Coverage
 
 .include <bsd.port.mk>

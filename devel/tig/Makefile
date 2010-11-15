@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:09 espie Exp $
 
 COMMENT =		ncurses GIT repository browser
 DISTNAME =		tig-0.16
@@ -14,12 +14,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c ncurses
 MODULES =		converters/libiconv
-RUN_DEPENDS =		::devel/git
+RUN_DEPENDS =		devel/git
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-libiconv=${LOCALBASE} ASCIIDOC=false \
 			XMLTO=false DOCBOOK2PDF=false

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	Objective Caml bindings for calendar functions
 CATEGORIES=	devel
 
 V=		1.09.5
 DISTNAME=	calendar-${V}
-PKGNAME=	ocaml-calendar-${V}p2
+PKGNAME=	ocaml-calendar-${V}
+REVISION =	2
 MASTER_SITES=	http://www.lri.fr/~signoles/prog/calendar/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

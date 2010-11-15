@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 2010/11/08 09:57:40 espie Exp $
+#	$OpenBSD: Makefile,v 1.3 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	complex numbers math library
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		::devel/mpfr \
-			::devel/gmp
-WANTLIB =		mpfr.>=0.2 gmp.>=8.0
+LIB_DEPENDS=		devel/mpfr \
+			devel/gmp
+WANTLIB =		mpfr>=0.2 gmp>=8.0
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-mpfr=${LOCALBASE} \

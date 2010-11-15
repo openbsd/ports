@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/27 18:17:35 stephan Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=	parse and format strp and strf time patterns
 
@@ -14,9 +14,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:p5-DateTime->=0.5000:devel/p5-DateTime \
-			:p5-DateTime-Locale->=0.41:devel/p5-DateTime-Locale \
-			:p5-DateTime-TimeZone->=0.79:devel/p5-DateTime-TimeZone \
-			:p5-Params-Validate->=0.64:devel/p5-Params-Validate
+RUN_DEPENDS=		p5-DateTime->=0.5000:devel/p5-DateTime \
+			p5-DateTime-Locale->=0.41:devel/p5-DateTime-Locale \
+			p5-DateTime-TimeZone->=0.79:devel/p5-DateTime-TimeZone \
+			p5-Params-Validate->=0.64:devel/p5-Params-Validate
 
 .include <bsd.port.mk>

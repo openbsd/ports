@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		2.30.5
-REVISION=	0
+REVISION=		0
 
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
 
@@ -31,8 +31,8 @@ WANTLIB += startup-notification-1
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::x11/gtk+2 \
-			::devel/startup-notification
+LIB_DEPENDS=		x11/gtk+2 \
+			devel/startup-notification
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \

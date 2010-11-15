@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		functions to throw and catch exceptions
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 
-RUN_DEPENDS +=		::devel/hs-transformers
+RUN_DEPENDS +=		devel/hs-transformers
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 MODGHC_BUILD =		cabal hackage haddock register

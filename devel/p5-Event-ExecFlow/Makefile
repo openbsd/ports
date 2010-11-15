@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	high level API for event-based execution flow control
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-AnyEvent \
-		::devel/p5-libintl
+RUN_DEPENDS=	devel/p5-AnyEvent \
+		devel/p5-libintl
 
 .include <bsd.port.mk>

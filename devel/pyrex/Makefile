@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/12 18:47:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://distfiles.nl/ \
 
 MODULES=	lang/python
 
-REGRESS_DEPENDS=:py-Numeric-*:math/py-Numeric
+REGRESS_DEPENDS=math/py-Numeric
 
 pre-build:
 	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \

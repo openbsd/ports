@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	GNU help2man
 
 DISTNAME=	help2man-1.29
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
 

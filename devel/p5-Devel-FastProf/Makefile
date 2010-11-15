@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:02 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	per-line quick profiler for perl
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::devel/p5-Sort-Key
+RUN_DEPENDS=	devel/p5-Sort-Key
 
 .include <bsd.port.mk>

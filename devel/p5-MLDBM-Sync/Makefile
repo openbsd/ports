@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
@@ -9,8 +9,8 @@ REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:p5-MLDBM-*:devel/p5-MLDBM \
-		::devel/p5-Tie-Cache
+RUN_DEPENDS=	devel/p5-MLDBM \
+		devel/p5-Tie-Cache
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

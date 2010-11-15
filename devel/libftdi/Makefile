@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/25 20:55:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -20,7 +20,7 @@ WANTLIB += c usb
 
 MASTER_SITES =		${HOMEPAGE}/download/
 
-LIB_DEPENDS =		::devel/libusb
+LIB_DEPENDS =		devel/libusb
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	--disable-libftdipp \

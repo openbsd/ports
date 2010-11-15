@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	::devel/libfmt \
-		::devel/libbio \
-		::devel/libregexp9 \
-		::devel/libutf
+BUILD_DEPENDS=	devel/libfmt \
+		devel/libbio \
+		devel/libregexp9 \
+		devel/libutf
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

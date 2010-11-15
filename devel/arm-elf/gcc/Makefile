@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/22 15:32:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -19,12 +19,12 @@ MAKE_ADA=	No
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
-BUILD_DEPENDS+=	:autoconf-2.13:devel/autoconf/2.13	\
-		::devel/bison				\
-		::devel/metaauto			\
-		::devel/arm-elf/binutils
+BUILD_DEPENDS+=	autoconf-2.13:devel/autoconf/2.13	\
+		devel/bison				\
+		devel/metaauto				\
+		devel/arm-elf/binutils
 
-LIB_DEPENDS=	::devel/mpfr
+LIB_DEPENDS=	devel/mpfr
 
 LANGS=		c,c++
 CC=		/usr/bin/gcc
@@ -46,7 +46,7 @@ SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 YACC=		bison
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \

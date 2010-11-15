@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -22,18 +22,18 @@ PERMIT_PACKAGE_FTP =		Yes
 
 WANTLIB += GL GLU SDL jpeg png pthread
 
-RUN_DEPENDS =		::devel/p5-YAML
+RUN_DEPENDS =		devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}
-LIB_DEPENDS =		::devel/sdl-gfx \
-			::devel/sdl-image \
-			::devel/sdl-mixer \
-			::devel/sdl-net \
-			::devel/sdl-ttf \
-			::devel/smpeg
+LIB_DEPENDS =		devel/sdl-gfx \
+			devel/sdl-image \
+			devel/sdl-mixer \
+			devel/sdl-net \
+			devel/sdl-ttf \
+			devel/smpeg
 WANTLIB +=		SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf smpeg
 
 CONFIGURE_STYLE =	perl modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # Set AUDIODEVICE to aucat socket if it is in use
 REGRESS_IS_INTERACTIVE =Yes

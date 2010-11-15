@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 23:21:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	package management framework for the Ruby language
 
@@ -41,7 +41,7 @@ do-install:
 		--prefix=${PREFIX}
 	@mkdir -p ${WRKINST}${LOCALBASE}/lib/ruby/gems/${MODRUBY_REV}/{,cache,doc,gems,specifications}
 
-REGRESS_DEPENDS=	::devel/ruby-hoe
+REGRESS_DEPENDS=	devel/ruby-hoe
 MODRUBY_REGRESS=	rake
 
 .include <bsd.port.mk>

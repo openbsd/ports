@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,29 +19,29 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	DOY
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Class-MOP->=0.94:devel/p5-Class-MOP \
-		::devel/p5-Data-OptList \
-		::devel/p5-List-MoreUtils \
-		::devel/p5-Sub-Exporter \
-		::devel/p5-Sub-Name \
-		::devel/p5-Task-Weaken \
-		::devel/p5-Try-Tiny
+RUN_DEPENDS=	p5-Class-MOP->=0.94:devel/p5-Class-MOP \
+		devel/p5-Data-OptList \
+		devel/p5-List-MoreUtils \
+		devel/p5-Sub-Exporter \
+		devel/p5-Sub-Name \
+		devel/p5-Task-Weaken \
+		devel/p5-Try-Tiny
 
-REGRESS_DEPENDS=::databases/p5-DBM-Deep \
-		::devel/p5-DateTime-Calendar-Mayan \
-		::devel/p5-DateTime-Format-MySQL \
-		::devel/p5-Declare-Constraints-Simple \
-		::devel/p5-IO-String \
-		::devel/p5-Locale-US \
-		::devel/p5-Module-Refresh \
-		::devel/p5-Params-Coerce \
-		::devel/p5-Test-Deep \
-		::devel/p5-Test-Exception \
-		::devel/p5-Test-LongString \
-		::devel/p5-Test-Output \
-		:p5-Test-Warn->=0.10:devel/p5-Test-Warn \
-		::textproc/p5-Regexp-Common \
-		::www/p5-libwww \
-		::www/p5-URI
+REGRESS_DEPENDS=databases/p5-DBM-Deep \
+		devel/p5-DateTime-Calendar-Mayan \
+		devel/p5-DateTime-Format-MySQL \
+		devel/p5-Declare-Constraints-Simple \
+		devel/p5-IO-String \
+		devel/p5-Locale-US \
+		devel/p5-Module-Refresh \
+		devel/p5-Params-Coerce \
+		devel/p5-Test-Deep \
+		devel/p5-Test-Exception \
+		devel/p5-Test-LongString \
+		devel/p5-Test-Output \
+		p5-Test-Warn->=0.10:devel/p5-Test-Warn \
+		textproc/p5-Regexp-Common \
+		www/p5-libwww \
+		www/p5-URI
 
 .include <bsd.port.mk>

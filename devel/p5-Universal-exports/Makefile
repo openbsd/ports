@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	lightweight, universal exporting/require of variables
 
 MODULES=	cpan
 V=		0.05
 DISTNAME=	UNIVERSAL-exports-${V}
-PKGNAME=	p5-Universal-exports-${V}p0
+PKGNAME=	p5-Universal-exports-${V}
+REVISION =	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
@@ -17,6 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Exporter-Lite
+RUN_DEPENDS=	devel/p5-Exporter-Lite
 
 .include <bsd.port.mk>

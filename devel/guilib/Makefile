@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	X11 Xau Xrandr Xrender iconv Xdmcp Xext m pthread-stubs sndio \
 		stdc++ usbhid xcb SDL
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=		concurrent

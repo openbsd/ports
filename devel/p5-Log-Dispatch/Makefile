@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=	dispatches messages to one or more outputs
 
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Params-Validate
+RUN_DEPENDS=	devel/p5-Params-Validate
 
-REGRESS_DEPENDS= ::devel/p5-File-Find-Rule
+REGRESS_DEPENDS= devel/p5-File-Find-Rule
 
 CONFIGURE_STYLE= modbuild
 

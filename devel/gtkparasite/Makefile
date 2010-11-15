@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -23,9 +23,9 @@ MODULES =	lang/python
 USE_LIBTOOL =	Yes
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		::x11/gtk+2
+		x11/gtk+2
 
-RUN_DEPENDS =	::x11/py-gtk2
+RUN_DEPENDS =	x11/py-gtk2
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

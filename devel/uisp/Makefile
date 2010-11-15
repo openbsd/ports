@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
 DISTNAME=	uisp-20050207
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.nongnu.org/uisp/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=uisp/}
 

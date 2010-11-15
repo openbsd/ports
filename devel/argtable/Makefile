@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=		ANSI C command line parser
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=argtable/}
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/argtable2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		UML diagram framework for Eclipse
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/mdt/uml2/downloads/drops/${V}/R200702141227/
 
-RUN_DEPENDS=		:eclipse-plugin-emf-sdk->=2.2.2:devel/eclipse/plugins/emf
+RUN_DEPENDS=		STEM->=2.2.2:devel/eclipse/plugins/emf
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

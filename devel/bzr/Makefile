@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:45:56 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -24,9 +24,9 @@ MASTER_SITES =	http://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG
 MODULES =	lang/python
 USE_GROFF =	Yes
 
-RUN_DEPENDS +=	::net/py-curl \
-		::security/py-paramiko \
-		::textproc/gdiff
+RUN_DEPENDS +=	net/py-curl \
+		security/py-paramiko \
+		textproc/gdiff
 REGRESS_DEPENDS = ${RUN_DEPENDS}
 
 pre-configure:

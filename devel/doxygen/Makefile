@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/08 13:15:10 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:45:57 espie Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -42,7 +42,7 @@ MODULES+=	x11/qt4
 MULTI_PACKAGES+=-gui
 .endif
 
-BUILD_DEPENDS +=	::devel/bison
+BUILD_DEPENDS +=	devel/bison
 COMMON_WANTLIB =	c m pthread stdc++ ${MODLIBICONV_WANTLIB}
 COMMON_LIB_DEPENDS =	${MODLIBICONV_LIB_DEPENDS}
 

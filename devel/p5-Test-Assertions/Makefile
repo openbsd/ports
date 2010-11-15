@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
 
 COMMENT =	set of building blocks for both unit and runtime testing
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	::devel/p5-Log-Trace
+RUN_DEPENDS =	devel/p5-Log-Trace
 
 MAKE_ENV +=	TEST_POD=1
 

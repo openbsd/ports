@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
 DISTNAME=		giblib-1.2.4
-PKGNAME=		${DISTNAME}p4
+REVISION =		4
 SHARED_LIBS=		giblib	1.6	# .1.6
 
 CATEGORIES=		devel
@@ -21,8 +21,8 @@ WANTLIB=		X11 Xau Xdmcp Xext freetype m pthread-stubs xcb z
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
-LIB_DEPENDS=		::graphics/imlib2
-WANTLIB +=		Imlib2.>=1
+LIB_DEPENDS=		graphics/imlib2
+WANTLIB +=		Imlib2>=1
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

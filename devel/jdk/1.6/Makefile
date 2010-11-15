@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 19:45:59 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,10 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p10
-PKGNAME-jre=		jre-${V}p10
+PKGNAME-main=		jdk-${V}
+REVISION-main =		10
+PKGNAME-jre=		jre-${V}
+REVISION-jre =		10
 
 CATEGORIES=		devel/jdk java
 
@@ -40,18 +42,18 @@ PERMIT_DISTFILES_FTP=	JRL
 NO_REGRESS=		Yes
 
 VMEM_WARNING=		Yes
-BUILD_DEPENDS=		::archivers/gtar \
-			::archivers/zip \
-			::archivers/unzip \
-			::archivers/bzip2 \
-			::print/cups \
-			::x11/openmotif
+BUILD_DEPENDS=		archivers/gtar \
+			archivers/zip \
+			archivers/unzip \
+			archivers/bzip2 \
+			print/cups \
+			x11/openmotif
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread pthread-stubs \
 			sndio stdc++ xcb z
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 TAR=			${LOCALBASE}/bin/gtar
 
@@ -97,10 +99,10 @@ INSTALLED!= (pkg_info -e "jdk->=1.6,<1.7" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.6 jdk package"
 .endif
-BUILD_DEPENDS+=		:jdk->=1.6,<1.7:devel/jdk/1.6
+BUILD_DEPENDS+=		jdk->=1.6,<1.7:devel/jdk/1.6
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-BUILD_DEPENDS+=		:jdk->=1.5,<1.6:devel/jdk/1.5
+BUILD_DEPENDS+=		jdk->=1.5,<1.6:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.5.0"
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/03 07:47:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	distributed version control system
 
@@ -20,7 +20,7 @@ WANTLIB += c m stdc++ z
 MASTER_SITES=	${HOMEPAGE}downloads/${VERSION}/
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/boost
+BUILD_DEPENDS=	devel/boost
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

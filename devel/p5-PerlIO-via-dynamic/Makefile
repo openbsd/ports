@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	create dynamic PerlIO layers
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Internals
+RUN_DEPENDS=	devel/p5-Internals
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

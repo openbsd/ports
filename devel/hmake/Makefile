@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
@@ -30,14 +30,14 @@ WANTLIB +=		c m pthread
 WANTLIB +=		gmp util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 CONFIGURE_ARGS =	--buildwith=ghc
 WANTLIB +=		ncurses readline
 # No LIB_DEPENDS; hmake should be usable without all the ghc packages
 # installed.
-BUILD_DEPENDS +=	::devel/hs-readline
+BUILD_DEPENDS +=	devel/hs-readline
 .else
-BUILD_DEPENDS +=	::lang/nhc98
+BUILD_DEPENDS +=	lang/nhc98
 CONFIGURE_ARGS =	--buildwith=nhc98
 .endif
 

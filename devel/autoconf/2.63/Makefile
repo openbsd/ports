@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:56 espie Exp $
 
 COMMENT =	automatically configure source code on many Un*x platforms
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-BUILD_DEPENDS =		:help2man-*:devel/help2man
-RUN_DEPENDS =		::devel/metaauto
+BUILD_DEPENDS =		devel/help2man
+RUN_DEPENDS =		devel/metaauto
 
 SUFFIX =		-2.63
 CONFIGURE_STYLE =	gnu
@@ -32,8 +32,8 @@ MAKE_FLAGS =		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX} EMACS=no
 FAKE_FLAGS =		lispdir= EMACS=no
 #USE_GMAKE =		Yes
 SUBST_VARS =		SUFFIX
-REGRESS_DEPENDS =	::devel/automake/1.9
+REGRESS_DEPENDS =	devel/automake/1.9
 REGRESS_FLAGS +=	AUTOMAKE_VERSION=1.9
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

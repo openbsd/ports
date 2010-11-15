@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	faster implementation of the standard debug.rb
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-debug-base-${VERSION}:devel/ruby-debug-base,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-columnize-*:devel/ruby-columnize,${FLAVOR}
+RUN_DEPENDS =	STEM-${VERSION}:devel/ruby-debug-base,${FLAVOR} \
+		devel/ruby-columnize,${FLAVOR}
 
 MODULES =	lang/ruby
 

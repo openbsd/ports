@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -29,8 +29,8 @@ WANTLIB=	SDL X11 Xau Xdmcp expat fontconfig freetype glib-2.0 \
 		pangoft2-1.0 pcre pthread-stubs sndio usbhid xcb z
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::devel/pango \
-		::devel/sdl
+LIB_DEPENDS=	devel/pango \
+		devel/sdl
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

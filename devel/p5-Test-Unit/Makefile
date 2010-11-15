@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=	Perl unit testing framework
 
@@ -17,8 +17,8 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Devel-Symdump \
-		::devel/p5-Error \
-		::devel/p5-Class-Inner
+RUN_DEPENDS=	devel/p5-Devel-Symdump \
+		devel/p5-Error \
+		devel/p5-Class-Inner
 
 .include <bsd.port.mk>

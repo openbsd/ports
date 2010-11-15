@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,8 +26,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python converters/libiconv
 
-LIB_DEPENDS=	::devel/silc-toolkit
-WANTLIB +=	silc.>=7 silcclient.>=5
+LIB_DEPENDS=	devel/silc-toolkit
+WANTLIB +=	silc>=7 silcclient>=5
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Curses-*:devel/p5-Curses
+RUN_DEPENDS=	devel/p5-Curses
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Regress tests require an interactive terminal

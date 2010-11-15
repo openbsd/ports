@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=		temporary files support for testing
 
@@ -13,9 +13,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/p5-MooseX-Types-Path-Class \
-			::sysutils/p5-File-NFSLock
+RUN_DEPENDS=		devel/p5-MooseX-Types-Path-Class \
+			sysutils/p5-File-NFSLock
 
 .include <bsd.port.mk>

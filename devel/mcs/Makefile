@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
@@ -20,7 +20,7 @@ WANTLIB = 	c mowgli
 MASTER_SITES =	http://distfiles.atheme.org/
 EXTRACT_SUFX =	.tgz
 
-LIB_DEPENDS =	::devel/mowgli
+LIB_DEPENDS =	devel/mowgli
 
 MAKE_ENV =	LIBmcs_VERSION=${LIBmcs_VERSION}
 

@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	regression testing framework for PHP 5
 
 DISTNAME=	PHPUnit2-2.1.6
-PKGNAME=	pear-${DISTNAME}p1
+PKGNAME=	pear-${DISTNAME}
+REVISION =	1
 CATEGORIES=	devel
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 MODULES=	www/pear
 
-RUN_DEPENDS=	::benchmarks/pear-Benchmark
+RUN_DEPENDS=	benchmarks/pear-Benchmark
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

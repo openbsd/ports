@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:07 espie Exp $
 
 COMMENT =		python bytecode assembler
 
@@ -24,8 +24,8 @@ EXTRACT_SUFX =		.zip
 UNZIP =			unzip -a
 
 MODULES =		lang/python
-RUN_DEPENDS =		::devel/py-decoratortools \
-			::devel/py-symboltype
+RUN_DEPENDS =		devel/py-decoratortools \
+			devel/py-symboltype
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS =	Yes

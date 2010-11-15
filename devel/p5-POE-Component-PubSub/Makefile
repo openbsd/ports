@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=		publish/subscribe to publish events from POE::Sessions
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/p5-POE
+RUN_DEPENDS=		devel/p5-POE
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	GNU m4
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c sigsegv
 
-LIB_DEPENDS=	::devel/libsigsegv
+LIB_DEPENDS=	devel/libsigsegv
 
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--program-prefix="g"

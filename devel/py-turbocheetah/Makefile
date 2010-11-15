@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PYPI:=T/TurboCheetah/}
 
 MODULES=		lang/python
-RUN_DEPENDS=		::devel/py-cheetah
-REGRESS_DEPENDS=	::devel/py-cheetah \
-			::devel/py-nose
+RUN_DEPENDS=		devel/py-cheetah
+REGRESS_DEPENDS=	devel/py-cheetah \
+			devel/py-nose
 
 SUBST_VARS=		VERSION
 

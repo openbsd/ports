@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		Ruby interface to gettext
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
-BUILD_DEPENDS=		:${MODRUBY_PKG_PREFIX}-locale-*:devel/ruby-locale,${FLAVOR}
+BUILD_DEPENDS=		devel/ruby-locale,${FLAVOR}
 RUN_DEPENDS=		${MODRUBY_ICONV_DEPENDS} \
-			:${MODRUBY_PKG_PREFIX}-locale-*:devel/ruby-locale,${FLAVOR}
+			devel/ruby-locale,${FLAVOR}
 
 CONFIGURE_STYLE=	ruby gem
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
@@ -14,12 +14,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/p5-Devel-PartialDump \
-			::devel/p5-MooseX-Types \
-			::devel/p5-Sub-Exporter
+RUN_DEPENDS=		devel/p5-Devel-PartialDump \
+			devel/p5-MooseX-Types \
+			devel/p5-Sub-Exporter
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_DEPENDS=	::devel/p5-Test-Exception
+REGRESS_DEPENDS=	devel/p5-Test-Exception
 .include <bsd.port.mk>

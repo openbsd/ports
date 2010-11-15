@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/15 19:46:09 espie Exp $
 
 COMMENT-main=	simplified wrapper and interface generator
 
@@ -26,7 +26,7 @@ MODULES=	lang/python lang/tcl lang/ruby
 RUN_DEPENDS-main=
 MODRUBY_RUNDEP=	No
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
-		::lang/guile
+		lang/guile
 
 
 USE_GMAKE=	Yes

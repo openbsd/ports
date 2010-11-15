@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:03 espie Exp $
 
 COMMENT =	manipulate file metadata
 
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	::devel/p5-Best \
-		::devel/p5-YAML
+RUN_DEPENDS =	devel/p5-Best \
+		devel/p5-YAML
 
 # p5-Directory-Scratch should be REGRESS_DEPENDS but Module::Install screws up
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		::devel/p5-Directory-Scratch \
-		::devel/p5-YAML-Syck
+		devel/p5-Directory-Scratch \
+		devel/p5-YAML-Syck
 
 MAKE_ENV +=	TEST_POD=1
 

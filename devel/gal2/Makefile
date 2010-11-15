@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		GNOME Application Libs
 
@@ -40,8 +40,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		::x11/gnome/libgnomeui \
-			::x11/gnome/libgnomeprintui
+LIB_DEPENDS=		x11/gnome/libgnomeui \
+			x11/gnome/libgnomeprintui
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

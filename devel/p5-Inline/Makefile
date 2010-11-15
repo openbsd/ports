@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=	write Perl subroutines in other programming languages
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Parse-RecDescent
+RUN_DEPENDS=	devel/p5-Parse-RecDescent
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=	generic game engine library
 
 VERSION=	0.1.4
 DISTNAME=	flatzebra-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 
 SHARED_LIBS+=	flatzebra-0.1 1.0	# .2.0
 
@@ -21,12 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += SDL X11 Xau Xdmcp Xext Xrandr Xrender jpeg m mikmod
 WANTLIB += ogg png pthread-stubs smpeg sndio tiff usbhid vorbis
 WANTLIB += vorbisfile xcb z
-WANTLIB += SDL_image.>=2 SDL_mixer.>=3
+WANTLIB += SDL_image>=2 SDL_mixer>=3
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
 MODULES=	converters/libiconv
 USE_LIBTOOL=	Yes

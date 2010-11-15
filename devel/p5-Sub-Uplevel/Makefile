@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:05 espie Exp $
 
 COMMENT = 	Perl library for manipulating frame stack
 
 MODULES =	cpan
 DISTNAME =	Sub-Uplevel-0.22
-PKGNAME =	p5-${DISTNAME}v0
+EPOCH =		0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

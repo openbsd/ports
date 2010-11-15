@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/15 19:45:58 espie Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric, bump PKGNAME then change the
@@ -33,8 +33,8 @@ WANTLIB += z xcb-render xcb-render-util gsf-1 gconf-2
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/libgsf \
-			::devel/gconf2
+LIB_DEPENDS=		devel/libgsf \
+			devel/gconf2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

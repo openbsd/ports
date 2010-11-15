@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		Python Abstract Syntax Tree New Generation
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.logilab.fr/pub/astng/
 
 MODULES=		lang/python
-RUN_DEPENDS=		:py-logilab-common-*:devel/py-logilab-common
+RUN_DEPENDS=		devel/py-logilab-common
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
-			:pylint-*:devel/pylint
+			devel/pylint
 
 do-regress: install
 	cd ${WRKSRC}/test && ${MODPY_BIN} ./regrtest.py

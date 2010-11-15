@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	small utility package for Divmod projects
 
@@ -23,10 +23,10 @@ MASTER_SITES=	http://ekyo.nerim.net/distfiles/
 MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-twisted-core-*:devel/py-twisted/core
+RUN_DEPENDS=	devel/py-twisted/core
 
 REGRESS_DEPENDS=${RUN_DEPENDS} \
-		:py-tz-*:devel/py-tz
+		devel/py-tz
 
 MODPY_EGG_VERSION=${VERSION}
 MODPY_DISTUTILS_BUILD=	build --build-base=${WRKSRC}/.build

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2009/01/12 16:15:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	SGI audiofile library clone
 
 DISTNAME=	audiofile-0.2.6
-PKGNAME=	lib${DISTNAME}p2
+PKGNAME=	lib${DISTNAME}
+REVISION =	2
 SHARED_LIBS +=	audiofile            0.2      # .0.2
 CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/audiofile/0.2/}

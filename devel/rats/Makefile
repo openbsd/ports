@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		source code auditing tool
 
 DISTNAME=		rats-2.1
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=     	devel security
 
 HOMEPAGE=		http://www.securesoftware.com/rats/
@@ -28,7 +28,7 @@ MAKE_FLAGS=		CFLAGS='${CFLAGS} \
 			  -DDATADIR=\"${LOCALBASE}/share/rats\"'
 
 ALL_TARGET=		rats
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 post-install:

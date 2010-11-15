@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:03 espie Exp $
 
 COMMENT =	use Hash::Util::FieldHash or ties, depending on availability
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-REGRESS_DEPENDS =	::devel/p5-Test-use-ok
+REGRESS_DEPENDS =	devel/p5-Test-use-ok
 
 .include <bsd.port.mk>

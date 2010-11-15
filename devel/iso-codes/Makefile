@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/01 17:22:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -23,7 +23,7 @@ CONFIGURE_STYLE=gnu
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	::devel/gettext
+BUILD_DEPENDS=	devel/gettext
 
 FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=	fast lexical analyzer generator
 
@@ -18,8 +18,8 @@ WANTLIB=	c m
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::devel/help2man \
-		::devel/bison
+BUILD_DEPENDS=	devel/help2man \
+		devel/bison
 
 YACC=		bison
 USE_GMAKE=	Yes

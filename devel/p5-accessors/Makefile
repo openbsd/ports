@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=                create accessor methods in caller's package
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 CONFIGURE_STYLE=        modbuild
 
 MODULES=                cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CPAN_AUTHOR=            SPURKIS
 
 PKG_ARCH=		*

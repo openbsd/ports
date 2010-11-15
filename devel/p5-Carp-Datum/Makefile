@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Getargs-Long->=0.1.3:devel/p5-Getargs-Long
+RUN_DEPENDS=	p5-Getargs-Long->=0.1.3:devel/p5-Getargs-Long
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	optimized replacement for Ruby thread.rb primitives
 
@@ -16,7 +16,7 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem ext
 
-REGRESS_DEPENDS=:${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress: fake
 	@cd ${WRKBUILD} && ${RUBY} -rubygems test/test_all.rb

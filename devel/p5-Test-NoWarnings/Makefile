@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=        forbids warnings while testing
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Test-Tester
+RUN_DEPENDS=	devel/p5-Test-Tester
 
-REGRESS_DEPENDS=::devel/p5-Devel-StackTrace
+REGRESS_DEPENDS=devel/p5-Devel-StackTrace
 
 .include <bsd.port.mk>

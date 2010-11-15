@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	HTTP protocol implementation
 
@@ -13,8 +13,8 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWeb
 
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web/${VERSION:R}/
 
-RUN_DEPENDS=	:py-SOAPpy-*:devel/py-SOAPpy
-REGRESS_DEPENDS=:py-twisted-web-*:devel/py-twisted/web
+RUN_DEPENDS=	devel/py-SOAPpy
+REGRESS_DEPENDS=devel/py-twisted/web
 
 TRIAL_TARGET=	twisted.web
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:05 espie Exp $
 
 COMMENT= 	create readonly variables faster
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Readonly->=1.02:devel/p5-Readonly
+RUN_DEPENDS=	p5-Readonly->=1.02:devel/p5-Readonly
 
 .include <bsd.port.mk>

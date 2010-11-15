@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
@@ -20,6 +20,6 @@ CONFIGURE_STYLE = ruby gem
 
 MODRUBY_REGRESS = rake
 
-REGRESS_DEPENDS = :${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+REGRESS_DEPENDS = devel/ruby-hoe,${FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 07:27:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 
-BUILD_DEPENDS =		::textproc/docbook-xsl \
-			::textproc/libxslt
+BUILD_DEPENDS =		textproc/docbook-xsl \
+			textproc/libxslt
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 

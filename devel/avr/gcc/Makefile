@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -22,13 +22,13 @@ DISTFILES=	gcc-core-${V}${EXTRACT_SUFX} \
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(V)/}
 
-BUILD_DEPENDS+=		:autoconf-2.13:devel/autoconf/2.13 \
-			:bison-*:devel/bison		\
-			::devel/metaauto		\
-			::devel/avr/binutils
+BUILD_DEPENDS+=		autoconf-2.13:devel/autoconf/2.13 \
+			devel/bison		\
+			devel/metaauto		\
+			devel/avr/binutils
 
-LIB_DEPENDS=		:gmp->=4.2:devel/gmp \
-			::devel/mpfr
+LIB_DEPENDS=		gmp->=4.2:devel/gmp \
+			devel/mpfr
 
 LANGS=c,c++
 # dear autoconf, why do you suck so hard?
@@ -51,7 +51,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 YACC=		bison
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 SUBST_VARS=	V
 

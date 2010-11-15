@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	extracts the parse tree for an entire class or a method
 
@@ -20,12 +20,12 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-rubyinline->=3.7.0:devel/ruby-rubyinline,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-sexp_processor->=3.0.0:devel/ruby-sexp_processor,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS =		STEM->=3.7.0:devel/ruby-rubyinline,${FLAVOR} \
+			STEM->=3.0.0:devel/ruby-sexp_processor,${FLAVOR} \
+			devel/ruby-hoe,${FLAVOR}
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-ruby2ruby-*:devel/ruby-ruby2ruby,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-minitest-*:devel/ruby-minitest,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-ruby2ruby,${FLAVOR} \
+			devel/ruby-minitest,${FLAVOR}
 MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:57 espie Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://dissy.googlecode.com/files/
 
 MODULES =	lang/python
-RUN_DEPENDS =	::x11/py-gtk2
+RUN_DEPENDS =	x11/py-gtk2
 
 NO_REGRESS =	Yes
 PKG_ARCH =	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
 
 COMMENT =	create machine readable date/time with natural parsing logic
 
@@ -15,14 +15,14 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		::devel/p5-Date-Calc \
-			::devel/p5-DateTime \
-			::devel/p5-List-MoreUtils \
-			::devel/p5-Params-Validate \
-			::devel/p5-boolean
-REGRESS_DEPENDS =	::devel/p5-Test-MockTime
+RUN_DEPENDS =		devel/p5-Date-Calc \
+			devel/p5-DateTime \
+			devel/p5-List-MoreUtils \
+			devel/p5-Params-Validate \
+			devel/p5-boolean
+REGRESS_DEPENDS =	devel/p5-Test-MockTime
 
 MAKE_ENV +=		TEST_POD=1
 

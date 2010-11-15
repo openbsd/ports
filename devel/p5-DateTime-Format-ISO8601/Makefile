@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:02 espie Exp $
 
 COMMENT= 	DateTime parser for ISO8601 date formats
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-DateTime-Format-Builder 
+RUN_DEPENDS=	devel/p5-DateTime-Format-Builder 
 
 CONFIGURE_STYLE=modbuild
 

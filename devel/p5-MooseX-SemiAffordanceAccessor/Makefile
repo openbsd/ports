@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:04 espie Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =		::devel/p5-Moose
+RUN_DEPENDS =		devel/p5-Moose
 
 CONFIGURE_STYLE =	modbuild
 

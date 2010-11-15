@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
@@ -18,10 +18,10 @@ WANTLIB=		c expat m ncurses
 
 MASTER_SITES=   	${MASTER_SITE_GNU:=gdb/}
 
-REGRESS_DEPENDS=	::devel/dejagnu
+REGRESS_DEPENDS=	devel/dejagnu
 
-RUN_DEPENDS=		::devel/avr/binutils \
-			::devel/avr/gcc
+RUN_DEPENDS=		devel/avr/binutils \
+			devel/avr/gcc
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 

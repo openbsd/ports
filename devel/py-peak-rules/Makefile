@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =		generic functions support systems
 
@@ -23,10 +23,10 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://peak.telecommunity.com/snapshots/
 
 MODULES =		lang/python
-RUN_DEPENDS =		::devel/py-bytecodeassembler \
-			::devel/py-decoratortools \
-			::devel/py-addons \
-			::devel/py-extremes
+RUN_DEPENDS =		devel/py-bytecodeassembler \
+			devel/py-decoratortools \
+			devel/py-addons \
+			devel/py-extremes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS =	Yes

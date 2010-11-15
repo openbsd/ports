@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:01 espie Exp $
 
 COMMENT= 	perform diffs on arrays
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV+=	TEST_POD=1
 
-RUN_DEPENDS=	::devel/p5-Algorithm-Diff \
-		::devel/p5-Class-Accessor
+RUN_DEPENDS=	devel/p5-Algorithm-Diff \
+		devel/p5-Class-Accessor
 
 .include <bsd.port.mk>

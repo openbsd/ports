@@ -1,10 +1,10 @@
-# $OpenBSD: gconf2.port.mk,v 1.5 2010/11/06 20:48:11 espie Exp $
+# $OpenBSD: gconf2.port.mk,v 1.6 2010/11/15 19:45:58 espie Exp $
 
 
 MODGCONF2_WANTLIB =	gconf-2
-MODGCONF2_LIB_DEPENDS =	::devel/gconf2
-MODGCONF2_BUILD_DEPENDS =:gconf2-*:devel/gconf2
-MODGCONF2_RUN_DEPENDS =	:gconf2-*:devel/gconf2
+MODGCONF2_LIB_DEPENDS =	devel/gconf2
+MODGCONF2_BUILD_DEPENDS =devel/gconf2
+MODGCONF2_RUN_DEPENDS =	devel/gconf2
 
 MODGCONF2_LIBDEP ?=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/15 19:45:59 espie Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -28,19 +28,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -gnome
 
-WANTLIB += c m z pcre pthread bz2.>=10.2 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 xml2.>=8.4
+WANTLIB += c m z pcre pthread bz2>=10.2 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 xml2>=8.4
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=  	:py-gtk2->=2.10:x11/py-gtk2 \
-			:popt-*:devel/popt
-LIB_DEPENDS=		::archivers/bzip2 \
-			::devel/glib2 \
-			::textproc/libxml
+BUILD_DEPENDS=  	py-gtk2->=2.10:x11/py-gtk2 \
+			devel/popt
+LIB_DEPENDS=		archivers/bzip2 \
+			devel/glib2 \
+			textproc/libxml
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
@@ -63,8 +63,8 @@ USE_GROFF =	Yes
 RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
 			${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-gnome=	${LIB_DEPENDS} \
-			::${BUILD_PKGPATH} \
-			::x11/gnome/libbonobo
+			${BUILD_PKGPATH} \
+			x11/gnome/libbonobo
 WANTLIB-gnome += ${WANTLIB} gsf-1 bonobo-2 bonobo-activation
 WANTLIB-gnome += ORBit-2 ORBitCosNaming-2 gdk_pixbuf-2.0 gthread-2.0
 

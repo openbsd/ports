@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/22 12:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	GNU Standards-compliant Makefile generator
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=gnu
 
-REGRESS_DEPENDS=:gmake-*:devel/gmake
+REGRESS_DEPENDS=devel/gmake
 
 SUFFIX=		-${VERSION}
 SUBST_VARS=	SUFFIX

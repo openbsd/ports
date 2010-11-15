@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	create multiple virtual instances of a Perl interpreter
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Hash-NoRef-*:devel/p5-Hash-NoRef \
-		:p5-Safe-Hole-*:devel/p5-Safe-Hole
+RUN_DEPENDS=	devel/p5-Hash-NoRef \
+		devel/p5-Safe-Hole
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

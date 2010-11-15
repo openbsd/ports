@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/27 13:09:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 19:45:58 espie Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -35,10 +35,10 @@ WANTLIB += m pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-render-util z gio-2.0 glib-2.0 gmodule-2.0 ffi
 WANTLIB += gobject-2.0 gthread-2.0 cairo
 
-LIB_DEPENDS=		::devel/glib2 \
-			::devel/libffi \
-			::graphics/cairo
-BUILD_DEPENDS=		::devel/bison
+LIB_DEPENDS=		devel/glib2 \
+			devel/libffi \
+			graphics/cairo
+BUILD_DEPENDS=		devel/bison
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes

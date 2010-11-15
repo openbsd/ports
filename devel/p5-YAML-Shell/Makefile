@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		YAML Test Shell
 
@@ -13,8 +13,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		:p5-YAML->=0.68:devel/p5-YAML
+RUN_DEPENDS=		p5-YAML->=0.68:devel/p5-YAML
 
 .include <bsd.port.mk>

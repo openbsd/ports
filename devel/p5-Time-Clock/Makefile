@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=		simple 24 hours clock object
 
 MODULES=		cpan
 DISTNAME=		Time-Clock-0.12
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

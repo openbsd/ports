@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	utilities for handling Byte Order Marks
 
@@ -7,8 +7,8 @@ DISTNAME=	File-BOM-0.14
 REVISION=	0
 CATEGORIES=	devel
 
-RUN_DEPENDS=	::devel/p5-Readonly
-REGRESS_DEPENDS=::devel/p5-Test-Exception
+RUN_DEPENDS=	devel/p5-Readonly
+REGRESS_DEPENDS=devel/p5-Test-Exception
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:09 espie Exp $
 
 COMMENT =	generating pure Ruby code easily from ParseTree\'s Sexps
 
@@ -15,13 +15,13 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-parsetree->=3.0:devel/ruby-parsetree,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-ruby_parser->=2.0:devel/ruby-ruby_parser,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-sexp_processor->=3.0:devel/ruby-sexp_processor,${FLAVOR}
+RUN_DEPENDS =		STEM->=3.0:devel/ruby-parsetree,${FLAVOR} \
+			STEM->=2.0:devel/ruby-ruby_parser,${FLAVOR} \
+			STEM->=3.0:devel/ruby-sexp_processor,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS  =	:${MODRUBY_PKG_PREFIX}-hoe->=2.3.3:devel/ruby-hoe,${FLAVOR}
+REGRESS_DEPENDS  =	STEM->=2.3.3:devel/ruby-hoe,${FLAVOR}
 
 MODRUBY_REGRESS  =	rake
 

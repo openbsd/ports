@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=	Mayan Long Count calendar
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes
-RUN_DEPENDS=	:p5-DateTime->=0.5000:devel/p5-DateTime
+RUN_DEPENDS=	p5-DateTime->=0.5000:devel/p5-DateTime
 
 CONFIGURE_STYLE=modbuild
 

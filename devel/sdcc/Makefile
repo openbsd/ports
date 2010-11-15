@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/06 17:15:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	Small Device C Compiler
 
@@ -21,7 +21,7 @@ WANTLIB=		c m stdc++ readline termcap
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/gputils
+RUN_DEPENDS=		devel/gputils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc

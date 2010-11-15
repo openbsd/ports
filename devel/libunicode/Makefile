@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	library for manipulating Unicode characters and strings
 
 DISTNAME=	libunicode-0.4
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 SHARED_LIBS=	unicode 0.0
 
 CATEGORIES=	devel

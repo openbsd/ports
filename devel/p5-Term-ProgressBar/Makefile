@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=		text mode progress bar 
 
 MODULES=		cpan
 DISTNAME=		Term-ProgressBar-2.09
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS	= ${RUN_DEPENDS}
-RUN_DEPENDS	= ::devel/p5-Class-MethodMaker \
-		  ::devel/p5-Term-ReadKey
+RUN_DEPENDS	= devel/p5-Class-MethodMaker \
+		  devel/p5-Term-ReadKey
 
 .include <bsd.port.mk>

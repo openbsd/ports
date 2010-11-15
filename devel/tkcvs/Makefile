@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-6.0
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	devel
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>

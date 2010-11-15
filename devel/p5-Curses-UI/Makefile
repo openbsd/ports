@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=	curses based user interface framework for Perl
 
@@ -8,10 +8,10 @@ DISTNAME=	Curses-UI-0.9607
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::devel/p5-Curses \
-		::devel/p5-Term-ReadKey
+RUN_DEPENDS=	devel/p5-Curses \
+		devel/p5-Term-ReadKey
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/p5-Test-Pod
+		devel/p5-Test-Pod
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

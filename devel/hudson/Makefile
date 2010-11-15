@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/09 21:39:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		continuous integration server
 
@@ -29,7 +29,7 @@ MODULES =		java
 MODJAVA_VER =		1.6+
 MODJAVA_JRE =		yes
 
-RUN_DEPENDS =		::java/javaPathHelper
+RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/09 08:52:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =	libevent extra features
 
 VERSION =	1.4.13
 DISTNAME =	libevent-${VERSION}-stable
-PKGNAME =	libeventextra-${VERSION}p0
+PKGNAME =	libeventextra-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =    eventextra 1.0
 

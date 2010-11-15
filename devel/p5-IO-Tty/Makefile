@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:03 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ MODULES=		cpan
 DISTNAME=		IO-Tty-1.08
 REVISION=		0
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

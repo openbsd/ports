@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/08 12:29:24 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/15 19:46:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,14 +29,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MULTI_PACKAGES=		-main -perl
 
 WANTLIB-main=		c m stdc++
 
 CATEGORIES-perl=	devel perl5
-WANTLIB-perl=		uuid.>=12
-LIB_DEPENDS-perl=	::devel/uuid
+WANTLIB-perl=		uuid>=12
+LIB_DEPENDS-perl=	devel/uuid
 
 USE_LIBTOOL=		Yes
 

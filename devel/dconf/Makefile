@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/27 11:38:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,8 +34,8 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png xml2
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::lang/vala
-LIB_DEPENDS=	::x11/gtk+2
+BUILD_DEPENDS=	lang/vala
+LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

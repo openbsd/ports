@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:02 espie Exp $
 
 COMMENT =		validate recursive perl hash structures
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
-RUN_DEPENDS =		::textproc/p5-Regexp-Common \
-			::devel/p5-Data-Validate
+USE_GROFF =		Yes
+RUN_DEPENDS =		textproc/p5-Regexp-Common \
+			devel/p5-Data-Validate
 
 .include <bsd.port.mk>

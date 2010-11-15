@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/10 07:58:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ MODJAVA_VER=		1.6
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
-RUN_DEPENDS=		::devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils
 
 NO_REGRESS=		Yes
 SUBST_VARS+=		JAVA_HOME

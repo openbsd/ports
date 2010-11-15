@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/09/02 07:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	SDL cross-platform networking library
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	SDL m sndio usbhid
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

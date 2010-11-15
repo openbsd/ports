@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/24 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
 
 V =		2.95.3
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -21,7 +21,7 @@ MINOR =	0
 SHARED_LIBS =	g2c	${MAJOR}.${MINOR}
 
 WRKDIST =	${WRKDIR}/libf2c
-BUILD_DEPENDS =	::lang/g77-old:patch
+BUILD_DEPENDS =	lang/g77-old:patch
 LIBIBERTY_INCLUDES =	${WRKDIR}/lang/g77-old/libiberty/include
 EGCS_DIR = ${WRKDIR}/lang/g77-old/g77
 

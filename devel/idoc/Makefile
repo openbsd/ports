@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/27 18:18:29 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		minimalist documentation tool for Haskell
 
@@ -22,9 +22,9 @@ WANTLIB =		c m
 WANTLIB +=		gmp pthread util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 .else
-BUILD_DEPENDS +=	::lang/nhc98
+BUILD_DEPENDS +=	lang/nhc98
 MAKE_FLAGS =		HC=nhc98
 .endif
 

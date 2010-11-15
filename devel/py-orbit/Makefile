@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -25,7 +25,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		::devel/ORBit2
+		devel/ORBit2
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

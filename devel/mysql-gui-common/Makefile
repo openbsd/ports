@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	common libraries and data for the MySQL GUI Suites
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-gui-common-5.0.6.1r12p3
+PKGNAME=	mysql-gui-common-5.0.6.1r12
+REVISION =	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -18,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
-BUILD_DEPENDS=	::devel/gettext \
-		:libxml->=2.6.2:textproc/libxml \
-		:glib2->=2.6.2:devel/glib2 \
-		::devel/libglade2 \
-		::x11/gtk2mm \
-		::databases/mysql \
-		::devel/pcre
+BUILD_DEPENDS=	devel/gettext \
+		libxml->=2.6.2:textproc/libxml \
+		glib2->=2.6.2:devel/glib2 \
+		devel/libglade2 \
+		x11/gtk2mm \
+		databases/mysql \
+		devel/pcre
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

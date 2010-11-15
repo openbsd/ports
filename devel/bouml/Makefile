@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/05 10:06:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:56 espie Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -28,7 +28,7 @@ MULTI_PACKAGES= 	-main -docs
 
 WANTLIB =		X11 Xext c m pthread stdc++
 
-RUN_DEPENDS-main=	::devel/desktop-file-utils
+RUN_DEPENDS-main=	devel/desktop-file-utils
 
 MODULES=		x11/qt3
 USE_GMAKE=		Yes

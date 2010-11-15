@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:03 espie Exp $
 
 COMMENT =		compare two directories using callbacks
 
@@ -6,7 +6,7 @@ MODULES =		cpan
 DISTNAME =		File-DirCompare-0.6
 REVISION =		0
 CATEGORIES =		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CPAN_AUTHOR =		GAVINC
 

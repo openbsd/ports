@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/13 18:46:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/15 19:46:10 espie Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -39,16 +39,16 @@ WANTLIB += z gthread-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 GL Xxf86vm
 
 WANTLIB-main=		${WANTLIB} util c pthread
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::x11/gtk+2
+			x11/gtk+2
 
-WANTLIB-python= 	${WANTLIB} ffi vte.>=14 gtk-x11-2.0
+WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
 BUILD_DEPENDS=		${RUN_DEPENDS-python}
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
-			::${BASE_PKGPATH} \
-			::devel/libffi
+			${BASE_PKGPATH} \
+			devel/libffi
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
-			::x11/py-gtk2
+			x11/py-gtk2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

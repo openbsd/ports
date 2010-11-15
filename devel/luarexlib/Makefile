@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:00 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
@@ -22,11 +22,11 @@ MAKE_ENV+=	MAKE_PROGRAM=${MAKE_PROGRAM} \
 		INC_LUA=-I${LOCALBASE}/include \
 		LIB_LUA="-L${LOCALBASE}/lib -llua"
 MODULES=	lang/lua
-LIB_DEPENDS=	::devel/pcre \
-		::lang/lua \
-		::textproc/oniguruma
-WANTLIB =	pcre.>=1.0 lua onig
-REGRESS_DEPENDS+=::devel/luarexlib
+LIB_DEPENDS=	devel/pcre \
+		lang/lua \
+		textproc/oniguruma
+WANTLIB =	pcre>=1.0 lua onig
+REGRESS_DEPENDS+=devel/luarexlib
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}

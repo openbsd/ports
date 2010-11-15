@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/07 16:52:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
@@ -24,10 +24,10 @@ WRKDIST=	${WRKDIR}/spe-$V.h
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:py-wxPython-*:x11/py-wxPython \
-		:py-crypto-*:security/py-crypto \
-		:py-Checker-*:devel/py-Checker
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/py-wxPython \
+		security/py-crypto \
+		devel/py-Checker
 
 NO_REGRESS=	Yes
 

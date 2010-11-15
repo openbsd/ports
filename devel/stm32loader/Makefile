@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/05 14:02:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	STM32 bootloader to upload and download firmware
 
@@ -16,7 +16,7 @@ MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::devel/py-serial
+RUN_DEPENDS=	devel/py-serial
 
 MODPY_ADJ_FILES=stm32loader.py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	Perl extension to test methods for warnings
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 EXTRACT_SUFX=	.zip
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Array-Compare \
-		::devel/p5-Test-Exception \
-		::devel/p5-Tree-DAG_Node
+RUN_DEPENDS=	devel/p5-Array-Compare \
+		devel/p5-Test-Exception \
+		devel/p5-Tree-DAG_Node
 
 MAKE_ENV+=	TEST_POD=Yes
 

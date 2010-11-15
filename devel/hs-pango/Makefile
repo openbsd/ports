@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		Haskell bindings to pango
 
@@ -21,11 +21,11 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 MODGHC_SETUP_CONF_ARGS =-f 'new-exception'
 
-BUILD_DEPENDS =		::devel/gtk2hs-buildtools
+BUILD_DEPENDS =		devel/gtk2hs-buildtools
 
-LIB_DEPENDS =		:hs-glib->=0.11.1,<0.12:devel/hs-glib \
-			::devel/pango \
-			:hs-cairo->=0.11.1,<0.12:graphics/hs-cairo
+LIB_DEPENDS =		hs-glib->=0.11.1,<0.12:devel/hs-glib \
+			devel/pango \
+			hs-cairo->=0.11.1,<0.12:graphics/hs-cairo
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
 
 # XXX use system pcre instead of the one included the distfile
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		:hs-regex-base->=0.93:devel/hs-regex-base
+LIB_DEPENDS =		hs-regex-base->=0.93:devel/hs-regex-base
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

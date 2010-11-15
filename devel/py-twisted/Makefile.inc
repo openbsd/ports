@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2010/07/05 13:37:02 eric Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2010/11/15 19:46:08 espie Exp $
 
 CATEGORIES+=	devel
 
@@ -17,9 +17,9 @@ MODULES=	lang/python
 MODPY_EGG_VERSION?=	${VERSION}
 
 .if empty(PKGNAME:L:M*core*)
-RUN_DEPENDS+=		:py-twisted-core-*:devel/py-twisted/core
+RUN_DEPENDS+=		devel/py-twisted/core
 .else
-REGRESS_DEPENDS+=	:py-twisted-core-*:devel/py-twisted/core
+REGRESS_DEPENDS+=	devel/py-twisted/core
 .endif
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS+=${RUN_DEPENDS}

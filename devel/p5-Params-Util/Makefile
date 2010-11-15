@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=		utility to make parameter checking easier
 
@@ -8,7 +8,7 @@ MODULES=		cpan
 DISTNAME=		Params-Util-1.00
 REVISION=		1
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

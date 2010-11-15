@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libofx/}
 MODULES=	devel/gettext
 WANTLIB=	c m pthread stdc++ osp
 
-LIB_DEPENDS=	::textproc/opensp
+LIB_DEPENDS=	textproc/opensp
 
 USE_LIBTOOL=	Yes
 

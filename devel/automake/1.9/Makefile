@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/06 10:54:53 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -39,13 +39,13 @@ SUBST_VARS=		SUFFIX
 
 REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODPY_RUN_DEPENDS} \
-			::devel/libtool \
-			::devel/gmake \
-			::archivers/bzip2 \
-			::devel/bison \
-			::editors/emacs21 \
-			::print/texlive/base \
-			::devel/dejagnu
+			devel/libtool \
+			devel/gmake \
+			archivers/bzip2 \
+			devel/bison \
+			editors/emacs21 \
+			print/texlive/base \
+			devel/dejagnu
 
 TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}

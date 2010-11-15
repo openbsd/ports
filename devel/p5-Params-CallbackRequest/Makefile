@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	functional and object-oriented callback architecture
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Params-Validate \
-		::devel/p5-Exception-Class
+RUN_DEPENDS=	devel/p5-Params-Validate \
+		devel/p5-Exception-Class
 
 CONFIGURE_STYLE=modbuild
 

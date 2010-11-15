@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	test output of other modules
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/p5-Sub-Exporter \
-			::devel/p5-Test-Tester
+RUN_DEPENDS=		devel/p5-Sub-Exporter \
+			devel/p5-Test-Tester
 
 MAKE_ENV=		TEST_POD=Yes
 .include <bsd.port.mk>

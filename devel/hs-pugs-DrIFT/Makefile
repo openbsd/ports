@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		DrIFT with pugs-specific rules
 
@@ -18,8 +18,8 @@ WANTLIB =		c gmp m pthread util
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		::devel/hs-HsSyck \
-			::devel/hs-stm
+LIB_DEPENDS =		devel/hs-HsSyck \
+			devel/hs-stm
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

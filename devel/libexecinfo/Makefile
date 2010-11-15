@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	clone of backtrace facility found in the GNU libc
 
 DISTNAME=	libexecinfo-1.1
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	devel
 
 SHARED_LIBS=	execinfo	0.0

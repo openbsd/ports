@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/31 11:21:13 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -23,7 +23,7 @@ MASTER_SITES =	http://googletest.googlecode.com/files/
 
 SEPARATE_BUILD =	simple
 
-USE_LIBTOOL =	Yes
+USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 

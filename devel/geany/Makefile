@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/15 19:45:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,8 +37,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-render-util z
 
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

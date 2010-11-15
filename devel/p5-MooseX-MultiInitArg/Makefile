@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=	attributes with aliases for constructor arguments for MooseX
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes
-RUN_DEPENDS=	::devel/p5-Moose
+RUN_DEPENDS=	devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes

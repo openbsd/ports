@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	alternative interface to File::Find
 
@@ -13,8 +13,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Number-Compare-*:devel/p5-Number-Compare \
-		:p5-Text-Glob-*:textproc/p5-Text-Glob
+RUN_DEPENDS=	devel/p5-Number-Compare \
+		textproc/p5-Text-Glob
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

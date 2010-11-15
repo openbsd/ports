@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/06/11 19:10:07 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	Type 1 rasterizer library for UNIX/X11
 
 DISTNAME=	t1lib-5.1.0
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	devel textproc
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_BACKUP}

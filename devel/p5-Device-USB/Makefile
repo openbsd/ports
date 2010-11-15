@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=		perl wrapper around libusb
 
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/p5-Inline
-LIB_DEPENDS =		::devel/libusb
+RUN_DEPENDS=		devel/p5-Inline
+LIB_DEPENDS =		devel/libusb
 WANTLIB =		usb
 
 CONFIGURE_ENV+= 	LIBUSB_INCDIR="${LOCALBASE}/include" \
 			LIBUSB_LIBDIR="${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/Device/USB.pm

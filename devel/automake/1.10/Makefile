@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/06 10:54:53 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -39,15 +39,15 @@ SUBST_VARS=		SUFFIX
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/automake${SUFFIX}
 
-REGRESS_DEPENDS=	::${BASE_PKGPATH} \
+REGRESS_DEPENDS=	${BASE_PKGPATH} \
 			${MODPY_RUN_DEPENDS} \
-			:autoconf-${AUTOCONF_REGRESS}:devel/autoconf/${AUTOCONF_REGRESS} \
-			::devel/libtool \
-			::devel/gmake \
-			::archivers/bzip2 \
-			::devel/bison \
-			::editors/emacs21 \
-			::devel/dejagnu
+			autoconf-${AUTOCONF_REGRESS}:devel/autoconf/${AUTOCONF_REGRESS} \
+			devel/libtool \
+			devel/gmake \
+			archivers/bzip2 \
+			devel/bison \
+			editors/emacs21 \
+			devel/dejagnu
 
 TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_REGRESS} \
 			MAKE=${GMAKE}

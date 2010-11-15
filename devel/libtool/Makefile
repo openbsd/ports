@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.75 2010/06/12 20:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2010/11/15 19:46:00 espie Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
 VERSION=	1.5.26
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}p4
-PKGNAME-ltdl=	libltdl-${VERSION}p0
+PKGNAME-main=	${DISTNAME}
+REVISION-main =	4
+PKGNAME-ltdl=	libltdl-${VERSION}
+REVISION-ltdl =	0
 SHARED_LIBS=		ltdl 4.5
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
 
@@ -39,7 +41,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 
 MULTI_PACKAGES=	-main -ltdl
 
-RUN_DEPENDS-main=	::devel/libtool,-ltdl
+RUN_DEPENDS-main=	devel/libtool,-ltdl
 
 pre-configure:
 	cd ${WRKDIR}/bin && ln -sf /usr/bin/true g77	

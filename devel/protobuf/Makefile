@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/24 19:03:37 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:07 espie Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -24,7 +24,7 @@ WANTLIB +=	c m pthread stdc++ z
 
 MASTER_SITES =		http://protobuf.googlecode.com/files/
 
-REGRESS_DEPENDS =	::devel/gtest
+REGRESS_DEPENDS =	devel/gtest
 
 SEPARATE_BUILD =	concurrent
 USE_GMAKE =		Yes

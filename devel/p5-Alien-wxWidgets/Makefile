@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
 
 COMMENT =	building, finding and using wxWidgets binaries
 
@@ -19,7 +19,7 @@ CONFIGURE_STYLE =	modbuild
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/inc/My/Build/Any_wx_config_Bakefile.pm
 
-RUN_DEPENDS =	::x11/wxWidgets
+RUN_DEPENDS =	x11/wxWidgets
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

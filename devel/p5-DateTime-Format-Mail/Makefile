@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:02 espie Exp $
 
 COMMENT= 	parsesr Email dates into DateTime
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
 
-RUN_DEPENDS=	::devel/p5-DateTime \
-		::devel/p5-Params-Validate
+RUN_DEPENDS=	devel/p5-DateTime \
+		devel/p5-Params-Validate
 
 .include <bsd.port.mk>

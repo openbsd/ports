@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	qt git repository viewer
 CATEGORIES =	devel x11
 HOMEPAGE =	http://digilander.libero.it/mcostalba/
 
 DISTNAME =	qgit-1.5.7
-PKGNAME =	${DISTNAME}p1
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qgit/}
@@ -16,7 +16,7 @@ CONFIGURE_ENV += ${MODQT_CONFIGURE_ENV} LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ENV += QT_MOC=${MODQT3_MOC} QT_UIC=${MODQT3_UIC}
 CONFIGURE_ARGS += ${MODQT_CONFIGURE_ARGS}
 
-RUN_DEPENDS = ::devel/git
+RUN_DEPENDS = devel/git
 
 # GPLv2
 PERMIT_DISTFILES_CDROM =Yes

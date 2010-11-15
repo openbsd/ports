@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	perl cache interface
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Digest-SHA1->=2.02:security/p5-Digest-SHA1 \
-		:p5-IPC-ShareLite->=0.09:devel/p5-IPC-ShareLite \
-		:p5-Error->=0.15:devel/p5-Error
+RUN_DEPENDS=	p5-Digest-SHA1->=2.02:security/p5-Digest-SHA1 \
+		p5-IPC-ShareLite->=0.09:devel/p5-IPC-ShareLite \
+		p5-Error->=0.15:devel/p5-Error
 
 .include <bsd.port.mk>

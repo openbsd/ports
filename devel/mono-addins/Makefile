@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	framework for creating extensible applications
 
@@ -21,7 +21,7 @@ USE_GROFF =	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/mono-gtk2
+RUN_DEPENDS=	x11/mono-gtk2
 
 CONFIGURE_STYLE=gnu
 

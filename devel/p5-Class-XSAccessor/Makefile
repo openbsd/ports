@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:02 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 USE_GROFF =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::devel/p5-AutoXS-Header
+RUN_DEPENDS =	devel/p5-AutoXS-Header
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

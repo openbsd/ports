@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/27 12:52:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		tools to build Gtk2Hs
 
@@ -21,9 +21,9 @@ MODULES =		lang/ghc converters/libiconv
 
 MODGHC_BUILD =		cabal hackage nort
 
-BUILD_DEPENDS =		::devel/alex \
-			::devel/happy
+BUILD_DEPENDS =		devel/alex \
+			devel/happy
 
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 21:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://somethingaboutorange.com/mrl/projects/nose/
 
 MODULES=		lang/python
-REGRESS_DEPENDS=	::devel/py-nose \
-			::devel/py-twisted/core
-USE_GROFF =	Yes
+REGRESS_DEPENDS=	devel/py-nose \
+			devel/py-twisted/core
+USE_GROFF =		Yes
 
 MODPY_SETUPTOOLS=	Yes
 

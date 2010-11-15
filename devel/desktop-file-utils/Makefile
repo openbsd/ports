@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/glib2
+LIB_DEPENDS=	devel/glib2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

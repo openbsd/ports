@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 19:45:57 espie Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -30,17 +30,17 @@ SUBST_VARS +=		DISTNAME
 # GHC: use cabal to build both the executable and the library.
 WANTLIB-main +=		gmp util
 MODULES =		lang/ghc converters/libiconv
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MODGHC_BUILD =		cabal haddock register
-LIB_DEPENDS-main =	${LIB_DEPENDS} ::devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 WANTLIB-lib =
 .else
 # NHC: use the good old makefile for now (though it *should* be possible
 # to build with cabal, too).
-BUILD_DEPENDS +=	::devel/hmake \
-			::lang/nhc98
+BUILD_DEPENDS +=	devel/hmake \
+			lang/nhc98
 HC =			hmake 
 HC_OPTS =		-nhc98 -package base
 

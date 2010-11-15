@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		code browsing program
 
@@ -21,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cscope/}
 EXTRACT_SUFX =         .tar.bz2
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	@cd ${WRKSRC}; ${INSTALL_SCRIPT} contrib/xcscope/cscope-indexer \

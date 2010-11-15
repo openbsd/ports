@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	tool for copying resources between repositories
 
 MODULES=	cpan
 DISTNAME=	VCP-autrijus-snapshot-0.9-20050110
-PKGNAME=	p5-VCP-autrijus-0.9p0
+PKGNAME=	p5-VCP-autrijus-0.9
+REVISION =	0
 CATEGORIES=	devel
 CPAN_AUTHOR=	AUTRIJUS
 USE_GROFF =	Yes
@@ -16,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Regexp-Shellish->=0.93:devel/p5-Regexp-Shellish \
-		:p5-IPC-Run3->=0.01:devel/p5-IPC-Run3 \
-		:p5-XML-AutoWriter->=0.38:textproc/p5-XML-AutoWriter \
-		:p5-Text-Diff->=0.35:textproc/p5-Text-Diff \
-		:p5-XML-Parser->=2.31:textproc/p5-XML-Parser \
-		:p5-PodToHTML->=0.05:www/p5-PodToHTML
+RUN_DEPENDS=	p5-Regexp-Shellish->=0.93:devel/p5-Regexp-Shellish \
+		p5-IPC-Run3->=0.01:devel/p5-IPC-Run3 \
+		p5-XML-AutoWriter->=0.38:textproc/p5-XML-AutoWriter \
+		p5-Text-Diff->=0.35:textproc/p5-Text-Diff \
+		p5-XML-Parser->=2.31:textproc/p5-XML-Parser \
+		p5-PodToHTML->=0.05:www/p5-PodToHTML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

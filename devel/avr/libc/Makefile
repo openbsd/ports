@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/27 20:58:10 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	libc for Atmel AVR 8-bit RISC microcontrollers
 
@@ -16,8 +16,8 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=avr-libc/}
 
 EXTRACT_SUFX=		.tar.bz2
 
-RUN_DEPENDS=		::devel/avr/binutils \
-			::devel/avr/gcc
+RUN_DEPENDS=		devel/avr/binutils \
+			devel/avr/gcc
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 

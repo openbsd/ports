@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	module to scan C language files
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	:p5-Data-Flow->=0.05:devel/p5-Data-Flow
+RUN_DEPENDS=	p5-Data-Flow->=0.05:devel/p5-Data-Flow
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

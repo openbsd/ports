@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2010/10/24 21:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p14
+PKGNAME=	${DISTNAME:L}
+REVISION =	14
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -24,7 +25,7 @@ MASTER_SITES0=	http://dev.beastie.hu/ \
 		http://www.beastie.hu/
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	:yasm-*:devel/yasm
+BUILD_DEPENDS+=	devel/yasm
 .endif
 
 FLAVORS=	aa caca no_x11 altivec
@@ -56,7 +57,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --enable-pthread-sem
 
 .if ${FLAVOR:L:Maa}
-LIB_DEPENDS+=	aa::graphics/aalib
+LIB_DEPENDS+=	graphics/aalib
+WANTLIB +=	aa
 CONFIGURE_ARGS+= --enable-video-aalib
 .else
 CONFIGURE_ARGS+= --disable-video-aalib
@@ -65,7 +67,8 @@ CONFIGURE_ARGS+= --disable-video-aalib
 .if ${FLAVOR:L:Mcaca}
 PATCH_DIST_STRIP= -p1
 PATCHFILES=	patch-libsd1.2.7-libcaca0.9.diff:0
-LIB_DEPENDS+=	caca::graphics/libcaca
+LIB_DEPENDS+=	graphics/libcaca
+WANTLIB +=	caca
 CONFIGURE_ARGS+= --enable-video-caca
 .else
 SUPDISTFILES+=	patch-libsd1.2.7-libcaca0.9.diff:0
@@ -75,7 +78,7 @@ SUPDISTFILES+=	patch-libsd1.2.7-libcaca0.9.diff:0
 CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
-WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
+WANTLIB+=	X11>=10 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 .endif
 
 .if ${FLAVOR:L:Maltivec}

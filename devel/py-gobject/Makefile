@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/15 19:46:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,14 +32,14 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/glib2 \
-		::devel/libffi
+LIB_DEPENDS=	devel/glib2 \
+		devel/libffi
 
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-introspection
 
-REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	${PKGNAME}:${BUILD_PKGPATH}
 
 REGRESS_IS_INTERACTIVE= x11
 

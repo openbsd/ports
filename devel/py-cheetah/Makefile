@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cheetahtemplate/}
 
 MODULES=		lang/python
-REGRESS_DEPENDS=	::devel/py-cheetah
+REGRESS_DEPENDS=	devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 MODPY_BADEGGS=		Cheetah

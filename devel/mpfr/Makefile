@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
 
-LIB_DEPENDS =	:gmp->=4.2.0:devel/gmp
+LIB_DEPENDS =	gmp->=4.2.0:devel/gmp
 # no interlibrary dependency, though
 WANTLIB =	gmp
 
@@ -32,7 +32,7 @@ REORDER_DEPENDENCIES=${PORTSDIR}/infrastructure/mk/automake.dep
 # needed on sparc64 at least: the mpfr tests are insufficient without 
 # gmp's internals
 
-BUILD_DEPENDS=	:gmp->=4.2.0:devel/gmp:configure
+BUILD_DEPENDS=	gmp->=4.2.0:devel/gmp:configure
 pre-configure:
 	ln -s ${WRKDIR}/devel/gmp/gmp-* ${WRKDIR}/gmp
 	cd ${WRKDIR}/gmp && ${MAKE} fib_table.h mp_bases.h

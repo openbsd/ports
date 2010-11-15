@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	test framework to run Perl::Critic
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		::devel/p5-Perl-Critic
+RUN_DEPENDS=		devel/p5-Perl-Critic
 
 MAKE_ENV=		TEST_POD=Yes
 

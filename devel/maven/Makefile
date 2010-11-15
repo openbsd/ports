@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/30 22:05:25 stsp Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 
 MODULES=	java
 MODJAVA_VER=	1.5+
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

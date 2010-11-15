@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/24 21:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/15 19:45:59 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,10 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.16
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p2
-PKGNAME-jre=		jre-${V}p2
+PKGNAME-main=		jdk-${V}
+REVISION-main =		2
+PKGNAME-jre=		jre-${V}
+REVISION-jre =		2
 
 CATEGORIES=		devel devel/jdk java
 
@@ -38,12 +40,12 @@ PERMIT_DISTFILES_FTP=	JRL
 NO_REGRESS=		Yes
 
 VMEM_WARNING=		Yes
-BUILD_DEPENDS=		::archivers/gtar \
-			::archivers/zip \
-			::archivers/unzip \
-			::archivers/bzip2
+BUILD_DEPENDS=		archivers/gtar \
+			archivers/zip \
+			archivers/unzip \
+			archivers/bzip2
 USE_MOTIF=		openmotif
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xt Xtst c m ossaudio pthread \
 			pthread-stubs xcb stdc++ z
@@ -95,7 +97,7 @@ INSTALLED!= (pkg_info -e "jdk->=1.5.0,<1.6" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.5 jdk package"
 .endif
-BUILD_DEPENDS+=		:jdk->=1.5.0,<1.6:devel/jdk/1.5
+BUILD_DEPENDS+=		jdk->=1.5.0,<1.6:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
 DISTFILES+=		jdk-1_5_0_16-solaris-i586.tar.Z \
@@ -107,8 +109,8 @@ FETCH_MANUALLY+=	"http://java.sun.com/products/archive/j2se/5.0_16/index.html"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
-BUILD_DEPENDS+=		:kaffe->=1.1.7p1:lang/kaffe \
-			::lang/jikes
+BUILD_DEPENDS+=		kaffe->=1.1.7p1:lang/kaffe \
+			lang/jikes
 ALT_BOOTDIR2=		${LOCALBASE}/kaffe
 MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
 			ALT_BOOTDIR2=${LOCALBASE}/kaffe \
@@ -121,7 +123,7 @@ EXTRACT_CASES+=		*.Z) \
 .endif
 
 .if !${FLAVOR:L:Mno_web}
-BUILD_DEPENDS+=		::devel/nspr
+BUILD_DEPENDS+=		devel/nspr
 .else
 MESSAGE=		${PKGDIR}/MESSAGE-no_web
 MAKE_ENV+=		DONT_BUILD_DEPLOY="YES"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =		template plugin for TurboGears that supports json
 
@@ -22,13 +22,13 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=T/TurboJson/}
 
 MODULES =		lang/python
-RUN_DEPENDS =		::databases/py-sqlobject \
-			::devel/py-ruledispatch \
-			::devel/py-simplejson \
-			::devel/py-peak-rules \
-			::devel/py-prioritized_methods
+RUN_DEPENDS =		databases/py-sqlobject \
+			devel/py-ruledispatch \
+			devel/py-simplejson \
+			devel/py-peak-rules \
+			devel/py-prioritized_methods
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
-			::devel/py-nose
+			devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

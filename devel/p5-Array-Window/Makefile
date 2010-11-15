@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	calculate windows/subsets/pages of arrays
 
@@ -19,6 +19,6 @@ CPAN_AUTHOR=	ADAMK
 
 MAKE_ENV+=	AUTOMATED_TESTING=1
 
-REGRESS_DEPENDS+=::devel/p5-Test-Pod
+REGRESS_DEPENDS+=devel/p5-Test-Pod
 
 .include <bsd.port.mk>

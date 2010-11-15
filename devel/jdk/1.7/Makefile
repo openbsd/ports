@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/15 19:45:59 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,10 @@ B=		b72
 DISTFILES=	openjdk-7-ea-src-${B}-17_sep_2009.zip \
 		jibx_1_1_5.zip:0
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p1
-PKGNAME-jre=	jre-${V}${B}p1
+PKGNAME-main=	jdk-${V}${B}
+REVISION-main =	1
+PKGNAME-jre=	jre-${V}${B}
+REVISION-jre =	1
 
 CATEGORIES=	devel/jdk java
 
@@ -46,18 +48,18 @@ INSTALLED!= (pkg_info -e "jdk->=1.7,<1.8" -q && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.7 jdk package"
 .endif
-BUILD_DEPENDS+=	:jdk->=1.7,<1.8:devel/jdk/1.7
+BUILD_DEPENDS+=	jdk->=1.7,<1.8:devel/jdk/1.7
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
-BUILD_DEPENDS+=	:jdk->=1.6,<1.7:devel/jdk/1.6
+BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
 VMEM_WARNING=	Yes
-BUILD_DEPENDS+=	::devel/apache-ant \
-		::archivers/zip \
-		::archivers/unzip \
-		::print/cups
+BUILD_DEPENDS+=	devel/apache-ant \
+		archivers/zip \
+		archivers/unzip \
+		print/cups
 MODULES=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
 

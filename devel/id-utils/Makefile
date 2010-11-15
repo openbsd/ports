@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	gid/lid tools for looking up variables in code
 
 DISTNAME=	id-utils-3.2d
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	devel
 
 # License: GPL

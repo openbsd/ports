@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -37,9 +37,9 @@ WANTLIB += z dbus-glib-1 gnomeui-2
 MODULES=		devel/gettext \
 			x11/gnome
     
-LIB_DEPENDS=            ::x11/dbus-glib \
-			::x11/gnome/libgnomeui
-RUN_DEPENDS=		::x11/gnome/devhelp
+LIB_DEPENDS=            x11/dbus-glib \
+			x11/gnome/libgnomeui
+RUN_DEPENDS=		x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes
 MODGNOME_HELP_FILES =	Yes

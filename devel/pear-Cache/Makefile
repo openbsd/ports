@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	Framework for caching of arbitrary data for PHP
 
 DISTNAME=	Cache-1.5.4
-PKGNAME=	pear-${DISTNAME}p2
+PKGNAME=	pear-${DISTNAME}
+REVISION =	2
 CATEGORIES=	devel
 
 MODULES=	www/pear
@@ -14,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:pear-HTTP-Request-*:net/pear-HTTP-Request
+RUN_DEPENDS=	net/pear-HTTP-Request
 
 .include <bsd.port.mk>

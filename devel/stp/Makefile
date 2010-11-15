@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/17 09:43:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -23,7 +23,7 @@ WANTLIB=	c m stdc++
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stp-fast-prover/}
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	::devel/bison
+BUILD_DEPENDS=	devel/bison
 
 MAKE_ENV=	CXX="${CXX}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -24,8 +24,8 @@ MASTER_SITES=		http://openbsddistfiles.com/martynas/python/
 DISTFILES=		RuleDispatch-${VERSION}a0.dev-r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python
-RUN_DEPENDS=		::devel/py-protocols
-REGRESS_DEPENDS=	::devel/py-protocols
+RUN_DEPENDS=		devel/py-protocols
+REGRESS_DEPENDS=	devel/py-protocols
 
 MODPY_SETUPTOOLS=	Yes
 

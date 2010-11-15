@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	perl-compatible regular expression library
 
 DISTNAME=	pcre-8.02
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 
 SHARED_LIBS=	pcre		2.3 \
 		pcrecpp		3.2 \
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-utf8 \

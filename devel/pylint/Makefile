@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:08 espie Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -26,11 +26,11 @@ MASTER_SITES=		ftp://ftp.logilab.fr/pub/pylint/
 MULTI_PACKAGES=		-main -gui
 
 MODULES=		lang/python
-RUN_DEPENDS=		:py-logilab-astng-*:devel/py-logilab-astng
+RUN_DEPENDS=		devel/py-logilab-astng
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
-			:pylint-${VERSION}:devel/pylint
+			pylint-${VERSION}:devel/pylint
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
-			::math/py-Numeric
+			math/py-Numeric
 
 pre-configure:
 	@rm ${WRKSRC}/test/input/func___future___import_not_first_stmt.py.orig

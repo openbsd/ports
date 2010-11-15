@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=		Executable Uniform Command-Line Interface Descriptions
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

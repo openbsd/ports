@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =	python powered git gui
 
@@ -24,10 +24,10 @@ MODULES =	devel/gettext \
 		lang/python
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::devel/desktop-file-utils \
-		::devel/git \
-		::textproc/xxdiff \
-		::x11/py-qt4
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/git \
+		textproc/xxdiff \
+		x11/py-qt4
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/bin/git-cola

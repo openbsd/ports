@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 DISTNAME=	rcs-5.7
-PKGNAME=	g${DISTNAME}p0
+PKGNAME=	g${DISTNAME}
+REVISION =	0
 EXTRACT_SUFX=	.tar.Z
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}

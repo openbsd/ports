@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/11/09 11:03:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=        java replacement for make
 
 DISTNAME=	apache-ant-1.7.1
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -25,8 +25,8 @@ EXTRACT_SUFX=	-bin.tar.bz2
 MODULES=	java
 MODJAVA_VER=	1.3+
 
-RUN_DEPENDS=	::java/javaPathHelper
-BUILD_DEPENDS=	::archivers/gtar
+RUN_DEPENDS=	java/javaPathHelper
+BUILD_DEPENDS=	archivers/gtar
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

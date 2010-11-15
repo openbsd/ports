@@ -1,6 +1,6 @@
-# $OpenBSD: scons.port.mk,v 1.3 2007/12/12 14:46:41 ajacoutot Exp $
+# $OpenBSD: scons.port.mk,v 1.4 2010/11/15 19:46:09 espie Exp $
 
-BUILD_DEPENDS+=	:scons-*:devel/scons
+BUILD_DEPENDS+=	devel/scons
 
 MODSCONS_BIN=	${LOCALBASE}/bin/scons
 

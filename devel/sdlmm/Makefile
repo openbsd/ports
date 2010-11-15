@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -28,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD= concurrent
 

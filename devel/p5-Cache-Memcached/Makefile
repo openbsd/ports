@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:01 espie Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/p5-String-CRC32
+RUN_DEPENDS=		devel/p5-String-CRC32
 
-USE_GROFF =	Yes
-REGRESS_DEPENDS=	::misc/memcached
+USE_GROFF =		Yes
+REGRESS_DEPENDS=	misc/memcached
 REGRESS_IS_INTERACTIVE=	Yes
 
 start-memcached:

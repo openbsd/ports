@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
 DISTNAME=	autoconf-2.59
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=autoconf/}
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 
 HOMEPAGE=	http://www.gnu.org/software/autoconf/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS=		:help2man-*:devel/help2man
-RUN_DEPENDS=		::devel/metaauto
+BUILD_DEPENDS=		devel/help2man
+RUN_DEPENDS=		devel/metaauto
 
 SUFFIX=			-2.59
 CONFIGURE_STYLE=	gnu
@@ -30,6 +30,6 @@ MAKE_FLAGS=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS=		lispdir=
 #USE_GMAKE=		Yes
 SUBST_VARS=		SUFFIX
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

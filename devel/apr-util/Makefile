@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/08 01:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$Vp4${FLAVOR_EXT:S/-mt//}
+FULLPKGNAME=	apr-util${MT}-$V${FLAVOR_EXT:S/-mt//}
+REVISION =	4
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
@@ -24,8 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-WANTLIB=	expat lib/db4/db.>=4
-LIB_DEPENDS=	:db->=4,<5:databases/db/v4
+WANTLIB=	expat lib/db4/db>=4
+LIB_DEPENDS=	db->=4,<5:databases/db/v4
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
@@ -42,7 +43,7 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib \
 			--with-ldap
-LIB_DEPENDS+=		::databases/openldap
+LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber ldap
 .endif
 
@@ -50,15 +51,15 @@ MT?=
 .if ${FLAVOR:L:Mmt}
 MT=-mt
 CONFIGURE_ENV+=	APRUTIL_EXPORT_LIBS=-pthread
-LIB_DEPENDS+=	:apr-mt-1.2.11:devel/apr,mt
-WANTLIB +=	apr-1-mt.=3
+LIB_DEPENDS+=	apr-mt-1.2.11:devel/apr,mt
+WANTLIB +=	apr-1-mt=3
 
 post-install:
 	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
 
 .else
-LIB_DEPENDS+=	:apr-1.2.11:devel/apr
-WANTLIB+=	apr-1.=3
+LIB_DEPENDS+=	apr-1.2.11:devel/apr
+WANTLIB+=	apr-1=3
 .endif
 
 SUBST_VARS+=	MT

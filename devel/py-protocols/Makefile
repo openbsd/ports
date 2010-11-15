@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/26 20:08:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
@@ -24,8 +24,8 @@ MASTER_SITES=		http://openbsddistfiles.com/martynas/python/
 DISTFILES=		PyProtocols-${VERSION}a0dev_r${REV}${EXTRACT_SUFX}
 
 MODULES=		lang/python
-RUN_DEPENDS=		::devel/py-decoratortools
-REGRESS_DEPENDS=	::devel/py-decoratortools
+RUN_DEPENDS=		devel/py-decoratortools
+REGRESS_DEPENDS=	devel/py-decoratortools
 
 MODPY_SETUPTOOLS=	Yes
 

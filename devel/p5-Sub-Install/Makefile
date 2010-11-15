@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	helper for installing code into packages
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	PERL_TEST_CRITIC=Yes
 
-REGRESS_DEPENDS=	::devel/p5-Test-Output \
-			::devel/p5-Test-Perl-Critic
+REGRESS_DEPENDS=	devel/p5-Test-Output \
+			devel/p5-Test-Perl-Critic
 
 .include <bsd.port.mk>

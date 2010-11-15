@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/14 14:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/15 19:45:57 espie Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -47,14 +47,14 @@ MODULES=	devel/gettext \
 MULTI_PACKAGES=	-main -polkit
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		::x11/gtk+2 \
-		::devel/ORBit2 \
-		::textproc/libxml \
-		::x11/dbus-glib
+		x11/gtk+2 \
+		devel/ORBit2 \
+		textproc/libxml \
+		x11/dbus-glib
 
 LIB_DEPENDS-polkit= ${LIB_DEPENDS} \
-		::devel/gconf2 \
-		::sysutils/polkit
+		devel/gconf2 \
+		sysutils/polkit
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \

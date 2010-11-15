@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/17 01:42:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:07 espie Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
@@ -24,12 +24,12 @@ MODPY_SETUPTOOLS =	Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-${MODPY_EGG_VERSION}/-4097609/}
 
-RUN_DEPENDS =		::devel/py-dulwich \
-			::devel/mercurial
+RUN_DEPENDS =		devel/py-dulwich \
+			devel/mercurial
 REGRESS_DEPENDS = 	${RUN_DEPENDS} \
-			::archivers/bzip2 \
-			::archivers/unzip \
-			::devel/git,-main
+			archivers/bzip2 \
+			archivers/unzip \
+			devel/git,-main
 
 MODPY_BADEGGS =		hg-git
 

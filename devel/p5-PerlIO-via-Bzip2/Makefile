@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	implement PerlIO layers which let you handle bzip2 files
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes
-RUN_DEPENDS=	::archivers/p5-Compress-Bzip2
+RUN_DEPENDS=	archivers/p5-Compress-Bzip2
 
 .include <bsd.port.mk>

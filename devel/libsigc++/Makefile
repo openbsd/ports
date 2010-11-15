@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/12 16:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/15 19:46:00 espie Exp $
 
 BROKEN-hppa=	Signal-related bug? any program linked with this hangs
 
 COMMENT=	callback framework for C++
 
 DISTNAME=	libsigc++-1.0.4
-PKGNAME=	${DISTNAME}p4
+REVISION =	4
 SHARED_LIBS=		sigc 1.0
 MODGNU_SHARED_LIBS=	sigc '-no-undefined'
 

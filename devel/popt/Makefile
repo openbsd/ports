@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		getopt(3)-like library with a number of enhancements
 
 DISTNAME=		popt-1.7
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 SHARED_LIBS=		popt 0.3
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	SDL TrueType fonts library
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	SDL freetype m sndio usbhid z
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

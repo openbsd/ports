@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	regression testing software using Slay::Makefile
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Slay-Makefile-*:devel/p5-Slay-Makefile
+RUN_DEPENDS=	devel/p5-Slay-Makefile
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	common rules for searching for Perl things
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	:p5-File-Find-Rule->=0.20:devel/p5-File-Find-Rule
+RUN_DEPENDS=	p5-File-Find-Rule->=0.20:devel/p5-File-Find-Rule
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

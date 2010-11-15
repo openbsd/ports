@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/24 13:21:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=		minimal interface to Readline
 DISTNAME=		Term-ReadLine-Perl-1.0302
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Term/}
 
-RUN_DEPENDS=		::devel/p5-Term-ReadKey
+RUN_DEPENDS=		devel/p5-Term-ReadKey
 
 REGRESS_ENV=		REGRESS_TARGET=test.pl
 REGRESS_IS_INTERACTIVE= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/21 18:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	slib guile adapter
 
@@ -20,8 +20,8 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	::devel/slib \
-		::lang/guile
+BUILD_DEPENDS=	devel/slib \
+		lang/guile
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/guile/site

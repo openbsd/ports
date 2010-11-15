@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/12 11:47:14 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:56 espie Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
@@ -20,10 +20,10 @@ WANTLIB =		c gmp m pthread util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =          cabal hackage nort
 
-BUILD_DEPENDS +=	:hs-network->=1,<3:devel/hs-network \
-			:hs-HTTP->=4000.0.2,<4001:net/hs-HTTP \
-			:hs-zlib->=0.4,<0.6:archivers/hs-zlib
+BUILD_DEPENDS +=	hs-network->=1,<3:devel/hs-network \
+			hs-HTTP->=4000.0.2,<4001:net/hs-HTTP \
+			hs-zlib->=0.4,<0.6:archivers/hs-zlib
 
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 
 .include <bsd.port.mk>

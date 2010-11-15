@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/08 10:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	mpeg video player library with sound support
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://www.dulug.de/loki/open-source/smpeg/ \
 		http://gd.tuwien.ac.at/video/lib/smpeg/ \
 		http://mirrors.sunsite.dk/lokigames/open-source/smpeg/
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

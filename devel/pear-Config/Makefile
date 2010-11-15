@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	configuration file library for PHP
 
 DISTNAME=	Config-1.10.7
-PKGNAME=	pear-${DISTNAME}p1
+PKGNAME=	pear-${DISTNAME}
+REVISION =	1
 CATEGORIES=	devel
 
 MODULES=	www/pear
 
-RUN_DEPENDS=	:pear-XML-Parser-*:textproc/pear-XML-Parser \
-		:pear-XML-Util-*:textproc/pear-XML-Util
+RUN_DEPENDS=	textproc/pear-XML-Parser \
+		textproc/pear-XML-Util
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

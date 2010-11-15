@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/06 11:41:35 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:57 espie Exp $
 
 ONLY_FOR_ARCHS =	i386
 
 COMMENT =		flat assembler
 DISTNAME =		fasm-1.67.29
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 CATEGORIES =		devel lang
 HOMEPAGE =		http://flatassembler.net/
 MAINTAINER =		Dmitri Alenichev <mitya@rootshell.be>

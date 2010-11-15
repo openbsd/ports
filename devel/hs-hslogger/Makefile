@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		versatile logging framework
 
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-network
+RUN_DEPENDS +=		devel/hs-network
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

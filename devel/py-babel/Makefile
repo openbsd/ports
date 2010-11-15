@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -24,6 +24,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::devel/py-tz
+REGRESS_DEPENDS=	devel/py-tz
 
 .include <bsd.port.mk>

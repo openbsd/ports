@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/15 11:39:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 19:45:57 espie Exp $
 
 VMEM_WARNING =	Yes
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		archive c crypto curl curses expat form m \
 			ssl stdc++ z
 
-LIB_DEPENDS =		::archivers/libarchive \
-			::net/curl
+LIB_DEPENDS =		archivers/libarchive \
+			net/curl
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
@@ -31,7 +31,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	simple
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 REGRESS_TARGET =	test
 

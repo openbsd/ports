@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	subclass of AppConfig that provides standard options
 
@@ -16,6 +16,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::devel/p5-AppConfig
+RUN_DEPENDS=	devel/p5-AppConfig
 
 .include <bsd.port.mk>

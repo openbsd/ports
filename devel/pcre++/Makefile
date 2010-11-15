@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS =		::devel/pcre
+LIB_DEPENDS =		devel/pcre
 WANTLIB =		pcre
 
 CONFIGURE_STYLE=	gnu

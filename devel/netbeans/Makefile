@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/12 12:26:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:00 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,8 +27,8 @@ EXTRACT_SUFX=		-201007282301-ml.zip
 MODULES=		java
 MODJAVA_VER=		1.6+
 
-RUN_DEPENDS=		::java/javaPathHelper \
-			::devel/desktop-file-utils
+RUN_DEPENDS=		java/javaPathHelper \
+			devel/desktop-file-utils
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

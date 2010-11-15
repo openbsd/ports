@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
@@ -26,11 +26,11 @@ DESKTOP_FILES=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-evolution-data-server
 
-RUN_DEPENDS=	::devel/git
-BUILD_DEPENDS+=	::devel/git
+RUN_DEPENDS=	devel/git
+BUILD_DEPENDS+=	devel/git
 
-LIB_DEPENDS=	::devel/vte \
-		::x11/gtksourceview
+LIB_DEPENDS=	devel/vte \
+		x11/gtksourceview
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
@@ -38,6 +38,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xml2 z \
 		gthread-2.0 ncurses pthread xcb-render xcb-render-util \
-		vte gtksourceview-2.0.>=0
+		vte gtksourceview-2.0
 
 .include <bsd.port.mk>

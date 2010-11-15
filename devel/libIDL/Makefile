@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		IDL parsing library
 
@@ -24,7 +24,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 WANTLIB=		pcre glib-2.0
-LIB_DEPENDS=		::devel/glib2
+LIB_DEPENDS=		devel/glib2
 
 
 CONFIGURE_STYLE=	gnu

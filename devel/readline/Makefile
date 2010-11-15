@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
 COMMENT =		library to edit command lines as they are typed in
 
 V =			6.1
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_GNU:=readline/}
 MASTER_SITES0 =		${MASTER_SITE_GNU:=readline/${DISTNAME}-patches/}
 CONFIGURE_STYLE =	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 PATCHFILES =		readline61-001:0 \
 			readline61-002:0

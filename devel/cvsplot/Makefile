@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		CVS-managed project analyzer
 
 DISTNAME=		cvsplot-1.6.5
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		devel
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cvsplot/}
 
 HOMEPAGE=		http://cvsplot.sourceforge.net/
 
-RUN_DEPENDS=		:p5-DateManip-*:converters/p5-DateManip \
-			:p5-String-ShellQuote-*:textproc/p5-String-ShellQuote \
-			:gnuplot-*:math/gnuplot
+RUN_DEPENDS=		converters/p5-DateManip \
+			textproc/p5-String-ShellQuote \
+			math/gnuplot
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

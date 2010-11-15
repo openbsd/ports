@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.4 2010/10/18 17:48:01 espie Exp $
+#	$OpenBSD: Makefile,v 1.5 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	object-oriented access to real and tied hashes  
 
@@ -13,13 +13,13 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		::devel/p5-List-MoreUtils \
-			::devel/p5-Tie-Hash-MultiValue \
-			::devel/p5-Tie-ToObject
-REGRESS_DEPENDS=	::devel/p5-Test-Deep
+RUN_DEPENDS=		devel/p5-List-MoreUtils \
+			devel/p5-Tie-Hash-MultiValue \
+			devel/p5-Tie-ToObject
+REGRESS_DEPENDS=	devel/p5-Test-Deep
 
 .include <bsd.port.mk>

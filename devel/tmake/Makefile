@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/06 22:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	Cross-platform makefile tool from TrollTech
 
 DISTNAME=	tmake-1.10
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.trolltech.com/developer/downloads/qt/freebies/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	Simple regular expression library from Plan 9
 
@@ -10,8 +10,8 @@ HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	::devel/libutf \
-		::devel/libfmt
+BUILD_DEPENDS=	devel/libutf \
+		devel/libfmt
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

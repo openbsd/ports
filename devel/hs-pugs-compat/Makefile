@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		::devel/hs-regex-base \
-			::devel/hs-regex-pcre-builtin \
-			::devel/hs-network \
-			::devel/hs-stm \
-			:hs-stringtable-atom->=0.0.6.1:devel/hs-stringtable-atom
+LIB_DEPENDS =		devel/hs-regex-base \
+			devel/hs-regex-pcre-builtin \
+			devel/hs-network \
+			devel/hs-stm \
+			hs-stringtable-atom->=0.0.6.1:devel/hs-stringtable-atom
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

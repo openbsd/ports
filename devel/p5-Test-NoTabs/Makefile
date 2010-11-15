@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
 
 COMMENT =	check the presence of tabs in your project
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =		::devel/p5-Test-Group
+RUN_DEPENDS =		devel/p5-Test-Group
 
 CONFIGURE_STYLE =	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
@@ -25,7 +25,7 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=	:py-zopeinterface-*:devel/py-zopeinterface
+RUN_DEPENDS=	devel/py-zopeinterface
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 do-regress:

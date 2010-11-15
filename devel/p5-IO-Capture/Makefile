@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=		module for capturing output
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		IO-Capture-0.05
 REVISION=		0
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Kevin Lo <kevlo@openbsd.org>
 

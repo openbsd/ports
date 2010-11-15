@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=        Test-WWW-Mechanize extension for catalyst
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Test-WWW-Mechanize \
-		::www/p5-Catalyst-Runtime
-REGRESS_DEPENDS=::www/p5-Catalyst-Plugin-Session
+RUN_DEPENDS=	devel/p5-Test-WWW-Mechanize \
+		www/p5-Catalyst-Runtime
+REGRESS_DEPENDS=www/p5-Catalyst-Plugin-Session
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	cartographic projection utilities
 
 DISTNAME=	proj-4.6.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=    	devel geo
 SHARED_LIBS=	proj 5.5
 
@@ -30,9 +30,9 @@ CONFIGURE_STYLE=	gnu
 WANTLIB=		c m
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-BUILD_DEPENDS=		:unzip-*:archivers/unzip
+BUILD_DEPENDS=		archivers/unzip
 
 post-extract:
 	${UNZIP} -oq ${FULLDISTDIR}/${DATUMGRID} -d ${WRKDIR}/${DISTNAME}/nad

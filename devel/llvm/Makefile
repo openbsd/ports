@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:00 espie Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -32,7 +32,7 @@ post-extract:
 
 MODULES =	lang/python
 
-LIB_DEPENDS =	::devel/libelf
+LIB_DEPENDS =	devel/libelf
 
 # graphviz can be optionally used to draw graphs, but adds heavy build and
 # run dependencies, and this feature is often not needed. lie to autoconf
@@ -42,7 +42,7 @@ CONFIGURE_ENV =	ac_cv_path_DOT=${LOCALBASE}/bin/dot \
 		ac_cv_path_DOTTY=${LOCALBASE}/bin/dotty \
 		ac_cv_path_GV="echo gv"
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 		VERBOSE=Yes \
@@ -53,7 +53,7 @@ REGRESS_FLAGS =	RUNTESTFLAGS=
 SEPARATE_BUILD =	simple
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MAKE_ENV =		REQUIRES_RTTI=1
 
 # also supports cmake

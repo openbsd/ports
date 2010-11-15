@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		Iteratee monad provides strict, safe, and functional I/O
 
@@ -18,8 +18,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-ListLike \
-			::devel/hs-transformers
+RUN_DEPENDS +=		devel/hs-ListLike \
+			devel/hs-transformers
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

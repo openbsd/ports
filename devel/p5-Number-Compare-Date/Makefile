@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	Compare Dates
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Time-TimeDate->=1.16:devel/p5-Time-TimeDate \
-		::devel/p5-Number-Compare
+RUN_DEPENDS=	p5-Time-TimeDate->=1.16:devel/p5-Time-TimeDate \
+		devel/p5-Number-Compare
 
 .include <bsd.port.mk>

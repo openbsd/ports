@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -20,15 +20,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m onig pcre termcap z
 
-LIB_DEPENDS=		::devel/pcre \
-			::textproc/oniguruma
+LIB_DEPENDS=		devel/pcre \
+			textproc/oniguruma
 MODULES=		converters/libiconv
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 REGRESS_TARGET=		runtests
 REGRESS_FLAGS=		TCAPLIB="-ltermlib"

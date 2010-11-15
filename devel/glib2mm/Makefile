@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	C++ interface for glib2
 
@@ -26,15 +26,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += pcre z m stdc++ sigc-2.0 glib-2.0.>=1803 gmodule-2.0 gobject-2.0
+WANTLIB += pcre z m stdc++ sigc-2.0 glib-2.0>=1803 gmodule-2.0 gobject-2.0
 WANTLIB += gio-2.0 gthread-2.0
 
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	:libsigc++->=2,<3:devel/libsigc++-2 \
-		:glib2->=2.24.0:devel/glib2
+LIB_DEPENDS=	libsigc++->=2,<3:devel/libsigc++-2 \
+		glib2->=2.24.0:devel/glib2
 
 
 CONFIGURE_STYLE=gnu

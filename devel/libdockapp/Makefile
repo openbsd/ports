@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
 DISTNAME=		libdockapp-0.4.0
-PKGNAME=		${DISTNAME}p2
+REVISION =		2
 SHARED_LIBS +=	dockapp              1.0      # .1.0
 CATEGORIES=		devel
 

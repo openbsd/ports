@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=	mro::* interface compatibility for Perl < 5.9.5
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Class-C3->=0.20:devel/p5-Class-C3
+RUN_DEPENDS=	p5-Class-C3->=0.20:devel/p5-Class-C3
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS=	--skipdeps

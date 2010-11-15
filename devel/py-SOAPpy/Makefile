@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pywebsvcs/}
 
-BUILD_DEPENDS=	::devel/py-fpconst
-RUN_DEPENDS=	::devel/py-fpconst \
-		::textproc/py-xml
+BUILD_DEPENDS=	devel/py-fpconst
+RUN_DEPENDS=	devel/py-fpconst \
+		textproc/py-xml
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 # There are lots of tests, but most of them require network access

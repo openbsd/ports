@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=		lightweight exporting of variables
 
 MODULES=		cpan
 DISTNAME=		Exporter-Lite-0.02
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

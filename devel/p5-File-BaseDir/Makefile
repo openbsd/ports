@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=		use the freedesktop Base Directory Specification
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CPAN_AUTHOR=		PARDUS
 

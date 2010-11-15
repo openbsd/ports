@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	Test differences in data structures
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::textproc/p5-Text-Diff
+RUN_DEPENDS=	textproc/p5-Text-Diff
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -23,11 +23,11 @@ WANTLIB=	dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/ORBit2 \
-			::devel/gconf2 \
-			:libsigc++->=2,<3:devel/libsigc++-2 \
-			:glib2mm->=2.8:devel/glib2mm
-WANTLIB +=		ORBit-2 gconf-2.>=5 sigc-2.0 glibmm-2.4
+LIB_DEPENDS=		devel/ORBit2 \
+			devel/gconf2 \
+			libsigc++->=2,<3:devel/libsigc++-2 \
+			glib2mm->=2.8:devel/glib2mm
+WANTLIB +=		ORBit-2 gconf-2>=5 sigc-2.0 glibmm-2.4
 
 
 CONFIGURE_STYLE=	gnu

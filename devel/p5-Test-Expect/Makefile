@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Class-Accessor-Chained \
-		::devel/p5-Expect-Simple
+RUN_DEPENDS=	devel/p5-Class-Accessor-Chained \
+		devel/p5-Expect-Simple
 
 .include <bsd.port.mk>

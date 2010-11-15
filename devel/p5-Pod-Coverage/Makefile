@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Devel-Symdump
+RUN_DEPENDS=	devel/p5-Devel-Symdump
 
 CONFIGURE_STYLE=modbuild
 

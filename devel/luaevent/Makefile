@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/25 23:39:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
 
 COMMENT =	lua binding of libevent
 SHARED_ONLY =	Yes
@@ -21,8 +21,8 @@ MASTER_SITES =	http://matthewwild.co.uk/uploads/
 
 MODULES =	lang/lua
 
-REGRESS_DEPENDS += ::devel/luaevent
-RUN_DEPENDS +=	::net/luasocket
+REGRESS_DEPENDS += devel/luaevent
+RUN_DEPENDS +=	net/luasocket
 
 CFLAGS +=	-I${LOCALBASE}/include -I../include
 LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o

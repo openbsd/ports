@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		Device Tree Compiler
 
@@ -19,7 +19,7 @@ MASTER_SITES=		http://distfiles.nl/
 
 WANTLIB += c
 
-BUILD_DEPENDS=		::devel/bison
+BUILD_DEPENDS=		devel/bison
 
 USE_GMAKE=		Yes
 MAKE_ENV+=		V=1

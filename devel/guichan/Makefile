@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	C++ GUI library designed for games
 
@@ -26,8 +26,8 @@ WANTLIB += SDL m sndio stdc++ usbhid
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	::devel/sdl-image
-LIB_DEPENDS=	::devel/sdl
+BUILD_DEPENDS=	devel/sdl-image
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/11/06 15:28:09 stephan Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:07 espie Exp $
 
 COMMENT =	logging utilities for PHP
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-REGRESS_DEPENDS = ::${PKGPATH}
+REGRESS_DEPENDS = ${PKGPATH}
 
 do-regress:
 	cd ${WRKSRC}/tests; pear run-tests

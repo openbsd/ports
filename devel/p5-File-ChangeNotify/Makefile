@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	watch for changes to files, cross-platform style
 
@@ -15,10 +15,10 @@ PERMIT_DISTFILES_FTP =		Yes
 CONFIGURE_STYLE =	modbuild
 USE_GROFF =	Yes
 
-RUN_DEPENDS =	::devel/p5-Class-MOP \
-		::devel/p5-Moose \
-		::devel/p5-MooseX-Params-Validate \
-		::devel/p5-MooseX-SemiAffordanceAccessor
+RUN_DEPENDS =	devel/p5-Class-MOP \
+		devel/p5-Moose \
+		devel/p5-MooseX-Params-Validate \
+		devel/p5-MooseX-SemiAffordanceAccessor
 
 MAKE_ENV +=	TEST_POD=1 IS_MAINTAINER=1
 

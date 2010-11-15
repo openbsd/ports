@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/02 07:02:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	primitives drawing/other support functions for SDL
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	SDL m sndio usbhid
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

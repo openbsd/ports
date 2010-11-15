@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.19 2009/11/09 11:02:58 sthen Exp $
+# $OpenBSD: java.port.mk,v 1.20 2010/11/15 19:45:59 espie Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -39,18 +39,18 @@ MODJAVA_JRERUN?=no
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= :jdk->=1.5.0,<1.6:devel/jdk/1.5
+     BUILD_DEPENDS+= jdk->=1.5.0,<1.6:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     MODJAVA_RUN_DEPENDS= :jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
 .  else
-     MODJAVA_RUN_DEPENDS= :jdk->=1.5.0|kaffe-*:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= jdk->=1.5.0|kaffe-*:devel/jdk/1.5
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= :jdk->=1.5.0,<1.6:devel/jdk/1.5
+     BUILD_DEPENDS+= jdk->=1.5.0,<1.6:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
      _MODJAVA_RUNDEP= jdk->=1.5.0,<1.6|jre->=1.5.0,<1.6
@@ -58,15 +58,15 @@ MODJAVA_JRERUN?=no
      _MODJAVA_RUNDEP= jdk->=1.5.0,<1.6
 .  endif
 .  if ${MODJAVA_VER} == "1.5+"
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP:S/,<1.6//g}:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.6//g}:devel/jdk/1.5
 .  else
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.5
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.6"
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.6.0
-     BUILD_DEPENDS+= :jdk->=1.6.0,<1.7:devel/jdk/1.6
+     BUILD_DEPENDS+= jdk->=1.6.0,<1.7:devel/jdk/1.6
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
      _MODJAVA_RUNDEP= jdk->=1.6.0,<1.7|jre->=1.6.0,<1.7
@@ -74,15 +74,15 @@ MODJAVA_JRERUN?=no
      _MODJAVA_RUNDEP= jdk->=1.6.0,<1.7
 .  endif
 .  if ${MODJAVA_VER} == "1.6+"
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP:S/,<1.7//g}:devel/jdk/1.6
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.7//g}:devel/jdk/1.6
 .  else
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.6
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.6
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.7"
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.7.0
-     BUILD_DEPENDS+= :jdk->=1.7.0,<1.8:devel/jdk/1.7
+     BUILD_DEPENDS+= jdk->=1.7.0,<1.8:devel/jdk/1.7
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
      _MODJAVA_RUNDEP= jdk->=1.7.0,<1.8|jre->=1.7.0,<1.8
@@ -90,9 +90,9 @@ MODJAVA_JRERUN?=no
      _MODJAVA_RUNDEP= jdk->=1.7.0,<1.8
 .  endif
 .  if ${MODJAVA_VER} == "1.7+"
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP:S/,<1.8//g}:devel/jdk/1.7
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.8//g}:devel/jdk/1.7
 .  else
-     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.7
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.7
 .  endif
 .else
    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=		base class for creating plugin enabled POE Components
 
@@ -12,10 +12,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		:p5-POE->=1.0002:devel/p5-POE \
-			::devel/p5-Task-Weaken
+RUN_DEPENDS=		p5-POE->=1.0002:devel/p5-POE \
+			devel/p5-Task-Weaken
 
 MODCPAN_EXAMPLES=	Yes
 

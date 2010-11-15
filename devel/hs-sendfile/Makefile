@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		portable sendfile functionality
 
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::net/hs-network-bytestring
+RUN_DEPENDS +=		net/hs-network-bytestring
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

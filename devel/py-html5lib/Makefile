@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
@@ -24,6 +24,6 @@ PKG_ARCH=		*
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::devel/py-simplejson
+REGRESS_DEPENDS=	devel/py-simplejson
 
 .include <bsd.port.mk>

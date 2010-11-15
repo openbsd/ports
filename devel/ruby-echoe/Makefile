@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
@@ -18,8 +18,8 @@ MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		${MODRUBY_RAKE_DEPENDS} \
-			:${MODRUBY_PKG_PREFIX}-rubyforge-*:devel/ruby-rubyforge,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR}
+			devel/ruby-rubyforge,${FLAVOR} \
+			devel/ruby-highline,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

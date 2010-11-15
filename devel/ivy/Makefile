@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/13 07:01:15 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		dependency manager for Java
 
 VERSION=		1.4.1
 DISTNAME=		ivy-${VERSION}-bin
-PKGNAME=		ivy-${VERSION}p5
+PKGNAME=		ivy-${VERSION}
+REVISION =		5
 CATEGORIES=		devel java
 WRKDIST=		${WRKDIR}/ivy-${VERSION}
 
@@ -27,7 +28,7 @@ MODULES=	java
 MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	yes
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

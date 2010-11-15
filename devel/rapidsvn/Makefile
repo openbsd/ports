@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	graphical subversion client
 
@@ -33,8 +33,8 @@ WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1 
 WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1
 
-LIB_DEPENDS=	:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
-		:subversion->=1.2:devel/subversion
+LIB_DEPENDS=	wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
+		subversion->=1.2:devel/subversion
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu

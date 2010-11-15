@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:00 espie Exp $
 
 COMMENT =	library for writing single instance application
 
@@ -29,8 +29,8 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 MODULES =	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::x11/dbus-glib
+LIB_DEPENDS =	x11/gtk+2 \
+		x11/dbus-glib
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 expat \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	GNU parser generator
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/m4
+BUILD_DEPENDS=	devel/m4
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-yacc

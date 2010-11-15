@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 01:20:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:07 espie Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
@@ -26,12 +26,12 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 MODPY_BADEGGS =	buildbot
 
-RUN_DEPENDS =	::devel/py-twisted/core \
-		::devel/py-twisted/conch \
-		::devel/py-twisted/mail \
-		::devel/py-twisted/web \
-		::devel/py-twisted/words \
-		::www/py-jinja2 \
+RUN_DEPENDS =	devel/py-twisted/core \
+		devel/py-twisted/conch \
+		devel/py-twisted/mail \
+		devel/py-twisted/web \
+		devel/py-twisted/words \
+		www/py-jinja2 \
 		${MODPY_JSON}
 REGRESS_DEPENDS =	${RUN_DEPENDS}
 

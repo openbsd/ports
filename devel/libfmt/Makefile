@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	Extensible formatted print C library
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	::devel/libutf
+BUILD_DEPENDS=	devel/libutf
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

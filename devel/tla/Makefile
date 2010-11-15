@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	original Arch source control management CLI written in C
 
 DISTNAME=	tla-1.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnuarch.org/
@@ -20,8 +20,8 @@ WANTLIB=		c m
 MASTER_SITES=	${MASTER_SITE_GNU:=gnu-arch/} \
 		http://regexps.srparish.net/src/tla/
 
-RUN_DEPENDS=	:gdiff-*:textproc/gdiff \
-		:gtar-*:archivers/gtar
+RUN_DEPENDS=	textproc/gdiff \
+		archivers/gtar
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	Yes

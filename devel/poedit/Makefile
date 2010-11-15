@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
 DISTNAME=	poedit-1.3.7
-PKGNAME=	${DISTNAME}
 REVISION =	2
 CATEGORIES=	devel
 
@@ -23,8 +22,8 @@ USE_GROFF =	Yes
 
 WANTLIB=	c m pthread stdc++ wx_base_xml wx_gtk2_html wx_gtk2_adv \
 		wx_gtk2_xrc wx_base wx_gtk2_core
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 CONFIGURE_STYLE=gnu
 
@@ -36,8 +35,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_db}
 CONFIGURE_ARGS+=--disable-transmem
 .else
-LIB_DEPENDS +=	::databases/db/v4
-WANTLIB +=	db.>=4
+LIB_DEPENDS +=	databases/db/v4
+WANTLIB +=	db>=4
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/db4" \
 		CPPFLAGS="-I${LOCALBASE}/include/db4"

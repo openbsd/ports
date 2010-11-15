@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -25,16 +25,16 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
 		m pcre pixman-1 png pthread pthread-stubs xcb \
 		xcb-render xcb-render-util z \
-		glib-2.0.>=1800.0 gmodule-2.0.>=1800.0 gobject-2.0.>=1800.0 \
-		gthread-2.0.>=1800.0 cairo.>=9
+		glib-2.0>=1800 gmodule-2.0>=1800 gobject-2.0>=1800 \
+		gthread-2.0>=1800 cairo>=9
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/glib2 \
-			::graphics/cairo
+LIB_DEPENDS=		devel/glib2 \
+			graphics/cairo
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

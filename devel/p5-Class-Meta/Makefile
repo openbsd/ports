@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=		class automation, introspection and validation
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		Class-Meta-0.53
 REVISION=		0
 CATEGORIES=		devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/p5-Data-Types
+RUN_DEPENDS=		devel/p5-Data-Types
 
 CONFIGURE_STYLE= 	modbuild
 

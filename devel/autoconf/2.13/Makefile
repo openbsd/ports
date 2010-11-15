@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/05 09:04:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=		::devel/metaauto
+RUN_DEPENDS=		devel/metaauto
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
@@ -33,6 +33,6 @@ SUBST_VARS=SUFFIX
 post-install:
 	cd ${PREFIX}/info && mv autoconf.info autoconf${SUFFIX}.info && rm standards.info
 
-REGRESS_DEPENDS=:dejagnu-*:devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 .include <bsd.port.mk>

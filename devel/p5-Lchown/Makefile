@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 CPAN_AUTHOR=		NCLEATON
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 

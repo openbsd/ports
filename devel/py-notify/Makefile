@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		python bindings for libnotify
 
@@ -31,8 +31,8 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		::devel/libnotify
+RUN_DEPENDS=		x11/py-gtk2
+LIB_DEPENDS=		devel/libnotify
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

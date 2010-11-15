@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/10 13:51:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	documentation generation tool for Lua
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=	lang/lua
 
-RUN_DEPENDS=	::devel/luafs
+RUN_DEPENDS=	devel/luafs
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/11/15 19:45:58 espie Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -34,31 +34,31 @@ TAR =			${LOCALBASE}/bin/gtar
 
 MODULES =		converters/libiconv x11/tk
 
-BUILD_DEPENDS =		::archivers/gtar \
-			::devel/p5-Error \
-			::textproc/asciidoc \
-			::textproc/xmlto
+BUILD_DEPENDS =		archivers/gtar \
+			devel/p5-Error \
+			textproc/asciidoc \
+			textproc/xmlto
 
 MULTI_PACKAGES =	-main -svn -x11
 
 WANTLIB-main =		c expat crypto curl ssl z ${MODLIBICONV_WANTLIB}
-RUN_DEPENDS-main =	::net/rsync \
-			::devel/p5-Error \
-			:cvsps-*:devel/cvsps \
+RUN_DEPENDS-main =	net/rsync \
+			devel/p5-Error \
+			devel/cvsps \
 			${MODLIBICONV_RUN_DEPENDS}
-LIB_DEPENDS-main =	::net/curl \
+LIB_DEPENDS-main =	net/curl \
 			${MODLIBICONV_LIB_DEPENDS}
 
-RUN_DEPENDS-svn =	::${BASE_PKGPATH} \
-			::devel/p5-Term-ReadKey \
-			::devel/subversion,-perl \
-			::www/p5-URI \
-			::www/p5-libwww
+RUN_DEPENDS-svn =	${BASE_PKGPATH} \
+			devel/p5-Term-ReadKey \
+			devel/subversion,-perl \
+			www/p5-URI \
+			www/p5-libwww
 LIB_DEPENDS-svn =
 WANTLIB-svn =
 PKG_ARCH-svn =		*
 
-RUN_DEPENDS-x11 =	::${BASE_PKGPATH},-main \
+RUN_DEPENDS-x11 =	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 LIB_DEPENDS-x11 =
 WANTLIB-x11 =
@@ -71,12 +71,12 @@ MAKE_ENV =		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
 			REGRESS_SHELL=${LOCALBASE}/bin/bash
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-REGRESS_DEPENDS =	:zip-*:archivers/zip \
-			:cvsps-*:devel/cvsps \
-			::devel/subversion,-perl \
-			::shells/bash
+REGRESS_DEPENDS =	archivers/zip \
+			devel/cvsps \
+			devel/subversion,-perl \
+			shells/bash
 
 GITWEB =		README INSTALL git-favicon.png git-logo.png \
 			gitweb.cgi gitweb.css

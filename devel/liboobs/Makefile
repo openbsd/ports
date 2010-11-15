@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	wrapping library to the System Tools Backends
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += crypto dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre
 
-LIB_DEPENDS=	::x11/dbus-glib
-RUN_DEPENDS=	::sysutils/system-tools-backends
+LIB_DEPENDS=	x11/dbus-glib
+RUN_DEPENDS=	sysutils/system-tools-backends
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	devel/gettext \

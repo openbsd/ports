@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
 
 COMMENT =	datetime sets and set math
 
@@ -15,12 +15,12 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CONFIGURE_STYLE =	modbuild
 
-RUN_DEPENDS =		::devel/p5-DateTime \
-			::devel/p5-Params-Validate \
-			::devel/p5-Set-Infinite
+RUN_DEPENDS =		devel/p5-DateTime \
+			devel/p5-Params-Validate \
+			devel/p5-Set-Infinite
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-REGRESS_DEPENDS =	::devel/p5-DateTime-Event-Recurrence
+REGRESS_DEPENDS =	devel/p5-DateTime-Event-Recurrence
 
 .include <bsd.port.mk>

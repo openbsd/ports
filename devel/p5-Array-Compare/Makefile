@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=	Perl module for comparing arrays
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	DAVECROSS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Moose
+RUN_DEPENDS=	devel/p5-Moose
 
 CONFIGURE_STYLE=modbuild
 MAKE_ENV=	TEST_POD=Yes

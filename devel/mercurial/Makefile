@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/15 19:46:00 espie Exp $
 
 COMMENT =		fast, lightweight source control management
 
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.selenic.com/mercurial/release/
 
 MODULES =		lang/python
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-BUILD_DEPENDS =		::devel/gettext
+BUILD_DEPENDS =		devel/gettext
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
-			::archivers/unzip
+			archivers/unzip
 
 FILES =			hgeditor hgweb.cgi
 

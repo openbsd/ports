@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4
@@ -19,15 +19,15 @@ USE_GROFF =	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info->=0.21:misc/shared-mime-info \
-		::devel/mono-addins \
-		::shells/bash \
-		::x11/gnome/mono-gnome \
-		::devel/ectags
+RUN_DEPENDS=	devel/desktop-file-utils \
+		shared-mime-info->=0.21:misc/shared-mime-info \
+		devel/mono-addins \
+		shells/bash \
+		x11/gnome/mono-gnome \
+		devel/ectags
 
 # see patches/patch-src_addins_MonoDevelop_Autotools_SolutionDeployer_cs
-RUN_DEPENDS+=	::devel/gmake
+RUN_DEPENDS+=	devel/gmake
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-update-mimedb \

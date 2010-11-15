@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -23,13 +23,13 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		pthread-stubs xcb z gthread-2.0 xcb-render xcb-render-util \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 xml2.>=7
+		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 xml2>=7
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
-LIB_DEPENDS=		::x11/gtk+2 \
-			:libxml->=2.6.16p6:textproc/libxml
+LIB_DEPENDS=		x11/gtk+2 \
+			libxml->=2.6.16p6:textproc/libxml
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

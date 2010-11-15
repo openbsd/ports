@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=	MTP, IMAP and POP protocol implementation
 
@@ -13,8 +13,8 @@ HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedMail
 
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Mail/${VERSION:R}/
 
-REGRESS_DEPENDS=:py-twisted-mail-*:devel/py-twisted/mail \
-		:py-twisted-names-*:devel/py-twisted/names
+REGRESS_DEPENDS=devel/py-twisted/mail \
+		devel/py-twisted/names
 
 TRIAL_TARGET=	twisted.mail
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:08 espie Exp $
 
 COMMENT=		template plugin that supports Kid templates
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://files.turbogears.org/eggs/
 
 MODULES=		lang/python
-RUN_DEPENDS=		::devel/py-kid
+RUN_DEPENDS=		devel/py-kid
 
 NO_REGRESS=		Yes
 

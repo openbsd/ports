@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/08 01:22:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}
 
 WANTLIB =	c m sqlite3
-LIB_DEPENDS =	::databases/sqlite3
+LIB_DEPENDS =	databases/sqlite3
 
 USE_GMAKE =	Yes
 MAKE_FILE =	bsd-gcc.mk

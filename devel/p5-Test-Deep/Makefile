@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:06 espie Exp $
 
 COMMENT=        flexible deep comparison
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Test-NoWarnings
+RUN_DEPENDS=	devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>

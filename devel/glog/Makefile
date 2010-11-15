@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/04 07:28:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		C++ application-level logging library
 
@@ -22,8 +22,8 @@ WANTLIB += gflags m pthread stdc++
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
-LIB_DEPENDS =		::devel/gflags
-REGRESS_DEPENDS =	::devel/gtest
+LIB_DEPENDS =		devel/gflags
+REGRESS_DEPENDS =	devel/gtest
 BUILD_DEPENDS +=	${REGRESS_DEPENDS}
 
 USE_LIBTOOL =		Yes

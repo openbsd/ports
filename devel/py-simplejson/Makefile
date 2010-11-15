@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =		JSON encoder/decoder
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=s/simplejson/}
 
 MODULES =		lang/python
-REGRESS_DEPENDS =	::devel/py-nose
+REGRESS_DEPENDS =	devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

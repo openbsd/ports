@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/15 19:46:00 espie Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -25,20 +25,20 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB =		gcrypt gpg-error m pcre tasn1 z \
 			gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-			gthread-2.0 gnutls.>=12 xml2.>=7
+			gthread-2.0 gnutls>=12 xml2>=7
 
-LIB_DEPENDS =		:glib2->=2.22.2:devel/glib2 \
-			::security/gnutls \
-			::textproc/libxml
+LIB_DEPENDS =		glib2->=2.22.2:devel/glib2 \
+			security/gnutls \
+			textproc/libxml
 
 WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 sqlite3 \
-			soup-2.4 gnome-keyring.>=6 gconf-2 proxy
+			soup-2.4 gnome-keyring>=6 gconf-2 proxy
 
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
-			::${BUILD_PKGPATH},-main \
-			:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-			::devel/gconf2 \
-			::net/libproxy
+			${BUILD_PKGPATH},-main \
+			x11/gnome/libgnome-keyring \
+			devel/gconf2 \
+			net/libproxy
 
 MODULES =		devel/gettext \
 			x11/gnome

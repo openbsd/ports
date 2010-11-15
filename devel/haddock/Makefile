@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/15 19:45:58 espie Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -32,19 +32,19 @@ MODGHC_BUILD =		cabal hackage register
 
 LIB_DEPENDS-lib =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			::devel/gmp
+			devel/gmp
 
 WANTLIB-lib =
 WANTLIB-main =		${WANTLIB} \
 			c gmp m pthread util
 
-BUILD_DEPENDS +=	::devel/alex \
-			::devel/happy \
-			::devel/hs-ghc-paths \
-			::lang/ghc,-doc \
-			::textproc/docbook \
-			::textproc/docbook-xsl \
-			::textproc/libxslt \
+BUILD_DEPENDS +=	devel/alex \
+			devel/happy \
+			devel/hs-ghc-paths \
+			lang/ghc,-doc \
+			textproc/docbook \
+			textproc/docbook-xsl \
+			textproc/libxslt \
 			${RUN_DEPENDS}
 
 # Required for building the documentation:

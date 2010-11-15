@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
 
 COMMENT =	parse and format iCal datetime and duration strings
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	modbuild
 
-RUN_DEPENDS =	::devel/p5-DateTime \
-		::devel/p5-DateTime-Set \
-		::devel/p5-DateTime-TimeZone \
-		::devel/p5-DateTime-Event-ICal \
-		::devel/p5-Params-Validate
+RUN_DEPENDS =	devel/p5-DateTime \
+		devel/p5-DateTime-Set \
+		devel/p5-DateTime-TimeZone \
+		devel/p5-DateTime-Event-ICal \
+		devel/p5-Params-Validate
 
 .include <bsd.port.mk>

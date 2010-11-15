@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/06 10:54:53 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -31,7 +31,7 @@ MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
 SUBST_VARS=		SUFFIX
 
 REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-			::devel/libtool
+			devel/libtool
 REGRESS_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 pre-configure:

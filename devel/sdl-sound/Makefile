@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/09/02 07:15:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	library that handles the decoding of sound file formats
 
@@ -23,13 +23,13 @@ WANTLIB=	FLAC SDL c m mikmod ogg pthread physfs \
 		vorbisfile z
 
 MODULES=	converters/libiconv
-LIB_DEPENDS+=	::audio/flac \
-		::audio/libmikmod \
-		::audio/libvorbis \
-		::audio/speex \
-		::devel/physfs \
-		::devel/sdl \
-		::devel/smpeg
+LIB_DEPENDS+=	audio/flac \
+		audio/libmikmod \
+		audio/libvorbis \
+		audio/speex \
+		devel/physfs \
+		devel/sdl \
+		devel/smpeg
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf

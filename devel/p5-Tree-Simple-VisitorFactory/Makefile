@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	factory for Tree::Simple visitor objects
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Tree-Simple
-REGRESS_DEPENDS=::devel/p5-Test-Exception
+RUN_DEPENDS=	devel/p5-Tree-Simple
+REGRESS_DEPENDS=devel/p5-Test-Exception
 
 MAKE_ENV=	TEST_POD=Yes
 

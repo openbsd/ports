@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=		embed C/++ external module code in your Ruby script
 
@@ -20,10 +20,10 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-zentest-*:devel/ruby-zentest,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS=		devel/ruby-zentest,${FLAVOR} \
+			devel/ruby-hoe,${FLAVOR}
 
-REGRESS_DEPENDS=	:${FULLPKGNAME}:${BASE_PKGPATH} \
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH} \
 			${MODRUBY_RAKE_DEPENDS}
 
 do-regress:

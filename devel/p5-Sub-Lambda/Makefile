@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 22:41:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	syntactic sugar for lambdas in Perl
 
@@ -15,6 +15,6 @@ MODULES=	cpan
 
 USE_GROFF=	Yes
 
-RUN_DEPENDS=	::devel/p5-Parse-RecDescent
+RUN_DEPENDS=	devel/p5-Parse-RecDescent
 
 .include <bsd.port.mk>

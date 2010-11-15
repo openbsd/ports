@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/04 09:49:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
@@ -28,8 +28,8 @@ WANTLIB += pcre png
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::x11/dbus-glib \
-			::x11/gtk+2
+LIB_DEPENDS=		x11/dbus-glib \
+			x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

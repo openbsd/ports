@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/11/12 21:32:17 kurt Exp $
+# $OpenBSD: Makefile,v 1.61 2010/11/15 19:45:57 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -56,19 +56,19 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel \
-			:apache-ant->=1.6.1:devel/apache-ant
+BUILD_DEPENDS=		xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel \
+			apache-ant->=1.6.1:devel/apache-ant
 
 USE_GMAKE=		Yes
 USE_ZIP=		Yes
 
 MULTI_PACKAGES=		-main -swt -gnome -browser
 
-RUN_DEPENDS-main=	::java/javaPathHelper \
+RUN_DEPENDS-main=	java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
-			::devel/desktop-file-utils
-LIB_DEPENDS-main=	::x11/gtk+2
+			swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
+			devel/desktop-file-utils
+LIB_DEPENDS-main=	x11/gtk+2
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xcomposite Xdamage gdk_pixbuf-2.0 \
@@ -80,15 +80,15 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm \
 			gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS-swt=	::x11/gtk+2
+LIB_DEPENDS-swt=	x11/gtk+2
 WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0 gtk-x11-2.0
 
-RUN_DEPENDS-gnome=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-gnome=	::x11/gnome/libgnomeui
+RUN_DEPENDS-gnome=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
+LIB_DEPENDS-gnome=	x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2 gnomeui-2
 
-RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	:xulrunner->=1.9:devel/xulrunner/1.9
+RUN_DEPENDS-browser=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
+LIB_DEPENDS-browser=	xulrunner->=1.9:devel/xulrunner/1.9
 WANTLIB-browser=	xulrunner1.9/xpcom xulrunner1.9/xul c nspr4 plc4 plds4 m stdc++
 
 MOZILLA_HOME=		${LOCALBASE}/xulrunner1.9

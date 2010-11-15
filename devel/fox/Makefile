@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/15 19:45:57 espie Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
@@ -13,10 +13,10 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 CONFIGURE_STYLE =	gnu
 
-LIB_DEPENDS =	::archivers/bzip2 \
-		::graphics/jpeg \
-		::graphics/png \
-		::graphics/tiff
+LIB_DEPENDS =	archivers/bzip2 \
+		graphics/jpeg \
+		graphics/png \
+		graphics/tiff
 
 CONFIGURE_ENV += \
 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

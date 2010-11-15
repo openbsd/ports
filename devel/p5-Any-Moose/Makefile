@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:01 espie Exp $
 
 COMMENT =	use Moose or Mouse modules
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CPAN_AUTHOR =		FLORA
 
-RUN_DEPENDS =		:p5-Mouse->=0.21:devel/p5-Mouse
+RUN_DEPENDS =		p5-Mouse->=0.21:devel/p5-Mouse
 
 .include <bsd.port.mk>

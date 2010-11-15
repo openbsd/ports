@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=		graphical editing environment for eclipse
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/tools/gef/downloads/drops/R-3.2.2-200702081315/
 
-RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
+RUN_DEPENDS=		eclipse-sdk->=3.2:devel/eclipse/sdk
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

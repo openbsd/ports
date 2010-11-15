@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -29,8 +29,8 @@ MODGCC3_LANGS=		c++
 
 USE_GROFF =	Yes
 WANTLIB += c event m pthread sasl2
-LIB_DEPENDS= 		::security/cyrus-sasl2
-REGRESS_DEPENDS=	::misc/memcached
+LIB_DEPENDS= 		security/cyrus-sasl2
+REGRESS_DEPENDS=	misc/memcached
 
 # XXX Build memslap (benchmark tool) only on systems with GCC atomic built-ins. 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \

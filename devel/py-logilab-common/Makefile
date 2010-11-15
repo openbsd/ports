@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
 MODULES=	lang/python
 PY_FLAVOR=	python${MODPY_VERSION}
 
-RUN_DEPENDS=	:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR}
+RUN_DEPENDS=	py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR}
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 do-regress: fake

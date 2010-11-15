@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:01 espie Exp $
 
 COMMENT=		module for merging hierarchies using the C3 algorithm
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

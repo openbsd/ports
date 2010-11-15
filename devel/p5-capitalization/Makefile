@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=	use familiar style on method naming
 
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	MIYAGAWA
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Devel-Symdump
+RUN_DEPENDS=	devel/p5-Devel-Symdump
 
 .include <bsd.port.mk>

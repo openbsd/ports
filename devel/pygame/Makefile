@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/15 19:46:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,11 +23,11 @@ MASTER_SITES=	${HOMEPAGE}ftp/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
+BUILD_DEPENDS+=	math/py-Numeric
 
-LIB_DEPENDS=	::devel/sdl-ttf \
-		::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-ttf \
+		devel/sdl-image \
+		devel/sdl-mixer
 
 
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \

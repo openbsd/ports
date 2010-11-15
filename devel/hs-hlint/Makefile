@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=		source code suggestions for Haskell
 
@@ -23,11 +23,11 @@ MODGHC_BUILD=		cabal hackage haddock register
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/cpphs,-lib \
-			:hscolour->=1.17:devel/hscolour \
-			::devel/hs-uniplate \
-			::lang/hs-haskell-src-exts
-LIB_DEPENDS=		::devel/gmp
+RUN_DEPENDS=		devel/cpphs,-lib \
+			hscolour->=1.17:devel/hscolour \
+			devel/hs-uniplate \
+			lang/hs-haskell-src-exts
+LIB_DEPENDS=		devel/gmp
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/data/hlint.1 ${PREFIX}/man/man1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:08 espie Exp $
 
 BROKEN=		does not work with Qt >= 4.6
 
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/test/{Makefile,main.cpp} ${SAMPLE}
 	${INSTALL_PROGRAM} ${WRKBUILD}/test/test ${SAMPLE}
 
-LIB_DEPENDS=	::devel/glib2
+LIB_DEPENDS=	devel/glib2
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype iconv intl m png pthread pthread-stubs stdc++ xcb z

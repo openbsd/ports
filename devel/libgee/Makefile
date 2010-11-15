@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	GObject based collection library 
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += pcre glib-2.0 gobject-2.0 gthread-2.0
 
-BUILD_DEPENDS=	::lang/vala
-LIB_DEPENDS=	::devel/glib2
+BUILD_DEPENDS=	lang/vala
+LIB_DEPENDS=	devel/glib2
 
 MODULES=	devel/gettext \
 		x11/gnome

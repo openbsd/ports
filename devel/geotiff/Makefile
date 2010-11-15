@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:58 espie Exp $
 
 COMMENT=	GIS TIFF interchange library
 
 DISTNAME=	libgeotiff-1.2.5
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 1.2
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
 
 WANTLIB=		c jpeg m z proj tiff
 
-LIB_DEPENDS=		::devel/proj \
-			::graphics/tiff
+LIB_DEPENDS=		devel/proj \
+			graphics/tiff
 
 .include <bsd.port.mk>

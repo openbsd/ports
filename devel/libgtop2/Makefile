@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -23,8 +23,8 @@ WANTLIB += Xau c kvm pcre pthread glib-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/glib2
-RUN_DEPENDS=		::sysutils/lsof
+LIB_DEPENDS=		devel/glib2
+RUN_DEPENDS=		sysutils/lsof
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \

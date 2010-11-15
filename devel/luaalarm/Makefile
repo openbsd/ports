@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/18 18:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	alarm library for the lua language
 SHARED_ONLY=	Yes
 
 DISTNAME=	lalarm
 DATE=		20061011
-PKGNAME=	luaalarm-${DATE}p2
+PKGNAME=	luaalarm-${DATE}
+REVISION =	2
 # don't use PKGNAME
 DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm

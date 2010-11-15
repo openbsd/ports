@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:06 espie Exp $
 
 COMMENT= 	test suite using WWW::Mechanize
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Carp-Assert-More \
-		::devel/p5-Test-LongString \
-		::www/p5-HTTP-Server-Simple \
-		::www/p5-WWW-Mechanize 
+RUN_DEPENDS=	devel/p5-Carp-Assert-More \
+		devel/p5-Test-LongString \
+		www/p5-HTTP-Server-Simple \
+		www/p5-WWW-Mechanize 
 
 MAKE_ENV=	TEST_POD=Yes
 

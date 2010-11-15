@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,17 +17,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Devel-GlobalDestruction \
-		::devel/p5-List-MoreUtils \
-		::devel/p5-MRO-Compat \
-		::devel/p5-Package-Stash \
-		:p5-Sub-Name->=0.04:devel/p5-Sub-Name \
-		::devel/p5-Task-Weaken \
-		::devel/p5-Try-Tiny
+RUN_DEPENDS=	devel/p5-Devel-GlobalDestruction \
+		devel/p5-List-MoreUtils \
+		devel/p5-MRO-Compat \
+		devel/p5-Package-Stash \
+		p5-Sub-Name->=0.04:devel/p5-Sub-Name \
+		devel/p5-Task-Weaken \
+		devel/p5-Try-Tiny
 
-REGRESS_DEPENDS=::devel/p5-Test-Exception \
-		::devel/p5-Test-LeakTrace \
-		::devel/p5-Test-Output \
-		::devel/p5-SUPER
+REGRESS_DEPENDS=devel/p5-Test-Exception \
+		devel/p5-Test-LeakTrace \
+		devel/p5-Test-Output \
+		devel/p5-SUPER
 
 .include <bsd.port.mk>

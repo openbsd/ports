@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/08 09:57:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/15 19:45:57 espie Exp $
 
 COMMENT =	plugin framework library
 
@@ -37,10 +37,10 @@ MODULES =	lang/python \
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
-RUN_DEPENDS +=	::x11/py-gtk2
+RUN_DEPENDS +=	x11/py-gtk2
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		::x11/gtk+2
+		x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

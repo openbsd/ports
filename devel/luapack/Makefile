@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/26 20:08:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:00 espie Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	devel
 MASTER_SITES=	http://openbsddistfiles.com/jolan/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/lua
 SHARED_ONLY=	Yes
-REGRESS_DEPENDS=::${BUILD_PKGPATH}
+REGRESS_DEPENDS=${BUILD_PKGPATH}
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
 COMMENT=	LRU cache in memory with expiry
 
 MODULES=	cpan
@@ -7,10 +7,10 @@ CATEGORIES=	devel
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Tie-Cache-LRU \
-		::devel/p5-Carp-Assert \
-		::devel/p5-Class-Virtual \
-		::devel/p5-Class-Data-Inheritable
+RUN_DEPENDS=	devel/p5-Tie-Cache-LRU \
+		devel/p5-Carp-Assert \
+		devel/p5-Class-Virtual \
+		devel/p5-Class-Data-Inheritable
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

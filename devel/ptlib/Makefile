@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,11 +26,11 @@ WANTLIB=	c crypto expat m sasl2 sndio ssl lber ldap ldap_r SDL
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
-BUILD_DEPENDS=	::devel/bison \
+BUILD_DEPENDS=	devel/bison \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::databases/openldap \
-		::devel/sdl
+LIB_DEPENDS=	databases/openldap \
+		devel/sdl
 
 .include <bsd.own.mk>
 .if !${COMPILER_VERSION:L:Mgcc4}

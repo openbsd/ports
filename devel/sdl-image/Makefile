@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/09/02 07:04:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/15 19:46:09 espie Exp $
 
 COMMENT=	SDL image library
 
@@ -22,10 +22,10 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	SDL jpeg m png tiff sndio usbhid z
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::devel/sdl \
-		::graphics/jpeg \
-		::graphics/png \
-		::graphics/tiff
+LIB_DEPENDS=	devel/sdl \
+		graphics/jpeg \
+		graphics/png \
+		graphics/tiff
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

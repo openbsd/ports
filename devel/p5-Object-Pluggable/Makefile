@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 11:39:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=		base class for creating plugin-enabled objects
 
@@ -15,6 +15,6 @@ USE_GROFF=		Yes
 
 MODULES=		cpan
 
-RUN_DEPENDS=		::devel/p5-Task-Weaken
+RUN_DEPENDS=		devel/p5-Task-Weaken
 
 .include <bsd.port.mk>

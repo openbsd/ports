@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =		light-weight application support
 
@@ -18,7 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-diff-lcs-*:devel/ruby-diff-lcs,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-diff-lcs,${FLAVOR}
 MODRUBY_REGRESS =	rake rspec
 RAKE_REGRESS_TARGET =	spec_no_cov
 

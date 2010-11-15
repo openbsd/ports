@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:04 espie Exp $
 
 COMMENT=        standalone extensible Perl module installer
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::devel/p5-Module-ScanDeps \
-		::devel/p5-File-Remove \
-		::devel/p5-PAR-Dist \
-		:p5-YAML-Tiny->=1.38:devel/p5-YAML-Tiny \
-		::converters/p5-JSON
+RUN_DEPENDS=	devel/p5-Module-ScanDeps \
+		devel/p5-File-Remove \
+		devel/p5-PAR-Dist \
+		p5-YAML-Tiny->=1.38:devel/p5-YAML-Tiny \
+		converters/p5-JSON
 
 CONFIGURE_ARGS=	--skipdeps
 

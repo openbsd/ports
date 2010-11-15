@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:03 espie Exp $
 
 COMMENT=	parses long function arguments
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Log-Agent->=0.105:devel/p5-Log-Agent
+RUN_DEPENDS=	p5-Log-Agent->=0.105:devel/p5-Log-Agent
 
 .include <bsd.port.mk>

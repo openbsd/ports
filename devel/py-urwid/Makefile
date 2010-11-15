@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/30 20:05:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:08 espie Exp $
 
 COMMENT =	console user interface library for python
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
-REGRESS_DEPENDS =	::devel/py-gobject \
-			::lang/python/${MODPY_VERSION},-tests
+REGRESS_DEPENDS =	devel/py-gobject \
+			lang/python/${MODPY_VERSION},-tests
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

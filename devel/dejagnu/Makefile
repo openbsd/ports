@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/15 19:45:57 espie Exp $
 
 COMMENT=	framework to test programs
 
 DISTNAME=	dejagnu-1.4.3
-PKGNAME=	${DISTNAME}p6
+REVISION =	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/tcl
 
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
-RUN_DEPENDS=	:expect-*:lang/expect,no_tk \
+RUN_DEPENDS=	lang/expect,no_tk \
 		${MODTCL_RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu

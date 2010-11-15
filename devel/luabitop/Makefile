@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/18 18:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:00 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	library for bitwise operations in lua
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
 MODULES=	lang/lua
-REGRESS_DEPENDS+=::devel/luabitop
+REGRESS_DEPENDS+=devel/luabitop
 MAKE_ENV+=	INCLUDES=-I${LOCALBASE}/include
 DOCDIR=		${PREFIX}/share/doc/luabitop
 

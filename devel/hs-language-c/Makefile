@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:58 espie Exp $
 
 COMMENT =		analysis and generation of C code in Haskell
 
@@ -20,8 +20,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-BUILD_DEPENDS =		::devel/alex \
-			::devel/happy
+BUILD_DEPENDS =		devel/alex \
+			devel/happy
 
 NO_REGRESS =		Yes
 

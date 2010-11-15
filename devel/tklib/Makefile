@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:09 espie Exp $
 
 COMMENT =		Tk Standard Library
 
@@ -16,12 +16,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =		x11/tk
-BUILD_DEPENDS =		::devel/tcllib
-RUN_DEPENDS =		::devel/tcllib
-REGRESS_DEPENDS =	::devel/tcllib
+BUILD_DEPENDS =		devel/tcllib
+RUN_DEPENDS =		devel/tcllib
+REGRESS_DEPENDS =	devel/tcllib
 REGRESS_IS_INTERACTIVE =x11
 NO_BUILD =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 SCRIPTS_TCLSH =		canvas/city.tcl \
 			ntext/ntextDemoBindings.tcl ntext/ntextDemoIndent.tcl ntext/ntextExample.tcl \

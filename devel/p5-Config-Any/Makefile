@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:02 espie Exp $
 
 COMMENT=	load various configuration file formats
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # All of these would be needed to parse all these configuration
 # formats.
-REGRESS_DEPENDS=::devel/p5-Config-Tiny \
-		::converters/p5-JSON \
-		::devel/p5-YAML \
-		::devel/p5-Config-General
+REGRESS_DEPENDS=devel/p5-Config-Tiny \
+		converters/p5-JSON \
+		devel/p5-YAML \
+		devel/p5-Config-General
 
 .include <bsd.port.mk>

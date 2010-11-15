@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:02 espie Exp $
 
 COMMENT =	DateTime::Set extension to create basic recurrence sets
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =		::devel/p5-DateTime \
-			::devel/p5-DateTime-Set
+RUN_DEPENDS =		devel/p5-DateTime \
+			devel/p5-DateTime-Set
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/08 09:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 19:45:59 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	devel
 HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
@@ -16,14 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m \
 		fam rpcsvc png pthread stdc++ util z idn Xau Xdmcp \
-		pthread-stubs xcb kdecore.>=4 DCOP kdefx kdesu kdeui \
+		pthread-stubs xcb kdecore>=4 DCOP kdefx kdesu kdeui \
 		kio kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 
 MODULES=	x11/kde devel/gettext
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader

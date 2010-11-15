@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/26 09:29:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:01 espie Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS = --disable-werror \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS =	::devel/libftdi
+LIB_DEPENDS =	devel/libftdi
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

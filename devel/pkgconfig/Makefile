@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:07 espie Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcre glib-2.0 pthread
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/glib2
+LIB_DEPENDS=		devel/glib2
 
 CONFIGURE_STYLE=	gnu
 # This pkg-config has just become a reference application. So it's safe to

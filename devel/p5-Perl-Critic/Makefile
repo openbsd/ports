@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:05 espie Exp $
 
 COMMENT=	critique perl source code for best practices
 
@@ -14,23 +14,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-B-Keywords \
-		::devel/p5-Config-Tiny \
-		:p5-Exception-Class->=1.23:devel/p5-Exception-Class \
-		::devel/p5-File-HomeDir \
-		:p5-PPI->=1.208:textproc/p5-PPI \
-		::devel/p5-Readonly-XS \
-		::devel/p5-Set-Scalar \
-		::devel/p5-String-Format \
-		::devel/p5-Readonly \
-		::devel/perltidy \
-		::mail/p5-Email-Address \
-		::sysutils/p5-File-Which \
-		::textproc/p5-PPIx-Regexp \
-		::textproc/p5-PPIx-Utilities \
-		::textproc/p5-Pod-Spell
-REGRESS_DEPENDS=::devel/p5-PadWalker \
-		::devel/p5-Test-Memory-Cycle
+RUN_DEPENDS=	devel/p5-B-Keywords \
+		devel/p5-Config-Tiny \
+		p5-Exception-Class->=1.23:devel/p5-Exception-Class \
+		devel/p5-File-HomeDir \
+		p5-PPI->=1.208:textproc/p5-PPI \
+		devel/p5-Readonly-XS \
+		devel/p5-Set-Scalar \
+		devel/p5-String-Format \
+		devel/p5-Readonly \
+		devel/perltidy \
+		mail/p5-Email-Address \
+		sysutils/p5-File-Which \
+		textproc/p5-PPIx-Regexp \
+		textproc/p5-PPIx-Utilities \
+		textproc/p5-Pod-Spell
+REGRESS_DEPENDS=devel/p5-PadWalker \
+		devel/p5-Test-Memory-Cycle
 
 MAKE_ENV+=	TEST_POD=Yes
 

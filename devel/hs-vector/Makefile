@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 22:13:39 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
 
 COMMENT =		Int-indexed arrays
 
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-primitive
+RUN_DEPENDS +=		devel/hs-primitive
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

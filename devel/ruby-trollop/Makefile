@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:09 espie Exp $
 
 COMMENT =	Ruby commandline parsing library
 
@@ -17,7 +17,7 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
 
-REGRESS_DEPENDS = :${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -rubygems test/test_trollop.rb

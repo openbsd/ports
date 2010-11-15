@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 01:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/15 19:45:56 espie Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -24,10 +24,10 @@ EXTRACT_ONLY=	avrdude-${V}${EXTRACT_SUFX}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS=		::devel/libusb
-WANTLIB +=		usb.>=1
+LIB_DEPENDS=		devel/libusb
+WANTLIB +=		usb>=1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/avrdude

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/10 13:36:14 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:58 espie Exp $
 # Original from: auclair.vincent
 
 COMMENT =		c++ commandline flags processing library
 
 DISTNAME =		gflags-1.2
-PKGNAME =		${DISTNAME}p0
+REVISION =		0
 
 SHARED_LIBS +=		gflags               0.0      # .0.0
 SHARED_LIBS +=		gflags_nothreads     0.0      # .0.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 13:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/15 19:45:59 espie Exp $
 
 COMMENT=	C++ bindings for libglade
 
@@ -31,8 +31,8 @@ WANTLIB += pangomm-1.4 pcre png sigc-2.0 xml2
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gtk2mm \
-		::devel/libglade2
+LIB_DEPENDS=	x11/gtk2mm \
+		devel/libglade2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
