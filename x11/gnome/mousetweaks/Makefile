@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/15 17:24:39 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
-GNOME_VERSION=	2.32.0
-REVISION=	0
+GNOME_VERSION=	2.32.1
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
@@ -16,13 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gailutil gdk-x11-2.0
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo
+WANTLIB += expat fontconfig freetype gailutil gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 popt
-WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += xml2 z panel-applet-2 canberra png
+WANTLIB += pthread pthread-stubs xcb xcb-render
+WANTLIB += xml2 z panel-applet-2 canberra png GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
