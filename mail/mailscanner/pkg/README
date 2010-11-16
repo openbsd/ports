@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/16 09:17:55 jasper Exp $
+
 The MailScanner port is using the original MailScanner tarball from 
 www.mailscanner.info. This tarball puts all the MailScanner files in 
 subdirectories
@@ -11,14 +13,17 @@ var	pid file
 In order to make this OpenBSD compliant the port installs those files
 in the following directories:
 
-/usr/local/libexec/MailScanner	MailScanner binary, virus wrapper/autoupdate
-/usr/local/lib/MailScanner	MailScanner Perl libraries
-/usr/local/share/MailScanner	MailScanner report templates
-/usr/local/share/doc/MailScanner	Documentation
-/usr/local/share/examples/MailScanner	Example files
-/etc/MailScanner		MailScanner config files / rules
+${TRUEPREFIX}/libexec/MailScanner	MailScanner binary, virus wrapper/autoupdate
+${TRUEPREFIX}/lib/MailScanner		MailScanner Perl libraries
+${TRUEPREFIX}/share/MailScanner		MailScanner report templates
+${TRUEPREFIX}/share/doc/MailScanner	Documentation
+${TRUEPREFIX}/share/examples/MailScanner Example files
+${SYSCONFDIR}/MailScanner		MailScanner config files / rules
 
-To activate this port, you must do the following for sendmail:
+See http://www.mailscanner.info  and the sample configuration
+files in ${SYSCONFDIR}/MailScanner for further instructions.
+
+To activate this package, you must do the following for sendmail:
 
 1. Set the following in your sendmail.mc file:
 
@@ -48,11 +53,11 @@ To activate this port, you must do the following for sendmail:
   fi
 
   # MailScanner outbound queue
-  if [ -x /usr/local/bin/check_mailscanner ]; then
-        echo -n ' MailScanner'; /usr/local/bin/check_mailscanner
+  if [ -x ${TRUEPREFIX}/bin/check_mailscanner ]; then
+        echo -n ' MailScanner'; ${TRUEPREFIX}/bin/check_mailscanner
   fi
 
 4. Add the following to root's crontab:
 
   # Check the status of MailScanner every hour
-  0       *       *       *       *       /usr/local/bin/check_mailscanner -q
+  0       *       *       *       *       ${TRUEPREFIX}/bin/check_mailscanner -q

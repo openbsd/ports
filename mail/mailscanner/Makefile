@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/16 07:33:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/16 09:17:55 jasper Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -103,7 +103,6 @@ install_share:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/MailScanner
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/MailScanner
 	@${INST_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/MailScanner/README
-	@${INST_DATA} ${FILESDIR}/README.OpenBSD.port ${PREFIX}/share/doc/MailScanner/README.OpenBSD.port
 	@cd ${WRKSRC}/etc ; find reports -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}'/share/examples/MailScanner/{}' \;
 	@cd ${WRKSRC}/etc ; find reports -type f ! -name "*.orig" | while read f; do ${INST_DATA} $$f ${PREFIX}/share/examples/MailScanner/$$f; done
 	@cd ${PREFIX}/share/examples/MailScanner/reports ; find . -name "*.bak" -print0 | xargs -0 rm -f
