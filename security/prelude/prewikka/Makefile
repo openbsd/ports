@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/16 10:11:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/16 10:17:56 jasper Exp $
 
 COMMENT=	Prelude Management Console
 
@@ -18,16 +18,11 @@ RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager	\
 		:py-cheetah-*:devel/py-cheetah
 
 NO_REGRESS=	Yes
+VERSION=	${DISTNAME:S/prewikka-//}
+SUBST_VARS+=	VERSION
 
 pre-install:
-	@${INSTALL_DATA} ${FILESDIR}/siteconfig.py		\
+	${SUBST_CMD} -c ${FILESDIR}/siteconfig.py \
 		${WRKSRC}/prewikka/siteconfig.py
-	@perl -pi -e "s,%%PREFIX%%,${PREFIX},"			\
-		${WRKSRC}/prewikka/siteconfig.py
-	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR},"		\
-		${WRKSRC}/prewikka/siteconfig.py
-	@perl -pi -e "s,%%VERSION%%,${DISTNAME:S/prewikka-//},"	\
-		${WRKSRC}/prewikka/siteconfig.py
-	@perl -pi -e 's#${WRKINST}##' ${WRKSRC}/prewikka/siteconfig.py
 
 .include <bsd.port.mk>
