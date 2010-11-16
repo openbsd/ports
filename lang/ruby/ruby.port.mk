@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.35 2010/11/16 18:30:38 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.36 2010/11/16 21:50:27 jeremy Exp $
 
 # ruby module
 
@@ -346,7 +346,7 @@ do-install: ${MODRUBY_INSTALL_COOKIE}
 .endif
 
 # These are mostly used by the non-gem ports.
-SUBST_VARS+=		MODRUBY_BIN_REV MODRUBY_LIBREV MODRUBY_ARCH
+SUBST_VARS+=		MODRUBY_LIBREV MODRUBY_ARCH
 
 # regression stuff
 
