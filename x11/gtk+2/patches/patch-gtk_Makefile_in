@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.25 2010/10/08 07:32:49 robert Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.26 2010/11/16 07:37:25 ajacoutot Exp $
 
 Fix use of grep(1) as we don't support the -o switch.
 
@@ -7,9 +7,9 @@ because some applications are broken. Use this until
 they get fixed. This is temporary.
 https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
---- gtk/Makefile.in.orig	Thu Sep 23 16:27:23 2010
-+++ gtk/Makefile.in	Fri Oct  8 01:30:41 2010
-@@ -947,7 +947,7 @@ SUBDIRS = theme-bits . tests
+--- gtk/Makefile.in.orig	Mon Nov 15 17:49:47 2010
++++ gtk/Makefile.in	Tue Nov 16 00:08:17 2010
+@@ -944,7 +944,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
@@ -18,7 +18,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
-@@ -1598,7 +1598,171 @@ GENERATED_ICONS = \
+@@ -1595,7 +1595,171 @@ GENERATED_ICONS = \
  	stock-icons/24/folder-remote.png 		\
  	stock-icons/24/user-home.png 			\
  	stock-icons/24/user-desktop.png 		\
@@ -191,7 +191,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
  @CROSS_COMPILING_FALSE@gtk_update_icon_cache_program = \
  @CROSS_COMPILING_FALSE@	   ./gtk-update-icon-cache
-@@ -2751,7 +2915,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
+@@ -2748,7 +2912,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
  gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_srcdir)/gdk/*.h Makefile
  	echo '#include <gtk/gtk.h>' > xgen-gtfsrc.c && \
  	  ${CPP} $(DEFS) $(INCLUDES) -DGTK_ENABLE_BROKEN $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
@@ -200,7 +200,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  	  sort | uniq | \
  	  sed '{ s/^/*tp++ = /; s/$$/();/; }' > xgen-gtf \
  	&& cp xgen-gtf $@ && rm -f xgen-gtf
-@@ -2869,6 +3033,88 @@ stamp-icons: $(STOCK_ICONS)
+@@ -2866,6 +3030,88 @@ stamp-icons: $(STOCK_ICONS)
  	   && $(LN_S) folder.png user-desktop.png 			\
  	   && $(RM) text-x-generic.png 					\
  	   && $(LN_S) document-x-generic.png text-x-generic.png 	\
