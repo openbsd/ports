@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/28 13:46:54 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 18:06:42 espie Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
@@ -8,7 +8,7 @@ DISTNAME=		gpstk${V}
 PKGNAME-main=		gpstk-${V}
 REVISION-main=		3
 PKGNAME-devel=		gpstk-devel-${V}
-REVISION-devel=		3
+REVISION-devel=		4
 CATEGORIES=		geo devel
 SHARED_LIBS=		base 15.0 \
 			geomatics 15.0 \
@@ -53,12 +53,12 @@ CXXFLAGS+=		-O0 -g
 
 USE_LIBTOOL=		Yes
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			::devel/libtool \
+			devel/libtool \
 			${MODGNU_AUTOMAKE_DEPENDS}
 MULTI_PACKAGES=		-main -devel
 WANTLIB-main=		m c stdc++ curses
 WANTLIB-devel=
-RUN_DEPENDS-devel=	:gpstk-main-$V:geo/gpstk
+RUN_DEPENDS-devel=	${PKGNAME-main}:geo/gpstk
 
 WRKDIST=		${WRKDIR}/${DISTNAME}
 
