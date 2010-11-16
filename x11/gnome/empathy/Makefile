@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2010/11/15 14:52:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/16 14:06:52 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.32.1
+
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -49,12 +51,12 @@ LIB_DEPENDS=		::audio/libcanberra \
 			::geo/libchamplain/core \
 			::graphics/clutter/clutter-gtk \
 			::net/telepathy/telepathy-farsight \
-			::net/telepathy/telepathy-mission-control \
 			::net/telepathy/telepathy-logger \
 			::textproc/enchant \
 			::net/telepathy/folks \
 			::x11/gnome/keyring
 RUN_DEPENDS=		::devel/iso-codes \
+			::net/telepathy/telepathy-mission-control \
 			::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-idle \
