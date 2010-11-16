@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/27 13:25:01 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:27 espie Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		::graphics/allegropng \
-			::audio/dumb
+BUILD_DEPENDS =		graphics/allegropng \
+			audio/dumb
 
-LIB_DEPENDS =		::games/allegro \
-			::audio/libvorbis
+LIB_DEPENDS =		games/allegro \
+			audio/libvorbis
 
 WANTLIB =		alleg c ogg m pthread vorbis vorbisfile
 

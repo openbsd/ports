@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:29 espie Exp $
 
 DISTNAME=	xscavenger-1.4.4
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 

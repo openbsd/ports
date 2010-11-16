@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =	maze game resembling boulderdash
 
@@ -19,9 +19,9 @@ WANTLIB =	SDL c m pthread smpeg SDL_mixer SDL_image SDL_net
 
 MASTER_SITES =	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
-LIB_DEPENDS =	::devel/sdl-mixer \
-		::devel/sdl-image \
-		:sdl-net->=1.2.7:devel/sdl-net
+LIB_DEPENDS =	devel/sdl-mixer \
+		devel/sdl-image \
+		sdl-net->=1.2.7:devel/sdl-net
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \

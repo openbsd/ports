@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -23,8 +23,8 @@ USE_MOTIF=	OpenMotif
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::www/clearsilver
-LIB_DEPENDS=	::www/fcgi
+BUILD_DEPENDS=	www/clearsilver
+LIB_DEPENDS=	www/fcgi
 
 MAKE_ENV=	LDADD=-lm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:26 espie Exp $
 
 COMMENT =	open source remake of old DOS game Sherlock
 
@@ -16,14 +16,14 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	c freetype m pthread stdc++ z SDL.>=8 SDL_mixer.>=3 SDL_ttf.>=7
+WANTLIB =	c freetype m pthread stdc++ z SDL>=8 SDL_mixer>=3 SDL_ttf>=7
 
 MASTER_SITES =	${HOMEPAGE}files/einstein/
 EXTRACT_SUFX =	-src.tar.gz
 
-LIB_DEPENDS =	::devel/sdl	\
-		::devel/sdl-mixer	\
-		::devel/sdl-ttf
+LIB_DEPENDS =	devel/sdl	\
+		devel/sdl-mixer	\
+		devel/sdl-ttf
 
 USE_GMAKE =	Yes
 

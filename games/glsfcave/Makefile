@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	control a ribbon to avoid hitting walls
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	GL GLU X11 Xext Xi Xmu c m pthread-stubs xcb glut.>=4
+WANTLIB=	GL GLU X11 Xext Xi Xmu c m pthread-stubs xcb glut>=4
 
-LIB_DEPENDS=	::graphics/freeglut
+LIB_DEPENDS=	graphics/freeglut
 
 WRKDIST=	${WRKDIR}/glsfcave
 

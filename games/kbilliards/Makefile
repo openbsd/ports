@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/16 11:23:27 espie Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
@@ -20,12 +20,12 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 artsflow \
 		gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl m mad \
 		mcop ogg pcre png pthread pthread-stubs qt-mt qtmcop rpcsvc \
 		sndio soundserver_idl stdc++ util vorbis vorbisenc \
-		vorbisfile xcb z kdecore.>=6 kdesu kdeui DCOP kdeprint \
+		vorbisfile xcb z kdecore>=6 kdesu kdeui DCOP kdeprint \
 		kio kwalletclient kdefx artskde kparts
 
 MODULES=		x11/kde	devel/gettext
 
-LIB_DEPENDS=		::x11/kde/libs3
+LIB_DEPENDS=		x11/kde/libs3
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}

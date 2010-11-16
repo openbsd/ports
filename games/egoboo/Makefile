@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:26 espie Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		GL GLU SDL c m pthread SDL_net SDL_image SDL_mixer \
 			SDL_ttf
-LIB_DEPENDS =		::devel/sdl-net \
-			::devel/sdl-image \
-			::devel/sdl-mixer \
-			::devel/sdl-ttf
+LIB_DEPENDS =		devel/sdl-net \
+			devel/sdl-image \
+			devel/sdl-mixer \
+			devel/sdl-ttf
 
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.unix

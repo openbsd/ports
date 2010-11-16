@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -22,7 +22,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/qt3 devel/gettext
 

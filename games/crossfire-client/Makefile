@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	graphical networked AD&D style game
 
@@ -24,16 +24,16 @@ WANTLIB=	GL GLU SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gmodule-2.0 gobject-2.0 idn m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
 		pthread-stubs sndio ssl xcb z gdk_pixbuf-2.0 \
-		gdk-x11-2.0 gtk-x11-2.0 SDL_image.>=2 glut.>=4 curl.>=8
+		gdk-x11-2.0 gtk-x11-2.0 SDL_image>=2 glut>=4 curl>=8
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/sdl-image \
-		::graphics/freeglut \
-		::net/curl
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/sdl-image \
+		graphics/freeglut \
+		net/curl
 
 USE_GROFF =	Yes
 

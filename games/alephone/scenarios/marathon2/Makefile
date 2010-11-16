@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.4 2010/04/15 14:11:01 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.5 2010/11/16 11:23:25 espie Exp $
 PKG_ARCH-main=		*
 PKG_ARCH-hires=		*
 
@@ -6,8 +6,10 @@ COMMENT-main=		marathon two data files
 COMMENT-hires=		hires graphics and sounds
 V=			0.0.20090509
 DISTNAME=		marathon2-${V}
-PKGNAME-main=		marathon2-${V}p0
-PKGNAME-hires=		marathon2-hires-${V}p0
+PKGNAME-main=		marathon2-${V}
+REVISION-main =		0
+PKGNAME-hires=		marathon2-hires-${V}
+REVISION-hires =	0
 HOMEPAGE=		http://source.bungie.org/get/
 
 DISTFILES=		Marathon2.zip
@@ -23,7 +25,7 @@ PERMIT_DISTFILES_CDROM= "not for sale"
 PERMIT_DISTFILES_FTP=	YES
 
 MULTI_PACKAGES= 	-main -hires
-RUN_DEPENDS-hires=	::games/alephone/scenarios/marathon2
+RUN_DEPENDS-hires=	games/alephone/scenarios/marathon2
 
 EXTRACT_ONLY =		Marathon2.zip LandscapeEnhancementPackv10.zip \
 			    TotalTextureEnhancementv61.zip shots_fired.zip

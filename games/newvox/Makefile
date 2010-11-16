@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	voxel-style landscape rendering fly-by
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb SDL
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 
 SEPARATE_BUILD=	concurrent

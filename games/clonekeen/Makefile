@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/07 18:58:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:26 espie Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-LIB_DEPENDS = 		::devel/sdl
+LIB_DEPENDS = 		devel/sdl
 WANTLIB =		SDL c m pthread stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=clonekeen/}

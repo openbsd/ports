@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
-PKGNAME=	${DISTNAME}p7
+REVISION = 	7
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/ \

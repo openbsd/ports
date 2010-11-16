@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	suite of educational games for young children
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	:pygame->=1.7:devel/pygame
+RUN_DEPENDS=	pygame->=1.7:devel/pygame
 
 PKG_ARCH=	*
 NO_BUILD=	Yes

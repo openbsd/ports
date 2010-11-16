@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:29 espie Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -23,16 +23,16 @@ WANTLIB += SDL_mixer SDL_net SDL_ttf bz2 curl jpeg ode lua png sqlite3
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS =	::devel/sdl-mixer \
-		::devel/sdl-net \
-		::devel/sdl-ttf \
-		::archivers/bzip2 \
-		::net/curl \
-		::graphics/jpeg \
-		::devel/ode \
-		::lang/lua \
-		::graphics/png \
-		::databases/sqlite3
+LIB_DEPENDS =	devel/sdl-mixer \
+		devel/sdl-net \
+		devel/sdl-ttf \
+		archivers/bzip2 \
+		net/curl \
+		graphics/jpeg \
+		devel/ode \
+		lang/lua \
+		graphics/png \
+		databases/sqlite3
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes

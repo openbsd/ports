@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 23:12:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:26 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -34,22 +34,22 @@ NO_REGRESS =		Yes
 MODULES =		perl \
 			devel/gettext
 
-BUILD_DEPENDS =		::devel/p5-SDL \
-			::devel/sdl-pango \
-			::devel/p5-Locale-gettext
+BUILD_DEPENDS =		devel/p5-SDL \
+			devel/sdl-pango \
+			devel/p5-Locale-gettext
 
-RUN_DEPENDS-main =	::devel/p5-SDL \
-			::devel/sdl-pango \
-			::devel/p5-Locale-gettext \
-			::${BASE_PKGPATH},-server
+RUN_DEPENDS-main =	devel/p5-SDL \
+			devel/sdl-pango \
+			devel/p5-Locale-gettext \
+			${BASE_PKGPATH},-server
 
 LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
-			::devel/sdl-pango \
-			::devel/sdl-mixer \
-			::devel/glib2
+			devel/sdl-pango \
+			devel/sdl-mixer \
+			devel/glib2
 
 LIB_DEPENDS-server =	${MODGETTEXT_LIB_DEPENDS} \
-			::devel/glib2
+			devel/glib2
 
 WANTLIB-main =		${MODGETTEXT_WANTLIB} \
 			SDL X11 m pango-1.0 pthread pthread-stubs xcb \

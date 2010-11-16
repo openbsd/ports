@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/06 20:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:27 espie Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -39,14 +39,14 @@ MODULES=		textproc/intltool \
 			devel/gconf2
 
 LIB_DEPENDS-main=	${MODGCONF2_LIB_DEPENDS} \
-			::x11/gnome/libgnome \
-			::x11/gnome/libgnomeui \
-			:esound->=0.2.38:audio/esound
+			x11/gnome/libgnome \
+			x11/gnome/libgnomeui \
+			esound->=0.2.38:audio/esound
 LIB_DEPENDS-themes=
 WANTLIB-themes=
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			:desktop-file-utils-*:devel/desktop-file-utils
-RUN_DEPENDS-themes=	::games/gtetrinet
+			devel/desktop-file-utils
+RUN_DEPENDS-themes=	games/gtetrinet
 PKG_ARCH-themes=	*
 
 WANTLIB-main += gnome-2 gnomeui-2 esd ${MODGCONF2_WANTLIB}
@@ -87,4 +87,5 @@ post-install:
 
 .include <bsd.port.mk>
 
+# XXX for the schema to be in the right location
 CONFIGURE_ARGS+=--sysconfdir=${SYSCONFDIR}/gnome

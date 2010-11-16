@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/16 11:23:26 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,23 +35,23 @@ MODULES=	devel/gettext \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	::textproc/texi2html \
-		::x11/py-gtk2 \
-		::games/gnuchess \
-		::archivers/gtar
+BUILD_DEPENDS=	textproc/texi2html \
+		x11/py-gtk2 \
+		games/gnuchess \
+		archivers/gtar
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		::net/gnet \
-		::databases/sqlite3 \
-		:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
-		::x11/gnome/librsvg
-RUN_DEPENDS=	::games/gnuchess \
-		::databases/py-sqlite2 \
-		::x11/py-gtk2 \
-		::games/tuxpaint \
-		::cad/gnucap \
-		:desktop-file-utils-*:devel/desktop-file-utils \
-		::multimedia/gstreamer-0.10/plugins-base \
-		:yelp-*:x11/gnome/yelp
+		net/gnet \
+		databases/sqlite3 \
+		gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
+		x11/gnome/librsvg
+RUN_DEPENDS=	games/gnuchess \
+		databases/py-sqlite2 \
+		x11/py-gtk2 \
+		games/tuxpaint \
+		cad/gnucap \
+		devel/desktop-file-utils \
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/gnome/yelp
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

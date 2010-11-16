@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	essentially an Asteroids clone
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	SDL c m pthread SDL_mixer
 
-LIB_DEPENDS=	::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-mixer
 
 USE_GROFF =	Yes
 

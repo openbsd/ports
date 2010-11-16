@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	save your computers from the evil clutches of Bill
 
 DISTNAME=	xbill-2.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.xbill.org/

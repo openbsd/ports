@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	additional games modules for childsplay
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	:childsplay->=0.84:games/childsplay
+RUN_DEPENDS=	childsplay->=0.84:games/childsplay
 
 PKG_ARCH=	*
 NO_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
 DISTNAME=	mirrormagic-2.0.2
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
 			SDL_mixer SDL_image
 
-LIB_DEPENDS=	::devel/sdl-mixer \
-		::devel/sdl-image
+LIB_DEPENDS=	devel/sdl-mixer \
+		devel/sdl-image
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

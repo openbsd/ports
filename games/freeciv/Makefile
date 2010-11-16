@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2010/11/16 11:23:26 espie Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -44,7 +44,7 @@ PKG_ARCH-share=	*
 LIB_DEPENDS-share=
 WANTLIB-share=
 
-LIB_DEPENDS=	::archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2
 
 WANTLIB-client = ${WANTLIB}
 WANTLIB-client += GL Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
@@ -55,11 +55,11 @@ WANTLIB-client += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-client += png pthread pthread-stubs xcb xcb-render xcb-shm
 
 LIB_DEPENDS-main= ${LIB_DEPENDS}
-LIB_DEPENDS-client= ${LIB_DEPENDS} ::x11/gtk+2
-RUN_DEPENDS-client= :desktop-file-utils-*:devel/desktop-file-utils \
-		    :freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+LIB_DEPENDS-client= ${LIB_DEPENDS} x11/gtk+2
+RUN_DEPENDS-client= devel/desktop-file-utils \
+		    freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
 
-RUN_DEPENDS-main=   :freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+RUN_DEPENDS-main=   freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
 
 USE_GMAKE=	Yes
 

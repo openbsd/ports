@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
@@ -19,8 +19,8 @@ WANTLIB=	SDL c m pthread stdc++ SDL_image SDL_mixer
 
 NO_REGRESS=     Yes
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	cockroaches hide under your windows
 
@@ -6,7 +6,8 @@ COMMENT=	cockroaches hide under your windows
 # (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
 
 DISTNAME=	xroach
-PKGNAME=	xroach-4.4p0
+PKGNAME=	xroach-4.4
+REVISION =	0
 CATEGORIES=	x11 games
 MASTER_SITES=	${MASTER_SITES_BACKUP}
 EXTRACT_SUFX=	.tar

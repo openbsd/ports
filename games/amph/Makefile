@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:25 espie Exp $
 
 COMMENT=	jump'n run game with unique video effects
 
@@ -26,7 +26,7 @@ WANTLIB=		X11 Xext Xpm Xt c m pthread pthread-stubs stdc++ \
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \
 		${DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

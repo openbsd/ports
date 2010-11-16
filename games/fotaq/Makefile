@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:26 espie Exp $
 
 PKG_ARCH=	*
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	space constraints
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	:scummvm->=0.6.0:games/scummvm
+RUN_DEPENDS=	scummvm->=0.6.0:games/scummvm
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fotaq

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	burgertime clone for X
 
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1.>=1
+WANTLIB += SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1>=1
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	:flatzebra->=0.1.4:devel/flatzebra
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	flatzebra->=0.1.4:devel/flatzebra
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:26 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,21 +25,21 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
 		freetype iconv m pixman-1 pthread pthread-stubs xcb stdc++ \
-		vorbisfile z gdk_pixbuf-2.0 SDL.>=2.0 SDL_sound SDL_mixer \
+		vorbisfile z gdk_pixbuf-2.0 SDL>=2.0 SDL_sound SDL_mixer \
 		atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
-		gdk-x11-2.0 jpeg.>=62 pango-1.0.>=1600.0 \
-		pangocairo-1.0.>=1600.0 pangoft2-1.0.>=1600.0 png.>=3 smpeg \
+		gdk-x11-2.0 jpeg>=62 pango-1.0>=1600.0 \
+		pangocairo-1.0>=1600.0 pangoft2-1.0>=1600.0 png>=3 smpeg \
 		GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
 MASTER_SITES =	http://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip
 
 MODULES =	devel/gettext
-BUILD_DEPENDS =	::devel/jam
-LIB_DEPENDS =	::devel/sdl-sound \
-		::devel/sdl-mixer \
-		::x11/gtk+2 \
-		::graphics/jpeg
+BUILD_DEPENDS =	devel/jam
+LIB_DEPENDS =	devel/sdl-sound \
+		devel/sdl-mixer \
+		x11/gtk+2 \
+		graphics/jpeg
 
 
 NO_REGRESS =		Yes

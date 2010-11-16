@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
@@ -18,7 +18,7 @@ WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ \
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
-LIB_DEPENDS=	::devel/sdl-image
+LIB_DEPENDS=	devel/sdl-image
 
 
 CONFIGURE_STYLE=gnu

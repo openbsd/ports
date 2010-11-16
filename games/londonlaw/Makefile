@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=		online multiplayer version of the Scotland Yard game
 
@@ -19,8 +19,8 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		::devel/py-twisted/core \
-			::x11/py-wxPython
+RUN_DEPENDS=		devel/py-twisted/core \
+			x11/py-wxPython
 
 NO_REGRESS=		Yes
 

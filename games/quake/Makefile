@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/16 11:23:27 espie Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
@@ -43,14 +43,14 @@ CONFIGURE_ARGS+=	--bindir=/bin \
 WANTLIB-main=		${WANTLIB} sndio
 .if ${FLAVOR:L} == sdl
 WANTLIB+=		pthread
-LIB_DEPENDS-main=	::devel/sdl
+LIB_DEPENDS-main=	devel/sdl
 WANTLIB-main +=		SDL
 CONFIGURE_ARGS+=	--with-sdl=${LOCALBASE} --without-ggi
 MAKE_FLAGS=		HAS_X11=no
 CFLAGS+=		-pthread
 .elif ${FLAVOR:L} == ggi
 WANTLIB+=		pthread
-LIB_DEPENDS-main=	::graphics/ggi
+LIB_DEPENDS-main=	graphics/ggi
 WANTLIB-main +=		ggi
 CONFIGURE_ARGS+=	--with-ggi=${LOCALBASE} --without-sdl
 MAKE_FLAGS=		HAS_X11=no

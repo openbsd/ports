@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:00:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
@@ -18,8 +18,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:pygame-*:devel/pygame
-BUILD_DEPENDS=	:netpbm-*:graphics/netpbm
+RUN_DEPENDS=	devel/pygame
+BUILD_DEPENDS=	graphics/netpbm
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

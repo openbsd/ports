@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
@@ -27,8 +27,8 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:=crack-attack/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::graphics/freeglut
+LIB_DEPENDS=	x11/gtk+2 \
+		graphics/freeglut
 
 USE_GROFF =	Yes
 

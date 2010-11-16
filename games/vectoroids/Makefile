@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
@@ -20,9 +20,9 @@ WANTLIB=	X11 Xext c m pthread pthread-stubs usbhid xcb \
 
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
-LIB_DEPENDS=	::devel/sdl \
-		::devel/sdl-mixer \
-		::devel/sdl-image
+LIB_DEPENDS=	devel/sdl \
+		devel/sdl-mixer \
+		devel/sdl-image
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

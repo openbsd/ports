@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:26 espie Exp $
 
 COMMENT =	NetHack derivative
 
@@ -22,8 +22,8 @@ WANTLIB =	X11 Xext c curses m pthread pthread-stubs usbhid xcb SDL
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=falconseye/}
 
-LIB_DEPENDS =	::devel/sdl
-RUN_DEPENDS =	:hackdata-*:games/hackdata
+LIB_DEPENDS =	devel/sdl
+RUN_DEPENDS =	games/hackdata
 
 FAKE_FLAGS =	PREFIX="${PREFIX}"
 

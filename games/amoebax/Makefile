@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:25 espie Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
@@ -22,10 +22,10 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	SDL c m pthread stdc++ SDL_image SDL_mixer
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 

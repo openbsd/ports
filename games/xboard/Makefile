@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
 DISTNAME=	xboard-4.2.7
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=xboard/}
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m pthread-stubs xcb
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=		default
 

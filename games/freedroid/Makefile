@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	clone of the commodore 64 game paradroids
 DISTNAME=	freedroid-1.0.2
@@ -21,7 +21,7 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
 .include <bsd.port.mk>

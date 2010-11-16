@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:27 espie Exp $
 
 COMMENT =		asteroid-like game
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 CONFIGURE_STYLE = 	gnu
 
 WANTLIB =		SDL c m pthread stdc++ SDL_net
-LIB_DEPENDS =		::devel/sdl-net
+LIB_DEPENDS =		devel/sdl-net
 
 pre-configure:
 	@perl -pi -e 's,	Maelstrom,	maelstrom,g' ${WRKSRC}/README.network

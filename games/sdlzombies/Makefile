@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	zombies clone
 
@@ -20,8 +20,8 @@ WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
 
 MASTER_SITES=	http://hocwp.free.fr/
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
 
 CONFIGURE_STYLE= gnu

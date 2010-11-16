@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile.inc,v 1.2 2009/05/18 05:56:03 phessler Exp $
+#	$OpenBSD: Makefile.inc,v 1.3 2010/11/16 11:23:25 espie Exp $
 
 DIST_SUBDIR ?=	alephone
 
@@ -13,7 +13,7 @@ MASTER_SITES2 =	http://nardofiles.bungie.org/
 MASTER_SITES3 =	http://www.appleswitch.com/uploads/
 MASTER_SITES4 = http://archives2.bungie.org/manuals/
 
-RUN_DEPENDS =	::games/alephone/alephone
+RUN_DEPENDS =	games/alephone/alephone
 
 
 NO_BUILD =	Yes

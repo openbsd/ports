@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
@@ -22,9 +22,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 WANTLIB += X11 Xau Xdmcp Xext c m stdc++ pthread fltk paper
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/fltk \
-		::print/libpaper
-RUN_DEPENDS=	::games/tuxpaint
+LIB_DEPENDS=	x11/fltk \
+		print/libpaper
+RUN_DEPENDS=	games/tuxpaint
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

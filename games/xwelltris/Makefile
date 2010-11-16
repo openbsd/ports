@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--with-x
 WANTLIB+=	ICE SM X11 Xext pthread-stubs xcb
 .else
 CONFIGURE_ARGS+=--with-sdl
-LIB_DEPENDS=	::devel/sdl-image
+LIB_DEPENDS=	devel/sdl-image
 WANTLIB+=	SDL pthread SDL_image
 .endif
 

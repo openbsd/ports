@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:27 espie Exp $
 
 BROKEN-sparc64=	SIGBUS on sparc64 when starting
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ivan/}
 
-WANTLIB=	X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb SDL.>=6
+WANTLIB=	X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb SDL>=6
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 VMEM_WARNING=	Yes
 

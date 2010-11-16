@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:28 espie Exp $
 
 COMMENT-main=	free open source 2D MMORPG
 COMMENT-music=	music addon for TMW
@@ -41,19 +41,19 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-net \
-		::devel/sdl-mixer \
-		::devel/sdl-ttf \
-		::devel/guichan \
-		::net/curl \
-		::devel/libidn \
-		::devel/physfs \
-		::textproc/libxml
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-net \
+		devel/sdl-mixer \
+		devel/sdl-ttf \
+		devel/guichan \
+		net/curl \
+		devel/libidn \
+		devel/physfs \
+		textproc/libxml
 
 WANTLIB-music=
-RUN_DEPENDS-music=::${BASE_PKGPATH}
+RUN_DEPENDS-music=${BASE_PKGPATH}
 LIB_DEPENDS-music=
 PKG_ARCH-music=*
 

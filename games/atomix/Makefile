@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:25 espie Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -29,9 +29,9 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 
 MODULES=	textproc/intltool
 
-LIB_DEPENDS=	::x11/gnome/libgnome \
-		::x11/gnome/libgnomeui
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gnome/libgnome \
+		x11/gnome/libgnomeui
+RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_ARGS+=--localstatedir=/var
 

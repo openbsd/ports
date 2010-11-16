@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:25 espie Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -6,7 +6,7 @@ SHARED_ONLY =	Yes
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-PKGNAME =	${DISTNAME}p1
+REVISION =	1
 CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_FILE =		makefile
 ALL_TARGET =		default

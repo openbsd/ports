@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:28 espie Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -41,19 +41,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS-main=	::audio/libmikmod \
-			::audio/tremor \
-			::devel/sdl-image
+LIB_DEPENDS-main=	audio/libmikmod \
+			audio/tremor \
+			devel/sdl-image
 PKG_ARCH-content=	*
 PKG_ARCH-remix1=	*
 PKG_ARCH-remix2=	*
 PKG_ARCH-remix3=	*
 PKG_ARCH-threedomusic=	*
 PKG_ARCH-voice=		*
-RUN_DEPENDS=		:${PKGNAME-main}:games/uqm
+RUN_DEPENDS=		${PKGNAME-main}:games/uqm
 RUN_DEPENDS-content=	
-RUN_DEPENDS-main=	:${PKGNAME-content}:games/uqm,-content
-WANTLIB-main=		c m pthread z SDL mikmod.>=2.4 vorbisidec.>=1 \
+RUN_DEPENDS-main=	${PKGNAME-content}:games/uqm,-content
+WANTLIB-main=		c m pthread z SDL mikmod>=2.4 vorbisidec>=1 \
 			SDL_image
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tbz2
 V=		4.0.0b26
 PKGNAME=	dungeon-crawl-$V
 
-BUILD_DEPENDS+=	:bzip2-*:archivers/bzip2
+BUILD_DEPENDS+=	archivers/bzip2
 
 EXTRACT_CASES+=	*.tbz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs \
-		xcb z bz2.>=10
+		xcb z bz2>=10
 
-LIB_DEPENDS=	::archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2
 
 CONFIGURE_STYLE=imake noman
 

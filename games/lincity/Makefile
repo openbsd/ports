@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=		Rich city simulation game for X
 
 DISTNAME=		lincity-1.11
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 CATEGORIES=		games
 HOMEPAGE=		http://www.floot.demon.co.uk/lincity.html
 
@@ -22,7 +22,7 @@ MASTER_SITES=		ftp://ftp.demon.co.uk/pub/unix/linux/games/ \
 
 MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 post-extract:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	organic fireworks demo
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb SDL
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 
 SEPARATE_BUILD=	concurrent

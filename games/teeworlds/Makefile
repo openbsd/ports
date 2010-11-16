@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL GLU SDL X11 c m pthread stdc++ z
-LIB_DEPENDS =	::devel/sdl
+LIB_DEPENDS =	devel/sdl
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/16 19:34:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:26 espie Exp $
 
 V =			1.3.110
 COMMENT =		guitar hero clone
@@ -23,10 +23,10 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::devel/pygame			\
-			::graphics/py-Imaging		\
-			::graphics/py-opengl		\
-			::math/py-numpy
+RUN_DEPENDS =		devel/pygame			\
+			graphics/py-Imaging		\
+			graphics/py-opengl		\
+			math/py-numpy
 
 WRKDIST =		"${WRKDIR}/Frets on Fire-${V}"
 NO_REGRESS =		Yes

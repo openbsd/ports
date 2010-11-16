@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
 
 COMMENT =	Komi the Space Frog
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=komi/}
 
-WANTLIB =	SDL c pthread SDL_mixer.>=3
+WANTLIB =	SDL c pthread SDL_mixer>=3
 
-LIB_DEPENDS =	::devel/sdl-mixer
+LIB_DEPENDS =	devel/sdl-mixer
 
 USE_GROFF =	Yes
 NO_REGRESS =	Yes

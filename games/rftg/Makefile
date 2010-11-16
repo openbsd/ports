@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:27 espie Exp $
 
 V = 0.7.5
 COMMENT-client = race for the galaxy card game
@@ -24,9 +24,9 @@ PERMIT_PACKAGE_FTP = Yes
 
 CONFIGURE_STYLE = gnu
 
-LIB_DEPENDS-client = ::x11/gtk+2
+LIB_DEPENDS-client = x11/gtk+2
 
-LIB_DEPENDS-server = ::databases/mysql
+LIB_DEPENDS-server = databases/mysql
 
 .if ${MULTI_PACKAGES:M-server}
 

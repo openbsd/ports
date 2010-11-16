@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
@@ -25,7 +25,7 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

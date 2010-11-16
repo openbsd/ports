@@ -1,43 +1,43 @@
-# $OpenBSD: Makefile,v 1.23 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:25 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
-COMMENT=	Ancient Domains of Mystery - roguelike
+COMMENT =	Ancient Domains of Mystery - roguelike
 
-DISTNAME=	adom-1.1.1
-PKGNAME=	${DISTNAME}p4
-CATEGORIES=	games
-MASTER_SITES=   http://www.adom.de/adom/download/linux/
-HOMEPAGE=	http://www.adom.de/
-DISTFILES=	adom-111-elf.tar.gz
+DISTNAME =	adom-1.1.1
+REVISION =	4
+CATEGORIES =	games
+MASTER_SITES =  http://www.adom.de/adom/download/linux/
+HOMEPAGE =	http://www.adom.de/
+DISTFILES =	adom-111-elf.tar.gz
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS =i386
 
-NO_BUILD=	binary port
-NO_REGRESS=	Yes
+NO_BUILD =	binary port
+NO_REGRESS =	Yes
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	no modify
-PERMIT_PACKAGE_FTP=	no modify
-PERMIT_DISTFILES_CDROM=	no modify
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	no modify
+PERMIT_PACKAGE_FTP =	no modify
+PERMIT_DISTFILES_CDROM =no modify
+PERMIT_DISTFILES_FTP =	Yes
 
-WRKDIST=	${WRKDIR}/adom
+WRKDIST	= ${WRKDIR}/adom
 
-ADOM_DOC=	${PREFIX}/share/doc/adom
+ADOM_DOC =	${PREFIX}/share/doc/adom
 
 # cage adom into its specific group if you don't trust the binary
-ADOMOWN?=	games
+ADOMOWN ?=	games
 
 # can't be changed except by patching the binary
-HISCORE_DIR=	/var/lib/adom
+HISCORE_DIR =	/var/lib/adom
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
 	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
 .endif
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS =	emulators/fedora/base
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}

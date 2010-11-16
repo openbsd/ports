@@ -1,54 +1,56 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/16 11:23:28 espie Exp $
 
-COMMENT=	dungeon explorin', hackin', game.  Hard
-DISTNAME=	se007e7f1
-CATEGORIES=	games
+COMMENT =	dungeon explorin', hackin', game.  Hard
+DISTNAME =	se007e7f1
+CATEGORIES =	games
 
-HOMEPAGE=	http://slashem.sourceforge.net
-MASTER_SITES=	http://avrc.city.ac.uk/nethack/slashem/
+HOMEPAGE =	http://slashem.sourceforge.net
+MASTER_SITES =	http://avrc.city.ac.uk/nethack/slashem/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c termlib
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+WANTLIB =		c termlib
 
-PKGNAME=slash-em-3.4.3.7e7f1p2
-V=	3.4.3.7e7f1
+PKGNAME =		slash-em-3.4.3.7e7f1
+REVISION =		2
+V =			3.4.3.7e7f1
 
-WRKDIST=${WRKDIR}/slashem-0.0.7E7F1
+WRKDIST =		${WRKDIR}/slashem-0.0.7E7F1
 
-FAKE_FLAGS=PREFIX=${PREFIX}
+FAKE_FLAGS =		PREFIX=${PREFIX}
 
-GAMEDIR=lib/slashemdir-$V
-NHDIR=	${PREFIX}/${GAMEDIR}
-MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
-SUBST_VARS=GAMEDIR V
-USE_GROFF =	Yes
+GAMEDIR =		lib/slashemdir-$V
+NHDIR =			${PREFIX}/${GAMEDIR}
+MAKE_ENV += 		NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+SUBST_VARS =		GAMEDIR V
+USE_GROFF =		Yes
 
 # qt flavor is apparently not working yet
-FLAVORS=no_x11 #qt
-FLAVOR?=
+FLAVORS =		no_x11 #qt
+FLAVOR ?=
 # ... but let fragments work
-PKG_ARGS+=-Dqt=0
+PKG_ARGS +=		-Dqt=0
 
 .if ${FLAVOR:L} == "no_x11"
-NETHACKCONFIG=${FILESDIR}/simple-config
+NETHACKCONFIG =		${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
-NETHACKCONFIG=${FILESDIR}/qt-config
-PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
-LIB_DEPENDS=qt.2.::x11/qt2
+NETHACKCONFIG =		${FILESDIR}/qt-config
+PORTPATH =	${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
+LIB_DEPENDS =		x11/qt2
+WANTLIB +=		qt.=2
 .else
-NETHACKCONFIG=${FILESDIR}/x-config
-WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+NETHACKCONFIG =		${FILESDIR}/x-config
+WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 
-RUN_DEPENDS=:hackdata-*:games/hackdata
+RUN_DEPENDS =		games/hackdata
 
-NO_REGRESS=	Yes
+NO_REGRESS =		Yes
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

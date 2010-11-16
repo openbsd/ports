@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:27 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,10 +25,10 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=yes
 
-RUN_DEPENDS=	::x11/py-qt3 \
-		::devel/pygame \
-		::textproc/py-xml \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	x11/py-qt3 \
+		devel/pygame \
+		textproc/py-xml \
+		devel/desktop-file-utils
 
 NO_REGRESS=	Yes
 

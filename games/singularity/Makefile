@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/31 07:28:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -31,7 +31,7 @@ WRKDIST=	${WRKDIR}/singularity-${V}
 NO_REGRESS=	Yes
 
 MODULES=	lang/python
-RUN_DEPENDS=	:pygame-*:devel/pygame
+RUN_DEPENDS=	devel/pygame
 
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/code/g.py

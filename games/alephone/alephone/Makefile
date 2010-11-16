@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2010/10/24 21:19:01 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.12 2010/11/16 11:23:25 espie Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
@@ -26,18 +26,18 @@ WANTLIB +=		GL GLU c m pthread stdc++ z
 WANTLIB +=		SDL SDL_net SDL_image SDL_ttf mad ogg png sndfile
 WANTLIB +=		smpeg speex speexdsp vorbis vorbisfile zzip
 
-BUILD_DEPENDS =		::devel/automake/${AUTOMAKE_VER} \
-			::devel/autoconf/${AUTOCONF_VER}
-LIB_DEPENDS =		::archivers/zziplib \
-			::devel/boost \
-			::devel/sdl-net \
-			::devel/sdl-image \
-			::devel/sdl-ttf \
-			::devel/smpeg \
-			::audio/libmad \
-			::audio/libsndfile \
-			::audio/speex \
-			::audio/libvorbis
+BUILD_DEPENDS =		devel/automake/${AUTOMAKE_VER} \
+			devel/autoconf/${AUTOCONF_VER}
+LIB_DEPENDS =		archivers/zziplib \
+			devel/boost \
+			devel/sdl-net \
+			devel/sdl-image \
+			devel/sdl-ttf \
+			devel/smpeg \
+			audio/libmad \
+			audio/libsndfile \
+			audio/speex \
+			audio/libvorbis
 
 USE_BZIP2 =		Yes
 USE_GROFF =		Yes

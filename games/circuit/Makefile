@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/16 11:23:26 espie Exp $
 
-COMMENT=	finish-the-cycle logic puzzle
-CATEGORIES=	games
+COMMENT =	finish-the-cycle logic puzzle
+CATEGORIES =	games
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME=	circuit-0.1.4
-REVISION=	5
-MASTER_SITES=	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
+DISTNAME =	circuit-0.1.4
+REVISION =	5
+MASTER_SITES =	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
 
 # BSD
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
@@ -21,9 +21,9 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 
-MODULES=	devel/gettext
+MODULES =	devel/gettext
 
 USE_GROFF =	Yes
 

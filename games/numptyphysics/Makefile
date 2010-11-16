@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:27 espie Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -33,11 +33,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		X11 c m pthread stdc++ z SDL SDL_image
 
-RUN_DEPENDS-main =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-main =	::devel/sdl \
-			::devel/sdl-image
+RUN_DEPENDS-main =	devel/desktop-file-utils
+LIB_DEPENDS-main =	devel/sdl \
+			devel/sdl-image
 
-RUN_DEPENDS-npcomplete =::${FULLPKGPATH-main}
+RUN_DEPENDS-npcomplete =${FULLPKGPATH-main}
 
 CONFIGURE_STYLE =	autoconf automake no-autoheader
 AUTOCONF_VERSION =	2.61

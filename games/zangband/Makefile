@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
 		ftp://ftp.planetmirror.com/pub/angband/Variant/ZAngband/ \

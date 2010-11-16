@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:26 espie Exp $
 
 COMMENT =		free OpenGl billard game
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=foobillard/}
 
 WANTLIB =		GL GLU ICE SM Xaw Xi c freetype m pthread z png SDL
-LIB_DEPENDS =		::graphics/png \
-			::devel/sdl
+LIB_DEPENDS =		graphics/png \
+			devel/sdl
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	automake

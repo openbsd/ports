@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/09 20:26:16 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:27 espie Exp $
 
 COMMENT =	brick shooter reflexion game
 
@@ -24,7 +24,7 @@ MODULES=	java
 MODJAVA_VER=	1.7
 MODJAVA_JRERUN= Yes
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/12/03 18:55:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	eboard extra piece sets and sounds
 
-PKGNAME=	${DISTNAME}-0.1p0
+PKGNAME=	${DISTNAME}-0.1
+REVISION =	0
 DISTNAME=	eboard-extras
 DISTFILES=	${DISTNAME}-1pl2${EXTRACT_SUFX} \
 		${DISTNAME}-2${EXTRACT_SUFX}
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 
-RUN_DEPENDS=	:eboard-*:games/eboard
+RUN_DEPENDS=	games/eboard
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

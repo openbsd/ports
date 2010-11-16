@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -45,8 +45,8 @@ ERRORS+=	"Fatal: Choose only one flavor: sdl or ggi"
 .endif
 
 .if ${FLAVOR:L:Msdl}
-LIB_DEPENDS +=	::devel/sdl \
-		::devel/sdl-mixer
+LIB_DEPENDS +=	devel/sdl \
+		devel/sdl-mixer
 WANTLIB +=	SDL SDL_mixer
 
 CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
@@ -59,8 +59,8 @@ WANTLIB +=	gii
 .if ${FLAVOR:L:Mggi}
 # Sound support is disabled with the ggi flavor since it is dependent
 # on sdl-mixer.  No alternatives for now.
-LIB_DEPENDS +=	::graphics/ggi
-WANTLIB +=	ggi.>=2.0
+LIB_DEPENDS +=	graphics/ggi
+WANTLIB +=	ggi>=2.0
 CONFIGURE_ARGS += --with-ggi="${LOCALBASE}"
 FULLPKGNAME =	heroes-${VERSION}
 .else

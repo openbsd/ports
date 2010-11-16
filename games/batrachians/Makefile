@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
@@ -15,12 +15,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-WANTLIB=	SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1.>=1
+WANTLIB=	SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1>=1
 
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	:flatzebra->=0.1.4:devel/flatzebra
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	flatzebra->=0.1.4:devel/flatzebra
 
 CONFIGURE_STYLE=gnu
 

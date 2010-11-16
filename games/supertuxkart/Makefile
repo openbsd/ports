@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -27,12 +27,12 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		::devel/plib
-RUN_DEPENDS =		::devel/desktop-file-utils
-LIB_DEPENDS =		::devel/sdl \
-			::graphics/freeglut \
-			:openal->=0.0.8p7:audio/openal \
-			::audio/libvorbis
+BUILD_DEPENDS =		devel/plib
+RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		devel/sdl \
+			graphics/freeglut \
+			openal->=0.0.8p7:audio/openal \
+			audio/libvorbis
 
 USE_GMAKE =		Yes
 

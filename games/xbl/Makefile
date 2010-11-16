@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	3D block-dropping game
 
 DISTNAME=	xbl-1.1.5
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	games
 HOMEPAGE=	http://www710.univ-lyon1.fr/ftp/xbl/xbl.html
 

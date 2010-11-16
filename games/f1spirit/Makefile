@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
@@ -22,12 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-RUN_DEPENDS=	::devel/desktop-file-utils
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-net \
-		::devel/sdl-mixer \
-		::net/curl \
-		::devel/libidn
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-net \
+		devel/sdl-mixer \
+		net/curl \
+		devel/libidn
 WANTLIB=	GL GLU SDL c m crypto pthread ssl z SDL_image SDL_net \
 		SDL_mixer curl idn
 

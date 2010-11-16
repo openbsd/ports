@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
@@ -22,11 +22,11 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-RUN_DEPENDS=	::devel/desktop-file-utils
-LIB_DEPENDS=	::devel/sdl-sound \
-		::devel/sdl-image \
-		::devel/sdl-ttf \
-		::devel/sdl-mixer
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/sdl-sound \
+		devel/sdl-image \
+		devel/sdl-ttf \
+		devel/sdl-mixer
 WANTLIB=	SDL c stdc++ m pthread SDL_sound SDL_image SDL_ttf SDL_mixer
 
 .include <bsd.port.mk>

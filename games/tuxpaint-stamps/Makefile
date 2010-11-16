@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/17 17:11:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:28 espie Exp $
 
 PKG_ARCH=	*
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	::games/tuxpaint
+RUN_DEPENDS=	games/tuxpaint
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tuxpaint/stamps/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	x bust a move clone
 
@@ -14,14 +14,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 c m pthread-stubs xcb z png.>=2
+WANTLIB=		X11 c m pthread-stubs xcb z png>=2
 
 MASTER_SITES=		ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
 			http://gentoo.osuosl.org/distfiles/
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::graphics/png
+LIB_DEPENDS=		graphics/png
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/08 15:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	gtk+2 chess board interface
 
@@ -26,7 +26,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 MODULES=	devel/gettext
 

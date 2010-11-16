@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/05 10:52:50 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/16 11:23:25 espie Exp $
 
 COMMENT =		marathon / alephone map editor
 
 V =			211
 DISTNAME =		weland-r${V}-src
-PKGNAME =		weland-${V}p1
+PKGNAME =		weland-${V}
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -22,7 +23,7 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/mono
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::x11/mono-gtk2
+RUN_DEPENDS =		x11/mono-gtk2
 
 WRKDIST =		${WRKDIR}/weland
 

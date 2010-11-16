@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -32,15 +32,15 @@ MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/
 MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/
 MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/0.3.1/
 
-LIB_DEPENDS=		::archivers/lzo2 \
-			::devel/sdl \
-			::graphics/png \
-			::textproc/icu4c
+LIB_DEPENDS=		archivers/lzo2 \
+			devel/sdl \
+			graphics/png \
+			textproc/icu4c
 
-RUN_DEPENDS=            ::devel/desktop-file-utils
+RUN_DEPENDS=            devel/desktop-file-utils
 
 CONFIGURE_STYLE=	simple
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--binary-dir=bin \

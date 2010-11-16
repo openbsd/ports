@@ -1,4 +1,4 @@
- # $OpenBSD: Makefile,v 1.2 2010/10/26 12:54:09 jasper Exp $
+ # $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
@@ -24,14 +24,14 @@ WANTLIB +=		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=scorched3d/}
 
-LIB_DEPENDS =		::audio/openal \
-			::audio/libvorbis \
-			::audio/freealut \
-			::x11/wxWidgets \
-			::math/fftw3,float \
-			::devel/sdl-net \
-			::devel/sdl-mixer
-RUN_DEPENDS =		::devel/xdg-utils
+LIB_DEPENDS =		audio/openal \
+			audio/libvorbis \
+			audio/freealut \
+			x11/wxWidgets \
+			math/fftw3,float \
+			devel/sdl-net \
+			devel/sdl-mixer
+RUN_DEPENDS =		devel/xdg-utils
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	--disable-openaltest \

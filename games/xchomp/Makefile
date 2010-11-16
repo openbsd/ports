@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	Pac-man-like game under X11
 
 DISTNAME=	xchomp-pl1
-PKGNAME=	xchomp-0p4
+PKGNAME=	xchomp-0
+REVISION =	4
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

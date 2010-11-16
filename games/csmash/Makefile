@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 13:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
@@ -21,9 +21,9 @@ USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer \
-		::x11/gtk+2
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer \
+		x11/gtk+2
 
 WANTLIB+=	GL GLU ICE Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo expat \

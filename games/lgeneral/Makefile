@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	turn-based strategy engine
 
@@ -19,8 +19,8 @@ WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
 
-LIB_DEPENDS=	::devel/sdl \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl \
+		devel/sdl-mixer
 
 
 AUTOCONF_VERSION=2.13

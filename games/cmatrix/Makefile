@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=		scrolling 'Matrix'-like screen
 DISTNAME=		cmatrix-1.2a
@@ -16,7 +16,7 @@ WANTLIB=		c ncurses
 MASTER_SITES=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FONTDIR=		${PREFIX}/lib/X11/fonts/misc
 

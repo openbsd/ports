@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=		wm-dockapp; chess game
 
 DISTNAME=		miniCHESS-0.8
-PKGNAME=		wm${DISTNAME:L}p0
+PKGNAME=		wm${DISTNAME:L}
+REVISION =		0
 CATEGORIES=		games x11 x11/windowmaker
 
 HOMEPAGE=		http://www.foobargeek.com/miniCHESS/
@@ -19,7 +20,7 @@ WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		:gnuchess-*:games/gnuchess
+RUN_DEPENDS=		games/gnuchess
 
 NO_REGRESS=		Tes
 

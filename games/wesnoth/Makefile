@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -29,19 +29,19 @@ WANTLIB += SDL_mixer
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/boost \
-		::devel/sdl \
-		::devel/sdl-image \
-		::devel/sdl-net \
-		::devel/sdl-mixer \
-		::devel/sdl-ttf \
-		::devel/fribidi \
-		::devel/pango \
-		::lang/lua \
-		::x11/dbus
+LIB_DEPENDS=	devel/boost \
+		devel/sdl \
+		devel/sdl-image \
+		devel/sdl-net \
+		devel/sdl-mixer \
+		devel/sdl-ttf \
+		devel/fribidi \
+		devel/pango \
+		lang/lua \
+		x11/dbus
 
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::textproc/libxslt
+RUN_DEPENDS=	devel/desktop-file-utils \
+		textproc/libxslt
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=--enable-lowmem
 .endif
 
 .if ${FLAVOR:L:Mtinygui}
-BUILD_DEPENDS+=:ImageMagick-*:graphics/ImageMagick
+BUILD_DEPENDS+=graphics/ImageMagick
 CONFIGURE_ARGS+=--enable-tinygui
 .endif
 

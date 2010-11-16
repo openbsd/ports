@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.4.1
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL c m pthread stdc++ SDL_image
 
-LIB_DEPENDS=	::devel/sdl-image
+LIB_DEPENDS=	devel/sdl-image
 
 
 FAKE=		all

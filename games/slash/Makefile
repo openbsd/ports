@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME=	slash-e8
-PKGNAME=	slash-3.2.2.e8p0
+PKGNAME=	slash-3.2.2.e8
+REVISION =	0
 CATEGORIES=	games
 
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
@@ -44,7 +45,7 @@ NETHACKCONFIG=${FILESDIR}/x-config
 WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 
-RUN_DEPENDS=:hackdata-*:games/hackdata
+RUN_DEPENDS=games/hackdata
 
 NO_REGRESS=	Yes
 

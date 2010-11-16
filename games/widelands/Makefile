@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -22,11 +22,11 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	SDL c m png pthread stdc++ z SDL_gfx SDL_image SDL_mixer \
 		SDL_net SDL_ttf
 
-LIB_DEPENDS=	::devel/sdl-gfx \
-		::devel/sdl-image \
-		::devel/sdl-mixer \
-		::devel/sdl-net \
-		::devel/sdl-ttf
+LIB_DEPENDS=	devel/sdl-gfx \
+		devel/sdl-image \
+		devel/sdl-mixer \
+		devel/sdl-net \
+		devel/sdl-ttf
 
 MODULES=	devel/gettext \
 		devel/scons \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	Mahjongg game for X11
 
 DISTNAME=       xmj
-PKGNAME=	xmj-1.0p2
+PKGNAME=	xmj-1.0
+REVISION =	2
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}

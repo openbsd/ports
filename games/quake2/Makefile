@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:27 espie Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -25,7 +25,7 @@ WANTLIB=		ICE GL SM X11 Xau Xdmcp Xext Xrandr Xrender Xxf86dga \
 MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		converters/libiconv
-LIB_DEPENDS=		::devel/sdl
+LIB_DEPENDS=		devel/sdl
 
 SEPARATE_BUILD=		concurrent
 USE_LIBTOOL=		Yes

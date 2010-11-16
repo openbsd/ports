@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
@@ -24,10 +24,10 @@ MODULES=	gcc4
 MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	c
 
-LIB_DEPENDS=	::devel/sdl-mixer \
-		:gobjc->=4.2,<4.3|gobjc->=4.2v0,<4.3v0:lang/gcc/4.2,-objc \
-		::x11/gnustep/base \
-		::graphics/png
+LIB_DEPENDS=	devel/sdl-mixer \
+		gobjc->=4.2,<4.3|gobjc->=4.2v0,<4.3v0:lang/gcc/4.2,-objc \
+		x11/gnustep/base \
+		graphics/png
 
 WANTLIB += GL GLU SDL c m pthread SDL_mixer objc gnustep-base png
 

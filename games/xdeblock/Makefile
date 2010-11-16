@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	block action game
 
 DISTNAME=	xdeblock
-PKGNAME=	xdeblock-1.0p1
+PKGNAME=	xdeblock-1.0
+REVISION =	1
 CATEGORIES=	games
 
 MASTER_SITES=	http://www.vector.co.jp/pack/unix/game/action/block/

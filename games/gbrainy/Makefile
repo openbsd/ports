@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	brain teaser game
 
@@ -21,13 +21,13 @@ MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 MODULES=	textproc/intltool \
 		lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/mono-addins \
-		::shells/bash \
-		:gnome-doc-utils-*:x11/gnome/doc-utils \
-		::x11/gnome/librsvg \
-		::x11/gnome/mono-gnome \
-		::x11/gnome/yelp
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/mono-addins \
+		shells/bash \
+		x11/gnome/doc-utils \
+		x11/gnome/librsvg \
+		x11/gnome/mono-gnome \
+		x11/gnome/yelp
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

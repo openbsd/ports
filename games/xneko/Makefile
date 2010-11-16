@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	classic BSD4.4 cat-and-mouse
 
 DISTNAME=	xneko
-PKGNAME=	xneko-4.4p0
+PKGNAME=	xneko-4.4
+REVISION =	0
 CATEGORIES=	x11 games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tar

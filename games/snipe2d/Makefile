@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =		overhead shooting game
 
@@ -19,12 +19,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		SDL c m pthread stdc++ SDL_image.>=2 SDL_mixer.>=3
+WANTLIB +=		SDL c m pthread stdc++ SDL_image>=2 SDL_mixer>=3
 
 MASTER_SITES =		http://icculus.org/oes/
 
-LIB_DEPENDS =		::devel/sdl-image \
-			::devel/sdl-mixer
+LIB_DEPENDS =		devel/sdl-image \
+			devel/sdl-mixer
 
 
 CONFIGURE_STYLE =	gnu

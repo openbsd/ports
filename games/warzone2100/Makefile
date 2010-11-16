@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
@@ -22,18 +22,18 @@ WANTLIB=	GL GLU SDL X11 Xext c m ogg pthread pthread-stubs \
 
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
-LIB_DEPENDS=	::devel/sdl-net \
-		::devel/physfs \
-		::audio/openal \
-		::audio/libvorbis \
-		::audio/libmad \
-		::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS=	devel/sdl-net \
+		devel/physfs \
+		audio/openal \
+		audio/libvorbis \
+		audio/libmad \
+		graphics/jpeg \
+		graphics/png
 
-BUILD_DEPENDS=	::devel/bison \
-		::archivers/unzip \
-		::archivers/zip
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+BUILD_DEPENDS=	devel/bison \
+		archivers/unzip \
+		archivers/zip
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 

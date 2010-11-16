@@ -19,9 +19,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		::x11/gnome/doc-utils
-RUN_DEPENDS =		::x11/gnome/yelp
-LIB_DEPENDS =		::x11/gnome/libgnomeui
+BUILD_DEPENDS =		x11/gnome/doc-utils
+RUN_DEPENDS =		x11/gnome/yelp
+LIB_DEPENDS =		x11/gnome/libgnomeui
 
 WANTLIB += art_lgpl_2 bonobo-2 bonobo-activation bonoboui-2 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 popt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/08 18:14:21 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=		Nebulous rewrite of Tower Toppler
 
@@ -18,8 +18,8 @@ WANTLIB=		SDL X11 Xau Xdmcp Xext Xrandr Xrender c m \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
 
-LIB_DEPENDS=		::devel/sdl-mixer
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=		devel/sdl-mixer
+RUN_DEPENDS=		devel/desktop-file-utils
 
 MODULES=		devel/gettext
 

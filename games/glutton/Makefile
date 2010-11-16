@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:27 espie Exp $
 
 COMMENT= 	Pac-Man clone
 
@@ -19,8 +19,8 @@ WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb \
 
 MASTER_SITES=	http://mirror.csoft.org/glutton/
 
-LIB_DEPENDS= 	::devel/sdl \
-	 	::devel/sdl-mixer
+LIB_DEPENDS= 	devel/sdl \
+	 	devel/sdl-mixer
 
 WRKDIST=	${WRKDIR}/glutton
 

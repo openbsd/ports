@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:28 espie Exp $
 
 COMMENT =		displays a cute cow and message on your desktop
 DISTNAME =		xcowsay-1.1
@@ -18,7 +18,7 @@ CONFIGURE_STYLE =	gnu
 USE_GROFF =		Yes
 
 MODULES =	devel/gettext
-LIB_DEPENDS =	::x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

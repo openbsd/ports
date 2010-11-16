@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:29 espie Exp $
 
 COMMENT=	screen bottom ripples like a pool of water
 
 DISTNAME=	xripple
-PKGNAME=	xripple-1.0p1
+PKGNAME=	xripple-1.0
+REVISION =	1
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.devolution.com/pub/enlightenment/

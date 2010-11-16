@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:27 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -40,11 +40,11 @@ WANTLIB-main =		GL c m pthread sndio ogg.>=5 SDL.>=7 vorbis.>=7 \
 			vorbisfile.>=5
 WANTLIB-server =	c m
 
-LIB_DEPENDS-main =	::audio/libogg \
-			::devel/sdl \
-			::audio/libvorbis
-RUN_DEPENDS-main =	:openarena-data-*:${BASE_PKGPATH},-data
-RUN_DEPENDS-server =	:openarena-data-*:${BASE_PKGPATH},-data
+LIB_DEPENDS-main =	audio/libogg \
+			devel/sdl \
+			audio/libvorbis
+RUN_DEPENDS-main =	${BASE_PKGPATH},-data
+RUN_DEPENDS-server =	${BASE_PKGPATH},-data
 
 ALL_TARGET =		release
 USE_GMAKE =		Yes

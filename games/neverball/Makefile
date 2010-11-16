@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:27 espie Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -28,12 +28,12 @@ WANTLIB-main =	GL SDL X11 c iconv intl m pthread z ogg vorbis vorbisfile \
 
 MASTER_SITES =	${HOMEPAGE}
 
-LIB_DEPENDS-main =	::audio/libogg \
-			::audio/libvorbis \
-			::graphics/jpeg \
-			::graphics/png \
-			::devel/sdl-ttf \
-			::devel/physfs
+LIB_DEPENDS-main =	audio/libogg \
+			audio/libvorbis \
+			graphics/jpeg \
+			graphics/png \
+			devel/sdl-ttf \
+			devel/physfs
 LIB_DEPENDS-data =
 WANTLIB-data =
 

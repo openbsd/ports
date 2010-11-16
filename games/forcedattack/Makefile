@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=	connect four of stones in a straight line
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=forcedattack/}
 
 MODULES=	lang/python
 
-RUN_DEPENDS+=	:pygame-*:devel/pygame
+RUN_DEPENDS+=	devel/pygame
 
 NO_REGRESS=	Yes
 

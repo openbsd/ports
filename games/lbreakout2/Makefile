@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/16 11:23:27 espie Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
@@ -16,15 +16,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	SDL c m pthread z png.>=9.0 SDL_mixer
+WANTLIB =	SDL c m pthread z png>=9.0 SDL_mixer
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lgames/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	::devel/sdl-mixer \
-		::graphics/png
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS =	devel/sdl-mixer \
+		graphics/png
+RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GMAKE =	Yes
 

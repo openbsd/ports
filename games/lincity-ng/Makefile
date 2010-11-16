@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	city simulation game
 
@@ -22,14 +22,14 @@ WANTLIB=	GL SDL X11 c m pthread pthread-stubs stdc++ xcb z \
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::devel/sdl-gfx \
-		::devel/sdl-image \
-		::devel/sdl-mixer \
-		::devel/sdl-ttf \
-		::devel/physfs \
-		::textproc/libxml
-BUILD_DEPENDS=	::devel/jam
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	devel/sdl-gfx \
+		devel/sdl-image \
+		devel/sdl-mixer \
+		devel/sdl-ttf \
+		devel/physfs \
+		textproc/libxml
+BUILD_DEPENDS=	devel/jam
+RUN_DEPENDS=	devel/desktop-file-utils
 NO_REGRESS=	Yes
 
 USE_GROFF =	Yes

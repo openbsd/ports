@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 21:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/16 11:23:25 espie Exp $
 
 BROKEN-sparc=	Does not work on SPARC
 BROKEN-vax=	gmake loops forever
@@ -6,7 +6,7 @@ BROKEN-vax=	gmake loops forever
 COMMENT=	full color 320x200 arcade quality platform shooter
 
 DISTNAME=	abuse-2.0
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=non-gnu/abuse/}
 MASTER_SITES0=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/

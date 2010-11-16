@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	SDL clone of the popular Game of Life
 
@@ -17,7 +17,7 @@ WANTLIB=		c m pthread stdc++ SDL
 
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	::devel/sdl
+LIB_DEPENDS=	devel/sdl
 
 WRKDIST=${WRKDIR}/life
 

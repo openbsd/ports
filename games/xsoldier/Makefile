@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:29 espie Exp $
 
 COMMENT =	space-based shoot'em up game for X11
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS =	--localstatedir=/var
 
 MAKE_FLAGS =		CC_OPTIMIZE="${CFLAGS}"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

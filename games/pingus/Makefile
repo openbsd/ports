@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -18,14 +18,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL X11 Xi c m png pthread pthread-stubs xcb stdc++ z
-WANTLIB += SDL_mixer.>=3 SDL_image.>=2 boost_signals
+WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals
 
 MODULES=	converters/libiconv \
 		devel/scons
 
-LIB_DEPENDS=	::devel/sdl-mixer \
-		::devel/sdl-image \
-		::devel/boost
+LIB_DEPENDS=	devel/sdl-mixer \
+		devel/sdl-image \
+		devel/boost
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

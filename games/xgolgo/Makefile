@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:29 espie Exp $
 #
 
 COMMENT=	watch what you are doing -- are you hostile
 
 DISTNAME=	xeyes-g
-PKGNAME=	xgolgo-1.0p1
+PKGNAME=	xgolgo-1.0
+REVISION =	1
 CATEGORIES=	games
 
 # BSD

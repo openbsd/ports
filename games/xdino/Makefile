@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:28 espie Exp $
 #
 
 COMMENT=	dino puzzle game for X11
 
 DISTNAME=	xdino-5.5.2
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	games
 
 # License: BSD

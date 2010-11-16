@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	The Dungeons of Moria
 
 V=		5.5.2
 DISTNAME=	um$V
-PKGNAME=	moria-$Vp1
+PKGNAME=	moria-$V
+REVISION =	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/moria/source/ \
 		ftp://alge.anart.no/pub/games/RPG/moria/

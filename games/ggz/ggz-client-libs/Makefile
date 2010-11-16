@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:26 espie Exp $
 
 COMMENT=		GGZ Gaming Zone - core client libraries
 
@@ -14,6 +14,6 @@ USE_GROFF =		Yes
 
 WANTLIB=		c crypto expat gcrypt gpg-error pthread ssl ggz
 
-LIB_DEPENDS=		::games/ggz/libggz
+LIB_DEPENDS=		games/ggz/libggz
 
 .include <bsd.port.mk>

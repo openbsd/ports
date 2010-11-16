@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \
 			SDL_image SDL_mixer
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer
 
 NO_REGRESS=	Yes
 

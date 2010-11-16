@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/11 19:23:53 stephan Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
@@ -29,11 +29,11 @@ WANTLIB+=	QtNetwork QtSql SDL SDL_mixer curl gsasl
 MODULES=	devel/gettext \
 		x11/qt4
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::devel/sdl-mixer \
-		::devel/boost \
-		::net/curl \
-		::security/libgsasl
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/sdl-mixer \
+		devel/boost \
+		net/curl \
+		security/libgsasl
 
 CONFIGURE_ENV=	HOME=${WRKDIR}
 

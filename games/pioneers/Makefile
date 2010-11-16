@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/08 15:54:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/16 11:23:27 espie Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -27,7 +27,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png popt pthread ssl util xml2 z gio-2.0 \
 		avahi-client avahi-common avahi-glib \
-		pthread-stubs xcb gnome-2.>=1900
+		pthread-stubs xcb gnome-2>=1900
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 
@@ -35,8 +35,8 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/gnome/librsvg
-LIB_DEPENDS=	::x11/gnome/libgnome
+RUN_DEPENDS=	x11/gnome/librsvg
+LIB_DEPENDS=	x11/gnome/libgnome
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes

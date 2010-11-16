@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:28 espie Exp $
 
 COMMENT=	3d tetris
 
 DISTNAME=	threedee
-PKGNAME=	spatial-1.0.1p1
+PKGNAME=	spatial-1.0.1
+REVISION =	1
 CATEGORIES=	games
 
 EXTRACT_SUFX=	.tar.Z

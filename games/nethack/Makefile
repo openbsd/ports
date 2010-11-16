@@ -1,53 +1,54 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/24 21:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/16 11:23:27 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
-COMMENT=	dungeon explorin', hackin', game.  Piece of cake
-V=3.4.3
-DISTNAME=	nethack-$V
-PKGNAME=	${DISTNAME}p3
-CATEGORIES=	games
+COMMENT =	dungeon explorin', hackin', game.  Piece of cake
+V =		3.4.3
+DISTNAME =	nethack-$V
+PKGNAME =	${DISTNAME}
+REVISION =	3
+CATEGORIES =	games
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nethack/} \
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \
 		ftp://ftp.planetmirror.com/pub/nethack/nh${V:S/.//g}/src/ \
 		http://www.nethack.de/download/
-DISTFILES=	nethack-${V:S/.//g}-src.tgz
+DISTFILES =	nethack-${V:S/.//g}-src.tgz
 
-HOMEPAGE=	http://nethack.org/
+HOMEPAGE =	http://nethack.org/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c termlib
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+WANTLIB =		c termlib
 
-FAKE_FLAGS=PREFIX=${PREFIX}
+FAKE_FLAGS =	PREFIX=${PREFIX}
 
-GAMEDIR=lib/nethackdir-$V
-NHDIR=	${TRUEPREFIX}/${GAMEDIR}
-MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+GAMEDIR =	lib/nethackdir-$V
+NHDIR =		${TRUEPREFIX}/${GAMEDIR}
+MAKE_ENV += 	NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 USE_GROFF =	Yes
 
-FLAVORS=no_x11 qt
-FLAVOR?=
+FLAVORS =	no_x11 qt
+FLAVOR ?=
 
 .if ${FLAVOR:L} == "no_x11"
-NETHACKCONFIG=${FILESDIR}/simple-config
+NETHACKCONFIG =	${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
-NETHACKCONFIG=${FILESDIR}/qt-config
-MODULES=	x11/qt3
-WANTLIB+=	SM m pthread stdc++
+NETHACKCONFIG =	${FILESDIR}/qt-config
+MODULES =	x11/qt3
+WANTLIB +=	SM m pthread stdc++
 .else
-NETHACKCONFIG=${FILESDIR}/x-config
-WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+NETHACKCONFIG =	${FILESDIR}/x-config
+WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 
-RUN_DEPENDS=:hackdata-*:games/hackdata
+RUN_DEPENDS =	games/hackdata
 
-NO_REGRESS=	Yes
-SUBST_VARS=GAMEDIR V
+NO_REGRESS =	Yes
+SUBST_VARS =	GAMEDIR V
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

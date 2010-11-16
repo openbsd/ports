@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/23 11:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/16 11:23:26 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -25,11 +25,11 @@ WANTLIB += boost_thread-mt png
 
 MASTER_SITES=	${HOMEPAGE}files/
 
-LIB_DEPENDS=	::devel/sdl-image \
-		::devel/sdl-mixer \
-		::devel/sdl-ttf \
-		::graphics/glew \
-		::devel/boost
+LIB_DEPENDS=	devel/sdl-image \
+		devel/sdl-mixer \
+		devel/sdl-ttf \
+		graphics/glew \
+		devel/boost
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
