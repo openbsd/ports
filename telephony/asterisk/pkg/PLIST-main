@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2010/09/19 21:14:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2010/11/16 21:58:52 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -93,6 +93,7 @@ include/asterisk/pval.h
 include/asterisk/rtp.h
 include/asterisk/say.h
 include/asterisk/sched.h
+include/asterisk/select.h
 include/asterisk/sha1.h
 include/asterisk/slin.h
 include/asterisk/slinfactory.h
@@ -1587,6 +1588,7 @@ share/examples/asterisk/default/extensions_minivm.conf
 share/examples/asterisk/default/features.conf
 share/examples/asterisk/default/festival.conf
 share/examples/asterisk/default/followme.conf
+@comment share/examples/asterisk/default/h323.conf
 share/examples/asterisk/default/http.conf
 share/examples/asterisk/default/iax.conf
 share/examples/asterisk/default/iaxprov.conf

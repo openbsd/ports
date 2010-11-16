@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_asterisk_c,v 1.16 2010/07/25 10:08:03 sthen Exp $
---- main/asterisk.c.orig	Thu Jun 10 15:25:16 2010
-+++ main/asterisk.c	Mon Jul  5 22:50:50 2010
-@@ -1174,7 +1174,7 @@ static pthread_t lthread;
+$OpenBSD: patch-main_asterisk_c,v 1.17 2010/11/16 21:58:52 sthen Exp $
+--- main/asterisk.c.orig	Wed Sep  1 23:59:50 2010
++++ main/asterisk.c	Thu Nov 11 21:06:11 2010
+@@ -1176,7 +1176,7 @@ static pthread_t lthread;
  static int read_credentials(int fd, char *buffer, size_t size, struct console *con)
  {
  #if defined(SO_PEERCRED)
