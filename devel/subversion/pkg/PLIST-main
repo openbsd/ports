@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/10/27 09:06:18 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/11/16 18:17:06 jeremy Exp $
 @conflict gnome-keyring-subversion-*
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
@@ -92,8 +92,8 @@ lib/libsvn_wc-1.la
 @comment lib/python${MODPY_VERSION}/site-packages/
 @comment lib/ruby/
 @comment lib/ruby/site_ruby/
-@comment lib/ruby/site_ruby/${MODRUBY_REV}/
-@comment lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/
 @man man/man1/svn.1
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
