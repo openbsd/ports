@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 13:48:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/16 09:18:15 ajacoutot Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -10,8 +10,7 @@ SHARED_ONLY=	Yes
 COMMENT=	Evolution connector for MS Exchange
 
 GNOME_PROJECT=	evolution-exchange
-GNOME_VERSION=	2.32.0
-REVISION=	0
+GNOME_VERSION=	2.32.1
 
 CATEGORIES=	mail
 
@@ -34,7 +33,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1
 WANTLIB += atk-1.0 c cairo camel-1.2 camel-provider-1.2 canberra
 WANTLIB += canberra-gtk com_err crypto db dbus-1 dbus-glib-1 ebackend-1.2
 WANTLIB += ebook-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2 edataserver-1.2
-WANTLIB += edataserverui-1.2 eggdbus-1 egroupwise-1.2 enchant
+WANTLIB += edataserverui-1.2 egroupwise-1.2 enchant
 WANTLIB += execinfo expat fontconfig freetype gailutil gcrypt
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-2 gnome-keyring gnutls
@@ -44,9 +43,9 @@ WANTLIB += ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 smime3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
 WANTLIB += stdc++ tasn1 unique-1.0 vorbis vorbisfile xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util xml2 z
+WANTLIB += xcb-aux xcb-event xcb-render xml2 z
 WANTLIB += gdata gtkhtml-editor-3.14 lber-2.3 ldap-2.3 nssutil3
-WANTLIB += proxy soup-gnome-2.4
+WANTLIB += proxy soup-gnome-2.4 GL Xxf86vm drm softokn3 xcb-shm
 WANTLIB += lib/evolution/${EVO_VERSION}/art_lgpl
 WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
 WANTLIB += lib/evolution/${EVO_VERSION}/essmime
