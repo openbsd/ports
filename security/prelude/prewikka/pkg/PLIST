@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/16 10:11:51 jasper Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -135,8 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/views/sensor.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/sensor.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.pyc
-share/doc/prewikka/
-share/doc/prewikka/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/locale/de/LC_MESSAGES/prewikka.mo
 share/locale/es/LC_MESSAGES/prewikka.mo
 share/locale/fr/LC_MESSAGES/prewikka.mo

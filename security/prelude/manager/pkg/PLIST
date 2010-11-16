@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/16 10:11:51 jasper Exp $
 %%SHARED%%
 @bin bin/prelude-manager
 include/prelude-manager/
@@ -19,8 +19,8 @@ lib/prelude-manager/reports/smtp.so
 lib/prelude-manager/reports/textmod.la
 lib/prelude-manager/reports/xmlmod.la
 @man man/man1/prelude-manager.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/prelude-manager/
-share/doc/prelude-manager/README.OpenBSD
 share/doc/prelude-manager/smtp/
 share/doc/prelude-manager/smtp/template.example
 share/examples/prelude-manager/

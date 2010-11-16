@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/01 06:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/16 10:11:51 jasper Exp $
 
 COMMENT=	Prelude log analyzer
 
 DISTNAME=	prelude-lml-0.9.15
-REVISION=	1
+REVISION=	2
 
 WANTLIB=	c gcrypt gnutls gpg-error m tasn1 z pcre prelude
 
@@ -17,10 +17,5 @@ LIB_DEPENDS=	::devel/pcre \
 		::security/prelude/libprelude
 
 CONFIGURE_ARGS=	--disable-unsupported-rulesets
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prelude-lml/
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/prelude-lml/
 
 .include <bsd.port.mk>

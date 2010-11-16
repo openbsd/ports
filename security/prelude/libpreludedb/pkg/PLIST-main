@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/08/30 20:37:16 rui Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/16 10:11:51 jasper Exp $
 @pkgpath security/prelude/libpreludedb
 bin/libpreludedb-config
 @bin bin/preludedb-admin
@@ -30,7 +30,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PreludeDB/PreludeDB.so
 @man man/man1/preludedb-admin.1
 share/aclocal/libpreludedb.m4
 share/doc/libpreludedb/
-share/doc/libpreludedb/README.OpenBSD
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/gtk-doc/html/libpreludedb/
 share/gtk-doc/html/libpreludedb/ch01.html
 share/gtk-doc/html/libpreludedb/home.png

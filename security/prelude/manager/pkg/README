@@ -1,3 +1,5 @@
+$OpenBSD: README,v 1.1 2010/11/16 10:11:51 jasper Exp $
+
 To start with prelude-manager, you have to create a starting profile,
 e.g. "prelude-manager" by running:
 
@@ -14,9 +16,9 @@ is the recommended directory to store this file).
 
 To start prelude-manager at boot-time, you could use:
 
-if [ -x ${LOCALBASE}/bin/prelude-manager ]; then
+if [ -x ${TRUEPREFIX}/bin/prelude-manager ]; then
 	/usr/bin/install -d -o _prelude -g _prelude -m 755 /var/run/prelude-manager/
-	echo -n ' prelude-manager'; ${LOCALBASE}/bin/prelude-manager -d > /dev/null
+	echo -n ' prelude-manager'; ${TRUEPREFIX}/bin/prelude-manager -d > /dev/null
 fi
 
 Note: the DBMS server to use with Prelude has to be started before.

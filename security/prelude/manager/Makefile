@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/16 10:11:51 jasper Exp $
 
 COMMENT=	Prelude manager
 
 DISTNAME=	prelude-manager-0.9.15
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-manager/
 
@@ -21,10 +21,5 @@ LIB_DEPENDS=	::textproc/libxml \
 # XXX check on update whether this is still necessary
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prelude-manager/
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/prelude-manager/
 
 .include <bsd.port.mk>

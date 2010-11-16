@@ -1,10 +1,12 @@
+$OpenBSD: README,v 1.1 2010/11/16 10:11:51 jasper Exp $
+
 To start with prewikka, you have to create the "prewikka" database.
 
 Instructions for PotsgreSQL:
 
   # su - _postgresql
   $ createdb -O prelude prewikka
-  $ cd ${PREFIX}/share/prewikka/database/
+  $ cd ${TRUEPREFIX}/share/prewikka/database/
   $ psql -U prelude -W prewikka < pgsql.sql
 
   Then, fill-in prewikka.conf, sections [idmef_database] and [database]
@@ -18,7 +20,7 @@ Instructions for MySQL:
   mysql> CREATE DATABASE prewikka;
   mysql> GRANT ALL PRIVILEGES on prewikka.* to prelude IDENTIFIED by '...';
 
-  # cd ${PREFIX}/share/prewikka/database/
+  # cd ${TRUEPREFIX}/share/prewikka/database/
   # mysql -u prelude -p prewikka < mysql.sql
 
   Then, fill-in prewikka.conf, sections [idmef_database] and [database]
@@ -27,7 +29,7 @@ Instructions for MySQL:
 Instructions for SQLite:
 
   # cd /var/prelude/
-  # sqlite3 prewikka.db < ${PREFIX}/share/prewikka/database/sqlite.sql
+  # sqlite3 prewikka.db < ${TRUEPREFIX}/share/prewikka/database/sqlite.sql
   # chmod 700 prewikka.db
 
   Then, fill-in prewikka.conf, sections [idmef_database] and [database]
@@ -37,10 +39,9 @@ Instructions for SQLite:
 Eventually, you can start prewikka's webserver (or Apache) which is
 listening by default on 8000/tcp using:
 
-if [ -x ${LOCALBASE}/bin/prewikka-httpd ]; then
-	echo -n ' prewikka-httpd'; ${LOCALBASE}/bin/prewikka-httpd &
+if [ -x ${TRUEPREFIX}/bin/prewikka-httpd ]; then
+	echo -n ' prewikka-httpd'; ${TRUEPREFIX}/bin/prewikka-httpd &
 fi
 
 The default user is "admin", with "admin" as password and should be
 changed.
-
