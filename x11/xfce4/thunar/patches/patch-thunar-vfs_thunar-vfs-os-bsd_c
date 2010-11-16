@@ -1,12 +1,21 @@
-$OpenBSD: patch-thunar-vfs_thunar-vfs-os-bsd_c,v 1.1 2010/10/28 15:12:57 sthen Exp $
---- thunar-vfs/thunar-vfs-os-bsd.c.orig	Thu Oct 28 03:13:34 2010
-+++ thunar-vfs/thunar-vfs-os-bsd.c	Thu Oct 28 03:13:38 2010
+$OpenBSD: patch-thunar-vfs_thunar-vfs-os-bsd_c,v 1.2 2010/11/16 13:33:47 dcoppa Exp $
+--- thunar-vfs/thunar-vfs-os-bsd.c.orig	Fri May 21 19:10:52 2010
++++ thunar-vfs/thunar-vfs-os-bsd.c	Tue Nov 16 13:43:02 2010
 @@ -66,7 +66,7 @@ _thunar_vfs_os_is_dir_empty (const gchar *absolute_pat
  {
    struct dirent *dp;
  #ifndef HAVE_GETDENTS
 -  glong          basep = 0;
-+  off_t          basep = 0;
++  goffset        basep = 0;
  #endif
    gchar          dbuf[8 * DIRBLKSIZ];
    gint           size = 0;
+@@ -180,7 +180,7 @@ _thunar_vfs_os_scandir (ThunarVfsPath  *path,
+   struct dirent *dp;
+   struct stat    statb;
+ #ifndef HAVE_GETDENTS
+-  glong          basep = 0;
++  goffset        basep = 0;
+ #endif
+   GList         *path_list = NULL;
+   gchar         *filename;
