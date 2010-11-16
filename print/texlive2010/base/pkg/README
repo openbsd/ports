@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/15 08:11:54 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/16 15:03:00 edd Exp $
 
 TeX Live for OpenBSD - Notes
 =======================================================================
@@ -33,6 +33,8 @@ installation by searching for the files using kpsewhich(1). Eg:
 % kpsewhich acronym.sty
 /home/edd/texmf/tex/latex/acronym/acronym.sty
 
+Note that gmverb is broken upstream. When I see a fix, it will be fixed.
+
 The 'tlmgr' script was disabled in the OpenBSD package. This is because
 updating TeX Live in this way will upset the package tools due to
 differing file checksums.
@@ -43,6 +45,7 @@ package less bloated for people who don't need those features.
 As far as I know:
 * You should install ruby and ImageMagick if you wish to use ConTeXt.
 * For texdoctk you will need p5-Tk
+* asymptote is in ports: graphics/asymptote
 
 If you know more, please mail the package maintainer: <edd@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 08:11:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/16 15:03:00 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -6,28 +6,31 @@ DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 
 SHARED_LIBS =		kpathsea	3.0
-SHARED_LIBS +=		ptexenc		0.0		# 2.1
+SHARED_LIBS +=		ptexenc		0.0
 
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
 WANTLIB +=		fontconfig freetype gd iconv jpeg lcms m ncurses
 WANTLIB +=		openjpeg png.>=3 poppler pthread pthread-stubs stdc++
 WANTLIB +=		t1.>=4 ttf xcb xml2 z
 
-RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
-			:detex-*:print/detex \
-			:dvi2tty-*:print/dvi2tty \
-			:ps2eps-*:print/ps2eps \
-			:psutils-*:print/psutils \
-			:t1utils-*:print/t1utils \
+RUN_DEPENDS =		::print/ghostscript/gnu \
+			::print/detex \
+			::print/dvi2tty \
+			::print/ps2eps \
+			::print/psutils \
+			::print/t1utils \
 			:texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
-			::print/latex-mk \
-			::print/pdfjam
+			::print/latex-mk
+# re-enable when linked, it depends up tl2009, conflicts
+#::print/pdfjam
 			
 LIB_DEPENDS =		::devel/t1lib \
 			::graphics/png \
 			::graphics/gd \
 			::print/freetype \
 			::print/poppler
+
+#MODULES =		textproc/intltool converters/libiconv
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -95,7 +98,8 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-old-mac-fonts \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
-			--with-system-xpdf # link poppler, yay :)
+			--with-banner-add="OpenBSD_Ports" \
+			--with-system-xpdf # link poppler instead of internal xpdf
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
