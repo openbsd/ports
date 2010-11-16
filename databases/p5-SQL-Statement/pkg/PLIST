@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/15 00:22:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/11/16 14:36:34 jasper Exp $
 ${P5SITE}/SQL/
 ${P5SITE}/SQL/Dialects/
 ${P5SITE}/SQL/Dialects/ANSI.pm
@@ -9,26 +9,16 @@ ${P5SITE}/SQL/Parser.pm
 ${P5SITE}/SQL/Statement/
 ${P5SITE}/SQL/Statement.pm
 ${P5SITE}/SQL/Statement/Embed.pod
-${P5SITE}/SQL/Statement/Function.pm
 ${P5SITE}/SQL/Statement/Functions.pm
 ${P5SITE}/SQL/Statement/GetInfo.pm
-${P5SITE}/SQL/Statement/Operation.pm
-${P5SITE}/SQL/Statement/Placeholder.pm
 ${P5SITE}/SQL/Statement/RAM.pm
 ${P5SITE}/SQL/Statement/Structure.pod
 ${P5SITE}/SQL/Statement/Syntax.pod
-${P5SITE}/SQL/Statement/Term.pm
-${P5SITE}/SQL/Statement/TermFactory.pm
 ${P5SITE}/SQL/Statement/Util.pm
 @man man/man3p/SQL::Eval.3p
 @man man/man3p/SQL::Parser.3p
 @man man/man3p/SQL::Statement.3p
 @man man/man3p/SQL::Statement::Embed.3p
-@man man/man3p/SQL::Statement::Function.3p
 @man man/man3p/SQL::Statement::Functions.3p
-@man man/man3p/SQL::Statement::Operation.3p
-@man man/man3p/SQL::Statement::Placeholder.3p
 @man man/man3p/SQL::Statement::Structure.3p
 @man man/man3p/SQL::Statement::Syntax.3p
-@man man/man3p/SQL::Statement::Term.3p
-@man man/man3p/SQL::Statement::TermFactory.3p
