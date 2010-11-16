@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.114 2010/10/24 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2010/11/16 08:55:49 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.32.0
-REVISION-main=		3
-REVISION-plugins=	3
+GNOME_VERSION=		2.32.1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -62,30 +60,23 @@ WANTLIB += xml2 z gtkhtml-3.14 gtkhtml-editor-3.14
 WANTLIB += gdata proxy soup-gnome-2.4 gdata ebook-1.2
 WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 unique-1.0
 WANTLIB += gnome-desktop-2 nss3 smime3 ssl3 notify soup-2.4
-WANTLIB += GL Xxf86vm canberra-gtk db drm ebackend-1.2 egroupwise-1.2
-WANTLIB += icalss icalvcal ltdl nssutil3 ogg softokn3 vorbis vorbisfile
-WANTLIB += xcb-shm
+WANTLIB += GL Xxf86vm db drm ebackend-1.2 egroupwise-1.2
+WANTLIB += icalss icalvcal nssutil3 softokn3 xcb-shm
 
-WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk sasl2 ssl
+WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk
 WANTLIB-main += gweather icalss icalvcal ogg db gtkimageview
 WANTLIB-main += icalss icalvcal ldap-2.3 ltdl ogg pst softokn3
-WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis lber-2.3
+WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis
+WANTLIB-main += canberra-gtk ltdl ogg vorbis vorbisfile
 
 WANTLIB-plugins += ${WANTLIB} gstreamer-0.10
 WANTLIB-plugins += lib/evolution/${R}/composer lib/evolution/${R}/emformat
 WANTLIB-plugins += lib/evolution/${R}/eshell lib/evolution/${R}/evolution-calendar
 WANTLIB-plugins += lib/evolution/${R}/evolution-mail lib/evolution/${R}/emiscwidgets
-WANTLIB-plugins += lib/evolution/${R}/eutil
-WANTLIB-plugins += lib/evolution/${R}/art_lgpl lib/evolution/${R}/econtacteditor
-WANTLIB-plugins += lib/evolution/${R}/econtactlisteditor
-WANTLIB-plugins += lib/evolution/${R}/essmime
+WANTLIB-plugins += lib/evolution/${R}/eutil lib/evolution/${R}/art_lgpl
 WANTLIB-plugins += lib/evolution/${R}/etable lib/evolution/${R}/etext
-WANTLIB-plugins += lib/evolution/${R}/etimezonedialog
-WANTLIB-plugins += lib/evolution/${R}/evolution-a11y
-WANTLIB-plugins += lib/evolution/${R}/evolution-calendar-importers
-WANTLIB-plugins += lib/evolution/${R}/evolution-smime.
+WANTLIB-plugins += lib/evolution/${R}/evolution-a11y lib/evolution/${R}/menus
 WANTLIB-plugins += lib/evolution/${R}/filter lib/evolution/${R}/gnomecanvas
-WANTLIB-plugins += lib/evolution/${R}/menus lib/evolution/${R}/eabutil
 
 MULTI_PACKAGES=		-main -plugins
 
