@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/27 11:14:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/16 16:20:17 stephan Exp $
 
 COMMENT =	send mail by smtp/smtp-auth from drupal
 
 DISTNAME = 	phpmailer-6.x-2.1
 PKGNAME =	drupal6-phpmailer-2.1
+REVISION =	0
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
