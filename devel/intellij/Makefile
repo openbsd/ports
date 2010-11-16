@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/16 19:53:02 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,7 +34,6 @@ SUBST_VARS+=		JAVA_HOME
 
 WRKDIST=		${WRKDIR}/idea-IC-95.429
 IJ=			${PREFIX}/intellij
-USE_GROFF =		Yes
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
 # a no-op for do-build.
