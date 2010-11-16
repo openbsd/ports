@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1060 2010/11/16 09:39:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1061 2010/11/16 19:26:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1421,6 +1421,14 @@ _FULL_PACKAGE_NAME ?= No
 
 # XXX save result pre-normalization, just for checking
 _CHECK_DEPENDS =
+.for _v in BUILD LIB RUN REGRESS
+_CHECK_DEPENDS +:= ${${_v}_DEPENDS}
+.endfor
+.for _s in ${MULTI_PACKAGES}
+.  for _v in RUN LIB
+_CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
+.  endfor
+.endfor
 
 # normalization of depends to remove extra :
 
@@ -1429,12 +1437,10 @@ _CHECK_DEPENDS =
 # then we rebuild it as STEM->=something:pkgpath
 
 .for _v in BUILD LIB RUN REGRESS
-_CHECK_DEPENDS +:= ${${_v}_DEPENDS}
 ${_v}_DEPENDS := ${${_v}_DEPENDS:S/^://:S/^://:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
 .endfor
 .for _s in ${MULTI_PACKAGES}
 .  for _v in RUN LIB
-_CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
 ${_v}_DEPENDS${_s} := ${${_v}_DEPENDS${_s}:S/^://:S/^://:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
 .  endfor
 .endfor
@@ -1616,6 +1622,7 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 
 _parse_spec = \
 	IFS=:; read pkg subdir target; \
+	extra_msg="(DEPENDS was $$pkg $$subdir $$target)"; \
 	case "X$$pkg" in \
 	*/*) target="$$subdir"; subdir="$$pkg"; pkg=;; \
 	esac; unset IFS; ${_flavor_fragment}
@@ -1857,7 +1864,6 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		${_parse_spec}; \
-		extra_msg="(DEPENDS ${_i})"; \
 		checkinstall=true; \
 		_ignore_cookie=${@:S/.dep/.ignored/}; \
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
