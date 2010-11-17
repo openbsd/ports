@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/05 13:52:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/17 13:42:34 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -36,7 +36,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 MULTI_PACKAGES=		-main -plugin
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
+BUILD_DEPENDS=		${RUN_DEPENDS-main} \
 			::textproc/p5-Text-CSV \
 			:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
 
