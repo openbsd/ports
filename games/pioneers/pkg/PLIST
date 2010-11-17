@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/12/22 16:28:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/11/17 19:23:05 jasper Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -62,8 +62,10 @@ share/locale/af/LC_MESSAGES/pioneers.mo
 share/locale/cs/LC_MESSAGES/pioneers.mo
 share/locale/da/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
+share/locale/en_GB/LC_MESSAGES/pioneers.mo
 share/locale/es/LC_MESSAGES/pioneers.mo
 share/locale/fr/LC_MESSAGES/pioneers.mo
+share/locale/gl/LC_MESSAGES/pioneers.mo
 share/locale/hu/LC_MESSAGES/pioneers.mo
 share/locale/it/LC_MESSAGES/pioneers.mo
 share/locale/ja/LC_MESSAGES/pioneers.mo
