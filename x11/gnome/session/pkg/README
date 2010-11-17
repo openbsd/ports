@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/10/28 22:42:44 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/17 20:40:31 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -81,9 +81,9 @@ related ports under the x11/gnome category)
    * deskbar-applet - universal search and navigation applet
    * gnumeric - spreadsheet application
    * hamster-applet - time tracker applet
+   * meta-tracker - powerful desktop search tool and indexer
    * planner - project management
    * tomboy - desktop note-taking
-   * tracker-search - powerful desktop search tool and indexer
 
  - Utilities
    * alacarte - simple menu editing tool
