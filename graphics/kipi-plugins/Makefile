@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/17 19:41:52 jasper Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -6,6 +6,8 @@ CATEGORIES =		graphics x11 x11/kde
 DISTNAME =		kipi-plugins-0.1.6
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cal =		kipi-kcal-plugin-0.1.6
+REVISION-main =		0
+REVISION-cal =		0
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 EXTRACT_SUFX =		.tar.bz2
@@ -31,10 +33,11 @@ LIB_DEPENDS-cal =${LIB_DEPENDS} \
 
 RUN_DEPENDS =	graphics/ImageMagick
 
-MODULES =	x11/kde
+MODULES =	devel/gettext \
+		x11/kde
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 \
-		fam iconv idn intl jpeg m png pthread-stubs rpcsvc stdc++ \
+		fam idn jpeg m png pthread-stubs rpcsvc stdc++ \
 		util xcb z kdecore.>=6 DCOP kdefx kdeprint kdesu kdeui kio \
 		kparts kwalletclient kipi lib/qt3/qt-mt.>=3.33
 

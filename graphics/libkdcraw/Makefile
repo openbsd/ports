@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 19:37:49 jasper Exp $
 
 COMMENT =	grab raw data from digital cameras
 
 DISTNAME =	libkdcraw-0.1.9
+REVISION =	0
 CATEGORIES =	graphics devel
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/
@@ -10,7 +11,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kipi/}
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS +=		kdcraw               2.0      # .3.0
-MODULES =		x11/kde
+MODULES =		devel/gettext \
+			x11/kde
 MODKDE_VERSION =	3.5.8
 
 SHARED_ONLY =		Yes
@@ -29,7 +31,7 @@ LIB_DEPENDS +=		graphics/lcms \
 RUN_DEPENDS =		graphics/dcraw
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender jpeg m png
-WANTLIB += util z art_lgpl_2 iconv intl idn
+WANTLIB += util z art_lgpl_2 idn
 WANTLIB += fam rpcsvc stdc++ pthread-stubs xcb lcms
 WANTLIB += DCOP kdecore kdefx kdesu kdeui kio kwalletclient
 

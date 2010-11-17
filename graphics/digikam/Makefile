@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/17 19:41:52 jasper Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		0
+REVISION =		1
 SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -22,7 +22,7 @@ LIB_DEPENDS +=	x11/kde/libs3 \
 		graphics/lcms
 
 WANTLIB =	util m c ICE Xrender SM pthread z stdc++ expat \
-		Xext X11 jpeg png art_lgpl_2 exif intl iconv idn \
+		Xext X11 jpeg png art_lgpl_2 exif idn \
 		exiv2 jasper pcre pcreposix Xau Xdmcp fam rpcsvc ltdl \
 		pthread-stubs xcb lib/qt3/qt-mt>=3.33 kdecore>=6 \
 		kwalletclient DCOP kparts kdeui kdesu kio kdefx \
@@ -30,7 +30,8 @@ WANTLIB =	util m c ICE Xrender SM pthread z stdc++ expat \
 		gphoto2 gphoto2_port kipi tiff kexiv2>=1 kdcraw \
 		lcms
 
-MODULES =	x11/kde
+MODULES =	devel/gettext \
+		x11/kde
 
 MODKDE_VERSION =	3.5.8
 CONFIGURE_STYLE =	autoconf
