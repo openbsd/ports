@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.21 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=	useful and interesting programs for Icon
 
@@ -30,8 +30,8 @@ WRKDIST=${WRKDIR}/${DISTNAME}/ipl
 #SUPDISTFILES=gipl.tgz
 #WRKDIST=	${WRKDIR}
 
-BUILD_DEPENDS=::lang/icon/interp
-RUN_DEPENDS=::lang/icon/interp
+BUILD_DEPENDS=lang/icon/interp
+RUN_DEPENDS=lang/icon/interp
 
 # temporary values for building programs
 IPATH=${WRKSRC}/gprocs:${WRKSRC}/procs:${LOCALBASE}/share/ipl/ucode

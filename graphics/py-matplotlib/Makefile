@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/17 08:05:15 espie Exp $
 
 VMEM_WARNING=	Yes
 
@@ -23,20 +23,20 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		pthread-stubs tcl84 tk84 xcb ffi png.>=3
+		pthread-stubs tcl84 tk84 xcb ffi png>=3
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matplotlib/}
 
 MODULES=	lang/python \
 		devel/gettext
 
-RUN_DEPENDS=	::math/py-numpy \
-		::x11/py-gtk2 \
-		::devel/py-tz \
-		::devel/py-dateutil \
+RUN_DEPENDS=	math/py-numpy \
+		x11/py-gtk2 \
+		devel/py-tz \
+		devel/py-dateutil \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	::graphics/png
+LIB_DEPENDS=	graphics/png
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
 		LDSHARED="${CC} -shared -fPIC"

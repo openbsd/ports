@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:12 espie Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
@@ -37,25 +37,25 @@ WANTLIB-perl =	crypto curl expat geos_c geotiff gif idn jasper jpeg m \
 WANTLIB-python =
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-		::graphics/tiff \
-		::net/curl \
-		:postgresql-client-*:databases/postgresql \
-		::geo/geos \
-		::devel/libidn \
-		::graphics/png \
-		::graphics/libungif \
-		::graphics/jpeg \
-		::graphics/jasper \
-		::devel/geotiff
+		graphics/tiff \
+		net/curl \
+		databases/postgresql \
+		geo/geos \
+		devel/libidn \
+		graphics/png \
+		graphics/libungif \
+		graphics/jpeg \
+		graphics/jasper \
+		devel/geotiff
 WANTLIB-main +=	tiff curl pq geos geos_c idn png gif jpeg jasper geotiff
 
-LIB_DEPENDS-python=	:${PKGNAME}:${BASE_PKGPATH},-main
+LIB_DEPENDS-python=	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-python +=	gdal
-LIB_DEPENDS-perl=	:${PKGNAME}:${BASE_PKGPATH},-main
+LIB_DEPENDS-perl=	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-perl +=		gdal
 
-RUN_DEPENDS+=	::math/py-numpy
-BUILD_DEPENDS+=	${RUN_DEPENDS} ::devel/swig
+RUN_DEPENDS+=	math/py-numpy
+BUILD_DEPENDS+=	${RUN_DEPENDS} devel/swig
 
 MULTI_PACKAGES=	-main -python -perl
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:13 espie Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
 DISTNAME =		ftgl-2.1.3-rc5
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/13 16:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS +=	::games/allegro
-RUN_DEPENDS +=		::games/allegro
+BUILD_DEPENDS +=	games/allegro
+RUN_DEPENDS +=		games/allegro
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CFLAGS=-I${LOCALBASE}/include

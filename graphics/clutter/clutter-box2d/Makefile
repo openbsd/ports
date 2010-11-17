@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		clutter Box2D integration library
 
@@ -17,7 +17,7 @@ WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z clutter-glx-1.0
 WANTLIB += stdc++ xcb-render xcb-render-util
 
-LIB_DEPENDS=		::graphics/clutter/core
+LIB_DEPENDS=		graphics/clutter/core
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection=no

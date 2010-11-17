@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	programs and library for the 'X-face' mail and news header
 
 DISTNAME=	compface-1.5.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
 HOMEPAGE=	http://freshmeat.net/projects/compface/

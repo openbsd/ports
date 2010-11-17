@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		C++ interface for cairo
 
@@ -22,8 +22,8 @@ WANTLIB=		GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender \
 
 MASTER_SITES=		http://cairographics.org/releases/
 
-LIB_DEPENDS=		::graphics/cairo \
-			:libsigc++->=2:devel/libsigc++-2
+LIB_DEPENDS=		graphics/cairo \
+			devel/libsigc++-2>=2
 
 MODULES=		devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	wrapper for ImageMagick command line tools
 
@@ -19,11 +19,11 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:ImageMagick-*:graphics/ImageMagick \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS =		graphics/ImageMagick \
+			devel/ruby-hoe,${FLAVOR}
 
 MODRUBY_REGRESS =	rake
 
-REGRESS_DEPENDS =	:ImageMagick-*:graphics/ImageMagick
+REGRESS_DEPENDS =	graphics/ImageMagick
 
 .include <bsd.port.mk>

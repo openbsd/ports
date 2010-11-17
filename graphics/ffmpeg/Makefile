@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -35,21 +35,21 @@ WANTLIB += SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg
 WANTLIB += orc-0.4 pthread schroedinger-1.0 sndio speex theora
 WANTLIB += theoradec theoraenc vorbis vorbisenc x264 z
 
-BUILD_DEPENDS=	::textproc/texi2html
+BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/yasm
+BUILD_DEPENDS+=	devel/yasm
 .endif
-LIB_DEPENDS=	::archivers/bzip2 \
-		::audio/faac \
-		::audio/faad \
-		::audio/lame \
-		::audio/libvorbis \
-		::audio/speex \
-		::audio/gsm \
-		::devel/sdl \
-		::multimedia/libtheora \
-		:schroedinger->=1.0.9:multimedia/schroedinger \
-		::multimedia/x264
+LIB_DEPENDS=	archivers/bzip2 \
+		audio/faac \
+		audio/faad \
+		audio/lame \
+		audio/libvorbis \
+		audio/speex \
+		audio/gsm \
+		devel/sdl \
+		multimedia/libtheora \
+		multimedia/schroedinger>=1.0.9 \
+		multimedia/x264
 
 .if ${MACHINE_ARCH:Marm}
 # XXX binutils

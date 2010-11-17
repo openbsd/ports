@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/26 21:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/17 08:05:18 espie Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -26,12 +26,12 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::textproc/libxslt \
-			::textproc/p5-XML-LibXML
-LIB_DEPENDS=		::devel/glib2
-REGRESS_DEPENDS=	::shells/bash	
+RUN_DEPENDS=		textproc/libxslt \
+			textproc/p5-XML-LibXML
+LIB_DEPENDS=		devel/glib2
+REGRESS_DEPENDS=	shells/bash	
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

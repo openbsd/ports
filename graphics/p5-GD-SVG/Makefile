@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.7 2010/10/18 18:13:14 espie Exp $
+#	$OpenBSD: Makefile,v 1.8 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	allow GD perl scripts to output SVG
 
@@ -12,8 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::graphics/p5-GD \
-		:p5-SVG-*:graphics/p5-SVG
+RUN_DEPENDS=	graphics/p5-GD \
+		graphics/p5-SVG
 
 MODULES=	cpan
 USE_GROFF =	Yes

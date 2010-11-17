@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	Charting library for Perl
 
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
-RUN_DEPENDS=	:p5-GD-*:graphics/p5-GD
+RUN_DEPENDS=	graphics/p5-GD
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

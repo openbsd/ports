@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.111 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=		image processing tools
 
@@ -29,18 +29,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB =		c jpeg m z bz2.>=10 jbig.>=1.2 png.>=4 tiff.>=36 \
-			lcms.>=1 jasper.>=1
+WANTLIB =		c jpeg m z bz2>=10 jbig>=1.2 png>=4 tiff>=36 \
+			lcms>=1 jasper>=1
 
-LIB_DEPENDS =		::archivers/bzip2 \
-			::graphics/jbigkit \
-			::graphics/png \
-			::graphics/tiff \
-			::graphics/lcms \
-			::graphics/jasper
+LIB_DEPENDS =		archivers/bzip2 \
+			graphics/jbigkit \
+			graphics/png \
+			graphics/tiff \
+			graphics/lcms \
+			graphics/jasper
 
-RUN_DEPENDS=		:netpbm-*:graphics/netpbm
-BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
+RUN_DEPENDS=		graphics/netpbm
+BUILD_DEPENDS=		graphics/netpbm
 
 # using libltdl stuff
 USE_LIBTOOL=		gnu
@@ -69,22 +69,22 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu,no_x11
-BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu,no_x11
+RUN_DEPENDS +=		print/ghostscript/gnu,no_x11
+BUILD_DEPENDS +=	print/ghostscript/gnu,no_x11
 CONFIGURE_ENV +=	ac_cv_path_FIGDecodeDelegate=no
 CONFIGURE_ARGS +=	--without-x \
 			--without-freetype \
 			--without-wmf
 .else
 WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig \
-			freetype iconv pthread-stubs xcb wmflite.>=7 \
-			xml2.>=9
-LIB_DEPENDS +=		::graphics/libwmf \
-			::textproc/libxml
-RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS +=		:transfig-*:print/transfig
-BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu
-BUILD_DEPENDS +=	:transfig-*:print/transfig
+			freetype iconv pthread-stubs xcb wmflite>=7 \
+			xml2>=9
+LIB_DEPENDS +=		graphics/libwmf \
+			textproc/libxml
+RUN_DEPENDS +=		print/ghostscript/gnu
+RUN_DEPENDS +=		print/transfig
+BUILD_DEPENDS +=	print/ghostscript/gnu
+BUILD_DEPENDS +=	print/transfig
 CONFIGURE_ARGS +=	--with-wmf
 .endif
 

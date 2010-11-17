@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
@@ -21,11 +21,11 @@ WANTLIB +=		c m stdc++ z jpeg pano13 png tiff xml2
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
-LIB_DEPENDS =		::graphics/jpeg \
-			::graphics/libpano13 \
-			::graphics/png \
-			::graphics/tiff \
-			::textproc/libxml
+LIB_DEPENDS =		graphics/jpeg \
+			graphics/libpano13 \
+			graphics/png \
+			graphics/tiff \
+			textproc/libxml
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake

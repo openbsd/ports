@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -24,7 +24,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gsl gslcblas gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 		sigc-2.0 stdc++ xml2 z gio-2.0 giomm-2.4 \
-		pthread-stubs xcb gc.>=3 popt MagickCore Magick++ \
+		pthread-stubs xcb gc>=3 popt MagickCore Magick++ \
 		lcms png xslt poppler poppler-glib atkmm-1.6 gdkmm-2.4 \
 		gtkmm-2.4 pangomm-1.4 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 		gtkspell xcb-render xcb-render-util
@@ -32,22 +32,22 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=	devel/gettext \
 		textproc/intltool
 
-BUILD_DEPENDS=	::devel/boost
-LIB_DEPENDS=	::devel/boehm-gc \
-		::devel/gsl \
-		::devel/pangomm \
-		::devel/popt \
-		::graphics/ImageMagick \
-		::graphics/lcms \
-		::graphics/png \
-		::print/poppler \
-		::textproc/aspell/core \
-		::textproc/gtkspell \
-		::textproc/libxslt \
-		::x11/gtk2mm \
-		::x11/gtk+2
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::textproc/py-lxml
+BUILD_DEPENDS=	devel/boost
+LIB_DEPENDS=	devel/boehm-gc \
+		devel/gsl \
+		devel/pangomm \
+		devel/popt \
+		graphics/ImageMagick \
+		graphics/lcms \
+		graphics/png \
+		print/poppler \
+		textproc/aspell/core \
+		textproc/gtkspell \
+		textproc/libxslt \
+		x11/gtk2mm \
+		x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils \
+		textproc/py-lxml
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

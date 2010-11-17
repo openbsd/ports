@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/07 16:37:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:17 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -33,10 +33,10 @@ USE_GMAKE =	Yes
 
 WANTLIB =	c
 
-BUILD_DEPENDS =	::devel/apache-ant \
-		::shells/bash
-RUN_DEPENDS =	::java/javaPathHelper \
-		::shells/bash
+BUILD_DEPENDS =	devel/apache-ant \
+		shells/bash
+RUN_DEPENDS =	java/javaPathHelper \
+		shells/bash
 
 MAKE_ENV =	JAVA_HOME=${JAVA_HOME} ANT_OPTS="-Xms256m -Xmx256m"
 JRUBY_HOME =	${PREFIX}/jruby

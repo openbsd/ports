@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	mpeg-1 video player
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS =	:smpeg-*:devel/smpeg
-WANTLIB =	SDL X11 Xext c m pthread pthread-stubs usbhid xcb smpeg.>=1.3
+LIB_DEPENDS =	devel/smpeg
+WANTLIB =	SDL X11 Xext c m pthread pthread-stubs usbhid xcb smpeg>=1.3
 
 
 SEPARATE_BUILD=	concurrent

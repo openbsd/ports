@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:14 espie Exp $
 
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
@@ -23,7 +23,7 @@ SEPARATE_BUILD =		simple
 SHARED_LIBS +=	lqr-1           0.0           # .0.0
 
 
-LIB_DEPENDS =			::devel/glib2
+LIB_DEPENDS =			devel/glib2
 WANTLIB +=			iconv intl m pcre glib-2.0
 
 .include <bsd.port.mk>

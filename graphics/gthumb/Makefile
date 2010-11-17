@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.35 2010/10/18 13:51:01 jasper Exp $
+#$OpenBSD: Makefile,v 1.36 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -34,13 +34,13 @@ MODULES=	x11/gnome \
 		devel/gettext \
 		devel/gconf2
 
-LIB_DEPENDS=	::devel/json-glib \
-		::devel/libsoup,-gnome \
-		::devel/libunique \
-		::graphics/clutter/clutter-gtk \
-		::graphics/libgphoto2 \
-		::multimedia/gstreamer-0.10/plugins-base
-RUN_DEPENDS=	::misc/shared-mime-info
+LIB_DEPENDS=	devel/json-glib \
+		devel/libsoup,-gnome \
+		devel/libunique \
+		graphics/clutter/clutter-gtk \
+		graphics/libgphoto2 \
+		multimedia/gstreamer-0.10/plugins-base
+RUN_DEPENDS=	misc/shared-mime-info
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

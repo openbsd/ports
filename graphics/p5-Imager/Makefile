@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/17 08:05:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,10 +24,11 @@ FLAVORS=	libs
 FLAVOR?=
 
 .if ${FLAVOR:L} == "libs"
-LIB_DEPENDS=	t1.>=3::devel/t1lib \
-		png.>=2::graphics/png \
-		jpeg.>=62::graphics/jpeg \
-		tiff.>=35::graphics/tiff
+LIB_DEPENDS=	devel/t1lib \
+		graphics/png \
+		graphics/jpeg \
+		:graphics/tiff
+WANTLIB +=	t1>=3 png>=2 jpeg>=62 tiff>=35
 CONFIGURE_ARGS=	--enable jpeg,tiff,png,ungif,T1-fonts,freetype2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
 		--libpath="${LOCALBASE}/lib:${X11BASE}/lib"

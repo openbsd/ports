@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -24,12 +24,12 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
 WANTLIB += xcb-render xcb-render-util gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 art_lgpl_2.>=5 xslt.>=3
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0 art_lgpl_2>=5 xslt>=3
 
-BUILD_DEPENDS=	::textproc/docbook-xsl
-LIB_DEPENDS=	::x11/gtk+2 \
-		::graphics/libart \
-		::textproc/libxslt
+BUILD_DEPENDS=	textproc/docbook-xsl
+LIB_DEPENDS=	x11/gtk+2 \
+		graphics/libart \
+		textproc/libxslt
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -54,8 +54,8 @@ FLAVOR?=
 CONFIGURE_ARGS+=--enable-gnome \
 		--with-python \
 		--with-swig
-BUILD_DEPENDS+=	::devel/swig
-LIB_DEPENDS +=	::x11/gnome/libgnomeui \
+BUILD_DEPENDS+=	devel/swig
+LIB_DEPENDS +=	x11/gnome/libgnomeui \
 		${MODPY_LIB_DEPENDS}
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 bonobo-activation
 WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
@@ -69,7 +69,7 @@ PATCH_LIST=	patch-* no_gnome-patch-*
 CONFIGURE_ARGS+=--disable-gnome \
 		--without-python \
 		--without-swig
-RUN_DEPENDS+=	::devel/xdg-utils
+RUN_DEPENDS+=	devel/xdg-utils
 MODPY_RUNDEP=	No
 .endif
 

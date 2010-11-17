@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/17 20:27:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -40,7 +40,7 @@ FLAVOR ?=
 MULTI_PACKAGES = -main
 .if !${FLAVOR:L:Mno_emacs}
 MULTI_PACKAGES += -emacs
-BUILD_DEPENDS =	::editors/emacs21
+BUILD_DEPENDS =	editors/emacs21
 .endif
 
 # can't make sense of any of these tests

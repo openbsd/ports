@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=		OpenGL Extrusion library
 
 VERSION=		3.0.4
 DISTNAME=		gle-${VERSION}
-PKGNAME=		${DISTNAME}p3
+REVISION =		3
 SHARED_LIBS=		gle	3.4
 CATEGORIES=     	graphics devel
 
@@ -21,7 +21,7 @@ WANTLIB=		X11 Xau Xdmcp Xext Xi m pthread-stubs xcb
 MASTER_SITES=		http://www.linas.org/gle/pub/
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

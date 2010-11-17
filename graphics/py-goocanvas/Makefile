@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=		Python bindings for goocanvas
 
@@ -29,10 +29,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb z goocanvas
 WANTLIB += ${MODPY_WANTLIB}
 
-BUILD_DEPENDS=		::textproc/libxslt \
-			::x11/py-gtk2
-RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		::graphics/goocanvas \
+BUILD_DEPENDS=		textproc/libxslt \
+			x11/py-gtk2
+RUN_DEPENDS=		x11/py-gtk2
+LIB_DEPENDS=		graphics/goocanvas \
 			${MODPY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

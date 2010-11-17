@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.17
@@ -24,7 +24,7 @@ WANTLIB +=		c jpeg m png tiff z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=panotools/}
 
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	automake
 # builds work with SEPARATE_BUILD, but tests don't.
 #SEPARATE_BUILD =	simple
@@ -33,10 +33,10 @@ AUTOMAKE_VERSION =	1.9
 
 # bootstrap needs libtoolize
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			::devel/libtool
-LIB_DEPENDS =		::graphics/jpeg \
-			::graphics/png \
-			::graphics/tiff
+			devel/libtool
+LIB_DEPENDS =		graphics/jpeg \
+			graphics/png \
+			graphics/tiff
 
 CPPFLAGS +=		-I${LOCALBASE}/include/ \
 			-I${LOCALBASE}/include/libpng \

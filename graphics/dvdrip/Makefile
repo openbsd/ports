@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.6
 DISTNAME=	dvdrip-${VERSION}
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics audio multimedia perl5
 
 HOMEPAGE=	http://www.exit1.org/dvdrip/
@@ -18,23 +18,23 @@ WANTLIB=		c
 
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/	
 
-RUN_DEPENDS=	::graphics/ImageMagick \
-		::devel/p5-Event-ExecFlow \
-		::multimedia/transcode \
-		::net/fping \
-		::net/p5-Event-RPC \
-		::x11/p5-Gtk2-Ex-FormFactory \
-		::multimedia/ogmtools \
-		:lsdvd->=0.15:multimedia/lsdvd
-BUILD_DEPENDS=	::devel/p5-Event-ExecFlow \
-		::net/p5-Event-RPC \
-		::x11/p5-Gtk2-Ex-FormFactory
+RUN_DEPENDS=	graphics/ImageMagick \
+		devel/p5-Event-ExecFlow \
+		multimedia/transcode \
+		net/fping \
+		net/p5-Event-RPC \
+		x11/p5-Gtk2-Ex-FormFactory \
+		multimedia/ogmtools \
+		multimedia/lsdvd>=0.15
+BUILD_DEPENDS=	devel/p5-Event-ExecFlow \
+		net/p5-Event-RPC \
+		x11/p5-Gtk2-Ex-FormFactory
 
 CONFIGURE_STYLE=perl
 USE_GROFF =	Yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 
-REGRESS_DEPENDS=::x11/p5-Gtk2-Ex-FormFactory
+REGRESS_DEPENDS=x11/p5-Gtk2-Ex-FormFactory
 REGRESS_FLAGS=	HOME=${TMPDIR}
 
 pre-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/11 09:42:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:16 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -33,15 +33,15 @@ MODULES =	devel/gconf2 \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS =	::devel/iso-codes \
-		::x11/dbus-python
-RUN_DEPENDS =	::devel/iso-codes \
-		::devel/desktop-file-utils \
-		::devel/py-notify \
-		::devel/py-xdg \
-		::sysutils/gamin,-server,no_python \
-		::x11/dbus-python \
-		::x11/gnome/librsvg
+BUILD_DEPENDS =	devel/iso-codes \
+		x11/dbus-python
+RUN_DEPENDS =	devel/iso-codes \
+		devel/desktop-file-utils \
+		devel/py-notify \
+		devel/py-xdg \
+		sysutils/gamin,-server,no_python \
+		x11/dbus-python \
+		x11/gnome/librsvg
 
 MODGCONF2_SCHEMAS_DIR = ibus
 

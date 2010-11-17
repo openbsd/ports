@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
@@ -20,15 +20,15 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	:ffmpeg->=20100512:graphics/ffmpeg \
-		::graphics/png \
-		::graphics/jpeg
+LIB_DEPENDS=	graphics/ffmpeg>=20100512 \
+		graphics/png \
+		graphics/jpeg
 
 WANTLIB=	bz2 c faac faad gsm m mp3lame ogg pthread \
 		stdc++ theora vorbis vorbisenc x264 z \
 		orc-0.4 schroedinger-1.0 speex \
-		avcodec.>=14 avformat.>=13 avutil.>=7 swscale.>=2 \
-		png.>=6 jpeg
+		avcodec>=14 avformat>=13 avutil>=7 swscale>=2 \
+		png>=6 jpeg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \

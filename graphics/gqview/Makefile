@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	Gtk-based graphic file viewer
 
@@ -26,10 +26,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/xdg-utils
-LIB_DEPENDS=	::x11/gtk+2 \
-		::graphics/lcms
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/xdg-utils
+LIB_DEPENDS=	x11/gtk+2 \
+		graphics/lcms
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

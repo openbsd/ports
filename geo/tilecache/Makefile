@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
@@ -23,7 +23,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_BADEGGS=		TileCache
-RUN_DEPENDS =		::graphics/py-Imaging
+RUN_DEPENDS =		graphics/py-Imaging
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py

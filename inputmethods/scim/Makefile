@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/08 09:00:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/17 08:05:17 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -34,8 +34,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scim/}
 
 MODULES =	devel/gettext \
 		textproc/intltool
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	::x11/gtk+2
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	x11/gtk+2
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/scim 
 

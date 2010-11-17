@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
 
 COMMENT = 		Python charting module
 
@@ -23,7 +23,7 @@ MODULES = 		lang/python
 USE_LIBTOOL = 		Yes
 MODPY_SETUPTOOLS = 	Yes
 
-RUN_DEPENDS = 		::graphics/py-cairo
+RUN_DEPENDS = 		graphics/py-cairo
 REGRESS_DEPENDS = 	${RUN_DEPENDS}
 
 do-regress: fake

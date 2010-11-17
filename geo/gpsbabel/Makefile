@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/17 08:05:12 espie Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-gui=		Tk front-end to gpsbabel
@@ -41,17 +41,17 @@ MULTI_PACKAGES=		-main -gui
 MODULES=		x11/tk
 MODTK_VERSION=		8.4
 
-BUILD_DEPENDS=		::textproc/libxslt \
-			::textproc/docbook \
-			::textproc/docbook-xsl
-LIB_DEPENDS-main=	::devel/libusb \
-			::devel/shapelib
+BUILD_DEPENDS=		textproc/libxslt \
+			textproc/docbook \
+			textproc/docbook-xsl
+LIB_DEPENDS-main=	devel/libusb \
+			devel/shapelib
 
-WANTLIB-main=		expat m c z usb.>=1 shp.>=1
+WANTLIB-main=		expat m c z usb>=1 shp>=1
 
 LIB_DEPENDS-gui=
 PKG_ARCH-gui=	*
-RUN_DEPENDS-gui=	::geo/gpsbabel \
+RUN_DEPENDS-gui=	geo/gpsbabel \
 			${MODTK_RUN_DEPENDS}
 
 post-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	generate index pages for displaying images
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	::graphics/p5-Image-Size \
-		::graphics/ImageMagick
+RUN_DEPENDS=	graphics/p5-Image-Size \
+		graphics/ImageMagick
 
 NO_BUILD=	Yes
 PKG_ARCH=	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		wm-dockapp; WWW image monitor
 
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick \
-			:xv-*:graphics/xv
+RUN_DEPENDS=		graphics/ImageMagick \
+			graphics/xv
 
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmGrabImage

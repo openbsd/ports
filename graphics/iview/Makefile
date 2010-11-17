@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	image viewer for X
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
 WANTLIB=	SDL X11 Xext c m pthread pthread-stubs usbhid xcb SDL_image
-LIB_DEPENDS=	::devel/sdl-image
+LIB_DEPENDS=	devel/sdl-image
 
 USE_GROFF =	Yes
 

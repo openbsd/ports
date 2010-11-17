@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	package for creating PostScript/PDF graphics
 
@@ -23,8 +23,8 @@ PY_FLAVOR=	python${MODPY_VERSION}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyx/}
 
-RUN_DEPENDS=	::print/texlive/base \
-		:py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR}
+RUN_DEPENDS=	print/texlive/base \
+		py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR}
 
 post-install:
 	cd ${WRKSRC}/examples && for i in `find . -type d`; do \

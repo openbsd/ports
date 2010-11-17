@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/28 12:36:10 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	digital photo organizer
 
@@ -29,17 +29,17 @@ MODULES =	devel/gettext x11/gnome devel/gconf2
 MODGNOME_HELP_FILES =	Yes
 DESKTOP_FILES =		yes
 
-RUN_DEPENDS +=	::x11/gnome/librsvg
+RUN_DEPENDS +=	x11/gnome/librsvg
 
-BUILD_DEPENDS =	:vala->=0.10:lang/vala
+BUILD_DEPENDS =	lang/vala>=0.10
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::graphics/libgexiv2 \
-		::graphics/libraw \
-		::www/webkit \
-		::devel/libunique \
-		::devel/libgee \
-		::graphics/libgphoto2
+LIB_DEPENDS =	x11/gtk+2 \
+		graphics/libgexiv2 \
+		graphics/libraw \
+		www/webkit \
+		devel/libunique \
+		devel/libgee \
+		graphics/libgphoto2
 
 NO_REGRESS =	Yes
 # beware : configure is an horrible homemade shell script

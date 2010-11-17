@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =	module for graph plotting
 
@@ -11,8 +11,8 @@ MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 
 MASTER_SITES =	${MASTER_SITE_PERL_CPAN:=GD/}
 
-RUN_DEPENDS =	:p5-GD->=1.18:graphics/p5-GD \
-		:p5-GD-TextUtil-*:graphics/p5-GD-TextUtil
+RUN_DEPENDS =	graphics/p5-GD>=1.18 \
+		graphics/p5-GD-TextUtil
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 # Perl

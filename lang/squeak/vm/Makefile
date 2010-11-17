@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:18 espie Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -6,7 +6,8 @@ COMMENT =	smalltalk system, vm
 SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz 
 
-PKGNAME =	squeak-vm-$V.${SRCV}p1
+PKGNAME =	squeak-vm-$V.${SRCV}
+REVISION =	1
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -21,7 +22,7 @@ DESTDIRNAME =		ROOT
 CONFIGURE_ENV =		RANLIB=ranlib \
 			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \
 			pthread-stubs xcb
@@ -40,6 +41,6 @@ post-extract:
 	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
 	cd ${WRKDIST}/platforms/unix && cp vm-sound-Sun/acinclude.m4 vm-sound-OpenBSD && cp vm-sound-Sun/sqUnixSoundSun.c vm-sound-OpenBSD/sqUnixSoundOpenBSD.c
 
-RUN_DEPENDS =		:squeak-sources-${SOURCEV}:lang/squeak/sources
+RUN_DEPENDS =		squeak-sources-${SOURCEV}:lang/squeak/sources
 
 .include <bsd.port.mk>

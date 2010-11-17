@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	multimedia framework for Python
 
@@ -26,6 +26,6 @@ PKG_ARCH=	*
 NO_REGRESS=	Yes
 
 RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS} \
-		::graphics/py-Imaging
+		graphics/py-Imaging
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.14 2010/09/16 18:53:29 ajacoutot Exp $
+# $OpenBSD: mono.port.mk,v 1.15 2010/11/17 08:05:18 espie Exp $
 
 MODMONO_ONLY_FOR_ARCHS=	i386 amd64 # XXX arm powerpc (no support for sigcontext)
 ONLY_FOR_ARCHS?=	${MODMONO_ONLY_FOR_ARCHS}
@@ -8,8 +8,8 @@ CATEGORIES+=		lang/mono
 CONFIGURE_ENV+=		MONO_SHARED_DIR=${TMPDIR}
 MAKE_FLAGS+=		MONO_SHARED_DIR=${TMPDIR}
 
-MODMONO_BUILD_DEPENDS=	::lang/mono
-MODMONO_RUN_DEPENDS=	::lang/mono
+MODMONO_BUILD_DEPENDS=	lang/mono
+MODMONO_RUN_DEPENDS=	lang/mono
 
 MODMONO_DEPS?=		Yes
 
@@ -26,7 +26,7 @@ DLLMAP_FILES?=
 NANT?=		nant
 NANT_FLAGS?=
 
-BUILD_DEPENDS+= ::devel/nant
+BUILD_DEPENDS+= devel/nant
 
 .  if !target(do-build)
 do-build:

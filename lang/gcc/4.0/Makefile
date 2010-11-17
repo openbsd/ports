@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -7,7 +7,8 @@ V=4.0.3
 FULL_VERSION=4.0-20060105
 FULL_PKGVERSION=4.0.20060105
 
-PKGNAME-f95=	g95-${FULL_PKGVERSION}p0
+PKGNAME-f95=	g95-${FULL_PKGVERSION}
+REVISION-f95 =  0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 SHARED_LIBS=	mudflap		0.0 \
@@ -33,9 +34,9 @@ MAKE_ADA?=No
 USE_GROFF =	Yes
 
 
-BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13
-BUILD_DEPENDS+= :autoconf-2.59*:devel/autoconf/2.59
-BUILD_DEPENDS+=	::devel/metaauto
+BUILD_DEPENDS=	autoconf-2.13:devel/autoconf/2.13
+BUILD_DEPENDS+= autoconf-2.59:devel/autoconf/2.59
+BUILD_DEPENDS+=	devel/metaauto
 SUBPACKAGE?=
 WANTLIB=c
 .if ${SUBPACKAGE} == "-estdc"
@@ -44,12 +45,13 @@ WANTLIB+=m
 
 .if ${MAKE_JAVA:L} == "yes"
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
-LIB_DEPENDS+=gc::devel/boehm-gc
+LIB_DEPENDS+=devel/boehm-gc
+WANTLIB += gc
 .  endif
 .endif
 
 # This can be patched out, apart from java that wants a pure parser.
-BUILD_DEPENDS+= :bison-*:devel/bison
+BUILD_DEPENDS+= devel/bison
 
 
 .if ${MAKE_JAVA:L} == "yes"
@@ -58,11 +60,11 @@ MAKE_GXX=Yes
 
 MULTI_PACKAGES=
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 # No way around it, java wants a pure parser
 .if ${MAKE_JAVA:L} == "yes"
-BUILD_DEPENDS+=:bison-*:devel/bison
+BUILD_DEPENDS+=devel/bison
 .endif
 
 
@@ -181,15 +183,16 @@ PKG_ARGS+=-DPPC=0
 SUBPACKAGE?=
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH}
+RUN_DEPENDS+=gcc-${FULL_PKGVERSION}:${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::${PKGPATH},-estdc
+RUN_DEPENDS+=${PKGPATH},-estdc
 .  endif
 .endif
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"
-LIB_DEPENDS+=gmp:gmp->=4.2:devel/gmp
-LIB_DEPENDS+=mpfr::devel/mpfr
+LIB_DEPENDS+=devel/gmp>=4.2
+WANTLIB+= gmp mpfr
+LIB_DEPENDS+=devel/mpfr
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =	Perl implementation of the reCAPTCHA API
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CPAN_AUTHOR =	ANDYA
 
-RUN_DEPENDS =	::www/p5-HTML-Tiny \
-		::www/p5-libwww
+RUN_DEPENDS =	www/p5-HTML-Tiny \
+		www/p5-libwww
 
 MAKE_ENV +=	TEST_POD=1
 

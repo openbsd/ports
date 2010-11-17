@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xrender expat fontconfig freetype \
-		pixman-1 m z png pthread-stubs xcb cairo.>=6
+		pixman-1 m z png pthread-stubs xcb cairo>=6
 
-LIB_DEPENDS=	::graphics/cairo
-BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
-		::devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS=	graphics/cairo
+BUILD_DEPENDS=	devel/p5-ExtUtils-Depends \
+		devel/p5-ExtUtils-PkgConfig
 
 .include <bsd.port.mk>

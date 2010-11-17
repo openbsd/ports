@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.8 2010/11/09 19:00:28 espie Exp $
+#	$OpenBSD: Makefile,v 1.9 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
@@ -30,15 +30,15 @@ WANTLIB += cairo expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jasper jbig jpeg
 WANTLIB += lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs tiff wmflite
-WANTLIB += xcb xml2 z gdk_pixbuf-2.0 MagickCore.>=1 MagickWand.>=1
-WANTLIB += ffi gdk-x11-2.0.>=0.11 gtk-x11-2.0.>=0.11
+WANTLIB += xcb xml2 z gdk_pixbuf-2.0 MagickCore>=1 MagickWand>=1
+WANTLIB += ffi gdk-x11-2.0>=0.11 gtk-x11-2.0>=0.11
 
-LIB_DEPENDS=	::graphics/ImageMagick \
-		::devel/libffi \
-		::x11/gtk+2
+LIB_DEPENDS=	graphics/ImageMagick \
+		devel/libffi \
+		x11/gtk+2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/py-gtk2
+RUN_DEPENDS=	x11/py-gtk2
 
 USE_GROFF =	Yes
 

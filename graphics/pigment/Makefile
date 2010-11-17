@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =	3D scene graph library for rich UI
 
@@ -35,8 +35,8 @@ USE_GMAKE =	Yes
 # needs a check-enabled gstreamer
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::multimedia/gstreamer-0.10/plugins-base
+LIB_DEPENDS =	x11/gtk+2 \
+		multimedia/gstreamer-0.10/plugins-base
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

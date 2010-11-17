@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 16:54:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -51,15 +51,15 @@ DISTFILES+=	${l}.traineddata.gz
 PKGNAME-${l}=	tesseract-${l}-${LANG_V}
 MULTI_PACKAGES+=-${l}
 REVISION-${l}=	1
-RUN_DEPENDS-${l}=:tesseract->=${MAJOR_V}:${BASE_PKGPATH}
+RUN_DEPENDS-${l}=	${BASE_PKGPATH}>=${MAJOR_V}
 PKG_ARCH-${l}=	*
 .endfor
 ### end languages ######################################################
 
 WANTLIB-main=	c jpeg m pthread stdc++ z tiff png
 
-LIB_DEPENDS-main= ::graphics/tiff \
-		::graphics/png
+LIB_DEPENDS-main= graphics/tiff \
+		graphics/png
 
 
 MASTER_SITES=	${HOMEPAGE}/files/

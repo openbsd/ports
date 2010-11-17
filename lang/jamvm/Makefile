@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/05 11:51:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS= arm amd64 i386 powerpc
 
@@ -26,10 +26,10 @@ CONFIGURE_STYLE=	gnu
 
 USE_LIBTOOL=		Yes
 
-BUILD_DEPENDS=		:jikes->=1.22:lang/jikes
-BUILD_DEPENDS+=		:classpath->=0.98:lang/classpath
+BUILD_DEPENDS=		lang/jikes>=1.22
+BUILD_DEPENDS+=		lang/classpath>=0.98
 
-RUN_DEPENDS=		:classpath->=0.98:lang/classpath
+RUN_DEPENDS=		lang/classpath>=0.98
 
 WANTLIB=		c m z pthread
 

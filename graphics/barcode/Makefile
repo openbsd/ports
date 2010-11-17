@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	convert text strings to printed bars
 
 DISTNAME=	barcode-0.98
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	graphics
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

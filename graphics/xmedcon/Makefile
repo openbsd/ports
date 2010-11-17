@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/06 21:50:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	medical image conversion
 
@@ -27,7 +27,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	::x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 
 FAKE_FLAGS =	sysconfdir=${TRUEPREFIX}/share/examples/xmedcon
 

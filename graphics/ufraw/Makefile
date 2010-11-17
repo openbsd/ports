@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -27,13 +27,13 @@ WANTLIB += xcb-render-util z lensfun lcms bz2 exiv2 cfitsio gtkimageview
 WANTLIB += gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0
 WANTLIB += gimpmath-2.0 gimpui-2.0 gimpwidgets-2.0 gimpmodule-2.0
 
-LIB_DEPENDS=	:gimp->=2,<3:graphics/gimp/stable \
-		::graphics/lcms \
-		::archivers/bzip2 \
-		::graphics/exiv2 \
-		::math/cfitsio \
-		::graphics/gtkimageview \
-		::graphics/lensfun
+LIB_DEPENDS=	gimp->=2,<3:graphics/gimp/stable \
+		graphics/lcms \
+		archivers/bzip2 \
+		graphics/exiv2 \
+		math/cfitsio \
+		graphics/gtkimageview \
+		graphics/lensfun
 
 MODULES=	devel/gettext
 

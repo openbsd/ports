@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	X11 pixel color grabber
 
 DISTNAME =	xoris-0.1d
-PKGNAME =	${DISTNAME}p0
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://gromnizki.unixdev.net/

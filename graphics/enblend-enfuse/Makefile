@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -30,18 +30,18 @@ WANTLIB +=	stdc++ tiff xmi z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
-BUILD_DEPENDS =	::math/gnuplot \
-		::print/transfig \
-		::www/tidy
-LIB_DEPENDS =	::devel/boost \
-		::graphics/glew \
-		::graphics/freeglut \
-		::graphics/ilmbase \
-		::graphics/lcms \
-		::graphics/libxmi \
-		::graphics/openexr \
-		::graphics/png \
-		::graphics/tiff
+BUILD_DEPENDS =	math/gnuplot \
+		print/transfig \
+		www/tidy
+LIB_DEPENDS =	devel/boost \
+		graphics/glew \
+		graphics/freeglut \
+		graphics/ilmbase \
+		graphics/lcms \
+		graphics/libxmi \
+		graphics/openexr \
+		graphics/png \
+		graphics/tiff
 
 CONFIGURE_STYLE = gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}

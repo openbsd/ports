@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	Ruby interface to ImageMagick
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =	lang/ruby
 
-WANTLIB =	freetype z MagickCore.>=1 MagickWand.>=1
+WANTLIB =	freetype z MagickCore>=1 MagickWand>=1
 
-LIB_DEPENDS =	::graphics/ImageMagick
+LIB_DEPENDS =	graphics/ImageMagick
 
 CONFIGURE_STYLE = ruby gem ext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	image viewer for KDE, translations
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS = ::x11/kde/libs3
-RUN_DEPENDS = ::x11/kde/libs3
+BUILD_DEPENDS = x11/kde/libs3
+RUN_DEPENDS = x11/kde/libs3
 
 MODULES=	x11/kde
 MODKDE_VERSION= 3.5.7

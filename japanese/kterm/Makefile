@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/24 21:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=	Japanese-capable xterm
 
@@ -31,7 +31,7 @@ FLAVORS=xaw3d tek
 FLAVOR?=
 .if ${FLAVOR:L:Mxaw3d}
 WANTLIB += Xaw3d
-LIB_DEPENDS=	::x11/Xaw3d
+LIB_DEPENDS=	x11/Xaw3d
 MAKE_ENV=	EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 

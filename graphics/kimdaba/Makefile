@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
@@ -10,15 +10,15 @@ MASTER_SITES=		${HOMEPAGE}download/
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam idn \
 		jpeg m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
-		kdecore.>=6 DCOP kdefx kdesu kdeui kio kmediaplayer kparts \
+		kdecore>=6 DCOP kdefx kdesu kdeui kio kmediaplayer kparts \
 		kwalletclient kipi exiv2
 
-LIB_DEPENDS=	::x11/kde/libs3 \
-		::graphics/libkipi \
-		::graphics/exiv2
+LIB_DEPENDS=	x11/kde/libs3 \
+		graphics/libkipi \
+		graphics/exiv2
 
-RUN_DEPENDS=	::databases/qt3-sqlite3-plugin \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	databases/qt3-sqlite3-plugin \
+		devel/desktop-file-utils
 
 SHARED_ONLY=Yes
 MODKDE_VERSION=	3.5.3

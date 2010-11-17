@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -18,16 +18,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB +=		c iconv jpeg m z bz2.>=10 jbig.>=1.2 png.>=4 \
-			tiff.>=36 lcms.>=1 jasper.>=1 xml2.>=9
+WANTLIB +=		c iconv jpeg m z bz2>=10 jbig>=1.2 png>=4 \
+			tiff>=36 lcms>=1 jasper>=1 xml2>=9
 
-LIB_DEPENDS =		::archivers/bzip2 \
-			::graphics/jbigkit \
-			::graphics/png \
-			::graphics/tiff \
-			::graphics/lcms \
-			::graphics/jasper \
-			::textproc/libxml
+LIB_DEPENDS =		archivers/bzip2 \
+			graphics/jbigkit \
+			graphics/png \
+			graphics/tiff \
+			graphics/lcms \
+			graphics/jasper \
+			textproc/libxml
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
@@ -52,20 +52,20 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu,no_x11
-RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu,no_x11
+BUILD_DEPENDS +=	print/ghostscript/gnu,no_x11
+RUN_DEPENDS +=		print/ghostscript/gnu,no_x11
 CONFIGURE_ENV +=	ac_cv_path_FIGDecodeDelegate=no
 CONFIGURE_ARGS +=	--without-x \
 			--without-ttf \
 			--without-wmf
 .else
 WANTLIB +=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs xcb \
-			wmflite.>=7
-LIB_DEPENDS +=		::graphics/libwmf
-BUILD_DEPENDS +=	:ghostscript-*:print/ghostscript/gnu
-BUILD_DEPENDS +=	:transfig-*:print/transfig
-RUN_DEPENDS +=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS +=		:transfig-*:print/transfig
+			wmflite>=7
+LIB_DEPENDS +=		graphics/libwmf
+BUILD_DEPENDS +=	print/ghostscript/gnu
+BUILD_DEPENDS +=	print/transfig
+RUN_DEPENDS +=		print/ghostscript/gnu
+RUN_DEPENDS +=		print/transfig
 CONFIGURE_ARGS +=	--with-wmf
 .endif
 

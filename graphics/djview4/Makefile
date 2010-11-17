@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -22,12 +22,12 @@ WANTLIB += QtGui QtNetwork X11 Xext c djvulibre m pthread stdc++ tiff
 
 MODULES=	x11/qt4
 
-LIB_DEPENDS=	::graphics/djvulibre
+LIB_DEPENDS=	graphics/djvulibre
 
-BUILD_DEPENDS=	::graphics/ImageMagick \
-		::x11/gnome/librsvg
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::x11/hicolor-icon-theme
+BUILD_DEPENDS=	graphics/ImageMagick \
+		x11/gnome/librsvg
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/hicolor-icon-theme
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

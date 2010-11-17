@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		commandline screen capture util
 
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext c freetype m pthread-stubs xcb z \
-			giblib.>=1 Imlib2.>=1
+			giblib>=1 Imlib2>=1
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
-LIB_DEPENDS=            ::devel/giblib \
-			::graphics/imlib2
+LIB_DEPENDS=            devel/giblib \
+			graphics/imlib2
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

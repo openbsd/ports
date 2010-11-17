@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 14:32:56 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-WANTLIB=	c geos_c m pq.>=5.3 proj xml2 z
+WANTLIB=	c geos_c m pq>=5.3 proj xml2 z
 
 MODULES=        converters/libiconv
 
-LIB_DEPENDS=	::devel/proj \
-		:postgresql-client-*:databases/postgresql \
-		::geo/geos
-RUN_DEPENDS=	:postgresql-server-*:databases/postgresql,-server
+LIB_DEPENDS=	devel/proj \
+		databases/postgresql \
+		geo/geos
+RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	Yes

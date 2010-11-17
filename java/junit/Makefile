@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
@@ -30,7 +30,7 @@ MODULES=	java
 MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	yes
 
-BUILD_DEPENDS=	:apache-ant-*:devel/apache-ant
+BUILD_DEPENDS=	devel/apache-ant
 
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/23 18:26:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -28,8 +28,8 @@ WANTLIB += xcb xml2 z gcrypt gdk_pixbuf-2.0 soup-2.4 gdk-x11-2.0 gtk-x11-2.0
 
 USE_LIBTOOL=		Yes
 
-LIB_DEPENDS=		::devel/libsoup \
-			::x11/gtk+2
+LIB_DEPENDS=		devel/libsoup \
+			x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 AUTOMAKE_VERSION=	1.8

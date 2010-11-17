@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:17 espie Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -32,18 +32,18 @@ MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	java
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::archivers/zip \
-		::lang/antlr2
+BUILD_DEPENDS=	archivers/zip \
+		lang/antlr2
 
-RUN_DEPENDS=	::lang/gcc/4.2,-java,java \
-		::lang/antlr2
+RUN_DEPENDS=	lang/gcc/4.2,-java,java \
+		lang/antlr2
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::x11/dbus-glib \
-		::devel/ORBit2 \
-		::devel/gconf2 \
-		::devel/libmagic \
-		::devel/gmp
+LIB_DEPENDS=	x11/gtk+2 \
+		x11/dbus-glib \
+		devel/ORBit2 \
+		devel/gconf2 \
+		devel/libmagic \
+		devel/gmp
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo \

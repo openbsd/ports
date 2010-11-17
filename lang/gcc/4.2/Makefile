@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/13 16:26:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -59,11 +59,11 @@ FLAVOR += c++
 DISTFILES =  ${DISTNAME}.tar.bz2
 SUPDISTFILES =	${ADASTRAP}:0
 
-BUILD_DEPENDS += :autoconf-2.59:devel/autoconf/2.59
-BUILD_DEPENDS += ::devel/metaauto
+BUILD_DEPENDS += autoconf-2.59:devel/autoconf/2.59
+BUILD_DEPENDS += devel/metaauto
 USE_LIBTOOL =	Yes
 
-BUILD_DEPENDS += :bison-*:devel/bison
+BUILD_DEPENDS += devel/bison
 
 
 MULTI_PACKAGES = -main
@@ -84,7 +84,7 @@ LANGS = c
 .if ${FLAVOR:L:Mc++}
 LANGS := ${LANGS},c++
 MULTI_PACKAGES += -c++ -estdc
-REGRESS_DEPENDS += 	:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
+REGRESS_DEPENDS += 	libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
 .endif
 .if ${FLAVOR:L:Mfortran}
 LANGS := ${LANGS},fortran
@@ -98,7 +98,7 @@ MULTI_PACKAGES += -objc
 .if ${FLAVOR:L:Mjava}
 LANGS := ${LANGS},java
 MULTI_PACKAGES += -java
-BUILD_DEPENDS += :zip->=2.3p0:archivers/zip
+BUILD_DEPENDS += archivers/zip>=2.3p0
 CONFIGURE_ARGS += --enable-libgcj
 .endif
 .if ${FLAVOR:L:Mada}
@@ -108,7 +108,7 @@ DISTFILES += ${ADASTRAP}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
-REGRESS_DEPENDS += ::${BUILD_PKGPATH},-ada
+REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 
 post-extract:
@@ -200,12 +200,12 @@ RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
-RUN_DEPENDS-c++ =	${RUN_DEPENDS} :libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${PKGPATH},-estdc
+RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${PKGPATH},-estdc
 WANTLIB-estdc =		c m
 WANTLIB-java =		c m pthread z
 
-LIB_DEPENDS-f95 =	:gmp->=4.2:devel/gmp \
-			::devel/mpfr
+LIB_DEPENDS-f95 =	devel/gmp>=4.2 \
+			devel/mpfr
 WANTLIB-f95 =		${WANTLIB} gmp mpfr
 .include <bsd.port.mk>
 

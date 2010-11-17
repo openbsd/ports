@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	library for dynamic creation of images
 
@@ -10,8 +10,8 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=	http://www.libgd.org/
 
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png
 
 MODULES=	converters/libiconv
 

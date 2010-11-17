@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	flash rendering library
 
@@ -27,14 +27,14 @@ WANTLIB += m oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs sndio soup-2.4 tasn1 xcb
 WANTLIB += xcb-render xcb-render-util xml2 z
 
-LIB_DEPENDS=	::devel/libsoup \
-		::devel/liboil \
-		::multimedia/gstreamer-0.10/plugins-base \
-		::x11/gtk+2
+LIB_DEPENDS=	devel/libsoup \
+		devel/liboil \
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/gtk+2
 
-RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-bad \
-		::multimedia/gstreamer-0.10/plugins-ugly \
-		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
+RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-bad \
+		multimedia/gstreamer-0.10/plugins-ugly \
+		multimedia/gstreamer-0.10/plugins-ffmpeg
 MODULES=	devel/gettext
 
 USE_LIBTOOL=		Yes

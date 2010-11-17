@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/28 13:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:18 espie Exp $
 
 COMMENT =		Perl 6 Implementation
 
@@ -22,17 +22,17 @@ MODULES =		lang/ghc converters/libiconv
 # XXX nort may be wrong here, in case pugs uses ghci or ghc at runtime.
 MODGHC_BUILD =		cabal hackage nort
 
-BUILD_DEPENDS =		::devel/hs-binary \
-			:hs-control-timeout->=0.1.2:devel/hs-control-timeout \
-			::devel/hs-FindBin \
-			:hs-HsParrot->=0.0.2:lang/hs-HsParrot \
-			:hs-HsSyck->=0.44:devel/hs-HsSyck \
-			:hs-MetaObject->=0.0.4:devel/hs-MetaObject \
-			:hs-parsec-<3.0.0:devel/hs-parsec \
-			:hs-pugs-compat->=0.0.5:devel/hs-pugs-compat \
-			:hs-pugs-DrIFT->=2.2.3.0:devel/hs-pugs-DrIFT \
-			:hs-stringtable-atom->=0.0.4:devel/hs-stringtable-atom
+BUILD_DEPENDS =		devel/hs-binary \
+			devel/hs-control-timeout>=0.1.2 \
+			devel/hs-FindBin \
+			lang/hs-HsParrot>=0.0.2 \
+			devel/hs-HsSyck>=0.44 \
+			devel/hs-MetaObject>=0.0.4 \
+			devel/hs-parsec<3.0.0 \
+			devel/hs-pugs-compat>=0.0.5 \
+			devel/hs-pugs-DrIFT>=2.2.3.0 \
+			devel/hs-stringtable-atom>=0.0.4
 
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 
 .include <bsd.port.mk>

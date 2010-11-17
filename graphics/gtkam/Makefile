@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/12 16:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	digital camera frontend
 
@@ -21,14 +21,14 @@ WANTLIB=	gmodule-2.0 X11 Xext Xrender gobject-2.0 png \
 		Xdmcp Xfixes Xi Xinerama Xrandr exif expat ltdl usb \
 		Xcomposite Xdamage pixman-1 pthread gio-2.0 \
 		pthread-stubs xcb gdk_pixbuf-2.0 gphoto2 gphoto2_port \
-		gdk-x11-2.0.>=0.11 gtk-x11-2.0.>=0.11 exif-gtk
+		gdk-x11-2.0>=0.11 gtk-x11-2.0>=0.11 exif-gtk
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
-LIB_DEPENDS=	::graphics/libgphoto2 \
-		::x11/gtk+2 \
-		::graphics/libexif-gtk
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	graphics/libgphoto2 \
+		x11/gtk+2 \
+		graphics/libexif-gtk
+RUN_DEPENDS=	devel/desktop-file-utils
 
 MODULES=	devel/gettext \
 		textproc/intltool

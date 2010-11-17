@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
@@ -18,8 +18,8 @@ WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xcb-render xcb-render-util
 WANTLIB += clutter-glx-1.0
 
-LIB_DEPENDS=		:clutter->=1.0.6:graphics/clutter/core \
-			::x11/gtk+2
+LIB_DEPENDS=		graphics/clutter/core>=1.0.6 \
+			x11/gtk+2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection=no

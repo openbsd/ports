@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =	color management library
 
@@ -9,8 +9,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lcms/}
 
 HOMEPAGE =	http://www.littlecms.com/
 
-LIB_DEPENDS +=	::graphics/jpeg \
-		::graphics/tiff
+LIB_DEPENDS +=	graphics/jpeg \
+		graphics/tiff
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

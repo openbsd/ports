@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:17 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -31,8 +31,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=scim-imengine/37309/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	::inputmethods/anthy \
-		::inputmethods/scim
+LIB_DEPENDS =	inputmethods/anthy \
+		inputmethods/scim
 
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static

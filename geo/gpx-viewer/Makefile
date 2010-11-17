@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:14:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	gpx file viewer
 
@@ -28,10 +28,10 @@ USE_GMAKE =		yes
 
 MODULES =	devel/gettext \
 		textproc/intltool
-LIB_DEPENDS =	::devel/libunique \
-		:libchamplain->=0.8.0:geo/libchamplain/core \
-		::x11/gnome/gdl
-RUN_DEPENDS =	::devel/desktop-file-utils
+LIB_DEPENDS =	devel/libunique \
+		geo/libchamplain/core>=0.8.0 \
+		x11/gnome/gdl
+RUN_DEPENDS =	devel/desktop-file-utils
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo

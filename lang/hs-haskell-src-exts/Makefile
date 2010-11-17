@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:17:15 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=		abstract syntax, lexer, parser and pretty printer
 
@@ -17,8 +17,8 @@ MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::devel/happy
-RUN_DEPENDS=		:hs-cpphs->=1.11:devel/cpphs,-lib
+			devel/happy
+RUN_DEPENDS=		devel/cpphs,-lib>=1.11
 
 VMEM_WARNING=		Yes
 NO_REGRESS=		Yes

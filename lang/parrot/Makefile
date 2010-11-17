@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:11:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:18 espie Exp $
 
 # sparc64 failed to build with 0.9.0.1 and needs testing
 # macppc fails too and is therefore disabled
@@ -26,8 +26,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c crypto m ncurses pthread readline stdc++ util
 WANTLIB += icudata icuuc icui18n
 
-LIB_DEPENDS=		::textproc/icu4c
-REGRESS_DEPENDS=	::devel/p5-Test-Pod
+LIB_DEPENDS=		textproc/icu4c
+REGRESS_DEPENDS=	devel/p5-Test-Pod
 
 CONFIGURE_SCRIPT=	/usr/bin/perl Configure.pl
 CONFIGURE_STYLE=	simple

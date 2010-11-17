@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -12,10 +12,10 @@ HOMEPAGE=		http://spiegl.de/qiv/
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-LIB_DEPENDS=		::devel/libmagic \
-			::graphics/imlib2 \
-			::graphics/libexif \
-			::x11/gtk+2
+LIB_DEPENDS=		devel/libmagic \
+			graphics/imlib2 \
+			graphics/libexif \
+			x11/gtk+2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/17 08:05:13 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -14,16 +14,16 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/fxtv/
 
-LIB_DEPENDS=	::graphics/tiff \
-		::graphics/jpeg \
-		::x11/Xaw3d
+LIB_DEPENDS=	graphics/tiff \
+		graphics/jpeg \
+		x11/Xaw3d
 
-RUN_DEPENDS=	:sox->=12.12:audio/sox \
-		:mpg321-*:audio/mpg321 \
-		:mp3encode-*:audio/mp3encode \
-		:mpeg_encode->=1.5:graphics/mpeg_encode \
-		:mplex->=1.1:graphics/mplex \
-		:netpbm-*:graphics/netpbm
+RUN_DEPENDS=	audio/sox>=12.12 \
+		audio/mpg321 \
+		audio/mp3encode \
+		graphics/mpeg_encode>=1.5 \
+		graphics/mplex>=1.1 \
+		graphics/netpbm
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Runtime dependencies have patents
@@ -31,8 +31,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xxf86dga Xxf86vm c m \
-			ossaudio pthread-stubs xcb z tiff.>=35 jpeg.>=62 \
-			Xaw3d.>=6.1
+			ossaudio pthread-stubs xcb z tiff>=35 jpeg>=62 \
+			Xaw3d>=6.1
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

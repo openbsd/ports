@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/17 08:05:17 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	Japanized Vim
@@ -30,7 +30,7 @@ USE_GROFF =	Yes
 .if ${FLAVOR:L:Mwnn}
 CHOICE=wnn4
 INPUT_METHOD=wnn4
-BUILD_DEPENDS+=	::japanese/Wnn
+BUILD_DEPENDS+=	japanese/Wnn
 JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd 
 .endif
@@ -45,13 +45,13 @@ CHOICE=canna
 .endif
 PERMIT_PACKAGE_CDROM=	Canna prevents it
 WANTLIB += canna
-LIB_DEPENDS+=		::japanese/canna
+LIB_DEPENDS+=		japanese/canna
 JPLIB+=			-lcanna
 .endif
 
 
 .if defined(INPUT_METHOD) && !empty(INPUT_METHOD)
-BUILD_DEPENDS+= ::japanese/onew,${CHOICE}
+BUILD_DEPENDS+= japanese/onew,${CHOICE}
 JPDEF+=		-DONEW
 JPLIB:=-lonew-${INPUT_METHOD} ${JPLIB}
 .endif

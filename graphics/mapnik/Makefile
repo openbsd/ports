@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 22:40:54 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -23,15 +23,15 @@ MODULES =	devel/scons lang/python
 
 VMEM_WARNING =	Yes
 
-BUILD_DEPENDS =	::graphics/py-cairo
+BUILD_DEPENDS =	graphics/py-cairo
 
-LIB_DEPENDS =	::devel/boost \
-		::graphics/cairomm \
-		::graphics/agg \
-		::devel/proj \
-		::devel/libtool,-ltdl \
-		::geo/gdal \
-		::textproc/icu4c
+LIB_DEPENDS =	devel/boost \
+		graphics/cairomm \
+		graphics/agg \
+		devel/proj \
+		devel/libtool,-ltdl \
+		geo/gdal \
+		textproc/icu4c
 
 WANTLIB =	cairomm-1.0 cairo icuuc ltdl png pq proj jpeg \
 		boost_filesystem-mt boost_iostreams-mt tiff \

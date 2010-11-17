@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	ascii art library
 
 DISTNAME=	aalib-1.4rc5
-PKGNAME=	aalib-1.4p2
+PKGNAME=	aalib-1.4
+REVISION =	2
 SHARED_LIBS=	aa	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aa-project/}

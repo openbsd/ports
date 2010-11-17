@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -19,19 +19,19 @@ WANTLIB=	Half Iex IlmThread Imath X11 Xau Xcomposite Xcursor \
 		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread stdc++ xml2 z gio-2.0 \
-		pthread-stubs xcb glade-2.0 IlmImf.>=4 gnet-2.0
+		pthread-stubs xcb glade-2.0 IlmImf>=4 gnet-2.0
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
 			http://distfiles.nl/
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		::textproc/rarian
-LIB_DEPENDS=		::devel/libglade2 \
-			::graphics/openexr \
-			::net/gnet
-RUN_DEPENDS=		::misc/shared-mime-info \
-			::x11/hicolor-icon-theme
+BUILD_DEPENDS=		textproc/rarian
+LIB_DEPENDS=		devel/libglade2 \
+			graphics/openexr \
+			net/gnet
+RUN_DEPENDS=		misc/shared-mime-info \
+			x11/hicolor-icon-theme
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pstoedit/}
 
-RUN_DEPENDS=	::print/ghostscript/gnu
+RUN_DEPENDS=	print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes

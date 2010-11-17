@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	ruby interface to the gd2 graphics library
 
@@ -16,6 +16,6 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
 
-RUN_DEPENDS=	::graphics/gd
+RUN_DEPENDS=	graphics/gd
 
 .include <bsd.port.mk>

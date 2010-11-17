@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		icons mainly for use in Window Maker
 
@@ -18,7 +18,7 @@ DISTFILES=		DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 
 DIST_SUBDIR=		wmicons
 
-RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
+RUN_DEPENDS=		x11/windowmaker
 
 NO_REGRESS=		Yes
 

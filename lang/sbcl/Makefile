@@ -1,5 +1,5 @@
 
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:18 espie Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -30,15 +30,15 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
 PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
 
-BUILD_DEPENDS=		::print/texlive/base
-USE_GROFF =	Yes
+BUILD_DEPENDS=		print/texlive/base
+USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
-BUILD_DEPENDS+=		::lang/sbcl
+BUILD_DEPENDS+=		lang/sbcl
 BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 			--disable-debugger --no-sysinit --no-userinit
 .else
-BUILD_DEPENDS +=	::lang/clisp
+BUILD_DEPENDS +=	lang/clisp
 BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
 .endif
 

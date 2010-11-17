@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 22:29:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	GObject wrapper around exiv2
 CATEGORIES=	graphics
@@ -21,8 +21,8 @@ CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS =	:exiv2->=0.19:graphics/exiv2 \
-		::devel/glib2
+LIB_DEPENDS =	graphics/exiv2>=0.19 \
+		devel/glib2
 
 WANTLIB =	expat m pcre z exiv2 glib-2.0 gthread-2.0 gobject-2.0 stdc++
 

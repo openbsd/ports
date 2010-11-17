@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -24,9 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-LIB_DEPENDS +=		::devel/libffi
+LIB_DEPENDS +=		devel/libffi
 WANTLIB +=		ffi
 
 CONFIGURE_STYLE=	gnu
@@ -35,7 +35,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 REGRESS_TARGET=		bench
-REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
+REGRESS_DEPENDS=	${PKGNAME}:lang/chicken
 
 CFLAGS+=		-I${LOCALBASE}/include
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:17 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		x11/qt3
-LIB_DEPENDS=	::inputmethods/scim
+LIB_DEPENDS=	inputmethods/scim
 
 SUBST_VARS=     MODQT_PLUGINS
 

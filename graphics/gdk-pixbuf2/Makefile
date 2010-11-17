@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/06 06:25:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	graphic library for GTK+2
 
@@ -26,10 +26,10 @@ WANTLIB += png tiff
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
-LIB_DEPENDS=	:glib2->=2.26.0:devel/glib2 \
-		::graphics/jasper \
-		::graphics/png \
-		::graphics/tiff
+LIB_DEPENDS=	devel/glib2>=2.26.0 \
+		graphics/jasper \
+		graphics/png \
+		graphics/tiff
 
 MODULES=	devel/gettext
 

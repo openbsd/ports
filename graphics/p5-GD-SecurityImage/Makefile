@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	security image (captcha) generator
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::graphics/p5-GD
+RUN_DEPENDS=	graphics/p5-GD
 
 CONFIGURE_STYLE=modbuild
 USE_GROFF =	Yes

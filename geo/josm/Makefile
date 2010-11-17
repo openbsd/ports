@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=		OpenStreetMap map editor
 
 SVN_REV=		3376
 DISTNAME=		josm-1.5.${SVN_REV}
-PKGNAME=		${DISTNAME}
 
 PKG_ARCH=		*
 
@@ -25,11 +24,11 @@ MODULES=		java \
 			textproc/intltool
 MODJAVA_VER=		1.6+
 MAKE_ENV+=		JAVA_HOME=${JAVA_HOME}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-BUILD_DEPENDS=		::devel/apache-ant
-RUN_DEPENDS=		::java/javaPathHelper \
-			::devel/desktop-file-utils
+BUILD_DEPENDS=		devel/apache-ant
+RUN_DEPENDS=		java/javaPathHelper \
+			devel/desktop-file-utils
 NO_REGRESS=		Yes
 
 do-build:

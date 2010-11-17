@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/17 08:05:17 espie Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters 
 
@@ -28,9 +28,9 @@ MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	devel/gettext
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	::x11/gtk+2 \
-		::textproc/libxml
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	x11/gtk+2 \
+		textproc/libxml
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

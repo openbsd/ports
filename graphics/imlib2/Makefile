@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	image manipulation library
 
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 WANTLIB=	X11 Xau Xdmcp Xext c freetype m pthread-stubs xcb z \
-		jpeg.>=62 gif.>=5 png.>=2 tiff.>=35 bz2 id3tag.>=3
-LIB_DEPENDS+=	::graphics/jpeg \
-		::graphics/libungif \
-		::graphics/png \
-		::graphics/tiff \
-		::archivers/bzip2 \
-		::audio/libid3tag
+		jpeg>=62 gif>=5 png>=2 tiff>=35 bz2 id3tag>=3
+LIB_DEPENDS+=	graphics/jpeg \
+		graphics/libungif \
+		graphics/png \
+		graphics/tiff \
+		archivers/bzip2 \
+		audio/libid3tag
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 12:53:13 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -32,12 +32,12 @@ CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--enable-introspection=no
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
-RUN_DEPENDS =	::lang/vala
-LIB_DEPENDS =	:libchamplain->=0.8.0:geo/libchamplain/core \
-		::devel/libsoup,-gnome \
-		::devel/ethos \
-		::geo/geoclue \
-		::net/librest
+RUN_DEPENDS =	lang/vala
+LIB_DEPENDS =	geo/libchamplain/core>=0.8.0 \
+		devel/libsoup,-gnome \
+		devel/ethos \
+		geo/geoclue \
+		net/librest
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo

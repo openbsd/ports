@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/09 11:38:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =		visual programming environment and toolkit
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-BUILD_DEPENDS=		::archivers/unzip
-RUN_DEPENDS =		:squeak-vm-*:lang/squeak/vm
+BUILD_DEPENDS=		archivers/unzip
+RUN_DEPENDS =		lang/squeak/vm
 
 EXTRACT_ONLY =
 NO_BUILD =		Yes

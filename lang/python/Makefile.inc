@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.70 2010/11/15 20:55:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.71 2010/11/17 08:05:18 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -53,21 +53,21 @@ ONLY_FOR_ARCHS-bsddb=	amd64 i386
 RUN_DEPENDS=		:${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS=
 
-LIB_DEPENDS-main =	::archivers/bzip2
+LIB_DEPENDS-main =	archivers/bzip2
 RUN_DEPENDS-main =
 WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
 			ncursesw stdc++ expat ossaudio bz2
 .if ${VERSION} == "2.5" || ${VERSION} == "2.6"
-LIB_DEPENDS-main +=	::databases/sqlite3
+LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
 .endif
 
-LIB_DEPENDS-bsddb =	:db->=4,<5:databases/db/v4
-WANTLIB-bsddb =		lib/db4/db.>=4
-LIB_DEPENDS-gdbm =	::databases/gdbm
-WANTLIB-gdbm =		gdbm.>=3
+LIB_DEPENDS-bsddb =	db->=4,<5:databases/db/v4
+WANTLIB-bsddb =		lib/db4/db>=4
+LIB_DEPENDS-gdbm =	databases/gdbm
+WANTLIB-gdbm =		gdbm>=3
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
-			::lang/python/${VERSION},-tkinter
+			lang/python/${VERSION},-tkinter
 # XXX Tcl/Tk version number handled in patch-setup_py
 MODULES +=		x11/tk
 LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS}

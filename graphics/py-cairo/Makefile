@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -29,8 +29,8 @@ WRKDIST=	${WRKDIR}/pycairo-${VERSION}
 MODULES=	lang/python	\
 		devel/gettext
 
-LIB_DEPENDS=	::graphics/cairo
-REGRESS_DEPENDS=::devel/py-py
+LIB_DEPENDS=	graphics/cairo
+REGRESS_DEPENDS=devel/py-py
 
 USE_LIBTOOL=	Yes
 

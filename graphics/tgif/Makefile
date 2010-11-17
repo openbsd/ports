@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
@@ -22,7 +22,7 @@ WANTLIB =	X11 Xau Xdmcp Xext c m z
 MASTER_SITES =	ftp://bourbon.usc.edu/pub/tgif/ \
 		${MASTER_SITE_SOURCEFORGE:=tgif/}
 
-RUN_DEPENDS =	::graphics/netpbm
+RUN_DEPENDS =	graphics/netpbm
 
 CONFIGURE_STYLE = imake
 

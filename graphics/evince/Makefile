@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/17 08:05:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::x11/gnome/icon-theme
+BUILD_DEPENDS=	x11/gnome/icon-theme
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -56,40 +56,40 @@ WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 \
 		jpeg pthread tiff xml2 lcms openjpeg \
 		poppler poppler-glib spectre gnome-keyring \
 		gailutil stdc++ ${MODGCONF2_WANTLIB}
-LIB_DEPENDS-main= ::print/poppler \
-		::print/libspectre \
-		::x11/gnome/libgnome-keyring \
+LIB_DEPENDS-main= print/poppler \
+		print/libspectre \
+		x11/gnome/libgnome-keyring \
 		${MODGCONF2_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
-		:shared-mime-info-*:misc/shared-mime-info \
-		:ghostscript-*:print/ghostscript/gnu \
-		::x11/gnome/icon-theme \
-		::devel/dconf
+		misc/shared-mime-info \
+		print/ghostscript/gnu \
+		x11/gnome/icon-theme \
+		devel/dconf
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument djvulibre
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
 # we don't need qt3 support in djvulibre, hence no_x11
 LIB_DEPENDS-djvu= ${MODGETTEXT_LIB_DEPENDS} \
-		::${BASE_PKGPATH} \
-		::graphics/djvulibre,no_x11
+		${BASE_PKGPATH} \
+		graphics/djvulibre,no_x11
 RUN_DEPENDS-djvu= ${MODGCONF2_RUN_DEPENDS}
 
 WANTLIB-dvi=	${WANTLIB} gs evdocument kpathsea spectre ICE SM
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
 LIB_DEPENDS-dvi= ${MODGETTEXT_LIB_DEPENDS} \
-		::${BASE_PKGPATH} \
-		::print/texlive/base \
-		::print/libspectre
+		${BASE_PKGPATH} \
+		print/texlive/base \
+		print/libspectre
 RUN_DEPENDS-dvi= ${MODGCONF2_RUN_DEPENDS}
 
 WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument
-LIB_DEPENDS-nautilus= ::${BASE_PKGPATH} \
+LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
-		::x11/gnome/nautilus
+		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
 MODGNOME_HELP_FILES= 	Yes

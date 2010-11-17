@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/27 08:57:38 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -28,16 +28,16 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-BUILD_DEPENDS=	:php5-core-*:www/php5/core \
-		::graphics/agg
+BUILD_DEPENDS=	www/php5/core \
+		graphics/agg
 
-LIB_DEPENDS=	::devel/proj \
-		::geo/gdal \
-		::geo/geos \
-		::devel/geotiff \
-		::graphics/gd
+LIB_DEPENDS=	devel/proj \
+		geo/gdal \
+		geo/geos \
+		devel/geotiff \
+		graphics/gd
 
-RUN_DEPENDS-php=	:php5-core-*:www/php5/core
+RUN_DEPENDS-php=	www/php5/core
 
 WANTLIB=	crypto curl expat freetype gif iconv idn jasper jpeg \
 		com_err readline termcap m png pq ssl tiff xml2 z \

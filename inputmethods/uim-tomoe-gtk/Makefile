@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=	japanese handwriting
 
@@ -21,8 +21,8 @@ CONFIGURE_STYLE=gnu
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	::inputmethods/libtomoe-gtk \
-		::inputmethods/uim
+LIB_DEPENDS=	inputmethods/libtomoe-gtk \
+		inputmethods/uim
 
 WANTLIB=	Xrender Xext X11 m z png freetype fontconfig \
 		gio-2.0 gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 \

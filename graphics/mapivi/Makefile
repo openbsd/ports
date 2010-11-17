@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:15 espie Exp $
 
 PKG_ARCH=	*
 
@@ -20,13 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mapivi/}
 
-RUN_DEPENDS=	:p5-Tk->=804.025:x11/p5-Tk \
-		::graphics/p5-Image-ExifTool \
-		::graphics/p5-Image-Info \
-		::graphics/p5-Image-MetaData-JPEG \
-		::graphics/ImageMagick \
-		::graphics/jhead \
-		::x11/p5-Tk-Splash
+RUN_DEPENDS=	x11/p5-Tk>=804.025 \
+		graphics/p5-Image-ExifTool \
+		graphics/p5-Image-Info \
+		graphics/p5-Image-MetaData-JPEG \
+		graphics/ImageMagick \
+		graphics/jhead \
+		x11/p5-Tk-Splash
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

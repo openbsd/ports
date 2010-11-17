@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/12 11:47:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	japanese skk input engine for ibus
 
@@ -19,7 +19,7 @@ MASTER_SITES =	http://cloud.github.com/downloads/ueno/ibus-skk/
 MODULES =	lang/python \
 		textproc/intltool
 
-RUN_DEPENDS =	::inputmethods/ibus
+RUN_DEPENDS =	inputmethods/ibus
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

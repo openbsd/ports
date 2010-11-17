@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:18 espie Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -28,7 +28,8 @@ LIB_DEPENDS-dbase=
 MULTI_PACKAGES+=	-mhash
 COMMENT-mhash=		mhash extensions for php5
 CONFIGURE_ARGS+=	--with-mhash=shared,${LOCALBASE}
-LIB_DEPENDS-mhash=	mhash.>=2::security/mhash
+LIB_DEPENDS-mhash=	security/mhash
+WANTLIB-mhash=		${WANTLIB} mhash>=2
 
 # ncurses
 MULTI_PACKAGES+=	-ncurses
@@ -41,6 +42,7 @@ WANTLIB-ncurses=	${WANTLIB} ncurses panel
 MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	sybase database access extensions for php5
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
-LIB_DEPENDS-sybase_ct=	ct::databases/freetds
+LIB_DEPENDS-sybase_ct=	databases/freetds
+WANTLIB-sybase_ct =	${WANTLIB} ct
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.2
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 SHARED_LIBS +=	animorph 0.0			# .0.0
 CATEGORIES=	graphics
 

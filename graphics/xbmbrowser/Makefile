@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:16 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
 
 COMMENT=	view complete directories of X bitmaps and X pixmaps
 
 DISTNAME=	xbmbrowser5.1
-PKGNAME=	xbmbrowser-5.1p3
+PKGNAME=	xbmbrowser-5.1
+REVISION =	3
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}

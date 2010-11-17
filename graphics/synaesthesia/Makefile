@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		visual sound representation
 
@@ -22,17 +22,17 @@ MASTER_SITES=		http://yoyo.cc.monash.edu.au/~pfh/
 FLAVORS=	esd
 FLAVOR?=	esd
 
-LIB_DEPENDS=		::devel/sdl
+LIB_DEPENDS=		devel/sdl
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 .if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=		::audio/esound
+LIB_DEPENDS+=		audio/esound
 CONFIGURE_ARGS+=	--with-esound
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-WANTLIB +=		esd.>=2
+WANTLIB +=		esd>=2
 .else
 CONFIGURE_ARGS+=	--disable-esound
 .endif

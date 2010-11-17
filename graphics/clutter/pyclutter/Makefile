@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		python bindings for Clutter
 
@@ -19,12 +19,12 @@ WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xml2 z
 
-LIB_DEPENDS=		clutter-cairo-0.8::graphics/clutter/clutter-cairo \
-			clutter-gst-0.8::graphics/clutter/clutter-gst \
-			clutter-gtk-0.8::graphics/clutter/clutter-gtk
+LIB_DEPENDS=		STEM-0.8::graphics/clutter/clutter-cairo \
+			STEM-0.8::graphics/clutter/clutter-gst \
+			STEM-0.8::graphics/clutter/clutter-gtk
 
 BUILD_DEPENDS+= 	${RUN_DEPENDS}
-RUN_DEPENDS=		::x11/py-gtk2
+RUN_DEPENDS=		x11/py-gtk2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-cluttercairo=yes \

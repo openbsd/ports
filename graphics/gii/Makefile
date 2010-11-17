@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/17 08:05:13 espie Exp $
 # Uses pthreads
 
 COMMENT=	General Input Library (used by libggi)
 DISTNAME=	libgii-0.9.0
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 SHARED_LIBS=	gg	0.9	\
 		gii	0.9
 

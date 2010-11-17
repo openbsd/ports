@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	perl module for getting image information
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	:p5-IO-String->=1.08:devel/p5-IO-String
+RUN_DEPENDS=	devel/p5-IO-String>=1.08
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 REGRESS_DEPENDS=::textproc/p5-XML-Simple

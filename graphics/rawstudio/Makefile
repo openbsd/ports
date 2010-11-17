@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	tool for working with RAW images
 
@@ -31,19 +31,19 @@ WANTLIB += png pthread pthread-stubs stdc++ tiff xcb xcb-render
 WANTLIB += xcb-render-util xml2 z
 
 MODULES =	devel/gettext
-LIB_DEPENDS +=	::x11/dbus \
-		::graphics/exiv2 \
-		::devel/gconf2 \
-		::x11/gtk+2 \
-		::graphics/jpeg \
-		::graphics/lcms \
-		::devel/ORBit2 \
-		::graphics/png \
-		::graphics/tiff \
-		::textproc/libxml
+LIB_DEPENDS +=	x11/dbus \
+		graphics/exiv2 \
+		devel/gconf2 \
+		x11/gtk+2 \
+		graphics/jpeg \
+		graphics/lcms \
+		devel/ORBit2 \
+		graphics/png \
+		graphics/tiff \
+		textproc/libxml
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
-		::x11/gtk2-clearlooks-engine
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk2-clearlooks-engine
 
 NO_REGRESS =	Yes
 

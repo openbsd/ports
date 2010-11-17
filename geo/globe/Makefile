@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	display the currently lighted face of Earth in ASCII
 
@@ -23,7 +23,7 @@ WANTLIB=		c
 
 MAKE_FLAGS=		"CC=${CC}" "CFLAGS=${CFLAGS}" "LDFLAGS=${LDFLAGS}"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/globe

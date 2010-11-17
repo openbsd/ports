@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
 V=		4.6
 DISTNAME=	molden${V}
-PKGNAME=	molden-${V}p3
+PKGNAME=	molden-${V}
+REVISION =	3
 CATEGORIES=	biology graphics
 
 HOMEPAGE=	http://www.cmbi.ru.nl/molden/molden.html

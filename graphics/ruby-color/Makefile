@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	color value conversion and modification
 
@@ -19,8 +19,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-archive-tar-minitar->=0.5.0:archivers/ruby-archive-tar-minitar,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS =		archivers/ruby-archive-tar-minitar,${FLAVOR}>=0.5.0 \
+			devel/ruby-hoe,${FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${RUBY} test_all.rb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		vector graphics library
 
@@ -32,8 +32,8 @@ MODULES=		devel/gettext
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		::graphics/png \
-			::devel/glib2
+LIB_DEPENDS=		graphics/png \
+			devel/glib2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		PTHREAD_LIBS="-pthread"
@@ -42,6 +42,6 @@ CONFIGURE_ARGS=		--enable-gl \
 			--enable-xcb \
 			--disable-silent-rules
 
-REGRESS_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
+REGRESS_DEPENDS=	print/ghostscript/gnu
 
 .include <bsd.port.mk>

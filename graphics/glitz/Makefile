@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=		OpenGL image compositing library
 
 DISTNAME=		glitz-0.5.6
-PKGNAME=		${DISTNAME}p2
+REVISION =		2
 
 SHARED_LIBS +=	glitz                2.0      # .1.0
 SHARED_LIBS +=	glitz-glx            2.0      # .1.0

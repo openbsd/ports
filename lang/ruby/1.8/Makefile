@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:18 espie Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=		--program-suffix=18 \
 CONFIGURE_ENV=		LIBruby18_VERSION=${LIBruby18_VERSION}
 
 MODULES=		converters/libiconv
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
 LIB_DEPENDS-main=
@@ -38,12 +38,12 @@ MULTI_PACKAGES=		-main -iconv -gdbm
 
 WANTLIB-iconv =		${MODLIBICONV_WANTLIB} c m ruby18
 LIB_DEPENDS-iconv =	${MODLIBICONV_LIB_DEPENDS} \
-			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
+			ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-iconv =	${MODLIBICONV_RUN_DEPENDS}
 
-WANTLIB-gdbm =		c gdbm.>=3 m ruby18
-LIB_DEPENDS-gdbm =	::databases/gdbm \
-			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
+WANTLIB-gdbm =		c gdbm>=3 m ruby18
+LIB_DEPENDS-gdbm =	databases/gdbm \
+			ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm =       
 
 .if !${FLAVOR:L:Mno_x11}
@@ -52,14 +52,14 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
 			--with-X11-dir=${X11BASE}
 WANTLIB-tk =		X11 c m ruby18 tcl85 tk85
-LIB_DEPENDS-tk =		:tk->=8.5,<8.6:x11/tk/8.5 \
-			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
+LIB_DEPENDS-tk =		tk->=8.5,<8.6:x11/tk/8.5 \
+			ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-tk =		
 .endif
 
 # Known regression failures in OpenSSL extension on sparc64
 # Known regression failure in IO.readpartial on all arch
 # Known regression failure in test_connection_refused_in_request on all arch
-REGRESS_DEPENDS=	:ruby->=1.8,<=1.9:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	ruby->=1.8,<=1.9:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

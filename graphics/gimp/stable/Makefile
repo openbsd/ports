@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -26,22 +26,22 @@ HOMEPAGE=	http://www.gimp.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	::textproc/libxslt
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/gtk+2 \
-		::graphics/aalib \
-		::x11/dbus-glib \
-		::graphics/libexif \
-		::graphics/libmng \
-		::graphics/tiff \
-		::graphics/libwmf \
-		::print/poppler \
-		::graphics/gegl \
-		::graphics/openjpeg \
-		::x11/py-gtk2 \
-		::net/curl
+BUILD_DEPENDS=	textproc/libxslt
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2 \
+		graphics/aalib \
+		x11/dbus-glib \
+		graphics/libexif \
+		graphics/libmng \
+		graphics/tiff \
+		graphics/libwmf \
+		print/poppler \
+		graphics/gegl \
+		graphics/openjpeg \
+		x11/py-gtk2 \
+		net/curl
 
-RUN_DEPENDS+=	::x11/py-gtk2
+RUN_DEPENDS+=	x11/py-gtk2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

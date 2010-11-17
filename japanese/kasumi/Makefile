@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:17 espie Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
@@ -28,9 +28,9 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=kasumi/41436/}
 
 MODULES =	devel/gettext
 
-RUN_DEPENDS =	::devel/desktop-file-utils
-LIB_DEPENDS =	::inputmethods/anthy \
-		::x11/gtk+2
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	inputmethods/anthy \
+		x11/gtk+2
 
 USE_LIBTOOL =	Yes
 USE_GROFF =	Yes

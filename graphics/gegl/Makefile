@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/11 19:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/17 08:05:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,22 +47,22 @@ WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB-main += pthread-stubs xcb xml2 xcb-render xcb-render-util
 WANTLIB-main += rsvg-2 babl-0.1
 
-LIB_DEPENDS=	::devel/libexecinfo
+LIB_DEPENDS=	devel/libexecinfo
 
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
-			::x11/gnome/librsvg \
-			::graphics/babl
+			x11/gnome/librsvg \
+			graphics/babl
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += Half Iex IlmThread Imath faac faad gsm mp3lame ogg
 WANTLIB-plugins += orc-0.4 schroedinger-1.0 speex stdc++ theora
-WANTLIB-plugins += vorbis vorbisenc x264 IlmImf.>=4 avcodec.>=14
-WANTLIB-plugins += avformat.>=13 avutil.>=7
+WANTLIB-plugins += vorbis vorbisenc x264 IlmImf>=4 avcodec>=14
+WANTLIB-plugins += avformat>=13 avutil>=7
 
-RUN_DEPENDS-plugins= ::${BUILD_PKGPATH},-main
+RUN_DEPENDS-plugins= ${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins	= ${LIB_DEPENDS} \
-			::graphics/openexr \
-			:ffmpeg->=20100512:graphics/ffmpeg
+			graphics/openexr \
+			graphics/ffmpeg>=20100512
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	python bindings for pigment
 
@@ -28,10 +28,10 @@ CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
-RUN_DEPENDS =	::multimedia/gstreamer-0.10/py-gstreamer
+RUN_DEPENDS =	multimedia/gstreamer-0.10/py-gstreamer
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
-LIB_DEPENDS =	::graphics/pigment
+LIB_DEPENDS =	graphics/pigment
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig

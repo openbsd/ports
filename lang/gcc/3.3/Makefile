@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -50,13 +50,13 @@ BUILD_DEPENDS =		:autoconf-2.13:devel/autoconf/2.13
 BUILD_DEPENDS +=	::devel/metaauto
 
 # This can be patched out, apart from java that wants a pure parser.
-BUILD_DEPENDS += 	:bison-*:devel/bison
+BUILD_DEPENDS += 	devel/bison
 
 
 MULTI_PACKAGES =	-main
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-REGRESS_DEPENDS =	::devel/dejagnu
+REGRESS_DEPENDS =	devel/dejagnu
 
 DISTNAME =		gcc-${FULL_VERSION}
 
@@ -145,7 +145,7 @@ CONFIGURE_ARGS += --enable-cpp
 .if ${FLAVOR:L:Mjava}
 CONFIGURE_ARGS += --enable-sjlj-exceptions
 # No way around it, java wants a pure parser
-BUILD_DEPENDS += ::devel/bison
+BUILD_DEPENDS += devel/bison
 .endif
 
 
@@ -176,7 +176,7 @@ PKG_ARGS += -DPPC=1
 PKG_ARGS += -DPPC=0
 .endif
 
-RUN_DEPENDS =	:gcc-${FULL_PKGVERSION}:${PKGPATH}
+RUN_DEPENDS =	gcc-${FULL_PKGVERSION}:${PKGPATH}
 WANTLIB =	c
 
 RUN_DEPENDS-main =
@@ -184,10 +184,10 @@ RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 WANTLIB-estdc =
 
-LIB_DEPENDS-java = ::devel/boehm-gc
+LIB_DEPENDS-java = devel/boehm-gc
 WANTLIB-java =	${WANTLIB} gc
 
-RUN_DEPENDS-c++ = ${RUN_DEPENDS} ::${PKGPATH},-estdc
+RUN_DEPENDS-c++ = ${RUN_DEPENDS} ${PKGPATH},-estdc
 
 
 .include <bsd.port.mk>

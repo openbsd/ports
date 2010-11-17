@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:18 espie Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -27,13 +27,13 @@ CONFIGURE_ARGS =	--program-suffix=19 \
 CONFIGURE_ENV =		LIBruby19_VERSION=${LIBruby19_VERSION}
 
 MODULES =		converters/libiconv
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WANTLIB-main =		c crypto ffi m ncurses pthread readline ssl termcap \
 			util yaml z ${MODLIBICONV_WANTLIB}
 LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
-			::devel/libyaml \
-			::devel/libffi
+			devel/libyaml \
+			devel/libffi
 RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
 
 PSEUDO_FLAVORS=		no_x11
@@ -42,13 +42,13 @@ FLAVOR?=
 MULTI_PACKAGES =	-main -gdbm -dbm
 
 WANTLIB-gdbm =		c m gdbm ruby19
-LIB_DEPENDS-gdbm =	::databases/gdbm \
-			:ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+LIB_DEPENDS-gdbm =	databases/gdbm \
+			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm =	
 
 WANTLIB-dbm =		c m db ruby19
-LIB_DEPENDS-dbm =	::databases/db/v4 \
-			:ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+LIB_DEPENDS-dbm =	databases/db/v4 \
+			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
 RUN_DEPENDS-dbm =	
  
 .if !${FLAVOR:L:Mno_x11}
@@ -57,8 +57,8 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
 			--with-X11-dir=${X11BASE}
 WANTLIB-tk =		X11 c m ruby19 tcl85 tk85
-LIB_DEPENDS-tk =	:tk->=8.5,<8.6:x11/tk/8.5 \
-			:ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
+			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
 RUN_DEPENDS-tk =	
 .endif
 
@@ -66,7 +66,7 @@ RUN_DEPENDS-tk =
 # Known threading bootstraptest failures on i386 and macppc
 # Known endian issues in fiddle/dl on sparc64
 # Known bugs in OpenSSL extension on sparc64
-REGRESS_DEPENDS =	:ruby->=1.9,<=1.10:${BUILD_PKGPATH}
+REGRESS_DEPENDS =	ruby->=1.9,<=1.10:${BUILD_PKGPATH}
 SUBST_VARS +=		RUBYLIBREV
 
 .include <bsd.port.mk>

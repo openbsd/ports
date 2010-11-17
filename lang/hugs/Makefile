@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/17 08:05:17 espie Exp $
 
 COMMENT =	Haskell 98 interpreter
 
@@ -18,8 +18,7 @@ DISTFILES +=	${DISTNAME}.tar.gz ${DISTNAME}-tests.tar.gz:0
 CFLAGS +=	-fPIC
 .endif
 
-USE_X11 =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" CC="${CC}"
 CONFIGURE_ARGS +=	--with-pthreads --libdir=${PREFIX}/lib

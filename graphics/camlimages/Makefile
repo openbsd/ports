@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -32,10 +32,10 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include/libpng" LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	CAMLDIR="${CAMLDIR}" LIBDIR="${CAMLDIR}/camlimages"
 
-LIB_DEPENDS =	::graphics/jpeg ::graphics/tiff ::graphics/png \
-		::graphics/libungif
-WANTLIB =	jpeg.>=62 tiff.>=36 png.>=4 ungif.>=5
-RUN_DEPENDS =	:ghostscript-*:print/ghostscript/gnu ::x11/lablgtk
+LIB_DEPENDS =	graphics/jpeg graphics/tiff graphics/png \
+		graphics/libungif
+WANTLIB =	jpeg>=62 tiff>=36 png>=4 ungif>=5
+RUN_DEPENDS =	print/ghostscript/gnu x11/lablgtk
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 ALL_TARGET=	byt ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}

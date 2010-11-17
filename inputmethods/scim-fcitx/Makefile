@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/24 11:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:17 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,7 @@ MODULES=	devel/gettext
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	::inputmethods/scim
+LIB_DEPENDS=	inputmethods/scim
 
 WRKDIST=	${WRKDIR}/fcitx
 USE_LIBTOOL=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		library for making beautiful graphs
 
@@ -19,8 +19,8 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-rmagick-*:graphics/ruby-rmagick,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS=		graphics/ruby-rmagick,${FLAVOR} \
+			devel/ruby-hoe,${FLAVOR}
 
 MODRUBY_REGRESS=	rake
 

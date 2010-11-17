@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =	digital camera command-line interface
 CATEGORIES =	graphics
@@ -33,9 +33,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
 
 MODULES =	devel/gettext
-LIB_DEPENDS =	::graphics/libgphoto2 \
-		::graphics/jpeg \
-		::devel/popt
+LIB_DEPENDS =	graphics/libgphoto2 \
+		graphics/jpeg \
+		devel/popt
 
 WANTLIB =	c exif m ncurses readline ltdl pthread usb \
 		gphoto2 gphoto2_port jpeg popt

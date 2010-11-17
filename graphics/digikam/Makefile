@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/17 08:05:13 espie Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
@@ -12,22 +12,22 @@ DISTFILES =		${DISTNAME}.tar.bz2
 
 SHARED_ONLY =		Yes
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS +=	::x11/kde/libs3 \
-		::graphics/libgphoto2 \
-		::graphics/libkipi \
-		::graphics/tiff \
-		:libkexiv2->=0.1.5:graphics/libkexiv2 \
-		::graphics/libkdcraw \
-		::graphics/lcms
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS +=	x11/kde/libs3 \
+		graphics/libgphoto2 \
+		graphics/libkipi \
+		graphics/tiff \
+		graphics/libkexiv2>=0.1.5 \
+		graphics/libkdcraw \
+		graphics/lcms
 
 WANTLIB =	util m c ICE Xrender SM pthread z stdc++ expat \
 		Xext X11 jpeg png art_lgpl_2 exif intl iconv idn \
 		exiv2 jasper pcre pcreposix Xau Xdmcp fam rpcsvc ltdl \
-		pthread-stubs xcb lib/qt3/qt-mt.>=3.33 kdecore.>=6 \
+		pthread-stubs xcb lib/qt3/qt-mt>=3.33 kdecore>=6 \
 		kwalletclient DCOP kparts kdeui kdesu kio kdefx \
 		kdeprint kutils kabc vcard kresources khtml kjs \
-		gphoto2 gphoto2_port kipi tiff kexiv2.>=1 kdcraw \
+		gphoto2 gphoto2_port kipi tiff kexiv2>=1 kdcraw \
 		lcms
 
 MODULES =	x11/kde
@@ -38,7 +38,7 @@ AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}
 
 CONFIGURE_ARGS +=	--without-included-sqlite3
-LIB_DEPENDS +=		:sqlite3->=3.5.9:databases/sqlite3
+LIB_DEPENDS +=		databases/sqlite3>=3.5.9
 WANTLIB +=		sqlite3
 
 USE_GMAKE ?=		Yes

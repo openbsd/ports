@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	japanese handwriting input widget
 
@@ -24,8 +24,8 @@ CONFIGURE_STYLE=gnu
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::inputmethods/tomoe
+LIB_DEPENDS=	x11/gtk+2 \
+		inputmethods/tomoe
 
 WANTLIB=	Xrender Xext X11 m z png freetype fontconfig \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \

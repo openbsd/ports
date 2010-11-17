@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=		PNG to ASCII compiler and decompiler
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m c z png
 
-LIB_DEPENDS=		::graphics/png
+LIB_DEPENDS=		graphics/png
 USE_GMAKE=		yes
 USE_GROFF =		Yes
 

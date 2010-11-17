@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	converts TIFF images to PNG format
 
@@ -10,10 +10,10 @@ HOMEPAGE =	http://www.libpng.org/pub/png/apps/tiff2png.html
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-LIB_DEPENDS =	::graphics/tiff \
-		::graphics/png
+LIB_DEPENDS =	graphics/tiff \
+		graphics/png
 
-WANTLIB =	c jpeg m z tiff.>=35 png.>=8
+WANTLIB =	c jpeg m z tiff>=35 png>=8
 
 # custom, see tiff2png.c
 PERMIT_PACKAGE_CDROM =	Yes

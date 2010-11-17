@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:14:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
@@ -17,9 +17,9 @@ WANTLIB += pcre pixman-1 png xcb-render xcb-render-util
 WANTLIB += pthread-stubs xcb z Xxf86vm drm json-glib-1.0
 WANTLIB += gdk_pixbuf-2.0 cairo pango-1.0 pangocairo-1.0
 
-LIB_DEPENDS+=		::devel/json-glib \
-			::devel/pango \
-			::graphics/gdk-pixbuf2
+LIB_DEPENDS+=		devel/json-glib \
+			devel/pango \
+			graphics/gdk-pixbuf2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection=no \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -38,16 +38,16 @@ MULTI_PACKAGES =	-main -lib
 MODULES =		converters/libiconv
 
 WANTLIB-main =		${MODLIBICONV_WANTLIB} c iberty gmp mpfr
-LIB_DEPENDS-main =	::devel/mpfr \
+LIB_DEPENDS-main =	devel/mpfr \
 			${MODLIBICONV_LIB_DEPENDS}
 WANTLIB-lib =
 LIB_DEPENDS-lib =
-RUN_DEPENDS-main =	::${BASE_PKGPATH},-lib
+RUN_DEPENDS-main =	${BASE_PKGPATH},-lib
 
-REGRESS_DEPENDS = 	::devel/dejagnu \
-			::devel/autogen
+REGRESS_DEPENDS = 	devel/dejagnu \
+			devel/autogen
 
-BUILD_DEPENDS += :bison-*:devel/bison
+BUILD_DEPENDS += devel/bison
 
 post-extract:
 	echo "# This file automatically generated" >> ${WRKSRC}/libversions

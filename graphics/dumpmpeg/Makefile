@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	dump frames from mpeg-1 movies
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}
 
-LIB_DEPENDS =	:smpeg-*:devel/smpeg
-WANTLIB =	SDL X11 Xext c m pthread pthread-stubs usbhid xcb smpeg.>=1.3
+LIB_DEPENDS =	devel/smpeg
+WANTLIB =	SDL X11 Xext c m pthread pthread-stubs usbhid xcb smpeg>=1.3
 
 USE_GROFF =	Yes
 

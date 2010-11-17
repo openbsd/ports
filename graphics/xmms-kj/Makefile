@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,13 +19,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m \
-			pthread-stubs xcb z xmms.>=2 png.>=3
+			pthread-stubs xcb z xmms>=2 png>=3
 
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/xmms-kj/
 
-LIB_DEPENDS=	::audio/xmms \
-		::graphics/png
+LIB_DEPENDS=	audio/xmms \
+		graphics/png
 
 WRKDIST=	${WRKDIR}/xmms-kj
 MAKE_FILE=      makefile

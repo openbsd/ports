@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 15:40:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	GPS track manager
 
@@ -26,10 +26,10 @@ MODGNOME_HELP_FILES =	Yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-LIB_DEPENDS =	::misc/gpsd \
-		::net/curl \
-		::devel/libidn \
-		::x11/gtk+2
+LIB_DEPENDS =	misc/gpsd \
+		net/curl \
+		devel/libidn \
+		x11/gtk+2
 
 WANTLIB = gps curl idn gdk-x11-2.0 gtk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

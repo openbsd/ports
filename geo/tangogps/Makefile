@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:19:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -30,14 +30,14 @@ WANTLIB += xcb-render-util xml2 z GL X11-xcb Xxf86vm drm xcb-shm
 WANTLIB += atk-1.0 curl exif gconf-2 sqlite3 soup-2.4
 
 MODULES = 		devel/gettext
-LIB_DEPENDS =		::devel/atk \
-			::net/curl \
-			::graphics/libexif \
-			::devel/gconf2 \
-			::databases/sqlite3 \
-			::devel/libsoup
+LIB_DEPENDS =		devel/atk \
+			net/curl \
+			graphics/libexif \
+			devel/gconf2 \
+			databases/sqlite3 \
+			devel/libsoup
 
-RUN_DEPENDS = 		::devel/desktop-file-utils
+RUN_DEPENDS = 		devel/desktop-file-utils
 
 CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/22 21:11:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:13 espie Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m png stdc++ z
-LIB_DEPENDS =	:png-*:graphics/png
+LIB_DEPENDS =	graphics/png
 
 MASTER_SITES =	http://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz

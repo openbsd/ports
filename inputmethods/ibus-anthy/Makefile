@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 09:42:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:16 espie Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -22,9 +22,9 @@ MASTER_SITES =	http://ibus.googlecode.com/files/
 MODULES =	lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS =	::devel/swig
-RUN_DEPENDS =	::inputmethods/ibus
-LIB_DEPENDS =	::inputmethods/anthy \
+BUILD_DEPENDS =	devel/swig
+RUN_DEPENDS =	inputmethods/ibus
+LIB_DEPENDS =	inputmethods/anthy \
 		${MODPY_LIB_DEPENDS}
 
 USE_GMAKE =	Yes

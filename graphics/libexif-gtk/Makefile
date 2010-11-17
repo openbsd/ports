@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	GTK2 interface to libexif
 
@@ -22,11 +22,11 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 z png Xcomposite \
 		Xdamage pthread-stubs xcb gdk_pixbuf-2.0 \
-		gdk-x11-2.0.>=1000 gtk-x11-2.0.>=1000 exif.>=12
+		gdk-x11-2.0>=1000 gtk-x11-2.0>=1000 exif>=12
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2 \
-		::graphics/libexif
+LIB_DEPENDS=	x11/gtk+2 \
+		graphics/libexif
 
 USE_LIBTOOL=	Yes
 

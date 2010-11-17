@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/11 19:46:30 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/17 08:05:14 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -16,20 +16,20 @@ SHARED_LIBS +=	kipiplugins          0.0      # .0.1
 SUBST_VARS +=	PKGNAME-cal
 MULTI_PACKAGES =-main -cal
 SHARED_ONLY =	Yes
-LIB_DEPENDS =	::x11/kde/libs3 \
-		::graphics/libkipi
+LIB_DEPENDS =	x11/kde/libs3 \
+		graphics/libkipi
 
 LIB_DEPENDS-main =${LIB_DEPENDS} \
-		::x11/kde/libs3 \
-		::graphics/libgphoto2 \
-		:libkexiv2->=0.1.5:graphics/libkexiv2 \
-		::graphics/libkdcraw
+		x11/kde/libs3 \
+		graphics/libgphoto2 \
+		graphics/libkexiv2>=0.1.5 \
+		graphics/libkdcraw
 
 LIB_DEPENDS-cal =${LIB_DEPENDS} \
-		::x11/kde/pim3 \
-		::graphics/kipi-plugins,-main
+		x11/kde/pim3 \
+		graphics/kipi-plugins,-main
 
-RUN_DEPENDS =	::graphics/ImageMagick
+RUN_DEPENDS =	graphics/ImageMagick
 
 MODULES =	x11/kde
 
@@ -46,7 +46,7 @@ WANTLIB-main =	${WANTLIB} GL ltdl Xrandr \
 WANTLIB-cal =	${WANTLIB} kabc kresources vcard kcal kmime ktnef kipiplugins
 
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

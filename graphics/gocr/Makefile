@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/17 08:05:14 espie Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
@@ -36,12 +36,12 @@ MODULES=	x11/tk
 
 PKG_ARCH-gui=	*
 RUN_DEPENDS-gui=${MODTK_RUN_DEPENDS} \
-		::graphics/xsane \
-		::textproc/p5-tkispell \
-		::graphics/gocr
+		graphics/xsane \
+		textproc/p5-tkispell \
+		graphics/gocr
 
-WANTLIB-main=	c m netpbm.>=0
-LIB_DEPENDS-main=::graphics/netpbm
+WANTLIB-main=	c m netpbm
+LIB_DEPENDS-main=graphics/netpbm
 
 post-extract:
 	rm ${WRKSRC}/src/barcode.c.orig

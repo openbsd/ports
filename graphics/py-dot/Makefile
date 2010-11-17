@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 21:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	Python interface to Graphviz's Dot
 
@@ -20,9 +20,9 @@ MASTER_SITES=	http://dkbza.org/data/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::devel/py-parsing
-RUN_DEPENDS=	::devel/py-parsing \
-		::math/graphviz
+BUILD_DEPENDS=	devel/py-parsing
+RUN_DEPENDS=	devel/py-parsing \
+		math/graphviz
 
 SUBST_VARS=	V
 

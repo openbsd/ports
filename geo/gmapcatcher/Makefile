@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:19:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	offline maps viewer
 
@@ -24,10 +24,10 @@ MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 
 MODULES=	lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		:py-gtk2->=1.10:x11/py-gtk2 \
-		:py-sqlite2-*:databases/py-sqlite2 \
-		::graphics/py-Imaging 
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/py-gtk2>=1.10 \
+		databases/py-sqlite2 \
+		graphics/py-Imaging 
 
 USE_GROFF =	Yes
 

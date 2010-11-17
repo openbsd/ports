@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	convert jpeg to compressed PostScript
 
 DISTNAME=	jpeg2ps-1.9
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.pdflib.com/products/more/jpeg2ps.html

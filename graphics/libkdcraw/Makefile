@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =	grab raw data from digital cameras
 
@@ -24,9 +24,9 @@ CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV} \
 MAKE_FLAGS +=		${MODKDE_MAKE_FLAGS}
 USE_GMAKE =		Yes
 
-LIB_DEPENDS +=		::graphics/lcms \
-			::x11/kde/libs3
-RUN_DEPENDS =		::graphics/dcraw
+LIB_DEPENDS +=		graphics/lcms \
+			x11/kde/libs3
+RUN_DEPENDS =		graphics/dcraw
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender jpeg m png
 WANTLIB += util z art_lgpl_2 iconv intl idn

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/21 08:27:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:16 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -34,9 +34,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkimg/}
 
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
-			::devel/tcllib
+			devel/tcllib
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-REGRESS_DEPENDS =	::${PKGPATH}
+REGRESS_DEPENDS =	${PKGPATH}
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	gnu

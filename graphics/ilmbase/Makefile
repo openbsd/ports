@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	ILM base libraries
 
 DISTNAME=	ilmbase-1.0.1
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	graphics
 
 SHARED_LIBS +=	Half                 4.0      # .6.0

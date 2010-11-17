@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
@@ -21,14 +21,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	GL png.>=5
+WANTLIB=	GL png>=5
 
-LIB_DEPENDS=	::graphics/png
+LIB_DEPENDS=	graphics/png
 
 
 REGRESS_IS_INTERACTIVE=	x11
 
-REGRESS_DEPENDS=	::graphics/freeglut
+REGRESS_DEPENDS=	graphics/freeglut
 
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}

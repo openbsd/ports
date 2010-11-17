@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/14 17:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -29,15 +29,15 @@ USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::archivers/zip \
-		:jikes->=1.22p0:lang/jikes
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/gmp \
-		::devel/libaudiofile \
-		::audio/esound \
-		::devel/libtool,-ltdl
-RUN_DEPENDS=	::archivers/zip \
-		:jikes->=1.22p0:lang/jikes
+BUILD_DEPENDS=	archivers/zip \
+		lang/jikes>=1.22p0
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/gmp \
+		devel/libaudiofile \
+		audio/esound \
+		devel/libtool,-ltdl
+RUN_DEPENDS=	archivers/zip \
+		lang/jikes>=1.22p0
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 c cairo

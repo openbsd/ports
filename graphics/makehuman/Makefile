@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -19,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xi Xmu Xt Xxf86vm c m \
-		pthread-stubs stdc++ xcb z animorph glut.>=4 mhgui png.>=5
+		pthread-stubs stdc++ xcb z animorph glut>=4 mhgui png>=5
 
-RUN_DEPENDS=	::graphics/aqsis
-LIB_DEPENDS=	::graphics/animorph \
-		::graphics/freeglut \
-		::graphics/mhgui \
-		::graphics/png
+RUN_DEPENDS=	graphics/aqsis
+LIB_DEPENDS=	graphics/animorph \
+		graphics/freeglut \
+		graphics/mhgui \
+		graphics/png
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

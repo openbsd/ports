@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/04 20:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=	2d geometry and topology engine
 DISTNAME=	geos-3.2.2
@@ -21,7 +21,7 @@ MASTER_SITES=		http://download.osgeo.org/geos/
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=	m stdc++
-BUILD_DEPENDS=	:doxygen->=1.7.2:devel/doxygen
+BUILD_DEPENDS=	devel/doxygen>=1.7.2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

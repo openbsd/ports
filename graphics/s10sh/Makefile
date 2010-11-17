@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	S10sh - a Canon PowerShot digital camera driver
 
@@ -20,7 +20,7 @@ WANTLIB=		readline c termcap usb
 
 DOCDIR=		${PREFIX}/share/doc/s10sh
 
-LIB_DEPENDS=	::devel/libusb
+LIB_DEPENDS=	devel/libusb
 
 CONFIGURE_STYLE= simple
 

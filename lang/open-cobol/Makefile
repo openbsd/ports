@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:18 espie Exp $
 
 COMMENT=	open source COBOL compiler
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=open-cobol/}
 
-LIB_DEPENDS=	:db->=4,<5:databases/db/v4 \
-	 	::devel/gmp
+LIB_DEPENDS=	db->=4,<5:databases/db/v4 \
+	 	devel/gmp
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes

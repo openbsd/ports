@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xi Xmu Xt Xxf86vm m \
-		pthread-stubs xcb z animorph glut.>=4 png.>=5
+		pthread-stubs xcb z animorph glut>=4 png>=5
 
-LIB_DEPENDS=	::graphics/animorph \
-		::graphics/freeglut \
-		::graphics/png
+LIB_DEPENDS=	graphics/animorph \
+		graphics/freeglut \
+		graphics/png
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

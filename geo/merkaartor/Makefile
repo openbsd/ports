@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/28 23:38:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -21,8 +21,8 @@ MASTER_SITES =	http://merkaartor.be/attachments/download/1/
 
 NO_REGRESS =	Yes
 MODULES =	devel/gettext x11/qt4
-BUILD_DEPENDS = ::devel/boost
-RUN_DEPENDS =	::devel/desktop-file-utils
+BUILD_DEPENDS = devel/boost
+RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	::x11/qt4
 

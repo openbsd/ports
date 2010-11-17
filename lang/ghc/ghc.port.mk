@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.15 2010/11/03 21:32:08 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.16 2010/11/17 08:05:17 espie Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -17,7 +17,7 @@ MODGHC_BIN =		${LOCALBASE}/bin/ghc
 # i.e. RUN_DEPENDS = :ghc-${MODGHC_VER}:lang/ghc, and not
 # just ::lang/ghc.
 .if ${PKGPATH} != "lang/ghc"
-BUILD_DEPENDS +=	::lang/ghc
+BUILD_DEPENDS +=	lang/ghc
 
 # Set to "cabal" to get the typical Cabal targets defined. Add "haddock"
 # to generate API documentation using Haddock. Add "register" to create
@@ -32,7 +32,7 @@ MODGHC_BUILD ?=
 
 . if !${MODGHC_BUILD:L:Mnort}
 PKGNAME ?=		hs-${DISTNAME}
-RUN_DEPENDS +=		:ghc-${MODGHC_VER}:lang/ghc
+RUN_DEPENDS +=		ghc-${MODGHC_VER}:lang/ghc
 CATEGORIES +=		lang/ghc
 . endif
 
@@ -57,8 +57,8 @@ MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
 .  endif
 
 .  if ${MODGHC_BUILD:L:Mhaddock}
-BUILD_DEPENDS +=		::devel/haddock \
-				::lang/ghc,-doc
+BUILD_DEPENDS +=		devel/haddock \
+				lang/ghc,-doc
 .  endif
 
 # Little hack to let ports still add CONFIGURE_STYLE = autoconf and go

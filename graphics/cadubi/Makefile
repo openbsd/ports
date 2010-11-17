@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
 
 DISTNAME=	cadubi-1.3
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics editors
 
 # perl artistic
@@ -14,7 +14,7 @@ COMMENT=	ASCII drawing utility
 HOMEPAGE=	http://langworth.com/cadubi.html
 MASTER_SITES=	http://langworth.com/downloads/
 
-RUN_DEPENDS=	::devel/p5-Term-ReadKey
+RUN_DEPENDS=	devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

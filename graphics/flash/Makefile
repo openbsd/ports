@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	open source standalone flash(tm) player
 
 DISTNAME=	flash-0.4.10
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	graphics	
 EXTRACT_SUFX=	.tgz
 

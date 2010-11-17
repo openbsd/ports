@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=	image viewer for KDE
 
@@ -19,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xrender \
 		art_lgpl_2 c expat fam idn jpeg m mng png pthread \
-		pthread-stubs stdc++ util xcb z kdecore.>=6 DCOP kdefx \
+		pthread-stubs stdc++ util xcb z kdecore>=6 DCOP kdefx \
 		kdeprint kdesu kparts kdeui kio kmediaplayer kutils \
 		kwalletclient kipi exiv2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3 \
-		::graphics/libkipi \
-		::graphics/exiv2
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3 \
+		graphics/libkipi \
+		graphics/exiv2
 
 MODULES=	x11/kde devel/gettext
 MODKDE_VERSION= 3.5.7

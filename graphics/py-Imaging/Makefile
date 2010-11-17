@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/15 20:57:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/17 08:05:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,10 +36,10 @@ MODULES=		lang/python x11/tk
 
 RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 RUN_DEPENDS-bin=	${RUN_DEPENDS} \
-			:py-Imaging-*:graphics/py-Imaging
+			graphics/py-Imaging
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS-main=	::graphics/jpeg \
-			::graphics/lcms \
+LIB_DEPENDS-main=	graphics/jpeg \
+			graphics/lcms \
 			${MODTK_LIB_DEPENDS}
 
 FLAVORS=		python2.4 python2.6

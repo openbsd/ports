@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/17 08:05:15 espie Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -16,14 +16,14 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	converters/libiconv
-WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb z tiff.>=38 jpeg.>=64 \
-		png.>=10 jbig.>=2 jasper.>=2 xml2.>=11
-LIB_DEPENDS=	::graphics/tiff \
-		::graphics/jpeg \
-		::graphics/png \
-		::graphics/jbigkit \
-		::graphics/jasper \
-		::textproc/libxml
+WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb z tiff>=38 jpeg>=64 \
+		png>=10 jbig>=2 jasper>=2 xml2>=11
+LIB_DEPENDS=	graphics/tiff \
+		graphics/jpeg \
+		graphics/png \
+		graphics/jbigkit \
+		graphics/jasper \
+		textproc/libxml
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile

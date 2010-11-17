@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 11:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =		visualize your data in SVG format
 
@@ -13,13 +13,13 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		::devel/p5-Tree-DAG_Node \
-			::graphics/p5-SVG \
-			::math/p5-Math-Derivative \
-			::math/p5-Math-Spline \
-			::math/p5-Statistics-Descriptive \
+RUN_DEPENDS =		devel/p5-Tree-DAG_Node \
+			graphics/p5-SVG \
+			math/p5-Math-Derivative \
+			math/p5-Math-Spline \
+			math/p5-Statistics-Descriptive \
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

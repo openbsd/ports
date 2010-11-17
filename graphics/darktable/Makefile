@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
@@ -38,16 +38,16 @@ MODULES=	devel/gconf2 \
 
 MODGCONF2_SCHEMAS_DIR= darktable
 
-RUN_DEPENDS=	::devel/desktop-file-utils
-LIB_DEPENDS=	::databases/sqlite3 \
-		::devel/libglade2 \
-		::graphics/exiv2 \
-		::graphics/lcms \
-		::graphics/libgphoto2 \
-		::graphics/lensfun \
-		::graphics/openexr \
-		::net/curl \
-		::x11/gnome/libgnome-keyring
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	databases/sqlite3 \
+		devel/libglade2 \
+		graphics/exiv2 \
+		graphics/lcms \
+		graphics/libgphoto2 \
+		graphics/lensfun \
+		graphics/openexr \
+		net/curl \
+		x11/gnome/libgnome-keyring
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes

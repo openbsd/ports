@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
@@ -28,8 +28,8 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =	ICE SM X11 Xext Xrender iconv intl jpeg m png \
 		util z idn art_lgpl_2 Xau Xdmcp expat \
-		pthread-stubs xcb exiv2.>=0.1 kdecore.>=7 DCOP kdefx
-LIB_DEPENDS =	:exiv2->=0.12:graphics/exiv2 \
-		::x11/kde/libs3
+		pthread-stubs xcb exiv2>=0.1 kdecore>=7 DCOP kdefx
+LIB_DEPENDS =	graphics/exiv2>=0.12 \
+		x11/kde/libs3
 
 .include <bsd.port.mk>

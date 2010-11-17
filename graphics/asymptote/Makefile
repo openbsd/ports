@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/09 19:49:29 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-sparc64=		build stalls
@@ -22,14 +22,14 @@ WANTLIB += GL GLU c m ncurses pthread readline stdc++ z
 WANTLIB += gc glut sigsegv fftw3
 
 BUILD_DEPENDS= 		${RUN_DEPENDS}
-RUN_DEPENDS=		::print/texlive/base
-LIB_DEPENDS=		::devel/boehm-gc \
-			::devel/libsigsegv \
-			::graphics/freeglut \
-			::math/fftw3
+RUN_DEPENDS=		print/texlive/base
+LIB_DEPENDS=		devel/boehm-gc \
+			devel/libsigsegv \
+			graphics/freeglut \
+			math/fftw3
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -24,8 +24,8 @@ MAKE_OBJC?=No
 MAKE_JAVA?=No
 MAKE_ADA?=No
 
-BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13
-BUILD_DEPENDS+=	::devel/metaauto
+BUILD_DEPENDS=	autoconf-2.13:devel/autoconf/2.13
+BUILD_DEPENDS+=	devel/metaauto
 SUBPACKAGE?=
 USE_GROFF =	Yes
 
@@ -38,12 +38,13 @@ WANTLIB+=z
 
 .if ${MAKE_JAVA:L} == "yes"
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
-LIB_DEPENDS+=gc::devel/boehm-gc
+LIB_DEPENDS+=devel/boehm-gc
+WANTLIB += gc
 .  endif
 .endif
 
 # This can be patched out, apart from java that wants a pure parser.
-BUILD_DEPENDS+= :bison-*:devel/bison
+BUILD_DEPENDS+= devel/bison
 
 
 .if ${MAKE_JAVA:L} == "yes"
@@ -52,11 +53,11 @@ MAKE_GXX=Yes
 
 MULTI_PACKAGES=
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 # No way around it, java wants a pure parser
 .if ${MAKE_JAVA:L} == "yes"
-BUILD_DEPENDS+=:bison-*:devel/bison
+BUILD_DEPENDS+=devel/bison
 .endif
 
 
@@ -150,10 +151,10 @@ PKG_ARGS+=-DPPC=0
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH}
+RUN_DEPENDS+=gcc-${FULL_PKGVERSION}:${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::${PKGPATH},-estdc
+RUN_DEPENDS+=${PKGPATH},-estdc
 .  endif
 .endif
 

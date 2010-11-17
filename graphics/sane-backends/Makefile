@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/06 07:58:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -30,9 +30,9 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 
-LIB_DEPENDS=	::graphics/tiff \
-		::graphics/libgphoto2 \
-		::net/avahi
+LIB_DEPENDS=	graphics/tiff \
+		graphics/libgphoto2 \
+		net/avahi
 
 MODULES=	devel/gettext
 

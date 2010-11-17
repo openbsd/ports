@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 18:13:13 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:13 espie Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c jpeg lcms m
 
-LIB_DEPENDS =	::graphics/jpeg \
-		::graphics/lcms
+LIB_DEPENDS =	graphics/jpeg \
+		graphics/lcms
 
 NO_REGRESS =	Yes
 SEPARATE_BUILD = simple

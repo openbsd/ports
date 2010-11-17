@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/17 08:05:14 espie Exp $
 
 COMMENT=		color ascii art library
 
@@ -20,8 +20,8 @@ MASTER_SITES=		${HOMEPAGE}/files/libcaca/ \
 			http://distfiles.nl/
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::misc/zzuf
-REGRESS_DEPENDS=	::devel/cppunit
+RUN_DEPENDS=		misc/zzuf
+REGRESS_DEPENDS=	devel/cppunit
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
@@ -33,9 +33,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else
-LIB_DEPENDS =    	::graphics/imlib2
+LIB_DEPENDS =    	graphics/imlib2
 WANTLIB +=		X11 Xau Xdmcp Xext freetype pthread-stubs xcb \
-			Imlib2.>=1
+			Imlib2>=1
 .endif
 
 CONFIGURE_STYLE= 	gnu

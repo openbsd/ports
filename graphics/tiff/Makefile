@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -11,8 +11,8 @@ MASTER_SITES=	http://download.osgeo.org/libtiff/
 
 HOMEPAGE=	http://www.remotesensing.org/libtiff/
 
-LIB_DEPENDS=	::graphics/jpeg
-WANTLIB=	c m stdc++ z jpeg.>=64
+LIB_DEPENDS=	graphics/jpeg
+WANTLIB=	c m stdc++ z jpeg>=64
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

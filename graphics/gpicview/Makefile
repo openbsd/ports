@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:14 espie Exp $
 
 COMMENT =	simple and fast image viewer for X
 
@@ -28,8 +28,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lxde/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	::x11/gtk+2
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS =	x11/gtk+2
+RUN_DEPENDS =	devel/desktop-file-utils
 MODULES +=      textproc/intltool
 
 USE_GMAKE =	yes

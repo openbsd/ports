@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/09 21:28:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/17 08:05:17 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =		::devel/libsigsegv \
-			:ffcall->=1.10p1:devel/ffcall
+LIB_DEPENDS =		devel/libsigsegv \
+			devel/ffcall>=1.10p1
 WANTLIB =		avcall c callback m ncurses readline sigsegv
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clisp/}
@@ -27,7 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 SEPARATE_BUILD=		simple
 

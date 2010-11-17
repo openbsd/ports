@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
@@ -26,12 +26,12 @@ CONFIGURE_STYLE =	gnu
 MODULES =	devel/gettext \
 		devel/gconf2
 
-LIB_DEPENDS =	::x11/gnome/libgnome \
-		::devel/libsoup \
-		::net/curl \
-		::graphics/goocanvas
+LIB_DEPENDS =	x11/gnome/libgnome \
+		devel/libsoup \
+		net/curl \
+		graphics/goocanvas
 
-RUN_DEPENDS =	::devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2

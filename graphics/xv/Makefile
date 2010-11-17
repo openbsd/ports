@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/24 21:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/17 08:05:16 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
@@ -21,12 +21,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Must buy license
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/jasper \
-		::graphics/tiff \
-		::graphics/png
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/jasper \
+		graphics/tiff \
+		graphics/png
 
-WANTLIB= X11 Xau Xdmcp c jasper.>=2 jpeg.>=62 m png.>=5 tiff.>=38 z
+WANTLIB= X11 Xau Xdmcp c jasper>=2 jpeg>=62 m png>=5 tiff>=38 z
 
 USE_GROFF =	Yes
 MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"

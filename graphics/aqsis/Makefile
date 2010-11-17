@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/27 13:25:01 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/17 08:05:12 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -34,13 +34,13 @@ WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt tiffxx
 
 MODULES=	devel/cmake
 
-RUN_DEPENDS=	::devel/desktop-file-utils
-BUILD_DEPENDS=	::textproc/libxslt \
-		::devel/bison
-LIB_DEPENDS=	:fltk->=1.1.7p2:x11/fltk \
-		::devel/boost \
-		::graphics/tiff \
-		::graphics/openexr
+RUN_DEPENDS=	devel/desktop-file-utils
+BUILD_DEPENDS=	textproc/libxslt \
+		devel/bison
+LIB_DEPENDS=	x11/fltk>=1.1.7p2 \
+		devel/boost \
+		graphics/tiff \
+		graphics/openexr
 
 NO_REGRESS=	Yes
 MODCMAKE_WANTCOLOR=No

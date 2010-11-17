@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -36,19 +36,19 @@ EXTRACT_SUFX =	.tgz
 MODULES =	devel/gettext \
 		textproc/intltool
 
-BUILD_DEPENDS =	::devel/m4 \
-		::x11/gnome/doc-utils
-RUN_DEPENDS =	::devel/desktop-file-utils \
-		::x11/gnome/yelp
-LIB_DEPENDS =	:gsl->=1.6:devel/gsl \
-		::x11/gnome/libgnomecanvas \
-		::x11/gnome/vfs2 \
-		::graphics/xmedcon \
-		:ffmpeg->=20100512:graphics/ffmpeg
+BUILD_DEPENDS =	devel/m4 \
+		x11/gnome/doc-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gnome/yelp
+LIB_DEPENDS =	devel/gsl>=1.6 \
+		x11/gnome/libgnomecanvas \
+		x11/gnome/vfs2 \
+		graphics/xmedcon \
+		graphics/ffmpeg>=20100512
 
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \

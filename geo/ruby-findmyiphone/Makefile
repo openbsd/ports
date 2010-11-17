@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:12 espie Exp $
 
 COMMENT=		Ruby library to physically locate iPhones
 
@@ -19,8 +19,8 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-mechanize-*:www/ruby-mechanize,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-json-*:converters/ruby-json,${FLAVOR} \
+RUN_DEPENDS=		www/ruby-mechanize,${FLAVOR} \
+			converters/ruby-json,${FLAVOR} \
 			${MODRUBY_ICONV_DEPENDS}
 
 MODRUBY_REGRESS=	rake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/09 09:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -17,15 +17,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ssl stdc++ wrap z jpeg.>=62 png.>=4 \
-			tiff.>=36 xml2.>=9
+WANTLIB=		c crypto m ssl stdc++ wrap z jpeg>=62 png>=4 \
+			tiff>=36 xml2>=9
 
-LIB_DEPENDS=		::graphics/jpeg \
-			::graphics/png \
-			::graphics/tiff \
-			::textproc/libxml
+LIB_DEPENDS=		graphics/jpeg \
+			graphics/png \
+			graphics/tiff \
+			textproc/libxml
 
-RUN_DEPENDS=		:netpbm-*:graphics/netpbm
+RUN_DEPENDS=		graphics/netpbm
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-threads \
@@ -37,7 +37,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
 			etcdir=${WRKINST}${PREFIX}/share/examples/dcmtk
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 
 NO_REGRESS=		Yes

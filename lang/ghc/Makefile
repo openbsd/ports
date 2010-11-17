@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/06 19:11:43 kili Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/17 08:05:17 espie Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -27,12 +27,12 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
-BUILD_DEPENDS =		::textproc/dblatex \
-			::textproc/docbook \
-			::textproc/docbook-xsl \
-			::textproc/libxslt
+BUILD_DEPENDS =		textproc/dblatex \
+			textproc/docbook \
+			textproc/docbook-xsl \
+			textproc/libxslt
 LIB_DEPENDS-doc =
-LIB_DEPENDS-main =	${LIB_DEPENDS} ::devel/gmp
+LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
 
@@ -63,7 +63,7 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
@@ -86,9 +86,9 @@ FAKE_FLAGS +=		CREATE_DATA="${INSTALL_DATA} /dev/null " \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-BUILD_DEPENDS +=	::devel/haddock,no_deps:patch
+BUILD_DEPENDS +=	devel/haddock,no_deps:patch
 
-REGRESS_DEPENDS =	::print/ghostscript/gnu
+REGRESS_DEPENDS =	print/ghostscript/gnu
 
 post-extract:
 # - Install a precompiled binary.

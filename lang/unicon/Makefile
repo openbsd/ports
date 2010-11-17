@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/17 08:05:18 espie Exp $
 
 # XXX crashes & hangs, to be dealt with
 NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc mips64 mips64el amd64 sparc64
@@ -25,9 +25,8 @@ WANTLIB=	X11 Xpm c gdbm m pthread-stubs xcb
 
 WRKDIST=	${WRKDIR}
 
-LIB_DEPENDS=	::databases/gdbm
+LIB_DEPENDS=	databases/gdbm
 
-USE_X11=	Yes
 
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd

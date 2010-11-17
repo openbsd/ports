@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/09 18:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,11 +22,11 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
-BUILD_DEPENDS=	:pear-*:www/pear \
+BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::graphics/ImageMagick
-RUN_DEPENDS=	:php5-core-*:www/php5/core
+LIB_DEPENDS=	graphics/ImageMagick
+RUN_DEPENDS=	www/php5/core
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt bz2 expat fontconfig freetype \
 		iconv jasper jbig jpeg lcms m png pthread-stubs tiff \
 		wmflite xcb xml2 z MagickCore MagickWand

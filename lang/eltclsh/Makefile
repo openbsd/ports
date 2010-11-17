@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/07 19:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/17 08:05:17 espie Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -32,8 +32,8 @@ FAKE_FLAGS =		"ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl"
 
 NO_REGRESS =		Yes
 
-LIB_DEPENDS +=		:tcl->=8.5,<8.6:lang/tcl/8.5
-LIB_DEPENDS +=		:tk->=8.5,<8.6:x11/tk/8.5
+LIB_DEPENDS +=		tcl->=8.5,<8.6:lang/tcl/8.5
+LIB_DEPENDS +=		tk->=8.5,<8.6:x11/tk/8.5
 
 WANTLIB +=		tcl85 tk85
 

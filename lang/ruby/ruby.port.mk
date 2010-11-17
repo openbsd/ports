@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.36 2010/11/16 21:50:27 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.37 2010/11/17 08:05:18 espie Exp $
 
 # ruby module
 
@@ -113,9 +113,9 @@ MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
 .else
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
-MODRUBY_RSPEC_DEPENDS =	:${MODRUBY_PKG_PREFIX}-rspec-*:devel/ruby-rspec,${MODRUBY_FLAVOR}
+MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 .  if ${MODRUBY_REV} == 1.8
-MODRUBY_RAKE_DEPENDS =	:ruby-rake-*:devel/ruby-rake
+MODRUBY_RAKE_DEPENDS =	devel/ruby-rake
 RSPEC=			${LOCALBASE}/bin/spec
 .  else
 RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
@@ -125,17 +125,17 @@ RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
 MODRUBY_REGRESS?=
 
 .if ${MODRUBY_REV} == jruby
-MODRUBY_RUN_DEPENDS=	::lang/jruby
+MODRUBY_RUN_DEPENDS=	lang/jruby
 .else
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
-MODRUBY_RUN_DEPENDS=	:${MODRUBY_PKGSPEC}:lang/ruby/${MODRUBY_REV}
+MODRUBY_RUN_DEPENDS=	${MODRUBY_PKGSPEC}:lang/ruby/${MODRUBY_REV}
 .endif
 
 MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 
 .if ${MODRUBY_REV} == 1.8
-MODRUBY_ICONV_DEPENDS=	:ruby-iconv->=1.8,<=1.9:lang/ruby/${MODRUBY_REV},-iconv
+MODRUBY_ICONV_DEPENDS=	ruby-iconv->=1.8,<=1.9:lang/ruby/${MODRUBY_REV},-iconv
 .else
 MODRUBY_ICONV_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 .endif
@@ -226,8 +226,8 @@ MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 # Ruby 1.9 and JRuby ship with ruby-gems
 .  if ${MODRUBY_REV} == 1.8
-BUILD_DEPENDS+=	:ruby-gems->=1.3.7p0:devel/ruby-gems
-RUN_DEPENDS+=	:ruby-gems->=1.3.7p0:devel/ruby-gems
+BUILD_DEPENDS+=	devel/ruby-gems>=1.3.7p0
+RUN_DEPENDS+=	devel/ruby-gems>=1.3.7p0
 .  endif
 
 # Just like all ruby C extensions should set SHARED_ONLY,

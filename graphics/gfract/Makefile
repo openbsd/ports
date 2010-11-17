@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:13 espie Exp $
 
 COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
@@ -26,7 +26,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs stdc++ xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 MODULES=		devel/gettext
 

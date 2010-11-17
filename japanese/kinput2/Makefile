@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/17 08:05:17 espie Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -27,12 +27,12 @@ FLAVOR?=	wnn
 USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mwnn}
-BUILD_DEPENDS+=	::japanese/Wnn
+BUILD_DEPENDS+=	japanese/Wnn
 .endif
 .if ${FLAVOR:L:Mcanna}
 PERMIT_PACKAGE_CDROM=	Canna prevents it
 WANTLIB += canna16
-LIB_DEPENDS=	::japanese/canna
+LIB_DEPENDS=	japanese/canna
 .endif
 
 PORT_DOCDIR=${PREFIX}/share/doc/kinput2

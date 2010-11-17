@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:15 espie Exp $
 
 COMMENT =		OpenEXR bindings for CTL
 DISTNAME =		openexr_ctl-1.0.1
@@ -21,8 +21,8 @@ WANTLIB += IlmImf IlmCtl IlmCtlMath IlmCtlSimd
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ampasctl/}
 
-LIB_DEPENDS =		::graphics/openexr \
-			::graphics/ctl
+LIB_DEPENDS =		graphics/openexr \
+			graphics/ctl
 
 SEPARATE_BUILD =	concurrent
 

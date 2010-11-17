@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/09 19:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:16 espie Exp $
 # $FreeBSD: ports/graphics/vid/Makefile,v 1.5 2001/02/21 07:48:56 roger Exp $
 
 COMMENT=	get images from USB cameras using the OV511(+) chipsets
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ovtvid-bsd/}
 
-LIB_DEPENDS=	::graphics/netpbm
+LIB_DEPENDS=	graphics/netpbm
 WANTLIB=	c m netpbm
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \

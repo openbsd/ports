@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/09 18:22:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:13 espie Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
@@ -20,8 +20,8 @@ MODULES =			textproc/intltool
 
 CONFIGURE_STYLE =		gnu
 
-LIB_DEPENDS =			::graphics/liblqr \
-				::graphics/gimp/stable
+LIB_DEPENDS =			graphics/liblqr \
+				graphics/gimp/stable
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype

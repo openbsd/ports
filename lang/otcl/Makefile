@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:18 espie Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	MIT Object Tcl
@@ -23,7 +23,7 @@ WANTLIB=	X11 Xext c m pthread-stubs tcl84 xcb tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
 WRKDIST=	${WRKDIR}/otcl-$V
 
-LIB_DEPENDS=    :tk->=8.4,<8.5:x11/tk/8.4
+LIB_DEPENDS=    tk->=8.4,<8.5:x11/tk/8.4
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.4/generic \
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.4/generic \
 		--x-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION}
 
-USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

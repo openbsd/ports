@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:12 espie Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -32,21 +32,21 @@ MODULES =	devel/cmake \
 		devel/gettext \
 		lang/python
 
-BUILD_DEPENDS =	::x11/py-qt4 \
-		:py-gdal-*:geo/gdal,-python \
-		::devel/bison
+BUILD_DEPENDS =	x11/py-qt4 \
+		geo/gdal,-python \
+		devel/bison
 
-RUN_DEPENDS =	::x11/py-qt4 \
-		:py-gdal-*:geo/gdal,-python \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	x11/py-qt4 \
+		geo/gdal,-python \
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
-		::devel/proj \
-		::x11/qt4 \
-		::geo/gdal \
-		::geo/geos \
-		::devel/gsl \
-		:postgresql-client-*:databases/postgresql
+		devel/proj \
+		x11/qt4 \
+		geo/gdal \
+		geo/geos \
+		devel/gsl \
+		databases/postgresql
 
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \

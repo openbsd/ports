@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:17 espie Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -24,7 +24,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
 CONFIGURE_STYLE = 	gnu
 USE_GMAKE = 		Yes
 USE_LIBTOOL = 		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS = 		Yes
 CONFIGURE_ENV +=	LDFLAGS='-pthread -L${LOCALBASE}/lib' \
 			CPPFLAGS=-I${LOCALBASE}/include \
@@ -40,8 +40,8 @@ MODGNU_CONFIG_GUESS_DIRS = 	${WRKDIST} \
 				${WRKDIST}/src/gc \
 				${WRKDIST}/src/gmp
 
-LIB_DEPENDS +=	::devel/gmp \
-		::devel/boehm-gc
+LIB_DEPENDS +=	devel/gmp \
+		devel/boehm-gc
 		
 WANTLIB +=	c gc gmp m pthread
 

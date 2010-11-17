@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.39 2010/10/26 14:29:26 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.40 2010/11/17 08:05:18 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -18,13 +18,13 @@ MODPY_VSPEC = >=${MODPY_VERSION},<2.7
 MODPYSPEC = python-${MODPY_VSPEC}
 
 .if ${MODPY_VERSION} < 2.6
-MODPY_JSON =		::devel/py-simplejson
+MODPY_JSON =		devel/py-simplejson
 .else
 MODPY_JSON =
 .endif
 
 MODPY_WANTLIB=		python${MODPY_VERSION}
-MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
+MODPY_RUN_DEPENDS=	${MODPYSPEC}:lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
 _MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
 
@@ -42,7 +42,7 @@ MODPY_PRE_BUILD_STEPS = @:
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-MODPY_SETUPUTILS_DEPEND?=:py-setuptools-*:devel/py-setuptools
+MODPY_SETUPUTILS_DEPEND?=devel/py-setuptools
 MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
 # The setuptools uses test target
@@ -64,7 +64,7 @@ _MODPY_USERBASE =	${WRKDIR}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VSPEC}:lang/python/${MODPY_VERSION},-tkinter
+MODPY_TKINTER_DEPENDS=	STEM-${MODPY_VSPEC}:lang/python/${MODPY_VERSION},-tkinter
 .endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}

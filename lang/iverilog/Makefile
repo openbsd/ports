@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:17 espie Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
@@ -21,7 +21,7 @@ WANTLIB += c m readline stdc++ termcap z
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		::devel/bison
+BUILD_DEPENDS=		devel/bison
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
