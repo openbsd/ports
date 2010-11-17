@@ -1,0 +1,102 @@
+$OpenBSD: patch-src_dates_gtk_c,v 1.1 2010/11/17 10:47:02 jasper Exp $
+
+Don't use deprecated and removed functions from libedataserver.
+GNOME bz #631081.
+
+--- src/dates_gtk.c.orig	Tue Jul 14 09:46:21 2009
++++ src/dates_gtk.c	Wed Nov 17 11:41:32 2010
+@@ -1016,7 +1016,6 @@ calendar_do_new_dialog (GtkWindow *parent, DatesData *
+ 			GtkTreeIter iter;
+ 			GError *error = NULL;
+ 			const gchar *relative_uri;
+-			guint32 new_colour;
+ 
+ #ifdef WITH_HILDON
+ 			GdkColor *hildon_color;
+@@ -1055,7 +1054,8 @@ calendar_do_new_dialog (GtkWindow *parent, DatesData *
+ 			source = e_source_new (name, relative_uri);
+ 
+ #ifdef USE_OWL
+-			new_colour = owl_colour_button_get_colour (OWL_COLOUR_BUTTON (color_button));
++            guint32 new_colour = owl_colour_button_get_colour (OWL_COLOUR_BUTTON (color_button));
++            e_source_set_color (source, new_colour);
+ #else
+ 
+ #ifdef WITH_HILDON
+@@ -1063,17 +1063,11 @@ calendar_do_new_dialog (GtkWindow *parent, DatesData *
+ #else
+ 			gtk_color_button_get_color (GTK_COLOR_BUTTON(color_button), &colour);
+ #endif
+-			new_colour = (guint8)(colour.red >> 8);
+-			new_colour <<= 8;
+-			new_colour |= (guint8)(colour.green >> 8);
+-			new_colour <<= 8;
+-			new_colour |= (guint8)(colour.blue >> 8);
+-			new_colour <<= 8;
++			gchar *n_color = gdk_color_to_string (&colour);
++            e_source_set_color_spec (source, n_color);
++            g_free(n_color);
+ #endif
+ 
+-			/* Set the colour */
+-			e_source_set_color (source, new_colour);
+-
+ 			/* Set the group for the source */
+ 			e_source_set_group (source, group);
+ 			e_source_group_add_source (group, source, 0);
+@@ -1169,7 +1163,6 @@ calendar_do_edit_dialog (GtkWindow *parent, ESource *s
+ 	ESourceGroup *group;
+ 
+ 	GdkColor colour;
+-	guint32 raw_colour;
+ 
+ 	const gchar *name = NULL;
+ 	const gchar *uri = NULL;
+@@ -1335,13 +1328,9 @@ calendar_do_edit_dialog (GtkWindow *parent, ESource *s
+ 	gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+ 
+ 	/* Get the colour from the the source */
+-	e_source_get_color (source, &raw_colour);
++	const gchar* spec = e_source_peek_color_spec(source);
++    gdk_color_parse(spec, &colour);
+ 
+-	/* Munge this into something usable */
+-	colour.red = (guint16)(((raw_colour & 0xff0000) >> 16) << 8);
+-	colour.green = (guint16)(((raw_colour & 0xff00) >> 8) << 8);
+-	colour.blue = (guint16)(((raw_colour & 0xff) << 8));
+-
+ 	/* Now we need to allocate the colour */
+ 	gdk_colormap_alloc_color (gdk_colormap_get_system (), &colour, TRUE, TRUE);
+ 
+@@ -1440,26 +1429,21 @@ calendar_do_edit_dialog (GtkWindow *parent, ESource *s
+ 			 * Next we need to pack the GDK colour into guint32
+ 			 * for eds
+ 			 */
+-			guint32 new_colour = 0;
+ 
+ 			GError *error = NULL;
+ #ifdef USE_OWL
+-			new_colour = owl_colour_button_get_colour (OWL_COLOUR_BUTTON (color_button));
++			guint32 new_colour = owl_colour_button_get_colour (OWL_COLOUR_BUTTON (color_button));
++            e_source_set_color (source, new_colour);
+ #else
+ #ifdef WITH_HILDON
+ 			hildon_color_button_get_color (HILDON_COLOR_BUTTON(color_button), &colour);
+ #else
+ 			gtk_color_button_get_color (GTK_COLOR_BUTTON(color_button), &colour);
+ #endif			
+-			new_colour = (guint8)(colour.red >> 8);
+-			new_colour <<= 8;
+-			new_colour |= (guint8)(colour.green >> 8);
+-			new_colour <<= 8;
+-			new_colour |= (guint8)(colour.blue >> 8);
+-			new_colour <<= 8;
++			gchar *n_color = gdk_color_to_string (&colour);
++            e_source_set_color_spec (source, n_color);
++            g_free(n_color);
+ #endif
+-			/* Update the colour */
+-			e_source_set_color (source, new_colour);
+ 
+ 			/* And the name */
+ 			e_source_set_name (source, (gtk_entry_get_text (GTK_ENTRY (name_entry))));

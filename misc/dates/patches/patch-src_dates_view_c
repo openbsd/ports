@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_dates_view_c,v 1.1 2010/11/17 10:47:02 jasper Exp $
+
+Don't use deprecated and removed functions from libedataserver.
+GNOME bz #631081.
+
+--- src/dates_view.c.orig	Fri Jul 17 16:32:15 2009
++++ src/dates_view.c	Wed Nov 17 11:41:32 2010
+@@ -4691,7 +4691,6 @@ dates_view_add_calendar (DatesView *view, ECal *ecal)
+ 	DatesViewPrivate *priv = DATES_VIEW_GET_PRIVATE (view);
+ 	DatesViewCalendar *cal;
+ 	ESource *source;
+-	guint32 colour;
+ /*	GError *error = NULL;*/
+ 	
+ 	g_return_if_fail (E_IS_CAL (ecal));
+@@ -4721,12 +4720,11 @@ dates_view_add_calendar (DatesView *view, ECal *ecal)
+ 	cal->text_gc = gdk_gc_new (
+ 		GDK_DRAWABLE (priv->main->window));
+ 
+-	if (e_source_get_color (source, &colour)) {
++    const gchar* spec = e_source_peek_color_spec (source);
++	if (spec) {
+ 		GdkColor gcolour, dgcolour, tgcolour;
+-		gcolour.red = ((colour & 0xFF0000) >> 16) * 0x101;
+-		gcolour.green = ((colour & 0xFF00) >> 8)  * 0x101;
+-		gcolour.blue = (colour & 0xFF) * 0x101;
+-
++		gdk_color_parse(spec, &gcolour);
++        
+ 		/* This is simplified sRGB -> LAB conversion; we do not need it
+ 		 * entirely precise, as we are only going to chose between
+ 		 * black or white text based on the L value.
