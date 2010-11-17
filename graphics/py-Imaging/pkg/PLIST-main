@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/11/15 20:57:10 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/17 18:37:25 ajacoutot Exp $
 @option no-default-conflict
 @conflict py-Imaging-*-python${MODPY_VERSION}
 @pkgpath graphics/py-Imaging
@@ -119,7 +119,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.pyc
-lib/python${MODPY_VERSION}/site-packages/PIL/PIL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/PaletteFile.py

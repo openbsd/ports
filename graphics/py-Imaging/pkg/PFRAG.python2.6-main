@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.python2.6-main,v 1.1 2010/09/03 12:34:56 sthen Exp $
+@comment $OpenBSD: PFRAG.python2.6-main,v 1.2 2010/11/17 18:37:25 ajacoutot Exp $
 @pkgpath graphics/py-Imaging,-main,python2.5
+lib/python${MODPY_VERSION}/site-packages/PIL/PIL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
