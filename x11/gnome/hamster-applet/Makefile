@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/16 15:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/17 15:30:47 ajacoutot Exp $
+
+BROKEN=			needs sqlite fts3 module which is not buildable on NO_SHARED_ARCHES
 
 COMMENT=		time tracker applet for GNOME
 BROKEN-sparc64=		waf stalls during build
