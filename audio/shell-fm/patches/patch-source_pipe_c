@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_pipe_c,v 1.1 2010/11/17 08:54:39 dcoppa Exp $
+--- source/pipe.c.orig	Wed Nov 17 09:47:10 2010
++++ source/pipe.c	Wed Nov 17 09:47:22 2010
+@@ -40,7 +40,7 @@ FILE * openpipe(const char * cmd, pid_t * cpid) {
+ 		close(fd[1]);
+ 		dup2(fd[0], 0);
+ 
+-		execl("/bin/sh", "sh", "-c", cmd, NULL);
++		execl("/bin/sh", "sh", "-c", cmd, (char *)NULL);
+ 	}
+ 
+ 	if(cpid != NULL)
