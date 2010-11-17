@@ -1,5 +1,5 @@
 TeX Live 2010 - Work in Progress (edd@)
-$OpenBSD: README,v 1.9 2010/11/09 13:38:22 edd Exp $
+$OpenBSD: README,v 1.10 2010/11/17 20:34:17 jasper Exp $
 -------------------------------------------------------------------
 
  * Get base compilers working:		done
@@ -17,6 +17,7 @@ $OpenBSD: README,v 1.9 2010/11/09 13:38:22 edd Exp $
    -> fix $HOME ls-R owned root bug:	done
    -> make fmtutil.cnf configs:		not needed this year
  * Implement remaining @xxx directives:	done
+ * Upgrade path from texlive2009
  * Test lots:
  * Link to build as print/texlive:
 
@@ -30,6 +31,9 @@ $OpenBSD: README,v 1.9 2010/11/09 13:38:22 edd Exp $
 
    At install/uninstall:
      Can't parse /usr/local/man/cat1/mendex.0 (not a manpage ?)
+
+ * /usr/local/share/texmf* are left behind from previous texlive which cause
+   a conflict with new texlive2010.
 
 --- EXTRA? ---
 
