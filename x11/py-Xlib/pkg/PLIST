@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/18 18:15:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/17 19:27:54 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/Xlib/
 lib/python${MODPY_VERSION}/site-packages/Xlib/X.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/X.pyc
@@ -19,8 +19,12 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/error.pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/record.py
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/record.pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/shape.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/shape.pyc
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xinerama.py
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xinerama.pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xtest.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xtest.pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/
@@ -107,6 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/icccm.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/icccm.pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/resource.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/resource.pyc
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.12-py${MODPY_VERSION}.egg-info
 share/doc/py-Xlib/
 share/doc/py-Xlib/index.html
 share/doc/py-Xlib/python-xlib_1.html
@@ -139,5 +144,6 @@ share/examples/py-Xlib/
 share/examples/py-Xlib/draw-proto.py
 share/examples/py-Xlib/draw.py
 share/examples/py-Xlib/profilex.py
+share/examples/py-Xlib/record_demo.py
 share/examples/py-Xlib/shapewin.py
 share/examples/py-Xlib/threadtest.py

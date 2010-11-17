@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/17 19:27:53 jasper Exp $
 
 COMMENT=		fully functional X client library for Python programs
 
-VERSION=		0.13
+VERSION=		0.14
 DISTNAME=		python-xlib-${VERSION}
 PKGNAME=		py-Xlib-${VERSION}
-REVISION=		2
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://python-xlib.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -21,8 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=python-xlib/}
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		::textproc/texi2html
-
+BUILD_DEPENDS=		textproc/texi2html
 
 TESTS=			events_be events_le rdb requests_be requests_le
 
