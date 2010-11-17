@@ -1,16 +1,16 @@
-#$OpenBSD: Makefile,v 1.36 2010/11/17 08:05:14 espie Exp $
+#$OpenBSD: Makefile,v 1.37 2010/11/17 09:48:24 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.12.0
-REVISION=	0
+GNOME_VERSION=	2.12.1
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/gthumb
 
-MAINTAINER=	Guillaume Protet <guillaume.protet@mortheres.info>	
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,10 +25,10 @@ WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sqlite3 tiff xcb xcb-render xcb-render-util
+WANTLIB += pthread-stubs sqlite3 tiff xcb xcb-render
 WANTLIB += xml2 z unique-1.0 gstinterfaces-0.10 soup-gnome-2.4 soup-2.4
-WANTLIB += gphoto2 gphoto2_port json-glib-1.0 gnutls proxy tasn1
-WANTLIB += clutter-glx-1.0 clutter-gtk-0.10
+WANTLIB += json-glib-1.0 gnutls proxy tasn1 stdc++ xcb-shm
+WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 exiv2
 
 MODULES=	x11/gnome \
 		devel/gettext \
@@ -38,7 +38,7 @@ LIB_DEPENDS=	devel/json-glib \
 		devel/libsoup,-gnome \
 		devel/libunique \
 		graphics/clutter/clutter-gtk \
-		graphics/libgphoto2 \
+		graphics/exiv2 \
 		multimedia/gstreamer-0.10/plugins-base
 RUN_DEPENDS=	misc/shared-mime-info
 
@@ -51,7 +51,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-scrollkeeper \
-		--disable-iptcdata \
-		--disable-libopenraw
+		--disable-libopenraw \
+		--disable-libbrasero \
+		--enable-libsoup \
+		--enable-gnome-keyring \
+		--enable-exiv2
 
 .include <bsd.port.mk>

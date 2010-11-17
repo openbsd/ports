@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/10/01 08:14:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/11/17 09:48:24 jasper Exp $
 %%SHARED%%
 @bin bin/gthumb
 include/gthumb-2.12/
@@ -107,6 +107,7 @@ lib/gthumb/extensions/comments.extension
 lib/gthumb/extensions/convert_format.extension
 lib/gthumb/extensions/desktop_background.extension
 lib/gthumb/extensions/edit_metadata.extension
+lib/gthumb/extensions/exiv2_tools.extension
 lib/gthumb/extensions/export_tools.extension
 lib/gthumb/extensions/facebook.extension
 lib/gthumb/extensions/file_manager.extension
@@ -134,6 +135,8 @@ lib/gthumb/extensions/libdesktop_background.a
 lib/gthumb/extensions/libdesktop_background.la
 lib/gthumb/extensions/libedit_metadata.a
 lib/gthumb/extensions/libedit_metadata.la
+lib/gthumb/extensions/libexiv2_tools.a
+lib/gthumb/extensions/libexiv2_tools.la
 lib/gthumb/extensions/libexport_tools.a
 lib/gthumb/extensions/libexport_tools.la
 lib/gthumb/extensions/libfacebook.a
@@ -728,6 +731,7 @@ share/gthumb/ui/comments-preferences.ui
 share/gthumb/ui/convert-format.ui
 share/gthumb/ui/crop-options.ui
 share/gthumb/ui/edit-comment-page.ui
+share/gthumb/ui/edit-exiv2-page.ui
 share/gthumb/ui/export-to-facebook.ui
 share/gthumb/ui/export-to-flickr.ui
 share/gthumb/ui/export-to-photobucket.ui
@@ -807,6 +811,7 @@ share/locale/az/LC_MESSAGES/gthumb.mo
 share/locale/be/LC_MESSAGES/gthumb.mo
 share/locale/bg/LC_MESSAGES/gthumb.mo
 share/locale/ca/LC_MESSAGES/gthumb.mo
+share/locale/ca@valencia/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
 share/locale/da/LC_MESSAGES/gthumb.mo
 share/locale/de/LC_MESSAGES/gthumb.mo

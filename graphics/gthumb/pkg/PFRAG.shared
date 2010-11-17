@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2010/10/01 08:14:15 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2010/11/17 09:48:24 jasper Exp $
 lib/gthumb/extensions/libbookmarks.so
 lib/gthumb/extensions/libcatalogs.so
 lib/gthumb/extensions/libchange_date.so
@@ -6,6 +6,7 @@ lib/gthumb/extensions/libcomments.so
 lib/gthumb/extensions/libconvert_format.so
 lib/gthumb/extensions/libdesktop_background.so
 lib/gthumb/extensions/libedit_metadata.so
+lib/gthumb/extensions/libexiv2_tools.so
 lib/gthumb/extensions/libexport_tools.so
 lib/gthumb/extensions/libfacebook.so
 lib/gthumb/extensions/libfile_manager.so
