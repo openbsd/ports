@@ -1,12 +1,12 @@
-$OpenBSD: patch-data_Makefile_in,v 1.5 2010/09/14 13:02:29 ajacoutot Exp $
---- data/Makefile.in.orig	Tue Sep 14 14:47:02 2010
-+++ data/Makefile.in	Tue Sep 14 14:58:42 2010
-@@ -452,7 +452,7 @@ uninstall-am: uninstall-desktopDATA uninstall-local un
- @INTLTOOL_DESKTOP_RULE@
+$OpenBSD: patch-data_Makefile_in,v 1.6 2010/11/17 11:41:23 ajacoutot Exp $
+--- data/Makefile.in.orig	Wed Nov 17 12:15:12 2010
++++ data/Makefile.in	Wed Nov 17 12:38:02 2010
+@@ -457,7 +457,7 @@ install-data-hook: update-icon-cache
+ uninstall-hook: update-icon-cache
  
  install-icons:			
 -	for size in 16x16 22x22 24x24 32x32 48x48 scalable; do mkdir --parents $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
 +	for size in 16x16 22x22 24x24 32x32 48x48 scalable; do mkdir -p $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
  
- 	install -m 644 $(srcdir)/pessulus-16.png $(DESTDIR)/$(datadir)/icons/hicolor/16x16/apps/pessulus.png 
- 	install -m 644 $(srcdir)/pessulus-22.png $(DESTDIR)/$(datadir)/icons/hicolor/22x22/apps/pessulus.png 
+ 	$(INSTALL_DATA) $(srcdir)/pessulus-16.png $(DESTDIR)/$(datadir)/icons/hicolor/16x16/apps/pessulus.png
+ 	$(INSTALL_DATA) $(srcdir)/pessulus-22.png $(DESTDIR)/$(datadir)/icons/hicolor/22x22/apps/pessulus.png
