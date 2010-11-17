@@ -1,16 +1,18 @@
-#$OpenBSD: Makefile,v 1.37 2010/11/17 09:48:24 jasper Exp $
+#$OpenBSD: Makefile,v 1.38 2010/11/17 09:51:34 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.12.1
 
+REVISION=	0
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/gthumb
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
