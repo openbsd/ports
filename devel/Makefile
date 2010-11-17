@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.854 2010/11/05 14:02:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.855 2010/11/17 22:46:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -377,6 +377,7 @@
      SUBDIR += p5-Class-Factory-Util
      SUBDIR += p5-Class-Generate
      SUBDIR += p5-Class-Handle
+     SUBDIR += p5-Class-ISA
      SUBDIR += p5-Class-Inner
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
