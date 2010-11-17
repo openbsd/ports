@@ -1,14 +1,15 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.7 2010/06/30 02:46:48 ajacoutot Exp $
---- common/platform.linux.h.orig	Mon May 31 19:28:57 2010
-+++ common/platform.linux.h	Tue Jun 15 16:26:32 2010
-@@ -63,8 +63,15 @@
+$OpenBSD: patch-common_platform_linux_h,v 1.8 2010/11/17 08:34:06 ajacoutot Exp $
+--- common/platform.linux.h.orig	Wed Oct 20 16:16:23 2010
++++ common/platform.linux.h	Tue Nov 16 19:15:54 2010
+@@ -63,8 +63,16 @@
  #include <dlfcn.h>
  #include <stddef.h>
  #include <libgen.h>
 +#if defined(__OpenBSD__)
 +#include <sys/endian.h>
++#include <sys/param.h>
 +#ifndef MAX_PATH
-+  #define MAX_PATH 1024
++  #define MAX_PATH PATH_MAX
 +#endif
 +#else
  #include <byteswap.h>
@@ -17,7 +18,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.7 2010/06/30 02:46:48 ajacoutot Exp 
  #include <errno.h>
  
  #include <string>
-@@ -659,7 +666,11 @@ time_t GetProcessTime();
+@@ -659,7 +667,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -29,7 +30,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.7 2010/06/30 02:46:48 ajacoutot Exp 
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -667,14 +678,18 @@ time_t GetProcessTime();
+@@ -667,14 +679,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

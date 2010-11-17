@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_soap_soapdefs_h,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/soap/soapdefs.h.orig	Mon Jun 28 23:56:18 2010
-+++ provider/soap/soapdefs.h	Mon Jun 28 23:58:26 2010
-@@ -2,12 +2,20 @@
+$OpenBSD: patch-provider_soap_soapdefs_h,v 1.2 2010/11/17 08:34:06 ajacoutot Exp $
+--- provider/soap/soapdefs.h.orig	Wed Oct 20 16:16:21 2010
++++ provider/soap/soapdefs.h	Tue Nov 16 19:14:12 2010
+@@ -2,12 +2,19 @@
  #define SOAPDEFS_H_
  
  /* we want soap to use strtod_l */
@@ -13,8 +13,7 @@ $OpenBSD: patch-provider_soap_soapdefs_h,v 1.1 2010/06/30 02:46:48 ajacoutot Exp
  
 +#ifdef __OpenBSD__ 
 +#include <sys/types.h>
-+#undef FD_SETSIZE
-+#define FD_SETSIZE 1024
++#include <sys/select.h>
 +#else
  #include <bits/types.h>
  #undef __FD_SETSIZE
