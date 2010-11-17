@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-kde,v 1.1.1.1 2010/11/14 23:46:38 robert Exp ${BV}0 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-kde,v 1.2 2010/11/17 14:41:17 robert Exp ${BV}0 11:03:07 robert Exp $
+@conflict openoffice-kde-*
 %%SHARED%%
 lib/libreoffice/basis${BV}/program/kde-open-url

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-i18n-ja,v 1.3 2010/11/17 14:14:42 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ja,v 1.4 2010/11/17 14:41:17 robert Exp $
+@conflict openoffice-i18n-ja-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ja/
 lib/libreoffice/basis${BV}/help/ja/default.css
