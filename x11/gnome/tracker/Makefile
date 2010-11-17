@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/17 20:40:16 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,9 +6,9 @@ GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.8.17
 
 # there is already audio/tracker, so this port has to live
-# as tracker-search.
-PKGNAME=	tracker-search-${VERSION}
-REVISION=	3
+# as meta-tracker.
+PKGNAME=	meta-tracker-${VERSION}
+REVISION=	4
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -121,7 +121,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		EXEMPI_LIBS="`pkg-config --libs exempi-2.0` -lstdc++"
 USE_GROFF =	Yes
 
-FAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/tracker-search/
+FAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/miners/fs/tracker-miner-applications.c

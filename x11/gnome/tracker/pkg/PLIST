@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/09/02 15:33:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/11/17 20:40:16 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -148,16 +148,16 @@ share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.EMails.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker1.service
-share/examples/tracker-search/
-share/examples/tracker-search/xdg/
+share/examples/meta-tracker/
+share/examples/meta-tracker/xdg/
 @sample ${SYSCONFDIR}/xdg/
-share/examples/tracker-search/xdg/autostart/
+share/examples/meta-tracker/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/tracker-search/xdg/autostart/tracker-miner-fs.desktop
+share/examples/meta-tracker/xdg/autostart/tracker-miner-fs.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs.desktop
-share/examples/tracker-search/xdg/autostart/tracker-status-icon.desktop
+share/examples/meta-tracker/xdg/autostart/tracker-status-icon.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-status-icon.desktop
-share/examples/tracker-search/xdg/autostart/tracker-store.desktop
+share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-store.desktop
 share/icons/hicolor/16x16/apps/tracker.png
 share/icons/hicolor/22x22/apps/tracker.png
