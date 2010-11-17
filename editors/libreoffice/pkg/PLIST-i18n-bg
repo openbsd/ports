@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-bg,v 1.1.1.1 2010/11/14 23:46:35 robert Exp $
+@comment $OpenBSD: PLIST-i18n-bg,v 1.2 2010/11/17 13:30:58 robert Exp $
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/bg/
 lib/libreoffice/basis${BV}/help/bg/default.css
@@ -276,11 +276,11 @@ lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_bg
 lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_bg
 lib/libreoffice/share/extensions/presenter-screen/help/bg/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/caption/
-@comment lib/libreoffice/share/extensions/presenter-screen/help/bg/caption/com.sun.PresenterScreen-openbsd_x86_64%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/bg/com.sun.PresenterScreen-openbsd_x86_64/
-lib/libreoffice/share/extensions/presenter-screen/help/bg/com.sun.PresenterScreen-openbsd_x86_64/presenter.xhp
+@comment lib/libreoffice/share/extensions/presenter-screen/help/bg/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
+lib/libreoffice/share/extensions/presenter-screen/help/bg/com.sun.PresenterScreen-openbsd_${OA}/
+lib/libreoffice/share/extensions/presenter-screen/help/bg/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/content/
-@comment lib/libreoffice/share/extensions/presenter-screen/help/bg/content/com.sun.PresenterScreen-openbsd_x86_64%2Fpresenter.xhp
+@comment lib/libreoffice/share/extensions/presenter-screen/help/bg/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 lib/libreoffice/share/extensions/presenter-screen/help/bg/help.db_
 lib/libreoffice/share/extensions/presenter-screen/help/bg/help.ht_
 lib/libreoffice/share/extensions/presenter-screen/help/bg/help.jar

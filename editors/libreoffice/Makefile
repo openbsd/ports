@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/14 23:46:34 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/17 13:30:58 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -217,7 +217,13 @@ CONFIGURE_ARGS+=--enable-symbols \
 
 MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
 
-SUBST_VARS+=	BV
+.if ${MACHINE_ARCH} == "i386"
+OA=		x86
+.elif ${MACHINE_ARCH} == "amd64"
+OA=		x86_64
+.endif
+
+SUBST_VARS+=	BV OA
 
 pre-patch:
 	@mkdir -p ${WRKSRC}/build/libreoffice

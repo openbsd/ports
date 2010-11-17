@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/11/14 23:46:39 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/11/17 13:30:58 robert Exp $
 %%SHARED%%
 bin/oobase${BV}
 bin/oocalc${BV}
@@ -2339,11 +2339,11 @@ lib/libreoffice/share/extensions/presenter-screen/help/
 lib/libreoffice/share/extensions/presenter-screen/help/component.txt
 lib/libreoffice/share/extensions/presenter-screen/help/en-US/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/caption/
-@comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/caption/com.sun.PresenterScreen-openbsd_x86_64%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/en-US/com.sun.PresenterScreen-openbsd_x86_64/
-lib/libreoffice/share/extensions/presenter-screen/help/en-US/com.sun.PresenterScreen-openbsd_x86_64/presenter.xhp
+@comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
+lib/libreoffice/share/extensions/presenter-screen/help/en-US/com.sun.PresenterScreen-openbsd_${OA}/
+lib/libreoffice/share/extensions/presenter-screen/help/en-US/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/content/
-@comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/content/com.sun.PresenterScreen-openbsd_x86_64%2Fpresenter.xhp
+@comment lib/libreoffice/share/extensions/presenter-screen/help/en-US/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 lib/libreoffice/share/extensions/presenter-screen/help/en-US/help.db_
 lib/libreoffice/share/extensions/presenter-screen/help/en-US/help.ht_
 lib/libreoffice/share/extensions/presenter-screen/help/en-US/help.jar
