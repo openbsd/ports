@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-es,v 1.2 2010/11/17 13:30:58 robert Exp $
+@comment $OpenBSD: PLIST-i18n-es,v 1.3 2010/11/17 14:14:42 robert Exp $
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/es/
 lib/libreoffice/basis${BV}/help/es/default.css
@@ -64,7 +64,6 @@ lib/libreoffice/basis${BV}/presets/config/hatching_es.soh
 lib/libreoffice/basis${BV}/presets/config/modern_es.sog
 lib/libreoffice/basis${BV}/presets/config/palette_es.soc
 lib/libreoffice/basis${BV}/presets/config/styles_es.sod
-lib/libreoffice/basis${BV}/program/liblocaledata_es.so
 lib/libreoffice/basis${BV}/program/resource/abpes.res
 lib/libreoffice/basis${BV}/program/resource/acces.res
 lib/libreoffice/basis${BV}/program/resource/adabasuies.res

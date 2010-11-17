@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2010/11/14 23:46:35 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2010/11/17 14:14:42 robert Exp $
 lib/libreoffice/basis${BV}/program/basprovob.uno.so
 lib/libreoffice/basis${BV}/program/canvasfactory.uno.so
 lib/libreoffice/basis${BV}/program/cmdmail.uno.so
@@ -67,6 +67,7 @@ lib/libreoffice/basis${BV}/program/libdbtoolsob.so
 lib/libreoffice/basis${BV}/program/libdbuob.so
 lib/libreoffice/basis${BV}/program/libdeploymentmiscob.so
 lib/libreoffice/basis${BV}/program/libdesktop_detectorob.so
+lib/libreoffice/basis${BV}/program/libdict_ja.so
 lib/libreoffice/basis${BV}/program/libdict_zh.so
 lib/libreoffice/basis${BV}/program/libdrawinglayerob.so
 lib/libreoffice/basis${BV}/program/libeditengob.so
@@ -123,6 +124,7 @@ lib/libreoffice/basis${BV}/program/liblegacy_binfiltersob.so
 lib/libreoffice/basis${BV}/program/liblngob.so
 lib/libreoffice/basis${BV}/program/liblnthob.so
 lib/libreoffice/basis${BV}/program/liblocaledata_en.so
+lib/libreoffice/basis${BV}/program/liblocaledata_es.so
 lib/libreoffice/basis${BV}/program/liblocaledata_euro.so
 lib/libreoffice/basis${BV}/program/liblocaledata_others.so
 lib/libreoffice/basis${BV}/program/liblogob.so
