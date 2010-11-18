@@ -1,38 +1,21 @@
-$OpenBSD: patch-configure,v 1.11 2010/09/27 12:12:41 ajacoutot Exp $
---- configure.orig	Sun Sep 26 20:52:21 2010
-+++ configure	Mon Sep 27 08:38:09 2010
-@@ -19953,7 +19953,6 @@ fi
+$OpenBSD: patch-configure,v 1.12 2010/11/18 16:44:33 jasper Exp $
+
+Stupid configure is stupid, just work around the mess by setting
+the values we know are correct.
+
+--- configure.orig	Thu Nov 18 17:08:08 2010
++++ configure	Thu Nov 18 17:11:23 2010
+@@ -20110,6 +20110,13 @@ $as_echo "$as_me: BDB backend not used" >&6;}
+ 	fi
+     fi
  
- 
- case $host_cpu in
--x86_64* | sparc64* | s390x* | ppc64* | powerpc64* ) lib="lib64";;
- *) lib="lib";;
- esac
- 
-@@ -20010,7 +20009,6 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
- 				BDB_LIBS="-L${bdbdir}/bin -ldb51"
- 				break
- 			fi
--
- 			if test $platform_win32 = no -a -f $d/include/db.h -a -f $d/$lib/libdb$linklibext
- 			then
- 				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found Berkeley DB in $d" >&5
-@@ -20024,8 +20022,7 @@ $as_echo "#define HAVE_BDB 1" >>confdefs.h
- 				BDB_LIBS="-L${bdbdir}/${lib} -ldb"
- 				break
- 			fi
--			if test $platform_win32 = no -a -f $d/include/db.h -a -f $d/lib/libdb$linklibext
--			then
-+			if [ $platform_win32 == "no" ]; then
- 				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found Berkeley DB in $d" >&5
- $as_echo "found Berkeley DB in $d" >&6; }
- 
-@@ -20156,7 +20153,7 @@ then
- $as_echo_n "checking for ODBC files... " >&6; }
- 	for d in $dir /usr /usr/local
- 	do
--		if test -f $d/$lib/libodbc$linklibext -a -f $d/include/sql.h
-+		if test -f $d/$lib/libodbc$linklibext* -a -f $d/include/sql.h
- 		then
- 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found ODBC in $d" >&5
- $as_echo "found ODBC in $d" >&6; }
++# XXX
++bdb_found=yes
++BDB_CFLAGS=-I${bdbdir}/include/db4
++BDB_LIBS="-L${bdbdir}/lib -ldb"
++BDB_LIB="-ldb"
++BDB_DIR="$bdbdir"
++
+      if test "$bdb_found" = "yes"; then
+   BDB_TRUE=
+   BDB_FALSE='#'

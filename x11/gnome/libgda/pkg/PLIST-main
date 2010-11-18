@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/09/27 12:12:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/11/18 16:44:33 jasper Exp $
 @conflict libgda-db4-*
+@pkgpath x11/gnome/libgda,-odbc
+@pkgpath x11/gnome/libgda,-ldap
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
 bin/gda-list-server-op
@@ -131,6 +133,8 @@ lib/libgda-${GDA_MAJOR}.la
 lib/libgda-${GDA_MAJOR}/providers/
 lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
+lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.la
+lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
 lib/libgda-${GDA_MAJOR}/providers/libgda-web.la
@@ -142,6 +146,7 @@ lib/libgda-xslt-${GDA_MAJOR}.la
 lib/pkgconfig/libgda-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-bdb-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-report-${GDA_MAJOR}.pc
+lib/pkgconfig/libgda-sqlcipher-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-sqlite-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-web-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-xslt-${GDA_MAJOR}.pc
@@ -487,6 +492,18 @@ share/libgda-${GDA_MAJOR}/postgres_specs_create_user.xml
 share/libgda-${GDA_MAJOR}/postgres_specs_drop_role.xml
 share/libgda-${GDA_MAJOR}/postgres_specs_drop_user.xml
 share/libgda-${GDA_MAJOR}/server_operation.glade
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_add_column.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_auth.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_db.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_index.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_table.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_view.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_drop_db.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_drop_index.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_drop_table.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_drop_view.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_dsn.xml
+share/libgda-${GDA_MAJOR}/sqlcipher_specs_rename_table.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_add_column.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_create_db.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_create_index.xml
@@ -513,6 +530,7 @@ share/libgda-${GDA_MAJOR}/web_specs_dsn.xml
 share/locale/ar/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/az/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ca/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/ca@valencia/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/cs/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/da/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/de/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
