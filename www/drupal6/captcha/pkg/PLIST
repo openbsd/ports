@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/21 09:01:42 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/11/18 13:38:39 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}captcha/
@@ -40,6 +40,7 @@ ${DRUPAL_MODS}captcha/translations/fi.po
 ${DRUPAL_MODS}captcha/translations/fr.po
 ${DRUPAL_MODS}captcha/translations/he.po
 ${DRUPAL_MODS}captcha/translations/hu.po
+${DRUPAL_MODS}captcha/translations/id.po
 ${DRUPAL_MODS}captcha/translations/it.po
 ${DRUPAL_MODS}captcha/translations/lt.po
 ${DRUPAL_MODS}captcha/translations/nl.po
