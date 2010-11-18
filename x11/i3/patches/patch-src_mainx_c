@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_mainx_c,v 1.1 2010/11/18 12:20:54 dcoppa Exp $
+--- src/mainx.c.orig	Wed Jun  9 09:58:15 2010
++++ src/mainx.c	Thu Nov 18 12:16:59 2010
+@@ -526,17 +526,18 @@ int main(int argc, char *argv[], char *env[]) {
+         translate_keysyms();
+         grab_all_keys(conn, false);
+ 
+-        int randr_base;
++        int randr_base = -1;
+         if (force_xinerama) {
+                 initialize_xinerama(conn);
+         } else {
+                 DLOG("Checking for XRandR...\n");
+                 initialize_randr(conn, &randr_base);
+ 
+-                xcb_event_set_handler(&evenths,
+-                                      randr_base + XCB_RANDR_SCREEN_CHANGE_NOTIFY,
+-                                      handle_screen_change,
+-                                      NULL);
++                if (randr_base != -1)
++                    xcb_event_set_handler(&evenths,
++                                          randr_base + XCB_RANDR_SCREEN_CHANGE_NOTIFY,
++                                          handle_screen_change,
++                                          NULL);
+         }
+ 
+         xcb_flush(conn);
