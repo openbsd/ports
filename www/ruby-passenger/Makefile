@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 23:47:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/18 14:16:47 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	Nginx module for deploying Ruby applications
 
 DISTNAME =	passenger-3.0.0
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/
@@ -27,6 +28,7 @@ LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		::devel/ruby-rake \
 			::devel/ruby-fastthread \
+			::net/curl \
 			::www/ruby-rack
 
 PORTHOME =		${WRKDIR}
