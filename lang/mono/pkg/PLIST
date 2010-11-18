@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/10/15 16:21:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/11/18 22:40:16 robert Exp $
 %%SHARED%%
 bin/al
 bin/al2
@@ -111,6 +111,7 @@ include/mono-2.0/mono/metadata/threads.h
 include/mono-2.0/mono/metadata/tokentype.h
 include/mono-2.0/mono/metadata/verify.h
 include/mono-2.0/mono/utils/
+include/mono-2.0/mono/utils/mono-dl-fallback.h
 include/mono-2.0/mono/utils/mono-error.h
 include/mono-2.0/mono/utils/mono-logger.h
 include/mono-2.0/mono/utils/mono-publib.h
