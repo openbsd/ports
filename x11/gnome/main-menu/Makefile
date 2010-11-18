@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/26 09:13:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/18 20:38:17 jasper Exp $
 
 COMMENT=	alternative applications/documents menu for GNOME
 
 GNOME_PROJECT=	gnome-main-menu
 GNOME_VERSION=	0.9.15
 
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
