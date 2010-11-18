@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/15 10:39:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/18 11:42:22 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/
 ${DRUPAL_MODS}masquerade/
 @comment ${DRUPAL_MODS}masquerade/.cvsignore
 ${DRUPAL_MODS}masquerade/LICENSE.txt
