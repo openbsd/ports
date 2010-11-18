@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/18 21:27:23 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -29,35 +29,28 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-QT4INC=
-
 PSEUDO_FLAVORS=no_qt no_qt4
-MULTI_PACKAGES=-main
-FLAVOR-arm=no_qt4
-FLAVOR-powerpc=no_qt4
-FLAVOR?=${FLAVOR-${MACHINE_ARCH}}
+FLAVOR?=
 
-NOT_FOR_ARCHS-qt4 = arm powerpc
+MULTI_PACKAGES=-main
 
 cWANTLIB=	expat freetype fontconfig jpeg m z stdc++
 
-CXXFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
 .if empty(FLAVOR:L:Mno_qt)
 MULTI_PACKAGES+=-qt
 MODULES+=	x11/qt3 converters/libiconv
-CXXFLAGS+=	-I${MODQT4_INCDIR}
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt
 .endif
 
+NOT_FOR_ARCHS-qt4 = arm
 .if empty(FLAVOR:L:Mno_qt4)
 MULTI_PACKAGES+=-qt4
 .endif
 
-.if ${MULTI_PACKAGES:L:M-qt4} && ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "powerpc"
+.if ${MULTI_PACKAGES:L:M-qt4} && ${MACHINE_ARCH} != "arm"
 MODULES+=	x11/qt4 converters/libiconv
-CXXFLAGS+=	-I${MODQT3_INCDIR}
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
@@ -96,11 +89,11 @@ CONFIGURE_ARGS+= --enable-xpdf-headers \
 		--disable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${QT4INC}" \
-		CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
 .include <bsd.port.mk>
