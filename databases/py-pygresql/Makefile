@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/18 20:48:03 benoit Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -6,10 +6,11 @@ MODPY_EGG_VERSION =	4.0
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
+REVISION =		0
 
 HOMEPAGE =		http://www.pygresql.org/
 
-MAINTAINER =		Laurence Tratt <laurie@tratt.net>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
