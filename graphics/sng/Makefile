@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/18 15:47:48 jasper Exp $
 
 COMMENT=		PNG to ASCII compiler and decompiler
 
-DISTNAME=		sng-1.0.1
-REVISION =		1
+DISTNAME=		sng-1.0.2
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sng/}
 
 HOMEPAGE=		http://sng.sourceforge.net/
-MAINTAINER=		Thorsten Glaser <tg@66h.42h.de>
 
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m c z png
 
 LIB_DEPENDS=		graphics/png
-USE_GMAKE=		yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu

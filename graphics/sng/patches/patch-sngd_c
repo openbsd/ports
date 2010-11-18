@@ -1,7 +1,7 @@
-$OpenBSD: patch-sngd_c,v 1.1 2010/05/22 14:58:36 espie Exp $
---- sngd.c.orig	Sat May 22 16:55:39 2010
-+++ sngd.c	Sat May 22 16:57:33 2010
-@@ -29,8 +29,8 @@ static char *rendering_intent[] = {
+$OpenBSD: patch-sngd_c,v 1.2 2010/11/18 15:47:48 jasper Exp $
+--- sngd.c.orig	Sat Nov 15 20:25:10 2003
++++ sngd.c	Thu Nov 18 16:44:39 2010
+@@ -30,8 +30,8 @@ static char *rendering_intent[] = {
  };
  
  static char *current_file;
