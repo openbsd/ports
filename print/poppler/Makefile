@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/18 21:27:23 kili Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/18 22:30:04 sthen Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -9,6 +9,7 @@ V=		0.14.4
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
+REVISION-main=	0
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
@@ -73,8 +74,8 @@ WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 gdk_pixbuf-2.0 openjpeg \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo pcre png \
-		pthread-stubs xcb xcb-render xcb-render-util gdk-x11-2.0 lcms \
-		${MODGETTEXT_WANTLIB}
+		pthread-stubs xcb xcb-render gdk-x11-2.0 lcms GL Xxf86vm \
+		drm xcb-shm ${MODGETTEXT_WANTLIB}
 WANTLIB-qt=	${cWANTLIB} lcms openjpeg xml2 poppler png ${MODQT3_WANTLIB} \
 		${MODLIBICONV_WANTLIB}
 WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
