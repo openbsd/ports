@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/18 15:34:41 jasper Exp $
 
 COMMENT =	X11 pixel color grabber
 
-DISTNAME =	xoris-0.1d
-REVISION =	0
+DISTNAME =	xoris-0.1e
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://gromnizki.unixdev.net/
+HOMEPAGE =	http://xoris.sf.net/
 
-MASTER_SITES =	${HOMEPAGE}soft/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xoris/}
 
 # MIT/X license
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 c pthread-stubs xcb
+WANTLIB =	X11 c
 
 CONFIGURE_STYLE = imake
 
