@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/18 12:03:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	XMMS input plugin to play Speex files
 V=		0.9.2b
 DISTNAME=	speex-xmms-$V
 PKGNAME=	xmms-speex-$V
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -22,8 +22,9 @@ MASTER_SITES=	http://jzb.rapanden.dk/pub/
 
 LIB_DEPENDS=	audio/xmms \
 		audio/speex
-WANTLIB=	X11 Xext Xi gdk glib gmodule gtk iconv intl m ogg \
-		xmms>=4 speex>=5
+WANTLIB=	X11 Xext Xi gdk glib gmodule gtk m ogg xmms>=4 speex>=5
+
+MODULES +=	devel/gettext
 
 WRKDIST=	${WRKDIR}/speex-xmms
 MAKE_FLAGS=	CC="${CC}" \

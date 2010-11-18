@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/15 12:44:20 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/18 12:03:28 jasper Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-REVISION =	9
+REVISION =	10
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -20,7 +20,7 @@ FLAVORS =	debug
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv idn intl jpeg m pcre
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 idn jpeg m pcre
 WANTLIB += pcreposix png pthread stdc++ usb util xml2 z
 WANTLIB += pthread-stubs xcb lib/qt3/qt-mt>=3.33 konqsidebarplugin
 WANTLIB += kdecore>=6 DCOP khtml kwalletclient kdefx kdeprint
@@ -42,7 +42,7 @@ LIB_DEPENDS +=	x11/kde/libs3 \
 SHARED_LIBS +=	amarok               0.0      # .0.0
 SHARED_LIBS +=	http11               0.0      # .0.0
 
-MODULES =		x11/kde lang/ruby
+MODULES =		x11/kde lang/ruby devel/gettext
 MODKDE_VERSION =	3.5.7
 MODRUBY_BUILDDEP=	No
 CONFIGURE_STYLE =	autoconf

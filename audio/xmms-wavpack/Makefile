@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/18 12:03:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XMMS input plugin for playing WavPack files
 
 DISTNAME=	xmms-wavpack-1.0.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.wavpack.com/
 
@@ -15,8 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk iconv
-WANTLIB += intl m pthread-stubs stdc++ xcb wavpack xmms
+WANTLIB += X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk
+WANTLIB += m pthread-stubs stdc++ xcb wavpack xmms
+
+MODULES +=	devel/gettext
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.bz2
