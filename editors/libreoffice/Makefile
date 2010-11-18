@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 14:14:42 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/18 19:17:33 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -151,7 +151,7 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
 		${MODGCONF2_WANTLIB}
-WANTLIB-main+=	GL Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
+WANTLIB-main+=	GL GLU Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils
@@ -161,7 +161,9 @@ RUN_DEPENDS-kde=	editors/libreoffice
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			x11/kde/libs3
 WANTLIB-kde=		${MODQT_WANTLIB} \
-			m stdc++
+			X11 c m pthread stdc++ \
+			lib/kde3/kabc lib/kde3/kdecore \
+			lib/kde3/kdeui lib/kde3/kio
 
 .if !${FLAVOR:L:Mno_java}
 MODULES+=		java
@@ -191,6 +193,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 CONFIGURE_ARGS=	--disable-post-install-scripts \
 		--enable-kde \
+		--enable-opengl \
 		--with-distro=LibreOfficeOpenBSD \
 		--with-docdir=${PREFIX}/share/doc/libreoffice \
 		--with-gnu-tar=${LOCALBASE}/bin/gtar \
@@ -214,7 +217,7 @@ CONFIGURE_ARGS+=--enable-symbols \
 		--enable-debug
 .endif
 
-MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
+MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}" VERBOSE=true
 
 .if ${MACHINE_ARCH} == "i386"
 OA=		x86

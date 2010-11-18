@@ -1,2 +1,6 @@
-@comment $OpenBSD: PFRAG.shared-kde,v 1.1.1.1 2010/11/14 23:46:35 robert Exp $
+@comment $OpenBSD: PFRAG.shared-kde,v 1.2 2010/11/18 19:17:34 robert Exp $
 lib/libreoffice/basis${BV}/program/kdebe1.uno.so
+lib/libreoffice/basis${BV}/program/fps_kde.uno.so
+lib/libreoffice/basis${BV}/program/libkab1.so
+lib/libreoffice/basis${BV}/program/libkabdrv1.so
+lib/libreoffice/basis${BV}/program/libvclplug_kdeob.so
