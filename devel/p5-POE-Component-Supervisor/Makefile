@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/18 19:19:26 jasper Exp $
 
 COMMENT=		Erlang inspired babysitting
 
-DISTNAME=		POE-Component-Supervisor-0.05
+DISTNAME=		POE-Component-Supervisor-0.07
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=		cpan
 USE_GROFF =		Yes
 
-RUN_DEPENDS=		devel/p5-POE-API-Peek \
+RUN_DEPENDS=		devel/p5-Devel-PartialDump \
+			devel/p5-POE-API-Peek \
 			devel/p5-MooseX-POE \
 			devel/p5-MooseX-LogDispatch \
 			devel/p5-Log-Dispatch-Config-TestLog \
