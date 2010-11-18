@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/18 10:41:56 sthen Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
 GNOME_VERSION=		2.6.4
 GNOME_PROJECT=		libglade
 PKGNAME=		libglade2-${GNOME_VERSION}
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=	glade-2.0            1.0      # .0.8
 
 CATEGORIES=		devel
@@ -22,8 +22,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread-stubs xcb z gthread-2.0 xcb-render xcb-render-util \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 xml2>=7
+		pthread-stubs xcb z gthread-2.0 xcb-render gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gtk-x11-2.0 xml2>=7 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			lang/python \
