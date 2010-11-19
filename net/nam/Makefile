@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/19 22:31:35 espie Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	UCB/LBNL Network Animator
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext c m otcl pthread-stubs stdc++ tcl84 tk84 xcb z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:tclcl->=1.0b13p0:devel/tclcl
+RUN_DEPENDS=	devel/tclcl>=1.0b13p0
 
 WRKDIST=	${WRKDIR}/nam-$V
 

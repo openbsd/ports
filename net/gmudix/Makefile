@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=		GNOME MUD/Moo Client
 
@@ -25,8 +25,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
 
-LIB_DEPENDS=		::devel/glib2 \
-			::x11/gtk+2
+LIB_DEPENDS=		devel/glib2 \
+			x11/gtk+2
 
 MODULES=		devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:33 espie Exp $
 
 COMMENT =		graphical network monitor
 
@@ -37,13 +37,13 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS =		::textproc/rarian
-RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =		::x11/gtk+2 \
-			::devel/libglade2 \
-			::x11/gnome/libgnomeui
+BUILD_DEPENDS =		textproc/rarian
+RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		x11/gtk+2 \
+			devel/libglade2 \
+			x11/gnome/libgnomeui
 
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

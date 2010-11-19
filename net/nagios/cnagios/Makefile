@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:35 espie Exp $
 
 COMMENT =		console interface for nagios
 
@@ -21,7 +21,7 @@ MASTER_SITES =		ftp://noc.hep.wisc.edu/src/cnagios/ \
 
 NO_REGRESS =		Yes
 
-RUN_DEPENDS =		:nagios->=3.0:net/nagios/nagios
+RUN_DEPENDS =		net/nagios/nagios>=3.0
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-nagios-data=3 \
 			--with-etc-dir="${SYSCONFDIR}/cnagios" \

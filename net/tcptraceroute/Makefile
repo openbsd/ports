@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		traceroute implementation using TCP packets
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pcap lib/libnet-1.1/net.=11
+WANTLIB=		c pcap lib/libnet-1.1/net=11
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libnet=${PREFIX} \
@@ -24,12 +24,12 @@ CONFIGURE_ARGS=		--with-libnet=${PREFIX} \
 
 MASTER_SITES=		http://michael.toren.net/code/tcptraceroute/
 
-LIB_DEPENDS=		:libnet->=1.1,<1.2:net/libnet/1.1
+LIB_DEPENDS=		libnet->=1.1,<1.2:net/libnet/1.1
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 

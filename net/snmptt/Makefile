@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/22 17:35:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		SNMP trap handler written
 
@@ -22,8 +22,8 @@ PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
-RUN_DEPENDS=		::devel/p5-Config-IniFiles \
-			::net/net-snmp
+RUN_DEPENDS=		devel/p5-Config-IniFiles \
+			net/net-snmp
 
 DOC_DIR=		${PREFIX}/share/doc/snmptt
 EX_DIR= 		${PREFIX}/share/examples/snmptt

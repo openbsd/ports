@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/25 12:38:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -17,10 +17,10 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=           No
 
-BUILD_DEPENDS=		:gobject-introspection->=0.9.12p0:devel/gobject-introspection \
-			::lang/vala \
-			::textproc/libxslt
-LIB_DEPENDS=		::x11/dbus-glib
+BUILD_DEPENDS=		devel/gobject-introspection>=0.9.12p0 \
+			lang/vala \
+			textproc/libxslt
+LIB_DEPENDS=		x11/dbus-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/12 21:03:45 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:32 espie Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
@@ -24,7 +24,7 @@ NO_REGRESS =	Yes
 
 CONFIGURE_STYLE = 	gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config
-BUILD_DEPENDS =		::devel/bison
+BUILD_DEPENDS =		devel/bison
 
 MAKE_FLAGS =		CCOPT=
 CFLAGS +=		-DSYSCONFDIR=\\\"${SYSCONFDIR}\\\"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/22 19:40:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	presents a DAAP share as a VFS
 
@@ -14,9 +14,9 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Class-Accessor-*:devel/p5-Class-Accessor \
-		:p5-Net-DAAP-Client-*:net/p5-Net-DAAP-Client \
-		:p5-Filesys-Virtual-Plain-*:sysutils/p5-Filesys-Virtual-Plain
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		net/p5-Net-DAAP-Client \
+		sysutils/p5-Filesys-Virtual-Plain
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 post-install:

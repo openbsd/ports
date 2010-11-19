@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/03 16:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	libnetdude plugin for tcp connection tracking
 
@@ -11,10 +11,10 @@ HOMEPAGE=	http://netdude.sourceforge.net/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-RUN_DEPENDS=	::net/libnetdude/libnetdude
+RUN_DEPENDS=	net/libnetdude/libnetdude
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/libtool,-ltdl
+		devel/libtool,-ltdl
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

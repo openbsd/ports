@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,13 +21,13 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 MODULES=	lang/lua
-LIB_DEPENDS=	::devel/libidn \
-		::lang/lua
-RUN_DEPENDS+=	::archivers/luazlib \
-		::devel/luaevent \
-		::devel/luafs \
-		::security/luasec \
-		::textproc/luaexpat
+LIB_DEPENDS=	devel/libidn \
+		lang/lua
+RUN_DEPENDS+=	archivers/luazlib \
+		devel/luaevent \
+		devel/luafs \
+		security/luasec \
+		textproc/luaexpat
 WANTLIB+=	crypto idn lua
 
 CONFIGURE_STYLE=simple

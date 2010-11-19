@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	POE interface to Net::Pcap
 
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-POE \
-		::net/p5-Net-Pcap \
-		::net/p5-NetPacket
+RUN_DEPENDS=	devel/p5-POE \
+		net/p5-Net-Pcap \
+		net/p5-NetPacket
 
 # regress requires root privileges and a network connection
 REGRESS_IS_INTERACTIVE= Yes

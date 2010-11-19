@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:38 espie Exp $
 
 COMMENT =	AMQP command line utilities
 
@@ -17,11 +17,11 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-facets->=2.7.0:devel/ruby-facets,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-trollop->=1.10.2:devel/ruby-trollop,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-amqp->=0.6.0:net/ruby-amqp,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-json->=1.1.6:converters/ruby-json,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-clio-*:devel/ruby-clio,${FLAVOR}
+RUN_DEPENDS =	devel/ruby-facets,${FLAVOR}>=2.7.0 \
+		devel/ruby-trollop,${FLAVOR}>=1.10.2 \
+		net/ruby-amqp,${FLAVOR}>=0.6.0 \
+		converters/ruby-json,${FLAVOR}>=1.1.6 \
+		devel/ruby-clio,${FLAVOR}
 
 MODRUBY_REGRESS = rake
 

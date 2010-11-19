@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/11 17:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -57,20 +57,20 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		RUBY="${RUBY}"
 
 WANTLIB-main=		c m z freetype png art_lgpl_2
-LIB_DEPENDS-main=	::graphics/png \
-			::graphics/libart
+LIB_DEPENDS-main=	graphics/png \
+			graphics/libart
 RUN_DEPENDS-main=	
 
 WANTLIB-perl=		m z rrd
-LIB_DEPENDS-perl=	:rrdtool-${VERSION}:net/rrdtool
+LIB_DEPENDS-perl=	rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-perl=	
 
 WANTLIB-python =	rrd
-LIB_DEPENDS-python=	:rrdtool-${VERSION}:net/rrdtool
+LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 MODPY_EGG_VERSION=	0.2.1
 
-LIB_DEPENDS-ruby=	:rrdtool-${VERSION}:net/rrdtool \
+LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 WANTLIB-ruby=		c m rrd ${MODRUBY_WANTLIB}
 

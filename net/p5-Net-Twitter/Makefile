@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	perl interface to the Twitter API
 
@@ -16,17 +16,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes
-RUN_DEPENDS=	::converters/p5-JSON-Any \
-		::devel/p5-Data-Visitor \
-		::devel/p5-DateTime-Format-Strptime \
-		::devel/p5-MooseX-AttributeHelpers \
-		::devel/p5-MooseX-MultiInitArg \
-		::devel/p5-namespace-autoclean \
-		::net/p5-Net-OAuth \
-		::net/p5-POE-Filter-IRCD 
+RUN_DEPENDS=	converters/p5-JSON-Any \
+		devel/p5-Data-Visitor \
+		devel/p5-DateTime-Format-Strptime \
+		devel/p5-MooseX-AttributeHelpers \
+		devel/p5-MooseX-MultiInitArg \
+		devel/p5-namespace-autoclean \
+		net/p5-Net-OAuth \
+		net/p5-POE-Filter-IRCD 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=	::devel/p5-Test-Deep \
-			::devel/p5-Test-Spelling
+REGRESS_DEPENDS=	devel/p5-Test-Deep \
+			devel/p5-Test-Spelling
 
 MAKE_ENV=	TEST_POD=Yes
 

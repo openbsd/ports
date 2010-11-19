@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.rsnapshot.org/downloads/
 
-BUILD_DEPENDS=		::net/rsync
-RUN_DEPENDS=		::net/rsync \
-			::devel/p5-Lchown
+BUILD_DEPENDS=		net/rsync
+RUN_DEPENDS=		net/rsync \
+			devel/p5-Lchown
 
 PKG_ARCH=		*
 NO_REGRESS=		Yes
@@ -32,7 +32,7 @@ SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 SUBST_VARS=		SAMPLES_DIR
 
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/rsnapshot.1 ${WRKSRC}/README \

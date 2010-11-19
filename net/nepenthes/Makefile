@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:35 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
@@ -23,13 +23,13 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	::net/adns \
-		::net/curl \
-		::devel/libmagic \
-		::devel/pcre
+LIB_DEPENDS=	net/adns \
+		net/curl \
+		devel/libmagic \
+		devel/pcre
 
 WANTLIB=	c crypto iconv intl idn m ssl stdc++ pcap z \
-		adns.>=1 curl.>=3 magic.>=1 pcre.>=1
+		adns>=1 curl>=3 magic>=1 pcre>=1
 
 FAKE_FLAGS+=	localstatedir='/var/nepenthes' \
 		sysconfdir='${PREFIX}/share/examples'
@@ -48,16 +48,16 @@ FLAVORS=        prelude
 FLAVOR?=
 
 .if ${FLAVOR:L:Mprelude}
-LIB_DEPENDS+=   ::security/prelude/libprelude
+LIB_DEPENDS+=   security/prelude/libprelude
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include  \
                 -I${LOCALBASE}/include/libprelude/" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-WANTLIB+=	gcrypt gnutls gpg-error iconv intl pthread tasn1 prelude.>=8
+WANTLIB+=	gcrypt gnutls gpg-error iconv intl pthread tasn1 prelude>=8
 CONFIGURE_ARGS+=--enable-prelude
 MESSAGE=        ${PKGDIR}/MESSAGE-prelude
 .else
-LIB_DEPENDS+=	::databases/postgresql
-WANTLIB +=	pq.>=4
+LIB_DEPENDS+=	databases/postgresql
+WANTLIB +=	pq>=4
 .endif
 
 pre-configure:

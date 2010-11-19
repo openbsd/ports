@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.14 2010/11/11 11:54:08 espie Exp $
+#$OpenBSD: Makefile,v 1.15 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -26,15 +26,15 @@ WANTLIB=	ICE SM X11 m stdc++ z glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gstbase-0.10 gstinterfaces-0.10 \
 		gstreamer-0.10 xml2 jpeg png gstfarsight-0.10
 
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png \
-		::net/farsight2
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png \
+		net/farsight2
 RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
-		::security/tcltls \
-		::x11/bwidget \
-		:desktop-file-utils-*:devel/desktop-file-utils
+		security/tcltls \
+		x11/bwidget \
+		devel/desktop-file-utils
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
-		::security/tcltls
+		security/tcltls
 
 MODTK_THREADED= Yes
 MODULES=	devel/gettext \

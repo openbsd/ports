@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		Jabber client for text terminals
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}downloads/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:py-xmpp-*:net/py-xmpp
+RUN_DEPENDS=	net/py-xmpp
 
 NO_REGRESS=	Yes
 

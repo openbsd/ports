@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/20 17:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
 
 PKG_ARCH=		*
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
-RUN_DEPENDS+=		:nagios-plugins-*:net/nagios/plugins
+RUN_DEPENDS+=		net/nagios/plugins
 
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/check_openbgpd ${WRKSRC}/README

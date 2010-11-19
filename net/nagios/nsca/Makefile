@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:35 espie Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-WANTLIB=		c mcrypt.>=8
-LIB_DEPENDS=		::security/libmcrypt
+WANTLIB=		c mcrypt>=8
+LIB_DEPENDS=		security/libmcrypt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-nsca-user=_nagios \
@@ -29,9 +29,9 @@ CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 
 MULTI_PACKAGES=		-main -client
 
-REGRESS_DEPENDS=	::devel/p5-Clone \
-			::devel/p5-Parallel-Forker
-RUN_DEPENDS-main=	:nagios-*:net/nagios/nagios
+REGRESS_DEPENDS=	devel/p5-Clone \
+			devel/p5-Parallel-Forker
+RUN_DEPENDS-main=	net/nagios/nagios
 
 pre-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nsca.c \

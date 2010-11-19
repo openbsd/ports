@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	LiveJournal client for Python
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ljcharm/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	:py-feedparser-*:textproc/py-feedparser
+RUN_DEPENDS=	textproc/py-feedparser
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

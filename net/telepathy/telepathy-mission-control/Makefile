@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -16,8 +16,8 @@ WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z telepathy-glib
 MODULES=		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		::net/telepathy/telepathy-glib
+BUILD_DEPENDS=		textproc/libxslt
+LIB_DEPENDS=		net/telepathy/telepathy-glib
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-mcclient-so6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

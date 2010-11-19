@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,9 +30,9 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb xcb-render xcb-render-util z purple
-BUILD_DEPENDS=	::net/pidgin
-LIB_DEPENDS=	::devel/pango \
-		::net/pidgin,-libpurple
+BUILD_DEPENDS=	net/pidgin
+LIB_DEPENDS=	devel/pango \
+		net/pidgin,-libpurple
 
 USE_GMAKE=	Yes
 ALL_TARGET=	build

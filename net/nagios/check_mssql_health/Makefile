@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/02 11:17:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
@@ -17,7 +17,7 @@ MASTER_SITES=		http://labs.consol.de/wp-content/uploads/2009/11/
 
 PKG_ARCH=		*
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::databases/p5-DBD-Sybase
+RUN_DEPENDS=		databases/p5-DBD-Sybase
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_path_mkdir=/bin/mkdir

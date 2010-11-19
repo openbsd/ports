@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	active packet sniffer
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB =	c pcap lib/libnet-1.0/net.=0
-LIB_DEPENDS=	:libnet->=1.0,<1.1:net/libnet/1.0
+WANTLIB =	c pcap lib/libnet-1.0/net=0
+LIB_DEPENDS=	libnet->=1.0,<1.1:net/libnet/1.0
 
 ALL_TARGET=	angst
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:34 espie Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 MULTI_PACKAGES=		-main -omapi -client

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	perl interface to jabber
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Net-XMPP-*:net/p5-Net-XMPP
+RUN_DEPENDS=	net/p5-Net-XMPP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODCPAN_EXAMPLES=	Yes

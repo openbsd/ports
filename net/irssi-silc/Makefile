@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,12 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://martynas.blarzwurst.de/distfiles/
 
-BUILD_DEPENDS=	::devel/gettext \
-		::devel/glib2
+BUILD_DEPENDS=	devel/gettext \
+		devel/glib2
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+= :yasm-*:devel/yasm
+BUILD_DEPENDS+= devel/yasm
 .endif
-RUN_DEPENDS=	:irssi->=0.8.15:net/irssi
+RUN_DEPENDS=	net/irssi>=0.8.15
 
 MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
 		libsilc_core_la_LDFLAGS=-avoid-version

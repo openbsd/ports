@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/27 13:25:01 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:34 espie Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	devel/gettext devel/cmake
 
-LIB_DEPENDS =	::net/pidgin,-libpurple
+LIB_DEPENDS =	net/pidgin,-libpurple
 WANTLIB =	purple c glib-2.0 gthread-2.0 m pthread stdc++
 CONFIGURE_ENV+=	CPPFLAGS+="-I${X11BASE}/include"
 
@@ -30,10 +30,10 @@ NO_REGRESS =	Yes
 #FLAVOR ?=
 #
 #.if ${FLAVOR:L:Mfull}
-#LIB_DEPENDS=	:libpurple-*-audio:net/pidgin,-libpurple,audio \
-#		::multimedia/gstreamer-0.10/core \
-#		::net/farsight2 \
-#		:libcaca->=0.99.17:graphics/libcaca
+#LIB_DEPENDS=	net/pidgin,-libpurple,audio \
+#		multimedia/gstreamer-0.10/core \
+#		net/farsight2 \
+#		graphics/libcaca>=0.99.17
 #
 #WANTLIB +=	Imlib2 X11 Xext freetype gmodule-2.0 gobject-2.0 gstreamer-0.10
 #WANTLIB +=	caca gstbase-0.10 gstfarsight-0.10 gstinterfaces-0.10 xml2 z

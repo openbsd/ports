@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:35 espie Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -28,10 +28,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES= -main -gui -plugins
 
-BUILD_DEPENDS=	::devel/bison
+BUILD_DEPENDS=	devel/bison
 WANTLIB-main=	c
 
-LIB_DEPENDS-gui= ::x11/gtk+2
+LIB_DEPENDS-gui= x11/gtk+2
 
 WANTLIB-gui=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
@@ -41,7 +41,7 @@ WANTLIB-gui=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb-render xcb-render-util z gdk_pixbuf-2.0 gtk-x11-2.0 \
 		gdk-x11-2.0
 
-RUN_DEPENDS-plugins=:olsrd-${VERSION}:net/olsrd
+RUN_DEPENDS-plugins= olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

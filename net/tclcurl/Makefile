@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		Tcl bindings for Curl
 SHARED_ONLY=		Yes
@@ -14,13 +14,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto idn ssl z curl.>=2.2
+WANTLIB=		crypto idn ssl z curl>=2.2
 
 MASTER_SITES=		${HOMEPAGE}download/tarball/
 
 MODULES=		lang/tcl
 MODTCL_VERSION=		8.4
-LIB_DEPENDS=    	::net/curl
+LIB_DEPENDS=    	net/curl
 
 BUILD_DEPENDS+=		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS+= 		${MODTCL_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	UPnP A/V media server
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${HOMEPAGE}releases/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::net/libupnp
+LIB_DEPENDS=	net/libupnp
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

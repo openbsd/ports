@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/11 11:54:09 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB += c crypto form menu ncurses panel pcap pthread ssl z
-WANTLIB += lib/libnet-1.1/net.=11 ltdl pcre
+WANTLIB += lib/libnet-1.1/net=11 ltdl pcre
 
-LIB_DEPENDS=	:libnet->=1.1,<1.2:net/libnet/1.1 \
-		::devel/libtool,-ltdl \
-		::devel/pcre
+LIB_DEPENDS=	libnet->=1.1,<1.2:net/libnet/1.1 \
+		devel/libtool,-ltdl \
+		devel/pcre
 
 FLAVORS=	no_x11
 FLAVOR?=

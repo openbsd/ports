@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:35 espie Exp $
 # $FreeBSD: ports/net/nslint/Makefile,v 1.10 2000/04/09 18:12:37 cpiazza Exp $
 
 COMMENT=		performs consistency checks on BIND files
@@ -27,7 +27,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=		nslint
 INSTALL_TARGET=		install install-man
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

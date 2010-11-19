@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:38 espie Exp $
 
 COMMENT =	minimalistic SILC client
 
@@ -16,7 +16,7 @@ MASTER_SITES =	http://dokucode.de/files/
 
 MODULES =	converters/libiconv
 WANTLIB =	c pthread silc silcclient
-LIB_DEPENDS =	::devel/silc-toolkit
+LIB_DEPENDS =	devel/silc-toolkit
 
 USE_GROFF =	Yes
 NO_REGRESS =	Yes

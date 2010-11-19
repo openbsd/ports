@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	perl module that provides a client interface to gpsd
 MODULES=	cpan
@@ -12,11 +12,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	::geo/p5-GPS-PRN \
-		::geo/p5-Geo-Forward \
-		::geo/p5-Geo-Functions \
-		::geo/p5-Geo-Inverse \
-		::www/p5-libwww
+RUN_DEPENDS=	geo/p5-GPS-PRN \
+		geo/p5-Geo-Forward \
+		geo/p5-Geo-Functions \
+		geo/p5-Geo-Inverse \
+		www/p5-libwww
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,7 @@ MASTER_SITES=		http://downloads.powerdns.com/releases/
 USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
-BUILD_DEPENDS=		::devel/boost
+BUILD_DEPENDS=		devel/boost
 
 PSEUDO_FLAVORS+=	no_mysql no_pgsql no_sqlite no_sqlite3
 FLAVOR?=
@@ -49,9 +49,9 @@ CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS-mysql=	::databases/mysql
-RUN_DEPENDS-mysql=	:${FULLPKGNAME-main}:net/powerdns
-WANTLIB-mysql+= 	crypto m ssl z lib/mysql/mysqlclient.>=10
+LIB_DEPENDS-mysql=	databases/mysql
+RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
+WANTLIB-mysql+= 	crypto m ssl z lib/mysql/mysqlclient>=10
 BACKENDS+=		gmysql
 .endif
 
@@ -62,9 +62,9 @@ CONFIGURE_ARGS+=	--without-pgsql
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
-LIB_DEPENDS-pgsql=	::databases/postgresql,-main
-RUN_DEPENDS-pgsql=	:${FULLPKGNAME-main}:net/powerdns
-WANTLIB-pgsql=		crypto ssl z pq.>=2
+LIB_DEPENDS-pgsql=	databases/postgresql,-main
+RUN_DEPENDS-pgsql=	${FULLPKGNAME-main}:net/powerdns
+WANTLIB-pgsql=		crypto ssl z pq>=2
 BACKENDS+=		gpgsql
 .endif
 
@@ -75,9 +75,9 @@ CONFIGURE_ARGS+=	--without-sqlite
 MULTI_PACKAGES+=	-sqlite
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE} \
 			--with-sqlite-includes=${LOCALBASE}/include
-LIB_DEPENDS-sqlite=	::databases/sqlite
-RUN_DEPENDS-sqlite=	:${FULLPKGNAME-main}:net/powerdns
-WANTLIB-sqlite+=	z sqlite.>=8 
+LIB_DEPENDS-sqlite=	databases/sqlite
+RUN_DEPENDS-sqlite=	${FULLPKGNAME-main}:net/powerdns
+WANTLIB-sqlite+=	z sqlite>=8 
 BACKENDS+=		gsqlite
 .endif
 
@@ -88,9 +88,9 @@ CONFIGURE_ARGS+=	--without-sqlite3
 MULTI_PACKAGES+=	-sqlite3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE} \
 			--with-sqlite3-includes=${LOCALBASE}/include
-LIB_DEPENDS-sqlite3=	::databases/sqlite3
-RUN_DEPENDS-sqlite3=	:${FULLPKGNAME-main}:net/powerdns
-WANTLIB-sqlite3+=	z sqlite3.>=8
+LIB_DEPENDS-sqlite3=	databases/sqlite3
+RUN_DEPENDS-sqlite3=	${FULLPKGNAME-main}:net/powerdns
+WANTLIB-sqlite3+=	z sqlite3>=8
 BACKENDS+=		gsqlite3
 .endif
 
@@ -99,8 +99,8 @@ BACKENDS+=		gsqlite3
 CONFIGURE_ARGS+=	--without-ldap
 .else
 MULTI_PACKAGES+=	-ldap
-LIB_DEPENDS-ldap=	::databases/openldap
-RUN_DEPENDS-ldap=	:${FULLPKGNAME-main}:net/powerdns
+LIB_DEPENDS-ldap=	databases/openldap
+RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE} \
 			--with-ldap-includes=${LOCALBASE}/include
 WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 sasl2 ssl z lber ldap_r

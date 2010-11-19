@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2010/11/19 22:31:35 espie Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -43,19 +43,19 @@ CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-mandir=${LOCALBASE}/man \
 		--disable-nls
 
-WANTLIB-main=		c crypto m pcap ssl stdc++ pcre dnet lua.>=5
-LIB_DEPENDS-main=	::devel/pcre \
-			::net/libdnet \
-			::lang/lua
+WANTLIB-main=		c crypto m pcap ssl stdc++ pcre dnet lua>=5
+LIB_DEPENDS-main=	devel/pcre \
+			net/libdnet \
+			lang/lua
 
 RUN_DEPENDS-main=
 
-RUN_DEPENDS-zenmap=	::x11/py-gtk2 \
-			::databases/py-sqlite2 \
-			::devel/desktop-file-utils \
-			::net/nmap
+RUN_DEPENDS-zenmap=	x11/py-gtk2 \
+			databases/py-sqlite2 \
+			devel/desktop-file-utils \
+			net/nmap
 
-NO_REGRESS=	Yes
+NO_REGRESS=		Yes
 
 post-extract:
 	@cp ${WRKSRC}/libdnet-stripped/include/dnet/sctp.h ${WRKSRC}/sctp.h

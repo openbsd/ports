@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/09/23 14:24:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		flexible communications framework, MSN component
 
@@ -11,8 +11,8 @@ MODULES=		lang/python
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:papyon->=0.5.1:net/papyon \
-			:telepathy-python->=0.15.17:net/telepathy/telepathy-python
+RUN_DEPENDS=		net/papyon>=0.5.1 \
+			net/telepathy/telepathy-python>=0.15.17
 
 USE_LIBTOOL=		No
 NO_REGRESS=		Yes

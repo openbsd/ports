@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -21,7 +21,7 @@ WANTLIB=	c curses m readline termcap
 STATEDIR?=	/var/quagga
 SUBST_VARS=	CONFDIR STATEDIR
 
-BUILD_DEPENDS=	::lang/gawk
+BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFDIR=	${SYSCONFDIR}/quagga
@@ -45,7 +45,7 @@ FAKE_FLAGS=    exampledir='${PREFIX}/share/examples/quagga'
 FLAVOR?=
 
 .if ${FLAVOR:L:Msnmp}
-LIB_DEPENDS=	::net/net-snmp
+LIB_DEPENDS=	net/net-snmp
 CONFIGURE_ARGS+= --enable-snmp
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

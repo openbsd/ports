@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:37 espie Exp $
 
 COMMENT =		compare pcap dump files
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.eff.org/files/
 
 MODULES =		lang/python
-RUN_DEPENDS =		::net/py-pcapy
+RUN_DEPENDS =		net/py-pcapy
 
 NO_REGRESS =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:38 espie Exp $
 
 COMMENT =	SIP swiss army knife
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://sipsak.org/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-LIB_DEPENDS =	::net/libcares
+LIB_DEPENDS =	net/libcares
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

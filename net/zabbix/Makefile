@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/16 10:08:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/19 22:31:39 espie Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
 MODULES=		converters/libiconv
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MULTI_PACKAGES =	-main -web
 PSEUDO_FLAVORS =	no_server
@@ -41,16 +41,16 @@ FLAVORS =		mysql pgsql sqlite3
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c kvm m execinfo lber ldap
-LIB_DEPENDS =		::databases/openldap \
-			::devel/libexecinfo
+LIB_DEPENDS =		databases/openldap \
+			devel/libexecinfo
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
-			::net/curl \
-			::net/net-snmp \
-			::textproc/iksemel
-RUN_DEPENDS-server =	::net/fping
+			net/curl \
+			net/net-snmp \
+			textproc/iksemel
+RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
-RUN_DEPENDS-server +=	:zabbix-agent->=${VERSION}:net/zabbix,-main
+RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
 WANTLIB-server =	${WANTLIB} crypto idn ssl z curl netsnmp iksemel
 
 CONFIGURE_STYLE =	gnu
@@ -68,8 +68,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 PREFIX-web =		/var/www
 LIB_DEPENDS-web =
-RUN_DEPENDS-web =	::www/php5/extensions,-gd \
-			::www/php5/extensions,-mbstring
+RUN_DEPENDS-web =	www/php5/extensions,-gd \
+			www/php5/extensions,-mbstring
 WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 
@@ -81,17 +81,17 @@ FLAVOR ?=		no_server
 BACKEND =		${FLAVOR}
 .if ${BACKEND} == "mysql"
 MULTI_PACKAGES += -server
-LIB_DEPENDS-server +=	::databases/mysql,-main
+LIB_DEPENDS-server +=	databases/mysql,-main
 CONFIGURE_ARGS +=	--with-mysql
 WANTLIB-server += mysqlclient
 .elif ${BACKEND} == "pgsql"
 MULTI_PACKAGES += -server
-LIB_DEPENDS-server +=	::databases/postgresql,-main
+LIB_DEPENDS-server +=	databases/postgresql,-main
 CONFIGURE_ARGS +=	--with-pgsql
 WANTLIB-server += pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES += -server
-LIB_DEPENDS-server +=	::databases/sqlite3,-main
+LIB_DEPENDS-server +=	databases/sqlite3,-main
 CONFIGURE_ARGS +=	--with-sqlite3
 WANTLIB-server += sqlite3
 .elif ${BACKEND} == "no_server"

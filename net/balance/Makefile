@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		tcp proxy with load balancing and failover mechanisms
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://www.inlab.de/
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=		balance
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

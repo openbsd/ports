@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/05 15:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:32 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -24,16 +24,16 @@ MODULES =		x11/tk
 
 # No dependencies to sound and telephony yet, due to the reason those
 # need to be ported to sndio first
-RUN_DEPENDS =		::devel/itcl \
-			::graphics/tkpng \
-			::graphics/tkimg \
-			::misc/memchan \
-			::net/tcludp \
-			::security/tcltls \
-			::x11/tkdnd \
-			::x11/tkhtml \
-			::x11/tktray \
-			::x11/tktreectrl
+RUN_DEPENDS =		devel/itcl \
+			graphics/tkpng \
+			graphics/tkimg \
+			misc/memchan \
+			net/tcludp \
+			security/tcltls \
+			x11/tkdnd \
+			x11/tkhtml \
+			x11/tktray \
+			x11/tktreectrl
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

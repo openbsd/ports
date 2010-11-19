@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	icecast source for streaming MP3
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =	c m ogg perl pthread theora util vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB}
-WANTLIB += 	mp3lame shout.>=3 speex.>=4 FLAC.>=5 xml2.>=7
+WANTLIB += 	mp3lame shout>=3 speex>=4 FLAC>=5 xml2>=7
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
@@ -30,11 +30,11 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-flac=${LOCALBASE}
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::audio/lame \
-		::net/libshout \
-		::audio/speex \
-		::audio/flac \
-		::textproc/libxml
+LIB_DEPENDS=	audio/lame \
+		net/libshout \
+		audio/speex \
+		audio/flac \
+		textproc/libxml
 
 FLAVORS=	python mp4
 FLAVOR?=
@@ -49,8 +49,8 @@ CONFIGURE_ARGS+=--without-python
 
 .if ${FLAVOR:L:Mmp4}
 CONFIGURE_ARGS+=--with-faad=${LOCALBASE}
-LIB_DEPENDS+=	::audio/faad \
-		::multimedia/libmp4v2
+LIB_DEPENDS+=	audio/faad \
+		multimedia/libmp4v2
 WANTLIB +=	faad mp4v2
 .else
 CONFIGURE_ARGS+=--without-faad

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/09 21:28:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
 
 PKG_ARCH =		*
 
@@ -22,7 +22,7 @@ NO_BUILD =		Yes
 NO_REGRESS =		Yes
 WRKDIST =		${WRKDIR}
 
-RUN_DEPENDS =		::net/nagios/plugins,-main
+RUN_DEPENDS =		net/nagios/plugins,-main
 
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/check_bioctl ${WRKSRC}/README

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/09 19:46:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/19 22:31:32 espie Exp $
 
 COMMENT-main=	cooperative file distribution system implemented in Python
 COMMENT-gui=	graphical interface components for BitTorrent
@@ -23,10 +23,10 @@ MASTER_SITES=	http://download.bittorrent.com/dl/
 MULTI_PACKAGES= -main -gui
 
 MODULES=	lang/python
-BUILD_DEPENDS=	::devel/gettext
+BUILD_DEPENDS=	devel/gettext
 
-RUN_DEPENDS-gui=:${PKGNAME-main}:net/BitTorrent \
-		:py-gtk2->=2.6:x11/py-gtk2
+RUN_DEPENDS-gui=${PKGNAME-main}:net/BitTorrent \
+		x11/py-gtk2>=2.6
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/01 21:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/19 22:31:35 espie Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
@@ -23,10 +23,10 @@ MULTI_PACKAGES=	-main -web
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-BUILD_DEPENDS=	:gd-*:graphics/gd
-LIB_DEPENDS=	::devel/libtool,-ltdl
-RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins \
-		::www/php5/core
+BUILD_DEPENDS=	graphics/gd
+LIB_DEPENDS=	devel/libtool,-ltdl
+RUN_DEPENDS=	net/nagios/plugins \
+		www/php5/core
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=/var/www/nagios \
@@ -62,14 +62,14 @@ PREFIX-web=	/var/www
 .if ${FLAVOR:L:Mchroot}
 WANTLIB-web=
 LIB_DEPENDS-web=
-RUN_DEPENDS-web= :nagios-${V}-chroot:net/nagios/nagios,chroot
+RUN_DEPENDS-web= nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
 WANTLIB-web=	${WANTLIB} fontconfig freetype gd jpeg png z
-LIB_DEPENDS-web= ::graphics/gd
-RUN_DEPENDS-web= :nagios-${V}-!chroot:net/nagios/nagios
+LIB_DEPENDS-web= graphics/gd
+RUN_DEPENDS-web= nagios-${V}-!chroot:net/nagios/nagios
 .endif
 
-WANTLIB-main=	${WANTLIB} ltdl.>=4 pthread
+WANTLIB-main=	${WANTLIB} ltdl>=4 pthread
 
 NO_REGRESS=	Yes
 

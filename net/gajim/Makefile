@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/10 08:04:15 pea Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,15 +32,15 @@ MODULES=	lang/python \
 		textproc/intltool
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::databases/py-sqlite2 \
-		::devel/desktop-file-utils \
-		::net/py-dns \
-		:dbus-python-*:x11/dbus-python \
-		::x11/py-gtk2  \
-		::security/py-openssl \
-		::security/py-crypto \
-		:avahi-gtk-*:net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
-		::textproc/gtkspell \
-		::net/farsight2
+RUN_DEPENDS=	databases/py-sqlite2 \
+		devel/desktop-file-utils \
+		net/py-dns \
+		x11/dbus-python \
+		x11/py-gtk2  \
+		security/py-openssl \
+		security/py-crypto \
+		net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
+		textproc/gtkspell \
+		net/farsight2
 
 .include <bsd.port.mk>

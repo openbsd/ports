@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	Zolera SOAP Infrastructure
 
@@ -24,11 +24,11 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS=Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::textproc/py-xml
+RUN_DEPENDS=	textproc/py-xml
 
 # regress needs network access
 REGRESS_IS_INTERACTIVE=Yes
-REGRESS_DEPENDS=::${BUILD_PKGPATH}
+REGRESS_DEPENDS=${BUILD_PKGPATH}
 
 do-regress:
 	find ${WRKSRC}/test -name \*.py -exec ${MODPY_BIN} {} \;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/29 07:13:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	pastebin command line application
 
@@ -21,9 +21,9 @@ MODULES=		converters/libiconv \
 
 MODGHC_BUILD =          cabal hackage nort
 
-BUILD_DEPENDS +=        ::devel/hs-network \
-			::net/hs-HTTP
+BUILD_DEPENDS +=        devel/hs-network \
+			net/hs-HTTP
 
-LIB_DEPENDS=		::devel/gmp
+LIB_DEPENDS=		devel/gmp
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	implementation of the OAuth protocol
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MODULES=	cpan
-RUN_DEPENDS=	::devel/p5-Class-Accessor \
-		::devel/p5-Class-Data-Inheritable \
-		::devel/p5-Universal-require \
-		::security/p5-Digest-HMAC \
-		::www/p5-URI
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		devel/p5-Class-Data-Inheritable \
+		devel/p5-Universal-require \
+		security/p5-Digest-HMAC \
+		www/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	modbuild

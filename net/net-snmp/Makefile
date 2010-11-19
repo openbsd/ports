@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/26 00:42:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/19 22:31:35 espie Exp $
 
 # XXX note there are various "openbsd[234]" ifdefs which will need adjusting when
 # OpenBSD goes to 5.x
@@ -34,10 +34,10 @@ WANTLIB-main=		c crypto kvm m perl pthread util wrap
 MULTI_PACKAGES=		-main -perl -tkmib
 
 WANTLIB-perl=		crypto netsnmp netsnmpagent netsnmptrapd netsnmpmibs
-LIB_DEPENDS-perl=	::net/net-snmp,-main
+LIB_DEPENDS-perl=	net/net-snmp,-main
 
-RUN_DEPENDS-tkmib=	::net/net-snmp,-perl \
-			::x11/p5-Tk
+RUN_DEPENDS-tkmib=	net/net-snmp,-perl \
+			x11/p5-Tk
 
 NET_SNMP_MIB_LIST=	host disman/event-mib smux mibII/mta_sendmail
 

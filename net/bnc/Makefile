@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	simple IRC relay proxy with support for virtual hosting
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-RUN_DEPENDS=		:dialog-*:misc/dialog
+RUN_DEPENDS=		misc/dialog
 CONFIGURE_STYLE=	gnu
 
 pre-configure:

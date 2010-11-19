@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/23 13:33:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=		fork of pymsn to support telepathy-butterfly
 
@@ -19,9 +19,9 @@ MASTER_SITES=		http://www.freedesktop.org/software/papyon/releases/
 MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/py-gobject \
-			::security/py-crypto \
-			::security/py-openssl
+RUN_DEPENDS=		devel/py-gobject \
+			security/py-crypto \
+			security/py-openssl
 
 NO_REGRESS=		Yes
 

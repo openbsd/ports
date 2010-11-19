@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/11 11:54:09 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/19 22:31:33 espie Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.vigor.nu/dxpc/${VERSION}/
 HOMEPAGE =		http://www.vigor.nu/dxpc/
 
-LIB_DEPENDS =		::archivers/lzo
+LIB_DEPENDS =		archivers/lzo
 WANTLIB =		c m stdc++ lzo
 
 USE_GROFF =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -22,10 +22,10 @@ WANTLIB=		c crypto idn m ssl stdc++ z pcre id3 glib-2.0 curl xml2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=            ::audio/id3lib \
-			::devel/glib2 \
-			::net/curl \
-			::textproc/libxml
+LIB_DEPENDS=            audio/id3lib \
+			devel/glib2 \
+			net/curl \
+			textproc/libxml
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ENV=          CPPFLAGS="-lm -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
 
 HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
 
-BUILD_DEPENDS=	:libnet->=1.0,<1.1:net/libnet/1.0
+BUILD_DEPENDS=	libnet->=1.0,<1.1:net/libnet/1.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

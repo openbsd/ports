@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/29 06:31:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:33 espie Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
@@ -22,7 +22,7 @@ MODULES =			devel/gettext gcc3
 MODGCC3_ARCHES =		sparc
 MODGCC3_LANGS =			c++
 WANTLIB =			idn m stdc++ ssl crypto z
-LIB_DEPENDS =			::devel/libidn
+LIB_DEPENDS =			devel/libidn
 
 USE_GMAKE =			Yes
 USE_LIBTOOL =			Yes

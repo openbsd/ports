@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -15,10 +15,10 @@ WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
 MODULES=		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		::net/avahi \
-			::devel/libsoup \
-			::net/telepathy/telepathy-glib
+BUILD_DEPENDS=		textproc/libxslt
+LIB_DEPENDS=		net/avahi \
+			devel/libsoup \
+			net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -28,9 +28,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_PYTHON="${MODPY_BIN}"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ssl
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-REGRESS_DEPENDS=	::devel/check \
-			::textproc/py-xmldiff
+REGRESS_DEPENDS=	devel/check \
+			textproc/py-xmldiff
 
 .include <bsd.port.mk>

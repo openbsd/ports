@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/11 11:54:09 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	Library for direct-connect protocol
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::archivers/bzip2 \
-		::textproc/libxml
+LIB_DEPENDS=	archivers/bzip2 \
+		textproc/libxml
 WANTLIB=	crypto m ssl z bz2 xml2
 
 USE_LIBTOOL=	Yes

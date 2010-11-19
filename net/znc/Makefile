@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:37:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c cares crypto m perl ssl stdc++ util
 
-LIB_DEPENDS=	::net/libcares
+LIB_DEPENDS=	net/libcares
 
 MAKE_FLAGS+=	VERBOSE=1
 

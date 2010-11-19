@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
@@ -21,7 +21,7 @@ WANTLIB=		c
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu dest
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
@@ -29,7 +29,8 @@ FLAVORS=		snmp
 FLAVOR?=
 
 .if ${FLAVOR:L} == "snmp"
-LIB_DEPENDS=		netsnmp.6.2::net/net-snmp
+WANTLIB +=		netsnmp
+LIB_DEPENDS=		net/net-snmp
 CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}
 WANTLIB+=		crypto m
 .else

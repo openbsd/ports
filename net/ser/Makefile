@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	SIP Express Router
 
@@ -9,7 +9,7 @@ DISTNAME=	ser-${VERSION}_src
 PKGNAME=	ser-${VERSION}
 REVISION=	1
 CATEGORIES=	net
-WANTLIB=	c expat z lib/mysql/mysqlclient.>=10
+WANTLIB=	c expat z lib/mysql/mysqlclient>=10
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=ser/}
 
@@ -28,7 +28,7 @@ USE_GROFF =	Yes
 
 ALL_TARGET=	all ser.cfg
 
-LIB_DEPENDS=	::databases/mysql
+LIB_DEPENDS=	databases/mysql
 
 do-install:
 	cd ${WRKDIST}; ${MAKE_PROGRAM} PREFIX=${WRKINST}${TRUEPREFIX} install

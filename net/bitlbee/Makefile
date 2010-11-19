@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
@@ -27,8 +27,8 @@ EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
 DOCS=			${WRKSRC}/doc/user-guide/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
-LIB_DEPENDS=		::devel/glib2 \
-			::security/gnutls
+LIB_DEPENDS=		devel/glib2 \
+			security/gnutls
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 			--ssl=gnutls
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MAKE_ENV=		"CC=${CC}" "CFLAGS=${CFLAGS}"
 FAKE_FLAGS=		ETCDIR=${EXAMPLEDIR}
 FAKE_TARGET=		install install-etc

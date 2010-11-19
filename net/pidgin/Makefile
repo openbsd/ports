@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,7 @@ WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		startup-notification-1 purple \
 		xcb-aux xcb-event xcb-render xcb-render-util xcb ${WANTLIB}
 
-WANTLIB-libpurple= crypto ssl silc.>=7 silcclient.>=5 meanwhile gadu.>=4 \
+WANTLIB-libpurple= crypto ssl silc>=7 silcclient>=5 meanwhile gadu>=4 \
 		${WANTLIB}
 
 WANTLIB-finch=	X11 Xau Xdmcp ncurses panel pthread-stubs xcb purple ${WANTLIB}
@@ -58,20 +58,20 @@ MODULES=	devel/gettext \
 		lang/python \
 		devel/gconf2
 
-BUILD_DEPENDS=		::x11/dbus-python
-RUN_DEPENDS-main=	::x11/dbus-python \
-			::x11/py-gtk2 \
-			::devel/desktop-file-utils
+BUILD_DEPENDS=		x11/dbus-python
+RUN_DEPENDS-main=	x11/dbus-python \
+			x11/py-gtk2 \
+			devel/desktop-file-utils
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			:startup-notification->=0.10:devel/startup-notification
+			devel/startup-notification>=0.10
 RUN_DEPENDS-finch=	# empty
 LIB_DEPENDS-finch=	${LIB_DEPENDS} \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
-			::devel/silc-toolkit \
-			::net/meanwhile \
-			::net/libgadu
+			devel/silc-toolkit \
+			net/meanwhile \
+			net/libgadu
 
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
@@ -113,15 +113,15 @@ FLAVOR?=
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS+=	:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
-		::multimedia/gstreamer-0.10/plugins-base
+LIB_DEPENDS+=	gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
+		multimedia/gstreamer-0.10/plugins-base
 WANTLIB +=	gstreamer-0.10 gstinterfaces-0.10
-LIB_DEPENDS-main+=	:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
-LIB_DEPENDS-finch+=	:libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-main+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-finch+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
-LIB_DEPENDS-main+=	:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
-LIB_DEPENDS-finch+=	:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-main+=	libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-finch+=	libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 .endif
 
 .if ${FLAVOR:L:Mdebug}
@@ -130,7 +130,7 @@ DEBUG=			-O0 -g
 .endif
 
 .if ${FLAVOR:L:Mgtkspell}
-LIB_DEPENDS-main+=	::textproc/gtkspell
+LIB_DEPENDS-main+=	textproc/gtkspell
 WANTLIB-main+=		enchant gtkspell
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/26 18:07:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	libnetdude plugin for pruning incomplete session from traces
 
@@ -11,11 +11,11 @@ HOMEPAGE=	http://netdude.sourceforge.net/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-RUN_DEPENDS=	::net/libnetdude/plugins/conntrack \
-		::net/libnetdude/plugins/traceset
+RUN_DEPENDS=	net/libnetdude/plugins/conntrack \
+		net/libnetdude/plugins/traceset
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/libtool,-ltdl
+		devel/libtool,-ltdl
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

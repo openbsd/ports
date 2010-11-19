@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:36 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	support for the SSH 2 protocol via libssh2
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-LIB_DEPENDS =	::security/libssh2
+LIB_DEPENDS =	security/libssh2
 
 WANTLIB +=     crypto ssl z ssh2
 

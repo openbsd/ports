@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 07:56:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=		jabber server written in Erlang
 
@@ -23,8 +23,8 @@ WANTLIB=		expat crypto ssl z
 MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
 
 MODULES=		converters/libiconv
-BUILD_DEPENDS=		:erlang->=12b.0:lang/erlang
-RUN_DEPENDS=		:erlang->=12b.0:lang/erlang
+BUILD_DEPENDS=		lang/erlang>=12b.0
+RUN_DEPENDS=		lang/erlang>=12b.0
 
 MAKE_FLAGS+=		EJABBERDDIR=${PREFIX}/lib/ejabberd \
 			LOGDIR=${EJLOGDIR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/18 19:15:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	interface to oEmbed
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/pear-Validate \
-			::net/pear-Net-URL2 \
-			::net/pear-HTTP-Request
+RUN_DEPENDS=		devel/pear-Validate \
+			net/pear-Net-URL2 \
+			net/pear-HTTP-Request
 
 .include <bsd.port.mk>

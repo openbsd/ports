@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/09/09 17:34:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	fetch youtube and google videos
 
@@ -19,9 +19,9 @@ MODULES=		lang/lua
 NO_CHECKSUM=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-RUN_DEPENDS+=		::devel/luastdlib \
-			::graphics/ffmpeg \
-			::net/luasocket
+RUN_DEPENDS+=		devel/luastdlib \
+			graphics/ffmpeg \
+			net/luasocket
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/yt.lua ${PREFIX}/bin/yt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -14,9 +14,9 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::devel/py-twisted/words
-RUN_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		::net/telepathy/telepathy-glib
+			devel/py-twisted/words
+RUN_DEPENDS=		textproc/libxslt
+LIB_DEPENDS=		net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-silent-rules
@@ -24,7 +24,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
 			OPENSSL_CFLAGS="-I/usr/include"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

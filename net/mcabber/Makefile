@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:34 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,18 +22,18 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 WANTLIB=		c crypto gcrypt gpg-error ncurses panel pcre pthread \
-			ssl glib-2.0 gmodule-2.0 gpgme loudmouth-1.>=3 \
+			ssl glib-2.0 gmodule-2.0 gpgme loudmouth-1>=3 \
 			idn otr
 
-LIB_DEPENDS=		::devel/glib2 \
-			::security/gpgme \
-			::net/loudmouth \
-			::devel/libidn \
-			::security/libotr
-RUN_DEPENDS=		::devel/desktop-file-utils
+LIB_DEPENDS=		devel/glib2 \
+			security/gpgme \
+			net/loudmouth \
+			devel/libidn \
+			security/libotr
+RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-gpgme \

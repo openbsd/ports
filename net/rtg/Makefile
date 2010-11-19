@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 17:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:38 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -20,15 +20,15 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		m crypto c z pthread fontconfig freetype \
-			netsnmp.>=6 mysqlclient_r gd jpeg png
+			netsnmp>=6 mysqlclient_r gd jpeg png
 
 MODULES =		converters/libiconv
 
-LIB_DEPENDS =		::net/net-snmp \
-			::databases/mysql \
-			::graphics/gd \
-			::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS =		net/net-snmp \
+			databases/mysql \
+			graphics/gd \
+			graphics/jpeg \
+			graphics/png
 
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} \
 			LDFLAGS=-L${X11BASE}/lib

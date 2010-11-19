@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/29 09:54:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:35 espie Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
@@ -20,11 +20,11 @@ WANTLIB =	c pthread
 
 MASTER_SITES =	http://www.cypherpunk.at/ocat/download/Source/$V/
 
-RUN_DEPENDS =	::net/tor
+RUN_DEPENDS =	net/tor
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

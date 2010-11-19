@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/11 11:54:09 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -73,10 +73,10 @@ USE_LIBTOOL=	gnu
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	::net/net-snmp
-LIB_DEPENDS-main =	::databases/gdbm \
-			::devel/libtool,-ltdl
+LIB_DEPENDS-main =	databases/gdbm \
+			devel/libtool,-ltdl
 WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
-			termcap gdbm.>=3 ltdl.>=4
+			termcap gdbm>=3 ltdl>=4
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=		
@@ -85,44 +85,44 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 .else
 MULTI_PACKAGES+=	-iodbc
-BUILD_DEPENDS+=		::databases/iodbc
+BUILD_DEPENDS+=		databases/iodbc
 CONFIGURE_ARGS+=	--with-rlm_sql_iodbc
-LIB_DEPENDS-iodbc=	::databases/iodbc
-WANTLIB-iodbc=		iodbc.>=2
+LIB_DEPENDS-iodbc=	databases/iodbc
+WANTLIB-iodbc=		iodbc>=2
 .endif
 
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--without-rlm_ldap
 .else
 MULTI_PACKAGES+=	-ldap
-BUILD_DEPENDS+=		:openldap-client-*:databases/openldap
-LIB_DEPENDS-ldap=	:openldap-client-*:databases/openldap \
-			::${BASE_PKGPATH}
+BUILD_DEPENDS+=		databases/openldap
+LIB_DEPENDS-ldap=	databases/openldap \
+			${BASE_PKGPATH}
 WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
-			lber.>=8 ldap_r.>=8 freeradius-radius.>=1
+			lber>=8 ldap_r>=8 freeradius-radius>=1
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .else
 MULTI_PACKAGES+=	-mysql
-BUILD_DEPENDS+=		:mysql-client-*:databases/mysql
-LIB_DEPENDS-mysql=	:mysql-client-*:databases/mysql
-WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r.>=16
+BUILD_DEPENDS+=		databases/mysql
+LIB_DEPENDS-mysql=	databases/mysql
+WANTLIB-mysql=		${WANTLIB} m pthread z mysqlclient_r>=16
 .endif
 
 .if ${FLAVOR:L:Mno_pgsql}
 CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 .else
 MULTI_PACKAGES+=	-pgsql
-BUILD_DEPENDS+=		:postgresql-client-*:databases/postgresql
+BUILD_DEPENDS+=		databases/postgresql
 CONFIGURE_ARGS+=	--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
-LIB_DEPENDS-pgsql=	:postgresql-client-*:databases/postgresql
-WANTLIB-pgsql=		pq.>=2
+LIB_DEPENDS-pgsql=	databases/postgresql
+WANTLIB-pgsql=		pq>=2
 .endif
 
 .for i in ${MULTI_PACKAGES:N-main}
-RUN_DEPENDS$i +=	:freeradius-$V:net/freeradius
+RUN_DEPENDS$i +=	freeradius-$V:net/freeradius
 .endfor
 
 post-configure:

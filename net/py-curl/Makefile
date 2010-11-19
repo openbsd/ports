@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,8 +23,8 @@ MASTER_SITES=	${HOMEPAGE}download/ \
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	::net/curl
-WANTLIB=	crypto idn ssl z curl.>=12
+LIB_DEPENDS=	net/curl
+WANTLIB=	crypto idn ssl z curl>=12
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \

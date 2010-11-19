@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	Library for delta compression of streams
 DISTNAME=	librsync-0.9.7
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=		::archivers/bzip2 \
-			::devel/popt
+LIB_DEPENDS=		archivers/bzip2 \
+			devel/popt
 
 WANTLIB=		c z bz2 popt
 

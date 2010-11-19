@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/30 22:05:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/19 22:31:39 espie Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
@@ -32,8 +32,8 @@ WANTLIB=	c crypto curl event eventextra idn m pthread ssl z
 WANTLIB-main=	${WANTLIB}
 
 MODULES=	devel/gettext textproc/intltool
-LIB_DEPENDS=	::net/curl \
-		::devel/libeventextra
+LIB_DEPENDS=	net/curl \
+		devel/libeventextra
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -66,21 +66,25 @@ WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
 		xcb-render xcb-shm
-LIB_DEPENDS+=	::x11/gtk+2 \
-		::x11/dbus-glib
-RUN_DEPENDS-gtk=:${PKGNAME-main}:net/transmission,-main \
-		::devel/desktop-file-utils \
-		:gamin-*:sysutils/gamin,-server,no_python
+LIB_DEPENDS+=	x11/gtk+2 \
+		x11/dbus-glib
+RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
+		devel/desktop-file-utils \
+		sysutils/gamin,-server,no_python
 .endif
 
 .include <bsd.own.mk>
 
-.if ${COMPILER_VERSION:L:Mgcc4*} && !${FLAVOR:L:Mno_qt}
+.if !${FLAVOR:L:Mno_qt}
 MULTI_PACKAGES+=-qt
-LIB_DEPENDS+=	::x11/qt4
+.endif
+
+ONLY_FOR_ARCHS-qt = ${GCC4_ARCHS}
+.if ${COMPILER_VERSION:L:Mgcc4*} && !${FLAVOR:L:Mno_qt}
+LIB_DEPENDS+=	x11/qt4
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
 		dbus-1 expat fontconfig freetype stdc++
-RUN_DEPENDS-qt=	:${PKGNAME-main}:net/transmission,-main
+RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main
 
 post-build:
 	cd ${WRKSRC}/qt; qmake4 qtr.pro; make ${MAKE_FLAGS}

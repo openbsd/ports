@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 WANTLIB=	SDL avutil c crypto expat lber ldap ldap_r m \
-		pt pthread sasl2 ssl stdc++ h323.>=3 sqlite3.>=12
+		pt pthread sasl2 ssl stdc++ h323>=3 sqlite3>=12
 
-LIB_DEPENDS=	::net/h323plus \
-		::databases/sqlite3
+LIB_DEPENDS=	net/h323plus \
+		databases/sqlite3
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
@@ -47,16 +47,16 @@ FLAVORS=	mysql pgsql
 FLAVOR?=
 
 .if ${FLAVOR:L:Mmysql}
-WANTLIB+=	z mysqlclient.>=18
-LIB_DEPENDS+=	::databases/mysql
+WANTLIB+=	z mysqlclient>=18
+LIB_DEPENDS+=	databases/mysql
 CONFIGURE_ARGS+=--enable-mysql
 .else
 CONFIGURE_ARGS+=--disable-mysql
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-WANTLIB +=	pq.>=5
-LIB_DEPENDS+=	::databases/postgresql
+WANTLIB +=	pq>=5
+LIB_DEPENDS+=	databases/postgresql
 CONFIGURE_ARGS+=--enable-pgsql \
 		--with-pgsql-lib-dir=${LOCALBASE}/lib \
 		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql

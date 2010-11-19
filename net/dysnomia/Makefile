@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:08:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:33 espie Exp $
 
 CATEGORIES = 	net audio www
 COMMENT = 	interface to the deezer on-demand music system
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP = Yes
 PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 
-LIB_DEPENDS = 	::x11/wxWidgets \
-		::net/curl
+LIB_DEPENDS = 	x11/wxWidgets \
+		net/curl
 
 WANTLIB = c curl m pthread stdc++ wx_base wx_base_net wx_base_odbc \
 	wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid \

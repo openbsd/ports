@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=		audio/video communications framework
 
@@ -22,10 +22,10 @@ WANTLIB += z nice util
 WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		::net/libnice \
+LIB_DEPENDS=		net/libnice \
 			${MODPY_LIB_DEPENDS}
-RUN_DEPENDS=		:gstreamer-plugins-farsight->=0.12.11p0:multimedia/gstreamer-0.10/plugins-farsight \
-			::multimedia/gstreamer-0.10/py-gstreamer
+RUN_DEPENDS=		multimedia/gstreamer-0.10/plugins-farsight>=0.12.11p0 \
+			multimedia/gstreamer-0.10/py-gstreamer
 
 MODULES=		devel/gettext \
 			lang/python

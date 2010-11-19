@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:35 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	:p5-IO-Interface->=0.94:net/p5-IO-Interface
+RUN_DEPENDS=	net/p5-IO-Interface>=0.94
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

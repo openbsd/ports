@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	perl module to provide a DAV server
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Class-Accessor-*:devel/p5-Class-Accessor \
-		:p5-File-Slurp-*:devel/p5-File-Slurp \
-		:p5-File-Find-Rule-Filesys-Virtual-*:devel/p5-File-Find-Rule-Filesys-Virtual \
-		:p5-XML-LibXML-*:textproc/p5-XML-LibXML \
-		:p5-libwww-*:www/p5-libwww
-REGRESS_DEPENDS=:p5-Test-Pod-*:devel/p5-Test-Pod
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		devel/p5-File-Slurp \
+		devel/p5-File-Find-Rule-Filesys-Virtual \
+		textproc/p5-XML-LibXML \
+		www/p5-libwww
+REGRESS_DEPENDS=devel/p5-Test-Pod
 
 .include <bsd.port.mk>

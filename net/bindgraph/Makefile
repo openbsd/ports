@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	rrdtool frontend for Bind installation
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX= 	.tgz
 
-RUN_DEPENDS=	:p5-RRD-*:net/rrdtool,-perl \
-		::devel/p5-File-Tail
+RUN_DEPENDS=	net/rrdtool,-perl \
+		devel/p5-File-Tail
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes

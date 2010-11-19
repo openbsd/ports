@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/02 21:28:00 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,9 +12,9 @@ CATEGORIES=     net
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		::net/irssi:configure \
-		::devel/glib2
-RUN_DEPENDS=  	:irssi-*:net/irssi
+		net/irssi:configure \
+		devel/glib2
+RUN_DEPENDS=  	net/irssi
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 # Needs AC_PROG_LIBTOOL
 USE_LIBTOOL =	Yes
-BUILD_DEPENDS += ::devel/libtool
+BUILD_DEPENDS += devel/libtool
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION=2.61

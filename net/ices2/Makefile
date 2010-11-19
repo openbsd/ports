@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -26,13 +26,13 @@ CONFIGURE_ARGS=	--program-suffix=2 --disable-sun-audio
 
 USE_LIBTOOL =	Yes
 # Needs AC_PROG_LIBTOOL	
-BUILD_DEPENDS += ::devel/libtool
+BUILD_DEPENDS += devel/libtool
 MODULES=	converters/libiconv
 WANTLIB=	c m ogg pthread sndio theora vorbis vorbisenc z \
-		shout.>=3 speex.>=4 xml2.>=9
-LIB_DEPENDS=	::net/libshout \
-		::audio/speex \
-		::textproc/libxml
+		shout>=3 speex>=4 xml2>=9
+LIB_DEPENDS=	net/libshout \
+		audio/speex \
+		textproc/libxml
 
 SEPARATE_BUILD=	simple
 

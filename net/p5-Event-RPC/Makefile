@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	Event based transparent Client/Server RPC framework
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Event \
-		::security/p5-IO-Socket-SSL
+RUN_DEPENDS=	devel/p5-Event \
+		security/p5-IO-Socket-SSL
 
 .include <bsd.port.mk>

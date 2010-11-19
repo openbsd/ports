@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/09 16:59:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:37 espie Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -25,10 +25,10 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c crypto m pthread ssl stdc++ iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
-LIB_DEPENDS =	::databases/iodbc \
-		::databases/mysql \
-		::databases/sqlite3 \
-		::devel/pcre
+LIB_DEPENDS =	databases/iodbc \
+		databases/mysql \
+		databases/sqlite3 \
+		devel/pcre
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	simple

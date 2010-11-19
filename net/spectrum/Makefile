@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=        XMPP transport/gateway
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=	lang/python devel/cmake
 WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0
 WANTLIB += PocoData PocoFoundation PocoMySQL PocoODBC PocoSQLite
-LIB_DEPENDS=	::net/py-xmpppy \
-		::net/gloox \
-		::net/pidgin,-libpurple \
-		::net/poco 
+LIB_DEPENDS=	net/py-xmpppy \
+		net/gloox \
+		net/pidgin,-libpurple \
+		net/poco 
 
 SPVARDIR=	/var/spectrum
 # not using CONFIGURE_STYLE=cmake from cmake module, rolling own in 

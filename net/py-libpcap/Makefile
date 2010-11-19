@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	:swig-*:devel/swig
+BUILD_DEPENDS=	devel/swig
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		command-line WebDAV client
 
@@ -18,7 +18,7 @@ WANTLIB += z neon
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::net/neon
+LIB_DEPENDS=		net/neon
 
 MASTER_SITES=		${HOMEPAGE}
 

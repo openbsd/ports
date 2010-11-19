@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/11 11:54:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
@@ -32,13 +32,13 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:dctc->=0.85.9:net/dctc
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			:dctc->=0.85.9:net/dctc \
-			::x11/gnome/yelp
-LIB_DEPENDS=		:db->=4,<5:databases/db/v4 \
-			::net/curl \
-			::x11/gnome/libgnomeui
+BUILD_DEPENDS=		net/dctc>=0.85.9
+RUN_DEPENDS=		devel/desktop-file-utils \
+			net/dctc>=0.85.9 \
+			x11/gnome/yelp
+LIB_DEPENDS=		db->=4,<5:databases/db/v4 \
+			net/curl \
+			x11/gnome/libgnomeui
 
 USE_LIBTOOL=		Yes
 VMEM_WARNING=		Yes

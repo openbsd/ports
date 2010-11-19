@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/07 00:34:04 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:pidgin->=2.4.1:net/pidgin
+RUN_DEPENDS=	net/pidgin>=2.4.1
 
 NO_REGRESS=	Yes
 

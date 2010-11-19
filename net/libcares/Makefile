@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	asynchronous resolver library
 
@@ -23,6 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

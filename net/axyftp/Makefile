@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	ftp client for X window system
 
@@ -25,9 +25,9 @@ FLAVORS=	gtk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS=    gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=    x11/gtk+
 CONFIGURE_ARGS=	--with-gui=gtk
-WANTLIB+=		Xi m glib gmodule iconv intl
+WANTLIB+=		Xi m glib gmodule iconv intl gtk gdk
 .else
 USE_MOTIF=	any
 WANTLIB+=		ICE SM Xpm Xt m

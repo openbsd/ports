@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/07/12 22:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:32 espie Exp $
 
 BROKEN=			security issues
 
@@ -34,7 +34,7 @@ HOMEPAGE=		http://dss.macosforge.org/
 MULTI_PACKAGES=		-server -admin -examples -proxy
 SUBPACKAGE?=		-server
 
-RUN_DEPENDS-admin=	:p5-Net-SSLeay->=1.03:security/p5-Net_SSLeay
+RUN_DEPENDS-admin=	security/p5-Net_SSLeay>=1.03
 
 WRKTMP=		${WRKDIR}/tmp
 

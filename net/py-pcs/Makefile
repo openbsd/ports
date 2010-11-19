@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		pcap
 
-BUILD_DEPENDS=		::devel/pyrex
+BUILD_DEPENDS=		devel/pyrex
 
 NO_REGRESS=		Yes
 

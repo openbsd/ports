@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,8 +32,8 @@ USE_GMAKE=		Yes
 
 MULTI_PACKAGES=		-main -gnome
 
-LIB_DEPENDS-gnome=	::${BUILD_PKGPATH},-main \
-			::devel/gconf2
+LIB_DEPENDS-gnome=	${BUILD_PKGPATH},-main \
+			devel/gconf2
 
 WANTLIB-main=		ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread \
 			pthread-stubs xcb

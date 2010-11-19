@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	graphical network traffic map
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
-RUN_DEPENDS=	:pear-*:www/pear \
-		:php5-gd-*:www/php5/extensions,-gd \
-		:php5-core-*:www/php5/core
+RUN_DEPENDS=	www/pear \
+		www/php5/extensions,-gd \
+		www/php5/core
 
 NO_REGRESS=	Yes
 

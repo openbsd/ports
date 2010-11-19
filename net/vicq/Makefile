@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	text-based ICQ implementation
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP= 	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
-RUN_DEPENDS=	:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu
+RUN_DEPENDS=	devel/p5-Term-ReadLine-Gnu
 
 CONFIGURE_STYLE= perl
 

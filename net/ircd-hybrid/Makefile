@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/13 06:52:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,7 +21,7 @@ EXTRACT_SUFX =		.tgz
 
 WANTLIB =		c crypto ssl z pcre
 
-LIB_DEPENDS =		::devel/pcre
+LIB_DEPENDS =		devel/pcre
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

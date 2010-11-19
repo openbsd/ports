@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=		POE Component for communicating over Jabber
 
@@ -14,13 +14,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/p5-Filter-Template \
-			::devel/p5-POE-Component-PubSub \
-			::security/p5-Authen-SASL \
-			:p5-Net-SSLeay->=1.35:security/p5-Net_SSLeay \
-			:p5-POE-Component-SSLify->=0.15:security/p5-POE-Component-SSLify \
-			:p5-POE-Filter-XML->=0.35:textproc/p5-POE-Filter-XML
+RUN_DEPENDS=		devel/p5-Filter-Template \
+			devel/p5-POE-Component-PubSub \
+			security/p5-Authen-SASL \
+			security/p5-Net_SSLeay>=1.35 \
+			security/p5-POE-Component-SSLify>=0.15 \
+			textproc/p5-POE-Filter-XML>=0.35
 
 .include <bsd.port.mk>

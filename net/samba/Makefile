@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.130 2010/11/19 22:31:38 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,10 +36,10 @@ MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 MODULES=	converters/libiconv
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	:tdb->=1.2:databases/tdb \
-		::devel/popt \
-		::devel/libexecinfo \
-		::devel/libtalloc
+LIB_DEPENDS=	databases/tdb>=1.2 \
+		devel/popt \
+		devel/libexecinfo \
+		devel/libtalloc
 
 MAKE_FLAGS+=	PASSWD_PROGRAM="/usr/bin/passwd"  \
 		LIBSMBCLIENT_SOVER="${LIBsmbclient_VERSION}" \
@@ -91,7 +91,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -docs
 
 .if ${FLAVOR:L:Mcups}
-LIB_DEPENDS+=		::print/cups
+LIB_DEPENDS+=		print/cups
 WANTLIB+= 		asn1 crypto gssapi krb5 m ssl z cups
 .else
 CONFIGURE_ARGS+= --disable-cups
@@ -102,9 +102,9 @@ ERRORS+= "Fatal: ldap and ads flavors conflict"
 .endif
 
 .if ${FLAVOR:L:Mldap} || ${FLAVOR:L:Mads}
-LIB_DEPENDS+=	::databases/openldap
+LIB_DEPENDS+=	databases/openldap
 WANTLIB +=	ldap lber
-BUILD_DEPENDS+=	::misc/libutf8
+BUILD_DEPENDS+=	misc/libutf8
 .else
 CONFIGURE_ARGS+= 	--without-ldap
 .endif

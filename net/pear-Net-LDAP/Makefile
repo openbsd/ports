@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	pear ldap
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/php5/extensions,-ldap
+RUN_DEPENDS=	www/php5/extensions,-ldap
 
 .include <bsd.port.mk>

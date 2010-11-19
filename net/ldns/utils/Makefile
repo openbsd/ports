@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/12 07:54:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	LDNS utilities
 
 PKGNAME=	ldns-utils-${VERSION}
 REVISION=	0
 
-WANTLIB=	c crypto ldns.>=4.5 pcap
-LIB_DEPENDS+=	:libldns->=1.6.7:net/ldns/libldns
+WANTLIB=	c crypto ldns>=4.5 pcap
+LIB_DEPENDS+=	net/ldns/libldns>=1.6.7
 
 WRKSRC=		${WRKDIST}/examples
 

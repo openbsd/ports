@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:33 espie Exp $
 
 COMMENT =		command line podcast aggregator
 
@@ -18,16 +18,16 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c gmp m pthread sqlite3 util
 
 MODULES =		lang/ghc converters/libiconv
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MODGHC_BUILD =		cabal hackage nort
 
-BUILD_DEPENDS =		::devel/hs-ConfigFile \
-			:hs-HaXml->=1.13.2<1.19:textproc/hs-HaXml \
-			::databases/hs-HDBC-sqlite3
-LIB_DEPENDS =		::databases/sqlite3 \
-			::devel/gmp
-RUN_DEPENDS =		:curl->=7.15.5:net/curl \
-			:py-mutagen->=1.9:audio/py-mutagen
+BUILD_DEPENDS =		devel/hs-ConfigFile \
+			hs-HaXml->=1.13.2<1.19:textproc/hs-HaXml \
+			databases/hs-HDBC-sqlite3
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/gmp
+RUN_DEPENDS =		net/curl>=7.15.5 \
+			audio/py-mutagen>=1.9
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/hpodder.1 ${PREFIX}/man/man1

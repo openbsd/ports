@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::devel/libidn
+LIB_DEPENDS=	devel/libidn
 WANTLIB=	c crypto idn ssl z
 
 USE_LIBTOOL=	Yes

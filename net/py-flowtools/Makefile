@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ WANTLIB+=	z ft
 HOMEPAGE=	http://code.google.com/p/pyflowtools/
 MASTER_SITES=	http://pyflowtools.googlecode.com/files/
 
-LIB_DEPENDS=	::net/flow-tools
+LIB_DEPENDS=	net/flow-tools
 MODULES=	lang/python
 
 NO_REGRESS= 	Yes

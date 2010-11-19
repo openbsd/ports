@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/16 08:58:56 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:37 espie Exp $
 
 COMMENT =		python interface to the nmap scan data
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		::net/nmap
+RUN_DEPENDS =		net/nmap
 
 NO_REGRESS =		Yes
 

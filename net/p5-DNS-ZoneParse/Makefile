@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=		parse and manipulate DNS Zone files
 
 MODULES=		cpan
 DISTNAME=		DNS-ZoneParse-0.96
 CATEGORIES=		net
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>
 

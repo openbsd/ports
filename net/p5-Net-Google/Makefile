@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	simple OOP-ish interface to the Google SOAP API
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		:p5-SOAP-Lite-*:www/p5-SOAP-Lite
+RUN_DEPENDS=		www/p5-SOAP-Lite
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 REGRESS_IS_INTERACTIVE=	Yes

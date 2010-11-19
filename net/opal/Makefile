@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/09/01 14:42:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:35 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,14 +32,14 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 WANTLIB += SDL c crypto expat lber ldap ldap_r m ogg sasl2
 WANTLIB += ssl speex speexdsp x264 theora gsm pt pthread stdc++
 
-LIB_DEPENDS=	::audio/speex \
-		::multimedia/libtheora \
-		::audio/gsm \
-		::devel/ptlib \
-		::multimedia/x264
+LIB_DEPENDS=	audio/speex \
+		multimedia/libtheora \
+		audio/gsm \
+		devel/ptlib \
+		multimedia/x264
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ffmpeg->=20100512:graphics/ffmpeg # dlopen(3) libavcodec.so
+RUN_DEPENDS=	graphics/ffmpeg>=20100512 # dlopen(3) libavcodec.so
 
 ALL_TARGET=	opt
 OPAL_FILE=	libopal.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/29 12:54:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:34 espie Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -32,11 +32,11 @@ MODULES =		lang/python lang/ruby
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No # not supported yet, but won't need a bump when it is
 
-RUN_DEPENDS-main =	::devel/p5-Net-Server \
-			::net/p5-Net-CIDR
-RUN_DEPENDS-server +=	:p5-RRD-*:net/rrdtool,-perl \
-			::www/p5-HTML-Template \
-			:munin-node-*:net/munin,-main
+RUN_DEPENDS-main =	devel/p5-Net-Server \
+			net/p5-Net-CIDR
+RUN_DEPENDS-server +=	net/rrdtool,-perl \
+			www/p5-HTML-Template \
+			net/munin,-main
 
 USE_GMAKE =		Yes
 ALL_TARGET =		default build-doc build-man

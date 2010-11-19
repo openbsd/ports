@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	NetFlow collector
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu

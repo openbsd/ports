@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	Perl module for encoding/decoding network traffic
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::net/p5-Net-Pcap
+BUILD_DEPENDS=	net/p5-Net-Pcap
 
 NO_REGRESS=	Yes
 

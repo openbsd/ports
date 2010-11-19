@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:33 espie Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -30,7 +30,7 @@ MAKE_FLAGS +=	CC="${CC}" LD="${CC}"
 
 USE_GROFF =	Yes
 NO_REGRESS =	Yes
-LIB_DEPENDS =	::devel/pcre
+LIB_DEPENDS =	devel/pcre
 
 DOCS =		architecture configuration gpl haproxy-en haproxy-fr lgpl
 EXAMPLES =	acl-content-sw content-sw-sample haproxy \

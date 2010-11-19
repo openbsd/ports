@@ -19,8 +19,8 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-amqp-*:net/ruby-amqp,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-bunny-*:net/ruby-bunny,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-json-*:converters/ruby-json,${FLAVOR}
+RUN_DEPENDS =	net/ruby-amqp,${FLAVOR} \
+		net/ruby-bunny,${FLAVOR} \
+		converters/ruby-json,${FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/11 14:00:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=		galago presence daemon
 
@@ -18,9 +18,9 @@ MASTER_SITES=		http://www.galago-project.org/files/releases/source/galago-daemon
 WANTLIB=		c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 iconv intl \
 			pthread galago
 
-LIB_DEPENDS=		::net/libgalago
+LIB_DEPENDS=		net/libgalago
 BUILD_DEPENDS=		${REGRESS_DEPENDS}
-REGRESS_DEPENDS=	::devel/check
+REGRESS_DEPENDS=	devel/check
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=    	Yes

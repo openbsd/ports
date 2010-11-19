@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/06 19:05:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/19 22:31:32 espie Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -54,16 +54,16 @@ MODULES=	devel/gettext \
 
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::converters/xmltoman
+BUILD_DEPENDS=	converters/xmltoman
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
 		gthread-2.0 gdbm  daemon dbus-1 \
 		${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		::devel/glib2 \
-		::databases/gdbm \
-		::devel/libdaemon \
-		::x11/dbus
+		devel/glib2 \
+		databases/gdbm \
+		devel/libdaemon \
+		x11/dbus
 
 # keep in sync with lang/mono/mono.port.mk
 ONLY_FOR_ARCHS-mono = i386 amd64
@@ -81,10 +81,10 @@ BUILD_MONO = Yes
 .if ${BUILD_MONO:L} == "yes"
 MODULES+=	lang/mono
 BUILD_DEPENDS+=	${MODMONO_BUILD_DEPENDS} \
-		::x11/mono-gtk2
+		x11/mono-gtk2
 RUN_DEPENDS-mono= ${MODMONO_RUN_DEPENDS} \
-		::net/avahi,-gtk,no_qt3,no_qt4 \
-		::x11/mono-gtk2
+		net/avahi,-gtk,no_qt3,no_qt4 \
+		x11/mono-gtk2
 LIB_DEPENDS-mono= # empty
 WANTLIB-mono=	# empty
 .else
@@ -95,17 +95,17 @@ CONFIGURE_ARGS+= --disable-mono \
 .if !${FLAVOR:L:Mno_gtk} || ${BUILD_MONO:L} == "yes"
 MULTI_PACKAGES+= -gtk
 MODULES+=	lang/python
-BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
-		::x11/py-gtk2 \
-		::x11/dbus-python
+BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
+		x11/py-gtk2 \
+		x11/dbus-python
 LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
-		::net/avahi
+		net/avahi
 RUN_DEPENDS-gtk= ${MODPY_RUN_DEPENDS} \
-		:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
-		::x11/py-gtk2 \
-		::x11/dbus-python \
-		::devel/py-twisted/web \
-		::devel/desktop-file-utils
+		lang/python/${MODPY_VERSION},-gdbm \
+		x11/py-gtk2 \
+		x11/dbus-python \
+		devel/py-twisted/web \
+		devel/desktop-file-utils
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
@@ -126,7 +126,7 @@ MULTI_PACKAGES+= -qt3
 MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
-		::net/avahi
+		net/avahi
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread-stubs xcb z \
@@ -139,8 +139,8 @@ CONFIGURE_ARGS+= --disable-qt3
 MULTI_PACKAGES+= -qt4
 MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
-		::x11/qt4 \
-		::net/avahi
+		x11/qt4 \
+		net/avahi
 WANTLIB-qt4=	QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB}
 .else
 CONFIGURE_ARGS+= --disable-qt4

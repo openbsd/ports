@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 22:31:32 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -30,7 +30,7 @@ MULTI_PACKAGES=	-main -server
 
 WANTLIB=	c m util z
 
-BUILD_DEPENDS=	::lang/ezm3
+BUILD_DEPENDS=	lang/ezm3
 
 FLAVORS=	no_x11
 FLAVOR?=

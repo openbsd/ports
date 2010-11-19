@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:37 espie Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -29,8 +29,8 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		::devel/py-simplejson
-RUN_DEPENDS =	::lang/erlang
+		devel/py-simplejson
+RUN_DEPENDS =	lang/erlang
 
 MAKE_ENV =	PYTHON=${MODPY_BIN} 
 

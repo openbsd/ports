@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=		desktop presence framework
 
@@ -21,8 +21,8 @@ WANTLIB=		dbus-1 glib-2.0 gobject-2.0 pcre dbus-glib-1
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::x11/dbus-glib
-BUILD_DEPENDS=		:check->=0.9.5:devel/check
+LIB_DEPENDS=		x11/dbus-glib
+BUILD_DEPENDS=		devel/check>=0.9.5
 REGRESS_DEPENDS=	${BUILD_DEPENDS}
 
 USE_LIBTOOL=		Yes

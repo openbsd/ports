@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:35 espie Exp $
 
 COMMENT =	simple irc bot baseclass
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	::net/p5-POE-Component-IRC
+RUN_DEPENDS =	net/p5-POE-Component-IRC
 
 MODCPAN_EXAMPLES=	Yes
 

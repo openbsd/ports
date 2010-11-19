@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS +=	::devel/gettext
-RUN_DEPENDS +=		::devel/gettext
+BUILD_DEPENDS +=	devel/gettext
+RUN_DEPENDS +=		devel/gettext
 
 CONFIGURE_STYLE=	gnu autoconf
 USE_LIBTOOL=		Yes

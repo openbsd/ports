@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/23 14:24:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 22:31:39 espie Exp $
 
 PKG_ARCH=		*
 
@@ -9,9 +9,9 @@ CATEGORIES=		books
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}
 
-BUILD_DEPENDS=		::devel/py-cheetah \
-			::textproc/libxslt \
-			::textproc/py-docutils
+BUILD_DEPENDS=		devel/py-cheetah \
+			textproc/libxslt \
+			textproc/py-docutils
 
 MODULES+=		lang/python
 MODPY_RUNDEP=		No

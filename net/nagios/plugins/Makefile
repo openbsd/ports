@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/15 09:56:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/19 22:31:35 espie Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -39,8 +39,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagiosplug/}
 
-BUILD_DEPENDS=	::games/qstat \
-		::net/fping
+BUILD_DEPENDS=	games/qstat \
+		net/fping
 
 FAKE_FLAGS=	setuid_root_mode=0555
 
@@ -72,48 +72,48 @@ CONFIGURE_ARGS+=--without-mysql --without-pgsql
 
 .if ! ${FLAVOR:L:Mno_ntp}
 MULTI_PACKAGES+=-ntp
-BUILD_DEPENDS+=	::net/ntp
+BUILD_DEPENDS+=	net/ntp
 .endif
 
 .if ! ${FLAVOR:L:Mno_samba}
 MULTI_PACKAGES+=-samba
-BUILD_DEPENDS+=	::net/samba
+BUILD_DEPENDS+=	net/samba
 .endif
 
 .if ! ${FLAVOR:L:Mno_snmp}
 MULTI_PACKAGES+=-snmp
-BUILD_DEPENDS+=	::net/p5-Net-SNMP \
-		::net/net-snmp
+BUILD_DEPENDS+=	net/p5-Net-SNMP \
+		net/net-snmp
 .endif
 
 WANTLIB=		c pthread
 
-RUN_DEPENDS-fping=	::net/fping
+RUN_DEPENDS-fping=	net/fping
 
-RUN_DEPENDS-game=	::games/qstat
+RUN_DEPENDS-game=	games/qstat
 
 WANTLIB-ldap+=		${WANTLIB} asn1 com_err crypto gssapi krb5
 WANTLIB-ldap+=		lber ldap sasl2 ssl
-LIB_DEPENDS-ldap=	:openldap-client-*:databases/openldap \
+LIB_DEPENDS-ldap=	databases/openldap \
 			${LIB_DEPENDS}
 
 WANTLIB-mysql=		${WANTLIB} crypto m mysqlclient ssl z
-LIB_DEPENDS-mysql=	:mysql-client-*:databases/mysql \
+LIB_DEPENDS-mysql=	databases/mysql \
 			${LIB_DEPENDS}
 
 WANTLIB-ntp=		${WANTLIB} m
-RUN_DEPENDS-ntp=	::net/ntp
+RUN_DEPENDS-ntp=	net/ntp
 
 WANTLIB-pgsql=		${WANTLIB} crypto pq
-LIB_DEPENDS-pgsql=	:postgresql-client-*:databases/postgresql \
+LIB_DEPENDS-pgsql=	databases/postgresql \
 			${LIB_DEPENDS}
 
 LIB_DEPENDS-samba=
 WANTLIB-samba=
-RUN_DEPENDS-samba=	::net/samba
+RUN_DEPENDS-samba=	net/samba
 
-RUN_DEPENDS-snmp=	::net/net-snmp \
-			::net/p5-Net-SNMP
+RUN_DEPENDS-snmp=	net/net-snmp \
+			net/p5-Net-SNMP
 
 WANTLIB-main=		${WANTLIB} crypto m ssl
 

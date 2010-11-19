@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=        module to format validation for Net:: related strings
 
@@ -17,6 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Class-Default
+RUN_DEPENDS=	devel/p5-Class-Default
 
 .include <bsd.port.mk>

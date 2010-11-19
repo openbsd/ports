@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/11 14:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -33,7 +33,7 @@ FLAVORS=		${STORAGES} ldap
 FLAVOR?=		mysql
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--enable-debug \
@@ -45,24 +45,24 @@ EXTRA_INCLUDE_PATH=	${LOCALBASE}/include
 EXTRA_LIBRARY_PATH=	${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=		::databases/mysql
-WANTLIB +=		lib/mysql/mysqlclient.>=10
+LIB_DEPENDS+=		databases/mysql
+WANTLIB +=		lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+=	--enable-mysql
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=		::databases/postgresql
-WANTLIB +=		pq.>=4
+LIB_DEPENDS+=		databases/postgresql
+WANTLIB +=		pq>=4
 CONFIGURE_ARGS+=	--enable-pgsql
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if ${FLAVOR:L:Mdb}
-LIB_DEPENDS+=		::databases/db/v4
-WANTLIB +=		lib/db4/db.>=4
+LIB_DEPENDS+=		databases/db/v4
+WANTLIB +=		lib/db4/db>=4
 CONFIGURE_ARGS+=	--enable-db
 EXTRA_INCLUDE_PATH:=	${EXTRA_INCLUDE_PATH}:${LOCALBASE}/include/db4
 .else
@@ -70,8 +70,8 @@ CONFIGURE_ARGS+=	--disable-db
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		:openldap-client->=2.3:databases/openldap
-WANTLIB +=		ldap.>=8 lber.>=8
+LIB_DEPENDS+=		databases/openldap>=2.3
+WANTLIB +=		ldap>=8 lber>=8
 CONFIGURE_ARGS+=	--enable-ldap
 WANTLIB+=		sasl2 asn1 com_err gssapi krb5
 .else

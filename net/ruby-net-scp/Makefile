@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:38 espie Exp $
 
 COMMENT =		pure-Ruby implementation of the SCP protocol
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-net-ssh->=2.0.0:net/ruby-net-ssh,${FLAVOR}
+RUN_DEPENDS =		net/ruby-net-ssh,${FLAVOR}>=2.0.0
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha-*:devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -rubygems -Ilib test/test_all.rb
 

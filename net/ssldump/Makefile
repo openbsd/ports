@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	SSLv3/TLS network protocol analyzer
 
@@ -21,11 +21,11 @@ WANTLIB=		c crypto m pcap ssl
 MASTER_SITES=		http://www.rtfm.com/ssldump/
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-openssl-inc=/usr/include \
 			--with-openssl-lib=/usr/lib
 
-NO_REGRESS=	Yes
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

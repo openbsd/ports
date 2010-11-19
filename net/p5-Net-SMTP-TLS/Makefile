@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	Perl module for SMTP with TLS/AUTH support
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::security/p5-Digest-HMAC \
-		::security/p5-Net_SSLeay \
-		::security/p5-IO-Socket-SSL
+RUN_DEPENDS=	security/p5-Digest-HMAC \
+		security/p5-Net_SSLeay \
+		security/p5-IO-Socket-SSL
 
 .include <bsd.port.mk>

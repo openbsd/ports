@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	AFP file and print services for AppleTalk/IP networks
 
@@ -22,8 +22,8 @@ CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes
 
-WANTLIB=	c crypto rpcsvc db.>=4
-LIB_DEPENDS=	:db->=4,<5:databases/db/v4
+WANTLIB=	c crypto rpcsvc db>=4
+LIB_DEPENDS=	db->=4,<5:databases/db/v4
 
 CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 

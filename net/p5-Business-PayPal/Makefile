@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 16:05:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	extension for automating PayPal transactions
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
 
-RUN_DEPENDS=	::security/p5-Net_SSLeay
+RUN_DEPENDS=	security/p5-Net_SSLeay
 
 NO_REGRESS=	Yes
 

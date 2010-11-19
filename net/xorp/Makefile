@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/24 10:55:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:39 espie Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -38,8 +38,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-optimize --disable-debug
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
-REGRESS_DEPENDS=	::shells/bash \
-			::lang/python/2.5
+REGRESS_DEPENDS=	shells/bash \
+			lang/python/2.5
 
 # some regression tests must be run as root
 do-regress:

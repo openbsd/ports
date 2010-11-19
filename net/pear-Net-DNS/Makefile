@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/21 00:04:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	resolver library used to communicate with a DNS server
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PKG_ARCH=	*
-RUN_DEPENDS=	::www/php5/extensions,-mhash
+RUN_DEPENDS=	www/php5/extensions,-mhash
 
 .include <bsd.port.mk>

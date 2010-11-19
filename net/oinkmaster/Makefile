@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	update your Snort rules
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
-RUN_DEPENDS=		::net/wget
+RUN_DEPENDS=		net/wget
 
 NO_BUILD=Yes
 NO_REGRESS=Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:33 espie Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -35,7 +35,8 @@ CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools
 .if !${FLAVOR:L:Mpgsql}
 CONFIGURE_ARGS+=	--without-postgresql
 .else
-LIB_DEPENDS+=		pq::databases/postgresql,-main
+WANTLIB +=		pq
+LIB_DEPENDS+=		databases/postgresql,-main
 .endif
 
 MAKE_FLAGS+=		"SUBDIRS=lib src bin configs docs"
@@ -43,7 +44,7 @@ FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 PYTHON_SCRIPTS=		bin/flow-log2rrd \
 			bin/flow-rpt2rrd \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		TCP dump file analysis tool
 
@@ -16,17 +16,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pcap 
 
-BUILD_DEPENDS=		:bison-*:devel/bison
+BUILD_DEPENDS=		devel/bison
 
-RUN_DEPENDS+=		::archivers/bzip2 \
-			::x11/xplot
+RUN_DEPENDS+=		archivers/bzip2 \
+			x11/xplot
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		YACC=bison
 
 ALL_TARGET=		tcptrace
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 DOCFILES=	ARGS COPYRIGHT FAQ README README.mailing_list README.modules \

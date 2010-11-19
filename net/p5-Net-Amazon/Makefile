@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=		Perl Interface to Amazon.{co.uk,com} Web Services
 
 MODULES=		cpan
 DISTNAME=		Net-Amazon-0.59
 CATEGORIES=		net
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Sam Smith <s@msmith.net>
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-XML-Simple->=2.08:textproc/p5-XML-Simple \
-		::devel/p5-Log-Log4perl \
-		:p5-libwww-*:www/p5-libwww
+RUN_DEPENDS=	textproc/p5-XML-Simple>=2.08 \
+		devel/p5-Log-Log4perl \
+		www/p5-libwww
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

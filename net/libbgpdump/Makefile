@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/29 13:53:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.ris.ripe.net/source/bgpdump/
 
 WANTLIB=	bz2 c z
-LIB_DEPENDS=	::archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"

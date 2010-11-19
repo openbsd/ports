@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/24 21:30:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/19 22:31:34 espie Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.5
@@ -40,11 +40,11 @@ CONFIGURE_ENV +=	LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
-BUILD_DEPENDS =	::x11/lablgtk2
-LIB_DEPENDS =	::x11/gnome/librsvg \
-		::archivers/bzip2 \
-		::graphics/gd \
-		::devel/libmagic
+BUILD_DEPENDS =	x11/lablgtk2
+LIB_DEPENDS =	x11/gnome/librsvg \
+		archivers/bzip2 \
+		graphics/gd \
+		devel/libmagic
 
 FAKE_FLAGS =	MODOCAML_NATIVE=${MODOCAML_NATIVE}
 NO_REGRESS =	Yes

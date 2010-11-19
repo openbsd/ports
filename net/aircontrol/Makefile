@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=	management tool for Ubiquiti wireless devices
 
@@ -21,7 +21,7 @@ MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_JRERUN=	Yes
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
 PREFIX=		/var/aircontrol
 

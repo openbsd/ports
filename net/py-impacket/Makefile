@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:37 espie Exp $
 
 COMMENT =		Python classes providing access to network packets
 
@@ -23,8 +23,8 @@ MODULES =		lang/python
 
 # one example also uses python-tkinter, but it's pretty heavy and
 # not required for normal use.
-RUN_DEPENDS =		::security/py-crypto \
-			::net/py-pcapy
+RUN_DEPENDS =		security/py-crypto \
+			net/py-pcapy
 
 NO_REGRESS =		Yes
 

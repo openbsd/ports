@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/14 09:28:12 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:39 espie Exp $
 
 COMMENT-main=	IRC client for Emacs
 COMMENT-el=	elisp sources of zenirc
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.zenirc.org/pub/zenirc/
 
 CONFIGURE_STYLE=gnu old dest
 
-RUN_DEPENDS=	::editors/emacs21
+RUN_DEPENDS=	editors/emacs21
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MULTI_PACKAGES=	-main -el

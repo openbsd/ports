@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 09:47:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:32 espie Exp $
 
 COMMENT-main=	bird internet routing daemon
 COMMENT-doc=	bird internet routing daemon (documentation)
@@ -39,8 +39,8 @@ PKGNAME-main=	bird-$V
 
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
-BUILD_DEPENDS=	::devel/m4 \
-		::devel/bison
+BUILD_DEPENDS=	devel/m4 \
+		devel/bison
 
 FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/bird
 

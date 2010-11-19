@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/07 16:52:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		Dynamic DNS service update client
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ddclient/}
 
-RUN_DEPENDS=		:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL
+RUN_DEPENDS=		security/p5-IO-Socket-SSL
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

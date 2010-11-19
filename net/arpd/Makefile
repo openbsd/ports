@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:32 espie Exp $
 			
 COMMENT=		ARP reply daemon
 
@@ -23,6 +23,6 @@ USE_GROFF =		Yes
 
 WRKDIST=		${WRKDIR}/arpd
 
-LIB_DEPENDS=		::net/libdnet
+LIB_DEPENDS=		net/libdnet
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	m pcre glib-2.0.>=800
+WANTLIB=	m pcre glib-2.0>=800
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=meanwhile/}
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-mailme=no \
 		--enable-doxygen=no
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::devel/glib2
+LIB_DEPENDS=	devel/glib2
 
 USE_LIBTOOL=	Yes
 

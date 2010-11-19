@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 16:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:36 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to yaz zoom
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::converters/p5-MARC-Record
-LIB_DEPENDS=	::net/yaz
+RUN_DEPENDS=	converters/p5-MARC-Record
+LIB_DEPENDS=	net/yaz
 
 WANTLIB += exslt gcrypt gpg-error m pthread xml2 xslt z yaz
 

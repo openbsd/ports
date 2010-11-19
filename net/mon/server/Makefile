@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/10 13:54:56 pea Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:34 espie Exp $
 
 COMMENT =	service monitoring daemon
 
@@ -7,7 +7,7 @@ REVISION =	1
 
 WANTLIB = 	c
 
-RUN_DEPENDS =	::devel/p5-Time-Period
+RUN_DEPENDS =	devel/p5-Time-Period
 
 USE_GROFF =	Yes
 NO_REGRESS = 	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/19 22:31:32 espie Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -26,9 +26,9 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
-		:desktop-file-utils-*:devel/desktop-file-utils
+		devel/desktop-file-utils
 
-LIB_DEPENDS =	:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+LIB_DEPENDS =	x11/wxWidgets>=2.6.3
 WANTLIB =	c m pthread z stdc++ wx_base_net wx_base
 
 USE_GMAKE =	Yes

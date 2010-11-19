@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.662 2010/11/11 09:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.663 2010/11/19 22:31:32 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += arping
      SUBDIR += arpwatch
      SUBDIR += avahi,
+     SUBDIR += avahi,no_mono
      SUBDIR += axel
      SUBDIR += axyftp
      SUBDIR += balance

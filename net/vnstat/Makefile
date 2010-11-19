@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/08 13:20:44 pea Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:39 espie Exp $
 
 COMMENT = 	network traffic monitor
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP = 	Yes
 
 WANTLIB = 	c m gd
 
-LIB_DEPENDS = 	::graphics/gd
+LIB_DEPENDS = 	graphics/gd
 
 USE_GMAKE = 	Yes
 

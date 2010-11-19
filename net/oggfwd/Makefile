@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	pipe an Ogg stream to an Icecast server
 
@@ -16,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m ogg pthread theora vorbis shout.>=5 speex.>=4
+WANTLIB=	c m ogg pthread theora vorbis shout>=5 speex>=4
 
 MASTER_SITES=	http://v2v.cc/~j/oggfwd/
 
-LIB_DEPENDS=	::net/libshout \
-		::audio/speex
+LIB_DEPENDS=	net/libshout \
+		audio/speex
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

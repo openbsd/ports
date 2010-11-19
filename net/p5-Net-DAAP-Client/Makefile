@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	perl client for Apple iTunes DAAP service
 
@@ -13,9 +13,9 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	:p5-libwww-*:www/p5-libwww \
-		:p5-Net-DAAP-DMAP-*:net/p5-Net-DAAP-DMAP \
-		:p5-Digest-MD5-M4p-*:security/p5-Digest-MD5-M4p
+RUN_DEPENDS=	www/p5-libwww \
+		net/p5-Net-DAAP-DMAP \
+		security/p5-Digest-MD5-M4p
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 post-install:

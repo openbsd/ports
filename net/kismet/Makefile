@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/11 14:11:34 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/19 22:31:34 espie Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -55,9 +55,9 @@ MULTI_PACKAGES=		-main
 
 WANTLIB-main=		c m ncurses panel pcap stdc++
 WANTLIB-gpsmap=		c expat freetype m pthread stdc++ z \
-			MagickCore.>=1 MagickWand.>=1 gmp.>=6
-LIB_DEPENDS-gpsmap=	::graphics/ImageMagick \
-			::devel/gmp
+			MagickCore>=1 MagickWand>=1 gmp>=6
+LIB_DEPENDS-gpsmap=	graphics/ImageMagick \
+			devel/gmp
 
 .if !${FLAVOR:L:Mno_gpsmap}
 MULTI_PACKAGES+=	-gpsmap

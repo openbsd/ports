@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:38 espie Exp $
 
 COMMENT =	pure-ruby implementation of the SSH2 client protocol
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP =		yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR}
+RUN_DEPENDS =	devel/ruby-highline,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha-*:devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -Ilib -rubygems test/test_all.rb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:38 espie Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -39,12 +39,12 @@ WANTLIB-main =	${WANTLIB} \
 
 WANTLIB-utils =	${WANTLIB} ncurses
 
-LIB_DEPENDS =	:libusb-*:devel/libusb
+LIB_DEPENDS =	devel/libusb
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			::x11/gtk+2
+			x11/gtk+2
 
-RUN_DEPENDS-main = 	:spectrum-tools-utils-*:net/spectrum-tools,-utils
+RUN_DEPENDS-main = 	net/spectrum-tools,-utils
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

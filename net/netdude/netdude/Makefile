@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
@@ -19,16 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::net/libnetdude/libnetdude \
-		::net/libpcapnav \
-		::devel/glib \
-		::x11/gtk+
+LIB_DEPENDS=	net/libnetdude/libnetdude \
+		net/libpcapnav \
+		devel/glib \
+		x11/gtk+
 
 WANTLIB=	X11 Xau Xdmcp Xext Xi c m pcap pthread-stubs xcb netdude \
-		pcapnav glib.>=1 gmodule.>=1 gdk gtk
+		pcapnav glib>=1 gmodule>=1 gdk gtk
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc/netdude \
 			--disable-gtk-doc --datadir=${PREFIX}/lib

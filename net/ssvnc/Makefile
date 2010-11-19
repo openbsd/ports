@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/19 22:31:38 espie Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -36,14 +36,14 @@ NO_REGRESS =	Yes
 
 MODULES =	x11/tk
 
-WANTLIB-main =		ICE SM X11 Xau Xaw Xdmcp Xext Xpm Xmu Xt c z jpeg.>=62
-LIB_DEPENDS-main =	::graphics/jpeg
+WANTLIB-main =		ICE SM X11 Xau Xaw Xdmcp Xext Xpm Xmu Xt c z jpeg>=62
+LIB_DEPENDS-main =	graphics/jpeg
 
 WANTLIB-gui =		c crypto ssl
-RUN_DEPENDS-gui =	::devel/desktop-file-utils \
-			::net/avahi \
-			::net/ssvnc,-main \
-			::security/stunnel \
+RUN_DEPENDS-gui =	devel/desktop-file-utils \
+			net/avahi \
+			net/ssvnc,-main \
+			security/stunnel \
 			${MODTK_RUN_DEPENDS}
 
 CONFIGURE_STYLE =	imake noman

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	Cistron RADIUS server
 
@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/ \
 
 HOMEPAGE=	http://www.radius.cistron.nl/
 
-RUN_DEPENDS=	::net/p5-Net-Telnet \
-		::net/p5-SNMP_Session
+RUN_DEPENDS=	net/p5-Net-Telnet \
+		net/p5-SNMP_Session
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2010/11/19 22:31:38 espie Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -36,27 +36,27 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 
-LIB_DEPENDS =		::devel/pcre
+LIB_DEPENDS =		devel/pcre
 WANTLIB +=		pcre
 
 FLAVORS =		postgresql mysql flexresp prelude
 FLAVOR ?=	
 
 .if ${FLAVOR:L:Mflexresp}
-LIB_DEPENDS +=		::net/libdnet
-WANTLIB +=		dnet.=1
+LIB_DEPENDS +=		net/libdnet
+WANTLIB +=		dnet=1
 CONFIGURE_ARGS +=	--enable-flexresp2
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS +=		::databases/postgresql
-WANTLIB +=		pq.>=2
+LIB_DEPENDS +=		databases/postgresql
+WANTLIB +=		pq>=2
 CONFIGURE_ARGS +=	--with-postgresql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS +=		::databases/mysql
-WANTLIB +=		lib/mysql/mysqlclient.>=10
+LIB_DEPENDS +=		databases/mysql
+WANTLIB +=		lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS +=	--with-mysql-libraries="${LOCALBASE}/lib" \
 			--with-mysql-includes="${LOCALBASE}/include"
 WANTLIB +=		z
@@ -64,8 +64,8 @@ WANTLIB +=		z
 
 .if ${FLAVOR:L:Mprelude}
 MODULES =		devel/gettext
-LIB_DEPENDS +=		::security/prelude/libprelude
-WANTLIB +=		gcrypt gnutls gpg-error pthread tasn1 z prelude.>=8
+LIB_DEPENDS +=		security/prelude/libprelude
+WANTLIB +=		gcrypt gnutls gpg-error pthread tasn1 z prelude>=8
 CONFIGURE_ARGS +=	--enable-prelude
 MESSAGE =		${PKGDIR}/MESSAGE-prelude
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2010/11/19 22:31:39 espie Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -23,8 +23,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 MAKE_FLAGS=	UISTYLE=text
 .else
-BUILD_DEPENDS+=	::x11/lablgtk2
-LIB_DEPENDS=	::x11/gtk+2
+BUILD_DEPENDS+=	x11/lablgtk2
+LIB_DEPENDS=	x11/gtk+2
 MAKE_FLAGS=	UISTYLE=gtk2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender expat fontconfig freetype pixman-1 pthread-stubs

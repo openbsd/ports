@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/05 21:17:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	Twitter script for irssi
 
@@ -20,8 +20,8 @@ MASTER_SITES=	${HOMEPAGE}
 EXTRACT_ONLY=
 EXTRACT_SUFX=	.pl
 
-RUN_DEPENDS=	:irssi-*:net/irssi \
-		::net/p5-Net-Twitter
+RUN_DEPENDS=	net/irssi \
+		net/p5-Net-Twitter
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

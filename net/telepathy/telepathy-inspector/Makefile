@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -20,9 +20,9 @@ WANTLIB += xcb-render-util xml2 z glade-2.0 telepathy-glib
 MODULES=	devel/gettext \
 		lang/python
 
-BUILD_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		::devel/libglade2 \
-			::net/telepathy/telepathy-glib
+BUILD_DEPENDS=		textproc/libxslt
+LIB_DEPENDS=		devel/libglade2 \
+			net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		No

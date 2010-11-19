@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/13 22:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
 DISTNAME=	libgadu-1.9.0
-PKGNAME=	${DISTNAME}v0
+EPOCH =		0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}files/
 

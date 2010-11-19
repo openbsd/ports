@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/10/24 21:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	GTK+2 IRC client
 
@@ -33,10 +33,10 @@ MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/ \
 MODULES=	devel/gettext \
 		devel/gconf2
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/gtk+2 \
-		::x11/dbus-glib \
-		::x11/libsexy
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2 \
+		x11/dbus-glib \
+		x11/libsexy
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

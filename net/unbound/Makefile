@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/10 08:29:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	validating DNS resolver
 
@@ -24,8 +24,8 @@ NO_REGRESS=		Yes
 
 SHARED_LIBS+=		unbound 2.6
 
-WANTLIB=		c crypto event expat ldns.>=4.5 ssl
-LIB_DEPENDS+=		:libldns->=1.6.7:net/ldns/libldns
+WANTLIB=		c crypto event expat ldns>=4.5 ssl
+LIB_DEPENDS+=		net/ldns/libldns>=1.6.7
 
 CONFIGURE_ARGS+=	--with-ssl=/usr \
 			--with-libevent=/usr \

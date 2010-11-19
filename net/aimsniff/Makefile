@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:32 espie Exp $
 PKG_ARCH=	*
 
 COMMENT=	utility for monitoring and archiving AOL Instant Messenger
@@ -17,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	::converters/p5-Unicode-String \
-		::databases/p5-DBI \
-		::devel/p5-Proc-Daemon \
-		::devel/p5-Proc-Simple \
-		::net/p5-NetPacket \
-		::sysutils/p5-Unix-Syslog
+RUN_DEPENDS=	converters/p5-Unicode-String \
+		databases/p5-DBI \
+		devel/p5-Proc-Daemon \
+		devel/p5-Proc-Simple \
+		net/p5-NetPacket \
+		sysutils/p5-Unix-Syslog
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aimSniff.pl ${PREFIX}/bin/aimsniff

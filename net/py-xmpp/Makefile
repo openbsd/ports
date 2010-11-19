@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
@@ -23,9 +23,9 @@ MASTER_SITES=	${HOMEPAGE}downloads/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	:py-libxml-*:textproc/libxml,-python
-RUN_DEPENDS=	:py-libxml-*:textproc/libxml,-python \
-		:py-dnspython-*:net/py-dnspython
+BUILD_DEPENDS=	textproc/libxml,-python
+RUN_DEPENDS=	textproc/libxml,-python \
+		net/py-dnspython
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
@@ -25,7 +25,7 @@ MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 MODULES=	converters/libiconv
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	:yasm-*:devel/yasm
+BUILD_DEPENDS+=	devel/yasm
 .endif
 
 FLAVORS=	operops

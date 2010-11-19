@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/11 16:27:54 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
@@ -30,7 +30,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-gtk
 .else
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
-LIB_DEPENDS+=		::x11/gtk+2
+LIB_DEPENDS+=		x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

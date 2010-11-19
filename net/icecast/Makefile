@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/11 11:15:26 edd Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	server for streaming various media formats
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB +=	c curl.>=2 crypto idn m ogg pthread speex.>=3 ssl theora.>=1
-WANTLIB +=	vorbis.>=3 xml2 xslt.>=3 z
+WANTLIB +=	c curl>=2 crypto idn m ogg pthread speex>=3 ssl theora>=1
+WANTLIB +=	vorbis>=3 xml2 xslt>=3 z
 
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/
 
@@ -29,11 +29,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
-LIB_DEPENDS =	::net/curl \
-		::textproc/libxslt \
-		::audio/libvorbis \
-		::audio/speex \
-		::multimedia/libtheora
+LIB_DEPENDS =	net/curl \
+		textproc/libxslt \
+		audio/libvorbis \
+		audio/speex \
+		multimedia/libtheora
 
 SEPARATE_BUILD=	simple
 

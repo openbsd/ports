@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::net/curl
+LIB_DEPENDS=		net/curl
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes

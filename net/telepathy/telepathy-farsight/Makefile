@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
@@ -17,8 +17,8 @@ MODULES=		devel/gettext \
 			lang/python
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			::net/farsight2 \
-			::net/telepathy/telepathy-glib
+			net/farsight2 \
+			net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

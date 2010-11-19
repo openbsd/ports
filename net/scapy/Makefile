@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -23,10 +23,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 USE_GROFF =	Yes
 
 MODULES=	lang/python
-RUN_DEPENDS=	:py-libdnet-*:net/libdnet,-python \
-		:py-libpcap-*:net/py-libpcap \
-		:py-crypto-*:security/py-crypto \
-		:py-gnuplot-*:math/py-gnuplot
+RUN_DEPENDS=	net/libdnet,-python \
+		net/py-libpcap \
+		security/py-crypto \
+		math/py-gnuplot
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 PKG_ARCH=	*

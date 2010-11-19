@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 21:14:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	gtk soulseek client written in Python
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-gtk2-*:x11/py-gtk2
+RUN_DEPENDS=	x11/py-gtk2
 
 NO_REGRESS=	Yes
 

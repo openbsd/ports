@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xext Xpm c kvm m pthread-stubs xcb dockapp
 
 MASTER_SITES=		ftp://truffula.com/pub/
 
-LIB_DEPENDS=		::devel/libdockapp
+LIB_DEPENDS=		devel/libdockapp
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

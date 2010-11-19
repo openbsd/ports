@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/13 21:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:34 espie Exp $
 
 COMMENT=		Nagios plugin to check SIP
 
@@ -21,8 +21,8 @@ NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 EXTRACT_SUFX=
-RUN_DEPENDS=		::net/sipsak \
-			::net/nagios/plugins,-main
+RUN_DEPENDS=		net/sipsak \
+			net/nagios/plugins,-main
 WRKDIST=		${WRKDIR}
 
 do-extract:

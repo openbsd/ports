@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 18:13:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		DNS relay for ad blocking
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=   http://opensource.conformal.com/snapshots/adsuck/
 
-WANTLIB=        c ldns.>=4.4
+WANTLIB=        c ldns>=4.4
 
-LIB_DEPENDS=	:libldns->=1.6.5:net/ldns/libldns
+LIB_DEPENDS=	net/ldns/libldns>=1.6.5
 
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
 		MANDIR="${TRUEPREFIX}/man/cat"

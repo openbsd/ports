@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	perl script to send xmpp messages
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=        perl
-RUN_DEPENDS=	::net/p5-Net-XMPP
+RUN_DEPENDS=	net/p5-Net-XMPP
 
 CONFIGURE_STYLE=perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	ruby bindings for RRDtool
 
@@ -21,8 +21,8 @@ WANTLIB=	art_lgpl_2 freetype png rrd z
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
-LIB_DEPENDS=	:rrdtool->=1.2,<1.3:net/rrdtool
+RUN_DEPENDS=	devel/ruby-hoe,${FLAVOR}
+LIB_DEPENDS=	rrdtool->=1.2,<1.3:net/rrdtool
 
 CONFIGURE_STYLE=ruby gem ext
 

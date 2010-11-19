@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:35 espie Exp $
 
 COMMENT= 	fast lookup of country codes by IP address
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS =		::geo/p5-Geography-Countries
+RUN_DEPENDS =		geo/p5-Geography-Countries
 
 .include <bsd.port.mk>

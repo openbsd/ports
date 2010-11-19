@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/09 11:56:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:33 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =		c crypto ltdl sqlite3 ssl z
 
-LIB_DEPENDS =		::databases/sqlite3 \
-			:libltdl-*:devel/libtool,-ltdl
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/libtool,-ltdl
 
 USE_LIBTOOL =		Yes
 NO_REGRESS =		Yes

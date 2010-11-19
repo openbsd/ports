@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 16:05:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:35 espie Exp $
 
 COMMENT=	PayPal API
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
 
-RUN_DEPENDS=	::net/p5-Business-PayPal \
-		::www/p5-SOAP-Lite
+RUN_DEPENDS=	net/p5-Business-PayPal \
+		www/p5-SOAP-Lite
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

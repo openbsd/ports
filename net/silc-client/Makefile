@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
@@ -26,11 +26,11 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	::devel/glib2
-WANTLIB +=	glib-2.0.>=1000 gmodule-2.0.>=1000
+LIB_DEPENDS+=	devel/glib2
+WANTLIB +=	glib-2.0>=1000 gmodule-2.0>=1000
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+= :yasm-*:devel/yasm
+BUILD_DEPENDS+= devel/yasm
 .endif
 
 CONFDIR=	${SYSCONFDIR}/silc

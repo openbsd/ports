@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 21:50:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -15,13 +15,13 @@ WANTLIB += nice.>=1 soup-2.4 crypto ssl
 MODULES=		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS=		::textproc/libxslt \
-			::devel/py-twisted/words \
-			::net/py-xmpp
-LIB_DEPENDS=		::devel/libsoup \
-			:libnice->=0.0.13:net/libnice \
-			::net/telepathy/telepathy-glib \
-			::sysutils/e2fsprogs
+BUILD_DEPENDS=		textproc/libxslt \
+			devel/py-twisted/words \
+			net/py-xmpp
+LIB_DEPENDS=		devel/libsoup \
+			net/libnice>=0.0.13 \
+			net/telepathy/telepathy-glib \
+			sysutils/e2fsprogs
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
@@ -31,7 +31,7 @@ CONFIGURE_ENV=		UUID_LIBS="`pkg-config --libs e2fs-uuid`" \
 			UUID_CFLAGS="`pkg-config --cflags e2fs-uuid`" \
 			TLS_CFLAGS="-I/usr/include" \
 			TLS_LIBS="-L/usr/lib -lssl -lcrypto"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

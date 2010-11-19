@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/18 11:13:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:37 espie Exp $
 
 COMMENT=	simple and flexible way to build nice URLs
 
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::net/pear-Net-URL
+RUN_DEPENDS=		net/pear-Net-URL
 
 .include <bsd.port.mk>

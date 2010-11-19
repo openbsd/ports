@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 21:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www2.mindrot.org/files/flowd/
 
-BUILD_DEPENDS=		::net/flowd
+BUILD_DEPENDS=		net/flowd
 MODULES=		lang/python
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/flowd" \
 			LDFLAGS="-L${LOCALBASE}/lib"

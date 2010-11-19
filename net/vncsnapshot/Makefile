@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:39 espie Exp $
 
 COMMENT=		connect to VNC server and save screen images
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		::graphics/jpeg
+LIB_DEPENDS=		graphics/jpeg
 
 WANTLIB += c m stdc++ z jpeg
 

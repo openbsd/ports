@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/11 11:54:08 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:32 espie Exp $
 
 COMMENT=		small and efficient HTTP crawler
 
@@ -18,7 +18,7 @@ WANTLIB=		c event lib/db/db.=3
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
-LIB_DEPENDS=		:db->=3,<4:databases/db/v3
+LIB_DEPENDS=		db->=3,<4:databases/db/v3
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"

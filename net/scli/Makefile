@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 17:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:38 espie Exp $
 
 COMMENT=		snmp command line utility
 
@@ -21,8 +21,8 @@ MODULES=		devel/gettext
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
-LIB_DEPENDS=		::net/gsnmp \
-			::textproc/libxml
+LIB_DEPENDS=		net/gsnmp \
+			textproc/libxml
 
 CONFIGURE_STYLE=	gnu
 

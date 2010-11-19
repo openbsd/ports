@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/26 08:42:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:38 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,12 +19,12 @@ WANTLIB += c m pthread dbus-1 dbus-glib-1 gee gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gthread-2.0 gobject-2.0 pcre telepathy-glib
 WANTLIB += xml2 z
 
-BUILD_DEPENDS=		:gobject-introspection->=0.9.12p0:devel/gobject-introspection \
-			::lang/vala
-LIB_DEPENDS=		::devel/libgee \
-			:telepathy-glib-0.12.0p0:net/telepathy/telepathy-glib\
-			::textproc/libxml
-REGRESS_DEPENDS=	:${PKGNAME}:${BASE_PKGPATH}
+BUILD_DEPENDS=		devel/gobject-introspection>=0.9.12p0 \
+			lang/vala
+LIB_DEPENDS=		devel/libgee \
+			telepathy-glib-0.12.0p0:net/telepathy/telepathy-glib \
+			textproc/libxml
+REGRESS_DEPENDS=	${PKGNAME}:${BASE_PKGPATH}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

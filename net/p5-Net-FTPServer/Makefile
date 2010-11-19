@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	secure, extensible and configurable Perl FTPd
 
@@ -11,11 +11,11 @@ USE_GROFF =	Yes
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::archivers/p5-Archive-Zip \
-		::databases/p5-DBI \
-		::devel/p5-BSD-Resource \
-		::devel/p5-File-Sync \
-		::devel/p5-IO-stringy
+RUN_DEPENDS=	archivers/p5-Archive-Zip \
+		databases/p5-DBI \
+		devel/p5-BSD-Resource \
+		devel/p5-File-Sync \
+		devel/p5-IO-stringy
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

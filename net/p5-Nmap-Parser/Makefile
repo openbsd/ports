@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:36 espie Exp $
 
 COMMENT=	perl module for parsing nmap XML reports
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::net/nmap \
-		:p5-XML-Twig->=3.16:textproc/p5-XML-Twig
+RUN_DEPENDS=	net/nmap \
+		textproc/p5-XML-Twig>=3.16
 
 .include <bsd.port.mk>

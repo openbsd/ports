@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/27 22:26:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:33 espie Exp $
 
 COMMENT=	fast and easy porn downloader
 
@@ -28,10 +28,10 @@ WANTLIB += glade-2.0 curl xml2 GL Xxf86vm drm xcb-render xcb-shm
 MODULES=		devel/gconf2 \
 			devel/gettext
 
-LIB_DEPENDS=		::devel/libglade2 \
-			::net/curl \
-			::textproc/libxml
-RUN_DEPENDS=		::devel/desktop-file-utils
+LIB_DEPENDS=		devel/libglade2 \
+			net/curl \
+			textproc/libxml
+RUN_DEPENDS=		devel/desktop-file-utils
 
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnaughty
