@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:51:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/19 10:21:35 jasper Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
@@ -21,6 +21,7 @@ share/doc/hs-${DISTNAME}/COPYRIGHT
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Database-HDBC-ColTypes.html
 share/doc/hs-${DISTNAME}/html/Database-HDBC-DriverUtils.html
+share/doc/hs-${DISTNAME}/html/Database-HDBC-Locale.html
 share/doc/hs-${DISTNAME}/html/Database-HDBC-SqlValue.html
 share/doc/hs-${DISTNAME}/html/Database-HDBC-Statement.html
 share/doc/hs-${DISTNAME}/html/Database-HDBC-Types.html
@@ -35,6 +36,7 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-ColTypes.html
 share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-DriverUtils.html
+share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-Locale.html
 share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-SqlValue.html
 share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-Statement.html
 share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-Types.html
