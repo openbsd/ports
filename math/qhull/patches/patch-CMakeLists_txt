@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+--- CMakeLists.txt.orig	Sun Jan 10 05:07:32 2010
++++ CMakeLists.txt	Fri Nov 19 00:53:52 2010
+@@ -4,5 +4,9 @@ if(COMMAND cmake_policy)
+   cmake_policy(SET CMP0003 NEW)
+ endif(COMMAND cmake_policy)
+ 
++set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/include)
++set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
++set(BIN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/bin)
++
+ add_subdirectory(src)
+ 

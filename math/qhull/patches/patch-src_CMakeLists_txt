@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+--- src/CMakeLists.txt.orig	Thu Nov 18 17:02:29 2010
++++ src/CMakeLists.txt	Thu Nov 18 17:19:19 2010
+@@ -23,9 +23,14 @@ set(
+ 
+ file(GLOB qhull_hdr *.h)
+ 
+-add_library(qhull ${qhull_src})
++add_library(qhull SHARED ${qhull_src})
+ target_link_libraries(qhull m)
++set_target_properties(qhull PROPERTIES INSTALL_NAME_DIR "${LIB_INSTALL_DIR}")
+ 
++add_library(qhullstatic STATIC ${qhull_src})
++set_property(TARGET qhullstatic PROPERTY OUTPUT_NAME "qhull")
++install(TARGETS qhullstatic ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
++
+ set(qhullcmd_SOURCES  unix.c)
+ set(rbox_SOURCES  rbox.c)
+ set(qconvex_SOURCES  qconvex.c)
+@@ -36,6 +41,7 @@ set(qhalf_SOURCES  qhalf.c)
+ 
+ add_executable(qhullcmd ${qhullcmd_SOURCES})
+ target_link_libraries(qhullcmd qhull)
++set_property(TARGET qhullcmd PROPERTY OUTPUT_NAME "qhull")
+ 
+ add_executable(rbox ${rbox_SOURCES})
+ target_link_libraries(rbox qhull)
+@@ -52,3 +58,7 @@ target_link_libraries(qvoronoi qhull)
+ add_executable(qhalf ${qhalf_SOURCES})
+ target_link_libraries(qhalf qhull)
+ 
++install(TARGETS qhull qhullcmd rbox qconvex qdelaunay qvoronoi qhalf
++	RUNTIME DESTINATION ${BIN_INSTALL_DIR}
++	LIBRARY DESTINATION ${LIB_INSTALL_DIR})
++install(FILES ${qhull_hdr} DESTINATION ${INCLUDE_INSTALL_DIR}/qhull)

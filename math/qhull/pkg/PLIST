@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+%%SHARED%%
+@bin bin/qconvex
+@bin bin/qdelaunay
+@bin bin/qhalf
+@bin bin/qhull
+@bin bin/qvoronoi
+@bin bin/rbox
+include/qhull/
+include/qhull/geom.h
+include/qhull/io.h
+include/qhull/libqhull.h
+include/qhull/mem.h
+include/qhull/merge.h
+include/qhull/poly.h
+include/qhull/qhull.h
+include/qhull/qhull_a.h
+include/qhull/qset.h
+include/qhull/random.h
+include/qhull/stat.h
+include/qhull/user.h
+lib/libqhull.a
