@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2010/11/08 21:25:44 edd Exp $
+# $OpenBSD: Makefile,v 1.176 2010/11/19 09:00:00 jasper Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64 alpha
@@ -13,6 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 N =			mplayer
 DISTNAME =		mplayer-export-snapshot-${V}
 PKGNAME =		${N}-${V}
+REVISION =		0
 CATEGORIES =		x11 multimedia
 EXTRACT_SUFX =		.tar.bz2
 
@@ -29,8 +30,8 @@ PERMIT_DISTFILES_FTP =		Yes
 WANTLIB =	bz2 c cdda_interface cdda_paranoia crypto \
 		dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
 		m mng mp3lame mpcdec ncurses ogg.>=5 orc-0.4 png \
-		pthread schroedinger-1.0 sndio speex stdc++ theora \
-		ungif util vpx x264.>=5 xvidcore z
+		pthread schroedinger-1.0.>=2.0 sndio speex stdc++ \
+		theora ungif util vpx x264.>=5 xvidcore z
 
 # we use a snapshot
 MASTER_SITES =	http://theunixzoo.co.uk/distfiles/
@@ -56,7 +57,7 @@ LIB_DEPENDS =	::graphics/png \
 		::graphics/lcms \
 		::graphics/libmng \
 		::archivers/bzip2 \
-		::multimedia/schroedinger \
+		:schroedinger->=1.0.10:multimedia/schroedinger \
 		::audio/faad \
 		::audio/faac \
 		:x264->=20101023:multimedia/x264 \

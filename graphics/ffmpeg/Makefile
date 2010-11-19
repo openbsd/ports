@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/19 09:02:33 jasper Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=		20100512
 DISTNAME=	ffmpeg-svn-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/ \
 		http://gormsby.com/downloads/
@@ -31,9 +31,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
-WANTLIB += SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg
-WANTLIB += orc-0.4 pthread schroedinger-1.0 sndio speex theora
-WANTLIB += theoradec theoraenc vorbis vorbisenc x264 z
+WANTLIB=	SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg \
+		orc-0.4 pthread schroedinger-1.0.>=2.0 sndio speex theora \
+		theoradec theoraenc vorbis vorbisenc x264 z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -48,11 +48,11 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		devel/sdl \
 		multimedia/libtheora \
-		multimedia/schroedinger>=1.0.9 \
+		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264
 
 .if ${MACHINE_ARCH:Marm}
-# XXX binutils
+# uses ARM EABI
 CONFIGURE_ARGS+= --arch=generic
 .endif
 

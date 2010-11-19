@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/19 09:02:17 jasper Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -10,7 +10,7 @@ DISTNAME =		gst-plugins-bad-${V}
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
-REVISION-main =		2
+REVISION-main =		3
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -41,7 +41,7 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
 			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \
 			gsttag-0.10 sndfile mpcdec faac faad dca exif xvidcore \
-			SDL mms gsm rsvg-2 schroedinger-1.0 cdaudio BPM \
+			SDL mms gsm rsvg-2 schroedinger-1.0>=2.0 cdaudio BPM \
 			SoundTouch dvdnav jasper
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			${P}/plugins-base \
@@ -57,7 +57,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			graphics/jasper \
 			graphics/libexif \
 			multimedia/libmms \
-			multimedia/schroedinger \
+			multimedia/schroedinger>=1.0.10 \
 			multimedia/xvidcore \
 			x11/gnome/librsvg \
 			multimedia/libdvdnav>=4.1.3p0v0

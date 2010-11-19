@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.107 2010/11/19 08:59:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	11
+REVISION-main=	12
 REVISION-jack=	2
 REVISION-web=	4
 CATEGORIES=	x11
@@ -51,7 +51,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		::multimedia/libdvdnav \
 		::multimedia/libmatroska \
 		::multimedia/libtheora \
-		::multimedia/schroedinger \
+		:schroedinger->=1.0.10:multimedia/schroedinger \
 		::multimedia/x264 \
 		::net/libproxy \
 		::textproc/libebml \
@@ -69,7 +69,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		jpeg m mad matroska mp3lame mpcdec mpeg2 notify orc-0.4 \
 		ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png postproc proxy pthread-stubs pthread stdc++.>=46.0 \
-		schroedinger-1.0 sndio speex swscale tag tiff theora \
+		schroedinger-1.0.>=2.0 sndio speex swscale tag tiff theora \
 		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
 		xcb-render-util xcb xml2 z ${WANTLIB}
 
