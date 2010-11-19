@@ -1,11 +1,12 @@
-$OpenBSD: patch-schroedinger_pc_in,v 1.2 2010/08/25 23:25:36 sthen Exp $
---- schroedinger.pc.in.orig	Sun Mar 22 17:22:33 2009
-+++ schroedinger.pc.in	Wed Jul 21 17:52:36 2010
-@@ -9,7 +9,7 @@ Name: schroedinger-@SCHRO_MAJORMINOR@
+$OpenBSD: patch-schroedinger_pc_in,v 1.3 2010/11/19 08:58:39 jasper Exp $
+--- schroedinger.pc.in.orig	Wed Sep 22 16:32:47 2010
++++ schroedinger.pc.in	Sun Oct 17 23:56:09 2010
+@@ -9,8 +9,7 @@ Name: schroedinger-@SCHRO_MAJORMINOR@
  Description: Dirac codec library
- Requires: @SCHRO_PKG_DEPS@
+ Requires.private: @SCHRO_PKG_DEPS@
  Version: @VERSION@
--Libs: -L${libdir} -lschroedinger-@SCHRO_MAJORMINOR@ @PTHREAD_LIBS@ @LIBM@
+-Libs: -L${libdir} -lschroedinger-@SCHRO_MAJORMINOR@
+-Libs.private: @PTHREAD_LIBS@ @LIBM@
 +Libs: -L${libdir} -lschroedinger-@SCHRO_MAJORMINOR@ @ORC_LIBS@ @PTHREAD_LIBS@ @LIBM@
  Cflags: -I${includedir}
  

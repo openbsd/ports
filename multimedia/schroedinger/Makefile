@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 08:58:39 jasper Exp $
 
 COMMENT=	high-speed Dirac codec
 
-DISTNAME=	schroedinger-1.0.9
+DISTNAME=	schroedinger-1.0.10
 CATEGORIES=	multimedia
-MASTER_SITES=	${HOMEPAGE}download/schroedinger/
+MASTER_SITES=	${HOMEPAGE}/download/schroedinger/
 
-SHARED_LIBS=	schroedinger-1.0	1.0
+SHARED_LIBS=	schroedinger-1.0	2.0
 
 HOMEPAGE=	http://diracvideo.org/
 
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	m orc-0.4>=2.0 stdc++
 
-LIB_DEPENDS=	devel/orc
+LIB_DEPENDS=	orc->=0.4.11:devel/orc
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 
 .include <bsd.port.mk>
