@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	distributed memory object caching system
 
@@ -24,7 +24,7 @@ MASTER_SITES0=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-libevent=/usr --disable-coverage
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/memcached

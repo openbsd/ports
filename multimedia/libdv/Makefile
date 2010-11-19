@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -22,7 +22,7 @@ USE_GROFF=		Yes
 
 SHARED_LIBS=		dv	5.0
 
-LIB_DEPENDS=		::devel/popt
+LIB_DEPENDS=		devel/popt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

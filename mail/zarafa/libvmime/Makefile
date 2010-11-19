@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/27 18:25:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
@@ -17,7 +17,7 @@ WANTLIB +=	m stdc++
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	::archivers/bzip2
+BUILD_DEPENDS=	archivers/bzip2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

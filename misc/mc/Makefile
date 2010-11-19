@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
@@ -29,10 +29,10 @@ CONFIGURE_ARGS+=	--without-x
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/glib2 \
-			::devel/libslang
-RUN_DEPENDS=		:unzip-*:archivers/unzip \
-			:zip-*:archivers/zip
+LIB_DEPENDS=		devel/glib2 \
+			devel/libslang
+RUN_DEPENDS=		archivers/unzip \
+			archivers/zip
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-confdir=${SYSCONFDIR}/mc \

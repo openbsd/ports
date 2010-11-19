@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	greylist milter
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=		Yes
 
 WANTLIB=	c pthread milter spf2
 
-LIB_DEPENDS=	::mail/libspf2
+LIB_DEPENDS=	mail/libspf2
 
-BUILD_DEPENDS=	::devel/bison
+BUILD_DEPENDS=	devel/bison
 
 USERNAME=	_milter-greylist:_milter-greylist
 GREYLISTDIR=	/var/db/milter-greylist

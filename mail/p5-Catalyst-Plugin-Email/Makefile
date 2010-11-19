@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:07 espie Exp $
 
 COMMENT= 	send emails with Catalyst
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::mail/p5-Email-MIME \
-		::mail/p5-Email-MIME-Creator \
-		::mail/p5-Email-Send \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	mail/p5-Email-MIME \
+		mail/p5-Email-MIME-Creator \
+		mail/p5-Email-Send \
+		www/p5-Catalyst-Runtime
 
 MAKE_ENV=	TEST_POD=Yes
 USE_GROFF =	Yes

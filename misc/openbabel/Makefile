@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	chemistry file translation program
 
@@ -25,9 +25,9 @@ WANTLIB=	c m stdc++ xml2 z
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	::devel/boost
-LIB_DEPENDS=	::textproc/libxml
-REGRESS_DEPENDS=::${BUILD_PKGPATH}
+BUILD_DEPENDS=	devel/boost
+LIB_DEPENDS=	textproc/libxml
+REGRESS_DEPENDS=${BUILD_PKGPATH}
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/07 20:33:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	graphical front-end for octave
 
@@ -18,8 +18,8 @@ MASTER_SITES=	https://forja.rediris.es/frs/download.php/352/
 
 MODULES=	x11/qt4
 
-RUN_DEPENDS=	::math/octave
-LIB_DEPENDS=	::x11/qt4
+RUN_DEPENDS=	math/octave
+LIB_DEPENDS=	x11/qt4
 WANTLIB=	ICE SM X11 Xext Xi Xinerama Xrender \
 		c fontconfig freetype glib-2.0 gthread-2.0 iconv intl \
 		m png pthread pthread-stubs stdc++ xcb z expat gobject-2.0 \

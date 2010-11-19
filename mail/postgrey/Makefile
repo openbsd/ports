@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	postfix greylist daemon
 
 DISTNAME=	postgrey-1.32
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://postgrey.schweikert.ch/
@@ -19,15 +19,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/p5-Net-Server \
-			::devel/p5-IO-Multiplex \
-			::databases/p5-BerkeleyDB \
-			::net/p5-Net-DNS
+RUN_DEPENDS=		devel/p5-Net-Server \
+			devel/p5-IO-Multiplex \
+			databases/p5-BerkeleyDB \
+			net/p5-Net-DNS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/libexec

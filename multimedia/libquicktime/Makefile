@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/04 20:14:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:13 espie Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -31,19 +31,19 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:doxygen->=1.7.2:devel/doxygen
-LIB_DEPENDS=		:ffmpeg->=20100512:graphics/ffmpeg \
-			::multimedia/libdv \
-			::x11/gtk+2 \
-			::graphics/jpeg \
-			::audio/lame \
-			::graphics/png \
-			::audio/libvorbis \
-			::multimedia/x264
+BUILD_DEPENDS=		devel/doxygen>=1.7.2
+LIB_DEPENDS=		graphics/ffmpeg>=20100512 \
+			multimedia/libdv \
+			x11/gtk+2 \
+			graphics/jpeg \
+			audio/lame \
+			graphics/png \
+			audio/libvorbis \
+			multimedia/x264
 
 VMEM_WARNING=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
 MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}

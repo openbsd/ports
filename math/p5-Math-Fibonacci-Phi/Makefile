@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	calculates Phi and phi for Fibonacci numbers
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::math/p5-Math-Fibonacci
+RUN_DEPENDS=	math/p5-Math-Fibonacci
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

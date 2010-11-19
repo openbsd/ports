@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	external SPF policy checker for postfix
 
@@ -23,8 +23,8 @@ MASTER_SITES=	${HOMEPAGE}/blobs/
 MODULES=        lang/python
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::mail/py-spf
-RUN_DEPENDS=	::mail/py-spf ::net/py-dns
+BUILD_DEPENDS=	mail/py-spf
+RUN_DEPENDS=	mail/py-spf net/py-dns
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		DVD authoring application
 
@@ -36,28 +36,28 @@ WANTLIB= ICE ORBit-2 SM X11 Xau Xcomposite Xcursor \
 	vorbis vorbisenc wx_base wx_base_net \
 	wx_gtk2_adv wx_gtk2_core wx_gtk2_html wxsvg \
 	x264 xcb xcb-render xcb-render-util xml2 z \
-	avcodec.>=14 avformat.>=13 avutil.>=7 swscale.>=2
+	avcodec>=14 avformat>=13 avutil>=7 swscale>=2
 
-BUILD_DEPENDS=		::archivers/zip \
-			::multimedia/dvdauthor \
-			::multimedia/mjpegtools \
-			::multimedia/mpgtx \
-			::sysutils/dvd+rw-tools \
-			::textproc/xmlto
-LIB_DEPENDS=		::graphics/libexif \
-			::x11/gnome/libgnomeui \
-			::x11/wxSVG \
-			:ffmpeg->=20100512:graphics/ffmpeg
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::multimedia/dvdauthor \
-                        ::multimedia/mjpegtools \
-                        ::multimedia/mpgtx \
-			::multimedia/xine-ui \
-                        ::sysutils/dvd+rw-tools
+BUILD_DEPENDS=		archivers/zip \
+			multimedia/dvdauthor \
+			multimedia/mjpegtools \
+			multimedia/mpgtx \
+			sysutils/dvd+rw-tools \
+			textproc/xmlto
+LIB_DEPENDS=		graphics/libexif \
+			x11/gnome/libgnomeui \
+			x11/wxSVG \
+			graphics/ffmpeg>=20100512
+RUN_DEPENDS=		devel/desktop-file-utils \
+			multimedia/dvdauthor \
+                        multimedia/mjpegtools \
+                        multimedia/mpgtx \
+			multimedia/xine-ui \
+                        sysutils/dvd+rw-tools
 
 # FIXME: locale/Makefile uses gmake constructs
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

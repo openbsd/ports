@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:06 espie Exp $
 
 COMMENT =	greytrapping daemon to compliment OpenBSD spamd
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 #MASTER_SITES =	http://bitbucket.org/bonetruck/greyscanner/get/
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
-RUN_DEPENDS =	::mail/p5-Email-Valid \
-		::net/p5-Net-DNS
+RUN_DEPENDS =	mail/p5-Email-Valid \
+		net/p5-Net-DNS
 
 WRKDIST =	${WRKDIR}/greyscanner
 

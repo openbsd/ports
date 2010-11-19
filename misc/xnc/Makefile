@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xext c jpeg m pthread-stubs stdc++ xcb z tiff png
 
-LIB_DEPENDS=	::graphics/tiff \
-		::graphics/png
+LIB_DEPENDS=	graphics/tiff \
+		graphics/png
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

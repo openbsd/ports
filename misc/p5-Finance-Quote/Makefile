@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
@@ -11,8 +11,8 @@ HOMEPAGE=	http://finance-quote.sourceforge.net
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-RUN_DEPENDS=	:p5-HTML-TableExtract-*:www/p5-HTML-TableExtract \
-		:p5-libwww-*:www/p5-libwww
+RUN_DEPENDS=	www/p5-HTML-TableExtract \
+		www/p5-libwww
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

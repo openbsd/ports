@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:11 espie Exp $
 
 COMMENT =		basic descriptive statistical functions
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/21 05:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
@@ -12,18 +12,18 @@ MASTER_SITES=		http://users.own-hero.net/~decoder/fuzzyocr/
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
-RUN_DEPENDS=		::devel/p5-MLDBM-Sync \
-			::graphics/gocr \
-			::graphics/libungif \
-			::graphics/netpbm \
-			::graphics/ocrad \
-			::graphics/ImageMagick \
-			::graphics/gifsicle,no_x11 \
-			::graphics/tesseract \
-			::mail/p5-Mail-SpamAssassin \
-			::textproc/p5-String-Approx
+RUN_DEPENDS=		devel/p5-MLDBM-Sync \
+			graphics/gocr \
+			graphics/libungif \
+			graphics/netpbm \
+			graphics/ocrad \
+			graphics/ImageMagick \
+			graphics/gifsicle,no_x11 \
+			graphics/tesseract \
+			mail/p5-Mail-SpamAssassin \
+			textproc/p5-String-Approx
 
-REGRESS_DEPENDS=	::mail/p5-FuzzyOcr
+REGRESS_DEPENDS=	mail/p5-FuzzyOcr
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes

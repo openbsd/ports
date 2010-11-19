@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:09 espie Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -56,13 +56,13 @@ FLAVOR?=
 
 MULTI_PACKAGES= 	-main
 
-WANTLIB-main=       	c crypto ssl util db.>=4.2 vanessa_adt.>=0.3 \
-			vanessa_logger.>=0.3 vanessa_socket.>=0.3 popt.>=0
-LIB_DEPENDS-main=	::databases/db/v4 \
-			::devel/vanessa/adt \
-			::devel/vanessa/logger \
-			::devel/vanessa/socket \
-			::devel/popt
+WANTLIB-main=       	c crypto ssl util db>=4.2 vanessa_adt>=0.3 \
+			vanessa_logger>=0.3 vanessa_socket>=0.3 popt
+LIB_DEPENDS-main=	databases/db/v4 \
+			devel/vanessa/adt \
+			devel/vanessa/logger \
+			devel/vanessa/socket \
+			devel/popt
 
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--disable-ldap
@@ -72,10 +72,10 @@ MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 			--with-ldap-includes=${LOCALBASE}/include \
 			--disable-ldap-doc
-LIB_DEPENDS-ldap=	::security/cyrus-sasl2 \
-			:openldap-client->=2,<3:databases/openldap
+LIB_DEPENDS-ldap=	security/cyrus-sasl2 \
+			openldap-client->=2,<3:databases/openldap
 WANTLIB-ldap= 		asn1 com_err crypto gssapi krb5 ssl util sasl2 \
-			ldap.>=2 lber.>=2
+			ldap>=2 lber>=2
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
@@ -85,11 +85,11 @@ SHARED_LIBS +=  	perditiondb_mysql            0.0  # .0.0
 MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
-LIB_DEPENDS-mysql=	::databases/mysql \
-			::devel/vanessa/adt \
-			::devel/vanessa/logger
-WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient.>=10 \
-			vanessa_adt.>=0.3 vanessa_logger.>=0.3
+LIB_DEPENDS-mysql=	databases/mysql \
+			devel/vanessa/adt \
+			devel/vanessa/logger
+WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 \
+			vanessa_adt>=0.3 vanessa_logger>=0.3
 .endif
 
 .if ${FLAVOR:L:Mno_pgsql}
@@ -98,11 +98,11 @@ CONFIGURE_ARGS+=	--disable-pg
 SHARED_LIBS +=  	perditiondb_postgresql       0.0  # .0.0
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--enable-pg
-LIB_DEPENDS-pgsql=	:postgresql-client-*:databases/postgresql \
-			::devel/vanessa/adt \
-			::devel/vanessa/logger
-WANTLIB-pgsql=		crypto ssl util pq.>=2 vanessa_adt.>=0.3 \
-			vanessa_logger.>=0.3
+LIB_DEPENDS-pgsql=	databases/postgresql \
+			devel/vanessa/adt \
+			devel/vanessa/logger
+WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=0.3 \
+			vanessa_logger>=0.3
 .endif
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/perdition/

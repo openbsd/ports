@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/06 23:28:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	Google VP8 video codec
 
@@ -23,10 +23,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m pthread
 
-BUILD_DEPENDS+=	::shells/bash
+BUILD_DEPENDS+=	shells/bash
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/yasm
+BUILD_DEPENDS+=	devel/yasm
 .endif
 
 BASH=		${LOCALBASE}/bin/bash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
 
 COMMENT =		collaborative, networked system to detect and block spam
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
 
-BUILD_DEPENDS +=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm
+BUILD_DEPENDS +=	lang/python/${MODPY_VERSION},-gdbm
 
 NO_REGRESS =		Yes
 

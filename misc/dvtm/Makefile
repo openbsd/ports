@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		tiling window management for the console
 
@@ -21,7 +21,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 FAKE_FLAGS=		DESTDIR=""
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=     	Yes
 
 .include <bsd.port.mk>

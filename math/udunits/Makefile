@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/26 08:58:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:11 espie Exp $
 
 COMMENT =		library to manipulate units of physical quantities
 DISTNAME =		udunits-2.1.19
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		ftp://ftp.unidata.ucar.edu/pub/udunits/
 
-LIB_DEPENDS =		::devel/cunit
+LIB_DEPENDS =		devel/cunit
 SHARED_LIBS =		udunits2 0.0
 
 USE_LIBTOOL =		Yes

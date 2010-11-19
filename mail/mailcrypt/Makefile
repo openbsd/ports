@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/08/25 06:34:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
@@ -19,21 +19,21 @@ CONFIGURE_STYLE= gnu dest
 FLAVORS=	gnupg pgp pgp5 
 FLAVOR?=	gnupg
 
-BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
+BUILD_DEPENDS=	emacs->=21,<22:editors/emacs21
 
 .if ${FLAVOR:L:Mgnupg}
-RUN_DEPENDS=	:gnupg-<2:security/gnupg
+RUN_DEPENDS=	security/gnupg<2
 .endif
 
 .if ${FLAVOR:L:Mpgp}
-RUN_DEPENDS=	:pgp->=2,<3:security/pgp
+RUN_DEPENDS=	pgp->=2,<3:security/pgp
 .endif
 
 .if ${FLAVOR:L:Mpgp5}
-RUN_DEPENDS=	:pgp->=5,<6:security/pgp5
+RUN_DEPENDS=	pgp->=5,<6:security/pgp5
 .endif
 
-REGRESS_DEPENDS=	:python->=2.3,<2.4:lang/python/2.3
+REGRESS_DEPENDS=	python->=2.3,<2.4:lang/python/2.3
 
 pre-regress:
 	@perl -i -pe 's:%%LOCALBASE%%:${LOCALBASE}:' \

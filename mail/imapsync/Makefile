@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	IMAP synchronization tool
 
@@ -17,11 +17,11 @@ MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 
 EXTRACT_SUFX=	.tgz
 
-RUN_DEPENDS=	::converters/p5-DateManip \
-		::security/p5-IO-Socket-SSL \
-		::security/p5-Digest-HMAC \
-		::mail/p5-Mail-IMAPClient \
-		::devel/p5-Term-ReadKey
+RUN_DEPENDS=	converters/p5-DateManip \
+		security/p5-IO-Socket-SSL \
+		security/p5-Digest-HMAC \
+		mail/p5-Mail-IMAPClient \
+		devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

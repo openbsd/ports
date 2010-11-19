@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:18 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	PGP sign/encrypt/decrypt messages automatically
 
 V=1.4.5
 DISTNAME=       PGPsendmail-v$V
-PKGNAME=	pgpsendmail-$Vp0
+PKGNAME=	pgpsendmail-$V
+REVISION =	0
 CATEGORIES=	mail
 
 MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-BUILD_DEPENDS=	::security/pgp
+BUILD_DEPENDS=	security/pgp
 
 WRKDIST=	${WRKDIR}/pgpsendmail
 INSTALL_TARGET=	all_install

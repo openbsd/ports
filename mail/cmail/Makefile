@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	simple mail counter
 
 DISTNAME=	cmail-3.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	mail
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	video player for KDE
 
@@ -28,11 +28,11 @@ WANTLIB += util xcb z kdecore DCOP kdesu kio kdefx kparts kutils
 WANTLIB += kdeprint kdeui kwalletclient khtml kjs vorbis vorbisenc
 WANTLIB += cdio cdio_cdda cdio_paranoia xine
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3 \
-		::audio/libvorbis \
-		::audio/libcdio \
-		::multimedia/xine-lib
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3 \
+		audio/libvorbis \
+		audio/libcdio \
+		multimedia/xine-lib
 
 SUBST_VARS=	VERSION
 

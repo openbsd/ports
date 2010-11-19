@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/09 13:26:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =	UPnP media server
 
@@ -23,13 +23,13 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mediatomb/}
 
 MODULES =	converters/libiconv
 
-LIB_DEPENDS =	::audio/taglib \
-		::databases/sqlite3 \
-		::devel/libmagic \
-		::graphics/ffmpegthumbnailer \
-		::graphics/libexif \
-		::lang/spidermonkey \
-		::net/curl
+LIB_DEPENDS =	audio/taglib \
+		databases/sqlite3 \
+		devel/libmagic \
+		graphics/ffmpegthumbnailer \
+		graphics/libexif \
+		lang/spidermonkey \
+		net/curl
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--disable-inotify \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/11 19:46:30 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -38,11 +38,11 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			gdk_pixbuf-2.0 gtk-x11-2.0
 
 MODULES+=		devel/gettext
-LIB_DEPENDS=		:sdl-*-!no_x11:devel/sdl \
-			::multimedia/libdv \
-			::graphics/jpeg \
-			::graphics/png \
-			::x11/gtk+2 \
+LIB_DEPENDS=		sdl-*-!no_x11:devel/sdl \
+			multimedia/libdv \
+			graphics/jpeg \
+			graphics/png \
+			x11/gtk+2 \
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes

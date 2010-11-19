@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -24,7 +24,7 @@ NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/aamath
 ALL_TARGET=
 MAKE_FLAGS=		CXX="${CXX}"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/aamath ${PREFIX}/bin

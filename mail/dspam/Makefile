@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/11 18:20:52 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -71,29 +71,29 @@ CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--enable-virtual-users
-LIB_DEPENDS+=		::databases/mysql
-WANTLIB+=		z ssl crypto lib/mysql/mysqlclient.>=14
+LIB_DEPENDS+=		databases/mysql
+WANTLIB+=		z ssl crypto lib/mysql/mysqlclient>=14
 .elif ${DRIVER} == "pgsql"
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
 			--with-pgsql-libraries=${LOCALBASE}/lib \
 			--enable-virtual-users
-LIB_DEPENDS+=		:postgresql-client-*:databases/postgresql
-WANTLIB +=		pq.>=4
+LIB_DEPENDS+=		databases/postgresql
+WANTLIB +=		pq>=4
 .elif ${DRIVER} == "hash"
 CONFIGURE_ARGS+=	--with-storage-driver=hash_drv
 .elif ${DRIVER} == "sqlite"
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		::databases/sqlite
-WANTLIB +=		sqlite.>=8
+LIB_DEPENDS+=		databases/sqlite
+WANTLIB +=		sqlite>=8
 .elif ${DRIVER} == "sqlite3"
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		::databases/sqlite3
-WANTLIB +=		sqlite3.>=8
+LIB_DEPENDS+=		databases/sqlite3
+WANTLIB +=		sqlite3>=8
 DRIVER =		sqlite
 .endif
 
@@ -105,17 +105,17 @@ WANTLIB+=		pthread
 
 .if ${FLAVOR:L:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		::security/clamav
-WANTLIB +=		clamav.>=1
+LIB_DEPENDS+=		security/clamav
+WANTLIB +=		clamav>=1
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
 			LDFLAGS="-L${DEPBASE}/lib"
-LIB_DEPENDS+=		::databases/openldap
+LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			ldap.>=8 lber.>=8
+			ldap>=8 lber>=8
 .endif
 
 .if ${FLAVOR:L:Mpreferences}

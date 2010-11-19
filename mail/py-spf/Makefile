@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
@@ -22,10 +22,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
 MODULES=        lang/python
 
-BUILD_DEPENDS=	:py-dns-*:net/py-dns
+BUILD_DEPENDS=	net/py-dns
 
-REGRESS_DEPENDS=:${PKGNAME}:${BUILD_PKGPATH} \
-		::textproc/py-yaml
+REGRESS_DEPENDS=${PKGNAME}:${BUILD_PKGPATH} \
+		textproc/py-yaml
 
 do-regress:
 	@cd ${WRKSRC}/test && ${MODPY_BIN} testspf.py

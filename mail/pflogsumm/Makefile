@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	Postfix log entry summarizer
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=  :p5-Date-Calc->=5.3:devel/p5-Date-Calc
+RUN_DEPENDS=  devel/p5-Date-Calc>=5.3
 
 do-build:
 	(cd ${WRKSRC}; \

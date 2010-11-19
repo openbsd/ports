@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	checkbook balancing tool
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 MODULES=	x11/tk
 MODTK_VERSION=	8.4
 
-RUN_DEPENDS=	::misc/plan \
+RUN_DEPENDS=	misc/plan \
 		${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes

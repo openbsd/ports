@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/28 10:02:05 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	DVD read/navigation library
 DISTNAME=	libdvdnav-4.1.3
@@ -28,9 +28,9 @@ USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 # needs libtoolize
-BUILD_DEPENDS+=	::devel/libtool
+BUILD_DEPENDS+=	devel/libtool
 
-LIB_DEPENDS=	::devel/libdvdread
+LIB_DEPENDS=	devel/libdvdread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	DVDREAD_CFLAGS="-I${LOCALBASE}/include" \

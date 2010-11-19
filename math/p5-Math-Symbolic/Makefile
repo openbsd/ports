@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:11 espie Exp $
 
 COMMENT =	symbolic calculations for Perl
 DISTNAME =	Math-Symbolic-0.603
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =		Yes
 CPAN_AUTHOR =	SMUELLER
 
 MODULES =	cpan
-RUN_DEPENDS =	::devel/p5-Parse-RecDescent
+RUN_DEPENDS =	devel/p5-Parse-RecDescent
 
 MAKE_ENV +=	TEST_POD=1
 

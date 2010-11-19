@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=		POP3-server with virtual domain support
 
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=		--enable-flock
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 			
 .include <bsd.port.mk>

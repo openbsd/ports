@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m
 
 # Can run without TK, but most unglamorous without it.
-RUN_DEPENDS=	::x11/tk/8.4 \
-		::devel/tcllib
+RUN_DEPENDS=	x11/tk/8.4 \
+		devel/tcllib
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu

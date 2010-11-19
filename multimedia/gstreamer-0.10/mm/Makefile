@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/16 14:12:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
@@ -22,10 +22,10 @@ MODULES =	devel/gettext
 
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	::devel/doxygen
-LIB_DEPENDS =	::devel/glib2mm \
-		::multimedia/gstreamer-0.10/plugins-base,-cdda \
-		::textproc/libxml++
+BUILD_DEPENDS =	devel/doxygen
+LIB_DEPENDS =	devel/glib2mm \
+		multimedia/gstreamer-0.10/plugins-base,-cdda \
+		textproc/libxml++
 
 CONFIGURE_STYLE =	gnu
 

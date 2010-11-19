@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/09 20:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/19 07:23:05 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,10 +42,10 @@ FLAVOR?=
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		FLAVOR_STRING
 
-RUN_DEPENDS-bogofilter=	::${BUILD_PKGPATH} \
-			::mail/bogofilter 
-RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
-			::mail/p5-Mail-SpamAssassin 
+RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
+			mail/bogofilter 
+RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
+			mail/p5-Mail-SpamAssassin 
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
@@ -53,7 +53,7 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
 			gcrypt gpg-error xcb z gdk_pixbuf-2.0 \
-			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan.>=13 sasl2
+			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 \
 			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event \
@@ -61,20 +61,20 @@ WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 \
 
 WANTLIB-docs=
 
-LIB_DEPENDS=		::x11/gtk+2 \
-			::devel/libexecinfo \
-			::mail/libetpan \
-			::security/cyrus-sasl2
+LIB_DEPENDS=		x11/gtk+2 \
+			devel/libexecinfo \
+			mail/libetpan \
+			security/cyrus-sasl2
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			:desktop-file-utils-*:devel/desktop-file-utils
+			devel/desktop-file-utils
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::devel/startup-notification \
-			::textproc/enchant \
-			::security/gnutls \
-			::security/gpgme \
-			::x11/dbus-glib
+			devel/startup-notification \
+			textproc/enchant \
+			security/gnutls \
+			security/gpgme \
+			x11/dbus-glib
 
 CONFIGURE_ARGS+=	--disable-gnomeprint \
 			--disable-networkmanager-support \
@@ -86,7 +86,7 @@ PKG_ARCH-docs=	*
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 # autoconf 2.65 still has some issues with it
@@ -95,9 +95,9 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
 .if ${FLAVOR:L:Mjpilot}
-LIB_DEPENDS-main+=	::comms/pilot-link 
+LIB_DEPENDS-main+=	comms/pilot-link 
 WANTLIB-main +=		pisock
-RUN_DEPENDS-main+=	::comms/jpilot
+RUN_DEPENDS-main+=	comms/jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
@@ -105,15 +105,15 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=   No Fee
 PERMIT_DISTFILES_CDROM= No Fee
-LIB_DEPENDS-main+=     	::mail/faces
-WANTLIB-main +=		compface.>=1
+LIB_DEPENDS-main+=     	mail/faces
+WANTLIB-main +=		compface>=1
 .else
 CONFIGURE_ARGS+=       --disable-compface
 .endif
 
 .if ${FLAVOR:L:Mldap}
 WANTLIB-main+=		asn1 com_err gssapi krb5 lber ldap
-LIB_DEPENDS-main+=	:openldap-client-*:databases/openldap
+LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif

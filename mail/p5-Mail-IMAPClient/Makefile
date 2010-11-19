@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	perl module for an IMAP Client API
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
+RUN_DEPENDS=	devel/p5-Parse-RecDescent
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

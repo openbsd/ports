@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=		GTK frontend to recordMyDesktop
 
@@ -7,11 +7,11 @@ DISTNAME=		gtk-recordmydesktop-${V}
 PKGNAME=		recordmydesktop-gtk-${V}
 REVISION =		3
 
-BUILD_DEPENDS=		::x11/py-gtk2
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::devel/gettext \
-			:recordmydesktop->=0.3.8.1:multimedia/recordmydesktop/base \
-			::x11/py-gtk2
+BUILD_DEPENDS=		x11/py-gtk2
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/gettext \
+			multimedia/recordmydesktop/base>=0.3.8.1 \
+			x11/py-gtk2
 
 MODULES=		lang/python \
 			textproc/intltool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/09 20:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:06 espie Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -46,7 +46,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-ltdl-lib=${LOCALBASE}/lib \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
-RUN_DEPENDS-main=	:expect-*:lang/expect,no_tk
+RUN_DEPENDS-main=	lang/expect,no_tk
 BUILD_DEPENDS=		${RUN_DEPENDS-main}
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
@@ -86,25 +86,25 @@ PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 
 WANTLIB-main=		c ltdl
 
-LIB_DEPENDS-main=	::devel/libtool,-ltdl
+LIB_DEPENDS-main=	devel/libtool,-ltdl
 
 WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5 \
 			courierauthcommon courierauth ldap lber sasl2
-LIB_DEPENDS-ldap=	::${BUILD_PKGPATH} \
-			::databases/openldap \
-			::security/cyrus-sasl2
+LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
+			databases/openldap \
+			security/cyrus-sasl2
 
 WANTLIB-mysql=		crypto m ssl z courierauthcommon courierauth mysqlclient
-LIB_DEPENDS-mysql=	::${BUILD_PKGPATH} \
-			::databases/mysql
+LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
+			databases/mysql
 
 WANTLIB-pgsql=		m courierauthcommon courierauth pq
-LIB_DEPENDS-pgsql=	::${BUILD_PKGPATH} \
-			::databases/postgresql
+LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
+			databases/postgresql
 
-WANTLIB-userdb=		c courierauthcommon courierauth gdbm.>=3
-LIB_DEPENDS-userdb=	::${BUILD_PKGPATH} \
-			::databases/gdbm
+WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3
+LIB_DEPENDS-userdb=	${BUILD_PKGPATH} \
+			databases/gdbm
 
 
 .if ${FLAVOR:L:Mno_ldap}

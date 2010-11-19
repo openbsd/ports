@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/19 07:23:06 espie Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -29,15 +29,15 @@ WANTLIB=		c courierauth courierauthsasl gdbm idn
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-LIB_DEPENDS=		::mail/courier-authlib \
-			::devel/libidn
+LIB_DEPENDS=		mail/courier-authlib \
+			devel/libidn
 
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
@@ -92,8 +92,8 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::databases/gdbm
-RUN_DEPENDS-pop3=	::mail/courier-imap,-main
+			databases/gdbm
+RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
 WANTLIB-main=		${WANTLIB} ssl crypto
 MODULES=		converters/libiconv \

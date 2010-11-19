@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	simple interactive POP3 client
 
 DISTNAME=	prepop-0.1b7
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	mail
 
 MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-BUILD_DEPENDS=	::math/pari:configure
+BUILD_DEPENDS=	math/pari:configure
 
 PARIDIR=	math/pari
 

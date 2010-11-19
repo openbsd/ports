@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
 
 COMMENT =	perl module to deal with RFC 2047 encoded words
 
@@ -15,6 +15,6 @@ MODULES =	cpan
 USE_GROFF =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::mail/p5-MIME-Charset
+RUN_DEPENDS =	mail/p5-MIME-Charset
 
 .include <bsd.port.mk>

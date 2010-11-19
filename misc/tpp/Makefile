@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =		text-based presentation program
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://synflood.at/tpp/
 
 MODULES =		lang/ruby
-RUN_DEPENDS =		::devel/ruby-ncurses \
-			::misc/figlet
+RUN_DEPENDS =		devel/ruby-ncurses \
+			misc/figlet
 
 NO_BUILD =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tpp

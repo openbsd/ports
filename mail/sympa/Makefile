@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/12 16:17:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -44,32 +44,32 @@ MAKE_ENV =	docdir=${PREFIX}/share/examples/sympa
 USE_GROFF =	Yes
 
 # no MODULE, doesn't link with it
-BUILD_DEPENDS =	::devel/gettext
+BUILD_DEPENDS =	devel/gettext
 WANTLIB =	c
 
-RUN_DEPENDS =	::archivers/p5-Archive-Zip \
-		::databases/p5-DBI \
-		::devel/gettext \
-		::devel/p5-IO-stringy \
-		::devel/p5-File-Copy-Recursive \
-		::devel/p5-libintl \
-		::devel/p5-Term-ProgressBar \
-		::net/p5-Net-Netmask \
-		::mail/p5-MIME-tools \
-		::mail/p5-MIME-Charset \
-		::mail/p5-MIME-EncWords \
-		::mail/p5-MIME-Lite-HTML \
-		::security/p5-IO-Socket-SSL \
-		::security/p5-Crypt-CipherSaber \
-		::textproc/p5-Template \
-		::textproc/p5-XML-LibXML \
-		::www/fcgi \
-		::www/mod_fastcgi \
-		::www/mhonarc \
-		::www/p5-libwww \
-		::www/p5-HTML-Format \
-		::www/p5-HTML-StripScripts-Parser \
-		::www/p5-HTML-Tree
+RUN_DEPENDS =	archivers/p5-Archive-Zip \
+		databases/p5-DBI \
+		devel/gettext \
+		devel/p5-IO-stringy \
+		devel/p5-File-Copy-Recursive \
+		devel/p5-libintl \
+		devel/p5-Term-ProgressBar \
+		net/p5-Net-Netmask \
+		mail/p5-MIME-tools \
+		mail/p5-MIME-Charset \
+		mail/p5-MIME-EncWords \
+		mail/p5-MIME-Lite-HTML \
+		security/p5-IO-Socket-SSL \
+		security/p5-Crypt-CipherSaber \
+		textproc/p5-Template \
+		textproc/p5-XML-LibXML \
+		www/fcgi \
+		www/mod_fastcgi \
+		www/mhonarc \
+		www/p5-libwww \
+		www/p5-HTML-Format \
+		www/p5-HTML-StripScripts-Parser \
+		www/p5-HTML-Tree
 
 NO_REGRESS =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,13 +27,13 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
-BUILD_DEPENDS=	:pear-*:www/pear \
+BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::graphics/ffmpeg \
-		::graphics/gd
-RUN_DEPENDS=	:php5-core-*:www/php5/core \
-		:php5-gd-*:www/php5/extensions,-gd
+LIB_DEPENDS=	graphics/ffmpeg \
+		graphics/gd
+RUN_DEPENDS=	www/php5/core \
+		www/php5/extensions,-gd
 WANTLIB=	expat fontconfig freetype iconv jpeg m png z gd avcodec avformat swscale
 
 CONFIGURE_ARGS+=--enable-skip-gd-check

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/23 16:47:33 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:10 espie Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
@@ -26,6 +26,6 @@ USE_GROFF =	Yes
 
 REGRESS_TARGET =	test
 
-RUN_DEPENDS =	::devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 .include <bsd.port.mk>

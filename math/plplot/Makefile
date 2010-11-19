@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/08 08:45:56 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/19 07:23:11 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -42,10 +42,10 @@ MODFORTRAN_COMPILER = g77
 
 USE_LIBTOOL =	Yes
 USE_GROFF =	Yes
-BUILD_DEPENDS =	::print/ghostscript/gnu-fonts \
+BUILD_DEPENDS =	print/ghostscript/gnu-fonts \
 		${MODFORTRAN_BUILD_DEPENDS}
 
-myRUN_DEPENDS =	::print/ghostscript/gnu-fonts
+myRUN_DEPENDS =	print/ghostscript/gnu-fonts
 
 MODULES +=	devel/cmake
 
@@ -82,16 +82,16 @@ WANTLIB-main =	${myWANTLIB} c pthread
 WANTLIB-c++ =	${myWANTLIB} csirocsa plplotd stdc++
 WANTLIB-f77 +=	${myWANTLIB} csirocsa plplotd ${MODFORTRAN_WANTLIB}
 
-myLIB_DEPENDS =	::devel/glib2 \
-		::devel/pango \
-		::graphics/cairo \
-		::graphics/gd \
+myLIB_DEPENDS =	devel/glib2 \
+		devel/pango \
+		graphics/cairo \
+		graphics/gd \
 		${MODGETTEXT_LIB_DEPENDS}
 
 LIB_DEPENDS-main =	${myLIB_DEPENDS}
-LIB_DEPENDS-c++ =	::math/plplot,-main \
+LIB_DEPENDS-c++ =	math/plplot,-main \
 			${myLIB_DEPENDS}
-LIB_DEPENDS-f77 =	::math/plplot,-main \
+LIB_DEPENDS-f77 =	math/plplot,-main \
 			${myLIB_DEPENDS} \
 			${MODFORTRAN_LIB_DEPENDS}
 

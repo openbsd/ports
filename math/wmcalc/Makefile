@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		wm-dockapp; simple four-function calculator
 
 DISTNAME=		wmcalc-0.3
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		math x11 x11/windowmaker
 
 HOMEPAGE=		http://members.cox.net/ehf_dockapps/

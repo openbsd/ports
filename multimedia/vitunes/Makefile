@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:15 espie Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m ncurses tag tag_c util
 
-LIB_DEPENDS =		::audio/taglib
-RUN_DEPENDS =		::x11/mplayer
+LIB_DEPENDS =		audio/taglib
+RUN_DEPENDS =		x11/mplayer
 			
 MASTER_SITES =		${HOMEPAGE}/files/
 

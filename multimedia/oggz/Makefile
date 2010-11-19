@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 07:23:15 espie Exp $
 
 COMMENT =	inspect, edit and validate Ogg files
 
@@ -22,7 +22,7 @@ MASTER_SITES =	http://downloads.xiph.org/releases/liboggz/
 
 WANTLIB =	c ogg m
 
-LIB_DEPENDS =	::audio/libogg
+LIB_DEPENDS =	audio/libogg
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes

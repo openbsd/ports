@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	generate world unique message-ids
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::mail/p5-Email-Address
+RUN_DEPENDS=	mail/p5-Email-Address
 
 .include <bsd.port.mk>

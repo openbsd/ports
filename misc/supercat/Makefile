@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:12 espie Exp $
 
-COMMENT=	colorize specific patters in input
+COMMENT=	colorize specific patterns in input
 
 DISTNAME=	supercat-0.5.5
+REVISION =	0
 CATEGORIES=	misc
 
 HOMEPAGE=	http://supercat.nosredna.net/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spc ${PREFIX}/bin/spc

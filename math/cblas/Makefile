@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/07 20:33:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -32,8 +32,8 @@ MODULES=		fortran
 MODFORTRAN_COMPILER =	g77
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS =	::math/blas
-WANTLIB =	blas.>=1.0
+LIB_DEPENDS =	math/blas
+WANTLIB =	blas>=1.0
 
 CFLAGS+=	-DADD_
 MAKE_FILE=	${FILESDIR}/Makefile

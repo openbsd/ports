@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/29 08:38:08 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/19 07:23:09 espie Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -27,8 +27,8 @@ LANGUAGES=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
 		ga-IE he hu it ja ko lt nb-NO nl nn-NO pa-IN pl \
 		pt-BR pt-PT ru sk sv-SE tr uk zh-CN zh-TW
 
-BUILD_DEPENDS=	:unzip-*:archivers/unzip
-RUN_DEPENDS=	:mozilla-thunderbird-${V}:mail/mozilla-thunderbird
+BUILD_DEPENDS=	archivers/unzip
+RUN_DEPENDS=	mozilla-thunderbird-${V}:mail/mozilla-thunderbird
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses pthread
 
-RUN_DEPENDS=	:screen-*-shm:misc/screen,shm
+RUN_DEPENDS=	screen-*-shm:misc/screen,shm
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-install-root=${WRKINST} \

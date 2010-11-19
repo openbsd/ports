@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
 DISTNAME=		exmh-2.7.2
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=     	mail
 
 HOMEPAGE=		http://www.beedub.com/exmh/
@@ -24,11 +24,11 @@ MODULES=		x11/tk
 MODTCL_VERSION=		8.4
 MODTK_VERSION=		8.4
 BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
-RUN_DEPENDS=		:expect-*:lang/expect\
-			:nmh-*:mail/nmh\
-			:metamail-*:mail/metamail\
+RUN_DEPENDS=		lang/expect\
+			mail/nmh\
+			mail/metamail\
 			${MODTK_RUN_DEPENDS}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*

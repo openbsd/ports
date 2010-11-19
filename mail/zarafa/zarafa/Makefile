@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/17 14:00:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/19 07:23:10 espie Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -26,9 +26,9 @@ MULTI_PACKAGES=	-main -web
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::www/php5/core \
-		::textproc/xmlto \
-		::net/curl
+BUILD_DEPENDS=	www/php5/core \
+		textproc/xmlto \
+		net/curl
 
 WANTLIB-main =	${MODGETTEXT_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
@@ -36,21 +36,21 @@ WANTLIB-main += sasl2 stdc++ z xml2 mysqlclient lber-2.3 ldap-2.3 uuid execinfo
 WANTLIB-main += vmime-zarafa ical icalss
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		::textproc/libxml \
-		::databases/mysql \
-		::databases/openldap \
-		::devel/uuid \
-		::devel/libexecinfo \
-		:zarafa-libvmime->=0.7.1p6:mail/zarafa/libvmime \
-		::textproc/libical
+		textproc/libxml \
+		databases/mysql \
+		databases/openldap \
+		devel/uuid \
+		devel/libexecinfo \
+		mail/zarafa/libvmime>=0.7.1p6 \
+		textproc/libical
 
 WANTLIB-web += ${MODGETTEXT_WANTLIB}
 WANTLIB-web += execinfo ical icalss uuid vmime-zarafa common_mapi
 WANTLIB-web += common_util freebusy icalmapi inetmapi mapi m stdc++ z
 
 LIB_DEPENDS-web= ${MODGETTEXT_LIB_DEPENDS} \
-		::mail/zarafa/zarafa,-main
-RUN_DEPENDS-web= ::www/php5/core
+		mail/zarafa/zarafa,-main
+RUN_DEPENDS-web= www/php5/core
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

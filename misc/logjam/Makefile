@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =	gtk livejournal client
 
@@ -27,12 +27,12 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::databases/sqlite3 \
-		::net/curl \
-		::textproc/libxml
+LIB_DEPENDS =	x11/gtk+2 \
+		databases/sqlite3 \
+		net/curl \
+		textproc/libxml
 
-RUN_DEPENDS =	::devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu

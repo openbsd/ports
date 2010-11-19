@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
@@ -19,7 +19,7 @@ WANTLIB=		c curses readline util
 
 CONFIGURE_STYLE=	gnu
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 REGRESS_IS_INTERACTIVE=	Yes
 
 do-regress:

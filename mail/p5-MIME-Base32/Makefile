@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=		Base32 encoder/decoder
 
@@ -12,6 +12,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

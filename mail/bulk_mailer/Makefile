@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=	speed mail delivery by sorting & batching addresses
 
 DISTNAME=	bulk_mailer-1.13
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 
 CATEGORIES=	mail
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:25:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
-RUN_DEPENDS=	::mail/claws-mail
+RUN_DEPENDS=	mail/claws-mail
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu

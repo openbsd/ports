@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 09:38:10 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:10 espie Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
@@ -21,7 +21,7 @@ WANTLIB =		m gmp
 
 MASTER_SITES =		${HOMEPAGE}
 
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 
 MAKE_FILE =		makefile
 

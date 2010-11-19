@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	free spreadsheet with graphical user interface
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xaw Xext Xmu Xpm Xt c.>=35 m pthread-stubs xcb
+WANTLIB=		X11 Xaw Xext Xmu Xpm Xt c>=35 m pthread-stubs xcb
 
 MASTER_SITES=	http://www.ping.be/bertin/
 

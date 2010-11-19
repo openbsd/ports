@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/19 07:23:10 espie Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -65,16 +65,16 @@ WANTLIB=	ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp \
 		png ltdl pthread stdc++ xcb-render xcb-render-util
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png \
-		::devel/libtool,-ltdl \
-		:tk->=8.4,<8.5:x11/tk/8.4 \
-		:gd->=2.0.34:graphics/gd
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png \
+		devel/libtool,-ltdl \
+		tk->=8.4,<8.5:x11/tk/8.4 \
+		graphics/gd>=2.0.34
 
 # cairo stuff
-LIB_DEPENDS+= 	::x11/gtk+2
+LIB_DEPENDS+= 	x11/gtk+2
 
-WANTLIB+=	cairo.>=5 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+WANTLIB+=	cairo>=5 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		gmodule-2.0 glib-2.0 gobject-2.0 pixman-1 gdk_pixbuf-2.0 \
 		gdk-x11-2.0 gtk-x11-2.0
 
@@ -87,11 +87,11 @@ WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl gio-2.0 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2 gailutil \
 		gnomeui-2 canberra gcrypt gpg-error vorbis vorbisfile ogg
 
-RUN_DEPENDS=	:tk->=8.4,<8.5:x11/tk/8.4 \
-		:tcl->=8.4.7p5,<8.5:lang/tcl/8.4 \
-		::lang/guile
+RUN_DEPENDS=	tk->=8.4,<8.5:x11/tk/8.4 \
+		tcl->=8.4.7p5,<8.5:lang/tcl/8.4 \
+		lang/guile
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/swig
+		devel/swig
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

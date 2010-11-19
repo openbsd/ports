@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/09/17 13:25:00 millert Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =	python package to retrieve data of the IMDb movie database
 
@@ -22,7 +22,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=imdbpy/}
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS =	::textproc/py-lxml
+RUN_DEPENDS =	textproc/py-lxml
 
 NO_REGRESS =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/22 04:44:16 matthieu Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =	OpenMoko serial console tool
 
@@ -18,7 +18,7 @@ WANTLIB =		ftdi usb c
 
 MASTER_SITES =		ftp://ftp.laas.fr/pub/ii/matthieu/
 
-LIB_DEPENDS =		:libftdi-*:devel/libftdi
+LIB_DEPENDS =		devel/libftdi
 
 NO_REGRESS =		yes
 

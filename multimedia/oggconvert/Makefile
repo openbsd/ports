@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=	convert media files to Vorbis, Theora and Dirac
 
@@ -24,13 +24,13 @@ MODULES=	lang/python
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	::multimedia/gstreamer-0.10/py-gstreamer
-RUN_DEPENDS=	::multimedia/gstreamer-0.10/py-gstreamer \
-		:desktop-file-utils-*:devel/desktop-file-utils \
-		::multimedia/gstreamer-0.10/plugins-base \
-		::multimedia/gstreamer-0.10/plugins-good \
-		::multimedia/gstreamer-0.10/plugins-ugly \
-		:gstreamer-ffmpeg->=0.10.5:multimedia/gstreamer-0.10/plugins-ffmpeg
+BUILD_DEPENDS=	multimedia/gstreamer-0.10/py-gstreamer
+RUN_DEPENDS=	multimedia/gstreamer-0.10/py-gstreamer \
+		devel/desktop-file-utils \
+		multimedia/gstreamer-0.10/plugins-base \
+		multimedia/gstreamer-0.10/plugins-good \
+		multimedia/gstreamer-0.10/plugins-ugly \
+		multimedia/gstreamer-0.10/plugins-ffmpeg>=0.10.5
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/oggconvert

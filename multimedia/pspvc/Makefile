@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=	video converter for the Playstation Portable
 
@@ -26,8 +26,8 @@ WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pspvc/}
 
-RUN_DEPENDS=	::graphics/ffmpeg
-LIB_DEPENDS+=	::x11/gtk+2
+RUN_DEPENDS=	graphics/ffmpeg
+LIB_DEPENDS+=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 

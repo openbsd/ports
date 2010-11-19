@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -19,14 +19,14 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 
 USE_GMAKE=		yes
 
-LIB_DEPENDS=		::lang/ecl
+LIB_DEPENDS=		lang/ecl
 WANTLIB +=		c gc gmp m pthread ecl
 
 SUBST_VARS=		VERSION
 
 CONFIGURE_ARGS+=	--enable-ecl
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

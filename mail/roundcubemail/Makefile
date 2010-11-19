@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/11 13:46:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/19 07:23:09 espie Exp $
 
 COMMENT =	imap4 webmail client
 
@@ -25,9 +25,9 @@ INSTDIR =	${PREFIX}/roundcubemail
 TINSTDIR =	${TRUEPREFIX}/roundcubemail
 SUBST_VARS =	INSTDIR TINSTDIR
 
-RUN_DEPENDS =	::www/php5/core \
-		::www/php5/extensions,-mbstring \
-		:php5-mysql-*|php5-pgsql-*|php5-sqlite-*:www/php5/extensions,-sqlite
+RUN_DEPENDS =	www/php5/core \
+		www/php5/extensions,-mbstring \
+		php5-mysql-*|php5-pgsql-*|php5-sqlite-*:www/php5/extensions,-sqlite
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -20,12 +20,12 @@ PERMIT_DISTFILES_FTP=  	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c jpeg \
 			m png pthread pthread-stubs stdc++ util xcb z idn \
-			fam rpcsvc kdecore.>=4 kio kdeui kdefx kdesu DCOP \
-			kwalletclient.>=1
+			fam rpcsvc kdecore>=4 kio kdeui kdefx kdesu DCOP \
+			kwalletclient>=1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
-LIB_DEPENDS=		::x11/kde/libs3
+LIB_DEPENDS=		x11/kde/libs3
 
 MODULES=        	x11/kde devel/gettext
 

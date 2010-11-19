@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	task-based timeclock for KDE
 
@@ -23,7 +23,7 @@ WANTLIB=	art_lgpl_2 jpeg kwalletclient ICE SM X11 Xau Xdmcp Xext \
 
 MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/qt3 devel/gettext
 

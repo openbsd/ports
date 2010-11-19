@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	reencode many media file formats to Ogg Theora
 
@@ -26,9 +26,9 @@ WANTLIB += theora theoradec theoraenc
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	:ffmpeg->=20080620p10:graphics/ffmpeg \
-		::audio/libvorbis \
-		::multimedia/libtheora
+LIB_DEPENDS=	graphics/ffmpeg>=20080620p10 \
+		audio/libvorbis \
+		multimedia/libtheora
 
 MODULES=	devel/scons
 

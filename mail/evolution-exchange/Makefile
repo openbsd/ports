@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/16 09:18:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:06 espie Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -69,7 +69,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	:evolution->=2.32.0:mail/evolution,-main
+LIB_DEPENDS=	mail/evolution,-main>=2.32.0
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

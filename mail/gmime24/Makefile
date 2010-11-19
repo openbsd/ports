@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	MIME messages creation and parsing library (v2.4)
 
@@ -25,7 +25,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gmime/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/glib2 
+LIB_DEPENDS=	devel/glib2 
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

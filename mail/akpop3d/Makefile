@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=	small and secure POP3 daemon
 
 DISTNAME=	akpop3d-0.7.7
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	mail
 HOMEPAGE=	http://www.synflood.at/akpop3d.html
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
@@ -20,9 +20,9 @@ WANTLIB=		X11 c m ncurses pthread-stubs readline xcb
 
 MASTER_SITES=		${HOMEPAGE}/pub/pari/unix/
 
-BUILD_DEPENDS=		::print/texlive/base
+BUILD_DEPENDS=		print/texlive/base
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_STYLE=	simple

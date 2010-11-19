@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2010/11/16 08:55:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2010/11/19 07:23:06 espie Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -84,32 +84,32 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		::devel/bison \
-			::misc/shared-mime-info \
-			::x11/gnome/icon-theme \
-			::devel/iso-codes
+BUILD_DEPENDS=		devel/bison \
+			misc/shared-mime-info \
+			x11/gnome/icon-theme \
+			devel/iso-codes
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			::x11/hicolor-icon-theme \
-			::x11/gnome/icon-theme
+			x11/hicolor-icon-theme \
+			x11/gnome/icon-theme
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::devel/libunique \
-			::converters/libpst \
-			::databases/evolution-data-server \
-			::databases/openldap \
-			::devel/libnotify \
-			::devel/libsoup \
-			::graphics/gtkimageview \
-			::security/nss \
-			::x11/gnome/desktop \
-			::www/gtkhtml3 \
-			::audio/libcanberra
+			devel/libunique \
+			converters/libpst \
+			databases/evolution-data-server \
+			databases/openldap \
+			devel/libnotify \
+			devel/libsoup \
+			graphics/gtkimageview \
+			security/nss \
+			x11/gnome/desktop \
+			www/gtkhtml3 \
+			audio/libcanberra
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
-			::multimedia/gstreamer-0.10/core \
-			:${PKGNAME-main}:mail/evolution,-main
+			multimedia/gstreamer-0.10/core \
+			${PKGNAME-main}:mail/evolution,-main
 # needed for the audio-inline plugin
-RUN_DEPENDS-plugins=	::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS-plugins=	multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

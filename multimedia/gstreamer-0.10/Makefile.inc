@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2010/09/08 21:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2010/11/19 07:23:13 espie Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -23,7 +23,7 @@ USE_LIBTOOL ?=		Yes
 # avoid compiling plugins as static libraries
 LIBTOOL_FLAGS ?=	--tag=disable-static
 
-BUILD_DEPENDS +=	:bison-*:devel/bison
+BUILD_DEPENDS +=	devel/bison
 
 AUTOCONF_VERSION ?=	2.62
 CONFIGURE_STYLE ?=	autoconf

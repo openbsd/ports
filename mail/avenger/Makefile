@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/09 20:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.7.4
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m pcap ssl stdc++ lib/db4/db.>=4
+WANTLIB=		c crypto m pcap ssl stdc++ lib/db4/db>=4
 
 MASTER_SITES=		${HOMEPAGE}/dist/
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
-LIB_DEPENDS=		:db->=4,<5:databases/db/v4
+LIB_DEPENDS=		db->=4,<5:databases/db/v4
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
@@ -38,7 +38,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
 CONFIGURE_ARGS +=        --enable-sasl
-LIB_DEPENDS +=		::security/cyrus-sasl2
+LIB_DEPENDS +=		security/cyrus-sasl2
 WANTLIB +=		sasl2
 .else
 CONFIGURE_ARGS +=	--disable-sasl

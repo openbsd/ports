@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/19 07:23:11 espie Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -36,9 +36,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amanda/}
 # AMANDA configure looks for gtar and smbclient so that it can hard-code
 # the pathnames.
 # Configure looks for gnuplot to see if it should build amplot.
-BUILD_DEPENDS+= :gtar-*:archivers/gtar \
-		:samba-*:net/samba \
-		:gnuplot-*:math/gnuplot
+BUILD_DEPENDS+= archivers/gtar \
+		net/samba \
+		math/gnuplot
 
 # There is no need to set RUN_DEPENDS, because AMANDA will run fine
 # without gtar, smbclient, and gnuplot.  They will only be required
@@ -73,7 +73,7 @@ USE_GROFF =	Yes
 # databases.
 .if ${FLAVOR:L:Mdb}
 WANTLIB+=	lib/db4/db
-LIB_DEPENDS+=	:db->=4,<5:databases/db/v4
+LIB_DEPENDS+=	db->=4,<5:databases/db/v4
 CONFIGURE_ARGS+= --with-db=db
 CFLAGS+=	 -L${LOCALBASE}/lib
 .endif

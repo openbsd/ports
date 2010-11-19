@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	program for reading values from 1-wire devices
 
@@ -17,7 +17,7 @@ WANTLIB=	c m usb
 
 MASTER_SITES=	${HOMEPAGE}/software/linux/
 
-LIB_DEPENDS=	::devel/libusb
+LIB_DEPENDS=	devel/libusb
 
 NO_CONFIGURE=	Yes
 USE_GMAKE=	Yes

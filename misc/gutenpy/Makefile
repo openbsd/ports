@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,8 +24,8 @@ EXTRACT_SUFX=		.zip
 MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:py-xml-*:textproc/py-xml \
-			:py-gtk2->=2.6.3:x11/py-gtk2
+RUN_DEPENDS=		textproc/py-xml \
+			x11/py-gtk2>=2.6.3
 			
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

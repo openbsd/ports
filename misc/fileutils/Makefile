@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/03 07:00:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/19 07:23:11 espie Exp $
 
 COMMENT-main= 		GNU versions of common file management utilities
 COMMENT-ls=		colorized GNU 'ls'
@@ -7,8 +7,10 @@ V=			4.1
 DISTNAME=		fileutils-$V
 CATEGORIES=		misc
 
-PKGNAME-main=		${DISTNAME}p5
-PKGNAME-ls=		gnuls-$Vp2
+PKGNAME-main=		${DISTNAME}
+REVISION-main =		5
+PKGNAME-ls=		gnuls-$V
+REVISION-ls =		2
 
 HOMEPAGE=		http://www.gnu.org/software/fileutils/
 

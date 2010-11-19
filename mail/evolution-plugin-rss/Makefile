@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 13:48:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:06 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,8 +41,8 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:evolution->=2.32.0:mail/evolution
-LIB_DEPENDS=		::devel/libsoup,-gnome
+RUN_DEPENDS=		mail/evolution>=2.32.0
+LIB_DEPENDS=		devel/libsoup,-gnome
 
 MODGCONF2_LIBDEP=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss

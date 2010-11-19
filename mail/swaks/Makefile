@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 22:08:31 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::net/p5-Net-DNS \
-		::security/p5-Net_SSLeay
+RUN_DEPENDS=	net/p5-Net-DNS \
+		security/p5-Net_SSLeay
 
 USE_GROFF =	Yes
 NO_REGRESS=	YES

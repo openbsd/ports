@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/04 12:07:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -28,18 +28,18 @@ WANTLIB=		c crypto ssl z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
-COMMON_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
-			:p5-Mail-DKIM->=0.31:mail/p5-Mail-DKIM \
-			:p5-Net-DNS->=0.34:net/p5-Net-DNS \
-			:p5-NetAddr-IP-*:net/p5-NetAddr-IP \
-			:p5-IO-Socket-INET6-*:net/p5-IO-Socket-INET6 \
-			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
-			:p5-libwww-*:www/p5-libwww
+COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
+			mail/p5-Mail-DKIM>=0.31 \
+			net/p5-Net-DNS>=0.34 \
+			net/p5-NetAddr-IP \
+			net/p5-IO-Socket-INET6 \
+			security/p5-IO-Socket-SSL \
+			www/p5-libwww
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \
-			:gnupg-<2:security/gnupg \
-			::devel/re2c
+			security/gnupg<2 \
+			devel/re2c
 
 MAKE_ENV+=		CC="${CC}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/07 20:15:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 07:23:15 espie Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
@@ -15,9 +15,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	boost_system-mt.>=1.1 boost_regex-mt.>=1.1 boost_filesystem-mt.>=1.1 \
-		bz2.>=10 c ebml expat FLAC.>=9 lzo2 m magic.>=2 matroska.>=1.0 \
-		ogg stdc++ vorbis.>=8 z pthread
+WANTLIB =	boost_system-mt>=1.1 boost_regex-mt>=1.1 \
+		boost_filesystem-mt>=1.1 \
+		bz2>=10 c ebml expat FLAC>=9 lzo2 m magic>=2 matroska>=1.0 \
+		ogg stdc++ vorbis>=8 z pthread
 
 MASTER_SITES =	${HOMEPAGE}/sources/
 
@@ -25,13 +26,13 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	::audio/flac \
-		::archivers/bzip2 \
-		::archivers/lzo2 \
-		::multimedia/libmatroska \
-		::audio/libvorbis \
-		::devel/libmagic \
-		::devel/boost
+LIB_DEPENDS =	audio/flac \
+		archivers/bzip2 \
+		archivers/lzo2 \
+		multimedia/libmatroska \
+		audio/libvorbis \
+		devel/libmagic \
+		devel/boost
 
 MAKE_FLAGS +=	V=1
 
@@ -57,7 +58,7 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS += --disable-gui --disable-wxwidgets
 .else
-LIB_DEPENDS +=	:wxWidgets-gtk2->=2.8.10:x11/wxWidgets
+LIB_DEPENDS +=	x11/wxWidgets>=2.8.10
 WANTLIB +=	wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv \
 		wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html \
 		wx_gtk2_qa wx_gtk2_xrc wx_gtk2_richtext

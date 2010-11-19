@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/19 07:23:10 espie Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -48,7 +48,7 @@ FULLPKGNAME-main=	fftw3-float-${V}
 .endif
 
 FULLPKGPATH-common=	math/fftw3,-common
-RUN_DEPENDS-main=	::${FULLPKGPATH-common}
+RUN_DEPENDS-main=	${FULLPKGPATH-common}
 WANTLIB-main=		c m
 PKG_ARCH-common=	*
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/18 10:30:41 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/{fitscopy,imcopy,listhead} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBUILD}/cookbook.c ${DOCDIR}
 
-REGRESS_DEPENDS=::math/cfitsio
+REGRESS_DEPENDS=math/cfitsio
 do-regress:
 	cd ${WRKBUILD} && ${MAKE} testprog
 	cd ${WRKBUILD} && ./testprog >testprog.lis

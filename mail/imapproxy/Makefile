@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/12 19:54:48 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	caching IMAP proxy to be used with webmail clients
 
 DISTNAME=	up-imapproxy-1.2.5
-PKGNAME=	${DISTNAME:S/^up-//}p1
+PKGNAME=	${DISTNAME:S/^up-//}
+REVISION =	1
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.imapproxy.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/23 11:59:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
@@ -14,12 +14,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-OLE-Storage_Lite \
-		::devel/p5-IO-stringy \
-		::textproc/p5-Text-CSV_XS
-REGRESS_DEPENDS=::converters/p5-Unicode-Map \
-		::converters/p5-Jcode \
-		::misc/p5-Spreadsheet-WriteExcel
+RUN_DEPENDS=	devel/p5-OLE-Storage_Lite \
+		devel/p5-IO-stringy \
+		textproc/p5-Text-CSV_XS
+REGRESS_DEPENDS=converters/p5-Unicode-Map \
+		converters/p5-Jcode \
+		misc/p5-Spreadsheet-WriteExcel
 BUILD_DEPENDS = ${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes

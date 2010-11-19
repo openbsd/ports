@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:10 espie Exp $
 
 BROKEN=			requires update due to ocaml 3.08
 
@@ -38,7 +38,7 @@ EXTRACT_ONLY=		${DISTNAME}.tar.gz \
 DESTDIRNAME=		COQINSTALLPREFIX
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MODULES=		lang/ocaml
 

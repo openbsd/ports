@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
@@ -17,8 +17,8 @@ MODULES=	cpan
 USE_GROFF =	Yes
 CPAN_AUTHOR=	JASLONG
 
-RUN_DEPENDS=	::security/p5-Crypt-OpenSSL-RSA \
-		::mail/p5-Mail-Tools \
-		::net/p5-Net-DNS
+RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
+		mail/p5-Mail-Tools \
+		net/p5-Net-DNS
 
 .include <bsd.port.mk>

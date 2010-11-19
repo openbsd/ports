@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	free video editor
 
@@ -31,17 +31,17 @@ WANTLIB += xml2 xvidcore x264
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDSdesktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::x11/gtk+2 \
-		::audio/faac \
-		::audio/faad \
-		::audio/lame \
-		::audio/libvorbis \
-		::textproc/libxml \
-		::multimedia/xvidcore \
-		::multimedia/x264
+LIB_DEPENDS=	x11/gtk+2 \
+		audio/faac \
+		audio/faad \
+		audio/lame \
+		audio/libvorbis \
+		textproc/libxml \
+		multimedia/xvidcore \
+		multimedia/x264
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

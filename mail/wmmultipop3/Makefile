@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=		wm-dockapp; multiple pop3 mailbox checker
 
 DISTNAME=		wmMultiPop3-0.9
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}
+REVISION =		0
 CATEGORIES=		mail x11/windowmaker
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wmmultipop3/}
 

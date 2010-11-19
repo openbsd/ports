@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/18 20:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -29,26 +29,26 @@ WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre perl pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb z xcb-render xcb-render-util gcrypt
-WANTLIB += gpg-error gsf-1.>=114.8 art_lgpl_2 glade-2.0 gnomeui-2
+WANTLIB += gpg-error gsf-1>=114.8 art_lgpl_2 glade-2.0 gnomeui-2
 WANTLIB += goffice-0.8 gsf-gnome-1 xml2 canberra ltdl ogg vorbis vorbisfile
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::graphics/libart \
-			::devel/libglade2 \
-			::x11/gnome/libgnomeui \
-			:goffice->=0.8.11,<0.8.12:devel/goffice \
-			::devel/libgsf,-gnome \
-			::textproc/libxml
+LIB_DEPENDS=		graphics/libart \
+			devel/libglade2 \
+			x11/gnome/libgnomeui \
+			goffice->=0.8.11,<0.8.12:devel/goffice \
+			devel/libgsf,-gnome \
+			textproc/libxml
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnumeric
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gnome \
 			--without-gda \

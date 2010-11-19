@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	perl interface to the graphviz graphing tool
 
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-IPC-Run \
-		::devel/p5-Graph \
-		::math/graphviz \
-		::math/p5-Math-Bezier
+RUN_DEPENDS=	devel/p5-IPC-Run \
+		devel/p5-Graph \
+		math/graphviz \
+		math/p5-Math-Bezier
 
 .include <bsd.port.mk>

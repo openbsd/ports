@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	publishing and presentation tool
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=    ::x11/tk/8.4
+RUN_DEPENDS=    x11/tk/8.4
 
 NO_REGRESS=	Yes
 

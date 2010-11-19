@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/27 18:25:08 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	constrained approximate minimum degree 
 
@@ -22,8 +22,8 @@ MASTER_SITES=	${HOMEPAGE}/
 WRKDIST=	${WRKDIR}/CAMD
 WRKSRC=		${WRKDIST}/Source
 
-BUILD_DEPENDS=	::math/ufconfig
-RUN_DEPENDS=	::math/ufconfig
+BUILD_DEPENDS=	math/ufconfig
+RUN_DEPENDS=	math/ufconfig
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBcamd_VERSION:R} \

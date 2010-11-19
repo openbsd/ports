@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=		generate all subsets of a list of elements
 
@@ -6,7 +6,7 @@ DISTNAME=		Data-PowerSet-0.05
 CATEGORIES=		math
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

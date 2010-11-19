@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
@@ -22,7 +22,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-dvdread-includes=${LOCALBASE} \
 			--with-dvdread-libs=${LOCALBASE}
 
-LIB_DEPENDS=		::devel/libdvdread \
-			::audio/libvorbis
+LIB_DEPENDS=		devel/libdvdread \
+			audio/libvorbis
 
 .include <bsd.port.mk>

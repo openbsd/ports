@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=memchan/}
 
 MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
-		::devel/tcllib
+		devel/tcllib
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 SEPARATE_BUILD =	simple
@@ -35,7 +35,7 @@ CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
 			--prefix=${DESTDIR}${PREFIX}
 REGRESS_TARGET =	test
 SUBST_VARS =		LIBMemchan221_VERSION
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	cp  ${WRKSRC}/doc/random.man  ${WRKSRC}/doc/mchan-random.man

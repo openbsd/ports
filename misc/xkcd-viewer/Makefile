@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	XKCD comic viewer
 
@@ -22,7 +22,7 @@ CONFIGURE_STYLE=perl
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/p5-Gtk2 \
-		::www/p5-libwww
+RUN_DEPENDS=	x11/p5-Gtk2 \
+		www/p5-libwww
 
 .include <bsd.port.mk>

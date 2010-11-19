@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/07 09:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.6.4
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
@@ -21,27 +21,27 @@ MASTER_SITES=		${HOMEPAGE} \
 			http://mirror.cedratnet.com/amavisd-new/ \
 			http://mirror.omroep.nl/amavisd-new/
 
-RUN_DEPENDS=		::archivers/arc \
-			::archivers/bzip2 \
-			::archivers/cabextract \
-			::archivers/lha \
-			::archivers/lzop \
-			:p5-Archive-Zip->=1.14:archivers/p5-Archive-Zip \
-			::archivers/p7zip,-rar \
-			::archivers/ripole \
-			::archivers/unzip \
-			::archivers/zoo \
-			::converters/p5-Convert-TNEF \
-			:rpm2cpio-*|rpm-*:converters/rpm2cpio \
-			:p5-Convert-UUlib->=1.05:converters/p5-Convert-UUlib \
-			::databases/p5-BerkeleyDB \
-			::devel/p5-Net-Server \
-			::mail/p5-Mail-SpamAssassin \
-			:p5-Mail-DKIM->=0.31:mail/p5-Mail-DKIM \
-			::mail/p5-MIME-tools \
-			::net/net-snmp,-perl \
-			::security/clamav \
-			::sysutils/p5-Unix-Syslog
+RUN_DEPENDS=		archivers/arc \
+			archivers/bzip2 \
+			archivers/cabextract \
+			archivers/lha \
+			archivers/lzop \
+			archivers/p5-Archive-Zip>=1.14 \
+			archivers/p7zip,-rar \
+			archivers/ripole \
+			archivers/unzip \
+			archivers/zoo \
+			converters/p5-Convert-TNEF \
+			rpm2cpio-*|rpm-*:converters/rpm2cpio \
+			converters/p5-Convert-UUlib>=1.05 \
+			databases/p5-BerkeleyDB \
+			devel/p5-Net-Server \
+			mail/p5-Mail-SpamAssassin \
+			mail/p5-Mail-DKIM>=0.31 \
+			mail/p5-MIME-tools \
+			net/net-snmp,-perl \
+			security/clamav \
+			sysutils/p5-Unix-Syslog
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

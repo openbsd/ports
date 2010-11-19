@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
@@ -17,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c pthread ldap_r.>=8 lber.>=8
+WANTLIB=	c pthread ldap_r>=8 lber>=8
 
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	::databases/openldap
+LIB_DEPENDS=	databases/openldap
 
 NO_REGRESS=	Yes
 

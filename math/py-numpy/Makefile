@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/07 20:33:59 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -28,7 +28,7 @@ MODULES=		lang/python \
 MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setupegg.py
 
-REGRESS_DEPENDS=	::devel/py-nose
+REGRESS_DEPENDS=	devel/py-nose
 
 MODFORTRAN_COMPILER =	g77
 

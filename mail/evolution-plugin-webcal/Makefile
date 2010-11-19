@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:06 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,10 +36,10 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-RUN_DEPENDS=		::mail/evolution
+RUN_DEPENDS=		mail/evolution
 
-LIB_DEPENDS=		::databases/evolution-data-server \
-			::devel/libsoup
+LIB_DEPENDS=		databases/evolution-data-server \
+			devel/libsoup
 
 MODGCONF2_SCHEMAS_DIR=	evolution-webcal
 

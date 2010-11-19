@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	search mailboxes for a particular email
 
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE=	http://grepmail.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grepmail/}
 
-RUN_DEPENDS=	::devel/p5-Time-TimeDate \
-		::converters/p5-DateManip \
-		::mail/p5-Mail-Mbox-MessageParser
+RUN_DEPENDS=	devel/p5-Time-TimeDate \
+		converters/p5-DateManip \
+		mail/p5-Mail-Mbox-MessageParser
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/p5-Benchmark-Timer
+		devel/p5-Benchmark-Timer
 		
 CONFIGURE_STYLE=perl
 USE_GROFF =	Yes

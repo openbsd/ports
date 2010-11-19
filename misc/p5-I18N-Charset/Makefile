@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	module to map charset names registered with IANA
 
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Jcode-*:converters/p5-Jcode \
-		:p5-IO-String-*:devel/p5-IO-String \
-		:p5-App-Info->=0.23:devel/p5-App-Info \
-		:p5-IO-Capture->=0.03:devel/p5-IO-Capture
+RUN_DEPENDS=	converters/p5-Jcode \
+		devel/p5-IO-String \
+		devel/p5-App-Info>=0.23 \
+		devel/p5-IO-Capture>=0.03
 
-REGRESS_DEPENDS=:p5-Unicode-Map-*:converters/p5-Unicode-Map \
-		:p5-Unicode-Map8-*:converters/p5-Unicode-Map8 \
-		:p5-Unicode-MapUTF8-*:converters/p5-Unicode-MapUTF8 \
-		:p5-IO-Capture-*:devel/p5-IO-Capture
+REGRESS_DEPENDS=converters/p5-Unicode-Map \
+		converters/p5-Unicode-Map8 \
+		converters/p5-Unicode-MapUTF8 \
+		devel/p5-IO-Capture
 
 .include <bsd.port.mk>

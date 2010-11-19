@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/19 07:23:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,13 +36,13 @@ MODFORTRAN_COMPILER = g77
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
-		::archivers/bzip2 \
-		::graphics/cairo \
-		::graphics/jpeg \
-		::devel/glib2 \
-		::devel/pango \
-		::graphics/png \
-		::graphics/tiff
+		archivers/bzip2 \
+		graphics/cairo \
+		graphics/jpeg \
+		devel/glib2 \
+		devel/pango \
+		graphics/png \
+		graphics/tiff
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools

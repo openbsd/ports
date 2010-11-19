@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -23,7 +23,7 @@ WANTLIB=	c utf8
 
 AUTOCONF_VERSION=	2.59
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	::misc/libutf8 
+LIB_DEPENDS=	misc/libutf8 
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

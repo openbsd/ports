@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	easily modify MIME objects
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::mail/p5-Email-MIME \
-		::mail/p5-Email-MessageID \
-		:p5-Email-MIME-Encodings->=1.313:mail/p5-Email-MIME-Encodings \
-		::mail/p5-Email-MIME-ContentType
+RUN_DEPENDS=	mail/p5-Email-MIME \
+		mail/p5-Email-MessageID \
+		mail/p5-Email-MIME-Encodings>=1.313 \
+		mail/p5-Email-MIME-ContentType
 
 .include <bsd.port.mk>

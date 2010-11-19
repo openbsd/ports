@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:08 espie Exp $
 
 COMMENT= 	simply sending email
 
@@ -16,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Return-Value \
-		::mail/p5-Email-Address \
-		::mail/p5-Email-Simple
+RUN_DEPENDS=	devel/p5-Return-Value \
+		mail/p5-Email-Address \
+		mail/p5-Email-Simple
 
-REGRESS_DEPENDS=::mail/p5-Email-Abstract \
-		::mail/p5-Mail-Tools
+REGRESS_DEPENDS=mail/p5-Email-Abstract \
+		mail/p5-Mail-Tools
 
 MAKE_ENV+=	TEST_POD=1
 

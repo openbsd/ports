@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/16 20:43:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 AMD_DIR=	math/amd
-BUILD_DEPENDS=	::${AMD_DIR}:patch \
-		::${AMD_DIR}
+BUILD_DEPENDS=	${AMD_DIR}:patch \
+		${AMD_DIR}
 
 MASTER_SITES=	${HOMEPAGE}
 MASTER_SITES0=	${HOMEPAGE}../UFconfig/

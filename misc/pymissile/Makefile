@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	usb missile launcher control script
 DISTNAME=	pymissile-20061111
@@ -20,8 +20,8 @@ NO_REGRESS=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:pyusb-*:devel/pyusb \
-		:py-urwid-*:devel/py-urwid
+RUN_DEPENDS=	devel/pyusb \
+		devel/py-urwid
 
 do-extract:
 	@cp ${FULLDISTDIR}/${DISTFILES} ${WRKDIR}

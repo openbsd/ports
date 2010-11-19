@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		wm-dockapp; alarm clock
 
@@ -27,7 +27,7 @@ WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	module to internal operations of neural networks
 
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		::devel/p5-accessors
+RUN_DEPENDS=		devel/p5-accessors
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:09 espie Exp $
 
 COMMENT =	postfix greylist daemon
 
@@ -22,12 +22,12 @@ EXTRACT_SUFX =		.tar.bz2
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		::devel/p5-Net-Server \
-			::devel/p5-IO-Multiplex \
-			::devel/p5-Date-Calc \
-			::net/wget \
-			:p5-DBD-SQLite-*|p5-DBD-mysql-*|p5-DBD-Pg-*:databases/p5-DBD-SQLite
+RUN_DEPENDS =		devel/p5-Net-Server \
+			devel/p5-IO-Multiplex \
+			devel/p5-Date-Calc \
+			net/wget \
+			p5-DBD-SQLite-*|p5-DBD-mysql-*|p5-DBD-Pg-*:databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

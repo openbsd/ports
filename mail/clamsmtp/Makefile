@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=	SMTP virus filter
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://memberwebs.com/stef/software/clamsmtp/
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	::security/clamav
+RUN_DEPENDS=	security/clamav
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/clamsmtp

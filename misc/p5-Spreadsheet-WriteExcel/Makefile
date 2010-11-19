@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	write a cross-platform Excel binary file
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-OLE-Storage_Lite \
-		::devel/p5-Parse-RecDescent
+RUN_DEPENDS=	devel/p5-OLE-Storage_Lite \
+		devel/p5-Parse-RecDescent
 
 MODCPAN_EXAMPLES= Yes
 

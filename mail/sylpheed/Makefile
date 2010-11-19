@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2010/11/19 07:23:09 espie Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	devel/gettext
-LIB_DEPENDS +=		::x11/gtk+2 \
-			::textproc/gtkspell \
-			::security/gpgme
+LIB_DEPENDS +=		x11/gtk+2 \
+			textproc/gtkspell \
+			security/gpgme
 
 WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm c crypto atk-1.0 cairo gdk_pixbuf-2.0
@@ -29,7 +29,7 @@ WANTLIB += pthread pthread-stubs gthread-2.0 iconv intl pcre enchant pangoft2-1.
 WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.0/
 
 USE_LIBTOOL=		Yes
@@ -49,7 +49,7 @@ FLAVORS= 		compface
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcompface}
-LIB_DEPENDS+=		::mail/faces
+LIB_DEPENDS+=		mail/faces
 WANTLIB+=		compface
 CONFIGURE_ARGS +=	--enable-compface
 PERMIT_PACKAGE_CDROM =  No fee

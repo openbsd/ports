@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/12 06:26:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/19 07:23:06 espie Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -23,12 +23,12 @@ PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
-WANTLIB +=	crypto ssl z sasl2 lib/db4/db.>=4
+WANTLIB +=	crypto ssl z sasl2 lib/db4/db>=4
 
-LIB_DEPENDS=	::security/cyrus-sasl2 \
-		:db->=4,<5:databases/db/v4
+LIB_DEPENDS=	security/cyrus-sasl2 \
+		db->=4,<5:databases/db/v4
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::devel/pcre
+		devel/pcre
 RUN_DEPENDS-main=${RUN_DEPENDS}
 
 PATCH_LIST=	patch-*
@@ -75,7 +75,7 @@ FLAVORS=	drac
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
-BUILD_DEPENDS+=	::mail/drac
+BUILD_DEPENDS+=	mail/drac
 PATCH_LIST+=	drac-patch-imap_Makefile_in
 pre-patch:
 	cd ${WRKSRC} && ${PATCH} -s -z .drac -p1 < contrib/drac_auth.patch

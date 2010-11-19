@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/12 13:54:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:05 espie Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -40,9 +40,9 @@ WANTLIB-main=	${WANTLIB} asn1 com_err crypto gssapi kafs krb5 ssl
 MULTI_PACKAGES=	-main -pico -pilot
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:c-client->=2007b:mail/imap-uw,-c-client \
-		:aspell-*:textproc/aspell/core
-RUN_DEPENDS=	:aspell-*:textproc/aspell/core
+BUILD_DEPENDS=	mail/imap-uw,-c-client>=2007b \
+		textproc/aspell/core
+RUN_DEPENDS=	textproc/aspell/core
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
@@ -65,7 +65,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=--with-ldap-dir=${LOCALBASE}
-LIB_DEPENDS+=	::databases/openldap,-main
+LIB_DEPENDS+=	databases/openldap,-main
 WANTLIB+=	sasl2 lber ldap
 WANTLIB-pico=	${WANTLIB} asn1 com_err crypto gssapi krb5 ssl
 WANTLIB-pilot=	${WANTLIB} asn1 com_err crypto gssapi krb5 ssl

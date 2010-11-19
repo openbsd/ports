@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
@@ -26,7 +26,7 @@ NO_REGRESS=	Yes
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::textproc/docbook-to-man
+BUILD_DEPENDS=	textproc/docbook-to-man
 
 WRKDIST=	${WRKDIR}/offlineimap-${MODPY_EGG_VERSION}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
 
 COMMENT =		generates lists of words given certain information
 
@@ -21,8 +21,8 @@ MASTER_SITES =		http://www.arcane-labs.net/download/OpenBSD/ \
 
 MODULES =		x11/tk
 
-RUN_DEPENDS =		:tcllib->=1.8:devel/tcllib \
-			::x11/iwidgets
+RUN_DEPENDS =		devel/tcllib>=1.8 \
+			x11/iwidgets
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	Tcl/Tk-based manual browser
 
@@ -20,8 +20,8 @@ MODULES=	x11/tk
 MODTCL_VERSION=	8.4
 MODTK_VERSION=	8.4
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
-		::textproc/rman \
-		::textproc/glimpse
+		textproc/rman \
+		textproc/glimpse
 
 NO_REGRESS=	Yes
 

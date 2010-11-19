@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:15 espie Exp $
 
 COMMENT =	Moovida media center - bad plugins
 DISTNAME =	moovida-plugins-bad-${VERSION}
 REVISION =	1
 
-BUILD_DEPENDS +=	::multimedia/moovida/core
+BUILD_DEPENDS +=	multimedia/moovida/core
 
 #workaround weird infinite loop
 do-install:

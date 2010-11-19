@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
@@ -24,13 +24,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
 MODULES=	x11/qt4 devel/cmake
 
-LIB_DEPENDS=	::audio/portaudio-svn \
-		::devel/pcre \
-		::math/amd \
-		::math/fftw3,double \
-		::math/fftw3,float \
-		::math/umfpack \
-		::x11/qt4
+LIB_DEPENDS=	audio/portaudio-svn \
+		devel/pcre \
+		math/amd \
+		math/fftw3,double \
+		math/fftw3,float \
+		math/umfpack
 
 
 NO_REGRESS=	Yes

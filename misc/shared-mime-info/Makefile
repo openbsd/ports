@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -21,11 +21,11 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
-LIB_DEPENDS=		::devel/glib2 \
-			::textproc/libxml
+LIB_DEPENDS=		devel/glib2 \
+			textproc/libxml
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

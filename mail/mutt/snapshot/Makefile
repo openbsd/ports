@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/18 20:29:53 jsg Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -6,7 +6,7 @@ DISTNAME=	mutt-1.5.21
 REVISION=	1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/}
 
-WANTLIB=	qdbm.>=14 z
+WANTLIB=	qdbm>=14 z
 
 FLAVORS=	idn sasl sidebar
 FLAVOR?=
@@ -16,14 +16,14 @@ CONFIGURE_ARGS= --enable-hcache \
 		--enable-smtp \
 		--without-gdbm
 
-LIB_DEPENDS=	::databases/qdbm
-BUILD_DEPENDS+=	::textproc/docbook \
-		::textproc/docbook-xsl \
-		::textproc/libxslt
+LIB_DEPENDS=	databases/qdbm
+BUILD_DEPENDS+=	textproc/docbook \
+		textproc/docbook-xsl \
+		textproc/libxslt
 
 .if ${FLAVOR:L:Msasl}
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
-LIB_DEPENDS+=	::security/cyrus-sasl2
+LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
 .endif
 

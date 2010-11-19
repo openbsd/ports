@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =	uPnP/DLNA media server
 
@@ -23,14 +23,14 @@ MASTER_SITES =	${HOMEPAGE}/download/
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS = ::devel/py-twisted/web
-RUN_DEPENDS =	::devel/py-twisted/core \
-		::devel/py-twisted/web \
-		::devel/py-configobj \
-		::devel/py-gdata \
-		::audio/py-tagpy \
-		::www/py-nevow \
-		::databases/py-axiom
+BUILD_DEPENDS = devel/py-twisted/web
+RUN_DEPENDS =	devel/py-twisted/core \
+		devel/py-twisted/web \
+		devel/py-configobj \
+		devel/py-gdata \
+		audio/py-tagpy \
+		www/py-nevow \
+		databases/py-axiom
 
 # need a running instance
 NO_REGRESS =	Yes

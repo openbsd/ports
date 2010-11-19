@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =		multimedia framework
 
@@ -22,13 +22,13 @@ WANTLIB += gthread-2.0
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
 MODULES =		devel/gettext
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-BUILD_DEPENDS =		::devel/flex
-LIB_DEPENDS =		::textproc/libxml \
-			::devel/glib2
+BUILD_DEPENDS =		devel/flex
+LIB_DEPENDS =		textproc/libxml \
+			devel/glib2
 
-REGRESS_DEPENDS =	::${BASE_PKGPATH}
+REGRESS_DEPENDS =	${BASE_PKGPATH}
 
 CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex \
 			ac_cv_path_PYTHON=""

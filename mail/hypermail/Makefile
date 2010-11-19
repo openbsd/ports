@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/11 19:46:30 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.hypermail.org/
 
 MASTER_SITES=		${HOMEPAGE}dist/
 
-LIB_DEPENDS+=		::devel/pcre
+LIB_DEPENDS+=		devel/pcre
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,7 +36,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "gdbm"
 CONFIGURE_ARGS +=--with-gdbm=${LOCALBASE}
-LIB_DEPENDS +=	::databases/gdbm
+LIB_DEPENDS +=	databases/gdbm
 WANTLIB +=	gdbm
 .else
 CONFIGURE_ARGS +=--without-gdbm

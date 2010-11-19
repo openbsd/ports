@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2010/11/13 21:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2010/11/19 07:23:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,7 @@ WANTLIB-server=		${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
 WANTLIB-sieve=		${MODLIBICONV_WANTLIB} c crypto ssl
 
 MODULES=	converters/libiconv
-LIB_DEPENDS+=	::archivers/bzip2
+LIB_DEPENDS+=	archivers/bzip2
 
 MULTI_PACKAGES=	-server
 SUBPACKAGE?=	-server
@@ -80,7 +80,7 @@ MULTI_PACKAGES+=	-sieve
 SIEVE_DIR=		${WRKDIR}/dovecot-${V_MAJOR}-sieve-${V_SIEVE}
 MANAGESIEVE_DIR=	${WRKDIR}/dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}
 AUTOCONF_DIR+=		${WRKSRC} ${MANAGESIEVE_DIR}
-RUN_DEPENDS-sieve=	::${PKGPATH}
+RUN_DEPENDS-sieve=	${PKGPATH}
 LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
 PATCH_LIST=		patch-* managesieve-patch-*
 .else
@@ -89,32 +89,32 @@ PATCH_LIST=		patch-* nosieve-patch-*
 
 .if ${FLAVOR:L:Mbdb}
 CONFIGURE_ARGS+=	--with-db
-LIB_DEPENDS+=		::databases/db/v4
-WANTLIB-server+=	db.>=5
+LIB_DEPENDS+=		databases/db/v4
+WANTLIB-server+=	db>=5
 CFLAGS+=		-I${LOCALBASE}/include/db4
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
-LIB_DEPENDS+=		::databases/openldap
+LIB_DEPENDS+=		databases/openldap
 WANTLIB-server+=	lber ldap sasl2 asn1 com_err
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS+=		::databases/mysql
-WANTLIB-server+=	m lib/mysql/mysqlclient.>=10
+LIB_DEPENDS+=		databases/mysql
+WANTLIB-server+=	m lib/mysql/mysqlclient>=10
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		::databases/postgresql
-WANTLIB-server+=	pq.>=4
+LIB_DEPENDS+=		databases/postgresql
+WANTLIB-server+=	pq>=4
 .endif
 
 .if ${FLAVOR:L:Msqlite}
 CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS+=		::databases/sqlite3
+LIB_DEPENDS+=		databases/sqlite3
 WANTLIB-server+=	sqlite3
 .endif
 

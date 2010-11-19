@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/25 10:11:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/19 07:23:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,29 +36,29 @@ PKG_ARGS+=	-Di386=0
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::audio/faac \
-		::audio/lame \
-		::audio/liba52 \
-		::audio/libogg \
-		::audio/libvorbis \
-		::devel/libdvdread \
-		::devel/sdl \
-		:ffmpeg->=20080620p10:graphics/ffmpeg \
-		::graphics/jpeg \
-		::graphics/libmpeg2 \
-		::multimedia/libdv \
-		::multimedia/libtheora \
-		::multimedia/x264 \
-		::multimedia/xvidcore \
-		::textproc/libxml
+LIB_DEPENDS=	audio/faac \
+		audio/lame \
+		audio/liba52 \
+		audio/libogg \
+		audio/libvorbis \
+		devel/libdvdread \
+		devel/sdl \
+		graphics/ffmpeg>=20080620p10 \
+		graphics/jpeg \
+		graphics/libmpeg2 \
+		multimedia/libdv \
+		multimedia/libtheora \
+		multimedia/x264 \
+		multimedia/xvidcore \
+		textproc/libxml
 
-RUN_DEPENDS=	::audio/sox \
-		::audio/vorbis-tools \
-		::audio/toolame \
-		::graphics/ffmpeg \
-		::x11/mplayer
+RUN_DEPENDS=	audio/sox \
+		audio/vorbis-tools \
+		audio/toolame \
+		graphics/ffmpeg \
+		x11/mplayer
 
-BUILD_DEPENDS+=	::devel/libtool
+BUILD_DEPENDS+=	devel/libtool
 
 SEPARATE_BUILD=	concurrent
 
@@ -98,7 +98,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 .if ${FLAVOR:L:Mlzo}
 CONFIGURE_ARGS+=--enable-lzo
-LIB_DEPENDS+=	lzo2::archivers/lzo2
+WANTLIB +=	lzo2
+LIB_DEPENDS+=	archivers/lzo2
 PKG_ARGS+=	-Dlzo=1
 .else
 PKG_ARGS+=	-Dlzo=0
@@ -106,8 +107,9 @@ PKG_ARGS+=	-Dlzo=0
 
 .if ${FLAVOR:L:Mmjpegtools}
 CONFIGURE_ARGS+=--enable-mjpegtools
-LIB_DEPENDS+=	mjpegutils.>=3::multimedia/mjpegtools
-RUN_DEPENDS+=	::multimedia/mjpegtools
+WANTLIB +=	mjpegutils>=3
+LIB_DEPENDS+=	multimedia/mjpegtools
+RUN_DEPENDS+=	multimedia/mjpegtools
 PKG_ARGS+=	-Dmjpegtools=1
 .else
 PKG_ARGS+=	-Dmjpegtools=0
@@ -115,7 +117,8 @@ PKG_ARGS+=	-Dmjpegtools=0
 
 .if ${FLAVOR:L:Mquicktime}
 CONFIGURE_ARGS+=--enable-libquicktime
-LIB_DEPENDS+=	quicktime::multimedia/libquicktime
+LIB_DEPENDS+=	multimedia/libquicktime
+WANTLIB +=	quicktime
 MODULES+=	devel/gettext
 PKG_ARGS+=	-Dquicktime=1
 .else

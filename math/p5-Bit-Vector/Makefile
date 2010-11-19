@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
-RUN_DEPENDS=    :p5-Carp-Clan->=5.3:devel/p5-Carp-Clan
+RUN_DEPENDS=    devel/p5-Carp-Clan>=5.3
 
 .include <bsd.port.mk>

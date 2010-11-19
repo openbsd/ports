@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/19 10:32:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:09 espie Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-2.1.5
-PKGNAME =	pecl-${DISTNAME}p1
+PKGNAME =	pecl-${DISTNAME}
+REVISION =	1
 CATEGORIES =	www mail
 
 HOMEPAGE =	http://pecl.php.net/package/mailparse
@@ -24,12 +25,12 @@ EXTRACT_SUFX =	.tgz
 AUTOCONF_VERSION =	2.52
 AUTOMAKE_VERSION =	1.4
 
-BUILD_DEPENDS =	:pear-*:www/pear \
-		::www/php5/extensions,-mbstring:patch \
+BUILD_DEPENDS =	www/pear \
+		www/php5/extensions,-mbstring:patch \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS =	:php5-core-*:www/php5/core \
-		:php5-mbstring-*:www/php5/extensions,-mbstring
+RUN_DEPENDS =	www/php5/core \
+		www/php5/extensions,-mbstring
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

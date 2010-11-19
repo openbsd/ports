@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 19:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=		verify email addresses and mailing lists
 
 DISTNAME=		vrfy_990522
-PKGNAME=		vrfy-99.05.22p0
+PKGNAME=		vrfy-99.05.22
+REVISION =		0
 CATEGORIES=		mail
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +19,7 @@ EXTRACT_SUFX=		.tar.Z
 WRKDIST=		${WRKDIR}/
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

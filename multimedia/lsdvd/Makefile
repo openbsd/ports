@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	print information about the content and structure of a DVD
 
@@ -18,7 +18,7 @@ WANTLIB=		c dvdread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lsdvd/}
 
-LIB_DEPENDS=	::devel/libdvdread
+LIB_DEPENDS=	devel/libdvdread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

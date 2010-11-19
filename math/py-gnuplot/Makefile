@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	Python interface to the gnuplot plotting program
 
@@ -22,11 +22,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot-py/}
 
 MODULES=	lang/python
 
-BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric \
-		::math/py-numpy
-RUN_DEPENDS+=	:py-Numeric-*:math/py-Numeric \
-		:gnuplot-*:math/gnuplot \
-		::math/py-numpy
+BUILD_DEPENDS+=	math/py-Numeric \
+		math/py-numpy
+RUN_DEPENDS+=	math/py-Numeric \
+		math/gnuplot \
+		math/py-numpy
 
 NO_REGRESS=	Yes
 

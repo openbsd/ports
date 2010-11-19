@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	scan mailboxes for messages matching a regular expression
 
@@ -17,7 +17,7 @@ WANTLIB=		c z pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
 
-LIB_DEPENDS=	::devel/pcre
+LIB_DEPENDS=	devel/pcre
 
 WRKSRC=		${WRKDIR}/mboxgrep
 

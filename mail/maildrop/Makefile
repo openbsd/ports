@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/19 07:23:06 espie Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -68,7 +68,7 @@ DOCFILES=		${WRKSRC}/README \
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/local/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier _postfix"
 CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier _postdrop"
-RUN_DEPENDS=		::mail/postfix/stable
+RUN_DEPENDS=		mail/postfix/stable
 .else
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier"
@@ -78,15 +78,15 @@ CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier"
 MODULES=		converters/libiconv \
 			devel/gettext
 
-LIB_DEPENDS=		::devel/libidn
+LIB_DEPENDS=		devel/libidn
 
 WANTLIB =		c idn
 
-WANTLIB-main=		${WANTLIB} gdbm m stdc++ gdbm.>=3 pcre.>=1 courierauth
+WANTLIB-main=		${WANTLIB} gdbm m stdc++ gdbm>=3 pcre>=1 courierauth
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::databases/gdbm \
-			::devel/pcre \
-			::mail/courier-authlib
+			databases/gdbm \
+			devel/pcre \
+			mail/courier-authlib
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop

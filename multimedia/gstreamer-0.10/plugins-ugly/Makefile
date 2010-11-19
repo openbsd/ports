@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/09/03 15:49:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:13 espie Exp $
 
 COMMENT-main =		ugly elements for GStreamer
 COMMENT-sidplay =	sidplay element for GStreamer (plugins-ugly)
@@ -24,34 +24,34 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			xml2 m z pcre gstreamer-0.10
 
 .for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
+REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
 
-LIB_DEPENDS =		:gstreamer->=0.10:${P}/core
-RUN_DEPENDS =		::${BUILD_PKGPATH}
+LIB_DEPENDS =		${P}/core>=0.10
+RUN_DEPENDS =		${BUILD_PKGPATH}
 
 WANTLIB-main +=		${WANTLIB}
 WANTLIB-main +=		gstriff-0.10 gstaudio-0.10 gstrtsp-0.10 gstsdp-0.10
 WANTLIB-main +=		gsttag-0.10 gstrtp-0.10 gstvideo-0.10 gstinterfaces-0.10
 WANTLIB-main +=		gstbase-0.10 a52 id3tag mad mpeg2 dvdread x264 orc-0.4
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			::$P/plugins-base \
-			:gstreamer->=0.10:$P/core \
-			::audio/liba52 \
-			::audio/libid3tag \
-			::audio/libmad \
-			::graphics/libmpeg2 \
-			::devel/libdvdread \
-			:x264->=20100511:multimedia/x264
+			$P/plugins-base \
+			$P/core>=0.10 \
+			audio/liba52 \
+			audio/libid3tag \
+			audio/libmad \
+			graphics/libmpeg2 \
+			devel/libdvdread \
+			multimedia/x264>=20100511
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-sidplay =	${WANTLIB} gstbase-0.10 stdc++ sidplay
 LIB_DEPENDS-sidplay =	${LIB_DEPENDS} \
-			::audio/libsidplay
+			audio/libsidplay
 
 WANTLIB-lame =		${WANTLIB} mp3lame
 LIB_DEPENDS-lame =	${LIB_DEPENDS} \
-			::audio/lame
+			audio/lame
 
 CONFIGURE_ARGS =	--disable-amrnb \
 			--disable-cdio \

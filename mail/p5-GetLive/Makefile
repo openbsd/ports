@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/21 02:21:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=getlive/}
 
-RUN_DEPENDS=	:curl->=7.15.5:net/curl \
-		::mail/procmail \
-		::www/p5-URI
+RUN_DEPENDS=	net/curl>=7.15.5 \
+		mail/procmail \
+		www/p5-URI
 
 PKG_ARCH=	*
 

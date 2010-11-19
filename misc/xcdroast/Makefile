@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		gtk-based frontend to cdrtools
 DISTNAME=		xcdroast-0.98alpha16
@@ -25,8 +25,8 @@ USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	:cdrtools->=2.0:sysutils/cdrtools
-LIB_DEPENDS=	::x11/gtk+2
+RUN_DEPENDS=	sysutils/cdrtools>=2.0
+LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-gtk2

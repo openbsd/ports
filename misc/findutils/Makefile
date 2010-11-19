@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		finds and then operates on files
 
@@ -24,6 +24,6 @@ CONFIGURE_ARGS=		--program-prefix="g"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_FLAGS=		localstatedir=/var/db
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

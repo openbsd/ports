@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/27 11:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:05 espie Exp $
 
 COMMENT=	generate ScamNailer spear phishing database in ClamAV format
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.scamnailer.info/files/contrib/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS=	::security/clamav
+RUN_DEPENDS=	security/clamav
 
 WRKDIST=	${WRKDIR}
 

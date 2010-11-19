@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		commandline shell and file manager
 
@@ -20,6 +20,6 @@ WANTLIB=		c ncurses
 MASTER_SITES=		${HOMEPAGE:=download/}
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

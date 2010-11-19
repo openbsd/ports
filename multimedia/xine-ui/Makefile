@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/07 18:46:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:15 espie Exp $
 
 COMMENT=	multimedia player
 
@@ -20,10 +20,10 @@ WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender Xtst Xv Xxf86vm c \
 		readline xcb xine z curl png
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::multimedia/xine-lib \
-		::net/curl \
-		::graphics/png
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	multimedia/xine-lib \
+		net/curl \
+		graphics/png
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

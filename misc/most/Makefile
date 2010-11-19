@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	browse or page through a text file
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		http://openbsd.rutgers.edu/
 
-LIB_DEPENDS=	::devel/libslang
+LIB_DEPENDS=	devel/libslang
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 

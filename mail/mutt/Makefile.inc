@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.35 2010/11/11 19:46:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2010/11/19 07:23:07 espie Exp $
 
 CATEGORIES=	mail
 
@@ -52,9 +52,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=		::devel/libslang
+LIB_DEPENDS+=		devel/libslang
 CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
-WANTLIB+=		m termlib slang.>=14
+WANTLIB+=		m termlib slang>=14
 .else
 CONFIGURE_ARGS+=	--with-curses
 WANTLIB+=		ncurses 
@@ -72,13 +72,13 @@ SUPDISTFILES+=		${DIST_COMPRESSED}
 
 .if ${FLAVOR:L:Mmixmaster}
 CONFIGURE_ARGS+=	--with-mixmaster="${LOCALBASE}/sbin/mixmaster"
-RUN_DEPENDS+=		::mail/mixmaster
+RUN_DEPENDS+=		mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Midn}
 CONFIGURE_ARGS+=	--with-idn
-LIB_DEPENDS+=		::devel/libidn
-WANTLIB+=		idn.>=16
+LIB_DEPENDS+=		devel/libidn
+WANTLIB+=		idn>=16
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif

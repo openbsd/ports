@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	simple creation of MIME email messages in Ruby
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-mime-types-*:mail/ruby-mime-types,${FLAVOR}
+RUN_DEPENDS=		mail/ruby-mime-types,${FLAVOR}
 
 CONFIGURE_STYLE=	ruby gem
 

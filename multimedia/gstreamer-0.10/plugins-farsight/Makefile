@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/22 19:21:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =		farsight element for GStreamer
 
@@ -17,11 +17,11 @@ WANTLIB += gthread-2.0 m pcre z gsm gconf-2 gstnet-0.10 gstreamer-0.10
 WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstrtp-0.10 gstnetbuffer-0.10
 WANTLIB += xml2 stdc++
 
-LIB_DEPENDS =		::audio/gsm \
-			::devel/gconf2 \
-			:gstreamer->=0.10:$P/core \
-			::$P/plugins-base \
-			::textproc/libxml
+LIB_DEPENDS =		audio/gsm \
+			devel/gconf2 \
+			$P/core>=0.10 \
+			$P/plugins-base \
+			textproc/libxml
 
 AUTOCONF_VERSION =	2.62
 

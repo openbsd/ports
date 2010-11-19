@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
@@ -29,14 +29,14 @@ MODPY_BADEGGS=		scipy
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		::math/umfpack \
-			::math/arpack \
-			::math/amd \
+LIB_DEPENDS=		math/umfpack \
+			math/arpack \
+			math/amd \
 			${MODFORTRAN_LIB_DEPENDS}
-RUN_DEPENDS=		::math/py-numpy \
-			::devel/swig
+RUN_DEPENDS=		math/py-numpy \
+			devel/swig
 
-REGRESS_DEPENDS=	::devel/py-nose
+REGRESS_DEPENDS=	devel/py-nose
 
 MAKE_ENV+=		LDSHARED="${CC} -shared -fPIC"
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/amd -I${LOCALBASE}/include"

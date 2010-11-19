@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -18,7 +18,7 @@ WANTLIB=		c curses iconv m slang
 
 MASTER_SITES=		http://ftp.de.debian.org/debian/pool/main/p/pdmenu/
 
-LIB_DEPENDS=		::devel/libslang
+LIB_DEPENDS=		devel/libslang
 MODULES=		devel/gettext
 
 DESTDIRNAME=		INSTALL_PREFIX
@@ -34,7 +34,7 @@ CONFIGURE_ENV=		LIBS="-lm -lcurses -lintl -liconv" \
 			SLANG_H_LOC=${DEPBASE}/include/slang.h
 WRKDIST=		${WRKDIR}/pdmenu
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

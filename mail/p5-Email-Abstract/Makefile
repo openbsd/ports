@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:07 espie Exp $
 
 COMMENT= 	unified interface to mail representations
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Email-Simple->=1.999:mail/p5-Email-Simple
-REGRESS_DEPENDS=:p5-Email-MIME->=1.859:mail/p5-Email-MIME \
-		::mail/p5-Mail-Box
+RUN_DEPENDS=	mail/p5-Email-Simple>=1.999
+REGRESS_DEPENDS=mail/p5-Email-MIME>=1.859 \
+		mail/p5-Mail-Box
 
 .include <bsd.port.mk>

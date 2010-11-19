@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 
@@ -26,7 +26,7 @@ WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread
 WANTLIB += pthread-stubs ssl xcb xcb-render xcb-render-util xml2
-WANTLIB += z gnomeui-2.>=2400 notify sasl2 gmime-2.4
+WANTLIB += z gnomeui-2>=2400 notify sasl2 gmime-2.4
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=mailnotify/}
 
@@ -34,14 +34,14 @@ MODULES=	devel/gettext \
 		textproc/intltool \
 		devel/gconf2
 
-BUILD_DEPENDS=	::textproc/rarian
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:yelp-*:x11/gnome/yelp \
-		:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
-LIB_DEPENDS=	::x11/gnome/libgnomeui \
-		::devel/libnotify \
-		::security/cyrus-sasl2 \
-		:gmime->=2.4,<2.6:mail/gmime24
+BUILD_DEPENDS=	textproc/rarian
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gnome/yelp \
+		notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
+LIB_DEPENDS=	x11/gnome/libgnomeui \
+		devel/libnotify \
+		security/cyrus-sasl2 \
+		gmime->=2.4,<2.6:mail/gmime24
 
 NO_REGRESS=		Yes
 MODGCONF2_SCHEMAS_DIR=	mail-notification

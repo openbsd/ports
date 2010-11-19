@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	emacs-based mail client
 
@@ -17,7 +17,7 @@ WANTLIB=		c z
 
 MASTER_SITES=		http://www.mew.org/Release/
 
-RUN_DEPENDS=		::editors/emacs21
+RUN_DEPENDS=		editors/emacs21
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	simple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/11/06 20:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/11/19 07:23:13 espie Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -27,19 +27,19 @@ MODULES =		devel/gettext \
 
 USE_LIBTOOL=		Yes
 # needs libtoolize
-BUILD_DEPENDS +=	::devel/libtool
+BUILD_DEPENDS +=	devel/libtool
 
 MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	gst-plugins
 
 .for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
+REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
 
-RUN_DEPENDS =		::${BUILD_PKGPATH}
+RUN_DEPENDS =		${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z gstreamer-0.10 gstbase-0.10
-LIB_DEPENDS =		:gstreamer->=0.10.30:$P/core
+LIB_DEPENDS =		$P/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
@@ -55,36 +55,36 @@ WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			gpg-error proxy soup-2.4 soup-gnome-2.4 sqlite3 tasn1
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
-			:orc->=0.4.6:devel/orc \
-			::${P}/plugins-base \
-			::audio/flac \
-			::graphics/jpeg \
-			::audio/taglib \
-			::audio/wavpack \
-			::audio/speex \
-			::$P/plugins-base \
-			::net/libshout \
-			::archivers/bzip2 \
-			::devel/libsoup,-gnome \
-			::graphics/gdk-pixbuf2 \
-			::devel/eggdbus
+			devel/orc>=0.4.6 \
+			${P}/plugins-base \
+			audio/flac \
+			graphics/jpeg \
+			audio/taglib \
+			audio/wavpack \
+			audio/speex \
+			$P/plugins-base \
+			net/libshout \
+			archivers/bzip2 \
+			devel/libsoup,-gnome \
+			graphics/gdk-pixbuf2 \
+			devel/eggdbus
 RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-aalib=		${WANTLIB} \
 			X11 ncurses Xau Xdmcp pthread-stubs xcb aa
 LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
-			::graphics/aalib
+			graphics/aalib
 
 WANTLIB-dv =		${WANTLIB} dv gstaudio-0.10 gstinterfaces-0.10
 LIB_DEPENDS-dv =	${LIB_DEPENDS} \
-			::multimedia/libdv \
-			::${P}/plugins-base
+			multimedia/libdv \
+			${P}/plugins-base
 
 WANTLIB-caca =		${WANTLIB} \
 			X11 ncursesw Xau Xdmcp pthread-stubs xcb caca
 LIB_DEPENDS-caca =	${LIB_DEPENDS} \
-			::graphics/libcaca
+			graphics/libcaca
 
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-dv1394 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =		Python bindings for GStreamer
 
@@ -21,13 +21,13 @@ WANTLIB += ${MODPY_WANTLIB}
 MODULES =		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS =		::x11/py-gtk2
-RUN_DEPENDS =		::x11/py-gtk2 \
-			:py-libxml-*:textproc/libxml,-python
-LIB_DEPENDS =		::$P/plugins-base \
+BUILD_DEPENDS =		x11/py-gtk2
+RUN_DEPENDS =		x11/py-gtk2 \
+			textproc/libxml,-python
+LIB_DEPENDS =		$P/plugins-base \
 			${MODPY_LIB_DEPENDS}
 
-REGRESS_DEPENDS =	::$P/plugins-good
+REGRESS_DEPENDS =	$P/plugins-good
 
 # don't heritate from Makefile.inc
 # needed for the "regress" target

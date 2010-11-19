@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/19 08:09:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=		download flash video files from various sites
 
@@ -23,10 +23,10 @@ MASTER_SITES=		${HOMEPAGE}files/
 # optional deps, not in ports yet:
 # Data::AMF::Packet (for nbc)
 # LWP::Protocol::socks (for socks proxies)
-RUN_DEPENDS=		::devel/p5-Term-ReadKey \
-			::www/p5-libwww \
-			::www/p5-URI \
-			::www/p5-WWW-Mechanize
+RUN_DEPENDS=		devel/p5-Term-ReadKey \
+			www/p5-libwww \
+			www/p5-URI \
+			www/p5-WWW-Mechanize
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

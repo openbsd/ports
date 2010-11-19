@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/07 20:15:42 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/19 07:23:13 espie Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -32,13 +32,13 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
 
 .for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
+REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
 
-RUN_DEPENDS =		::${BUILD_PKGPATH}
+RUN_DEPENDS =		${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre gstreamer-0.10
-LIB_DEPENDS =		:gstreamer->=0.10.30:${P}/core
+LIB_DEPENDS =		${P}/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
@@ -49,20 +49,20 @@ WANTLIB-main =		${WANTLIB} \
 			pangoft2-1.0 pangocairo-1.0 theoradec theoraenc \
 			vorbisidec orc-0.4 orc-test-0.4
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			:orc->=0.4.6:devel/orc \
-			::audio/libvorbis \
-			::devel/pango \
-			::multimedia/libtheora \
-			::audio/tremor
+			devel/orc>=0.4.6 \
+			audio/libvorbis \
+			devel/pango \
+			multimedia/libtheora \
+			audio/tremor
 RUN_DEPENDS-main +=	${MODGETTEXT_RUN_DEPENDS}
 # needed for the gio plugin
-RUN_DEPENDS-main +=	::x11/gnome/gvfs
+RUN_DEPENDS-main +=	x11/gnome/gvfs
 
 WANTLIB-cdda =		${WANTLIB} \
 			gstbase-0.10 gsttag-0.10 cdda_interface cdda_paranoia
 LIB_DEPENDS-cdda = 	${LIB_DEPENDS} \
-			::${BUILD_PKGPATH} \
-			::audio/cdparanoia
+			${BUILD_PKGPATH} \
+			audio/cdparanoia
 
 CONFIGURE_ARGS +=	--disable-libvisual \
 			--disable-alsa \
@@ -70,6 +70,6 @@ CONFIGURE_ARGS +=	--disable-libvisual \
 			--disable-gnome_vfs \
 			--enable-orc
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

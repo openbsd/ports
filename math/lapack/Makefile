@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/07 20:33:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -22,8 +22,8 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://www.netlib.no/netlib/lapack/
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS =	::math/blas
-WANTLIB =	blas.>=1
+LIB_DEPENDS =	math/blas
+WANTLIB =	blas>=1
 
 MODULES=	fortran
 MODFORTRAN_COMPILER = g77

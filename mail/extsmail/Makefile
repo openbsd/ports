@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:06 espie Exp $
 
 COMMENT =		robust sending of e-mail to external commands
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${HOMEPAGE}releases/
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

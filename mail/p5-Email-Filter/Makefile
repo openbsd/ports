@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:07 espie Exp $
 
 COMMENT = 	library for creating easy email filters
 
@@ -19,10 +19,10 @@ MODULES =	cpan
 USE_GROFF =	Yes
 CPAN_AUTHOR =	RJBS
 
-RUN_DEPENDS =	:p5-Class-Trigger->=0.08:devel/p5-Class-Trigger \
-		:p5-Email-LocalDelivery->=0.07:mail/p5-Email-LocalDelivery \
-		:p5-Email-Simple->=1.91:mail/p5-Email-Simple \
-		:p5-IPC-Run->=0.77:devel/p5-IPC-Run
+RUN_DEPENDS =	devel/p5-Class-Trigger>=0.08 \
+		mail/p5-Email-LocalDelivery>=0.07 \
+		mail/p5-Email-Simple>=1.91 \
+		devel/p5-IPC-Run>=0.77
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

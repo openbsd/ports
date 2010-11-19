@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/30 17:46:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
@@ -23,16 +23,16 @@ MASTER_SITES=	http://www.rastersoft.com/descargas/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::x11/py-gtk2 \
-		::multimedia/dvdauthor \
-		::graphics/vcdimager \
-		::sysutils/cdrtools \
-		::x11/mplayer \
-		::devel/xdg-utils \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	x11/py-gtk2 \
+		multimedia/dvdauthor \
+		graphics/vcdimager \
+		sysutils/cdrtools \
+		x11/mplayer \
+		devel/xdg-utils \
+		devel/desktop-file-utils
 
 .if ${MACHINE_ARCH} == "i386"
-RUN_DEPENDS+=	::devel/py-psyco
+RUN_DEPENDS+=	devel/py-psyco
 PKG_ARCH=	${MACHINE_ARCH},${ARCH}
 .else
 PKG_ARCH=	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=		visualisation of Kohonen's Self-Organizing Maps
 
@@ -13,10 +13,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::math/p5-AI-NeuralNet-Kohonen \
-			::x11/p5-Tk
+RUN_DEPENDS=		math/p5-AI-NeuralNet-Kohonen \
+			x11/p5-Tk
 
 REGRESS_IS_INTERACTIVE= x11
 

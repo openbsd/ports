@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	ebml m stdc++
 
-LIB_DEPENDS=	::textproc/libebml
+LIB_DEPENDS=	textproc/libebml
 
 MAKE_ENV+=	LIBmatroska_VERSION=${LIBmatroska_VERSION}
 MAKE_FLAGS+=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LOCALBASE=${LOCALBASE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =		maintains info about a physical person
 
@@ -12,8 +12,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		::geo/p5-Geography-Countries
+RUN_DEPENDS =		geo/p5-Geography-Countries
 
 .include <bsd.port.mk>

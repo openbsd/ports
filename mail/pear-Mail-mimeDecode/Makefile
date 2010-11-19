@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/21 00:03:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:09 espie Exp $
 
 COMMENT=	class to decode mime messages
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		:pear-Mail-Mime->=1.5.2:mail/pear-Mail-Mime
+RUN_DEPENDS=		mail/pear-Mail-Mime>=1.5.2
 
 .include <bsd.port.mk>

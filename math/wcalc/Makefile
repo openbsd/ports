@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/07 20:33:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:11 espie Exp $
 # Original from: Kyle Wheeler <kyle@memoryhole.net>
 
 COMMENT =		natural-expression command-line calculator
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=w-calc/}
 
-WANTLIB =		c m readline termcap gmp.>=7 mpfr.>=0.2
-LIB_DEPENDS =		::devel/gmp ::devel/mpfr
+WANTLIB =		c m readline termcap gmp>=7 mpfr>=0.2
+LIB_DEPENDS =		devel/gmp devel/mpfr
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

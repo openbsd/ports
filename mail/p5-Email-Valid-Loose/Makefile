@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	allows non RFC822 addresses common in japan
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::mail/p5-Email-Valid
+RUN_DEPENDS=	mail/p5-Email-Valid
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/11 11:18:31 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:12 espie Exp $
 
 COMMENT =	redhat package manager
 
@@ -22,8 +22,8 @@ MASTER_SITES =	ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.
 
 MODULES =	devel/gettext
 WANTLIB += 	bz2 c popt z
-LIB_DEPENDS +=	::archivers/bzip2 \
-		::devel/popt
+LIB_DEPENDS +=	archivers/bzip2 \
+		devel/popt
 
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes

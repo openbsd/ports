@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:25:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:12 espie Exp $
 
 COMMENT=	utility for audio-video information extraction
 
@@ -21,7 +21,7 @@ WANTLIB=	c
 
 MASTER_SITES=	http://shounen.ru/soft/avinfo/
 
-BUILD_DEPENDS=	::devel/bison
+BUILD_DEPENDS=	devel/bison
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

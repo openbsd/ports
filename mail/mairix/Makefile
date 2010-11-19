@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=		program for indexing & searching email
 
@@ -20,8 +20,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mairix/} \
 
 WANTLIB=		c z bz2
 
-BUILD_DEPENDS=		::devel/bison
-LIB_DEPENDS=		::archivers/bzip2
+BUILD_DEPENDS=		devel/bison
+LIB_DEPENDS=		archivers/bzip2
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV= 		CPPFLAGS="-I${PREFIX}/include" \

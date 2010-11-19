@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 2010/11/07 20:33:58 espie Exp $
+# $Id: Makefile,v 1.12 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m ncurses readline stdc++ gmp cln
 
-LIB_DEPENDS=	::devel/cln
+LIB_DEPENDS=	devel/cln
 
 MODULES=	gcc3
 MODGCC3_ARGHES=	sparc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2010/11/11 09:30:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2010/11/19 07:23:07 espie Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -64,9 +64,9 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 #system sqlite must be built with FTS3 enabled
 #		--enable-system-sqlite
 
-LIB_DEPENDS-lightning = ::${BUILD_PKGPATH},-main
+LIB_DEPENDS-lightning = ${BUILD_PKGPATH},-main
 WANTLIB-lightning =	mozilla-thunderbird/mozjs mozilla-thunderbird/xpcom c m stdc++ nspr4 plc4 plds4
-BUILD_DEPENDS +=	::archivers/unzip #to unzip xpi
+BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar \

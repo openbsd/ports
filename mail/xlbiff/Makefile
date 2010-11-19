@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:10 espie Exp $
 
 COMMENT=	display from/subject from incoming mails using X11
 
 DISTNAME=	xlbiff-3.0
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	mail x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

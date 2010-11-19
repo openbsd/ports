@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:13 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,28 +30,28 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt3 devel/gettext
 
-RUN_DEPENDS =		::sysutils/cdrtools \
-			::sysutils/dvd+rw-tools \
-			::audio/normalize \
-			::misc/cdrdao \
-			::audio/sox \
-			::multimedia/transcode \
-			::x11/hicolor-icon-theme \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =		sysutils/cdrtools \
+			sysutils/dvd+rw-tools \
+			audio/normalize \
+			misc/cdrdao \
+			audio/sox \
+			multimedia/transcode \
+			x11/hicolor-icon-theme \
+			devel/desktop-file-utils
 
-LIB_DEPENDS =		::audio/flac \
-			::audio/lame \
-			::audio/libmad \
-			::audio/libmpcdec \
-			::audio/libsamplerate \
-			::audio/libsndfile \
-			::audio/libvorbis \
-			::audio/taglib \
-			::devel/libdvdread \
-			:ffmpeg->=20100512:graphics/ffmpeg \
-			::graphics/jpeg \
-			::x11/kde/arts3 \
-			::x11/kde/libs3
+LIB_DEPENDS =		audio/flac \
+			audio/lame \
+			audio/libmad \
+			audio/libmpcdec \
+			audio/libsamplerate \
+			audio/libsndfile \
+			audio/libvorbis \
+			audio/taglib \
+			devel/libdvdread \
+			graphics/ffmpeg>=20100512 \
+			graphics/jpeg \
+			x11/kde/arts3 \
+			x11/kde/libs3
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

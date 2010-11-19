@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
 
 COMMENT=	handle GnuPG-encrypted/signed messages
 
@@ -10,9 +10,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-GnuPG-Interface->=0.31p0:security/p5-GnuPG-Interface \
-		:p5-Mail-Tools->=1.74:mail/p5-Mail-Tools \
-		:p5-MIME-tools->=5.426:mail/p5-MIME-tools
+RUN_DEPENDS=	security/p5-GnuPG-Interface>=0.31p0 \
+		mail/p5-Mail-Tools>=1.74 \
+		mail/p5-MIME-tools>=5.426
 
 MODULES=	cpan
 USE_GROFF =	Yes

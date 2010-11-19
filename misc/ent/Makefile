@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 21:57:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:11 espie Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/ 
 
 CATEGORIES=		misc
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

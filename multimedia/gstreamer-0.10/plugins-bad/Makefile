@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/11 08:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/19 07:23:13 espie Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -25,12 +25,12 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre gstreamer-0.10
 
 .for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
+REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
 
-LIB_DEPENDS =		:gstreamer->=0.10:${P}/core
-RUN_DEPENDS =		::${BUILD_PKGPATH}
-BUILD_DEPENDS +=        ::audio/ladspa
+LIB_DEPENDS =		${P}/core>=0.10
+RUN_DEPENDS =		${BUILD_PKGPATH}
+BUILD_DEPENDS +=        audio/ladspa
 
 WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			X11 Xau Xdmcp Xrender bz2 pthread-stubs \
@@ -44,23 +44,23 @@ WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			SDL mms gsm rsvg-2 schroedinger-1.0 cdaudio BPM \
 			SoundTouch dvdnav jasper
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			::${P}/plugins-base \
-			::audio/faac \
-			::audio/faad \
-			::audio/gsm \
-			::audio/libcdaudio \
-			::audio/libdca \
-			::audio/libmpcdec \
-			::audio/libsndfile \
-			::audio/soundtouch \
-			::devel/sdl \
-			::graphics/jasper \
-			::graphics/libexif \
-			::multimedia/libmms \
-			::multimedia/schroedinger \
-			::multimedia/xvidcore \
-			::x11/gnome/librsvg \
-			:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav
+			${P}/plugins-base \
+			audio/faac \
+			audio/faad \
+			audio/gsm \
+			audio/libcdaudio \
+			audio/libdca \
+			audio/libmpcdec \
+			audio/libsndfile \
+			audio/soundtouch \
+			devel/sdl \
+			graphics/jasper \
+			graphics/libexif \
+			multimedia/libmms \
+			multimedia/schroedinger \
+			multimedia/xvidcore \
+			x11/gnome/librsvg \
+			multimedia/libdvdnav>=4.1.3p0v0
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
@@ -68,12 +68,12 @@ WANTLIB-neon =		${WANTLIB} \
 			gstbase-0.10 neon \
 			crypto expat ssl asn1 gssapi krb5
 LIB_DEPENDS-neon =	${LIB_DEPENDS} \
-			::net/neon
+			net/neon
 
 WANTLIB-mjpeg =		${WANTLIB} \
 			gstbase-0.10 mjpegutils mplex2 mpeg2encpp stdc++
 LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
-			::multimedia/mjpegtools
+			multimedia/mjpegtools
 
 CONFIGURE_ENV =		ac_cv_path_PYTHON=""
 CONFIGURE_ARGS =	--disable-acm \

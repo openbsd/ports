@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	mail purpose library
 
@@ -22,9 +22,9 @@ MODULES=	converters/libiconv
 
 WANTLIB=	crypto expat intl m ssl stdc++ z curl idn sasl2
 
-LIB_DEPENDS+=	::net/curl \
-		::devel/libidn \
-		::security/cyrus-sasl2
+LIB_DEPENDS+=	net/curl \
+		devel/libidn \
+		security/cyrus-sasl2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu

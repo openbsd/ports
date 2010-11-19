@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:11 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64 m68k sparc
 
@@ -56,7 +56,7 @@ PERMIT_DISTFILES_FTP=	no redistribution
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 WRKSRC=			${WRKDIR}/dnetc${SV}-openbsd-${A}
 

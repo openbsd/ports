@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 21:40:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =	library for parsing mms:// and mmsh:// type network streams
 
@@ -20,7 +20,7 @@ CONFIGURE_STYLE=gnu
 MODULES =	devel/gettext
 USE_LIBTOOL =	Yes
 
-LIB_DEPENDS =	::devel/glib2
+LIB_DEPENDS =	devel/glib2
 WANTLIB =	glib-2.0 pcre
 
 .include <bsd.port.mk>

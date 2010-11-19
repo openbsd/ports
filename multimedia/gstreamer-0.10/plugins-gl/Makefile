@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/08 21:45:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =		OpenGL elements for GStreamer
 
@@ -17,8 +17,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10
 WANTLIB += gstcontroller-0.10 gstinterfaces-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 pcre png xml2
 
-LIB_DEPENDS =		::${P}/plugins-base \
-			::graphics/glew
+LIB_DEPENDS =		${P}/plugins-base \
+			graphics/glew
 
 LDFLAGS +=		-lm -lGL
 

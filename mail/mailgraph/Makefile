@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/08 22:44:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:07 espie Exp $
 
 COMMENT=	RRDtool frontend for Postfix statistics
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-RRD-*:net/rrdtool,-perl \
-		::devel/p5-File-Tail
+RUN_DEPENDS=	net/rrdtool,-perl \
+		devel/p5-File-Tail
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes

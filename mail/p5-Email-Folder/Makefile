@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:07 espie Exp $
 
 COMMENT= 	read an email folder as Email::Simple objects
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Email-FolderType->=0.6:mail/p5-Email-FolderType \
-		::mail/p5-Email-Simple
+RUN_DEPENDS=	mail/p5-Email-FolderType>=0.6 \
+		mail/p5-Email-Simple
 
 MAKE_ENV=	RELEASE_TESTING=Yes
 

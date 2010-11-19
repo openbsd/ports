@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/19 07:23:07 espie Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -19,7 +19,7 @@ WANTLIB =		c crypto ssl idn
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=msmtp/}
 EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS =		::devel/libidn
+LIB_DEPENDS =		devel/libidn
 
 MODULES =		devel/gettext
 

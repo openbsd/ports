@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/08/25 23:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:13 espie Exp $
 
 COMMENT =		ffmpeg element for GStreamer
 
@@ -9,9 +9,9 @@ REVISION =		0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-ffmpeg/}
 
-LIB_DEPENDS =		:gstreamer->=0.10:$P/core \
-			::$P/plugins-base \
-			:ffmpeg->=20080620p10:graphics/ffmpeg
+LIB_DEPENDS =		$P/core>=0.10 \
+			$P/plugins-base \
+			graphics/ffmpeg>=20080620p10
 
 AUTOCONF_VERSION =	2.65
 

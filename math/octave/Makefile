@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/19 07:23:10 espie Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB} \
-		fftw3.>=3 lapack.>=3 blas.>=1 amd umfpack pcre.>=1 curl.>=6
+		fftw3>=3 lapack>=3 blas>=1 amd umfpack pcre>=1 curl>=6
 
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/ \
@@ -36,17 +36,17 @@ MODULES=	fortran
 MODFORTRAN_COMPILER = g77
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
-		::devel/desktop-file-utils
-RUN_DEPENDS=	::devel/gmake \
-		:desktop-file-utils-*:devel/desktop-file-utils
+		devel/desktop-file-utils
+RUN_DEPENDS=	devel/gmake \
+		devel/desktop-file-utils
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
-		::math/fftw3 \
-		::math/lapack \
-		::math/blas \
-		::math/amd \
-		::math/umfpack \
-		::devel/pcre \
-		::net/curl
+		math/fftw3 \
+		math/lapack \
+		math/blas \
+		math/amd \
+		math/umfpack \
+		devel/pcre \
+		net/curl
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

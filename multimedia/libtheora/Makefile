@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:13 espie Exp $
 
 COMMENT=	open video codec
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ogg
 
 # uses Ogg headers
-LIB_DEPENDS=	::audio/libogg
+LIB_DEPENDS=	audio/libogg
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

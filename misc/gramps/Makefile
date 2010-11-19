@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 09:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:11 espie Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
@@ -20,16 +20,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gramps/}
 MODULES=	lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils \
-		:py-gnome-*:x11/gnome/py-gnome
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/xdg-utils \
+BUILD_DEPENDS=	x11/gnome/doc-utils \
+		x11/gnome/py-gnome
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/xdg-utils \
 		${MODPY_RUN_DEPENDS:S/python/python-bsddb/},-bsddb \
-		:graphviz-*:math/graphviz \
-		:shared-mime-info-*:misc/shared-mime-info \
-		::x11/gnome/librsvg \
-		::x11/gnome/py-gnome-desktop \
-		::x11/gnome/py-gnome-extras
+		math/graphviz \
+		misc/shared-mime-info \
+		x11/gnome/librsvg \
+		x11/gnome/py-gnome-desktop \
+		x11/gnome/py-gnome-extras
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

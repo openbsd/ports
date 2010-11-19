@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 10:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:06 espie Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
@@ -19,7 +19,7 @@ WANTLIB= c crypto ssl z tdb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fdm/}
 
-LIB_DEPENDS +=	:tdb->=1.2.1:databases/tdb
+LIB_DEPENDS +=	databases/tdb>=1.2.1
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
 USE_GROFF =	Yes
