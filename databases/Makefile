@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2010/11/19 16:00:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.185 2010/11/19 22:50:56 jeremy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -155,22 +155,29 @@
      SUBDIR += ruby-couchrest
      SUBDIR += ruby-data_objects
      SUBDIR += ruby-data_objects,ruby19
+     SUBDIR += ruby-data_objects,rbx
      SUBDIR += ruby-datamapper
      SUBDIR += ruby-do_sqlite3
      SUBDIR += ruby-do_sqlite3,ruby19
+     SUBDIR += ruby-do_sqlite3,rbx
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap
      SUBDIR += ruby-mysql
      SUBDIR += ruby-mysql,ruby19
+     SUBDIR += ruby-mysql,rbx
      SUBDIR += ruby-pg
      SUBDIR += ruby-pg,ruby19
+     SUBDIR += ruby-pg,rbx
      SUBDIR += ruby-postgres
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel,ruby19
+     SUBDIR += ruby-sequel,rbx
      SUBDIR += ruby-sequel_pg
      SUBDIR += ruby-sequel_pg,ruby19
+     SUBDIR += ruby-sequel_pg,rbx
      SUBDIR += ruby-sqlite3
      SUBDIR += ruby-sqlite3,ruby19
+     SUBDIR += ruby-sqlite3,rbx
      SUBDIR += ruby-validatable
      SUBDIR += sharedance
      SUBDIR += skytools
