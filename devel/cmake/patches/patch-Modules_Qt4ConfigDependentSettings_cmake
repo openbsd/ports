@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.2 2010/07/12 19:19:30 dcoppa Exp $
---- Modules/Qt4ConfigDependentSettings.cmake.orig	Mon Jun 28 17:15:57 2010
-+++ Modules/Qt4ConfigDependentSettings.cmake	Mon Jul  5 11:23:18 2010
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.3 2010/11/19 11:10:35 dcoppa Exp $
+--- Modules/Qt4ConfigDependentSettings.cmake.orig	Wed Nov  3 20:58:27 2010
++++ Modules/Qt4ConfigDependentSettings.cmake	Thu Nov 18 22:11:59 2010
 @@ -26,6 +26,9 @@
  # if a user needs the dependencies, and they couldn't be found, they can set
  # the variables themselves.
@@ -11,7 +11,17 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.2 2010/07/12 19:19:
  SET(QT_QTGUI_LIB_DEPENDENCIES "")
  SET(QT_QTCORE_LIB_DEPENDENCIES "")
  SET(QT_QTNETWORK_LIB_DEPENDENCIES "")
-@@ -68,6 +71,23 @@ ENDIF(NOT QT_IS_STATIC)
+@@ -60,14 +63,31 @@ IF(Q_WS_WIN  AND  NOT QT_IS_STATIC)
+   SET(QT_DEFINITIONS ${QT_DEFINITIONS} -DQT_DLL)
+ ENDIF(Q_WS_WIN  AND  NOT QT_IS_STATIC)
+ 
+-IF(NOT QT_IS_STATIC)
++IF(QT_IS_STATIC)
+   RETURN()
+-ENDIF(NOT QT_IS_STATIC)
++ENDIF(QT_IS_STATIC)
+ 
+ # QtOpenGL dependencies
  find_package(OpenGL)
  SET (QT_QTOPENGL_LIB_DEPENDENCIES ${OPENGL_glu_LIBRARY} ${OPENGL_gl_LIBRARY})
  
