@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.37 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: ruby.port.mk,v 1.38 2010/11/19 17:54:37 jeremy Exp $
 
 # ruby module
 
@@ -13,7 +13,7 @@ CATEGORIES+=		lang/ruby
 .if !defined(MODRUBY_REV)
 .  if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby18 ruby19
+FLAVORS?=		ruby18 ruby19 rbx
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -43,21 +43,26 @@ MODRUBY_REV=		1.8
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
 .    elif ${FLAVOR:L:Mruby18}
-.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
+.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 FLAVOR=			${FLAVOR:L:Nruby18}
 MODRUBY_REV=		1.8
 .    elif ${FLAVOR:L:Mruby19}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mjruby}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		1.9
 .    elif ${FLAVOR:L:Mjruby}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		jruby
+.    elif ${FLAVOR:L:Mrbx}
+.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
+ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
+.      endif
+MODRUBY_REV=		rbx
 .    endif
 .  endif
 .endif
@@ -95,6 +100,14 @@ MODRUBY_LIBREV=		1.8
 
 MODRUBY_PKG_PREFIX=	jruby
 MODRUBY_FLAVOR =	jruby
+.elif ${MODRUBY_REV} == rbx
+MODRUBY_LIBREV =	1.8
+#.poison MODRUBY_BINREV
+#.poison MODRUBY_PKGSPEC
+#.poison MODRUBY_WANTLIB
+MODRUBY_PKG_PREFIX =	rbx
+MODRUBY_FLAVOR =	rbx
+MODRUBY_RBX_VERSION =	1.1
 .endif
 
 MODRUBY_RAKE_DEPENDS =	
@@ -110,6 +123,11 @@ RSPEC=			${RUBY} -S spec
 
 # Without this, JRuby often fails with a memory error.
 MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
+.elif ${MODRUBY_REV} == rbx
+RUBY=			${LOCALBASE}/bin/rbx
+RAKE=			${RUBY} -S rake
+RSPEC=			${RUBY} -S spec
+MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 .else
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
@@ -126,6 +144,8 @@ MODRUBY_REGRESS?=
 
 .if ${MODRUBY_REV} == jruby
 MODRUBY_RUN_DEPENDS=	lang/jruby
+.elif ${MODRUBY_REV} == rbx
+MODRUBY_RUN_DEPENDS=	lang/rubinius
 .else
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
 MODRUBY_RUN_DEPENDS=	${MODRUBY_PKGSPEC}:lang/ruby/${MODRUBY_REV}
@@ -143,6 +163,8 @@ MODRUBY_ICONV_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 # location of ruby libraries
 .if ${MODRUBY_REV} == jruby
 MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
+.elif ${MODRUBY_REV} == rbx
+MODRUBY_LIBDIR=		${LOCALBASE}/lib/rubinius/${MODRUBY_RBX_VERSION}
 .else
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 .endif
@@ -252,14 +274,20 @@ GEM=		${RUBY} -S gem
 # empty for ruby 1.8 and ruby 1.9, which install into /usr/local.
 GEM_REL=	jruby/
 GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
+.  elif ${MODRUBY_REV} == rbx
+GEM=		${RUBY} -S gem
+GEM_REL=	
+GEM_BASE_LIB=	${GEM_BASE}/rbx/${MODRUBY_LIBREV}
+GEM_BIN =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/bin
+GEM_LIB =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/${MODRUBY_LIBREV}
 .  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_REL=	
 GEM_BASE_LIB=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}
 .  endif
 GEM_BASE=	${WRKDIR}/gem-tmp/.gem
-GEM_BIN=	${GEM_REL}bin
-GEM_LIB=	${GEM_REL}lib/ruby/gems/${MODRUBY_LIBREV}
+GEM_BIN ?=	${GEM_REL}bin
+GEM_LIB ?=	${GEM_REL}lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
 GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
 # We purposely do not install documentation for ruby gems, because
