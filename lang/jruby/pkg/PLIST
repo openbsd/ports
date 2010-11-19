@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/28 01:45:44 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/19 15:57:43 jeremy Exp $
 jruby/
 jruby/bin/
 jruby/bin/autospec
@@ -20,9 +20,6 @@ jruby/lib/jruby.jar
 jruby/lib/native/
 jruby/lib/native/${JFFI_ARCH}/
 jruby/lib/native/${JFFI_ARCH}/libjffi-1.0.so
-jruby/lib/profile-all.properties
-jruby/lib/profile-ruby.properties
-jruby/lib/profile.jar
 jruby/lib/ruby/
 jruby/lib/ruby/1.8/
 jruby/lib/ruby/1.8/.document
@@ -4399,6 +4396,8 @@ jruby/lib/ruby/site_ruby/shared/jruby/openssl/gem.rb
 jruby/lib/ruby/site_ruby/shared/jruby/openssl/gem_only.rb
 jruby/lib/ruby/site_ruby/shared/jruby/openssl/stub.rb
 jruby/lib/ruby/site_ruby/shared/jruby/vm.rb
+jruby/lib/ruby/site_ruby/shared/jruby/win32ole/
+jruby/lib/ruby/site_ruby/shared/jruby/win32ole/stub.rb
 jruby/lib/ruby/site_ruby/shared/pty.rb
 jruby/lib/ruby/site_ruby/shared/securerandom.rb
 jruby/lib/ruby/site_ruby/shared/syslog.rb
