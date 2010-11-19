@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.65 2010/10/06 11:22:59 mikeb Exp $
+# $OpenBSD: OpenBSD,v 1.66 2010/11/19 10:25:42 shadchin Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -108,6 +108,7 @@
 54.35		-5.56		"nicm"		# Nicholas Marriott
 54.869288       83.08799	"form"		# Oleg Safiullin
 55.16		23.88		"martynas"	# Martynas Venckus
+55.176919	61.389134	"shadchin"	# Alexandr Shadchin
 55.599		-2.4324		"jmc"		# Jason McIntyre
 55.747502	37.985557	"grange"	# Alexander Yurchenko
 55.8589		13.0837		"wilfried"	# Peter Stromberg
