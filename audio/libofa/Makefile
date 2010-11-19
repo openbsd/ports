@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/19 17:12:15 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/19 18:34:18 ajacoutot Exp $
 
-COMMENT =	Open Fingerprint Architecture Library
+COMMENT =	Open Fingerprint Architecture library
 
 DISTNAME =	libofa-0.9.3
+REVISION =	0
 CATEGORIES =	audio devel
 HOMEPAGE =	http://code.google.com/p/musicip-libofa/
 SHARED_LIBS +=	ofa	0.0
