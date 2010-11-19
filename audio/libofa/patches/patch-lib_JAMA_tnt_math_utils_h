@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_JAMA_tnt_math_utils_h,v 1.1.1.1 2010/11/19 17:12:15 millert Exp $
+--- lib/JAMA/tnt_math_utils.h.orig	Wed May 10 13:58:50 2006
++++ lib/JAMA/tnt_math_utils.h	Fri Nov 19 08:10:26 2010
+@@ -20,11 +20,20 @@ inline const _Tp& max(const _Tp& __a, const _Tp& __b) 
+ namespace TNT
+ {
+ /**
++	@returns the absolute value of a real (no-complex) scalar.
++*/
++template <class Real>
++Real abs(const Real &a)
++{
++	return  (a > 0 ? a : -a);
++}
++/**
+ 	@returns hypotenuse of real (non-complex) scalars a and b by 
+ 	avoiding underflow/overflow
+ 	using (a * sqrt( 1 + (b/a) * (b/a))), rather than
+ 	sqrt(a*a + b*b).
+ */
++
+ template <class Real>
+ Real hypot(const Real &a, const Real &b)
+ {
+@@ -55,15 +64,6 @@ Scalar max(const Scalar &a, const Scalar &b)
+ 	return  a > b ? a : b;
+ }
+ */
+-
+-/**
+-	@returns the absolute value of a real (no-complex) scalar.
+-*/
+-template <class Real>
+-Real abs(const Real &a)
+-{
+-	return  (a > 0 ? a : -a);
+-}
+ 
+ }
+ #endif

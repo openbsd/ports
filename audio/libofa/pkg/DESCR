@@ -1,0 +1,5 @@
+The Open Fingerprint Architecture normalizes, extracts frequencies,
+and creates an array representing the frequency data in an audio
+file.  This data-chunk (so called acoustic fingerprint) was designed
+for use with the MusicDNS service and can be used by the MusicBrainz
+tagger to identify audio files.

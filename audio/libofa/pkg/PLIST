@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/19 17:12:15 millert Exp $
+%%SHARED%%
+include/ofa1/
+include/ofa1/ofa.h
+lib/libofa.a
+lib/libofa.la
+lib/pkgconfig/
+lib/pkgconfig/libofa.pc
