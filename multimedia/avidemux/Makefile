@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/19 22:28:08 espie Exp $
 
 COMMENT=	free video editor
 
@@ -31,7 +31,7 @@ WANTLIB += xml2 xvidcore x264
 
 MODULES=	devel/gettext
 
-RUN_DEPENDSdesktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	x11/gtk+2 \
