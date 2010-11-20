@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/30 12:55:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/20 15:35:47 jasper Exp $
 @conflict gtk2mm-<2.22
 %%SHARED%%
 include/atkmm-1.6/
@@ -61,6 +61,7 @@ share/doc/atkmm-1.6/reference/
 share/doc/atkmm-1.6/reference/atkmm-1.6.tag
 share/doc/atkmm-1.6/reference/html/
 share/doc/atkmm-1.6/reference/html/annotated.html
+share/doc/atkmm-1.6/reference/html/bc_s.png
 share/doc/atkmm-1.6/reference/html/classAtk_1_1Action-members.html
 share/doc/atkmm-1.6/reference/html/classAtk_1_1Action.html
 share/doc/atkmm-1.6/reference/html/classAtk_1_1Action__inherit__graph.png
@@ -110,6 +111,7 @@ share/doc/atkmm-1.6/reference/html/classAtk_1_1Value-members.html
 share/doc/atkmm-1.6/reference/html/classAtk_1_1Value.html
 share/doc/atkmm-1.6/reference/html/classAtk_1_1Value__inherit__graph.png
 share/doc/atkmm-1.6/reference/html/classes.html
+share/doc/atkmm-1.6/reference/html/closed.png
 share/doc/atkmm-1.6/reference/html/doxygen.css
 share/doc/atkmm-1.6/reference/html/doxygen.png
 share/doc/atkmm-1.6/reference/html/functions.html
@@ -150,10 +152,14 @@ share/doc/atkmm-1.6/reference/html/namespaceAtk.html
 share/doc/atkmm-1.6/reference/html/namespacemembers.html
 share/doc/atkmm-1.6/reference/html/namespacemembers_func.html
 share/doc/atkmm-1.6/reference/html/namespaces.html
+share/doc/atkmm-1.6/reference/html/nav_f.png
+share/doc/atkmm-1.6/reference/html/nav_h.png
+share/doc/atkmm-1.6/reference/html/open.png
 share/doc/atkmm-1.6/reference/html/pages.html
-share/doc/atkmm-1.6/reference/html/since__1__3.html
-share/doc/atkmm-1.6/reference/html/since__1__9.html
-share/doc/atkmm-1.6/reference/html/tab_b.gif
-share/doc/atkmm-1.6/reference/html/tab_l.gif
-share/doc/atkmm-1.6/reference/html/tab_r.gif
+share/doc/atkmm-1.6/reference/html/since_1_3.html
+share/doc/atkmm-1.6/reference/html/since_1_9.html
+share/doc/atkmm-1.6/reference/html/tab_a.png
+share/doc/atkmm-1.6/reference/html/tab_b.png
+share/doc/atkmm-1.6/reference/html/tab_h.png
+share/doc/atkmm-1.6/reference/html/tab_s.png
 share/doc/atkmm-1.6/reference/html/tabs.css
