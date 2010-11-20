@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/12 14:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		platform-independent file locking for Python
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://pylockfile.googlecode.com/files/
 
 MODULES=		lang/python
-REGRESS_DEPENDS=	::${FULLPKGPATH}
+REGRESS_DEPENDS=	${FULLPKGPATH}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lockfile/; \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	ICMP router discovery protocol spoofer
 
@@ -8,13 +8,13 @@ REVISION =	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.atstake.com/research/tools/
 
-LIB_DEPENDS=	:libnet->=1.0,<1.1:net/libnet/1.0
+LIB_DEPENDS=	libnet->=1.0,<1.1:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pcap lib/libnet-1.0/net.=0
+WANTLIB=		c pcap lib/libnet-1.0/net=0
 
 WRKDIST=	${WRKDIR}
 

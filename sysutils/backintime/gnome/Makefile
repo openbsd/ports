@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/05 16:39:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=	simple backup tool -- GNOME UI
 
@@ -13,10 +13,10 @@ SUBST_FILES=	backintime-gnome
 CONFIGURE_ARGS=	--no-check
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::sysutils/backintime/common \
-		::textproc/meld \
-		::x11/gnome/py-gnome \
-		::devel/py-notify \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	sysutils/backintime/common \
+		textproc/meld \
+		x11/gnome/py-gnome \
+		devel/py-notify \
+		devel/desktop-file-utils
 
 .include <bsd.port.mk>

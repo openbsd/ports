@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
@@ -27,9 +27,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/opensc/
 
-WANTLIB=	c crypto ltdl ncurses readline z openct.>=1
+WANTLIB=	c crypto ltdl ncurses readline z openct>=1
 
-LIB_DEPENDS=	::security/openct
+LIB_DEPENDS=	security/openct
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

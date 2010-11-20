@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=		stand-alone shell with built-in commands
 
@@ -24,7 +24,7 @@ CFLAGS+=		-DHAVE_GZIP=1 \
 			-DMOUNT_TYPE='\"ffs\"'
 
 MAKE_FLAGS=		CFLAGS="${CFLAGS}"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

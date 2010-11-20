@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/20 17:22:42 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS= ${APM_ARCHS}
 COMMENT=	laptop battery status display for X11
 
 DISTNAME=	xbatt-1.2.1
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	sysutils x11
 
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=		library and utilities for towitoko card readers
 
 DISTNAME=		towitoko-2.0.7
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		security
 SHARED_LIBS=		towitoko	2.0
 MODGNU_SHARED_LIBS=	towitoko	'-module'
@@ -22,7 +22,7 @@ WANTLIB=		c pthread
 MASTER_SITES=		http://www.geocities.com/cprados/files/
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}	\

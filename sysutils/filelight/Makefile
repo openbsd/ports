@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,13 +22,13 @@ MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam \
 		iconv idn intl jpeg m png pthread pthread-stubs rpcsvc \
-		stdc++ util xcb z kdecore.>=7 DCOP kdefx kdesu kdeui \
+		stdc++ util xcb z kdecore>=7 DCOP kdefx kdesu kdeui \
 		kio kparts kwalletclient
 
 MODULES=	x11/kde
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3
 
 PORTHOME=	${WRKDIR}
 

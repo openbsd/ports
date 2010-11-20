@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/24 14:39:57 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 17:22:43 espie Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -21,7 +21,7 @@ MODULES =	x11/qt4 devel/cmake
 
 WANTLIB += QtGui QtXml X11 Xtst c m pthread stdc++
 
-RUN_DEPENDS =	::devel/desktop-file-utils \
-		::misc/shared-mime-info 
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info 
 
 .include <bsd.port.mk>

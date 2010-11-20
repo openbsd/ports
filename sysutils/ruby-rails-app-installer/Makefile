@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	installer for Rails applications
 
@@ -21,8 +21,8 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-mongrel-*:www/ruby-mongrel,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-mongrel_cluster-*:sysutils/ruby-mongrel_cluster,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-sqlite3-*:databases/ruby-sqlite3,${FLAVOR}
+RUN_DEPENDS=	www/ruby-mongrel,${FLAVOR} \
+		sysutils/ruby-mongrel_cluster,${FLAVOR} \
+		databases/ruby-sqlite3,${FLAVOR}
 
 .include <bsd.port.mk>

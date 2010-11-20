@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	cryptographically secure random number generator
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Class-Loader \
-		::math/p5-Math-Pari
+RUN_DEPENDS=	devel/p5-Class-Loader \
+		math/p5-Math-Pari
 
 post-configure:
 	@perl -pi -e "s,/dev/urandom,/dev/arandom,g;" \

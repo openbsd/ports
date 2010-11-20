@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
@@ -26,9 +26,9 @@ WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util z
 MASTER_SITES=	http://download.berlios.de/gringotts/
 
 MODULES=        devel/gettext
-LIB_DEPENDS=	::x11/gtk+2 \
-		::security/libgringotts \
-		::devel/popt
+LIB_DEPENDS=	x11/gtk+2 \
+		security/libgringotts \
+		devel/popt
 
 
 CONFIGURE_STYLE=gnu

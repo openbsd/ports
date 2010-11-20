@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/11 08:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	command line utility to run programs as root
 
@@ -30,13 +30,13 @@ WANTLIB += polkit-gobject-1 startup-notification-1
 
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
-LIB_DEPENDS=	::sysutils/polkit \
-		::x11/gtk+2 \
-		::devel/libgee \
-		::devel/startup-notification
+LIB_DEPENDS=	sysutils/polkit \
+		x11/gtk+2 \
+		devel/libgee \
+		devel/startup-notification
 
-BUILD_DEPENDS=	::lang/vala
-RUN_DEPENDS=	:polkit-gnome-*|polkit-qt4-*:x11/polkit-gnome
+BUILD_DEPENDS=	lang/vala
+RUN_DEPENDS=	polkit-gnome-*|polkit-qt4-*:x11/polkit-gnome
 
 MODULES=	devel/gettext
 

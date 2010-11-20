@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/20 17:22:41 espie Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -38,7 +38,7 @@ WEB_ROOT=		/var/www
 NUT_USER=		_ups
 NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
@@ -58,8 +58,8 @@ MULTI_PACKAGES+=	-snmp
 .endif
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			::devel/libusb \
-			::net/neon
+			devel/libusb \
+			net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
 WANTLIB-cgi=		${MODGETTEXT_WANTLIB} \
@@ -67,17 +67,17 @@ WANTLIB-cgi=		${MODGETTEXT_WANTLIB} \
 WANTLIB-cgi+=		jpeg m png pthread-stubs ssl upsclient xcb z
 
 WANTLIB-snmp=		${WANTLIB} netsnmp
-LIB_DEPENDS-snmp=	::net/net-snmp
+LIB_DEPENDS-snmp=	net/net-snmp
 RUN_DEPENDS-snmp=	# empty
 
 LIB_DEPENDS-cgi=	${LIB_DEPENDS} \
-			::graphics/jpeg \
-			::graphics/gd \
-			::sysutils/nut,-main
+			graphics/jpeg \
+			graphics/gd \
+			sysutils/nut,-main
 RUN_DEPENDS-cgi=	# empty
 
 .if ${MULTI_PACKAGES:M-cgi}
-BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
+BUILD_DEPENDS+=		graphics/gd>=1.8.3
 
 CONFIGURE_ARGS+=	--with-cgi \
 			--with-cgipath="${WEB_ROOT}/cgi-bin/nut" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:41 espie Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -44,15 +44,15 @@ WANTLIB-main =
 LIB_DEPENDS-main =
 RUN_DEPENDS-main =
 
-LIB_DEPENDS-server = 	${LIB_DEPENDS} ::devel/glib2
+LIB_DEPENDS-server = 	${LIB_DEPENDS} devel/glib2
 
-LIB_DEPENDS-python = 	::sysutils/gamin,-main
+LIB_DEPENDS-python = 	sysutils/gamin,-main
 
 .if !${FLAVOR:L:Mno_server}
 MULTI_PACKAGES += 	-server
 MODULES +=		devel/gettext
 CONFIGURE_ARGS += 	--enable-server
-WANTLIB-server = 	${WANTLIB} c pcre glib-2.0.>=1800 pthread
+WANTLIB-server = 	${WANTLIB} c pcre glib-2.0>=1800 pthread
 .else
 CONFIGURE_ARGS += 	--disable-server
 .endif

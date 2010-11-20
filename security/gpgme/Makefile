@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		GnuPG Made Easy
 
@@ -23,9 +23,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
 
 MODULES=		devel/gettext
-RUN_DEPENDS=		:gnupg-<2:security/gnupg
+RUN_DEPENDS=		security/gnupg<2
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		:libgpg-error->=1.4:security/libgpg-error
+LIB_DEPENDS=		security/libgpg-error>=1.4
 
 USE_LIBTOOL=		Yes
 

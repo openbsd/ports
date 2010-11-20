@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:44 espie Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
@@ -20,7 +20,7 @@ MASTER_SITES =	http://www.cirt.net/nikto/ \
 
 EXTRACT_SUFX =	.tar.bz2
 
-RUN_DEPENDS =	:p5-Net-SSLeay-*:security/p5-Net_SSLeay
+RUN_DEPENDS =	security/p5-Net_SSLeay
 
 NO_BUILD =	Yes
 USE_GROFF =	Yes

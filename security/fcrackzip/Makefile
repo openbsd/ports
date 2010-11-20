@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
 
 COMMENT =	ZIP password cracker
 
@@ -24,7 +24,7 @@ AUTOCONF_VERSION =	2.61
 USE_GROFF =	Yes
 
 # for the --use-unzip option
-RUN_DEPENDS =	::archivers/unzip
+RUN_DEPENDS =	archivers/unzip
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/fcrackzip.1 ${PREFIX}/man/man1

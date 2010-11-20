@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:45 espie Exp $
 
 COMMENT =		Python bindings for cracklib
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://download.savannah.gnu.org/releases/python-crack/
 
 MODULES =		lang/python
-LIB_DEPENDS =		::security/cracklib
+LIB_DEPENDS =		security/cracklib
 WANTLIB =		crack
 
 MAKE_FLAGS =		CC="${CC}" \

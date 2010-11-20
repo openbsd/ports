@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/08 08:24:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 17:22:42 espie Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
@@ -21,7 +21,7 @@ WANTLIB =	c util
 
 MASTER_SITES =	ftp://ftp.shrubbery.net/pub/rancid/
 
-RUN_DEPENDS =	:expect-*:lang/expect,no_tk
+RUN_DEPENDS =	lang/expect,no_tk
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 AUTOMAKE_VERSION =	 1.8

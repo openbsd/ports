@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:40 espie Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -32,26 +32,26 @@ MODULES =		converters/libiconv
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
 WANTLIB-mysql =		crypto m ssl z mysqlclient
-LIB_DEPENDS-mysql =	::databases/mysql
-RUN_DEPENDS-mysql =	:collectd-$V:${BASE_PKGPATH},-main
+LIB_DEPENDS-mysql =	databases/mysql
+RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-pgsql =		pq
-LIB_DEPENDS-pgsql =	::databases/postgresql
-RUN_DEPENDS-pgsql =	:collectd-$V:${BASE_PKGPATH},-main
+LIB_DEPENDS-pgsql =	databases/postgresql
+RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th
-LIB_DEPENDS-rrdtool =	::net/rrdtool
-RUN_DEPENDS-rrdtool =	:collectd-$V:${BASE_PKGPATH},-main
+LIB_DEPENDS-rrdtool =	net/rrdtool
+RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-snmp =		crypto netsnmp
-LIB_DEPENDS-snmp =	::net/net-snmp
-RUN_DEPENDS-snmp =	:collectd-$V:${BASE_PKGPATH},-main
+LIB_DEPENDS-snmp =	net/net-snmp
+RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
-LIB_DEPENDS +=	::net/curl \
-		::textproc/libxml \
-		::sysutils/libstatgrab \
-		::security/libgcrypt \
-		::devel/libtool,-ltdl
+LIB_DEPENDS +=	net/curl \
+		textproc/libxml \
+		sysutils/libstatgrab \
+		security/libgcrypt \
+		devel/libtool,-ltdl
 
 WANTLIB += c crypto gpg-error idn intl kvm curl xml2 ltdl
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt

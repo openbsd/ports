@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
 DISTNAME=		wmcb-0.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
+REVISION =		1
 
 CATEGORIES=		sysutils x11 x11/windowmaker
 

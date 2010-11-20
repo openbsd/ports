@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:43 espie Exp $
 
 COMMENT = 	X.509 library
 
@@ -25,8 +25,8 @@ EXTRACT_SUFX = 		.tar.bz2
 USE_LIBTOOL = 		Yes
 MODULES = 		devel/gettext
 
-LIB_DEPENDS = 		::security/libgpg-error
-WANTLIB =		gpg-error.>=1
+LIB_DEPENDS = 		security/libgpg-error
+WANTLIB =		gpg-error>=1
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}

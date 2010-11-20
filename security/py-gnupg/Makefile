@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/08/30 21:16:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Python module for GnuPG interface
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=py-gnupg/}
 MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:gnupg-<2:security/gnupg
+RUN_DEPENDS=	security/gnupg<2
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	modular perl shell
 CATEGORIES=	shells
@@ -22,9 +22,9 @@ CONFIGURE_ARGS=	install_path=etc="${SYSCONFDIR}/" \
 		install_path=share="${PREFIX}/share/zoid/"
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::devel/p5-Exporter-Tidy \
-		::devel/p5-Term-ReadLine-Zoid \
-		::devel/p5-Env-PS1
+RUN_DEPENDS=	devel/p5-Exporter-Tidy \
+		devel/p5-Term-ReadLine-Zoid \
+		devel/p5-Env-PS1
 
 post-install:
 	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/zoidrc ${PREFIX}/share/zoid/zoidrc.sample

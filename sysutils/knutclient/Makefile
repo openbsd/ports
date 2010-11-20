@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=		KDE UPS Monitoring tool
 
@@ -18,15 +18,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xrender c idn iconv intl \
 			jpeg m png pthread pthread-stubs stdc++ util xcb z \
-			DCOP kdecore.>=4 kdefx kdeui art_lgpl_2
+			DCOP kdecore>=4 kdefx kdeui art_lgpl_2
 
 MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 
 # Patch Hack
 MODULES=		x11/kde
 
-LIB_DEPENDS=		::x11/kde/libs3 \
-			::graphics/libart
+LIB_DEPENDS=		x11/kde/libs3 \
+			graphics/libart
 
 USE_GMAKE=		Yes
 

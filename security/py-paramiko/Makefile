@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/08/30 21:16:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:45 espie Exp $
 
 COMMENT = 	Python module that implements the SSH2 protocol
 
@@ -24,7 +24,7 @@ MODULES = 	lang/python
 
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS = 	::security/py-crypto
+RUN_DEPENDS = 	security/py-crypto
 REGRESS_DEPENDS = ${RUN_DEPENDS}
 
 pre-build:

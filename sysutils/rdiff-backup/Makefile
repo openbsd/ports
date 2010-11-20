@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.13 2010/11/11 19:00:49 espie Exp $
+#	$OpenBSD: Makefile,v 1.14 2010/11/20 17:22:42 espie Exp $
 
 COMMENT = 	incremental backup
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		rsync
-LIB_DEPENDS += 		::net/librsync
+LIB_DEPENDS += 		net/librsync
 
 MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 

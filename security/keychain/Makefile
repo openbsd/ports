@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		front-end to ssh-agent
 
 DISTNAME=		keychain-2.6.1
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gentoo.org/proj/en/keychain.xml
@@ -20,7 +20,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/keychain ${PREFIX}/bin

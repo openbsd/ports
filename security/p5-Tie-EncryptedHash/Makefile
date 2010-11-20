@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	hashes with encrypting fields
 
@@ -14,6 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::security/p5-Crypt-CBC
+RUN_DEPENDS=	security/p5-Crypt-CBC
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		pragmatic application deployment automation
 
@@ -20,10 +20,10 @@ CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODRUBY_RAKE_DEPENDS} \
-			:${MODRUBY_PKG_PREFIX}-open4-*:devel/ruby-open4,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-hoe-*:devel/ruby-hoe,${FLAVOR}
+			devel/ruby-open4,${FLAVOR} \
+			devel/ruby-hoe,${FLAVOR}
 
 MODRUBY_REGRESS=	rake
-REGRESS_DEPENDS=	:${MODRUBY_PKG_PREFIX}-minitest-*:devel/ruby-minitest,${FLAVOR}
+REGRESS_DEPENDS=	devel/ruby-minitest,${FLAVOR}
 
 .include <bsd.port.mk>

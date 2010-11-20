@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl
 
-REGRESS_DEPENDS=	::security/p5-Digest-SHA1
+REGRESS_DEPENDS=	security/p5-Digest-SHA1
 
 .include <bsd.port.mk>

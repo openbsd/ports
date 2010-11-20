@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 17:22:40 espie Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	lang/python
 
 WANTLIB +=	rsync
-LIB_DEPENDS +=	::net/librsync
-RUN_DEPENDS +=	::net/py-boto \
-		::net/ncftp \
-		::security/py-gnupg
+LIB_DEPENDS +=	net/librsync
+RUN_DEPENDS +=	net/py-boto \
+		net/ncftp \
+		security/py-gnupg
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 

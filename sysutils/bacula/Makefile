@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/20 17:22:40 espie Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -48,7 +48,7 @@ SUBST_VARS=		SD_USER BACULACONF BACULASTATE TRUEPREFIX
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_LIBTOOL=		yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--enable-client-only \
 .else
 MULTI_PACKAGES+=	-server
 WANTLIB-server=		${WANTLIB} bac baccfg bacfind bacpy readline termcap
-LIB_DEPENDS-server=	::sysutils/bacula,-main
+LIB_DEPENDS-server=	sysutils/bacula,-main
 CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
 			--with-sd-user=${SD_USER} \
@@ -117,8 +117,8 @@ BACKEND=
 ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-postgresql
-WANTLIB-server+=	pq.>=2
-LIB_DEPENDS-server+=	:postgresql-client-*:databases/postgresql
+WANTLIB-server+=	pq>=2
+LIB_DEPENDS-server+=	databases/postgresql
 BACKEND=		postgresql
 .else
 CONFIGURE_ARGS+=	--without-postgresql
@@ -130,8 +130,8 @@ ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-mysql \
 			--enable-batch-insert
-WANTLIB-server+=	mysqlclient_r.>=18
-LIB_DEPENDS-server+=	::databases/mysql
+WANTLIB-server+=	mysqlclient_r>=18
+LIB_DEPENDS-server+=	databases/mysql
 BACKEND=		mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
@@ -142,8 +142,8 @@ CONFIGURE_ARGS+=	--without-mysql
 ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
 .endif
 CONFIGURE_ARGS+=	--with-sqlite3
-WANTLIB-server+=	sqlite3.>=8
-LIB_DEPENDS-server+=	::databases/sqlite3
+WANTLIB-server+=	sqlite3>=8
+LIB_DEPENDS-server+=	databases/sqlite3
 BACKEND=		sqlite3
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
@@ -163,9 +163,9 @@ CONFIGURE_ARGS+=	--disable-bat
 CONFIGURE_ARGS+=	--enable-bat
 WANTLIB-bat +=		QtCore QtGui bac baccfg c crypto m pthread ssl stdc++
 MULTI_PACKAGES+=	-bat
-RUN_DEPENDS-bat=	::devel/desktop-file-utils
-LIB_DEPENDS-bat=	::x11/qt4 \
-			::sysutils/bacula,-main
+RUN_DEPENDS-bat=	devel/desktop-file-utils
+LIB_DEPENDS-bat=	x11/qt4 \
+			sysutils/bacula,-main
 .endif
 
 post-extract:

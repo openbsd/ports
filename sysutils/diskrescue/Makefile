@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:40 espie Exp $
 
 COMMENT =		fancy dd
 
@@ -23,7 +23,7 @@ MASTER_SITES =		http://opensource.conformal.com/snapshots/diskrescue/
 
 EXTRACT_SUFX =		.tgz
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

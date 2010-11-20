@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 21:16:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyopenssl/}
 
 MODULES=	lang/python
 
-REGRESS_DEPENDS=:py-twisted-core-*:devel/py-twisted/core
+REGRESS_DEPENDS=devel/py-twisted/core
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openssl
 

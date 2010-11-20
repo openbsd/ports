@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -27,7 +27,7 @@ USE_GROFF =	Yes
 WANTLIB=	c termcap 
 
 # enable if parse.y is patched
-#BUILD_DEPENDS=	::devel/bison
+#BUILD_DEPENDS=	devel/bison
 #YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu

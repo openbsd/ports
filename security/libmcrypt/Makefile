@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/20 17:22:43 espie Exp $
 
 COMMENT =		interface to access block/stream encryption algorithms
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}

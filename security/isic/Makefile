@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	IP stack integrity checker
 
@@ -13,12 +13,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c lib/libnet-1.1/net.=11
+WANTLIB=		c lib/libnet-1.1/net=11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	:libnet->=1.1,<1.2:net/libnet/1.1
+LIB_DEPENDS=	libnet->=1.1,<1.2:net/libnet/1.1
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \

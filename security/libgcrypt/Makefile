@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/07/27 21:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgcrypt/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/libgcrypt/
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		:libgpg-error->=1.9:security/libgpg-error
+LIB_DEPENDS=		security/libgpg-error>=1.9
 
 WANTLIB=		c gpg-error
 

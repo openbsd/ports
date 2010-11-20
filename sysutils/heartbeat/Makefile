@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,40 +46,40 @@ USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		::devel/swig
+		devel/swig
 
 WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1 \
-		e2fs-uuid gnutls.>=12 lib/libnet-1.0/net.=0 bz2.>=10 \
-		xml2.>=9 ltdl.>=4 glib-2.0.>=1400 curl.>=7
+		e2fs-uuid gnutls>=12 lib/libnet-1.0/net=0 bz2>=10 \
+		xml2>=9 ltdl>=4 glib-2.0>=1400 curl>=7
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::sysutils/e2fsprogs \
-		::security/gnutls \
-		:libnet->=1.0,<1.1:net/libnet/1.0 \
-		::archivers/bzip2 \
-		::textproc/libxml \
-		::devel/libtool,-ltdl \
-		::devel/glib2 \
-		::net/curl
+		sysutils/e2fsprogs \
+		security/gnutls \
+		libnet->=1.0,<1.1:net/libnet/1.0 \
+		archivers/bzip2 \
+		textproc/libxml \
+		devel/libtool,-ltdl \
+		devel/glib2 \
+		net/curl
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
-		::devel/p5-Time-TimeDate
+		devel/p5-Time-TimeDate
 
 WANTLIB-gui=	${MODGETTEXT_WANTLIB} gcrypt gpg-error m tasn1 util xml2 z \
-		bz2.>=10 gnutls.>=12 ltdl.>=4 e2fs-uuid
+		bz2>=10 gnutls>=12 ltdl>=4 e2fs-uuid
 LIB_DEPENDS-gui=${LIB_DEPENDS} \
-		::archivers/bzip2 \
-		::security/gnutls \
-		::devel/libtool,-ltdl \
-		::sysutils/e2fsprogs
+		archivers/bzip2 \
+		security/gnutls \
+		devel/libtool,-ltdl \
+		sysutils/e2fsprogs
 RUN_DEPENDS-gui=${MODPY_RUN_DEPENDS} \
-		::x11/py-gtk2
+		x11/py-gtk2
 
 WANTLIB-snmp=	${WANTLIB} bz2 crypto e2fs-uuid gcrypt glib-2.0 gnutls \
 		gpg-error kvm ltdl perl tasn1 wrap xml2 ccmclient \
-		clm hbclient pils plumb netsnmp.>=7 netsnmpagent \
+		clm hbclient pils plumb netsnmp>=7 netsnmpagent \
 		netsnmphelpers netsnmpmibs
 LIB_DEPENDS-snmp=${LIB_DEPENDS} \
-		::${BASE_PKGPATH} \
-		::net/net-snmp
+		${BASE_PKGPATH} \
+		net/net-snmp
 
 USE_GMAKE=	Yes
 # depends on libltdl

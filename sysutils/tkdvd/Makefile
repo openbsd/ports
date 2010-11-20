@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/07 15:54:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		GUI to dvd+rw-tools and cdrecord
 
 DISTNAME=		tkdvd-4.0.9
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://regis.damongeot.free.fr/tkdvd/
@@ -23,8 +23,8 @@ WRKDIST=		${WRKDIR}/tkdvd
 MODULES=		x11/tk
 
 BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
-RUN_DEPENDS=		::sysutils/cdrtools \
-			::sysutils/dvd+rw-tools \
+RUN_DEPENDS=		sysutils/cdrtools \
+			sysutils/dvd+rw-tools \
 			${MODTK_RUN_DEPENDS}
 
 NO_REGRESS=		Yes

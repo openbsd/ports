@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=		Time Machine-like backup tool
 
@@ -20,13 +20,13 @@ MASTER_SITES=		http://flyback.googlecode.com/files/
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		::databases/py-sqlite \
-			::net/rsync \
-			::x11/gnome/py-gnome \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=		databases/py-sqlite \
+			net/rsync \
+			x11/gnome/py-gnome \
+			devel/desktop-file-utils
 
 # needs the "--link" option from gcp(1) for incremental backups
-RUN_DEPENDS+=		::misc/fileutils
+RUN_DEPENDS+=		misc/fileutils
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes

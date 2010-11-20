@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=	periodic command scheduler
 
 DISTNAME=	anacron-2.3
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://sourceforge.net/projects/anacron/
@@ -20,7 +20,7 @@ WANTLIB=		c
 MASTER_SITES=	    ${MASTER_SITE_SOURCEFORGE:=anacron/}
 
 USE_GMAKE=	    Yes
-USE_GROFF =	Yes
+USE_GROFF = 	    Yes
 
 MAKE_FLAGS=	    ANACRONTAB="${SYSCONFDIR}/anacrontab"
 

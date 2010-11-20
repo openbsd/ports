@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
@@ -32,7 +32,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 ALL_TARGET=	otpCalc otpCalc.1
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 NO_REGRESS=	Yes
 

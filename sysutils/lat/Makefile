@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	LDAP Administration Tool
 
 DISTNAME=	lat-1.2.3
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 
 CATEGORIES=	sysutils
 
@@ -17,18 +17,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ldap-at/}
 
-BUILD_DEPENDS=	::textproc/rarian \
-		::x11/gnome/keyring \
-		::x11/gnome/mono-gnome
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:yelp-*:x11/gnome/yelp \
-		::x11/gnome/keyring \
-		::x11/gnome/mono-gnome
+BUILD_DEPENDS=	textproc/rarian \
+		x11/gnome/keyring \
+		x11/gnome/mono-gnome
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gnome/yelp \
+		x11/gnome/keyring \
+		x11/gnome/mono-gnome
 
 # do not use the devel/gettext MODULE to prevent port-lib-depends-check
 # from complaining about Extra: iconv intl
-BUILD_DEPENDS+=	::devel/gettext
-RUN_DEPENDS+=	::devel/gettext
+BUILD_DEPENDS+=	devel/gettext
+RUN_DEPENDS+=	devel/gettext
 
 MODULES=	lang/mono \
 		textproc/intltool
@@ -44,8 +44,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-networkmanager=no
 
 # XXX main window hangs on startup
-#BUILDS_DEPENDS+= ::net/avahi,-mono
-#RUN_DEPENDS+= ::net/avahi,-mono
+#BUILDS_DEPENDS+= net/avahi,-mono
+#RUN_DEPENDS+= net/avahi,-mono
 CONFIGURE_ARGS=	--enable-avahi=no
 
 .include <bsd.port.mk>

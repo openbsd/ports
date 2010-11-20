@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 
 DATE=		20050317
 DISTNAME=	mtools-3.9.10
-PKGNAME=	${DISTNAME}.${DATE}p1
+PKGNAME=	${DISTNAME}.${DATE}
+REVISION =	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
 		${HOMEPAGE}

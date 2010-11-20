@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:40 espie Exp $
 
 COMMENT =		word-based diff program
 
@@ -22,13 +22,13 @@ EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		::textproc/icu4c
+LIB_DEPENDS =		textproc/icu4c
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 LANGS =			de nl

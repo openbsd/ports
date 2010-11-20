@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 23:13:31 lum Exp $ 
+# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:45 espie Exp $ 
 
 COMMENT=		Qt Cryptographic Architecture, TLS plugin
 
@@ -8,7 +8,7 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://delta.affinix.com/qca/
 
-RUN_DEPENDS=		::security/qca
+RUN_DEPENDS=		security/qca
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

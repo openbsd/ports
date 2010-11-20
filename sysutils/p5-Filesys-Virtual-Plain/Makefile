@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	perl module for a plain virtual filesystem
 DISTNAME=	Filesys-Virtual-Plain-0.10
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Filesys-Virtual->=0.05:sysutils/p5-Filesys-Virtual
+RUN_DEPENDS=	sysutils/p5-Filesys-Virtual>=0.05
 
 MODULES=	cpan
 USE_GROFF =	Yes

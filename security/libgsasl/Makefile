@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 08:45:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_FTP=	yes
 MODULES=	devel/gettext
 
 WANTLIB+=	gcrypt gpg-error idn
-LIB_DEPENDS=	::devel/libidn \
-		::security/libgcrypt
+LIB_DEPENDS=	devel/libidn \
+		security/libgcrypt
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple

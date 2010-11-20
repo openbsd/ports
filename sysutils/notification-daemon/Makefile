@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/04 09:50:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=		send small notifications to your desktop
 
@@ -29,11 +29,11 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		::devel/libnotify \
-			::devel/libtool,-ltdl \
-			::devel/libwnck \
-			::audio/libcanberra
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=		devel/libnotify \
+			devel/libtool,-ltdl \
+			devel/libwnck \
+			audio/libcanberra
+RUN_DEPENDS=		devel/desktop-file-utils
 
 MODGCONF2_SCHEMAS_DIR=	notification-daemon
 

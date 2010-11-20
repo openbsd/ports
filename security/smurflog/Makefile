@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	logs smurf attacks
 DISTNAME=	smurflog-2.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	net security
 
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/loggers/}

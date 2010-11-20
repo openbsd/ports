@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Class-MethodMaker \
-		:gnupg-<2:security/gnupg
+RUN_DEPENDS=	devel/p5-Class-MethodMaker \
+		security/gnupg<2
 
 .include <bsd.port.mk>	

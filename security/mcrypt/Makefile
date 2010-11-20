@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:44 espie Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
@@ -22,11 +22,11 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MODULES =		devel/gettext
-LIB_DEPENDS =		::security/libmcrypt \
-			::security/mhash \
-			::devel/libtool,-ltdl
+LIB_DEPENDS =		security/libmcrypt \
+			security/mhash \
+			devel/libtool,-ltdl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS += 	${CONFIGURE_SHARED}

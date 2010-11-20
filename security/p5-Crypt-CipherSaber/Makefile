@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:44 espie Exp $
 
 COMMENT =	cryptographic CipherSaber encryption
 
@@ -13,6 +13,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
 USE_GROFF =	Yes
-REGRESS_DEPENDS =	::devel/p5-Test-Warn
+REGRESS_DEPENDS =	devel/p5-Test-Warn
 
 .include <bsd.port.mk>

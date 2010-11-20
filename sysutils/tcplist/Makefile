@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	list tcp connections to/from the local machine
 
 DISTNAME=	tcplist-2.2
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	sysutils net
 
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-RUN_DEPENDS=	::sysutils/lsof
+RUN_DEPENDS=	sysutils/lsof
 
 WRKDIST=	${WRKDIR}
 

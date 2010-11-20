@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/16 10:11:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Prelude log analyzer
 
@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-lml/
 
 CONFIGURE_STYLE=gnu
 
-LIB_DEPENDS=	::devel/pcre \
-		::security/prelude/libprelude
+LIB_DEPENDS=	devel/pcre \
+		security/prelude/libprelude
 
 CONFIGURE_ARGS=	--disable-unsupported-rulesets
 

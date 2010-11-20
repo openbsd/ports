@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=		Perl shell
 
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.focusresearch.com/gregor/download/
 
-RUN_DEPENDS=		::devel/p5-Term-ReadLine-Gnu \
-			::devel/p5-Term-ReadLine-Perl \
-			::devel/p5-BSD-Resource
+RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
+			devel/p5-Term-ReadLine-Perl \
+			devel/p5-BSD-Resource
 
 CONFIGURE_STYLE=	perl
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 PKG_ARCH=		*
 

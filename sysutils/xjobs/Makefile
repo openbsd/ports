@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:42 espie Exp $
 #
 
 COMMENT =		execute jobs in parallel
@@ -23,7 +23,7 @@ MASTER_SITES =		http://www.maier-komor.de/xjobs/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:42 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,12 +28,12 @@ WANTLIB-main +=		relp tasn1 z
 WANTLIB-mysql +=	crypto m mysqlclient ssl z
 WANTLIB-pgsql +=	crypto com_err pq ssl
 
-LIB_DEPENDS-main =	::security/gnutls \
-			::sysutils/librelp
-LIB_DEPENDS-mysql =	:mysql-client-*:databases/mysql
-RUN_DEPENDS-mysql =	:${FULLPKGNAME-main}:${BASE_PKGPATH},-main
-LIB_DEPENDS-pgsql =	:postgresql-client-*:databases/postgresql
-RUN_DEPENDS-pgsql =	:${FULLPKGNAME-main}:${BASE_PKGPATH},-main
+LIB_DEPENDS-main =	security/gnutls \
+			sysutils/librelp
+LIB_DEPENDS-mysql =	databases/mysql
+RUN_DEPENDS-mysql =	${FULLPKGNAME-main}:${BASE_PKGPATH},-main
+LIB_DEPENDS-pgsql =	databases/postgresql
+RUN_DEPENDS-pgsql =	${FULLPKGNAME-main}:${BASE_PKGPATH},-main
 
 MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 			http://download.rsyslog.com/rsyslog/

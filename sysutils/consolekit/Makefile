@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/26 21:36:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=	framework for defining and tracking users
 
@@ -31,7 +31,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::sysutils/polkit
+LIB_DEPENDS=	sysutils/polkit
 
 AUTOCONF_VERSION= 2.63
 CONFIGURE_STYLE= autoconf

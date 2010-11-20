@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:44 espie Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
@@ -38,8 +38,9 @@ WANTLIB +=		freetype glib-2.0 gobject-2.0 gthread-2.0 png
 WANTLIB +=		pthread-stubs stdc++ xcb z
 MODULES +=		x11/qt4 \
 			devel/gettext
-LIB_DEPENDS +=		QtGui.>=8,QtCore.>=7::x11/qt4 \
-			qwt::x11/qwt
+WANTLIB +=		QtGui>=8 QtCore>=7 qwt
+LIB_DEPENDS +=		x11/qt4 \
+			x11/qwt
 CONFIGURE_ARGS +=	--enable-gui \
 			--with-libqt4=${MODQT_LIBDIR} \
 			--with-libqwt=${LOCALBASE} \

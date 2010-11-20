@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:43 espie Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -27,7 +27,7 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		::devel/cppunit
+		devel/cppunit
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
@@ -40,8 +40,8 @@ MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
 
 MODULES =	x11/qt4 converters/libiconv
 DESTDIRNAME =	INSTALL_ROOT
-LIB_DEPENDS =	:libfwbuilder-$V:security/libfwbuilder \
-		::x11/qt4
+LIB_DEPENDS =	libfwbuilder-$V:security/libfwbuilder \
+		x11/qt4
 		
 REGRESS_TARGET =tests
 USE_GROFF =	Yes
@@ -49,7 +49,7 @@ USE_GROFF =	Yes
 WANTLIB += c m netsnmp
 WANTLIB += pthread stdc++ util xml2 xslt z
 WANTLIB += QtGui QtNetwork
-WANTLIB += fwcompiler.>=14 fwbuilder.>=14
+WANTLIB += fwcompiler>=14 fwbuilder>=14
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_FILE="${INSTALL_DATA}"

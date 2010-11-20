@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:40 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -56,15 +56,15 @@ MULTI_PACKAGES +=	-cgi
 PREFIX-cgi =		${WEB_ROOT}
 CONFIGURE_ARGS +=	--enable-cgi
 WANTLIB-cgi = 		c pthread gd
-LIB_DEPENDS-cgi =	::graphics/gd
+LIB_DEPENDS-cgi =	graphics/gd
 RUN_DEPENDS-cgi =
 
 .if !${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES +=	-x11
 CONFIGURE_ARGS +=	--enable-gapcmon
-LIB_DEPENDS-x11 =	::devel/gconf2 \
+LIB_DEPENDS-x11 =	devel/gconf2 \
 			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-x11 =	:desktop-file-utils-*:devel/desktop-file-utils \
+RUN_DEPENDS-x11 =	devel/desktop-file-utils \
 			${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-x11 += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes

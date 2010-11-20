@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-hoe->=1.4.0:devel/ruby-hoe
+RUN_DEPENDS=	devel/ruby-hoe>=1.4.0
 
 CONFIGURE_STYLE=ruby gem ext
 

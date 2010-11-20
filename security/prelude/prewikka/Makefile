@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/16 10:17:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Prelude Management Console
 
@@ -11,11 +11,11 @@ MODULES=	lang/python
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/prewikka/
 
-BUILD_DEPENDS=	:gettext->=0.17:devel/gettext \
-		:py-cheetah-*:devel/py-cheetah
+BUILD_DEPENDS=	devel/gettext>=0.17 \
+		devel/py-cheetah
 
-RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager	\
-		:py-cheetah-*:devel/py-cheetah
+RUN_DEPENDS=	security/prelude/manager	\
+		devel/py-cheetah
 
 NO_REGRESS=	Yes
 VERSION=	${DISTNAME:S/prewikka-//}

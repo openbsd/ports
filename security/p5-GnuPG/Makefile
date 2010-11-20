@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
@@ -8,7 +8,7 @@ REVISION=	1
 CATEGORIES=	security
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:gnupg-<2:security/gnupg
+RUN_DEPENDS=	security/gnupg<2
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

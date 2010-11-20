@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	Triple-DES EDE encryption/decryption
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::security/p5-Crypt-DES
+RUN_DEPENDS=	security/p5-Crypt-DES
 
 .include <bsd.port.mk>

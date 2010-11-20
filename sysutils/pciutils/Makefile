@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:41 espie Exp $
 
 NOT_FOR_ARCHS =		sparc m68k m88k vax
 
 COMMENT =		PCI bus configuration register access tools
 
 DISTNAME =		pciutils-3.1.2
-PKGNAME =		${DISTNAME}p1
+REVISION =		1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
@@ -22,7 +22,7 @@ WANTLIB =		c z
 MASTER_SITES =		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_ENV =		CC="${CC}"
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man

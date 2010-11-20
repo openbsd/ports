@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,6 +17,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-REGRESS_DEPENDS=	::security/p5-Crypt-CBC
+REGRESS_DEPENDS=	security/p5-Crypt-CBC
 
 .include <bsd.port.mk>	

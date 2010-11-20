@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=		GNU dd with added forensic/security features
 
@@ -22,6 +22,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dcfldd/}
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

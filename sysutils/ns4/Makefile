@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/29 08:29:14 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
 
 PKG_ARCH =	*
 
@@ -22,11 +22,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://netnix.org/files/
 
-RUN_DEPENDS =	::devel/p5-Expect \
-		::devel/p5-YAML-Syck \
-		::net/p5-Net-SNMP \
-		::net/p5-Net-SSH2 \
-		::www/p5-libwww
+RUN_DEPENDS =	devel/p5-Expect \
+		devel/p5-YAML-Syck \
+		net/p5-Net-SNMP \
+		net/p5-Net-SSH2 \
+		www/p5-libwww
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

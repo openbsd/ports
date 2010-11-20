@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	simple log monitoring program
 
 DISTNAME=	swatch-3.2.3
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/}
 
@@ -11,10 +11,10 @@ HOMEPAGE=	http://swatch.sourceforge.net/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-RUN_DEPENDS=	:p5-Date-Calc-*:devel/p5-Date-Calc \
-		:p5-File-Tail-*:devel/p5-File-Tail \
-		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate \
-		:p5-DateManip-*:converters/p5-DateManip
+RUN_DEPENDS=	devel/p5-Date-Calc \
+		devel/p5-File-Tail \
+		devel/p5-Time-TimeDate \
+		converters/p5-DateManip
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}
 
-RUN_DEPENDS=	::x11/p5-Tk \
-		::x11/p5-X11-Protocol
+RUN_DEPENDS=	x11/p5-Tk \
+		x11/p5-X11-Protocol
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu

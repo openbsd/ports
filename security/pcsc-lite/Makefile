@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:45 espie Exp $
 # Uses pthreads
 
 COMMENT=	resource manager for PCSC
 
 DISTNAME=	pcsc-lite-1.0.1
-PKGNAME=	${DISTNAME}p0
+REVISION = 	0
 CATEGORIES=	security
 SHARED_LIBS=	pcsclite-core	0.2 \
 		pcsclite	0.1

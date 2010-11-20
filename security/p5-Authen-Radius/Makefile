@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	Perl module to authenticate against a RADIUS server
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 WRKDIST=	${WRKDIR}/${DISTNAME:S/RadiusPerl/Authen-Radius/}
 
-RUN_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5 \
-		:p5-Data-HexDump->=0.02:devel/p5-Data-HexDump
+RUN_DEPENDS=	security/p5-MD5>=1.7 \
+		devel/p5-Data-HexDump>=0.02
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/25 17:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -29,9 +29,9 @@ MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::security/libgcrypt \
-		::security/libtasn1 \
-		::archivers/lzo2
+LIB_DEPENDS=	security/libgcrypt \
+		security/libtasn1 \
+		archivers/lzo2
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

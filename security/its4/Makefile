@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	scan C/C++ source code for security problems
 
 DISTNAME=	its4-1.1.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	security
 MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz

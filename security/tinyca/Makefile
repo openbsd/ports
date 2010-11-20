@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	GUI to manage a certification authority
 
 DISTNAME=	tinyca2-0.7.5
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	security
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	::archivers/zip \
-		::devel/p5-Locale-gettext \
-		::x11/p5-Gtk2
+RUN_DEPENDS=	archivers/zip \
+		devel/p5-Locale-gettext \
+		x11/p5-Gtk2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes

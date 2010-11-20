@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/29 15:05:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	cross-platform configuration modules
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c pthread z dbus-1 dbus-glib-1 eggdbus-1 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre polkit-gobject-1
 
-LIB_DEPENDS=	::sysutils/polkit
-RUN_DEPENDS=	::net/p5-Net-DBus
+LIB_DEPENDS=	sysutils/polkit
+RUN_DEPENDS=	net/p5-Net-DBus
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	devel/gettext \

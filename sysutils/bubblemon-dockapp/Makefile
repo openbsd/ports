@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=		wm-dockapp; display CPU and memory load
 
@@ -28,7 +28,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes

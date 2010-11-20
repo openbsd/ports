@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 21:41:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=aide/}
 
-BUILD_DEPENDS=		::devel/bison \
-			::security/mhash
+BUILD_DEPENDS=		devel/bison \
+			security/mhash
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-mhash

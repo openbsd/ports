@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:42 espie Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	simple system monitor bar
 
 DISTFILES=	xstatbar-0.4p0${EXTRACT_SUFX}
 DISTNAME=	xstatbar-0.4
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 
 CATEGORIES=	sysutils x11
 

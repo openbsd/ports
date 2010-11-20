@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	soundscope for GkrellM2 using ESD
 
@@ -10,8 +10,8 @@ HOMEPAGE=http://members.dslextreme.com/users/billw/gkrellmss/gkrellmss.html
 
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 
-BUILD_DEPENDS+=	::math/fftw
-LIB_DEPENDS+=	::audio/esound
+BUILD_DEPENDS+=	math/fftw
+LIB_DEPENDS+=	audio/esound
 
 CFLAGS+=	-DHAVE_FFTW2
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	tools for managing samba ldap 
 
 DISTNAME=	smbldap-tools-0.9.2a
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=smbldap-tools/}
 
-RUN_DEPENDS=	::converters/p5-Unicode-MapUTF8 \
-		::databases/p5-ldap \
-		::security/p5-Crypt-SmbHash
+RUN_DEPENDS=	converters/p5-Unicode-MapUTF8 \
+		databases/p5-ldap \
+		security/p5-Crypt-SmbHash
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/2a/2/}
 NO_BUILD=	Yes

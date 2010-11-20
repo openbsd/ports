@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	provide fingerprint authentication
 
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WANTLIB=		c crypto freetype fprint.>=0 MagickCore.>=1 \
-			MagickWand.>=1 usb
+WANTLIB=		c crypto freetype fprint>=0 MagickCore>=1 \
+			MagickWand>=1 usb
 
 
-LIB_DEPENDS=		::security/libfprint \
-			::graphics/ImageMagick \
-			::devel/libusb
+LIB_DEPENDS=		security/libfprint \
+			graphics/ImageMagick \
+			devel/libusb
 
 NO_REGRESS=	Yes
 

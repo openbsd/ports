@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
 
 COMMENT =	interface to SMBIOS using dmidecode
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP =	Yes
 CPAN_AUTHOR =		NICOLAW
 CONFIGURE_STYLE =	modbuild
 CONFIGURE_ENV =		AUTOMATED_TESTING=Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_ENV+=	TEST_POD=Yes
 
 BUILD_DEPENDS =	${REGRESS_DEPENDS} \
-		::sysutils/p5-File-Which \
-		::devel/p5-Test-Deep
-RUN_DEPENDS =	::sysutils/dmidecode \
-		::sysutils/p5-File-Which
+		sysutils/p5-File-Which \
+		devel/p5-Test-Deep
+RUN_DEPENDS =	sysutils/dmidecode \
+		sysutils/p5-File-Which
 
 .include <bsd.port.mk>

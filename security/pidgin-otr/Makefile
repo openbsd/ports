@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	allows deniable private conversations using Pidgin
 
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:pidgin->=2.0.0:net/pidgin
+RUN_DEPENDS=	net/pidgin>=2.0.0
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	:libotr->=3.2.0:security/libotr
+LIB_DEPENDS=	security/libotr>=3.2.0
 
 MODULES=	devel/gettext \
 		textproc/intltool
-WANTLIB=	gpg-error gcrypt otr.>=3.2
+WANTLIB=	gpg-error gcrypt otr>=3.2
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

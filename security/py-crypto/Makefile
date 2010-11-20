@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:45 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://www.amk.ca/files/python/crypto/
 
 MODULES =	lang/python
-LIB_DEPENDS =	::devel/gmp
-WANTLIB =	gmp.>=6
+LIB_DEPENDS =	devel/gmp
+WANTLIB =	gmp>=6
 
 DOCSDIR =	${PREFIX}/share/doc/py-crypto
 

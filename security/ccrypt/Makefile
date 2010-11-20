@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	encrypt and decrypt AES files and streams
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}/download/ \
 
 MODULES=	devel/gettext \
 		textproc/intltool
-BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
+BUILD_DEPENDS=	emacs->=21,<22:editors/emacs21
 
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes

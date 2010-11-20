@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/11 05:04:37 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	Lua binding for the OpenSSL crypto libraries
 SHARED_ONLY=	Yes
 
 DISTNAME=	luacrypto-0.1.1
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 CATEGORIES=	security
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1395/

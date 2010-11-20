@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 19:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	syslogd replacement
 
@@ -23,8 +23,8 @@ MODULES =	devel/gettext
  
 WANTLIB =	c pcre wrap crypto ssl z glib-2.0 evtlog
  
-LIB_DEPENDS = 	::devel/glib2 \
- 		::sysutils/eventlog
+LIB_DEPENDS = 	devel/glib2 \
+ 		sysutils/eventlog
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-tcp-wrapper \

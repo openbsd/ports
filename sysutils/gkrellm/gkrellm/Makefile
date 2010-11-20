@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/20 17:22:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,9 +38,9 @@ WRKBUILD=	${WRKDIST}/server
 
 MODULES=		devel/gettext
 WANTLIB=		c kvm pthread glib-2.0 gmodule-2.0 gthread-2.0
-LIB_DEPENDS=		::devel/glib2
+LIB_DEPENDS=		devel/glib2
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
-			::x11/gtk+2
+			x11/gtk+2
 
 WANTLIB-client += ${WANTLIB} gdk-x11-2.0 gtk-x11-2.0
 WANTLIB-client += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext

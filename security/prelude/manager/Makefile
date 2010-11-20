@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/16 10:11:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Prelude manager
 
@@ -15,8 +15,8 @@ MODULES=	devel/gettext
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 
-LIB_DEPENDS=	::textproc/libxml \
-		::security/prelude/libpreludedb
+LIB_DEPENDS=	textproc/libxml \
+		security/prelude/libpreludedb
 
 # XXX check on update whether this is still necessary
 post-extract:

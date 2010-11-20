@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	small utility which displays system activity
 
@@ -25,7 +25,7 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0
 MASTER_SITES=	${HOMEPAGE}/downloads/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

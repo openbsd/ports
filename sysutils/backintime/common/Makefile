@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 16:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=	simple backup tool -- common files
 
@@ -7,9 +7,9 @@ REVISION=	0
 
 WRKSRC=		${WRKDIST}/common
 
-BUILD_DEPENDS=	::devel/gettext
-RUN_DEPENDS=	::misc/fileutils \
-		::net/rsync
+BUILD_DEPENDS=	devel/gettext
+RUN_DEPENDS=	misc/fileutils \
+		net/rsync
 
 SUBST_FILES=	backintime config.py
 USE_GROFF =	Yes

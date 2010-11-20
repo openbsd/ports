@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/21 06:24:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		netcat enhanced with twofish encryption
 
 V=			1.2.1
 DISTNAME=		cryptcat-unix-$V
-PKGNAME=		cryptcat-$Vp0
+PKGNAME=		cryptcat-$V
+REVISION =		0
 CATEGORIES=		security
 
 HOMEPAGE=		http://cryptcat.sourceforge.net

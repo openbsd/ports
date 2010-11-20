@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=		dbus debugger
 
@@ -22,10 +22,10 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/d-feet/${MODPY_EGG_VERSION:C/^([0-9]
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		::x11/py-gtk2
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::x11/dbus-python \
-			::x11/gnome/py-gnome-desktop
+BUILD_DEPENDS=		x11/py-gtk2
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/dbus-python \
+			x11/gnome/py-gnome-desktop
 
 
 NO_REGRESS=		Yes

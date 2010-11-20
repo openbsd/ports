@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Prelude framework library
 
@@ -20,7 +20,7 @@ USE_GROFF =	Yes
 
 WANTLIB=	c gcrypt tasn1 z gpg-error gnutls
 
-LIB_DEPENDS=	::security/libgpg-error \
-		::security/gnutls
+LIB_DEPENDS=	security/libgpg-error \
+		security/gnutls
 
 .include <bsd.port.mk>

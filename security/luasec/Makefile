@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/25 23:36:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/lua
 NO_REGRESS=	Yes
-RUN_DEPENDS+=	::net/luasocket
+RUN_DEPENDS+=	net/luasocket
 WANTLIB+=	crypto ssl
 
 MAKE_ENV+=	INCDIR="-I${LOCALBASE}/include/" SAVECFLAGS="${CFLAGS}"

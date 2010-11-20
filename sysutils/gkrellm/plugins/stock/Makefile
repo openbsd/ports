@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/13 19:12:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	stock ticker for GkrellM2
 
@@ -10,7 +10,7 @@ CATEGORIES=	misc
 HOMEPAGE=	http://gkrellstock.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellstock/}
 
-RUN_DEPENDS+=	:p5-Finance-Quote-*:misc/p5-Finance-Quote
+RUN_DEPENDS+=	misc/p5-Finance-Quote
 
 WRKDIST=       	${WRKDIR}/gkrellStock-${V}
 ALL_TARGET=	gkrellstock.so

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.sentia.org/projects/dmassage/
 
@@ -16,7 +16,7 @@ MASTER_SITES=		http://www.sentia.org/downloads/
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 PKG_ARCH=		*
 
 do-install:

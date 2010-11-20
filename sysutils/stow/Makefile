@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	manages software package installations with symlinks
 
 DISTNAME=	stow-1.3.3
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gnu.org/software/stow/stow.html

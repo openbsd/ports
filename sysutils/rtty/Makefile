@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	multiuser tip/cu replacement with logging
 
 DISTNAME=       rtty-4.0
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	sysutils
 
 # BSD

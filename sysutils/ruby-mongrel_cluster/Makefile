@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	tool to help start/stop/restart multiple mongrel servers
 
@@ -17,7 +17,7 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-gem_plugin->=0.2.3:devel/ruby-gem_plugin,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-mongrel->=1.0.2:www/ruby-mongrel,${FLAVOR}
+RUN_DEPENDS=	devel/ruby-gem_plugin,${FLAVOR}>=0.2.3 \
+		www/ruby-mongrel,${FLAVOR}>=1.0.2
 
 .include <bsd.port.mk>

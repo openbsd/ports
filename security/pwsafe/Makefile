@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
@@ -20,7 +20,7 @@ MASTER_SITES=		${HOMEPAGE}releases/
 
 CONFIGURE_STYLE=        gnu
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

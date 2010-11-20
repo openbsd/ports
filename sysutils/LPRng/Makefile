@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=	enhanced printer spooler
 
 DISTNAME=	LPRng-3.8.21
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	sysutils print
 SHARED_LIBS=	lpr	0.0
 

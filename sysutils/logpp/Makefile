@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 19:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	log file preprocessor
 
@@ -16,7 +16,7 @@ WANTLIB+= c pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=logpp/}
 
-LIB_DEPENDS=	::devel/pcre
+LIB_DEPENDS=	devel/pcre
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \

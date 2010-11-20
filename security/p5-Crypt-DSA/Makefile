@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	DSA Signatures and Key Generation
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::converters/p5-Convert-PEM \
-		::devel/p5-Data-Buffer \
-		::security/p5-Digest-SHA1
+RUN_DEPENDS=	converters/p5-Convert-PEM \
+		devel/p5-Data-Buffer \
+		security/p5-Digest-SHA1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:44 espie Exp $
 
 COMMENT = 	storage class for Catalyst Authentication using DBIx::Class
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =	::databases/p5-DBIx-Class \
-		:p5-Catalyst-Plugin-Authentication->=0.10006:security/p5-Catalyst-Plugin-Authentication \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS =	databases/p5-DBIx-Class \
+		security/p5-Catalyst-Plugin-Authentication>=0.10006 \
+		www/p5-Catalyst-Runtime
 BUILD_DEPENDS =	${RUN_DEPENDS}
 USE_GROFF =	Yes
 

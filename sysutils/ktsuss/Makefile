@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 19:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:41 espie Exp $
 
 COMMENT =	graphical su wrapper
 DISTNAME =	ktsuss-1.4
@@ -21,7 +21,7 @@ CFLAGS +=		-pthread
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS =	::x11/gtk+2,-main
+LIB_DEPENDS =	x11/gtk+2,-main
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

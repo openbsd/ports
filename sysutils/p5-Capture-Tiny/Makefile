@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=		capture STDOUT and STDERR
 
 CPAN_AUTHOR=		DAGOLDEN
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 DISTNAME=		Capture-Tiny-0.08
 CATEGORIES=		sysutils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/12 16:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		library to implement a Unix daemon process
 
@@ -22,8 +22,8 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::devel/py-minimock \
-			::sysutils/py-lockfile
+REGRESS_DEPENDS=	devel/py-minimock \
+			sysutils/py-lockfile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-daemon/

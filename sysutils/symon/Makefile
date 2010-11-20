@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/20 17:22:42 espie Exp $
 
 COMMENT-main=		active monitoring tool
 V=			2.82
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c fontconfig rrd
-LIB_DEPENDS=		::net/rrdtool
+LIB_DEPENDS=		net/rrdtool
 
 MASTER_SITES=		${HOMEPAGE}/philes/
 
@@ -33,7 +33,7 @@ LIB_DEPENDS-mon=
 # gatherer only package
 COMMENT-mux=		symon data gatherer
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/symon

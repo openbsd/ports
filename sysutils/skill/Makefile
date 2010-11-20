@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	signal or reprioritize specified processes
 
 VERSION=		4.1
 DISTNAME=		skill-${VERSION}
-PKGNAME=		skill-${VERSION}p3
+REVISION =		3
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
@@ -19,7 +19,7 @@ MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

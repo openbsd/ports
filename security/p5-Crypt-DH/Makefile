@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	Diffie-Hellman key exchange system
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::security/p5-Crypt-Random
+RUN_DEPENDS=	security/p5-Crypt-Random
 
 CONFIGURE_STYLE=perl
 USE_GROFF =	Yes

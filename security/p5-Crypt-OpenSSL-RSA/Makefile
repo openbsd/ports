@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		crypto ssl
 
-RUN_DEPENDS=	:p5-Crypt-OpenSSL-Random->=0.03:security/p5-Crypt-OpenSSL-Random \
-		:p5-Crypt-OpenSSL-Bignum->=0.03:security/p5-Crypt-OpenSSL-Bignum
+RUN_DEPENDS=	security/p5-Crypt-OpenSSL-Random>=0.03 \
+		security/p5-Crypt-OpenSSL-Bignum>=0.03
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

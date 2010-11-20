@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/11 20:37:29 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:42 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,7 @@ MODULES=	lang/ruby
 
 NO_BUILD=	Yes
 
-REGRESS_DEPENDS= ::devel/ruby-mocha
+REGRESS_DEPENDS= devel/ruby-mocha
 BUILD_DEPENDS +=	${MODRUBY_BUILD_DEPENDS}
 
 do-install:

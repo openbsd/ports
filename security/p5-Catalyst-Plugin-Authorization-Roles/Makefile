@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:44 espie Exp $
 
 COMMENT= 	role based authorization for Catalyst
 
@@ -17,10 +17,10 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Set-Object \
-		::devel/p5-Universal-isa \
-		::security/p5-Catalyst-Plugin-Authentication
-REGRESS_DEPENDS=::devel/p5-Test-Exception
+RUN_DEPENDS=	devel/p5-Set-Object \
+		devel/p5-Universal-isa \
+		security/p5-Catalyst-Plugin-Authentication
+REGRESS_DEPENDS=devel/p5-Test-Exception
 
 MAKE_ENV=	TEST_POD=Yes
 

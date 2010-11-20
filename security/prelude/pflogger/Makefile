@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/16 10:11:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Prelude sensors for Packet Filter
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-pflogger/
 MODULES=	devel/gettext
 WANTLIB=	c gcrypt gnutls gpg-error pcap pthread tasn1 z prelude
 
-LIB_DEPENDS=	::security/prelude/libprelude
+LIB_DEPENDS=	security/prelude/libprelude
 
 CONFIGURE_STYLE=gnu
 

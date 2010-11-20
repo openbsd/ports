@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	tool for testing network IDS implementations
 
 DISTNAME=	fragrouter-1.6
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/

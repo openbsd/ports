@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2010/10/24 21:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2010/11/20 17:22:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,8 +22,8 @@ WANTLIB?=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 WANTLIB+=	${EXTRA_WANTLIB}
 .endif
 
-BUILD_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
-RUN_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
+BUILD_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
+RUN_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

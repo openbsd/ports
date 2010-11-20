@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	interface to HMAC Message-Digest Algorithms
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	:p5-Digest-SHA1->=1:security/p5-Digest-SHA1
+RUN_DEPENDS=	security/p5-Digest-SHA1>=1
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>	

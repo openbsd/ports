@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/18 21:41:48 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -23,7 +23,7 @@ WANTLIB=	c m pcre ncursesw
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::devel/pcre
+LIB_DEPENDS=	devel/pcre
 
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf

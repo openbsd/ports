@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,12 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl z
 
 MODULES=		cpan
-USE_GROFF =	Yes
-REGRESS_DEPENDS=	::devel/p5-Test-Exception \
-			::devel/p5-Test-Warn \
-			::devel/p5-Test-NoWarnings \
-			::devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage
+USE_GROFF =		Yes
+REGRESS_DEPENDS=	devel/p5-Test-Exception \
+			devel/p5-Test-Warn \
+			devel/p5-Test-NoWarnings \
+			devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage
 
 MODCPAN_EXAMPLES=	Yes
 SRCDIR= 		${WRKSRC}/${MODCPAN_EXAMPLES_DIST}

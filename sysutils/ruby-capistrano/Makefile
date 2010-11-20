@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:42 espie Exp $
 
 COMMENT =	execute commands in parallel on multiple remote machines
 
@@ -19,13 +19,13 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-net-ssh-*:net/ruby-net-ssh,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-net-sftp-*:net/ruby-net-sftp,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-net-scp-*:net/ruby-net-scp,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-net-ssh-gateway-*:net/ruby-net-ssh-gateway,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR}
+RUN_DEPENDS =		net/ruby-net-ssh,${FLAVOR} \
+			net/ruby-net-sftp,${FLAVOR} \
+			net/ruby-net-scp,${FLAVOR} \
+			net/ruby-net-ssh-gateway,${FLAVOR} \
+			devel/ruby-highline,${FLAVOR}
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-mocha-*:devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${RUBY} -I../lib \

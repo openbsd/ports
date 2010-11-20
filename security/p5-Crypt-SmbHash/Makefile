@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
@@ -16,6 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::security/p5-Digest-MD4
+RUN_DEPENDS=	security/p5-Digest-MD4
 
 .include <bsd.port.mk>

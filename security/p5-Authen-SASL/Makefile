@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	perl interface to the SASL auth framework
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GROFF =	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::security/p5-Digest-HMAC \
-		::security/p5-GSSAPI
+RUN_DEPENDS=	security/p5-Digest-HMAC \
+		security/p5-GSSAPI
 
 .include <bsd.port.mk>

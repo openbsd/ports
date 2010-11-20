@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/28 10:03:27 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	libraries for fwbuilder
 DISTNAME=	libfwbuilder-4.1.2
@@ -21,9 +21,9 @@ WANTLIB=	m netsnmp stdc++ xml2 xslt z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
 MODULES=	x11/qt4 converters/libiconv
-LIB_DEPENDS+=	::textproc/libxslt \
-		::textproc/libxml \
-		::net/net-snmp
+LIB_DEPENDS+=	textproc/libxslt \
+		textproc/libxml \
+		net/net-snmp
 
 AUTOMAKE_VERSION =	1.10
 AUTOCONF_VERSION =	2.63
@@ -35,7 +35,7 @@ CONFIGURE_STYLE =	gnu
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 # wants libtoolize but does not use libtool
-BUILD_DEPENDS +=::devel/libtool
+BUILD_DEPENDS +=devel/libtool
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/libfwbuilder \

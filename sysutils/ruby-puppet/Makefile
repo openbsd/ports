@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/17 13:07:17 robert Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=	centralised configuration management for networks
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::converters/ruby-json \
-		::sysutils/ruby-facter \
+RUN_DEPENDS=	converters/ruby-json \
+		sysutils/ruby-facter \
 		${MODRUBY_ICONV_DEPENDS}
 
 USE_GROFF =	Yes

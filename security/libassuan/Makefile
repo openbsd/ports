@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 07:43:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
@@ -25,7 +25,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 WANTLIB=		gpg-error
-LIB_DEPENDS=		::security/libgpg-error
+LIB_DEPENDS=		security/libgpg-error
 
 CONFIGURE_STYLE=	gnu
 

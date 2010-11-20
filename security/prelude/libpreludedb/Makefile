@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/16 10:11:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/20 17:22:45 espie Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -34,22 +34,22 @@ WANTLIB-mysql=	${WANTLIB} preludedb lib/mysql/mysqlclient crypto m ssl
 WANTLIB-pgsql=	${WANTLIB} preludedb pq
 WANTLIB-sqlite=	${WANTLIB} preludedb sqlite3
 
-LIB_DEPENDS=		::security/libgcrypt \
-			::security/gnutls \
-			::security/libgpg-error \
-			::security/prelude/libprelude
+LIB_DEPENDS=		security/libgcrypt \
+			security/gnutls \
+			security/libgpg-error \
+			security/prelude/libprelude
 
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
-			::${BUILD_PKGPATH} \
-			::databases/postgresql
+			${BUILD_PKGPATH} \
+			databases/postgresql
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
-			::${BUILD_PKGPATH} \
-			::databases/mysql
+			${BUILD_PKGPATH} \
+			databases/mysql
 
 LIB_DEPENDS-sqlite=	${LIB_DEPENDS} \
-			::${BUILD_PKGPATH} \
-			::databases/sqlite3
+			${BUILD_PKGPATH} \
+			databases/sqlite3
 
 RUN_DEPENDS-pgsql=	# empty
 RUN_DEPENDS-mysql=	# empty

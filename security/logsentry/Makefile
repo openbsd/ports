@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	logfile auditing tool
 
 DISTNAME=	logsentry-1.1.1
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	security
 
 MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>

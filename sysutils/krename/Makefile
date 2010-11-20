@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,18 +22,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender c fam jpeg m png
 WANTLIB += pthread pthread-stubs stdc++ util xcb z
-WANTLIB += art_lgpl_2.>=5 idn.>=16.30 DCOP.>=7 kdecore kdefx kdesu
+WANTLIB += art_lgpl_2>=5 idn>=16.30 DCOP>=7 kdecore kdefx kdesu
 WANTLIB += kdeui kio kparts kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/}
 
 MODULES=	x11/kde devel/gettext
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::x11/kde/base3
-LIB_DEPENDS=	::graphics/libart \
-		:libidn->=1.1:devel/libidn \
-		::x11/kde/libs3
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/kde/base3
+LIB_DEPENDS=	graphics/libart \
+		devel/libidn>=1.1 \
+		x11/kde/libs3
 
 USE_GMAKE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:41 espie Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -27,13 +27,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gpg-error m pthread gcrypt.>=12
+WANTLIB += c gpg-error m pthread gcrypt>=12
 
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${V}/
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/argp-standalone
-LIB_DEPENDS=	::security/libgcrypt
+BUILD_DEPENDS=	devel/argp-standalone
+LIB_DEPENDS=	security/libgcrypt
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes

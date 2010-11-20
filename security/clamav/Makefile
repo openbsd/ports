@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/04 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.96.4
@@ -21,19 +21,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		bz2 c ltdl m milter ncurses pthread stdc++ z
 
-BUILD_DEPENDS=		::devel/check
+BUILD_DEPENDS=		devel/check
 
 # XXX can this use llvm from ports rather than bundled?
-LIB_DEPENDS=		::archivers/bzip2 \
-			::devel/libtool,-ltdl
+LIB_DEPENDS=		archivers/bzip2 \
+			devel/libtool,-ltdl
 
-RUN_DEPENDS=		::archivers/lha \
-			::archivers/zoo \
-			::archivers/arc \
-			::archivers/unzip 
+RUN_DEPENDS=		archivers/lha \
+			archivers/zoo \
+			archivers/arc \
+			archivers/unzip 
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
 

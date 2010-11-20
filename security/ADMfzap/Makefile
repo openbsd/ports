@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:42 espie Exp $
 
 COMMENT=		connect() and bind() wrapper to evade packet filtering
 
@@ -6,7 +6,8 @@ COMMENT=		connect() and bind() wrapper to evade packet filtering
 SHARED_ONLY=		Yes
 
 DISTNAME=		ADMfzap
-PKGNAME=        	ADMfzap-0.1p0
+PKGNAME=        	ADMfzap-0.1
+REVISION =		0
 CATEGORIES=		security
 
 MAINTAINER=     	Jason Peel <jsyn@openbsd.org>

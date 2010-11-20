@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT= 	catalyst authentication via .htpasswd
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::security/p5-Authen-Htpasswd \
-		::security/p5-Catalyst-Plugin-Authentication
+RUN_DEPENDS=	security/p5-Authen-Htpasswd \
+		security/p5-Catalyst-Plugin-Authentication
 
 .include <bsd.port.mk>

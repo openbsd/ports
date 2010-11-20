@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	Objective Caml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.2.4
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

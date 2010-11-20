@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:45 espie Exp $
 
 COMMENT =		retrieves syskey and extract hashes
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX =		.tar.bz2
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

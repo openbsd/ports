@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -20,7 +20,7 @@ WANTLIB=		c pcre
 MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::devel/pcre
+LIB_DEPENDS=	devel/pcre
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu

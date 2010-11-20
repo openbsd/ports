@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	system secureness checker
 
 DISTNAME=	cops.1.04
-PKGNAME=	cops-1.04p0
+PKGNAME =	cops-1.04
+REVISION =	0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/scanners/cops/

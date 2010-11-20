@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	provable prime number generator
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::security/p5-Crypt-Random
+RUN_DEPENDS=	security/p5-Crypt-Random
 
 .include <bsd.port.mk>

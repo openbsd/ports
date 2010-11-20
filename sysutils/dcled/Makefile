@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/02 08:10:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:40 espie Exp $
 
 COMMENT =	userland driver for Dream Link USB LED Message Board
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://www.last-outpost.com/~malakai/dcled/
 
 WANTLIB += 	c hid usb
 
-LIB_DEPENDS = 	::devel/libhid
+LIB_DEPENDS = 	devel/libhid
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	interface for getting PID info
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::devel/p5-Class-Std \
-		::devel/p5-Class-Std-Utils \
-		::devel/p5-List-Cycle \
-		::math/p5-Math-Fibonacci-Phi
+RUN_DEPENDS=	devel/p5-Class-Std \
+		devel/p5-Class-Std-Utils \
+		devel/p5-List-Cycle \
+		math/p5-Math-Fibonacci-Phi
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

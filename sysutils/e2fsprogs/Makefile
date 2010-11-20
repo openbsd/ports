@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 17:22:40 espie Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		utilities to manipulate ext2 filesystems
 
 DISTNAME=		e2fsprogs-1.41.4
-PKGNAME=		${DISTNAME}p4
+REVISION =		4
 CATEGORIES=		sysutils devel
 SHARED_LIBS=		blkid		0.0 \
 			e2p		3.0 \
@@ -31,7 +31,7 @@ SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-elf-shlibs --disable-tls
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_FLAGS=		LIBblkid_VERSION=${LIBblkid_VERSION} \
 			LIBe2p_VERSION=${LIBe2p_VERSION} \

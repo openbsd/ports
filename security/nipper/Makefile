@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:44 espie Exp $
 
 COMMENT =		audit network device configuration
 
@@ -20,12 +20,12 @@ EXTRACT_SUFX =		.tgz
 
 WANTLIB =		c m stdc++ nipper
 
-LIB_DEPENDS=		::security/libnipper
+LIB_DEPENDS=		security/libnipper
 
 CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 pre-configure:

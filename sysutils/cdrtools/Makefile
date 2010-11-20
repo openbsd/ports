@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 17:22:40 espie Exp $
 
 COMMENT=		ISO 9660 filesystem and CD creation tools
 
 DISTNAME=		cdrtools-2.01
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 CATEGORIES=		sysutils
 HOMEPAGE=		http://cdrecord.berlios.de/old/private/cdrecord.html
 
@@ -17,7 +17,7 @@ WANTLIB=		c ossaudio
 MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_ENV=		MAKEPROG=${MAKE_PROGRAM} \
 			CCOM=${CC}

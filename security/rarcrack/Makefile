@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 18:43:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:45 espie Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m pthread z iconv xml2
-LIB_DEPENDS=		::textproc/libxml
+LIB_DEPENDS=		textproc/libxml
 
-RUN_DEPENDS=		::archivers/p7zip \
-			::archivers/unrar \
-			::archivers/unzip
+RUN_DEPENDS=		archivers/p7zip \
+			archivers/unrar \
+			archivers/unzip
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rarcrack/}
 EXTRACT_SUFX=   	.tar.bz2

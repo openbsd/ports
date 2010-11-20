@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	RSA public-key cryptosystem
 
@@ -14,13 +14,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::converters/p5-Convert-ASCII-Armour \
-		::devel/p5-Data-Buffer \
-		::security/p5-Crypt-CBC \
-		::security/p5-Crypt-Primes \
-		::security/p5-Digest-MD2 \
-		::security/p5-Digest-SHA1 \
-		::security/p5-Tie-EncryptedHash \
-		::textproc/p5-Sort-Versions
+RUN_DEPENDS=	converters/p5-Convert-ASCII-Armour \
+		devel/p5-Data-Buffer \
+		security/p5-Crypt-CBC \
+		security/p5-Crypt-Primes \
+		security/p5-Digest-MD2 \
+		security/p5-Digest-SHA1 \
+		security/p5-Tie-EncryptedHash \
+		textproc/p5-Sort-Versions
 
 .include <bsd.port.mk>

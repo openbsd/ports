@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/07 16:52:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:43 espie Exp $
 
 COMMENT=	application for managing passwords
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kedpm/}
 
-RUN_DEPENDS=	:py-gtk2-*:x11/py-gtk2 \
-		:py-crypto-*:security/py-crypto
+RUN_DEPENDS=	x11/py-gtk2 \
+		security/py-crypto
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 MODULES=	lang/python

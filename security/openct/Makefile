@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:44 espie Exp $
 
 COMMENT=	drivers for several smart card readers
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www.opensc-project.org/files/openct/
 
-WANTLIB=	c usb.>=8 ltdl.>=4
-LIB_DEPENDS=	::devel/libusb \
-		::devel/libtool,-ltdl
+WANTLIB=	c usb>=8 ltdl>=4
+LIB_DEPENDS=	devel/libusb \
+		devel/libtool,-ltdl
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

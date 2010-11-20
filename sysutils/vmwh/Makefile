@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/11 14:52:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:42 espie Exp $
 
 ONLY_FOR_ARCHS =amd64 i386
 
@@ -22,7 +22,7 @@ MASTER_SITES =	http://distfiles.nl/
 
 WANTLIB +=	c
 
-RUN_DEPENDS =	::x11/xclip
+RUN_DEPENDS =	x11/xclip
 
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"

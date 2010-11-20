@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/22 19:14:56 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 17:22:44 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,8 +26,8 @@ WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/
 
-LIB_DEPENDS=		:nspr->=4.8:devel/nspr \
-			:sqlite3->=3.6.13:databases/sqlite3
+LIB_DEPENDS=		devel/nspr>=4.8 \
+			databases/sqlite3>=3.6.13
 
 MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \

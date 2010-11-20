@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/11 19:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	modular log analyzer
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext
 
 WANTLIB=	c expat fontconfig freetype jpeg m png z \
-		gd.>=18 pcre adns.>=1 bz2.>=10
-LIB_DEPENDS=	::graphics/gd \
-		::devel/pcre \
-		::net/adns \
-		::archivers/bzip2
+		gd>=18 pcre adns>=1 bz2>=10
+LIB_DEPENDS=	graphics/gd \
+		devel/pcre \
+		net/adns \
+		archivers/bzip2
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

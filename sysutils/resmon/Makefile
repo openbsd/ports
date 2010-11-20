@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/02 19:12:15 jdixon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 17:22:42 espie Exp $
 
 COMMENT-main =		system monitoring tool
 COMMENT-nagios =	nagios plugin for resmon
@@ -25,7 +25,7 @@ NO_BUILD =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 
-RUN_DEPENDS-nagios =	::net/nagios/plugins,-main
+RUN_DEPENDS-nagios =	net/nagios/plugins,-main
 
 INSTDIR =	${PREFIX}/libdata/perl5/site_perl
 RESMONCONF =	${SYSCONFDIR}/resmon

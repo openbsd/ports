@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/13 19:12:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:41 espie Exp $
 
 COMMENT=	snapshot and background plugin for Gkrellm2
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://gkrellshoot.sourceforge.net
 MASTER_SITES=  	${MASTER_SITE_SOURCEFORGE:=gkrellshoot/}
 
-RUN_DEPENDS=	:ImageMagick-*:graphics/ImageMagick
+RUN_DEPENDS=	graphics/ImageMagick
 
 WRKDIST=	${WRKDIR}/gkrellShoot-${V}
 ALL_TARGET=	gkrellshoot.so
