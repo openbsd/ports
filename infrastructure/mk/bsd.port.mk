@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1061 2010/11/16 19:26:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1062 2010/11/20 19:57:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -96,7 +96,7 @@ _ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
 	SUBPACKAGE MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
-	PKG_ARCH EPOCH REVISION
+	PKG_ARCH EPOCH REVISION PKGSPEC
 _ALL_VARIABLES_PER_ARCH =
 
 .if ${DPB:L:Mfetch}
@@ -594,6 +594,8 @@ FULLPKGNAME := ${FULLPKGNAME}p${REVISION}
 FULLPKGNAME := ${FULLPKGNAME}v${EPOCH}
 .      endif
 .    endif
+PKGSPEC ?= ${FULLPKGNAME:C/-[0-9].*/-*/}
+PKGSPEC- = ${PKGSPEC}
 FULLPKGNAME- = ${FULLPKGNAME}
 _READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME}.html
 .else
@@ -625,6 +627,7 @@ FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}p${REVISION${_s}}
 FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}v${EPOCH${_s}}
 .      endif
 .    endif
+PKGSPEC${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*/-*/}
 _READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_s}}.html
 .  endfor
 .endif
@@ -1615,7 +1618,6 @@ _zap_last_line = sed -e '$$d'
 _sort_dependencies = tsort -r|${_zap_last_line}
 
 _version2stem = sed -e 's,-[0-9].*,,'
-_version2default = sed -e 's,-[0-9].*,-*,'
 
 _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
@@ -1633,7 +1635,7 @@ _compute_default = \
 		exit 1; \
 	fi
 
-_set_pkg2default= pkg=`echo $$default|${_version2default}`
+_set_pkg2default= pkg=`eval $$toset ${MAKE} _print-pkgspec`
 _set_stem2default=stem=`echo $$default|${_version2stem}`; \
 		pkg="$$stem$${pkg\#STEM}"
 
@@ -1851,6 +1853,9 @@ _internal-prepare: _internal-build-depends _internal-buildlib-depends \
 
 # and the rules for the actual dependencies
 
+_print-pkgspec:
+	@echo ${PKGSPEC${SUBPACKAGE}}
+
 _print-packagename:
 .if ${_FULL_PACKAGE_NAME:L} == "yes"
 	@echo '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
@@ -1887,10 +1892,8 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		toset="$$toset _SOLVING_DEP=Yes"; \
 		case "X$$pkg" in \
 		X) \
-			if default=`eval $$toset ${MAKE} _print-packagename`; \
+			if ! pkg=`eval $$toset ${MAKE} _print-pkgspec`; \
 			then \
-				${_set_pkg2default}; \
-			else \
 				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
 				${REPORT_PROBLEM}; \
 				exit 1; \
@@ -3416,7 +3419,7 @@ _all_phony = ${_recursive_depends_targets} \
 	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends repackage run-depends run-depends-list show-required-by \
-	subpackage uninstall mirror-maker-fetch \
+	subpackage uninstall mirror-maker-fetch _print-pkgspec \
 	lock unlock _print-plist-with-extra-depends
 
 .if defined(_DEBUG_TARGETS)
