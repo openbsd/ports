@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -24,17 +24,17 @@ MODULES=		lang/python \
 			textproc/intltool
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/xmlto
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::devel/gettext \
-			::devel/py-notify \
-			::print/py-cups \
-			::textproc/py-xml \
-			::x11/dbus-python \
-			::x11/gnome/py-gnome
+			textproc/xmlto
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/gettext \
+			devel/py-notify \
+			print/py-cups \
+			textproc/py-xml \
+			x11/dbus-python \
+			x11/gnome/py-gnome
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS=-I${LOCALBASE}/include \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/03 07:34:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	command-line interface to Google services
 
@@ -25,7 +25,7 @@ MASTER_SITES=	http://googlecl.googlecode.com/files/
 
 MODPY_SETUPTOOLS= Yes
 USE_GROFF =	Yes
-RUN_DEPENDS=	::devel/py-gdata
+RUN_DEPENDS=	devel/py-gdata
 NO_REGRESS=	Yes
 
 # Use the version of python we are configured against.

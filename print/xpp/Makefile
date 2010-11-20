@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:32:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		X Printing Panel
 
@@ -20,8 +20,8 @@ WANTLIB += m pthread ssl stdc++ z cups jpeg fltk fltk_images png
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cups/}
 
-LIB_DEPENDS=		::print/cups \
-			::x11/fltk
+LIB_DEPENDS=		print/cups \
+			x11/fltk
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	X11 front-end for ghostscript
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb
 
-RUN_DEPENDS=    :ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS=    print/ghostscript/gnu
 
 CONFIGURE_STYLE=imake
 USE_GROFF =	Yes

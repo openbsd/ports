@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:38 espie Exp $
 
 NOT_FOR_ARCHS =		arm hppa hp300
 
@@ -22,7 +22,7 @@ MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
                         http://distfiles.nl/
 EXTRACT_SUFX =		.tar.Z
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 .if "${MACHINE_ARCH}" == "alpha"

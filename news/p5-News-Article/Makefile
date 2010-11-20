@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	perl module for accessing NNTP articles
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign
+RUN_DEPENDS=	security/p5-PGP-Sign
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

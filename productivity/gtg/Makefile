@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -21,16 +21,16 @@ EXTRACT_SUFX=		.tar.gz
 MODULES=		lang/python \
 			x11/gnome
 
-RUN_DEPENDS=		::devel/py-configobj \
-			::devel/py-simplejson \
-			::devel/py-xdg \
-			::x11/dbus-python \
-			::x11/gnome/py-gnome
-BUILD_DEPENDS=		::x11/py-gtk2
+RUN_DEPENDS=		devel/py-configobj \
+			devel/py-simplejson \
+			devel/py-xdg \
+			x11/dbus-python \
+			x11/gnome/py-gnome
+BUILD_DEPENDS=		x11/py-gtk2
 
 DESKTOP_FILES=		Yes
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 SUBST_VARS+=		VERSION

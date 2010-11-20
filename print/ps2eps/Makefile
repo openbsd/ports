@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	convert Postscript to Encapsulated Postscript
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.tm.uka.de/~bless/
 
-RUN_DEPENDS=	::print/ghostscript/gnu
+RUN_DEPENDS=	print/ghostscript/gnu
 
 WANTLIB=	c
 WRKDIST= 	${WRKDIR}/ps2eps

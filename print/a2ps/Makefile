@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -26,12 +26,12 @@ MASTER_SITES=	${MASTER_SITE_GNU:=a2ps/}
 MODULES=	devel/gettext
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
-BUILD_DEPENDS=	::print/psutils \
-		::devel/gperf
+BUILD_DEPENDS=	print/psutils \
+		devel/gperf
 
 FLAVORS=	a4 a4dj letter letterdj
 FLAVOR?=	letter
@@ -39,18 +39,18 @@ FLAVOR?=	letter
 .if defined(FLAVOR)
 .if ${FLAVOR:L} == "a4"
 PAPERSIZE=	A4
-RUN_DEPENDS+=	:psutils-*-a4:print/psutils,a4
+RUN_DEPENDS+=	psutils-*-a4:print/psutils,a4
 .elif ${FLAVOR:L} == "a4dj"
 PAPERSIZE=	A4dj
-RUN_DEPENDS+=	:psutils-*-a4:print/psutils,a4
+RUN_DEPENDS+=	psutils-*-a4:print/psutils,a4
 .elif ${FLAVOR:L} == "letterdj"
 PAPERSIZE=	Letterdj
-RUN_DEPENDS+=	:psutils-*-letter:print/psutils,letter
+RUN_DEPENDS+=	psutils-*-letter:print/psutils,letter
 .elif ${FLAVOR:L} == "letter"
 PAPERSIZE=	Letter
-RUN_DEPENDS+=	:psutils-*-letter:print/psutils,letter
+RUN_DEPENDS+=	psutils-*-letter:print/psutils,letter
 .else
-RUN_DEPENDS+=	::print/psutils
+RUN_DEPENDS+=	print/psutils
 .endif
 .endif
 

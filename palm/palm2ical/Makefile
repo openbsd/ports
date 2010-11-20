@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/15 17:31:10 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 09:48:38 espie Exp $
 
 COMMENT =	Palm Databook/Calendar export to iCalendar
 
@@ -22,10 +22,10 @@ WRKDIST =	${WRKDIR}
 NO_BUILD =	Yes
 PKG_ARCH =	*
 
-RUN_DEPENDS =	::palm/p5-Palm \
-		::devel/p5-Data-ICal \
-		::devel/p5-DateTime-Format-ICal \
-		::devel/p5-Data-ICal-TimeZone
+RUN_DEPENDS =	palm/p5-Palm \
+		devel/p5-Data-ICal \
+		devel/p5-DateTime-Format-ICal \
+		devel/p5-Data-ICal-TimeZone
 
 NO_REGRESS =	Yes
 

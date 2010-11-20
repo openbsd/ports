@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	project management tool
 
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
 		ac_cv_prog_DOCBOOK_TO_MAN=no
 
-LIB_DEPENDS=	::x11/kde/pim3
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/pim3
+RUN_DEPENDS=	devel/desktop-file-utils
 
 # XXX tries building the documentation from XML, which fails
 NO_REGRESS=	Yes

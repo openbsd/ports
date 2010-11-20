@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
@@ -9,8 +9,8 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
-		:p5-News-Article->=1.07:news/p5-News-Article
+RUN_DEPENDS=	security/p5-PGP-Sign \
+		news/p5-News-Article>=1.07
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/24 21:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
@@ -30,10 +30,10 @@ MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		:gmime->=2.4,<2.6:mail/gmime24 \
-		::textproc/gtkspell
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2 \
+		gmime->=2.4,<2.6:mail/gmime24 \
+		textproc/gtkspell
+RUN_DEPENDS=	devel/desktop-file-utils
 
 VMEM_WARNING=	Yes
 

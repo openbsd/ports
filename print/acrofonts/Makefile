@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/10 13:45:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		asian font pack for acroread
 
@@ -20,7 +20,7 @@ DISTFILES=		chsfont.tar.gz chtfont.tar.gz \
 
 DIST_SUBDIR=		acrofonts
 
-RUN_DEPENDS=		:acroread->=7:print/acroread
+RUN_DEPENDS=		print/acroread>=7
 
 NO_BUILD=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/20 09:48:39 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,13 +39,13 @@ WANTLIB += ${MODPY_WANTLIB}
 MODULES=		devel/gettext lang/python
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
-			::graphics/cairo	\
-			::graphics/jpeg		\
-			::devel/pango		\
-			::graphics/png		\
-			::graphics/tiff		\
-			::graphics/libungif	\
-			::textproc/libxml
+			graphics/cairo	\
+			graphics/jpeg		\
+			devel/pango		\
+			graphics/png		\
+			graphics/tiff		\
+			graphics/libungif	\
+			textproc/libxml
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 
@@ -60,7 +60,7 @@ CONFIGURE_ARGS=		--without-freetype-src \
 			--with-regular-link
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

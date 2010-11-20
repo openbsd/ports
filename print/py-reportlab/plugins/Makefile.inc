@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2004/11/02 21:10:03 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/11/20 09:48:40 espie Exp $
 
 CATEGORIES=	print graphics
 
@@ -16,6 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::print/py-reportlab/reportlab
+RUN_DEPENDS=	print/py-reportlab/reportlab
 
 REGRESS_DEPENDS=${RUN_DEPENDS}

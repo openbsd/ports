@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/28 09:19:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
@@ -22,8 +22,8 @@ MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_JRERUN= Yes
 
-RUN_DEPENDS=	::java/javaPathHelper \
-		::devel/xdg-utils
+RUN_DEPENDS=	java/javaPathHelper \
+		devel/xdg-utils
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

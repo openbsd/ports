@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		lightweight tasklist
 
@@ -32,8 +32,8 @@ MODULES=		devel/gettext \
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		::databases/evolution-data-server
-RUN_DEPENDS=		::devel/desktop-file-utils
+LIB_DEPENDS=		databases/evolution-data-server
+RUN_DEPENDS=		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 09:48:38 espie Exp $
 
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc sparc64
@@ -32,7 +32,7 @@ MASTER_SITES=		${HOMEPAGE}
 SEPARATE_BUILD=		simple
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED} \

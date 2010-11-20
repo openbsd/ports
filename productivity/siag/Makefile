@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		tightly integrated, free office package
 
@@ -22,8 +22,8 @@ MASTER_SITES=		http://siag.nu/pub/siag/
 
 USE_GROFF=		Yes
 
-LIB_DEPENDS=		::x11/mowitz \
-			::x11/neXtaw
+LIB_DEPENDS=		x11/mowitz \
+			x11/neXtaw
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 09:48:38 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 COMMENT=		Palm OS Emulator
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=		::x11/fltk
+BUILD_DEPENDS=		x11/fltk
 
 MASTER_SITES=		http://www.palmos.com/dev/tools/emulator/sources/
 DISTFILES=		${DISTNAME:L}.tar.gz

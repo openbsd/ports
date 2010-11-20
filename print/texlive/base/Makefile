@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/14 19:53:51 edd Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -12,19 +12,19 @@ WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu gd \
 			png.>=3	poppler pthread pthread-stubs stdc++ t1.>=4 \
 			ttf xcb	xml2 z
 
-RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
-			:detex-*:print/detex \
-			:dvi2tty-*:print/dvi2tty \
-			:ps2eps-*:print/ps2eps \
-			:psutils-*:print/psutils \
-			:t1utils-*:print/t1utils \
-			:texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+RUN_DEPENDS =		print/ghostscript/gnu \
+			print/detex \
+			print/dvi2tty \
+			print/ps2eps \
+			print/psutils \
+			print/t1utils \
+			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 			
-LIB_DEPENDS =		::devel/t1lib \
-			::graphics/png \
-			::graphics/gd \
-			::print/freetype \
-			::print/poppler
+LIB_DEPENDS =		devel/t1lib \
+			graphics/png \
+			graphics/gd \
+			print/freetype \
+			print/poppler
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -48,9 +48,9 @@ CFLAGS +=	-fPIC
 
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS += 	:clisp-*:lang/clisp
-LIB_DEPENDS +=		::devel/libsigsegv \
-			::devel/ffcall
+BUILD_DEPENDS += 	lang/clisp
+LIB_DEPENDS +=		devel/libsigsegv \
+			devel/ffcall
 WANTLIB +=		sigsegv avcall callback
 CONFIGURE_ARGS +=	--enable-xindy
 PKG_ARGS +=		-Dxindy=1

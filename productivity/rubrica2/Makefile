@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 09:48:40 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,12 +47,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info-*:misc/shared-mime-info \
-		::x11/gnome/icon-theme
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gnome/icon-theme
 
-LIB_DEPENDS=	::devel/libnotify \
-		::devel/libglade2
+LIB_DEPENDS=	devel/libnotify \
+		devel/libglade2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

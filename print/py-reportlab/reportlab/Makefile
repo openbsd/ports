@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
@@ -27,13 +27,13 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:py-Imaging-*:graphics/py-Imaging
+RUN_DEPENDS=	graphics/py-Imaging
 
 WRKDIST=	${WRKDIR}/reportlab_${VERSION:S/./_/}
 WRKSRC=		${WRKDIST}/reportlab
 
 REGRESS_DEPENDS=${RUN_DEPENDS} \
-		::print/py-reportlab/plugins/renderPM 
+		print/py-reportlab/plugins/renderPM 
 
 post-extract:
 	@mv ${WRKDIR}/rl_accel-*/rl_accel ${WRKSRC}/rl_accel

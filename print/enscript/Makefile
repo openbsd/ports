@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
@@ -25,7 +25,7 @@ WANTLIB=		c m
 CONFIGURE_STYLE=	gnu
 # gettext detection is broken and the translations are severely lacking
 CONFIGURE_ARGS=		--disable-nls
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .if !${FLAVOR:L:Ma4}
 CONFIGURE_ARGS+=	--with-media=Letter

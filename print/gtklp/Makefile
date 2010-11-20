@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo crypto cups.>=3
+WANTLIB += Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo crypto cups>=3
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
 WANTLIB += gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
@@ -29,8 +29,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtklp/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::print/cups
+LIB_DEPENDS=	x11/gtk+2 \
+		print/cups
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

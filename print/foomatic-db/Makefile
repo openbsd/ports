@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/24 16:33:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 09:48:39 espie Exp $
 
 PKG_ARCH=		*
 
@@ -28,7 +28,7 @@ MASTER_SITES=		http://www.bsdfrog.org/OpenBSD/distfiles/
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-ppds-to-cups
 
-RUN_DEPENDS=		::print/foomatic-db-engine
+RUN_DEPENDS=		print/foomatic-db-engine
 
 WRKDIST=		${WRKDIR}/foomatic-db-${V}
 

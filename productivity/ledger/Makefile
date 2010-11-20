@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/14 00:02:24 jim Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
@@ -19,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://github.com/downloads/jwiegley/ledger/
 
-WANTLIB=	gmp.>=4 m pcre stdc++
+WANTLIB=	gmp>=4 m pcre stdc++
 
-LIB_DEPENDS=	::devel/gmp \
-		::devel/pcre
+LIB_DEPENDS=	devel/gmp \
+		devel/pcre
 
 SEPARATE_BUILD=	simple
 

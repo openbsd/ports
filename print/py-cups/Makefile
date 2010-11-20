@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 18:29:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 09:48:39 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		converters/libiconv \
 			lang/python
 
-LIB_DEPENDS=		::print/cups
+LIB_DEPENDS=		print/cups
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${VERSION}\"
 LDFLAGS+=		-L${LOCALBASE}/lib

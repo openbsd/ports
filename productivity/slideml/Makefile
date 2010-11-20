@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/02 08:22:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://opensource.conformal.com/snapshots/slideml/
 EXTRACT_SUFX =		.tgz
 
-RUN_DEPENDS =		::graphics/p5-Image-Size 
+RUN_DEPENDS =		graphics/p5-Image-Size 
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

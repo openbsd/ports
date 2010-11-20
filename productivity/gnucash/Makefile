@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/20 09:48:40 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -57,12 +57,12 @@ MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_HELP_FILES =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS =	::devel/slib \
-		::devel/slib-guile
-LIB_DEPENDS =	::devel/goffice \
-		::lang/guile \
-		::www/gtkhtml3 \
-		::x11/gnome/libgnomeui
+RUN_DEPENDS =	devel/slib \
+		devel/slib-guile
+LIB_DEPENDS =	devel/goffice \
+		lang/guile \
+		www/gtkhtml3 \
+		x11/gnome/libgnomeui
 
 CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so
@@ -71,7 +71,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-ofx
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # Steps to build the docs.
 DOC_DIR=		${WRKDIR}/gnucash-docs-${DOC_VERSION}

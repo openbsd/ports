@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/20 09:48:39 espie Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -63,20 +63,20 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 WANTLIB-main=		X11 c expat fontconfig freetype gmp gthread-2.0 ltdl m \
-			pthread stdc++ z guile.>=20 glib-2.0.>=1000 \
-			gmodule-2.0.>=1000 gobject-2.0.>=1000 \
-			pango-1.0.>=1200 pangoft2-1.0.>=1200 ${WANTLIB}
+			pthread stdc++ z guile>=20 glib-2.0>=1000 \
+			gmodule-2.0>=1000 gobject-2.0>=1000 \
+			pango-1.0>=1200 pangoft2-1.0>=1200 ${WANTLIB}
 MODULES=		devel/gettext lang/python
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::lang/guile \
-			::devel/glib2 \
-			::devel/pango
-RUN_DEPENDS=		::print/ghostscript/gnu
-BUILD_DEPENDS= 		::print/mftrace \
-			::devel/bison \
-			::archivers/bzip2 \
-			:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-			::textproc/texi2html \
+			lang/guile \
+			devel/glib2 \
+			devel/pango
+RUN_DEPENDS=		print/ghostscript/gnu
+BUILD_DEPENDS= 		print/mftrace \
+			devel/bison \
+			archivers/bzip2 \
+			autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+			textproc/texi2html \
 			${RUN_DEPENDS}
 
 SUBST_VARS+=		VERSION
@@ -94,7 +94,7 @@ post-install:
 	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/* \
 		${PREFIX}/share/doc/lilypond/${VERSION}
 
-REGRESS_DEPENDS=	::print/lilypond-test-baseline:patch
+REGRESS_DEPENDS=	print/lilypond-test-baseline:patch
 
 pre-regress:
 .for d in input/regression input/regression/musicxml

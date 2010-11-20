@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/20 09:48:39 espie Exp $
 
 COMMENT-main=	English PK fonts (300dpi) for ghostscript, xdvi, etc.
 
 DISTNAME=	pkfonts
 VERSION=	1.0
-PKGNAME=	pkfonts-dpi300-${VERSION}p0
-PKGNAME-main=	pkfonts-dpi300-${VERSION}p0
+PKGNAME=	pkfonts-dpi300-${VERSION}
+REVISION =	0
+PKGNAME-main=	pkfonts-dpi300-${VERSION}
+REVISION-main =	0
 CATEGORIES=	print
 
 PERMIT_PACKAGE_CDROM=	no license

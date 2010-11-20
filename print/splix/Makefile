@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/12 13:54:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += asn1 c crypto gssapi krb5 m pthread ssl stdc++ z
-WANTLIB += cups.>=3 cupsimage jbig.>=2
+WANTLIB += cups>=3 cupsimage jbig>=2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
-LIB_DEPENDS=	::print/cups \
-		::graphics/jbigkit
+LIB_DEPENDS=	print/cups \
+		graphics/jbigkit
 # pstoraster
-RUN_DEPENDS=	::print/ghostscript/gnu
+RUN_DEPENDS=	print/ghostscript/gnu
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
@@ -31,11 +31,11 @@ WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0 ofx
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::textproc/libxml \
-		::x11/gtk+2 \
-		::devel/libofx
+LIB_DEPENDS=	textproc/libxml \
+		x11/gtk+2 \
+		devel/libofx
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

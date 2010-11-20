@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=		retrieve and process nzb-files
 
@@ -17,11 +17,11 @@ MASTER_SITES=		http://www.hellanzb.com/distfiles/
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		::archivers/par2cmdline \
-			::archivers/unrar \
-			::devel/py-twisted/core \
-			::devel/py-twisted/web \
-			::news/py-yenc
+RUN_DEPENDS=		archivers/par2cmdline \
+			archivers/unrar \
+			devel/py-twisted/core \
+			devel/py-twisted/web \
+			news/py-yenc
 
 NO_REGRESS=		Yes
 

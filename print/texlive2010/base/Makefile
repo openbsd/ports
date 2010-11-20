@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/17 13:19:06 edd Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -13,22 +13,22 @@ WANTLIB +=		fontconfig freetype gd jpeg lcms m ncurses
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
 WANTLIB +=		t1>=4 ttf xcb xml2 z
 
-RUN_DEPENDS =		::print/ghostscript/gnu \
-			::print/detex \
-			::print/dvi2tty \
-			::print/ps2eps \
-			::print/psutils \
-			::print/t1utils \
-			:texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
-			::print/latex-mk
+RUN_DEPENDS =		print/ghostscript/gnu \
+			print/detex \
+			print/dvi2tty \
+			print/ps2eps \
+			print/psutils \
+			print/t1utils \
+			texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
+			print/latex-mk
 # re-enable when linked, it depends up tl2009, conflicts
 #::print/pdfjam
 			
-LIB_DEPENDS =		::devel/t1lib \
-			::graphics/png \
-			::graphics/gd \
-			::print/freetype \
-			::print/poppler
+LIB_DEPENDS =		devel/t1lib \
+			graphics/png \
+			graphics/gd \
+			print/freetype \
+			print/poppler
 
 MODULES =		textproc/intltool converters/libiconv
 
@@ -54,8 +54,8 @@ CFLAGS +=	-fPIC
 
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS += 	:clisp-*:lang/clisp
-LIB_DEPENDS +=		::devel/ffcall	# XXX still needed? try build on fresh sys
+BUILD_DEPENDS += 	lang/clisp
+LIB_DEPENDS +=		devel/ffcall	# XXX still needed? try build on fresh sys
 CONFIGURE_ARGS +=	--enable-xindy \
 			--disable-xindy-rules
 PKG_ARGS +=		-Dxindy=1

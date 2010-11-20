@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/09 08:06:05 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 09:48:39 espie Exp $
 
 COMMENT =		encoding files for poppler
 DISTNAME =		poppler-data-0.4.3
@@ -15,7 +15,7 @@ MASTER_SITES =		${HOMEPAGE}
 
 PKG_ARCH =		*
 
-RUN_DEPENDS =		::print/poppler
+RUN_DEPENDS =		print/poppler
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

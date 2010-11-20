@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:39 espie Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
@@ -24,8 +24,8 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 
 # we want the 'display' device from ghostscript, which is not available
 # in the no_x11 FLAVOR
-LIB_DEPENDS=	:ghostscript-*-!no_x11:print/ghostscript/gnu
-WANTLIB =	gs.>=11
+LIB_DEPENDS=	ghostscript-*-!no_x11:print/ghostscript/gnu
+WANTLIB =	gs>=11
 
 USE_LIBTOOL=	Yes
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-rules
 
 .ifdef DEBUG
-BUILD_DEPENDS+=	::graphics/cairo
+BUILD_DEPENDS+=	graphics/cairo
 CONFIGURE_ARGS+=--enable-test
 .else
 CONFIGURE_ARGS+=--disable-test

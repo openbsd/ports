@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -23,8 +23,7 @@ WANTLIB += stdc++ z Qt3Support QtGui QtNetwork QtSql QtXml
 MODULES=	devel/gettext \
 		x11/qt4
 
-RUN_DEPENDS=	::archivers/zip
-LIB_DEPENDS=	::x11/qt4
+RUN_DEPENDS=	archivers/zip
 
 PORTHOME=	${WRKDIR}
 NO_REGRESS=	Yes

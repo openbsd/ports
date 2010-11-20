@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		intelligent n-up printing
 
 DISTNAME=		psdim-1.4
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.mathstat.dal.ca/~selinger/psdim
@@ -18,14 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
-RUN_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-metric
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 SEPARATE_BUILD=		concurrent
 

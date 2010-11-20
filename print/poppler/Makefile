@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/18 22:30:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/20 09:48:39 espie Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -59,16 +59,16 @@ CONFIGURE_ARGS+=	--disable-poppler-qt4
 MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
-		::x11/gtk+2 \
-		::graphics/lcms \
-		::graphics/openjpeg \
-		::textproc/libxml
+		x11/gtk+2 \
+		graphics/lcms \
+		graphics/openjpeg \
+		textproc/libxml
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
 		${MODLIBICONV_LIB_DEPENDS} \
-		::print/poppler
-LIB_DEPENDS-qt4=::x11/qt4 \
+		print/poppler
+LIB_DEPENDS-qt4=x11/qt4 \
 		${MODGETTEXT_LIB_DEPENDS} \
-		::print/poppler
+		print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \

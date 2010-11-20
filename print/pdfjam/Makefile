@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 09:48:39 espie Exp $
 
 PKG_ARCH=	*
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tgz
 
 WRKDIST=	${WRKDIR}/pdfjam
 
-RUN_DEPENDS=	::print/texlive/base
+RUN_DEPENDS=	print/texlive/base
 
 USE_GROFF =	Yes
 NO_BUILD=	Yes

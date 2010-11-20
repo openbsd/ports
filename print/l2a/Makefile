@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		filter for removing (La)TeX markup
 
@@ -15,7 +15,7 @@ MASTER_SITES=		http://monkey.org/~jose/openbsd/ports/
 
 MAKE_FLAGS=		CC='${CC}' OBJ=l2a.o EXE=l2a LLL=-ll
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/13 09:36:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -26,8 +26,8 @@ MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
 
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS}
 
-RUN_DEPENDS=		::print/ghostscript/gnu \
-			::print/a2ps
+RUN_DEPENDS=		print/ghostscript/gnu \
+			print/a2ps
 
 AUTOMAKE_VERSION=1.10
 AUTOCONF_VERSION=2.61
@@ -54,7 +54,7 @@ CONFIGURE_ARGS=		--enable-file-converter-check=no
 MAKE_ENV=		${CONFIGURE_ENV}
 
 FAKE_FLAGS=		ETCDIR="${PREFIX}/share/examples/foomatic"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure.ac \

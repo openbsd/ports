@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/03/29 12:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	desktop publishing clip-art
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}/downloads/$V/
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	:bzip2-*:archivers/bzip2
+BUILD_DEPENDS=	archivers/bzip2
 
 EXTRACT_ONLY=
 PKG_ARCH=	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/09 13:38:23 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:40 espie Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
@@ -17,11 +17,11 @@ NO_BUILD =		Yes
 NO_REGRESS =		Yes
 PKG_ARCH =		*
 
-BUILD_DEPENDS =		::archivers/xz
-RUN_DEPENDS-full =	:texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-			:texlive_base-${V}:print/texlive/base
-RUN_DEPENDS-docs = 	:texlive_base-${V}:print/texlive/base \
-			::x11/p5-Tk
+BUILD_DEPENDS =		archivers/xz
+RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+			texlive_base-${V}:print/texlive/base
+RUN_DEPENDS-docs = 	texlive_base-${V}:print/texlive/base \
+			x11/p5-Tk
 
 MULTI_PACKAGES = 	-main -full -docs
 

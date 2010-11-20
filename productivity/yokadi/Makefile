@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =	command-line oriented todo list system
 
@@ -22,8 +22,8 @@ WRKDIST =	${WRKDIR}/yokadi-${MODPY_EGG_VERSION}
 MODULES =	lang/python
 NO_REGRESS =	Yes
 
-RUN_DEPENDS =	::devel/py-dateutil \
-		::databases/py-sqlobject
+RUN_DEPENDS =	devel/py-dateutil \
+		databases/py-sqlobject
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/update/{dump.py,update{.py,1to2,2to3,3to4}} \

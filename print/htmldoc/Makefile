@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -28,14 +28,14 @@ MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
 
 FLAVORS=		no_x11
 FLAVOR?=
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-gui
-LIB_DEPENDS=		::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS=		graphics/jpeg \
+			graphics/png
 .else
-LIB_DEPENDS=		::x11/fltk
+LIB_DEPENDS=		x11/fltk
 WANTLIB+=		X11 Xau Xdmcp Xext Xpm fltk fltk_images pthread
 .endif
 

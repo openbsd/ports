@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -19,16 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext lang/python x11/qt4
 
-RUN_DEPENDS=	::print/texlive/base \
-		::graphics/ImageMagick
+RUN_DEPENDS=	print/texlive/base \
+		graphics/ImageMagick
 
-LIB_DEPENDS=	:qt4->=4.5.3:x11/qt4 \
-		::devel/boost \
-		::textproc/aspell/core
+LIB_DEPENDS=	x11/qt4>=4.5.3 \
+		devel/boost \
+		textproc/aspell/core
 
-WANTLIB += QtGui.>=8 X11 aspell c m pthread stdc++ z
-WANTLIB += boost_filesystem-mt.>=1 boost_iostreams-mt.>=1
-WANTLIB += boost_regex-mt.>=1 boost_signals-mt.>=1
+WANTLIB += QtGui>=8 X11 aspell c m pthread stdc++ z
+WANTLIB += boost_filesystem-mt>=1 boost_iostreams-mt>=1
+WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
 
 SEPARATE_BUILD=	concurrent
 USE_LIBTOOL=	Yes

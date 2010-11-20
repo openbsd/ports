@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/08 14:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		PDF backend for CUPS
 
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-RUN_DEPENDS=		::print/cups \
-			::print/ghostscript/gnu \
-			::mail/p5-MIME-Lite \
-			::mail/p5-MIME-tools
+RUN_DEPENDS=		print/cups \
+			print/ghostscript/gnu \
+			mail/p5-MIME-Lite \
+			mail/p5-MIME-tools
 
 NO_REGRESS=		Yes
 

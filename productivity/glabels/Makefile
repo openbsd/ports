@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =	labels and businesss card designer
 
@@ -38,10 +38,10 @@ WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl ssl3 tasn1 util xcb xml2 z xcb-render xcb-render-util
 WANTLIB += gnomeui-2 camel-1.2 ebook-1.2 edataserver-1.2
 
-LIB_DEPENDS =	::x11/gnome/libgnomeui \
-		::databases/evolution-data-server
+LIB_DEPENDS =	x11/gnome/libgnomeui \
+		databases/evolution-data-server
 
-RUN_DEPENDS =	::misc/shared-mime-info
+RUN_DEPENDS =	misc/shared-mime-info
 
 MODGNOME_HELP_FILES =	Yes
 DESKTOP_FILES =		Yes
@@ -53,6 +53,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-update-desktopdb \
 			--disable-update-mimedb
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

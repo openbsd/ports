@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 21:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 09:48:39 espie Exp $
 
 COMMENT-main= 	object oriented type setting language
 COMMENT-doc=	Lout user and expert documentation
 
 DISTNAME=       lout-3.30
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-doc=    ${DISTNAME:S/-/-doc-/}p0
+PKGNAME-main=	${DISTNAME}
+REVISION-main =	1
+PKGNAME-doc=    ${DISTNAME:S/-/-doc-/}
+REVISION-doc =	0
 CATEGORIES=	print
 
 HOMEPAGE=	http://lout.sourceforge.net/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/06 19:07:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/20 09:48:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,39 +48,39 @@ WANTLIB-main += ${WANTLIB} ${cWANTLIB} sane cups hpip hpmud asn1 gssapi krb5
 WANTLIB-main += ssl avahi-client avahi-common c crypto dbus-1 exif gphoto2
 WANTLIB-main += gphoto2_port jpeg ltdl netsnmp tiff usb z
 
-BUILD_DEPENDS=	::sysutils/polkit
+BUILD_DEPENDS=	sysutils/polkit
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::graphics/sane-backends \
-		::print/cups \
-		::print/hplip,-libs
+		graphics/sane-backends \
+		print/cups \
+		print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
-		::print/py-reportlab/reportlab \
-		::x11/dbus-python \
-		::devel/py-notify \
-		::graphics/py-Imaging \
-		::print/hplip,-hpcups \
-		::devel/xdg-utils
+		print/py-reportlab/reportlab \
+		x11/dbus-python \
+		devel/py-notify \
+		graphics/py-Imaging \
+		print/hplip,-hpcups \
+		devel/xdg-utils
 
 WANTLIB-hpijs += ${cWANTLIB} asn1 gssapi krb5 ssl hpip
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1 hpmud
-LIB_DEPENDS-hpijs= ::print/hplip,-libs \
-		::graphics/jpeg \
-		::x11/dbus
+LIB_DEPENDS-hpijs= print/hplip,-libs \
+		graphics/jpeg \
+		x11/dbus
 
 WANTLIB-hpcups += ${cWANTLIB} png tiff z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage
-LIB_DEPENDS-hpcups= ::print/hplip,-libs \
-		::print/cups
+LIB_DEPENDS-hpcups= print/hplip,-libs \
+		print/cups
 
 WANTLIB-libs +=	${cWANTLIB} netsnmp usb
-LIB_DEPENDS-libs= ::net/net-snmp \
-		::devel/libusb
+LIB_DEPENDS-libs= net/net-snmp \
+		devel/libusb
 
 WANTLIB-gui +=	# empty
-RUN_DEPENDS-gui= ::x11/py-qt4 \
-		::print/hplip,-main \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-gui= x11/py-qt4 \
+		print/hplip,-main \
+		devel/desktop-file-utils
 LIB_DEPENDS-gui= # empty
 
 MODULES=	devel/gettext \

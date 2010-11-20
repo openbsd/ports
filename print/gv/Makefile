@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/20 09:48:39 espie Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
@@ -19,15 +19,15 @@ WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m Xaw3d Xinerama
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::x11/Xaw3d
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
+LIB_DEPENDS=	x11/Xaw3d
+RUN_DEPENDS=	print/ghostscript/gnu
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-SIGCHLD-fallback \
 			--enable-scrollbar-code
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FAKE_FLAGS+=		appdefaultsdir="${PREFIX}/lib/X11/app-defaults/"
 

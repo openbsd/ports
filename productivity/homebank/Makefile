@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =	personal accounting application
 
@@ -31,11 +31,11 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb-render xcb-render-util gdk_pixbuf-2.0 \
 		gdk-x11-2.0 gtk-x11-2.0 ofx
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::devel/libofx 
+LIB_DEPENDS =	x11/gtk+2 \
+		devel/libofx 
 
-RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info-*:misc/shared-mime-info
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info
 
 USE_GMAKE =	Yes
 

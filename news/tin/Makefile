@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
@@ -48,10 +48,10 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS+=	::devel/pcre \
-		::misc/libutf8 \
-		::devel/libidn \
-		::textproc/icu4c
+LIB_DEPENDS+=	devel/pcre \
+		misc/libutf8 \
+		devel/libidn \
+		textproc/icu4c
 
 ALL_TARGET=	build
 

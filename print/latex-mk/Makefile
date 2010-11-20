@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/24 16:15:06 oga Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
 DISTNAME=	latex-mk-1.9.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	print
 HOMEPAGE=	http://latex-mk.sourceforge.net/
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=latex-mk/}
 CONFIGURE_STYLE=gnu
 PKG_ARCH=	*
 
-REGRESS_DEPENDS=::print/texlive/base
+REGRESS_DEPENDS=print/texlive/base
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dated_draft.ps ${PREFIX}/share/latex-mk

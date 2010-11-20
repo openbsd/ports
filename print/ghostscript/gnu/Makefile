@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/10/24 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -32,11 +32,11 @@ WANTLIB=	c ijs m jpeg.>=62 png.>=6 pthread z
 
 MODULES=	converters/libiconv
 
-RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
-BUILD_DEPENDS=	:cups->=1.4.3:print/cups
-LIB_DEPENDS=	::graphics/jpeg	\
-		::graphics/png		\
-		::print/ijs
+RUN_DEPENDS=	print/ghostscript/gnu-fonts
+BUILD_DEPENDS=	print/cups>=1.4.3
+LIB_DEPENDS=	graphics/jpeg	\
+		graphics/png		\
+		print/ijs
 
 CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES	\
 		-I${LOCALBASE}/include		\

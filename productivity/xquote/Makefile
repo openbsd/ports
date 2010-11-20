@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:40 espie Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -18,7 +18,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb Xbae
 
 MASTER_SITES=	http://distfiles.nl/
 
-LIB_DEPENDS=	::x11/xbae
+LIB_DEPENDS=	x11/xbae
 
 USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake

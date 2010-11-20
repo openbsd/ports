@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/24 17:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		cyrillic PostScript Type1 fonts to use with TeX
 
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
 DISTFILES=		PSCyr-0.4c-patch2-tex.tar.gz \
 			PSCyr-0.4c-patch2-type1.tar.gz
 
-RUN_DEPENDS=		::print/texlive/base
+RUN_DEPENDS=		print/texlive/base
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

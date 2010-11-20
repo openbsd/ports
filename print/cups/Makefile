@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2010/11/12 07:09:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -26,8 +26,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += 	asn1 c crypto dbus-1.>=7 gssapi jpeg krb5 m png.>=3 pthread
-WANTLIB +=	ssl stdc++ tiff.>=35 z
+WANTLIB += 	asn1 c crypto dbus-1>=7 gssapi jpeg krb5 m png>=3 pthread
+WANTLIB +=	ssl stdc++ tiff>=35 z
 
 MASTER_SITES=	http://ftp.easysw.com/pub/cups/${VERSION}/ \
 		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -40,16 +40,16 @@ EXTRACT_SUFX=	.tar.bz2
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
 
-BUILD_DEPENDS=	::devel/xdg-utils \
+BUILD_DEPENDS=	devel/xdg-utils \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS}
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/xdg-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/xdg-utils
 
-LIB_DEPENDS=	::graphics/png \
-		::graphics/tiff \
-		::x11/dbus
+LIB_DEPENDS=	graphics/png \
+		graphics/tiff \
+		x11/dbus
 
 LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
 		LIBcupscgi_VERSION=${LIBcupscgi_VERSION} \
@@ -112,7 +112,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --enable-ldap
-LIB_DEPENDS+=	ldap::databases/openldap
+WANTLIB +=	ldap
+LIB_DEPENDS+=	databases/openldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif

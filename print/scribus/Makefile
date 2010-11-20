@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/20 09:48:40 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,16 +34,16 @@ MODULES=	x11/qt3 \
 		lang/python
 MODPY_VERSION=	2.6
 
-RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info \
-		::devel/desktop-file-utils
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/lcms \
-		::graphics/libart \
-		::graphics/png \
-		::graphics/tiff \
+RUN_DEPENDS=	misc/shared-mime-info \
+		devel/desktop-file-utils
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/lcms \
+		graphics/libart \
+		graphics/png \
+		graphics/tiff \
 		${MODPY_LIB_DEPENDS} \
-		::print/cups \
-		::textproc/libxml
+		print/cups \
+		textproc/libxml
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

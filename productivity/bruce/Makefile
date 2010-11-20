@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 17:57:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=		Python-based presentation tool
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PYPI:=b/bruce/}
 
 MODULES=		lang/python
-RUN_DEPENDS=		::devel/pygame
+RUN_DEPENDS=		devel/pygame
 
 NO_REGRESS=		Yes
 

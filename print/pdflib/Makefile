@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 
-WANTLIB=		m z jpeg png.>=2 tiff.>=35
+WANTLIB=		m z jpeg png>=2 tiff>=35
 
-LIB_DEPENDS=		::graphics/png \
-			::graphics/tiff
+LIB_DEPENDS=		graphics/png \
+			graphics/tiff
 
 USE_LIBTOOL=		Yes
 

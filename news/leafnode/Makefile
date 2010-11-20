@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=		USENET software package designed for small sites
 
@@ -21,14 +21,14 @@ WANTLIB=		c pcre
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=leafnode/}
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		::devel/pcre
+LIB_DEPENDS=		devel/pcre
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
 CONFIGURE_ARGS+=	--with-ipv6
 CONFIGURE_ARGS+=	--with-user=_news
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 DOCS=		README README-FQDN INSTALL FAQ.txt NEWS OLDNEWS
 

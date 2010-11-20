@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=	download and decode binaries posted to Usenet
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-RUN_DEPENDS=	::mail/p5-MIME-tools \
-		::news/p5-News-Newsrc \
-		::devel/p5-String-CRC32
+RUN_DEPENDS=	mail/p5-MIME-tools \
+		news/p5-News-Newsrc \
+		devel/p5-String-CRC32
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/30 11:06:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:40 espie Exp $
 
 COMMENT =	diary and journal application
 
@@ -21,9 +21,9 @@ NO_REGRESS =	Yes
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::x11/py-gtk2 \
-		::textproc/py-yaml \
-		::www/py-webkitgtk \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	x11/py-gtk2 \
+		textproc/py-yaml \
+		www/py-webkitgtk \
+		devel/desktop-file-utils
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/12 16:06:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 09:48:39 espie Exp $
 
 COMMENT-main=	driver for ZjStream wire protocol compatible printers
 COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
@@ -30,14 +30,14 @@ MULTI_PACKAGES=	-main -cups
 USE_GMAKE=	Yes
 WRKDIST=	${WRKDIR}/foo2zjs
 
-BUILD_DEPENDS=	::print/ghostscript/gnu # ps2pdf
+BUILD_DEPENDS=	print/ghostscript/gnu # ps2pdf
 
 WANTLIB-main += ${WANTLIB} m
-RUN_DEPENDS-main=::print/foomatic-filters
+RUN_DEPENDS-main=print/foomatic-filters
 
 WANTLIB-cups += ${WANTLIB} cups pthread
-RUN_DEPENDS-cups=::${BASE_PKGPATH},-main
-LIB_DEPENDS-cups=::print/cups
+RUN_DEPENDS-cups=${BASE_PKGPATH},-main
+LIB_DEPENDS-cups=print/cups
 
 MAKE_FLAGS+=	CUPS_SERVERBIN=`cups-config --serverbin`
 

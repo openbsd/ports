@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 17:46:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 09:48:38 espie Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
 
-REGRESS_DEPENDS=	::news/py-yenc
+REGRESS_DEPENDS=	news/py-yenc
 
 CFLAGS+=		-g -O2
 

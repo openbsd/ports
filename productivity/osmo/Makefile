@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 09:48:40 espie Exp $
 
 COMMENT=	handy personal organizer
 
@@ -29,14 +29,14 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::security/libgringotts \
-		::devel/libnotify \
-		::textproc/libxml \
-		::textproc/libical \
-		::textproc/gtkspell \
-		::x11/gtk+2
+LIB_DEPENDS=	security/libgringotts \
+		devel/libnotify \
+		textproc/libxml \
+		textproc/libical \
+		textproc/gtkspell \
+		x11/gtk+2
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 18:34:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 09:48:39 espie Exp $
 
 COMMENT=		LaTeX symbols selector
 
@@ -25,9 +25,9 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::textproc/libxml \
-			::x11/gtk+2
-RUN_DEPENDS=		::devel/desktop-file-utils
+LIB_DEPENDS=		textproc/libxml \
+			x11/gtk+2
+RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 

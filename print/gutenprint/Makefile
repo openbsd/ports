@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/20 09:48:39 espie Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -37,20 +37,20 @@ MODULES=	devel/gettext
 
 WANTLIB-main +=	c m ncurses readline ijs ${MODGETTEXT_WANTLIB}
 
-BUILD_DEPENDS=		:foomatic-db-engine->=4.0.3:print/foomatic-db-engine
+BUILD_DEPENDS=		print/foomatic-db-engine>=4.0.3
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			::print/ijs
+			print/ijs
 
 WANTLIB-foomatic += # empty
 LIB_DEPENDS-foomatic=	# empty
-RUN_DEPENDS-foomatic=	::print/foomatic-db \
-			::${BUILD_PKGPATH},-main
+RUN_DEPENDS-foomatic=	print/foomatic-db \
+			${BUILD_PKGPATH},-main
 PKG_ARCH-foomatic=	*
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
