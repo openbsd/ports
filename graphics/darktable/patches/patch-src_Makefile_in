@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/11/20 11:16:22 sthen Exp $
+--- src/Makefile.in.orig	Fri Nov 19 21:43:12 2010
++++ src/Makefile.in	Fri Nov 19 21:43:54 2010
+@@ -388,14 +388,15 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = LibRaw iop views libs imageio # gegl-operations
+-AM_CFLAGS = $(GNOME_KEYRING_CFLAGS) $(GPHOTO2_CFLAGS) $(GEGL_CFLAGS) \
++AM_CFLAGS = -I$(srcdir)/LibRaw \
++	$(GNOME_KEYRING_CFLAGS) $(GPHOTO2_CFLAGS) $(GEGL_CFLAGS) \
+ 	$(DBUSGLIB_CFLAGS) $(EXIV2_CFLAGS) $(CAIRO_CFLAGS) \
+ 	$(GLADE_CFLAGS) $(GTK_CFLAGS) $(GTHREAD_CFLAGS) \
+ 	$(SQLITE_CFLAGS) $(OPENMP_CFLAGS) $(GCONF_CFLAGS) \
+-	-fno-strict-aliasing -Wall -std=c99 -I$(srcdir)/LibRaw -fPIC \
++	-fno-strict-aliasing -Wall -std=c99 -fPIC \
+ 	-DDATADIR=\"$(datadir)/darktable\" -DLIBDIR=\""$(libdir)"\" \
+ 	-Werror -rdynamic -Wno-deprecated-declarations
+-AM_CXXFLAGS = $(GNOME_KEYRING_CFLAGS) $(GPHOTO2_CFLAGS) $(GEGL_CFLAGS) $(DBUSGLIB_CFLAGS) $(EXIV2_CFLAGS) $(CAIRO_CFLAGS) $(GLADE_CFLAGS) $(GTK_CFLAGS) $(GTHREAD_CFLAGS) $(SQLITE_CFLAGS) $(OPENMP_CFLAGS) $(GCONF_CFLAGS) -fno-strict-aliasing -Wall -I$(srcdir)/LibRaw -fPIC -DDATADIR=\"$(datadir)/darktable\" -DLIBDIR=\""$(libdir)"\"
++AM_CXXFLAGS = -I$(srcdir)/LibRaw $(GNOME_KEYRING_CFLAGS) $(GPHOTO2_CFLAGS) $(GEGL_CFLAGS) $(DBUSGLIB_CFLAGS) $(EXIV2_CFLAGS) $(CAIRO_CFLAGS) $(GLADE_CFLAGS) $(GTK_CFLAGS) $(GTHREAD_CFLAGS) $(SQLITE_CFLAGS) $(OPENMP_CFLAGS) $(GCONF_CFLAGS) -fno-strict-aliasing -Wall -fPIC -DDATADIR=\"$(datadir)/darktable\" -DLIBDIR=\""$(libdir)"\"
+ AM_CPPFLAGS = $(OPENEXR_CFLAGS)
+ libdarktable_LTLIBRARIES = libdarktable.la
+ libdarktabledir = $(libdir)/darktable
