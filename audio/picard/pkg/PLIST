@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/20 15:48:58 millert Exp $
 bin/picard
 lib/python${MODPY_VERSION}/site-packages/picard/
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -58,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/picard/metadata.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/musicdns/
 lib/python${MODPY_VERSION}/site-packages/picard/musicdns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/picard/musicdns/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/musicdns/avcodec.so
+lib/python${MODPY_VERSION}/site-packages/picard/musicdns/ofa.so
 lib/python${MODPY_VERSION}/site-packages/picard/parsefilename.py
 lib/python${MODPY_VERSION}/site-packages/picard/parsefilename.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/playlist.py
@@ -121,12 +123,16 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/options/matching.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/matching.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/metadata.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/metadata.pyc
-lib/python${MODPY_VERSION}/site-packages/picard/ui/options/naming.py
-lib/python${MODPY_VERSION}/site-packages/picard/ui/options/naming.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/moving.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/moving.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/plugins.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/proxy.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/proxy.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/ratings.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/ratings.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/renaming.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/renaming.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/scripting.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/scripting.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/tags.py
@@ -135,6 +141,8 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/passworddialog.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/passworddialog.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/puidsubmit.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/puidsubmit.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ratingwidget.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ratingwidget.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/tageditor.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/tageditor.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/tagsfromfilenames.py
@@ -151,8 +159,8 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_about.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_about.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup.pyc
-lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup_win32.py
-lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup_win32.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup_select.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cdlookup_select.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cover.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_cover.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_folksonomy.py
@@ -165,12 +173,16 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_matching.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_matching.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_metadata.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_metadata.pyc
-lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_naming.py
-lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_naming.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_moving.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_moving.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_plugins.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_proxy.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_proxy.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_ratings.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_ratings.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_renaming.py
+lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_renaming.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_script.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_script.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_options_tags.py
@@ -193,6 +205,8 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/cdrom.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/cdrom.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/icontheme.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/icontheme.pyc
+lib/python${MODPY_VERSION}/site-packages/picard/util/mimetype.py
+lib/python${MODPY_VERSION}/site-packages/picard/util/mimetype.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/queue.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/queue.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/tags.py
@@ -204,6 +218,9 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/webbrowser2.pyc
 lib/python${MODPY_VERSION}/site-packages/picard/webservice.py
 lib/python${MODPY_VERSION}/site-packages/picard/webservice.pyc
 share/applications/picard.desktop
+share/locale/af/LC_MESSAGES/picard.mo
+share/locale/ar/LC_MESSAGES/picard.mo
+share/locale/bg/LC_MESSAGES/picard.mo
 share/locale/ca/LC_MESSAGES/picard.mo
 share/locale/cs/LC_MESSAGES/picard.mo
 share/locale/cy/LC_MESSAGES/picard.mo
@@ -213,13 +230,16 @@ share/locale/en/LC_MESSAGES/picard.mo
 share/locale/en_CA/LC_MESSAGES/picard.mo
 share/locale/en_GB/LC_MESSAGES/picard.mo
 share/locale/es/LC_MESSAGES/picard.mo
+share/locale/et/LC_MESSAGES/picard.mo
 share/locale/fa/LC_MESSAGES/picard.mo
 share/locale/fi/LC_MESSAGES/picard.mo
 share/locale/fr/LC_MESSAGES/picard.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/picard.mo
+share/locale/gl/LC_MESSAGES/picard.mo
 share/locale/he/LC_MESSAGES/picard.mo
+share/locale/hi/LC_MESSAGES/picard.mo
 share/locale/hu/LC_MESSAGES/picard.mo
 share/locale/is/LC_MESSAGES/picard.mo
 share/locale/it/LC_MESSAGES/picard.mo
@@ -238,7 +258,9 @@ share/locale/sco/LC_MESSAGES/
 share/locale/sco/LC_MESSAGES/picard.mo
 share/locale/sk/LC_MESSAGES/picard.mo
 share/locale/sl/LC_MESSAGES/picard.mo
+share/locale/sr/LC_MESSAGES/picard.mo
 share/locale/sv/LC_MESSAGES/picard.mo
+share/locale/tr/LC_MESSAGES/picard.mo
 share/locale/zh_CN/LC_MESSAGES/picard.mo
 share/picard/
 share/picard/addrelease.py
@@ -247,17 +269,35 @@ share/picard/cuesheet.py
 share/picard/discnumber.py
 share/picard/featartist.py
 share/picard/fix_mp4_meta.py
-share/picard/initials.py
 share/picard/lastfm/
 share/picard/lastfm/__init__.py
 share/picard/lastfm/options_lastfm.ui
 share/picard/lastfm/ui_options_lastfm.py
+share/picard/originalreleasedate.py
 share/picard/replaygain/
 share/picard/replaygain/__init__.py
 share/picard/replaygain/options_replaygain.ui
 share/picard/replaygain/ui_options_replaygain.py
+share/picard/titlecase.py
 share/pixmaps/
-share/pixmaps/picard-16.png
-share/pixmaps/picard-32.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/pixmaps/hicolor/
+share/pixmaps/hicolor/128x128/
+share/pixmaps/hicolor/128x128/apps/
+share/pixmaps/hicolor/128x128/apps/picard.png
+share/pixmaps/hicolor/16x16/
+share/pixmaps/hicolor/16x16/apps/
+share/pixmaps/hicolor/16x16/apps/picard.png
+share/pixmaps/hicolor/24x24/
+share/pixmaps/hicolor/24x24/apps/
+share/pixmaps/hicolor/24x24/apps/picard.png
+share/pixmaps/hicolor/256x256/
+share/pixmaps/hicolor/256x256/apps/
+share/pixmaps/hicolor/256x256/apps/picard.png
+share/pixmaps/hicolor/32x32/
+share/pixmaps/hicolor/32x32/apps/
+share/pixmaps/hicolor/32x32/apps/picard.png
+share/pixmaps/hicolor/48x48/
+share/pixmaps/hicolor/48x48/apps/
+share/pixmaps/hicolor/48x48/apps/picard.png

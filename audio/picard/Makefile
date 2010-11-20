@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 15:48:57 millert Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	0.11
+MODPY_EGG_VERSION =	0.12.1
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION = 		5
 
 CATEGORIES =		audio
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m stdc++ avcodec avformat ofa
 
 MASTER_SITES =		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
 
@@ -30,6 +29,8 @@ MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
 
 # msgfmt
 BUILD_DEPENDS =		devel/gettext
+
+LIB_DEPENDS =		audio/libofa graphics/ffmpeg
 
 RUN_DEPENDS =		py-qt4->=4.1:x11/py-qt4 \
 			py-mutagen->=1.9:audio/py-mutagen \
@@ -45,13 +46,14 @@ PLUGINS =		addrelease.py \
 			discnumber.py \
 			featartist.py \
 			fix_mp4_meta.py \
-			initials.py \
 			lastfm/__init__.py \
 			lastfm/options_lastfm.ui \
 			lastfm/ui_options_lastfm.py \
+			originalreleasedate.py \
 			replaygain/__init__.py \
 			replaygain/options_replaygain.ui \
-			replaygain/ui_options_replaygain.py
+			replaygain/ui_options_replaygain.py \
+			titlecase.py
 
 post-install:
 .for dir in ${PLUGINS_DIRS}

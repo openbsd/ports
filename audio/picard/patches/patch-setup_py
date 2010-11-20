@@ -1,7 +1,24 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2009/07/12 20:43:22 ajacoutot Exp $
---- setup.py.orig	Mon Dec  1 17:27:05 2008
-+++ setup.py	Tue May 26 23:48:01 2009
-@@ -76,7 +76,7 @@ cfg.read(['build.cfg'])
+$OpenBSD: patch-setup_py,v 1.2 2010/11/20 15:48:58 millert Exp $
+--- setup.py.orig	Sun Nov  1 13:10:27 2009
++++ setup.py	Fri Nov 19 08:22:02 2010
+@@ -62,12 +62,12 @@ from distutils.dist import Distribution
+ defaults = {
+     'build': {
+         'with-directshow': 'False',
+-        'with-avcodec': 'False',
+-        'with-libofa': 'False',
++        'with-avcodec': 'True',
++        'with-libofa': 'True',
+     },
+-    'avcodec': {'cflags': '', 'libs': ''},
++    'avcodec': {'cflags': '-I/usr/local/include', 'libs': '-L/usr/local/lib -lavcodec -lavformat'},
+     'directshow': {'cflags': '', 'libs': ''},
+-    'libofa': {'cflags': '', 'libs': ''},
++    'libofa': {'cflags': '-I/usr/local/include', 'libs': '-L/usr/local/lib -lofa'},
+ }
+ cfg = RawConfigParser()
+ for section, values in defaults.items():
+@@ -78,7 +78,7 @@ cfg.read(['build.cfg'])
  
  
  ext_modules = [
@@ -10,12 +27,33 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2009/07/12 20:43:22 ajacoutot Exp $
  ]
  
  if cfg.getboolean('build', 'with-libofa'):
-@@ -529,7 +529,7 @@ if do_py2app:
+@@ -372,8 +372,8 @@ class picard_config(config):
+         if have_pkgconfig:
+             if self.pkgconfig_check_module('avcodec', 'libavcodec libavformat'):
+                 include_dirs = cflags_to_include_dirs(cfg.get('avcodec', 'cflags'))
+-                if self.try_compile('#include <avcodec.h>', include_dirs=include_dirs):
+-                    cfg.set('avcodec', 'cflags', cfg.get('avcodec', 'cflags') + ' -DUSE_OLD_FFMPEG_LOCATIONS')
++                if self.try_compile('#include <libavcodec/avcodec.h>', include_dirs=include_dirs):
++                    cfg.set('avcodec', 'cflags', cfg.get('avcodec', 'cflags'))
+         else:
+             self.check_lib('avcodec', 'av_open_input_file', ['avcodec.h', 'avformat.h'], [['avcodec', 'avformat'], ['avcodec-51', 'avformat-51']])
+ 
+@@ -549,12 +549,12 @@ if do_py2app:
  
  # FIXME: this should check for the actual command ('install' vs. 'bdist_nsis', 'py2app', ...), not installed libraries
  if py2exe is None and do_py2app is False:
--    args['data_files'].append(('share/icons', ('picard-16.png', 'picard-32.png')))
-+    args['data_files'].append(('share/pixmaps', ('picard-16.png', 'picard-32.png')))
+-    args['data_files'].append(('share/icons/hicolor/16x16/apps', ['resources/images/16x16/picard.png']))
+-    args['data_files'].append(('share/icons/hicolor/24x24/apps', ['resources/images/24x24/picard.png']))
+-    args['data_files'].append(('share/icons/hicolor/32x32/apps', ['resources/images/32x32/picard.png']))
+-    args['data_files'].append(('share/icons/hicolor/48x48/apps', ['resources/images/48x48/picard.png']))
+-    args['data_files'].append(('share/icons/hicolor/128x128/apps', ['resources/images/128x128/picard.png']))
+-    args['data_files'].append(('share/icons/hicolor/256x256/apps', ['resources/images/256x256/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/16x16/apps', ['resources/images/16x16/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/24x24/apps', ['resources/images/24x24/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/32x32/apps', ['resources/images/32x32/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/48x48/apps', ['resources/images/48x48/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/128x128/apps', ['resources/images/128x128/picard.png']))
++    args['data_files'].append(('share/pixmaps/hicolor/256x256/apps', ['resources/images/256x256/picard.png']))
      args['data_files'].append(('share/applications', ('picard.desktop',)))
  
  
