@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-polyglot->=0.2.5:devel/ruby-polyglot,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-polyglot,${FLAVOR}>=0.2.5
 
 CONFIGURE_STYLE =	ruby gem
 

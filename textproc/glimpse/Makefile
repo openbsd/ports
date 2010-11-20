@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	text search engine
 
 DISTNAME=	glimpse-4.1
-PKGNAME=	${DISTNAME}p1
+REVISION =	1
 CATEGORIES=	textproc databases
 
 PERMIT_PACKAGE_CDROM=	no fee

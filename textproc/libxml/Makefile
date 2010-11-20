@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2010/11/15 09:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2010/11/20 19:56:49 espie Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -25,7 +25,7 @@ WANTLIB=		m z
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
@@ -46,15 +46,15 @@ RUN_DEPENDS-main=
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
-LIB_DEPENDS-python=	::textproc/libxml,-main \
+LIB_DEPENDS-python=	textproc/libxml,-main \
 			${MODPY_LIB_DEPENDS} \
 			${MODLIBICONV_LIB_DEPENDS}
-WANTLIB-python=		m z util xml2.>=11 ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
+WANTLIB-python=		m z util xml2>=11 ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
 .endif
 
 CONFIGURE_ARGS+=	--without-threads
-REGRESS_DEPENDS=	::devel/gmake
+REGRESS_DEPENDS=	devel/gmake
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:49 espie Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -16,15 +16,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 Xext c freetype jpeg.>=62 m openjpeg z
+WANTLIB =	X11 Xext c freetype jpeg>=62 m openjpeg z
 
 MASTER_SITES =	${HOMEPAGE}download/ \
 		${HOMEPAGE}download/archive/
 
-RUN_DEPENDS =	::devel/desktop-file-utils
-BUILD_DEPENDS =	::graphics/jbig2dec
-LIB_DEPENDS =	::graphics/jpeg \
-		::graphics/openjpeg
+RUN_DEPENDS =	devel/desktop-file-utils
+BUILD_DEPENDS =	graphics/jbig2dec
+LIB_DEPENDS =	graphics/jpeg \
+		graphics/openjpeg
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes

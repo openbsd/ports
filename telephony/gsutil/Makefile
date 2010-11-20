@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/20 18:59:15 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:47 espie Exp $
 
 COMMENT =		dump/restore Grandstream device configurations
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.pkts.ca/
 
-RUN_DEPENDS =		::www/p5-libwww
+RUN_DEPENDS =		www/p5-libwww
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes

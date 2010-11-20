@@ -1,13 +1,13 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.39 2010/10/24 20:41:23 ajacoutot Exp $
+# $OpenBSD: gnu.port.mk,v 1.40 2010/11/20 19:57:30 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
-MODGNU_AUTOCONF_DEPENDS = ::devel/metaauto \
-	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
-MODGNU_AUTOMAKE_DEPENDS = ::devel/metaauto \
-	:${_AUTOMAKE_SPEC}:devel/automake/${AUTOMAKE_VERSION}
+MODGNU_AUTOCONF_DEPENDS = devel/metaauto \
+	autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
+MODGNU_AUTOMAKE_DEPENDS = devel/metaauto \
+	${_AUTOMAKE_SPEC}:devel/automake/${AUTOMAKE_VERSION}
 
 AUTOMAKE_VERSION ?= 1.4
 .if ${AUTOMAKE_VERSION} == 1.4

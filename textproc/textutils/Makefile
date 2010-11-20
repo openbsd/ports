@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		GNU text utilities
 
 DISTNAME=		textutils-2.0
-PKGNAME=		textutils-2.0p0
+REVISION =		0
 CATEGORIES=		textproc
 
 # GPL
@@ -19,7 +19,7 @@ MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # gpr -> ggpr to fix a conflict with graphviz
 # god -> ggod to fix a conflict with god

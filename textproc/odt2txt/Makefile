@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=		convert OpenDocument Text to plain text
 
 DISTNAME=		odt2txt-0.4
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://stosberg.net/odt2txt/

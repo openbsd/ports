@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/08/30 21:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		Python library for creating postscript or PDF charts
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://download.gna.org/pychart/
 
 MODULES=	lang/python
 
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS+=	print/ghostscript/gnu
 
 NO_REGRESS=	Yes
 

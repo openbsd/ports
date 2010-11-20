@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	syntax highlight for HTML
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE= modbuild
-RUN_DEPENDS= ::www/p5-HTML-Parser
+RUN_DEPENDS= www/p5-HTML-Parser
 
 MAKE_ENV+=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/23 11:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
@@ -13,20 +13,20 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=	::devel/p5-DateTime \
-		::devel/p5-DateTime-Format-Mail \
-		::devel/p5-DateTime-Format-W3CDTF \
-		::devel/p5-Test-Manifest \
-		:p5-XML-Parser->=2.23:textproc/p5-XML-Parser  \
-		::www/p5-HTML-Parser
+RUN_DEPENDS=	devel/p5-DateTime \
+		devel/p5-DateTime-Format-Mail \
+		devel/p5-DateTime-Format-W3CDTF \
+		devel/p5-Test-Manifest \
+		textproc/p5-XML-Parser>=2.23  \
+		www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=::devel/p5-Test-Differences \
-		:p5-Test-Manifest->=0.9:devel/p5-Test-Manifest \
-		::devel/p5-Test-Pod-Coverage
+REGRESS_DEPENDS=devel/p5-Test-Differences \
+		devel/p5-Test-Manifest>=0.9 \
+		devel/p5-Test-Pod-Coverage
 
 MODCPAN_EXAMPLES=	Yes
 

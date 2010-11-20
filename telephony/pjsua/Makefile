@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/08 10:56:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=		lightweight sip client
 
@@ -19,12 +19,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB+=		c crypto gsm.>=1.0 m portaudio
+WANTLIB+=		c crypto gsm>=1.0 m portaudio
 WANTLIB+=		pthread speex speexdsp ssl
 
-LIB_DEPENDS=		::audio/gsm \
-			::audio/portaudio-svn \
-			::audio/speex
+LIB_DEPENDS=		audio/gsm \
+			audio/portaudio-svn \
+			audio/speex
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.62

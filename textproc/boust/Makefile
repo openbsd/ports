@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
-PKGNAME=		${DISTNAME}p1
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://traevoli.com/boust/
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}bin/
 
-RUN_DEPENDS=		::x11/tk/8.4
+RUN_DEPENDS=		x11/tk/8.4
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:49 espie Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CPAN_AUTHOR =	CLACO
 
-RUN_DEPENDS =	::textproc/p5-Text-Markdown \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS =	textproc/p5-Text-Markdown \
+		www/p5-Catalyst-Runtime
 
 CONFIGURE_STYLE =	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/07/27 09:27:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	DSP library for telephony
 
@@ -23,7 +23,7 @@ WANTLIB=	jpeg m tiff z
 
 WRKDIST=	${WRKDIR}/spandsp-0.0.6
 
-LIB_DEPENDS+=	::graphics/tiff
+LIB_DEPENDS+=	graphics/tiff
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	conforming pdf parser
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-ascii85->=0.9:textproc/ruby-ascii85,${FLAVOR}
+RUN_DEPENDS =	textproc/ruby-ascii85,${FLAVOR}>=0.9
 
 CONFIGURE_STYLE =	ruby gem
 

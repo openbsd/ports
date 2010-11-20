@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/27 09:27:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=siproxd/}
 
 CONFIGURE_STYLE=gnu
 
-LIB_DEPENDS=    ::telephony/libosip2
+LIB_DEPENDS=    telephony/libosip2
 
 DOCDIR=		${PREFIX}/share/doc/siproxd
 EXDIR=		${PREFIX}/share/examples/siproxd

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		Natural Language ToolKit
 
@@ -21,9 +21,9 @@ EXTRACT_SUFX=		.zip
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		::textproc/py-yaml
-RUN_DEPENDS=		::graphics/py-matplotlib \
-			::textproc/py-yaml
+BUILD_DEPENDS=		textproc/py-yaml
+RUN_DEPENDS=		graphics/py-matplotlib \
+			textproc/py-yaml
 
 NO_REGRESS=		Yes
 

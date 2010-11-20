@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/26 12:21:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:50 espie Exp $
 
 COMMENT =	Perl interface to the swish-e C library
 SHARED_ONLY =	Yes
@@ -20,8 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-LIB_DEPENDS =	:swish-e->=2.4.7:textproc/swish-e
-WANTLIB +=	m z swish-e.>=2.1
+LIB_DEPENDS =	textproc/swish-e>=2.4.7
+WANTLIB +=	m z swish-e>=2.1
 
 WRKSRC =	${WRKDIST}/perl
 

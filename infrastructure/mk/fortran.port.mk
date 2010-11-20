@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.11 2010/10/23 15:45:59 steven Exp $
+# $OpenBSD: fortran.port.mk,v 1.12 2010/11/20 19:57:30 espie Exp $
 
 MODFORTRAN_COMPILER ?= g77
 
@@ -8,13 +8,13 @@ ERRORS += "Fatal: need to specify MODFORTRAN_COMPILER"
 
 .if ${MODFORTRAN_COMPILER:L} == "g77"
 .  if ${COMPILER_VERSION:L:Mgcc[34]*}
-_MODFORTRAN_LIB_DEPENDS_G77 = ::devel/libf2c
+_MODFORTRAN_LIB_DEPENDS_G77 = devel/libf2c
 _MODFORTRAN_WANTLIB_G77 = g2c
-_MODFORTRAN_BUILD_DEPENDS_G77 = ::lang/g77 ::devel/libf2c
+_MODFORTRAN_BUILD_DEPENDS_G77 = lang/g77 devel/libf2c
 .  else
-_MODFORTRAN_LIB_DEPENDS_G77 = ::devel/libf2c-old
+_MODFORTRAN_LIB_DEPENDS_G77 = devel/libf2c-old
 _MODFORTRAN_WANTLIB_G77 += g2c
-_MODFORTRAN_BUILD_DEPENDS_G77 = ::lang/g77-old ::devel/libf2c-old
+_MODFORTRAN_BUILD_DEPENDS_G77 = lang/g77-old devel/libf2c-old
 .  endif
 MODFORTRAN_LIB_DEPENDS += ${_MODFORTRAN_LIB_DEPENDS_G77}
 MODFORTRAN_WANTLIB += ${_MODFORTRAN_WANTLIB_G77}
@@ -26,9 +26,9 @@ if test -e /usr/bin/g77 -o -e /usr/bin/f77; then \
 fi
 .elif ${MODFORTRAN_COMPILER:L} == "gfortran"
 .  if ${COMPILER_VERSION:L:Mgcc4}
-_MODFORTRAN_LIB_DEPENDS_GFORTRAN = ::lang/gfortran,-lib
+_MODFORTRAN_LIB_DEPENDS_GFORTRAN = lang/gfortran,-lib
 _MODFORTRAN_WANTLIB_GFORTRAN = gfortran
-_MODFORTRAN_BUILD_DEPENDS_GFORTRAN = ::lang/gfortran
+_MODFORTRAN_BUILD_DEPENDS_GFORTRAN = lang/gfortran
 .  else
 MODULES += gcc4
 MODGCC4_LANGS += fortran

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	Perl/Tk graphical user interface to GNU ispell
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 USE_GROFF =	Yes
-RUN_DEPENDS=	:p5-Tk-*:x11/p5-Tk \
-		::textproc/ispell
+RUN_DEPENDS=	x11/p5-Tk \
+		textproc/ispell
 
 .include <bsd.port.mk>

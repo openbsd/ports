@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	Textile for Catalyst
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::textproc/p5-Text-Textile \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	textproc/p5-Text-Textile \
+		www/p5-Catalyst-Runtime
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		HTML, XHTML validator
 
@@ -19,8 +19,8 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=
 EXTRACT_CASES=		*) cp ${FULLDISTDIR}/$$archive ${WRKDIST}/validate ;;
 
-RUN_DEPENDS=		:lq-sp-*:textproc/lq-sp \
-			:wdg-sgml-lib-*:textproc/wdg-sgml-lib
+RUN_DEPENDS=		textproc/lq-sp \
+			textproc/wdg-sgml-lib
 
 WRKDIST=		${WRKDIR}
 NO_BUILD=		Yes

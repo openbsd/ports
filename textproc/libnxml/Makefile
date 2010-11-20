@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:49 espie Exp $
 
 COMMENT =		XML manipulation library
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS =		::net/curl
+LIB_DEPENDS =		net/curl
 WANTLIB +=		crypto idn ssl z curl
 
 MODULES =		devel/gettext

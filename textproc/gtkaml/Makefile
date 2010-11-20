@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/09 15:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
@@ -25,8 +25,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 
-BUILD_DEPENDS=		::x11/gtk+2
-LIB_DEPENDS=		:vala->=0.10.0:lang/vala
+BUILD_DEPENDS=		x11/gtk+2
+LIB_DEPENDS=		lang/vala>=0.10.0
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

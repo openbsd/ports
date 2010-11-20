@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/08/20 17:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/20 19:56:48 espie Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	technical documentation XML/SGML definitions
 
 DISTNAME=	docbook-4.4
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
@@ -43,10 +43,10 @@ XML_VERSIONS_NEW=	4.2 4.3 4.4
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
 
-BUILD_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
-RUN_DEPENDS=	::textproc/iso8879 \
-		:docbook-dsssl-*:textproc/docbook-dsssl \
-		:libxml->=2.6.16p6:textproc/libxml
+BUILD_DEPENDS=	textproc/libxml>=2.6.16p6
+RUN_DEPENDS=	textproc/iso8879 \
+		textproc/docbook-dsssl \
+		textproc/libxml>=2.6.16p6
 
 .for i in ${SGML_VERSIONS}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;

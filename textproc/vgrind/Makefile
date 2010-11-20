@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/23 17:09:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		grind nice listings of programs
 
@@ -16,7 +16,7 @@ WANTLIB +=		c
 
 MASTER_SITES=		http://distfiles.nl/
 
-RUN_DEPENDS=		::textproc/groff
+RUN_DEPENDS=		textproc/groff
 
 NO_REGRESS=		Yes
 

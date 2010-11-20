@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/10 00:13:33 ian Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:47 espie Exp $
 
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		ftp://ftp.openbsd.org/pub/OpenBSD/songs/
 
-BUILD_DEPENDS =		::audio/madplay
+BUILD_DEPENDS =		audio/madplay
 
 DIST_SUBDIR =		openbsd_songs
 

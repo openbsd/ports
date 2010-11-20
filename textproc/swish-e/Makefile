@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/26 12:21:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =		web/text search engine
 
@@ -20,16 +20,16 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		converters/libiconv
 WANTLIB =		c m z pcre pcreposix xml2
 
-LIB_DEPENDS =		::devel/pcre \
-			::textproc/libxml
+LIB_DEPENDS =		devel/pcre \
+			textproc/libxml
 
-RUN_DEPENDS =		::www/p5-URI \
-			::www/p5-libwww \
-			::www/p5-HTML-Parser \
-			:p5-HTML-Tagset->=3:www/p5-HTML-Tagset \
-			::mail/p5-MIME-Types \
-			::www/p5-HTML-FillInForm \
-			::www/p5-HTML-Template
+RUN_DEPENDS =		www/p5-URI \
+			www/p5-libwww \
+			www/p5-HTML-Parser \
+			www/p5-HTML-Tagset>=3 \
+			mail/p5-MIME-Types \
+			www/p5-HTML-FillInForm \
+			www/p5-HTML-Template
 
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes

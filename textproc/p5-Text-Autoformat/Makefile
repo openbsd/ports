@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=		perl module for formatting plaintext
 
 MODULES=		cpan
 DISTNAME=		Text-Autoformat-1.668001
 CATEGORIES=		textproc
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Sam Smith <s@msmith.net>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=  		:p5-Text-Reform-*:textproc/p5-Text-Reform
+RUN_DEPENDS=  		textproc/p5-Text-Reform
 
 DOT_FILES=		${FILESDIR}/dot.emacs ${FILESDIR}/dot.vimrc
 SAMPLE_DIR=		${PREFIX}/share/examples/p5-Text-Autoformat

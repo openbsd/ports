@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:50 espie Exp $
 
 COMMENT= 	perform diffs on files and record sets
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Algorithm-Diff
+RUN_DEPENDS=	devel/p5-Algorithm-Diff
 
 .include <bsd.port.mk>

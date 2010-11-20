@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	LaTeX vgrind(1) look-alike
 
@@ -6,7 +6,7 @@ CATEGORIES=	textproc devel print
 
 VERSION=	3.67
 DISTNAME=	lgrind-${VERSION}
-PKGNAME=	${DISTNAME}p3
+REVISION =	3
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
 	source/retest.c source/lgrind.1 source/lgrindef.5 source/Makefile \

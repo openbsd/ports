@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/11/16 21:58:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2010/11/20 19:56:47 espie Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -28,20 +28,20 @@ SUBST_VARS+=		CORESOUNDS
 WANTLIB-main +=	c crypto execinfo gsm iconv m ogg popt pthread
 WANTLIB-main += sqlite3 ssl stdc++ termcap vorbis vorbisenc xml2 z
 
-LIB_DEPENDS-main=	::audio/gsm \
-			::audio/libogg \
-			::audio/libvorbis \
-			::textproc/libxml \
-			::databases/sqlite3 \
-			::devel/libexecinfo \
-			::devel/popt
+LIB_DEPENDS-main=	audio/gsm \
+			audio/libogg \
+			audio/libvorbis \
+			textproc/libxml \
+			databases/sqlite3 \
+			devel/libexecinfo \
+			devel/popt
 
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk/releases/ \
 		http://downloads.digium.com/pub/telephony/asterisk/old-releases/
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.63
@@ -107,7 +107,7 @@ FLAVOR?=
 # Needs to be a flavour, {FILE,ODBC,IMAP}_STORAGE are mutually exclusive.
 #CONFIGURE_ARGS+=	--with-imap=system
 #CPPFLAGS+=		-I${LOCALBASE}/include/c-client
-#LIB_DEPENDS-main=	::mail/imap-uw,-c-client
+#LIB_DEPENDS-main=	mail/imap-uw,-c-client
 #WANTLIB-main+=		c-client
 
 # odbc
@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--with-iodbc=no \
 .else
 MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		ODBC support for Asterisk
-LIB_DEPENDS-odbc=	::databases/iodbc
+LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc
 .endif
 
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=	--with-snmp=no
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
 WANTLIB-snmp=		c m netsnmp netsnmpagent netsnmphelpers netsnmpmibs perl util
-LIB_DEPENDS-snmp=	::net/net-snmp 
+LIB_DEPENDS-snmp=	net/net-snmp 
 .endif
 
 # speex
@@ -141,7 +141,7 @@ CONFIGURE_ARGS+=	--with-speex=no
 MULTI_PACKAGES+=	-speex
 COMMENT-speex=		Speex codec for Asterisk
 WANTLIB-speex=		m speex speexdsp
-LIB_DEPENDS-speex=	:speex->=1.2rc1:audio/speex
+LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 .endif
 
 # curl
@@ -152,7 +152,7 @@ CONFIGURE_ARGS+=	--with-curl=no
 MULTI_PACKAGES+=	-curl
 COMMENT-curl=		libCURL support for Asterisk
 WANTLIB-curl=		curl crypto idn ssl z
-LIB_DEPENDS-curl=	::net/curl
+LIB_DEPENDS-curl=	net/curl
 .endif
 
 # postgresql
@@ -163,7 +163,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		PostgreSQL support for Asterisk
 WANTLIB-pgsql=		pq z
-LIB_DEPENDS-pgsql=	::databases/postgresql
+LIB_DEPENDS-pgsql=	databases/postgresql
 .endif
 
 # jabber
@@ -173,7 +173,7 @@ CONFIGURE_ARGS+=	--with-iksemel=no
 .else
 MULTI_PACKAGES+=	-jabber
 COMMENT-jabber=		Jabber support for Asterisk
-LIB_DEPENDS-jabber=	::textproc/iksemel
+LIB_DEPENDS-jabber=	textproc/iksemel
 WANTLIB-jabber=		crypto iksemel ssl
 .endif
 
@@ -193,7 +193,7 @@ CONFIGURE_ARGS+=	--with-ldap=no
 .else
 MULTI_PACKAGES+=	-ldap
 COMMENT-ldap=		LDAP support for Asterisk
-LIB_DEPENDS-ldap=	::databases/openldap,-main
+LIB_DEPENDS-ldap=	databases/openldap,-main
 WANTLIB-ldap=		ldap
 .endif
 
@@ -204,8 +204,8 @@ CONFIGURE_ARGS+=	--with-spandsp=no
 .else
 MULTI_PACKAGES+=	-fax
 COMMENT-fax=		FAX support for Asterisk
-LIB_DEPENDS-fax=	::telephony/spandsp \
-			::graphics/tiff
+LIB_DEPENDS-fax=	telephony/spandsp \
+			graphics/tiff
 WANTLIB-fax=		spandsp tiff
 .endif
 
@@ -219,7 +219,7 @@ EXAMPLEFILES=		extensions.ael extensions.conf logger.conf \
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME$i ?=	asterisk$i-${VER}
 FULLPKGPATH$i ?=	${PKGPATH},$i
-RUN_DEPENDS$i +=	:asterisk-${VER}:${PKGPATH}
+RUN_DEPENDS$i +=	asterisk-${VER}:${PKGPATH}
 .endfor
 
 # we don't really want to drag in TeX as a dependency, but at least

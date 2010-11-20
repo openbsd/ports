@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/10 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
@@ -25,7 +25,7 @@ WANTLIB=	m xml2 z exslt xslt
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	::textproc/libxslt
+LIB_DEPENDS=	textproc/libxslt
 
 MODPY_SETUPTOOLS=Yes
 

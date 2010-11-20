@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=		Quote strings for passing through the shell
 
 MODULES=		cpan
 DISTNAME=		String-ShellQuote-1.04
 CATEGORIES=		textproc
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

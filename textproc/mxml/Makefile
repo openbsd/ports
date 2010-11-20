@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=		minimal XML library
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --disable-threads
 CONFIGURE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
 MAKE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

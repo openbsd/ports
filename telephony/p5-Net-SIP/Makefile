@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=		perl framework for SIP
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
-RUN_DEPENDS=		:p5-Net-DNS->=0.56:net/p5-Net-DNS
+USE_GROFF =		Yes
+RUN_DEPENDS=		net/p5-Net-DNS>=0.56
 
 .include <bsd.port.mk>

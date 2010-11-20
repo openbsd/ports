@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 19:52:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -30,8 +30,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
-cWANTLIB =	gsm.>=1 portaudio speex.>=8 speexdsp.>=1 avcodec.>=13 \
-		avutil.>=6 vidcap
+cWANTLIB =	gsm>=1 portaudio speex>=8 speexdsp>=1 avcodec>=13 \
+		avutil>=6 vidcap
 WANTLIB-main 	+= c faac faad m mp3lame ogg orc-0.4 ossaudio pthread
 WANTLIB-main 	+= schroedinger-1.0 sndio theora vorbis vorbisenc x264
 WANTLIB-main 	+= z $(cWANTLIB)
@@ -59,22 +59,22 @@ WANTLIB-iaxcomm += iaxclient wx_base wx_base_net wx_base_odbc wx_base_xml
 WANTLIB-iaxcomm += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid 
 WANTLIB-iaxcomm += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
-LIB_DEPENDS=	::audio/gsm \
-		::audio/portaudio-svn \
-		::audio/speex \
-		::graphics/ffmpeg \
-		::graphics/libvidcap
+LIB_DEPENDS=	audio/gsm \
+		audio/portaudio-svn \
+		audio/speex \
+		graphics/ffmpeg \
+		graphics/libvidcap
 
 LIB_DEPENDS-tcl=${LIB_DEPENDS} \
-		::${BASE_PKGPATH} \
-		::x11/gtk+2
+		${BASE_PKGPATH} \
+		x11/gtk+2
 
 RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
 
 RUN_DEPENDS-iaxcomm=${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-iaxcomm=${MODGETTEXT_LIB_DEPENDS} \
-	::${BASE_PKGPATH} \
-	::x11/wxWidgets
+	${BASE_PKGPATH} \
+	x11/wxWidgets
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L/usr/lib -lossaudio" \

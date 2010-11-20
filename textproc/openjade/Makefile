@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/10 22:56:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		::textproc/opensp
+LIB_DEPENDS=		textproc/opensp
 WANTLIB=		c m pthread stdc++ osp
 
 CONFIGURE_STYLE=	gnu

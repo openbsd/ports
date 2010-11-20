@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		grep wrapper with search highlighting
 
 DISTNAME=		hgrep-19991004
-PKGNAME=		${DISTNAME}p0
+REVISION =		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.acme.com/software/hgrep/
@@ -20,7 +20,7 @@ WANTLIB=		c termcap
 MASTER_SITES=		${HOMEPAGE}
 DISTFILES=		hgrep_04oct1999.tar.gz
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS=""

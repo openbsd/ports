@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		internationalization tool
 
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-RUN_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gettext-*:devel/gettext
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
+RUN_DEPENDS=		textproc/p5-XML-Parser \
+			devel/gettext
+BUILD_DEPENDS=		textproc/p5-XML-Parser
 
 CONFIGURE_STYLE= 	gnu
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_BUILD=		Yes # avoid recursive dependency
 PKG_ARCH=		*
 

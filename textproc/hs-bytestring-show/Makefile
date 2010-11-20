@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 22:18:16 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =		efficient conversion of values to readable byte strings
 
@@ -18,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-binary
+RUN_DEPENDS +=		devel/hs-binary
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/23 16:54:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:49 espie Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 DISTNAME =		liblrdf-0.4.0
@@ -21,8 +21,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lrdf/}
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		::audio/ladspa
-LIB_DEPENDS =		::textproc/raptor
+BUILD_DEPENDS =		audio/ladspa
+LIB_DEPENDS =		textproc/raptor
 
 USE_LIBTOOL =		yes
 CONFIGURE_STYLE =	gnu

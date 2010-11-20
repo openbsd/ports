@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_FILE=		makefile
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2008/10/28 16:57:57 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2010/11/20 19:56:47 espie Exp $
 
 # Check individual packages for overrides when bumping this!
 PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}p1
@@ -19,5 +19,5 @@ NO_REGRESS?=	Yes
 
 CONFIGURE_STYLE?=simple
 
-RUN_DEPENDS?=	::textproc/aspell/core
+RUN_DEPENDS?=	textproc/aspell/core
 BUILD_DEPENDS?=	${RUN_DEPENDS}

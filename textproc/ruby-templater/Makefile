@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	system for generating files
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-highline-*:devel/ruby-highline,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-diff-lcs-*:devel/ruby-diff-lcs,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-extlib-*:devel/ruby-extlib,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-highline,${FLAVOR} \
+			devel/ruby-diff-lcs,${FLAVOR} \
+			devel/ruby-extlib,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

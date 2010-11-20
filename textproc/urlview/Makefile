@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/10 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	curses-based URL ripper
 
@@ -27,7 +27,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mslang}
 WANTLIB+=	slang
-LIB_DEPENDS=	::devel/libslang
+LIB_DEPENDS=	devel/libslang
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 CONFIGURE_ENV=	LIBS=-lcurses
 .endif

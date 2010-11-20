@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	perl module collection for working with XML
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:p5-XML-Parser->=2.19:textproc/p5-XML-Parser
+RUN_DEPENDS=	textproc/p5-XML-Parser>=2.19
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL/Artistic

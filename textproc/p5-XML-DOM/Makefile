@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	perl module to build DOM Level 1 structures
 
@@ -10,10 +10,10 @@ USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-RUN_DEPENDS=	:p5-XML-Parser->=2.30:textproc/p5-XML-Parser	\
-		:p5-Libxml-*:textproc/p5-Libxml		\
-		:p5-XML-RegExp-*:textproc/p5-XML-RegExp	\
-		:p5-libwww-*:www/p5-libwww
+RUN_DEPENDS=	textproc/p5-XML-Parser>=2.30	\
+		textproc/p5-Libxml		\
+		textproc/p5-XML-RegExp	\
+		www/p5-libwww
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

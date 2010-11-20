@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:18:16 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =		XML parser/formatter based on expat
 
@@ -18,10 +18,10 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-List \
-			::devel/hs-deepseq \
-			::devel/hs-text \
-			::devel/hs-transformers
+RUN_DEPENDS +=		devel/hs-List \
+			devel/hs-deepseq \
+			devel/hs-text \
+			devel/hs-transformers
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/27 13:25:01 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =	html help viewer
 
@@ -28,15 +28,15 @@ WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0
 MODULES =	devel/cmake \
 		devel/gettext
 
-BUILD_DEPENDS =	::devel/xulrunner/1.9,-devel
+BUILD_DEPENDS =	devel/xulrunner/1.9,-devel
 
-RUN_DEPENDS =	::devel/desktop-file-utils \
-		::devel/xulrunner/1.9
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xulrunner/1.9
 
-LIB_DEPENDS =	::devel/nspr \
-		::devel/chmlib \
-		::x11/gtk+2 \
-		::security/libgcrypt
+LIB_DEPENDS =	devel/nspr \
+		devel/chmlib \
+		x11/gtk+2 \
+		security/libgcrypt
 
 
 NO_REGRESS =	Yes

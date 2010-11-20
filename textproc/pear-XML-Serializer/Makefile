@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/06 09:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	Swiss-army knife for reading and writing XML files
 
 DISTNAME=	XML_Serializer-0.18.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}p1
+PKGNAME=	pear-${DISTNAME:S/_/-/}
+REVISION =	1
 CATEGORIES=	textproc
 
 MODULES=	www/pear
@@ -14,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:pear-XML-Util-*:textproc/pear-XML-Util
+RUN_DEPENDS=	textproc/pear-XML-Util
 
 .include <bsd.port.mk>

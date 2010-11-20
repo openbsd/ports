@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/09/21 20:31:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
@@ -19,8 +19,8 @@ MODULES=		lang/python
 
 MASTER_SITES=		http://ftp.logilab.org/pub/xmldiff/
 
-RUN_DEPENDS=		::shells/bash \
-			:py-xml-*:textproc/py-xml
+RUN_DEPENDS=		shells/bash \
+			textproc/py-xml
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/{xmldiff,xmlrev}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/06 16:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -34,10 +34,10 @@ WRKDIST =		${WRKDIR}/kamailio-${VERSION}-tls
 
 MODULES =		devel/gettext
 WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2
-LIB_DEPENDS-main =	::net/curl \
-			::databases/db/v4,-main \
-			::devel/pcre \
-			::textproc/libxml,-main,no_python
+LIB_DEPENDS-main =	net/curl \
+			databases/db/v4,-main \
+			devel/pcre \
+			textproc/libxml,-main,no_python
 
 KAMAILIO_MODULES =	cpl-c db_berkeley dialplan jabber lcr \
 			presence presence_dialoginfo presence_mwi presence_xml \
@@ -48,7 +48,7 @@ FLAVOR ?=
 MULTI_PACKAGES =	-main
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 MAKE_FLAGS =	TLS=1 \
@@ -75,7 +75,7 @@ MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_MODULES +=	db_mysql
 WANTLIB-mysql =		crypto m mysqlclient ssl z
-LIB_DEPENDS-mysql =	:mysql-client-*:databases/mysql,-main
+LIB_DEPENDS-mysql =	databases/mysql,-main
 .endif
 
 # TODO
@@ -85,7 +85,7 @@ LIB_DEPENDS-mysql =	:mysql-client-*:databases/mysql,-main
 #COMMENT-radius =	kamailio RADIUS modules
 #KAMAILIO_MODULES +=	auth_radius misc_radius peering
 #WANTLIB-radius =	freeradius-client
-#LIB_DEPENDS-radius =	::net/freeradius-client
+#LIB_DEPENDS-radius =	net/freeradius-client
 #.endif
 
 PSEUDO_FLAVORS +=	no_ldap
@@ -94,7 +94,7 @@ MULTI_PACKAGES +=	-ldap
 COMMENT-ldap =		kamailio LDAP modules
 KAMAILIO_MODULES +=	ldap h350
 WANTLIB-ldap =		ldap
-LIB_DEPENDS-ldap =	:openldap-client-*:databases/openldap,-main
+LIB_DEPENDS-ldap =	databases/openldap,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_xmlrpc
@@ -105,7 +105,7 @@ KAMAILIO_MODULES +=	mi_xmlrpc
 WANTLIB-xmlrpc +=	pthread xmlrpc xmlrpc_abyss xmlrpc_server
 WANTLIB-xmlrpc +=	xmlrpc_server_abyss xmlrpc_util
 WANTLIB-xmlrpc +=	xmlrpc_xmlparse xmlrpc_xmltok
-LIB_DEPENDS-xmlrpc =	::net/xmlrpc-c
+LIB_DEPENDS-xmlrpc =	net/xmlrpc-c
 .endif
 
 PSEUDO_FLAVORS +=	no_snmpstats
@@ -114,7 +114,7 @@ MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_MODULES +=	snmpstats
 WANTLIB-snmpstats =	netsnmp netsnmpagent netsnmphelpers netsnmpmibs
-LIB_DEPENDS-snmpstats =	::net/net-snmp
+LIB_DEPENDS-snmpstats =	net/net-snmp
 .endif
 
 PSEUDO_FLAVORS +=	no_carrierroute
@@ -123,7 +123,7 @@ MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
 WANTLIB-carrierroute =	${MODGETTEXT_WANTLIB} confuse
-LIB_DEPENDS-carrierroute = ::devel/libconfuse \
+LIB_DEPENDS-carrierroute = devel/libconfuse \
 			   ${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-carrierroute = ${MODGETTEXT_RUN_DEPENDS}
 .endif
@@ -135,12 +135,12 @@ COMMENT-perl =		kamailio perl modules
 KAMAILIO_MODULES +=	perl perlvdb
 WANTLIB-perl =		c m perl util
 LIB_DEPENDS-perl =
-RUN_DEPENDS-perl =	::databases/p5-ldap
+RUN_DEPENDS-perl =	databases/p5-ldap
 .endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
 FULLPKGNAME$i ?=	kamailio$i-${VERSION}
-RUN_DEPENDS$i +=	:kamailio-${VERSION}:telephony/kamailio
+RUN_DEPENDS$i +=	kamailio-${VERSION}:telephony/kamailio
 .endfor
 
 pre-configure:

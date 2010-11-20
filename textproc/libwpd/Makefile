@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
@@ -28,8 +28,8 @@ WANTLIB += gthread-2.0 pthread
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/libgsf
-REGRESS_DEPENDS=	::devel/cppunit
+LIB_DEPENDS=		devel/libgsf
+REGRESS_DEPENDS=	devel/cppunit
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	generate random strings from most regular expressions
 
@@ -16,7 +16,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-rcov-*:devel/ruby-rcov,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-rcov,${FLAVOR}
 MODRUBY_REGRESS =	rake rspec
 RAKE_REGRESS_TARGET =	specs
 

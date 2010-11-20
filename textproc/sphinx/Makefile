@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/10 22:56:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 
@@ -33,18 +33,18 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mpgsql}
 CONFIGURE_ARGS +=--with-pgsql \
 		--without-mysql
-LIB_DEPENDS +=	::databases/postgresql
+LIB_DEPENDS +=	databases/postgresql
 WANTLIB +=	pq
 .else
-LIB_DEPENDS +=	::databases/mysql
+LIB_DEPENDS +=	databases/mysql
 WANTLIB +=	crypto ssl z mysqlclient
 .endif
 
 # Needs php5 with pdo_mysql setup.
 REGRESS_IS_INTERACTIVE=	Yes
 PHP_VERSION=    	5
-REGRESS_DEPENDS=:php${PHP_VERSION}-mysql-*:www/php${PHP_VERSION}/extensions,-mysql \
-		:php${PHP_VERSION}-pdo_mysql-*:www/php${PHP_VERSION}/extensions,-pdo_mysql
+REGRESS_DEPENDS=www/php${PHP_VERSION}/extensions,-mysql \
+		www/php${PHP_VERSION}/extensions,-pdo_mysql
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sphinx

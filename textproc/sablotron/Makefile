@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/20 19:56:52 espie Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
 V =		1.0.3
 DISTNAME =	Sablot-${V}
-PKGNAME =	sablotron-${V}p0
+PKGNAME =	sablotron-${V}
+REVISION =	0
 SHARED_LIBS =	sablot	103.0	# .100.3
 CATEGORIES =	textproc
 
@@ -25,11 +26,11 @@ MASTER_SITES =	http://www.arcane-labs.net/download/OpenBSD/
 MODULES =	converters/libiconv
 
 # required to build the documentation
-BUILD_DEPENDS =	:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS =	textproc/p5-XML-Parser
 
 USE_LIBTOOL =			Yes
 USE_GMAKE =			Yes
-USE_GROFF =	Yes
+USE_GROFF =			Yes
 AUTOCONF_VERSION = 		2.57
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/autocfg
 

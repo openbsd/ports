@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/20 19:56:49 espie Exp $
 
 COMMENT= 	Template Toolkit views for Catalyst
 
@@ -16,12 +16,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::devel/p5-Data-Dump \
-		::devel/p5-Class-Accessor \
-		::devel/p5-MRO-Compat \
-		::devel/p5-Path-Class \
-		::textproc/p5-Template-Timer \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	devel/p5-Data-Dump \
+		devel/p5-Class-Accessor \
+		devel/p5-MRO-Compat \
+		devel/p5-Path-Class \
+		textproc/p5-Template-Timer \
+		www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes

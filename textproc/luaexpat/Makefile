@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/15 18:19:02 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:49 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -19,7 +19,7 @@ WANTLIB =		expat
 MASTER_SITES =		http://luaforge.net/frs/download.php/2469/
 
 MODULES =		lang/lua
-REGRESS_DEPENDS =	::textproc/luaexpat
+REGRESS_DEPENDS =	textproc/luaexpat
 
 MAKE_ENV+=		LUA_INC="${LOCALBASE}/include"
 USE_GMAKE =		Yes

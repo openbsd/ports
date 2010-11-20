@@ -1,4 +1,4 @@
-The X11 fonts for ${PKGNAME} have been installed to
+The X11 fonts for ${FULLPKGNAME} have been installed to
 
   ${FONTDIR}
 

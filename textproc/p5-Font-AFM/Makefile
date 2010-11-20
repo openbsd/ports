@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	perl interface to Adobe Font Metrics files
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	${PKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

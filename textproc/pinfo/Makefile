@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c ncurses readline 
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MODULES+=		devel/gettext
 

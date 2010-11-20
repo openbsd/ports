@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	gtk2 spelling checker
 DISTNAME=	gtkspell-2.0.16
@@ -34,8 +34,8 @@ USE_GMAKE=	Yes
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	::textproc/enchant \
-		::x11/gtk+2
+LIB_DEPENDS=	textproc/enchant \
+		x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

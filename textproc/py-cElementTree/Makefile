@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/08/30 21:43:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 19:56:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://effbot.org/media/downloads/
 MODULES=	lang/python
 MODPY_VERSION=	2.4
 
-RUN_DEPENDS=	::textproc/py-ElementTree
+RUN_DEPENDS=	textproc/py-ElementTree
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 post-install:

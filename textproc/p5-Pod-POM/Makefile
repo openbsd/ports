@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	convert Pod documents into a simple object model form
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/p5-File-Slurp \
-			::devel/p5-Test-Differences
+RUN_DEPENDS=		devel/p5-File-Slurp \
+			devel/p5-Test-Differences
 
 .include <bsd.port.mk>

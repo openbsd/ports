@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		HTML Abstraction Markup Language for Ruby
 
@@ -19,9 +19,9 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-hpricot-*:textproc/ruby-hpricot,${FLAVOR}
+RUN_DEPENDS=		textproc/ruby-hpricot,${FLAVOR}
 
-REGRESS_DEPENDS=	:${MODRUBY_PKG_PREFIX}-actionpack-*:devel/ruby-actionpack,${FLAVOR}
+REGRESS_DEPENDS=	devel/ruby-actionpack,${FLAVOR}
 
 MODRUBY_REGRESS=	rake
 

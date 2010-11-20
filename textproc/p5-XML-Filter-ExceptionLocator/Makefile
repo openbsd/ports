@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	add line information to XML parse errors
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::textproc/p5-XML-SAX \
-		::textproc/p5-XML-SAX-ExpatXS
+RUN_DEPENDS=	textproc/p5-XML-SAX \
+		textproc/p5-XML-SAX-ExpatXS
 
 .include <bsd.port.mk>

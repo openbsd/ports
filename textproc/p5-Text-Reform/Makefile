@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=		perl module to formating plaintext
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		Text-Reform-1.11
 REVISION=		0
 CATEGORIES=		textproc
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Sam Smith <s@msmith.net>
 

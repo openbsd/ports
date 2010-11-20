@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -29,7 +29,7 @@ FAKE_FLAGS=LIBDIR='${WRKINST}${PREFIX}/lib/hevea' BINDIR='${WRKINST}${PREFIX}/bi
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc" && \
 	${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "amd64" && \
 	${MACHINE_ARCH} != "powerpc"
-RUN_DEPENDS=	:ocaml-*:lang/ocaml
+RUN_DEPENDS=	lang/ocaml
 MAKE_FLAGS+=	TARGET='byte'
 FAKE_FLAGS+=	TARGET='byte'
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 15:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -29,13 +29,13 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 PKG_ARCH=		*
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::textproc/openjade \
-			::textproc/docbook \
-			::textproc/docbook-xsl \
-			::textproc/libxslt \
-			::editors/vim,no_x11
+RUN_DEPENDS=		textproc/openjade \
+			textproc/docbook \
+			textproc/docbook-xsl \
+			textproc/libxslt \
+			editors/vim,no_x11
 
-REGRESS_DEPENDS=	::shells/bash
+REGRESS_DEPENDS=	shells/bash
 
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \

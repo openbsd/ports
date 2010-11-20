@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	SAX2 driver directly based on expat
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::textproc/p5-XML-SAX \
-		::textproc/p5-XML-NamespaceSupport
+RUN_DEPENDS=	textproc/p5-XML-SAX \
+		textproc/p5-XML-NamespaceSupport
 
 WANTLIB=	expat
 

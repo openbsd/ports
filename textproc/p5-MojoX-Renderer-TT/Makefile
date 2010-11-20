@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:49 espie Exp $
 
 COMMENT =	Template Toolkit renderer for Mojo
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CPAN_AUTHOR =		ABH
 
-RUN_DEPENDS =		::textproc/p5-Template \
-			::www/p5-Mojo
+RUN_DEPENDS =		textproc/p5-Template \
+			www/p5-Mojo
 
 .include <bsd.port.mk>

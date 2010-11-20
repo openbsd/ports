@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=		use other catalog formats in Locale::Maketext
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 DISTNAME=		Regexp-Common-2010010201
 CATEGORIES=		textproc
 

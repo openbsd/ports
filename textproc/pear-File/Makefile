@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	common file and directory routines for PHP
 
 DISTNAME=	File-1.2.2
-PKGNAME=	pear-${DISTNAME}p1
+PKGNAME=	pear-${DISTNAME}
+REVISION =	1
 CATEGORIES=	textproc
 
 MODULES=	www/pear
 
-RUN_DEPENDS=	:pear-XML-Tree-*:textproc/pear-XML-Tree
+RUN_DEPENDS=	textproc/pear-XML-Tree
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

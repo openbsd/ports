@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
@@ -20,9 +20,9 @@ MASTER_SITES=	${HOMEPAGE} \
 		${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	::misc/gnugetopt \
-		::shells/bash \
-		::textproc/libxslt
+RUN_DEPENDS=	misc/gnugetopt \
+		shells/bash \
+		textproc/libxslt
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

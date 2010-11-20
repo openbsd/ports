@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/27 09:27:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:47 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
@@ -23,7 +23,7 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:asterisk->=1.6:telephony/asterisk
+RUN_DEPENDS=	telephony/asterisk>=1.6
 
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ASTERISK_INCLUDE_DIR=${LOCALBASE}/include

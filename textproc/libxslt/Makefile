@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/20 19:56:49 espie Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -34,14 +34,14 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main
 
-WANTLIB-main=		${WANTLIB} c xml2.>=9 gcrypt.>=12
+WANTLIB-main=		${WANTLIB} c xml2>=9 gcrypt>=12
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			:libxml->=2.6.27:textproc/libxml \
-			::security/libgcrypt
+			textproc/libxml>=2.6.27 \
+			security/libgcrypt
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-libxml-include-prefix="${LOCALBASE}/include/" \
@@ -50,9 +50,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
-BUILD_DEPENDS+= 	:py-libxml-*:textproc/libxml,-python
+BUILD_DEPENDS+= 	textproc/libxml,-python
 WANTLIB-python= 	${WANTLIB} gcrypt xml2 exslt xslt
-LIB_DEPENDS-python=	::textproc/libxslt,-main \
+LIB_DEPENDS-python=	textproc/libxslt,-main \
 			${MODGETTEXT_LIB_DEPENDS}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
 .endif

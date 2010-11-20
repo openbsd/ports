@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/02 06:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,18 +31,18 @@ WANTLIB += GL Xxf86vm drm gconf-2 gnome-keyring xcb-shm
 MODULES=	devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	::devel/gsettings-desktop-schemas \
-		::devel/dconf
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		devel/dconf
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-LIB_DEPENDS=	::x11/gnome/gdl \
-		::x11/gnome/utils \
-		::x11/gtksourceview \
-		::textproc/gtkspell \
-		::x11/gnome/gucharmap \
-		::x11/gnome/libgda \
-		::devel/libunique \
-		::devel/json-glib
+LIB_DEPENDS=	x11/gnome/gdl \
+		x11/gnome/utils \
+		x11/gtksourceview \
+		textproc/gtkspell \
+		x11/gnome/gucharmap \
+		x11/gnome/libgda \
+		devel/libunique \
+		devel/json-glib
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes

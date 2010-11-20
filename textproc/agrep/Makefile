@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	approximate grep (fast approximate pattern-matching tool)
 
 DISTNAME=	agrep-2.04
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	textproc
 
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/

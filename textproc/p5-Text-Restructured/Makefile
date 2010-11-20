@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/06 14:00:12 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	implementation of reStructuredText parser
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Slay-Makefile-Gress-*:devel/p5-Slay-Makefile-Gress \
-		:p5-Text-ASCIIMathML-*:textproc/p5-Text-ASCIIMathML \
-		:p5-Safe-World-*:devel/p5-Safe-World
+RUN_DEPENDS=	devel/p5-Slay-Makefile-Gress \
+		textproc/p5-Text-ASCIIMathML \
+		devel/p5-Safe-World
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

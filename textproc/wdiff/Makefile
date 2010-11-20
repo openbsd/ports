@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	word differences between text files
 
@@ -19,7 +19,7 @@ CONFIGURE_ENV=		CFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=		--without-included-gettext
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 FAKE_FLAGS=		PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/18 19:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	pure-Tcl implementation of XML parser
 
 DISTNAME=	TclXML-1.2.1
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	textproc
 
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/

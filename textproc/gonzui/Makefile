@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/09/23 22:14:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 19:56:48 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,12 +25,12 @@ MODULES=		lang/ruby lang/ocaml
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gonzui/}
 
-BUILD_DEPENDS=		::databases/db/v4 \
-			::databases/ruby-bdb \
+BUILD_DEPENDS=		databases/db/v4 \
+			databases/ruby-bdb \
 			${MODRUBY_ICONV_DEPENDS}
-RUN_DEPENDS=		::archivers/bzip2 \
-			::archivers/unzip \
-			::textproc/p5-PPI
+RUN_DEPENDS=		archivers/bzip2 \
+			archivers/unzip \
+			textproc/p5-PPI
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-user="_gonzui" \

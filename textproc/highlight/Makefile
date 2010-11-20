@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -21,7 +21,7 @@ MASTER_SITES =		${HOMEPAGE}/zip/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CXX=${CXX}

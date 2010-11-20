@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	perl interface to the SAX2 XML parser
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-XML-NamespaceSupport->=0.03:textproc/p5-XML-NamespaceSupport
+RUN_DEPENDS=	textproc/p5-XML-NamespaceSupport>=0.03
 
 # Install parser template
 post-install:

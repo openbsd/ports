@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/10 22:44:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		high performance full-text search system
 
@@ -22,10 +22,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 WANTLIB=		c m pthread z qdbm.>=14.11
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		::databases/qdbm
+LIB_DEPENDS=		databases/qdbm
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

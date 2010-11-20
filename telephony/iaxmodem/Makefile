@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:47 espie Exp $
 
 COMMENT=	a software fax modem that uses an IAX channel
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m tiff util
 
-LIB_DEPENDS=	::graphics/tiff
+LIB_DEPENDS=	graphics/tiff
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu

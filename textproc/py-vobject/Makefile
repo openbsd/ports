@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		iCalendar library for Python
 
@@ -24,7 +24,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/py-dateutil
+RUN_DEPENDS=		devel/py-dateutil
 
 NO_REGRESS=		Yes
 

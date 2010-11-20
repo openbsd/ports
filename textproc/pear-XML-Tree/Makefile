@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/06 09:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	classes to represent XML data in PHP
 
 DISTNAME=	XML_Tree-1.1
-PKGNAME=	pear-${DISTNAME:S/_/-/}p2
+PKGNAME=	pear-${DISTNAME:S/_/-/}
+REVISION =	2
 CATEGORIES=	textproc
 
 MODULES=	www/pear
 
-RUN_DEPENDS=	:pear-XML-Parser-*:textproc/pear-XML-Parser
+RUN_DEPENDS=	textproc/pear-XML-Parser
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

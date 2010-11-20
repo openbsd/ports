@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/14 14:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -32,12 +32,12 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-readline
 
 USE_LIBTOOL =		yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # default dictionary
-RUN_DEPENDS =		::textproc/mozilla-dicts,-en-GB
+RUN_DEPENDS =		textproc/mozilla-dicts,-en-GB
 
-REGRESS_DEPENDS =	::shells/bash
+REGRESS_DEPENDS =	shells/bash
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/tests/test.sh \

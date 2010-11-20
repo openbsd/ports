@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	utility to turn simply formatted text into markup 
 
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::devel/gettext
+BUILD_DEPENDS=	devel/gettext
 
 PKG_ARCH=	*
 

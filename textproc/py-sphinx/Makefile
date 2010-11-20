@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
 
 COMMENT =		python documentation generator
 
@@ -22,12 +22,12 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=S/Sphinx/}
 
 MODULES =		lang/python
-USE_GROFF =	Yes
-RUN_DEPENDS =		::textproc/py-pygments \
-			::textproc/py-docutils \
-			::www/py-jinja2
+USE_GROFF =		Yes
+RUN_DEPENDS =		textproc/py-pygments \
+			textproc/py-docutils \
+			www/py-jinja2
 BUILD_DEPENDS =		${RUN_DEPENDS}
-REGRESS_DEPENDS =	::devel/py-nose
+REGRESS_DEPENDS =	devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

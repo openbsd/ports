@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	very flexible diff-like program
 
 DISTNAME=	spiff-1.0
-PKGNAME=	${DISTNAME}p0
+REVISION =	0
 CATEGORIES=	textproc
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/

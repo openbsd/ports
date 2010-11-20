@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/20 19:56:51 espie Exp $
 COMMENT=	Python syntax highlighter
 
 MODPY_EGG_VERSION = 1.3.1
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PYPI:=P/Pygments/}
 
 MODPY_SETUPTOOLS=	Yes
-REGRESS_DEPENDS=	::devel/py-nose
+REGRESS_DEPENDS=	devel/py-nose
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \

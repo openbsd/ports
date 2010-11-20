@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 19:56:48 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 MAKE_ENV=		LIBeruby_MAJOR=${LIBeruby_VERSION:R} \
 			LIBeruby_MINOR=${LIBeruby_VERSION:E}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

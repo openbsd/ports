@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	efficiently fetch RSS feeds
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-LWP-UserAgent-Determined \
-		::textproc/p5-XML-RSS \
-		::textproc/p5-XML-RSS-Timing \
-		::textproc/p5-XML-LibXML \
-		::textproc/p5-XML-XSLT
+RUN_DEPENDS=	www/p5-LWP-UserAgent-Determined \
+		textproc/p5-XML-RSS \
+		textproc/p5-XML-RSS-Timing \
+		textproc/p5-XML-LibXML \
+		textproc/p5-XML-XSLT
 
 .include <bsd.port.mk>

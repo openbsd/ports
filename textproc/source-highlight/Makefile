@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/10 22:56:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -19,8 +19,8 @@ WANTLIB=		c m stdc++ boost_regex
 
 MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
 
-LIB_DEPENDS=	::devel/boost
-BUILD_DEPENDS=	::textproc/texi2html
+LIB_DEPENDS=	devel/boost
+BUILD_DEPENDS=	textproc/texi2html
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

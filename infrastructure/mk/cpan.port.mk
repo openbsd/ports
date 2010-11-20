@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.11 2010/10/23 11:58:33 jasper Exp $
+# $OpenBSD: cpan.port.mk,v 1.12 2010/11/20 19:57:30 espie Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -18,8 +18,8 @@ PKG_ARCH ?=	*
 .endif
 
 .if defined(MAKE_ENV) && !empty(MAKE_ENV:MTEST_POD=*)
-REGRESS_DEPENDS +=	::devel/p5-Test-Pod \
-		 	::devel/p5-Test-Pod-Coverage
+REGRESS_DEPENDS +=	devel/p5-Test-Pod \
+		 	devel/p5-Test-Pod-Coverage
 .endif
 
 MODCPAN_POST_INSTALL = ${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}; \
@@ -40,7 +40,7 @@ post-install:
 CPAN_REPORT ?=	No
 
 .if ${CPAN_REPORT:L} == "yes"
-REGRESS_DEPENDS +=	::devel/p5-Test-Reporter
+REGRESS_DEPENDS +=	devel/p5-Test-Reporter
 .  if ${CONFIGURE_STYLE:L:Mmodbuild}
 REGRESS_FLAGS +=	verbose=1
 .  else

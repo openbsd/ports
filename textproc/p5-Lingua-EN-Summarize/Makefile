@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	summarize english text
 
@@ -12,6 +12,6 @@ PERMIT_PACKAGE_FTP=	No licence
 PERMIT_DISTFILES_CDROM=	No licence
 PERMIT_DISTFILES_FTP=	No licence
 
-RUN_DEPENDS=	::textproc/p5-HTML-Summary
+RUN_DEPENDS=	textproc/p5-HTML-Summary
 
 .include <bsd.port.mk>

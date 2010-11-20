@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/10 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	X11 Xext c m png pthread pthread-stubs stdc++ xcb
 
-BUILD_DEPENDS=	:bison-*:devel/bison \
-		:tmake->=1.10:devel/tmake
+BUILD_DEPENDS=	devel/bison \
+		devel/tmake>=1.10
 MODULES=	x11/qt3
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src

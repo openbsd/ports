@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/09 18:47:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:52 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ WANTLIB=		c m pthread estraier ${MODRUBY_WANTLIB}
 MODULES=		lang/ruby
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
-			::textproc/hyperestraier
+			textproc/hyperestraier
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

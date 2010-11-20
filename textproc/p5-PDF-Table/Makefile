@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=		create PDF tables with perl
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
-RUN_DEPENDS=		::textproc/p5-PDF-API2
+USE_GROFF =		Yes
+RUN_DEPENDS=		textproc/p5-PDF-API2
 
 .include <bsd.port.mk>

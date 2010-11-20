@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 10:51:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
@@ -17,19 +17,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::textproc/p5-XML-Parser \
-		::www/p5-HTML-Tree	
+RUN_DEPENDS=	textproc/p5-XML-Parser \
+		www/p5-HTML-Tree	
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=::converters/p5-Text-Iconv \
-		::converters/p5-Unicode-Map \
-		::converters/p5-Unicode-Map8 \
-		::converters/p5-Unicode-String \
-		::devel/p5-IO-stringy \
-		::devel/p5-Test-Pod \
-		::devel/p5-Tie-IxHash \
-		::textproc/p5-XML-SAX \
-		::textproc/p5-XML-Simple \
-		::textproc/p5-XML-XPath \
-		::www/p5-libwww
+REGRESS_DEPENDS=converters/p5-Text-Iconv \
+		converters/p5-Unicode-Map \
+		converters/p5-Unicode-Map8 \
+		converters/p5-Unicode-String \
+		devel/p5-IO-stringy \
+		devel/p5-Test-Pod \
+		devel/p5-Tie-IxHash \
+		textproc/p5-XML-SAX \
+		textproc/p5-XML-Simple \
+		textproc/p5-XML-XPath \
+		www/p5-libwww
 
 .include <bsd.port.mk>

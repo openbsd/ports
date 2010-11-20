@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=		GNU stream editor
 
@@ -21,11 +21,11 @@ WANTLIB=		c
 MASTER_SITES=		${MASTER_SITE_GNU:=sed/}
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		::devel/bison
+BUILD_DEPENDS=		devel/bison
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--program-prefix=g
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

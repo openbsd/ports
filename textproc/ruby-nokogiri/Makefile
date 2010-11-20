@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:37:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		xml2 exslt xslt
-LIB_DEPENDS=		::textproc/libxslt
+LIB_DEPENDS=		textproc/libxslt
 
 BUILD_DEPENDS=		${MODRUBY_RAKE_DEPENDS}
 

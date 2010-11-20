@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/10 22:56:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	interface to the GNU aspell library
 SHARED_ONLY=	Yes
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	stdc++ aspell.>=16
+WANTLIB=	stdc++ aspell>=16
 
-LIB_DEPENDS=	::textproc/aspell/core
+LIB_DEPENDS=	textproc/aspell/core
 
 CONFIGURE_ARGS=	LIBS="-L${LOCALBASE}/lib -laspell -lstdc++" \
 		INC="-I${LOCALBASE}/include"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	texinfo to HTML converter
 
@@ -22,7 +22,7 @@ USE_GROFF =	Yes
 
 MAKE_FLAGS+=	texinfohtmldir=${PREFIX}/share/doc/texi2html
 
-REGRESS_DEPENDS=	::textproc/gsed
+REGRESS_DEPENDS=	textproc/gsed
 
 pre-regress:
 	@ln -s ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed

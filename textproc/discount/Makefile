@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:48 espie Exp $
 
 COMMENT =		fast C implementation of Markdown
 
@@ -25,12 +25,12 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
-BUILD_DEPENDS = 	::archivers/gtar
+BUILD_DEPENDS = 	archivers/gtar
 TAR =			${LOCALBASE}/bin/gtar
 
 INSTALL_TARGET =	install.everything
 REGRESS_TARGET =	test
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	@perl -pi -e 's,\./markdown,\./discount,' ${WRKSRC}/tests/*.t

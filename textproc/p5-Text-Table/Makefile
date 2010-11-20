@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	organize data in tables
 
@@ -15,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Text-Aligner->=0.03:textproc/p5-Text-Aligner
+RUN_DEPENDS=	textproc/p5-Text-Aligner>=0.03
 
 .include <bsd.port.mk>

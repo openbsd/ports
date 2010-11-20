@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/10 22:56:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/20 19:56:51 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	expat m sablot.>=100
+WANTLIB=	expat m sablot>=100
 
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	::textproc/sablotron
+LIB_DEPENDS=	textproc/sablotron
 
 USE_GROFF =	Yes
 

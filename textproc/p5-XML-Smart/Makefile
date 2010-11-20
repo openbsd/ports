@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	access/create XML files/datas easily
 
@@ -16,6 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::textproc/p5-Object-MultiType
+RUN_DEPENDS=	textproc/p5-Object-MultiType
 
 .include <bsd.port.mk>

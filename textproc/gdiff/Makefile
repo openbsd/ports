@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
 VERSION=	2.8.1
 DISTNAME=	diffutils-${VERSION}
-PKGNAME=	gdiff-${VERSION}p0
+PKGNAME=	gdiff-${VERSION}
+REVISION =	0
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.gnu.org/software/diffutils/
 

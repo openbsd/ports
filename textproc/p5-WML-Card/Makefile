@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	perl module to create WML cards
 
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-HTML-Parser
+RUN_DEPENDS=	www/p5-HTML-Parser
 
 .include <bsd.port.mk>

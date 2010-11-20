@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	parser and generator for XSPF playlists
 
@@ -9,11 +9,11 @@ USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.xspf.org/
 
-RUN_DEPENDS=	::devel/p5-Class-Accessor \
-		::devel/p5-Time-TimeDate \
-		::textproc/p5-XML-Parser \
-		::textproc/p5-XML-Writer \
-		::www/p5-HTML-Parser
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		devel/p5-Time-TimeDate \
+		textproc/p5-XML-Parser \
+		textproc/p5-XML-Writer \
+		www/p5-HTML-Parser
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/14 12:16:29 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	LaTeX to HTML converter
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
-		:ghostscript-*:print/ghostscript/gnu \
-		::print/texlive/base
+RUN_DEPENDS=	graphics/netpbm \
+		print/ghostscript/gnu \
+		print/texlive/base
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--shlibdir=${PREFIX}/share/latex2html \

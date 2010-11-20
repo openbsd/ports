@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/28 14:41:55 schwarze Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:48 espie Exp $
 
 CATEGORIES =	textproc
 COMMENT =	gnu clone of nroff
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM = 		Yes
 WRKDIST = ${WRKDIR}/groff
 MAKE_FILE = Makefile.bsd-wrapper
 WANTLIB += c m stdc++
-RUN_DEPENDS += ::textproc/groff.mdoc
+RUN_DEPENDS += textproc/groff.mdoc
 
 MAKE_FLAGS = BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/cat \
 	PREFIX=${TRUEPREFIX} DATASUBDIR=${TRUEPREFIX}/share \

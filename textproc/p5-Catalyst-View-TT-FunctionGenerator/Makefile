@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:49 espie Exp $
 
 COMMENT= 	use shorter names in catalyst tt views
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::textproc/p5-Catalyst-View-TT \
-		::www/p5-Catalyst-Plugin-Singleton
+RUN_DEPENDS=	textproc/p5-Catalyst-View-TT \
+		www/p5-Catalyst-Plugin-Singleton
 
 MAKE_ENV=	TEST_POD=Yes
 

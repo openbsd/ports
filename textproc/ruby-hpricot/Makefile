@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=		flexible HTML parser
 
@@ -20,7 +20,7 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
 
-REGRESS_DEPENDS=	:${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
 	@cd ${WRKSRC} && /usr/local/bin/ruby -rubygems -Ilib:test:lib \

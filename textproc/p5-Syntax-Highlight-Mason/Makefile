@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:50 espie Exp $
 
 COMMENT=	syntax highlight for Mason
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::www/p5-HTML-Mason \
-		::www/p5-HTML-Parser \
-		::textproc/p5-Syntax-Highlight-Perl \
-		::textproc/p5-Syntax-Highlight-HTML
+RUN_DEPENDS=	www/p5-HTML-Mason \
+		www/p5-HTML-Parser \
+		textproc/p5-Syntax-Highlight-Perl \
+		textproc/p5-Syntax-Highlight-HTML
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

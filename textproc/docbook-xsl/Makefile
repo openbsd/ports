@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/20 17:06:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1
-PKGNAME=	${DISTNAME}p2
+REVISION =	2
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
 
-BUILD_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
-RUN_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
+BUILD_DEPENDS=	textproc/libxml>=2.6.16p6
+RUN_DEPENDS=	textproc/libxml>=2.6.16p6
 
 NO_REGRESS=	Yes
 PKG_ARCH=	*

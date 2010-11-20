@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/10 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=	YAML parser and emitter in Python
 
@@ -24,7 +24,7 @@ WANTLIB+=	yaml
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	::devel/libyaml
+LIB_DEPENDS=	devel/libyaml
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.cfg

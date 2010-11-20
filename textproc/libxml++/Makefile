@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/16 14:11:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
@@ -24,8 +24,8 @@ WANTLIB += glibmm-2.4 xml2 stdc++
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/glib2mm \
-		::textproc/libxml
+LIB_DEPENDS=	devel/glib2mm \
+		textproc/libxml
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

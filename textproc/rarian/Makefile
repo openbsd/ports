@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:51 espie Exp $
 
 COMMENT=		documentation metadata library
 
@@ -21,9 +21,9 @@ WANTLIB=		c m stdc++
 
 MODULES=		x11/gnome
 
-RUN_DEPENDS=		::shells/bash \
-			::textproc/docbook \
-			::textproc/libxslt
+RUN_DEPENDS=		shells/bash \
+			textproc/docbook \
+			textproc/libxslt
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

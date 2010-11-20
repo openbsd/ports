@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:49 espie Exp $
 
 COMMENT=		parse, analyze and manipulate LaTeX documents
 
@@ -6,7 +6,7 @@ DISTNAME=		LaTeX-TOM-1.00
 CATEGORIES=		textproc
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

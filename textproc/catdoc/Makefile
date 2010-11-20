@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/19 07:54:21 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/20 19:56:48 espie Exp $
 
 COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
 
@@ -21,7 +21,7 @@ FLAVORS=	tk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mtk}
-RUN_DEPENDS=	::x11/tk/8.4
+RUN_DEPENDS=	x11/tk/8.4
 .else
 CONFIGURE_ARGS+=--disable-wordview
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/10 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:52 espie Exp $
 
 COMMENT=	front-end to an XSL toolchain
 
@@ -18,13 +18,13 @@ WANTLIB+= c
 
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 
-RUN_DEPENDS=	::shells/bash \
-		::misc/gnugetopt \
-		::textproc/libxml \
-		::textproc/libxslt \
-		::textproc/docbook-xsl
+RUN_DEPENDS=	shells/bash \
+		misc/gnugetopt \
+		textproc/libxml \
+		textproc/libxslt \
+		textproc/docbook-xsl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::textproc/docbook
+		textproc/docbook
 
 CONFIGURE_STYLE= gnu
 
