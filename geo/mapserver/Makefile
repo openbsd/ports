@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/21 09:32:57 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -14,6 +14,8 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php5-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
+REVISION-main=	0
+REVISION-utils=	0
 
 CATEGORIES=	geo www
 
@@ -43,8 +45,8 @@ WANTLIB=	crypto curl expat freetype gif iconv idn jasper jpeg \
 		com_err readline termcap m png pq ssl tiff xml2 z \
 		proj gdal geos_c geotiff gd
 
-WANTLIB-main=	${WANTLIB} c stdc++
-WANTLIB-utils=	${WANTLIB} c stdc++
+WANTLIB-main=	${WANTLIB} pthread c stdc++
+WANTLIB-utils=	${WANTLIB} pthread c stdc++
 WANTLIB-php=	${WANTLIB} stdc++
 WANTLIB-perl=	${WANTLIB} stdc++
 
@@ -70,7 +72,7 @@ CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-sos
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 MAKE_ENV=	CFLAGS+=-fPIC
 

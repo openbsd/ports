@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.2 2010/07/27 08:57:38 landry Exp $
+$OpenBSD: patch-configure,v 1.3 2010/11/21 09:32:57 landry Exp $
 --- configure.orig	Thu Jul  8 22:07:15 2010
-+++ configure	Tue Jul 27 10:40:55 2010
++++ configure	Wed Nov 17 22:14:47 2010
+@@ -3360,7 +3360,7 @@ if test $ac_cv_lib_m_exp = yes; then
+   XTRALIBS="$XTRALIBS -lm"
+ fi
+ 
+-XTRALIBS=$XTRALIBS
++XTRALIBS="$XTRALIBS -pthread"
+ 
+ 
+ echo "$as_me:$LINENO: checking for __gxx_personality_v0 in -lstdc++" >&5
 @@ -9790,7 +9790,7 @@ fi
  
  RGBA_PNG_ENABLED=$RGBA_PNG_ENABLED
