@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/21 09:33:56 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 CONFIGURE_ENV=	PGXS=1 \
-		LDFLAGS=-L${LOCALBASE}/lib \
+		LDFLAGS='-L${LOCALBASE}/lib -pthread' \
 		CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgresql/contrib \

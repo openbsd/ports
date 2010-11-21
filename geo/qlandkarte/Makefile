@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/21 09:33:27 landry Exp $
 
 COMMENT=	garmin gps map management tool
 
@@ -36,6 +36,7 @@ PORTHOME=	${WRKDIR}
 NO_REGRESS=	Yes
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE= autoconf gnu
+CONFIGURE_ENV+=	'LDFLAGS=-pthread'
 CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}/lib/qt4 \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include \
