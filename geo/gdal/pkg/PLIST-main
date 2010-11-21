@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/07/19 12:01:58 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/11/21 09:37:40 landry Exp $
 @pkgpath geo/gdal
 %%SHARED%%
 bin/gdal-config
 @bin bin/gdal_contour
+bin/gdal_fillnodata.dox
+bin/gdal_fillnodata.py
 @bin bin/gdal_grid
 @bin bin/gdal_rasterize
 @bin bin/gdal_translate
 @bin bin/gdaladdo
 @bin bin/gdalbuildvrt
+@bin bin/gdaldem
 @bin bin/gdalenhance
 @bin bin/gdalinfo
 @bin bin/gdalmanage
@@ -19,7 +22,9 @@ bin/gdal-config
 @bin bin/ogrinfo
 @bin bin/ogrtindex
 @bin bin/testepsg
+include/cpl_atomic_ops.h
 include/cpl_config.h
+include/cpl_config_extras.h
 include/cpl_conv.h
 include/cpl_csv.h
 include/cpl_error.h
@@ -34,6 +39,7 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_quad_tree.h
 include/cpl_string.h
+include/cpl_time.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
 include/cpl_win32ce_api.h
@@ -85,6 +91,7 @@ share/gdal/gdal_datum.csv
 share/gdal/gdalicon.png
 share/gdal/gt_datum.csv
 share/gdal/gt_ellips.csv
+share/gdal/header.dxf
 share/gdal/pcs.csv
 share/gdal/pcs.override.csv
 share/gdal/prime_meridian.csv
@@ -100,4 +107,5 @@ share/gdal/s57objectclasses_iw.csv
 share/gdal/seed_2d.dgn
 share/gdal/seed_3d.dgn
 share/gdal/stateplane.csv
+share/gdal/trailer.dxf
 share/gdal/unit_of_measure.csv

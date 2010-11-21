@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/21 09:37:40 landry Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
 COMMENT-perl=	perl bindings for GDAL
 
-V=		1.6.1
+V=		1.7.3
 DISTNAME=	gdal-${V}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	py-${DISTNAME}
-REVISION-main = 1
-REVISION-perl = 1
-REVISION-python = 1
 PKGNAME-perl=   p5-Geo-GDAL-${V}
 
-SHARED_LIBS=	gdal 15.0
+SHARED_LIBS=	gdal 16.0
 CATEGORIES=	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -33,8 +30,8 @@ MODULES =	perl lang/python devel/gettext
 
 WANTLIB-main =	${WANTLIB} c crypto expat m ssl stdc++ z
 WANTLIB-perl =	crypto curl expat geos_c geotiff gif idn jasper jpeg m \
-		perl png pq ssl tiff z
-WANTLIB-python =
+		png pq ssl tiff z
+WANTLIB-python =	m stdc++
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 		graphics/tiff \
@@ -47,7 +44,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 		graphics/jpeg \
 		graphics/jasper \
 		devel/geotiff
-WANTLIB-main +=	tiff curl pq geos geos_c idn png gif jpeg jasper geotiff
+WANTLIB-main +=	tiff curl pq geos geos_c idn png gif jpeg jasper geotiff \
+		com_err proj pthread
 
 LIB_DEPENDS-python=	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-python +=	gdal
@@ -70,7 +68,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-cfitsio \
@@ -86,16 +84,14 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-libgrass \
 		--without-php \
 		--without-ruby \
-		--without-ogpython \
 		--without-threads \
-		--with-png-inc="${LOCALBASE}/include/libpng" \
-		--with-png-lib="${LOCALBASE}/lib" \
 		--with-pg=${LOCALBASE}/bin/pg_config \
 		--with-python \
 		--with-perl \
 		--with-geos \
+		--with-png=${LOCALBASE} \
+		--with-geotiff=${LOCALBASE} \
 		--with-curl=${LOCALBASE} \
-		--with-tiff=${LOCALBASE} \
 		--with-gif=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-jasper=${LOCALBASE}
