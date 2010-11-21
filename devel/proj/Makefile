@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/21 09:31:00 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-4.6.1
-REVISION =	0
-CATEGORIES=    	devel geo
-SHARED_LIBS=	proj 5.5
+DISTNAME=	proj-4.7.0
+CATEGORIES=	devel geo
+SHARED_LIBS=	proj 5.6
 
-DATUMGRID=	proj-datumgrid-1.4.zip
+DATUMGRID=	proj-datumgrid-1.5.zip
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -27,10 +26,10 @@ MASTER_SITES=		ftp://ftp.remotesensing.org/proj/ \
 			http://download.osgeo.org/proj/
 
 CONFIGURE_STYLE=	gnu
-WANTLIB=		c m
+WANTLIB=		c m pthread
+CONFIGURE_ENV=		LDFLAGS='-pthread'
 
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 
 BUILD_DEPENDS=		archivers/unzip
 
