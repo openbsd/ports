@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/21 19:43:31 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -10,7 +10,7 @@ CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		6.12.3.20101002
+BIN_VER =		6.12.3.20101121
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regress.
@@ -36,7 +36,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
 
-REVISION-main =		7
+REVISION-main =		8
 WANTLIB-main =		${WANTLIB} c gmp m ncursesw pthread util
 
 REVISION-doc =		2
