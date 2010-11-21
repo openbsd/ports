@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/21 14:42:34 benoit Exp $
 
 COMMENT =	fast light toolkit
 
-V =		6950
+V =		7725
 DISTNAME =	fltk-2.0.x-r${V}
 PKGNAME =	fltk2-2.0.${V}
 
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	x11
 
@@ -27,8 +26,8 @@ WANTLIB = 	X11 Xcursor Xext Xft Xi Xinerama Xrender c fontconfig m \
 MASTER_SITES =	http://ftp.easysw.com/pub/fltk/snapshots/ \
 		http://ftp2.easysw.com/pub/fltk/snapshots/
 
-LIB_DEPENDS =	::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS =	graphics/jpeg \
+		graphics/png
 
 USE_GMAKE =	Yes
 
