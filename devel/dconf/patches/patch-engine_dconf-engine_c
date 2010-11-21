@@ -1,19 +1,12 @@
-$OpenBSD: patch-engine_dconf-engine_c,v 1.1.1.1 2010/10/27 10:50:04 ajacoutot Exp $
---- engine/dconf-engine.c.orig	Tue Oct 26 20:09:23 2010
-+++ engine/dconf-engine.c	Tue Oct 26 20:09:49 2010
-@@ -144,6 +144,7 @@ dconf_engine_setup_user (DConfEngine *engine)
+$OpenBSD: patch-engine_dconf-engine_c,v 1.2 2010/11/21 09:31:32 ajacoutot Exp $
+--- engine/dconf-engine.c.orig	Wed Aug  4 17:40:53 2010
++++ engine/dconf-engine.c	Sun Nov 21 10:26:00 2010
+@@ -144,7 +144,7 @@ dconf_engine_setup_user (DConfEngine *engine)
  
            if (fd >= 0)
              {
-+#ifndef __OpenBSD__
-               if (posix_fallocate (fd, 0, 1) == 0)
+-              if (posix_fallocate (fd, 0, 1) == 0)
++              if (ftruncate (fd, 1) == 0)
                  {
                    engine->shm = mmap (NULL, 1, PROT_READ, MAP_SHARED, fd, 0);
-@@ -152,6 +153,7 @@ dconf_engine_setup_user (DConfEngine *engine)
-                     engine->shm = NULL;
-                 }
  
-+#endif
-               close (fd);
-             }
-         }
