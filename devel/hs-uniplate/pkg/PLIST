@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/28 13:51:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/11/21 20:42:59 jasper Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Generics/
@@ -21,6 +21,7 @@ lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Internal/DataOnlyOperations.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Internal/Utils.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Operations.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Typeable.hi
+lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Zipper.hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateOn.hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateStr.hi
 lib/ghc/${DISTNAME}/Data/Generics/UniplateStrOn.hi
@@ -45,6 +46,7 @@ share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-DataOnly.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Direct.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Operations.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Typeable.html
+share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Zipper.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateOn.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateStr.html
@@ -68,6 +70,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-DataOnly.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Direct.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Operations.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Typeable.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Zipper.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-UniplateOn.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-UniplateStr.html
