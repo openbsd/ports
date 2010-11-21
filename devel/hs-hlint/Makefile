@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/21 21:11:26 jasper Exp $
 
 COMMENT=		source code suggestions for Haskell
 
-DISTNAME=		hlint-1.8
-REVISION=		1
+DISTNAME=		hlint-1.8.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,13 +21,13 @@ MODULES=		converters/libiconv \
 			lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
-USE_GROFF =	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/cpphs,-lib \
 			hscolour->=1.17:devel/hscolour \
+			devel/hs-transformers \
 			devel/hs-uniplate \
-			lang/hs-haskell-src-exts
+			STEM->=1.9.6:lang/hs-haskell-src-exts
 LIB_DEPENDS=		devel/gmp
 
 post-install:
