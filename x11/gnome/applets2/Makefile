@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.102 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2010/11/22 18:16:03 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
 
 GNOME_PROJECT=		gnome-applets
-GNOME_VERSION=		2.32.0
+GNOME_VERSION=		2.32.1.1
 
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
-
-REVISION-main=		2
-REVISION-battstat=	1
 
 CATEGORIES=		x11
 
@@ -26,7 +23,7 @@ WANTLIB += expat fontconfig notify freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z xcb-render
-WANTLIB += xcb-render-util panel-applet-3
+WANTLIB += panel-applet-3 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -72,9 +69,8 @@ WANTLIB-main += ${WANTLIB} gstbase-0.10 gstreamer-0.10 gucharmap XRes
 WANTLIB-main += kvm gcrypt gnome-desktop-2 gnutls gpg-error gweather
 WANTLIB-main += execinfo xcb-atom xcb-aux xcb-event soup-2.4
 WANTLIB-main += startup-notification-1 tasn1 wnck-1 gnome-keyring proxy
-WANTLIB-main += soup-gnome-2.4 sqlite3 eggdbus-1 gstaudio-0.10
+WANTLIB-main += soup-gnome-2.4 sqlite3 gstaudio-0.10 art_lgpl_2
 WANTLIB-main += gstinterfaces-0.10 gtop-2.0 ICE ORBitCosNaming-2 SM
-WANTLIB-main += art_lgpl_2 avahi-client avahi-common avahi-glib
 WANTLIB-main += bonobo-2 bonobo-activation bonoboui-2 canberra crypto
 WANTLIB-main += gailutil gnome-2 gnomecanvas-2 gnomevfs-2 ltdl ogg
 WANTLIB-main += panel-applet-2 popt ssl util vorbis vorbisfile xml2

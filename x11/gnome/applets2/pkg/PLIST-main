@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2010/09/30 07:33:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2010/11/22 18:16:03 ajacoutot Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
@@ -991,6 +991,10 @@ share/gnome/help/invest-applet/fi/
 share/gnome/help/invest-applet/fi/figures/
 share/gnome/help/invest-applet/fi/figures/symbol-search.png
 share/gnome/help/invest-applet/fi/invest-applet.xml
+share/gnome/help/invest-applet/it/
+share/gnome/help/invest-applet/it/figures/
+share/gnome/help/invest-applet/it/figures/symbol-search.png
+share/gnome/help/invest-applet/it/invest-applet.xml
 share/gnome/help/invest-applet/ru/
 share/gnome/help/invest-applet/ru/figures/
 share/gnome/help/invest-applet/ru/figures/symbol-search.png
@@ -1672,6 +1676,7 @@ share/omf/invest-applet/invest-applet-el.omf
 share/omf/invest-applet/invest-applet-en_GB.omf
 share/omf/invest-applet/invest-applet-es.omf
 share/omf/invest-applet/invest-applet-fi.omf
+share/omf/invest-applet/invest-applet-it.omf
 share/omf/invest-applet/invest-applet-ru.omf
 share/omf/invest-applet/invest-applet-sv.omf
 share/omf/invest-applet/invest-applet-zh_CN.omf
@@ -1805,7 +1810,6 @@ share/pixmaps/stickynotes/resize_se.png
 share/pixmaps/stickynotes/resize_sw.png
 share/pixmaps/stickynotes/unlocked.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/charpick.schemas
 ${SCHEMAS_INSTDIR}/geyes.schemas
 ${SCHEMAS_INSTDIR}/mixer.schemas
