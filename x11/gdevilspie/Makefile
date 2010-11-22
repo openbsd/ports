@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:56:47 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -6,6 +6,9 @@ COMMENT=		gui to configure devilspie rules
 
 MODPY_EGG_VERSION=	0.5
 DISTNAME=		gdevilspie-${MODPY_EGG_VERSION}
+REVISOIN=		0
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES=		x11 sysutils
 

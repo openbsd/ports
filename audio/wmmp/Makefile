@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:56:47 jasper Exp $
 
 COMMENT=		wm-dockapp to control MPD
 DISTNAME=		WMmp-0.10.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio x11 x11/windowmaker
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

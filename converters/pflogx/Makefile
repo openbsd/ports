@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:06:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:56:47 jasper Exp $
 
-COMMENT=		convert pf logs to XML
+COMMENT=		convert pf(4) logs to XML
 
 DISTNAME=		pflogx_086
 PKGNAME=		pflogx-0.86
-REVISION=		2
+REVISION=		3
 CATEGORIES=		converters
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=		http://akldev.free.fr/pflogx/
 

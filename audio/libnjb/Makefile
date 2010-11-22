@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:56:47 jasper Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
 DISTNAME=		libnjb-2.2.6
+REVISION=		0
 SHARED_LIBS=		njb	0.0	# .6.0
 CATEGORIES=		audio devel
 
 HOMEPAGE=		http://libnjb.sourceforge.net/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
