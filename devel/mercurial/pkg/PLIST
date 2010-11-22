@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/07/25 07:22:27 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/11/22 00:19:37 fgsch Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -169,10 +169,12 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/help/environment.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/extensions.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/glossary.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/hgweb.txt
+lib/python${MODPY_VERSION}/site-packages/mercurial/help/merge-tools.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/multirevs.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/patterns.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/revisions.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/revsets.txt
+lib/python${MODPY_VERSION}/site-packages/mercurial/help/subrepos.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/templates.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/urls.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/hg.py
@@ -230,6 +232,9 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ja/LC_MESSAGES/hg.mo
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/pt_BR/
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/pt_BR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo
+lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ro/
+lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ro/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ro/LC_MESSAGES/hg.mo
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/sv/
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/sv/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/mercurial/locale/sv/LC_MESSAGES/hg.mo
@@ -270,6 +275,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/posix.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/posix.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pushkey.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pushkey.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/py3kcompat.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/py3kcompat.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repo.py
@@ -290,8 +297,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/statichttprepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/statichttprepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/store.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/store.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/subrepo.py
@@ -330,6 +335,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/filerevision
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/graph.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/header.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/help.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/helptopics.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/index.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/manifest.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/map
@@ -355,6 +362,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/filerevisi
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/graph.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/header.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/help.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/helptopics.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/index.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/manifest.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/map
@@ -375,6 +384,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/filerevision.
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/graph.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/header.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/help.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/helptopics.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/index.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/manifest.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/map
@@ -452,6 +463,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/win32.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/win32.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/windows.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/windows.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/wireproto.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/wireproto.pyc
 @man man/man1/hg.1
 @man man/man5/hgignore.5
 @man man/man5/hgrc.5
@@ -478,6 +491,7 @@ share/mercurial/vim/
 share/mercurial/vim/HGAnnotate.vim
 share/mercurial/vim/hg-menu.vim
 share/mercurial/vim/hgcommand.vim
+share/mercurial/vim/hgtest.vim
 share/mercurial/vim/patchreview.txt
 share/mercurial/vim/patchreview.vim
 share/mercurial/zsh_completion
