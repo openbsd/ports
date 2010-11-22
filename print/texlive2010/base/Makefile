@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 14:12:11 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -98,7 +98,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-old-mac-fonts \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
-			--with-banner-add="OpenBSD_Ports" \
+			--with-banner-add="-OpenBSD_Ports" \
 			--with-system-xpdf # link poppler instead of internal xpdf
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
