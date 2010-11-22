@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 09:20:34 espie Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -24,7 +24,7 @@ MODULES =	devel/gettext x11/qt4
 BUILD_DEPENDS = devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	::x11/qt4
+LIB_DEPENDS =	x11/qt4
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 09:28:34 espie Exp $
 
 COMMENT=	symbolics math system
 
@@ -37,6 +37,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/rw.math ${PREFIX}/share/doc/jacal
 	${INSTALL_DATA} ${WRKDIST}/ANNOUNCE ${PREFIX}/share/doc/jacal
 
-RUN_DEPENDS=:scm-*:lang/scm
+RUN_DEPENDS=	lang/scm
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 09:20:34 espie Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -42,7 +42,7 @@ PERMIT_DISTFILES_CDROM=	No Fee
 MULTI_PACKAGES=-main -dict -server
 
 PREFIX-dict=		/var/dict
-LIB_DEPENDS-server=	::japanese/canna
+LIB_DEPENDS-server=	japanese/canna
 WANTLIB-server=	c canna
 
 SUBST_VARS=	DICT_DIR

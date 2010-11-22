@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/11/22 09:23:58 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -68,8 +68,8 @@ BUILD_DEPENDS += devel/bison
 
 MULTI_PACKAGES = -main
 
-REGRESS_DEPENDS = 	::devel/dejagnu \
-			::devel/autogen
+REGRESS_DEPENDS = 	devel/dejagnu \
+			devel/autogen
 
 DISTNAME =   	gcc-${FULL_VERSION}
 
@@ -193,7 +193,7 @@ PKG_ARGS += -DI386=1
 PKG_ARGS += -DI386=0
 .endif
 
-RUN_DEPENDS =		:gcc-${FULL_PKGVERSION}v0:${PKGPATH}
+RUN_DEPENDS =		gcc-${FULL_PKGVERSION}v0:${PKGPATH}
 WANTLIB =		c
 
 RUN_DEPENDS-main =

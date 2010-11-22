@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.71 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.72 2010/11/22 09:23:59 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -50,7 +50,7 @@ ONLY_FOR_ARCHS-bsddb=	amd64 i386
 
 # All subpackages depend on the main python package.
 
-RUN_DEPENDS=		:${FULLPKGNAME-main}:lang/python/${VERSION},-main
+RUN_DEPENDS=		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS=
 
 LIB_DEPENDS-main =	archivers/bzip2

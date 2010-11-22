@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 09:23:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	mail/claws-mail \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-LIB_DEPENDS=	::print/poppler
+LIB_DEPENDS=	print/poppler
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

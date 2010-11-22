@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 09:28:34 espie Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -79,7 +79,7 @@ WANTLIB+=	cairo>=5 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		gdk-x11-2.0 gtk-x11-2.0
 
 # gnome stuff
-LIB_DEPENDS+=	::x11/gnome/libgnomeui
+LIB_DEPENDS+=	x11/gnome/libgnomeui
 
 WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl gio-2.0 \
 		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:14:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 09:20:34 espie Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
@@ -21,9 +21,9 @@ WANTLIB += xcb-render xcb-render-util
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::databases/sqlite3 \
-			::devel/libsoup,-gnome \
-			:clutter-gtk->=0.10:graphics/clutter/clutter-gtk
+LIB_DEPENDS=		databases/sqlite3 \
+			devel/libsoup,-gnome \
+			graphics/clutter/clutter-gtk>=0.10
 
 CONFIGURE_ARGS= 	--enable-introspection=no \
 			--disable-silent-rules

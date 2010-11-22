@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.74 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.75 2010/11/22 09:28:34 espie Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -44,7 +44,7 @@ NO_REGRESS=	Yes
 MAKE_CCARGS +=	-DUSE_SASL_AUTH
 
 # always include pcre
-LIB_DEPENDS +=	::devel/pcre
+LIB_DEPENDS +=	devel/pcre
 MAKE_CCARGS +=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpcre
 
