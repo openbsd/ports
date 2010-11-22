@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xine-engine_configfile_c,v 1.1 2010/11/22 11:15:55 sthen Exp $
+--- src/xine-engine/configfile.c.orig	Sat Nov 13 13:39:27 2010
++++ src/xine-engine/configfile.c	Sat Nov 13 13:39:59 2010
+@@ -1012,8 +1012,8 @@ void xine_config_save (xine_t *xine, const char *filen
+ 
+     lprintf("backing up configfile to %s\n", temp);
+ 
+-    f_backup = fopen(temp, "w");
+-    f_config = fopen(filename, "r");
++    f_backup = fopen(temp, "wb");
++    f_config = fopen(filename, "rb");
+ 
+     if (f_config && f_backup && (stat(filename, &config_stat) == 0)) {
+       char    *buf = NULL;
