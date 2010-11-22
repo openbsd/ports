@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2010/11/22 09:40:48 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
 
 LIB_DEPENDS=
-BUILD_DEPENDS=::print/cups
+BUILD_DEPENDS=print/cups
 
 .if !empty(FLAVOR:L:Mno_mysql)
 CONFIGURE_ARGS+=-no-sql-mysql
@@ -135,7 +135,7 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 CONFIGURE_ARGS+=-no-sql-psql
 .else
 MULTI_PACKAGES+=	-postgresql
-BUILD_DEPENDS+=::databases/postgresql,-server
+BUILD_DEPENDS+=databases/postgresql,-server
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include/postgresql/server \
 	    -L${LOCALBASE}/lib \

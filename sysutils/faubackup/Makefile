@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 19:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 09:38:08 espie Exp $
 
 COMMENT =	full and incremental backups on filesystem
 DISTNAME =	faubackup-0.5.9
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c popt.>=0.3
+WANTLIB =		c popt>=0.3
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=faubackup/}
 
-LIB_DEPENDS =		::devel/popt
+LIB_DEPENDS =		devel/popt
 REGRESS_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS}
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/faubackup

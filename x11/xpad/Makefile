@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 09:40:48 espie Exp $
 
 COMMENT=	virtual sticky pad system
 
@@ -15,8 +15,8 @@ HOMEPAGE=	http://xpad.sourceforge.net/
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat

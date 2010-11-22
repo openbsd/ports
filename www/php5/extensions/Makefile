@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/22 09:40:48 espie Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -428,7 +428,7 @@ LIB_DEPENDS-main=
 MESSAGE-main=		${PKGDIR}/DESCR-main
 WANTLIB-main=
 
-BUILD_DEPENDS+=		::textproc/libxml
+BUILD_DEPENDS+=		textproc/libxml
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}

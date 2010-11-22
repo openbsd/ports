@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 09:38:08 espie Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m 
 
-BUILD_DEPENDS=	:ocaml-*:lang/ocaml
+BUILD_DEPENDS=	lang/ocaml
 
 DISTNAME=	hevea-$V
 PKGNAME=	${DISTNAME}p1

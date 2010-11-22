@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/12 21:41:34 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 09:38:08 espie Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -32,7 +32,7 @@ LANGUAGES=	af ak am-ET ar az-IR be bg bn-BD ca-valencia ca cs \
 		pl pt-BR pt-PT ro ru sk-SK sl sq sr ss st sv-SE \
 		sw-TZ ta tn ts uk ur ve vi xh yi zu
 
-BUILD_DEPENDS=	:unzip-*:archivers/unzip
+BUILD_DEPENDS=	archivers/unzip
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 09:38:08 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -66,7 +66,7 @@ MULTI_PACKAGES +=	-postgresql
 COMMENT-postgresql =	kamailio postgresql module
 KAMAILIO_MODULES +=	db_postgres
 WANTLIB-postgresql =	pq
-LIB_DEPENDS-postgresql =:postgresql-client-*:databases/postgresql,-main
+LIB_DEPENDS-postgresql =databases/postgresql,-main
 .endif
 
 PSEUDO_FLAVORS +=	no_mysql
