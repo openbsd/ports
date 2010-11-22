@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 09:30:38 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -72,7 +72,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::net/net-snmp
+BUILD_DEPENDS=	net/net-snmp
 LIB_DEPENDS-main =	databases/gdbm \
 			devel/libtool,-ltdl
 WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \

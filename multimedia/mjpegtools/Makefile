@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 09:30:38 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -66,8 +66,8 @@ CONFIGURE_ARGS+=	--disable-simd-accel
 .endif
 
 .if ${FLAVOR:L:Mquicktime}
-LIB_DEPENDS +=		::multimedia/libquicktime
-WANTLIB +=		quicktime.>=2 GL
+LIB_DEPENDS +=		multimedia/libquicktime
+WANTLIB +=		quicktime>=2 GL
 CONFIGURE_ARGS +=	--with-libquicktime
 .else
 CONFIGURE_ARGS +=	--without-libquicktime

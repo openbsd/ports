@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 09:30:38 espie Exp $
 
 COMMENT=	simple network library
 
@@ -31,6 +31,6 @@ REGRESS_FLAGS=	CFLAGS="${CFLAGS} -D_internal_test" LIBTOOL=${LIBTOOL} \
 		CHECK_CFLAGS="-I${LOCALBASE}/include" \
 		CHECK_LIBS="-L${LOCALBASE}/lib -lcheck" \
 		SUBDIRS_CHECK=check
-REGRESS_DEPENDS=::devel/check
+REGRESS_DEPENDS=devel/check
 
 .include <bsd.port.mk>

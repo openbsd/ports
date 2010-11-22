@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/11/22 09:30:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+= --enable-gtk=no
 .else
 MODULES =	devel/gettext
-LIB_DEPENDS +=	::x11/gtk+2
+LIB_DEPENDS +=	x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
