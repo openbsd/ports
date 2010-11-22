@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_hlint_1,v 1.1 2010/11/22 09:14:20 jasper Exp $
+
+Adjust path to the HTML documentation.
+
+--- data/hlint.1.orig	Sun Nov 21 22:45:10 2010
++++ data/hlint.1	Sun Nov 21 22:46:17 2010
+@@ -40,7 +40,7 @@ hlint src \fB\-\-report\fR
+ .SH "SEE ALSO"
+ The full documentation for
+ .B HLint
+-is available in \fI/usr/share/doc/hlint/hlint.html\fI.
++is available in \fI${TRUEPREFIX}/share/doc/hs-${DISTNAME}/html/index.html\fI.
+ .SH AUTHOR
+ This   manual   page   was  written  by  Joachim Breitner <nomeata@debian.org>
+ for the Debian system (but may be used by others).

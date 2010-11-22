@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/21 21:11:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 09:14:20 jasper Exp $
 
 COMMENT=		source code suggestions for Haskell
 
 DISTNAME=		hlint-1.8.3
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
@@ -31,6 +32,7 @@ RUN_DEPENDS=		devel/cpphs,-lib \
 LIB_DEPENDS=		devel/gmp
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/data/hlint.1 ${PREFIX}/man/man1
+	${SUBST_CMD} -c ${WRKSRC}/data/hlint.1 ${PREFIX}/man/man1/hlint.1
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
