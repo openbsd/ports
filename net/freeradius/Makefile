@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/22 09:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/22 09:53:43 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-rlm-krb5-include-dir=/usr/include/kerberosV 
 
 REGRESS_TARGET=	tests
-REGRESS_DEPENDS=:freeradius-$V:net/freeradius
+REGRESS_DEPENDS=freeradius-$V:net/freeradius
 REGRESS_IS_INTERACTIVE=Yes # doesn't exit properly
 
 MULTI_PACKAGES=	-main
