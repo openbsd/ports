@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2010/06/17 09:57:55 fgsch Exp $
---- configure.orig	Tue May  4 16:27:48 2010
-+++ configure	Wed Jun 16 21:24:04 2010
-@@ -34,12 +34,12 @@ interp_prefix="/usr/gnemul/qemu-%M"
+$OpenBSD: patch-configure,v 1.15 2010/11/22 11:32:01 fgsch Exp $
+--- configure.orig	Fri Oct 15 21:56:09 2010
++++ configure	Thu Nov 18 21:05:53 2010
+@@ -69,12 +69,12 @@ interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
  sparc_cpu=""
  cross_prefix=""
@@ -16,37 +16,56 @@ $OpenBSD: patch-configure,v 1.14 2010/06/17 09:57:55 fgsch Exp $
  ar="ar"
  make="make"
  install="install"
-@@ -93,7 +93,7 @@ ld="${cross_prefix}${ld}"
+@@ -128,15 +128,15 @@ ld="${cross_prefix}${ld}"
  
  # default flags for all hosts
  QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
 -CFLAGS="-g $CFLAGS"
 +CFLAGS="$CFLAGS"
  QEMU_CFLAGS="-Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
- QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
+-QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
++QEMU_CFLAGS="-Wstrict-prototypes $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
-@@ -1788,7 +1788,9 @@ fi
+ QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
+ QEMU_CFLAGS="-I. -I\$(SRC_PATH) $QEMU_CFLAGS"
+ LDFLAGS="-g $LDFLAGS"
+ 
+-gcc_flags="-Wold-style-declaration -Wold-style-definition -fstack-protector-all"
++gcc_flags="-Wold-style-definition"
+ cat > $TMPC << EOF
+ int main(void) { return 0; }
+ EOF
+@@ -1300,7 +1300,7 @@ int main(void) {
+ }
+ EOF
+     vnc_png_cflags=""
+-    vnc_png_libs="-lpng"
++    vnc_png_libs="-lpng -lz -lm"
+   if compile_prog "$vnc_png_cflags" "$vnc_png_libs" ; then
+     vnc_png=yes
+     libs_softmmu="$vnc_png_libs $libs_softmmu"
+@@ -1677,7 +1677,7 @@ fi
+ 
+ ##########################################
+ # pthread probe
+-PTHREADLIBS_LIST="-lpthread -lpthreadGC2"
++PTHREADLIBS_LIST="-pthread"
+ 
+ pthread=no
+ cat > $TMPC << EOF
+@@ -2061,7 +2061,9 @@ fi
  # After here, no more $cc or $ld runs
  
  if test "$debug" = "no" ; then
 -  CFLAGS="-O2 $CFLAGS"
 +  CFLAGS="$CFLAGS"
 +else
-+  CFLAGS="-g $CFLAGS"
++  CFLAGS="-O0 -g $CFLAGS"
  fi
  
  # Consult white-list to determine whether to enable werror
-@@ -1836,7 +1838,7 @@ else
-   if test -z "$prefix" ; then
-       prefix="/usr/local"
-   fi
--  mansuffix="/share/man"
-+  mansuffix="/man"
-   datasuffix="/share/qemu"
-   docsuffix="/share/doc/qemu"
-   binsuffix="/bin"
-@@ -2167,7 +2169,7 @@ echo "datadir=\${prefix}$datasuffix" >> $config_host_m
- echo "docdir=\${prefix}$docsuffix" >> $config_host_mak
+@@ -2452,7 +2454,7 @@ echo "TOOLS=$tools" >> $config_host_mak
+ echo "ROMS=$roms" >> $config_host_mak
  echo "MAKE=$make" >> $config_host_mak
  echo "INSTALL=$install" >> $config_host_mak
 -echo "INSTALL_DIR=$install -d -m0755 -p" >> $config_host_mak
@@ -54,7 +73,7 @@ $OpenBSD: patch-configure,v 1.14 2010/06/17 09:57:55 fgsch Exp $
  echo "INSTALL_DATA=$install -m0644 -p" >> $config_host_mak
  echo "INSTALL_PROG=$install -m0755 -p" >> $config_host_mak
  echo "CC=$cc" >> $config_host_mak
-@@ -2575,7 +2577,11 @@ if test "$gprof" = "yes" ; then
+@@ -2889,7 +2891,11 @@ if test "$gprof" = "yes" ; then
    fi
  fi
  

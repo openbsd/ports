@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/22 11:32:01 fgsch Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
 
 COMMENT =		multi system emulator
 
-DISTNAME =		qemu-0.12.5
-REVISION =		1
+DISTNAME =		qemu-0.13.0
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.qemu.org/
@@ -17,23 +16,34 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m ossaudio pthread util z
+WANTLIB =		c jpeg m ossaudio png pthread util z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
 BUILD_DEPENDS =		textproc/texi2html
+LIB_DEPENDS =		graphics/jpeg \
+			graphics/png
+
+MAKE_ENV +=		V=1
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--sysconfdir=${SYSCONFDIR} \
+			--mandir=${PREFIX}/man \
+			--extra-cflags="-I${LOCALBASE}/include \
+					-I${LOCALBASE}/include/libpng" \
+			--extra-ldflags=-L${LOCALBASE}/lib \
 			--disable-vnc-tls \
+			--disable-vnc-sasl \
 			--disable-curses \
 			--disable-curl \
 			--disable-bsd-user \
 			--disable-guest-base \
-			--extra-cflags=-fno-stack-protector
+			--disable-uuid
 
 FLAVORS =		debug no_x11
 FLAVOR ?=
@@ -41,11 +51,12 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS +=	--disable-sdl
 .else
-LIB_DEPENDS =    	devel/sdl
+LIB_DEPENDS +=    	devel/sdl
 
 WANTLIB +=		SDL X11
 .endif
 .if ${FLAVOR:L:Mdebug}
+VMEM_WARNING =	yes
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 

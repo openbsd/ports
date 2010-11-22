@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/11/12 14:43:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/11/22 11:32:01 fgsch Exp $
+@conflict qemu-*
 @pkgpath emulators/qemu,kqemu
 @bin bin/qemu
 @bin bin/qemu-img
 @bin bin/qemu-io
+@bin bin/qemu-nbd
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-cris
 @bin bin/qemu-system-m68k
@@ -35,9 +37,14 @@ share/examples/qemu/qemu-ifup
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
+share/examples/qemu/target-x86_64.conf
+@sample ${SYSCONFDIR}/qemu/
+@sample ${SYSCONFDIR}/qemu/target-x86_64.conf
 share/qemu/
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
+share/qemu/gpxe-eepro100-80861209.rom
+share/qemu/gpxe-eepro100-80861229.rom
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/common
@@ -82,11 +89,11 @@ share/qemu/openbios-sparc64
 share/qemu/petalogix-s3adsp1800.dtb
 share/qemu/ppc_rom.bin
 share/qemu/pxe-e1000.bin
-share/qemu/pxe-i82559er.bin
 share/qemu/pxe-ne2k_pci.bin
 share/qemu/pxe-pcnet.bin
 share/qemu/pxe-rtl8139.bin
 share/qemu/pxe-virtio.bin
+share/qemu/s390-zipl.rom
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios.bin
 share/qemu/video.x

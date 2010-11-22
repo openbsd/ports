@@ -1,7 +1,7 @@
-$OpenBSD: patch-vl_c,v 1.22 2010/05/28 00:02:52 fgsch Exp $
---- vl.c.orig	Tue Feb 23 13:54:38 2010
-+++ vl.c	Thu May 27 17:04:47 2010
-@@ -652,7 +652,8 @@ static void init_get_clock(void)
+$OpenBSD: patch-qemu-timer_c,v 1.1 2010/11/22 11:32:01 fgsch Exp $
+--- qemu-timer.c.orig	Thu Nov 18 09:27:07 2010
++++ qemu-timer.c	Thu Nov 18 09:27:26 2010
+@@ -108,7 +108,8 @@ static void init_get_clock(void)
  {
      use_rt_clock = 0;
  #if defined(__linux__) || (defined(__FreeBSD__) && __FreeBSD_version >= 500000) \
@@ -11,7 +11,7 @@ $OpenBSD: patch-vl_c,v 1.22 2010/05/28 00:02:52 fgsch Exp $
      {
          struct timespec ts;
          if (clock_gettime(CLOCK_MONOTONIC, &ts) == 0) {
-@@ -665,7 +666,8 @@ static void init_get_clock(void)
+@@ -121,7 +122,8 @@ static void init_get_clock(void)
  static int64_t get_clock(void)
  {
  #if defined(__linux__) || (defined(__FreeBSD__) && __FreeBSD_version >= 500000) \
