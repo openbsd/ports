@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/22 14:28:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,9 @@ GNOME_VERSION=		3.32.1
 API_VERSION=		3.14
 
 PKGNAME=		gtkhtml3-${VERSION}
+REVISION=		0
+
+HOMEPAGE=		http://www.gnome.org/
 
 SHARED_LIBS +=  gtkhtml-3.14         3.1      # 20.1
 SHARED_LIBS +=  gtkhtml-editor-3.14  0.0      # unknown
