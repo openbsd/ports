@@ -1,7 +1,12 @@
+$OpenBSD: README,v 1.1 2010/11/22 13:04:22 jasper Exp $
+
+Running OpenTTD on OpenBSD
+==========================
+
 OpenTTD comes with free data and music. However, if you prefer to
 play with the original Transport Tycoon Deluxe data files you can
 copy the following files from either the DOS or Windows versions
-into ${PREFIX}/share/openttd/data:
+into ${TRUEPREFIX}/share/openttd/data/:
  - sample.cat
  - trg1r.grf or TRG1.GRF
  - trgcr.grf or TRGC.GRF
@@ -11,5 +16,5 @@ into ${PREFIX}/share/openttd/data:
 
 If you want the original Transport Tycoon Deluxe music, copy the
 contents of the gm/ folder from the Windows version of Transport
-Tycoon Deluxe to ${PREFIX}/share/openttd/gm. The music from the DOS
+Tycoon Deluxe to ${TRUEPREFIX}/share/openttd/gm/. The music from the DOS
 and original Transport Tycoon versions does not work.

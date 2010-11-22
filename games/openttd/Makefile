@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 13:04:22 jasper Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V=		1.0.3
+V=		1.0.5
 DISTNAME=	openttd-${V}
-REVISION=	1
 EXTRACT_SUFX=	-source.tar.bz2
-DIST_GFX=	opengfx-0.2.4
-DIST_SFX=	opensfx-0.2.3
-DIST_MSX=	openmsx-0.3.1
+GFX_V=		0.3.1
+SFX_V=		0.2.3
+MSX_V=		0.3.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DIST_GFX}.tar.bz2:0 ${DIST_SFX}.zip:1 ${DIST_MSX}.zip:2
+		opengfx-${GFX_V}.zip:0 opensfx-${SFX_V}.zip:1 openmsx-${MSX_V}.zip:2
 
 CATEGORIES=	games
 
@@ -28,9 +27,9 @@ WANTLIB += SDL c expat fontconfig freetype icudata icui18n icuuc
 WANTLIB += lzo2 m png pthread stdc++ z
 
 MASTER_SITES=		http://cz.binaries.openttd.org/openttd/binaries/releases/${V}/
-MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/
-MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/
-MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/0.3.1/
+MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
+MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/${SFX_V}/
+MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
 
 LIB_DEPENDS=		archivers/lzo2 \
 			devel/sdl \
@@ -40,8 +39,6 @@ LIB_DEPENDS=		archivers/lzo2 \
 RUN_DEPENDS=            devel/desktop-file-utils
 
 CONFIGURE_STYLE=	simple
-USE_GROFF =		Yes
-
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--binary-dir=bin \
 			--data-dir=share/openttd \
@@ -67,13 +64,13 @@ FAKE_FLAGS=BUNDLE_DIR=${WRKINST}/bundle BUNDLES_DIR=${WRKINST}/bundle
 
 post-install:
 	${INSTALL_DATA_DIR} ${GAMEDIR}/media
-	${INSTALL_DATA} ${WRKSRC}/media/* ${GAMEDIR}/media
+	cd ${WRKSRC}/media/ && umask 022 && pax -rw . ${GAMEDIR}/media
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DIST_GFX}/*.{grf,obg} ${GAMEDIR}/data
-	${INSTALL_DATA} ${WRKDIR}/${DIST_SFX}/*.{cat,obs} ${GAMEDIR}/data
-	${INSTALL_DATA} ${WRKDIR}/${DIST_MSX}/*.{mid,obm} ${GAMEDIR}/gm
+	cd ${WRKSRC}/docs/ && umask 022 && pax -rw . ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/opengfx-${GFX_V}/*.{grf,obg} ${GAMEDIR}/data
+	${INSTALL_DATA} ${WRKDIR}/opensfx-${SFX_V}/*.{cat,obs} ${GAMEDIR}/data
+	${INSTALL_DATA} ${WRKDIR}/openmsx-${MSX_V}/*.{mid,obm} ${GAMEDIR}/gm
 
 .include <bsd.port.mk>

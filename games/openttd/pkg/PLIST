@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/09/24 10:33:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/11/22 13:04:22 jasper Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -23,8 +23,12 @@ share/doc/openttd/obs_format.txt
 share/doc/openttd/openttd.6
 share/doc/openttd/ottd-colour-palette.gif
 share/doc/openttd/ottd-colourtext-palette.png
+share/doc/openttd/palettes/
+share/doc/openttd/palettes/openttd.gpl
+share/doc/openttd/palettes/palette.act
 share/doc/openttd/readme.txt
 share/doc/openttd/tileh.png
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openttd/
 share/examples/openttd/autoexec.scr.example
 share/examples/openttd/game_start.scr.example
@@ -116,6 +120,7 @@ share/openttd/gm/wood_whistles.mid
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
+share/openttd/lang/belarusian.lng
 share/openttd/lang/brazilian_portuguese.lng
 share/openttd/lang/bulgarian.lng
 share/openttd/lang/catalan.lng
@@ -162,6 +167,43 @@ share/openttd/lang/ukrainian.lng
 share/openttd/lang/vietnamese.lng
 share/openttd/lang/welsh.lng
 share/openttd/media/
+share/openttd/media/extra_grf/
+share/openttd/media/extra_grf/2ccmapd.nfo
+share/openttd/media/extra_grf/2ccmapw.nfo
+share/openttd/media/extra_grf/airports.nfo
+share/openttd/media/extra_grf/airports.pcx
+share/openttd/media/extra_grf/aqueduct.nfo
+share/openttd/media/extra_grf/aqueduct.pcx
+share/openttd/media/extra_grf/autorail.nfo
+share/openttd/media/extra_grf/autorail.pcx
+share/openttd/media/extra_grf/canals.nfo
+share/openttd/media/extra_grf/canals.pcx
+share/openttd/media/extra_grf/chars.nfo
+share/openttd/media/extra_grf/chars.pcx
+share/openttd/media/extra_grf/elrails.nfo
+share/openttd/media/extra_grf/elrails.pcx
+share/openttd/media/extra_grf/fix_graphics.nfo
+share/openttd/media/extra_grf/fix_graphics.pcx
+share/openttd/media/extra_grf/flags.nfo
+share/openttd/media/extra_grf/flags.pcx
+share/openttd/media/extra_grf/foundations.nfo
+share/openttd/media/extra_grf/foundations.pcx
+share/openttd/media/extra_grf/oneway.nfo
+share/openttd/media/extra_grf/oneway.pcx
+share/openttd/media/extra_grf/openttd.nfo
+share/openttd/media/extra_grf/openttdgui.nfo
+share/openttd/media/extra_grf/openttdgui.pcx
+share/openttd/media/extra_grf/overrides.nfo
+share/openttd/media/extra_grf/roadstops.nfo
+share/openttd/media/extra_grf/roadstops.pcx
+share/openttd/media/extra_grf/shore.nfo
+share/openttd/media/extra_grf/shore.pcx
+share/openttd/media/extra_grf/signals.nfo
+share/openttd/media/extra_grf/signals.pcx
+share/openttd/media/extra_grf/sloped_tracks.nfo
+share/openttd/media/extra_grf/sloped_tracks.pcx
+share/openttd/media/extra_grf/tramtracks.nfo
+share/openttd/media/extra_grf/tramtracks.pcx
 share/openttd/media/openttd.128.png
 share/openttd/media/openttd.16.png
 share/openttd/media/openttd.256.png
