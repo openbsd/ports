@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.178 2010/11/22 09:02:49 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64 alpha
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 N =			mplayer
 DISTNAME =		mplayer-export-snapshot-${V}
 PKGNAME =		${N}-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11 multimedia
 EXTRACT_SUFX =		.tar.bz2
 
@@ -121,7 +121,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-win32dll \
 		--disable-ggi \
 		--disable-libopenjpeg \
-		--disable-mpg123
+		--disable-mpg123 \
+		--disable-librtmp
 
 # internal tremor, external tremor, external libvorbis all conflict
 # we choose libvorbis to enable encoding to vorbis
