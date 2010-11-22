@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	library for communicating with an icecast server
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m ogg vorbis.>=4 theora.>=1
+WANTLIB=	m ogg vorbis>=4 theora>=1
 
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 

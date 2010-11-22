@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/22 10:16:08 espie Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -23,7 +23,7 @@ MODULES=	devel/gettext \
 
 WANTLIB += ORBit-2 c dbus-1 gconf-2 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
-WANTLIB += expat gpg-error z gcrypt gnome-keyring.>=6
+WANTLIB += expat gpg-error z gcrypt gnome-keyring>=6
 
 LIB_DEPENDS=	x11/gnome/libgnome-keyring
 

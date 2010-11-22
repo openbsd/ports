@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2010/11/22 10:16:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto lua.>=5.1 m pcre ssl z
+WANTLIB=		c crypto lua>=5.1 m pcre ssl z
 
 LIB_DEPENDS+=	devel/pcre \
 		lang/lua

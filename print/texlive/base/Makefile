@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/22 10:16:08 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -9,7 +9,7 @@ SHARED_LIBS =		kpathsea	2.0
 
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu gd \
 			ncurses openjpeg Xaw Xau Xdmcp expat iconv jpeg lcms \
-			png.>=3	poppler pthread pthread-stubs stdc++ t1.>=4 \
+			png>=3	poppler pthread pthread-stubs stdc++ t1>=4 \
 			ttf xcb	xml2 z
 
 RUN_DEPENDS =		print/ghostscript/gnu \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/22 10:16:08 espie Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -72,7 +72,7 @@ WANTLIB = GL GLU ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/khtml lib/kde3/kimproxy lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \
-	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m mad mal.>=1 \
+	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m mad mal>=1 \
 	mcop mng ogg pcre pcreposix pisock png pthread pthread-stubs qtmcop \
 	qui sasl2 sasl2 sndio soundserver_idl stdc++ usb util vorbis vorbisenc \
 	vorbisfile xcb z

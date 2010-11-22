@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 10:16:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	jpeg png z gd.>=20
+WANTLIB=	jpeg png z gd>=20
 
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 

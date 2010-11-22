@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=		high performance full-text search system
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m pthread z qdbm.>=14.11
+WANTLIB=		c m pthread z qdbm>=14.11
 MODULES=		converters/libiconv
 
 LIB_DEPENDS=		databases/qdbm

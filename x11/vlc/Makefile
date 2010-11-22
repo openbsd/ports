@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.109 2010/11/22 10:16:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,8 +68,8 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		gmodule-2.0 gobject-2.0 gsm gthread-2.0 gtk-x11-2.0 \
 		jpeg m mad matroska mp3lame mpcdec mpeg2 notify orc-0.4 \
 		ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png postproc proxy pthread-stubs pthread stdc++.>=46.0 \
-		schroedinger-1.0.>=2.0 sndio speex swscale tag tiff theora \
+		png postproc proxy pthread-stubs pthread stdc++>=46.0 \
+		schroedinger-1.0>=2.0 sndio speex swscale tag tiff theora \
 		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
 		xcb-render-util xcb xml2 z ${WANTLIB}
 

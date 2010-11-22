@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/22 08:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/22 10:16:08 espie Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
@@ -34,7 +34,7 @@ WANTLIB = ICE SDL>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	lib/kde3/artsmoduleseffects lib/kde3/artsmodulesmixers \
 	lib/kde3/artsmodulessynth lib/kde3/atlantic lib/kde3/atlantikui \
 	lib/kde3/kabc lib/kde3/kabinterfaces lib/kde3/kateinterfaces \
-	lib/kde3/katepartinterfaces lib/kde3/kateutils lib/kde3/kdecore.>=6 \
+	lib/kde3/katepartinterfaces lib/kde3/kateutils lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdegames lib/kde3/kdeprint lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/khtml lib/kde3/kio \
 	lib/kde3/kjs lib/kde3/kmediaplayer lib/kde3/knewstuff lib/kde3/konq \

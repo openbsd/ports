@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	disc cover designer
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=discwrapper/}
 
 WANTLIB += c m pthread stdc++
-WANTLIB += wx_base.>=1 wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
+WANTLIB += wx_base>=1 wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa 
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc
 RUN_DEPENDS=	devel/desktop-file-utils \

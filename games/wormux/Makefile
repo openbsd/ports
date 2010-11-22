@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 c m png pthread stdc++ SDL_gfx SDL_image \
-			SDL_mixer SDL_net SDL_ttf curl.>=5 xml2
+			SDL_mixer SDL_net SDL_ttf curl>=5 xml2
 
 MASTER_SITES=		http://download.gna.org/wormux/
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2010/11/22 09:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.179 2010/11/22 10:16:09 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64 alpha
@@ -29,9 +29,9 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	bz2 c cdda_interface cdda_paranoia crypto \
 		dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
-		m mng mp3lame mpcdec ncurses ogg.>=5 orc-0.4 png \
-		pthread schroedinger-1.0.>=2.0 sndio speex stdc++ \
-		theora ungif util vpx x264.>=5 xvidcore z
+		m mng mp3lame mpcdec ncurses ogg>=5 orc-0.4 png \
+		pthread schroedinger-1.0>=2.0 sndio speex stdc++ \
+		theora ungif util vpx x264>=5 xvidcore z
 
 # we use a snapshot
 MASTER_SITES =	http://theunixzoo.co.uk/distfiles/

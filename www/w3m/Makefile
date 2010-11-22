@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto curses gc.>=3 m pthread ssl z
+WANTLIB += c crypto curses gc>=3 m pthread ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 

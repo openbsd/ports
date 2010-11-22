@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	GL GLU SDL X11 Xext c m ogg pthread pthread-stubs \
-		sndio usbhid xcb z SDL_net.>=1 physfs.>=1 openal.>=1 \
-		vorbis.>=5 vorbisfile.>=4 mad.>=2 jpeg.>=62 png.>=5
+		sndio usbhid xcb z SDL_net>=1 physfs>=1 openal>=1 \
+		vorbis>=5 vorbisfile>=4 mad>=2 jpeg>=62 png>=5
 
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 

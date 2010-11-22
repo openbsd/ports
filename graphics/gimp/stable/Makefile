@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -52,17 +52,17 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		Xcomposite Xdamage pcre crypto idn ssl \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
-		gobject-2.0 jpeg.>=62 lcms.>=1 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png.>=4 \
+		gobject-2.0 jpeg>=62 lcms>=1 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png>=4 \
 		pthread ncurses xml2 z cairo dbus-1 \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
 		expat Xcomposite Xdamage gthread-2.0 pcre \
 		croco-0.6 gio-2.0 rsvg-2 babl-0.1 \
 		pthread-stubs xcb execinfo xcb-render \
 		xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gtk-x11-2.0 tiff.>=35 aa.>=1.3 dbus-glib-1 \
-		exif mng poppler.>=3 wmf-0.2 wmflite-0.2 \
-		poppler-glib.>=3 gegl-0.1 openjpeg.>=4 curl
+		gtk-x11-2.0 tiff>=35 aa>=1.3 dbus-glib-1 \
+		exif mng poppler>=3 wmf-0.2 wmflite-0.2 \
+		poppler-glib>=3 gegl-0.1 openjpeg>=4 curl
 
 MODULES=	devel/gettext \
 		textproc/intltool \

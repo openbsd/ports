@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.12
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c crypto m ncurses xml2.>=7.10 z
+WANTLIB=		c crypto m ncurses xml2>=7.10 z
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

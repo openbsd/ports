@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 		m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
-		kdecore.>=4 DCOP kdefx kdesu kdeui kio kwalletclient
+		kdecore>=4 DCOP kdefx kdesu kdeui kio kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 10:16:08 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -36,8 +36,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		GL c m pthread sndio ogg.>=5 SDL.>=7 vorbis.>=7 \
-			vorbisfile.>=5
+WANTLIB-main =		GL c m pthread sndio ogg>=5 SDL>=7 vorbis>=7 \
+			vorbisfile>=5
 WANTLIB-server =	c m
 
 LIB_DEPENDS-main =	audio/libogg \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xpm Xt c pthread-stubs xcb jpeg.>=62
+WANTLIB=		ICE SM X11 Xext Xpm Xt c pthread-stubs xcb jpeg>=62
 
 USE_GROFF =	Yes
 

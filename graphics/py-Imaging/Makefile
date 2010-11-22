@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/17 18:37:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/22 10:16:08 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=		freetype z jpeg.>=62 lcms ${MODTK_WANTLIB}
+WANTLIB-main=		freetype z jpeg>=62 lcms ${MODTK_WANTLIB}
 
 MASTER_SITES=		http://effbot.org/media/downloads/
 

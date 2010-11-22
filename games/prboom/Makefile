@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	enhanced clone of Id Software's Doom game; multiplayer
 DISTNAME=	prboom-2.4.7
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB =	SDL c m pthread z GL GLU SDL_mixer.>=3 SDL_net.>=1 png.>=4
+WANTLIB =	SDL c m pthread z GL GLU SDL_mixer>=3 SDL_net>=1 png>=4
 
 USE_GROFF =	Yes
 

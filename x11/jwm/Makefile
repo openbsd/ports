@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
-			fontconfig freetype fribidi jpeg m png.>=2 \
+			fontconfig freetype fribidi jpeg m png>=2 \
 			pthread-stubs xcb z
 
 MASTER_SITES=		${HOMEPAGE}/releases/

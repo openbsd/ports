@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 10:16:08 espie Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xi Xmu
-WANTLIB +=	boost_filesystem boost_system c glut.>=4 jpeg lcms m png pthread
+WANTLIB +=	boost_filesystem boost_system c glut>=4 jpeg lcms m png pthread
 WANTLIB +=	stdc++ tiff xmi z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}

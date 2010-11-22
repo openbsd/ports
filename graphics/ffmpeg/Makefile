@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/19 09:02:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/22 10:16:08 espie Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -32,7 +32,7 @@ MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
 WANTLIB=	SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg \
-		orc-0.4 pthread schroedinger-1.0.>=2.0 sndio speex theora \
+		orc-0.4 pthread schroedinger-1.0>=2 sndio speex theora \
 		theoradec theoraenc vorbis vorbisenc x264 z
 
 BUILD_DEPENDS=	textproc/texi2html

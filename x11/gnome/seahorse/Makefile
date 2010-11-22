@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 10:16:08 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,7 +28,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
-WANTLIB += lber-2.3 ldap-2.3 notify soup-2.4 gpgme gnome-keyring.>=6 gcr.>=1
+WANTLIB += lber-2.3 ldap-2.3 notify soup-2.4 gpgme gnome-keyring>=6 gcr>=1
 WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		databases/openldap \

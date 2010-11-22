@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/17 19:41:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 10:16:08 espie Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -38,8 +38,8 @@ MODULES =	devel/gettext \
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 \
 		fam idn jpeg m png pthread-stubs rpcsvc stdc++ \
-		util xcb z kdecore.>=6 DCOP kdefx kdeprint kdesu kdeui kio \
-		kparts kwalletclient kipi lib/qt3/qt-mt.>=3.33
+		util xcb z kdecore>=6 DCOP kdefx kdeprint kdesu kdeui kio \
+		kparts kwalletclient kipi lib/qt3/qt-mt>=3.33
 
 WANTLIB-main =	${WANTLIB} GL ltdl Xrandr \
 		pcre pcreposix tiff exif expat lcms \
