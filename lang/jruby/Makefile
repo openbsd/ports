@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 15:57:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 15:49:14 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	pure-Java implementation of the Ruby language
 V =		1.5.5
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
+REVISION =	0
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0 \
@@ -49,7 +50,8 @@ SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH
 
 post-extract:
 	mv ${WRKDIR}/wmeissner-jffi-e0d10e9 ${JFFI_HOME}
-	mv ${WRKDIR}/jruby-1.5.3/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/*.rb \
+	mkdir -p ${WRKSRC}/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}
+	mv ${WRKDIR}/jruby-1.5.3/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/* \
 		${WRKSRC}/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/
 
 do-build:
