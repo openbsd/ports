@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_libmojave-external_cutil_lm_printf_c,v 1.1 2010/11/22 08:50:26 dcoppa Exp $
+
+Patch from upstream: fix attempt to free a non-heap object
+
+--- src/libmojave-external/cutil/lm_printf.c.orig	Sun Jul 15 19:55:23 2007
++++ src/libmojave-external/cutil/lm_printf.c	Wed Nov 10 15:30:18 2010
+@@ -142,12 +142,12 @@ value ml_print_string(value v_fmt, value v_string)
+ #endif
+     if(code < 0) {
+         if(bufp != buffer)
+-            free(buffer);
++            free(bufp);
+         failwith("ml_print_string");
+     }
+     v_result = copy_string(bufp);
+     if(bufp != buffer)
+-        free(buffer);
++        free(bufp);
+     return v_result;
+ }
+ 
+@@ -190,12 +190,12 @@ value ml_print_string2(value v_width, value v_fmt, val
+ #endif
+     if(code < 0) {
+         if(bufp != buffer)
+-            free(buffer);
++            free(bufp);
+         failwith("ml_print_string");
+     }
+     v_result = copy_string(bufp);
+     if(bufp != buffer)
+-        free(buffer);
++        free(bufp);
+     return v_result;
+ }
+ 
