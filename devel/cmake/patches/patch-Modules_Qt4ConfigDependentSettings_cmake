@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.4 2010/11/19 16:18:12 dcoppa Exp $
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.5 2010/11/22 16:26:30 dcoppa Exp $
 --- Modules/Qt4ConfigDependentSettings.cmake.orig	Wed Nov  3 20:58:27 2010
 +++ Modules/Qt4ConfigDependentSettings.cmake	Fri Nov 19 17:14:55 2010
 @@ -26,6 +26,9 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.4 2010/11/19 16:18:
  # the variables themselves.
  
 +INCLUDE(FindIconv)
-+INCLUDE(FindLibIntl)
++INCLUDE(FindLibintl)
 +
  SET(QT_QTGUI_LIB_DEPENDENCIES "")
  SET(QT_QTCORE_LIB_DEPENDENCIES "")

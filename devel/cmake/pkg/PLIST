@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/11/15 11:39:09 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/11/22 16:26:30 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -244,9 +244,9 @@ share/cmake/Modules/FindKDE4.cmake
 share/cmake/Modules/FindLAPACK.cmake
 share/cmake/Modules/FindLATEX.cmake
 share/cmake/Modules/FindLibArchive.cmake
-share/cmake/Modules/FindLibIntl.cmake
 share/cmake/Modules/FindLibXml2.cmake
 share/cmake/Modules/FindLibXslt.cmake
+share/cmake/Modules/FindLibintl.cmake
 share/cmake/Modules/FindLua50.cmake
 share/cmake/Modules/FindLua51.cmake
 share/cmake/Modules/FindMFC.cmake
