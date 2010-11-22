@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.5 2010/11/22 16:26:30 dcoppa Exp $
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.6 2010/11/22 22:27:02 dcoppa Exp $
 --- Modules/Qt4ConfigDependentSettings.cmake.orig	Wed Nov  3 20:58:27 2010
-+++ Modules/Qt4ConfigDependentSettings.cmake	Fri Nov 19 17:14:55 2010
++++ Modules/Qt4ConfigDependentSettings.cmake	Mon Nov 22 18:21:59 2010
 @@ -26,6 +26,9 @@
  # if a user needs the dependencies, and they couldn't be found, they can set
  # the variables themselves.
@@ -11,7 +11,7 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.5 2010/11/22 16:26:
  SET(QT_QTGUI_LIB_DEPENDENCIES "")
  SET(QT_QTCORE_LIB_DEPENDENCIES "")
  SET(QT_QTNETWORK_LIB_DEPENDENCIES "")
-@@ -60,14 +63,27 @@ IF(Q_WS_WIN  AND  NOT QT_IS_STATIC)
+@@ -60,10 +63,6 @@ IF(Q_WS_WIN  AND  NOT QT_IS_STATIC)
    SET(QT_DEFINITIONS ${QT_DEFINITIONS} -DQT_DLL)
  ENDIF(Q_WS_WIN  AND  NOT QT_IS_STATIC)
  
@@ -22,13 +22,16 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.5 2010/11/22 16:26:
  # QtOpenGL dependencies
  find_package(OpenGL)
  SET (QT_QTOPENGL_LIB_DEPENDENCIES ${OPENGL_glu_LIBRARY} ${OPENGL_gl_LIBRARY})
+@@ -163,6 +162,23 @@ IF(QT_QCONFIG MATCHES "system-zlib")
+   SET(QT_QTCORE_LIB_DEPENDENCIES ${QT_QTCORE_LIB_DEPENDENCIES} ${ZLIB_LIBRARIES})
+ ENDIF(QT_QCONFIG MATCHES "system-zlib")
  
 +## iconv
 +IF(ICONV_FOUND)
 +  FIND_LIBRARY(QT_ICONV_LIBRARY NAMES iconv)
 +  MARK_AS_ADVANCED(QT_ICONV_LIBRARY)
 +  IF(QT_ICONV_LIBRARY)
-+    SET(QT_QTGUI_LIB_DEPENDENCIES ${QT_QTGUI_LIB_DEPENDENCIES} ${QT_ICONV_LIBRARY})
++    SET(QT_QTCORE_LIB_DEPENDENCIES ${QT_QTCORE_LIB_DEPENDENCIES} ${QT_ICONV_LIBRARY})
 +  ENDIF(QT_ICONV_LIBRARY)
 +ENDIF(ICONV_FOUND)
 +
@@ -37,9 +40,9 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.5 2010/11/22 16:26:
 +  FIND_LIBRARY(QT_INTL_LIBRARY NAMES intl)
 +  MARK_AS_ADVANCED(QT_INTL_LIBRARY)
 +  IF(QT_INTL_LIBRARY)
-+    SET(QT_QTGUI_LIB_DEPENDENCIES ${QT_QTGUI_LIB_DEPENDENCIES} ${QT_INTL_LIBRARY})
++    SET(QT_QTCORE_LIB_DEPENDENCIES ${QT_QTCORE_LIB_DEPENDENCIES} ${QT_INTL_LIBRARY})
 +  ENDIF(QT_INTL_LIBRARY)
 +ENDIF(LIBINTL_FOUND)
  
- ## system png
- IF(QT_QCONFIG MATCHES "system-png")
+ ## openssl
+ IF(NOT Q_WS_WIN)
