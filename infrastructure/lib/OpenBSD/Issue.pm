@@ -1,4 +1,4 @@
-# $OpenBSD: Issue.pm,v 1.2 2010/11/11 12:43:03 espie Exp $
+# $OpenBSD: Issue.pm,v 1.3 2010/11/22 21:16:42 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -77,6 +77,11 @@ sub message
 {
 	my $self = shift;
 	return "WANTLIB:   ". $self->stringize;
+}
+
+sub record_wantlib
+{
+	&OpenBSD::Issue::do_record_wantlib;
 }
 
 package OpenBSD::Issue::IndirectDependency;
