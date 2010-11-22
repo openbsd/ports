@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 09:34:10 espie Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}tools/
 
-RUN_DEPENDS=		:cdrtools->=1.10:sysutils/cdrtools
+RUN_DEPENDS=		sysutils/cdrtools>=1.10
 WANTLIB=		c m pthread stdc++
 
 # allow growisofs to work under sudo(8)

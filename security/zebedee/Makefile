@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 09:34:10 espie Exp $
 
 COMMENT=	portable, encrypted, compressed tunnel
 
@@ -28,7 +28,7 @@ DEFINES_openbsd= -DHAVE_PTHREADS -DBUGGY_FORK_WITH_THREADS
 OSLIBS_openbsd=	-pthread
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::archivers/bzip2
+BUILD_DEPENDS=	archivers/bzip2
 
 .if ${FLAVOR:L:Mudp_spoof}
 WANTLIB +=	lib/libnet-1.0/net=0

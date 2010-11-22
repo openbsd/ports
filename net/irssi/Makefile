@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/22 09:34:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Msocks}
 CONFIGURE_ARGS+=	--with-socks
-BUILD_DEPENDS+=		::security/dante
+BUILD_DEPENDS+=		security/dante
 .endif
 
 MAKE_FLAGS=	scriptdir="${SYSCONFDIR}/irssi/scripts" \
