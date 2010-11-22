@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	Apache ASP support
 
@@ -7,9 +7,9 @@ DISTNAME=	Apache-ASP-2.61
 CATEGORIES=	www
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:p5-MLDBM-Sync->=0.25:devel/p5-MLDBM-Sync \
-		::www/mod_perl
-BUILD_DEPENDS=	:p5-MLDBM-Sync->=0.25:devel/p5-MLDBM-Sync
+RUN_DEPENDS=	devel/p5-MLDBM-Sync>=0.25 \
+		www/mod_perl
+BUILD_DEPENDS=	devel/p5-MLDBM-Sync>=0.25
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

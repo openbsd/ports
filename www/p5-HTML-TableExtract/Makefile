@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	module to extract text contained within HTML tables
 
@@ -9,7 +9,7 @@ USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
+RUN_DEPENDS=	www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=	::www/p5-HTML-Tree
+REGRESS_DEPENDS=	www/p5-HTML-Tree
 
 MAKE_ENV+=		TEST_POD=Yes
 

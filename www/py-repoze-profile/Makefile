@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	aggregate profiling for wsgi requests
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=r/repoze.profile/}
 
-RUN_DEPENDS =	::www/py-paste \
-		::www/py-meld3 \
-		::devel/py-pyprof2calltree
+RUN_DEPENDS =	www/py-paste \
+		www/py-meld3 \
+		devel/py-pyprof2calltree
 REGRESS_DEPENDS = ${RUN_DEPENDS}
 
 MODULES =	lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	ruby library for handling credit card processor merchants
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-activesupport-*:devel/ruby-activesupport,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-builder-*:textproc/ruby-builder,${FLAVOR}
+RUN_DEPENDS =	devel/ruby-activesupport,${FLAVOR} \
+		textproc/ruby-builder,${FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/07/12 21:25:31 kili Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/22 08:37:01 espie Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
@@ -8,16 +8,16 @@ MODKDE_VERSION =	3.5.8
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 	::x11/kde/libs3 \
-		:sdl-*-!no_x11:devel/sdl \
-		::x11/kde/multimedia3 \
-		::x11/kde/games3 \
-		::x11/kde/base3 \
-		::x11/kde/pim3 \
-		::x11/gtk+ \
-		::audio/xmms \
-		:db->=4,<5:databases/db/v4
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS = 	x11/kde/libs3 \
+		sdl-*-!no_x11:devel/sdl \
+		x11/kde/multimedia3 \
+		x11/kde/games3 \
+		x11/kde/base3 \
+		x11/kde/pim3 \
+		x11/gtk+ \
+		audio/xmms \
+		db->=4,<5:databases/db/v4
 
 # XXX no version number on noatunarts
 #WANTLIB+=	noatunarts 
@@ -25,7 +25,7 @@ LIB_DEPENDS = 	::x11/kde/libs3 \
 SEPARATE_BUILD =	flavored
 
 REVISION = 7
-WANTLIB = ICE SDL.>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
+WANTLIB = ICE SDL>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	artsflow artsflow_idl audiofile c fam gdk glib glib-2.0 gmodule \
 	gmodule-2.0 gthread-2.0 gtk idn jpeg kimproxy kmedia2_idl \
 	lib/db4/db_cxx lib/kde3/DCOP lib/kde3/artsbuilder lib/kde3/artsgui \

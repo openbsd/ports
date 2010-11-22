@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	OpenLook Toolkit libs, includes, and man pages
 
@@ -9,7 +9,7 @@ SHARED_LIBS=	olgx	3.2 \
 EXTRACT_ONLY=	
 CATEGORIES=	x11
 
-BUILD_DEPENDS=	::x11/xview/config ::x11/xview/config:build
+BUILD_DEPENDS=	x11/xview/config x11/xview/config:build
 
 post-patch:
 	ln -s ${WRKDIR}/x11/xview/config/${DISTNAME} ${WRKDIST}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	mod_perl class for generating browsable MP3 directory lists
 
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::www/mod_perl \
-		::audio/p5-MP3-Info \
-		::audio/p5-libvorbis
+RUN_DEPENDS=	www/mod_perl \
+		audio/p5-MP3-Info \
+		audio/p5-libvorbis
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apache_mp3

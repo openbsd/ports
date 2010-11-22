@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
@@ -28,11 +28,11 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \
 		--with-apache2-apxs=${LOCALBASE}/sbin/apxs2
 
-BUILD_DEPENDS=	::devel/p5-ExtUtils-XSBuilder
-LIB_DEPENDS=	::devel/apr \
-		::devel/apr-util \
-		::www/ap2-mod_perl
-REGRESS_DEPENDS=::www/p5-Apache-Test
+BUILD_DEPENDS=	devel/p5-ExtUtils-XSBuilder
+LIB_DEPENDS=	devel/apr \
+		devel/apr-util \
+		www/ap2-mod_perl
+REGRESS_DEPENDS=www/p5-Apache-Test
 
 post-regress:
 	cd ${WRKSRC}/glue/perl && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, developer extensions
 DISTNAME =		kdesdk-${VERSION}
@@ -11,12 +11,12 @@ SHARED_LIBS += komparedialogpages	0.0 # .4.4
 SHARED_LIBS +=	komparediff2		0.0 # .4.4
 SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0	# .4.4
 
-LIB_DEPENDS +=	::x11/kde4/libs \
-		::x11/kde4/pimlibs \
-		::devel/subversion \
-		::textproc/hunspell
+LIB_DEPENDS +=	x11/kde4/libs \
+		x11/kde4/pimlibs \
+		devel/subversion \
+		textproc/hunspell
 
-WANTLIB += apr-1 c hunspell-1.2 kabc.>=5 kcal kde3support kdecore.>=8 kdesu \
+WANTLIB += apr-1 c hunspell-1.2 kabc>=5 kcal kde3support kdecore>=8 kdesu \
 	kdeui kfile khtml kio kjs knewstuff2 knewstuff3 kparts kresources \
 	krosscore krossui ktexteditor kutils lib/qt4/Qt3Support lib/qt4/QtDBus \
 	lib/qt4/QtDesigner lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \

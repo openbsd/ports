@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2010/11/19 09:00:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.177 2010/11/22 08:37:03 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64 alpha
@@ -40,39 +40,39 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 MODULES +=	converters/libiconv
 
-LIB_DEPENDS =	::graphics/png \
-		::graphics/jpeg \
-		::graphics/libungif \
-		:cdparanoia->=3.a9.8:audio/cdparanoia \
-		::multimedia/libtheora \
-		::audio/speex \
-		::audio/libmpcdec \
-		::audio/libogg \
-		::multimedia/xvidcore \
-		::audio/lame \
-		::multimedia/libdv \
-		:libdvdnav->=4.1.3:multimedia/libdvdnav \
-		::devel/libdvdread \
-		::devel/fribidi \
-		::graphics/lcms \
-		::graphics/libmng \
-		::archivers/bzip2 \
-		:schroedinger->=1.0.10:multimedia/schroedinger \
-		::audio/faad \
-		::audio/faac \
-		:x264->=20101023:multimedia/x264 \
-		::multimedia/libvpx
+LIB_DEPENDS =	graphics/png \
+		graphics/jpeg \
+		graphics/libungif \
+		audio/cdparanoia>=3.a9.8 \
+		multimedia/libtheora \
+		audio/speex \
+		audio/libmpcdec \
+		audio/libogg \
+		multimedia/xvidcore \
+		audio/lame \
+		multimedia/libdv \
+		multimedia/libdvdnav>=4.1.3 \
+		devel/libdvdread \
+		devel/fribidi \
+		graphics/lcms \
+		graphics/libmng \
+		archivers/bzip2 \
+		multimedia/schroedinger>=1.0.10 \
+		audio/faad \
+		audio/faac \
+		multimedia/x264>=20101023 \
+		multimedia/libvpx
 
-BUILD_DEPENDS =	::net/livemedia \
-		:rtunes->=0.8:audio/rtunes \
-		:libxml-*:textproc/libxml \
-		:libxslt-*:textproc/libxslt \
-		::textproc/docbook \
-		::textproc/docbook-xsl \
-		::audio/ladspa
+BUILD_DEPENDS =	net/livemedia \
+		audio/rtunes>=0.8 \
+		textproc/libxml \
+		textproc/libxslt \
+		textproc/docbook \
+		textproc/docbook-xsl \
+		audio/ladspa
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
-BUILD_DEPENDS += ::devel/yasm
+BUILD_DEPENDS += devel/yasm
 .endif
 
 CONFDIR =	${SYSCONFDIR}/mplayer
@@ -130,7 +130,7 @@ CONFIGURE_ARGS += --disable-tremor
 # ... except on arm, which has no floating point hardware
 CONFIGURE_ARGS += --disable-libvorbis
 .else
-LIB_DEPENDS +=	::audio/libvorbis
+LIB_DEPENDS +=	audio/libvorbis
 WANTLIB +=	vorbisenc vorbis
 CONFIGURE_ARGS += --disable-tremor-internal
 .endif
@@ -173,12 +173,12 @@ CONFIGURE_ARGS += --disable-gl \
 .else
 WANTLIB +=	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm fontconfig \
 		freetype 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS +=	devel/desktop-file-utils
 .endif
 
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS += --with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS +=	:sdl->=1.2.5:devel/sdl
+LIB_DEPENDS +=	devel/sdl>=1.2.5
 WANTLIB +=	SDL
 .else
 CONFIGURE_ARGS += --disable-sdl
@@ -191,18 +191,18 @@ CONFIGURE_ARGS += --enable-debug=3 \
 
 .if ${FLAVOR:L:Maa}
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS +=	:aalib-*-no_x11:graphics/aalib,no_x11
-WANTLIB +=	aa.>=1.3
+LIB_DEPENDS +=	aalib-*-no_x11:graphics/aalib,no_x11
+WANTLIB +=	aa>=1.3
 .else
-LIB_DEPENDS +=	:aalib-*:graphics/aalib
-WANTLIB +=	aa.>=1.3
+LIB_DEPENDS +=	graphics/aalib
+WANTLIB +=	aa>=1.3
 .endif
 .else
 CONFIGURE_ARGS += --disable-aa
 .endif
 
 .if ${FLAVOR:L:Mjack}
-LIB_DEPENDS +=	::audio/jack
+LIB_DEPENDS +=	audio/jack
 WANTLIB +=	jack
 .else
 CONFIGURE_ARGS += --disable-jack

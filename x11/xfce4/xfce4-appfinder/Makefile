@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 application finder
 
@@ -14,10 +14,10 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/xfce4/libxfce4menu \
-		::x11/xfce4/thunar \
-		::x11/xfce4/xfconf \
-		::x11/gtk+2
+LIB_DEPENDS=	x11/xfce4/libxfce4menu \
+		x11/xfce4/thunar \
+		x11/xfce4/xfconf \
+		x11/gtk+2
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

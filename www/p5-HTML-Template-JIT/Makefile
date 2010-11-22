@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	just-in-time compiler for HTML::Template
 
@@ -9,8 +9,8 @@ USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-RUN_DEPENDS=	::www/p5-HTML-Template \
-		::devel/p5-Inline
+RUN_DEPENDS=	www/p5-HTML-Template \
+		devel/p5-Inline
 
 # GPL/Artistic license
 PERMIT_PACKAGE_CDROM=	Yes

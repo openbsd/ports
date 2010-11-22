@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2010/11/16 07:37:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2010/11/22 08:36:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,14 +42,14 @@ MULTI_PACKAGES=	-main -docs -cups
 MODULES=	devel/gettext \
 		lang/python
 
-RUN_DEPENDS=	::x11/hicolor-icon-theme \
-		::misc/shared-mime-info
+RUN_DEPENDS=	x11/hicolor-icon-theme \
+		misc/shared-mime-info
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		:glib2->=2.26.0:devel/glib2 \
-		::devel/pango \
-		::devel/atk \
-		::graphics/gdk-pixbuf2
+		devel/glib2>=2.26.0 \
+		devel/pango \
+		devel/atk \
+		graphics/gdk-pixbuf2
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
@@ -64,8 +64,8 @@ WANTLIB-docs +=
 PKG_ARCH-docs=	*
 
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
-		::print/cups \
-		::${BASE_PKGPATH},-main
+		print/cups \
+		${BASE_PKGPATH},-main
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png

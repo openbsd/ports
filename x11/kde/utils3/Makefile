@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/08/30 21:49:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
@@ -13,13 +13,13 @@ SHARED_LIBS +=	ksimcore             2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	::x11/kde/libs3 \
-		::net/net-snmp \
-		::devel/gmp \
-		:python->=2.5,<2.6:lang/python/2.5 \
-		::audio/xmms \
-		::x11/gtk+
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS =	x11/kde/libs3 \
+		net/net-snmp \
+		devel/gmp \
+		python->=2.5,<2.6:lang/python/2.5 \
+		audio/xmms \
+		x11/gtk+
 
 
 SEPARATE_BUILD =	flavored
@@ -27,7 +27,7 @@ SEPARATE_BUILD =	flavored
 REVISION = 7
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
 	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
-	lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
+	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/vcard m netsnmp png \
 	pthread pthread-stubs python2.5 stdc++ util xcb xmms z

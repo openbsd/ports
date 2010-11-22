@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 11:41:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		lockdown editor for GNOME
 
@@ -22,8 +22,8 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/gettext \
-			::x11/gnome/py-gnome-desktop
+RUN_DEPENDS=		devel/gettext \
+			x11/gnome/py-gnome-desktop
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

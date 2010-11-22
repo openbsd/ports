@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	helper to test wsgi applications
 
@@ -21,10 +21,10 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebTest/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::www/py-webob
+RUN_DEPENDS =	www/py-webob
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  ::devel/py-dtopt \
-		  ::devel/py-nose
+		  devel/py-dtopt \
+		  devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

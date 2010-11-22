@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/12 13:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=	PHP OpenID implementation
 
@@ -25,9 +25,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${BASE_URL}/attachments/download/110/
 
 # php5-gd-*-!no_x11 because we need freetype support
-RUN_DEPENDS=	:php5-gd-*-!no_x11:www/php5/extensions,-gd \
-		:php5-gmp-*:www/php5/extensions,-gmp \
-		:php5-mysqli-*:www/php5/extensions,-mysqli
+RUN_DEPENDS=	php5-gd-*-!no_x11:www/php5/extensions,-gd \
+		www/php5/extensions,-gmp \
+		www/php5/extensions,-mysqli
 
 WRKDIST=	${WRKDIR}/communityid
 

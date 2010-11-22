@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/15 22:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -30,13 +30,13 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/py-gnome-desktop
-LIB_DEPENDS=		::graphics/clutter/clutter-gtk \
-			::lang/guile \
-			::x11/gnome/librsvg
-RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \
-			::multimedia/gstreamer-0.10/plugins-good
-REGRESS_DEPENDS=	::devel/check
+BUILD_DEPENDS=		x11/gnome/py-gnome-desktop
+LIB_DEPENDS=		graphics/clutter/clutter-gtk \
+			lang/guile \
+			x11/gnome/librsvg
+RUN_DEPENDS=		x11/gnome/py-gnome-desktop \
+			multimedia/gstreamer-0.10/plugins-good
+REGRESS_DEPENDS=	devel/check
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-omitgames=gnome-sudoku,lightsoff,swell-foop
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 REGRESS_IS_INTERACTIVE= x11
 

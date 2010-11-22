@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	wiki-based system for collaborative creation of websites
 
@@ -26,7 +26,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/pmwiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-core-*:www/php5/core
+RUN_DEPENDS=	www/php5/core
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTFILES}

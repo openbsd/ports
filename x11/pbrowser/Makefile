@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		graphical ports system frontend
 
@@ -26,11 +26,11 @@ MASTER_SITES=		http://www.bytelabs.org/
 EXTRACT_SUFX=		.tgz
 
 MODULES=		devel/gettext
-LIB_DEPENDS=	        ::x11/gtk+2 	
+LIB_DEPENDS=	        x11/gtk+2 	
 
 CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/pbrowser

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	open source client for Windows Terminal Server
 DISTNAME=	rdesktop-1.6.0
@@ -20,7 +20,7 @@ WANTLIB=		X11 c crypto pthread-stubs xcb ao
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	::audio/libao
+LIB_DEPENDS=	audio/libao
 
 NO_REGRESS=	Yes
 USE_GROFF =	Yes

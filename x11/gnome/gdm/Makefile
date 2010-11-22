@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2010/11/08 19:28:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,20 +26,20 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util wrap xcb xcb-render rsvg-2
 WANTLIB += xml2 z gnomecanvas-2 GL Xxf86vm drm xcb-shm
 
-BUILD_DEPENDS=		::x11/gnome/zenity
-RUN_DEPENDS=		:sox-*:audio/sox \
-			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
-			::x11/gnome/zenity \
-			::security/gksu-polkit
-LIB_DEPENDS=		::x11/gnome/librsvg \
-			::x11/gnome/libgnomecanvas
+BUILD_DEPENDS=		x11/gnome/zenity
+RUN_DEPENDS=		audio/sox \
+			x11/hicolor-icon-theme \
+			x11/gnome/zenity \
+			security/gksu-polkit
+LIB_DEPENDS=		x11/gnome/librsvg \
+			x11/gnome/libgnomecanvas
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 # has 2 different libraries with same name
 USE_LIBTOOL=		gnu
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 # gdm 2.20.X releases only work with old ConsoleKit versions so instead
 # we patch Xsession to start ck-launch-session with the session.
-RUN_DEPENDS+=		::sysutils/consolekit
+RUN_DEPENDS+=		sysutils/consolekit
 CONFIGURE_ARGS+=	--without-console-kit
 
 # -pthread is needed to resolve some undefined symbols

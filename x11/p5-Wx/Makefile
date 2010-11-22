@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:03 espie Exp $
 
 COMMENT =	interface to the wxWidgets cross-platform GUI toolkit
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =	::devel/p5-Alien-wxWidgets \
-		::devel/p5-ExtUtils-XSpp
+RUN_DEPENDS =	devel/p5-Alien-wxWidgets \
+		devel/p5-ExtUtils-XSpp
 
-LIB_DEPENDS =	::x11/wxWidgets
+LIB_DEPENDS =	x11/wxWidgets
 WANTLIB += pthread stdc++ wx_base wx_base_net wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_aui wx_gtk2_core wx_gtk2_html wx_gtk2_richtext
 WANTLIB += wx_gtk2_stc wx_gtk2_xrc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		color vt102 terminal emulator with transparency support
 
@@ -20,9 +20,9 @@ WANTLIB=		ICE SM X11 Xpm c util
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wterm/}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:windowmaker->=0.50.0:x11/windowmaker
+RUN_DEPENDS=		x11/windowmaker>=0.50.0
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-utmp --enable-wtmp \

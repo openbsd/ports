@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		framework and a set of enhanced PyGTK widgets
 
@@ -23,9 +23,9 @@ MODULES=		devel/gettext \
 
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		::x11/py-gtk2
-RUN_DEPENDS=		::databases/py-sqlobject \
-			::x11/py-gtk2
+BUILD_DEPENDS=		x11/py-gtk2
+RUN_DEPENDS=		databases/py-sqlobject \
+			x11/py-gtk2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-kiwi

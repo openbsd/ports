@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-0.9.92.061
@@ -27,8 +27,8 @@ MODULES =		converters/libiconv \
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		::x11/e17/ecore \
-			::x11/e17/embryo
+LIB_DEPENDS =		x11/e17/ecore \
+			x11/e17/embryo
 
 CONFIGURE_ARGS +=	--disable-doc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,11 +36,11 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
-LIB_DEPENDS=	::x11/gnome/panel \
-		:gtk-vnc->=0.4.0:x11/gtk-vnc \
-		::net/telepathy/telepathy-glib \
-		:avahi-gtk-*:net/avahi,-gtk,no_mono,no_qt3,no_qt4
+RUN_DEPENDS=	misc/shared-mime-info>=0.21
+LIB_DEPENDS=	x11/gnome/panel \
+		x11/gtk-vnc>=0.4.0 \
+		net/telepathy/telepathy-glib \
+		net/avahi,-gtk,no_mono,no_qt3,no_qt4
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes

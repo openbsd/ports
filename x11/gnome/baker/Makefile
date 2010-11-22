@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -34,12 +34,12 @@ MODULES=		devel/gettext \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomebaker/}
 EXTRACT_SUFX=		.tar.gz
 
-LIB_DEPENDS=		::multimedia/gstreamer-0.10/core \
-			::x11/gnome/libgnomeui
+LIB_DEPENDS=		multimedia/gstreamer-0.10/core \
+			x11/gnome/libgnomeui
 
-RUN_DEPENDS=		::misc/cdrdao \
-			::sysutils/cdrtools \
-			::sysutils/dvd+rw-tools
+RUN_DEPENDS=		misc/cdrdao \
+			sysutils/cdrtools \
+			sysutils/dvd+rw-tools
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes

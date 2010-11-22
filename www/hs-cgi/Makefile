@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/03 22:18:39 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =		CGI library for Haskell
 
@@ -19,9 +19,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		:hs-network->=2.0:devel/hs-network \
-			:hs-parsec->=2.0:devel/hs-parsec \
-			:hs-xhtml->=3000.0.0:www/hs-xhtml
+LIB_DEPENDS =		devel/hs-network>=2.0 \
+			devel/hs-parsec>=2.0 \
+			www/hs-xhtml>=3000.0.0
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 

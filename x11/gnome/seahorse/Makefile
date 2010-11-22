@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/26 14:53:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,13 +31,13 @@ WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
 WANTLIB += lber-2.3 ldap-2.3 notify soup-2.4 gpgme gnome-keyring.>=6 gcr.>=1
 WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
-LIB_DEPENDS=		::databases/openldap \
-			::devel/libnotify \
-			::devel/libsoup \
-			::security/gpgme \
-			:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-			:gnome-keyring->=2.30.0:x11/gnome/keyring \
-			::net/avahi
+LIB_DEPENDS=		databases/openldap \
+			devel/libnotify \
+			devel/libsoup \
+			security/gpgme \
+			x11/gnome/libgnome-keyring \
+			x11/gnome/keyring>=2.30.0 \
+			net/avahi
 
 MODULES=		devel/gettext \
 			x11/gnome \

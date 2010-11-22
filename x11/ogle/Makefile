@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/25 08:46:49 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/22 08:37:03 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -29,11 +29,11 @@ WANTLIB =	ICE SM X11 Xext Xinerama Xv Xxf86vm c m z xml2 jpeg mad \
 
 MODULES =	converters/libiconv
 
-LIB_DEPENDS =	::audio/liba52 \
-		::devel/libdvdread \
-		:libxml->=2.4.19:textproc/libxml \
-		::graphics/jpeg \
-		::audio/libmad
+LIB_DEPENDS =	audio/liba52 \
+		devel/libdvdread \
+		textproc/libxml>=2.4.19 \
+		graphics/jpeg \
+		audio/libmad
 
 USE_GROFF =	Yes
 

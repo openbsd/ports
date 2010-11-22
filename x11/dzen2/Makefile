@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/06 19:46:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:56 espie Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -24,7 +24,7 @@ WANTLIB-gadgets=	X11 c
 
 MASTER_SITES=		http://gotmor.googlepages.com/
 
-RUN_DEPENDS-gadgets=	:dzen2-*:x11/dzen2
+RUN_DEPENDS-gadgets=	x11/dzen2
 
 MAKE_FLAGS=		CC=${CC} \
 			CFLAGS="${CFLAGS} -I${X11BASE}/include \

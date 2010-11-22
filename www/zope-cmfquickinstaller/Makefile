@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	facility for (de)activation of CMF compliant products
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-cmf
+RUN_DEPENDS=	www/zope-cmf
 
 WRKDIST=	${WRKDIR}/CMFQuickInstallerTool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	web based bug tracking
 
@@ -25,7 +25,7 @@ PREFIX=		/var/www
 INSTDIR=	/var/www/mantis
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	::mail/femail,-chroot
+RUN_DEPENDS=	mail/femail,-chroot
 
 do-install:
 	@-test ! -d ${PREFIX}/mantis && mkdir ${PREFIX}/mantis

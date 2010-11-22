@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2010/11/22 08:36:49 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -36,8 +36,8 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/shared/}
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::emulators/fedora/base
+RUN_DEPENDS=	devel/desktop-file-utils \
+		emulators/fedora/base
 
 USE_GROFF =	Yes
 NO_BUILD=	Yes

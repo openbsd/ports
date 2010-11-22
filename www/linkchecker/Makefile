@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ MODULES=	lang/python
 MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	:py-dns-*:net/py-dns
+BUILD_DEPENDS=	net/py-dns
 
 NO_REGRESS=	Yes
 

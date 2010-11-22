@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:55 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm c jpeg
 
-LIB_DEPENDS=		::graphics/jpeg
+LIB_DEPENDS=		graphics/jpeg
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

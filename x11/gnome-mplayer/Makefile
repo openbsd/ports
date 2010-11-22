@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 11:11:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:59 espie Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-1.0.0
@@ -27,17 +27,17 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		::devel/libnotify \
-			::audio/libgpod \
-			::audio/libmusicbrainz \
-			::net/curl
-RUN_DEPENDS =		::devel/desktop-file-utils \
-			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			:mplayer->=20090828:x11/mplayer
+LIB_DEPENDS =		devel/libnotify \
+			audio/libgpod \
+			audio/libmusicbrainz \
+			net/curl
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gnome/icon-theme \
+			x11/mplayer>=20090828
 
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 

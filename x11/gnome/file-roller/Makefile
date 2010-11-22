@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/15 22:51:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,13 +27,13 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-RUN_DEPENDS=		::archivers/gtar \
-			::archivers/xz \
-			::archivers/unzip \
-			::archivers/zip \
-			::archivers/gcpio \
-			:rpm2cpio-*|rpm-*:converters/rpm2cpio
-LIB_DEPENDS=		::x11/gnome/nautilus
+RUN_DEPENDS=		archivers/gtar \
+			archivers/xz \
+			archivers/unzip \
+			archivers/zip \
+			archivers/gcpio \
+			rpm2cpio-*|rpm-*:converters/rpm2cpio
+LIB_DEPENDS=		x11/gnome/nautilus
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

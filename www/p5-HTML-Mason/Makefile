@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
@@ -17,17 +17,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Params-Validate->=0.74:devel/p5-Params-Validate \
-		:mod_perl->=1.27:www/mod_perl \
-		:p5-libapreq->=1.1:www/p5-libapreq \
-		:p5-Exception-Class->=1.19:devel/p5-Exception-Class \
-		:p5-Class-Container->=0.10:devel/p5-Class-Container \
-		:p5-Cache-Cache->=1.02:devel/p5-Cache-Cache
+RUN_DEPENDS=	devel/p5-Params-Validate>=0.74 \
+		www/mod_perl>=1.27 \
+		www/p5-libapreq>=1.1 \
+		devel/p5-Exception-Class>=1.19 \
+		devel/p5-Class-Container>=0.10 \
+		devel/p5-Cache-Cache>=1.02
 
 MAKE_ENV=       TEST_POD=Yes
 
-REGRESS_DEPENDS=::devel/p5-Test-Memory-Cycle \
-		::devel/p5-PadWalker
+REGRESS_DEPENDS=devel/p5-Test-Memory-Cycle \
+		devel/p5-PadWalker
 
 CONFIGURE_STYLE=	modbuild
 CONFIGURE_ARGS+=	--no-prompts

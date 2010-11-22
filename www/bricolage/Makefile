@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=	content management system
 
@@ -17,31 +17,31 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}downloads/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::databases/p5-DBD-Pg \
-		:postgresql-server->=7.3:databases/postgresql,-server \
-		::devel/p5-Cache-Mmap \
-		::devel/p5-Data-UUID \
-		::devel/p5-DateTime \
-		::devel/p5-List-MoreUtils \
-		::devel/p5-MLDBM \
-		::devel/p5-Term-ReadPassword \
-		::devel/p5-Test-Class \
-		::devel/p5-Test-File-Contents \
-		::devel/p5-Test-MockModule \
-		::editors/xinha \
-		::net/p5-Net-SFTP \
-		::graphics/p5-Image-Info \
-		::sysutils/p5-Unix-Syslog \
-		::textproc/p5-Template \
-		::textproc/p5-Text-Diff-HTML \
-		::textproc/p5-Text-LevenshteinXS \
-		::textproc/p5-Text-WordDiff \
-		::textproc/p5-XML-Simple \
-		::textproc/p5-XML-Writer \
-		::www/p5-Apache-Session \
-		::www/p5-HTML-Template-Expr \
-		::www/p5-MasonX-Interp-WithCallbacks \
-		::www/p5-SOAP-Lite
+RUN_DEPENDS=	databases/p5-DBD-Pg \
+		databases/postgresql,-server>=7.3 \
+		devel/p5-Cache-Mmap \
+		devel/p5-Data-UUID \
+		devel/p5-DateTime \
+		devel/p5-List-MoreUtils \
+		devel/p5-MLDBM \
+		devel/p5-Term-ReadPassword \
+		devel/p5-Test-Class \
+		devel/p5-Test-File-Contents \
+		devel/p5-Test-MockModule \
+		editors/xinha \
+		net/p5-Net-SFTP \
+		graphics/p5-Image-Info \
+		sysutils/p5-Unix-Syslog \
+		textproc/p5-Template \
+		textproc/p5-Text-Diff-HTML \
+		textproc/p5-Text-LevenshteinXS \
+		textproc/p5-Text-WordDiff \
+		textproc/p5-XML-Simple \
+		textproc/p5-XML-Writer \
+		www/p5-Apache-Session \
+		www/p5-HTML-Template-Expr \
+		www/p5-MasonX-Interp-WithCallbacks \
+		www/p5-SOAP-Lite
 
 # needed for other settings to take effect
 CONFIGURE_STYLE=perl

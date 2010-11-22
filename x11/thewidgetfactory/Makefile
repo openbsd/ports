@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	Xfce4 theme engine for Gtk+2
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes xcb-render-util \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \

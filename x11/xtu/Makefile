@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	configurable analog clock for X11
 DISTNAME=	xtu-1.3
@@ -24,7 +24,7 @@ FLAVORS=	imlib
 FLAVOR?=
 
 .if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS=	::graphics/imlib
+LIB_DEPENDS=	graphics/imlib
 WANTLIB+=	ICE SM m z jpeg png tiff ungif Imlib
 XTUFLAGS=	"-DUSE_IMLIB ${CFLAGS} `imlib-config --cflags`"
 MAKE_FLAGS+=	LOCAL_LIBRARIES="`imlib-config --libs`"

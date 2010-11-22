@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	farsi bornaray fonts
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://www.bornaray.com/download/fonts/
 MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 EXTRACT_SUFX=	.exe
-BUILD_DEPENDS += :unzip-*:archivers/unzip
+BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.exe) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 

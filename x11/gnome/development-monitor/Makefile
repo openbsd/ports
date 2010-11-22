@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	follow GNOME development activity
 
@@ -19,10 +19,10 @@ MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 MODULES=	lang/python \
 		x11/gnome
 
-RUN_DEPENDS=	::x11/py-gtk2 \
-		::www/py-htmltmpl \
-		::devel/py-dateutil \
-		::www/py-webkitgtk
+RUN_DEPENDS=	x11/py-gtk2 \
+		www/py-htmltmpl \
+		devel/py-dateutil \
+		www/py-webkitgtk
 
 DESKTOP_FILES=	Yes
 CONFIGURE_STYLE= # empty

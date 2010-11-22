@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,8 +24,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pypanel/}
 MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/py-Xlib
-LIB_DEPENDS=	::graphics/imlib2
+RUN_DEPENDS=	x11/py-Xlib
+LIB_DEPENDS=	graphics/imlib2
 
 NO_REGRESS=	Yes
 

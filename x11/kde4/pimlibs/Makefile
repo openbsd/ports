@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
@@ -37,14 +37,14 @@ SHARED_LIBS += 	gpgmepp-pthread	     0.0      # .2.4
 SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
 
 
-BUILD_DEPENDS += ::devel/boost \
-		::x11/kde4/automoc
-LIB_DEPENDS +=	::x11/kde4/libs \
-		::security/cyrus-sasl2 \
-		::databases/openldap \
-		:gpgme->=0.4.5:security/gpgme \
-		::x11/kde4/akonadi \
-		::textproc/libical
+BUILD_DEPENDS += devel/boost \
+		x11/kde4/automoc
+LIB_DEPENDS +=	x11/kde4/libs \
+		security/cyrus-sasl2 \
+		databases/openldap \
+		security/gpgme>=0.4.5 \
+		x11/kde4/akonadi \
+		textproc/libical
 
 # these come from libs in real case
 pre-install:

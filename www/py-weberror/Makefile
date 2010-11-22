@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	web error handling and exception catching
 
@@ -19,14 +19,14 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebError/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::devel/py-simplejson \
-		::textproc/py-pygments \
-		::www/py-paste \
-		::www/py-tempita \
-		::www/py-webob
+RUN_DEPENDS =	devel/py-simplejson \
+		textproc/py-pygments \
+		www/py-paste \
+		www/py-tempita \
+		www/py-webob
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  ::devel/py-nose \
-		  ::www/py-webtest
+		  devel/py-nose \
+		  www/py-webtest
 
 MODPY_SETUPTOOLS =	Yes
 

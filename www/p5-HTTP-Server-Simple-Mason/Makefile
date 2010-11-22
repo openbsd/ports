@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/23 11:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	abstract baseclass for a standalone mason server
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Hook-LexWrap \
-		::www/p5-HTML-Mason \
-		::www/p5-HTTP-Server-Simple
+RUN_DEPENDS=	devel/p5-Hook-LexWrap \
+		www/p5-HTML-Mason \
+		www/p5-HTTP-Server-Simple
 
 .include <bsd.port.mk>

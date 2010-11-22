@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		utility library for XKB
 
@@ -23,9 +23,9 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/iso-codes
-LIB_DEPENDS=		::devel/glib2 \
-			::textproc/libxml
+RUN_DEPENDS=		devel/iso-codes
+LIB_DEPENDS=		devel/glib2 \
+			textproc/libxml
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x \

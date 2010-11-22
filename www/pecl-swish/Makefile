@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:52 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	PHP interface to swish-e
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	m pcre pcreposix swish-e z
 
-LIB_DEPENDS =	::textproc/swish-e
-BUILD_DEPENDS =	:pear-*:www/pear \
+LIB_DEPENDS =	textproc/swish-e
+BUILD_DEPENDS =	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS =	:php5-core-*:www/php5/core
+RUN_DEPENDS =	www/php5/core
 
 PREFIX =	/var/www
 DESTDIRNAME =	INSTALL_ROOT

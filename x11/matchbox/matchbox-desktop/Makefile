@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	pda style application launcher or item browser
 DISTNAME=	matchbox-desktop-2.0
@@ -15,9 +15,9 @@ WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::devel/startup-notification \
-		::x11/gtk+2
-RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
+LIB_DEPENDS=	devel/startup-notification \
+		x11/gtk+2
+RUN_DEPENDS=	x11/matchbox/matchbox-common
 
 USE_LIBTOOL=	Yes
 

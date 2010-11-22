@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	window manipulation tool
 
@@ -27,7 +27,7 @@ MASTER_SITES=	http://www.burtonini.com/computing/
 
 MODULES=	devel/gettext textproc/intltool
 
-LIB_DEPENDS=	::devel/libwnck
+LIB_DEPENDS=	devel/libwnck
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/23 20:32:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
@@ -26,15 +26,15 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE} --python=${MODPY_BIN}
 CONFIGURE_SCRIPT=	${MODPY_BIN} ${WRKSRC}/configure
 
-DEPENDS=		::databases/py-sqlalchemy \
-			::devel/py-tz \
-			::devel/py-babel \
-			::devel/py-html5lib \
-			::www/py-werkzeug \
-			::www/py-jinja2 \
-			::www/py-flup \
-			::textproc/py-lxml \
-			::textproc/py-pygments \
+DEPENDS=		databases/py-sqlalchemy \
+			devel/py-tz \
+			devel/py-babel \
+			devel/py-html5lib \
+			www/py-werkzeug \
+			www/py-jinja2 \
+			www/py-flup \
+			textproc/py-lxml \
+			textproc/py-pygments \
 			${MODPY_JSON}
 
 BUILD_DEPENDS+=		${DEPENDS}

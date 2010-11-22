@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -17,13 +17,13 @@ MODULES=	lang/python \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		:docbook-*:textproc/docbook \
-		::sysutils/ggrep \
-		::textproc/rarian
-RUN_DEPENDS=	::devel/gettext \
-		:py-libxml-*:textproc/libxml,-python \
-		:py-libxslt-*:textproc/libxslt,-python \
-		::textproc/rarian
+		textproc/docbook \
+		sysutils/ggrep \
+		textproc/rarian
+RUN_DEPENDS=	devel/gettext \
+		textproc/libxml,-python \
+		textproc/libxslt,-python \
+		textproc/rarian
 
 USE_LIBTOOL=	No
 USE_GROFF =	Yes

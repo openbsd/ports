@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/26 20:08:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:49 espie Exp $
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	flash support for opera
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Commercial software
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	:opera-*:www/opera
+RUN_DEPENDS=	www/opera
 
 WRKSRC=	${WRKDIR}/install_flash_player_7_linux
 

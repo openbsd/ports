@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
@@ -20,10 +20,10 @@ WANTLIB=		X11 Xext Xpm c curl
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		::net/curl
+LIB_DEPENDS=		net/curl
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu

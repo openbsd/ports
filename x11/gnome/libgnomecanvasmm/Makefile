@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
@@ -27,11 +27,11 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		:glib2mm->=2.8:devel/glib2mm \
-			:libsigc++->=2,<3:devel/libsigc++-2 \
-			::x11/gtk2mm \
-			::devel/pangomm \
-			::x11/gnome/libgnomecanvas
+LIB_DEPENDS=		devel/glib2mm>=2.8 \
+			libsigc++->=2,<3:devel/libsigc++-2 \
+			x11/gtk2mm \
+			devel/pangomm \
+			x11/gnome/libgnomecanvas
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-static

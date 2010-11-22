@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/11 09:27:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	simple login manager
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png
 
 WANTLIB=	X11 Xft Xmu Xrender fontconfig c m stdc++ z freetype jpeg png
 

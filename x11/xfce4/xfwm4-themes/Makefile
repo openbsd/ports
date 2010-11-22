@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/27 12:58:43 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:37:06 espie Exp $
 PKG_ARCH=	*
 
 COMMENT=	Xfwm4 window decoration themes
@@ -16,6 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 XFCE_NO_SRC=	Yes
 
-RUN_DEPENDS=	::x11/xfce4/xfwm4
+RUN_DEPENDS=	x11/xfce4/xfwm4
 
 .include <bsd.port.mk>

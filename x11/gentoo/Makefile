@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		GTK+-2 Graphical filemanager
 
@@ -25,11 +25,11 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-install:
 	@chmod +x ${WRKSRC}/install-sh

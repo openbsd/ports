@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/29 12:44:06 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::x11/xfce4/xfce4-panel \
-		::net/xmlrpc-c
+LIB_DEPENDS=	x11/xfce4/xfce4-panel \
+		net/xmlrpc-c
 
 DESKTOP_FILES=	Yes
 

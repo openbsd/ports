@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	Fast-Light Tool Kit
 
@@ -35,8 +35,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
 		ftp://ftp.easysw.com/pub/fltk/${VER}/ \
 		ftp://ftp3.easysw.com/pub/fltk/${VER}/
 
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png
 
 NO_REGRESS=	Yes
 USE_GROFF =	Yes

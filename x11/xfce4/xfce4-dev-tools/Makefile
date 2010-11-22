@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/27 12:58:43 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:06 espie Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =	x11/xfce4
 
-RUN_DEPENDS =	::devel/libtool \
-		::textproc/gtk-doc \
-		::textproc/intltool \
-		::devel/automake/${AUTOMAKE_VERSION} \
-		::devel/autoconf/${AUTOCONF_VERSION} \
-		::shells/bash \
-		::devel/git \
-		::devel/subversion
+RUN_DEPENDS =	devel/libtool \
+		textproc/gtk-doc \
+		textproc/intltool \
+		devel/automake/${AUTOMAKE_VERSION} \
+		devel/autoconf/${AUTOCONF_VERSION} \
+		shells/bash \
+		devel/git \
+		devel/subversion
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.61

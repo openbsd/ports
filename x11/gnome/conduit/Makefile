@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:57 espie Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -24,14 +24,14 @@ MODULES=		lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/gettext \
-			::devel/xdg-utils \
-			::graphics/py-goocanvas \
-			::textproc/py-vobject \
-			::x11/dbus-python \
-			::multimedia/gstreamer-0.10/py-gstreamer \
-			::net/avahi \
-			::devel/py-gdata
+RUN_DEPENDS=		devel/gettext \
+			devel/xdg-utils \
+			graphics/py-goocanvas \
+			textproc/py-vobject \
+			x11/dbus-python \
+			multimedia/gstreamer-0.10/py-gstreamer \
+			net/avahi \
+			devel/py-gdata
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

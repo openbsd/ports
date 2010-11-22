@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 12:36:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=		open source micro messaging platform
 
@@ -17,24 +17,24 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		::databases/pear-DB \
-			::databases/pear-DB_DataObject \
-			::devel/pear-System-Command \
-			::mail/pear-Mail \
-			::mail/pear-Mail-mimeDecode \
-			::mail/pear-Mime-Type \
-			::mail/pecl-mailparse \
-			::net/pear-Net-SMTP \
-			::net/pear-Services-oEmbed \
-			::net/pear-Net-Socket \
-			::net/pear-Net-URL-Mapper \
-			::textproc/sphinx \
-			::www/apache-httpd \
-			::www/php-markdown \
-			:php5-curl-*:www/php5/extensions,-curl \
-			:php5-gd-*:www/php5/extensions,-gd \
-			:php5-mbstring-*:www/php5/extensions,-mbstring \
-			:php5-tidy-*:www/php5/extensions,-tidy
+RUN_DEPENDS=		databases/pear-DB \
+			databases/pear-DB_DataObject \
+			devel/pear-System-Command \
+			mail/pear-Mail \
+			mail/pear-Mail-mimeDecode \
+			mail/pear-Mime-Type \
+			mail/pecl-mailparse \
+			net/pear-Net-SMTP \
+			net/pear-Services-oEmbed \
+			net/pear-Net-Socket \
+			net/pear-Net-URL-Mapper \
+			textproc/sphinx \
+			www/apache-httpd \
+			www/php-markdown \
+			www/php5/extensions,-curl \
+			www/php5/extensions,-gd \
+			www/php5/extensions,-mbstring \
+			www/php5/extensions,-tidy
 			
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

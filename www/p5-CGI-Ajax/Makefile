@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/22 19:24:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:50 espie Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Class-Accessor
+RUN_DEPENDS=	devel/p5-Class-Accessor
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	scripts

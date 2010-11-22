@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	Apache module for logging to an SQL database
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += lib/mysql/mysqlclient.>=10 z
+WANTLIB += lib/mysql/mysqlclient>=10 z
 
 MODAPACHE_NAME=		sql_log
 MODAPACHE_ENABLE=	mod_log_sql-enable
@@ -25,7 +25,7 @@ MODAPACHE_MODULE=	mod_log_sql.so
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_log_sql/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	::databases/mysql
+LIB_DEPENDS=	databases/mysql
 
 NO_REGRESS=	Yes
 

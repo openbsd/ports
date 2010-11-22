@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/17 20:40:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -55,22 +55,22 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-LIB_DEPENDS=	::audio/libvorbis \
-		::devel/libgsf \
-		::mail/evolution \
-		:exempi->=2.1.1:textproc/exempi \
-		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		::print/poppler \
-		::x11/gnome/panel \
-		:nautilus->=2.28.4p1:x11/gnome/nautilus \
-		:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-		:e2fsprogs->=1.41.4p3:sysutils/e2fsprogs \
-		::devel/libgee
-BUILD_DEPENDS=	::devel/xdg-utils \
-		::lang/vala
-RUN_DEPENDS=	:gamin-*:sysutils/gamin,-server \
-		::devel/xdg-utils \
-		::textproc/odt2txt
+LIB_DEPENDS=	audio/libvorbis \
+		devel/libgsf \
+		mail/evolution \
+		textproc/exempi>=2.1.1 \
+		multimedia/gstreamer-0.10/plugins-base>=0.10.25 \
+		print/poppler \
+		x11/gnome/panel \
+		x11/gnome/nautilus>=2.28.4p1 \
+		x11/gnome/totem-pl-parser>=2.28.1 \
+		sysutils/e2fsprogs>=1.41.4p3 \
+		devel/libgee
+BUILD_DEPENDS=	devel/xdg-utils \
+		lang/vala
+RUN_DEPENDS=	sysutils/gamin,-server \
+		devel/xdg-utils \
+		textproc/odt2txt
 
 DESKTOP_FILES=	Yes
 MODPY_RUNDEP=	No

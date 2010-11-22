@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	GNOME media utilities
 
@@ -30,10 +30,10 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::multimedia/gstreamer-0.10/plugins-good
-LIB_DEPENDS=	:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
-		::audio/libcanberra \
-		::devel/glade3
+BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
+LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base>=0.10.25 \
+		audio/libcanberra \
+		devel/glade3
 
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes

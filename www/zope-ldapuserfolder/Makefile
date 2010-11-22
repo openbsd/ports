@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
@@ -22,7 +22,7 @@ MODULES=	www/zope
 
 PY_FLAVOR=	python${MODZOPE_PYTHON_VERSION}
 
-RUN_DEPENDS=	:py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR}
+RUN_DEPENDS=	py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR}
 
 WRKDIST=	${WRKDIR}/LDAPUserFolder
 

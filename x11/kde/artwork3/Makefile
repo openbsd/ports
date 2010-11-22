@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, additional artwork
 CATEGORIES =		x11 x11/kde
@@ -8,20 +8,20 @@ MODKDE_VERSION =	3.5.8
 
 MODULES =		x11/kde devel/gettext
 
-LIB_DEPENDS =		::x11/kde/libs3 \
-			::x11/kde/base3
+LIB_DEPENDS =		x11/kde/libs3 \
+			x11/kde/base3
 SEPARATE_BUILD =	flavored
 
 CONFIGURE_ENV +=	XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
 
-BUILD_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
-RUN_DEPENDS =		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle
+BUILD_DEPENDS =		x11/xscreensaver,-data,no_gle
+RUN_DEPENDS =		x11/xscreensaver,-data,no_gle
 
 REVISION =	6
 WANTLIB = GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xt Xxf86vm \
 	art_lgpl_2 artsflow artsflow_idl artskde audiofile c drm fam glib-2.0 \
 	gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl kwalletclient \
-	lib/kde3/DCOP lib/kde3/kdecorations lib/kde3/kdecore.>=6 \
+	lib/kde3/DCOP lib/kde3/kdecorations lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio \
 	lib/kde3/kparts lib/kde3/kscreensaver m mad mcop ogg pcre png pthread \
 	pthread-stubs qtmcop rpcsvc sndio soundserver_idl stdc++ util vorbis \

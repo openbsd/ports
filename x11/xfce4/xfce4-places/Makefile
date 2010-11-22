@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::x11/xfce4/thunar
+LIB_DEPENDS=	x11/xfce4/thunar
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo exo-0.3 \

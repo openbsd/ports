@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/25 06:55:05 stephan Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	web-based collaborative editing environment
 
@@ -25,7 +25,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/mediawiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd
+RUN_DEPENDS=	www/php5/extensions,-gd
 
 do-install:
 	@mv ${WRKDIST} ${INSTDIR}

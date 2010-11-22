@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:04 espie Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 USE_GROFF =	Yes
-RUN_DEPENDS =	::x11/p5-Gtk2-GladeXML \
-		::devel/p5-Locale-gettext \
-		::x11/p5-Gtk2-Ex-PodViewer \
-		::www/p5-HTML-Parser \
-		::www/p5-URI \
-		::devel/desktop-file-utils \
-		::devel/xdg-utils
+RUN_DEPENDS =	x11/p5-Gtk2-GladeXML \
+		devel/p5-Locale-gettext \
+		x11/p5-Gtk2-Ex-PodViewer \
+		www/p5-HTML-Parser \
+		www/p5-URI \
+		devel/desktop-file-utils \
+		devel/xdg-utils
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	add XPath support to HTML::TreeBuilder
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-XML-XPathEngine->=0.12:textproc/p5-XML-XPathEngine \
-		::www/p5-HTML-Tree
+RUN_DEPENDS=	textproc/p5-XML-XPathEngine>=0.12 \
+		www/p5-HTML-Tree
 
 MAKE_ENV+=	TEST_POD=1
 

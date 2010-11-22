@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		::x11/gnome/libxklavier
+LIB_DEPENDS=		x11/gnome/libxklavier
 
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	libgnomekbd

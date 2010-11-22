@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 settings helpers
 
@@ -14,12 +14,12 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES =	x11/xfce4
 DESKTOP_FILES =	Yes
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::devel/libwnck \
-		::devel/libnotify \
-		::x11/xfce4/exo \
-		:libxklavier->=5.*:x11/gnome/libxklavier \
-		::x11/xfce4/xfconf
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		devel/libwnck \
+		devel/libnotify \
+		x11/xfce4/exo \
+		x11/gnome/libxklavier>=5 \
+		x11/xfce4/xfconf
 
 WANTLIB =	X11 Xcursor Xi Xrandr c cairo dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glade-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \

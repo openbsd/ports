@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/13 13:09:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -27,9 +27,9 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::www/libcroco
-RUN_DEPENDS=	::x11/gtk-engines2
+LIB_DEPENDS=	x11/gtk+2 \
+		www/libcroco
+RUN_DEPENDS=	x11/gtk-engines2
 
 CONFIGURE_ARGS+=	--with-svgz \
 			--with-croco \
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-svgz \
 			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MODPY_ADJ_FILES=	rsvg.in
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	package provides methods for HTML forms
 
@@ -17,6 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:pear-HTML-Common2->=0.1.0:www/pear-HTML-Common2
+RUN_DEPENDS=	www/pear-HTML-Common2>=0.1.0
 
 .include <bsd.port.mk>

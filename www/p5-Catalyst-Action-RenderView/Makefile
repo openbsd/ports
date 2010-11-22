@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:50 espie Exp $
 
 COMMENT= 	sensible default end action for catalyst
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Data-Visitor->=0.24:devel/p5-Data-Visitor \
-		::devel/p5-MRO-Compat \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	devel/p5-Data-Visitor>=0.24 \
+		devel/p5-MRO-Compat \
+		www/p5-Catalyst-Runtime
 
-REGRESS_DEPENDS=::www/p5-HTTP-Request-AsCGI
+REGRESS_DEPENDS=www/p5-HTTP-Request-AsCGI
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:54 espie Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
@@ -19,13 +19,13 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-tilt-*:devel/ruby-tilt,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-rack->=1.0.0:www/ruby-rack,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-tilt,${FLAVOR} \
+			www/ruby-rack,${FLAVOR}>=1.0.0
 
 MODRUBY_REGRESS =	rake
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-haml-*:textproc/ruby-haml,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-builder-*:textproc/ruby-builder,${FLAVOR} \
-			:${MODRUBY_PKG_PREFIX}-rack-test-*:devel/ruby-rack-test,${FLAVOR}
+REGRESS_DEPENDS =	textproc/ruby-haml,${FLAVOR} \
+			textproc/ruby-builder,${FLAVOR} \
+			devel/ruby-rack-test,${FLAVOR}
 
 .include <bsd.port.mk>

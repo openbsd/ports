@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:58 espie Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::x11/gnome/nautilus
+LIB_DEPENDS=	x11/gnome/nautilus
 
 MODGCONF2_SCHEMAS_DIR= nautilus-open-terminal
 

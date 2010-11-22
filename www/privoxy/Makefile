@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -28,7 +28,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
-LIB_DEPENDS=	::devel/pcre
+LIB_DEPENDS=	devel/pcre
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \

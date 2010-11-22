@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	DBI persistent connection, authentication and authorization
 
@@ -8,8 +8,8 @@ REVISION=	1
 CATEGORIES=	www databases
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
-		:p5-DBI-*:databases/p5-DBI
+RUN_DEPENDS=	www/mod_perl \
+		databases/p5-DBI
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	collection of additional GTK widgets
 
@@ -24,8 +24,8 @@ CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::textproc/libxml
+LIB_DEPENDS=	x11/gtk+2 \
+		textproc/libxml
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

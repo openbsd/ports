@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/15 23:06:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -22,12 +22,12 @@ WANTLIB += gthread-2.0 notify dbus-glib-1 GL Xxf86vm drm xcb-shm
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/libnotify \
-			::x11/dbus-glib \
+LIB_DEPENDS=		devel/libnotify \
+			x11/dbus-glib \
 
 MODGNOME_HELP_FILES=	Yes
 USE_LIBTOOL=		No
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_ARGS= 	--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

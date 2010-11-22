@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:02 espie Exp $
 
 COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
@@ -45,13 +45,13 @@ SHARED_LIBS +=	ksieve               2.0      # .0.0
 SHARED_LIBS +=	kslox                2.0      # .1.0
 SHARED_LIBS +=	mimelib              0.0      # .1.1
 
-BUILD_DEPENDS +=	::x11/kde4/automoc
-LIB_DEPENDS+=		::x11/kde4/libs \
-			::x11/kde4/pimlibs
+BUILD_DEPENDS +=	x11/kde4/automoc
+LIB_DEPENDS+=		x11/kde4/libs \
+			x11/kde4/pimlibs
 
 WANTLIB += X11 Xss akonadi-contact akonadi-kcal akonadi-kde akonadi-kmime \
 	akonadiprotocolinternals c gpg-error gpgme++ gpgme++-pthread \
-	gpgme-pthread iconv intl kabc.>=5 kblog kcal kde3support kdecore.>=8 \
+	gpgme-pthread iconv intl kabc>=5 kblog kcal kde3support kdecore>=8 \
 	kdeui kdnssd kfile kholidays khtml kimap kimproxy kio kjs kldap kmime \
 	knewstuff2 knotifyconfig kontactinterface kparts kpimidentities \
 	kpimtextedit kpimutils kresources ktexteditor ktnef kutils \

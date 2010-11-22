@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/18 22:39:58 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -32,10 +32,10 @@ MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	::devel/pango \
-		::graphics/tiff \
-		::graphics/libexif \
-		::graphics/libungif
+LIB_DEPENDS=	devel/pango \
+		graphics/tiff \
+		graphics/libexif \
+		graphics/libungif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

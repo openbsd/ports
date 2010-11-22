@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/28 14:51:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,8 +29,8 @@ WANTLIB += pthread util xcb-render xcb-render-util
 MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
 MODULES=	devel/gettext textproc/intltool
-LIB_DEPENDS=	::net/pidgin,-libpurple
-BUILD_DEPENDS=	::net/pidgin
+LIB_DEPENDS=	net/pidgin,-libpurple
+BUILD_DEPENDS=	net/pidgin
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

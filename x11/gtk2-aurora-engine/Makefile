@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,7 @@ MODULES=	devel/gettext
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

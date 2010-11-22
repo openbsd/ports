@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/15 10:57:19 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:53 espie Exp $ 
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
@@ -26,8 +26,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/phpldapadmin
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-ldap-*:www/php5/extensions,-ldap \
-		:php5-mhash-*:www/php5/extensions,-mhash
+RUN_DEPENDS=	www/php5/extensions,-ldap \
+		www/php5/extensions,-mhash
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/phpldapadmin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:37:02 espie Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
@@ -24,7 +24,7 @@ WANTLIB += pthread-stubs xcb kdecore DCOP kdesu kdeui kio kdefx
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	devel/gettext \
 		x11/kde

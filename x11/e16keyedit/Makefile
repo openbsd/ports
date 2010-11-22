@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	edit enlightenment's keybindings
 
@@ -21,8 +21,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:enlightenment->=0.16,<0.17:x11/enlightenment
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	enlightenment->=0.16,<0.17:x11/enlightenment
 
 CONFIGURE_STYLE=gnu
 

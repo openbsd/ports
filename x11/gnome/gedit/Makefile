@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/10/24 15:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,15 +39,15 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
-			::x11/py-gtksourceview \
-			:py-gtk2->=2.12.0:x11/py-gtk2
-LIB_DEPENDS=		::textproc/enchant \
-			::x11/gtksourceview \
+BUILD_DEPENDS=		devel/iso-codes \
+			x11/py-gtksourceview \
+			x11/py-gtk2>=2.12.0
+LIB_DEPENDS=		textproc/enchant \
+			x11/gtksourceview \
 			${MODPY_LIB_DEPENDS}
-RUN_DEPENDS=		:py-gtk2->=2.12.0:x11/py-gtk2 \
-			::x11/py-gtksourceview \
-			::x11/gnome/py-gnome
+RUN_DEPENDS=		x11/py-gtk2>=2.12.0 \
+			x11/py-gtksourceview \
+			x11/gnome/py-gnome
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
@@ -62,6 +62,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 #CONFIGURE_ARGS+=	--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

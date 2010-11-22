@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -30,12 +30,12 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::x11/gnome/doc-utils
-LIB_DEPENDS=		:gucharmap->=2.24.1.1:x11/gnome/gucharmap
-RUN_DEPENDS=		::devel/vte,-python \
-			::x11/dbus-python \
-			:gedit->=2.30.0:x11/gnome/gedit \
-			:py-gtk2->=2.12.0:x11/py-gtk2
+			x11/gnome/doc-utils
+LIB_DEPENDS=		x11/gnome/gucharmap>=2.24.1.1
+RUN_DEPENDS=		devel/vte,-python \
+			x11/dbus-python \
+			x11/gnome/gedit>=2.30.0 \
+			x11/py-gtk2>=2.12.0
 
 USE_LIBTOOL=		Yes
 MODGCONF2_SCHEMAS_DIR=	gedit

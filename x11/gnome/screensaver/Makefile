@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
@@ -27,16 +27,16 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::textproc/xmlto
-LIB_DEPENDS=	::x11/gnome/desktop \
-		::x11/gnome/menus \
-		::x11/gnome/libgnomekbd \
-		::devel/libnotify
+BUILD_DEPENDS=	textproc/xmlto
+LIB_DEPENDS=	x11/gnome/desktop \
+		x11/gnome/menus \
+		x11/gnome/libgnomekbd \
+		devel/libnotify
 
 # notification-daemon is needed for the "Leave Message" button
-RUN_DEPENDS=	::x11/gnome/librsvg \
-		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle \
-		:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
+RUN_DEPENDS=	x11/gnome/librsvg \
+		x11/xscreensaver,-data,no_gle \
+		notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.64

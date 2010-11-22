@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:54 espie Exp $
 
 COMMENT =	lightweight and user friendly HTTP client library for Ruby
 
@@ -21,7 +21,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE = 	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:${MODRUBY_PKG_PREFIX}-mime-*:mail/ruby-mime,${FLAVOR}
+RUN_DEPENDS =		mail/ruby-mime,${FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${SUDO} ${RUBY} -I../lib -rubygems \

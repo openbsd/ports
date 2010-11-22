@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/08/18 05:35:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =	standard compliant weblog
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
-RUN_DEPENDS =	:php5-mysql-*:www/php5/extensions,-mysql
+RUN_DEPENDS =	www/php5/extensions,-mysql
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes

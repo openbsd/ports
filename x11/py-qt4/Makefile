@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/10 22:12:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,9 +35,9 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-sip->=4.11.2:devel/py-sip \
-		::x11/dbus-python
-LIB_DEPENDS=	:qt4->=4.7.0:x11/qt4 \
+RUN_DEPENDS=	devel/py-sip>=4.11.2 \
+		x11/dbus-python
+LIB_DEPENDS=	x11/qt4>=4.7.0 \
 		${MODPY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes

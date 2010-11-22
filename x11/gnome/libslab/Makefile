@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/25 10:23:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	interface components library
 
@@ -31,9 +31,9 @@ WANTLIB += startup-notification-1
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gnome/menus \
-		::x11/gnome/desktop \
-		::x11/gnome/librsvg
+LIB_DEPENDS=	x11/gnome/menus \
+		x11/gnome/desktop \
+		x11/gnome/librsvg
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

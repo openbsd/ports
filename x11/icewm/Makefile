@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	small and fast window manager
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	::graphics/imlib
+LIB_DEPENDS=	graphics/imlib
 
 
 CONFIGURE_STYLE=gnu		

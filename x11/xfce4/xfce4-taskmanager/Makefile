@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 task manager and system monitor
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/libwnck
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/libwnck
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

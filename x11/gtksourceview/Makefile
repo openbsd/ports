@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
@@ -33,8 +33,8 @@ WANTLIB += gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		:libxml-*:textproc/libxml \
-			::x11/gtk+2
+LIB_DEPENDS=		textproc/libxml \
+			x11/gtk+2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

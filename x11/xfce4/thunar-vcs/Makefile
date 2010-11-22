@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:06 espie Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
@@ -19,10 +19,10 @@ CONFIGURE_ARGS +=	--disable-linker-opts
 # correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS='-liconv'
 
-RUN_DEPENDS =	::devel/git
+RUN_DEPENDS =	devel/git
 
-LIB_DEPENDS =	::x11/xfce4/thunar \
-		::devel/subversion
+LIB_DEPENDS =	x11/xfce4/thunar \
+		devel/subversion
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender apr-1 aprutil-1 asn1

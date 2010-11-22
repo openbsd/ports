@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		wm-dockapp; displays the time in different time zones
 
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext Xpm c m
 MASTER_SITES=		http://www.geocities.com/jl1n/wmtz/ \
 			http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmtz

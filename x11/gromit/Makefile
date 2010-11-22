@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

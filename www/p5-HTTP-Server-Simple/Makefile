@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/23 11:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	simple standalone HTTP server
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=	::devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage \
-			::www/p5-URI
+REGRESS_DEPENDS=	devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage \
+			www/p5-URI
 
 .include <bsd.port.mk>

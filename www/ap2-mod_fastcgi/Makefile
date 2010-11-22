@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/13 12:26:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 NO_REGRESS=     Yes
 
-RUN_DEPENDS=	::www/apache-httpd
+RUN_DEPENDS=	www/apache-httpd
 BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_LIBTOOL=	Yes
 MAKE_FLAGS=	top_dir=${LOCALBASE}/share/apache2 \

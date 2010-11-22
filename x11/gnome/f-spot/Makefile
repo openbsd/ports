@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,15 +41,15 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::shells/bash \
-			::x11/gnome/screensaver
-RUN_DEPENDS=		::devel/mono-addins \
-			::x11/gnome/mono-gnome \
-			::sysutils/ndesk-dbus-glib \
-			::devel/mono-flickrnet \
-			::x11/gnome/mono-keyring \
-			::devel/libunique
-LIB_DEPENDS+=		::graphics/lcms
+			shells/bash \
+			x11/gnome/screensaver
+RUN_DEPENDS=		devel/mono-addins \
+			x11/gnome/mono-gnome \
+			sysutils/ndesk-dbus-glib \
+			devel/mono-flickrnet \
+			x11/gnome/mono-keyring \
+			devel/libunique
+LIB_DEPENDS+=		graphics/lcms
 
 MODGCONF2_SCHEMAS_DIR=	f-spot
 

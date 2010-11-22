@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:04 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -26,7 +26,7 @@ WANTLIB =		X11 c m pthread-stubs xcb
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-LIB_DEPENDS =           :tcl-${V}:lang/tcl/8.4
+LIB_DEPENDS =           tcl-${V}:lang/tcl/8.4
 WANTLIB +=		tcl84
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
@@ -42,7 +42,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 REGRESS_FLAGS =		HOME=${TESTHOME}
 
 SEPARATE_BUILD =	concurrent
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_STYLE =	autoconf no-autoheader old

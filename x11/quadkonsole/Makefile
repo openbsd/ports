@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
@@ -20,7 +20,7 @@ WANTLIB += z pthread-stubs xcb kdecore DCOP kwalletclient kio kparts
 
 MASTER_SITES=	http://nomis80.org/quadkonsole/
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde \
 		devel/gettext

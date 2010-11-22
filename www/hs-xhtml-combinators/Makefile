@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:18:39 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =		fast and easy to use XHTML 1.0 Strict combinators
 
@@ -18,9 +18,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-text \
-			::devel/hs-transformers \
-			::textproc/hs-xml
+RUN_DEPENDS +=		devel/hs-text \
+			devel/hs-transformers \
+			textproc/hs-xml
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

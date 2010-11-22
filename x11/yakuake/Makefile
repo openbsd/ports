@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:15:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
@@ -25,8 +25,8 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
 MODULES=	devel/gettext \
 		x11/kde
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3
 
 USE_GMAKE=	Yes
 

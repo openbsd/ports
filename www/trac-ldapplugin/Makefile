@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=		::www/trac \
-			::databases/py-ldap
+RUN_DEPENDS=		www/trac \
+			databases/py-ldap
 
 NO_REGRESS=		Yes
 

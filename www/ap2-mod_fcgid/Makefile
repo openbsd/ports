@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:47 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS+=		:apache-httpd-*:www/apache-httpd
+BUILD_DEPENDS+=		www/apache-httpd
 
 USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes

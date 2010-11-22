@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/07/30 08:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	display chm files
 
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
-LIB_DEPENDS=	::devel/chmlib \
-		:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+LIB_DEPENDS=	devel/chmlib \
+		x11/wxWidgets>=2.6.3
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 WANTLIB += m c stdc++ pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
 WANTLIB += wx_gtk2_html wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core

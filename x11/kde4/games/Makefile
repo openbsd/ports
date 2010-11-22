@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/31 08:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, games
 DISTNAME =		kdegames-${VERSION}
@@ -13,17 +13,17 @@ SHARED_LIBS +=	pala          	     0.0      # .0.1
 SHARED_LIBS +=	iris_ksirk    	     0.0      # .2.0
 
 
-BUILD_DEPENDS += ::x11/kde4/automoc
-LIB_DEPENDS +=	::x11/kde4/libs \
-		::multimedia/phonon
+BUILD_DEPENDS += x11/kde4/automoc
+LIB_DEPENDS +=	x11/kde4/libs \
+		multimedia/phonon
 
 # for the khelpcenter
-RUN_DEPENDS +=	::x11/kde4/base-runtime
+RUN_DEPENDS +=	x11/kde4/base-runtime
 
-WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm c kde3support kdecore.>=8 \
+WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm c kde3support kdecore>=8 \
 	kdeui kdnssd kio knewstuff2 knotifyconfig lib/qt4/Qt3Support \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL \
-	lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml m phonon.>=5 pthread qca \
+	lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml m phonon>=5 pthread qca \
 	stdc++ z
 
 # these come from libs in real case

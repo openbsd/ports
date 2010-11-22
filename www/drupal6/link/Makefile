@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/16 16:20:17 stephan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =	CCK content field to add a URL to content types
 
@@ -8,6 +8,6 @@ REVISION =	0
 
 MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
-RUN_DEPENDS =	::www/drupal6/cck
+RUN_DEPENDS =	www/drupal6/cck
 
 .include <bsd.port.mk>

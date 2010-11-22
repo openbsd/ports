@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:51 espie Exp $
 
 COMMENT =		add encoding to HTTP::Response
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::www/p5-libwww
-REGRESS_DEPENDS =	::devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage \
-			::www/p5-URI
+RUN_DEPENDS =		www/p5-libwww
+REGRESS_DEPENDS =	devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage \
+			www/p5-URI
 
 .include <bsd.port.mk>

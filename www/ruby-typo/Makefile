@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/28 20:12:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:54 espie Exp $
 
 BROKEN = Ruby hangs during rdoc generation and it doesn't work with newer rails.
 
@@ -21,18 +21,18 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-rails->=2.2:www/ruby-rails \
-		:ruby-mongrel->=1.1.3:www/ruby-mongrel \
-		::sysutils/ruby-mongrel_cluster \
-		::databases/ruby-sqlite3 \
-		::sysutils/ruby-rails-app-installer \
-		::net/ruby-xmpp4r \
-		:ruby-rcov->=0.8.1:devel/ruby-rcov \
-		:ruby-flexmock->=0.8.0:devel/ruby-flexmock \
-		:ruby-rspec->=1.1.1:devel/ruby-rspec \
-		::devel/ruby-debug \
-		:ruby-htmlentities->=4.0.0:textproc/ruby-htmlentities \
-		:ruby-json->=1.1.3:converters/ruby-json
+RUN_DEPENDS=	www/ruby-rails>=2.2 \
+		www/ruby-mongrel>=1.1.3 \
+		sysutils/ruby-mongrel_cluster \
+		databases/ruby-sqlite3 \
+		sysutils/ruby-rails-app-installer \
+		net/ruby-xmpp4r \
+		devel/ruby-rcov>=0.8.1 \
+		devel/ruby-flexmock>=0.8.0 \
+		devel/ruby-rspec>=1.1.1 \
+		devel/ruby-debug \
+		textproc/ruby-htmlentities>=4.0.0 \
+		converters/ruby-json>=1.1.3
 
 CONFIGURE_STYLE=ruby gem
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/27 10:41:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=		OpenID authentication for PHP
 
@@ -28,9 +28,9 @@ INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 
 PHP_VERSION=	5
-RUN_DEPENDS=	::databases/pear-DB \
-		:php${PHP_VERSION}-gmp-*:www/php${PHP_VERSION}/extensions,-gmp \
-		:php${PHP_VERSION}-curl-*:www/php${PHP_VERSION}/extensions,-curl
+RUN_DEPENDS=	databases/pear-DB \
+		www/php${PHP_VERSION}/extensions,-gmp \
+		www/php${PHP_VERSION}/extensions,-curl
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

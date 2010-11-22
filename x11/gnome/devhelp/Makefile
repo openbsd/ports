@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	API documentation browser for GNOME
 
@@ -37,12 +37,12 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
-LIB_DEPENDS=	::devel/libwnck \
-		::devel/startup-notification \
-		::devel/ORBit2 \
-		::devel/libunique \
-		::www/webkit
+BUILD_DEPENDS=	x11/gnome/doc-utils
+LIB_DEPENDS=	devel/libwnck \
+		devel/startup-notification \
+		devel/ORBit2 \
+		devel/libunique \
+		www/webkit
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/27 12:48:55 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		Website META Language
 
@@ -19,12 +19,12 @@ MASTER_SITES=		${HOMEPAGE}/distrib/
 WANTLIB=		c m ncurses perl util
 MODULES=		devel/gettext
 
-RUN_DEPENDS=		::devel/p5-Term-ReadKey \
-			::graphics/p5-GD \
-			::graphics/p5-Image-Size \
-			::math/p5-Bit-Vector \
-			::www/p5-HTML-Clean \
-			::www/tidy
+RUN_DEPENDS=		devel/p5-Term-ReadKey \
+			graphics/p5-GD \
+			graphics/p5-Image-Size \
+			math/p5-Bit-Vector \
+			www/p5-HTML-Clean \
+			www/tidy
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_LIBTOOL =	Yes

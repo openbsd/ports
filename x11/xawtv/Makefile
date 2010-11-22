@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/07 19:59:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:37:05 espie Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64 alpha
@@ -25,7 +25,7 @@ WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xft Xinerama Xmu Xpm Xrandr \
 		Xrender Xt Xv Xxf86dga Xxf86vm c fontconfig freetype m z \
 		ncurses ossaudio pthread expat pthread-stubs xcb jpeg
 
-LIB_DEPENDS=	::graphics/jpeg
+LIB_DEPENDS=	graphics/jpeg
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-mmx

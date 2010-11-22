@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		web-based double opt-in newsletter manager
 
@@ -26,9 +26,9 @@ PREFIX=			/var/www
 INSTDIR=		${PREFIX}/lists
 SUBST_VARS=		INSTDIR
 
-RUN_DEPENDS=		:php5-mysql-*:www/php5/extensions,-mysql \
-			:php5-imap-*:www/php5/extensions,-imap \
-			::net/pear-HTTP-Request
+RUN_DEPENDS=		www/php5/extensions,-mysql \
+			www/php5/extensions,-imap \
+			net/pear-HTTP-Request
 
 do-install:
 	@-test ! -d ${INSTDIR} && mkdir ${INSTDIR}

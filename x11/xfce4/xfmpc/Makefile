@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/29 12:44:06 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 DESKTOP_FILES=	Yes
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::audio/libmpd \
-		::x11/xfce4/libxfcegui4
+LIB_DEPENDS=	audio/libmpd \
+		x11/xfce4/libxfcegui4
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

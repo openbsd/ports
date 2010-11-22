@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:50 espie Exp $
 
 COMMENT=	drop-in object-oriented CGI.pm replacement
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
-RUN_DEPENDS=		::devel/p5-IO-stringy
-REGRESS_DEPENDS=	::www/p5-libwww
+RUN_DEPENDS=		devel/p5-IO-stringy
+REGRESS_DEPENDS=	www/p5-libwww
 
 .include <bsd.port.mk>

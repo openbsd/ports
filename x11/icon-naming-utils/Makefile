@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/05 19:37:14 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		compatibility tools from the Tango project
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 
-RUN_DEPENDS=		:p5-XML-Simple-*:textproc/p5-XML-Simple
+RUN_DEPENDS=		textproc/p5-XML-Simple
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_GMAKE=		Yes

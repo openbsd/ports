@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:50 espie Exp $
 
 COMMENT=	object oriented interface for CGI script applications
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-XML-LibXML->=1.10:textproc/p5-XML-LibXML \
-		:p5-XML-LibXSLT->=1.08:textproc/p5-XML-LibXSLT
+RUN_DEPENDS=	textproc/p5-XML-LibXML>=1.10 \
+		textproc/p5-XML-LibXSLT>=1.08
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

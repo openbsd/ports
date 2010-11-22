@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	Openbox menu editor
 
@@ -20,8 +20,8 @@ NO_REGRESS=	Yes
 PKG_ARCH=	*
 
 MODULES=	lang/python
-RUN_DEPENDS=	::x11/py-gtk2 \
-		::x11/openbox
+RUN_DEPENDS=	x11/py-gtk2 \
+		x11/openbox
 
 pre-configure:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \

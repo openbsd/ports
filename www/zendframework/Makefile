@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/28 19:46:00 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		a framework for developing PHP web applications
 
@@ -30,7 +30,7 @@ PREFIX=			/var/www
 INSTDIR=		${PREFIX}/zendframework
 SUBST_VARS=		INSTDIR
 
-RUN_DEPENDS=		:php5-core-*:www/php5/core
+RUN_DEPENDS=		www/php5/core
 
 do-install:
 	@-test ! -d ${INSTDIR} && mkdir ${INSTDIR}

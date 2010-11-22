@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/21 21:26:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -26,12 +26,12 @@ WANTLIB += png pthread pthread-stubs tiff xcb z dbus-1 rsvg-2
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::devel/libexecinfo
-RUN_DEPENDS=	::shells/bash \
-		:asclock-*:x11/asclock,classic,english \
-		::x11/aterm
-LIB_DEPENDS=	::x11/dbus \
-		::x11/gnome/librsvg
+BUILD_DEPENDS=	devel/libexecinfo
+RUN_DEPENDS=	shells/bash \
+		x11/asclock,classic,english \
+		x11/aterm
+LIB_DEPENDS=	x11/dbus \
+		x11/gnome/librsvg
 
 FAKE=		lib
 USE_GROFF =	Yes

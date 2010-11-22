@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=		smart URI fetching/caching
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		URI-Fetch-0.08
 REVISION=		0
 CATEGORIES=		www
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-URI \
-		::www/p5-libwww \
-		::devel/p5-Class-ErrorHandler
+RUN_DEPENDS=	www/p5-URI \
+		www/p5-libwww \
+		devel/p5-Class-ErrorHandler
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	matchbox base library
 DISTNAME=	libmatchbox-1.9
@@ -15,9 +15,9 @@ WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender expat fontconfig freetype \
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/pango \
-			::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS=		devel/pango \
+			graphics/jpeg \
+			graphics/png
 
 USE_LIBTOOL=	Yes
 

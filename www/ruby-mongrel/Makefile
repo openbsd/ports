@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	fast HTTP library and server for Ruby
 
@@ -19,13 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:${MODRUBY_PKG_PREFIX}-daemons->=1.0.3:devel/ruby-daemons,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-gem_plugin->=0.2.3:devel/ruby-gem_plugin,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-fastthread->=1.0.1:devel/ruby-fastthread,${FLAVOR}
+RUN_DEPENDS=	devel/ruby-daemons,${FLAVOR}>=1.0.3 \
+		devel/ruby-gem_plugin,${FLAVOR}>=0.2.3 \
+		devel/ruby-fastthread,${FLAVOR}>=1.0.1
 
 CONFIGURE_STYLE=ruby gem ext
 
-REGRESS_DEPENDS=:${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS= ${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
 	@cd ${WRKDIST} && touch Rakefile && ${RUBY} setup.rb test && \

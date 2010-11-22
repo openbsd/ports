@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	OpenLook Virtual Window manager
 
@@ -23,8 +23,8 @@ WANTLIB=		X11 Xext Xpm c m xview olgx
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	::x11/xview/lib
-BUILD_DEPENDS=	::x11/xview/config
+LIB_DEPENDS=	x11/xview/lib
+BUILD_DEPENDS=	x11/xview/config
 
 USE_GROFF =	Yes
 

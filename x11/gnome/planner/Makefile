@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		project management application
 
@@ -37,11 +37,11 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
-			:shared-mime-info->=0.21:misc/shared-mime-info
+RUN_DEPENDS=		x11/py-gtk2 \
+			misc/shared-mime-info>=0.21
 
-LIB_DEPENDS=		::x11/gnome/libbonoboui \
-			::x11/gnome/libgnomeui \
+LIB_DEPENDS=		x11/gnome/libbonoboui \
+			x11/gnome/libgnomeui \
 			${MODPY_LIB_DEPENDS}
 
 MODGNOME_HELP_FILES=	Yes
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			UPDATE_DESKTOP_DATABASE="/usr/bin/false"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>
 

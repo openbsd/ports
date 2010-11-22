@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	use HTML Templates which allows expressions
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-HTML-Template-*:www/p5-HTML-Template \
-		:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
+RUN_DEPENDS=	www/p5-HTML-Template \
+		devel/p5-Parse-RecDescent
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
@@ -22,8 +22,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 
-BUILD_DEPENDS=		::x11/fltk
-RUN_DEPENDS=		::x11/fltk
+BUILD_DEPENDS=		x11/fltk
+RUN_DEPENDS=		x11/fltk
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
@@ -21,7 +21,7 @@ WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xrender Xtst c expat fontconfig freety
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=ratpoison/}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 

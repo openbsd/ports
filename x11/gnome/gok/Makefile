@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
@@ -30,10 +30,10 @@ MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=		::audio/libcanberra \
-			::devel/libwnck \
-			::x11/gnome/at-spi \
-			::x11/gnome/speech
+LIB_DEPENDS=		audio/libcanberra \
+			devel/libwnck \
+			x11/gnome/at-spi \
+			x11/gnome/speech
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

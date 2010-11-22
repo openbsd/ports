@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m perl util 
 
-RUN_DEPENDS=		::www/p5-libwww \
-			::www/p5-HTML-Parser
+RUN_DEPENDS=		www/p5-libwww \
+			www/p5-HTML-Parser
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 SUBST_VARS=	PKGNAME

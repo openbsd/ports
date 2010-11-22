@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:01 espie Exp $
 
 COMMENT=		gui cd image editor
 
@@ -20,8 +20,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MASTER_SITES=		${HOMEPAGE}releases/
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	::devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

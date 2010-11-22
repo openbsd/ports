@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/27 09:37:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,9 +26,9 @@ WANTLIB += GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext \
 		textproc/intltool
-LIB_DEPENDS=	::net/pidgin,-libpurple \
-		::devel/libnotify
-BUILD_DEPENDS=	::net/pidgin
+LIB_DEPENDS=	net/pidgin,-libpurple \
+		devel/libnotify
+BUILD_DEPENDS=	net/pidgin
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

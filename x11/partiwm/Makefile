@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	tiling window manager
 
@@ -29,10 +29,10 @@ WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/ipython \
-		:pyrex->=0.9.9:devel/pyrex \
-		::x11/dbus-python \
-		::x11/py-gtk2
+RUN_DEPENDS=	devel/ipython \
+		devel/pyrex>=0.9.9 \
+		x11/dbus-python \
+		x11/py-gtk2
 
 USE_GROFF =	Yes
 

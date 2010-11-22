@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:54 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		sndio soup-2.4 swfdec-0.8 swfdec-gtk-0.8 tasn1 xcb xcb-render \
 		xcb-render-util xml2 z
 
-LIB_DEPENDS=		::graphics/swfdec
+LIB_DEPENDS=		graphics/swfdec
 
 USE_LIBTOOL=		Yes
 

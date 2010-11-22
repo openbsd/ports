@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:18:39 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =		Snap Haskell Web Framework
 
@@ -21,18 +21,18 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 WANTLIB +=		c gmp iconv m pthread util z
 
-RUN_DEPENDS +=		::archivers/hs-zlib \
-			::devel/hs-cereal \
-			::devel/hs-directory-tree \
-			::devel/hs-dlist \
-			::devel/hs-iteratee \
-			::devel/hs-MonadCatchIO-transformers \
-			::devel/hs-monads-fd \
-			::devel/hs-transformers \
-			::devel/hs-text \
-			::devel/hs-unix-compat \
-			::textproc/hs-attoparsec \
-			::textproc/hs-bytestring-nums
+RUN_DEPENDS +=		archivers/hs-zlib \
+			devel/hs-cereal \
+			devel/hs-directory-tree \
+			devel/hs-dlist \
+			devel/hs-iteratee \
+			devel/hs-MonadCatchIO-transformers \
+			devel/hs-monads-fd \
+			devel/hs-transformers \
+			devel/hs-text \
+			devel/hs-unix-compat \
+			textproc/hs-attoparsec \
+			textproc/hs-bytestring-nums
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::x11/icon-naming-utils
-RUN_DEPENDS=	::x11/gnome/icon-theme
+		x11/icon-naming-utils
+RUN_DEPENDS=	x11/gnome/icon-theme
 
 PKG_ARCH=	*
 

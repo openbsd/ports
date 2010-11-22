@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::www/twill \
-    			::devel/py-nose
+REGRESS_DEPENDS=	www/twill \
+    			devel/py-nose
 
 # Clean up root-owned files.
 post-install:

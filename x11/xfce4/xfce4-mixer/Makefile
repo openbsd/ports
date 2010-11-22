@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 volume mixer
 
@@ -16,14 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::multimedia/gstreamer-0.10/core \
-		::multimedia/gstreamer-0.10/plugins-base \
-		::x11/xfce4/xfconf \
-		::x11/xfce4/xfce4-panel
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		multimedia/gstreamer-0.10/core \
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/xfce4/xfconf \
+		x11/xfce4/xfce4-panel
 
 # needed for libgstossaudio..
-RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 \

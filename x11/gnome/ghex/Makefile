@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,8 +36,8 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		::x11/gnome/libgnomeui \
-			::x11/gnome/libgnomeprintui
+LIB_DEPENDS=		x11/gnome/libgnomeui \
+			x11/gnome/libgnomeprintui
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=		simple scripting language for web browsing
 
@@ -25,9 +25,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	::www/py-quixote \
-    			::devel/py-nose \
-			::www/tidy
+REGRESS_DEPENDS=	www/py-quixote \
+    			devel/py-nose \
+			www/tidy
 
 # test-basic test requires user input for getpassword
 REGRESS_IS_INTERACTIVE = Yes

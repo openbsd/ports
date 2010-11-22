@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/23 11:56:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::devel/libnotify
+LIB_DEPENDS=	devel/libnotify
 
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
 MODGNOME_HELP_FILES= Yes

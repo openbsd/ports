@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	GNOME Devtool Libraries
 
@@ -24,8 +24,8 @@ WANTLIB += gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::textproc/libxml \
-		::x11/gtk+2
+LIB_DEPENDS=	textproc/libxml \
+		x11/gtk+2
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

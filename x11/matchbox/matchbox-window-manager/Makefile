@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	window manager suitable for low-resolution screens
 DISTNAME=	matchbox-window-manager-1.2
@@ -12,9 +12,9 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xrender \
 		pthread-stubs xcb startup-notification-1 mb
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
-LIB_DEPENDS=	::devel/startup-notification \
-		::x11/matchbox/libmatchbox
+RUN_DEPENDS=	x11/matchbox/matchbox-common
+LIB_DEPENDS=	devel/startup-notification \
+		x11/matchbox/libmatchbox
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-expat \

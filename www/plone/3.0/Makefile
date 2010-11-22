@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	content management system built on top of Zope
 
@@ -10,7 +10,7 @@ MASTER_SITES=		https://launchpad.net/plone/3.0/3.0.6/+download/
 
 MODZOPE_VERSION=	2.10
 
-RUN_DEPENDS=		::textproc/py-ElementTree
+RUN_DEPENDS=		textproc/py-ElementTree
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}

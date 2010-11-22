@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/09 17:05:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/22 08:36:56 espie Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -36,8 +36,8 @@ MODULES=	devel/gettext
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 
-LIB_DEPENDS=	::x11/gtk+ \
-		::graphics/imlib
+LIB_DEPENDS=	x11/gtk+ \
+		graphics/imlib
 
 MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
@@ -45,7 +45,7 @@ FLAVORS=	rplay debug i18n
 FLAVOR?=
 
 .if ${FLAVOR:L:Mrplay}
-LIB_DEPENDS+=	::audio/rplay
+LIB_DEPENDS+=	audio/rplay
 CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
 		 --with-rplay-library="${LOCALBASE}/lib"
 WANTLIB += rplay

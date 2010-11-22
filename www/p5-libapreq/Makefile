@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/23 11:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-BUILD_DEPENDS=	:mod_perl-*:www/mod_perl \
-		:p5-Apache-Test-*:www/p5-Apache-Test
+BUILD_DEPENDS=	www/mod_perl \
+		www/p5-Apache-Test
 
-RUN_DEPENDS=	:mod_perl-*:www/mod_perl
+RUN_DEPENDS=	www/mod_perl
 
 MAKE_ENV+=	APACHE_TEST_HTTPD=/usr/sbin/httpd
 PORTHOME=	${WRKDIR}

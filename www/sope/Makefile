@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/06 10:18:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:54 espie Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -41,13 +41,13 @@ WANTLIB-mysql = 	${MODGNUSTEP_WANTLIB} m GDLAccess EOControl \
 			mysqlclient crypto ssl z
 WANTLIB-postgres = 	${MODGNUSTEP_WANTLIB} m GDLAccess EOControl pq
 
-LIB_DEPENDS-main=	::x11/gnustep/base \
-			::databases/openldap \
+LIB_DEPENDS-main=	x11/gnustep/base \
+			databases/openldap \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql=	::${BASE_PKGPATH} \
-			::databases/mysql
-LIB_DEPENDS-postgres=	::${BASE_PKGPATH} \
-			::databases/postgresql
+LIB_DEPENDS-mysql=	${BASE_PKGPATH} \
+			databases/mysql
+LIB_DEPENDS-postgres=	${BASE_PKGPATH} \
+			databases/postgresql
 
 MODAPACHE_NAME= ngobjweb
 MODAPACHE_FILE= ${MODAPACHE_LOCATION}/sope-appserver/mod_ngobjweb/${MODAPACHE_MODULE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	themed window manager
 
@@ -32,8 +32,8 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${THEMES}.tar.gz
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::audio/esound \
-		::graphics/imlib2
+LIB_DEPENDS=	audio/esound \
+		graphics/imlib2
 
 SEPARATE_BUILD=	concurrent
 

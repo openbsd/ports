@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,11 +34,11 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3 \
-		::x11/kde/base3 \
-		::x11/kde/bindings3 \
-		::x11/qt3,-main
+RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3 \
+		x11/kde/base3 \
+		x11/kde/bindings3 \
+		x11/qt3,-main
 
 AUTOCONF_VERSION=2.61
 

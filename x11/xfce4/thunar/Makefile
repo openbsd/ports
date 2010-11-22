@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/16 13:33:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -31,17 +31,17 @@ CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
-LIB_DEPENDS=	::x11/xfce4/exo \
-		::devel/pcre \
-		::x11/xfce4/xfce4-panel \
-		::graphics/libexif \
-		::x11/dbus-glib \
-		::x11/dbus \
-		::sysutils/gamin
+LIB_DEPENDS=	x11/xfce4/exo \
+		devel/pcre \
+		x11/xfce4/xfce4-panel \
+		graphics/libexif \
+		x11/dbus-glib \
+		x11/dbus \
+		sysutils/gamin
 
-RUN_DEPENDS=	::x11/xfce4/xfce4-icon-theme \
-		:tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme \
-		:gamin-*:sysutils/gamin,-server
+RUN_DEPENDS=	x11/xfce4/xfce4-icon-theme \
+		tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme \
+		sysutils/gamin,-server
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo execinfo

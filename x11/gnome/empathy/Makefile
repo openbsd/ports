@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/16 14:06:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/22 08:36:57 espie Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -38,31 +38,31 @@ WANTLIB += ebook-1.2 edataserver-1.2 json-glib-1.0 champlain-0.8
 WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
 WANTLIB += telepathy-logger folks folks-telepathy
 
-BUILD_DEPENDS=		::devel/iso-codes \
-			::x11/py-gtk2 \
-			::x11/gnome/nautilus-sendto
-LIB_DEPENDS=		::audio/libcanberra \
-			::databases/evolution-data-server \
-			::devel/json-glib \
-			::devel/libnotify \
-			::devel/libtool,-ltdl \
-			::devel/libunique \
-			::geo/geoclue \
-			::geo/libchamplain/core \
-			::graphics/clutter/clutter-gtk \
-			::net/telepathy/telepathy-farsight \
-			::net/telepathy/telepathy-logger \
-			::textproc/enchant \
-			::net/telepathy/folks \
-			::x11/gnome/keyring
-RUN_DEPENDS=		::devel/iso-codes \
-			::net/telepathy/telepathy-mission-control \
-			::net/telepathy/telepathy-butterfly \
-			::net/telepathy/telepathy-gabble \
-			::net/telepathy/telepathy-idle \
-			::net/telepathy/telepathy-salut \
-			:gnome-icon-theme->=2.30.3:x11/gnome/icon-theme \
-			::devel/dconf
+BUILD_DEPENDS=		devel/iso-codes \
+			x11/py-gtk2 \
+			x11/gnome/nautilus-sendto
+LIB_DEPENDS=		audio/libcanberra \
+			databases/evolution-data-server \
+			devel/json-glib \
+			devel/libnotify \
+			devel/libtool,-ltdl \
+			devel/libunique \
+			geo/geoclue \
+			geo/libchamplain/core \
+			graphics/clutter/clutter-gtk \
+			net/telepathy/telepathy-farsight \
+			net/telepathy/telepathy-logger \
+			textproc/enchant \
+			net/telepathy/folks \
+			x11/gnome/keyring
+RUN_DEPENDS=		devel/iso-codes \
+			net/telepathy/telepathy-mission-control \
+			net/telepathy/telepathy-butterfly \
+			net/telepathy/telepathy-gabble \
+			net/telepathy/telepathy-idle \
+			net/telepathy/telepathy-salut \
+			x11/gnome/icon-theme>=2.30.3 \
+			devel/dconf
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes

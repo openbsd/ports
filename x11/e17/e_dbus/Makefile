@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-0.5.0.061
@@ -21,8 +21,8 @@ WANTLIB += m pthread ssl z dbus-1 ecore
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		::x11/dbus \
-			::x11/e17/ecore \
+LIB_DEPENDS =		x11/dbus \
+			x11/e17/ecore \
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

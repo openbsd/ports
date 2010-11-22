@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	AJAX framework for perl
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP=	Yes
 CONFIGURE_STYLE=	modbuild
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::www/p5-HTML-Tree ::devel/p5-Class-Accessor
+RUN_DEPENDS=	www/p5-HTML-Tree devel/p5-Class-Accessor
 
 MAKE_ENV+=	TEST_POD=Yes
 

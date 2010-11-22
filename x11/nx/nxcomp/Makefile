@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		library to compress the standard X protocol
 
@@ -9,8 +9,8 @@ SHARED_LIBS=		Xcomp	0.0
 
 WANTLIB=		z jpeg png
 
-LIB_DEPENDS=		::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS=		graphics/jpeg \
+			graphics/png
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu autoconf

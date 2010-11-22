@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
@@ -15,15 +15,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::mail/p5-MIME-tools \
-		::www/p5-URI \
-		::security/p5-IO-Socket-SSL \
-		::security/p5-Crypt-SSLeay \
-		::www/p5-libwww \
-		::mail/p5-MIME-Lite \
-		::textproc/p5-XML-Parser \
-		::www/mod_perl \
-		::net/p5-Net-Jabber
+RUN_DEPENDS=	mail/p5-MIME-tools \
+		www/p5-URI \
+		security/p5-IO-Socket-SSL \
+		security/p5-Crypt-SSLeay \
+		www/p5-libwww \
+		mail/p5-MIME-Lite \
+		textproc/p5-XML-Parser \
+		www/mod_perl \
+		net/p5-Net-Jabber
 
 CONFIGURE_ARGS+=	--noprompt \
 			--HTTP-Client --HTTPS-Client \

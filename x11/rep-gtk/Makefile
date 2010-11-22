@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -30,8 +30,8 @@ MASTER_SITES=		http://download.tuxfamily.org/sawfish/rep-gtk/
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:librep->=0.91.0:lang/librep
-LIB_DEPENDS= 		::x11/gtk+2
+RUN_DEPENDS=		lang/librep>=0.91.0
+LIB_DEPENDS= 		x11/gtk+2
 
 MODULES=		devel/gettext
 

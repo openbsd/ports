@@ -1,7 +1,7 @@
-# $OpenBSD: pear.port.mk,v 1.3 2009/11/06 09:05:24 jasper Exp $
+# $OpenBSD: pear.port.mk,v 1.4 2010/11/22 08:36:52 espie Exp $
 # PHP PEAR module
 
-RUN_DEPENDS+=	:pear-*:www/pear
+RUN_DEPENDS+=	www/pear
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes

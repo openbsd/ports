@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -29,12 +29,12 @@ AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS=		--enable-xinerama --enable-imlib2
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		simple
 
-LIB_DEPENDS=		::graphics/imlib2
+LIB_DEPENDS=		graphics/imlib2
 
 .include <bsd.port.mk>

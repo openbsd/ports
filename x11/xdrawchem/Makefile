@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -20,8 +20,8 @@ WANTLIB=	c m pthread stdc++ z
 
 MODULES=	x11/qt3
 
-LIB_DEPENDS =	:openbabel->=2.2.0:misc/openbabel
-WANTLIB +=	openbabel.>=4
+LIB_DEPENDS =	misc/openbabel>=2.2.0
+WANTLIB +=	openbabel>=4
 
 VMEM_WARNING=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/28 14:47:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
@@ -22,7 +22,7 @@ PKG_ARCH=		*
 WRKDIST=		${WRKDIR}
 EXTRACT_ONLY=		belticons.tar.gz
 
-RUN_DEPENDS=		::x11/p5-Tk
+RUN_DEPENDS=		x11/p5-Tk
 
 USE_GROFF =		Yes
 

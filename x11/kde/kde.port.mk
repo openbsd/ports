@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.34 2010/11/06 19:38:54 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.35 2010/11/22 08:37:01 espie Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -46,35 +46,35 @@ PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-* ${SUP_PATCH_LIST}
 .elif ${MODKDE_VERSION} == "3.2"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.2/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.20
+WANTLIB +=	lib/qt3/qt-mt>=3.20
 .elif ${MODKDE_VERSION} == "3.2.3"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.20
+WANTLIB +=	lib/qt3/qt-mt>=3.20
 .elif ${MODKDE_VERSION} == "3.3.0"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 .elif ${MODKDE_VERSION} == "3.4"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.4/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 .elif ${MODKDE_VERSION} == "3.5"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 .elif ${MODKDE_VERSION} == "3.5.2"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5.2/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 .elif ${MODKDE_VERSION} == "3.5.3"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 .elif ${MODKDE_VERSION} == "3.5.7" || ${MODKDE_VERSION} == "3.5.8"
 PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5.7/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-WANTLIB +=	lib/qt3/qt-mt.>=3.33
+WANTLIB +=	lib/qt3/qt-mt>=3.33
 USE_LIBTOOL ?=	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 .endif

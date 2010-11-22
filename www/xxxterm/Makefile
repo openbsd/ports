@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =		vi-like minimalists web browser
 
@@ -27,7 +27,7 @@ WANTLIB += pthread pthread-stubs soup-2.4 util xcb xcb-render
 WANTLIB += xcb-render-util xml2 z
 WANTLIB += webkit-1.0
 
-LIB_DEPENDS =		::www/webkit
+LIB_DEPENDS =		www/webkit
 
 MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 

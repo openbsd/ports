@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
@@ -23,10 +23,10 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-REGRESS_DEPENDS = ::devel/py-coverage \
-		  ::devel/py-nose \
-		  ::www/py-paste \
-		  ::www/py-webtest
+REGRESS_DEPENDS = devel/py-coverage \
+		  devel/py-nose \
+		  www/py-paste \
+		  www/py-webtest
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-routes

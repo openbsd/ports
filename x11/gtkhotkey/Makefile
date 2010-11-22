@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:59 espie Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE =gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS =	::x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -39,31 +39,31 @@ MODULES=	devel/gettext \
 # Missing library for a52
 # Can't resolve libspec a52
 # Can't call method "name" on an undefined value at /usr/libdata/perl5/OpenBSD/PackingList.pm line 371.
-BUILD_DEPENDS+=	::graphics/ffmpeg \
-		::x11/gnome/settings-daemon
+BUILD_DEPENDS+=	graphics/ffmpeg \
+		x11/gnome/settings-daemon
 
-BUILD_DEPENDS+=	::x11/py-gtk2 \
-		::devel/py-gdata \
-		::devel/iso-codes \
-		:gstreamer-plugins-good->=0.10.24p2:multimedia/gstreamer-0.10/plugins-good
-RUN_DEPENDS+=	::x11/gnome/settings-daemon \
-		::x11/py-gtk2 \
-		:iso-codes-*:devel/iso-codes \
-		::x11/gromit \
-		::devel/py-gdata \
-		::net/galago-daemon \
-		::devel/py-xdg
+BUILD_DEPENDS+=	x11/py-gtk2 \
+		devel/py-gdata \
+		devel/iso-codes \
+		multimedia/gstreamer-0.10/plugins-good>=0.10.24p2
+RUN_DEPENDS+=	x11/gnome/settings-daemon \
+		x11/py-gtk2 \
+		devel/iso-codes \
+		x11/gromit \
+		devel/py-gdata \
+		net/galago-daemon \
+		devel/py-xdg
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
-		:gstreamer-plugins-base->=0.10.29:multimedia/gstreamer-0.10/plugins-base \
-		:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-		::net/libgalago \
-		::x11/gnome/nautilus \
-		::devel/libgdata
+		multimedia/gstreamer-0.10/plugins-base>=0.10.29 \
+		x11/gnome/totem-pl-parser>=2.28.1 \
+		net/libgalago \
+		x11/gnome/nautilus \
+		devel/libgdata
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
-RUN_DEPENDS+=	::multimedia/gstreamer-0.10/plugins-good \
-		:gstreamer-ffmpeg->=0.10.5:multimedia/gstreamer-0.10/plugins-ffmpeg
+RUN_DEPENDS+=	multimedia/gstreamer-0.10/plugins-good \
+		multimedia/gstreamer-0.10/plugins-ffmpeg>=0.10.5
 
 # gst-inspect-0.10 needs to access ${HOME}
 PORTHOME=	${WRKDIR}

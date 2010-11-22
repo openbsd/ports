@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 13:18:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:56 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,8 +34,8 @@ MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gnome/anjuta \
-		::math/graphviz
+LIB_DEPENDS=	x11/gnome/anjuta \
+		math/graphviz
 
 LIBTOOL_FLAGS=	--tag=disable-static
 MODGCONF2_SCHEMAS_DIR= anjuta

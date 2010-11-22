@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,9 +29,9 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 
-LIB_DEPENDS=	:gmime->=2.4,<2.6:mail/gmime24 \
-		::textproc/libxml \
-		::devel/libsoup,-gnome
+LIB_DEPENDS=	gmime->=2.4,<2.6:mail/gmime24 \
+		textproc/libxml \
+		devel/libsoup,-gnome
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

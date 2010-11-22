@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	validate, correct, and pretty-print HTML files
 
@@ -30,7 +30,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	::textproc/libxslt
+BUILD_DEPENDS=	textproc/libxslt
 
 WRKDIST=	${WRKDIR}/tidy
 WRKBUILD=	${WRKDIST}/build/gmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/11/09 16:27:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/22 08:37:02 espie Exp $
 
 COMMENT=		office suite for KDE
 
@@ -78,30 +78,30 @@ AUTOCONF_VERSION=2.61
 
 MODULES =	x11/kde devel/gettext lang/ruby
 
-RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	::x11/kde/libs3 \
-		:python->=2.5,<2.6:lang/python/2.5 \
-		::graphics/libart \
-		::converters/wv2 \
-		::graphics/ImageMagick \
-		::graphics/jbigkit \
-		::databases/mysql \
-		::graphics/libexif \
-		::print/libpaper \
-		::print/poppler,-qt \
-		::graphics/GraphicsMagick \
-		::textproc/libwpd \
-		::databases/libpqxx \
-		::databases/postgresql \
+RUN_DEPENDS+=	devel/desktop-file-utils
+LIB_DEPENDS=	x11/kde/libs3 \
+		python->=2.5,<2.6:lang/python/2.5 \
+		graphics/libart \
+		converters/wv2 \
+		graphics/ImageMagick \
+		graphics/jbigkit \
+		databases/mysql \
+		graphics/libexif \
+		print/libpaper \
+		print/poppler,-qt \
+		graphics/GraphicsMagick \
+		textproc/libwpd \
+		databases/libpqxx \
+		databases/postgresql \
 		${MODRUBY_LIB_DEPENDS}
 
-WANTLIB= GL GLU GraphicsMagick.>=1 Half ICE Iex IlmImf IlmThread Imath \
-	MagickCore.>=1 MagickWand.>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
-	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2.>=5 \
-	artsflow artsflow_idl audiofile bz2 c crypto drm exif.>=12 expat fam \
+WANTLIB= GL GLU GraphicsMagick>=1 Half ICE Iex IlmImf IlmThread Imath \
+	MagickCore>=1 MagickWand>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
+	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2>=5 \
+	artsflow artsflow_idl audiofile bz2 c crypto drm exif>=12 expat fam \
 	fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 \
 	gthread-2.0 idn jasper jbig jpeg kmedia2_idl lcms lib/kde3/DCOP \
-	lib/kde3/artskde lib/kde3/kabc lib/kde3/kdecore.>=4 lib/kde3/kdefx \
+	lib/kde3/artskde lib/kde3/kabc lib/kde3/kdecore>=4 lib/kde3/kdefx \
 	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml \
 	lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi lib/kde3/knewstuff \
 	lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell lib/kde3/kspell2 \

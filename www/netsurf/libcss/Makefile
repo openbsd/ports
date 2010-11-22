@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =		CSS parser and selection engine
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 SHARED_LIBS =		css 0.0 #0.0.2
 
 WANTLIB =		parserutils wapcaplet
-LIB_DEPENDS =		::www/netsurf/libparserutils \
-			::www/netsurf/libwapcaplet
+LIB_DEPENDS =		www/netsurf/libparserutils \
+			www/netsurf/libwapcaplet
 
 .include <bsd.port.mk>

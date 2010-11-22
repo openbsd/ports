@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/10 08:18:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -21,7 +21,7 @@ WANTLIB=		c crypto pcre ssl z
 
 MASTER_SITES=		http://sysoev.ru/nginx/
 
-LIB_DEPENDS=		::devel/pcre
+LIB_DEPENDS=		devel/pcre
 
 NGINX_DIR=		/var/nginx
 SUBST_VARS=		NGINX_DIR
@@ -53,8 +53,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mpassenger}
 CONFIGURE_ARGS +=	--add-module=${LOCALBASE}/lib/phusion-passenger/ext/nginx
-BUILD_DEPENDS +=	::www/ruby-passenger
-RUN_DEPENDS +=		::www/ruby-passenger
+BUILD_DEPENDS +=	www/ruby-passenger
+RUN_DEPENDS +=		www/ruby-passenger
 WANTLIB +=		m pthread stdc++
 .endif
 

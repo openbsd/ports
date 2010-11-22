@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
@@ -27,7 +27,7 @@ USE_GMAKE=		Yes
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DG_DISABLE_DEPRECATED"
 

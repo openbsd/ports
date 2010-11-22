@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:49 espie Exp $
 
-COMMENT=	proxy that can transliterate japanese
+COMMENT =	proxy that can transliterate japanese
 
-DISTNAME=	japana-2.0.5
-REVISION=	0
-CATEGORIES=	www japanese converters
-HOMEPAGE=	http://www.h.shuttle.de/mitch/japana.en.html
+DISTNAME =	japana-2.0.5
+REVISION =	0
+CATEGORIES =	www japanese converters
+HOMEPAGE =	http://www.h.shuttle.de/mitch/japana.en.html
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 
-MASTER_SITES=	http://www.h.shuttle.de/mitch/stuff/
-RUN_DEPENDS=	:p5-Text-Kakasi-*:japanese/p5-Text-Kakasi \
-		:p5-AppConfig-*:devel/p5-AppConfig \
-		:p5-libwww-*:www/p5-libwww
+MASTER_SITES =	http://www.h.shuttle.de/mitch/stuff/
+RUN_DEPENDS =	japanese/p5-Text-Kakasi \
+		devel/p5-AppConfig \
+		www/p5-libwww
 
 USE_GROFF =	Yes
-NO_REGRESS=	Yes
+NO_REGRESS =	Yes
 
 do-build:
 	cd ${WRKSRC} && pod2man japana|nroff -man >japana.cat1

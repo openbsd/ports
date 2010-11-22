@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	HTML cleaning module
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::www/p5-HTML-Parser
+RUN_DEPENDS=	www/p5-HTML-Parser
 
 .include <bsd.port.mk>

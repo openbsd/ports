@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:37:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,15 +23,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -demo
 
 WANTLIB-main=	X11 m z png
-LIB_DEPENDS-main= ::graphics/png
+LIB_DEPENDS-main= graphics/png
 
-RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
+RUN_DEPENDS=	www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-RUN_DEPENDS-demo=	::x11/p5-Tk
+RUN_DEPENDS-demo=	x11/p5-Tk
 PKG_ARCH-demo=		*
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 REGRESS_IS_INTERACTIVE=	x11
 

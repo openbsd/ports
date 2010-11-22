@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2010/11/18 10:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,22 +37,22 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		:libcanberra->=0.10p0:audio/libcanberra \
-			::databases/evolution-data-server \
-			::www/libcroco \
-			::x11/gnome/libgnomekbd \
-			::x11/gnome/librsvg \
-			::x11/gnome/libxklavier \
-			::x11/gnome/metacity \
-			::devel/libunique \
-			::x11/gnome/desktop \
-			::x11/gnome/menus \
-			::devel/libgtop2			
-BUILD_DEPENDS=		::x11/gnome/settings-daemon \
-			:shared-mime-info->=0.21:misc/shared-mime-info
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::x11/gnome/settings-daemon \
-			::x11/gnome/terminal
+LIB_DEPENDS=		audio/libcanberra>=0.10p0 \
+			databases/evolution-data-server \
+			www/libcroco \
+			x11/gnome/libgnomekbd \
+			x11/gnome/librsvg \
+			x11/gnome/libxklavier \
+			x11/gnome/metacity \
+			devel/libunique \
+			x11/gnome/desktop \
+			x11/gnome/menus \
+			devel/libgtop2			
+BUILD_DEPENDS=		x11/gnome/settings-daemon \
+			misc/shared-mime-info>=0.21
+RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
+			x11/gnome/settings-daemon \
+			x11/gnome/terminal
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

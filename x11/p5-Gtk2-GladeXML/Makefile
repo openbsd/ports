@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:37:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,13 +26,13 @@ MODULES=	cpan \
 
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	:p5-ExtUtils-Depends->=0.301:devel/p5-ExtUtils-Depends \
-		::devel/p5-ExtUtils-PkgConfig \
+BUILD_DEPENDS=	devel/p5-ExtUtils-Depends>=0.301 \
+		devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	::textproc/libxml \
-		::devel/libglade2
-RUN_DEPENDS=	::devel/p5-Glib2 \
-		::x11/p5-Gtk2
+LIB_DEPENDS=	textproc/libxml \
+		devel/libglade2
+RUN_DEPENDS=	devel/p5-Glib2 \
+		x11/p5-Gtk2
 
 REGRESS_IS_INTERACTIVE=x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:01 espie Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -24,13 +24,13 @@ WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
 MASTER_SITES=		${HOMEPAGE}/releases/
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		::devel/fribidi \
-			::graphics/png \
-			::graphics/jpeg
+LIB_DEPENDS=		devel/fribidi \
+			graphics/png \
+			graphics/jpeg
 
 NO_REGRESS=		Yes
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include/ ${CFLAGS}" \

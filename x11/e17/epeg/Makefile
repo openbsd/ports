@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:56 espie Exp $
 
 BROKEN =		needs an update
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c jpeg
 
-LIB_DEPENDS =		::graphics/jpeg
+LIB_DEPENDS =		graphics/jpeg
 
 CONFIGURE_STYLE =	automake autoconf
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/12 14:22:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:55 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -37,11 +37,11 @@ MODULES =	devel/gconf2 \
 
 MODGCONF2_SCHEMAS_DIR =	compiz
 
-LIB_DEPENDS =	::graphics/png \
-		::devel/startup-notification \
-		::devel/libwnck \
-		::textproc/libxml \
-		::textproc/libxslt
+LIB_DEPENDS =	graphics/png \
+		devel/startup-notification \
+		devel/libwnck \
+		textproc/libxml \
+		textproc/libxslt
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

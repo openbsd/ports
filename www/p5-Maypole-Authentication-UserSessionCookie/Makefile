@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	track sessions and, optionally, users
 
@@ -19,6 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/SIMON/} 
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::www/p5-Maypole
+RUN_DEPENDS=	www/p5-Maypole
 
 .include <bsd.port.mk>

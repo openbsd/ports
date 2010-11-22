@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
@@ -17,16 +17,16 @@ WANTLIB += stdc++ xcb wx_base wx_base_net wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_core wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
 WANTLIB += wx_gtk2_xrc
 
-LIB_DEPENDS=		::x11/wxWidgets
-BUILD_DEPENDS=		::archivers/zip \
-			::devel/bison \
-			::net/samba \
-			::print/cups \
-			::security/opensc
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::print/cups \
-			::security/opensc \
-			::x11/nx/nxssh
+LIB_DEPENDS=		x11/wxWidgets
+BUILD_DEPENDS=		archivers/zip \
+			devel/bison \
+			net/samba \
+			print/cups \
+			security/opensc
+RUN_DEPENDS=		devel/desktop-file-utils \
+			print/cups \
+			security/opensc \
+			x11/nx/nxssh
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

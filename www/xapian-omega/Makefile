@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	web search application
 
@@ -21,8 +21,8 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	:xapian-core->=1.2.3:databases/xapian-core \
-		::devel/pcre
+LIB_DEPENDS=	databases/xapian-core>=1.2.3 \
+		devel/pcre
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

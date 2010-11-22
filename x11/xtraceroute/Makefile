@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/22 08:37:06 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	graphical version of traceroute
@@ -32,7 +32,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gtkgl-2.0
 
-LIB_DEPENDS=	::x11/gtkglarea
+LIB_DEPENDS=	x11/gtkglarea
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

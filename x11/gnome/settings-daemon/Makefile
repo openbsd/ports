@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/15 14:04:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,14 +29,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::textproc/rarian
-LIB_DEPENDS=	::devel/libnotify \
-		::x11/gnome/desktop \
-		::x11/gnome/libgnomekbd \
-		::sysutils/polkit
+BUILD_DEPENDS=	textproc/rarian
+LIB_DEPENDS=	devel/libnotify \
+		x11/gnome/desktop \
+		x11/gnome/libgnomekbd \
+		sysutils/polkit
 
 # otherwise we end up without icons on minimal install
-RUN_DEPENDS=	::x11/gnome/icon-theme
+RUN_DEPENDS=	x11/gnome/icon-theme
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= control-center2

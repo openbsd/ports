@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/15 18:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/22 08:36:48 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,12 +36,12 @@ WANTLIB += drm xcb-shm
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/gconf2 \
-			::textproc/enchant
+LIB_DEPENDS=		devel/gconf2 \
+			textproc/enchant
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/iso-codes \
-			:gnome-icon-theme-*:x11/gnome/icon-theme
+RUN_DEPENDS=		devel/iso-codes \
+			x11/gnome/icon-theme
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}

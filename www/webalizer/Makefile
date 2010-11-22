@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/11 19:56:19 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -10,15 +10,15 @@ MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
-LIB_DEPENDS=	::graphics/gd \
-		::net/GeoIP
+LIB_DEPENDS=	graphics/gd \
+		net/GeoIP
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		c jpeg m png z gd.>=18 GeoIP.>=5
+WANTLIB=		c jpeg m png z gd>=18 GeoIP>=5
 
 MODULES=	converters/libiconv
 

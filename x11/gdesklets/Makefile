@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/15 18:30:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,19 +34,19 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pangoft2-1.0 pcre pixman-1 png xml2 z pthread-stubs xcb \
 		gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm
 
-LIB_DEPENDS=		::devel/libgtop2 \
-			::x11/gnome/librsvg
+LIB_DEPENDS=		devel/libgtop2 \
+			x11/gnome/librsvg
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/rarian
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::misc/shared-mime-info \
-			::x11/gnome/py-gnome
+			textproc/rarian
+RUN_DEPENDS=		devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/gnome/py-gnome
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

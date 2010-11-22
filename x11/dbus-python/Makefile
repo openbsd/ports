@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/09/06 16:20:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =	dbus bindings for Python
 
@@ -23,8 +23,8 @@ MASTER_SITES =	${HOMEPAGE}releases/dbus-python/
 MODULES =	lang/python \
 		devel/gettext
 
-LIB_DEPENDS =	::x11/dbus \
-		::x11/dbus-glib
+LIB_DEPENDS =	x11/dbus \
+		x11/dbus-glib
 
 USE_LIBTOOL =	Yes
 

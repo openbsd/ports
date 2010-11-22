@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		pluggable command-line frontend
 
@@ -23,16 +23,16 @@ MASTER_SITES=		${MASTER_SITE_PYPI:=P/PasteScript/}
 
 MODULES=		lang/python
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/py-cheetah \
-			::devel/py-wsgiutils \
-			::www/py-flup \
-			::www/py-paste \
-			::www/py-paste-deploy
+RUN_DEPENDS=		devel/py-cheetah \
+			devel/py-wsgiutils \
+			www/py-flup \
+			www/py-paste \
+			www/py-paste-deploy
 # NOTE: regression tests won't pass, because they need ZPTKit (which
 # has shitloads of dependencies) and FakePlugin.  There isn't much
 # point in porting them.
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
-			::devel/py-py
+			devel/py-py
 
 MODPY_SETUPTOOLS=	Yes
 

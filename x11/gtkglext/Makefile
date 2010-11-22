@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
@@ -27,7 +27,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangox-1.0 pcre pixman-1 png z pthread-stubs xcb
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

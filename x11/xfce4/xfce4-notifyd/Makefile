@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/libsexy
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/libsexy
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext sexy xfcegui4 \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \

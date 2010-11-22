@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/25 10:25:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=		search and manage eBay accounts
 
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 USE_GROFF =		Yes
 
-RUN_DEPENDS=		::security/p5-Crypt-SSLeay \
-			::www/p5-WWW-Search-Ebay \
-			::x11/p5-Tk
-REGRESS_DEPENDS=	::converters/p5-DateManip \
-			::devel/p5-IO-Capture
+RUN_DEPENDS=		security/p5-Crypt-SSLeay \
+			www/p5-WWW-Search-Ebay \
+			x11/p5-Tk
+REGRESS_DEPENDS=	converters/p5-DateManip \
+			devel/p5-IO-Capture
 
 # In order to run all the automatic tests for this distribution,
 # you should set the following environment variables:

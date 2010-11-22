@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	PluggableAuthService for Plone
 
@@ -19,8 +19,8 @@ MASTER_SITES=	http://www.zope.org/Products/PluggableAuthService/${DISTNAME}/
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-pluginregistry \
-		::www/zope-genericsetup
+RUN_DEPENDS=	www/zope-pluginregistry \
+		www/zope-genericsetup
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODZOPE_PRODUCTSDIR}

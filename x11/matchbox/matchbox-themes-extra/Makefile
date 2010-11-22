@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		extra themes for matchbox
 
@@ -7,7 +7,7 @@ REVISION=		0
 
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=/matchbox-themes-extra/0.3/}
 
-RUN_DEPENDS=		::x11/matchbox/matchbox-window-manager
+RUN_DEPENDS=		x11/matchbox/matchbox-window-manager
 
 CONFIGURE_STYLE=gnu
 

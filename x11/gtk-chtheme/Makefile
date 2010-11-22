@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		gtk+-2 theme switcher
 
@@ -26,14 +26,14 @@ WANTLIB += freetype m pixman-1 png z pthread-stubs xcb gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
 
-LIB_DEPENDS=		::devel/glib2 \
-			::devel/pango \
-			::x11/gtk+2
+LIB_DEPENDS=		devel/glib2 \
+			devel/pango \
+			x11/gtk+2
 
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 post-extract:

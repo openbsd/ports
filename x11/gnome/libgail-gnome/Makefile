@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		implementation of the ATK interface for GNOME widgets
 
@@ -36,10 +36,10 @@ MODULES=		devel/gettext \
 
 MODGCONF2_SCHEMAS_DIR=	libgail-gnome
 
-LIB_DEPENDS=		::x11/gnome/at-spi \
-			::x11/gnome/libgnome \
-			::x11/gnome/libgnomecanvas \
-			::x11/gnome/panel
+LIB_DEPENDS=		x11/gnome/at-spi \
+			x11/gnome/libgnome \
+			x11/gnome/libgnomecanvas \
+			x11/gnome/panel
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

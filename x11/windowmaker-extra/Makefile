@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		themes and icons for Window Maker
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 
-RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
+RUN_DEPENDS=		x11/windowmaker
 
 NO_REGRESS=		Yes
 

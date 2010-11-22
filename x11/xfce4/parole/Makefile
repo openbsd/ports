@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:05 espie Exp $
 
 COMMENT =	Xfce4 media player
 
@@ -22,23 +22,23 @@ CONFIGURE_ARGS =	--disable-silent-rules \
 
 #for the day i manage to build and run the browser plugin..
 #CONFIGURE_ENV =	BROWSER_PLUGIN_DIR=${PREFIX}/lib/mozilla-plugins
-#BUILD_DEPENDS+=	:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
+#BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
 #LIB_DEPENDS =	xulrunner1.9/xul,xulrunner1.9/xpcom::devel/xulrunner/1.9,-main
 #remove a file shipped by xulrunner-devel
 #post-extract:
 #	rm ${WRKSRC}/browser-plugin/npupp.h
 
-LIB_DEPENDS =	::multimedia/gstreamer-0.10/core \
-		::multimedia/gstreamer-0.10/plugins-base \
-		::x11/xfce4/libxfcegui4 \
-		::audio/taglib \
-		::devel/libnotify
+LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/xfce4/libxfcegui4 \
+		audio/taglib \
+		devel/libnotify
 
 # plugins-ffmpeg needed to play mpeg vidz
 # plugins-bad for dvd play
-RUN_DEPENDS +=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
-		:gstreamer-plugins-bad-*:multimedia/gstreamer-0.10/plugins-bad \
-		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good \
+		multimedia/gstreamer-0.10/plugins-bad \
+		multimedia/gstreamer-0.10/plugins-ffmpeg
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1

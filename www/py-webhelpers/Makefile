@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	helper functions focused on web applications
 
@@ -19,9 +19,9 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebHelpers/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::www/py-routes
+RUN_DEPENDS =	www/py-routes
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  ::devel/py-nose
+		  devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

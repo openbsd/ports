@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		plugins for EOG
 
@@ -32,12 +32,12 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=    	::devel/libgdata \
-			:libchamplain->=0.8.0:geo/libchamplain/core \
-			::security/gnutls
+LIB_DEPENDS=    	devel/libgdata \
+			geo/libchamplain/core>=0.8.0 \
+			security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog
-RUN_DEPENDS=		:eog->=2.30.0:x11/gnome/eog
+RUN_DEPENDS=		x11/gnome/eog>=2.30.0
 
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
 CONFIGURE_ARGS+=	--with-plugins=all

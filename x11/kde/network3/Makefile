@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, network applications
 CATEGORIES =		x11 x11/kde
@@ -14,12 +14,12 @@ SHARED_LIBS +=	rss                  2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 	::x11/kde/libs3 \
-		::audio/xmms \
-		::devel/libidn \
-		::net/meanwhile
-RUN_DEPENDS +=	::security/qca-tls
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS = 	x11/kde/libs3 \
+		audio/xmms \
+		devel/libidn \
+		net/meanwhile
+RUN_DEPENDS +=	security/qca-tls
 
 SEPARATE_BUILD =	flavored
 
@@ -27,7 +27,7 @@ REVISION = 	5
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xss Xt Xtst Xxf86vm art_lgpl_2 c crypto drm expat \
 	fam fontconfig freetype gdk glib glib-2.0 gmodule gmodule-2.0 gtk idn \
-	jpeg lcms lib/kde3/DCOP lib/kde3/kabc lib/kde3/kdecore.>=6 \
+	jpeg lcms lib/kde3/DCOP lib/kde3/kabc lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/kdnssd lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \

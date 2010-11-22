@@ -1,4 +1,4 @@
-# $OpenBSD: horde.port.mk,v 1.4 2010/07/30 22:10:54 sthen Exp $
+# $OpenBSD: horde.port.mk,v 1.5 2010/11/22 08:36:48 espie Exp $
 
 CATEGORIES +=	www www/horde
 
@@ -21,7 +21,7 @@ SUBST_VARS +=	INSTDIR
 
 .if ${HORDE_MODULE}
 SUBST_VARS +=	HORDE_MODULE HORDE_NAME
-RUN_DEPENDS +=	:horde->=3.0:www/horde/horde
+RUN_DEPENDS +=	www/horde/horde>=3.0
 MASTER_SITES ?=	${HORDE_SITES:=${HORDE_MODULE}/}
 HOMEPAGE ?=	http://www.horde.org/${HORDE_MODULE}/
 .endif

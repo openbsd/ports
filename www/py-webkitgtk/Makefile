@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
@@ -34,9 +34,9 @@ WANTLIB += xslt webkit-1.0
 MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		::textproc/libxslt \
-			:webkit->=1.1.10:www/webkit
+RUN_DEPENDS=		x11/py-gtk2
+LIB_DEPENDS=		textproc/libxslt \
+			www/webkit>=1.1.10
 
 CONFIGURE_STYLE=	gnu
 

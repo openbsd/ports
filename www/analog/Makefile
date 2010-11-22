@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -26,10 +26,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m jpeg png z gd.>=18 pcre
+WANTLIB += c m jpeg png z gd>=18 pcre
 
-LIB_DEPENDS=	::graphics/gd \
-		::devel/pcre
+LIB_DEPENDS=	graphics/gd \
+		devel/pcre
 
 MODULES=	converters/libiconv
 

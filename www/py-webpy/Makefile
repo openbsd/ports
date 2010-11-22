@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	web framework for python
 
@@ -23,7 +23,7 @@ MODULES=	lang/python
 
 SUBST_VARS=	VERSION
 
-REGRESS_DEPENDS= ::databases/py-sqlite2
+REGRESS_DEPENDS= databases/py-sqlite2
 
 WRKDIST=	${WRKDIR}/webpy
 

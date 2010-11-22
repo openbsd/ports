@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 22:42:06 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:48 espie Exp $ 
 
 COMMENT=	lightweight front-end for mobile IMP users
 
@@ -9,6 +9,6 @@ DISTNAME=	mimp-h3-1.1.3
 REVISION=	0
 CATEGORIES=	mail
 
-RUN_DEPENDS=	::www/horde/imp
+RUN_DEPENDS=	www/horde/imp
 
 .include <bsd.port.mk>

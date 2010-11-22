@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =		lightweight web browser
 
@@ -13,15 +13,15 @@ MASTER_SITES =		${HOMEPAGE}downloads/releases/
 
 MODULE =		devel/gettext
 
-LIB_DEPENDS =		::www/netsurf/hubbub \
-			::www/netsurf/libcss \
-			::www/netsurf/libnsgif \
-			::www/netsurf/libnsbmp \
-			::graphics/libmng \
-			::x11/gtk+2 \
-			::devel/libglade2 \
-			::x11/gnome/librsvg \
-			::net/curl
+LIB_DEPENDS =		www/netsurf/hubbub \
+			www/netsurf/libcss \
+			www/netsurf/libnsgif \
+			www/netsurf/libnsbmp \
+			graphics/libmng \
+			x11/gtk+2 \
+			devel/libglade2 \
+			x11/gnome/librsvg \
+			net/curl
 
 WANTLIB +=		atk-1.0 cairo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB +=		gthread-2.0 jpeg lcms pango-1.0 pangocairo-1.0

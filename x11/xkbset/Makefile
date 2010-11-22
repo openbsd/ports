@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:06 espie Exp $
 
 COMMENT-main=	X11 keyboard accessibility tool
 COMMENT-gui=	GUI for xkbset
@@ -31,7 +31,7 @@ MULTI_PACKAGES=	-main -gui
 
 WANTLIB-main=	X11 c
 
-RUN_DEPENDS-gui=::x11/xkbset :p5-Tk-*:x11/p5-Tk
+RUN_DEPENDS-gui=x11/xkbset x11/p5-Tk
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:50 espie Exp $
 
 COMMENT =	distributed cache for Catalyst
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CPAN_AUTHOR =	MRAMBERG
 
-RUN_DEPENDS =	::devel/p5-Cache-Memcached \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS =	devel/p5-Cache-Memcached \
+		www/p5-Catalyst-Runtime
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV +=	TEST_POD=1

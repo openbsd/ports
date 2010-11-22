@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/08 10:58:05 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:37:05 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -45,14 +45,14 @@ MODULES	=	devel/gettext
 USE_GMAKE =	Yes
 VMEM_WARNING =	Yes
 
-BUILD_DEPENDS =	::devel/cppunit
+BUILD_DEPENDS =	devel/cppunit
 
-LIB_DEPENDS =	::archivers/libmspack \
-		::devel/sdl \
-		::x11/gtk+2 \
-		::databases/iodbc
+LIB_DEPENDS =	archivers/libmspack \
+		devel/sdl \
+		x11/gtk+2 \
+		databases/iodbc
 
-REGRESS_DEPENDS +=:wxWidgets-gtk2->=${V}:${BUILD_PKGPATH}
+REGRESS_DEPENDS +=${BUILD_PKGPATH}>=${V}
 
 WANTLIB += GL GLU SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

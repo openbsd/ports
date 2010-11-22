@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/16 16:20:17 stephan Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =	e-commerce suite for Drupal
 
@@ -8,6 +8,6 @@ DISTNAME = 	ubercart-6.x-2.4
 PKGNAME =	drupal6-ubercart-2.4
 REVISION =	0
 
-RUN_DEPENDS =   ::www/drupal6/token
+RUN_DEPENDS =   www/drupal6/token
 
 .include <bsd.port.mk>

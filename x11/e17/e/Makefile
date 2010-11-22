@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/09/21 20:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
@@ -21,11 +21,11 @@ WANTLIB += ecore_input ecore_ipc ecore_job ecore_txt ecore_x eet
 WANTLIB += eina embryo evas expat fontconfig freetype jpeg m pthread
 WANTLIB += pthread-stubs ssl xcb z edje efreet efreet_mime edbus ehal
 
-LIB_DEPENDS =		::x11/e17/edje \
-			::x11/e17/efreet \
-			::x11/e17/e_dbus
+LIB_DEPENDS =		x11/e17/edje \
+			x11/e17/efreet \
+			x11/e17/e_dbus
 
-RUN_DEPENDS =		::devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils
 
 # Broken configure shit HAVE_ECORE_TXT=TRUE not defined correctly 
 # does not appear in AM_CONDITIONAL . Usually this means the macro

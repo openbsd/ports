@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,8 +22,8 @@ MODULES=		devel/gettext \
 			devel/gconf2 \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/libsoup,-gnome \
-			::x11/dbus-glib
+LIB_DEPENDS=		devel/libsoup,-gnome \
+			x11/dbus-glib
 
 WANTLIB +=		ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1

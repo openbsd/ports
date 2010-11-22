@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
@@ -21,7 +21,7 @@ WANTLIB =		c crypto m pcreposix pthread ssl
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tgz
 
-LIB_DEPENDS =		::devel/pcre
+LIB_DEPENDS =		devel/pcre
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			--with-owner=root \
 			--with-group=bin
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 pre-configure:

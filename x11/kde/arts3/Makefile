@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
@@ -25,11 +25,11 @@ SHARED_LIBS +=	x11globalcomm        2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	::devel/libaudiofile \
-		::devel/glib2 \
-		::audio/libvorbis \
-		::audio/libogg \
-		::audio/libmad
+LIB_DEPENDS = 	devel/libaudiofile \
+		devel/glib2 \
+		audio/libvorbis \
+		audio/libogg \
+		audio/libmad
 
 SEPARATE_BUILD =	flavored
 

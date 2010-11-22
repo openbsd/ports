@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/02 08:58:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
@@ -19,9 +19,9 @@ MODULES=	textproc/intltool
 
 WRKDIST=	${WRKDIR}/tangerine-icon-theme-0.26
 
-BUILD_DEPENDS=	::x11/icon-naming-utils \
-		::x11/gnome/librsvg \
-		::graphics/ImageMagick \
+BUILD_DEPENDS=	x11/icon-naming-utils \
+		x11/gnome/librsvg \
+		graphics/ImageMagick \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 

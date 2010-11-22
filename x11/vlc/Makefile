@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2010/11/19 08:59:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2010/11/22 08:37:05 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,36 +28,36 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext x11/qt4
-LIB_DEPENDS+=	::x11/dbus
+LIB_DEPENDS+=	x11/dbus
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		::audio/faad \
-		::audio/flac \
-		::audio/liba52 \
-		::audio/libcddb \
-		::audio/libdca \
-		::audio/libmad \
-		::audio/libmpcdec \
-		::audio/libvorbis \
-		::audio/speex \
-		::audio/taglib \
-		::devel/fribidi \
-		::devel/libdvdread \
-		::devel/libnotify \
-		::devel/sdl-image \
-		:ffmpeg->=20080620p10:graphics/ffmpeg \
-		::graphics/libdvbpsi \
-		::graphics/libmpeg2 \
-		::graphics/png \
-		::multimedia/libdvdnav \
-		::multimedia/libmatroska \
-		::multimedia/libtheora \
-		:schroedinger->=1.0.10:multimedia/schroedinger \
-		::multimedia/x264 \
-		::net/libproxy \
-		::textproc/libebml \
-		::textproc/libxml \
-		::x11/qt4
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+		audio/faad \
+		audio/flac \
+		audio/liba52 \
+		audio/libcddb \
+		audio/libdca \
+		audio/libmad \
+		audio/libmpcdec \
+		audio/libvorbis \
+		audio/speex \
+		audio/taglib \
+		devel/fribidi \
+		devel/libdvdread \
+		devel/libnotify \
+		devel/sdl-image \
+		graphics/ffmpeg>=20080620p10 \
+		graphics/libdvbpsi \
+		graphics/libmpeg2 \
+		graphics/png \
+		multimedia/libdvdnav \
+		multimedia/libmatroska \
+		multimedia/libtheora \
+		multimedia/schroedinger>=1.0.10 \
+		multimedia/x264 \
+		net/libproxy \
+		textproc/libebml \
+		textproc/libxml \
+		x11/qt4
+RUN_DEPENDS=	devel/desktop-file-utils
 
 WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama \
@@ -131,15 +131,15 @@ FLAVOR?=
 MULTI_PACKAGES+=-web
 COMMENT-web=	Mozilla plugin for embedded media playback
 PKGNAME-web=	vlc-web-${V}
-BUILD_DEPENDS+=	:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
+BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
 CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
 CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
 CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 LIB_DEPENDS-web=${LIB_DEPENDS} \
-		::${BASE_PKGPATH} \
-		::devel/nspr
-RUN_DEPENDS-web=::${BUILD_PKGPATH}
+		${BASE_PKGPATH} \
+		devel/nspr
+RUN_DEPENDS-web=${BUILD_PKGPATH}
 WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m nspr4 plc4 plds4 \
 		pthread-stubs stdc++ vlc vlccore xcb ${WANTLIB}
 .endif
@@ -151,10 +151,10 @@ FULLPKGNAME-jack=vlc-jack-${V}
 FULLPKGPATH-jack=x11/vlc,-jack
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=${LIB_DEPENDS} \
-		 ::${BASE_PKGPATH} \
-		 ::audio/jack
+		 ${BASE_PKGPATH} \
+		 audio/jack
 # any FLAVOR of VLC will do
-RUN_DEPENDS-jack=::${BASE_PKGPATH}
+RUN_DEPENDS-jack=${BASE_PKGPATH}
 WANTLIB-jack=	${WANTLIB} m jack vlccore
 .endif
 

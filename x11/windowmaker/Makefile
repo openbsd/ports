@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2010/11/22 08:37:05 espie Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -28,7 +28,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
@@ -42,14 +42,14 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 MULTI_PACKAGES=         -main -lang
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		::graphics/tiff \
-			::graphics/png \
-			::graphics/libungif
+LIB_DEPENDS=		graphics/tiff \
+			graphics/png \
+			graphics/libungif
 WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
 	 		fontconfig freetype m z pthread-stubs xcb jpeg \
 			tiff png ungif
 
-RUN_DEPENDS-lang=	:windowmaker->=0.90.0:x11/windowmaker
+RUN_DEPENDS-lang=	x11/windowmaker>=0.90.0
 LIB_DEPENDS-lang=
 WANTLIB-lang=
 

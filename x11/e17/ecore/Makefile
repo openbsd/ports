@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-0.9.9.061
@@ -32,7 +32,7 @@ MODULES=		converters/libiconv
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		::x11/e17/evas
+LIB_DEPENDS =		x11/e17/evas
 
 # Note sure about gnutls, curl is useful , is with-x really really necessary ?
 CONFIGURE_ARGS +=	--with-iconv-link=-liconv \

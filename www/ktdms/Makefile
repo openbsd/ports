@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 17:37:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	web-based document management system
 
@@ -27,17 +27,17 @@ INSTDIR=	${PREFIX}/ktdms
 SUBST_VARS=	INSTDIR
 WRKDIST=	${WRKDIR}/knowledgeTree-OSS
 
-RUN_DEPENDS=	:php5-core-*:www/php5/core \
-		:php5-mbstring-*:www/php5/extensions,-mbstring \
-		:php5-gd-*:www/php5/extensions,-gd \
-		:php5-mysql-*:www/php5/extensions,-mysql \
-		:php5-ldap-*:www/php5/extensions,-ldap \
-		:pear-*:www/pear \
-		:pear-DB-*:databases/pear-DB \
-		:pear-Log-*:devel/pear-Log \
-		::archivers/zip \
-		::archivers/unzip \
-		::textproc/catdoc
+RUN_DEPENDS=	www/php5/core \
+		www/php5/extensions,-mbstring \
+		www/php5/extensions,-gd \
+		www/php5/extensions,-mysql \
+		www/php5/extensions,-ldap \
+		www/pear \
+		databases/pear-DB \
+		devel/pear-Log \
+		archivers/zip \
+		archivers/unzip \
+		textproc/catdoc
 
 do-install:
 	@mv ${WRKDIR}/knowledgeTree-OSS ${PREFIX}/ktdms

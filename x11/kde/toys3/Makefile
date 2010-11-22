@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
@@ -8,8 +8,8 @@ MODKDE_VERSION ?=	3.5.8
 
 MODULES =		x11/kde devel/gettext
 
-RUN_DEPENDS +=		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 		::x11/kde/libs3
+RUN_DEPENDS +=		devel/desktop-file-utils
+LIB_DEPENDS = 		x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 

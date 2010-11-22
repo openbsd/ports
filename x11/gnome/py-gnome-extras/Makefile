@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
@@ -34,15 +34,15 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		::textproc/gtkspell \
-			::textproc/enchant \
-			::x11/gnome/gdl \
-			::x11/gnome/libgda \
+LIB_DEPENDS=		textproc/gtkspell \
+			textproc/enchant \
+			x11/gnome/gdl \
+			x11/gnome/libgda \
 			${MODPY_LIB_DEPENDS}
 # xulrunner-devel needed by gtkmozembed.la
-RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
-			:xulrunner-devel->=1.9.2.6p3:devel/xulrunner/1.9,-devel
-REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
+RUN_DEPENDS=		x11/gnome/py-gnome>=2.20.0 \
+			devel/xulrunner/1.9,-devel>=1.9.2.6p3
+REGRESS_DEPENDS=	${PKGNAME}:${BUILD_PKGPATH}
 
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.62

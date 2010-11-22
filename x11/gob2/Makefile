@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		GTK+ Object Builder
 DISTNAME=		gob2-2.0.17
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m glib-2.0
 
-LIB_DEPENDS=		::devel/glib2	
+LIB_DEPENDS=		devel/glib2	
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gob2/2.0/}	
 EXTRACT_SUFX=		.tar.bz2
@@ -25,6 +25,6 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

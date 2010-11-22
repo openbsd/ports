@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	gamma-adjusting utility
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.pcbypaul.com/software/dl/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::x11/py-gtk2
+RUN_DEPENDS=	x11/py-gtk2
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

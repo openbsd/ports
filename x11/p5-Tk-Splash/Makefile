@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	splash screen widget
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::x11/p5-Tk
+RUN_DEPENDS=	x11/p5-Tk
 
 MODULES=	cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/18 16:07:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
@@ -28,9 +28,9 @@ SUBST_VARS=		INSTDIR
 
 
 PHP_VERSION=	5
-RUN_DEPENDS=	::devel/smarty \
-		:php${PHP_VERSION}-gd-*:www/php${PHP_VERSION}/extensions,-gd \
-		:php${PHP_VERSION}-mysql-*:www/php${PHP_VERSION}/extensions,-mysql
+RUN_DEPENDS=	devel/smarty \
+		www/php${PHP_VERSION}/extensions,-gd \
+		www/php${PHP_VERSION}/extensions,-mysql
 
 do-install:
 	@${INSTALL_DATA_DIR} ${INSTDIR}

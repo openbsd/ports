@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,10 +26,10 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
+RUN_DEPENDS=		x11/gnome/mime-data>=2.0.0
 
-LIB_DEPENDS=		::archivers/bzip2 \
-			::sysutils/gamin
+LIB_DEPENDS=		archivers/bzip2 \
+			sysutils/gamin
 
 MODGCONF2_SCHEMAS_DIR=	gnome-vfs2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/02 09:56:19 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	lightweight web browser
 
@@ -19,18 +19,18 @@ MODULES =	x11/xfce4 devel/waf
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	:webkit->=1.1.15v0:www/webkit \
-		::devel/libnotify \
-		::databases/sqlite3 \
-		::devel/libunique \
-		:libsoup->=2.28.0:devel/libsoup
+LIB_DEPENDS =	www/webkit>=1.1.15v0 \
+		devel/libnotify \
+		databases/sqlite3 \
+		devel/libunique \
+		devel/libsoup>=2.28.0
 
 # pick sqlite
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
-BUILD_DEPENDS =	::textproc/py-docutils \
-		::lang/vala \
-		::x11/gnome/librsvg
+BUILD_DEPENDS =	textproc/py-docutils \
+		lang/vala \
+		x11/gnome/librsvg
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c expat fontconfig \

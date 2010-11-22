@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 ssl
 WANTLIB += stdc++ xcb xml2 z e2fs-uuid xcb-render xcb-render-util
-WANTLIB += gtkmm-2.4.>=7 gdkmm-2.4 atkmm-1.6 xml++-2.6 gmime-2.4
-WANTLIB += curl.>=13 tag.>=7 sqlite3.>=13 dbus-glib-1.>=4 exif.>=12
+WANTLIB += gtkmm-2.4>=7 gdkmm-2.4 atkmm-1.6 xml++-2.6 gmime-2.4
+WANTLIB += curl>=13 tag>=7 sqlite3>=13 dbus-glib-1>=4 exif>=12
 WANTLIB += textcat xapian
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
@@ -34,33 +34,33 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 MODULES=	devel/gettext \
 		lang/python
 
-BUILD_DEPENDS=	::devel/boost \
-		::misc/shared-mime-info \
-		:desktop-file-utils-*:devel/desktop-file-utils
+BUILD_DEPENDS=	devel/boost \
+		misc/shared-mime-info \
+		devel/desktop-file-utils
 
 # XXX catppt - catdvi
-LIB_DEPENDS=	::x11/gtk2mm \
-		::textproc/libxml++ \
-		:gmime->=2.4,<2.6:mail/gmime24 \
-		::net/curl \
-		::audio/taglib \
-		::databases/sqlite3 \
-		::x11/dbus-glib \
-		::graphics/libexif \
-		::devel/libidn
+LIB_DEPENDS=	x11/gtk2mm \
+		textproc/libxml++ \
+		gmime->=2.4,<2.6:mail/gmime24 \
+		net/curl \
+		audio/taglib \
+		databases/sqlite3 \
+		x11/dbus-glib \
+		graphics/libexif \
+		devel/libidn
 
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/pinot/backends/
-LIB_DEPENDS+=	::textproc/libtextcat \
-		::databases/xapian-core
+LIB_DEPENDS+=	textproc/libtextcat \
+		databases/xapian-core
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/xdg-utils \
-		::archivers/unzip \
-		::textproc/unrtf \
-		::textproc/xpdf,-utils \
-		::textproc/antiword \
-		::misc/shared-mime-info
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/xdg-utils \
+		archivers/unzip \
+		textproc/unrtf \
+		textproc/xpdf,-utils \
+		textproc/antiword \
+		misc/shared-mime-info
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -31,10 +31,10 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::x11/gnome/icon-theme
-RUN_DEPENDS=	:sdlmame->=0.132p2:emulators/sdlmame,-main
-LIB_DEPENDS=	::databases/sqlite3 \
-		::devel/libwnck
+		x11/gnome/icon-theme
+RUN_DEPENDS=	emulators/sdlmame,-main>=0.132p2
+LIB_DEPENDS=	databases/sqlite3 \
+		devel/libwnck
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes

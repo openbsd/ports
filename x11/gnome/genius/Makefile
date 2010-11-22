@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/29 09:20:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,11 +31,11 @@ WANTLIB += gtksourceview-2.0 gmp mpfr vte
 MODULES=	devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
-LIB_DEPENDS=	::x11/gtksourceview \
-		::devel/gmp \
-		::devel/mpfr \
-		::devel/vte
+RUN_DEPENDS=	misc/shared-mime-info>=0.21
+LIB_DEPENDS=	x11/gtksourceview \
+		devel/gmp \
+		devel/mpfr \
+		devel/vte
 
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes

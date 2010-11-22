@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/17 13:42:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:59 espie Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -37,17 +37,17 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MULTI_PACKAGES=		-main -plugin
 
 BUILD_DEPENDS=		${RUN_DEPENDS-main} \
-			::textproc/p5-Text-CSV \
-			:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
+			textproc/p5-Text-CSV \
+			devel/xulrunner/1.9,-devel>=1.9.1
 
-LIB_DEPENDS=		::security/gnutls \
-			::security/cyrus-sasl2
+LIB_DEPENDS=		security/gnutls \
+			security/cyrus-sasl2
 
-RUN_DEPENDS-main=	::x11/py-gtk2
-WANTLIB-main += ${WANTLIB} c ffi pthread gnutls.>=13 sasl2.>=2
+RUN_DEPENDS-main=	x11/py-gtk2
+WANTLIB-main += ${WANTLIB} c ffi pthread gnutls>=13 sasl2>=2
 
 LIB_DEPENDS-plugin=	${LIB_DEPENDS} \
-			::${BASE_PKGPATH}
+			${BASE_PKGPATH}
 WANTLIB-plugin += ${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
 
 CONFIGURE_STYLE=	gnu
@@ -64,7 +64,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 				-I${LOCALBASE}/include/nspr" \
 			MOZILLA_PLUGIN_LIBS="-L${LOCALBASE}/xulrunner1.9"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk-vnc

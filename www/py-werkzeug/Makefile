@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		WSGI utility collection
 
@@ -24,7 +24,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 PKG_ARCH=		*
 
-REGRESS_DEPENDS=	::devel/py-py
+REGRESS_DEPENDS=	devel/py-py
 
 post-install:
 	mv ${PREFIX}/docs ${PREFIX}/share/doc/py-werkzeug

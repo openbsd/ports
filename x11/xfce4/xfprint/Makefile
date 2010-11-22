@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/11 08:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 printing helper
 
@@ -22,11 +22,11 @@ CONFIGURE_ARGS=	--enable-cups \
 		--enable-bsdlpr \
 		--with-printcap=/etc/printcap
 
-RUN_DEPENDS=	::print/a2ps
+RUN_DEPENDS=	print/a2ps
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/xfce4/xfconf \
-		::print/cups
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/xfce4/xfconf \
+		print/cups
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo

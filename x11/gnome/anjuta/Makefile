@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/12 15:05:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:56 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -46,20 +46,20 @@ WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1 cdt
 WANTLIB += vala-0.10 gda-4.0 ltdl gnome-keyring gvc graph pathplan
 WANTLIB += ${MODPY_WANTLIB} GL Xxf86vm drm icudata icuuc xcb-shm
 
-BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
-			::devel/p5-Locale-gettext
-RUN_DEPENDS=		::misc/shared-mime-info \
-			::devel/p5-Locale-gettext
+BUILD_DEPENDS=		devel/autogen>=5.6.5 \
+			devel/p5-Locale-gettext
+RUN_DEPENDS=		misc/shared-mime-info \
+			devel/p5-Locale-gettext
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			::devel/eggdbus \
-			::devel/glade3 \
-			::devel/subversion \
-			::devel/vte \
-			::lang/vala \
-			::math/graphviz \
-			::x11/gnome/gdl \
-			::x11/gnome/libgda \
-			::x11/gtksourceview
+			devel/eggdbus \
+			devel/glade3 \
+			devel/subversion \
+			devel/vte \
+			lang/vala \
+			math/graphviz \
+			x11/gnome/gdl \
+			x11/gnome/libgda \
+			x11/gtksourceview
 
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FAKE_FLAGS=		itlocaledir=${PREFIX}/share/locale/
 

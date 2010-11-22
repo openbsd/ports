@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	convert text to HTML with controlling options
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::textproc/p5-Email-Find ::devel/p5-Exporter-Lite
+RUN_DEPENDS=	textproc/p5-Email-Find devel/p5-Exporter-Lite
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

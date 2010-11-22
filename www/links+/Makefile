@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	graphics and text browser
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	bz2.>=10 c crypto m ssl z
+WANTLIB=	bz2>=10 c crypto m ssl z
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-LIB_DEPENDS=	::archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
@@ -32,11 +32,11 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=	::graphics/jpeg \
-		::graphics/png \
-		::graphics/tiff
+LIB_DEPENDS+=	graphics/jpeg \
+		graphics/png \
+		graphics/tiff
 CONFIGURE_ARGS+= --with-x --enable-graphics
-WANTLIB+=	X11 jpeg.>=62 png.>=2 pthread-stubs tiff.>=35 xcb
+WANTLIB+=	X11 jpeg>=62 png>=2 pthread-stubs tiff>=35 xcb
 MESSAGE=	${PKGDIR}/MESSAGE.x11
 .endif
 

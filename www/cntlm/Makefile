@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.35.1
@@ -18,7 +18,7 @@ WANTLIB =		c pthread
 
 CONFIGURE_STYLE =	simple
 ALL_TARGET =		cntlm
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 .include <bsd.port.mk>

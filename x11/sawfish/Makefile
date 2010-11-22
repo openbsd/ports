@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	extensible window manager
 
@@ -21,9 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:rep-gtk->=0.90.4p0:x11/rep-gtk
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		:rep-gtk->=0.90.4p0:x11/rep-gtk
+BUILD_DEPENDS=	x11/rep-gtk>=0.90.4p0
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/rep-gtk>=0.90.4p0
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo

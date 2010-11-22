@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	glib bindings for dbus message system
 
@@ -26,8 +26,8 @@ WANTLIB=	expat c pthread pcre dbus-1 glib-2.0 gobject-2.0 gthread-2.0
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/dbus \
-		::devel/glib2
+LIB_DEPENDS=	x11/dbus \
+		devel/glib2
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes

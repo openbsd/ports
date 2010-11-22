@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/22 08:36:48 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,18 +42,18 @@ WANTLIB += pcre pixman-1 plc4 plds4 png proxy pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ tasn1 xcb xcb-atom xcb-aux xcb-event  xcb-render
 WANTLIB += xcb-render-util xml2 z
-WANTLIB += xslt.>=1 execinfo notify.>=2 webkit-1.0.>=2.1 soup-gnome-2.4.>=1.1
+WANTLIB += xslt>=1 execinfo notify>=2 webkit-1.0>=2.1 soup-gnome-2.4>=1.1
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
-		:gnome-themes-*:x11/gnome/themes \
-		:iso-codes-*:devel/iso-codes \
-		::x11/gnome/py-gnome
-LIB_DEPENDS=	::textproc/libxslt \
-		::devel/libexecinfo \
-		::devel/libnotify \
-		::www/webkit \
-		::devel/libsoup,-gnome
+RUN_DEPENDS=	x11/gnome/icon-theme \
+		x11/gnome/themes \
+		devel/iso-codes \
+		x11/gnome/py-gnome
+LIB_DEPENDS=	textproc/libxslt \
+		devel/libexecinfo \
+		devel/libnotify \
+		www/webkit \
+		devel/libsoup,-gnome
 
 MODULES=	devel/gconf2 \
 		devel/gettext \

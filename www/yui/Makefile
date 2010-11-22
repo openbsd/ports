@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/20 05:53:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
 
 COMMENT-main =	yahoo ui library toolkit
 COMMENT-docs =	yahoo ui library examples
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://yuilibrary.com/downloads/yui2/
 
 EXTRACT_ONLY =
-BUILD_DEPENDS =	::archivers/unzip
+BUILD_DEPENDS =	archivers/unzip
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
@@ -44,6 +44,6 @@ DOC =		${YUI}/docs
 EX =		${YUI}/examples
 SUBST_VARS =	BUILD DOC EX YUI
 
-RUN_DEPENDS-docs =	::${BASE_PKGPATH}
+RUN_DEPENDS-docs =	${BASE_PKGPATH}
 
 .include <bsd.port.mk>

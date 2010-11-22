@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/07 19:52:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/22 08:37:03 espie Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES= 	-demos -main
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-themes \
 			--enable-xft \
@@ -49,9 +49,9 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		::graphics/jpeg \
-			::graphics/png
-LIB_DEPENDS-demos=	::x11/openmotif \
+LIB_DEPENDS=		graphics/jpeg \
+			graphics/png
+LIB_DEPENDS-demos=	x11/openmotif \
 			${MODLIBICONV_LIB_DEPENDS} \
 			${LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xt c Xau Xdmcp Xft Xmu Xrender \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	little and fast Web crawler
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WANTLIB += adns.>=1 c m pthread stdc++
+WANTLIB += adns>=1 c m pthread stdc++
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=larbin/}
 
-LIB_DEPENDS=		::net/adns
+LIB_DEPENDS=		net/adns
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CC="${CC}" MAKE=${MAKE_PROGRAM}

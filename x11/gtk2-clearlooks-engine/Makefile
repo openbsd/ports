@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	GTK+ 2.x engine based on Bluecurve
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clearlooks/}
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:gtk-engines2->=2.16.1p2:x11/gtk-engines2
+BUILD_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	x11/gtk-engines2>=2.16.1p2
 
 SHARED_ONLY=	Yes
 USE_LIBTOOL=	Yes

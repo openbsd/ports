@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -37,8 +37,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 MODULES=	devel/gettext \
 		lang/mono
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/libglade2
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/libglade2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:55 espie Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::graphics/jpeg \
-		::graphics/png \
-		::x11/openmotif
+RUN_DEPENDS=	graphics/jpeg \
+		graphics/png \
+		x11/openmotif
 
 NO_REGRESS=	Yes
 

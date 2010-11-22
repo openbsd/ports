@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 08:36:55 espie Exp $
 
 DISTNAME=	aterm-0.4.2
 REVISION=	2
@@ -28,7 +28,7 @@ FLAVORS=	big5
 FLAVOR?=
 
 .if ${FLAVOR:L:Mbig5}
-RUN_DEPENDS=	::chinese/taipeifonts
+RUN_DEPENDS=	chinese/taipeifonts
 PATCH_LIST=	patch-* big5-patch-src_Makefile_in
 
 CONFIGURE_ARGS+= --enable-big5

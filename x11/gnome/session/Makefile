@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2010/11/17 20:40:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		GNOME session
 
@@ -33,19 +33,19 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::textproc/rarian \
-		::textproc/xmlto \
-		::x11/gnome/settings-daemon
-LIB_DEPENDS=	::devel/libexecinfo
-RUN_DEPENDS=	::x11/gnome/settings-daemon \
-		::sysutils/consolekit
+BUILD_DEPENDS=	textproc/rarian \
+		textproc/xmlto \
+		x11/gnome/settings-daemon
+LIB_DEPENDS=	devel/libexecinfo
+RUN_DEPENDS=	x11/gnome/settings-daemon \
+		sysutils/consolekit
 
 # polkit-gnome isn't really *required* but then we will loose the polkit
 # auth. dialog ; same for gconf2-polkit, gconf2 and polkit are already
 # dependencies and we want to be able to handle system-wide gconf entries.
 # This should really be a dep. of a "gnome" metapackage.
-RUN_DEPENDS+=	::x11/polkit-gnome
-RUN_DEPENDS+=	::devel/gconf2,-polkit
+RUN_DEPENDS+=	x11/polkit-gnome
+RUN_DEPENDS+=	devel/gconf2,-polkit
 
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-session

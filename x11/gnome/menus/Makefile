@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/17 11:29:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,8 +26,8 @@ MODULES=		devel/gettext \
 DESKTOP_FILES=		Yes
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			::devel/glib2
-RUN_DEPENDS=		:py-gtk2->=2.10.3:x11/py-gtk2
+			devel/glib2
+RUN_DEPENDS=		x11/py-gtk2>=2.10.3
 
 CONFIGURE_ARGS+=	--enable-introspection=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

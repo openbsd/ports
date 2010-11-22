@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/03 17:24:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:56 espie Exp $
 
 PKG_ARCH=		*
 
@@ -22,10 +22,10 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::devel/py-xdg \
-			::x11/devilspie \
-			::x11/gnome/py-gnome-desktop
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-xdg \
+			x11/devilspie \
+			x11/gnome/py-gnome-desktop
 
 NO_REGRESS=		Yes
 

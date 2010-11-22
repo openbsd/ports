@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -26,11 +26,11 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext dbus-glib-1 \
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::devel/vte \
-			::x11/dbus-glib \
-			::devel/libglade2
+LIB_DEPENDS=		devel/vte \
+			x11/dbus-glib \
+			devel/libglade2
 
-RUN_DEPENDS=		::devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

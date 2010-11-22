@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	GTK-based BDF font editor
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX=	.tbz2
 USE_GROFF =	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu
 # leakage from bsd.own.mk

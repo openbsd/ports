@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:37:02 espie Exp $
 
 COMMENT=	screen saver that displays a countdown to a selected date
 
@@ -24,7 +24,7 @@ WANTLIB += kscreensaver kwalletclient
 
 MASTER_SITES=	http://www.lysator.liu.se/~erre/download/kountdown/
 
-LIB_DEPENDS=	::x11/kde/libs3
+LIB_DEPENDS=	x11/kde/libs3
 
 AUTOCONF_VERSION= 2.52
 MODKDE_VERSION= 3.1

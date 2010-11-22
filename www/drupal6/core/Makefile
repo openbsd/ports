@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 12:58:52 stephan Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =	powerful content management system
  
@@ -6,10 +6,10 @@ DISTNAME =	drupal-6.19
 REVISION =	1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-RUN_DEPENDS = 	::www/php5/core \
-	:php5-mysql-*|php5-mysqli-*|php5-pgsql-*:www/php5/extensions,-mysql \
-		::www/php5/extensions,-gd \
-		::www/php5/extensions,-mbstring
+RUN_DEPENDS = 	www/php5/core \
+	php5-mysql-*|php5-mysqli-*|php5-pgsql-*:www/php5/extensions,-mysql \
+		www/php5/extensions,-gd \
+		www/php5/extensions,-mbstring
 		
 do-install:
 		mkdir -p ${PREFIX}/${DRUPAL_ROOT}

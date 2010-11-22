@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2010/11/11 09:30:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.160 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # needed for convert xpm icon to png
-BUILD_DEPENDS +=	::graphics/netpbm
+BUILD_DEPENDS +=	graphics/netpbm
 
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla devel/gettext lang/python

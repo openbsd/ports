@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		utility to mirror web pages
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=	:p5-URI-*:www/p5-URI \
-		:p5-libwww-*:www/p5-libwww
+RUN_DEPENDS=	www/p5-URI \
+		www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
@@ -23,11 +23,11 @@ WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 WANTLIB += pthread-stubs xcb gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 NO_REGRESS=		Yes
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/27 12:09:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	sytem monitor for GNOME
 
@@ -30,14 +30,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-RUN_DEPENDS=	::x11/gnome/icon-theme
+RUN_DEPENDS=	x11/gnome/icon-theme
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	::x11/gtk2mm \
-		:libgtop2->=2.28.1p8:devel/libgtop2 \
-		::devel/startup-notification \
-		::devel/pango \
-		::devel/libwnck \
-		::x11/gnome/librsvg
+LIB_DEPENDS=	x11/gtk2mm \
+		devel/libgtop2>=2.28.1p8 \
+		devel/startup-notification \
+		devel/pango \
+		devel/libwnck \
+		x11/gnome/librsvg
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -18,7 +18,7 @@ WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 iconv intl
 WANTLIB += m png pthread stdc++ z lib/qt4/QtGui lib/qt4/QtNetwork
 
-LIB_DEPENDS=	::x11/qt4
+LIB_DEPENDS=	x11/qt4
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=qrfcview/}
 EXTRACT_SUFX=	.tgz

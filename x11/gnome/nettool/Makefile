@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -25,8 +25,8 @@ WANTLIB += xcb-render-util z gtop-2.0 gconf-2
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/libgtop2 \
-		::devel/gconf2
+LIB_DEPENDS=	devel/libgtop2 \
+		devel/gconf2
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

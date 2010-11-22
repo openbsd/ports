@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	UUID for session ID generation
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=modbuild
 
-RUN_DEPENDS=	::devel/p5-Data-UUID \
-		::www/p5-Apache-Session
-REGRESS_DEPENDS=::devel/p5-Test-Deep \
-		::devel/p5-Test-Exception \
-		::devel/p5-Test-Group
+RUN_DEPENDS=	devel/p5-Data-UUID \
+		www/p5-Apache-Session
+REGRESS_DEPENDS=devel/p5-Test-Deep \
+		devel/p5-Test-Exception \
+		devel/p5-Test-Group
 
 MAKE_ENV+=	TEST_POD=1
 

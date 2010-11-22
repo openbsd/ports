@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:52 espie Exp $
 
 COMMENT =		fetch and parse the directory index from a web server
 
@@ -12,8 +12,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-RUN_DEPENDS =		::www/p5-libwww
+RUN_DEPENDS =		www/p5-libwww
 BUILD_DEPENDS =		${RUN_DEPENDS}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

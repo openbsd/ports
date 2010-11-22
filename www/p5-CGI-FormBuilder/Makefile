@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:50 espie Exp $
 
 COMMENT=	easily generate and process stateful forms
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=::textproc/p5-Template \
-		::textproc/p5-Text-Template \
-		::www/p5-HTML-Template
+REGRESS_DEPENDS=textproc/p5-Template \
+		textproc/p5-Text-Template \
+		www/p5-HTML-Template
 
 post-extract:
 	@rm -f ${WRKSRC}/lib/CGI/FormBuilder.pm.orig

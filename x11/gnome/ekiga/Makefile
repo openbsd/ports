@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
@@ -34,12 +34,12 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
-		::net/opal \
-		::devel/sdl \
-		::databases/evolution-data-server \
-		::devel/libsigc++-2 \
-		::devel/libnotify
+LIB_DEPENDS=	net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
+		net/opal \
+		devel/sdl \
+		databases/evolution-data-server \
+		devel/libsigc++-2 \
+		devel/libnotify
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes

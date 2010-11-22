@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.10 2010/10/04 17:11:43 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.11 2010/11/22 08:37:05 espie Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -24,7 +24,7 @@ XFCE_BRANCH=	${XFCE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 # Set to 'yes' if there are .desktop files in share/applications/.
 .if defined(DESKTOP_FILES) && ${DESKTOP_FILES:L} == "yes"
-MODXFCE_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
+MODXFCE_RUN_DEPENDS+=	devel/desktop-file-utils
 .endif
 
 .if defined(XFCE_PLUGIN)
@@ -34,7 +34,7 @@ MASTER_SITES?=	http://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-pl
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 
-MODXFCE_LIB_DEPENDS=	::x11/xfce4/xfce4-panel
+MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
 MODXFCE_WANTLIB=	xfce4panel
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}

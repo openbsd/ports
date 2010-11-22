@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	dynamic window manager
 
@@ -20,9 +20,9 @@ WANTLIB += X11 Xext c m
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	::devel/libixp
+BUILD_DEPENDS=	devel/libixp
 
-RUN_DEPENDS=	::x11/dmenu
+RUN_DEPENDS=	x11/dmenu
 
 USE_GROFF =	Yes
 

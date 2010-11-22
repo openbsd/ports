@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	ruby MVC web application framework
 
@@ -17,11 +17,11 @@ MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${MODRUBY_RAKE_DEPENDS} \
-		:${MODRUBY_PKG_PREFIX}-activesupport->=${VERSION}:devel/ruby-activesupport,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-activerecord->=${VERSION}:databases/ruby-activerecord,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-actionpack->=${VERSION}:devel/ruby-actionpack,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-actionmailer->=${VERSION}:mail/ruby-actionmailer,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-activeresource->=${VERSION}:www/ruby-activeresource,${FLAVOR}
+		devel/ruby-activesupport,${FLAVOR}>=${VERSION} \
+		databases/ruby-activerecord,${FLAVOR}>=${VERSION} \
+		devel/ruby-actionpack,${FLAVOR}>=${VERSION} \
+		mail/ruby-actionmailer,${FLAVOR}>=${VERSION} \
+		www/ruby-activeresource,${FLAVOR}>=${VERSION}
 
 CONFIGURE_STYLE=ruby gem
 

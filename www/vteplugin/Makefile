@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
@@ -25,8 +25,8 @@ MASTER_SITES =	http://blog.renevier.net/public/
 MODULES =	devel/waf
 
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::devel/vte
+LIB_DEPENDS =	x11/gtk+2 \
+		devel/vte
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wscript

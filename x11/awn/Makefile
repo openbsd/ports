@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		avant window navigator
 
@@ -39,13 +39,13 @@ WANTLIB += png popt pthread ssl startup-notification-1 util xml2
 WANTLIB += z pthread-stubs xcb execinfo ffi xcb-atom xcb-aux xcb-event
 WANTLIB += ${MODPY_WANTLIB}
 
-BUILD_DEPENDS=		::devel/py-xdg \
-			::x11/py-gtk2
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::devel/py-xdg \
-			::x11/py-gtk2
-LIB_DEPENDS=		::devel/libwnck \
-			::x11/gnome/desktop \
+BUILD_DEPENDS=		devel/py-xdg \
+			x11/py-gtk2
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-xdg \
+			x11/py-gtk2
+LIB_DEPENDS=		devel/libwnck \
+			x11/gnome/desktop \
 			${MODPY_LIB_DEPENDS}
 
 USE_LIBTOOL=		Yes

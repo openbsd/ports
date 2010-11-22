@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/25 15:16:30 giovanni Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}rel/
 EXTRACT_SUFX =	.tar.bz2
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::devel/atk \
-		::devel/pango \
-		::graphics/cairo \
-		::graphics/png
+LIB_DEPENDS =	x11/gtk+2 \
+		devel/atk \
+		devel/pango \
+		graphics/cairo \
+		graphics/png
 
 MODULES =	devel/gettext
 
@@ -34,9 +34,9 @@ WANTLIB += GL Xxf86vm drm xcb-shm atk-1.0 cairo pango-1.0 png
 WANTLIB += pangoft2-1.0 pangocairo-1.0 gdk-x11-2.0 
 WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0
 
-BUILD_DEPENDS =	::devel/libmagic
-RUN_DEPENDS =	::devel/desktop-file-utils \
-		::devel/xdg-utils
+BUILD_DEPENDS =	devel/libmagic
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils
 
 MAKE_ENV =	CC=${CC} lCFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_GMAKE =	Yes

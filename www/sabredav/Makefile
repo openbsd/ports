@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/10 20:27:36 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:54 espie Exp $
 
 COMMENT =	php5 WebDAV server
 DISTNAME =	Sabre_DAV-1.0.0
@@ -25,7 +25,7 @@ INSTDIR =	${PREFIX}/sabredav
 SUBST_VARS =	INSTDIR
 
 
-RUN_DEPENDS =	:php5-core-*:www/php5/core
+RUN_DEPENDS =	www/php5/core
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

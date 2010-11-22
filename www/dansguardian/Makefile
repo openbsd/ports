@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.10.1.1
@@ -23,8 +23,8 @@ WANTLIB =		c execinfo m pcre pcreposix stdc++ z
 MASTER_SITES =		http://spacehopper.org/mirrors/
 #MASTER_SITES =		http://dansguardian.org/downloads/2/Stable/
 
-LIB_DEPENDS =		::devel/pcre \
-			::devel/libexecinfo
+LIB_DEPENDS =		devel/pcre \
+			devel/libexecinfo
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS =	--localstatedir=/var \
 			--with-proxyuser=_dansguardian \
 			--enable-segv-backtrace \
 			--enable-clamd
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FAKE_FLAGS +=		DGCONFDIR=${PREFIX}/share/examples/dansguardian \
 			rel_group=_dansguardian rel_user=_dansguardian

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 10:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:54 espie Exp $
 
 COMMENT-main=	Java servlet 2.4 and Java server pages 2.0 server
 COMMENT-admin=	administration web application
@@ -32,13 +32,13 @@ MODULES=	java
 MODJAVA_VER=	1.5+
 MODJAVA_JRERUN=	Yes
 
-BUILD_DEPENDS=	::archivers/gtar
+BUILD_DEPENDS=	archivers/gtar
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
-RUN_DEPENDS-admin=	:tomcat->=5,<6:www/tomcat/v5,-main
+RUN_DEPENDS-admin=	tomcat->=5,<6:www/tomcat/v5,-main
 PREFIX-examples=	${CATALINA_BASE}
-RUN_DEPENDS-examples=	:tomcat-admin->=5,<6:www/tomcat/v5,-admin
+RUN_DEPENDS-examples=	tomcat-admin->=5,<6:www/tomcat/v5,-admin
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM=	Yes

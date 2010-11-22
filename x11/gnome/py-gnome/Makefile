@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -35,12 +35,12 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		::x11/gnome/libgnomeui \
-		::x11/gnome/libgnomecanvas \
-		::x11/gnome/libgnome \
-		::net/avahi
-RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
-		::devel/py-orbit
+		x11/gnome/libgnomeui \
+		x11/gnome/libgnomecanvas \
+		x11/gnome/libgnome \
+		net/avahi
+RUN_DEPENDS=	x11/py-gtk2>=2.10.3 \
+		devel/py-orbit
 
 LIBTOOL_FLAGS+=	--tag=disable-static
 

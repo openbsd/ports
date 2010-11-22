@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2010/10/11 08:19:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.102 2010/11/22 08:36:56 espie Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -36,23 +36,23 @@ MODULES=		devel/gettext \
 MODGNOME_HELP_FILES=	Yes
 
 BUILD_DEPENDS= 		${RUN_DEPENDS}
-RUN_DEPENDS=		:gnome-icon-theme->=2.15.91:x11/gnome/icon-theme \
-			:py-gnome-desktop->=2.32.0:x11/gnome/py-gnome-desktop
+RUN_DEPENDS=		x11/gnome/icon-theme>=2.15.91 \
+			x11/gnome/py-gnome-desktop>=2.32.0
 MODPY_RUNDEP=		No
-LIB_DEPENDS=		::devel/libnotify \
-			:gnome-panel->=2.32.0.2:x11/gnome/panel
+LIB_DEPENDS=		devel/libnotify \
+			x11/gnome/panel>=2.32.0.2
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			::multimedia/gstreamer-0.10/core \
-			::multimedia/gstreamer-0.10/plugins-base \
-			::devel/libgtop2 \
-			:gucharmap->=1.8:x11/gnome/gucharmap
+			multimedia/gstreamer-0.10/core \
+			multimedia/gstreamer-0.10/plugins-base \
+			devel/libgtop2 \
+			x11/gnome/gucharmap>=1.8
 
 # clicking on the multiload-applet will attempt to start gnome-system-monitor
-RUN_DEPENDS+=		::x11/gnome/system-monitor
+RUN_DEPENDS+=		x11/gnome/system-monitor
 
 MULTI_PACKAGES=		-main -battstat
 ONLY_FOR_ARCHS-battstat = ${APM_ARCHS}
-RUN_DEPENDS-battstat=	::${BUILD_PKGPATH},-main
+RUN_DEPENDS-battstat=	${BUILD_PKGPATH},-main
 
 
 MODGCONF2_SCHEMAS_DIR=	gnome-applets2

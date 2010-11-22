@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 21:44:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	super-fast templating language
 
@@ -20,10 +20,10 @@ MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	::textproc/py-MarkupSafe \
-		::www/py-beaker
+RUN_DEPENDS =	textproc/py-MarkupSafe \
+		www/py-beaker
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  :py-nose->=0.11:devel/py-nose
+		  devel/py-nose>=0.11
 
 MODPY_SETUPTOOLS = Yes
 

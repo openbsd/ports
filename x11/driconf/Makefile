@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
-RUN_DEPENDS =		::x11/py-gtk2
+RUN_DEPENDS =		x11/py-gtk2
 
 pre-configure:
 	@mkdir -p ${WRKSRC}/lib/driconf

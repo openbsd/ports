@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -51,7 +51,7 @@ WANTLIB += GL X11-xcb Xxf86vm drm xcb-shm
 MODULES =	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS =	::x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes

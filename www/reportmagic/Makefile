@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	make pretty graphs from Analog logfiles
 
@@ -24,9 +24,9 @@ MASTER_SITES=	${HOMEPAGE} \
 		http://be.reportmagic.org/ \
 		http://au.reportmagic.org/
 
-RUN_DEPENDS=	::graphics/p5-GD-Graph3d \
-		::www/p5-HTML-Parser \
-		::devel/p5-Config-IniFiles
+RUN_DEPENDS=	graphics/p5-GD-Graph3d \
+		www/p5-HTML-Parser \
+		devel/p5-Config-IniFiles
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

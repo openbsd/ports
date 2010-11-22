@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/20 00:38:58 marco Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		small tiling window manager
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 NO_REGRESS=     Yes
 WANTLIB=        c X11 Xrandr util
 
-RUN_DEPENDS=	:dmenu->=3.9:x11/dmenu
+RUN_DEPENDS=	x11/dmenu>=3.9
 		
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/cat" \

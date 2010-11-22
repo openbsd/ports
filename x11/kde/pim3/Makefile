@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -59,7 +59,7 @@ SHARED_LIBS +=	kontact              2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS +=	::x11/kde/libs3
+LIB_DEPENDS +=	x11/kde/libs3
 
 REVISION =	5
 REVISION-kpilot =	0
@@ -68,7 +68,7 @@ WANTLIB = GL GLU ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
 	artsflow_idl audiofile c drm expat fam fontconfig freetype glib-2.0 \
 	gmodule-2.0 gnokii gpg-error gpgme gthread-2.0 ical idn jpeg \
 	kmedia2_idl lcms lib/kde3/DCOP lib/kde3/artskde lib/kde3/kabc \
-	lib/kde3/kabc_file lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
+	lib/kde3/kabc_file lib/kde3/kdecore>=6 lib/kde3/kdefakes \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/khtml lib/kde3/kimproxy lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \
@@ -80,13 +80,13 @@ WANTLIB = GL GLU ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
 
 
 FLAVORS =	debug
-LIB_DEPENDS +=	::comms/pilot-link
-RUN_DEPENDS +=	::x11/kde/base3 \
-		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS +=	:gpgme->=0.4.5:security/gpgme \
-		::security/cyrus-sasl2 \
-		::comms/libmal \
-		::comms/gnokii
+LIB_DEPENDS +=	comms/pilot-link
+RUN_DEPENDS +=	x11/kde/base3 \
+		devel/desktop-file-utils
+LIB_DEPENDS +=	security/gpgme>=0.4.5 \
+		security/cyrus-sasl2 \
+		comms/libmal \
+		comms/gnokii
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
@@ -94,18 +94,6 @@ post-install:
 
 #MULTI_PACKAGES=-kpilot
 FULLPKGNAME-kpilot = kpilot-${VERSION}
-
-#.if !defined(PACKAGING) || ${SUBPACKAGE} == "-kpilot"
-#LIB_DEPENDS+=	pisock::comms/pilot-link
-#LIB_DEPENDS+=	kcal::x11/kde/pim3
-#.endif
-## for kaddressbook
-#.if defined(PACKAGING) && ${SUBPACKAGE} == ""
-#RUN_DEPENDS+=	::x11/kde/base3
-#.endif
-#.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-#LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme
-#.endif
 
 # make sure we do not grab boost on the way
 CONFIGURE_ENV += ac_cv_header_boost_format_hpp=no

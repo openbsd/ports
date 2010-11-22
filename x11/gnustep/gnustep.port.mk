@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.10 2010/11/06 10:03:31 espie Exp $
+# $OpenBSD: gnustep.port.mk,v 1.11 2010/11/22 08:36:59 espie Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64
@@ -10,8 +10,8 @@ CATEGORIES +=	x11/gnustep
 USE_GMAKE ?=	Yes
 MAKE_FILE ?=	GNUmakefile
 
-BUILD_DEPENDS +=		:gnustep-make-*:x11/gnustep/make
-MODGNUSTEP_RUN_DEPENDS +=	:gnustep-make-*:x11/gnustep/make
+BUILD_DEPENDS +=		x11/gnustep/make
+MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
 MAKE_FLAGS +=	CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
 
@@ -26,14 +26,14 @@ MODGNUSTEP_NEEDS_BACK ?=	Yes
 
 .if ${MODGNUSTEP_NEEDS_GUI:L} == yes 
 MODGNUSTEP_WANTLIB +=		gnustep-gui
-MODGNUSTEP_LIB_DEPENDS +=	::x11/gnustep/gui
+MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/gui
 .  if ${MODGNUSTEP_NEEDS_BACK:L} == yes
-MODGNUSTEP_RUN_DEPENDS +=	::x11/gnustep/back
+MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back
 .  endif
 .endif
 .if ${MODGNUSTEP_NEEDS_BASE:L} == yes
 MODGNUSTEP_WANTLIB +=		objc gnustep-base
-MODGNUSTEP_LIB_DEPENDS +=	::x11/gnustep/base
+MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/base
 .endif
 
 WANTLIB += ${MODGNUSTEP_WANTLIB}

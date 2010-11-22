@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:03 espie Exp $
 # XXX: Provide a Zaurus frontend
 
 COMMENT=		graphical wrapper around Xnest(1) on PDA size
@@ -13,7 +13,7 @@ WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender Xtst c expat fontconfig \
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::x11/matchbox/libmatchbox
+LIB_DEPENDS=		x11/matchbox/libmatchbox
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \

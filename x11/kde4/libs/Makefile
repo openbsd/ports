@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -39,28 +39,28 @@ SHARED_LIBS +=	plasma			0.0
 SHARED_LIBS +=	nepomukquery         0.0      # .4.4
 
 
-BUILD_DEPENDS += ::misc/shared-mime-info \
-		::x11/kde4/automoc \
-		::misc/shared-desktop-ontologies
+BUILD_DEPENDS += misc/shared-mime-info \
+		x11/kde4/automoc \
+		misc/shared-desktop-ontologies
 
-RUN_DEPENDS +=  ::misc/shared-mime-info \
-		::misc/shared-desktop-ontologies \
-		::x11/kde4/oxygen-icons
+RUN_DEPENDS +=  misc/shared-mime-info \
+		misc/shared-desktop-ontologies \
+		x11/kde4/oxygen-icons
 
-LIB_DEPENDS +=	::graphics/openexr \
-		::graphics/libungif \
-		::graphics/jasper \
-		::archivers/bzip2 \
-		::textproc/aspell/core \
-		::textproc/enchant \
-		::textproc/libxslt \
-		::devel/pcre \
-		::databases/strigi \
-		::x11/kde4/attica \
-		::archivers/xz \
-		::databases/soprano \
-		::multimedia/phonon \
-		::security/qca2
+LIB_DEPENDS +=	graphics/openexr \
+		graphics/libungif \
+		graphics/jasper \
+		archivers/bzip2 \
+		textproc/aspell/core \
+		textproc/enchant \
+		textproc/libxslt \
+		devel/pcre \
+		databases/strigi \
+		x11/kde4/attica \
+		archivers/xz \
+		databases/soprano \
+		multimedia/phonon \
+		security/qca2
 
 # we don't have krb5-config
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
@@ -85,7 +85,7 @@ WANTLIB += GL Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp \
 	enchant fam gif gssapi intl jasper jpeg krb5 lib/qt4/Qt3Support \
 	lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui lib/qt4/QtNetwork \
 	lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtWebKit \
-	lib/qt4/QtXml lzma m pcre pcreposix phonon png pthread qca.>=3.0 \
+	lib/qt4/QtXml lzma m pcre pcreposix phonon png pthread qca>=3.0 \
 	soprano sopranoclient stdc++ streamanalyzer streams util xml2 xslt z
 
 

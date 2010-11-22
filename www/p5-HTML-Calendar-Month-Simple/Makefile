@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	Simple HTML Calendars
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Date-Calc \
-		::devel/p5-Date-Simple
+RUN_DEPENDS=	devel/p5-Date-Calc \
+		devel/p5-Date-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/18 20:38:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	alternative applications/documents menu for GNOME
 
@@ -31,14 +31,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::x11/gnome/libslab \
-		::x11/gnome/panel \
-		::x11/gnome/nautilus \
-		::devel/libgtop2
+LIB_DEPENDS=	x11/gnome/libslab \
+		x11/gnome/panel \
+		x11/gnome/nautilus \
+		devel/libgtop2
 
-RUN_DEPENDS=	::x11/gnome/system-monitor \
-		::x11/gnome/controlcenter2 \
-		::x11/gnome/tracker
+RUN_DEPENDS=	x11/gnome/system-monitor \
+		x11/gnome/controlcenter2 \
+		x11/gnome/tracker
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= gnome-main-menu

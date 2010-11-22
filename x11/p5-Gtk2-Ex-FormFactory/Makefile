@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	framework which makes building complex GUIs easy
 
@@ -13,6 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::x11/p5-Gtk2
+RUN_DEPENDS=	x11/p5-Gtk2
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 23:02:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =		simple weblog
 
@@ -26,13 +26,13 @@ SUBST_VARS =	INSTDIR EXAMPLESDIR
 
 EXAMPLESDIR =	${PREFIX}/blogsum/examples
 
-RUN_DEPENDS =	::databases/p5-DBD-SQLite \
-		::databases/p5-DBI \
-		::textproc/p5-XML-RSS \
-		::textproc/p5-XML-Simple \
-		::www/mod_perl \
-		::www/p5-HTML-Template \
-		::www/p5-HTTP-Lite
+RUN_DEPENDS =	databases/p5-DBD-SQLite \
+		databases/p5-DBI \
+		textproc/p5-XML-RSS \
+		textproc/p5-XML-Simple \
+		www/mod_perl \
+		www/p5-HTML-Template \
+		www/p5-HTTP-Lite
 
 
 pre-configure:

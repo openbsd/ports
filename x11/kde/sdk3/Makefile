@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/11/22 08:37:02 espie Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -19,23 +19,23 @@ SHARED_LIBS +=	kunittestgui         1.0      # .0.0
 MULTI_PACKAGES =	-main -svn
 
 MODULES =		x11/kde devel/gettext
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS-main +=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-main +=	devel/desktop-file-utils
 
-LIB_DEPENDS =		::x11/kde/libs3
+LIB_DEPENDS =		x11/kde/libs3
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			::x11/kde/pim3
+			x11/kde/pim3
 
 LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
-			::devel/subversion
+			devel/subversion
 
 FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 
 WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
-	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu \
+	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread \
 	pthread-stubs rpcsvc stdc++ util xcb z
 WANTLIB-main = ${WANTLIB}

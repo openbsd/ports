@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/15 17:24:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -27,7 +27,7 @@ MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gnome/panel
+LIB_DEPENDS=	x11/gnome/panel
 
 MODGNOME_HELP_FILES= 	Yes
 MODGCONF2_SCHEMAS_DIR=	mousetweaks

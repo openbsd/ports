@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -24,8 +24,8 @@ WANTLIB=	ICE SM X11 Xext Xft Xpm Xrandr Xrender Xau Xdmcp \
 MODULES=	converters/libiconv
 
 MASTER_SITES=	${HOMEPAGE}projects/pekwm/files/
-LIB_DEPENDS=	::graphics/jpeg \
-		::graphics/png
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,9 +23,9 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender idn jpeg m png \
 		util z pthread-stubs xcb art_lgpl_2 kdecore DCOP kdefx \
 		kdeui kdecorations
 
-LIB_DEPENDS=	::graphics/libart \
-		::x11/kde/libs3 \
-		::x11/kde/base3
+LIB_DEPENDS=	graphics/libart \
+		x11/kde/libs3 \
+		x11/kde/base3
 
 MODULES=	devel/gettext x11/kde
 MODKDE_VERSION= 3.4

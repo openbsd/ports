@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -21,13 +21,13 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=No
 
-LIB_DEPENDS=	::audio/libao \
-		::audio/libsndfile \
-		::graphics/jpeg \
-		::graphics/libungif \
-		::graphics/png \
-		::print/cups \
-		::textproc/aspell/core
+LIB_DEPENDS=	audio/libao \
+		audio/libsndfile \
+		graphics/jpeg \
+		graphics/libungif \
+		graphics/png \
+		print/cups \
+		textproc/aspell/core
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \

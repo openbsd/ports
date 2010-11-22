@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
 
 BROKEN=			evaluate whether this still makes sense
 COMMENT=		X11 toolkit, libraries documentation
@@ -9,7 +9,7 @@ PKGNAME=		kdelibs-doc-${VERSION}
 DISTFILES=
 EXTRACT_ONLY=
 
-BUILD_DEPENDS=	::x11/kde/kdoc3 ::x11/qt3,-html ::x11/kde/libs3:patch
+BUILD_DEPENDS=	x11/kde/kdoc3 x11/qt3,-html x11/kde/libs3:patch
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

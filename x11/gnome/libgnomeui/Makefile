@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -29,10 +29,10 @@ WANTLIB += canberra ltdl ogg pthread vorbis vorbisfile
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-		::x11/gnome/libgnome \
-		::x11/gnome/libgnomecanvas \
-		::x11/gnome/libbonoboui
+LIB_DEPENDS=	x11/gnome/libgnome-keyring \
+		x11/gnome/libgnome \
+		x11/gnome/libgnomecanvas \
+		x11/gnome/libbonoboui
 
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-gtk-doc

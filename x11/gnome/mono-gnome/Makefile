@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
@@ -34,9 +34,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		canberra ltdl ogg pthread vorbis vorbisfile \
 		GL X11-xcb Xxf86vm drm xcb-shm
 
-LIB_DEPENDS=	::x11/gnome/libgnomeui
+LIB_DEPENDS=	x11/gnome/libgnomeui
 
-RUN_DEPENDS=	::x11/mono-gtk2
+RUN_DEPENDS=	x11/mono-gtk2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 DLLMAP_FILES=	art/art-sharp.dll.config \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-BUILD_DEPENDS = ::x11/blackbox
+BUILD_DEPENDS = x11/blackbox
 
 MODULES =	converters/libiconv
 

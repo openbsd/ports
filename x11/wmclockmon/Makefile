@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		WindowMaker dock.app clock
 
@@ -27,9 +27,9 @@ WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -34,11 +34,11 @@ WANTLIB += sigc-2.0 atk-1.0 cairo cairomm-1.0 atkmm-1.6
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/atk2mm \
-		::devel/glib2mm \
-		::devel/pangomm \
-		::x11/gtk+2 \
-		::graphics/cairomm
+LIB_DEPENDS=	devel/atk2mm \
+		devel/glib2mm \
+		devel/pangomm \
+		x11/gtk+2 \
+		graphics/cairomm
 
 SEPARATE_BUILD=	concurrent
 

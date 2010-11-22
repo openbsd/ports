@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:02 espie Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
@@ -31,8 +31,8 @@ VERSION=		1.6.2
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/koffice-${VERSION}/src/koffice-l10n/}
 
-BUILD_DEPENDS = ::x11/kde/libs3
-RUN_DEPENDS = ::x11/kde/libs3
+BUILD_DEPENDS = x11/kde/libs3
+RUN_DEPENDS = x11/kde/libs3
 
 PATCH_LIST=	patch-*
 MODKDE_VERSION=

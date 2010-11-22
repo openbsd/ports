@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:50 espie Exp $
 
 COMMENT =	FastMmap cache store for Catalyst::Plugin::Cache
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	::devel/p5-Cache-FastMmap \
-		::devel/p5-Path-Class \
-		::www/p5-Catalyst-Plugin-Cache
+RUN_DEPENDS =	devel/p5-Cache-FastMmap \
+		devel/p5-Path-Class \
+		www/p5-Catalyst-Plugin-Cache
 
 .include <bsd.port.mk>

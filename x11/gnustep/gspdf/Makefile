@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 14:56:01 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	PDF, PS and EPS viewer for GNUstep
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/gap/
 
 MODULES=	x11/gnustep
 WANTLIB+=	c m pthread
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS+=	print/ghostscript/gnu
 
 pre-build:
 	${SUBST_CMD} ${WRKDIST}/GSPdf.m 

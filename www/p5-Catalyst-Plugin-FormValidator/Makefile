@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:50 espie Exp $
 
 COMMENT= 	plugin to Data::FormValidator for catalyst
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
-		::devel/p5-Data-FormValidator
+RUN_DEPENDS=	www/p5-Catalyst-Runtime \
+		devel/p5-Data-FormValidator
 
 MAKE_ENV=	TEST_POD=Yes
 

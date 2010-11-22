@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/23 17:16:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
-BUILD_DEPENDS=		::archivers/gtar
+BUILD_DEPENDS=		archivers/gtar
 TAR=			${LOCALBASE}/bin/gtar
 
 NO_BUILD=		Yes
@@ -27,9 +27,9 @@ INSTDIR=		${PREFIX}/tt-rss/
 SUBST_VARS=		INSTDIR
 
 PHP_VERSION=	5
-RUN_DEPENDS=	:php${PHP_VERSION}-mbstring-*:www/php${PHP_VERSION}/extensions,-mbstring \
-		:php${PHP_VERSION}-pgsql-*:www/php${PHP_VERSION}/extensions,-pgsql \
-		:php${PHP_VERSION}-xmlrpc-*:www/php${PHP_VERSION}/extensions,-xmlrpc
+RUN_DEPENDS=	www/php${PHP_VERSION}/extensions,-mbstring \
+		www/php${PHP_VERSION}/extensions,-pgsql \
+		www/php${PHP_VERSION}/extensions,-xmlrpc
 
 do-install:
 	@cp -Rp ${WRKDIST} ${INSTDIR}

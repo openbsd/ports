@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	user interface components for bonobo
 
@@ -28,9 +28,9 @@ WANTLIB += canberra ltdl ogg vorbis vorbisfile
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/popt \
-		::x11/gnome/libgnome \
-		::x11/gnome/libgnomecanvas
+LIB_DEPENDS=	devel/popt \
+		x11/gnome/libgnome \
+		x11/gnome/libgnomecanvas
 
 DESKTOP_FILES=	Yes
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

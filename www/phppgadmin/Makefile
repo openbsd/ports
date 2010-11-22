@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/28 18:09:05 pea Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
@@ -25,7 +25,7 @@ INSTDIR=	${PREFIX}/phpPgAdmin
 SUBST_VARS=	INSTDIR
 
 PHP_VERSION=	5
-RUN_DEPENDS=	:php${PHP_VERSION}-pgsql-*:www/php${PHP_VERSION}/extensions,-pgsql
+RUN_DEPENDS=	www/php${PHP_VERSION}/extensions,-pgsql
 
 do-install:
 	@cp -Rp ${WRKDIST} ${INSTDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	fast and lightweight file manager
 
@@ -25,13 +25,13 @@ WANTLIB += pixman-1 png pthread z pthread-stubs xcb
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 fam
 WANTLIB += xcb-render xcb-render-util startup-notification-1
 
-LIB_DEPENDS=	::x11/gtk+2 \
-		::sysutils/gamin \
-		::devel/startup-notification
-RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
-		:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info->=0.21:misc/shared-mime-info \
-		:gamin-*:sysutils/gamin,-server
+LIB_DEPENDS=	x11/gtk+2 \
+		sysutils/gamin \
+		devel/startup-notification
+RUN_DEPENDS=	x11/gnome/icon-theme \
+		devel/desktop-file-utils \
+		misc/shared-mime-info>=0.21 \
+		sysutils/gamin,-server
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes

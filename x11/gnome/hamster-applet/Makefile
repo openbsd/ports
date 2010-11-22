@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/17 15:30:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:57 espie Exp $
 
 BROKEN=			needs sqlite fts3 module which is not buildable on NO_SHARED_ARCHES
 
@@ -38,11 +38,11 @@ MODGCONF2_LIBDEP=	No
 
 # controlcenter2 is needed for custom keybindings
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::x11/gnome/controlcenter2 \
-			::x11/gnome/py-gnome-desktop \
-			::devel/py-xdg \
-			::databases/py-sqlite2 \
-			::x11/dbus-python
+RUN_DEPENDS=		x11/gnome/controlcenter2 \
+			x11/gnome/py-gnome-desktop \
+			devel/py-xdg \
+			databases/py-sqlite2 \
+			x11/dbus-python
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

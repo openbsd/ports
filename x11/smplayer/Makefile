@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:04 espie Exp $
 
 COMMENT =		complete front-end for MPlayer
 
@@ -24,12 +24,12 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt4
-RUN_DEPENDS =		:mplayer->=20090708:x11/mplayer \
-			::devel/desktop-file-utils
-LIB_DEPENDS =		::x11/qt4
+RUN_DEPENDS =		x11/mplayer>=20090708 \
+			devel/desktop-file-utils
+LIB_DEPENDS =		x11/qt4
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

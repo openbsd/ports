@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/25 08:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		GNOME library for CUPS interaction
 
@@ -25,8 +25,8 @@ WANTLIB += gthread-2.0 cups
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::devel/glib2 \
-    			::print/cups
+LIB_DEPENDS=		devel/glib2 \
+    			print/cups
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

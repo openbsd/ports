@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/07/27 12:58:42 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:06 espie Exp $
 
 COMMENT =	Thunar archive plugin
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	x11/xfce4
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
-RUN_DEPENDS =	::x11/xfce4/thunar \
-		:xarchiver-*|file-roller-*|kdeutils-*:x11/xarchiver
+RUN_DEPENDS =	x11/xfce4/thunar \
+		xarchiver-*|file-roller-*|kdeutils-*:x11/xarchiver
 
 .include <bsd.port.mk>

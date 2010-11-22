@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		lightweight window manager with emphasis on usability
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 MAKE_ENV=		CC='${CC}' SYSCONFDIR='${SYSCONFDIR}'

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2010/11/22 08:37:03 espie Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -31,11 +31,11 @@ MASTER_SITES =	${HOMEPAGE}dist/openbox/
 MODULES =	devel/gettext \
 		lang/python
 
-RUN_DEPENDS =	::devel/py-xdg \
-		::devel/desktop-file-utils
-LIB_DEPENDS +=	::devel/pango \
-		::textproc/libxml \
-		::devel/startup-notification
+RUN_DEPENDS =	devel/py-xdg \
+		devel/desktop-file-utils
+LIB_DEPENDS +=	devel/pango \
+		textproc/libxml \
+		devel/startup-notification
 
 MAKE_FLAGS =	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Thunar media tags plugin
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		execinfo gamin-1 thunarx-1 thunar-vfs-1 tag tag_c \
 		xcb-render xcb-render-util
 
-LIB_DEPENDS=	::x11/xfce4/thunar \
-		::audio/taglib
+LIB_DEPENDS=	x11/xfce4/thunar \
+		audio/taglib
 
 .include <bsd.port.mk>

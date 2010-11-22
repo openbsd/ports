@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		dynamic window manager
 
@@ -20,13 +20,13 @@ WANTLIB=		X11 Xinerama c
 
 MASTER_SITES=		http://dl.suckless.org/dwm/
 
-RUN_DEPENDS=		:dmenu->=4.1.1:x11/dmenu \
-			::x11/terminus-font
+RUN_DEPENDS=		x11/dmenu>=4.1.1 \
+			x11/terminus-font
 
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

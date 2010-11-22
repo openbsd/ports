@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/18 13:18:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -32,8 +32,8 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::x11/gnome/libbonobo \
-		::x11/gtk+2
+LIB_DEPENDS=	x11/gnome/libbonobo \
+		x11/gtk+2
 
 MODGCONF2_SCHEMAS_DIR=	at-spi
 DESKTOP_FILES=		Yes

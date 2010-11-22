@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/10/08 05:16:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
 DIST_SUBDIR=		${DISTNAME}
 
-BUILD_DEPENDS=		:cabextract-*:archivers/cabextract
+BUILD_DEPENDS=		archivers/cabextract
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

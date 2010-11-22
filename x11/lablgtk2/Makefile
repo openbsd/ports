@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:03 espie Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
@@ -24,9 +24,9 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pixman-1 pthread-stubs xcb xcb-render xcb-render-util xml2 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 z glade-2.0 rsvg-2
 
-LIB_DEPENDS =	::x11/gtk+2 \
-		::devel/libglade2 \
-		::x11/gnome/librsvg
+LIB_DEPENDS =	x11/gtk+2 \
+		devel/libglade2 \
+		x11/gnome/librsvg
 
 FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk2 \

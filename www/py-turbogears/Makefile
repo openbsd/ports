@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		Python web development megaframework
 
@@ -23,24 +23,24 @@ MASTER_SITES=		http://files.turbogears.org/eggs/
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		::databases/py-sqlalchemy \
-			::databases/py-sqlobject \
-			::devel/py-cheetah \
-			::devel/py-configobj \
-			::devel/py-nose \
-			::devel/py-protocols \
-			::devel/py-ruledispatch \
-			::devel/py-simplejson \
-			::devel/py-turbocheetah \
-			::devel/py-turbojson \
-			::devel/py-turbokid \
-			::www/py-cherrypy2 \
-			::www/py-formencode \
-			::www/py-paste \
-			::www/py-paste-deploy \
-			::www/py-paste-script
+RUN_DEPENDS=		databases/py-sqlalchemy \
+			databases/py-sqlobject \
+			devel/py-cheetah \
+			devel/py-configobj \
+			devel/py-nose \
+			devel/py-protocols \
+			devel/py-ruledispatch \
+			devel/py-simplejson \
+			devel/py-turbocheetah \
+			devel/py-turbojson \
+			devel/py-turbokid \
+			www/py-cherrypy2 \
+			www/py-formencode \
+			www/py-paste \
+			www/py-paste-deploy \
+			www/py-paste-script
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
-			::databases/py-sqlite2
+			databases/py-sqlite2
 
 MODPY_SETUPTOOLS=	Yes
 

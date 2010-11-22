@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:50 espie Exp $
 
 COMMENT= 	I18N for Catalyst
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Locale-Maketext-Lexicon \
-		::devel/p5-I18N-LangTags \
-		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=	devel/p5-Locale-Maketext-Lexicon \
+		devel/p5-I18N-LangTags \
+		www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes

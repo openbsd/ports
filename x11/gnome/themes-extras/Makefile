@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		themes collection for GNOME
 
@@ -22,10 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::archivers/gtar \
-			:icon-naming-utils->=0.8.90:x11/icon-naming-utils
-RUN_DEPENDS=		:gettext-*:devel/gettext \
-			:gtk-engines2->=2.11:x11/gtk-engines2
+			archivers/gtar \
+			x11/icon-naming-utils>=0.8.90
+RUN_DEPENDS=		devel/gettext \
+			x11/gtk-engines2>=2.11
 
 USE_LIBTOOL=		No
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

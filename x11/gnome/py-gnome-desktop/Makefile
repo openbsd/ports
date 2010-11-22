@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
@@ -41,17 +41,17 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:py-gnome->=2.28.0:x11/gnome/py-gnome \
-			::x11/gnome/bug-buddy
-LIB_DEPENDS=		::devel/libgsf \
-			::devel/libgtop2 \
-			::x11/gnome/libgnomeprintui \
-			::x11/gnome/librsvg \
-			::x11/gnome/media \
-			::x11/gnome/metacity \
-			::x11/gnome/panel \
-			:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-			:evince->=2.32.0:graphics/evince,-main
+RUN_DEPENDS=		x11/gnome/py-gnome>=2.28.0 \
+			x11/gnome/bug-buddy
+LIB_DEPENDS=		devel/libgsf \
+			devel/libgtop2 \
+			x11/gnome/libgnomeprintui \
+			x11/gnome/librsvg \
+			x11/gnome/media \
+			x11/gnome/metacity \
+			x11/gnome/panel \
+			x11/gnome/totem-pl-parser>=2.28.1 \
+			graphics/evince,-main>=2.32.0
 
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

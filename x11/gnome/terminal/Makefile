@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/13 18:47:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	GNOME terminal
 
@@ -23,7 +23,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render z vte GL Xxf86vm drm xcb-shm
 
-LIB_DEPENDS=	::devel/vte
+LIB_DEPENDS=	devel/vte
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

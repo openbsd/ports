@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/30 07:42:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -18,9 +18,9 @@ WANTLIB += dbus-1 glib-2.0 gpg-error pcre gcrypt
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::security/libgcrypt \
-		::x11/dbus \
-		::devel/glib2
+LIB_DEPENDS=	security/libgcrypt \
+		x11/dbus \
+		devel/glib2
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc

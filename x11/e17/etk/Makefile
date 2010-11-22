@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/30 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:56 espie Exp $
 
 BROKEN =		needs an update
 
@@ -18,9 +18,9 @@ WANTLIB += edje
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		::x11/e17/edje
+LIB_DEPENDS=		x11/e17/edje
 
-RUN_DEPENDS=		::devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_LIBTOOL =		Yes
 USE_GMAKE=		Yes

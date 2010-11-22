@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/24 15:40:17 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =	fast, light, user-friendly web forum
 
@@ -28,7 +28,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/fluxbb
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
+RUN_DEPENDS=	www/php5/extensions,-mysql
 
 do-extract:
 	@mkdir -p ${WRKDIST}

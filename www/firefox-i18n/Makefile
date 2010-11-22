@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/10/29 08:37:45 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2010/11/22 08:36:48 espie Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -31,8 +31,8 @@ LANGUAGES=	af ar as be bg bn-BD bn-IN ca cs cy da de el en-GB eo es-AR \
 		ta te th tr uk vi zh-CN zh-TW
 #broken install.rdf: ta-LK
 
-BUILD_DEPENDS=	:unzip-*:archivers/unzip
-RUN_DEPENDS=	:mozilla-firefox-${V}:www/mozilla-firefox
+BUILD_DEPENDS=	archivers/unzip
+RUN_DEPENDS=	mozilla-firefox-${V}:www/mozilla-firefox
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes

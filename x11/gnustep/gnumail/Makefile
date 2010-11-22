@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	GNUstep mail application
 
@@ -15,8 +15,8 @@ WANTLIB+=	c m pthread AddressView Addresses Pantomime
 MASTER_SITES=	${HOMEPAGE}.data/releases/Stable/
 
 MODULES=	x11/gnustep
-LIB_DEPENDS=	::x11/gnustep/addresses \
-		::x11/gnustep/pantomime
+LIB_DEPENDS=	x11/gnustep/addresses \
+		x11/gnustep/pantomime
 
 MAKE_ENV+=	GNUMail_INTERFACE_VERSION=${LIBGNUMail_VERSION}
 

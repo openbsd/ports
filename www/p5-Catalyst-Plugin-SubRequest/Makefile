@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:50 espie Exp $
 
 COMMENT= 	map subrequests to actions in Catalyst
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-Catalyst-Runtime->=5.7012:www/p5-Catalyst-Runtime
+RUN_DEPENDS=	www/p5-Catalyst-Runtime>=5.7012
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=yes

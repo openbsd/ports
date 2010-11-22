@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		C++ interface for libgnome
 
@@ -32,9 +32,9 @@ WANTLIB += atkmm-1.6 gdkmm-2.4 gtkmm-2.4 pangomm-1.4 vorbisfile
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::x11/gnome/libgnome \
-			::x11/gtk2mm \
-			::devel/pangomm
+LIB_DEPENDS=		x11/gnome/libgnome \
+			x11/gtk2mm \
+			devel/pangomm
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static

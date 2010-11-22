@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:56 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,8 +28,8 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple
 
-BUILD_DEPENDS=	::shells/bash
-LIB_DEPENDS=	::x11/gtk+2
+BUILD_DEPENDS=	shells/bash
+LIB_DEPENDS=	x11/gtk+2
 
 WANTLIB =       X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
                 Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 15:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	nautilus Python bindings
 
@@ -28,8 +28,8 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		::x11/gnome/nautilus
-RUN_DEPENDS=	::x11/gnome/py-gnome
+		x11/gnome/nautilus
+RUN_DEPENDS=	x11/gnome/py-gnome
 
 LIBTOOL_FLAGS+=	--tag=disable-static
 

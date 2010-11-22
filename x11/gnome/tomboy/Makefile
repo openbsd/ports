@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/10/25 17:41:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -34,12 +34,12 @@ MODGCONF2_LIBDEP=	No
 
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/mono-addins \
-		::sysutils/ndesk-dbus-glib \
-		::x11/gnome/mono-gnome-desktop \
-		::textproc/gtkspell \
-		:shared-mime-info->=0.21:misc/shared-mime-info \
-		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
+RUN_DEPENDS=	devel/mono-addins \
+		sysutils/ndesk-dbus-glib \
+		x11/gnome/mono-gnome-desktop \
+		textproc/gtkspell \
+		misc/shared-mime-info>=0.21 \
+		x11/gnome/icon-theme>=2.18.0
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-update-mimedb \

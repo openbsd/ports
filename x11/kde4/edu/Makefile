@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, edu
 DISTNAME =		kdeedu-${VERSION}
@@ -18,27 +18,27 @@ SHARED_LIBS +=  compoundviewer            0.0 # 4.4
 
 # ocaml is not a real dependency, as it's only needed in relation to libfacile
 
-BUILD_DEPENDS +=	::math/eigen2 \
-			::x11/kde4/automoc 
+BUILD_DEPENDS +=	math/eigen2 \
+			x11/kde4/automoc 
 
-LIB_DEPENDS +=	::x11/kde4/libs \
-		::math/cfitsio \
-		::misc/openbabel \
-		::multimedia/phonon \
-		::misc/gpsd \
-		::print/libspectre
+LIB_DEPENDS +=	x11/kde4/libs \
+		math/cfitsio \
+		misc/openbabel \
+		multimedia/phonon \
+		misc/gpsd \
+		print/libspectre
 
 # for kstars
-BUILD_DEPENDS +=	::x11/xplanet
-RUN_DEPENDS +=		::x11/xplanet
+BUILD_DEPENDS +=	x11/xplanet
+RUN_DEPENDS +=		x11/xplanet
 
 WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm c cfitsio gps kde3support \
-	kdecore.>=8 kdeui khtml kio kjs knewstuff2 knewstuff3 knotifyconfig \
+	kdecore>=8 kdeui khtml kio kjs knewstuff2 knewstuff3 knotifyconfig \
 	kparts kpty krosscore krossui ktexteditor kunitconversion kutils \
 	lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui \
 	lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript \
 	lib/qt4/QtScriptTools lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml m \
-	ncurses openbabel phonon.>=5 plasma pthread readline spectre stdc++ \
+	ncurses openbabel phonon>=5 plasma pthread readline spectre stdc++ \
 	xml2 xslt z
 
 

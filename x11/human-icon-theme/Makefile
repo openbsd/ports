@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		Human icon theme from Ubuntu
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/}
 MODULES=	textproc/intltool
 
-BUILD_DEPENDS=	::x11/icon-naming-utils
+BUILD_DEPENDS=	x11/icon-naming-utils
 
 NO_REGRESS=	Yes
 ALL_TARGET=	build

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Params-CallbackRequest \
-		::www/p5-HTML-Mason
+RUN_DEPENDS=	devel/p5-Params-CallbackRequest \
+		www/p5-HTML-Mason
 
 CONFIGURE_STYLE=modbuild
 MAKE_ENV+=	APACHE_TEST_APXS=/usr/sbin/apxs

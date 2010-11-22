@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:18:39 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =		Snap Haskell Web Framework Server
 
@@ -19,24 +19,24 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		::devel/hs-cereal \
-			::devel/hs-directory-tree \
-			::devel/hs-dlist \
-			::devel/hs-iteratee \
-			::devel/hs-murmur-hash \
-			::devel/hs-monads-fd \
-			::devel/hs-network \
-			::devel/hs-PSQueue \
-			::devel/hs-sendfile \
-			::devel/hs-transformers \
-			::devel/hs-text \
-			::devel/hs-unix-compat \
-			::devel/hs-vector \
-			::net/hs-network-bytestring \
-			::textproc/hs-attoparsec-iteratee \
-			::textproc/hs-bytestring-nums \
-			::textproc/hs-bytestring-show \
-			::www/hs-snap-core
+RUN_DEPENDS +=		devel/hs-cereal \
+			devel/hs-directory-tree \
+			devel/hs-dlist \
+			devel/hs-iteratee \
+			devel/hs-murmur-hash \
+			devel/hs-monads-fd \
+			devel/hs-network \
+			devel/hs-PSQueue \
+			devel/hs-sendfile \
+			devel/hs-transformers \
+			devel/hs-text \
+			devel/hs-unix-compat \
+			devel/hs-vector \
+			net/hs-network-bytestring \
+			textproc/hs-attoparsec-iteratee \
+			textproc/hs-bytestring-nums \
+			textproc/hs-bytestring-show \
+			www/hs-snap-core
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

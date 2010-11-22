@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,13 +29,13 @@ WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render xcb-render-util
 WANTLIB += xml2 z canberra canberra-gtk gnome-2 gnomecanvas-2 gtop-2.0
 WANTLIB += panel-applet-2
 
-LIB_DEPENDS=		::audio/libcanberra \
-			::x11/gnome/libgnome \
-			::x11/gnome/libgnomecanvas \
-			::devel/libgtop2 \
-			::x11/gnome/panel
+LIB_DEPENDS=		audio/libcanberra \
+			x11/gnome/libgnome \
+			x11/gnome/libgnomecanvas \
+			devel/libgtop2 \
+			x11/gnome/panel
 # needed for at least baobab and gnome-system-log
-RUN_DEPENDS=		::x11/gnome/gvfs
+RUN_DEPENDS=		x11/gnome/gvfs
 
 MODULES=		devel/gconf2 \
 			devel/gettext \

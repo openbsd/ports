@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	perl port of jQuery.js
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=	INGY
 
-RUN_DEPENDS=	::www/p5-HTML-Tree
+RUN_DEPENDS=	www/p5-HTML-Tree
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

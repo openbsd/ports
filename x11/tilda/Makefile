@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -25,10 +25,10 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread xml2 z pthread-stubs xcb confuse vte
 
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=		::devel/libconfuse \
-			::devel/libglade2 \
-			::devel/vte
+RUN_DEPENDS=		devel/desktop-file-utils
+LIB_DEPENDS=		devel/libconfuse \
+			devel/libglade2 \
+			devel/vte
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

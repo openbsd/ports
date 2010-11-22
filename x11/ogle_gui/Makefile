@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/22 08:37:03 espie Exp $
 
 CATEGORIES=	x11
 
@@ -27,14 +27,14 @@ WANTLIB += gmodule-2.0 gobject-2.0 m pango-1.0 glade-2.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 cairo png gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/ogle \
-		::textproc/libxml \
+LIB_DEPENDS=	x11/ogle \
+		textproc/libxml \
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS+=	::devel/libglade2 \
-		::x11/gtk+2
+LIB_DEPENDS+=	devel/libglade2 \
+		x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk2
 CONFIGURE_ENV+= CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \

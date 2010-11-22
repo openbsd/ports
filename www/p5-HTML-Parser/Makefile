@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/11/22 08:36:51 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,12 +8,12 @@ MODULES =		cpan
 DISTNAME =		HTML-Parser-3.66
 REVISION =		0
 CATEGORIES =		www
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS =		:p5-HTML-Tagset->=3:www/p5-HTML-Tagset
+RUN_DEPENDS =		www/p5-HTML-Tagset>=3
 BUILD_DEPENDS =		${RUN_DEPENDS}
-REGRESS_DEPENDS =	::www/p5-URI \
-			::www/p5-libwww
+REGRESS_DEPENDS =	www/p5-URI \
+			www/p5-libwww
 
 MAINTAINER =		Srebrenko Sehic <haver@insecure.dk>
 

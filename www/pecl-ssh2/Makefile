@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,11 +26,11 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
-BUILD_DEPENDS=	:pear-*:www/pear \
+BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	::security/libssh2
-RUN_DEPENDS=	:php5-core-*:www/php5/core
+LIB_DEPENDS=	security/libssh2
+RUN_DEPENDS=	www/php5/core
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

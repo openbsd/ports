@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/09/15 14:25:19 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		industrial-grade ticketing system
 
@@ -13,50 +13,50 @@ HOMEPAGE=		http://www.bestpractical.com/rt/
 MASTER_SITES=		http://www.fsck.com/pub/rt/release/ \
 			ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
 
-RUN_DEPENDS=		::converters/p5-Calendar-Simple \
-			::databases/p5-DBIx-SearchBuilder \
-			::devel/p5-Data-ICal \
-			::devel/p5-Date-ICal \
-			::devel/p5-File-ShareDir \
-			::devel/p5-IPC-Run \
-			::devel/p5-IPC-Run-SafeHandles \
-			::devel/p5-Locale-Maketext-Fuzzy \
-			::devel/p5-Locale-Maketext-Lexicon \
-			::devel/p5-Log-Dispatch \
-			::devel/p5-MLDBM \
-			::devel/p5-Module-Refresh \
-			::devel/p5-Module-Versions-Report \
-			::devel/p5-Net-Server \
-			::devel/p5-PerlIO-eol \
-			::devel/p5-Term-ReadKey \
-			::devel/p5-Test-Inline \
-			::devel/p5-Test-WWW-Mechanize \
-			::devel/p5-Tree-Simple \
-			::devel/p5-Time-modules \
-			::devel/p5-Time-TimeDate \
-			::devel/p5-Universal-require \
-			::graphics/p5-GD-Graph \
-			::mail/p5-MIME-Types \
-			::mail/p5-MIME-tools \
-			::mail/p5-Email-Address \
-			::math/p5-GraphViz \
-			::security/p5-GnuPG-Interface \
-			::textproc/p5-Regexp-Common \
-			::textproc/p5-Text-Quoted \
-			::textproc/p5-Text-Template \
-			::textproc/p5-Text-WikiFormat \
-			::textproc/p5-Text-Wrapper \
-			::textproc/p5-XML-RSS \
-			::textproc/p5-XML-Simple \
-			::www/fcgi \
-			::www/p5-Apache-DBI \
-			::www/p5-Apache-Session \
-			::www/p5-Apache-Test \
-			::www/p5-CSS-Squish \
-			::www/p5-HTML-Format \
-			::www/p5-HTML-RewriteAttributes \
-			::www/p5-HTML-Scrubber \
-			::www/p5-HTTP-Server-Simple-Mason 
+RUN_DEPENDS=		converters/p5-Calendar-Simple \
+			databases/p5-DBIx-SearchBuilder \
+			devel/p5-Data-ICal \
+			devel/p5-Date-ICal \
+			devel/p5-File-ShareDir \
+			devel/p5-IPC-Run \
+			devel/p5-IPC-Run-SafeHandles \
+			devel/p5-Locale-Maketext-Fuzzy \
+			devel/p5-Locale-Maketext-Lexicon \
+			devel/p5-Log-Dispatch \
+			devel/p5-MLDBM \
+			devel/p5-Module-Refresh \
+			devel/p5-Module-Versions-Report \
+			devel/p5-Net-Server \
+			devel/p5-PerlIO-eol \
+			devel/p5-Term-ReadKey \
+			devel/p5-Test-Inline \
+			devel/p5-Test-WWW-Mechanize \
+			devel/p5-Tree-Simple \
+			devel/p5-Time-modules \
+			devel/p5-Time-TimeDate \
+			devel/p5-Universal-require \
+			graphics/p5-GD-Graph \
+			mail/p5-MIME-Types \
+			mail/p5-MIME-tools \
+			mail/p5-Email-Address \
+			math/p5-GraphViz \
+			security/p5-GnuPG-Interface \
+			textproc/p5-Regexp-Common \
+			textproc/p5-Text-Quoted \
+			textproc/p5-Text-Template \
+			textproc/p5-Text-WikiFormat \
+			textproc/p5-Text-Wrapper \
+			textproc/p5-XML-RSS \
+			textproc/p5-XML-Simple \
+			www/fcgi \
+			www/p5-Apache-DBI \
+			www/p5-Apache-Session \
+			www/p5-Apache-Test \
+			www/p5-CSS-Squish \
+			www/p5-HTML-Format \
+			www/p5-HTML-RewriteAttributes \
+			www/p5-HTML-Scrubber \
+			www/p5-HTTP-Server-Simple-Mason 
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes 
@@ -78,25 +78,25 @@ CONFIGURE_ARGS=		--with-rt-group=bin \
 			--enable-graphviz \
 			--enable-gd
 
-RUN_DEPENDS+=		:gnupg-<2:security/gnupg \
-			::graphics/gd \
-			::math/graphviz,-main
+RUN_DEPENDS+=		security/gnupg<2 \
+			graphics/gd \
+			math/graphviz,-main
 
-BUILD_DEPENDS+=		:gnupg-<2:security/gnupg \
-			::graphics/gd \
-			::math/graphviz,-main
+BUILD_DEPENDS+=		security/gnupg<2 \
+			graphics/gd \
+			math/graphviz,-main
 
 FLAVORS=		pgsql sqlite
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpgsql}
-RUN_DEPENDS+=		::databases/p5-DBD-Pg
+RUN_DEPENDS+=		databases/p5-DBD-Pg
 CONFIGURE_ARGS+=	--with-db-type=Pg
 .elif ${FLAVOR:L:Msqlite}
-RUN_DEPENDS+=		::databases/p5-DBD-SQLite
+RUN_DEPENDS+=		databases/p5-DBD-SQLite
 CONFIGURE_ARGS+=	--with-db-type=SQLite
 .else
-RUN_DEPENDS+=		::databases/p5-DBD-mysql
+RUN_DEPENDS+=		databases/p5-DBD-mysql
 .endif
 
 # needs an initialized database and /etc/rt3/RT_Config.pm to be present

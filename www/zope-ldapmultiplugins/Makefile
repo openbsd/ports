@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	PluggableAuthService plugins that use LDAP
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-ldapuserfolder
+RUN_DEPENDS=	www/zope-ldapuserfolder
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODZOPE_PRODUCTSDIR}

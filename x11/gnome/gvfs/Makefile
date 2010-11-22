@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/12 16:48:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:57 espie Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -25,27 +25,27 @@ WANTLIB += ORBit-2 c dbus-1 gconf-2 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
 WANTLIB += expat gpg-error z gcrypt gnome-keyring.>=6
 
-LIB_DEPENDS=	::x11/gnome/libgnome-keyring
+LIB_DEPENDS=	x11/gnome/libgnome-keyring
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += bz2 gnutls lzma m proxy soup-2.4 sqlite3
-WANTLIB-main += tasn1 xml2 archive soup-gnome-2.4.>=1
+WANTLIB-main += tasn1 xml2 archive soup-gnome-2.4>=1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 DESKTOP_FILES=	Yes
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		::archivers/libarchive \
-		::devel/libsoup,-gnome \
-		::net/avahi
+		archivers/libarchive \
+		devel/libsoup,-gnome \
+		net/avahi
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
-		:gamin-*:sysutils/gamin,-server
+		sysutils/gamin,-server
 
 WANTLIB-smb += ${WANTLIB} gvfscommon smbclient execinfo m talloc tdb wbclient
 RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
-		::${BASE_PKGPATH},-main \
-		::net/samba
+		${BASE_PKGPATH},-main \
+		net/samba
 
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

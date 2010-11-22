@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:05 espie Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
@@ -26,10 +26,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-LIB_DEPENDS =	::x11/gtkhotkey \
-		::devel/libwnck \
-		::devel/libexecinfo \
-		::devel/startup-notification
+LIB_DEPENDS =	x11/gtkhotkey \
+		devel/libwnck \
+		devel/libexecinfo \
+		devel/startup-notification
 
 WANTLIB += ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo

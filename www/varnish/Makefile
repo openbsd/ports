@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -21,12 +21,12 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c curses m pcre pthread
-LIB_DEPENDS = 		::devel/pcre
+LIB_DEPENDS = 		devel/pcre
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=varnish/}
 
 USE_LIBTOOL =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localstatedir=/var

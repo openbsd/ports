@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=		modular webapplication server for C++
 
@@ -32,12 +32,12 @@ MODULES+=		gcc3
 MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=		c++
 
-BUILD_DEPENDS=		::archivers/zip
-LIB_DEPENDS= 		::devel/cxxtools
+BUILD_DEPENDS=		archivers/zip
+LIB_DEPENDS= 		devel/cxxtools
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-ssl=openssl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

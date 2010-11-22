@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2010/11/13 13:07:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -44,13 +44,13 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			:gvfs->=1.0.3:x11/gnome/gvfs
-LIB_DEPENDS=		::graphics/libexif \
-			::x11/gnome/desktop \
-			::devel/libunique
+BUILD_DEPENDS=		misc/shared-mime-info>=0.21
+RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
+			x11/gnome/icon-theme \
+			x11/gnome/gvfs>=1.0.3
+LIB_DEPENDS=		graphics/libexif \
+			x11/gnome/desktop \
+			devel/libunique
 
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	nautilus

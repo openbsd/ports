@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -14,8 +14,8 @@ SHARED_LIBS +=	kolf                 4.0      # .3.0
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS = 	::x11/kde/libs3
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
 REVISION =	5
@@ -23,7 +23,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
 	gthread-2.0 idn jpeg kmedia2_idl kwalletclient lcms lib/kde3/DCOP \
-	lib/kde3/artskde lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdeprint \
+	lib/kde3/artskde lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/kio \
 	lib/kde3/kparts m mad mcop mng ogg pcre png pthread pthread-stubs \
 	qtmcop sndio soundserver_idl stdc++ util vorbis vorbisenc vorbisfile \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:56 espie Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-0.9.9.061
@@ -22,10 +22,10 @@ WANTLIB += GL GLU X11 Xau Xdmcp Xext Xrender crypto eina expat tiff
 WANTLIB += fontconfig freetype jpeg m pixman-1 pthread-stubs eet
 WANTLIB += ssl xcb xcb-image xcb-render xcb-shm z png gif
 
-LIB_DEPENDS =		::graphics/png \
-			::graphics/libungif \
-			::graphics/tiff \
-			::x11/e17/eet
+LIB_DEPENDS =		graphics/png \
+			graphics/libungif \
+			graphics/tiff \
+			x11/e17/eet
 
 # Eventually more loaders will be enabled,
 # -enable-gl-x11 might be added for some arch

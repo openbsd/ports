@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:05 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--datadir=${PREFIX}/share/examples \
 			--docdir=${PREFIX}/share/doc/tktreectrl
 FAKE_FLAGS = 		pkgdatadir=${PREFIX}/share/examples/tktreectrl
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 REGRESS_IS_INTERACTIVE =	X11
 REGRESS_TARGET =		test
 SUBST_VARS =		VERSION

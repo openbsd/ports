@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:50 espie Exp $
 
 COMMENT= 	HTML widget and validation framework for Catalyst
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
-		::www/p5-HTML-Widget
+RUN_DEPENDS=	www/p5-Catalyst-Runtime \
+		www/p5-HTML-Widget
 
 MAKE_ENV=	TEST_POD=Yes
 

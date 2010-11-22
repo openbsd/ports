@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/09/30 07:26:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,9 +35,9 @@ MODULES=	devel/gettext \
 		devel/cmake \
 		x11/qt4
 
-BUILD_DEPENDS=	::x11/kde4/automoc
+BUILD_DEPENDS=	x11/kde4/automoc
 
-LIB_DEPENDS=	::sysutils/polkit
+LIB_DEPENDS=	sysutils/polkit
 
 CONFIGURE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:01 espie Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -26,9 +26,9 @@ WANTLIB=	X11 ${MODTK_WANTLIB} itcl34
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
 LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
-		::devel/itcl
+		devel/itcl
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
-		::devel/itcl
+		devel/itcl
 
 ITCL_VERSION=	3.4
 

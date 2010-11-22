@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:54 espie Exp $
 
 COMMENT =	provide HAML support for Merb
 
 DISTNAME =	merb-haml-${VERSION}
 REVISION =	1
 
-RUN_DEPENDS =	:${MODRUBY_PKG_PREFIX}-merb-core->=${VERSION}:www/ruby-merb/core,${FLAVOR} \
-		:${MODRUBY_PKG_PREFIX}-haml-*:textproc/ruby-haml,${FLAVOR}
+RUN_DEPENDS =	www/ruby-merb/core,${FLAVOR}>=${VERSION} \
+		textproc/ruby-haml,${FLAVOR}
 
 .include <bsd.port.mk>

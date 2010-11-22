@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -28,7 +28,7 @@ WANTLIB +=		X11
 
 WRKDIST =		${WRKDIR}/htmlwidget
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LIBTkhtml30_VERSION=${LIBTkhtml30_VERSION}

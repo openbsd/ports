@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:51 espie Exp $
 
 COMMENT= 	record communication with an HTTP::Server::Simple
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/p5-HTTP-Server-Simple \
-		::devel/p5-IO-Tee 
+RUN_DEPENDS=	www/p5-HTTP-Server-Simple \
+		devel/p5-IO-Tee 
 
-REGRESS_DEPENDS=::www/p5-Test-HTTP-Server-Simple
+REGRESS_DEPENDS=www/p5-Test-HTTP-Server-Simple
 
 .include <bsd.port.mk>

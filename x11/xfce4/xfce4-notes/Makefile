@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 sticky notes panel plugin
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES =	Yes
 
-LIB_DEPENDS +=	::devel/libunique
+LIB_DEPENDS +=	devel/libunique
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-notes
 

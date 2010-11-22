@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	X11 image grabber
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 
 NO_REGRESS=		Yes

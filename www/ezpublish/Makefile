@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/24 16:36:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =	professional PHP application framework
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}/content/download/270150/2473822/version/3/file/
 EXTRACT_SUFX =	.tar.bz2
 
-RUN_DEPENDS =	:php5-gd-*:www/php5/extensions,-gd \
-		:php5-mbstring-*:www/php5/extensions,-mbstring
+RUN_DEPENDS =	www/php5/extensions,-gd \
+		www/php5/extensions,-mbstring
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes

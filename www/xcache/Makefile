@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 AUTOCONF_VERSION=	2.59
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			::www/php5/core \
-			:re2c->=0.13.4:devel/re2c
-RUN_DEPENDS+=		::www/php5/core
+			www/php5/core \
+			devel/re2c>=0.13.4
+RUN_DEPENDS+=		www/php5/core
 
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

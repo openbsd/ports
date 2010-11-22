@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -22,10 +22,10 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::x11/gnome/libbonobo \
-		::x11/gnome/vfs2 \
-		::devel/popt \
-		::audio/libcanberra
+LIB_DEPENDS=	x11/gnome/libbonobo \
+		x11/gnome/vfs2 \
+		devel/popt \
+		audio/libcanberra
 
 USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR= libgnome

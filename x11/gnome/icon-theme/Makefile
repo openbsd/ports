@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	base icon theme for GNOME
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	:gettext-*:devel/gettext \
-		:icon-naming-utils->=0.8.90:x11/icon-naming-utils
+BUILD_DEPENDS=	devel/gettext \
+		x11/icon-naming-utils>=0.8.90
 
 PKG_ARCH=	*
 

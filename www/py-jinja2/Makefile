@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/01 00:43:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
@@ -24,7 +24,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-REGRESS_DEPENDS =	::devel/py-nose
+REGRESS_DEPENDS =	devel/py-nose
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-jinja2

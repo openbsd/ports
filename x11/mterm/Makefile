@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		dockable program launcher
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mterm/}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		mterm

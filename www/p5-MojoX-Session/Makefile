@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
 
 COMMENT =	session management for Mojo
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CPAN_AUTHOR =	VTI
 
-RUN_DEPENDS =	::security/p5-Digest-SHA1 \
-		::www/p5-Mojo
+RUN_DEPENDS =	security/p5-Digest-SHA1 \
+		www/p5-Mojo
 
 MAKE_ENV +=	TEST_POD=1
 

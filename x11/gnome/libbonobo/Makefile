@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -22,16 +22,16 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 xml2 gio-2.0
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::devel/popt
-LIB_DEPENDS=	::devel/ORBit2 \
-		::devel/glib2 \
-		::textproc/libxml
+BUILD_DEPENDS=	devel/popt
+LIB_DEPENDS=	devel/ORBit2 \
+		devel/glib2 \
+		textproc/libxml
 
 USE_GROFF =	Yes
 
 # popt usage is deprecated in gnome, but the header file is still included
 # from some libbonobo header and might still be used inside libbonobo
-RUN_DEPENDS=   ::devel/popt
+RUN_DEPENDS=   devel/popt
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc

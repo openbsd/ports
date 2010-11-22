@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2010/10/06 08:13:31 landry Exp $
+# $OpenBSD: Makefile,v 1.111 2010/11/22 08:37:02 espie Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -59,47 +59,47 @@ CONFIGURE_ARGS += 	--enable-cups
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS =	::graphics/libart \
-		::devel/libidn \
-		::sysutils/gamin 
+LIB_DEPENDS =	graphics/libart \
+		devel/libidn \
+		sysutils/gamin 
 
 WANTLIB =	asn1 crypto gssapi util jpeg krb5 m X11 \
 		ICE Xrender c SM pthread stdc++ Xext z png \
 		Xau Xdmcp pthread-stubs xcb art_lgpl_2 idn \
-		fam.>=1
+		fam>=1
 
 LIB_DEPENDS-main =	\
 	${LIB_DEPENDS} \
-	::x11/kde/arts3 \
-	::devel/pcre \
-	:libxslt->=1.0.10:textproc/libxslt \
-	::archivers/bzip2 \
-	::graphics/tiff \
-	::graphics/jasper \
-	::graphics/openexr \
-	::textproc/aspell/core
+	x11/kde/arts3 \
+	devel/pcre \
+	textproc/libxslt>=1.0.10 \
+	archivers/bzip2 \
+	graphics/tiff \
+	graphics/jasper \
+	graphics/openexr \
+	textproc/aspell/core
 
 WANTLIB-main = ${WANTLIB}
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
-	::x11/hicolor-icon-theme \
-	:desktop-file-utils-*:devel/desktop-file-utils
+	x11/hicolor-icon-theme \
+	devel/desktop-file-utils
 
 LIB_DEPENDS-cups = \
 	${LIB_DEPENDS} \
-	::x11/kde/libs3 \
-	::print/cups
+	x11/kde/libs3 \
+	print/cups
 
 WANTLIB-cups = ${WANTLIB}
 
 REVISION-main = 11
 REVISION-cups = 6
-WANTLIB-main += Half Iex IlmImf.>=4 IlmThread Imath artsflow.>=1.0 \
+WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
 	jasper kmedia2_idl mad mcop ogg pcre pcreposix qtmcop sndio \
-	soundserver_idl tiff.>=35 vorbis vorbisenc vorbisfile xml2 xslt.>=1.10
-WANTLIB-cups += DCOP cups lib/kde3/kdecore.>=6 lib/kde3/kdefakes \
+	soundserver_idl tiff>=35 vorbis vorbisenc vorbisfile xml2 xslt>=1.10
+WANTLIB-cups += DCOP cups lib/kde3/kdecore>=6 lib/kde3/kdefakes \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdeprint_management \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts \
 	lib/kde3/kwalletclient ssl

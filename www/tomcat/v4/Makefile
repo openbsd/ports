@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 10:45:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:54 espie Exp $
 
 COMMENT-main=	Java servlet 2.3 and Java server pages 1.2 server
 COMMENT-admin=	administration web application
@@ -26,13 +26,13 @@ MULTI_PACKAGES=	-main -examples -admin
 MODULES=	java
 MODJAVA_VER=	1.4+
 
-BUILD_DEPENDS=	::archivers/gtar
+BUILD_DEPENDS=	archivers/gtar
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper
 
-RUN_DEPENDS-admin=	:tomcat->=4,<5:www/tomcat/v4,-main
+RUN_DEPENDS-admin=	tomcat->=4,<5:www/tomcat/v4,-main
 PREFIX-examples=	${CATALINA_BASE}
-RUN_DEPENDS-examples=	:tomcat-admin->=4,<5:www/tomcat/v4,-admin
+RUN_DEPENDS-examples=	tomcat-admin->=4,<5:www/tomcat/v4,-admin
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM=	Yes

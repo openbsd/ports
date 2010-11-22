@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/22 08:37:06 espie Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -44,22 +44,22 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 # ${FILESDIR}/migrate-xscreensaver-config.sh needs xsltproc
-BUILD_DEPENDS=		::textproc/libxslt
+BUILD_DEPENDS=		textproc/libxslt
 
 # note that we don't need desktop-file-utils for the -data subpackage
 # because the desktop files it installs are under a subdirectory of
 # ${LOCALBASE}/share/applications/
-RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils \
-			::x11/xscreensaver,-data
+RUN_DEPENDS-main=	devel/desktop-file-utils \
+			x11/xscreensaver,-data
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			::devel/libglade2
+			devel/libglade2
 
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
-			::graphics/gdk-pixbuf2
+			graphics/gdk-pixbuf2
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
@@ -76,9 +76,9 @@ FLAVOR?=		no_gle
 .if !${FLAVOR:L:Mno_gle}
 MULTI_PACKAGES+=	-gle
 LIB_DEPENDS-gle=	${MODGETTEXT_LIB_DEPENDS} \
-			::graphics/gle \
-			::x11/gtk+2
-RUN_DEPENDS-gle=	:xscreensaver-data-*:x11/xscreensaver,-data
+			graphics/gle \
+			x11/gtk+2
+RUN_DEPENDS-gle=	x11/xscreensaver,-data
 WANTLIB-gle=		${WANTLIB} gle gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
 CONFIGURE_ARGS+=	--with-gle
 .else

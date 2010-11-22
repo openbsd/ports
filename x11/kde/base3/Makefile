@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2010/11/22 08:37:02 espie Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-plugins =	Konqueror nsplugins, essentially native JDK
@@ -28,24 +28,23 @@ FLAVORS =		debug
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS =	::x11/kde/libs3
+LIB_DEPENDS =	x11/kde/libs3
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 fam idn jpeg \
-	lib/kde3/DCOP lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu \
+	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread-stubs \
 	stdc++ util xcb z
 
 RUN_DEPENDS-main =${RUN_DEPENDS} \
-		:desktop-file-utils-*:devel/desktop-file-utils
+		devel/desktop-file-utils
 
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
-		::x11/kde/libs3 \
-		:openldap-client->=2,<3:databases/openldap \
-		::security/cyrus-sasl2 \
-		::devel/libusb \
-		::devel/glib2
+		openldap-client->=2,<3:databases/openldap \
+		security/cyrus-sasl2 \
+		devel/libusb \
+		devel/glib2
 
 LIB_DEPENDS-samba = ${LIB_DEPENDS} \
-		:samba->=3:net/samba
+		net/samba>=3
 
 
 REVISION-main =		11

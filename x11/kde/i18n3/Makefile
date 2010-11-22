@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2009/06/29 15:33:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2010/11/22 08:37:02 espie Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -14,7 +14,7 @@ C = index.cache.bz2
 FLAVOR ?= fr
 SUBST_VARS = I C
 .if ${FLAVOR:L:Msr@latn}
-RUN_DEPENDS +=	::x11/kde/i18n3,sr
+RUN_DEPENDS +=	x11/kde/i18n3,sr
 FULLPKGNAME = kde-i18n-sr@Latn-${VERSION}
 .endif
 
@@ -42,8 +42,8 @@ VERSION =		3.5.10
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/3.5.10/src/kde-i18n/}
 
-BUILD_DEPENDS = ::x11/kde/libs3
-RUN_DEPENDS = ::x11/kde/libs3
+BUILD_DEPENDS = x11/kde/libs3
+RUN_DEPENDS = x11/kde/libs3
 
 PATCH_LIST +=	patch-*
 MODKDE_VERSION =

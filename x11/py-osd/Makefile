@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 21:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	::x11/xosd
+LIB_DEPENDS=	x11/xosd
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	collaborative web-based system for project management
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=webcollab/}
 
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
+RUN_DEPENDS=	www/php5/extensions,-mysql
 
 EXTRACT_ONLY=
 NO_BUILD=	Yes

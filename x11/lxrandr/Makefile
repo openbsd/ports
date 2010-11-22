@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	simple xrandr config tool
 
@@ -28,8 +28,8 @@ MODULES=	devel/gettext
 # needed for regress
 MODULES+=	textproc/intltool
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes
 

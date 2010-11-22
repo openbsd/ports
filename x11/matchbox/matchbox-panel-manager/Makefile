@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/11 08:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=		tray configuration utility
 DISTNAME=		matchbox-panel-manager-0.1
@@ -14,8 +14,8 @@ WANTLIB += z pthread-stubs xcb gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=		devel/gettext
 
-RUN_DEPENDS=		::devel/desktop-file-utils
-LIB_DEPENDS=		::x11/gtk+2
+RUN_DEPENDS=		devel/desktop-file-utils
+LIB_DEPENDS=		x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 

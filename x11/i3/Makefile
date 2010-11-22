@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/18 12:20:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:59 espie Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -24,14 +24,14 @@ WANTLIB +=	xcb-icccm xcb-keysyms xcb-property xcb-randr
 WANTLIB +=	xcb-xinerama yajl
 
 MODULES =	converters/libiconv
-LIB_DEPENDS =	::devel/libev \
-		::devel/libyajl
-BUILD_DEPENDS =	::devel/bison
-RUN_DEPENDS =	::x11/dmenu \
-		::devel/p5-IPC-Run \
-		::devel/p5-Try-Tiny \
-		::devel/p5-AnyEvent \
-		::x11/p5-AnyEvent-I3
+LIB_DEPENDS =	devel/libev \
+		devel/libyajl
+BUILD_DEPENDS =	devel/bison
+RUN_DEPENDS =	x11/dmenu \
+		devel/p5-IPC-Run \
+		devel/p5-Try-Tiny \
+		devel/p5-AnyEvent \
+		x11/p5-AnyEvent-I3
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes

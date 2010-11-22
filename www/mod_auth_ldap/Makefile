@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	Apache LDAP authentication module
 
@@ -25,7 +25,7 @@ WANTLIB += ldap lber
 MODAPACHE_NAME=		auth_ldap
 MODAPACHE_FILE=		${MODAPACHE_LOCATION}/auth_ldap.so
 
-LIB_DEPENDS=	::databases/openldap
+LIB_DEPENDS=	databases/openldap
 
 NO_REGRESS=	Yes
 

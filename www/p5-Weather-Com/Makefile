@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	module to get weather information from weather.com
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Time-Format \
-		::textproc/p5-XML-Simple \
-		::www/p5-URI \
-		::www/p5-libwww
+RUN_DEPENDS=	devel/p5-Time-Format \
+		textproc/p5-XML-Simple \
+		www/p5-URI \
+		www/p5-libwww
 
 .include <bsd.port.mk>

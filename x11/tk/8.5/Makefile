@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -57,9 +57,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS =		:tcl->=8.5.8p0,<8.5.9-${FLAVOR}:lang/tcl/8.5
+LIB_DEPENDS =		tcl->=8.5.8p0,<8.5.9-${FLAVOR}:lang/tcl/8.5
 .else
-LIB_DEPENDS =		:tcl->=8.5.8p0,<8.5.9:lang/tcl/8.5
+LIB_DEPENDS =		tcl->=8.5.8p0,<8.5.9:lang/tcl/8.5
 .endif
 WANTLIB +=		tcl85
 

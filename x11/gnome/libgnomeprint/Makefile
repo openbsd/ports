@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		printing framework for GNOME
 
@@ -25,11 +25,11 @@ WANTLIB += art_lgpl_2 xml2 gnomecups-1.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::devel/bison
-LIB_DEPENDS=		::devel/pango \
-			::graphics/libart \
-			::textproc/libxml \
-			::x11/gnome/libgnomecups
+BUILD_DEPENDS=		devel/bison
+LIB_DEPENDS=		devel/pango \
+			graphics/libart \
+			textproc/libxml \
+			x11/gnome/libgnomecups
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \

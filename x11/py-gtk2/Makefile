@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,10 +31,10 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	::devel/libglade2
-RUN_DEPENDS=	:py-cairo->=1.2:graphics/py-cairo \
-		:py-gobject->=2.26.0:devel/py-gobject \
-		::math/py-numpy
+LIB_DEPENDS=	devel/libglade2
+RUN_DEPENDS=	graphics/py-cairo>=1.2 \
+		devel/py-gobject>=2.26.0 \
+		math/py-numpy
 
 USE_GMAKE=	No
 

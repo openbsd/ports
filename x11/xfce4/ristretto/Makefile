@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
-RUN_DEPENDS=	::misc/shared-mime-info
+RUN_DEPENDS=	misc/shared-mime-info
 
-LIB_DEPENDS=	::x11/xfce4/thunar \
+LIB_DEPENDS=	x11/xfce4/thunar \
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 \

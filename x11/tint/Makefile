@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:37:04 espie Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -30,11 +30,11 @@ WANTLIB=	Imlib2.>=2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MASTER_SITES=	http://tint2.googlecode.com/files/
 
-LIB_DEPENDS=	::graphics/imlib2 \
-		::devel/pango \
-		::x11/gtk+2
-RUN_DEPENDS=	::x11/py-gtk2 \
-		::devel/desktop-file-utils
+LIB_DEPENDS=	graphics/imlib2 \
+		devel/pango \
+		x11/gtk+2
+RUN_DEPENDS=	x11/py-gtk2 \
+		devel/desktop-file-utils
 
 MODULES=	devel/cmake lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	web-based conference management software
 
@@ -30,7 +30,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/myreview
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
+RUN_DEPENDS=	www/php5/extensions,-mysql
 		
 do-install:
 	@cd ${PREFIX} && tar -zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

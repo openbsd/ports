@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/06 08:35:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	web-based payroll and time management suite
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timetrex/}
 
-RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd \
-		:php5-soap-*:www/php5/extensions,-soap \
-		::www/pear
+RUN_DEPENDS=	www/php5/extensions,-gd \
+		www/php5/extensions,-soap \
+		www/pear
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

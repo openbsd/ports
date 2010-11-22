@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
@@ -24,7 +24,7 @@ MODAPACHE_NAME=		ldapvhost
 
 NO_REGRESS=		Yes
 
-LIB_DEPENDS=		::databases/openldap
+LIB_DEPENDS=		databases/openldap
 
 do-build:
 	(cd ${WRKBUILD}; make)

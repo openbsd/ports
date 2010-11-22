@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		GNOME help browser
 
@@ -29,16 +29,16 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		:xulrunner-devel->=1.9.2:devel/xulrunner/1.9,-devel \
-			::x11/gnome/doc-utils
-RUN_DEPENDS=		::misc/shared-mime-info \
-			::textproc/docbook-dsssl \
-			::x11/gnome/user-docs \
-			::x11/gnome/doc-utils
-LIB_DEPENDS=		::devel/startup-notification \
-			:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
-			::textproc/libxslt \
-			::textproc/rarian
+BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9.2 \
+			x11/gnome/doc-utils
+RUN_DEPENDS=		misc/shared-mime-info \
+			textproc/docbook-dsssl \
+			x11/gnome/user-docs \
+			x11/gnome/doc-utils
+LIB_DEPENDS=		devel/startup-notification \
+			devel/xulrunner/1.9,-main>=1.9.2 \
+			textproc/libxslt \
+			textproc/rarian
 
 MODGCONF2_SCHEMAS_DIR=	yelp
 DESKTOP_FILES=		Yes

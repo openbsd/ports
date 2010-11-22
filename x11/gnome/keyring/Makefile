@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/10/27 11:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		password agent for the GNOME project
 
@@ -27,11 +27,11 @@ WANTLIB += z GL Xxf86vm drm xcb-shm
 MODULES=	devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	::devel/dconf
-LIB_DEPENDS=	::security/libgcrypt \
-		::security/libtasn1 \
-		::x11/dbus \
-		::x11/gtk+2
+RUN_DEPENDS=	devel/dconf
+LIB_DEPENDS=	security/libgcrypt \
+		security/libtasn1 \
+		x11/dbus \
+		x11/gtk+2
 
 CONFIGURE_ARGS=	--disable-schemas-compile \
 		--with-root-certs=/etc/ssl \

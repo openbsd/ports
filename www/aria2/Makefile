@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/06 07:52:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =		lightweight multi-protocol & multi-source download utility
 DISTNAME =		aria2-1.10.6
@@ -19,10 +19,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=aria2/}
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		::databases/sqlite3 \
-			::net/libcares
+LIB_DEPENDS =		databases/sqlite3 \
+			net/libcares
 
-REGRESS_DEPENDS +=	::devel/cppunit
+REGRESS_DEPENDS +=	devel/cppunit
 
 WANTLIB += 		crypto expat ssl cares \
 			sqlite3 c m stdc++ z

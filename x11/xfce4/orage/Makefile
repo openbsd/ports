@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/29 12:44:06 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/xfce4/xfce4-panel \
-		::devel/libnotify \
-		::x11/dbus-glib \
-		::x11/dbus
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/xfce4/xfce4-panel \
+		devel/libnotify \
+		x11/dbus-glib \
+		x11/dbus
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

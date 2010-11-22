@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/09/23 22:30:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
@@ -20,8 +20,8 @@ MODULES=	lang/ruby
 
 MASTER_SITES=	http://puppetlabs.com/downloads/dashboard/
 
-RUN_DEPENDS=	::databases/ruby-mysql \
-		::devel/ruby-rake \
+RUN_DEPENDS=	databases/ruby-mysql \
+		devel/ruby-rake \
 		${MODRUBY_ICONV_DEPENDS}
 
 PKG_ARCH=	*

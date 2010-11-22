@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/17 12:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 # stop systrace spam by avoiding xsltproc to access net
 pre-configure:

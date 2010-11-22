@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -30,13 +30,13 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
 WANTLIB += xcb xcb-render xcb-render-util xml2 z panel-applet-2
 
-LIB_DEPENDS=		::x11/gnome/panel
+LIB_DEPENDS=		x11/gnome/panel
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

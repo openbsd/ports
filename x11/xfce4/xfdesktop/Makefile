@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/10/29 12:44:06 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 desktop manager
 
@@ -17,10 +17,10 @@ DESKTOP_FILES=	Yes
 CONFIGURE_ARGS=	--enable-thunarx \
 		--enable-exo
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/xfce4/thunar \
-		::x11/xfce4/libxfce4menu \
-		::x11/xfce4/xfconf
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/xfce4/thunar \
+		x11/xfce4/libxfce4menu \
+		x11/xfce4/xfconf
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo dbus-1 \

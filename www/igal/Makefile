@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	online Image GALlery generator
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	::graphics/ImageMagick \
-		::graphics/jpeg \
-		::graphics/jhead
+RUN_DEPENDS=	graphics/ImageMagick \
+		graphics/jpeg \
+		graphics/jhead
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

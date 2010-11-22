@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	Reload changed modules for mod_perl
 
@@ -9,7 +9,7 @@ MODULES =	cpan
 USE_GROFF =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	::www/mod_perl
+RUN_DEPENDS =	www/mod_perl
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM =	Yes

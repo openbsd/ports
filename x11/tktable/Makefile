@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:05 espie Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--with-tkinclude=${MODTK_INCDIR}
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_ENV +=	SHLIB_VERSION=${LIBTktable${VER}_VERSION}
 

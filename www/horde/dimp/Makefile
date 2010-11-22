@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/30 22:42:06 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:48 espie Exp $ 
 
 COMMENT=	dynamic front-end for IMP webmail
 
@@ -9,6 +9,6 @@ DISTNAME=	dimp-h3-1.1.4
 REVISION=	0
 CATEGORIES=	mail
 
-RUN_DEPENDS=	::www/horde/imp
+RUN_DEPENDS=	www/horde/imp
 
 .include <bsd.port.mk>

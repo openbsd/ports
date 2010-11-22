@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2010/11/11 12:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -63,7 +63,7 @@ BASIC_AUTH+=	LDAP
 DIGEST_AUTH+=	ldap
 EXTERNAL_ACL+=	ldap_group
 WANTLIB+=	ldap lber
-LIB_DEPENDS+=	::databases/openldap
+LIB_DEPENDS+=	databases/openldap
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif

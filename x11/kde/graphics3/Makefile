@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2010/11/22 08:37:02 espie Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -28,34 +28,34 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 
 MODULES =		x11/kde devel/gettext
 
-BUILD_DEPENDS =		::print/texlive/base
+BUILD_DEPENDS =		print/texlive/base
 WANTLIB = ICE SM X11 Xau Xdmcp Xext art_lgpl_2 fam idn jpeg lib/kde3/DCOP \
-	lib/kde3/kdecore.>=6 lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui \
+	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/kio m png pthread-stubs qt-mt stdc++ util xcb z
 LIB_DEPENDS =		${MODGETTEXT_LIB_DEPENDS} \
-			::x11/kde/libs3
+			x11/kde/libs3
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			:ghostscript-*:print/ghostscript/gnu \
-			:desktop-file-utils-*:devel/desktop-file-utils
+			print/ghostscript/gnu \
+			devel/desktop-file-utils
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			::graphics/imlib \
-			::graphics/libungif \
-			::devel/fribidi \
-			::print/libpaper \
-			::print/poppler \
-			::print/poppler,-qt
+			graphics/imlib \
+			graphics/libungif \
+			devel/fribidi \
+			print/libpaper \
+			print/poppler \
+			print/poppler,-qt
 LIB_DEPENDS-kpov =	${LIB_DEPENDS}
 
-RUN_DEPENDS-kpov =	::graphics/povray \
-			:desktop-file-utils-*:devel/desktop-file-utils 
+RUN_DEPENDS-kpov =	graphics/povray \
+			devel/desktop-file-utils 
 
 LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
-			::graphics/libgphoto2
+			graphics/libgphoto2
 
-RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-sane =	devel/desktop-file-utils
 LIB_DEPENDS-sane =	${LIB_DEPENDS} \
-			::graphics/sane-backends
+			graphics/sane-backends
 
 WANTLIB-main = 		${WANTLIB}
 WANTLIB-kpov =		${WANTLIB}

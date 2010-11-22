@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		graphic disk usage viewer
 
@@ -20,7 +20,7 @@ MASTER_SITES=		http://sd.wareonearth.com/~phil/xdu/ \
 			ftp://ftp.arl.mil/pub/
 EXTRACT_SUFX=		.tar.Z
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 WRKDIST=		${WRKDIR}
 

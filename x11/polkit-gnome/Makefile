@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
@@ -34,8 +34,8 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	::sysutils/polkit \
-		::x11/gtk+2
+LIB_DEPENDS=	sysutils/polkit \
+		x11/gtk+2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,14 +31,14 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z cryptui
 WANTLIB += gtksourceview-2.0 nautilus-extension panel-applet-2
 
-BUILD_DEPENDS=	::x11/gnome/gedit
+BUILD_DEPENDS=	x11/gnome/gedit
 
-LIB_DEPENDS=	::x11/gnome/seahorse \
-		::x11/gtksourceview \
-		::x11/gnome/nautilus\
-		::x11/gnome/panel
+LIB_DEPENDS=	x11/gnome/seahorse \
+		x11/gtksourceview \
+		x11/gnome/nautilus\
+		x11/gnome/panel
 
-RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
+RUN_DEPENDS=	misc/shared-mime-info>=0.21
 
 MODULES=		devel/gettext \
 			x11/gnome \

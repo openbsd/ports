@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -28,10 +28,10 @@ WANTLIB += gsm gthread-2.0 speex
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =	:ffmpeg->=20080620p10:graphics/ffmpeg \
-		::graphics/libart \
-		::x11/wxWidgets
-WANTLIB += 	avcodec.>=13.1 avformat.>=12 avutil.>=6 swscale.>=1 \
+LIB_DEPENDS =	graphics/ffmpeg>=20080620p10 \
+		graphics/libart \
+		x11/wxWidgets
+WANTLIB += 	avcodec>=13.1 avformat>=12 avutil>=6 swscale>=1 \
 		art_lgpl_2 wx_base wx_base_net wx_base_odbc wx_base_xml \
 		wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid \
 		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc

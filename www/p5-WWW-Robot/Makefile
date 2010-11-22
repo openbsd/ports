@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=		configurable web traversal engine
 
@@ -12,12 +12,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::www/p5-HTML-Parser \
-			::www/p5-HTML-Tree \
-			::www/p5-URI \
-			::www/p5-libwww 
+RUN_DEPENDS=		www/p5-HTML-Parser \
+			www/p5-HTML-Tree \
+			www/p5-URI \
+			www/p5-libwww 
 
 .include <bsd.port.mk>

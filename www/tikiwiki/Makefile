@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/06 08:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
@@ -27,10 +27,10 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/tikiwiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd \
-		:php5-xmlrpc-*:www/php5/extensions,-xmlrpc \
-		:php5-mbstring-*:www/php5/extensions,-mbstring \
-		:php5-mysqli-*:www/php5/extensions,-mysqli
+RUN_DEPENDS=	www/php5/extensions,-gd \
+		www/php5/extensions,-xmlrpc \
+		www/php5/extensions,-mbstring \
+		www/php5/extensions,-mysqli
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

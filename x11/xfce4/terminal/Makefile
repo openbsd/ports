@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 19:03:55 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -19,9 +19,9 @@ DESKTOP_FILES=	Yes
 USE_GROFF =	Yes
 CONFIGURE_ARGS +=	--program-transform-name='s/Terminal/xfce4-terminal/'
 
-LIB_DEPENDS=	::x11/xfce4/exo \
-		::x11/dbus-glib \
-		::devel/vte
+LIB_DEPENDS=	x11/xfce4/exo \
+		x11/dbus-glib \
+		devel/vte
 
 WANTLIB=	X11 atk-1.0 c dbus-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		ICE SM Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \

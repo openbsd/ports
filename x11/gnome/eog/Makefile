@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/15 23:04:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -32,13 +32,13 @@ MODULES=		devel/gconf2 \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			::x11/gnome/desktop \
-			::graphics/libexif \
-			::graphics/lcms \
-			::x11/gnome/librsvg \
-			::devel/libgsf
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
+			x11/gnome/desktop \
+			graphics/libexif \
+			graphics/lcms \
+			x11/gnome/librsvg \
+			devel/libgsf
+RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
+			x11/gnome/icon-theme>=2.18.0
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

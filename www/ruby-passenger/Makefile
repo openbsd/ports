@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/18 14:16:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:54 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -26,10 +26,10 @@ WANTLIB =		c m pthread stdc++ ${MODRUBY_WANTLIB}
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS}
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::devel/ruby-rake \
-			::devel/ruby-fastthread \
-			::net/curl \
-			::www/ruby-rack
+RUN_DEPENDS =		devel/ruby-rake \
+			devel/ruby-fastthread \
+			net/curl \
+			www/ruby-rack
 
 PORTHOME =		${WRKDIR}
 

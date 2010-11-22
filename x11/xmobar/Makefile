@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:06 espie Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -19,11 +19,11 @@ WANTLIB =		X11 Xext Xinerama c gmp m pthread util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
 
-LIB_DEPENDS =		::devel/gmp
+LIB_DEPENDS =		devel/gmp
 
-BUILD_DEPENDS =		:hs-X11->=1.3.0:x11/hs-X11 \
-			::devel/hs-parsec \
-			::devel/hs-stm
+BUILD_DEPENDS =		x11/hs-X11>=1.3.0 \
+			devel/hs-parsec \
+			devel/hs-stm
 
 
 EXAMPLEDIR =		${PREFIX}/share/examples/xmobar

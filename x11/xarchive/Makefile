@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	GTK+2 front-end for command line archiving tools
 
@@ -28,8 +28,8 @@ WANTLIB += z pthread-stubs xcb gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes
 

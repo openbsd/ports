@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
@@ -26,11 +26,11 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::devel/libglade2 \
-			:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
-RUN_DEPENDS=		:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
-LIB_DEPENDS=		::x11/gnome/libgnomecanvas \
-			::x11/gnome/libgnomeprint
+BUILD_DEPENDS=		devel/libglade2 \
+			x11/gnome/icon-theme>=1.2.0
+RUN_DEPENDS=		x11/gnome/icon-theme>=1.2.0
+LIB_DEPENDS=		x11/gnome/libgnomecanvas \
+			x11/gnome/libgnomeprint
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc

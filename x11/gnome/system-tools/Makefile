@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/29 15:07:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,11 +31,11 @@ WANTLIB += polkit-gobject-1 polkit-gtk-1 GL Xxf86vm drm xcb-shm
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/liboobs \
-		::x11/polkit-gnome \
-		::x11/gnome/nautilus
+LIB_DEPENDS=	devel/liboobs \
+		x11/polkit-gnome \
+		x11/gnome/nautilus
 
-RUN_DEPENDS=	::devel/dconf
+RUN_DEPENDS=	devel/dconf
 
 DESKTOP_FILES=	Yes
 

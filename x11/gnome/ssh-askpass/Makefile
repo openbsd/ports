@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	simple GNOME SSH passphrase grabber
 
@@ -27,7 +27,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += gthread-2.0 pthread xcb-render xcb-render-util
 WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/gtk+2
+LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=none
 WRKDIST=	${WRKDIR}/${DISTNAME}/contrib

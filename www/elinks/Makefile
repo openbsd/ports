@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:48 espie Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -29,13 +29,13 @@ CONFIGURE_ARGS+=	--with-bzlib \
 
 # don't hide compiler command lines
 MAKE_ENV=		V=true
-LIB_DEPENDS+=		::archivers/bzip2 \
-			::devel/libidn
+LIB_DEPENDS+=		archivers/bzip2 \
+			devel/libidn
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::devel/gettext
+RUN_DEPENDS=		devel/gettext
 WANTLIB=		bz2 crypto c idn ssl z
 MODULES=		converters/libiconv
 
@@ -45,8 +45,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mlua}
 BROKEN=			has this ever worked?
 CONFIGURE_ARGS+=	--with-lua
-LIB_DEPENDS+=		::lang/lua
-WANTLIB+=		m lua.>=5.1
+LIB_DEPENDS+=		lang/lua
+WANTLIB+=		m lua>=5.1
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
@@ -60,8 +60,8 @@ WANTLIB+=		X11
 
 .if ${FLAVOR:L:Mjs}
 CONFIGURE_ARGS+=	--with-spidermonkey
-LIB_DEPENDS+=		::lang/spidermonkey
-WANTLIB+=		pthread js.>=2.0
+LIB_DEPENDS+=		lang/spidermonkey
+WANTLIB+=		pthread js>=2.0
 CFLAGS+=		-I${LOCALBASE}/include/js -pthread
 .else
 CONFIGURE_ARGS+=	--without-spidermonkey

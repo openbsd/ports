@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/25 09:56:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		passive web application security assessment tool
 
@@ -19,7 +19,7 @@ WANTLIB=		c crypto ssl
 
 MASTER_SITES=		${HOMEPAGE}/files/
 
-RUN_DEPENDS=		::shells/bash
+RUN_DEPENDS=		shells/bash
 
 WRKDIST=		${WRKDIR}/ratproxy/
 

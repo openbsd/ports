@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	touch typing tutor program
 
@@ -33,9 +33,9 @@ EXTRACT_SUFX = 	.tar.bz2
 
 MODULES =       devel/gettext
 
-LIB_DEPENDS = 	::x11/gtk+2 \
-		::x11/gtkdatabox \
-		::net/curl
+LIB_DEPENDS = 	x11/gtk+2 \
+		x11/gtkdatabox \
+		net/curl
 
 USE_GROFF =	Yes
 

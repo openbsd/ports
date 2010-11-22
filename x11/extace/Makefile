@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
@@ -24,9 +24,9 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread sndio z
 WANTLIB += pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2 \
-		::audio/esound \
-		::math/fftw3
+LIB_DEPENDS=	x11/gtk+2 \
+		audio/esound \
+		math/fftw3
 
 USE_LIBTOOL=	Yes
 

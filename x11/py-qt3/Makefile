@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	GL GLU X11 Xext Xmu c m pthread stdc++ qui
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-sip->=4.8.1:devel/py-sip
-LIB_DEPENDS=	::x11/qt3
+RUN_DEPENDS=	devel/py-sip>=4.8.1
+LIB_DEPENDS=	x11/qt3
 
 NO_REGRESS=	Yes
 

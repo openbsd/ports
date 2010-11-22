@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 14:22:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	educational application to solve physics problems
 
@@ -12,6 +12,6 @@ MASTER_SITES=	http://mirror.its.uidaho.edu/pub/savannah/fisicalab/
 
 MODULES=	x11/gnustep
 WANTLIB=	c m pthread gsl gslcblas
-LIB_DEPENDS=	::devel/gsl
+LIB_DEPENDS=	devel/gsl
 
 .include <bsd.port.mk>

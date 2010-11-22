@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
@@ -24,8 +24,8 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=F/FormEncode/}
 MODULES =		devel/gettext \
 			lang/python
 
-REGRESS_DEPENDS =	::databases/py-sqlobject \
-			::devel/py-nose
+REGRESS_DEPENDS =	databases/py-sqlobject \
+			devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

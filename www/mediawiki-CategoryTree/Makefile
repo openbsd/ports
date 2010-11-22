@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/08 08:03:08 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	dynamic view of the wiki's category structure as a tree
 
@@ -25,7 +25,7 @@ PKG_ARCH =	*
 PREFIX =	/var/www
 EXTENSIONSDIR =	${PREFIX}/mediawiki/extensions
 
-RUN_DEPENDS =	:mediawiki->=1.15.1:www/mediawiki
+RUN_DEPENDS =	www/mediawiki>=1.15.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${EXTENSIONSDIR}/CategoryTree

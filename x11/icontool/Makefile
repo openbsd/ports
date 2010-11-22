@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/22 22:01:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:37:00 espie Exp $
 
 COMMENT=	suite of tools for managing icons in an application
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/trunk/0.1/+download/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::textproc/p5-XML-Simple
+RUN_DEPENDS=	textproc/p5-XML-Simple
 
 USE_GMAKE=	Yes
 

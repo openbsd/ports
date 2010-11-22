@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	wsgi request and response object
 
@@ -21,12 +21,12 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebOb/}
 
 MODULES =	lang/python
 
-REGRESS_DEPENDS =	::devel/py-nose \
-			::devel/py-dtopt \
-			::www/py-repoze-profile \
-			::www/py-tempita \
-			::www/py-webtest \
-			::www/py-wsgiproxy
+REGRESS_DEPENDS =	devel/py-nose \
+			devel/py-dtopt \
+			www/py-repoze-profile \
+			www/py-tempita \
+			www/py-webtest \
+			www/py-wsgiproxy
 
 MODPY_SETUPTOOLS =	Yes
 

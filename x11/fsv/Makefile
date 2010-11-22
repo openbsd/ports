@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	3D filesystem visualizer
 
@@ -33,8 +33,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
 WANTLIB += xcb xml2 z gnomeui-2 gtkgl-2.0
 
-LIB_DEPENDS=	::x11/gnome/libgnomeui \
-		::x11/gtkglarea
+LIB_DEPENDS=	x11/gnome/libgnomeui \
+		x11/gtkglarea
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

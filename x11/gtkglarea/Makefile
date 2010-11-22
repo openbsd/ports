@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
@@ -26,7 +26,7 @@ WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=		::x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
 SEPARATE_BUILD= 	simple
 CONFIGURE_STYLE=	gnu

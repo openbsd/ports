@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=P/PasteDeploy/}
 
 MODULES =		lang/python
-RUN_DEPENDS =		::www/py-paste
+RUN_DEPENDS =		www/py-paste
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
-			::devel/py-py
+			devel/py-py
 
 MODPY_SETUPTOOLS =	Yes
 

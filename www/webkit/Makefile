@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/10/24 21:40:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =	open source web browser engine
 
@@ -47,8 +47,8 @@ CONFIGURE_ARGS+=--enable-introspection=no
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
 
-RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-ffmpeg \
-		::multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
@@ -60,18 +60,18 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread xcb-render-util \
 		tasn1 z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
 
-LIB_DEPENDS =	::x11/gtk+2,-main \
-		::multimedia/gstreamer-0.10/core \
-		::multimedia/gstreamer-0.10/plugins-base \
-		:icu4c->=4.4:textproc/icu4c \
-		::databases/sqlite3 \
-		::textproc/libxslt \
-		::textproc/enchant \
-		:libsoup->=2.28:devel/libsoup
+LIB_DEPENDS =	x11/gtk+2,-main \
+		multimedia/gstreamer-0.10/core \
+		multimedia/gstreamer-0.10/plugins-base \
+		textproc/icu4c>=4.4 \
+		databases/sqlite3 \
+		textproc/libxslt \
+		textproc/enchant \
+		devel/libsoup>=2.28
 
-BUILD_DEPENDS =	::devel/bison \
-		::devel/flex \
-		::devel/gperf
+BUILD_DEPENDS =	devel/bison \
+		devel/flex \
+		devel/gperf
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/WebCore/plugins/PluginDatabase.cpp

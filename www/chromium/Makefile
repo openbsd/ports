@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/11 19:06:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:47 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -35,14 +35,14 @@ MODULES =	devel/gettext \
 
 MODPY_RUNDEP =	No
 
-RUN_DEPENDS =	:gamin-*:sysutils/gamin,-server
-BUILD_DEPENDS =	::devel/gperf \
-		::devel/bison \
-		::shells/bash
-LIB_DEPENDS =	::devel/libexecinfo \
-		::archivers/bzip2 \
-		::security/nss \
-		::devel/gconf2
+RUN_DEPENDS =	sysutils/gamin,-server
+BUILD_DEPENDS =	devel/gperf \
+		devel/bison \
+		shells/bash
+LIB_DEPENDS =	devel/libexecinfo \
+		archivers/bzip2 \
+		security/nss \
+		devel/gconf2
 
 .include <bsd.own.mk>
 

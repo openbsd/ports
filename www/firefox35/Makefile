@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/11 09:30:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/22 08:36:48 espie Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -50,8 +50,8 @@ NO_REGRESS =	Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--enable-system-sqlite
-LIB_DEPENDS +=		:sqlite3->=3.6.16:databases/sqlite3
-WANTLIB +=		sqlite3.>=13.3
+LIB_DEPENDS +=		databases/sqlite3>=3.6.16
+WANTLIB +=		sqlite3>=13.3
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 			greprefs icons modules plugins res searchplugins

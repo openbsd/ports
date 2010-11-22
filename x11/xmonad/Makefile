@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 10:18:39 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:06 espie Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -29,13 +29,13 @@ MODGHC_BUILD =		cabal hackage haddock register
 MODGHC_BUILD +=		nort
 .endif
 
-BUILD_DEPENDS =		:hs-X11->=1.5.0.0:x11/hs-X11
-LIB_DEPENDS-lib =	:hs-X11->=1.5.0.0:x11/hs-X11
+BUILD_DEPENDS =		x11/hs-X11>=1.5.0.0
+LIB_DEPENDS-lib =	x11/hs-X11>=1.5.0.0
 RUN_DEPENDS-lib =	${LIB_DEPENDS-lib}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			::devel/gmp
+			devel/gmp
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1

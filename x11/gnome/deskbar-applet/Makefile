@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/17 20:40:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	universal search and navigation for GNOME
 
@@ -34,14 +34,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::x11/dbus-python \
-		::x11/gnome/py-gnome-desktop
-RUN_DEPENDS=	::x11/dbus-python \
-		::x11/gnome/py-gnome-desktop \
-		::devel/py-simplejson
-LIB_DEPENDS=	::databases/evolution-data-server \
-		::devel/libffi \
-		::x11/gnome/desktop
+BUILD_DEPENDS=	x11/dbus-python \
+		x11/gnome/py-gnome-desktop
+RUN_DEPENDS=	x11/dbus-python \
+		x11/gnome/py-gnome-desktop \
+		devel/py-simplejson
+LIB_DEPENDS=	databases/evolution-data-server \
+		devel/libffi \
+		x11/gnome/desktop
 
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	deskbar-applet

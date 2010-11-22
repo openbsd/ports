@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=		graphical predictive text input system
 
@@ -32,8 +32,8 @@ WANTLIB += util xml2 z
 WANTLIB += pthread-stubs xcb gcrypt gpg-error xcb-render
 WANTLIB += xcb-render-util gnomeui-2 cspi spi
 
-LIB_DEPENDS=		::x11/gnome/libgnomeui \
-			::x11/gnome/at-spi
+LIB_DEPENDS=		x11/gnome/libgnomeui \
+			x11/gnome/at-spi
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
@@ -46,6 +46,6 @@ CONFIGURE_ARGS+=	--disable-scrollkeeper \
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include " \
 			LDFLAGS="-L${LOCALBASE}/lib " \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

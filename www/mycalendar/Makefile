@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:49 espie Exp $
 
 COMMENT=	lightweight and easy to use web calendar
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	http://www.fuzzymonkey.org/files/
 
-RUN_DEPENDS=	:pscal-*:print/pscal \
-		:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS=	print/pscal \
+		print/ghostscript/gnu
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

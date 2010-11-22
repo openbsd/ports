@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/07/30 06:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:04 espie Exp $
 
 COMMENT=		Tango icon theme
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		textproc/intltool
 
-BUILD_DEPENDS=          :icon-naming-utils->=0.8.7:x11/icon-naming-utils \
-			:ImageMagick-*:graphics/ImageMagick
+BUILD_DEPENDS=          x11/icon-naming-utils>=0.8.7 \
+			graphics/ImageMagick
 
 CONFIGURE_STYLE= 	gnu
 USE_GMAKE=		Yes

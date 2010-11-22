@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/11 08:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::textproc/libxml
+LIB_DEPENDS=	textproc/libxml
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

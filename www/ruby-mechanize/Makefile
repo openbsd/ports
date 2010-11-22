@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=		automate interaction with websites
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODRUBY_RAKE_DEPENDS}
-RUN_DEPENDS=		:${MODRUBY_PKG_PREFIX}-nokogiri-*:textproc/ruby-nokogiri,${FLAVOR}
+RUN_DEPENDS=		textproc/ruby-nokogiri,${FLAVOR}
 
 MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem

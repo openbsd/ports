@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:06 espie Exp $
 
 COMMENT =	typing break alarm and timer
 
@@ -18,7 +18,7 @@ WANTLIB =		ICE SM X11 Xext Xinerama c m
 
 MASTER_SITES =		${HOMEPAGE}
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
 

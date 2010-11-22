@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/11 13:38:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -24,13 +24,13 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::databases/py-sqlite2 \
-		::devel/subversion,-python \
-		::print/enscript \
-		::textproc/py-docutils \
-		::textproc/py-pygments \
-		:clearsilver-*-python:www/clearsilver,python \
-		:py-genshi->=0.6:www/py-genshi
+RUN_DEPENDS=	databases/py-sqlite2 \
+		devel/subversion,-python \
+		print/enscript \
+		textproc/py-docutils \
+		textproc/py-pygments \
+		clearsilver-*-python:www/clearsilver,python \
+		www/py-genshi>=0.6
 
 do-regress:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py

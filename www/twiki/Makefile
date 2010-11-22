@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	web-based collaboration platform
 
@@ -20,7 +20,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-RUN_DEPENDS=	::www/p5-CGI-Session
+RUN_DEPENDS=	www/p5-CGI-Session
 
 WRKDIST=	${WRKDIR}
 

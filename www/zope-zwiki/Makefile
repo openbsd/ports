@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	Wiki engine for Zope
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-placelesstranslationservice
+RUN_DEPENDS=	www/zope-placelesstranslationservice
 
 WRKDIST=	${WRKDIR}/ZWiki
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=		GNOME speech module
 
@@ -19,8 +19,8 @@ WANTLIB += gthread-2.0 pcre pthread espeak bonobo-2 bonobo-activation
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		::audio/espeak \
-			::x11/gnome/libbonobo
+LIB_DEPENDS=		audio/espeak \
+			x11/gnome/libbonobo
 
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

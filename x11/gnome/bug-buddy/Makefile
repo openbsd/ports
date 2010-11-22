@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/19 08:13:56 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,13 +31,13 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::textproc/rarian \
-		::x11/gnome/doc-utils
-LIB_DEPENDS=	::databases/evolution-data-server \
-		::devel/libelf \
-		::x11/gnome/libbonobo \
-		::devel/libgtop2 \
-		::devel/eggdbus
+BUILD_DEPENDS=	textproc/rarian \
+		x11/gnome/doc-utils
+LIB_DEPENDS=	databases/evolution-data-server \
+		devel/libelf \
+		x11/gnome/libbonobo \
+		devel/libgtop2 \
+		devel/eggdbus
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf" \
 		LDFLAGS="-L${LOCALBASE}/lib"

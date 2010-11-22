@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	http proxying tools for wsgi apps
 
@@ -23,8 +23,8 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =	::devel/py-simplejson \
-		::www/py-paste
+RUN_DEPENDS =	devel/py-simplejson \
+		www/py-paste
 
 NO_REGRESS =	Yes
 

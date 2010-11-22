@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
 
 COMMENT =	HTML form creation, rendering and validation framework
 
@@ -15,32 +15,32 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =		::devel/p5-Class-Accessor-Chained \
-			::devel/p5-Class-C3 \
-			::devel/p5-Config-Any \
-			::devel/p5-Data-Visitor \
-			::devel/p5-Date-Calc \
-			::devel/p5-DateTime-Format-Builder \
-			::devel/p5-DateTime-Format-Natural \
-			::devel/p5-DateTime-Format-Strptime \
-			::devel/p5-DateTime-Locale \
-			::devel/p5-File-ShareDir \
-			::devel/p5-List-MoreUtils \
-			::devel/p5-Readonly \
-			::devel/p5-Regexp-Copy \
-			::devel/p5-Task-Weaken \
-			::devel/p5-YAML-Syck \
-			::graphics/p5-Captcha-reCAPTCHA \
-			::mail/p5-Email-Valid \
-			::security/p5-Crypt-CBC \
-			::security/p5-Crypt-DES \
-			::textproc/p5-Regexp-Common \
-			::textproc/p5-Template \
-			::www/p5-HTML-Scrubber \
-			::www/p5-HTML-TokeParser-Simple \
-			::www/p5-libwww
+RUN_DEPENDS =		devel/p5-Class-Accessor-Chained \
+			devel/p5-Class-C3 \
+			devel/p5-Config-Any \
+			devel/p5-Data-Visitor \
+			devel/p5-Date-Calc \
+			devel/p5-DateTime-Format-Builder \
+			devel/p5-DateTime-Format-Natural \
+			devel/p5-DateTime-Format-Strptime \
+			devel/p5-DateTime-Locale \
+			devel/p5-File-ShareDir \
+			devel/p5-List-MoreUtils \
+			devel/p5-Readonly \
+			devel/p5-Regexp-Copy \
+			devel/p5-Task-Weaken \
+			devel/p5-YAML-Syck \
+			graphics/p5-Captcha-reCAPTCHA \
+			mail/p5-Email-Valid \
+			security/p5-Crypt-CBC \
+			security/p5-Crypt-DES \
+			textproc/p5-Regexp-Common \
+			textproc/p5-Template \
+			www/p5-HTML-Scrubber \
+			www/p5-HTML-TokeParser-Simple \
+			www/p5-libwww
 
-REGRESS_DEPENDS =	::devel/p5-Test-NoWarnings
+REGRESS_DEPENDS =	devel/p5-Test-NoWarnings
 
 CONFIGURE_ARGS +=	--skipdeps
 

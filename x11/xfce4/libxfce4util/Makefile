@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/07/27 12:58:42 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=	Xfce4 basic utility library
 
@@ -18,6 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 
 WANTLIB=	c gthread-2.0 glib-2.0 gobject-2.0 pcre pthread
-LIB_DEPENDS=	::devel/glib2
+LIB_DEPENDS=	devel/glib2
 
 .include <bsd.port.mk>

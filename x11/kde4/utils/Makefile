@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, utils
 DISTNAME =		kdeutils-${VERSION}
@@ -17,17 +17,17 @@ SHARED_LIBS +=	oktetakastencore	0.0
 SHARED_LIBS +=	oktetakastengui 	0.0
 
 
-LIB_DEPENDS += 	::x11/kde4/libs \
-		::x11/kde4/pimlibs \
-		::devel/gmp \
-		::x11/kde4/qimageblitz \
-		::x11/kde4/base-workspace \
-		::x11/kde4/base \
-		:python->=2.6,<2.7:lang/python/2.6 \
-		::archivers/libarchive
+LIB_DEPENDS += 	x11/kde4/libs \
+		x11/kde4/pimlibs \
+		devel/gmp \
+		x11/kde4/qimageblitz \
+		x11/kde4/base-workspace \
+		x11/kde4/base \
+		python->=2.6,<2.7:lang/python/2.6 \
+		archivers/libarchive
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender archive c gmp kabc.>=5 \
-	kde3support kdecore.>=8 kdeui kfile khtml kio kjs knewstuff2 konq \
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender archive c gmp kabc>=5 \
+	kde3support kdecore>=8 kdeui kfile khtml kio kjs knewstuff2 konq \
 	kparts kpimutils kpty kresources krosscore kutils lib/qt4/Qt3Support \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \
 	lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread python2.6 qca qimageblitz \

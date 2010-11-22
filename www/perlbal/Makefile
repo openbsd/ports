@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/22 19:34:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=	Perl-based reverse proxy load balancer and web server
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::net/p5-Danga-Socket \
-		::net/p5-Net-Netmask \
-		::www/p5-libwww \
-		::devel/p5-BSD-Resource
+RUN_DEPENDS=	net/p5-Danga-Socket \
+		net/p5-Net-Netmask \
+		www/p5-libwww \
+		devel/p5-BSD-Resource
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODCPAN_EXAMPLES=	Yes

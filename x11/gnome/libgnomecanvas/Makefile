@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/18 13:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	graphics library for GNOME
 
@@ -27,8 +27,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/libglade2 \
-		::graphics/libart
+LIB_DEPENDS=	devel/libglade2 \
+		graphics/libart
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \

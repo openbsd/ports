@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:47 espie Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -20,7 +20,7 @@ WANTLIB += ICE SM X11 Xext Xt c expat m pthread-stubs xcb z
 
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 # I'm too lazy to write a proper imlib autoconf test.
-LIB_DEPENDS+=		::graphics/imlib
+LIB_DEPENDS+=		graphics/imlib
 
 WANTLIB += Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff gdk_imlib.>=19
 
@@ -28,8 +28,8 @@ WANTLIB += Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff gdk_imlib.>=19
 
 USE_MOTIF=		any
 WANTLIB += jpeg png
-LIB_DEPENDS+=		::graphics/jpeg \
-			::graphics/png 
+LIB_DEPENDS+=		graphics/jpeg \
+			graphics/png 
 CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-includes=${LOCALBASE}/include \
 			--with-motif-libraries=${LOCALBASE}/lib

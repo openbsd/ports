@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:49 espie Exp $
 
 COMMENT =	Apache PostgreSQL authentication module
 
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += pq.>=5
+WANTLIB += pq>=5
 
 MODAPACHE_NAME =	auth_pgsql
 
-LIB_DEPENDS =		:postgresql-client-*:databases/postgresql
+LIB_DEPENDS =		databases/postgresql
 
 NO_REGRESS =		Yes
 

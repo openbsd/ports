@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:05 espie Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
@@ -21,14 +21,14 @@ WANTLIB=		X11 Xext Xpm c m dockapp
 MASTER_SITES=		http://www.fcoutant.freesurf.fr/download/
 
 
-LIB_DEPENDS=		::devel/libdockapp
+LIB_DEPENDS=		devel/libdockapp
 
 FLAVORS=		gdk_pixbuf
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgdk_pixbuf}
 MAKE_FLAGS=		GDKPIXBUF2=1
-LIB_DEPENDS+=		::graphics/gdk-pixbuf2
+LIB_DEPENDS+=		graphics/gdk-pixbuf2
 CFLAGS+=		-pthread
 MAKE_ENV+=		LDFLAGS="-pthread"
 WANTLIB += pthread gdk_pixbuf_xlib-2.0

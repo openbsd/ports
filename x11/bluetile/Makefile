@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/27 09:38:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
 
 COMMENT =		modern tiling window manager
 
@@ -26,16 +26,16 @@ MODULES =		devel/gettext\
 			lang/ghc
 MODGHC_BUILD =		cabal hackage nort
 
-BUILD_DEPENDS =		::devel/hs-ConfigFile \
-			::devel/hs-glade \
-			::devel/hs-regex-compat \
-			:hs-X11->=1.4:x11/hs-X11 \
-			::x11/hs-X11-xft \
-			:hs-xmonad-contrib->=0.9.1:x11/hs-xmonad-contrib \
-			:xmonad-lib->=0.9.1:x11/xmonad,-lib
+BUILD_DEPENDS =		devel/hs-ConfigFile \
+			devel/hs-glade \
+			devel/hs-regex-compat \
+			x11/hs-X11>=1.4 \
+			x11/hs-X11-xft \
+			x11/hs-xmonad-contrib>=0.9.1 \
+			x11/xmonad,-lib>=0.9.1
 
-LIB_DEPENDS =		::devel/gmp \
-			::devel/libglade2
+LIB_DEPENDS =		devel/gmp \
+			devel/libglade2
 
 USE_GROFF =		Yes
 

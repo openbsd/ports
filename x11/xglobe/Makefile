@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -24,7 +24,7 @@ MODULES=		x11/qt3
 
 MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}
 
-RUN_DEPENDS=	::geo/openbsd-developers
+RUN_DEPENDS=	geo/openbsd-developers
 
 FLAVORS=	no_map
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
 
 COMMENT =	XSS filter using HTML::Parser
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS =	::www/p5-HTML-StripScripts \
-		::www/p5-HTML-Parser
+RUN_DEPENDS =	www/p5-HTML-StripScripts \
+		www/p5-HTML-Parser
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

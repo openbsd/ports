@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/03 22:19:02 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:59 espie Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
@@ -20,13 +20,13 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-BUILD_DEPENDS =		::devel/gtk2hs-buildtools
+BUILD_DEPENDS =		devel/gtk2hs-buildtools
 
-LIB_DEPENDS =		:hs-glib->=0.11.1,<0.12:devel/hs-glib \
-			:hs-gio->=0.11.1,<0.12:devel/hs-gio \
-			:hs-pango->=0.11.1,<0.12:devel/hs-pango \
-			:hs-cairo->=0.11.1,<0.12:graphics/hs-cairo \
-			::x11/gtk+2
+LIB_DEPENDS =		hs-glib->=0.11.1,<0.12:devel/hs-glib \
+			hs-gio->=0.11.1,<0.12:devel/hs-gio \
+			hs-pango->=0.11.1,<0.12:devel/hs-pango \
+			hs-cairo->=0.11.1,<0.12:graphics/hs-cairo \
+			x11/gtk+2
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 # tiny 2 GB are enough on amd64.... we need a BLOAT_WARNING

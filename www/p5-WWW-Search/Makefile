@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:52 espie Exp $
 
 COMMENT=		virtual base class for WWW searches
 
@@ -12,20 +12,20 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		::converters/p5-DateManip \
-			::devel/p5-File-Slurp \
-			::devel/p5-Test-File \
-			::mail/p5-Email-MIME-Creator \
-			::mail/p5-Email-Send \
-			::math/p5-Bit-Vector \
-			::misc/p5-User \
-			::www/p5-HTML-Parser \
-			::www/p5-HTML-Tree \
-			::www/p5-URI \
-			::www/p5-libwww
-REGRESS_DEPENDS=	::devel/p5-IO-Capture
+RUN_DEPENDS=		converters/p5-DateManip \
+			devel/p5-File-Slurp \
+			devel/p5-Test-File \
+			mail/p5-Email-MIME-Creator \
+			mail/p5-Email-Send \
+			math/p5-Bit-Vector \
+			misc/p5-User \
+			www/p5-HTML-Parser \
+			www/p5-HTML-Tree \
+			www/p5-URI \
+			www/p5-libwww
+REGRESS_DEPENDS=	devel/p5-IO-Capture
 
 MAKE_ENV+=		TEST_POD=Yes
 

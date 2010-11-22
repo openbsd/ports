@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.15 2010/11/11 09:30:36 jasper Exp $
+# $OpenBSD: mozilla.port.mk,v 1.16 2010/11/22 08:36:49 espie Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -19,21 +19,21 @@ MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT
 DISTNAME ?=	${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
 
-MODMOZ_RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
-MODMOZ_BUILD_DEPENDS =	:libIDL-*:devel/libIDL \
-			:zip->=2.3:archivers/zip
+MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
+MODMOZ_BUILD_DEPENDS =	devel/libIDL \
+			archivers/zip>=2.3
 
-MODMOZ_LIB_DEPENDS =	::x11/gtk+2 \
-			:nspr->=4.8.6:devel/nspr \
-			:nss->=3.12.8:security/nss
+MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
+			devel/nspr>=4.8.6 \
+			security/nss>=3.12.8
 
 MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
-		nspr4.>=21 nss3.>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 plc4.>=21 plds4.>=21 png pthread pthread-stubs \
-		smime3.>=25 sndio softokn3.>=25 ssl3.>=25 stdc++ xcb \
+		nspr4>=21 nss3>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 plc4>=21 plds4>=21 png pthread pthread-stubs \
+		smime3>=25 sndio softokn3>=25 ssl3>=25 stdc++ xcb \
 		xcb-render GL Xxf86vm drm xcb-shm z
 
 WANTLIB +=	${MODMOZ_WANTLIB}

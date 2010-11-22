@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/11 10:10:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 session manager
 
@@ -18,9 +18,9 @@ DESKTOP_FILES=	Yes
 
 CONFIGURE_ARGS=	--enable-session-screenshots
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/xfce4/xfconf \
-		::devel/libwnck
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/xfce4/xfconf \
+		devel/libwnck
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo dbus-1 \

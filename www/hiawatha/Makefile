@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:48 espie Exp $
 
 COMMENT=	secure webserver
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 
 WANTLIB += c crypto pthread ssl xml2 z xslt
 
-LIB_DEPENDS=	::textproc/libxslt
+LIB_DEPENDS=	textproc/libxslt
 
 WEBROOTDIR=	/var/hiawatha
 

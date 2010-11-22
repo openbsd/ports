@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 13:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:57 espie Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
@@ -27,9 +27,9 @@ WANTLIB += xcb-render xcb-render-util
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::devel/gconf2 \
-		::net/gnet \
-		::devel/libglade2
+LIB_DEPENDS=	devel/gconf2 \
+		net/gnet \
+		devel/libglade2
 
 DESKTOP_FILES=	Yes
 

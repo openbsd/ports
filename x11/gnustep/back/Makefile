@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	GNUstep gui backend
 
@@ -19,7 +19,7 @@ WANTLIB+= 	png cairo pthread-stubs xcb xcb-render xcb-shm
 WANTLIB+= 	Xdamage Xfixes Xxf86vm drm glib-2.0 gobject-2.0
 WANTLIB+= 	gthread-2.0 intl freetype z
 WANTLIB+=	GL X11 Xext Xmu Xt c m pthread
-LIB_DEPENDS=	::graphics/cairo
+LIB_DEPENDS=	graphics/cairo
 
 BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 SUBST_VARS=	BACKENDV

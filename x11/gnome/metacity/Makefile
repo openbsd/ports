@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/19 08:13:57 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,12 +32,12 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::devel/startup-notification \
-		::audio/libcanberra \
-		::devel/libgtop2
+LIB_DEPENDS=	devel/startup-notification \
+		audio/libcanberra \
+		devel/libgtop2
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::x11/gnome/doc-utils
-RUN_DEPENDS=	::x11/gnome/zenity
+		x11/gnome/doc-utils
+RUN_DEPENDS=	x11/gnome/zenity
 
 SEPARATE_BUILD=	concurrent
 DESKTOP_FILES=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:54 espie Exp $
 
 COMMENT=	customizable navigation bar for trac's wiki
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=		::www/trac
+RUN_DEPENDS=		www/trac
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

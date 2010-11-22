@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 13:18:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	VNC server for remote acces to your GNOME desktop
 
@@ -29,13 +29,13 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	::devel/libnotify \
-		::devel/libunique \
-		::security/gnutls \
-		::net/telepathy/telepathy-glib \
-		::devel/libsoup \
-		:libgnome-keyring-*:x11/gnome/libgnome-keyring \
-		::net/avahi
+LIB_DEPENDS=	devel/libnotify \
+		devel/libunique \
+		security/gnutls \
+		net/telepathy/telepathy-glib \
+		devel/libsoup \
+		x11/gnome/libgnome-keyring \
+		net/avahi
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes

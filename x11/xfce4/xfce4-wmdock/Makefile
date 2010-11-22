@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/11 08:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 WindowMaker dockapps wrapper panel plugin
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	::devel/libwnck
+LIB_DEPENDS=	devel/libwnck
 
 WANTLIB=	ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \

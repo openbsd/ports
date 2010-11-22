@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:49 espie Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -46,31 +46,31 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/xulrunner1.9" \
 USE_LIBTOOL =		Yes
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 
-BUILD_DEPENDS =		:xulrunner-devel->=1.9.2.6p1:devel/xulrunner/1.9,-devel
+BUILD_DEPENDS =		devel/xulrunner/1.9,-devel>=1.9.2.6p1
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			::devel/desktop-file-utils
+			devel/desktop-file-utils
 RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
-			::${BUILD_PKGPATH},-main
+			${BUILD_PKGPATH},-main
 RUN_DEPENDS-gecko =	${RUN_DEPENDS} \
-			:xulrunner->=1.9.2:devel/xulrunner/1.9,-main \
-			::${BUILD_PKGPATH},-main
+			devel/xulrunner/1.9,-main>=1.9.2 \
+			${BUILD_PKGPATH},-main
 
-LIB_DEPENDS =		::x11/gtk+2
+LIB_DEPENDS =		x11/gtk+2
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			::x11/dbus-glib \
-			::security/gnutls
+			x11/dbus-glib \
+			security/gnutls
 
 LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
-			::${BUILD_PKGPATH},-main
+			${BUILD_PKGPATH},-main
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			::www/webkit
+			www/webkit
 
 WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \

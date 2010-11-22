@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/27 11:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,13 +34,13 @@ WANTLIB += soup-gnome-2.4
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::net/gajim
+BUILD_DEPENDS=	net/gajim
 
-RUN_DEPENDS=	::archivers/zip \
-		::archivers/bzip2 \
-		::devel/dconf
-LIB_DEPENDS=	::x11/gnome/nautilus \
-		::databases/evolution-data-server
+RUN_DEPENDS=	archivers/zip \
+		archivers/bzip2 \
+		devel/dconf
+LIB_DEPENDS=	x11/gnome/nautilus \
+		databases/evolution-data-server
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \

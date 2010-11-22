@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/30 22:02:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -21,9 +21,9 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=B/Beaker/}
 
 MODULES =	lang/python
 
-REGRESS_DEPENDS = ::databases/py-sqlalchemy \
-		  ::devel/py-nose \
-		  ::www/py-webtest
+REGRESS_DEPENDS = databases/py-sqlalchemy \
+		  devel/py-nose \
+		  www/py-webtest
 
 MODPY_SETUPTOOLS = Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/03 22:19:02 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=		bindings for GHC to Xft, Freetype and Xrender
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES=	lang/ghc
 MODGHC_BUILD=	cabal hackage haddock register
 
-RUN_DEPENDS=	::x11/hs-X11
+RUN_DEPENDS=	x11/hs-X11
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

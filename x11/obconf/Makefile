@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	configuration utility for openbox
 
@@ -26,12 +26,12 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		obparser obrender
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	::x11/gtk+2 \
-		::devel/libglade2 \
-		::devel/startup-notification \
-		::x11/openbox
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info->=0.21:misc/shared-mime-info
+LIB_DEPENDS=	x11/gtk+2 \
+		devel/libglade2 \
+		devel/startup-notification \
+		x11/openbox
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info>=0.21
 
 USE_GMAKE=	Yes
 

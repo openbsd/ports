@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	framework to major mail protocols
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}.data/releases/Stable/
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 MODGNUSTEP_NEEDS_BASE=	No
-BUILD_DEPENDS=	:gnustep-base-*:x11/gnustep/base
+BUILD_DEPENDS=	x11/gnustep/base
 
 WRKDIST=	${WRKDIR}/Pantomime
 

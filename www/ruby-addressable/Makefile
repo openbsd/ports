@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:53 espie Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
@@ -19,7 +19,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	:${MODRUBY_PKG_PREFIX}-rcov-*:devel/ruby-rcov,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-rcov,${FLAVOR}
 
 MODRUBY_REGRESS =	rake rspec
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	read / write PHP session files
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Universal-require
+RUN_DEPENDS=	devel/p5-Universal-require
 
 .include <bsd.port.mk>

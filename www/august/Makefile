@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=	html editor designed for the experienced web designer
 
@@ -21,8 +21,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	x11/tk
 
-RUN_DEPENDS=	:weblint-*:www/weblint \
-		:ImageMagick-*:graphics/ImageMagick \
+RUN_DEPENDS=	www/weblint \
+		graphics/ImageMagick \
 		${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes

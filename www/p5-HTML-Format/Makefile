@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	HTML text formating class
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	:p5-HTML-Tree-*:www/p5-HTML-Tree \
-		:p5-Font-AFM-*:textproc/p5-Font-AFM
+RUN_DEPENDS=	www/p5-HTML-Tree \
+		textproc/p5-Font-AFM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

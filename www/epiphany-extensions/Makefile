@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:48 espie Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -41,8 +41,8 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:epiphany->=2.30.2:www/epiphany
-LIB_DEPENDS=	::security/libgpg-error
+RUN_DEPENDS=	www/epiphany>=2.30.2
+LIB_DEPENDS=	security/libgpg-error
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

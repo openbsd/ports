@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/10/26 21:42:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.71 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -11,9 +11,9 @@ SHARED_LIBS +=	smokekde             4.0      # .3.2
 
 MODULES =	x11/kde devel/gettext lang/ruby
 
-RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS =	::x11/kde/libs3 \
-		::x11/qt3 \
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS =	x11/kde/libs3 \
+		x11/qt3 \
 		${MODRUBY_LIB_DEPENDS}
 
 REVISION =	11
@@ -21,7 +21,7 @@ REVISION =	11
 USE_LIBTOOL =	gnu
 USE_GROFF =	Yes
 WANTLIB = GL GLU ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam \
-	fontconfig freetype idn jpeg lib/kde3/DCOP lib/kde3/kdecore.>=6 \
+	fontconfig freetype idn jpeg lib/kde3/DCOP lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/khtml lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kscript lib/kde3/kspell \
@@ -29,8 +29,8 @@ WANTLIB = GL GLU ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam \
 	pthread-stubs qui-mt stdc++ util xcb z ${MODRUBY_WANTLIB}
 
 PYTHON_VER =		2.5
-BUILD_DEPENDS =		:python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}
-#			::devel/tmake
+BUILD_DEPENDS =		python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}
+#			devel/tmake
 
 MAKE_FLAGS +=		TMAKEPATH=${LOCALBASE}/share/tmake/openbsd-g++/ \
 			PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}

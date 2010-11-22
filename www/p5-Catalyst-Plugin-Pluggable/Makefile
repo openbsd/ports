@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:50 espie Exp $
 
 COMMENT=		universal forwarder for catalyst applications
 
@@ -6,7 +6,7 @@ MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-Pluggable-0.04
 REVISION=		0
 CATEGORIES=		www devel
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::www/p5-Catalyst-Runtime
+RUN_DEPENDS=		www/p5-Catalyst-Runtime
 
 MAKE_ENV=		TEST_POD=Yes
 

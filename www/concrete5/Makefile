@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/21 09:32:23 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:47 espie Exp $
 
 COMMENT=	building material for websites
 
@@ -26,8 +26,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/concrete5
 SUBST_VARS=	INSTDIR
 
-BUILD_DEPENDS=	:unzip-*:archivers/unzip
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
+BUILD_DEPENDS=	archivers/unzip
+RUN_DEPENDS=	www/php5/extensions,-mysql
 
 do-install:
 	@cd ${PREFIX} && ${UNZIP} -oq ${FULLDISTDIR}/${DISTFILES}

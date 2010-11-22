@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	C++ wrapper for gtksourceview
 
@@ -30,8 +30,8 @@ WANTLIB += gtksourceview-2.0 gtkmm-2.4 atkmm-1.6 gdkmm-2.4
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gtksourceview \
-		::x11/gtk2mm
+LIB_DEPENDS=	x11/gtksourceview \
+		x11/gtk2mm
 
 USE_LIBTOOL=	Yes
 

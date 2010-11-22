@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:52:11 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:03 espie Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
@@ -13,7 +13,7 @@ CATEGORIES=	net
 WANTLIB += asn1 c com_err crypto gssapi jpeg krb5 m png stdc++ Xcomp
 WANTLIB += util z
 
-LIB_DEPENDS=	::x11/nx/nxcomp
+LIB_DEPENDS=	x11/nx/nxcomp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-bsd-auth \

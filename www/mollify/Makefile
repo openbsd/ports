@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/21 10:10:02 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:49 espie Exp $ 
 
 COMMENT=	simple and clean multi-user web file manager
 
@@ -27,7 +27,7 @@ WRKDIST=	${WRKDIR}/mollify
 
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-core-*:www/php5/core
+RUN_DEPENDS=	www/php5/core
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

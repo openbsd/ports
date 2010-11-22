@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		browser for wap/wml
 
@@ -19,13 +19,13 @@ MASTER_SITES=		${HOMEPAGE}
 CONFIGURE_STYLE=	perl
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::www/p5-libwww \
-			::www/p5-HTML-Parser \
-			::www/p5-URI \
-			::x11/p5-Tk
+RUN_DEPENDS=		www/p5-libwww \
+			www/p5-HTML-Parser \
+			www/p5-URI \
+			x11/p5-Tk
 
 NO_REGRESS=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 PKG_ARCH=		*
 
 .include <bsd.port.mk>

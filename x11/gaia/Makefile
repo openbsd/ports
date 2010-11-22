@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/06 23:49:19 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
@@ -28,12 +28,12 @@ MODSCONS_FLAGS=	prefix=${PREFIX} \
 		gpsd=1
 
 NO_REGRESS=	Yes
-LIB_DEPENDS=	::devel/sdl \
-		::misc/gpsd \
-		::net/curl \
-		::graphics/png \
-		::graphics/jpeg
-WANTLIB +=	SDL.>=6 gps.>=16 curl.>=4 png.>=5 jpeg.>=62
+LIB_DEPENDS=	devel/sdl \
+		misc/gpsd \
+		net/curl \
+		graphics/png \
+		graphics/jpeg
+WANTLIB +=	SDL>=6 gps>=16 curl>=4 png>=5 jpeg>=62
 
 pre-configure:
 	perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \

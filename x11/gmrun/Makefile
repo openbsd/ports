@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:56 espie Exp $
 
 COMMENT=		X11 program launcher
 
@@ -28,8 +28,8 @@ MODULES=		devel/gettext
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gmrun/}
 
-LIB_DEPENDS=		::x11/gtk+2 \
-			::devel/popt
+LIB_DEPENDS=		x11/gtk+2 \
+			devel/popt
 
 
 CONFIGURE_STYLE=	gnu

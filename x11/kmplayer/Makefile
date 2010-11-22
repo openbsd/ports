@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/30 12:03:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
 
 
 BROKEN=		Need to resolve various issues
@@ -43,9 +43,9 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		vorbisenc vorbisfile z kdecore DCOP kdefx kdesu kdeui kio \
 		kmediaplayer kparts artskde
 
-LIB_DEPENDS=::x11/kde/libs3
+LIB_DEPENDS=x11/kde/libs3
 
-RUN_DEPENDS=:mplayer-*:x11/mplayer
+RUN_DEPENDS=x11/mplayer
 
 SEPARATE_BUILD=flavored
 

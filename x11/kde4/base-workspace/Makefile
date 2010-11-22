@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
 
-LIB_DEPENDS +=	::x11/kde4/libs \
-		::x11/gnome/libxklavier \
-		::devel/libusb \
-		::multimedia/phonon \
-		::x11/kde4/qimageblitz \
-		::x11/kde4/akonadi \
-		::x11/kde4/pimlibs \
-		::misc/gpsd \
-		::audio/xmms \
+LIB_DEPENDS +=	x11/kde4/libs \
+		x11/gnome/libxklavier \
+		devel/libusb \
+		multimedia/phonon \
+		x11/kde4/qimageblitz \
+		x11/kde4/akonadi \
+		x11/kde4/pimlibs \
+		misc/gpsd \
+		audio/xmms \
 
-BUILD_DEPENDS +=	::x11/kde4/automoc
+BUILD_DEPENDS +=	x11/kde4/automoc
 
 SUBST_VARS +=	VERSION
 USE_GROFF =	Yes
@@ -47,13 +47,13 @@ SHARED_LIBS += systemsettingsview	0.0
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft \
 	Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc akonadi-kde \
 	akonadi-kmime c fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-	gps gthread-2.0 iconv intl kabc kde3support kdecore.>=8 kdefakes kdesu \
+	gps gthread-2.0 iconv intl kabc kde3support kdecore>=8 kdefakes kdesu \
 	kdeui kfile kholidays khtml kio kjs kmime knewstuff2 knewstuff3 \
 	knotifyconfig kparts kpimutils kpty kresources ktexteditor \
 	kunitconversion kutils lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui \
 	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg \
 	lib/qt4/QtWebKit lib/qt4/QtXml m microblog nepomuk \
-	nepomukquery strigiqtdbusclient phonon.>=5 plasma png pthread \
+	nepomukquery strigiqtdbusclient phonon>=5 plasma png pthread \
 	qimageblitz solid soprano stdc++ streamanalyzer syndication \
 	threadweaver usb util xklavier xml2 xmms z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/19 08:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:54 espie Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
@@ -19,7 +19,7 @@ MASTER_SITES =		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE = 	gnu
 USE_GMAKE =		yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 pre-configure:
 	@perl -pi -e 's,\.(1sr|1)\.gz,.1,g' ${WRKSRC}/links.IN
@@ -35,8 +35,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
 		${PREFIX}/share/doc/surfraw
 
-REGRESS_DEPENDS =	::www/p5-libwww \
-			::www/surfraw
+REGRESS_DEPENDS =	www/p5-libwww \
+			www/surfraw
 REGRESS_TARGET =	test
 
 .include <bsd.port.mk>

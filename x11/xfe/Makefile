@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/06 23:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -21,10 +21,10 @@ WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
 		m pthread stdc++ png z pthread-stubs util xcb
 
 MODULES=	devel/gettext textproc/intltool
-LIB_DEPENDS =	::devel/fox
-WANTLIB +=	FOX-1.6.>=1
+LIB_DEPENDS =	devel/fox
+WANTLIB +=	FOX-1.6>=1
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:47 espie Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xcursor Xext Xft Xi Xinerama Xrender c crypto fontconfig
 WANTLIB += m pthread pthread-stubs ssl stdc++ xcb z
-WANTLIB += jpeg.>=62 png.>=2
+WANTLIB += jpeg>=62 png>=2
 
 MODULES =	converters/libiconv
 
@@ -25,11 +25,11 @@ MASTER_SITES =	${HOMEPAGE}download/
 
 EXTRACT_SUFX =	.tar.bz2
 
-BUILD_DEPENDS =	::x11/fltk2
-LIB_DEPENDS =	::graphics/jpeg \
-		::graphics/png
+BUILD_DEPENDS =	x11/fltk2
+LIB_DEPENDS =	graphics/jpeg \
+		graphics/png
 # XXX dillo should be patched to use ftp(1)
-RUN_DEPENDS =	::net/wget
+RUN_DEPENDS =	net/wget
 
 USE_GMAKE =		Yes
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/11 08:19:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,12 +32,12 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xml2 z
 WANTLIB += xcb-render xcb-render-util gtksourceview-2.0
 
-LIB_DEPENDS=		::x11/gtksourceview
+LIB_DEPENDS=		x11/gtksourceview
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/libxslt \
-			::textproc/docbook-xsl
-RUN_DEPENDS=		:py-gobject->=2.15.2:devel/py-gobject \
-			::x11/py-gtk2
+			textproc/libxslt \
+			textproc/docbook-xsl
+RUN_DEPENDS=		devel/py-gobject>=2.15.2 \
+			x11/py-gtk2
 
 CONFIGURE_STYLE=	gnu
 

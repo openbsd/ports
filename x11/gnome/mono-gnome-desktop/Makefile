@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/11 08:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:58 espie Exp $
 
 COMMENT=	.NET language bindings for the GNOME desktop
 
@@ -35,13 +35,13 @@ MODULES=	devel/gettext \
 		lang/mono \
 		x11/gnome
 
-LIB_DEPENDS=	::x11/gnome/panel \
-		::www/gtkhtml3 \
-		::x11/gtksourceview \
-		::devel/vte
+LIB_DEPENDS=	x11/gnome/panel \
+		www/gtkhtml3 \
+		x11/gtksourceview \
+		devel/vte
 
-RUN_DEPENDS=	::x11/gnome/mono-gnome \
-		::x11/gnome/libgnomeprintui
+RUN_DEPENDS=	x11/gnome/mono-gnome \
+		x11/gnome/libgnomeprintui
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 DLLMAP_FILES=	gnomepanel/gnome-panel-sharp.dll.config \

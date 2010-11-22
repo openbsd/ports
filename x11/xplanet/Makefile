@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -21,14 +21,14 @@ WANTLIB=	X11 c charset expat fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 iconv intl m stdc++ z pango-1.0 gif jpeg png \
 		pangoft2-1.0
 
-LIB_DEPENDS=		::devel/pango \
-			::graphics/libungif \
-			::graphics/jpeg \
-			::graphics/png
+LIB_DEPENDS=		devel/pango \
+			graphics/libungif \
+			graphics/jpeg \
+			graphics/png
 
-RUN_DEPENDS=		::geo/openbsd-developers
+RUN_DEPENDS=		geo/openbsd-developers
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-xscreensaver \

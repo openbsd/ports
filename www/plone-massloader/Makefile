@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	.zip file importer for Plone
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-logger
+RUN_DEPENDS=	www/zope-logger
 
 WRKDIST=	${WRKDIR}/MassLoader-0.9b
 

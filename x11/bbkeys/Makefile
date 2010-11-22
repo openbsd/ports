@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=	X keygrabber for blackbox
 
@@ -25,7 +25,7 @@ MODULES=	converters/libiconv
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/blackbox
+RUN_DEPENDS=	x11/blackbox
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/18 12:18:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:55 espie Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
@@ -30,25 +30,25 @@ WANTLIB+=		xdg-basedir z
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-LIB_DEPENDS=		::devel/libexecinfo \
-			::devel/pango \
-			::devel/libev \
-			::devel/startup-notification \
-			::graphics/imlib2 \
-			::lang/lua \
-			::x11/dbus \
-			::x11/libxdg-basedir
+LIB_DEPENDS=		devel/libexecinfo \
+			devel/pango \
+			devel/libev \
+			devel/startup-notification \
+			graphics/imlib2 \
+			lang/lua \
+			x11/dbus \
+			x11/libxdg-basedir
 
-BUILD_DEPENDS=		::devel/gperf \
-			::devel/luadoc \
-			::textproc/asciidoc \
-			::textproc/xmlto \
-			::graphics/ImageMagick \
-			::devel/doxygen
+BUILD_DEPENDS=		devel/gperf \
+			devel/luadoc \
+			textproc/asciidoc \
+			textproc/xmlto \
+			graphics/ImageMagick \
+			devel/doxygen
 
-RUN_DEPENDS=		::graphics/feh \
-			::misc/rlwrap \
-			::shells/bash
+RUN_DEPENDS=		graphics/feh \
+			misc/rlwrap \
+			shells/bash
 
 MODULES=		devel/cmake
 
@@ -56,7 +56,7 @@ CONFIGURE_STYLE=	cmake
 
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

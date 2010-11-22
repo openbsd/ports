@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:01 espie Exp $
 
 PKG_ARCH=	*
 
@@ -26,8 +26,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
-		:itcl->=3.4,<3.5:devel/itcl \
-		:itk->=3.3,<3.4:x11/itk
+		itcl->=3.4,<3.5:devel/itcl \
+		itk->=3.3,<3.4:x11/itk
 REGRESS_DEPENDS=${RUN_DEPENDS}
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes

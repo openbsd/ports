@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:51 espie Exp $
 
 COMMENT=	setup CGI environment from HTTP::Request
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	::devel/p5-Class-Accessor \
-		::www/p5-libwww
+RUN_DEPENDS=	devel/p5-Class-Accessor \
+		www/p5-libwww
 
 .include <bsd.port.mk>

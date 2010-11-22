@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/11 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
 
 COMMENT=	LDAP adapter for Plone
 
@@ -21,8 +21,8 @@ MASTER_SITES=	http://www.etc.msys.ch/software/mirror/
 MODULES=	www/zope
 PY_FLAVOR=	python${MODZOPE_PYTHON_VERSION}
 
-RUN_DEPENDS=	:py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR} \
-		::www/zope-ldapmultiplugins
+RUN_DEPENDS=	py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR} \
+		www/zope-ldapmultiplugins
 
 WRKDIST=	${WRKDIR}/PloneLDAP
 

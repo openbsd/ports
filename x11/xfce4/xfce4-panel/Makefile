@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 desktop panel
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	::x11/xfce4/libxfcegui4 \
-		::x11/xfce4/exo \
-		::devel/libwnck
+LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
+		x11/xfce4/exo \
+		devel/libwnck
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo expat \

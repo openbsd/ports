@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/09 10:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/22 08:37:05 espie Exp $
 
 COMMENT =		VNC server for real X displays
 
@@ -24,10 +24,10 @@ USE_GROFF =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libvncserver/}
 MODULES =		x11/tk
-RUN_DEPENDS =		::devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			${MODTK_RUN_DEPENDS}
-LIB_DEPENDS =		::graphics/jpeg \
-			::net/avahi
+LIB_DEPENDS =		graphics/jpeg \
+			net/avahi
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

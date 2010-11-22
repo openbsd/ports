@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:59 espie Exp $
 
 COMMENT=	GNUstep base library
 
@@ -27,11 +27,11 @@ MODULES=	x11/gnustep \
 MODGNUSTEP_NEEDS_GUI=	No
 MODGNUSTEP_NEEDS_BASE=	No
 
-LIB_DEPENDS=	::devel/libffi \
-		::devel/gmp \
-		::textproc/libxslt \
-		::security/gnutls \
-		::net/avahi
+LIB_DEPENDS=	devel/libffi \
+		devel/gmp \
+		textproc/libxslt \
+		security/gnutls \
+		net/avahi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/avahi-compat-libdns_sd" \

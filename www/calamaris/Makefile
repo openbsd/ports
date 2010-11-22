@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:47 espie Exp $
 # $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
 
 COMMENT=		proxy-cache-servers logfiles analizer
@@ -18,7 +18,7 @@ MASTER_SITES=		http://cord.de/tools/squid/calamaris/
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 PKG_ARCH=		*
 
 do-install:

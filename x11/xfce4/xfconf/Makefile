@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/27 12:58:43 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:06 espie Exp $
 
 COMMENT=	Xfce4 settings daemon
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-LIB_DEPENDS=	::x11/xfce4/libxfce4util \
-		::x11/dbus-glib
+LIB_DEPENDS=	x11/xfce4/libxfce4util \
+		x11/dbus-glib
 
 CONFIGURE_ARGS=	--disable-perl-bindings
 

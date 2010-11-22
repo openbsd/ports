@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/10/18 13:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2010/11/22 08:36:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,8 +28,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pthread-stubs xcb xcb-render xcb-render-util gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gthread-2.0 gtk-x11-2.0
 
-LIB_DEPENDS=	::x11/gtk+2
-RUN_DEPENDS=	:hicolor-icon-theme-*:x11/hicolor-icon-theme
+LIB_DEPENDS=	x11/gtk+2
+RUN_DEPENDS=	x11/hicolor-icon-theme
 
 MODULES=		devel/gettext \
 			x11/gnome

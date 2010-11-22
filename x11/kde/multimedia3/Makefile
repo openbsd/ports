@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/07/10 12:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2010/11/22 08:37:02 espie Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
@@ -37,36 +37,36 @@ FLAVORS =	debug
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS = 	::x11/kde/libs3 \
-		::x11/kde/arts3 \
-		::audio/libogg \
-		::audio/flac \
-		::audio/libvorbis \
-		::audio/cdparanoia \
-		::audio/taglib \
-		:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
-		::devel/libtool,-ltdl \
-		::multimedia/libtheora \
-		::audio/akode \
-		::multimedia/xine-lib
+LIB_DEPENDS = 	x11/kde/libs3 \
+		x11/kde/arts3 \
+		audio/libogg \
+		audio/flac \
+		audio/libvorbis \
+		audio/cdparanoia \
+		audio/taglib \
+		gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
+		devel/libtool,-ltdl \
+		multimedia/libtheora \
+		audio/akode \
+		multimedia/xine-lib
 
 EXTRA_CONFIG =	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR =	${PREFIX}/share/apps/kde-conf-sample
 
 FAKE_FLAGS =	sysconfdir=${SAMPLECONFDIR}
-RUN_DEPENDS =	:xanim-*:graphics/xanim \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS =	graphics/xanim \
+		devel/desktop-file-utils
 
 SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
 REVISION =	7
-WANTLIB = FLAC.>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
+WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
 	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \
 	gthread-2.0 idn jpeg lib/kde3/DCOP lib/kde3/artsc lib/kde3/artsflow \
-	lib/kde3/artsflow_idl lib/kde3/artskde lib/kde3/kdecore.>=6 \
+	lib/kde3/artsflow_idl lib/kde3/artskde lib/kde3/kdecore>=6 \
 	lib/kde3/kdefakes lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/kmedia2_idl lib/kde3/kmediaplayer lib/kde3/kmid \
