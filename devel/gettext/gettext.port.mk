@@ -1,6 +1,6 @@
-# $OpenBSD: gettext.port.mk,v 1.11 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: gettext.port.mk,v 1.12 2010/11/22 10:04:18 espie Exp $
 
-_MODGETTEXT_SPEC =		gettext->=0.10.38:devel/gettext
+_MODGETTEXT_SPEC =		devel/gettext>=0.10.38
 
 MODGETTEXT_LIB_DEPENDS =	${_MODGETTEXT_SPEC} converters/libiconv
 MODGETTEXT_WANTLIB =		intl>=5 iconv>=6
