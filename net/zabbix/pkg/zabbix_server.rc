@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: zabbix_server.rc,v 1.1 2010/11/22 15:39:21 ajacoutot Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/zabbix_server"
+pexp="zabbix_server: main process"
+
+rc_pre() {
+	install -d -o _zabbix -g _zabbix /var/run/zabbix
+}
+
+rc_start() {
+	type rc_pre >/dev/null && rc_pre
+	getcap -f /etc/login.conf zabbix 1>/dev/null 2>&1 && _class=zabbix
+	su -c ${_class:-daemon} -m root -c "${daemon} ${daemon_flags}" >/dev/null
+}
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1

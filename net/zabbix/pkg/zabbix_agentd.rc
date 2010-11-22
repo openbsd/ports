@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: zabbix_agentd.rc,v 1.1 2010/11/22 15:39:21 ajacoutot Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/zabbix_agentd"
+pexp="zabbix_agentd: main process"
+
+rc_pre() {
+	install -d -o _zabbix -g _zabbix /var/run/zabbix
+}
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1

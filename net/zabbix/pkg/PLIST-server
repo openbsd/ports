@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2010/11/08 06:27:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2010/11/22 15:39:21 ajacoutot Exp $
+@conflict zabbix-agent-<=1.8.3p5
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
 @sample ${SYSCONFDIR}/zabbix/
 @bin sbin/zabbix_proxy
 @bin sbin/zabbix_server
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/zabbix/zabbix_proxy.conf
 @mode 640
 @group _zabbix
@@ -65,3 +67,12 @@ share/zabbix/schema/mysql.sql
 share/zabbix/schema/oracle.sql
 share/zabbix/schema/postgresql.sql
 share/zabbix/schema/sqlite.sql
+@mode 750
+@owner _zabbix
+@group _zabbix
+@sample /var/db/zabbix/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/zabbix_proxy
+@rcscript ${RCDIR}/zabbix_server
