@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2010/11/16 15:03:00 edd Exp $
+$OpenBSD: README,v 1.3 2010/11/22 11:52:51 edd Exp $
 
 TeX Live for OpenBSD - Notes
 =======================================================================
@@ -44,7 +44,8 @@ package less bloated for people who don't need those features.
 
 As far as I know:
 * You should install ruby and ImageMagick if you wish to use ConTeXt.
-* For texdoctk you will need p5-Tk
+  Don't forget to link your chosen ruby version to the default as detailed in
+  the ruby package's installation message.
 * asymptote is in ports: graphics/asymptote
 
 If you know more, please mail the package maintainer: <edd@openbsd.org>
