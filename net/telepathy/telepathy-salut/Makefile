@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/22 10:27:12 espie Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-salut/}
 
 WANTLIB += c crypto dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
-WANTLIB += m pcre pthread ssl tasn1 xml2 z soup-2.4.>=1 telepathy-glib
+WANTLIB += m pcre pthread ssl tasn1 xml2 z soup-2.4>=1 telepathy-glib
 WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
 
 MODULES=		devel/gettext \

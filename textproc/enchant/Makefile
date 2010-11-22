@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/22 10:27:12 espie Exp $
 
 COMMENT=	generic spell checking library/wrapper
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.abisource.com/downloads/enchant/${V}/
 
-WANTLIB=	c m pcre stdc++ aspell.>=16 glib-2.0 gmodule-2.0
+WANTLIB=	c m pcre stdc++ aspell>=16 glib-2.0 gmodule-2.0
 
 LIB_DEPENDS=	textproc/aspell/core \
 		devel/glib2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/22 10:27:12 espie Exp $
 
 COMMENT=		small and efficient HTTP crawler
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c event lib/db/db.=3
+WANTLIB=		c event lib/db/db=3
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
