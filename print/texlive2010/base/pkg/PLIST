@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/11/22 15:48:34 edd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/11/22 16:08:27 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -528,6 +528,7 @@ share/texmf-dist/scripts/epstopdf/epstopdf.pl
 share/texmf-dist/scripts/fig4latex/fig4latex
 share/texmf-dist/scripts/findhyph/
 share/texmf-dist/scripts/findhyph/findhyph
+share/texmf-dist/scripts/fontools/
 share/texmf-dist/scripts/fontools/afm2afm
 share/texmf-dist/scripts/fontools/autoinst
 share/texmf-dist/scripts/fontools/cmap2enc
@@ -551,7 +552,9 @@ share/texmf-dist/scripts/listings-ext/
 share/texmf-dist/scripts/listings-ext/listings-ext.sh
 share/texmf-dist/scripts/luaotfload/
 share/texmf-dist/scripts/luaotfload/mkluatexfontdb.lua
+share/texmf-dist/scripts/mathspic/
 share/texmf-dist/scripts/mathspic/mathspic.pl
+share/texmf-dist/scripts/mkgrkindex/
 share/texmf-dist/scripts/mkgrkindex/mkgrkindex
 share/texmf-dist/scripts/mkjobtexmf/
 share/texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
@@ -583,6 +586,7 @@ share/texmf-dist/scripts/ppower4/
 share/texmf-dist/scripts/ppower4/pdfthumb.tlu
 share/texmf-dist/scripts/ppower4/ppower4.tlu
 share/texmf-dist/scripts/pst-pdf/ps4pdf
+share/texmf-dist/scripts/pst2pdf/
 share/texmf-dist/scripts/pst2pdf/pst2pdf
 share/texmf-dist/scripts/purifyeps/
 share/texmf-dist/scripts/purifyeps/purifyeps
@@ -684,6 +688,7 @@ share/texmf-dist/scripts/vpe/vpe.pl
 @comment share/texmf/fonts/map/dvipdfm/dvipdfmx/cid-x.map
 share/texmf/scripts/a2ping/
 share/texmf/scripts/a2ping/a2ping.pl
+share/texmf/scripts/simpdftex/
 share/texmf/scripts/simpdftex/simpdftex
 share/texmf/scripts/tetex/e2pall.pl
 share/texmf/scripts/tetex/texdoctk.pl
