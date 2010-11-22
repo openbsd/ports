@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/02 08:53:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/22 11:16:33 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 bin/znc-config
@@ -49,8 +49,6 @@ lib/znc/fixfreenode.so
 lib/znc/keepnick.so
 lib/znc/kickrejoin.so
 lib/znc/lastseen.so
-lib/znc/modperl.pm
-lib/znc/modperl.so
 lib/znc/nickserv.so
 lib/znc/notes.so
 lib/znc/partyline.so
@@ -69,9 +67,13 @@ lib/znc/webadmin.so
 @man man/man1/znc-config.1
 @man man/man1/znc.1
 share/znc/
+share/znc/blockuser/
+share/znc/blockuser/tmpl/
+share/znc/blockuser/tmpl/blockuser_WebadminUser.tmpl
 share/znc/lastseen/
 share/znc/lastseen/tmpl/
 share/znc/lastseen/tmpl/index.tmpl
+share/znc/lastseen/tmpl/lastseen_WebadminUser.tmpl
 share/znc/notes/
 share/znc/notes/files/
 share/znc/notes/files/trash.gif
@@ -80,6 +82,7 @@ share/znc/notes/tmpl/index.tmpl
 share/znc/stickychan/
 share/znc/stickychan/tmpl/
 share/znc/stickychan/tmpl/index.tmpl
+share/znc/stickychan/tmpl/stickychan_WebadminChan.tmpl
 share/znc/webadmin/
 share/znc/webadmin/tmpl/
 share/znc/webadmin/tmpl/add_edit_chan.tmpl

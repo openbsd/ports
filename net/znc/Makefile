@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/22 11:16:33 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-0.094
+DISTNAME=	znc-0.096
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=znc/}
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c cares crypto m perl ssl stdc++ util
+WANTLIB=	c cares crypto m ssl stdc++
 
 LIB_DEPENDS=	net/libcares
 
