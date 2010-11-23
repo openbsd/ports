@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/23 06:00:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
-GNOME_VERSION=	1.0.11
-REVISION=	1
+GNOME_VERSION=	1.0.12
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -31,7 +30,9 @@ WANTLIB += gtksourceview-2.0 gmp mpfr vte
 MODULES=	devel/gettext \
 		x11/gnome
 
-RUN_DEPENDS=	misc/shared-mime-info>=0.21
+RUN_DEPENDS +=	misc/shared-mime-info
+# needs to run ps2epsi for EPS output
+RUN_DEPENDS +=	print/ghostscript/gnu
 LIB_DEPENDS=	x11/gtksourceview \
 		devel/gmp \
 		devel/mpfr \
