@@ -1,0 +1,22 @@
+$OpenBSD: patch-os_openbsd_cpp,v 1.1 2010/11/23 18:21:45 giovanni Exp $
+--- os_openbsd.cpp.orig	Wed Jul 15 21:59:19 2009
++++ os_openbsd.cpp	Mon Nov 15 19:39:48 2010
+@@ -92,7 +92,7 @@ guess_device_type(const char *dev_name)
+ int
+ get_dev_names(char ***names, const char *prefix)
+ {
+-  char *disknames, *p, **mp;
++  char *disknames, *p, *u, **mp;
+   int n = 0;
+   int sysctl_mib[2];
+   size_t sysctl_len;
+@@ -121,6 +121,9 @@ get_dev_names(char ***names, const char *prefix)
+     if (strncmp(p, prefix, strlen(prefix))) {
+       continue;
+     }
++    char * u = strchr(p, ':');
++    if (u)
++      *u = 0;
+     mp[n] = (char *)malloc(strlen(net_dev_prefix) + strlen(p) + 2);
+     if (!mp[n]) {
+       pout("Out of memory constructing scan device list\n");

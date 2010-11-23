@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/11 15:15:28 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/23 18:21:45 giovanni Exp $
 @man man/man5/smartd.conf.5
 @man man/man8/smartctl.8
 @man man/man8/smartd.8
@@ -13,3 +13,4 @@ share/doc/smartmontools/examplescripts/Example4
 share/doc/smartmontools/examplescripts/README
 share/doc/smartmontools/smartd.conf
 @sample ${SYSCONFDIR}/smartd.conf
+@rcscript ${RCDIR}/smartd

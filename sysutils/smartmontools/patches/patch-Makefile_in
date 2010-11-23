@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2010/01/11 15:15:28 giovanni Exp $
---- Makefile.in.orig	Wed Dec  9 22:01:59 2009
-+++ Makefile.in	Thu Jan  7 11:53:39 2010
-@@ -196,8 +196,8 @@ man5dir = $(mandir)/man5
+$OpenBSD: patch-Makefile_in,v 1.6 2010/11/23 18:21:45 giovanni Exp $
+--- Makefile.in.orig	Sat Oct 16 18:36:17 2010
++++ Makefile.in	Thu Oct 28 18:43:44 2010
+@@ -219,8 +219,8 @@ man5dir = $(mandir)/man5
  man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2010/01/11 15:15:28 giovanni Exp $
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
  AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
-@@ -413,15 +413,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
+@@ -442,15 +442,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
  @OS_SOLARIS_FALSE@                  smartd.8
  
  docsdir = $(docdir)
@@ -29,7 +29,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2010/01/11 15:15:28 giovanni Exp $
  
  sysconf_DATA = smartd.conf$(smartd_suffix)
  EXTRA_DIST = smartd.initd.in                       \
-@@ -952,16 +944,6 @@ uninstall-savestatesDATA:
+@@ -1074,16 +1066,6 @@ uninstall-savestatesDATA:
  	cd "$(DESTDIR)$(savestatesdir)" && rm -f $$files
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2010/01/11 15:15:28 giovanni Exp $
  
  uninstall-sysconfDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -1352,7 +1334,7 @@ info: info-recursive
+@@ -1475,7 +1457,7 @@ info: info-recursive
  info-am:
  
  install-data-am: install-attributelogDATA install-docsDATA \
