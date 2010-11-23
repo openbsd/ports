@@ -1,4 +1,7 @@
-$OpenBSD: README,v 1.1 2010/11/10 08:00:03 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/23 18:14:02 jasper Exp $
+
+Running Jackd on OpenBSD
+========================
 
 In this package of jackd, the 'dummy' and 'sndio' drivers are supported.
 The 'dummy' driver is mostly useful for testing jackd itself.  The
@@ -9,44 +12,43 @@ By default, jackd runs in full-duplex mode with a relatively low
 latency.  This may not be exactly what you want, and it may not be
 possible with all hardware.  Therefore, some configuration options may
 be necessary to effectively use jackd.  The 'sndio' driver options can
-be viewed with the command 'jackd -d sndio -h'.  Below are some tips
-and caveats to consider when using jackd on OpenBSD.
+be viewed with the command 'jackd -d sndio -h'.  Below are some tips and
+caveats to consider when using jackd on OpenBSD.
 
-   Some audio devices do not support full-duplex operation.  If jackd
-   errors out on startup with a message about opening a full-duplex
-   device, this is likely the problem.  If the device only supports
-   playback, then the driver needs to be configured to use 0 input
-   channels.  For example 'jackd -d sndio -i 0' starts jackd in
-   half-duplex play-only mode.
+Some audio devices do not support full-duplex operation.  If jackd
+errors out on startup with a message about opening a full-duplex device,
+this is likely the problem.  If the device only supports playback, then
+the driver needs to be configured to use 0 input channels.  For example
+'jackd -d sndio -i 0' starts jackd in half-duplex play-only mode.
 
-   By default jackd uses 2 periods (blocks) of 1024 frames each.  This
-   means there will be at most 2048 frames in the playback buffer.  Some
-   slower or loaded machines may not be able to keep the playback buffer
-   from underrunning with these conditions.  Jackd is designed to use 2
-   periods, so if underruns are observed, it is best to first increase
-   the period size with the driver's -p option.  The period size should
-   be a power of two.  The number of periods can be increased with the
-   -n option.  For example, 'jackd -d sndio -p 2048 -n 4'.
+By default jackd uses 2 periods (blocks) of 1024 frames each.  This
+means there will be at most 2048 frames in the playback buffer.  Some
+slower or loaded machines may not be able to keep the playback buffer
+from underrunning with these conditions.  Jackd is designed to use 2
+periods, so if underruns are observed, it is best to first increase the
+period size with the driver's -p option.  The period size should be a
+power of two.  The number of periods can be increased with the -n
+option.  For example, 'jackd -d sndio -p 2048 -n 4'.
 
-   The sndio driver uses 44100 Hz sampling rates by default.  Some
-   devices may not support the default sample rate.  Or it may be that
-   most of the audio that will pass through jackd is based on a
-   different sample rate.  Avoiding sample rate conversion will use
-   fewer CPU cycles and perserve audio quality.  The -r option can be
-   used to change the sampling rate as in 'jackd -d sndio -r 48000'.
+The sndio driver uses 44100 Hz sampling rates by default.  Some devices
+may not support the default sample rate.  Or it may be that most of the
+audio that will pass through jackd is based on a different sample rate.
+Avoiding sample rate conversion will use fewer CPU cycles and perserve
+audio quality.  The -r option can be used to change the sampling rate as
+in 'jackd -d sndio -r 48000'.
 
-   The realtime option -R is commonly used on other operating systems.
-   However, this option is inconsequential on OpenBSD.
+The realtime option -R is commonly used on other operating systems.
+However, this option is inconsequential on OpenBSD.
 
-   It is possible to run jackd on top of aucat(1) with the 'sndio'
-   driver.  However, the aucat server must be running at a higher than
-   default scheduling priority.  The aucat(1) manual has an example for
-   doing this with renice(8).  Note that jackd will use aucat's block
-   size as it's period size.  The following command sequence could be
-   used to run jackd over aucat.
+It is possible to run jackd on top of aucat(1) with the 'sndio' driver.
+However, the aucat server must be running at a higher than default
+scheduling priority.  The aucat(1) manual has an example for doing this
+with renice(8). Note that jackd will use aucat's block size as it's
+period size. The following command sequence could be used to run jackd
+over aucat.
 
-     $ aucat -l -b 1024 -z 1024
-     $ sudo renice -20 `pgrep -x aucat`
-     $ jackd -d sndio -p 1024 -n 2
+  $ aucat -l -b 1024 -z 1024
+  $ sudo renice -20 `pgrep -x aucat`
+  $ jackd -d sndio -p 1024 -n 2
 
-   There is currently no MIDI driver in jack that works on OpenBSD.
+There is currently no MIDI driver in jack that works on OpenBSD.
