@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/11/23 18:52:40 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
 COMMENT-qt=	lightweight BitTorrent client with Qt interface
 
-VER=		2.11
+VER=		2.12
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mirrors.m0k.org/transmission/files/
+MASTER_SITES=	http://download.m0k.org/transmission/files/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_gtk no_qt
@@ -37,7 +37,6 @@ LIB_DEPENDS=	net/curl \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-shared \
 		--disable-silent-rules \
