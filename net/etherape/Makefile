@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/23 19:51:48 jasper Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.9
-REVISION=	0
+REVISION=		0
 CATEGORIES =		net
 
 HOMEPAGE =		http://etherape.sourceforge.net/
@@ -37,7 +37,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS =		textproc/rarian
+BUILD_DEPENDS =		x11/gnome/doc-utils
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/libglade2 \
