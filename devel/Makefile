@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.855 2010/11/17 22:46:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.856 2010/11/23 20:11:25 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -144,6 +144,7 @@
      SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickCheck
+     SUBDIR += hs-atom
      SUBDIR += hs-binary
      SUBDIR += hs-cereal
      SUBDIR += hs-control-timeout
