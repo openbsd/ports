@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2010/11/23 13:56:18 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -9,7 +9,7 @@ V=		10.11
 OPERA_BUILD=	4791
 DISTNAME=	opera-${V}.gcc4-shared-qt3.i386
 PKGNAME=	opera-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
