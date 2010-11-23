@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1062 2010/11/20 19:57:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1063 2010/11/23 18:34:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1432,6 +1432,9 @@ _CHECK_DEPENDS +:= ${${_v}_DEPENDS}
 _CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
 .  endfor
 .endfor
+.if ${_CHECK_DEPENDS:M\:*}
+ERRORS += "Fatal: old style depends"
+.endif
 
 # normalization of depends to remove extra :
 
@@ -1854,7 +1857,7 @@ _internal-prepare: _internal-build-depends _internal-buildlib-depends \
 # and the rules for the actual dependencies
 
 _print-pkgspec:
-	@echo ${PKGSPEC${SUBPACKAGE}}
+	@echo '${PKGSPEC${SUBPACKAGE}}'
 
 _print-packagename:
 .if ${_FULL_PACKAGE_NAME:L} == "yes"
