@@ -1,0 +1,37 @@
+$OpenBSD: patch-gif2png_c,v 1.1 2010/11/23 08:34:39 jasper Exp $
+
+Fixes cmdline buffer overflow described in
+
+http://lists.grok.org.uk/pipermail/full-disclosure/2009-December/072002.html
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=550978
+
+From: http://cvs.fedoraproject.org/viewvc/rpms/gif2png/devel/gif2png-overflow.patch?revision=HEAD&root=extras&view=markup
+
+--- gif2png.c.orig	Tue Nov 23 09:28:41 2010
++++ gif2png.c	Tue Nov 23 09:30:36 2010
+@@ -682,7 +682,10 @@ int processfile(char *fname, FILE *fp)
+ 
+     strcpy(outname, fname);
+ 
+-    file_ext = outname+strlen(outname)-4;
++    file_ext = outname+strlen(outname);
++    if (file_ext >= outname + 4)
++	file_ext -= 4;
++
+     if (strcmp(file_ext, ".gif") != 0 && strcmp(file_ext, ".GIF") != 0 &&
+ 	strcmp(file_ext, "_gif") != 0 && strcmp(file_ext, "_GIF") != 0) {
+ 	/* try to derive basename */
+@@ -874,6 +877,13 @@ int main(int argc, char *argv[])
+ 	}
+     } else {
+ 	for (i = ac;i<argc; i++) {
++	    /* make sure that there is enough space for a '.p<NUM>' suffix;
++	       this check catches also the '.gif' case below. */
++	    if (strlen(argv[i]) >= sizeof name - sizeof ".p" - 3 * sizeof(int)) {
++		fprintf(stderr, "%s: name too long\n", argv[i]);
++		errors = 1;
++		continue;
++	    }
+ 	    strcpy(name, argv[i]);
+ 	    if ((fp = fopen(name, "rb")) == NULL) {
+ 		/* retry with .gif appended */
