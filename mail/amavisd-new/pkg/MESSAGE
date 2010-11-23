@@ -1,5 +1,0 @@
-Enable amavisd-new in /etc/rc.local with the following lines:
-
-if [ -x ${PREFIX}/sbin/amavisd ]; then
-	echo -n ' amavisd'; ${PREFIX}/sbin/amavisd
-fi
