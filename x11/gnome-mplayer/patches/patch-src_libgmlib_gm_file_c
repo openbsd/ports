@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libgmlib_gm_file_c,v 1.1 2010/11/23 08:51:29 dcoppa Exp $
+--- src/libgmlib/gm_file.c.orig	Tue Nov 23 08:44:47 2010
++++ src/libgmlib/gm_file.c	Tue Nov 23 08:46:25 2010
+@@ -26,7 +26,6 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <unistd.h>
+-#include <sys/socket.h> 
+ 
+ gchar *gm_tempname(gchar * path, const gchar * name_template)
+ {
