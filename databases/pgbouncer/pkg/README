@@ -1,17 +1,20 @@
-$OpenBSD: README,v 1.1 2010/11/08 08:53:05 jasper Exp $
+$OpenBSD: README,v 1.2 2010/11/23 18:14:19 jasper Exp $
 
-1) Carefully edit ${SYSCONFDIR}/pgbouncer/pgbouncer.ini and 
+Running pgbouncer on OpenBSD
+============================
+
+Post-installation steps:
+------------------------
+1. Carefully edit ${SYSCONFDIR}/pgbouncer/pgbouncer.ini and 
    ${SYSCONFDIR}/pgbouncer/userlist.txt to fit your needs.
 
-
-2) Launch pgbouncer in foreground mode to see if everything 
+2. Launch pgbouncer in foreground mode to see if everything 
    is ok:
 
    # install -d -o _pgbouncer /var/run/pgbouncer
    # pgbouncer -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
 
-
-3) Add the following to your /etc/rc.local:
+3. Add the following to your /etc/rc.local:
 
    if [ -x ${TRUEPREFIX}/bin/pgbouncer ]; then
 	echo -n 'pgbouncer'
@@ -20,9 +23,6 @@ $OpenBSD: README,v 1.1 2010/11/08 08:53:05 jasper Exp $
 		${SYSCONFDIR}/pgbouncer/pgbouncer.ini
    fi
 
-
-
-Random hints: 
-
-  * Check /var/log/pgbouncer/pgbouncer.log if something 
-    goes wrong
+Random hints:
+-------------
+Check /var/log/pgbouncer/pgbouncer.log if something goes wrong.

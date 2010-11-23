@@ -1,8 +1,10 @@
-$OpenBSD: README,v 1.2 2010/11/10 07:33:02 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2010/11/23 18:14:19 jasper Exp $
 
-Post-installation
------------------
+Running GNATS on OpenBSD
+========================
 
+Post-installation steps:
+------------------------
 1. Add the following to /etc/services:
 
 support         1529/tcp                # GNATS
@@ -12,8 +14,7 @@ support         1529/tcp                # GNATS
 support         stream  tcp     nowait  _gnats	${TRUEPREFIX}/libexec/gnats/gnatsd	gnatsd
 
 3. Edit the config files in ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm
-   (see the GNATS info documentation, HTML'ized at
-    http://sunsite.ualberta.ca/Documentation/Gnu/gnats-3.113/)
+   (see the GNATS info documentation and online HTML documentation)
    to your liking, then run (as root):
 
 	su -m _gnats -c '${TRUEPREFIX}/libexec/gnats/mkcat --directory=${TRUEPREFIX}/share/gnats/gnats-db'
@@ -45,7 +46,6 @@ increase privileges for all users of gnatsweb by changing 'view' to
 'edit', or for individual users by adding rules to
 ${TRUEPREFIX}/share/gnats/gnats-db/gnats-adm/gnatsd.access.
 
-Post-deinstallation
--------------------
-
-Reverse all of the above! :-)
+References:
+-----------
+Additional documentation at  http://sunsite.ualberta.ca/Documentation/Gnu/gnats-3.113/
