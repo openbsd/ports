@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/11 18:12:58 espie Exp $
---- Makefile.PL.orig	Sat Nov 11 16:22:03 2006
-+++ Makefile.PL	Sat Nov 11 16:22:16 2006
-@@ -8,11 +8,13 @@ abstract_from	('lib/App/CLI.pm');
+$OpenBSD: patch-Makefile_PL,v 1.2 2010/11/24 15:52:06 jasper Exp $
+--- Makefile.PL.orig	Sun Oct 24 18:08:27 2010
++++ Makefile.PL	Wed Nov 24 16:47:21 2010
+@@ -9,11 +9,13 @@ abstract_from	('lib/App/CLI.pm');
  license		('perl');
  version_from	('lib/App/CLI.pm');
  
@@ -13,5 +13,5 @@ $OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/11 18:12:58 espie Exp $
  );
 +=cut
  
- include('ExtUtils::AutoInstall');
  auto_install();
+ 
