@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/24 13:10:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/24 13:34:25 jasper Exp $
 
 COMMENT=		background browser and setter for X11
 
@@ -30,7 +30,6 @@ WANTLIB += pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
 WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		x11/gtk2mm
-RUN_DEPENDS=		x11/hicolor-icon-theme
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-xinerama \
