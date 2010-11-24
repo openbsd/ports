@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/24 15:14:45 sthen Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
 
-DISTNAME =		fping-2.4b2_to-ipv6
-PKGNAME =		${DISTNAME:S/_to-ipv6//}
-REVISION =		5
+DISTNAME =		fping-2.4b2_to4-ipv6
+PKGNAME =		${DISTNAME:S/_to4-ipv6//}
+REVISION =		6
 
 CATEGORIES =		net
 
-HOMEPAGE =		http://www.fping.com/
+HOMEPAGE =		http://fping.sf.net/
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
@@ -21,27 +21,31 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
-# upstream has no version number in filename
-#MASTER_SITES =		http://fping.sourceforge.net/download/
-MASTER_SITES =		http://spacehopper.org/mirrors/
+MASTER_SITES =		http://oss.oetiker.ch/smokeping/pub/
 
 CONFIGURE_STYLE =	gnu
+SEPARATE_BUILD =	simple
 CONFIGURE_ARGS =	--bindir=${PREFIX}/sbin
 COPTS +=		-DHAVE_PROGNAME
 USE_GROFF =		Yes
 
+pre-configure:
+	perl -pi -e 's,/usr/local/bin/fping,${LOCALBASE}/sbin/fping,g' \
+	    ${WRKSRC}/fping.8
+
 post-build:
-	cd ${WRKSRC}; \
-	    ${CC} -DHAVE_CONFIG_H -I. ${CFLAGS} -c fping.c -DIPV6 -o fping6.o; \
-	    ${CC} ${CFLAGS} -o fping6 fping6.o
+	cd ${WRKBUILD}; \
+	    ${CC} -DHAVE_CONFIG_H -I. -I${WRKSRC} ${CFLAGS} -c \
+		-DIPV6 -o fping6.o ${WRKSRC}/fping.c; \
+	    ${CC} ${LDFLAGS} ${CFLAGS} -o fping6 fping6.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/fping ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKBUILD}/fping6 ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKBUILD}/fping.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/fping.8 ${PREFIX}/man/man8
 	ln ${PREFIX}/man/man8/fping.8 ${PREFIX}/man/man8/fping6.8
 	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/fping
-	${INSTALL_MAN} ${WRKBUILD}/COPYING ${PREFIX}/share/doc/fping
-	${INSTALL_MAN} ${WRKBUILD}/README ${PREFIX}/share/doc/fping
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/fping
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/fping
 
 .include <bsd.port.mk>
