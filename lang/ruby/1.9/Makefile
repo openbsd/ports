@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/24 21:28:04 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -16,7 +16,12 @@ PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 
-REVISION-main =		0
+REVISION-main =		1
+REVISION-gdbm =		0
+REVISION-dbm =		0
+REVISION-tk =		0
+
+PKGSPEC-main =		ruby->=1.9,<1.10
 
 CONFIGURE_ARGS =	--program-suffix=19 \
 			--with-soname=ruby19 \
@@ -43,12 +48,12 @@ MULTI_PACKAGES =	-main -gdbm -dbm
 
 WANTLIB-gdbm =		c m gdbm ruby19
 LIB_DEPENDS-gdbm =	databases/gdbm \
-			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+			lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm =	
 
 WANTLIB-dbm =		c m db ruby19
 LIB_DEPENDS-dbm =	databases/db/v4 \
-			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+			lang/ruby/${REV},-main
 RUN_DEPENDS-dbm =	
  
 .if !${FLAVOR:L:Mno_x11}
@@ -58,15 +63,14 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-X11-dir=${X11BASE}
 WANTLIB-tk =		X11 c m ruby19 tcl85 tk85
 LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
-			ruby->=1.9,<=1.10:lang/ruby/${REV},-main
+			lang/ruby/${REV},-main
 RUN_DEPENDS-tk =	
 .endif
 
-# Known failure in Addrinfo IPv6 UDP loopack test on all arch
 # Known threading bootstraptest failures on i386 and macppc
 # Known endian issues in fiddle/dl on sparc64
 # Known bugs in OpenSSL extension on sparc64
-REGRESS_DEPENDS =	ruby->=1.9,<=1.10:${BUILD_PKGPATH}
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 SUBST_VARS +=		RUBYLIBREV
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_socket_lib_socket_rb,v 1.1 2010/11/24 21:28:04 jeremy Exp $
+
+Fix error where Socket.udp_server_sockets without a host argument
+will not include sockets for IPv6 link-local addresses.
+
+--- ext/socket/lib/socket.rb.orig	Wed Oct 20 04:03:38 2010
++++ ext/socket/lib/socket.rb	Wed Oct 20 04:03:45 2010
+@@ -507,7 +507,7 @@ class Socket < BasicSocket
+           next if !a.ipv4?
+           ip_list << Addrinfo.new(a.to_sockaddr, :INET, :DGRAM, 0);
+         }
+-      elsif ai.ipv6? && ai.ip_address == "::" && !ipv6_recvpktinfo
++      elsif ai.ipv6? && ai.ip_address == "::"
+         local_addrs.each {|a|
+           next if !a.ipv6?
+           ip_list << Addrinfo.new(a.to_sockaddr, :INET6, :DGRAM, 0);
