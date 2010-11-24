@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=	simple rake/rubygems helper for project Rakefiles
 
 DISTNAME=	hoe-2.3.3
-REVISION =      2
+REVISION =	3
 CATEGORIES=	devel
 
 # mit
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	STEM->=1.0.4:devel/ruby-rubyforge,${FLAVOR} \
+RUN_DEPENDS=	devel/ruby-rubyforge,${MODRUBY_FLAVOR}>=1.0.4 \
 		${MODRUBY_RAKE_DEPENDS}
 
 CONFIGURE_STYLE=ruby gem

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT =	CouchDB persistence layer written in Ruby
 
 DISTNAME =	couch_potato-0.2.12
-REVISION =      1
+REVISION =	2
 CATEGORIES =	databases
 
 HOMEPAGE =	http://github.com/langalex/couch_potato/
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-activesupport,${FLAVOR} \
-			databases/ruby-couchrest,${FLAVOR} \
-			databases/ruby-validatable,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-activesupport,${MODRUBY_FLAVOR} \
+			databases/ruby-couchrest,${MODRUBY_FLAVOR} \
+			databases/ruby-validatable,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

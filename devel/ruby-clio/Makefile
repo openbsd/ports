@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT=		Ruby library for creating command line tools
 
 DISTNAME=		clio-0.3.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 # LGPLv3

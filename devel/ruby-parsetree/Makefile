@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT =	extracts the parse tree for an entire class or a method
 
 DISTNAME =	ParseTree-3.0.4
 PKGNAME =	${DISTNAME:L}
-REVISION =      1
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.zenspider.com/ZSS/Products/ParseTree/
@@ -20,12 +20,12 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		STEM->=3.7.0:devel/ruby-rubyinline,${FLAVOR} \
-			STEM->=3.0.0:devel/ruby-sexp_processor,${FLAVOR} \
-			devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS =		devel/ruby-rubyinline,${MODRUBY_FLAVOR}>=3.7.0 \
+			devel/ruby-sexp_processor,${MODRUBY_FLAVOR}>=3.0.0 \
+			devel/ruby-hoe,${MODRUBY_FLAVOR}
 
-REGRESS_DEPENDS =	devel/ruby-ruby2ruby,${FLAVOR} \
-			devel/ruby-minitest,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-ruby2ruby,${MODRUBY_FLAVOR} \
+			devel/ruby-minitest,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

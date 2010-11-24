@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT =		light-weight application support
 
 DISTNAME =		assistance-0.1.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel lang/ruby
 
 MAINTAINER =		Clint Pachl <pachl@ecentryx.com>
@@ -18,7 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	devel/ruby-diff-lcs,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-diff-lcs,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS =	rake rspec
 RAKE_REGRESS_TARGET =	spec_no_cov
 

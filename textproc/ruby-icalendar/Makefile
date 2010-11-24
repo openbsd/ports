@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=		iCalendar support for Ruby
 
 DISTNAME=		icalendar-1.1.0
-REVISION =      	1
+REVISION =		2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://icalendar.rubyforge.org/

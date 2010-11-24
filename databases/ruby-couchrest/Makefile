@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT =	lean and RESTful interface to CouchDB
 
 DISTNAME =	couchrest-0.33
-REVISION =      1
+REVISION =	2
 CATEGORIES =	databases
 
 HOMEPAGE =	http://github.com/jchris/couchrest/
@@ -17,13 +17,13 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		converters/ruby-json,${FLAVOR} \
-			STEM->=1.0.3:www/ruby-rest-client,${FLAVOR} \
-			mail/ruby-mime-types,${FLAVOR}
+RUN_DEPENDS =		converters/ruby-json,${MODRUBY_FLAVOR} \
+			www/ruby-rest-client,${MODRUBY_FLAVOR}>=1.0.3 \
+			mail/ruby-mime-types,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	devel/ruby-extlib,${FLAVOR} \
+REGRESS_DEPENDS =	devel/ruby-extlib,${MODRUBY_FLAVOR} \
 			databases/apache-couchdb
 MODRUBY_REGRESS =	rake rspec
 

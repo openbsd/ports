@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 V=		1.0.0
 DISTNAME=	puppet-dashboard-$V
-REVISION=	0
+REVISION =	1
 CATEGORIES=	www sysutils
 EXTRACT_SUFX=	.tgz
 

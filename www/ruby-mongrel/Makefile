@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT=	fast HTTP library and server for Ruby
 
 DISTNAME=	mongrel-1.1.5
-REVISION=	1
+REVISION =	2
 CATEGORIES=	www
 
 MAINTAINER=	Jason LaRiviere <jason@indelicate.net>
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/ruby-daemons,${FLAVOR}>=1.0.3 \
-		devel/ruby-gem_plugin,${FLAVOR}>=0.2.3 \
-		devel/ruby-fastthread,${FLAVOR}>=1.0.1
+RUN_DEPENDS=	devel/ruby-daemons,${MODRUBY_FLAVOR}>=1.0.3 \
+		devel/ruby-gem_plugin,${MODRUBY_FLAVOR}>=0.2.3 \
+		devel/ruby-fastthread,${MODRUBY_FLAVOR}>=1.0.1
 
 CONFIGURE_STYLE=ruby gem ext
 

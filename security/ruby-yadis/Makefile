@@ -4,7 +4,7 @@ COMMENT =	library for verifying and serving OpenID identities
 
 DISTNAME = ruby-${PKGNAME}
 PKGNAME = yadis-0.3.4
-REVISION = 1
+REVISION = 2
 CATEGORIES = security
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>

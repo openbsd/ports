@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT=		automate interaction with websites
 
 DISTNAME=		mechanize-0.9.3
-REVISION =      	2
+REVISION =		3
 CATEGORIES=		www
 
 HOMEPAGE=		http://mechanize.rubyforge.org/mechanize
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODRUBY_RAKE_DEPENDS}
-RUN_DEPENDS=		textproc/ruby-nokogiri,${FLAVOR}
+RUN_DEPENDS=		textproc/ruby-nokogiri,${MODRUBY_FLAVOR}
 
 MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem

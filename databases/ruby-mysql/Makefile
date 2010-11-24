@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT=	access a MySQL database from Ruby
 
 DISTNAME=	mysql-2.8.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/

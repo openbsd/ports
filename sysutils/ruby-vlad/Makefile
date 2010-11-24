@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=		pragmatic application deployment automation
 
 DISTNAME=		vlad-2.0.0
-REVISION =      	1
+REVISION =		2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://rubyhitsquad.com/Vlad_the_Deployer.html
@@ -20,10 +20,10 @@ CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODRUBY_RAKE_DEPENDS} \
-			devel/ruby-open4,${FLAVOR} \
-			devel/ruby-hoe,${FLAVOR}
+			devel/ruby-open4,${MODRUBY_FLAVOR} \
+			devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 MODRUBY_REGRESS=	rake
-REGRESS_DEPENDS=	devel/ruby-minitest,${FLAVOR}
+REGRESS_DEPENDS=	devel/ruby-minitest,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT =	color value conversion and modification
 
 DISTNAME =	color-1.4.0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://color.rubyforge.org/
@@ -19,8 +19,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		archivers/ruby-archive-tar-minitar,${FLAVOR}>=0.5.0 \
-			devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS =		archivers/ruby-archive-tar-minitar,${MODRUBY_FLAVOR}>=0.5.0 \
+			devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${RUBY} test_all.rb

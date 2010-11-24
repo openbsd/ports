@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=	SNMP network management library for Ruby
 
 DISTNAME=	snmp-1.0.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 # bsd/ruby

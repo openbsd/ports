@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT=	wrap existing Ruby scripts to be run as a daemon
 
 DISTNAME=	daemons-1.0.10
-REVISION =      2
+REVISION =	3
 CATEGORIES=	devel
 
 # Ruby license

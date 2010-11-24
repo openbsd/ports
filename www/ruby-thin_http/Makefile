@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT =	lightweight and user friendly HTTP client library for Ruby
 
 DISTNAME =	thin_http-0.1.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
@@ -21,7 +21,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE = 	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		mail/ruby-mime,${FLAVOR}
+RUN_DEPENDS =		mail/ruby-mime,${MODRUBY_FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${SUDO} ${RUBY} -I../lib -rubygems \

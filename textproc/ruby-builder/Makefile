@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=	Ruby library to create XML markup and data structures
 
 DISTNAME=	builder-2.1.2
-REVISION =      2
+REVISION =	3
 CATEGORIES=	textproc
 
 # mit

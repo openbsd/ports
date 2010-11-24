@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=		pure Ruby implementation of eRuby
 
 DISTNAME=		erubis-2.6.5
-REVISION=		1
+REVISION =		2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.kuwata-lab.com/erubis/
@@ -19,7 +19,7 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/ruby-abstract,${FLAVOR}
+RUN_DEPENDS=		devel/ruby-abstract,${MODRUBY_FLAVOR}
 
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 

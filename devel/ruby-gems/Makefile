@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=	package management framework for the Ruby language
 
 V=		1.3.7
 DISTNAME=	rubygems-$V
 PKGNAME= 	ruby-gems-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/
@@ -23,8 +23,8 @@ MODULES= 	lang/ruby
 
 CONFIGURE_STYLE=ruby setup
 
-MAKE_ENV=	GEM_HOME=${PREFIX}/lib/ruby/gems/${MODRUBY_REV} \
-		RUBYLIB=${PREFIX}/lib/ruby/site_ruby/${MODRUBY_REV}
+MAKE_ENV=	GEM_HOME=${PREFIX}/lib/ruby/gems/${MODRUBY_LIBREV} \
+		RUBYLIB=${PREFIX}/lib/ruby/site_ruby/${MODRUBY_LIBREV}
 
 PORTHOME = 	${WRKDIR}
 
@@ -39,7 +39,7 @@ pre-install:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
 		--prefix=${PREFIX}
-	@mkdir -p ${WRKINST}${LOCALBASE}/lib/ruby/gems/${MODRUBY_REV}/{,cache,doc,gems,specifications}
+	@mkdir -p ${WRKINST}${LOCALBASE}/lib/ruby/gems/${MODRUBY_LIBREV}/{,cache,doc,gems,specifications}
 
 REGRESS_DEPENDS=	devel/ruby-hoe
 MODRUBY_REGRESS=	rake

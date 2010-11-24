@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=	simple creation of MIME email messages in Ruby
 
 DISTNAME=	mailfactory-1.4.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://rubyforge.org/projects/mailfactory/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		mail/ruby-mime-types,${FLAVOR}
+RUN_DEPENDS=		mail/ruby-mime-types,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE=	ruby gem
 

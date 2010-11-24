@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT =	encode/decode Adobe's binary-to-text
 
 DISTNAME =	Ascii85-0.9.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	textproc
 
 # mit
@@ -18,6 +18,6 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_REGRESS = 	rspec
-REGRESS_DEPENDS =	devel/ruby-hoe,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/17 15:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT =	allow UK users to download programmes from BBC iPlayer
 
 DISTNAME =	iplayer-dl-0.1.17
+REVISION =	0
 
 CATEGORIES =	multimedia
 

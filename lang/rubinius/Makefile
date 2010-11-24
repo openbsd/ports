@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/19 17:51:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/24 21:35:14 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	Ruby virtual machine and core library
 V=		1.1.1
 DISTNAME =	rubinius-${V}-20101116
 PKGNAME =	rubinius-$V
+REVISION =	0
 
 CATEGORIES =	lang lang/ruby
 
@@ -64,6 +65,6 @@ do-regress:
 	cd ${WRKSRC} && ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec
 
-REGRESS_DEPENDS = ${BUILD_PKGPATH}
+REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

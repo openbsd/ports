@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=		Ruby interface to gettext
 
 DISTNAME=		gettext-2.0.4
-REVISION =      	2
+REVISION =		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.yotabanana.com/hiki/ruby-gettext.html
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/ruby
 
-BUILD_DEPENDS=		devel/ruby-locale,${FLAVOR}
+BUILD_DEPENDS=		devel/ruby-locale,${MODRUBY_FLAVOR}
 RUN_DEPENDS=		${MODRUBY_ICONV_DEPENDS} \
-			devel/ruby-locale,${FLAVOR}
+			devel/ruby-locale,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE=	ruby gem
 

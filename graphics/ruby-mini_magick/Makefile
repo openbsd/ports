@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT =	wrapper for ImageMagick command line tools
 
 DISTNAME =	mini_magick-1.2.5
-REVISION =      1
+REVISION =	2
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://mini_magick.rubyforge.org/
@@ -20,7 +20,7 @@ CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		graphics/ImageMagick \
-			devel/ruby-hoe,${FLAVOR}
+			devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 MODRUBY_REGRESS =	rake
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT=		generic generator framework for Ruby
 
 DISTNAME=		rubigen-1.5.2
-REVISION =      	1
+REVISION =      	2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://rubigen.rubyforge.org/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/ruby-activesupport,${FLAVOR}
+RUN_DEPENDS=		devel/ruby-activesupport,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE=	ruby gem
 

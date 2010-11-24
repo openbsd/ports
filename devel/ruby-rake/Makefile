@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=	ruby make
 
 DISTNAME=	rake-0.8.7
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 # MIT License

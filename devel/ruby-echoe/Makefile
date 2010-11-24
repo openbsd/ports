@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
 DISTNAME =	echoe-3.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/fauna
@@ -18,8 +18,8 @@ MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		${MODRUBY_RAKE_DEPENDS} \
-			devel/ruby-rubyforge,${FLAVOR} \
-			devel/ruby-highline,${FLAVOR}
+			devel/ruby-rubyforge,${MODRUBY_FLAVOR} \
+			devel/ruby-highline,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

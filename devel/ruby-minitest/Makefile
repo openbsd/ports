@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
 DISTNAME =	minitest-1.4.2
-REVISION =      1
+REVISION =	2
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -20,6 +20,6 @@ CONFIGURE_STYLE = ruby gem
 
 MODRUBY_REGRESS = rake
 
-REGRESS_DEPENDS = devel/ruby-hoe,${FLAVOR}
+REGRESS_DEPENDS = devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

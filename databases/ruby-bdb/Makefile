@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT=		ruby interface to Berkeley DB
 DISTNAME=		bdb-0.6.2
-REVISION=		9
+REVISION=		10
 CATEGORIES=		databases
 
 HOMEPAGE=		http://moulon.inra.fr/ruby/bdb.html

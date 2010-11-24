@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT =	execute commands in parallel on multiple remote machines
 
 DISTNAME =	capistrano-2.5.9
-REVISION =	2
+REVISION =	3
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.capify.org/
@@ -19,13 +19,13 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		net/ruby-net-ssh,${FLAVOR} \
-			net/ruby-net-sftp,${FLAVOR} \
-			net/ruby-net-scp,${FLAVOR} \
-			net/ruby-net-ssh-gateway,${FLAVOR} \
-			devel/ruby-highline,${FLAVOR}
+RUN_DEPENDS =		net/ruby-net-ssh,${MODRUBY_FLAVOR} \
+			net/ruby-net-sftp,${MODRUBY_FLAVOR} \
+			net/ruby-net-scp,${MODRUBY_FLAVOR} \
+			net/ruby-net-ssh-gateway,${MODRUBY_FLAVOR} \
+			devel/ruby-highline,${MODRUBY_FLAVOR}
 
-REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 do-regress:
 	@cd ${WRKBUILD}/test && ${RUBY} -I../lib \

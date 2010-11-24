@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT =	wraps web resources in model classes
 
 DISTNAME =	activeresource-2.3.4
-REVISION =      1
+REVISION =	2
 CATEGORIES =	www
 
 # MIT License
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/ruby-activesupport,${FLAVOR}>=2.3.4
+RUN_DEPENDS =	devel/ruby-activesupport,${MODRUBY_FLAVOR}>=2.3.4
 
 CONFIGURE_STYLE =	ruby gem
 

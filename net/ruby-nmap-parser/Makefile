@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT =	Ruby interface to nmap scan data
 
 DISTNAME =	nmap-parser-0.3.2
-REVISION =      1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://rubynmap.sourceforge.net/

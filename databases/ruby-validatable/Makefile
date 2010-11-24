@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT =		provide ActiveRecord looking validations
 
 DISTNAME =		validatable-1.6.7
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases
 
 HOMEPAGE =		http://validatable.rubyforge.org/
@@ -18,7 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-REGRESS_DEPENDS =	devel/ruby-mocha,${FLAVOR}
+REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

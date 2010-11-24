@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:14 jeremy Exp $
 
 COMMENT=		embed C/++ external module code in your Ruby script
 
 DISTNAME=		RubyInline-3.8.3
 PKGNAME=		${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.zenspider.com/ZSS/Products/RubyInline/
@@ -20,10 +20,10 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/ruby-zentest,${FLAVOR} \
-			devel/ruby-hoe,${FLAVOR}
+RUN_DEPENDS=		devel/ruby-zentest,${MODRUBY_FLAVOR} \
+			devel/ruby-hoe,${MODRUBY_FLAVOR}
 
-REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH} \
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 			${MODRUBY_RAKE_DEPENDS}
 
 do-regress:

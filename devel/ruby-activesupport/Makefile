@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/08 23:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT =	utility classes and extensions for rails framework 
 
 DISTNAME =	activesupport-2.3.4
-REVISION =      1
+REVISION =	2
 CATEGORIES =	devel
 
 # MIT License

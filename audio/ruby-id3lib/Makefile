@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 16:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/24 21:35:13 jeremy Exp $
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
 VERSION=	0.5.0
 DISTNAME=	id3lib-ruby-${VERSION}
 PKGNAME=	id3lib-${VERSION}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -22,7 +22,7 @@ LIB_DEPENDS=	audio/id3lib
 
 CONFIGURE_STYLE=	ruby gem ext
 
-REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_REGRESS=	rake 
 
 .include <bsd.port.mk>

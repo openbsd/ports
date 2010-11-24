@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=	installer for Rails applications
 
 DISTNAME=	rails-app-installer-0.2.0
-REVISION =      4
+REVISION =	5
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://code.google.com/p/rails-app-installer/
@@ -21,8 +21,8 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	www/ruby-mongrel,${FLAVOR} \
-		sysutils/ruby-mongrel_cluster,${FLAVOR} \
-		databases/ruby-sqlite3,${FLAVOR}
+RUN_DEPENDS=	www/ruby-mongrel,${MODRUBY_FLAVOR} \
+		sysutils/ruby-mongrel_cluster,${MODRUBY_FLAVOR} \
+		databases/ruby-sqlite3,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

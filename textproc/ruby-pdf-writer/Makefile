@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT=	ruby extension for working with PDF documents
 
 DISTNAME=	pdf-writer-1.1.8
-REVISION =      1
+REVISION =	2
 CATEGORIES=	textproc
 
 # mit
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${MODRUBY_PKG_PREFIX}-transaction-simple-1.4.0:devel/ruby-transaction-simple,${FLAVOR} \
-		${MODRUBY_PKG_PREFIX}-color-1.4.0:graphics/ruby-color,${FLAVOR}
+RUN_DEPENDS=	STEM-1.4.0:devel/ruby-transaction-simple,${MODRUBY_FLAVOR} \
+		STEM-1.4.0:graphics/ruby-color,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE=ruby gem
 

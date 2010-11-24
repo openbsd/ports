@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/08 23:28:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:15 jeremy Exp $
 
 COMMENT=		Ruby interface to openssl
 
 DISTNAME=		ezcrypto-0.7.2
-REVISION =      	1
+REVISION =		2
 CATEGORIES=		security
 
 HOMEPAGE=		http://rubyforge.org/projects/ezcrypto/

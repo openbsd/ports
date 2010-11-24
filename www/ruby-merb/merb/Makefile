@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/24 21:35:16 jeremy Exp $
 
 COMMENT =	fast, lightweight MVC framework for Ruby
 
 DISTNAME =	merb-${VERSION}
-REVISION =	1
+REVISION =	2
 
-RUN_DEPENDS =	www/ruby-merb/more,${FLAVOR}>=${VERSION} \
-		www/ruby-merb/datamapper,${FLAVOR}>=${VERSION} \
-		databases/ruby-do_sqlite3,${FLAVOR} \
-		databases/ruby-datamapper/aggregates,${FLAVOR} \
-		databases/ruby-datamapper/serializer,${FLAVOR} \
-		databases/ruby-datamapper/sweatshop,${FLAVOR} \
-		databases/ruby-datamapper/timestamps,${FLAVOR} \
-		databases/ruby-datamapper/types,${FLAVOR} \
-		databases/ruby-datamapper/validations,${FLAVOR}
+RUN_DEPENDS =	www/ruby-merb/more,${MODRUBY_FLAVOR}>=${VERSION} \
+		www/ruby-merb/datamapper,${MODRUBY_FLAVOR}>=${VERSION} \
+		databases/ruby-do_sqlite3,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/aggregates,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/serializer,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/sweatshop,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/timestamps,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/types,${MODRUBY_FLAVOR} \
+		databases/ruby-datamapper/validations,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
