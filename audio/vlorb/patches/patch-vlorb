@@ -1,9 +1,18 @@
-$OpenBSD: patch-vlorb,v 1.4 2003/08/03 01:07:40 naddy Exp $
---- vlorb.orig	Mon Jul 28 00:20:32 2003
-+++ vlorb	Mon Jul 28 00:20:41 2003
+$OpenBSD: patch-vlorb,v 1.5 2010/11/24 08:24:32 jasper Exp $
+--- vlorb.orig	Thu Jul 24 16:16:17 2003
++++ vlorb	Mon Nov 22 13:23:12 2010
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
  #
  # vlorb, an audio CD to audio file encoder.
  # Copyright (c) 2002, Jochem Kossen <j.kossen@home.nl>
+@@ -288,7 +288,7 @@ sub phase3() {
+ sub detect_apps() {
+     `cdparanoia -V 2>&1`;
+     $global{have_cdparanoia} = 1 if ($? == 0);
+-    `oggenc -v 2>&1`;
++    `oggenc -V 2>&1`;
+     $global{have_oggenc} = 1 if ($? == 0);
+     `flac -v 2>&1`;
+     $global{have_flac} = 1 if ($? == 0);

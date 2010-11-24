@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/24 08:24:32 jasper Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
+REVISION=		0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
@@ -16,7 +17,7 @@ MASTER_SITES=		${HOMEPAGE}/releases/
 
 RUN_DEPENDS=		audio/cdparanoia \
 			audio/flac \
-			audio/vorbis-tools \
+			audio/vorbis-tools>=1.4.0 \
 			audio/vorbisgain \
 			audio/p5-cddb
 
