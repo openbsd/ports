@@ -1,12 +1,12 @@
-$OpenBSD: patch-config_mk,v 1.1 2010/10/10 18:58:11 jasper Exp $
---- config.mk.orig	Sun Oct 10 20:55:50 2010
-+++ config.mk	Sun Oct 10 20:56:10 2010
+$OpenBSD: patch-config_mk,v 1.2 2010/11/24 12:12:01 edd Exp $
+--- config.mk.orig	Sun Nov 21 11:53:41 2010
++++ config.mk	Tue Nov 23 14:39:39 2010
 @@ -11,7 +11,7 @@ MANPREFIX ?= ${PREFIX}/share/man
  GTK_INC = $(shell pkg-config --cflags gtk+-2.0 poppler-glib)
  GTK_LIB = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 poppler-glib)
  
 -INCS = -I. -I/usr/include ${GTK_INC}
 +INCS = -I. -I/usr/include ${GTK_INC} -I${LOCALBASE}/include
- LIBS = -lc ${GTK_LIB} -lpthread
+ LIBS = -lc ${GTK_LIB} -lpthread -lm
  
- # flags
+ # compiler flags
