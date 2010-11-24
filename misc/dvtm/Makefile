@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/24 08:21:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/24 13:09:11 jasper Exp $
 
 COMMENT=		tiling window management for the console
 
 DISTNAME=		dvtm-0.6
+REVISION=		0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/

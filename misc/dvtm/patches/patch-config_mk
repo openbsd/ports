@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.6 2009/10/11 21:59:02 sthen Exp $
---- config.mk.orig	Tue Jul  7 19:29:12 2009
-+++ config.mk	Sun Oct 11 21:24:40 2009
-@@ -3,15 +3,15 @@ VERSION = 0.5.2
+$OpenBSD: patch-config_mk,v 1.7 2010/11/24 13:09:11 jasper Exp $
+--- config.mk.orig	Fri Oct  8 18:06:05 2010
++++ config.mk	Wed Nov 24 09:28:42 2010
+@@ -3,15 +3,15 @@ VERSION = 0.6
  
  # Customize below to fit your system
  
