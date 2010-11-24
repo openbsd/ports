@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/24 09:04:20 dcoppa Exp $
 
 COMMENT =		sqlite3 driver for HDBC
 
-DISTNAME =		HDBC-sqlite3-2.3.0.0
-REVISION =		7
+DISTNAME =		HDBC-sqlite3-2.3.1.0
 CATEGORIES =		databases
 HOMEPAGE =		http://software.complete.org/hdbc-sqlite3
 
