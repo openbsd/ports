@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:51:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/24 09:03:26 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Log/
 lib/ghc/${DISTNAME}/System/Log.hi
+lib/ghc/${DISTNAME}/System/Log/Formatter.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/
 lib/ghc/${DISTNAME}/System/Log/Handler.hi
 lib/ghc/${DISTNAME}/System/Log/Handler/Growl.hi
@@ -19,6 +20,7 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYRIGHT
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/System-Log-Formatter.html
 share/doc/hs-${DISTNAME}/html/System-Log-Handler-Growl.html
 share/doc/hs-${DISTNAME}/html/System-Log-Handler-Log4jXML.html
 share/doc/hs-${DISTNAME}/html/System-Log-Handler-Simple.html
@@ -34,6 +36,7 @@ share/doc/hs-${DISTNAME}/html/haskell_icon.gif
 share/doc/hs-${DISTNAME}/html/hslogger.haddock
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_System-Log-Formatter.html
 share/doc/hs-${DISTNAME}/html/mini_System-Log-Handler-Growl.html
 share/doc/hs-${DISTNAME}/html/mini_System-Log-Handler-Log4jXML.html
 share/doc/hs-${DISTNAME}/html/mini_System-Log-Handler-Simple.html
