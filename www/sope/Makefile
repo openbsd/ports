@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/24 18:07:45 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION=		1.3.3
+VERSION=		1.3.4
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
@@ -14,7 +14,7 @@ SO_MAJOR=	0
 SO_MINOR=	0
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams NGXmlRpc SaxObjC SoOFS WEExtensions \
-		WEPrototype WOExtensions WOXML XmlRpc
+		WEPrototype WOExtensions WOXML XmlRpc SBJson
 SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 .endfor
 
@@ -44,9 +44,9 @@ WANTLIB-postgres = 	${MODGNUSTEP_WANTLIB} m GDLAccess EOControl pq
 LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql=	${BASE_PKGPATH} \
+LIB_DEPENDS-mysql=	${BASE_PKGPATH}=${VERSION} \
 			databases/mysql
-LIB_DEPENDS-postgres=	${BASE_PKGPATH} \
+LIB_DEPENDS-postgres=	${BASE_PKGPATH}=${VERSION} \
 			databases/postgresql
 
 MODAPACHE_NAME= ngobjweb
@@ -57,7 +57,8 @@ CONFIGURE_STYLE=simple dest
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES`
 MAKE_ENV+=	OBJC_INCLUDE_PATH="${LOCALBASE}/include/postgresql;${LOCALBASE}/include" \
-		LIBRARY_PATH="${LOCALBASE}/lib/postgresql;${LOCALBASE}/lib"
+		LIBRARY_PATH="${LOCALBASE}/lib/postgresql;${LOCALBASE}/lib" \
+		SBJson_INTERFACE_VERSION=${LIBSBJson_VERSION}
 MAKE_FLAGS+=	MAJOR_VERSION=${SO_MAJOR} MINOR_VERSION=${SO_MINOR}
 MAKE_FLAGS+=	SOPE_MAJOR_VERSION=4 SOPE_MINOR_VERSION=9
 CONFIGURE_ENV+=	${MAKE_ENV}
