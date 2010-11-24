@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 13:08:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/24 22:41:22 jasper Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20100929
-REVISION=	0
+REVISION=	1
 CATEGORIES=	cad
 
 HOMEPAGE=	http://pcb.gpleda.org/
@@ -45,7 +45,6 @@ CONFIGURE_ARGS=	--disable-doc \
 		--with-gui=gtk \
 		--disable-update-desktop-database \
 		--disable-update-mime-database
-
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/pcb.1 \

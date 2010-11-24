@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/07 20:40:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/11/24 22:41:22 jasper Exp $
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 @bin bin/pcb
 @info info/pcb.info
-lib/charset.alias
+@comment lib/charset.alias
 @man man/man1/pcb.1
 share/applications/pcb.desktop
 share/doc/pcb/
