@@ -1,0 +1,12 @@
+$OpenBSD: patch-OGoContentStore_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- OGoContentStore/GNUmakefile.preamble.orig	Wed Nov 10 14:41:28 2010
++++ OGoContentStore/GNUmakefile.preamble	Wed Nov 10 14:41:40 2010
+@@ -11,7 +11,7 @@ libOGoContentStore_LIBRARIES_DEPEND_UPON += \
+ 
+ ADDITIONAL_INCLUDE_DIRS += -I. -I.. -I../SOPE -I../SoObjects
+ 
+-ADDITIONAL_LIB_DIRS += -L./$(GNUSTEP_OBJ_DIR) -L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ -L../SoObjects/SOGo/SOGo.framework/
++ADDITIONAL_LIB_DIRS += -L./$(GNUSTEP_OBJ_DIR) -L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ -L../SoObjects/SOGo/SOGo.framework/ -L../SoObjects/SOGo/SOGo.framework/Versions/Current/
+ 
+ SYSTEM_LIB_DIR += -L/usr/local/lib -L/usr/lib
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-SoObjects_common_make,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- SoObjects/common.make.orig	Thu Aug 19 20:37:46 2010
++++ SoObjects/common.make	Sun Aug 29 16:18:56 2010
+@@ -19,7 +19,7 @@ ADDITIONAL_INCLUDE_DIRS += \
+         -I../../SOPE
+ 
+ ADDITIONAL_LIB_DIRS += \
+-        -L../SOGo/SOGo.framework/ \
++        -L../SOGo/SOGo.framework/Versions/Current/ \
+ 	-L../../SOGo/$(GNUSTEP_OBJ_DIR)/ \
+ 	-L../../OGoContentStore/$(GNUSTEP_OBJ_DIR)/ \
+ 	-L../../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ \

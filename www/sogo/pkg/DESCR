@@ -1,0 +1,4 @@
+SOGo is a groupware server built around OpenGroupware.org (OGo) and the
+SOPE application server, with a focus on scalability. It provides the
+usual groupware functionality as E-Mail, Calendaring, and Contacts
+management.

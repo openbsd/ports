@@ -1,0 +1,11 @@
+$OpenBSD: patch-Tools_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- Tools/GNUmakefile.preamble.orig	Sat Dec  5 18:37:41 2009
++++ Tools/GNUmakefile.preamble	Sat Dec  5 18:41:03 2009
+@@ -10,6 +10,7 @@ ADDITIONAL_INCLUDE_DIRS += \
+ 	-D_GNU_SOURCE -I../SOPE/ -I../SoObjects/
+ 
+ ADDITIONAL_LIB_DIRS += \
++	-L../SoObjects/SOGo/SOGo.framework/Versions/Current/ \
+ 	-L../SoObjects/SOGo/SOGo.framework -lSOGo \
+ 	-L../SOPE/GDLContentStore/$(GNUSTEP_OBJ_DIR)/ -lGDLContentStore \
+ 	-L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ -lNGCards \

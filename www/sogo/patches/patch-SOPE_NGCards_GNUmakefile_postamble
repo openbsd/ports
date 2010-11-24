@@ -1,0 +1,14 @@
+$OpenBSD: patch-SOPE_NGCards_GNUmakefile_postamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+
+--- SOPE/NGCards/GNUmakefile.postamble.orig	Tue Sep 21 20:52:45 2010
++++ SOPE/NGCards/GNUmakefile.postamble	Thu Oct 14 14:20:52 2010
+@@ -6,6 +6,6 @@ mappings-dir ::
+ 	$(MKDIRS) $(MAPDIR)
+ 
+ after-install :: mappings-dir
+-	cp NGCards.xmap $(MAPDIR)
+-	-mkdir -p $(GNUSTEP_LIBRARY)/Libraries/Resources/NGCards
+-	cp -dpR TimeZones $(GNUSTEP_LIBRARY)/Libraries/Resources/NGCards
++	${INSTALL_DATA} NGCards.xmap $(MAPDIR)
++	$(MKDIRS) $(GNUSTEP_LIBRARY)/Libraries/Resources/NGCards
++	cp -r TimeZones $(GNUSTEP_LIBRARY)/Libraries/Resources/NGCards

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Main_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- Main/GNUmakefile.preamble.orig	Thu Aug 19 20:37:45 2010
++++ Main/GNUmakefile.preamble	Sun Aug 29 16:19:39 2010
+@@ -12,7 +12,7 @@ ADDITIONAL_INCLUDE_DIRS += \
+ 	-I..
+ 
+ ADDITIONAL_LIB_DIRS += \
+-	-L../SoObjects/SOGo/SOGo.framework  \
++	-L../SoObjects/SOGo/SOGo.framework/Versions/Current/  \
+ 	-L../OGoContentStore/$(GNUSTEP_OBJ_DIR)/ \
+ 	-L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/
+ 

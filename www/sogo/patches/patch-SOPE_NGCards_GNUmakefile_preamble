@@ -1,0 +1,17 @@
+$OpenBSD: patch-SOPE_NGCards_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+
+decouple the sope version number from the library interface number.
+
+--- SOPE/NGCards/GNUmakefile.preamble.orig	Sun Sep 26 16:34:31 2010
++++ SOPE/NGCards/GNUmakefile.preamble	Sun Sep 26 16:34:59 2010
+@@ -4,8 +4,8 @@ SOPE_ROOT=../..
+ 
+ ADDITIONAL_CPPFLAGS += \
+         -Wall -DCOMPILE_FOR_GSTEP_MAKE=1        \
+-        -DSOPE_MAJOR_VERSION=$(MAJOR_VERSION)   \
+-        -DSOPE_MINOR_VERSION=$(MINOR_VERSION)   \
++        -DSOPE_MAJOR_VERSION=$(SOPE_MAJOR_VERSION)   \
++        -DSOPE_MINOR_VERSION=$(SOPE_MINOR_VERSION)   \
+         -DSOPE_SUBMINOR_VERSION=$(SUBMINOR_VERSION)
+ 
+ ADDITIONAL_INCLUDE_DIRS += \

@@ -1,0 +1,19 @@
+$OpenBSD: patch-UI_common_make,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- UI/common.make.orig	Thu Aug 19 20:37:46 2010
++++ UI/common.make	Sun Aug 29 13:40:29 2010
+@@ -21,13 +21,13 @@ ifeq ($(GNUSTEP_BUILD_DIR),)
+ ADDITIONAL_LIB_DIRS += 				\
+         -L../../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)	\
+ 	-L../SOGoUI/$(GNUSTEP_OBJ_DIR)		\
+-	-L../../SoObjects/SOGo/SOGo.framework/
++	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/
+ 
+ else
+ RELBUILD_DIR_libNGCards = \
+ 	$(GNUSTEP_BUILD_DIR)/../../SOPE/NGCards/$(GNUSTEP_OBJ_DIR_NAME)
+ RELBUILD_DIR_libSOGo = \
+-	$(GNUSTEP_BUILD_DIR)/../../SoObjects/SOGo/SOGo.framework/
++	$(GNUSTEP_BUILD_DIR)/../../SoObjects/SOGo/SOGo.framework/Versions/Current/
+ RELBUILD_DIR_libSOGoUI = \
+ 	$(GNUSTEP_BUILD_DIR)/../SOGoUI/$(GNUSTEP_OBJ_DIR_NAME)
+ RELBUILD_DIR_libOGoContentStore = \

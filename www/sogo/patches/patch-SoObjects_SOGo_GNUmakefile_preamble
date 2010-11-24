@@ -1,0 +1,12 @@
+$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+--- SoObjects/SOGo/GNUmakefile.preamble.orig	Wed Nov 10 12:45:19 2010
++++ SoObjects/SOGo/GNUmakefile.preamble	Wed Nov 10 14:17:20 2010
+@@ -18,7 +18,7 @@ SOGo_LIBRARIES_DEPEND_UPON += \
+ 	-lNGCards		\
+ 	-lNGMime		\
+ 	-lNGStreams -lNGExtensions -lEOControl \
+-	-lXmlRpc -lDOM -lSaxObjC -lcrypt \
++	-lXmlRpc -lDOM -lSaxObjC -lcrypto \
+ 	-lNGLdap -lSBJson \
+         -lGDLContentStore
+ 
