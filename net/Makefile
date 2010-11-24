@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.663 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.664 2010/11/24 08:26:47 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -419,6 +419,7 @@
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
      SUBDIR += py-snmp
+     SUBDIR += py-twitter
      SUBDIR += py-xmpp
      SUBDIR += py-xmpppy
      SUBDIR += py-zsi
