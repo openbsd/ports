@@ -1,11 +1,12 @@
-$OpenBSD: patch-Commands_Setup_hs,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
+$OpenBSD: patch-Commands_Setup_hs,v 1.2 2010/11/24 09:05:54 dcoppa Exp $
 
-fix from upstream git:
+fixes from upstream git:
 fix URL for IT conversations in default list
+fix URL for "The Amateur Traveler"
 
---- Commands/Setup.hs.orig	Wed Jul  2 17:32:27 2008
-+++ Commands/Setup.hs	Tue Apr 13 11:46:07 2010
-@@ -101,7 +101,7 @@ subscribeSamples gi =
+--- Commands/Setup.hs.orig	Wed Nov 24 09:13:14 2010
++++ Commands/Setup.hs	Wed Nov 24 09:13:18 2010
+@@ -101,10 +101,10 @@ subscribeSamples gi =
  sampleurls = 
      ["http://soundofhistory.complete.org/files_soh/podcast.xml",
       "http://www.thelinuxlink.net/tllts/tllts.rss",
@@ -13,4 +14,8 @@ fix URL for IT conversations in default list
 +     "http://feeds.conversationsnetwork.org/channel/itc",
       "http://www.sciam.com/podcast/sciam_podcast_r.xml",
       "http://www.npr.org/rss/podcast.php?id=510019",
-      "http://amateurtraveler.com/podcast/rss.xml",
+-     "http://amateurtraveler.com/podcast/rss.xml",
++     "http://feeds.feedburner.com/AmateurTravelerPodcast",
+      "http://broadband.wgbh.org/amex/rss/podcast_np.xml",
+      "http://www.npr.org/rss/podcast.php?id=700000"]
+ 
