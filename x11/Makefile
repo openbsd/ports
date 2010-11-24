@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2010/10/26 21:43:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.435 2010/11/24 13:10:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -160,6 +160,7 @@
      SUBDIR += mxconns
      SUBDIR += neXtaw
      SUBDIR += netwmpager
+     SUBDIR += nitrogen
      SUBDIR += numlockx
      SUBDIR += nx
      SUBDIR += obconf
