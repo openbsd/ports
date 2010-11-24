@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2010/11/24 08:25:57 jasper Exp $
+--- setup.py.orig	Tue Aug  3 18:27:08 2010
++++ setup.py	Tue Nov 23 10:00:34 2010
+@@ -3,10 +3,7 @@ import sys, os
+ 
+ version = '1.4.2'
+ 
+-install_requires = [
+-    # -*- Extra requirements: -*-
+-    "python-dateutil>=1.1",
+-    ]
++install_requires = []
+ 
+ def _py26OrGreater():
+     return sys.hexversion > 0x20600f0

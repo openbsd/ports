@@ -1,0 +1,6 @@
+$OpenBSD: patch-twitter_ett-info__requires_txt,v 1.1.1.1 2010/11/24 08:25:57 jasper Exp $
+--- twitter.egg-info/requires.txt.orig	Sat Nov 20 16:56:01 2010
++++ twitter.egg-info/requires.txt	Sat Nov 20 16:56:12 2010
+@@ -1 +0,0 @@
+-python-dateutil>=1.1
+\ No newline at end of file

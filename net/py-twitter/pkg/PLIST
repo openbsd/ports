@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/24 08:25:57 jasper Exp $
+bin/twitter
+bin/twitterbot
+lib/python${MODPY_VERSION}/site-packages/twitter/
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+@comment lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt.orig
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/twitter/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twitter/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/ansi.py
+lib/python${MODPY_VERSION}/site-packages/twitter/ansi.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/api.py
+lib/python${MODPY_VERSION}/site-packages/twitter/api.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/auth.py
+lib/python${MODPY_VERSION}/site-packages/twitter/auth.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/cmdline.py
+lib/python${MODPY_VERSION}/site-packages/twitter/cmdline.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/ircbot.py
+lib/python${MODPY_VERSION}/site-packages/twitter/ircbot.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/oauth.py
+lib/python${MODPY_VERSION}/site-packages/twitter/oauth.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/oauth_dance.py
+lib/python${MODPY_VERSION}/site-packages/twitter/oauth_dance.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/twitter_globals.py
+lib/python${MODPY_VERSION}/site-packages/twitter/twitter_globals.pyc
+lib/python${MODPY_VERSION}/site-packages/twitter/util.py
+lib/python${MODPY_VERSION}/site-packages/twitter/util.pyc
