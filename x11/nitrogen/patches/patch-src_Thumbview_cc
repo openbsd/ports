@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Thumbview_cc,v 1.1.1.1 2010/11/24 13:10:07 jasper Exp $
+--- src/Thumbview.cc.orig	Sun Nov 21 20:04:39 2010
++++ src/Thumbview.cc	Sun Nov 21 20:05:04 2010
+@@ -744,6 +744,7 @@ void Thumbview::file_created_callback(std::string file
+ 		file_changed_callback(filename);
+ 	}
+ }
++#endif
+ 
+ void Thumbview::set_current_display_mode(DisplayMode newmode)
+ {
+@@ -775,5 +776,3 @@ void Thumbview::sighandle_view_activated(const Gtk::Tr
+ {
+     signal_selected(path);
+ }
+-
+-#endif
