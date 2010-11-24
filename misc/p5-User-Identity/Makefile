@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/24 17:34:11 jasper Exp $
 
 COMMENT =		maintains info about a physical person
 
-DISTNAME =		User-Identity-0.92
+DISTNAME =		User-Identity-0.93
 CATEGORIES =		misc
 
 # perl
@@ -12,7 +12,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS =		geo/p5-Geography-Countries
 
