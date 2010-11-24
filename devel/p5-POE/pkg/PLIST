@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/30 22:06:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/24 15:28:09 jasper Exp $
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/Component/
 ${P5SITE}/POE/Component.pm
@@ -101,3 +101,20 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Wheel::ReadWrite.3p
 @man man/man3p/POE::Wheel::Run.3p
 @man man/man3p/POE::Wheel::SocketFactory.3p
+share/examples/p5-POE/
+share/examples/p5-POE/README.samples
+share/examples/p5-POE/create.perl
+share/examples/p5-POE/fakelogin.perl
+share/examples/p5-POE/forkbomb.perl
+share/examples/p5-POE/names.perl
+share/examples/p5-POE/objmaps.perl
+share/examples/p5-POE/objsessions.perl
+share/examples/p5-POE/packagesessions.perl
+share/examples/p5-POE/queue.perl
+share/examples/p5-POE/selects.perl
+share/examples/p5-POE/sessions.perl
+share/examples/p5-POE/signals.perl
+share/examples/p5-POE/tcp_watermarks.perl
+share/examples/p5-POE/thrash.perl
+share/examples/p5-POE/watermarks.perl
+share/examples/p5-POE/wheels2.perl
