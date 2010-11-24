@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.38 2010/11/19 17:54:37 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.39 2010/11/24 21:30:36 jeremy Exp $
 
 # ruby module
 
@@ -77,13 +77,11 @@ GEM_BIN_SUFFIX=
 .if ${MODRUBY_REV} == 1.8
 MODRUBY_LIBREV=		1.8
 MODRUBY_BINREV=		18
-MODRUBY_PKGSPEC=	ruby->=1.8,<=1.9
 MODRUBY_PKG_PREFIX=	ruby
 MODRUBY_FLAVOR =	
 .elif ${MODRUBY_REV} == 1.9
 MODRUBY_LIBREV=		1.9.1
 MODRUBY_BINREV=		19
-MODRUBY_PKGSPEC=	ruby->=1.9,<=1.10
 MODRUBY_PKG_PREFIX=	ruby19
 MODRUBY_FLAVOR =	ruby19
 GEM_BIN_SUFFIX=		19
@@ -95,7 +93,6 @@ MODRUBY_LIBREV=		1.8
 # since they result in bad error messages when, for example, an
 # invalid flavor is used.
 #.poison MODRUBY_BINREV
-#.poison MODRUBY_PKGSPEC
 #.poison MODRUBY_WANTLIB
 
 MODRUBY_PKG_PREFIX=	jruby
@@ -103,7 +100,6 @@ MODRUBY_FLAVOR =	jruby
 .elif ${MODRUBY_REV} == rbx
 MODRUBY_LIBREV =	1.8
 #.poison MODRUBY_BINREV
-#.poison MODRUBY_PKGSPEC
 #.poison MODRUBY_WANTLIB
 MODRUBY_PKG_PREFIX =	rbx
 MODRUBY_FLAVOR =	rbx
@@ -148,14 +144,14 @@ MODRUBY_RUN_DEPENDS=	lang/jruby
 MODRUBY_RUN_DEPENDS=	lang/rubinius
 .else
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
-MODRUBY_RUN_DEPENDS=	${MODRUBY_PKGSPEC}:lang/ruby/${MODRUBY_REV}
+MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
 .endif
 
 MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 
 .if ${MODRUBY_REV} == 1.8
-MODRUBY_ICONV_DEPENDS=	ruby-iconv->=1.8,<=1.9:lang/ruby/${MODRUBY_REV},-iconv
+MODRUBY_ICONV_DEPENDS=	ruby-iconv->=1.8,<1.9:lang/ruby/${MODRUBY_REV},-iconv
 .else
 MODRUBY_ICONV_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 .endif
@@ -326,7 +322,8 @@ ${MODRUBY_BUILD_COOKIE}:
 	cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 	mkdir -p ${GEM_BASE}
 	env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. GEM_HOME=${GEM_BASE} \
-		${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED}
+		${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
+		-- ${CONFIGURE_ARGS}
 
 # Take the temporary gem directory, install the binary stub files to
 # the appropriate directory, and move and fix ownership the gem library
