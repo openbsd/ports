@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/13 17:31:03 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/11/24 08:18:09 landry Exp $
 @newgroup _couchdb:621
 @newuser _couchdb:621:_couchdb:daemon:CouchDB account:/var/couchdb:/bin/sh
 %%SHARED%%
@@ -14,6 +14,7 @@ lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch.app
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_app.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_auth_cache.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_btree.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_changes.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_config.beam
@@ -66,6 +67,7 @@ lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_view_updater.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_work_queue.beam
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/include/
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/include/couch_db.hrl
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/include/couch_js_functions.hrl
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/couchspawnkillable
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/
@@ -143,12 +145,14 @@ share/couchdb/www/dialog/
 share/couchdb/www/dialog/_admin_party.html
 share/couchdb/www/dialog/_compact_cleanup.html
 share/couchdb/www/dialog/_create_admin.html
+share/couchdb/www/dialog/_create_config.html
 share/couchdb/www/dialog/_create_database.html
 share/couchdb/www/dialog/_database_security.html
 share/couchdb/www/dialog/_delete_database.html
 share/couchdb/www/dialog/_delete_document.html
 share/couchdb/www/dialog/_login.html
 share/couchdb/www/dialog/_save_view_as.html
+share/couchdb/www/dialog/_share_test_reports.html
 share/couchdb/www/dialog/_signup.html
 share/couchdb/www/dialog/_upload_attachment.html
 share/couchdb/www/document.html
@@ -187,6 +191,7 @@ share/couchdb/www/image/twisty.gif
 share/couchdb/www/index.html
 share/couchdb/www/replicator.html
 share/couchdb/www/script/
+share/couchdb/www/script/base64.js
 share/couchdb/www/script/couch.js
 share/couchdb/www/script/couch_test_runner.js
 share/couchdb/www/script/couch_tests.js
@@ -201,6 +206,11 @@ share/couchdb/www/script/jquery.js
 share/couchdb/www/script/jquery.resizer.js
 share/couchdb/www/script/jquery.suggest.js
 share/couchdb/www/script/json2.js
+share/couchdb/www/script/jspec/
+share/couchdb/www/script/jspec/jspec.css
+share/couchdb/www/script/jspec/jspec.jquery.js
+share/couchdb/www/script/jspec/jspec.js
+share/couchdb/www/script/jspec/jspec.xhr.js
 share/couchdb/www/script/oauth.js
 share/couchdb/www/script/sha1.js
 share/couchdb/www/script/test/
@@ -210,6 +220,7 @@ share/couchdb/www/script/test/attachment_paths.js
 share/couchdb/www/script/test/attachment_views.js
 share/couchdb/www/script/test/attachments.js
 share/couchdb/www/script/test/attachments_multipart.js
+share/couchdb/www/script/test/auth_cache.js
 share/couchdb/www/script/test/basics.js
 share/couchdb/www/script/test/batch_save.js
 share/couchdb/www/script/test/bulk_docs.js
@@ -236,6 +247,7 @@ share/couchdb/www/script/test/list_views.js
 share/couchdb/www/script/test/lorem.txt
 share/couchdb/www/script/test/lorem_b64.txt
 share/couchdb/www/script/test/lots_of_docs.js
+share/couchdb/www/script/test/method_override.js
 share/couchdb/www/script/test/multiple_rows.js
 share/couchdb/www/script/test/oauth.js
 share/couchdb/www/script/test/proxyauth.js
@@ -248,14 +260,17 @@ share/couchdb/www/script/test/reduce_false.js
 share/couchdb/www/script/test/reduce_false_temp.js
 share/couchdb/www/script/test/replication.js
 share/couchdb/www/script/test/rev_stemming.js
+share/couchdb/www/script/test/rewrite.js
 share/couchdb/www/script/test/security_validation.js
 share/couchdb/www/script/test/show_documents.js
 share/couchdb/www/script/test/stats.js
 share/couchdb/www/script/test/update_documents.js
+share/couchdb/www/script/test/users_db.js
 share/couchdb/www/script/test/utf8.js
 share/couchdb/www/script/test/uuids.js
 share/couchdb/www/script/test/view_collation.js
 share/couchdb/www/script/test/view_collation_raw.js
+share/couchdb/www/script/test/view_compaction.js
 share/couchdb/www/script/test/view_conflicts.js
 share/couchdb/www/script/test/view_errors.js
 share/couchdb/www/script/test/view_include_docs.js
@@ -265,7 +280,20 @@ share/couchdb/www/script/test/view_multi_key_temp.js
 share/couchdb/www/script/test/view_offsets.js
 share/couchdb/www/script/test/view_pagination.js
 share/couchdb/www/script/test/view_sandboxing.js
+share/couchdb/www/script/test/view_update_seq.js
 share/couchdb/www/script/test/view_xml.js
+share/couchdb/www/session.html
+share/couchdb/www/spec/
+share/couchdb/www/spec/couch_js_class_methods_spec.js
+share/couchdb/www/spec/couch_js_instance_methods_1_spec.js
+share/couchdb/www/spec/couch_js_instance_methods_2_spec.js
+share/couchdb/www/spec/couch_js_instance_methods_3_spec.js
+share/couchdb/www/spec/custom_helpers.js
+share/couchdb/www/spec/jquery_couch_js_class_methods_spec.js
+share/couchdb/www/spec/jquery_couch_js_instance_methods_1_spec.js
+share/couchdb/www/spec/jquery_couch_js_instance_methods_2_spec.js
+share/couchdb/www/spec/jquery_couch_js_instance_methods_3_spec.js
+share/couchdb/www/spec/run.html
 share/couchdb/www/status.html
 share/couchdb/www/style/
 share/couchdb/www/style/layout.css
