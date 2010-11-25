@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_thread_c,v 1.5 2010/11/25 07:31:49 dcoppa Exp $
+--- src/thread.c.orig	Wed Nov 24 17:38:16 2010
++++ src/thread.c	Wed Nov 24 17:38:40 2010
+@@ -448,7 +448,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+ 		if (embed_window == 0)
+ 			idledata->cachepercent = 0.0;
+ 
+-		if (g_ascii_strncasecmp(vo, "gl2", strlen("gl2")) != 0) {
++		if (vo != NULL && g_ascii_strncasecmp(vo, "gl2", strlen("gl2")) != 0) {
+ 		    cmd = g_strdup_printf("brightness %i\n", idledata->brightness);
+ 		    send_command(cmd, TRUE);
+ 		    g_free(cmd);
