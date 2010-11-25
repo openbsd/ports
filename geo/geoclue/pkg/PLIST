@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 16:35:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/11/25 08:56:58 sebastia Exp $
 %%SHARED%%
-@bin bin/geoclue-test-gui
 include/geoclue/
 include/geoclue/gc-iface-address.h
 include/geoclue/gc-iface-geoclue.h
@@ -13,6 +12,7 @@ include/geoclue/gc-web-service.h
 include/geoclue/geoclue-accuracy.h
 include/geoclue/geoclue-address-details.h
 include/geoclue/geoclue-address.h
+include/geoclue/geoclue-enum-types.h
 include/geoclue/geoclue-error.h
 include/geoclue/geoclue-geocode.h
 include/geoclue/geoclue-master-client.h
@@ -29,11 +29,14 @@ lib/pkgconfig/geoclue.pc
 @bin libexec/geoclue-example
 @bin libexec/geoclue-geonames
 @bin libexec/geoclue-gpsd
+@bin libexec/geoclue-gsmloc
 @bin libexec/geoclue-hostip
 @bin libexec/geoclue-localnet
 @bin libexec/geoclue-manual
 @bin libexec/geoclue-master
+@bin libexec/geoclue-nominatim
 @bin libexec/geoclue-plazes
+@bin libexec/geoclue-skyhook
 @bin libexec/geoclue-yahoo
 share/dbus-1/
 share/dbus-1/services/
@@ -41,19 +44,25 @@ share/dbus-1/services/org.freedesktop.Geoclue.Master.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Example.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Geonames.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Gpsd.service
+share/dbus-1/services/org.freedesktop.Geoclue.Providers.Gsmloc.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Hostip.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Localnet.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Manual.service
+share/dbus-1/services/org.freedesktop.Geoclue.Providers.Nominatim.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Plazes.service
+share/dbus-1/services/org.freedesktop.Geoclue.Providers.Skyhook.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Yahoo.service
 share/geoclue-providers/
 share/geoclue-providers/geoclue-example.provider
 share/geoclue-providers/geoclue-geonames.provider
 share/geoclue-providers/geoclue-gpsd.provider
+share/geoclue-providers/geoclue-gsmloc.provider
 share/geoclue-providers/geoclue-hostip.provider
 share/geoclue-providers/geoclue-localnet.provider
 share/geoclue-providers/geoclue-manual.provider
+share/geoclue-providers/geoclue-nominatim.provider
 share/geoclue-providers/geoclue-plazes.provider
+share/geoclue-providers/geoclue-skyhook.provider
 share/geoclue-providers/geoclue-yahoo.provider
 share/gtk-doc/
 share/gtk-doc/html/
