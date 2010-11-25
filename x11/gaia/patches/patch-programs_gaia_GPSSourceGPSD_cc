@@ -1,0 +1,16 @@
+$OpenBSD: patch-programs_gaia_GPSSourceGPSD_cc,v 1.1 2010/11/25 08:58:49 sebastia Exp $
+
+Fix build with newer gpsd, patch found in Debian bugzilla:
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=560242
+
+--- programs/gaia/GPSSourceGPSD.cc.orig	Wed Nov 29 04:21:14 2006
++++ programs/gaia/GPSSourceGPSD.cc	Tue Nov  2 14:17:20 2010
+@@ -23,7 +23,7 @@ GPSSourceGPSD::GPSSourceGPSD(char *server, char *port)
+ 	if ((m_GPS = gps_open(server, port)) == 0)
+ 		throw Exception("gps_open() failed");
+ 
+-	if (gps_query(m_GPS, "w+x\n") != 0)
++	if (gps_stream(m_GPS, WATCH_ENABLE, NULL) != 0)
+ 		throw Exception("initial gps_query() failed");
+ }
+ 
