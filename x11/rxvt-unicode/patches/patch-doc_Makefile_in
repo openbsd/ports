@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
---- doc/Makefile.in.orig	Wed Apr 21 15:23:56 2010
-+++ doc/Makefile.in	Wed Apr 21 15:24:12 2010
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2010/11/25 13:19:35 dcoppa Exp $
+--- doc/Makefile.in.orig	Sun Apr  4 01:12:38 2010
++++ doc/Makefile.in	Sun Nov 14 14:23:05 2010
 @@ -98,7 +98,6 @@ install: all
  	$(INSTALL_DATA) rxvt.7.man  $(DESTDIR)$(man7dir)/$(RXVTNAME).$(man7ext)
  @IF_PERL@	$(INSTALL) -d $(DESTDIR)$(man3dir)

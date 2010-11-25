@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_rxvtd_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/rxvtd.C.orig	Sun Oct 24 19:51:51 2010
++++ src/rxvtd.C	Sun Nov 14 14:23:05 2010
+@@ -100,7 +100,7 @@ unix_listener::unix_listener (const char *sockname)
+   fcntl (fd, F_SETFL, O_NONBLOCK);
+ 
+   sa.sun_family = AF_UNIX;
+-  strcpy (sa.sun_path, sockname);
++  strlcpy (sa.sun_path, sockname, sizeof(sa.sun_path));
+ 
+   unlink (rxvt_connection::unix_sockname ());
+ 

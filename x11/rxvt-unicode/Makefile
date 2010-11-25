@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/25 13:19:35 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.07
-REVISION=	0
+DISTNAME =	rxvt-unicode-9.09
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -11,7 +10,7 @@ MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/
 
 HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
 
-MAINTAINER =	Thomas de Grivel <billitch@gmail.com>
+MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,13 +21,12 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	X11 Xau Xdmcp Xft Xrender c expat fontconfig \
 		freetype m perl pthread-stubs util xcb z
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
-CONFIGURE_ARGS =	--enable-perl \
-			--disable-afterimage \
+CONFIGURE_ARGS =	--enable-256-color \
+			--enable-perl \
 			--with-term=rxvt-256color \
-			--enable-xterm-colors=256
+			--disable-afterimage
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
 

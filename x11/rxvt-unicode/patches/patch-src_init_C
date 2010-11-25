@@ -1,0 +1,74 @@
+$OpenBSD: patch-src_init_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
+--- src/init.C.orig	Sat Oct 16 00:06:26 2010
++++ src/init.C	Sun Nov 14 14:23:05 2010
+@@ -108,7 +108,7 @@ rxvt_network_display (const char *display)
+     {
+       struct ifreq ifr2;
+ 
+-      strcpy (ifr2.ifr_name, ifr->ifr_name);
++      strlcpy (ifr2.ifr_name, ifr->ifr_name, sizeof(ifr2.ifr_name));
+ 
+       if (ioctl (skfd, SIOCGIFADDR, &ifr2) >= 0)
+         {
+@@ -128,12 +128,13 @@ rxvt_network_display (const char *display)
+               if (colon == NULL)
+                 colon = ":0.0";
+ 
+-              rval = rxvt_malloc (strlen (colon) + 16);
+-              sprintf (rval, "%d.%d.%d.%d%s",
+-                      (int) ((addr >> 030) & 0xFF),
+-                      (int) ((addr >> 020) & 0xFF),
+-                      (int) ((addr >> 010) & 0xFF),
+-                      (int) (addr & 0xFF), colon);
++              size_t rval_size = strlen (colon) + 16;
++              rval = rxvt_malloc (rval_size);
++              snprintf (rval, rval_size, "%d.%d.%d.%d%s",
++			(int) ((addr >> 030) & 0xFF),
++			(int) ((addr >> 020) & 0xFF),
++			(int) ((addr >> 010) & 0xFF),
++			(int) (addr & 0xFF), colon);
+               break;
+             }
+         }
+@@ -918,11 +919,12 @@ rxvt_term::init_env ()
+     rs[Rs_display_name] = val;   /* use broken `:0' value */
+ 
+   i = strlen (val);
+-  env_display = (char *)rxvt_malloc (i + 9);
++  size_t env_display_size = i + 9;
++  env_display = (char *)rxvt_malloc (env_display_size);
+ 
+-  sprintf (env_display, "DISPLAY=%s", val);
++  snprintf (env_display, env_display_size, "DISPLAY=%s", val);
+ 
+-  sprintf (env_windowid, "WINDOWID=%lu", (unsigned long)parent[0]);
++  snprintf (env_windowid, sizeof (env_windowid), "WINDOWID=%lu", (unsigned long)parent[0]);
+ 
+   /* add entries to the environment:
+    * @ DISPLAY:   in case we started with -display
+@@ -949,8 +951,9 @@ rxvt_term::init_env ()
+ 
+   if (rs[Rs_term_name] != NULL)
+     {
+-      env_term = (char *)rxvt_malloc (strlen (rs[Rs_term_name]) + 6);
+-      sprintf (env_term, "TERM=%s", rs[Rs_term_name]);
++      size_t size = strlen (rs[Rs_term_name]) + 6;
++      env_term = (char *)rxvt_malloc (size);
++      snprintf (env_term, size, "TERM=%s", rs[Rs_term_name]);
+       putenv (env_term);
+     }
+   else
+@@ -1749,10 +1752,11 @@ rxvt_term::run_child (const char *const *argv)
+ 
+       if (option (Opt_loginShell))
+         {
+-          login = (char *)rxvt_malloc (strlen (argv0) + 2);
++          size_t login_size = strlen (argv0) + 2;
++          login = (char *)rxvt_malloc (login_size);
+ 
+           login[0] = '-';
+-          strcpy (&login[1], argv0);
++          strlcpy (&login[1], argv0, login_size - sizeof(char));
+           argv0 = login;
+         }
+ 

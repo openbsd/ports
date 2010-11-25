@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_rxvtc_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/rxvtc.C.orig	Sun Jun 15 15:39:43 2008
++++ src/rxvtc.C	Sun Nov 14 14:23:05 2010
+@@ -62,7 +62,7 @@ client::client ()
+     }
+ 
+   sa.sun_family = AF_UNIX;
+-  strcpy (sa.sun_path, sockname);
++  strlcpy (sa.sun_path, sockname, sizeof(sa.sun_path));
+   free (sockname);
+ 
+   if (connect (fd, (sockaddr *)&sa, sizeof (sa)))

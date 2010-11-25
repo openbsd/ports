@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_keyboard_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/keyboard.C.orig	Wed Aug 25 04:07:15 2010
++++ src/keyboard.C	Sun Nov 14 14:23:05 2010
+@@ -230,7 +230,8 @@ keyboard_manager::dispatch (rxvt_term *term, KeySym ke
+ 
+                   memcpy (buf, prefix + 1, middle - prefix - 1);
+                   buf [middle - prefix - 1] = middle [keysym_offset + 1];
+-                  strcpy (buf + (middle - prefix), suffix + 1);
++                  strlcpy (buf + (middle - prefix), suffix + 1,
++                           sizeof (buf) - sizeof (char) * (middle - prefix));
+ 
+                   output_string (term, buf);
+                 }

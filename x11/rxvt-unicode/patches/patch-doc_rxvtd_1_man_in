@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.1.1.1 2010/05/03 16:35:23 dcoppa Exp $
---- doc/rxvtd.1.man.in.orig	Tue Apr 27 18:14:47 2010
-+++ doc/rxvtd.1.man.in	Tue Apr 27 18:15:41 2010
+$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.2 2010/11/25 13:19:35 dcoppa Exp $
+--- doc/rxvtd.1.man.in.orig	Wed Dec 30 07:13:12 2009
++++ doc/rxvtd.1.man.in	Sun Nov 14 14:23:05 2010
 @@ -133,7 +133,7 @@
  @@RXVT_NAME@@d \- @@RXVT_NAME@@ terminal daemon
  .SH "SYNOPSIS"

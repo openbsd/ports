@@ -1,13 +1,7 @@
-$OpenBSD: patch-src_rxvtfont_c,v 1.1.1.1 2010/05/03 16:35:20 dcoppa Exp $
-
-Fix possible off-by-one buffer overflows by replacing every call of
-strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
- -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
-
-diff -ruN rxvt-unicode-9.07.orig/src/rxvtfont.C rxvt-unicode-9.07/src/rxvtfont.C
---- src/rxvtfont.C.orig	Sat Apr  4 23:27:28 2009
-+++ src/rxvtfont.C	Tue Apr 27 18:13:09 2010
-@@ -632,10 +632,13 @@ replace_field (char **ptr, const char *name, int index
+$OpenBSD: patch-src_rxvtfont_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/rxvtfont.C.orig	Sun Oct 24 19:52:47 2010
++++ src/rxvtfont.C	Sun Nov 14 14:23:05 2010
+@@ -682,10 +682,13 @@ replace_field (char **ptr, const char *name, int index
    if (slashes >= 13 && (!old || *field == old))
      {
        size_t len = field - name;
@@ -24,7 +18,7 @@ diff -ruN rxvt-unicode-9.07.orig/src/rxvtfont.C rxvt-unicode-9.07/src/rxvtfont.C
  
        return true;
      }
-@@ -696,8 +699,8 @@ rxvt_font_x11::load (const rxvt_fontprop &prop, bool f
+@@ -746,8 +749,8 @@ rxvt_font_x11::load (const rxvt_fontprop &prop, bool f
          }
      }
  

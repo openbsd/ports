@@ -1,13 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
-
-Fix possible off-by-one buffer overflows by replacing every call of
-strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
- -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
-
-diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
---- src/main.C.orig	Sat May 30 10:48:11 2009
-+++ src/main.C	Tue Apr 27 18:13:09 2010
-@@ -77,7 +77,7 @@ rxvt_set_locale (const char *locale) NOTHROW
+$OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/main.C.orig	Wed Nov  3 22:00:52 2010
++++ src/main.C	Sun Nov 14 15:04:04 2010
+@@ -80,7 +80,7 @@ rxvt_set_locale (const char *locale) NOTHROW
  void
  rxvt_push_locale (const char *locale) NOTHROW
  {
@@ -16,8 +10,8 @@ diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
    rxvt_set_locale (locale);
  }
  
-@@ -385,14 +385,16 @@ print_x_error (Display *dpy, XErrorEvent *event)
-     rxvt_warn ("An X Error occured, trying to continue after report.\n");
+@@ -390,14 +390,16 @@ print_x_error (Display *dpy, XErrorEvent *event)
+     rxvt_warn ("An X Error occurred, trying to continue after report.\n");
      rxvt_warn ("%s:  %s\n", mesg, buffer);
      XGetErrorDatabaseText(dpy, mtype, "MajorCode", "Request Major code %d", mesg, BUFSIZ);
 -    rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->request_code);
@@ -28,31 +22,31 @@ diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
      XGetErrorDatabaseText(dpy, "XRequest", number, "", buffer, BUFSIZ);
      rxvt_warn ("(which is %s)\n", buffer);
      if (event->request_code >= 128) {
- 	XGetErrorDatabaseText(dpy, mtype, "MinorCode", "Request Minor code %d",
- 			      mesg, BUFSIZ);
+         XGetErrorDatabaseText(dpy, mtype, "MinorCode", "Request Minor code %d",
+                               mesg, BUFSIZ);
 -        rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->minor_code);
 +        strlcat (mesg, "\n", BUFSIZ);
 +        rxvt_warn (mesg, event->minor_code);
      }
      if ((event->error_code == BadWindow) ||
- 	       (event->error_code == BadPixmap) ||
-@@ -413,11 +415,13 @@ print_x_error (Display *dpy, XErrorEvent *event)
- 	else
- 	    XGetErrorDatabaseText(dpy, mtype, "ResourceID", "ResourceID 0x%x",
- 				  mesg, BUFSIZ);
--	rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->resourceid);
-+	strlcat (mesg, "\n", BUFSIZ);
-+	rxvt_warn (mesg, event->resourceid);
+                (event->error_code == BadPixmap) ||
+@@ -418,11 +420,13 @@ print_x_error (Display *dpy, XErrorEvent *event)
+         else
+             XGetErrorDatabaseText(dpy, mtype, "ResourceID", "ResourceID 0x%x",
+                                   mesg, BUFSIZ);
+-        rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->resourceid);
++        strlcat (mesg, "\n", BUFSIZ);
++        rxvt_warn (mesg, event->resourceid);
      }
      XGetErrorDatabaseText(dpy, mtype, "ErrorSerial", "Error Serial #%d",
- 			  mesg, BUFSIZ);
+                           mesg, BUFSIZ);
 -    rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->serial);
 +    strlcat (mesg, "\n", BUFSIZ);
 +    rxvt_warn (mesg, event->serial);
  }
  #endif
  
-@@ -862,26 +866,26 @@ rxvt_term::set_colorfgbg ()
+@@ -950,26 +954,26 @@ rxvt_term::set_colorfgbg ()
    const char *xpmb = "";
    char fstr[sizeof ("default") + 1], bstr[sizeof ("default") + 1];
  
@@ -84,7 +78,7 @@ diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
  }
  
  /*----------------------------------------------------------------------*/
-@@ -1085,8 +1089,8 @@ rxvt_term::IMisRunning ()
+@@ -1170,8 +1174,8 @@ rxvt_term::IMisRunning ()
    /* get current locale modifier */
    if (char *p = XSetLocaleModifiers (0))
      {
@@ -95,7 +89,7 @@ diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
  
        if (p = strchr (server + 1, '@'))      /* first one only */
          *p = '\0';
-@@ -1315,16 +1319,16 @@ foundpet:
+@@ -1400,16 +1404,16 @@ foundpet:
        char *def_string;
        char pat[512];
  
@@ -122,7 +116,7 @@ diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
  
        fs = XCreateFontSet (dpy, rs[Rs_imFont] ? rs[Rs_imFont] : pat,
                             &missing_charset_list, &missing_charset_count, &def_string);
-@@ -1463,8 +1467,8 @@ rxvt_term::im_cb ()
+@@ -1548,8 +1552,8 @@ rxvt_term::im_cb ()
          {
            if (*s[i])
              {

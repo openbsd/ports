@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_xdefaults_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+--- src/xdefaults.C.orig	Fri Oct 15 00:13:23 2010
++++ src/xdefaults.C	Sun Nov 14 15:09:59 2010
+@@ -560,8 +560,9 @@ rxvt_term::get_options (int argc, const char *const *a
+         {
+           if (i+1 < argc)
+             {
+-              char *res = rxvt_temp_buf<char> (strlen (opt) + strlen (argv[++i]) + 6);
+-              sprintf (res, "*.%s: %s\n", opt, argv[i]);
++              size_t size = strlen (opt) + strlen (argv[++i]) + 6;
++              char *res = rxvt_temp_buf<char> (size);
++              snprintf (res, size, "*.%s: %s\n", opt, argv[i]);
+               XrmPutLineResource (&option_db, res);
+             }
+         }
