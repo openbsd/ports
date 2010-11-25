@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2010/11/25 15:37:52 ajacoutot Exp $
+@lib lib/libgmime-2.4.so.${LIBgmime-2.4_VERSION}
