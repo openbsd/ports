@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/25 11:24:16 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-gui=	0
 REVISION-hpijs=	0
 
@@ -127,6 +127,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
+	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+		${WRKSRC}/fax/filters/pstotiff
 	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
