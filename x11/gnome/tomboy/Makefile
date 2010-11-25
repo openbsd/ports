@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/25 15:38:33 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	1.4.2
+
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -32,14 +34,14 @@ MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	tomboy
 MODGCONF2_LIBDEP=	No
 
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/mono-addins \
 		sysutils/ndesk-dbus-glib \
 		x11/gnome/mono-gnome-desktop \
 		textproc/gtkspell \
-		misc/shared-mime-info>=0.21 \
-		x11/gnome/icon-theme>=2.18.0
+		misc/shared-mime-info \
+		x11/gnome/icon-theme \
+		mail/gmime24,-mono
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-update-mimedb \
@@ -48,9 +50,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# needs gmime-sharp and galago-sharp
-CONFIGURE_ARGS+= --enable-evolution=no \
-		--enable-galago=no
+# needs galago-sharp
+CONFIGURE_ARGS+= --enable-galago=no
+
 USE_GROFF =	Yes
 
 # this is *.config.in on purpose (and not *.config)
