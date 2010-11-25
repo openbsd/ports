@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/05 10:08:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/11/25 23:35:02 schwarze Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}fckeditor/
@@ -453,8 +453,9 @@ ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/perl/util.pl
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/basexml.php
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/commands.php
-${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/config.php
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/connector.php
+${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/default.config.php
+@sample ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/config.php
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/io.php
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/phpcompat.php
 ${DRUPAL_MODS}fckeditor/fckeditor/editor/filemanager/connectors/php/upload.php
