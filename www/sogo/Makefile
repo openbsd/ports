@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/11/25 02:16:12 sthen Exp $
 
 COMMENT = 	web based groupware server
 VERSION =	1.3.4
@@ -45,12 +45,10 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${SHLIB_VERSION} \
 SUBST_VARS =		VERSION
 
 pre-configure:
-	for f in 'SOGo Installation Guide.odt' \
-		'SOGo Mobile Devices Configuration.odt' \
-		'SOGo Mozilla Thunderbird Configuration.odt';do \
-			mv "${WRKSRC}/Documentation/$${f}" \
-			${WRKSRC}/Documentation/${f:S/ /_/}; \
-	done
+.for f in SOGo_Installation_Guide SOGo_Mobile_Devices_Configuration \
+    SOGo_Mozilla_Thunderbird_Configuration
+	cd ${WRKSRC}/Documentation; mv "${f:S/_/ /g}.odt" "$f.odt"
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sogo
