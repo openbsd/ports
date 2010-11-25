@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-motif,v 1.3 2010/05/11 18:36:13 dcoppa Exp $
-@conflict gpsd-<=2.38p0
-@bin bin/xgps
-@bin bin/xgpsspeed
-@man man/man1/xgps.1
-@man man/man1/xgpsspeed.1

@@ -1,32 +1,57 @@
-$OpenBSD: patch-configure,v 1.1 2009/02/17 07:45:11 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2010/11/25 08:55:24 sebastia Exp $
 
 Prevent linking with -lpthread, and use -pthread instead.
 
---- configure.orig	Mon Feb 16 11:19:56 2009
-+++ configure	Mon Feb 16 11:20:23 2009
-@@ -20913,13 +20913,13 @@ if test $ac_cv_lib_c_open = yes; then
+--- configure.orig	Wed Jul 14 00:48:24 2010
++++ configure	Wed Nov  3 12:20:34 2010
+@@ -4875,6 +4875,16 @@ $as_echo "$am_cv_python_pyexecdir" >&6; }
+   fi
+ 
+ 
++# Check whether --enable-python was given.
++if test "${enable_python+set}" = set; then
++  enableval=$enable_python; try_python="$enableval"
++else
++  try_python="yes"
++fi
++
++if test x"$try_python" = xyes ; then
++
++
+ ac_python=yes
+ if test "x$PYTHON" = "x"; then
+ 	# Extract the first word of "python", so it can be a program name with args.
+@@ -4953,6 +4963,7 @@ $as_echo "$PYTHON, $PYTHON_VERSION, $PYTHON_PREFIX" >&
+ 	CPPFLAGS="$CPPFLAGS $PYTHON_CFLAGS"
+ 	CXXFLAGS="$CXXFLAGS $PYTHON_CFLAGS"
+ 
++fi
+ 
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANSI C header files" >&5
+@@ -16644,13 +16655,13 @@ if test "x$ac_cv_lib_c_open" = x""yes; then :
  fi
  
  
--{ echo "$as_me:$LINENO: checking for pthread_setcancelstate in -lpthread" >&5
--echo $ECHO_N "checking for pthread_setcancelstate in -lpthread... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for pthread_setcancelstate in -pthread" >&5
-+echo $ECHO_N "checking for pthread_setcancelstate in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_setcancelstate+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_setcancelstate in -lpthread" >&5
+-$as_echo_n "checking for pthread_setcancelstate in -lpthread... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_setcancelstate in -pthread" >&5
++$as_echo_n "checking for pthread_setcancelstate in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_setcancelstate+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -20975,7 +20975,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_setcancelstate" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_setcancelstate" >&6; }
- if test $ac_cv_lib_pthread_pthread_setcancelstate = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16681,7 +16692,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_setcancelstate" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_setcancelstate" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_setcancelstate" = x""yes; then :
 -  LIBPTHREAD="-lpthread"
 +  LIBPTHREAD="-pthread"
  
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_LIBPTHREAD
+ $as_echo "#define HAVE_LIBPTHREAD /**/" >>confdefs.h
+ 

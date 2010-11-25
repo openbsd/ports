@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-x11,v 1.1 2010/11/25 08:55:24 sebastia Exp $
+@conflict gpsd-motif-<=2.38p4
+@pkgpath misc/gpsd,-motif
+bin/xgps
+bin/xgpsspeed
+@man man/man1/xgps.1
+@man man/man1/xgpsspeed.1

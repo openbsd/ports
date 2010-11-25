@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/25 08:55:24 sebastia Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
-COMMENT-motif=		motif-based test apps using gpsd
+COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
-COMMENT-python=		python bindings for gpsd
 
-VERSION=		2.38
+VERSION=		2.95
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
-REVISION-main =		1
-PKGNAME-motif=		gpsd-motif-${VERSION}
-REVISION-motif =	4
+PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}
-REVISION-python =	3
-SHARED_LIBS=		gps	18.0
+SHARED_LIBS=		gps	19.0 \
+			gpsd	0.0
 CATEGORIES=		misc geo
 
 HOMEPAGE=		http://gpsd.berlios.de/
@@ -29,14 +25,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
+MODULES +=		lang/python
 USE_LIBTOOL=		yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-ntpshm \
 			--enable-gpsd-user=_gpsd \
-			--disable-garmintxt
+			--enable-tnt \
+			--enable-oceanserver
 
-PSEUDO_FLAVORS=		no_motif no_python
+PSEUDO_FLAVORS =	no_x11
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -php
@@ -45,30 +43,17 @@ BUILD_DEPENDS=		textproc/libxslt \
 			textproc/docbook \
 			textproc/docbook-xsl
 
-.if ${FLAVOR:L:Mno_motif}
+.if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
+CONFIGURE_ENV +=	LDFLAGS="-lm -pthread -lutil"
 .else
-MULTI_PACKAGES+=	-motif
-WANTLIB-motif=		ICE Xaw7 Xau Xdmcp Xext Xft Xmu Xpm Xrender X11 SM Xt \
-			c m pthread expat fontconfig freetype iconv jpeg png \
-			pthread-stubs xcb z Xm gps
-LIB_DEPENDS-motif=	x11/openmotif misc/gpsd
+MULTI_PACKAGES +=	-x11
+RUN_DEPENDS-x11 =	${BASE_PKGPATH}
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -pthread -lutil"
 .endif
 
-.if ${FLAVOR:L:Mno_python}
-CONFIGURE_ARGS+=	--disable-python
-.else
-MULTI_PACKAGES+=	-python
-MODULES=		lang/python
-RUN_DEPENDS-python=	misc/gpsd
-WANTLIB-python=
-RUN_DEPENDS-main=
-RUN_DEPENDS-motif=
-.endif
-
-WANTLIB-main=		m ncurses c pthread
+WANTLIB-main=		m ncurses c pthread stdc++ util
 
 # the php display script doesn't depend on having any of gpsd around,
 # it just sits there and looks pretty.
@@ -76,7 +61,7 @@ PKG_ARCH-php=		*
 RUN_DEPENDS-php=	www/php5/extensions,-gd
 PREFIX-php=		/var/www/
 
-PYTHON_SCRIPTS=		gpsprof gps.py gpsfake gpscat
+PYTHON_SCRIPTS=		gpsprof gps/gps.py gpsfake gpscat xgps gpsspeed
 
 pre-configure:
 .for file in ${PYTHON_SCRIPTS}
