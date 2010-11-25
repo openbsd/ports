@@ -1,0 +1,41 @@
+$OpenBSD: patch-gsettings_dconfsettingsbackend_c,v 1.1 2010/11/25 15:45:30 jasper Exp $
+
+Fix some meory leaks, from upstream git:
+2812c9a874bfd1a1a6df762e6aebf654f7efae7d
+
+--- gsettings/dconfsettingsbackend.c.orig	Wed Sep 15 15:34:58 2010
++++ gsettings/dconfsettingsbackend.c	Thu Nov 25 16:41:01 2010
+@@ -155,6 +155,7 @@ dconf_settings_backend_remove_outstanding (DConfSettin
+                                       g_dbus_message_get_sender (message),
+                                       g_dbus_message_get_body (message),
+                                       anti_expose, NULL);
++        g_slice_free (Outstanding, tmp);
+ 
+         found = TRUE;
+         break;
+@@ -457,6 +458,7 @@ dconf_settings_backend_write_tree (GSettingsBackend *b
+                                    gpointer          origin_tag)
+ {
+   DConfSettingsBackend *dcsb = (DConfSettingsBackend *) backend;
++  gboolean success = FALSE;
+   volatile guint32 *serial;
+   DConfEngineMessage dcem;
+   GDBusConnection *bus;
+@@ -478,15 +480,11 @@ dconf_settings_backend_write_tree (GSettingsBackend *b
+ 
+           g_settings_backend_keys_changed (backend, prefix, keys, origin_tag);
+ 
+-          return TRUE;
++          success = TRUE;
+         }
+     }
+ 
+-  g_free (prefix);
+-  g_free (values);
+-  g_free (keys);
+-
+-  return FALSE;
++  return success;
+ }
+ 
+ static void
