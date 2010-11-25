@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/06/03 15:47:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/25 16:59:34 naddy Exp $
 
 COMMENT=	Ogg bitstream library
 
-DISTNAME=	libogg-1.2.0
+DISTNAME=	libogg-1.2.1
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ogg/
-SHARED_LIBS +=	ogg                  6.0      # .7.0
+SHARED_LIBS +=	ogg                  6.1      # .7.1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
