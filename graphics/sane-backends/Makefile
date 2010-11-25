@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/25 13:55:57 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.21
-REVISION=	3
+REVISION=	4
 
 PATCHFILES=	sane-backends-1.0.21-i18n.patch
 PATCH_DIST_STRIP= -p1
@@ -58,6 +58,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 post-install:
+	# removing the microtek2 backend which needs a Linux kernel module
+	find ${PREFIX} -name \*microtek2\* | xargs rm
 	cp -R ${WRKSRC}/tools/openbsd/ \
 		${PREFIX}/share/examples/sane-backends/hotplug
 

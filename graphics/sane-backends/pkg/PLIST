@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/11/06 07:58:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/11/25 13:55:57 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -100,8 +100,6 @@ lib/sane/
 @comment lib/sane/libsane-matsushita.la
 @comment lib/sane/libsane-microtek.a
 @comment lib/sane/libsane-microtek.la
-@comment lib/sane/libsane-microtek2.a
-@comment lib/sane/libsane-microtek2.la
 @comment lib/sane/libsane-mustek.a
 @comment lib/sane/libsane-mustek.la
 @comment lib/sane/libsane-mustek_usb.a
@@ -214,7 +212,6 @@ lib/sane/
 @man man/man5/sane-ma1509.5
 @man man/man5/sane-matsushita.5
 @man man/man5/sane-microtek.5
-@man man/man5/sane-microtek2.5
 @man man/man5/sane-mustek.5
 @man man/man5/sane-mustek_usb.5
 @man man/man5/sane-nec.5
@@ -419,8 +416,6 @@ share/examples/sane-backends/sane.d/matsushita.conf
 @sample ${SYSCONFDIR}/sane.d/matsushita.conf
 share/examples/sane-backends/sane.d/microtek.conf
 @sample ${SYSCONFDIR}/sane.d/microtek.conf
-share/examples/sane-backends/sane.d/microtek2.conf
-@sample ${SYSCONFDIR}/sane.d/microtek2.conf
 share/examples/sane-backends/sane.d/mustek.conf
 @sample ${SYSCONFDIR}/sane.d/mustek.conf
 share/examples/sane-backends/sane.d/mustek_usb.conf
