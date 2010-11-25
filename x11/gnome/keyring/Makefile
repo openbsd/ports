@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/25 08:13:19 jasper Exp $
 
 COMMENT=		password agent for the GNOME project
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		2.32.1
 SHARED_LIBS +=  gp11                 1.0      # .0.0
 SHARED_LIBS +=  gcr                  1.0      # .0.0
 
-REVISION=	0
+REVISION=	1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

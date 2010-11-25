@@ -1,0 +1,14 @@
+$OpenBSD: patch-daemon_control_gkd-control-server_c,v 1.1 2010/11/25 08:13:19 jasper Exp $
+
+Fix implicit declaration of strchr.
+
+--- daemon/control/gkd-control-server.c.orig	Thu Nov 25 00:18:38 2010
++++ daemon/control/gkd-control-server.c	Thu Nov 25 00:18:57 2010
+@@ -36,6 +36,7 @@
+ 
+ #include <errno.h>
+ #include <fcntl.h>
++#include <string.h>
+ 
+ #include <sys/socket.h>
+ #include <sys/types.h>
