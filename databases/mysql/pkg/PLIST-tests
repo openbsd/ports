@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.43 2010/11/10 21:03:04 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.44 2010/11/26 10:21:17 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -177,6 +177,7 @@ share/mysql-test/extra/rpl_tests/rpl_set_null.test
 share/mysql-test/extra/rpl_tests/rpl_stm_000001.test
 share/mysql-test/extra/rpl_tests/rpl_stm_EE_err2.test
 share/mysql-test/extra/rpl_tests/rpl_stm_create_if_not_exists.test
+share/mysql-test/extra/rpl_tests/rpl_stop_slave.test
 share/mysql-test/extra/rpl_tests/rpl_sv_relay_space.test
 share/mysql-test/extra/rpl_tests/rpl_tmp_table_and_DDL.test
 share/mysql-test/extra/rpl_tests/rpl_trig004.test
@@ -758,6 +759,7 @@ share/mysql-test/r/lowercase_mixed_tmpdir_innodb.result
 share/mysql-test/r/lowercase_table.result
 share/mysql-test/r/lowercase_table2.result
 share/mysql-test/r/lowercase_table3.result
+share/mysql-test/r/lowercase_table4.result
 share/mysql-test/r/lowercase_table_grant.result
 share/mysql-test/r/lowercase_table_qcache.result
 share/mysql-test/r/lowercase_utf8.result
@@ -1020,7 +1022,6 @@ share/mysql-test/r/varbinary.result
 share/mysql-test/r/variables-big.result
 share/mysql-test/r/variables-notembedded.result
 share/mysql-test/r/variables.result
-share/mysql-test/r/variables.result.orig
 share/mysql-test/r/variables_community.result
 share/mysql-test/r/variables_debug.result
 share/mysql-test/r/view.result
@@ -2709,7 +2710,10 @@ share/mysql-test/suite/innodb/r/innodb_bug52663.result
 share/mysql-test/suite/innodb/r/innodb_bug53674.result
 share/mysql-test/suite/innodb/r/innodb_bug53756.result
 share/mysql-test/suite/innodb/r/innodb_bug54044.result
+share/mysql-test/suite/innodb/r/innodb_bug56143.result
+share/mysql-test/suite/innodb/r/innodb_bug56680.result
 share/mysql-test/suite/innodb/r/innodb_bug56716.result
+share/mysql-test/suite/innodb/r/innodb_bug57252.result
 share/mysql-test/suite/innodb/r/innodb_bug57255.result
 share/mysql-test/suite/innodb/r/innodb_gis.result
 share/mysql-test/suite/innodb/r/innodb_lock_wait_timeout_1.result
@@ -2763,7 +2767,10 @@ share/mysql-test/suite/innodb/t/innodb_bug53674.test
 share/mysql-test/suite/innodb/t/innodb_bug53756-master.opt
 share/mysql-test/suite/innodb/t/innodb_bug53756.test
 share/mysql-test/suite/innodb/t/innodb_bug54044.test
+share/mysql-test/suite/innodb/t/innodb_bug56143.test
+share/mysql-test/suite/innodb/t/innodb_bug56680.test
 share/mysql-test/suite/innodb/t/innodb_bug56716.test
+share/mysql-test/suite/innodb/t/innodb_bug57252.test
 share/mysql-test/suite/innodb/t/innodb_bug57255.test
 share/mysql-test/suite/innodb/t/innodb_gis.test
 share/mysql-test/suite/innodb/t/innodb_lock_wait_timeout_1-master.opt
@@ -2840,7 +2847,12 @@ share/mysql-test/suite/innodb_plugin/r/innodb_bug53756.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug54044.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug54453.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug54679.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug56143.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug56632.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug56680.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug56716.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug56947.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug57252.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug57255.result
 share/mysql-test/suite/innodb_plugin/r/innodb_file_format.result
 share/mysql-test/suite/innodb_plugin/r/innodb_gis.result
@@ -2919,7 +2931,12 @@ share/mysql-test/suite/innodb_plugin/t/innodb_bug53756.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug54044.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug54453.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug54679.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug56143.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug56632.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug56680.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug56716.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug56947.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug57252.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug57255.test
 share/mysql-test/suite/innodb_plugin/t/innodb_file_format.test
 share/mysql-test/suite/innodb_plugin/t/innodb_gis.test
@@ -3870,6 +3887,7 @@ share/mysql-test/suite/rpl/r/rpl_stm_no_op.result
 share/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result
 share/mysql-test/suite/rpl/r/rpl_stm_sql_mode.result
 share/mysql-test/suite/rpl/r/rpl_stm_until.result
+share/mysql-test/suite/rpl/r/rpl_stop_slave.result
 share/mysql-test/suite/rpl/r/rpl_switch_stm_row_mixed.result
 share/mysql-test/suite/rpl/r/rpl_temp_table.result
 share/mysql-test/suite/rpl/r/rpl_temp_table_mix_row.result
@@ -3912,7 +3930,6 @@ share/mysql-test/suite/rpl/t/rpl_begin_commit_rollback.test
 share/mysql-test/suite/rpl/t/rpl_binlog_corruption-master.opt
 share/mysql-test/suite/rpl/t/rpl_binlog_corruption.test
 share/mysql-test/suite/rpl/t/rpl_binlog_grant.test
-share/mysql-test/suite/rpl/t/rpl_binlog_max_cache_size-master.opt
 share/mysql-test/suite/rpl/t/rpl_binlog_max_cache_size.test
 share/mysql-test/suite/rpl/t/rpl_binlog_query_filter_rules-master.opt
 share/mysql-test/suite/rpl/t/rpl_binlog_query_filter_rules.test
@@ -4212,6 +4229,7 @@ share/mysql-test/suite/rpl/t/rpl_stm_no_op.test
 share/mysql-test/suite/rpl/t/rpl_stm_reset_slave.test
 share/mysql-test/suite/rpl/t/rpl_stm_sql_mode.test
 share/mysql-test/suite/rpl/t/rpl_stm_until.test
+share/mysql-test/suite/rpl/t/rpl_stop_slave.test
 share/mysql-test/suite/rpl/t/rpl_switch_stm_row_mixed.test
 share/mysql-test/suite/rpl/t/rpl_temp_table.test
 share/mysql-test/suite/rpl/t/rpl_temp_table_mix_row.test
@@ -4666,6 +4684,8 @@ share/mysql-test/t/lowercase_table.test
 share/mysql-test/t/lowercase_table2.test
 share/mysql-test/t/lowercase_table3-master.opt
 share/mysql-test/t/lowercase_table3.test
+share/mysql-test/t/lowercase_table4-master.opt
+share/mysql-test/t/lowercase_table4.test
 share/mysql-test/t/lowercase_table_grant-master.opt
 share/mysql-test/t/lowercase_table_grant.test
 share/mysql-test/t/lowercase_table_qcache-master.opt
@@ -4967,7 +4987,6 @@ share/mysql-test/t/variables-big.test
 share/mysql-test/t/variables-notembedded-master.opt
 share/mysql-test/t/variables-notembedded.test
 share/mysql-test/t/variables.test
-share/mysql-test/t/variables.test.orig
 share/mysql-test/t/variables_community.test
 share/mysql-test/t/variables_debug.test
 share/mysql-test/t/view.test
