@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 09:38:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/26 14:44:27 espie Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -7,6 +7,7 @@ SHARED_ONLY =		Yes
 VERSION =		1.5.4
 DISTNAME =		kamailio-${VERSION}-tls_src
 PKGNAME-main =		kamailio-${VERSION}
+REVISION-main =		0
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
 PKGNAME-postgresql =	kamailio-postgresql-${VERSION}
 #PKGNAME-radius =	kamailio-radius-${VERSION}		TODO
@@ -35,7 +36,7 @@ WRKDIST =		${WRKDIR}/kamailio-${VERSION}-tls
 MODULES =		devel/gettext
 WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2
 LIB_DEPENDS-main =	net/curl \
-			databases/db/v4,-main \
+			databases/db/v4 \
 			devel/pcre \
 			textproc/libxml,-main,no_python
 
