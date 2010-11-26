@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2010/11/15 20:21:01 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/11/26 07:54:43 espie Exp $
 
 # most parts common to all autoconfs actually
 COMMENT ?=	automatically configure source code on many Un*x platforms
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_FTP ?=	Yes
 SUFFIX ?=		-${VERSION}
 SUBST_VARS +=		SUFFIX
 RUN_DEPENDS +=		devel/metaauto
+PKGSPEC ?=		autoconf-${VERSION}
 
 CONFIGURE_STYLE ?= 	gnu
 
