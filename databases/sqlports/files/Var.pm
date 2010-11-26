@@ -1,5 +1,4 @@
-#! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.7 2010/11/14 08:42:00 espie Exp $
+# $OpenBSD: Var.pm,v 1.8 2010/11/26 20:11:12 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -177,27 +176,57 @@ package BrokenVar;
 our @ISA = qw(ArchDependentVar);
 sub table() { 'Broken' }
 
-package YesNoVar;
+package ValuedVar;
 our @ISA = qw(AnyVar);
 sub columntype() { 'OptIntegerColumn' }
 
+sub find_value
+{
+	my ($self, $ins) = @_;
+
+	my $key = $self->value;
+	my $h = $self->values;
+	while (my ($v, $k) = each %$h) {
+		if ($key =~ m/$v/i) {
+			return $k;
+		}
+	}
+	$ins->add_error($self->var." has unknown value $key in ".$ins->{ref});
+	return undef;
+}
+
 sub add
 {
 	my ($self, $ins) = @_;
-	$self->add_value($ins, $self->value =~ m/^Yes/i ? 1 : undef);
+	if (defined $self->value) {
+		$self->add_value($ins, $self->find_value($ins));
+	} else {
+		$self->add_value($ins, undef);
+	}
+}
+
+package YesNoVar;
+our @ISA = qw(ValuedVar);
+sub columntype() { 'OptIntegerColumn' }
+sub values
+{
+	return { 
+	    	yes => 1,
+		no => undef 
+	};
 }
 
 package YesNoGnuVar;
-our @ISA = qw(YesNoVar);
+our @ISA = qw(ValuedVar);
 
-sub add
+sub values
 {
-	my ($self, $ins) = @_;
-	$self->add_value($ins, 
-	    $self->value =~ m/^Gnu/i ? 2 : 
-		($self->value =~ m/^Yes/i ? 1 : undef));
+	return { 
+		yes => 1,
+		gnu => 2,
+		no => undef
+	}
 }
-
 
 # variable is always defined, but we don't need to store empty values.
 package DefinedVar;

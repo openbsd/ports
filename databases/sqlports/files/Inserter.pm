@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.7 2010/04/26 08:52:09 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.8 2010/11/26 20:11:12 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,8 +78,17 @@ sub new
 		threshold => $i,
 		vars => {},
 		tables_created => {},
+		errors => [],
 		verbose => $verbose,
 	}, $class;
+}
+
+sub add_error
+{
+}
+
+sub write_log
+{
 }
 
 sub create_tables
@@ -400,6 +409,10 @@ sub create_keyword_table
 	$self->{$t}->{find_key2} = $self->prepare("INSERT INTO $t (VALUE) VALUES (?)");
 }
 
+sub write_log
+{
+}
+
 package NormalInserter;
 our @ISA = qw(AbstractInserter);
 
@@ -409,6 +422,21 @@ our $c = {
 	Build => 'B',
 	Regress => 'Regress'
 };
+
+sub add_error
+{
+	my ($self, $msg) = @_;
+	push(@{$self->{errors}}, $msg);
+}
+
+sub write_log
+{
+	my ($self, $log) = @_;
+
+	foreach my $error (@{$self->{errors}}) {
+		print $log $error."\n";
+	}
+}
 
 sub convert_depends
 {

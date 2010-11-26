@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/26 20:11:12 espie Exp $
 
 CATEGORIES =		databases
 V =			1.13
@@ -21,9 +21,9 @@ MULTI_PACKAGES =	-main -compact
 DBNAME =		${WRKBUILD}/sqlports
 
 do-build:
-	cd ${PORTSDIR} && ${MAKE} dump-vars NO_IGNORE=Yes REPORT_PROBLEM='touch ${WRKBUILD}/ouch; exit 1'| \
+	@cd ${PORTSDIR} && ${MAKE} dump-vars NO_IGNORE=Yes REPORT_PROBLEM='touch ${WRKBUILD}/ouch; exit 1'| \
 	    perl ${FILESDIR}/mksqlitedb -v ${DBNAME}
-	if test -e ${WRKBUILD}/ouch; then exit 1; fi
+	@if test -e ${WRKBUILD}/ouch; then exit 1; fi
 
 do-install:
 	${INSTALL_DATA} ${DBNAME} ${PREFIX}/share

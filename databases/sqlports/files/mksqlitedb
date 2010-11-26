@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.27 2010/10/24 20:44:50 ajacoutot Exp $
+# $OpenBSD: mksqlitedb,v 1.28 2010/11/26 20:11:12 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,15 +31,16 @@ use Inserter;
 use DBI;
 
 
-our ($opt_v);
+our ($opt_v, $opt_q);
 
-getopts('v');
+getopts('vq:');
 my $dbname;
 if (@ARGV > 0) {
 	$dbname = shift;
 } else {
 	$dbname = 'sqlports';
 }
+
 my $inserter = InserterList->new;
 
 my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
@@ -150,4 +151,11 @@ $inserter->commit_to_db;
 
 while (my ($k, $v) = each %$unknown) {
 	print STDERR "Unknown variable $k in $v\n";
+}
+
+if (defined $opt_q) {
+	open(my $log, ">", $opt_q) or die $!;
+	$inserter->write_log($log);
+} else {
+	$inserter->write_log(\*STDERR);
 }
