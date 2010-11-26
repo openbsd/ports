@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
@@ -48,7 +48,7 @@ LIB_DEPENDS=	audio/libvorbis \
 		devel/libtool,-ltdl \
 		multimedia/gstreamer-0.10/core \
 		x11/gtk+2
-RUN_DEPENDS=	sound-theme-freedesktop->=0.6:audio/sound-theme-freedesktop
+RUN_DEPENDS=	audio/sound-theme-freedesktop>=0.6
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

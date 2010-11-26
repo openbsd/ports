@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=		GNOME music player client
 
@@ -40,7 +40,7 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		x11/gob2 \
-			vala->=0.7.10:lang/vala
+			lang/vala>=0.7.10
 
 RUN_DEPENDS=		devel/desktop-file-utils
 
@@ -48,7 +48,7 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--enable-system-libsexy
 
-LIB_DEPENDS=		libmpd->=0.20.0:audio/libmpd \
+LIB_DEPENDS=		audio/libmpd>=0.20.0 \
 			x11/libsexy \
 			devel/libglade2 \
 			devel/libsoup,-main

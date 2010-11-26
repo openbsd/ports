@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2010/11/26 07:07:56 espie Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.12
@@ -56,7 +56,7 @@ CONFIGURE_ARGS +=	--enable-ao \
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mtremor}
 CONFIGURE_ARGS +=	--with-tremor \
@@ -75,7 +75,7 @@ LIB_DEPENDS +=		audio/libvorbis \
 			audio/speex \
 			audio/lame \
 			net/libshout \
-			faad->=2.6.1p0:audio/faad \
+			audio/faad>=2.6.1p0 \
 			audio/libmpcdec
 CONFIGURE_ARGS +=	--enable-aac
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 07:07:57 espie Exp $
 
 COMMENT =		audio player daemon with library management
 
@@ -47,7 +47,7 @@ BUILD_DEPENDS =		devel/pyrex \
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			devel/glib2 \
-			ffmpeg->=20080620p10:graphics/ffmpeg \
+			graphics/ffmpeg>=20080620p10 \
 			audio/libao \
 			audio/jack \
 			databases/sqlite3 \

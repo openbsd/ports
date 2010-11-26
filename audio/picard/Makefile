@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 15:48:57 millert Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 07:07:56 espie Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
@@ -32,8 +32,8 @@ BUILD_DEPENDS =		devel/gettext
 
 LIB_DEPENDS =		audio/libofa graphics/ffmpeg
 
-RUN_DEPENDS =		py-qt4->=4.1:x11/py-qt4 \
-			py-mutagen->=1.9:audio/py-mutagen \
+RUN_DEPENDS =		x11/py-qt4>=4.1 \
+			audio/py-mutagen>=1.9 \
 			devel/desktop-file-utils
 
 REGRESS_DEPENDS =	${BASE_PKGPATH}

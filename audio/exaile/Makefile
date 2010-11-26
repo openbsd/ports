@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 07:07:56 espie Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	lang/python
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	dbus-python->=0.82.1:x11/dbus-python \
-		py-notify->=0.1.1:devel/py-notify \
-		py-mutagen->=1.11:audio/py-mutagen \
-		py-cddb->=1.4:audio/py-cddb \
-		py-gtk2->=2.17:x11/py-gtk2 \
+RUN_DEPENDS =	x11/dbus-python>=0.82.1 \
+		devel/py-notify>=0.1.1 \
+		audio/py-mutagen>=1.11 \
+		audio/py-cddb>=1.4 \
+		x11/py-gtk2>=2.17 \
 		devel/libglade2 \
 		devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/core \

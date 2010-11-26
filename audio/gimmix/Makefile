@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -29,13 +29,13 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext textproc/intltool
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=		libmpd->=0.17:audio/libmpd \
+LIB_DEPENDS=		audio/libmpd>=0.17 \
 			textproc/libnxml \
 			audio/taglib \
 			devel/libglade2

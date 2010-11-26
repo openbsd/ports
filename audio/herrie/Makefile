@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=		minimalistic console-based audio player
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=		audio/libmad \
 			audio/libvorbis \
 			devel/glib2 \
 			net/curl \
-			libao->=0.8.8p1:audio/libao
+			audio/libao>=0.8.8p1
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CONFDIR=${SYSCONFDIR} \

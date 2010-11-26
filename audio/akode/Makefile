@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	audio/flac \
 		audio/speex \
 		audio/libvorbis \
 		devel/libtool,-ltdl \
-		ffmpeg->=20100512:graphics/ffmpeg \
+		graphics/ffmpeg>=20100512 \
 		audio/jack
 
 USE_GMAKE=	Yes

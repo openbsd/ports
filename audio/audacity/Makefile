@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/15 13:08:37 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=	free audio editor
 
@@ -31,13 +31,13 @@ WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
 WANTLIB += tag
 
 BUILD_DEPENDS=	archivers/zip
-LIB_DEPENDS=	wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
+LIB_DEPENDS=	x11/wxWidgets>=2.8.6 \
 		audio/libsamplerate \
 		audio/flac \
 		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
-		portaudio-svn->=1406p1:audio/portaudio-svn \
+		audio/portaudio-svn>=1406p1 \
 		audio/soundtouch \
 		audio/vamp-plugin-sdk \
 		audio/taglib

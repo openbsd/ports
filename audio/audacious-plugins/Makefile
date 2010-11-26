@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/26 07:07:56 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -42,7 +42,7 @@ MULTI_PACKAGES =	-main
 
 BUILD_DEPENDS =	${RUN_DEPENDS-main}
 
-RUN_DEPENDS-main =	audacious->=1.5.1:audio/audacious
+RUN_DEPENDS-main =	audio/audacious>=1.5.1
 RUN_DEPENDS-jack =	audio/audacious-plugins,-main
 
 LIB_DEPENDS-main =	audio/faad \
@@ -53,7 +53,7 @@ LIB_DEPENDS-main =	audio/faad \
 			audio/libmpcdec \
 			audio/libsndfile \
 			audio/libvorbis \
-			taglib->=1.4:audio/taglib \
+			audio/taglib>=1.4 \
 			audio/wavpack \
 			devel/sdl \
 			net/curl \

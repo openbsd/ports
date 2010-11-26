@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 07:07:56 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-wikipedia
 MODULES =	devel/gettext
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			taglib->=1.5:audio/taglib \
+			audio/taglib>=1.5 \
 			x11/dbus-glib \
 			net/avahi
 WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0 tag tag_c dbus-glib-1
@@ -60,7 +60,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sqlite3 stdc++ xml2 z
 WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
 
-RUN_DEPENDS =	gmpc->=${VERSION}:audio/gmpc \
+RUN_DEPENDS =	audio/gmpc>=${VERSION} \
 		audio/vorbis-tools
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \

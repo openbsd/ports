@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -32,7 +32,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	audio/id3lib \
 		audio/libvorbis \
-		gtk+2->=2.10:x11/gtk+2 \
+		x11/gtk+2>=2.10 \
 		devel/libglade2 \
 		audio/libvorbis
 RUN_DEPENDS=	x11/hicolor-icon-theme \

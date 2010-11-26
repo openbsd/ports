@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=		click & play MPD client
 
@@ -19,7 +19,7 @@ MODULES=		lang/python textproc/intltool
 
 RUN_DEPENDS=		audio/py-mpd \
 			devel/desktop-file-utils \
-			py-gtk2->=2.12.1:x11/py-gtk2
+			x11/py-gtk2>=2.12.1
 
 
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/26 07:07:56 espie Exp $
 
 SHARED_ONLY = 	Yes
 
@@ -38,8 +38,8 @@ BUILD_DEPENDS = textproc/libxml
 RUN_DEPENDS = 	devel/desktop-file-utils
 LIB_DEPENDS = 	audio/libsamplerate \
 		devel/libexecinfo \
-		mcs->=0.7.0:devel/mcs \
-		mowgli->=0.4.0:devel/mowgli \
+		devel/mcs>=0.7.0 \
+		devel/mowgli>=0.4.0 \
 		x11/dbus-glib \
 		x11/dbus \
 		x11/gtk+2

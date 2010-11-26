@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:07:56 espie Exp $
 
 COMMENT =		free karaoke player
 
@@ -23,9 +23,9 @@ MODULES =		lang/python
 
 WANTLIB +=		SDL
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		x11/py-wxPython			\
-			py-mutagen->=1.9:audio/py-mutagen	\
-			devel/pygame				\
+RUN_DEPENDS =		x11/py-wxPython	\
+			audio/py-mutagen>=1.9 \
+			devel/pygame \
 			devel/desktop-file-utils
 
 pre-configure:

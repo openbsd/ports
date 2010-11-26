@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.47 2010/11/26 07:07:56 espie Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -31,7 +31,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS +=	x11/kde/libs3 \
 		x11/kde/base3 \
 		x11/gtk+2 \
-		taglib->=1.4:audio/taglib \
+		audio/taglib>=1.4 \
 		multimedia/xine-lib \
 		databases/sqlite3 \
 		audio/libgpod \

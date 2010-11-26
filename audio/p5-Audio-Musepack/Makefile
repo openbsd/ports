@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:07:56 espie Exp $
 
 COMMENT=	object-oriented interface to Musepack/APE file information
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-MP3-Info->=1.20:audio/p5-MP3-Info
+RUN_DEPENDS=	audio/p5-MP3-Info>=1.20
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
