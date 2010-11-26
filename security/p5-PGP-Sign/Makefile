@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/26 07:51:00 espie Exp $
 
 COMMENT=	perl module to create/verify PGP signatures
 
@@ -21,7 +21,7 @@ FLAVOR?=
 RUN_DEPENDS=	pgp->=5,<6:security/pgp5
 CONFIGURE_ARGS=	PGPV="${LOCALBASE}/bin/pgpv" PGPS="${LOCALBASE}/bin/pgps" PGPSTYLE="PGP5"
 .else
-RUN_DEPENDS=	security/gnupg<2
+RUN_DEPENDS=	security/gnupg
 CONFIGURE_ARGS=	PGP="${LOCALBASE}/bin/gpg" PGPSTYLE="GPG"
 .endif
 

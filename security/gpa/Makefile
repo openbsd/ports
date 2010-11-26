@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/26 07:51:00 espie Exp $
 
 COMMENT=	graphical interface for GnuPG
 
@@ -27,8 +27,8 @@ WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		security/gnupg<2
-BUILD_DEPENDS=	security/gnupg<2
+		security/gnupg
+BUILD_DEPENDS=	security/gnupg
 LIB_DEPENDS=	security/gpgme \
 		x11/gtk+2
 

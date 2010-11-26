@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/26 07:51:00 espie Exp $
 
 COMMENT=		industrial-grade ticketing system
 
@@ -78,11 +78,11 @@ CONFIGURE_ARGS=		--with-rt-group=bin \
 			--enable-graphviz \
 			--enable-gd
 
-RUN_DEPENDS+=		security/gnupg<2 \
+RUN_DEPENDS+=		security/gnupg \
 			graphics/gd \
 			math/graphviz,-main
 
-BUILD_DEPENDS+=		security/gnupg<2 \
+BUILD_DEPENDS+=		security/gnupg \
 			graphics/gd \
 			math/graphviz,-main
 

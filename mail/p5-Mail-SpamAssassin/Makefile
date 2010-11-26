@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2010/11/26 07:51:00 espie Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -38,7 +38,7 @@ COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \
-			security/gnupg<2 \
+			security/gnupg \
 			devel/re2c
 
 MAKE_ENV+=		CC="${CC}"
