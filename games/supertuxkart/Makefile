@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:20:12 espie Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS =		devel/plib
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl \
 			graphics/freeglut \
-			openal->=0.0.8p7:audio/openal \
+			audio/openal>=0.0.8p7 \
 			audio/libvorbis
 
 USE_GMAKE =		Yes

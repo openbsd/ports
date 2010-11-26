@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/26 07:20:12 espie Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
@@ -22,9 +22,9 @@ MODULES=		java
 MODJAVA_VER=		1.5+
 MODJAVA_JRERUN=		Yes
 BUILD_DEPENDS=		devel/apache-ant>=1.6.1 \
-			junit-3.8.2:java/junit
+			java/junit=3.8.2
 REGRESS_DEPENDS=	net/GeoIP \
-			junit-3.8.2:java/junit
+			java/junit=3.8.2
 RUN_DEPENDS=		net/GeoIP\
  			java/javaPathHelper
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \

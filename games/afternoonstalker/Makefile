@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/16 11:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/26 07:20:11 espie Exp $
 
 COMMENT=	Night Stalker clone for X
 
@@ -19,7 +19,7 @@ WANTLIB += SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1>=1
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	flatzebra->=0.1.4:devel/flatzebra
+LIB_DEPENDS=	devel/flatzebra>=0.1.4
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes

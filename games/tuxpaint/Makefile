@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/26 07:20:12 espie Exp $
 
 COMMENT=	drawing program for children
 
@@ -28,7 +28,7 @@ WANTLIB += paper utf8>=1 SDL_Pango fribidi
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
-		sdl-ttf->=2.0.8:devel/sdl-ttf \
+		devel/sdl-ttf>=2.0.8 \
 		x11/gnome/librsvg \
 		print/libpaper \
 		misc/libutf8 \

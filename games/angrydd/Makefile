@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:20:11 espie Exp $
 
 COMMENT=	falling blocks puzzle game
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	pygame->=1.7:devel/pygame \
+RUN_DEPENDS=	devel/pygame>=1.7 \
 		math/py-Numeric
 
 MODULES=	lang/python

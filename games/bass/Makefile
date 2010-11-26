@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:20:11 espie Exp $
 
 PKG_ARCH=	*
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	space constraints
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	scummvm->=0.5.1:games/scummvm
+RUN_DEPENDS=	games/scummvm>=0.5.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bass

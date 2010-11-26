@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 07:20:12 espie Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -41,7 +41,7 @@ MODULES=		textproc/intltool \
 LIB_DEPENDS-main=	${MODGCONF2_LIB_DEPENDS} \
 			x11/gnome/libgnome \
 			x11/gnome/libgnomeui \
-			esound->=0.2.38:audio/esound
+			audio/esound>=0.2.38
 LIB_DEPENDS-themes=
 WANTLIB-themes=
 RUN_DEPENDS-main=	${RUN_DEPENDS} \

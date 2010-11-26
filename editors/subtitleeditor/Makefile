@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 07:20:11 espie Exp $
 
 SHARED_ONLY=   	Yes
 
@@ -47,7 +47,7 @@ WANTLIB += gstreamermm-0.10 gstcdda-0.10 gstnetbuffer-0.10 gstrtp-0.10
 
 BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		devel/iso-codes
-LIB_DEPENDS=	pcre->=6.4p2:devel/pcre \
+LIB_DEPENDS=	devel/pcre>=6.4p2 \
 		textproc/enchant \
 		multimedia/gstreamer-0.10/mm \
 		multimedia/gstreamer-0.10/plugins-base \

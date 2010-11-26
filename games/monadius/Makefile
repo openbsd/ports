@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:20:12 espie Exp $
 
 COMMENT =		Gradius clone
 
@@ -22,7 +22,7 @@ MODGHC_BUILD =		cabal hackage nort
 LIB_DEPENDS =		devel/gmp \
 			graphics/freeglut
 BUILD_DEPENDS =		graphics/hs-GLUT \
-			hs-OpenGL->=2.0:graphics/hs-OpenGL
+			graphics/hs-OpenGL>=2.0
 
 
 post-install:

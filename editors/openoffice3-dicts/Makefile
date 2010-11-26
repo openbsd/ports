@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 07:20:11 espie Exp $
 
 PKG_ARCH=	*
 
@@ -25,7 +25,7 @@ LANGUAGES=	ar_AR de_DE en_GB en_US fa_IR fr_FR hu_HU nl_NL \
 
 EXTRACT_CASES=	*.oxt) break;; 
 
-RUN_DEPENDS=	openoffice->=3:editors/openoffice3
+RUN_DEPENDS=	editors/openoffice3>=3
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_EXTRACT=	Yes
