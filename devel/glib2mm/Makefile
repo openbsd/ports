@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/26 15:00:45 espie Exp $
 
 COMMENT=	C++ interface for glib2
 
@@ -33,7 +33,7 @@ WANTLIB += gio-2.0 gthread-2.0
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	libsigc++->=2,<3:devel/libsigc++-2 \
+LIB_DEPENDS=	devel/libsigc++-2 \
 		devel/glib2>=2.24.0
 
 

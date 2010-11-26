@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/26 15:00:45 espie Exp $
 
 BROKEN-hppa=	Signal-related bug? any program linked with this hangs
 
@@ -8,6 +8,7 @@ DISTNAME=	libsigc++-1.0.4
 REVISION =	4
 SHARED_LIBS=		sigc 1.0
 MODGNU_SHARED_LIBS=	sigc '-no-undefined'
+PKGSPEC =	libsigc++->=1,<2
 
 CATEGORIES=	devel
 

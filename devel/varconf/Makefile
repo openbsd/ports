@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/26 15:00:45 espie Exp $
 
 COMMENT=	configuration system for the STAGE server
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://purple.worldforge.org/wf/downloads/libs/varconf/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
 LIB_DEPENDS =	devel/atlas \
-		libsigc++->=1,<2:devel/libsigc++
+		devel/libsigc++
 WANTLIB =	pthread Atlas>=1.1 sigc
 
 USE_LIBTOOL= Yes

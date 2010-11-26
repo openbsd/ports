@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/11/26 15:00:45 espie Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net multimedia
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/11/26 15:00:45 espie Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
@@ -28,7 +28,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		devel/glib2mm>=2.8 \
-			libsigc++->=2,<3:devel/libsigc++-2 \
+			devel/libsigc++-2 \
 			x11/gtk2mm \
 			devel/pangomm \
 			x11/gnome/libgnomecanvas

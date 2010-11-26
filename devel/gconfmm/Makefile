@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 15:00:45 espie Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -25,7 +25,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/ORBit2 \
 			devel/gconf2 \
-			libsigc++->=2,<3:devel/libsigc++-2 \
+			devel/libsigc++-2 \
 			devel/glib2mm>=2.8
 WANTLIB +=		ORBit-2 gconf-2>=5 sigc-2.0 glibmm-2.4
 

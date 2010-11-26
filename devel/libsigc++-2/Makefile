@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/26 15:00:45 espie Exp $
 
 COMMENT-main=		callback framework for C++
 COMMENT-docs=		callback framework for C++ documentation
@@ -6,6 +6,7 @@ COMMENT-docs=		callback framework for C++ documentation
 VERSION=		2.2.8
 DISTNAME=		libsigc++-${VERSION}
 PKGNAME-main =		${DISTNAME}
+PKGSPEC-main =		libsigc++->=2,<3
 REVISION =		0
 PKGNAME-docs=		libsigc++-docs-${VERSION}
 V=			2.0
