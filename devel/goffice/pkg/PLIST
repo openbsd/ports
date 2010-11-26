@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/10/02 05:29:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/11/26 09:42:44 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -183,6 +183,7 @@ lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/barcol.a
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/barcol.la
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/barcol.so
+lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/gog-area-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/gog-barcol-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/gog-minmax-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_barcol/plot-types.xml
@@ -207,6 +208,7 @@ lib/goffice/${GNOME_VERSION}/plugins/plot_pie/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_pie/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/gog-color-polar-prefs.ui
+lib/goffice/${GNOME_VERSION}/plugins/plot_radar/gog-polar-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_radar/radar.a
@@ -223,6 +225,7 @@ lib/goffice/${GNOME_VERSION}/plugins/plot_surface/surface.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-bubble-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-color-prefs.ui
+lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/plugin.xml
@@ -429,6 +432,7 @@ share/locale/ast/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/az/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/bg/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/ca/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
+share/locale/ca@valencia/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/cs/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/da/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/de/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
