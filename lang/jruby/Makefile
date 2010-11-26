@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 15:49:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 02:43:32 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	pure-Java implementation of the Ruby language
 V =		1.5.5
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0 \
@@ -73,11 +73,8 @@ post-build:
 do-install:
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	for file in jgem jirb jirb_swing jruby jrubyc; do \
-	  ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
-	done
-	for file in ast rdoc ri; do \
-	  ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/j$$file; \
+	for file in ast gem jgem jirb jirb_swing jruby jrubyc rdoc ri testrb; \
+	  do ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
 	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
@@ -85,11 +82,8 @@ do-install:
 	cd ${WRKBUILD} && tar -cf - share | \
 		tar -C ${JRUBY_HOME} -xf -
 	${SET_ENV} ${MAKE_ENV} PATH=${JRUBY_HOME}/bin:$$PATH \
-		${PREFIX}/jruby/bin/jgem install \
+		${PREFIX}/jruby/bin/gem install --no-rdoc --no-ri \
 		${WRKBUILD}/build_lib/{rake,rspec}*.gem
-	for file in autospec rake spec; do \
-	  ln ${JRUBY_HOME}/bin/$$file ${JRUBY_HOME}/bin/j$$file; \
-	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/tool/nailgun
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/nailgun/ng ${JRUBY_HOME}/tool/nailgun
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share \
