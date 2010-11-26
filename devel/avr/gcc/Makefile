@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS+=		autoconf-2.13:devel/autoconf/2.13 \
 			devel/metaauto		\
 			devel/avr/binutils
 
-LIB_DEPENDS=		gmp->=4.2:devel/gmp \
+LIB_DEPENDS=		devel/gmp>=4.2 \
 			devel/mpfr
 
 LANGS=c,c++

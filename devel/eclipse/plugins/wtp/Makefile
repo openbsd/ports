@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://download.eclipse.org/webtools/downloads/drops/R1.5/R-${V}-200705021353/
 
 BUILD_DEPENDS=		archivers/gtar
-RUN_DEPENDS=		STEM->=2.2.0:devel/eclipse/plugins/emf\
-			STEM->=3.2.2:devel/eclipse/plugins/gef
+RUN_DEPENDS=		devel/eclipse/plugins/emf>=2.2.0 \
+			devel/eclipse/plugins/gef>=3.2.2
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

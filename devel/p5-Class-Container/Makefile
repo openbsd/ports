@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=	validate method/function parameters
 
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Params-Validate->=0.23:devel/p5-Params-Validate
+RUN_DEPENDS=	devel/p5-Params-Validate>=0.23
 
 .include <bsd.port.mk>

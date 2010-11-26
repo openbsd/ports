@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:19:00 espie Exp $
 
 COMMENT =	execute code after a scope finished compilation
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	devel/p5-Sub-Exporter \
-		p5-Variable-Magic->=0.34:devel/p5-Variable-Magic
+		devel/p5-Variable-Magic>=0.34
 
 .include <bsd.port.mk>

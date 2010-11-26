@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -21,6 +21,6 @@ WANTLIB =		z
 MODULES =		cpan
 USE_GROFF =		Yes
 RUN_DEPENDS =		converters/p5-JSON-Any
-REGRESS_DEPENDS =	p5-Sub-Name->=0.05:devel/p5-Sub-Name
+REGRESS_DEPENDS =	devel/p5-Sub-Name>=0.05
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	create HTML table from sql queries
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-DBI->=1.20:databases/p5-DBI
+RUN_DEPENDS=	databases/p5-DBI>=1.20
 
 REGRESS_IS_INTERACTIVE=	Yes
 

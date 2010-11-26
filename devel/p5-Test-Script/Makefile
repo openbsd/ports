@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
 
 COMMENT= 	cross-platform basic tests for scripts
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-IPC-Run3->=0.034:devel/p5-IPC-Run3 \
-		p5-Probe-Perl->=0.01:devel/p5-Probe-Perl
+RUN_DEPENDS=	devel/p5-IPC-Run3>=0.034 \
+		devel/p5-Probe-Perl>=0.01
 BUILD_DEPENDS = ${RUN_DEPENDS}
 
 .include <bsd.port.mk>

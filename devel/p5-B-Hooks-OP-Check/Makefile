@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,6 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=		cpan
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		p5-ExtUtils-Depends->=0.302:devel/p5-ExtUtils-Depends
+RUN_DEPENDS=		devel/p5-ExtUtils-Depends>=0.302
 
 .include <bsd.port.mk>

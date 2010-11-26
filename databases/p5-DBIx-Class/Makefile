@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/26 07:18:59 espie Exp $
 
 COMMENT= 	object-oriented database access
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 RUN_DEPENDS=	devel/p5-Class-Data-Accessor \
-		p5-Data-Page->=2.00:databases/p5-Data-Page \
-		p5-Class-C3->=0.13:devel/p5-Class-C3 \
+		databases/p5-Data-Page>=2.00 \
+		devel/p5-Class-C3>=0.13 \
 		devel/p5-Class-C3-Componentised \
 		devel/p5-Carp-Clan \
 		devel/p5-Module-Find \

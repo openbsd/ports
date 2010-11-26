@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ MODULES=		cpan
 CONFIGURE_STYLE=	modbuild
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	p5-Net-IDN-Nameprep->=1.100:converters/p5-Net-IDN-Nameprep
+RUN_DEPENDS=	converters/p5-Net-IDN-Nameprep>=1.100
 REGRESS_DEPENDS=devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>

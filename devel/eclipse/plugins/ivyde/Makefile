@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		IVY plug-in for Eclipse IDE
 
@@ -20,7 +20,7 @@ HOMEPAGE=		http://incubator.apache.org/ivy/ivyde/
 
 MASTER_SITES=		http://www.jaya.free.fr/downloads/ivyde/
 
-RUN_DEPENDS=		eclipse-sdk-*:devel/eclipse/sdk
+RUN_DEPENDS=		devel/eclipse/sdk
 
 SUBST_VARS=		VERSION
 

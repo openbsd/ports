@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/26 07:19:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	DOY
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-MOP->=0.94:devel/p5-Class-MOP \
+RUN_DEPENDS=	devel/p5-Class-MOP>=0.94 \
 		devel/p5-Data-OptList \
 		devel/p5-List-MoreUtils \
 		devel/p5-Sub-Exporter \
@@ -39,7 +39,7 @@ REGRESS_DEPENDS=databases/p5-DBM-Deep \
 		devel/p5-Test-Exception \
 		devel/p5-Test-LongString \
 		devel/p5-Test-Output \
-		p5-Test-Warn->=0.10:devel/p5-Test-Warn \
+		devel/p5-Test-Warn>=0.10 \
 		textproc/p5-Regexp-Common \
 		www/p5-libwww \
 		www/p5-URI

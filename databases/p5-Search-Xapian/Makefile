@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=		perl bindings for the xapian search library
 
@@ -20,6 +20,6 @@ WANTLIB += e2fs-uuid m stdc++ z xapian
 
 MASTER_SITES=		http://oligarchy.co.uk/xapian/${V}/
 
-LIB_DEPENDS=		xapian-core->=1.2.3:databases/xapian-core
+LIB_DEPENDS=		databases/xapian-core>=1.2.3
 
 .include <bsd.port.mk>

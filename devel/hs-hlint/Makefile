@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 09:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		source code suggestions for Haskell
 
@@ -25,10 +25,10 @@ MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/cpphs,-lib \
-			hscolour->=1.17:devel/hscolour \
+			devel/hscolour>=1.17 \
 			devel/hs-transformers \
 			devel/hs-uniplate \
-			STEM->=1.9.6:lang/hs-haskell-src-exts
+			lang/hs-haskell-src-exts>=1.9.6
 LIB_DEPENDS=		devel/gmp
 
 post-install:

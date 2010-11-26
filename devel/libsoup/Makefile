@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2010/11/26 07:19:00 espie Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -27,7 +27,7 @@ WANTLIB =		gcrypt gpg-error m pcre tasn1 z \
 			gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 			gthread-2.0 gnutls>=12 xml2>=7
 
-LIB_DEPENDS =		glib2->=2.22.2:devel/glib2 \
+LIB_DEPENDS =		devel/glib2>=2.22.2 \
 			security/gnutls \
 			textproc/libxml
 

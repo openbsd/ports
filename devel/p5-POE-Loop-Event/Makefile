@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=		bridge that allows POE to be driven by Event.pm
 
@@ -18,6 +18,6 @@ USE_GROFF =		Yes
 
 BUILD_DEPENDS=		devel/p5-POE-Test-Loops
 RUN_DEPENDS+=		devel/p5-Event \
-			p5-POE->1.006:devel/p5-POE
+			devel/p5-POE>1.006
 
 .include <bsd.port.mk>

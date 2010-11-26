@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4
@@ -20,7 +20,7 @@ USE_GROFF =	Yes
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/desktop-file-utils \
-		shared-mime-info->=0.21:misc/shared-mime-info \
+		misc/shared-mime-info>=0.21 \
 		devel/mono-addins \
 		shells/bash \
 		x11/gnome/mono-gnome \

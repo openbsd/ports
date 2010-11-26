@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -109,7 +109,7 @@ FETCH_MANUALLY+=	"http://java.sun.com/products/archive/j2se/5.0_16/index.html"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
-BUILD_DEPENDS+=		kaffe->=1.1.7p1:lang/kaffe \
+BUILD_DEPENDS+=		lang/kaffe>=1.1.7p1 \
 			lang/jikes
 ALT_BOOTDIR2=		${LOCALBASE}/kaffe
 MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \

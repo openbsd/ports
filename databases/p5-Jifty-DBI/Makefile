@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 12:44:20 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:18:59 espie Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -29,8 +29,8 @@ RUN_DEPENDS=	devel/p5-Class-Accessor \
 		devel/p5-DateTime-Format-Strptime \
 		devel/p5-Cache-Memcached \
 		devel/p5-DateTime-Format-ISO8601 \
-		p5-Object-Declare->=0.22:devel/p5-Object-Declare \
-		p5-Scalar-Defer->=0.10:devel/p5-Scalar-Defer \
+		devel/p5-Object-Declare>=0.22 \
+		devel/p5-Scalar-Defer>=0.10 \
 		devel/p5-Hash-Merge
 
 # a lot of tests will be skipped without DB connections

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/18 10:41:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -29,7 +29,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 LIB_DEPENDS=		x11/gtk+2 \
-			libxml->=2.6.16p6:textproc/libxml
+			textproc/libxml>=2.6.16p6
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

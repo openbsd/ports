@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -51,7 +51,7 @@ WANTLIB +=	bz2>=10 wx_base>=1 wx_base_net wx_base_odbc wx_base_xml \
 		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		shared-mime-info->=0.21:misc/shared-mime-info
+		misc/shared-mime-info>=0.21
 
 MODULES=	devel/gettext
 

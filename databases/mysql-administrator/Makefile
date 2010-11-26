@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	visual administration console for MySQL
 
@@ -30,15 +30,15 @@ WANTLIB += pcre mysqlclient_r gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 glade-2.0 atkmm-1.6 gdkmm-2.4 gtkmm-2.4 xml2>=6
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common
-RUN_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common \
+BUILD_DEPENDS=	devel/mysql-gui-common>=5
+RUN_DEPENDS=	devel/mysql-gui-common>=5 \
 		devel/desktop-file-utils
 LIB_DEPENDS=	devel/pcre \
 		databases/mysql \
-		glib2->=2.6.2:devel/glib2 \
+		devel/glib2>=2.6.2 \
 		devel/libglade2 \
 		x11/gtk2mm \
-		libxml->=2.6.2:textproc/libxml
+		textproc/libxml>=2.6.2
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

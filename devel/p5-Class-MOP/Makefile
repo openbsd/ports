@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	devel/p5-Devel-GlobalDestruction \
 		devel/p5-List-MoreUtils \
 		devel/p5-MRO-Compat \
 		devel/p5-Package-Stash \
-		p5-Sub-Name->=0.04:devel/p5-Sub-Name \
+		devel/p5-Sub-Name>=0.04 \
 		devel/p5-Task-Weaken \
 		devel/p5-Try-Tiny
 

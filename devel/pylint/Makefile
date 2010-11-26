@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:01 espie Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -28,7 +28,7 @@ MULTI_PACKAGES=		-main -gui
 MODULES=		lang/python
 RUN_DEPENDS=		devel/py-logilab-astng
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
-			pylint-${VERSION}:devel/pylint
+			devel/pylint=${VERSION}
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			math/py-Numeric
 

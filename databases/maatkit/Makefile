@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/26 07:18:59 espie Exp $
 
 COMMENT =	MySQL maatkit tools
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://maatkit.googlecode.com/files/
 
-RUN_DEPENDS =	p5-DBD-mysql->=1.0:databases/p5-DBD-mysql \
-		p5-Term-ReadKey->=2.10:devel/p5-Term-ReadKey
+RUN_DEPENDS =	databases/p5-DBD-mysql>=1.0 \
+		devel/p5-Term-ReadKey>=2.10
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE = perl

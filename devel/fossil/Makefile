@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 07:19:00 espie Exp $
 
 COMMENT =		simple distributed software configuration management 
 
@@ -31,7 +31,7 @@ MAKE_FLAGS =		TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL"
 WANTLIB =		c crypto ssl z
 
 MODULES =		lang/tcl
-RUN_DEPENDS =		gnupg-<2:security/gnupg
+RUN_DEPENDS =		security/gnupg<2
 
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 

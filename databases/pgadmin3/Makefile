@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -25,9 +25,9 @@ MASTER_SITES=	ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/pgadmin3/rel
     ftp://ftp5.es.postgresql.org/mirror/postgresql/pgadmin3/release/v$V/src/ \
     ftp://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/
 
-LIB_DEPENDS=	wxWidgets-gtk2->=2.8.7:x11/wxWidgets \
+LIB_DEPENDS=	x11/wxWidgets>=2.8.7 \
 		databases/postgresql \
-		libxml->=2.4.8:textproc/libxml \
+		textproc/libxml>=2.4.8 \
 		textproc/libxslt
 WANTLIB +=      wx_base_xml wx_base_odbc wx_gtk2_html wx_gtk2_richtext \
 		wx_gtk2_stc wx_gtk2_ogl wx_gtk2_adv wx_gtk2_aui wx_gtk2_xrc \

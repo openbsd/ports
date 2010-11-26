@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.102 2010/11/26 07:19:00 espie Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -40,7 +40,7 @@ MODPY_BUILDDEP=		Yes	# XXX: glib2 wants python for the regress tests
 WANTLIB-main=		${WANTLIB} c pthread z pcre fam
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			pcre->=7.2:devel/pcre \
+			devel/pcre>=7.2 \
 			sysutils/gamin,no_server,no_python
 
 PKG_ARCH-docs=		*

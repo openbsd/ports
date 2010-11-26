@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=	store multi-level hash structure in single-level tied hash
 
@@ -8,7 +8,7 @@ REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
-RUN_DEPENDS=	p5-FreezeThaw->=0.3:devel/p5-FreezeThaw
+RUN_DEPENDS=	devel/p5-FreezeThaw>=0.3
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

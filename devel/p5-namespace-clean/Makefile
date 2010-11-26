@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/26 07:19:01 espie Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	p5-B-Hooks-EndOfScope->=0.07:devel/p5-B-Hooks-EndOfScope \
+RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope>=0.07 \
 		devel/p5-Package-Stash \
 		devel/p5-Sub-Identify \
 		devel/p5-Sub-Name

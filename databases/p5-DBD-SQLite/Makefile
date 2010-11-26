@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/11/26 07:18:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=		ADAMK
 
-BUILD_DEPENDS =		p5-DBI->=1.08:databases/p5-DBI
-RUN_DEPENDS =		p5-DBI->=1.08:databases/p5-DBI
-LIB_DEPENDS =		sqlite3->=3.6.13p0:databases/sqlite3
+BUILD_DEPENDS =		databases/p5-DBI>=1.08
+RUN_DEPENDS =		databases/p5-DBI>=1.08
+LIB_DEPENDS =		databases/sqlite3>=3.6.13p0
 WANTLIB =		sqlite3
 
 CONFIGURE_ARGS=		SQLITE_LOCATION=${LOCALBASE}

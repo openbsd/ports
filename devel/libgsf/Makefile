@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/11/26 07:19:00 espie Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -36,7 +36,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=  	py-gtk2->=2.10:x11/py-gtk2 \
+BUILD_DEPENDS=  	x11/py-gtk2>=2.10 \
 			devel/popt
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/glib2 \
@@ -58,7 +58,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_ENV+=		GCONF2_SCHEMAS_DIR="${LOCALBASE}/${SCHEMAS_INSTDIR}"
 
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
 			${MODGCONF2_RUN_DEPENDS}

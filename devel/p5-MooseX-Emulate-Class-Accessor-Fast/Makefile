@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
 
 COMMENT =	emulate Class::Accessor::Fast behavior using Moose
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =		p5-Moose->=0.74:devel/p5-Moose \
+RUN_DEPENDS =		devel/p5-Moose>=0.74 \
 			devel/p5-namespace-clean
 REGRESS_DEPENDS =	devel/p5-Test-Exception
 

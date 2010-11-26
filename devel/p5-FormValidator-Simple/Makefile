@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=        validate user input through a chain of constraints
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	devel/p5-Class-Accessor \
-		p5-Class-Data-Accessor->=0.03:devel/p5-Class-Data-Accessor \
+		devel/p5-Class-Data-Accessor>=0.03 \
 		devel/p5-Class-Data-Inheritable \
 		devel/p5-Class-Inspector \
 		devel/p5-Date-Calc \

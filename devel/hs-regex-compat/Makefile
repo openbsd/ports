@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/26 07:19:00 espie Exp $
 
 COMMENT =		module layer over regex-posix to replace Text.Regex
 
@@ -20,8 +20,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		hs-regex-base->=0.93:devel/hs-regex-base \
-			hs-regex-posix->=0.93:devel/hs-regex-posix
+LIB_DEPENDS =		devel/hs-regex-base>=0.93 \
+			devel/hs-regex-posix>=0.93
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

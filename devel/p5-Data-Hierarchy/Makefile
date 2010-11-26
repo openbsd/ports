@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=	handle data in a hierarchical structure
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-Clone->=0.15:devel/p5-Clone \
-		p5-Test-Exception->=0.21:devel/p5-Test-Exception
+RUN_DEPENDS=	devel/p5-Clone>=0.15 \
+		devel/p5-Test-Exception>=0.21
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

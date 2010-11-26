@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
 
 COMMENT =	a role for classes that can be thrown
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =		p5-Moose->=0.87:devel/p5-Moose \
-			p5-Devel-StackTrace->=1.21:devel/p5-Devel-StackTrace
+RUN_DEPENDS =		devel/p5-Moose>=0.87 \
+			devel/p5-Devel-StackTrace>=1.21
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 TEST_POD =		Yes

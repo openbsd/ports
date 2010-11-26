@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=		handle .desktop files
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		p5-File-BaseDir->=0.03:devel/p5-File-BaseDir
+RUN_DEPENDS=		devel/p5-File-BaseDir>=0.03
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	modbuild

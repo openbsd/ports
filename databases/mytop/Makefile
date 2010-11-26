@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	top clone for MySQL
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	STEM->=2.9004:databases/p5-DBD-mysql \
-		STEM->=2.30:devel/p5-Term-ReadKey
+RUN_DEPENDS=	databases/p5-DBD-mysql>=2.9004 \
+		devel/p5-Term-ReadKey>=2.30
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl

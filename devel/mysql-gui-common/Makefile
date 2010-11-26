@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=	common libraries and data for the MySQL GUI Suites
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
 BUILD_DEPENDS=	devel/gettext \
-		libxml->=2.6.2:textproc/libxml \
-		glib2->=2.6.2:devel/glib2 \
+		textproc/libxml>=2.6.2 \
+		devel/glib2>=2.6.2 \
 		devel/libglade2 \
 		x11/gtk2mm \
 		databases/mysql \

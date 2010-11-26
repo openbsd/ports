@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		Configuration tool for Struts web framework
 
@@ -23,7 +23,7 @@ MASTER_SITES=		http://www.jamesholmes.com/struts/
 TAR=			${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS=		archivers/gtar
-RUN_DEPENDS=		eclipse-sdk->=3.2:devel/eclipse/sdk
+RUN_DEPENDS=		devel/eclipse/sdk>=3.2
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

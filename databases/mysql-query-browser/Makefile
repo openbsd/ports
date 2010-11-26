@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	visual query tool for MySQL
 
@@ -33,14 +33,14 @@ WANTLIB += mysqlclient_r gtkhtml-3.14 gnome-2>=2400 glade-2.0>=1
 
 MODULES=	devel/gettext \
 		textproc/intltool
-BUILD_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common \
+BUILD_DEPENDS=	devel/mysql-gui-common>=5 \
 		x11/gnome/libgnomeprintui # ${WRKSRC}/source/linux/gtksourceview
-RUN_DEPENDS=	mysql-gui-common->=5:devel/mysql-gui-common \
+RUN_DEPENDS=	devel/mysql-gui-common>=5 \
 		devel/desktop-file-utils
 LIB_DEPENDS=	x11/gtk2mm \
 		textproc/enchant \
 		databases/mysql \
-		gtkhtml3->=3.14:www/gtkhtml3 \
+		www/gtkhtml3>=3.14 \
 		x11/gnome/libgnome \
 		devel/libglade2
 

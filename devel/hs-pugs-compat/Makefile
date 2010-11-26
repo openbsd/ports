@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 07:19:00 espie Exp $
 
 COMMENT =		portable Haskell/POSIX layer for Pugs
 
@@ -19,7 +19,7 @@ LIB_DEPENDS =		devel/hs-regex-base \
 			devel/hs-regex-pcre-builtin \
 			devel/hs-network \
 			devel/hs-stm \
-			hs-stringtable-atom->=0.0.6.1:devel/hs-stringtable-atom
+			devel/hs-stringtable-atom>=0.0.6.1
 RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

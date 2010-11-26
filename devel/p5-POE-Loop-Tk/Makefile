@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=		bridge that allows POE to be driven by Tk
 
@@ -18,7 +18,7 @@ USE_GROFF =		Yes
 
 BUILD_DEPENDS=		devel/p5-POE-Test-Loops
 RUN_DEPENDS+=		x11/p5-Tk \
-			p5-POE->1.006:devel/p5-POE
+			devel/p5-POE>=1.006
 
 
 REGRESS_IS_INTERACTIVE= x11

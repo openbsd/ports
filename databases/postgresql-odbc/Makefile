@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 2010/11/15 00:22:53 espie Exp $
+# $Id: Makefile,v 1.6 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	08.03.0400
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/odbc/versions
 
 SHARED_ONLY =		Yes
 
-LIB_DEPENDS =		postgresql-client->=8.3:databases/postgresql \
+LIB_DEPENDS =		databases/postgresql>=8.3 \
 			databases/iodbc
 
 WANTLIB =		pq iodbc iodbcinst pthread 

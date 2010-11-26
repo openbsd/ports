@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2010/11/26 07:19:01 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-REGRESS_DEPENDS=	p5-Test-Taint->=1.04:devel/p5-Test-Taint \
-			p5-Readonly->=1.03:devel/p5-Readonly \
-			p5-Readonly-XS->=1.05:devel/p5-Readonly-XS
+REGRESS_DEPENDS=	devel/p5-Test-Taint>=1.04 \
+			devel/p5-Readonly>=1.03 \
+			devel/p5-Readonly-XS>=1.05
 
 CONFIGURE_STYLE=	modbuild
 

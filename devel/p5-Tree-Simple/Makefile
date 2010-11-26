@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=	simple tree object
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 REGRESS_DEPENDS= devel/p5-Test-Exception \
-		 p5-Test-Memory-Cycle->=1.02:devel/p5-Test-Memory-Cycle 
+		 devel/p5-Test-Memory-Cycle>=1.02
 
 MAKE_ENV=	TEST_POD=Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/11/26 07:19:01 espie Exp $
 
 COMMENT =	remote svn repository dump
 CATEGORIES =	devel
@@ -19,7 +19,7 @@ WANTLIB =	c apr-1 \
 		svn_client-1 svn_delta-1 svn_fs-1 svn_ra-1 svn_subr-1
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	subversion->=1.4:devel/subversion
+LIB_DEPENDS =	devel/subversion>=1.4
 
 CONFIGURE_STYLE =	gnu
 

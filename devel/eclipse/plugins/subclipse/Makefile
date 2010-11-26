@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		SubVersion (CVS replacement) plug-in for Eclipse IDE
 
@@ -26,7 +26,7 @@ MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/37653/
 # FETCH_CMD does not.
 FETCH_CMD=		lynx -accept_all_cookies -source >${DISTDIR}/$$f
 
-RUN_DEPENDS=		eclipse-sdk->=3.2:devel/eclipse/sdk
+RUN_DEPENDS=		devel/eclipse/sdk>=3.2
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

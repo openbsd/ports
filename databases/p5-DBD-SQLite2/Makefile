@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/26 07:18:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		p5-DBI->=1.08:databases/p5-DBI
-RUN_DEPENDS=		p5-DBI->=1.08:databases/p5-DBI
+BUILD_DEPENDS=		databases/p5-DBI>=1.08
+RUN_DEPENDS=		databases/p5-DBI>=1.08
 
 MAKE_FLAGS=		CC='${CC}' \
 			LD='${CC}'

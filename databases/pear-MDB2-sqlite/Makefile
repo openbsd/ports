@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
 
 COMMENT =	SQLite database abstraction layer for PHP
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =	pear-MDB2->=2.4.1:databases/pear-MDB2 \
+RUN_DEPENDS =	databases/pear-MDB2>=2.4.1 \
 		www/php5/extensions,-sqlite
 
 .include <bsd.port.mk>

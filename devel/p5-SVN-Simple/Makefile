@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=	simple interface to subversion's editor interface
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-SVN->=1.1.1:devel/subversion,-perl
+RUN_DEPENDS=	devel/subversion,-perl>=1.1.1
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

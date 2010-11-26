@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
 
 COMMENT=		Eclipse Modeling Framework (EMF)
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/emf/emf/downloads/drops/${V}/R200705141058/
 
-RUN_DEPENDS=		eclipse-sdk->=3.2:devel/eclipse/sdk
+RUN_DEPENDS=		devel/eclipse/sdk>=3.2
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

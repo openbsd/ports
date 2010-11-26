@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.35 2010/11/17 20:40:54 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.36 2010/11/26 07:19:01 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -174,6 +174,27 @@ my $stem_extensions = {
 sub is_base_system
 {
 	my ($self, $handle, $state) = @_;
+	if ($handle->pkgname =~ m/^texlive_base-2009/) {
+		# we need to alter its packing-list
+		my $plist = OpenBSD::PackingList->from_installation(
+		    $handle->pkgname);
+		require File::Find;
+		File::Find::find(
+		    sub {
+			return unless -f $_;
+			return unless m/\.fmt$/;
+			# quick and dirty pseudo-reg of all fmt files
+			my $fname = $File::Find::name;
+			$fname =~ s,^/usr/local/,,;
+			my $o = OpenBSD::PackingElement::File->new($fname);
+			# avoid checksumming them
+			$o->{nochecksum} = 1;
+			$o->add($plist);
+		    }, 
+		    '/usr/local/share/texmf-var/web2c');
+		$plist->to_installation;
+	}
+
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {

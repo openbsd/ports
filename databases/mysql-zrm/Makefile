@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 07:18:59 espie Exp $
 
 COMMENT =	MySQL backup scripts
 
@@ -22,7 +22,7 @@ MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
 
 RUN_DEPENDS =	archivers/gtar \
 		databases/p5-DBD-mysql \
-		gnupg-<2:security/gnupg \
+		security/gnupg<2 \
 		textproc/p5-XML-Parser
 USE_GROFF =	Yes
 NO_BUILD =	Yes

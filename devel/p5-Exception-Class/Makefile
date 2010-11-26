@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 07:19:01 espie Exp $
 
 COMMENT=	module to declare real exception classes in perl
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	STEM->=0.02:devel/p5-Class-Data-Inheritable \
-		STEM->=1.20:devel/p5-Devel-StackTrace
+RUN_DEPENDS=	devel/p5-Class-Data-Inheritable>=0.02 \
+		devel/p5-Devel-StackTrace>=1.20
 
 .include <bsd.port.mk>

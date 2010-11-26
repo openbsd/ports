@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2010/11/26 07:19:00 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -56,8 +56,8 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel \
-			apache-ant->=1.6.1:devel/apache-ant
+BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9 \
+			devel/apache-ant>=1.6.1
 
 USE_GMAKE=		Yes
 USE_ZIP=		Yes
@@ -88,7 +88,7 @@ LIB_DEPENDS-gnome=	x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2 gnomeui-2
 
 RUN_DEPENDS-browser=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	xulrunner->=1.9:devel/xulrunner/1.9
+LIB_DEPENDS-browser=	devel/xulrunner/1.9>=1.9
 WANTLIB-browser=	xulrunner1.9/xpcom xulrunner1.9/xul c nspr4 plc4 plds4 m stdc++
 
 MOZILLA_HOME=		${LOCALBASE}/xulrunner1.9

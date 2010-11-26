@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/26 07:18:59 espie Exp $
 
 COMMENT=	object-oriented database mapper
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	p5-Rose-DB->=0.737:databases/p5-Rose-DB \
-		p5-Rose-Object->=0.83:databases/p5-Rose-Object \
+RUN_DEPENDS=	databases/p5-Rose-DB>=0.737 \
+		databases/p5-Rose-Object>=0.83 \
 		devel/p5-Clone \
 		devel/p5-List-MoreUtils
 
