@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/26 13:30:19 ajacoutot Exp $
 
 COMMENT=	USB access library
 
 DISTNAME=	libusb-0.1.12
+REVISION=	0
 SHARED_LIBS=		usb	9.0 \
 			usbpp	10.0
 MODGNU_SHARED_LIBS=	usb	'-export-dynamic' \
@@ -21,6 +22,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
+
+WANTLIB += m stdc++
 
 USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		concurrent

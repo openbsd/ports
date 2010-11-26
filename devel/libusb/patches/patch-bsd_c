@@ -1,7 +1,7 @@
-$OpenBSD: patch-bsd_c,v 1.7 2006/11/15 18:34:13 pvalchev Exp $
---- bsd.c.orig	Fri Mar  3 19:52:46 2006
-+++ bsd.c	Tue Nov 14 21:00:00 2006
-@@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, i
+$OpenBSD: patch-bsd_c,v 1.8 2010/11/26 13:30:19 ajacoutot Exp $
+--- bsd.c.orig	Sat Mar  4 03:52:46 2006
++++ bsd.c	Thu Nov 25 18:54:05 2010
+@@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, int ep, char *b
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
  {
@@ -10,17 +10,17 @@ $OpenBSD: patch-bsd_c,v 1.7 2006/11/15 18:34:13 pvalchev Exp $
  
    /* Ensure the endpoint address is correct */
    ep &= ~USB_ENDPOINT_IN;
-@@ -383,8 +383,7 @@ int usb_interrupt_write(usb_dev_handle *
+@@ -383,8 +383,7 @@ int usb_interrupt_write(usb_dev_handle *dev, int ep, c
      USB_ERROR_STR(-errno, "error setting timeout: %s",
                    strerror(errno));
  
 -  do {
 -    ret = write(fd, bytes+sent, size-sent);
-+   ret = write(fd, bytes, size);
++  ret = write(fd, bytes, size);
      if (ret < 0)
  #ifdef __FreeBSD_kernel__
        USB_ERROR_STR(-errno, "error writing to interrupt endpoint %s.%d: %s",
-@@ -394,16 +393,13 @@ int usb_interrupt_write(usb_dev_handle *
+@@ -394,21 +393,18 @@ int usb_interrupt_write(usb_dev_handle *dev, int ep, c
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
  
@@ -39,17 +39,23 @@ $OpenBSD: patch-bsd_c,v 1.7 2006/11/15 18:34:13 pvalchev Exp $
  
    /* Ensure the endpoint address is correct */
    ep |= USB_ENDPOINT_IN;
-@@ -428,8 +424,7 @@ int usb_interrupt_read(usb_dev_handle *d
+ 
+-  fd = ensure_ep_open(dev, ep, O_RDONLY);
++  fd = ensure_ep_open(dev, ep, O_RDONLY | O_NONBLOCK);
+   if (fd < 0) {
+     if (usb_debug >= 2) {
+ #ifdef __FreeBSD_kernel__
+@@ -428,8 +424,7 @@ int usb_interrupt_read(usb_dev_handle *dev, int ep, ch
    if (ret < 0)
      USB_ERROR_STR(-errno, "error setting short xfer: %s", strerror(errno));
  
 -  do {
 -    ret = read(fd, bytes+retrieved, size-retrieved);
-+    ret = read(fd, bytes, size);
++  ret = read(fd, bytes, size);
      if (ret < 0)
  #ifdef __FreeBSD_kernel__
        USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%d: %s",
-@@ -438,10 +433,7 @@ int usb_interrupt_read(usb_dev_handle *d
+@@ -438,10 +433,7 @@ int usb_interrupt_read(usb_dev_handle *dev, int ep, ch
        USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%02d: %s",
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
@@ -61,3 +67,36 @@ $OpenBSD: patch-bsd_c,v 1.7 2006/11/15 18:34:13 pvalchev Exp $
  }
  
  int usb_control_msg(usb_dev_handle *dev, int requesttype, int request,
+@@ -477,7 +469,7 @@ int usb_control_msg(usb_dev_handle *dev, int requestty
+     USB_ERROR_STR(-errno, "error sending control message: %s",
+                   strerror(errno));
+ 
+-  return UGETW(req.ucr_request.wLength);
++  return req.ucr_actlen;
+ }
+ 
+ int usb_os_find_busses(struct usb_bus **busses)
+@@ -623,9 +615,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
+ 
+ int usb_clear_halt(usb_dev_handle *dev, unsigned int ep)
+ {
+-  /* Not yet done, because I haven't needed it. */
++  int ret;
++  struct usb_ctl_request ctl_req;
+ 
+-  USB_ERROR_STR(-ENOSYS, "usb_clear_halt called, unimplemented on BSD");
++  ctl_req.ucr_addr = 0; // Not used for this type of request
++  ctl_req.ucr_request.bmRequestType = UT_WRITE_ENDPOINT;
++  ctl_req.ucr_request.bRequest = UR_CLEAR_FEATURE;
++  USETW(ctl_req.ucr_request.wValue, UF_ENDPOINT_HALT);
++  USETW(ctl_req.ucr_request.wIndex, ep);
++  USETW(ctl_req.ucr_request.wLength, 0);
++  ctl_req.ucr_flags = 0;
++
++  if ((ret = ioctl(dev->fd, USB_DO_REQUEST, &ctl_req)) < 0)
++      USB_ERROR_STR(-errno, "clear_halt:  failed for %d", ep);
++
++  return ret;
+ }
+ 
+ int usb_reset(usb_dev_handle *dev)
