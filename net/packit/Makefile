@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/11/26 14:56:15 espie Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		libnet->=1.1,<1.2:net/libnet/1.1
+LIB_DEPENDS=		net/libnet/1.1
 WANTLIB=		c pcap lib/libnet-1.1/net=11
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/11/26 14:56:14 espie Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://spacehopper.org/mirrors/
 
 #HOMEPAGE=	http://www.packetfactory.net/projects/firewalk/
 
-LIB_DEPENDS=	libnet->=1.0,<1.1:net/libnet/1.0
+LIB_DEPENDS=	net/libnet/1.0
 WANTLIB=	c pcap lib/libnet-1.0/net=0
 
 # BSD

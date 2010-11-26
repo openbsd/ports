@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/11/26 14:56:15 espie Exp $
 
 COMMENT=	command line arbitrary packet builder
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nemesis/}
 
 HOMEPAGE=	http://nemesis.sourceforge.net/
 
-LIB_DEPENDS=	libnet->=1.0,<1.1:net/libnet/1.0
+LIB_DEPENDS=	net/libnet/1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

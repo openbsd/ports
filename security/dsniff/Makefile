@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/26 14:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/26 14:56:15 espie Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 
 BUILD_DEPENDS=	net/libnids
 LIB_DEPENDS=	databases/db/v3 \
-		libnet->=1.0,<1.1:net/libnet/1.0
+		net/libnet/1.0
 WANTLIB=	c crypto pcap ssl rpcsvc lib/db/db=3 lib/libnet-1.0/net=0
 
 # BSD

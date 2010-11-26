@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/26 14:56:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,7 +54,7 @@ WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1 \
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		sysutils/e2fsprogs \
 		security/gnutls \
-		libnet->=1.0,<1.1:net/libnet/1.0 \
+		net/libnet/1.0 \
 		archivers/bzip2 \
 		textproc/libxml \
 		devel/libtool,-ltdl \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/11/26 14:56:15 espie Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
 DISTNAME =	yersinia-0.7.1
 CATEGORIES =	net security
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.yersinia.net/
 
@@ -20,7 +20,7 @@ MASTER_SITES =	http://www.yersinia.net/download/
 
 WANTLIB =	c ncurses panel pcap pthread net
 
-LIB_DEPENDS =	net/libnet/1.1>=1.1
+LIB_DEPENDS =	net/libnet/1.1
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-gtk \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/22 09:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2010/11/26 14:56:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB += c crypto form menu ncurses panel pcap pthread ssl z
 WANTLIB += lib/libnet-1.1/net=11 ltdl pcre
 
-LIB_DEPENDS=	libnet->=1.1,<1.2:net/libnet/1.1 \
+LIB_DEPENDS=	net/libnet/1.1 \
 		devel/libtool,-ltdl \
 		devel/pcre
 

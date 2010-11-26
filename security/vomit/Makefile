@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/26 14:56:15 espie Exp $
 
 COMMENT=		voice over misconfigured internet telephones
 
@@ -22,7 +22,7 @@ WRKDIST=		${WRKDIR}/vomit-lite
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		libnet->=1.0,<1.1:net/libnet/1.0
+LIB_DEPENDS=		net/libnet/1.0
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
