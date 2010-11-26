@@ -1,12 +1,12 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.18 2010/11/20 19:57:30 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.19 2010/11/26 20:24:36 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 REGRESS_TARGET ?=	test
 MODPERL_BUILD ?= Build
-SHARED_ONLY ?=
+SHARED_ONLY ?= No
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 MODPERL_configure = \
