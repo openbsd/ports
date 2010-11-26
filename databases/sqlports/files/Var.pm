@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.8 2010/11/26 20:11:12 espie Exp $
+# $OpenBSD: Var.pm,v 1.9 2010/11/26 20:32:38 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -207,12 +207,24 @@ sub add
 
 package YesNoVar;
 our @ISA = qw(ValuedVar);
-sub columntype() { 'OptIntegerColumn' }
 sub values
 {
 	return { 
 	    	yes => 1,
 		no => undef 
+	};
+}
+
+package MotifVar;
+our @ISA =qw(ValuedVar);
+sub values
+{
+	return {
+		lesstif => 2,
+		openmotif => 1,
+		yes => 3,
+		any => 3,
+		no => undef
 	};
 }
 
