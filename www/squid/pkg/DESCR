@@ -12,5 +12,6 @@ By using the lightweight Internet Cache Protocol, Squid caches can be
 arranged in a hierarchy or mesh for additional bandwidth savings.
 
 Flavors:
-             ldap - Support for LDAP
-	     snmp - Support for SNMP
+	ldap - Support for LDAP
+	ntlm - Support for NTLM
+	snmp - Support for SNMP

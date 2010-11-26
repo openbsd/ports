@@ -1,4 +1,6 @@
-NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.7
+$OpenBSD: README,v 1.1 2010/11/26 13:45:04 dcoppa Exp $
+
+Notes on OpenBSD post-installation of Squid
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}/squid
@@ -13,9 +15,3 @@ The local (OpenBSD) differences are:
 
 Please remember to initialize the cache by running "squid -z" before
 trying to run Squid for the first time.
-
-You can also edit /etc/rc.local so that Squid is started automatically:
-
-    if [ -x ${PREFIX}/sbin/squid ]; then
-	echo -n ' squid';	${PREFIX}/sbin/squid
-    fi

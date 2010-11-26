@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2009/02/08 15:04:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2010/11/26 13:45:04 dcoppa Exp $
 @pkgpath www/squid,transparent
 @pkgpath www/squid,snmp,transparent
 @newgroup _squid:515
@@ -20,7 +20,9 @@ bin/RunCache
 @man man/man8/squid.8
 @man man/man8/squid_unix_group.8
 %%ldap%%
+%%ntlm%%
 @bin sbin/squid
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/squid/
 @sample ${SYSCONFDIR}/squid/
 share/examples/squid/errors/
@@ -2207,3 +2209,4 @@ share/examples/squid/squid.conf
 @unexec rm -f /var/run/squid.pid
 @extraunexec rm -rf ${SQUIDDIR}
 @comment share/examples/squid/squid.conf.default
+@rcscript ${RCDIR}/squid

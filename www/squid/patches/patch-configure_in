@@ -1,7 +1,24 @@
-$OpenBSD: patch-configure_in,v 1.29 2010/06/18 10:32:17 sthen Exp $
---- configure.in.orig	Tue Mar 16 20:10:12 2010
-+++ configure.in	Thu Jun 17 22:13:14 2010
-@@ -2350,18 +2350,6 @@ dnl during compile.
+$OpenBSD: patch-configure_in,v 1.30 2010/11/26 13:45:04 dcoppa Exp $
+--- configure.in.orig	Wed Mar 17 01:10:12 2010
++++ configure.in	Tue Nov 23 10:08:37 2010
+@@ -2216,7 +2216,7 @@ dnl We use pthreads when doing ASYNC I/O
+ if test "$with_pthreads" = "yes"; then
+     CFLAGS="$CFLAGS -D_REENTRANT"
+     case "$host" in
+-    i386-unknown-freebsd*)
++    i386-unknown-freebsd*|*-unknown-openbsd*)
+ 	if test "$GCC" = "yes" ; then
+ 	    if test -z "$PRESET_LDFLAGS"; then
+ 		LDFLAGS="$LDFLAGS -pthread"
+@@ -2231,7 +2231,6 @@ if test "$with_pthreads" = "yes"; then
+ 	fi
+     ;;
+     esac
+-    AC_CHECK_LIB(pthread, pthread_create)
+ fi
+ 
+ dnl Check for librt
+@@ -2350,18 +2349,6 @@ dnl during compile.
  		;;
  esac
  
@@ -20,7 +37,7 @@ $OpenBSD: patch-configure_in,v 1.29 2010/06/18 10:32:17 sthen Exp $
  # Recommended by Balint Nagy Endre <bne@CareNet.hu>
  case "$host" in
  	*-univel-sysv4.2MP)
-@@ -2906,12 +2894,14 @@ AC_ARG_WITH(maxfd,
+@@ -2906,12 +2893,14 @@ AC_ARG_WITH(maxfd,
      ;;
    esac
  ])

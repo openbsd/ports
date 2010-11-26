@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: squid.rc,v 1.1 2010/11/26 13:45:04 dcoppa Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/squid"
+pexp="${TRUEPREFIX}/sbin/squid"
+
+rc_stop() {
+	${daemon} -k shutdown
+}
+
+rc_reload() {
+	${daemon} -k reconfigure
+}
+
+rc_cmd $1
