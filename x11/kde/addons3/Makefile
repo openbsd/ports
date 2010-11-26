@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/11/26 14:50:10 espie Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
@@ -17,7 +17,7 @@ LIB_DEPENDS = 	x11/kde/libs3 \
 		x11/kde/pim3 \
 		x11/gtk+ \
 		audio/xmms \
-		db->=4,<5:databases/db/v4
+		databases/db/v4
 
 # XXX no version number on noatunarts
 #WANTLIB+=	noatunarts 

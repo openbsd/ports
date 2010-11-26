@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
@@ -36,7 +36,7 @@ BUILD_DEPENDS=		net/dctc>=0.85.9
 RUN_DEPENDS=		devel/desktop-file-utils \
 			net/dctc>=0.85.9 \
 			x11/gnome/yelp
-LIB_DEPENDS=		db->=4,<5:databases/db/v4 \
+LIB_DEPENDS=		databases/db/v4 \
 			net/curl \
 			x11/gnome/libgnomeui
 

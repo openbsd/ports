@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/26 14:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/11/26 14:50:10 espie Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -26,7 +26,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:L} == "db4"
 DB_DIR =		db4
-LIB_DEPENDS +=		db->=4,<5:databases/db/v4
+LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
 .elif ${FLAVOR:L} == "sqlite3"
 DB_ENGINE =		sqlite3

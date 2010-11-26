@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 13:08:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=		Berkeley DB module
 SHARED_ONLY=		Yes
@@ -20,7 +20,7 @@ CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
 			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
 USE_GROFF =		Yes
 
-LIB_DEPENDS =		db->=4,<5:databases/db/v4
+LIB_DEPENDS =		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
 REGRESS_DEPENDS =	devel/p5-MLDBM
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -61,7 +61,7 @@ PKG_ARGS?=	-Dsql=0
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 		--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS+=	db->=4,<5:databases/db/v4
+LIB_DEPENDS+=	databases/db/v4
 WANTLIB +=	lib/db4/db>=4
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm \

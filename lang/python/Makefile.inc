@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.72 2010/11/22 09:23:59 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.73 2010/11/26 14:50:10 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -62,7 +62,7 @@ LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
 .endif
 
-LIB_DEPENDS-bsddb =	db->=4,<5:databases/db/v4
+LIB_DEPENDS-bsddb =	databases/db/v4
 WANTLIB-bsddb =		lib/db4/db>=4
 LIB_DEPENDS-gdbm =	databases/gdbm
 WANTLIB-gdbm =		gdbm>=3

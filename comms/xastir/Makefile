@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 14:50:09 espie Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -47,7 +47,7 @@ LIB_DEPENDS=	net/curl \
 		devel/shapelib \
 		devel/geotiff \
 		graphics/ImageMagick \
-		db->=4,<5:databases/db/v4 \
+		databases/db/v4 \
 		devel/pcre
 
 .include <bsd.port.mk>

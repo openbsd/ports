@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2010/11/26 14:50:10 espie Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -26,7 +26,7 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 WANTLIB +=	crypto ssl z sasl2 lib/db4/db>=4
 
 LIB_DEPENDS=	security/cyrus-sasl2 \
-		db->=4,<5:databases/db/v4
+		databases/db/v4
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		devel/pcre
 RUN_DEPENDS-main=${RUN_DEPENDS}

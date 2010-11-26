@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/11/26 14:50:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -50,7 +50,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/bison \
 			devel/gperf
-LIB_DEPENDS= 		db->=4,<5:databases/db/v4 \
+LIB_DEPENDS= 		databases/db/v4 \
 			databases/openldap \
 			security/nss>=3.11.4p1 \
 			textproc/libical \

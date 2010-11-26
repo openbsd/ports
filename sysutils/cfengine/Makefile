@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=	GNU system administration tool for networks
 
@@ -23,6 +23,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs
 USE_GROFF =		Yes
 
-LIB_DEPENDS=		db->=4,<5:databases/db/v4
+LIB_DEPENDS=		databases/db/v4
 
 .include <bsd.port.mk>

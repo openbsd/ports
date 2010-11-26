@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=		ruby interface to Berkeley DB
 DISTNAME=		bdb-0.6.2
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://moulon.inra.fr/pub/ruby/
 MODULES= 		lang/ruby
 
 WANTLIB=		lib/db4/db>=4
-LIB_DEPENDS=		db->=4,<5:databases/db/v4
+LIB_DEPENDS=		databases/db/v4
 
 CONFIGURE_STYLE=	ruby extconf
 CONFIGURE_ARGS=		--with-db-include="${PREFIX}/include/db4" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=		Direct Connect clone
 
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 WANTLIB=		c gpg-error m pcre pthread z db glib-2.0 gthread-2.0 \
 			gcrypt xml2
 
-LIB_DEPENDS=		db->=4,<5:databases/db/v4 \
+LIB_DEPENDS=		databases/db/v4 \
 			devel/glib2 \
 			security/libgcrypt \
 			textproc/libxml

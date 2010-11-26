@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/11/22 16:20:32 robert Exp $
+# $OpenBSD: Makefile,v 1.65 2010/11/26 14:50:10 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -140,7 +140,7 @@ MODULES+=	lang/python \
 MODGCONF2_LIBDEP=No
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
-		db->=4,<5:databases/db/v4 \
+		databases/db/v4 \
 		textproc/libxslt \
 		net/curl \
 		net/neon \

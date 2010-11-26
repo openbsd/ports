@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 14:50:10 espie Exp $
 
 COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl lib/db4/db>=4
 
-LIB_DEPENDS=		db->=4,<5:databases/db/v4
+LIB_DEPENDS=		databases/db/v4
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

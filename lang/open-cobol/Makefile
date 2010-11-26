@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=	open source COBOL compiler
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=open-cobol/}
 
-LIB_DEPENDS=	db->=4,<5:databases/db/v4 \
+LIB_DEPENDS=	databases/db/v4 \
 	 	devel/gmp
 
 MODULES=	devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 14:50:10 espie Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
@@ -23,7 +23,7 @@ SG_DIR =		/var/db/squidGuard
 CONFIG_DIR =		${SYSCONFDIR}/squidguard
 SUBST_VARS =		SG_DIR CONFIG_DIR
 
-LIB_DEPENDS =		db->=4,<5:databases/db/v4
+LIB_DEPENDS =		databases/db/v4
 RUN_DEPENDS =		www/squid
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

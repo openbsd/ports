@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/11/26 14:50:10 espie Exp $
 
 COMMENT=	companion library to APR
 
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
 WANTLIB=	expat lib/db4/db>=4
-LIB_DEPENDS=	db->=4,<5:databases/db/v4
+LIB_DEPENDS=	databases/db/v4
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
