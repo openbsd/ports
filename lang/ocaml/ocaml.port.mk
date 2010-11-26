@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.13 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: ocaml.port.mk,v 1.14 2010/11/26 17:27:38 espie Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -22,12 +22,12 @@ PKG_ARGS+=-Dnative=1
 .else
 
 MODOCAML_NATIVE=No
-RUN_DEPENDS+=	ocaml-${OCAML_VERSION}:lang/ocaml
+RUN_DEPENDS+=	lang/ocaml=${OCAML_VERSION}
 
 # remove native base file entry from PLIST
 PKG_ARGS+=-Dnative=0
 .endif
 
-BUILD_DEPENDS+=	ocaml-=${OCAML_VERSION}:lang/ocaml
+BUILD_DEPENDS+=	lang/ocaml=${OCAML_VERSION}
 MAKE_ENV+= OCAMLFIND_DESTDIR=${DESTDIR}${PREFIX}/lib/ocaml/site-lib
 

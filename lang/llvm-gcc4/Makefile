@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/11/26 17:27:38 espie Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -36,7 +36,7 @@ USE_GROFF =	Yes
 
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
-BUILD_DEPENDS =	llvm-${LLVM_V}:devel/llvm \
+BUILD_DEPENDS =	devel/llvm=${LLVM_V} \
 		devel/bison
 
 USE_GMAKE =		Yes

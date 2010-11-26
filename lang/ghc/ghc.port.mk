@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.16 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: ghc.port.mk,v 1.17 2010/11/26 17:27:38 espie Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -32,7 +32,7 @@ MODGHC_BUILD ?=
 
 . if !${MODGHC_BUILD:L:Mnort}
 PKGNAME ?=		hs-${DISTNAME}
-RUN_DEPENDS +=		ghc-${MODGHC_VER}:lang/ghc
+RUN_DEPENDS +=		lang/ghc=${MODGHC_VER}
 CATEGORIES +=		lang/ghc
 . endif
 
