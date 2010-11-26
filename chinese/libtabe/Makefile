@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/26 14:23:31 espie Exp $
 
 COMMENT=	library for Chinese language processing
 
@@ -22,7 +22,7 @@ WANTLIB += c lib/db/db=3
 
 MASTER_SITES=	http://www.kpvs.tp.edu.tw/
 
-LIB_DEPENDS=	db->=3,<4:databases/db/v3
+LIB_DEPENDS=	databases/db/v3
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/11/26 14:23:31 espie Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -39,7 +39,7 @@ WANTLIB +=		qdbm>=11
 .else
 BROKEN-hppa =		configure stuck on testing if BDB supports shared environments
 DB_DIR =		db
-LIB_DEPENDS +=		db->=3,<4:databases/db/v3
+LIB_DEPENDS +=		databases/db/v3
 WANTLIB +=		lib/db/db=3
 .endif
 
