@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/26 14:17:17 espie Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -29,7 +29,7 @@ AUTOMAKE_VERSION=	1.9
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 # XX needs libtoolize
-BUILD_DEPENDS=	autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/libtool \
 		devel/metaauto
 

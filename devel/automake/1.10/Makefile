@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/26 07:58:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/11/26 14:17:17 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -42,7 +42,7 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/automake${SUFFIX}
 
 REGRESS_DEPENDS=	${BASE_PKGPATH} \
 			${MODPY_RUN_DEPENDS} \
-			autoconf-${AUTOCONF_REGRESS}:devel/autoconf/${AUTOCONF_REGRESS} \
+			devel/autoconf/${AUTOCONF_REGRESS} \
 			devel/libtool \
 			devel/gmake \
 			archivers/bzip2 \

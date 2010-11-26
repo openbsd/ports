@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/22 09:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/11/26 14:17:17 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -46,7 +46,7 @@ FLAVOR ?= c++ fortran objc ada
 FLAVOR += c++
 .endif
 
-BUILD_DEPENDS =		autoconf-2.13:devel/autoconf/2.13
+BUILD_DEPENDS =		devel/autoconf/2.13
 BUILD_DEPENDS +=	devel/metaauto
 
 # This can be patched out, apart from java that wants a pure parser.

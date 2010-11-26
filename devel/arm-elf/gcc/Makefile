@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/11/26 14:17:17 espie Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -19,7 +19,7 @@ MAKE_ADA=	No
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
-BUILD_DEPENDS+=	autoconf-2.13:devel/autoconf/2.13	\
+BUILD_DEPENDS+=	devel/autoconf/2.13	\
 		devel/bison				\
 		devel/metaauto				\
 		devel/arm-elf/binutils

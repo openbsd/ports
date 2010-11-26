@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/26 14:17:17 espie Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -50,7 +50,7 @@ CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 MAKE_FILE=		GNUmakefile
 
 # Stupid fontforge writes autosave data to ~/.PfaEdit, even in
@@ -75,7 +75,7 @@ RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS= 		print/mftrace \
 			devel/bison \
 			archivers/bzip2 \
-			autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+			devel/autoconf/${AUTOCONF_VERSION} \
 			textproc/texi2html \
 			${RUN_DEPENDS}
 

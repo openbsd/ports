@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/11/26 14:17:17 espie Exp $
 
 COMMENT=	XDG sound theme
 
@@ -22,8 +22,8 @@ MASTER_SITES=	http://cgit.freedesktop.org/sound-theme-freedesktop/snapshot/
 
 MODULES=	textproc/intltool
 
-BUILD_DEPENDS=	autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		automake->=${AUTOMAKE_VERSION},<1.10:devel/automake/${AUTOMAKE_VERSION}
+BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
+		devel/automake/${AUTOMAKE_VERSION}
 
 # XXX needed for autoreconf:
 # aclocal:configure.ac:17: warning: macro `AM_GLIB_GNU_GETTEXT' not found in library
