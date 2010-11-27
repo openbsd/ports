@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2010/11/26 15:44:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.110 2010/11/27 11:12:12 dcoppa Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -77,7 +77,7 @@ RUN_DEPENDS+=  net/samba,ads
 CONFIGURE_ARGS+=--enable-ntlm-auth-helpers="fakeauth SMB"
 .endif
 
-.if${FLAVOR:L:Msnmp}
+.if ${FLAVOR:L:Msnmp}
 CONFIGURE_ARGS+=--enable-snmp
 .endif
 
