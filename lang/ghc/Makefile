@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/11/21 19:43:31 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2010/11/27 22:34:47 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -85,6 +85,9 @@ FAKE_FLAGS +=		CREATE_DATA="${INSTALL_DATA} /dev/null " \
 			INSTALL_MAN="${INSTALL_MAN}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+# For mktexpk (via dvips when building the PostScript documentation):
+PORTHOME =		${WRKDIR}
 
 BUILD_DEPENDS +=	devel/haddock,no_deps:patch
 
