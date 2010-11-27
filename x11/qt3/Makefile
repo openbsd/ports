@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2010/11/22 09:40:48 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2010/11/27 11:54:53 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -19,7 +19,7 @@ PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
 REVISION-mysql= 	2
 REVISION-postgresql= 	2
-REVISION-main= 		4
+REVISION-main= 		5
 REVISION-html= 		1
 REVISION-sqlite2= 	2
 

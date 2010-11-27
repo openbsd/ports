@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/22 09:28:34 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2010/11/27 11:54:53 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -11,7 +11,7 @@ MAPLE_DIR?=${PREFIX}/maple
 TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	maple-5.5
-REVISION=	1
+REVISION=	2
 CATEGORIES=     math
 
 RUN_DEPENDS=	emulators/redhat/libc5
