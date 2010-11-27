@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_names_c,v 1.5 2010/11/27 21:02:54 naddy Exp $
+
+Fix bug with --one-file-system and --listed-incremental.
+
+--- src/names.c.orig	Sun Oct 24 20:07:55 2010
++++ src/names.c	Sat Nov 27 21:34:19 2010
+@@ -360,8 +360,6 @@ name_next_elt (int change_dirs)
+ 	{
+ 	  if (unquote_option)
+ 	    unquote_string (name_buffer);
+-	  if (incremental_option)
+-	    register_individual_file (name_buffer);
+ 	  entry.type = ep->type;
+ 	  entry.v.name = name_buffer;
+ 	  return &entry;
