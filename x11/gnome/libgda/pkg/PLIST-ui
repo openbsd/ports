@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.1 2010/09/27 12:12:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.2 2010/11/27 17:13:42 jasper Exp $
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -19,6 +19,7 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-enum-types.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-enums.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-form.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-grid.h
+include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-login.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-plugin.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-provider-selector.h

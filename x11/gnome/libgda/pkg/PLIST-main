@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/11/18 16:44:33 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/11/27 17:13:42 jasper Exp $
 @conflict libgda-db4-*
 @pkgpath x11/gnome/libgda,-odbc
 @pkgpath x11/gnome/libgda,-ldap
@@ -230,6 +230,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiLogin.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiProviderSelector.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiRawForm.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiRawGrid.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiRtEditor.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiServerOperation.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdauiTreeStore.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/MetaStore1.png
@@ -330,6 +331,8 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/howto-modify-select.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/howto-sqlbuilder.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/howto.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/i_s_data_types.png
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-1.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
@@ -440,6 +443,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-info.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-login.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-provider-selector.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-raw-grid.png
+share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-rte.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/vi-server-op.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/virtual_connection.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/writable_data_model.png

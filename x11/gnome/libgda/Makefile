@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/26 14:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/11/27 17:13:42 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.1
+GNOME_VERSION=		4.2.2
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
