@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/10/27 23:09:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.53 2010/11/27 09:17:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -18,6 +18,7 @@
      SUBDIR += libarchive
      SUBDIR += libmspack
      SUBDIR += libtar
+     SUBDIR += libzip
      SUBDIR += luazlib
      SUBDIR += lxsplit
      SUBDIR += lzo
