@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.10 2010/05/20 10:40:05 espie Exp $
+$OpenBSD: patch-configure,v 1.11 2010/11/27 11:36:00 ajacoutot Exp $
 --- configure.orig	Mon Apr 26 02:57:49 2010
-+++ configure	Tue May 11 08:33:39 2010
++++ configure	Sat Nov 27 11:25:18 2010
 @@ -11687,13 +11687,13 @@ as_val=`eval 'as_val=${'$as_ac_Header'}
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
@@ -46,6 +46,15 @@ $OpenBSD: patch-configure,v 1.10 2010/05/20 10:40:05 espie Exp $
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
+@@ -12752,7 +12740,7 @@ fi
+ 
+ 
+ 
+-for ac_header in fcntl.h unistd.h libc.h sys/dsreq.h sys/select.h \
++for ac_header in fcntl.h unistd.h sys/dsreq.h sys/select.h \
+     sys/time.h sys/shm.h sys/ipc.h sys/signal.h sys/scanio.h os2.h \
+     sys/socket.h sys/io.h sys/hw.h sys/types.h linux/ppdev.h \
+     dev/ppbus/ppi.h machine/cpufunc.h sys/bitypes.h sys/sem.h sys/poll.h \
 @@ -14056,6 +14044,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
