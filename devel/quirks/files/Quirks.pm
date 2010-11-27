@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.37 2010/11/26 14:14:25 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.38 2010/11/27 10:01:37 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -171,9 +171,42 @@ my $stem_extensions = {
 #	checks whether an existing handle is now part of the base system
 #	and thus no longer needed.
 
+sub quick_add
+{
+	my ($plist, $fullname) = @_;
+
+	return unless -f $fullname;
+	my $fname = $fullname;
+	$fname =~ s,^/usr/local/,,;
+	my $o = OpenBSD::PackingElement::File->new($fname);
+	if (-l $fullname) {
+		$o->{symlink} = readlink($fullname);
+	}
+	# avoid checksumming them
+	$o->{nochecksum} = 1;
+	$o->add_object($plist);
+}
+
 sub is_base_system
 {
 	my ($self, $handle, $state) = @_;
+	if ($handle->pkgname =~ m/^texlive_base-2009/) {
+		# we need to alter its packing-list
+		my $plist = OpenBSD::PackingList->from_installation(
+		    $handle->pkgname);
+		require File::Find;
+		File::Find::find(
+		    sub {
+			return unless -f $_;
+			return unless m/\.(base|fmt|map|mem)$/;
+			# quick and dirty pseudo-reg of all dup files
+			quick_add($plist, $File::Find::name);
+		    }, 
+		    '/usr/local/share/texmf-var');
+		quick_add($plist, '/usr/local/share/texmf/web2c/fmtutil.cnf');
+		$plist->to_installation;
+	}
+
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {
