@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_dbtexmf_dblatex_grubber_index_py,v 1.1 2010/11/28 18:19:50 kili Exp $
+--- lib/dbtexmf/dblatex/grubber/index.py.orig	Mon Apr  5 02:07:53 2010
++++ lib/dbtexmf/dblatex/grubber/index.py	Sun Nov 28 12:56:37 2010
+@@ -150,6 +150,7 @@ class Index(TexModule):
+             env = {}
+ 
+         msg.debug(" ".join(cmd))
++        os.environ['TEXMFOUTPUT'] = dirname(self.pbase)
+         rc = subprocess.call(cmd)
+         if (rc != 0):
+             msg.error(_("could not make index %s") % self.target)

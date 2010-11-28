@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_dbtexmf_dblatex_grubber_bibtex_py,v 1.1 2010/11/28 18:19:50 kili Exp $
+--- lib/dbtexmf/dblatex/grubber/bibtex.py.orig	Mon Apr  5 02:07:53 2010
++++ lib/dbtexmf/dblatex/grubber/bibtex.py	Sun Nov 28 12:56:31 2010
+@@ -261,6 +261,7 @@ class BibTex(TexModule):
+         if len(self.bst_path) != 1:
+             os.environ["BSTINPUTS"] = string.join(self.bst_path +
+                 [os.getenv("BSTINPUTS", "")], ":")
++        os.environ['TEXMFOUTPUT'] = dirname(self.base)
+         rc = subprocess.call(["bibtex", self.base])
+         if rc != 0:
+             msg.info(_("There were errors making the bibliography."))
