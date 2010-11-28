@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 19:20:41 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/11/28 21:30:37 jasper Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN=adjust for types changes
@@ -8,14 +8,14 @@ DATE=20060303
 FULL_VERSION=4.1-${DATE}
 FULL_PKGVERSION=4.1.${DATE}
 
-PKGNAME=	gcc-${FULL_PKGVERSION}p1
-PKGNAME-c++ =	g++-${FULL_PKGVERSION}p0
-PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p0
-PKGNAME-g77=	g77-${FULL_PKGVERSION}p0
-PKGNAME-f95=	g95-${FULL_PKGVERSION}p0
-PKGNAME-java=	gcj-${FULL_PKGVERSION}p0
-PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p0
-PKGNAME-ada=	gnat-${FULL_PKGVERSION}p0
+PKGNAME-main=	gcc-${FULL_PKGVERSION}
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}
+PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}
+PKGNAME-g77=	g77-${FULL_PKGVERSION}
+PKGNAME-f95=	g95-${FULL_PKGVERSION}
+PKGNAME-java=	gcj-${FULL_PKGVERSION}
+PKGNAME-objc=	gobjc-${FULL_PKGVERSION}
+PKGNAME-ada=	gnat-${FULL_PKGVERSION}
 SHARED_LIBS=	estdc++		7.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
@@ -24,6 +24,15 @@ SHARED_LIBS=	estdc++		7.0 \
 		objc		2.0 \
 		objc_gc		2.0 \
 		ssp		0.0
+
+REVISION-main=	1
+REVISION-c++=	0
+REVISION-estdc= 0
+REVISION-g77=	0
+REVISION-f95=	1
+REVISION-java=	0
+REVISION-objc=	0
+REVISION-ada=	0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 USE_GROFF =	Yes

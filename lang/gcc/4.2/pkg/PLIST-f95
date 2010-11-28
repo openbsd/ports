@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-f95,v 1.8 2009/10/15 18:02:33 steven Exp $
+@comment $OpenBSD: PLIST-f95,v 1.9 2010/11/28 21:30:37 jasper Exp $
+@conflict gfortran-*
+@conflict libgfortran-*
 @bin bin/egfortran
 @bin bin/${CONFIG}-egfortran
 @info info/gfortran.info

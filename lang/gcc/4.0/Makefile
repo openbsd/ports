@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2010/11/28 21:30:37 jasper Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -8,7 +8,7 @@ FULL_VERSION=4.0-20060105
 FULL_PKGVERSION=4.0.20060105
 
 PKGNAME-f95=	g95-${FULL_PKGVERSION}
-REVISION-f95 =  0
+REVISION-f95 =  1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 SHARED_LIBS=	mudflap		0.0 \
