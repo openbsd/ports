@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.38 2010/11/27 10:01:37 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.39 2010/11/28 15:22:59 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -165,6 +165,7 @@ my $stem_extensions = {
 	'terminal' => 'xfce4-terminal',
 	'nmap-parser' => 'ruby-nmap-parser',
 	'tracker-search' => 'meta-tracker',
+	'gpsd-motif' => 'gpsd-x11',
 };
 
 # ->is_base_system($handle, $state):
