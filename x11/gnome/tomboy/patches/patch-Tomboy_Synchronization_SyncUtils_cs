@@ -1,0 +1,19 @@
+$OpenBSD: patch-Tomboy_Synchronization_SyncUtils_cs,v 1.1 2010/11/29 17:18:49 ajacoutot Exp $
+--- Tomboy/Synchronization/SyncUtils.cs.orig	Mon Nov 29 16:44:30 2010
++++ Tomboy/Synchronization/SyncUtils.cs	Mon Nov 29 16:48:03 2010
+@@ -56,6 +56,7 @@ namespace Tomboy.Sync
+ 
+ 		private static bool SetUpTools ()
+ 		{
++#if __linux__
+ 			lsmodTool = FindFirstExecutableInPath ("lsmod");
+ 			if (lsmodTool == null)
+ 				Logger.Warn ("lsmod not found");
+@@ -77,6 +78,7 @@ namespace Tomboy.Sync
+ 			if (lsmodTool == null || modprobeTool == null
+ 			                || guisuTool == null)
+ 				return false;
++#endif
+ 
+ 			return true;
+ 		}

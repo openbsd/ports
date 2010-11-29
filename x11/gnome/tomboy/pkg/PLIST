@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/11/25 15:38:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/11/29 17:18:50 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -37,8 +37,6 @@ lib/tomboy/addins/Tasque.Addin.dll
 lib/tomboy/addins/Tasque.Addin.dll.mdb
 lib/tomboy/addins/Underline.dll
 lib/tomboy/addins/Underline.dll.mdb
-lib/tomboy/addins/WebDavSyncService.dll
-lib/tomboy/addins/WebDavSyncService.dll.mdb
 lib/tomboy/addins/WebSyncServiceAddin.dll
 lib/tomboy/addins/WebSyncServiceAddin.dll.mdb
 lib/tomboy/libtomboy.a
