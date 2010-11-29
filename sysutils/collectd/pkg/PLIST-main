@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/06/29 20:17:18 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/11/29 20:20:41 jasper Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -102,8 +102,8 @@ lib/collectd/write_http.so
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
 libdata/perl5/site_perl/Collectd/
 libdata/perl5/site_perl/Collectd.pm
 libdata/perl5/site_perl/Collectd/Plugins/
