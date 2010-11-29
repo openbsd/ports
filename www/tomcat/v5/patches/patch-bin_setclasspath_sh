@@ -1,23 +1,22 @@
-$OpenBSD: patch-bin_setclasspath_sh,v 1.2 2007/04/10 19:10:54 kurt Exp $
---- bin/setclasspath.sh.orig	Mon Mar  5 10:26:01 2007
-+++ bin/setclasspath.sh	Tue Mar 27 13:37:25 2007
-@@ -8,6 +8,11 @@
- # First clear out the user classpath
- CLASSPATH=
+$OpenBSD: patch-bin_setclasspath_sh,v 1.3 2010/11/29 21:26:01 sthen Exp $
+--- bin/setclasspath.sh.orig	Thu Jul  1 11:19:40 2010
++++ bin/setclasspath.sh	Tue Aug  3 04:52:30 2010
+@@ -22,5 +22,10 @@
+ # -----------------------------------------------------------------------------
  
 +# Read $JAVA_HOME - sudo doesn't pass environment variables
-+if [ -r "%%SYSCONFDIR%%/tomcat/tomcat.rc" ]; then     
-+  . %%SYSCONFDIR%%/tomcat/tomcat.rc
++if [ -r "${SYSCONFDIR}/tomcat/tomcat.rc" ]; then     
++  . ${SYSCONFDIR}/tomcat/tomcat.rc
 +fi
 +
  # Make sure prerequisite environment variables are set
  if [ -z "$JAVA_HOME" -a -z "$JRE_HOME" ]; then
    # Bugzilla 37284
-@@ -16,6 +21,7 @@ if [ -z "$JAVA_HOME" -a -z "$JRE_HOME" ]; then
+@@ -29,6 +34,7 @@ if [ -z "$JAVA_HOME" -a -z "$JRE_HOME" ]; then
    else
      echo "Neither the JAVA_HOME nor the JRE_HOME environment variable is defined"
      echo "At least one of these environment variable is needed to run this program"
-+    echo "Edit \`%%SYSCONFDIR%%/tomcat/tomcat.rc' to point to your \$JAVA_HOME"
++    echo "Edit \`${SYSCONFDIR}/tomcat/tomcat.rc' to point to your \$JAVA_HOME"
      exit 1
    fi
  fi

@@ -1,8 +1,8 @@
-# $OpenBSD: tomcat.rc,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+# $OpenBSD: tomcat.rc,v 1.2 2010/11/29 21:26:01 sthen Exp $
 #
 # Define JAVA_HOME for _tomcat here
 # Start tomcat with following command:
-# $ sudo -u _tomcat %%PREFIX%%/tomcat/bin/startup.sh
+# $ sudo -u _tomcat ${TRUEPREFIX}/tomcat/bin/startup.sh
 #
 
 # javaPathHelper will pickup JAVA_HOME from the env. if
@@ -12,9 +12,9 @@ JAVA_HOME=$(javaPathHelper -h tomcat)
 JAVA_OPTS=-server
 
 # override other environment options:
-#CATALINA_HOME=%%PREFIX%%/tomcat
-#CATALINA_BASE=%%CATALINA_BASE%%
-#CATALINA_TMPDIR=$CATALINA_BASE/temp
+#CATALINA_HOME=${TRUEPREFIX}/tomcat
+#CATALINA_BASE=${CATALINA_BASE}
+#CATALINA_TMPDIR=${CATALINA_BASE}/temp
 #JAVA_OPTS="-server -Djava.net.preferIPv4Stack=true"
 #JPDA_TRANSPORT=
 #JPDA_ADDRESS=

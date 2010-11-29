@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/11/15 10:45:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/11/29 21:26:01 sthen Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -88,12 +88,11 @@ tomcat/bin/
 tomcat/bin/bootstrap.jar
 tomcat/bin/catalina-tasks.xml
 tomcat/bin/catalina.sh
+tomcat/bin/commons-daemon-native.tar.gz
 tomcat/bin/commons-daemon.jar
 tomcat/bin/commons-logging-api-1.1.1.jar
 tomcat/bin/digest.sh
-tomcat/bin/jkstatus-tasks.xml
 tomcat/bin/jmxaccessor-tasks.xml
-tomcat/bin/jsvc.tar.gz
 tomcat/bin/setclasspath.sh
 tomcat/bin/shutdown.sh
 tomcat/bin/startup.sh
@@ -138,7 +137,6 @@ tomcat/server/lib/tomcat-ajp.jar
 tomcat/server/lib/tomcat-apr.jar
 tomcat/server/lib/tomcat-coyote.jar
 tomcat/server/lib/tomcat-http.jar
-tomcat/server/lib/tomcat-jkstatus-ant.jar
 tomcat/server/lib/tomcat-util.jar
 tomcat/server/webapps/
 tomcat/server/webapps/host-manager/

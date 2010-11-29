@@ -1,30 +1,25 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/29 21:26:01 sthen Exp $
 
 COMMENT-main=	Java servlet 2.4 and Java server pages 2.0 server
 COMMENT-admin=	administration web application
 COMMENT-examples=example applications and documentation
 
-V=		5.5.27
+V=		5.5.31
 DISTNAME=	apache-tomcat-${V}
 PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-admin=	tomcat-admin-${V}
 PKGNAME-examples=tomcat-examples-${V}
-REVISION-main=	2
-REVISION-admin=	0
-REVISION-examples= 1
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${DISTNAME}-admin.tar.gz \
 		${DISTNAME}-fulldocs.tar.gz
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-5/v$V/bin/} \
+MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-5/v${V}/bin/} \
 		http://archive.apache.org/dist/tomcat/tomcat-5/archive/v${V}/bin/
 
 HOMEPAGE=	http://tomcat.apache.org/
-
-MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 MULTI_PACKAGES=	-main -admin -examples
 
@@ -76,12 +71,18 @@ do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${CONFDIR}/Catalina/localhost
 	${INSTALL_DATA} ${WRKDIST}/conf/Catalina/localhost/* \
 		${WRKINST}/${CONFDIR}/Catalina/localhost
-	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
-		xargs rm
-	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
+	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} \
 		${PREFIX}/tomcat/bin/setclasspath.sh
-	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
-		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
-		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
+	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+		${FILESDIR}/tomcat.rc \
+		${SAMPLEDIR}/tomcat.rc
+	rm -r ${PREFIX}/tomcat/bin/[xi]64
+	find ${WRKINST} \
+		-name \*.beforesubst -or \
+		-name \*.orig -or \
+		-name \*.bat -or \
+		-name \*.exe -or \
+		-name \*.dll \
+		| xargs rm
 
 .include <bsd.port.mk>

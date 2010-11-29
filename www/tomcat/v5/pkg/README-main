@@ -1,19 +1,22 @@
-$OpenBSD: README-main,v 1.1 2010/11/15 10:45:53 sthen Exp $
+$OpenBSD: README-main,v 1.2 2010/11/29 21:26:01 sthen Exp $
+
+Running Tomcat 5.5 on OpenBSD
+=============================
 
 The tomcat package does not install the example webapps, documentation
-or admin webapp.  You must supply your own webapps and configuration or
+or admin webapp. You must supply your own webapps and configuration or
 install the tomcat-examples package for the example webapps and
-documentation.  Sample config files for the host-manager and manager
+documentation. Sample config files for the host-manager and manager
 webapps can be found in ${TRUEPREFIX}/share/examples/tomcat.
 
 The tomcat-admin package contains the admin webapp but you must supply
-your own configuration for it or use the tomcat-examples package.  A
+your own configuration for it or use the tomcat-examples package. A
 sample config file can be found in ${TRUEPREFIX}/share/examples/tomcat.
 
 The tomcat-examples package includes the examples, full documentation
 and localhost config files for admin, host-manager and manager webapps.
 
-The packages are structured this way to facilate mantaining a server
+The packages are structured this way to facilitate maintaining a server
 which normally would not contain the examples and documentation webapp
 and optionally contain the admin webapp.
 

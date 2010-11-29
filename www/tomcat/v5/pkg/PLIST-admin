@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-admin,v 1.2 2008/02/13 13:48:22 kurt Exp $
+@comment $OpenBSD: PLIST-admin,v 1.3 2010/11/29 21:26:01 sthen Exp $
 share/examples/tomcat/admin.xml
 tomcat/server/webapps/admin/
 tomcat/server/webapps/admin/WEB-INF/
@@ -40,7 +40,6 @@ tomcat/server/webapps/admin/images/ResourceLink.gif
 tomcat/server/webapps/admin/images/Roles.gif
 tomcat/server/webapps/admin/images/Server.gif
 tomcat/server/webapps/admin/images/Service.gif
-tomcat/server/webapps/admin/images/Thumbs.db
 tomcat/server/webapps/admin/images/TomcatBanner.jpg
 tomcat/server/webapps/admin/images/Users.gif
 tomcat/server/webapps/admin/images/Valve.gif
