@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/29 10:09:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/11/29 18:04:25 ajacoutot Exp $
+
+# XXX libxapianbackend.so: undefined symbol '__dso_handle'
+NOT_FOR_ARCHS=	${GCC4_ARCHS}
 
 SHARED_ONLY=	Yes
 
