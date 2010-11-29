@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/11/29 10:09:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -74,7 +74,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MKDIR_P="mkdir -p --"
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-soap=no \
-		--enable-xesam-glib=no \
 		--enable-dbus=yes \
 		--enable-mempool=yes \
 		--enable-libarchive=no \
