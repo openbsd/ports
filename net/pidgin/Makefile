@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2010/11/29 23:18:30 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,11 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.5
+VERSION=	2.7.7
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-libpurple= 0
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
@@ -39,19 +38,19 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m pcre pthread util xml2 z
 
-WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo \
-		execinfo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
+WANTLIB-main=	GL X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
+		Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 cairo \
+		drm execinfo expat fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread-stubs stdc++ xcb-atom \
-		startup-notification-1 purple \
-		xcb-aux xcb-event xcb-render xcb-render-util xcb ${WANTLIB}
+		startup-notification-1 purple xcb-aux xcb-event xcb-render \
+		xcb-shm xcb ${WANTLIB}
 
 WANTLIB-libpurple= crypto ssl silc>=7 silcclient>=5 meanwhile gadu>=4 \
 		${WANTLIB}
 
-WANTLIB-finch=	X11 Xau Xdmcp ncurses panel pthread-stubs xcb purple ${WANTLIB}
-WANTLIB-finch += ${MODPY_WANTLIB}
+WANTLIB-finch=	X11 Xau Xdmcp ncursesw panelw pthread-stubs xcb purple \
+		${WANTLIB} ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		textproc/intltool \

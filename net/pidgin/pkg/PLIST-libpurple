@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.12 2010/11/04 07:18:54 steven Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.13 2010/11/29 23:18:30 steven Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -165,7 +165,9 @@ share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
 share/purple/ca-certs/Go_Daddy_Class_2_CA.pem
 share/purple/ca-certs/Microsoft_Internet_Authority.pem
+share/purple/ca-certs/Microsoft_Internet_Authority_2010.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
+share/purple/ca-certs/Microsoft_Secure_Server_Authority_2010.pem
 share/purple/ca-certs/StartCom_Certification_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/Thawte_Premium_Server_CA.pem
