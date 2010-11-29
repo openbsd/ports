@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/10/27 14:01:36 stephan Exp $
+# $OpenBSD: Makefile,v 1.45 2010/11/29 15:07:21 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -53,6 +53,7 @@ SUBDIR += noderelationships
 SUBDIR += notify
 SUBDIR += override_node_options
 SUBDIR += panels
+SUBDIR += password_strength
 SUBDIR += pathauto
 SUBDIR += phpmailer
 SUBDIR += pngfix
