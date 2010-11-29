@@ -1,19 +1,19 @@
-$OpenBSD: README,v 1.3 2010/11/15 10:05:05 jasper Exp $
+$OpenBSD: README,v 1.4 2010/11/29 22:33:11 jasper Exp $
 
 Running Hylafax on OpenBSD
---------------------------
+==========================
 
-Congratulations, HylaFAX has been installed!
-
-It now needs some manual configuration before it is usable.
+Post-installation steps:
+------------------------
+Hylafax needs some manual configuration before it is usable.
 
 Make sure that you have configured HylaFAX before running faxq:
 	server: ${TRUEPREFIX}/sbin/faxsetup 
 	modems:${TRUEPREFIX}/sbin/faxaddmodem 
 	incoming calls: /etc/ttys 
 
-When you are asked to specify the name of tty device, use a
-tty device existing on your architecture instead of "ttyd1".
+When you are asked to specify the name of tty device, use a tty device
+existing on your architecture instead of "ttyd1".
 
 To start, add the following to /etc/rc.local:
 if [ -x ${TRUEPREFIX}/sbin/faxq ]; then 
@@ -22,11 +22,13 @@ if [ -x ${TRUEPREFIX}/sbin/faxq ]; then
 	echo -n ' hylafax' 
 fi
 
-For accepting incoming FAX/data calls, modify /etc/ttys(5) to
-contain something like this:
+For accepting incoming FAX/data calls, modify /etc/ttys(5) to contain
+something like this:
 
     tty00	"${TRUEPREFIX}/sbin/faxgetty"	dialup	on
 
 and send a SIGHUP to init(8).
 
+References:
+-----------
 Additional documentation at http://www.hylafax.org/.
