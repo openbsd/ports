@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/29 20:03:46 matthieu Exp $
 
 COMMENT=	X Render extension test suite
 
-DISTNAME=	rendercheck-1.3
+DISTNAME=	rendercheck-1.4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.freedesktop.org/
@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://ftp.gwdg.de/pub/x11/x.org/pub/individual/app/ \
 		ftp://ftp.sunet.se/pub/X11/ftp.x.org/individual/app/
 
-USE_GROFF =	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-silent-rules
 
 .include <bsd.port.mk>
