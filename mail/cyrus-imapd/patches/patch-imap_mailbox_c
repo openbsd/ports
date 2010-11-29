@@ -1,9 +1,9 @@
-$OpenBSD: patch-imap_mailbox_c,v 1.1 2010/10/29 09:26:58 ajacoutot Exp $
---- imap/mailbox.c.orig	Sat Oct 23 12:43:34 2010
-+++ imap/mailbox.c	Sat Oct 23 12:47:16 2010
-@@ -1874,9 +1874,9 @@ bit32 make_sync_crc(struct mailbox *mailbox, struct in
-      * that the string format of the flags has been replaced with a
-      * checksum over the flags */
+$OpenBSD: patch-imap_mailbox_c,v 1.2 2010/11/29 14:18:17 ajacoutot Exp $
+--- imap/mailbox.c.orig	Mon Nov 29 14:28:06 2010
++++ imap/mailbox.c	Mon Nov 29 14:56:36 2010
+@@ -1882,9 +1882,9 @@ bit32 make_sync_crc(struct mailbox *mailbox, struct in
+     }
+ 
      snprintf(buf, 4096, "%u " MODSEQ_FMT " %lu (%u) %lu %s",
 -	    record->uid, record->modseq, record->last_updated,
 +	    record->uid, record->modseq, (long int)record->last_updated,
