@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/26 14:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2010/11/29 09:48:40 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,9 +7,9 @@ COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
 MR=		3.3
-VERSION=	${MR}.0rc6_20101120
+VERSION=	${MR}.0rc7_20101126
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOO330_m16
+WRKDIST=	${WRKDIR}/OOO330_m17
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -19,7 +19,8 @@ CATEGORIES=	editors productivity
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/3.3.0rc6/ \
+MASTER_SITES=	http://www.bsd.hu/~robert/ooo/ \
+		http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/3.3.0rc7/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
 		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		http://humppa.hu/ooo/ \
