@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2010/10/28 11:01:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2010/11/29 14:17:33 ajacoutot Exp $
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
 @bin bin/gdmXnestchooser
@@ -6,11 +6,11 @@ bin/gdmXnest
 @bin bin/gdmflexiserver
 @bin bin/gdmphotosetup
 bin/gdmthemetester
-lib/gtk-2.0/modules/libdwellmouselistener.a
-lib/gtk-2.0/modules/libdwellmouselistener.la
+@comment lib/gtk-2.0/modules/libdwellmouselistener.a
+@comment lib/gtk-2.0/modules/libdwellmouselistener.la
 lib/gtk-2.0/modules/libdwellmouselistener.so
-lib/gtk-2.0/modules/libkeymouselistener.a
-lib/gtk-2.0/modules/libkeymouselistener.la
+@comment lib/gtk-2.0/modules/libkeymouselistener.a
+@comment lib/gtk-2.0/modules/libkeymouselistener.la
 lib/gtk-2.0/modules/libkeymouselistener.so
 libexec/gdm-ssh-session
 @bin libexec/gdmchooser
