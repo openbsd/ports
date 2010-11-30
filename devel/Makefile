@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.857 2010/11/30 10:35:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.858 2010/11/30 11:09:07 eric Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -850,6 +850,7 @@
      SUBDIR += py-asn1
      SUBDIR += py-babel
      SUBDIR += py-buildbot
+     SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cheetah
      SUBDIR += py-configobj
