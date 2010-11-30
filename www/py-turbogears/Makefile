@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/11/30 20:01:04 jasper Exp $
 
-COMMENT=		Python web development megaframework
+COMMENT =		Python web development megaframework
 
-MODPY_EGG_VERSION=	1.0.8
-DISTNAME=		TurboGears-${MODPY_EGG_VERSION}
-PKGNAME=		py-turbogears-${MODPY_EGG_VERSION}
-REVISION=		0
+MODPY_EGG_VERSION =	1.1.1
+DISTNAME =		TurboGears-${MODPY_EGG_VERSION}
+PKGNAME =		py-turbogears-${MODPY_EGG_VERSION}
 
-CATEGORIES=		www
+CATEGORIES =		www
 
-HOMEPAGE=		http://www.turbogears.org/
+HOMEPAGE =		http://www.turbogears.org/
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		http://files.turbogears.org/eggs/
+MASTER_SITES =		http://files.turbogears.org/eggs/
 
-MODULES=		lang/python
+MODULES =		lang/python
 
-RUN_DEPENDS=		databases/py-sqlalchemy \
+RUN_DEPENDS =		databases/py-sqlalchemy \
 			databases/py-sqlobject \
 			devel/py-cheetah \
 			devel/py-configobj \
@@ -39,10 +38,10 @@ RUN_DEPENDS=		databases/py-sqlalchemy \
 			www/py-paste \
 			www/py-paste-deploy \
 			www/py-paste-script
-REGRESS_DEPENDS=	${RUN_DEPENDS} \
+REGRESS_DEPENDS =	${RUN_DEPENDS} \
 			databases/py-sqlite2
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_SETUPTOOLS =	Yes
 
 post-extract:
 	find ${WRKSRC} -perm 0666 -exec chmod 0644 {} \;
