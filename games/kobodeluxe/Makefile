@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/11/30 20:05:02 phessler Exp $
 
 COMMENT=	sdl port of xkobo
-DISTNAME=	KoboDeluxe-0.4.1
+DISTNAME=	KoboDeluxe-0.5.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}download/
@@ -31,5 +31,9 @@ FAKE=		all
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	sdlconf_args=--prefix=${DEPBASE}
+
+pre-configure:
+	@cp ${FILESDIR}/missile* ${WRKSRC}/data/gfx/
+
 
 .include <bsd.port.mk>
