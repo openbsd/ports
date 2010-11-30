@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/11/18 19:17:34 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/11/30 16:15:25 robert Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/oobase${BV}
@@ -2375,7 +2375,6 @@ lib/libreoffice/share/readme/README_en-US
 lib/libreoffice/share/readme/README_en-US.html
 lib/libreoffice/share/registry/
 lib/libreoffice/share/registry/brand.xcd
-lib/libreoffice/share/registry/korea.xcd
 lib/libreoffice/share/uno_packages/
 lib/libreoffice/share/uno_packages/cache/
 lib/libreoffice/share/xdg/

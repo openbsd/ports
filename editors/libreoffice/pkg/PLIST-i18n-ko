@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ko,v 1.3 2010/11/17 14:41:17 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ko,v 1.4 2010/11/30 16:15:25 robert Exp $
 @conflict openoffice-i18n-ko-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ko/
@@ -292,3 +292,4 @@ lib/libreoffice/share/readme/LICENSE_ko.html
 lib/libreoffice/share/readme/README_ko
 lib/libreoffice/share/readme/README_ko.html
 lib/libreoffice/share/registry/cjk_ko.xcd
+lib/libreoffice/share/registry/korea.xcd

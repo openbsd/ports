@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2010/11/30 16:15:25 robert Exp $
+--- Makefile.in.orig.port	Tue Nov 30 16:49:07 2010
++++ Makefile.in	Tue Nov 30 16:49:20 2010
+@@ -891,7 +891,7 @@ patch.list:
+ 	chmod +x $(TOOLSDIR)/patches/apply.pl && $(TOOLSDIR)/patches/apply.pl $(APPLY_DIR) $(OOBUILDDIR) $$FLAGS --dry-run --quiet --tag=$$CURSOURCE
+ 
+ refresh: $(STAMP_DIR)/refresh
+-$(STAMP_DIR)/refresh : $(CLONEDIR)/repos_changed
++$(STAMP_DIR)/refresh :
+ 	echo $(OOO_GIT)
+ 	if test "z$(OOO_GIT)" != "z" ; then \
+ 	    $(TOOLSDIR)/bin/transform --revert $(TOOLSDIR) $(OOBUILDDIR) ; \
+@@ -902,9 +902,6 @@ $(STAMP_DIR)/refresh : $(CLONEDIR)/repos_changed
+ 	    rm -f $(STAMP_DIR)/patch.apply ; \
+ 	fi
+ 	touch $@
+-
+-$(CLONEDIR)/repos_changed :
+-	if test "z$(OOO_GIT)" != "z" -a ! -e $@ ; then touch $@ ; fi
+ 
+ # Build bits:
+ 
