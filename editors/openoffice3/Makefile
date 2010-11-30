@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/11/29 10:01:02 robert Exp $
+# $OpenBSD: Makefile,v 1.68 2010/11/30 16:18:07 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -284,7 +284,7 @@ JAVAFIX=	export LD_LIBRARY_PATH=${JAVA_HOME}/jre/lib/${ARCH}:${JAVA_HOME}/jre/li
 JAVAFIX=	true
 .endif
 
-.if ${FLAVOR:L:Mpparallel}
+.if ${FLAVOR:L:Mparallel}
 NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
 NCPUFLAG=	-P ${NCPU}
 .endif
