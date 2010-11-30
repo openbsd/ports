@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/11/30 11:23:39 espie Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -7,7 +7,7 @@ BROKEN-hppa =	infinite loop during build
 
 V =		8.12.0
 DISTNAME = 	ecl-$V
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=	ecl	0.0
 
 HOMEPAGE = 	http://ecls.sourceforge.net/

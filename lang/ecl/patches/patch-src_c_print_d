@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_c_print_d,v 1.1 2010/11/30 11:23:39 espie Exp $
+--- src/c/print.d.orig	Wed Dec 17 16:41:52 2008
++++ src/c/print.d	Tue Nov 30 12:10:43 2010
+@@ -597,7 +597,7 @@ write_double(DBL_TYPE d, int e, int n, cl_object strea
+ 		}
+ 		write_str(buff+1, stream);
+ 	} else {
+-		char buff[DBL_MANTISSA_SIZE + 1];
++		char buff[DBL_MANTISSA_SIZE + 1 + DBL_MAX_DIGITS];
+ 		int i;
+ 		DBL_TYPE aux;
+ 		/* Print in fixed point notation with enough number of
