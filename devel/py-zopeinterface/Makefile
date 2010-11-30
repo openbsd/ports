@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/11/30 10:53:51 eric Exp $
 
 COMMENT=	object interface infrastructure from Zope 3
 
-MODPY_EGG_VERSION=	3.5.1
+MODPY_EGG_VERSION=	3.6.1
 
 DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}
-REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pypi.python.org/pypi/zope.interface
@@ -25,12 +24,9 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	devel/py-zopetesting
-
-do-regress:
-	cd ${WRKSRC} && \
-		${MODPY_BIN} bootstrap.py && \
-		./bin/buildout && \
-		./bin/test
+do-regress: install
+	for f in `ls ${WRKSRC}/src/zope/interface/tests/test_*.py`; do \
+	  ${MODPY_BIN} -m zope.interface.tests.`basename $$f .py` || true; \
+	done
 
 .include <bsd.port.mk>
