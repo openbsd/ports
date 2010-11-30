@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/11/08 20:09:36 kili Exp $
+# $OpenBSD: Makefile,v 1.79 2010/11/30 18:23:06 robert Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += kxmleditor
      SUBDIR += ldapvi
      SUBDIR += leafpad
+     SUBDIR += libreoffice
      SUBDIR += nano
      SUBDIR += nedit
      SUBDIR += nvi-m17n
