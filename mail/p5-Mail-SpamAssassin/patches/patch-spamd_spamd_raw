@@ -1,0 +1,21 @@
+$OpenBSD: patch-spamd_spamd_raw,v 1.1 2010/11/30 08:34:27 ajacoutot Exp $
+
+r950216
+avoid undef warning: Use of uninitialized value $opt{"syslog-socket"} in lc at spamd line 444
+
+--- spamd/spamd.raw.orig	Tue Mar 16 15:49:25 2010
++++ spamd/spamd.raw	Tue Nov 30 08:46:27 2010
+@@ -443,10 +443,12 @@ my $log_facility = $opt{'syslog'} || 'mail';
+ #  socket of 'none' means as much as --syslog=null. Sounds complicated? It is.
+ #  But it works.
+ # )
+-my $log_socket = lc($opt{'syslog-socket'});
++my $log_socket = $opt{'syslog-socket'};
+ 
+ if (!defined $log_socket || $log_socket eq '') {
+   $log_socket = am_running_on_windows() ? 'none' : 'unix';
++} else {
++  $log_socket = lc $log_socket;
+ }
+ 
+ # This is the default log file; it can be changed on the command line

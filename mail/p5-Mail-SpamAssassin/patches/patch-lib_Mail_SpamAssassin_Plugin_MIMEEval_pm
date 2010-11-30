@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Plugin_MIMEEval_pm,v 1.1 2010/11/30 08:34:27 ajacoutot Exp $
+
+r929342
+Bug 6396: Use of uninitialized value in lc at lib/Mail/SpamAssassin/Plugin/MIMEEval.pm
+
+--- lib/Mail/SpamAssassin/Plugin/MIMEEval.pm.orig	Tue Mar 16 15:49:21 2010
++++ lib/Mail/SpamAssassin/Plugin/MIMEEval.pm	Tue Nov 30 08:46:20 2010
+@@ -498,7 +498,7 @@ sub _check_base64_length {
+     # perhaps just limit to test, and image?
+     next if ($ctype eq 'application/ics');
+ 
+-    my $cte = lc $p->get_header('content-transfer-encoding') || '';
++    my $cte = lc($p->get_header('content-transfer-encoding') || '');
+     next if ($cte !~ /^base64$/);
+     foreach my $l ( @{$p->raw()} ) {
+       my $len = length $l;
