@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2010/11/30 10:59:01 eric Exp $
+--- setup.py.orig	Fri Oct 29 02:33:35 2010
++++ setup.py	Tue Nov 30 11:03:13 2010
+@@ -93,11 +93,7 @@ setup_args = {
+ if sys.platform == "win32":
+     setup_args['zip_safe'] = False
+ 
+-try:
+-    # If setuptools is installed, then we'll add setuptools-specific arguments
+-    # to the setup args.
+-    import setuptools #@UnusedImport
+-except ImportError:
++if True:
+     setup_args['scripts'] = [
+         'bin/buildslave'
+     ]
