@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/18 19:17:33 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2010/11/30 18:17:55 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -89,7 +89,7 @@ FLAVORS=	debug no_java
 FLAVOR?=
 
 .if ${FLAVOR:L:Mparallel}
-DISTFILES+=	nbcat-0.1.tar.gz
+EDISTFILES+=	nbcat-0.1.tar.gz
 .else
 SUPDISTFILES+=	nbcat-0.1.tar.gz
 .endif
@@ -210,6 +210,11 @@ CONFIGURE_ARGS+=--with-java \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
 .else
 CONFIGURE_ARGS+=--without-java
+.endif
+
+.if ${FLAVOR:L:Mparallel}
+NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
+CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
 .endif
 
 .if ${FLAVOR:L:Mdebug}
