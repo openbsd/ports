@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/11/30 16:18:07 robert Exp $
+# $OpenBSD: Makefile,v 1.69 2010/11/30 18:19:33 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,7 +16,9 @@ PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-kde=	0
+REVISION-java=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -105,7 +107,7 @@ FLAVORS=	debug no_java
 FLAVOR?=
 
 .if ${FLAVOR:L:Mparallel}
-DISTFILES+=	nbcat-0.1.tar.gz:0
+EDISTFILES+=	nbcat-0.1.tar.gz:0
 .else
 SUPDISTFILES+=	nbcat-0.1.tar.gz:0
 .endif
@@ -125,6 +127,7 @@ COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	editors/openoffice3
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
+REVISION-i18n-$l=	0
 .endfor
 .endif
 

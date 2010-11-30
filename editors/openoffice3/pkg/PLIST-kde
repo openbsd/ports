@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-kde,v 1.6 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-kde,v 1.7 2010/11/30 18:19:33 robert Exp $
+@conflict libreoffice-kde
 @pkgpath editors/openoffice,-kde
 %%SHARED%%
