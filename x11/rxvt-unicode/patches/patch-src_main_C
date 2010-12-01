@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
+$OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
 --- src/main.C.orig	Wed Nov  3 22:00:52 2010
-+++ src/main.C	Sun Nov 14 15:04:04 2010
++++ src/main.C	Wed Dec  1 08:18:19 2010
 @@ -80,7 +80,7 @@ rxvt_set_locale (const char *locale) NOTHROW
  void
  rxvt_push_locale (const char *locale) NOTHROW
@@ -46,7 +46,16 @@ $OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
  }
  #endif
  
-@@ -950,26 +954,26 @@ rxvt_term::set_colorfgbg ()
+@@ -705,6 +709,8 @@ rxvt_term::window_calc (unsigned int newwidth, unsigne
+ 
+   ncol = width  / fwidth;
+   nrow = height / fheight;
++  width = ncol * fwidth;
++  height = nrow * fheight;
+ }
+ 
+ /*----------------------------------------------------------------------*/
+@@ -950,26 +956,26 @@ rxvt_term::set_colorfgbg ()
    const char *xpmb = "";
    char fstr[sizeof ("default") + 1], bstr[sizeof ("default") + 1];
  
@@ -78,7 +87,7 @@ $OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
  }
  
  /*----------------------------------------------------------------------*/
-@@ -1170,8 +1174,8 @@ rxvt_term::IMisRunning ()
+@@ -1170,8 +1176,8 @@ rxvt_term::IMisRunning ()
    /* get current locale modifier */
    if (char *p = XSetLocaleModifiers (0))
      {
@@ -89,7 +98,7 @@ $OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
  
        if (p = strchr (server + 1, '@'))      /* first one only */
          *p = '\0';
-@@ -1400,16 +1404,16 @@ foundpet:
+@@ -1400,16 +1406,16 @@ foundpet:
        char *def_string;
        char pat[512];
  
@@ -116,7 +125,7 @@ $OpenBSD: patch-src_main_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
  
        fs = XCreateFontSet (dpy, rs[Rs_imFont] ? rs[Rs_imFont] : pat,
                             &missing_charset_list, &missing_charset_count, &def_string);
-@@ -1548,8 +1552,8 @@ rxvt_term::im_cb ()
+@@ -1548,8 +1554,8 @@ rxvt_term::im_cb ()
          {
            if (*s[i])
              {
