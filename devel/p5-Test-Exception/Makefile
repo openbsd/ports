@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/01 14:03:27 sthen Exp $
 
 COMMENT= 	test functions for exception based code
 
 MODULES=	cpan
-DISTNAME=	Test-Exception-0.27
-REVISION=	0
+DISTNAME=	Test-Exception-0.31
 CATEGORIES=	devel
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
