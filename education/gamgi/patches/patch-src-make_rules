@@ -1,21 +1,14 @@
-$OpenBSD: patch-src-make_rules,v 1.7 2010/09/29 18:45:49 jasper Exp $
-
-XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED) and separate
-gdk-pixbuf:
-./gtk/file/gamgi_gtk_file_chooser.c:429: error: expected declaration specifiers or '...' before 'GtkNotebookPage
-
---- src/make_rules.orig	Sun Jul  4 20:56:55 2010
-+++ src/make_rules	Wed Sep 29 20:20:48 2010
-@@ -18,7 +18,8 @@ CC ?= gcc
+$OpenBSD: patch-src-make_rules,v 1.8 2010/12/01 08:13:19 jasper Exp $
+--- src/make_rules.orig	Tue Nov 30 23:44:32 2010
++++ src/make_rules	Tue Nov 30 23:47:52 2010
+@@ -17,6 +17,7 @@ SHELL=/bin/sh
+ CC ?= gcc
  
  CFLAGS ?= -O3 -Wall -ansi
- override CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
--	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
-+	-DGDK_PIXBUF_DISABLE_DEPRECATED \
-+	`pkg-config --cflags gdk-pixbuf-2.0` -pthread
++override CFLAGS += `pkg-config --cflags gdk-pixbuf-2.0` -pthread
+ #override CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+ #	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
  #	-DGSEAL_ENABLE \
- #	-DG_DISABLE_SINGLE_INCLUDES -DATK_DISABLE_SINGLE_INCLUDES \
- #	-DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES
 @@ -37,7 +38,7 @@ EXE = gamgi
  LIBS = -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lgtk-x11-2.0 \
  	-lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 \
