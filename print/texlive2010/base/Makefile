@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 14:12:11 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/01 18:16:21 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -21,8 +21,6 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/t1utils \
 			texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
 			print/latex-mk
-# re-enable when linked, it depends up tl2009, conflicts
-#::print/pdfjam
 			
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
@@ -102,10 +100,6 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-xpdf # link poppler instead of internal xpdf
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
-
-# silence symlink warnings - annoying i need to do this
-#pre-fake:
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-dist/scripts/accfonts/
 
 # just to silence error - never used
 pre-install:
