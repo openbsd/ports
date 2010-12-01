@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/12 09:55:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/01 14:45:29 ajacoutot Exp $
 lib/nautilus/
 lib/nautilus-python/
 lib/nautilus-python/nautilus.la
 lib/nautilus-python/nautilus.so
 lib/nautilus/extensions-2.0/
-lib/nautilus/extensions-2.0/libnautilus-python.la
+@comment lib/nautilus/extensions-2.0/libnautilus-python.la
 lib/nautilus/extensions-2.0/libnautilus-python.so
 lib/pkgconfig/nautilus-python.pc
 share/doc/py-nautilus/

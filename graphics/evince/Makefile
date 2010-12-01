@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/12/01 14:46:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,6 +21,7 @@ PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
 REVISION-main=	0
+REVISION-nautilus= 0
 
 SHARED_LIBS +=  evdocument 1.0                   # .2.0
 SHARED_LIBS +=  evview     1.0                   # .2.0
