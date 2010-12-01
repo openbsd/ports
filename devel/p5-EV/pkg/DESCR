@@ -1,0 +1,5 @@
+This module provides an interface to libev.  This module is very fast
+and scalable. It is actually so fast that you can use it through the
+AnyEvent module, stay portable to other event loops (if you don't rely
+on any watcher types not available through it) and still be faster
+than with any other event loop currently supported in Perl.

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/01 14:27:57 millert Exp $
+${P5ARCH}/
+${P5ARCH}/EV/
+${P5ARCH}/EV.pm
+${P5ARCH}/EV/EVAPI.h
+${P5ARCH}/EV/MakeMaker.pm
+${P5ARCH}/EV/ev.h
+${P5ARCH}/EV/libev.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/EV/
+${P5ARCH}/auto/EV/EV.bs
+${P5ARCH}/auto/EV/EV.so
+@man man/man3p/EV.3p
+@man man/man3p/EV::MakeMaker.3p
+@man man/man3p/EV::libev.3p
