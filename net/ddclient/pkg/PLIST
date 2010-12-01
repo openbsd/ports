@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/07 13:43:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/12/01 09:58:43 dcoppa Exp $
 sbin/ddclient
 share/doc/ddclient/
 share/doc/ddclient/README
@@ -14,3 +14,4 @@ share/examples/ddclient/sample-etc_dhclient-exit-hooks
 share/examples/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
 share/examples/ddclient/sample-etc_ppp_ip-up.local
 @sample /var/db/ddclient/
+@rcscript ${RCDIR}/ddclient
