@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/09/30 07:47:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/12/01 14:51:46 ajacoutot Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
@@ -16,11 +16,6 @@ lib/totem/plugins/dbus/dbus-service.py
 lib/totem/plugins/dbus/dbus-service.pyc
 lib/totem/plugins/dbus/dbus-service.pyo
 lib/totem/plugins/dbus/dbus-service.totem-plugin
-lib/totem/plugins/galago/
-lib/totem/plugins/galago/galago.totem-plugin
-@comment lib/totem/plugins/galago/libtgp.a
-@comment lib/totem/plugins/galago/libtgp.la
-lib/totem/plugins/galago/libtgp.so
 lib/totem/plugins/gromit/
 lib/totem/plugins/gromit/gromit.totem-plugin
 @comment lib/totem/plugins/gromit/libgromit.a

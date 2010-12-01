@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/12/01 14:51:45 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	multimedia
 
@@ -25,9 +25,9 @@ WANTLIB += gnutls gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unique-1.0
-WANTLIB += util xcb xml2 z eggdbus-1 xcb-render xcb-render-util
+WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm
 WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
-WANTLIB += gsttag-0.10 totem-plparser galago nautilus-extension gdata
+WANTLIB += gsttag-0.10 totem-plparser nautilus-extension gdata
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
@@ -51,12 +51,10 @@ RUN_DEPENDS+=	x11/gnome/settings-daemon \
 		devel/iso-codes \
 		x11/gromit \
 		devel/py-gdata \
-		net/galago-daemon \
 		devel/py-xdg
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 		multimedia/gstreamer-0.10/plugins-base>=0.10.29 \
 		x11/gnome/totem-pl-parser>=2.28.1 \
-		net/libgalago \
 		x11/gnome/nautilus \
 		devel/libgdata
 
@@ -74,8 +72,8 @@ MODGCONF2_SCHEMAS_DIR= totem
 USE_GROFF =	Yes
 
 # Browser bemused lirc mythtv sample-python sample-val sidebar-test
-# publish iplayer pythonconsole coherence_upnp tracker
-TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
+# publish iplayer pythonconsole coherence_upnp tracker galago
+TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
 		screensaver skipto thumbnail youtube \
 		opensubtitles jamendo screenshot dbus-service"
 
