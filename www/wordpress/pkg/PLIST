@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/07/15 14:23:27 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/12/01 03:49:14 merdely Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -343,8 +343,10 @@ wordpress/wp-content/
 wordpress/wp-content/index.php
 wordpress/wp-content/plugins/
 wordpress/wp-content/plugins/akismet/
+wordpress/wp-content/plugins/akismet/admin.php
 wordpress/wp-content/plugins/akismet/akismet.gif
 wordpress/wp-content/plugins/akismet/akismet.php
+wordpress/wp-content/plugins/akismet/legacy.php
 wordpress/wp-content/plugins/akismet/readme.txt
 wordpress/wp-content/plugins/hello.php
 wordpress/wp-content/plugins/index.php
