@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.859 2010/12/01 09:07:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.860 2010/12/01 14:29:39 millert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -480,6 +480,7 @@
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Device-USB
      SUBDIR += p5-Directory-Scratch
+     SUBDIR += p5-EV
      SUBDIR += p5-Env-PS1
      SUBDIR += p5-Error
      SUBDIR += p5-Event
