@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-i18n-ko,v 1.12 2010/11/30 18:19:33 robert Exp $
-@conflict libreoffice-i18n-ko
+@comment $OpenBSD: PLIST-i18n-ko,v 1.13 2010/12/01 19:30:23 robert Exp $
+@conflict libreoffice-i18n-ko-*
 @pkgpath editors/openoffice,-i18n-ko
 !%%no_java%%
 openoffice.org/basis${MR}/help/ko/

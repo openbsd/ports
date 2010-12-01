@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2010/11/30 18:19:33 robert Exp $
-@conflict libreoffice
+@comment $OpenBSD: PLIST-main,v 1.19 2010/12/01 19:30:23 robert Exp $
+@conflict libreoffice-*
 @pkgpath editors/openoffice
 @pkgpath editors/openoffice,-main
 %%SHARED%%
