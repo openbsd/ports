@@ -1,0 +1,13 @@
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.1 2010/12/01 15:00:12 dcoppa Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Mon Nov 29 16:26:49 2010
++++ mozilla/toolkit/library/Makefile.in	Mon Nov 29 16:27:33 2010
+@@ -283,6 +283,9 @@ ifdef MOZ_ENABLE_QT
+ EXTRA_DSO_LDOPTS += $(MOZ_QT_LDFLAGS)
+ endif
+ 
++# Needed by nsAuthGSSAPI
++EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
++
+ ifdef MOZ_JAVAXPCOM
+ dlldeps-javaxpcom.cpp: $(topsrcdir)/extensions/java/xpcom/src/dlldeps-javaxpcom.cpp
+ 	$(INSTALL) $^ .

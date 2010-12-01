@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.16 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: mozilla.port.mk,v 1.17 2010/12/01 15:00:12 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -28,9 +28,9 @@ MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
 			security/nss>=3.12.8
 
 MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
-		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
+		Xinerama Xrandr Xrender Xt atk-1.0 c cairo crypto expat \
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg krb5 m \
 		nspr4>=21 nss3>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4>=21 plds4>=21 png pthread pthread-stubs \
 		smime3>=25 sndio softokn3>=25 ssl3>=25 stdc++ xcb \
