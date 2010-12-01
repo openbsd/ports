@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdb_Makefile_in,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+--- gdb/Makefile.in.orig	Tue Nov 30 11:56:25 2010
++++ gdb/Makefile.in	Tue Nov 30 11:58:43 2010
+@@ -975,7 +975,7 @@ install: all install-only 
+ 
+ # The "install-only" target also installs the syscalls' XML files in
+ # the system.
+-install-only: $(CONFIG_INSTALL) xml-syscall-install
++install-only: $(CONFIG_INSTALL)
+ 	transformed_name=`t='$(program_transform_name)'; \
+ 			  echo gdb | sed -e "$$t"` ; \
+ 		if test "x$$transformed_name" = x; then \

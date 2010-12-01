@@ -1,0 +1,4 @@
+The device-specific headers define various symbols for use while writing
+low-level software for the MSP430 series.  Bit names, register names,
+and other such things are defined by these files, so that they can be
+used just as they are in the data-sheets.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-bfd_doc_Makefile_in,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+--- bfd/doc/Makefile.in.orig	Tue Nov 30 11:51:27 2010
++++ bfd/doc/Makefile.in	Tue Nov 30 11:51:33 2010
+@@ -68,7 +68,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ depcomp =
+ am__depfiles_maybe =
+ SOURCES =
+-INFO_DEPS = bfd.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ DVIS = bfd.dvi

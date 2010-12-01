@@ -1,0 +1,30 @@
+$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2010/12/01 09:06:52 jasper Exp $
+--- gcc/Makefile.in.orig	Mon Mar  8 12:46:28 2010
++++ gcc/Makefile.in	Mon Nov 29 21:46:19 2010
+@@ -4185,13 +4185,7 @@ install-driver: installdirs xgcc$(exeext)
+ # Install the info files.
+ # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
+ # to do the install.
+-install-info:: doc installdirs \
+-	$(DESTDIR)$(infodir)/cpp.info \
+-	$(DESTDIR)$(infodir)/gcc.info \
+-	$(DESTDIR)$(infodir)/cppinternals.info \
+-	$(DESTDIR)$(infodir)/gccinstall.info \
+-	$(DESTDIR)$(infodir)/gccint.info \
+-	lang.install-info
++install-info::
+ 
+ $(DESTDIR)$(infodir)/%.info: doc/%.info installdirs
+ 	rm -f $@
+@@ -4243,10 +4237,7 @@ install-html: $(HTMLS_BUILD)
+ install-man: lang.install-man \
+ 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gpl$(man7ext)
++	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+ 
+ $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7 installdirs
+ 	-rm -f $@

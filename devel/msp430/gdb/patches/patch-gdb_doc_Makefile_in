@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdb_doc_Makefile_in,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+--- gdb/doc/Makefile.in.orig	Tue Nov 30 11:50:40 2010
++++ gdb/doc/Makefile.in	Tue Nov 30 11:50:51 2010
+@@ -71,7 +71,7 @@ SET_TEXINPUTS = \
+    TEXINPUTS=${TEXIDIR}:.:$(srcdir):$(READLINE_DIR):$(GDBMI_DIR):$$TEXINPUTS
+ 
+ # Files which should be generated via 'info' and installed by 'install-info'
+-INFO_DEPS = gdb.info gdbint.info stabs.info annotate.info
++INFO_DEPS =
+ 
+ # Files which should be generated via 'pdf' and installed by 'install-pdf'
+ PDFFILES = gdb.pdf gdbint.pdf stabs.pdf refcard.pdf annotate.pdf

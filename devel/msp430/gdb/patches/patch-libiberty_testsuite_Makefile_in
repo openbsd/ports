@@ -1,0 +1,15 @@
+$OpenBSD: patch-libiberty_testsuite_Makefile_in,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+
+check-expandargv randomly succeeds or fails w/o a reason.
+
+--- libiberty/testsuite/Makefile.in.orig	Tue Nov 30 12:51:50 2010
++++ libiberty/testsuite/Makefile.in	Tue Nov 30 12:52:01 2010
+@@ -45,7 +45,7 @@ all:
+ # CHECK is set to "really_check" or the empty string by configure.
+ check: @CHECK@
+ 
+-really-check: check-cplus-dem check-pexecute check-expandargv
++really-check: check-cplus-dem check-pexecute
+ 
+ # Run some tests of the demangler.
+ check-cplus-dem: test-demangle $(srcdir)/demangle-expected
