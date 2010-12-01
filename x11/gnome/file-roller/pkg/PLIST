@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/09/30 08:04:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/12/01 14:46:09 ajacoutot Exp $
 @bin bin/file-roller
 lib/nautilus/
 lib/nautilus/extensions-2.0/
-lib/nautilus/extensions-2.0/libnautilus-fileroller.a
-lib/nautilus/extensions-2.0/libnautilus-fileroller.la
+@comment lib/nautilus/extensions-2.0/libnautilus-fileroller.a
+@comment lib/nautilus/extensions-2.0/libnautilus-fileroller.la
 lib/nautilus/extensions-2.0/libnautilus-fileroller.so
 libexec/file-roller/
 libexec/file-roller/isoinfo.sh
