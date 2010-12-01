@@ -1,0 +1,16 @@
+$OpenBSD: patch-libmemcached_platform_h,v 1.1 2010/12/01 09:19:28 sebastia Exp $
+--- libmemcached/platform.h.orig	Tue Nov 30 08:55:02 2010
++++ libmemcached/platform.h	Tue Nov 30 08:55:12 2010
+@@ -20,11 +20,11 @@ typedef SOCKET memcached_socket_t;
+ #else
+ typedef int memcached_socket_t;
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #include <sys/un.h>
+ #include <netinet/tcp.h>
+-#include <netinet/in.h>
+ 
+ #endif /* WIN32 */
+ 

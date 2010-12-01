@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/01 09:19:28 sebastia Exp $
 
 COMMENT=		C C++ API for memcached
 
 VERSION=		0.44
+REVISION =		0
 DISTNAME=		libmemcached-${VERSION}
 CATEGORIES=		devel misc
 
