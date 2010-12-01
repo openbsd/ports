@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/01 14:06:43 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	generate fast XS accessors without runtime compilation
 
 MODULES =	cpan
-DISTNAME =	Class-XSAccessor-1.03
-REVISION=	0
+DISTNAME =	Class-XSAccessor-1.09
 CATEGORIES =	devel
 USE_GROFF =	Yes
 
