@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 16:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/01 08:40:16 jasper Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
-V=		15.7
+V=		16.0
 DISTNAME=	nut-${V}
 PKGNAME=	nutdb-${V}
 CATEGORIES=	biology
