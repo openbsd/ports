@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2009/01/12 10:45:01 jakemsr Exp $
---- configure.ac.orig	Sat Dec  6 01:32:50 2008
-+++ configure.ac	Mon Jan 12 02:27:57 2009
-@@ -655,9 +655,6 @@ HAVE_SAMPLERATE=false
+$OpenBSD: patch-configure_ac,v 1.6 2010/12/02 22:17:46 dcoppa Exp $
+--- configure.ac.orig	Sat Dec  6 10:32:50 2008
++++ configure.ac	Thu Dec  2 11:06:17 2010
+@@ -655,14 +655,11 @@ HAVE_SAMPLERATE=false
  PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.1.2,[HAVE_SAMPLERATE=true], [true])
  if test x$HAVE_SAMPLERATE = xfalse; then
          AC_MSG_WARN([*** the NetJack backend and internal client will not be built])
@@ -11,6 +11,12 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/01/12 10:45:01 jakemsr Exp $
  fi
  
  # Celt low-latency audio codec. netjack transmission via internet.
+ HAVE_CELT=false
+-PKG_CHECK_MODULES(CELT, celt >= 0.5.0,[HAVE_CELT=true], [true])
++# PKG_CHECK_MODULES(CELT, celt >= 0.5.0,[HAVE_CELT=true], [true])
+ if test x$HAVE_CELT = xfalse; then
+     	AC_DEFINE(HAVE_CELT,0,"Whether CELT is available")
+ 	AC_MSG_RESULT(no)
 @@ -680,7 +677,7 @@ fi
  
  # Check which backend drivers can be built.  The last one successfully
