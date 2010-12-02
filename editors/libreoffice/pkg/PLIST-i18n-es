@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-es,v 1.4 2010/11/17 14:41:17 robert Exp $
+@comment $OpenBSD: PLIST-i18n-es,v 1.5 2010/12/02 09:23:37 robert Exp $
 @conflict openoffice-i18n-es-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/es/
@@ -270,10 +270,8 @@ lib/libreoffice/basis${BV}/share/wordbook/es/
 lib/libreoffice/basis${BV}/share/wordbook/es/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/es/soffice.dic
 lib/libreoffice/licenses/LICENSE_es
-lib/libreoffice/licenses/LICENSE_es.html
 lib/libreoffice/program/resource/oooes.res
 lib/libreoffice/readmes/README_es
-lib/libreoffice/readmes/README_es.html
 lib/libreoffice/share/extensions/dict-es/
 lib/libreoffice/share/extensions/dict-es/META-INF/
 lib/libreoffice/share/extensions/dict-es/META-INF/manifest.xml
@@ -284,18 +282,9 @@ lib/libreoffice/share/extensions/dict-es/es_ES.aff
 lib/libreoffice/share/extensions/dict-es/es_ES.dic
 lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_es
 lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_es
-lib/libreoffice/share/extensions/presenter-screen/help/es/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/es/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/es/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/es/com.sun.PresenterScreen-openbsd_${OA}/
-lib/libreoffice/share/extensions/presenter-screen/help/es/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/es/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/es/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/es/help.db_
-lib/libreoffice/share/extensions/presenter-screen/help/es/help.ht_
-lib/libreoffice/share/extensions/presenter-screen/help/es/help.jar
-lib/libreoffice/share/extensions/presenter-screen/help/es/help.key_
 lib/libreoffice/share/readme/LICENSE_es
-lib/libreoffice/share/readme/LICENSE_es.html
 lib/libreoffice/share/readme/README_es
-lib/libreoffice/share/readme/README_es.html

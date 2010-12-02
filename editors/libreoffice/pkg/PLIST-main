@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/11/30 16:15:25 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/12/02 09:23:38 robert Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/oobase${BV}
@@ -20,11 +20,10 @@ bin/soffice${BV}
 @unexec-delete %D/bin/update-desktop-database
 bin/unopkg${BV}
 lib/libreoffice/
+lib/libreoffice/CREDITS.odt
 lib/libreoffice/LICENSE
-lib/libreoffice/LICENSE.html
 lib/libreoffice/LICENSE.odt
 lib/libreoffice/README
-lib/libreoffice/README.html
 lib/libreoffice/THIRDPARTYLICENSEREADME.html
 lib/libreoffice/basis-link
 lib/libreoffice/basis${BV}/
@@ -319,7 +318,7 @@ lib/libreoffice/basis${BV}/share/autocorr/acor_it-IT.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_ja-JP.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_ko-KR.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_lb-LU.dat
-lib/libreoffice/basis${BV}/share/autocorr/acor_lt_LT.dat
+lib/libreoffice/basis${BV}/share/autocorr/acor_lt-LT.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_mn-MN.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_nl-NL.dat
 lib/libreoffice/basis${BV}/share/autocorr/acor_pl-PL.dat
@@ -2117,7 +2116,6 @@ lib/libreoffice/basis${BV}/share/xslt/odfflatxml/odfflatxmlimport.xsl
 lib/libreoffice/basis${BV}/ure-link
 lib/libreoffice/licenses/
 lib/libreoffice/licenses/LICENSE_en-US
-lib/libreoffice/licenses/LICENSE_en-US.html
 lib/libreoffice/program/
 lib/libreoffice/program/about-pt_BR.png
 lib/libreoffice/program/about.png
@@ -2153,7 +2151,6 @@ lib/libreoffice/program/unopkg
 lib/libreoffice/program/versionrc
 lib/libreoffice/readmes/
 lib/libreoffice/readmes/README_en-US
-lib/libreoffice/readmes/README_en-US.html
 lib/libreoffice/share/
 lib/libreoffice/share/config/
 lib/libreoffice/share/config/images_brand.zip
@@ -2370,9 +2367,7 @@ lib/libreoffice/share/extensions/presenter-screen/registry/schema/org/openoffice
 lib/libreoffice/share/prereg/
 lib/libreoffice/share/readme/
 lib/libreoffice/share/readme/LICENSE_en-US
-lib/libreoffice/share/readme/LICENSE_en-US.html
 lib/libreoffice/share/readme/README_en-US
-lib/libreoffice/share/readme/README_en-US.html
 lib/libreoffice/share/registry/
 lib/libreoffice/share/registry/brand.xcd
 lib/libreoffice/share/uno_packages/

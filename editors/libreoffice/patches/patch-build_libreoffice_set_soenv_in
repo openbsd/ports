@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_libreoffice_set_soenv_in,v 1.1.1.1 2010/11/14 23:46:35 robert Exp $
---- build/libreoffice/set_soenv.in.orig.port	Mon Nov  8 14:13:04 2010
-+++ build/libreoffice/set_soenv.in	Sun Nov 14 16:09:57 2010
-@@ -1952,6 +1952,8 @@ ToFile( "LIBXML_LIBS",       "@LIBXML_LIBS@",      "e"
- ToFile( "SYSTEM_EXPAT",      "@SYSTEM_EXPAT@",     "e" );
+$OpenBSD: patch-build_libreoffice_set_soenv_in,v 1.2 2010/12/02 09:23:37 robert Exp $
+--- build/libreoffice/set_soenv.in.orig.port	Tue Nov 30 21:17:23 2010
++++ build/libreoffice/set_soenv.in	Wed Dec  1 21:13:16 2010
+@@ -1956,6 +1956,8 @@ ToFile( "WITH_EXTRA_SAMPLE",       "@WITH_EXTRA_SAMPLE
+ ToFile( "WITH_EXTRA_FONT",       "@WITH_EXTRA_FONT@",      "e" );
  ToFile( "SYSTEM_DB",         "@SYSTEM_DB@",        "e" );
  ToFile( "DB_VERSION",        "@DB_VERSION@",       "e" );
 +ToFile( "DB_LIB",            "@DB_LIB@",           "e" );

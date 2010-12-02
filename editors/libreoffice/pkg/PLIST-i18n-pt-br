@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.3 2010/11/17 14:41:17 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.4 2010/12/02 09:23:37 robert Exp $
 @conflict openoffice-i18n-pt-br-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/pt-BR/
@@ -270,10 +270,8 @@ lib/libreoffice/basis${BV}/share/wordbook/pt-BR/
 lib/libreoffice/basis${BV}/share/wordbook/pt-BR/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/pt-BR/soffice.dic
 lib/libreoffice/licenses/LICENSE_pt-BR
-lib/libreoffice/licenses/LICENSE_pt-BR.html
 lib/libreoffice/program/resource/ooopt-BR.res
 lib/libreoffice/readmes/README_pt-BR
-lib/libreoffice/readmes/README_pt-BR.html
 lib/libreoffice/share/extensions/dict-pt/
 lib/libreoffice/share/extensions/dict-pt/META-INF/
 lib/libreoffice/share/extensions/dict-pt/META-INF/manifest.xml
@@ -287,18 +285,9 @@ lib/libreoffice/share/extensions/dict-pt/pt_BR.aff
 lib/libreoffice/share/extensions/dict-pt/pt_BR.dic
 lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_pt-BR
 lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_pt-BR
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/com.sun.PresenterScreen-openbsd_${OA}/
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/help.db_
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/help.ht_
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/help.jar
-lib/libreoffice/share/extensions/presenter-screen/help/pt-BR/help.key_
 lib/libreoffice/share/readme/LICENSE_pt-BR
-lib/libreoffice/share/readme/LICENSE_pt-BR.html
 lib/libreoffice/share/readme/README_pt-BR
-lib/libreoffice/share/readme/README_pt-BR.html

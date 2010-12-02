@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ko,v 1.4 2010/11/30 16:15:25 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ko,v 1.5 2010/12/02 09:23:37 robert Exp $
 @conflict openoffice-i18n-ko-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ko/
@@ -270,26 +270,15 @@ lib/libreoffice/basis${BV}/share/wordbook/ko/
 lib/libreoffice/basis${BV}/share/wordbook/ko/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/ko/soffice.dic
 lib/libreoffice/licenses/LICENSE_ko
-lib/libreoffice/licenses/LICENSE_ko.html
 lib/libreoffice/program/resource/oooko.res
 lib/libreoffice/readmes/README_ko
-lib/libreoffice/readmes/README_ko.html
 lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_ko
 lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_ko
-lib/libreoffice/share/extensions/presenter-screen/help/ko/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/ko/com.sun.PresenterScreen-openbsd_${OA}/
-lib/libreoffice/share/extensions/presenter-screen/help/ko/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/ko/help.db_
-lib/libreoffice/share/extensions/presenter-screen/help/ko/help.ht_
-lib/libreoffice/share/extensions/presenter-screen/help/ko/help.jar
-lib/libreoffice/share/extensions/presenter-screen/help/ko/help.key_
 lib/libreoffice/share/readme/LICENSE_ko
-lib/libreoffice/share/readme/LICENSE_ko.html
 lib/libreoffice/share/readme/README_ko
-lib/libreoffice/share/readme/README_ko.html
 lib/libreoffice/share/registry/cjk_ko.xcd
 lib/libreoffice/share/registry/korea.xcd

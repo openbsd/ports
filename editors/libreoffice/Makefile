@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/01 14:32:49 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/02 09:23:37 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.3
-VERSION=	3.2.99.3
+VERSION=	3.3.0.1
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,13 +16,13 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
-
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
-		http://humppa.hu/libreoffice/
+		http://humppa.hu/libreoffice/ \
+		http://download.go-oo.org/3.3/ \
+		http://download.go-oo.org/src/
 
 EDISTFILES=	libreoffice-build-${VERSION}.tar.gz
 
@@ -55,7 +55,7 @@ DISTFILES+=	${EDISTFILES} \
 		67b42915c8432abf0a922438f00860a2-libxml.zip \
 		79600e696a98ff95c2eba976f7a8dfbb-liblayout.zip \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip \
-		799fc3b835a79adce8c88a3fee0150c1-libwps-0.1.2.tar.gz \
+		9e436bff44c60dc8b97cba0c7fc11a5c-libwps-0.2.0.tar.bz2 \
 		8294d6c42e3553229af9934c5c0ed997-stax-api-1.0-2-sources.jar \
 		8ea307d71d11140574bfb9fcc2487e33-libbase.zip \
 		a06a496d7a43cbdc35e69dbe678efadb-libloader.zip \
@@ -68,14 +68,15 @@ DISTFILES+=	${EDISTFILES} \
 		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz \
 		d1a3205871c3c52e8a50c9f18510ae12-libformula.zip \
 		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip \
-		db556b750bf3eac8481a4cc5e29e5af1-libwpg-0.1.3.tar.gz \
+		5ba6a61a2f66dfd5fee8cdd4cd262a37-libwpg-0.2.0.tar.bz2 \
 		dbb3757275dc5cc80820c0b4dd24ed95-librepository.zip \
 		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz \
 		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz \
 		f3e2febd267c8e4b13df00dac211dd6d-flute.zip \
 		f7925ba8491fe570e5164d2c72791358-libfonts.zip \
 		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz \
-		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip
+		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip \
+		86e390f015e505dd71a66f0123c62f09-libwpd-0.9.0.tar.bz2
 
 DIST_SUBDIR=	libreoffice
 
@@ -134,7 +135,6 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/libxslt \
 		net/curl \
 		net/neon \
-		textproc/libwpd \
 		textproc/icu4c \
 		devel/gperf \
 		textproc/raptor \
@@ -197,7 +197,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 CONFIGURE_ARGS=	--disable-post-install-scripts \
 		--enable-kde \
-		--enable-opengl \
 		--with-distro=LibreOfficeOpenBSD \
 		--with-docdir=${PREFIX}/share/doc/libreoffice \
 		--with-gnu-tar=${LOCALBASE}/bin/gtar \
@@ -205,7 +204,8 @@ CONFIGURE_ARGS=	--disable-post-install-scripts \
 		--with-lang="en-US ${LANGS}" \
 		--with-ooo-builddir=${WRKSRC}/build/libreoffice \
 		--with-srcdir=${DISTDIR}/libreoffice \
-		--without-git
+		--without-git \
+		--without-system-libwpd
 
 .if !${FLAVOR:L:Mno_java}
 CONFIGURE_ARGS+=--with-java \

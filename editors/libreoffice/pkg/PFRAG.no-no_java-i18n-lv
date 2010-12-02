@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-lv,v 1.1.1.1 2010/11/14 23:46:39 robert Exp $
+@comment $OpenBSD: PFRAG.no-no_java-i18n-lv,v 1.2 2010/12/02 09:23:37 robert Exp $
 lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/
 lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/_0.cfs
 lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/segments.gen
@@ -31,10 +31,6 @@ lib/libreoffice/basis${BV}/help/lv/swriter.idxl/
 lib/libreoffice/basis${BV}/help/lv/swriter.idxl/_0.cfs
 lib/libreoffice/basis${BV}/help/lv/swriter.idxl/segments.gen
 lib/libreoffice/basis${BV}/help/lv/swriter.idxl/segments_3
-lib/libreoffice/share/extensions/presenter-screen/help/lv/help.idxl/
-lib/libreoffice/share/extensions/presenter-screen/help/lv/help.idxl/_0.cfs
-lib/libreoffice/share/extensions/presenter-screen/help/lv/help.idxl/segments.gen
-lib/libreoffice/share/extensions/presenter-screen/help/lv/help.idxl/segments_3
 lib/libreoffice/share/extensions/report-builder/registration/LICENSE_lv
 lib/libreoffice/share/extensions/wiki-publisher/help/lv/
 lib/libreoffice/share/extensions/wiki-publisher/help/lv/com.sun.wiki-publisher/
