@@ -1,0 +1,12 @@
+$OpenBSD: patch-uif_c,v 1.1.1.1 2010/12/02 10:35:04 jasper Exp $
+--- uif.c.orig	Thu Aug 12 12:50:34 2010
++++ uif.c	Thu Aug 12 12:50:48 2010
+@@ -28,7 +28,7 @@
+ #include "uif.h"
+ #include "util.h"
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #define B460800 460800
+ #define B500000 500000
+ #endif

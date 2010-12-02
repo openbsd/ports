@@ -1,0 +1,24 @@
+$OpenBSD: patch-rf2500_c,v 1.1.1.1 2010/12/02 10:35:04 jasper Exp $
+
+- usb_bulk_read() returns 0 on timeout, not -1
+
+--- rf2500.c.orig	Sun Nov 28 12:04:17 2010
++++ rf2500.c	Thu Dec  2 00:36:44 2010
+@@ -66,7 +66,7 @@ static int open_interface(struct rf2500_transport *tr,
+ 		return -1;
+ 	}
+ 
+-#if !(defined(__APPLE__) || defined(WIN32))
++#if !(defined(__APPLE__) || defined(WIN32) || defined(__OpenBSD__))
+ 	if (usb_detach_kernel_driver_np(tr->handle, tr->int_number) < 0)
+ 		perror("rf2500: warning: can't "
+ 			"detach kernel driver");
+@@ -215,7 +215,7 @@ transport_t rf2500_open(const char *devpath)
+ 	/* Flush out lingering data */
+ 	while (usb_bulk_read(tr->handle, USB_FET_IN_EP,
+ 			     buf, sizeof(buf),
+-			     100) >= 0);
++			     100) > 0);
+ 
+ 	return (transport_t)tr;
+ }

@@ -1,0 +1,21 @@
+$OpenBSD: patch-olimex_c,v 1.1.1.1 2010/12/02 10:35:04 jasper Exp $
+--- olimex.c.orig	Wed Aug  4 04:08:43 2010
++++ olimex.c	Thu Aug 12 13:04:12 2010
+@@ -65,7 +65,7 @@ struct olimex_transport {
+ static int open_interface(struct olimex_transport *tr,
+ 			  struct usb_device *dev, int ino)
+ {
+-#if !(defined (__APPLE__) || defined(WIN32))
++#if !(defined (__APPLE__) || defined(WIN32) || defined(__OpenBSD__))
+ 	int drv;
+ 	char drName[256];
+ #endif
+@@ -81,7 +81,7 @@ static int open_interface(struct olimex_transport *tr,
+ 		return -1;
+ 	}
+ 
+-#if !(defined(__APPLE__) || defined(WIN32))
++#if !(defined(__APPLE__) || defined(WIN32) || defined(__OpenBSD__))
+ 	drv = usb_get_driver_np(tr->handle, tr->int_number, drName,
+ 				sizeof(drName));
+ 	printf(__FILE__" : driver %d\n", drv);
