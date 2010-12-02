@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/02 21:49:28 sthen Exp $
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		get_flash_videos-1.23
-EXTRACT_SUFX=
+DISTNAME=		App-get_flash_videos-1.24
+PKGNAME=		${DISTNAME:S/App-//}
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://get-flash-videos.googlecode.com/
@@ -16,27 +16,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# any patches sent upstream should be against the modular source,
-# see http://github.com/monsieurvideo/get-flash-videos
-MASTER_SITES=		${HOMEPAGE}files/
+MODULES=		cpan
+CPAN_AUTHOR=		MONSIEUR
+USE_GROFF=		Yes
 
 # optional deps, not in ports yet:
 # Data::AMF::Packet (for nbc)
 # LWP::Protocol::socks (for socks proxies)
+BUILD_DEPENDS=		devel/p5-Tie-IxHash
 RUN_DEPENDS=		devel/p5-Term-ReadKey \
+			devel/p5-Tie-IxHash \
 			www/p5-libwww \
 			www/p5-URI \
 			www/p5-WWW-Mechanize
 
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
 PKG_ARCH=		*
-WRKDIST=		${WRKDIR}
 
-do-extract:
-	cp ${DISTDIR}/${DISTNAME} ${WRKSRC}/get_flash_videos
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/get_flash_videos ${PREFIX}/bin
+pre-configure:
+	cd ${WRKSRC}; perl -pi -e \
+	    's,/etc/get_flash_videosrc,${SYSCONFDIR}/get_flash_videosrc,g' \
+	    doc/get_flash_videos.pod get_flash_videos
 
 .include <bsd.port.mk>
