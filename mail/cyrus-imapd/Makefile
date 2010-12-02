@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2010/12/02 08:56:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2010/12/02 09:26:15 ajacoutot Exp $
+
+BROKEN=		talk to ajacoutot@ for details
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
