@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/02 09:23:37 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/02 21:43:59 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -226,7 +226,7 @@ CONFIGURE_ARGS+=--enable-symbols \
 		--enable-debug
 .endif
 
-MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}" VERBOSE=true
+MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
 
 .if ${MACHINE_ARCH} == "i386"
 OA=		x86
