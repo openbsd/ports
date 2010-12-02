@@ -1,32 +1,29 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2010/12/02 14:04:37 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
 
-V =			0.10.30
+V =			0.10.31
 DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
-REVISION-main =		2
-REVISION-cdda =		1
-
 MULTI_PACKAGES =	-main -cdda
 
-SHARED_LIBS +=  gstinterfaces-0.10   2.2      # .21.0
-SHARED_LIBS +=  gsttag-0.10          2.2      # .21.0
-SHARED_LIBS +=  gstfft-0.10          2.2      # .21.0
-SHARED_LIBS +=  gstnetbuffer-0.10    2.2      # .21.0
-SHARED_LIBS +=  gstpbutils-0.10      2.2      # .21.0
-SHARED_LIBS +=  gstrtp-0.10          2.2      # .21.0
-SHARED_LIBS +=  gstsdp-0.10          2.2      # .21.0
-SHARED_LIBS +=  gstvideo-0.10        2.2      # .21.0
-SHARED_LIBS +=  gstapp-0.10          2.2      # .21.0
-SHARED_LIBS +=  gstaudio-0.10        2.2      # .21.0
-SHARED_LIBS +=  gstcdda-0.10         2.2      # .21.0
-SHARED_LIBS +=  gstriff-0.10         2.2      # .21.0
-SHARED_LIBS +=  gstrtsp-0.10         2.2      # .21.0
+SHARED_LIBS +=  gstinterfaces-0.10   2.3      # .21.0
+SHARED_LIBS +=  gsttag-0.10          2.3      # .21.0
+SHARED_LIBS +=  gstfft-0.10          2.3      # .21.0
+SHARED_LIBS +=  gstnetbuffer-0.10    2.3      # .21.0
+SHARED_LIBS +=  gstpbutils-0.10      2.3      # .21.0
+SHARED_LIBS +=  gstrtp-0.10          2.3      # .21.0
+SHARED_LIBS +=  gstsdp-0.10          2.3      # .21.0
+SHARED_LIBS +=  gstvideo-0.10        2.3      # .21.0
+SHARED_LIBS +=  gstapp-0.10          2.3      # .21.0
+SHARED_LIBS +=  gstaudio-0.10        2.3      # .21.0
+SHARED_LIBS +=  gstcdda-0.10         2.3      # .21.0
+SHARED_LIBS +=  gstriff-0.10         2.3      # .21.0
+SHARED_LIBS +=  gstrtsp-0.10         2.3      # .21.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
@@ -41,13 +38,13 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 LIB_DEPENDS =		${P}/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} \
-			Xv X11 ICE SM Xext Xau Xdmcp \
+			Xv X11 ICE SM Xext Xau Xdmcp Xxf86vm c drm \
 			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10 \
 			pthread-stubs xcb expat fontconfig freetype ogg \
-			Xrender cairo gio-2.0 pixman-1 png \
-			xcb-render xcb-render-util vorbis vorbisenc pango-1.0 \
+			Xrender cairo gio-2.0 pixman-1 png pthread xcb-shm \
+			xcb-render vorbis vorbisenc pango-1.0 \
 			pangoft2-1.0 pangocairo-1.0 theoradec theoraenc \
-			vorbisidec orc-0.4 orc-test-0.4
+			vorbisidec orc-0.4 orc-test-0.4 GL Xdamage Xfixes
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			devel/orc>=0.4.6 \
 			audio/libvorbis \

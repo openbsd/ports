@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.4 2010/07/22 19:16:16 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2010/12/02 14:04:37 ajacoutot Exp $
 
 Our cdparanoia version does not have cache control.
 
---- configure.ac.orig	Wed Jul 14 18:45:44 2010
-+++ configure.ac	Wed Jul 21 16:02:58 2010
-@@ -613,10 +613,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
+--- configure.ac.orig	Tue Nov 30 18:57:59 2010
++++ configure.ac	Thu Dec  2 11:52:21 2010
+@@ -642,10 +642,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
      if test "x$FOUND_CDPARANOIA" = "xyes";
      then
        AC_CHECK_LIB(cdda_paranoia,
