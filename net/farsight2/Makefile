@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/02 13:53:58 ajacoutot Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farsight2-0.0.21
 SHARED_LIBS +=  gstfarsight-0.10        2.0      # .5.1
 CATEGORIES=		net multimedia
+
+REVISION=		0
 
 HOMEPAGE=		http://farsight.freedesktop.org/
 
