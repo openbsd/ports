@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.39 2010/11/24 21:30:36 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.40 2010/12/02 01:38:40 jeremy Exp $
 
 # ruby module
 
@@ -265,25 +265,21 @@ SUBST_VARS+=	^GEM_LIB ^GEM_BIN DISTNAME
 
 .  if ${MODRUBY_REV} == jruby
 GEM=		${RUBY} -S gem
-# GEM_REL includes a slash so it can be used transparently when building
-# a package for JRuby by holding everything in /usr/local/jruby.  It's
-# empty for ruby 1.8 and ruby 1.9, which install into /usr/local.
-GEM_REL=	jruby/
+GEM_BIN =	jruby/bin
+GEM_LIB =	jruby/lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
 .  elif ${MODRUBY_REV} == rbx
 GEM=		${RUBY} -S gem
-GEM_REL=	
 GEM_BASE_LIB=	${GEM_BASE}/rbx/${MODRUBY_LIBREV}
 GEM_BIN =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/bin
 GEM_LIB =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/${MODRUBY_LIBREV}
 .  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
-GEM_REL=	
+GEM_BIN =	bin
+GEM_LIB =	lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_BASE_LIB=	${GEM_BASE}/ruby/${MODRUBY_LIBREV}
 .  endif
 GEM_BASE=	${WRKDIR}/gem-tmp/.gem
-GEM_BIN ?=	${GEM_REL}bin
-GEM_LIB ?=	${GEM_REL}lib/ruby/gems/${MODRUBY_LIBREV}
 GEM_ABS_PATH=	${PREFIX}/${GEM_LIB}
 GEM_BASE_BIN=	${GEM_BASE_LIB}/bin
 # We purposely do not install documentation for ruby gems, because
@@ -307,16 +303,17 @@ ${MODRUBY_EXTRACT_COOKIE}:
 	mkdir -p ${WRKDIST} ${_GEM_CONTENT}
 	cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}
-	cd ${_GEM_CONTENT} && gunzip metadata.gz && \
-		mv metadata ${WRKDIST}/.metadata
+	gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata
 	rm -f ${_GEM_CONTENT}/*.gz.sig
 
 # Rebuild the gem manually after possible patching, then install it to a
 # temporary directory (not the final directory under fake, since that would
 # require root access and building C extensions as root).
 ${MODRUBY_BUILD_COOKIE}:
-	cd ${WRKDIST} && gzip .metadata && \
-		mv .metadata.gz ${_GEM_CONTENT}/metadata.gz
+	if [ -f ${WRKDIST}/.metadata ]; then \
+		cd ${WRKDIST} && gzip .metadata && \
+			mv .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
+	fi
 	cd ${WRKDIST} && find . -type f \! -name '*.orig'  -print | \
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
 	cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
