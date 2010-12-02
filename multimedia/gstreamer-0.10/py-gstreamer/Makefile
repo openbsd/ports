@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/02 14:05:02 ajacoutot Exp $
 
 COMMENT =		Python bindings for GStreamer
 
-V =			0.10.19
+V =			0.10.20
 DISTNAME =		gst-python-$V
 PKGNAME =		py-gstreamer-$V
-REVISION =		0
 
 HOMEPAGE =		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -14,9 +13,8 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-python/}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 \
 			gstcontroller-0.10 gstdataprotocol-0.10 gstnet-0.10 \
 			gstreamer-0.10 gthread-2.0 gstpbutils-0.10 \
-			m pcre xml2 z util gstinterfaces-0.10 gstaudio-0.10 \
+			m pcre xml2 z gstinterfaces-0.10 gstaudio-0.10 \
 			gsttag-0.10 gstvideo-0.10
-WANTLIB += ${MODPY_WANTLIB}
 
 MODULES =		devel/gettext \
 			lang/python
@@ -24,8 +22,7 @@ MODULES =		devel/gettext \
 BUILD_DEPENDS =		x11/py-gtk2
 RUN_DEPENDS =		x11/py-gtk2 \
 			textproc/libxml,-python
-LIB_DEPENDS =		$P/plugins-base \
-			${MODPY_LIB_DEPENDS}
+LIB_DEPENDS =		$P/plugins-base
 
 REGRESS_DEPENDS =	$P/plugins-good
 
