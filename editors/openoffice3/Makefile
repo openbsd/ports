@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/11/30 18:19:33 robert Exp $
+# $OpenBSD: Makefile,v 1.70 2010/12/02 09:29:25 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,7 +16,7 @@ PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-kde=	0
 REVISION-java=	0
 
@@ -352,7 +352,7 @@ do-install:
                 ${PREFIX}/bin/soffice \
 
 	cd ${PREFIX}/bin && \
-	for app in sbase scalc sdraw simpress smath setofficelang spadmin swriter openoffice3; do \
+	for app in sbase scalc sdraw simpress smath setofficelang spadmin swriter openoffice.org3; do \
 		ln -sf soffice $$app ; done
 
 .include <bsd.port.mk>
