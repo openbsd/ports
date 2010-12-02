@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.860 2010/12/01 14:29:39 millert Exp $
+# $OpenBSD: Makefile,v 1.861 2010/12/02 10:36:29 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -298,6 +298,7 @@
      SUBDIR += mowgli
      SUBDIR += mpfr
      SUBDIR += msp430
+     SUBDIR += mspdebug
      SUBDIR += mysql++
      SUBDIR += nant
      SUBDIR += nasm
