@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/12/02 14:05:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/12/02 14:26:40 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -82,7 +82,7 @@ lib/gstreamer-${VERSION}/libgstfrei0r.so
 lib/gstreamer-${VERSION}/libgstgaudieffects.so
 @comment lib/gstreamer-${VERSION}/libgstgeometrictransform.la
 lib/gstreamer-${VERSION}/libgstgeometrictransform.so
-lib/gstreamer-${VERSION}/libgstgsettingselements.la
+@comment lib/gstreamer-${VERSION}/libgstgsettingselements.la
 lib/gstreamer-${VERSION}/libgstgsettingselements.so
 @comment lib/gstreamer-${VERSION}/libgstgsm.la
 lib/gstreamer-${VERSION}/libgstgsm.so
