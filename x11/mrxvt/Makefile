@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/02 07:48:41 matthieu Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
 

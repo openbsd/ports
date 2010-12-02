@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_init_c,v 1.5 2010/12/02 07:48:42 matthieu Exp $
+--- src/init.c.orig	Wed Dec  1 22:43:45 2010
++++ src/init.c	Wed Dec  1 22:43:45 2010
+@@ -3239,7 +3239,7 @@
+     XGCValues		    gcvalue;
+     unsigned long	    gcmask;
+ #ifndef NO_FRILLS
+-    CARD32		    pid = (CARD32) getpid ();
++    long		    pid = (long) getpid ();
+ #endif
+ #ifdef TRANSPARENT
+     register int	    i;
