@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/12/02 09:26:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/12/02 11:30:43 ajacoutot Exp $
 
 BROKEN=		talk to ajacoutot@ for details
 
@@ -11,7 +11,7 @@ PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-perl=	0
 
 CATEGORIES=	mail
@@ -97,6 +97,7 @@ SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 		tools/upgradesieve doc/text/install-upgrade
 
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/{lib/imapoptions,man/imapd.conf.5}
 .for i in ${MAN8}
 	@perl -pi -e "s,${i}\(8\),cyrus-${i}\(8\),g" ${WRKSRC}/man/*.[0-9]
 .endfor

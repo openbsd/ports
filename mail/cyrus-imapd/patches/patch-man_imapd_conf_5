@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_imapd_conf_5,v 1.1 2010/12/02 11:30:43 ajacoutot Exp $
+--- man/imapd.conf.5.orig	Thu Dec  2 12:25:41 2010
++++ man/imapd.conf.5	Thu Dec  2 12:26:22 2010
+@@ -231,7 +231,7 @@ required. 
+ Debug command to be used by processes started with -D option.  The string
+ is a C format string that gets 3 options: the first is the name of the
+ executable (without path).  The second is the pid (integer) and the third
+-is the service ID.  Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d 
++is the service ID.  Example: /usr/bin/gdb ${TRUEPREFIX}/libexec/cyrus-imapd/%s %d 
+ .IP "\fBdefaultacl:\fR anyone lrs" 5
+ The Access Control List (ACL) placed on a newly-created (non-user)
+ mailbox that does not have a parent mailbox. 
+@@ -865,7 +865,7 @@ Possible values include "auxprop", "saslauthd", and "p
+ The cyrusdb backend to use for the seen state. 
+ 
+ Allowed values: \fIflat\fR, \fIberkeley\fR, \fIberkeley-hash\fR, \fIskiplist\fR
+-.IP "\fBsendmail:\fR /usr/lib/sendmail" 5
++.IP "\fBsendmail:\fR /usr/sbin/sendmail" 5
+ The pathname of the sendmail executable.  Sieve invokes sendmail
+ for sending rejections, redirects and vacation responses. 
+ .IP "\fBserverlist:\fR <none>" 5

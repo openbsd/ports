@@ -1,6 +1,15 @@
-$OpenBSD: patch-lib_imapoptions,v 1.1 2010/12/02 08:56:32 ajacoutot Exp $
---- lib/imapoptions.orig	Thu Dec  2 08:51:32 2010
-+++ lib/imapoptions	Thu Dec  2 08:52:05 2010
+$OpenBSD: patch-lib_imapoptions,v 1.2 2010/12/02 11:30:43 ajacoutot Exp $
+--- lib/imapoptions.orig	Mon Nov 29 14:28:06 2010
++++ lib/imapoptions	Thu Dec  2 12:25:23 2010
+@@ -253,7 +253,7 @@ Blank lines and lines beginning with ``#'' are ignored
+ /* Debug command to be used by processes started with -D option.  The string
+    is a C format string that gets 3 options: the first is the name of the
+    executable (without path).  The second is the pid (integer) and the third
+-   is the service ID.  Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d */
++   is the service ID.  Example: /usr/bin/gdb ${TRUEPREFIX}/libexec/cyrus-imapd/%s %d */
+ 
+ { "defaultacl", "anyone lrs", STRING }
+ /* The Access Control List (ACL) placed on a newly-created (non-user)
 @@ -1018,7 +1018,7 @@ And the notification message will be available on \fIs
  { "seenstate_db", "skiplist", STRINGLIST("flat", "berkeley", "berkeley-hash", "skiplist")}
  /* The cyrusdb backend to use for the seen state. */
@@ -9,13 +18,4 @@ $OpenBSD: patch-lib_imapoptions,v 1.1 2010/12/02 08:56:32 ajacoutot Exp $
 +{ "sendmail", "/usr/sbin/sendmail", STRING }
  /* The pathname of the sendmail executable.  Sieve invokes sendmail
     for sending rejections, redirects and vacation responses. */
- 
-@@ -1082,7 +1082,7 @@ product version in the capabilities */
- /* If enabled, timsieved will emit a capability response after a successful
-    SASL authentication, per draft-martin-managesieve-12.txt . */
- 
--{ "sievedir", "/usr/sieve", STRING }
-+{ "sievedir", "/var/sieve", STRING }
- /* If sieveusehomedir is false, this directory is searched for Sieve
-    scripts. */
  
