@@ -1,5 +1,5 @@
 --- configure.orig	Mon Nov 29 14:29:23 2010
-+++ configure	Mon Nov 29 14:56:36 2010
++++ configure	Thu Dec  2 09:20:29 2010
 @@ -5052,9 +5052,7 @@ CFLAGS=$save_CFLAGS
  fi
  
@@ -40,6 +40,15 @@
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
+@@ -10446,7 +10444,7 @@ elif test "${with_perl}" != "no"; then
+     PERL_SUBDIRS="imap"
+     PERL="${with_perl}"
+     case "${target_os}" in
+-        linux*|netbsd*)
++        linux*|netbsd*|openbsd*)
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
+ $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
+             eval `${PERL} -V:cccdlflags`
 @@ -10559,6 +10557,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  extern "C"
  #endif
