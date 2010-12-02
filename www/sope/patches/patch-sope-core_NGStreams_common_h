@@ -1,0 +1,11 @@
+$OpenBSD: patch-sope-core_NGStreams_common_h,v 1.1 2010/12/02 14:56:12 sebastia Exp $
+--- sope-core/NGStreams/common.h.orig	Mon Nov 29 18:21:07 2010
++++ sope-core/NGStreams/common.h	Mon Nov 29 18:21:32 2010
+@@ -106,6 +106,7 @@
+ #endif
+ 
+ #if !defined(WIN32) || defined(__CYGWIN32__)
++#  include <netinet/in.h>
+ #  include <arpa/inet.h>
+ #  include <sys/un.h>
+ #endif
