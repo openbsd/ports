@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2010/12/02 14:04:49 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
-V =			0.10.25
+V =			0.10.26
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
@@ -13,9 +13,7 @@ PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main =		2
 EPOCH-main =		0
-REVISION-caca =		0
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -caca
@@ -43,15 +41,15 @@ LIB_DEPENDS =		$P/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
-			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
+			gstcontroller-0.10 Xau Xdmcp xcb-render \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
 			fontconfig freetype ogg pixman-1 png \
-			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1 \
+			stdc++ theora vorbis ORBit-2 dbus-1 GL Xxf86vm \
 			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
 			gstfft-0.10 gstrtsp-0.10 gstsdp-0.10 gstpbutils-0.10 \
 			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2 \
-			eggdbus-1 gcrypt gio-2.0 gnome-keyring gnutls \
+			gcrypt gio-2.0 gnome-keyring gnutls drm xcb-shm \
 			gpg-error proxy soup-2.4 soup-gnome-2.4 sqlite3 tasn1
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \

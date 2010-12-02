@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_oss_gstosssink_c,v 1.5 2010/04/28 08:03:23 ajacoutot Exp $
---- sys/oss/gstosssink.c.orig	Thu Mar 18 18:55:13 2010
-+++ sys/oss/gstosssink.c	Wed Apr 28 09:06:23 2010
+$OpenBSD: patch-sys_oss_gstosssink_c,v 1.6 2010/12/02 14:04:49 ajacoutot Exp $
+--- sys/oss/gstosssink.c.orig	Mon Nov 29 18:32:52 2010
++++ sys/oss/gstosssink.c	Thu Dec  2 12:17:07 2010
 @@ -103,7 +103,7 @@ enum
    LAST_SIGNAL
  };
@@ -14,8 +14,8 @@ $OpenBSD: patch-sys_oss_gstosssink_c,v 1.5 2010/04/28 08:03:23 ajacoutot Exp $
  
    g_object_class_install_property (gobject_class, PROP_DEVICE,
        g_param_spec_string ("device", "Device",
--          "OSS device (usually /dev/dspN)", DEFAULT_DEVICE, G_PARAM_READWRITE));
-+          "OSS device (usually /dev/audioN)", DEFAULT_DEVICE, G_PARAM_READWRITE));
+-          "OSS device (usually /dev/dspN)", DEFAULT_DEVICE,
++          "OSS device (usually /dev/audioN)", DEFAULT_DEVICE,
+           G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
  
    gstbasesink_class->get_caps = GST_DEBUG_FUNCPTR (gst_oss_sink_getcaps);
- 

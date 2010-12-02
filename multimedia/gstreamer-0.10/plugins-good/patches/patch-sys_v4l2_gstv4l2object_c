@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
---- sys/v4l2/gstv4l2object.c.orig	Wed Aug 25 09:18:40 2010
-+++ sys/v4l2/gstv4l2object.c	Wed Aug 25 09:24:08 2010
-@@ -1372,8 +1372,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.2 2010/12/02 14:04:49 ajacoutot Exp $
+--- sys/v4l2/gstv4l2object.c.orig	Mon Nov 29 18:32:52 2010
++++ sys/v4l2/gstv4l2object.c	Thu Dec  2 12:16:39 2010
+@@ -1490,8 +1490,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&rate, GST_TYPE_FRACTION);
  
      do {
@@ -12,7 +12,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
  
        if (num > G_MAXINT || denom > G_MAXINT) {
          /* let us hope we don't get here... */
-@@ -1405,8 +1405,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1523,8 +1523,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&max, GST_TYPE_FRACTION);
  
      /* get the min */
@@ -23,7 +23,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
      if (minnum > G_MAXINT || mindenom > G_MAXINT) {
        minnum >>= 1;
        mindenom >>= 1;
-@@ -1416,8 +1416,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1534,8 +1534,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&min, minnum, mindenom);
  
      /* get the max */
@@ -34,7 +34,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1428,8 +1428,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1546,8 +1546,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&max, maxnum, maxdenom);
  
      /* get the step */
@@ -45,7 +45,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
      if (num > G_MAXINT || denom > G_MAXINT) {
        num >>= 1;
        denom >>= 1;
-@@ -1480,15 +1480,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1598,15 +1598,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
  
      g_value_init (&rates, GST_TYPE_FRACTION_RANGE);
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1586,10 +1586,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1704,10 +1704,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    if (size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
      do {
        GST_LOG_OBJECT (v4l2object->element, "got discrete frame size %dx%d",
@@ -79,7 +79,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
  
        if (w && h) {
          tmp =
-@@ -1607,21 +1607,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1725,21 +1725,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    } else if (size.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
      GST_DEBUG_OBJECT (v4l2object->element, "we have stepwise frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
@@ -110,7 +110,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1 2010/09/12 22:33:57 jakemsr Exp $
        if (w == 0 || h == 0)
          continue;
  
-@@ -1639,18 +1639,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1757,18 +1757,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
  
      GST_DEBUG_OBJECT (v4l2object->element, "we have continuous frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
