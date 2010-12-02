@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2010/11/19 17:12:43 millert Exp $
+# $OpenBSD: Makefile,v 1.251 2010/12/02 22:20:58 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -18,6 +18,7 @@
      SUBDIR += calf
      SUBDIR += caps-plugins
      SUBDIR += cdparanoia
+     SUBDIR += celt
      SUBDIR += cmixer
      SUBDIR += cmt
      SUBDIR += cmu-sphinx3
