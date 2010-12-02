@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_wmapp_cc,v 1.7 2010/12/02 07:50:06 matthieu Exp $
+--- src/wmapp.cc.orig	Wed Dec  1 23:25:10 2010
++++ src/wmapp.cc	Wed Dec  1 23:25:18 2010
+@@ -218,7 +218,7 @@
+                     PropModeReplace, (unsigned char *)win_proto, i);
+ #endif
+ 
+-    pid_t pid = getpid();
++    long pid = long(getpid());
+     const char wmname[] = "IceWM "VERSION" ("HOSTOS"/"HOSTCPU")";
+ 
+ #ifdef GNOME1_HINTS
