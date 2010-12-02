@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2010/12/02 22:16:02 dcoppa Exp $
+
+Remove broken test
+See: http://lists.xiph.org/pipermail/celt-dev/2010-November/000519.html
+
+--- tests/Makefile.in.orig	Thu Dec  2 11:12:18 2010
++++ tests/Makefile.in	Thu Dec  2 11:13:04 2010
+@@ -36,7 +36,7 @@ build_triplet = @build@
+ host_triplet = @host@
+ TESTS = type-test$(EXEEXT) ectest$(EXEEXT) cwrs32-test$(EXEEXT) \
+ 	dft-test$(EXEEXT) laplace-test$(EXEEXT) mdct-test$(EXEEXT) \
+-	mathops-test$(EXEEXT) tandem-test$(EXEEXT)
++	mathops-test$(EXEEXT)
+ noinst_PROGRAMS = type-test$(EXEEXT) ectest$(EXEEXT) \
+ 	cwrs32-test$(EXEEXT) dft-test$(EXEEXT) laplace-test$(EXEEXT) \
+ 	mdct-test$(EXEEXT) mathops-test$(EXEEXT) tandem-test$(EXEEXT)
