@@ -1,8 +1,8 @@
-$OpenBSD: patch-bsl_c,v 1.1.1.1 2010/12/02 10:35:04 jasper Exp $
---- bsl.c.orig	Thu Aug 12 12:21:18 2010
-+++ bsl.c	Thu Aug 12 12:22:36 2010
-@@ -30,7 +30,7 @@
- #include "util.h"
+$OpenBSD: patch-bsl_c,v 1.2 2010/12/02 18:41:46 jasper Exp $
+--- bsl.c.orig	Mon Nov  8 22:40:57 2010
++++ bsl.c	Thu Dec  2 13:05:14 2010
+@@ -31,7 +31,7 @@
+ #include "output.h"
  #include "fet_error.h"
  
 -#ifdef __APPLE__
