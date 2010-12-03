@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/12/02 09:23:38 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/12/03 10:54:05 ajacoutot Exp $
 @conflict openoffice-*
 %%SHARED%%
+bin/libreoffice
 bin/oobase${BV}
 bin/oocalc${BV}
 bin/ooconfig
