@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2010/10/18 21:50:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2010/12/03 16:45:07 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.2.5
-REVISION=	0
+DISTNAME=	nano-2.2.6
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -19,12 +18,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 MODULES=	devel/gettext
-WANTLIB=	c ncurses
+WANTLIB=	c ncursesw
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
+
+# only required to build HTML version of man pages
 USE_GROFF =	Yes
 
 post-install:
