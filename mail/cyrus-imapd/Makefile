@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/12/02 11:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2010/12/03 15:37:31 ajacoutot Exp $
 
 BROKEN=		talk to ajacoutot@ for details
 
@@ -11,7 +11,7 @@ PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-perl=	0
 
 CATEGORIES=	mail

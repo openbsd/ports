@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/11/12 06:26:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/12/03 15:37:31 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
@@ -217,9 +217,11 @@ share/examples/cyrus-imapd/tools/upgradesieve
 @sample /var/imap/log/
 @sample /var/imap/msg/
 @sample /var/imap/ptclient/
+@sample /var/imap/sync/
 @mode 750
 @sample /var/spool/imap/
 @mode 755
 @sample /var/spool/imap/stage./
+@sample /var/spool/imap/sync./
 @mode 750
 @sample /var/sieve/
