@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/12/03 11:50:16 jasper Exp $
 
 COMMENT =	object relation model implementation for ruby
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/ruby
 
+BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS = 	devel/ruby-activesupport,${MODRUBY_FLAVOR}=2.3.4
 
 CONFIGURE_STYLE =	ruby gem
