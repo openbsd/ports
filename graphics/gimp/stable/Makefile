@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.68 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/12/03 16:33:59 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.6.10
-REVISION=	3
-SHARED_LIBS=	gimp-2.0	270.0	\
-		gimpbase-2.0	270.0	\
-		gimpcolor-2.0	270.0	\
-		gimpconfig-2.0	270.0	\
-		gimpmath-2.0	270.0	\
-		gimpmodule-2.0	270.0	\
-		gimpthumb-2.0	270.0	\
-		gimpui-2.0	270.0	\
-		gimpwidgets-2.0	270.0
+DISTNAME=	gimp-2.6.11
+SHARED_LIBS=	gimp-2.0	271.0	\
+		gimpbase-2.0	271.0	\
+		gimpcolor-2.0	271.0	\
+		gimpconfig-2.0	271.0	\
+		gimpmath-2.0	271.0	\
+		gimpmodule-2.0	271.0	\
+		gimpthumb-2.0	271.0	\
+		gimpui-2.0	271.0	\
+		gimpwidgets-2.0	271.0
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -59,10 +58,11 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		expat Xcomposite Xdamage gthread-2.0 pcre \
 		croco-0.6 gio-2.0 rsvg-2 babl-0.1 \
 		pthread-stubs xcb execinfo xcb-render \
-		xcb-render-util gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gtk-x11-2.0 tiff>=35 aa>=1.3 dbus-glib-1 \
 		exif mng poppler>=3 wmf-0.2 wmflite-0.2 \
-		poppler-glib>=3 gegl-0.1 openjpeg>=4 curl
+		poppler-glib>=3 gegl-0.1 openjpeg>=4 curl \
+		GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -70,7 +70,6 @@ MODULES=	devel/gettext \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 AUTOCONF_VERSION= 2.64
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/07/08 16:16:51 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/12/03 16:33:59 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -2127,6 +2127,8 @@ share/locale/zh_CN/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20-python.mo
 share/locale/zh_HK/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_HK/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_HK/LC_MESSAGES/gimp20-tips.mo
