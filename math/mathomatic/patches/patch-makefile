@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.11 2010/10/23 16:47:34 steven Exp $
+$OpenBSD: patch-makefile,v 1.12 2010/12/03 08:43:49 jasper Exp $
 --- makefile.orig	Fri Oct  8 01:43:47 2010
 +++ makefile	Sat Oct 23 18:07:42 2010
 @@ -9,7 +9,8 @@ INSTALL		?= install # installer to use
@@ -11,12 +11,3 @@ $OpenBSD: patch-makefile,v 1.11 2010/10/23 16:47:34 steven Exp $
  #CC_OPTIMIZE	= -O3 -msse2 -mfpmath=sse -fomit-frame-pointer # optimize for speed on a Pentium 4 or higher CPU
  
  VERSION		= `cat VERSION`
-@@ -31,7 +32,7 @@ LDLIBS		+= $(READLINE:1=-lreadline -lncurses)
- # DESTDIR is only used by package maintainers, who should remove all DESTDIR patches soon.
- prefix		?= /usr/local
- bindir		?= $(prefix)/bin
--mandir		?= $(prefix)/share/man
-+mandir		?= $(prefix)/man
- docdir		?= $(prefix)/share/doc
- mathdocdir	?= $(docdir)/mathomatic
- 

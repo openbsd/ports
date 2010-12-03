@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/12/03 08:43:49 jasper Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
@@ -23,6 +23,8 @@ MAKE_ENV =	READLINE=1
 MAKE_FILE =	makefile
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
+
+FAKE_FLAGS =	mandir=$(PREFIX)/man
 
 REGRESS_TARGET =	test
 
