@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 22:45:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT =		report the search path for a class's ISA tree
 
 MODULES =		cpan
 DISTNAME =		Class-ISA-0.36
+REVISION =		0
 CPAN_AUTHOR =		SMUELLER
 CATEGORIES =		devel
 USE_GROFF =		Yes

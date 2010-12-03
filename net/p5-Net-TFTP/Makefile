@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	TFTP client class
 
 MODULES=	cpan
 DISTNAME=	Net-TFTP-0.17
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

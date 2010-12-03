@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT= 	polymorphic return values
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	Return-Value-1.302
+REVISION=	0
 CATEGORIES=	devel
 
 CPAN_AUTHOR=	RJBS

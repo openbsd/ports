@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	module to calculate geographic location
 MODULES=	cpan
 DISTNAME=	Geo-Forward-0.11
+REVISION=	0
 CATEGORIES=	geo
 USE_GROFF =	Yes
 

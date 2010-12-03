@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=		publish/subscribe to publish events from POE::Sessions
 
 DISTNAME=		POE-Component-PubSub-0.05
+REVISION=		0
 CATEGORIES=		devel
 
 # GPLv2

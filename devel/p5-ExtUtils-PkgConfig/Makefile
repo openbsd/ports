@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=	simplistic perl interface to pkg-config
 
 MODULES=	cpan
 DISTNAME=	ExtUtils-PkgConfig-1.07
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

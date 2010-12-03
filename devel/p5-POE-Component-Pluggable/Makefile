@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=		base class for creating plugin enabled POE Components
 
 DISTNAME=		POE-Component-Pluggable-1.24
+REVISION=		0
 CATEGORIES=		devel
 
 # perl

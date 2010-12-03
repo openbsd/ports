@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=	create symlink from IO handle
 
 MODULES=	cpan
 DISTNAME=	PerlIO-via-symlink-0.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

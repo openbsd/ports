@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=		bridge that allows POE to be driven by Tk
 
 DISTNAME=		POE-Loop-Tk-1.302
+REVISION=		0
 CATEGORIES=		devel
 
 MODULES=		cpan

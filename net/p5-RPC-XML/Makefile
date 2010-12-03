@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:45:43 ajacoutot Exp $
 
 COMMENT= 	perl implementation of XML-RPC
 
 MODULES=	cpan
 DISTNAME=	RPC-XML-0.59
+REVISION=	0
 CATEGORIES=	net devel
 USE_GROFF =	Yes
 

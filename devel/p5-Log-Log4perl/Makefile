@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT=	Log4j implementation for Perl
 
 MODULES=	cpan
 DISTNAME=	Log-Log4perl-1.23
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

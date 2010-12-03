@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT= 	cross-platform basic tests for scripts
 
 MODULES=	cpan
 
 DISTNAME=	Test-Script-1.07
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

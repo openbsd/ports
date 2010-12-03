@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=	determine file type using magic
 
 MODULES=	cpan
 DISTNAME=	File-Type-0.22
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

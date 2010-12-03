@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	module to work with TLD names
 
 MODULES=	cpan
 DISTNAME=	Net-Domain-TLD-1.68
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

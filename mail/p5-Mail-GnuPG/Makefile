@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT=	handle GnuPG-encrypted/signed messages
 
 DISTNAME=	Mail-GnuPG-0.15
+REVISION=	0
 CATEGORIES=	mail security
 
 PERMIT_PACKAGE_CDROM=	Yes

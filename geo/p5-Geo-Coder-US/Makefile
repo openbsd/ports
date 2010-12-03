@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	geocode any US address
 MODULES=	cpan
 DISTNAME=	Geo-Coder-US-1.00
-REVISION=	0
+REVISION=	1
 CATEGORIES=	geo
 USE_GROFF =	Yes
 

@@ -1,8 +1,9 @@
-#   $OpenBSD: Makefile,v 1.24 2010/10/18 19:59:17 espie Exp $
+#   $OpenBSD: Makefile,v 1.25 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	perl module to talk to a POP3 (RFC1081) server
 
 DISTNAME=	Mail-POP3Client-2.18
+REVISION=	0
 CATEGORIES=	mail
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

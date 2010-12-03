@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=	subversion repository mirroring tool
 
 DISTNAME=	SVN-Mirror-0.75
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

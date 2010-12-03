@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT =	provides basic statistics on numerical vectors
 
 MODULES =	cpan
 DISTNAME =	Math-VecStat-0.08
+REVISION =	0
 CATEGORIES =	math
 USE_GROFF =	Yes
 

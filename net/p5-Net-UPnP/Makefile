@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	extension for UPnP
 
 MODULES=	cpan
 DISTNAME=	Net-UPnP-1.2.4
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

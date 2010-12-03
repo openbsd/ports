@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	lightweight exception class
 
 MODULES=	cpan
 DISTNAME=	Class-Throwable-0.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

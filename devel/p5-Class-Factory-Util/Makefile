@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT= 	simple framework for Factories
-
 
 MODULES=	cpan
 
 DISTNAME=	Class-Factory-Util-1.6
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

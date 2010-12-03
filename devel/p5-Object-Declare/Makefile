@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT= 	declarative object constructor
 
 MODULES=	cpan
 DISTNAME=	Object-Declare-0.22
+REVISION=	0
 CATEGORIES=	www devel
 USE_GROFF =	Yes
 

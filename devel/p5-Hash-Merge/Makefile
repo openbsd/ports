@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=        merge associative arrays
 
 MODULES=	cpan
 DISTNAME=	Hash-Merge-0.12
+REVISION=	0
 CATEGORIES=     devel
 USE_GROFF =	Yes
 

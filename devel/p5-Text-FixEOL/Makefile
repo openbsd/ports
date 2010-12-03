@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT= 	canonical EOL/EOF
 
 MODULES=	cpan 
 
 DISTNAME=	Text-FixEOL-1.05
+REVISION=	0
 CATEGORIES=	devel textproc
 CONFIGURE_STYLE=modbuild
 USE_GROFF =	Yes

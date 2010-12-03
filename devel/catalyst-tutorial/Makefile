@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT =	catalyst packages for the tutorial
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -6,6 +6,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 MODULES =	cpan
 CATEGORIES =	devel www
 DISTNAME =	Task-Catalyst-Tutorial-0.05
+REVISION =	0
 PKGNAME =	catalyst-tutorial-0.05
 EPOCH =		0
 

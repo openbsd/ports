@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT =	simple configuration file class
 
 MODULES =	cpan
 DISTNAME =	Config-Simple-4.59
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

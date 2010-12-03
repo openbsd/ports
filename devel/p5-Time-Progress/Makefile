@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=	elapsed and estimated finish time reporting
 
 DISTNAME=	Time-Progress-1.3
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

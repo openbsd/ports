@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/24 15:52:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:26 ajacoutot Exp $
 
 COMMENT=		simple but non-blocking HTTP/HTTPS client
 
 DISTNAME=		AnyEvent-HTTP-1.46
+REVISION=		0
 CATEGORIES=		databases devel
 
 MODULES=		cpan

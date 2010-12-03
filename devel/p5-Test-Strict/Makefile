@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:37 ajacoutot Exp $
 
 
 COMMENT =	check syntax, presence of use strict; and test coverage
 
 MODULES =	cpan
 DISTNAME =	Test-Strict-0.09
+REVISION=	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

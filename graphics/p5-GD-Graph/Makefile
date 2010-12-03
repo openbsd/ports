@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT =	module for graph plotting
 
 VERSION =	1.44
 DISTNAME =	GDGraph-${VERSION}
 PKGNAME =	p5-GD-Graph-${VERSION}
+REVISION =	0
 CATEGORIES =	graphics
 
 MAINTAINER =	Kevin Lo <kevlo@openbsd.org>

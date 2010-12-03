@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:37 ajacoutot Exp $
 COMMENT=	LRU cache in memory
 
 MODULES=	cpan
 DISTNAME=	Tie-Cache-0.17
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

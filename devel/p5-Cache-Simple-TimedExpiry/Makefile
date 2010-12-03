@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	lightweight cache with timed expiration
 
 MODULES=	cpan
 DISTNAME=	Cache-Simple-TimedExpiry-0.27
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

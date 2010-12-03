@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=	joins the gettext and maketext frameworks
 
 MODULES=	cpan
 
 DISTNAME=	Locale-Maketext-Gettext-1.17
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters devel
 USE_GROFF =	Yes
 

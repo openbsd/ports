@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	build IPv4 and IPv6 address space hierarchies
 
 MODULES=	cpan
 DISTNAME=       Net-IPTrie-0.7
+REVISION=	0
 CATEGORIES=	net
 
 # perl

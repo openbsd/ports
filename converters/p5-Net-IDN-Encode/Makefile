@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Internationalizing Domain Names in Applications
 
 DISTNAME=	Net-IDN-Encode-1.100
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net converters
 
 # perl

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan
 DISTNAME=		Class-Meta-Express-0.04
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

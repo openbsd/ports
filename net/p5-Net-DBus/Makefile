@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:45:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	communicate with DBus message system
 
 MODULES=	cpan
 DISTNAME=	Net-DBus-0.33.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 USE_GROFF =	Yes
 

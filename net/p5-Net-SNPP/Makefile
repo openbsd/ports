@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 18:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	Perl Simple Network Pager Protocol Client
 
 MODULES=	cpan
 DISTNAME=	Net-SNPP-1.17
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net devel
 USE_GROFF =	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=	create dynamic PerlIO layers
 
 MODULES=	cpan
 DISTNAME=	PerlIO-via-dynamic-0.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

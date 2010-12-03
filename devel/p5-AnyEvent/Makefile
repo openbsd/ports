@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/12/03 11:44:26 ajacoutot Exp $
 
 COMMENT=	provide framework for multiple event loops
 
 MODULES=	cpan
 DISTNAME=	AnyEvent-5.201
+REVISION=	0
 CATEGORIES=	devel
 CPAN_AUTHOR=	MLEHMANN
 USE_GROFF =	Yes

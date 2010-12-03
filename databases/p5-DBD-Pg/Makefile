@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/12/03 11:44:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan
 DISTNAME=	DBD-Pg-2.17.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 USE_GROFF =	Yes
 

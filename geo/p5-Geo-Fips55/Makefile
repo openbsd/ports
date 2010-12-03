@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	perl extension for parsing FIPS-55 gazetteer data
 MODULES=	cpan
 DISTNAME=	Geo-Fips55-0.01
+REVISION=	0
 CATEGORIES=	geo
 USE_GROFF =	Yes
 

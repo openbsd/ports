@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT =	boolean support for Perl
 
 MODULES =	cpan
 DISTNAME =	boolean-0.20
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

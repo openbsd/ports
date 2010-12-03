@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT=	simple database abstraction
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 V=		3.0.16
 DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	databases
 USE_GROFF =	Yes
 

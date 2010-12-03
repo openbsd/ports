@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan
 DISTNAME=	Ogg-Vorbis-Header-0.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>

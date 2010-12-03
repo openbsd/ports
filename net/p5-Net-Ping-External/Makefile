@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=		alternative Perl interface to ping(1)
 
 MODULES=		cpan
 DISTNAME=		Net-Ping-External-0.12
+REVISION=		0
 CATEGORIES=		net
 USE_GROFF =		Yes
 

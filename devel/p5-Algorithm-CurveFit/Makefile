@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT =	nonlinear least squares curve fitting
 
 DISTNAME =	Algorithm-CurveFit-1.04
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 HOMEPAGE =	http://search.cpan.org/~smueller/Algorithm-CurveFit/
 MAINTAINER =	Markus Bergkvist <markus.bergkvist@telia.com>

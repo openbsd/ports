@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT =	inherit file attributes from parent directories
 
 MODULES =	cpan
 DISTNAME =	File-Attributes-Recursive-0.02
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

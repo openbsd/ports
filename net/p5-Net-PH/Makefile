@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	Perl interface to the PH protocol
 
 DISTNAME=	Net-PH-2.21
+REVISION=	0
 CATEGORIES=	net
 MODULES=	cpan
 USE_GROFF =	Yes

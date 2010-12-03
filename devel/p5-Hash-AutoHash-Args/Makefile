@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=	OO processing of keyword-based argument lists 
 
 DISTNAME=	Hash-AutoHash-Args-1.12
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

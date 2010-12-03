@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT=		catalyst development bundle
 
 MODULES=		cpan
 DISTNAME=		Task-Catalyst-1.90
+REVISION=		0
 PKGNAME=		catalyst-1.90
 CATEGORIES=		devel www
 

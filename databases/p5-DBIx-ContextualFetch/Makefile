@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT=	add contextual fetches to DBI
 
 DISTNAME=	DBIx-ContextualFetch-1.03
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 MODULES=	cpan
 USE_GROFF =	Yes

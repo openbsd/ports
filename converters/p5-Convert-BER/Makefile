@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT=	module to encode and decode objects
 
 DISTNAME=	Convert-BER-1.3101
-REVISION=	0
+REVISION=	1
 CATEGORIES=	converters
 MODULES=	cpan
 USE_GROFF =	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=		debugging aid based on comments
 
 MODULES=		cpan
 DISTNAME=		Smart-Comments-v1.0.2
 PKGNAME=		p5-Smart-Comments-1.0.2
-REVISION =		1
+REVISION=		2
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT=		make backups of multiple directories and rotate them
 
 DISTNAME=		File-Rotate-Backup-0.13
+REVISION=		0
 CATEGORIES=		misc
 
 MAINTAINER=		Matthew S Elmore <matt@mattelmore.com>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 17:47:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/12/03 11:44:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	extension for generating GUIDs/UUIDs
 
 MODULES=	cpan
 DISTNAME=	Data-UUID-1.202
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

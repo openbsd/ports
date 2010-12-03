@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT=	perl client for Apple iTunes DAAP service
 
 MODULES=	cpan
 DISTNAME=	Net-DAAP-Client-0.42
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

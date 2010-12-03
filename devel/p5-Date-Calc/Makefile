@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/12/03 11:44:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	date calculations for the Gregorian calendar
 
 MODULES=	cpan
 DISTNAME=	Date-Calc-6.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/12/03 11:44:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sybase database driver for the DBI module
 
 DISTNAME=	DBD-Sybase-1.10
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 USE_GROFF =	Yes
 

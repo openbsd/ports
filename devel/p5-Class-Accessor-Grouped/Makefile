@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/01 14:06:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=        lets you build groups of accessors
 
 MODULES=	cpan
 DISTNAME=	Class-Accessor-Grouped-0.10000
+REVISION=	0
 CATEGORIES=     devel
 USE_GROFF=	Yes
 

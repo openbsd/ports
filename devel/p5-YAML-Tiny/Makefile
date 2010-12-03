@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
 MODULES =	cpan
 DISTNAME =	YAML-Tiny-1.39
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

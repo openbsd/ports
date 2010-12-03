@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT=	unified interface to MIME encoding and decoding
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-Encodings-1.313
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 USE_GROFF =	Yes
 

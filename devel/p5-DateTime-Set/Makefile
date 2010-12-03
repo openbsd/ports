@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT =	datetime sets and set math
 
 MODULES =	cpan
 DISTNAME =	DateTime-Set-0.28
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

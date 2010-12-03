@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT=	Perl extension to interface GSM cellulars / modems
 
 DISTNAME=	Device-Gsm-1.52
+REVISION=	0
 CATEGORIES=	comms
 
 MODULES=	cpan

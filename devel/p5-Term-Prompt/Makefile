@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT= 	handles various forms of terminal input
 
 MODULES=	cpan
 
 DISTNAME=	Term-Prompt-1.04
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
 MODULES=	cpan
 
 DISTNAME=	DBIx-SearchBuilder-1.56
+REVISION=	0
 CATEGORIES=	databases
 USE_GROFF =	Yes
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT=	update Class:DBI data from html forms
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-FromForm-0.04
+REVISION=	0
 CATEGORIES=	www databases
 USE_GROFF =	Yes
 

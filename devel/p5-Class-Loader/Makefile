@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	load modules and create objects on demand
 
 MODULES=	cpan
 DISTNAME=	Class-Loader-2.03
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

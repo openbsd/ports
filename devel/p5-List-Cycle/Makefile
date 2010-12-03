@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=	objects for cycling through a list of values
 
 DISTNAME=	List-Cycle-1.00
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>

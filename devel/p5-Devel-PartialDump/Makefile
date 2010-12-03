@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=		partial dumping of data structures
 
 DISTNAME=		Devel-PartialDump-0.13
+REVISION=		0
 
 CATEGORIES=		devel
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/22 19:46:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=	is a particular year a leap year
 
 MODULES=	cpan
 DISTNAME=	Date-Leapyear-1.72
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	xpath matching for object trees
 
 MODULES=	cpan
 DISTNAME=	Class-XPath-1.4
+REVISION=	0
 CATEGORIES=	devel textproc
 USE_GROFF =	Yes
 

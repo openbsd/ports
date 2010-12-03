@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
 MODULES=	cpan
 DISTNAME=	Carp-Datum-0.1.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel perl5
 USE_GROFF =	Yes
 

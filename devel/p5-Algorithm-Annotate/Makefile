@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT=	represent a series of changes in annotate form
 
 MODULES=	cpan
 DISTNAME=	Algorithm-Annotate-0.10
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

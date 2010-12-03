@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 23:21:49 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:35 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		(re)name a sub
 
 DISTNAME =		Sub-Name-0.05
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	create barcode image with GD
 
 DISTNAME=	GD-Barcode-1.15
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

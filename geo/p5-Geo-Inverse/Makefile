@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	calculate geographic distance from a lat/lon pair
 MODULES=	cpan
 DISTNAME=	Geo-Inverse-0.05
+REVISION=	0
 CATEGORIES=	geo
 USE_GROFF =	Yes
 

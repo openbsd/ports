@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=		easy-to-use date/time formatting
 
 DISTNAME=		Time-Format-1.11
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>

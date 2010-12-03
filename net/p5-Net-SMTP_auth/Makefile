@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	Perl module to use authenticated SMTP
 
 MODULES=	cpan
 DISTNAME=	Net-SMTP_auth-0.08
+REVISION=	0
 CATEGORIES=	net mail
 USE_GROFF =	Yes
 

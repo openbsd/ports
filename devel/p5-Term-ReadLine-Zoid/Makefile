@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=		Readline Library Wrapper for zoid
 
 MODULES=		cpan
 DISTNAME=		Term-ReadLine-Zoid-0.07
+REVISION=		0
 CATEGORIES=		devel
 
 # perl

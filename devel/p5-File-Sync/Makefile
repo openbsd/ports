@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	perl interface to the sync() system functions
 MODULES=	cpan
 V=		0.09
 DISTNAME=	File-Sync-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

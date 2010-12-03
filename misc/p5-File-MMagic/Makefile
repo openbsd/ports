@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT=		guess file type
 
 DISTNAME=		File-MMagic-1.27
+REVISION=		0
 CATEGORIES=		misc
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>

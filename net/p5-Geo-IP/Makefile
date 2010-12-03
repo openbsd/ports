@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/03 11:45:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	look up country by IP address/hostname
 
 MODULES=	cpan
 DISTNAME=	Geo-IP-1.38
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net geo
 USE_GROFF =	Yes
 

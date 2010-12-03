@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT= 	inlining your tests next to the code being tested
 
 MODULES=	cpan
 DISTNAME=	Test-Inline-2.105
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

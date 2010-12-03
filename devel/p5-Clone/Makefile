@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/12/03 11:44:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	recursively copy Perl datatypes
 
 MODULES=	cpan
 DISTNAME=	Clone-0.31
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

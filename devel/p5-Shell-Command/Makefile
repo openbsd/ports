@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT= 	simple Unix commands in perl
 
@@ -7,6 +7,7 @@ USE_GROFF =	Yes
 
 DISTNAME=	ExtUtils-Command-1.12
 PKGNAME=	p5-Shell-Command-1.12
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

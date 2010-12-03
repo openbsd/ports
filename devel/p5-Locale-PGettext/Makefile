@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=		perl i18n routines
 
 MODULES=		cpan
 DISTNAME=		Locale-PGetText-0.16
-REVISION=		0
+REVISION=		1
 CATEGORIES=     	devel
 USE_GROFF =		Yes
 

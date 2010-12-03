@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT=	mro::* interface compatibility for Perl < 5.9.5
 
 MODULES=	cpan
 DISTNAME=	MRO-Compat-0.11
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT=	case preserving but case insensitive hash table
 
 MODULES=	cpan
 DISTNAME=	Tie-CPHash-1.04
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

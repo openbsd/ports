@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/24 15:28:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT=	base class for implementing various dependency trees
 
 MODULES=	cpan
 
 DISTNAME=	Algorithm-Dependency-1.110
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

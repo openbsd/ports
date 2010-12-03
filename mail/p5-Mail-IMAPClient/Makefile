@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	perl module for an IMAP Client API
 
 VERSION=	2.2.9
 DISTNAME=	Mail-IMAPClient-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 # Artistic

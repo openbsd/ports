@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT=        Test-WWW-Mechanize extension for catalyst
 
 MODULES=	cpan
 DISTNAME=	Test-WWW-Mechanize-Catalyst-0.42
-REVISION=	0
+REVISION=	1
 CATEGORIES=     devel www
 USE_GROFF =	Yes
 

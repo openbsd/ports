@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/17 22:50:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:28 ajacoutot Exp $
 COMMENT=	base class for virtual base classes
 
 MODULES=	cpan
 DISTNAME=	Class-Virtual-0.06
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

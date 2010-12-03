@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 23:18:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	module to create objects that are handles to classes
 
 MODULES=	cpan
 DISTNAME=	Class-Handle-1.07
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

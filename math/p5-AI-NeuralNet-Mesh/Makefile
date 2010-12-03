@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	module to implement an accurate neural network mesh
 
 MODULES=	cpan
 DISTNAME=	AI-NeuralNet-Mesh-0.44
-REVISION=	0
+REVISION=	1
 CATEGORIES=	math
 USE_GROFF =	Yes
 

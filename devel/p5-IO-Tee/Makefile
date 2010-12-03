@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT= 	multiplex output to multiple handles
 
 MODULES=	cpan 
 DISTNAME=	IO-Tee-0.64
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

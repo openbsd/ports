@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	fast shared data cache using memory mapped files
 
 MODULES=	cpan
 DISTNAME=	Cache-FastMmap-1.34
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

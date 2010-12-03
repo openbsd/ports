@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=	handle data in a hierarchical structure
 
 MODULES=	cpan
 DISTNAME=	Data-Hierarchy-0.34
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

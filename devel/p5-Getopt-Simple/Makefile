@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=	simple wrapper around Getopt::Long
 
 DISTNAME=	Getopt-Simple-1.49
+REVISION=	0
 CATEGORIES=     devel
 
 EXTRACT_SUFX=	.tgz

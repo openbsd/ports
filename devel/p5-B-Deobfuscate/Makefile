@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/24 15:52:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	Perl module for use in de-obfuscating source code
 
 MODULES=	cpan
 
 DISTNAME=	B-Deobfuscate-0.20
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

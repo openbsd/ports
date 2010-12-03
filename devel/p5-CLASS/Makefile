@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	alias for __PACKAGE__
 
 DISTNAME=	CLASS-1.00
+REVISION=	0
 CATEGORIES=	devel
 
 MODULES=	cpan

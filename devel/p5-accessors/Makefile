@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=                create accessor methods in caller's package
 
 DISTNAME=               accessors-1.01
+REVISION=		0
 CATEGORIES=             devel
 
 # Artistic/GPL

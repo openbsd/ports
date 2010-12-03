@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=	parses long function arguments
 
 MODULES=	cpan
 DISTNAME=	Getargs-Long-1.1001
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

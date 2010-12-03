@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:40 ajacoutot Exp $
 
 COMMENT =		cubic spline interpolation of data
 
 DISTNAME =		Math-Spline-0.01
+REVISION =		0
 CATEGORIES =		math
 
 # perl

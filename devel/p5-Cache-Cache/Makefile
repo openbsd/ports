@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	perl cache interface
 
 MODULES=	cpan
 DISTNAME=	Cache-Cache-1.06
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

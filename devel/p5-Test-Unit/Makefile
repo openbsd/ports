@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT=	Perl unit testing framework
 
 DISTNAME=	Test-Unit-0.25
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Sebastian Trahm <basti@schleifi.com>

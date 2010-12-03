@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	Test-Memory-Cycle-1.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # Artistic

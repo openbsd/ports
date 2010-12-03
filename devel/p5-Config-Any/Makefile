@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	load various configuration file formats
 
 MODULES=	cpan
 DISTNAME=	Config-Any-0.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

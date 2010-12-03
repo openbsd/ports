@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT= 	Border Gateway Protocol version 4 speaker/listener library
 
 MODULES=	cpan
 DISTNAME=	Net-BGP-0.13
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

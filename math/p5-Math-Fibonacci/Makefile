@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	Fibonacci numbers
 
 DISTNAME=	Math-Fibonacci-1.5
+REVISION=	0
 CATEGORIES=	math
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>

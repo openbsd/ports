@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT=	create HTML table from sql queries
 
 DISTNAME=	DBIx-XHTML_Table-1.36
+REVISION=	0
 CATEGORIES=	databases www
 MODULES=	cpan
 USE_GROFF =	Yes

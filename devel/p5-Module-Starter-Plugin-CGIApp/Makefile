@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT =		template based module starter for CGI apps
 
 MODULES =		cpan
 DISTNAME =		Module-Starter-Plugin-CGIApp-0.30
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 CPAN_AUTHOR =		JALDHAR
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=	MySQL representations for Time::Piece objects
 
 MODULES=	cpan
 DISTNAME=	Time-Piece-MySQL-0.06
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

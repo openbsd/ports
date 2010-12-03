@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT=	thoroughly testing objects via registered handlers
 
 MODULES=	cpan
 
 DISTNAME=	Test-Object-0.07
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

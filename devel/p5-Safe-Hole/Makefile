@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=	make a hole to the main compartment in the Safe compartment
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	Safe-Hole-0.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MODULES=	cpan
 USE_GROFF =	Yes

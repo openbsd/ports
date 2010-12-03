@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=		generate new packages
 
 MODULES=		cpan
 DISTNAME=		Package-Generator-0.102
+REVISION=		0
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

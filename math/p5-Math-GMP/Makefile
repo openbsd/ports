@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/12/03 11:45:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	high speed arbitrary-size integer math
 
 MODULES=	cpan
 DISTNAME=	Math-GMP-2.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=	math
 
 # LGPLv2+

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/25 11:05:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=	error/exception handling in an OO-ish way
 
 MODULES=	cpan
 DISTNAME=	Error-0.17016
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

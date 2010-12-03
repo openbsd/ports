@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=        algorithm to find good values for chart axis
 
 MODULES=	cpan
 DISTNAME=	Chart-Math-Axis-1.05
+REVISION=	0
 CATEGORIES=     math graphics
 USE_GROFF =	Yes
 

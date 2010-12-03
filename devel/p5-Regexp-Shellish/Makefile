@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=	module for shell-like regular expressions
 
 MODULES=	cpan
 DISTNAME=	Regexp-Shellish-0.93
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

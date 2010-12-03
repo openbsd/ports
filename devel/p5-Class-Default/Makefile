@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=        provide static calls that apply to a default instantiation
 
 MODULES=	cpan
 DISTNAME=	Class-Default-1.51
+REVISION=	0
 CATEGORIES=     devel
 USE_GROFF =	Yes
 

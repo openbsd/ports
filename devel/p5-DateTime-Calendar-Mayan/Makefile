@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=	Mayan Long Count calendar
 
 DISTNAME=	DateTime-Calendar-Mayan-0.0601
+REVISION=	0
 
 CATEGORIES=	devel
 

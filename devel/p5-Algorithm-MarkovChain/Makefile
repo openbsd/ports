@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:25 ajacoutot Exp $
 
 COMMENT=	module to create Markov chains and output based on them
 
 MODULES=	cpan
 DISTNAME=	Algorithm-MarkovChain-0.06
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

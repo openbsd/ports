@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT =	event loop and event-driven async socket base class
 
 MODULES =	cpan
 DISTNAME =	Danga-Socket-1.61
+REVISION =	0
 USE_GROFF =	Yes
 
 CATEGORIES =	net

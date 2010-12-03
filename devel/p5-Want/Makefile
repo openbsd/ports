@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:44:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	implementation of the want command
 
 MODULES=	cpan
 DISTNAME=	Want-0.18
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

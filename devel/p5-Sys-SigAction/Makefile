@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=	Perl extension for Consistent Signal Handling
 
 DISTNAME=	Sys-SigAction-0.11
 CATEGORIES=	devel
-
-HOMEPAGE=	http://search.cpan.org/dist/Sys-SigAction/
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes

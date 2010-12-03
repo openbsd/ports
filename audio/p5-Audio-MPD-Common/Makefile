@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT=		bunch of common helper classes for MPD
 
 DISTNAME=		Audio-MPD-Common-1.100430
+REVISION=		0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

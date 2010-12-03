@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=	easily build XS extensions that depend on XS extensions
 
 MODULES=	cpan
 DISTNAME=	ExtUtils-Depends-0.302
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

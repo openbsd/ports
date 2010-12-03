@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Perl extensions for event-based programming
 
 MODULES=	cpan
 DISTNAME=	Event-Lib-1.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

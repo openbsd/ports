@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=	perform tests on all modules of a distribution
 
 MODULES=	cpan
 
 DISTNAME=	Test-Distribution-2.00
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # Perl

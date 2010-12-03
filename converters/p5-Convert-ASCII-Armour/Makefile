@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT=	convert binary octets into ASCII armoured messages
 
 DISTNAME=	Convert-ASCII-Armour-1.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters security
 MODULES=	cpan
 USE_GROFF =	Yes

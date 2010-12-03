@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=	object oriented time interface
 
 MODULES=	cpan
 DISTNAME=	Time-modules-2006.0814
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

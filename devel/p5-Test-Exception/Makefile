@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/01 14:03:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT= 	test functions for exception based code
 
 MODULES=	cpan
 DISTNAME=	Test-Exception-0.31
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF=	Yes
 

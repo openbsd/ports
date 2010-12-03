@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=	optimized module loading
 
 MODULES=	cpan
 DISTNAME=	prefork-1.02
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

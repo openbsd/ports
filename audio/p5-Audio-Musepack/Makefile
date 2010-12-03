@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT=	object-oriented interface to Musepack/APE file information
 
 MODULES=	cpan
 DISTNAME=	Audio-Musepack-0.7
+REVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>

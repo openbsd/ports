@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=	smart return-value object
 
 MODULES=	cpan
 DISTNAME=	Class-ReturnValue-0.55
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

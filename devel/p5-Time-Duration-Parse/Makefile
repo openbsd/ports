@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT =	parse strings that represent time durations
 
 DISTNAME =	Time-Duration-Parse-0.06
+REVISION =	0
 CATEGORIES =	devel
 MODULES =	cpan
 USE_GROFF =	Yes

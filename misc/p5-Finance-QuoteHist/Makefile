@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT=	module to obtain historical financial quotes from exchanges
 
 MODULES=	cpan
 DISTNAME=	Finance-QuoteHist-0.32
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 USE_GROFF =	Yes
 

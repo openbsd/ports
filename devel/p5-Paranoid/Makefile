@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT =	paranoia support for safer programs
 
 MODULES =	cpan
 DISTNAME =	Paranoid-0.23
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

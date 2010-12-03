@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=	class for viewing Tree::Simple hierarchies
 
 DISTNAME=	Tree-Simple-View-0.17
+REVISION=	0
 CATEGORIES=	devel
 
 MODULES=	cpan

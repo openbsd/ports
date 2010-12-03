@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=	detect encoding of the current terminal
 
 MODULES=	cpan
 DISTNAME=	Term-Encoding-0.02
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

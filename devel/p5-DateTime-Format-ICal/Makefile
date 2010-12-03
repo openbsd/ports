@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT =	parse and format iCal datetime and duration strings
 
 DISTNAME =	DateTime-Format-ICal-0.09
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

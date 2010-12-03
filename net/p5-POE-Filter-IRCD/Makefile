@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:36 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/12/03 11:45:43 ajacoutot Exp $
 
 COMMENT=		POE-based parser for the IRC protocol
 
 MODULES=		cpan
 DISTNAME=		POE-Filter-IRCD-2.42
+REVISION=		0
 CATEGORIES=		net
 USE_GROFF =		Yes
 

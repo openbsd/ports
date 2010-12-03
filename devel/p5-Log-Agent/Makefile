@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=	abstraction layer for logging and tracing
 
 MODULES=	cpan
 DISTNAME=	Log-Agent-0.307
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

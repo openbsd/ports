@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT =	JSON view for your data
 
 MODULES =	cpan
 USE_GROFF =	Yes
 DISTNAME =	Catalyst-View-JSON-0.24
+REVISION =	0
 CATEGORIES =	converters www
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

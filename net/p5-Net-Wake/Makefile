@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	perl5 module for Wake On LAN
 
 MODULES=	cpan
 DISTNAME=	Net-Wake-0.02
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 USE_GROFF =	Yes
 

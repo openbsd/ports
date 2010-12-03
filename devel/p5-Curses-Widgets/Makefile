@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
 MODULES=	cpan
 VERSION=	1.997
 DISTNAME=	CursesWidgets-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

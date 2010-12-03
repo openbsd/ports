@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	Jifty-DBI-0.40
+REVISION=	0
 CATEGORIES=	databases www
 
 # Artistic + GPL

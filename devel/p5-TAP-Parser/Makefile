@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=	parse TAP output
 
 MODULES=	cpan
 DISTNAME=	TAP-Parser-0.54
+REVISION=	0
 CATEGORIES=	devel
 
 # perl

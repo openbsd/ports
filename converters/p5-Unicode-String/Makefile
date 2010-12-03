@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modules to handle various Unicode issues
 
 DISTNAME=	Unicode-String-2.09
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters
 MODULES=	cpan
 USE_GROFF =	Yes

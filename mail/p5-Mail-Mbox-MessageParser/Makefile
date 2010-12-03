@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	fast and simple mbox folder reader
 
 MODULES=	cpan
 DISTNAME=	Mail-Mbox-MessageParser-1.5002
+REVISION=	0
 CATEGORIES=	mail
 USE_GROFF =	Yes
 

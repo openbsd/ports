@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT =	emulate Class::Accessor::Fast behavior using Moose
 
 MODULES =	cpan
 DISTNAME =	MooseX-Emulate-Class-Accessor-Fast-0.00903
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

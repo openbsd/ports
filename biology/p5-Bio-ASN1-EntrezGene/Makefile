@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT =		regular expression-based parser for NCBI Entrez Gene
 
 M =			1.10-withoutworldwriteables
 DISTNAME =		Bio-ASN1-EntrezGene-${M}
 PKGNAME =		p5-Bio-ASN1-EntrezGene-${M:S/-withoutworldwriteables//}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		biology
 
 # perl

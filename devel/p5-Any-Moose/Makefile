@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:26 ajacoutot Exp $
 
 COMMENT =	use Moose or Mouse modules
 
 MODULES =	cpan
 DISTNAME =	Any-Moose-0.09
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

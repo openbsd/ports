@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT=	read/write access to ASN.1-encoded PEM files
 
 DISTNAME=	Convert-PEM-0.07
-REVISION=	0
+REVISION=	1
 CATEGORIES=	converters security
 MODULES=	cpan
 USE_GROFF =	Yes

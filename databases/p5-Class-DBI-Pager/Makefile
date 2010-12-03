@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:24 ajacoutot Exp $
 
 COMMENT=	pager utility for Class::DBI
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Pager-0.08
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 USE_GROFF =	Yes
 

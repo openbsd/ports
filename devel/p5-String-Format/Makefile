@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=	perl printf extensions
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	String-Format-1.14
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # GPL

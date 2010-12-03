@@ -3,6 +3,7 @@
 COMMENT=		produce sprite animations using ASCII art
 
 DISTNAME=		Term-Animation-2.4
+REVISION=		0
 CATEGORIES=		misc
 
 MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>

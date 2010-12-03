@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT =	Perl Archive Toolkit
 
 MODULES =	cpan
 DISTNAME =	PAR-0.980
+REVISION =	0
 CATEGORIES =	devel archivers
 USE_GROFF =	Yes
 

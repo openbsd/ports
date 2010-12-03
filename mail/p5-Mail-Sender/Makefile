@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 19:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT= 	send mail with attachments through SMTP
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	Mail-Sender-0.8.16
+REVISION=	0
 CATEGORIES=	mail
 
 # perl

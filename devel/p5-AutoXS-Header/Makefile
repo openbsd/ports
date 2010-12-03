@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:27 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	simple container for the AutoXS header file
 
 MODULES =	cpan
 DISTNAME =	AutoXS-Header-1.02
-REVISION=	0
+REVISION =	1
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

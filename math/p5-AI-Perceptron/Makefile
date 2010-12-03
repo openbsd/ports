@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=	module to internal operations of neural networks
 
 MODULES=	cpan
 DISTNAME=	AI-Perceptron-1.0
+REVISION=	0
 CATEGORIES=	math
 USE_GROFF =	Yes
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the Pango libraries
 
 DISTNAME=	Pango-1.221
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 devel
 CPAN_AUTHOR=	TSCH
 

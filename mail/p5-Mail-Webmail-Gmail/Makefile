@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:39 ajacoutot Exp $
 
 COMMENT=		interface to Google webmail service
 
 DISTNAME=		Mail-Webmail-Gmail-1.09
-REVISION=		0
+REVISION=		1
 CATEGORIES=		mail
 
 MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>

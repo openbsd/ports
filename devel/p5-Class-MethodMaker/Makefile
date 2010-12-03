@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/03 11:44:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for creating generic methods
 
 MODULES=	cpan
 DISTNAME=	Class-MethodMaker-2.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

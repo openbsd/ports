@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT =	module for 3D graph plotting
 
 VERSION =	0.63
 DISTNAME =	GD-Graph3d-${VERSION}
+REVISION =	0
 CATEGORIES =	graphics
 
 # Perl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT=	implement PerlIO layers which let you handle bzip2 files
 
 DISTNAME=	PerlIO-via-Bzip2-0.02
+REVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

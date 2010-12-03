@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/01 14:08:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=		Getopt::Long, but simpler and more powerful
 
 MODULES=		cpan
 DISTNAME=		Getopt-Long-Descriptive-0.087
+REVISION=		0
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 17:48:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=	alternative to the standard perl exporter
 CATEGORIES=	devel
@@ -6,7 +6,7 @@ CATEGORIES=	devel
 # XXX: Don't update until later versions have a real license.
 # Instead of just 'any OSI-license'.
 DISTNAME=	Exporter-Tidy-0.06
-REVISION=	0
+REVISION=	1
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

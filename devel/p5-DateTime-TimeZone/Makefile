@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=		DateTime submodule for TZ
 
 MODULES=		cpan
 DISTNAME=		DateTime-TimeZone-1.19
+REVISION=		0
 CATEGORIES=		devel
 
 # Perl

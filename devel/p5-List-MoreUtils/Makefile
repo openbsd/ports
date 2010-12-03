@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=		perl5 extra list utilities
 
 MODULES=		cpan
 DISTNAME=		List-MoreUtils-0.22
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 SHARED_ONLY=		Yes
 USE_GROFF =		Yes

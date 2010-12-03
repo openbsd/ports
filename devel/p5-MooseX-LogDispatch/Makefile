@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT=		logging role for Moose
 
 DISTNAME=		MooseX-LogDispatch-1.2000
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

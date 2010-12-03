@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT=	XS parser for many common audio formats
 
 DISTNAME=	Audio-Scan-0.39
+REVISION=	0
 CATEGORIES=	audio
 
 # GPLv2

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:37 ajacoutot Exp $
 
 COMMENT= 	test suite using WWW::Mechanize
 
 MODULES=	cpan
 
 DISTNAME=	Test-WWW-Mechanize-1.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www devel
 USE_GROFF =	Yes
 

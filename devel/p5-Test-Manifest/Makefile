@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/30 17:03:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT=		interact with a t/test_manifest file
 
 MODULES=		cpan
 DISTNAME=		Test-Manifest-1.23
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

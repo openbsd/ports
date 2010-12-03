@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT= 	simple calendar month
 
 DISTNAME=	Calendar-Simple-1.21
+REVISION=	0
 CATEGORIES=	converters
 MODULES=	cpan
 

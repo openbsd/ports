@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT =	transform a HTML page in a MIME-Lite mail
 
 DISTNAME =	MIME-Lite-HTML-1.23
+REVISION =	0
 CATEGORIES =	mail
 
 # Perl

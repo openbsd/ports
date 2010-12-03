@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:32 ajacoutot Exp $
 
 COMMENT=		abstract Configurator class
 
 DISTNAME=		Log-Dispatch-Config-1.02
+REVISION=		0
 
 CATEGORIES=		devel
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 17:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:44:33 ajacoutot Exp $
 
 COMMENT=	recursively scan Perl code for dependencies
 
 MODULES=	cpan
 DISTNAME=	Module-ScanDeps-0.89
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

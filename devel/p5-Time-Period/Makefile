@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:38 ajacoutot Exp $
 
 COMMENT=		module for dealing with time periods
 
 MODULES=		cpan
 DISTNAME=		Period-1.20
 PKGNAME=		p5-Time-${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

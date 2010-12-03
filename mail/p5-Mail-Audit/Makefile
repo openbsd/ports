@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT=	library for creating easy mail filters
 
 DISTNAME=	Mail-Audit-2.223
+REVISION=	0
 CATEGORIES=	mail
 
 # GPL/Artistic licence

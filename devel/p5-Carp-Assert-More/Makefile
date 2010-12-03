@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	convenience wrappers around Carp::Assert
 
 MODULES=	cpan
 
 DISTNAME=	Carp-Assert-More-1.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

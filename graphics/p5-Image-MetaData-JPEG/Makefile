@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 18:13:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT=	access and modify JPEG metadata
 
 MODULES=	cpan
 DISTNAME=	Image-MetaData-JPEG-0.153
+REVISION=	0
 CATEGORIES=	graphics
 USE_GROFF =	Yes
 

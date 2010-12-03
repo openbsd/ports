@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:45:41 ajacoutot Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan
 DISTNAME=	Spreadsheet-ParseExcel-0.57
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 USE_GROFF =	Yes
 

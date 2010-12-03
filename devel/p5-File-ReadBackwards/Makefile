@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 17:48:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=	module to read a file starting at the end
 
 MODULES=	cpan
 DISTNAME=	File-ReadBackwards-1.04
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

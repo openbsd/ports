@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT =	tie class for a simple ASCII database
 DISTNAME =	AsciiDB-TagFile-1.06
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases
 MODULES =	cpan
 USE_GROFF =	Yes

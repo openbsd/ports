@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT=	text utilities for use with GD drawing package
 
 VERSION=	0.86
 DISTNAME=	GDTextUtil-${VERSION}
 PKGNAME=	p5-GD-TextUtil-${VERSION}
-REVISION =	0
+REVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

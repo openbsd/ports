@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT =		parse a CDDB/freedb data file
 
 MODULES =		cpan
 DISTNAME =		CDDB-File-1.05
+REVISION =		0
 CATEGORIES =		audio
 
 MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>

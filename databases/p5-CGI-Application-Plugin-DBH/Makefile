@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:23 ajacoutot Exp $
 
 COMMENT =	easy DBI access
 
 MODULES =	cpan
 
 DISTNAME =	CGI-Application-Plugin-DBH-4.00
+REVISION =	0
 CATEGORIES =	databases www
 
 # perl

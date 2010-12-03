@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION =	2
+REVISION =	3
 WANTLIB=	z
 
 .include <bsd.port.mk>

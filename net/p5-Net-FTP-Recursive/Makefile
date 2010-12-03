@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/23 09:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:42 ajacoutot Exp $
 
 COMMENT=	recursive FTP client module
 
 MODULES=	cpan
 DISTNAME=	Net-FTP-Recursive-2.02
+REVISION=	0
 CATEGORIES=	net
 USE_GROFF =	Yes
 

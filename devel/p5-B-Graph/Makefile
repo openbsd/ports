@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:27 ajacoutot Exp $
 
 COMMENT=	backend to diagram op trees
 
 MODULES=	cpan
 DISTNAME=	B-Graph-0.51
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

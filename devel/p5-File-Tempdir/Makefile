@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:31 ajacoutot Exp $
 
 COMMENT=		object oriented interface to File::Temp::tempdir()
 
 MODULES=		cpan
 DISTNAME=		File-Tempdir-0.02
+REVISION=		0
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

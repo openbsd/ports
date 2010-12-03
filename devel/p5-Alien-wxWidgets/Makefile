@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:26 ajacoutot Exp $
 
 COMMENT =	building, finding and using wxWidgets binaries
 
 MODULES =	cpan
 DISTNAME =	Alien-wxWidgets-0.47
+REVISION =	0
 CATEGORIES =	devel
 CPAN_AUTHOR =	MBARBON
 USE_GROFF =	Yes

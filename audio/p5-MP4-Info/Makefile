@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:22 ajacoutot Exp $
 
 COMMENT=	fetch info from MPEG-4 files
 
 MODULES=	cpan
 DISTNAME=	MP4-Info-1.12
+REVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>

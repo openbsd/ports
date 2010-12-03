@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/18 17:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	stat() with BSD 4.4 extentions
 
 DISTNAME=	BSD-stat-1.21
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

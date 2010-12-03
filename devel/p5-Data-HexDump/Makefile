@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:47:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=        hexadecimal dumper
 
 MODULES=	cpan
 DISTNAME=	Data-HexDump-0.02
+REVISION=	0
 CATEGORIES=     devel
 USE_GROFF =	Yes
 

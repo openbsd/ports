@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 17:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:34 ajacoutot Exp $
 
 COMMENT =	Perl6 style Junction operators in Perl5
 
 MODULES =	cpan
 DISTNAME =	Perl6-Junction-1.40000
+REVISION =	0
 CATEGORIES =	devel
 USE_GROFF =	Yes
 

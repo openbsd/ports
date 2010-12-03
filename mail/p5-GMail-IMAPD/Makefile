@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:38 ajacoutot Exp $
 
 COMMENT=		imap4 gateway to Google webmail service
 
 DISTNAME=		GMail-IMAPD-0.94
-REVISION=		0
+REVISION=		1
 CATEGORIES=		mail
 USE_GROFF =		Yes
 

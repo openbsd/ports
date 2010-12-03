@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=     		class and instance data accessor creation
 
 MODULES=		cpan
 DISTNAME=		Class-Data-Accessor-0.03
+REVISION=		0
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

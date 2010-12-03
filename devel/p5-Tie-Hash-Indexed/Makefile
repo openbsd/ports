@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 17:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ordered hashes for Perl
 
 DISTNAME=	Tie-Hash-Indexed-0.05
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MODULES=	cpan
 USE_GROFF =	Yes

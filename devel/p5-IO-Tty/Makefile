@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		provide an interface to create pseudo ttys
 
 MODULES=		cpan
 DISTNAME=		IO-Tty-1.08
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 USE_GROFF =		Yes
 

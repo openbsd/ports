@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:13:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:37 ajacoutot Exp $
 
 COMMENT =		2-letter, 3-letter, and numerical codes for countries
 
 DISTNAME =		Geography-Countries-2009041301
+REVISION =		0
 CATEGORIES =		geo devel
 
 # perl

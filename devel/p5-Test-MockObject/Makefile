@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:36 ajacoutot Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan
 DISTNAME=	Test-MockObject-1.09
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

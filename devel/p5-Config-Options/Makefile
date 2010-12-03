@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:28 ajacoutot Exp $
 
 COMMENT=		provide a configuration hash with options
 
 DISTNAME=		Config-Options-0.08
+REVISION=		0
 CATEGORIES=		devel
 
 MODULES=		cpan

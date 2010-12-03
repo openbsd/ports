@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 17:48:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:44:35 ajacoutot Exp $
 
 COMMENT=	interface to subversion dumps
 
 DISTNAME=	SVN-Dump-0.04
+REVISION=	0
 CATEGORIES=	devel 
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

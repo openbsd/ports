@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/12/03 11:44:29 ajacoutot Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
 MODULES=	cpan
 DISTNAME=	Data-Visitor-0.25
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

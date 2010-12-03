@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/03 11:44:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to libcdaudio
 DISTNAME=	Audio-CD-0.04
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

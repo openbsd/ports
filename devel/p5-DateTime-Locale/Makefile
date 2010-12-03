@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:30 ajacoutot Exp $
 
 COMMENT=		localization data for perl DateTime.pm
 
 MODULES=		cpan
 DISTNAME=		DateTime-Locale-0.45
+REVISION=		0
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
