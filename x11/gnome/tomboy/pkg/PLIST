@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/29 17:18:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/12/03 14:55:23 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -43,7 +43,7 @@ lib/tomboy/libtomboy.a
 lib/tomboy/libtomboy.la
 lib/tomboy/libtomboy.so
 @man man/man1/tomboy.1
-share/applications/tomboy.desktop
+share/applications/Tomboy.desktop
 share/dbus-1/services/org.gnome.Tomboy.service
 share/gnome/help/tomboy/
 share/gnome/help/tomboy/C/

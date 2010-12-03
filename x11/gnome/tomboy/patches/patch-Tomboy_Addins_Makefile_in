@@ -1,0 +1,14 @@
+$OpenBSD: patch-Tomboy_Addins_Makefile_in,v 1.1 2010/12/03 14:55:23 ajacoutot Exp $
+
+WebDavSyncService needs fuse.
+
+--- Tomboy/Addins/Makefile.in.orig	Fri Dec  3 14:39:48 2010
++++ Tomboy/Addins/Makefile.in	Fri Dec  3 14:39:55 2010
+@@ -280,7 +280,6 @@ SUBDIRS = \
+ 	Tasque			\
+ 	NoteDirectoryWatcher			\
+ 	Underline		\
+-	WebDavSyncService			\
+ 	WebSyncService
+ 
+ all: all-recursive

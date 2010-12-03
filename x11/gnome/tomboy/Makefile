@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/29 17:18:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/12/03 14:55:23 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -50,14 +50,17 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# needs galago-sharp
-CONFIGURE_ARGS+= --enable-galago=no
-
 USE_GROFF =	Yes
 
 # this is *.config.in on purpose (and not *.config)
 DLLMAP_FILES=	Tomboy/Tomboy.exe.config.in \
 		Tomboy/Addins/Bugzilla/BugzillaNoteAddin.cs \
 		Tomboy/Addins/Evolution/EvolutionNoteAddin.cs
+
+# XXX ** (gnome-session:7425): WARNING **: Unable to find desktop file
+# 'Tomboy.desktop': Valid key file could not be found in search dirs
+post-install:
+	mv ${PREFIX}/share/applications/tomboy.desktop \
+		${PREFIX}/share/applications/Tomboy.desktop
 
 .include <bsd.port.mk>
