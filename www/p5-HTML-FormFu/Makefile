@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT =	HTML form creation, rendering and validation framework
 
 MODULES =	cpan
 DISTNAME =	HTML-FormFu-0.03007
+REVISION =	0
 CATEGORIES =	www textproc
 USE_GROFF =	Yes
 

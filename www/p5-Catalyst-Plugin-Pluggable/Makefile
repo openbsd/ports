@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=		universal forwarder for catalyst applications
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-Pluggable-0.04
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www devel
 USE_GROFF =		Yes
 

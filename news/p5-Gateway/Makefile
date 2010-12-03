@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
 MODULES=	cpan
 DISTNAME=	Gateway-0.42
-REVISION=	3
+REVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 USE_GROFF =	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT =	Perl interface for the system 'at' command
 
 MODULES =	cpan
 DISTNAME =	Schedule-At-1.09
+REVISION =	0
 CATEGORIES =	sysutils
 USE_GROFF =	Yes
 

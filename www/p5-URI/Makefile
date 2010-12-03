@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	library to parse Uniform Resource Identifiers
 
 MODULES=	cpan
 DISTNAME=	URI-1.54
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:46:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Glade 2.x support for Gtk2-Perl
 
 DISTNAME=	Gtk2-GladeXML-1.007
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	x11
 

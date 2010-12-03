@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:54 ajacoutot Exp $
 
 COMMENT=	framework which makes building complex GUIs easy
 
 MODULES=	cpan
 DISTNAME=	Gtk2-Ex-FormFactory-0.65
+REVISION=	0
 CATEGORIES=	x11
 USE_GROFF =	Yes
 

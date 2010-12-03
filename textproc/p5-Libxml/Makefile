@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	perl module collection for working with XML
 
 MODULES=	cpan
 VERSION=	0.08
 DISTNAME=	libxml-perl-${VERSION}
-PKGNAME=	p5-Libxml-${VERSION}p0
+PKGNAME=	p5-Libxml-${VERSION}
+REVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 USE_GROFF =	Yes

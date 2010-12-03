@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
 DISTNAME=	mod_perl-2.0.4
 PKGNAME=	ap2-${DISTNAME}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www net
 
 WANTLIB=	c m perl util db expat apr-1 aprutil-1

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT= 		POE Filter for parsing XML
 
 DISTNAME=		POE-Filter-XML-0.38
+REVISION=		0
 CATEGORIES=		textproc
 
 # GPLv2

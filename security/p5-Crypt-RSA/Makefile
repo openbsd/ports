@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	RSA public-key cryptosystem
 
 MODULES=	cpan
 DISTNAME=	Crypt-RSA-1.99
+REVISION=	0
 CATEGORIES=	security
 USE_GROFF =	Yes
 

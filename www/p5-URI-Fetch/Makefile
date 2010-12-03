@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=		smart URI fetching/caching
 
 MODULES=		cpan
 DISTNAME=		URI-Fetch-0.08
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 USE_GROFF =		Yes
 

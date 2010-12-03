@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	Test wrapper with helpers for testing Apache
 
 MODULES=	cpan
 DISTNAME=	Apache-Test-1.30
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 

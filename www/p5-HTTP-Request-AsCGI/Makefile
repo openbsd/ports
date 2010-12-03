@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	setup CGI environment from HTTP::Request
 
 DISTNAME=	HTTP-Request-AsCGI-1.2
+REVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

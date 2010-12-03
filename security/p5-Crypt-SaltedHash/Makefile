@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT =	object oriented interface to create salted hashes
 
 MODULES =	cpan
 DISTNAME =	Crypt-SaltedHash-0.05
+REVISION =	0
 CATEGORIES =	security
 USE_GROFF =	Yes
 

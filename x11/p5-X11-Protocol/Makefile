@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:54 ajacoutot Exp $
 
 COMMENT=	provides an interface roughly equivalent to Xlib
 
 DISTNAME=	X11-Protocol-0.56
+REVISION=	0
 
 CATEGORIES=	x11
 

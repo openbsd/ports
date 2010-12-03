@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	embed XML directly into perl
 
 MODULES=	cpan
 DISTNAME=	XML-Literal-0.02
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

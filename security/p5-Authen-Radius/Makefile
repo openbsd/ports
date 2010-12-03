@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	Perl module to authenticate against a RADIUS server
 
 MODULES=	cpan
 DISTNAME=	RadiusPerl-0.15
+REVISION=	0
 PKGNAME=	p5-Authen-Radius-0.15
 CATEGORIES=	security
 

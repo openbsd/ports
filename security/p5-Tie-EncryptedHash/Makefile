@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=	hashes with encrypting fields
 
 MODULES=	cpan
 DISTNAME=	Tie-EncryptedHash-1.24
+REVISION=	0
 CATEGORIES=	security
 USE_GROFF =	Yes
 

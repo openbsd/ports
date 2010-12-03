@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT =	access to more system calls than Perl normally provides
 
 MODULES =	cpan
 DISTNAME =	Sys-Syscall-0.22
+REVISION =	0
 USE_GROFF =	Yes
 
 CATEGORIES =	sysutils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl interface to the MD2 Algorithm
 
 MODULES=	cpan
 DISTNAME=	Digest-MD2-2.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 USE_GROFF =	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	Lightweight URL parser
 
 MODULES=	cpan
 DISTNAME=	CGI-Deurl-1.08
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
 MODULES=	cpan
 DISTNAME=	SOAP-Lite-0.69
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 

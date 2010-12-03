@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT= 	ACL support for Catalyst applications
 
 DISTNAME=	Catalyst-Plugin-Authorization-ACL-0.10
+REVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

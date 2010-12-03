@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT=	fine-grained html-filter, xss-blocker and mailto-obfuscator
 
 MODULES=	cpan
 DISTNAME=	HTML-TagFilter-1.03
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

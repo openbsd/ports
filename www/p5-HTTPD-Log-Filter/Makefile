@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 08:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	httpd log filter library
 
 MODULES=	cpan
 DISTNAME=	HTTPD-Log-Filter-1.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 USE_GROFF =	Yes
 

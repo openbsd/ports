@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	summarize english text
 
 MODULES=	cpan
 DISTNAME=	Lingua-EN-Summarize-0.2
+REVISION=	0
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

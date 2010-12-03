@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT=	formatter for spellchecking pod
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 USE_GROFF =	Yes
 
 DISTNAME=	Pod-Spell-1.01
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 # Perl

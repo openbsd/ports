@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=	modular perl shell
 CATEGORIES=	shells
@@ -6,7 +6,7 @@ CATEGORIES=	shells
 V=		0.96
 DISTNAME=	Zoidberg-$V
 PKGNAME=	zoidberg-$V
-REVISION=	1
+REVISION=	2
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

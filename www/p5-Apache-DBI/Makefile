@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	DBI persistent connection, authentication and authorization
 
 MODULES=	cpan
 DISTNAME=	Apache-DBI-0.94
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www databases
 USE_GROFF =	Yes
 

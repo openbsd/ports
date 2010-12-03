@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/03 11:46:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for approximate matching
 
 MODULES=	cpan
 DISTNAME=	String-Approx-3.26
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

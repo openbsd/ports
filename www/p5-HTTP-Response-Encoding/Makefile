@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT =		add encoding to HTTP::Response
 
 DISTNAME =		HTTP-Response-Encoding-0.06
+REVISION =		0
 
 CATEGORIES =		www
 

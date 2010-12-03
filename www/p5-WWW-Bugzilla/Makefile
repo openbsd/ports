@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
 MODULES=	cpan
 DISTNAME=	WWW-Bugzilla-0.8
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

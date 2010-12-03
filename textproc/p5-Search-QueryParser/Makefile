@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT =	parses a query string suitable for external search engines
 
 MODULES =	cpan
 DISTNAME =	Search-QueryParser-0.94
+REVISION =	0
 CATEGORIES =	textproc
 USE_GROFF =	Yes
 

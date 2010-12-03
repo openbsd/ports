@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	module to get weather information from weather.com
 
 MODULES=	cpan
 DISTNAME=	Weather-Com-0.5.3
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

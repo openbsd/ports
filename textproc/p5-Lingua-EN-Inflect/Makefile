@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	convert singular to plural, select a or an
 
 MODULES=	cpan
 DISTNAME=	Lingua-EN-Inflect-1.88
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

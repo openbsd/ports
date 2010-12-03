@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT=	perl modules for creating and manipulating PDF
 
 MODULES=	cpan
 DISTNAME=	Text-PDF-0.25
-REVISION=	2
+REVISION=	3
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

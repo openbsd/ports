@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 08:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT=	HTML output stream class
 
 MODULES=	cpan
 DISTNAME=	HTML-Stream-1.60
+REVISION=	0
 CATEGORIES=	www devel
 USE_GROFF =	Yes
 

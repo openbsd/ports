@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:46:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module to calculate Nilsimsa digests
 
 MODULES=	cpan
 DISTNAME=	Digest-Nilsimsa-0.06
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 USE_GROFF =	Yes
 

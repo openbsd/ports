@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT=	convert Markdown / MultiMarkdown syntax to (X)HTML
 
 DISTNAME=	Text-Markdown-1.0.24
+REVISION=	0
 CATEGORIES=	textproc www
 MODULES=	cpan
 USE_GROFF =	Yes

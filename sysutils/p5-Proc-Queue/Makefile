@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=	limits the number of forked concurrent processes
 
 DISTNAME=	Proc-Queue-1.23
+REVISION=	0
 CATEGORIES=	sysutils
 MODULES=	cpan
 USE_GROFF =	Yes

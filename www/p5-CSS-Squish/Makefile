@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	compress CSS info for transmission
 
 MODULES=	cpan
 DISTNAME=	CSS-Squish-0.09
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

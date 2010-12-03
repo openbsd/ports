@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	re-usable XPath engine for DOM-like trees
 
 MODULES=	cpan
 DISTNAME=	XML-XPathEngine-0.12
+REVISION=	0
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

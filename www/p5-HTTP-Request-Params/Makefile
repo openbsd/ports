@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	retrieve GET/POST parameters from HTTP requests
 
 MODULES=	cpan
 DISTNAME=	HTTP-Request-Params-1.01
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

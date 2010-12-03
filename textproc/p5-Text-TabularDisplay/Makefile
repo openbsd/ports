@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT= 	render tabular data as plain text
 
 MODULES=	cpan
 DISTNAME=	Text-TabularDisplay-1.22
+REVISION=	0
 CATEGORIES=	textproc devel
 USE_GROFF =	Yes
 

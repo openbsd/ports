@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT=	parse apache-like config files
 
 MODULES=	cpan
 
 DISTNAME=	Config-ApacheFormat-1.2
+REVISION=	0
 
 CATEGORIES=	www
 USE_GROFF =	Yes

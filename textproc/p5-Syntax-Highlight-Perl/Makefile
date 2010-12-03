@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT=	syntax highlight for perl
 
 MODULES=	cpan
 DISTNAME=	Syntax-Highlight-Perl-Improved-1.01
 PKGNAME=	p5-Syntax-Highlight-Perl-1.01
+REVISION=	0
 CATEGORIES=	textproc www
 USE_GROFF =	Yes
 

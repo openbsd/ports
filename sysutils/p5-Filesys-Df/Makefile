@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		filesystem disk space information
 
 DISTNAME=		Filesys-Df-0.92
-REVISION=		2
+REVISION=		3
 CATEGORIES=		sysutils
 
 # XXX Force dependency on libc; this doesn't actually use libc, but doing

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	perl interface to Adobe Font Metrics files
 
 MODULES=	cpan
 DISTNAME=	Font-AFM-1.20
+REVISION=	0
 CATEGORIES=	textproc
 USE_GROFF =	Yes
  

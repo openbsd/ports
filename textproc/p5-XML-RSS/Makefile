@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
 DISTNAME=	XML-RSS-1.43
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 # perl

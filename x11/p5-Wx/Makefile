@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:54 ajacoutot Exp $
 
 COMMENT =	interface to the wxWidgets cross-platform GUI toolkit
 
 MODULES =	cpan
 DISTNAME =	Wx-0.92
-REVISION =	1
+REVISION =	2
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =	MBARBON
 USE_GROFF =	Yes

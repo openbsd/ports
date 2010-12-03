@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=	module to bubble-babble fingerprints
 
 MODULES=	cpan
 DISTNAME=	Digest-BubbleBabble-0.01
+REVISION=	0
 CATEGORIES=	security
 USE_GROFF =	Yes
 

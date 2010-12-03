@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	extension for generating XML
 
 MODULES=	cpan
 DISTNAME=	XML-Generator-1.01
+REVISION=	0
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

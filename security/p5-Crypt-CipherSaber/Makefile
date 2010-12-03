@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT =	cryptographic CipherSaber encryption
 
 DISTNAME =	Crypt-CipherSaber-1.00
+REVISION =	0
 CATEGORIES =	security
 
 # Perl

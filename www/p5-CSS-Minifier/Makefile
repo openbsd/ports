@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 08:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	minifies CSS files
 
 MODULES=	cpan
 DISTNAME=	CSS-Minifier-0.01
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

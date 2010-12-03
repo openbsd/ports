@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	simple document format
 
 MODULES=	cpan
 DISTNAME=	sdf-2.001
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	convert tree structured items into ascii tree items 
 
 DISTNAME=	Text-Thread-0.2
+REVISION=	0
 
 CATEGORIES=	textproc
 

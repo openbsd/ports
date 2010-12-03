@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 DISTNAME=		PPI-HTML-1.08
+REVISION=		0
 CATEGORIES=		textproc www
 CPAN_AUTHOR=		ADAMK
 USE_GROFF =		Yes

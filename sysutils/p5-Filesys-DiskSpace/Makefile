@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=		filesystem information display
 
 DISTNAME=		Filesys-DiskSpace-0.05
-REVISION=		1
+REVISION=		2
 CATEGORIES=		sysutils
 
 # Artistic

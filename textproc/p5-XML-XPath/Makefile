@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	modules for parsing and evaluating XPath statements
 
 MODULES=	cpan
 DISTNAME=	XML-XPath-1.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

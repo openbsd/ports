@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	md5-based passwords in perl
 
 MODULES=	cpan
 DISTNAME=	Crypt-PasswdMD5-1.3
+REVISION=	0
 CATEGORIES=	security
 USE_GROFF =	Yes
 

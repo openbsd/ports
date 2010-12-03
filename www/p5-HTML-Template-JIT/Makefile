@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT=	just-in-time compiler for HTML::Template
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-JIT-0.05
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

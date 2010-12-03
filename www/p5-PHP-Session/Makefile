@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	read / write PHP session files
 
 MODULES=	cpan
 DISTNAME=	PHP-Session-0.26
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 USE_GROFF =	Yes
 

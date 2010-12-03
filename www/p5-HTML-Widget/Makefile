@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 11:46:52 ajacoutot Exp $
 
 COMMENT=	HTML widget and validation framework
 
 DISTNAME=	HTML-Widget-1.11
+REVISION=	0
 CATEGORIES=	www
 
 # Same as Perl

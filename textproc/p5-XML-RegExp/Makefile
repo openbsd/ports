@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	Provide regular expressions for some XML tokens
 
 MODULES=	cpan
 DISTNAME=	XML-RegExp-0.03
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

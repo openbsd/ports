@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/26 07:51:00 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
 DISTNAME=	GnuPG-0.09
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 USE_GROFF =	Yes
 

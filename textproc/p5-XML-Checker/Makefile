@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	perl module for validating XML
 
 MODULES=	cpan
 DISTNAME=	XML-Checker-0.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	summarize HTML pages
 
 MODULES=	cpan
 DISTNAME=	HTML-Summary-0.017
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

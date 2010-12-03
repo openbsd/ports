@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan
 DISTNAME=	XML-Smart-1.6.9
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

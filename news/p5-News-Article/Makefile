@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	perl module for accessing NNTP articles
 
 MODULES=	cpan
 DISTNAME=	News-Article-1.27
-REVISION=	0
+REVISION=	1
 CATEGORIES=	news
 USE_GROFF =	Yes
 

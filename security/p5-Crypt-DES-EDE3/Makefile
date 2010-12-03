@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:46 ajacoutot Exp $
 
 COMMENT=	Triple-DES EDE encryption/decryption
 
 MODULES=	cpan
 DISTNAME=	Crypt-DES_EDE3-0.01
 PKGNAME=	p5-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 USE_GROFF =	Yes
 

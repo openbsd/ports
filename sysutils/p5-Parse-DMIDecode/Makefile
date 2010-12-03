@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:47 ajacoutot Exp $
 
 COMMENT =	interface to SMBIOS using dmidecode
 
@@ -7,8 +7,6 @@ DISTNAME =	Parse-DMIDecode-0.03
 CATEGORIES =	sysutils
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
-
-HOMEPAGE =	http://search.cpan.org/dist/Parse-DMIDecode/
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT =	file cache extension for Catalyst
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Cache-FileCache-0.7
+REVISION =	0
 CATEGORIES =	www
 USE_GROFF =	Yes
 

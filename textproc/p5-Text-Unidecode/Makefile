@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:50 ajacoutot Exp $
 
 COMMENT=	US-ASCII transliterations of Unicode text
 
 MODULES=	cpan
 DISTNAME=	Text-Unidecode-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

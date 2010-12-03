@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	Italian language stemming
 
 MODULES=	cpan
 DISTNAME=	Lingua-Stem-It-0.01
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=		Log::Log4perl logging for Catalyst
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Log-Log4perl-1.00
+REVISION=		0
 CATEGORIES=		www devel
 USE_GROFF =		Yes
 

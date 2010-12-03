@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT= 	rudimentary profiling module for Template Toolkit
 
 DISTNAME=	Template-Timer-0.04
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=	Perl MVC for web applications
 
 MODULES=	cpan
 DISTNAME=	Maypole-1.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 

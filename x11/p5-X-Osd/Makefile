@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:54 ajacoutot Exp $
 
 COMMENT =	Perl extension to the X On Screen Display library (xosd)
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	X-Osd-0.7
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 # Perl

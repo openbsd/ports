@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:53 ajacoutot Exp $
 
 COMMENT=		virtual base class for WWW searches
 
 DISTNAME=		WWW-Search-2.507
+REVISION=		0
 CATEGORIES=		www
 
 # perl

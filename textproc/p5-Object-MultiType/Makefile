@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:48 ajacoutot Exp $
 
 COMMENT=	Perl Objects as Hash, Array and Scalar at the same time
 
 MODULES=	cpan
 DISTNAME=	Object-MultiType-0.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

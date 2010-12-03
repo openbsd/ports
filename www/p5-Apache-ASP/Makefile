@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/03 11:46:51 ajacoutot Exp $
 
 COMMENT=	Apache ASP support
 
 MODULES=	cpan
 DISTNAME=	Apache-ASP-2.61
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 

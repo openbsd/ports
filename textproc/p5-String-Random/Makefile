@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/19 07:54:23 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT=	perl module for generating randoms strings
 
 MODULES=	cpan
 DISTNAME=	String-Random-0.22
+REVISION=	0
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

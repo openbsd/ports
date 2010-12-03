@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
 
 COMMENT= 	parse records in CSV-like formats
 
 MODULES=	cpan
 DISTNAME=	Text-RecordParser-v1.2.1
 PKGNAME=	p5-Text-RecordParser-1.2.1
-REVISION =	2
+REVISION =	3
 CATEGORIES=	textproc devel
 USE_GROFF =	Yes
 
