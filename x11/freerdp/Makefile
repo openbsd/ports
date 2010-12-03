@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/03 16:46:18 giovanni Exp $
 
 COMMENT =		open source client for Windows Terminal Server
-DISTNAME =		freerdp-0.8.1
+DISTNAME =		freerdp-0.8.2
 CATEGORIES =		x11 net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freerdp/}
 
-REVISION =		0
-
-SHARED_LIBS +=		freerdp			0.0 # 0.0
+SHARED_LIBS +=		freerdp			1.0 # 0.0
 SHARED_LIBS +=		freerdpchanman		0.0 # 0.0
 SHARED_LIBS +=		freerdpkbd		0.0 # 0.0
 SHARED_LIBS +=		freerdpgdi		0.0 # 0.0
