@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/12/01 14:51:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2010/12/03 14:56:19 jasper Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -72,7 +72,7 @@ MODGCONF2_SCHEMAS_DIR= totem
 USE_GROFF =	Yes
 
 # Browser bemused lirc mythtv sample-python sample-val sidebar-test
-# publish iplayer pythonconsole coherence_upnp tracker galago
+# publish iplayer pythonconsole coherence_upnp tracker
 TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
 		screensaver skipto thumbnail youtube \
 		opensubtitles jamendo screenshot dbus-service"
