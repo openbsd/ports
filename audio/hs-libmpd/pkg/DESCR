@@ -1,0 +1,3 @@
+libmpd-haskell is a client library for MPD written in Haskell that aims
+to provide a safe and flexible yet consistent and intuitive interface to
+MPD's external API.
