@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/03 07:47:44 jasper Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB=		c z
+
+FAKE_FLAGS=		prefix=$(PREFIX) mandir=$(PREFIX)/man
 
 USE_GROFF =		Yes
 MAKE_ENV=		CC=${CC}
