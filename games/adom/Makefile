@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/16 11:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/03 07:27:02 jasper Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT =	Ancient Domains of Mystery - roguelike
@@ -12,7 +12,8 @@ DISTFILES =	adom-111-elf.tar.gz
 
 ONLY_FOR_ARCHS =i386
 
-NO_BUILD =	binary port
+# binary port
+NO_BUILD =	Yes
 NO_REGRESS =	Yes
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/12/03 07:27:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,7 +68,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -
 
 INSTALL_TARGET=	install install-plugins
 
-NO_REGRESS=	testsuite available at http://www.gnashdev.org/testcases/
+# testsuite available at http://www.gnashdev.org/testcases/
+NO_REGRESS=	Yes
 
 SUBST_VARS=	VER
 
