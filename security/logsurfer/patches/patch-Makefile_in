@@ -1,6 +1,6 @@
-$Id: patch-Makefile.in,v 1.3 2009/11/27 21:30:38 jakob Exp $
+$OpenBSD: patch-Makefile_in,v 1.1 2010/12/03 08:46:03 jasper Exp $
 --- Makefile.in.orig	Mon Sep 30 15:26:38 2002
-+++ Makefile.in	Fri Nov 27 22:18:53 2009
++++ Makefile.in	Fri Dec  3 09:44:45 2010
 @@ -8,12 +8,12 @@ version = 1.5b
  
  # Where is the default configuration file
