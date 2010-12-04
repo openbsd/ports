@@ -1,9 +1,18 @@
-$OpenBSD: patch-splash_SplashXPath_cc,v 1.1 2009/05/30 22:35:57 miod Exp $
+$OpenBSD: patch-splash_SplashXPath_cc,v 1.2 2010/12/04 10:45:21 miod Exp $
 --- splash/SplashXPath.cc.orig	Tue Feb 27 22:05:52 2007
-+++ splash/SplashXPath.cc	Sat May 30 19:51:56 2009
-@@ -77,9 +77,17 @@ SplashXPath::SplashXPath(SplashPath *path, SplashCoord
++++ splash/SplashXPath.cc	Fri Dec  3 21:16:36 2010
+@@ -76,10 +76,26 @@ SplashXPath::SplashXPath(SplashPath *path, SplashCoord
+ 					    sizeof(SplashXPathAdjust));
      for (i = 0; i < path->hintsLength; ++i) {
        hint = &path->hints[i];
++      if (hint->firstPt >= path->length || hint->lastPt >= path->length) {
++	path->hintsLength = i;
++	if (i == 0) {
++	  gfree(adjusts);
++	  adjusts = NULL;
++	}
++	break;
++      }
        x0 = pts[hint->ctrl0    ].x;    y0 = pts[hint->ctrl0    ].y;
 -      x1 = pts[hint->ctrl0 + 1].x;    y1 = pts[hint->ctrl0 + 1].y;
 +      if (hint->ctrl0 + 1 >= path->length) {
