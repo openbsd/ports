@@ -1,24 +1,26 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2009/03/16 11:19:12 espie Exp $
---- src/Makefile.in.orig	Wed Dec 17 16:41:52 2008
-+++ src/Makefile.in	Mon Mar 16 11:25:55 2009
-@@ -143,18 +143,13 @@ install-base:
- 	for i in BUILD-STAMP help.doc ; do \
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/12/04 14:36:19 espie Exp $
+--- src/Makefile.in.orig	Sun Apr  4 16:31:27 2010
++++ src/Makefile.in	Sun Nov 28 20:14:34 2010
+@@ -152,6 +152,7 @@ install:
+ 	for i in BUILD-STAMP help.doc TAGS ; do \
  	  $(INSTALL_DATA) $$i $(DESTDIR)$(ecldir); \
  	done
 +	cp libecl.so $(LSP_LIBRARIES)
  	for i in $(LSP_LIBRARIES) $(LIBRARIES); do \
  	  if test -s $$i ; then \
- 	   $(INSTALL_PROGRAM) $$i $(DESTDIR)$(libdir); \
+ 	   if echo $$i | grep dll; then \
+@@ -160,13 +161,7 @@ install:
+ 	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
  	  fi \
  	done
--	if [ "x@SONAME@" != "x" ]; then \
+-	if [ "x@SONAME@" != "x" -a -f "@SONAME@" ]; then \
 -	  ( cd $(DESTDIR)$(libdir) && rm -f @SONAME3@ @SONAME2@ @SONAME1@ && \
 -	    mv @SONAME@ @SONAME3@ && \
 -	    $(LN_S) @SONAME3@ @SONAME2@ && \
 -	    $(LN_S) @SONAME3@ @SONAME1@ && \
 -	    $(LN_S) @SONAME3@ @SONAME@ ) \
 -	fi
-+	cd $(DESTDIR)$(libdir) && ln -s $(LSP_LIBRARIES) libecl.so
++	cd $(DESTDIR)$(libdir) && ln -sf $(LSP_LIBRARIES) libecl.so
  	for i in c/dpp$(EXE) ecl_min$(EXE) `cat MODULES`; do \
  	  case $$i in \
  	    *.fas) $(INSTALL_PROGRAM) $$i $(DESTDIR)$(ecldir);; \

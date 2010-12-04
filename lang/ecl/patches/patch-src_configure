@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_configure,v 1.1 2009/03/16 11:19:12 espie Exp $
---- src/configure.orig	Wed Dec 17 16:41:52 2008
-+++ src/configure	Mon Mar 16 10:43:57 2009
-@@ -10964,13 +10964,14 @@ _ACEOF
+$OpenBSD: patch-src_configure,v 1.2 2010/12/04 14:36:19 espie Exp $
+--- src/configure.orig	Sun Apr  4 16:31:32 2010
++++ src/configure	Sun Nov 28 20:13:19 2010
+@@ -13715,13 +13715,14 @@ _ACEOF
  
  fi
  
