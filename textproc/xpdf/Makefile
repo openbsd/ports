@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.76 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2010/12/04 10:44:31 miod Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02.4
-REVISION-main=	3
-PKGNAME-utils=	xpdf-utils-3.02.4
+PKGNAME-main=	xpdf-3.02.5
+REVISION-main=	0
+PKGNAME-utils=	xpdf-utils-3.02.5
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
 		ftp://tug.org/xpdf/
 PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch \
-		xpdf-3.02pl3.patch xpdf-3.02pl4.patch
+		xpdf-3.02pl3.patch xpdf-3.02pl4.patch \
+		xpdf-3.02pl5.patch
 PATCH_DIST_STRIP=-p1
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
@@ -28,7 +29,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=	openmotif
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
