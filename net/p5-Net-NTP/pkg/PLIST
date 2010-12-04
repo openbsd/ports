@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/04 15:18:18 benoit Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/NTP.pm
+@man man/man3p/Net::NTP.3p
+share/examples/p5-Net-NTP/
+share/examples/p5-Net-NTP/test_ntp.pl

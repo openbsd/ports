@@ -1,0 +1,4 @@
+This module exports a single method (get_ntp_response) and returns an
+associative array based upon RFC1305 and RFC2030. The response from the
+server is "humanized" to a point that further processing of th information
+received from the server can be manipulated.

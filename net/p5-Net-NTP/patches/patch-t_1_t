@@ -1,0 +1,9 @@
+$OpenBSD: patch-t_1_t,v 1.1.1.1 2010/12/04 15:18:18 benoit Exp $
+--- t/1.t.orig	Sat Nov 27 22:52:39 2010
++++ t/1.t	Sat Nov 27 22:53:32 2010
+@@ -12,4 +12,4 @@
+ 
+ # Insert your test code below, the Test::More module is use()ed here so read
+ # its man page ( perldoc Test::More ) for help writing this test script.
+-my $ntp = get_ntp_response();
++my $ntp = get_ntp_response("pool.ntp.org", 123);
