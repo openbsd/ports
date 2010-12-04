@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2010/12/04 14:37:19 espie Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.16.1
+VERSION=		5.22.1
 DISTNAME=		maxima-${VERSION}
-REVISION=		3
 CATEGORIES=		math
 
 HOMEPAGE=		http://maxima.sourceforge.net/
@@ -38,5 +37,6 @@ RUN_DEPENDS+=		${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 CONFIGURE_ARGS+=	--with-wish=${MODTCL_BIN}
 .endif
+
 
 .include <bsd.port.mk>
