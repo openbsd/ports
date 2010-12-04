@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.666 2010/12/01 14:54:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.667 2010/12/04 16:16:17 benoit Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -287,6 +287,7 @@
      SUBDIR += p5-Net-Jabber
      SUBDIR += p5-Net-MySQL
      SUBDIR += p5-Net-Netmask
+     SUBDIR += p5-Net_NTP
      SUBDIR += p5-Net-OAuth
      SUBDIR += p5-Net-PH
      SUBDIR += p5-Net-ParseWhois
