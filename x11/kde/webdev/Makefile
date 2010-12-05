@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/12/05 13:15:46 espie Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -17,7 +17,12 @@ LIB_DEPENDS =	x11/kde/libs3 \
     		x11/kde/sdk3
 
 SEPARATE_BUILD = 	flavored
-#USE_LIBTOOL =		gnu
+
+# bug in our libtool currently turning libcvsservices.a -lcvsservices into
+# libcvsservices.a libcvsservices.a at end of link, thus making the final
+# link fail on undefined symbols, as this is a library...
+
+USE_LIBTOOL =		gnu
 
 REVISION = 4
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
