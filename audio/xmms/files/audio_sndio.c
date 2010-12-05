@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008,2009 Thomas Pfaff <tpfaff@tp76.info>
+ * Copyright (c) 2008-2010 Thomas Pfaff <tpfaff@tp76.info>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -26,7 +26,7 @@
 #include <xmms/i18n.h>
 #include <xmms/plugin.h>
 
-#define VERSION "1.0"
+#define VERSION "1.1"
 #define XMMS_MAXVOL 100
 
 static void op_init (void);
@@ -57,6 +57,7 @@ static long long wrpos;
 static int paused;
 static int volume = XMMS_MAXVOL;
 static long bytes_per_sec;
+static AFormat afmt;
 static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static GtkWidget *configure_win;
@@ -153,6 +154,7 @@ op_open (AFormat fmt, int rate, int nch)
 	}
 
 	sio_initpar (&par);
+	afmt = fmt;
 	switch (fmt) {
 	case FMT_U8:
 		par.bits = 8;
@@ -245,14 +247,25 @@ error:
 static void
 op_write (void *ptr, int len)
 {
-	if (!paused) {
-		/* Do not lock sio_write as this will cause the GUI thread
-		   to block waiting for a blocked sio_write to return. */
-		int bytes = sio_write (hdl, ptr, len);
-		pthread_mutex_lock (&mutex);
-		wrpos += bytes;
-		pthread_mutex_unlock (&mutex);
-	}
+	EffectPlugin *ep;
+
+	if (paused)
+		return;
+
+	/* This sucks but XMMS totally broke the effect plugin code when
+	   they added support for multiple enabled effects.  Complain to
+	   the non-existent XMMS team if a plugin does not work, however
+	   this does not seem to affect any plugins in our ports tree. */
+	ep = get_current_effect_plugin ();
+	ep->mod_samples (&ptr, len, afmt, par.rate, par.pchan);
+
+	/* Do not lock sio_write as this will cause the GUI thread
+	   to block waiting for a blocked sio_write to return. */
+	len = sio_write (hdl, ptr, len);
+
+	pthread_mutex_lock (&mutex);
+	wrpos += len;
+	pthread_mutex_unlock (&mutex);
 }
 
 static void
