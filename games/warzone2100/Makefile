@@ -1,48 +1,53 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/05 16:14:16 dcoppa Exp $
 
-COMMENT=	3d realtime strategy on a future earth
+ONLY_FOR_ARCHS=	i386
 
-DISTNAME=	warzone2100-2.0.7
-REVISION =	2
+COMMENT=	3D realtime strategy on a future earth
+
+DISTNAME=	warzone2100-2.3.6
 CATEGORIES=	games
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 
 HOMEPAGE=	http://wz2100.net/
 
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
-
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	GL GLU SDL X11 Xext c m ogg pthread pthread-stubs \
-		sndio usbhid xcb z SDL_net>=1 physfs>=1 openal>=1 \
-		vorbis>=5 vorbisfile>=4 mad>=2 jpeg>=62 png>=5
+WANTLIB=	GL GLC GLU SDL X11 c m physfs ogg openal>=1 png \
+		popt pthread sndio stdc++ theora vorbis vorbisfile \
+		z
 
-MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
-
-LIB_DEPENDS=	devel/sdl-net \
-		devel/physfs \
-		audio/openal \
+MODULES=	devel/gettext
+LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
-		audio/libmad \
-		graphics/jpeg \
-		graphics/png
-
-BUILD_DEPENDS=	devel/bison \
-		archivers/unzip \
-		archivers/zip
+		audio/openal>=0.0.8p7 \
+		devel/physfs \
+		devel/popt \
+		devel/sdl \
+		graphics/png \
+		graphics/quesoglc \
+		multimedia/libtheora
+BUILD_DEPENDS=	archivers/unzip \
+		archivers/zip \
+		devel/bison \
+		devel/flex
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.61
+CONFIGURE_ARGS+= --with-distributor="OpenBSD"
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
+		    -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		YACC="bison -y" \
+		ac_cv_prog_LEX="gflex"
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng \
-		    -I${X11BASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
-		LIBS='-pthread' \
-		YACC='bison -y'
+pre-build:
+.for _prog in git svn svnversion
+	@cd ${WRKDIR}/bin && ln -sf /usr/bin/true ${_prog}
+.endfor
 
 .include <bsd.port.mk>

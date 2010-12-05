@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/12/05 16:14:16 dcoppa Exp $
+--- configure.ac.orig	Sun Nov 28 14:38:58 2010
++++ configure.ac	Mon Nov 29 19:08:56 2010
+@@ -371,9 +371,6 @@ fi
+ 
+ # Checks for libraries:
+ 
+-# check for nearbyint()
+-AC_CHECK_LIB(m, nearbyint, [MATH_LIB=""], AC_MSG_ERROR([nearbyint not found.]))
+-
+ # When (cross-)compiling for Windows (MinGW) we need to link in iberty for Popt
+ # and the Dr. MinGW derived exception handler.
+ if test "x$host_os_mingw32" = "xyes" ; then
+@@ -413,7 +410,7 @@ AC_CHECK_LIB(popt, poptGetContext, AC_SUBST([POPT_LIBS
+ 
+ # Look for PhysicsFS
+ AC_CHECK_HEADER(physfs.h, , AC_MSG_ERROR([PhysicsFS header not found.]))
+-AC_CHECK_LIB(physfs, PHYSFS_init, AC_SUBST([PHYSFS_LIBS], [-lphysfs]), AC_MSG_ERROR([PhysicsFS not found.]), [${WIN32_LIBS}])
++AC_CHECK_LIB(physfs, PHYSFS_init, AC_SUBST([PHYSFS_LIBS], [-lphysfs]), AC_MSG_ERROR([PhysicsFS not found.]), [-pthread])
+ 
+ # Look for OpenGL
+ CPPFLAGS_SAVE="$CPPFLAGS"

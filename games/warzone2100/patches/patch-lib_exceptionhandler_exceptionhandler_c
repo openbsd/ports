@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_exceptionhandler_exceptionhandler_c,v 1.1 2010/12/05 16:14:16 dcoppa Exp $
+--- lib/exceptionhandler/exceptionhandler.c.orig	Sun Nov 28 14:39:00 2010
++++ lib/exceptionhandler/exceptionhandler.c	Wed Dec  1 22:03:05 2010
+@@ -122,10 +122,12 @@ static LONG WINAPI windowsExceptionHandler(PEXCEPTION_
+ # include <sys/stat.h>
+ # include <sys/wait.h>
+ # include <sys/utsname.h>
++#ifdef WZ_OS_LINUX
+ # include <sys/prctl.h>
+ #ifndef PR_SET_PTRACER
+ # define PR_SET_PTRACER 0x59616d61  // prctl will ignore unknown options
+ #endif
++#endif
+ 
+ // GNU extension for backtrace():
+ # if defined(__GLIBC__)
+@@ -492,8 +494,10 @@ static pid_t execGdb(int const dumpFile, int* gdbWrite
+ 	// Check to see if we're the parent
+ 	if (pid != 0)
+ 	{
++#ifdef WZ_OS_LINUX
+ 		// Allow tracing the process, some hardened kernel configurations disallow this.
+ 		prctl(PR_SET_PTRACER, pid, 0, 0, 0);
++#endif
+ 
+ 		// Return the write end of the pipe
+ 		*gdbWritePipe = gdbPipe[1];

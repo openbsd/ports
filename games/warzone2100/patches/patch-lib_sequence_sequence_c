@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_sequence_sequence_c,v 1.1 2010/12/05 16:14:16 dcoppa Exp $
+--- lib/sequence/sequence.c.orig	Mon Nov 22 14:43:44 2010
++++ lib/sequence/sequence.c	Mon Nov 22 14:44:10 2010
+@@ -758,7 +758,7 @@ bool seq_Update()
+ 			{
+ 				for (j = 0; j < videodata.vi.channels; j++)
+ 				{
+-					int val = nearbyint(pcm[j][i] * 32767.f);
++					int val = rint(pcm[j][i] * 32767.f);
+ 
+ 					if (val > 32767)
+ 					{
