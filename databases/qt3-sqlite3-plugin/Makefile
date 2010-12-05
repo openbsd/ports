@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/05 21:38:19 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	qt3 sqlite3 plugin
@@ -12,7 +12,7 @@ DISTNAME=	23011-qt-sqlite3-$V
 PKGNAME=	qt3-sqlite3-$V
 REVISION=	2
 
-WRKDIST=	${WRKDIR}/qt3-sqlite3-$V}
+WRKDIST=	${WRKDIR}/qt-sqlite3-${V}
 
 MODULES=	x11/qt3
 
