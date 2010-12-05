@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/24 08:25:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/05 18:06:14 jasper Exp $
 
 COMMENT=		twitter python module
 
 MODPY_EGG_VERSION=	1.4.2
 DISTNAME=		twitter-${MODPY_EGG_VERSION}
 PKGNAME=		py-twitter-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		net www
 
@@ -22,7 +23,8 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		devel/py-dateutil
+RUN_DEPENDS=		devel/py-dateutil \
+			net/py-irclib
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 NO_REGRESS=		Yes
