@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/12/04 14:11:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/12/05 22:20:37 ajacoutot Exp $
 
 BROKEN=		talk to ajacoutot@ for details
 
@@ -26,7 +26,8 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
+		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 
 WANTLIB +=	crypto ssl z sasl2 lib/db4/db>=4
 
