@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/11/25 15:37:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/12/05 16:38:10 ajacoutot Exp $
 @option no-default-conflict
 @conflict gmime->=2.4.7
 @pkgpath mail/gmime
@@ -57,7 +57,6 @@ include/gmime-2.4/gmime/gmime.h
 include/gmime-2.4/gmime/internet-address.h
 lib/libgmime-2.4.a
 lib/libgmime-2.4.la
-lib/pkgconfig/
 lib/pkgconfig/gmime-2.4.pc
 share/gtk-doc/
 share/gtk-doc/html/
