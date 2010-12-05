@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/04/09 20:30:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/05 18:03:02 landry Exp $
 @conflict xfce4-wavelan-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -6,6 +6,11 @@ libexec/xfce4/panel-plugins/
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/ca/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-wavelan-plugin.mo
@@ -20,19 +25,33 @@ share/locale/hu/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/wavelan.desktop
