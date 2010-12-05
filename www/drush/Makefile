@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/05 17:34:14 landry Exp $
 
 COMMENT =	command line access to most of drupal
-CATEGORIES = 	www www/drupal5 www/drupal6 devel
+CATEGORIES = 	www www/drupal6 devel
 MASTER_SITES =	ftp://ftp.drupal.org/pub/drupal/files/projects/
 MASTER_SITES0 =	http://download.pear.php.net/package/
 HOMEPAGE =	http://drupal.org/
@@ -9,6 +9,7 @@ PKG_ARCH =	*
 DISTNAME =	drush-All-Versions-2.0 
 WRKDIST =	${WRKDIR}/drush
 PKGNAME =	drush-2.0
+REVISION =	0
 DISTFILES =	${DISTNAME}.tar.gz Console_Table-1.1.3.tgz:0
 
 PERMIT_DISTFILES_FTP = Yes
