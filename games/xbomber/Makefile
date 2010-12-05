@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/24 21:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/05 18:24:33 jasper Exp $
 
 COMMENT=		colorful game where you blow other people/robots up
 
 VERSION=		0.8
 DISTNAME=		xbomber.${VERSION}
-PKGNAME=		xbomber-${VERSION}p1
+PKGNAME=		xbomber-${VERSION}
+REVISION=		1
 CATEGORIES=		games x11
 
 HOMEPAGE=		http://www.newbreedsoftware.com/xbomber/

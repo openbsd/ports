@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/12/05 18:24:33 jasper Exp $
 
 COMMENT=		wm-dockapp; WWW image monitor
 
 DISTNAME=		wmGrabImage-0.72
-PKGNAME=		${DISTNAME:L}p2
+PKGNAME=		${DISTNAME:L}
+REVISION=		2
 CATEGORIES=		graphics x11 x11/windowmaker
 EXTRACT_SUFX=		.tgz
 

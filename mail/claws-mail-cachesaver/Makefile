@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/05 18:24:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,8 @@ COMMENT=	cache saver plugin for Claws Mail
 
 VERSION=	0.10.9
 DISTNAME=	cachesaver-${VERSION}
-PKGNAME=	claws-mail-cachesaver-${VERSION}p3
+PKGNAME=	claws-mail-cachesaver-${VERSION}
+REVISION=	3
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws

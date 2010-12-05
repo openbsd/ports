@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/05 18:24:33 jasper Exp $
 
 COMMENT=		Device Tree Compiler
 
 DISTNAME=		dtc-0.1
-PKGNAME=		${DISTNAME}p0
+REVISION=		0
 
 CATEGORIES=		sysutils devel
 

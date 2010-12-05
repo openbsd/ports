@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/05 18:24:33 jasper Exp $
 
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
-DISTNAME=	libPropList-0.10.1
-PKGNAME=	libproplist-0.10.1p1
+V=		0.10.1
+DISTNAME=	libPropList-${V}
+PKGNAME=	libproplist-${V}
+REVISION=	1
 SHARED_LIBS=		PropList 2.2
 MODGNU_SHARED_LIBS=	PropList ''
 
