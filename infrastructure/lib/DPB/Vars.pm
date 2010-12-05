@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.8 2010/11/02 20:32:59 espie Exp $
+# $OpenBSD: Vars.pm,v 1.9 2010/12/05 10:06:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -115,6 +115,7 @@ sub grab_list
 	my $h = {};
 	my $fh = $core->fh;
 	my $subdir;
+	my $category;
 	my $reset = sub {
 			for my $v (values %$h) {
 				$v->handle_default($h);
@@ -129,6 +130,7 @@ sub grab_list
 		push(@current, $_);
 		chomp;
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
+			undef $category;
 			my $dir = DPB::PkgPath->new_hidden($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
@@ -141,9 +143,14 @@ sub grab_list
 			print $log $_, "\n";
 			$core->job->set_status(" at $1");
 			$subdir = DPB::PkgPath->new_hidden($1);
+			if (defined $category) {
+				$category->{category} = 1;
+			}
+			$category = $subdir;
 			&$reset;
 		} elsif (my ($pkgpath, $var, $value) =
 		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=(.*)$/) {
+			undef $category;
 			next unless DPB::PortInfo->wanted($var);
 
 			if ($value =~ m/^\"(.*)\"$/) {
