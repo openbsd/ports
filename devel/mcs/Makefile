@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/06 08:23:24 shadchin Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
-DISTNAME =	libmcs-0.7.1
+DISTNAME =	libmcs-0.7.2
 PKGNAME =	${DISTNAME:S/lib//}
 
 SHARED_LIBS =	mcs	1.0
 
 CATEGORIES =	devel
+
+HOMEPAGE =	http://www.atheme.org/project/mcs
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
