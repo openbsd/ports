@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_gtk_PageView_cxx,v 1.1 2009/04/04 09:25:25 landry Exp $
+$OpenBSD: patch-src_gtk_PageView_cxx,v 1.2 2010/12/06 10:06:48 stsp Exp $
+
+The 2nd hunk is from upstream http://trac.emma-soft.com/epdfview/changeset/348
+
 --- src/gtk/PageView.cxx.orig	Sat Feb 28 22:00:35 2009
-+++ src/gtk/PageView.cxx	Sat Apr  4 11:06:03 2009
++++ src/gtk/PageView.cxx	Sun Dec  5 13:26:28 2010
 @@ -527,13 +527,6 @@ page_view_scrolled_cb (GtkWidget *widget, GdkEventScro
  {
      g_assert ( NULL != data && "The data parameter is NULL.");
@@ -15,3 +18,12 @@ $OpenBSD: patch-src_gtk_PageView_cxx,v 1.1 2009/04/04 09:25:25 landry Exp $
      PagePter *pter = (PagePter *)data;
      GtkAdjustment *adjustment = 
          gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (widget));
+@@ -664,7 +657,7 @@ page_view_keypress_cb(GtkWidget *widget, GdkEventKey *
+             direction = GTK_SCROLL_START;
+ 
+        case GDK_BackSpace:
+-            pter->scrollToNextPage ();
++            pter->scrollToPreviousPage ();
+             direction = GTK_SCROLL_START;
+ 
+        default:
