@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.2 2010/12/06 13:19:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -47,7 +47,7 @@ sub set_logger
 
 # we set the "unknown" weight as median if we parsed a file.
 my $default = 1;
-my $has_build_info;
+my $has_build_info = 0;
 
 sub finished_parsing
 {
