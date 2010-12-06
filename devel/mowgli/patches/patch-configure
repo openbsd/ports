@@ -1,20 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2009/01/14 21:06:39 fgsch Exp $
---- configure.orig	Tue Jan  6 20:54:16 2009
-+++ configure	Tue Jan  6 20:54:36 2009
-@@ -3008,14 +3008,14 @@ echo "${ECHO_T}Win32" >&6; }
- echo "${ECHO_T}POSIX" >&6; }
+$OpenBSD: patch-configure,v 1.2 2010/12/06 08:24:36 shadchin Exp $
+--- configure.orig	Wed Jul 14 09:43:16 2010
++++ configure	Sat Dec  4 16:36:13 2010
+@@ -3248,9 +3248,9 @@ $as_echo "Solaris" >&6; }
+ $as_echo "OpenBSD" >&6; }
  			LIB_CPPFLAGS='-DPIC'
  			LIB_CFLAGS='-fPIC'
--			LIB_LDFLAGS='-shared -fPIC -Wl,-soname=${LIB}.${LIB_MAJOR}'
+-			LIB_LDFLAGS='-shared -fPIC'
 +			LIB_LDFLAGS='-shared -fPIC -Wl,-soname=${LIB}'
  			LIB_PREFIX='lib'
- 			LIB_SUFFIX='.so'
+-			LIB_SUFFIX='.so.${LIB_MAJOR}.${LIB_MINOR}'
++			LIB_SUFFIX='.so'
+ 			LDFLAGS_RPATH='-Wl,-rpath,${libdir}'
  			PLUGIN_CPPFLAGS='-DPIC'
  			PLUGIN_CFLAGS='-fPIC'
- 			PLUGIN_LDFLAGS='-shared -fPIC'
- 			PLUGIN_SUFFIX='.so'
--			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0 && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i'
-+			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i'
- 			UNINSTALL_LIB='rm -f ${DESTDIR}${libdir}/$$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0'
- 			CLEAN_LIB=''
- 			;;

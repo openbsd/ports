@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/14 21:06:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/06 08:24:36 shadchin Exp $
 
 COMMENT =	performance and usability oriented extensions to C
 
-V =		0.7.0
-DISTNAME =	libmowgli-$V
-PKGNAME =	mowgli-$V
+DISTNAME =	libmowgli-0.7.1
+PKGNAME =	${DISTNAME:S/lib//}
 
 SHARED_LIBS =	mowgli	1.0
 
 CATEGORIES =	devel
+
+HOMEPAGE =	http://www.atheme.org/project/mowgli
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
