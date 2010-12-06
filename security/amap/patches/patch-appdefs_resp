@@ -1,0 +1,309 @@
+$OpenBSD: patch-appdefs_resp,v 1.1 2010/12/06 12:08:55 stephan Exp $
+
+# packaged appdefs.resp db is out of date, patch it using a newer
+# one provided at http://freeworld.thc.org/thc-amap/appdefs.resp
+
+--- appdefs.resp.orig	Mon Dec  6 12:20:40 2010
++++ appdefs.resp	Mon Dec  6 12:21:07 2010
+@@ -1,4 +1,4 @@
+-###V:8#P:5.2#M:Please send in triggers for databases other stuff!##DO NOT EDIT THIS LINE!
++###V:13#P:5.2#M:Please send in triggers for databases other stuff!##DO NOT EDIT THIS LINE!
+ #
+ # This is the responses file "appdefs.resp" for amap
+ #
+@@ -44,7 +44,8 @@
+ #
+ 
+ # neither change name, position or value of these ones
+-echo:http:::^GET / HTTP/1.0
++echo:http-get:::^GET / HTTP/1.0
++echo:http-head:::^HEAD / HTTP/1.0
+ echo::::^\x00\x00\x10\x00\x00\x00\x00\x00\x00\x00\x00\x00
+ 
+ #
+@@ -62,9 +63,11 @@ adsgone::::adsgone blocked html ad
+ aix-netinstall::::netinst
+ amanda-index::tcp::AMANDA index
+ amsn::tcp::^Syntaxfout : 
++amsn::tcp::^Error de sintaxis : 
+ apache-tomcat-connector_ajp12::tcp::^\x01\x00\x08\x00\x00\x00\x0a
+ apple-darwin-streaming-server::tcp::^RTSP/1.0 .*\nServer: DSS/
+ arkeia::tcp::\x00\x05\x00\x00\x00\x00\x00\x00
++atos:ms-remote-desktop-protocol:tcp:7:\x00
+ auth::tcp:: : ERROR : 
+ auth::tcp::^Group id is
+ auth::tcp:: : USERID :
+@@ -86,6 +89,7 @@ checkpoint-fw1-authentication::::FireWall-1 Client Aut
+ checkpoint-fw1-policy-server::tcp::^\x15\x12\x00\x00\x02\x02
+ checkpoint-fw1-telnet-server::tcp::^Check Point .* Telnet
+ cisco-hips-mc::tcp::^\x00\x00\x00.\x00\x00\x00.URI
++citrix::tcp::^\x31\x00\x00\x00\x81\x00\x00\x00
+ citrix-ica:::: ICA 
+ citrix-ica::::\x7f\x7f\x49\x43\x41
+ CCProOSMSServer::tcp::ContactPro OSMS Server
+@@ -98,10 +102,13 @@ dante::tcp:2:\x05\x02
+ dantz-retrospect::::^\x00\xca\x00
+ daytime-unix:::26:^[A-Z].* [A-Z].* [0-3].* [0-9][0-9]:[0-9][0-9]:[0-9][0-9] 200.\r\n
+ daytime-windows:::26-50:^[A-Z][a-z]+, [A-Z][a-z]+ [0-9]+, 200[0-9] [0-9]+:[0-9]+:[0-9]+\x0a\x00
++daytime-windows:::25:^[A-Z][a-z] [A-Z][a-z]+ [0-9]+ [0-9][0-9]:[0-9][0-9]:[0-9][0-9] 200[0-9]
+ daytime-unix:::20-36:^[A-Z][a-z]+ [A-Z][a-z]+ [0-9 ][0-9] [0-9]+:[0-9]+:[0-9]+ 200[0-9]\x0d\x0a
++daytime-unix:::26:^[0-3][0-9] [A-Z]* 200[0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9] 
+ daytime:::25-30:^[0-9][0-9] [A-Z][A-Z][A-Z] 200[0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] .*
+ daytime:::26-45:^[A-Z][a-z][a-z]*, [A-Z][a-z][a-z]* [0-9]+, 200
+ db2::tcp::.*SQLDB2RA
++db2jds:jrmi:tcp::^N\x00
+ dc++::tcp::^\x24\x4c\x6f\x63\x6b
+ dhcp3d-isc::tcp:8:^\x00\x00\x00\x64\x00\x00\x00\x18
+ dell-openmanage:jrmi:tcp::^\x4e\x00\x0d
+@@ -125,9 +132,12 @@ dns-djb:dns-bind:udp::^...[\x80-\x83].*version.bind
+ dns-djb::udp::^\x79\x08\x80\x80\x00\x01\x00\x00\x00\x0d
+ dns-ms:dns:udp::^\x00\x00\x90\x04
+ dns-ms:netbios-session:udp::^\x79\x08.*a.root-servers.net\x00
++dns-ozyman:netbios-session:udp:50:^\x79\x08\x84\x03\x00\x01\x00\x00\x00\x00\x00\x20\x43\x4b\x41\x41*\x00\x00\x21\x00\x01
+ dns-pdnsd:dns::2:^\x00\x0c
++dtspcd::tcp::.*SPC_
+ duff-pubro-backdoor::tcp::DuFFxP
+ duff-pubro-backdoor::tcp::Duf-Pubstro
++edonkey-client::tcp::^\xe3....\x4c
+ eggdropp::tcp::\(Eggdrop 
+ eggdropp::tcp::\r\nYou don't have access\r\n
+ finger::tcp:1:\x66
+@@ -140,11 +150,13 @@ finger::tcp::^\r\nWelcome
+ finger::tcp::^finger:
+ finger::tcp::^must provide username
+ finger::tcp::finger: GET: 
++flexlm:ssl:tcp::^W\xea-
+ ftp:ftp:tcp::^220.*\n331
+ ftp:ftp:tcp::^220.*\n530
+ ftp::tcp::^220.*FTP
+ ftp::tcp::^220 .* Microsoft .* FTP
+ ftp-darwin::tcp::^220 Inactivity timer
++ftp-usergate::tcp::^220 .* UserGate
+ giop::::^giop
+ glftp::tcp::^220.*SSH
+ glftp::tcp::^220.*SSH.*\n500
+@@ -153,18 +165,23 @@ gopher::::^\x00.*error.host
+ gopher::::^\x03.* item is 
+ gopher::::gopher
+ gkrellmd::tcp::^<error>\nBad connect string
++hddtemp::tcp::^\|\/dev\/.*\|
++hp-io-backend-daemon::tcp::^msg=MessageError
+ hp-openview-storage-protect::::hp openview storage protect
+ hp-openview-storage-protect::tcp::\x00\x20INET\x00\x20
+ hp-openview-storage-protect::tcp::^H.P. .O.p.e.n.v.i.e.w..*P.r.o.t.e.c.t
+ hp-openview-omniback2::tcp::^H.P. .O.p.e.n.v.i.e.w. .O.m.n.i
++http:http-get:tcp:1:H
++http:http-head:tcp:1:H
+ http::tcp::^HTTP/0.
+ http::tcp::^HTTP/1.
+ http::tcp::<HEAD>.*<BODY>
+ http::tcp::<HTML>
+ http::tcp::^Invalid requested URL 
++http::tcp::.*<?xml
+ http-apache-1::tcp::^HTTP/.*\nServer: Apache/1
+ http-apache-2::tcp::^HTTP/.*\nServer: Apache/2
+-http-apache-2::tcp::^<!DOCTYPE html 
++http-iis::tcp::.*Microsoft-IIS
+ http-compaqinsightmanager::tcp:6:^HTTP/1
+ http-cups::tcp::^HTTP/.*\nServer: CUPS/
+ http-daap::tcp::^HTTP/.*\nDAAP-Server:
+@@ -178,17 +195,16 @@ http-daap-itunes::tcp::^HTTP/.*\nDAAP-Server: iTunes/
+ http-jrun::tcp::^HTTP/.*Cookie.*JSESSIONID
+ http-jserv::tcp::^HTTP/.*Cookie.*JServSessionId
+ http-limewire::tcp::^HTTP/.*limewire
+-http-lotus-domino::tcp::^HTTP/.*\nServer: Lotus
++http-lotus-domino::tcp::.*Lotus-Domino
+ http-ncacn::tcp::ncacn_http/1.
+ http-net.commerce::tcp::^HTTP/.*cookie.*SESSION_ID
+ http-nettracker::tcp::^HTTP/.*Cookie.*SaneID
+ http-openadstream::tcp::^HTTP/.*Cookie.*RMID
+ http-mirapoint::tcp::^HTTP/.*\nServer: Mirapoint
+-#http-proxy::tcp::^HTTP/1.. 500
+-http-proxy::tcp::^HTTP/.*cache.*bad request
+ http-proxy::tcp::^HTTP/.*proxy-connection: 
+ http-proxy::tcp::^HTTP/.*via: 
+-#http-roxen::tcp::^Not implemented
++#http-proxy::tcp::^HTTP/.*cache.*bad request
++http-proxy-clearswift-websweeper::tcp::^HTTP/.*Clearswift Web
+ http-roxen::tcp::^HTTP/.*Cookie.*RoxenUserID
+ http-storyserver::tcp::^HTTP/.*Cookie.*ssuid
+ http-tomcat::tcp::^HTTP/.*Cookie.*JSESSIONID
+@@ -209,6 +225,7 @@ ircd-hybrid::tcp::^NOTICE AUTH
+ iss-realsecure::tcp::iss ecnra
+ iss-realsecure::tcp::^\x00\x00\x00.\x08\x01\x04\x01\x00
+ jabber::tcp::^<stream:
++jboss-namingservice::tcp::org.jnp.server.NamingServer_Stub
+ jinilookupservice::tcp::.*jini\.core\.lookup
+ #jrmi::tcp::^N
+ kde-artsd::::^MCOP\x00.*aRts/MCOP
+@@ -225,6 +242,8 @@ linux-gnome-session::tcp::\x02\x70\x70\x01
+ linuxconf::tcp::linuxconf
+ lisa::tcp::^0 succeeded
+ lisa::tcp::\x0a\x00succeeded\x0a\x00
++lotus-notes:lotus-notes:tcp::/OU=
++lotus-notes::tcp::^\x7c\x00\x00\x00\x71
+ lpd::tcp::^Invalid protocol request
+ lpd::tcp::lpd:
+ lpd::tcp::lpsched
+@@ -237,7 +256,8 @@ mldonkey::tcp::mldonkey
+ mldonkey::tcp:1:\x31
+ mldonkey-mlnet::tcp::ADDDOWNLOAD\([1-9]
+ mirapoint-admind::tcp::^\* OK .* admind .* server ready
+-mon::::520 command could not be executed
++mon-perl::tcp::^520 command could not be executed
++mon-perl::tcp::^520 invalid command
+ ms-active-sync-manager_(WCESMgr)::::^\x16\x00\x01\x00
+ ms-distribution-transport::::\x0b\x00\x78\x01
+ ms-distribution-transport:::6:^..\x0a\x00
+@@ -247,6 +267,7 @@ ms-distribution-transport::tcp:6:\xb8\xef\x0c\x73\x00\
+ ms-distribution-transport::tcp:6:\xc0\x52\x0d\x73\x60\x53
+ ms-ds:ms-ds:::\x00\x00\x00\x55\xff\x53\x4d\x42\x72\x00
+ ms-ds:ms-ds:::^.....SMB
++ms-ds:ms-ds:::^\x00\x00\x00\x65
+ ms-dtc::tcp::^\x68\xfe\x0a\x00\x78\x01
+ ms-dtc::tcp::^\x78\x01\x07\x00
+ ms-dtc::tcp:6:^..\x0b\x00
+@@ -264,7 +285,6 @@ ms-exchange::tcp::Microsoft Routing Server
+ msdtc:::3:..\n
+ mysql::tcp::^\x19\x00\x00\x00\x0a
+ mysql::tcp::^\x2c\x00\x00\x00\x0a
+-mysql::::^.\x00\x00\x00
+ mysql::tcp::hhost '
+ mysql::tcp::khost '
+ mysql::tcp::mysqladmin
+@@ -281,6 +301,7 @@ netbios-session::::^\x83\x00
+ netbios-session::tcp::^\x82\x00\x00\x00
+ netbus::tcp::netbus
+ netop::udp::^\xd6\x81\x81
++netop::tcp::^\xd6\x81\x81
+ netstat:::: LISTEN 
+ netstreamer::tcp::^READY Radio Server
+ nntp::tcp::/etc/vnews.conf
+@@ -290,26 +311,31 @@ nntp::tcp::^200.*NNTP
+ nntp::tcp::^200.*\n435
+ nntp::tcp::^200.*\n500
+ nntp::tcp::^502
++nntp::tcp::^200.* you can post 
+ nntp-ms::tcp::^201 .* Microsoft .* News 
+ nntp-ms::tcp::^220.*Exchange Internet News Service
+ nntp-ms::tcp::^200.*Exchange Internet News Service
+ norman-njeeves::tcp::^\x0d\x0a\x07\x4e\x50\x45\x50
+ nsclient::tcp::^ERROR:Wrong
+ ntalk::udp::^\x01\x00\x05\x00\x00\x00
+-ntp:ntp:udp:48:^....\x00\x00..\x00\x00
+ ntp::::^\x0c
+ ntp::::^\x34\x0b\x01\xef\x00\x00
+ ntp::::^\xcc\x00\x04\xef\x00\x00
++ntp::::^\xdc\x00\x0a\xfa\x00\x00\x00\x00\x00
+ ntp-ms::::^\x3a\x02\x00\xf9\x00\x00\x00\x00\x00\x00\x00\x00
+ ntp-ms::::^....\x00\x00\x00\x00\x00\x00\x00\x00\xc0\x3d\x92\x75
++ntp:ntp:udp:48:^....\x00\x00..\x00\x00
+ nuance-voice-recognition-client:oracle-tns-listener:tcp::^\x00\x18\x00\x00\x02\x00\x00\x00
+ nuance-manager-protocol::tcp::\x54\x00\x03\x01\x00\x54\x31\x03\x02\x00
+-openvpn::::^\x00\x2a\x40.*\x00\x00\x01\x42
++openvpn::::^\x00\x2a\x40
++openvpn::::^\x00\x0e\x40
+ oracle-tns-listener::tcp::\(ERROR_STACK=\(ERROR=\(CODE=
+ oracle-tns-listener::tcp::\(ADDRESS=\(PROTOCOL=
+ oracle-dbsnmp::tcp::^\x00\x0c\x00\x00\x04\x00\x00\x00\x00
+ oracle-https::tcp::^220- ora
+ oracle-rmi::tcp::\x00\x00\x00\x76\x49\x6e\x76\x61
++oracle-rmi::tcp::^\x4e\x00\x09
++pgp-keyserver-ldap::tcp::\x04\x0b\x50\x47\x50\x45\x72\x72\x6f\x72\x20
+ ph::::598:.*:command not recognized
+ pop2::tcp::^\+ 
+ pop3::tcp::^\+OK
+@@ -327,10 +353,12 @@ realserver::::rmserver
+ remote-apple-events_eppc::tcp::\x79\x08\x00\x00\x00\x01\x00
+ remsh::tcp::rshd: 
+ remsh::tcp::^.remsh
++remote-watch-xperience::tcp::^\x00\x00\x15\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+ rexec::tcp::^\x01\x4c\x6f\x67\x69\x6e
+ rexec::tcp::rexecd: 
+ rlogin::tcp::login: 
+ rlogin::tcp::rlogind: 
++rlogin::tcp::^\x01\x50\x65\x72\x6d\x69\x73\x73\x69\x6f\x6e\x20\x64\x65\x6e\x69\x65\x64\x2e\x0a
+ rpc-nfs::::^\x02\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00
+ rpc::::\x01\x86\xa0
+ rpc::::\x03\x9b\x65\x42\x00\x00\x00\x01
+@@ -344,24 +372,28 @@ sendlog::tcp::SendLog Server
+ shoutcast::::icy 200 ok
+ sieve::tcp::^.?IMPLEMENTATION
+ skype::udp::^\x79\x08\x37\x7f\x00\x00
+-slimserver:http:tcp::^GET %2F 
++slimserver:http-get:tcp::^GET %2F 
+ slp::tcp::^\x02\x05\x00
+ smtp::tcp::^220.*\n250
+-smtp::tcp::^220.*\n500
+ smtp::tcp::^220.*SMTP
+ smtp::tcp::^412 .*smtp
+ smtp::tcp::^554.*mail
++smtp::tcp::^554.*smtp
+ smtp::tcp::^220 .*mail
+ smtp-trendmicro::tcp::^220.*InterScan
+ smtp-qmail::tcp::^214.*qmail
+ smtp-pix::tcp::^220.*\*\*\*\*\*\*\*\*
++smtp-notesdomino::tcp::^220.*Lotus
+ smux::::^\x41\x01\x02\x00
+ snmp-public:snmp-public:udp::\x70\x75\x62\x6c\x69\x63\xa2
+ snmp::tcp:3:\x41\x01\x02
+ socks::::^\x05[\x00-\x08]\x00
++solaris-management-console::tcp::.*Solaris Management
++sophos-av-update::tcp::^IOR:[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
+ sourcegear-sourceoffsite::::Database Aliases:[A-Za-z0-9]
+ spamd::tcp:1:\x32
+ spamassassin::tcp::^SPAMD/
++squid::tcp::.*squid
+ svrloc::tcp::^\x02\x05\x00\x2e\x40\x00
+ ssh::tcp::^SSH-
+ ssh-openssh::tcp::^SSH-.*openssh
+@@ -375,35 +407,45 @@ streaming-server::tcp::^RTSP/1.0 [1-5]
+ sybase::tcp::^\x04\x01\x00
+ syntellect-vista::tcp::^89:[A-Za-z]+.*:\n
+ systat::::^USER   
++systat:::: http://procps.sf.net/faq.html
+ tcpmux::::-service not available
+-teamspeak2::::[ts].error
++teamspeak2::tcp::^\[TS\]
+ teamspeakserver::::^\x5b\x54\x53\x5d\x0d\x0a
+ telnet::tcp::^\xff\xfd
+ telnet::tcp::Telnet is disabled now
+ telnet-aix::tcp::^\xff\xfe
+ telnet-raptor-firewall::tcp::raptor
+ telnet-t-rex-proxy::tcp::^\xff\xfb
++telnet-stonegate-firewall::tcp::^StoneGate firewall 
+ tftp::udp::^\x00[\x03\x05]\x00
+ timbuktu-pro::::^\x00\x25\xd1\x1f
+ time:::4:^\xc2
+ time:::4:^\xc3
+ time:::4:^\xc4
+ time:::4:^\xc5
++time:::4:^\xc6
++time:::4:^\xc7
++time:::4:^\xc8
++time:::4:^\xc9
+ timesync::tcp::TimeSync Server
+ tivoli_tsm-server::tcp::^\x00\x3b\x1e\xa5
++tivoli_tsm-http-server::tcp::.*ADSM_HTTP
++tomcat::tcp::.*Servlet-Engine
+ uucp::::^login: password: 
+ vmware-authd::tcp::^220 VMware Authentication
+ vnc::tcp::^RFB
+ vtun::::vtun server
+-webmin:webmin:tcp::^HTTP/
+-webseal::tcp::\x80\x03\x00\x00
++webmin::tcp::.*MiniServ
++webmin-miniserv::udp::^0\.0\.0\.0:.*:[0-9]
++webseal::tcp::^\x80\x03\x00\x00
+ websm::tcp::Language received from client:.*Setlocale:
+ websphere-javaw::tcp::^\x15\x00\x00\x00\x02\x02\x0a
+ wins::tcp::^\x00\x00\x1e\xff
++wins::tcp::^\x00\x00\x00\x1e\xff\x53\xad\x80
+ x-windows:x-windows:tcp::MIT-MAGIC-COOKIE
+ x-windows:x-windows:tcp::^\x01\x00\x0b\x00\x00
+ zannet::tcp::^ZanNet login:
+ zebra::tcp::this is zebra
++9grid-9p::tcp::^cpu: authenticating: 
+ (response_of_many_applications)::tcp:1:\x01
+ echo:ssl:::^\x80\x80\x01\x03\x01\x00
+-
