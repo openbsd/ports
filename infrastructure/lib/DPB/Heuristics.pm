@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.2 2010/12/06 13:19:44 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.3 2010/12/06 19:35:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -47,12 +47,12 @@ sub set_logger
 
 # we set the "unknown" weight as median if we parsed a file.
 my $default = 1;
-my $has_build_info = 0;
+my $has_build_info;
 
 sub finished_parsing
 {
 	my $self = shift;
-	if ($has_build_info == 1) {
+	if (defined $has_build_info && $has_build_info == 1) {
 		while (my ($k, $v) = each %bad_weight) {
 			$self->set_weight($k, $v);
 		}
@@ -199,7 +199,7 @@ sub compare_weights
 sub new_queue
 {
 	my $self = shift;
-	if ($has_build_info && DPB::Core->has_sf) {
+	if (defined $has_build_info && $has_build_info && DPB::Core->has_sf) {
 		return DPB::Heuristics::Queue::Part->new($self);
 	} else {
 		return DPB::Heuristics::Queue->new($self);
