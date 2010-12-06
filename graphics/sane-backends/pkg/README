@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/06 07:58:40 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2010/12/06 18:51:09 ajacoutot Exp $
 
 Using sane(7) under OpenBSD
 ===========================
@@ -26,6 +26,7 @@ multiple access to one scanner. If using such a backend, you must
 add yourself to the _saned group or you will not be able to scan.
 
 * NETWORK
-If you're planning on using the SANE network daemon (saned), add the
-following line in /etc/services:
+If you're planning on using the SANE network daemon (saned) with
+inetd(8) as opposed to starting it standalone from the provided rc
+script, add the following line in /etc/services:
 sane-port	6566/tcp	saned	# SANE network scanner daemon
