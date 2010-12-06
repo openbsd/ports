@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.68 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/12/06 17:37:59 jasper Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
 COMMENT-gle=		OpenGL Extrusion library support for screensaver-data
 
-V=			5.11
+V=			5.12
 DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
 PKGNAME-data=		xscreensaver-data-${V}
-REVISION-data=		3
 PKGNAME-gle=		xscreensaver-gle-${V}
-REVISION-gle=		1
 
 CATEGORIES=		x11
 
@@ -33,10 +30,11 @@ WANTLIB-main=	${WANTLIB} Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 gio-2.0 gtk-x11-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs xcb xml2 z xcb-render xcb-render-util \
-		glade-2.0
+		pthread-stubs xcb xml2 z xcb-render glade-2.0 \
+		drm xcb-shm
 
-WANTLIB-data=	${WANTLIB} jpeg util gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
+WANTLIB-data=	${WANTLIB} jpeg util gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 \
+		png z
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -67,7 +65,7 @@ CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver" \
 			--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults"
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
 # License issues with graphics/gle necessitate this
 PSEUDO_FLAVORS=		no_gle
