@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/06 16:21:05 jasper Exp $
 
 COMMENT=		Window Maker dock.app clock
 
-VERSION=		1.0.12.2
+VERSION=		1.0.13
 DISTNAME=		wmclock-${VERSION}
-REVISION=		0
 CATEGORIES=		x11 x11/windowmaker
 MASTER_SITES=		${HOMEPAGE}
 
-HOMEPAGE=		http://www.jmknoble.net/WindowMaker/wmclock/
+HOMEPAGE=		http://www.bluestop.org/wmclock/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	simple
 
