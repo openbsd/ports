@@ -1,0 +1,21 @@
+$OpenBSD: patch-t_050_simple_t,v 1.1 2010/12/06 07:59:34 jasper Exp $
+
+Fix for SA42443, "multipart_init()" HTTP Header Injection Vulnerability
+From: https://github.com/AndyA/CGI--Simple/commit/e4942b871a26c1317a175a91ebb7262eea59b380
+
+--- t/050.simple.t.orig	Mon Dec  6 08:55:29 2010
++++ t/050.simple.t	Mon Dec  6 08:55:35 2010
+@@ -945,10 +945,11 @@ $q = new CGI::Simple;
+ $sv = $q->multipart_init();
+ like(
+   $sv,
+-  qr|Content-Type: multipart/x-mixed-replace;boundary="------- =_aaaaaaaaaa0"|,
++  qr|Content-Type: multipart/x-mixed-replace;boundary="------- =_[a-zA-Z0-9]{17}"|,
+   'multipart_init(), 1'
+ );
+-like( $sv, qr/--------- =_aaaaaaaaaa0$CRLF/, 'multipart_init(), 2' );
++like( $sv, qr/--------- =_[a-zA-Z0-9]{17}$CRLF/,
++  'multipart_init(), 2' );
+ $sv = $q->multipart_init( 'this_is_the_boundary' );
+ like( $sv, qr/boundary="this_is_the_boundary"/, 'multipart_init(), 3' );
+ $sv = $q->multipart_init( -boundary => 'this_is_another_boundary' );

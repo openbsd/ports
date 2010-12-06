@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_CGI_Simple_pm,v 1.1 2010/12/06 07:59:34 jasper Exp $
+
+Fix for SA42443, "multipart_init()" HTTP Header Injection Vulnerability
+From: https://github.com/AndyA/CGI--Simple/commit/e4942b871a26c1317a175a91ebb7262eea59b380
+
+--- lib/CGI/Simple.pm.orig	Sun May 31 12:43:05 2009
++++ lib/CGI/Simple.pm	Mon Dec  6 08:56:55 2010
+@@ -1105,7 +1105,14 @@ sub multipart_init {
+   my ( $self, @p ) = @_;
+   use CGI::Simple::Util qw(rearrange);
+   my ( $boundary, @other ) = rearrange( ['BOUNDARY'], @p );
+-  $boundary = $boundary || '------- =_aaaaaaaaaa0';
++  if ( !$boundary ) {
++    $boundary = '------- =_';
++    my @chrs = ( '0' .. '9', 'A' .. 'Z', 'a' .. 'z' );
++    for ( 1 .. 17 ) {
++      $boundary .= $chrs[ rand( scalar @chrs ) ];
++    }
++  }
++
+   my $CRLF = $self->crlf;    # get CRLF sequence
+   my $warning
+    = "WARNING: YOUR BROWSER DOESN'T SUPPORT THIS SERVER-PUSH TECHNOLOGY.";
