@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.1 2010/11/22 15:39:21 ajacoutot Exp $
+$OpenBSD: README-server,v 1.2 2010/12/06 19:06:59 ajacoutot Exp $
 
 Using Zabbix on OpenBSD
 =======================
@@ -46,8 +46,8 @@ instructions below. When this is done you can proceed to configure
 through the web interface at http://<hostname>/zabbix/setup.php.
 (default user is 'Admin' with password 'zabbix')
 
-MySQL
------
+MySQL (InnoDB)
+--------------
 
 MySQL users running with chroot'ed httpd might like to take the
 following steps to place the mysql socket inside the chroot:
@@ -70,8 +70,8 @@ Connect to MySQL, and create a user and database for Zabbix;
 
     $ mysql -u root -p
     mysql> create user zabbix@localhost identified by 'password';
-    mysql> create database zabbix;
-    mysql> grant all on zabbix.* to zabbix@localhost;
+    mysql> create database zabbix character set utf8;
+    mysql> grant all privileges on zabbix.* to zabbix@localhost;
     mysql> quit
 
 Then initialize the database from the files installed in
@@ -81,7 +81,7 @@ ${TRUEPREFIX}/share/examples/zabbix:
     $ mysql -uzabbix -p[password] zabbix < mysql.sql
 The following steps are not required for setting up a Zabbix Proxy.
     $ cd ../data
-    $ mysql -uzabbix -p[password] zabbix < data.sql	     ## N.B. slow!!
+    $ mysql -uzabbix -p[password] zabbix < data.sql
     $ mysql -uzabbix -p[password] zabbix < images_mysql.sql
 
 PostgreSQL
@@ -107,7 +107,9 @@ SQLite3
 -------
 
 The following steps are optional on a Zabbix Proxy, the database will be
-automatically created and initialized if it does not exist.
+automatically created and initialized if it does not exist. Note that
+for obvious performance reasons, it is NOT encouraged to use the SQLite
+backend for a server.
 
     $ cd ${TRUEPREFIX}/share/zabbix/schema
     $ cat sqlite.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
