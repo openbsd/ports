@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.9 2010/09/03 15:49:45 ajacoutot Exp $
---- configure.ac.orig	Thu Sep  2 23:30:40 2010
-+++ configure.ac	Fri Sep  3 13:09:20 2010
+$OpenBSD: patch-configure_ac,v 1.10 2010/12/06 19:15:55 ajacoutot Exp $
+--- configure.ac.orig	Thu Sep  2 17:30:40 2010
++++ configure.ac	Sun Dec  5 22:54:01 2010
 @@ -733,7 +733,7 @@ return 0;
  dnl *** resindvd ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_RESINDVD, true)
@@ -60,3 +60,33 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/09/03 15:49:45 ajacoutot Exp $
              AC_SUBST(XVID_LIBS)
              HAVE_XVID=yes
            ], AC_MSG_RESULT(no) )
+@@ -1503,6 +1503,8 @@ AG_GST_CHECK_FEATURE(ZBAR, [ZBar barcode detector], zb
+ 
+ dnl *** vp8 ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_VP8, vp8)
++OLD_LIBS="$LIBS"
++LIBS="$LIBS -lm -pthread"
+ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+   VPX_LIBS=""
+   AG_GST_CHECK_LIBHEADER(VPX, vpx,
+@@ -1511,8 +1513,6 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+     HAVE_VP8_ENCODER=no
+     HAVE_VP8_DECODER=no
+ 
+-    OLD_LIBS="$LIBS"
+-    LIBS="$LIBS -lm -lpthread"
+     AC_CHECK_LIB(vpx, vpx_codec_vp8_cx_algo, [
+       HAVE_VP8=yes
+       AC_DEFINE(HAVE_VP8_ENCODER, 1, [Defined if the VP8 encoder is available])
+@@ -1523,10 +1523,10 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+       AC_DEFINE(HAVE_VP8_DECODER, 1, [Defined if the VP8 decoder is available])
+       VPX_LIBS="-lvpx"
+     ])
+-    LIBS="$OLD_LIBS"
+   ])
+   AC_SUBST(VPX_LIBS)
+ ])
++LIBS="$LIBS"
+ 
+ dnl *** rtmp ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_RTMP, true)
