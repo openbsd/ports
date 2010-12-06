@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.4 2010/10/27 22:58:02 espie Exp $
+# $OpenBSD: Locks.pm,v 1.5 2010/12/06 13:20:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -55,6 +55,9 @@ sub dolock
 	my ($self, $name, $v) = @_;
 	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
 		print $fh "fullpkgpath=", $v->fullpkgpath, "\n";
+		if (defined $v->{parent}) {
+			print $fh "parent=", $v->{parent}->fullpkgpath, "\n";
+		}
 		return $fh;
 	} else {
 		return 0;

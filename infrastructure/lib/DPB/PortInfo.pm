@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.3 2010/11/14 07:44:53 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.4 2010/12/06 13:20:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,9 +20,9 @@ package AddInfo;
 
 sub add
 {
-	my ($class, $var, $o, $value) = @_;
+	my ($class, $var, $o, $value, $parent) = @_;
 	return if $value =~ m/^[\s\-]*$/;
-	$o->{$var} = $class->new($value, $o);
+	$o->{$var} = $class->new($value, $o, $parent);
 }
 
 sub new
@@ -77,7 +77,7 @@ package AddDepends;
 our @ISA = qw(AddList);
 sub new
 {
-	my ($class, $value, $self) = @_;
+	my ($class, $value, $self, $parent) = @_;
 	my $r = {};
 	for my $_ ($class->make_list($value)) {
 		my $copy = $_;
@@ -92,6 +92,7 @@ sub new
 				die "Error: invalid *DEPENDS $copy";
 			} else {
 				my $info = DPB::PkgPath->new($_);
+				$info->{parent} //= $parent;
 				$r->{$info} = $info;
 			}
 		}
@@ -115,9 +116,10 @@ our @ISA = qw(AddDepends);
 
 sub add
 {
-	my ($class, $key, $self, $value) = @_;
+	my ($class, $key, $self, $value, $parent) = @_;
 	$self->{$key} //= bless {}, $class;
 	my $info = DPB::PkgPath->new($value);
+	$info->{parent} //= $parent;
 	$self->{$key}{$info} = $info;
 	return $self;
 }
@@ -152,8 +154,8 @@ sub new
 
 sub add
 {
-	my ($self, $var, $value) = @_;
-	$adder{$var}->add($var, $self, $value);
+	my ($self, $var, $value, $parent) = @_;
+	$adder{$var}->add($var, $self, $value, $parent);
 }
 
 sub dump
