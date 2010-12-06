@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2010/12/06 21:23:19 espie Exp $
+--- src/Makefile.in.orig	Sat Dec  4 15:06:49 2010
++++ src/Makefile.in	Sat Dec  4 15:08:50 2010
+@@ -543,18 +543,6 @@ EXTRA_DIST = $(real_lisp_sources) maxima.asd maxima.sy
+ all: all-am
+ 
+ .SUFFIXES:
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/common.mk $(srcdir)/clisp-depends.mk $(srcdir)/cmucl-depends.mk $(srcdir)/scl-depends.mk $(srcdir)/acl-depends.mk $(srcdir)/sbcl-depends.mk $(srcdir)/gcl-depends.mk $(srcdir)/openmcl-depends.mk $(srcdir)/ecl-depends.mk $(am__configure_deps)
+-	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh \
+-		&& exit 0; \
+-	      exit 1;; \
+-	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  src/Makefile'; \
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  src/Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
