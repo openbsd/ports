@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.14 2010/05/26 08:47:44 kili Exp $
+$OpenBSD: patch-Makefile_in,v 1.15 2010/12/06 19:41:54 ajacoutot Exp $
 --- Makefile.in.orig	Mon May 17 13:51:23 2010
 +++ Makefile.in	Tue May 25 20:13:46 2010
 @@ -28,7 +28,7 @@ SHLD=@SHLD@
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.14 2010/05/26 08:47:44 kili Exp $
 -		echo "The following command failed:" 1>&2;\
 -		echo "$(subst ",\",$(COMPILE_CC))" 1>&2;\
 -		$(COMPILE_CC) >/dev/null 2>&1
-+	$(COMPILE) $(CFLAGS_$@)
++	$(COMPILE)
  @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
  
  PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
