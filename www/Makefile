@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.477 2010/11/14 19:59:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.478 2010/12/06 22:36:30 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -17,6 +17,7 @@
      SUBDIR += bozohttpd
      SUBDIR += bricolage
      SUBDIR += calamaris
+     SUBDIR += canto
      SUBDIR += cgicc
      SUBDIR += cgiparse
      SUBDIR += cherokee
