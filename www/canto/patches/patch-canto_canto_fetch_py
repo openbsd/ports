@@ -1,0 +1,23 @@
+$OpenBSD: patch-canto_canto_fetch_py,v 1.1.1.1 2010/12/06 22:33:18 dcoppa Exp $
+--- canto/canto_fetch.py.orig	Sun Dec  5 22:19:48 2010
++++ canto/canto_fetch.py	Sun Dec  5 22:21:46 2010
+@@ -21,7 +21,7 @@ import feedparser_builtin
+ 
+ feedparser = feedparser_builtin
+ 
+-from const import VERSION_TUPLE, GIT_SHA
++from const import VERSION_TUPLE
+ from cfg.base import get_cfg
+ import utility
+ import args
+@@ -53,8 +53,8 @@ def main(enc):
+         traceback.print_exc()
+         sys.exit(-1)
+ 
+-    cfg.log("Canto-fetch v %s (%s)" % \
+-            ("%d.%d.%d" % VERSION_TUPLE, GIT_SHA), "w")
++    cfg.log("Canto-fetch v %s" % \
++            ("%d.%d.%d" % VERSION_TUPLE), "w")
+     cfg.log("Time: %s" % time.asctime())
+     cfg.log("Config parsed successfully.")
+ 

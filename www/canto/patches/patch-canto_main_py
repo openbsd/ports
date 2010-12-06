@@ -1,0 +1,14 @@
+$OpenBSD: patch-canto_main_py,v 1.1.1.1 2010/12/06 22:33:18 dcoppa Exp $
+--- canto/main.py.orig	Sun Dec  5 22:20:04 2010
++++ canto/main.py	Sun Dec  5 22:22:24 2010
+@@ -82,8 +82,8 @@ class Main():
+             upgrade_help()
+             sys.exit(-1)
+ 
+-        self.cfg.log("Canto v %s (%s)" % \
+-                ("%d.%d.%d" % VERSION_TUPLE, GIT_SHA), "w")
++        self.cfg.log("Canto v %s" % \
++                ("%d.%d.%d" % VERSION_TUPLE), "w")
+         self.cfg.log("Time: %s" % time.asctime())
+         self.cfg.log("Config parsed successfully.")
+ 

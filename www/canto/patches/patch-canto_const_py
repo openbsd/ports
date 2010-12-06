@@ -1,0 +1,8 @@
+$OpenBSD: patch-canto_const_py,v 1.1.1.1 2010/12/06 22:33:18 dcoppa Exp $
+--- canto/const.py.orig	Sun Dec  5 22:19:57 2010
++++ canto/const.py	Sun Dec  5 22:22:06 2010
+@@ -43,4 +43,3 @@ PROC_SYNC = 7
+ PROC_DEQD = 8
+ 
+ VERSION_TUPLE = SET_VERSION_TUPLE
+-GIT_SHA = SET_GIT_SHA

@@ -1,0 +1,40 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2010/12/06 22:33:18 dcoppa Exp $
+--- setup.py.orig	Tue Jul 27 19:47:06 2010
++++ setup.py	Sun Dec  5 23:47:50 2010
+@@ -6,8 +6,6 @@ import distutils.command.install_data
+ import uninstall
+ version = ['0','7','10']
+ man_date = "27 July 2010"
+-git_commit = commands.getoutput("git show --pretty=oneline\
+-        --abbrev-commit").split()[0]
+ 
+ # TODO: replace with build_manpages target (@james will do this shortly if approved)
+ class Canto_install_data(distutils.command.install_data.install_data):
+@@ -16,13 +14,12 @@ class Canto_install_data(distutils.command.install_dat
+ 
+         install_cmd = self.get_finalized_command('install')
+         libdir = install_cmd.install_lib
+-        mandir = install_cmd.install_data + "/share/man/man1/"
++        mandir = install_cmd.install_data + "/man/man1/"
+ 
+         for source in ["/canto/const.py"]:
+             with open(libdir + source, "r+") as f:
+                 d = f.read().replace("SET_VERSION_TUPLE","(" +\
+ 					",".join(version) + ")")
+-                d = d.replace("SET_GIT_SHA", "\"" + git_commit + "\"")
+                 f.truncate(0)
+                 f.seek(0)
+                 f.write(d)
+@@ -47,10 +44,8 @@ distutils.core.setup(name='Canto',
+         scripts=['bin/canto','bin/canto-fetch', 'bin/canto-inspect'],
+         packages=['canto', 'canto.cfg'],
+         ext_modules=[distutils.core.Extension('canto.widecurse',\
+-                sources = ['canto/widecurse.c'], libraries = ['ncursesw'],
+-                library_dirs=["/usr/local/lib", "/opt/local/lib"],
+-                include_dirs=["/usr/local/include", "/opt/local/include"])],
+-        data_files = [("share/man/man1/",\
++                sources = ['canto/widecurse.c'], libraries = ['ncursesw'])],
++        data_files = [("man/man1/",\
+                 ["man/canto.1", "man/canto-fetch.1", "man/canto-inspect.1"])],
+         cmdclass={
+ 		'install_data': Canto_install_data,

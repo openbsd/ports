@@ -1,0 +1,12 @@
+$OpenBSD: patch-canto_args_py,v 1.1.1.1 2010/12/06 22:33:18 dcoppa Exp $
+--- canto/args.py.orig	Sun Dec  5 22:19:39 2010
++++ canto/args.py	Sun Dec  5 22:20:40 2010
+@@ -118,7 +118,7 @@ def parse_common_args(enc, extra_short, extra_long, ia
+                 print_fetch_usage()
+             sys.exit(0)
+         elif opt in ["-v","--version"] :
+-            print "Canto v %s (%s)" % ("%d.%d.%d" % VERSION_TUPLE, GIT_SHA)
++            print "Canto v %s" % ("%d.%d.%d" % VERSION_TUPLE)
+             sys.exit(0)
+ 
+     return (conf_dir, log_file, conf_file, feed_dir, script_dir, optlist)
