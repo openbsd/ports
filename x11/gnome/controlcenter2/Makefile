@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2010/12/07 21:53:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.32.1
+
+REVISION=		0
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -54,6 +56,9 @@ RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
 			x11/gnome/settings-daemon \
 			x11/gnome/terminal
 
+# XXX see patch-capplets_default-applications_gnome-at-commandline_in_in
+RUN_DEPENDS+=		shells/bash
+
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	control-center2
@@ -69,6 +74,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2 \
 		pkgconfigdir=${PREFIX}/lib/pkgconfig/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/capplets/common/gnome-theme-info.c
+	${SUBST_CMD} ${WRKSRC}/capplets/common/gnome-theme-info.c \
+		${WRKSRC}/capplets/default-applications/gnome-at-commandline.in.in
 
 .include <bsd.port.mk>

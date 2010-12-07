@@ -1,0 +1,24 @@
+$OpenBSD: patch-capplets_default-applications_gnome-at-commandline_in_in,v 1.1 2010/12/07 21:53:55 ajacoutot Exp $
+
+XXX bash
+getopts: arguments changed since last call
+
+--- capplets/default-applications/gnome-at-commandline.in.in.orig	Tue Dec  7 20:54:23 2010
++++ capplets/default-applications/gnome-at-commandline.in.in	Tue Dec  7 20:55:15 2010
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!${LOCALBASE}/bin/bash
+ #
+ #  Copyright 2006 IBM Corp.
+ #
+@@ -20,8 +20,8 @@
+ #  NOTE: This script is intended to be run from the command line,
+ #  GNOME menu, or from the desktop autostart.
+ #
+-#  /usr/bin/gnome-at-visual
+-#  /usr/bin/gnome-at-mobility
++#  ${TRUEPREFIX}/bin/gnome-at-visual
++#  ${TRUEPREFIX}/bin/gnome-at-mobility
+ #
+ #  If the "-s" flag is used then it is assumed to have been invoked
+ #  from /usr/share/gnome/autostart/, and the first AT flagged
