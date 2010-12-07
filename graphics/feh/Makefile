@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/07 08:42:35 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-1.10
+DISTNAME=	feh-1.10.1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -33,7 +33,7 @@ MAKE_FLAGS=	LDFLAGS="${LDFLAGS}" man_dir="${DESTDIR}${PREFIX}/man"
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
