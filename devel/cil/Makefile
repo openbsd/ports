@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/12 17:17:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/07 14:57:19 dcoppa Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
@@ -6,12 +6,10 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc
 COMMENT=	framework for analysis and transformation of C
 
 DISTNAME=	cil-1.3.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel lang
 HOMEPAGE=	http://www.eecs.berkeley.edu/~necula/cil/
 MASTER_SITES=	${HOMEPAGE}/distrib/
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes

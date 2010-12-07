@@ -1,0 +1,15 @@
+$OpenBSD: patch-update_mli,v 1.1 2010/12/07 14:57:19 dcoppa Exp $
+
+Make Unison compile with Ocaml 3.12
+
+--- update.mli.orig	Wed Nov 10 15:06:41 2010
++++ update.mli	Wed Nov 10 15:07:12 2010
+@@ -1,7 +1,7 @@
+ (* Unison file synchronizer: src/update.mli *)
+ (* Copyright 1999-2009, Benjamin C. Pierce (see COPYING for details) *)
+ 
+-module NameMap : Map.S with type key = Name.t
++module NameMap : MyMap.S with type key = Name.t
+ 
+ type archive =
+     ArchiveDir of Props.t * archive NameMap.t
