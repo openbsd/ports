@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: mimedefang_multiplexor.rc,v 1.1 2010/12/07 02:56:19 okan Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon=${TRUEPREFIX}/bin/mimedefang-multiplexor
+daemon_flags="-U _mdefang -l -p /var/run/mdefang/multiplexor.pid -s /var/run/mdefang/multiplexor.socket"
+
+rc_pre() {
+	install -d -o _mdefang -g _mdefang /var/run/mdefang
+}
+
+rc_cmd $1
