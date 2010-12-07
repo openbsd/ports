@@ -1,21 +1,36 @@
-$OpenBSD: patch-configure,v 1.12 2010/06/04 13:58:18 avsm Exp $
---- configure.orig	Tue Nov 17 14:28:44 2009
-+++ configure	Wed Jun  2 20:23:28 2010
-@@ -648,9 +648,12 @@ case "$host" in
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+$OpenBSD: patch-configure,v 1.13 2010/12/07 15:01:35 dcoppa Exp $
+--- configure.orig	Wed Jul 28 15:18:22 2010
++++ configure	Thu Nov 18 10:07:33 2010
+@@ -629,6 +629,8 @@ if test $withsharedlibs = "yes"; then
+     i686-*-kfreebsd*)             natdynlink=true;;
+     x86_64-*-kfreebsd*)           natdynlink=true;;
+     i386-*-gnu0.3)                natdynlink=true;;
++    i[3456]86-*-openbsd*)         natdynlink=true;;
++    amd64-*-openbsd*)             natdynlink=true;;
+   esac
+ fi
+ 
+@@ -674,6 +676,7 @@ case "$host" in
+                                 fi;;
+   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
+   mips-*-irix6*)                arch=mips; system=irix;;
++  mips*-*-openbsd*)             arch=mips; system=openbsd;;
+   hppa1.1-*-hpux*)              arch=hppa; system=hpux;;
+   hppa2.0*-*-hpux*)             arch=hppa; system=hpux;;
+   hppa*-*-linux*)               arch=hppa; system=linux;;
+@@ -683,8 +686,11 @@ case "$host" in
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; system=rhapsody
--                                if $arch64; then model=ppc64; else model=ppc; fi;;
-+                                if $arch64; then model=ppc64; else
-+  model=ppc; fi;;
+                                 if $arch64; then model=ppc64; else model=ppc; fi;;
 +  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
    arm*-*-linux*)                arch=arm; system=linux;;
    arm*-*-gnu*)                  arch=arm; system=gnu;;
++  arm*-*-openbsd*)              arch=arm; system=openbsd;;
 +  zaurus*-*-openbsd*)           arch=arm; system=openbsd;;
    ia64-*-linux*)                arch=ia64; system=linux;;
    ia64-*-gnu*)                  arch=ia64; system=gnu;;
    ia64-*-freebsd*)              arch=ia64; system=freebsd;;
-@@ -660,6 +663,7 @@ case "$host" in
+@@ -694,6 +700,7 @@ case "$host" in
    x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
    x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
    x86_64-*-darwin9.5)           arch=amd64; system=macosx;;
@@ -23,7 +38,7 @@ $OpenBSD: patch-configure,v 1.12 2010/06/04 13:58:18 avsm Exp $
  esac
  
  # Some platforms exist both in 32-bit and 64-bit variants, not distinguished
-@@ -750,11 +754,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
+@@ -784,11 +791,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
@@ -39,3 +54,18 @@ $OpenBSD: patch-configure,v 1.12 2010/06/04 13:58:18 avsm Exp $
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
+@@ -1570,11 +1581,11 @@ fi
+ 
+ # Look for BFD library
+ 
+-if ./hasgot -i bfd.h && \
+-   ./hasgot -lbfd -ldl -liberty -lz bfd_openr; then
++if ./hasgot -I${OPENBSD_LOCALBASE}/include -i bfd.h && \
++   ./hasgot -L${OPENBSD_LOCALBASE}/lib -lbfd -liberty -lz bfd_openr; then
+   echo "BFD library found."
+   echo "#define HAS_LIBBFD" >> s.h
+-  echo "LIBBFD_LINK=-lbfd -ldl -liberty -lz" >> Makefile
++  echo "LIBBFD_LINK=-I${OPENBSD_LOCALBASE}/include -L${OPENBSD_LOCALBASE}/lib -lbfd -liberty -lz" >> Makefile
+ else
+   echo "BFD library not found, 'objinfo' will be unable to display info on .cmxs files"
+   echo "LIBBFD_LINK=" >> Makefile

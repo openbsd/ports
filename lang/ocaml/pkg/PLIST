@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/03/11 21:19:49 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/12/07 15:01:35 dcoppa Exp $
 %%SHARED%%
 bin/camlp4
 bin/camlp4boot
@@ -23,12 +23,12 @@ bin/ocamldoc
 bin/ocamllex
 bin/ocamlmklib
 bin/ocamlmktop
+bin/ocamlobjinfo
 bin/ocamlprof
 @bin bin/ocamlrun
 @bin bin/ocamlyacc
 lib/ocaml/
 lib/ocaml/Makefile.config
-lib/ocaml/addlabels
 lib/ocaml/arg.cmi
 lib/ocaml/arg.ml
 lib/ocaml/arg.mli
@@ -65,6 +65,8 @@ lib/ocaml/caml/misc.h
 lib/ocaml/caml/mlvalues.h
 lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
+lib/ocaml/caml/socketaddr.h
+lib/ocaml/caml/threads.h
 lib/ocaml/caml/unixsupport.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
@@ -369,7 +371,6 @@ lib/ocaml/labltk/labltk.cma
 lib/ocaml/labltk/labltk.cmi
 lib/ocaml/labltk/labltktop
 lib/ocaml/labltk/liblabltk.a
-lib/ocaml/labltk/libtkanim.a
 lib/ocaml/labltk/listbox.cmi
 lib/ocaml/labltk/listbox.mli
 lib/ocaml/labltk/menu.cmi
@@ -412,9 +413,6 @@ lib/ocaml/labltk/textvariable.mli
 lib/ocaml/labltk/timer.cmi
 lib/ocaml/labltk/timer.mli
 lib/ocaml/labltk/tk.cmi
-lib/ocaml/labltk/tkanim.cma
-lib/ocaml/labltk/tkanim.cmi
-lib/ocaml/labltk/tkanim.mli
 lib/ocaml/labltk/tkcompiler
 lib/ocaml/labltk/tkthread.cmi
 lib/ocaml/labltk/tkthread.cmo
@@ -440,10 +438,10 @@ lib/ocaml/lexing.ml
 lib/ocaml/lexing.mli
 lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
+lib/ocaml/libcamlstr.a
 lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
-lib/ocaml/libstr.a
 lib/ocaml/libthreads.a
 lib/ocaml/libunix.a
 lib/ocaml/list.cmi
@@ -473,6 +471,7 @@ lib/ocaml/nums.cma
 lib/ocaml/obj.cmi
 lib/ocaml/obj.ml
 lib/ocaml/obj.mli
+@bin lib/ocaml/objinfo_helper
 lib/ocaml/ocamlbuild/
 lib/ocaml/ocamlbuild/ocamlbuild.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_executor.cmi
@@ -563,7 +562,6 @@ lib/ocaml/ratio.mli
 lib/ocaml/scanf.cmi
 lib/ocaml/scanf.ml
 lib/ocaml/scanf.mli
-lib/ocaml/scrapelabels
 lib/ocaml/set.cmi
 lib/ocaml/set.ml
 lib/ocaml/set.mli
@@ -636,12 +634,15 @@ lib/ocaml/weak.mli
 @man man/man1/ocaml.1
 @man man/man1/ocamlbuild.1
 @man man/man1/ocamlc.1
+@man man/man1/ocamlc.opt.1
 @man man/man1/ocamlcp.1
 @man man/man1/ocamldebug.1
 @man man/man1/ocamldep.1
 @man man/man1/ocamldoc.1
 @man man/man1/ocamllex.1
 @man man/man1/ocamlmktop.1
+@man man/man1/ocamlopt.1
+@man man/man1/ocamlopt.opt.1
 @man man/man1/ocamlprof.1
 @man man/man1/ocamlrun.1
 @man man/man1/ocamlyacc.1
@@ -865,10 +866,8 @@ share/doc/ocaml/html/manual004.html
 share/doc/ocaml/html/manual005.html
 share/doc/ocaml/html/manual006.html
 share/doc/ocaml/html/manual007.html
-share/doc/ocaml/html/manual008.html
 share/doc/ocaml/html/manual010.html
 share/doc/ocaml/html/manual011.html
-share/doc/ocaml/html/manual012.html
 share/doc/ocaml/html/manual013.html
 share/doc/ocaml/html/manual016.html
 share/doc/ocaml/html/manual017.html
@@ -902,5 +901,5 @@ share/doc/ocaml/html/manual044.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/patterns.html
 share/doc/ocaml/html/previous_motif.gif
-%%native%%
 share/doc/ocaml/html/types.html
+%%native%%

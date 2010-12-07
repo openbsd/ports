@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/06 22:06:59 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/12/07 15:01:35 dcoppa Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
@@ -7,8 +7,8 @@ NOT_FOR_ARCHS=	hppa
 
 COMMENT=	ML language based on complete class-based objective system
 
-BASENAME=	ocaml-3.11
-DISTNAME=	${BASENAME}.2
+BASENAME=	ocaml-3.12
+DISTNAME=	${BASENAME}.0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman.html.tar.gz
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c curses m pthread
+WANTLIB=		X11 c curses iberty m pthread z
 
 MODULES+= lang/tcl x11/tk
 
@@ -33,14 +33,15 @@ CONFIGURE_ARGS+=-tklibs -L${LOCALBASE}/lib
 CONFIGURE_ARGS+=-prefix ${PREFIX} 
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
+CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
 
 # ocaml's configure script is too smart for its own good
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
-BUILD_DEPENDS +=${MODTK_BUILD_DEPENDS}
+BUILD_DEPENDS +=${MODTK_BUILD_DEPENDS} \
+		devel/libbfd
 RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
 WANTLIB +=	${MODTK_WANTLIB}
@@ -50,12 +51,18 @@ WANTLIB +=	${MODTK_WANTLIB}
 	${MACHINE_ARCH} == "powerpc"
 ALL_TARGET=	world bootstrap opt opt.opt
 PKG_ARGS+=-Dnative=1
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=-Ddynlink=1
+.else
+PKG_ARGS+=-Ddynlink=0
+.endif
 .else
 ALL_TARGET=	world bootstrap
 PKG_ARGS+=-Dnative=0
 .endif
 
-NO_REGRESS=	Yes
+# XXX regress tests only work on archs with native-code compiler
+REGRESS_DEPENDS+=	${BUILD_PKGPATH}
 
 post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
@@ -71,5 +78,10 @@ post-install:
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'
+
+# XXX one test in the suite (testsocket.ml) requires an active
+# connection to internet
+do-regress:
+	@cd ${WRKSRC}/testsuite && ulimit -Sn 256 && ${MAKE_PROGRAM} all
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2010/12/07 15:01:35 dcoppa Exp $
+@bin lib/ocaml/bigarray.cmxs
+@bin lib/ocaml/dbm.cmxs
+lib/ocaml/dynlink.a
+lib/ocaml/dynlink.cmx
+lib/ocaml/dynlink.cmxa
+@bin lib/ocaml/graphics.cmxs
+@bin lib/ocaml/nums.cmxs
+@bin lib/ocaml/str.cmxs
+@bin lib/ocaml/unix.cmxs

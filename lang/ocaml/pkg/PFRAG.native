@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.10 2010/06/04 13:58:18 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.11 2010/12/07 15:01:35 dcoppa Exp $
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt
 @bin bin/camlp4oof.opt
@@ -24,7 +24,6 @@ lib/ocaml/big_int.cmx
 lib/ocaml/bigarray.a
 lib/ocaml/bigarray.cmx
 lib/ocaml/bigarray.cmxa
-lib/ocaml/bigarray.cmxs
 lib/ocaml/buffer.cmx
 lib/ocaml/buffer.p.cmx
 lib/ocaml/callback.cmx
@@ -110,12 +109,8 @@ lib/ocaml/complex.p.cmx
 lib/ocaml/dbm.a
 lib/ocaml/dbm.cmx
 lib/ocaml/dbm.cmxa
-lib/ocaml/dbm.cmxs
 lib/ocaml/digest.cmx
 lib/ocaml/digest.p.cmx
-lib/ocaml/dynlink.a
-lib/ocaml/dynlink.cmx
-lib/ocaml/dynlink.cmxa
 lib/ocaml/filename.cmx
 lib/ocaml/filename.p.cmx
 lib/ocaml/format.cmx
@@ -127,7 +122,6 @@ lib/ocaml/genlex.p.cmx
 lib/ocaml/graphics.a
 lib/ocaml/graphics.cmx
 lib/ocaml/graphics.cmxa
-lib/ocaml/graphics.cmxs
 lib/ocaml/graphicsX11.cmx
 lib/ocaml/hashtbl.cmx
 lib/ocaml/hashtbl.p.cmx
@@ -225,8 +219,6 @@ lib/ocaml/labltk/text.cmx
 lib/ocaml/labltk/textvariable.cmx
 lib/ocaml/labltk/timer.cmx
 lib/ocaml/labltk/tk.cmx
-lib/ocaml/labltk/tkanim.a
-lib/ocaml/labltk/tkanim.cmxa
 lib/ocaml/labltk/tkthread.cmx
 lib/ocaml/labltk/tkthread.o
 lib/ocaml/labltk/tkvars.cmx
@@ -258,7 +250,6 @@ lib/ocaml/nativeint.p.cmx
 lib/ocaml/num.cmx
 lib/ocaml/nums.a
 lib/ocaml/nums.cmxa
-lib/ocaml/nums.cmxs
 lib/ocaml/obj.cmx
 lib/ocaml/obj.p.cmx
 lib/ocaml/ocamlbuild/ocamlbuild.cmx
@@ -307,7 +298,6 @@ lib/ocaml/stdlib.p.cmxa
 lib/ocaml/str.a
 lib/ocaml/str.cmx
 lib/ocaml/str.cmxa
-lib/ocaml/str.cmxs
 lib/ocaml/stream.cmx
 lib/ocaml/stream.p.cmx
 lib/ocaml/string.cmx
@@ -326,13 +316,9 @@ lib/ocaml/threads/threads.cmxa
 lib/ocaml/unix.a
 lib/ocaml/unix.cmx
 lib/ocaml/unix.cmxa
-lib/ocaml/unix.cmxs
 lib/ocaml/unixLabels.cmx
 lib/ocaml/weak.cmx
 lib/ocaml/weak.p.cmx
-@man man/man1/ocamlc.opt.1
-@man man/man1/ocamlopt.1
-@man man/man1/ocamlopt.opt.1
 @man man/man3/Arg.3o
 @man man/man3/Array.3o
 @man man/man3/ArrayLabels.3o
@@ -415,3 +401,4 @@ lib/ocaml/weak.p.cmx
 @man man/man3/Weak.3o
 @man man/man3/Weak.Make.3o
 @man man/man3/Weak.S.3o
+%%dynlink%%

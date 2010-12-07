@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.14 2010/11/26 17:27:38 espie Exp $
+# $OpenBSD: ocaml.port.mk,v 1.15 2010/12/07 15:01:35 dcoppa Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -9,7 +9,7 @@
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
 
-OCAML_VERSION=3.11.2
+OCAML_VERSION=3.12.0
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64" || \
@@ -18,6 +18,20 @@ MODOCAML_NATIVE=Yes
 
 # include nativecode base files
 PKG_ARGS+=-Dnative=1
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+MODOCAML_NATDYNLINK=Yes
+
+# include native dynlink base files
+PKG_ARGS+=-Ddynlink=1
+
+.else
+
+MODOCAML_NATDYNLINK=No
+
+# remove native dynlink base file entry from PLIST
+PKG_ARGS+=-Ddynlink=0
+.endif
 
 .else
 
