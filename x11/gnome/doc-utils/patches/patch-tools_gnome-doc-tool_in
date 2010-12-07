@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_gnome-doc-tool_in,v 1.1 2010/12/07 06:31:24 ajacoutot Exp $
+--- tools/gnome-doc-tool.in.orig       Mon Dec  6 17:31:12 2010
++++ tools/gnome-doc-tool.in    Mon Dec  6 17:31:28 2010
+@@ -548,7 +548,7 @@ create_css() {
+       -lversion
+       -lhelp
+     ';
+-    options=`getopt -qn$progname $longopts -- o:vVh "$@"`
++    options=`gnugetopt -qn$progname $longopts -- o:vVh "$@"`
+     if [ "$?" != "0" ]; then print_help_css 1>&2; exit 1; fi
+     eval set -- "$options";
+     while [ "$1" != "--" ]; do
+@@ -604,7 +604,7 @@ convert_2html() {
+       -lversion
+       -lhelp
+     ';
+-    options=`getopt -qn$progname $longopts -- c:d:e:o:x:nvVh "$@"`
++    options=`gnugetopt -qn$progname $longopts -- c:d:e:o:x:nvVh "$@"`
+     if [ "$?" != "0" ]; then print_help_html $doc_format 1>&2; exit 1; fi
+     eval set -- "$options";
+     while [ "$1" != "--" ]; do

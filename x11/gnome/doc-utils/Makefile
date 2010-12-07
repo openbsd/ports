@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/12/07 06:31:24 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.20.2
+
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -21,6 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		sysutils/ggrep \
 		textproc/rarian
 RUN_DEPENDS=	devel/gettext \
+		misc/gnugetopt \
 		textproc/libxml,-python \
 		textproc/libxslt,-python \
 		textproc/rarian
