@@ -59,7 +59,6 @@ MD5 (libreoffice/libreoffice-sdk-3.3.0.1.tar.bz2) = S7AWMYAymUyojlBm2UK5ZQ==
 MD5 (libreoffice/libreoffice-testing-3.3.0.1.tar.bz2) = IRG+Micp4UpkRzg5I9FnGg==
 MD5 (libreoffice/libreoffice-ure-3.3.0.1.tar.bz2) = jCWSTl6a+8IcQzOrlOhUsQ==
 MD5 (libreoffice/libreoffice-writer-3.3.0.1.tar.bz2) = zMQvxoddgXKX2D5Wr3S74g==
-MD5 (libreoffice/nbcat-0.1.tar.gz) = s7omtB1poGIjFr2rBrus5w==
 RMD160 (libreoffice/067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz) = rvqAR274NAvoREC2H3OPQy2lHJI=
 RMD160 (libreoffice/128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz) = IFi6tmQkYP2u4TmT3QXaKapRbvo=
 RMD160 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = iyXaAvvCcCpDzIiwr46utBwPdaA=
@@ -121,7 +120,6 @@ RMD160 (libreoffice/libreoffice-sdk-3.3.0.1.tar.bz2) = 0sZEon4gYHFMLqqShdMn5rxFp
 RMD160 (libreoffice/libreoffice-testing-3.3.0.1.tar.bz2) = 0jparD3oSx6rHd9CfGUBF1CQBIw=
 RMD160 (libreoffice/libreoffice-ure-3.3.0.1.tar.bz2) = 0gITVg8EQA6LQIcMSnA31L2wOjk=
 RMD160 (libreoffice/libreoffice-writer-3.3.0.1.tar.bz2) = mi83dMrXxTIvRvd6FKgS1voiqpU=
-RMD160 (libreoffice/nbcat-0.1.tar.gz) = gAWngyXsdW/H71IKrhUZ1hAOw4M=
 SHA1 (libreoffice/067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz) = Al1dDVZqI92zU0lcEWEWwQiLouk=
 SHA1 (libreoffice/128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz) = 6Y1xSdaiD9u1jMC3nLXj+VrjBOQ=
 SHA1 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = cWiw9AqlxyJniZYBwRbSNI0vVuw=
@@ -183,7 +181,6 @@ SHA1 (libreoffice/libreoffice-sdk-3.3.0.1.tar.bz2) = ElpOl/Dcni3vtm7ok2tlzmkUh4M
 SHA1 (libreoffice/libreoffice-testing-3.3.0.1.tar.bz2) = h9KlEiqrzXUch4sjuPVTmBFrl8c=
 SHA1 (libreoffice/libreoffice-ure-3.3.0.1.tar.bz2) = t5HOAarhEx5sY+rv60JRmm/B48U=
 SHA1 (libreoffice/libreoffice-writer-3.3.0.1.tar.bz2) = FD+a0c1DUQdkUxp/sWCXOFisU6U=
-SHA1 (libreoffice/nbcat-0.1.tar.gz) = kkR/zrOcOLpgkwq6FOgVrai2Ctw=
 SHA256 (libreoffice/067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz) = nSnLpDEoEqJrFO/9os9WKE5wImzczJCoOEQpfjt0mO4=
 SHA256 (libreoffice/128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz) = Vne63/xIqNMy40XqT+Il41d/U/yV3u7IMGAAslaCllU=
 SHA256 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = 0wsT9LouO2otTwIMDe4Kn7n8b7zC1WHza3jaS/OAI3A=
@@ -245,7 +242,6 @@ SHA256 (libreoffice/libreoffice-sdk-3.3.0.1.tar.bz2) = ysRIRG6dWdtqEvFCKYVkSPOdl
 SHA256 (libreoffice/libreoffice-testing-3.3.0.1.tar.bz2) = 8dnMdF3Rq/ljp4cdITwJHkv+jkwTtPdWLmfHe/tbsD4=
 SHA256 (libreoffice/libreoffice-ure-3.3.0.1.tar.bz2) = rLlyuWdGpBVTNH6O71Ocg3GyN+Fe19yg/fmis+sKanA=
 SHA256 (libreoffice/libreoffice-writer-3.3.0.1.tar.bz2) = lqPPBble86p1EkvyndvOzCPBh3MWVw+hIVxOWKlbGkI=
-SHA256 (libreoffice/nbcat-0.1.tar.gz) = lqWTF8fBKanSGH1fOpHidb7XxtBxez+uM8cyfzcok6A=
 SIZE (libreoffice/067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz) = 4893724
 SIZE (libreoffice/128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz) = 540999
 SIZE (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = 3519470
@@ -307,4 +303,3 @@ SIZE (libreoffice/libreoffice-sdk-3.3.0.1.tar.bz2) = 1709809
 SIZE (libreoffice/libreoffice-testing-3.3.0.1.tar.bz2) = 50946272
 SIZE (libreoffice/libreoffice-ure-3.3.0.1.tar.bz2) = 6163910
 SIZE (libreoffice/libreoffice-writer-3.3.0.1.tar.bz2) = 6779051
-SIZE (libreoffice/nbcat-0.1.tar.gz) = 103801

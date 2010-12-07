@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 10:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/07 21:53:05 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -93,12 +93,6 @@ PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
 
-.if ${FLAVOR:L:Mparallel}
-EDISTFILES+=	nbcat-0.1.tar.gz
-.else
-SUPDISTFILES+=	nbcat-0.1.tar.gz
-.endif
-
 .if !${FLAVOR:L:Mno_java}
 MULTI_PACKAGES+=	-java
 .endif
@@ -126,7 +120,8 @@ BUILD_DEPENDS+=	archivers/zip \
 		print/cups \
 		boost->=1.41.0:devel/boost \
 		misc/fileutils \
-		misc/findutils
+		misc/findutils \
+		textproc/textutils
 
 MODULES+=	lang/python \
 		devel/gconf2
@@ -242,9 +237,7 @@ pre-patch:
 	@mkdir -p ${WRKSRC}/build/libreoffice
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
-.if ${FLAVOR:L:Mparallel}
-	@ln -fs ${WRKDIR}/cat.${ARCH} ${WRKDIR}/bin/cat
-.endif
+	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
 .for _c in ${COMPONENTS} 
 	@mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}/build/libreoffice/
 	@rmdir ${WRKDIR}/libreoffice-${_c}-${VERSION}
