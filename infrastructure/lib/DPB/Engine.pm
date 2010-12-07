@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.14 2010/10/31 11:07:20 espie Exp $
+# $OpenBSD: Engine.pm,v 1.15 2010/12/07 10:56:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -318,9 +318,6 @@ sub rebuild_info
 	my ($self, $core) = @_;
 	my @l = @{$self->{requeued}};
 	$self->{requeued} = [];
-	for my $v (@l) {
-		delete $v->{info};
-	}
 	my @subdirs = map {$_->fullpkgpath} @l;
 	$self->{grabber}->grab_subdirs($core, \@subdirs);
 	$core->mark_ready;
