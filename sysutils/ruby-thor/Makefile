@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/08 21:43:44 jeremy Exp $
 
-COMMENT =	map options to a class
+COMMENT =	ruby scripting framework
 
-DISTNAME =	thor-0.9.9
-REVISION =	2
+DISTNAME =	thor-0.14.6
 CATEGORIES =	sysutils
 
-# MIT
-PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP = Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = Yes
+HOMEPAGE =	https://github.com/wycats/thor
 
-MODULES =		lang/ruby
+# MIT License
+PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE_FTP =     Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =   Yes
+
+MODULES =	lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
