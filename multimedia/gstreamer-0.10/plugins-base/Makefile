@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/12/02 14:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/12/08 07:34:00 phessler Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -8,6 +8,8 @@ DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
+
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -cdda
 
@@ -46,7 +48,7 @@ WANTLIB-main =		${WANTLIB} \
 			pangoft2-1.0 pangocairo-1.0 theoradec theoraenc \
 			vorbisidec orc-0.4 orc-test-0.4 GL Xdamage Xfixes
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			devel/orc>=0.4.6 \
+			devel/orc>=0.4.11 \
 			audio/libvorbis \
 			devel/pango \
 			multimedia/libtheora \
