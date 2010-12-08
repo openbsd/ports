@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:53:50 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -16,8 +16,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/addressable/
 ${GEM_LIB}/gems/${DISTNAME}/spec/addressable/idna_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/addressable/template_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/addressable/uri_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/data/
-${GEM_LIB}/gems/${DISTNAME}/spec/data/rfc3986.txt
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/clobber.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
@@ -26,6 +24,7 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/metrics.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rdoc.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rubyforge.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/spec.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/yard.rake
 ${GEM_LIB}/gems/${DISTNAME}/website/
 ${GEM_LIB}/gems/${DISTNAME}/website/index.html
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
