@@ -1,0 +1,4 @@
+Enumerators and Iteratees are an abstraction discovered by Oleg
+Kiselyov, which provide a performant, predictable, and safe alternative
+to lazy I/O. This library is a simplified, reorganized version of
+Oleg's original code.
