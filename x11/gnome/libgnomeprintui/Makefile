@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/12/08 14:53:11 ajacoutot Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
 GNOME_PROJECT=		libgnomeprintui
 GNOME_VERSION=		2.18.6
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		devel
@@ -20,8 +20,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		expat fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		xml2 z pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util \
-		gnomecanvas-2 gnomeprint-2-2
+		xml2 z pthread-stubs xcb gthread-2.0 xcb-render \
+		gnomecanvas-2 gnomeprint-2-2 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			x11/gnome
