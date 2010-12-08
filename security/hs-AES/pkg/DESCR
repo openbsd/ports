@@ -1,0 +1,2 @@
+Zero-copy binding to Brian Gladman's AES implementation, including a
+copy of that implementation.
