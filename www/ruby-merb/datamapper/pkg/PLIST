@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:12:00 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Generators
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -20,15 +21,21 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/views/edit.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/views/index.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/views/new.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/views/show.html.erb
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/orms/
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/orms/data_mapper/
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/orms/data_mapper/connection.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/orms/data_mapper/database.yml.sample
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/session/
-${GEM_LIB}/gems/${DISTNAME}/lib/merb/session/data_mapper_session.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/connection.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/data_mapper_session.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/database.yml.sample
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb_datamapper/version.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/connection_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/datamapper_id_map_controller.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/datamapper_model.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/datamapper_session_controller.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/identity_map_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/session_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/session_store_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
