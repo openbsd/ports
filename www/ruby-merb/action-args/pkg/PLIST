@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/08 22:13:24 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -11,9 +11,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/abstract_controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/get_args.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/jruby_args.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/mri_args.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-action-args/vm_args.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/action_args_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/controllers/
 ${GEM_LIB}/gems/${DISTNAME}/spec/controllers/action-args.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

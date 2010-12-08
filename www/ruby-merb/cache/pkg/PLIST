@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:13:24 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -27,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-cache/stores/strategy/adhoc_store.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-cache/stores/strategy/gzip_store.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-cache/stores/strategy/page_store.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-cache/stores/strategy/sha1_store.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-cache/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/cache_request_spec.rb
@@ -48,5 +49,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/stores/strategy/adhoc_store_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/stores/strategy/gzip_store_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/stores/strategy/page_store_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-cache/stores/strategy/sha1_store_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

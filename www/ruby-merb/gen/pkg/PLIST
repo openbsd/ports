@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_BIN}/merb-gen${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -11,6 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/merb-gen
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/controller.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/fcgi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/layout.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/merb/
@@ -22,24 +23,18 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/merb_plugin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/migration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/part_controller.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/passenger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/resource.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/resource_controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/session_migration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/doc.thor
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/dotgitignore
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/dothtaccess
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/jquery.js
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/app_script.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/common.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/gem_ext.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/main.thor
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/ops.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb_thor/utils.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/common/merb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/app/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/app/controllers/
@@ -86,7 +81,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/publi
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/images/merb.jpg
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/javascripts/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/javascripts/application.js
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/merb.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/robots.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/stylesheets/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_core/public/stylesheets/master.css
@@ -123,6 +117,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_plugin/tes
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_plugin/test/%base_name%_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_plugin/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/app/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/app/controllers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/app/controllers/application.rb
@@ -140,8 +135,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/auto
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/autotest/merb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/autotest/merb_rspec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config.ru
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/database.yml
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/dependencies.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/environments/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/environments/development.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/config/environments/production.rb
@@ -175,7 +170,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/publ
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/images/merb.jpg
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/javascripts/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/javascripts/application.js
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/merb.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/robots.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/stylesheets/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/application/merb_stack/public/stylesheets/master.css
@@ -204,6 +198,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/controller/spec/r
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/controller/test/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/controller/test/requests/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/controller/test/requests/%file_name%_test.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/fcgi/
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/fcgi/dothtaccess
+${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/fcgi/merb.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/helper/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/helper/app/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/helper/app/helpers/
@@ -250,7 +247,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/resource_controll
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/resource_controller/test/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/resource_controller/test/controllers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/generators/templates/component/resource_controller/test/controllers/%file_name%_test.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/generators/thor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/app_generator.rb
@@ -258,8 +254,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/named_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/namespaced_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/templater.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-gen/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/controller_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fcgi_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/results/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/results/no_modules.test
@@ -279,8 +277,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/model_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/named_generator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/namespaced_generator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/part_controller_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/passenger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/resource_controller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/resource_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/session_migration_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

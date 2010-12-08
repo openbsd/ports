@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Generators
@@ -59,4 +59,26 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-haml/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-haml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-haml/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-haml/template.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-haml/version.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/haml.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/capture_haml/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/capture_haml/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/concat_haml/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/concat_haml/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/haml_config/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/haml_config/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/haml_controller/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/haml_controller/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_haml/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_haml/_partial_haml.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_haml/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/_partial_haml.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/index.html.haml
+${GEM_LIB}/gems/${DISTNAME}/spec/haml_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

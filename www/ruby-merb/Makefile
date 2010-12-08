@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/08 22:13:24 jeremy Exp $
 
 # It's intended that this list isn't sorted alphabetically.
 # Please keep it that way. Thanks.
@@ -24,7 +24,6 @@
     SUBDIR += auth-slice-password
     SUBDIR += auth
 
-    SUBDIR += more
     SUBDIR += merb
 
 .include <bsd.port.subdir.mk>

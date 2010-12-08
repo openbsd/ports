@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:13:24 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -10,7 +10,16 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-assets/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-assets.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-assets/assets.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-assets/assets_mixin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-assets/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/images/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/images/merb.jpg
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/javascripts/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/javascripts/jquery.js
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/stylesheets/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/stylesheets/style.css
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-assets_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

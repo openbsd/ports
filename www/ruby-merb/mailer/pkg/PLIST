@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Generators
@@ -25,6 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-mailer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-mailer/mail_controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-mailer/mailer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-mailer/mailer_mixin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-mailer/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/mail_controller_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mailer_generator_spec.rb
@@ -45,5 +46,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/mailers/views/test_mail_controller/ninth.html.e
 ${GEM_LIB}/gems/${DISTNAME}/spec/mailers/views/test_mail_controller/ninth.text.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mailers/views/test_mail_controller/second.text.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mailers/views/test_mail_controller/third.html.erb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

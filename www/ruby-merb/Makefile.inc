@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.9 2010/11/08 23:28:56 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2010/12/08 22:13:24 jeremy Exp $
 
-VERSION ?=	1.0.15
+VERSION ?=	1.1.3
 CATEGORIES ?=	www
 
 HOMEPAGE ?=	http://www.merbivore.com/
@@ -16,5 +16,6 @@ PERMIT_DISTFILES_FTP ?= Yes
 MODULES ?=	lang/ruby
 
 BUILD_DEPENDS ?= ${RUN_DEPENDS}
+MERB_REL_VER_SPEC ?= >=1.1.3,<1.2
 
 CONFIGURE_STYLE ?= ruby gem

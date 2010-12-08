@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/08 22:13:25 jeremy Exp $
 
 COMMENT =	mailer functionality for Merb
 
 DISTNAME =	merb-mailer-${VERSION}
-REVISION =	2
 
-RUN_DEPENDS =	www/ruby-merb/core,${MODRUBY_FLAVOR}>=${VERSION} \
-		mail/ruby-mailfactory,${MODRUBY_FLAVOR}
+RUN_DEPENDS =	www/ruby-merb/core${MODRUBY_FLAVOR}${MERB_REL_VER_SPEC} \
+		mail/ruby-mailfactory,${MODRUBY_FLAVOR}>=1.2.3
 
 .include <bsd.port.mk>

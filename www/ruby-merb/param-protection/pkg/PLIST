@@ -1,11 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-param-protection/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-param-protection.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/merb-param-protection/merbtasks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-param-protection/version.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/
+${GEM_LIB}/gems/${DISTNAME}/spec/controllers/param_protection.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/merb_param_protection_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

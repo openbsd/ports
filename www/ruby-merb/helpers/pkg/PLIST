@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -20,6 +20,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-helpers/form_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-helpers/tag_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-helpers/text_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-helpers/time_dsl.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-helpers/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/core_ext_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/
@@ -69,6 +70,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/fake_dm_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/first_generic_fake_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/hacker_generic_model.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/namespaced_generic_fake_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/second_generic_fake_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/models/third_generic_fake_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/
@@ -160,6 +162,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/file_field_specs/with_values.
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/foo/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/foo/bar.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/form_for_specs/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/form_for_specs/advanced.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/form_for_specs/basic.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/form_specs/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/app/views/form_specs/create_a_form.html.erb
@@ -266,14 +269,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/public/images/merb.jpg
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/public/merb.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/public/stylesheets/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixture/public/stylesheets/master.css
-${GEM_LIB}/gems/${DISTNAME}/spec/merb_helpers_config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb_helpers_date_time_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb_helpers_form_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb_helpers_tag_helper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb_helpers_text_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/merb_test.log
 ${GEM_LIB}/gems/${DISTNAME}/spec/numeric_extlib_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ordinalize_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/time_dsl_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

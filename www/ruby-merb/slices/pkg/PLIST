@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/08 22:13:25 jeremy Exp $
 ${GEM_BIN}/slice${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -83,6 +83,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-slices/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-slices/module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-slices/module_mixin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-slices/router_ext.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-slices/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/full_slice_generator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/full_slice_spec.rb
@@ -157,6 +158,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/slices/very-thin-test-slice/lib/very-thin-test-
 ${GEM_LIB}/gems/${DISTNAME}/spec/slices/very-thin-test-slice/lib/very-thin-test-slice.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/slices/very-thin-test-slice/lib/very-thin-test-slice/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/slices/very-thin-test-slice/lib/very-thin-test-slice/slicetasks.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/thin_slice_generator_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/thin_slice_spec.rb
