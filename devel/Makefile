@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.861 2010/12/02 10:36:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.862 2010/12/08 12:46:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -153,6 +153,8 @@
      SUBDIR += hs-deepseq
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
+     SUBDIR += hs-enumerator
+     SUBDIR += hs-failure
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-gio
