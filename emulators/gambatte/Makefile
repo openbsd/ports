@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/08 20:04:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/08 20:13:14 landry Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
@@ -26,8 +26,10 @@ LIB_DEPENDS =		devel/sdl
 NO_REGRESS =		Yes
 
 do-build:
-	${MODSCONS_BIN} -C ${WRKDIST}/libgambatte
-	${MODSCONS_BIN} -C ${WRKDIST}/gambatte_sdl
+	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/libgambatte \
+		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
+	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/gambatte_sdl \
+		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl ${PREFIX}/bin
