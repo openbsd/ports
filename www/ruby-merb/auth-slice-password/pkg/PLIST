@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/08 22:08:20 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -17,12 +17,15 @@ ${GEM_LIB}/gems/${DISTNAME}/app/views/exceptions/
 ${GEM_LIB}/gems/${DISTNAME}/app/views/exceptions/unauthenticated.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/app/views/layout/
 ${GEM_LIB}/gems/${DISTNAME}/app/views/layout/merb-auth-slice-password.html.erb
+${GEM_LIB}/gems/${DISTNAME}/config/
+${GEM_LIB}/gems/${DISTNAME}/config/init.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password/slicetasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password/spectasks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-slice-password/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/public/
 ${GEM_LIB}/gems/${DISTNAME}/public/javascripts/
 ${GEM_LIB}/gems/${DISTNAME}/public/javascripts/master.js
@@ -30,6 +33,7 @@ ${GEM_LIB}/gems/${DISTNAME}/public/stylesheets/
 ${GEM_LIB}/gems/${DISTNAME}/public/stylesheets/master.css
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-slice-password_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/stubs/
 ${GEM_LIB}/gems/${DISTNAME}/stubs/app/

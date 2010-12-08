@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/08 22:08:20 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -10,11 +10,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/merbtasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/bcrypt_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/redirect_back.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/ar_salted_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/dm_salted_user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/mongoid_salted_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/relaxdb_salted_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/mixins/salted_user/sq_salted_user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/strategies/
@@ -23,10 +25,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/strategies/basic/
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/strategies/basic/basic_auth.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/strategies/basic/openid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/strategies/basic/password_form.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-more/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
-${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-more_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mixins/
+${GEM_LIB}/gems/${DISTNAME}/spec/mixins/dm_bcrypt_user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/mixins/dm_salted_user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mixins/redirect_back_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/mixins/salted_user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/mixins/sq_bcrypt_user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/mixins/sq_salted_user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/shared_user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

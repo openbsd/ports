@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/08 22:08:20 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -19,6 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-core/responses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-core/router_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-core/session_mixin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-core/strategy.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/merb-auth-core/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helpers/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helpers/authentication_helper_spec.rb
@@ -32,5 +33,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-core/failed_login_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-core/merb-auth-core_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-core/router_helper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/merb-auth-core/strategy_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
