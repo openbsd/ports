@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/08 22:40:02 jeremy Exp $
 
 COMMENT =	Ruby extensions serving DataMapper and DataObjects
 
-DISTNAME =	extlib-0.9.13
-REVISION =	2
+DISTNAME =	extlib-0.9.15
 CATEGORIES =	devel
 
 # MIT
@@ -16,7 +15,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_REGRESS =	rake
+MODRUBY_REGRESS =	rake rspec
 RAKE_REGRESS_TARGET =	spec
 REGRESS_DEPENDS =	converters/ruby-json,${MODRUBY_FLAVOR}
 
