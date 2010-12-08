@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.865 2010/12/08 22:00:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.866 2010/12/08 23:25:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -149,6 +149,7 @@
      SUBDIR += hs-cereal
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
+     SUBDIR += hs-data-default
      SUBDIR += hs-dataenc
      SUBDIR += hs-deepseq
      SUBDIR += hs-directory-tree
@@ -185,6 +186,7 @@
      SUBDIR += hs-sendfile
      SUBDIR += hs-stm
      SUBDIR += hs-stringtable-atom
+     SUBDIR += hs-tagged
      SUBDIR += hs-tar
      SUBDIR += hs-text
      SUBDIR += hs-transformers
