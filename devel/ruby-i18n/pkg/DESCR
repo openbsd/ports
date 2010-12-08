@@ -1,0 +1,12 @@
+Ruby Internationalization and localization solution.  Features:
+
+* translation and localization
+* interpolation of values to translations (Ruby 1.9 compatible syntax)
+* pluralization (CLDR compatible)
+* customizable transliteration to ASCII
+* flexible defaults
+* bulk lookup
+* lambdas as translation data
+* custom key/scope separator
+* custom exception handlers
+* extensible architecture with a swappable backend
