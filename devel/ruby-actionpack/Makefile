@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2010/12/08 21:49:50 jeremy Exp $
 
 COMMENT =	eases web-request routing, handling, and response
 
-DISTNAME =	actionpack-2.3.4
-REVISION =	2
+VERSION =	3.0.3
+DISTNAME =	actionpack-${VERSION}
 CATEGORIES =	devel
 
 # MIT License
@@ -15,8 +15,15 @@ PERMIT_DISTFILES_FTP =   Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/ruby-activesupport,${MODRUBY_FLAVOR}>=2.3.4 \
-		www/ruby-rack,${MODRUBY_FLAVOR}>=1.0.0
+RUN_DEPENDS =	devel/ruby-activesupport,${MODRUBY_FLAVOR}=${VERSION} \
+		devel/ruby-activemodel,${MODRUBY_FLAVOR}=${VERSION} \
+		devel/ruby-i18n,${MODRUBY_FLAVOR}>=0.4,<1.0 \
+		devel/ruby-tzinfo,${MODRUBY_FLAVOR}>=0.3.23,<0.4 \
+		www/ruby-rack,${MODRUBY_FLAVOR}>=1.2.1,<1.3 \
+		www/ruby-rack-mount,${MODRUBY_FLAVOR}>=0.6.13,<0.7 \
+		www/ruby-rack-test,${MODRUBY_FLAVOR}>=0.5.6,<0.6 \
+		textproc/ruby-builder,${MODRUBY_FLAVOR}>=2.1.2,<2.2 \
+		textproc/ruby-erubis,${MODRUBY_FLAVOR}>=2.6.6,<2.7
 
 CONFIGURE_STYLE =	ruby gem
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2010/12/08 21:44:48 jeremy Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
-DISTNAME=	actionmailer-2.3.4
-REVISION =	2
+VERSION=	3.0.3
+DISTNAME=	actionmailer-${VERSION}
 CATEGORIES=	mail
 
 # MIT License
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	devel/ruby-actionpack,${MODRUBY_FLAVOR}>=2.3.4
+RUN_DEPENDS= 	devel/ruby-actionpack,${MODRUBY_FLAVOR}=${VERSION} \
+		mail/ruby-mail,${MODRUBY_FLAVOR}>=2.2.9,<2.3
 
 CONFIGURE_STYLE=ruby gem
 
