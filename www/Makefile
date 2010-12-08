@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2010/12/06 22:36:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.479 2010/12/08 21:41:15 jeremy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -391,7 +391,10 @@
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-passenger
      SUBDIR += ruby-rack
+     SUBDIR += ruby-rack-mount
+     SUBDIR += ruby-rack-test
      SUBDIR += ruby-rails
+     SUBDIR += ruby-railties
      SUBDIR += ruby-rest-client
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin

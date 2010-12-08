@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.863 2010/12/08 16:21:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.864 2010/12/08 21:39:05 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -937,9 +937,11 @@
      SUBDIR += rsvndump
      SUBDIR += ruby-abstract
      SUBDIR += ruby-actionpack
+     SUBDIR += ruby-activemodel
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-assistance
      SUBDIR += ruby-bacon
+     SUBDIR += ruby-bundler
      SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-columnize
@@ -958,6 +960,7 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
+     SUBDIR += ruby-i18n
      SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
      SUBDIR += ruby-minitest
