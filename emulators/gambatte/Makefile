@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/08 19:58:04 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/08 20:04:20 jasper Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
@@ -23,6 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 MODULES =		devel/scons
 LIB_DEPENDS =		devel/sdl
 
+NO_REGRESS =		Yes
 
 do-build:
 	${MODSCONS_BIN} -C ${WRKDIST}/libgambatte
