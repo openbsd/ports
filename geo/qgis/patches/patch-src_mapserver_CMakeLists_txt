@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mapserver_CMakeLists_txt,v 1.1 2010/12/08 09:07:48 landry Exp $
+install sld & xml in share/qgis
+--- src/mapserver/CMakeLists.txt.orig	Tue Nov 30 13:15:24 2010
++++ src/mapserver/CMakeLists.txt	Tue Nov 30 13:16:24 2010
+@@ -121,6 +121,6 @@ INSTALL(TARGETS 
+ INSTALL(FILES
+   admin.sld 
+   wms_metadata.xml
+-  DESTINATION ${QGIS_CGIBIN_DIR}
++  DESTINATION ${QGIS_DATA_DIR}
+   )
+ 

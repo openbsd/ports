@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2010/01/11 20:13:31 landry Exp $
---- CMakeLists.txt.orig	Mon Dec 28 23:25:56 2009
-+++ CMakeLists.txt	Mon Jan 11 16:39:31 2010
-@@ -414,7 +414,7 @@ ENDIF (ENABLE_TESTS)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2010/12/08 09:07:48 landry Exp $
+--- CMakeLists.txt.orig	Sat Nov 13 19:29:21 2010
++++ CMakeLists.txt	Mon Nov 29 17:31:37 2010
+@@ -486,7 +486,7 @@ ENDIF (APPLE)
  # install stuff
  
  INSTALL (FILES AUTHORS CONTRIBUTORS SPONSORS DONORS TRANSLATORS INSTALL CODING
@@ -9,4 +9,4 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2010/01/11 20:13:31 landry Exp $
 +         DESTINATION ${QGIS_DATA_DIR}/../doc/qgis)
  
  # manual page - makes sense only on unix systems
- IF (UNIX)
+ IF (UNIX AND NOT APPLE)

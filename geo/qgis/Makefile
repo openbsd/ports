@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/08 09:07:48 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
-DISTNAME =	qgis_1.5.0
-PKGNAME =	${DISTNAME:L:S/_/-/}
-REVISION =	1
-
+DISTNAME =	qgis-1.6.0
+EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	3.0 \
-		qgis_gui	2.0 \
-		qgis_analysis	1.1 \
-		qgispython	1.0 # .1.3
+SHARED_LIBS =	qgis_core	4.0 \
+		qgis_gui	3.0 \
+		qgis_analysis	1.2 \
+		qgispython	1.1 # .1.3
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -25,8 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-MASTER_SITES =	http://download.osgeo.org/qgis/src/
-WRKDIST =	${WRKDIR}/${DISTNAME:S/_/-/}
+MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	devel/cmake \
 		devel/gettext \
@@ -43,6 +40,8 @@ RUN_DEPENDS =	x11/py-qt4 \
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/proj \
 		x11/qt4 \
+		x11/qwt \
+		www/fcgi \
 		geo/gdal \
 		geo/geos \
 		devel/gsl \
@@ -51,7 +50,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \
 		stdc++ z proj QtGui QtNetwork QtXml QtSql QtCore QtSvg QtWebKit\
-		gdal geos_c gsl gslcblas pq
+		gdal geos_c gsl gslcblas pq qwt fcgi
 WANTLIB += ${MODPY_WANTLIB}
 
 CONFIGURE_ENV+=	VERBOSE=1

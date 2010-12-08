@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2010/08/30 11:02:48 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2010/12/08 09:07:48 landry Exp $
 @lib lib/libqgis_analysis.so.${LIBqgis_analysis_VERSION}
 @lib lib/libqgis_core.so.${LIBqgis_core_VERSION}
 @lib lib/libqgis_gui.so.${LIBqgis_gui_VERSION}
@@ -19,6 +19,7 @@ lib/qgis/plugins/libgpxprovider.so
 lib/qgis/plugins/libinterpolationplugin.so
 lib/qgis/plugins/libmemoryprovider.so
 lib/qgis/plugins/libnortharrowplugin.so
+lib/qgis/plugins/libofflineeditingplugin.so
 lib/qgis/plugins/libogrconverterplugin.so
 lib/qgis/plugins/libogrprovider.so
 lib/qgis/plugins/liboracleplugin.so
