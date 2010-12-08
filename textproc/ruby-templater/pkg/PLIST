@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/08 22:47:14 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/ROADMAP
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/
@@ -12,7 +12,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/action.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/empty_directory.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/evaluation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/actions/template.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/capture_helpers.rb
@@ -29,12 +28,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/templater/generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/manifold.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/spec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/templater/spec/helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/script/
+${GEM_LIB}/gems/${DISTNAME}/script/console
+${GEM_LIB}/gems/${DISTNAME}/script/destroy
+${GEM_LIB}/gems/${DISTNAME}/script/generate
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/actions/
-${GEM_LIB}/gems/${DISTNAME}/spec/actions/custom_action_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/actions/directory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/actions/empty_directory_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/actions/evaluation_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/actions/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/actions/template_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/core_ext/
@@ -78,4 +79,5 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/templates/glob/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/templates/literals_erb.rbt
 ${GEM_LIB}/gems/${DISTNAME}/spec/templates/simple.rbt
 ${GEM_LIB}/gems/${DISTNAME}/spec/templates/simple_erb.rbt
+${GEM_LIB}/gems/${DISTNAME}/templater.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/08 22:47:14 jeremy Exp $
 
 COMMENT =	system for generating files
 
-DISTNAME =	templater-0.5.0
-REVISION =	2
+DISTNAME =	templater-1.0.0
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://templater.rubyforge.org/
@@ -17,9 +16,9 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-highline,${MODRUBY_FLAVOR} \
-			devel/ruby-diff-lcs,${MODRUBY_FLAVOR} \
-			devel/ruby-extlib,${MODRUBY_FLAVOR}
+RUN_DEPENDS =		devel/ruby-highline,${MODRUBY_FLAVOR}>=1.4.0 \
+			devel/ruby-diff-lcs,${MODRUBY_FLAVOR}>=1.1.2 \
+			devel/ruby-extlib,${MODRUBY_FLAVOR}>=0.9.5
 
 CONFIGURE_STYLE =	ruby gem
 
