@@ -1,0 +1,5 @@
+#!/bin/ksh 
+
+JAVA_CMD=$(javaPathHelper -c clojure)
+
+${JAVA_CMD} -jar /usr/local/clojure/clojure.jar $@
