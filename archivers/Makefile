@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/27 09:17:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2010/12/08 12:44:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -14,6 +14,7 @@
      SUBDIR += gtar,static
      SUBDIR += ha
      SUBDIR += hs-zlib
+     SUBDIR += hs-zlib-bindings
      SUBDIR += lha
      SUBDIR += libarchive
      SUBDIR += libmspack
