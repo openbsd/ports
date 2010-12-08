@@ -1,0 +1,6 @@
+Railties is responsible for gluing the parts of Ruby on Rails together.
+Overall, it:
+
+* handles the entire bootstrapping process for a Rails application;
+* manages the rails command line interface;
+* provides the core Rails generators;
