@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2010/12/08 21:55:21 jeremy Exp $
 
 COMMENT=	ruby MVC web application framework
 
-VERSION=	2.3.4
+VERSION=	3.0.3
 DISTNAME=	rails-${VERSION}
-REVISION =	2
 CATEGORIES=	www
 
 # MIT License
@@ -16,12 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${MODRUBY_RAKE_DEPENDS} \
-		devel/ruby-activesupport,${MODRUBY_FLAVOR}>=${VERSION} \
-		databases/ruby-activerecord,${MODRUBY_FLAVOR}>=${VERSION} \
-		devel/ruby-actionpack,${MODRUBY_FLAVOR}>=${VERSION} \
-		mail/ruby-actionmailer,${MODRUBY_FLAVOR}>=${VERSION} \
-		www/ruby-activeresource,${MODRUBY_FLAVOR}>=${VERSION}
+RUN_DEPENDS=	www/ruby-railties,${MODRUBY_FLAVOR}=${VERSION} \
+		devel/ruby-activesupport,${MODRUBY_FLAVOR}=${VERSION} \
+		databases/ruby-activerecord,${MODRUBY_FLAVOR}=${VERSION} \
+		devel/ruby-actionpack,${MODRUBY_FLAVOR}=${VERSION} \
+		mail/ruby-actionmailer,${MODRUBY_FLAVOR}=${VERSION} \
+		www/ruby-activeresource,${MODRUBY_FLAVOR}=${VERSION} \
+		devel/ruby-bundler,${MODRUBY_FLAVOR}>=1.0,<2.0
 
 CONFIGURE_STYLE=ruby gem
 
