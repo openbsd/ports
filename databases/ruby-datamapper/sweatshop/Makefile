@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/08 22:26:19 jeremy Exp $
 
 COMMENT =	model factory for DataMapper
 
 DISTNAME =	dm-sweatshop-${VERSION}
-REVISION =	2
 
-RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}>=${VERSION} \
-		textproc/ruby-randexp,${MODRUBY_FLAVOR}
+RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC} \
+		textproc/ruby-randexp,${MODRUBY_FLAVOR}>=0.1.5,<0.2
 
 REGRESS_DEPENDS =	databases/ruby-datamapper/validations,${MODRUBY_FLAVOR} \
 			databases/ruby-do_sqlite3,${MODRUBY_FLAVOR} \
