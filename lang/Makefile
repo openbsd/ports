@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2010/11/19 18:01:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.105 2010/12/08 21:31:13 ian Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += chicken
      SUBDIR += classpath
      SUBDIR += clisp
+     SUBDIR += clojure
      SUBDIR += ecl
      SUBDIR += eltclsh
      SUBDIR += erlang
