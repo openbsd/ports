@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/08 23:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/12/08 21:46:50 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
@@ -94,6 +94,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Asuncion.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Atikokan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Atka.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Bahia.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Bahia_Banderas.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Barbados.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Belem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Belize.rb
@@ -168,6 +169,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Managua.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Manaus.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Marigot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Martinique.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Matamoros.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mazatlan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mendoza.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Menominee.rb
@@ -187,6 +189,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Noronha.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/Center.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/New_Salem.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Ojinaga.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Panama.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Pangnirtung.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Paramaribo.rb
@@ -203,6 +206,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Regina.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Resolute.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rio_Branco.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rosario.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santa_Isabel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santarem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santiago.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santo_Domingo.rb
@@ -232,6 +236,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/Casey.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/Davis.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/DumontDUrville.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/Macquarie.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/Mawson.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/McMurdo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Antarctica/Palmer.rb
@@ -296,6 +301,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Makassar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Manila.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Muscat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Nicosia.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Novokuznetsk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Novosibirsk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Omsk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Oral.rb
@@ -538,6 +544,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Apia.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Auckland.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Chatham.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Chuuk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Easter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Efate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Enderbury.rb
@@ -563,6 +570,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Noumea.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Pago_Pago.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Palau.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Pitcairn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Pohnpei.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Ponape.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Port_Moresby.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/Pacific/Rarotonga.rb
