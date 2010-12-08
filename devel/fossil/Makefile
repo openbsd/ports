@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/26 07:51:00 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/08 00:10:28 jasper Exp $
 
 COMMENT =		simple distributed software configuration management 
 
-VERSION =		20101111133638
+VERSION =		20101207133137
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -23,9 +23,9 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
-MAKE_FLAGS =		LDFLAGS="-static" TCC="${CC} -Wall"
+MAKE_FLAGS =		LDFLAGS="-static" TCC="${CC} -Wall -DUSE_PREAD"
 .else
-MAKE_FLAGS =		TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL"
+MAKE_FLAGS =		TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL -DUSE_PREAD"
 .endif
 
 WANTLIB =		c crypto ssl z
