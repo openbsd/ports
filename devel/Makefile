@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.864 2010/12/08 21:39:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.865 2010/12/08 22:00:39 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -981,6 +981,7 @@
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-sexp
      SUBDIR += ruby-sexp_processor
+     SUBDIR += ruby-stringex
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-tilt
