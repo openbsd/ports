@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.479 2010/12/08 21:41:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.480 2010/12/09 21:00:30 jeremy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -395,11 +395,13 @@
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rails
      SUBDIR += ruby-railties
+     SUBDIR += ruby-rainbows
      SUBDIR += ruby-rest-client
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin
      SUBDIR += ruby-thin_http
      SUBDIR += ruby-typo
+     SUBDIR += ruby-unicorn
      SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += seamonkey

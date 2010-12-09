@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.867 2010/12/09 13:54:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.868 2010/12/09 20:59:30 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -964,6 +964,8 @@
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
      SUBDIR += ruby-i18n
+     SUBDIR += ruby-isolate
+     SUBDIR += ruby-kgio
      SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
      SUBDIR += ruby-minitest
