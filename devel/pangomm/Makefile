@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/09 17:36:49 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
-V =			2.26.2
+V =			2.26.3
 DISTNAME =		pangomm-${V}
 CATEGORIES =		devel x11
-REVISION=	0
 
 SHARED_LIBS +=		pangomm-1.4	9.0 # .1.30
 
@@ -29,8 +28,9 @@ LIB_DEPENDS =		devel/pango \
 WANTLIB =		X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
 			glib-2.0 gmodule-2.0 gobject-2.0 m pcre pixman-1 \
 			png pthread-stubs sigc-2.0 xcb z xcb-render \
-			gthread-2.0 xcb-render-util pangoft2-1.0 \
-			pangocairo-1.0 pango-1.0 glibmm-2.4 cairomm-1.0
+			gthread-2.0 pangoft2-1.0 \
+			pangocairo-1.0 pango-1.0 glibmm-2.4 cairomm-1.0 \
+			GL Xdamage Xext Xfixes Xxf86vm drm stdc++ xcb-shm
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
