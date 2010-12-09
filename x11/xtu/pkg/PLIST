@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/23 19:49:03 steven Exp $
-bin/xtu
+@comment $OpenBSD: PLIST,v 1.2 2010/12/09 14:55:39 jasper Exp $
+@pkgpath x11/xtu,imlib
+@bin bin/xtu
 @man man/cat1/xtu.0
