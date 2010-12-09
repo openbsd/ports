@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_libreoffice_solenv_inc_settings_mk,v 1.1 2010/12/09 20:13:30 robert Exp $
+--- build/libreoffice/solenv/inc/settings.mk.orig.port	Wed Dec  8 22:20:13 2010
++++ build/libreoffice/solenv/inc/settings.mk	Wed Dec  8 22:20:14 2010
+@@ -1058,7 +1058,7 @@ REGCOMPARE*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/reg
+ GDBREGCOMPTRACE=$(GDBTRACE)
+ .ENDIF
+ 
+-REGCOMP*=$(AUGMENT_LIBRARY_PATH) $(GDBREGCOMPTRACE) $(SOLARBINDIR)/regcomp
++REGCOMP*=$(AUGMENT_LIBRARY_PATH_LOCAL) $(GDBREGCOMPTRACE) $(SOLARBINDIR)/regcomp
+ CPPUMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/cppumaker
+ JAVAMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/javamaker
+ RDBMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/rdbmaker

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/07 21:53:05 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/09 20:13:30 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,7 +16,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
+REVISION-main=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -246,7 +246,8 @@ pre-patch:
 
 post-install:
 	cd ${PREFIX}/bin && \
-	for _a in libreoffice soffice soffice${BV}; do \
+	ln -sf ${TRUEPREFIX}/bin/ooffice${BV} libreoffice && \
+	for _a in soffice soffice${BV}; do \
 		ln -sf ${TRUEPREFIX}/lib/libreoffice/program/soffice $$_a; done
 
 .include <bsd.port.mk>
