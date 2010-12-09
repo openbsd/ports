@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2010/12/03 07:41:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.253 2010/12/09 21:45:17 jeremy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -170,6 +170,7 @@
      SUBDIR += rsynth
      SUBDIR += rtunes
      SUBDIR += ruby-id3lib
+     SUBDIR += ruby-vorbis_comment
      SUBDIR += scmpc
      SUBDIR += shell-fm
      SUBDIR += shorten
