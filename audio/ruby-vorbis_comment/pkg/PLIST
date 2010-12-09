@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 21:44:23 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.require_paths
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/Makefile
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/mkmf.log
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/blank.ogg
+${GEM_LIB}/gems/${DISTNAME}/test/corrupt.ogg
+${GEM_LIB}/gems/${DISTNAME}/test/empty_key.ogg
+${GEM_LIB}/gems/${DISTNAME}/test/lt8k.ogg
+${GEM_LIB}/gems/${DISTNAME}/test/manyfields.ogg
+${GEM_LIB}/gems/${DISTNAME}/test/test_vorbis_comment.rb
+${GEM_LIB}/gems/${DISTNAME}/test/title.ogg
+${GEM_LIB}/gems/${DISTNAME}/vcedit.c
+${GEM_LIB}/gems/${DISTNAME}/vcedit.h
+${GEM_LIB}/gems/${DISTNAME}/vcedit.o
+${GEM_LIB}/gems/${DISTNAME}/vorbis_comment.gemspec
+${GEM_LIB}/gems/${DISTNAME}/vorbis_comment.rb
+${GEM_LIB}/gems/${DISTNAME}/vorbis_comment_ext.c
+${GEM_LIB}/gems/${DISTNAME}/vorbis_comment_ext.o
+${GEM_LIB}/gems/${DISTNAME}/vorbis_comment_ext.so
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
