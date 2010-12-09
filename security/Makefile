@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2010/12/08 23:29:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.248 2010/12/09 13:57:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -53,8 +53,11 @@
      SUBDIR += hatchet
      SUBDIR += hlfl
      SUBDIR += hs-AES
+     SUBDIR += hs-asn1-data
+     SUBDIR += hs-certificate
      SUBDIR += hs-crypto-api
      SUBDIR += hs-crypto
+     SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
      SUBDIR += hydra
      SUBDIR += integrit

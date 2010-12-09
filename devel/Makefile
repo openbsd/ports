@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.866 2010/12/08 23:25:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.867 2010/12/09 13:54:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -145,6 +145,7 @@
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-atom
+     SUBDIR += hs-base64-bytestring
      SUBDIR += hs-binary
      SUBDIR += hs-cereal
      SUBDIR += hs-control-timeout
