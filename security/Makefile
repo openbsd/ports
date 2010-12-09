@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2010/12/09 13:57:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.249 2010/12/09 16:08:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -59,6 +59,7 @@
      SUBDIR += hs-crypto
      SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
+     SUBDIR += hs-tls
      SUBDIR += hydra
      SUBDIR += integrit
      SUBDIR += ipguard
