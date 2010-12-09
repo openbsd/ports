@@ -1,16 +1,16 @@
-$OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
---- getweb.in.orig	Fri Nov 12 14:42:25 2010
-+++ getweb.in	Fri Nov 12 17:01:51 2010
+$OpenBSD: patch-getweb_in,v 1.5 2010/12/09 07:04:48 ajacoutot Exp $
+--- getweb.in.orig	Wed Dec  8 22:20:53 2010
++++ getweb.in	Thu Dec  9 07:59:45 2010
 @@ -11,7 +11,7 @@
  
- VERSION='$Id: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $'
+ VERSION='$Id: patch-getweb_in,v 1.5 2010/12/09 07:04:48 ajacoutot Exp $'
  
 -WGETOPTS="--passive-ftp -q"
 +WGETOPTS="-V"
  
  usage() {
  cat <<EOF
-@@ -98,11 +98,11 @@ error() {
+@@ -99,11 +99,11 @@ error() {
  }
  
  SYSTEM=`uname -s`
@@ -24,7 +24,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  	shift
  	curl -o $*
      }
-@@ -116,7 +116,7 @@ getexe() {
+@@ -117,7 +117,7 @@ getexe() {
      exefile="$2"
      shift; shift
      
@@ -33,7 +33,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  	error "Couldn't download $url/$exefile"
      unzip -oj $exefile "$@"
      rm $exefile
-@@ -130,7 +130,7 @@ gettgz() {
+@@ -131,7 +131,7 @@ gettgz() {
      file="$2"
      what="$3"
      
@@ -42,7 +42,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  	error "Couldn't download $url/$file"
      gunzip <$file | tar xvf - $what
      rm $file
-@@ -229,7 +229,7 @@ getone() {
+@@ -230,7 +230,7 @@ getone() {
  	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
  	FILE="MC2300DL_v255.zip"
  	URL="$BASE?openagent&4CE486C20839C75AC1256D9E001EBD1F/\$File/$FILE"
@@ -51,7 +51,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  	echo "*** Now use a windows box to unzip and install $FILE ***"
  	;;
      cpwl|pageworks)
-@@ -245,7 +245,7 @@ getone() {
+@@ -246,7 +246,7 @@ getone() {
  	    do
  		base=`basename $i .IC_`
  		mv $base.IC_ $base.ic_
@@ -60,7 +60,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  		rm -f $base.ic_
  	    done
  	fi
-@@ -364,7 +364,7 @@ getone() {
+@@ -371,7 +371,7 @@ getone() {
  	    URL="$URL?driver=$driver&printer=$printer"
  	    URL="$URL&.submit=Generate+PPD+file"
  	    URL="$URL&show=1&.cgifields=shortgui&.cgifields=show"
@@ -69,7 +69,7 @@ $OpenBSD: patch-getweb_in,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
  		error "Couldn't dowload $URL"
  	done
  	;;
-@@ -401,7 +401,7 @@ getone() {
+@@ -408,7 +408,7 @@ getone() {
      update)
  	url=${URLZJS}
  	file=foo2zjs.tar.gz

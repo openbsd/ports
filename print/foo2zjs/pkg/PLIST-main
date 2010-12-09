@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/11/12 16:06:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2010/12/09 07:04:48 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
@@ -134,6 +134,7 @@ share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035n.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_CP1025nw.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102w.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1566.ppd.gz
@@ -188,6 +189,7 @@ share/foomatic/db/source/driver/foo2slx.xml
 share/foomatic/db/source/driver/foo2xqx.xml
 share/foomatic/db/source/driver/foo2zjs-z1.xml
 share/foomatic/db/source/driver/foo2zjs-z2.xml
+share/foomatic/db/source/driver/foo2zjs-z3.xml
 share/foomatic/db/source/driver/foo2zjs.xml
 share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/foo2hiperc-ColorMode.xml
@@ -260,6 +262,8 @@ share/foomatic/db/source/opt/foo2zjs-z1-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-z12-Density.xml
 share/foomatic/db/source/opt/foo2zjs-z2-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
+share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
+share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 share/foomatic/db/source/printer/
 share/foomatic/db/source/printer/Generic-OAKT_Printer.xml
 share/foomatic/db/source/printer/Generic-ZjStream_Printer.xml
@@ -285,6 +289,7 @@ share/foomatic/db/source/printer/HP-LaserJet_P2014.xml
 share/foomatic/db/source/printer/HP-LaserJet_P2014n.xml
 share/foomatic/db/source/printer/HP-LaserJet_P2035.xml
 share/foomatic/db/source/printer/HP-LaserJet_P2035n.xml
+share/foomatic/db/source/printer/HP-LaserJet_Pro_CP1025nw.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1102.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1102w.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1566.xml
