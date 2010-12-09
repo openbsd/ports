@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.868 2010/12/09 20:59:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.869 2010/12/09 21:46:39 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -945,6 +945,7 @@
      SUBDIR += ruby-assistance
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
+     SUBDIR += ruby-cicphash
      SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-columnize
