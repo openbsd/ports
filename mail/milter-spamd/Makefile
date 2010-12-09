@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/09 01:47:31 okan Exp $
 
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
 DISTNAME=	milter-spamd-0.5
-REVISION =	0
+REVISION =	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread milter
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-configure:

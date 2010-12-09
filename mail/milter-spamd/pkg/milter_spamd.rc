@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: milter_spamd.rc,v 1.1 2010/12/09 01:47:31 okan Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/libexec/milter-spamd"
+
+rc_reload() {
+	rc_err "$0: reload is not supported"
+}
+
+rc_cmd $1
