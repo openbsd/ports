@@ -1,0 +1,3 @@
+Rainbows! is an HTTP server for sleepy Rack applications. It is based on
+Unicorn, but designed to handle applications that expect long
+request/response times and/or slow clients.
