@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/12/10 10:54:41 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 
 PKG_ARCH=	*
 
-V=		3.6.12
+V=		3.6.13
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
