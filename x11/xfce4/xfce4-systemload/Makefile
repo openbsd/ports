@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/11 08:19:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/12/10 08:34:44 landry Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
-XFCE_VERSION=	0.4.2
+XFCE_VERSION=	1.0.0
 XFCE_PLUGIN=	systemload
-REVISION=	7
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -13,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
+LIB_DEPENDS +=	x11/xfce4/libxfcegui4
 
 WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype kvm \
 		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
@@ -20,6 +20,7 @@ WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype kvm \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo png \
 		pixman-1 xfce4util xfcegui4 gio-2.0 pthread-stubs xcb \
-		gthread-2.0 pthread xcb-render xcb-render-util
+		gthread-2.0 pthread xcb-render GL ICE SM Xxf86vm drm \
+		execinfo pcre startup-notification-1 xcb-atom xcb-aux xcb-event xcb-shm
 
 .include <bsd.port.mk>
