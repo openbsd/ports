@@ -1,0 +1,4 @@
+Chroma can also play levels from the game Enigma. It features a "warts and all"
+reimplementation based on a reverse engineering of the game engine, meaning
+that, unlike various other conversions, solutions found with Chroma are
+guaranteed to match those for the original game.
