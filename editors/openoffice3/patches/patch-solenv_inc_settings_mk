@@ -1,33 +1,12 @@
-$OpenBSD: patch-solenv_inc_settings_mk,v 1.6 2010/11/09 18:40:04 robert Exp $
---- solenv/inc/settings.mk.orig.port	Thu Oct 21 14:04:10 2010
-+++ solenv/inc/settings.mk	Sun Oct 24 18:34:59 2010
-@@ -1024,9 +1024,9 @@ LNTFLAGSOUTOBJ=-os
- # work at the start of a recipe line that is not prefixed by "+" as well as in
- # the middle of an existing && chain:
- AUGMENT_LIBRARY_PATH = : && \
--    $(OOO_LIBRARY_PATH_VAR)=$${{$(OOO_LIBRARY_PATH_VAR)+$${{$(OOO_LIBRARY_PATH_VAR)}}:}}$(normpath, $(SOLARSHAREDBIN))
-+    $(OOO_LIBRARY_PATH_VAR)=$${{$(OOO_LIBRARY_PATH_VAR)+$${{$(OOO_LIBRARY_PATH_VAR)}}:}}$(normpath, $(SOLARSHAREDBIN)):.
- AUGMENT_LIBRARY_PATH_LOCAL = : && \
--    $(OOO_LIBRARY_PATH_VAR)=$${{$(OOO_LIBRARY_PATH_VAR)+$${{$(OOO_LIBRARY_PATH_VAR)}}:}}$(normpath, $(PWD)/$(DLLDEST)):$(normpath, $(SOLARSHAREDBIN))
-+    $(OOO_LIBRARY_PATH_VAR)=$${{$(OOO_LIBRARY_PATH_VAR)+$${{$(OOO_LIBRARY_PATH_VAR)}}:}}$(normpath, $(PWD)/$(DLLDEST)):$(normpath, $(SOLARSHAREDBIN)):.
- .END
- 
- # remove if .Net 2003 support has expired 
-@@ -1135,6 +1135,8 @@ CDEFS+=-DOSL_DEBUG_LEVEL=$(DBG_LEVEL)
- RSCDEFS+=-DOSL_DEBUG_LEVEL=$(DBG_LEVEL)
- .ENDIF
- 
-+CFLAGS+= $(ENVCFLAGS)
-+
- .IF "$(optimize)"!=""
- CDEFS+=$(CDEFSOPT)
- CFLAGS+=$(CFLAGSOPT)
-@@ -1258,7 +1260,7 @@ CFLAGSAPPEND+=$(ENVWARNFLAGS)
- 
- CDEFS+= $(ADDCDEFS)
- CDEFS+= $(ENVCDEFS)
--CFLAGS+= $(CFLAGSCALL) $(ENVCFLAGS)
-+CFLAGS+= $(CFLAGSCALL)
- CFLAGSCXX+= $(ENVCFLAGSCXX)
- # andersrum wg. -TPxxxx
- CFLAGSINCXX+:=$(ENVCFLAGSINCXX)
+$OpenBSD: patch-solenv_inc_settings_mk,v 1.7 2010/12/10 23:25:35 robert Exp $
+--- solenv/inc/settings.mk.orig.port	Fri Nov 26 13:33:40 2010
++++ solenv/inc/settings.mk	Fri Dec 10 10:58:50 2010
+@@ -1048,7 +1048,7 @@ EXTMAXPROCESS*=$(MAXPROCESS)
+ IDLC*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/idlc
+ REGMERGE*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/regmerge
+ REGCOMPARE*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/regcompare
+-REGCOMP*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/regcomp
++REGCOMP*=$(AUGMENT_LIBRARY_PATH_LOCAL) $(SOLARBINDIR)/regcomp
+ CPPUMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/cppumaker
+ JAVAMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/javamaker
+ RDBMAKER*=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/rdbmaker

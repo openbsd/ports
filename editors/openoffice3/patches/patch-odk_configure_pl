@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_configure_pl,v 1.4 2010/06/26 15:48:12 robert Exp $
---- odk/configure.pl.orig.port	Wed May 26 20:25:01 2010
-+++ odk/configure.pl	Fri Jun 25 23:56:13 2010
-@@ -46,6 +46,10 @@ if ( $main::operatingSystem =~ m/solaris/ || 
+$OpenBSD: patch-odk_configure_pl,v 1.5 2010/12/10 23:25:35 robert Exp $
+--- odk/configure.pl.orig.port	Fri Nov 26 13:29:19 2010
++++ odk/configure.pl	Fri Dec 10 10:55:06 2010
+@@ -47,6 +47,10 @@ if ( $main::operatingSystem =~ m/solaris/ || 
  {
      $main::makeName = "gmake";
  }

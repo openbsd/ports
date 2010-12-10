@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/12/02 09:29:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/12/10 23:25:35 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,7 +16,7 @@ PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-kde=	0
 REVISION-java=	0
 
@@ -106,12 +106,6 @@ PSEUDO_FLAVORS=	normal_build parallel no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
 
-.if ${FLAVOR:L:Mparallel}
-EDISTFILES+=	nbcat-0.1.tar.gz:0
-.else
-SUPDISTFILES+=	nbcat-0.1.tar.gz:0
-.endif
-
 .if !${FLAVOR:L:Mno_java}
 MULTI_PACKAGES+=	-java
 .endif
@@ -139,7 +133,9 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/p5-Archive-Zip \
 		print/cups \
 		boost->=1.41.0:devel/boost \
-		misc/fileutils
+		misc/fileutils \
+		misc/findutils \
+		textproc/textutils
 
 MODULES+=	lang/python \
 		devel/gconf2
@@ -303,10 +299,9 @@ BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all --dlv_switch -link 
 SUBST_VARS+=	MR
 
 pre-patch:
-	ln -fs ${LOCALBASE}/bin/gcp ${WRKDIR}/bin/cp
-.if ${FLAVOR:L:Mparallel}
-	ln -fs ${WRKDIR}/cat.${ARCH} ${WRKDIR}/bin/cat
-.endif
+	@ln -fs ${LOCALBASE}/bin/gcat ${WRKDIR}/bin/cat
+	@ln -fs ${LOCALBASE}/bin/gcp ${WRKDIR}/bin/cp
+	@ln -fs ${LOCALBASE}/bin/gfind ${WRKDIR}/bin/find
 
 do-build:
 	@cd ${WRKBUILD} && \
