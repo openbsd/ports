@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2010/12/09 21:20:10 landry Exp $
+# $OpenBSD: Makefile,v 1.218 2010/12/10 09:44:05 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += childsplay-plugins
      SUBDIR += chocolate-doom
      SUBDIR += chroma
+     SUBDIR += chroma-enigma
      SUBDIR += circuit
      SUBDIR += clines
      SUBDIR += clonekeen
