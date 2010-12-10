@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/10 20:45:53 shadchin Exp $
+%%SHARED%%
+include/libcue/
+include/libcue/cd.h
+include/libcue/cdtext.h
+include/libcue/libcue.h
+include/libcue/rem.h
+include/libcue/time.h
+lib/libcue.a
+lib/libcue.la
+lib/pkgconfig/
+lib/pkgconfig/libcue.pc
