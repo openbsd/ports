@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2010/12/03 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/12/10 11:56:45 jasper Exp $
 
 COMMENT=	event-driven IRC-client module
 
-DISTNAME=	POE-Component-IRC-6.49
-REVISION=	0
+DISTNAME=	POE-Component-IRC-6.52
 CATEGORIES=	net
 USE_GROFF =	Yes
 
@@ -26,6 +25,7 @@ RUN_DEPENDS=	devel/p5-Object-Pluggable \
 
 # Not listed in PREREQ_PM, but needed for SSL connections.
 RUN_DEPENDS=	security/p5-POE-Component-SSLify
+REGRESS_DEPENDS=${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-POE-Component-IRC
