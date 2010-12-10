@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2010/12/10 20:02:01 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,6 +45,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 
 REGRESS_IS_INTERACTIVE= x11
+
+VMEM_WARNING=	Yes
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
