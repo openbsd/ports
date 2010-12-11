@@ -1,0 +1,4 @@
+spdrs60 is a graphical SRCP client to comfortably control a digital
+model railway. Visual appearance and usage comply to the original
+SpDrS60 German Federal Railway company locking table. A SRCP server
+(e.g. erddcd or srcpd) is needed as a hardware link.
