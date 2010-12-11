@@ -1,0 +1,15 @@
+$OpenBSD: patch-sope-core_NGExtensions_FdExt_subproj_NSString+Encoding_m,v 1.1 2010/12/11 14:10:32 sebastia Exp $
+
+fix abort(), when there was an error with iconv_open getting a conversion descriptor
+
+--- sope-core/NGExtensions/FdExt.subproj/NSString+Encoding.m.orig	Tue Nov  2 15:12:13 2010
++++ sope-core/NGExtensions/FdExt.subproj/NSString+Encoding.m	Fri Dec 10 19:58:24 2010
+@@ -256,7 +256,7 @@ static char *iconv_wrapper(id self, char *_src, unsign
+   return outbuf;
+   
+  CLEAR_AND_RETURN:
+-  if (type)
++  if (type && (type != (iconv_t)-1))
+     iconv_close(type);
+   
+   if (outbuf) {
