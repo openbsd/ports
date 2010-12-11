@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.869 2010/12/09 21:46:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.870 2010/12/11 09:55:51 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -481,6 +481,7 @@
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
+     SUBDIR += p5-Devel-StackTrace-AsHTML
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-ebug
@@ -545,6 +546,7 @@
      SUBDIR += p5-Hash-AutoHash
      SUBDIR += p5-Hash-AutoHash-Args
      SUBDIR += p5-Hash-Merge
+     SUBDIR += p5-Hash-MultiValue
      SUBDIR += p5-Hash-NoRef
      SUBDIR += p5-Hash-Util-FieldHash-Compat
      SUBDIR += p5-Heap
@@ -761,7 +763,9 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Reporter
+     SUBDIR += p5-Test-Requires
      SUBDIR += p5-Test-Script
+     SUBDIR += p5-Test-SharedFork
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-SubCalls
