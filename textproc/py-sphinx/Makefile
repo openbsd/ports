@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/11 11:02:08 martynas Exp $
 
 COMMENT =		python documentation generator
 
-MODPY_EGG_VERSION =	0.6.1
+MODPY_EGG_VERSION =	1.0.5
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES =		textproc
 
@@ -22,17 +21,25 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=S/Sphinx/}
 
 MODULES =		lang/python
-USE_GROFF =		Yes
-RUN_DEPENDS =		textproc/py-pygments \
+RUN_DEPENDS =		devel/py-babel \
 			textproc/py-docutils \
-			www/py-jinja2
+			textproc/py-pygments \
+			www/py-jinja2 \
+			${MODPY_JSON}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 REGRESS_DEPENDS =	devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 
+post-build:
+	@cd ${WRKSRC}/doc && \
+		perl -pi -e 's|^(SPHINXBUILD.*) python |\1 ${MODPY_BIN} |' \
+			Makefile && \
+		${SETENV} ${MAKE_ENV} ${MAKE} text
+
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sphinx
+	cd ${WRKSRC}/doc/_build/text && pax -rw * ${PREFIX}/share/doc/py-sphinx/
 
 do-regress:
 	cd ${WRKSRC}/tests && ${MODPY_BIN} run.py
