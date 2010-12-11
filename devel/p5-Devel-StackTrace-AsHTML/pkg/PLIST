@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:34:05 landry Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/StackTrace/
+${P5SITE}/Devel/StackTrace/AsHTML.pm
+@man man/man3p/Devel::StackTrace::AsHTML.3p

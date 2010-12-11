@@ -1,0 +1,5 @@
+Devel::StackTrace::AsHTML adds as_html method to Devel::StackTrace which
+displays the stack trace in beautiful HTML, with code snippet context
+and function parameters. If you call it on an instance of
+Devel::StackTrace::WithLexicals, you even get to see the lexical
+variables of each stack frame.
