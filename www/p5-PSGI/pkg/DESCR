@@ -1,0 +1,12 @@
+This document specifies a standard interface between web servers and
+Perl web applications or frameworks, to promote web application
+portability and reduce the duplicated efforts by web application
+framework developers.
+
+Keep in mind that PSGI is not Yet Another web application framework.
+PSGI is a specification to decouple web server environments from web
+application framework code. PSGI is also not the web application API.
+Web application developers (end users) are not supposed to run their web
+applications directly using the PSGI interface, but instead are
+encouraged to use frameworks that support PSGI, or use the helper
+implementations like Plack (more on that later).

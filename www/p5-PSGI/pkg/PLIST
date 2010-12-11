@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:46:56 landry Exp $
+${P5SITE}/PSGI/
+${P5SITE}/PSGI.pm
+${P5SITE}/PSGI.pod
+${P5SITE}/PSGI/FAQ.pod
+@man man/man3p/PSGI.3p
+@man man/man3p/PSGI::FAQ.3p
