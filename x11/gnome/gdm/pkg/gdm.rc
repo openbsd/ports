@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.3 2010/11/25 15:27:30 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.4 2010/12/11 07:40:21 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
@@ -8,7 +8,8 @@ daemon="${TRUEPREFIX}/sbin/gdm"
 pexp="${TRUEPREFIX}/sbin/gdm-binary"
 
 rc_start() {
-	(sleep 5; ${daemon})&
+	(sleep 5; su -c ${_rcclass:-daemon} -s ${_rcshell:-/bin/sh} \
+		${_rcuser:-root} -c "${daemon} ${daemon_flags}" >/dev/null)&
 }
 
 rc_reload() {
