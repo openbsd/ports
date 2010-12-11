@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: nginx.rc,v 1.2 2010/11/04 07:54:51 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.3 2010/12/11 08:05:38 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
-daemon=${TRUEPREFIX}/sbin/nginx
+daemon="${TRUEPREFIX}/sbin/nginx"
 pexp="nginx:.*master.*process"
 
 rc_reload() {
