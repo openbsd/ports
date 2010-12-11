@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_srcp-server_c,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
+--- src/srcp-server.c.orig	Sun Feb 28 21:01:39 2010
++++ src/srcp-server.c	Fri Dec  3 16:56:41 2010
+@@ -5,6 +5,8 @@
+  * Version 2, 1991. (c) Matthias Trute, 2000-2001.
+  */
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 

@@ -1,0 +1,29 @@
+$OpenBSD: patch-man_srcpd_conf_5,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
+--- man/srcpd.conf.5.orig	Fri Dec  3 17:21:01 2010
++++ man/srcpd.conf.5	Fri Dec  3 17:21:28 2010
+@@ -39,8 +39,8 @@ default settings and an example bus configuration.
+     <server>
+       <tcp-port>4303</tcp-port>
+       <pid-file>/var/run/srcpd.pid</pid-file>
+-      <username>nobody</username>
+-      <groupname>nogroup</groupname>
++      <username>_srcpd</username>
++      <groupname>_srcpd</groupname>
+     </server>
+     <verbosity>5</verbosity>
+   </bus>
+@@ -202,12 +202,12 @@ is
+ .TP
+ username
+ srcpd runs under this user.  Default is
+-.IR nobody .
++.IR _srcpd .
+ .\"
+ .TP
+ groupname
+ srcpd runs under this group.  Default is
+-.IR nogroup .
++.IR _srcpd .
+ .\"
+ .\"
+ .SS ddl

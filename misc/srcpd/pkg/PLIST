@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
+@newgroup _srcpd:660
+@newuser _srcpd:660:_srcpd:daemon:srcpd user:/nonexistent:/bin/false
+man/de/
+man/de/man5/
+@man man/de/man5/srcpd.conf.5
+man/de/man8/
+@man man/de/man8/srcpd.8
+@man man/man5/srcpd.conf.5
+@man man/man8/srcpd.8
+@bin sbin/srcpd
+share/examples/srcpd/
+share/examples/srcpd/srcpd.conf
+@sample ${SYSCONFDIR}/srcpd.conf
+@rcscript ${RCDIR}/srcpd

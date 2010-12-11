@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
+--- Makefile.in.orig	Fri Dec  3 17:17:04 2010
++++ Makefile.in	Fri Dec  3 17:17:25 2010
+@@ -681,7 +681,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-dist_udevDATA
++install-data-am: 
+ 
+ install-dvi: install-dvi-recursive
+ 

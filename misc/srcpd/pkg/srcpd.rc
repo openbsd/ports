@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: srcpd.rc,v 1.1.1.1 2010/12/11 11:14:54 sebastia Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/srcpd"
+
+rc_stop() {
+        pkill -9 -f "^${pexp}"
+}
+
+rc_cmd $1
