@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/24 18:16:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/11 14:21:08 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -50,19 +50,15 @@ include/NGCards/iCalToDo.h
 include/NGCards/iCalTrigger.h
 include/NGCards/iCalUTCOffset.h
 include/NGCards/iCalXMLRenderer.h
-@group wheel
 include/SOGo
-@group
 include/SOGoUI/
 include/SOGoUI/SOGoAptFormatter.h
 include/SOGoUI/UIxComponent.h
 include/SOGoUI/UIxJSClose.h
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/SOGo.framework/
-@group wheel
 lib/GNUstep/Frameworks/SOGo.framework/Headers
 lib/GNUstep/Frameworks/SOGo.framework/Resources
-@group
 lib/GNUstep/Frameworks/SOGo.framework/Versions/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Headers/
@@ -114,9 +110,7 @@ lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/DAVReportMap.plist
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/Info-gnustep.plist
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/SOGoDefaults.plist
-@group wheel
 lib/GNUstep/Frameworks/SOGo.framework/Versions/Current
-@group
 lib/GNUstep/Libraries/Resources/
 lib/GNUstep/Libraries/Resources/NGCards/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/
@@ -1906,12 +1900,10 @@ lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
 @lib lib/libOGoContentStore.so.${LIBOGoContentStore_VERSION}
 @lib lib/libSOGo.so.${LIBSOGo_VERSION}
 @lib lib/libSOGoUI.so.${LIBSOGoUI_VERSION}
-@group wheel
 @bin sbin/sogo-ealarms-notify
 @bin sbin/sogo-slapd-sockd
 @bin sbin/sogo-tool
 @bin sbin/sogod
-@group
 share/doc/pkg-readmes/sogo-${VERSION}
 share/doc/sogo/
 share/doc/sogo/SOGo_Installation_Guide.odt

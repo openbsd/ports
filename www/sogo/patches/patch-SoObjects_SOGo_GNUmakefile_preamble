@@ -1,12 +1,29 @@
-$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
---- SoObjects/SOGo/GNUmakefile.preamble.orig	Wed Nov 10 12:45:19 2010
-+++ SoObjects/SOGo/GNUmakefile.preamble	Wed Nov 10 14:17:20 2010
-@@ -18,7 +18,7 @@ SOGo_LIBRARIES_DEPEND_UPON += \
+$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.2 2010/12/11 14:21:08 sebastia Exp $
+--- SoObjects/SOGo/GNUmakefile.preamble.orig	Wed Nov 17 17:30:03 2010
++++ SoObjects/SOGo/GNUmakefile.preamble	Fri Dec  3 09:42:53 2010
+@@ -2,7 +2,7 @@
+ 
+ SOGo_INCLUDE_DIRS += -I.. -I../../UI -DSOGO_MAJOR_VERSION="\"$(MAJOR_VERSION)\"" -DSOGO_MINOR_VERSION="\"$(MINOR_VERSION)\""
+ 
+-HOSTNAME = $(shell hostname -f)
++HOSTNAME ?= $(shell hostname -f)
+ BUILD_DATE = $(shell echo $$USER@$(HOSTNAME); date +"%Y%m%d%H%M")
+ 
+ ADDITIONAL_CPPFLAGS += \
+@@ -18,9 +18,15 @@ SOGo_LIBRARIES_DEPEND_UPON += \
  	-lNGCards		\
  	-lNGMime		\
  	-lNGStreams -lNGExtensions -lEOControl \
 -	-lXmlRpc -lDOM -lSaxObjC -lcrypt \
-+	-lXmlRpc -lDOM -lSaxObjC -lcrypto \
++	-lXmlRpc -lDOM -lSaxObjC \
  	-lNGLdap -lSBJson \
          -lGDLContentStore
++
++ifeq ($(findstring openbsd, $(GNUSTEP_HOST_OS)), openbsd)
++SOGo_LIBRARIES_DEPEND_UPON += -lcrypto
++else
++SOGo_LIBRARIES_DEPEND_UPON += -lcrypt
++endif
  
+ ADDITIONAL_TOOL_LIBS += \
+         -L$(GNUSTEP_OBJ_DIR)/ \
