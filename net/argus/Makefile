@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/11 12:57:37 ajacoutot Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
 DISTNAME =	argus-3.0.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/

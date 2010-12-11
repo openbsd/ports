@@ -1,12 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: mon.rc,v 1.1 2010/11/10 13:54:56 pea Exp $
+# $OpenBSD: mon.rc,v 1.2 2010/12/11 12:57:37 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/bin/mon"
 daemon_flags="-c ${SYSCONFDIR}/mon/mon.cf -f -P /var/run/mon/mon.pid"
 pexp="/usr/bin/perl ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
 
 rc_pre() {
 	/usr/bin/install -d -o _mon /var/run/mon 
@@ -14,10 +15,6 @@ rc_pre() {
 
 rc_start() {
 	/usr/bin/su -l _mon -c "${daemon} ${daemon_flags}" > /dev/null
-}
-
-rc_reload() {
-	rc_err "$0: reload is not supported"
 }
 
 rc_cmd $1

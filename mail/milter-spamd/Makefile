@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/09 01:47:31 okan Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/11 12:57:37 ajacoutot Exp $
 
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
 DISTNAME=	milter-spamd-0.5
-REVISION =	1
+REVISION =	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 

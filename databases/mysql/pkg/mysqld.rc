@@ -1,17 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: mysqld.rc,v 1.4 2010/12/11 09:59:25 ajacoutot Exp $
+# $OpenBSD: mysqld.rc,v 1.5 2010/12/11 12:57:37 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/bin/mysqld_safe"
+rc_reload=NO
 
 rc_check() {
 	${TRUEPREFIX}/bin/mysqladmin -s ping >/dev/null
-}
-
-rc_reload() {
-	rc_err "$0: reload is not supported."
 }
 
 rc_start() {

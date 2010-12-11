@@ -1,18 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: zabbix_proxy.rc,v 1.2 2010/12/11 10:24:21 ajacoutot Exp $
+# $OpenBSD: zabbix_proxy.rc,v 1.3 2010/12/11 12:57:37 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/zabbix_proxy"
 pexp="zabbix_proxy: heartbeat sender"
+rc_reload=NO
 
 rc_pre() {
 	install -d -o _zabbix -g _zabbix /var/run/zabbix
-}
-
-rc_reload() {
-	rc_err "$0: reload is not supported"
 }
 
 rc_cmd $1
