@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.870 2010/12/11 09:55:51 landry Exp $
+# $OpenBSD: Makefile,v 1.871 2010/12/11 11:09:53 shadchin Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -239,6 +239,7 @@
      SUBDIR += libglademm
      SUBDIR += libgsf
      SUBDIR += libgtop2
+     SUBDIR += libguess
      SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libio
