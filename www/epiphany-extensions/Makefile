@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/12/11 06:33:58 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.32.0
 
-REVISION=		1
+REVISION=		2
 
 # sync with www/epiphany
 API_V=		2.29
@@ -33,8 +33,8 @@ WANTLIB += gobject-2.0 gstapp-0.10 gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
-WANTLIB += sqlite3 stdc++ tasn1 webkit-1.0 xcb xcb-render xcb-render-util
-WANTLIB += xml2 xslt z gpg-error
+WANTLIB += sqlite3 stdc++ tasn1 webkit-1.0 xcb xcb-render
+WANTLIB += xml2 xslt z gpg-error GL Xxf86vm drm util xcb-shm
 
 MODULES=	devel/gettext \
 		lang/python \

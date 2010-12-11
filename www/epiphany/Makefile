@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2010/12/11 06:33:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.30.6
-REVISION=	0
+REVISION=	1
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 API_V=		2.29
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c
-WANTLIB += cairo dbus-1 dbus-glib-1 eggdbus-1 enchant expat fontconfig
+WANTLIB += cairo dbus-1 dbus-glib-1 enchant expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gstapp-0.10 gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
@@ -41,7 +41,7 @@ WANTLIB += icuuc jpeg m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png proxy pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ tasn1 xcb xcb-atom xcb-aux xcb-event  xcb-render
-WANTLIB += xcb-render-util xml2 z
+WANTLIB += xml2 z GL Xxf86vm drm nssutil3 util xcb-shm
 WANTLIB += xslt>=1 execinfo notify>=2 webkit-1.0>=2.1 soup-gnome-2.4>=1.1
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
