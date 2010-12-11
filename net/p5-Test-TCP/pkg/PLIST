@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:44:52 landry Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/TCP.pm
+@man man/man3p/Test::TCP.3p
