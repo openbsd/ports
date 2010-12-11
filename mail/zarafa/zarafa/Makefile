@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2010/12/11 08:20:21 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 
+PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	6
 
 CATEGORIES=	mail www productivity
 
@@ -41,7 +40,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime>=0.7.1p6 \
+		mail/zarafa/libvmime>=0.7.1p7 \
 		textproc/libical
 
 WANTLIB-web += ${MODGETTEXT_WANTLIB}
@@ -96,10 +95,7 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
 
-WRKDIST=	${WRKDIR}/zarafa-${V}
-
-post-extract:
-	${GZIP_CMD} -dc ${WRKDIR}/${DISTNAME}/zcp-${V}.tar.gz | ${TAR} xf - -C ${WRKDIR}
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 post-patch:
 	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \

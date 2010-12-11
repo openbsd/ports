@@ -1,13 +1,13 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.7 2010/08/22 10:13:27 ajacoutot Exp $
---- doc/Makefile.in.orig	Tue Aug  3 11:42:55 2010
-+++ doc/Makefile.in	Sun Aug 22 10:22:53 2010
+$OpenBSD: patch-doc_Makefile_in,v 1.8 2010/12/11 08:20:21 ajacoutot Exp $
+--- doc/Makefile.in.orig	Thu Dec  2 11:37:21 2010
++++ doc/Makefile.in	Fri Dec  3 18:48:05 2010
 @@ -228,9 +228,9 @@ dist_data_DATA = 
  BUILT_SOURCES = zarafa.1
  allpages = \
  	zarafa-dagent.1 zarafa-passwd.1 zarafa-spooler.1 zarafa-admin.1 zarafa-server.1 zarafa-gateway.1 zarafa-monitor.1 zarafa-cfgchecker.1 \
 -	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-licensed.1 zarafa-stats.1 zarafa-fsck.1 zarafa-indexer.1 zarafa-report.1 \
 -	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-ldapms.cfg.5 zarafa-unix.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
--	zarafa-monitor.cfg.5 zarafa-licensed.cfg.5 zarafa-dagent.cfg.5 zarafa-indexer.cfg.5
+-	zarafa-monitor.cfg.5 zarafa-licensed.cfg.5 zarafa-dagent.cfg.5 zarafa-indexer.cfg.5 zarafa-archiver.1 zarafa-archiver.cfg.5
 +	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-stats.1 zarafa-fsck.1 zarafa-report.1 \
 +	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
 +	zarafa-monitor.cfg.5 zarafa-dagent.cfg.5

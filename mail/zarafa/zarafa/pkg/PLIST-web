@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.4 2010/08/31 17:57:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.5 2010/12/11 08:20:21 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -8,9 +8,12 @@ conf/php5.sample/mapi.ini.dist
 include/
 include/php/
 include/php/mapi/
+include/php/mapi/class.baserecurrence.php
 include/php/mapi/class.freebusypublish.php
 include/php/mapi/class.meetingrequest.php
 include/php/mapi/class.recurrence.php
+include/php/mapi/class.taskrecurrence.php
+include/php/mapi/class.taskrequest.php
 include/php/mapi/mapi.util.php
 include/php/mapi/mapicode.php
 include/php/mapi/mapidefs.php
@@ -98,6 +101,7 @@ zarafa-webaccess/client/layout/dialogs/modal/customizetoday.php
 zarafa-webaccess/client/layout/dialogs/modal/delegates.php
 zarafa-webaccess/client/layout/dialogs/modal/delegatespermission.php
 zarafa-webaccess/client/layout/dialogs/modal/deleteoccurrence.php
+zarafa-webaccess/client/layout/dialogs/modal/deletetaskoccurrence.php
 zarafa-webaccess/client/layout/dialogs/modal/emailaddress.php
 zarafa-webaccess/client/layout/dialogs/modal/fieldchooser.php
 zarafa-webaccess/client/layout/dialogs/modal/flag.php
@@ -166,6 +170,7 @@ zarafa-webaccess/client/layout/img/calendar_arrowup.gif
 zarafa-webaccess/client/layout/img/copy.gif
 zarafa-webaccess/client/layout/img/default_contact_image.gif
 zarafa-webaccess/client/layout/img/delete.gif
+zarafa-webaccess/client/layout/img/downloadzip.gif
 zarafa-webaccess/client/layout/img/dropdownarrow.gif
 zarafa-webaccess/client/layout/img/favicon.ico
 zarafa-webaccess/client/layout/img/fill_folder_off.gif
@@ -338,12 +343,17 @@ zarafa-webaccess/client/layout/img/icon_stickynote_yellow_large.gif
 zarafa-webaccess/client/layout/img/icon_store.gif
 zarafa-webaccess/client/layout/img/icon_task.gif
 zarafa-webaccess/client/layout/img/icon_task_complete.gif
+zarafa-webaccess/client/layout/img/icon_task_recurring.gif
+zarafa-webaccess/client/layout/img/icon_taskrequest.gif
+zarafa-webaccess/client/layout/img/icon_taskrequest_accepted.gif
+zarafa-webaccess/client/layout/img/icon_taskrequest_assignee.gif
 zarafa-webaccess/client/layout/img/icon_today.gif
 zarafa-webaccess/client/layout/img/icon_user.gif
 zarafa-webaccess/client/layout/img/icon_view_all_proposals.gif
 zarafa-webaccess/client/layout/img/icon_wastebasket.gif
 zarafa-webaccess/client/layout/img/icon_week.gif
 zarafa-webaccess/client/layout/img/icon_workweek.gif
+zarafa-webaccess/client/layout/img/icon_zarafa.png
 zarafa-webaccess/client/layout/img/importance.gif
 zarafa-webaccess/client/layout/img/importance_high.gif
 zarafa-webaccess/client/layout/img/importance_low.gif
@@ -408,6 +418,7 @@ zarafa-webaccess/client/layout/js/advancedfind.js
 zarafa-webaccess/client/layout/js/advprompt.js
 zarafa-webaccess/client/layout/js/appointment.js
 zarafa-webaccess/client/layout/js/attachitem.js
+zarafa-webaccess/client/layout/js/attachments.js
 zarafa-webaccess/client/layout/js/categories.js
 zarafa-webaccess/client/layout/js/contact.js
 zarafa-webaccess/client/layout/js/createmail.js
@@ -871,6 +882,12 @@ zarafa-webaccess/client/widgets/recipientinput.js
 zarafa-webaccess/client/widgets/recipientinputblock.js
 zarafa-webaccess/client/widgets/searchcriteria.js
 zarafa-webaccess/client/widgets/suggestionlist.js
+zarafa-webaccess/client/widgets/swfupload/
+zarafa-webaccess/client/widgets/swfupload/swfupload.cookies.js
+zarafa-webaccess/client/widgets/swfupload/swfupload.js
+zarafa-webaccess/client/widgets/swfupload/swfupload.queue.js
+zarafa-webaccess/client/widgets/swfupload/swfupload.swf
+zarafa-webaccess/client/widgets/swfupload/swfupload.swfobject.js
 zarafa-webaccess/client/widgets/tablewidget.js
 zarafa-webaccess/client/widgets/tabswidget.js
 zarafa-webaccess/client/widgets/timepicker.js
@@ -904,6 +921,7 @@ zarafa-webaccess/server/class.configcheck.php
 zarafa-webaccess/server/core/
 zarafa-webaccess/server/core/class.bus.php
 zarafa-webaccess/server/core/class.conversion.php
+zarafa-webaccess/server/core/class.createZipArchive.php
 zarafa-webaccess/server/core/class.dispatcher.php
 zarafa-webaccess/server/core/class.filter.php
 zarafa-webaccess/server/core/class.language.php
@@ -918,6 +936,7 @@ zarafa-webaccess/server/core/class.state.php
 zarafa-webaccess/server/core/class.tablecolumns.php
 zarafa-webaccess/server/core/class.xmlbuilder.php
 zarafa-webaccess/server/core/class.xmlparser.php
+zarafa-webaccess/server/core/class.zarchiver.php
 zarafa-webaccess/server/core/constants.php
 zarafa-webaccess/server/core/htmlfilter.php
 zarafa-webaccess/server/language/
