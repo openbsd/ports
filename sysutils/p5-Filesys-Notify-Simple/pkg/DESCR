@@ -1,0 +1,15 @@
+Filesys::Notify::Simple is a simple but unified interface to get
+notifications of changes to a given filesystem path. It utilizes
+inotify2 on Linux and fsevents on OS X if they're installed, with a
+fallback to the full directory scan if they're not available.
+
+There are some limitations in this module. If you don't like it, use
+File::ChangeNotify.
+
+    * There is no file name based filter. Do it in your own code.  
+    * You can not get types of events (created, updated, deleted).  
+    * Currently wait method blocks.
+
+In return, this module doesn't depend on any non-core modules. Platform
+specific optimizations with Linux::Inotify2 and Mac::FSEvents are truely
+optional.
