@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/12/11 09:19:02 landry Exp $
 ${P5SITE}/Devel/
+${P5SITE}/Devel/StackTrace/
 ${P5SITE}/Devel/StackTrace.pm
+${P5SITE}/Devel/StackTrace/Frame.pm
 @man man/man3p/Devel::StackTrace.3p
+@man man/man3p/Devel::StackTrace::Frame.3p
