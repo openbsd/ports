@@ -1,0 +1,197 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:51:31 landry Exp $
+bin/plackup
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Message/
+${P5SITE}/HTTP/Message/PSGI.pm
+${P5SITE}/HTTP/Server/
+${P5SITE}/HTTP/Server/PSGI.pm
+${P5SITE}/Plack/
+${P5SITE}/Plack.pm
+${P5SITE}/Plack/App/
+${P5SITE}/Plack/App/CGIBin.pm
+${P5SITE}/Plack/App/Cascade.pm
+${P5SITE}/Plack/App/Directory.pm
+${P5SITE}/Plack/App/FCGIDispatcher.pm
+${P5SITE}/Plack/App/File.pm
+${P5SITE}/Plack/App/PSGIBin.pm
+${P5SITE}/Plack/App/URLMap.pm
+${P5SITE}/Plack/App/WrapCGI.pm
+${P5SITE}/Plack/Builder.pm
+${P5SITE}/Plack/Component.pm
+${P5SITE}/Plack/HTTPParser/
+${P5SITE}/Plack/HTTPParser.pm
+${P5SITE}/Plack/HTTPParser/PP.pm
+${P5SITE}/Plack/Handler/
+${P5SITE}/Plack/Handler.pm
+${P5SITE}/Plack/Handler/Apache1.pm
+${P5SITE}/Plack/Handler/Apache2/
+${P5SITE}/Plack/Handler/Apache2.pm
+${P5SITE}/Plack/Handler/Apache2/Registry.pm
+${P5SITE}/Plack/Handler/CGI.pm
+${P5SITE}/Plack/Handler/FCGI.pm
+${P5SITE}/Plack/Handler/HTTP/
+${P5SITE}/Plack/Handler/HTTP/Server/
+${P5SITE}/Plack/Handler/HTTP/Server/PSGI.pm
+${P5SITE}/Plack/Handler/HTTP/Server/Simple.pm
+${P5SITE}/Plack/Handler/Net/
+${P5SITE}/Plack/Handler/Net/FastCGI.pm
+${P5SITE}/Plack/Handler/Standalone.pm
+${P5SITE}/Plack/Loader/
+${P5SITE}/Plack/Loader.pm
+${P5SITE}/Plack/Loader/Delayed.pm
+${P5SITE}/Plack/Loader/Restarter.pm
+${P5SITE}/Plack/Loader/Shotgun.pm
+${P5SITE}/Plack/MIME.pm
+${P5SITE}/Plack/Middleware/
+${P5SITE}/Plack/Middleware.pm
+${P5SITE}/Plack/Middleware/AccessLog/
+${P5SITE}/Plack/Middleware/AccessLog.pm
+${P5SITE}/Plack/Middleware/AccessLog/Timed.pm
+${P5SITE}/Plack/Middleware/Auth/
+${P5SITE}/Plack/Middleware/Auth/Basic.pm
+${P5SITE}/Plack/Middleware/BufferedStreaming.pm
+${P5SITE}/Plack/Middleware/Chunked.pm
+${P5SITE}/Plack/Middleware/Conditional.pm
+${P5SITE}/Plack/Middleware/ConditionalGET.pm
+${P5SITE}/Plack/Middleware/ContentLength.pm
+${P5SITE}/Plack/Middleware/ContentMD5.pm
+${P5SITE}/Plack/Middleware/ErrorDocument.pm
+${P5SITE}/Plack/Middleware/HTTPExceptions.pm
+${P5SITE}/Plack/Middleware/Head.pm
+${P5SITE}/Plack/Middleware/JSONP.pm
+${P5SITE}/Plack/Middleware/LighttpdScriptNameFix.pm
+${P5SITE}/Plack/Middleware/Lint.pm
+${P5SITE}/Plack/Middleware/Log4perl.pm
+${P5SITE}/Plack/Middleware/LogDispatch.pm
+${P5SITE}/Plack/Middleware/MethodOverride.pm
+${P5SITE}/Plack/Middleware/NullLogger.pm
+${P5SITE}/Plack/Middleware/RearrangeHeaders.pm
+${P5SITE}/Plack/Middleware/Recursive.pm
+${P5SITE}/Plack/Middleware/Refresh.pm
+${P5SITE}/Plack/Middleware/Runtime.pm
+${P5SITE}/Plack/Middleware/SimpleContentFilter.pm
+${P5SITE}/Plack/Middleware/SimpleLogger.pm
+${P5SITE}/Plack/Middleware/StackTrace.pm
+${P5SITE}/Plack/Middleware/Static.pm
+${P5SITE}/Plack/Middleware/Writer.pm
+${P5SITE}/Plack/Middleware/XFramework.pm
+${P5SITE}/Plack/Middleware/XSendfile.pm
+${P5SITE}/Plack/Request/
+${P5SITE}/Plack/Request.pm
+${P5SITE}/Plack/Request/Upload.pm
+${P5SITE}/Plack/Response.pm
+${P5SITE}/Plack/Runner.pm
+${P5SITE}/Plack/Server/
+${P5SITE}/Plack/Server.pm
+${P5SITE}/Plack/Server/Apache1.pm
+${P5SITE}/Plack/Server/Apache2.pm
+${P5SITE}/Plack/Server/CGI.pm
+${P5SITE}/Plack/Server/FCGI.pm
+${P5SITE}/Plack/Server/README
+${P5SITE}/Plack/Server/ServerSimple.pm
+${P5SITE}/Plack/Server/Standalone/
+${P5SITE}/Plack/Server/Standalone.pm
+${P5SITE}/Plack/Server/Standalone/Prefork.pm
+${P5SITE}/Plack/TempBuffer/
+${P5SITE}/Plack/TempBuffer.pm
+${P5SITE}/Plack/TempBuffer/Auto.pm
+${P5SITE}/Plack/TempBuffer/File.pm
+${P5SITE}/Plack/TempBuffer/PerlIO.pm
+${P5SITE}/Plack/Test/
+${P5SITE}/Plack/Test.pm
+${P5SITE}/Plack/Test/MockHTTP.pm
+${P5SITE}/Plack/Test/Server.pm
+${P5SITE}/Plack/Test/Suite.pm
+${P5SITE}/Plack/Util/
+${P5SITE}/Plack/Util.pm
+${P5SITE}/Plack/Util/Accessor.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Plack/
+${P5SITE}/auto/share/dist/Plack/#foo
+${P5SITE}/auto/share/dist/Plack/baybridge.jpg
+${P5SITE}/auto/share/dist/Plack/face.jpg
+${P5SITE}/auto/share/dist/Plack/stuff../
+${P5SITE}/auto/share/dist/Plack/stuff../Hello.txt
+@man man/man1/plackup.1
+@man man/man3p/HTTP::Message::PSGI.3p
+@man man/man3p/HTTP::Server::PSGI.3p
+@man man/man3p/Plack.3p
+@man man/man3p/Plack::App::CGIBin.3p
+@man man/man3p/Plack::App::Cascade.3p
+@man man/man3p/Plack::App::Directory.3p
+@man man/man3p/Plack::App::FCGIDispatcher.3p
+@man man/man3p/Plack::App::File.3p
+@man man/man3p/Plack::App::PSGIBin.3p
+@man man/man3p/Plack::App::URLMap.3p
+@man man/man3p/Plack::App::WrapCGI.3p
+@man man/man3p/Plack::Builder.3p
+@man man/man3p/Plack::Component.3p
+@man man/man3p/Plack::HTTPParser.3p
+@man man/man3p/Plack::HTTPParser::PP.3p
+@man man/man3p/Plack::Handler.3p
+@man man/man3p/Plack::Handler::Apache1.3p
+@man man/man3p/Plack::Handler::Apache2.3p
+@man man/man3p/Plack::Handler::Apache2::Registry.3p
+@man man/man3p/Plack::Handler::CGI.3p
+@man man/man3p/Plack::Handler::FCGI.3p
+@man man/man3p/Plack::Handler::HTTP::Server::PSGI.3p
+@man man/man3p/Plack::Handler::HTTP::Server::Simple.3p
+@man man/man3p/Plack::Handler::Net::FastCGI.3p
+@man man/man3p/Plack::Handler::Standalone.3p
+@man man/man3p/Plack::Loader.3p
+@man man/man3p/Plack::Loader::Delayed.3p
+@man man/man3p/Plack::Loader::Restarter.3p
+@man man/man3p/Plack::Loader::Shotgun.3p
+@man man/man3p/Plack::MIME.3p
+@man man/man3p/Plack::Middleware.3p
+@man man/man3p/Plack::Middleware::AccessLog.3p
+@man man/man3p/Plack::Middleware::AccessLog::Timed.3p
+@man man/man3p/Plack::Middleware::Auth::Basic.3p
+@man man/man3p/Plack::Middleware::BufferedStreaming.3p
+@man man/man3p/Plack::Middleware::Chunked.3p
+@man man/man3p/Plack::Middleware::Conditional.3p
+@man man/man3p/Plack::Middleware::ConditionalGET.3p
+@man man/man3p/Plack::Middleware::ContentLength.3p
+@man man/man3p/Plack::Middleware::ContentMD5.3p
+@man man/man3p/Plack::Middleware::ErrorDocument.3p
+@man man/man3p/Plack::Middleware::HTTPExceptions.3p
+@man man/man3p/Plack::Middleware::Head.3p
+@man man/man3p/Plack::Middleware::JSONP.3p
+@man man/man3p/Plack::Middleware::LighttpdScriptNameFix.3p
+@man man/man3p/Plack::Middleware::Lint.3p
+@man man/man3p/Plack::Middleware::Log4perl.3p
+@man man/man3p/Plack::Middleware::LogDispatch.3p
+@man man/man3p/Plack::Middleware::MethodOverride.3p
+@man man/man3p/Plack::Middleware::NullLogger.3p
+@man man/man3p/Plack::Middleware::RearrangeHeaders.3p
+@man man/man3p/Plack::Middleware::Recursive.3p
+@man man/man3p/Plack::Middleware::Refresh.3p
+@man man/man3p/Plack::Middleware::Runtime.3p
+@man man/man3p/Plack::Middleware::SimpleContentFilter.3p
+@man man/man3p/Plack::Middleware::SimpleLogger.3p
+@man man/man3p/Plack::Middleware::StackTrace.3p
+@man man/man3p/Plack::Middleware::Static.3p
+@man man/man3p/Plack::Middleware::Writer.3p
+@man man/man3p/Plack::Middleware::XFramework.3p
+@man man/man3p/Plack::Middleware::XSendfile.3p
+@man man/man3p/Plack::Request.3p
+@man man/man3p/Plack::Request::Upload.3p
+@man man/man3p/Plack::Response.3p
+@man man/man3p/Plack::Runner.3p
+@man man/man3p/Plack::Server.3p
+@man man/man3p/Plack::Server::Apache1.3p
+@man man/man3p/Plack::Server::Apache2.3p
+@man man/man3p/Plack::Server::CGI.3p
+@man man/man3p/Plack::Server::FCGI.3p
+@man man/man3p/Plack::Server::ServerSimple.3p
+@man man/man3p/Plack::Server::Standalone.3p
+@man man/man3p/Plack::Server::Standalone::Prefork.3p
+@man man/man3p/Plack::TempBuffer.3p
+@man man/man3p/Plack::Test.3p
+@man man/man3p/Plack::Test::MockHTTP.3p
+@man man/man3p/Plack::Test::Server.3p
+@man man/man3p/Plack::Test::Suite.3p
+@man man/man3p/Plack::Util.3p
+@man man/man3p/Plack::Util::Accessor.3p
