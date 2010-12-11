@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/11 08:19:21 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
 VMIME=		libvmime-0.7.1
 PKGNAME=	zarafa-${VMIME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail devel
 
@@ -33,14 +33,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-messaging-proto-sendmail \
 		--enable-platform-posix
 
-WRKDIST=	${WRKDIR}/${VMIME}
-
-post-extract:
-	${BZIP2} -dc ${WRKDIR}/${DISTNAME}/${VMIME}.tar.bz2 | ${TAR} xf - -C ${WRKDIR}
+WRKDIST=	${WRKDIR}/${DISTNAME}/${VMIME}
 
 # apply zarafa provided patches at pre-configure to not mess with our own
 pre-configure:
 	cd ${WRKSRC} && \
-		for i in ${WRKDIR}/${DISTNAME}/vmime-patches/*.diff; do patch -z .beforezarafa -s -E -p1 < $$i; done
+		for i in ${WRKDIR}/${DISTNAME}/libvmime-patches/*.diff; do patch -z .beforezarafa -s -E -p1 < $$i; done
  
 .include <bsd.port.mk>
