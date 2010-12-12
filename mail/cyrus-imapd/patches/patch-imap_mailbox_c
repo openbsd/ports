@@ -1,0 +1,21 @@
+$OpenBSD: patch-imap_mailbox_c,v 1.4 2010/12/12 11:52:30 ajacoutot Exp $
+
+From 2f2018020d9976bdbd419632328e144f7e43574c Mon Sep 17 00:00:00 2001
+From: Bron Gondwana <brong@opera.com>
+Date: Sun, 12 Dec 2010 11:27:25 +0000
+Subject: Bug #3370 - always map_refresh before reading index header
+
+--- imap/mailbox.c.orig	Mon Nov 29 14:28:06 2010
++++ imap/mailbox.c	Sun Dec 12 12:34:47 2010
+@@ -1348,6 +1348,11 @@ static int mailbox_read_index_header(struct mailbox *m
+     if (mailbox->index_size < INDEX_HEADER_SIZE)
+ 	return IMAP_MAILBOX_BADFORMAT;
+ 
++    /* need to make sure we're reading fresh data! */
++    map_refresh(mailbox->index_fd, 1, &mailbox->index_base,
++		&mailbox->index_len, mailbox->index_size,
++		"index", mailbox->name);
++
+     r = mailbox_buf_to_index_header(mailbox->index_base, &mailbox->i);
+     if (r) return r;
+ 

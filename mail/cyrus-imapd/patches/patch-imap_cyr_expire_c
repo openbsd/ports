@@ -1,0 +1,17 @@
+$OpenBSD: patch-imap_cyr_expire_c,v 1.1 2010/12/12 11:52:30 ajacoutot Exp $
+
+From 48f2fab8c42716201c1f55646110df306ae750ed Mon Sep 17 00:00:00 2001
+From: Bron Gondwana <brong@opera.com>
+Date: Sun, 31 Oct 2010 00:22:37 +0000
+Subject: Commit mailbox after annotation based expiry
+
+--- imap/cyr_expire.c.orig	Sun Dec 12 09:50:04 2010
++++ imap/cyr_expire.c	Sun Dec 12 09:50:26 2010
+@@ -228,6 +228,7 @@ int expire(char *name, int matchlen, int maycreate __a
+ 	}
+ 
+ 	r = mailbox_expunge(mailbox, expire_cb, erock, NULL);
++	if (!r) r = mailbox_commit(mailbox);
+ 	if (r) {
+ 	    syslog(LOG_ERR, "failed to expire old messages: %s", mailbox->name);
+ 	}
