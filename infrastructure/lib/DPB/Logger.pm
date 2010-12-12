@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Logger.pm,v 1.2 2010/12/12 21:21:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -65,7 +65,11 @@ sub log_pkgpath
 sub log_pkgname
 {
 	my ($self, $v) = @_;
-	return $self->logfile("/packages/".$v->fullpkgname);
+	if (defined $v->fullpkgname) {
+		return $self->logfile("/packages/".$v->fullpkgname);
+	} else {
+		return $self->logfile("/nopkgname/".$v->fullpkgpath);
+	}
 }
 
 sub link
