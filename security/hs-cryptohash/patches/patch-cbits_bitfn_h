@@ -1,9 +1,9 @@
-$OpenBSD: patch-cbits_bitfn_h,v 1.1.1.1 2010/12/08 23:29:04 jasper Exp $
+$OpenBSD: patch-cbits_bitfn_h,v 1.2 2010/12/12 20:43:41 jasper Exp $
 
 - Don't redefine swap32/swap64.
 
 --- cbits/bitfn.h.orig	Mon Nov  1 23:27:34 2010
-+++ cbits/bitfn.h	Wed Dec  8 18:20:40 2010
++++ cbits/bitfn.h	Sun Dec 12 21:40:45 2010
 @@ -30,14 +30,17 @@
  /**********************************************************/
  # if (defined(__i386__))
@@ -50,7 +50,23 @@ $OpenBSD: patch-cbits_bitfn_h,v 1.1.1.1 2010/12/08 23:29:04 jasper Exp $
  # endif
  #endif /* NO_INLINE_ASM */
  /**********************************************************/
-@@ -161,7 +167,8 @@ static inline void array_copy64(uint64_t *d, uint64_t 
+@@ -111,6 +117,7 @@ static inline void array_swap32(uint32_t *d, uint32_t 
+ }
+ #endif
+ 
++#ifndef swap64
+ #ifndef ARCH_HAS_SWAP64
+ static inline uint64_t swap64(uint64_t a)
+ {
+@@ -118,6 +125,7 @@ static inline uint64_t swap64(uint64_t a)
+ 	       (((uint64_t) swap32((uint32_t) a)) << 32);
+ }
+ #endif
++#endif
+ 
+ #ifndef ARCH_HAS_ARRAY_SWAP64
+ static inline void array_swap64(uint64_t *d, uint64_t *s, uint32_t nb)
+@@ -161,7 +169,8 @@ static inline void array_copy64(uint64_t *d, uint64_t 
  #ifdef __MINGW32__
    # define LITTLE_ENDIAN 1234
    # define BYTE_ORDER    LITTLE_ENDIAN
