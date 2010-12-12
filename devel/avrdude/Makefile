@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/12 20:20:56 jasper Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
 V=		5.10
 DISTNAME=	avrdude-${V}
+REVISION=	0
 DISTFILES+=	avrdude-${V}.tar.gz avrdude-doc-${V}.pdf
 CATEGORIES=	devel
 

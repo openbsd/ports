@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1 2010/12/12 20:20:56 jasper Exp $
+
+Running AVRDUDE on OpenBSD
+==========================
+
+Programming Arduio devices:
+---------------------------
+If you're planning on programming *duino devices (with an FTDI chip)
+using avrdude, you'll want to invoke it something like this:
+
+    avrdude -b19200 -P /dev/cuaU0 -c arduino -p m328p -U flash:w:blink.hex
+
+Or replace 'm328p' if your board doesn't have an ATmega328p chip, but an
+ATmega168 chip (which is the case with Diecimila boards).
+
+For the Uno and newer boards, a baudrate of 115200 needs to be used to
+program the device.
