@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/25 12:05:20 pirofti Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/12 18:51:23 dcoppa Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
-V = 		2010.10.24
-DISTNAME =	youtube-dl-${V}
-WRKDIST = 	${WRKDIR}/youtube-dl
+V = 		2010.12.09
+DISTNAME =	rg3-youtube-dl-${V}-0-gf83ae78
+PKGNAME =	youtube-dl-${V}
+WRKDIST = 	${WRKDIR}/rg3-youtube-dl-f83ae78
 DIST_SUBDIR =	youtube-dl
 CATEGORIES =	www
 
-HOMEPAGE =	http://bitbucket.org/rg3/youtube-dl/
+HOMEPAGE =	http://rg3.github.com/youtube-dl/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 

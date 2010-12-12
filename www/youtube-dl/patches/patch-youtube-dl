@@ -1,12 +1,12 @@
-$OpenBSD: patch-youtube-dl,v 1.3 2010/08/24 09:42:15 sthen Exp $
+$OpenBSD: patch-youtube-dl,v 1.4 2010/12/12 18:51:23 dcoppa Exp $
 --- youtube-dl.orig	Wed Aug  4 18:09:57 2010
 +++ youtube-dl	Mon Aug 23 21:00:32 2010
-@@ -481,7 +481,7 @@ class FileDownloader(object):
+@@ -511,7 +511,7 @@ class FileDownloader(object):
  		# Download using rtmpdump. rtmpdump returns exit code 2 when
  		# the connection was interrumpted and resuming appears to be
  		# possible. This is part of rtmpdump's normal usage, AFAIK.
--		basic_args = ['rtmpdump', '-q'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', filename]
-+		basic_args = ['rtmpdump'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', filename]
+-		basic_args = ['rtmpdump', '-q'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', tmpfilename]
++		basic_args = ['rtmpdump'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', tmpfilename]
  		retval = subprocess.call(basic_args + [[], ['-e', '-k', '1']][self.params.get('continuedl', False)])
  		while retval == 2 or retval == 1:
- 			prevsize = os.path.getsize(filename)
+ 			prevsize = os.path.getsize(tmpfilename)
