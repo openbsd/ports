@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2009/02/08 21:56:18 ajacoutot Exp $
---- configure.orig	Sun Jan 25 19:39:59 2009
-+++ configure	Sun Feb  8 00:19:35 2009
-@@ -2108,7 +2108,7 @@ test -n "$target_alias" &&
+$OpenBSD: patch-configure,v 1.12 2010/12/12 19:13:01 jasper Exp $
+--- configure.orig	Thu Dec  9 16:07:00 2010
++++ configure	Thu Dec  9 16:07:51 2010
+@@ -2624,7 +2624,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
  
@@ -10,21 +10,21 @@ $OpenBSD: patch-configure,v 1.11 2009/02/08 21:56:18 ajacoutot Exp $
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
  TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
-@@ -10603,7 +10603,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+@@ -4451,7 +4451,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -5772,7 +5772,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -10663,7 +10663,7 @@ fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_intl_bindtextdomain" >&5
- $as_echo "$ac_cv_lib_intl_bindtextdomain" >&6; }
- if test "x$ac_cv_lib_intl_bindtextdomain" = x""yes; then
--   CORE_LIBS="${CORE_LIBS} -lintl"
-+   CORE_LIBS="${CORE_LIBS} -lintl -liconv"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
  
- else
-    { { $as_echo "$as_me:$LINENO: error: NLS (national language support) has been requested but

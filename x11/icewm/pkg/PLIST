@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/02/08 21:56:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/12/12 19:13:01 jasper Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icewm
 @bin bin/icewm-session
+bin/icewm-set-gnomewm
 @bin bin/icewmbg
 @bin bin/icewmhint
 @bin bin/icewmtray

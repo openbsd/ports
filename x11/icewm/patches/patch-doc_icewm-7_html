@@ -1,25 +1,26 @@
-$OpenBSD: patch-doc_icewm-7_html,v 1.8 2008/08/21 07:34:07 ajacoutot Exp $
---- doc/icewm-7.html.orig	Sun Jan  9 22:48:56 2005
-+++ doc/icewm-7.html	Wed Mar 23 22:26:53 2005
-@@ -25,8 +25,8 @@ directories:</P>
- <DL>
- <DT><B>$HOME/.icewm</B><DD><P>user's personal customization. This location can
+$OpenBSD: patch-doc_icewm-7_html,v 1.9 2010/12/12 19:13:01 jasper Exp $
+--- doc/icewm-7.html.orig	Thu Dec  9 16:03:22 2010
++++ doc/icewm-7.html	Thu Dec  9 16:04:22 2010
+@@ -26,9 +26,9 @@ directories:</P>
+ <DT><B>$HOME/.icewm</B><DD>
+ <P>user's personal customization. This location can
  be customized by setting the $ICEWM_PRIVCFG environment variable.</P>
--<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults</P>
--<DT><B>/usr/share/icewm OR /usr/local/share/icewm</B><DD><P>compiled-in default directory
-+<DT><B>${SYSCONFDIR}/icewm</B><DD><P>system-wide customized defaults</P>
-+<DT><B>${PREFIX}/share/icewm</B><DD><P>compiled-in default directory
+-<DT><B>/etc/X11/icewm</B><DD>
++<DT><B>${SYSCONFDIR}/icewm</B><DD>
+ <P>system-wide customized defaults</P>
+-<DT><B>/usr/share/icewm OR /usr/local/share/icewm</B><DD>
++<DT><B>${PREFIX}/share/icewm</B><DD>
+ <P>compiled-in default directory
  with default files</P>
  </DL>
- </P>
-@@ -34,8 +34,8 @@ with default files</P>
+@@ -37,8 +37,8 @@ with default files</P>
  in the system/install directory can be overridden by the user by creating
  the same directory hierarchy under <CODE>$HOME/.icewm</CODE>.</P>
  <P>To customize icewm yourself, you should create the $HOME/.icewm directory and copy
 -the files that you wish to modify (preferences, winoptions),from /etc/X11/icewm,
 -/usr/share/icewm or /usr/local/share/icewm and then modify as you like.</P>
 +the files that you wish to modify (preferences, winoptions),from ${SYSCONFDIR}/icewm,
-+or ${PREFIX}/share/icewm and then modify as you like.</P>
++${PREFIX}/share/icewm and then modify as you like.</P>
  <P>To customize the default themes, you should create the $HOME/.icewm/themes directory
  and copy all the theme files there and then modify as necessary.</P>
  

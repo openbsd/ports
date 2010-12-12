@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2010/12/02 07:50:06 matthieu Exp $
+# $OpenBSD: Makefile,v 1.48 2010/12/12 19:13:01 jasper Exp $
 
 COMMENT=	small and fast window manager
 
-DISTNAME=	icewm-1.2.37
-REVISION=	4
+DISTNAME=	icewm-1.3.7
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -14,20 +13,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender \
-		c expat fontconfig freetype jpeg m png stdc++ tiff \
-		ungif z pthread-stubs xcb Imlib
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender
+WANTLIB += c expat fontconfig freetype gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m png
+WANTLIB += pthread pthread-stubs stdc++ xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	graphics/imlib
-
+LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu		
-CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
-		--with-docdir=${PREFIX}/share/doc \
+CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
 		--with-libdir=${PREFIX}/share/icewm \
 		--with-cfgdir=${SYSCONFDIR}/icewm \
 		--with-kdedatadir=${LOCALBASE}/share \
