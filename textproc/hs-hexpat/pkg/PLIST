@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/28 13:54:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/12 16:30:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -6,9 +6,11 @@ lib/ghc/${DISTNAME}/Text/XML/
 lib/ghc/${DISTNAME}/Text/XML/Expat/
 lib/ghc/${DISTNAME}/Text/XML/Expat/Annotated.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Cursor.hi
+lib/ghc/${DISTNAME}/Text/XML/Expat/Extended.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Format.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/IO.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Internal/
+lib/ghc/${DISTNAME}/Text/XML/Expat/Internal/DocumentClass.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Internal/IO.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Internal/Namespaced.hi
 lib/ghc/${DISTNAME}/Text/XML/Expat/Internal/NodeClass.hi
@@ -29,7 +31,9 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Annotated.html
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Cursor.html
+share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Extended.html
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Format.html
+share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Internal-DocumentClass.html
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Internal-IO.html
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Internal-Namespaced.html
 share/doc/hs-${DISTNAME}/html/Text-XML-Expat-Internal-NodeClass.html
@@ -67,7 +71,9 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Annotated.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Cursor.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Extended.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Format.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Internal-DocumentClass.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Internal-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Internal-Namespaced.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-Expat-Internal-NodeClass.html
