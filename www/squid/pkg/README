@@ -1,14 +1,15 @@
-$OpenBSD: README,v 1.1 2010/11/26 13:45:04 dcoppa Exp $
+$OpenBSD: README,v 1.2 2010/12/12 18:58:32 jasper Exp $
 
-Notes on OpenBSD post-installation of Squid
+Running Squid on OpenBSD
+========================
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}/squid
-- sample configuration files are in	${PREFIX}/share/examples/squid
-- error message files are in		${PREFIX}/share/squid/errors
-- sample error message files are in	${PREFIX}/share/examples/squid/errors
-- icons are in 				${PREFIX}/share/squid/icons
-- sample icons are in			${PREFIX}/share/examples/squid/icons
+- sample configuration files are in	${TRUEPREFIX}/share/examples/squid
+- error message files are in		${TRUEPREFIX}/share/squid/errors
+- sample error message files are in	${TRUEPREFIX}/share/examples/squid/errors
+- icons are in 				${TRUEPREFIX}/share/squid/icons
+- sample icons are in			${TRUEPREFIX}/share/examples/squid/icons
 - the cache is in 			${SQUIDDIR}/cache
 - logs are stored in 			${SQUIDDIR}/logs
 - the ugid squid runs as is		_squid:_squid
