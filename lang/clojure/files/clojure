@@ -2,4 +2,4 @@
 
 JAVA_CMD=$(javaPathHelper -c clojure)
 
-${JAVA_CMD} -jar /usr/local/clojure/clojure.jar $@
+${JAVA_CMD} -jar ${TRUEPREFIX}/clojure/clojure.jar $@
