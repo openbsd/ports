@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.871 2010/12/11 11:09:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.872 2010/12/12 16:32:23 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -194,6 +194,7 @@
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-vector
+     SUBDIR += hs-vector-algorithms
      SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += id-utils
