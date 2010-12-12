@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/12 16:28:54 kili Exp $
 
 COMMENT =		Int-indexed arrays
 
-DISTNAME =		vector-0.6.0.1
-REVISION =		1
+DISTNAME =		vector-0.7.0.1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
