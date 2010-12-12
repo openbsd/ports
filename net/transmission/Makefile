@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/23 18:52:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2010/12/12 20:42:38 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
 COMMENT-qt=	lightweight BitTorrent client with Qt interface
 
-VER=		2.12
+VER=		2.13
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -83,7 +83,8 @@ ONLY_FOR_ARCHS-qt = ${GCC4_ARCHS}
 LIB_DEPENDS+=	x11/qt4
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
 		dbus-1 expat fontconfig freetype stdc++
-RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main
+RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main \
+		devel/desktop-file-utils
 
 post-build:
 	cd ${WRKSRC}/qt; qmake4 qtr.pro; make ${MAKE_FLAGS}
@@ -92,6 +93,12 @@ post-install:
 	cd ${WRKSRC}/qt; make ${MAKE_FLAGS} install INSTALL_ROOT=${PREFIX} \
 	    INSTALL_FILE="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
+	    ${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \
+	    ${PREFIX}/share/pixmaps/transmission-qt.png
 .endif
 
 .include <bsd.port.mk>
