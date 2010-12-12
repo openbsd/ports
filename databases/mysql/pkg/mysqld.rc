@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mysqld.rc,v 1.5 2010/12/11 12:57:37 ajacoutot Exp $
+# $OpenBSD: mysqld.rc,v 1.6 2010/12/12 20:18:40 jasper Exp $
 
 . /etc/rc.d/rc.subr
 
@@ -20,7 +20,7 @@ rc_stop() {
 	${TRUEPREFIX}/bin/mysqladmin -s shutdown
 	if [ $? -gt 0 ]; then
 		pkill -f "^/bin/sh ${daemon}"
-		pkill -U _mysql -f "^${TRUEPREFIX}libexec/mysqld"
+		pkill -U _mysql -f "^${TRUEPREFIX}/libexec/mysqld"
 	fi
 }
 
