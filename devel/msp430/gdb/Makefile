@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/13 22:22:15 jasper Exp $
 
 COMMENT=		GNU debugger for msp430
 
@@ -10,7 +10,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gdb/}
 PATCHFILES=		gdb-${V}.patch:0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			gdb.tar.gz:0
+			${TARGET}-gdb.tar.gz:0
 
 RUN_DEPENDS=		devel/msp430/binutils \
 			devel/msp430/gcc

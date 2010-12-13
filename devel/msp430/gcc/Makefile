@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/01 09:06:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/13 22:22:15 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -11,7 +11,7 @@ PATCHFILES=		gcc-${V}.patch:0
 
 DISTFILES=		gcc-core-${V}${EXTRACT_SUFX} \
 			gcc-g++-${V}${EXTRACT_SUFX} \
-			gcc.tar.gz:0
+			${TARGET}-gcc.tar.gz:0
 
 WANTLIB +=		c gmp mpfr
 
