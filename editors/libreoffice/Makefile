@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/12 18:03:05 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/13 14:16:46 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,16 +7,15 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.3
+OV=		${VERSION:C/\.1$/rc1/}
 VERSION=	3.3.0.1
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
-PKGNAME=	libreoffice-${VERSION}
-PKGNAME-main=	libreoffice-${VERSION}
-PKGNAME-kde=	libreoffice-kde-${VERSION}
-PKGNAME-java=	libreoffice-java-${VERSION}
+PKGNAME=	libreoffice-${OV}
+PKGNAME-main=	libreoffice-${OV}
+PKGNAME-kde=	libreoffice-kde-${OV}
+PKGNAME-java=	libreoffice-java-${OV}
 CATEGORIES=	editors productivity
-
-REVISION-main=	2
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -103,7 +102,7 @@ LANGS=			bg ca de es fa fi fr hu it ja ko \
 
 .for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	libreoffice-i18n-$l-${VERSION}
+PKGNAME-i18n-$l=	libreoffice-i18n-$l-${OV}
 COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=
