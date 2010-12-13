@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/13 09:53:16 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Guard.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Guard/
+${P5ARCH}/auto/Guard/Guard.bs
+${P5ARCH}/auto/Guard/Guard.so
+@man man/man3p/Guard.3p

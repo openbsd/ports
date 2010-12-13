@@ -1,0 +1,11 @@
+This module implements so-called "guards". A guard is something
+(usually an object) that "guards" a resource, ensuring that it
+is cleaned up when expected.
+
+It is similar to eval {} blocks, except it's faster, and catches everything,
+including direct calls to exit and the like. Prerequisite to Coro.
+
+
+Different from Scope::Guard and Sub::ScopeFinalizer, which actually 
+implement dynamic, not scoped guards, and have a lot higher CPU, 
+memory and typing overhead.
