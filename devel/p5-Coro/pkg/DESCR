@@ -1,0 +1,5 @@
+Implementation of coroutines for perl5, somewhat different from what's
+planned for perl6.
+
+Create coroutines with async {} blocks. Give back control to other
+scheduled coroutine with cede. See Coro::Intro for details.

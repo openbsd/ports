@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/13 09:53:47 espie Exp $
+${P5ARCH}/Coro/
+${P5ARCH}/Coro.pm
+${P5ARCH}/Coro/AIO.pm
+${P5ARCH}/Coro/AnyEvent.pm
+${P5ARCH}/Coro/BDB.pm
+${P5ARCH}/Coro/Channel.pm
+${P5ARCH}/Coro/CoroAPI.h
+${P5ARCH}/Coro/Debug.pm
+${P5ARCH}/Coro/Event.pm
+${P5ARCH}/Coro/Handle.pm
+${P5ARCH}/Coro/Intro.pod
+${P5ARCH}/Coro/LWP.pm
+${P5ARCH}/Coro/MakeMaker.pm
+${P5ARCH}/Coro/RWLock.pm
+${P5ARCH}/Coro/Select.pm
+${P5ARCH}/Coro/Semaphore.pm
+${P5ARCH}/Coro/SemaphoreSet.pm
+${P5ARCH}/Coro/Signal.pm
+${P5ARCH}/Coro/Socket.pm
+${P5ARCH}/Coro/Specific.pm
+${P5ARCH}/Coro/State.pm
+${P5ARCH}/Coro/Storable.pm
+${P5ARCH}/Coro/Timer.pm
+${P5ARCH}/Coro/Util.pm
+${P5ARCH}/auto/Coro/
+${P5ARCH}/auto/Coro/Event/
+${P5ARCH}/auto/Coro/Event/Event.bs
+${P5ARCH}/auto/Coro/Event/Event.so
+${P5ARCH}/auto/Coro/State/
+${P5ARCH}/auto/Coro/State/State.bs
+${P5ARCH}/auto/Coro/State/State.so
+@man man/man3p/Coro.3p
+@man man/man3p/Coro::AIO.3p
+@man man/man3p/Coro::AnyEvent.3p
+@man man/man3p/Coro::BDB.3p
+@man man/man3p/Coro::Channel.3p
+@man man/man3p/Coro::Debug.3p
+@man man/man3p/Coro::Event.3p
+@man man/man3p/Coro::Handle.3p
+@man man/man3p/Coro::Intro.3p
+@man man/man3p/Coro::LWP.3p
+@man man/man3p/Coro::MakeMaker.3p
+@man man/man3p/Coro::RWLock.3p
+@man man/man3p/Coro::Select.3p
+@man man/man3p/Coro::Semaphore.3p
+@man man/man3p/Coro::SemaphoreSet.3p
+@man man/man3p/Coro::Signal.3p
+@man man/man3p/Coro::Socket.3p
+@man man/man3p/Coro::Specific.3p
+@man man/man3p/Coro::State.3p
+@man man/man3p/Coro::Storable.3p
+@man man/man3p/Coro::Timer.3p
+@man man/man3p/Coro::Util.3p
